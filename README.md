@@ -49,3 +49,8 @@ The current app does not require project-specific environment variables for loca
 ## Open Source
 
 This project is open-sourced under the MIT License. See [LICENSE](./LICENSE).
+
+## Documentation
+
+- Source inventory: [docs/source-inventory.md](./docs/source-inventory.md)
+- Profile workflow: [docs/profile-content/workflow.md](./docs/profile-content/workflow.md)
