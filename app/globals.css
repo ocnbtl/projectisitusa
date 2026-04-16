@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  --background: #f4f5ef;
+  --foreground: #171e1b;
+  --muted: #66706a;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --border: rgba(20, 31, 24, 0.12);
+  --ring: rgba(103, 171, 122, 0.35);
+  --accent: #4f8f66;
+  --accent-strong: #74b584;
+  --warning: #f2b35a;
+  --danger: #d77963;
+  --county: #d8ddd5;
+  --county-none: #ffffff;
+  --county-low: #7bc67f;
+  --county-mid: #d6cf67;
+  --county-high: #e89b52;
+  --county-critical: #dc655d;
+  --county-unknown: #bcc4bd;
+  --county-neighbor: #f2b35a;
+  --county-selected: #d77963;
+  --shadow: 0 24px 60px rgba(18, 23, 20, 0.12);
+}
+
+.dark {
+  --background: #08100d;
+  --foreground: #edf2eb;
+  --muted: #95a59b;
+  --surface: rgba(12, 20, 16, 0.86);
+  --surface-strong: rgba(18, 28, 23, 0.96);
+  --border: rgba(180, 200, 188, 0.14);
+  --ring: rgba(116, 181, 132, 0.3);
+  --accent: #6eb586;
+  --accent-strong: #9cd8aa;
+  --warning: #f0b55d;
+  --danger: #ef8f76;
+  --county: #16211c;
+  --county-none: #eef3ee;
+  --county-low: #3e7f4d;
+  --county-mid: #b6b44a;
+  --county-high: #d9893f;
+  --county-critical: #c6524a;
+  --county-unknown: #48544e;
+  --county-neighbor: #8f6230;
+  --county-selected: #8d4035;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(116, 181, 132, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(242, 179, 90, 0.1), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
+    var(--background);
+  color: var(--foreground);
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+a,
+button,
+input,
+select {
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+::selection {
+  background: rgba(116, 181, 132, 0.28);
+}
+
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.map-shell {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%),
+    linear-gradient(160deg, rgba(116, 181, 132, 0.08), transparent 45%),
+    rgba(7, 15, 12, 0.56);
+}
+
+.light .map-shell,
+:root .map-shell {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.36), transparent 22%),
+    linear-gradient(160deg, rgba(116, 181, 132, 0.12), transparent 45%),
+    rgba(255, 255, 255, 0.64);
+}
+
+.info-popover summary::-webkit-details-marker {
+  display: none;
+}
+
+.popover-copy {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.info-popover[open] .popover-copy {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-name-glow {
+  position: relative;
+}
+
+.patriotic-glow {
+  transition:
+    color 180ms ease,
+    text-shadow 220ms ease;
+}
+
+.project-name-glow > span {
+  transition:
+    color 180ms ease,
+    text-shadow 220ms ease,
+    max-width 280ms ease,
+    opacity 220ms ease,
+    margin-left 280ms ease;
+}
+
+.project-name-alias {
+  display: inline-block;
+  max-width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  opacity: 0;
+  vertical-align: baseline;
+}
+
+.project-name-glow:hover > span,
+.project-name-glow:focus-within > span,
+.patriotic-glow:hover,
+.patriotic-glow:focus-visible {
+  background-image: linear-gradient(120deg, #ff5f5f 0%, #ffffff 46%, #6b8cff 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: project-name-wave 2.2s linear infinite;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.22),
+    0 0 24px rgba(90, 132, 255, 0.18),
+    0 0 24px rgba(255, 91, 91, 0.12);
+}
+
+.project-name-glow:hover .project-name-alias,
+.project-name-glow:focus-within .project-name-alias {
+  max-width: 10ch;
+  margin-left: 0.2rem;
+  opacity: 1;
+}
+
+.locate-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.locate-button::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0) 0deg,
+    rgba(255, 255, 255, 0.95) 60deg,
+    rgba(255, 255, 255, 0) 120deg,
+    rgba(255, 255, 255, 0) 360deg
+  );
+  opacity: 0;
+  animation: locate-ring-spin 1.8s linear infinite;
+  transition: opacity 180ms ease;
+  z-index: 0;
+}
+
+.locate-button::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  border-radius: inherit;
+  background: var(--accent);
+  z-index: 0;
+}
+
+.locate-button:hover::before,
+.locate-button:focus-visible::before {
+  opacity: 1;
+}
+
+.locate-button > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes project-name-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes locate-ring-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

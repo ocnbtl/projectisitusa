@@ -1,0 +1,48 @@
+{
+  "name": "project-isitusa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:clean": "node scripts/clean-next.mjs && next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "prepare:data": "node --import tsx scripts/build-data.ts",
+    "import:eddmaps": "node --import tsx scripts/import-eddmaps.ts",
+    "import:county-data": "node --import tsx scripts/import-county-presence.ts",
+    "import:usriis": "node --import tsx scripts/import-usriis.ts",
+    "import:species-images": "node --import tsx scripts/import-species-images.ts",
+    "optimize:species-images": "node --import tsx scripts/optimize-species-images.ts",
+    "refresh:data": "npm run import:usriis && npm run import:county-data && npm run prepare:data"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "csv-parse": "^5.6.0",
+    "d3-geo": "^3.1.1",
+    "lucide-react": "^0.542.0",
+    "next": "^15.5.6",
+    "next-themes": "^0.4.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-simple-maps": "^4.0.0-beta.6",
+    "topojson-client": "^3.1.0",
+    "us-atlas": "^3.0.1",
+    "zipcodes": "^8.0.0",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/d3-geo": "^3.1.0",
+    "@types/node": "^24.7.2",
+    "@types/react": "^18.3.26",
+    "@types/react-dom": "^18.3.7",
+    "@types/topojson-client": "^3.1.4",
+    "eslint": "^9.38.0",
+    "eslint-config-next": "^15.5.6",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

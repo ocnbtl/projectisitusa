@@ -1,0 +1,254 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+
+import { SpeciesCard } from "@/components/species-card";
+import type { CountyRecord, ExplorerSpecies, SpeciesCategory } from "@/lib/data/types";
+import { formatCategoryLabel } from "@/lib/utils";
+
+interface CountyInsightPanelProps {
+  selectedCounty: CountyRecord | null;
+  selectedCategories: SpeciesCategory[];
+  focalSpecies: ExplorerSpecies[];
+  nearbySpecies: ExplorerSpecies[];
+  speciesWithoutCountyCoverage: ExplorerSpecies[];
+}
+
+const PAGE_SIZE_OPTIONS = [10, 20, 50, 100] as const;
+
+export function CountyInsightPanel({
+  selectedCounty,
+  selectedCategories,
+  focalSpecies,
+  nearbySpecies,
+  speciesWithoutCountyCoverage,
+}: CountyInsightPanelProps) {
+  const unresolvedPreview = speciesWithoutCountyCoverage.slice(0, 12);
+  const [viewMode, setViewMode] = useState<"county" | "nearby">("county");
+  const [pageSize, setPageSize] = useState<(typeof PAGE_SIZE_OPTIONS)[number]>(10);
+  const [page, setPage] = useState(1);
+
+  const activeSpecies = viewMode === "county" ? focalSpecies : nearbySpecies;
+  const metricMax = useMemo(
+    () => Math.max(0, ...activeSpecies.map((species) => species.registry?.mappedCountyCount ?? 0)),
+    [activeSpecies],
+  );
+  const totalPages = Math.max(1, Math.ceil(activeSpecies.length / pageSize));
+  const pageStart = activeSpecies.length === 0 ? 0 : (page - 1) * pageSize + 1;
+  const pageEnd = Math.min(page * pageSize, activeSpecies.length);
+  const pagedSpecies = activeSpecies.slice(pageStart === 0 ? 0 : pageStart - 1, pageEnd);
+
+  useEffect(() => {
+    setPage(1);
+  }, [pageSize, selectedCounty?.countyFips, viewMode, focalSpecies.length, nearbySpecies.length]);
+
+  useEffect(() => {
+    if (page > totalPages) {
+      setPage(totalPages);
+    }
+  }, [page, totalPages]);
+
+  if (!selectedCounty) {
+    return (
+      <aside className="glass-panel rounded-[28px] p-5">
+        <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
+          Local insight
+        </p>
+        <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--foreground)]">
+          Select a county or enter a ZIP code.
+        </h2>
+        <p className="mt-3 max-w-xl text-sm leading-6 text-[var(--muted)]">
+          Click any county to inspect the current invasive species dataset, compare
+          nearby counties, and jump into a practical species profile.
+        </p>
+      </aside>
+    );
+  }
+
+  return (
+    <aside className="glass-panel rounded-[28px] p-5">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
+            County detail
+          </p>
+          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--foreground)]">
+            {selectedCounty.name}, {selectedCounty.stateCode}
+            {speciesWithoutCountyCoverage.length > 0 ? " *" : ""}
+          </h2>
+          {speciesWithoutCountyCoverage.length > 0 ? (
+            <p className="mt-2 text-sm text-[var(--muted)]">
+              Confirmed county-level records are shown below. The asterisk means
+              some species in the current filter set still do not have verified
+              county-level source coverage attached yet.
+            </p>
+          ) : null}
+        </div>
+        {selectedCategories.length === 1 ? (
+          <div className="rounded-full border border-[var(--border)] px-3 py-2 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+            {formatCategoryLabel(selectedCategories[0])}
+          </div>
+        ) : selectedCategories.length > 1 ? (
+          <div className="inline-flex whitespace-nowrap rounded-full border border-[var(--border)] px-3 py-2 text-[11px] uppercase tracking-[0.18em] text-[var(--muted)]">
+            {selectedCategories.length} categories
+          </div>
+        ) : null}
+      </div>
+
+      <div className="mt-5 grid gap-6">
+        <section className="grid gap-4">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div className="inline-flex w-fit rounded-full border border-[var(--border)] bg-[var(--surface)] p-1">
+              <button
+                type="button"
+                onClick={() => setViewMode("county")}
+                className={`rounded-full px-4 py-2 text-sm transition ${
+                  viewMode === "county"
+                    ? "bg-[var(--accent)] text-[var(--background)]"
+                    : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                In this county ({focalSpecies.length.toLocaleString()})
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode("nearby")}
+                className={`rounded-full px-4 py-2 text-sm transition ${
+                  viewMode === "nearby"
+                    ? "bg-[var(--accent)] text-[var(--background)]"
+                    : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                }`}
+              >
+                Nearby-only watchlist ({nearbySpecies.length.toLocaleString()})
+              </button>
+            </div>
+
+            <label className="flex items-center gap-3 text-sm text-[var(--muted)]">
+              <span>Per page</span>
+              <select
+                value={pageSize}
+                onChange={(event) =>
+                  setPageSize(Number(event.target.value) as (typeof PAGE_SIZE_OPTIONS)[number])
+                }
+                className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)] outline-none"
+              >
+                {PAGE_SIZE_OPTIONS.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <h3 className="text-lg font-semibold text-[var(--foreground)]">
+                {viewMode === "county" ? "In this county" : "Nearby-only watchlist"}
+              </h3>
+              <p className="text-sm text-[var(--muted)]">
+                {viewMode === "county"
+                  ? "Species directly associated with the selected county."
+                  : "Species mapped in neighboring counties but not currently attached to the selected county."}
+              </p>
+            </div>
+            <div className="text-sm text-[var(--muted)]">
+              {activeSpecies.length.toLocaleString()} found
+            </div>
+          </div>
+
+          {activeSpecies.length > 0 ? (
+            <>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="text-sm text-[var(--muted)]">
+                  Showing {pageStart.toLocaleString()}-{pageEnd.toLocaleString()} of{" "}
+                  {activeSpecies.length.toLocaleString()}
+                </div>
+                {totalPages > 1 ? (
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setPage((current) => Math.max(1, current - 1))}
+                      disabled={page === 1}
+                      className="rounded-full border border-[var(--border)] px-3 py-1.5 text-sm text-[var(--foreground)] disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      Previous
+                    </button>
+                    <span className="text-sm text-[var(--muted)]">
+                      Page {page.toLocaleString()} of {totalPages.toLocaleString()}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
+                      disabled={page === totalPages}
+                      className="rounded-full border border-[var(--border)] px-3 py-1.5 text-sm text-[var(--foreground)] disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      Next
+                    </button>
+                  </div>
+                ) : null}
+              </div>
+
+              <div className="grid gap-3">
+                {pagedSpecies.map((species) => (
+                  <SpeciesCard
+                    key={`${viewMode}-${species.id}`}
+                    species={species}
+                    metricMax={metricMax}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="rounded-[24px] border border-dashed border-[var(--border)] px-4 py-5 text-sm text-[var(--muted)]">
+              {viewMode === "county"
+                ? "No species in the current dataset match this county and filter combination."
+                : "No nearby-only watchlist matches are currently verified for this filter combination."}
+            </div>
+          )}
+        </section>
+
+        {speciesWithoutCountyCoverage.length > 0 ? (
+          <section className="grid gap-3">
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-[var(--foreground)]">
+                  County coverage still missing
+                </h3>
+                <p className="text-sm text-[var(--muted)]">
+                  These species match the current filters, but county-level records
+                  are still being verified or attached from public sources.
+                </p>
+              </div>
+              <div className="text-sm text-[var(--muted)]">
+                {speciesWithoutCountyCoverage.length} unresolved
+              </div>
+            </div>
+            <div className="rounded-[24px] border border-dashed border-[var(--border)] px-4 py-4">
+              <ul className="grid gap-2 md:grid-cols-2">
+                {unresolvedPreview.map((species) => (
+                  <li
+                    key={species.id}
+                    className="flex items-start justify-between gap-3 text-sm text-[var(--foreground)]"
+                  >
+                    <span>{species.commonName}</span>
+                    <span className="text-[var(--muted)]">
+                      <em>{species.scientificName}</em>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              {speciesWithoutCountyCoverage.length > unresolvedPreview.length ? (
+                <p className="mt-4 text-sm text-[var(--muted)]">
+                  Showing {unresolvedPreview.length} of{" "}
+                  {speciesWithoutCountyCoverage.length.toLocaleString()} species
+                  still missing county-level coverage for this filter set.
+                </p>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
+      </div>
+    </aside>
+  );
+}
