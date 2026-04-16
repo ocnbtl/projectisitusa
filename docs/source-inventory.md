@@ -91,6 +91,29 @@ These sources are already referenced by current curated profiles, but the origin
 | https://extension.umn.edu/identify-invasive-species/common-carp | Common Carp | Identification, reporting guidance, habitat-effect summary |
 | https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=4 | Common Carp | Ecology, habitat damage, turbidity and plant-loss impacts |
 
+### Chunk 2B follow-up, consulted on 2026-04-16
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://extension.umn.edu/plant-diseases/white-pine-blister-rust | White-pine blister rust | Disease cycle, pine and Ribes symptoms, pruning guidance, host-pairing guidance |
+| https://apps.extension.umn.edu/garden/diagnose/weed/idlist.html | Yellow nutsedge | Basic control framing, tuber persistence, lawn and landscape context |
+| https://www.canr.msu.edu/news/controlling_yellow_nutsedge_in_turfgrass | Yellow nutsedge | Homeowner management framing, repeat-treatment expectations, practical turf guidance |
+| https://extension.umn.edu/identify-invasive-species/autumn-olive | Autumn Olive | Identification, origin, fruiting behavior, soil-change impact, reporting context |
+| https://extension.umn.edu/planting-and-growing-guides/woody-vegetation-control | Autumn Olive, White Mulberry, Glossy Buckthorn | Cut stump and woody invasive control framing, resprout cautions, follow-up expectations |
+| https://extension.umn.edu/identify-invasive-species/white-mulberry | White Mulberry | Identification, hybridization risk, escaped-cultivation context |
+| https://extension.umn.edu/identify-invasive-species/glossy-buckthorn | Glossy Buckthorn | Identification, understory displacement, reporting context |
+| https://www.invasivespeciesinfo.gov/terrestrial/plants/cogongrass | Cogongrass | Origin, introduction pathway, dense-stand impact, reporting context |
+| https://extension.msstate.edu/publications/cogongrass | Cogongrass | Identification details, rhizome spread, disturbance response, control cautions |
+| https://www.invasivespeciesinfo.gov/terrestrial/plants/saltcedar | Saltcedar | Introduction history, water-table and salinity impacts, broad invasive context |
+| https://www.nps.gov/sagu/learn/nature/tamarisk.htm | Saltcedar | Riparian habitat effects, management cautions, wildlife-habitat caveat |
+| https://www.aphis.usda.gov/operational-wildlife-activities/starlings-blackbirds | European Starling | Property and agricultural damage, native bird competition, exclusion and management guidance |
+| https://www.invasivespeciesinfo.gov/terrestrial/vertebrates/european-starling | European Starling | Introduction history and broad invasive context |
+| https://www.invasivespeciesinfo.gov/aquatic/invertebrates/asian-clam | Asiatic Clam | Origin, U.S. introduction timeline, colony-forming impact, public spread-prevention framing |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?speciesid=92 | Asiatic Clam | Ecology, infrastructure fouling, pipe-clogging impact, spread context |
+| https://extension.umn.edu/identify-invasive-species/wild-parsnip | Wild Parsnip | Phototoxic burn risk, identification, reporting and handling guidance |
+| https://extension.umn.edu/identify-invasive-species/poison-hemlock | Poison Hemlock | Toxicity, purple-blotched stem ID, reporting path, conservative handling guidance |
+| https://extension.umn.edu/identify-invasive-species/spotted-knapweed | Spotted Knapweed | Identification, seed spread, handling caution, reporting context |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

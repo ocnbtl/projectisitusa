@@ -1064,6 +1064,498 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "cronartium-ribicola",
+    slug: "cronartium-ribicola",
+    commonName: "White-pine Blister Rust",
+    scientificName: "Cronartium ribicola",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "An invasive rust disease that cycles between five-needle pines and currants or gooseberries, killing branches, tree tops, and sometimes entire young pines.",
+    origin:
+      "Introduced to North America on infected nursery stock and now spread through the alternating host cycle between white pines and Ribes plants such as currants and gooseberries.",
+    whatToLookFor: [
+      "Flagged branches on white pine where all the needles turn yellow, then rusty red, while the rest of the tree still looks green.",
+      "Swollen or cracked cankers on branches or trunks that ooze sticky pale sap and later develop pale blisters or orange spore masses.",
+      "Angular yellow leaf spots on currant or gooseberry leaves, often with orange pustules or hair-like structures on the underside later in the season.",
+    ],
+    whyItMatters:
+      "White-pine blister rust can kill branches year by year until it reaches the main stem, where young trees may die outright and older trees can lose major canopy structure. It also complicates planting decisions where five-needle pines and susceptible Ribes plants grow close together.",
+    action: {
+      mode: "both",
+      summary:
+        "Catch infections early on pines, prune branch cankers before they reach the trunk, and avoid creating landscapes where susceptible white pines and Ribes hosts keep reinfecting each other.",
+      steps: [
+        "Inspect white pines yearly for flagged branches, resinous cankers, and blister-like spore structures, especially in cool and moist sites.",
+        "Prune infected branches at the branch union or well back from visible symptoms if the canker has not reached the trunk.",
+        "If the disease is on the main stem or affecting multiple trees, get local extension or arborist guidance and avoid planting susceptible currants or gooseberries next to white pines.",
+      ],
+      safetyNotes:
+        "Large white pines and trunk cankers are not good do-it-yourself jobs. Use a qualified arborist when climbing, major pruning, or removal is involved.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/plant-diseases/white-pine-blister-rust",
+      },
+    ],
+  },
+  {
+    id: "cyperus-esculentus",
+    slug: "cyperus-esculentus",
+    commonName: "Yellow Nutsedge",
+    scientificName: "Cyperus esculentus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A persistent sedge that grows faster than turf, survives mowing, and keeps coming back from underground tubers in lawns, beds, and disturbed moist soil.",
+    origin:
+      "Yellow nutsedge has a complicated native-versus-introduced history, but in managed landscapes it spreads mainly through moved soil, rhizomes, and underground tubers rather than by seed.",
+    whatToLookFor: [
+      "Bright yellow-green shoots that stand above the surrounding lawn or groundcover and often appear slick or waxy.",
+      "Solid triangular stems that you can feel if you roll them between your fingers.",
+      "Umbrella-like seedheads and underground nutlets or tubers at the tips of wiry rhizomes.",
+    ],
+    whyItMatters:
+      "Yellow nutsedge competes hard in turf and planting beds because it tolerates mowing and stores energy in tubers below the soil. Pulling the top growth alone usually fails, so patches can keep expanding if moisture and disturbance stay favorable.",
+    action: {
+      mode: "diy",
+      summary:
+        "Fix the site conditions first, then expect repeat control. Yellow nutsedge is rarely solved in one pass because the underground tubers can keep sending up new shoots.",
+      steps: [
+        "Reduce chronic overwatering or drainage problems where possible, because wet compacted sites favor nutsedge.",
+        "Pull small plants early if you can remove the tubers, but do not assume snapped stems or shallow weeding solved the patch.",
+        "For larger turf or landscape infestations, use a labeled nutsedge treatment and expect repeat applications over more than one season.",
+      ],
+      safetyNotes:
+        "Always match herbicide use to the site and follow the product label. Nutsedge products for turf are not automatically safe for gardens, pondsides, or edible plantings.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://apps.extension.umn.edu/garden/diagnose/weed/idlist.html",
+      },
+      {
+        label: "Michigan State University Extension",
+        url: "https://www.canr.msu.edu/news/controlling_yellow_nutsedge_in_turfgrass",
+      },
+    ],
+  },
+  {
+    id: "elaeagnus-umbellata",
+    slug: "elaeagnus-umbellata",
+    commonName: "Autumn Olive",
+    scientificName: "Elaeagnus umbellata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A fast-growing invasive shrub or small tree that spreads across field edges, roadsides, and open woods, often turning mixed habitat into dense thickets.",
+    origin:
+      "Native to East Asia and widely planted in the United States for wildlife cover, ornament, windbreaks, and reclamation before escaping into natural areas.",
+    whatToLookFor: [
+      "Shrubs or small trees with silvery undersides on the leaves and silvery to golden speckles on stems and fruit.",
+      "Fragrant pale yellow tubular flowers in the leaf axils, followed by abundant red fruits with silver flecking.",
+      "Thorny branches and spreading patches along old fields, roadsides, forest edges, and sunny disturbed ground.",
+    ],
+    whyItMatters:
+      "Autumn olive fixes nitrogen, which changes soil chemistry in a way that can favor more invasive growth and disrupt native plant communities adapted to leaner soils. It also produces heavy fruit crops that birds and mammals spread widely.",
+    action: {
+      mode: "both",
+      summary:
+        "Small plants are manageable, but established shrubs resprout hard after cutting. Treat it like a repeat woody invasive project, not a one-time trimming job.",
+      steps: [
+        "Pull seedlings and small saplings when the soil allows you to remove the root crown cleanly.",
+        "For larger shrubs, use a cut stump or basal bark method with a labeled woody plant herbicide, or hire a professional who handles invasive shrub control.",
+        "Bag or remove fruiting branches when practical and revisit the site for sprouts and new seedlings over the next few seasons.",
+      ],
+      safetyNotes:
+        "Do not simply shear or mow mature autumn olive and walk away. That usually leads to vigorous resprouting and a harder cleanup later.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/autumn-olive",
+      },
+      {
+        label: "University of Minnesota Extension Woody Vegetation Control",
+        url: "https://extension.umn.edu/planting-and-growing-guides/woody-vegetation-control",
+      },
+    ],
+  },
+  {
+    id: "morus-alba",
+    slug: "morus-alba",
+    commonName: "White Mulberry",
+    scientificName: "Morus alba",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A widely planted mulberry that escaped cultivation and now spreads through fencerows, vacant lots, stream corridors, and disturbed woods.",
+    origin:
+      "Native to East Asia and brought to North America for silk production, shade, and fruit before naturalizing across much of the country.",
+    whatToLookFor: [
+      "Glossy leaves that vary wildly on the same tree, with some unlobed and others mitten-shaped or deeply lobed.",
+      "Milky sap from cut leaves or twigs, along with smooth orange-brown twigs that later age into gray ridged bark.",
+      "Sweet elongated fruits that ripen from pale to pink, red, or dark purple and attract heavy bird use.",
+    ],
+    whyItMatters:
+      "White mulberry can outcompete native mulberries in disturbed habitats, but the bigger long-term concern is that it hybridizes with native red mulberry. That makes careless planting and spread a conservation problem, not just a yard nuisance.",
+    action: {
+      mode: "both",
+      summary:
+        "Verify the identification carefully before removing a mulberry, then control seedlings and unwanted trees before they start seeding heavily into nearby habitat.",
+      steps: [
+        "Confirm you are not looking at native red mulberry, especially where native populations are still present or being restored.",
+        "Pull or dig out small volunteer seedlings and saplings before they become fruiting trees.",
+        "For larger unwanted trees, use a cut stump treatment or hire a professional, then watch the area for bird-dispersed seedlings.",
+      ],
+      safetyNotes:
+        "Do not rely on fruit color alone for identification. Leaf texture, twig traits, and the local presence of red mulberry matter.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/white-mulberry",
+      },
+      {
+        label: "University of Minnesota Extension Woody Vegetation Control",
+        url: "https://extension.umn.edu/planting-and-growing-guides/woody-vegetation-control",
+      },
+    ],
+  },
+  {
+    id: "frangula-alnus",
+    slug: "frangula-alnus",
+    commonName: "Glossy Buckthorn",
+    scientificName: "Frangula alnus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A shade-casting invasive shrub or small tree that fills wetlands, forests, and old fields with dense understory growth.",
+    origin:
+      "Native to Europe, Asia, and North Africa and introduced as an ornamental before spreading into wetlands, woods, and disturbed sites.",
+    whatToLookFor: [
+      "Smooth oval leaves with a glossy surface, untoothed margins, and a habit of staying green late into fall.",
+      "Multiple stems with brown bark marked by pale elongated corky flecks.",
+      "Berries that ripen from red to dark purple or black along the stems, often in the leaf axils.",
+    ],
+    whyItMatters:
+      "Glossy buckthorn leafs out early and hangs onto its leaves late, which helps it build dense shade that crowds out native understory plants. Once established, it can replace the layered habitat structure that birds, amphibians, and forest wildflowers depend on.",
+    action: {
+      mode: "both",
+      summary:
+        "Act early on seedlings and small shrubs, then plan for follow-up on larger patches. Mature buckthorn usually resprouts unless the root system or stump is treated correctly.",
+      steps: [
+        "Pull or dig small plants when the soil is workable and the full root crown can come out.",
+        "For established shrubs, use a labeled cut stump or basal bark treatment, or work with a contractor who already manages woody invasives.",
+        "Return for several years to catch new seedlings and stump sprouts before the site closes over again.",
+      ],
+      safetyNotes:
+        "Fruit-bearing branches can spread seed during transport. If you cut reproductive stems, dispose of them in a way that does not spread berries to new sites.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/glossy-buckthorn",
+      },
+      {
+        label: "University of Minnesota Extension Woody Vegetation Control",
+        url: "https://extension.umn.edu/planting-and-growing-guides/woody-vegetation-control",
+      },
+    ],
+  },
+  {
+    id: "imperata-cylindrica",
+    slug: "imperata-cylindrica",
+    commonName: "Cogongrass",
+    scientificName: "Imperata cylindrica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A highly aggressive invasive grass that forms dense stands, spreads by rhizomes and windblown seed, and can take over roadsides, forests, and southern natural areas.",
+    origin:
+      "Native to tropical and subtropical parts of the eastern hemisphere and introduced into the southern United States both accidentally and on purpose for forage and erosion control.",
+    whatToLookFor: [
+      "Dense patches of upright grass with an off-center white midrib that sits closer to one leaf edge than the other.",
+      "Fluffy white or silvery seedheads in spring and after disturbance, giving the patch a feathery look.",
+      "Extensive underground rhizome mats that let the grass rebound after mowing, burning, or soil disturbance.",
+    ],
+    whyItMatters:
+      "Cogongrass chokes out native vegetation, spreads quickly along disturbed corridors, and is notorious for coming back from rhizomes after surface growth is knocked down. In fire-prone landscapes it can also change fuel structure and make control more difficult over time.",
+    action: {
+      mode: "report",
+      summary:
+        "Do not treat cogongrass like ordinary roadside grass. New patches should be documented and reported because moving soil, mowing, or half-done treatment can spread it farther.",
+      steps: [
+        "Photograph the patch, including leaves and seedheads, and note the exact location before disturbing it.",
+        "Avoid moving soil, mowers, or equipment through the patch unless they can be cleaned before going elsewhere.",
+        "Report suspected cogongrass to the relevant agriculture, extension, or invasive species program and expect repeated professional or coordinated treatment if the patch is confirmed.",
+      ],
+      safetyNotes:
+        "Mowing or burning alone will not eliminate cogongrass. Those methods can actually open the stand and trigger new growth from rhizomes.",
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/plants/cogongrass",
+      },
+      {
+        label: "Mississippi State University Extension Service",
+        url: "https://extension.msstate.edu/publications/cogongrass",
+      },
+    ],
+  },
+  {
+    id: "tamarix-ramosissima",
+    slug: "tamarix-ramosissima",
+    commonName: "Saltcedar",
+    scientificName: "Tamarix ramosissima",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A thirsty riparian invader that forms dense stands along western rivers and washes, crowding out native vegetation and altering streamside habitat.",
+    origin:
+      "Introduced from Eurasia in the 1800s for ornament, windbreaks, and erosion control before spreading through western river corridors.",
+    whatToLookFor: [
+      "Feathery blue-green to gray-green branchlets with tiny scale-like leaves and rough bark on older stems.",
+      "Pink to whitish flower spikes on shrubs or small trees growing in riparian corridors, washes, and floodplains.",
+      "Dense thickets along waterways where native cottonwoods, willows, and other streamside plants have been pushed back.",
+    ],
+    whyItMatters:
+      "Saltcedar can lower water tables, increase soil salinity, trap sediment, and create dense shade that suppresses native riparian seedlings. It also changes fire behavior and can complicate habitat management where sensitive wildlife are already under pressure.",
+    action: {
+      mode: "report",
+      summary:
+        "Small seedlings can sometimes be removed, but mature saltcedar along rivers should usually be handled as coordinated restoration work rather than casual cutting by individual visitors or neighbors.",
+      steps: [
+        "Document the location and extent of the patch, especially if it is along a river, wash, irrigation corridor, or protected natural area.",
+        "Do not assume cutting alone solves the problem, because mature plants often resprout unless roots or stumps are treated correctly.",
+        "Contact the land manager, invasive species program, or local restoration group before treatment, since some sites also have wildlife habitat considerations that affect timing and methods.",
+      ],
+      safetyNotes:
+        "Riparian restoration can be sensitive. Some areas now have nesting or other wildlife considerations that make the right timing and method important.",
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/plants/saltcedar",
+      },
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/sagu/learn/nature/tamarisk.htm",
+      },
+    ],
+  },
+  {
+    id: "sturnus-vulgaris",
+    slug: "sturnus-vulgaris",
+    commonName: "European Starling",
+    scientificName: "Sturnus vulgaris",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Birds",
+    summary:
+      "A widespread invasive bird that forms large noisy flocks, damages crops and feedlots, fouls structures, and competes with native cavity-nesting birds.",
+    origin:
+      "Introduced from Europe in the 1890s and now spread across nearly all of North America through its ability to thrive around farms, towns, and disturbed habitat.",
+    whatToLookFor: [
+      "Medium-sized dark birds with short tails, pointed yellow bills in breeding season, and a glossy or speckled look depending on season.",
+      "Large flocks feeding in fields, feedlots, fruit plantings, or roosting in dense trees and urban structures.",
+      "Aggressive use of nest cavities where bluebirds, woodpeckers, flickers, or purple martins would otherwise breed.",
+    ],
+    whyItMatters:
+      "European starlings are not just noisy backyard birds. Large flocks foul buildings, contaminate feed, increase agricultural losses, and push native cavity nesters out of limited nesting sites. In some settings they also create serious health and aviation hazards.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not feed or shelter them unintentionally, use exclusion first around buildings and nest boxes, and contact wildlife specialists if a large roost or livestock conflict is developing.",
+      steps: [
+        "Seal openings, repair vents, and use starling-resistant nest box or building exclusion methods before birds settle in.",
+        "Reduce easy access to livestock feed, pooled water, and other concentrated food sources that keep flocks on site.",
+        "If a large roost or farm problem is building, contact USDA Wildlife Services or your state wildlife agency for legal and technical guidance.",
+      ],
+      contactName: "USDA Wildlife Services",
+      contactUrl: "https://www.aphis.usda.gov/operational-wildlife-activities/starlings-blackbirds",
+      contactInstructions:
+        "APHIS explains exclusion, harassment, trapping, and legal context for managing damaging starling flocks and roosts.",
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/operational-wildlife-activities/starlings-blackbirds",
+      },
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/vertebrates/european-starling",
+      },
+    ],
+  },
+  {
+    id: "corbicula-fluminea",
+    slug: "corbicula-fluminea",
+    commonName: "Asiatic Clam",
+    scientificName: "Corbicula fluminea",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mollusks",
+    summary:
+      "A small invasive clam that forms dense colonies in lakes and rivers, competes in benthic habitats, and clogs pipes and industrial water systems.",
+    origin:
+      "Native to parts of Asia, Africa, and Australia, first found in the United States in 1938 and then spread widely through freshwater systems.",
+    whatToLookFor: [
+      "Small rounded triangular clams with strong concentric ridges on the shell, often light tan to yellow-brown.",
+      "Large numbers of shells or live clams in shallow water, sandy margins, intake areas, or along receding shorelines.",
+      "Reports of fouled pipes, irrigation systems, or industrial water infrastructure in infested waters.",
+    ],
+    whyItMatters:
+      "Asiatic clams reproduce in dense colonies and can dominate bottom habitat, changing local food webs and displacing other aquatic life. They are also a serious infrastructure pest because their shells and juveniles clog water intake systems, pipes, and firefighting equipment.",
+    action: {
+      mode: "report",
+      summary:
+        "Prevent spread first. Do not move water, sediment, or gear between waterbodies without cleaning it, and treat suspected new infestations as an aquatic invasive species report.",
+      steps: [
+        "Clean, drain, and dry boats, anchors, pumps, waders, buckets, and other gear after leaving the water.",
+        "Do not move live clams, shell material, bait water, or sediment from one waterbody to another.",
+        "Photograph the clams and report suspected new infestations to the local aquatic invasive species or natural resource program.",
+      ],
+      contactName: "State aquatic invasive species program",
+      contactUrl: "https://www.invasivespeciesinfo.gov/aquatic/invertebrates/asian-clam",
+      contactInstructions:
+        "Use the NISIC overview for public-facing background and your local aquatic invasive species contacts for actual reporting channels.",
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/aquatic/invertebrates/asian-clam",
+      },
+      {
+        label: "U.S. Geological Survey NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?speciesid=92",
+      },
+    ],
+  },
+  {
+    id: "pastinaca-sativa",
+    slug: "pastinaca-sativa",
+    commonName: "Wild Parsnip",
+    scientificName: "Pastinaca sativa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tall invasive biennial with yellow flower umbels and sap that can cause severe blistering burns when skin is exposed to sunlight.",
+    origin:
+      "Descended from the cultivated parsnip brought from Europe and now widespread along roadsides, fields, trail edges, and other disturbed ground.",
+    whatToLookFor: [
+      "Rosettes in the first year and tall flowering stalks in the second year, often reaching several feet high.",
+      "Flat-topped clusters of many small yellow flowers rather than the white flowers seen on many look-alikes.",
+      "Yellow-green grooved stems and pinnate leaves with broad toothed leaflets.",
+    ],
+    whyItMatters:
+      "Wild parsnip crowds into open habitat, roadsides, and rights-of-way, but the immediate concern for most people is safety. Its sap can trigger painful phototoxic burns and blistering when it touches skin and then gets sunlight.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat wild parsnip as both a safety hazard and an invasive plant problem. Small patches can be managed, but skin protection and timing are not optional.",
+      steps: [
+        "Keep bare skin away from the sap by using gloves, long sleeves, eye protection, and immediate washing if contact occurs.",
+        "Pull or cut small plants before seeds ripen, but only when you can avoid sap exposure and safely bag or dispose of seed-bearing material.",
+        "Report larger roadside, park, or natural area infestations so they can be handled before they spread into more public-facing sites.",
+      ],
+      safetyNotes:
+        "If sap contacts skin, wash the area promptly and keep it out of sunlight. Severe blistering or eye exposure warrants medical attention.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/wild-parsnip",
+      },
+    ],
+  },
+  {
+    id: "conium-maculatum",
+    slug: "conium-maculatum",
+    commonName: "Poison Hemlock",
+    scientificName: "Conium maculatum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A highly toxic invasive biennial whose stems, leaves, roots, and seeds can poison people and livestock if ingested.",
+    origin:
+      "Native to Europe and North Africa and now spread along ditches, railways, rivers, farm edges, and other sunny disturbed sites in North America.",
+    whatToLookFor: [
+      "Smooth hollow green stems marked with purple blotches or streaking.",
+      "Large fern-like lacy leaves on a tall plant that can reach well above head height.",
+      "Umbrella-shaped clusters of small white flowers, with a deadly carrot-like root below.",
+    ],
+    whyItMatters:
+      "Poison hemlock is one of the more dangerous invasive plants a homeowner can encounter. It spreads by seed, invades disturbed ground, and poses a real poisoning risk to people, pets, and livestock if it is misidentified or handled carelessly.",
+    action: {
+      mode: "report",
+      summary:
+        "Identification and safety come first. If you suspect poison hemlock, document it carefully and lean toward professional help rather than casual hand removal.",
+      steps: [
+        "Keep children, pets, and livestock away from the patch until the plant is confirmed and a control plan is in place.",
+        "Photograph the stem, leaves, and flowers, then report the plant through the local invasive plant or agriculture channel if your state tracks it.",
+        "If the patch is on your property, use professional help or full protective gear and follow-up monitoring rather than treating it as an ordinary weed.",
+      ],
+      safetyNotes:
+        "Do not eat, burn, weed-whack, or casually handle poison hemlock. All parts are highly toxic, and the sap and plant fragments should be treated with care.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/poison-hemlock",
+      },
+    ],
+  },
+  {
+    id: "centaurea-stoebe",
+    slug: "centaurea-stoebe",
+    commonName: "Spotted Knapweed",
+    scientificName: "Centaurea stoebe",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A long-lived invasive forb that colonizes dry disturbed ground, spreads into prairies and open woods, and builds seedbanks that keep a site infested for years.",
+    origin:
+      "Introduced from Europe and now spread through hay, vehicles, livestock movement, roadside disturbance, and other open corridors.",
+    whatToLookFor: [
+      "Rosettes of rough bluish-green leaves low to the ground before the plant bolts.",
+      "Branched wiry stems with pink to purple flower heads and dark bracts marked with a spotted V-shaped pattern.",
+      "Dry roadsides, gravel pits, railroad edges, field margins, or open grasslands where it forms scattered to dense colonies.",
+    ],
+    whyItMatters:
+      "Spotted knapweed can reduce plant diversity, degrade forage, and hold ground for years because one plant can produce many seeds that persist in the soil. Once it gets into prairies and open natural areas, it can be costly to reverse.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth tackling early, but do not wait for a large seedbank to build. Bigger infestations usually need repeated follow-up and sometimes coordinated treatment.",
+      steps: [
+        "Hand-pull or dig small plants before seeds mature, especially when the soil is moist enough to remove the taproot.",
+        "Bag flowering or seeding stems so they do not keep maturing after you cut or pull them.",
+        "Report larger infestations in prairies, natural areas, rights-of-way, or restoration sites and expect follow-up for several years.",
+      ],
+      safetyNotes:
+        "Some people develop skin irritation when handling spotted knapweed, so wear gloves and long sleeves during control work.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/spotted-knapweed",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",
