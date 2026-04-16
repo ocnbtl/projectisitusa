@@ -63,6 +63,34 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.fws.gov/program/invasive-species | Nutria, Northern Snakehead | Current broad federal reference link | Observed in repo on `2026-04-16`; should be replaced with species-specific sources during those rewrites |
 | https://www.eddmaps.org/ | Feral Swine, Nutria, Northern Snakehead | Broad mapping reference in current curated profile sources | Observed in repo on `2026-04-16`; should be replaced with more targeted profile sources during those rewrites |
 
+### Chunk 2A pilot, consulted on 2026-04-16
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.aphis.usda.gov/plant-pests-diseases/japanese-beetle | Japanese Beetle | Origin, host breadth, visual ID, movement concerns |
+| https://extension.umn.edu/node/11076 | Japanese Beetle | Early action timing, hand removal, grub and yard management framing |
+| https://extension.psu.edu/brown-marmorated-stink-bug | Brown Marmorated Stink Bug | Home invasion behavior, crop risk, exclusion and removal guidance |
+| https://cals.cornell.edu/new-york-state-integrated-pest-management/outreach-education/whats-bugging-you/brown-marmorated-stink-bug | Brown Marmorated Stink Bug | Indoor nuisance framing, visual ID, exclusion and vacuum guidance |
+| https://www.aphis.usda.gov/plant-pests-diseases/spongy-moth | Spongy Moth | Egg-mass ID, caterpillar ID, quarantine and self-inspection guidance |
+| https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/spotted-wing-drosophila | Spotted-wing Drosophila | Fruit injury, fly ID, trap and harvest guidance |
+| https://www.aphis.usda.gov/plant-pests-diseases/ifa | Red Imported Fire Ant | Mound ID, sting risk, quarantine and commodity movement guidance |
+| https://extension.umn.edu/plant-diseases/dutch-elm-disease | Dutch Elm Disease | Symptoms, bark beetle spread, root-graft spread, pruning and arborist guidance |
+| https://extension.psu.edu/chestnut-diseases | Chestnut Blight | Canker symptoms, spore signs, removal guidance |
+| https://www.nps.gov/articles/ecological-threats-plants-animals.htm | Chestnut Blight | Forest impact, introduction pathway, ecosystem consequence framing |
+| https://extension.umn.edu/identify-invasive-species/multiflora-rose | Multiflora Rose | Identification, reporting context, seed longevity, spread cues |
+| https://extension.psu.edu/multiflora-rose-control-in-pastures/ | Multiflora Rose | Integrated control and repeat-treatment guidance |
+| https://www.nps.gov/cuva/learn/nature/japanese-honeysuckle.htm | Japanese Honeysuckle | ID, spread pattern, control methods |
+| https://www.nps.gov/articles/000/cheatgrass.htm | Cheatgrass | ID, fire-cycle impact, seed spread and prevention framing |
+| https://extension.psu.edu/the-noxious-persistent-invasive-and-perennial-bindweeds | Field Bindweed | ID cues, persistence, root and rhizome management cautions |
+| https://extension.umn.edu/identify-invasive-species/garlic-mustard | Garlic Mustard | ID, hand-pull timing, reporting and spread prevention |
+| https://www.nps.gov/cuva/learn/nature/garlic-mustard.htm | Garlic Mustard | Forest impact, biennial life cycle, bagging guidance |
+| https://www.nps.gov/cuva/learn/nature/purple-loosestrife.htm | Purple Loosestrife | ID, wetland impact, hand-pull vs larger-treatment framing |
+| https://www.fws.gov/media/purple-loosestrife | Purple Loosestrife | Wetland habitat consequence framing |
+| https://www.usgs.gov/faqs/what-are-zebra-mussels-and-why-should-we-care-about-them | Zebra Mussel | Spread pathway, ecosystem and infrastructure impact |
+| https://extension.umn.edu/identify-invasive-species/zebra-mussel | Zebra Mussel | Identification and Clean, Drain, Dry style public action guidance |
+| https://extension.umn.edu/identify-invasive-species/common-carp | Common Carp | Identification, reporting guidance, habitat-effect summary |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=4 | Common Carp | Ecology, habitat damage, turbidity and plant-loss impacts |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

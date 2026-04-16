@@ -459,6 +459,611 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "popillia-japonica",
+    slug: "popillia-japonica",
+    commonName: "Japanese Beetle",
+    scientificName: "Popillia japonica",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "A highly visible invasive beetle whose adults skeletonize leaves and flowers while its grubs damage turf by feeding on grass roots.",
+    origin: "Native to Japan and first detected in the United States in New Jersey in 1916 after accidental introduction.",
+    whatToLookFor: [
+      "Metallic green beetles with coppery wing covers and small white hair tufts along each side of the abdomen.",
+      "Leaves chewed between the veins so only a lace-like network of tissue remains.",
+      "Browning turf that lifts easily like a loose carpet when grubs have eaten the roots below.",
+    ],
+    whyItMatters:
+      "Japanese beetles feed on more than 300 kinds of plants and can quickly strip ornamentals, grapes, roses, and fruit crops. Their grub stage also weakens lawns and attracts skunks, raccoons, and birds that tear up turf while feeding.",
+    action: {
+      mode: "both",
+      summary:
+        "Start management early, knock down small adult populations by hand when practical, and avoid moving soil, sod, or infested plants out of areas where regulations apply.",
+      steps: [
+        "Inspect susceptible plants in late June and July so you catch adults before large groups build up.",
+        "For small plantings, hand-pick or shake beetles into soapy water instead of letting them feed for weeks.",
+        "If grubs or adults are causing serious damage, follow local extension guidance and movement rules for plants, sod, or soil.",
+      ],
+      contactName: "State agriculture agency or extension office",
+      contactUrl: "https://www.aphis.usda.gov/plant-pests-diseases/japanese-beetle",
+      contactInstructions:
+        "Use APHIS for quarantine and movement guidance, and your state extension service for yard and garden management advice.",
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/japanese-beetle",
+      },
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/node/11076",
+      },
+    ],
+  },
+  {
+    id: "halyomorpha-halys",
+    slug: "halyomorpha-halys",
+    commonName: "Brown Marmorated Stink Bug",
+    scientificName: "Halyomorpha halys",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "An invasive stink bug that damages fruit and vegetable crops outside, then becomes a major nuisance when it overwinters inside homes.",
+    origin: "Native to East Asia and first detected in Pennsylvania in the late 1990s after accidental introduction.",
+    whatToLookFor: [
+      "Shield-shaped brown bugs with a marbled appearance and pale bands on the antennae, legs, and outer edge of the abdomen.",
+      "Clusters of adults gathering on sunny exterior walls, window frames, soffits, and attic spaces in fall.",
+      "Pitted, corky, or misshapen fruit and vegetable damage caused by feeding through the skin.",
+    ],
+    whyItMatters:
+      "Brown marmorated stink bug is both an agricultural pest and a household nuisance. It injures apples, peaches, peppers, tomatoes, and many other crops, and it can invade buildings in large numbers while searching for winter shelter.",
+    action: {
+      mode: "both",
+      summary:
+        "For homes, exclusion is the main fix. For gardens and orchards, use monitoring and crop-specific extension guidance instead of reacting after heavy damage is already underway.",
+      steps: [
+        "Seal gaps around doors, windows, siding, vents, and utility penetrations before fall to reduce indoor overwintering.",
+        "Vacuum bugs that make it inside instead of crushing them, which releases a strong odor and can stain surfaces.",
+        "If plants or fruit are being damaged, document the pest and use local extension recommendations for monitoring and management.",
+      ],
+      safetyNotes:
+        "Perimeter pesticide applications are a last-resort measure and should be used carefully, especially around occupied buildings.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/brown-marmorated-stink-bug",
+      },
+      {
+        label: "Cornell CALS",
+        url: "https://cals.cornell.edu/new-york-state-integrated-pest-management/outreach-education/whats-bugging-you/brown-marmorated-stink-bug",
+      },
+    ],
+  },
+  {
+    id: "lymantria-dispar",
+    slug: "lymantria-dispar",
+    commonName: "Spongy Moth",
+    scientificName: "Lymantria dispar",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Moths & butterflies",
+    summary:
+      "A destructive invasive moth whose caterpillars can strip leaves from hundreds of kinds of trees and shrubs.",
+    origin: "Native to Europe and introduced to the United States more than a century ago, with spread greatly aided by people moving egg masses on outdoor items.",
+    whatToLookFor: [
+      "Buff-colored, fuzzy egg masses on trees, stones, firewood, trailers, grills, toys, and lawn equipment.",
+      "Hairy caterpillars with five pairs of blue dots followed by six pairs of red dots along the back.",
+      "Trees that look suddenly bare in spring or summer, often with frass pellets and chewed leaves below.",
+    ],
+    whyItMatters:
+      "Repeated defoliation weakens and can kill trees, especially oaks and other favored hosts. When large outbreaks happen, they reshape forest cover, stress yard trees, and make human movement of infested items a major spread pathway.",
+    action: {
+      mode: "both",
+      summary:
+        "Destroy reachable egg masses, inspect outdoor items before moving them, and report finds if you are outside regulated or known infested areas.",
+      steps: [
+        "Inspect outdoor household goods, firewood, vehicles, and equipment for egg masses before moving them.",
+        "Scrape egg masses into hot soapy water or a sealed bag so they are fully destroyed.",
+        "If you are outside a quarantine area or unsure of the status, report suspect egg masses or caterpillars to your state agriculture contact.",
+      ],
+      contactName: "State plant regulatory official or plant health director",
+      contactUrl: "https://www.aphis.usda.gov/plant-pests-diseases/spongy-moth",
+      contactInstructions:
+        "APHIS provides quarantine maps, self-inspection guidance, and state contact information for reporting.",
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/spongy-moth",
+      },
+    ],
+  },
+  {
+    id: "drosophila-suzukii",
+    slug: "drosophila-suzukii",
+    commonName: "Spotted-wing Drosophila",
+    scientificName: "Drosophila suzukii",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Flies",
+    summary:
+      "An invasive fruit fly that attacks ripening soft fruit, not just overripe fruit, by laying eggs under the skin before harvest.",
+    origin: "Native to East Asia and first detected in the continental United States in California in 2008 before spreading rapidly across fruit-growing regions.",
+    whatToLookFor: [
+      "Male flies with a single dark spot near the tip of each wing and red eyes on both sexes.",
+      "Soft fruit with tiny punctures, dimpling, wrinkling, or collapse a few days after eggs are laid.",
+      "Small white larvae inside berries, cherries, or other thin-skinned fruit that looked sound at first pick.",
+    ],
+    whyItMatters:
+      "Unlike typical vinegar flies, spotted-wing drosophila attacks marketable fruit before harvest. That makes it a major pest in berries, cherries, grapes, and other soft fruit, and even low infestation levels can ruin an otherwise usable crop.",
+    action: {
+      mode: "both",
+      summary:
+        "Pick fruit promptly, remove infested fruit fast, and monitor early if you grow susceptible berries or cherries.",
+      steps: [
+        "Harvest ripe fruit often and do not leave overripe or damaged fruit hanging on the plant or rotting on the ground.",
+        "Seal and dispose of infested fruit instead of composting it in a way that lets flies keep developing.",
+        "Use traps and extension guidance if you grow susceptible fruit and need to time protective management.",
+      ],
+      contactName: "Extension fruit or garden program",
+      contactUrl: "https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/spotted-wing-drosophila",
+      contactInstructions:
+        "Cornell's fact sheet links to monitoring and management resources that are especially useful for berry and orchard growers.",
+    },
+    source: [
+      {
+        label: "Cornell CALS",
+        url: "https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/spotted-wing-drosophila",
+      },
+    ],
+  },
+  {
+    id: "solenopsis-invicta",
+    slug: "solenopsis-invicta",
+    commonName: "Red Imported Fire Ant",
+    scientificName: "Solenopsis invicta",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "A venomous invasive ant that builds aggressive mound colonies, harms people and animals, and spreads easily in soil, nursery stock, and equipment.",
+    origin: "Native to South America and introduced into the United States through cargo pathways, likely in soil carried by ships.",
+    whatToLookFor: [
+      "Hard, dome-shaped mounds in open sunny places such as lawns, fields, pastures, parks, and roadsides.",
+      "Reddish-brown ants of mixed sizes that swarm rapidly when the mound is disturbed.",
+      "Painful repeated stings that leave burning welts and itchy white pustules.",
+    ],
+    whyItMatters:
+      "Red imported fire ants injure people, livestock, pets, and wildlife, displace native ants, interfere with field work, and can damage crops, seedlings, and equipment in infested areas.",
+    action: {
+      mode: "both",
+      summary:
+        "Avoid disturbing suspected mounds, follow quarantine rules on moving soil and related materials, and use local treatment guidance if the ants are established on your property.",
+      steps: [
+        "Do not stand in or kick suspect mounds, especially where children, pets, or livestock could be stung.",
+        "Do not move soil, baled hay, nursery plants, or soil-moving equipment out of quarantine areas without following the rules.",
+        "If you need treatment guidance, use APHIS and your local extension service rather than improvised remedies.",
+      ],
+      contactName: "State plant regulatory official or extension office",
+      contactUrl: "https://www.aphis.usda.gov/plant-pests-diseases/ifa",
+      contactInstructions:
+        "APHIS provides quarantine maps and regulated articles information. Local extension programs can help with mound treatment options.",
+      safetyNotes:
+        "Fire ants can sting repeatedly. Seek medical care immediately if stings trigger breathing trouble, widespread swelling, or other signs of a serious allergic reaction.",
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/ifa",
+      },
+    ],
+  },
+  {
+    id: "ophiostoma-novo-ulmi",
+    slug: "ophiostoma-novo-ulmi",
+    commonName: "Dutch Elm Disease",
+    scientificName: "Ophiostoma novo-ulmi",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A lethal elm disease spread by bark beetles and root grafts that has already transformed streets, towns, and river-bottom forests across North America.",
+    origin: "An invasive fungal disease complex introduced from outside North America and now spread by elm bark beetles and underground root connections between nearby elms.",
+    whatToLookFor: [
+      "Outer branches that turn yellow, wilt, then brown, often starting in late spring or early summer.",
+      "Leaves falling from one section of the canopy while the rest of the tree still appears green.",
+      "Brown streaking in the sapwood if bark is peeled from a recently wilted branch.",
+    ],
+    whyItMatters:
+      "Dutch elm disease has killed millions of elms, removing one of the classic shade trees of North American towns and floodplains. Once established in a tree, it can also move underground into neighboring elms through root grafts.",
+    action: {
+      mode: "both",
+      summary:
+        "Catch it early, keep beetles from breeding in dead elm wood, and use an arborist when you are dealing with a valuable landscape elm.",
+      steps: [
+        "Do not store recently cut elm logs or firewood with bark attached, because bark beetles can breed in that material.",
+        "If an elm shows fresh wilt, get a sample confirmed quickly instead of waiting to see if it recovers.",
+        "For high-value trees, ask a certified arborist about pruning infected limbs, fungicide injections, and root-graft disruption where appropriate.",
+      ],
+      contactName: "Certified arborist or extension diagnostic program",
+      contactUrl: "https://extension.umn.edu/plant-diseases/dutch-elm-disease",
+      contactInstructions:
+        "The UMN guide explains the main symptoms, how the fungus spreads, and when professional treatment or removal decisions make sense.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/plant-diseases/dutch-elm-disease",
+      },
+    ],
+  },
+  {
+    id: "cryphonectria-parasitica",
+    slug: "cryphonectria-parasitica",
+    commonName: "Chestnut Blight",
+    scientificName: "Cryphonectria parasitica",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "The invasive fungal disease that nearly eliminated mature American chestnut from eastern forests and still kills stems before they can reclaim their former role.",
+    origin: "Introduced from Asia on resistant chestnut stock in the late 1800s and spread through the nursery trade and natural spore movement.",
+    whatToLookFor: [
+      "Sunken or swollen cankers on chestnut trunks or branches, often with orange or yellow-brown bark around the infection.",
+      "Leaves that yellow and brown but stay attached after stems are girdled.",
+      "Orange pimple-like fruiting bodies and yellowish spore masses on active cankers during wet weather.",
+    ],
+    whyItMatters:
+      "Chestnut blight removed a dominant mast-producing canopy tree from eastern forests and changed wildlife food supplies, forest composition, and local economies. Even where chestnut roots still resprout, the blight often kills stems before they mature.",
+    action: {
+      mode: "report",
+      summary:
+        "For most people, the best response is confirmation and sanitation, not do-it-yourself treatment. Existing chestnut sprouts and plantings are worth documenting because restoration efforts depend on good information.",
+      steps: [
+        "Photograph cankers, leaves, and the overall tree or sprout before cutting anything.",
+        "Do not move infected chestnut wood, nursery stock, or bark-covered material to new sites.",
+        "Report suspect trees to an extension, forest health, or chestnut restoration program if the tree could matter for monitoring or conservation work.",
+      ],
+      contactName: "Extension plant disease or forest health program",
+      contactUrl: "https://extension.psu.edu/chestnut-diseases",
+      contactInstructions:
+        "Penn State's chestnut disease page summarizes the classic canker symptoms and notes that infected trees should be removed rather than casually left in place.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/chestnut-diseases",
+      },
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/articles/ecological-threats-plants-animals.htm",
+      },
+    ],
+  },
+  {
+    id: "rosa-multiflora",
+    slug: "rosa-multiflora",
+    commonName: "Multiflora Rose",
+    scientificName: "Rosa multiflora",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A thorny invasive shrub that forms dense, arching thickets in fields, forest edges, stream corridors, and pastures.",
+    origin: "Native to East Asia and intentionally planted in the United States for ornament, erosion control, wildlife cover, and living fences.",
+    whatToLookFor: [
+      "Arching canes with many recurved thorns and compound leaves made up of 5 to 11 toothed leaflets.",
+      "A small fringed structure at the base of each leaf stalk, which helps separate it from many native roses.",
+      "Clusters of white to pinkish flowers in late spring followed by bright red rose hips that persist into winter.",
+    ],
+    whyItMatters:
+      "Multiflora rose creates thickets so dense that they crowd out native plants, block movement, and take over edges, pastures, and young woods. Birds and mammals spread the seeds widely, and the seed bank can last for many years.",
+    action: {
+      mode: "diy",
+      summary:
+        "Small plants can be removed, but established thickets usually need repeated cutting, browsing, herbicide follow-up, or a combination of methods over time.",
+      steps: [
+        "Pull or dig isolated young plants before they fruit if you can remove the root crown.",
+        "Cut or mow repeat growth before the patch sets seed, knowing that one pass will not finish the job.",
+        "Use an integrated control plan for larger thickets and wear heavy gloves, sleeves, and eye protection when cutting or treating canes.",
+      ],
+      safetyNotes:
+        "Dense thickets hide sharp canes and can snap back while cutting, so face and eye protection matter.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/multiflora-rose",
+      },
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/multiflora-rose-control-in-pastures/",
+      },
+    ],
+  },
+  {
+    id: "lonicera-japonica",
+    slug: "lonicera-japonica",
+    commonName: "Japanese Honeysuckle",
+    scientificName: "Lonicera japonica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A vigorous invasive vine that climbs, trails, and forms thick tangles over shrubs, young trees, fences, and field edges.",
+    origin: "Native to Asia and introduced to the United States as an ornamental and for erosion control.",
+    whatToLookFor: [
+      "Opposite oval leaves on twining woody vines, with upper leaves separate rather than fused around the stem.",
+      "Fragrant white flowers that turn yellow with age, followed by dark berries spread by birds.",
+      "Dense evergreen or semi-evergreen mats that smother shrubs and wrap tightly around small trees.",
+    ],
+    whyItMatters:
+      "Japanese honeysuckle grows fast, shades out native ground plants, and can pull down or girdle young shrubs and trees. Because it stays green late into the season, it keeps competing even after many native plants have gone dormant.",
+    action: {
+      mode: "diy",
+      summary:
+        "Cut vines to release trees and shrubs, then follow up on the regrowth. Large infestations usually come back if you only cut them once.",
+      steps: [
+        "Cut climbing vines near the base to stop them from continuing to feed the stems that are already in the canopy.",
+        "Pull or dig small patches when the soil is workable and you can remove as much root material as possible.",
+        "For bigger patches, plan for repeated mowing, cutting, or labeled herbicide follow-up during the periods extension or land managers recommend.",
+      ],
+      safetyNotes:
+        "Do not pull vines out of tree canopies from above head height, because falling stems can bring down dead branches or create trip hazards.",
+    },
+    source: [
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/cuva/learn/nature/japanese-honeysuckle.htm",
+      },
+    ],
+  },
+  {
+    id: "bromus-tectorum",
+    slug: "bromus-tectorum",
+    commonName: "Cheatgrass",
+    scientificName: "Bromus tectorum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "An invasive annual grass that dries early, spreads aggressively in disturbed places, and fuels more frequent and intense wildfire across western landscapes.",
+    origin: "Native to Eurasia and accidentally introduced to the United States in the 1800s, likely as a contaminant in grain and other materials.",
+    whatToLookFor: [
+      "Soft, hairy leaves and drooping seed heads that turn from green to purplish to straw-colored as the season advances.",
+      "Dense stands that green up early, set seed quickly, then become dry and brittle by summer.",
+      "Barbed seeds that stick to socks, bootlaces, fur, and clothing after walking through infested ground.",
+    ],
+    whyItMatters:
+      "Cheatgrass changes the fire cycle by creating a broad layer of flashy fine fuel that burns readily and then comes back fast after fire. That pattern can push out native grasses, sagebrush, and wildflowers and reduce habitat quality over huge areas.",
+    action: {
+      mode: "both",
+      summary:
+        "Prevent spread first. Small patches can be tackled locally, but landscape-scale cheatgrass usually needs coordinated long-term management.",
+      steps: [
+        "Brush seeds off boots, socks, pet fur, tires, and gear before leaving an infested site.",
+        "Bag and remove small patches before they set seed if you can do it without spreading seeds further.",
+        "Report new infestations on public land or in high-value native habitat to the land manager, weed district, or extension contact for your area.",
+      ],
+      safetyNotes:
+        "Avoid working in dry dense cheatgrass during high fire danger, because the dead plants ignite easily and the sharp seeds are hard on skin and pets.",
+    },
+    source: [
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/articles/000/cheatgrass.htm",
+      },
+    ],
+  },
+  {
+    id: "convolvulus-arvensis",
+    slug: "convolvulus-arvensis",
+    commonName: "Field Bindweed",
+    scientificName: "Convolvulus arvensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A persistent invasive perennial vine that creeps, climbs, and re-sprouts from deep roots and rhizomes.",
+    origin: "Native to Europe and Asia and introduced to North America as a long-standing agricultural and roadside weed.",
+    whatToLookFor: [
+      "Slender twining stems that trail across the ground or wrap around crops, shrubs, fences, and stems.",
+      "Arrowhead-shaped leaves with rounded tips and small backward-pointing lobes near the base.",
+      "Small white to pink funnel-shaped flowers followed by seed capsules, often mixed with a mat of older re-sprouting vines.",
+    ],
+    whyItMatters:
+      "Field bindweed competes hard for water and nutrients, tangles around other plants, and is notoriously difficult to eliminate because roots and rhizomes store energy deep below ground. Disturbing it can easily turn one patch into many more shoots.",
+    action: {
+      mode: "diy",
+      summary:
+        "Repeated suppression works better than one big effort. Cutting or digging once almost never finishes the infestation because the root system can keep feeding new growth.",
+      steps: [
+        "Pull or cut the vines repeatedly to exhaust the root system before seed production.",
+        "Do not till an infested patch unless you are prepared for follow-up, because root fragments can help it spread.",
+        "Use a labeled systemic herbicide only when you can treat active regrowth correctly and keep the application off nearby desirable plants.",
+      ],
+      safetyNotes:
+        "Hand pulling helps on small patches, but expect regrowth and avoid wrapping vines around your own plantings while removing them.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/the-noxious-persistent-invasive-and-perennial-bindweeds",
+      },
+    ],
+  },
+  {
+    id: "alliaria-petiolata",
+    slug: "alliaria-petiolata",
+    commonName: "Garlic Mustard",
+    scientificName: "Alliaria petiolata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A shade-tolerant invasive biennial that spreads through woodlands and floodplains, crowding out native spring wildflowers and understory plants.",
+    origin: "Introduced from Europe in the 1800s for food and medicinal use before escaping into forests and disturbed ground.",
+    whatToLookFor: [
+      "First-year rosettes with rounded to kidney-shaped leaves that stay green through winter.",
+      "Second-year stems with heart-shaped toothed leaves and small white four-petaled flowers.",
+      "A distinct garlic smell when leaves or stems are crushed.",
+    ],
+    whyItMatters:
+      "Garlic mustard can dominate the forest floor, crowd out native herbs, and alter soil processes in ways that make recovery harder for native plants. Because deer often avoid it while browsing native plants, infestations can expand quickly once they take hold.",
+    action: {
+      mode: "both",
+      summary:
+        "Small infestations are very manageable if you act before seed drop. Larger woodland infestations need repeated follow-up and sometimes coordinated treatment.",
+      steps: [
+        "Pull plants before the seed pods mature, making sure to remove the root crown so the plant does not keep growing.",
+        "If plants have already flowered or started setting seed, bag and remove them instead of leaving them on site.",
+        "Report large infestations in parks, preserves, or naturalized areas and use local invasive plant guidance for follow-up control.",
+      ],
+      safetyNotes:
+        "Hand pulling is easiest when the soil is moist, but do not leave seed-bearing stems on the ground where seeds can still mature.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/garlic-mustard",
+      },
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/cuva/learn/nature/garlic-mustard.htm",
+      },
+    ],
+  },
+  {
+    id: "lythrum-salicaria",
+    slug: "lythrum-salicaria",
+    commonName: "Purple Loosestrife",
+    scientificName: "Lythrum salicaria",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A striking but harmful wetland invader that forms dense stands along ponds, marshes, ditches, and stream edges.",
+    origin: "Introduced from Europe and Asia in the 1800s, both accidentally and as an ornamental and medicinal plant.",
+    whatToLookFor: [
+      "Tall stems topped with showy magenta flower spikes in mid to late summer.",
+      "Opposite or whorled leaves on square stems, often without noticeable leaf stalks.",
+      "Large clumps with many stems rooted in wet soils, ditches, pond edges, or floodplain ground.",
+    ],
+    whyItMatters:
+      "Purple loosestrife can take over wetlands, reduce plant diversity, and replace habitat structure that waterfowl, amphibians, insects, and other wetland species depend on. It spreads both by huge numbers of seeds and by vegetative growth from the rootstock.",
+    action: {
+      mode: "both",
+      summary:
+        "Act early on small patches and report bigger wetland infestations. Wet sites make careless pulling or herbicide use easy to get wrong.",
+      steps: [
+        "Hand-pull small new infestations before seeds develop and remove as much root material as possible.",
+        "Bag flowering or seed-bearing plants so seeds do not spread during transport or disposal.",
+        "Report large or expanding wetland patches to the local invasive species, park, or natural resource program before attempting a bigger treatment.",
+      ],
+      safetyNotes:
+        "Use extra caution near wetlands and flowing water, where soil disturbance and herbicide mistakes can damage non-target plants and habitat.",
+    },
+    source: [
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/cuva/learn/nature/purple-loosestrife.htm",
+      },
+      {
+        label: "USFWS Media Description",
+        url: "https://www.fws.gov/media/purple-loosestrife",
+      },
+    ],
+  },
+  {
+    id: "dreissena-polymorpha",
+    slug: "dreissena-polymorpha",
+    commonName: "Zebra Mussel",
+    scientificName: "Dreissena polymorpha",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mollusks",
+    summary:
+      "A small invasive freshwater mussel that clings to hard surfaces, clogs water infrastructure, and damages native aquatic communities.",
+    origin: "Native to Eurasia and introduced into the Great Lakes in ballast water before spreading through connected waters and trailered boats.",
+    whatToLookFor: [
+      "Small D-shaped shells, often striped, attached in clusters to rocks, docks, boats, buoys, and native mussels.",
+      "Hard encrusting growth on submerged equipment and water intake structures.",
+      "Sharp shells washed up along shorelines and cut edges around infested docks, beaches, or ramps.",
+    ],
+    whyItMatters:
+      "Zebra mussels filter huge amounts of plankton from the water, disrupt food webs, smother native mussels, and cost water systems and other facilities large sums to keep pipes and intakes clear.",
+    action: {
+      mode: "report",
+      summary:
+        "Treat any suspected new find as a spread-prevention problem first. Boats, trailers, anchors, and bait gear are the main things to clean before moving to another waterbody.",
+      steps: [
+        "Clean, drain, and dry boats, trailers, anchors, live wells, and gear every time you leave the water.",
+        "Do not move water, plants, or attached mussels from one lake or river to another.",
+        "If you suspect a new infestation, photograph the mussels, note the exact waterbody and access point, and report it to the relevant invasive species program.",
+      ],
+      contactName: "State aquatic invasive species program",
+      contactUrl: "https://extension.umn.edu/identify-invasive-species/zebra-mussel",
+      contactInstructions:
+        "The UMN page links to reporting guidance and reinforces the core Clean, Drain, Dry approach that many state programs use.",
+    },
+    source: [
+      {
+        label: "U.S. Geological Survey",
+        url: "https://www.usgs.gov/faqs/what-are-zebra-mussels-and-why-should-we-care-about-them",
+      },
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/zebra-mussel",
+      },
+    ],
+  },
+  {
+    id: "cyprinus-carpio",
+    slug: "cyprinus-carpio",
+    commonName: "Common Carp",
+    scientificName: "Cyprinus carpio",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A widespread invasive fish that uproots plants, muddies shallow water, and degrades habitat for native fish and waterfowl.",
+    origin: "Native to Eurasia and intentionally introduced for food and stocking before spreading widely through North American waters.",
+    whatToLookFor: [
+      "Large brown to golden fish with a long dorsal fin and two pairs of barbels at the mouth.",
+      "Cloudy or muddy water in shallow areas where fish are actively rooting and feeding.",
+      "Shallow vegetated backwaters or ponds where aquatic plants have been uprooted and habitat quality has declined.",
+    ],
+    whyItMatters:
+      "Common carp stir up bottom sediments while feeding, which increases turbidity, releases nutrients, and reduces rooted aquatic vegetation. That combination degrades habitat used by native fish, amphibians, and waterfowl and can push already stressed waters even further out of balance.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not move or release carp into public waters, and report problem populations where local managers are trying to protect shallow lakes, marshes, or restoration sites.",
+      steps: [
+        "Never release live carp into a lake, pond, wetland, or stream.",
+        "If you catch common carp where regulations require harvest or restrict transport, follow those rules exactly.",
+        "Report heavy carp activity or habitat damage in managed lakes, marshes, or restoration areas to the local fish or invasive species program.",
+      ],
+      contactName: "State fisheries or invasive species program",
+      contactUrl: "https://extension.umn.edu/identify-invasive-species/common-carp",
+      contactInstructions:
+        "Use the UMN guide for basic identification and the USGS profile for ecology and impact context when reporting or discussing the fish.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/common-carp",
+      },
+      {
+        label: "U.S. Geological Survey NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=4",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

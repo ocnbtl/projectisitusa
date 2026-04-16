@@ -20,9 +20,13 @@ Each sub-batch gets its own review pass, source update, and lessons-learned repo
 - It avoids flooding the site with shallow filler profiles
 - It gives contributors a clear, repeatable unit of work
 
-## Recommended Chunk 2A Species
+## Current Chunk 2A Pilot
 
-These species were chosen because they are recognizable, high-impact, already have images, and mostly have strong county coverage or public relevance:
+The original draft list for Chunk 2A had a contradiction: it was labeled as 25 profiles but only listed 24 species.
+
+Current execution resolves that by treating Chunk 2A as a 15-profile pilot batch inside the broader 100-profile tranche. If quality, source reuse, and validation remain strong, later sub-batches can scale up again.
+
+## Current Chunk 2A Pilot Species
 
 ### Insects
 
@@ -36,7 +40,6 @@ These species were chosen because they are recognizable, high-impact, already ha
 
 - `ophiostoma-novo-ulmi`: Dutch elm disease
 - `cryphonectria-parasitica`: Chestnut blight
-- `cronartium-ribicola`: White-pine blister rust
 
 ### Plants
 
@@ -44,21 +47,27 @@ These species were chosen because they are recognizable, high-impact, already ha
 - `lonicera-japonica`: Japanese honeysuckle
 - `bromus-tectorum`: Cheatgrass
 - `convolvulus-arvensis`: Field bindweed
-- `cyperus-esculentus`: Yellow nutsedge
 - `alliaria-petiolata`: Garlic mustard
 - `lythrum-salicaria`: Purple loosestrife
-- `elaeagnus-umbellata`: Autumn olive
-- `morus-alba`: White mulberry
-- `frangula-alnus`: Glossy buckthorn
-- `imperata-cylindrica`: Cogongrass
-- `tamarix-ramosissima`: Saltcedar
 
 ### Wildlife
 
 - `dreissena-polymorpha`: Zebra mussel
 - `cyprinus-carpio`: Common carp
-- `corbicula-fluminea`: Asiatic clam
+
+## Deferred From The Earlier Draft 2A List
+
+These species are still strong future candidates, but they were not included in the current pilot:
+
+- `cronartium-ribicola`: White-pine blister rust
+- `cyperus-esculentus`: Yellow nutsedge
+- `elaeagnus-umbellata`: Autumn olive
+- `morus-alba`: White mulberry
+- `frangula-alnus`: Glossy buckthorn
+- `imperata-cylindrica`: Cogongrass
+- `tamarix-ramosissima`: Saltcedar
 - `sturnus-vulgaris`: European starling
+- `corbicula-fluminea`: Asiatic clam
 
 ## Selection Notes
 
@@ -66,7 +75,7 @@ These species were chosen because they are recognizable, high-impact, already ha
 - The list also avoids species that currently lack a usable image or have especially weak public-source coverage.
 - If a selected species turns out to have poor source quality, swap it before drafting rather than forcing weak copy into the tranche.
 
-## Exit Criteria For Chunk 2A
+## Exit Criteria For The Pilot
 
 - All 25 profiles have source-backed, species-specific copy
 - `docs/source-inventory.md` is updated with every new source used
