@@ -8316,6 +8316,317 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "diprion-similis",
+    slug: "diprion-similis",
+    commonName: "Introduced Pine Sawfly",
+    scientificName: "Diprion similis",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "An invasive sawfly that can strip needles from white pines and leave young landscape, nursery, and Christmas tree plantings thin and stressed.",
+    origin:
+      "Native to Europe and introduced to North America through plant movement.",
+    whatToLookFor: [
+      "Larvae with shiny black heads and a double dark stripe along the back, broken up by yellow and white spotting.",
+      "Feeding on eastern white pine first, with older needles chewed in late spring and both old and new needles attacked during the later summer generation.",
+      "Patchy thinning high in the crown, plus small brown cocoons attached to twigs after larvae finish feeding.",
+    ],
+    whyItMatters:
+      "Introduced pine sawfly can thin ornamental and planted pines enough to reduce growth, spoil tree form, and make nursery or Christmas tree stock harder to market. White pine is an especially important host, which makes this species more than a generic conifer nuisance.",
+    action: {
+      mode: "diy",
+      summary:
+        "Small infestations are worth catching early because late-season larvae can move into fresh needles and leave a tree looking stripped.",
+      steps: [
+        "Inspect white pines from late spring through summer so you catch young larvae before heavy feeding is obvious.",
+        "Prune reachable infested shoots or knock small numbers of larvae into soapy water when the tree is small enough to handle safely.",
+        "If multiple branches are thinning, use sawfly-specific local guidance while larvae are still small, and do not rely on caterpillar-only products such as Btk.",
+      ],
+      safetyNotes:
+        "Large pines usually need an arborist or other licensed applicator if treatment is necessary.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/yard-and-garden-insects/sawflies",
+      },
+      {
+        label: "USDA Forest Service Research and Development",
+        url: "https://research.fs.usda.gov/treesearch/658",
+      },
+    ],
+  },
+  {
+    id: "elatobium-abietinum",
+    slug: "elatobium-abietinum",
+    commonName: "Spruce Aphid",
+    scientificName: "Elatobium abietinum",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A nonnative aphid that feeds on mature spruce needles during cool weather and can leave coastal and high-elevation spruce stands thin, brown, and weakened.",
+    origin:
+      "Native to Europe and likely moved into North America on infested nursery stock.",
+    whatToLookFor: [
+      "Tiny green aphids on mature spruce needles during mild fall, winter, or early spring weather.",
+      "Yellow mottling that turns brown, followed by premature needle drop that leaves the inner and lower crown sparse.",
+      "Sticky honeydew, ants, or a sudden flush of needle loss after a mild winter on Sitka, Engelmann, blue, or other spruce hosts.",
+    ],
+    whyItMatters:
+      "Spruce aphid outbreaks can suppress growth, reduce cone production, and contribute to tree mortality after heavy defoliation. Because outbreaks build during mild winters, damage can appear suddenly in places where spruce usually looks stable.",
+    action: {
+      mode: "both",
+      summary:
+        "Document unusual winter or early-spring needle loss and get confirmation before treating, because stressed spruce can be misread as drought or needle disease.",
+      steps: [
+        "Check discolored spruce needles and thinning lower crowns with a hand lens during cool seasons when aphids are active.",
+        "Photograph the host tree, crown condition, and any live aphids or honeydew so a local forester, arborist, or extension office can help confirm the cause.",
+        "If damage is widespread in a neighborhood, coastal planting, or monitored forest setting, report it through local forestry channels and ask about timing before any treatment.",
+      ],
+      safetyNotes:
+        "Do not spray tall spruce casually. Timing matters, and stressed trees may need diagnosis before management.",
+    },
+    source: [
+      {
+        label: "USDA Forest Service Alaska Region",
+        url: "https://www.fs.usda.gov/r10/natural-resources/forest-health/spruce-aphid",
+      },
+      {
+        label: "USDA Forest Service Research and Development",
+        url: "https://research.fs.usda.gov/treesearch/48048",
+      },
+      {
+        label: "USDA Forest Service Region 3",
+        url: "https://www.fs.usda.gov/main/r3/forest-grasslandhealth/insects-diseases",
+      },
+    ],
+  },
+  {
+    id: "solenopsis-richteri",
+    slug: "solenopsis-richteri",
+    commonName: "Black Imported Fire Ant",
+    scientificName: "Solenopsis richteri",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "A stinging invasive ant with a more limited U.S. range than red imported fire ant, but the same ability to turn open ground into a medical, agricultural, and outdoor-use problem.",
+    origin:
+      "Native to South America and accidentally introduced through the port of Mobile, Alabama, in the early 1900s.",
+    whatToLookFor: [
+      "Loose soil mounds in sunny lawns, pastures, roadsides, parks, and field edges, often without a single obvious center opening.",
+      "Aggressive ants of mixed sizes that swarm up rapidly when the mound is disturbed and can deliver multiple painful stings.",
+      "Repeated mounds in the same open area, especially in parts of the Southeast where black or hybrid imported fire ants are known.",
+    ],
+    whyItMatters:
+      "Black imported fire ant creates the same core problems that make other imported fire ants so disruptive: painful stings, trouble for workers and pets, damage to equipment access, and pressure on wildlife and outdoor recreation. Its limited range also makes new infestations worth documenting instead of ignoring.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat suspect colonies carefully and use local extension help when identification or spread matters, because imported, hybrid, and native ants are easy to mix up.",
+      steps: [
+        "Keep children, pets, and bare skin away from active mounds and avoid disturbing them just to see what happens.",
+        "Photograph the mound and collect local identification help if you are outside the known black or hybrid imported fire ant footprint.",
+        "Use imported fire ant bait or mound-treatment guidance from extension sources when management is needed, especially in yards, pastures, and agricultural ground.",
+      ],
+      safetyNotes:
+        "People with fire ant sting allergies should treat mound work as a medical-risk task, not a casual yard chore.",
+    },
+    source: [
+      {
+        label: "Ant Pests",
+        url: "https://ant-pests.extension.org/imported-fire-ants/",
+      },
+      {
+        label: "University of Georgia Extension",
+        url: "https://fieldreport.caes.uga.edu/publications/B1191/",
+      },
+    ],
+  },
+  {
+    id: "alopochen-aegyptiaca",
+    slug: "alopochen-aegyptiaca",
+    commonName: "Egyptian Goose",
+    scientificName: "Alopochen aegyptiaca",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Birds",
+    summary:
+      "A nonnative goose that escapes captivity, establishes on warm urban and suburban waters, and can become an aggressive competitor around nesting sites and shorelines.",
+    origin:
+      "Native to sub-Saharan Africa and the Nile Valley and introduced through escapes from captivity and ornamental waterfowl collections.",
+    whatToLookFor: [
+      "Large tan-brown geese with a pale face, dark eye patch, chest patch, and pink legs.",
+      "Pairs or family groups on ponds, golf-course lakes, park waters, retention basins, and other manicured shorelines.",
+      "Aggressive behavior around nesting areas, cavity sites, or loafing spots shared with native waterfowl and other birds.",
+    ],
+    whyItMatters:
+      "Egyptian geese have a documented invasion history, can damage crops, and compete aggressively for nest space. Their association with waterfowl sites also raises disease-management concerns where domestic birds or dense feral bird concentrations are nearby.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not feed or relocate these birds casually. Document repeated nesting or aggressive concentrations and follow your state wildlife rules before taking action.",
+      steps: [
+        "Photograph adults, juveniles, and nesting activity and note the pond, shoreline, or park location.",
+        "Avoid feeding geese or encouraging ornamental waterfowl concentrations that help them settle in permanently.",
+        "Report expanding populations, especially around natural areas or wildlife-sensitive sites, and check local rules before any harassment or removal.",
+      ],
+      contactName: "State wildlife agency",
+      contactInstructions:
+        "Use your state wildlife reporting system if Egyptian geese are expanding locally or creating repeated conflicts at managed ponds, parks, or nesting sites.",
+      safetyNotes:
+        "Nesting geese can be aggressive. Give adults, nests, and goslings extra space.",
+    },
+    source: [
+      {
+        label: "U.S. Fish and Wildlife Service",
+        url: "https://www.fws.gov/media/ecological-risk-screening-summary-egyptian-goose-alopochen-aegyptiaca-high-risk",
+      },
+      {
+        label: "Florida Fish and Wildlife Conservation Commission",
+        url: "https://myfwc.com/hunting/regulations/nongame/",
+      },
+    ],
+  },
+  {
+    id: "ctenosaura-similis",
+    slug: "ctenosaura-similis",
+    commonName: "Black Spiny-tailed Iguana",
+    scientificName: "Ctenosaura similis",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Reptiles & amphibians",
+    summary:
+      "A large nonnative lizard established in parts of Florida that uses burrows, walls, and rocky developed habitat and can displace native wildlife around sensitive nesting areas.",
+    origin:
+      "Native to Mexico and Central America and introduced through pet releases and other human movement.",
+    whatToLookFor: [
+      "Large dark iguanas with a long banded tail, prominent dorsal spines, and a bulky lizard profile that looks heavier than a green iguana.",
+      "Basking animals on seawalls, roadsides, rocky fill, canal edges, and sunny developed sites near cover.",
+      "Burrow use, tail drags, or repeated lizard activity around sites also used by burrowing wildlife.",
+    ],
+    whyItMatters:
+      "Black spiny-tailed iguanas are not just another escaped pet. In Florida they have been documented as a threat to state-threatened burrowing owls because both species use burrows, and the iguanas can displace the owls from shelter and nesting space.",
+    action: {
+      mode: "report",
+      summary:
+        "Report sightings with photos and location details, especially where the species is using burrows or spreading into new neighborhoods and natural areas.",
+      steps: [
+        "Take a clear photo and record the exact location, because credibility matters for nonnative wildlife reports.",
+        "Do not release pet lizards and do not move animals to another site just to get them off your property.",
+        "Use the FWC IveGot1 reporting system or hotline if the animal is in Florida, especially around burrowing owl habitat or expanding coastal populations.",
+      ],
+      contactName: "Florida Fish and Wildlife Conservation Commission",
+      contactUrl: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      contactInstructions:
+        "FWC prefers IveGot1 app or web reports for small nonnative lizards and iguanas. Include a photo, location, and date.",
+    },
+    source: [
+      {
+        label: "U.S. Fish and Wildlife Service",
+        url: "https://www.fws.gov/species/black-spiny-tailed-iguana-ctenosaura-similis",
+      },
+      {
+        label: "Florida Fish and Wildlife Conservation Commission",
+        url: "https://myfwc.com/get-involved/volunteer/regional-programs/s-region/",
+      },
+      {
+        label: "Florida Fish and Wildlife Conservation Commission Reporting",
+        url: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      },
+    ],
+  },
+  {
+    id: "abrus-precatorius",
+    slug: "abrus-precatorius",
+    commonName: "Rosary Pea",
+    scientificName: "Abrus precatorius",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A highly toxic invasive vine that twines through fences, thickets, and hammocks and is best known for its bright red and black seeds.",
+    origin:
+      "Native to tropical Asia and introduced as an ornamental and novelty-seed plant.",
+    whatToLookFor: [
+      "Slender twining vines with many small paired leaflets that give the foliage a feathery look.",
+      "Light pink pea-like flowers followed by pods that dry, twist open, and reveal glossy red seeds with a black spot.",
+      "Vines scrambling through fence lines, coastal thickets, roadsides, disturbed woods, and other dry to moderately well-drained sites.",
+    ],
+    whyItMatters:
+      "Rosary pea is both an invasive plant and a serious toxicity problem. Its seeds contain abrin, and crushed seeds can poison people, pets, and livestock if ingested. The vine also persists through a tough seed bank and can overrun surrounding vegetation.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat this as a toxic-plant removal problem, not a casual weed pull. Small patches can be handled early, but seed-bearing infestations need extra care.",
+      steps: [
+        "Wear gloves and remove seedlings or small vines before seed pods mature and split open.",
+        "Bag pods and fruiting stems so the bright seeds are not dropped, handled as crafts, or left where children and pets can find them.",
+        "If the vine is large, woody, or tangled through natural vegetation, use local invasive-plant guidance for follow-up herbicide work and monitor for new seedlings.",
+      ],
+      safetyNotes:
+        "Seek immediate medical help for ingestion, or for eye or mouth exposure to plant material or seeds.",
+    },
+    source: [
+      {
+        label: "University of Florida IFAS Center for Aquatic and Invasive Plants",
+        url: "https://plant-directory.ifas.ufl.edu/plant-directory/abrus-precatorius/",
+      },
+      {
+        label: "University of Florida IFAS",
+        url: "https://ask.ifas.ufl.edu/publication/WG209",
+      },
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/viis/planyourvisit/plants-to-avoid-while-hiking.htm?fullweb=1",
+      },
+    ],
+  },
+  {
+    id: "alnus-glutinosa",
+    slug: "alnus-glutinosa",
+    commonName: "European Alder",
+    scientificName: "Alnus glutinosa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A fast-growing introduced alder that escapes wet-site plantings and spreads along pond margins, streams, wetlands, and floodplain edges.",
+    origin:
+      "Native to Europe and introduced to North America for ornamental use and wet-site plantings.",
+    whatToLookFor: [
+      "Rounded leaves with a notched tip and sticky new growth that feels tacky early in the season.",
+      "Dangling male catkins in fall and winter, plus small cone-like female structures that persist on the tree.",
+      "Multi-stemmed trees rooted along ponds, marsh edges, wet woods, or drainageways where water can move seed downstream.",
+    ],
+    whyItMatters:
+      "European alder can invade a wide range of wet and semi-wet habitats, produce large seed crops, and move efficiently by water because seeds can float for over a year. It also hybridizes with other alder species, which raises a separate risk beyond simple site takeover.",
+    action: {
+      mode: "both",
+      summary:
+        "Remove new escapes early and plan for follow-up, because cut trees commonly resprout if they are treated like a one-time pruning job.",
+      steps: [
+        "Do not plant this alder near wetlands, ponds, or drainage corridors where seed can move into natural habitat.",
+        "Pull seedlings and saplings when the soil is workable, or use cut-stump treatment on larger trees so trunks do not simply resprout.",
+        "Report naturalized wetland or shoreline populations where European alder is spreading beyond a planted landscape setting.",
+      ],
+      safetyNotes:
+        "Large wetland trees can be difficult to remove safely. Use extra caution around saturated soils, banks, and water edges.",
+    },
+    source: [
+      {
+        label: "Wisconsin Department of Natural Resources",
+        url: "https://dnr.wisconsin.gov/topic/Invasives/fact/BlackAlder",
+      },
+      {
+        label: "Michigan Department of Natural Resources",
+        url: "https://www.michigan.gov/dnr/managing-resources/forestry/urban/recommended-trees",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

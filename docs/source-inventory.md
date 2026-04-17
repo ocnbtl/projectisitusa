@@ -350,6 +350,28 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.nps.gov/rocr/learn/nature/non-native-plants.htm | Chocolate Vine | Natural-area escape confirmation and park-land invasion context |
 | https://extension.psu.edu/wild-onion-and-wild-garlic | Crow Garlic | Hollow-leaf cue, bulbil reproduction, turf and landscape management framing |
 
+### Chunk 2J targeted backup-pool pass, consulted on 2026-04-17
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://extension.umn.edu/yard-and-garden-insects/sawflies | Introduced Pine Sawfly | Larval ID, host range, two-generation timing, and sawfly-specific management framing |
+| https://research.fs.usda.gov/treesearch/658 | Introduced Pine Sawfly | U.S. introduction context, white-pine damage framing, and regional host note |
+| https://www.fs.usda.gov/r10/natural-resources/forest-health/spruce-aphid | Spruce Aphid | Current Alaska distribution, mild-winter outbreak framing, host range, and public symptom language |
+| https://research.fs.usda.gov/treesearch/48048 | Spruce Aphid | Naming correction from green spruce aphid to spruce aphid in North American usage, size cue, and dormant-needle feeding context |
+| https://www.fs.usda.gov/main/r3/forest-grasslandhealth/insects-diseases | Spruce Aphid | Honeydew, yellow-to-brown needle symptom progression, and lower-crown thinning cues |
+| https://ant-pests.extension.org/imported-fire-ants/ | Black Imported Fire Ant | Introduction history, limited range note, and medical-economic impact framing |
+| https://fieldreport.caes.uga.edu/publications/B1191/ | Black Imported Fire Ant | Urban management framing, nuisance impact, and local-action language |
+| https://www.fws.gov/media/ecological-risk-screening-summary-egyptian-goose-alopochen-aegyptiaca-high-risk | Egyptian Goose | Introduction pathway, nest-site competition, crop-damage risk, and high-risk context |
+| https://myfwc.com/hunting/regulations/nongame/ | Egyptian Goose | Florida regulatory note and conservative state-wildlife action framing |
+| https://www.fws.gov/species/black-spiny-tailed-iguana-ctenosaura-similis | Black Spiny-tailed Iguana | Species overview and public-facing naming support |
+| https://myfwc.com/get-involved/volunteer/regional-programs/s-region/ | Black Spiny-tailed Iguana | Burrowing-owl displacement context and management relevance in south Florida |
+| https://myfwc.com/wildlifehabitats/nonnatives/report/ | Black Spiny-tailed Iguana | Reporting workflow, IveGot1 guidance, and photo-location-date requirements |
+| https://plant-directory.ifas.ufl.edu/plant-directory/abrus-precatorius/ | Rosary Pea | Public-facing common-name cleanup, seed toxicity, fruit and foliage cues, and Florida invasion context |
+| https://ask.ifas.ufl.edu/publication/WG209 | Rosary Pea | Mechanical and herbicide management framing, plus seed toxicity caution |
+| https://www.nps.gov/viis/planyourvisit/plants-to-avoid-while-hiking.htm?fullweb=1 | Rosary Pea | Visitor-safety framing and immediate-medical-attention caution for ingestion or exposure |
+| https://dnr.wisconsin.gov/topic/Invasives/fact/BlackAlder | European Alder | Sticky-leaf ID, cone and catkin cues, water-dispersed seed framing, hybridization risk, and resprout-aware control guidance |
+| https://www.michigan.gov/dnr/managing-resources/forestry/urban/recommended-trees | European Alder | Secondary confirmation that Alnus glutinosa remains listed as invasive and not recommended for community planting |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
