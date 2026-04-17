@@ -1556,6 +1556,736 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "acer-platanoides",
+    slug: "acer-platanoides",
+    commonName: "Norway Maple",
+    scientificName: "Acer platanoides",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A widely planted shade tree that escapes into woodlands, casts heavy shade, and suppresses the native wildflowers and tree seedlings that belong there.",
+    origin:
+      "Native to Europe and western Asia and brought to North America as an ornamental street and yard tree before spreading by seed into natural areas.",
+    whatToLookFor: [
+      "Maple leaves that look broader than tall and bleed milky sap when the leaf stalk is broken.",
+      "Dense rounded canopies and large crops of winged seeds that fall beneath old landscape trees and nearby woods.",
+      "Seedlings and saplings filling the understory of woodlots, parks, or forest edges where spring wildflowers are fading out.",
+    ],
+    whyItMatters:
+      "Norway maple creates deep shade and leaf litter conditions that native woodland plants do not handle well. Over time it can replace more diverse native canopy and understory layers with a simpler, darker forest floor.",
+    action: {
+      mode: "both",
+      summary:
+        "Protect natural areas first. Pull small seedlings early, but use a cut stump approach or professional help for mature trees that are already producing large seed crops.",
+      steps: [
+        "Pull or dig volunteer seedlings and small saplings before they establish deep roots or begin seeding.",
+        "Avoid planting new Norway maples near woods or natural areas, especially where native maple species can fill the same landscape role.",
+        "For mature unwanted trees, use a labeled cut stump treatment or a qualified contractor and then monitor the site for new seedlings.",
+      ],
+      safetyNotes:
+        "Large maples are not casual do-it-yourself removals. If the tree is close to structures, overhead wires, or trails, use a professional.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/norway-maple",
+      },
+      {
+        label: "University of Minnesota Extension Woody Vegetation Control",
+        url: "https://extension.umn.edu/planting-and-growing-guides/woody-vegetation-control",
+      },
+    ],
+  },
+  {
+    id: "microstegium-vimineum",
+    slug: "microstegium-vimineum",
+    commonName: "Japanese Stiltgrass",
+    scientificName: "Microstegium vimineum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A fast-spreading annual grass that creeps into trailsides, lawns, floodplains, and forest understories, where it can form dense mats of seed-producing stems.",
+    origin:
+      "Native to Asia and first documented in the United States in the early 1900s, likely arriving as packing material before spreading through soil, water, shoes, and equipment.",
+    whatToLookFor: [
+      "Narrow pale green leaves with a silvery stripe running slightly off-center down the blade.",
+      "Thin branching stems that root at lower nodes and form loose to dense mats in shady or moist disturbed sites.",
+      "Small seedheads in late summer, followed by tan to orange-brown thatch that lingers after frost.",
+    ],
+    whyItMatters:
+      "Japanese stiltgrass can move quickly from trails, roadsides, and yards into forests and stream edges, where it crowds out native ground flora and leaves behind heavy seedbanks that keep reinvading the site.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth pulling, but timing matters. The goal is to stop seed production without creating a second flush or moving seed farther down the trail or ditch.",
+      steps: [
+        "Pull or string-trim small patches after spring germination is mostly done but before seedheads mature in late summer.",
+        "Clean boots, mower decks, trimmers, and other gear after working in an infested patch so you do not move seed to a new site.",
+        "Report expanding infestations in woods, parks, floodplains, and trail systems where coordinated follow-up will matter more than one-time pulling.",
+      ],
+      safetyNotes:
+        "Do not mow or disturb seed-bearing patches and then leave the clippings on site if seeds are already present.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/japanese-stiltgrass",
+      },
+      {
+        label: "Penn State Extension Garden Control",
+        url: "https://extension.psu.edu/controlling-japanese-stiltgrass-in-your-garden",
+      },
+    ],
+  },
+  {
+    id: "melilotus-officinalis",
+    slug: "melilotus-officinalis",
+    commonName: "Yellow Sweetclover",
+    scientificName: "Melilotus officinalis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A tall fragrant biennial that can spread across roadsides, prairies, river corridors, and disturbed grasslands, especially where open sunny ground gives it room to seed heavily.",
+    origin:
+      "Introduced from Eurasia for forage, soil improvement, and bee forage before spreading into natural areas across much of the United States.",
+    whatToLookFor: [
+      "Bushy second-year plants with many upright stems and three leaflets per leaf.",
+      "Narrow spikes of small yellow pea-like flowers that bloom from late spring into summer.",
+      "Open disturbed sites where sweetclover grows above surrounding grasses and leaves behind many hard seeds.",
+    ],
+    whyItMatters:
+      "Yellow sweetclover can overwhelm open native grasslands and dunes by shading lower plants and building a long-lived seedbank. In the right site it shifts plant structure quickly enough to reduce native diversity and habitat quality.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat it before seeds mature. Small patches are manageable, but once seedbanks build up the site will need repeat visits for multiple seasons.",
+      steps: [
+        "Pull or cut flowering plants before seedpods harden, especially in prairies, dunes, or restorations where native plants still have room to recover.",
+        "Bag seed-bearing stems or remove them from the site so hard seeds are not dropped during transport.",
+        "Report large infestations in natural areas and return for follow-up because new seedlings can keep emerging from the soil seedbank.",
+      ],
+      safetyNotes:
+        "Do not assume a single cut solved the patch. Sweetclover often requires repeat monitoring where seed was already set.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/white-and-yellow-sweetclover",
+      },
+    ],
+  },
+  {
+    id: "sorghum-halepense",
+    slug: "sorghum-halepense",
+    commonName: "Johnsongrass",
+    scientificName: "Sorghum halepense",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tall perennial grass that spreads by both seed and rhizomes, forming dense colonies in fields, roadsides, hay ground, vacant lots, and other hot disturbed sites.",
+    origin:
+      "Native to the Mediterranean region and introduced to the United States in the early 1800s as a forage grass before becoming a major invasive weed.",
+    whatToLookFor: [
+      "Tall cane-like grass with broad leaves and an open purplish or bronze seedhead at the top.",
+      "White rhizomes underground that let patches rebound after cutting or soil disturbance.",
+      "Dense stands along field edges, railroad corridors, roadsides, and warm open ground.",
+    ],
+    whyItMatters:
+      "Johnsongrass is not just a weedy grass. It can dominate cropland edges and rights-of-way, interfere with hay and row crops, and create livestock risk because stressed or wilted growth can contain dangerous cyanide levels.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth hitting early, but established stands are a repeat control problem. Avoid spreading rhizomes and do not casually feed stressed johnsongrass to livestock.",
+      steps: [
+        "Map the patch and treat young growth before it produces seed or spreads farther through rhizomes.",
+        "Avoid moving contaminated hay, soil, or equipment from infested areas without cleaning it first.",
+        "If the stand is large or in forage ground, use local extension guidance for repeated control and keep livestock away from risky stressed growth.",
+      ],
+      safetyNotes:
+        "Johnsongrass can be toxic to livestock after frost, drought, cutting, or herbicide stress. Do not guess about forage safety.",
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/plants/johnsongrass",
+      },
+      {
+        label: "Mississippi State University Extension Service",
+        url: "https://extension.msstate.edu/publications/johnsongrass",
+      },
+    ],
+  },
+  {
+    id: "harmonia-axyridis",
+    slug: "harmonia-axyridis",
+    commonName: "Multicolored Asian Lady Beetle",
+    scientificName: "Harmonia axyridis",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "An introduced lady beetle that helps eat aphids outdoors but becomes a major nuisance when large numbers cluster on homes and move indoors to overwinter.",
+    origin:
+      "Introduced from Asia for biological control and now widespread across much of the United States in agricultural, wooded, suburban, and urban settings.",
+    whatToLookFor: [
+      "Orange, red, yellow, or occasionally black lady beetles with a black M-shaped marking behind the head.",
+      "Large fall aggregations on sunny exterior walls, windows, soffits, and upper stories of buildings.",
+      "Indoor beetles in winter or spring around windows, light-colored walls, and warm rooms.",
+    ],
+    whyItMatters:
+      "This species is unusual because it is both beneficial and invasive in different contexts. Outdoors it can help suppress aphids, but indoors it stains surfaces, bites occasionally, triggers allergies for some people, and becomes a repeated nuisance in fall and winter.",
+    action: {
+      mode: "diy",
+      summary:
+        "The best response is exclusion, not indoor spraying. Keep them out in fall and vacuum stragglers that make it inside.",
+      steps: [
+        "Seal gaps around windows, doors, fascia, vents, and utility penetrations before the fall migration starts.",
+        "Vacuum beetles that enter the home instead of crushing them, which can leave odor and stains.",
+        "Reduce attractants where practical and use a residual exterior barrier only if exclusion alone is not enough and the product is labeled for that use.",
+      ],
+      safetyNotes:
+        "Indoor pesticide spraying is usually a poor fix for overwintering beetles already inside wall voids.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/nuisance-insects/multicolored-asian-lady-beetles",
+      },
+      {
+        label: "University of Minnesota Extension News",
+        url: "https://extension.umn.edu/yard-and-garden-news/soybean-harvest-brings-familiar-pest-asian-lady-beetles",
+      },
+    ],
+  },
+  {
+    id: "cirsium-arvense",
+    slug: "cirsium-arvense",
+    commonName: "Canada Thistle",
+    scientificName: "Cirsium arvense",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A deep-rooted perennial thistle that spreads by both windblown seed and far-reaching horizontal roots, allowing it to form stubborn colonies in fields, yards, and natural areas.",
+    origin:
+      "Introduced from Eurasia and now established across much of North America, especially in disturbed grasslands, roadsides, field margins, and wetter open habitats.",
+    whatToLookFor: [
+      "Patches of upright thistles with many small purple flowerheads rather than one large nodding head.",
+      "Leaves with spiny margins but stems that usually lack the heavy spiny wings seen on many other thistles.",
+      "New shoots emerging in rows or clusters from underground horizontal roots well beyond the original stem.",
+    ],
+    whyItMatters:
+      "Canada thistle keeps winning because it does not rely on seeds alone. Its root system can produce new plants from small fragments, which lets it reclaim ground after casual pulling, mowing, or tillage.",
+    action: {
+      mode: "both",
+      summary:
+        "This is a long game. Small new patches can be weakened early, but established colonies usually need repeated control that targets the root system over time.",
+      steps: [
+        "Cut or pull small patches before flowering if you are trying to stop seed production, but expect regrowth from the roots.",
+        "Do not till or dig established colonies casually, because broken root pieces can create more shoots.",
+        "For larger infestations, follow a repeat treatment plan using mowing, selective herbicide timing, or both, and report natural-area infestations where coordinated management is possible.",
+      ],
+      safetyNotes:
+        "Misidentification matters because native thistles can support wildlife and should not be treated like invasive colonies.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/canada-thistle",
+      },
+      {
+        label: "University of Minnesota Extension IPM",
+        url: "https://blog-fruit-vegetable-ipm.extension.umn.edu/2023/04/a-war-of-attrition-canada-thistle.html",
+      },
+    ],
+  },
+  {
+    id: "leucanthemum-vulgare",
+    slug: "leucanthemum-vulgare",
+    commonName: "Oxeye Daisy",
+    scientificName: "Leucanthemum vulgare",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A familiar-looking white daisy that spreads far beyond gardens into meadows, roadsides, and disturbed grasslands, where it can build persistent patches from seed and rhizomes.",
+    origin:
+      "Introduced from Europe as an ornamental and now naturalized across many temperate parts of North America.",
+    whatToLookFor: [
+      "White daisy-like flowerheads with yellow centers on thin upright stems.",
+      "Dark green toothed leaves that get smaller higher on the stem and a sage-like odor when crushed.",
+      "Clusters or patches in sunny meadows, pastures, old fields, and roadsides where the plant keeps returning year after year.",
+    ],
+    whyItMatters:
+      "Oxeye daisy can look harmless, but in the wrong place it pushes aside native meadow plants and degrades grassland diversity. It also spreads by rhizomes, which makes old infestations harder to remove than they first appear.",
+    action: {
+      mode: "both",
+      summary:
+        "Pull or cut small patches before seeds mature and do not let attractive flowering stems fool you into leaving the problem for later.",
+      steps: [
+        "Pull or dig small clumps when the soil is moist enough to remove as much of the root and rhizome material as possible.",
+        "Mow or cut larger patches before seeds mature if you need to stop a season of spread while planning fuller control.",
+        "Report infestations in prairies, restorations, and natural meadows where long-term follow-up will matter most.",
+      ],
+      safetyNotes:
+        "Garden and florist daisies can look similar, so confirm the plant before treating large patches in mixed plantings.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/oxeye-daisy",
+      },
+    ],
+  },
+  {
+    id: "linaria-vulgaris",
+    slug: "linaria-vulgaris",
+    commonName: "Butter and Eggs",
+    scientificName: "Linaria vulgaris",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A perennial toadflax with bright snapdragon-like flowers that spreads from both seed and roots into roadsides, dry fields, sandy soils, and other open disturbed sites.",
+    origin:
+      "Introduced from Eurasia as an ornamental and medicinal plant before escaping into grasslands, roadsides, and sandy disturbed ground.",
+    whatToLookFor: [
+      "Bright yellow flowers with an orange throat and a long backward spur, packed along upright stems.",
+      "Narrow blue-green leaves crowded up the stem so closely they can appear almost opposite.",
+      "Clumps or colonies emerging from spreading roots in dry sandy or gravelly ground.",
+    ],
+    whyItMatters:
+      "Butter and eggs spreads in two directions at once. It seeds into new open ground while its root system creates local colonies that keep expanding and crowding out native species.",
+    action: {
+      mode: "both",
+      summary:
+        "Tackle it before it builds a larger root network. Pulling can work on very small patches, but established colonies usually need repeat attention.",
+      steps: [
+        "Pull or dig small plants before seed capsules mature, making sure you remove as much root as possible.",
+        "Bag flowering or seed-bearing stems so seeds do not scatter during transport or disposal.",
+        "Report large roadside or natural-area infestations and plan for repeated follow-up because root fragments and dormant seed can restart the patch.",
+      ],
+      safetyNotes:
+        "Do not rely on one quick mow if the stand is already well established. Root systems usually survive and rebound.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/butter-and-eggs",
+      },
+    ],
+  },
+  {
+    id: "abutilon-theophrasti",
+    slug: "abutilon-theophrasti",
+    commonName: "Velvetleaf",
+    scientificName: "Abutilon theophrasti",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A tall annual weed with soft velvety leaves and a long-lived seedbank that makes it a repeat problem in gardens, crop ground, and recently disturbed soil.",
+    origin:
+      "Introduced from Asia for fiber and medicinal use and now widespread as an agricultural and garden weed.",
+    whatToLookFor: [
+      "Large heart-shaped leaves covered in soft hairs that give the plant a velvety texture.",
+      "Yellow flowers followed by round button-like seed capsules packed with many dark seeds.",
+      "Fast-growing upright plants in vegetable beds, field margins, vacant lots, and freshly disturbed soil.",
+    ],
+    whyItMatters:
+      "Velvetleaf does not need to spread far in one season to become a long problem. Its seeds can persist in soil for years, so every plant that reaches maturity can keep repopulating the site long after you thought it was gone.",
+    action: {
+      mode: "diy",
+      summary:
+        "The most practical rule is simple: do not let it set seed. Velvetleaf is much easier to beat by stopping seed rain than by cleaning up after years of missed plants.",
+      steps: [
+        "Pull or hoe plants while they are still small enough to remove before flowering and seed set.",
+        "Remove large plants before the button-like seed capsules mature, and bag them if seeds are already forming.",
+        "Return later in the season and again next year because old seed in the soil can keep producing new flushes.",
+      ],
+      safetyNotes:
+        "Do not compost mature seed capsules unless you are certain the composting process gets hot enough to destroy the seeds.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/weed-identification/annual-broadleaf-weeds",
+      },
+      {
+        label: "University of Minnesota Extension News",
+        url: "https://extension.umn.edu/yard-and-garden-news/zero-seed-rain",
+      },
+    ],
+  },
+  {
+    id: "lespedeza-cuneata",
+    slug: "lespedeza-cuneata",
+    commonName: "Sericea Lespedeza",
+    scientificName: "Lespedeza cuneata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A woody-stemmed perennial legume that invades prairies, pastures, roadsides, and open woods, where it can form dense stands that livestock largely avoid once the plant matures.",
+    origin:
+      "Introduced from eastern Asia for forage, erosion control, land reclamation, and wildlife plantings before spreading into native grasslands and open habitats.",
+    whatToLookFor: [
+      "Bushy plants with many stiff stems and numerous small three-part leaves whose leaflets narrow to a short point.",
+      "Cream to pale yellow flowers tucked close to the stems later in the season.",
+      "Old persistent stems from previous years and expanding patches in open sunny sites, especially pastures and rights-of-way.",
+    ],
+    whyItMatters:
+      "Sericea lespedeza changes the ground layer by outcompeting native grasses and forbs while offering poor value to grazing animals once it gets tough and tannin-rich. That lets it keep spreading where desirable vegetation is being eaten back.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat new patches early and think in terms of integrated follow-up. Once seedbanks and mature stands build up, one treatment pass rarely solves the problem.",
+      steps: [
+        "Map and spot-treat new patches before they spread seed into surrounding prairie, pasture, or roadsides.",
+        "Do not count on mowing, burning, or grazing alone to eliminate an established stand.",
+        "Use local rangeland or extension guidance for integrated control and revisit the site because seeds can keep emerging after the first treatment year.",
+      ],
+      safetyNotes:
+        "Misidentification matters because native lespedezas can look similar at a distance. Confirm the leaflet shape and growth form before large-scale treatment.",
+    },
+    source: [
+      {
+        label: "Oklahoma State University Extension",
+        url: "https://extension.okstate.edu/fact-sheets/ecology-and-management-of-sericea-lespedeza",
+      },
+      {
+        label: "Oklahoma State University Plant ID",
+        url: "https://extension.okstate.edu/programs/plant-id/plant-profiles/sericea-lespedeza/",
+      },
+    ],
+  },
+  {
+    id: "ophiognomonia-clavigignenti-juglandacearum",
+    slug: "ophiognomonia-clavigignenti-juglandacearum",
+    commonName: "Butternut Canker Fungus",
+    scientificName: "Ophiognomonia clavigignenti-juglandacearum",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "The fungal disease behind butternut canker, a lethal problem that has devastated butternut trees across much of their native range.",
+    origin:
+      "Widely treated as an introduced disease in North America and now spread throughout much of the butternut range, where it infects stems and branches through cankers.",
+    whatToLookFor: [
+      "Multiple elongated cracks or sunken cankers on the trunk and larger branches of butternut.",
+      "Dark brown to black staining under the bark around infected areas.",
+      "Progressive crown dieback, dead twigs, and sprouts forming below cankered sections as the tree declines.",
+    ],
+    whyItMatters:
+      "Butternut canker has pushed a native tree into steep decline across broad parts of its range. Losing butternut means losing both a distinctive forest tree and the wildlife value tied to its nuts, canopy role, and genetic diversity.",
+    action: {
+      mode: "report",
+      summary:
+        "Suspected butternut canker should be documented, not guessed at. Existing butternut trees matter for monitoring and possible conservation, so confirmation is more useful than casual cutting.",
+      steps: [
+        "Photograph the trunk cankers, branch dieback, and the whole tree before pruning or removing anything.",
+        "Avoid moving butternut wood, scion material, or nursery stock from suspect trees to new sites.",
+        "Report the tree to an extension, forestry, or conservation program that tracks butternut health and can advise on next steps.",
+      ],
+      contactName: "Extension or forest health program",
+      contactUrl: "https://extension.umn.edu/invasive-species/terrestrial-invasive-species-participatory-science-tips-projects",
+      contactInstructions:
+        "UMN's TIPS program highlights butternut canker as a species worth documenting, and extension diagnostics can help distinguish it from other trunk problems.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension Diagnostics",
+        url: "https://apps.extension.umn.edu/garden/diagnose/plant/deciduous/butternut/trunkdieback.html",
+      },
+      {
+        label: "University of Minnesota Extension TIPS",
+        url: "https://extension.umn.edu/invasive-species/terrestrial-invasive-species-participatory-science-tips-projects",
+      },
+    ],
+  },
+  {
+    id: "datura-stramonium",
+    slug: "datura-stramonium",
+    commonName: "Jimsonweed",
+    scientificName: "Datura stramonium",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A foul-smelling annual nightshade with large trumpet flowers and spiny seed pods that is dangerous because every part of the plant is poisonous.",
+    origin:
+      "Probably introduced long ago from outside the United States and now widespread in disturbed soil, waste ground, gardens, and field margins.",
+    whatToLookFor: [
+      "Large white to pale purple trumpet-shaped flowers that open from an upright bud.",
+      "Egg-shaped spiny seed capsules that split open into four chambers as they mature.",
+      "Coarse branching stems, dark green leaves with a strong unpleasant odor, and a plant that can tower above nearby weeds.",
+    ],
+    whyItMatters:
+      "Jimsonweed is not just another messy weed. Its toxins can seriously poison people, pets, and livestock, and its heavy seed production lets it keep reappearing in disturbed sites if you let plants mature.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat jimsonweed as a poisoning risk first and a weed second. Remove it before seed set, but use care because the plant is dangerous to handle casually.",
+      steps: [
+        "Keep children, pets, and livestock away from the plant and do not allow any part of it to be eaten or used as an herbal experiment.",
+        "Pull small plants with gloves before seed pods mature, or remove larger plants before the capsules ripen and split.",
+        "Bag and dispose of plants or seed pods so they do not shed seed back into the soil or remain accessible to animals.",
+      ],
+      safetyNotes:
+        "Do not burn, ingest, or casually compost jimsonweed. All parts are poisonous, and the seeds are especially dangerous.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/toxic-weed-in-the-landscape-jimsonweed",
+      },
+    ],
+  },
+  {
+    id: "euphorbia-esula",
+    slug: "euphorbia-esula",
+    commonName: "Leafy Spurge",
+    scientificName: "Euphorbia esula",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A deeply rooted perennial spurge that spreads aggressively from both seed and underground buds, allowing it to dominate roadsides, prairies, and other open dry sites.",
+    origin:
+      "Introduced from Eurasia and now widespread in North America, especially across prairies, rights-of-way, and disturbed non-cropland habitats.",
+    whatToLookFor: [
+      "Yellow-green bracts that make the plant look like it is in flower even before the small true flowers are noticed.",
+      "Smooth stems and narrow leaves that release white milky sap when broken.",
+      "Persistent colonies that return from deep roots and spread outward by both seed and root buds.",
+    ],
+    whyItMatters:
+      "Leafy spurge can displace prairie plants, reduce forage value, and hold ground for years because it has both a long-lived root system and a long-lived seedbank. The milky sap can also irritate skin and is toxic to livestock.",
+    action: {
+      mode: "report",
+      summary:
+        "Small finds matter, but established patches usually need coordinated long-term control. Casual mowing or pulling rarely matches the size of the underground root system.",
+      steps: [
+        "Photograph the patch and note whether it is in prairie, pasture, roadside, or another open site where spread could continue quickly.",
+        "Avoid moving soil, hay, or equipment through the infestation without cleaning it first.",
+        "Report infestations to the local invasive plant or land management program and expect repeated treatment over multiple seasons if control begins.",
+      ],
+      safetyNotes:
+        "Wear gloves and eye protection around broken stems because the milky sap can irritate skin and eyes.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/leafy-spurge",
+      },
+      {
+        label: "University of Minnesota Weed ID",
+        url: "https://apps.extension.umn.edu/garden/diagnose/weed/broadleaf/upright/leafyspurge.html",
+      },
+    ],
+  },
+  {
+    id: "hieracium-aurantiacum",
+    slug: "hieracium-aurantiacum",
+    commonName: "Orange Hawkweed",
+    scientificName: "Hieracium aurantiacum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A bright orange hawkweed that spreads by runners, rhizomes, and seed, allowing it to form low mats in northern pastures, roadsides, clearcuts, and open woods.",
+    origin:
+      "Introduced from Europe as an ornamental and now invasive in parts of the United States, especially in cooler and northern regions.",
+    whatToLookFor: [
+      "Leafless flowering stalks topped by clusters of orange to red-orange dandelion-like flowerheads.",
+      "Hairy spatula-shaped basal leaves forming tight rosettes close to the ground.",
+      "Low patches connected by runners that creep outward from the parent plant.",
+    ],
+    whyItMatters:
+      "Orange hawkweed spreads sideways as well as by seed, which helps it fill open ground into nearly solid mats. That kind of growth can crowd out native herbs and reduce species diversity quickly after disturbance.",
+    action: {
+      mode: "both",
+      summary:
+        "Go after new patches early. Once runners and rosettes build a mat, cleanup becomes slower and repeat visits are almost guaranteed.",
+      steps: [
+        "Pull or dig small rosettes and runners before flowering and seed set, removing as much root material as possible.",
+        "Bag flowering stems if they are already producing seed and keep plant fragments from being moved to a new site.",
+        "Report larger infestations in northern natural areas, pastures, or restorations so follow-up control can be coordinated.",
+      ],
+      safetyNotes:
+        "Milky sap and broken stolons can make sloppy hand removal messy and less effective, so clean tools and gloves after the job.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/orange-hawkweed",
+      },
+    ],
+  },
+  {
+    id: "dipsacus-laciniatus",
+    slug: "dipsacus-laciniatus",
+    commonName: "Cutleaf Teasel",
+    scientificName: "Dipsacus laciniatus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A tall spiny biennial that thrives in sunny disturbed ground and flood-prone corridors, where dense seedling stands can choke out nearby vegetation.",
+    origin:
+      "Introduced from Europe and western Asia and now established in many states, especially along roadsides, creeks, and open disturbed sites.",
+    whatToLookFor: [
+      "Large first-year rosettes that stay low but hold many long leaves through winter.",
+      "Tall hollow stems with opposite leaves that join around the stem and create a cup-like basin.",
+      "Large bristly flower heads with pale flowers and shorter bracts than common teasel.",
+    ],
+    whyItMatters:
+      "Cutleaf teasel can build dense stands from heavy seed production, especially where water and disturbance help move seeds around. Once those stands form, native herbs and grasses lose space and light quickly.",
+    action: {
+      mode: "both",
+      summary:
+        "Early rosettes are the best target. Once tall stalks form, the main goal becomes stopping seed production before the patch expands.",
+      steps: [
+        "Dig or cut rosettes below the root crown when the plants are still in the low stage and before they bolt.",
+        "Remove flowering stalks before seed heads mature, and bag them if any viable seed may already be present.",
+        "Report creekside or roadside infestations where seeds can be spread by water, mowing, or vehicle movement.",
+      ],
+      safetyNotes:
+        "Wear gloves and long sleeves. The stalks and heads are stiff and spiny enough to make hand work unpleasant and sloppy.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/common-and-cutleaf-teasel",
+      },
+    ],
+  },
+  {
+    id: "aedes-aegypti",
+    slug: "aedes-aegypti",
+    commonName: "Yellow Fever Mosquito",
+    scientificName: "Aedes aegypti",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Flies",
+    summary:
+      "An invasive container-breeding mosquito that lives around people and can spread viruses such as dengue, Zika, chikungunya, and yellow fever.",
+    origin:
+      "Originally from Africa and now established in many tropical, subtropical, and some temperate parts of the world, including parts of the United States.",
+    whatToLookFor: [
+      "Dark mosquitoes with white markings on the body and banded legs.",
+      "Small water-holding containers such as buckets, tires, plant saucers, toys, tarps, and gutters producing larvae.",
+      "Mosquito activity close to homes, patios, porches, and other places where people spend time outdoors.",
+    ],
+    whyItMatters:
+      "Aedes aegypti is one of the most important disease-vector mosquitoes in the world because it prefers to live near people and feed on them. That makes small unmanaged container habitats around homes a public health problem, not just a nuisance.",
+    action: {
+      mode: "diy",
+      summary:
+        "Source reduction is the first move. Emptying container habitats around homes and yards is more useful than waiting until adult mosquitoes are already everywhere.",
+      steps: [
+        "Dump, scrub, drain, or cover any container that can hold water for more than a few days.",
+        "Use EPA-registered repellent, wear protective clothing, and keep window and door screens in good repair.",
+        "If mosquito activity remains heavy or local health officials issue guidance, follow the local vector-control recommendations for your area.",
+      ],
+      safetyNotes:
+        "Do not rely on one-time yard spraying while leaving water-filled containers in place. The breeding sites will keep replacing the adults.",
+    },
+    source: [
+      {
+        label: "Centers for Disease Control and Prevention",
+        url: "https://www.cdc.gov/dengue/stories/unwanted-mosquitoes.html",
+      },
+      {
+        label: "Centers for Disease Control and Prevention Aedes Life Cycle",
+        url: "https://www.cdc.gov/mosquitoes/about/life-cycle-of-aedes-mosquitoes.html",
+      },
+    ],
+  },
+  {
+    id: "tanacetum-vulgare",
+    slug: "tanacetum-vulgare",
+    commonName: "Common Tansy",
+    scientificName: "Tanacetum vulgare",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A strongly scented perennial with fern-like leaves and flat clusters of yellow button flowers that spreads along roadsides, farmsteads, and disturbed open ground.",
+    origin:
+      "Introduced from Eurasia for ornamental and herbal uses before naturalizing in fields, roadsides, and old home sites.",
+    whatToLookFor: [
+      "Flat-topped clusters of bright yellow button-like flower heads with no white petals.",
+      "Aromatic fern-like leaves that release a strong scent when crushed.",
+      "Multi-stemmed patches arising from persistent roots in sunny disturbed sites.",
+    ],
+    whyItMatters:
+      "Common tansy forms dense stands that reduce forage value, interfere with restoration work, and can be toxic to livestock. Once a patch is well established, root fragments and seed keep it hanging on.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat common tansy before it becomes a large root-connected patch. Small infestations are worth removing, while larger ones usually need repeat management.",
+      steps: [
+        "Pull or dig new plants and small clumps before flowering if the root mass is still manageable.",
+        "Cut and bag flowering stems before seeds mature so they do not spread by roadside maintenance or mowing.",
+        "Report larger infestations in roadsides, pastures, and restoration sites where coordinated follow-up can keep the patch from expanding.",
+      ],
+      safetyNotes:
+        "Do not assume the plant is harmless because it has been used historically in gardens and herbal traditions. It can be toxic if consumed.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/common-tansy",
+      },
+    ],
+  },
+  {
+    id: "securigera-varia",
+    slug: "securigera-varia",
+    commonName: "Crown Vetch",
+    scientificName: "Securigera varia",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A creeping legume once planted for erosion control that now sprawls across roadsides, gravel bars, dunes, and degraded grasslands in dense mats.",
+    origin:
+      "Introduced from Europe and western Asia for slope stabilization, ornament, and roadside plantings before escaping into natural and semi-natural habitats.",
+    whatToLookFor: [
+      "Trailing to low-climbing stems that form tangled patches instead of standing upright like most meadow legumes.",
+      "Compound leaves with many paired leaflets and clusters of pink to lavender pea-like flowers.",
+      "Brown persistent winter patches and finger-like seed pods on older infestations.",
+    ],
+    whyItMatters:
+      "Crown vetch spreads both by seed and by long creeping rhizomes, which lets it blanket open habitat and shade out more diverse native groundcover. What looks like a pretty roadside planting can become a long-running restoration problem.",
+    action: {
+      mode: "report",
+      summary:
+        "Small finds are worth documenting early. Large mats usually need repeat management because the root system and seedbank both help the plant rebound.",
+      steps: [
+        "Photograph the patch and note whether it is in a roadside, prairie, dune, stream edge, or other open habitat likely to spread further.",
+        "Avoid moving soil or plant fragments from infested areas to new sites.",
+        "Report infestations in natural areas and expect repeat treatment over multiple seasons if control begins.",
+      ],
+      safetyNotes:
+        "Crown vetch hay and plant material are not harmless in every context, especially for non-ruminant animals. Do not treat it as a casual forage plant.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/crown-vetch",
+      },
+      {
+        label: "University of Minnesota Forage Guide",
+        url: "https://extension.umn.edu/forage-variety-selection/forage-legumes",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

@@ -114,6 +114,40 @@ These sources are already referenced by current curated profiles, but the origin
 | https://extension.umn.edu/identify-invasive-species/poison-hemlock | Poison Hemlock | Toxicity, purple-blotched stem ID, reporting path, conservative handling guidance |
 | https://extension.umn.edu/identify-invasive-species/spotted-knapweed | Spotted Knapweed | Identification, seed spread, handling caution, reporting context |
 
+### Chunk 2C follow-up, consulted on 2026-04-16
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://extension.umn.edu/identify-invasive-species/norway-maple | Norway Maple | Identification, woodland impact, reporting context |
+| https://extension.umn.edu/planting-and-growing-guides/woody-vegetation-control | Norway Maple | Cut stump and woody invasive control framing, follow-up expectations |
+| https://extension.psu.edu/japanese-stiltgrass | Japanese Stiltgrass | Identification, spread pathways, understory impact, timing of control |
+| https://extension.psu.edu/controlling-japanese-stiltgrass-in-your-garden | Japanese Stiltgrass | Home landscape management framing, practical control timing |
+| https://extension.umn.edu/identify-invasive-species/white-and-yellow-sweetclover | Yellow Sweetclover | Identification, habitat impact, seedbank and reporting context |
+| https://www.invasivespeciesinfo.gov/terrestrial/plants/johnsongrass | Johnsongrass | Origin, introduction pathway, agricultural impact framing |
+| https://extension.msstate.edu/publications/johnsongrass | Johnsongrass | Identification, livestock risk, practical management cautions |
+| https://extension.umn.edu/nuisance-insects/multicolored-asian-lady-beetles | Multicolored Asian Lady Beetle | Identification, indoor nuisance framing, exclusion guidance |
+| https://extension.umn.edu/yard-and-garden-news/soybean-harvest-brings-familiar-pest-asian-lady-beetles | Multicolored Asian Lady Beetle | Origin context, seasonal movement, crop-to-home transition framing |
+| https://extension.umn.edu/identify-invasive-species/canada-thistle | Canada Thistle | Identification, rhizome spread, reporting context |
+| https://blog-fruit-vegetable-ipm.extension.umn.edu/2023/04/a-war-of-attrition-canada-thistle.html | Canada Thistle | Repeat-management framing and root-focused control expectations |
+| https://extension.umn.edu/identify-invasive-species/oxeye-daisy | Oxeye Daisy | Identification, habitat impact, reporting context |
+| https://extension.umn.edu/identify-invasive-species/butter-and-eggs | Butter and Eggs | Identification, root spread, seed persistence, reporting context |
+| https://extension.umn.edu/weed-identification/annual-broadleaf-weeds | Velvetleaf | Identification details, seed capsule traits, general weed framing |
+| https://extension.umn.edu/yard-and-garden-news/zero-seed-rain | Velvetleaf | Seedbank persistence and practical removal timing |
+| https://extension.okstate.edu/fact-sheets/ecology-and-management-of-sericea-lespedeza | Sericea Lespedeza | Origin, ecosystem impact, integrated management framing |
+| https://extension.okstate.edu/programs/plant-id/plant-profiles/sericea-lespedeza/ | Sericea Lespedeza | Identification, leaflet traits, habitat context |
+| https://apps.extension.umn.edu/garden/diagnose/plant/deciduous/butternut/trunkdieback.html | Butternut Canker Fungus | Canker symptoms, dieback pattern, tree-level diagnosis cues |
+| https://extension.umn.edu/invasive-species/terrestrial-invasive-species-participatory-science-tips-projects | Butternut Canker Fungus | Reporting and conservation-monitoring context |
+| https://extension.psu.edu/toxic-weed-in-the-landscape-jimsonweed | Jimsonweed | Toxicity, identification, seed pod cues, safe removal framing |
+| https://extension.umn.edu/identify-invasive-species/leafy-spurge | Leafy Spurge | Identification, ecological impact, reporting context |
+| https://apps.extension.umn.edu/garden/diagnose/weed/broadleaf/upright/leafyspurge.html | Leafy Spurge | Milky sap caution and weed-ID confirmation details |
+| https://extension.umn.edu/identify-invasive-species/orange-hawkweed | Orange Hawkweed | Identification, spread by runners and seed, reporting context |
+| https://extension.umn.edu/identify-invasive-species/common-and-cutleaf-teasel | Cutleaf Teasel | Identification, biennial life cycle, seedbank and reporting context |
+| https://www.cdc.gov/dengue/stories/unwanted-mosquitoes.html | Yellow Fever Mosquito | Public health significance, adult ID, household prevention framing |
+| https://www.cdc.gov/mosquitoes/about/life-cycle-of-aedes-mosquitoes.html | Yellow Fever Mosquito | Container breeding behavior and practical source-reduction guidance |
+| https://extension.umn.edu/identify-invasive-species/common-tansy | Common Tansy | Identification, toxicity, reporting context |
+| https://extension.umn.edu/identify-invasive-species/crown-vetch | Crown Vetch | Identification, rhizome spread, habitat impact, reporting context |
+| https://extension.umn.edu/forage-variety-selection/forage-legumes | Crown Vetch | Origin, historical planting context, livestock caution |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
