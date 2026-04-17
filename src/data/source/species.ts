@@ -2286,6 +2286,2328 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "pyrus-calleryana",
+    slug: "pyrus-calleryana",
+    commonName: "Callery Pear",
+    scientificName: "Pyrus calleryana",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A widely planted ornamental pear that now escapes into roadsides, field edges, and young woods, where it forms thorny thickets and crowds out native trees and shrubs.",
+    origin:
+      "Introduced from Asia as rootstock and as an ornamental landscape tree, including widely planted Bradford pear cultivars that later cross-pollinated and spread by seed.",
+    whatToLookFor: [
+      "Dense clusters of white spring flowers with a strong unpleasant smell.",
+      "Glossy teardrop-shaped leaves with fine teeth and a slightly wavy edge.",
+      "Small hard pear-like fruit, stout thorns on wild plants, and fast-growing seedlings around older landscape trees.",
+    ],
+    whyItMatters:
+      "Callery pear no longer stays where it is planted. Once different cultivars started producing fertile seed, the tree began spreading into open habitat, creating dense thorny stands that shade out native plants and complicate restoration work.",
+    action: {
+      mode: "both",
+      summary:
+        "Small plants are worth removing early, but larger trees usually need cut stump or similar root-focused follow-up so they do not resprout and seed nearby habitat again.",
+      steps: [
+        "Pull seedlings and very small saplings when the soil is moist and you can remove the full root system.",
+        "Cut larger trees only when you are ready to follow with an appropriate cut stump treatment or professional removal plan.",
+        "Watch the area for new seedlings and do not plant or share Callery or Bradford pear cultivars as replacements.",
+      ],
+      safetyNotes:
+        "Wild plants often develop stout thorns, and larger trees can fail unpredictably. Use caution when pruning or felling them.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/callery-pear",
+      },
+    ],
+  },
+  {
+    id: "hedera-helix",
+    slug: "hedera-helix",
+    commonName: "English Ivy",
+    scientificName: "Hedera helix",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "An evergreen ornamental vine and groundcover that slips out of yards, carpets forest floors, and climbs into tree canopies where it can weaken or kill branches over time.",
+    origin:
+      "Introduced from Europe for ornamental use as a landscape vine and shade-tolerant groundcover before spreading into parks, woods, and stream corridors.",
+    whatToLookFor: [
+      "Dark green evergreen leaves with pale veins, especially the familiar three- to five-lobed juvenile leaves.",
+      "Dense mats rooting along the ground and covering soil, logs, and stone walls.",
+      "Climbing vines attached to bark or structures by short aerial rootlets, often reaching high into trees.",
+    ],
+    whyItMatters:
+      "English ivy suppresses wildflowers and tree seedlings on the ground and adds heavy evergreen cover to trunks and branches above. That combination can reduce native plant diversity, increase stress on trees, and make storm damage harder to spot.",
+    action: {
+      mode: "both",
+      summary:
+        "Ground mats and young vines can be tackled by hand. Once ivy has climbed into trees, the first goal is to sever the connection to the roots rather than ripping vines out of the canopy.",
+      steps: [
+        "Pull groundcover and young vines where you can remove the rooted stems and bag any fruiting material.",
+        "Cut climbing vines at chest height and again near the ground so the upper growth dies back in place instead of tearing bark during removal.",
+        "Return for follow-up because missed roots and stem pieces can restart the patch.",
+      ],
+      safetyNotes:
+        "Do not yank living vines out of a tree canopy. Let cut upper sections die before deciding whether any removal is needed.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/english-ivy-in-the-landscape",
+      },
+    ],
+  },
+  {
+    id: "lonicera-maackii",
+    slug: "lonicera-maackii",
+    commonName: "Amur Honeysuckle",
+    scientificName: "Lonicera maackii",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A large invasive shrub that leafs out early, hangs onto leaves late, and fills forest edges and openings with dense shade-producing thickets.",
+    origin:
+      "Introduced from Asia as an ornamental shrub and for erosion control and wildlife plantings before escaping into woods, fields, roadsides, and riparian edges.",
+    whatToLookFor: [
+      "Opposite oval leaves on many arching stems that form a large rounded shrub.",
+      "Fragrant white flowers that age to yellow and later become bright red berries in pairs.",
+      "Tan stringy bark and hollow stems on older shrubs, especially in thicket-forming patches.",
+    ],
+    whyItMatters:
+      "Amur honeysuckle gains a seasonal head start on many native plants by leafing out earlier and staying green later. That helps it cast deep shade, block tree regeneration, and replace more nutritious native fruit sources with lower-value berries.",
+    action: {
+      mode: "both",
+      summary:
+        "Young shrubs can be pulled when the soil is workable, but larger bushes usually need cut stump or other follow-up because cutting alone often leads to resprouting.",
+      steps: [
+        "Pull small plants or dig out shallow roots before the shrub matures enough to seed heavily.",
+        "Cut and treat larger stems with an appropriate follow-up method or use a professional plan for dense thickets.",
+        "Bag berry-bearing branches and monitor the site for new seedlings and stump sprouts.",
+      ],
+      safetyNotes:
+        "Large thickets can hide uneven ground, ticks, and poison ivy. Wear gloves and long sleeves during removal work.",
+    },
+    source: [
+      {
+        label: "Tennessee Division of Forestry",
+        url: "https://www.tn.gov/protecttnforests/invasive-plants/bush-honeysuckle.html",
+      },
+    ],
+  },
+  {
+    id: "celastrus-orbiculatus",
+    slug: "celastrus-orbiculatus",
+    commonName: "Oriental Bittersweet",
+    scientificName: "Celastrus orbiculatus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "An aggressive woody vine that blankets shrubs, climbs into the canopy, and can girdle trunks until whole woodland edges become wrapped in it.",
+    origin:
+      "Introduced from East Asia for ornamental use and later spread by birds, root sprouts, and continued use in decorative cut vines and wreaths.",
+    whatToLookFor: [
+      "Twining woody vines with round to football-shaped toothed leaves arranged alternately.",
+      "Yellow-orange fruit that splits open to reveal a bright red center in fall and winter.",
+      "Red-brown older stems with a cracked fishnet texture and no tendrils or aerial rootlets.",
+    ],
+    whyItMatters:
+      "Oriental bittersweet grows over native vegetation, shades it out, and physically strangles stems and trunks as the vine thickens. Birds spread the fruit widely, and cut roots often respond with vigorous new sprouts.",
+    action: {
+      mode: "both",
+      summary:
+        "Cutting the vine out of a tree relieves immediate pressure, but long-term control depends on injuring the root system and preventing fruit from moving to new sites.",
+      steps: [
+        "Cut climbing vines near the ground and again at waist height so the canopy section can die back without pulling on the host tree.",
+        "Treat regrowth or cut stems with an appropriate follow-up method instead of assuming one cut solved the infestation.",
+        "Do not use fruiting vines in wreaths or arrangements, and report large infestations in woods and natural areas where follow-up will need coordination.",
+      ],
+      safetyNotes:
+        "Cut stems can spring under tension, and fruiting vines keep seeds viable even after drying. Handle removed material carefully.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/oriental-bittersweet",
+      },
+    ],
+  },
+  {
+    id: "ligustrum-sinense",
+    slug: "ligustrum-sinense",
+    commonName: "Chinese Privet",
+    scientificName: "Ligustrum sinense",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A thicket-forming invasive shrub that spreads through fencerows, floodplains, and woodland edges until the understory becomes a near-solid wall of privet.",
+    origin:
+      "Introduced from China as a hedge and ornamental shrub before escaping into natural areas across much of the South and beyond.",
+    whatToLookFor: [
+      "Opposite small leaves on many arching stems, often holding green foliage well into winter.",
+      "Dense multi-stemmed shrubs with small white flower clusters followed by dark purple berries.",
+      "Large colonies in bottomlands, roadsides, old home sites, and forest edges where shade-tolerant thickets have formed.",
+    ],
+    whyItMatters:
+      "Chinese privet produces abundant fruit, resprouts from shallow roots, and can dominate an understory so completely that native herbs, shrubs, and young trees lose light and space. Once the thicket closes in, restoration gets much slower.",
+    action: {
+      mode: "both",
+      summary:
+        "Seedlings and young shrubs are worth removing early. Older privet usually needs repeated follow-up because top-killed plants and shallow roots resprout readily.",
+      steps: [
+        "Pull seedlings and small saplings when the soil is moist enough to remove the root system.",
+        "Cut larger shrubs before fruit is moved farther by birds and use a follow-up plan that addresses resprouting.",
+        "Bag berry-bearing material and return to the site for repeat monitoring and cleanup.",
+      ],
+      safetyNotes:
+        "Dense privet stands often hide vines, uneven ground, and thorny debris, so wear gloves and eye protection during control work.",
+    },
+    source: [
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/chat/learn/nature/privet.htm",
+      },
+    ],
+  },
+  {
+    id: "elaeagnus-angustifolia",
+    slug: "elaeagnus-angustifolia",
+    commonName: "Russian Olive",
+    scientificName: "Elaeagnus angustifolia",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A silvery-leaved tree or large shrub that was widely planted for windbreaks and wildlife cover and now invades riparian corridors, shelterbelts, and open dry ground.",
+    origin:
+      "Introduced from Europe and Asia as an ornamental, wildlife, and conservation planting before spreading from those sites into natural and semi-natural habitats.",
+    whatToLookFor: [
+      "Narrow silvery leaves and twigs that make the whole plant look gray-green from a distance.",
+      "Fragrant yellow flowers and olive-like fruits on thorny or spur-tipped branches.",
+      "Single trees to dense stands along rivers, ditches, shelterbelts, and dry western lowlands.",
+    ],
+    whyItMatters:
+      "Russian olive can replace native riparian trees and shrubs, alter site conditions, and create long-running management problems where birds and water keep moving seed. Stands along waterways are especially troublesome because they interfere with native floodplain recovery.",
+    action: {
+      mode: "both",
+      summary:
+        "Small plants are easiest to remove before they fruit. Larger trees need follow-up after cutting or a coordinated riparian control plan so the site does not simply refill with sprouts and seedlings.",
+      steps: [
+        "Pull or dig seedlings and saplings before they establish a deeper root system.",
+        "Use a cut stump or comparable follow-up approach for larger plants rather than relying on cutting alone.",
+        "Prioritize plants near streams, irrigation corridors, and restoration sites where spread has the biggest downstream effect.",
+      ],
+      safetyNotes:
+        "Thorns, unstable banks, and nearby water can make removal awkward. Use extra caution in riparian sites.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/invasive-autumn-and-russian-olives",
+      },
+    ],
+  },
+  {
+    id: "arundo-donax",
+    slug: "arundo-donax",
+    commonName: "Giant Reed",
+    scientificName: "Arundo donax",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A towering bamboo-like reed that spreads along rivers, ditches, and wet ground, where it builds giant cane thickets that crowd out riparian habitat.",
+    origin:
+      "Introduced for ornamental use and practical purposes such as erosion control and materials, then spread by stem and root fragments through wet disturbed corridors.",
+    whatToLookFor: [
+      "Tall hollow cane-like stems that resemble bamboo and often grow well above a person's height.",
+      "Broad blue-green leaves clasping the stem and large feathery flower plumes late in the season.",
+      "Dense colonies along streambanks, canals, ditches, and other wet disturbed ground.",
+    ],
+    whyItMatters:
+      "Giant reed can dominate streamside habitat, use large amounts of water, and leave a heavy fuel load that promotes intense fire in places that should support diverse riparian vegetation. Fragments moved by floodwater or maintenance can start new colonies quickly.",
+    action: {
+      mode: "report",
+      summary:
+        "Riparian infestations usually need coordinated control because cutting can move fragments downstream and very large root masses make casual removal ineffective.",
+      steps: [
+        "Photograph the patch and note whether it is in a stream corridor, ditch, canal, roadside drainage, or wetland edge.",
+        "Do not cut and leave canes or root pieces where water can carry them to a new site.",
+        "Report infestations to the land manager or invasive species program responsible for that waterway and expect follow-up over multiple seasons.",
+      ],
+      safetyNotes:
+        "Large canes, unstable banks, and fast regrowth make giant reed a poor do-it-yourself project in most waterway settings.",
+    },
+    source: [
+      {
+        label: "California Department of Fish and Wildlife",
+        url: "https://wildlife.ca.gov/Conservation/Plants/Dont-Plant-Me/Giant-Reed",
+      },
+    ],
+  },
+  {
+    id: "paulownia-tomentosa",
+    slug: "paulownia-tomentosa",
+    commonName: "Princess Tree",
+    scientificName: "Paulownia tomentosa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A fast-growing ornamental tree that colonizes roadsides, cliffs, streambanks, burns, and construction sites with huge leaves, showy flowers, and heavy seed production.",
+    origin:
+      "Introduced from Asia as an ornamental and specialty timber tree before escaping into disturbed habitats across much of the eastern United States.",
+    whatToLookFor: [
+      "Very large fuzzy heart-shaped leaves, especially on young vigorous shoots.",
+      "Lavender foxglove-like flowers that appear in spring before full leaf-out.",
+      "Persistent woody seed capsules that remain on branches after the leaves drop.",
+    ],
+    whyItMatters:
+      "Princess tree produces enormous numbers of wind-dispersed seeds and resprouts aggressively after cutting or fire. That combination lets it jump into bare soil and hold disturbed sites before native trees and shrubs can recover.",
+    action: {
+      mode: "both",
+      summary:
+        "Young plants are easiest to pull before they build a woody root system. Mature trees usually need cut stump follow-up and repeat monitoring because sprouts and seedlings keep coming.",
+      steps: [
+        "Pull seedlings and small saplings while the soil is workable and the full root system can still be removed.",
+        "Cut and treat larger trees with an appropriate follow-up method or use a professional plan for heavy resprouting sites.",
+        "Watch the area for fresh seedlings from old seed capsules and remove them before they gain size.",
+      ],
+      safetyNotes:
+        "Do not assume cutting alone solved the problem. Princess tree commonly rebounds from stumps and roots.",
+    },
+    source: [
+      {
+        label: "Tennessee Division of Forestry",
+        url: "https://www.tn.gov/protecttnforests/invasive-plants/paulownia.html",
+      },
+    ],
+  },
+  {
+    id: "vincetoxicum-nigrum",
+    slug: "vincetoxicum-nigrum",
+    commonName: "Black Swallow-Wort",
+    scientificName: "Vincetoxicum nigrum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A twining invasive vine in the milkweed family that spreads through sunny and shady edges, then forms mats that overrun nearby vegetation.",
+    origin:
+      "Introduced from Europe as an ornamental vine before escaping into roadsides, fence rows, quarries, wooded edges, and other disturbed sites.",
+    whatToLookFor: [
+      "Opposite dark green glossy leaves on slender twining stems.",
+      "Small dark purple star-shaped flowers clustered where the leaves meet the stem.",
+      "Smooth narrow milkweed-like pods that split to release many wind-moved seeds.",
+    ],
+    whyItMatters:
+      "Black swallow-wort can smother nearby plants and expand quickly from seed and root crowns. It is especially damaging in places used by monarch butterflies because females may lay eggs on it even though the larvae cannot survive there.",
+    action: {
+      mode: "report",
+      summary:
+        "This is the kind of plant worth reporting early. Eradication is more realistic on small finds than on old seed-producing patches.",
+      steps: [
+        "Photograph the leaves, flowers, and pods so the species can be confirmed accurately.",
+        "Do not move pods, stems, or contaminated soil to another site.",
+        "Report the infestation through the state invasive species channel and expect follow-up that targets both seed and regrowth.",
+      ],
+      safetyNotes:
+        "Do not confuse swallow-worts with native milkweeds when pulling or reporting. Flower color, twining stems, and the glossy leaves help separate them.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/black-swallow-wort",
+      },
+    ],
+  },
+  {
+    id: "persicaria-perfoliata",
+    slug: "persicaria-perfoliata",
+    commonName: "Mile-a-Minute Vine",
+    scientificName: "Persicaria perfoliata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A barbed annual vine that grows with startling speed, tangles over shrubs and young trees, and turns sunny edges into smothered mats by late summer.",
+    origin:
+      "Introduced from Asia in contaminated nursery stock and soil, then spread along moist disturbed corridors such as roadsides, field edges, wetlands, and streambanks.",
+    whatToLookFor: [
+      "Bright green triangular leaves and round cup-like leaf structures that wrap around the stem at each node.",
+      "Thin stems and leaf stalks covered with tiny hooked barbs that grab clothing and nearby plants.",
+      "Small metallic blue berry-like fruit held above a round leafy saucer near the vine tips.",
+    ],
+    whyItMatters:
+      "Mile-a-minute can add several inches of growth in a day and quickly overtop seedlings, shrubs, and restoration plantings. Even though it is an annual, its seed can stay viable in the soil for years and restart the infestation.",
+    action: {
+      mode: "both",
+      summary:
+        "The key is to stop seed production. Small patches can be pulled if you catch them before fruiting, while bigger infestations need repeated follow-up and good sanitation.",
+      steps: [
+        "Pull or cut vines before the blue fruits ripen, wearing gloves and sleeves to handle the barbed stems safely.",
+        "Bag any fruiting material so seed does not finish maturing after you remove it.",
+        "Clean boots, gloves, and equipment after working in the patch and report expanding infestations in natural areas and rights-of-way.",
+      ],
+      safetyNotes:
+        "Barbs on the stems and petioles make quick sloppy removal unpleasant and less effective, so slow down and avoid spreading seed.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/mile-a-minute",
+      },
+    ],
+  },
+  {
+    id: "salvinia-molesta",
+    slug: "salvinia-molesta",
+    commonName: "Giant Salvinia",
+    scientificName: "Salvinia molesta",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A floating invasive fern that links together into thick mats across ponds, backwaters, canals, and marshy edges, blocking light and turning open water into a clogged surface blanket.",
+    origin:
+      "Native to Brazil and introduced through the aquarium and water garden trade before spreading on boats, trailers, and floating plant fragments.",
+    whatToLookFor: [
+      "Pairs of floating leaves covered with dense white hairs that look like tiny egg beaters under close inspection.",
+      "Brown root-like submerged fronds hanging below the plant even though it has no true roots.",
+      "Mature mats where the leaves fold upward and the plants chain together into thick floating rafts.",
+    ],
+    whyItMatters:
+      "Giant salvinia can shut out light, reduce oxygen, crowd out native aquatic plants, and make boating, fishing, and waterfowl habitat much worse. Because it spreads from fragments, even a small hitchhiking piece can start a new infestation.",
+    action: {
+      mode: "report",
+      summary:
+        "Suspected giant salvinia should be documented and reported fast. Moving live plant fragments between waters is one of the main ways it keeps spreading.",
+      steps: [
+        "Remove any suspicious floating fern from boats, trailers, paddles, anchors, and fishing gear before leaving the water.",
+        "Keep the plant contained in a sealed bag or bucket and do not dump it into another waterbody or ditch.",
+        "Report the exact waterbody and location through the state invasive species reporting channel as soon as possible.",
+      ],
+      safetyNotes:
+        "Do not rely on casual cutting or chopping. Fragmenting aquatic weeds often makes the spread problem worse.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/aquatic/giant-salvinia",
+      },
+      {
+        label: "Texas Invasives",
+        url: "https://www.texasinvasives.org/giantsalvinia/",
+      },
+    ],
+  },
+  {
+    id: "myriophyllum-spicatum",
+    slug: "myriophyllum-spicatum",
+    commonName: "Eurasian Watermilfoil",
+    scientificName: "Myriophyllum spicatum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A submerged invasive water plant that forms dense underwater beds, tangles around propellers and gear, and shades out native aquatic vegetation in lakes and slow-moving waters.",
+    origin:
+      "Introduced from Europe, Asia, and North Africa through aquarium and water garden pathways before spreading widely by fragments on boats and trailers.",
+    whatToLookFor: [
+      "Feathery underwater leaves with many fine leaflet pairs arranged around a limp flexible stem.",
+      "Soft stems that collapse when lifted from the water rather than staying stiff and bristly.",
+      "Thick surface-reaching growth and reddish flower spikes in lakes, ponds, reservoirs, and slow rivers.",
+    ],
+    whyItMatters:
+      "Eurasian watermilfoil grows so fast that it can shade native plants and alter fish habitat. It also spreads from small broken fragments, which means normal boating and weed-cutting activity can accidentally seed the next infestation.",
+    action: {
+      mode: "both",
+      summary:
+        "Preventing fragment spread is the main public job. Established infestations usually need lake-scale management instead of casual raking or chopping.",
+      steps: [
+        "Inspect boats, trailers, anchors, motors, and fishing gear for plant fragments before leaving the water.",
+        "Never move live bait, bilge water, or plant material from one lake or pond to another.",
+        "Report heavy infestations to the lake manager or invasive species contact instead of trying to shred the bed yourself.",
+      ],
+      safetyNotes:
+        "Cutting or fragmenting submerged weeds without a disposal plan can spread the plant farther across the same lake or into a new one.",
+    },
+    source: [
+      {
+        label: "Wisconsin Sea Grant",
+        url: "https://www.seagrant.wisc.edu/our-work/focus-areas/ais/invasive-species/invasive-species-fact-sheets/plants/eurasian-watermilfoil/",
+      },
+    ],
+  },
+  {
+    id: "coptotermes-formosanus",
+    slug: "coptotermes-formosanus",
+    commonName: "Formosan Termite",
+    scientificName: "Coptotermes formosanus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Other insects",
+    summary:
+      "An invasive subterranean termite that forms very large colonies and can cause severe structural damage to buildings, utility wood, and even living trees.",
+    origin:
+      "Native to East Asia and introduced through human movement of infested wood and materials before becoming established in parts of the southern United States.",
+    whatToLookFor: [
+      "Mud tubes running up foundations, walls, piers, or other surfaces where termites stay protected from drying out.",
+      "Warm-season swarms of yellow-brown winged termites, often around lights at night.",
+      "Wood that sounds hollow or breaks open to reveal galleries lined with soil-like material.",
+    ],
+    whyItMatters:
+      "Formosan termite colonies can contain millions of individuals and forage over a large area, so damage can build quickly once a colony settles in. The termite is a major structural pest where it is established and can also injure live trees.",
+    action: {
+      mode: "both",
+      summary:
+        "You can reduce risk factors and save evidence, but confirmed or suspected infestations should be handled through professional termite diagnosis and treatment.",
+      steps: [
+        "Collect a few swarmers or photograph mud tubes and damage if you can do it safely.",
+        "Reduce wood-to-soil contact and moisture problems around the structure while you arrange an inspection.",
+        "Call a licensed pest management professional or local extension resource for species confirmation and treatment options.",
+      ],
+      safetyNotes:
+        "Do not assume over-the-counter spot treatments solved a structural infestation. Subterranean termite colonies usually require a whole-system approach.",
+    },
+    source: [
+      {
+        label: "UF IFAS EDIS",
+        url: "https://edis.ifas.ufl.edu/publication/IN278",
+      },
+    ],
+  },
+  {
+    id: "cydalima-perspectalis",
+    slug: "cydalima-perspectalis",
+    commonName: "Box Tree Moth",
+    scientificName: "Cydalima perspectalis",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Moths & butterflies",
+    summary:
+      "An invasive boxwood pest whose caterpillars can strip shrubs down to bare twigs and bark, leaving hedges and foundation plantings badly damaged or dead.",
+    origin:
+      "Native to East Asia and first detected in the United States through infested boxwood shipments before spreading into more states.",
+    whatToLookFor: [
+      "Lime-green caterpillars with black stripes, white spotting, and a shiny black head hidden inside boxwood foliage.",
+      "Webbing, frass, and skeletonized or missing leaves deep in the shrub rather than only on the outside.",
+      "Adult moths with mostly white wings bordered in brown and boxwoods turning brown after repeated defoliation.",
+    ],
+    whyItMatters:
+      "Box tree moth is not just cosmetic damage. Heavy feeding can completely defoliate boxwood, and once the leaves are gone the caterpillars may feed on bark and kill the plant.",
+    action: {
+      mode: "both",
+      summary:
+        "Check boxwoods closely and act early. Small finds can be removed and bagged, while damage outside known infestations should be reported quickly.",
+      steps: [
+        "Inspect inside boxwood shrubs for caterpillars, webbing, and frass rather than looking only at the outer shell of foliage.",
+        "Remove and double-bag infested clippings or heavily infested branches instead of leaving debris under the shrub.",
+        "Report suspicious damage through APHIS or your state plant officials, especially if the moth is not already known from your area.",
+      ],
+      contactName: "USDA APHIS or state plant regulatory officials",
+      contactUrl: "https://www.aphis.usda.gov/plant-pests-diseases/box-tree-moth",
+      contactInstructions:
+        "APHIS provides reporting links and state contacts for suspicious box tree moth finds and boxwood damage.",
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/box-tree-moth",
+      },
+    ],
+  },
+  {
+    id: "discula-destructiva",
+    slug: "discula-destructiva",
+    commonName: "Dogwood Anthracnose",
+    scientificName: "Discula destructiva",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A nonnative fungal disease that attacks flowering and Pacific dogwoods, causing leaf blight, twig dieback, cankers, and in some sites the steady loss of native understory dogwood trees.",
+    origin:
+      "First noticed in the United States in the late 1970s and treated as a nonnative pathogen that spread rapidly through susceptible dogwood populations.",
+    whatToLookFor: [
+      "Tan to brown leaf spots and blighted patches often bordered by purple or reddish margins.",
+      "Lower branch dieback, leaves that stay attached after blighting, and new sprouts along the trunk.",
+      "Affected dogwoods in cool wet shaded sites where the disease keeps moving from leaves into twigs and cankers.",
+    ],
+    whyItMatters:
+      "Dogwood anthracnose has killed large numbers of native dogwoods in forests and weakened many landscape trees. Because dogwoods are valuable understory trees for wildlife and spring bloom, repeated loss changes both habitat and the look of a woodland.",
+    action: {
+      mode: "both",
+      summary:
+        "There is no simple cure, but early diagnosis and stress reduction can matter for high-value trees. Heavily affected dogwoods in shaded wet settings often need realistic expectations.",
+      steps: [
+        "Photograph symptoms on leaves, twigs, and the trunk so you can compare them with extension or arborist guidance.",
+        "Prune dead or infected twigs during dry weather and disinfect pruning tools between cuts.",
+        "Mulch properly, water during drought, and seek extension or certified arborist advice for valuable trees instead of guessing at treatment.",
+      ],
+      safetyNotes:
+        "Avoid moving infected nursery stock or pruned debris to new locations if the material may still carry the pathogen.",
+    },
+    source: [
+      {
+        label: "UMass Extension",
+        url: "https://www.umass.edu/agriculture-food-environment/landscape/fact-sheets/dogwood-anthracnose",
+      },
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/dogwood-diseases",
+      },
+    ],
+  },
+  {
+    id: "pterois-volitans",
+    slug: "pterois-volitans",
+    commonName: "Lionfish",
+    scientificName: "Pterois volitans",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A venomous Indo-Pacific reef fish that now thrives in Atlantic, Caribbean, and Gulf waters, where it preys heavily on native fish and adds pressure to already stressed reefs.",
+    origin:
+      "Introduced through aquarium-related pathways and first detected off Florida in the 1980s before expanding widely through warm western Atlantic waters.",
+    whatToLookFor: [
+      "Red, white, and brown striping with long fan-like venomous spines extending from the fins.",
+      "A hovering predatory fish around reefs, wrecks, ledges, and other hard structure in warm saltwater.",
+      "Single fish or groups using caves, overhangs, and crevices during the day.",
+    ],
+    whyItMatters:
+      "Lionfish eat a wide variety of native reef fish and invertebrates, often with very few predators keeping them in check. Their spread threatens reef biodiversity and can also affect valuable recreational and commercial fisheries.",
+    action: {
+      mode: "both",
+      summary:
+        "Never release aquarium fish, and only remove lionfish if it is legal where you are and you know how to handle a venomous fish safely.",
+      steps: [
+        "Do not release pet fish or aquarium water into the ocean or coastal canals.",
+        "Follow local guidance on lionfish reporting, derby harvests, or diver removal programs if you are in an invaded marine area.",
+        "Use puncture-resistant handling tools and containers because the spines are venomous even when the fish looks manageable.",
+      ],
+      safetyNotes:
+        "Venomous spines can injure divers, anglers, and handlers. Do not improvise with bare hands or casual netting.",
+    },
+    source: [
+      {
+        label: "NOAA Fisheries",
+        url: "https://www.fisheries.noaa.gov/southeast/ecosystems/impacts-invasive-lionfish",
+      },
+      {
+        label: "NOAA Ocean Service",
+        url: "https://oceanservice.noaa.gov/facts/lionfish-facts.html",
+      },
+    ],
+  },
+  {
+    id: "potamopyrgus-antipodarum",
+    slug: "potamopyrgus-antipodarum",
+    commonName: "New Zealand Mud Snail",
+    scientificName: "Potamopyrgus antipodarum",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mollusks",
+    summary:
+      "A tiny invasive freshwater snail that hitchhikes on boots, boats, nets, and gear, then multiplies so heavily that streams can become loaded with mudsnails and short on native invertebrates.",
+    origin:
+      "Native to New Zealand and introduced to North America in the late twentieth century before spreading through rivers, tailwaters, and other freshwater systems.",
+    whatToLookFor: [
+      "Very small dark conical snails on rocks, vegetation, waders, or gear, often only a few millimeters long.",
+      "Dense clusters in stream margins, shallow riffles, and other freshwater habitat where the snails can be easy to overlook.",
+      "A hard shell with an operculum that helps the snail survive transport on damp equipment.",
+    ],
+    whyItMatters:
+      "New Zealand mud snails can reach astonishing densities, compete with native aquatic invertebrates, and consume a large share of the food resources in an invaded stream. That can leave less useful prey for native fish and other wildlife.",
+    action: {
+      mode: "both",
+      summary:
+        "Prevention is the main public action. Once mudsnails are established in a stream, keeping them off gear and out of the next watershed matters most.",
+      steps: [
+        "Remove mud, plants, and debris from boots, waders, nets, boats, and pets before leaving the water.",
+        "Dry, freeze, or otherwise decontaminate gear according to local aquatic invasive species guidance before entering another stream or lake.",
+        "Report suspected finds from new waters and avoid moving bait, water, or wet equipment between sites.",
+      ],
+      safetyNotes:
+        "Because the snails are tiny, visual checks alone are easy to miss. Build cleaning and drying into every trip instead of trusting a quick glance.",
+    },
+    source: [
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/grca/learn/nature/nzmudsnail.htm",
+      },
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/cure/learn/nature/mussel_facts.htm?fullweb=1",
+      },
+    ],
+  },
+  {
+    id: "amynthas-agrestis",
+    slug: "amynthas-agrestis",
+    commonName: "Jumping Worm",
+    scientificName: "Amynthas agrestis",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Other wildlife",
+    summary:
+      "A fast-thrashing invasive earthworm that lives in leaf litter and the top layer of soil, where it strips away organic matter and leaves behind coarse coffee-ground castings.",
+    origin:
+      "Native to East Asia and spread through mulch, compost, potted plants, soil movement, and worm sales before becoming a growing problem in gardens and forests.",
+    whatToLookFor: [
+      "A very active worm that thrashes or moves in a snake-like S pattern when disturbed.",
+      "A smooth cloudy-white clitellum that wraps fully around the body rather than forming a raised saddle.",
+      "Loose dry coffee-ground-like soil and a sudden loss of leaf litter on the ground surface.",
+    ],
+    whyItMatters:
+      "Jumping worms change soil texture, consume the organic layer many plants depend on, and can leave gardens and forest seedlings struggling. Because some populations reproduce without a mate, even a small introduction can start a much larger problem.",
+    action: {
+      mode: "both",
+      summary:
+        "There is no proven yard-scale cure, so prevention and careful disposal matter more than aggressive experimentation.",
+      steps: [
+        "Stop moving mulch, compost, soil, or potted plants from the infested area until you know what is present.",
+        "Collect visible worms for disposal in the trash and do not release them or add them to compost piles.",
+        "Report suspected jumping worms and use clean potting media and bare-root plants when possible to reduce spread.",
+      ],
+      safetyNotes:
+        "Do not buy or share worms sold as jumping worms, snake worms, crazy worms, or Alabama jumpers. Prevention is still the best tool.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/jumping-worms",
+      },
+      {
+        label: "Wisconsin Horticulture",
+        url: "https://hort.extension.wisc.edu/articles/jumping-worms/",
+      },
+    ],
+  },
+  {
+    id: "euonymus-alatus",
+    slug: "euonymus-alatus",
+    commonName: "Winged Burning Bush",
+    scientificName: "Euonymus alatus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A familiar landscape shrub that now escapes into woods and edges, where dense thickets of seedlings and saplings crowd out native understory plants.",
+    origin:
+      "Introduced from northeastern Asia for ornamental planting, then spread into nearby natural areas from heavy fruit production and bird-dispersed seed.",
+    whatToLookFor: [
+      "Corky wing-like ridges running along young stems and twigs.",
+      "Opposite elliptical leaves that turn a vivid red in fall.",
+      "Orange-red fruits that split open in fall and clusters of seedlings beneath older ornamental shrubs.",
+    ],
+    whyItMatters:
+      "Winged burning bush does not stay politely in foundation beds once birds begin moving its seed into nearby woods. It can build a dense shrub layer that steals light, space, and moisture from spring wildflowers, native shrubs, and young trees.",
+    action: {
+      mode: "both",
+      summary:
+        "Small seedlings and young shrubs are worth removing early. Mature plantings keep producing seed, so replacement is often the best long-term fix.",
+      steps: [
+        "Pull or dig seedlings and small saplings when the soil is moist enough to remove the roots cleanly.",
+        "Cut larger shrubs only if you are prepared for follow-up, because stumps and roots can resprout.",
+        "Replace ornamental burning bush plantings with noninvasive shrubs so the site does not keep reseeding nearby habitat.",
+      ],
+      safetyNotes:
+        "Bag fruiting branches and do not dump yard waste near woods, streams, or vacant lots where stems or seed can establish.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/burning-bush",
+      },
+    ],
+  },
+  {
+    id: "rhamnus-cathartica",
+    slug: "rhamnus-cathartica",
+    commonName: "Common Buckthorn",
+    scientificName: "Rhamnus cathartica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A thicket-forming shrub or small tree that leafs out early, holds leaves late, and gradually darkens forest edges and open woods with dense invasive cover.",
+    origin:
+      "Introduced from Europe as a hedge and ornamental plant before escaping into woods, prairies, savannas, and riparian corridors.",
+    whatToLookFor: [
+      "Dark glossy leaves that often stay green well into fall after many native shrubs have dropped leaves.",
+      "Twigs that often end in a sharp thorn and expose orange sapwood when cut.",
+      "Clusters of black berry-like fruit on female plants and multi-stemmed dense patches in the understory.",
+    ],
+    whyItMatters:
+      "Common buckthorn can erase understory diversity over time by casting deep shade and monopolizing space. It also helps move soybean aphids across the landscape, which ties a woodland invader to crop impacts well beyond the thicket itself.",
+    action: {
+      mode: "both",
+      summary:
+        "Early removal matters because seedlings and saplings are easier to handle than old fruiting thickets. Larger infestations usually need repeat follow-up.",
+      steps: [
+        "Pull or dig seedlings and small plants before they begin fruiting and thickening the patch.",
+        "Use a cut stump or similar follow-up approach for larger shrubs instead of assuming one cut solved the problem.",
+        "Bag berry-bearing branches and return for monitoring because missed stems and new seedlings are common.",
+      ],
+      safetyNotes:
+        "Dense buckthorn patches can hide ticks, thorny stems, and uneven ground, so wear gloves and eye protection during removal.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/common-buckthorn",
+      },
+    ],
+  },
+  {
+    id: "iris-pseudacorus",
+    slug: "iris-pseudacorus",
+    commonName: "Yellow Flag Iris",
+    scientificName: "Iris pseudacorus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A showy wetland iris that spreads through shorelines, marsh edges, and ditches, where dense rhizome patches can displace native shoreline vegetation.",
+    origin:
+      "Introduced from Europe, western Asia, and North Africa as an ornamental pond and water garden plant before spreading into natural wetlands and drainage corridors.",
+    whatToLookFor: [
+      "Sword-like leaves in dense basal fans, often blue-green to dark green.",
+      "Large yellow flowers with drooping outer segments marked by brownish veins.",
+      "Thick rhizomes and seed capsules on plants rooted in shallow water, wet soil, or roadside ditches.",
+    ],
+    whyItMatters:
+      "Yellow flag iris can form broad monocultures along wet shorelines and floodplain edges, squeezing out more diverse native plant communities. Once rhizomes knit together, banks and wetland margins become much harder to restore.",
+    action: {
+      mode: "both",
+      summary:
+        "Small ornamental or newly established patches are worth addressing early. Large shoreline or wetland infestations usually need coordinated follow-up.",
+      steps: [
+        "Document the patch and note whether it is rooted in a garden water feature, ditch, pond edge, or natural wetland.",
+        "Dig small clumps only if you can remove the rhizomes and contain all plant pieces so they do not wash away.",
+        "Report larger shoreline infestations to the local invasive species or land management contact instead of fragmenting the patch casually.",
+      ],
+      safetyNotes:
+        "Do not dump rhizomes or seed capsules into compost, drainage ditches, or shoreline brush piles where they can spread.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/yellow-iris",
+      },
+    ],
+  },
+  {
+    id: "butomus-umbellatus",
+    slug: "butomus-umbellatus",
+    commonName: "Flowering Rush",
+    scientificName: "Butomus umbellatus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A wetland and shallow-water invader that forms dense stands along lake edges, slow rivers, and marshy shallows, where it interferes with native habitat and recreation.",
+    origin:
+      "Introduced from Europe and Asia as an ornamental water garden plant before escaping into northern lakes, rivers, wetlands, and irrigation corridors.",
+    whatToLookFor: [
+      "Narrow leaves with a triangular cross section that often twist toward the tip.",
+      "Round umbrella-like flower clusters with many pink flowers on tall stalks.",
+      "Dense shoreline stands or submerged patches in shallow quiet water and ditchy wet margins.",
+    ],
+    whyItMatters:
+      "Flowering rush can build thick monotypic stands that crowd out native emergent plants and complicate boating, fishing, and shoreline access. It also spreads vegetatively, so broken plant pieces and bulbils can start new colonies.",
+    action: {
+      mode: "report",
+      summary:
+        "New finds should be reported quickly. Casual cutting or pulling in water can easily turn one patch into several.",
+      steps: [
+        "Photograph the leaves and flower cluster and record the exact waterbody or shoreline location.",
+        "Do not cut, rake, or move plant fragments unless you are following a management plan that contains them.",
+        "Report the infestation through the state or regional aquatic invasive species channel so it can be verified early.",
+      ],
+      safetyNotes:
+        "Fragments and bulbils spread readily in water, so incomplete removal can make the infestation worse.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/flowering-rush",
+      },
+    ],
+  },
+  {
+    id: "potamogeton-crispus",
+    slug: "potamogeton-crispus",
+    commonName: "Curly-Leaf Pondweed",
+    scientificName: "Potamogeton crispus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A submerged aquatic plant that gets a seasonal head start in cool water, then forms thick beds that crowd native vegetation and foul boating and fishing areas.",
+    origin:
+      "Introduced from Europe, Asia, Africa, and Australia, likely through aquarium and ornamental water pathways before spreading broadly through inland waters.",
+    whatToLookFor: [
+      "Submerged leaves that are dark green, wavy, and finely serrated along the margins.",
+      "Growth that begins early in cool seasons and can reach the surface before many native aquatic plants wake up.",
+      "Dense beds in ponds, lakes, and slow-moving streams, often with flower spikes rising above the water surface.",
+    ],
+    whyItMatters:
+      "Curly-leaf pondweed can dominate a lake early in the season, shading out native plants and hindering fish movement and recreation. When it dies back in summer it can leave behind nutrient pulses and a new crop of turions ready to restart the cycle.",
+    action: {
+      mode: "report",
+      summary:
+        "Prevention and early reporting matter more than casual weed chopping. Fragmenting aquatic plants rarely solves the problem.",
+      steps: [
+        "Inspect boats, trailers, anchors, motors, and gear for plant fragments before leaving the water.",
+        "Do not move live plants, lake water, or muddy equipment from one waterbody to another.",
+        "Report suspected infestations to the lake manager or aquatic invasive species program, especially if the species is new to the site.",
+      ],
+      safetyNotes:
+        "Mechanical cutting without containment can spread pieces across the same lake or into a new one.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/0%2C5664%2C7-324-68002_71240_73848-368761--%2C00.html",
+      },
+    ],
+  },
+  {
+    id: "berberis-vulgaris",
+    slug: "berberis-vulgaris",
+    commonName: "Common Barberry",
+    scientificName: "Berberis vulgaris",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A spiny invasive shrub that can build dense stands in woods, pastures, and disturbed ground while also serving as an alternate host for black stem rust.",
+    origin:
+      "Introduced from Europe as an ornamental and hedge shrub before escaping into old fields, woodland edges, and other open disturbed habitats.",
+    whatToLookFor: [
+      "Clusters of small oval leaves along stems armed with sharp branched spines.",
+      "Drooping clusters of yellow flowers followed by bright red oblong berries.",
+      "Many erect stems that arch outward and form prickly patches in woods and fence lines.",
+    ],
+    whyItMatters:
+      "Common barberry is more than a thorny shrub problem. It can crowd native vegetation, persist from long-lived seed and rhizomes, and complicate agriculture by serving as an alternate host for black stem rust of small grains.",
+    action: {
+      mode: "both",
+      summary:
+        "Young plants are worth removing early. Established barberry often needs careful follow-up because cut stems and root crowns can resprout.",
+      steps: [
+        "Pull or dig small plants before berry production spreads the seed farther into nearby habitat.",
+        "Use a cut stump or similar root-focused approach for older shrubs instead of relying on one quick cut.",
+        "Wear thick gloves and bag fruiting branches so berries are not scattered during cleanup.",
+      ],
+      safetyNotes:
+        "Spines make handling painful and can snag clothing and skin, so eye protection and sturdy gloves are important.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/common-barberry",
+      },
+    ],
+  },
+  {
+    id: "berteroa-incana",
+    slug: "berteroa-incana",
+    commonName: "Hoary Alyssum",
+    scientificName: "Berteroa incana",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A gray-green mustard that spreads through dry disturbed ground, hay fields, and pastures, where it can displace native plants and create serious problems for horses.",
+    origin:
+      "Introduced from Europe and now established across much of the upper Midwest and West in roadsides, sandy sites, meadows, and forage settings.",
+    whatToLookFor: [
+      "Gray-green hairy stems and leaves that give the plant a dusty appearance.",
+      "Small white flowers with four deeply notched petals on long racemes.",
+      "Round to oblong seed pods and dense patches in dry fields, roadsides, hay ground, or pastures.",
+    ],
+    whyItMatters:
+      "Hoary alyssum can reduce plant diversity in open dry habitats, but its livestock risk is what often makes it urgent. Fresh plants and contaminated hay can sicken horses, causing fever, swelling, and potentially serious hoof problems.",
+    action: {
+      mode: "both",
+      summary:
+        "Small infestations are worth pulling before seed set, and hay contamination should be taken seriously wherever horses are present.",
+      steps: [
+        "Pull or bag flowering plants before the seed pods mature, especially in pastures, paddocks, and hay-producing areas.",
+        "Do not feed hay containing hoary alyssum to horses and remove animals from infested forage areas.",
+        "Report expanding roadside or natural-area infestations and monitor the site because the plant can return from seed.",
+      ],
+      safetyNotes:
+        "If horses may have eaten the plant or contaminated hay, contact a veterinarian promptly rather than waiting for symptoms to worsen.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/hoary-alyssum",
+      },
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/horse-pastures-and-facilities/hoary-alyssum-most-common-poisonous-plant-horses-minnesota",
+      },
+    ],
+  },
+  {
+    id: "cynoglossum-officinale",
+    slug: "cynoglossum-officinale",
+    commonName: "Common Houndstongue",
+    scientificName: "Cynoglossum officinale",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A toxic biennial that invades disturbed ground, pastures, roadsides, and open woods, then spreads on clothing, pet fur, and livestock through its barbed burs.",
+    origin:
+      "Introduced from Europe and Asia, likely in contaminated seed or forage, before spreading through western and northern rangelands and disturbed habitats.",
+    whatToLookFor: [
+      "Soft gray-green leaves with obvious veins that resemble a rough dog's tongue.",
+      "Reddish-purple clustered flowers on a second-year flowering stalk.",
+      "Flat prickly burs that cling stubbornly to fur, wool, clothing, and gear.",
+    ],
+    whyItMatters:
+      "Common houndstongue reduces forage value, sticks to animals and people, and can poison livestock when it ends up in hay or feed. Because seeds hitchhike so well, a small roadside or pasture infestation can jump to new places quickly.",
+    action: {
+      mode: "both",
+      summary:
+        "Stopping seed production is the main goal. Small patches are manageable if you remove the root crown and contain the burs.",
+      steps: [
+        "Dig or pull small plants before the burs mature, making sure to remove the root crown rather than just the leaves.",
+        "Bag flowering stalks and burs immediately so seeds are not carried away on clothing, pets, or livestock.",
+        "Check hay, fleece, tack, and pet fur after working in infested areas and report larger spread into rangeland or natural areas.",
+      ],
+      safetyNotes:
+        "Do not let livestock graze contaminated hay or confined patches of this plant. Toxicity is a real concern, especially for horses and cattle.",
+    },
+    source: [
+      {
+        label: "Montana State University Extension",
+        url: "https://www.montana.edu/extension/montguides/montguidehtml/MT199709AG.html",
+      },
+    ],
+  },
+  {
+    id: "tribulus-terrestris",
+    slug: "tribulus-terrestris",
+    commonName: "Puncturevine",
+    scientificName: "Tribulus terrestris",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A low sprawling annual weed that hugs bare ground and produces hard spiny burs notorious for injuring feet, pet paws, and bicycle tires.",
+    origin:
+      "Introduced from the Old World and now common in hot dry disturbed places such as roadsides, fields, gravel lots, and planting beds.",
+    whatToLookFor: [
+      "Flat mat-forming stems radiating from a central taproot across bare soil.",
+      "Opposite compound leaves with many small paired leaflets and small yellow five-petaled flowers.",
+      "Hard burr-like seedpods that split into sharp spiny segments after drying.",
+    ],
+    whyItMatters:
+      "Puncturevine spreads quickly across open disturbed ground and keeps reseeding all season. Its burs are more than a nuisance because they help the plant move on tires, shoes, fur, and equipment while also making infested areas unpleasant to use.",
+    action: {
+      mode: "both",
+      summary:
+        "The easiest time to win is before the spiny burs form. Once those seedpods mature, cleanup becomes slower and more painful.",
+      steps: [
+        "Pull plants while the taproot is still easy to remove and before the burs harden and scatter.",
+        "Bag pulled plants and rake or sweep up any dropped seedpods instead of leaving them on the ground.",
+        "Monitor bare compacted areas repeatedly through summer because new seedlings keep emerging.",
+      ],
+      safetyNotes:
+        "Wear sturdy gloves and shoes during cleanup. The dried burs can easily puncture skin, pet paws, and bike tires.",
+    },
+    source: [
+      {
+        label: "Utah State University Extension",
+        url: "https://extension.usu.edu/pests/ipm/ornamental-pest-guide/weeds/w_puncturevine.php",
+      },
+      {
+        label: "Colorado State University Extension",
+        url: "https://adams.extension.colostate.edu/ag-acreage/puncturevine/",
+      },
+    ],
+  },
+  {
+    id: "ulmus-pumila",
+    slug: "ulmus-pumila",
+    commonName: "Siberian Elm",
+    scientificName: "Ulmus pumila",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A fast-growing elm of dry disturbed ground that throws abundant seed, colonizes prairies and edges quickly, and can dominate open sites within a few years.",
+    origin:
+      "Introduced from Asia for shelterbelts, urban planting, and difficult sites before escaping into grasslands, roadsides, vacant lots, and open woods.",
+    whatToLookFor: [
+      "Small toothed elm leaves with a less uneven base than native American elm.",
+      "Thin zig-zag twigs and a loose rounded crown on mature trees.",
+      "Clusters of winged seeds in spring and dense young saplings filling disturbed open ground.",
+    ],
+    whyItMatters:
+      "Siberian elm establishes fast on poor dry soils where native trees and shrubs struggle to get started. Once seed rain and sapling recruitment build up, it can move into prairie and savanna habitat and make restoration much more labor-intensive.",
+    action: {
+      mode: "both",
+      summary:
+        "Seedlings and young saplings are the best targets. Older trees usually require a root-focused follow-up plan so they do not simply resprout or keep seeding the site.",
+      steps: [
+        "Pull or dig small seedlings and saplings while roots are still manageable.",
+        "Cut larger trees only if you are ready for cut stump follow-up or coordinated restoration work afterward.",
+        "Watch disturbed soil and recently cleared areas for new seedlings each spring and remove them promptly.",
+      ],
+      safetyNotes:
+        "Large trees can shed limbs unpredictably in wind and decay, so use caution when pruning or felling mature Siberian elm.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/siberian-elm",
+      },
+    ],
+  },
+  {
+    id: "fallopia-japonica",
+    slug: "fallopia-japonica",
+    commonName: "Japanese Knotweed",
+    scientificName: "Fallopia japonica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A bamboo-like perennial that builds dense cane thickets along roadsides, streambanks, wet depressions, and vacant lots, where it can crowd out almost everything else.",
+    origin:
+      "Introduced from Asia as an ornamental and screening plant before spreading by rhizomes and broken stem pieces into disturbed moist habitats.",
+    whatToLookFor: [
+      "Tall hollow stems with swollen nodes that give the plant a bamboo-like look.",
+      "Broad leaves with a flat base and pointed tip arranged alternately along the cane.",
+      "Creamy white flower clusters in late summer and persistent dead canes standing through winter.",
+    ],
+    whyItMatters:
+      "Japanese knotweed grows aggressively from underground rhizomes and stem fragments, forming thick stands that shut out native vegetation. Along waterways it can increase management difficulty and leave banks vulnerable once winter dieback exposes bare ground.",
+    action: {
+      mode: "both",
+      summary:
+        "Small edge infestations are worth catching early, but large riparian patches usually take repeated coordinated control and very careful sanitation.",
+      steps: [
+        "Mark the patch boundary so you can watch how far the rhizomes are spreading beyond the visible stems.",
+        "Do not mow, dump, or move cut stems and soil from the site unless you can fully contain the fragments.",
+        "Report or coordinate treatment for large streamside infestations and expect multi-season follow-up instead of a one-time fix.",
+      ],
+      safetyNotes:
+        "Broken stems and rhizome pieces can start new plants. Casual cutting without a disposal plan often spreads the problem.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/shrubs/japanese-knotweed",
+      },
+    ],
+  },
+  {
+    id: "ranunculus-ficaria",
+    slug: "ranunculus-ficaria",
+    commonName: "Lesser Celandine",
+    scientificName: "Ranunculus ficaria",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "An early spring invader that forms glossy green carpets in floodplains, trailsides, and moist woods before disappearing and leaving bare soil behind by late spring.",
+    origin:
+      "Introduced from Europe, North Africa, and western Asia as an ornamental groundcover, then spread through floodplains and moist disturbed habitats.",
+    whatToLookFor: [
+      "Shiny dark green kidney- or heart-shaped leaves in low spreading patches.",
+      "Bright yellow flowers with many narrow petals, often appearing before tree leaf-out.",
+      "Tiny bulbils where leaves meet stems and small underground tubers on uprooted plants.",
+    ],
+    whyItMatters:
+      "Lesser celandine gets an early seasonal jump on native spring wildflowers and can blanket floodplain forests in dense mats. When it goes dormant it leaves open soil that invites erosion and makes room for other invasive species to move in.",
+    action: {
+      mode: "both",
+      summary:
+        "Early detection matters because the plant is easiest to find in spring and easy to spread if bulbils or tubers are moved carelessly.",
+      steps: [
+        "Photograph the leaves, flowers, and habitat because the plant can vanish quickly after spring.",
+        "Pull very small patches only if you can bag the full plant, including bulbils and tubers, without shaking them loose into the soil.",
+        "Report larger populations in floodplains, trailsides, and natural areas so managers can track and contain spread.",
+      ],
+      safetyNotes:
+        "Do not compost pulled plants. Tubers and bulbils can survive and restart the infestation elsewhere.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/herbs/lesser-celandine",
+      },
+    ],
+  },
+  {
+    id: "tomicus-piniperda",
+    slug: "tomicus-piniperda",
+    commonName: "Larger Pine Shoot Beetle",
+    scientificName: "Tomicus piniperda",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "An invasive bark beetle of pine that breeds under bark and then tunnels into new shoots, causing dieback and a ragged thinning look in infested trees.",
+    origin:
+      "Native to Europe and Asia, first found in the United States in 1992, and spread through pine-growing regions by infested material and natural dispersal.",
+    whatToLookFor: [
+      "Broken or browning pine shoots with a round entry hole and often pitch around the hole.",
+      "Tunnels under the bark of pine logs, stumps, or stressed trees.",
+      "Dark brown to black small beetles associated with Scotch pine and other pines.",
+    ],
+    whyItMatters:
+      "Larger pine shoot beetle injures the current and one-year-old shoots that shape a pine's crown and growth. Even where it does not kill a tree outright, repeated shoot feeding can reduce vigor and create long-running problems in Christmas tree, nursery, and pine production settings.",
+    action: {
+      mode: "report",
+      summary:
+        "Suspected damage is worth documenting, especially in pine plantings or production sites. Management and confirmation usually need a specialist.",
+      steps: [
+        "Photograph damaged shoots, any pitch-marked entry holes, and the affected pine species if you can identify it.",
+        "Do not move suspicious pine logs, cut greenery, or infested shoot material to a new site.",
+        "Report the find to your state agriculture or forestry contact so the damage can be confirmed and tracked.",
+      ],
+      safetyNotes:
+        "Many pine pests and diseases can look similar. Avoid assuming the cause from one damaged shoot alone.",
+    },
+    source: [
+      {
+        label: "Minnesota Department of Agriculture",
+        url: "https://www.mda.state.mn.us/es/node/737",
+      },
+    ],
+  },
+  {
+    id: "otiorhynchus-sulcatus",
+    slug: "otiorhynchus-sulcatus",
+    commonName: "Black Vine Weevil",
+    scientificName: "Otiorhynchus sulcatus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "A flightless invasive weevil whose adults notch leaves while its hidden larvae chew roots and crowns of ornamental and nursery plants.",
+    origin:
+      "Native to Europe and established in North America for more than a century, especially in nurseries, landscapes, and plantings with favored evergreen hosts.",
+    whatToLookFor: [
+      "Distinct scalloped notches along the edges of rhododendron, yew, euonymus, and other broadleaf evergreen leaves.",
+      "Slate gray to black adult weevils with a short snout, active mostly at night.",
+      "White legless C-shaped grubs in the soil or around roots of declining container or landscape plants.",
+    ],
+    whyItMatters:
+      "Adult feeding looks cosmetic at first, but the root-feeding larvae are the stage that kills plants. Infested nursery stock and landscape plants can collapse after larvae girdle roots or crowns below ground where the damage is easy to miss.",
+    action: {
+      mode: "both",
+      summary:
+        "Leaf notching is a good early warning sign. Severe infestations usually need a nursery or landscape pest management plan rather than guesswork.",
+      steps: [
+        "Check host plants at night or under boards and burlap if you are trying to confirm the presence of adult weevils.",
+        "Inspect the root zone of declining container plants for white grubs before moving or sharing the plants.",
+        "Use extension or professional guidance for timing control, especially if valuable nursery or foundation plants are involved.",
+      ],
+      safetyNotes:
+        "Do not assume all leaf notching is harmless. Root injury can be severe long before the top of the plant shows obvious decline.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/black-vine-weevil/",
+      },
+    ],
+  },
+  {
+    id: "adelges-piceae",
+    slug: "adelges-piceae",
+    commonName: "Balsam Woolly Adelgid",
+    scientificName: "Adelges piceae",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A tiny invasive sap-feeding insect of true firs that can deform branches, stunt crowns, and kill susceptible trees over time.",
+    origin:
+      "Introduced from Europe and now established in parts of the United States where true fir hosts are present in forests or ornamental plantings.",
+    whatToLookFor: [
+      "Small white cottony tufts on fir bark, branches, or boles, especially in spring and fall.",
+      "Misshapen crowns, shortened branch growth, and drooping or broken tops on infested trees.",
+      "Red flagging branches or resinous feeding sites on stressed firs.",
+    ],
+    whyItMatters:
+      "Balsam woolly adelgid interferes with the transport of water and nutrients inside the tree, which can lead to chronic decline or fairly rapid death in susceptible fir species. It can reshape forest structure and damage ornamental firs long before most people notice the insect itself.",
+    action: {
+      mode: "report",
+      summary:
+        "Suspected infestations should be documented and referred to forestry or extension specialists. Tree species, location, and symptoms matter for confirmation.",
+      steps: [
+        "Photograph the white waxy tufts, affected bark, and the overall crown condition of the fir.",
+        "Avoid moving infested fir material, wreath greenery, nursery stock, or Christmas tree material from the site.",
+        "Report the find to the state forestry or plant health contact so the host and infestation can be verified.",
+      ],
+      safetyNotes:
+        "Many people first notice tree decline rather than the insect. Do not wait for whole-tree mortality before seeking confirmation.",
+    },
+    source: [
+      {
+        label: "USDA Forest Service",
+        url: "https://www.fs.usda.gov/eng/active_dev/views/balsam_woolly_adelgid.html",
+      },
+    ],
+  },
+  {
+    id: "xanthogaleruca-luteola",
+    slug: "xanthogaleruca-luteola",
+    commonName: "Elm Leaf Beetle",
+    scientificName: "Xanthogaleruca luteola",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "An introduced elm pest whose larvae skeletonize leaves and whose repeated outbreaks can leave landscape elms brown, defoliated, and weakened by mid-summer.",
+    origin:
+      "Introduced from Eurasia and now established in North America, especially where landscape elms and susceptible ornamental species are common.",
+    whatToLookFor: [
+      "Orange-yellow egg masses on the underside of elm leaves.",
+      "Yellowish larvae with dark stripes feeding on the lower leaf surface and leaving a skeletonized upper skin.",
+      "Small yellow-green adult beetles with dark stripes near the outer edge of each forewing.",
+    ],
+    whyItMatters:
+      "Elm leaf beetle damage can strip large portions of a tree's canopy, forcing repeated refoliation and reducing vigor. A mature tree may survive a single episode, but repeated defoliation leaves it more vulnerable to other stresses and diseases.",
+    action: {
+      mode: "both",
+      summary:
+        "Defoliation and early larvae are the key signs to catch. Valuable landscape trees are usually best handled with timely, species-specific guidance.",
+      steps: [
+        "Check leaves early in the season for egg masses and young larvae rather than waiting for full browning of the canopy.",
+        "Photograph the feeding damage and the life stage you find so diagnosis is easier.",
+        "Use extension or arborist guidance for treatment timing if a high-value elm is being repeatedly defoliated.",
+      ],
+      safetyNotes:
+        "Adults that wander into houses are mostly a nuisance, but tree treatment timing still matters if you are trying to protect the elm outdoors.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/elm-leaf-beetle",
+      },
+    ],
+  },
+  {
+    id: "euproctis-chrysorrhoea",
+    slug: "euproctis-chrysorrhoea",
+    commonName: "Browntail Moth",
+    scientificName: "Euproctis chrysorrhoea",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Moths & butterflies",
+    summary:
+      "An invasive caterpillar whose feeding damages hardwood trees and whose toxic hairs can cause severe rashes and breathing problems for people.",
+    origin:
+      "Introduced from Europe into the northeastern United States in the late nineteenth century and now concentrated mainly in Maine and nearby areas.",
+    whatToLookFor: [
+      "Dark hairy caterpillars with broken white side stripes and two red-orange spots near the tail end.",
+      "Silken winter webs at branch tips on host trees and shrubs.",
+      "White adult moths with a conspicuous brown tuft at the tip of the abdomen.",
+    ],
+    whyItMatters:
+      "Browntail moth is both a forest pest and a public health problem. Caterpillars feed on the leaves of hardwood trees and shrubs, while the toxic hairs can stay in the environment and cause rashes or breathing trouble long after the insects are gone.",
+    action: {
+      mode: "both",
+      summary:
+        "Small reachable winter webs can be removed safely at the right time. Larger infestations and heavy hair exposure risks need more caution.",
+      steps: [
+        "Clip and destroy winter webs between October and March if they are safely reachable from the ground and away from hazards like power lines.",
+        "Wear protective clothing and avoid mowing, raking, or dry cleanup that could stir up toxic hairs in infested areas.",
+        "Use forestry or public health guidance if infestations are large, high in trees, or already causing exposure problems around homes and public spaces.",
+      ],
+      safetyNotes:
+        "The hairs can remain irritating for years in the environment. Respiratory symptoms or severe reactions deserve prompt medical attention.",
+    },
+    source: [
+      {
+        label: "Maine Forest Service",
+        url: "https://www.maine.gov/dacf/mfs/forest_health/invasive_threats/browntail_moth_info.htm",
+      },
+      {
+        label: "Maine CDC",
+        url: "https://www.maine.gov/dhhs/browntailmoth",
+      },
+    ],
+  },
+  {
+    id: "neonectria-faginata",
+    slug: "neonectria-faginata",
+    commonName: "Beech Bark Disease",
+    scientificName: "Neonectria faginata",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A destructive beech disease complex in which scale insects and Neonectria fungi work together to injure bark, form cankers, and kill American beech trees.",
+    origin:
+      "The disease complex spread in North America after nonnative beech scale and associated fungal agents became established in eastern beech forests.",
+    whatToLookFor: [
+      "White woolly beech scale colonies on smooth gray bark of trunks and limbs.",
+      "Sunken or roughened cankers, bark cracking, and red fruiting bodies on diseased bark.",
+      "Declining crowns, dead branches, and clusters of root sprouts around injured beech trees.",
+    ],
+    whyItMatters:
+      "Beech bark disease can reshape whole forest stands by killing large beeches, reducing beechnut production, and leaving deformed survivors and dense beech sprout thickets behind. The damage is ecological as well as aesthetic because American beech is an important mast and understory tree in eastern forests.",
+    action: {
+      mode: "both",
+      summary:
+        "There is no simple forest-scale cure. The practical public role is early recognition, documentation, and realistic care for high-value landscape trees.",
+      steps: [
+        "Photograph the bark, any scale coating, and crown decline so the disease complex can be distinguished from other beech problems.",
+        "Consult extension, forestry staff, or a certified arborist for high-value yard or park trees rather than guessing at treatment.",
+        "Avoid moving infested beech firewood or nursery stock to new places where scale or pathogens may spread.",
+      ],
+      safetyNotes:
+        "Do not confuse beech bark disease with beech leaf disease. The key signs here are on the bark and trunk rather than banded leaves.",
+    },
+    source: [
+      {
+        label: "University of Maryland Extension",
+        url: "https://extension.umd.edu/resource/beech-bark-disease",
+      },
+    ],
+  },
+  {
+    id: "peronospora-belbahrii",
+    slug: "peronospora-belbahrii",
+    commonName: "Basil Downy Mildew",
+    scientificName: "Peronospora belbahrii",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A fast-moving basil disease that yellows leaves, covers the undersides with gray spore growth, and can wipe out garden or production basil quickly.",
+    origin:
+      "An introduced downy mildew pathogen that spreads on seed, transplants, fresh leaves, and windblown spores in favorable humid weather.",
+    whatToLookFor: [
+      "Pale yellow areas on the upper surface of basil leaves, often bounded by major veins.",
+      "Gray to dark fuzzy spore growth on the underside of infected leaves.",
+      "Symptoms beginning on lower leaves and moving upward through the planting.",
+    ],
+    whyItMatters:
+      "Basil downy mildew can turn a healthy-looking planting into a patch of yellow collapsing stems in a short time. Once the disease gets established, complete crop loss is possible in humid conditions and infected plants can spread the problem through transplants and harvested leaves.",
+    action: {
+      mode: "both",
+      summary:
+        "Quick diagnosis matters because this disease is easy to mistake for nutrient stress at first. Prevention is stronger than rescue.",
+      steps: [
+        "Inspect the underside of yellowing basil leaves for gray downy growth before assuming the problem is watering or fertilizer.",
+        "Remove and bag infected plants or heavily infected leaves instead of composting them on site.",
+        "Use resistant varieties and start with clean seed or transplants for future plantings.",
+      ],
+      safetyNotes:
+        "Downy mildews spread best in humid leaf-wet conditions, so crowded overhead-watered basil is especially vulnerable.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/disease-management/basil-downy-mildew",
+      },
+    ],
+  },
+  {
+    id: "phakopsora-pachyrhizi",
+    slug: "phakopsora-pachyrhizi",
+    commonName: "Asian Soybean Rust",
+    scientificName: "Phakopsora pachyrhizi",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "An aggressive foliar soybean disease that spreads quickly under warm humid conditions and can cause rapid defoliation and serious yield loss.",
+    origin:
+      "The aggressive soybean rust pathogen is native to the Eastern Hemisphere and now reaches the continental United States through seasonal northward spread on windblown spores.",
+    whatToLookFor: [
+      "Tan to reddish-brown lesions beginning low in the soybean canopy.",
+      "Tiny pustules on the underside of leaves that release spores, often easiest to see with a hand lens.",
+      "Yellowing and premature leaf drop during wet humid periods after flowering begins.",
+    ],
+    whyItMatters:
+      "Asian soybean rust can move through a crop quickly when weather favors it, stripping foliage and reducing yield if it is detected too late. Because early symptoms resemble other soybean leaf problems, delayed diagnosis can cost a grower the narrow window when management still matters.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a scout-and-confirm problem, not a guess-and-spray problem. Early extension or crop advisor input matters.",
+      steps: [
+        "Scout the lower canopy regularly during humid weather after soybeans begin flowering or setting pods.",
+        "Use a hand lens and photographs to document lesions and pustules if rust is suspected.",
+        "Contact extension, a crop consultant, or a diagnostic lab quickly so management decisions are based on confirmed disease pressure.",
+      ],
+      safetyNotes:
+        "Cultural practices alone usually do not control soybean rust once it is established. Timing and diagnosis are the critical pieces.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/soybean-pest-management/soybean-rust",
+      },
+    ],
+  },
+  {
+    id: "anolis-sagrei",
+    slug: "anolis-sagrei",
+    commonName: "Brown Anole",
+    scientificName: "Anolis sagrei",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Reptiles & amphibians",
+    summary:
+      "A small invasive lizard common in human-dominated warm areas, where it spreads easily through cargo, ornamental plants, and yard materials.",
+    origin:
+      "Native to Cuba, the Bahamas, and nearby islands, and first introduced to Florida in the late nineteenth century before spreading farther with human help.",
+    whatToLookFor: [
+      "Brown to gray lizards with variable blotches, stripes, or triangular markings rather than plain green coloration.",
+      "Males with a reddish-orange throat fan bordered by yellow and sometimes a raised crest.",
+      "Frequent use of ground level, walls, fences, parking lot edges, shrubs, and other heavily modified sites.",
+    ],
+    whyItMatters:
+      "Brown anoles reach high numbers in disturbed habitats and can alter the behavior and habitat use of native green anoles. They also move readily in potted plants, yard debris, vehicles, and cargo, which helps them keep expanding their range.",
+    action: {
+      mode: "report",
+      summary:
+        "Range edges and new out-of-area sightings are especially useful to document. Prevention mostly means not moving hidden hitchhikers.",
+      steps: [
+        "Photograph the lizard clearly from the side or above, especially if you are outside the currently mapped established range.",
+        "Check potted plants, yard debris, and items stored outdoors before moving them long distances from infested areas.",
+        "Report new sightings through the local invasive species or wildlife reporting system where requested.",
+      ],
+      safetyNotes:
+        "Brown anoles are often mistaken for native green anoles when the green species is temporarily brown. Photo documentation helps avoid bad reports.",
+    },
+    source: [
+      {
+        label: "UF IFAS EDIS",
+        url: "https://edis.ifas.ufl.edu/publication/UW486",
+      },
+    ],
+  },
+  {
+    id: "cygnus-olor",
+    slug: "cygnus-olor",
+    commonName: "Mute Swan",
+    scientificName: "Cygnus olor",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Birds",
+    summary:
+      "A large invasive swan that consumes heavy amounts of aquatic vegetation, drives off native waterfowl, and can behave aggressively around nests and broods.",
+    origin:
+      "Introduced from Europe in the late nineteenth and early twentieth centuries for display on estate ponds and ornamental waters, then released into the wild.",
+    whatToLookFor: [
+      "Very large white swans with an orange bill and a black knob at the base of the bill.",
+      "A graceful S-shaped neck and broad wing posture, especially when displaying or acting territorial.",
+      "Pairs or family groups using ponds, marshes, bays, and other shallow waters with submerged vegetation.",
+    ],
+    whyItMatters:
+      "Mute swans consume and uproot large amounts of submerged aquatic vegetation that fish, invertebrates, and native waterfowl depend on. They also defend nesting territories aggressively, which can create safety problems for people using the same water.",
+    action: {
+      mode: "report",
+      summary:
+        "Most public action is observation, documentation, and avoiding disturbance. Handling nests, eggs, or birds usually requires authorization.",
+      steps: [
+        "Record the waterbody, number of birds, and whether cygnets or nests are present.",
+        "Keep your distance from nesting birds and do not approach on foot, kayak, or personal watercraft.",
+        "Contact the state wildlife agency if swans are causing habitat damage, safety problems, or are newly established in your area.",
+      ],
+      safetyNotes:
+        "Adult swans can be highly aggressive during nesting season. Do not try to haze or handle them at close range.",
+    },
+    source: [
+      {
+        label: "New York State Department of Environmental Conservation",
+        url: "https://dec.ny.gov/nature/animals-fish-plants/mute-swan",
+      },
+    ],
+  },
+  {
+    id: "dreissena-bugensis",
+    slug: "dreissena-bugensis",
+    commonName: "Quagga Mussel",
+    scientificName: "Dreissena bugensis",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mollusks",
+    summary:
+      "A highly invasive freshwater mussel that encrusts boats, pipes, rocks, and other hard surfaces while stripping plankton from invaded waters.",
+    origin:
+      "Native to waters connected to the Black and Caspian seas and introduced to North America through ballast water before spreading among inland waters on boats and gear.",
+    whatToLookFor: [
+      "Small triangular mussels with variable zebra-like striping and an obvious ridge between the side and bottom of the shell.",
+      "Dense clusters attached to hard surfaces such as hulls, docks, motors, pipes, rocks, and native mussel shells.",
+      "Microscopic larval stages called veligers that can hide in residual water inside boats and equipment.",
+    ],
+    whyItMatters:
+      "Quagga mussels clog engines, water intakes, and infrastructure while also rewiring food webs by filtering enormous amounts of plankton from the water. Once they establish, they are costly to live with and difficult to contain.",
+    action: {
+      mode: "both",
+      summary:
+        "Prevention is the main public responsibility. Clean, drain, and dry habits matter because the species spreads so easily on watercraft and equipment.",
+      steps: [
+        "Remove visible mud, plants, and animals from boats, trailers, anchors, and gear before transporting them.",
+        "Drain all water from bilges, livewells, motors, and other equipment before leaving the launch site.",
+        "Dry or decontaminate water-contact gear before entering another lake or river and report suspicious mussel finds from new waters.",
+      ],
+      safetyNotes:
+        "Adult shells are sharp and can cut hands and feet. Wear gloves when scraping or handling encrusted equipment.",
+    },
+    source: [
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/lake/learn/nature/quaggamussels.htm",
+      },
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/cure/learn/nature/mussel_facts.htm",
+      },
+    ],
+  },
+  {
+    id: "hypophthalmichthys-nobilis",
+    slug: "hypophthalmichthys-nobilis",
+    commonName: "Bighead Carp",
+    scientificName: "Hypophthalmichthys nobilis",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A large invasive plankton-feeding fish that spreads through major river systems and competes with native fish for the food base of the ecosystem.",
+    origin:
+      "Introduced from eastern Asia to the southern United States in the 1970s for aquaculture and wastewater uses, then escaped into connected rivers.",
+    whatToLookFor: [
+      "A deep-bodied fish with a very large head, a toothless mouth, and eyes set low on the front of the head.",
+      "Dark gray to cream coloration with irregular dark blotches on the back and sides.",
+      "Large river or connected floodplain habitats where plankton-rich water supports big fast-growing fish.",
+    ],
+    whyItMatters:
+      "Bighead carp consume zooplankton and other suspended food resources almost continuously, which puts them in direct competition with native planktivorous fish and young life stages of many other species. Their spread through major watersheds can alter fisheries and food webs at a large scale.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not help this fish move. Public value comes from not transporting live fish and from reporting captures or sightings where requested.",
+      steps: [
+        "Never move live invasive carp between waters or use them illegally as live bait.",
+        "Photograph unusual carp catches, especially the head and eye position, if species confirmation may be useful.",
+        "Report captures, follow local disposal or harvest rules, and clean equipment before moving to another waterbody.",
+      ],
+      safetyNotes:
+        "Bighead carp can be confused with other large carp species. Clear photos and local agency guidance help prevent bad reports.",
+    },
+    source: [
+      {
+        label: "U.S. Fish & Wildlife Service",
+        url: "https://www.fws.gov/carp/species/bighead-carp-hypophthalmichthys-nobilis",
+      },
+    ],
+  },
+  {
+    id: "pueraria-montana",
+    slug: "pueraria-montana",
+    commonName: "Kudzu",
+    scientificName: "Pueraria montana",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A famously fast-growing invasive vine that smothers trees, fencerows, utility corridors, and old fields under heavy curtains of foliage.",
+    origin:
+      "Introduced from Asia as an ornamental, forage, and erosion-control plant before spreading widely through the southeastern United States and beyond.",
+    whatToLookFor: [
+      "Large leaves made of three leaflets, often with broad lobes and hairy undersides.",
+      "Long twining vines with younger stems covered in golden-brown hairs and older stems becoming woody and gray.",
+      "Fragrant reddish-purple pea-like flowers in hanging spikes and fuzzy seed pods later in the season.",
+    ],
+    whyItMatters:
+      "Kudzu grows over shrubs and trees so heavily that it blocks light, prevents regeneration, and turns diverse habitat into a single-species blanket. It also spreads from rooted nodes and tubers, which makes neglected patches stubborn and long-lived.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth tackling early, but big infestations usually need repeated follow-up instead of one cut or one mow.",
+      steps: [
+        "Cut or pull small vines before they root farther at the nodes and before seed pods mature.",
+        "Trace vines back to the root crown or tuber area when possible instead of only clearing the top growth.",
+        "Clean mowers, tools, and equipment after working in kudzu so rooted fragments are not moved to a new site.",
+      ],
+      safetyNotes:
+        "Do not assume one season of cutting solved the problem. Kudzu often rebounds from stored energy in roots and tubers.",
+    },
+    source: [
+      {
+        label: "Tennessee Division of Forestry",
+        url: "https://www.tn.gov/protecttnforests/invasive-plants/kudzu.html",
+      },
+    ],
+  },
+  {
+    id: "lonicera-x-bella",
+    slug: "lonicera-x-bella",
+    commonName: "Bell's Honeysuckle",
+    scientificName: "Lonicera x bella",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A hybrid bush honeysuckle that escapes yards and old plantings to form dense shade-casting shrub layers in woods, marsh edges, and disturbed habitat.",
+    origin:
+      "A horticultural hybrid of nonnative bush honeysuckles that spread from ornamental use into natural areas by bird-dispersed fruit.",
+    whatToLookFor: [
+      "A dense upright shrub with opposite oval leaves and older stems that become shaggy and hollow.",
+      "Tubular spring flowers that are usually pink to white and borne in pairs.",
+      "Abundant red or orange berries held in pairs along the stems later in the season.",
+    ],
+    whyItMatters:
+      "Bell's honeysuckle leafs out early, shades the forest floor, and reduces space for native wildflowers, shrubs, and tree seedlings. Once birds start moving the berries, old landscape shrubs can seed new thickets far from the original planting.",
+    action: {
+      mode: "both",
+      summary:
+        "Seedlings and young shrubs are worth removing early. Established thickets usually need repeated follow-up because stems and roots rebound.",
+      steps: [
+        "Pull or dig small shrubs when the soil is moist enough to remove the fibrous root system.",
+        "Cut and follow with a root-focused treatment plan for larger shrubs instead of leaving stumps to resprout.",
+        "Bag fruiting branches and watch the area for new seedlings after removal work.",
+      ],
+      safetyNotes:
+        "Dense honeysuckle patches can hide ticks, thorny debris, and uneven ground, so wear gloves and eye protection during removal.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/exotic-honeysuckles",
+      },
+    ],
+  },
+  {
+    id: "lonicera-morrowii",
+    slug: "lonicera-morrowii",
+    commonName: "Morrow's Honeysuckle",
+    scientificName: "Lonicera morrowii",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A nonnative bush honeysuckle that spreads from old plantings into fields, marsh edges, and woodland openings where it builds thick invasive shrub cover.",
+    origin:
+      "Introduced from Asia as an ornamental shrub before escaping into natural areas through prolific fruit production and bird dispersal.",
+    whatToLookFor: [
+      "Opposite leaves with a noticeably downy or softly hairy surface compared with smoother exotic honeysuckles.",
+      "A many-stemmed upright shrub with hollow older stems and shaggy bark.",
+      "Paired white to pale flowers followed by red berries that attract birds.",
+    ],
+    whyItMatters:
+      "Morrow's honeysuckle creates dense understory shade and competes hard for soil moisture, leaving less room for native regeneration. Like other invasive bush honeysuckles, it gets a seasonal head start by leafing out early and staying green late.",
+    action: {
+      mode: "both",
+      summary:
+        "Early removal is easier than clearing a mature thicket. Larger patches nearly always need return visits.",
+      steps: [
+        "Pull seedlings and young shrubs before they begin producing berries.",
+        "Use a cut stump or other follow-up approach for older plants rather than relying on a single cut.",
+        "Monitor the site for seedlings and stump sprouts because bird-dropped seed and resprouting are both common.",
+      ],
+      safetyNotes:
+        "Do not dump fruiting brush in natural areas or ravines. Berries and stem fragments can keep the infestation moving.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/exotic-honeysuckles",
+      },
+    ],
+  },
+  {
+    id: "lonicera-tatarica",
+    slug: "lonicera-tatarica",
+    commonName: "Tatarian Honeysuckle",
+    scientificName: "Lonicera tatarica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A nonnative bush honeysuckle that spreads from hedges and ornamental plantings into open woods and field edges, where it becomes another dense invasive shrub wall.",
+    origin:
+      "Introduced from Eurasia for ornamental planting and later spread into the wild by birds carrying its abundant fruit.",
+    whatToLookFor: [
+      "Opposite smooth hairless leaves on a many-stemmed upright shrub.",
+      "Pairs of pink, red, or white tubular flowers in late spring.",
+      "Red or orange berries and older hollow stems with rougher bark.",
+    ],
+    whyItMatters:
+      "Tatarian honeysuckle competes the same way other invasive bush honeysuckles do, by getting light early, holding leaves late, and filling space quickly. Thickets reduce native understory diversity and make woodland restoration slower and more expensive.",
+    action: {
+      mode: "both",
+      summary:
+        "Young plants are manageable by hand. Larger shrubs need deliberate follow-up so the patch does not return from stumps and missed seedlings.",
+      steps: [
+        "Dig or pull small plants when the soil allows you to remove the roots cleanly.",
+        "Cut larger shrubs only if you are prepared to address resprouting with repeat treatment or coordinated management.",
+        "Remove berry-bearing stems from the site and revisit for new seedlings after birds have fed in the area.",
+      ],
+      safetyNotes:
+        "Thickets often mix with other invasives and poison ivy, so do not rush removal in dense edge habitat.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/exotic-honeysuckles",
+      },
+    ],
+  },
+  {
+    id: "ligustrum-vulgare",
+    slug: "ligustrum-vulgare",
+    commonName: "European Privet",
+    scientificName: "Ligustrum vulgare",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A hedge shrub that escapes cultivation to build dense semi-evergreen thickets along edges, floodplains, and disturbed woods.",
+    origin:
+      "Introduced from Europe for hedges and ornamental screening before spreading from planted landscapes into the wild.",
+    whatToLookFor: [
+      "Opposite simple leaves that are oval to oblong and held on long leafy branches.",
+      "Clusters of small white tubular flowers at the branch tips in late spring to early summer.",
+      "Blue-black fruits on a many-stemmed shrub that often forms dense shady patches.",
+    ],
+    whyItMatters:
+      "European privet creates thick shade that crowds out native shrubs and herbaceous plants, especially in already disturbed woodland and edge habitat. Once privet becomes established, native seedlings have a much harder time breaking back through the thicket.",
+    action: {
+      mode: "both",
+      summary:
+        "Small plants can be dug out, but established privet usually needs repeated cutting or follow-up treatment to keep it from returning.",
+      steps: [
+        "Pull or dig small shrubs before they fruit and spread farther by birds.",
+        "Cut larger shrubs at the base and follow with a stump or bark treatment plan if you are managing a serious patch.",
+        "Do not plant privet as a hedge replacement and monitor nearby disturbed ground for seedlings.",
+      ],
+      safetyNotes:
+        "Dense privet growth can hide other woody stems and unstable footing, so clear methodically rather than trying to rush through a thicket.",
+    },
+    source: [
+      {
+        label: "Tennessee Division of Forestry",
+        url: "https://www.tn.gov/protecttnforests/invasive-plants/privet.html",
+      },
+    ],
+  },
+  {
+    id: "vinca-minor",
+    slug: "vinca-minor",
+    commonName: "Common Periwinkle",
+    scientificName: "Vinca minor",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A widely planted evergreen groundcover that creeps out of gardens and into shady woods, where it forms dense mats that suppress native spring plants.",
+    origin:
+      "Introduced from Europe and western Asia for ornamental groundcover use, then spread through discarded yard waste and escaped plantings.",
+    whatToLookFor: [
+      "Shiny dark green opposite leaves that stay evergreen through winter.",
+      "Blue-purple pinwheel-like flowers in spring and early summer.",
+      "Trailing stems that root at the nodes and build a continuous carpet across shaded ground.",
+    ],
+    whyItMatters:
+      "Common periwinkle spreads mostly by creeping stems rather than dramatic seed dispersal, but the result is still a thick living blanket that blocks native wildflowers and tree seedlings. Old home sites and dumped yard waste often become the launch point for forest-edge infestations.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches can be hand-removed if you stay patient and collect every rooted stem. Larger mats often need repeat cleanup.",
+      steps: [
+        "Trace and lift runners carefully so rooted nodes come out with the stems instead of breaking off in the soil.",
+        "Bag removed material and keep it out of compost piles, ravines, and woods edges.",
+        "Replace the planting with a noninvasive shade groundcover so the same site does not keep restarting the problem.",
+      ],
+      safetyNotes:
+        "Incomplete hand pulling leaves rooted nodes behind, which means the patch can close back in surprisingly quickly.",
+    },
+    source: [
+      {
+        label: "Missouri Department of Conservation",
+        url: "https://mdc.mo.gov/discover-nature/field-guide/common-periwinkle",
+      },
+    ],
+  },
+  {
+    id: "populus-alba",
+    slug: "populus-alba",
+    commonName: "White Poplar",
+    scientificName: "Populus alba",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A fast-growing poplar planted for shade and screening that spreads by root suckers into roadsides, fields, and open natural areas.",
+    origin:
+      "Introduced from Eurasia as an ornamental and windbreak tree before escaping cultivation through vigorous sprouting and seed movement.",
+    whatToLookFor: [
+      "Leaves that are dark green on top but bright white and hairy underneath.",
+      "A pale trunk and branches with many suckers forming a spreading colony.",
+      "Maple-like lobed leaves on some shoots and more rounded leaves on others from the same stand.",
+    ],
+    whyItMatters:
+      "White poplar rarely stays confined to the one tree someone planted decades ago. It can spread into broad clonal patches by root suckers, crowding out more diverse vegetation and creating brittle, short-lived stems that complicate site management.",
+    action: {
+      mode: "both",
+      summary:
+        "One cut usually leads to more suckers. Management works best when the whole clonal patch is treated as one problem.",
+      steps: [
+        "Map the visible colony so you are not treating one trunk while missing the sucker ring around it.",
+        "Do not rely on simple cutting, because fresh sprouts often appear quickly from the root system.",
+        "Prioritize removal in open restoration areas where the colony is still small enough to contain.",
+      ],
+      safetyNotes:
+        "Branches can break under snow, wind, and decay stress, so be cautious around older white poplar stems during removal.",
+    },
+    source: [
+      {
+        label: "Extension.org Invasive Species",
+        url: "https://invasive-species.extension.org/populus-alba-white-poplar/",
+      },
+    ],
+  },
+  {
+    id: "albizia-julibrissin",
+    slug: "albizia-julibrissin",
+    commonName: "Mimosa Tree",
+    scientificName: "Albizia julibrissin",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A familiar ornamental tree with fern-like leaves and pink powderpuff flowers that escapes cultivation into roadsides, woods edges, and stream corridors.",
+    origin:
+      "Introduced from Asia as an ornamental tree in the eighteenth century and later spread from landscape plantings into natural areas.",
+    whatToLookFor: [
+      "Feathery compound leaves that give the tree a soft fern-like look.",
+      "Showy pink fluffy flowers in summer followed by flat bean-like seed pods.",
+      "Clusters of volunteer seedlings or saplings near roadsides, old home sites, and creek edges.",
+    ],
+    whyItMatters:
+      "Mimosa tree is not just a yard escapee. It seeds readily, grows quickly in disturbed places, and can edge native trees and shrubs out of the space where they would normally regenerate.",
+    action: {
+      mode: "both",
+      summary:
+        "Seedlings are straightforward to remove, but fruiting trees can keep repopulating a site if they are left in place.",
+      steps: [
+        "Pull or dig young seedlings and saplings before they begin producing pods.",
+        "Cut larger trees before pods mature and plan for follow-up if root or stump sprouting appears.",
+        "Avoid replanting mimosa as an ornamental replacement in landscapes near woods, creeks, or vacant lots.",
+      ],
+      safetyNotes:
+        "Do not let cut seed pods scatter across the site. Bag them if they are already mature.",
+    },
+    source: [
+      {
+        label: "UGA Extension Forsyth County",
+        url: "https://site.extension.uga.edu/forsyth/2024/06/two-invasive-plants-to-weed-out-now/",
+      },
+    ],
+  },
+  {
+    id: "fallopia-sachalinensis",
+    slug: "fallopia-sachalinensis",
+    commonName: "Giant Knotweed",
+    scientificName: "Fallopia sachalinensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A towering knotweed that forms bamboo-like thickets along moist disturbed ground, streambanks, and roadsides where it crowds out other vegetation.",
+    origin:
+      "Introduced from Asia as an ornamental and screening plant before spreading from rhizomes and broken stem fragments.",
+    whatToLookFor: [
+      "Very large heart-shaped leaves with a broad base and a blunter tip than Japanese knotweed.",
+      "Tall hollow stems with swollen joints that resemble bamboo canes.",
+      "Greenish-white flower clusters that stay shorter than the leaves and persistent dead stalks through winter.",
+    ],
+    whyItMatters:
+      "Giant knotweed grows even larger than Japanese knotweed and can dominate streambanks, vacant ground, and edge habitat with thick monocultures. Like other knotweeds, fragments and rhizomes make it easy to spread accidentally during mowing, dumping, or soil movement.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth catching before they expand underground. Large riparian infestations usually need coordinated multi-season treatment.",
+      steps: [
+        "Mark the full patch, including outlying shoots, before starting any control so the rhizome spread is not underestimated.",
+        "Do not move cut stems, fill dirt, or rhizome pieces off site unless they are fully contained.",
+        "Report or coordinate treatment for streamside infestations where fragment movement could spread the plant downstream.",
+      ],
+      safetyNotes:
+        "Casual mowing and brush dumping are common ways knotweeds get spread. Treat all cut material as potentially capable of rerooting.",
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/giant-knotweed",
+      },
+    ],
+  },
+  {
+    id: "trapa-natans",
+    slug: "trapa-natans",
+    commonName: "Water Chestnut",
+    scientificName: "Trapa natans",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A floating aquatic plant that forms rosettes and dense surface mats, shading out native plants and making boating and swimming difficult.",
+    origin:
+      "Introduced from Europe, Asia, and Africa through ornamental and water-garden pathways before naturalizing in northeastern waters.",
+    whatToLookFor: [
+      "Floating rosettes of sharply serrated green leaves on the water surface.",
+      "Small white four-petaled flowers in the warmer season.",
+      "Hard woody nuts with sharp barbed spines that can injure feet and gear.",
+    ],
+    whyItMatters:
+      "Water chestnut can turn open water into a thick floating layer that cuts light, reduces oxygen, and can trigger fish kills as large mats decay. The spiny nuts also make recreation and shoreline use unpleasant and can help the plant persist from year to year.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a report-fast species. New populations are much more manageable before they blanket a waterbody.",
+      steps: [
+        "Photograph the floating leaves and any spiny nuts and record the exact waterbody and access point.",
+        "Do not move plants, nuts, or contaminated gear to another lake, pond, or river.",
+        "Report the find through the state aquatic invasive species contact or MISIN as soon as possible.",
+      ],
+      safetyNotes:
+        "The nuts are sharply spined and can puncture skin, footwear, and gear. Handle with gloves if contact is necessary.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/aquatic/water-chestnut",
+      },
+    ],
+  },
+  {
+    id: "eichhornia-crassipes",
+    slug: "eichhornia-crassipes",
+    commonName: "Water Hyacinth",
+    scientificName: "Eichhornia crassipes",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A free-floating aquatic plant with showy lavender flowers that can multiply rapidly and clog still or slow-moving freshwater systems.",
+    origin:
+      "Native to the Amazon basin and spread internationally through water-garden and ornamental trade before escaping into natural waters.",
+    whatToLookFor: [
+      "Rounded leathery floating leaves arranged in rosettes.",
+      "Bulbous leaf stalks with air-filled bladders that help keep the plant afloat.",
+      "Lavender flowers with a yellow marking and long dangling roots beneath the plant.",
+    ],
+    whyItMatters:
+      "Water hyacinth can double biomass quickly under warm conditions, blocking sunlight, crowding native species, and slowing water flow. Dense colonies interfere with boating, fishing, and water management infrastructure while giving the plant more chances to break apart and spread.",
+    action: {
+      mode: "report",
+      summary:
+        "Plants found outside cultivation should be reported quickly. Moving one decorative-looking rosette can start a much larger problem.",
+      steps: [
+        "Photograph the floating plant and note whether it is in a pond, canal, ditch, or natural waterbody.",
+        "Do not release aquarium or water-garden plants into ponds, drainage ditches, or lakes.",
+        "Report escaped or wild plants through the state aquatic invasive species program or MISIN.",
+      ],
+      safetyNotes:
+        "Do not compost or dump unwanted water-garden plants outdoors. Disposal mistakes are a major pathway for spread.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/aquatic/water-hyacinth",
+      },
+    ],
+  },
+  {
+    id: "nymphoides-peltata",
+    slug: "nymphoides-peltata",
+    commonName: "Yellow Floating Heart",
+    scientificName: "Nymphoides peltata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A floating aquatic plant with bright yellow fringed flowers that spreads across slow-moving water and can build thick low mats.",
+    origin:
+      "Introduced from Europe and Asia through ornamental pond and water-garden use before escaping into lakes and slow rivers.",
+    whatToLookFor: [
+      "Round to heart-shaped floating leaves with a scalloped edge.",
+      "Bright yellow five-petaled flowers held above the water surface.",
+      "Dense floating growth in ponds, lakes, and quiet river margins where stems and fragments spread outward.",
+    ],
+    whyItMatters:
+      "Yellow floating heart shades native aquatic plants, lowers oxygen under dense mats, and creates habitat conditions that favor mosquitoes and nuisance growth. Fragments and seeds both help the plant move, which makes casual removal risky if done badly.",
+    action: {
+      mode: "report",
+      summary:
+        "Suspected finds should be documented early. This is a species where a small patch is much easier to contain than a lakewide mat.",
+      steps: [
+        "Take clear photos of the flower and leaf shape so look-alike water lilies can be ruled out.",
+        "Keep boats, paddles, trailers, and anchors free of plant fragments before leaving the site.",
+        "Report the observation through MISIN or the listed aquatic invasive species contact for the state.",
+      ],
+      safetyNotes:
+        "Avoid shredding or dragging floating mats around the shoreline. Fragment spread can turn one patch into many.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/aquatic/yellow-floating-heart",
+      },
+    ],
+  },
+  {
+    id: "myriophyllum-aquaticum",
+    slug: "myriophyllum-aquaticum",
+    commonName: "Parrot Feather",
+    scientificName: "Myriophyllum aquaticum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "An invasive aquatic plant with stiff feathery leaves that rises above the water surface and forms mats in nutrient-rich slow water.",
+    origin:
+      "Introduced from South America through the aquarium and water-garden trade, then spread by fragments in ponds, canals, and quiet freshwater habitat.",
+    whatToLookFor: [
+      "Bright green emergent shoots standing above the water with dense feathery leaves in whorls.",
+      "Submerged stems and leaves that may be reddish tinted.",
+      "Slow-moving or still freshwater sites where mats spread outward from fragments.",
+    ],
+    whyItMatters:
+      "Parrot feather competes with native aquatic plants and can create surface cover that traps debris, supports mosquito habitat, and impedes boating. In the United States the plant spreads mainly by fragments, so a sloppy cleanup can make the infestation worse.",
+    action: {
+      mode: "report",
+      summary:
+        "Report-first handling is best. Fragment-spreading aquatic plants are poor candidates for casual do-it-yourself cutting.",
+      steps: [
+        "Photograph both the emergent feathery shoots and the waterbody where the plant is rooted or floating.",
+        "Inspect gear, trailers, and footwear for fragments before moving to another waterbody.",
+        "Report the patch through MISIN or the state aquatic invasive species contact rather than trying to chop it up.",
+      ],
+      safetyNotes:
+        "All known U.S. plants spread vegetatively, so even small broken pieces can help start new colonies.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/aquatic/parrot-feather",
+      },
+    ],
+  },
+  {
+    id: "nitellopsis-obtusa",
+    slug: "nitellopsis-obtusa",
+    commonName: "Starry Stonewort",
+    scientificName: "Nitellopsis obtusa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A submerged invasive macroalga that forms dense underwater mats in lakes and slow rivers, altering habitat and restricting recreation.",
+    origin:
+      "Native to Europe and western Asia and introduced to North America through aquatic pathways that remain difficult to track fully.",
+    whatToLookFor: [
+      "Submerged whorls of branchlets with blunt tips rather than finely divided milfoil leaves.",
+      "Star-shaped bulbils at the nodes or in the sediment.",
+      "Dense underwater mats in clear to moderately turbid lakes, ponds, reservoirs, and slow rivers.",
+    ],
+    whyItMatters:
+      "Starry stonewort can dominate underwater space, reduce native aquatic plant diversity, and interfere with fish movement, spawning, and recreation. Because it is often found below the surface, people may transport it on gear before they realize it is there.",
+    action: {
+      mode: "report",
+      summary:
+        "This species is best handled through detection, reporting, and aquatic hygiene. It is easy to spread accidentally on boats and equipment.",
+      steps: [
+        "Inspect anchors, trailers, propellers, fishing gear, and water-contact equipment for submerged plant fragments.",
+        "Photograph suspected mats or bulbils if visible and record the exact launch, shoreline, or lake location.",
+        "Report the observation promptly through MISIN or the aquatic invasive species contact listed by the state.",
+      ],
+      safetyNotes:
+        "Visual checks alone can miss fragments and bulbils, so clean-drain-dry habits matter even when the plant is not obvious.",
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/plants/aquatic/starry-stonewort",
+      },
+    ],
+  },
+  {
+    id: "triadica-sebifera",
+    slug: "triadica-sebifera",
+    commonName: "Chinese Tallow",
+    scientificName: "Triadica sebifera",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A fast-growing invasive tree that spreads from ornamental plantings into wetlands, stream edges, prairies, and disturbed woods where it can create near-monocultures.",
+    origin:
+      "Introduced from Asia for ornamental use and other practical uses before spreading across the South through bird- and water-dispersed seed and aggressive sprouting.",
+    whatToLookFor: [
+      "Heart- to diamond-shaped leaves with a long pointed tip and milky sap when damaged.",
+      "Dangling yellowish flower spikes in spring and clusters of three-lobed fruit that split to reveal white waxy seeds.",
+      "Dense young stands in wet ditches, river bottoms, coastal plain sites, and disturbed ground.",
+    ],
+    whyItMatters:
+      "Chinese tallow transforms habitat quickly by shading out native plants and changing site conditions under its leaf litter. Once it takes hold, it can move from scattered ornamentals to broad single-species stands that support far less native diversity.",
+    action: {
+      mode: "both",
+      summary:
+        "Young trees are worth removing before they seed heavily. Mature trees often need a cut stump or similar follow-up plan because they sprout readily.",
+      steps: [
+        "Pull or dig very small seedlings and saplings before they build a larger root system.",
+        "Use a cut stump, girdle, or other root-focused follow-up method for larger trees instead of leaving a cut trunk to resprout.",
+        "Prioritize trees near wetlands, ditches, and stream corridors where water and birds can spread seed farther.",
+      ],
+      safetyNotes:
+        "The milky sap can irritate skin in some people. Wear gloves when cutting or handling fresh stems.",
+    },
+    source: [
+      {
+        label: "Texas Invasives",
+        url: "https://www.texasinvasives.org/plant_database/detail.php?symbol=TRSE6",
+      },
+      {
+        label: "Texas Invasives",
+        url: "https://www.texasinvasives.org/professionals/management_detail.php?symbol=TRSE6",
+      },
+    ],
+  },
+  {
+    id: "megacopta-cribraria",
+    slug: "megacopta-cribraria",
+    commonName: "Kudzu Bug",
+    scientificName: "Megacopta cribraria",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A small invasive sap-feeding bug that built up first on kudzu and then became a notable soybean pest and seasonal nuisance around buildings.",
+    origin:
+      "Native to Asia and first detected in the United States in Georgia in 2009 before spreading through the Southeast.",
+    whatToLookFor: [
+      "Small rounded olive-green to brown bugs that gather in large numbers on kudzu, soybean, walls, and vehicles.",
+      "Heavy congregations on sunny light-colored surfaces during seasonal movement.",
+      "Legume feeding damage in kudzu patches and soybean fields where bugs cluster on stems and leaves.",
+    ],
+    whyItMatters:
+      "Kudzu bug links two problems at once by thriving on invasive kudzu and also reducing soybean yield when populations build in crop fields. For homeowners it can also become a swarming nuisance when adults gather on structures to overwinter.",
+    action: {
+      mode: "both",
+      summary:
+        "For gardens and homes, the main goal is identification and containment. For crop situations, extension-guided scouting matters more than guesswork.",
+      steps: [
+        "Photograph dense bug clusters on kudzu, legumes, or structures if you need confirmation.",
+        "Seal entry points on buildings and avoid crushing large numbers indoors because the bugs can release an odor and stain surfaces.",
+        "Use extension or crop advisor guidance when bugs are building in soybean, because field thresholds matter.",
+      ],
+      safetyNotes:
+        "Do not confuse nuisance swarms on buildings with harmless one-off bugs. Large aggregations are the clearer sign.",
+    },
+    source: [
+      {
+        label: "University of Georgia CAES",
+        url: "https://www.caes.uga.edu/research/impact/impact-statement/4398/invasive-insect-pest-of-legumes-threatens-georgia-agriculture.html",
+      },
+    ],
+  },
+  {
+    id: "melanaphis-sacchari",
+    slug: "melanaphis-sacchari",
+    commonName: "Yellow Sugarcane Aphid",
+    scientificName: "Melanaphis sacchari",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A bright yellow aphid that damages sorghum and other grasses by feeding on leaves and causing yellowing, purpling, stunting, and dieback.",
+    origin:
+      "An aphid pest associated with warm regions that has become a recurring problem in sorghum-growing areas of the United States.",
+    whatToLookFor: [
+      "Bright lemon-yellow aphids with rows of dark spots and many hairs on the body.",
+      "Colonies on the underside of sorghum leaves, especially on seedlings and lower leaves.",
+      "Purple, yellow, or dying leaves caused by toxin-injecting feeding rather than chewing damage.",
+    ],
+    whyItMatters:
+      "Yellow sugarcane aphid can injure sorghum seedlings quickly and reduce yield when infestations build. Even small numbers can matter on young plants because the feeding damage shows up as toxic discoloration and stunting before growers may realize what they are seeing.",
+    action: {
+      mode: "report",
+      summary:
+        "This is mainly a scout-and-confirm crop pest. Timely field checks matter more than late reactive spraying.",
+      steps: [
+        "Inspect sorghum leaves from emergence onward, especially the undersides of lower leaves where aphids hide.",
+        "Photograph the aphids and the leaf discoloration if you need help separating them from other sorghum aphids.",
+        "Use extension treatment thresholds and local crop guidance rather than treating by color change alone.",
+      ],
+      safetyNotes:
+        "Purple or yellow leaves can have other causes, so pest confirmation matters before management decisions are made.",
+    },
+    source: [
+      {
+        label: "Texas A&M AgriLife Extension",
+        url: "https://extensionentomology.tamu.edu/resources/management-guides/sorghum/stem-and-leaf-feeding-insects/",
+      },
+    ],
+  },
+  {
+    id: "hypophthalmichthys-molitrix",
+    slug: "hypophthalmichthys-molitrix",
+    commonName: "Silver Carp",
+    scientificName: "Hypophthalmichthys molitrix",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A large invasive plankton-feeding carp that spreads through major river systems and is notorious for leaping from the water when startled by boat motors.",
+    origin:
+      "Introduced from eastern Asia to U.S. aquaculture and wastewater systems in the 1970s and later escaped into connected rivers.",
+    whatToLookFor: [
+      "A deep-bodied silver fish with a scaleless head, low-set eyes, and a long belly keel extending toward the throat.",
+      "Schooling fish that may erupt from the water when disturbed by boat engines.",
+      "Large river, canal, and connected lake habitats in the Mississippi basin and nearby waters.",
+    ],
+    whyItMatters:
+      "Silver carp compete with native fish and young life stages for plankton while also creating a direct safety hazard for boaters because of their jumping behavior. Where they build up, both ecological damage and recreation impacts become part of the problem.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not move live fish or help them spread. Captures and sightings matter most where agencies are monitoring the invasion front.",
+      steps: [
+        "Never transport live silver carp or release bait, water, or fish from infested waters into another site.",
+        "Photograph unusual carp catches, especially the head, eye position, and body profile, if confirmation may be needed.",
+        "Follow local reporting and harvest guidance for invasive carp where you fish or boat.",
+      ],
+      safetyNotes:
+        "Use caution in waters where jumping silver carp are common. High-speed collisions with fish can cause serious injuries.",
+    },
+    source: [
+      {
+        label: "U.S. Fish & Wildlife Service",
+        url: "https://www.fws.gov/species/silver-carp-hypophthalmichthys-molitrix",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

@@ -148,6 +148,89 @@ These sources are already referenced by current curated profiles, but the origin
 | https://extension.umn.edu/identify-invasive-species/crown-vetch | Crown Vetch | Identification, rhizome spread, habitat impact, reporting context |
 | https://extension.umn.edu/forage-variety-selection/forage-legumes | Crown Vetch | Origin, historical planting context, livestock caution |
 
+### Chunk 2D follow-up, consulted on 2026-04-16
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://extension.psu.edu/callery-pear | Callery Pear | Introduction history, ID cues, spread pattern, removal framing |
+| https://extension.psu.edu/english-ivy-in-the-landscape | English Ivy | Evergreen vine ID, canopy impact, cut-and-pull control framing |
+| https://www.tn.gov/protecttnforests/invasive-plants/bush-honeysuckle.html | Amur Honeysuckle | Shrub honeysuckle ID, seasonality, thicket impact, control framing |
+| https://extension.psu.edu/oriental-bittersweet | Oriental Bittersweet | Vine ID, fruiting cues, canopy impact, root-sprout control framing |
+| https://www.nps.gov/chat/learn/nature/privet.htm | Chinese Privet | Thicket-forming habit, habitat context, fruiting and spread pattern |
+| https://extension.psu.edu/invasive-autumn-and-russian-olives | Russian Olive | Silvery foliage ID, riparian impact, woody control framing |
+| https://wildlife.ca.gov/Conservation/Plants/Dont-Plant-Me/Giant-Reed | Giant Reed | Riparian impact, fragment spread risk, report-first management framing |
+| https://www.tn.gov/protecttnforests/invasive-plants/paulownia.html | Princess Tree | Disturbed-site colonization, seed and sprout behavior, control framing |
+| https://extension.umn.edu/identify-invasive-species/black-swallow-wort | Black Swallow-Wort | Vine ID, monarch impact, early-report emphasis |
+| https://extension.psu.edu/mile-a-minute | Mile-a-Minute Vine | Barbed stem ID, fruiting cues, early pull-and-bag management |
+| https://www.michigan.gov/invasives/id-report/plants/aquatic/giant-salvinia | Giant Salvinia | Floating fern ID, reporting pathway, containment framing |
+| https://www.texasinvasives.org/giantsalvinia/ | Giant Salvinia | Mat-forming growth, spread by fragments, public prevention framing |
+| https://www.seagrant.wisc.edu/our-work/focus-areas/ais/invasive-species/invasive-species-fact-sheets/plants/eurasian-watermilfoil/ | Eurasian Watermilfoil | Submerged plant ID, fragment spread, clean-drain-dry prevention framing |
+| https://edis.ifas.ufl.edu/publication/IN278 | Formosan Termite | Swarm timing, mud tube cues, structural risk, professional-treatment framing |
+| https://www.aphis.usda.gov/plant-pests-diseases/box-tree-moth | Box Tree Moth | Caterpillar and moth ID, defoliation risk, reporting path |
+| https://www.umass.edu/agriculture-food-environment/landscape/fact-sheets/dogwood-anthracnose | Dogwood Anthracnose | Leaf and twig symptoms, cool-shade disease pattern, management limits |
+| https://extension.psu.edu/dogwood-diseases | Dogwood Anthracnose | Confirmation cues, pruning and stress-reduction framing |
+| https://www.fisheries.noaa.gov/southeast/ecosystems/impacts-invasive-lionfish | Lionfish | Ecological impact, range context, removal-program framing |
+| https://oceanservice.noaa.gov/facts/lionfish-facts.html | Lionfish | Venomous-spine caution, aquarium-release prevention, public context |
+| https://www.nps.gov/grca/learn/nature/nzmudsnail.htm | New Zealand Mud Snail | Density and ecological impact, spread context, prevention emphasis |
+| https://www.nps.gov/cure/learn/nature/mussel_facts.htm?fullweb=1 | New Zealand Mud Snail | Gear-hitchhiking behavior, decontamination and prevention framing |
+| https://extension.umn.edu/identify-invasive-species/jumping-worms | Jumping Worm | Clitellum cue, soil-impact framing, prevention guidance |
+| https://hort.extension.wisc.edu/articles/jumping-worms/ | Jumping Worm | Movement behavior, coffee-ground casting cue, disposal and sanitation framing |
+
+### Chunk 2E follow-up, consulted on 2026-04-16
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://extension.umn.edu/identify-invasive-species/burning-bush | Winged Burning Bush | Stem wing cues, fruiting traits, ornamental escape history, replacement framing |
+| https://extension.umn.edu/identify-invasive-species/common-buckthorn | Common Buckthorn | Thorn and leaf cues, late leaf retention, understory impact, soybean aphid context |
+| https://extension.umn.edu/identify-invasive-species/yellow-iris | Yellow Flag Iris | Shoreline ID cues, rhizome spread, reporting context |
+| https://extension.umn.edu/identify-invasive-species/flowering-rush | Flowering Rush | Triangular leaf cue, bulbil spread, shallow-water habitat, report-first framing |
+| https://www.michigan.gov/invasives/0%2C5664%2C7-324-68002_71240_73848-368761--%2C00.html | Curly-Leaf Pondweed | Cool-season growth timing, wavy serrated leaf cue, aquatic impact and reporting framing |
+| https://extension.umn.edu/identify-invasive-species/common-barberry | Common Barberry | Spine and berry ID, stem rust host context, resprout and seed persistence risk |
+| https://extension.umn.edu/identify-invasive-species/hoary-alyssum | Hoary Alyssum | Hairy gray-green ID, habitat context, seed production, invasive spread framing |
+| https://extension.umn.edu/horse-pastures-and-facilities/hoary-alyssum-most-common-poisonous-plant-horses-minnesota | Hoary Alyssum | Horse toxicity, hay contamination risk, removal urgency |
+| https://www.montana.edu/extension/montguides/montguidehtml/MT199709AG.html | Common Houndstongue | Biennial life cycle, bur spread, livestock toxicity, root-crown removal framing |
+| https://extension.usu.edu/pests/ipm/ornamental-pest-guide/weeds/w_puncturevine.php | Puncturevine | Growth form, burr ID, seed timing, hand-pull guidance |
+| https://adams.extension.colostate.edu/ag-acreage/puncturevine/ | Puncturevine | Goathead hazard framing, seedpod containment, mechanical control timing |
+| https://extension.umn.edu/identify-invasive-species/siberian-elm | Siberian Elm | Twig and leaf ID, prairie invasion context, prolific seed and resprout framing |
+| https://www.michigan.gov/invasives/id-report/plants/shrubs/japanese-knotweed | Japanese Knotweed | Bamboo-like stems, rhizome spread, riparian impact, report-first control framing |
+| https://www.michigan.gov/invasives/id-report/plants/herbs/lesser-celandine | Lesser Celandine | Spring-ephemeral timing, bulbil and tuber spread, floodplain impact, reporting guidance |
+| https://www.mda.state.mn.us/es/node/737 | Larger Pine Shoot Beetle | Shoot-feeding damage cues, pine host context, movement caution and reporting framing |
+| https://extension.psu.edu/black-vine-weevil/ | Black Vine Weevil | Adult notching, root-feeding larvae, host range, monitoring and timing guidance |
+| https://www.fs.usda.gov/eng/active_dev/views/balsam_woolly_adelgid.html | Balsam Woolly Adelgid | Cottony tuft cue, fir decline pattern, nonnative origin, movement caution |
+| https://extension.psu.edu/elm-leaf-beetle | Elm Leaf Beetle | Egg, larva, and adult ID, skeletonizing damage, repeated-defoliation risk |
+| https://www.maine.gov/dacf/mfs/forest_health/invasive_threats/browntail_moth_info.htm | Browntail Moth | Winter web timing, host use, tree impact, web-removal framing |
+| https://www.maine.gov/dhhs/browntailmoth | Browntail Moth | Toxic hair exposure, rash and breathing risk, public-health caution |
+| https://extension.umd.edu/resource/beech-bark-disease | Beech Bark Disease | Scale-plus-fungus disease complex, bark symptoms, mortality pattern, limited control framing |
+| https://extension.umn.edu/disease-management/basil-downy-mildew | Basil Downy Mildew | Leaf symptom progression, underside spore growth, seed and transplant spread, resistant-variety prevention |
+| https://extension.umn.edu/soybean-pest-management/soybean-rust | Asian Soybean Rust | Lower-canopy symptoms, pustule cues, weather timing, scout-and-confirm guidance |
+| https://edis.ifas.ufl.edu/publication/UW486 | Brown Anole | Native range, Florida introduction pathway, ID cues, spread in potted plants and cargo |
+| https://dec.ny.gov/nature/animals-fish-plants/mute-swan | Mute Swan | Bill and knob ID, submerged vegetation impact, aggression and reporting context |
+| https://www.nps.gov/lake/learn/nature/quaggamussels.htm | Quagga Mussel | Boat-spread prevention, infrastructure fouling, clean-drain-dry public guidance |
+| https://www.nps.gov/cure/learn/nature/mussel_facts.htm | Quagga Mussel | Veligers, life cycle, dense colonization, aquatic hitchhiker framing |
+| https://www.fws.gov/carp/species/bighead-carp-hypophthalmichthys-nobilis | Bighead Carp | Head and eye placement ID, introduction history, feeding impact, report-and-do-not-move guidance |
+
+### Chunk 2F follow-up, consulted on 2026-04-16
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.tn.gov/protecttnforests/invasive-plants/kudzu.html | Kudzu | Vine ID, tuber and node spread, integrated control framing, sanitation after mowing |
+| https://extension.umn.edu/identify-invasive-species/exotic-honeysuckles | Bell's Honeysuckle; Morrow's Honeysuckle; Tatarian Honeysuckle | Species distinctions, hollow stem cue, berry spread, understory impact |
+| https://www.tn.gov/protecttnforests/invasive-plants/privet.html | European Privet | Privet thicket impact, opposite leaf and flower traits, management framing |
+| https://mdc.mo.gov/discover-nature/field-guide/common-periwinkle | Common Periwinkle | Escaped groundcover framing, stem-rooting behavior, woodland-mat impact |
+| https://invasive-species.extension.org/populus-alba-white-poplar/ | White Poplar | White-backed leaf cue, clonal suckering, brittle growth habit, colony-forming spread |
+| https://site.extension.uga.edu/forsyth/2024/06/two-invasive-plants-to-weed-out-now/ | Mimosa Tree | Introduction history, public-facing naming, ornamental escape context |
+| https://extension.umn.edu/identify-invasive-species/giant-knotweed | Giant Knotweed | Leaf and stem distinctions from Japanese knotweed, rhizome spread, report-first framing |
+| https://www.michigan.gov/invasives/id-report/plants/aquatic/water-chestnut | Water Chestnut | Floating rosette ID, spiny nuts, fish-kill risk, report-fast framing |
+| https://www.michigan.gov/invasives/id-report/plants/aquatic/water-hyacinth | Water Hyacinth | Air-bladder leaf stalk cue, ornamental-escape pathway, colony growth and reporting guidance |
+| https://www.michigan.gov/invasives/id-report/plants/aquatic/yellow-floating-heart | Yellow Floating Heart | Fringed flower ID, floating-leaf cue, mat-forming impact, look-alike separation |
+| https://www.michigan.gov/invasives/id-report/plants/aquatic/parrot-feather | Parrot Feather | Emergent feathery shoot ID, fragmentation spread, report-first aquatic guidance |
+| https://www.michigan.gov/invasives/id-report/plants/aquatic/starry-stonewort | Starry Stonewort | Bulbil and branchlet cues, macroalga framing, underwater spread and reporting context |
+| https://www.texasinvasives.org/plant_database/detail.php?symbol=TRSE6 | Chinese Tallow | Introduction history, leaf and fruit cues, habitat breadth, ecological threat |
+| https://www.texasinvasives.org/professionals/management_detail.php?symbol=TRSE6 | Chinese Tallow | Root-sprout management framing, cut-stump and girdle follow-up guidance |
+| https://www.caes.uga.edu/research/impact/impact-statement/4398/invasive-insect-pest-of-legumes-threatens-georgia-agriculture.html | Kudzu Bug | U.S. introduction history, kudzu and soybean linkage, nuisance swarm context |
+| https://extensionentomology.tamu.edu/resources/management-guides/sorghum/stem-and-leaf-feeding-insects/ | Yellow Sugarcane Aphid | Aphid ID, sorghum damage pattern, scouting and threshold framing |
+| https://www.fws.gov/species/silver-carp-hypophthalmichthys-molitrix | Silver Carp | Jumping hazard, head and eye placement ID, introduction history, do-not-move guidance |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
