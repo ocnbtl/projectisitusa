@@ -260,6 +260,60 @@ These sources are already referenced by current curated profiles, but the origin
 | https://extension.psu.edu/european-pine-shoot-moth | European Pine Shoot Moth | Resin and crooking cues, pine-host impact, pruning and timing guidance |
 | https://extension.psu.edu/birch-leafminer | Birch Leafminer | Leaf-mine symptoms, host preference, early-season management framing |
 
+### Chunk 2H scale-up pass, consulted on 2026-04-17
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/white-clover | White Clover | Growth habit, stolon spread, lawn and disturbed-ground identification |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/curly-dock | Curly Dock | Wavy-leaf ID, taproot persistence, seed-stalk timing |
+| https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/common-mullein | Common Mullein | Rosette and flower-spike ID, disturbed-ground ecology, seed-bank framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/shepherds-purse | Shepherd's Purse | Rosette and purse-pod ID, cool-season annual behavior, early-removal framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/black-medic | Black Medick | Clover look-alike separation, pod cue, compacted-site behavior |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/lambsquarter | Lambsquarters | Mealy new-growth cue, fast-growth habit, seed-heavy annual framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/wild-carrot | Queen Anne's Lace | Umbel ID, bird's-nest seedhead cue, carrot-family look-alike caution |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/prickleylettuce | Prickly Lettuce | Midrib spine cue, tall annual habit, early-seed prevention guidance |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/buckhorn-plantain | Buckhorn Plantain | Ribbed leaf and seedhead ID, compacted-turf framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/henbit | Henbit | Clasping upper leaves, cool-season spread, simple yard-management framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/bull-thistle | Bull Thistle | Rosette and flowering-thistle ID, seed-head timing, pasture impact |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/common-chickweed | Common Chickweed | Hair-line stem cue, mat-forming habit, moist-soil spread pattern |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/red-sorrel | Common Sheep Sorrel | Arrowhead leaf cue, rhizome spread, low-fertility soil context |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/chicory | Chicory | Blue-flower ID, roadside habit, taproot persistence |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/ground-ivy | Ground Ivy | Creeping stem ID, shade-mat growth, stolon-driven spread |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/pennycress-1 | Field Pennycress | Coin-like pod cue, annual habit, seed-timing guidance |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/burdock | Common Burdock | Large-leaf rosette ID, hooked bur spread, trail and pasture relevance |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/broadleaf-plantain | Common Plantain | Broad rosette ID, compacted-ground context, turf-management framing |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/orchardgrass | Orchardgrass | Bunchgrass ID, large ligule cue, old-field and restoration context |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/quackgrass | Quackgrass | Clasping auricle cue, rhizome spread, soil-movement caution |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/barnyardgrass | Barnyardgrass | No-ligule ID, seedhead cue, wet disturbed-ground behavior |
+| https://extension.illinois.edu/invasives/invasive-wintercreeper | Wintercreeper | Forest-mat impact, climbing-vine behavior, removal framing |
+| https://www.mfc.ms.gov/forest-health/invasive-plants/chinese-japanese-wisteria/ | Chinese Wisteria | Twining-vine ID, canopy impact, staged woody-vine control framing |
+| https://extension.psu.edu/privet | Japanese Privet; Border Privet | Privet thicket behavior, berry spread, woody shrub management framing |
+| https://extension.umd.edu/resource/invasives-your-woodland-japanese-hop/ | Japanese Hop | Hooked-hair ID, riparian spread, skin-irritation caution |
+| https://www.mfc.ms.gov/forest-health/invasive-plants/japanese-climbing-fern/ | Japanese Climbing Fern | Climbing-frond ID, fire-ladder risk, report-first framing |
+| https://invasive-species.extension.org/miscanthus-sinensis-chinese-silvergrass/ | Chinese Silvergrass | Ornamental-escape context, plume ID, fire-risk framing |
+| https://extension.umn.edu/node/21931 | Dalmatian Toadflax | Clasping-leaf and flower ID, root-spread risk, report guidance |
+| https://extension.umn.edu/identify-invasive-species/diffuse-knapweed | Diffuse Knapweed | Knapweed ID, forage loss, long-distance seed-spread context |
+| https://mdc.mo.gov/discover-nature/field-guide/yellow-bluestem | Yellow Bluestem | Seedhead ID, prairie-invasion context, old-seeding escape framing |
+| https://dnr.wisconsin.gov/topic/Invasives/fact/BishopsGoutweed | Bishop's Goutweed | Groundcover-mat impact, rhizome spread, woodland-edge context |
+| https://wildlife.ca.gov/Conservation/Plants/Dont-Plant-Me/Big-Periwinkle | Bigleaf Periwinkle | Riparian mat impact, rooting-fragment risk, ornamental-escape framing |
+| https://www.invasivespeciesinfo.gov/terrestrial/plants/sacred-bamboo | Sacred Bamboo | Berry and cane traits, ornamental-escape context, fruit-spread risk |
+| https://mdc.mo.gov/discover-nature/field-guide/sweet-autumn-virgins-bower-autumn-clematis | Sweet Autumn Clematis | Flower and seedhead cues, vine-mass impact, edge-spread framing |
+| https://invasive-species.extension.org/arthraxon-hispidus-small-carpgrass/ | Small Carpgrass | Hairy-leaf-margin cue, wet-habitat invasion, report framing |
+| https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/scotch-thistle | Scotch Thistle | Giant rosette and winged-stem ID, access and forage impact |
+| https://www.invasivespeciesinfo.gov/aquatic/plants/brazilian-waterweed | Brazilian Waterweed | Submerged-whorl ID, aquarium pathway, clean-drain-dry framing |
+| https://research.fs.usda.gov/feis/species-reviews/rubpho | Wine Raspberry | Red-haired cane ID, thicket behavior, edge-invasion framing |
+| https://www.dnr.state.mn.us/invasives/terrestrialplants/erect-hedgeparsley.html | Erect Hedgeparsley | White-umbel ID, burr spread, look-alike caution |
+| https://www.dnr.state.mn.us/invasives/terrestrialplants/herbaceous/cowvetch.html | Bird Vetch | Tendril vine ID, smothering growth, roadside and restoration impact |
+| https://www.deq.nc.gov/about/divisions/water-resources/water-planning/water-supply-planning/aquatic-weed-control-program/alligatorweed-alternanthera-philoxeroides | Alligatorweed | Floating-mat ID, hollow-stem cue, navigation and flood impact |
+| https://extension.psu.edu/lawn-and-turfgrass-weeds-creeping-buttercup | Creeping Buttercup | Runner-based spread, wet-soil context, livestock and lawn caution |
+| https://extension.umn.edu/identify-invasive-species/smooth-brome-grass | Smooth Brome | M-shaped leaf cue, prairie dominance pattern, rhizome spread |
+| https://www.fs.usda.gov/wildflowers/plant-of-the-week/nasturtium_officinale.shtml | Watercress | Aquatic mustard ID, edible-plant introduction context, spring and seep invasion framing |
+| https://mdc.mo.gov/discover-nature/field-guide/orange-daylily | Orange Daylily | Clonal spread, old-planting escape pattern, ditch and stream-edge context |
+| https://dnr.wisconsin.gov/topic/Invasives/fact/Moneywort | Moneywort | Coin-leaf mat ID, wet-ground spread, ornamental-pond escape framing |
+| https://extension.umn.edu/identify-invasive-species/white-and-yellow-sweetclover | White Sweet Clover | Tall biennial habit, open-grassland impact, seed-bank and report context |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/velvet-grass-1 | Common Velvetgrass | Hairy leaf and sheath cue, moist-field behavior, grass-layer simplification |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/goosegrass | Goosegrass | Flat clump and finger-spike ID, compaction tolerance, turf-management framing |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

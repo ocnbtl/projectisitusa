@@ -5486,6 +5486,1816 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "trifolium-repens",
+    slug: "trifolium-repens",
+    commonName: "White Clover",
+    scientificName: "Trifolium repens",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A low creeping clover that spreads quickly through lawns, roadsides, and open disturbed ground by seed and rooting stems.",
+    origin:
+      "Native to Europe and western Asia and widely introduced to North America for forage, erosion control, and lawn mixes.",
+    whatToLookFor: [
+      "Three leaflets, usually with pale crescent marks, on creeping stems that root at the nodes.",
+      "Rounded white flower heads that may age to pink or tan.",
+      "Flat patches that weave through turf, paths, and other short vegetation.",
+    ],
+    whyItMatters:
+      "White clover is not the most destructive invader in the app, but it naturalizes easily and can dominate low disturbed ground. Its wide spread also makes it a useful signal species for how quickly an introduced lawn plant can move into meadows and edges.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is usually a manage-it-yourself lawn and garden weed unless it is spreading into a sensitive planting or restoration area.",
+      steps: [
+        "Pull or dig small patches before they knit into a larger mat, especially in new beds or prairie plantings.",
+        "Reseed or thicken bare turf after removal so the patch is not immediately recolonized.",
+        "Avoid moving soil, stolons, or flowering clippings from an infested area into clean ground.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/white-clover",
+      },
+    ],
+  },
+  {
+    id: "rumex-crispus",
+    slug: "rumex-crispus",
+    commonName: "Curly Dock",
+    scientificName: "Rumex crispus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A deep-rooted dock with wavy leaves and tall rusty seed stalks that persists in fields, roadsides, and disturbed soil.",
+    origin:
+      "Native to Eurasia and introduced to North America as a garden and medicinal plant before spreading as a weed.",
+    whatToLookFor: [
+      "Long narrow leaves with strongly wavy or curled margins.",
+      "A stout taproot and a basal rosette in the first stage of growth.",
+      "Tall branched seed stalks that turn reddish brown and linger after the leaves dry down.",
+    ],
+    whyItMatters:
+      "Curly dock thrives in compacted or repeatedly disturbed soil and can hang on through drought because of its deep taproot. Once it seeds freely in a pasture, bed edge, or drainage swale, it becomes a recurring cleanup problem.",
+    action: {
+      mode: "diy",
+      summary:
+        "Small plants are easiest to deal with before the taproot thickens and before the seed stalk dries down.",
+      steps: [
+        "Dig out the root crown on isolated plants rather than snapping the leaves off at the surface.",
+        "Cut and bag seed stalks if plants are already flowering so seed is not dropped during removal.",
+        "Improve bare compacted spots after cleanup because disturbed soil is exactly where curly dock returns.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/curly-dock",
+      },
+    ],
+  },
+  {
+    id: "verbascum-thapsus",
+    slug: "verbascum-thapsus",
+    commonName: "Common Mullein",
+    scientificName: "Verbascum thapsus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A woolly biennial with a huge first-year rosette and a tall yellow flower spike that colonizes open dry ground.",
+    origin:
+      "Native to Europe and Asia and brought to North America for medicinal use before escaping broadly.",
+    whatToLookFor: [
+      "Large gray-green rosette leaves covered with dense soft hairs in the first year.",
+      "A single upright flowering stalk in the second year, often several feet tall.",
+      "Many small yellow flowers packed along a dense terminal spike.",
+    ],
+    whyItMatters:
+      "Common mullein is a classic pioneer weed of bare disturbed soil. It can crowd sparse native vegetation, seed aggressively after disturbance, and leave long-lived seed behind even after the visible plants are removed.",
+    action: {
+      mode: "both",
+      summary:
+        "This is manageable by hand when small, but large disturbed sites deserve follow-up because seed banks can keep refilling the patch.",
+      steps: [
+        "Pull or dig rosettes before they bolt if the soil is loose enough to remove the crown.",
+        "Cut and bag flowering spikes before seed matures if plants are already in the second-year stage.",
+        "Document repeated outbreaks on recently burned, graded, or overgrazed ground where the plant is taking advantage of disturbance.",
+      ],
+    },
+    source: [
+      {
+        label: "Colorado Department of Agriculture",
+        url: "https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/common-mullein",
+      },
+    ],
+  },
+  {
+    id: "capsella-bursa-pastoris",
+    slug: "capsella-bursa-pastoris",
+    commonName: "Shepherd's Purse",
+    scientificName: "Capsella bursa-pastoris",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A small mustard with a basal rosette and many heart-shaped seedpods that appears quickly in cool disturbed ground.",
+    origin:
+      "Native to Eurasia and now naturalized across North America in gardens, paths, field edges, and waste places.",
+    whatToLookFor: [
+      "A low rosette of lobed leaves followed by a thin upright flowering stem.",
+      "Tiny white four-petaled flowers near the stem tips.",
+      "Flat triangular seedpods that look like little purses hanging along the stem.",
+    ],
+    whyItMatters:
+      "Shepherd's purse is a high-turnover weed that takes advantage of open soil in cool weather. It may not dominate like a woody invader, but it can fill beds, crop edges, and disturbed plots fast enough to become a persistent seed source.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is a pull-early species. The main goal is to keep the seedpods from maturing in open soil.",
+      steps: [
+        "Hoe or hand-pull plants while they are still small and before the purse-shaped pods fill out.",
+        "Bag flowering plants if they are already producing seedpods rather than shaking them in place.",
+        "Cover or replant bare soil after removal so another cool-season flush does not replace it.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/shepherds-purse",
+      },
+    ],
+  },
+  {
+    id: "medicago-lupulina",
+    slug: "medicago-lupulina",
+    commonName: "Black Medick",
+    scientificName: "Medicago lupulina",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A low yellow-flowered legume that creeps through thin turf, gravel, and compacted disturbed ground.",
+    origin:
+      "Native to Europe and Asia and introduced as a forage and soil-improvement plant before naturalizing widely.",
+    whatToLookFor: [
+      "Trifoliate leaves that resemble clover, but with the center leaflet on a slightly longer stalk.",
+      "Small yellow flower heads held above the foliage.",
+      "Tiny black coiled seedpods that replace the flowers as they age.",
+    ],
+    whyItMatters:
+      "Black medick spreads fast in stressed turf and open compacted soil, especially where mowing keeps competition low. It is often mistaken for harmless clover until the patch expands and starts reseeding itself heavily.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is usually a turf and pathway weed that can be managed early before it sets seed.",
+      steps: [
+        "Pull small plants before the black seedpods harden and scatter.",
+        "Loosen compacted soil and thicken desirable cover after removal because weak turf favors reinvasion.",
+        "Check nearby gravel edges and cracks where the same seed source may be reestablishing.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/black-medic",
+      },
+    ],
+  },
+  {
+    id: "chenopodium-album",
+    slug: "chenopodium-album",
+    commonName: "Lambsquarters",
+    scientificName: "Chenopodium album",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A fast-growing annual goosefoot that shows up in gardens, compost-rich soil, crop rows, and sunny disturbed ground.",
+    origin:
+      "Native to Eurasia and now widespread in North America as a long-established agricultural and garden weed.",
+    whatToLookFor: [
+      "Triangular to diamond-shaped leaves with irregular teeth and a pale mealy coating on new growth.",
+      "Upright branching stems that can quickly tower over nearby seedlings.",
+      "Dense clusters of tiny green flowers and seeds near the upper stems and leaf axils.",
+    ],
+    whyItMatters:
+      "Lambsquarters can grow faster than most garden or restoration seedlings and produce a very large seed crop in a single season. Once it gets ahead of you, it turns from a minor weed into a serious shade and seed-bank problem.",
+    action: {
+      mode: "diy",
+      summary:
+        "The main advantage is timing. Young plants pull easily, but large seed-bearing plants become a cleanup project.",
+      steps: [
+        "Pull or hoe plants while they are still small and before they flower.",
+        "Remove larger plants before seed clusters mature, and do not leave uprooted seed heads on bare soil.",
+        "Mulch or replant open garden soil after cleanup to reduce the next flush.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/lambsquarter",
+      },
+    ],
+  },
+  {
+    id: "daucus-carota",
+    slug: "daucus-carota",
+    commonName: "Queen Anne's Lace",
+    scientificName: "Daucus carota",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A tall biennial carrot with lacy white flower clusters that spreads through roadsides, fields, and sunny disturbed ground.",
+    origin:
+      "Native to Europe and western Asia and introduced to North America long ago as a garden and medicinal plant.",
+    whatToLookFor: [
+      "Finely divided carrot-like leaves and rough hairy stems.",
+      "Flat white umbrella-shaped flower clusters, often with one tiny dark flower in the center.",
+      "Seed heads that curl inward into a bird's-nest shape as they dry.",
+    ],
+    whyItMatters:
+      "Queen Anne's lace can move from roadsides and old fields into prairies and restoration sites where it competes with native forbs. It also creates an identification problem because people confuse it with more dangerous white-flowered carrot relatives.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are manageable, but caution and correct identification matter before pulling anything in the carrot family.",
+      steps: [
+        "Confirm the plant carefully before handling because poison hemlock and other look-alikes also have white umbels.",
+        "Cut or pull plants before seeds mature if you are working on a known infestation in a dry field or roadside edge.",
+        "Report expanding patches in prairie, meadow, or restoration work where the species is beginning to dominate the flower layer.",
+      ],
+      safetyNotes:
+        "Do not rely on a quick glance when separating this plant from toxic carrot-family look-alikes.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/wild-carrot",
+      },
+    ],
+  },
+  {
+    id: "lactuca-serriola",
+    slug: "lactuca-serriola",
+    commonName: "Prickly Lettuce",
+    scientificName: "Lactuca serriola",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A tall weedy lettuce with spiny leaves and yellow dandelion-like flowers that spreads along roadsides, lots, and open fields.",
+    origin:
+      "Native to Europe, western Asia, and North Africa and now widespread in North America as a common disturbed-ground weed.",
+    whatToLookFor: [
+      "Leaves with a row of sharp prickles along the underside of the midrib.",
+      "Upright branching stems that can reach well above knee height.",
+      "Small pale yellow flower heads followed by fluffy windblown seed.",
+    ],
+    whyItMatters:
+      "Prickly lettuce is a prolific seed producer that takes advantage of dry open soil, construction edges, and neglected lots. It may look flimsy, but a single mature plant can add a lot of seed to a site very quickly.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is best handled before it flowers and before the taproot and stems become more stubborn.",
+      steps: [
+        "Wear gloves and pull or cut plants before the seed heads begin to fluff out.",
+        "Bag flowering stalks if plants are already setting seed so wind does not finish the job for you.",
+        "Revisit the site after disturbance because new seedlings often appear in the same open ground.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/prickleylettuce",
+      },
+    ],
+  },
+  {
+    id: "plantago-lanceolata",
+    slug: "plantago-lanceolata",
+    commonName: "Buckhorn Plantain",
+    scientificName: "Plantago lanceolata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A narrow-leaved perennial plantain that persists in lawns, pastures, trails, and other closely cropped ground.",
+    origin:
+      "Native to Europe and western Asia and introduced to North America through forage, soil, and accidental pathways.",
+    whatToLookFor: [
+      "A low basal rosette of narrow ribbed leaves with parallel veins.",
+      "Leafless stalks topped by short cigar-shaped seed heads ringed with tiny pale flowers.",
+      "Persistent clumps in compacted turf, paths, and grazed ground.",
+    ],
+    whyItMatters:
+      "Buckhorn plantain thrives where soil is compacted and competition is weak, which makes it a reliable sign of stressed turf and overused ground. It is usually not a crisis invader, but it can spread steadily through lawns and pastures once established.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is mainly a turf and pasture management weed. The site conditions usually need fixing along with the plant removal.",
+      steps: [
+        "Dig or pull small crowns before they shed more seed into the surrounding turf.",
+        "Aerate or loosen compacted ground where practical so desirable cover can compete better.",
+        "Overseed thin areas after removal instead of leaving open space for more plantain seedlings.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/buckhorn-plantain",
+      },
+    ],
+  },
+  {
+    id: "lamium-amplexicaule",
+    slug: "lamium-amplexicaule",
+    commonName: "Henbit",
+    scientificName: "Lamium amplexicaule",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A cool-season annual mint with pink-purple flowers that carpets thin lawns, gardens, and winter-bare soil.",
+    origin:
+      "Native to Europe, western Asia, and North Africa and long naturalized across North America.",
+    whatToLookFor: [
+      "Square stems with opposite round to heart-shaped leaves.",
+      "Upper leaves that clasp the stem instead of sitting on a leaf stalk.",
+      "Purple to pink tubular flowers clustered near the upper nodes.",
+    ],
+    whyItMatters:
+      "Henbit can cover open soil quickly in late winter and spring, especially where turf is thin or beds are left bare. It is usually a nuisance weed rather than a reportable invader, but it can dump a lot of seed into the site if ignored.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is usually an early-season cleanup problem that is easiest before flowering and seed set.",
+      steps: [
+        "Pull or hoe patches while the soil is still moist and before the upper stems are full of flowers.",
+        "Mulch bare beds or strengthen thin turf after removal to limit the next cool-season flush.",
+        "Do not mistake it for a harmless ornamental mint if the patch is steadily expanding through a managed planting.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/henbit",
+      },
+    ],
+  },
+  {
+    id: "cirsium-vulgare",
+    slug: "cirsium-vulgare",
+    commonName: "Bull Thistle",
+    scientificName: "Cirsium vulgare",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A large spiny biennial thistle that forms rosettes first and then bolts into a tall purple-flowered seed producer.",
+    origin:
+      "Native to Europe, western Asia, and North Africa and introduced to North America through contaminated seed and trade.",
+    whatToLookFor: [
+      "A large first-year rosette with deeply lobed leaves edged in stiff yellowish spines.",
+      "Winged spiny stems and bright purple flower heads in the second year.",
+      "Soft white seed fluff released from old flower heads after blooming.",
+    ],
+    whyItMatters:
+      "Bull thistle can dominate disturbed pasture, field edges, and open restoration sites where its height and spines reduce use by people and livestock. One missed flowering plant can also create a lot of new seed.",
+    action: {
+      mode: "both",
+      summary:
+        "Rosettes are the best target. Once the plant bolts, the goal shifts to stopping seed before it blows away.",
+      steps: [
+        "Dig or cut first-year rosettes below the crown before they send up a flowering stem.",
+        "Wear heavy gloves if cutting mature plants and bag flower heads before they dry and release seed.",
+        "Report dense patches in pasture or natural areas where the infestation is already beyond spot removal.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/bull-thistle",
+      },
+    ],
+  },
+  {
+    id: "stellaria-media",
+    slug: "stellaria-media",
+    commonName: "Common Chickweed",
+    scientificName: "Stellaria media",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A soft sprawling annual that forms dense green mats in cool moist beds, lawns, and disturbed soil.",
+    origin:
+      "Native to Eurasia and now naturalized across North America as a common cool-season weed.",
+    whatToLookFor: [
+      "Small opposite leaves on weak sprawling stems.",
+      "Tiny white flowers that look like they have ten petals but actually have five deeply split ones.",
+      "A single line of fine hairs running along the stem between the leaf nodes.",
+    ],
+    whyItMatters:
+      "Common chickweed can blanket moist bare soil and crowd small seedlings before spring growth really starts. It is easy to underestimate because the stems are tender, but dense mats can still suppress garden and native plant starts.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is usually an early pull-and-mulch weed that should be handled before the patch thickens and seeds out.",
+      steps: [
+        "Pull or hoe mats while the stems are still shallow-rooted and easy to lift.",
+        "Remove flowering patches before seed develops if the area has a history of repeat infestations.",
+        "Mulch or replant the moist bare ground that chickweed was using as an opening.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/common-chickweed",
+      },
+    ],
+  },
+  {
+    id: "rumex-acetosella",
+    slug: "rumex-acetosella",
+    commonName: "Common Sheep Sorrel",
+    scientificName: "Rumex acetosella",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A small sorrel with arrow-shaped leaves that spreads through poor acidic soil by both seed and rhizomes.",
+    origin:
+      "Native to Eurasia and long established in North America as a weed of dry low-fertility ground.",
+    whatToLookFor: [
+      "Small arrowhead-shaped leaves with two backward-pointing basal lobes.",
+      "Reddish flowering stems rising above low patches in spring and early summer.",
+      "Persistent colonies in sandy, acidic, or nutrient-poor soil.",
+    ],
+    whyItMatters:
+      "Common sheep sorrel is a strong indicator of stressed soil and can spread into pastures, openings, and restoration work where fertility is low. Because it also moves by rhizomes, pulling a few stems often misses the real patch.",
+    action: {
+      mode: "both",
+      summary:
+        "This is a site-condition weed as much as a plant problem. The patch often returns unless the ground is improved or replanted.",
+      steps: [
+        "Dig small colonies deeply enough to remove connected rhizomes, not just the top growth.",
+        "Avoid letting red-brown seed stems mature in open sandy soil or disturbed beds.",
+        "Document persistent infestations in restoration or forage sites where low fertility is helping it spread.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/red-sorrel",
+      },
+    ],
+  },
+  {
+    id: "cichorium-intybus",
+    slug: "cichorium-intybus",
+    commonName: "Chicory",
+    scientificName: "Cichorium intybus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A deep-rooted blue-flowered perennial that is common along roadsides, fields, dry pastures, and other sunny open sites.",
+    origin:
+      "Native to Europe, western Asia, and North Africa and introduced to North America as a forage, salad, and medicinal plant.",
+    whatToLookFor: [
+      "Bright blue daisy-like flowers opening along stiff branching stems.",
+      "A basal rosette of lobed leaves that can resemble a large dandelion early on.",
+      "Tough upright stems growing from a strong taproot in hot dry sites.",
+    ],
+    whyItMatters:
+      "Chicory is one of the more familiar naturalized roadside plants in the United States, but it also invades dry openings and low-quality pasture where it can become a persistent component of the site. It is more of a steady colonizer than a sudden outbreak species.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is usually a long-term weed-management problem rather than a report-first species.",
+      steps: [
+        "Dig or cut young rosettes before the taproot and flowering stems become more established.",
+        "Remove flowering stalks before seed matures if you are trying to keep it out of a prairie or managed bed.",
+        "Monitor dry disturbed edges after cleanup because chicory often reappears from seed in the same open ground.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/chicory",
+      },
+    ],
+  },
+  {
+    id: "glechoma-hederacea",
+    slug: "glechoma-hederacea",
+    commonName: "Ground Ivy",
+    scientificName: "Glechoma hederacea",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A creeping mint that roots along the stem and forms dense mats in lawns, shady beds, and damp edges.",
+    origin:
+      "Native to Europe and introduced to North America as a medicinal and ornamental groundcover.",
+    whatToLookFor: [
+      "Rounded to kidney-shaped leaves with broad scalloped teeth.",
+      "Square creeping stems that root at the nodes and run through turf or mulch.",
+      "Small purple tubular flowers appearing above the foliage in spring.",
+    ],
+    whyItMatters:
+      "Ground ivy spreads aggressively through shade and moist turf where other plants are weak. Once the stolons lace through a lawn or woodland edge, simple mowing does very little to slow it down.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is usually a persistent yard and shade-bed invader that needs repeated cleanup plus better competition from desired plants.",
+      steps: [
+        "Pull or rake up stolons when the soil is moist so rooted runners come out with the patch.",
+        "Do not move contaminated mulch, soil, or divisions from an infested bed into clean areas.",
+        "Thin the mat and then replant or thicken the site with stronger desired cover instead of leaving open shade soil behind.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/ground-ivy",
+      },
+    ],
+  },
+  {
+    id: "thlaspi-arvense",
+    slug: "thlaspi-arvense",
+    commonName: "Field Pennycress",
+    scientificName: "Thlaspi arvense",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A cool-season mustard with round flat seedpods that appears quickly in fields, roadsides, and recently disturbed soil.",
+    origin:
+      "Native to Eurasia and introduced to North America as an agricultural weed that now occurs widely in open disturbed ground.",
+    whatToLookFor: [
+      "Bluish green leaves clasping the stem on upright annual plants.",
+      "Small white four-petaled flowers near the top of the stem.",
+      "Distinctive flat coin-like seedpods with a notch at the tip.",
+    ],
+    whyItMatters:
+      "Field pennycress can move fast through open spring soil and produce a heavy seed crop before summer competition arrives. In crop edges and restoration work, that means it can act like a temporary plant that still leaves a long-term seed-bank problem behind.",
+    action: {
+      mode: "diy",
+      summary:
+        "The key is removing it before the flat pods mature and dry.",
+      steps: [
+        "Hoe or pull plants while they are still in early flower or before the seedpods enlarge.",
+        "Bag pod-bearing stems if they are already setting seed instead of dropping them in place.",
+        "Cover or reseed exposed soil after removal because pennycress is built to exploit short open windows.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/pennycress-1",
+      },
+    ],
+  },
+  {
+    id: "arctium-minus",
+    slug: "arctium-minus",
+    commonName: "Common Burdock",
+    scientificName: "Arctium minus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A large biennial with huge leaves and hooked burs that hitchhike on fur, clothing, and gear.",
+    origin:
+      "Native to Eurasia and introduced to North America for food and medicinal use before naturalizing widely.",
+    whatToLookFor: [
+      "Very large coarse leaves with pale woolly undersides in the first-year rosette.",
+      "Tall branching stems in the second year topped with purple flower heads.",
+      "Round hooked burs that cling tightly to socks, pet fur, and wildlife.",
+    ],
+    whyItMatters:
+      "Common burdock spreads its seed by hitchhiking, which lets it move easily along trails, pastures, and edges used by people and animals. Dense patches can also crowd out smaller plants and create burr problems for pets and livestock.",
+    action: {
+      mode: "both",
+      summary:
+        "Rosettes are the easiest stage to remove. Once burs form, cleanup becomes a seed-dispersal problem.",
+      steps: [
+        "Dig first-year rosettes before they bolt and before the taproot becomes harder to remove cleanly.",
+        "Cut and bag flowering or bur-bearing stalks rather than dragging them across the site.",
+        "Report larger patches in trail corridors, pastures, or restoration sites where burr spread keeps moving the infestation outward.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/burdock",
+      },
+    ],
+  },
+  {
+    id: "plantago-major",
+    slug: "plantago-major",
+    commonName: "Common Plantain",
+    scientificName: "Plantago major",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A broad-leaved perennial plantain that settles into compacted lawns, footpaths, play areas, and bare disturbed soil.",
+    origin:
+      "Native to Europe and parts of Asia and introduced to North America centuries ago through settlement and trade.",
+    whatToLookFor: [
+      "A flat rosette of broad oval leaves with strong parallel veins.",
+      "Leafless stalks carrying long narrow seed spikes above the rosette.",
+      "Tough crowns that persist in compacted soil where turf is thin.",
+    ],
+    whyItMatters:
+      "Common plantain is another indicator of stressed ground rather than a dramatic reportable invader. But because it tolerates trampling and compaction so well, it can become a lasting part of weak turf and disturbed paths if left alone.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is usually a site-maintenance weed. Removing the plant without improving the ground often means it comes back.",
+      steps: [
+        "Lift the crown and root from small patches before seed spikes mature.",
+        "Address compaction or chronic bare spots where plantain is taking hold.",
+        "Overseed or replant the cleaned area so open soil is not left waiting for another flush.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/broadleaf-plantain",
+      },
+    ],
+  },
+  {
+    id: "dactylis-glomerata",
+    slug: "dactylis-glomerata",
+    commonName: "Orchardgrass",
+    scientificName: "Dactylis glomerata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A cool-season bunchgrass widely planted for forage that now persists in roadsides, wood edges, old fields, and disturbed meadows.",
+    origin:
+      "Native to Eurasia and introduced broadly to North America as a pasture and hay grass.",
+    whatToLookFor: [
+      "Flattened folded shoots and a large jagged ligule at the leaf collar.",
+      "Coarse bunches of bluish green leaves emerging early in the season.",
+      "Branched seed heads with flower clusters packed on the ends of short branches.",
+    ],
+    whyItMatters:
+      "Orchardgrass is not a sudden high-alert invader, but it can dominate open ground where it was planted or where disturbance favors introduced forage grasses. In meadow and woodland-edge restoration, that early growth can suppress native species trying to establish.",
+    action: {
+      mode: "both",
+      summary:
+        "This is often a manage-and-outcompete species rather than a one-time pull.",
+      steps: [
+        "Dig or cut isolated clumps before seed heads mature if you are trying to keep it out of a restoration area.",
+        "Avoid moving hay, straw, or seed contaminated with orchardgrass into a clean native planting.",
+        "Document large old-field or prairie patches where orchardgrass is becoming a dominant grass layer.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/orchardgrass",
+      },
+    ],
+  },
+  {
+    id: "elymus-repens",
+    slug: "elymus-repens",
+    commonName: "Quackgrass",
+    scientificName: "Elymus repens",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A rhizomatous perennial grass that spreads aggressively through gardens, lawns, fields, and other open disturbed soil.",
+    origin:
+      "Native to Europe, Asia, and North Africa and introduced to North America in seed, hay, and soil.",
+    whatToLookFor: [
+      "Long clasping auricles at the leaf collar that wrap around the stem.",
+      "Strong pale rhizomes running horizontally through the soil.",
+      "Upright seed heads with alternating flattened spikelets along the stem.",
+    ],
+    whyItMatters:
+      "Quackgrass is hard to remove because every missed rhizome segment can help rebuild the patch. In gardens, crop rows, and restoration sites, it competes belowground as much as aboveground and spreads faster than many people expect.",
+    action: {
+      mode: "both",
+      summary:
+        "This is a root-fragment problem. Quick top-cutting usually does not solve it.",
+      steps: [
+        "Dig carefully and remove as much of the connected rhizome network as possible from small patches.",
+        "Do not till or move contaminated soil casually because broken rhizomes can restart the infestation.",
+        "Report or plan larger infestations in native plantings or managed fields where repeated follow-up will be needed.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/quackgrass",
+      },
+    ],
+  },
+  {
+    id: "echinochloa-crus-galli",
+    slug: "echinochloa-crus-galli",
+    commonName: "Barnyardgrass",
+    scientificName: "Echinochloa crus-galli",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A fast-growing annual grass of wet and dry disturbed ground that quickly fills crop rows, pond edges, and compacted open soil.",
+    origin:
+      "Probably native to Eurasia and long established worldwide as a highly adaptable agricultural and wetland-edge weed.",
+    whatToLookFor: [
+      "A robust annual grass with no ligule where the blade meets the sheath.",
+      "Broad flat leaves and often reddish to purplish seed heads with crowded branches.",
+      "Dense late-summer stands in moist disturbed soil, row crops, ditches, and shorelines.",
+    ],
+    whyItMatters:
+      "Barnyardgrass grows fast enough to overtop seedlings and take advantage of wet fertile soil. In crop fields and disturbed shorelines, it acts like a short-lived plant that can still dominate an entire season and refill the seed bank.",
+    action: {
+      mode: "diy",
+      summary:
+        "This is best handled young, before the coarse seed heads are fully developed.",
+      steps: [
+        "Pull or hoe seedlings early while the stand is still open enough to work through.",
+        "Cut and remove seed heads if plants are already mature and likely to shed into the site.",
+        "Reduce repeated disturbance and exposed wet soil where barnyardgrass has an easy opening.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/barnyardgrass",
+      },
+    ],
+  },
+  {
+    id: "euonymus-fortunei",
+    slug: "euonymus-fortunei",
+    commonName: "Wintercreeper",
+    scientificName: "Euonymus fortunei",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "An evergreen groundcover vine that escapes landscaping and forms thick mats across forest floors, tree trunks, and edges.",
+    origin:
+      "Native to China, Korea, and Japan and introduced to North America as an ornamental groundcover and climbing vine.",
+    whatToLookFor: [
+      "Opposite evergreen leaves with fine teeth and a leathery feel.",
+      "Trailing stems that root where they touch the ground and climbing stems that hug tree bark.",
+      "Dense mats in woods, old homesites, fencerows, and shady urban edges.",
+    ],
+    whyItMatters:
+      "Wintercreeper can blanket the ground layer, shade out native herbs, and climb into shrubs and trees. Once it spreads from planting beds into nearby woods, it stops acting like a tidy ornamental and starts behaving like a persistent forest-floor invader.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches can be removed directly, but climbing and rooted mats require patience and repeated follow-up.",
+      steps: [
+        "Pull rooted mats while the soil is moist, and remove as much stem material as possible.",
+        "Cut climbing vines away from tree trunks before tackling the rooted base so the plant is not left fruiting overhead.",
+        "Report naturalized woodland infestations where the species is moving beyond old plantings and into intact habitat.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Illinois Extension",
+        url: "https://extension.illinois.edu/invasives/invasive-wintercreeper",
+      },
+    ],
+  },
+  {
+    id: "wisteria-sinensis",
+    slug: "wisteria-sinensis",
+    commonName: "Chinese Wisteria",
+    scientificName: "Wisteria sinensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A heavy woody vine with showy hanging flower clusters that escapes old plantings and strangles trees, fences, and shrubs.",
+    origin:
+      "Native to China and introduced to the United States as an ornamental vine in the 1800s.",
+    whatToLookFor: [
+      "Twining woody stems that wrap tightly around trunks and supports.",
+      "Compound leaves with many smooth-edged leaflets.",
+      "Dangling purple flower clusters in spring followed by fuzzy beanlike seed pods.",
+    ],
+    whyItMatters:
+      "Chinese wisteria can girdle and collapse small trees, pull down shrubs, and create tangled shade that suppresses everything below it. Old home sites and fence lines often become the launch point for nearby woodland invasion.",
+    action: {
+      mode: "both",
+      summary:
+        "Young vines can be removed directly, but established woody stems usually need staged control and follow-up.",
+      steps: [
+        "Cut vines at the base and separate them from supports rather than trying to rip a whole mature tangle down at once.",
+        "Pull small rooted seedlings and runners before they form new woody stems.",
+        "Report naturalized patches in woodland edges, parks, or stream corridors where the vine is moving beyond cultivation.",
+      ],
+    },
+    source: [
+      {
+        label: "Mississippi Forestry Commission",
+        url: "https://www.mfc.ms.gov/forest-health/invasive-plants/chinese-japanese-wisteria/",
+      },
+    ],
+  },
+  {
+    id: "ligustrum-japonicum",
+    slug: "ligustrum-japonicum",
+    commonName: "Japanese Privet",
+    scientificName: "Ligustrum japonicum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A dense evergreen privet shrub that spreads from hedges and ornamental plantings into woods, edges, and stream corridors.",
+    origin:
+      "Native to Japan and Korea and introduced as a landscape hedge shrub.",
+    whatToLookFor: [
+      "Opposite glossy leaves on many-branched shrubs or small trees.",
+      "Clusters of small white flowers followed by black berries.",
+      "Dense hedge-like thickets in woods, floodplains, vacant lots, and old plantings.",
+    ],
+    whyItMatters:
+      "Japanese privet shades out native understory plants and helps turn woodland edges into dense shrub walls. Birds move the fruit, which means hedge plantings can feed new infestations far beyond the original yard.",
+    action: {
+      mode: "both",
+      summary:
+        "Seedlings and small shrubs are manageable, but fruiting thickets usually need coordinated follow-up.",
+      steps: [
+        "Pull or dig young plants before they become woody and begin fruiting.",
+        "Do not cut and leave larger shrubs untreated because privet often resprouts aggressively.",
+        "Report expanding privet thickets in woods, stream edges, or conservation land where they are replacing native shrubs.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/privet",
+      },
+    ],
+  },
+  {
+    id: "ligustrum-obtusifolium",
+    slug: "ligustrum-obtusifolium",
+    commonName: "Border Privet",
+    scientificName: "Ligustrum obtusifolium",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A deciduous privet shrub that escapes from old hedges and forms thickets along roadsides, fields, and forest margins.",
+    origin:
+      "Native to China and Japan and introduced to North America as a hardy hedge plant.",
+    whatToLookFor: [
+      "Opposite oval leaves on arching many-stemmed shrubs.",
+      "White flower clusters at the branch tips followed by black berries.",
+      "Loose to dense thickets in abandoned fields, edges, and old yard sites.",
+    ],
+    whyItMatters:
+      "Border privet spreads the same way other invasive privets do, by fruit, resprouting, and dense shade. It may look like a fading old hedge species, but once it seeds into nearby habitat it can become a long-lived understory problem.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat this like a woody thicket invader, not a one-cut shrub.",
+      steps: [
+        "Pull seedlings and saplings before they start fruiting or layering into a larger colony.",
+        "Avoid cutting mature shrubs without a follow-up plan because they commonly resprout from the base.",
+        "Report naturalized border privet in field edges or forest margins where hedge escape is becoming a shrub layer problem.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/privet",
+      },
+    ],
+  },
+  {
+    id: "humulus-japonicus",
+    slug: "humulus-japonicus",
+    commonName: "Japanese Hop",
+    scientificName: "Humulus japonicus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A rough annual vine that grows fast enough to blanket streambanks, roadsides, and open edges in a single season.",
+    origin:
+      "Native to eastern Asia and introduced to North America as an ornamental vine.",
+    whatToLookFor: [
+      "Opposite leaves with deep hand-like lobes, usually five to seven per leaf.",
+      "Downward-pointing prickles and rough hairs on stems and leaf stalks.",
+      "Tangling growth that climbs over shrubs, fences, and riverbank vegetation.",
+    ],
+    whyItMatters:
+      "Japanese hop can smother other plants in one growing season and leaves behind a heavy seed crop for the next year. The rough hairs can also irritate skin, which makes removal less casual than it looks.",
+    action: {
+      mode: "both",
+      summary:
+        "Young vines can be handled directly, but riparian patches deserve quick attention before seed spreads downstream.",
+      steps: [
+        "Wear gloves and long sleeves before handling the vine because the hooked hairs can irritate skin.",
+        "Pull or cut plants before seed matures, especially where they are still below shoulder height and easier to remove.",
+        "Report streamside infestations where the vine is beginning to overtop shrubs or young trees.",
+      ],
+      safetyNotes:
+        "The stems and leaves can cause skin irritation in some people.",
+    },
+    source: [
+      {
+        label: "University of Maryland Extension",
+        url: "https://extension.umd.edu/resource/invasives-your-woodland-japanese-hop/",
+      },
+    ],
+  },
+  {
+    id: "lygodium-japonicum",
+    slug: "lygodium-japonicum",
+    commonName: "Japanese Climbing Fern",
+    scientificName: "Lygodium japonicum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A twining fern with lacy fronds that climbs into shrubs and trees and forms mats along roads, swamps, and woodland edges.",
+    origin:
+      "Native to Asia and Australia and introduced to the United States as an ornamental fern in the early 1900s.",
+    whatToLookFor: [
+      "Delicate divided fronds on long wiry stems that actually climb like a vine.",
+      "Tan persistent dead fronds mixed with fresh green growth in invaded patches.",
+      "Sprawling or climbing infestations in wet woods, ditch banks, bridge edges, and swamps.",
+    ],
+    whyItMatters:
+      "Japanese climbing fern smothers vegetation, spreads by windblown spores and rhizomes, and can carry fire into shrubs and tree canopies. That combination makes it more serious than an ordinary escaped fern.",
+    action: {
+      mode: "report",
+      summary:
+        "This is usually a report-and-contain species because spores and regrowth make casual cutting a weak response.",
+      steps: [
+        "Photograph the climbing fronds and the infested habitat if you suspect a new occurrence.",
+        "Avoid dragging cut fronds or soil from the site into another area where fragments or spores can move.",
+        "Report infestations in wetlands, woods, or transportation corridors where the fern is climbing over other vegetation.",
+      ],
+    },
+    source: [
+      {
+        label: "Mississippi Forestry Commission",
+        url: "https://www.mfc.ms.gov/forest-health/invasive-plants/japanese-climbing-fern/",
+      },
+    ],
+  },
+  {
+    id: "miscanthus-sinensis",
+    slug: "miscanthus-sinensis",
+    commonName: "Chinese Silvergrass",
+    scientificName: "Miscanthus sinensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tall ornamental bunchgrass with showy plumes that escapes landscaping into roadsides, old fields, and dry open edges.",
+    origin:
+      "Native to Asia and introduced widely as an ornamental grass in the late 1800s.",
+    whatToLookFor: [
+      "Large fountain-like clumps of arching leaves with a pale silvery midrib.",
+      "Tall feathery pink to silver flower plumes in late summer and fall.",
+      "Self-seeded clumps spreading beyond planted beds into open sunny ground.",
+    ],
+    whyItMatters:
+      "Chinese silvergrass can move from intentional plantings into nearby natural areas and disturbed edges where it forms large seed-producing clumps. The dry biomass also adds fuel, which can increase fire risk in invaded sites.",
+    action: {
+      mode: "both",
+      summary:
+        "This starts as a landscape problem and becomes a natural-area problem if fertile plants are allowed to seed outward.",
+      steps: [
+        "Pull or dig volunteer seedlings and small clumps while they are still manageable.",
+        "Do not dump cut plumes, divisions, or whole plants where they can root or shed seed into open habitat.",
+        "Report repeated escapes along roadsides, utility corridors, or field edges near ornamental plantings.",
+      ],
+    },
+    source: [
+      {
+        label: "eXtension Invasive Species",
+        url: "https://invasive-species.extension.org/miscanthus-sinensis-chinese-silvergrass/",
+      },
+    ],
+  },
+  {
+    id: "linaria-dalmatica",
+    slug: "linaria-dalmatica",
+    commonName: "Dalmatian Toadflax",
+    scientificName: "Linaria dalmatica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A waxy perennial with yellow snapdragon-like flowers that invades roadsides, rangeland, gravelly soil, and dry open slopes.",
+    origin:
+      "Native to the Mediterranean region and introduced as an ornamental, dye plant, and folk remedy.",
+    whatToLookFor: [
+      "Bluish green waxy leaves that clasp the stem.",
+      "Bright yellow flowers with an orange throat and backward-pointing spur.",
+      "Colonies arising from both seed and creeping roots in dry open ground.",
+    ],
+    whyItMatters:
+      "Dalmatian toadflax can build near-monocultures, lower forage value, and keep reappearing from deep root reserves. It is a much harder plant to manage once the root system has spread beyond the visible stems.",
+    action: {
+      mode: "report",
+      summary:
+        "Report-first is the safer approach in rangeland and natural areas because root spread and regulations often matter more than quick pulling.",
+      steps: [
+        "Photograph the leaves, flowers, and colony pattern if you suspect a new infestation.",
+        "Do not mow or drag flowering stems through a clean area if the goal is to prevent seed movement.",
+        "Report infestations to the relevant noxious weed or invasive species program, especially in pasture, rangeland, or conservation sites.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/node/21931",
+      },
+    ],
+  },
+  {
+    id: "centaurea-diffusa",
+    slug: "centaurea-diffusa",
+    commonName: "Diffuse Knapweed",
+    scientificName: "Centaurea diffusa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A pale branching knapweed that invades roadsides, gravel, rangeland, and other dry disturbed sites.",
+    origin:
+      "Native to the eastern Mediterranean region and introduced accidentally in contaminated seed and transport pathways.",
+    whatToLookFor: [
+      "Gray-green deeply divided leaves, especially in the basal rosette.",
+      "A bushy branching form with small mostly white flower heads.",
+      "Sharp bracts around the flower heads and tumbleweed-like seed spread after drying.",
+    ],
+    whyItMatters:
+      "Diffuse knapweed reduces forage, crowds out native plants, and spreads efficiently by seed over long distances. Once established in dry grassland or roadside systems, it becomes a long-term management issue rather than a simple weed pull.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a report-and-track species in natural areas and rangeland because early containment matters.",
+      steps: [
+        "Photograph the flowers, bracts, and overall branching form if you are documenting a suspected patch.",
+        "Avoid driving, mowing, or moving contaminated soil through seed-bearing plants when seeds are mature.",
+        "Report infestations in grassland, pasture, or roadside corridors where the plant is spreading into new dry open habitat.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/diffuse-knapweed",
+      },
+    ],
+  },
+  {
+    id: "bothriochloa-ischaemum",
+    slug: "bothriochloa-ischaemum",
+    commonName: "Yellow Bluestem",
+    scientificName: "Bothriochloa ischaemum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A bunch-forming introduced grass that spreads from roadsides and seedings into prairies, open fields, and dry disturbed ground.",
+    origin:
+      "Native to Eurasia and introduced to North America for forage and erosion control.",
+    whatToLookFor: [
+      "Blue-green to yellow-green clumps with flowering stems rising several feet tall.",
+      "Silvery to reddish purple seed heads with side branches longer than the central stem.",
+      "Early summer flowering and expanding clumps in roadsides, fields, and open prairie ground.",
+    ],
+    whyItMatters:
+      "Yellow bluestem can crowd out native prairie grasses and forbs and gradually shift open habitats toward introduced grass dominance. It often spreads outward from places where it was intentionally planted.",
+    action: {
+      mode: "both",
+      summary:
+        "Small new patches can be tackled early, but larger prairie and roadside infestations are worth documenting.",
+      steps: [
+        "Photograph the seed head and clump form if you need to separate it from native bluestems.",
+        "Pull or dig isolated seedlings and small clumps before the stand expands and reseeds.",
+        "Report spreading patches in prairie remnants, restoration sites, or roadsides where the grass is moving beyond old plantings.",
+      ],
+    },
+    source: [
+      {
+        label: "Missouri Department of Conservation",
+        url: "https://mdc.mo.gov/discover-nature/field-guide/yellow-bluestem",
+      },
+    ],
+  },
+  {
+    id: "aegopodium-podagraria",
+    slug: "aegopodium-podagraria",
+    commonName: "Bishop's Goutweed",
+    scientificName: "Aegopodium podagraria",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A rhizomatous ornamental groundcover that escapes gardens and forms dense carpets in shade and moist woodland edges.",
+    origin:
+      "Native to Europe and Asia and introduced to North America as a shade-tolerant ornamental.",
+    whatToLookFor: [
+      "Compound leaves divided into three main sections, each with toothed leaflets.",
+      "Solid green or variegated foliage spreading as a low dense patch.",
+      "Flat clusters of small white flowers held above the leaves in late spring or summer.",
+    ],
+    whyItMatters:
+      "Bishop's goutweed spreads aggressively through rhizomes and can exclude almost everything else in the herb layer once a patch is established. Garden escape is the main pathway, but the ecological effect shows up in the woods nearby.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth attacking early because older mats become labor-intensive rhizome problems.",
+      steps: [
+        "Dig out patches carefully and remove as much of the underground rhizome network as possible.",
+        "Do not share divisions or dump infested yard waste where fragments can restart the plant.",
+        "Report woodland-edge infestations where the patch is moving beyond ornamental beds into natural habitat.",
+      ],
+    },
+    source: [
+      {
+        label: "Wisconsin Department of Natural Resources",
+        url: "https://dnr.wisconsin.gov/topic/Invasives/fact/BishopsGoutweed",
+      },
+    ],
+  },
+  {
+    id: "vinca-major",
+    slug: "vinca-major",
+    commonName: "Bigleaf Periwinkle",
+    scientificName: "Vinca major",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "An evergreen ornamental vine that creeps and roots into broad mats along creeks, shady woods, and abandoned garden sites.",
+    origin:
+      "Native to Europe and North Africa and introduced to North America as a groundcover and medicinal plant.",
+    whatToLookFor: [
+      "Glossy opposite leaves that are larger and broader than common periwinkle leaves.",
+      "Lavender-blue five-petaled flowers above trailing stems.",
+      "Long rooting runners creating thick mats in moist shade and along drainages.",
+    ],
+    whyItMatters:
+      "Bigleaf periwinkle changes the ground layer by replacing diverse native herbs with one continuous mat. Because stem fragments root easily, moving yard waste or flood debris can spread it farther than expected.",
+    action: {
+      mode: "both",
+      summary:
+        "Early patch removal works, but fragments matter and bigger creekside infestations are worth documenting.",
+      steps: [
+        "Pull or rake out rooted runners and crowns while the soil is moist enough to remove attached fragments.",
+        "Bag or contain pulled material rather than tossing it over a bank or into a brush pile.",
+        "Report expanding infestations along creeks, woods, or old home sites where the plant is overtaking the ground layer.",
+      ],
+    },
+    source: [
+      {
+        label: "California Department of Fish and Wildlife",
+        url: "https://wildlife.ca.gov/Conservation/Plants/Dont-Plant-Me/Big-Periwinkle",
+      },
+    ],
+  },
+  {
+    id: "nandina-domestica",
+    slug: "nandina-domestica",
+    commonName: "Sacred Bamboo",
+    scientificName: "Nandina domestica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "An ornamental shrub with bamboo-like stems and bright red berries that escapes into woods and undeveloped edges in warm regions.",
+    origin:
+      "Native to Asia and introduced widely as a landscape shrub.",
+    whatToLookFor: [
+      "Cane-like upright stems with layered finely divided leaflets.",
+      "White flower clusters followed by shiny red berries that persist into winter.",
+      "Seedlings and thickets spreading out from old ornamental plantings.",
+    ],
+    whyItMatters:
+      "Sacred bamboo can naturalize in shaded edges and open woods where birds move the berries into new areas. It also stays popular in landscaping, which means new escapes can keep appearing even after old ones are removed.",
+    action: {
+      mode: "both",
+      summary:
+        "Yard plants are the main source, so stopping fruit and volunteer seedlings matters as much as removing wild patches.",
+      steps: [
+        "Pull volunteer seedlings before they form a woody base and begin fruiting.",
+        "Cut off berry clusters from ornamental plants if you are trying to reduce new spread from a nearby planting.",
+        "Report naturalized patches in woods or stream corridors where the shrub is moving beyond cultivation.",
+      ],
+      safetyNotes:
+        "Keep pets and curious children away from berries and plant parts that may be toxic if eaten.",
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/plants/sacred-bamboo",
+      },
+    ],
+  },
+  {
+    id: "clematis-terniflora",
+    slug: "clematis-terniflora",
+    commonName: "Sweet Autumn Clematis",
+    scientificName: "Clematis terniflora",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A fast-growing ornamental vine with masses of fragrant white flowers that escapes fences and arbors into edges, thickets, and stream corridors.",
+    origin:
+      "Native to China and Japan and introduced as an ornamental climber.",
+    whatToLookFor: [
+      "Twining stems with opposite compound leaves made of three to five leaflets.",
+      "Large late-season sprays of small fragrant white flowers.",
+      "Showy feathery seed heads that persist after flowering and help identify old vines.",
+    ],
+    whyItMatters:
+      "Sweet autumn clematis can smother shrubs, young trees, and native vines under a dense tangled mass. Its heavy seed production also means garden plantings can feed steady new escapes into nearby habitat.",
+    action: {
+      mode: "both",
+      summary:
+        "Small vines can be removed directly, but large woody tangles are best handled in stages.",
+      steps: [
+        "Cut the vine low at the base and remove manageable sections instead of ripping down an entire established canopy at once.",
+        "Pull new seedlings and runners before they harden into a larger woody patch.",
+        "Report established escapes in park edges, stream corridors, or natural areas where the vine is spreading beyond planted structures.",
+      ],
+    },
+    source: [
+      {
+        label: "Missouri Department of Conservation",
+        url: "https://mdc.mo.gov/discover-nature/field-guide/sweet-autumn-virgins-bower-autumn-clematis",
+      },
+    ],
+  },
+  {
+    id: "arthraxon-hispidus",
+    slug: "arthraxon-hispidus",
+    commonName: "Small Carpgrass",
+    scientificName: "Arthraxon hispidus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A delicate-looking annual grass that forms spreading patches in wet trails, floodplains, streambanks, and disturbed shade.",
+    origin:
+      "Native to eastern Asia and introduced to the United States through accidental and human-assisted pathways.",
+    whatToLookFor: [
+      "Broad soft leaves with a heart-shaped or rounded base clasping the stem.",
+      "Noticeable hairs along the leaf margins.",
+      "Low sprawling patches in wet disturbed areas with short fingerlike flowering spikes in late season.",
+    ],
+    whyItMatters:
+      "Small carpgrass can spread rapidly across moist disturbed ground and outcompete lower native vegetation. It often stays overlooked until the patch has already expanded across a floodplain or wet trail edge.",
+    action: {
+      mode: "report",
+      summary:
+        "Moist habitat infestations are worth documenting early because the plant can spread through large wet disturbance corridors.",
+      steps: [
+        "Photograph the leaf base, hairy margins, and patch growth pattern if you suspect this grass.",
+        "Avoid carrying muddy boots, tools, or fill material from an infested wet site into another area.",
+        "Report infestations along streams, floodplains, trails, or wet restoration sites where the patch is expanding.",
+      ],
+    },
+    source: [
+      {
+        label: "eXtension Invasive Species",
+        url: "https://invasive-species.extension.org/arthraxon-hispidus-small-carpgrass/",
+      },
+    ],
+  },
+  {
+    id: "onopordum-acanthium",
+    slug: "onopordum-acanthium",
+    commonName: "Scotch Thistle",
+    scientificName: "Onopordum acanthium",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A giant woolly thistle with broad spiny wings that can make trails, pastures, and disturbed ground nearly impassable.",
+    origin:
+      "Native to Eurasia and introduced as an ornamental before spreading as a noxious weed.",
+    whatToLookFor: [
+      "Huge gray-green rosettes covered in woolly hairs and edged with strong spines.",
+      "Very tall second-year flowering stalks with spiny winged stems.",
+      "Large purple flower heads above leaves that are broad, pale, and heavily armed.",
+    ],
+    whyItMatters:
+      "Scotch thistle reduces forage use, crowds out other vegetation, and creates real access problems for people and animals because of its size and spines. Once a patch seeds repeatedly, it can keep rebuilding from the soil seed bank for years.",
+    action: {
+      mode: "both",
+      summary:
+        "Rosette-stage control is far easier than dealing with mature flowering plants.",
+      steps: [
+        "Wear heavy gloves and sturdy clothing before cutting or digging any plant in the patch.",
+        "Target rosettes or first-year plants when possible, and bag flowering heads from mature plants before seed spreads.",
+        "Report dense pasture, trail, or natural-area infestations where the patch is already too large for simple hand control.",
+      ],
+    },
+    source: [
+      {
+        label: "Colorado Department of Agriculture",
+        url: "https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/scotch-thistle",
+      },
+    ],
+  },
+  {
+    id: "egeria-densa",
+    slug: "egeria-densa",
+    commonName: "Brazilian Waterweed",
+    scientificName: "Egeria densa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A submerged aquarium plant that escapes into lakes, canals, and slow rivers where it forms dense underwater stands.",
+    origin:
+      "Native to South America and introduced through the aquarium and water-garden trade.",
+    whatToLookFor: [
+      "Bright green underwater stems with leaves arranged in obvious whorls around the stem.",
+      "Dense bushy submerged growth that can reach the surface in calm water.",
+      "Fragments drifting or snagging on propellers, anchors, or shoreline debris.",
+    ],
+    whyItMatters:
+      "Brazilian waterweed crowds out native aquatic plants and interferes with boating, fishing, and water flow. Because small fragments can start new colonies, a single infested launch or ditch can help it spread much farther.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a clean-drain-dry and report-first aquatic plant, especially in waters where it is not yet widespread.",
+      steps: [
+        "Photograph the submerged growth if you suspect Brazilian waterweed in a new lake, pond, or canal.",
+        "Clean, drain, and dry boats, trailers, anchors, nets, and waders before leaving the water.",
+        "Report suspected infestations to the local aquatic invasive species program or water manager.",
+      ],
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/aquatic/plants/brazilian-waterweed",
+      },
+    ],
+  },
+  {
+    id: "rubus-phoenicolasius",
+    slug: "rubus-phoenicolasius",
+    commonName: "Wine Raspberry",
+    scientificName: "Rubus phoenicolasius",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A bristly red-haired bramble that spreads into field edges, roadsides, and open woods from old berry plantings.",
+    origin:
+      "Native to East Asia and introduced to North America for breeding and fruit use.",
+    whatToLookFor: [
+      "Arching canes covered in fine reddish hairs and small prickles.",
+      "Leaves with silvery undersides and usually three leaflets.",
+      "Bright red raspberry-like fruit and thorny thickets in sunny edges and openings.",
+    ],
+    whyItMatters:
+      "Wine raspberry can form dense patches that crowd out native shrubs and herbs in open woods and meadow margins. The fruit attracts people and wildlife, which can help the plant spread beyond where it was first planted.",
+    action: {
+      mode: "both",
+      summary:
+        "Young canes and seedlings are manageable, but fruiting thickets should not be allowed to keep expanding.",
+      steps: [
+        "Pull seedlings and cut young canes before they root, arch outward, and start forming a larger patch.",
+        "Wear gloves and long sleeves when handling the canes because the hairs and prickles are irritating.",
+        "Report persistent bramble thickets in natural areas where wine raspberry is replacing native edge vegetation.",
+      ],
+    },
+    source: [
+      {
+        label: "U.S. Forest Service FEIS",
+        url: "https://research.fs.usda.gov/feis/species-reviews/rubpho",
+      },
+    ],
+  },
+  {
+    id: "torilis-japonica",
+    slug: "torilis-japonica",
+    commonName: "Erect Hedgeparsley",
+    scientificName: "Torilis japonica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A biennial carrot-family plant with small white umbels and sticky burs that spreads through edges, roadsides, and field margins.",
+    origin:
+      "Native to Eurasia and introduced to North America through accidental and human-assisted pathways.",
+    whatToLookFor: [
+      "Parsley-like first-year rosettes and taller second-year stems with divided leaves.",
+      "Small white umbrella-shaped flower clusters.",
+      "Seed clusters covered in hooked bristles that stick to clothing, fur, and fabric.",
+    ],
+    whyItMatters:
+      "Erect hedgeparsley spreads well because the burs hitchhike on people, pets, and wildlife. It also creates the usual carrot-family identification problem because many white-umbel plants look similar at a distance.",
+    action: {
+      mode: "both",
+      summary:
+        "Early removal is useful, but correct identification matters before treating any white-umbel plant casually.",
+      steps: [
+        "Confirm the plant before removal because several carrot-family species can look alike in the field.",
+        "Pull or cut plants before the burs harden and begin sticking to clothing or animal fur.",
+        "Report recurring patches along trails, dog-walk routes, or field edges where burr spread is helping the plant travel.",
+      ],
+      safetyNotes:
+        "Use caution around look-alike plants in the carrot family, some of which are toxic.",
+    },
+    source: [
+      {
+        label: "Minnesota Department of Natural Resources",
+        url: "https://www.dnr.state.mn.us/invasives/terrestrialplants/erect-hedgeparsley.html",
+      },
+    ],
+  },
+  {
+    id: "vicia-cracca",
+    slug: "vicia-cracca",
+    commonName: "Bird Vetch",
+    scientificName: "Vicia cracca",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A climbing perennial vetch with blue-purple pea flowers that sprawls over roadsides, fields, and disturbed open ground.",
+    origin:
+      "Native to Eurasia and introduced to North America as a forage and soil-improvement plant.",
+    whatToLookFor: [
+      "Long climbing stems with many paired leaflets ending in tendrils.",
+      "One-sided clusters of blue to violet pea-like flowers.",
+      "Patch-forming growth that drapes over grasses, fences, and low shrubs.",
+    ],
+    whyItMatters:
+      "Bird vetch can smother lower vegetation and turn a mixed roadside or meadow edge into a climbing vetch layer. It is especially persistent where it was planted intentionally and then escaped into nearby habitat.",
+    action: {
+      mode: "both",
+      summary:
+        "Small infestations are worth tackling before the vines drape through a whole patch of desirable vegetation.",
+      steps: [
+        "Pull or cut vines before seedpods mature and before tendrils wrap through surrounding plants.",
+        "Bag seed-bearing stems if they are already setting pods rather than leaving them to dry on site.",
+        "Report expanding infestations in restoration work, roadsides, or natural areas where the plant is beginning to smother other vegetation.",
+      ],
+    },
+    source: [
+      {
+        label: "Minnesota Department of Natural Resources",
+        url: "https://www.dnr.state.mn.us/invasives/terrestrialplants/herbaceous/cowvetch.html",
+      },
+    ],
+  },
+  {
+    id: "alternanthera-philoxeroides",
+    slug: "alternanthera-philoxeroides",
+    commonName: "Alligatorweed",
+    scientificName: "Alternanthera philoxeroides",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A South American aquatic and shoreline plant that forms thick floating or creeping mats in warm waterways and wetlands.",
+    origin:
+      "Native to South America and introduced to the southeastern United States in the late 1800s.",
+    whatToLookFor: [
+      "Opposite lance-shaped leaves on hollow or buoyant stems.",
+      "Small white clover-like flower heads rising from the leaf axils.",
+      "Floating or shoreline mats that can span across quiet water or wet banks.",
+    ],
+    whyItMatters:
+      "Alligatorweed clogs waterways, slows flow, degrades habitat, and creates navigation and flood problems. It also spreads readily from fragments, which makes careless movement of plant material a serious issue.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a report-and-contain aquatic plant, not a casual clipping job.",
+      steps: [
+        "Photograph the stems, leaves, and flower heads if you suspect alligatorweed in a new ditch, pond, or canal.",
+        "Do not cut and float the plant downstream because fragments can establish elsewhere.",
+        "Report infestations to the local aquatic weed or invasive species program so site-level control can be coordinated.",
+      ],
+    },
+    source: [
+      {
+        label: "North Carolina Department of Environmental Quality",
+        url: "https://www.deq.nc.gov/about/divisions/water-resources/water-planning/water-supply-planning/aquatic-weed-control-program/alligatorweed-alternanthera-philoxeroides",
+      },
+    ],
+  },
+  {
+    id: "ranunculus-repens",
+    slug: "ranunculus-repens",
+    commonName: "Creeping Buttercup",
+    scientificName: "Ranunculus repens",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A bright yellow buttercup that creeps by runners through wet lawns, garden beds, ditches, and pasture edges.",
+    origin:
+      "Native to Europe and Asia and long naturalized in North America.",
+    whatToLookFor: [
+      "Glossy yellow flowers on stalks rising above the leaves.",
+      "Hairy leaves divided into three toothed leaflets, often with light mottling.",
+      "Aboveground runners that root at the nodes and create spreading patches.",
+    ],
+    whyItMatters:
+      "Creeping buttercup spreads quickly in wet compacted ground and can outcompete turf or other low plants. It also creates a livestock concern in pasture because fresh plants can be irritating or toxic if eaten in quantity.",
+    action: {
+      mode: "both",
+      summary:
+        "This is easiest to handle by improving drainage and removing patches before they run and reseed.",
+      steps: [
+        "Pull or dig small patches while the soil is moist enough to remove the rooted runners.",
+        "Correct wet low spots or compaction where the patch keeps rebuilding.",
+        "Report pasture or restoration infestations where creeping buttercup is expanding beyond simple hand cleanup.",
+      ],
+      safetyNotes:
+        "Wear gloves when handling large amounts of fresh plant material, and keep livestock away from heavy fresh growth when practical.",
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/lawn-and-turfgrass-weeds-creeping-buttercup",
+      },
+    ],
+  },
+  {
+    id: "bromus-inermis",
+    slug: "bromus-inermis",
+    commonName: "Smooth Brome",
+    scientificName: "Bromus inermis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A rhizomatous cool-season grass planted for forage and erosion control that now dominates many roadsides, prairies, and field edges.",
+    origin:
+      "Native to Eurasia and widely introduced to North America as a pasture and stabilization grass.",
+    whatToLookFor: [
+      "Broad gray-green blades with a noticeable M- or W-shaped constriction.",
+      "Dense sod-forming patches spreading by rhizomes.",
+      "Loose open panicles that turn from green to brown as they mature.",
+    ],
+    whyItMatters:
+      "Smooth brome can gradually turn diverse grassland into a near-monoculture by growing early, spreading underground, and shading out native species. It is a classic example of an intentional planting that became an ecological problem later.",
+    action: {
+      mode: "both",
+      summary:
+        "This is usually a long-term prairie or field-management species, not a simple one-day pull.",
+      steps: [
+        "Dig or cut isolated clumps early if you are working in a small native planting or restoration plot.",
+        "Avoid using contaminated hay, straw, or seed mixes that can reinforce the stand.",
+        "Document larger prairie, roadside, or meadow infestations where smooth brome is becoming the dominant grass.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/smooth-brome-grass",
+      },
+    ],
+  },
+  {
+    id: "nasturtium-officinale",
+    slug: "nasturtium-officinale",
+    commonName: "Watercress",
+    scientificName: "Nasturtium officinale",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "An edible aquatic mustard that roots in shallow flowing water and can form dense mats in springs, streams, and wet ditches.",
+    origin:
+      "Native to Europe and widely introduced as an edible green before naturalizing across North America.",
+    whatToLookFor: [
+      "Hollow creeping stems rooting in shallow water or saturated mud.",
+      "Compound leaves with a larger rounded terminal leaflet.",
+      "Small white four-petaled flowers above bright green aquatic growth.",
+    ],
+    whyItMatters:
+      "Watercress is familiar as an edible plant, but escaped patches can still clog small springs, seeps, and channels and crowd out native wetland vegetation. Because it spreads by stem fragments, a small patch can build into a much bigger one downstream.",
+    action: {
+      mode: "both",
+      summary:
+        "Small contained patches can be removed carefully, but new natural-area finds in streams or springs are worth documenting.",
+      steps: [
+        "Confirm the plant first because several wetland mustards can look similar at a glance.",
+        "Remove small patches with as much stem material as possible so fragments are not left drifting away.",
+        "Report infestations in springs, seeps, or high-quality wetland habitat where dense mats are displacing other aquatic plants.",
+      ],
+    },
+    source: [
+      {
+        label: "U.S. Forest Service",
+        url: "https://www.fs.usda.gov/wildflowers/plant-of-the-week/nasturtium_officinale.shtml",
+      },
+    ],
+  },
+  {
+    id: "hemerocallis-fulva",
+    slug: "hemerocallis-fulva",
+    commonName: "Orange Daylily",
+    scientificName: "Hemerocallis fulva",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A showy orange daylily that escapes gardens into roadsides, streambanks, old home sites, and disturbed edges.",
+    origin:
+      "Native to East Asia and widely introduced as an ornamental.",
+    whatToLookFor: [
+      "Arching straplike leaves arising in dense clumps from fleshy roots.",
+      "Tall leafless flower stalks with large orange trumpet-like blooms.",
+      "Expanding colonies in ditches, old foundations, and sunny disturbed ground.",
+    ],
+    whyItMatters:
+      "Orange daylily spreads mainly by roots and divisions rather than by a dramatic seed rain, but that is enough for it to persist and expand in moist disturbed ground. Old ornamental plantings often become source patches for new roadside or streamside colonies.",
+    action: {
+      mode: "both",
+      summary:
+        "This is usually a remove-and-contain ornamental escape rather than a report-first emergency.",
+      steps: [
+        "Dig clumps thoroughly enough to remove fleshy root pieces that can resprout.",
+        "Do not dump divided clumps or yard waste at woods edges, drainageways, or vacant lots.",
+        "Report naturalized streambank or conservation-area patches where the species is spreading beyond old plantings.",
+      ],
+    },
+    source: [
+      {
+        label: "Missouri Department of Conservation",
+        url: "https://mdc.mo.gov/discover-nature/field-guide/orange-daylily",
+      },
+    ],
+  },
+  {
+    id: "lysimachia-nummularia",
+    slug: "lysimachia-nummularia",
+    commonName: "Moneywort",
+    scientificName: "Lysimachia nummularia",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A creeping ornamental with round opposite leaves that roots into dense mats along wet woods, ditches, and shorelines.",
+    origin:
+      "Native to Europe and introduced to North America as a groundcover and pond plant.",
+    whatToLookFor: [
+      "Trailing stems with paired round coin-like leaves.",
+      "Bright yellow cup-shaped flowers along the stems.",
+      "Dense low mats in moist lawns, stream borders, swales, and wet woods.",
+    ],
+    whyItMatters:
+      "Moneywort spreads vegetatively so well that small escaped patches can choke seeps, wet ground, and the herb layer of floodplain sites. It often starts as a planted ornamental and then keeps moving downhill or downstream.",
+    action: {
+      mode: "both",
+      summary:
+        "Small mats are worth removing quickly because every rooted runner helps thicken the patch.",
+      steps: [
+        "Lift and remove whole mats carefully so rooted stem pieces are not left behind.",
+        "Do not dump pond-cleanout debris, divisions, or wet yard waste where fragments can root.",
+        "Report infestations in floodplain woods, seeps, or wetlands where moneywort is replacing native groundcover.",
+      ],
+    },
+    source: [
+      {
+        label: "Wisconsin Department of Natural Resources",
+        url: "https://dnr.wisconsin.gov/topic/Invasives/fact/Moneywort",
+      },
+    ],
+  },
+  {
+    id: "melilotus-albus",
+    slug: "melilotus-albus",
+    commonName: "White Sweet Clover",
+    scientificName: "Melilotus albus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A tall fragrant biennial clover that invades roadsides, old fields, river bars, and dry open grasslands.",
+    origin:
+      "Native to Eurasia and introduced to North America for forage, soil improvement, and bee forage.",
+    whatToLookFor: [
+      "Tall branching plants with three toothed leaflets per leaf.",
+      "Long narrow flower spikes covered in many small white pea-like flowers.",
+      "Strong sweet scent and dense second-year stands in sunny disturbed ground.",
+    ],
+    whyItMatters:
+      "White sweet clover can dominate open grasslands and river terraces and shade out smaller native sun-loving plants. The species also leaves behind a long-lived seed bank, which is why new flushes often follow disturbance.",
+    action: {
+      mode: "both",
+      summary:
+        "This is manageable on a small scale, but widespread prairie or riverbank patches deserve documentation.",
+      steps: [
+        "Pull or cut first-year plants before they bolt and flower in the second year.",
+        "Bag or contain flowering stalks if plants are already producing seed-bearing heads.",
+        "Report infestations in prairie, dune, or river-edge habitat where sweet clover is building dense stands.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/white-and-yellow-sweetclover",
+      },
+    ],
+  },
+  {
+    id: "holcus-lanatus",
+    slug: "holcus-lanatus",
+    commonName: "Common Velvetgrass",
+    scientificName: "Holcus lanatus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A soft hairy bunchgrass that spreads through moist fields, roadsides, openings, and low-maintenance turf.",
+    origin:
+      "Native to Europe and North Africa and introduced to North America as a forage grass.",
+    whatToLookFor: [
+      "Soft velvety leaves and sheaths that feel noticeably fuzzy.",
+      "Gray-green to purplish airy flower heads on upright stems.",
+      "Tufted patches in moist open ground, especially where management is light.",
+    ],
+    whyItMatters:
+      "Common velvetgrass can displace less aggressive grasses in old fields and disturbed moist sites, especially where fertility and mowing patterns favor it. It is less dramatic than a woody invader, but it can still simplify a grass layer over time.",
+    action: {
+      mode: "both",
+      summary:
+        "This is mainly a field-edge and low-input grass problem that benefits from early cleanup and stronger competition.",
+      steps: [
+        "Pull or cut small clumps before seed heads mature if the site is a native planting or restoration area.",
+        "Avoid moving contaminated hay or mowing seed heads into adjacent clean ground.",
+        "Document larger expansions in moist fields or meadow restorations where velvetgrass is replacing a more diverse grass mix.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/velvet-grass-1",
+      },
+    ],
+  },
+  {
+    id: "eleusine-indica",
+    slug: "eleusine-indica",
+    commonName: "Goosegrass",
+    scientificName: "Eleusine indica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tough warm-season grass that thrives in heat and compaction and forms flat clumps in paths, sidewalks, and stressed turf.",
+    origin:
+      "Native to the Old World tropics and subtropics and introduced widely through trade and disturbed soil pathways.",
+    whatToLookFor: [
+      "A flat wagon-wheel growth form pressed close to the ground at first.",
+      "Smooth pale leaf bases often forming a whitish center in the clump.",
+      "Seed heads with several fingerlike spikes arising from one point.",
+    ],
+    whyItMatters:
+      "Goosegrass is a strong indicator of compacted stressed ground and can outcompete turf and low plantings in hot open sites. It is mainly a manage-it-yourself weed, but it becomes stubborn once the clumps mature and reseed heavily.",
+    action: {
+      mode: "diy",
+      summary:
+        "The best window is early, before the flat rosettes turn into seeding clumps.",
+      steps: [
+        "Pull or hoe young plants while they are still shallow-rooted and before seed spikes appear.",
+        "Relieve compaction and repair bare hot spots where goosegrass keeps returning.",
+        "Remove mature seed heads before they shatter and restart the problem next warm season.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/goosegrass",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",
