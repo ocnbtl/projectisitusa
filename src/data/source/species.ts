@@ -4570,6 +4570,884 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "hypericum-perforatum",
+    slug: "hypericum-perforatum",
+    commonName: "Common St. John's Wort",
+    scientificName: "Hypericum perforatum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A yellow-flowered invasive perennial that spreads through pastures, roadsides, and open natural areas where it can build persistent colonies.",
+    origin:
+      "Native to Europe, western Asia, and North Africa. It was brought to North America as a medicinal herb and ornamental and then escaped cultivation.",
+    whatToLookFor: [
+      "Bright yellow five-petaled flowers with many stamens and tiny dark dots along the petal edges.",
+      "Small opposite leaves that show translucent oil glands as pinprick dots when held to the light.",
+      "Rusty or reddish stems and clusters of dry brown seed capsules after flowering.",
+    ],
+    whyItMatters:
+      "Common St. John's wort can crowd out forage and native plants in sunny sites, and it is also a livestock problem because the plant can cause photosensitivity and other poisoning symptoms when eaten in quantity.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches can be removed early, but bigger infestations in pasture or natural areas are worth documenting and managing before seed spread.",
+      steps: [
+        "Photograph the flowers, leaves, and growth habit if you need help separating it from native yellow wildflowers.",
+        "Pull or dig isolated plants before seeds mature, and bag the flowering stems so they are not scattered on site.",
+        "Report expanding patches in pastures, rangeland, or conservation areas where livestock and native plant impacts matter.",
+      ],
+      safetyNotes:
+        "Keep livestock away from dense infestations when practical, and wear gloves if you are handling large amounts of plant material.",
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/plants/st-johnswort",
+      },
+    ],
+  },
+  {
+    id: "euphorbia-cyparissias",
+    slug: "euphorbia-cyparissias",
+    commonName: "Cypress Spurge",
+    scientificName: "Euphorbia cyparissias",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A low, colony-forming spurge with fine needlelike leaves that spreads aggressively through dry sunny ground.",
+    origin:
+      "Native to Europe and introduced to North America as an ornamental groundcover before escaping into pastures, roadsides, and natural areas.",
+    whatToLookFor: [
+      "Many narrow bluish-green leaves packed along upright stems, giving the plant a feathery or cypress-like look.",
+      "Yellow-green flower bracts in spring that often age to orange or reddish tones.",
+      "Milky white sap released from broken stems and roots.",
+    ],
+    whyItMatters:
+      "Cypress spurge spreads by both seed and underground roots, allowing it to form dense patches that displace other plants. It also creates toxicity and skin-irritation concerns for people and livestock.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat small patches early and document larger infestations, especially in pastures or high-value native grasslands.",
+      steps: [
+        "Wear gloves and eye protection before pulling or cutting because the sap is irritating.",
+        "Dig isolated plants with as much root material as possible, then bag the material rather than leaving fragments on site.",
+        "Report larger patches in grazing land or natural areas where root spread will make long-term control more difficult.",
+      ],
+      safetyNotes:
+        "The sap can irritate skin and eyes, and the plant is toxic if eaten by livestock.",
+    },
+    source: [
+      {
+        label: "Colorado Department of Agriculture",
+        url: "https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/cypress-spurge",
+      },
+    ],
+  },
+  {
+    id: "melia-azedarach",
+    slug: "melia-azedarach",
+    commonName: "Chinaberry Tree",
+    scientificName: "Melia azedarach",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A fast-growing ornamental tree with lilac flowers and hanging yellow fruits that escapes into roadsides, forest edges, and old homesites.",
+    origin:
+      "Native to Asia and introduced to the United States as an ornamental shade tree in the 1800s.",
+    whatToLookFor: [
+      "Large doubly compound leaves with many pointed leaflets and a somewhat musky smell when crushed.",
+      "Loose clusters of pale lavender flowers in spring.",
+      "Round yellow fruits that can persist on bare branches into winter.",
+    ],
+    whyItMatters:
+      "Chinaberry tree spreads by birds and root sprouts, allowing it to form colonies that shade out native vegetation. The fruits and seeds are also poisonous to people and livestock.",
+    action: {
+      mode: "both",
+      summary:
+        "Small seedlings can be removed directly, but established trees often need follow-up control and should not be allowed to keep fruiting.",
+      steps: [
+        "Photograph the leaves, flowers, and fruit if you need confirmation because several ornamental trees can look similar from a distance.",
+        "Pull or dig young seedlings and saplings before they become established, especially around fence lines and wooded edges.",
+        "Report or professionally manage fruiting trees near natural areas, and avoid leaving cut stumps untreated because they can resprout.",
+      ],
+      safetyNotes:
+        "Keep children and pets away from the fruits and seeds, which are poisonous.",
+    },
+    source: [
+      {
+        label: "UF/IFAS Gardening Solutions",
+        url: "https://gardeningsolutions.ifas.ufl.edu/care/weeds-and-invasive-plants/chinaberry.html",
+      },
+    ],
+  },
+  {
+    id: "ricinus-communis",
+    slug: "ricinus-communis",
+    commonName: "Castor Bean",
+    scientificName: "Ricinus communis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A tall tropical-looking plant with huge star-shaped leaves and highly toxic seeds that can escape into disturbed ground and riparian edges.",
+    origin:
+      "Introduced as an ornamental and industrial crop plant and now naturalized in warm parts of the United States.",
+    whatToLookFor: [
+      "Very large palmate leaves with 7 to 12 pointed lobes, often green, red, or purple tinged.",
+      "Red or green spiny seed capsules held upright above the leaves.",
+      "Thick smooth stems and a fast-growing shrublike habit in open disturbed places.",
+    ],
+    whyItMatters:
+      "Castor bean can spread into disturbed habitats and form coarse stands, but the bigger public concern is safety because the seeds contain ricin and can be deadly if eaten.",
+    action: {
+      mode: "both",
+      summary:
+        "Use caution first. Small plants can be removed, but seed-bearing plants should be handled like a toxicity problem, not casual yard waste.",
+      steps: [
+        "Do not handle or collect the seeds casually. Photograph the plant first if identification is uncertain.",
+        "Wear gloves when removing isolated plants, and bag the seed capsules so they do not split or spread.",
+        "Report escaped populations in natural areas or along waterways, and do not compost seed-bearing material.",
+      ],
+      safetyNotes:
+        "The seeds are extremely poisonous. Keep them away from children, pets, and livestock.",
+    },
+    source: [
+      {
+        label: "Florida Invasive Plants Atlas",
+        url: "https://plantatlas.usf.edu/flip/plant.aspx?id=145",
+      },
+    ],
+  },
+  {
+    id: "koelreuteria-paniculata",
+    slug: "koelreuteria-paniculata",
+    commonName: "Goldenrain Tree",
+    scientificName: "Koelreuteria paniculata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A small ornamental tree with showy yellow flowers and papery lanternlike seed capsules that can self-seed into edges and disturbed woods.",
+    origin:
+      "Native to eastern Asia and introduced widely as a landscaping tree.",
+    whatToLookFor: [
+      "Large compound leaves with irregularly toothed or lobed leaflets.",
+      "Tall clusters of bright yellow summer flowers.",
+      "Papery inflated seed capsules that turn pink, tan, or brown and rattle when dry.",
+    ],
+    whyItMatters:
+      "Goldenrain tree escapes cultivation readily in some regions and can add another seed-producing ornamental invader to woodland edges, vacant lots, and disturbed urban sites.",
+    action: {
+      mode: "both",
+      summary:
+        "This is mainly a prevent-the-next-seedling problem. Remove volunteers early and avoid letting planted trees seed into nearby habitat.",
+      steps: [
+        "Check beneath mature trees for volunteer seedlings and pull them while the roots are still small.",
+        "Photograph the leaves and lanternlike seed pods if you need confirmation before removing a young tree.",
+        "Report repeated escapes near parks, stream corridors, or natural areas where the species is starting to naturalize.",
+      ],
+    },
+    source: [
+      {
+        label: "Missouri Department of Conservation",
+        url: "https://mdc.mo.gov/discover-nature/field-guide/golden-rain-tree",
+      },
+    ],
+  },
+  {
+    id: "schinus-terebinthifolia",
+    slug: "schinus-terebinthifolia",
+    commonName: "Brazilian Peppertree",
+    scientificName: "Schinus terebinthifolia",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "An evergreen shrub or small tree that forms dense thickets in warm climates, especially in Florida and other subtropical parts of the United States.",
+    origin:
+      "Native to South America and introduced as an ornamental before spreading aggressively in natural areas.",
+    whatToLookFor: [
+      "Glossy compound leaves with a spicy odor when crushed.",
+      "Clusters of bright red berries on female plants.",
+      "Dense many-stemmed thickets that fill hammocks, canal banks, roadsides, and disturbed woods.",
+    ],
+    whyItMatters:
+      "Brazilian peppertree can form nearly solid stands that displace native vegetation and alter habitat structure. In heavily invaded areas it becomes a dominant woody species rather than just another escaped ornamental.",
+    action: {
+      mode: "report",
+      summary:
+        "This is usually a report-and-coordinate species in natural areas because resprouting and seed spread make partial cutting a poor fix.",
+      steps: [
+        "Photograph leaves, fruit, and the overall thicket if you are documenting a new area of spread.",
+        "Avoid cutting fruiting plants without a disposal plan because berries can keep the invasion moving.",
+        "Report infestations in conservation areas, wetlands, or undeveloped lots where coordinated woody invasive control is more effective than spot work.",
+      ],
+      safetyNotes:
+        "Some people develop skin irritation from the sap or plant contact, so avoid bare-skin handling.",
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/plants/brazilian-peppertree",
+      },
+    ],
+  },
+  {
+    id: "solanum-dulcamara",
+    slug: "solanum-dulcamara",
+    commonName: "Climbing Nightshade",
+    scientificName: "Solanum dulcamara",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A viney nightshade with purple star-shaped flowers and bright red berries that scrambles through wetlands, hedgerows, and disturbed edges.",
+    origin:
+      "Native to Europe and Asia and introduced to North America as a garden and medicinal plant before naturalizing widely.",
+    whatToLookFor: [
+      "Purple flowers with petals bent backward around a tight yellow cone of stamens.",
+      "Shiny red egg-shaped berries hanging in clusters after flowering.",
+      "Long twining or sprawling stems with leaves that may be heart-shaped or have two small basal lobes.",
+    ],
+    whyItMatters:
+      "Climbing nightshade can tangle over other vegetation in moist habitats and adds a toxicity concern because its berries and foliage contain compounds that should not be eaten by people or animals.",
+    action: {
+      mode: "both",
+      summary:
+        "Small vine patches can be removed, but wetland and streamside infestations are worth documenting before the plant fruits heavily.",
+      steps: [
+        "Photograph the flower and berry clusters if you need to separate it from other vines or native nightshades.",
+        "Pull or dig isolated plants before berries ripen, and bag the fruiting material rather than dropping it nearby.",
+        "Report expanding patches in wetlands, ditches, or restoration sites where the vine is starting to climb over other vegetation.",
+      ],
+      safetyNotes:
+        "Do not taste the berries or let children or pets treat the plant as edible.",
+    },
+    source: [
+      {
+        label: "U.S. Forest Service FEIS",
+        url: "https://research.fs.usda.gov/feis/species-reviews/soldul",
+      },
+    ],
+  },
+  {
+    id: "typha-angustifolia",
+    slug: "typha-angustifolia",
+    commonName: "Narrowleaf Cattail",
+    scientificName: "Typha angustifolia",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A tall wetland cattail that spreads aggressively in marshes, ditches, and shallow water, often forming dense monocultures.",
+    origin:
+      "A non-native cattail introduced from Eurasia that now occurs across much of the United States.",
+    whatToLookFor: [
+      "Dark green straplike leaves that are noticeably narrower than those of common broadleaf cattail.",
+      "Brown cigar-shaped flower spikes with a visible gap between the upper male and lower female sections.",
+      "Large rhizomatous stands in disturbed wetlands, shallow ponds, shorelines, and roadside ditches.",
+    ],
+    whyItMatters:
+      "Narrowleaf cattail can crowd out native wetland vegetation and contribute to extensive cattail dominance in marshes. It also hybridizes with native cattails, which can complicate restoration work.",
+    action: {
+      mode: "report",
+      summary:
+        "Wetland infestations are best documented and managed with site-level planning rather than casual cutting.",
+      steps: [
+        "Photograph the flowering spike and leaf width if you are trying to separate it from native cattails.",
+        "Clean mud and plant fragments from boots, boats, trailers, and tools before leaving the site.",
+        "Report expanding stands in wetlands, shorelines, or restoration areas where invasive cattails are changing habitat structure.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/identify-invasive-species/narrow-leaf-cattail",
+      },
+    ],
+  },
+  {
+    id: "najas-minor",
+    slug: "najas-minor",
+    commonName: "Brittle Waternymph",
+    scientificName: "Najas minor",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A submerged annual aquatic plant with stiff toothed leaves that can form dense nuisance growth in lakes and slow-moving waters.",
+    origin:
+      "Introduced from Europe and Asia to North America in the early 1900s and spread through connected waterways and contaminated equipment.",
+    whatToLookFor: [
+      "Bushy underwater growth with stiff, sharply pointed leaves that curve downward.",
+      "Fine teeth along the leaf margins that are visible without magnification.",
+      "Brittle branching stems and tiny seeds forming in the leaf axils.",
+    ],
+    whyItMatters:
+      "Brittle waternymph can crowd out native aquatic plants and interfere with boating, fishing, and other lake use. It also spreads easily when fragments and seeds hitchhike on equipment.",
+    action: {
+      mode: "report",
+      summary:
+        "Think containment first. New finds matter because boats, anchors, trailers, and gear can move this plant quickly.",
+      steps: [
+        "Photograph the submerged leaves and stems if you suspect brittle waternymph in a new waterbody.",
+        "Clean, drain, and dry boats, trailers, anchors, ropes, and waders before leaving the launch or shoreline.",
+        "Report suspected infestations promptly to the relevant aquatic invasive species program or lake manager.",
+      ],
+    },
+    source: [
+      {
+        label: "Minnesota Department of Natural Resources",
+        url: "https://www.dnr.state.mn.us/invasives/aquaticplants/brittlenaiad/index.html",
+      },
+    ],
+  },
+  {
+    id: "impatiens-glandulifera",
+    slug: "impatiens-glandulifera",
+    commonName: "Himalayan Balsam",
+    scientificName: "Impatiens glandulifera",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Aquatic plants",
+    summary:
+      "A tall succulent annual with pink helmet-shaped flowers and explosive seed pods that invades moist streambanks and wet edges.",
+    origin:
+      "Native to the Himalayas and introduced as an ornamental before escaping into riparian habitats.",
+    whatToLookFor: [
+      "Hollow green to reddish stems on plants that can grow head-high or taller.",
+      "Opposite or whorled serrated leaves and large pink to purple flowers shaped like little helmets.",
+      "Seed pods that burst when touched and fling seeds away from the parent plant.",
+    ],
+    whyItMatters:
+      "Himalayan balsam can crowd streambanks and wet meadows during the growing season, then die back in winter and leave bare exposed soil. The explosive seed pods also make local spread easy once the plant is established.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches can be removed before pods ripen, but streamside infestations should be documented before seeds are launched.",
+      steps: [
+        "Photograph the flowers and leaf arrangement if you need confirmation before removal.",
+        "Pull isolated plants before seed pods mature, and bag any pod-bearing stems so they do not burst during handling.",
+        "Report riparian infestations where the plant is spreading along a stream corridor or wetland edge.",
+      ],
+    },
+    source: [
+      {
+        label: "eXtension Invasive Species",
+        url: "https://invasive-species.extension.org/impatiens-glandulifera-ornamental-jewelweed/",
+      },
+    ],
+  },
+  {
+    id: "commelina-communis",
+    slug: "commelina-communis",
+    commonName: "Asiatic Dayflower",
+    scientificName: "Commelina communis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A sprawling dayflower with bright blue petals that spreads through moist disturbed ground, crop edges, ditches, and shady openings.",
+    origin:
+      "Native to East Asia and introduced through ornamental and accidental pathways before naturalizing in many parts of the United States.",
+    whatToLookFor: [
+      "Flowers with two showy blue upper petals and a much smaller white lower petal.",
+      "Succulent branching stems that creep along the ground and may root at the nodes.",
+      "Leaflike folded bracts that partially enclose the flower cluster.",
+    ],
+    whyItMatters:
+      "Asiatic dayflower can become a persistent weed in moist cropland, gardens, nurseries, and disturbed woodland edges. Once it spreads by seed and rooting stems, it is harder to clear than its delicate flowers suggest.",
+    action: {
+      mode: "both",
+      summary:
+        "Early removal works best on small patches. Once stems are rooting through a whole bed or field edge, consistent follow-up matters.",
+      steps: [
+        "Photograph the flowers and leaflike bracts if you need confirmation because some dayflowers are easy to overlook until they bloom.",
+        "Pull or hoe small patches before they set seed, and remove rooted stem fragments instead of leaving them on damp soil.",
+        "Report persistent outbreaks in production beds, nurseries, or restoration plantings where the species keeps reappearing.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/dayflower",
+      },
+    ],
+  },
+  {
+    id: "acer-pseudoplatanus",
+    slug: "acer-pseudoplatanus",
+    commonName: "Sycamore Maple",
+    scientificName: "Acer pseudoplatanus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Trees & shrubs",
+    summary:
+      "A large maple planted as a tough ornamental tree that can escape and fill forest edges, coastal sites, and disturbed woods with seedlings.",
+    origin:
+      "Native to Europe and western Asia and introduced to North America for landscaping and street-tree use.",
+    whatToLookFor: [
+      "Large five-lobed leaves with coarse teeth and milky sap in the leaf stalk when broken.",
+      "Hanging clusters of paired winged samaras that turn pinkish and then brown.",
+      "Gray bark that flakes in patches, sometimes revealing orangish inner bark beneath.",
+    ],
+    whyItMatters:
+      "Sycamore maple can produce heavy seed crops and create dense carpets of saplings that shade out native plants in woodlands and riparian edges. It is more than a harmless ornamental where it begins to naturalize.",
+    action: {
+      mode: "both",
+      summary:
+        "Seedlings are easiest to deal with early. Mature trees need follow-up planning because cutting alone can trigger resprouting.",
+      steps: [
+        "Pull or dig volunteer seedlings before they develop a strong root system.",
+        "Photograph the leaf, bark, and samaras if you need to separate it from other large maples.",
+        "Report naturalized stands in woods or stream corridors where repeated seedling recruitment is building a new canopy layer.",
+      ],
+    },
+    source: [
+      {
+        label: "North Carolina Extension Gardener Plant Toolbox",
+        url: "https://plants.ces.ncsu.edu/plants/acer-pseudoplatanus/",
+      },
+    ],
+  },
+  {
+    id: "ostrinia-nubilalis",
+    slug: "ostrinia-nubilalis",
+    commonName: "European Corn Borer",
+    scientificName: "Ostrinia nubilalis",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Moths & butterflies",
+    summary:
+      "A tunneling moth larva that damages corn, peppers, beans, and many other crops by boring into stems, ears, and fruit.",
+    origin:
+      "Introduced from Europe in the early 1900s and now established across much of the United States.",
+    whatToLookFor: [
+      "Flat egg masses on the underside of leaves that overlap like fish scales.",
+      "Cream to tan caterpillars with dark spots and a brown to black head capsule.",
+      "Frass-filled holes, broken stalks, tunneling, or internal feeding in corn stems, ears, peppers, and similar crops.",
+    ],
+    whyItMatters:
+      "European corn borer can reduce yield, weaken plants, and open the door for disease and rot by tunneling directly into crop tissue. It remains a significant agricultural pest because it feeds on many hosts, not just corn.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a scout-and-confirm crop pest. Good timing and thresholds matter more than reacting late to obvious damage.",
+      steps: [
+        "Inspect crop plants for egg masses, fresh feeding holes, and frass before larvae disappear into stems or fruit.",
+        "Photograph the larva and the damage if you need help separating it from other caterpillar pests.",
+        "Use local extension thresholds and crop guidance rather than treating after tunneling is already widespread.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://ento.psu.edu/outreach/extension/ipm/english/agriculture/pest-problem-solver/vegetable-insect-pests/european-corn-borer",
+      },
+    ],
+  },
+  {
+    id: "scolytus-schevyrewi",
+    slug: "scolytus-schevyrewi",
+    commonName: "Banded Elm Bark Beetle",
+    scientificName: "Scolytus schevyrewi",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "A nonnative bark beetle of elms that feeds under bark and can help spread Dutch elm disease on susceptible trees.",
+    origin:
+      "Native to Asia and first detected in North America in 2003.",
+    whatToLookFor: [
+      "Very small reddish-brown beetles with a dark band across the wing covers.",
+      "Bark galleries beneath stressed or dying elm bark and exit holes from emerging adults.",
+      "Flagging branches, thinning crowns, or rapid decline in elms already under stress or disease pressure.",
+    ],
+    whyItMatters:
+      "Banded elm bark beetle adds pressure to already vulnerable elms and can vector Dutch elm disease spores. In landscapes and windbreaks, that means small insect activity can turn into much larger tree decline problems.",
+    action: {
+      mode: "report",
+      summary:
+        "Living elms with new bark-beetle activity deserve attention quickly, especially where Dutch elm disease is a concern.",
+      steps: [
+        "Photograph the beetle, bark galleries, or declining elm branches if you are trying to confirm the cause of damage.",
+        "Do not move elm firewood or infested wood from site to site because bark beetles and disease can travel with it.",
+        "Contact a local arborist, extension office, or urban forestry program when a living elm begins to decline or shows fresh beetle activity.",
+      ],
+    },
+    source: [
+      {
+        label: "Utah State University Extension",
+        url: "https://extension.usu.edu/pests/ipm/ornamental-pest-guide/arthopods/bark-beetles/elm-bark-beetles",
+      },
+    ],
+  },
+  {
+    id: "fiorinia-externa",
+    slug: "fiorinia-externa",
+    commonName: "Elongate Hemlock Scale",
+    scientificName: "Fiorinia externa",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A tiny armored scale insect that feeds on hemlock needles and can yellow, thin, and weaken hemlock, fir, and spruce trees.",
+    origin:
+      "Native to Asia and introduced to the United States on infested plant material.",
+    whatToLookFor: [
+      "Yellow mottling on the tops of hemlock needles.",
+      "Elongated tan to yellow-brown scales attached to the underside of needles.",
+      "Patches of white waxy material or cast skins that can be mistaken for another hemlock pest.",
+    ],
+    whyItMatters:
+      "Elongate hemlock scale weakens trees by sucking sap from needles and can contribute to needle loss, branch thinning, and decline in ornamental and forest settings. It also complicates nursery and Christmas tree movement because infestations can be hard to spot early.",
+    action: {
+      mode: "report",
+      summary:
+        "Tree decline should be documented early. Do not move infested branches or nursery stock if scale is suspected.",
+      steps: [
+        "Photograph needle discoloration and the underside of infested needles if confirmation is needed.",
+        "Avoid moving infested cut branches, nursery plants, or holiday greens to another site.",
+        "Report suspect infestations to extension, state agriculture staff, or an arborist if hemlocks or firs are beginning to thin out.",
+      ],
+    },
+    source: [
+      {
+        label: "Minnesota Department of Agriculture",
+        url: "https://www.mda.state.mn.us/elongate-hemlock-scale",
+      },
+    ],
+  },
+  {
+    id: "lepidosaphes-ulmi",
+    slug: "lepidosaphes-ulmi",
+    commonName: "Oystershell Scale",
+    scientificName: "Lepidosaphes ulmi",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A common armored scale insect that crusts twigs and branches with tiny shell-like covers and can weaken shrubs and shade trees.",
+    origin:
+      "Introduced from Europe and now widespread across the United States.",
+    whatToLookFor: [
+      "Gray to brown curved scales that resemble miniature oyster shells stuck to bark.",
+      "Crusted twigs and branches on lilac, maple, dogwood, willow, ash, or poplar.",
+      "Yellowing, poor vigor, dieback, or branch loss where infestations have built up over time.",
+    ],
+    whyItMatters:
+      "Oystershell scale feeds directly from bark tissues and can kill twigs, weaken shrubs, and eventually injure or kill young trees when infestations are heavy and repeated.",
+    action: {
+      mode: "both",
+      summary:
+        "This is manageable when caught early, but timing matters because most sprays miss the insect once it is protected under the scale cover.",
+      steps: [
+        "Prune and dispose of heavily infested twigs or branches where the scales are concentrated.",
+        "Photograph the bark and any crawler activity if you need help distinguishing this pest from other bark encrusting problems.",
+        "Use local extension timing for dormant or crawler-stage treatment instead of applying random insecticides after the scales have hardened.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/oystershell-scale",
+      },
+    ],
+  },
+  {
+    id: "dryocosmus-kuriphilus",
+    slug: "dryocosmus-kuriphilus",
+    commonName: "Asian Chestnut Gall Wasp",
+    scientificName: "Dryocosmus kuriphilus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "A tiny wasp that forms swollen galls on chestnut buds and shoots, reducing growth and nut production.",
+    origin:
+      "Native to China and introduced to North America on infested chestnut plant material.",
+    whatToLookFor: [
+      "Green to reddish swollen galls on chestnut buds, leaf midribs, or young shoots.",
+      "Stunted shoots and reduced leaf or flower development on infested trees.",
+      "Dry brown woody galls that can remain attached to twigs after adults emerge.",
+    ],
+    whyItMatters:
+      "Asian chestnut gall wasp suppresses shoot growth and lowers chestnut nut production. Heavy infestations can weaken trees over time and are a serious problem for chestnut restoration, orchards, and landscape trees.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a document-and-contain pest. Movement of infested buds, seedlings, and scion wood is part of how it spreads.",
+      steps: [
+        "Photograph fresh galls and the host tree if you suspect a new infestation.",
+        "Do not move chestnut seedlings, budwood, or scion wood from an infested site without guidance.",
+        "Report new findings through extension, agriculture, or chestnut restoration contacts so infestations can be tracked early.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Missouri Extension",
+        url: "https://extension.missouri.edu/publications/pa100",
+      },
+    ],
+  },
+  {
+    id: "salvator-merianae",
+    slug: "salvator-merianae",
+    commonName: "Argentine Black and White Tegu",
+    scientificName: "Salvator merianae",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Reptiles & amphibians",
+    summary:
+      "A large invasive lizard from the pet trade that eats eggs, small animals, insects, carrion, and fruit in places where it becomes established.",
+    origin:
+      "Native to South America and introduced to the United States through escaped or released pets.",
+    whatToLookFor: [
+      "A stout lizard with bold black and white banding, a thick tail, and a large blunt head.",
+      "Large burrows or repeat sightings in disturbed lots, canal edges, pinelands, or suburban fringes in warm regions.",
+      "Egg-raiding behavior or reports of a big patterned lizard moving through yards and natural areas.",
+    ],
+    whyItMatters:
+      "Argentine black and white tegus are broad generalist predators that can consume eggs of ground-nesting birds and reptiles along with many other native animals. Once breeding populations form, they become a serious wildlife-management problem rather than an escaped pet curiosity.",
+    action: {
+      mode: "report",
+      summary:
+        "Wild tegus should be documented and reported. Do not release pet lizards and do not assume a single sighting is harmless.",
+      steps: [
+        "Take a photo or video from a safe distance if you can do so without chasing or handling the animal.",
+        "Note the exact location and habitat because repeated sightings help agencies judge whether a population is forming.",
+        "Report the sighting to state wildlife or invasive species contacts, and never release a captive tegu outdoors.",
+      ],
+      safetyNotes:
+        "Avoid handling the animal directly. Large tegus can bite, scratch, and carry Salmonella.",
+    },
+    source: [
+      {
+        label: "U.S. Fish & Wildlife Service",
+        url: "https://www.fws.gov/species/argentine-black-and-white-tegu-salvator-merianae",
+      },
+    ],
+  },
+  {
+    id: "sirex-noctilio",
+    slug: "sirex-noctilio",
+    commonName: "Sirex Woodwasp",
+    scientificName: "Sirex noctilio",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "A large nonnative woodwasp that attacks pine trees and helps kill them by injecting toxic mucus and a symbiotic fungus.",
+    origin:
+      "Native to Eurasia and introduced through infested wood products before being detected in the United States in 2004.",
+    whatToLookFor: [
+      "Large wasps associated with pine stands, with dark bodies and orange legs, and females carrying a long ovipositor.",
+      "Round emergence holes and resin drips on pine trunks.",
+      "Yellowing or browning pine crowns and tree decline following attack.",
+    ],
+    whyItMatters:
+      "Sirex woodwasp can injure and kill pines by combining insect attack with fungal infection. That makes it a concern for pine plantations, windbreaks, and managed forests where tree losses can compound quickly.",
+    action: {
+      mode: "report",
+      summary:
+        "Pine decline linked to this insect should be documented early, and pine wood should not be moved casually from affected areas.",
+      steps: [
+        "Photograph suspect wasps, exit holes, resin beads, and the whole declining tree if you can do so safely.",
+        "Do not move untreated pine logs or firewood from a site where the pest may be present.",
+        "Report suspect findings to forestry, extension, or agriculture contacts so the tree and stand can be evaluated.",
+      ],
+    },
+    source: [
+      {
+        label: "National Invasive Species Information Center",
+        url: "https://www.invasivespeciesinfo.gov/terrestrial/invertebrates/sirex-woodwasp",
+      },
+    ],
+  },
+  {
+    id: "ctenopharyngodon-idella",
+    slug: "ctenopharyngodon-idella",
+    commonName: "Grass Carp",
+    scientificName: "Ctenopharyngodon idella",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A large herbivorous carp that was stocked for aquatic weed control and can strip vegetation from connected waters when populations build.",
+    origin:
+      "Native to eastern Asia and imported to the United States in the 1960s for aquaculture and aquatic plant control.",
+    whatToLookFor: [
+      "A long torpedo-shaped carp with large dark-edged scales and a broad terminal mouth.",
+      "Fish cruising in slow rivers, canals, ponds, or vegetated lakes.",
+      "Reports of heavy aquatic vegetation loss in waters where carp were stocked or escaped.",
+    ],
+    whyItMatters:
+      "Grass carp can remove large amounts of aquatic vegetation, changing habitat for fish, waterfowl, and invertebrates. When fertile fish spread in connected rivers and lakes, the result is not simple weed control but broad habitat alteration.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not move live fish between waters. Unusual captures and open-water populations are worth documenting because fertile fish can spread quickly.",
+      steps: [
+        "Photograph the fish from the side if you catch one in a place where identification matters.",
+        "Never transport live grass carp or release bait, water, or fish from one waterbody into another.",
+        "Follow state harvest and reporting guidance where grass carp are being tracked as an invasive fish.",
+      ],
+    },
+    source: [
+      {
+        label: "Invasive Carp Regional Coordinating Committee",
+        url: "https://icrcc.fws.gov/carp/invasive-carp/grass-carp",
+      },
+    ],
+  },
+  {
+    id: "cornu-aspersum",
+    slug: "cornu-aspersum",
+    commonName: "Brown Garden Snail",
+    scientificName: "Cornu aspersum",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mollusks",
+    summary:
+      "A land snail that feeds on ornamentals, vegetables, and fruit and can hitchhike widely on nursery stock and shipments.",
+    origin:
+      "Native to Europe and the Mediterranean region and spread widely through horticulture and trade.",
+    whatToLookFor: [
+      "A brown to tan shell with darker swirls, flecks, or bands.",
+      "Silvery slime trails on pots, walls, soil, and foliage.",
+      "Ragged chewing damage on tender leaves, seedlings, and fruit.",
+    ],
+    whyItMatters:
+      "Brown garden snail damages gardens, orchards, and ornamental plantings and is especially good at moving with potted plants and other moist sheltered materials. In states where it is regulated or not yet established, early reporting matters.",
+    action: {
+      mode: "both",
+      summary:
+        "Hand removal and sanitation can help with small problems, but regulated or unexpected finds should be reported rather than ignored.",
+      steps: [
+        "Photograph the shell pattern and feeding damage if you need confirmation before taking action.",
+        "Hand-remove snails when practical, reduce hiding places, and keep potted material clean and dry enough to discourage buildup.",
+        "Report suspected infestations in regulated states, nurseries, or shipment-linked situations where the snail may be new or spreading.",
+      ],
+    },
+    source: [
+      {
+        label: "Michigan Invasive Species Program",
+        url: "https://www.michigan.gov/invasives/id-report/mollusks/brown-garden-snail",
+      },
+    ],
+  },
+  {
+    id: "pyrrhalta-viburni",
+    slug: "pyrrhalta-viburni",
+    commonName: "Viburnum Leaf Beetle",
+    scientificName: "Pyrrhalta viburni",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "An invasive beetle whose larvae and adults defoliate viburnums and can kill shrubs after repeated attacks.",
+    origin:
+      "Native to Europe and Asia and first detected in North America in the twentieth century before spreading through the Northeast and nearby regions.",
+    whatToLookFor: [
+      "Rows of small egg-laying scars and caps on young twigs during the dormant season.",
+      "Skeletonized leaves from yellowish larvae feeding in spring.",
+      "Chewed leaves and brown adult beetles on viburnums in summer.",
+    ],
+    whyItMatters:
+      "Repeated defoliation and twig injury can kill susceptible viburnums, including native and ornamental species that provide cover and fruit for birds. A shrub that looks merely ragged one year can decline badly after repeated attacks.",
+    action: {
+      mode: "both",
+      summary:
+        "This is one of the rare ornamental pests where close seasonal timing really helps. Small infestations are easier to slow before shrubs are repeatedly stripped.",
+      steps: [
+        "Inspect twigs in fall and winter for egg scars, and prune out infested tips before eggs hatch in spring when practical.",
+        "Photograph larvae, adults, and damaged leaves if you need confirmation because other chewing damage can look similar at first.",
+        "Use extension guidance if valued viburnums are being defoliated year after year, especially where native viburnum plantings are involved.",
+      ],
+    },
+    source: [
+      {
+        label: "Wisconsin Horticulture",
+        url: "https://hort.extension.wisc.edu/articles/viburnum-leaf-beetle/",
+      },
+    ],
+  },
+  {
+    id: "rhyacionia-buoliana",
+    slug: "rhyacionia-buoliana",
+    commonName: "European Pine Shoot Moth",
+    scientificName: "Rhyacionia buoliana",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Moths & butterflies",
+    summary:
+      "An introduced moth whose larvae bore into pine buds and shoots, causing dead tips and distorted growth.",
+    origin:
+      "Native to Europe and accidentally introduced to North America in the early twentieth century.",
+    whatToLookFor: [
+      "Wilted, browned, or crooked new pine shoots in spring.",
+      "Resin-coated entrance holes and webbing on buds or young shoots.",
+      "Multiple leaders or misshapen growth on young ornamental or plantation pines.",
+    ],
+    whyItMatters:
+      "European pine shoot moth can stunt and deform young pines, reducing the value of ornamentals, Christmas trees, and plantation trees even when it does not kill them outright.",
+    action: {
+      mode: "both",
+      summary:
+        "Early detection is mostly about shoot inspection. Once the damage is widespread, the season's growth is already compromised.",
+      steps: [
+        "Photograph resin-covered shoots and crooking if you need help confirming the pest.",
+        "Prune and dispose of heavily damaged shoot tips on small trees where that is practical.",
+        "Use local extension timing if treatment is needed, because control is much more effective before larvae are sealed inside the shoots.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/european-pine-shoot-moth",
+      },
+    ],
+  },
+  {
+    id: "fenusa-pumila",
+    slug: "fenusa-pumila",
+    commonName: "Birch Leafminer",
+    scientificName: "Fenusa pumila",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "A small introduced sawfly whose larvae mine between the surfaces of birch leaves, turning them pale, blistered, and brown.",
+    origin:
+      "Native to Europe and first recorded in the United States in the early twentieth century.",
+    whatToLookFor: [
+      "Pale blotchy mines that expand inside birch leaves while the outer leaf surface stays intact at first.",
+      "Leaves that turn brown, papery, or scorched by early summer.",
+      "Repeated injury concentrated on gray birch or paper birch rather than all birch species equally.",
+    ],
+    whyItMatters:
+      "Birch leafminer may not kill healthy mature trees quickly, but repeated mining reduces ornamental value and can stress susceptible birches year after year.",
+    action: {
+      mode: "both",
+      summary:
+        "This is mostly an inspect-early problem. Later in the season the visible damage is easier to spot, but the treatment window is usually gone.",
+      steps: [
+        "Photograph fresh mines and the affected birch species if you need confirmation.",
+        "Rake and dispose of heavily mined leaves where practical to reduce local carryover and to keep the site tidy.",
+        "Use extension timing for monitoring or treatment if valued birches are repeatedly damaged each spring.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/birch-leafminer",
+      },
+    ],
+  },
+  {
     id: "hypophthalmichthys-molitrix",
     slug: "hypophthalmichthys-molitrix",
     commonName: "Silver Carp",

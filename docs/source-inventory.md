@@ -231,6 +231,35 @@ These sources are already referenced by current curated profiles, but the origin
 | https://extensionentomology.tamu.edu/resources/management-guides/sorghum/stem-and-leaf-feeding-insects/ | Yellow Sugarcane Aphid | Aphid ID, sorghum damage pattern, scouting and threshold framing |
 | https://www.fws.gov/species/silver-carp-hypophthalmichthys-molitrix | Silver Carp | Jumping hazard, head and eye placement ID, introduction history, do-not-move guidance |
 
+### Chunk 2G follow-up, consulted on 2026-04-17
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.invasivespeciesinfo.gov/terrestrial/plants/st-johnswort | Common St. John's Wort | Origin, pasture impact, livestock toxicity framing, early-removal guidance |
+| https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/cypress-spurge | Cypress Spurge | Identification, rhizome spread, toxic sap caution, pasture and grassland impact |
+| https://gardeningsolutions.ifas.ufl.edu/care/weeds-and-invasive-plants/chinaberry.html | Chinaberry Tree | Ornamental escape history, fruit toxicity, colony-forming spread, management framing |
+| https://plantatlas.usf.edu/flip/plant.aspx?id=145 | Castor Bean | Identification, disturbed-site ecology, toxicity context, disposal caution |
+| https://mdc.mo.gov/discover-nature/field-guide/golden-rain-tree | Goldenrain Tree | Identification, seed-pod cues, escape-from-cultivation framing |
+| https://www.invasivespeciesinfo.gov/terrestrial/plants/brazilian-peppertree | Brazilian Peppertree | Introduction pathway, dense-thicket impact, report-first natural-area guidance |
+| https://research.fs.usda.gov/feis/species-reviews/soldul | Climbing Nightshade | Introduction context, wetland-edge habitat, berry toxicity, identification cues |
+| https://extension.umn.edu/identify-invasive-species/narrow-leaf-cattail | Narrowleaf Cattail | Flower-spike gap cue, wetland monoculture risk, report guidance |
+| https://www.dnr.state.mn.us/invasives/aquaticplants/brittlenaiad/index.html | Brittle Waternymph | Submerged ID cues, fragment and seed spread, clean-drain-dry prevention framing |
+| https://invasive-species.extension.org/impatiens-glandulifera-ornamental-jewelweed/ | Himalayan Balsam | Hollow stem and flower cues, explosive seedpod spread, riparian impact framing |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/dayflower | Asiatic Dayflower | Flower structure, rooting-stem habit, early control framing |
+| https://plants.ces.ncsu.edu/plants/acer-pseudoplatanus/ | Sycamore Maple | Seedling-carpet spread, bark and samara cues, invasive-tree framing |
+| https://ento.psu.edu/outreach/extension/ipm/english/agriculture/pest-problem-solver/vegetable-insect-pests/european-corn-borer | European Corn Borer | Crop damage cues, egg and larval ID, threshold-based scouting framing |
+| https://extension.usu.edu/pests/ipm/ornamental-pest-guide/arthopods/bark-beetles/elm-bark-beetles | Banded Elm Bark Beetle | Beetle ID, under-bark damage, Dutch elm disease vector context |
+| https://www.mda.state.mn.us/elongate-hemlock-scale | Elongate Hemlock Scale | Needle symptom cues, host range, nursery and tree-movement caution |
+| https://extension.psu.edu/oystershell-scale | Oystershell Scale | Bark-encrusting ID, host range, crawler-stage treatment timing framing |
+| https://extension.missouri.edu/publications/pa100 | Asian Chestnut Gall Wasp | Gall ID, spread through plant material, chestnut growth and nut-production impact |
+| https://www.fws.gov/species/argentine-black-and-white-tegu-salvator-merianae | Argentine Black and White Tegu | Identification, pet-trade introduction, wildlife-predation risk, report guidance |
+| https://www.invasivespeciesinfo.gov/terrestrial/invertebrates/sirex-woodwasp | Sirex Woodwasp | Pine attack pathway, fungus-associated tree decline, wood-movement caution |
+| https://icrcc.fws.gov/carp/invasive-carp/grass-carp | Grass Carp | Body-shape ID, vegetation-removal impact, do-not-move guidance |
+| https://www.michigan.gov/invasives/id-report/mollusks/brown-garden-snail | Brown Garden Snail | Shell ID, garden and orchard damage, reporting context for regulated detections |
+| https://hort.extension.wisc.edu/articles/viburnum-leaf-beetle/ | Viburnum Leaf Beetle | Egg-scar cue, repeated defoliation pattern, host vulnerability and seasonal guidance |
+| https://extension.psu.edu/european-pine-shoot-moth | European Pine Shoot Moth | Resin and crooking cues, pine-host impact, pruning and timing guidance |
+| https://extension.psu.edu/birch-leafminer | Birch Leafminer | Leaf-mine symptoms, host preference, early-season management framing |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
