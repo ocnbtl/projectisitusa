@@ -79,3 +79,23 @@ That was checked before drafting:
 2. Keep using a backup pool, especially for wildlife and disease candidates that are easy to overstate.
 3. Continue applying second sources to thin but high-value species instead of excluding them automatically.
 4. Do not treat `28` as failure. In this pass it was the quality-safe answer to the real source mix.
+
+## Post-Deploy Verification
+
+Post-deploy spot-checks were run on `2026-04-17` after `e0654e3` reached GitHub.
+
+Confirmed live on the apex domain:
+
+- `https://isitusa.com/species/aphis-glycines`
+- `https://isitusa.com/species/iguana-iguana`
+- `https://isitusa.com/species/phytophthora-cinnamomi`
+- `https://isitusa.com/species/achyranthes-japonica`
+
+Each sampled page rendered with the expected summary, section structure, source attribution, and image block.
+
+The domain contradiction remains unresolved:
+
+- `https://isitusa.com` returned `200`.
+- `https://www.isitusa.com` still failed DNS resolution in a direct check.
+
+That `www` issue is still separate from the content rollout and should remain tracked as infrastructure follow-up, not folded into the chunk as if it were resolved.
