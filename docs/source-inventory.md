@@ -314,6 +314,42 @@ These sources are already referenced by current curated profiles, but the origin
 | https://plantscience.psu.edu/outreach/plant-id/grasses/velvet-grass-1 | Common Velvetgrass | Hairy leaf and sheath cue, moist-field behavior, grass-layer simplification |
 | https://plantscience.psu.edu/outreach/plant-id/grasses/goosegrass | Goosegrass | Flat clump and finger-spike ID, compaction tolerance, turf-management framing |
 
+### Chunk 2I mixed category pass, consulted on 2026-04-17
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://extension.umn.edu/soybean-pest-management/soybean-aphid | Soybean Aphid | Aphid ID, buckthorn link, scouting value, threshold-ready action framing |
+| https://extension.psu.edu/european-pine-sawfly | European Pine Sawfly | Needle-feeding damage, introduction history, landscape and nursery relevance |
+| https://extension.psu.edu/cereal-leaf-beetle/ | Cereal Leaf Beetle | Larval ID, flag-leaf damage, scouting and threshold framing |
+| https://extension.okstate.edu/programs/digital-diagnostics/insects-and-arthropods/hessian-fly-mayetiola-destructor/ | Hessian Fly | Flaxseed puparia cue, wheat injury pattern, crop-focused management context |
+| https://edis.ifas.ufl.edu/publication/IN156 | Pink Hibiscus Mealybug | Host breadth, waxy pink body, deformation damage, homeowner and regulatory framing |
+| https://extension.umd.edu/resource/calico-scale | Calico Scale | Female and crawler ID, honeydew and soot mold impacts, monitoring timing |
+| https://extension.psu.edu/tree-fruit-insect-pest-pear-thrips | Pear Thrips | Introduction note, blossom injury, outbreak timing, orchard context |
+| https://content.ces.ncsu.edu/stink-bug-in-soybean | Southern Green Stink Bug | Red-banded antenna cue, pod injury, scouting threshold context |
+| https://www.canr.msu.edu/resources/caterpillar_pests_in_cole_crops | Cabbage White Butterfly | Adult imported-cabbageworm link, garden crop damage, public-facing ID lead |
+| https://research.fs.usda.gov/treesearch/39945 | Phytophthora lateralis | Port-Orford-cedar root disease framing, pathogen background, forest context |
+| https://research.fs.usda.gov/treesearch/44240 | Phytophthora cinnamomi | Oak decline association, eastern forest distribution, root rot framing |
+| https://cropprotectionnetwork.org/encyclopedia/southern-corn-leaf-blight-of-corn | Southern Corn Leaf Blight | Lesion shape, ear and stalk symptoms, resistant-hybrid and fungicide framing |
+| https://www.aphis.usda.gov/plant-pests-diseases/black-stem-rust-barberry | Stem Rust | Host alternation, stem lesion cues, regulatory and barberry context |
+| https://research.fs.usda.gov/treesearch/10524 | Scleroderris Canker | Young pine mortality pattern, Lake States distribution, nursery and plantation risk |
+| https://www.fws.gov/species/mediterranean-gekko-hemidactylus-turcicus | Mediterranean Gecko | Species overview, nonnative status, and public-facing range context |
+| https://www.floridamuseum.ufl.edu/southflorida/regions/keys/introduced-species/ | Mediterranean Gecko | Florida establishment context and introduced-built-environment framing |
+| https://myfwc.com/wildlifehabitats/profiles/birds/monk-parakeet/ | Monk Parakeet | Nest behavior, regulatory status, urban nuisance and infrastructure context |
+| https://myfwc.com/wildlifehabitats/profiles/reptiles/lizards/green-iguana/ | Green Iguana | Invasive status, native-plant and seawall impacts, humane removal framing |
+| https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=2633 | Giant Applesnail | Shell and egg-mass ID, habitat, status, and ecological impact notes |
+| https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=713 | Round Goby | Fused pelvic-fin ID, ballast pathway, mussel and fish impact framing |
+| https://myfwc.com/wildlifehabitats/profiles/freshwater/walking-catfish/ | Walking Catfish | Air-breathing and overland movement, Florida status, and possession rule context |
+| https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=457 | African Jewelfish | Canal habitat, aggressive behavior, spread in Florida, and impact notes |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=61 | Greenhouse Frog | Toe-pad separation, yard habitat, established spread, and public ID notes |
+| https://myfwc.com/wildlifehabitats/profiles/freshwater/blue-tilapia/ | Blue Tilapia | Quick field ID, broad Florida habitat, invasive status, and angler-facing relevance |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=931 | Brown Trout | Nonnative range context, stream habitat, and injurious-listing note |
+| https://www.michigan.gov/dnr/education/michigan-species/fish-species/brown-trout | Brown Trout | Identification details, introduction background, and careful public-use context |
+| https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/jointed-goatgrass | Jointed Goatgrass | Hairy auricle cue, wheat look-alike problem, agronomic impact |
+| https://extension.illinois.edu/invasives/invasive-chaff-flower | Japanese Chaff Flower | Seed-bract cue, riparian spread, dense monoculture impact |
+| https://extension.umd.edu/resource/vines-maryland-gardens | Chocolate Vine | Invasive-vine warning, garden-escape context, and homeowner framing |
+| https://www.nps.gov/rocr/learn/nature/non-native-plants.htm | Chocolate Vine | Natural-area escape confirmation and park-land invasion context |
+| https://extension.psu.edu/wild-onion-and-wild-garlic | Crow Garlic | Hollow-leaf cue, bulbil reproduction, turf and landscape management framing |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

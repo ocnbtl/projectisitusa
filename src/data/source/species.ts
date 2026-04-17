@@ -7296,6 +7296,1026 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "aphis-glycines",
+    slug: "aphis-glycines",
+    commonName: "Soybean Aphid",
+    scientificName: "Aphis glycines",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A small pale aphid from Asia that builds dense colonies on soybean leaves and can spread quickly during the growing season.",
+    origin:
+      "Native to Asia and first detected in North America in 2000 after arriving through international movement of plant material.",
+    whatToLookFor: [
+      "Clusters of tiny pale yellow to light green aphids packed along leaf undersides and tender stems.",
+      "Sticky honeydew, curling leaves, and ants moving across heavily infested plants.",
+      "Soybean fields where populations jump rapidly after early colonies appear on scattered plants.",
+    ],
+    whyItMatters:
+      "Soybean aphid removes sap, stresses plants, and can reduce pod fill and yield when populations climb unchecked. Colonies can also spread plant viruses and outrun natural enemies during favorable weather.",
+    action: {
+      mode: "both",
+      summary:
+        "This is a scout-early pest where field decisions should follow local thresholds rather than guesswork.",
+      steps: [
+        "Inspect upper and lower leaves regularly once aphids appear in local soybean reports, especially near field edges and buckthorn.",
+        "Preserve lady beetles and other beneficial insects by avoiding unnecessary broad-spectrum sprays.",
+        "Use local extension threshold guidance before treating broad field infestations so action is timed to real crop risk.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Minnesota Extension",
+        url: "https://extension.umn.edu/soybean-pest-management/soybean-aphid",
+      },
+    ],
+  },
+  {
+    id: "neodiprion-sertifer",
+    slug: "neodiprion-sertifer",
+    commonName: "European Pine Sawfly",
+    scientificName: "Neodiprion sertifer",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "A non-stinging sawfly whose caterpillar-like larvae feed in groups on older pine needles and can thin ornamental trees quickly.",
+    origin:
+      "Native to Europe and introduced to North America through the nursery trade in the early twentieth century.",
+    whatToLookFor: [
+      "Gray-green larvae with shiny black heads feeding side by side on pine needles.",
+      "Rows of slit-like egg scars along last year's needles in late summer or fall.",
+      "Pines with stripped older needles while the newest candles remain mostly intact at first.",
+    ],
+    whyItMatters:
+      "Repeated feeding weakens ornamental and plantation pines, leaves trees thin and ragged, and makes already stressed trees more vulnerable to drought and other pests. Small trees can be heavily defoliated in a short window.",
+    action: {
+      mode: "both",
+      summary:
+        "Small landscape outbreaks are manageable, but larger pine plantings benefit from timely identification and coordinated advice.",
+      steps: [
+        "Clip or hand-remove clustered larvae from reachable branches before they finish feeding.",
+        "Watch susceptible pines in spring so feeding is caught before most older needles are lost.",
+        "Contact local extension or an arborist if many trees are involved or repeated defoliation is weakening a planting.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/european-pine-sawfly",
+      },
+    ],
+  },
+  {
+    id: "oulema-melanopus",
+    slug: "oulema-melanopus",
+    commonName: "Cereal Leaf Beetle",
+    scientificName: "Oulema melanopus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "A metallic blue and orange beetle whose larvae scrape leaf tissue from wheat, oats, barley, and other cereal crops.",
+    origin:
+      "Native to Europe and introduced to North America in the 1960s, likely through trade and crop movement.",
+    whatToLookFor: [
+      "Slender metallic blue beetles with orange-red thoraxes on cereal leaves.",
+      "Yellowish slug-like larvae hidden beneath a dark coating of frass.",
+      "Long narrow feeding scars that leave leaves whitened or window-paned, especially on flag leaves.",
+    ],
+    whyItMatters:
+      "Cereal leaf beetle reduces the photosynthetic area of the leaves that drive grain fill, which can lower yields when infestations peak at the wrong time. Damage is often most important on oats and wheat close to heading.",
+    action: {
+      mode: "both",
+      summary:
+        "Field-level treatment decisions should follow scouting and thresholds, not appearance alone.",
+      steps: [
+        "Scout cereal fields before and during flag-leaf emergence so larvae are found while damage is still localized.",
+        "Focus counts on the upper leaves because feeding there matters most for grain production.",
+        "Use local extension thresholds before treating broad infestations so natural enemies and spray timing are both considered.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/cereal-leaf-beetle/",
+      },
+    ],
+  },
+  {
+    id: "mayetiola-destructor",
+    slug: "mayetiola-destructor",
+    commonName: "Hessian Fly",
+    scientificName: "Mayetiola destructor",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Flies",
+    summary:
+      "A tiny wheat pest whose maggots feed at the base of stems and can stunt, weaken, or kill young cereal plants.",
+    origin:
+      "Native to western Asia and introduced long ago with infested straw and cereal material.",
+    whatToLookFor: [
+      "Stunted dark green wheat or barley with weak tillers and poor stand vigor.",
+      "Flaxseed-shaped brown puparia tucked behind leaf sheaths near the stem base.",
+      "Lodging or broken stems where plants survived feeding but were left weakened.",
+    ],
+    whyItMatters:
+      "Hessian fly can thin seedling stands, reduce tillering, and weaken stems enough to cut yields in fall-sown grain. Infestations are especially costly when planting date and local fly emergence line up badly.",
+    action: {
+      mode: "both",
+      summary:
+        "The main protection comes from planting strategy and local agronomic timing, not late rescue steps.",
+      steps: [
+        "Check weakened cereal plants at the stem base if fields are stunted or uneven after emergence.",
+        "Follow local extension guidance on planting dates and resistant varieties in areas where Hessian fly is active.",
+        "Avoid carrying suspect volunteer grain or unmanaged bridge hosts into the next planting cycle.",
+      ],
+    },
+    source: [
+      {
+        label: "Oklahoma State University Extension",
+        url: "https://extension.okstate.edu/programs/digital-diagnostics/insects-and-arthropods/hessian-fly-mayetiola-destructor/",
+      },
+    ],
+  },
+  {
+    id: "maconellicoccus-hirsutus",
+    slug: "maconellicoccus-hirsutus",
+    commonName: "Pink Hibiscus Mealybug",
+    scientificName: "Maconellicoccus hirsutus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A wax-covered invasive mealybug that distorts shoots and flower buds on hibiscus, fruit trees, and many other ornamentals.",
+    origin:
+      "Native to southern Asia and spread internationally through infested nursery stock and plant trade.",
+    whatToLookFor: [
+      "Cottony white clusters hiding pink-bodied mealybugs on stems, buds, and leaf axils.",
+      "Bunched shortened shoots often called bunchy top, with twisted leaves and deformed flowers.",
+      "Sticky honeydew and black sooty mold building up on heavily infested plants.",
+    ],
+    whyItMatters:
+      "Pink hibiscus mealybug feeds on a wide host range and can seriously deform ornamentals, weaken fruiting plants, and spread through the nursery trade if early infestations are missed. Heavy infestations quickly become more than a cosmetic problem.",
+    action: {
+      mode: "both",
+      summary:
+        "Small finds deserve quick containment, and new local detections should not be treated like an ordinary houseplant pest.",
+      steps: [
+        "Isolate infested plants and avoid moving cuttings, potted stock, or yard waste to new locations.",
+        "Prune and bag heavily infested tips if the problem is still localized on a landscape or container plant.",
+        "Report suspected new local infestations through extension or state agriculture channels when the pest is outside its usual known range.",
+      ],
+    },
+    source: [
+      {
+        label: "UF/IFAS Extension",
+        url: "https://edis.ifas.ufl.edu/publication/IN156",
+      },
+    ],
+  },
+  {
+    id: "eulecanium-cerasorum",
+    slug: "eulecanium-cerasorum",
+    commonName: "Calico Scale",
+    scientificName: "Eulecanium cerasorum",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A large black-and-white soft scale that weakens shade trees by feeding on twigs and coating surfaces with honeydew.",
+    origin:
+      "Native to Asia and introduced through ornamental plant movement.",
+    whatToLookFor: [
+      "Rounded white and dark brown scales lined along twigs, especially on maples and other deciduous trees.",
+      "Sticky honeydew dripping onto leaves, patios, cars, and anything beneath infested branches.",
+      "Black sooty mold growing where the honeydew collects and repeated branch dieback in severe infestations.",
+    ],
+    whyItMatters:
+      "Calico scale stresses landscape trees by removing sap and can turn mature shade trees into chronic honeydew and mold problems. Repeated infestations weaken branches and make already stressed trees harder to maintain.",
+    action: {
+      mode: "both",
+      summary:
+        "This is manageable on smaller trees, but larger shade trees usually need timing-based help.",
+      steps: [
+        "Inspect twigs in late spring and early summer so crawler activity is not missed.",
+        "Prune reachable heavily infested branch tips when doing so will not disfigure the tree.",
+        "Bring in extension or arborist guidance for large trees where treatment timing and coverage matter more than quick spot cleanup.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Maryland Extension",
+        url: "https://extension.umd.edu/resource/calico-scale",
+      },
+    ],
+  },
+  {
+    id: "taeniothrips-inconsequens",
+    slug: "taeniothrips-inconsequens",
+    commonName: "Pear Thrips",
+    scientificName: "Taeniothrips inconsequens",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Other insects",
+    summary:
+      "A tiny dark thrips that feeds in swelling buds and flowers and can scar or deform pear blossoms, leaves, and fruit.",
+    origin:
+      "Native to Europe and now established in North America after introduction through trade and plant movement.",
+    whatToLookFor: [
+      "Very small dark thrips hiding inside opening buds and blossoms in cool spring weather.",
+      "Distorted leaves, scarred fruit, or blasted blossoms after heavy early feeding.",
+      "Pear trees or nearby hosts showing injury before many other spring insects are obvious.",
+    ],
+    whyItMatters:
+      "Pear thrips can injure developing blossoms and foliage at a stage when trees are setting the season's crop. Because the insects are tiny and early, damage is often easier to notice than the pest itself.",
+    action: {
+      mode: "both",
+      summary:
+        "This is an early-season monitoring problem where orchard timing matters more than broad reactive spraying.",
+      steps: [
+        "Check swelling buds and opening blossoms if pears or nearby host trees showed unexplained early spring injury last year.",
+        "Use local tree-fruit guidance to match monitoring and any intervention to bud stage and weather.",
+        "Document repeated heavy injury patterns so orchard and extension decisions are based on real timing instead of guesswork.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/tree-fruit-insect-pest-pear-thrips",
+      },
+    ],
+  },
+  {
+    id: "nezara-viridula",
+    slug: "nezara-viridula",
+    commonName: "Southern Green Stink Bug",
+    scientificName: "Nezara viridula",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A bright green shield bug that pierces pods, fruits, and seeds across soybeans, vegetables, and other crops.",
+    origin:
+      "Native to the Old World tropics and subtropics and spread widely through commerce and agricultural movement.",
+    whatToLookFor: [
+      "Bright green shield-shaped adults with banded antennae and a pale margin under the body.",
+      "Round barrel-shaped egg masses and colorful black, orange, and green nymphs on crop foliage.",
+      "Punctured pods, misshapen fruit, or seed damage where bugs are feeding late in the season.",
+    ],
+    whyItMatters:
+      "Southern green stink bug feeds directly on developing fruit and seed, which can reduce quality and yield in soybeans, tomatoes, and other crops. Damage often shows up after the bugs have already moved across a field edge.",
+    action: {
+      mode: "diy",
+      summary:
+        "Regular scouting matters more than treating after pod and fruit injury is already obvious.",
+      steps: [
+        "Inspect field edges and susceptible crops for egg masses, nymphs, and adults before damage becomes widespread.",
+        "Hand-remove small garden infestations when practical, especially before nymph groups disperse.",
+        "Use local crop-specific thresholds for larger farm fields so treatment is matched to real risk and crop stage.",
+      ],
+    },
+    source: [
+      {
+        label: "NC State Extension",
+        url: "https://content.ces.ncsu.edu/stink-bug-in-soybean",
+      },
+    ],
+  },
+  {
+    id: "pieris-rapae",
+    slug: "pieris-rapae",
+    commonName: "Cabbage White Butterfly",
+    scientificName: "Pieris rapae",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Moths & butterflies",
+    summary:
+      "A familiar white butterfly whose green imported cabbageworm larvae chew brassica leaves, heads, and buds.",
+    origin:
+      "Native to Europe, Asia, and North Africa and introduced to North America in the nineteenth century.",
+    whatToLookFor: [
+      "White butterflies with dark wing tips fluttering low over cabbages, kale, broccoli, and related crops.",
+      "Velvety green caterpillars and pellet-like droppings tucked along leaf midribs and undersides.",
+      "Irregular holes in outer leaves and feeding injury deep into developing heads or buds.",
+    ],
+    whyItMatters:
+      "The butterfly itself is harmless, but its larvae can ruin brassica crops in gardens and market plantings by contaminating and chewing marketable parts. Repeated generations can keep pressure on plantings through much of the season.",
+    action: {
+      mode: "diy",
+      summary:
+        "Home gardens and small plantings respond best when larvae are found early and repeatedly.",
+      steps: [
+        "Inspect brassicas often for eggs and small caterpillars before feeding reaches the center leaves or heads.",
+        "Hand-pick larvae or use crop-appropriate biological controls while caterpillars are still small.",
+        "Cover new brassica plantings where practical so adult butterflies cannot keep laying fresh eggs.",
+      ],
+    },
+    source: [
+      {
+        label: "Michigan State University Extension",
+        url: "https://www.canr.msu.edu/resources/caterpillar_pests_in_cole_crops",
+      },
+    ],
+  },
+  {
+    id: "phytophthora-lateralis",
+    slug: "phytophthora-lateralis",
+    commonName: "Port-Orford-Cedar Root Disease",
+    scientificName: "Phytophthora lateralis",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A soil and waterborne root disease organism that kills Port-Orford-cedar and spreads through contaminated soil, water, and plant material.",
+    origin:
+      "Believed to have arrived through nursery trade and then spread through infested soils, road networks, and drainage pathways.",
+    whatToLookFor: [
+      "Yellowing or bronzing crowns and rapid dieback in Port-Orford-cedar near roads, trails, or drainages.",
+      "Reddish-brown inner bark at the root collar and major roots when infected tissue is exposed.",
+      "Mortality patterns moving downslope or along wet travel corridors rather than appearing randomly.",
+    ],
+    whyItMatters:
+      "Phytophthora lateralis can eliminate Port-Orford-cedar from heavily infested sites and continue spreading when contaminated mud or water is moved to clean ground. Once it is established, site recovery is difficult and slow.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a containment and sanitation issue, not a casual treatment problem.",
+      steps: [
+        "Avoid moving muddy boots, tires, tools, or soil from suspect cedar sites to uninfested areas.",
+        "Photograph decline patterns and note whether mortality follows roads, culverts, or drainage lines.",
+        "Report suspect outbreaks to forestry or plant health authorities so diagnosis and containment can be coordinated.",
+      ],
+    },
+    source: [
+      {
+        label: "U.S. Forest Service",
+        url: "https://research.fs.usda.gov/treesearch/39945",
+      },
+    ],
+  },
+  {
+    id: "phytophthora-cinnamomi",
+    slug: "phytophthora-cinnamomi",
+    commonName: "Phytophthora Root Rot",
+    scientificName: "Phytophthora cinnamomi",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A destructive water mold that rots roots and crowns of many trees, shrubs, and nursery plants, especially in warm wet soils.",
+    origin:
+      "Likely introduced repeatedly through global plant trade and then spread in infested nursery stock, soil, and water.",
+    whatToLookFor: [
+      "Shrubs or trees with thinning crowns, wilt, and dieback that do not recover after rainfall or watering.",
+      "Dark decayed feeder roots and a weak root system instead of healthy white root tips.",
+      "Disease problems concentrated in poorly drained sites, low spots, or irrigated landscapes that stay wet.",
+    ],
+    whyItMatters:
+      "Phytophthora cinnamomi affects a wide host range and is linked to serious decline in nurseries, landscapes, and some forest settings. Because it moves in infested soil and water, repeated plant losses often continue until the site problem is addressed.",
+    action: {
+      mode: "both",
+      summary:
+        "Reduce spread locally and bring in plant-health guidance when decline patterns suggest a site-wide root disease problem.",
+      steps: [
+        "Do not move suspect soil, mulch, or container plants from a site where repeated root rot losses are occurring.",
+        "Improve drainage and avoid overwatering while diseased plants are being evaluated.",
+        "Use extension, nursery, or arboricultural guidance for diagnosis when multiple hosts in the same wet area are declining.",
+      ],
+    },
+    source: [
+      {
+        label: "U.S. Forest Service",
+        url: "https://research.fs.usda.gov/treesearch/44240",
+      },
+    ],
+  },
+  {
+    id: "bipolaris-maydis",
+    slug: "bipolaris-maydis",
+    commonName: "Southern Corn Leaf Blight",
+    scientificName: "Bipolaris maydis",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A warm-weather corn disease that causes tan leaf lesions and can reduce grain fill when upper leaves are heavily blighted.",
+    origin:
+      "Recorded widely in corn-growing regions and spread through spores on infected residue and suitable weather rather than a single simple pathway.",
+    whatToLookFor: [
+      "Long tan to brown lesions on corn leaves, often with darker borders.",
+      "Blighting that climbs the canopy during warm humid weather after storms or extended leaf wetness.",
+      "Ear and stalk areas where disease pressure is high enough to weaken plant health before maturity.",
+    ],
+    whyItMatters:
+      "Southern corn leaf blight cuts the photosynthetic area needed for grain fill and can reduce yield when it reaches upper leaves before the crop finishes. Epidemics can move quickly when weather and susceptible hybrids line up.",
+    action: {
+      mode: "both",
+      summary:
+        "Management depends on crop stage and field history, not just the presence of lesions.",
+      steps: [
+        "Scout regularly during warm humid periods so disease movement in the canopy is caught early.",
+        "Record which hybrids and fields are affected most heavily for future planting and rotation decisions.",
+        "Use extension or crop-consultant guidance if upper-canopy blight is advancing before grain fill is secure.",
+      ],
+    },
+    source: [
+      {
+        label: "Crop Protection Network",
+        url: "https://cropprotectionnetwork.org/encyclopedia/southern-corn-leaf-blight-of-corn",
+      },
+    ],
+  },
+  {
+    id: "puccinia-graminis",
+    slug: "puccinia-graminis",
+    commonName: "Stem Rust",
+    scientificName: "Puccinia graminis",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A cereal rust disease that forms elongated reddish pustules on stems and leaves and can seriously damage wheat and other grasses.",
+    origin:
+      "This rust is long established in grain systems and persists through spore movement and alternate-host cycles involving barberry.",
+    whatToLookFor: [
+      "Long brick-red pustules breaking through stems, leaf sheaths, and leaves of wheat and related grasses.",
+      "Later-season black pustules replacing the red ones as the crop matures.",
+      "Rust pressure near susceptible grain fields or where barberry is helping complete the disease cycle.",
+    ],
+    whyItMatters:
+      "Stem rust weakens grain plants, reduces yield, and can cause lodging or poor grain fill during serious outbreaks. The disease also remains important because barberry can help it complete part of its life cycle and generate new risk.",
+    action: {
+      mode: "both",
+      summary:
+        "This is a crop and alternate-host problem that belongs in a broader management plan.",
+      steps: [
+        "Document rust timing and severity in grain fields so local disease pressure is not underestimated the next season.",
+        "Follow local guidance on resistant varieties and barberry management where stem rust remains an active concern.",
+        "Bring field observations to extension or crop advisors if stem infections are building before grain fill is secure.",
+      ],
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/black-stem-rust-barberry",
+      },
+    ],
+  },
+  {
+    id: "gremmeniella-abietina",
+    slug: "gremmeniella-abietina",
+    commonName: "Scleroderris Canker",
+    scientificName: "Gremmeniella abietina",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A conifer disease that kills shoots and branches of pines and can cause severe losses in plantations, nurseries, and young stands.",
+    origin:
+      "Established through movement of infected plant material and favored by cool wet conditions in susceptible pine plantings.",
+    whatToLookFor: [
+      "Shoot tips and branches with brown needles that remain attached instead of dropping quickly.",
+      "Cankered twigs and branch dieback progressing inward on susceptible pines.",
+      "Young plantation or nursery trees with top dieback after cool wet periods.",
+    ],
+    whyItMatters:
+      "Scleroderris canker can deform or kill young pines, reduce plantation quality, and create recurring problems in cool moist sites. Once it is established in a planting, repeated shoot loss can leave trees stunted and unmarketable.",
+    action: {
+      mode: "both",
+      summary:
+        "Early diagnosis matters because several pine problems can look similar from a distance.",
+      steps: [
+        "Mark affected trees and note whether damage is scattered or concentrated in low, cool, wet parts of a planting.",
+        "Avoid moving suspect nursery stock or cut material to clean sites before the problem is identified.",
+        "Use forestry or extension help when shoot dieback is spreading through a plantation or nursery block.",
+      ],
+    },
+    source: [
+      {
+        label: "U.S. Forest Service",
+        url: "https://research.fs.usda.gov/treesearch/10524",
+      },
+    ],
+  },
+  {
+    id: "hemidactylus-turcicus",
+    slug: "hemidactylus-turcicus",
+    commonName: "Mediterranean Gecko",
+    scientificName: "Hemidactylus turcicus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Reptiles & amphibians",
+    summary:
+      "A small nocturnal wall gecko that lives around buildings, lights, and warm urban surfaces and is now established across much of the southern United States.",
+    origin:
+      "Native to the Mediterranean region and spread widely through shipping, vehicles, and movement of materials tied to buildings and commerce.",
+    whatToLookFor: [
+      "Pale pinkish or gray geckos with large eyes, sticky toe pads, and bumpy translucent skin.",
+      "Nighttime activity on stucco, brick, porches, and walls where insects gather around lights.",
+      "Tiny eggs tucked into cracks and repeated sightings of adults and juveniles around the same structure.",
+    ],
+    whyItMatters:
+      "Mediterranean gecko is a nonnative species that is now common around many built environments, especially in warm regions. It is not a high-drama invader on the level of a destructive reptile or wetland pest, but documenting outdoor spread still matters where the species is moving into new regions.",
+    action: {
+      mode: "both",
+      summary:
+        "Most encounters are a document-it and avoid-spread situation rather than an emergency response.",
+      steps: [
+        "Photograph the gecko and note whether the sighting is indoors, around porch lights, or part of a breeding outdoor colony.",
+        "Avoid transporting boxes, pots, or stored materials that may be carrying hidden geckos or eggs.",
+        "Report repeated outdoor colonies when the species appears to be newly established well beyond its expected local range.",
+      ],
+    },
+    source: [
+      {
+        label: "U.S. Fish and Wildlife Service",
+        url: "https://www.fws.gov/species/mediterranean-gekko-hemidactylus-turcicus",
+      },
+      {
+        label: "Florida Museum",
+        url: "https://www.floridamuseum.ufl.edu/southflorida/regions/keys/introduced-species/",
+      },
+    ],
+  },
+  {
+    id: "myiopsitta-monachus",
+    slug: "myiopsitta-monachus",
+    commonName: "Monk Parakeet",
+    scientificName: "Myiopsitta monachus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Birds",
+    summary:
+      "A bright green parakeet from South America known for building large stick nests on trees, poles, and utility structures.",
+    origin:
+      "Introduced through the pet trade after escapes and releases from captivity.",
+    whatToLookFor: [
+      "Small bright green parrots with grayish faces moving noisily in flocks.",
+      "Bulky communal stick nests built high in palms, trees, light poles, or electrical structures.",
+      "Groups feeding on seeds, buds, fruit, and ornamental plantings in urban or suburban settings.",
+    ],
+    whyItMatters:
+      "Monk parakeets are unusual among parrots because they build their own large communal nests, and those nests can create infrastructure and fire concerns when placed on power equipment. Flocks can also become persistent urban nuisance birds where they establish breeding colonies.",
+    action: {
+      mode: "report",
+      summary:
+        "Breeding colonies on structures should be documented through local wildlife or utility channels, not handled informally.",
+      steps: [
+        "Photograph birds and nests from a safe distance without approaching active utility equipment.",
+        "Note whether the nest is in a tree, on a pole, or attached to electrical hardware.",
+        "Report active colonies through state wildlife or utility reporting channels where monk parakeets are managed.",
+      ],
+    },
+    source: [
+      {
+        label: "Florida Fish and Wildlife Conservation Commission",
+        url: "https://myfwc.com/wildlifehabitats/profiles/birds/monk-parakeet/",
+      },
+    ],
+  },
+  {
+    id: "iguana-iguana",
+    slug: "iguana-iguana",
+    commonName: "Green Iguana",
+    scientificName: "Iguana iguana",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Reptiles & amphibians",
+    summary:
+      "A large nonnative lizard that feeds heavily on vegetation and burrows into canal banks, seawalls, and landscaped edges.",
+    origin:
+      "Native to Central and South America and established in the United States through pet releases and escapes.",
+    whatToLookFor: [
+      "Large green to orange lizards with a long striped tail, throat dewlap, and row of back spines.",
+      "Burrows in seawalls, canal edges, levees, and landscaped slopes.",
+      "Repeated feeding on flowers, foliage, vegetables, and ornamental shrubs around warm developed areas.",
+    ],
+    whyItMatters:
+      "Green iguanas damage native and ornamental vegetation and can undermine banks and built structures through repeated burrowing. In places where they are abundant, the problem is persistent and expensive rather than merely unusual.",
+    action: {
+      mode: "both",
+      summary:
+        "Small local problems can be addressed directly, but established populations should be documented and handled under local rules.",
+      steps: [
+        "Do not relocate captured iguanas or release unwanted pets into canals, parks, or natural areas.",
+        "Protect high-value plants and inspect banks or seawalls if repeated burrowing is appearing around a property.",
+        "Use local wildlife guidance for humane removal and report concentrations where public infrastructure is being damaged.",
+      ],
+    },
+    source: [
+      {
+        label: "Florida Fish and Wildlife Conservation Commission",
+        url: "https://myfwc.com/wildlifehabitats/profiles/reptiles/lizards/green-iguana/",
+      },
+    ],
+  },
+  {
+    id: "pomacea-maculata",
+    slug: "pomacea-maculata",
+    commonName: "Giant Applesnail",
+    scientificName: "Pomacea maculata",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mollusks",
+    summary:
+      "A very large freshwater snail that lays bright pink egg masses above the waterline and can damage wetlands and aquatic vegetation.",
+    origin:
+      "Native to South America and spread through aquarium, food, and ornamental-water trade pathways.",
+    whatToLookFor: [
+      "Large rounded snails in ponds, canals, marsh edges, and other warm freshwater habitats.",
+      "Bright pink clusters of eggs attached above the waterline on plants, docks, walls, or culverts.",
+      "Heavy feeding in shallow vegetated water where aquatic plants are being stripped or thinned.",
+    ],
+    whyItMatters:
+      "Giant applesnail can alter wetland vegetation, compete with native snails, and spread rapidly once egg masses are established across a shoreline. The eggs are highly visible, which makes early detection practical if people know to look up above the water.",
+    action: {
+      mode: "report",
+      summary:
+        "This is a document-it and contain-it aquatic invader, not something to quietly move or dump elsewhere.",
+      steps: [
+        "Photograph the snail and any egg masses, especially if the egg clusters are vivid pink and elevated above the water.",
+        "Do not move live snails, egg masses, or aquatic plants to another pond, canal, or aquarium setup.",
+        "Report new finds through local invasive aquatic species channels so shoreline and waterbody response can be coordinated.",
+      ],
+    },
+    source: [
+      {
+        label: "USGS Nonindigenous Aquatic Species",
+        url: "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=2633",
+      },
+    ],
+  },
+  {
+    id: "neogobius-melanostomus",
+    slug: "neogobius-melanostomus",
+    commonName: "Round Goby",
+    scientificName: "Neogobius melanostomus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A bottom-dwelling fish from Eurasia that spreads through connected waters and aggressively occupies rocky shorelines and nearshore habitat.",
+    origin:
+      "Native to the Black and Caspian Sea region and introduced to North America through ballast water discharge.",
+    whatToLookFor: [
+      "Small stout fish with a blunt head and a fused pelvic fin that forms a suction-cup disc.",
+      "A distinct dark spot on the rear of the first dorsal fin.",
+      "Rocky shorelines, marinas, and bait catches where gobies crowd out native bottom fish.",
+    ],
+    whyItMatters:
+      "Round goby competes with native benthic fish, preys on eggs, and moves through waterways quickly once established. Its ability to dominate rocky habitat has made it one of the most visible aquatic invaders in the Great Lakes region and beyond.",
+    action: {
+      mode: "report",
+      summary:
+        "Do not move this fish as bait or bycatch, and document new waterbody detections carefully.",
+      steps: [
+        "Photograph the fish if possible, paying attention to the fused pelvic fin and dorsal spot.",
+        "Do not release live bait buckets, aquarium fish, or accidental catches into new waters.",
+        "Report suspected new occurrences where the species is not already well documented in local waters.",
+      ],
+    },
+    source: [
+      {
+        label: "USGS Nonindigenous Aquatic Species",
+        url: "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=713",
+      },
+    ],
+  },
+  {
+    id: "clarias-batrachus",
+    slug: "clarias-batrachus",
+    commonName: "Walking Catfish",
+    scientificName: "Clarias batrachus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "An air-breathing catfish that can move over wet ground and establish in warm canals, ponds, and marshy waters.",
+    origin:
+      "Native to Southeast Asia and introduced through aquaculture, food markets, and live-animal movement.",
+    whatToLookFor: [
+      "Long scaleless catfish with barbels around the mouth and a very long low dorsal fin.",
+      "Reports of fish moving across wet ground, ditches, or flooded grass after rain.",
+      "Warm shallow waters where unusual catfish are appearing in canals, ponds, or retention systems.",
+    ],
+    whyItMatters:
+      "Walking catfish tolerates low oxygen, spreads through warm connected waters, and can reach new sites by crossing short stretches of wet ground. That combination makes it a strong escape and establishment risk wherever people move live fish casually.",
+    action: {
+      mode: "report",
+      summary:
+        "Do not transport or release this fish, and treat new finds as a live-aquatic-animal reporting issue.",
+      steps: [
+        "Photograph the fish and record whether it was found in a canal, ditch, pond, or on land after rain.",
+        "Do not move live specimens to another waterbody, pond, or home aquarium.",
+        "Report suspected finds through state fish and wildlife channels, especially outside known warm-range areas.",
+      ],
+    },
+    source: [
+      {
+        label: "Florida Fish and Wildlife Conservation Commission",
+        url: "https://myfwc.com/wildlifehabitats/profiles/freshwater/walking-catfish/",
+      },
+    ],
+  },
+  {
+    id: "hemichromis-letourneuxi",
+    slug: "hemichromis-letourneuxi",
+    commonName: "African Jewelfish",
+    scientificName: "Hemichromis letourneuxi",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A brightly colored cichlid established in warm waters where it defends territory aggressively and spreads through canals and connected habitats.",
+    origin:
+      "Native to Africa and introduced through aquarium release and other live-fish pathways.",
+    whatToLookFor: [
+      "Compact red to olive fish marked with iridescent blue-green spots and dark body blotches.",
+      "Aggressive behavior around nests or defended shoreline habitat in warm clear water.",
+      "Unfamiliar ornamental-looking fish showing up in canals, retention ponds, or managed warm waters.",
+    ],
+    whyItMatters:
+      "African jewelfish can compete aggressively with native small fish in warm habitats and is one more example of aquarium species becoming established in the wild. Once breeding fish hold territory, small enclosed waters can shift quickly toward repeated sightings.",
+    action: {
+      mode: "report",
+      summary:
+        "This is primarily a do-not-release and document-new-waterbodies issue.",
+      steps: [
+        "Photograph unusual cichlid catches, especially if the fish shows bright spotting and territorial behavior.",
+        "Do not release aquarium fish or unwanted live bait into ponds, canals, or neighborhood lakes.",
+        "Report finds where jewelfish appear newly established outside their expected known local waters.",
+      ],
+    },
+    source: [
+      {
+        label: "USGS Nonindigenous Aquatic Species",
+        url: "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=457",
+      },
+    ],
+  },
+  {
+    id: "eleutherodactylus-planirostris",
+    slug: "eleutherodactylus-planirostris",
+    commonName: "Greenhouse Frog",
+    scientificName: "Eleutherodactylus planirostris",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Reptiles & amphibians",
+    summary:
+      "A tiny nonnative frog that lives in leaf litter, mulch, pots, and nursery stock and reproduces without needing standing water.",
+    origin:
+      "Native to the Caribbean and spread through horticultural trade, potted plants, and transported landscape materials.",
+    whatToLookFor: [
+      "Very small tan to brown frogs with a pointed snout hiding in mulch, planters, or damp leaf litter.",
+      "Evening chirps and repeated tiny frog sightings around greenhouses, nurseries, patios, and irrigated gardens.",
+      "Frogs appearing in places where there is no obvious pond or wet breeding site nearby.",
+    ],
+    whyItMatters:
+      "Greenhouse frog can spread quietly with nursery stock because it does not need open water to breed. That makes mulch piles, potted plants, and landscaped urban habitat effective staging areas for new local introductions.",
+    action: {
+      mode: "both",
+      summary:
+        "Most encounters call for documentation and careful movement of plant material rather than dramatic wildlife control.",
+      steps: [
+        "Check potted plants, trays, and mulch if tiny frogs are showing up around recently moved nursery stock.",
+        "Avoid transporting infested pots, soil, or decorative stone to a new site without checking them first.",
+        "Report repeated outdoor breeding-style populations when the species appears newly established outside its expected range.",
+      ],
+    },
+    source: [
+      {
+        label: "USGS Nonindigenous Aquatic Species",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=61",
+      },
+    ],
+  },
+  {
+    id: "oreochromis-aureus",
+    slug: "oreochromis-aureus",
+    commonName: "Blue Tilapia",
+    scientificName: "Oreochromis aureus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A hardy tilapia established in warm fresh and brackish waters where it nests densely and competes with native fish communities.",
+    origin:
+      "Native to Africa and the Middle East and introduced through aquaculture, stocking, and live-fish release.",
+    whatToLookFor: [
+      "Deep-bodied gray to bluish fish with faint vertical bands and a barred tail.",
+      "Large circular nesting depressions in shallow warm water during breeding season.",
+      "Tilapia turning up in canals, ponds, warm reservoirs, and coastal waters connected to human activity.",
+    ],
+    whyItMatters:
+      "Blue tilapia can become abundant in warm waters, alter habitat through nesting activity, and compete with native fishes. The species is also a strong example of how food and aquaculture fish escape into public waters and stay there.",
+    action: {
+      mode: "report",
+      summary:
+        "Do not move or release live tilapia, and document new waterbody appearances carefully.",
+      steps: [
+        "Photograph unusual catches if you suspect a tilapia outside known local waters.",
+        "Do not release unwanted aquarium, food-market, or pond fish into public or private connected waters.",
+        "Report new occurrences where the species appears to be expanding into additional waterbodies.",
+      ],
+    },
+    source: [
+      {
+        label: "Florida Fish and Wildlife Conservation Commission",
+        url: "https://myfwc.com/wildlifehabitats/profiles/freshwater/blue-tilapia/",
+      },
+    ],
+  },
+  {
+    id: "salmo-trutta",
+    slug: "salmo-trutta",
+    commonName: "Brown Trout",
+    scientificName: "Salmo trutta",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A nonnative trout widely stocked for sport fishing that can dominate coldwater habitat and complicate native fish restoration goals.",
+    origin:
+      "Native to Europe, North Africa, and western Asia and introduced widely across the United States for recreational fishing.",
+    whatToLookFor: [
+      "Brown to yellow-brown trout with black spots and reddish spots, often ringed by pale halos.",
+      "Fish holding in cool streams, spring-fed rivers, tailwaters, and rocky nearshore Great Lakes habitat.",
+      "Waters where stocked or self-sustaining brown trout are showing up alongside sensitive native trout or salmonid restoration work.",
+    ],
+    whyItMatters:
+      "Brown trout is more complicated than many invasive fish because it is also a valued sport species, but it is still nonnative in much of the United States and can displace native coldwater fish in some systems. Public-facing guidance has to stay tied to the rules and goals of the specific waterbody.",
+    action: {
+      mode: "both",
+      summary:
+        "Follow site-specific fisheries rules and do not move live fish between waters, especially where native restoration is active.",
+      steps: [
+        "Check local regulations and restoration goals before treating a brown trout water as ordinary put-and-take fishing habitat.",
+        "Do not transport live trout, bait fish, or eggs from one drainage or managed water to another.",
+        "Document nonnative trout presence carefully where local agencies are working to protect native fish communities.",
+      ],
+    },
+    source: [
+      {
+        label: "USGS Nonindigenous Aquatic Species",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=931",
+      },
+      {
+        label: "Michigan Department of Natural Resources",
+        url: "https://www.michigan.gov/dnr/education/michigan-species/fish-species/brown-trout",
+      },
+    ],
+  },
+  {
+    id: "aegilops-cylindrica",
+    slug: "aegilops-cylindrica",
+    commonName: "Jointed Goatgrass",
+    scientificName: "Aegilops cylindrica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A winter annual grass that closely resembles wheat early on and becomes a serious contaminant in grain fields.",
+    origin:
+      "Native to Eurasia and introduced to North America with contaminated grain and agricultural movement.",
+    whatToLookFor: [
+      "Seedlings that resemble wheat but show hairy auricles clasping the stem.",
+      "Short compact seed spikes that break into hard jointed segments at maturity.",
+      "Patches in winter wheat or field margins where the grass matures slightly differently than the crop around it.",
+    ],
+    whyItMatters:
+      "Jointed goatgrass competes directly with wheat, contaminates harvested grain, and persists through seed that is hard to separate from crop material. Once it builds in a field, cleanup takes more than one season.",
+    action: {
+      mode: "both",
+      summary:
+        "This is a field-management problem that needs clean seed, careful scouting, and local agronomic advice.",
+      steps: [
+        "Mark infested patches early so they are not forgotten once the crop canopy closes.",
+        "Use clean seed and avoid spreading contaminated straw, equipment residue, or harvested material to clean fields.",
+        "Work with local crop guidance where infestations are broad enough to affect rotation and harvest decisions.",
+      ],
+    },
+    source: [
+      {
+        label: "Colorado Department of Agriculture",
+        url: "https://ag.colorado.gov/conservation/noxious-weeds/noxious-weed-species-id/jointed-goatgrass",
+      },
+    ],
+  },
+  {
+    id: "achyranthes-japonica",
+    slug: "achyranthes-japonica",
+    commonName: "Japanese Chaff Flower",
+    scientificName: "Achyranthes japonica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Other plants",
+    summary:
+      "A shade-tolerant woodland perennial that spreads by sticky seed bracts and forms dense stands along streams, trails, and floodplain edges.",
+    origin:
+      "Native to East Asia and introduced to North America through horticultural and accidental movement pathways.",
+    whatToLookFor: [
+      "Opposite leaves on upright stems with long narrow flower spikes late in the season.",
+      "Sharp sticky seed bracts that cling to clothing, fur, and gear.",
+      "Dense patches in riparian woods, trail corridors, low floodplain ground, and disturbed forest edges.",
+    ],
+    whyItMatters:
+      "Japanese chaff flower can fill the woodland understory with dense single-species patches and spread efficiently by hitchhiking seeds. Streams, trails, and deer movement all help it push outward from first infestations.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth tackling early, and seed-moving infestations in woods should be documented before they spread farther.",
+      steps: [
+        "Pull or cut plants before seed bracts mature and begin hitchhiking on people, pets, and wildlife.",
+        "Bag flowering or fruiting stems so sticky seed material is not shaken loose during transport.",
+        "Report expanding woodland or floodplain infestations where the plant is moving beyond a small edge patch.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Illinois Extension",
+        url: "https://extension.illinois.edu/invasives/invasive-chaff-flower",
+      },
+    ],
+  },
+  {
+    id: "akebia-quinata",
+    slug: "akebia-quinata",
+    commonName: "Chocolate Vine",
+    scientificName: "Akebia quinata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A fast-growing ornamental vine with five-part leaves that escapes gardens and climbs through shrubs, fences, and woodland edges.",
+    origin:
+      "Native to East Asia and introduced as an ornamental vine for trellises, arbors, and screening plantings.",
+    whatToLookFor: [
+      "Leaves divided into five oval leaflets held like a loose hand.",
+      "Twining stems with maroon to purple flowers and sausage-shaped fruit on mature plants.",
+      "Vines spreading from old plantings into thickets, fence rows, and forest edges where they layer and tangle.",
+    ],
+    whyItMatters:
+      "Chocolate vine can smother shrubs, blanket the ground layer, and push from ornamental plantings into natural areas. Once the stems begin layering and rooting, a tidy garden vine turns into a persistent edge invader.",
+    action: {
+      mode: "both",
+      summary:
+        "Small escapes can be removed directly, but natural-area spread deserves documentation before the vine thickens.",
+      steps: [
+        "Cut and pull young vines before they have layered through surrounding shrubs and fence lines.",
+        "Remove fruiting material so seeds are not carried into adjacent woods or dumped with yard waste.",
+        "Report naturalized woodland or park-edge patches where chocolate vine is moving beyond cultivation.",
+      ],
+    },
+    source: [
+      {
+        label: "University of Maryland Extension",
+        url: "https://extension.umd.edu/resource/vines-maryland-gardens",
+      },
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/rocr/learn/nature/non-native-plants.htm",
+      },
+    ],
+  },
+  {
+    id: "allium-vineale",
+    slug: "allium-vineale",
+    commonName: "Crow Garlic",
+    scientificName: "Allium vineale",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A garlic-scented perennial weed that invades lawns, pastures, roadsides, and grain fields through bulbs and top-setting bulblets.",
+    origin:
+      "Native to Europe, North Africa, and western Asia and introduced to North America long ago as a contaminant and garden escape.",
+    whatToLookFor: [
+      "Round hollow leaves that smell strongly of onion or garlic when crushed.",
+      "Flower stalks topped with clusters of small bulbils instead of showy open flowers.",
+      "Persistent patches in turf, hay ground, and field edges that return from underground bulbs.",
+    ],
+    whyItMatters:
+      "Crow garlic spreads both above and below ground, which makes it stubborn in lawns and agricultural settings. It can contaminate forage and harvested crops while also turning simple turf patches into long-lived bulb banks.",
+    action: {
+      mode: "diy",
+      summary:
+        "Persistence matters more than force because missed bulbs and bulblets restart the patch quickly.",
+      steps: [
+        "Pull or dig small patches when the soil is moist so more of the underground bulbs come out intact.",
+        "Remove flower stalks with bulblets before they mature and drop back into the site.",
+        "Keep mowing, turf density, and follow-up control consistent because one cleanup pass rarely finishes the problem.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Extension",
+        url: "https://extension.psu.edu/wild-onion-and-wild-garlic",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",
