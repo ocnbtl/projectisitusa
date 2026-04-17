@@ -8627,6 +8627,232 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "aedes-albopictus",
+    slug: "aedes-albopictus",
+    commonName: "Asian Tiger Mosquito",
+    scientificName: "Aedes albopictus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Flies",
+    summary:
+      "A nonnative container-breeding mosquito that thrives around homes, bites during the day, and can spread viruses such as dengue, chikungunya, and Zika.",
+    origin:
+      "Native to Asia and introduced through global trade, especially shipments that allowed eggs or larvae to travel in water-holding materials.",
+    whatToLookFor: [
+      "Small black mosquitoes with bright white bands on the legs and a single white stripe running down the back.",
+      "Breeding in buckets, plant saucers, tires, toys, gutters, tarps, and any small container that holds water near homes.",
+      "Aggressive daytime biting in yards, patios, porches, and nearby shady vegetation rather than only at dusk.",
+    ],
+    whyItMatters:
+      "Asian tiger mosquito is a public-health problem because it lives close to people, develops quickly in very small water sources, and can help spread several mosquito-borne viruses. It also tolerates cooler conditions than yellow fever mosquito, which broadens the places where nuisance and disease risk can build.",
+    action: {
+      mode: "diy",
+      summary:
+        "The most useful control is removing breeding water before the next hatch cycle, not waiting until adult mosquitoes are already everywhere.",
+      steps: [
+        "Dump, drain, scrub, or tightly cover any container that can hold water for more than a few days.",
+        "Wear EPA-registered repellent and keep door and window screens in good repair when daytime mosquito activity is high.",
+        "Check the same trouble spots every week because eggs can survive drying and restart the problem after rain or irrigation.",
+      ],
+      safetyNotes:
+        "Do not rely on one-time spraying while leaving water-filled containers in place. The breeding sites will keep replacing the adults.",
+    },
+    source: [
+      {
+        label: "Centers for Disease Control and Prevention",
+        url: "https://www.cdc.gov/dengue/stories/unwanted-mosquitoes.html",
+      },
+      {
+        label: "Centers for Disease Control and Prevention Aedes Life Cycle",
+        url: "https://www.cdc.gov/mosquitoes/about/life-cycle-of-aedes-mosquitoes.html",
+      },
+      {
+        label: "Centers for Disease Control and Prevention Potential Range",
+        url: "https://www.cdc.gov/mosquitoes/php/toolkit/potential-range-of-aedes.html",
+      },
+    ],
+  },
+  {
+    id: "linepithema-humile",
+    slug: "linepithema-humile",
+    commonName: "Argentine Ant",
+    scientificName: "Linepithema humile",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "A small invasive ant that forms huge multi-queen colonies, runs persistent trails through yards and structures, and protects sap-feeding pests on trees and shrubs.",
+    origin:
+      "Native to South America and introduced through commerce into warm urban, agricultural, and coastal settings.",
+    whatToLookFor: [
+      "Long narrow trails of small uniform brown ants moving along sidewalks, irrigation lines, tree trunks, foundations, and baseboards.",
+      "Shallow nests in soil, mulch, debris, wall voids, or damp spots near water sources.",
+      "Heavy activity around aphids, scales, mealybugs, pet food, kitchen crumbs, or sugary spills.",
+    ],
+    whyItMatters:
+      "Argentine ant is more than a simple household nuisance. Its supercolonies can displace other ants, invade buildings in large numbers, and protect honeydew-producing insects that then damage garden and orchard plants more severely.",
+    action: {
+      mode: "diy",
+      summary:
+        "Control works best when you remove food and moisture first, then use bait strategies that the colony can carry back through its extensive network.",
+      steps: [
+        "Fix leaks, trim vegetation away from structures, and reduce easy food sources such as pet food, fallen fruit, and sticky spills.",
+        "Use ant baits suited to the site instead of broad spraying when possible, because trails often reconnect quickly if queens remain active.",
+        "Manage aphids, scales, and mealybugs on trees and shrubs so the ants lose one of their main food rewards.",
+      ],
+      safetyNotes:
+        "Do not mix random insecticides with bait placements. Repellent residues can reduce bait feeding and make control less effective.",
+    },
+    source: [
+      {
+        label: "UC Statewide IPM Argentine Ant Key",
+        url: "https://ipm.ucanr.edu/TOOLS/ANTKEY/argentine.html",
+      },
+      {
+        label: "UC Statewide IPM Ant Management",
+        url: "https://ipm.ucanr.edu/PMG/GARDEN/CONTROLS/antmanagement.html",
+      },
+    ],
+  },
+  {
+    id: "xyleborus-glabratus",
+    slug: "xyleborus-glabratus",
+    commonName: "Redbay Ambrosia Beetle",
+    scientificName: "Xyleborus glabratus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "An invasive beetle that carries the fungus behind laurel wilt and can rapidly kill redbay, sassafras, avocado relatives, and other trees in the laurel family.",
+    origin:
+      "Native to Asia and introduced into the southeastern United States through infested wood or wood packing pathways.",
+    whatToLookFor: [
+      "Small dark boring beetles or tiny entry holes on redbay, sassafras, swampbay, avocado, or related hosts.",
+      "Sudden wilting where leaves hang limp, then turn brown or red while remaining attached to branches.",
+      "Dark streaking in the sapwood under the bark and clusters of dead or dying laurel-family trees in the same area.",
+    ],
+    whyItMatters:
+      "Redbay ambrosia beetle matters because the insect and its fungal partner work together. Even when the beetle itself is small and easy to miss, laurel wilt can move quickly through host trees and cause severe mortality in natural forests, coastal hammocks, and avocado-growing areas.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat rapid wilt in laurel-family trees as a detection problem first. Moving infested wood can help spread the beetle and fungus farther.",
+      steps: [
+        "Do not move firewood, logs, or fresh wood from suspect host trees out of the area.",
+        "Photograph wilted foliage, bark entry holes, and any dark sapwood staining if you can document the tree safely.",
+        "Report suspicious redbay, sassafras, or avocado-relative decline through state forestry, agriculture, or extension channels so the problem is confirmed before more wood is cut or transported.",
+      ],
+      safetyNotes:
+        "Tree removal and disposal near active laurel wilt sites should follow local forestry or extension guidance, not improvised cleanup.",
+    },
+    source: [
+      {
+        label: "USDA Forest Service Emerging Forest Pest Threat",
+        url: "https://research.fs.usda.gov/treesearch/57231",
+      },
+      {
+        label: "USDA Forest Service Redbay Ambrosia Beetle",
+        url: "https://research.fs.usda.gov/treesearch/47935",
+      },
+    ],
+  },
+  {
+    id: "rhinella-marina",
+    slug: "rhinella-marina",
+    commonName: "Cane Toad",
+    scientificName: "Rhinella marina",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Reptiles & amphibians",
+    summary:
+      "A large invasive toad that thrives in yards and canals, poisons pets and wildlife with skin toxins, and is now established across much of peninsular Florida.",
+    origin:
+      "Native to Central and South America and introduced for failed pest-control efforts and later through pet-trade escapes and releases.",
+    whatToLookFor: [
+      "Large warty toads, often 6 to 9 inches long, with oversized poison glands slanting back from behind the eyes.",
+      "Toads active at night around patios, pet food, porches, streetlights, canals, ponds, and other human-modified sites.",
+      "Egg strings or young toads near standing water in warm developed areas, especially in central and south Florida.",
+    ],
+    whyItMatters:
+      "Cane toad is a real backyard safety problem because its bufotoxin can severely sicken or kill pets that mouth or bite it. The species also preys on native animals and can build dense nuisance populations in urban and suburban habitat.",
+    action: {
+      mode: "both",
+      summary:
+        "Correct identification matters. Once confirmed, cane toads can be removed from private property in Florida, but they should never be relocated and released.",
+      steps: [
+        "Learn the difference between cane toads and native southern toads before taking action, especially by checking body size and the large slanted poison glands.",
+        "Remove outdoor pet food, secure water bowls at night, and reduce easy hiding and breeding spots around the yard.",
+        "If you are in Florida and the animal is correctly identified, follow FWC and UF guidance for safe capture and humane euthanasia or hire a wildlife trapper.",
+      ],
+      contactName: "Florida Fish and Wildlife Conservation Commission",
+      contactUrl: "https://myfwc.com/wildlifehabitats/profiles/amphibians/cane-toad/",
+      contactInstructions:
+        "Use FWC guidance for identification and property-level removal in Florida, especially if pets or children are at risk.",
+      safetyNotes:
+        "Wear gloves and protect your eyes. If a pet mouths a cane toad, rinse the mouth and seek veterinary help immediately.",
+    },
+    source: [
+      {
+        label: "Florida Fish and Wildlife Conservation Commission",
+        url: "https://myfwc.com/wildlifehabitats/profiles/amphibians/cane-toad/",
+      },
+      {
+        label: "UF IFAS",
+        url: "https://edis.ifas.ufl.edu/publication/UW432",
+      },
+    ],
+  },
+  {
+    id: "hydrochoerus-hydrochaeris",
+    slug: "hydrochoerus-hydrochaeris",
+    commonName: "Capybara",
+    scientificName: "Hydrochoerus hydrochaeris",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mammals",
+    summary:
+      "A very large semi-aquatic rodent that appears in scattered U.S. escape or release events, especially in Florida, where free-ranging animals can settle near ponds, canals, and marsh edges.",
+    origin:
+      "Native to South America and introduced outside its range through captivity, private ownership, and escape or release pathways.",
+    whatToLookFor: [
+      "Heavy barrel-shaped rodents with reddish-brown fur, blunt faces, small rounded ears, and partly webbed feet.",
+      "Animals resting or grazing near ponds, canals, marshes, golf-course lakes, and slow freshwater shorelines.",
+      "Repeated sightings of the same large rodent group near water rather than a one-time escaped pet report.",
+    ],
+    whyItMatters:
+      "Capybaras are not common enough in the United States to treat casually as just another novelty sighting. Free-ranging animals can establish around water, graze heavily on shoreline vegetation, and create a larger nonnative mammal problem if repeated escapes are ignored.",
+    action: {
+      mode: "report",
+      summary:
+        "Treat free-ranging capybaras as nonnative wildlife reports, not as animals to feed, approach, or relocate on your own.",
+      steps: [
+        "Photograph the animal from a safe distance and note the exact shoreline, canal, pond, or marsh location.",
+        "Do not feed the animals or try to push them into another property or waterbody.",
+        "Report repeated or free-ranging sightings through your state wildlife or invasive-species channels, especially in Florida.",
+      ],
+      contactName: "Florida Fish and Wildlife Conservation Commission",
+      contactUrl: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      contactInstructions:
+        "Use the FWC nonnative reporting system for Florida sightings of free-ranging capybaras and include photos and location details.",
+      safetyNotes:
+        "Capybaras are large wild rodents. Give them space and do not corner them near water or fencing.",
+    },
+    source: [
+      {
+        label: "U.S. Fish and Wildlife Service",
+        url: "https://www.fws.gov/species/greater-capybara-hydrochoerus-hydrochaeris",
+      },
+      {
+        label: "USGS Nonindigenous Aquatic Species",
+        url: "https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=2587",
+      },
+      {
+        label: "Florida Fish and Wildlife Conservation Commission Reporting",
+        url: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

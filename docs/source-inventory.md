@@ -372,6 +372,23 @@ These sources are already referenced by current curated profiles, but the origin
 | https://dnr.wisconsin.gov/topic/Invasives/fact/BlackAlder | European Alder | Sticky-leaf ID, cone and catkin cues, water-dispersed seed framing, hybridization risk, and resprout-aware control guidance |
 | https://www.michigan.gov/dnr/managing-resources/forestry/urban/recommended-trees | European Alder | Secondary confirmation that Alnus glutinosa remains listed as invasive and not recommended for community planting |
 
+### Chunk 2K mixed public-impact pass, consulted on 2026-04-17
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.cdc.gov/dengue/stories/unwanted-mosquitoes.html | Asian Tiger Mosquito | Public-health framing, distinguishing features, and household prevention language |
+| https://www.cdc.gov/mosquitoes/about/life-cycle-of-aedes-mosquitoes.html | Asian Tiger Mosquito | Container-breeding behavior, day-biting context, egg survival, and yard-level control framing |
+| https://www.cdc.gov/mosquitoes/php/toolkit/potential-range-of-aedes.html | Asian Tiger Mosquito | Broader temperature tolerance, U.S. range context, and comparison with Aedes aegypti |
+| https://ipm.ucanr.edu/TOOLS/ANTKEY/argentine.html | Argentine Ant | Identification, trailing behavior, nest placement, and household nuisance framing |
+| https://ipm.ucanr.edu/PMG/GARDEN/CONTROLS/antmanagement.html | Argentine Ant | Bait-first management, honeydew link, and moisture-food sanitation framing |
+| https://research.fs.usda.gov/treesearch/57231 | Redbay Ambrosia Beetle | Laurel wilt linkage, southeastern spread, and host-family impact framing |
+| https://research.fs.usda.gov/treesearch/47935 | Redbay Ambrosia Beetle | Species overview, vector role, and host-association detail |
+| https://myfwc.com/wildlifehabitats/profiles/amphibians/cane-toad/ | Cane Toad | Florida identification, pet-risk framing, and legal removal guidance |
+| https://edis.ifas.ufl.edu/publication/UW432 | Cane Toad | Introduction history, current Florida spread, and distinction from native toads |
+| https://www.fws.gov/species/greater-capybara-hydrochoerus-hydrochaeris | Capybara | Public-facing naming support and baseline species overview |
+| https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=2587 | Capybara | Identification, U.S. nonindigenous occurrence context, and escape-from-captivity framing |
+| https://myfwc.com/wildlifehabitats/nonnatives/report/ | Capybara | Florida nonnative reporting workflow and contact path |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
