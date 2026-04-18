@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Invasive Species in the USA",
   description:
     "Explore invasive species across the United States with a dark-first county map, ZIP search, and practical species profiles.",
+  icons: {
+    icon: [{ url: "/isitusa-logo.png", type: "image/png", sizes: "512x496" }],
+    shortcut: "/isitusa-logo.png",
+    apple: "/isitusa-logo.png",
+  },
 };
 
 export default function RootLayout({
