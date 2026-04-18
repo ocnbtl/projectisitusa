@@ -8853,6 +8853,1086 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "cerastium-fontanum",
+    slug: "cerastium-fontanum",
+    commonName: "Common Mouse-ear Chickweed",
+    scientificName: "Cerastium fontanum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low mat-forming chickweed that creeps through thin lawns, nursery beds, paths, and other cool moist disturbed ground.",
+    origin:
+      "Native to Europe and western Asia and widely introduced through turf seed, nursery material, and repeated disturbance around settled ground.",
+    whatToLookFor: [
+      "Gray-green leaves and stems covered with soft hairs, giving the plant a fuzzy look compared with smoother chickweeds.",
+      "White flowers with deeply split petals that can look like ten narrow petals instead of five.",
+      "Dense mats rooting at nodes in cool-season turf, path edges, garden beds, and compacted open soil.",
+    ],
+    whyItMatters:
+      "Common mouse-ear chickweed spreads fast in weak turf and open beds, where it forms a low blanket that crowds young ornamentals and slows turf recovery. Once it starts seeding into the same damp thin spots each year, the patch becomes harder to clean up with one pass.",
+    action: {
+      mode: "diy",
+      summary:
+        "Small patches respond best to early hand removal and denser ground cover, because the plant takes advantage of cool open space more than brute size.",
+      steps: [
+        "Pull or hoe new mats before they flower and set seed, especially in beds and along path edges.",
+        "Improve turf density or mulch open soil so the plant loses the cool bare surface it prefers.",
+        "Bag heavy flowering patches instead of shaking them loose across the same site during cleanup.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/mouse-ear-chickweed",
+      },
+    ],
+  },
+  {
+    id: "tussilago-farfara",
+    slug: "tussilago-farfara",
+    commonName: "Coltsfoot",
+    scientificName: "Tussilago farfara",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A rhizomatous perennial that sends up yellow flowers before its large hoof-shaped leaves appear and often colonizes wet disturbed soil.",
+    origin:
+      "Native to Europe and Asia and introduced to North America through medicinal use, soil movement, and repeated spread from root fragments.",
+    whatToLookFor: [
+      "Bright yellow dandelion-like flowers on scaly stalks very early in spring, before the leaves are out.",
+      "Large rounded leaves with angular lobes that appear later and often whiten underneath.",
+      "Persistent colonies on roadsides, ditch banks, gravelly fills, wet spoil areas, and other freshly disturbed moist ground.",
+    ],
+    whyItMatters:
+      "Coltsfoot spreads by creeping roots as well as seed, which lets it hold loose disturbed slopes and keep returning after shallow removal. The plant is often a sign that a wet bare patch is about to turn into a long-term colony rather than a short-lived weed flush.",
+    action: {
+      mode: "both",
+      summary:
+        "New patches are worth tackling early, but broad roadside or drainage infestations usually need a longer control plan than simple cutting.",
+      steps: [
+        "Dig or spot-treat small patches before the colony has spread far through underground roots.",
+        "Stabilize bare wet soil where practical so fresh disturbance does not keep inviting the plant back.",
+        "Document larger roadside, ditch, or fill-slope colonies if the infestation is spreading through public rights-of-way or restoration ground.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/coltsfoot",
+      },
+    ],
+  },
+  {
+    id: "erodium-cicutarium",
+    slug: "erodium-cicutarium",
+    commonName: "Redstem Stork's Bill",
+    scientificName: "Erodium cicutarium",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A finely divided annual or biennial weed that thrives in dry open ground and flings or drills its beaked seeds back into the soil.",
+    origin:
+      "Native to the Mediterranean region and spread widely in North America through contaminated seed, forage movement, and dry disturbed ground.",
+    whatToLookFor: [
+      "Low rosettes of lacy divided leaves that resemble a small fern or filaree geranium.",
+      "Reddish stems and pink to purple five-petaled flowers held above the foliage.",
+      "Long narrow seed beaks that twist as they dry and help bury the seed into loose soil.",
+    ],
+    whyItMatters:
+      "Redstem stork's bill can cover dry open ground quickly and build a stubborn seedbank in pastures, roadsides, and drought-stressed turf. Its self-burying seeds give it an edge in sites that are repeatedly scraped, trampled, or left thin.",
+    action: {
+      mode: "diy",
+      summary:
+        "Control works best before the beaked seed heads mature, because missed plants restock the site efficiently.",
+      steps: [
+        "Pull or hoe plants while they are still in rosette or early bloom and before the long seed beaks dry down.",
+        "Re-seed or mulch open dry soil so new seedlings do not keep gaining space after each cleanup.",
+        "Bag mature plants carefully if seed heads are already present so the twisting fruits are not scattered during removal.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/redstem-filaree-1",
+      },
+    ],
+  },
+  {
+    id: "polygonum-aviculare",
+    slug: "polygonum-aviculare",
+    commonName: "Prostrate Knotweed",
+    scientificName: "Polygonum aviculare",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A wiry low-growing annual that hugs compacted soil in paths, pavement edges, driveways, and heavily worn turf.",
+    origin:
+      "Native to Eurasia and long introduced across North America through soil movement, contaminated seed, and constant foot or vehicle traffic.",
+    whatToLookFor: [
+      "Tough branching stems pressed flat against the ground instead of growing upright.",
+      "Small blue-green leaves attached at papery sheaths around the stem nodes.",
+      "Dense patches in compacted paths, sidewalk edges, gravel drives, and athletic or play areas where turf stays thin.",
+    ],
+    whyItMatters:
+      "Prostrate knotweed is less dramatic than a tall thistle or vine, but it is a reliable sign that compaction and wear are leaving ground open to repeated weed takeover. It tolerates foot traffic well enough to keep expanding where other plants fail.",
+    action: {
+      mode: "diy",
+      summary:
+        "Lasting control depends on relieving the compaction problem, not just scraping off the stems once.",
+      steps: [
+        "Pull or hoe young plants before they spread across the full compacted footprint.",
+        "Aerate, topdress, or otherwise relieve worn soil where turf or groundcover is failing repeatedly.",
+        "Re-establish cover quickly after cleanup so the site does not reopen to another knotweed flush.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/prostrate-knotweed",
+      },
+    ],
+  },
+  {
+    id: "persicaria-maculosa",
+    slug: "persicaria-maculosa",
+    commonName: "Lady's Thumb",
+    scientificName: "Persicaria maculosa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A seed-heavy smartweed that fills wet disturbed soil with upright stems, narrow pink flower spikes, and dense late-season stands.",
+    origin:
+      "Native to Eurasia and introduced widely through contaminated crop seed, nursery movement, and repeated spread in moist disturbed ground.",
+    whatToLookFor: [
+      "Lance-shaped leaves that often show a dark thumbprint blotch near the middle.",
+      "Short dense pink flower spikes at stem tips and upper leaf axils.",
+      "Thick patches in gardens, field margins, drainage swales, and moist bare soil after summer disturbance.",
+    ],
+    whyItMatters:
+      "Lady's thumb can turn a wet open patch into a heavy seed source in one season, then return again when that ground is disturbed the next year. Dense smartweed growth also crowds smaller annuals and makes cleanup messier once stems mature.",
+    action: {
+      mode: "diy",
+      summary:
+        "Pulling or cutting works best before the seedheads ripen, especially in wet beds and edges that keep being opened by disturbance.",
+      steps: [
+        "Remove plants while flower spikes are still fresh and before mature seed starts dropping back into the site.",
+        "Mulch or replant moist bare soil in gardens and edges so the next flush has less open space.",
+        "Do not dump pulled seed-bearing stems into brush piles or open compost where they can finish ripening.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/ladys-thumb",
+      },
+    ],
+  },
+  {
+    id: "persicaria-longiseta",
+    slug: "persicaria-longiseta",
+    commonName: "Bristly Lady's Thumb",
+    scientificName: "Persicaria longiseta",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A bristly smartweed that spreads through moist disturbed ground and stands out for the stiff hairs around its stem joints and leaf sheaths.",
+    origin:
+      "Native to eastern Asia and introduced to North America through contaminated materials, nursery movement, and repeated spread in damp disturbed sites.",
+    whatToLookFor: [
+      "Pink flower spikes on upright stems that resemble lady's thumb but feel rougher and more bristly.",
+      "Long stiff hairs at the ocreae and stem nodes that catch on gloves and clothing during handling.",
+      "Colonies in wet gardens, roadside ditches, drainage edges, and other open soil that stays moist through summer.",
+    ],
+    whyItMatters:
+      "Bristly lady's thumb builds the same kind of dense seed-producing stands as other smartweeds, but its rough bristled growth also makes mature patches less pleasant to handle and easier to overlook until they are already seeding heavily.",
+    action: {
+      mode: "diy",
+      summary:
+        "Treat it like a seedbank problem first by removing it before the bristly stems carry another crop of seed into the same wet site.",
+      steps: [
+        "Pull or cut plants before seed set, wearing gloves if you are handling mature rough stems.",
+        "Thin irrigation or improve drainage where a bed or edge stays wet enough to favor repeated smartweed flushes.",
+        "Bag flowering plants instead of dragging them across the site once the spikes have begun maturing.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/ladys-thumb",
+      },
+    ],
+  },
+  {
+    id: "malva-neglecta",
+    slug: "malva-neglecta",
+    commonName: "Common Mallow",
+    scientificName: "Malva neglecta",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A sprawling low mallow with round crinkled leaves that persists in gardens, sidewalks, field edges, and dry compacted beds.",
+    origin:
+      "Native to Europe, western Asia, and North Africa and introduced broadly through settlement, disturbed soils, and contaminated seed movement.",
+    whatToLookFor: [
+      "Rounded shallowly lobed leaves on long stalks, often with a wrinkled or pleated surface.",
+      "Small pale pink to white flowers near the stem nodes and flat wheel-shaped seed pods often called cheeses.",
+      "Prostrate or mounded plants hugging warm edges of paths, vegetable gardens, and bare patches around buildings.",
+    ],
+    whyItMatters:
+      "Common mallow withstands dry compacted ground and keeps producing seeds close to the soil surface, which makes it a stubborn repeat weed in gardens and neglected corners. Mature plants also get harder to pull cleanly because of their persistent taproot.",
+    action: {
+      mode: "diy",
+      summary:
+        "Small plants come out much more easily than older taprooted ones, so the best window is before the patch toughens and seeds.",
+      steps: [
+        "Pull seedlings and young rosettes after rain or irrigation so more of the root comes out intact.",
+        "Hoe or mulch open garden soil before scattered mallow plants link up into a larger seed source.",
+        "Dispose of mature seed-bearing plants before the flat cheese-like fruits dry and split.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/mallow",
+      },
+    ],
+  },
+  {
+    id: "anthemis-cotula",
+    slug: "anthemis-cotula",
+    commonName: "Stinking Chamomile",
+    scientificName: "Anthemis cotula",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A strong-smelling annual daisy weed that invades pastures, roadsides, and open fields with finely divided foliage and white ray flowers.",
+    origin:
+      "Native to Europe and introduced across North America through contaminated seed, forage movement, and disturbed agricultural ground.",
+    whatToLookFor: [
+      "Fern-like leaves that release a strong rank odor when crushed or mowed.",
+      "White daisy-like flowers with yellow centers carried above bushy branched stems.",
+      "Open patches in pastures, field edges, and waste ground where the plant forms noticeable flowered stands in summer.",
+    ],
+    whyItMatters:
+      "Stinking chamomile can build broad seed-producing patches in pasture and field settings, where it lowers forage appeal and takes advantage of disturbed thin cover. Once it is well established, the smell and flower display usually mean the site has been open to reseeding for more than one season.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are manageable directly, but larger infestations in pasture or field settings should be handled before they become a recurring seed source.",
+      steps: [
+        "Pull or mow plants before the flowers mature into a heavy new seed crop.",
+        "Improve pasture or field cover where bare open spots are letting the weed expand each season.",
+        "Bring larger recurring patches to local extension or land-management attention if the infestation is spreading through forage or restoration ground.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/mayweed",
+      },
+    ],
+  },
+  {
+    id: "matricaria-discoidea",
+    slug: "matricaria-discoidea",
+    commonName: "Pineapple Weed",
+    scientificName: "Matricaria discoidea",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low aromatic annual that colonizes compacted paths, garden edges, and gravelly ground with button-like flower heads and bright divided leaves.",
+    origin:
+      "Native to northeastern Asia and northwestern North America and spread widely through movement of soil, seed, and worn compacted ground around settlements.",
+    whatToLookFor: [
+      "Yellow-green finely divided foliage that gives off a pineapple-like scent when crushed.",
+      "Small cone-shaped flower heads without white petals, giving the plant a button or pincushion look.",
+      "Dense low patches in compacted paths, playground edges, parking margins, and thin garden walkways.",
+    ],
+    whyItMatters:
+      "Pineapple weed is not tall or dramatic, but it signals chronic compaction and keeps filling spaces where preferred cover plants are failing. It can spread fast in high-traffic areas and turn worn edges into a steady source of fresh seed.",
+    action: {
+      mode: "diy",
+      summary:
+        "Because this weed favors compacted open ground, cleanup works best when the worn site is fixed along with the plants.",
+      steps: [
+        "Pull or hoe plants before the flower heads mature and dry into seed.",
+        "Loosen compacted soil or improve ground cover in paths and edges that stay bare and trampled.",
+        "Mulch or replant open margins after removal so the next flush has less exposed soil to colonize.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/pineapple-weed",
+      },
+    ],
+  },
+  {
+    id: "artemisia-vulgaris",
+    slug: "artemisia-vulgaris",
+    commonName: "Mugwort",
+    scientificName: "Artemisia vulgaris",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tall aromatic perennial that spreads by rhizomes and forms broad colonies along roadsides, field edges, vacant lots, and disturbed ground.",
+    origin:
+      "Native to Europe, Asia, and northern Africa and introduced through medicinal and ornamental use, soil movement, and persistent spread from root pieces.",
+    whatToLookFor: [
+      "Dark green lobed leaves with bright silvery-white undersides that flash when the wind turns them.",
+      "Stiff reddish to brown stems carrying branched clusters of small inconspicuous flower heads.",
+      "Large colonies that return from creeping roots even after mowing or shallow pulling.",
+    ],
+    whyItMatters:
+      "Mugwort is difficult to dislodge once rhizomes are established, and dense colonies can crowd out other herbaceous plants along edges and disturbed sites. Broken roots readily restart the patch, so casual cutting often spreads effort without solving the problem.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are worth tackling before the rhizomes spread, but larger colonies usually need a repeated management plan rather than one cleanup pass.",
+      steps: [
+        "Dig young patches carefully and remove as much root material as possible instead of snapping stems at the surface.",
+        "Avoid moving contaminated soil, fill, or rooted fragments from an infested site to new ground.",
+        "Document expanding roadside or restoration-site colonies if the patch is already too large for simple hand removal.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/mugwort",
+      },
+    ],
+  },
+  {
+    id: "ipomoea-purpurea",
+    slug: "ipomoea-purpurea",
+    commonName: "Tall Morning-glory",
+    scientificName: "Ipomoea purpurea",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Vines & groundcovers",
+    summary:
+      "A twining annual vine that climbs crops, fences, and garden edges with heart-shaped leaves and showy funnel-shaped flowers.",
+    origin:
+      "Native to tropical America and spread widely beyond cultivation through ornamental planting, seed movement, and repeated escape into disturbed ground.",
+    whatToLookFor: [
+      "Heart-shaped leaves and slender stems that twist around nearby vegetation, wire, or fence lines.",
+      "Purple, blue, pink, or white trumpet-shaped flowers that open in the morning.",
+      "Tangling growth over row crops, shrubs, trellises, and disturbed sunny edges where seed has been left in the soil.",
+    ],
+    whyItMatters:
+      "Tall morning-glory can smother smaller plants and tangle harvest or maintenance work once stems start climbing. The vine is especially persistent in warm disturbed sites where it gets enough sun to reseed year after year.",
+    action: {
+      mode: "diy",
+      summary:
+        "The best window is before the vines set seed and before they have wrapped deeply into surrounding plants or fencing.",
+      steps: [
+        "Pull or cut young vines early while the stems are still easy to separate from crops, ornamentals, or trellises.",
+        "Remove flowering or seed-bearing material from the site instead of dropping it back into nearby beds.",
+        "Mulch or cover open sunny soil after removal so another seed flush does not quickly replace the patch.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/morning-glory",
+      },
+    ],
+  },
+  {
+    id: "rumex-obtusifolius",
+    slug: "rumex-obtusifolius",
+    commonName: "Broadleaf Dock",
+    scientificName: "Rumex obtusifolius",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A large deep-rooted dock that pushes up broad leaves and rusty seed stalks in pastures, barnyards, field margins, and rich moist soil.",
+    origin:
+      "Native to Europe and western Asia and introduced widely through forage, manure movement, and repeated disturbance in fertile ground.",
+    whatToLookFor: [
+      "Large oval leaves with wavy edges and a stout central vein, often broader and blunter than curly dock.",
+      "Tall branched seed stalks that turn reddish-brown and remain standing after the leaves die back.",
+      "Persistent clumps in manure-rich fields, moist pasture edges, roadsides, and open ground around livestock areas.",
+    ],
+    whyItMatters:
+      "Broadleaf dock builds from a strong taproot and produces a heavy seed crop, which lets it persist in pasture and edge habitat where soil stays fertile and disturbed. Older plants also become harder to remove cleanly once the root crown is well established.",
+    action: {
+      mode: "both",
+      summary:
+        "Young docks are manageable directly, but dense pasture infestations need follow-up so the seedbank and root crowns are not left behind.",
+      steps: [
+        "Dig or cut plants before the seed stalks mature, taking as much of the root crown as possible.",
+        "Keep pasture or edge cover dense so fertile open patches do not keep refilling with dock seedlings.",
+        "Use local pasture or extension guidance if the infestation is broad enough that spot removal is no longer practical.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/broadleaf-dock",
+      },
+    ],
+  },
+  {
+    id: "barbarea-vulgaris",
+    slug: "barbarea-vulgaris",
+    commonName: "Yellow Rocket",
+    scientificName: "Barbarea vulgaris",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A cool-season mustard that forms glossy rosettes and then sends up bright yellow spring flower clusters in fields, roadsides, and open lawns.",
+    origin:
+      "Native to Eurasia and introduced broadly through forage seed, settlement disturbance, and repeated movement along fields and roads.",
+    whatToLookFor: [
+      "Dark glossy rosettes with a large rounded terminal lobe and smaller side lobes.",
+      "Upright spring stems topped with clusters of four-petaled yellow mustard flowers.",
+      "Flushes in hay fields, roadsides, lawns, and moist open ground where cool-season disturbance leaves bare soil.",
+    ],
+    whyItMatters:
+      "Yellow rocket can move quickly through open cool-season ground and become especially visible once it bolts and flowers above surrounding cover. In forage and field settings, its spring flush can signal that the site is staying open long enough for another heavy seed crop.",
+    action: {
+      mode: "both",
+      summary:
+        "Rosettes are much easier to deal with than flowering stems, so early control matters if the site keeps producing new spring flushes.",
+      steps: [
+        "Pull or cut rosettes and young bolting stems before the plant sets pods.",
+        "Improve field or lawn cover where thin spring openings are allowing mustard seedlings to spread.",
+        "Use local forage or land-management guidance if yellow rocket is moving through larger field margins or pasture ground.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/yellow-rocket",
+      },
+    ],
+  },
+  {
+    id: "sonchus-asper",
+    slug: "sonchus-asper",
+    commonName: "Spiny Sowthistle",
+    scientificName: "Sonchus asper",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A prickly annual sowthistle that colonizes gardens, field edges, and waste ground with shiny clasping leaves and yellow dandelion-like flowers.",
+    origin:
+      "Native to Europe, western Asia, and northern Africa and introduced widely through contaminated seed, disturbed soil, and garden or field movement.",
+    whatToLookFor: [
+      "Glossy leaves with sharp prickles along the edges and rounded clasping lobes around the stem.",
+      "Milky sap and yellow flower heads carried on branching hollow stems.",
+      "Fast-growing plants in vegetable beds, roadsides, compost edges, and freshly opened soil.",
+    ],
+    whyItMatters:
+      "Spiny sowthistle matures quickly and produces wind-blown seed that lets it leap from one open patch to the next. Its prickly foliage also makes mature plants less pleasant to hand weed once they are established in beds or field margins.",
+    action: {
+      mode: "diy",
+      summary:
+        "Removal is straightforward when plants are still young, but waiting until flowering means more seed and rougher handling.",
+      steps: [
+        "Pull or hoe seedlings and small rosettes before stems elongate and flower heads appear.",
+        "Wear gloves if handling larger plants with hard prickled leaves and milky sap.",
+        "Bag flowering plants instead of leaving them on open soil where maturing seed can still disperse.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/sowthistle",
+      },
+    ],
+  },
+  {
+    id: "sonchus-oleraceus",
+    slug: "sonchus-oleraceus",
+    commonName: "Common Sowthistle",
+    scientificName: "Sonchus oleraceus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A soft annual sowthistle that grows quickly in gardens and disturbed ground, sending up hollow stems, yellow flower heads, and wind-carried seed.",
+    origin:
+      "Native to Eurasia and North Africa and introduced broadly through agriculture, garden disturbance, and contaminated materials moved with soil and seed.",
+    whatToLookFor: [
+      "Bluish-green lobed leaves that clasp the stem but are softer and less sharply armed than spiny sowthistle.",
+      "Milky sap in the stems and yellow dandelion-like flower heads at the tips of branched stems.",
+      "Loose fast-growing plants in vegetable rows, compost areas, field edges, and open beds after disturbance.",
+    ],
+    whyItMatters:
+      "Common sowthistle is a classic rapid colonizer of open fertile ground. It can move from a few overlooked seedlings to a patch shedding wind-blown seed before slower garden or cover plants have a chance to reclaim the space.",
+    action: {
+      mode: "diy",
+      summary:
+        "Young plants are easy to remove, but the species is best treated before flowering because it races through its life cycle in open soil.",
+      steps: [
+        "Hoe or pull seedlings regularly in gardens and beds before they bolt.",
+        "Do not let flowering plants remain on bare soil if the seed heads are beginning to mature.",
+        "Keep mulch, crop cover, or dense planting in place so fertile open ground does not keep producing fresh seedlings.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/sowthistle",
+      },
+    ],
+  },
+  {
+    id: "sonchus-arvensis",
+    slug: "sonchus-arvensis",
+    commonName: "Field Sowthistle",
+    scientificName: "Sonchus arvensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A perennial sowthistle that spreads by creeping roots and forms larger more persistent colonies than the annual sowthistles in open ground.",
+    origin:
+      "Native to Europe and Asia and introduced through contaminated crop seed, forage movement, and repeated spread from underground roots in disturbed soils.",
+    whatToLookFor: [
+      "Taller patch-forming plants with yellow flower heads and milky sap on robust hollow stems.",
+      "Leaves with prickled margins and a growth habit that often appears in spreading groups rather than isolated single plants.",
+      "Persistent colonies in field margins, pastures, roadsides, and moist disturbed soil where root fragments can survive.",
+    ],
+    whyItMatters:
+      "Field sowthistle is harder to eliminate than the annual sowthistles because it can return from creeping roots after cutting or shallow pulling. Once a colony expands, it can push steadily into adjacent open ground and keep feeding a local seedbank as well.",
+    action: {
+      mode: "both",
+      summary:
+        "Small colonies are worth attacking early, but established perennial patches usually need repeated follow-up rather than one removal pass.",
+      steps: [
+        "Dig or treat young patches before the root system has spread far beyond the visible stems.",
+        "Avoid chopping or cultivating the patch in a way that spreads root pieces through adjacent soil.",
+        "Use local pasture, crop, or land-management guidance if field sowthistle is already established across a broad area.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/sowthistle",
+      },
+    ],
+  },
+  {
+    id: "veronica-serpyllifolia",
+    slug: "veronica-serpyllifolia",
+    commonName: "Thymeleaf Speedwell",
+    scientificName: "Veronica serpyllifolia",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A small creeping speedwell that spreads through cool damp turf and beds with opposite leaves and pale blue to white flowers.",
+    origin:
+      "Native to Eurasia and introduced widely through turf movement, nursery stock, and moist disturbed ground around managed landscapes.",
+    whatToLookFor: [
+      "Low sprawling stems with opposite rounded leaves on short stalks.",
+      "Tiny pale blue or whitish flowers with darker lines, borne on slender upright racemes.",
+      "Thin damp turf, shady lawn edges, and cool-season beds where small creeping weeds can escape notice until they flower.",
+    ],
+    whyItMatters:
+      "Thymeleaf speedwell spreads quietly through weak cool-season cover and can become a persistent lawn or bed weed because it flowers at low height and often escapes mowing until the patch has widened. Damp thin ground gives it repeated opportunities to return.",
+    action: {
+      mode: "diy",
+      summary:
+        "Best results come from catching it early and strengthening the cool damp turf or bed where it is creeping outward.",
+      steps: [
+        "Hand-pull or spot-treat small patches before they spread through adjacent turf or mulch edges.",
+        "Reduce chronic thin cover in damp shady spots by improving turf density or planting a better-suited groundcover.",
+        "Monitor spring and fall flushes so the same low patch is not allowed to widen each season.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/thymeleaf-speedwell",
+      },
+    ],
+  },
+  {
+    id: "lotus-corniculatus",
+    slug: "lotus-corniculatus",
+    commonName: "Bird's-foot Trefoil",
+    scientificName: "Lotus corniculatus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low perennial legume with yellow pea flowers and claw-like seed pods that can move from plantings into roadsides, meadows, and open grassland.",
+    origin:
+      "Native to Eurasia and introduced intentionally for forage, erosion control, and roadside plantings before spreading into semi-natural habitat.",
+    whatToLookFor: [
+      "Clusters of bright yellow pea flowers, sometimes flushed with orange or red as they age.",
+      "Leaves divided into five small leaflets, with two leaflike stipules near the stem base.",
+      "Narrow seed pods that radiate from one point like the toes of a bird's foot.",
+    ],
+    whyItMatters:
+      "Bird's-foot trefoil can persist where it was planted and move into meadows, rights-of-way, and open natural areas, where it alters species mix and adds another long-lived legume to the site. It is most often underestimated because it looks harmless and ornamental when first flowering.",
+    action: {
+      mode: "both",
+      summary:
+        "Small edge patches are manageable directly, but spread into meadows or restoration grassland should be documented before it becomes a long-term component.",
+      steps: [
+        "Pull or cut small patches before pods mature and begin spreading seed.",
+        "Watch roadsides, pollinator plantings, and old forage areas where the species may be moving into nearby open habitat.",
+        "Report or flag larger natural-area patches if bird's-foot trefoil is displacing intended meadow or prairie vegetation.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/birdsfoot",
+      },
+    ],
+  },
+  {
+    id: "senecio-vulgaris",
+    slug: "senecio-vulgaris",
+    commonName: "Common Groundsel",
+    scientificName: "Senecio vulgaris",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A fast-cycling annual in the aster family that fills nursery pots, gardens, and cool disturbed ground with soft lobed leaves and small yellow heads.",
+    origin:
+      "Native to Europe and western Asia and introduced widely through horticulture, greenhouse production, and movement of disturbed soil and container stock.",
+    whatToLookFor: [
+      "Soft irregularly lobed leaves on branched stems that stay relatively small even when flowering.",
+      "Cylindrical yellow flower heads with dark-tipped bracts and later a tufted white seed stage.",
+      "Flushes in pots, greenhouse margins, winter annual beds, and cool open soil around cultivated plants.",
+    ],
+    whyItMatters:
+      "Common groundsel moves quickly through nursery and garden settings because it can flower and reseed while still small. That fast turnover makes it easy to underestimate until benches, pots, or bed edges are carrying a constant new crop of seedlings.",
+    action: {
+      mode: "diy",
+      summary:
+        "Frequent early cleanup is more effective than waiting for a large obvious infestation, because the plant matures fast in cultivated ground.",
+      steps: [
+        "Pull or hoe seedlings and flowering plants before the white seed fluff is released.",
+        "Keep container stock, bench edges, and bed margins free of open bare soil where groundsel can keep cycling.",
+        "Dispose of seed-bearing plants before moving pots, trays, or soil to other growing areas.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/groundsel",
+      },
+    ],
+  },
+  {
+    id: "agrostis-stolonifera",
+    slug: "agrostis-stolonifera",
+    commonName: "Creeping Bentgrass",
+    scientificName: "Agrostis stolonifera",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A stolon-forming cool-season grass that spreads across wet turf, golf roughs, and open moist ground with a dense fine-textured mat.",
+    origin:
+      "Native to Europe and parts of Asia and introduced widely for turf, pasture, and soil stabilization before spreading beyond intended plantings.",
+    whatToLookFor: [
+      "Fine narrow leaves and creeping above-ground stolons that root as they spread across the soil surface.",
+      "Soft dense patches in wet lawns, low swales, and closely mowed turf that feel different from surrounding grass.",
+      "Delicate open seedheads held above the turf when the grass is allowed to grow taller.",
+    ],
+    whyItMatters:
+      "Creeping bentgrass can dominate wet turf and disturbed moist edges, where its stolons let it fill space faster than bunch grasses. In lawns and managed turf, it often shows up as a texture and management problem long before people realize it is spreading.",
+    action: {
+      mode: "diy",
+      summary:
+        "Control depends on shrinking the wet open footprint and interrupting the stolons before the patch keeps knitting outward.",
+      steps: [
+        "Identify the full creeping patch, not just the most obvious center, because stolons often extend beyond the dense mat.",
+        "Improve drainage or reduce chronic overwatering where the site stays wetter than the surrounding turf.",
+        "Renovate or overseed cleaned-up areas quickly so the grass does not reclaim the same wet opening.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/bentgrass_creeping",
+      },
+    ],
+  },
+  {
+    id: "poa-annua",
+    slug: "poa-annua",
+    commonName: "Annual Bluegrass",
+    scientificName: "Poa annua",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A light green cool-season grass that seeds at very short height and spreads aggressively through thin turf, cracks, and moist compacted soil.",
+    origin:
+      "Native to Europe and introduced broadly through turf seed, foot traffic, and repeated movement in managed landscapes and disturbed soils.",
+    whatToLookFor: [
+      "Bright apple-green patches that stand out from darker surrounding turf.",
+      "Tiny seedheads appearing even under close mowing, often much earlier and lower than desired lawn grasses.",
+      "Shallow-rooted plants thriving in damp compacted turf, path edges, and irrigated sites during cool weather.",
+    ],
+    whyItMatters:
+      "Annual bluegrass can take over weak turf quickly because it germinates fast, seeds early, and exploits moisture and compaction. Even when patches die back in heat, they often leave enough seed behind to restart the problem the next cool season.",
+    action: {
+      mode: "diy",
+      summary:
+        "The goal is to strengthen the desirable turf and interrupt reseeding, because the plant succeeds where mowing, moisture, and compaction already favor it.",
+      steps: [
+        "Reduce chronic overwatering and relieve compaction in thin cool-season turf where annual bluegrass is spreading.",
+        "Bag or manage heavy seedhead flushes where practical before they replenish the seedbank again.",
+        "Overseed and thicken cleaned-up areas so open cool-season turf does not keep reverting to annual bluegrass.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/bluegrass-annual",
+      },
+    ],
+  },
+  {
+    id: "poa-trivialis",
+    slug: "poa-trivialis",
+    commonName: "Rough Bluegrass",
+    scientificName: "Poa trivialis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A creeping cool-season grass that spreads through damp shade and creates puffy pale patches in lawns, parks, and irrigated landscapes.",
+    origin:
+      "Native to Europe and western Asia and introduced through turf mixes, pasture use, and movement in cool moist managed sites.",
+    whatToLookFor: [
+      "Light green to yellow-green patches that look softer and puffier than surrounding turf.",
+      "Creeping stems and a rough leaf surface that helps distinguish it from smoother bluegrasses.",
+      "Expansion in shady damp lawns, low irrigated spots, and cool moist edges where turf stays lush but weakly rooted.",
+    ],
+    whyItMatters:
+      "Rough bluegrass often persists because it hides inside otherwise acceptable turf until weather or mowing stress reveals a spreading patch. Its creeping habit lets it widen through damp shade where better-adapted turf has already been weakened.",
+    action: {
+      mode: "diy",
+      summary:
+        "Successful cleanup usually means changing the damp-shade conditions that favor the patch, not just scratching at the visible leaves.",
+      steps: [
+        "Map the pale creeping patch carefully so stolon-bearing edges are not overlooked.",
+        "Reduce excess irrigation and improve light or air movement where shade and moisture stay stacked together.",
+        "Renovate the area with a better-suited turf or groundcover after removal so rough bluegrass does not creep back in.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/rough-bluegrass",
+      },
+    ],
+  },
+  {
+    id: "paspalum-dilatatum",
+    slug: "paspalum-dilatatum",
+    commonName: "Dallisgrass",
+    scientificName: "Paspalum dilatatum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A coarse clump-forming perennial grass that pushes above lawns and roadsides with tall seed stalks and persistent crowns.",
+    origin:
+      "Native to South America and introduced to the United States for forage before escaping into turf, roadsides, and open disturbed ground.",
+    whatToLookFor: [
+      "Coarse bunches that grow faster and taller than surrounding lawn or pasture grasses.",
+      "Seedheads with several finger-like branches lined with dark speckled spikelets.",
+      "Expanding crowns in sunny lawns, field edges, ditch banks, and other warm-season open ground.",
+    ],
+    whyItMatters:
+      "Dallisgrass creates tough perennial clumps that are hard to mow cleanly and easy to notice in lawns, rights-of-way, and open fields. Once old crowns build up, they keep widening and shedding seed into the same warm disturbed sites.",
+    action: {
+      mode: "diy",
+      summary:
+        "Small clumps are much easier to eliminate than old established crowns, so early removal matters.",
+      steps: [
+        "Dig or spot-treat isolated clumps before the crown becomes large and deeply rooted.",
+        "Remove seedheads before they mature if plants are scattered through otherwise desirable turf.",
+        "Rebuild dense cover after removal so warm open soil is not left ready for more dallisgrass seedling establishment.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/dallis-grass",
+      },
+    ],
+  },
+  {
+    id: "lolium-perenne",
+    slug: "lolium-perenne",
+    commonName: "Perennial Ryegrass",
+    scientificName: "Lolium perenne",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A glossy cool-season bunch grass often planted intentionally but still able to dominate thin disturbed turf and roadsides beyond where it was sown.",
+    origin:
+      "Native to Europe, temperate Asia, and northern Africa and introduced widely for turf, forage, and roadside seeding mixes.",
+    whatToLookFor: [
+      "Shiny dark green leaves with a folded appearance and bunching growth instead of creeping stolons.",
+      "Seedheads with spikelets attached edgewise along a central stem rather than on open branches.",
+      "Persistent dense patches in seeded rights-of-way, disturbed turf, and open field margins where it has held on beyond the original planting.",
+    ],
+    whyItMatters:
+      "Perennial ryegrass is not always treated as a dramatic invader, but it can still dominate seeded disturbed ground and crowd slower cover in places where managers are trying to diversify or restore habitat. Its persistence matters most where the site goal is no longer a simple turf stand.",
+    action: {
+      mode: "both",
+      summary:
+        "Decide first whether the site is meant to stay as turf or seeded cover, because the response is different from how you would treat a purely accidental weed.",
+      steps: [
+        "Map dense ryegrass patches where restoration, meadow conversion, or low-input cover is the actual management goal.",
+        "Prevent fresh overseeding into the same area if the objective is to reduce ryegrass dominance over time.",
+        "Use local land-management guidance when established ryegrass is blocking a broader habitat or restoration plan.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/perennial-ryegrass",
+      },
+    ],
+  },
+  {
+    id: "sporobolus-indicus",
+    slug: "sporobolus-indicus",
+    commonName: "Smutgrass",
+    scientificName: "Sporobolus indicus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tough perennial bunchgrass that forms wiry clumps and narrow seedheads in warm pastures, roadsides, and thin turf.",
+    origin:
+      "Native to tropical and subtropical regions of Asia and widely introduced through pasture movement, disturbance, and warm open ground.",
+    whatToLookFor: [
+      "Dense upright bunches with narrow tough leaves that feel harsher than nearby turf grasses.",
+      "Tall narrow seedheads made of many fine branches held close to the stem.",
+      "Persistent clumps in sunny compacted or low-fertility sites where other grasses are thinning out.",
+    ],
+    whyItMatters:
+      "Smutgrass can hold poor warm-season sites and create an increasingly clumpy rough surface in pastures and rights-of-way. Once the plant is entrenched, its tough base and steady seed production make cleanup slow and patchy.",
+    action: {
+      mode: "both",
+      summary:
+        "Early clump removal is worthwhile, but broad warm-season infestations often need site-level improvement as well as direct control.",
+      steps: [
+        "Dig or spot-treat small clumps before they thicken and begin shedding seed widely.",
+        "Improve pasture or turf condition where low fertility, compaction, or chronic thinning is favoring smutgrass persistence.",
+        "Use local forage or land-management guidance if the infestation is already widespread across a warm-season site.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/smutgrass",
+      },
+    ],
+  },
+  {
+    id: "eragrostis-cilianensis",
+    slug: "eragrostis-cilianensis",
+    commonName: "Stinkgrass",
+    scientificName: "Eragrostis cilianensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A summer annual grass that forms open clumps and pungent seedheads in hot compacted soil, roadsides, and disturbed turf.",
+    origin:
+      "Native to Eurasia and widely introduced through contaminated seed, traffic corridors, and repeated disturbance in warm-season open ground.",
+    whatToLookFor: [
+      "Clumps of summer grass with a noticeable unpleasant odor when the foliage or seedheads are crushed.",
+      "Open branching seedheads dotted with crowded spikelets that give the panicle a rough granular look.",
+      "Growth in hot dry compacted places such as parking edges, gravel lots, field roads, and thin summer turf.",
+    ],
+    whyItMatters:
+      "Stinkgrass thrives where heat, compaction, and disturbance leave little competition, turning harsh open sites into reliable annual seed sources. It is often a signal that a bare summer edge will keep cycling through weeds unless the site condition changes.",
+    action: {
+      mode: "diy",
+      summary:
+        "Treat it early in summer before the coarse seedheads mature and before the site carries another full annual seed crop.",
+      steps: [
+        "Pull or hoe young plants while the root system is still shallow and before the panicles expand.",
+        "Improve cover or reduce repeated disturbance in hot bare edges that are restocking with annual grasses each year.",
+        "Bag or remove mature seedheads instead of dropping them back onto gravelly or compacted ground.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/stinkgrass-1",
+      },
+    ],
+  },
+  {
+    id: "setaria-viridis",
+    slug: "setaria-viridis",
+    commonName: "Green Foxtail",
+    scientificName: "Setaria viridis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A common summer annual grass with bottlebrush seedheads that spreads through gardens, crop edges, and disturbed sunny ground.",
+    origin:
+      "Native to Eurasia and now widespread in North America through crop contamination, soil disturbance, and movement along fields and rights-of-way.",
+    whatToLookFor: [
+      "Upright summer grass with smooth leaves and a dense green bottlebrush-like seedhead.",
+      "Bristled seedheads that feel rough when stroked from tip toward the base.",
+      "Flushes in row crops, gardens, field margins, and bare sunny soil after spring or summer disturbance.",
+    ],
+    whyItMatters:
+      "Green foxtail moves quickly into open summer ground and can crowd vegetables, annual plantings, and young cover crops before they close canopy. Its heavy seed production also helps it reappear wherever cultivation or disturbance keeps exposing soil.",
+    action: {
+      mode: "diy",
+      summary:
+        "Because it is an annual grass, the most useful timing is before the bottlebrush heads mature and refill the seedbank.",
+      steps: [
+        "Hoe or pull seedlings early while the plants are still separated and easy to remove.",
+        "Mulch or maintain crop cover so sunny open soil does not stay available for another foxtail flush.",
+        "Remove maturing seedheads from the site instead of leaving them where bristled seed can finish ripening.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/green-foxtail",
+      },
+    ],
+  },
+  {
+    id: "digitaria-sanguinalis",
+    slug: "digitaria-sanguinalis",
+    commonName: "Hairy Crabgrass",
+    scientificName: "Digitaria sanguinalis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A sprawling summer annual grass that roots along low stems and spreads fast through thin lawns, garden edges, and compacted warm soil.",
+    origin:
+      "Native to Eurasia and introduced broadly through agriculture, turf movement, and repeated disturbance in warm-season open ground.",
+    whatToLookFor: [
+      "Hairy leaf blades and sheaths on low spreading stems that branch outward from a central crown.",
+      "Finger-like seedheads with several narrow spikes radiating from the top of the stem.",
+      "Rapid patch expansion in hot thin turf, sidewalk edges, vegetable rows, and disturbed sunny soil.",
+    ],
+    whyItMatters:
+      "Hairy crabgrass exploits any break in summer turf cover and can quickly turn small bare patches into broad low mats. Its growth habit also lets it root and spread across open warm soil before slower desirable cover can recover.",
+    action: {
+      mode: "diy",
+      summary:
+        "The easiest control window is while seedlings are still small, before the patch sprawls and starts producing multiple fingered seedheads.",
+      steps: [
+        "Pull or hoe young plants after rain or irrigation when the shallow roots release more easily.",
+        "Thicken summer turf or mulch garden edges so open warm soil does not keep feeding new germination.",
+        "Do not let mature crabgrass seedheads remain in place if the patch has already escaped early cleanup.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/crabgrass",
+      },
+    ],
+  },
+  {
+    id: "euphorbia-virgata",
+    slug: "euphorbia-virgata",
+    commonName: "Leafy Spurge",
+    scientificName: "Euphorbia virgata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A deep-rooted perennial spurge that spreads by buds and seed, forming long-lived colonies in rangeland, roadsides, and open natural areas.",
+    origin:
+      "Native to Eurasia and introduced through contaminated seed and agricultural movement before spreading persistently through roots and rhizome-like buds.",
+    whatToLookFor: [
+      "Dense stands of upright stems with narrow bluish-green leaves and milky sap when broken.",
+      "Yellow-green showy bracts near the top of the plant that make colonies stand out in late spring and early summer.",
+      "Persistent patches that return from underground buds even after cutting, grazing, or shallow disturbance.",
+    ],
+    whyItMatters:
+      "Leafy spurge is a serious long-term invader in open grassland and edge habitat because it can survive from deep root reserves and outcompete surrounding plants. Once a colony expands, it becomes much harder to reverse than ordinary annual weed patches.",
+    action: {
+      mode: "both",
+      summary:
+        "This is an early-detection and repeated-management plant, not a weed that stays solved after one mowing or hand pull.",
+      steps: [
+        "Mark and respond to new satellite patches before they link into a larger colony.",
+        "Avoid moving contaminated hay, seed, or soil from infested areas into clean ground.",
+        "Use local invasive-plant or extension guidance for established patches, because leafy spurge usually needs a longer control program.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/broadleaf/leafy-spurge",
+      },
+    ],
+  },
+  {
+    id: "festuca-rubra",
+    slug: "festuca-rubra",
+    commonName: "Red Fescue",
+    scientificName: "Festuca rubra",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A fine-textured cool-season grass that can persist from seeded mixes and spread into open low-maintenance turf, roadsides, and other managed ground.",
+    origin:
+      "Native across broad northern regions of Eurasia and North America, but also widely moved and repeatedly introduced in seed mixes used for turf and stabilization.",
+    whatToLookFor: [
+      "Very fine narrow blades forming a soft textured stand that is noticeably finer than coarse roadside or pasture grasses.",
+      "Tufted to creeping growth depending on the strain, often holding in poor dry or low-fertility ground.",
+      "Persistent seeded patches in roadsides, utility corridors, and low-input turf where the site remains open and regularly mowed.",
+    ],
+    whyItMatters:
+      "Red fescue is a more complicated entry than the stronger invaders in this catalog because it is also intentionally planted, but it still matters in sites where managers are trying to move away from persistent seeded cool-season cover. In those settings it can hold space and slow more diverse replacement vegetation.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat it as a management-goal issue first, because the response depends on whether the site is meant to stay seeded turf or transition to something more diverse.",
+      steps: [
+        "Confirm that the site objective is habitat conversion or seeded-cover reduction before treating red fescue as a problem plant.",
+        "Map persistent fescue-dominant areas where they are suppressing desired replacement vegetation.",
+        "Use local land-management guidance if the goal is to transition the site away from fine-leaved seeded grass cover over time.",
+      ],
+    },
+    source: [
+      {
+        label: "Penn State Plant Identification",
+        url: "https://plantscience.psu.edu/outreach/plant-id/grasses/fine-fescue",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

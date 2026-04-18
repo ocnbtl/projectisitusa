@@ -389,6 +389,38 @@ These sources are already referenced by current curated profiles, but the origin
 | https://nas.er.usgs.gov/queries/FactSheet.aspx?speciesID=2587 | Capybara | Identification, U.S. nonindigenous occurrence context, and escape-from-captivity framing |
 | https://myfwc.com/wildlifehabitats/nonnatives/report/ | Capybara | Florida nonnative reporting workflow and contact path |
 
+### Chunk 2L same-pass plant cluster, consulted on 2026-04-17
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/mouse-ear-chickweed | Common Mouse-ear Chickweed | Hairy-mat identification, flower cue, cool moist turf and bed context |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/coltsfoot | Coltsfoot | Flower-before-leaf timing, hoof-shaped leaf cue, rhizomatous colony framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/redstem-filaree-1 | Redstem Stork's Bill | Lacy rosette ID, reddish stem cue, corkscrew seed-beak behavior |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/prostrate-knotweed | Prostrate Knotweed | Compacted-ground habit, papery node sheath cue, traffic-tolerant growth form |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/ladys-thumb | Lady's Thumb; Bristly Lady's Thumb | Smartweed flower-spike ID, leaf-mark cue, moist disturbed-ground context |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/mallow | Common Mallow | Round crinkled leaf ID, cheese-wheel fruit cue, taprooted garden-weed framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/mayweed | Stinking Chamomile | Daisy-flower ID, rank odor cue, pasture and field-edge spread framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/pineapple-weed | Pineapple Weed | Rayless flower-head cue, pineapple scent, compacted-path habitat framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/mugwort | Mugwort | Silver leaf underside, aromatic foliage, rhizome-colony spread pattern |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/morning-glory | Tall Morning-glory | Twining-vine habit, trumpet flower cue, crop and fence-line tangling behavior |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/broadleaf-dock | Broadleaf Dock | Large blunt leaf ID, seed-stalk timing, fertile disturbed-ground persistence |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/yellow-rocket | Yellow Rocket | Glossy rosette cue, spring mustard flowers, cool-season field spread |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/sowthistle | Spiny Sowthistle; Common Sowthistle; Field Sowthistle | Annual-versus-perennial sowthistle separation, milky-sap cue, open-ground colonizing behavior |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/thymeleaf-speedwell | Thymeleaf Speedwell | Low creeping speedwell ID, pale flower cue, damp turf and bed spread pattern |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/birdsfoot | Bird's-foot Trefoil | Five-part leaf cue, yellow pea flower clusters, pod-shape and meadow-escape framing |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/groundsel | Common Groundsel | Small cylindrical flower-head ID, rapid life cycle, nursery and container-ground context |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/bentgrass_creeping | Creeping Bentgrass | Stolon spread, fine-textured wet-turf habit, patch-expansion framing |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/bluegrass-annual | Annual Bluegrass | Light-green patch ID, low seedhead cue, compacted moist turf behavior |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/rough-bluegrass | Rough Bluegrass | Pale creeping patch cue, rough leaf texture, damp shade spread pattern |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/dallis-grass | Dallisgrass | Coarse clump ID, dark-speckled seed branch cue, lawn and roadside persistence |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/perennial-ryegrass | Perennial Ryegrass | Glossy bunchgrass cue, seeded-cover persistence, management-goal framing |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/smutgrass | Smutgrass | Wiry bunchgrass ID, narrow seedhead structure, low-quality warm-site persistence |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/stinkgrass-1 | Stinkgrass | Odor cue, granular panicle look, hot compacted-ground annual behavior |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/green-foxtail | Green Foxtail | Bottlebrush seedhead cue, annual grassy-weed growth pattern, garden and field-edge context |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/crabgrass | Hairy Crabgrass | Sprawling summer growth, hairy sheath cue, fingered seedhead identification |
+| https://plantscience.psu.edu/outreach/plant-id/broadleaf/leafy-spurge | Leafy Spurge | Milky-sap warning, yellow-green bract cue, deep-rooted colony persistence |
+| https://plantscience.psu.edu/outreach/plant-id/grasses/fine-fescue | Red Fescue | Fine-leaved stand structure, seeded-cover persistence, low-input turf context |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
