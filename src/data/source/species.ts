@@ -9933,6 +9933,1158 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "trifolium-pratense",
+    slug: "trifolium-pratense",
+    commonName: "Red Clover",
+    scientificName: "Trifolium pratense",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A short-lived clover that escapes forage and seed mixes into fields, roadsides, low-maintenance turf, and open disturbed ground.",
+    origin:
+      "Native to Europe, western Asia, and northwestern Africa and widely introduced in North America for forage, hay, and soil improvement plantings.",
+    whatToLookFor: [
+      "Hairy trifoliate leaves, often marked with a pale V, on more upright stems than white clover.",
+      "Rounded flower heads made up of many rosy pink to purplish pea flowers.",
+      "Patches in old fields, roadsides, meadows, and rough turf where former plantings have persisted or spread outward.",
+    ],
+    whyItMatters:
+      "Red clover is familiar and often planted on purpose, but it also persists beyond those plantings and can keep open sites locked into a simple clover-and-grass mix. That matters most in roadsides, old fields, and restoration edges where the goal is no longer just forage cover.",
+    action: {
+      mode: "both",
+      summary:
+        "First decide whether the plant is still serving a forage role, because the response is different from how you would treat an accidental escape.",
+      steps: [
+        "Map the patch if red clover is spreading beyond seeded cover strips, hay ground, or former pasture edges.",
+        "Prevent fresh overseeding into nearby areas where you are trying to shift the site toward more diverse vegetation.",
+        "Use local meadow, roadside, or restoration guidance if red clover is persisting where a different plant community is the management goal.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/476",
+      },
+    ],
+  },
+  {
+    id: "vicia-villosa",
+    slug: "vicia-villosa",
+    commonName: "Hairy Vetch",
+    scientificName: "Vicia villosa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A vining annual legume that climbs through fields, roadsides, and waste places with tendrilled leaves and clusters of purple flowers.",
+    origin:
+      "Native to Europe and western Asia and widely introduced in North America as a cover crop, forage plant, and erosion-control species.",
+    whatToLookFor: [
+      "Trailing or climbing stems with many narrow leaflets and curling tendrils at the leaf tips.",
+      "Soft hairs on the foliage and clusters of small purple to violet pea flowers.",
+      "Tangling growth over grasses, fences, roadside vegetation, or crop margins in spring and early summer.",
+    ],
+    whyItMatters:
+      "Hairy vetch can smother lower vegetation and keep reseeding in open disturbed sites after the original planting purpose is gone. In field margins and roadsides it often looks harmless at first, then becomes a dense seasonal tangle that crowds smaller plants and complicates mowing.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat it as a spread problem when it is moving out of intended cover-crop use and into places that are supposed to stay open or diverse.",
+      steps: [
+        "Cut or pull patches before pods mature if hairy vetch is spreading beyond an intentional planting.",
+        "Avoid carrying seed-bearing vines or contaminated hay to clean ground where the plant is not already established.",
+        "Use local field-edge or restoration guidance if large tangles are persisting from year to year along roadsides or unmanaged edges.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/648",
+      },
+    ],
+  },
+  {
+    id: "bromus-arvensis",
+    slug: "bromus-arvensis",
+    commonName: "Field Brome",
+    scientificName: "Bromus arvensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A winter annual brome that forms dense fall growth and then sends up loose drooping seedheads in fields, cover crops, and open disturbed ground.",
+    origin:
+      "Native to Europe and Asia and introduced widely with grain, forage, and cover-crop movement.",
+    whatToLookFor: [
+      "Dense leafy fall growth that resumes early in spring before many neighboring annual grasses.",
+      "Soft narrow leaves and a drooping panicle seedhead on stems that can reach several feet tall.",
+      "Patches in fields, pasture edges, roadsides, and cover-crop areas where winter annual grasses are building.",
+    ],
+    whyItMatters:
+      "Field brome can dominate open fall and spring ground, especially where soil fertility is high and disturbance keeps the site available. It also blends into agricultural settings long enough to reseed before the patch is treated as more than just another grass flush.",
+    action: {
+      mode: "both",
+      summary:
+        "Management works best before the seedheads mature, because winter annual bromes can reset the problem quickly in one season.",
+      steps: [
+        "Scout open fields and edges in fall and early spring so dense young brome patches are caught before heading.",
+        "Do not let mature seedheads stand if field brome is spreading in cover-crop, pasture, or roadside settings.",
+        "Use local crop or land-management guidance if the infestation is broad enough that one season of hand or spot control will not reset the site.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/77",
+      },
+    ],
+  },
+  {
+    id: "veronica-arvensis",
+    slug: "veronica-arvensis",
+    commonName: "Corn Speedwell",
+    scientificName: "Veronica arvensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A small winter annual that spreads through dry turf, home gardens, and winter grain fields with tiny pale flowers and heart-shaped pods.",
+    origin:
+      "Native to Europe and western Asia and introduced widely in North America through cultivation, turf movement, and disturbed dry soils.",
+    whatToLookFor: [
+      "Low branching plants that start with opposite hairy leaves and become narrower toward the flowering stems.",
+      "Tiny pale blue to white flowers tucked close to the upper stems.",
+      "Small flat heart-shaped seed pods in dry lawns, gardens, and sandy or lightly shaded open soil.",
+    ],
+    whyItMatters:
+      "Corn speedwell can form a low spring mat in turf and garden edges, then quietly produce seed before many people notice it. It takes advantage of dry thin soil and repeated cool-season openings, which makes it a steady repeat weed rather than a one-time curiosity.",
+    action: {
+      mode: "diy",
+      summary:
+        "The easiest control window is while the plants are still low and before the seed pods begin refilling the site.",
+      steps: [
+        "Hand-pull or hoe small patches while the stems are still short and before heavy pod set begins.",
+        "Thicken dry thin turf or mulch open garden soil so the same cool-season gaps do not keep reopening.",
+        "Monitor shady sandy edges in late winter and spring because that is where corn speedwell often gets ahead first.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/82",
+      },
+    ],
+  },
+  {
+    id: "agrostis-gigantea",
+    slug: "agrostis-gigantea",
+    commonName: "Redtop",
+    scientificName: "Agrostis gigantea",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A rhizomatous perennial grass that forms broad coarse stands in pastures, roadsides, moist fields, and other cool-season disturbed ground.",
+    origin:
+      "Native to Eurasia and introduced across North America for forage, erosion control, and temporary cover.",
+    whatToLookFor: [
+      "Bluish to gray-green leaves and coarse grass patches spreading outward from rhizomes.",
+      "A tall reddish open panicle seedhead that gives the plant its common name.",
+      "Persistent stands in humid northern fields, roadsides, and rough pasture ground where the grass has held after seeding.",
+    ],
+    whyItMatters:
+      "Redtop is often planted on purpose, but it can also persist as a dominant coarse grass in sites where managers want something more diverse or lower maintenance. Its rhizomes and rapid cover make it especially likely to hold wet open ground once it has a foothold.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat it as a site-goal problem first, because the right response depends on whether the area is still meant to function as seeded cover or forage.",
+      steps: [
+        "Map persistent redtop stands where they are crowding out desired meadow, wetland-edge, or low-input vegetation.",
+        "Avoid reseeding the same mix into adjacent areas if the aim is to reduce coarse introduced grass cover over time.",
+        "Use local pasture or restoration guidance where redtop is already entrenched across a broader humid site.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/246",
+      },
+    ],
+  },
+  {
+    id: "tragopogon-dubius",
+    slug: "tragopogon-dubius",
+    commonName: "Yellow Salsify",
+    scientificName: "Tragopogon dubius",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tall biennial with grass-like leaves and large yellow flower heads that later turn into oversized dandelion-like seed globes.",
+    origin:
+      "Native to Europe and western Asia and introduced broadly through accidental seed movement and ornamental escape.",
+    whatToLookFor: [
+      "Hairless bluish-green leaves that are narrow and clasp the stem like a coarse grass blade.",
+      "Single yellow flower heads that open in the morning and close by later in the day.",
+      "Large round feathery seed heads that stand out in roadsides, waste places, and open dry fields.",
+    ],
+    whyItMatters:
+      "Yellow salsify is easy to dismiss as a showy roadside wildflower, but its large seed heads let it spread effectively in disturbed open ground. Once it is seeding freely in the same dry edges and fields, it can keep reappearing with little help.",
+    action: {
+      mode: "diy",
+      summary:
+        "The most useful timing is before the flowering stems turn into giant wind-dispersed seed globes.",
+      steps: [
+        "Pull or cut bolting plants before the seed heads mature and begin releasing feathery seed.",
+        "Remove the whole flowering stem from the site instead of dropping it where the head can finish drying.",
+        "Watch dry roadsides, waste places, and field edges for new rosettes if yellow salsify is already seeding nearby.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/207",
+      },
+    ],
+  },
+  {
+    id: "lamium-purpureum",
+    slug: "lamium-purpureum",
+    commonName: "Purple Deadnettle",
+    scientificName: "Lamium purpureum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A small mint-family winter annual that flushes purple-green in lawns, beds, and crop edges long before most warm-season weeds appear.",
+    origin:
+      "Native to Europe and Asia and introduced widely through cultivation, turf movement, and repeated disturbance around settled ground.",
+    whatToLookFor: [
+      "Square stems and opposite leaves that often look bronzed or purplish near the top.",
+      "Hairy triangular leaves on stalks, unlike henbit's more clasping upper leaves.",
+      "Small pink to purple tubular flowers in spring on plants growing in thin turf, gardens, and nursery edges.",
+    ],
+    whyItMatters:
+      "Purple deadnettle is one of the earliest signals that cool-season gaps are opening in lawns and cultivated ground. It seeds quickly, builds a visible spring carpet, and then disappears into summer before many people connect it to the recurring winter-annual problem.",
+    action: {
+      mode: "diy",
+      summary:
+        "Early spring cleanup matters because once the plants flower heavily, the site is already being restocked for the next cool season.",
+      steps: [
+        "Pull or hoe patches before the purple flower flush becomes widespread across the site.",
+        "Improve turf density or mulch cultivated ground so winter annuals have fewer open spots to exploit.",
+        "Monitor the same beds and lawn edges in fall and late winter because purple deadnettle often returns to the same weak areas.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/492",
+      },
+    ],
+  },
+  {
+    id: "veronica-hederifolia",
+    slug: "veronica-hederifolia",
+    commonName: "Ivyleaf Speedwell",
+    scientificName: "Veronica hederifolia",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A winter annual speedwell that spreads through lawns, winter grain, and open beds with ivy-shaped leaves and tiny pale flowers.",
+    origin:
+      "Native to Europe and western Asia and introduced through cultivation, turf movement, and repeated disturbance in dry open ground.",
+    whatToLookFor: [
+      "Hairy low plants with lobed ivy-shaped leaves carried on relatively long stalks.",
+      "Tiny pale blue to white flowers on longer stalks than most other small lawn speedwells.",
+      "Four-chambered hairy seed pods in shady lawns, garden edges, and winter annual crop ground.",
+    ],
+    whyItMatters:
+      "Ivyleaf speedwell behaves like other winter annual lawn weeds, but its creeping low habit lets it widen quietly before the site greens up fully. It is especially persistent where turf stays thin and spring tillage or mowing does not interrupt seed production soon enough.",
+    action: {
+      mode: "diy",
+      summary:
+        "It is most practical to treat the patch before flowering peaks and before the pods mature across the same dry thin site.",
+      steps: [
+        "Pull or hoe small patches while the plants are still low and the seed pods are not yet mature.",
+        "Rebuild turf or mulch exposed soil so shady dry openings do not keep favoring winter annual speedwells.",
+        "Check the same areas in late winter and early spring because ivyleaf speedwell often returns where it seeded previously.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/266",
+      },
+    ],
+  },
+  {
+    id: "cerastium-glomeratum",
+    slug: "cerastium-glomeratum",
+    commonName: "Sticky Chickweed",
+    scientificName: "Cerastium glomeratum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A hairy winter annual chickweed that forms small sticky mats in roadsides, fields, turf, and other open cool-season ground.",
+    origin:
+      "Native to Europe and western Asia and introduced broadly through seed movement, nursery stock, and disturbed cultivated soil.",
+    whatToLookFor: [
+      "Small opposite leaves and stems covered with sticky hairs that catch grit and feel tacky.",
+      "Tiny white flowers clustered on short stems rather than held well above the foliage.",
+      "Low patches in field edges, roadsides, thin lawns, and open beds during cool wet seasons.",
+    ],
+    whyItMatters:
+      "Sticky chickweed can occupy the same kinds of cool-season gaps as other chickweeds, but its fast seeding and low habit make it easy to miss until the patch is already mature. It is especially good at exploiting disturbed edges that never quite close over.",
+    action: {
+      mode: "diy",
+      summary:
+        "The best control window is while the plants are still low and before the small capsules begin spreading seed through the patch.",
+      steps: [
+        "Pull or hoe patches early, especially after rain when the shallow roots release more cleanly.",
+        "Mulch or thicken cover in the same cool disturbed spots so sticky chickweed does not return next season.",
+        "Do not drag flowering patches through the site if seed capsules are already forming.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/256",
+      },
+    ],
+  },
+  {
+    id: "lepidium-didymum",
+    slug: "lepidium-didymum",
+    commonName: "Lesser Swinecress",
+    scientificName: "Lepidium didymum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low winter annual mustard that forms foul-smelling mats in wet disturbed turf, fields, and compacted open ground.",
+    origin:
+      "Native to South America and introduced widely through cultivation, traffic, and disturbed moist soils.",
+    whatToLookFor: [
+      "Dense ground-hugging plants with finely divided leaves rather than broad mustard foliage.",
+      "A strong unpleasant odor released when the leaves are crushed or mowed.",
+      "Small white flowers and paired rounded fruit sections in wet turf, paths, and field edges.",
+    ],
+    whyItMatters:
+      "Lesser swinecress thrives in wet trampled sites where preferred cover has already been weakened. Its foul smell, mat-forming growth, and ability to seed in low turf make it a recurring problem once compacted damp ground is left untreated.",
+    action: {
+      mode: "diy",
+      summary:
+        "Long-term control depends on fixing the wet compacted site as well as removing the existing mat before it reseeds again.",
+      steps: [
+        "Pull or hoe young patches before flowering and seed set, especially in damp compacted turf or path edges.",
+        "Improve drainage or reduce chronic trampling where the ground stays soft and open through winter.",
+        "Monitor mowed wet sites in late winter and spring because lesser swinecress often reappears in the same footprint.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/198",
+      },
+    ],
+  },
+  {
+    id: "kummerowia-striata",
+    slug: "kummerowia-striata",
+    commonName: "Japanese Clover",
+    scientificName: "Kummerowia striata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low summer annual legume that spreads through fields, roadsides, stream banks, and disturbed sunny ground.",
+    origin:
+      "Native to eastern Asia and introduced to the United States for forage before spreading widely through open dry sites.",
+    whatToLookFor: [
+      "Small trifoliate leaves on low branching stems that hug the ground or rise only slightly.",
+      "Tiny pink to purple flowers that are easy to overlook unless you examine the patch closely.",
+      "Broad mats in roadsides, pasture, open woods, stream banks, and other sunny disturbed ground.",
+    ],
+    whyItMatters:
+      "Japanese clover often looks minor because individual plants are small, but broad low patches can simplify open ground and persist in poor dry soils where other plants struggle. Once it is established, it can hold disturbed rights-of-way and field edges for years.",
+    action: {
+      mode: "both",
+      summary:
+        "Small patches are manageable directly, but larger low mats in pasture or roadside settings should be treated as a site-level persistence problem.",
+      steps: [
+        "Remove or suppress patches before the summer seed crop matures if the plant is expanding into new open ground.",
+        "Avoid moving contaminated hay, seed, or roadside spoil from infested areas to clean sites.",
+        "Use local pasture or roadside guidance if Japanese clover is already dominant across a broad low-fertility area.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/583",
+      },
+    ],
+  },
+  {
+    id: "potentilla-recta",
+    slug: "potentilla-recta",
+    commonName: "Sulphur Cinquefoil",
+    scientificName: "Potentilla recta",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A long-lived perennial cinquefoil with pale yellow flowers and many-leafleted hairy foliage that spreads through roadsides, fields, and disturbed dry ground.",
+    origin:
+      "Native to Eurasia and introduced into North America through accidental movement and subsequent spread along disturbed corridors.",
+    whatToLookFor: [
+      "Leaves divided into five to seven toothed leaflets, often more numerous than on many native cinquefoils.",
+      "Pale sulfur-yellow flowers with darker yellow centers on upright hairy stems.",
+      "Persistent plants in roadsides, rail corridors, dry fields, and rough disturbed sites.",
+    ],
+    whyItMatters:
+      "Sulphur cinquefoil is a longer-lived invasive than many annual field weeds, which means a patch can keep expanding and seeding from the same crown for years. It is especially troublesome in disturbed dry grassland and transportation corridors where follow-up is inconsistent.",
+    action: {
+      mode: "both",
+      summary:
+        "New patches are worth catching early, because once older crowns are established the infestation becomes much slower to reverse.",
+      steps: [
+        "Dig, cut, or otherwise respond to small outlying plants before the patch builds a broader seed source.",
+        "Avoid moving contaminated hay, roadside spoil, or equipment through flowering or seeding stands.",
+        "Use local invasive-plant guidance if sulphur cinquefoil is already spreading through a larger dry field or roadside system.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/511",
+      },
+    ],
+  },
+  {
+    id: "nepeta-cataria",
+    slug: "nepeta-cataria",
+    commonName: "Catnip",
+    scientificName: "Nepeta cataria",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A mint-family perennial with silvery hairy leaves and strongly aromatic foliage that escapes into waste ground, roadsides, and dry disturbed sites.",
+    origin:
+      "Native to Europe and Asia and introduced widely in North America for herb gardens, tea, and medicinal use before naturalizing broadly.",
+    whatToLookFor: [
+      "Square stems and softly hairy heart-shaped leaves with jagged edges and a minty smell when crushed.",
+      "Whitish flowers marked with lavender or purple in dense spikes at stem tips.",
+      "Clumps in sunny waste places, roadsides, fence lines, and dry cultivated ground around former plantings.",
+    ],
+    whyItMatters:
+      "Catnip is familiar as a garden herb, but naturalized patches can hold disturbed dry edges and keep reseeding after cultivation has ended. It is most likely to be underestimated where escaped herb plantings blend into roadsides or rough ground.",
+    action: {
+      mode: "both",
+      summary:
+        "Small escaped clumps can be removed directly, but repeated naturalized patches should be treated as an ornamental escape problem rather than just a volunteer herb.",
+      steps: [
+        "Pull or cut plants before seed matures if catnip is spreading beyond a garden or old homestead planting.",
+        "Remove flowering stems from the site instead of letting them dry and shed in place.",
+        "Document repeated roadside or waste-ground populations if the plant is clearly naturalizing well beyond cultivation.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/145",
+      },
+    ],
+  },
+  {
+    id: "veronica-officinalis",
+    slug: "veronica-officinalis",
+    commonName: "Common Speedwell",
+    scientificName: "Veronica officinalis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A creeping perennial speedwell that roots at nodes and forms low hairy mats in lawns, ornamentals, and open sandy ground.",
+    origin:
+      "Native to Europe and western Asia and introduced widely through turf movement, cultivation, and spread from ornamental or medicinal plantings.",
+    whatToLookFor: [
+      "Low creeping stems that root at nodes and stay green through cool seasons.",
+      "Opposite hairy leaves with sharp teeth that stay similar on both lower and upper parts of the stem.",
+      "Tiny pale blue to whitish flowers in loose clusters on long stalks above the foliage.",
+    ],
+    whyItMatters:
+      "Common speedwell spreads by both seed and stem fragments, which lets it persist in lawns and ornamental edges even when mowing suppresses the flowers. Once it has formed a mat, it can be much slower to remove than a simple annual speedwell flush.",
+    action: {
+      mode: "diy",
+      summary:
+        "Success depends on removing the rooted creeping stems and improving the weak turf or bed edge where the mat is expanding.",
+      steps: [
+        "Lift or pull the full creeping patch, including stems rooting at the nodes, before it widens further.",
+        "Strengthen turf or mulch open bed edges so the plant does not keep reclaiming the same space.",
+        "Watch for fragments left behind after weeding, because common speedwell can restart from creeping stems that stay rooted.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/410",
+      },
+    ],
+  },
+  {
+    id: "geranium-molle",
+    slug: "geranium-molle",
+    commonName: "Dovefoot Geranium",
+    scientificName: "Geranium molle",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low hairy winter annual geranium that appears in lawns, pastures, and disturbed sites with rounded lobed leaves and small pink flowers.",
+    origin:
+      "Native to Europe and introduced to North America through settlement, turf movement, and disturbed cultivated ground.",
+    whatToLookFor: [
+      "Rounded softly hairy leaves with shallow lobes and long leaf stalks arising from a basal rosette.",
+      "Pale pink flowers, often in pairs, on stems that stay fairly low and spreading.",
+      "Long-beaked fruits in lawn, pasture, and roadside patches during spring and early summer.",
+    ],
+    whyItMatters:
+      "Dovefoot geranium favors the same weak turf and disturbed edge habitat as several other winter annual lawn weeds, but it can go unnoticed until the long-beaked fruits are already mature. It is especially persistent where low mowing and compacted soil keep desirable cover thin.",
+    action: {
+      mode: "diy",
+      summary:
+        "Early hand removal is the simplest option because older plants set seed and become more noticeable only after they have already spread.",
+      steps: [
+        "Pull rosettes and flowering plants before the beaked fruits ripen and scatter seed.",
+        "Improve turf density or pasture cover where low open patches are repeatedly favoring winter annual geraniums.",
+        "Monitor the same weak lawn and pasture edges in late winter because new seedlings often return there first.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/355",
+      },
+    ],
+  },
+  {
+    id: "spergula-arvensis",
+    slug: "spergula-arvensis",
+    commonName: "Corn Spurry",
+    scientificName: "Spergula arvensis",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A wiry winter annual with needle-like whorled leaves that grows in sandy fields, disturbed soil, and low-fertility open ground.",
+    origin:
+      "Native to Eurasia and introduced widely with grain, seed, and disturbance in sandy agricultural landscapes.",
+    whatToLookFor: [
+      "Slender branching stems carrying fine needle-like leaves in apparent whorls.",
+      "Small white flowers on delicate stalks over a sparse airy plant framework.",
+      "Patches in sandy fields, disturbed edges, and acidic low-fertility soils.",
+    ],
+    whyItMatters:
+      "Corn spurry thrives where sandy open ground is repeatedly disturbed and kept low in fertility. It is a classic seedbank weed of thin fields and disturbed edges, where it can be easy to overlook until a larger flush appears across the site.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat it before it seeds, and also address the low-cover sandy conditions that keep reopening the same ground.",
+      steps: [
+        "Hoe or pull patches before flowering plants finish setting another crop of seed.",
+        "Reduce repeated soil disturbance where practical so buried seed is not constantly brought back to the surface.",
+        "Use local crop or field-edge guidance if broad sandy infestations are returning after ordinary spot cleanup.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/81",
+      },
+    ],
+  },
+  {
+    id: "cyperus-rotundus",
+    slug: "cyperus-rotundus",
+    commonName: "Purple Nutsedge",
+    scientificName: "Cyperus rotundus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A perennial sedge that spreads by rhizomes and tubers, invading warm-season turf, beds, nurseries, and irrigated disturbed ground.",
+    origin:
+      "Believed native to parts of Africa and Eurasia and now widely distributed through cultivation, tuber movement, and contaminated soil.",
+    whatToLookFor: [
+      "Shiny yellow-green to dark green leaves arising in three ranks from a distinctly triangular stem.",
+      "Reddish-purple to reddish-brown spikelets at the ends of upright stems.",
+      "Persistent regrowth from underground tubers in hot weather even after repeated pulling or mowing.",
+    ],
+    whyItMatters:
+      "Purple nutsedge is one of the hardest warm-site weeds to suppress casually because the visible shoots are only part of the infestation. Underground tubers let it rebound through drought, cultivation, and repeated mowing, especially in irrigated or disturbed soil.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not treat it like an ordinary shallow annual weed, because broken-up tuber systems are what keep purple nutsedge coming back.",
+      steps: [
+        "Identify the full patch and avoid chopping or cultivating it in ways that spread underground tubers.",
+        "Reduce overwatering and correct chronic wet or disturbed bed conditions that are helping the sedge expand.",
+        "Use site-appropriate turf or bed guidance if purple nutsedge is already recurring after repeated hand removal.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/528",
+      },
+    ],
+  },
+  {
+    id: "bromus-catharticus",
+    slug: "bromus-catharticus",
+    commonName: "Rescuegrass",
+    scientificName: "Bromus catharticus",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tufted cool-season brome that behaves as a winter annual or short-lived perennial in fields, pastures, and roadsides.",
+    origin:
+      "Native to South America and introduced elsewhere as a forage grass before spreading into non-crop ground.",
+    whatToLookFor: [
+      "Upright bunches with broadish leaves and a tall membranous ligule on the leaf sheath.",
+      "An open drooping panicle seedhead on stems that can reach about three feet tall.",
+      "Patches in cultivated fields, pasture, and roadsides where cool-season bunch grasses are persisting.",
+    ],
+    whyItMatters:
+      "Rescuegrass can build dense cool-season cover in open fields and margins, especially where disturbance and mild winters favor annual bromes. Once it starts reseeding successfully, it can shift a site toward a brome-dominant spring flush that crowds smaller plants and complicates field cleanup.",
+    action: {
+      mode: "both",
+      summary:
+        "The key is to interrupt seed production before a winter annual grass problem becomes a stable recurring stand.",
+      steps: [
+        "Scout and respond before the drooping seedheads mature across the patch.",
+        "Avoid carrying seed-bearing hay or soil from infested field margins into cleaner areas.",
+        "Use local pasture or crop guidance if rescuegrass is broad enough that spot removal is no longer realistic.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/146",
+      },
+    ],
+  },
+  {
+    id: "phleum-pratense",
+    slug: "phleum-pratense",
+    commonName: "Timothy Grass",
+    scientificName: "Phleum pratense",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A familiar hay grass that also persists as an introduced weed in low-maintenance turf, roadsides, and abandoned nutrient-rich fields.",
+    origin:
+      "Native to Europe and introduced broadly across North America for hay and pasture production.",
+    whatToLookFor: [
+      "Hairless leaves with a toothed membranous ligule and no auricles at the collar.",
+      "Dense cylindrical spike-like seedheads that look bristly when mature.",
+      "Persistent clumps in rough turf, roadsides, and old fields where former forage seedings have lingered.",
+    ],
+    whyItMatters:
+      "Timothy is useful forage, but in sites no longer managed for hay or pasture it can remain as a persistent introduced grass that holds open ground and shapes the plant mix. It matters most where people mistake an old forage remnant for neutral background vegetation.",
+    action: {
+      mode: "both",
+      summary:
+        "Decide first whether the stand is still serving a forage role, because management should follow the actual site goal rather than the plant's familiar name.",
+      steps: [
+        "Map persistent timothy patches where they are dominating rough turf, roadsides, or old field restoration areas.",
+        "Avoid reseeding the same forage mix into adjacent areas if your goal is to reduce introduced grass cover.",
+        "Use local pasture or restoration guidance where timothy remains a strong component of a site you are trying to transition away from hay-grass dominance.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/475",
+      },
+    ],
+  },
+  {
+    id: "cynodon-dactylon",
+    slug: "cynodon-dactylon",
+    commonName: "Bermudagrass",
+    scientificName: "Cynodon dactylon",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A stolon- and rhizome-forming warm-season grass that spreads aggressively through cool-season lawns, beds, and open sunny ground.",
+    origin:
+      "Native to Africa, Europe, and parts of Asia and spread widely through turf use, rhizome fragments, and movement in warm disturbed soils.",
+    whatToLookFor: [
+      "Dense gray-green mats formed by creeping stolons above ground and sharp rhizomes below ground.",
+      "Finger-like seedheads radiating from a central point on slender stems in summer.",
+      "Fast regrowth in hot sunny sites where cool-season turf or low groundcover is thinning.",
+    ],
+    whyItMatters:
+      "Bermudagrass is useful turf in some climates, but it is also one of the most persistent escape grasses in places where it is unwanted. Its ability to spread both above and below ground makes it hard to remove from lawns, ornamentals, and restoration edges once established.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat it as a creeping grass system, not as an isolated clump, because missed stolons and rhizomes are what restart the infestation.",
+      steps: [
+        "Trace the full mat and remove or suppress the creeping edges, not just the most obvious center patch.",
+        "Avoid tilling or chopping infested soil in ways that spread bermudagrass fragments through beds or adjacent turf.",
+        "Use site-appropriate turf or landscape guidance if bermudagrass is already moving through a larger unwanted area.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/189",
+      },
+    ],
+  },
+  {
+    id: "setaria-faberi",
+    slug: "setaria-faberi",
+    commonName: "Giant Foxtail",
+    scientificName: "Setaria faberi",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A summer annual foxtail that grows in tall clumps and competes strongly in crops, gardens, and disturbed sunny soil.",
+    origin:
+      "Native to eastern Asia and introduced widely with grain, seed, and disturbed agricultural ground.",
+    whatToLookFor: [
+      "Large summer grass with broad leaves that have fine short hairs and a hairy ligule.",
+      "Long nodding foxtail seedheads that droop more than the stiffer heads of other foxtails.",
+      "Tall clumps in row crops, field margins, gardens, and open sunny soil after spring disturbance.",
+    ],
+    whyItMatters:
+      "Giant foxtail can rise above surrounding annuals and compete hard for light and moisture in crop and garden settings. Once the long nodding heads mature, the site is being restocked with a heavy seed crop that can carry the problem into the next warm season.",
+    action: {
+      mode: "diy",
+      summary:
+        "The best time to act is before the tall nodding heads mature, because giant foxtail relies on another big summer seed flush to persist.",
+      steps: [
+        "Hoe or pull plants while they are still small enough to remove before the seedheads elongate.",
+        "Maintain mulch or crop cover so open sunny ground does not keep feeding fresh foxtail emergence.",
+        "Remove maturing foxtail heads from the site if early control was missed and seed is close to ripening.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/218",
+      },
+    ],
+  },
+  {
+    id: "hypochaeris-radicata",
+    slug: "hypochaeris-radicata",
+    commonName: "Hairy Cat's Ear",
+    scientificName: "Hypochaeris radicata",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A rough-haired perennial rosette weed with yellow flower heads that often invades lawns, pastures, and dry open ground.",
+    origin:
+      "Native to Europe and introduced broadly in North America through contaminated seed, forage movement, and disturbed turf or pasture.",
+    whatToLookFor: [
+      "Basal rosettes of hairy lobed leaves that feel rougher than ordinary dandelion foliage.",
+      "Leafless hollow flowering stems carrying bright yellow heads above the rosette.",
+      "Feathery seeded heads in lawns, pastures, and waste places where dry thin cover is letting perennial rosette weeds spread.",
+    ],
+    whyItMatters:
+      "Hairy cat's ear behaves like a tougher, rougher dandelion in many sites, but it can become a larger pasture and lawn issue when dry thin cover favors perennial rosettes. Its known association with horse health concerns also makes heavy pasture infestations worth taking seriously.",
+    action: {
+      mode: "both",
+      summary:
+        "Small rosettes are easiest to remove early, but larger pasture patches deserve a more deliberate response before they reseed broadly.",
+      steps: [
+        "Dig or remove rosettes before multiple flowering stems rise from the crown.",
+        "Keep pasture and turf cover denser so dry open patches do not keep favoring cat's ear establishment.",
+        "Use local forage guidance if hairy cat's ear is building into a broader pasture problem, especially where horses are present.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/507",
+      },
+    ],
+  },
+  {
+    id: "arrhenatherum-elatius",
+    slug: "arrhenatherum-elatius",
+    commonName: "Tall Oatgrass",
+    scientificName: "Arrhenatherum elatius",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A tall introduced bunchgrass that persists in roadsides, old fields, and dry open sites with a loose airy oat-like seedhead.",
+    origin:
+      "Native to Europe and western Asia and introduced to North America for forage and soil stabilization.",
+    whatToLookFor: [
+      "Tall coarse bunches that stand well above neighboring turf or meadow grasses by late spring and summer.",
+      "A loose open panicle seedhead with awned spikelets that gives the plant an oat-like look.",
+      "Persistent roadside or old-field stands where an introduced bunchgrass is remaining after older seedings or disturbance.",
+    ],
+    whyItMatters:
+      "Tall oatgrass can simplify open dry sites by holding them in a coarse bunchgrass state that is hard for shorter meadow plants to reclaim. Once it dominates a roadside or old field edge, it can keep shaping the site long after the original seeding context is forgotten.",
+    action: {
+      mode: "both",
+      summary:
+        "Treat it as a stand-forming grass issue, because the main question is whether the site is supposed to remain in coarse introduced grass cover.",
+      steps: [
+        "Map persistent tall oatgrass stands where they are displacing the lower and more diverse cover you want.",
+        "Avoid reseeding nearby edges with the same coarse grass mix if the goal is to reduce introduced bunchgrass dominance.",
+        "Use local roadside or restoration guidance when tall oatgrass is already established across a broader corridor or field edge.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/22",
+      },
+    ],
+  },
+  {
+    id: "anthoxanthum-odoratum",
+    slug: "anthoxanthum-odoratum",
+    commonName: "Sweet Vernalgrass",
+    scientificName: "Anthoxanthum odoratum",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A sweet-scented perennial bunchgrass that spreads through fields, rough turf, and low-fertility open sites in cool climates.",
+    origin:
+      "Native to Europe and introduced widely through pasture and hay seedings, especially in northern regions.",
+    whatToLookFor: [
+      "Early spring growth of soft fine leaves on low bunches before many taller grasses are active.",
+      "Sweet hay-like scent when the foliage or seedheads are crushed or dried.",
+      "Narrow dense seedheads in fields, meadows, rough turf, and low-fertility sites where the grass persists as part of an old seeding mix.",
+    ],
+    whyItMatters:
+      "Sweet vernalgrass can remain a strong component of introduced grass cover in sites that are otherwise trying to transition toward more diverse vegetation. Its early growth and persistence in poor soils help it hold ground where native or site-adapted replacements are slower to recover.",
+    action: {
+      mode: "both",
+      summary:
+        "Management should follow the site goal, because the real issue is whether an old introduced bunchgrass stand is still acceptable for the area.",
+      steps: [
+        "Identify where sweet vernalgrass is acting as a dominant holdover from old pasture or roadside seedings.",
+        "Avoid reinforcing the same species mix if the objective is to move the site toward different meadow or restoration cover.",
+        "Use local field or restoration guidance where sweet vernalgrass is a persistent barrier to broader vegetation change.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/24",
+      },
+    ],
+  },
+  {
+    id: "verbascum-blattaria",
+    slug: "verbascum-blattaria",
+    commonName: "Moth Mullein",
+    scientificName: "Verbascum blattaria",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A biennial mullein with glossy hairless leaves and pale yellow or white flowers that appears in roadsides, fields, and waste ground.",
+    origin:
+      "Native to Eurasia and introduced to North America through ornamental and medicinal use and later spread in disturbed open sites.",
+    whatToLookFor: [
+      "A basal rosette in the first year with smooth or only lightly hairy leaves, unlike the felted foliage of common mullein.",
+      "Tall flowering stems with spaced blooms that may be yellow or white and carry purple hairs at the stamens.",
+      "Scattered plants in roadsides, dry fields, embankments, and rough disturbed ground.",
+    ],
+    whyItMatters:
+      "Moth mullein is not always as dense as common mullein, but it can still seed repeatedly into the same open disturbed sites and hold them in an introduced biennial weed cycle. Its smooth foliage also means it is often overlooked until the flowering stem is already obvious.",
+    action: {
+      mode: "both",
+      summary:
+        "The easiest time to act is before second-year flowering stems mature, because biennials rely heavily on that seed crop to keep returning.",
+      steps: [
+        "Remove first-year rosettes or cut second-year stems before capsules mature and release seed.",
+        "Stabilize disturbed dry soil where mullein species are repeatedly colonizing after scraping or grading.",
+        "Use local land-management guidance if moth mullein is spreading through a larger roadside or open-field system.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/494",
+      },
+    ],
+  },
+  {
+    id: "dianthus-armeria",
+    slug: "dianthus-armeria",
+    commonName: "Deptford Pink",
+    scientificName: "Dianthus armeria",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A slender biennial or short-lived perennial with narrow leaves and small bright pink flowers that persists in fields, barrens, and disturbed dry ground.",
+    origin:
+      "Native to Europe and introduced to North America through ornamental planting and accidental spread in open dry habitats.",
+    whatToLookFor: [
+      "Very narrow opposite leaves carried on wiry branching stems.",
+      "Small vivid pink flowers dotted with white speckles and held in tight headlike clusters.",
+      "Scattered plants in dry fields, openings, barrens, roadsides, and sandy or rocky disturbed ground.",
+    ],
+    whyItMatters:
+      "Deptford pink can move from an ornamental novelty into open dry habitats where sparse vegetation leaves room for reseeding. It is not as aggressive as a rhizomatous invader, but it can still become a persistent part of disturbed dry plant communities if ignored.",
+    action: {
+      mode: "both",
+      summary:
+        "Small populations are worth addressing before they build a local seed source in dry open habitat where follow-up is hard to maintain.",
+      steps: [
+        "Pull or cut flowering plants before capsules mature if Deptford pink is spreading beyond ornamental settings.",
+        "Avoid dumping seed-bearing stems into nearby open habitat or rough edge areas.",
+        "Document repeated naturalized patches in barrens, field openings, or conservation ground where the plant is clearly persisting.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/259",
+      },
+    ],
+  },
+  {
+    id: "trifolium-arvense",
+    slug: "trifolium-arvense",
+    commonName: "Rabbitfoot Clover",
+    scientificName: "Trifolium arvense",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A softly hairy annual clover that colonizes sandy fields, roadsides, and dry open ground with pale fuzzy flower heads.",
+    origin:
+      "Native to Eurasia and introduced to North America through seed movement, forage mixes, and disturbance in low-fertility soils.",
+    whatToLookFor: [
+      "Small trifoliate leaves on slender branching stems in sandy or gravelly open ground.",
+      "Distinctive pale cylindrical fuzzy flower heads that resemble a rabbit's foot.",
+      "Dry roadsides, sandy fields, and low-fertility openings where short annual legumes are recurring.",
+    ],
+    whyItMatters:
+      "Rabbitfoot clover thrives in poor dry ground where other plants are thin, which lets it persist as a regular annual occupant of sandy disturbed sites. It is easy to underestimate because individual plants are delicate, but a seeded patch can spread across open low-cover ground quickly.",
+    action: {
+      mode: "both",
+      summary:
+        "The most useful approach is to interrupt seeding and improve the thin sandy cover that keeps inviting annual clovers back.",
+      steps: [
+        "Pull or mow patches before the fuzzy flower heads dry down and seed heavily.",
+        "Stabilize open sandy edges with denser cover so rabbitfoot clover is not continually favored by bare low-fertility ground.",
+        "Use local field-edge or restoration guidance if the patch is broad enough that routine cleanup is no longer resetting the site.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/530",
+      },
+    ],
+  },
+  {
+    id: "sisymbrium-officinale",
+    slug: "sisymbrium-officinale",
+    commonName: "Hedgemustard",
+    scientificName: "Sisymbrium officinale",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A wiry mustard with small yellow flowers and pods pressed close to the stem, common in roadsides, fence lines, and compacted disturbed soil.",
+    origin:
+      "Native to Eurasia and introduced widely to North America through settlement, seed contamination, and disturbed transportation corridors.",
+    whatToLookFor: [
+      "Coarsely lobed lower leaves and narrower upper leaves on tough branching stems.",
+      "Tiny yellow mustard flowers followed by short pods held tightly against the stem.",
+      "Roadsides, rail edges, fence rows, and hard dry disturbed sites where wiry mustards persist.",
+    ],
+    whyItMatters:
+      "Hedgemustard tolerates compacted dry ground and can keep reseeding along corridors where other cover stays sparse. Its narrow upright habit also lets it blend into rough edge vegetation until the site is already carrying another crop of mustard seed.",
+    action: {
+      mode: "both",
+      summary:
+        "Best results come from catching the plant before pod set and from reducing the bare compacted edge conditions that favor it.",
+      steps: [
+        "Pull or cut plants before the pods mature along the stems.",
+        "Rebuild cover or reduce repeated scraping where hard dry edges are staying open to annual mustards.",
+        "Use local roadside or land-management guidance if hedgemustard is already established through a larger corridor.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/394",
+      },
+    ],
+  },
+  {
+    id: "camelina-microcarpa",
+    slug: "camelina-microcarpa",
+    commonName: "Littlepod False Flax",
+    scientificName: "Camelina microcarpa",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A winter annual mustard that grows in dry fields, roadsides, and grain margins with narrow pods and small pale yellow flowers.",
+    origin:
+      "Native to Eurasia and introduced through grain contamination, dryland agriculture, and repeated disturbance in open soils.",
+    whatToLookFor: [
+      "Blue-green leaves that clasp the stem and give the plant a somewhat glaucous look.",
+      "Small pale yellow flowers followed by many narrow pear-shaped seed pods on branched stems.",
+      "Open dry fields, roadsides, and grain-growing areas where winter annual mustards are recurring.",
+    ],
+    whyItMatters:
+      "Littlepod false flax behaves like a dryland mustard of disturbed cropping systems and roadside edges, where it can build a winter annual seedbank and reappear quickly after light disturbance. It is especially suited to open dry sites that do not stay covered year-round.",
+    action: {
+      mode: "both",
+      summary:
+        "The goal is to interrupt another winter annual seed crop before the mustard keeps reloading the same dry field edge or open soil.",
+      steps: [
+        "Scout and remove plants before the narrow pods mature and turn into another seed source.",
+        "Maintain cover or reduce unnecessary soil disturbance in dry open edges where the species is recurring.",
+        "Use local crop or roadside guidance if littlepod false flax is broad enough to be more than a scattered edge weed.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/597",
+      },
+    ],
+  },
+  {
+    id: "veronica-persica",
+    slug: "veronica-persica",
+    commonName: "Birdeye Speedwell",
+    scientificName: "Veronica persica",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low sprawling winter annual speedwell with bright blue flowers that spreads through gardens, field edges, and open cool-season ground.",
+    origin:
+      "Native to western Asia and introduced widely through cultivation, seed movement, and disturbed soil around settlements and farms.",
+    whatToLookFor: [
+      "Broad rounded to triangular lower leaves on creeping or ascending stems.",
+      "Noticeably bright blue flowers with a white center, usually larger and showier than those of many other speedwells.",
+      "Low mats in gardens, beds, crop edges, and lightly shaded open soil during cool seasons.",
+    ],
+    whyItMatters:
+      "Birdeye speedwell is one of the more conspicuous winter annual speedwells, but it still behaves like a seedbank weed that takes advantage of recurring cool-season openings. It can move quickly through cultivated ground and then disappear before summer, leaving the problem easy to underestimate.",
+    action: {
+      mode: "diy",
+      summary:
+        "Catch it before flowering plants turn into another seed flush, especially in gardens and lightly cultivated edges.",
+      steps: [
+        "Pull or hoe patches before the capsules mature and refill the site with seed.",
+        "Keep beds mulched and cool-season field edges covered so open ground is not available each winter.",
+        "Monitor recurring spring patches because birdeye speedwell usually returns where the seedbank is already established.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/411",
+      },
+    ],
+  },
+  {
+    id: "spergularia-rubra",
+    slug: "spergularia-rubra",
+    commonName: "Red Sandspurry",
+    scientificName: "Spergularia rubra",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A low branching annual of sandy and gravelly ground, marked by narrow opposite leaves and small pinkish flowers.",
+    origin:
+      "Native to Europe and introduced to North America through ballast, disturbed sandy soils, and transportation corridors.",
+    whatToLookFor: [
+      "Very slender opposite leaves with papery stipules at the nodes.",
+      "Tiny pink to reddish flowers on thin branched stems close to the ground.",
+      "Sandy tracks, gravel margins, compacted lots, and other gritty open sites with low competition.",
+    ],
+    whyItMatters:
+      "Red sandspurry is a small plant, but it is well adapted to harsh sandy and gravelly sites where very little other cover persists. That gives it a reliable foothold in compacted or droughty disturbed ground that stays open year after year.",
+    action: {
+      mode: "diy",
+      summary:
+        "The main goal is to stop reseeding while improving the harsh open surface conditions that keep favoring this annual.",
+      steps: [
+        "Pull or scrape patches before the seed capsules mature on sandy or gravelly margins.",
+        "Stabilize or revegetate open gritty ground where a longer-term surface cover is possible.",
+        "Watch compacted trails, lot edges, and gravel work areas for repeat emergence if red sandspurry has seeded there before.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/99",
+      },
+    ],
+  },
+  {
+    id: "galinsoga-parviflora",
+    slug: "galinsoga-parviflora",
+    commonName: "Gallant Soldier",
+    scientificName: "Galinsoga parviflora",
+    category: "plants",
+    profileType: "curated",
+    displayGroup: "Grasses & herbs",
+    summary:
+      "A quick-growing summer annual that spreads through gardens, nurseries, and cultivated fields with small daisy-like flowers and branching stems.",
+    origin:
+      "Native to Central and South America and introduced widely through cultivation, nursery stock, and repeated soil disturbance.",
+    whatToLookFor: [
+      "Opposite toothed leaves on branched green stems that can stay relatively small but fill open soil fast.",
+      "Tiny flower heads with yellow centers and very short white rays.",
+      "Heavy flushes in vegetable beds, nursery pots, cultivated fields, and compost-rich disturbed ground.",
+    ],
+    whyItMatters:
+      "Gallant soldier matures quickly and can complete another seed cycle before slower garden or crop plants fully cover the soil. That fast turnover makes it a classic cultivated-ground weed that can go from scattered seedlings to a fresh seedbank in one growing window.",
+    action: {
+      mode: "diy",
+      summary:
+        "Frequent early removal is the key, because gallant soldier is most dangerous when it is allowed to race from seedling to seed again.",
+      steps: [
+        "Hoe or pull new flushes while the plants are still small and before flowering is widespread.",
+        "Keep mulch, crop cover, or dense planting in place so rich open soil is not available for repeated emergence.",
+        "Do not leave pulled flowering plants on moist cultivated soil where seed may still finish maturing.",
+      ],
+    },
+    source: [
+      {
+        label: "Virginia Tech Weed Identification",
+        url: "https://weedid.cals.vt.edu/profile/95",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

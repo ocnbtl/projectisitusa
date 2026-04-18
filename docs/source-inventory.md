@@ -421,6 +421,43 @@ These sources are already referenced by current curated profiles, but the origin
 | https://plantscience.psu.edu/outreach/plant-id/broadleaf/leafy-spurge | Leafy Spurge | Milky-sap warning, yellow-green bract cue, deep-rooted colony persistence |
 | https://plantscience.psu.edu/outreach/plant-id/grasses/fine-fescue | Red Fescue | Fine-leaved stand structure, seeded-cover persistence, low-input turf context |
 
+### Chunk 2M second large weed-ID pass, consulted on 2026-04-17
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://weedid.cals.vt.edu/profile/476 | Red Clover | Upright clover habit, whitish V-mark cue, forage-escape context |
+| https://weedid.cals.vt.edu/profile/648 | Hairy Vetch | Tendrilled vine habit, leaflet count, flower-cluster and field-edge behavior |
+| https://weedid.cals.vt.edu/profile/77 | Field Brome | Winter annual habit, drooping panicle cue, cover-crop and field-margin context |
+| https://weedid.cals.vt.edu/profile/82 | Corn Speedwell | Heart-shaped pod cue, low mat habit, dry lawn and garden setting |
+| https://weedid.cals.vt.edu/profile/246 | Redtop | Rhizomatous grass behavior, reddish panicle cue, humid-field persistence |
+| https://weedid.cals.vt.edu/profile/207 | Yellow Salsify | Grass-like leaf cue, morning-opening flower habit, oversized seedhead context |
+| https://weedid.cals.vt.edu/profile/492 | Purple Deadnettle | Square stem, purple upper leaves, winter annual lawn-weed framing |
+| https://weedid.cals.vt.edu/profile/266 | Ivyleaf Speedwell | Ivy-shaped leaf cue, four-chambered pod, cool-season turf and crop context |
+| https://weedid.cals.vt.edu/profile/256 | Sticky Chickweed | Sticky hair cue, low winter annual habit, field-edge and turf context |
+| https://weedid.cals.vt.edu/profile/198 | Lesser Swinecress | Rank odor cue, wet compacted-site behavior, mustard-fruit context |
+| https://weedid.cals.vt.edu/profile/583 | Japanese Clover | Low summer annual legume habit, open-ground persistence, forage-introduction framing |
+| https://weedid.cals.vt.edu/profile/511 | Sulphur Cinquefoil | Pale yellow flower cue, leaflet count, long-lived disturbed-site persistence |
+| https://weedid.cals.vt.edu/profile/145 | Catnip | Aromatic mint foliage, escaped-herb context, dry disturbed-ground persistence |
+| https://weedid.cals.vt.edu/profile/410 | Common Speedwell | Creeping rooted stems, opposite leaf pattern, lawn and bed-edge spread behavior |
+| https://weedid.cals.vt.edu/profile/355 | Dovefoot Geranium | Hairy rosette and beaked-fruit cues, winter annual lawn-weed framing |
+| https://weedid.cals.vt.edu/profile/81 | Corn Spurry | Needle-like whorled foliage, sandy-soil affinity, winter annual field-weed framing |
+| https://weedid.cals.vt.edu/profile/528 | Purple Nutsedge | Tubers and rhizomes, abrupt leaf tip, reddish spikelet and warm-site persistence |
+| https://weedid.cals.vt.edu/profile/146 | Rescuegrass | Tufted cool-season brome habit, drooping panicle cue, pasture and roadside persistence |
+| https://weedid.cals.vt.edu/profile/475 | Timothy Grass | Bristly cylindrical seedhead cue, toothed ligule, low-maintenance turf and roadside context |
+| https://weedid.cals.vt.edu/profile/189 | Bermudagrass | Stolons and rhizomes, finger-like seedhead cue, cool-season turf invasion context |
+| https://weedid.cals.vt.edu/profile/218 | Giant Foxtail | Hairy leaf and ligule cues, nodding foxtail head, cultivated-ground competition framing |
+| https://weedid.cals.vt.edu/profile/507 | Hairy Cat's Ear | Rough hairy rosette cue, yellow heads, dry pasture and lawn persistence |
+| https://weedid.cals.vt.edu/profile/212 | Tall Oatgrass | Tall bunchgrass form, awned panicle cue, low-fertility roadside and old-field persistence |
+| https://weedid.cals.vt.edu/profile/399 | Sweet Vernalgrass | Sweet scent cue, early seedhead timing, pasture and ditch-bank persistence |
+| https://weedid.cals.vt.edu/profile/105 | Moth Mullein | Hairless mullein rosette cue, peduncled flowers, pasture and right-of-way context |
+| https://weedid.cals.vt.edu/profile/67 | Deptford Pink | Needlelike opposite leaves, speckled pink flowers, dry-field and roadside persistence |
+| https://weedid.cals.vt.edu/profile/75 | Rabbitfoot Clover | Silky cylindrical flower-head cue, hairy annual habit, sandy infertile-soil context |
+| https://weedid.cals.vt.edu/profile/402 | Hedgemustard | Pods pressed to stem, wiry roadside habit, compacted-edge persistence |
+| https://weedid.cals.vt.edu/profile/597 | Littlepod False Flax | Glaucous clasping leaves, narrow pod cue, winter annual dry-field behavior |
+| https://weedid.cals.vt.edu/profile/458 | Birdeye Speedwell | Showier blue flower cue, heart-shaped capsule, cool-season garden and turf context |
+| https://weedid.cals.vt.edu/profile/777 | Red Sandspurry | Slender stipulate stems, tiny pink flowers, gritty open-ground persistence |
+| https://weedid.cals.vt.edu/profile/95 | Gallant Soldier | Fast-cycling cultivated-ground habit, tiny daisy heads, nursery and garden context |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
