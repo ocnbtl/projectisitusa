@@ -243,9 +243,16 @@ function loadRegistryCatalog(countyPresenceSeed: {
 
     if (existing) {
       if (!existing.image) {
-        existing.image = speciesImagesByScientificName.get(
+        const manifestImage = speciesImagesByScientificName.get(
           record.scientificName.toLowerCase(),
         );
+
+        if (manifestImage) {
+          existing.image = {
+            ...manifestImage,
+            alt: `${existing.commonName} (${record.scientificName})`,
+          };
+        }
       }
       existing.registry = {
         locality: "L48",

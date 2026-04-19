@@ -86,3 +86,29 @@ There was also another meaningful public-name cleanup layer in this chunk:
 1. Do not assume a third `30+` pass is automatically the right next move just because `2L` and `2M` both landed.
 2. Recheck whether category repair can finally resume with a smaller mixed batch after this chunk.
 3. Keep documenting the source-cluster tradeoff explicitly whenever batch size and category balance conflict.
+
+## Post-Deploy Verification
+
+Post-deploy spot-checks were run on `2026-04-19` after `7decc09` reached production.
+
+Confirmed live:
+
+- `https://isitusa.com`
+- `https://isitusa.com/about`
+- `https://isitusa.com/species/trifolium-pratense`
+- `https://isitusa.com/species/cyperus-rotundus`
+- `https://isitusa.com/species/setaria-faberi`
+- `https://isitusa.com/species/galinsoga-parviflora`
+
+Each sampled species page rendered with the expected summary, section structure, source attribution, action block, and hero image.
+
+The earlier `www` contradiction is no longer open:
+
+- `https://www.isitusa.com` returned live homepage HTML on `2026-04-19`.
+- Exact first-hop redirect headers were not revalidated in this step because direct header-only checks were unreliable from the current sandboxed session.
+
+One real contradiction did surface during the spot-check:
+
+- some `2M` pages with public-name cleanup were still exposing stale registry-style hero-image alt text from the image manifest, even though the visible curated common names were correct
+
+That issue was verified on production for `Purple Nutsedge` and `Giant Foxtail`, and the build pipeline was updated so curated profiles that inherit a manifest image now derive the alt label from the curated common name instead of the stale upstream manifest name.
