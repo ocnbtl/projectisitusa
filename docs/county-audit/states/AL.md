@@ -36,11 +36,11 @@ Statewide source path started on 2026-04-20.
 | 01035 | Conecuh | complete-state-source-only | yes | no | Reviewed [Conecuh County Extension Office](https://www.aces.edu/counties/conecuh/) and [Conecuh County category page](https://www.aces.edu/blog/category/counties/conecuh/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01037 | Coosa | complete-state-source-only | yes | no | Reviewed [Coosa County Extension Office](https://www.aces.edu/counties/coosa/) and [Coosa County category page](https://www.aces.edu/blog/category/counties/coosa/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01039 | Covington | complete-state-source-only | yes | no | Reviewed [Covington County Extension Office](https://www.aces.edu/counties/covington/) and [Covington County category page](https://www.aces.edu/blog/category/counties/covington/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
-| 01041 | Crenshaw | not-started | yes | no | |
-| 01043 | Cullman | not-started | yes | no | |
-| 01045 | Dale | not-started | yes | no | |
-| 01047 | Dallas | not-started | yes | no | |
-| 01049 | DeKalb | not-started | yes | no | |
+| 01041 | Crenshaw | complete-state-source-only | yes | no | Reviewed [Crenshaw County Extension Office](https://www.aces.edu/counties/crenshaw/) and [Crenshaw County category page](https://www.aces.edu/blog/category/counties/crenshaw/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01043 | Cullman | complete-state-source-only | yes | no | Reviewed [Cullman County Extension Office](https://www.aces.edu/counties/cullman/) and [Cullman County category page](https://www.aces.edu/blog/category/counties/cullman/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01045 | Dale | complete-state-source-only | yes | no | Reviewed [Dale County Extension Office](https://www.aces.edu/counties/dale/) and [Dale County category page](https://www.aces.edu/blog/category/counties/dale/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01047 | Dallas | complete-state-source-only | yes | no | Reviewed [Dallas County Extension Office](https://www.aces.edu/counties/dallas/) and [Dallas County category page](https://www.aces.edu/blog/category/counties/dallas/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01049 | DeKalb | complete-state-source-only | yes | no | Reviewed [DeKalb County Extension Office](https://www.aces.edu/counties/dekalb/) and [DeKalb County category page](https://www.aces.edu/blog/category/counties/dekalb/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01051 | Elmore | not-started | yes | no | |
 | 01053 | Escambia | not-started | yes | no | |
 | 01055 | Etowah | not-started | yes | no | |

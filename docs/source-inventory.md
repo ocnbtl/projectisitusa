@@ -561,6 +561,21 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/counties/covington/ | Alabama county audit | Covington County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/covington/ | Alabama county audit | Covington County official category page check during county-source review |
 
+### County audit Alabama chunk 5, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.aces.edu/counties/crenshaw/ | Alabama county audit | Crenshaw County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/crenshaw/ | Alabama county audit | Crenshaw County official category page check during county-source review |
+| https://www.aces.edu/counties/cullman/ | Alabama county audit | Cullman County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/cullman/ | Alabama county audit | Cullman County official category page check during county-source review |
+| https://www.aces.edu/counties/dale/ | Alabama county audit | Dale County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/dale/ | Alabama county audit | Dale County official category page check during county-source review |
+| https://www.aces.edu/counties/dallas/ | Alabama county audit | Dallas County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/dallas/ | Alabama county audit | Dallas County official category page check during county-source review |
+| https://www.aces.edu/counties/dekalb/ | Alabama county audit | DeKalb County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/dekalb/ | Alabama county audit | DeKalb County official category page check during county-source review |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

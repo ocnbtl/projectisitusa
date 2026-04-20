@@ -616,4 +616,159 @@ export const countyDetailSeed: CountyDetail[] = [
       },
     ],
   },
+  {
+    countyFips: "01041",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Crenshaw County has reviewed official county extension sources, but the public material checked so far does not verify county-specific invasive occurrence reporting.",
+    headline: "Crenshaw County still leans on broader coverage",
+    countySummary:
+      "Crenshaw County remains in the statewide-only evidence tier after the current audit pass. The county source path is real and attributable, but it still does not expose a county-specific invasive list, dashboard, or formal detection notice strong enough for sharper county-level claims.",
+    summaryParagraphs: [
+      "Crenshaw County has enough local public structure to keep the audit grounded, but the reviewed official sources still stop short of county-specific invasive occurrence evidence.",
+      "That keeps the live county detail in the careful-awareness lane instead of pretending it is already a finished local inventory.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Crenshaw County Extension Office",
+        url: "https://www.aces.edu/counties/crenshaw/",
+        kind: "county-extension",
+      },
+      {
+        label: "Crenshaw County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/crenshaw/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01043",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Cullman County has a reviewed official source path, but the public county material checked so far does not support a county-specific invasive occurrence claim.",
+    headline: "Cullman County still needs local proof",
+    countySummary:
+      "Cullman County currently still depends on statewide and federal invasive datasets in the live explorer. The audit verified local extension pages, but it did not surface a county-specific invasive list, viewer, or formal detection notice that would justify stronger county language.",
+    summaryParagraphs: [
+      "Cullman County has a legitimate local public source trail, but the reviewed material still reads as county program context rather than county occurrence evidence.",
+      "Until that changes, the county detail should stay direct and useful without overstating what the public source stack can prove.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Cullman County Extension Office",
+        url: "https://www.aces.edu/counties/cullman/",
+        kind: "county-extension",
+      },
+      {
+        label: "Cullman County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/cullman/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01045",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Dale County has reviewed official county pages, but no county-specific invasive list or detection notice strong enough for production use has been verified yet.",
+    headline: "Dale County still lacks a local list",
+    countySummary:
+      "Dale County has been reviewed against the current Alabama statewide baseline plus county extension sources. Those materials are attributable, but they still do not provide county-specific invasive occurrence evidence strong enough to tighten the county detail.",
+    summaryParagraphs: [
+      "Dale County is another case where the local public source path exists, but it has not yet turned into a county-specific invasive list, map, or formal detection record.",
+      "For now, the live county view is still best read as broader awareness context rather than a finished county inventory.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Dale County Extension Office",
+        url: "https://www.aces.edu/counties/dale/",
+        kind: "county-extension",
+      },
+      {
+        label: "Dale County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/dale/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01047",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Dallas County public extension sources are attributable, but the reviewed official material still does not verify county-specific invasive occurrence reporting.",
+    headline: "Dallas County still runs on statewide evidence",
+    countySummary:
+      "Dallas County remains in the statewide-only evidence tier after this audit pass. The reviewed county extension office and category sources confirm a real local source trail, but they do not yet amount to a county-specific invasive list or formal detection notice.",
+    summaryParagraphs: [
+      "Dallas County has enough reviewed local context to keep the audit grounded, but it still lacks the county-specific invasive reporting needed for stronger county-level claims.",
+      "So the county detail should stay practical and cautious while Alabama's broader local-source picture keeps developing.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Dallas County Extension Office",
+        url: "https://www.aces.edu/counties/dallas/",
+        kind: "county-extension",
+      },
+      {
+        label: "Dallas County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/dallas/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01049",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "DeKalb County has a reviewed official source path, but no county-specific invasive list, dashboard, or detection notice strong enough for production use has been verified from the public sources checked so far.",
+    headline: "DeKalb County still needs local reporting",
+    countySummary:
+      "DeKalb County still leans on statewide and federal invasive datasets in the live explorer. The county audit verified local extension sources, but those materials do not yet provide county-specific invasive occurrence evidence that would support stronger county-level wording.",
+    summaryParagraphs: [
+      "DeKalb County has a legitimate local public source trail, but it still has not surfaced the kind of county-specific invasive reporting that would make the county detail feel truly local.",
+      "That keeps the county in the same conservative evidence tier as most Alabama counties reviewed so far.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "DeKalb County Extension Office",
+        url: "https://www.aces.edu/counties/dekalb/",
+        kind: "county-extension",
+      },
+      {
+        label: "DeKalb County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/dekalb/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
 ];
