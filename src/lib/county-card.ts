@@ -46,16 +46,22 @@ const stateFeatures = (
   >
 ).features as Array<GeometryFeature & { id?: string | number }>;
 
-const lower48States = stateFeatures.filter(
-  (item) => !EXCLUDED_STATE_PREFIXES.has(String(item.id).padStart(2, "0")),
-);
-
 const countyFeatureByFips = new Map(
   countyFeatures.map((item) => [String(item.id).padStart(5, "0"), item]),
 );
 const stateFeatureByFips = new Map(
   stateFeatures.map((item) => [String(item.id).padStart(2, "0"), item]),
 );
+const stateCountyFeaturesByFips = new Map<string, Array<GeometryFeature & { id?: string | number }>>();
+
+for (const item of countyFeatures) {
+  const countyFips = String(item.id).padStart(5, "0");
+  const stateFips = countyFips.slice(0, 2);
+  if (EXCLUDED_STATE_PREFIXES.has(stateFips)) continue;
+  const current = stateCountyFeaturesByFips.get(stateFips) ?? [];
+  current.push(item);
+  stateCountyFeaturesByFips.set(stateFips, current);
+}
 
 export const COUNTY_CARD_PRESETS: CountyCardPreset[] = [
   {
@@ -181,8 +187,8 @@ function getToneColors(tone: SpeciesCategory | "neutral") {
 type PresetLayout = {
   titleBox: { x: number; y: number; width: number; height: number };
   mapBox: { x: number; y: number; width: number; height: number };
-  statsY: number;
   statsHeight: number;
+  statsBottomGap: number;
   textInsetX: number;
   headlineChars: number;
   headlineMaxLines: number;
@@ -198,6 +204,15 @@ type PresetLayout = {
   statCaptionSize: number;
   cardTitleSize: number;
   footerSize: number;
+  cardTitleOffsetY: number;
+  accentOffsetY: number;
+  headlineOffsetY: number;
+  summaryGap: number;
+  mapInsetX: number;
+  mapInsetTop: number;
+  mapInsetBottom: number;
+  mapLabelOffsetX: number;
+  mapLabelOffsetY: number;
 };
 
 function getPresetLayout({
@@ -217,171 +232,225 @@ function getPresetLayout({
 
   switch (preset.id) {
     case "landscape": {
-      const titleWidth = Math.round(contentWidth * 0.45);
+      const titleWidth = Math.round(contentWidth * 0.44);
       return {
-        titleBox: { x: contentX, y: contentY, width: titleWidth, height: 150 },
+        titleBox: { x: contentX, y: contentY, width: titleWidth, height: 168 },
         mapBox: {
           x: contentX + titleWidth + 24,
-          y: contentY + 4,
+          y: contentY + 6,
           width: contentWidth - titleWidth - 24,
-          height: 206,
+          height: 188,
         },
-        statsY: contentY + contentHeight - statsHeight,
         statsHeight,
+        statsBottomGap: 28,
         textInsetX: 24,
-        headlineChars: 23,
+        headlineChars: 22,
         headlineMaxLines: 3,
-        headlineSize: 24,
-        headlineLineHeight: 28,
-        summaryChars: 39,
+        headlineSize: 23,
+        headlineLineHeight: 27,
+        summaryChars: 35,
         summaryMaxLines: 2,
-        summarySize: 16,
-        summaryLineHeight: 22,
-        cardTitleChars: 36,
+        summarySize: 15,
+        summaryLineHeight: 21,
+        cardTitleChars: 30,
         mapLabelSize: 13,
         statValueSize: 28,
         statCaptionSize: 13,
         cardTitleSize: 15,
         footerSize: 16,
+        cardTitleOffsetY: 26,
+        accentOffsetY: 46,
+        headlineOffsetY: 74,
+        summaryGap: 20,
+        mapInsetX: 14,
+        mapInsetTop: 22,
+        mapInsetBottom: 14,
+        mapLabelOffsetX: 14,
+        mapLabelOffsetY: 14,
       };
     }
     case "widescreen": {
       const titleWidth = Math.round(contentWidth * 0.42);
       return {
-        titleBox: { x: contentX, y: contentY, width: titleWidth, height: 234 },
+        titleBox: { x: contentX, y: contentY, width: titleWidth, height: 206 },
         mapBox: {
           x: contentX + titleWidth + 30,
-          y: contentY + 8,
+          y: contentY + 10,
           width: contentWidth - titleWidth - 30,
-          height: 266,
+          height: 220,
         },
-        statsY: contentY + contentHeight - statsHeight,
         statsHeight,
+        statsBottomGap: 30,
         textInsetX: 28,
-        headlineChars: 24,
+        headlineChars: 22,
         headlineMaxLines: 3,
-        headlineSize: 44,
-        headlineLineHeight: 48,
-        summaryChars: 43,
+        headlineSize: 39,
+        headlineLineHeight: 43,
+        summaryChars: 34,
         summaryMaxLines: 2,
-        summarySize: 25,
-        summaryLineHeight: 34,
-        cardTitleChars: 42,
+        summarySize: 20,
+        summaryLineHeight: 28,
+        cardTitleChars: 31,
         mapLabelSize: 16,
         statValueSize: 40,
         statCaptionSize: 16,
         cardTitleSize: 23,
         footerSize: 21,
+        cardTitleOffsetY: 30,
+        accentOffsetY: 54,
+        headlineOffsetY: 88,
+        summaryGap: 22,
+        mapInsetX: 18,
+        mapInsetTop: 24,
+        mapInsetBottom: 18,
+        mapLabelOffsetX: 16,
+        mapLabelOffsetY: 16,
       };
     }
     case "story":
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 316 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 284 },
         mapBox: {
           x: contentX,
-          y: contentY + 350,
+          y: contentY + 322,
           width: contentWidth,
-          height: 1088,
+          height: 1110,
         },
-        statsY: contentY + contentHeight - statsHeight,
         statsHeight,
+        statsBottomGap: 36,
         textInsetX: 30,
-        headlineChars: 21,
+        headlineChars: 20,
         headlineMaxLines: 3,
-        headlineSize: 50,
-        headlineLineHeight: 52,
-        summaryChars: 28,
-        summaryMaxLines: 2,
-        summarySize: 26,
-        summaryLineHeight: 36,
-        cardTitleChars: 34,
+        headlineSize: 46,
+        headlineLineHeight: 48,
+        summaryChars: 24,
+        summaryMaxLines: 3,
+        summarySize: 23,
+        summaryLineHeight: 31,
+        cardTitleChars: 28,
         mapLabelSize: 18,
         statValueSize: 36,
         statCaptionSize: 15,
         cardTitleSize: 25,
         footerSize: 21,
+        cardTitleOffsetY: 30,
+        accentOffsetY: 56,
+        headlineOffsetY: 92,
+        summaryGap: 26,
+        mapInsetX: 18,
+        mapInsetTop: 22,
+        mapInsetBottom: 30,
+        mapLabelOffsetX: 16,
+        mapLabelOffsetY: 16,
       };
     case "portrait":
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 228 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 208 },
         mapBox: {
           x: contentX,
-          y: contentY + 268,
+          y: contentY + 244,
           width: contentWidth,
-          height: 730,
+          height: 750,
         },
-        statsY: contentY + contentHeight - statsHeight,
         statsHeight,
+        statsBottomGap: 32,
         textInsetX: 28,
-        headlineChars: 23,
+        headlineChars: 21,
         headlineMaxLines: 3,
-        headlineSize: 34,
-        headlineLineHeight: 38,
-        summaryChars: 31,
+        headlineSize: 32,
+        headlineLineHeight: 35,
+        summaryChars: 26,
         summaryMaxLines: 2,
-        summarySize: 20,
-        summaryLineHeight: 28,
-        cardTitleChars: 34,
+        summarySize: 18,
+        summaryLineHeight: 25,
+        cardTitleChars: 28,
         mapLabelSize: 15,
         statValueSize: 31,
         statCaptionSize: 14,
         cardTitleSize: 20,
         footerSize: 19,
+        cardTitleOffsetY: 28,
+        accentOffsetY: 50,
+        headlineOffsetY: 82,
+        summaryGap: 22,
+        mapInsetX: 16,
+        mapInsetTop: 22,
+        mapInsetBottom: 18,
+        mapLabelOffsetX: 16,
+        mapLabelOffsetY: 16,
       };
     case "tall":
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 248 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 222 },
         mapBox: {
           x: contentX,
-          y: contentY + 290,
+          y: contentY + 258,
           width: contentWidth,
-          height: 920,
+          height: 960,
         },
-        statsY: contentY + contentHeight - statsHeight,
         statsHeight,
+        statsBottomGap: 34,
         textInsetX: 28,
-        headlineChars: 23,
+        headlineChars: 22,
         headlineMaxLines: 3,
-        headlineSize: 38,
-        headlineLineHeight: 42,
-        summaryChars: 31,
-        summaryMaxLines: 2,
-        summarySize: 22,
-        summaryLineHeight: 30,
-        cardTitleChars: 34,
+        headlineSize: 36,
+        headlineLineHeight: 40,
+        summaryChars: 28,
+        summaryMaxLines: 3,
+        summarySize: 20,
+        summaryLineHeight: 28,
+        cardTitleChars: 28,
         mapLabelSize: 16,
         statValueSize: 33,
         statCaptionSize: 14,
         cardTitleSize: 21,
         footerSize: 19,
+        cardTitleOffsetY: 28,
+        accentOffsetY: 52,
+        headlineOffsetY: 86,
+        summaryGap: 22,
+        mapInsetX: 16,
+        mapInsetTop: 24,
+        mapInsetBottom: 22,
+        mapLabelOffsetX: 16,
+        mapLabelOffsetY: 16,
       };
     case "square":
     default:
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 214 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 196 },
         mapBox: {
           x: contentX,
-          y: contentY + 254,
+          y: contentY + 228,
           width: contentWidth,
-          height: 478,
+          height: 508,
         },
-        statsY: contentY + contentHeight - statsHeight,
         statsHeight,
+        statsBottomGap: 30,
         textInsetX: 26,
-        headlineChars: 23,
+        headlineChars: 20,
         headlineMaxLines: 3,
-        headlineSize: 29,
-        headlineLineHeight: 33,
-        summaryChars: 33,
+        headlineSize: 27,
+        headlineLineHeight: 31,
+        summaryChars: 24,
         summaryMaxLines: 2,
-        summarySize: 18,
-        summaryLineHeight: 25,
-        cardTitleChars: 32,
+        summarySize: 16,
+        summaryLineHeight: 23,
+        cardTitleChars: 26,
         mapLabelSize: 15,
         statValueSize: 28,
         statCaptionSize: 13,
         cardTitleSize: 18,
         footerSize: 18,
+        cardTitleOffsetY: 26,
+        accentOffsetY: 46,
+        headlineOffsetY: 78,
+        summaryGap: 20,
+        mapInsetX: 16,
+        mapInsetTop: 24,
+        mapInsetBottom: 18,
+        mapLabelOffsetX: 16,
+        mapLabelOffsetY: 16,
       };
   }
 }
@@ -433,49 +502,22 @@ function buildMapPaths({
   const stateFips = county.countyFips.slice(0, 2);
   const countyFeature = countyFeatureByFips.get(county.countyFips);
   const stateFeature = stateFeatureByFips.get(stateFips);
+  const stateCountyFeatures = stateCountyFeaturesByFips.get(stateFips) ?? [];
   const projection = geoAlbersUsa();
 
-  projection.fitExtent(
-    [
-      [mapX, mapY],
-      [mapX + mapWidth, mapY + mapHeight],
-    ],
-    {
-      type: "FeatureCollection",
-      features: lower48States,
-    } as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>,
-  );
-
   if (stateFeature) {
-    const fullPath = geoPath(projection);
-    const stateBounds = fullPath.bounds(stateFeature as never);
-    const padX = (stateBounds[1][0] - stateBounds[0][0]) * 1.15;
-    const padY = (stateBounds[1][1] - stateBounds[0][1]) * 1.15;
-    const regionStates = lower48States.filter((item) => {
-      const bounds = fullPath.bounds(item as never);
-      return !(
-        bounds[1][0] < stateBounds[0][0] - padX ||
-        bounds[0][0] > stateBounds[1][0] + padX ||
-        bounds[1][1] < stateBounds[0][1] - padY ||
-        bounds[0][1] > stateBounds[1][1] + padY
-      );
-    });
-
     projection.fitExtent(
       [
         [mapX, mapY],
         [mapX + mapWidth, mapY + mapHeight],
       ],
-      {
-        type: "FeatureCollection",
-        features: regionStates.length > 0 ? regionStates : [stateFeature],
-      } as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>,
+      stateFeature as never,
     );
   }
 
   const path = geoPath(projection);
 
-  const states = lower48States
+  const counties = stateCountyFeatures
     .map((item) => {
       const outline = path(item as never);
       if (!outline) return "";
@@ -484,7 +526,7 @@ function buildMapPaths({
     .join("");
 
   return {
-    states,
+    counties,
     selectedStatePath: stateFeature ? path(stateFeature as never) : null,
     selectedCountyPath: countyFeature ? path(countyFeature as never) : null,
   };
@@ -603,6 +645,7 @@ export function buildCountyCardSvg({
     contentWidth,
     contentHeight,
   });
+  const statsY = contentY + contentHeight - layout.statsHeight - layout.statsBottomGap;
   const headlineLines = wrapText(headline, layout.headlineChars, layout.headlineMaxLines);
   const summaryLines = wrapText(summary, layout.summaryChars, layout.summaryMaxLines);
   const cardTitleLines = wrapText(
@@ -610,27 +653,27 @@ export function buildCountyCardSvg({
     layout.cardTitleChars,
     1,
   );
-  const cardTitleY = layout.titleBox.y + 30;
-  const accentY = cardTitleY + layout.cardTitleSize + 12;
-  const headlineY = accentY + 40;
+  const cardTitleY = layout.titleBox.y + layout.cardTitleOffsetY;
+  const accentY = layout.titleBox.y + layout.accentOffsetY;
+  const headlineY = layout.titleBox.y + layout.headlineOffsetY;
   const summaryStartY =
-    headlineY + (headlineLines.length - 1) * layout.headlineLineHeight + 28;
+    headlineY + (headlineLines.length - 1) * layout.headlineLineHeight + layout.summaryGap;
   const textClipX = layout.titleBox.x + 18;
   const textClipY = layout.titleBox.y + 18;
   const textClipWidth = layout.titleBox.width - 36;
   const textClipHeight = layout.titleBox.height - 36;
   const mapPaths = buildMapPaths({
     county,
-    mapX: layout.mapBox.x + 24,
-    mapY: layout.mapBox.y + 58,
-    mapWidth: layout.mapBox.width - 48,
-    mapHeight: layout.mapBox.height - 86,
+    mapX: layout.mapBox.x + layout.mapInsetX,
+    mapY: layout.mapBox.y + layout.mapInsetTop,
+    mapWidth: layout.mapBox.width - layout.mapInsetX * 2,
+    mapHeight: layout.mapBox.height - layout.mapInsetTop - layout.mapInsetBottom,
     baseFill: "#13211C",
     stroke: "rgba(255,255,255,0.08)",
   });
   const mapLabel = `${county.name} County in red.`;
   const mapLabelWidth = Math.min(
-    layout.mapBox.width - 48,
+    layout.mapBox.width - layout.mapLabelOffsetX * 2,
     Math.max(180, Math.round(mapLabel.length * layout.mapLabelSize * 0.64)),
   );
 
@@ -685,12 +728,11 @@ export function buildCountyCardSvg({
       color: "#D7E1DB",
     })}
   </g>
-  <rect x="${layout.mapBox.x}" y="${layout.mapBox.y}" width="${layout.mapBox.width}" height="${layout.mapBox.height}" rx="30" fill="rgba(16,28,24,0.96)" stroke="rgba(255,255,255,0.07)" />
   <g clip-path="url(#mapClip)">
-    ${mapPaths.states}
+    ${mapPaths.counties}
     ${
       mapPaths.selectedStatePath
-        ? `<path d="${mapPaths.selectedStatePath}" fill="rgba(120,197,139,0.14)" stroke="${primaryTone.accent}" stroke-width="1.4" />`
+        ? `<path d="${mapPaths.selectedStatePath}" fill="rgba(255,255,255,0.01)" stroke="${primaryTone.accent}" stroke-width="2" />`
         : ""
     }
     ${
@@ -699,13 +741,13 @@ export function buildCountyCardSvg({
         : ""
     }
   </g>
-  <rect x="${layout.mapBox.x + 18}" y="${layout.mapBox.y + 14}" width="${mapLabelWidth}" height="${layout.mapLabelSize + 18}" rx="14" fill="rgba(12,23,19,0.9)" stroke="rgba(255,255,255,0.08)" />
-  <text x="${layout.mapBox.x + 28}" y="${layout.mapBox.y + 14 + layout.mapLabelSize + 2}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${layout.mapLabelSize}" font-weight="700">${escapeXml(
+  <rect x="${layout.mapBox.x + layout.mapLabelOffsetX}" y="${layout.mapBox.y + layout.mapLabelOffsetY}" width="${mapLabelWidth}" height="${layout.mapLabelSize + 18}" rx="14" fill="rgba(12,23,19,0.9)" stroke="rgba(255,255,255,0.08)" />
+  <text x="${layout.mapBox.x + layout.mapLabelOffsetX + 10}" y="${layout.mapBox.y + layout.mapLabelOffsetY + layout.mapLabelSize + 2}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${layout.mapLabelSize}" font-weight="700">${escapeXml(
     mapLabel,
   )}</text>
   <defs>
     <clipPath id="mapClip">
-      <rect x="${layout.mapBox.x}" y="${layout.mapBox.y}" width="${layout.mapBox.width}" height="${layout.mapBox.height}" rx="30" />
+      <rect x="${layout.mapBox.x}" y="${layout.mapBox.y}" width="${layout.mapBox.width}" height="${layout.mapBox.height}" rx="20" />
     </clipPath>
     <clipPath id="textClip">
       <rect x="${textClipX}" y="${textClipY}" width="${textClipWidth}" height="${textClipHeight}" rx="24" />
@@ -714,7 +756,7 @@ export function buildCountyCardSvg({
   ${renderStatsRow({
     stats,
     x: contentX,
-    y: layout.statsY,
+    y: statsY,
     width: contentWidth,
     height: layout.statsHeight,
     valueSize: layout.statValueSize,
