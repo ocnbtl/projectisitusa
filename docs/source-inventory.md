@@ -531,6 +531,21 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/counties/cherokee/ | Alabama county audit | Cherokee County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/cherokee/ | Alabama county audit | Cherokee County official category page check during county-source review |
 
+### County audit Alabama chunk 3, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.aces.edu/counties/chilton/ | Alabama county audit | Chilton County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/chilton/ | Alabama county audit | Chilton County official category page check during county-source review |
+| https://www.aces.edu/counties/choctaw/ | Alabama county audit | Choctaw County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/choctaw/ | Alabama county audit | Choctaw County official category page check during county-source review |
+| https://www.aces.edu/counties/clarke/ | Alabama county audit | Clarke County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/clarke/ | Alabama county audit | Clarke County official category page check during county-source review |
+| https://www.aces.edu/counties/clay/ | Alabama county audit | Clay County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/clay/ | Alabama county audit | Clay County official category page check during county-source review |
+| https://www.aces.edu/counties/cleburne/ | Alabama county audit | Cleburne County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/cleburne/ | Alabama county audit | Cleburne County official category page check during county-source review |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

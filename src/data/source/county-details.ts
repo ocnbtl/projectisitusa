@@ -306,4 +306,159 @@ export const countyDetailSeed: CountyDetail[] = [
       },
     ],
   },
+  {
+    countyFips: "01021",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Chilton County has a reviewed official source path, but the public sources checked so far do not yet expose a county-specific invasive list or formal detection notice strong enough for production use.",
+    headline: "Chilton County still leans statewide",
+    countySummary:
+      "Chilton County currently remains in the statewide-only evidence tier. The county audit confirmed local extension coverage and an attributable county source trail, but it did not verify a county-specific invasive species list, dashboard, or detection notice that would justify a stronger local claim.",
+    summaryParagraphs: [
+      "Chilton County has enough local public structure to keep reviewing with confidence, but the current county source path still stops short of a county-specific invasive inventory or formal detection record.",
+      "That means the live explorer should stay readable and useful here without pretending the county audit has more local proof than it really does.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Chilton County Extension Office",
+        url: "https://www.aces.edu/counties/chilton/",
+        kind: "county-extension",
+      },
+      {
+        label: "Chilton County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/chilton/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01023",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Choctaw County has attributable local extension pages, but the reviewed official public sources do not yet support a county-specific invasive occurrence claim.",
+    headline: "Choctaw County still needs local proof",
+    countySummary:
+      "Choctaw County remains dependent on statewide and federal invasive datasets in the live explorer for now. The county audit verified a real local source path through county extension pages, but it still did not surface a county-specific invasive list, viewer, or formal detection notice.",
+    summaryParagraphs: [
+      "Choctaw County has a credible county-level public source path, but the reviewed official material still reads as extension and program context rather than county occurrence evidence.",
+      "Until a county-specific list or report is verified, the county detail should stay conservative and honest about that gap.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Choctaw County Extension Office",
+        url: "https://www.aces.edu/counties/choctaw/",
+        kind: "county-extension",
+      },
+      {
+        label: "Choctaw County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/choctaw/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01025",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Clarke County has reviewed official county pages, but no county-specific invasive list or detection notice strong enough for production use has been verified yet.",
+    headline: "Clarke County still lacks a local list",
+    countySummary:
+      "Clarke County has been reviewed against the current Alabama statewide source plus county extension pages. Those sources are legitimate and attributable, but they still do not provide the county-specific invasive occurrence evidence needed for a sharper county summary.",
+    summaryParagraphs: [
+      "Clarke County is another case where the local public source trail is real, but it has not yet turned into a county-specific invasive list, dashboard, or formal detection report.",
+      "For now, the county view is still best read as a broad signal built from stronger statewide and federal datasets.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Clarke County Extension Office",
+        url: "https://www.aces.edu/counties/clarke/",
+        kind: "county-extension",
+      },
+      {
+        label: "Clarke County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/clarke/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01027",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Clay County public extension sources are attributable, but the reviewed official material still does not verify county-specific invasive occurrence reporting.",
+    headline: "Clay County still runs on broader data",
+    countySummary:
+      "Clay County remains in the statewide-only evidence tier after the current county audit pass. The reviewed county extension office and category sources help confirm local public capacity, but they do not yet amount to a county-specific invasive list or formal detection notice.",
+    summaryParagraphs: [
+      "Clay County has enough reviewed local context to show the audit is not guessing, but it still lacks the county-specific invasive reporting needed for a stronger production claim.",
+      "So the county detail should stay practical and cautious while the broader Alabama source path keeps expanding.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Clay County Extension Office",
+        url: "https://www.aces.edu/counties/clay/",
+        kind: "county-extension",
+      },
+      {
+        label: "Clay County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/clay/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01029",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Cleburne County has a reviewed official source path, but no county-specific invasive list, dashboard, or detection notice strong enough for production use has been verified from the public sources checked so far.",
+    headline: "Cleburne County still needs local reporting",
+    countySummary:
+      "Cleburne County still leans on statewide and federal invasive datasets in the live explorer. The county audit verified local extension sources, but those materials do not yet provide county-specific invasive occurrence evidence that would support a more aggressive local summary.",
+    summaryParagraphs: [
+      "Cleburne County has a legitimate local public source trail, but it still has not surfaced the kind of county-specific invasive reporting that would let the county detail feel truly local.",
+      "That keeps the county in the same conservative evidence tier as most Alabama counties reviewed so far.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Cleburne County Extension Office",
+        url: "https://www.aces.edu/counties/cleburne/",
+        kind: "county-extension",
+      },
+      {
+        label: "Cleburne County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/cleburne/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
 ];
