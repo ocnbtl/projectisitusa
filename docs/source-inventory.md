@@ -515,6 +515,22 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/counties/blount/ | Alabama county audit | Blount County extension office check during county-source review |
 | https://www.aces.edu/blog/topics/blount/blount-county-annual-report/ | Alabama county audit | Blount County annual report check; mentions invasive-plant programming but not a county invasive-species inventory |
 
+### County audit Alabama chunk 2, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.aces.edu/counties/bullock/ | Alabama county audit | Bullock County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/bullock/ | Alabama county audit | Bullock County official category page check during county-source review |
+| https://www.aces.edu/wp-content/uploads/2023/10/ACES-2750-BullockCountyAnnualReport2022_090123L-G.pdf | Alabama county audit | Bullock County annual report check; mentions invasive plant management and aquatic weeds but not a county invasive-species inventory |
+| https://www.aces.edu/counties/butler/ | Alabama county audit | Butler County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/butler/ | Alabama county audit | Butler County official category page check during county-source review |
+| https://www.aces.edu/counties/calhoun/ | Alabama county audit | Calhoun County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/calhoun/ | Alabama county audit | Calhoun County official category page check during county-source review |
+| https://www.aces.edu/counties/chambers/ | Alabama county audit | Chambers County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/chambers/ | Alabama county audit | Chambers County official category page check during county-source review |
+| https://www.aces.edu/counties/cherokee/ | Alabama county audit | Cherokee County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/cherokee/ | Alabama county audit | Cherokee County official category page check during county-source review |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
