@@ -11,6 +11,7 @@ import {
   buildCountyResourceLine,
   buildCountyStats,
   buildCountySummaryParagraphs,
+  type CountyCategorySignal,
 } from "@/lib/county-detail";
 import type {
   CountyDetail,
@@ -26,6 +27,7 @@ interface CountyInsightPanelProps {
   selectedCategories: SpeciesCategory[];
   focalSpecies: ExplorerSpecies[];
   nearbySpecies: ExplorerSpecies[];
+  countyCategorySignal: CountyCategorySignal | null;
   speciesWithoutCountyCoverage: ExplorerSpecies[];
 }
 
@@ -37,6 +39,7 @@ export function CountyInsightPanel({
   selectedCategories,
   focalSpecies,
   nearbySpecies,
+  countyCategorySignal,
   speciesWithoutCountyCoverage,
 }: CountyInsightPanelProps) {
   const unresolvedPreview = speciesWithoutCountyCoverage.slice(0, 12);
@@ -66,14 +69,14 @@ export function CountyInsightPanel({
         detail: selectedCountyDetail,
         focalSpecies,
         nearbySpecies,
-        unresolvedCount: speciesWithoutCountyCoverage.length,
         selectedCategories,
+        categorySignal: countyCategorySignal,
       })
     : [];
   const countyStats = buildCountyStats({
     focalSpecies,
     nearbySpecies,
-    unresolvedCount: speciesWithoutCountyCoverage.length,
+    categorySignal: countyCategorySignal,
   });
   const resourceLabels = buildCountyResourceLine(selectedCountyDetail);
 
@@ -181,7 +184,14 @@ export function CountyInsightPanel({
             <div className="grid gap-5">
               <div className="grid grid-cols-3 gap-4 border-y border-[var(--border)] py-4">
                 {countyStats.map((stat) => (
-                  <div key={`${stat.value}-${stat.caption}`} className="min-w-0">
+                  <div
+                    key={`${stat.value}-${stat.caption}`}
+                    className={`min-w-0 rounded-[24px] px-3 py-3 ${
+                      stat.tone === "neutral"
+                        ? ""
+                        : "bg-[color:rgba(255,255,255,0.03)]"
+                    }`}
+                  >
                     <p className="text-[clamp(2rem,4vw,3.1rem)] font-semibold leading-none text-[var(--foreground)]">
                       {stat.value}
                     </p>
@@ -230,7 +240,7 @@ export function CountyInsightPanel({
               detail={selectedCountyDetail}
               focalSpecies={focalSpecies}
               nearbySpecies={nearbySpecies}
-              unresolvedCount={speciesWithoutCountyCoverage.length}
+              countyCategorySignal={countyCategorySignal}
               filterLabel={buildCountyFilterLabel(selectedCategories)}
             />
           </section>

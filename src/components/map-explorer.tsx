@@ -16,6 +16,7 @@ import {
   speciesMatchesFilters,
   useClientDataStore,
 } from "@/lib/data/client-store";
+import type { CountyCategorySignal } from "@/lib/county-detail";
 import type {
   CountyDetail,
   CountyRecord,
@@ -411,6 +412,59 @@ export function MapExplorer({
     [filters, focalSpecies, neighborCountyFips, presenceIndex, speciesByOrdinal],
   );
   const speciesWithoutCountyCoverage = getSpeciesWithoutCountyCoverage(allSpecies, filters);
+  const countyCategorySignal = useMemo<CountyCategorySignal | null>(() => {
+    if (!selectedCounty) return null;
+
+    const categoryCounts = new Map<SpeciesCategory, number>();
+    for (const species of focalSpecies) {
+      categoryCounts.set(species.category, (categoryCounts.get(species.category) ?? 0) + 1);
+    }
+
+    const strongest = [...categoryCounts.entries()].sort((left, right) => right[1] - left[1])[0];
+    if (!strongest || strongest[1] <= 0) return null;
+
+    const [category, count] = strongest;
+    const countyCategoryCounts = Object.entries(presenceIndex).map(([countyFips, countyPresence]) => {
+      let categoryCount = 0;
+
+      for (const speciesIndex of countyPresence) {
+        const species = speciesByOrdinal[speciesIndex];
+        if (
+          species &&
+          species.category === category &&
+          speciesMatchesFilters(species, filters)
+        ) {
+          categoryCount += 1;
+        }
+      }
+
+      return {
+        countyFips,
+        stateCode: countyIndex[countyFips]?.stateCode ?? "",
+        count: categoryCount,
+      };
+    });
+
+    const nationalSorted = countyCategoryCounts
+      .filter((item) => item.count > 0)
+      .sort((left, right) => right.count - left.count || left.countyFips.localeCompare(right.countyFips));
+    const stateSorted = nationalSorted.filter(
+      (item) => item.stateCode === selectedCounty.stateCode,
+    );
+
+    const nationalRank =
+      nationalSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
+    const stateRank =
+      stateSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
+
+    return {
+      category,
+      count,
+      stateCode: selectedCounty.stateCode,
+      stateRank: stateRank || 9999,
+      nationalRank: nationalRank || 9999,
+    };
+  }, [selectedCounty, focalSpecies, presenceIndex, speciesByOrdinal, filters, countyIndex]);
   const coverageSummary = datasetSnapshot.coverageSummary;
   const hasExpandedCountyDetail = Boolean(selectedCounty);
   const zipInsight = useMemo(
@@ -591,6 +645,7 @@ export function MapExplorer({
             selectedCategories={selectedCategories}
             focalSpecies={focalSpecies}
             nearbySpecies={nearbySpecies}
+            countyCategorySignal={countyCategorySignal}
             speciesWithoutCountyCoverage={speciesWithoutCountyCoverage}
           />
         </div>

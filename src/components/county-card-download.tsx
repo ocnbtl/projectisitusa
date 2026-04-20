@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import NextImage from "next/image";
+import { ArrowRight, Check } from "lucide-react";
 
+import type { CountyCategorySignal } from "@/lib/county-detail";
 import type { CountyDetail, CountyRecord, ExplorerSpecies } from "@/lib/data/types";
 import {
   COUNTY_CARD_PRESETS,
@@ -23,19 +25,25 @@ export function CountyCardDownload({
   detail,
   focalSpecies,
   nearbySpecies,
-  unresolvedCount,
+  countyCategorySignal,
   filterLabel,
 }: {
   county: CountyRecord;
   detail: CountyDetail | null;
   focalSpecies: ExplorerSpecies[];
   nearbySpecies: ExplorerSpecies[];
-  unresolvedCount: number;
+  countyCategorySignal: CountyCategorySignal | null;
   filterLabel: string;
 }) {
-  const [presetId, setPresetId] = useState("story");
-  const [isDownloading, setIsDownloading] = useState(false);
+  const [presetId, setPresetId] = useState("landscape");
+  const [downloadState, setDownloadState] = useState<"idle" | "rendering" | "done">("idle");
   const preset = countyCardPresetById(presetId);
+
+  useEffect(() => {
+    if (downloadState !== "done") return;
+    const timeout = window.setTimeout(() => setDownloadState("idle"), 1500);
+    return () => window.clearTimeout(timeout);
+  }, [downloadState]);
 
   const svgMarkup = useMemo(
     () =>
@@ -45,15 +53,15 @@ export function CountyCardDownload({
         detail,
         focalSpecies,
         nearbySpecies,
-        unresolvedCount,
+        countyCategorySignal,
         filterLabel,
       }),
-    [county, detail, filterLabel, focalSpecies, nearbySpecies, preset, unresolvedCount],
+    [county, countyCategorySignal, detail, filterLabel, focalSpecies, nearbySpecies, preset],
   );
   const previewSrc = useMemo(() => svgToDataUri(svgMarkup), [svgMarkup]);
 
   async function handleDownloadPng() {
-    setIsDownloading(true);
+    setDownloadState("rendering");
 
     try {
       const image = new window.Image();
@@ -90,12 +98,15 @@ export function CountyCardDownload({
       anchor.download = `${slugify(county.name)}-${county.stateCode.toLowerCase()}-county-card-${preset.id}.png`;
       anchor.click();
       URL.revokeObjectURL(url);
-    } finally {
-      setIsDownloading(false);
+      setDownloadState("done");
+    } catch {
+      setDownloadState("idle");
     }
   }
 
   const svgDownloadHref = useMemo(() => previewSrc, [previewSrc]);
+  const isRendering = downloadState === "rendering";
+  const isDone = downloadState === "done";
 
   return (
     <section className="grid gap-4 xl:sticky xl:top-6">
@@ -117,13 +128,13 @@ export function CountyCardDownload({
         />
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="grid grid-cols-6 gap-2">
         {COUNTY_CARD_PRESETS.map((option) => (
           <button
             key={option.id}
             type="button"
             onClick={() => setPresetId(option.id)}
-            className={`rounded-full border px-3 py-2 text-sm ${
+            className={`rounded-full border px-2 py-2 text-center text-xs font-medium ${
               option.id === preset.id
                 ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)]"
                 : "border-[var(--border)] bg-[var(--background)] text-[var(--foreground)]"
@@ -138,10 +149,25 @@ export function CountyCardDownload({
         <button
           type="button"
           onClick={handleDownloadPng}
-          disabled={isDownloading}
-          className="locate-button rounded-full px-4 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-70"
+          disabled={isRendering}
+          className={`county-download-button group inline-flex items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold ${
+            isDone ? "is-done" : ""
+          }`}
         >
-          {isDownloading ? "Rendering PNG..." : "Download PNG"}
+          {isDone ? (
+            <>
+              <Check size={16} />
+              <span>Downloaded</span>
+            </>
+          ) : (
+            <>
+              <span>{isRendering ? "Rendering PNG..." : "Download PNG"}</span>
+              <ArrowRight
+                size={16}
+                className={`county-download-arrow ${isRendering ? "opacity-50" : ""}`}
+              />
+            </>
+          )}
         </button>
         <a
           href={svgDownloadHref}
