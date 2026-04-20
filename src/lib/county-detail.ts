@@ -15,6 +15,19 @@ export interface CountyStat {
   tone: SpeciesCategory | "neutral";
 }
 
+function getCategoryCaption(category: SpeciesCategory) {
+  switch (category) {
+    case "plants":
+      return "plant species";
+    case "insects":
+      return "insect species";
+    case "fungi-diseases":
+      return "fungi and disease species";
+    case "wildlife":
+      return "wildlife species";
+  }
+}
+
 function shortenSpeciesName(value: string) {
   const words = value.split(/\s+/).filter(Boolean);
   if (words.length <= 4) return value;
@@ -51,10 +64,10 @@ export function buildCountyHeadline({
 
   const shortName = shortenSpeciesName(topSpecies.commonName);
   const variants = [
-    `${county.name} County keeps circling back to ${shortName}`,
-    `${shortName} is getting the attention in ${county.name} County`,
-    `${county.name} County has a ${shortName} problem`,
-    `${shortName} is setting the tone in ${county.name} County`,
+    `${shortName} keeps popping up in ${county.name} County`,
+    `${county.name} County has its eye on ${shortName}`,
+    `${shortName} is one of the big watchouts in ${county.name} County`,
+    `${county.name} County keeps running into ${shortName}`,
   ];
 
   return variants[seed];
@@ -83,30 +96,30 @@ export function buildCountySummaryParagraphs({
   const topSpecies = getTopSpecies(focalSpecies);
   const topSpeciesSentence =
     topSpecies.length > 0
-      ? `${formatNaturalList(topSpecies)} are the clearest names to watch right now.`
-      : "Nothing is strongly standing out in the current county view yet.";
+      ? `${formatNaturalList(topSpecies)} jump out first in this view.`
+      : "Nothing is clearly separating itself from the rest of the county view yet.";
   const categorySentence = categorySignal
     ? categorySignal.nationalRank === 1
-      ? `${county.name} County is currently the national high-water mark for ${formatCategoryLabel(
-          categorySignal.category,
-        ).toLowerCase()} in this view.`
-      : categorySignal.stateRank === 1
-        ? `${formatCategoryLabel(categorySignal.category)} are hitting harder here than anywhere else in ${county.stateCode} right now.`
-        : `${formatCategoryLabel(categorySignal.category)} are leading the county picture right now.`
-    : "The county picture is still broad and mixed right now.";
+      ? `${formatCategoryLabel(categorySignal.category)} are stacked here more than anywhere else in this national view.`
+      : categorySignal.nationalRank <= 10
+        ? `${formatCategoryLabel(categorySignal.category)} are heavier here than in most counties in this view.`
+        : categorySignal.stateRank === 1
+          ? `${formatCategoryLabel(categorySignal.category)} are showing up here more than anywhere else in ${county.stateCode} right now.`
+          : `${formatCategoryLabel(categorySignal.category)} stand out more than the other categories in this county right now.`
+    : "The county picture still feels broad and mixed right now.";
   const nearbySentence =
     nearbySpecies.length > 0
-      ? `${nearbySpecies.length.toLocaleString()} more species are showing up in nearby counties, so the local watchlist is probably wider than this county alone suggests.`
-      : "Nearby counties are not adding extra pressure in the current view.";
+      ? `Another ${nearbySpecies.length.toLocaleString()} species are showing up in nearby counties, so the watchlist around ${county.name} County is probably wider than the county line alone suggests.`
+      : "Nearby counties are not adding much extra pressure in the current view.";
   const evidenceSentence = detail?.auditSummary
     ? detail.auditSummary
-    : "The deeper county audit still has work to do here, so this summary is leaning on the current map and broader public datasets rather than a finished local source stack.";
+    : "The deeper county audit is still catching up here, so this summary is leaning on the live map and broader public datasets instead of a finished local source stack.";
 
   const seed = Number(county.countyFips) % 3;
   const openers = [
-    `${county.name} County is looking like a ${filterLabel} story right now.`,
-    `If you live in ${county.name} County, this is where the invasive picture feels most active right now.`,
-    `${county.name} County is not quiet on invasives, even if the county audit is still catching up.`,
+    `${county.name} County has a pretty active ${filterLabel} picture right now.`,
+    `If you live in ${county.name} County, these are the names that would stand out fastest right now.`,
+    `${county.name} County is not quiet on invasives, even if the local audit is still filling in.`,
   ];
 
   return [
@@ -155,11 +168,12 @@ export function buildCountyStats({
   }
 
   const categoryLabel = formatCategoryLabel(categorySignal.category).toLowerCase();
+  const categoryCaption = getCategoryCaption(categorySignal.category);
 
   if (categorySignal.nationalRank === 1) {
     stats.push({
       value: "#1",
-      caption: `U.S. ${categoryLabel}`,
+      caption: `U.S. ${categoryLabel} count`,
       tone: categorySignal.category,
     });
     return stats;
@@ -168,7 +182,7 @@ export function buildCountyStats({
   if (categorySignal.nationalRank <= 10) {
     stats.push({
       value: `Top ${categorySignal.nationalRank}`,
-      caption: `U.S. ${categoryLabel}`,
+      caption: `U.S. ${categoryLabel} count`,
       tone: categorySignal.category,
     });
     return stats;
@@ -177,7 +191,7 @@ export function buildCountyStats({
   if (categorySignal.stateRank === 1) {
     stats.push({
       value: "#1",
-      caption: `${categorySignal.stateCode} ${categoryLabel}`,
+      caption: `${categorySignal.stateCode} ${categoryLabel} count`,
       tone: categorySignal.category,
     });
     return stats;
@@ -185,7 +199,7 @@ export function buildCountyStats({
 
   stats.push({
     value: categorySignal.count.toLocaleString(),
-    caption: `${categoryLabel} lead here`,
+    caption: `${categoryCaption} in view`,
     tone: categorySignal.category,
   });
 
@@ -207,12 +221,24 @@ export function buildCountyCardParagraph({
   selectedCategories: SpeciesCategory[];
   categorySignal: CountyCategorySignal | null;
 }) {
-  return buildCountySummaryParagraphs({
-    county,
-    detail,
-    focalSpecies,
-    nearbySpecies,
+  if (detail?.summaryParagraphs?.length) {
+    return detail.summaryParagraphs[0];
+  }
+
+  const topSpecies = getTopSpecies(focalSpecies);
+  const topSpeciesSentence =
+    topSpecies.length > 0
+      ? `${formatNaturalList(topSpecies)} jump out first.`
+      : "Nothing clearly separates itself from the rest yet.";
+  const categorySentence = categorySignal
+    ? categorySignal.nationalRank === 1
+      ? `${formatCategoryLabel(categorySignal.category)} are stacked here more than anywhere else in this view.`
+      : categorySignal.stateRank === 1
+        ? `${formatCategoryLabel(categorySignal.category)} are showing up here more than anywhere else in ${county.stateCode}.`
+        : `${formatCategoryLabel(categorySignal.category)} stand out more than the other categories here right now.`
+    : "The county picture still feels broad and mixed right now.";
+
+  return `${county.name} County has ${focalSpecies.length.toLocaleString()} mapped invasive species in this ${buildCountyFilterLabel(
     selectedCategories,
-    categorySignal,
-  })[0];
+  ).toLowerCase()} view. ${topSpeciesSentence} ${categorySentence}`;
 }

@@ -110,13 +110,6 @@ export function CountyCardDownload({
 
   return (
     <section className="grid gap-4 xl:sticky xl:top-6">
-      <div className="flex items-end justify-between gap-4">
-        <p className="text-sm text-[var(--muted)]">
-          {preset.label} {preset.width} x {preset.height}
-        </p>
-        <p className="text-sm text-[var(--muted)]">isitusa.com</p>
-      </div>
-
       <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-[color:rgba(255,255,255,0.5)] p-3 shadow-[var(--shadow)]">
         <NextImage
           src={previewSrc}
@@ -134,7 +127,7 @@ export function CountyCardDownload({
             key={option.id}
             type="button"
             onClick={() => setPresetId(option.id)}
-            className={`rounded-full border px-2 py-2 text-center text-xs font-medium ${
+            className={`rounded-full border px-2 py-2 text-center text-[11px] font-medium ${
               option.id === preset.id
                 ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)]"
                 : "border-[var(--border)] bg-[var(--background)] text-[var(--foreground)]"

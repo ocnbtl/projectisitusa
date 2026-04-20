@@ -353,17 +353,73 @@ export function buildCountyCardSvg({
   const resourceText = Array.isArray(resources)
     ? resources.slice(0, 3).join(" / ")
     : resources;
-  const headlineLines = wrapText(
-    headline,
-    mode === "horizontal" ? 28 : mode === "story" ? 23 : 24,
-    2,
-  );
-  const summaryLines = wrapText(
-    summary,
-    mode === "horizontal" ? 44 : mode === "story" ? 30 : 34,
-    mode === "horizontal" ? 5 : mode === "story" ? 6 : 5,
-  );
-  const resourceLines = wrapText(resourceText, mode === "horizontal" ? 48 : 38, 1);
+  const layout =
+    mode === "horizontal"
+      ? {
+          headlineChars: 21,
+          headlineMaxLines: 3,
+          headlineSize: 29,
+          headlineLineHeight: 31,
+          summaryChars: 38,
+          summaryMaxLines: 3,
+          summarySize: 15,
+          summaryLineHeight: 21,
+          filterSize: 13,
+          resourceChars: 40,
+          resourceSize: 13,
+          resourceLineHeight: 18,
+          statsHeight: 70,
+        }
+      : mode === "story"
+        ? {
+            headlineChars: 22,
+            headlineMaxLines: 3,
+            headlineSize: 42,
+            headlineLineHeight: 44,
+            summaryChars: 28,
+            summaryMaxLines: 4,
+            summarySize: 20,
+            summaryLineHeight: 29,
+            filterSize: 18,
+            resourceChars: 32,
+            resourceSize: 16,
+            resourceLineHeight: 22,
+            statsHeight: 84,
+          }
+        : mode === "vertical"
+          ? {
+              headlineChars: 22,
+              headlineMaxLines: 3,
+              headlineSize: 34,
+              headlineLineHeight: 38,
+              summaryChars: 31,
+              summaryMaxLines: 4,
+              summarySize: 18,
+              summaryLineHeight: 26,
+              filterSize: 16,
+              resourceChars: 34,
+              resourceSize: 15,
+              resourceLineHeight: 21,
+              statsHeight: 80,
+            }
+          : {
+              headlineChars: 22,
+              headlineMaxLines: 3,
+              headlineSize: 30,
+              headlineLineHeight: 34,
+              summaryChars: 32,
+              summaryMaxLines: 3,
+              summarySize: 16,
+              summaryLineHeight: 23,
+              filterSize: 14,
+              resourceChars: 36,
+              resourceSize: 14,
+              resourceLineHeight: 20,
+              statsHeight: 76,
+            };
+  const headlineLines = wrapText(headline, layout.headlineChars, layout.headlineMaxLines);
+  const summaryLines = wrapText(summary, layout.summaryChars, layout.summaryMaxLines);
+  const resourceLines = wrapText(resourceText, layout.resourceChars, 1);
 
   let textPanelX = contentX;
   let textPanelY = contentY;
@@ -377,31 +433,40 @@ export function buildCountyCardSvg({
 
   if (mode === "horizontal") {
     textPanelWidth = Math.round(contentWidth * 0.43);
-    textPanelHeight = Math.round(contentHeight * 0.58);
-    mapPanelWidth = Math.round(contentWidth * 0.51);
-    mapPanelHeight = Math.round(contentHeight * 0.62);
+    textPanelHeight = 176;
+    mapPanelWidth = contentWidth - textPanelWidth - 24;
+    mapPanelHeight = 196;
     mapPanelX = contentX + contentWidth - mapPanelWidth;
-    mapPanelY = contentY;
-    statsY = contentY + contentHeight - 92;
+    mapPanelY = contentY + 6;
+    statsY = contentY + contentHeight - layout.statsHeight;
   } else if (mode === "story") {
-    textPanelHeight = 360;
-    mapPanelY = contentY + 430;
-    mapPanelHeight = 980;
-    statsY = contentY + contentHeight - 120;
+    textPanelHeight = 338;
+    mapPanelY = contentY + 392;
+    mapPanelHeight = 904;
+    statsY = contentY + contentHeight - layout.statsHeight;
   } else if (mode === "vertical") {
-    textPanelHeight = 290;
-    mapPanelY = contentY + 360;
-    mapPanelHeight = 720;
-    statsY = contentY + contentHeight - 118;
+    textPanelHeight = 268;
+    mapPanelY = contentY + 316;
+    mapPanelHeight = 676;
+    statsY = contentY + contentHeight - layout.statsHeight;
   } else {
-    textPanelHeight = 250;
-    mapPanelY = contentY + 320;
-    mapPanelHeight = 420;
-    statsY = contentY + contentHeight - 118;
+    textPanelHeight = 218;
+    mapPanelY = contentY + 266;
+    mapPanelHeight = 394;
+    statsY = contentY + contentHeight - layout.statsHeight;
   }
 
-  const summaryStartY = textPanelY + 118;
-  const resourcesY = summaryStartY + summaryLines.length * 26 + 28;
+  const textInsetX = 24;
+  const headlineY = textPanelY + 44;
+  const filterY =
+    headlineY + (headlineLines.length - 1) * layout.headlineLineHeight + 24;
+  const summaryStartY = filterY + 28;
+  const resourcesY =
+    summaryStartY + (summaryLines.length - 1) * layout.summaryLineHeight + 28;
+  const textClipX = textPanelX + 18;
+  const textClipY = textPanelY + 18;
+  const textClipWidth = textPanelWidth - 36;
+  const textClipHeight = textPanelHeight - 36;
   const mapPaths = buildMapPaths({
     county,
     mapX: mapPanelX + 24,
@@ -431,39 +496,41 @@ export function buildCountyCardSvg({
   <rect width="${width}" height="${height}" rx="${Math.round(width * 0.035)}" fill="url(#glowA)" />
   <rect width="${width}" height="${height}" rx="${Math.round(width * 0.035)}" fill="url(#glowB)" />
   <rect x="${innerX}" y="${innerY}" width="${innerWidth}" height="${innerHeight}" rx="${Math.round(width * 0.032)}" fill="rgba(255,255,255,0.74)" stroke="rgba(23,30,27,0.08)" />
-  <rect x="${textPanelX}" y="${textPanelY}" width="${textPanelWidth}" height="${textPanelHeight}" rx="30" fill="rgba(255,255,255,0.86)" stroke="rgba(23,30,27,0.06)" />
-  <rect x="${textPanelX}" y="${textPanelY}" width="${textPanelWidth}" height="12" rx="12" fill="${primaryTone.accent}" />
-  ${renderTextLines({
-    lines: headlineLines,
-    x: textPanelX + 26,
-    y: textPanelY + 78,
-    lineHeight: mode === "horizontal" ? 42 : 50,
-    size: mode === "horizontal" ? 42 : mode === "story" ? 48 : 44,
-    color: "#171E1B",
-    weight: 700,
-  })}
-  <text x="${textPanelX + 26}" y="${textPanelY + 102 + headlineLines.length * (mode === "horizontal" ? 42 : 50)}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${mode === "horizontal" ? 18 : 19}" font-weight="700">${escapeXml(
-    filterLabel,
-  )}</text>
-  ${renderTextLines({
-    lines: summaryLines,
-    x: textPanelX + 26,
-    y: summaryStartY,
-    lineHeight: 26,
-    size: mode === "horizontal" ? 18 : 20,
-    color: "#23312A",
-  })}
-  ${renderTextLines({
-    lines: resourceLines,
-    x: textPanelX + 26,
-    y: resourcesY,
-    lineHeight: 22,
-    size: 15,
-    color: "#66706A",
-    weight: 600,
-  })}
+  <rect x="${textPanelX}" y="${textPanelY}" width="${textPanelWidth}" height="${textPanelHeight}" rx="30" fill="rgba(255,255,255,0.88)" stroke="rgba(23,30,27,0.06)" />
+  <rect x="${textPanelX + 18}" y="${textPanelY + 16}" width="${Math.max(120, textPanelWidth * 0.46)}" height="6" rx="6" fill="${primaryTone.accent}" opacity="0.92" />
+  <g clip-path="url(#textClip)">
+    ${renderTextLines({
+      lines: headlineLines,
+      x: textPanelX + textInsetX,
+      y: headlineY,
+      lineHeight: layout.headlineLineHeight,
+      size: layout.headlineSize,
+      color: "#171E1B",
+      weight: 700,
+    })}
+    <text x="${textPanelX + textInsetX}" y="${filterY}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${layout.filterSize}" font-weight="700">${escapeXml(
+      filterLabel,
+    )}</text>
+    ${renderTextLines({
+      lines: summaryLines,
+      x: textPanelX + textInsetX,
+      y: summaryStartY,
+      lineHeight: layout.summaryLineHeight,
+      size: layout.summarySize,
+      color: "#23312A",
+    })}
+    ${renderTextLines({
+      lines: resourceLines,
+      x: textPanelX + textInsetX,
+      y: resourcesY,
+      lineHeight: layout.resourceLineHeight,
+      size: layout.resourceSize,
+      color: "#66706A",
+      weight: 600,
+    })}
+  </g>
   <rect x="${mapPanelX}" y="${mapPanelY}" width="${mapPanelWidth}" height="${mapPanelHeight}" rx="30" fill="rgba(255,255,255,0.8)" stroke="rgba(23,30,27,0.06)" />
-  <text x="${mapPanelX + 24}" y="${mapPanelY + 28}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="15" font-weight="700">${escapeXml(
+  <text x="${mapPanelX + 24}" y="${mapPanelY + 28}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${mode === "horizontal" ? 13 : 15}" font-weight="700">${escapeXml(
     `${county.stateName} in green, county in coral.`,
   )}</text>
   <g clip-path="url(#mapClip)">
@@ -483,13 +550,16 @@ export function buildCountyCardSvg({
     <clipPath id="mapClip">
       <rect x="${mapPanelX}" y="${mapPanelY}" width="${mapPanelWidth}" height="${mapPanelHeight}" rx="30" />
     </clipPath>
+    <clipPath id="textClip">
+      <rect x="${textClipX}" y="${textClipY}" width="${textClipWidth}" height="${textClipHeight}" rx="24" />
+    </clipPath>
   </defs>
   ${renderStatsRow({
     stats,
     x: contentX,
     y: statsY,
     width: contentWidth,
-    height: 82,
+    height: layout.statsHeight,
   })}
   <text x="${contentX}" y="${innerY + innerHeight - 16}" fill="#47524A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="14">isitusa.com</text>
   <text x="${innerX + innerWidth - cardPad}" y="${innerY + innerHeight - 16}" text-anchor="end" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="14">${escapeXml(

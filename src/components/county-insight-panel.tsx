@@ -203,7 +203,7 @@ export function CountyInsightPanel({
               </div>
 
               <div className="grid gap-4">
-                <h3 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.02] text-[var(--foreground)]">
+                <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.7rem,3.2vw,2.65rem)] font-semibold leading-[1.04] text-[var(--foreground)]">
                   {countyHeadline}
                 </h3>
 

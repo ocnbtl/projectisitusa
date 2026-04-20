@@ -420,50 +420,104 @@ export function MapExplorer({
       categoryCounts.set(species.category, (categoryCounts.get(species.category) ?? 0) + 1);
     }
 
-    const strongest = [...categoryCounts.entries()].sort((left, right) => right[1] - left[1])[0];
-    if (!strongest || strongest[1] <= 0) return null;
+    const categoryPreference: Record<SpeciesCategory, number> = {
+      insects: 4,
+      wildlife: 3,
+      "fungi-diseases": 2,
+      plants: 1,
+    };
 
-    const [category, count] = strongest;
-    const countyCategoryCounts = Object.entries(presenceIndex).map(([countyFips, countyPresence]) => {
-      let categoryCount = 0;
+    const signals = [...categoryCounts.entries()]
+      .filter(([, count]) => count > 0)
+      .map(([category, count]) => {
+        const countyCategoryCounts = Object.entries(presenceIndex).map(
+          ([countyFips, countyPresence]) => {
+            let categoryCount = 0;
 
-      for (const speciesIndex of countyPresence) {
-        const species = speciesByOrdinal[speciesIndex];
-        if (
-          species &&
-          species.category === category &&
-          speciesMatchesFilters(species, filters)
-        ) {
-          categoryCount += 1;
-        }
+            for (const speciesIndex of countyPresence) {
+              const species = speciesByOrdinal[speciesIndex];
+              if (
+                species &&
+                species.category === category &&
+                speciesMatchesFilters(species, filters)
+              ) {
+                categoryCount += 1;
+              }
+            }
+
+            return {
+              countyFips,
+              stateCode: countyIndex[countyFips]?.stateCode ?? "",
+              count: categoryCount,
+            };
+          },
+        );
+
+        const nationalSorted = countyCategoryCounts
+          .filter((item) => item.count > 0)
+          .sort(
+            (left, right) =>
+              right.count - left.count || left.countyFips.localeCompare(right.countyFips),
+          );
+        const stateSorted = nationalSorted.filter(
+          (item) => item.stateCode === selectedCounty.stateCode,
+        );
+
+        const nationalRank =
+          nationalSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
+        const stateRank =
+          stateSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
+
+        return {
+          category,
+          count,
+          stateCode: selectedCounty.stateCode,
+          stateRank: stateRank || 9999,
+          nationalRank: nationalRank || 9999,
+        };
+      });
+
+    if (signals.length === 0) return null;
+
+    function getSignalScore(signal: CountyCategorySignal) {
+      let score = Math.min(signal.count, 24);
+
+      if (signal.nationalRank === 1) {
+        score += 320;
+      } else if (signal.nationalRank <= 5) {
+        score += 220 - signal.nationalRank * 18;
+      } else if (signal.nationalRank <= 10) {
+        score += 150 - signal.nationalRank * 8;
+      } else if (signal.nationalRank <= 25) {
+        score += 90 - signal.nationalRank * 2;
       }
 
-      return {
-        countyFips,
-        stateCode: countyIndex[countyFips]?.stateCode ?? "",
-        count: categoryCount,
-      };
-    });
+      if (signal.stateRank === 1) {
+        score += 90;
+      } else if (signal.stateRank <= 3) {
+        score += 54 - signal.stateRank * 10;
+      } else if (signal.stateRank <= 6) {
+        score += 24 - signal.stateRank * 3;
+      }
 
-    const nationalSorted = countyCategoryCounts
-      .filter((item) => item.count > 0)
-      .sort((left, right) => right.count - left.count || left.countyFips.localeCompare(right.countyFips));
-    const stateSorted = nationalSorted.filter(
-      (item) => item.stateCode === selectedCounty.stateCode,
-    );
+      score += categoryPreference[signal.category] * 6;
+      return score;
+    }
 
-    const nationalRank =
-      nationalSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
-    const stateRank =
-      stateSorted.findIndex((item) => item.countyFips === selectedCounty.countyFips) + 1;
-
-    return {
-      category,
-      count,
-      stateCode: selectedCounty.stateCode,
-      stateRank: stateRank || 9999,
-      nationalRank: nationalRank || 9999,
-    };
+    return signals.sort((left, right) => {
+      const scoreDelta = getSignalScore(right) - getSignalScore(left);
+      if (scoreDelta !== 0) return scoreDelta;
+      if (left.nationalRank !== right.nationalRank) {
+        return left.nationalRank - right.nationalRank;
+      }
+      if (left.stateRank !== right.stateRank) {
+        return left.stateRank - right.stateRank;
+      }
+      if (left.count !== right.count) {
+        return right.count - left.count;
+      }
+      return categoryPreference[right.category] - categoryPreference[left.category];
+    })[0];
   }, [selectedCounty, focalSpecies, presenceIndex, speciesByOrdinal, filters, countyIndex]);
   const coverageSummary = datasetSnapshot.coverageSummary;
   const hasExpandedCountyDetail = Boolean(selectedCounty);
