@@ -17,6 +17,7 @@ import {
   useClientDataStore,
 } from "@/lib/data/client-store";
 import type {
+  CountyDetail,
   CountyRecord,
   EnvironmentTag,
   ExplorerPresenceIndex,
@@ -26,6 +27,7 @@ import type {
   ZipLookupResult,
 } from "@/lib/data/types";
 import { buildSearchParams } from "@/lib/url-state";
+import { buildCountyFilterLabel } from "@/lib/county-detail";
 import { formatNaturalList } from "@/lib/utils";
 
 const EMPTY_DATASET_SNAPSHOT = {
@@ -39,6 +41,7 @@ const EMPTY_DATA_STORE = {
   speciesById: new Map<string, ExplorerSpecies>(),
   speciesByOrdinal: [] as ExplorerSpecies[],
   countyIndex: {} as Record<string, CountyRecord>,
+  countyDetails: {} as Record<string, CountyDetail>,
   presenceIndex: {} as ExplorerPresenceIndex,
   datasetSnapshot: EMPTY_DATASET_SNAPSHOT,
 };
@@ -252,6 +255,7 @@ export function MapExplorer({
   const {
     allSpecies,
     countyIndex,
+    countyDetails,
     presenceIndex,
     datasetSnapshot,
     speciesById,
@@ -376,6 +380,9 @@ export function MapExplorer({
   );
 
   const selectedCounty = getCountyRecord(countyIndex, selectedCountyFips);
+  const selectedCountyDetail = selectedCounty
+    ? countyDetails[selectedCounty.countyFips] ?? null
+    : null;
   const neighborCountyFips = useMemo(
     () => selectedCounty?.neighborFips ?? [],
     [selectedCounty],
@@ -407,6 +414,10 @@ export function MapExplorer({
   const speciesWithoutCountyCoverage = getSpeciesWithoutCountyCoverage(allSpecies, filters);
   const coverageSummary = datasetSnapshot.coverageSummary;
   const hasExpandedCountyDetail = Boolean(selectedCounty);
+  const activeFilterLabel = useMemo(
+    () => buildCountyFilterLabel(selectedCategories),
+    [selectedCategories],
+  );
   const zipInsight = useMemo(
     () =>
       buildZipInsight({
@@ -581,6 +592,8 @@ export function MapExplorer({
           />
           <CountyInsightPanel
             selectedCounty={selectedCounty}
+            selectedCountyDetail={selectedCountyDetail}
+            activeFilterLabel={activeFilterLabel}
             selectedCategories={selectedCategories}
             focalSpecies={focalSpecies}
             nearbySpecies={nearbySpecies}

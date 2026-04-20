@@ -4,7 +4,12 @@ import { Suspense } from "react";
 
 import { MapExplorer } from "@/components/map-explorer";
 import type { ClientDataStorePayload } from "@/lib/data/client-store";
-import type { CountyRecord, ExplorerPresenceIndex, ExplorerSpecies } from "@/lib/data/types";
+import type {
+  CountyDetail,
+  CountyRecord,
+  ExplorerPresenceIndex,
+  ExplorerSpecies,
+} from "@/lib/data/types";
 
 function readGeneratedJson<T>(fileName: string) {
   return JSON.parse(
@@ -16,6 +21,7 @@ export default function HomePage() {
   const initialStore = {
     allSpecies: readGeneratedJson<ExplorerSpecies[]>("explorer-species.json"),
     countyIndex: readGeneratedJson<Record<string, CountyRecord>>("counties.json"),
+    countyDetails: readGeneratedJson<Record<string, CountyDetail>>("county-details.json"),
     presenceIndex: readGeneratedJson<ExplorerPresenceIndex>("explorer-presence.json"),
     datasetSnapshot: readGeneratedJson<ClientDataStorePayload["datasetSnapshot"]>("snapshot.json"),
   } as ClientDataStorePayload;

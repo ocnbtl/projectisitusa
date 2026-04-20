@@ -11,6 +11,16 @@ export type SpeciesAvailability = "all" | "mapped" | "catalog";
 export type CountyDataSourceName = "EDDMaps" | "USGS NAS";
 export type CountyMatchType = "manual-curated" | "scientific-exact";
 export type SpeciesImageProvider = "wikidata-commons" | "inaturalist" | "gbif";
+export type CountyEvidenceLevel =
+  | "not-reviewed"
+  | "statewide-only"
+  | "county-specific";
+export type CountyResourceKind =
+  | "county-extension"
+  | "county-program"
+  | "county-detection"
+  | "regulatory-notice"
+  | "statewide-program";
 export type EnvironmentTag =
   | "land"
   | "freshwater"
@@ -235,6 +245,21 @@ export interface CountyRecord {
   stateName: string;
   neighborFips: string[];
   center: [number, number];
+}
+
+export interface CountyResourceLink {
+  label: string;
+  url: string;
+  kind: CountyResourceKind;
+}
+
+export interface CountyDetail {
+  countyFips: string;
+  evidenceLevel: CountyEvidenceLevel;
+  auditSummary: string;
+  countySummary?: string;
+  lastReviewedOn: string;
+  resources: CountyResourceLink[];
 }
 
 export interface ZipLookupResult {

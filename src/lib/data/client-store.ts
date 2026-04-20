@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import type {
+  CountyDetail,
   CountyRecord,
   ExplorerPresenceIndex,
   ExplorerSpecies,
@@ -23,6 +24,7 @@ interface DatasetSnapshot {
 export interface ClientDataStorePayload {
   allSpecies: ExplorerSpecies[];
   countyIndex: Record<string, CountyRecord>;
+  countyDetails: Record<string, CountyDetail>;
   presenceIndex: ExplorerPresenceIndex;
   datasetSnapshot: DatasetSnapshot;
 }
@@ -32,6 +34,7 @@ export interface ClientDataStore {
   speciesById: Map<string, ExplorerSpecies>;
   speciesByOrdinal: ExplorerSpecies[];
   countyIndex: Record<string, CountyRecord>;
+  countyDetails: Record<string, CountyDetail>;
   presenceIndex: ExplorerPresenceIndex;
   datasetSnapshot: DatasetSnapshot;
 }
@@ -63,15 +66,18 @@ export function createClientDataStore(payload: ClientDataStorePayload): ClientDa
     speciesById: new Map(payload.allSpecies.map((item) => [item.id, item])),
     speciesByOrdinal: payload.allSpecies,
     countyIndex: payload.countyIndex,
+    countyDetails: payload.countyDetails,
     presenceIndex: payload.presenceIndex,
     datasetSnapshot: payload.datasetSnapshot,
   };
 }
 
 async function loadClientDataStore(): Promise<ClientDataStore> {
-  const [allSpecies, countyIndex, presenceIndex, datasetSnapshot] = await Promise.all([
+  const [allSpecies, countyIndex, countyDetails, presenceIndex, datasetSnapshot] =
+    await Promise.all([
     fetchJson<ExplorerSpecies[]>("/generated/explorer-species.json"),
     fetchJson<Record<string, CountyRecord>>("/generated/counties.json"),
+    fetchJson<Record<string, CountyDetail>>("/generated/county-details.json"),
     fetchJson<ExplorerPresenceIndex>("/generated/explorer-presence.json"),
     fetchJson<DatasetSnapshot>("/generated/snapshot.json"),
   ]);
@@ -79,6 +85,7 @@ async function loadClientDataStore(): Promise<ClientDataStore> {
   return createClientDataStore({
     allSpecies,
     countyIndex,
+    countyDetails,
     presenceIndex,
     datasetSnapshot,
   });

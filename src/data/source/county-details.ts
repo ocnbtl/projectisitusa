@@ -1,0 +1,259 @@
+import type { CountyDetail } from "@/lib/data/types";
+
+export const countyDetailSeed: CountyDetail[] = [
+  {
+    countyFips: "01001",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Autauga County has been reviewed against current Alabama statewide and county extension sources, but no county-specific invasive inventory or detection notice strong enough for production use has been verified yet.",
+    countySummary:
+      "Autauga County currently relies on statewide and federal invasive-species coverage in the live explorer. The county audit confirmed local extension capacity and public agricultural reporting, but it did not surface a county-specific invasive species list or formal detection notice that would justify a county-level data change.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Autauga County Extension Office",
+        url: "https://www.aces.edu/counties/autauga/",
+        kind: "county-extension",
+      },
+      {
+        label: "Autauga County Annual Report",
+        url: "https://www.aces.edu/blog/topics/autauga/autauga-county-annual-report/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01003",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Baldwin County has a verified county-specific official plant-health record through the Alabama citrus canker quarantine notice, which is stronger than the evidence available for most Alabama counties reviewed so far.",
+    countySummary:
+      "Baldwin County is one of the clearest Alabama counties in the current audit because an official citrus canker quarantine notice confirms a county-specific invasive plant disease event. That is still narrower than a full county invasive inventory, but it is strong enough to anchor a more local public-facing summary and resource list.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Baldwin County Extension Office",
+        url: "https://www.aces.edu/counties/baldwin/",
+        kind: "county-extension",
+      },
+      {
+        label: "Citrus Canker Quarantine Notice",
+        url: "https://agi.alabama.gov/2022/02/citrus-canker-quarantine-established-in-baldwin-county-alabama/",
+        kind: "regulatory-notice",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01005",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Barbour County has a verified county-specific official detection signal through the Alabama Africanized honeybee notice, which currently makes it one of the strongest local wildlife-related public records in the Alabama audit.",
+    countySummary:
+      "Barbour County stands out in the current Alabama audit because the Alabama Department of Agriculture and Industries publicly confirmed an Africanized honeybee detection tied to the county. That single official notice does not create a complete county wildlife inventory, but it does provide a concrete county-level occurrence signal that can support public county detail.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Barbour County Extension Office",
+        url: "https://www.aces.edu/counties/barbour/",
+        kind: "county-extension",
+      },
+      {
+        label: "Africanized Honeybee Detection Notice",
+        url: "https://agi.alabama.gov/plantprotection/2025/06/africanized-honeybees-detected-in-alabama-2/",
+        kind: "county-detection",
+      },
+      {
+        label: "Barbour County Annual Report PDF",
+        url: "https://www.aces.edu/wp-content/uploads/2023/07/ACES-2734_BarbourCountyAnnualReport2022_062223L.pdf",
+        kind: "county-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01007",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Bibb County has a verified extension presence and statewide invasive program coverage, but the reviewed public sources did not expose a county-specific invasive list or detection notice that met the production bar.",
+    countySummary:
+      "Bibb County currently remains a statewide-source county in the audit. The public source stack shows local extension infrastructure, but it does not yet provide a county-specific invasive record set strong enough to revise the county-level display in Project Isitusa.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Bibb County Extension Office",
+        url: "https://www.aces.edu/counties/bibb",
+        kind: "county-extension",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01009",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Blount County public sources reference invasive plant management work, but the reviewed official material still falls short of a county-specific invasive inventory or formal detection report.",
+    countySummary:
+      "Blount County has visible extension programming around invasive plant management and aquatic weeds, which is useful context but not the same as verified county occurrence evidence. Until stronger county-specific reporting is found, the live county detail should be treated as statewide-source-backed rather than locally enumerated.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Blount County Extension Office",
+        url: "https://www.aces.edu/counties/blount/",
+        kind: "county-extension",
+      },
+      {
+        label: "Blount County Annual Report",
+        url: "https://www.aces.edu/blog/topics/blount/blount-county-annual-report/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01011",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Bullock County has public reporting on invasive plant management activity, but no county-specific invasive species list or county detection report strong enough to change the live map has been verified.",
+    countySummary:
+      "Bullock County shows useful county agricultural and extension activity, including invasive plant management and aquatic weed work. That is meaningful local context, but it is still programming evidence rather than a county occurrence dataset, so the county remains in the statewide-only evidence tier for now.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Bullock County Extension Office",
+        url: "https://www.aces.edu/counties/bullock/",
+        kind: "county-extension",
+      },
+      {
+        label: "Bullock County Annual Report PDF",
+        url: "https://www.aces.edu/wp-content/uploads/2023/10/ACES-2750-BullockCountyAnnualReport2022_090123L-G.pdf",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01013",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Butler County has a verified county extension source path, but the reviewed official public pages do not yet provide county-specific invasive occurrence evidence that meets the current bar.",
+    countySummary:
+      "Butler County has been reviewed and currently remains a statewide-source county in the audit. Local extension pages are public and attributable, but they do not yet expose the kind of county-specific invasive list, dashboard, or detection notice needed for stronger county detail claims.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Butler County Extension Office",
+        url: "https://www.aces.edu/counties/butler/",
+        kind: "county-extension",
+      },
+      {
+        label: "Butler County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/butler/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01015",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Calhoun County public sources show pest-management and agriculture programming, but the reviewed official material still does not support a county-specific invasive occurrence claim.",
+    countySummary:
+      "Calhoun County has attributable public sources and active county extension coverage, but the reviewed source stack remains too general for county-level invasive occurrence claims. Until a county-specific list, viewer, or official detection notice is verified, the county detail should stay conservative.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Calhoun County Extension Office",
+        url: "https://www.aces.edu/counties/calhoun/",
+        kind: "county-extension",
+      },
+      {
+        label: "Calhoun County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/calhoun/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01017",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Chambers County has a reviewed official source path, but no county-specific invasive list or detection report strong enough for production use has been verified from the public sources checked so far.",
+    countySummary:
+      "Chambers County currently depends on statewide and federal invasive datasets inside Project Isitusa. The audit verified local public extension sources, but those materials still do not provide county-specific invasive occurrence evidence that would justify a more aggressive county summary.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Chambers County Extension Office",
+        url: "https://www.aces.edu/counties/chambers/",
+        kind: "county-extension",
+      },
+      {
+        label: "Chambers County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/chambers/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01019",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Cherokee County has attributable county extension pages, but the reviewed official public sources do not yet support a county-specific invasive occurrence claim or county inventory.",
+    countySummary:
+      "Cherokee County remains in the statewide-only evidence tier for now. The audit confirmed legitimate county extension coverage, but no county-specific invasive species list, dashboard, or formal detection report has been verified from the public sources reviewed so far.",
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "Cherokee County Extension Office",
+        url: "https://www.aces.edu/counties/cherokee/",
+        kind: "county-extension",
+      },
+      {
+        label: "Cherokee County Extension Category Page",
+        url: "https://www.aces.edu/blog/category/counties/cherokee/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+];

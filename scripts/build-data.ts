@@ -7,10 +7,12 @@ import { feature, neighbors } from "topojson-client";
 import countyTopology from "us-atlas/counties-10m.json";
 
 import { isCommerciallySafeManifestEntry } from "@/lib/data/image-license";
+import { countyDetailSeed } from "@/data/source/county-details";
 import { speciesCountySeed } from "@/data/source/presence";
 import { STATE_FIPS_TO_INFO } from "@/data/source/state-fips";
 import { speciesSeed } from "@/data/source/species";
 import type {
+  CountyDetail,
   CountyCoverageSnapshotFile,
   CountyPresence,
   CountyRecord,
@@ -391,6 +393,12 @@ async function main() {
     };
   });
 
+  const countyDetailIndex = Object.fromEntries(
+    countyDetailSeed
+      .filter((detail) => countyRecords[detail.countyFips])
+      .map((detail) => [detail.countyFips, detail]),
+  ) as Record<string, CountyDetail>;
+
   const presenceIndex: Record<string, CountyPresence> = {};
   const countyPresenceSeed = loadCountyPresenceSeed();
 
@@ -479,6 +487,7 @@ async function main() {
     ["presence.json", presenceIndex],
     ["explorer-presence.json", explorerPresenceIndex],
     ["counties.json", countyRecords],
+    ["county-details.json", countyDetailIndex],
     ["snapshot.json", snapshotPayload],
   ] as const;
 
