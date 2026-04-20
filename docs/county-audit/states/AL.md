@@ -31,11 +31,11 @@ Statewide source path started on 2026-04-20.
 | 01025 | Clarke | complete-state-source-only | yes | no | Reviewed [Clarke County Extension Office](https://www.aces.edu/counties/clarke/) and [Clarke County category page](https://www.aces.edu/blog/category/counties/clarke/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01027 | Clay | complete-state-source-only | yes | no | Reviewed [Clay County Extension Office](https://www.aces.edu/counties/clay/) and [Clay County category page](https://www.aces.edu/blog/category/counties/clay/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01029 | Cleburne | complete-state-source-only | yes | no | Reviewed [Cleburne County Extension Office](https://www.aces.edu/counties/cleburne/) and [Cleburne County category page](https://www.aces.edu/blog/category/counties/cleburne/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
-| 01031 | Coffee | not-started | yes | no | |
-| 01033 | Colbert | not-started | yes | no | |
-| 01035 | Conecuh | not-started | yes | no | |
-| 01037 | Coosa | not-started | yes | no | |
-| 01039 | Covington | not-started | yes | no | |
+| 01031 | Coffee | complete-state-source-only | yes | no | Reviewed [Coffee County Extension Office](https://www.aces.edu/counties/coffee/) and [Coffee County category page](https://www.aces.edu/blog/category/counties/coffee/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01033 | Colbert | complete-state-source-only | yes | no | Reviewed [Colbert County Extension Office](https://www.aces.edu/counties/colbert/) and [Colbert County category page](https://www.aces.edu/blog/category/counties/colbert/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01035 | Conecuh | complete-state-source-only | yes | no | Reviewed [Conecuh County Extension Office](https://www.aces.edu/counties/conecuh/) and [Conecuh County category page](https://www.aces.edu/blog/category/counties/conecuh/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01037 | Coosa | complete-state-source-only | yes | no | Reviewed [Coosa County Extension Office](https://www.aces.edu/counties/coosa/) and [Coosa County category page](https://www.aces.edu/blog/category/counties/coosa/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01039 | Covington | complete-state-source-only | yes | no | Reviewed [Covington County Extension Office](https://www.aces.edu/counties/covington/) and [Covington County category page](https://www.aces.edu/blog/category/counties/covington/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01041 | Crenshaw | not-started | yes | no | |
 | 01043 | Cullman | not-started | yes | no | |
 | 01045 | Dale | not-started | yes | no | |

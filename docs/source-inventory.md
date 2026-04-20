@@ -546,6 +546,21 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/counties/cleburne/ | Alabama county audit | Cleburne County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/cleburne/ | Alabama county audit | Cleburne County official category page check during county-source review |
 
+### County audit Alabama chunk 4, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.aces.edu/counties/coffee/ | Alabama county audit | Coffee County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/coffee/ | Alabama county audit | Coffee County official category page check during county-source review |
+| https://www.aces.edu/counties/colbert/ | Alabama county audit | Colbert County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/colbert/ | Alabama county audit | Colbert County official category page check during county-source review |
+| https://www.aces.edu/counties/conecuh/ | Alabama county audit | Conecuh County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/conecuh/ | Alabama county audit | Conecuh County official category page check during county-source review |
+| https://www.aces.edu/counties/coosa/ | Alabama county audit | Coosa County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/coosa/ | Alabama county audit | Coosa County official category page check during county-source review |
+| https://www.aces.edu/counties/covington/ | Alabama county audit | Covington County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/covington/ | Alabama county audit | Covington County official category page check during county-source review |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
