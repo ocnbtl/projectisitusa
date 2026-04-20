@@ -1,7 +1,7 @@
 # Alabama County Audit
 
 State code: `AL`
-Audit status: `state-source-found`
+Audit status: `county-review-started`
 County count in current dataset: `67`
 
 ## Statewide Sources
@@ -16,11 +16,11 @@ Statewide source path started on 2026-04-20.
 
 | County FIPS | County | Audit status | State source verified | County source verified | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 01001 | Autauga | not-started | yes | no | |
-| 01003 | Baldwin | not-started | yes | no | |
-| 01005 | Barbour | not-started | yes | no | |
-| 01007 | Bibb | not-started | yes | no | |
-| 01009 | Blount | not-started | yes | no | |
+| 01001 | Autauga | complete-state-source-only | yes | no | Reviewed [Autauga County Extension Office](https://www.aces.edu/counties/autauga/) and [Autauga County Annual Report](https://www.aces.edu/blog/topics/autauga/autauga-county-annual-report/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01003 | Baldwin | complete-county-source-found | yes | yes | County-specific official report verified: [Citrus Canker Quarantine Established in Baldwin County Alabama](https://agi.alabama.gov/2022/02/citrus-canker-quarantine-established-in-baldwin-county-alabama/). Also reviewed [Baldwin County Extension Office](https://www.aces.edu/counties/baldwin/). Important limitation: this is a regulated plant-disease report, not a general county invasive-species inventory. |
+| 01005 | Barbour | complete-county-source-found | yes | yes | County-specific official report verified: [Africanized Honeybees Detected in Alabama](https://agi.alabama.gov/plantprotection/2025/06/africanized-honeybees-detected-in-alabama-2/) confirms a Barbour County detection. Also reviewed [Barbour County Extension Office](https://www.aces.edu/counties/barbour/) and [Barbour County Annual Report PDF](https://www.aces.edu/wp-content/uploads/2023/07/ACES-2734_BarbourCountyAnnualReport2022_062223L.pdf). |
+| 01007 | Bibb | complete-state-source-only | yes | no | Reviewed [Bibb County Extension Office](https://www.aces.edu/counties/bibb). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01009 | Blount | complete-state-source-only | yes | no | Reviewed [Blount County Extension Office](https://www.aces.edu/counties/blount/) and [Blount County Annual Report](https://www.aces.edu/blog/topics/blount/blount-county-annual-report/). County programming mentions invasive plant management and aquatic weeds, but no county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01011 | Bullock | not-started | yes | no | |
 | 01013 | Butler | not-started | yes | no | |
 | 01015 | Calhoun | not-started | yes | no | |

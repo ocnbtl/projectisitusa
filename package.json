@@ -10,6 +10,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "check:profiles": "node --import tsx scripts/check-curated-profiles.ts",
+    "county-audit:progress": "node --import tsx scripts/county-audit-progress.ts",
     "prepare:data": "node --import tsx scripts/build-data.ts",
     "import:eddmaps": "node --import tsx scripts/import-eddmaps.ts",
     "import:county-data": "node --import tsx scripts/import-county-presence.ts",

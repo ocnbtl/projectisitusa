@@ -26,6 +26,12 @@ The real gap is source completeness and reporting quality:
 4. If a state has no county-level source, document that plainly instead of stretching a weak statewide page into county evidence.
 5. Separate source discovery from pipeline adoption. A source can be "verified for research" before it is "approved for production use."
 
+## Chunk Size
+
+The current default county-audit chunk size is `5` counties.
+
+That is intentionally smaller than the profile-writing chunks because county review requires state-by-state source checking, negative-find documentation, and cleaner progress accounting.
+
 ## Audit Sequence
 
 1. Confirm statewide official invasive-species platforms for the state.
@@ -43,8 +49,15 @@ The real gap is source completeness and reporting quality:
 - `research-complete`: state and counties reviewed for currently available public sources
 - `production-candidate`: source path looks strong enough to evaluate for data import or manual integration
 
+County row statuses:
+
+- `not-started`: county not reviewed yet
+- `complete-state-source-only`: county reviewed, but no county-specific public invasive-species list or report was verified in the reviewed official sources
+- `complete-county-source-found`: county reviewed and at least one county-specific public invasive-species source was verified
+
 ## Files
 
 - [state-source-ledger.md](/Users/ocean/Code/Project%20Isitusa/docs/county-audit/state-source-ledger.md:1): statewide source tracker and first-tranche research notes
+- `docs/county-audit/chunks/*.md`: county-audit chunk reports with progress snapshots
 - [states/index.md](/Users/ocean/Code/Project%20Isitusa/docs/county-audit/states/index.md:1): 50-state county audit index
 - `docs/county-audit/states/*.md`: one file per state with county checklist tables

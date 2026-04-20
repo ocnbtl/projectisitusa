@@ -499,6 +499,22 @@ These sources are already referenced by current curated profiles, but the origin
 | https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=980 | Channeled Applesnail | Shell and egg-mass identification, invasion biology, crop-risk framing, and U.S. status |
 | https://edis.ifas.ufl.edu/publication/IN598 | Channeled Applesnail | Applesnail comparison points, Florida context, and biosecurity relevance around introduced Pomacea species |
 
+### County audit Alabama chunk 1, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx | Alabama county audit | Statewide forestry and invasive-species baseline used before county-by-county review |
+| https://www.aces.edu/counties/autauga/ | Alabama county audit | Autauga County extension office check during county-source review |
+| https://www.aces.edu/blog/topics/autauga/autauga-county-annual-report/ | Alabama county audit | Autauga County annual report check; not sufficient as a county invasive-species inventory |
+| https://www.aces.edu/counties/baldwin/ | Alabama county audit | Baldwin County extension office check during county-source review |
+| https://agi.alabama.gov/2022/02/citrus-canker-quarantine-established-in-baldwin-county-alabama/ | Alabama county audit | Verified county-specific official plant-disease report for Baldwin County |
+| https://www.aces.edu/counties/barbour/ | Alabama county audit | Barbour County extension office check during county-source review |
+| https://www.aces.edu/wp-content/uploads/2023/07/ACES-2734_BarbourCountyAnnualReport2022_062223L.pdf | Alabama county audit | Barbour County annual report check; not sufficient as a county invasive-species inventory |
+| https://agi.alabama.gov/plantprotection/2025/06/africanized-honeybees-detected-in-alabama-2/ | Alabama county audit | Verified county-specific official insect-detection report for Barbour County |
+| https://www.aces.edu/counties/bibb | Alabama county audit | Bibb County extension office check during county-source review |
+| https://www.aces.edu/counties/blount/ | Alabama county audit | Blount County extension office check during county-source review |
+| https://www.aces.edu/blog/topics/blount/blount-county-annual-report/ | Alabama county audit | Blount County annual report check; mentions invasive-plant programming but not a county invasive-species inventory |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
