@@ -41,11 +41,11 @@ Statewide source path started on 2026-04-20.
 | 01045 | Dale | complete-state-source-only | yes | no | Reviewed [Dale County Extension Office](https://www.aces.edu/counties/dale/) and [Dale County category page](https://www.aces.edu/blog/category/counties/dale/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01047 | Dallas | complete-state-source-only | yes | no | Reviewed [Dallas County Extension Office](https://www.aces.edu/counties/dallas/) and [Dallas County category page](https://www.aces.edu/blog/category/counties/dallas/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01049 | DeKalb | complete-state-source-only | yes | no | Reviewed [DeKalb County Extension Office](https://www.aces.edu/counties/dekalb/) and [DeKalb County category page](https://www.aces.edu/blog/category/counties/dekalb/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
-| 01051 | Elmore | not-started | yes | no | |
-| 01053 | Escambia | not-started | yes | no | |
-| 01055 | Etowah | not-started | yes | no | |
-| 01057 | Fayette | not-started | yes | no | |
-| 01059 | Franklin | not-started | yes | no | |
+| 01051 | Elmore | complete-state-source-only | yes | no | Reviewed [Elmore County Extension Office](https://www.aces.edu/counties/elmore/) and [Elmore County category page](https://www.aces.edu/blog/category/counties/elmore/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01053 | Escambia | complete-state-source-only | yes | no | Reviewed [Escambia County Extension Office](https://www.aces.edu/counties/escambia/) and [Escambia County category page](https://www.aces.edu/blog/category/counties/escambia/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01055 | Etowah | complete-state-source-only | yes | no | Reviewed [Etowah County Extension Office](https://www.aces.edu/counties/etowah/) and [Etowah County category page](https://www.aces.edu/blog/category/counties/etowah/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01057 | Fayette | complete-state-source-only | yes | no | Reviewed [Fayette County Extension Office](https://www.aces.edu/counties/fayette/) and [Fayette County category page](https://www.aces.edu/blog/category/counties/fayette/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
+| 01059 | Franklin | complete-state-source-only | yes | no | Reviewed [Franklin County Extension Office](https://www.aces.edu/counties/franklin/) and [Franklin County category page](https://www.aces.edu/blog/category/counties/franklin/). No county-specific public invasive-species list or detection report was verified in the reviewed official sources on 2026-04-20. |
 | 01061 | Geneva | not-started | yes | no | |
 | 01063 | Greene | not-started | yes | no | |
 | 01065 | Hale | not-started | yes | no | |

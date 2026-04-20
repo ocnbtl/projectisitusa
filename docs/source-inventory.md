@@ -576,6 +576,21 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/counties/dekalb/ | Alabama county audit | DeKalb County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/dekalb/ | Alabama county audit | DeKalb County official category page check during county-source review |
 
+### County audit Alabama chunk 6, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.aces.edu/counties/elmore/ | Alabama county audit | Elmore County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/elmore/ | Alabama county audit | Elmore County official category page check during county-source review |
+| https://www.aces.edu/counties/escambia/ | Alabama county audit | Escambia County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/escambia/ | Alabama county audit | Escambia County official category page check during county-source review |
+| https://www.aces.edu/counties/etowah/ | Alabama county audit | Etowah County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/etowah/ | Alabama county audit | Etowah County official category page check during county-source review |
+| https://www.aces.edu/counties/fayette/ | Alabama county audit | Fayette County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/fayette/ | Alabama county audit | Fayette County official category page check during county-source review |
+| https://www.aces.edu/counties/franklin/ | Alabama county audit | Franklin County extension office check during county-source review |
+| https://www.aces.edu/blog/category/counties/franklin/ | Alabama county audit | Franklin County official category page check during county-source review |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
