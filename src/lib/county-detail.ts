@@ -38,6 +38,19 @@ function getTopSpecies(species: ExplorerSpecies[]) {
   return species.slice(0, 2).map((item) => shortenSpeciesName(item.commonName));
 }
 
+function getLeadingSentence(value: string) {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+
+  const match = trimmed.match(/^.*?[.!?](?=\s|$)/);
+  if (match) {
+    return match[0].replace(/[.!?]+$/, "");
+  }
+
+  const words = trimmed.split(/\s+/).slice(0, 18);
+  return words.join(" ");
+}
+
 export function buildCountyFilterLabel(categories: SpeciesCategory[]) {
   if (categories.length === 0) return "All categories";
   if (categories.length === 1) return formatCategoryLabel(categories[0]);
@@ -221,24 +234,17 @@ export function buildCountyCardParagraph({
   selectedCategories: SpeciesCategory[];
   categorySignal: CountyCategorySignal | null;
 }) {
-  if (detail?.summaryParagraphs?.length) {
-    return detail.summaryParagraphs[0];
-  }
+  const baseText = detail?.summaryParagraphs?.length
+    ? detail.summaryParagraphs[0]
+    : buildCountySummaryParagraphs({
+        county,
+        detail,
+        focalSpecies,
+        nearbySpecies,
+        selectedCategories,
+        categorySignal,
+      })[0];
 
-  const topSpecies = getTopSpecies(focalSpecies);
-  const topSpeciesSentence =
-    topSpecies.length > 0
-      ? `${formatNaturalList(topSpecies)} jump out first.`
-      : "Nothing clearly separates itself from the rest yet.";
-  const categorySentence = categorySignal
-    ? categorySignal.nationalRank === 1
-      ? `${formatCategoryLabel(categorySignal.category)} are stacked here more than anywhere else in this view.`
-      : categorySignal.stateRank === 1
-        ? `${formatCategoryLabel(categorySignal.category)} are showing up here more than anywhere else in ${county.stateCode}.`
-        : `${formatCategoryLabel(categorySignal.category)} stand out more than the other categories here right now.`
-    : "The county picture still feels broad and mixed right now.";
-
-  return `${county.name} County has ${focalSpecies.length.toLocaleString()} mapped invasive species in this ${buildCountyFilterLabel(
-    selectedCategories,
-  ).toLowerCase()} view. ${topSpeciesSentence} ${categorySentence}`;
+  const leadSentence = getLeadingSentence(baseText);
+  return leadSentence ? `${leadSentence}...` : "";
 }

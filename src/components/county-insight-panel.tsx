@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState } from "react";
 import { CountyCardDownload } from "@/components/county-card-download";
 import { SpeciesCard } from "@/components/species-card";
 import {
-  buildCountyFilterLabel,
   buildCountyHeadline,
   buildCountyResourceLine,
   buildCountyStats,
@@ -243,7 +242,6 @@ export function CountyInsightPanel({
               focalSpecies={focalSpecies}
               nearbySpecies={nearbySpecies}
               countyCategorySignal={countyCategorySignal}
-              filterLabel={buildCountyFilterLabel(selectedCategories)}
             />
           </section>
         ) : (

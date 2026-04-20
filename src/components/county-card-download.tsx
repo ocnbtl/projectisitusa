@@ -26,14 +26,12 @@ export function CountyCardDownload({
   focalSpecies,
   nearbySpecies,
   countyCategorySignal,
-  filterLabel,
 }: {
   county: CountyRecord;
   detail: CountyDetail | null;
   focalSpecies: ExplorerSpecies[];
   nearbySpecies: ExplorerSpecies[];
   countyCategorySignal: CountyCategorySignal | null;
-  filterLabel: string;
 }) {
   const [presetId, setPresetId] = useState("landscape");
   const [downloadState, setDownloadState] = useState<"idle" | "rendering" | "done">("idle");
@@ -54,9 +52,8 @@ export function CountyCardDownload({
         focalSpecies,
         nearbySpecies,
         countyCategorySignal,
-        filterLabel,
       }),
-    [county, countyCategorySignal, detail, filterLabel, focalSpecies, nearbySpecies, preset],
+    [county, countyCategorySignal, detail, focalSpecies, nearbySpecies, preset],
   );
   const previewSrc = useMemo(() => svgToDataUri(svgMarkup), [svgMarkup]);
 
