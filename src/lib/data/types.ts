@@ -257,7 +257,9 @@ export interface CountyDetail {
   countyFips: string;
   evidenceLevel: CountyEvidenceLevel;
   auditSummary: string;
+  headline?: string;
   countySummary?: string;
+  summaryParagraphs?: string[];
   lastReviewedOn: string;
   resources: CountyResourceLink[];
 }

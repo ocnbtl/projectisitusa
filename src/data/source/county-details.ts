@@ -6,8 +6,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Autauga County has been reviewed against current Alabama statewide and county extension sources, but no county-specific invasive inventory or detection notice strong enough for production use has been verified yet.",
+    headline: "Autauga County still leans statewide",
     countySummary:
       "Autauga County currently relies on statewide and federal invasive-species coverage in the live explorer. The county audit confirmed local extension capacity and public agricultural reporting, but it did not surface a county-specific invasive species list or formal detection notice that would justify a county-level data change.",
+    summaryParagraphs: [
+      "Autauga County is still leaning on statewide and federal invasive-species records in the live explorer. The local extension footprint is real, but the county audit did not turn up a county-specific species list or formal detection notice strong enough to change what we show on the map yet.",
+      "That means the county view is useful for awareness, but it should still be read as a broad signal rather than a finished local inventory.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -32,8 +37,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "county-specific",
     auditSummary:
       "Baldwin County has a verified county-specific official plant-health record through the Alabama citrus canker quarantine notice, which is stronger than the evidence available for most Alabama counties reviewed so far.",
+    headline: "Baldwin County: citrus canker changed things",
     countySummary:
       "Baldwin County is one of the clearest Alabama counties in the current audit because an official citrus canker quarantine notice confirms a county-specific invasive plant disease event. That is still narrower than a full county invasive inventory, but it is strong enough to anchor a more local public-facing summary and resource list.",
+    summaryParagraphs: [
+      "Baldwin County has one of the strongest county-specific public records in Alabama so far. The citrus canker quarantine notice gives the county a concrete local invasive-plant signal instead of leaving it entirely dependent on statewide context.",
+      "It is still not the same thing as a full county invasive inventory, but it gives residents a much clearer reason to pay attention to plant health and local reporting.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -58,8 +68,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "county-specific",
     auditSummary:
       "Barbour County has a verified county-specific official detection signal through the Alabama Africanized honeybee notice, which currently makes it one of the strongest local wildlife-related public records in the Alabama audit.",
+    headline: "Barbour County: honeybee risks got local",
     countySummary:
       "Barbour County stands out in the current Alabama audit because the Alabama Department of Agriculture and Industries publicly confirmed an Africanized honeybee detection tied to the county. That single official notice does not create a complete county wildlife inventory, but it does provide a concrete county-level occurrence signal that can support public county detail.",
+    summaryParagraphs: [
+      "Barbour County stands out because the state publicly confirmed an Africanized honeybee detection tied to the county. That gives the county a real local wildlife signal instead of leaving everything at the statewide level.",
+      "It is still one official notice, not a full wildlife inventory, but it is enough to make the county detail feel grounded and worth sharing.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -84,8 +99,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Bibb County has a verified extension presence and statewide invasive program coverage, but the reviewed public sources did not expose a county-specific invasive list or detection notice that met the production bar.",
+    headline: "Bibb County still needs local proof",
     countySummary:
       "Bibb County currently remains a statewide-source county in the audit. The public source stack shows local extension infrastructure, but it does not yet provide a county-specific invasive record set strong enough to revise the county-level display in Project Isitusa.",
+    summaryParagraphs: [
+      "Bibb County has local extension coverage, but the public sources reviewed so far still stop short of a county-specific invasive list or detection record that would change the live county view.",
+      "For now, this is a county where the map is still strongest as a statewide-backed warning sign, not a finished local report card.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -105,8 +125,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Blount County public sources reference invasive plant management work, but the reviewed official material still falls short of a county-specific invasive inventory or formal detection report.",
+    headline: "Blount County is watching weeds closely",
     countySummary:
       "Blount County has visible extension programming around invasive plant management and aquatic weeds, which is useful context but not the same as verified county occurrence evidence. Until stronger county-specific reporting is found, the live county detail should be treated as statewide-source-backed rather than locally enumerated.",
+    summaryParagraphs: [
+      "Blount County clearly has local attention on invasive plants and aquatic weeds, which matters. The problem is that the public record still reads more like management work than a county-by-county inventory people can rely on.",
+      "That leaves the county in a middle ground: active local concern, but not enough county-specific reporting to treat the current view as fully local.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -131,8 +156,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Bullock County has public reporting on invasive plant management activity, but no county-specific invasive species list or county detection report strong enough to change the live map has been verified.",
+    headline: "Bullock County manages weeds without a list",
     countySummary:
       "Bullock County shows useful county agricultural and extension activity, including invasive plant management and aquatic weed work. That is meaningful local context, but it is still programming evidence rather than a county occurrence dataset, so the county remains in the statewide-only evidence tier for now.",
+    summaryParagraphs: [
+      "Bullock County is clearly doing local work around invasive plants and aquatic weeds, which is better than silence. What it still does not have in public view is a county-specific invasive list or detection record strong enough to tighten the map itself.",
+      "So the county detail can talk honestly about local concern, but it still has to stay conservative about county-by-county claims.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -157,8 +187,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Butler County has a verified county extension source path, but the reviewed official public pages do not yet provide county-specific invasive occurrence evidence that meets the current bar.",
+    headline: "Butler County still lacks a local list",
     countySummary:
       "Butler County has been reviewed and currently remains a statewide-source county in the audit. Local extension pages are public and attributable, but they do not yet expose the kind of county-specific invasive list, dashboard, or detection notice needed for stronger county detail claims.",
+    summaryParagraphs: [
+      "Butler County has a real public source path through local extension pages, but it still does not surface the kind of county-specific invasive list or detection notice that would make the county view feel truly local.",
+      "Until that changes, the county detail should stay useful and readable without pretending the audit is further along than it is.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -183,8 +218,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Calhoun County public sources show pest-management and agriculture programming, but the reviewed official material still does not support a county-specific invasive occurrence claim.",
+    headline: "Calhoun County needs stronger local proof",
     countySummary:
       "Calhoun County has attributable public sources and active county extension coverage, but the reviewed source stack remains too general for county-level invasive occurrence claims. Until a county-specific list, viewer, or official detection notice is verified, the county detail should stay conservative.",
+    summaryParagraphs: [
+      "Calhoun County has enough public activity to show that invasive species are on the local radar. What it still does not have is the kind of county-specific list, viewer, or official detection notice that would let us sharpen the county detail with confidence.",
+      "For now, the county view should feel like a careful heads-up, not a final word on what is present there.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -209,8 +249,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Chambers County has a reviewed official source path, but no county-specific invasive list or detection report strong enough for production use has been verified from the public sources checked so far.",
+    headline: "Chambers County still leans statewide",
     countySummary:
       "Chambers County currently depends on statewide and federal invasive datasets inside Project Isitusa. The audit verified local public extension sources, but those materials still do not provide county-specific invasive occurrence evidence that would justify a more aggressive county summary.",
+    summaryParagraphs: [
+      "Chambers County still leans mostly on statewide and federal invasive datasets in the live explorer. The local public source trail is there, but it has not yet produced a county-specific list or report strong enough to justify a more confident local summary.",
+      "That makes this county a good example of why the audit matters: public awareness exists, but public county evidence is still catching up.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {
@@ -235,8 +280,13 @@ export const countyDetailSeed: CountyDetail[] = [
     evidenceLevel: "statewide-only",
     auditSummary:
       "Cherokee County has attributable county extension pages, but the reviewed official public sources do not yet support a county-specific invasive occurrence claim or county inventory.",
+    headline: "Cherokee County still needs local reporting",
     countySummary:
       "Cherokee County remains in the statewide-only evidence tier for now. The audit confirmed legitimate county extension coverage, but no county-specific invasive species list, dashboard, or formal detection report has been verified from the public sources reviewed so far.",
+    summaryParagraphs: [
+      "Cherokee County has real county extension coverage, but the reviewed public sources still do not give residents a county-specific invasive inventory or formal detection report they can lean on.",
+      "For now, the county detail is best read as a clear local caution sign built on broader datasets while the county audit keeps digging.",
+    ],
     lastReviewedOn: "2026-04-20",
     resources: [
       {

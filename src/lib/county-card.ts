@@ -3,10 +3,12 @@ import { feature } from "topojson-client";
 import countyTopology from "us-atlas/counties-10m.json";
 import statesTopology from "us-atlas/states-10m.json";
 
-import type { CountyDetail, CountyRecord } from "@/lib/data/types";
+import type { CountyDetail, CountyRecord, ExplorerSpecies } from "@/lib/data/types";
 import {
-  buildCountyCardSummary,
-  formatCountyEvidenceLabel,
+  buildCountyCardParagraph,
+  buildCountyHeadline,
+  buildCountyResourceLine,
+  buildCountyStats,
 } from "@/lib/county-detail";
 
 type GeometryFeature = GeoJSON.Feature<
@@ -21,6 +23,8 @@ type CountyCardPreset = {
   height: number;
   surface: string;
 };
+
+type LayoutMode = "story" | "vertical" | "square" | "horizontal";
 
 const EXCLUDED_STATE_PREFIXES = new Set(["02", "15", "60", "66", "69", "72", "78"]);
 
@@ -61,42 +65,42 @@ export const COUNTY_CARD_PRESETS: CountyCardPreset[] = [
     label: "Square",
     width: 1080,
     height: 1080,
-    surface: "1:1 reposts",
+    surface: "Square post",
   },
   {
     id: "portrait",
     label: "Portrait",
     width: 1080,
     height: 1350,
-    surface: "Instagram feed",
+    surface: "Portrait post",
   },
   {
     id: "story",
     label: "Story",
-    width: 1080,
-    height: 1920,
-    surface: "Stories and reels",
+    width: 1020,
+    height: 1980,
+    surface: "Story post",
   },
   {
     id: "landscape",
     label: "Landscape",
     width: 1200,
     height: 628,
-    surface: "X and wide previews",
+    surface: "Landscape post",
   },
   {
     id: "tall",
     label: "Tall",
     width: 1080,
     height: 1620,
-    surface: "Tall mobile posts",
+    surface: "Tall post",
   },
   {
     id: "widescreen",
     label: "Widescreen",
     width: 1920,
     height: 1080,
-    surface: "16:9 screens",
+    surface: "Widescreen post",
   },
 ];
 
@@ -135,40 +139,100 @@ function wrapText(text: string, maxChars: number, maxLines: number) {
     lines.push(current);
   }
 
-  const consumed = lines.join(" ").length;
-  if (consumed < text.trim().length && lines.length > 0) {
-    const last = lines[lines.length - 1];
-    lines[lines.length - 1] = last.endsWith("...") ? last : `${last.replace(/[.,;:!?]+$/, "")}...`;
+  const flattened = lines.join(" ").trim();
+  if (flattened.length < text.trim().length && lines.length > 0) {
+    const last = lines[lines.length - 1].replace(/[.,;:!?]+$/, "");
+    lines[lines.length - 1] = `${last}...`;
   }
 
   return lines;
 }
 
-function getBadgeColors(detail: CountyDetail | null) {
-  switch (detail?.evidenceLevel) {
-    case "county-specific":
-      return {
-        fill: "#DCEFD9",
-        stroke: "#4F8F66",
-        text: "#2E5B3E",
-      };
-    case "statewide-only":
-      return {
-        fill: "#F6E7D2",
-        stroke: "#D9893F",
-        text: "#7A4D1F",
-      };
-    default:
-      return {
-        fill: "#E7EAE6",
-        stroke: "#859086",
-        text: "#47524A",
-      };
-  }
+function getLayoutMode(preset: CountyCardPreset): LayoutMode {
+  if (preset.id === "story") return "story";
+  if (preset.width / preset.height >= 1.55) return "horizontal";
+  if (preset.height / preset.width >= 1.35) return "vertical";
+  return "square";
+}
+
+function renderTextLines({
+  lines,
+  x,
+  y,
+  lineHeight,
+  size,
+  color,
+  weight = 500,
+}: {
+  lines: string[];
+  x: number;
+  y: number;
+  lineHeight: number;
+  size: number;
+  color: string;
+  weight?: number;
+}) {
+  return lines
+    .map(
+      (line, index) =>
+        `<text x="${x}" y="${y + index * lineHeight}" fill="${color}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${size}" font-weight="${weight}">${escapeXml(
+          line,
+        )}</text>`,
+    )
+    .join("");
+}
+
+function buildMapPaths({
+  county,
+  mapX,
+  mapY,
+  mapWidth,
+  mapHeight,
+}: {
+  county: CountyRecord;
+  mapX: number;
+  mapY: number;
+  mapWidth: number;
+  mapHeight: number;
+}) {
+  const stateFips = county.countyFips.slice(0, 2);
+  const countyFeature = countyFeatureByFips.get(county.countyFips);
+  const stateFeature = stateFeatureByFips.get(stateFips);
+  const projection = geoAlbersUsa();
+
+  projection.fitExtent(
+    [
+      [mapX, mapY],
+      [mapX + mapWidth, mapY + mapHeight],
+    ],
+    {
+      type: "FeatureCollection",
+      features: lower48States,
+    } as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>,
+  );
+
+  const path = geoPath(projection);
+
+  const states = lower48States
+    .map((item) => {
+      const outline = path(item as never);
+      if (!outline) return "";
+      return `<path d="${outline}" fill="#F7F7F2" stroke="rgba(23,30,27,0.12)" stroke-width="0.9" />`;
+    })
+    .join("");
+
+  const selectedStatePath = stateFeature ? path(stateFeature as never) : null;
+  const selectedCountyPath = countyFeature ? path(countyFeature as never) : null;
+
+  return {
+    states,
+    selectedStatePath,
+    selectedCountyPath,
+  };
 }
 
 export function countyCardPresetById(id: string) {
-  return COUNTY_CARD_PRESETS.find((preset) => preset.id === id) ?? COUNTY_CARD_PRESETS[0];
+  return COUNTY_CARD_PRESETS.find((preset) => preset.id === id) ?? COUNTY_CARD_PRESETS[2];
 }
 
 export function svgToDataUri(svg: string) {
@@ -179,174 +243,211 @@ export function buildCountyCardSvg({
   preset,
   county,
   detail,
-  focalSpeciesCount,
-  nearbySpeciesCount,
+  focalSpecies,
+  nearbySpecies,
   unresolvedCount,
   filterLabel,
 }: {
   preset: CountyCardPreset;
   county: CountyRecord;
   detail: CountyDetail | null;
-  focalSpeciesCount: number;
-  nearbySpeciesCount: number;
+  focalSpecies: ExplorerSpecies[];
+  nearbySpecies: ExplorerSpecies[];
   unresolvedCount: number;
   filterLabel: string;
 }) {
   const width = preset.width;
   const height = preset.height;
-  const isVertical = height / width >= 1.35;
-  const isHorizontal = width / height >= 1.35;
-  const padding = Math.round(width * 0.055);
-  const stateFips = county.countyFips.slice(0, 2);
-  const badge = getBadgeColors(detail);
-  const countyFeature = countyFeatureByFips.get(county.countyFips);
-  const stateFeature = stateFeatureByFips.get(stateFips);
-  const projection = geoAlbersUsa();
-  const mapTop = isVertical ? height * 0.5 : padding;
-  const mapLeft = isHorizontal ? width * 0.54 : padding;
-  const mapWidth = isHorizontal ? width * 0.4 : width - padding * 2;
-  const mapHeight = isVertical ? height * 0.3 : isHorizontal ? height - padding * 2 : height * 0.34;
-
-  projection.fitExtent(
-    [
-      [mapLeft, mapTop],
-      [mapLeft + mapWidth, mapTop + mapHeight],
-    ],
-    {
-      type: "FeatureCollection",
-      features: lower48States,
-    } as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>,
-  );
-
-  const path = geoPath(projection);
-  const backgroundStatePaths = lower48States
-    .map((item) => {
-      const outline = path(item as never);
-      if (!outline) return "";
-      return `<path d="${outline}" fill="#F5F6F1" stroke="rgba(23,30,27,0.12)" stroke-width="0.9" />`;
-    })
-    .join("");
-
-  const selectedStatePath = stateFeature ? path(stateFeature as never) : null;
-  const selectedCountyPath = countyFeature ? path(countyFeature as never) : null;
-  const resourceLabels = detail?.resources.slice(0, 2).map((resource) => resource.label) ?? [];
-  const resourceLine =
-    resourceLabels.length > 0
-      ? resourceLabels.join(" / ")
-      : "Local source curation still in progress";
-  const badgeWidth = Math.max(
-    260,
-    Math.round(width * (isVertical ? 0.54 : isHorizontal ? 0.3 : 0.4)),
-  );
-  const summary = buildCountyCardSummary({
+  const mode = getLayoutMode(preset);
+  const framePad = Math.round(width * 0.045);
+  const innerX = framePad;
+  const innerY = framePad;
+  const innerWidth = width - framePad * 2;
+  const innerHeight = height - framePad * 2;
+  const cardPad = mode === "story" ? 44 : 38;
+  const contentX = innerX + cardPad;
+  const contentY = innerY + cardPad;
+  const contentWidth = innerWidth - cardPad * 2;
+  const contentHeight = innerHeight - cardPad * 2;
+  const headline = buildCountyHeadline({
     county,
     detail,
-    focalSpeciesCount,
-    nearbySpeciesCount,
+    focalSpecies,
+  });
+  const summary = buildCountyCardParagraph({
+    county,
+    detail,
+    focalSpecies,
+    nearbySpecies,
+    unresolvedCount,
+    selectedCategories: [],
+    filterLabel,
+  });
+  const resources = buildCountyResourceLine(detail);
+  const resourceText = Array.isArray(resources)
+    ? resources.slice(0, 3).join(" / ")
+    : resources;
+  const stats = buildCountyStats({
+    focalSpecies,
+    nearbySpecies,
     unresolvedCount,
   });
-  const summaryLines = wrapText(summary, isVertical ? 34 : isHorizontal ? 52 : 42, isVertical ? 6 : 5);
-  const resourceLines = wrapText(resourceLine, isVertical ? 34 : isHorizontal ? 44 : 40, 2);
-  const statFontSize = Math.max(28, Math.round(width * 0.026));
-  const titleSize = Math.max(42, Math.round(width * (isVertical ? 0.052 : 0.04)));
-  const bodySize = Math.max(20, Math.round(width * 0.018));
-  const statY = isVertical ? height * 0.79 : height - padding - 120;
-  const statWidth = isHorizontal ? width * 0.14 : (width - padding * 2 - 24) / 3;
-  const statGap = 12;
-  const stats = [
-    {
-      label: "Mapped",
-      value: focalSpeciesCount.toLocaleString(),
-    },
-    {
-      label: "Nearby",
-      value: nearbySpeciesCount.toLocaleString(),
-    },
-    {
-      label: "Gaps",
-      value: unresolvedCount.toLocaleString(),
-    },
-  ];
+  const filterText = `${filterLabel} / ${preset.surface}`;
+  const headlineSize =
+    mode === "story" ? 60 : mode === "vertical" ? 54 : mode === "horizontal" ? 42 : 46;
+  const labelSize = mode === "story" ? 16 : mode === "horizontal" ? 14 : 15;
+  const bodySize = mode === "story" ? 18 : mode === "horizontal" ? 16 : 17;
+  const statNumberSize = mode === "story" ? 30 : mode === "horizontal" ? 26 : 28;
+  const statLabelSize = mode === "story" ? 15 : 14;
+  const headlineLines = wrapText(headline, mode === "horizontal" ? 22 : 24, 2);
+  const summaryLines = wrapText(
+    summary,
+    mode === "story" ? 30 : mode === "vertical" ? 34 : mode === "horizontal" ? 38 : 34,
+    mode === "story" ? 7 : mode === "vertical" ? 6 : mode === "horizontal" ? 6 : 5,
+  );
+  const resourceLines = wrapText(
+    resourceText,
+    mode === "horizontal" ? 38 : 42,
+    1,
+  );
+
+  let textX = contentX;
+  let textY = contentY;
+  let textWidth = contentWidth;
+  let mapX = contentX;
+  let mapY = contentY;
+  let mapWidth = contentWidth;
+  let mapHeight = contentHeight * 0.34;
+  let statsY = contentY;
+
+  if (mode === "horizontal") {
+    textWidth = Math.round(contentWidth * 0.46);
+    mapWidth = Math.round(contentWidth * 0.46);
+    mapX = contentX + contentWidth - mapWidth;
+    mapY = contentY + 14;
+    mapHeight = Math.round(contentHeight * 0.62);
+    statsY = innerY + innerHeight - 120;
+  } else if (mode === "square") {
+    mapY = innerY + Math.round(innerHeight * 0.49);
+    mapHeight = Math.round(innerHeight * 0.28);
+    statsY = innerY + innerHeight - 140;
+  } else if (mode === "vertical") {
+    mapY = innerY + Math.round(innerHeight * 0.48);
+    mapHeight = Math.round(innerHeight * 0.27);
+    statsY = innerY + innerHeight - 140;
+  } else {
+    mapY = innerY + Math.round(innerHeight * 0.45);
+    mapHeight = Math.round(innerHeight * 0.3);
+    statsY = innerY + innerHeight - 150;
+  }
+
+  const summaryStartY =
+    textY +
+    28 +
+    labelSize +
+    headlineLines.length * (headlineSize * 0.95) +
+    28;
+  const resourcesY =
+    summaryStartY + summaryLines.length * (bodySize + 12) + (mode === "horizontal" ? 18 : 20);
+  const statsGap = 12;
+  const statsWidth = Math.floor((contentWidth - statsGap * 2) / 3);
+  const statsHeight = mode === "story" ? 96 : 88;
+  const footerY = innerY + innerHeight - 28;
+
+  if (mode !== "horizontal") {
+    mapHeight = Math.max(260, statsY - mapY - 28);
+  }
+
+  const mapPaths = buildMapPaths({
+    county,
+    mapX: mapX + 16,
+    mapY: mapY + 16,
+    mapWidth: mapWidth - 32,
+    mapHeight: mapHeight - 32,
+  });
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" role="img" aria-label="${escapeXml(`${county.name}, ${county.stateCode} county card`)}}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#F4F5EF" />
-      <stop offset="60%" stop-color="#EDF1E5" />
-      <stop offset="100%" stop-color="#F8EEE6" />
+      <stop offset="54%" stop-color="#EEF2E7" />
+      <stop offset="100%" stop-color="#F7EEE5" />
     </linearGradient>
-    <radialGradient id="glow" cx="0.15" cy="0.1" r="0.85">
-      <stop offset="0%" stop-color="rgba(116,181,132,0.28)" />
+    <radialGradient id="wash" cx="0.12" cy="0.06" r="0.95">
+      <stop offset="0%" stop-color="rgba(116,181,132,0.22)" />
       <stop offset="100%" stop-color="rgba(116,181,132,0)" />
     </radialGradient>
   </defs>
   <rect width="${width}" height="${height}" rx="${Math.round(width * 0.03)}" fill="url(#bg)" />
-  <rect width="${width}" height="${height}" rx="${Math.round(width * 0.03)}" fill="url(#glow)" />
-  <rect x="${padding}" y="${padding}" width="${isHorizontal ? width * 0.44 : width - padding * 2}" height="${isVertical ? height * 0.36 : isHorizontal ? height - padding * 2 : height * 0.42}" rx="30" fill="rgba(255,255,255,0.72)" stroke="rgba(23,30,27,0.1)" />
-  <text x="${padding + 26}" y="${padding + 42}" fill="#4F8F66" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.92)}" font-weight="700" letter-spacing="2.4">PROJECT ISITUSA</text>
-  <text x="${padding + 26}" y="${padding + 96}" fill="#171E1B" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${titleSize}" font-weight="700">${escapeXml(county.name)}, ${escapeXml(county.stateCode)}</text>
-  <text x="${padding + 26}" y="${padding + 130}" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${bodySize}" font-weight="600">${escapeXml(filterLabel)} / ${escapeXml(preset.surface)}</text>
-  <rect x="${padding + 24}" y="${padding + 150}" width="${badgeWidth}" height="38" rx="19" fill="${badge.fill}" stroke="${badge.stroke}" />
-  <text x="${padding + 43}" y="${padding + 174}" fill="${badge.text}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.88)}" font-weight="700">${escapeXml(
-    formatCountyEvidenceLabel(detail?.evidenceLevel ?? "not-reviewed"),
-  )}</text>
-  ${summaryLines
-    .map(
-      (line, index) =>
-        `<text x="${padding + 26}" y="${padding + 228 + index * (bodySize + 10)}" fill="#23312A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${bodySize}" font-weight="500">${escapeXml(
-          line,
-        )}</text>`,
-    )
-    .join("")}
-  <text x="${padding + 26}" y="${isVertical ? height * 0.44 : isHorizontal ? height - padding - 168 : height * 0.36}" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.88)}" font-weight="700">VERIFIED SOURCES</text>
-  ${resourceLines
-    .map(
-      (line, index) =>
-        `<text x="${padding + 26}" y="${(isVertical ? height * 0.44 : isHorizontal ? height - padding - 136 : height * 0.39) + index * (bodySize + 8)}" fill="#334039" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.92)}">${escapeXml(
-          line,
-        )}</text>`,
-    )
-    .join("")}
-  <g>
-    <rect x="${mapLeft}" y="${mapTop}" width="${mapWidth}" height="${mapHeight}" rx="28" fill="rgba(255,255,255,0.72)" stroke="rgba(23,30,27,0.1)" />
-    <g clip-path="url(#mapClip)">
-      ${backgroundStatePaths}
-      ${
-        selectedStatePath
-          ? `<path d="${selectedStatePath}" fill="rgba(79,143,102,0.18)" stroke="rgba(79,143,102,0.8)" stroke-width="1.3" />`
-          : ""
-      }
-      ${
-        selectedCountyPath
-          ? `<path d="${selectedCountyPath}" fill="#D77963" stroke="#A84837" stroke-width="2.2" />`
-          : ""
-      }
-    </g>
+  <rect width="${width}" height="${height}" rx="${Math.round(width * 0.03)}" fill="url(#wash)" />
+  <rect x="${innerX}" y="${innerY}" width="${innerWidth}" height="${innerHeight}" rx="${Math.round(width * 0.03)}" fill="rgba(255,255,255,0.72)" stroke="rgba(23,30,27,0.08)" />
+  <text x="${contentX}" y="${contentY}" fill="#4F8F66" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${labelSize}" font-weight="700" letter-spacing="1.4">isitusa.com</text>
+  ${renderTextLines({
+    lines: headlineLines,
+    x: textX,
+    y: textY + 48,
+    lineHeight: headlineSize * 0.95,
+    size: headlineSize,
+    color: "#171E1B",
+    weight: 700,
+  })}
+  <text x="${textX}" y="${textY + 48 + headlineLines.length * (headlineSize * 0.95) + 18}" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${bodySize}" font-weight="600">${escapeXml(filterText)}</text>
+  ${renderTextLines({
+    lines: summaryLines,
+    x: textX,
+    y: summaryStartY,
+    lineHeight: bodySize + 12,
+    size: bodySize,
+    color: "#23312A",
+    weight: 500,
+  })}
+  ${renderTextLines({
+    lines: resourceLines,
+    x: textX,
+    y: resourcesY,
+    lineHeight: bodySize,
+    size: labelSize,
+    color: "#66706A",
+    weight: 600,
+  })}
+  <rect x="${mapX}" y="${mapY}" width="${mapWidth}" height="${mapHeight}" rx="26" fill="rgba(255,255,255,0.76)" stroke="rgba(23,30,27,0.08)" />
+  <g clip-path="url(#mapClip)">
+    ${mapPaths.states}
+    ${
+      mapPaths.selectedStatePath
+        ? `<path d="${mapPaths.selectedStatePath}" fill="rgba(79,143,102,0.18)" stroke="rgba(79,143,102,0.72)" stroke-width="1.3" />`
+        : ""
+    }
+    ${
+      mapPaths.selectedCountyPath
+        ? `<path d="${mapPaths.selectedCountyPath}" fill="#D77963" stroke="#A84837" stroke-width="2.2" />`
+        : ""
+    }
   </g>
   <defs>
     <clipPath id="mapClip">
-      <rect x="${mapLeft}" y="${mapTop}" width="${mapWidth}" height="${mapHeight}" rx="28" />
+      <rect x="${mapX}" y="${mapY}" width="${mapWidth}" height="${mapHeight}" rx="26" />
     </clipPath>
   </defs>
-  <text x="${mapLeft + 22}" y="${mapTop + 36}" fill="#47524A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.82)}" font-weight="700">COUNTY IN CONTEXT</text>
-  <text x="${mapLeft + 22}" y="${mapTop + 62}" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.72)}">${escapeXml(county.stateName)} highlighted in green, selected county in coral.</text>
+  <text x="${mapX + 18}" y="${mapY + 26}" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${labelSize}" font-weight="600">${escapeXml(`${county.stateName} in green, county in coral.`)}</text>
   ${stats
     .map((stat, index) => {
-      const x = padding + index * (statWidth + statGap);
-      const y = statY;
+      const statX = contentX + index * (statsWidth + statsGap);
       return `<g>
-        <rect x="${x}" y="${y}" width="${statWidth}" height="102" rx="24" fill="rgba(255,255,255,0.82)" stroke="rgba(23,30,27,0.08)" />
-        <text x="${x + 20}" y="${y + 40}" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.8)}" font-weight="700">${escapeXml(
-          stat.label,
-        )}</text>
-        <text x="${x + 20}" y="${y + 82}" fill="#171E1B" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${statFontSize}" font-weight="700">${escapeXml(
+        <rect x="${statX}" y="${statsY}" width="${statsWidth}" height="${statsHeight}" rx="22" fill="rgba(255,255,255,0.8)" stroke="rgba(23,30,27,0.08)" />
+        <text x="${statX + 18}" y="${statsY + 34}" fill="#171E1B" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${statNumberSize}" font-weight="700">${escapeXml(
           stat.value,
+        )}</text>
+        <text x="${statX + 18}" y="${statsY + 60}" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${statLabelSize}" font-weight="600">${escapeXml(
+          stat.caption,
         )}</text>
       </g>`;
     })
     .join("")}
-  <text x="${padding}" y="${height - 28}" fill="#47524A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.82)}">isitusa.com</text>
-  <text x="${width - padding}" y="${height - 28}" text-anchor="end" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${Math.round(bodySize * 0.76)}">Downloadable county card</text>
+  <text x="${contentX}" y="${footerY}" fill="#47524A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${labelSize}">isitusa.com</text>
+  <text x="${innerX + innerWidth - cardPad}" y="${footerY}" text-anchor="end" fill="#66706A" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${labelSize}">${escapeXml(
+    county.name,
+  )}</text>
 </svg>`;
 }

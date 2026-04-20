@@ -27,7 +27,6 @@ import type {
   ZipLookupResult,
 } from "@/lib/data/types";
 import { buildSearchParams } from "@/lib/url-state";
-import { buildCountyFilterLabel } from "@/lib/county-detail";
 import { formatNaturalList } from "@/lib/utils";
 
 const EMPTY_DATASET_SNAPSHOT = {
@@ -414,10 +413,6 @@ export function MapExplorer({
   const speciesWithoutCountyCoverage = getSpeciesWithoutCountyCoverage(allSpecies, filters);
   const coverageSummary = datasetSnapshot.coverageSummary;
   const hasExpandedCountyDetail = Boolean(selectedCounty);
-  const activeFilterLabel = useMemo(
-    () => buildCountyFilterLabel(selectedCategories),
-    [selectedCategories],
-  );
   const zipInsight = useMemo(
     () =>
       buildZipInsight({
@@ -593,7 +588,6 @@ export function MapExplorer({
           <CountyInsightPanel
             selectedCounty={selectedCounty}
             selectedCountyDetail={selectedCountyDetail}
-            activeFilterLabel={activeFilterLabel}
             selectedCategories={selectedCategories}
             focalSpecies={focalSpecies}
             nearbySpecies={nearbySpecies}

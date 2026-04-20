@@ -6,10 +6,11 @@ import { useEffect, useMemo, useState } from "react";
 import { CountyCardDownload } from "@/components/county-card-download";
 import { SpeciesCard } from "@/components/species-card";
 import {
-  buildCountyNarrative,
-  buildCountyResourceSummary,
+  buildCountyFilterLabel,
+  buildCountyHeadline,
+  buildCountyResourceLine,
   buildCountyStats,
-  formatCountyEvidenceLabel,
+  buildCountySummaryParagraphs,
 } from "@/lib/county-detail";
 import type {
   CountyDetail,
@@ -22,7 +23,6 @@ import { formatCategoryLabel } from "@/lib/utils";
 interface CountyInsightPanelProps {
   selectedCounty: CountyRecord | null;
   selectedCountyDetail: CountyDetail | null;
-  activeFilterLabel: string;
   selectedCategories: SpeciesCategory[];
   focalSpecies: ExplorerSpecies[];
   nearbySpecies: ExplorerSpecies[];
@@ -34,7 +34,6 @@ const PAGE_SIZE_OPTIONS = [10, 20, 50, 100] as const;
 export function CountyInsightPanel({
   selectedCounty,
   selectedCountyDetail,
-  activeFilterLabel,
   selectedCategories,
   focalSpecies,
   nearbySpecies,
@@ -54,11 +53,15 @@ export function CountyInsightPanel({
   const pageStart = activeSpecies.length === 0 ? 0 : (page - 1) * pageSize + 1;
   const pageEnd = Math.min(page * pageSize, activeSpecies.length);
   const pagedSpecies = activeSpecies.slice(pageStart === 0 ? 0 : pageStart - 1, pageEnd);
-  const evidenceLabel = formatCountyEvidenceLabel(
-    selectedCountyDetail?.evidenceLevel ?? "not-reviewed",
-  );
-  const narrative = selectedCounty
-    ? buildCountyNarrative({
+  const countyHeadline = selectedCounty
+    ? buildCountyHeadline({
+        county: selectedCounty,
+        detail: selectedCountyDetail,
+        focalSpecies,
+      })
+    : "";
+  const countyParagraphs = selectedCounty
+    ? buildCountySummaryParagraphs({
         county: selectedCounty,
         detail: selectedCountyDetail,
         focalSpecies,
@@ -66,14 +69,13 @@ export function CountyInsightPanel({
         unresolvedCount: speciesWithoutCountyCoverage.length,
         selectedCategories,
       })
-    : "";
+    : [];
   const countyStats = buildCountyStats({
-    detail: selectedCountyDetail,
     focalSpecies,
     nearbySpecies,
     unresolvedCount: speciesWithoutCountyCoverage.length,
   });
-  const resourceSummary = buildCountyResourceSummary(selectedCountyDetail);
+  const resourceLabels = buildCountyResourceLine(selectedCountyDetail);
 
   useEffect(() => {
     setViewMode("summary");
@@ -101,8 +103,8 @@ export function CountyInsightPanel({
         </h2>
         <p className="mt-3 max-w-xl text-sm leading-6 text-[var(--muted)]">
           Click any county to inspect the current invasive species dataset, compare
-          nearby counties, review county-specific source strength, and export a
-          share-ready county card.
+          nearby counties, review local source strength, and export a share-ready
+          county card.
         </p>
       </aside>
     );
@@ -119,19 +121,10 @@ export function CountyInsightPanel({
             {selectedCounty.name}, {selectedCounty.stateCode}
             {speciesWithoutCountyCoverage.length > 0 ? " *" : ""}
           </h2>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className="rounded-full border border-[var(--border)] bg-[var(--background)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--foreground)]">
-              {evidenceLabel}
-            </span>
-            <span className="rounded-full border border-[var(--border)] bg-[var(--background)] px-3 py-1.5 text-xs uppercase tracking-[0.14em] text-[var(--muted)]">
-              {activeFilterLabel}
-            </span>
-          </div>
           {speciesWithoutCountyCoverage.length > 0 ? (
-            <p className="mt-3 text-sm text-[var(--muted)]">
-              Confirmed county-level records are shown below. The asterisk means
-              some species in the current filter set still do not have verified
-              county-level source coverage attached yet.
+            <p className="mt-3 max-w-3xl text-sm text-[var(--muted)]">
+              The asterisk means some species in the current filter set still do
+              not have verified county-level coverage attached yet.
             </p>
           ) : null}
         </div>
@@ -184,79 +177,61 @@ export function CountyInsightPanel({
         </div>
 
         {viewMode === "summary" ? (
-          <section className="grid gap-5">
-            <div className="grid gap-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-              <div className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)] p-5">
-                <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
-                  County summary
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--foreground)]">
-                  {narrative}
-                </p>
+          <section className="grid gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(420px,0.9fr)] xl:items-start">
+            <div className="grid gap-5">
+              <div className="grid grid-cols-3 gap-4 border-y border-[var(--border)] py-4">
+                {countyStats.map((stat) => (
+                  <div key={`${stat.value}-${stat.caption}`} className="min-w-0">
+                    <p className="text-[clamp(2rem,4vw,3.1rem)] font-semibold leading-none text-[var(--foreground)]">
+                      {stat.value}
+                    </p>
+                    <p className="mt-2 text-sm leading-5 text-[var(--muted)]">
+                      {stat.caption}
+                    </p>
+                  </div>
+                ))}
               </div>
 
-              <div className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)] p-5">
-                <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
-                  Verified resources
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-                  {resourceSummary}
-                </p>
-                {selectedCountyDetail?.resources?.length ? (
-                  <ul className="mt-4 grid gap-3">
-                    {selectedCountyDetail.resources.map((resource) => (
-                      <li
-                        key={`${resource.kind}-${resource.url}`}
-                        className="rounded-[18px] border border-[var(--border)] bg-[var(--background)] px-4 py-3"
-                      >
+              <div className="grid gap-4">
+                <h3 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.02] text-[var(--foreground)]">
+                  {countyHeadline}
+                </h3>
+
+                <div className="grid gap-4 text-[15px] leading-7 text-[var(--foreground)]">
+                  {countyParagraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+
+                {Array.isArray(resourceLabels) && resourceLabels.length > 0 ? (
+                  <div className="overflow-x-auto pb-1">
+                    <div className="flex min-w-max items-center gap-2 whitespace-nowrap">
+                      {selectedCountyDetail?.resources.slice(0, 4).map((resource) => (
                         <Link
+                          key={`${resource.kind}-${resource.url}`}
                           href={resource.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-sm font-semibold text-[var(--foreground)] underline decoration-[color:rgba(79,143,102,0.4)] underline-offset-4"
+                          className="rounded-full border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)]"
                         >
                           {resource.label}
                         </Link>
-                        <p className="mt-1 text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
-                          {resource.kind.replaceAll("-", " ")}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="mt-4 rounded-[18px] border border-dashed border-[var(--border)] px-4 py-4 text-sm text-[var(--muted)]">
-                    County-specific resource links have not been curated yet for this county.
+                      ))}
+                    </div>
                   </div>
+                ) : (
+                  <p className="text-sm text-[var(--muted)]">{resourceLabels}</p>
                 )}
               </div>
-            </div>
-
-            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-              {countyStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-[22px] border border-[var(--border)] bg-[var(--surface)] px-4 py-4"
-                >
-                  <p className="text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-                    {stat.label}
-                  </p>
-                  <p className="mt-2 text-3xl font-semibold text-[var(--foreground)]">
-                    {stat.value}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                    {stat.note}
-                  </p>
-                </div>
-              ))}
             </div>
 
             <CountyCardDownload
               county={selectedCounty}
               detail={selectedCountyDetail}
-              focalSpeciesCount={focalSpecies.length}
-              nearbySpeciesCount={nearbySpecies.length}
+              focalSpecies={focalSpecies}
+              nearbySpecies={nearbySpecies}
               unresolvedCount={speciesWithoutCountyCoverage.length}
-              filterLabel={activeFilterLabel}
+              filterLabel={buildCountyFilterLabel(selectedCategories)}
             />
           </section>
         ) : (

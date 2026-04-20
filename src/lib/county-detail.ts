@@ -8,9 +8,8 @@ import type {
 import { formatCategoryLabel, formatNaturalList } from "@/lib/utils";
 
 export interface CountyStat {
-  label: string;
   value: string;
-  note: string;
+  caption: string;
 }
 
 function countSpeciesByCategory(species: ExplorerSpecies[]) {
@@ -23,30 +22,61 @@ function countSpeciesByCategory(species: ExplorerSpecies[]) {
   return [...counts.entries()].sort((left, right) => right[1] - left[1]);
 }
 
+function shortenSpeciesName(value: string) {
+  const words = value.split(/\s+/).filter(Boolean);
+  if (words.length <= 4) return value;
+  return `${words.slice(0, 4).join(" ")}...`;
+}
+
+function getTopSpecies(species: ExplorerSpecies[]) {
+  return species.slice(0, 2).map((item) => shortenSpeciesName(item.commonName));
+}
+
 export function formatCountyEvidenceLabel(level: CountyEvidenceLevel) {
   switch (level) {
     case "county-specific":
-      return "County-specific source verified";
+      return "Locally verified";
     case "statewide-only":
-      return "Statewide source only";
+      return "Statewide view";
     default:
-      return "County audit not curated yet";
+      return "Audit still in progress";
   }
 }
 
 export function buildCountyFilterLabel(categories: SpeciesCategory[]) {
   if (categories.length === 0) return "All categories";
-  if (categories.length === 1) return `${formatCategoryLabel(categories[0])} focus`;
-  return `${categories.length} category view`;
+  if (categories.length === 1) return formatCategoryLabel(categories[0]);
+  return `${categories.length} categories`;
 }
 
-export function buildCountyNarrative({
+export function buildCountyHeadline({
+  county,
+  detail,
+  focalSpecies,
+}: {
+  county: CountyRecord;
+  detail: CountyDetail | null;
+  focalSpecies: ExplorerSpecies[];
+}) {
+  if (detail?.headline) return detail.headline;
+
+  const topSpecies = focalSpecies[0];
+
+  if (!topSpecies) {
+    return `${county.name} County is still coming into focus`;
+  }
+
+  return `${county.name} County: ${shortenSpeciesName(topSpecies.commonName)} leads`;
+}
+
+export function buildCountySummaryParagraphs({
   county,
   detail,
   focalSpecies,
   nearbySpecies,
   unresolvedCount,
   selectedCategories,
+  filterLabel,
 }: {
   county: CountyRecord;
   detail: CountyDetail | null;
@@ -54,120 +84,100 @@ export function buildCountyNarrative({
   nearbySpecies: ExplorerSpecies[];
   unresolvedCount: number;
   selectedCategories: SpeciesCategory[];
+  filterLabel?: string;
 }) {
-  const categoryCounts = countSpeciesByCategory(focalSpecies);
-  const topCategory = categoryCounts[0];
-  const filterLabel = buildCountyFilterLabel(selectedCategories).toLowerCase();
-  const leadSentence =
-    detail?.countySummary ??
-    `${county.name} County currently shows ${focalSpecies.length.toLocaleString()} mapped invasive species in the ${filterLabel}. ${
-      nearbySpecies.length > 0
-        ? `${nearbySpecies.length.toLocaleString()} additional species are verified in nearby counties only.`
-        : "No nearby-only watchlist species are visible in this filtered view."
-    }`;
+  if (detail?.summaryParagraphs?.length) {
+    return detail.summaryParagraphs;
+  }
 
-  const evidenceSentence = detail
+  const activeFilterLabel = (filterLabel ?? buildCountyFilterLabel(selectedCategories)).toLowerCase();
+  const topSpecies = getTopSpecies(focalSpecies);
+  const topCategory = countSpeciesByCategory(focalSpecies)[0];
+  const lead = `${county.name} County currently shows ${focalSpecies.length.toLocaleString()} mapped invasive species in this ${activeFilterLabel} view.`;
+  const speciesSentence =
+    topSpecies.length > 0
+      ? `${formatNaturalList(topSpecies)} are among the clearest names to watch right now.`
+      : "There are no mapped species showing in the current county view yet.";
+  const nearbySentence =
+    nearbySpecies.length > 0
+      ? `${nearbySpecies.length.toLocaleString()} more species are showing up in nearby counties.`
+      : "No nearby-only watchlist species are showing up right now.";
+  const evidenceSentence = detail?.auditSummary
     ? detail.auditSummary
-    : "A county-specific audit summary has not been published yet for this county, so the live view still relies on merged statewide and federal county datasets.";
-
+    : "This county still leans on statewide and federal datasets while the deeper county audit catches up.";
   const categorySentence = topCategory
-    ? `${formatCategoryLabel(topCategory[0])} currently leads this county view with ${topCategory[1].toLocaleString()} mapped species.`
-    : "No mapped species are visible in the current county view yet.";
-
+    ? `${formatCategoryLabel(topCategory[0])} is the strongest category in the county view right now.`
+    : "";
   const unresolvedSentence =
     unresolvedCount > 0
-      ? `${unresolvedCount.toLocaleString()} species in the active filters still do not have verified county-level coverage attached.`
-      : "No county-level coverage gaps are visible in the active filters.";
+      ? `${unresolvedCount.toLocaleString()} filtered species are still waiting on county-level verification.`
+      : "The current filter set does not show county-level verification gaps right now.";
 
-  return `${leadSentence} ${evidenceSentence} ${categorySentence} ${unresolvedSentence}`;
+  return [
+    `${lead} ${speciesSentence} ${nearbySentence}`,
+    `${evidenceSentence} ${categorySentence} ${unresolvedSentence}`.trim(),
+  ];
 }
 
 export function buildCountyStats({
-  detail,
   focalSpecies,
   nearbySpecies,
   unresolvedCount,
 }: {
-  detail: CountyDetail | null;
   focalSpecies: ExplorerSpecies[];
   nearbySpecies: ExplorerSpecies[];
   unresolvedCount: number;
 }) {
-  const countySpecificResources =
-    detail?.resources.filter((resource) =>
-      ["county-detection", "regulatory-notice"].includes(resource.kind),
-    ).length ?? 0;
-
   const stats: CountyStat[] = [
     {
-      label: "Mapped in county",
       value: focalSpecies.length.toLocaleString(),
-      note: "Species currently attached to this county in the active view.",
+      caption: "mapped here",
     },
     {
-      label: "Nearby watchlist",
       value: nearbySpecies.length.toLocaleString(),
-      note: "Species verified in neighboring counties but not yet in this county.",
+      caption: "nearby",
     },
     {
-      label: "Coverage gaps",
       value: unresolvedCount.toLocaleString(),
-      note: "Filtered species still waiting on county-level source attachment.",
+      caption: "still being checked",
     },
   ];
 
-  if (detail) {
-    stats.push({
-      label: "Local official reports",
-      value: countySpecificResources.toLocaleString(),
-      note:
-        countySpecificResources > 0
-          ? "County-specific detections or regulatory notices currently logged."
-          : "No county-specific detections or regulatory notices logged yet.",
-    });
-  }
-
-  return stats.slice(0, 4);
+  return stats;
 }
 
-export function buildCountyResourceSummary(detail: CountyDetail | null) {
+export function buildCountyResourceLine(detail: CountyDetail | null) {
   if (!detail || detail.resources.length === 0) {
-    return "County-specific organizations and verified local source links have not been curated for this county yet.";
+    return "Local source links are still being added.";
   }
 
-  const highlighted = detail.resources.slice(0, 3).map((resource) => resource.label);
-
-  return `Verified local and statewide sources currently highlighted here include ${formatNaturalList(
-    highlighted,
-  )}.`;
+  return detail.resources.slice(0, 4).map((resource) => resource.label);
 }
 
-export function buildCountyCardSummary({
+export function buildCountyCardParagraph({
   county,
   detail,
-  focalSpeciesCount,
-  nearbySpeciesCount,
+  focalSpecies,
+  nearbySpecies,
   unresolvedCount,
+  selectedCategories,
+  filterLabel,
 }: {
   county: CountyRecord;
   detail: CountyDetail | null;
-  focalSpeciesCount: number;
-  nearbySpeciesCount: number;
+  focalSpecies: ExplorerSpecies[];
+  nearbySpecies: ExplorerSpecies[];
   unresolvedCount: number;
+  selectedCategories: SpeciesCategory[];
+  filterLabel?: string;
 }) {
-  const base =
-    detail?.countySummary ??
-    `${county.name} County currently shows ${focalSpeciesCount.toLocaleString()} mapped invasive species in the Project Isitusa county explorer.`;
-
-  const second =
-    nearbySpeciesCount > 0
-      ? `${nearbySpeciesCount.toLocaleString()} additional species are verified in nearby counties only.`
-      : "No nearby-only watchlist species are visible in the current view.";
-
-  const third =
-    unresolvedCount > 0
-      ? `${unresolvedCount.toLocaleString()} filtered species still need county-level source attachment.`
-      : "Current filters do not show county-level source gaps.";
-
-  return `${base} ${second} ${third}`;
+  return buildCountySummaryParagraphs({
+    county,
+    detail,
+    focalSpecies,
+    nearbySpecies,
+    unresolvedCount,
+    selectedCategories,
+    filterLabel,
+  })[0];
 }

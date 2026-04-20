@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import NextImage from "next/image";
 
-import type { CountyDetail, CountyRecord } from "@/lib/data/types";
+import type { CountyDetail, CountyRecord, ExplorerSpecies } from "@/lib/data/types";
 import {
   COUNTY_CARD_PRESETS,
   buildCountyCardSvg,
@@ -21,19 +21,19 @@ function slugify(value: string) {
 export function CountyCardDownload({
   county,
   detail,
-  focalSpeciesCount,
-  nearbySpeciesCount,
+  focalSpecies,
+  nearbySpecies,
   unresolvedCount,
   filterLabel,
 }: {
   county: CountyRecord;
   detail: CountyDetail | null;
-  focalSpeciesCount: number;
-  nearbySpeciesCount: number;
+  focalSpecies: ExplorerSpecies[];
+  nearbySpecies: ExplorerSpecies[];
   unresolvedCount: number;
   filterLabel: string;
 }) {
-  const [presetId, setPresetId] = useState(COUNTY_CARD_PRESETS[1]?.id ?? COUNTY_CARD_PRESETS[0].id);
+  const [presetId, setPresetId] = useState("story");
   const [isDownloading, setIsDownloading] = useState(false);
   const preset = countyCardPresetById(presetId);
 
@@ -43,20 +43,12 @@ export function CountyCardDownload({
         preset,
         county,
         detail,
-        focalSpeciesCount,
-        nearbySpeciesCount,
+        focalSpecies,
+        nearbySpecies,
         unresolvedCount,
         filterLabel,
       }),
-    [
-      county,
-      detail,
-      filterLabel,
-      focalSpeciesCount,
-      nearbySpeciesCount,
-      preset,
-      unresolvedCount,
-    ],
+    [county, detail, filterLabel, focalSpecies, nearbySpecies, preset, unresolvedCount],
   );
   const previewSrc = useMemo(() => svgToDataUri(svgMarkup), [svgMarkup]);
 
@@ -106,86 +98,58 @@ export function CountyCardDownload({
   const svgDownloadHref = useMemo(() => previewSrc, [previewSrc]);
 
   return (
-    <section className="grid gap-4 rounded-[24px] border border-[var(--border)] bg-[var(--surface)] p-4">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <h3 className="text-lg font-semibold text-[var(--foreground)]">County card</h3>
-          <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
-            Download a share-ready county card built from the current county view,
-            verified local sources, and Project Isitusa branding.
-          </p>
-        </div>
-        <div className="text-sm text-[var(--muted)]">
-          Current preset: {preset.label} ({preset.width} x {preset.height})
-        </div>
+    <section className="grid gap-4 xl:sticky xl:top-6">
+      <div className="flex items-end justify-between gap-4">
+        <p className="text-sm text-[var(--muted)]">
+          {preset.label} {preset.width} x {preset.height}
+        </p>
+        <p className="text-sm text-[var(--muted)]">isitusa.com</p>
       </div>
 
-      <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
-        <div className="overflow-hidden rounded-[24px] border border-[var(--border)] bg-[color:rgba(255,255,255,0.58)] p-3">
-          <NextImage
-            src={previewSrc}
-            alt={`${county.name}, ${county.stateCode} county card preview`}
-            width={preset.width}
-            height={preset.height}
-            unoptimized
-            className="h-auto w-full rounded-[20px]"
-          />
-        </div>
+      <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-[color:rgba(255,255,255,0.5)] p-3 shadow-[var(--shadow)]">
+        <NextImage
+          src={previewSrc}
+          alt={`${county.name}, ${county.stateCode} county card preview`}
+          width={preset.width}
+          height={preset.height}
+          unoptimized
+          className="h-auto w-full rounded-[22px]"
+        />
+      </div>
 
-        <div className="grid content-start gap-4">
-          <div className="grid gap-2">
-            <p className="text-xs uppercase tracking-[0.22em] text-[var(--muted)]">
-              Export sizes
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {COUNTY_CARD_PRESETS.map((option) => (
-                <button
-                  key={option.id}
-                  type="button"
-                  onClick={() => setPresetId(option.id)}
-                  className={`rounded-full border px-3 py-2 text-sm ${
-                    option.id === preset.id
-                      ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)]"
-                      : "border-[var(--border)] bg-[var(--background)] text-[var(--foreground)]"
-                  }`}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-            <p className="text-sm text-[var(--muted)]">
-              {preset.surface}. The export remains a clean PNG sized for the selected surface.
-            </p>
-          </div>
+      <div className="flex flex-wrap gap-2">
+        {COUNTY_CARD_PRESETS.map((option) => (
+          <button
+            key={option.id}
+            type="button"
+            onClick={() => setPresetId(option.id)}
+            className={`rounded-full border px-3 py-2 text-sm ${
+              option.id === preset.id
+                ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)]"
+                : "border-[var(--border)] bg-[var(--background)] text-[var(--foreground)]"
+            }`}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
 
-          <div className="grid gap-2">
-            <button
-              type="button"
-              onClick={handleDownloadPng}
-              disabled={isDownloading}
-              className="locate-button rounded-full px-4 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {isDownloading ? "Rendering PNG..." : "Download PNG"}
-            </button>
-            <a
-              href={svgDownloadHref}
-              download={`${slugify(county.name)}-${county.stateCode.toLowerCase()}-county-card-${preset.id}.svg`}
-              className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm font-semibold text-[var(--foreground)]"
-            >
-              Download SVG
-            </a>
-          </div>
-
-          <div className="rounded-[20px] border border-[var(--border)] bg-[var(--background)] px-4 py-4 text-sm text-[var(--muted)]">
-            <p className="font-semibold text-[var(--foreground)]">What is included</p>
-            <ul className="mt-2 grid gap-2">
-              <li>The county name and current filter context</li>
-              <li>A county summary grounded in current verified sources</li>
-              <li>A U.S. map with the state and county highlighted</li>
-              <li>Project Isitusa branding and site link</li>
-            </ul>
-          </div>
-        </div>
+      <div className="grid gap-2">
+        <button
+          type="button"
+          onClick={handleDownloadPng}
+          disabled={isDownloading}
+          className="locate-button rounded-full px-4 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {isDownloading ? "Rendering PNG..." : "Download PNG"}
+        </button>
+        <a
+          href={svgDownloadHref}
+          download={`${slugify(county.name)}-${county.stateCode.toLowerCase()}-county-card-${preset.id}.svg`}
+          className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm font-semibold text-[var(--foreground)]"
+        >
+          Download SVG
+        </a>
       </div>
     </section>
   );
