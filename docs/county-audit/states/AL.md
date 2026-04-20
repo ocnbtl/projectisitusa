@@ -11,6 +11,7 @@ County count in current dataset: `67`
 ## Audit Notes
 
 Statewide source path started on 2026-04-20.
+Current product gap confirmed on 2026-04-20: the generated county-presence snapshot still maps `0` Alabama counties in production-facing data, so this audit must search for both county-specific evidence and broader statewide or regional sources that can actually reduce gray counties.
 
 ## County Checklist
 

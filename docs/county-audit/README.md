@@ -18,6 +18,13 @@ The real gap is source completeness and reporting quality:
 - some counties may have stronger local reporting than the current merged statewide or federal inputs capture
 - wildlife is a likely underreported category in several states and counties
 
+Another contradiction matters here too:
+
+- a statewide source can be good enough to anchor narrative context without being integrated into the county-presence map
+- a county audit can improve county summaries and resources without adding a single new mapped county if the source never reaches the import pipeline
+
+The Alabama audit made that gap concrete on 2026-04-20. The current generated county-presence snapshot still contains `0` mapped Alabama counties even though Alabama now has a documented statewide source path and reviewed county source notes.
+
 ## Audit Rules
 
 1. Prefer official agency, university extension, land-grant research, or similarly attributable public programs.
@@ -25,6 +32,8 @@ The real gap is source completeness and reporting quality:
 3. Do not promote a source into production until it is logged in [docs/source-inventory.md](/Users/ocean/Code/Project%20Isitusa/docs/source-inventory.md:1) with a clear purpose.
 4. If a state has no county-level source, document that plainly instead of stretching a weak statewide page into county evidence.
 5. Separate source discovery from pipeline adoption. A source can be "verified for research" before it is "approved for production use."
+6. Do not stop at one source family when a county comes up thin. Search across state agencies, agriculture departments, forestry agencies, wildlife agencies, county government, extension, conservation districts, regulatory notices, dashboards, GIS viewers, and credible academic programs before calling the county reviewed.
+7. County audit is not only a documentation task. It should also look for statewide or regional datasets that could actually reduce gray counties in production when county-level sources are missing.
 
 ## Qualification Tiers
 
@@ -51,6 +60,8 @@ The real gap is source completeness and reporting quality:
 3. County cards may always use Project Isitusa-derived stats such as mapped species count, nearby watchlist count, and unresolved coverage count.
 4. County cards may mention local organizations or county-specific detections only when those references exist in the curated county-detail dataset.
 5. Negative evidence is still useful. "No county-specific public list found" is a valid audit result and should be documented plainly.
+6. A statewide source may still be valuable even when it does not justify a county occurrence claim, but it must be labeled as a statewide fallback rather than silently treated like county proof.
+7. If a county remains gray in production, the audit should explicitly ask whether the problem is lack of source discovery, lack of importable structure, or lack of pipeline adoption.
 
 ## Chunk Size
 
@@ -61,10 +72,15 @@ That is intentionally smaller than the profile-writing chunks because county rev
 ## Audit Sequence
 
 1. Confirm statewide official invasive-species platforms for the state.
-2. Check whether the state offers county-level lists, dashboards, maps, or downloadable records.
-3. If statewide county evidence is weak, check county-level government, extension, weed-district, or conservation-district sources one county at a time.
-4. Record what exists even when it is negative evidence, such as "no public county list found."
-5. Only after the source path is clear should the data pipeline be reconsidered.
+2. Check whether the state offers county-level lists, dashboards, maps, downloadable records, or structured statewide datasets that can be normalized down to counties.
+3. If statewide county evidence is weak, search county-level government, extension, weed-district, conservation-district, regulatory, and GIS sources one county at a time.
+4. If the county path is still thin, broaden the search to other reputable state and regional systems before closing the county as statewide-only.
+5. Record what exists even when it is negative evidence, such as "no public county list found."
+6. Record whether the best source found is:
+   - county-specific and usable for occurrence claims
+   - statewide-only and useful for narrative fallback
+   - structured enough to evaluate for pipeline import
+7. After the source path is clear, decide whether a pipeline follow-up is needed to reduce gray counties in production.
 
 ## Status Labels
 
@@ -80,6 +96,10 @@ County row statuses:
 - `not-started`: county not reviewed yet
 - `complete-state-source-only`: county reviewed, but no county-specific public invasive-species list or report was verified in the reviewed official sources
 - `complete-county-source-found`: county reviewed and at least one county-specific public invasive-species source was verified
+
+Important limitation:
+
+`complete-state-source-only` does not mean the county is visually covered in the map. It only means the audit found no county-specific qualifying evidence and is currently relying on statewide context unless or until a stronger county or importable fallback dataset is adopted.
 
 ## Files
 
