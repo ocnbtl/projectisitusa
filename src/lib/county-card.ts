@@ -24,8 +24,6 @@ type CountyCardPreset = {
   surface: string;
 };
 
-type LayoutMode = "story" | "vertical" | "square" | "horizontal";
-
 const EXCLUDED_STATE_PREFIXES = new Set(["02", "15", "60", "66", "69", "72", "78"]);
 
 const countyFeatures = (
@@ -145,13 +143,6 @@ function wrapText(text: string, maxChars: number, maxLines: number) {
   return lines;
 }
 
-function getLayoutMode(preset: CountyCardPreset): LayoutMode {
-  if (preset.id === "story") return "story";
-  if (preset.width / preset.height >= 1.55) return "horizontal";
-  if (preset.height / preset.width >= 1.35) return "vertical";
-  return "square";
-}
-
 function getToneColors(tone: SpeciesCategory | "neutral") {
   switch (tone) {
     case "plants":
@@ -201,10 +192,7 @@ type PresetLayout = {
   summaryMaxLines: number;
   summarySize: number;
   summaryLineHeight: number;
-  filterSize: number;
-  resourceChars: number;
-  resourceSize: number;
-  resourceLineHeight: number;
+  cardTitleChars: number;
   mapLabelSize: number;
   statValueSize: number;
   statCaptionSize: number;
@@ -246,29 +234,26 @@ function getPresetLayout({
         headlineSize: 24,
         headlineLineHeight: 28,
         summaryChars: 39,
-        summaryMaxLines: 4,
-        summarySize: 14,
-        summaryLineHeight: 19,
-        filterSize: 12,
-        resourceChars: 34,
-        resourceSize: 11,
-        resourceLineHeight: 16,
-        mapLabelSize: 12,
+        summaryMaxLines: 2,
+        summarySize: 16,
+        summaryLineHeight: 22,
+        cardTitleChars: 36,
+        mapLabelSize: 13,
         statValueSize: 28,
-        statCaptionSize: 11,
-        cardTitleSize: 14,
-        footerSize: 15,
+        statCaptionSize: 13,
+        cardTitleSize: 15,
+        footerSize: 16,
       };
     }
     case "widescreen": {
       const titleWidth = Math.round(contentWidth * 0.42);
       return {
-        titleBox: { x: contentX, y: contentY, width: titleWidth, height: 214 },
+        titleBox: { x: contentX, y: contentY, width: titleWidth, height: 234 },
         mapBox: {
           x: contentX + titleWidth + 30,
-          y: contentY + 6,
+          y: contentY + 8,
           width: contentWidth - titleWidth - 30,
-          height: 286,
+          height: 266,
         },
         statsY: contentY + contentHeight - statsHeight,
         statsHeight,
@@ -278,28 +263,25 @@ function getPresetLayout({
         headlineSize: 44,
         headlineLineHeight: 48,
         summaryChars: 43,
-        summaryMaxLines: 4,
-        summarySize: 22,
-        summaryLineHeight: 31,
-        filterSize: 18,
-        resourceChars: 36,
-        resourceSize: 15,
-        resourceLineHeight: 20,
-        mapLabelSize: 14,
+        summaryMaxLines: 2,
+        summarySize: 25,
+        summaryLineHeight: 34,
+        cardTitleChars: 42,
+        mapLabelSize: 16,
         statValueSize: 40,
-        statCaptionSize: 14,
-        cardTitleSize: 22,
-        footerSize: 18,
+        statCaptionSize: 16,
+        cardTitleSize: 23,
+        footerSize: 21,
       };
     }
     case "story":
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 284 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 316 },
         mapBox: {
           x: contentX,
-          y: contentY + 322,
+          y: contentY + 350,
           width: contentWidth,
-          height: 1116,
+          height: 1088,
         },
         statsY: contentY + contentHeight - statsHeight,
         statsHeight,
@@ -309,27 +291,24 @@ function getPresetLayout({
         headlineSize: 50,
         headlineLineHeight: 52,
         summaryChars: 28,
-        summaryMaxLines: 4,
-        summarySize: 22,
-        summaryLineHeight: 31,
-        filterSize: 18,
-        resourceChars: 30,
-        resourceSize: 16,
-        resourceLineHeight: 22,
-        mapLabelSize: 16,
+        summaryMaxLines: 2,
+        summarySize: 26,
+        summaryLineHeight: 36,
+        cardTitleChars: 34,
+        mapLabelSize: 18,
         statValueSize: 36,
-        statCaptionSize: 13,
-        cardTitleSize: 24,
-        footerSize: 18,
+        statCaptionSize: 15,
+        cardTitleSize: 25,
+        footerSize: 21,
       };
     case "portrait":
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 202 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 228 },
         mapBox: {
           x: contentX,
-          y: contentY + 240,
+          y: contentY + 268,
           width: contentWidth,
-          height: 758,
+          height: 730,
         },
         statsY: contentY + contentHeight - statsHeight,
         statsHeight,
@@ -339,27 +318,24 @@ function getPresetLayout({
         headlineSize: 34,
         headlineLineHeight: 38,
         summaryChars: 31,
-        summaryMaxLines: 4,
-        summarySize: 18,
-        summaryLineHeight: 25,
-        filterSize: 15,
-        resourceChars: 34,
-        resourceSize: 14,
-        resourceLineHeight: 19,
-        mapLabelSize: 14,
+        summaryMaxLines: 2,
+        summarySize: 20,
+        summaryLineHeight: 28,
+        cardTitleChars: 34,
+        mapLabelSize: 15,
         statValueSize: 31,
-        statCaptionSize: 12,
-        cardTitleSize: 18,
-        footerSize: 17,
+        statCaptionSize: 14,
+        cardTitleSize: 20,
+        footerSize: 19,
       };
     case "tall":
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 220 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 248 },
         mapBox: {
           x: contentX,
-          y: contentY + 258,
+          y: contentY + 290,
           width: contentWidth,
-          height: 952,
+          height: 920,
         },
         statsY: contentY + contentHeight - statsHeight,
         statsHeight,
@@ -369,28 +345,25 @@ function getPresetLayout({
         headlineSize: 38,
         headlineLineHeight: 42,
         summaryChars: 31,
-        summaryMaxLines: 4,
-        summarySize: 19,
-        summaryLineHeight: 27,
-        filterSize: 16,
-        resourceChars: 34,
-        resourceSize: 14,
-        resourceLineHeight: 19,
-        mapLabelSize: 14,
+        summaryMaxLines: 2,
+        summarySize: 22,
+        summaryLineHeight: 30,
+        cardTitleChars: 34,
+        mapLabelSize: 16,
         statValueSize: 33,
-        statCaptionSize: 12,
-        cardTitleSize: 20,
-        footerSize: 17,
+        statCaptionSize: 14,
+        cardTitleSize: 21,
+        footerSize: 19,
       };
     case "square":
     default:
       return {
-        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 188 },
+        titleBox: { x: contentX, y: contentY, width: contentWidth, height: 214 },
         mapBox: {
           x: contentX,
-          y: contentY + 226,
+          y: contentY + 254,
           width: contentWidth,
-          height: 506,
+          height: 478,
         },
         statsY: contentY + contentHeight - statsHeight,
         statsHeight,
@@ -400,18 +373,15 @@ function getPresetLayout({
         headlineSize: 29,
         headlineLineHeight: 33,
         summaryChars: 33,
-        summaryMaxLines: 3,
-        summarySize: 16,
-        summaryLineHeight: 22,
-        filterSize: 14,
-        resourceChars: 34,
-        resourceSize: 13,
-        resourceLineHeight: 18,
-        mapLabelSize: 13,
+        summaryMaxLines: 2,
+        summarySize: 18,
+        summaryLineHeight: 25,
+        cardTitleChars: 32,
+        mapLabelSize: 15,
         statValueSize: 28,
-        statCaptionSize: 11,
-        cardTitleSize: 17,
-        footerSize: 16,
+        statCaptionSize: 13,
+        cardTitleSize: 18,
+        footerSize: 18,
       };
   }
 }
@@ -544,29 +514,30 @@ function renderStatsRow({
     .map((stat, index) => {
       const cardX = x + index * (cardWidth + gap);
       const tone = getToneColors(stat.tone);
-      const forceSingleLine = index === 0;
+      const valueFontSize =
+        stat.value.length >= 5 ? Math.max(20, valueSize - 6) : valueSize;
       const singleLineCaptionSize = Math.max(
         8,
-        Math.min(captionSize, Math.floor((cardWidth - 34) / Math.max(1, stat.caption.length * 0.63))),
+        Math.min(
+          captionSize,
+          Math.floor((cardWidth - 28) / Math.max(1, stat.caption.length * 0.58)),
+        ),
       );
-      const captionLines = forceSingleLine
-        ? [stat.caption]
-        : wrapText(stat.caption, Math.max(18, Math.floor(cardWidth / 13)), 2);
-      const captionStartY =
-        y + height - 18 - (captionLines.length - 1) * ((forceSingleLine ? singleLineCaptionSize : captionSize) + 2);
+      const captionLines = [stat.caption];
+      const captionStartY = y + height - 18;
 
       return `<g>
         <rect x="${cardX}" y="${y}" width="${cardWidth}" height="${height}" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" />
         <rect x="${cardX}" y="${y}" width="6" height="${height}" rx="6" fill="${tone.accent}" />
-        <text x="${cardX + 22}" y="${y + 36}" fill="#F4F8F1" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${valueSize}" font-weight="700">${escapeXml(
+        <text x="${cardX + 22}" y="${y + 36}" fill="#F4F8F1" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${valueFontSize}" font-weight="700">${escapeXml(
           stat.value,
         )}</text>
         ${renderTextLines({
           lines: captionLines,
           x: cardX + 22,
           y: captionStartY,
-          lineHeight: (forceSingleLine ? singleLineCaptionSize : captionSize) + 2,
-          size: forceSingleLine ? singleLineCaptionSize : captionSize,
+          lineHeight: singleLineCaptionSize + 2,
+          size: singleLineCaptionSize,
           color: stat.tone === "neutral" ? "#9EA9A2" : tone.strong,
           weight: 600,
         })}
@@ -633,17 +604,17 @@ export function buildCountyCardSvg({
     contentHeight,
   });
   const headlineLines = wrapText(headline, layout.headlineChars, layout.headlineMaxLines);
-  const summaryLines = wrapText(summary, layout.summaryChars, 3);
+  const summaryLines = wrapText(summary, layout.summaryChars, layout.summaryMaxLines);
   const cardTitleLines = wrapText(
     `Invasive Species in ${county.name}, ${county.stateCode}`,
-    layout.resourceChars,
+    layout.cardTitleChars,
     1,
   );
-  const cardTitleY = layout.titleBox.y + 38;
-  const accentY = layout.titleBox.y + 54;
-  const headlineY = layout.titleBox.y + 92;
+  const cardTitleY = layout.titleBox.y + 30;
+  const accentY = cardTitleY + layout.cardTitleSize + 12;
+  const headlineY = accentY + 40;
   const summaryStartY =
-    headlineY + (headlineLines.length - 1) * layout.headlineLineHeight + 34;
+    headlineY + (headlineLines.length - 1) * layout.headlineLineHeight + 28;
   const textClipX = layout.titleBox.x + 18;
   const textClipY = layout.titleBox.y + 18;
   const textClipWidth = layout.titleBox.width - 36;
@@ -651,12 +622,17 @@ export function buildCountyCardSvg({
   const mapPaths = buildMapPaths({
     county,
     mapX: layout.mapBox.x + 24,
-    mapY: layout.mapBox.y + 34,
+    mapY: layout.mapBox.y + 58,
     mapWidth: layout.mapBox.width - 48,
-    mapHeight: layout.mapBox.height - 58,
+    mapHeight: layout.mapBox.height - 86,
     baseFill: "#13211C",
     stroke: "rgba(255,255,255,0.08)",
   });
+  const mapLabel = `${county.name} County in red.`;
+  const mapLabelWidth = Math.min(
+    layout.mapBox.width - 48,
+    Math.max(180, Math.round(mapLabel.length * layout.mapLabelSize * 0.64)),
+  );
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" role="img" aria-label="${escapeXml(`${county.name}, ${county.stateCode} county card`)}}">
@@ -710,9 +686,6 @@ export function buildCountyCardSvg({
     })}
   </g>
   <rect x="${layout.mapBox.x}" y="${layout.mapBox.y}" width="${layout.mapBox.width}" height="${layout.mapBox.height}" rx="30" fill="rgba(16,28,24,0.96)" stroke="rgba(255,255,255,0.07)" />
-  <text x="${layout.mapBox.x + 24}" y="${layout.mapBox.y + 28}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${layout.mapLabelSize}" font-weight="700">${escapeXml(
-    `${county.name} County in red.`,
-  )}</text>
   <g clip-path="url(#mapClip)">
     ${mapPaths.states}
     ${
@@ -726,6 +699,10 @@ export function buildCountyCardSvg({
         : ""
     }
   </g>
+  <rect x="${layout.mapBox.x + 18}" y="${layout.mapBox.y + 14}" width="${mapLabelWidth}" height="${layout.mapLabelSize + 18}" rx="14" fill="rgba(12,23,19,0.9)" stroke="rgba(255,255,255,0.08)" />
+  <text x="${layout.mapBox.x + 28}" y="${layout.mapBox.y + 14 + layout.mapLabelSize + 2}" fill="${primaryTone.strong}" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="${layout.mapLabelSize}" font-weight="700">${escapeXml(
+    mapLabel,
+  )}</text>
   <defs>
     <clipPath id="mapClip">
       <rect x="${layout.mapBox.x}" y="${layout.mapBox.y}" width="${layout.mapBox.width}" height="${layout.mapBox.height}" rx="30" />
