@@ -11085,6 +11085,347 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "bagrada-hilaris",
+    slug: "bagrada-hilaris",
+    commonName: "Bagrada Bug",
+    scientificName: "Bagrada hilaris",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Bugs & sap-feeders",
+    summary:
+      "A small invasive stink bug that builds quickly on mustards and can ruin seedlings, leafy greens, and young cole crops.",
+    origin:
+      "Native to Africa and spread through parts of Asia and Europe before reaching the United States, where it was first found in Los Angeles County in 2008.",
+    whatToLookFor: [
+      "Small shield-shaped bugs with black bodies marked by orange and white patches.",
+      "Bright orange-red nymphs that darken as they age, often hiding at stem bases, in soil cracks, or on leaf undersides.",
+      "Fresh starburst-shaped feeding lesions, wilted seedlings, blind terminals, and forked or multiple heads on broccoli, cabbage, cauliflower, or weedy mustards.",
+    ],
+    whyItMatters:
+      "Bagrada bug moves readily from mustard weeds into crops and can damage seedlings so quickly that stands thin out before growers or gardeners realize what is happening. Heavy infestations can stunt plants, deform heads, and turn young cole crops into a repeated monitoring problem.",
+    action: {
+      mode: "diy",
+      summary:
+        "Focus on early detection and host cleanup, because once populations build, the bugs spread fast between weeds, beds, and newly planted brassicas.",
+      steps: [
+        "Inspect mustard-family crops and nearby weeds during warm parts of the day, especially after watering or when fresh starburst lesions appear.",
+        "Remove cruciferous weed hosts and heavily infested plant residue around beds so the bugs have fewer staging areas.",
+        "Use row covers or other exclusion before bugs move in, and hand-remove or vacuum small infestations before they build.",
+      ],
+    },
+    source: [
+      {
+        label: "UC IPM Home and Landscape",
+        url: "https://ipm.ucanr.edu/home-and-landscape/bagrada-bug/",
+      },
+      {
+        label: "UC IPM Cole Crops",
+        url: "https://ipm.ucanr.edu/agriculture/cole-crops/bagrada-bug/",
+      },
+    ],
+  },
+  {
+    id: "cactoblastis-cactorum",
+    slug: "cactoblastis-cactorum",
+    commonName: "Cactus Moth",
+    scientificName: "Cactoblastis cactorum",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Moths & butterflies",
+    summary:
+      "An invasive moth whose larvae tunnel through prickly pear cactus pads and can wipe out patches of native or cultivated cactus.",
+    origin:
+      "Native to South America and found in Florida in 1989, likely after spread through the Caribbean and movement in infested cactus material.",
+    whatToLookFor: [
+      "Gray-brown adult moths and salmon-orange to reddish larvae with dark spots.",
+      "Egg sticks lined up on prickly pear pads so they resemble cactus spines.",
+      "Yellowing pads that ooze fluid, show insect droppings, and become hollowed from internal feeding.",
+    ],
+    whyItMatters:
+      "Cactus moth threatens prickly pear stands that stabilize dry landscapes, support wildlife, and matter to both native ecosystems and cactus-growing operations. A single infestation can hollow out pads from the inside and, if ignored, collapse whole clumps or larger stands.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not move suspect cactus pads, and report infestations quickly because regulated states use quarantine and removal to slow spread.",
+      steps: [
+        "Inspect prickly pear carefully for egg sticks, frass, and hollowed pads before moving or sharing cactus plants or pads.",
+        "Remove and destroy infested pads or whole plants where official guidance allows, using burning or chopping methods described by APHIS.",
+        "Report suspected finds right away through your state plant regulatory contact, especially if you are outside known regulated areas.",
+      ],
+      contactName: "State plant regulatory official or plant health director",
+      contactUrl:
+        "https://www.aphis.usda.gov/plant-pests-diseases/south-american-cactus-moth",
+      contactInstructions:
+        "APHIS lists reporting contacts and regulated states for South American cactus moth.",
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/south-american-cactus-moth",
+      },
+      {
+        label: "USDA ARS",
+        url: "https://www.ars.usda.gov/office-of-international-research-engagement-and-cooperation/overseas-biological-control-obcl-highlights/saving-prickly-pear-populations-from-the-cactus-moth/",
+      },
+    ],
+  },
+  {
+    id: "euwallacea-fornicatus",
+    slug: "euwallacea-fornicatus",
+    commonName: "Polyphagous Shot Hole Borer",
+    scientificName: "Euwallacea fornicatus",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Beetles",
+    summary:
+      "A tiny invasive ambrosia beetle that spreads Fusarium dieback in a wide range of host trees and shrubs.",
+    origin:
+      "An introduced Asian shot hole borer complex now established in Southern California, where infested wood, green waste, and host movement help it spread.",
+    whatToLookFor: [
+      "Pinhead-sized round entry holes in trunks or branches, sometimes with the beetle body protruding from the opening.",
+      "Wet staining, gumming, white sugary residue, or fine frass around the holes.",
+      "Branch dieback and progressive canopy decline on known host trees after repeated attacks.",
+    ],
+    whyItMatters:
+      "Polyphagous shot hole borer is a wood-boring beetle and a disease vector at the same time. Once the beetle introduces its fungal partners, the host tree can lose water transport, decline branch by branch, and eventually fail across yards, streetscapes, orchards, and riparian corridors.",
+    action: {
+      mode: "report",
+      summary:
+        "Report suspicious trees early and avoid moving infested wood, because branch disposal and green-waste pathways can help the beetle spread farther.",
+      steps: [
+        "Photograph the holes, staining, gumming, or dieback while the symptoms are still localized enough to document clearly.",
+        "Do not move suspect firewood, logs, or pruned host material to another site unless local guidance specifically allows it.",
+        "Report infested trees to your local county agricultural office, extension contact, or California invasive-shot-hole-borer reporting program.",
+      ],
+    },
+    source: [
+      {
+        label: "UC IPM Avocado Guidelines",
+        url: "https://ipm.ucanr.edu/agriculture/avocado/polyphagous-shot-hole-borer-and-kuroshio-shot-hole-borer/",
+      },
+      {
+        label: "California Invasive Species Council",
+        url: "https://www.iscc.ca.gov/ishb.html",
+      },
+    ],
+  },
+  {
+    id: "penaeus-monodon",
+    slug: "penaeus-monodon",
+    commonName: "Asian Tiger Shrimp",
+    scientificName: "Penaeus monodon",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Crustaceans",
+    summary:
+      "A large nonnative shrimp found along the Southeast and Gulf coasts, where scientists are watching for predation, competition, and disease risks.",
+    origin:
+      "Native to Indo-Pacific and Australian waters and introduced to U.S. coastal waters through aquaculture escape, storm flooding, or spread from previously established nonnative populations.",
+    whatToLookFor: [
+      "Shrimp much larger than most native coastal shrimp, with bold black and pale banding across the back and tail.",
+      "Rusty brown overall color, sometimes with yellow or blue markings near the swimming legs.",
+      "Unusual catches in estuaries, sounds, bays, or nearshore Gulf and Atlantic waters where commercial or recreational shrimpers would not expect them.",
+    ],
+    whyItMatters:
+      "Asian tiger shrimp are large predators and scavengers that may compete with native shrimp and other crustaceans while also carrying diseases that could affect coastal fisheries. Scientists are still working out the full impact, but the species is concerning precisely because it is big, mobile, and tied to commercial aquaculture history.",
+    action: {
+      mode: "report",
+      summary:
+        "Document unusual catches and report them through state marine or invasive-species channels so agencies can track where this shrimp is showing up.",
+      steps: [
+        "Photograph the shrimp clearly from above so the striped back and tail markings are visible.",
+        "Record the date and waterbody or landing area, and keep any legal harvest separate from native shrimp catch if officials request more details.",
+        "Report unusual captures to your state marine resources or invasive-species reporting program, especially outside areas where the species is already well known.",
+      ],
+    },
+    source: [
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=1209",
+      },
+      {
+        label: "NOAA Ocean Service",
+        url: "https://oceanservice.noaa.gov/facts/tigershrimp.html",
+      },
+    ],
+  },
+  {
+    id: "monopterus-albus",
+    slug: "monopterus-albus",
+    commonName: "Asian Swamp Eel",
+    scientificName: "Monopterus albus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "An invasive air-breathing predator that can hide in mud, canals, and marsh edges while feeding on fish, crustaceans, and other small animals.",
+    origin:
+      "Native to Asia and introduced to the United States through live-food pathways, releases, and related human movement of live animals.",
+    whatToLookFor: [
+      "Long eel-like body with no pectoral fins and no obvious limbs, unlike native eels or salamander-like look-alikes.",
+      "A single V-shaped gill opening rather than the many round gill pores seen in lampreys.",
+      "Olive-brown to dark bodies with yellow-orange bellies in slow fresh water, ditches, marshes, or canals.",
+    ],
+    whyItMatters:
+      "Asian swamp eel is a flexible predator that can burrow into soft sediments, breathe air, and keep feeding in habitats where many native fish struggle. Its diet includes fish, crayfish, frogs, eggs, and other small animals, so even a localized population can put pressure on already stressed freshwater communities.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not move or release live swamp eels, and report new finds because the species is tied to live-food and illegal-release pathways.",
+      steps: [
+        "Photograph the whole animal, especially the head and the lack of pectoral fins, if you capture or observe one safely.",
+        "Do not release a captured swamp eel into another waterbody or keep live animals for later transport.",
+        "Report sightings through your state wildlife or invasive-species program with the location and date of the find.",
+      ],
+      contactName: "State wildlife or invasive-species program",
+      contactUrl: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      contactInstructions:
+        "FWC's nonnative-reporting page is a good model for what makes a credible report: clear photo, exact location, and date.",
+    },
+    source: [
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=974",
+      },
+      {
+        label: "FWC Report Nonnative Species",
+        url: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      },
+    ],
+  },
+  {
+    id: "pterygoplichthys-disjunctivus",
+    slug: "pterygoplichthys-disjunctivus",
+    commonName: "Vermiculated Sailfin Catfish",
+    scientificName: "Pterygoplichthys disjunctivus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "An armored suckermouth catfish that burrows into banks, grazes on surfaces, and has spread in warm freshwater systems through releases and escapes.",
+    origin:
+      "Native to the Amazon Basin and introduced in the United States through aquarium releases and fish-farm escape pathways.",
+    whatToLookFor: [
+      "Heavy-bodied catfish armored with bony plates and a ventral sucking mouth rather than the usual catfish mouth shape.",
+      "A tall dorsal fin and a body pattern that shifts from light spots into chevron-like markings toward the rear.",
+      "Burrows in soft banks, or clusters of unusual armored catfish in canals, springs, and warm slow-moving waters.",
+    ],
+    whyItMatters:
+      "This species is not just another aquarium escape. In large numbers it can alter the food base by scraping algae and detritus, and its nesting burrows can destabilize banks and increase erosion. It also shows up in places where people may not expect a tropical armored catfish, including manatee springs and urban canals.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not release aquarium catfish, and document new waters where this species shows up because bank burrowing and spread matter more than one isolated fish.",
+      steps: [
+        "Photograph the fish from above or the side so the armored body, dorsal fin, and mouth shape are visible.",
+        "Never dump aquarium fish or live bait into canals, ponds, or rivers.",
+        "Report repeated sightings or captures in new waters to your state fisheries or invasive-species program.",
+      ],
+      contactName: "State wildlife or invasive-species program",
+      contactUrl: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      contactInstructions:
+        "A credible report should include a clear image, exact location, and date.",
+    },
+    source: [
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=767",
+      },
+      {
+        label: "FWC Report Nonnative Species",
+        url: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      },
+    ],
+  },
+  {
+    id: "hoplosternum-littorale",
+    slug: "hoplosternum-littorale",
+    commonName: "Brown Hoplo",
+    scientificName: "Hoplosternum littorale",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "An invasive armored catfish that tolerates oxygen-poor water, spreads through slow freshwater systems, and is sometimes moved by people who value it as a food fish.",
+    origin:
+      "Native to tropical South America and introduced in Florida through food-fish release, aquarium release, aquaculture escape, or later illegal movement between fisheries.",
+    whatToLookFor: [
+      "Armored catfish in slow rivers, canals, streams, and pools where low oxygen would stress many other fish.",
+      "Brown fish with stout pectoral spines, especially males during the breeding season.",
+      "Bubble nests or repeated catches in shallow vegetated waters where a hardy air-breathing catfish would stand out.",
+    ],
+    whyItMatters:
+      "Brown hoplo succeeds in warm, oxygen-poor waters where it can feed on bottom-dwelling invertebrates, detritus, and plant matter while building nesting colonies. That hardiness, plus continued human movement for local fisheries, gives it a better chance of turning scattered introductions into lasting populations.",
+    action: {
+      mode: "report",
+      summary:
+        "Treat new finds as a tracking problem first, because illegal movement between waters can matter as much as the original introduction pathway.",
+      steps: [
+        "Record the waterbody and photograph the fish, especially the armored body and pectoral spines, if you can do so safely.",
+        "Do not move live fish to stock another pond, canal, or local fishery.",
+        "Report the sighting to your state wildlife or invasive-species program with the date and exact location.",
+      ],
+      contactName: "State wildlife or invasive-species program",
+      contactUrl: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      contactInstructions:
+        "FWC's reporting guidance is a good model for documenting nonnative fish sightings clearly.",
+    },
+    source: [
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=338",
+      },
+      {
+        label: "FWC Report Nonnative Species",
+        url: "https://myfwc.com/wildlifehabitats/nonnatives/report/",
+      },
+    ],
+  },
+  {
+    id: "lachnellula-willkommii",
+    slug: "lachnellula-willkommii",
+    commonName: "European Larch Canker",
+    scientificName: "Lachnellula willkommii",
+    category: "fungi-diseases",
+    profileType: "curated",
+    displayGroup: "Fungi & pathogens",
+    summary:
+      "A quarantined larch disease that forms cankers on branches and trunks and can eventually kill infected trees.",
+    origin:
+      "Established in Europe and later detected in coastal Maine, where U.S. and Canadian quarantine rules now aim to keep it from spreading farther.",
+    whatToLookFor: [
+      "Sunken or swollen cankers on larch branches or trunks, especially on ornamental or planted larch in regulated areas.",
+      "Declining branch sections, resin flow, or repeated dieback associated with cankered bark.",
+      "Larch material in or near Maine quarantine zones where movement restrictions already apply.",
+    ],
+    whyItMatters:
+      "European larch canker is not just a tree-health issue but a regulated disease with transport consequences. Once it gets into a larch planting, repeated cankers can weaken branches, kill trees over time, and trigger quarantine restrictions on moving logs, twigs, bark-bearing material, and other larch products.",
+    action: {
+      mode: "report",
+      summary:
+        "Do not move suspect larch material out of regulated areas, and report possible infections through state or federal plant-health contacts.",
+      steps: [
+        "Photograph the cankers and note whether the tree is in or near a known Maine quarantine area.",
+        "Do not transport larch branches, logs, bark-bearing products, or nursery stock from a suspect site without checking current quarantine rules.",
+        "Report suspected infections to state forest-health staff or USDA APHIS so survey and quarantine guidance can follow.",
+      ],
+      contactName: "USDA APHIS or Maine Forest Service",
+      contactUrl: "https://www.aphis.usda.gov/plant-pests-diseases/european-larch-canker",
+      contactInstructions:
+        "APHIS lists the current regulated counties and Maine quarantine contacts for European larch canker.",
+    },
+    source: [
+      {
+        label: "USDA APHIS",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/european-larch-canker",
+      },
+      {
+        label: "Maine Forest Service Quarantine Information",
+        url: "https://www.maine.gov/dacf/mfs/forest_health/quarantine_information.html",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",

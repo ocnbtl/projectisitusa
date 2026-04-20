@@ -458,6 +458,25 @@ These sources are already referenced by current curated profiles, but the origin
 | https://weedid.cals.vt.edu/profile/777 | Red Sandspurry | Slender stipulate stems, tiny pink flowers, gritty open-ground persistence |
 | https://weedid.cals.vt.edu/profile/95 | Gallant Soldier | Fast-cycling cultivated-ground habit, tiny daisy heads, nursery and garden context |
 
+### Chunk 2N mixed category repair pass, consulted on 2026-04-19
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://ipm.ucanr.edu/home-and-landscape/bagrada-bug/ | Bagrada Bug | Origin, broad host range, landscape detection, and exclusion or vacuum-based control framing |
+| https://ipm.ucanr.edu/agriculture/cole-crops/bagrada-bug/ | Bagrada Bug | Size, nymph coloration, starburst feeding lesions, seedling damage, and weed-host reduction guidance |
+| https://www.aphis.usda.gov/plant-pests-diseases/south-american-cactus-moth | Cactus Moth | Origin, egg-stick and larval identification, quarantine states, removal guidance, and reporting path |
+| https://www.ars.usda.gov/office-of-international-research-engagement-and-cooperation/overseas-biological-control-obcl-highlights/saving-prickly-pear-populations-from-the-cactus-moth/ | Cactus Moth | Prickly pear ecosystem importance, cactus-pad destruction, and spread-risk framing |
+| https://ipm.ucanr.edu/agriculture/avocado/polyphagous-shot-hole-borer-and-kuroshio-shot-hole-borer/ | Polyphagous Shot Hole Borer | Beetle size, host-hole symptoms, fungal dieback effects, and early branch-removal framing |
+| https://www.iscc.ca.gov/ishb.html | Polyphagous Shot Hole Borer | Green-waste pathway risk, survey context, and state detection or response framing |
+| https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=1209 | Asian Tiger Shrimp | Identification, aquaculture introduction pathway, Atlantic and Gulf occurrence context, and impact framing |
+| https://oceanservice.noaa.gov/facts/tigershrimp.html | Asian Tiger Shrimp | Current federal concern around disease, competition, predation, and coastal ecosystem effects |
+| https://nas.er.usgs.gov/queries/FactSheet.aspx?SpeciesID=974 | Asian Swamp Eel | Identification against eels and lampreys, live-food introduction pathway, and predator ecology |
+| https://myfwc.com/wildlifehabitats/nonnatives/report/ | Asian Swamp Eel; Vermiculated Sailfin Catfish; Brown Hoplo | Credible-report workflow, location and photo requirements, and report-first action framing |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=767 | Vermiculated Sailfin Catfish | Armored-catfish identification, aquarium or fish-farm introduction context, and bank-burrow impacts |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=338 | Brown Hoplo | Air-breathing ecology, possible food-fish introduction pathway, and illegal movement or fishery-spread framing |
+| https://www.aphis.usda.gov/plant-pests-diseases/european-larch-canker | European Larch Canker | Disease impact, regulated Maine range, quarantine scope, and APHIS response |
+| https://www.maine.gov/dacf/mfs/forest_health/quarantine_information.html | European Larch Canker | Maine quarantine details, regulated articles, and state forest-health contact context |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
