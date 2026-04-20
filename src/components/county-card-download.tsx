@@ -110,7 +110,7 @@ export function CountyCardDownload({
 
   return (
     <section className="grid gap-4 xl:sticky xl:top-6">
-      <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-[color:rgba(255,255,255,0.5)] p-3 shadow-[var(--shadow)]">
+      <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-[linear-gradient(160deg,rgba(9,19,16,0.98),rgba(15,28,23,0.92))] p-3 shadow-[var(--shadow)]">
         <NextImage
           src={previewSrc}
           alt={`${county.name}, ${county.stateCode} county card preview`}
@@ -121,13 +121,13 @@ export function CountyCardDownload({
         />
       </div>
 
-      <div className="grid grid-cols-6 gap-2">
+      <div className="grid grid-cols-[0.78fr_0.88fr_0.76fr_1fr_0.7fr_1.08fr] gap-2">
         {COUNTY_CARD_PRESETS.map((option) => (
           <button
             key={option.id}
             type="button"
             onClick={() => setPresetId(option.id)}
-            className={`rounded-full border px-2 py-2 text-center text-[11px] font-medium ${
+            className={`min-w-0 overflow-hidden text-ellipsis whitespace-nowrap rounded-full border px-1.5 py-2 text-center text-[10px] font-medium leading-none sm:text-[11px] ${
               option.id === preset.id
                 ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)]"
                 : "border-[var(--border)] bg-[var(--background)] text-[var(--foreground)]"

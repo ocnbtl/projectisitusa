@@ -148,12 +148,12 @@ export function buildCountyStats({
   const stats: CountyStat[] = [
     {
       value: focalSpecies.length.toLocaleString(),
-      caption: "mapped here",
+      caption: "invasive species mapped here",
       tone: "neutral",
     },
     {
       value: nearbySpecies.length.toLocaleString(),
-      caption: "nearby",
+      caption: "in surrounding counties",
       tone: "neutral",
     },
   ];
@@ -199,7 +199,7 @@ export function buildCountyStats({
 
   stats.push({
     value: categorySignal.count.toLocaleString(),
-    caption: `${categoryCaption} in view`,
+    caption: `${categoryCaption} recorded`,
     tone: categorySignal.category,
   });
 

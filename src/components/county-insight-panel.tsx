@@ -43,6 +43,7 @@ export function CountyInsightPanel({
   speciesWithoutCountyCoverage,
 }: CountyInsightPanelProps) {
   const unresolvedPreview = speciesWithoutCountyCoverage.slice(0, 12);
+  const hasCoverageGap = speciesWithoutCountyCoverage.length > 0;
   const [viewMode, setViewMode] = useState<"summary" | "county" | "nearby">("summary");
   const [pageSize, setPageSize] = useState<(typeof PAGE_SIZE_OPTIONS)[number]>(10);
   const [page, setPage] = useState(1);
@@ -116,20 +117,21 @@ export function CountyInsightPanel({
   return (
     <aside className="glass-panel rounded-[28px] p-5">
       <div className="flex items-start justify-between gap-4">
-        <div>
+        <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
             County detail
           </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--foreground)]">
-            {selectedCounty.name}, {selectedCounty.stateCode}
-            {speciesWithoutCountyCoverage.length > 0 ? " *" : ""}
-          </h2>
-          {speciesWithoutCountyCoverage.length > 0 ? (
-            <p className="mt-3 max-w-3xl text-sm text-[var(--muted)]">
-              The asterisk means some species in the current filter set still do
-              not have verified county-level coverage attached yet.
-            </p>
-          ) : null}
+          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--foreground)]">
+              {selectedCounty.name}, {selectedCounty.stateCode}
+              {hasCoverageGap ? " *" : ""}
+            </h2>
+            {hasCoverageGap ? (
+              <p className="text-xs leading-5 text-[var(--muted)]">
+                Some species here still need county-level verification.
+              </p>
+            ) : null}
+          </div>
         </div>
         {selectedCategories.length === 1 ? (
           <div className="rounded-full border border-[var(--border)] px-3 py-2 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -143,14 +145,14 @@ export function CountyInsightPanel({
       </div>
 
       <div className="mt-5 grid gap-6">
-        <div className="inline-flex w-fit rounded-full border border-[var(--border)] bg-[var(--surface)] p-1">
+        <div className="grid w-full grid-cols-[0.72fr_1.38fr_1.6fr] gap-2">
           <button
             type="button"
             onClick={() => setViewMode("summary")}
-            className={`rounded-full px-4 py-2 text-sm transition ${
+            className={`min-w-0 overflow-hidden text-ellipsis whitespace-nowrap rounded-[18px] border px-3 py-3 text-center text-[12px] font-medium leading-tight transition xl:text-[13px] ${
               viewMode === "summary"
-                ? "bg-[var(--accent)] text-[var(--background)]"
-                : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)] shadow-[0_12px_24px_rgba(119,190,138,0.18)]"
+                : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--foreground)]"
             }`}
           >
             Summary
@@ -158,24 +160,24 @@ export function CountyInsightPanel({
           <button
             type="button"
             onClick={() => setViewMode("county")}
-            className={`rounded-full px-4 py-2 text-sm transition ${
+            className={`min-w-0 overflow-hidden text-ellipsis whitespace-nowrap rounded-[18px] border px-3 py-3 text-center text-[12px] font-medium leading-tight transition xl:text-[13px] ${
               viewMode === "county"
-                ? "bg-[var(--accent)] text-[var(--background)]"
-                : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)] shadow-[0_12px_24px_rgba(119,190,138,0.18)]"
+                : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--foreground)]"
             }`}
           >
-            In this county ({focalSpecies.length.toLocaleString()})
+            Invasive species reported in {selectedCounty.name} ({focalSpecies.length.toLocaleString()})
           </button>
           <button
             type="button"
             onClick={() => setViewMode("nearby")}
-            className={`rounded-full px-4 py-2 text-sm transition ${
+            className={`min-w-0 overflow-hidden text-ellipsis whitespace-nowrap rounded-[18px] border px-3 py-3 text-center text-[12px] font-medium leading-tight transition xl:text-[13px] ${
               viewMode === "nearby"
-                ? "bg-[var(--accent)] text-[var(--background)]"
-                : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--background)] shadow-[0_12px_24px_rgba(119,190,138,0.18)]"
+                : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--foreground)]"
             }`}
           >
-            Nearby-only watchlist ({nearbySpecies.length.toLocaleString()})
+            Invasive species in surrounding counties ({nearbySpecies.length.toLocaleString()})
           </button>
         </div>
 
@@ -249,7 +251,9 @@ export function CountyInsightPanel({
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-[var(--foreground)]">
-                  {viewMode === "county" ? "In this county" : "Nearby-only watchlist"}
+                  {viewMode === "county"
+                    ? `Invasive species reported in ${selectedCounty.name}`
+                    : "Invasive species in surrounding counties"}
                 </h3>
                 <p className="text-sm text-[var(--muted)]">
                   {viewMode === "county"
