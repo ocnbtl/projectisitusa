@@ -477,6 +477,28 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aphis.usda.gov/plant-pests-diseases/european-larch-canker | European Larch Canker | Disease impact, regulated Maine range, quarantine scope, and APHIS response |
 | https://www.maine.gov/dacf/mfs/forest_health/quarantine_information.html | European Larch Canker | Maine quarantine details, regulated articles, and state forest-health contact context |
 
+### Chunk 2O wildlife cluster pass, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://research.fs.usda.gov/treesearch/66181 | European Spruce Sawfly | Spruce host range, invasion history, taxonomy context, and official forest-health reference path |
+| https://natural-resources.canada.ca/sites/nrcan/files/forest/sof2022/SoF_Annual2022_EN_access.pdf | European Spruce Sawfly | Historic outbreak scale in eastern Canada and the forest-survey context created in response |
+| https://edis.ifas.ufl.edu/publication/UW412 | Rhesus Macaque | Silver Springs introduction history, appearance, ecology, and Florida conflict context |
+| https://edis.ifas.ufl.edu/publication/UW491 | Rhesus Macaque | Broader Florida monkey-population context, public-safety concerns, and nonnative-mammal framing |
+| https://www.cdc.gov/herpes-b-virus/about/index.html | Rhesus Macaque | Bite and scratch medical-risk framing, immediate first-aid advice, and keep-distance action language |
+| https://www.nps.gov/articles/researching-flatworms-to-protect-florida-s-native-snails.htm | New Guinea Flatworm | Current Florida park impacts, tree-snail predation, and gear or plant-movement spread framing |
+| https://dlnr.hawaii.gov/wildlife/files/2026/03/FINAL-2025-SWAP.pdf | New Guinea Flatworm | Hawaii-native-snail threat context and Pacific-island spread significance |
+| https://myfwc.com/wildlifehabitats/profiles/freshwater/oscar/ | Oscar | Florida appearance, habitat, angler-facing context, and established south Florida range |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=436 | Oscar | Introduction pathway, broader U.S. establishment context, and warm-water spread framing |
+| https://myfwc.com/wildlifehabitats/profiles/freshwater/spotted-tilapia/ | Spotted Tilapia | Identification, Florida canal abundance, and live-possession rule context |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=482 | Spotted Tilapia | Introduction pathway, distribution beyond Florida, and competition-impact framing |
+| https://myfwc.com/wildlifehabitats/profiles/freshwater/black-acara/ | Black Acara | Identification, shallow disturbed-water habitat, and practical Florida context |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?speciesid=441 | Black Acara | Introduction pathway and native-sunfish competition framing |
+| https://myfwc.com/wildlifehabitats/profiles/freshwater/sailfin-catfish/ | Suckermouth Catfish | Field separation from other loricariids, bank-burrow relevance, and Florida habitat context |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?speciesid=761 | Suckermouth Catfish | Aquarium-release pathway, genus-level ID caution, and nonnative occurrence context |
+| https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=980 | Channeled Applesnail | Shell and egg-mass identification, invasion biology, crop-risk framing, and U.S. status |
+| https://edis.ifas.ufl.edu/publication/IN598 | Channeled Applesnail | Applesnail comparison points, Florida context, and biosecurity relevance around introduced Pomacea species |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

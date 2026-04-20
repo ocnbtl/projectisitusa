@@ -11426,6 +11426,359 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
+    id: "gilpinia-hercyniae",
+    slug: "gilpinia-hercyniae",
+    commonName: "European Spruce Sawfly",
+    scientificName: "Gilpinia hercyniae",
+    category: "insects",
+    profileType: "curated",
+    displayGroup: "Wasps, ants & bees",
+    summary:
+      "An invasive sawfly that can strip older needles from spruce and weaken ornamental or forest trees during outbreak years.",
+    origin:
+      "Native to Europe and introduced to North America, where major outbreaks in eastern Canada and the northeastern United States drove long-running forest-health surveys and biocontrol work.",
+    whatToLookFor: [
+      "Groups of green spruce-feeding larvae on older needles, especially on white, black, or Norway spruce.",
+      "Defoliation that starts with older foliage while new buds or the newest needles remain at first.",
+      "Repeated thinning or browning in spruce plantings where a needle-feeding outbreak would stand out from normal seasonal shed.",
+    ],
+    whyItMatters:
+      "European spruce sawfly can weaken trees by repeatedly stripping older needles and reducing growth over multiple seasons. Historic outbreaks were severe enough to reshape how forest agencies monitor invasive insects, and stressed trees can become more vulnerable to other pests or environmental stress.",
+    action: {
+      mode: "report",
+      summary:
+        "Treat suspicious outbreaks as a forest-health reporting issue first, especially where spruce plantings or nursery stock are involved.",
+      steps: [
+        "Photograph the larvae and the pattern of needle loss on affected branches or trees.",
+        "Do not move infested spruce branches, nursery stock, or cut material to another property without checking local guidance.",
+        "Report suspected infestations to your state forestry, extension, or plant-health office so identification and response advice can follow.",
+      ],
+      contactName: "State forestry or plant-health office",
+      contactInstructions:
+        "Forest-health staff can confirm whether the damage pattern fits sawfly defoliation or another spruce problem.",
+    },
+    source: [
+      {
+        label: "US Forest Service Research",
+        url: "https://research.fs.usda.gov/treesearch/66181",
+      },
+      {
+        label: "Natural Resources Canada",
+        url: "https://natural-resources.canada.ca/sites/nrcan/files/forest/sof2022/SoF_Annual2022_EN_access.pdf",
+      },
+    ],
+  },
+  {
+    id: "macaca-mulatta",
+    slug: "macaca-mulatta",
+    commonName: "Rhesus Macaque",
+    scientificName: "Macaca mulatta",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mammals",
+    summary:
+      "A nonnative monkey with an established free-ranging Florida population that creates public-safety, nuisance, and disease concerns where people approach or feed it.",
+    origin:
+      "Introduced intentionally to the Silver Springs area in the 1930s and now established in central Florida after decades of reproduction, movement, and repeated contact with people.",
+    whatToLookFor: [
+      "Medium-sized brown or gray monkeys with pale undersides, hairless pinkish faces, and relatively short tails.",
+      "Groups along river corridors, roadside edges, or tourist areas where animals have become used to people.",
+      "Bold behavior around food, including approaching people, raiding coolers or trash, or lingering near feeding hotspots.",
+    ],
+    whyItMatters:
+      "Rhesus macaques are not just unusual wildlife sightings. When people feed or crowd them, they can become aggressive, and bites or scratches create a serious exposure concern because macaques are the natural host of B virus. Established groups can also damage vegetation and intensify conflict in popular recreation areas.",
+    action: {
+      mode: "both",
+      summary:
+        "Keep your distance, never feed macaques, and treat bites, scratches, or aggressive encounters as a safety issue rather than a curiosity.",
+      steps: [
+        "Stay well back, keep pets and food secured, and never try to touch, feed, or attract monkeys for photos.",
+        "If you are bitten or scratched, wash the wound immediately and seek medical care without delay.",
+        "Report aggressive behavior, illegal feeding, or repeated conflict sites to park staff or the relevant wildlife authority.",
+      ],
+      safetyNotes:
+        "CDC advises immediate first aid and medical evaluation after exposure to a macaque bite, scratch, or body fluid.",
+      contactName: "Park staff or Florida wildlife authority",
+      contactUrl: "https://myfwc.com/conservation/you-conserve/wildlife/feeding/",
+      contactInstructions:
+        "FWC documents the prohibition on feeding wild monkeys and the public-safety reasons behind it.",
+    },
+    source: [
+      {
+        label: "UF IFAS Silver Springs Rhesus Macaques",
+        url: "https://edis.ifas.ufl.edu/publication/UW412",
+      },
+      {
+        label: "UF IFAS Nonnative Monkey Populations of Florida",
+        url: "https://edis.ifas.ufl.edu/publication/UW491",
+      },
+      {
+        label: "CDC B Virus",
+        url: "https://www.cdc.gov/herpes-b-virus/about/index.html",
+      },
+    ],
+  },
+  {
+    id: "platydemus-manokwari",
+    slug: "platydemus-manokwari",
+    commonName: "New Guinea Flatworm",
+    scientificName: "Platydemus manokwari",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Other wildlife",
+    summary:
+      "A predatory land flatworm that spreads in moist soil and plant material and can drive steep losses in native land-snail communities.",
+    origin:
+      "Native to New Guinea and spread across Pacific islands and parts of the United States through horticultural trade, potted plants, and other movement of moist soil or organic material.",
+    whatToLookFor: [
+      "Flat, dark brown to black worms with tapered ends and a narrow pale stripe running down the back.",
+      "Nocturnal activity on damp paths, mulch, pots, leaf litter, or snail habitat after rain or irrigation.",
+      "Flatworms gathered around live snails or fresh empty shells in places where native snails should be common.",
+    ],
+    whyItMatters:
+      "New Guinea flatworm is a specialized predator of terrestrial snails and can push already fragile native snail populations into sharp decline. Park and wildlife managers are especially concerned where rare or endemic tree snails survive in fragmented habitat that also gets heavy human traffic.",
+    action: {
+      mode: "report",
+      summary:
+        "Document the flatworm and avoid moving soil, plants, or gear from the site until local experts can advise on next steps.",
+      steps: [
+        "Photograph the worm clearly from above so the narrow pale dorsal stripe is visible.",
+        "Avoid transporting potted plants, mulch, soil, or dirty gear from the immediate area if the site appears newly infested.",
+        "Report the find to your state agriculture, invasive-species, park, or extension contact with the date and exact location.",
+      ],
+      contactName: "State agriculture, park, or invasive-species contact",
+      contactInstructions:
+        "Reports are most useful when they include the habitat type, recent plant movement history, and clear photos.",
+    },
+    source: [
+      {
+        label: "National Park Service",
+        url: "https://www.nps.gov/articles/researching-flatworms-to-protect-florida-s-native-snails.htm",
+      },
+      {
+        label: "Hawaii State Wildlife Action Plan",
+        url: "https://dlnr.hawaii.gov/wildlife/files/2026/03/FINAL-2025-SWAP.pdf",
+      },
+    ],
+  },
+  {
+    id: "astronotus-ocellatus",
+    slug: "astronotus-ocellatus",
+    commonName: "Oscar",
+    scientificName: "Astronotus ocellatus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A large aquarium cichlid now established in warm U.S. waters, especially south Florida canals and marsh-connected fisheries.",
+    origin:
+      "Native to South America and introduced through fish-farm stockings, aquarium releases, and later angler-assisted movement between waters.",
+    whatToLookFor: [
+      "Stout oval fish with dark blotches and a bright eyespot near the base of the tail.",
+      "Adults with olive, black, orange, or red patterning that stands out from native sunfish or bass.",
+      "Catches in warm canals, marsh-edge waters, or south Florida fisheries where large cichlids are already established.",
+    ],
+    whyItMatters:
+      "Oscar is already well established in south Florida and can persist in warm, low-oxygen waters that favor hardy introduced fishes. It also has a long history of human-assisted spread through stocking and aquarium release, which means new waterbody records still matter even when the fish is familiar in its core range.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not move live oscars between waters, and report unusual records outside the species' expected warm-water range.",
+      steps: [
+        "Photograph the fish, especially the tail eyespot and overall body shape, if you catch one safely.",
+        "Never release aquarium fish or transport live oscars to another pond, canal, or lake.",
+        "Report unexpected captures to your state fisheries or invasive-species program if the waterbody is outside known established areas.",
+      ],
+      contactName: "State fisheries or invasive-species program",
+      contactInstructions:
+        "New waterbody records are most useful when the report includes a clear photo, date, and precise capture location.",
+    },
+    source: [
+      {
+        label: "FWC Oscar",
+        url: "https://myfwc.com/wildlifehabitats/profiles/freshwater/oscar/",
+      },
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=436",
+      },
+    ],
+  },
+  {
+    id: "tilapia-mariae",
+    slug: "tilapia-mariae",
+    commonName: "Spotted Tilapia",
+    scientificName: "Tilapia mariae",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "An invasive cichlid that became abundant in Florida canal systems and can dominate warm, slow-moving waters.",
+    origin:
+      "Native to West Africa and introduced through aquarium-farm escape or release in south Florida, where it spread quickly through connected canals and lakes.",
+    whatToLookFor: [
+      "Light yellow to bronze fish with bars or dark spots along the side and reddish tones on the chin or throat during breeding.",
+      "Stout cichlid shape in shallow canals, ponds, and lakes south of Lake Okeechobee.",
+      "Aggressive nest-guarding fish on hard flat surfaces in warm slow-moving water.",
+    ],
+    whyItMatters:
+      "Spotted tilapia can become one of the dominant fishes in canal systems, crowding space and competing with native sunfishes and other species that rely on the same shallow habitat. Its success in disturbed warm waters also means human movement can quickly turn scattered releases into broader establishment.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not keep or move live fish where state rules restrict possession, and report unexpected new records outside known established waters.",
+      steps: [
+        "Photograph the fish from the side so the spots or vertical bars are visible.",
+        "Do not transport live tilapia to another pond, canal, or tank unless state regulations specifically allow it.",
+        "Report captures from new waters to your state fisheries or invasive-species program with the exact location.",
+      ],
+      contactName: "State fisheries or invasive-species program",
+      contactInstructions:
+        "FWC notes that possession and transport of live spotted tilapia in Florida is illegal without a special permit.",
+    },
+    source: [
+      {
+        label: "FWC Spotted Tilapia",
+        url: "https://myfwc.com/wildlifehabitats/profiles/freshwater/spotted-tilapia/",
+      },
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=482",
+      },
+    ],
+  },
+  {
+    id: "cichlasoma-bimaculatum",
+    slug: "cichlasoma-bimaculatum",
+    commonName: "Black Acara",
+    scientificName: "Cichlasoma bimaculatum",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "A small but established invasive cichlid in Florida that thrives in shallow disturbed waters and competes for spawning space.",
+    origin:
+      "Native to northern South America and introduced to Florida through fish-farm escape, aquarium release, and disposal of unwanted stocks.",
+    whatToLookFor: [
+      "Small stout fish with two dark side blotches, including a larger mid-body spot and a smaller spot near the tail.",
+      "Gray, brown, silver, or blue-green sheen that can make the fish look like a sunfish at first glance.",
+      "Concentrations in shallow ditches, small ponds, canals, or other warm disturbed habitats.",
+    ],
+    whyItMatters:
+      "Black acara is a long-established invasive fish that can occupy shallow habitats where native sunfishes also spawn and feed. Even though it is smaller than some of Florida's better-known cichlids, it persists well in human-altered waters and can be moved again through aquarium or bait-bucket behavior.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not transfer live cichlids between waters, and flag new records if this fish turns up outside the warm-water systems where it is already known.",
+      steps: [
+        "Photograph the side profile so both dark blotches and the body shape are visible.",
+        "Do not release aquarium fish or move live captures to another ditch, canal, pond, or lake.",
+        "Report unusual records to your state fisheries or invasive-species program with the waterbody name and date.",
+      ],
+      contactName: "State fisheries or invasive-species program",
+      contactInstructions:
+        "Reports help agencies separate long-established populations from new spread events.",
+    },
+    source: [
+      {
+        label: "FWC Black Acara",
+        url: "https://myfwc.com/wildlifehabitats/profiles/freshwater/black-acara/",
+      },
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?speciesid=441",
+      },
+    ],
+  },
+  {
+    id: "hypostomus-plecostomus",
+    slug: "hypostomus-plecostomus",
+    commonName: "Suckermouth Catfish",
+    scientificName: "Hypostomus plecostomus",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Fish",
+    summary:
+      "An armored aquarium catfish that survives in warm freshwater systems and can undermine banks where burrowing becomes common.",
+    origin:
+      "Native to South America and introduced through aquarium release and related movement of ornamental fish into warm U.S. waters.",
+    whatToLookFor: [
+      "Short, stout armored catfish with a suction-cup mouth under the head and rows of bony plates over most of the body.",
+      "Dark spots on the head and body rather than the stronger worm-like head pattern seen in sailfin catfish.",
+      "Bank burrows, stranded armored carcasses, or repeated catches in canals, lakes, and slow streams.",
+    ],
+    whyItMatters:
+      "Suckermouth catfish is part of a broader loricariid invasion pattern in warm freshwater habitats. When populations build, shoreline burrowing and dense aggregations can damage banks, alter habitat, and complicate management of canals and urban lakes.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not release or move live plecos, and report new populations where shoreline burrowing or repeated catches suggest establishment.",
+      steps: [
+        "Photograph the head pattern, armored body, and sucker mouth if you capture or find one safely.",
+        "Never dump unwanted aquarium plecos or move live fish to another waterbody.",
+        "Report suspected new populations to your state fisheries or invasive-species program with the site and date.",
+      ],
+      contactName: "State fisheries or invasive-species program",
+      contactInstructions:
+        "Reports are especially useful when they document multiple fish, bank burrows, or reproduction signs.",
+    },
+    source: [
+      {
+        label: "FWC Sailfin Catfish Profile",
+        url: "https://myfwc.com/wildlifehabitats/profiles/freshwater/sailfin-catfish/",
+      },
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?speciesid=761",
+      },
+    ],
+  },
+  {
+    id: "pomacea-canaliculata",
+    slug: "pomacea-canaliculata",
+    commonName: "Channeled Applesnail",
+    scientificName: "Pomacea canaliculata",
+    category: "wildlife",
+    profileType: "curated",
+    displayGroup: "Mollusks",
+    summary:
+      "A large invasive freshwater snail known for conspicuous egg masses, aquatic-plant damage, and serious agricultural impacts in invaded regions.",
+    origin:
+      "Native to South America and spread internationally through aquarium trade, food use, and secondary movement through connected waterways and irrigation systems.",
+    whatToLookFor: [
+      "Large globose freshwater snails with deep channel-like sutures between the shell whorls.",
+      "Bright pink egg masses above the waterline on pilings, vegetation, walls, or other hard surfaces.",
+      "Dense snail activity in ditches, ponds, wetlands, or crop-adjacent waters where aquatic plants are being stripped back.",
+    ],
+    whyItMatters:
+      "Channeled applesnail is one of the world's most notorious invasive snails because it can consume aquatic vegetation rapidly and damage crops such as rice and taro. It also matters as a biosecurity problem because eggs, live snails, and infested water-garden material move easily with people.",
+    action: {
+      mode: "both",
+      summary:
+        "Do not move live snails, egg masses, or infested plants, and report suspect finds so officials can confirm which introduced applesnail species is present.",
+      steps: [
+        "Photograph the shell shape and any egg masses above the waterline before disturbing the site.",
+        "Do not transport live snails, water-garden plants, buckets, or mud from the infested waterbody to another location.",
+        "Report the find to your state agriculture, wildlife, or invasive-species contact so species confirmation can follow.",
+      ],
+      safetyNotes:
+        "Use gloves if you handle suspect snails or egg masses, and wash up afterward.",
+      contactName: "State agriculture or invasive-species contact",
+      contactInstructions:
+        "Official confirmation matters because several introduced applesnail species can look similar in the field.",
+    },
+    source: [
+      {
+        label: "USGS NAS",
+        url: "https://nas.er.usgs.gov/queries/factsheet.aspx?SpeciesID=980",
+      },
+      {
+        label: "UF IFAS Applesnails of Florida",
+        url: "https://edis.ifas.ufl.edu/publication/IN598",
+      },
+    ],
+  },
+  {
     id: "feral-swine",
     slug: "feral-swine",
     commonName: "Feral Swine",
