@@ -1376,4 +1376,139 @@ export const countyDetailSeed: CountyDetail[] = [
       },
     ],
   },
+  {
+    countyFips: "01091",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Marengo County has county-specific invasive evidence through an official Alabama Forestry Commission laurel wilt confirmation in the 2012 annual report.",
+    headline: "Marengo County has a verified forest-disease signal",
+    countySummary:
+      "Marengo County moves into the county-specific tier because Alabama Forestry Commission documented laurel wilt there in its official annual report. That gives the county a direct invasive-pathogen signal instead of relying only on statewide program context.",
+    summaryParagraphs: [
+      "The evidence is strong enough for county-specific wording, but it is still narrow and species-specific rather than a broad county invasive inventory.",
+      "The current source is a narrative annual-report record, so it works well for county detail and a manual coverage fix without pretending it is a full structured county list.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "AFC 2012 Annual Report",
+        url: "https://forestry.alabama.gov/Pages/Other/Forms/Annual_Reports/Annual_Report_2012.pdf",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01093",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Marion County was reviewed under the broader Alabama workflow, but the public sources checked in this pass still did not verify a county-specific invasive occurrence notice, list, or dashboard.",
+    headline: "Marion County still needs local proof",
+    countySummary:
+      "Marion County remains in the statewide-only tier after this pass. The reviewed public source stack gave local extension context and statewide invasive-program access, but it did not surface a Marion-specific invasive detection or county list strong enough for sharper county claims.",
+    summaryParagraphs: [
+      "That does not mean Marion County lacks invasive species. It means the reviewed public sources still stop short of county-specific invasive reporting we can cite with confidence.",
+      "So the county detail should stay careful and useful without dressing local outreach or wildlife-management context up as an invasive inventory.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "Marion County Extension",
+        url: "https://www.aces.edu/counties/marion/",
+        kind: "county-extension",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01095",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Marshall County has county-specific invasive evidence through official Alabama fisheries reporting on invasive carp monitoring around Guntersville.",
+    headline: "Marshall County has a verified river-lake signal",
+    countySummary:
+      "Marshall County moves out of the statewide-only bucket in this pass. Official fisheries reporting tied invasive carp activity to Guntersville, which is enough for county-specific wording even though the current public proof is narrower than a structured county inventory.",
+    summaryParagraphs: [
+      "That gives Marshall a real county-specific invasive signal instead of generic statewide awareness alone.",
+      "The limitation is precision. The current public source is an article-based county signal, not a fully structured county dataset naming every invasive species present.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "ADCNR Invasive Carp Monitoring",
+        url: "https://www.outdooralabama.com/articles/wff-fisheries-continues-monitor-invasive-carp-species",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01097",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Mobile County has multiple county-specific invasive signals through official apple-snail reporting and county mitigation documentation describing Chinese privet and Chinese tallow dominance in a county project area.",
+    headline: "Mobile County has multiple verified invasive signals",
+    countySummary:
+      "Mobile County is stronger than a fallback-only county. The reviewed public sources include a county-specific history for Amazonian apple snail and county project documentation showing heavy invasive-plant dominance in a Mobile County mitigation area.",
+    summaryParagraphs: [
+      "That is enough for county-specific wording, but the evidence is still habitat- and project-specific rather than a broad countywide invasive inventory.",
+      "So the county detail should stay direct about scope: Mobile has real local invasive proof, but the current source stack still does not function like a full public county list across all categories.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "ACES Amazonian Apple Snail",
+        url: "https://www.aces.edu/blog/topics/aquatic-invasive-species/alabama-aquatic-nuisance-species-amazonian-apple-snail/",
+        kind: "county-detection",
+      },
+      {
+        label: "Mobile County Mitigation Plan",
+        url: "https://www.mobilecountyal.gov/pdf/bids/20161005_165944.pdf",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01099",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Monroe County has county-specific invasive evidence through a structured USGS NAS common carp record for an established exotic species.",
+    headline: "Monroe County has a verified aquatic record",
+    countySummary:
+      "Monroe County moves into the county-specific tier with a direct federal occurrence record for common carp. That gives the county a real aquatic invasive signal instead of relying only on statewide program context.",
+    summaryParagraphs: [
+      "The current county-specific evidence is still thin and mostly aquatic, so Monroe should not be presented as if it already has a broad public invasive inventory.",
+      "Even so, the structured federal record is strong enough to support both county detail wording and a manual county-presence fix.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "USGS NAS Common Carp Record",
+        url: "https://nas.er.usgs.gov/Queries/SpecimenViewer.aspx?SpecimenID=609640",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
 ];

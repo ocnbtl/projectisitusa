@@ -633,6 +633,18 @@ These sources are already referenced by current curated profiles, but the origin
 | https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx | Alabama county audit | Alabama statewide invasive-program fallback used during Macon County review and chunk 9 county-detail resources |
 | https://www.aphis.usda.gov/plant-pests-diseases/alabama | Alabama county audit | Alabama statewide pest-information fallback used during Macon County review |
 
+### County audit Alabama chunk 10, consulted on 2026-04-21
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://forestry.alabama.gov/Pages/Other/Forms/Annual_Reports/Annual_Report_2012.pdf | Alabama county audit; Laurel wilt | Marengo County official laurel wilt confirmation and manual county-presence override |
+| https://www.aces.edu/counties/marion/ | Alabama county audit | Marion County extension office review during county-source search |
+| https://www.aces.edu/blog/topics/counties/marion-county-annual-report/ | Alabama county audit | Marion County county-report review during statewide-only determination |
+| https://www.outdooralabama.com/articles/wff-fisheries-continues-monitor-invasive-carp-species | Alabama county audit | Marshall County county-specific invasive-carp evidence and county-detail support |
+| https://www.aces.edu/blog/topics/aquatic-invasive-species/alabama-aquatic-nuisance-species-amazonian-apple-snail/ | Alabama county audit | Mobile County county-specific apple-snail history used for county-detail evidence |
+| https://www.mobilecountyal.gov/pdf/bids/20161005_165944.pdf | Alabama county audit | Mobile County project-level invasive-species evidence for Chinese privet and Chinese tallow in county mitigation work |
+| https://nas.er.usgs.gov/Queries/SpecimenViewer.aspx?SpecimenID=609640 | Alabama county audit; Common Carp | Monroe County structured county-specific federal occurrence record and manual county-presence override |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

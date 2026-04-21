@@ -145,4 +145,28 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
       },
     ],
   },
+  {
+    speciesId: "USRIIS-L48-Fungi404",
+    countyFips: ["01091"],
+    countyDataSources: [
+      {
+        source: "Alabama Forestry Commission",
+        matchType: "manual-authoritative",
+        externalId: "laurel-wilt-marengo-county-2012",
+        url: "https://forestry.alabama.gov/Pages/Other/Forms/Annual_Reports/Annual_Report_2012.pdf",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia5204",
+    countyFips: ["01099"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "common-carp-monroe-county",
+        url: "https://nas.er.usgs.gov/Queries/SpecimenViewer.aspx?SpecimenID=609640",
+      },
+    ],
+  },
 ];
