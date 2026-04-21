@@ -618,6 +618,21 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/counties/franklin/ | Alabama county audit | Franklin County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/franklin/ | Alabama county audit | Franklin County official category page check during county-source review |
 
+### County audit Alabama chunk 9, consulted on 2026-04-21
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=1107 | Alabama county audit; Brazilian waterweed | Lee County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03130002&SpeciesID=235&State=AL | Alabama county audit; Parrot feather | Lee County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=06030002&SpeciesID=5&State=AL | Alabama county audit; Zebra mussel | Limestone County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=2943&State=AL | Alabama county audit; Wandering hydrilla | Limestone County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=31502&SpeciesID=551 | Alabama county audit; Bighead carp | Lowndes County county-specific aquatic invasive evidence and manual county-presence override |
+| https://www.aces.edu/blog/topics/forestry-wildlife/down-south-on-the-farm-the-emerald-ash-borer-is-here/ | Alabama county audit | Lowndes County contradiction check showing statewide emerald ash borer context without a county detection |
+| https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx | Alabama county audit; Emerald Ash Borer | Madison County county-specific confirmation and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=5&State=AL&YearFrom=1992&YearTo=1992 | Alabama county audit; Zebra mussel | Madison County county-specific aquatic invasive evidence and manual county-presence override |
+| https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx | Alabama county audit | Alabama statewide invasive-program fallback used during Macon County review and chunk 9 county-detail resources |
+| https://www.aphis.usda.gov/plant-pests-diseases/alabama | Alabama county audit | Alabama statewide pest-information fallback used during Macon County review |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

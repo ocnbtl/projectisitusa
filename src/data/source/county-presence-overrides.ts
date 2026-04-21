@@ -61,4 +61,88 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
       },
     ],
   },
+  {
+    speciesId: "USRIIS-L48-Plantae7779",
+    countyFips: ["01081"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "brazilian-waterweed-lee-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=1107",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae9354",
+    countyFips: ["01081"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "parrot-feather-lee-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03130002&SpeciesID=235&State=AL",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia668",
+    countyFips: ["01083"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "zebra-mussel-limestone-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=06030002&SpeciesID=5&State=AL",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae8507",
+    countyFips: ["01083"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "hydrilla-limestone-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=2943&State=AL",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia5457",
+    countyFips: ["01085"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "bighead-carp-lowndes-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=31502&SpeciesID=551",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia5077",
+    countyFips: ["01089"],
+    countyDataSources: [
+      {
+        source: "Alabama Forestry Commission",
+        matchType: "manual-authoritative",
+        externalId: "emerald-ash-borer-madison-county-2025",
+        url: "https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia668",
+    countyFips: ["01089"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "zebra-mussel-madison-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=5&State=AL&YearFrom=1992&YearTo=1992",
+      },
+    ],
+  },
 ];
