@@ -169,4 +169,64 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
       },
     ],
   },
+  {
+    speciesId: "USRIIS-L48-Plantae11688",
+    countyFips: ["01101"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "narrow-leaved-cattail-montgomery-county",
+        url: "https://nas.er.usgs.gov/queries/collectioninfo.aspx?SpeciesID=2679",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae9160",
+    countyFips: ["01101", "01109"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "small-water-clover-montgomery-pike-counties",
+        url: "https://nas.er.usgs.gov/queries/collectioninfo.aspx?SpeciesID=292",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia5228",
+    countyFips: ["01103"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "silver-carp-morgan-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=549",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Fungi404",
+    countyFips: ["01105"],
+    countyDataSources: [
+      {
+        source: "Alabama Forestry Commission",
+        matchType: "manual-authoritative",
+        externalId: "laurel-wilt-perry-county-2017",
+        url: "https://forestry.alabama.gov/Pages/Other/Forms/Annual_Reports/Annual_Report_2017.pdf",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae6293",
+    countyFips: ["01107"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "alligatorweed-pickens-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=31601&SpeciesID=227",
+      },
+    ],
+  },
 ];

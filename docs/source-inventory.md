@@ -645,6 +645,17 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.mobilecountyal.gov/pdf/bids/20161005_165944.pdf | Alabama county audit | Mobile County project-level invasive-species evidence for Chinese privet and Chinese tallow in county mitigation work |
 | https://nas.er.usgs.gov/Queries/SpecimenViewer.aspx?SpecimenID=609640 | Alabama county audit; Common Carp | Monroe County structured county-specific federal occurrence record and manual county-presence override |
 
+### County audit Alabama chunk 11, consulted on 2026-04-21
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://nas.er.usgs.gov/queries/collectioninfo.aspx?SpeciesID=2679 | Alabama county audit; Narrow-leaved cattail | Montgomery County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/collectioninfo.aspx?SpeciesID=292 | Alabama county audit; Small water-clover | Montgomery and Pike county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=549 | Alabama county audit; Silver Carp | Morgan County county-specific invasive fish evidence and manual county-presence override |
+| https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct_2021.pdf | Alabama county audit; Silver Carp | Morgan County county-specific silver carp context tied to Wheeler Reservoir and Decatur |
+| https://forestry.alabama.gov/Pages/Other/Forms/Annual_Reports/Annual_Report_2017.pdf | Alabama county audit; Laurel wilt | Perry County official laurel wilt confirmation and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=31601&SpeciesID=227 | Alabama county audit; Alligatorweed | Pickens County county-specific aquatic invasive evidence and manual county-presence override |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
