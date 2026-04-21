@@ -229,4 +229,64 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
       },
     ],
   },
+  {
+    speciesId: "USRIIS-L48-Plantae9354",
+    countyFips: ["01111"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "parrot-feather-randolph-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03130002&SpeciesID=235&State=AL",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae7788",
+    countyFips: ["01113"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "water-hyacinth-russell-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03130003&SpeciesID=1130&State=AL",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae9360",
+    countyFips: ["01115"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "brittle-waternymph-st-clair-county",
+        url: "https://nas.er.usgs.gov/queries/collectioninfo.aspx?SpeciesID=1118",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae8507",
+    countyFips: ["01117"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "hydrilla-shelby-county",
+        url: "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=229420",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia5132",
+    countyFips: ["01119"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "freshwater-golden-clam-sumter-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=3160202&SpeciesID=92&fmb=0&pathway=0&status=0",
+      },
+    ],
+  },
 ];

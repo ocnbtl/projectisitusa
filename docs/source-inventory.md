@@ -656,6 +656,18 @@ These sources are already referenced by current curated profiles, but the origin
 | https://forestry.alabama.gov/Pages/Other/Forms/Annual_Reports/Annual_Report_2017.pdf | Alabama county audit; Laurel wilt | Perry County official laurel wilt confirmation and manual county-presence override |
 | https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=31601&SpeciesID=227 | Alabama county audit; Alligatorweed | Pickens County county-specific aquatic invasive evidence and manual county-presence override |
 
+### County audit Alabama chunk 12, consulted on 2026-04-21
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03130002&SpeciesID=235&State=AL | Alabama county audit; Parrot feather | Randolph County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03130003&SpeciesID=1130&State=AL | Alabama county audit; Water hyacinth | Russell County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/collectioninfo.aspx?SpeciesID=1118 | Alabama county audit; Brittle waternymph | St. Clair County county-specific aquatic invasive evidence and manual county-presence override |
+| https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx | Alabama county audit; Emerald Ash Borer | St. Clair County reinforcement check showing prior official county documentation alongside the aquatic record |
+| https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=229420 | Alabama county audit; Hydrilla | Shelby County county-specific hydrilla evidence and manual county-presence override |
+| https://nas.er.usgs.gov/Queries/SpecimenViewer.aspx?SpecimenID=1695757 | Alabama county audit; Pond loach | Shelby County secondary county-specific nonindigenous aquatic record used to strengthen the county-specific evidence determination |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=3160202&SpeciesID=92&fmb=0&pathway=0&status=0 | Alabama county audit; Freshwater golden clam | Sumter County county-specific aquatic invasive evidence and manual county-presence override |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.
