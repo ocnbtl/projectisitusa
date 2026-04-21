@@ -8,8 +8,11 @@ export type ActionMode = "diy" | "report" | "both";
 export type SpeciesProfileType = "curated" | "registry";
 export type SpeciesStatus = "invasive" | "widespread-invasive";
 export type SpeciesAvailability = "all" | "mapped" | "catalog";
-export type CountyDataSourceName = "EDDMaps" | "USGS NAS";
-export type CountyMatchType = "manual-curated" | "scientific-exact";
+export type CountyDataSourceName = "EDDMaps" | "USGS NAS" | (string & {});
+export type CountyMatchType =
+  | "manual-curated"
+  | "scientific-exact"
+  | "manual-authoritative";
 export type SpeciesImageProvider = "wikidata-commons" | "inaturalist" | "gbif";
 export type CountyEvidenceLevel =
   | "not-reviewed"

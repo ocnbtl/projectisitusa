@@ -34,4 +34,4 @@ This is the sixth Alabama county-audit chunk. It reviews the next `5` counties i
 
 1. Continue Alabama sequentially into chunk `007` so the audit trail stays easy to verify.
 2. Keep writing reviewed statewide-only counties into `src/data/source/county-details.ts` so the user-facing county summaries stay honest about local evidence limits.
-3. Keep watching Alabama Department of Agriculture and Industries notices for narrow county-specific detections, because those remain the strongest local source type verified so far.
+3. Broaden the next pass beyond ACES and Alabama Department of Agriculture and Industries notices by checking forestry, wildlife, aquatic nuisance species, and other authoritative source families before closing a county as statewide-only.

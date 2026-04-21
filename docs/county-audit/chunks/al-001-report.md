@@ -14,11 +14,13 @@ This is the first Alabama county-audit chunk. It reviews the first `5` counties 
 
 - `Baldwin County` has a verified county-specific official report through the Alabama Department of Agriculture and Industries citrus canker quarantine notice.
 - `Barbour County` has a verified county-specific official report through the Alabama Department of Agriculture and Industries Africanized honeybee detection notice.
-- `Autauga`, `Bibb`, and `Blount` currently resolve to state-source-only status. Reviewed official extension and state-agency sources did not produce a county-specific public invasive-species list or detection report that was strong enough to use.
+- `Bibb County` was later corrected to `complete-county-source-found` after the broader-source re-audit surfaced Alabama aquatic nuisance species plan evidence for rusty crayfish in Flat Tire Creek.
+- `Autauga` and `Blount` currently resolve to state-source-only status. Reviewed official extension and state-agency sources did not produce a county-specific public invasive-species list or detection report that was strong enough to use.
 
 ## Contradictions Preserved
 
 - County-specific official reporting exists, but it is often narrow. Baldwin and Barbour do not yet give us a broad county invasive-species inventory. They give us a regulated plant-disease report and an insect-detection report.
+- The Bibb correction reinforces the same pattern from a different source family. County-specific aquatic evidence can be real and useful without becoming a broad county invasive-species inventory.
 - County extension annual reports sometimes mention invasive-plant programming or aquatic-weed outreach, but that is not the same thing as a county presence list.
 - This means the Alabama audit is already proving the likely nationwide pattern: county review will often improve confidence unevenly, with some counties yielding precise official reports and many others still falling back to stronger statewide sources.
 

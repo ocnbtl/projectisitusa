@@ -12,13 +12,16 @@ This is the fourth Alabama county-audit chunk. It reviews the next `5` counties 
 
 ## Findings
 
-- All `5` counties in this chunk currently resolve to `complete-state-source-only`.
-- Reviewed official ACES county office pages and official county category pages did not produce a county-specific public invasive-species list or detection report strong enough to use for these counties.
+- `Colbert County` was later corrected to `complete-county-source-found` after the broader-source re-audit surfaced Alabama aquatic nuisance species plan evidence for silver carp in Bear Creek.
+- `Covington County` was later corrected to `complete-county-source-found` after the broader-source re-audit surfaced Alabama aquatic nuisance species plan evidence for Asiatic clam in the county.
+- `Coffee`, `Conecuh`, and `Coosa` currently resolve to `complete-state-source-only`.
+- Reviewed official ACES county office pages and official county category pages did not produce a county-specific public invasive-species list or detection report strong enough to use for the remaining `3` counties.
 - This tranche reinforces the same Alabama pattern seen in chunks `1` through `3`: local county extension infrastructure is common, but county-specific invasive occurrence reporting remains much rarer than county public-service presence.
 
 ## Contradictions Preserved
 
 - County extension coverage is still not the same thing as county occurrence evidence. These counties all have legitimate local public source paths, but the reviewed sources still did not verify which invasive species are publicly reported from each county.
+- The Colbert and Covington corrections show that a broader-source pass can also convert audited counties into real map-coverage candidates, not just improve narrative confidence.
 - The absence of a verified county-specific public list in this chunk does not mean these counties lack invasive species. It means the reviewed official public sources did not expose county-specific occurrence reporting that meets the current bar.
 - Alabama still shows a split between a small number of narrow county-specific detections and a much larger set of counties that only expose statewide education plus county office context.
 

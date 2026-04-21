@@ -8,12 +8,14 @@ import countyTopology from "us-atlas/counties-10m.json";
 
 import { isCommerciallySafeManifestEntry } from "@/lib/data/image-license";
 import { countyDetailSeed } from "@/data/source/county-details";
+import { countyPresenceOverrides } from "@/data/source/county-presence-overrides";
 import { speciesCountySeed } from "@/data/source/presence";
 import { STATE_FIPS_TO_INFO } from "@/data/source/state-fips";
 import { speciesSeed } from "@/data/source/species";
 import type {
   CountyDetail,
   CountyCoverageSnapshotFile,
+  CountyDataSourceRef,
   CountyPresence,
   CountyRecord,
   Species,
@@ -172,34 +174,92 @@ function loadCountyPresenceSeed() {
     countyCoverageSnapshotPath,
   );
 
+  const records: Record<string, string[]> = snapshot
+    ? Object.fromEntries(
+        snapshot.species.map((species) => [species.speciesId, species.countyFips]),
+      )
+    : {};
+  const countyDataSourcesBySpeciesId: CountyDataSourcesBySpeciesId = snapshot
+    ? Object.fromEntries(
+        snapshot.species.map((species) => [species.speciesId, species.countyDataSources]),
+      )
+    : {};
+
+  function mergeCountyFips(speciesId: string, countyFips: string[]) {
+    if (!countyFips.length) return;
+    records[speciesId] = [...new Set([...(records[speciesId] ?? []), ...countyFips])].sort();
+  }
+
+  function mergeCountyDataSources(speciesId: string, sources: CountyDataSourceRef[]) {
+    if (!sources.length) return;
+    countyDataSourcesBySpeciesId[speciesId] = [
+      ...new Map(
+        [...(countyDataSourcesBySpeciesId[speciesId] ?? []), ...sources].map((source) => [
+          `${source.source}::${source.externalId}::${source.url}`,
+          source,
+        ]),
+      ).values(),
+    ];
+  }
+
+  for (const [speciesId, countyFips] of Object.entries(speciesCountySeed)) {
+    mergeCountyFips(speciesId, countyFips);
+  }
+
+  for (const override of countyPresenceOverrides) {
+    mergeCountyFips(override.speciesId, override.countyFips);
+    mergeCountyDataSources(override.speciesId, override.countyDataSources);
+  }
+
+  const mappedSpeciesCount = Object.values(records).filter((countyFips) => countyFips.length > 0)
+    .length;
+  const catalogSpeciesCount =
+    snapshot?.coverageSummary.catalogSpeciesCount ?? speciesSeed.length;
+  const unmatchedSpeciesCount = Math.max(0, catalogSpeciesCount - mappedSpeciesCount);
+  const sourceSpeciesCounts = Object.values(countyDataSourcesBySpeciesId).reduce(
+    (acc, sources) => {
+      if (!sources) return acc;
+      for (const source of new Set(sources.map((entry) => entry.source))) {
+        acc[source] = (acc[source] ?? 0) + 1;
+      }
+      return acc;
+    },
+    {} as CountyCoverageSnapshotFile["coverageSummary"]["sourceSpeciesCounts"],
+  );
+
   if (!snapshot) {
     return {
-      records: speciesCountySeed,
-      sourceRefs: ["Curated seed dataset", "Project Isitusa release dataset"],
+      records,
+      sourceRefs: [
+        "Curated seed dataset",
+        "Project Isitusa release dataset",
+        "Manual authoritative county presence overrides",
+      ],
       snapshotDate: null,
       coverageSummary: {
-        catalogSpeciesCount: speciesSeed.length,
-        mappedSpeciesCount: Object.keys(speciesCountySeed).length,
-        unmatchedSpeciesCount:
-          speciesSeed.length - Object.keys(speciesCountySeed).length,
-        sourceSpeciesCounts: {},
+        catalogSpeciesCount,
+        mappedSpeciesCount,
+        unmatchedSpeciesCount,
+        sourceSpeciesCounts,
       },
-      countyDataSourcesBySpeciesId: {} as CountyDataSourcesBySpeciesId,
+      countyDataSourcesBySpeciesId,
     };
   }
 
-  const records = Object.fromEntries(
-    snapshot.species.map((species) => [species.speciesId, species.countyFips]),
-  ) as Record<string, string[]>;
-  const countyDataSourcesBySpeciesId = Object.fromEntries(
-    snapshot.species.map((species) => [species.speciesId, species.countyDataSources]),
-  ) as CountyDataSourcesBySpeciesId;
-
   return {
     records,
-    sourceRefs: [snapshot.source, ...snapshot.citation],
+    sourceRefs: [
+      snapshot.source,
+      ...snapshot.citation,
+      "Manual authoritative county presence overrides",
+    ],
     snapshotDate: snapshot.snapshotDate,
-    coverageSummary: snapshot.coverageSummary,
+    coverageSummary: {
+      catalogSpeciesCount,
+      mappedSpeciesCount,
+      unmatchedSpeciesCount,
+      sourceSpeciesCounts,
+    },
     countyDataSourcesBySpeciesId,
   };
 }
@@ -452,14 +512,27 @@ async function main() {
       : undefined,
   }));
   const speciesIndexById = new Map<string, number>();
+  const canonicalSpeciesIdByLookupKey = new Map<string, string>();
 
   registryCatalog.species.forEach((species, index) => {
     speciesIndexById.set(species.id, index);
+    canonicalSpeciesIdByLookupKey.set(species.id, species.id);
 
     if (species.registry?.occurrenceId) {
       speciesIndexById.set(species.registry.occurrenceId, index);
+      canonicalSpeciesIdByLookupKey.set(species.registry.occurrenceId, species.id);
     }
   });
+
+  for (const countyPresence of Object.values(presenceIndex)) {
+    countyPresence.speciesIds = [
+      ...new Set(
+        countyPresence.speciesIds.map(
+          (speciesId) => canonicalSpeciesIdByLookupKey.get(speciesId) ?? speciesId,
+        ),
+      ),
+    ].sort();
+  }
 
   const explorerPresenceIndex = Object.fromEntries(
     Object.entries(presenceIndex).map(([countyFips, countyPresence]) => [

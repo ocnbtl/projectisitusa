@@ -96,15 +96,15 @@ export const countyDetailSeed: CountyDetail[] = [
   },
   {
     countyFips: "01007",
-    evidenceLevel: "statewide-only",
+    evidenceLevel: "county-specific",
     auditSummary:
-      "Bibb County has a verified extension presence and statewide invasive program coverage, but the reviewed public sources did not expose a county-specific invasive list or detection notice that met the production bar.",
-    headline: "Bibb County still needs local proof",
+      "Bibb County now has verified county-specific aquatic invasive evidence through the Alabama aquatic nuisance species plan, even though that evidence is still much narrower than a full county invasive inventory.",
+    headline: "Bibb County has a verified aquatic signal",
     countySummary:
-      "Bibb County currently remains a statewide-source county in the audit. The public source stack shows local extension infrastructure, but it does not yet provide a county-specific invasive record set strong enough to revise the county-level display in Project Isitusa.",
+      "Bibb County no longer sits in the purely statewide-only tier. The broader-source re-audit surfaced a county-specific rusty crayfish record in Flat Tire Creek through the Alabama aquatic nuisance species plan, which is real local evidence even though it is still not a broad county invasive list.",
     summaryParagraphs: [
-      "Bibb County has local extension coverage, but the public sources reviewed so far still stop short of a county-specific invasive list or detection record that would change the live county view.",
-      "For now, this is a county where the map is still strongest as a statewide-backed warning sign, not a finished local report card.",
+      "Bibb County still does not have a public county invasive dashboard or finished county list. What it does have now is a verified county-specific aquatic record that proves the earlier statewide-only conclusion was too conservative.",
+      "There is still a product gap to preserve here. The county evidence is stronger than the current live species stack because rusty crayfish is not yet surfaced as a mapped Alabama county species in Project Isitusa.",
     ],
     lastReviewedOn: "2026-04-20",
     resources: [
@@ -117,6 +117,11 @@ export const countyDetailSeed: CountyDetail[] = [
         label: "Alabama Forestry Commission Invasive Species",
         url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
         kind: "statewide-program",
+      },
+      {
+        label: "Alabama ANS Management Plan PDF",
+        url: "https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf",
+        kind: "county-detection",
       },
     ],
   },
@@ -215,15 +220,15 @@ export const countyDetailSeed: CountyDetail[] = [
   },
   {
     countyFips: "01015",
-    evidenceLevel: "statewide-only",
+    evidenceLevel: "county-specific",
     auditSummary:
-      "Calhoun County public sources show pest-management and agriculture programming, but the reviewed official material still does not support a county-specific invasive occurrence claim.",
-    headline: "Calhoun County needs stronger local proof",
+      "Calhoun County now has verified county-specific aquatic invasive evidence through the Alabama aquatic nuisance species plan, although the public source stack is still much thinner than a full county invasive inventory.",
+    headline: "Calhoun County has verified aquatic evidence",
     countySummary:
-      "Calhoun County has attributable public sources and active county extension coverage, but the reviewed source stack remains too general for county-level invasive occurrence claims. Until a county-specific list, viewer, or official detection notice is verified, the county detail should stay conservative.",
+      "Calhoun County is no longer just a statewide-context county in the audit. The broader-source pass surfaced a county-specific rusty crayfish record in Sandy Creek through the Alabama aquatic nuisance species plan, which gives the county a real local evidence anchor.",
     summaryParagraphs: [
-      "Calhoun County has enough public activity to show that invasive species are on the local radar. What it still does not have is the kind of county-specific list, viewer, or official detection notice that would let us sharpen the county detail with confidence.",
-      "For now, the county view should feel like a careful heads-up, not a final word on what is present there.",
+      "This is still not the same thing as a broad county invasive list. The county-specific evidence is narrow and aquatic, not a full countywide species inventory.",
+      "There is also a live-data gap to preserve. The county evidence now outpaces the current Alabama species display because rusty crayfish is not yet mapped into the current county snapshot for the site.",
     ],
     lastReviewedOn: "2026-04-20",
     resources: [
@@ -241,6 +246,11 @@ export const countyDetailSeed: CountyDetail[] = [
         label: "Alabama Forestry Commission Invasive Species",
         url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
         kind: "statewide-program",
+      },
+      {
+        label: "Alabama ANS Management Plan PDF",
+        url: "https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf",
+        kind: "county-detection",
       },
     ],
   },
@@ -494,15 +504,15 @@ export const countyDetailSeed: CountyDetail[] = [
   },
   {
     countyFips: "01033",
-    evidenceLevel: "statewide-only",
+    evidenceLevel: "county-specific",
     auditSummary:
-      "Colbert County has a reviewed official source path, but the public county material checked so far does not support a county-specific invasive occurrence claim.",
-    headline: "Colbert County still needs local proof",
+      "Colbert County has verified county-specific aquatic invasive evidence through the Alabama aquatic nuisance species plan, although that evidence is still narrower than a full county invasive inventory.",
+    headline: "Colbert County has a verified aquatic record",
     countySummary:
-      "Colbert County currently still depends on statewide and federal invasive datasets in the live explorer. The audit verified local extension pages, but it did not surface a county-specific invasive list, viewer, or formal detection notice that would justify stronger county language.",
+      "Colbert County is stronger than the earlier statewide-only audit result suggested. The broader-source re-audit surfaced a silver carp record from Bear Creek in Colbert County through the Alabama aquatic nuisance species plan, giving the county a real local evidence point.",
     summaryParagraphs: [
-      "Colbert County has a legitimate local public source trail, but the reviewed material still reads as county program context rather than county occurrence evidence.",
-      "Until that changes, the county detail should stay direct and useful without overstating what the public source stack can prove.",
+      "That is still a narrow aquatic signal, not a finished county species list. The county should be described as locally verified in part, not comprehensively inventoried.",
+      "Unlike Bibb and Calhoun, this narrower aquatic evidence now also feeds the live county-presence layer through a manual authoritative override, so the county detail and map are no longer pointing in different directions here.",
     ],
     lastReviewedOn: "2026-04-20",
     resources: [
@@ -520,6 +530,11 @@ export const countyDetailSeed: CountyDetail[] = [
         label: "Alabama Forestry Commission Invasive Species",
         url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
         kind: "statewide-program",
+      },
+      {
+        label: "Alabama ANS Management Plan PDF",
+        url: "https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf",
+        kind: "county-detection",
       },
     ],
   },
@@ -587,15 +602,15 @@ export const countyDetailSeed: CountyDetail[] = [
   },
   {
     countyFips: "01039",
-    evidenceLevel: "statewide-only",
+    evidenceLevel: "county-specific",
     auditSummary:
-      "Covington County has a reviewed official source path, but no county-specific invasive list, dashboard, or detection notice strong enough for production use has been verified from the public sources checked so far.",
-    headline: "Covington County still needs local reporting",
+      "Covington County has verified county-specific aquatic invasive evidence through the Alabama aquatic nuisance species plan, though that evidence is still much narrower than a broad county invasive inventory.",
+    headline: "Covington County has a verified aquatic record",
     countySummary:
-      "Covington County still leans on statewide and federal invasive datasets in the live explorer. The county audit verified local extension sources, but those materials do not yet provide county-specific invasive occurrence evidence that would support stronger county-level wording.",
+      "Covington County is no longer just a statewide-fallback county in the audit. The broader-source pass surfaced a county-specific Asiatic clam record through the Alabama aquatic nuisance species plan, which gives the county a real local evidence anchor even though the overall public source stack is still thin.",
     summaryParagraphs: [
-      "Covington County has a legitimate local public source trail, but it still has not surfaced the kind of county-specific invasive reporting that would make the county detail feel truly local.",
-      "That keeps the county in the same conservative evidence tier as most Alabama counties reviewed so far.",
+      "This is still a narrow aquatic finding, not a countywide invasive inventory. The county detail should stay direct about that limit.",
+      "The important change is that Covington County now has a verified county-specific source and a matching manual authoritative map override, so the county no longer belongs in the old statewide-only bucket.",
     ],
     lastReviewedOn: "2026-04-20",
     resources: [
@@ -613,6 +628,11 @@ export const countyDetailSeed: CountyDetail[] = [
         label: "Alabama Forestry Commission Invasive Species",
         url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
         kind: "statewide-program",
+      },
+      {
+        label: "Alabama ANS Management Plan PDF",
+        url: "https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf",
+        kind: "county-detection",
       },
     ],
   },

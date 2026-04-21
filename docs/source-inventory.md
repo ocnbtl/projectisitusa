@@ -588,6 +588,13 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/blog/category/counties/etowah/ | Alabama county audit | Etowah County official category page check during county-source review |
 | https://www.aces.edu/counties/fayette/ | Alabama county audit | Fayette County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/fayette/ | Alabama county audit | Fayette County official category page check during county-source review |
+
+### Alabama county re-audit corrections and coverage overrides, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://www.outdooralabama.com/node/1477 | Feral Swine; Alabama county audit | Official statewide Alabama confirmation used for the manual authoritative all-county feral-swine override and statewide Alabama wildlife fallback |
+| https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf | Alabama county audit; Silver Carp; Asiatic Clam | Broader-source Alabama re-audit correction for Bibb, Calhoun, Colbert, and Covington plus manual authoritative county-presence overrides for Colbert silver carp and Covington Asiatic clam |
 | https://www.aces.edu/counties/franklin/ | Alabama county audit | Franklin County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/franklin/ | Alabama county audit | Franklin County official category page check during county-source review |
 
