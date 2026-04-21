@@ -2046,48 +2046,6 @@ export const speciesSeed: Species[] = [
     ],
   },
   {
-    id: "euphorbia-esula",
-    slug: "euphorbia-esula",
-    commonName: "Leafy Spurge",
-    scientificName: "Euphorbia esula",
-    category: "plants",
-    profileType: "curated",
-    displayGroup: "Grasses & herbs",
-    summary:
-      "A deeply rooted perennial spurge that spreads aggressively from both seed and underground buds, allowing it to dominate roadsides, prairies, and other open dry sites.",
-    origin:
-      "Introduced from Eurasia and now widespread in North America, especially across prairies, rights-of-way, and disturbed non-cropland habitats.",
-    whatToLookFor: [
-      "Yellow-green bracts that make the plant look like it is in flower even before the small true flowers are noticed.",
-      "Smooth stems and narrow leaves that release white milky sap when broken.",
-      "Persistent colonies that return from deep roots and spread outward by both seed and root buds.",
-    ],
-    whyItMatters:
-      "Leafy spurge can displace prairie plants, reduce forage value, and hold ground for years because it has both a long-lived root system and a long-lived seedbank. The milky sap can also irritate skin and is toxic to livestock.",
-    action: {
-      mode: "report",
-      summary:
-        "Small finds matter, but established patches usually need coordinated long-term control. Casual mowing or pulling rarely matches the size of the underground root system.",
-      steps: [
-        "Photograph the patch and note whether it is in prairie, pasture, roadside, or another open site where spread could continue quickly.",
-        "Avoid moving soil, hay, or equipment through the infestation without cleaning it first.",
-        "Report infestations to the local invasive plant or land management program and expect repeated treatment over multiple seasons if control begins.",
-      ],
-      safetyNotes:
-        "Wear gloves and eye protection around broken stems because the milky sap can irritate skin and eyes.",
-    },
-    source: [
-      {
-        label: "University of Minnesota Extension",
-        url: "https://extension.umn.edu/identify-invasive-species/leafy-spurge",
-      },
-      {
-        label: "University of Minnesota Weed ID",
-        url: "https://apps.extension.umn.edu/garden/diagnose/weed/broadleaf/upright/leafyspurge.html",
-      },
-    ],
-  },
-  {
     id: "hieracium-aurantiacum",
     slug: "hieracium-aurantiacum",
     commonName: "Orange Hawkweed",

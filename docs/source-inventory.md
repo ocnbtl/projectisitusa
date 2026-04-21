@@ -604,6 +604,17 @@ These sources are already referenced by current curated profiles, but the origin
 | https://forestry.alabama.gov/Pages/Informational/Images/Cogongrass_Landowner_Packet.pdf | Alabama county audit; Cogongrass | Additional county-specific cogongrass documentation for Greene and Hale through documented infestation materials |
 | https://www.aces.edu/blog/topics/farming/cotton-jassid-confirmed-in-alabama/ | Alabama county audit; Cotton Jassid | Explicit Henry County cotton jassid confirmation used to strengthen Henry County beyond cogongrass-only evidence |
 | https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx | Alabama county audit; Cogongrass | Alabama statewide cogongrass program background used to support county-detail resources for chunk 7 |
+
+### County audit Alabama chunk 8, consulted on 2026-04-21
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://jacksoncountyal.gov/DocumentCenter/View/1301/Jackson-County-Resiliency-Plan-Adopted | Alabama county audit | Jackson County plan evidence for invasive eel grass along the Tennessee River corridor |
+| https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx | Alabama county audit; Emerald Ash Borer | Official Jackson County emerald ash borer confirmation used for county-detail evidence and a manual county-presence override |
+| https://www.aphis.usda.gov/plant-pests-diseases/alabama | Alabama county audit | Alabama statewide pest-information cross-check used during chunk 8 statewide-only review |
+| https://www.forestry.alabama.gov/Pages/News/2022/DCNR-CDW.aspx | Alabama county audit | Lauderdale County county-specific wildlife disease notice reviewed and explicitly excluded from invasive-species coverage decisions |
+| https://alabamasoilandwater.gov/lauderdale/ | Alabama county audit | Lauderdale County local conservation-district context reviewed during chunk 8 county-source search |
+| https://www.outdooralabama.com/articles/adcnr-installs-invasive-carp-signs-tennessee-river-public-boat-ramps | Alabama county audit | Regional Tennessee River invasive-carp context reviewed during Lawrence County county-source search |
 | https://www.aces.edu/counties/franklin/ | Alabama county audit | Franklin County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/franklin/ | Alabama county audit | Franklin County official category page check during county-source review |
 

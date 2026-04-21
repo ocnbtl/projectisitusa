@@ -61,6 +61,15 @@ function slugify(value: string) {
     .replace(/^-+|-+$/g, "");
 }
 
+const scientificNameAliases = new Map<string, string>([
+  ["euphorbia esula", "euphorbia virgata"],
+]);
+
+function normalizeScientificName(value: string) {
+  const normalized = value.toLowerCase().trim();
+  return scientificNameAliases.get(normalized) ?? normalized;
+}
+
 function readJsonFile<T>(filePath: string): T | null {
   if (!existsSync(filePath)) return null;
   return JSON.parse(readFileSync(filePath, "utf8")) as T;
@@ -271,7 +280,7 @@ function loadRegistryCatalog(countyPresenceSeed: {
   const snapshot = readJsonFile<UsRiisSnapshotFile>(usRiisSnapshotPath);
   const speciesImagesByScientificName = loadSpeciesImageManifest();
   const curatedByScientificName = new Map(
-    speciesSeed.map((species) => [species.scientificName.toLowerCase(), species]),
+    speciesSeed.map((species) => [normalizeScientificName(species.scientificName), species]),
   );
 
   if (!snapshot) {
@@ -314,20 +323,24 @@ function loadRegistryCatalog(countyPresenceSeed: {
   };
 
   for (const record of snapshot.species) {
-    const existing = curatedByScientificName.get(record.scientificName.toLowerCase());
-    const existingCountyRecordKey =
-      existing?.registry?.occurrenceId ?? record.occurrenceId ?? existing?.id ?? "";
-    const existingMappedCountyCount =
-      countyPresenceSeed.records[existingCountyRecordKey]?.length ??
-      countyPresenceSeed.records[existing?.id ?? ""]?.length ??
-      0;
-    const existingCountyDataSources =
-      countyPresenceSeed.countyDataSourcesBySpeciesId[existingCountyRecordKey] ??
-      countyPresenceSeed.countyDataSourcesBySpeciesId[existing?.id ?? ""];
-    const existingHasCountyData = Boolean(
-      countyPresenceSeed.records[existingCountyRecordKey] ??
-        countyPresenceSeed.records[existing?.id ?? ""],
+    const existing = curatedByScientificName.get(
+      normalizeScientificName(record.scientificName),
     );
+    const countyRecordKeys = [
+      record.occurrenceId,
+      existing?.id,
+      existing?.registry?.occurrenceId,
+    ].filter((value): value is string => Boolean(value));
+    const existingCountyRecordKey = countyRecordKeys.find(
+      (key) => (countyPresenceSeed.records[key]?.length ?? 0) > 0,
+    );
+    const existingMappedCountyCount = existingCountyRecordKey
+      ? countyPresenceSeed.records[existingCountyRecordKey]?.length ?? 0
+      : 0;
+    const existingCountyDataSources = existingCountyRecordKey
+      ? countyPresenceSeed.countyDataSourcesBySpeciesId[existingCountyRecordKey]
+      : undefined;
+    const existingHasCountyData = Boolean(existingCountyRecordKey);
 
     if (existing) {
       if (!existing.image) {

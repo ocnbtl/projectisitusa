@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { ActionGuidance } from "@/components/action-guidance";
 import { SpeciesImage } from "@/components/species-image";
 import { SourceAttribution } from "@/components/source-attribution";
-import { allSpecies, speciesBySlug } from "@/lib/data/store";
+import { allSpecies, speciesBySlug, speciesSlugAliases } from "@/lib/data/store";
 import { formatCategoryLabel } from "@/lib/utils";
 import type { Species } from "@/lib/data/types";
 
@@ -64,9 +64,12 @@ function buildRegistryLookFor(species: Species) {
 }
 
 export function generateStaticParams() {
-  return allSpecies.map((species) => ({
-    slug: species.slug,
-  }));
+  return [
+    ...allSpecies.map((species) => ({
+      slug: species.slug,
+    })),
+    ...[...speciesSlugAliases.keys()].map((slug) => ({ slug })),
+  ];
 }
 
 export default async function SpeciesProfilePage({
@@ -75,6 +78,12 @@ export default async function SpeciesProfilePage({
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
+  const canonicalSlug = speciesSlugAliases.get(resolvedParams.slug);
+
+  if (canonicalSlug) {
+    redirect(`/species/${canonicalSlug}`);
+  }
+
   const species = speciesBySlug.get(resolvedParams.slug);
 
   if (!species) {

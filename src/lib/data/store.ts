@@ -11,7 +11,20 @@ import type {
 
 export const allSpecies = species as Species[];
 export const speciesById = new Map(allSpecies.map((item) => [item.id, item]));
-export const speciesBySlug = new Map(allSpecies.map((item) => [item.slug, item]));
+export const speciesSlugAliases = new Map<string, string>([
+  ["euphorbia-esula", "euphorbia-virgata"],
+]);
+export const speciesBySlug = new Map(
+  [
+    ...allSpecies.map((item) => [item.slug, item] as const),
+    ...[...speciesSlugAliases.entries()]
+      .map(([alias, canonicalSlug]) => {
+        const canonical = allSpecies.find((item) => item.slug === canonicalSlug);
+        return canonical ? ([alias, canonical] as const) : null;
+      })
+      .filter((entry): entry is readonly [string, Species] => Boolean(entry)),
+  ],
+);
 
 export const countyIndex = counties as unknown as Record<string, CountyRecord>;
 export const presenceIndex = presence as unknown as Record<string, CountyPresence>;
@@ -22,7 +35,7 @@ export const datasetSnapshot = snapshot as {
     catalogSpeciesCount: number;
     mappedSpeciesCount: number;
     unmatchedSpeciesCount: number;
-    sourceSpeciesCounts: Partial<Record<"EDDMaps" | "USGS NAS", number>>;
+    sourceSpeciesCounts: Partial<Record<string, number>>;
   };
 };
 

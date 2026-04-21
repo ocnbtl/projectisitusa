@@ -49,4 +49,16 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
       },
     ],
   },
+  {
+    speciesId: "USRIIS-L48-Animalia5077",
+    countyFips: ["01071"],
+    countyDataSources: [
+      {
+        source: "Alabama Forestry Commission",
+        matchType: "manual-authoritative",
+        externalId: "emerald-ash-borer-jackson-county-2025",
+        url: "https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx",
+      },
+    ],
+  },
 ];

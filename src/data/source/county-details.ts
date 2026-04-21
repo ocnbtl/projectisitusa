@@ -1091,4 +1091,139 @@ export const countyDetailSeed: CountyDetail[] = [
       },
     ],
   },
+  {
+    countyFips: "01071",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Jackson County has county-specific invasive evidence through both an official emerald ash borer confirmation and county planning documents that flag invasive eel grass along the Tennessee River corridor.",
+    headline: "Jackson County has multiple verified invasive signals",
+    countySummary:
+      "Jackson County is the strongest county in this chunk. Alabama Forestry Commission confirmed emerald ash borer there in 2025, and the county resiliency plan also calls out invasive eel grass along the Tennessee River and Guntersville Reservoir as an active local issue.",
+    summaryParagraphs: [
+      "That gives Jackson County more than one county-specific invasive signal, which is stronger than a generic statewide fallback.",
+      "The main limit is scope. The eel grass evidence is corridor-level planning context rather than a parcel-by-parcel inventory, so the county detail should stay direct about what the sources can and cannot prove.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "Jackson County Resiliency Plan",
+        url: "https://jacksoncountyal.gov/DocumentCenter/View/1301/Jackson-County-Resiliency-Plan-Adopted",
+        kind: "county-program",
+      },
+      {
+        label: "AFC Emerald Ash Borer Confirmation",
+        url: "https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01073",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Jefferson County was rechecked under the broader Alabama workflow, but the reviewed public sources still did not produce a county-specific invasive occurrence notice, list, or dashboard strong enough for production use.",
+    headline: "Jefferson County still needs local proof",
+    countySummary:
+      "Jefferson County remains in the statewide-only evidence tier after this pass. The reviewed public source stack confirmed Alabama invasive program coverage, but it did not surface a Jefferson-specific invasive detection or county list that would justify stronger county claims.",
+    summaryParagraphs: [
+      "That does not mean Jefferson County lacks invasive species. It means the reviewed public sources still stop short of county-specific invasive occurrence evidence.",
+      "So the county detail should stay useful and readable without pretending the county already has a public invasive inventory we can cite with confidence.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+      {
+        label: "APHIS Alabama Pest Information",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/alabama",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01075",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Lamar County was rechecked under the broader Alabama workflow, but the reviewed public sources still did not verify a county-specific invasive occurrence notice, list, or dashboard.",
+    headline: "Lamar County still leans on statewide sources",
+    countySummary:
+      "Lamar County remains in the statewide-only tier after the broader-source pass. The reviewed official materials gave county context and statewide invasive-program access, but they did not surface Lamar-specific invasive occurrence evidence strong enough for sharper county-level wording.",
+    summaryParagraphs: [
+      "This is still a real audit result rather than a missing-county error. The public source trail was reviewed, but it stayed general rather than county-specific.",
+      "Until a stronger local record appears, Lamar County should stay in the careful statewide-backed bucket instead of being dressed up as a local inventory.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+      {
+        label: "APHIS Alabama Pest Information",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/alabama",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01077",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Lauderdale County did surface a county-specific wildlife disease notice during review, but it was chronic wasting disease rather than an invasive-species record, so the county still remains statewide-only for Project Isitusa's invasive coverage.",
+    headline: "Lauderdale County still needs invasive-specific proof",
+    countySummary:
+      "Lauderdale County is a useful boundary case in the Alabama audit. The reviewed public sources did surface a county-specific biological issue, but it was chronic wasting disease, which should not be misclassified as invasive-species evidence in the live product.",
+    summaryParagraphs: [
+      "That contradiction matters. Lauderdale County has real county-level wildlife management reporting, but not the kind of invasive occurrence evidence this project needs for county mapping or county-detail claims.",
+      "So the county stays statewide-only here unless a real invasive-specific detection, list, or dashboard turns up later.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "Lauderdale County Soil and Water Conservation District",
+        url: "https://alabamasoilandwater.gov/lauderdale/",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01079",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Lawrence County did not surface a county-specific invasive occurrence notice in the reviewed public sources, though Tennessee River invasive-carp awareness is relevant regional context.",
+    headline: "Lawrence County still needs local confirmation",
+    countySummary:
+      "Lawrence County remains statewide-only after this pass. The reviewed public source stack showed regional Tennessee River invasive concern, but it did not verify a Lawrence-specific invasive detection or county list strong enough for production claims.",
+    summaryParagraphs: [
+      "That keeps Lawrence County in the same broad-awareness category as other counties where the regional context is real but the county-level proof is still missing.",
+      "The county detail can mention that local waterways sit in a relevant corridor, but it should not overstate that as a county-specific invasive inventory.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "ADCNR Invasive Carp Boat Ramp Notice",
+        url: "https://www.outdooralabama.com/articles/adcnr-installs-invasive-carp-signs-tennessee-river-public-boat-ramps",
+        kind: "statewide-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
 ];
