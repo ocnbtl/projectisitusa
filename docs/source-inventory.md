@@ -595,6 +595,15 @@ These sources are already referenced by current curated profiles, but the origin
 | --- | --- | --- |
 | https://www.outdooralabama.com/node/1477 | Feral Swine; Alabama county audit | Official statewide Alabama confirmation used for the manual authoritative all-county feral-swine override and statewide Alabama wildlife fallback |
 | https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf | Alabama county audit; Silver Carp; Asiatic Clam | Broader-source Alabama re-audit correction for Bibb, Calhoun, Colbert, and Covington plus manual authoritative county-presence overrides for Colbert silver carp and Covington Asiatic clam |
+
+### County audit Alabama chunk 7, consulted on 2026-04-20
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://forestry.alabama.gov/Pages/News/2022/RFCogongrassBid.aspx | Alabama county audit; Cogongrass | County-specific cogongrass evidence for Geneva, Greene, Hale, Henry, and Houston through Alabama Forestry Commission focused-county response records |
+| https://forestry.alabama.gov/Pages/Informational/Images/Cogongrass_Landowner_Packet.pdf | Alabama county audit; Cogongrass | Additional county-specific cogongrass documentation for Greene and Hale through documented infestation materials |
+| https://www.aces.edu/blog/topics/farming/cotton-jassid-confirmed-in-alabama/ | Alabama county audit; Cotton Jassid | Explicit Henry County cotton jassid confirmation used to strengthen Henry County beyond cogongrass-only evidence |
+| https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx | Alabama county audit; Cogongrass | Alabama statewide cogongrass program background used to support county-detail resources for chunk 7 |
 | https://www.aces.edu/counties/franklin/ | Alabama county audit | Franklin County extension office check during county-source review |
 | https://www.aces.edu/blog/category/counties/franklin/ | Alabama county audit | Franklin County official category page check during county-source review |
 

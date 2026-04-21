@@ -946,4 +946,149 @@ export const countyDetailSeed: CountyDetail[] = [
       },
     ],
   },
+  {
+    countyFips: "01061",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Geneva County has county-specific cogongrass evidence through Alabama Forestry Commission program records, even though the public source stack is still much narrower than a broad county invasive inventory.",
+    headline: "Geneva County has verified cogongrass evidence",
+    countySummary:
+      "Geneva County no longer belongs in the statewide-only bucket. The Alabama Forestry Commission's county-focused cogongrass response records identify Geneva as a documented infestation county, which is strong enough for county-specific evidence even though it is not a live county species inventory.",
+    summaryParagraphs: [
+      "The important limit is that Geneva County's current public proof is program-level cogongrass response documentation, not a broad county dashboard or list covering many invasive species.",
+      "That still matters. It means the county has real attributable local evidence, but the county detail should stay honest about how narrow that evidence remains.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "AFC Cogongrass Focused-County RFP",
+        url: "https://forestry.alabama.gov/Pages/News/2022/RFCogongrassBid.aspx",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Cogongrass Program",
+        url: "https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01063",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Greene County has county-specific cogongrass evidence through Alabama Forestry Commission program records and landowner materials, though that evidence is still narrower than a broad county invasive inventory.",
+    headline: "Greene County has verified cogongrass evidence",
+    countySummary:
+      "Greene County is now backed by county-specific cogongrass documentation rather than statewide fallback alone. Alabama Forestry Commission records identify Greene as a focused response county, and the landowner packet also shows a selected Greene County infestation.",
+    summaryParagraphs: [
+      "This is good county-level evidence, but it is still centered on one plant and one control program rather than a full county invasive list.",
+      "So Greene County should be described as locally verified in part, not as comprehensively inventoried across the whole invasive catalog.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "AFC Cogongrass Focused-County RFP",
+        url: "https://forestry.alabama.gov/Pages/News/2022/RFCogongrassBid.aspx",
+        kind: "county-detection",
+      },
+      {
+        label: "AFC Cogongrass Landowner Packet PDF",
+        url: "https://forestry.alabama.gov/Pages/Informational/Images/Cogongrass_Landowner_Packet.pdf",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Cogongrass Program",
+        url: "https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01065",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Hale County has county-specific cogongrass evidence through Alabama Forestry Commission program records and landowner materials, though the source stack still stops short of a broad county invasive inventory.",
+    headline: "Hale County has verified cogongrass evidence",
+    countySummary:
+      "Hale County is no longer just a statewide-context county in the audit. Alabama Forestry Commission records identify Hale as a focused cogongrass response county, and the landowner packet also references documented infested properties there.",
+    summaryParagraphs: [
+      "That is real county-specific occurrence evidence, but it remains a narrow program source rather than a full county inventory.",
+      "The county detail should reflect that balance directly: stronger than statewide fallback, but still not a finished county report card.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "AFC Cogongrass Focused-County RFP",
+        url: "https://forestry.alabama.gov/Pages/News/2022/RFCogongrassBid.aspx",
+        kind: "county-detection",
+      },
+      {
+        label: "AFC Cogongrass Landowner Packet PDF",
+        url: "https://forestry.alabama.gov/Pages/Informational/Images/Cogongrass_Landowner_Packet.pdf",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Cogongrass Program",
+        url: "https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01067",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Henry County has the strongest county-specific evidence in this chunk, with Alabama Forestry Commission cogongrass records plus an explicit ACES confirmation of cotton jassid in a Henry County field.",
+    headline: "Henry County has multiple verified signals",
+    countySummary:
+      "Henry County now has more than one county-specific invasive signal in the public source stack. Alabama Forestry Commission records identify documented cogongrass response work there, and ACES and Auburn also confirmed cotton jassid in a Henry County commercial cotton field in 2025.",
+    summaryParagraphs: [
+      "That combination makes Henry the strongest county in this chunk. The county is still not backed by a broad county species inventory, but it clearly has more than a single thin statewide fallback.",
+      "The remaining limitation is breadth. These are still species-specific confirmations rather than a countywide dashboard covering the full invasive catalog.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "AFC Cogongrass Focused-County RFP",
+        url: "https://forestry.alabama.gov/Pages/News/2022/RFCogongrassBid.aspx",
+        kind: "county-detection",
+      },
+      {
+        label: "ACES Cotton Jassid Confirmed in Alabama",
+        url: "https://www.aces.edu/blog/topics/farming/cotton-jassid-confirmed-in-alabama/",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Cogongrass Program",
+        url: "https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01069",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Houston County has county-specific cogongrass evidence through Alabama Forestry Commission program records, but the current public source stack remains thinner here than in the stronger counties in this chunk.",
+    headline: "Houston County has a narrow verified signal",
+    countySummary:
+      "Houston County no longer sits in the statewide-only tier. Alabama Forestry Commission cogongrass response records identify Houston as a documented county in the focused program, which is enough for county-specific evidence even though the public source trail is still relatively thin.",
+    summaryParagraphs: [
+      "This is the weakest county-specific case in the chunk because it currently leans on the program-level county list rather than a separate Houston-only notice or broader inventory.",
+      "That still makes it stronger than statewide fallback alone. The county detail should just stay clear that the evidence is narrow and program-centered.",
+    ],
+    lastReviewedOn: "2026-04-20",
+    resources: [
+      {
+        label: "AFC Cogongrass Focused-County RFP",
+        url: "https://forestry.alabama.gov/Pages/News/2022/RFCogongrassBid.aspx",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Cogongrass Program",
+        url: "https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
 ];

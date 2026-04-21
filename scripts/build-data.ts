@@ -287,6 +287,32 @@ function loadRegistryCatalog(countyPresenceSeed: {
 
   const registrySpecies: Species[] = [];
 
+  const buildCuratedCoverageRegistry = (species: Species): NonNullable<Species["registry"]> => {
+    const mappedCountyCount = countyPresenceSeed.records[species.id]?.length ?? 0;
+
+    return {
+      locality: "L48",
+      status: "invasive",
+      statusLabel: "Curated county coverage",
+      establishmentMeans:
+        "This curated profile has verified county coverage in the local Project Isitusa snapshot, even though an exact US-RIIS registry match is not currently attached.",
+      taxonRank: "species",
+      kingdom: "Curated profile",
+      phylum: "",
+      className: "Curated profile",
+      order: "Verified county coverage",
+      family: "",
+      habitats: [],
+      pathways: [],
+      environmentTags: [],
+      authority: "Project Isitusa curated county coverage merge",
+      occurrenceId: species.id,
+      hasCountyData: mappedCountyCount > 0,
+      mappedCountyCount,
+      countyDataSources: countyPresenceSeed.countyDataSourcesBySpeciesId[species.id],
+    };
+  };
+
   for (const record of snapshot.species) {
     const existing = curatedByScientificName.get(record.scientificName.toLowerCase());
     const existingCountyRecordKey =
@@ -407,6 +433,13 @@ function loadRegistryCatalog(countyPresenceSeed: {
           : []),
       ],
     });
+  }
+
+  for (const species of speciesSeed) {
+    if (species.registry) continue;
+    if (!countyPresenceSeed.records[species.id]?.length) continue;
+
+    species.registry = buildCuratedCoverageRegistry(species);
   }
 
   return {
@@ -543,12 +576,31 @@ async function main() {
     ]),
   );
 
+  const canonicalMappedSpecies = registryCatalog.species.filter(
+    (species) => species.registry?.hasCountyData,
+  );
+  const canonicalCoverageSummary = {
+    catalogSpeciesCount: registryCatalog.species.length,
+    mappedSpeciesCount: canonicalMappedSpecies.length,
+    unmatchedSpeciesCount: registryCatalog.species.length - canonicalMappedSpecies.length,
+    sourceSpeciesCounts: canonicalMappedSpecies.reduce(
+      (acc, species) => {
+        const sources = species.registry?.countyDataSources ?? [];
+        for (const source of new Set(sources.map((entry) => entry.source))) {
+          acc[source] = (acc[source] ?? 0) + 1;
+        }
+        return acc;
+      },
+      {} as CountyCoverageSnapshotFile["coverageSummary"]["sourceSpeciesCounts"],
+    ),
+  };
+
   const snapshotPayload = {
     snapshotDate: countyPresenceSeed.snapshotDate ?? registryCatalog.snapshotDate,
     sourceRefs: [...countyPresenceSeed.sourceRefs, ...registryCatalog.sourceRefs].filter(
       Boolean,
     ),
-    coverageSummary: countyPresenceSeed.coverageSummary,
+    coverageSummary: canonicalCoverageSummary,
   };
 
   await mkdir(outputDir, { recursive: true });
