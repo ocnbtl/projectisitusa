@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import type {
   CountyDetail,
+  CountyDataSourceName,
   CountyRecord,
   ExplorerPresenceIndex,
   ExplorerSpecies,
@@ -17,7 +18,7 @@ interface DatasetSnapshot {
     catalogSpeciesCount: number;
     mappedSpeciesCount: number;
     unmatchedSpeciesCount: number;
-    sourceSpeciesCounts: Partial<Record<"EDDMaps" | "USGS NAS", number>>;
+    sourceSpeciesCounts: Partial<Record<CountyDataSourceName, number>>;
   };
 }
 

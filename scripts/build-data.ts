@@ -296,8 +296,28 @@ function loadRegistryCatalog(countyPresenceSeed: {
 
   const registrySpecies: Species[] = [];
 
+  const getMergedCountyCoverage = (keys: Array<string | undefined>) => {
+    const resolvedKeys = [...new Set(keys.filter((value): value is string => Boolean(value)))];
+    const countyFips = [...new Set(
+      resolvedKeys.flatMap((key) => countyPresenceSeed.records[key] ?? []),
+    )].sort();
+    const countyDataSources = [
+      ...new Map(
+        resolvedKeys
+          .flatMap((key) => countyPresenceSeed.countyDataSourcesBySpeciesId[key] ?? [])
+          .map((source) => [`${source.source}::${source.externalId}::${source.url}`, source]),
+      ).values(),
+    ];
+
+    return {
+      countyFips,
+      countyDataSources: countyDataSources.length > 0 ? countyDataSources : undefined,
+    };
+  };
+
   const buildCuratedCoverageRegistry = (species: Species): NonNullable<Species["registry"]> => {
-    const mappedCountyCount = countyPresenceSeed.records[species.id]?.length ?? 0;
+    const coverage = getMergedCountyCoverage([species.id, species.registry?.occurrenceId]);
+    const mappedCountyCount = coverage.countyFips.length;
 
     return {
       locality: "L48",
@@ -318,7 +338,7 @@ function loadRegistryCatalog(countyPresenceSeed: {
       occurrenceId: species.id,
       hasCountyData: mappedCountyCount > 0,
       mappedCountyCount,
-      countyDataSources: countyPresenceSeed.countyDataSourcesBySpeciesId[species.id],
+      countyDataSources: coverage.countyDataSources,
     };
   };
 
@@ -326,21 +346,14 @@ function loadRegistryCatalog(countyPresenceSeed: {
     const existing = curatedByScientificName.get(
       normalizeScientificName(record.scientificName),
     );
-    const countyRecordKeys = [
+    const coverage = getMergedCountyCoverage([
       record.occurrenceId,
       existing?.id,
       existing?.registry?.occurrenceId,
-    ].filter((value): value is string => Boolean(value));
-    const existingCountyRecordKey = countyRecordKeys.find(
-      (key) => (countyPresenceSeed.records[key]?.length ?? 0) > 0,
-    );
-    const existingMappedCountyCount = existingCountyRecordKey
-      ? countyPresenceSeed.records[existingCountyRecordKey]?.length ?? 0
-      : 0;
-    const existingCountyDataSources = existingCountyRecordKey
-      ? countyPresenceSeed.countyDataSourcesBySpeciesId[existingCountyRecordKey]
-      : undefined;
-    const existingHasCountyData = Boolean(existingCountyRecordKey);
+    ]);
+    const existingMappedCountyCount = coverage.countyFips.length;
+    const existingCountyDataSources = coverage.countyDataSources;
+    const existingHasCountyData = existingMappedCountyCount > 0;
 
     if (existing) {
       if (!existing.image) {
