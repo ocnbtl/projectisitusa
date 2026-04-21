@@ -668,6 +668,27 @@ These sources are already referenced by current curated profiles, but the origin
 | https://nas.er.usgs.gov/Queries/SpecimenViewer.aspx?SpecimenID=1695757 | Alabama county audit; Pond loach | Shelby County secondary county-specific nonindigenous aquatic record used to strengthen the county-specific evidence determination |
 | https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=3160202&SpeciesID=92&fmb=0&pathway=0&status=0 | Alabama county audit; Freshwater golden clam | Sumter County county-specific aquatic invasive evidence and manual county-presence override |
 
+### County audit Alabama chunk 13, consulted on 2026-04-21
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=263551 | Alabama county audit; Pond loach | Talladega County county-specific aquatic invasive evidence |
+| https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx | Alabama county audit; Emerald Ash Borer | Talladega County reinforcement check showing prior official county documentation |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=549 | Alabama county audit; Silver Carp | Tallapoosa County county-specific carp evidence used for county-detail support |
+| https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=26240 | Alabama county audit; Bighead Carp | Tallapoosa County secondary county-specific carp evidence used to strengthen the county-specific determination |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03160112&SpeciesID=5&State=AL | Alabama county audit; Zebra Mussel | Tuscaloosa County county-specific aquatic invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=11&SpeciesID=1068 | Alabama county audit | Walker County contradiction check showing a county-specific nonnative record outside the current Project Isitusa catalog |
+| https://www.aces.edu/blog/topics/counties/washington-county-annual-report/ | Alabama county audit | Washington County county-report review during statewide-only determination |
+| https://www.aces.edu/counties/washington/ | Alabama county audit | Washington County extension office review during county-source search |
+
+### County audit Alabama chunk 14, consulted on 2026-04-21
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=230460 | Alabama county audit; Wild Taro | Wilcox County county-specific aquatic and shoreline invasive evidence and manual county-presence override |
+| https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=168047 | Alabama county audit | Wilcox County secondary nonnative aquatic record used to strengthen the county-specific determination |
+| https://www.forestry.alabama.gov/Pages/Informational/Treasured_Forests/Magazine/2020_Spring.pdf | Alabama county audit; Cogongrass | Winston County official county-specific cogongrass reporting and manual county-presence override |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

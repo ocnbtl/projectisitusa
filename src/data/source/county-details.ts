@@ -1791,4 +1791,196 @@ export const countyDetailSeed: CountyDetail[] = [
       },
     ],
   },
+  {
+    countyFips: "01121",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Talladega County has county-specific invasive evidence through both prior official emerald ash borer documentation and a structured pond-loach record.",
+    headline: "Talladega County has multiple verified signals",
+    countySummary:
+      "Talladega County moves clearly into the county-specific tier. The reviewed sources include prior official emerald ash borer documentation and a structured aquatic invasive record, which gives the county more than one local invasive signal instead of statewide fallback alone.",
+    summaryParagraphs: [
+      "That makes Talladega stronger than a county relying on one thin record, but it still does not amount to a broad public county inventory across all invasive categories.",
+      "So the county detail should stay direct about scope while still acknowledging that the local evidence is stronger than a generic statewide fallback.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "AFC Emerald Ash Borer Confirmation",
+        url: "https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx",
+        kind: "county-detection",
+      },
+      {
+        label: "USGS NAS Pond Loach Record",
+        url: "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=263551",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01123",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Tallapoosa County has county-specific invasive evidence through silver carp and bighead carp records tied to Yates Reservoir and Tallassee, but the reviewed status signal is weaker than an established county record.",
+    headline: "Tallapoosa County has a weaker but real fish signal",
+    countySummary:
+      "Tallapoosa County clears the county-specific evidence bar in this pass, but it is not one of the stronger counties in the final Alabama tranche. The reviewed federal carp records tie invasive fish to county waters, yet the observed status is weaker than an established county occurrence.",
+    summaryParagraphs: [
+      "That means the county should no longer sit in the statewide-only bucket, but it also should not be described as if it has the same confidence level as counties backed by established records or multiple independent sources.",
+      "So the county detail needs to stay explicit that the local evidence is real but weaker, and that it supports county-specific context more cleanly than a production coverage override.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "USGS NAS Silver Carp Records",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?SpeciesID=549",
+        kind: "county-detection",
+      },
+      {
+        label: "USGS NAS Bighead Carp Record",
+        url: "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=26240",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01125",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Tuscaloosa County has county-specific invasive evidence through structured zebra mussel records tied to the Black Warrior and Holt Reservoir corridor.",
+    headline: "Tuscaloosa County has a clear reservoir signal",
+    countySummary:
+      "Tuscaloosa County moves out of the statewide-only bucket with a clean county-specific aquatic invasive signal. Structured federal records now tie zebra mussel to the county's Black Warrior and Holt Reservoir corridor.",
+    summaryParagraphs: [
+      "That is strong enough for county-specific wording and a manual coverage update.",
+      "The current source stack is still narrower than a broad county invasive inventory, so the county detail should stay accurate about scope instead of implying all-category county completeness.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "USGS NAS Zebra Mussel Records",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03160112&SpeciesID=5&State=AL",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01127",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Walker County surfaced a county-specific nonnative freshwater jellyfish record during review, but that taxon sits outside the current Project Isitusa catalog and the reviewed status signal was too weak for production invasive coverage, so the county remains statewide-only for now.",
+    headline: "Walker County still needs a catalog-backed invasive signal",
+    countySummary:
+      "Walker County is the clearest contradiction in the final Alabama pass. The reviewed public sources did surface a county-specific nonnative record, but it did not cleanly translate into the invasive-species coverage this product can confidently use today.",
+    summaryParagraphs: [
+      "That matters because county-specific biology reporting is not automatically the same thing as a production-usable invasive signal for this catalog.",
+      "So Walker remains in the statewide-only tier unless a stronger county-specific invasive record surfaces or the catalog policy changes enough to absorb the current nonnative signal.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "USGS NAS Freshwater Jellyfish Records",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=11&SpeciesID=1068",
+        kind: "county-program",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01129",
+    evidenceLevel: "statewide-only",
+    auditSummary:
+      "Washington County was rechecked under the broader Alabama workflow, but the reviewed public sources still did not verify a county-specific invasive occurrence notice, list, or dashboard strong enough for production use.",
+    headline: "Washington County still leans on statewide sources",
+    countySummary:
+      "Washington County remains in the statewide-only tier after the final Alabama pass. The reviewed county and statewide source stack provided local context and program access, but it still did not surface a county-specific invasive record strong enough for sharper county claims.",
+    summaryParagraphs: [
+      "That does not mean Washington County lacks invasive species. It means the public source trail reviewed here still stops short of county-specific invasive reporting we can cite with confidence.",
+      "So the county detail should stay careful and useful without dressing local extension context up as a county invasive inventory.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "Washington County Annual Report",
+        url: "https://www.aces.edu/blog/topics/counties/washington-county-annual-report/",
+        kind: "county-extension",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01131",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Wilcox County has county-specific invasive evidence through structured wild taro records tied to Bill Dannelly Reservoir.",
+    headline: "Wilcox County has a verified reservoir signal",
+    countySummary:
+      "Wilcox County moves into the county-specific tier with a clean local invasive record. Structured federal data now ties wild taro to Bill Dannelly Reservoir in the county, which is enough for county-specific wording and a manual coverage update.",
+    summaryParagraphs: [
+      "The evidence is still narrower than a broad county invasive inventory, but it is stronger than a generic statewide fallback.",
+      "So the county detail should stay direct about scope while still recognizing that Wilcox now has a real local invasive signal in production.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "USGS NAS Wild Taro Record",
+        url: "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=230460",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Invasive Species",
+        url: "https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
+  {
+    countyFips: "01133",
+    evidenceLevel: "county-specific",
+    auditSummary:
+      "Winston County has county-specific invasive evidence through Alabama Forestry Commission reporting that a cogongrass spot was found on private property in the county.",
+    headline: "Winston County has a verified cogongrass signal",
+    countySummary:
+      "Winston County clears the county-specific evidence bar in the final Alabama chunk because Alabama Forestry Commission reported a cogongrass spot on private property in the county. That gives Winston a direct invasive signal instead of leaving it in the statewide-only tier.",
+    summaryParagraphs: [
+      "The current public proof is still article-level rather than a structured county database, so the county detail should stay explicit about that limitation.",
+      "Even so, the source is official and county-specific enough to support both county-detail wording and a manual coverage update.",
+    ],
+    lastReviewedOn: "2026-04-21",
+    resources: [
+      {
+        label: "Alabama's Treasured Forests Spring 2020",
+        url: "https://www.forestry.alabama.gov/Pages/Informational/Treasured_Forests/Magazine/2020_Spring.pdf",
+        kind: "county-detection",
+      },
+      {
+        label: "Alabama Forestry Commission Cogongrass Program",
+        url: "https://forestry.alabama.gov/Pages/Management/Cogongrass.aspx",
+        kind: "statewide-program",
+      },
+    ],
+  },
 ];

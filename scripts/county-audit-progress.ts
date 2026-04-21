@@ -30,8 +30,7 @@ function parseStateFile(filepath: string): StateProgress {
   const stateName = lines[0]?.replace(/^# /, "").replace(/ County Audit$/, "").trim() ?? path.basename(filepath, ".md");
 
   let inCountyTable = false;
-  let countiesTotal = 0;
-  let countiesCompleted = 0;
+  const countyStatuses: string[] = [];
 
   for (const line of lines) {
     if (line.startsWith("| County FIPS | County | Audit status |")) {
@@ -60,14 +59,20 @@ function parseStateFile(filepath: string): StateProgress {
       continue;
     }
 
-    countiesTotal += 1;
-    if (completedCountyStatuses.has(cells[2])) {
-      countiesCompleted += 1;
-    }
+    countyStatuses.push(cells[2]);
   }
 
+  const countiesTotal = countyStatuses.length;
+  const countiesCompleted = countyStatuses.filter((status) => completedCountyStatuses.has(status)).length;
   const chunksTotal = Math.ceil(countiesTotal / CHUNK_SIZE);
-  const chunksCompleted = Math.floor(countiesCompleted / CHUNK_SIZE);
+  let chunksCompleted = 0;
+
+  for (let index = 0; index < countyStatuses.length; index += CHUNK_SIZE) {
+    const chunkStatuses = countyStatuses.slice(index, index + CHUNK_SIZE);
+    if (chunkStatuses.length > 0 && chunkStatuses.every((status) => completedCountyStatuses.has(status))) {
+      chunksCompleted += 1;
+    }
+  }
 
   return {
     stateCode: path.basename(filepath, ".md"),
@@ -90,7 +95,7 @@ const states = stateFiles.map((filename) => parseStateFile(path.join(COUNTY_AUDI
 const nationwideCountiesTotal = states.reduce((sum, state) => sum + state.countiesTotal, 0);
 const nationwideCountiesCompleted = states.reduce((sum, state) => sum + state.countiesCompleted, 0);
 const nationwideChunksTotal = Math.ceil(nationwideCountiesTotal / CHUNK_SIZE);
-const nationwideChunksCompleted = Math.floor(nationwideCountiesCompleted / CHUNK_SIZE);
+const nationwideChunksCompleted = states.reduce((sum, state) => sum + state.chunksCompleted, 0);
 
 const output = {
   chunkSize: CHUNK_SIZE,

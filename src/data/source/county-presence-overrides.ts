@@ -289,4 +289,52 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
       },
     ],
   },
+  {
+    speciesId: "USRIIS-L48-Animalia5077",
+    countyFips: ["01121"],
+    countyDataSources: [
+      {
+        source: "Alabama Forestry Commission",
+        matchType: "manual-authoritative",
+        externalId: "emerald-ash-borer-talladega-county-2025",
+        url: "https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia668",
+    countyFips: ["01125"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "zebra-mussel-tuscaloosa-county",
+        url: "https://nas.er.usgs.gov/queries/CollectionInfo.aspx?HUCNumber=03160112&SpeciesID=5&State=AL",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae7246",
+    countyFips: ["01131"],
+    countyDataSources: [
+      {
+        source: "USGS NAS",
+        matchType: "manual-authoritative",
+        externalId: "wild-taro-wilcox-county",
+        url: "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=230460",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae8585",
+    countyFips: ["01133"],
+    countyDataSources: [
+      {
+        source: "Alabama Forestry Commission",
+        matchType: "manual-authoritative",
+        externalId: "cogongrass-winston-county-2020",
+        url: "https://www.forestry.alabama.gov/Pages/Informational/Treasured_Forests/Magazine/2020_Spring.pdf",
+      },
+    ],
+  },
 ];
