@@ -1,7 +1,7 @@
 import { execFileSync, spawn } from "node:child_process";
 import { once } from "node:events";
 import { writeFile } from "node:fs/promises";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 import { parse } from "csv-parse";
 import { createInterface } from "node:readline";
@@ -24,6 +24,10 @@ const EDDMAPS_SUBJECTS_URL =
   "https://api.bugwoodcloud.org/v2/occurrence/summary/subject?list=17";
 const NAS_ARCHIVE_URL = "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.331";
 const NAS_ARCHIVE_PATH = resolve("/tmp", "usgs-nas-dwca.zip");
+const SERNEC_PORTAL_URL =
+  "https://sernecportal.org/portal/collections/harvestparams.php";
+const SERNEC_TABLE_URL =
+  "https://sernecportal.org/portal/collections/listtabledisplay.php";
 const OUTPUT_PATH = resolve(
   process.cwd(),
   "src/data/source/county-presence-snapshot.json",
@@ -50,6 +54,11 @@ type NasArchiveOccurrence = {
   scientificName?: string;
 };
 
+type SernecAlabamaTarget = {
+  speciesId: string;
+  scientificName: string;
+};
+
 type CountyGeometry = {
   id: string;
   properties?: {
@@ -61,10 +70,19 @@ function readJsonFile<T>(filePath: string) {
   return JSON.parse(readFileSync(filePath, "utf8")) as T;
 }
 
-function downloadFile(url: string, outputPath: string) {
+function downloadFile(
+  url: string,
+  outputPath: string,
+  options?: { reuseExisting?: boolean },
+) {
+  if (options?.reuseExisting && existsSync(outputPath) && statSync(outputPath).size > 0) {
+    console.log(`Reusing cached download at ${outputPath}`);
+    return;
+  }
+
   execFileSync(
     "curl",
-    ["-sL", "-A", USER_AGENT, "-o", outputPath, url],
+    ["-sL", "--max-time", "120", "-A", USER_AGENT, "-o", outputPath, url],
     {
       stdio: "inherit",
     },
@@ -78,6 +96,20 @@ function canonicalScientificName(value: string) {
 const NAS_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
   "hydrilla verticillata verticillata": "hydrilla verticillata",
 };
+
+const SERNEC_ALABAMA_SPECIES_IDS = [
+  "lonicera-japonica",
+  "kudzu",
+  "ligustrum-sinense",
+  "albizia-julibrissin",
+  "lygodium-japonicum",
+  "triadica-sebifera",
+  "imperata-cylindrica",
+  "microstegium-vimineum",
+  "rosa-multiflora",
+  "nandina-domestica",
+  "elaeagnus-umbellata",
+] as const;
 
 function resolveNasScientificName(value: string) {
   const normalized = canonicalScientificName(value);
@@ -98,6 +130,55 @@ function normalizeCountyName(value: string) {
     .replace(/\bsaint\b/g, "st")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function decodeHtmlEntities(value: string) {
+  return value
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) =>
+      String.fromCodePoint(Number.parseInt(hex, 16)),
+    )
+    .replace(/&#(\d+);/g, (_, decimal) =>
+      String.fromCodePoint(Number.parseInt(decimal, 10)),
+    )
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+function stripHtml(value: string) {
+  return decodeHtmlEntities(value.replace(/<[^>]+>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractSernecTable(html: string) {
+  const tableMatch = html.match(/<table[\s\S]*?<\/table>/i);
+  if (!tableMatch) {
+    throw new Error("SERNEC response did not contain a result table.");
+  }
+
+  const tableHtml = tableMatch[0];
+  const headers = [...tableHtml.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((match) =>
+    stripHtml(match[1]),
+  );
+  if (headers.length === 0) {
+    throw new Error("SERNEC response did not expose table headers.");
+  }
+
+  const rows: string[][] = [];
+  for (const rowMatch of tableHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...rowMatch[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((match) =>
+      stripHtml(match[1]),
+    );
+    if (cells.length > 0) {
+      rows.push(cells);
+    }
+  }
+
+  return { headers, rows };
 }
 
 function buildCountyLookup() {
@@ -233,7 +314,7 @@ async function loadNasArchiveCountyCoverage(
   countyLookup: Map<string, string[]>,
   lower48CountyFips: Set<string>,
 ) {
-  downloadFile(NAS_ARCHIVE_URL, NAS_ARCHIVE_PATH);
+  downloadFile(NAS_ARCHIVE_URL, NAS_ARCHIVE_PATH, { reuseExisting: true });
 
   const unzipProcess = spawn("unzip", ["-p", NAS_ARCHIVE_PATH, "occurrence.txt"], {
     stdio: ["ignore", "pipe", "pipe"],
@@ -335,6 +416,107 @@ async function mapPool<TInput, TOutput>(
   return results;
 }
 
+function buildSernecAlabamaTargets(targets: ImportTarget[]) {
+  const targetsById = new Map(targets.map((target) => [target.speciesId, target]));
+
+  return SERNEC_ALABAMA_SPECIES_IDS.flatMap((speciesId) => {
+    const target = targetsById.get(speciesId);
+    if (!target) {
+      console.warn(`Skipped SERNEC Alabama supplement for missing target ${speciesId}.`);
+      return [];
+    }
+
+    return [
+      {
+        speciesId: target.speciesId,
+        scientificName: target.scientificName,
+      } satisfies SernecAlabamaTarget,
+    ];
+  });
+}
+
+async function loadSernecAlabamaCountyCoverage(
+  targets: ImportTarget[],
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  const imported = new Map<string, ImportedCountyCoverage>();
+  const sernecTargets = buildSernecAlabamaTargets(targets);
+  let matchedRows = 0;
+  let unresolvedCountyRows = 0;
+
+  await mapPool(sernecTargets, 3, async (target) => {
+    const html = execFileSync(
+      "curl",
+      [
+        "-sL",
+        "--max-time",
+        "45",
+        "-A",
+        USER_AGENT,
+        "-X",
+        "POST",
+        SERNEC_TABLE_URL,
+        "--data-urlencode",
+        `searchvar=db=all&state=Alabama&taxa=${target.scientificName}&taxontype=2&comingFrom=harvestparams`,
+      ],
+      { encoding: "utf8" },
+    );
+
+    const { headers, rows } = extractSernecTable(html);
+    const stateIndex = headers.findIndex((header) =>
+      header.toLowerCase().includes("state"),
+    );
+    const countyIndex = headers.findIndex((header) => header.toLowerCase() === "county");
+
+    if (stateIndex === -1 || countyIndex === -1) {
+      throw new Error(
+        `SERNEC table format changed for ${target.scientificName}; could not find state/county columns.`,
+      );
+    }
+
+    const coverage = imported.get(target.speciesId) ?? {
+      countyFips: new Set<string>(),
+      countyDataSources: [],
+    };
+
+    for (const row of rows) {
+      const stateName = row[stateIndex]?.trim().toLowerCase();
+      const countyName = row[countyIndex]?.trim();
+      if (stateName !== "alabama" || !countyName) continue;
+
+      const countyFips = resolveCountyFips("AL", countyName, countyLookup);
+      if (!countyFips || !lower48CountyFips.has(countyFips)) {
+        unresolvedCountyRows += 1;
+        continue;
+      }
+
+      coverage.countyFips.add(countyFips);
+      matchedRows += 1;
+    }
+
+    if (coverage.countyFips.size > 0) {
+      coverage.countyDataSources.push({
+        source: "SERNEC",
+        matchType: "scientific-exact",
+        externalId: target.scientificName,
+        url: SERNEC_PORTAL_URL,
+      });
+      imported.set(target.speciesId, coverage);
+    }
+
+    console.log(
+      `Loaded SERNEC Alabama coverage for ${target.scientificName}: ${coverage.countyFips.size} counties`,
+    );
+  });
+
+  console.log(
+    `Loaded ${imported.size} species from SERNEC Alabama specimen queries with ${matchedRows} matched county rows (${unresolvedCountyRows} unresolved county rows skipped).`,
+  );
+
+  return imported;
+}
+
 async function main() {
   const usRiis = readJsonFile<UsRiisSnapshotFile>(US_RIIS_PATH);
   const targets = buildTargets(usRiis);
@@ -351,6 +533,11 @@ async function main() {
     countyLookup,
     lower48CountyFips,
   );
+  const sernecCountyCoverage = await loadSernecAlabamaCountyCoverage(
+    targets,
+    countyLookup,
+    lower48CountyFips,
+  );
 
   console.log(`Loaded ${targets.length} import targets.`);
 
@@ -359,7 +546,7 @@ async function main() {
     const countyFips = new Set<string>();
     const countyDataSources: CountyDataSourceRef[] = [
       ...((existingCoverage?.countyDataSources ?? []).filter(
-        (source) => source.source !== "USGS NAS",
+        (source) => !["USGS NAS", "SERNEC"].includes(source.source),
       )),
     ];
 
@@ -373,6 +560,14 @@ async function main() {
         countyFips.add(fips);
       }
       countyDataSources.push(...archiveCoverage.countyDataSources);
+    }
+
+    const sernecCoverage = sernecCountyCoverage.get(target.speciesId);
+    if (sernecCoverage) {
+      for (const fips of sernecCoverage.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(...sernecCoverage.countyDataSources);
     }
 
     const uniqueSources = countyDataSources.filter(
@@ -421,6 +616,7 @@ async function main() {
     citation: [
       "EDDMapS. 2026. Early Detection & Distribution Mapping System. The University of Georgia - Center for Invasive Species and Ecosystem Health. Available online at https://www.eddmaps.org/.",
       "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database. Gainesville, Florida. Accessed 2026-04-14.",
+      "SERNEC Portal. 2026. Public specimen search for Alabama county-level plant occurrence records. Available online at https://sernecportal.org/portal/collections/harvestparams.php.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,

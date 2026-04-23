@@ -1,6 +1,78 @@
 import type { CountyDetail } from "@/lib/data/types";
 
-export const countyDetailSeed: CountyDetail[] = [
+const SERNEC_ALABAMA_COUNTY_NAMES = new Map<string, string>([
+  ["01001", "Autauga"],
+  ["01009", "Blount"],
+  ["01011", "Bullock"],
+  ["01013", "Butler"],
+  ["01017", "Chambers"],
+  ["01019", "Cherokee"],
+  ["01021", "Chilton"],
+  ["01023", "Choctaw"],
+  ["01025", "Clarke"],
+  ["01027", "Clay"],
+  ["01029", "Cleburne"],
+  ["01031", "Coffee"],
+  ["01035", "Conecuh"],
+  ["01037", "Coosa"],
+  ["01041", "Crenshaw"],
+  ["01043", "Cullman"],
+  ["01045", "Dale"],
+  ["01047", "Dallas"],
+  ["01049", "DeKalb"],
+  ["01051", "Elmore"],
+  ["01053", "Escambia"],
+  ["01055", "Etowah"],
+  ["01057", "Fayette"],
+  ["01059", "Franklin"],
+  ["01073", "Jefferson"],
+  ["01075", "Lamar"],
+  ["01077", "Lauderdale"],
+  ["01079", "Lawrence"],
+  ["01087", "Macon"],
+  ["01093", "Marion"],
+  ["01127", "Walker"],
+  ["01129", "Washington"],
+]);
+
+const SERNEC_RESOURCE = {
+  label: "SERNEC Portal Alabama Plant Search",
+  url: "https://sernecportal.org/portal/collections/harvestparams.php",
+  kind: "statewide-program" as const,
+};
+
+function addSernecResource(detail: CountyDetail) {
+  if (detail.resources.some((resource) => resource.url === SERNEC_RESOURCE.url)) {
+    return detail.resources;
+  }
+
+  return [...detail.resources, SERNEC_RESOURCE];
+}
+
+function applySernecAlabamaCountyOverrides(details: CountyDetail[]) {
+  return details.map((detail) => {
+    const countyName = SERNEC_ALABAMA_COUNTY_NAMES.get(detail.countyFips);
+    if (!countyName) return detail;
+
+    return {
+      ...detail,
+      evidenceLevel: "county-specific" as const,
+      auditSummary:
+        `${countyName} County now has county-specific invasive plant evidence through SERNEC specimen records, even though the current source stack is still narrower than a broad county invasive inventory.`,
+      headline: `${countyName} County now has a verified plant signal`,
+      countySummary:
+        `${countyName} County moves out of the statewide-only tier because SERNEC specimen records now tie invasive catalog plants to the county. That is enough for county-specific wording, but it is still a narrower plant-occurrence source path rather than a broad county invasive inventory.`,
+      summaryParagraphs: [
+        `That gives ${countyName} County real county-specific invasive evidence instead of statewide fallback alone.`,
+        "The county detail should stay clear that the evidence is specimen-backed and plant-focused, not a comprehensive all-category county inventory.",
+      ],
+      lastReviewedOn: "2026-04-23",
+      resources: addSernecResource(detail),
+    };
+  });
+}
+
+export const countyDetailSeed: CountyDetail[] = applySernecAlabamaCountyOverrides([
   {
     countyFips: "01001",
     evidenceLevel: "statewide-only",
@@ -1983,4 +2055,4 @@ export const countyDetailSeed: CountyDetail[] = [
       },
     ],
   },
-];
+]);
