@@ -10,11 +10,12 @@ County count in current dataset: `67`
 2. https://www.outdooralabama.com/node/1477
 3. https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf
 4. https://sernecportal.org/portal/collections/harvestparams.php
+5. https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer
 
 ## Audit Notes
 
 Statewide source path started on 2026-04-20.
-Current product gap updated on 2026-04-23: the merged Alabama county snapshot now combines USGS NAS aquatic coverage with a vetted SERNEC Alabama plant supplement, which gives all `67` counties county-specific evidence and materially broader live map coverage. Important limitation: many counties are still anchored by narrower plant or aquatic signal families rather than a broad county invasive-species inventory.
+Current product gap updated on 2026-04-23: the merged Alabama county snapshot now combines USGS NAS aquatic coverage, a vetted SERNEC Alabama plant supplement, and the official Alabama Forestry Commission cogongrass GIS county layer. That gives all `67` counties county-specific evidence and materially broader live map coverage. Important limitation: many counties are still anchored by narrower plant or aquatic signal families rather than a broad county invasive-species inventory.
 
 ## County Checklist
 

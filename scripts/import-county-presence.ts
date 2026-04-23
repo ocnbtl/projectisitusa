@@ -28,6 +28,10 @@ const SERNEC_PORTAL_URL =
   "https://sernecportal.org/portal/collections/harvestparams.php";
 const SERNEC_TABLE_URL =
   "https://sernecportal.org/portal/collections/listtabledisplay.php";
+const AFC_COGONGRASS_SERVICE_URL =
+  "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer";
+const AFC_COGONGRASS_COUNTY_QUERY_URL =
+  "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer/2/query?where=1%3D1&returnDistinctValues=true&returnGeometry=false&outFields=County&f=json";
 const OUTPUT_PATH = resolve(
   process.cwd(),
   "src/data/source/county-presence-snapshot.json",
@@ -57,6 +61,14 @@ type NasArchiveOccurrence = {
 type SernecAlabamaTarget = {
   speciesId: string;
   scientificName: string;
+};
+
+type ArcGisDistinctValueResponse = {
+  features?: Array<{
+    attributes?: {
+      County?: string;
+    };
+  }>;
 };
 
 type CountyGeometry = {
@@ -110,6 +122,13 @@ const SERNEC_ALABAMA_SPECIES_IDS = [
   "nandina-domestica",
   "elaeagnus-umbellata",
 ] as const;
+
+const AFC_COGONGRASS_COUNTY_ALIASES: Record<string, string> = {
+  StClair: "St. Clair",
+  "Saint Clair": "St. Clair",
+};
+
+const AFC_COGONGRASS_EXCLUDED_COUNTY_VALUES = new Set(["MS", "Forestry"]);
 
 function resolveNasScientificName(value: string) {
   const normalized = canonicalScientificName(value);
@@ -517,6 +536,68 @@ async function loadSernecAlabamaCountyCoverage(
   return imported;
 }
 
+async function loadAfcCogongrassCountyCoverage(
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  const response = execFileSync(
+    "curl",
+    ["-sL", "--max-time", "45", "-A", USER_AGENT, AFC_COGONGRASS_COUNTY_QUERY_URL],
+    { encoding: "utf8" },
+  );
+
+  const payload = JSON.parse(response) as ArcGisDistinctValueResponse;
+  const rawCountyValues = payload.features
+    ?.map((feature) => feature.attributes?.County?.trim())
+    .filter((value): value is string => Boolean(value)) ?? [];
+
+  const countyFips = new Set<string>();
+  const skippedValues = new Set<string>();
+
+  for (const rawValue of rawCountyValues) {
+    if (AFC_COGONGRASS_EXCLUDED_COUNTY_VALUES.has(rawValue)) {
+      skippedValues.add(rawValue);
+      continue;
+    }
+
+    const normalizedValue = AFC_COGONGRASS_COUNTY_ALIASES[rawValue] ?? rawValue;
+    const resolved = resolveCountyFips("AL", normalizedValue, countyLookup);
+    if (!resolved || !lower48CountyFips.has(resolved)) {
+      skippedValues.add(rawValue);
+      continue;
+    }
+
+    countyFips.add(resolved);
+  }
+
+  const imported = new Map<string, ImportedCountyCoverage>();
+  if (countyFips.size > 0) {
+    imported.set("imperata-cylindrica", {
+      countyFips,
+      countyDataSources: [
+        {
+          source: "Alabama Forestry Commission Cogongrass GIS",
+          matchType: "scientific-exact",
+          externalId: "Imperata cylindrica",
+          url: AFC_COGONGRASS_SERVICE_URL,
+        },
+      ],
+    });
+  }
+
+  console.log(
+    `Loaded AFC cogongrass county coverage: ${countyFips.size} counties (${rawCountyValues.length} raw distinct values, ${skippedValues.size} skipped values).`,
+  );
+
+  if (skippedValues.size > 0) {
+    console.log(
+      `Skipped AFC cogongrass county values: ${[...skippedValues].sort().join(", ")}`,
+    );
+  }
+
+  return imported;
+}
+
 async function main() {
   const usRiis = readJsonFile<UsRiisSnapshotFile>(US_RIIS_PATH);
   const targets = buildTargets(usRiis);
@@ -538,6 +619,10 @@ async function main() {
     countyLookup,
     lower48CountyFips,
   );
+  const afcCogongrassCoverage = await loadAfcCogongrassCountyCoverage(
+    countyLookup,
+    lower48CountyFips,
+  );
 
   console.log(`Loaded ${targets.length} import targets.`);
 
@@ -546,7 +631,12 @@ async function main() {
     const countyFips = new Set<string>();
     const countyDataSources: CountyDataSourceRef[] = [
       ...((existingCoverage?.countyDataSources ?? []).filter(
-        (source) => !["USGS NAS", "SERNEC"].includes(source.source),
+        (source) =>
+          ![
+            "USGS NAS",
+            "SERNEC",
+            "Alabama Forestry Commission Cogongrass GIS",
+          ].includes(source.source),
       )),
     ];
 
@@ -568,6 +658,14 @@ async function main() {
         countyFips.add(fips);
       }
       countyDataSources.push(...sernecCoverage.countyDataSources);
+    }
+
+    const afcCoverage = afcCogongrassCoverage.get(target.speciesId);
+    if (afcCoverage) {
+      for (const fips of afcCoverage.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(...afcCoverage.countyDataSources);
     }
 
     const uniqueSources = countyDataSources.filter(
@@ -617,6 +715,7 @@ async function main() {
       "EDDMapS. 2026. Early Detection & Distribution Mapping System. The University of Georgia - Center for Invasive Species and Ecosystem Health. Available online at https://www.eddmaps.org/.",
       "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database. Gainesville, Florida. Accessed 2026-04-14.",
       "SERNEC Portal. 2026. Public specimen search for Alabama county-level plant occurrence records. Available online at https://sernecportal.org/portal/collections/harvestparams.php.",
+      "Alabama Forestry Commission. 2026. Cogongrass occurrence GIS service. Available online at https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,
