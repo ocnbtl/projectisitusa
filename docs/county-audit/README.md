@@ -23,7 +23,7 @@ Another contradiction matters here too:
 - a statewide source can be good enough to anchor narrative context without being integrated into the county-presence map
 - a county audit can improve county summaries and resources without adding a single new mapped county if the source never reaches the import pipeline
 
-The Alabama audit made that gap concrete on 2026-04-20. The current generated county-presence snapshot still contains `0` mapped Alabama counties even though Alabama now has a documented statewide source path and reviewed county source notes.
+The Alabama audit made that gap concrete on 2026-04-20, when the generated county-presence snapshot still contained `0` mapped Alabama counties even though Alabama already had a documented statewide source path and reviewed county source notes. That contradiction was partly resolved on 2026-04-23 by supplementing county coverage from the USGS NAS Darwin Core archive. Alabama now has live county map coverage again, but many counties still rely on narrower aquatic or program-specific signals rather than broad county invasive-species inventories.
 
 ## Audit Rules
 

@@ -1,7 +1,10 @@
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
+import { once } from "node:events";
 import { writeFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { parse } from "csv-parse";
+import { createInterface } from "node:readline";
 
 import { feature } from "topojson-client";
 import countyTopology from "us-atlas/counties-10m.json";
@@ -19,7 +22,8 @@ import type {
 const USER_AGENT = "Mozilla/5.0 Project-Isitusa/1.0";
 const EDDMAPS_SUBJECTS_URL =
   "https://api.bugwoodcloud.org/v2/occurrence/summary/subject?list=17";
-const NAS_SPECIES_URL = "https://nas.er.usgs.gov/api/v2/species";
+const NAS_ARCHIVE_URL = "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.331";
+const NAS_ARCHIVE_PATH = resolve("/tmp", "usgs-nas-dwca.zip");
 const OUTPUT_PATH = resolve(
   process.cwd(),
   "src/data/source/county-presence-snapshot.json",
@@ -33,31 +37,17 @@ type EddMapsSummaryResponse = {
   columns: string[];
   data: Array<[number, number, string, string]>;
 };
-
-type NasSpeciesResponse = {
-  results: Array<{
-    speciesID: number;
-    genus: string;
-    species: string;
-    subspecies?: string;
-    variety?: string;
-  }>;
-};
-
-type NasOccurrenceResponse = {
-  endOfRecords: string;
-  count: number;
-  limit: number;
-  results: Array<{
-    state: string;
-    county: string;
-  }>;
-};
-
 type ImportTarget = {
   speciesId: string;
   scientificName: string;
   curatedSubjectId?: number;
+};
+
+type NasArchiveOccurrence = {
+  countryCode?: string;
+  stateProvince?: string;
+  county?: string;
+  scientificName?: string;
 };
 
 type CountyGeometry = {
@@ -67,25 +57,31 @@ type CountyGeometry = {
   };
 };
 
-function curlJson<T>(url: string) {
-  const output = execFileSync(
-    "curl",
-    ["-sL", "-A", USER_AGENT, url],
-    {
-      encoding: "utf8",
-      maxBuffer: 64 * 1024 * 1024,
-    },
-  );
-
-  return JSON.parse(output) as T;
-}
-
 function readJsonFile<T>(filePath: string) {
   return JSON.parse(readFileSync(filePath, "utf8")) as T;
 }
 
+function downloadFile(url: string, outputPath: string) {
+  execFileSync(
+    "curl",
+    ["-sL", "-A", USER_AGENT, "-o", outputPath, url],
+    {
+      stdio: "inherit",
+    },
+  );
+}
+
 function canonicalScientificName(value: string) {
   return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+const NAS_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
+  "hydrilla verticillata verticillata": "hydrilla verticillata",
+};
+
+function resolveNasScientificName(value: string) {
+  const normalized = canonicalScientificName(value);
+  return NAS_SCIENTIFIC_NAME_ALIASES[normalized] ?? normalized;
 }
 
 function normalizeCountyName(value: string) {
@@ -218,6 +214,104 @@ function buildTargets(usRiis: UsRiisSnapshotFile): ImportTarget[] {
   return [...targets.values()];
 }
 
+function buildTargetLookup(targets: ImportTarget[]) {
+  return new Map(
+    targets.map((target) => [
+      canonicalScientificName(target.scientificName),
+      target,
+    ]),
+  );
+}
+
+type ImportedCountyCoverage = {
+  countyFips: Set<string>;
+  countyDataSources: CountyDataSourceRef[];
+};
+
+async function loadNasArchiveCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  downloadFile(NAS_ARCHIVE_URL, NAS_ARCHIVE_PATH);
+
+  const unzipProcess = spawn("unzip", ["-p", NAS_ARCHIVE_PATH, "occurrence.txt"], {
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+
+  const stderrLines: string[] = [];
+  const stderr = createInterface({ input: unzipProcess.stderr });
+  stderr.on("line", (line) => {
+    stderrLines.push(line);
+  });
+
+  const parser = unzipProcess.stdout.pipe(
+    parse({
+      columns: true,
+      delimiter: "\t",
+      quote: false,
+      relax_column_count: true,
+      skip_empty_lines: true,
+    }),
+  ) as AsyncIterable<NasArchiveOccurrence>;
+
+  const imported = new Map<string, ImportedCountyCoverage>();
+  let matchedRows = 0;
+  let aliasMatchedRows = 0;
+  let unresolvedCountyRows = 0;
+
+  for await (const row of parser) {
+    if (row.countryCode !== "US" || !row.stateProvince || !row.county || !row.scientificName) {
+      continue;
+    }
+
+    const stateCode = row.stateProvince.trim().toUpperCase();
+    const resolvedScientificName = resolveNasScientificName(row.scientificName);
+    const target = targetLookup.get(resolvedScientificName);
+    if (!target) continue;
+
+    const countyFipsMatch = resolveCountyFips(stateCode, row.county, countyLookup);
+    if (!countyFipsMatch || !lower48CountyFips.has(countyFipsMatch)) {
+      unresolvedCountyRows += 1;
+      continue;
+    }
+
+    matchedRows += 1;
+    if (resolvedScientificName !== canonicalScientificName(row.scientificName)) {
+      aliasMatchedRows += 1;
+    }
+
+    const existing = imported.get(target.speciesId) ?? {
+      countyFips: new Set<string>(),
+      countyDataSources: [],
+    };
+    existing.countyFips.add(countyFipsMatch);
+    imported.set(target.speciesId, existing);
+  }
+
+  const [exitCode] = (await once(unzipProcess, "close")) as [number];
+  if (exitCode !== 0) {
+    throw new Error(
+      `USGS NAS archive extraction failed with code ${exitCode}: ${stderrLines.join("\n")}`,
+    );
+  }
+
+  for (const [speciesId, coverage] of imported) {
+    coverage.countyDataSources.push({
+      source: "USGS NAS",
+      matchType: "scientific-exact",
+      externalId: speciesId,
+      url: NAS_ARCHIVE_URL,
+    });
+  }
+
+  console.log(
+    `Loaded ${imported.size} species from the USGS NAS archive with ${matchedRows} matched county rows (${aliasMatchedRows} alias-matched, ${unresolvedCountyRows} unresolved county rows skipped).`,
+  );
+
+  return imported;
+}
+
 async function mapPool<TInput, TOutput>(
   values: TInput[],
   limit: number,
@@ -244,116 +338,41 @@ async function mapPool<TInput, TOutput>(
 async function main() {
   const usRiis = readJsonFile<UsRiisSnapshotFile>(US_RIIS_PATH);
   const targets = buildTargets(usRiis);
+  const targetLookup = buildTargetLookup(targets);
   const { countyIndex, lookup: countyLookup } = buildCountyLookup();
   const lower48CountyFips = new Set(Object.keys(countyIndex));
+  const existingSnapshot = readJsonFile<CountyCoverageSnapshotFile>(OUTPUT_PATH);
+  const existingCoverageBySpeciesId = new Map(
+    existingSnapshot.species.map((record) => [record.speciesId, record]),
+  );
 
-  const eddMapsSummary = curlJson<EddMapsSummaryResponse>(EDDMAPS_SUBJECTS_URL);
-  const eddMapsScientificNameMap = new Map<string, number[]>();
-
-  for (const [, subjectNumber, , scientificName] of eddMapsSummary.data) {
-    const key = canonicalScientificName(scientificName);
-    if (!key) continue;
-    const subjectIds = eddMapsScientificNameMap.get(key) ?? [];
-    if (!subjectIds.includes(subjectNumber)) {
-      subjectIds.push(subjectNumber);
-    }
-    eddMapsScientificNameMap.set(key, subjectIds);
-  }
-
-  const nasSpecies = curlJson<NasSpeciesResponse>(NAS_SPECIES_URL);
-  const nasScientificNameMap = new Map<string, number[]>();
-
-  for (const record of nasSpecies.results) {
-    const key = canonicalScientificName(
-      [record.genus, record.species, record.subspecies, record.variety]
-        .filter(Boolean)
-        .join(" "),
-    );
-    if (!key) continue;
-
-    const ids = nasScientificNameMap.get(key) ?? [];
-    if (!ids.includes(record.speciesID)) {
-      ids.push(record.speciesID);
-    }
-    nasScientificNameMap.set(key, ids);
-  }
+  const nasCountyCoverage = await loadNasArchiveCountyCoverage(
+    targetLookup,
+    countyLookup,
+    lower48CountyFips,
+  );
 
   console.log(`Loaded ${targets.length} import targets.`);
 
-  const importedSpecies = await mapPool(targets, 8, async (target, index) => {
-    const scientificNameKey = canonicalScientificName(target.scientificName);
-    const eddMapsSubjectIds = [
-      ...(typeof target.curatedSubjectId === "number" ? [target.curatedSubjectId] : []),
-      ...(eddMapsScientificNameMap.get(scientificNameKey) ?? []),
-    ].filter((value, currentIndex, list) => list.indexOf(value) === currentIndex);
-    const nasSpeciesIds = nasScientificNameMap.get(scientificNameKey) ?? [];
-
+  const importedSpecies = targets.map((target, index) => {
+    const existingCoverage = existingCoverageBySpeciesId.get(target.speciesId);
     const countyFips = new Set<string>();
-    const countyDataSources: CountyDataSourceRef[] = [];
+    const countyDataSources: CountyDataSourceRef[] = [
+      ...((existingCoverage?.countyDataSources ?? []).filter(
+        (source) => source.source !== "USGS NAS",
+      )),
+    ];
 
-    for (const subjectId of eddMapsSubjectIds) {
-      try {
-        const presence = curlJson<Record<string, Record<string, { id: string }>>>(
-          `https://maps.eddmaps.org/presence/data.cfm?sub=${subjectId}&countries=us`,
-        );
-        for (const countyCode of Object.keys(presence.us ?? {})) {
-          if (lower48CountyFips.has(countyCode)) {
-            countyFips.add(countyCode);
-          }
-        }
-        countyDataSources.push({
-          source: "EDDMaps",
-          matchType:
-            subjectId === target.curatedSubjectId ? "manual-curated" : "scientific-exact",
-          externalId: String(subjectId),
-          url: `https://www.eddmaps.org/distribution/uscounty.cfm?sub=${subjectId}`,
-        });
-      } catch (error) {
-        console.warn(
-          `EDDMaps county fetch failed for ${target.scientificName} (${subjectId})`,
-          error,
-        );
-      }
+    for (const fips of existingCoverage?.countyFips ?? []) {
+      countyFips.add(fips);
     }
 
-    for (const speciesId of nasSpeciesIds) {
-      try {
-        let offset = 0;
-        let done = false;
-
-        while (!done) {
-          const response = curlJson<NasOccurrenceResponse>(
-            `https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=${speciesId}&limit=10000&offset=${offset}`,
-          );
-
-          for (const occurrence of response.results) {
-            const countyFipsMatch = resolveCountyFips(
-              occurrence.state,
-              occurrence.county,
-              countyLookup,
-            );
-
-            if (countyFipsMatch) {
-              countyFips.add(countyFipsMatch);
-            }
-          }
-
-          done = response.endOfRecords === "true";
-          offset += response.limit ?? 10000;
-        }
-
-        countyDataSources.push({
-          source: "USGS NAS",
-          matchType: "scientific-exact",
-          externalId: String(speciesId),
-          url: `https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=${speciesId}`,
-        });
-      } catch (error) {
-        console.warn(
-          `USGS NAS county fetch failed for ${target.scientificName} (${speciesId})`,
-          error,
-        );
+    const archiveCoverage = nasCountyCoverage.get(target.speciesId);
+    if (archiveCoverage) {
+      for (const fips of archiveCoverage.countyFips) {
+        countyFips.add(fips);
       }
+      countyDataSources.push(...archiveCoverage.countyDataSources);
     }
 
     const uniqueSources = countyDataSources.filter(
