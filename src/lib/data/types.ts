@@ -18,6 +18,18 @@ export type CountyEvidenceLevel =
   | "not-reviewed"
   | "statewide-only"
   | "county-specific";
+export type CountySpeciesDeterminationStatus =
+  | "verified-present"
+  | "verified-absent"
+  | "not-detected"
+  | "unknown";
+export type CountySpeciesNonPresenceStatus =
+  | "verified-absent"
+  | "not-detected";
+export type CountySpeciesEvidenceScope =
+  | "county-specific"
+  | "survey-area"
+  | "statewide-applied-to-county";
 export type CountyResourceKind =
   | "county-extension"
   | "county-program"
@@ -36,6 +48,16 @@ export type EnvironmentTag =
 export interface SourceLink {
   label: string;
   url: string;
+}
+
+export interface CountySpeciesStatusOverride {
+  countyFips: string;
+  speciesId: string;
+  status: CountySpeciesNonPresenceStatus;
+  evidenceScope: CountySpeciesEvidenceScope;
+  source: SourceLink;
+  notes: string;
+  reviewedAt: string;
 }
 
 export interface SpeciesAction {

@@ -109,3 +109,4 @@ Important limitation:
 - [states/index.md](/Users/ocean/Code/Project%20Isitusa/docs/county-audit/states/index.md:1): 50-state county audit index
 - `docs/county-audit/states/*.md`: one file per state with county checklist tables
 - [county-detail-card-workflow.md](/Users/ocean/Code/Project%20Isitusa/docs/county-audit/county-detail-card-workflow.md:1): county summary, county card, and download preset rules
+- [../county-coverage/README.md](/Users/ocean/Code/Project%20Isitusa/docs/county-coverage/README.md:1): county-species status matrix framework for tracking verified present, verified absent, not-detected, and unknown determinations toward the 90 percent county target
