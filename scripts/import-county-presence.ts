@@ -32,6 +32,14 @@ const AFC_COGONGRASS_SERVICE_URL =
   "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer";
 const AFC_COGONGRASS_COUNTY_QUERY_URL =
   "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer/2/query?where=1%3D1&returnDistinctValues=true&returnGeometry=false&outFields=County&f=json";
+const APHIS_EAB_SERVICE_URL =
+  "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9";
+const APHIS_EAB_ALABAMA_QUERY_URL =
+  "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9/query?where=STATE_NAME%3D%27Alabama%27&returnGeometry=false&outFields=NAME,STATE_NAME,FIPS,Year_txt&orderByFields=NAME&f=json";
+const LAUREL_WILT_SERVICE_URL =
+  "https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1";
+const LAUREL_WILT_ALABAMA_QUERY_URL =
+  "https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1/query?where=STATE_NAME%3D%27Alabama%27%20AND%20lw_detection_year%20IS%20NOT%20NULL&outFields=NAME,STATE_NAME,STATE_FIPS,CNTY_FIPS,FIPS,lw_detection_year,DetectionDate&orderByFields=FIPS&returnGeometry=false&f=json";
 const OUTPUT_PATH = resolve(
   process.cwd(),
   "src/data/source/county-presence-snapshot.json",
@@ -68,6 +76,12 @@ type ArcGisDistinctValueResponse = {
     attributes?: {
       County?: string;
     };
+  }>;
+};
+
+type ArcGisFeatureResponse = {
+  features?: Array<{
+    attributes?: Record<string, string | number | null | undefined>;
   }>;
 };
 
@@ -121,6 +135,25 @@ const SERNEC_ALABAMA_SPECIES_IDS = [
   "rosa-multiflora",
   "nandina-domestica",
   "elaeagnus-umbellata",
+  "lespedeza-cuneata",
+  "melia-azedarach",
+  "sorghum-halepense",
+  "broussonetia-papyrifera",
+  "wisteria-sinensis",
+  "tree-of-heaven",
+  "paulownia-tomentosa",
+  "cyperus-rotundus",
+  "allium-vineale",
+  "pyrus-calleryana",
+  "hedera-helix",
+  "clematis-terniflora",
+  "arthraxon-hispidus",
+  "ligustrum-japonicum",
+  "lespedeza-bicolor",
+  "cynodon-dactylon",
+  "morus-alba",
+  "euonymus-fortunei",
+  "miscanthus-sinensis",
 ] as const;
 
 const AFC_COGONGRASS_COUNTY_ALIASES: Record<string, string> = {
@@ -327,6 +360,35 @@ type ImportedCountyCoverage = {
   countyFips: Set<string>;
   countyDataSources: CountyDataSourceRef[];
 };
+
+function requireTargetSpeciesId(
+  targetLookup: Map<string, ImportTarget>,
+  scientificName: string,
+) {
+  const target = targetLookup.get(canonicalScientificName(scientificName));
+  if (!target) {
+    throw new Error(`Missing county-import target for ${scientificName}.`);
+  }
+
+  return target.speciesId;
+}
+
+function parseArcGisCountyFips(value: string | number | null | undefined) {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return String(Math.trunc(value)).padStart(5, "0");
+  }
+
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const digitsOnly = value.trim().match(/^\d+$/)?.[0];
+  if (!digitsOnly) {
+    return null;
+  }
+
+  return digitsOnly.padStart(5, "0");
+}
 
 async function loadNasArchiveCountyCoverage(
   targetLookup: Map<string, ImportTarget>,
@@ -598,6 +660,112 @@ async function loadAfcCogongrassCountyCoverage(
   return imported;
 }
 
+async function loadAphisEabCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  const response = execFileSync(
+    "curl",
+    ["-sL", "--max-time", "45", "-A", USER_AGENT, APHIS_EAB_ALABAMA_QUERY_URL],
+    { encoding: "utf8" },
+  );
+
+  const payload = JSON.parse(response) as ArcGisFeatureResponse;
+  const speciesId = requireTargetSpeciesId(targetLookup, "Agrilus planipennis");
+  const countyFips = new Set<string>();
+  let unresolvedRows = 0;
+
+  for (const feature of payload.features ?? []) {
+    const attributes = feature.attributes ?? {};
+    const countyName = typeof attributes.NAME === "string" ? attributes.NAME : null;
+    const resolvedFips =
+      parseArcGisCountyFips(attributes.FIPS) ??
+      (countyName ? resolveCountyFips("AL", countyName, countyLookup) : null);
+
+    if (!resolvedFips || !lower48CountyFips.has(resolvedFips)) {
+      unresolvedRows += 1;
+      continue;
+    }
+
+    countyFips.add(resolvedFips);
+  }
+
+  const imported = new Map<string, ImportedCountyCoverage>();
+  if (countyFips.size > 0) {
+    imported.set(speciesId, {
+      countyFips,
+      countyDataSources: [
+        {
+          source: "APHIS Emerald Ash Borer county layer",
+          matchType: "scientific-exact",
+          externalId: "Agrilus planipennis",
+          url: APHIS_EAB_SERVICE_URL,
+        },
+      ],
+    });
+  }
+
+  console.log(
+    `Loaded APHIS emerald ash borer county coverage: ${countyFips.size} Alabama counties (${unresolvedRows} unresolved rows skipped).`,
+  );
+
+  return imported;
+}
+
+async function loadLaurelWiltCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  const response = execFileSync(
+    "curl",
+    ["-sL", "--max-time", "45", "-A", USER_AGENT, LAUREL_WILT_ALABAMA_QUERY_URL],
+    { encoding: "utf8" },
+  );
+
+  const payload = JSON.parse(response) as ArcGisFeatureResponse;
+  const speciesId = requireTargetSpeciesId(targetLookup, "Raffaelea lauricola");
+  const countyFips = new Set<string>();
+  let unresolvedRows = 0;
+
+  for (const feature of payload.features ?? []) {
+    const attributes = feature.attributes ?? {};
+    const countyName = typeof attributes.NAME === "string" ? attributes.NAME : null;
+    const resolvedFips =
+      parseArcGisCountyFips(attributes.FIPS) ??
+      (countyName ? resolveCountyFips("AL", countyName, countyLookup) : null);
+
+    if (!resolvedFips || !lower48CountyFips.has(resolvedFips)) {
+      unresolvedRows += 1;
+      continue;
+    }
+
+    countyFips.add(resolvedFips);
+  }
+
+  const imported = new Map<string, ImportedCountyCoverage>();
+  if (countyFips.size > 0) {
+    imported.set(speciesId, {
+      countyFips,
+      countyDataSources: [
+        {
+          source: "Laurel Wilt public county layer",
+          matchType: "scientific-exact",
+          externalId: "Raffaelea lauricola",
+          url: LAUREL_WILT_SERVICE_URL,
+        },
+      ],
+    });
+  }
+
+  console.log(
+    `Loaded laurel wilt county coverage: ${countyFips.size} Alabama counties (${unresolvedRows} unresolved rows skipped).`,
+  );
+
+  return imported;
+}
+
 async function main() {
   const usRiis = readJsonFile<UsRiisSnapshotFile>(US_RIIS_PATH);
   const targets = buildTargets(usRiis);
@@ -623,6 +791,16 @@ async function main() {
     countyLookup,
     lower48CountyFips,
   );
+  const aphisEabCoverage = await loadAphisEabCountyCoverage(
+    targetLookup,
+    countyLookup,
+    lower48CountyFips,
+  );
+  const laurelWiltCoverage = await loadLaurelWiltCountyCoverage(
+    targetLookup,
+    countyLookup,
+    lower48CountyFips,
+  );
 
   console.log(`Loaded ${targets.length} import targets.`);
 
@@ -636,6 +814,8 @@ async function main() {
             "USGS NAS",
             "SERNEC",
             "Alabama Forestry Commission Cogongrass GIS",
+            "APHIS Emerald Ash Borer county layer",
+            "Laurel Wilt public county layer",
           ].includes(source.source),
       )),
     ];
@@ -666,6 +846,22 @@ async function main() {
         countyFips.add(fips);
       }
       countyDataSources.push(...afcCoverage.countyDataSources);
+    }
+
+    const eabCoverage = aphisEabCoverage.get(target.speciesId);
+    if (eabCoverage) {
+      for (const fips of eabCoverage.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(...eabCoverage.countyDataSources);
+    }
+
+    const laurelWiltCoverageForSpecies = laurelWiltCoverage.get(target.speciesId);
+    if (laurelWiltCoverageForSpecies) {
+      for (const fips of laurelWiltCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(...laurelWiltCoverageForSpecies.countyDataSources);
     }
 
     const uniqueSources = countyDataSources.filter(
@@ -716,6 +912,8 @@ async function main() {
       "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database. Gainesville, Florida. Accessed 2026-04-14.",
       "SERNEC Portal. 2026. Public specimen search for Alabama county-level plant occurrence records. Available online at https://sernecportal.org/portal/collections/harvestparams.php.",
       "Alabama Forestry Commission. 2026. Cogongrass occurrence GIS service. Available online at https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer.",
+      "USDA APHIS. 2026. Emerald ash borer known infested counties FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9.",
+      "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,

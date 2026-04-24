@@ -15,7 +15,7 @@ County count in current dataset: `67`
 ## Audit Notes
 
 Statewide source path started on 2026-04-20.
-Current product gap updated on 2026-04-23: the merged Alabama county snapshot now combines USGS NAS aquatic coverage, a vetted SERNEC Alabama plant supplement, and the official Alabama Forestry Commission cogongrass GIS county layer. That gives all `67` counties county-specific evidence and materially broader live map coverage. Important limitation: many counties are still anchored by narrower plant or aquatic signal families rather than a broad county invasive-species inventory.
+Current product gap updated on 2026-04-23: the merged Alabama county snapshot now combines USGS NAS aquatic coverage, two vetted SERNEC Alabama plant tranches, the official Alabama Forestry Commission cogongrass GIS county layer, the public APHIS emerald ash borer county layer, and the public laurel wilt county layer. That lifts Alabama to `65` distinct mapped species statewide and an average of `19.69` mapped species per county while keeping all `67` counties in the county-specific evidence tier. Important contradiction preserved: the APHIS emerald ash borer layer currently returns `6` Alabama counties, while Alabama Forestry Commission narrative guidance names a partially different prior-confirmation set. Important limitation: many counties are still anchored by narrower plant, forest-pest, or aquatic signal families rather than a broad county invasive-species inventory.
 
 ## County Checklist
 
