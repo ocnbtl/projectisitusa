@@ -693,6 +693,18 @@ These sources are already referenced by current curated profiles, but the origin
 | https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=168047 | Alabama county audit | Wilcox County secondary nonnative aquatic record used to strengthen the county-specific determination |
 | https://www.forestry.alabama.gov/Pages/Informational/Treasured_Forests/Magazine/2020_Spring.pdf | Alabama county audit; Cogongrass | Winston County official county-specific cogongrass reporting and manual county-presence override |
 
+### Alabama post-import gap assessment, consulted on 2026-04-24
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx | Alabama gap assessment | Official forestry invasive-species denominator check against current live Alabama mapped coverage |
+| https://www.invasiveplantatlas.org/list.html?id=71 | Alabama gap assessment | Alabama Invasive Plant Council list mirror showing `91` plant species reported invasive in Alabama natural areas |
+| https://www.eddmaps.org/lists/list.cfm?id=71 | Alabama gap assessment | EDDMapS Alabama Invasive Plant Council list cross-check and possible future county-record source path |
+| https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf | Alabama gap assessment | Alabama ANS denominator check, including the `81` non-native aquatic species appendix |
+| https://www.aces.edu/blog/topics/forestry-wildlife/2026-year-of-invasive-plants/ | Alabama gap assessment | Current Alabama Extension invasive-plant outreach context and possible non-county source lead |
+| https://www.aces.edu/blog/topics/landscaping/native-replacements-for-commonly-sold-invasive-plants/ | Alabama gap assessment | Alabama Extension ornamental invasive plant priority check against current live mapped coverage |
+| https://agi.alabama.gov/plantprotection/ | Alabama gap assessment | Alabama Department of Agriculture and Industries regulatory pest notice source path for county-specific future checks |
+
 ## Contributor Rules
 
 1. Prefer official agency, university extension, or public research program sources for curated profile writing.

@@ -1,7 +1,7 @@
 # Alabama County Audit
 
 State code: `AL`
-Audit status: `research-complete`
+Audit status: `research-complete-coverage-in-progress`
 County count in current dataset: `67`
 
 ## Statewide Sources
@@ -15,7 +15,7 @@ County count in current dataset: `67`
 ## Audit Notes
 
 Statewide source path started on 2026-04-20.
-Current product gap updated on 2026-04-23: the merged Alabama county snapshot now combines USGS NAS aquatic coverage, two vetted SERNEC Alabama plant tranches, the official Alabama Forestry Commission cogongrass GIS county layer, the public APHIS emerald ash borer county layer, and the public laurel wilt county layer. That lifts Alabama to `65` distinct mapped species statewide and an average of `19.69` mapped species per county while keeping all `67` counties in the county-specific evidence tier. Important contradiction preserved: the APHIS emerald ash borer layer currently returns `6` Alabama counties, while Alabama Forestry Commission narrative guidance names a partially different prior-confirmation set. Important limitation: many counties are still anchored by narrower plant, forest-pest, or aquatic signal families rather than a broad county invasive-species inventory.
+Current product gap updated on 2026-04-24: the merged Alabama county snapshot now combines USGS NAS aquatic coverage, two vetted SERNEC Alabama plant tranches, the official Alabama Forestry Commission cogongrass GIS county layer, the public APHIS emerald ash borer county layer, and the public laurel wilt county layer. That lifts Alabama to `65` distinct mapped species statewide and an average of `19.69` mapped species per county while keeping all `67` counties in the county-specific evidence tier. Important contradiction preserved: the APHIS emerald ash borer layer currently returns `6` Alabama counties, while Alabama Forestry Commission narrative guidance names a partially different prior-confirmation set. Important limitation: many counties are still anchored by narrower plant, forest-pest, or aquatic signal families rather than a broad county invasive-species inventory. Alabama should be treated as audit complete but coverage in progress until the post-import gap assessment in `docs/county-audit/states/AL-post-import-gap-assessment.md` is resolved against a defensible denominator.
 
 ## County Checklist
 

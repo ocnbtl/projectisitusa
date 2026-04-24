@@ -89,6 +89,7 @@ That is intentionally smaller than the profile-writing chunks because county rev
 - `county-review-started`: county-by-county review has begun
 - `county-source-found`: at least one county-specific public source verified
 - `research-complete`: state and counties reviewed for currently available public sources
+- `research-complete-coverage-in-progress`: county audit is complete and production coverage improved, but denominator reconciliation and source-family adoption are still active
 - `production-candidate`: source path looks strong enough to evaluate for data import or manual integration
 
 County row statuses:
