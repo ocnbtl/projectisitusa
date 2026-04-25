@@ -11,6 +11,7 @@ import countyTopology from "us-atlas/counties-10m.json";
 
 import { speciesSeed } from "@/data/source/species";
 import { STATE_FIPS_TO_INFO } from "@/data/source/state-fips";
+import { stateSpeciesDenominators } from "@/data/source/state-species-denominators";
 import type {
   CountyCoverageSnapshotFile,
   CountyDataSourceRef,
@@ -40,6 +41,11 @@ const LAUREL_WILT_SERVICE_URL =
   "https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1";
 const LAUREL_WILT_ALABAMA_QUERY_URL =
   "https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1/query?where=STATE_NAME%3D%27Alabama%27%20AND%20lw_detection_year%20IS%20NOT%20NULL&outFields=NAME,STATE_NAME,STATE_FIPS,CNTY_FIPS,FIPS,lw_detection_year,DetectionDate&orderByFields=FIPS&returnGeometry=false&f=json";
+const ALIPC_LIST_URL = "https://www.invasiveplantatlas.org/list.html?id=71";
+const ALIPC_SNAPSHOT_PATH = resolve(
+  process.cwd(),
+  "src/data/source/state-denominator-snapshots/alipc-2012.json",
+);
 const OUTPUT_PATH = resolve(
   process.cwd(),
   "src/data/source/county-presence-snapshot.json",
@@ -57,6 +63,18 @@ type ImportTarget = {
   speciesId: string;
   scientificName: string;
   curatedSubjectId?: number;
+};
+
+type AlipcSnapshotFile = {
+  species: Array<{
+    subjectId: number;
+    commonName: string;
+    scientificName: string;
+  }>;
+};
+
+type EddMapsPresenceResponse = {
+  us?: Record<string, unknown>;
 };
 
 type NasArchiveOccurrence = {
@@ -162,6 +180,7 @@ const AFC_COGONGRASS_COUNTY_ALIASES: Record<string, string> = {
 };
 
 const AFC_COGONGRASS_EXCLUDED_COUNTY_VALUES = new Set(["MS", "Forestry"]);
+const ALIPC_LIST_ID = "ALIPC-2012";
 
 function resolveNasScientificName(value: string) {
   const normalized = canonicalScientificName(value);
@@ -516,6 +535,128 @@ function buildSernecAlabamaTargets(targets: ImportTarget[]) {
   });
 }
 
+function buildAlipcAlabamaTargets(targetLookup: Map<string, ImportTarget>) {
+  const snapshot = readJsonFile<AlipcSnapshotFile>(ALIPC_SNAPSHOT_PATH);
+  const snapshotByScientificName = new Map(
+    snapshot.species.map((species) => [
+      canonicalScientificName(species.scientificName),
+      species,
+    ]),
+  );
+
+  const seenSpeciesIds = new Set<string>();
+  const targets: Array<ImportTarget & { subjectId: number; sourceCommonName: string }> = [];
+  let ambiguousRows = 0;
+  let unmatchedRows = 0;
+
+  for (const entry of stateSpeciesDenominators.filter(
+    (denominator) => denominator.stateCode === "AL" && denominator.listId === ALIPC_LIST_ID,
+  )) {
+    if (entry.scientificName.toLowerCase().includes("spp")) {
+      ambiguousRows += 1;
+      continue;
+    }
+
+    const candidateNames = [entry.scientificName, ...(entry.reviewedAliases ?? [])];
+    const snapshotEntry = candidateNames
+      .map((name) => snapshotByScientificName.get(canonicalScientificName(name)))
+      .find((candidate): candidate is AlipcSnapshotFile["species"][number] => Boolean(candidate));
+    const target = candidateNames
+      .map((name) => targetLookup.get(canonicalScientificName(name)))
+      .find((candidate): candidate is ImportTarget => Boolean(candidate));
+
+    if (!snapshotEntry || !target) {
+      unmatchedRows += 1;
+      continue;
+    }
+
+    if (seenSpeciesIds.has(target.speciesId)) {
+      continue;
+    }
+
+    seenSpeciesIds.add(target.speciesId);
+    targets.push({
+      ...target,
+      subjectId: snapshotEntry.subjectId,
+      sourceCommonName: snapshotEntry.commonName,
+    });
+  }
+
+  console.log(
+    `Prepared ${targets.length} ALIPC EDDMapS targets (${unmatchedRows} unmatched, ${ambiguousRows} ambiguous skipped).`,
+  );
+
+  return targets;
+}
+
+async function loadAlipcEddMapsAlabamaCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  lower48CountyFips: Set<string>,
+) {
+  const imported = new Map<string, ImportedCountyCoverage>();
+  const targets = buildAlipcAlabamaTargets(targetLookup);
+  let matchedCountyRows = 0;
+  let skippedNonAlabamaRows = 0;
+
+  await mapPool(targets, 4, async (target) => {
+    const response = execFileSync(
+      "curl",
+      [
+        "-sL",
+        "--max-time",
+        "45",
+        "-A",
+        USER_AGENT,
+        `https://maps.eddmaps.org/presence/data.cfm?sub=${target.subjectId}&countries=us`,
+      ],
+      { encoding: "utf8" },
+    );
+    const payload = JSON.parse(response) as EddMapsPresenceResponse;
+    const rawCountyFips = Object.keys(payload.us ?? {});
+    const countyFips = [
+      ...new Set(
+        rawCountyFips
+          .map((fips) => fips.padStart(5, "0"))
+          .filter((fips) => fips.startsWith("01") && lower48CountyFips.has(fips)),
+      ),
+    ];
+
+    skippedNonAlabamaRows += rawCountyFips.filter(
+      (fips) => !fips.padStart(5, "0").startsWith("01"),
+    ).length;
+    matchedCountyRows += countyFips.length;
+
+    if (countyFips.length === 0) {
+      console.log(
+        `Loaded ALIPC EDDMapS coverage for ${target.scientificName}: 0 Alabama counties`,
+      );
+      return;
+    }
+
+    imported.set(target.speciesId, {
+      countyFips: new Set(countyFips),
+      countyDataSources: [
+        {
+          source: "EDDMapS ALIPC list",
+          matchType: "scientific-exact",
+          externalId: String(target.subjectId),
+          url: `${ALIPC_LIST_URL}#sub=${target.subjectId}`,
+        },
+      ],
+    });
+
+    console.log(
+      `Loaded ALIPC EDDMapS coverage for ${target.scientificName}: ${countyFips.length} Alabama counties`,
+    );
+  });
+
+  console.log(
+    `Loaded ${imported.size} species from ALIPC EDDMapS Alabama coverage with ${matchedCountyRows} matched county rows (${skippedNonAlabamaRows} non-Alabama rows ignored).`,
+  );
+
+  return imported;
+}
+
 async function loadSernecAlabamaCountyCoverage(
   targets: ImportTarget[],
   countyLookup: Map<string, string[]>,
@@ -787,6 +928,10 @@ async function main() {
     countyLookup,
     lower48CountyFips,
   );
+  const alipcEddMapsCountyCoverage = await loadAlipcEddMapsAlabamaCountyCoverage(
+    targetLookup,
+    lower48CountyFips,
+  );
   const afcCogongrassCoverage = await loadAfcCogongrassCountyCoverage(
     countyLookup,
     lower48CountyFips,
@@ -813,6 +958,7 @@ async function main() {
           ![
             "USGS NAS",
             "SERNEC",
+            "EDDMapS ALIPC list",
             "Alabama Forestry Commission Cogongrass GIS",
             "APHIS Emerald Ash Borer county layer",
             "Laurel Wilt public county layer",
@@ -838,6 +984,14 @@ async function main() {
         countyFips.add(fips);
       }
       countyDataSources.push(...sernecCoverage.countyDataSources);
+    }
+
+    const alipcEddMapsCoverage = alipcEddMapsCountyCoverage.get(target.speciesId);
+    if (alipcEddMapsCoverage) {
+      for (const fips of alipcEddMapsCoverage.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(...alipcEddMapsCoverage.countyDataSources);
     }
 
     const afcCoverage = afcCogongrassCoverage.get(target.speciesId);
@@ -911,6 +1065,7 @@ async function main() {
       "EDDMapS. 2026. Early Detection & Distribution Mapping System. The University of Georgia - Center for Invasive Species and Ecosystem Health. Available online at https://www.eddmaps.org/.",
       "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database. Gainesville, Florida. Accessed 2026-04-14.",
       "SERNEC Portal. 2026. Public specimen search for Alabama county-level plant occurrence records. Available online at https://sernecportal.org/portal/collections/harvestparams.php.",
+      "Alabama Invasive Plant Council. 2012. List of Alabama's invasive plants by land-use and water-use categories, mirrored by Invasive Plant Atlas of the United States. EDDMapS county presence queried by subject ID from https://www.invasiveplantatlas.org/list.html?id=71.",
       "Alabama Forestry Commission. 2026. Cogongrass occurrence GIS service. Available online at https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer.",
       "USDA APHIS. 2026. Emerald ash borer known infested counties FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9.",
       "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",

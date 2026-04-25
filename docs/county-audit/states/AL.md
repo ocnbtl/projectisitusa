@@ -11,11 +11,12 @@ County count in current dataset: `67`
 3. https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf
 4. https://sernecportal.org/portal/collections/harvestparams.php
 5. https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer
+6. https://www.invasiveplantatlas.org/list.html?id=71
 
 ## Audit Notes
 
 Statewide source path started on 2026-04-20.
-Current product gap updated on 2026-04-24: the merged Alabama county snapshot now combines USGS NAS aquatic coverage, two vetted SERNEC Alabama plant tranches, the official Alabama Forestry Commission cogongrass GIS county layer, the public APHIS emerald ash borer county layer, and the public laurel wilt county layer. That lifts Alabama to `65` distinct mapped species statewide and an average of `19.69` mapped species per county while keeping all `67` counties in the county-specific evidence tier. Important contradiction preserved: the APHIS emerald ash borer layer currently returns `6` Alabama counties, while Alabama Forestry Commission narrative guidance names a partially different prior-confirmation set. Important limitation: many counties are still anchored by narrower plant, forest-pest, or aquatic signal families rather than a broad county invasive-species inventory. Alabama should be treated as audit complete but coverage in progress until the post-import gap assessment in `docs/county-audit/states/AL-post-import-gap-assessment.md` is resolved against a defensible denominator.
+Current product gap updated on 2026-04-25: the merged Alabama county snapshot now combines USGS NAS aquatic coverage, two vetted SERNEC Alabama plant tranches, the ALIPC plant denominator with EDDMapS subject county presence, the official Alabama Forestry Commission cogongrass GIS county layer, the public APHIS emerald ash borer county layer, and the public laurel wilt county layer. That lifts Alabama to `100` distinct mapped species statewide and an average of `34.85` mapped species per county while keeping all `67` counties in the county-specific evidence tier. Important contradiction preserved: the APHIS emerald ash borer layer currently returns `6` Alabama counties, while Alabama Forestry Commission narrative guidance names a partially different prior-confirmation set. Important limitation: many counties are still anchored by narrower plant, forest-pest, or aquatic signal families rather than a broad county invasive-species inventory. Alabama should be treated as audit complete but coverage in progress until the post-import gap assessment in `docs/county-audit/states/AL-post-import-gap-assessment.md` is resolved against a defensible denominator.
 
 ## County Checklist
 
