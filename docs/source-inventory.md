@@ -512,7 +512,8 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/counties/autauga/ | Alabama county audit | Autauga County extension office check during county-source review |
 | https://www.aces.edu/blog/topics/autauga/autauga-county-annual-report/ | Alabama county audit | Autauga County annual report check; not sufficient as a county invasive-species inventory |
 | https://www.aces.edu/counties/baldwin/ | Alabama county audit | Baldwin County extension office check during county-source review |
-| https://agi.alabama.gov/2022/02/citrus-canker-quarantine-established-in-baldwin-county-alabama/ | Alabama county audit | Verified county-specific official plant-disease report for Baldwin County |
+| https://agi.alabama.gov/2022/02/citrus-canker-quarantine-established-in-baldwin-county-alabama/ | Alabama county audit; Citrus canker | Verified county-specific official plant-disease report for Baldwin County and production county-presence override for `xanthomonas-citri` |
+| https://www.aphis.usda.gov/plant-pests-diseases/citrus-diseases/citrus-canker | Citrus canker | Federal APHIS taxonomy and synonym support for matching the ADAI `Xanthomonas axonopodis citri` notice to catalog `xanthomonas-citri` |
 | https://www.aces.edu/counties/barbour/ | Alabama county audit | Barbour County extension office check during county-source review |
 | https://www.aces.edu/wp-content/uploads/2023/07/ACES-2734_BarbourCountyAnnualReport2022_062223L.pdf | Alabama county audit | Barbour County annual report check; not sufficient as a county invasive-species inventory |
 | https://agi.alabama.gov/plantprotection/2025/06/africanized-honeybees-detected-in-alabama-2/ | Alabama county audit | Verified county-specific official insect-detection report for Barbour County |

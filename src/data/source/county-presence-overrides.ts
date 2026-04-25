@@ -50,6 +50,24 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
     ],
   },
   {
+    speciesId: "USRIIS-L48-Bacteria470",
+    countyFips: ["01003"],
+    countyDataSources: [
+      {
+        source: "Alabama Department of Agriculture and Industries",
+        matchType: "manual-authoritative",
+        externalId: "citrus-canker-baldwin-county-2022",
+        url: "https://agi.alabama.gov/2022/02/citrus-canker-quarantine-established-in-baldwin-county-alabama/",
+      },
+      {
+        source: "USDA APHIS",
+        matchType: "manual-authoritative",
+        externalId: "citrus-canker-xanthomonas-citri-synonym",
+        url: "https://www.aphis.usda.gov/plant-pests-diseases/citrus-diseases/citrus-canker",
+      },
+    ],
+  },
+  {
     speciesId: "USRIIS-L48-Animalia5077",
     countyFips: ["01071"],
     countyDataSources: [
