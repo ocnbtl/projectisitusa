@@ -53,7 +53,9 @@ function alAns(
 export const stateSpeciesDenominators = [
   alipc("tree-of-heaven", "Ailanthus altissima", "trees", "listed"),
   alipc("silktree", "Albizia julibrissin", "trees", "listed"),
-  alipc("camphor tree", "Cinnamomum camphora", "trees", "listed"),
+  alipc("camphor tree", "Cinnamomum camphora", "trees", "listed", {
+    reviewedAliases: ["Camphora officinarum"],
+  }),
   alipc("Chinese parasoltree", "Firmiana simplex", "trees", "listed"),
   alipc("Chinaberrytree", "Melia azedarach", "trees", "listed"),
   alipc("princesstree", "Paulownia tomentosa", "trees", "listed"),
@@ -83,7 +85,9 @@ export const stateSpeciesDenominators = [
   alipc("beach vitex", "Vitex rotundifolia", "shrubs", "listed"),
   alipc("Oriental bittersweet", "Celastrus orbiculatus", "vines", "listed"),
   alipc("sweet autumn virginsbower", "Clematis terniflora", "vines", "listed"),
-  alipc("Chinese yam", "Dioscorea oppositifolia", "vines", "listed"),
+  alipc("Chinese yam", "Dioscorea oppositifolia", "vines", "listed", {
+    reviewedAliases: ["Dioscorea polystachya"],
+  }),
   alipc("English ivy", "Hedera helix", "vines", "listed"),
   alipc("Japanese honeysuckle", "Lonicera japonica", "vines", "listed"),
   alipc("Japanese climbing fern", "Lygodium japonicum", "vines", "listed"),

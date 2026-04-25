@@ -85,21 +85,21 @@ List membership is not county evidence. Use this report to select the next sourc
 
 | Source common name | Matched species ID | Verified-present counties |
 | --- | --- | ---: |
-| Alligatorweed | alternanthera-philoxeroides | 54 |
-| Parrotfeather | myriophyllum-aquaticum | 48 |
+| Alligatorweed | alternanthera-philoxeroides | 55 |
+| Parrotfeather | myriophyllum-aquaticum | 55 |
 | Asian Clam | corbicula-fluminea | 46 |
 | Chinese Tallow Tree | triadica-sebifera | 45 |
 | Water Hyacinth | eichhornia-crassipes | 43 |
+| Wild Taro | colocasia-esculenta | 41 |
+| Marsh Dayflower | murdannia-keisak | 35 |
+| Brittle Naiad | najas-minor | 25 |
+| Hydrilla | hydrilla | 23 |
 | Grass Carp | ctenopharyngodon-idella | 22 |
+| Brazilian Waterweed | egeria-densa | 18 |
 | Eurasian Watermilfoil | myriophyllum-spicatum | 18 |
-| Hydrilla | hydrilla | 17 |
-| Marsh Dayflower | murdannia-keisak | 17 |
-| Wild Taro | colocasia-esculenta | 16 |
-| Brittle Naiad | najas-minor | 15 |
-| Brazilian Waterweed | egeria-densa | 13 |
+| Giant Salvinia | salvinia-molesta | 17 |
+| Torpedo Grass | panicum-repens | 15 |
 | Common Carp | cyprinus-carpio | 10 |
-| Torpedo Grass | panicum-repens | 10 |
-| Giant Salvinia | salvinia-molesta | 10 |
 | Bighead Carp | hypophthalmichthys-nobilis | 5 |
 | Zebra Mussel | dreissena-polymorpha | 5 |
 | Sacred Lotus | nelumbo-nucifera | 5 |

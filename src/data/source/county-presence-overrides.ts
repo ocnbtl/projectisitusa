@@ -80,6 +80,18 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
     ],
   },
   {
+    speciesId: "USRIIS-L48-Animalia5077",
+    countyFips: ["01055", "01117"],
+    countyDataSources: [
+      {
+        source: "Alabama Forestry Commission",
+        matchType: "manual-authoritative",
+        externalId: "emerald-ash-borer-etowah-shelby-counties-2025",
+        url: "https://www.forestry.alabama.gov/Pages/News/2025/Emerald_Ash.aspx",
+      },
+    ],
+  },
+  {
     speciesId: "USRIIS-L48-Plantae7779",
     countyFips: ["01081"],
     countyDataSources: [
