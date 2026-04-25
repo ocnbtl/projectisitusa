@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { stateSpeciesDenominators } from "@/data/source/state-species-denominators";
 
@@ -19,6 +19,17 @@ type CountyMatrix = {
   }>;
 };
 
+type DenominatorSnapshot = {
+  sourceUrl: string;
+  species: Array<{
+    subjectId?: number;
+    commonName: string;
+    scientificName: string;
+    family?: string;
+    nativity?: string;
+  }>;
+};
+
 type ReconciledEntry = {
   commonName: string;
   scientificName: string;
@@ -30,6 +41,9 @@ type ReconciledEntry = {
   matchedScientificName?: string;
   matchedCategory?: string;
   matchedProfileType?: string;
+  eddMapsSubjectId?: number;
+  sourceFamily?: string;
+  sourceNativity?: string;
   presentVerifiedCountyCount: number;
   presentVerifiedCountyFips: string[];
   notes?: string;
@@ -51,6 +65,19 @@ function normalizeScientificName(value: string) {
 
 function sortUnique(values: string[]) {
   return [...new Set(values)].sort();
+}
+
+function readDenominatorSnapshot(listId: string) {
+  const snapshotPath = path.join(
+    process.cwd(),
+    `src/data/source/state-denominator-snapshots/${listId.toLowerCase()}.json`,
+  );
+
+  if (!existsSync(snapshotPath)) {
+    return null;
+  }
+
+  return readJson<DenominatorSnapshot>(snapshotPath);
 }
 
 function writeMarkdown(filepath: string, report: {
@@ -95,19 +122,20 @@ function writeMarkdown(filepath: string, report: {
     "",
     "## Catalog Matched But Not Live Mapped",
     "",
-    "| Source common name | Source scientific name | Matched species ID | Category | Notes |",
-    "| --- | --- | --- | --- | --- |",
+    "| Source common name | Source scientific name | Matched species ID | EDDMapS subject | Category | Notes |",
+    "| --- | --- | --- | ---: | --- | --- |",
     ...catalogMatchedButUnmapped.map(
       (entry) =>
-        `| ${entry.commonName} | ${entry.scientificName} | ${entry.matchedSpeciesId} | ${entry.sourceCategory} | ${entry.notes ?? ""} |`,
+        `| ${entry.commonName} | ${entry.scientificName} | ${entry.matchedSpeciesId} | ${entry.eddMapsSubjectId ?? ""} | ${entry.sourceCategory} | ${entry.notes ?? ""} |`,
     ),
     "",
     "## Unmatched Or Ambiguous",
     "",
-    "| Source common name | Source scientific name | Source category | Notes |",
-    "| --- | --- | --- | --- |",
+    "| Source common name | Source scientific name | EDDMapS subject | Source category | Notes |",
+    "| --- | --- | ---: | --- | --- |",
     ...catalogUnmatched.map(
-      (entry) => `| ${entry.commonName} | ${entry.scientificName} | ${entry.sourceCategory} | ${entry.notes ?? ""} |`,
+      (entry) =>
+        `| ${entry.commonName} | ${entry.scientificName} | ${entry.eddMapsSubjectId ?? ""} | ${entry.sourceCategory} | ${entry.notes ?? ""} |`,
     ),
     "",
     "## Highest Current County Coverage",
@@ -141,10 +169,19 @@ if (denominatorEntries.length === 0) {
 
 const species = readJson<SpeciesRecord[]>(path.join(process.cwd(), "src/data/generated/species.json"));
 const matrix = readJson<CountyMatrix>(path.join(process.cwd(), `docs/county-coverage/states/${requestedStateCode}.json`));
+const denominatorSnapshot = readDenominatorSnapshot(requestedListId);
 const speciesByNormalizedScientificName = new Map<string, SpeciesRecord>();
+const snapshotByNormalizedScientificName = new Map<
+  string,
+  DenominatorSnapshot["species"][number]
+>();
 
 for (const entry of species) {
   speciesByNormalizedScientificName.set(normalizeScientificName(entry.scientificName), entry);
+}
+
+for (const entry of denominatorSnapshot?.species ?? []) {
+  snapshotByNormalizedScientificName.set(normalizeScientificName(entry.scientificName), entry);
 }
 
 const presentCountyFipsBySpeciesId = new Map<string, string[]>();
@@ -158,6 +195,11 @@ for (const county of matrix.counties) {
 }
 
 const entries = denominatorEntries.map((entry): ReconciledEntry => {
+  const candidateNames = [entry.scientificName, ...(entry.reviewedAliases ?? [])];
+  const sourceSnapshot = candidateNames
+    .map((name) => snapshotByNormalizedScientificName.get(normalizeScientificName(name)))
+    .find((candidate): candidate is DenominatorSnapshot["species"][number] => Boolean(candidate));
+
   if (entry.scientificName.toLowerCase().includes("spp")) {
     return {
       commonName: entry.commonName,
@@ -165,13 +207,15 @@ const entries = denominatorEntries.map((entry): ReconciledEntry => {
       sourceCategory: entry.sourceCategory,
       sourceStatus: entry.sourceStatus,
       matchStatus: "ambiguous-source",
+      eddMapsSubjectId: sourceSnapshot?.subjectId,
+      sourceFamily: sourceSnapshot?.family,
+      sourceNativity: sourceSnapshot?.nativity,
       presentVerifiedCountyCount: 0,
       presentVerifiedCountyFips: [],
       notes: entry.notes ?? "Source entry is not species-specific.",
     };
   }
 
-  const candidateNames = [entry.scientificName, ...(entry.reviewedAliases ?? [])];
   const matchedSpecies = candidateNames
     .map((name) => speciesByNormalizedScientificName.get(normalizeScientificName(name)))
     .find((candidate): candidate is SpeciesRecord => Boolean(candidate));
@@ -183,6 +227,9 @@ const entries = denominatorEntries.map((entry): ReconciledEntry => {
       sourceCategory: entry.sourceCategory,
       sourceStatus: entry.sourceStatus,
       matchStatus: "catalog-unmatched",
+      eddMapsSubjectId: sourceSnapshot?.subjectId,
+      sourceFamily: sourceSnapshot?.family,
+      sourceNativity: sourceSnapshot?.nativity,
       presentVerifiedCountyCount: 0,
       presentVerifiedCountyFips: [],
       notes: entry.notes,
@@ -202,6 +249,9 @@ const entries = denominatorEntries.map((entry): ReconciledEntry => {
     matchedScientificName: matchedSpecies.scientificName,
     matchedCategory: matchedSpecies.category,
     matchedProfileType: matchedSpecies.profileType,
+    eddMapsSubjectId: sourceSnapshot?.subjectId,
+    sourceFamily: sourceSnapshot?.family,
+    sourceNativity: sourceSnapshot?.nativity,
     presentVerifiedCountyCount: presentVerifiedCountyFips.length,
     presentVerifiedCountyFips,
     notes: entry.notes,
@@ -217,6 +267,7 @@ const report = {
   listId: requestedListId,
   listLabel: denominatorEntries[0]!.listLabel,
   sourceUrl: denominatorEntries[0]!.source.url,
+  denominatorSnapshotUrl: denominatorSnapshot?.sourceUrl,
   summary: {
     listSpeciesCount: entries.length,
     catalogMatchedCount,

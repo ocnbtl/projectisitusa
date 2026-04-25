@@ -16,70 +16,70 @@ List membership is not county evidence. Use this report to select the next sourc
 
 ## Catalog Matched But Not Live Mapped
 
-| Source common name | Source scientific name | Matched species ID | Category | Notes |
-| --- | --- | --- | --- | --- |
-| camphor tree | Cinnamomum camphora | cinnamomum-camphora | trees |  |
-| Chinese parasoltree | Firmiana simplex | firmiana-simplex | trees |  |
-| tungoil tree | Vernicia fordii | vernicia-fordii | trees |  |
-| coralberry | Ardisia crenata | ardisia-crenata | shrubs |  |
-| thorny olive | Elaeagnus pungens | elaeagnus-pungens | shrubs |  |
-| lantana | Lantana camara | lantana-camara | shrubs |  |
-| shrubby lespedeza | Lespedeza bicolor | lespedeza-bicolor | shrubs |  |
-| glossy privet | Ligustrum lucidum | ligustrum-lucidum | shrubs |  |
-| Bell's honeysuckle | Lonicera x bella | lonicera-x-bella | shrubs |  |
-| sweet breath of spring | Lonicera fragrantissima | lonicera-fragrantissima | shrubs |  |
-| Amur honeysuckle | Lonicera maackii | lonicera-maackii | shrubs |  |
-| Macartney rose | Rosa bracteata | rosa-bracteata | shrubs |  |
-| Cherokee rose | Rosa laevigata | rosa-laevigata | shrubs |  |
-| tropical soda apple | Solanum viarum | solanum-viarum | shrubs |  |
-| Oriental bittersweet | Celastrus orbiculatus | celastrus-orbiculatus | vines |  |
-| Chinese yam | Dioscorea oppositifolia | dioscorea-oppositifolia | vines |  |
-| bigleaf periwinkle | Vinca major | vinca-major | vines |  |
-| common periwinkle | Vinca minor | vinca-minor | vines |  |
-| giant reed | Arundo donax | arundo-donax | grasses, grass-likes, and canes |  |
-| pampas grass | Cortaderia selloana | cortaderia-selloana | grasses, grass-likes, and canes |  |
-| Vaseygrass | Paspalum urvillei | paspalum-urvillei | grasses, grass-likes, and canes |  |
-| nodding plumeless thistle | Carduus nutans | carduus-nutans | forbs |  |
-| tropical spiderwort | Commelina benghalensis | commelina-benghalensis | forbs |  |
-| hairy crabweed | Fatoua villosa | fatoua-villosa | forbs |  |
-| chamber bitter | Phyllanthus urinaria | phyllanthus-urinaria | forbs |  |
-| rattlebox | Sesbania punicea | sesbania-punicea | forbs |  |
-| giant salvinia | Salvinia molesta | salvinia-molesta | aquatic and wetland plants |  |
-| Japanese chaff flower | Achyranthes japonica | achyranthes-japonica | watch list A |  |
-| Japanese ardisia | Ardisia japonica | ardisia-japonica | watch list A |  |
-| Australian-pine | Casuarina equisetifolia | casuarina-equisetifolia | watch list A |  |
-| bushkiller | Cayratia japonica | cayratia-japonica | watch list A |  |
-| Canada thistle | Cirsium arvense | cirsium-arvense | watch list A |  |
-| bull thistle | Cirsium vulgare | cirsium-vulgare | watch list A |  |
-| water yam | Dioscorea alata | dioscorea-alata | watch list A |  |
-| air yam | Dioscorea bulbifera | dioscorea-bulbifera | watch list A |  |
-| Japanese knotweed | Fallopia japonica | fallopia-japonica | watch list A |  |
-| Morrow's honeysuckle | Lonicera morrowii | lonicera-morrowii | watch list A |  |
-| blessed milkthistle | Silybum marianum | silybum-marianum | watch list A |  |
-| garlic mustard | Alliaria petiolata | alliaria-petiolata | watch list B |  |
-| Japanese barberry | Berberis thunbergii | berberis-thunbergii | watch list B |  |
-| paper mulberry | Broussonetia papyrifera | broussonetia-papyrifera | watch list B |  |
-| Japanese beautyberry | Callicarpa japonica | callicarpa-japonica | watch list B |  |
-| wetland nightshade | Solanum tampicense | solanum-tampicense | watch list B |  |
-| Japanese spirea | Spiraea japonica | spiraea-japonica | watch list B |  |
+| Source common name | Source scientific name | Matched species ID | EDDMapS subject | Category | Notes |
+| --- | --- | --- | ---: | --- | --- |
+| camphor tree | Cinnamomum camphora | cinnamomum-camphora | 3014 | trees |  |
+| Chinese parasoltree | Firmiana simplex | firmiana-simplex | 11357 | trees |  |
+| tungoil tree | Vernicia fordii | vernicia-fordii | 6592 | trees |  |
+| coralberry | Ardisia crenata | ardisia-crenata | 3008 | shrubs |  |
+| thorny olive | Elaeagnus pungens | elaeagnus-pungens | 4526 | shrubs |  |
+| lantana | Lantana camara | lantana-camara | 3031 | shrubs |  |
+| shrubby lespedeza | Lespedeza bicolor | lespedeza-bicolor | 3032 | shrubs |  |
+| glossy privet | Ligustrum lucidum | ligustrum-lucidum | 5942 | shrubs |  |
+| Bell's honeysuckle | Lonicera x bella | lonicera-x-bella | 5948 | shrubs |  |
+| sweet breath of spring | Lonicera fragrantissima | lonicera-fragrantissima | 3038 | shrubs |  |
+| Amur honeysuckle | Lonicera maackii | lonicera-maackii | 3040 | shrubs |  |
+| Macartney rose | Rosa bracteata | rosa-bracteata | 4606 | shrubs |  |
+| Cherokee rose | Rosa laevigata | rosa-laevigata | 10089 | shrubs |  |
+| tropical soda apple | Solanum viarum | solanum-viarum | 2446 | shrubs |  |
+| Oriental bittersweet | Celastrus orbiculatus | celastrus-orbiculatus | 3012 | vines |  |
+| Chinese yam | Dioscorea oppositifolia | dioscorea-oppositifolia |  | vines |  |
+| bigleaf periwinkle | Vinca major | vinca-major | 4528 | vines |  |
+| common periwinkle | Vinca minor | vinca-minor | 3081 | vines |  |
+| giant reed | Arundo donax | arundo-donax | 3009 | grasses, grass-likes, and canes |  |
+| pampas grass | Cortaderia selloana | cortaderia-selloana | 5381 | grasses, grass-likes, and canes |  |
+| Vaseygrass | Paspalum urvillei | paspalum-urvillei | 6152 | grasses, grass-likes, and canes |  |
+| nodding plumeless thistle | Carduus nutans | carduus-nutans | 3011 | forbs |  |
+| tropical spiderwort | Commelina benghalensis | commelina-benghalensis | 4551 | forbs |  |
+| hairy crabweed | Fatoua villosa | fatoua-villosa | 5639 | forbs |  |
+| chamber bitter | Phyllanthus urinaria | phyllanthus-urinaria | 6182 | forbs |  |
+| rattlebox | Sesbania punicea | sesbania-punicea | 6404 | forbs |  |
+| giant salvinia | Salvinia molesta | salvinia-molesta | 2785 | aquatic and wetland plants |  |
+| Japanese chaff flower | Achyranthes japonica | achyranthes-japonica | 14211 | watch list A |  |
+| Japanese ardisia | Ardisia japonica | ardisia-japonica | 39852 | watch list A |  |
+| Australian-pine | Casuarina equisetifolia | casuarina-equisetifolia | 3268 | watch list A |  |
+| bushkiller | Cayratia japonica | cayratia-japonica | 13557 | watch list A |  |
+| Canada thistle | Cirsium arvense | cirsium-arvense | 2792 | watch list A |  |
+| bull thistle | Cirsium vulgare | cirsium-vulgare | 3393 | watch list A |  |
+| water yam | Dioscorea alata | dioscorea-alata | 5535 | watch list A |  |
+| air yam | Dioscorea bulbifera | dioscorea-bulbifera | 3017 | watch list A |  |
+| Japanese knotweed | Fallopia japonica | fallopia-japonica | 19655 | watch list A |  |
+| Morrow's honeysuckle | Lonicera morrowii | lonicera-morrowii | 3041 | watch list A |  |
+| blessed milkthistle | Silybum marianum | silybum-marianum | 4462 | watch list A |  |
+| garlic mustard | Alliaria petiolata | alliaria-petiolata | 3005 | watch list B |  |
+| Japanese barberry | Berberis thunbergii | berberis-thunbergii | 3010 | watch list B |  |
+| paper mulberry | Broussonetia papyrifera | broussonetia-papyrifera | 5208 | watch list B |  |
+| Japanese beautyberry | Callicarpa japonica | callicarpa-japonica | 37067 | watch list B |  |
+| wetland nightshade | Solanum tampicense | solanum-tampicense | 4279 | watch list B |  |
+| Japanese spirea | Spiraea japonica | spiraea-japonica | 3076 | watch list B |  |
 
 ## Unmatched Or Ambiguous
 
-| Source common name | Source scientific name | Source category | Notes |
-| --- | --- | --- | --- |
-| trifoliate orange | Poncirus trifoliata | trees |  |
-| leatherleaf mahonia | Mahonia bealei | shrubs |  |
-| beach vitex | Vitex rotundifolia | shrubs |  |
-| golden bamboo | Phyllostachys aurea | grasses, grass-likes, and canes |  |
-| Cuban bulrush | Oxycaryum cubense | aquatic and wetland plants |  |
-| common reed | Phragmites australis | aquatic and wetland plants |  |
-| water lettuce | Pistia stratiotes | aquatic and wetland plants |  |
-| porcelain berry | Ampelopsis brevipedunculata | watch list A |  |
-| tropical bushmint | Hyptis mutabilis | watch list A |  |
-| water clover | Marsilea spp. | watch list A | Genus-level list entry. Do not auto-map to a single species without a reviewed county record. |
-| sawtooth oak | Quercus acutissima | watch list A |  |
-| purple beautyberry | Callicarpa dichotoma | watch list B |  |
-| Chinese elm | Ulmus parvifolia | watch list B |  |
+| Source common name | Source scientific name | EDDMapS subject | Source category | Notes |
+| --- | --- | ---: | --- | --- |
+| trifoliate orange | Poncirus trifoliata | 20019 | trees |  |
+| leatherleaf mahonia | Mahonia bealei | 6889 | shrubs |  |
+| beach vitex | Vitex rotundifolia | 11609 | shrubs |  |
+| golden bamboo | Phyllostachys aurea | 3063 | grasses, grass-likes, and canes |  |
+| Cuban bulrush | Oxycaryum cubense | 18425 | aquatic and wetland plants |  |
+| common reed | Phragmites australis | 3062 | aquatic and wetland plants |  |
+| water lettuce | Pistia stratiotes | 3064 | aquatic and wetland plants |  |
+| porcelain berry | Ampelopsis brevipedunculata | 78266 | watch list A |  |
+| tropical bushmint | Hyptis mutabilis | 88137 | watch list A |  |
+| water clover | Marsilea spp. | 53723 | watch list A | Genus-level list entry. Do not auto-map to a single species without a reviewed county record. |
+| sawtooth oak | Quercus acutissima | 10086 | watch list A |  |
+| purple beautyberry | Callicarpa dichotoma | 13946 | watch list B |  |
+| Chinese elm | Ulmus parvifolia | 6567 | watch list B |  |
 
 ## Highest Current County Coverage
 

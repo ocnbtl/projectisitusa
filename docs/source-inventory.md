@@ -705,6 +705,7 @@ These sources are already referenced by current curated profiles, but the origin
 | https://www.aces.edu/blog/topics/landscaping/native-replacements-for-commonly-sold-invasive-plants/ | Alabama gap assessment | Alabama Extension ornamental invasive plant priority check against current live mapped coverage |
 | https://agi.alabama.gov/plantprotection/ | Alabama gap assessment | Alabama Department of Agriculture and Industries regulatory pest notice source path for county-specific future checks |
 | https://www.se-eppc.org/alabama/2012-updatedALIPCinvasiveplantlist.pdf | Alabama denominator reconciliation | Maintained `ALIPC-2012` denominator list in `src/data/source/state-species-denominators.ts`, reconciled against generated catalog and Alabama county-species matrix |
+| https://www.invasiveplantatlas.org/list.html?id=71 | Alabama denominator snapshot | Source-table snapshot for the `ALIPC-2012` denominator list, including EDDMapS subject IDs, family, and nativity metadata in `src/data/source/state-denominator-snapshots/alipc-2012.json` |
 
 ## Contributor Rules
 

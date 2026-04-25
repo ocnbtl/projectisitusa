@@ -49,6 +49,12 @@ Reconcile a maintained state denominator list against the catalog and state matr
 npm run reconcile:state-denominators -- AL ALIPC-2012
 ```
 
+Refresh the ALIPC denominator snapshot with EDDMapS subject IDs:
+
+```bash
+npm run import:alipc-list
+```
+
 The command writes:
 
 - `docs/county-coverage/states/<STATE>.json`
@@ -58,6 +64,10 @@ The reconciliation command writes:
 
 - `docs/county-coverage/states/<STATE>-<list-id>-reconciliation.json`
 - `docs/county-coverage/states/<STATE>-<list-id>-reconciliation.md`
+
+The ALIPC import command writes:
+
+- `src/data/source/state-denominator-snapshots/alipc-2012.json`
 
 ## Maintenance Rules
 
@@ -69,7 +79,8 @@ The reconciliation command writes:
 6. Regenerate the state matrix after source data changes.
 7. Keep maintained denominator lists in `src/data/source/state-species-denominators.ts`.
 8. Run denominator reconciliation after adding or changing a maintained list.
-9. Run a no-dash audit on edited docs and source files before committing.
+9. Use denominator snapshots to preserve external subject IDs and other source-table metadata when a reputable source exposes them.
+10. Run a no-dash audit on edited docs and source files before committing.
 
 ## State Order
 
