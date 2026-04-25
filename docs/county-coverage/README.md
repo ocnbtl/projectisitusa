@@ -47,6 +47,7 @@ Reconcile a maintained state denominator list against the catalog and state matr
 
 ```bash
 npm run reconcile:state-denominators -- AL ALIPC-2012
+npm run reconcile:state-denominators -- AL AL-ANS-2021
 ```
 
 Refresh the ALIPC denominator snapshot with EDDMapS subject IDs:

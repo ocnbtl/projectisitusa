@@ -15,6 +15,7 @@ Runtime data generated after the ALIPC EDDMapS import shows:
 - Alabama county-species matrix known percent: `1.39%` of `167768` county-species determinations.
 - Alabama category mix: `81` plants, `17` wildlife, `1` insect, and `1` fungus or disease.
 - ALIPC denominator reconciliation: `91` list species, `78` catalog matched, `69` live mapped in Alabama, `9` catalog matched but unmapped, and `13` unmatched or ambiguous.
+- Alabama ANS denominator reconciliation: `90` Appendix 12.B species, `46` catalog matched, `33` live mapped in Alabama, `13` catalog matched but unmapped, and `44` unmatched or ambiguous.
 - National generated catalog: `2504` species, with `1310` mapped and `1194` unmatched.
 
 This is a major improvement from the earlier Alabama coverage gap, but it does not prove that Project Isitusa maps 90 percent or more of every invasive species present in Alabama.
@@ -27,7 +28,7 @@ The denominator problem is real because Alabama has multiple credible invasive-s
 | --- | ---: | --- | --- |
 | Alabama Forestry Commission invasive species portal | 13 named forestry invasive entries plus a cogongrass location map | Mixed | Good official forestry baseline. Current live coverage includes most named plant entries, including tropical soda apple through ALIPC-backed EDDMapS records, but `Bamboo` is generic. The page is not a broad county inventory. |
 | Alabama Invasive Plant Council list, mirrored by Invasive Plant Atlas and EDDMapS | `91` plant species reported invasive in Alabama natural areas | Partly importable through EDDMapS subject county records | Strong plant denominator. Current live coverage maps `69` ALIPC species from county-level EDDMapS, SERNEC, NAS, AFC, or prior rows. List membership alone remains insufficient for county production mapping. |
-| Alabama Aquatic Nuisance Species Management Plan | `81` non-native aquatic species found in Alabama, including fish, plants, crustaceans, mollusks, mammals, pathogens, and other taxa | Partly importable through USGS NAS and some state plan context | Strong aquatic denominator. Current NAS import covers many but not all catalog-matched ANS plan species. Some plan species are not in the current US-RIIS lower-48 catalog or have taxonomy/name gaps. |
+| Alabama Aquatic Nuisance Species Management Plan | `90` non-native aquatic species found in Alabama in Appendix 12.B, including fish, plants, crustaceans, mollusks, mammals, pathogens, and other taxa | Partly importable through USGS NAS and some state plan context | Strong aquatic denominator. Current NAS import covers many but not all catalog-matched ANS plan species. Some plan species are not in the current US-RIIS lower-48 catalog or have taxonomy/name gaps. This corrects the earlier stale `81` count. |
 | Alabama Cooperative Extension invasive plant outreach | Active 2026 statewide invasive-plant education project and ornamental replacement guidance | Not county structured by itself | Useful for denominator and public-facing priority, but not production county evidence without county-specific records. |
 | Alabama Department of Agriculture and Industries plant protection notices | Species-specific county detections and quarantines, including citrus canker and Africanized honey bee reports | Manual or future regulatory-notice importer | Strong county-specific evidence when species exists in the catalog. Not yet a bulk source family. |
 
@@ -47,9 +48,9 @@ These gaps should not be treated as production misses unless a county-structured
 | Gap class | Examples found in current catalog but not live mapped in Alabama | Likely next source path | Import decision |
 | --- | --- | --- | --- |
 | AFC named species not covered | Generic AFC `Bamboo` does not map cleanly to one catalog species | AFC species pages or county records tied to a reviewed species ID | Candidate source-family follow-up. Do not infer counties from the AFC landing page. |
-| ALIPC catalog-matched but unmapped species | `cinnamomum-camphora`, `lonicera-x-bella`, `lonicera-morrowii`, `ardisia-japonica`, `casuarina-equisetifolia`, `berberis-thunbergii`, `callicarpa-japonica`, `solanum-tampicense`, `spiraea-japonica` | Alabama Plant Atlas, SERNEC expansion, EDDMapS recheck, or source-specific county records | Remaining plant follow-up after the first ALIPC-backed county import. List membership alone is not county evidence. |
-| ANS plan catalog-matched aquatic candidates | `iris-pseudacorus`, `acorus-calamus`, `callitriche-stagnalis`, `ludwigia-grandiflora`, `lycopus-europaeus`, `myosotis-scorpioides`, `salvinia-molesta`, `cyprinus-rubrofuscus`, `cherax-quadricarinatus`, `cipangopaludina-chinensis`, `west-nile-virus` | USGS NAS archive recheck, NAS aliases, state ANS plan species pages, county or HUC records | Candidate technical gap. Check taxonomy and establishment status before mapping. |
-| ANS plan species not found in current catalog by exact name | `myriophyllum-heterophyllum`, `pistia-stratiotes`, `cyperus-blepharoleptus`, `alosa-aestivalis`, `alosa-pseudoharengus`, `cyprinella-lutrensis`, `faxonius-virilis`, `cipangopaludina-japonica`, `trachemys-scripta-elegans`, `ranavirus`, `vesiculovirus` | Catalog match review against US-RIIS, accepted-name aliases, and NAS taxonomy | Do not add blind aliases. First decide whether the species belongs in the catalog and whether Alabama records are invasive or merely nonnative. |
+| ALIPC catalog-matched but unmapped species | `cinnamomum-camphora`, `lonicera-x-bella`, `dioscorea-oppositifolia`, `ardisia-japonica`, `casuarina-equisetifolia`, `lonicera-morrowii`, `berberis-thunbergii`, `callicarpa-japonica`, `solanum-tampicense` | Alabama Plant Atlas, SERNEC expansion, EDDMapS recheck, or source-specific county records | Remaining plant follow-up after the first ALIPC-backed county import. List membership alone is not county evidence. |
+| ANS plan catalog-matched but unmapped species | `cherax-quadricarinatus`, `cyprinus-rubrofuscus`, `oreochromis-aureus`, `oreochromis-mossambicus`, `acorus-calamus`, `callitriche-stagnalis`, `hygrophila-polysperma`, `iris-pseudacorus`, `ludwigia-grandiflora`, `lycopus-europaeus`, `myosotis-scorpioides`, `nymphoides-peltata`, `cipangopaludina-chinensis` | USGS NAS archive recheck, NAS aliases, state ANS plan species pages, county or HUC records | Candidate technical gap. Check taxonomy, establishment status, and county evidence before mapping. |
+| ANS plan species unmatched or ambiguous in current catalog | `lyngbya-spp`, `alosa-aestivalis`, `alosa-pseudoharengus`, `cyprinella-lutrensis`, `faxonius-rusticus`, `faxonius-virilis`, `myriophyllum-heterphyllum`, `pistia-stratoides`, `trachemys-scripta-elegans`, `ranavirus-spp`, `vesiculovirus-spp`, `flavivirus-spp`, plus other exact-name misses in `docs/county-coverage/states/AL-al-ans-2021-reconciliation.md` | Catalog match review against US-RIIS, accepted-name aliases, and NAS taxonomy | Do not add blind aliases. First decide whether the species belongs in the catalog and whether Alabama records are invasive or merely nonnative. |
 | Regulated pest notices | `xanthomonas-citri` exists in catalog but is not live mapped in Alabama; Africanized honey bee and cotton jassid reports are not exact catalog matches today | ADAI plant protection news and quarantine pages, APHIS pest pages | Good manual evidence candidate where species exists. Not a bulk import yet. |
 | Category balance | Alabama has only `1` live mapped insect and `1` live mapped fungus or disease | APHIS, ADAI, USFS, AFC forest-health layers, and state pest notices | High priority for future source-family work. |
 
@@ -59,6 +60,8 @@ These gaps should not be treated as production misses unless a county-structured
 - Every Alabama county now has county-specific live coverage, but many counties still depend on narrow plant, aquatic, forest-pest, or disease source families rather than broad county invasive-species inventories.
 - The APHIS emerald ash borer layer is the structured production source and currently returns `6` Alabama counties. AFC narrative reporting names a partially different set of county confirmations. Keep both facts visible.
 - The AFC cogongrass GIS layer returns `64` valid Alabama counties. The AFC cogongrass program discusses Alabama broadly and program eligibility statewide, but that does not justify inferring the three missing counties into production coverage.
+- The ANS plan count was previously carried as `81`, but direct Appendix 12.B extraction shows `90` non-native aquatic species found in Alabama. Use `90` for this denominator unless a future source revision proves otherwise.
+- Giant salvinia and Japanese spirea were previously listed as live-coverage gaps in older notes. Current generated reconciliation shows giant salvinia live mapped in `10` Alabama counties and Japanese spirea no longer in the ALIPC unmapped bucket.
 - Statewide or list-level species presence is useful denominator evidence, but it is not county evidence by itself.
 
 ## Recommended Status
@@ -75,8 +78,9 @@ That label means:
 ## Recommended Next Imports
 
 1. Alabama ANS plan reconciliation against NAS.
-   - Goal: compare the `81` ANS plan species against current catalog IDs, NAS archive records, and generated Alabama coverage.
-   - Output: a taxonomy review table with `mapped`, `catalog-but-unmapped`, `not-in-catalog`, and `do-not-map-yet` buckets.
+   - Status: first-pass `AL-ANS-2021` denominator reconciliation is generated.
+   - Next goal: resolve the `13` catalog-matched but unmapped species against NAS and other county-level aquatic sources.
+   - Output: county evidence additions only where a source has species-specific county records.
 
 2. ADAI and APHIS pest notice lane.
    - Goal: capture county-specific regulatory detections for pests and diseases already in the catalog, starting with citrus canker.

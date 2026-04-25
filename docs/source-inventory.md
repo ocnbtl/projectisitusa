@@ -701,12 +701,13 @@ These sources are already referenced by current curated profiles, but the origin
 | https://forestry.alabama.gov/Pages/Fire/Invasive_Species.aspx | Alabama gap assessment | Official forestry invasive-species denominator check against current live Alabama mapped coverage |
 | https://www.invasiveplantatlas.org/list.html?id=71 | Alabama gap assessment | Alabama Invasive Plant Council list mirror showing `91` plant species reported invasive in Alabama natural areas |
 | https://www.eddmaps.org/lists/list.cfm?id=71 | Alabama gap assessment | EDDMapS Alabama Invasive Plant Council list cross-check and possible future county-record source path |
-| https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf | Alabama gap assessment | Alabama ANS denominator check, including the `81` non-native aquatic species appendix |
+| https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf | Alabama gap assessment | Alabama ANS denominator check, including the `90` non-native aquatic species in Appendix 12.B |
 | https://www.aces.edu/blog/topics/forestry-wildlife/2026-year-of-invasive-plants/ | Alabama gap assessment | Current Alabama Extension invasive-plant outreach context and possible non-county source lead |
 | https://www.aces.edu/blog/topics/landscaping/native-replacements-for-commonly-sold-invasive-plants/ | Alabama gap assessment | Alabama Extension ornamental invasive plant priority check against current live mapped coverage |
 | https://agi.alabama.gov/plantprotection/ | Alabama gap assessment | Alabama Department of Agriculture and Industries regulatory pest notice source path for county-specific future checks |
 | https://www.se-eppc.org/alabama/2012-updatedALIPCinvasiveplantlist.pdf | Alabama denominator reconciliation | Maintained `ALIPC-2012` denominator list in `src/data/source/state-species-denominators.ts`, reconciled against generated catalog and Alabama county-species matrix |
 | https://www.invasiveplantatlas.org/list.html?id=71 | Alabama denominator snapshot | Source-table snapshot for the `ALIPC-2012` denominator list, including EDDMapS subject IDs, family, and nativity metadata in `src/data/source/state-denominator-snapshots/alipc-2012.json` |
+| https://www.outdooralabama.com/sites/default/files/PDF%20documents/AL%20ANS%20Management%20Plan_FINAL_Oct%202021.pdf | Alabama ANS denominator reconciliation | Maintained `AL-ANS-2021` denominator list in `src/data/source/state-species-denominators.ts`, reconciled against generated catalog and Alabama county-species matrix |
 
 ## Contributor Rules
 
