@@ -60,6 +60,19 @@ export interface CountySpeciesStatusOverride {
   reviewedAt: string;
 }
 
+export interface StateSpeciesDenominatorEntry {
+  stateCode: string;
+  listId: string;
+  listLabel: string;
+  commonName: string;
+  scientificName: string;
+  sourceCategory: string;
+  sourceStatus?: string;
+  source: SourceLink;
+  reviewedAliases?: string[];
+  notes?: string;
+}
+
 export interface SpeciesAction {
   mode: ActionMode;
   summary: string;

@@ -43,10 +43,21 @@ Build a state matrix:
 npm run build:county-matrix -- AL
 ```
 
+Reconcile a maintained state denominator list against the catalog and state matrix:
+
+```bash
+npm run reconcile:state-denominators -- AL ALIPC-2012
+```
+
 The command writes:
 
 - `docs/county-coverage/states/<STATE>.json`
 - `docs/county-coverage/states/<STATE>.md`
+
+The reconciliation command writes:
+
+- `docs/county-coverage/states/<STATE>-<list-id>-reconciliation.json`
+- `docs/county-coverage/states/<STATE>-<list-id>-reconciliation.md`
 
 ## Maintenance Rules
 
@@ -56,7 +67,9 @@ The command writes:
 4. Every non-presence record must include a reputable source URL, notes, and a review date.
 5. Do not convert unknown to absent just because no record was found.
 6. Regenerate the state matrix after source data changes.
-7. Run a no-dash audit on edited docs and source files before committing.
+7. Keep maintained denominator lists in `src/data/source/state-species-denominators.ts`.
+8. Run denominator reconciliation after adding or changing a maintained list.
+9. Run a no-dash audit on edited docs and source files before committing.
 
 ## State Order
 
