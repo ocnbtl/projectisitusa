@@ -50,6 +50,10 @@ const AFPE_COUNTIES_CSV_PATH =
   "10_4231_HWQF-V087/AFPE_PEST_2023_counties.csv";
 const AFPE_DATA_DICTIONARY_CSV_PATH =
   "10_4231_HWQF-V087/AFPE_PEST_2023_counties_data_dictionary.csv";
+const APHIS_FEDERAL_QUARANTINE_SERVICE_URL =
+  "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1";
+const APHIS_FEDERAL_QUARANTINE_ALABAMA_QUERY_URL =
+  "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=Quarantine_State_Abbr%3D%27AL%27&outFields=Quarantine_County,Quarantine_Program,Quarantine_Status,Quarantine_County_FIPS&returnGeometry=false&f=json";
 const ALIPC_LIST_URL = "https://www.invasiveplantatlas.org/list.html?id=71";
 const ALABAMA_PLANT_ATLAS_BASE_URL = "http://floraofalabama.org";
 const ALABAMA_PLANT_ATLAS_SOURCE_URL = `${ALABAMA_PLANT_ATLAS_BASE_URL}/Default.aspx`;
@@ -66,6 +70,10 @@ const OUTPUT_PATH = resolve(
 const US_RIIS_PATH = resolve(
   process.cwd(),
   "src/data/source/usriis-snapshot.json",
+);
+const GBIF_ALABAMA_SPECIMEN_SNAPSHOT_PATH = resolve(
+  process.cwd(),
+  "src/data/source/gbif-alabama-preserved-specimens-snapshot.json",
 );
 
 type EddMapsSummaryResponse = {
@@ -268,6 +276,11 @@ const AFPE_CODE_TO_SCIENTIFIC_NAME: Record<string, string> = {
   DCA15101: "Anarsia lineatella",
   DCA22053: "Ophiognomonia clavigignenti-juglandacearum",
   DCA17023: "Dryocosmus kuriphilus",
+};
+const APHIS_FEDERAL_QUARANTINE_PROGRAM_TO_SCIENTIFIC_NAME: Record<string, string> = {
+  "Asian Citrus Psyllid": "Diaphorina citri",
+  "Imported Fire Ant": "Solenopsis invicta",
+  "Sweet Orange Scab": "Elsinoe australis",
 };
 
 function resolveNasScientificName(value: string) {
@@ -1235,6 +1248,106 @@ async function loadAlienForestPestExplorerCountyCoverage(
   return imported;
 }
 
+function loadGbifAlabamaPreservedSpecimenCoverage() {
+  const imported = new Map<string, ImportedCountyCoverage>();
+  if (!existsSync(GBIF_ALABAMA_SPECIMEN_SNAPSHOT_PATH)) {
+    console.log("Skipped GBIF Alabama preserved specimen coverage: snapshot missing.");
+    return imported;
+  }
+
+  const snapshot = readJsonFile<CountyCoverageSnapshotFile>(
+    GBIF_ALABAMA_SPECIMEN_SNAPSHOT_PATH,
+  );
+  let countyRows = 0;
+
+  for (const record of snapshot.species) {
+    const countyFips = new Set(record.countyFips);
+    countyRows += countyFips.size;
+    imported.set(record.speciesId, {
+      countyFips,
+      countyDataSources: record.countyDataSources,
+    });
+  }
+
+  console.log(
+    `Loaded ${imported.size} species from GBIF Alabama preserved specimen snapshot with ${countyRows} county rows.`,
+  );
+
+  return imported;
+}
+
+async function loadAphisFederalQuarantineCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  lower48CountyFips: Set<string>,
+) {
+  const response = execFileSync(
+    "curl",
+    [
+      "-sL",
+      "--max-time",
+      "45",
+      "-A",
+      USER_AGENT,
+      APHIS_FEDERAL_QUARANTINE_ALABAMA_QUERY_URL,
+    ],
+    { encoding: "utf8" },
+  );
+
+  const payload = JSON.parse(response) as ArcGisFeatureResponse;
+  const imported = new Map<string, ImportedCountyCoverage>();
+  let matchedCountyRows = 0;
+  let skippedRows = 0;
+
+  for (const feature of payload.features ?? []) {
+    const attributes = feature.attributes ?? {};
+    const status =
+      typeof attributes.Quarantine_Status === "string"
+        ? attributes.Quarantine_Status
+        : "";
+    const program =
+      typeof attributes.Quarantine_Program === "string"
+        ? attributes.Quarantine_Program
+        : "";
+    const scientificName =
+      APHIS_FEDERAL_QUARANTINE_PROGRAM_TO_SCIENTIFIC_NAME[program];
+    const target = scientificName
+      ? targetLookup.get(canonicalScientificName(scientificName))
+      : null;
+    const countyFips = parseArcGisCountyFips(attributes.Quarantine_County_FIPS);
+
+    if (
+      !target ||
+      !countyFips ||
+      !lower48CountyFips.has(countyFips) ||
+      !status.toLowerCase().includes("active")
+    ) {
+      skippedRows += 1;
+      continue;
+    }
+
+    matchedCountyRows += 1;
+    const existing = imported.get(target.speciesId) ?? {
+      countyFips: new Set<string>(),
+      countyDataSources: [
+        {
+          source: "APHIS Federal Quarantine county layer",
+          matchType: "scientific-exact",
+          externalId: scientificName,
+          url: APHIS_FEDERAL_QUARANTINE_SERVICE_URL,
+        },
+      ],
+    };
+    existing.countyFips.add(countyFips);
+    imported.set(target.speciesId, existing);
+  }
+
+  console.log(
+    `Loaded ${imported.size} species from APHIS federal quarantine county rows with ${matchedCountyRows} Alabama county rows (${skippedRows} rows skipped).`,
+  );
+
+  return imported;
+}
+
 async function main() {
   const usRiis = readJsonFile<UsRiisSnapshotFile>(US_RIIS_PATH);
   const targets = buildTargets(usRiis);
@@ -1281,6 +1394,10 @@ async function main() {
   );
   const alienForestPestExplorerCoverage =
     await loadAlienForestPestExplorerCountyCoverage(targetLookup, lower48CountyFips);
+  const gbifAlabamaPreservedSpecimenCoverage =
+    loadGbifAlabamaPreservedSpecimenCoverage();
+  const aphisFederalQuarantineCoverage =
+    await loadAphisFederalQuarantineCountyCoverage(targetLookup, lower48CountyFips);
 
   console.log(`Loaded ${targets.length} import targets.`);
 
@@ -1299,6 +1416,8 @@ async function main() {
             "APHIS Emerald Ash Borer county layer",
             "Laurel Wilt public county layer",
             "USFS Alien Forest Pest Explorer",
+            "GBIF preserved specimen records",
+            "APHIS Federal Quarantine county layer",
           ].includes(source.source),
       )),
     ];
@@ -1374,6 +1493,28 @@ async function main() {
       );
     }
 
+    const gbifAlabamaPreservedSpecimenCoverageForSpecies =
+      gbifAlabamaPreservedSpecimenCoverage.get(target.speciesId);
+    if (gbifAlabamaPreservedSpecimenCoverageForSpecies) {
+      for (const fips of gbifAlabamaPreservedSpecimenCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...gbifAlabamaPreservedSpecimenCoverageForSpecies.countyDataSources,
+      );
+    }
+
+    const aphisFederalQuarantineCoverageForSpecies =
+      aphisFederalQuarantineCoverage.get(target.speciesId);
+    if (aphisFederalQuarantineCoverageForSpecies) {
+      for (const fips of aphisFederalQuarantineCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...aphisFederalQuarantineCoverageForSpecies.countyDataSources,
+      );
+    }
+
     const uniqueSources = countyDataSources.filter(
       (source, sourceIndex, sources) =>
         sources.findIndex(
@@ -1427,6 +1568,8 @@ async function main() {
       "USDA APHIS. 2026. Emerald ash borer known infested counties FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9.",
       "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",
       "Fei, S.; Morin, R.; Li, Y.; Kong, N. N.; Crocker, S.; Krist, F.; Liebhold, A.; Grong, K. A. 2024. Alien Forest Pest Detection by Counties in the United States. Purdue University Research Repository. doi:10.4231/HWQF-V087.",
+      "GBIF.org. 2026. GBIF occurrence search. Preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
+      "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,

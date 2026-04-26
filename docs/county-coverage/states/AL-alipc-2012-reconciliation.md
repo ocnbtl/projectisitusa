@@ -54,7 +54,7 @@ List membership is not county evidence. Use this report to select the next sourc
 | cogongrass | imperata-cylindrica | 66 |
 | Johnsongrass | sorghum-halepense | 62 |
 | Chinaberrytree | melia-azedarach | 60 |
-| shrubby lespedeza | lespedeza-bicolor | 59 |
+| shrubby lespedeza | lespedeza-bicolor | 60 |
 | Callery pear | pyrus-calleryana | 58 |
 | Japanese climbing fern | lygodium-japonicum | 58 |
 | Chinese wisteria | wisteria-sinensis | 58 |

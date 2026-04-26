@@ -13,6 +13,15 @@ These are the six lower-48 states previously flagged as source-completeness gaps
 | Colorado | `state-source-found` | Colorado Parks and Wildlife aquatic nuisance species program: https://cpw.state.co.us/aquatic-nuisance-species-program ; Colorado Department of Agriculture noxious weed list: https://ag.colorado.gov/conservation/noxious-weeds/colorado-noxious-weed-list | Strong statewide aquatic and plant paths. County weed-manager and local program review still pending. |
 | Connecticut | `state-source-found` | Connecticut DEEP invasive species portal: https://portal.ct.gov/DEEP/Invasive-Species/Invasive-Species ; Connecticut DEEP aquatic invasive species page: https://portal.ct.gov/deep-aquaticinvasivespecies | Strong statewide official entry point, with an existing aquatic web app path to inspect later. County-by-county review still pending. |
 
+### Alabama Latest Update, 2026-04-25
+
+The Alabama row above still carries the earlier `5.47%` matrix count from the AFPE pass. Current regenerated outputs supersede that count: Alabama now has `753` distinct live mapped species, `152.9` average mapped species per county, and `10244` verified-present determinations out of `167768`, or `6.11%` known. No verified-absent or not-detected determinations have been added yet.
+
+New source families added on 2026-04-25:
+
+- GBIF preserved specimen records: `src/data/source/gbif-alabama-preserved-specimens-snapshot.json` imports strict exact catalog matches from Alabama `PRESERVED_SPECIMEN` records with explicit county values. The raw GBIF snapshot found `686` catalog species and `6634` Alabama county rows before merged-source unioning; generated county coverage carries `499` species from this source. Treat this as physical occurrence evidence, not proof of establishment, county invasive status, absence, or survey non-detection.
+- USDA APHIS PPQ Federal Quarantine county layer: active Alabama quarantine rows are imported for reviewed exact catalog matches. This adds Asian citrus psyllid, red imported fire ant, and sweet orange scab coverage, with `3` source species and `136` Alabama county rows before generated unioning. Citrus greening rows remain skipped because the current catalog has no exact `Candidatus Liberibacter asiaticus` target.
+
 ## Remaining States
 
 All other states are still `not-started` in this audit track until their statewide official source paths are logged here.
