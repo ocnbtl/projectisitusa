@@ -78,6 +78,10 @@ const US_RIIS_PATH = resolve(
   process.cwd(),
   "src/data/source/usriis-snapshot.json",
 );
+const EDDMAPS_SNAPSHOT_PATH = resolve(
+  process.cwd(),
+  "src/data/source/eddmaps-snapshot.json",
+);
 const GBIF_ALABAMA_SPECIMEN_SNAPSHOT_PATH = resolve(
   process.cwd(),
   "src/data/source/gbif-alabama-preserved-specimens-snapshot.json",
@@ -109,6 +113,14 @@ type AlipcSnapshotFile = {
 
 type EddMapsPresenceResponse = {
   us?: Record<string, unknown>;
+};
+
+type EddMapsSnapshotFile = {
+  species: Array<{
+    speciesId: string;
+    subjectId: number;
+    countyFips: string[];
+  }>;
 };
 
 type AlabamaPlantAtlasSearchResponse = {
@@ -954,6 +966,41 @@ function buildAlipcAlabamaTargets(targetLookup: Map<string, ImportTarget>) {
   return targets;
 }
 
+function loadEddMapsCountyCoverage(lower48CountyFips: Set<string>) {
+  const imported = new Map<string, ImportedCountyCoverage>();
+  const snapshot = readJsonFile<EddMapsSnapshotFile>(EDDMAPS_SNAPSHOT_PATH);
+  let countyRows = 0;
+
+  for (const record of snapshot.species) {
+    const countyFips = new Set(
+      record.countyFips
+        .map((fips) => fips.padStart(5, "0"))
+        .filter((fips) => lower48CountyFips.has(fips)),
+    );
+
+    if (countyFips.size === 0) continue;
+
+    countyRows += countyFips.size;
+    imported.set(record.speciesId, {
+      countyFips,
+      countyDataSources: [
+        {
+          source: "EDDMaps",
+          matchType: "scientific-exact",
+          externalId: String(record.subjectId),
+          url: `https://www.eddmaps.org/species/subject.cfm?sub=${record.subjectId}`,
+        },
+      ],
+    });
+  }
+
+  console.log(
+    `Loaded ${imported.size} species from the EDDMapS county snapshot with ${countyRows} lower-48 county rows.`,
+  );
+
+  return imported;
+}
+
 async function loadAlipcEddMapsAlabamaCountyCoverage(
   targetLookup: Map<string, ImportTarget>,
   lower48CountyFips: Set<string>,
@@ -1703,12 +1750,15 @@ async function main() {
   const targets = buildTargets(usRiis);
   const targetLookup = buildTargetLookup(targets);
   const { countyFeatures, countyIndex, lookup: countyLookup } = buildCountyLookup();
-  const lower48CountyFips = new Set(Object.keys(countyIndex));
+  const lower48CountyFips = new Set(
+    Object.keys(countyIndex).filter((fips) => !fips.startsWith("02") && !fips.startsWith("15")),
+  );
   const existingSnapshot = readJsonFile<CountyCoverageSnapshotFile>(OUTPUT_PATH);
   const existingCoverageBySpeciesId = new Map(
     existingSnapshot.species.map((record) => [record.speciesId, record]),
   );
 
+  const eddMapsCountyCoverage = loadEddMapsCountyCoverage(lower48CountyFips);
   const nasCountyCoverage = await loadNasArchiveCountyCoverage(
     targetLookup,
     countyLookup,
@@ -1773,6 +1823,7 @@ async function main() {
         (source) =>
           ![
             "USGS NAS",
+            "EDDMaps",
             "USGS NAS live collection pages",
             "SERNEC",
             "EDDMapS ALIPC list",
@@ -1799,6 +1850,14 @@ async function main() {
         countyFips.add(fips);
       }
       countyDataSources.push(...archiveCoverage.countyDataSources);
+    }
+
+    const eddMapsCoverage = eddMapsCountyCoverage.get(target.speciesId);
+    if (eddMapsCoverage) {
+      for (const fips of eddMapsCoverage.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(...eddMapsCoverage.countyDataSources);
     }
 
     const nasLiveSupplementCoverage =

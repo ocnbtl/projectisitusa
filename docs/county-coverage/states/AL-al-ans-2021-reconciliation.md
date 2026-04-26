@@ -84,19 +84,19 @@ List membership is not county evidence. Use this report to select the next sourc
 | Marsh Dayflower | murdannia-keisak | 36 |
 | Brittle Naiad | najas-minor | 25 |
 | Hydrilla | hydrilla | 23 |
+| Large Flower Waterprimrose | ludwigia-grandiflora | 23 |
 | Grass Carp | ctenopharyngodon-idella | 22 |
+| Watercress | nasturtium-officinale | 22 |
 | Common Salvinia | salvinia-minima | 22 |
-| Watercress | nasturtium-officinale | 21 |
 | Brazilian Waterweed | egeria-densa | 18 |
-| Large Flower Waterprimrose | ludwigia-grandiflora | 18 |
 | Eurasian Watermilfoil | myriophyllum-spicatum | 18 |
 | Giant Salvinia | salvinia-molesta | 17 |
+| Yellow Iris | iris-pseudacorus | 15 |
 | Torpedo Grass | panicum-repens | 15 |
-| Yellow Iris | iris-pseudacorus | 14 |
 | Narrow-Leaved Cattail | typha-angustifolia | 14 |
+| Curlyleaf Pondweed | potamogeton-crispus | 13 |
 | Common Carp | cyprinus-carpio | 10 |
 | Sacred Lotus | nelumbo-nucifera | 10 |
-| Curlyleaf Pondweed | potamogeton-crispus | 10 |
 | Single-Vein Sweetleaf | acorus-calamus | 8 |
 | Bighead Carp | hypophthalmichthys-nobilis | 5 |
 | Nile Tilapia | oreochromis-niloticus | 5 |
