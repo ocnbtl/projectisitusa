@@ -13,16 +13,22 @@ These are the six lower-48 states previously flagged as source-completeness gaps
 | Colorado | `state-source-found` | Colorado Parks and Wildlife aquatic nuisance species program: https://cpw.state.co.us/aquatic-nuisance-species-program ; Colorado Department of Agriculture noxious weed list: https://ag.colorado.gov/conservation/noxious-weeds/colorado-noxious-weed-list | Strong statewide aquatic and plant paths. County weed-manager and local program review still pending. |
 | Connecticut | `state-source-found` | Connecticut DEEP invasive species portal: https://portal.ct.gov/DEEP/Invasive-Species/Invasive-Species ; Connecticut DEEP aquatic invasive species page: https://portal.ct.gov/deep-aquaticinvasivespecies | Strong statewide official entry point, with an existing aquatic web app path to inspect later. County-by-county review still pending. |
 
-### Alabama Latest Update, 2026-04-25
+### Alabama Latest Update, 2026-04-26
 
-The Alabama row above still carries the earlier `5.47%` matrix count from the AFPE pass. Current regenerated outputs supersede that count: Alabama now has `787` distinct live mapped species, `155.87` average mapped species per county, `10443` verified-present determinations, `8` survey-area not-detected determinations, and `157317` unknown determinations out of `167768`. That is `6.23%` known. No verified-absent determinations have been added yet.
+The Alabama row above still carries older matrix counts in its long-form history. Current regenerated outputs supersede those counts: Alabama now has `790` distinct live mapped species, `156.04` average mapped species per county, `10455` verified-present determinations, `8` survey-area not-detected determinations, and `157305` unknown determinations out of `167768`. That is `6.24%` known. No verified-absent determinations have been added yet.
 
-New source families added on 2026-04-25:
+Recent source-family updates:
 
 - GBIF preserved specimen records: `src/data/source/gbif-alabama-preserved-specimens-snapshot.json` imports strict exact catalog matches from Alabama `PRESERVED_SPECIMEN` records with explicit county values. The raw GBIF snapshot found `686` catalog species and `6634` Alabama county rows before merged-source unioning; generated county coverage carries `499` species from this source. Treat this as physical occurrence evidence, not proof of establishment, county invasive status, absence, or survey non-detection.
 - USDA APHIS PPQ Federal Quarantine county layer: active Alabama quarantine rows are imported for reviewed exact catalog matches. This adds Asian citrus psyllid, red imported fire ant, and sweet orange scab coverage, with `3` source species and `136` Alabama county rows before generated unioning. Citrus greening rows remain skipped because the current catalog has no exact `Candidatus Liberibacter asiaticus` target.
 - iDigBio preserved specimen records: `src/data/source/idigbio-alabama-preserved-specimens-snapshot.json` imports exact catalog scientific-name matches from Alabama preserved specimen records, accepting explicit county values or coordinates that resolve to one Alabama county. The raw iDigBio snapshot found `643` catalog species and `5352` Alabama county rows before merged-source unioning; generated county coverage carries `458` species from this source. Treat this as physical occurrence evidence, not proof of establishment, county invasive status, absence, or survey non-detection.
 - USFWS invasive carp eDNA sample layer: `src/data/source/county-species-status-overrides.ts` now includes `8` conservative `not-detected` survey-area records for bighead carp and silver carp county-species pairs with no conflicting current verified-present or positive eDNA evidence. These records are not countywide absence claims, and positive eDNA rows were not promoted to verified-present because the source warns that DNA can be transported or come from dead fish.
+- USFS Current Invasive Plant Locations: `scripts/import-county-presence.ts` now imports the public EDW current invasive plant polygon layer filtered to National Forest System land in Alabama. The import matched `1286` infestation features to `23` exact catalog species, resolves polygons to Alabama counties by bbox center, skips generic genus-level rows, and raises the Alabama matrix by `12` net verified-present determinations after unioning with existing source families.
+
+Survey-status lanes reviewed but not imported:
+
+- PestTracker and CAPS or NAPIS: public PestTracker map data was checked for `138` mapped pests across public map years `2017` through `2026`, including `36` exact catalog scientific-name matches. The public map output did not expose Alabama county FIPS rows for those reviewed maps, so no Alabama matrix rows were imported. CAPS status-code definitions remain useful because they distinguish positive and negative survey records where raw rows are accessible.
+- APHIS National Honey Bee Survey: the public CSV had `340` Alabama sample rows, but the `sampling_county` field was blank for the Alabama rows. This is reputable survey data, but it is not county-importable for the matrix in its public form.
 
 ## Remaining States
 

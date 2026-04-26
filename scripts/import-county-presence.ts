@@ -7,6 +7,7 @@ import { parse } from "csv-parse";
 import { parse as parseSync } from "csv-parse/sync";
 import { createInterface } from "node:readline";
 
+import { geoContains } from "d3-geo";
 import { feature } from "topojson-client";
 import countyTopology from "us-atlas/counties-10m.json";
 
@@ -54,6 +55,10 @@ const APHIS_FEDERAL_QUARANTINE_SERVICE_URL =
   "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1";
 const APHIS_FEDERAL_QUARANTINE_ALABAMA_QUERY_URL =
   "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=Quarantine_State_Abbr%3D%27AL%27&outFields=Quarantine_County,Quarantine_Program,Quarantine_Status,Quarantine_County_FIPS&returnGeometry=false&f=json";
+const USFS_CURRENT_INVASIVE_PLANTS_SERVICE_URL =
+  "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0";
+const USFS_ALABAMA_CURRENT_INVASIVE_PLANTS_QUERY_URL =
+  "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?where=FS_UNIT_NAME%3D%27NFS%20IN%20ALABAMA%20NATIONAL%20FOREST%27&outFields=ACCEPTED_SCIENTIFIC_NAME,ACCEPTED_COMMON_NAME,ACCEPTED_PLANT_CODE,DATE_COLLECTED,INFESTED_AREA,SITE_ID_FS,FS_UNIT_NAME&returnGeometry=true&outSR=4326&f=geojson";
 const ALIPC_LIST_URL = "https://www.invasiveplantatlas.org/list.html?id=71";
 const ALABAMA_PLANT_ATLAS_BASE_URL = "http://floraofalabama.org";
 const ALABAMA_PLANT_ATLAS_SOURCE_URL = `${ALABAMA_PLANT_ATLAS_BASE_URL}/Default.aspx`;
@@ -141,6 +146,24 @@ type ArcGisFeatureResponse = {
   }>;
 };
 
+type UsfsCurrentInvasivePlantsFeature = GeoJSON.Feature<
+  GeoJSON.Polygon | GeoJSON.MultiPolygon,
+  {
+    ACCEPTED_SCIENTIFIC_NAME?: string | null;
+    ACCEPTED_COMMON_NAME?: string | null;
+    ACCEPTED_PLANT_CODE?: string | null;
+    DATE_COLLECTED?: number | null;
+    INFESTED_AREA?: number | null;
+    SITE_ID_FS?: string | null;
+    FS_UNIT_NAME?: string | null;
+  }
+>;
+
+type UsfsCurrentInvasivePlantsResponse = GeoJSON.FeatureCollection<
+  GeoJSON.Polygon | GeoJSON.MultiPolygon,
+  UsfsCurrentInvasivePlantsFeature["properties"]
+>;
+
 type AfpeDataDictionaryRow = {
   field: string;
   Description: string;
@@ -157,6 +180,11 @@ type CountyGeometry = {
     name?: string;
   };
 };
+
+type CountyFeature = GeoJSON.Feature<
+  GeoJSON.Polygon | GeoJSON.MultiPolygon,
+  { name?: string; countyFips: string }
+>;
 
 function readJsonFile<T>(filePath: string) {
   return JSON.parse(readFileSync(filePath, "utf8")) as T;
@@ -380,6 +408,7 @@ function buildCountyLookup() {
   );
 
   const countyIndex: Record<string, CountyRecord> = {};
+  const countyFeatures: CountyFeature[] = [];
   const lookup = new Map<string, string[]>();
 
   countyCollection.features.forEach((countyFeature, index) => {
@@ -399,6 +428,15 @@ function buildCountyLookup() {
       neighborFips: [],
       center: [0, 0],
     };
+
+    countyFeatures.push({
+      ...countyFeature,
+      properties: {
+        ...(countyFeature.properties ?? {}),
+        countyFips,
+        name,
+      },
+    });
 
     const aliases = new Set([
       name,
@@ -421,7 +459,7 @@ function buildCountyLookup() {
     }
   });
 
-  return { countyIndex, lookup };
+  return { countyFeatures, countyIndex, lookup };
 }
 
 function resolveCountyFips(
@@ -528,6 +566,76 @@ function parseArcGisCountyFips(value: string | number | null | undefined) {
   }
 
   return digitsOnly.padStart(5, "0");
+}
+
+function flattenGeometryCoordinates(
+  coordinates: GeoJSON.Polygon["coordinates"] | GeoJSON.MultiPolygon["coordinates"],
+  output: Array<[number, number]> = [],
+) {
+  for (const coordinateSet of coordinates) {
+    if (
+      Array.isArray(coordinateSet) &&
+      coordinateSet.length >= 2 &&
+      typeof coordinateSet[0] === "number" &&
+      typeof coordinateSet[1] === "number"
+    ) {
+      output.push([coordinateSet[0], coordinateSet[1]]);
+      continue;
+    }
+
+    flattenGeometryCoordinates(
+      coordinateSet as GeoJSON.Polygon["coordinates"] | GeoJSON.MultiPolygon["coordinates"],
+      output,
+    );
+  }
+
+  return output;
+}
+
+function geometryBboxCenter(geometry: GeoJSON.Polygon | GeoJSON.MultiPolygon) {
+  const coordinates = flattenGeometryCoordinates(geometry.coordinates);
+  let minLongitude = Infinity;
+  let minLatitude = Infinity;
+  let maxLongitude = -Infinity;
+  let maxLatitude = -Infinity;
+
+  for (const [longitude, latitude] of coordinates) {
+    if (longitude < minLongitude) minLongitude = longitude;
+    if (longitude > maxLongitude) maxLongitude = longitude;
+    if (latitude < minLatitude) minLatitude = latitude;
+    if (latitude > maxLatitude) maxLatitude = latitude;
+  }
+
+  if (
+    !Number.isFinite(minLongitude) ||
+    !Number.isFinite(minLatitude) ||
+    !Number.isFinite(maxLongitude) ||
+    !Number.isFinite(maxLatitude)
+  ) {
+    return null;
+  }
+
+  return [(minLongitude + maxLongitude) / 2, (minLatitude + maxLatitude) / 2] as [
+    number,
+    number,
+  ];
+}
+
+function resolveFeatureCountyFips(
+  geometry: GeoJSON.Polygon | GeoJSON.MultiPolygon,
+  countyFeatures: CountyFeature[],
+) {
+  const countyFips = new Set<string>();
+  const center = geometryBboxCenter(geometry);
+  if (!center) return countyFips;
+
+  for (const countyFeature of countyFeatures) {
+    if (geoContains(countyFeature, center)) {
+      countyFips.add(countyFeature.properties.countyFips);
+    }
+  }
+
+  return countyFips;
 }
 
 async function loadNasArchiveCountyCoverage(
@@ -1380,11 +1488,85 @@ async function loadAphisFederalQuarantineCountyCoverage(
   return imported;
 }
 
+async function loadUsfsCurrentInvasivePlantCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  countyFeatures: CountyFeature[],
+  lower48CountyFips: Set<string>,
+) {
+  const payload = curlJson<UsfsCurrentInvasivePlantsResponse>(
+    USFS_ALABAMA_CURRENT_INVASIVE_PLANTS_QUERY_URL,
+    { timeoutSeconds: "120" },
+  );
+  const imported = new Map<string, ImportedCountyCoverage>();
+  const skippedNames = new Map<string, number>();
+  let matchedFeatureRows = 0;
+  let unresolvedCountyRows = 0;
+
+  for (const sourceFeature of payload.features ?? []) {
+    const scientificName = canonicalScientificName(
+      sourceFeature.properties?.ACCEPTED_SCIENTIFIC_NAME ?? "",
+    );
+    const target = targetLookup.get(scientificName);
+    if (!target) {
+      if (scientificName) {
+        skippedNames.set(scientificName, (skippedNames.get(scientificName) ?? 0) + 1);
+      }
+      continue;
+    }
+
+    const countyFips = [...resolveFeatureCountyFips(sourceFeature.geometry, countyFeatures)].filter(
+      (fips) => fips.startsWith("01") && lower48CountyFips.has(fips),
+    );
+
+    if (countyFips.length === 0) {
+      unresolvedCountyRows += 1;
+      continue;
+    }
+
+    matchedFeatureRows += 1;
+    const existing = imported.get(target.speciesId) ?? {
+      countyFips: new Set<string>(),
+      countyDataSources: [
+        {
+          source: "USFS Current Invasive Plant Locations",
+          matchType: "scientific-exact",
+          externalId: target.scientificName,
+          url: USFS_CURRENT_INVASIVE_PLANTS_SERVICE_URL,
+        },
+      ],
+    };
+
+    for (const fips of countyFips) {
+      existing.countyFips.add(fips);
+    }
+    imported.set(target.speciesId, existing);
+  }
+
+  const distinctCountyRows = [...imported.values()].reduce(
+    (total, coverage) => total + coverage.countyFips.size,
+    0,
+  );
+
+  console.log(
+    `Loaded ${imported.size} species from USFS current invasive plant locations with ${distinctCountyRows} distinct Alabama county rows from ${matchedFeatureRows} matched features (${unresolvedCountyRows} unresolved county rows).`,
+  );
+
+  if (skippedNames.size > 0) {
+    const skippedSummary = [...skippedNames.entries()]
+      .sort(([left], [right]) => left.localeCompare(right))
+      .map(([name, count]) => `${name} (${count})`)
+      .join(", ");
+    console.log(`Skipped USFS invasive plant names without exact catalog targets: ${skippedSummary}`);
+  }
+
+  return imported;
+}
+
 async function main() {
   const usRiis = readJsonFile<UsRiisSnapshotFile>(US_RIIS_PATH);
   const targets = buildTargets(usRiis);
   const targetLookup = buildTargetLookup(targets);
-  const { countyIndex, lookup: countyLookup } = buildCountyLookup();
+  const { countyFeatures, countyIndex, lookup: countyLookup } = buildCountyLookup();
   const lower48CountyFips = new Set(Object.keys(countyIndex));
   const existingSnapshot = readJsonFile<CountyCoverageSnapshotFile>(OUTPUT_PATH);
   const existingCoverageBySpeciesId = new Map(
@@ -1432,6 +1614,12 @@ async function main() {
     loadIdigbioAlabamaPreservedSpecimenCoverage();
   const aphisFederalQuarantineCoverage =
     await loadAphisFederalQuarantineCountyCoverage(targetLookup, lower48CountyFips);
+  const usfsCurrentInvasivePlantCoverage =
+    await loadUsfsCurrentInvasivePlantCountyCoverage(
+      targetLookup,
+      countyFeatures.filter((county) => county.properties.countyFips.startsWith("01")),
+      lower48CountyFips,
+    );
 
   console.log(`Loaded ${targets.length} import targets.`);
 
@@ -1453,6 +1641,7 @@ async function main() {
             "GBIF preserved specimen records",
             "iDigBio preserved specimen records",
             "APHIS Federal Quarantine county layer",
+            "USFS Current Invasive Plant Locations",
           ].includes(source.source),
       )),
     ];
@@ -1561,6 +1750,17 @@ async function main() {
       );
     }
 
+    const usfsCurrentInvasivePlantCoverageForSpecies =
+      usfsCurrentInvasivePlantCoverage.get(target.speciesId);
+    if (usfsCurrentInvasivePlantCoverageForSpecies) {
+      for (const fips of usfsCurrentInvasivePlantCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...usfsCurrentInvasivePlantCoverageForSpecies.countyDataSources,
+      );
+    }
+
     const uniqueSources = countyDataSources.filter(
       (source, sourceIndex, sources) =>
         sources.findIndex(
@@ -1617,6 +1817,7 @@ async function main() {
       "GBIF.org. 2026. GBIF occurrence search. Preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
       "iDigBio. 2026. iDigBio Search API. Preserved specimen records for Alabama, United States. Available online at https://search.idigbio.org/v2/search/records.",
       "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
+      "USDA Forest Service. 2026. EDW current invasive plant locations FeatureServer layer, filtered to NFS in Alabama National Forest. Available online at https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,
