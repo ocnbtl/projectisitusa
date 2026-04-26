@@ -82,6 +82,16 @@ That is intentionally smaller than the profile-writing chunks because county rev
    - structured enough to evaluate for pipeline import
 7. After the source path is clear, decide whether a pipeline follow-up is needed to reduce gray counties in production.
 
+## Pipeline Validation
+
+After source imports, manual county-presence overrides, non-presence status overrides, or generated matrix changes, run the focused data-integrity checker:
+
+```bash
+npm run check:data-integrity
+```
+
+The checker verifies generated species IDs and slugs, runtime presence rows, explorer presence indexes, source snapshot county FIPS values, source-family counts, manual presence overrides, non-presence status overrides, and the Alabama county-species matrix summary. It is meant to catch source-count drift, broken IDs, invalid county FIPS values, and status conflicts before generated JSON diffs are committed.
+
 ## Status Labels
 
 - `not-started`: no meaningful source review yet

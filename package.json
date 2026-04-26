@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "check:data-integrity": "node --import tsx scripts/check-data-integrity.ts",
     "check:profiles": "node --import tsx scripts/check-curated-profiles.ts",
     "county-audit:progress": "node --import tsx scripts/county-audit-progress.ts",
     "build:county-matrix": "node --import tsx scripts/build-state-coverage-matrix.ts",
