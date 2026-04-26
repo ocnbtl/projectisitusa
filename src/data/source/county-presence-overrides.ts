@@ -51,7 +51,7 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
   },
   {
     speciesId: "USRIIS-L48-Bacteria470",
-    countyFips: ["01003"],
+    countyFips: ["01003", "01097"],
     countyDataSources: [
       {
         source: "Alabama Department of Agriculture and Industries",
@@ -64,6 +64,98 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
         matchType: "manual-authoritative",
         externalId: "citrus-canker-xanthomonas-citri-synonym",
         url: "https://www.aphis.usda.gov/plant-pests-diseases/citrus-diseases/citrus-canker",
+      },
+      {
+        source: "Alabama Department of Agriculture and Industries",
+        matchType: "manual-authoritative",
+        externalId: "citrus-canker-mobile-county-2025",
+        url: "https://agi.alabama.gov/plantprotection/2025/11/citrus-canker-detected-in-mobile-county/",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Plantae6937",
+    countyFips: ["01003"],
+    countyDataSources: [
+      {
+        source: "SERNEC",
+        matchType: "manual-authoritative",
+        externalId: "casuarina-equisetifolia-baldwin-ncu-00096327",
+        url: "https://sernecportal.org/portal/collections/individual/index.php?occid=14386315",
+      },
+      {
+        source: "SERNEC",
+        matchType: "manual-authoritative",
+        externalId: "casuarina-equisetifolia-baldwin-ncu-00096326",
+        url: "https://sernecportal.org/portal/collections/individual/index.php?occid=14386322",
+      },
+    ],
+  },
+  {
+    speciesId: "popillia-japonica",
+    countyFips: [
+      "01001", "01007", "01009", "01011", "01013", "01015", "01017", "01019",
+      "01021", "01027", "01029", "01033", "01035", "01037", "01043", "01049",
+      "01051", "01055", "01057", "01059", "01063", "01071", "01073", "01075",
+      "01077", "01079", "01081", "01083", "01085", "01087", "01089", "01093",
+      "01095", "01101", "01103", "01105", "01107", "01109", "01111", "01113",
+      "01115", "01117", "01119", "01121", "01123", "01125", "01127", "01133",
+    ],
+    countyDataSources: [
+      {
+        source: "USFS Alien Forest Pest Explorer",
+        matchType: "manual-authoritative",
+        externalId: "afpe-popillia-japonica-alabama-counties",
+        url: "https://research.fs.usda.gov/nrs/products/dataandtools/alien-forest-pest-explorer",
+      },
+    ],
+  },
+  {
+    speciesId: "cryphonectria-parasitica",
+    countyFips: [
+      "01001", "01005", "01007", "01009", "01011", "01015", "01019", "01021",
+      "01023", "01027", "01029", "01031", "01033", "01035", "01037", "01043",
+      "01045", "01047", "01049", "01055", "01057", "01059", "01067", "01071",
+      "01073", "01077", "01079", "01083", "01085", "01089", "01095", "01099",
+      "01103", "01105", "01109", "01111", "01115", "01117", "01121", "01123",
+      "01125", "01133",
+    ],
+    countyDataSources: [
+      {
+        source: "USFS Alien Forest Pest Explorer",
+        matchType: "manual-authoritative",
+        externalId: "afpe-cryphonectria-parasitica-alabama-counties",
+        url: "https://research.fs.usda.gov/nrs/products/dataandtools/alien-forest-pest-explorer",
+      },
+    ],
+  },
+  {
+    speciesId: "discula-destructiva",
+    countyFips: [
+      "01015", "01019", "01029", "01031", "01049", "01055", "01071", "01081",
+      "01089", "01095",
+    ],
+    countyDataSources: [
+      {
+        source: "USFS Alien Forest Pest Explorer",
+        matchType: "manual-authoritative",
+        externalId: "afpe-discula-destructiva-alabama-counties",
+        url: "https://research.fs.usda.gov/nrs/products/dataandtools/alien-forest-pest-explorer",
+      },
+    ],
+  },
+  {
+    speciesId: "USRIIS-L48-Animalia1080",
+    countyFips: [
+      "01003", "01025", "01053", "01081", "01097", "01099", "01101", "01125",
+      "01127",
+    ],
+    countyDataSources: [
+      {
+        source: "USFS Alien Forest Pest Explorer",
+        matchType: "manual-authoritative",
+        externalId: "afpe-icerya-purchasi-alabama-counties",
+        url: "https://research.fs.usda.gov/nrs/products/dataandtools/alien-forest-pest-explorer",
       },
     ],
   },

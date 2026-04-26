@@ -44,6 +44,8 @@ const LAUREL_WILT_ALABAMA_QUERY_URL =
 const ALIPC_LIST_URL = "https://www.invasiveplantatlas.org/list.html?id=71";
 const ALABAMA_PLANT_ATLAS_BASE_URL = "http://floraofalabama.org";
 const ALABAMA_PLANT_ATLAS_SOURCE_URL = `${ALABAMA_PLANT_ATLAS_BASE_URL}/Default.aspx`;
+const ALABAMA_PLANT_ATLAS_API_BASE_URL =
+  "https://dev.alabama.plantatlas.usf.edu/api/services/app/PlantSpecies";
 const ALIPC_SNAPSHOT_PATH = resolve(
   process.cwd(),
   "src/data/source/state-denominator-snapshots/alipc-2012.json",
@@ -65,6 +67,8 @@ type ImportTarget = {
   speciesId: string;
   scientificName: string;
   curatedSubjectId?: number;
+  category?: string;
+  kingdom?: string;
 };
 
 type AlipcSnapshotFile = {
@@ -77,6 +81,17 @@ type AlipcSnapshotFile = {
 
 type EddMapsPresenceResponse = {
   us?: Record<string, unknown>;
+};
+
+type AlabamaPlantAtlasSearchResponse = {
+  result?: Array<{
+    id: number;
+    text: string;
+  }>;
+};
+
+type AlabamaPlantAtlasFipsResponse = {
+  result?: string[];
 };
 
 type NasArchiveOccurrence = {
@@ -137,6 +152,32 @@ function downloadFile(
 
 function canonicalScientificName(value: string) {
   return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function canonicalPlantAtlasScientificName(value: string) {
+  return canonicalScientificName(value).replace(/×/g, "x");
+}
+
+function curlJson<T>(
+  url: string,
+  options: { method?: "GET" | "POST"; timeoutSeconds?: string } = {},
+) {
+  const args = [
+    "-sL",
+    "--max-time",
+    options.timeoutSeconds ?? "45",
+    "-A",
+    USER_AGENT,
+  ];
+
+  if (options.method === "POST") {
+    args.push("-X", "POST", "-H", "Content-Type: application/json", "--data", "{}");
+  }
+
+  args.push(url);
+
+  const response = execFileSync("curl", args, { encoding: "utf8" });
+  return JSON.parse(response) as T;
 }
 
 const TARGET_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
@@ -361,6 +402,8 @@ function buildTargets(usRiis: UsRiisSnapshotFile): ImportTarget[] {
       speciesId,
       scientificName: record.scientificName,
       curatedSubjectId: curated?.eddMapsSubjectId,
+      category: curated?.category,
+      kingdom: record.kingdom,
     });
   }
 
@@ -370,6 +413,7 @@ function buildTargets(usRiis: UsRiisSnapshotFile): ImportTarget[] {
         speciesId: species.id,
         scientificName: species.scientificName,
         curatedSubjectId: species.eddMapsSubjectId,
+        category: species.category,
       });
     }
   }
@@ -676,39 +720,28 @@ async function loadAlipcEddMapsAlabamaCountyCoverage(
   return imported;
 }
 
-function parseAlabamaPlantAtlasCountyNames(html: string) {
-  if (!/<title>\s*[^<]*Species Page - APA: Alabama Plant Atlas/i.test(html)) {
-    return [];
-  }
-
-  const summaryMatch = html.match(
-    /<span>\s*Counties included on distribution map\s*<\/span>:\s*([\s\S]*?)<\/p>/i,
-  );
-  if (!summaryMatch) {
-    return [];
-  }
-
-  return stripHtml(summaryMatch[1])
-    .split(",")
-    .map((countyName) => countyName.trim())
-    .filter(Boolean);
-}
-
-function parseAlabamaPlantAtlasPlantId(html: string) {
-  return html.match(/action="\/Plant\.aspx\?id=(\d+)"/i)?.[1] ?? null;
-}
-
-function buildAlabamaPlantAtlasTargets(targetLookup: Map<string, ImportTarget>) {
+function buildAlabamaPlantAtlasTargets(
+  targets: ImportTarget[],
+  targetLookup: Map<string, ImportTarget>,
+) {
   const seenSpeciesIds = new Set<string>();
-  const targets: Array<ImportTarget & { queryNames: string[] }> = [];
-  let ambiguousRows = 0;
-  let unmatchedRows = 0;
+  const plantTargets = new Map<string, ImportTarget & { queryNames: string[] }>();
+
+  for (const target of targets) {
+    if (target.kingdom !== "Plantae" && target.category !== "plants") {
+      continue;
+    }
+
+    plantTargets.set(target.speciesId, {
+      ...target,
+      queryNames: [target.scientificName],
+    });
+  }
 
   for (const entry of stateSpeciesDenominators.filter(
-    (denominator) => denominator.stateCode === "AL" && denominator.listId === ALIPC_LIST_ID,
+    (denominator) => denominator.stateCode === "AL",
   )) {
     if (entry.scientificName.toLowerCase().includes("spp")) {
-      ambiguousRows += 1;
       continue;
     }
 
@@ -717,102 +750,117 @@ function buildAlabamaPlantAtlasTargets(targetLookup: Map<string, ImportTarget>) 
       .map((name) => targetLookup.get(canonicalScientificName(name)))
       .find((candidate): candidate is ImportTarget => Boolean(candidate));
 
-    if (!target) {
-      unmatchedRows += 1;
+    if (!target || !plantTargets.has(target.speciesId)) {
       continue;
     }
 
-    if (seenSpeciesIds.has(target.speciesId)) {
-      continue;
+    const plantTarget = plantTargets.get(target.speciesId)!;
+    for (const queryName of queryNames) {
+      if (!plantTarget.queryNames.includes(queryName)) {
+        plantTarget.queryNames.push(queryName);
+      }
     }
-
-    seenSpeciesIds.add(target.speciesId);
-    targets.push({
-      ...target,
-      queryNames,
-    });
   }
 
+  const atlasTargets = [...plantTargets.values()]
+    .filter((target) => {
+      if (seenSpeciesIds.has(target.speciesId)) {
+        return false;
+      }
+      seenSpeciesIds.add(target.speciesId);
+      return true;
+    })
+    .sort((left, right) => left.scientificName.localeCompare(right.scientificName));
+
   console.log(
-    `Prepared ${targets.length} Alabama Plant Atlas targets (${unmatchedRows} unmatched, ${ambiguousRows} ambiguous skipped).`,
+    `Prepared ${atlasTargets.length} Alabama Plant Atlas catalog plant targets.`,
   );
 
-  return targets;
+  return atlasTargets;
+}
+
+function findAlabamaPlantAtlasExactMatch(queryName: string) {
+  const payload = curlJson<AlabamaPlantAtlasSearchResponse>(
+    `${ALABAMA_PLANT_ATLAS_API_BASE_URL}/SearchSciName?q=${encodeURIComponent(queryName)}`,
+    { method: "POST" },
+  );
+  const expectedName = canonicalPlantAtlasScientificName(queryName);
+
+  return (
+    (payload.result ?? []).find(
+      (entry) => canonicalPlantAtlasScientificName(entry.text) === expectedName,
+    ) ?? null
+  );
+}
+
+function loadAlabamaPlantAtlasCountyFips(
+  plantId: number,
+  lower48CountyFips: Set<string>,
+) {
+  const payload = curlJson<AlabamaPlantAtlasFipsResponse>(
+    `${ALABAMA_PLANT_ATLAS_API_BASE_URL}/GetDistributionFIPSForSpecies?id=${plantId}`,
+  );
+
+  return [
+    ...new Set(
+      (payload.result ?? [])
+        .map((fips) => fips.padStart(5, "0"))
+        .filter((fips) => fips.startsWith("01") && lower48CountyFips.has(fips)),
+    ),
+  ].sort();
 }
 
 async function loadAlabamaPlantAtlasCountyCoverage(
+  targets: ImportTarget[],
   targetLookup: Map<string, ImportTarget>,
-  countyLookup: Map<string, string[]>,
   lower48CountyFips: Set<string>,
 ) {
   const imported = new Map<string, ImportedCountyCoverage>();
-  const targets = buildAlabamaPlantAtlasTargets(targetLookup);
+  const atlasTargets = buildAlabamaPlantAtlasTargets(targets, targetLookup);
+  let matchedSpecies = 0;
   let matchedCountyRows = 0;
-  let unresolvedCountyRows = 0;
-  let speciesWithoutPage = 0;
+  let speciesWithoutExactMatch = 0;
+  let speciesWithoutCountyFips = 0;
 
-  await mapPool(targets, 4, async (target) => {
-    let matchedPlantId: string | null = null;
-    const countyFips = new Set<string>();
+  await mapPool(atlasTargets, 4, async (target) => {
+    let exactMatch: { id: number; text: string } | null = null;
 
     for (const queryName of target.queryNames) {
-      const url = `${ALABAMA_PLANT_ATLAS_BASE_URL}/Results.aspx?q=${encodeURIComponent(
-        queryName,
-      ).replace(/%20/g, "+")}`;
-      const html = execFileSync(
-        "curl",
-        ["-sL", "--max-time", "45", "-A", USER_AGENT, url],
-        { encoding: "utf8" },
-      );
-      const countyNames = parseAlabamaPlantAtlasCountyNames(html);
-      if (countyNames.length === 0) {
-        continue;
+      exactMatch = findAlabamaPlantAtlasExactMatch(queryName);
+      if (exactMatch) {
+        break;
       }
-
-      matchedPlantId = parseAlabamaPlantAtlasPlantId(html);
-      for (const countyName of countyNames) {
-        const resolvedFips = resolveCountyFips("AL", countyName, countyLookup);
-        if (!resolvedFips || !lower48CountyFips.has(resolvedFips)) {
-          unresolvedCountyRows += 1;
-          continue;
-        }
-
-        countyFips.add(resolvedFips);
-      }
-      break;
     }
 
-    matchedCountyRows += countyFips.size;
-
-    if (countyFips.size === 0) {
-      speciesWithoutPage += 1;
-      console.log(
-        `Loaded Alabama Plant Atlas coverage for ${target.scientificName}: 0 counties`,
-      );
+    if (!exactMatch) {
+      speciesWithoutExactMatch += 1;
       return;
     }
 
+    const countyFips = loadAlabamaPlantAtlasCountyFips(exactMatch.id, lower48CountyFips);
+    matchedCountyRows += countyFips.length;
+
+    if (countyFips.length === 0) {
+      speciesWithoutCountyFips += 1;
+      return;
+    }
+
+    matchedSpecies += 1;
     imported.set(target.speciesId, {
-      countyFips,
+      countyFips: new Set(countyFips),
       countyDataSources: [
         {
           source: "Alabama Plant Atlas",
           matchType: "scientific-exact",
-          externalId: matchedPlantId ?? target.scientificName,
-          url: matchedPlantId
-            ? `${ALABAMA_PLANT_ATLAS_BASE_URL}/Plant.aspx?id=${matchedPlantId}`
-            : ALABAMA_PLANT_ATLAS_SOURCE_URL,
+          externalId: String(exactMatch.id),
+          url: `${ALABAMA_PLANT_ATLAS_BASE_URL}/Plant.aspx?id=${exactMatch.id}`,
         },
       ],
     });
-
-    console.log(
-      `Loaded Alabama Plant Atlas coverage for ${target.scientificName}: ${countyFips.size} counties`,
-    );
   });
 
   console.log(
-    `Loaded ${imported.size} species from Alabama Plant Atlas county maps with ${matchedCountyRows} matched county rows (${unresolvedCountyRows} unresolved county rows skipped, ${speciesWithoutPage} species without county pages).`,
+    `Loaded ${matchedSpecies} species from Alabama Plant Atlas county maps with ${matchedCountyRows} matched county rows (${speciesWithoutExactMatch} species without exact Plant Atlas matches, ${speciesWithoutCountyFips} exact matches without Alabama county FIPS).`,
   );
 
   return imported;
@@ -1094,8 +1142,8 @@ async function main() {
     lower48CountyFips,
   );
   const alabamaPlantAtlasCountyCoverage = await loadAlabamaPlantAtlasCountyCoverage(
+    targets,
     targetLookup,
-    countyLookup,
     lower48CountyFips,
   );
   const afcCogongrassCoverage = await loadAfcCogongrassCountyCoverage(
