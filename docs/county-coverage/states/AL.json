@@ -13,7 +13,7 @@
     "counties": "src/data/generated/counties.json",
     "presence": "src/data/generated/presence.json",
     "nonPresenceOverrides": "src/data/source/county-species-status-overrides.ts",
-    "countyPresenceSnapshotDate": "2026-04-26T06:50:30.056Z"
+    "countyPresenceSnapshotDate": "2026-04-26T07:22:11.327Z"
   },
   "target": {
     "knownPercent": 90,
@@ -26,11 +26,11 @@
     "totalDeterminations": 167768,
     "targetKnownDeterminationsPerCounty": 2254,
     "targetKnownDeterminationsTotal": 151018,
-    "presentVerifiedDeterminations": 10455,
+    "presentVerifiedDeterminations": 10458,
     "verifiedAbsentDeterminations": 0,
     "notDetectedDeterminations": 8,
-    "knownDeterminations": 10463,
-    "unknownDeterminations": 157305,
+    "knownDeterminations": 10466,
+    "unknownDeterminations": 157302,
     "knownPercent": 6.24,
     "countiesAtTarget": 0
   },
@@ -6881,6 +6881,7 @@
         "neoergasilus-japonicus",
         "nepeta-cataria",
         "nerium-oleander",
+        "oreochromis-aureus",
         "oreochromis-mossambicus",
         "oreochromis-niloticus",
         "oreochromis-urolepis",
@@ -7022,10 +7023,10 @@
       ],
       "verifiedAbsentSpeciesIds": [],
       "notDetectedSpeciesIds": [],
-      "knownDeterminations": 371,
-      "unknownDeterminations": 2133,
-      "knownPercent": 14.82,
-      "targetGap": 1883
+      "knownDeterminations": 372,
+      "unknownDeterminations": 2132,
+      "knownPercent": 14.86,
+      "targetGap": 1882
     },
     {
       "countyFips": "01083",
@@ -7526,6 +7527,7 @@
         "cynodon-dactylon",
         "cyperus-iria",
         "cyperus-rotundus",
+        "cyprinus-rubrofuscus",
         "dactylis-glomerata",
         "dactyloctenium-aegyptium",
         "datura-stramonium",
@@ -7691,10 +7693,10 @@
       ],
       "verifiedAbsentSpeciesIds": [],
       "notDetectedSpeciesIds": [],
-      "knownDeterminations": 203,
-      "unknownDeterminations": 2301,
-      "knownPercent": 8.11,
-      "targetGap": 2051
+      "knownDeterminations": 204,
+      "unknownDeterminations": 2300,
+      "knownPercent": 8.15,
+      "targetGap": 2050
     },
     {
       "countyFips": "01091",
@@ -8307,6 +8309,7 @@
         "cyperus-iria",
         "cyperus-rotundus",
         "cyperus-sanguinolentus",
+        "cyprinus-rubrofuscus",
         "cyrtomium-falcatum",
         "dactylis-glomerata",
         "dactyloctenium-aegyptium",
@@ -8625,10 +8628,10 @@
       ],
       "verifiedAbsentSpeciesIds": [],
       "notDetectedSpeciesIds": [],
-      "knownDeterminations": 426,
-      "unknownDeterminations": 2078,
-      "knownPercent": 17.01,
-      "targetGap": 1828
+      "knownDeterminations": 427,
+      "unknownDeterminations": 2077,
+      "knownPercent": 17.05,
+      "targetGap": 1827
     },
     {
       "countyFips": "01099",
@@ -22110,11 +22113,14 @@
       "scientificName": "Cyprinus rubrofuscus",
       "category": "wildlife",
       "profileType": "registry",
-      "presentVerifiedCountyFips": [],
+      "presentVerifiedCountyFips": [
+        "01089",
+        "01097"
+      ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 0,
-      "unknownCountyCount": 67
+      "knownCountyCount": 2,
+      "unknownCountyCount": 65
     },
     {
       "speciesId": "cyrtomium-falcatum",
@@ -37682,11 +37688,13 @@
       "scientificName": "Oreochromis aureus",
       "category": "wildlife",
       "profileType": "curated",
-      "presentVerifiedCountyFips": [],
+      "presentVerifiedCountyFips": [
+        "01081"
+      ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 0,
-      "unknownCountyCount": 67
+      "knownCountyCount": 1,
+      "unknownCountyCount": 66
     },
     {
       "speciesId": "oreochromis-mossambicus",

@@ -15,7 +15,7 @@ These are the six lower-48 states previously flagged as source-completeness gaps
 
 ### Alabama Latest Update, 2026-04-26
 
-The Alabama row above still carries older matrix counts in its long-form history. Current regenerated outputs supersede those counts: Alabama now has `790` distinct live mapped species, `156.04` average mapped species per county, `10455` verified-present determinations, `8` survey-area not-detected determinations, and `157305` unknown determinations out of `167768`. That is `6.24%` known. No verified-absent determinations have been added yet.
+The Alabama row above still carries older matrix counts in its long-form history. Current regenerated outputs supersede those counts: Alabama now has `792` distinct live mapped species, `156.09` average mapped species per county, `10458` verified-present determinations, `8` survey-area not-detected determinations, and `157302` unknown determinations out of `167768`. That is `6.24%` known. No verified-absent determinations have been added yet.
 
 Recent source-family updates:
 
@@ -24,6 +24,7 @@ Recent source-family updates:
 - iDigBio preserved specimen records: `src/data/source/idigbio-alabama-preserved-specimens-snapshot.json` imports exact catalog scientific-name matches from Alabama preserved specimen records, accepting explicit county values or coordinates that resolve to one Alabama county. The raw iDigBio snapshot found `643` catalog species and `5352` Alabama county rows before merged-source unioning; generated county coverage carries `458` species from this source. Treat this as physical occurrence evidence, not proof of establishment, county invasive status, absence, or survey non-detection.
 - USFWS invasive carp eDNA sample layer: `src/data/source/county-species-status-overrides.ts` now includes `8` conservative `not-detected` survey-area records for bighead carp and silver carp county-species pairs with no conflicting current verified-present or positive eDNA evidence. These records are not countywide absence claims, and positive eDNA rows were not promoted to verified-present because the source warns that DNA can be transported or come from dead fish.
 - USFS Current Invasive Plant Locations: `scripts/import-county-presence.ts` now imports the public EDW current invasive plant polygon layer filtered to National Forest System land in Alabama. The import matched `1286` infestation features to `23` exact catalog species, resolves polygons to Alabama counties by bbox center, skips generic genus-level rows, and raises the Alabama matrix by `12` net verified-present determinations after unioning with existing source families.
+- USGS NAS live collection pages: `scripts/import-county-presence.ts` now includes a targeted supplement for reviewed Alabama ANS denominator gaps that are not fully represented in the local NAS Darwin Core archive import. The current supplement adds Blue Tilapia in Lee County from an established NAS row and Koi in Madison and Mobile counties from NAS collection rows. Failed, state-only, no-county, and no-Alabama rows are skipped, and Koi is treated as collection presence rather than establishment evidence.
 
 Survey-status lanes reviewed but not imported:
 

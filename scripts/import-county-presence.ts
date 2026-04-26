@@ -27,6 +27,8 @@ const EDDMAPS_SUBJECTS_URL =
   "https://api.bugwoodcloud.org/v2/occurrence/summary/subject?list=17";
 const NAS_ARCHIVE_URL = "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.331";
 const NAS_ARCHIVE_PATH = resolve("/tmp", "usgs-nas-dwca.zip");
+const NAS_COLLECTION_INFO_BASE_URL =
+  "https://nas.er.usgs.gov/queries/CollectionInfo.aspx";
 const SERNEC_PORTAL_URL =
   "https://sernecportal.org/portal/collections/harvestparams.php";
 const SERNEC_TABLE_URL =
@@ -125,6 +127,12 @@ type NasArchiveOccurrence = {
   stateProvince?: string;
   county?: string;
   scientificName?: string;
+};
+
+type NasLiveCollectionSupplement = {
+  scientificName: string;
+  speciesId: number;
+  allowedStatuses?: Set<string>;
 };
 
 type SernecAlabamaTarget = {
@@ -253,6 +261,18 @@ const TARGET_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
 const NAS_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
   "hydrilla verticillata verticillata": "hydrilla verticillata",
 };
+
+const NAS_LIVE_COLLECTION_SUPPLEMENTS: NasLiveCollectionSupplement[] = [
+  {
+    scientificName: "Oreochromis aureus",
+    speciesId: 463,
+    allowedStatuses: new Set(["established", "locally established"]),
+  },
+  {
+    scientificName: "Cyprinus rubrofuscus",
+    speciesId: 3294,
+  },
+];
 
 const SERNEC_ALABAMA_SPECIES_IDS = [
   "lonicera-japonica",
@@ -388,6 +408,45 @@ function extractSernecTable(html: string) {
   }
 
   return { headers, rows };
+}
+
+function extractNasCollectionRows(html: string) {
+  const tableStart = html.search(/<table[^>]*id="ContentPlaceHolder1_myGridView"/i);
+  if (tableStart === -1) {
+    throw new Error("NAS collection page did not expose the expected result table.");
+  }
+
+  const sqlStatementStart = html.indexOf('id="ContentPlaceHolder1_SQLstmt"', tableStart);
+  const tableHtml = html.slice(
+    tableStart,
+    sqlStatementStart === -1 ? undefined : sqlStatementStart,
+  );
+  const rows: Array<Record<string, string>> = [];
+  let headers: string[] = [];
+
+  for (const rowMatch of tableHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const rowHtml = rowMatch[1];
+    const headerCells = [...rowHtml.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((match) =>
+      stripHtml(match[1]),
+    );
+    if (headerCells.length > 0) {
+      headers = headerCells;
+      continue;
+    }
+
+    const cells = [...rowHtml.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((match) =>
+      stripHtml(match[1]),
+    );
+    if (headers.length === 0 || cells.length !== headers.length) {
+      continue;
+    }
+
+    rows.push(
+      Object.fromEntries(headers.map((header, index) => [header, cells[index] ?? ""])),
+    );
+  }
+
+  return rows;
 }
 
 function buildCountyLookup() {
@@ -717,6 +776,83 @@ async function loadNasArchiveCountyCoverage(
 
   console.log(
     `Loaded ${imported.size} species from the USGS NAS archive with ${matchedRows} matched county rows (${aliasMatchedRows} alias-matched, ${unresolvedCountyRows} unresolved county rows skipped).`,
+  );
+
+  return imported;
+}
+
+async function loadNasLiveCollectionSupplementCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  const imported = new Map<string, ImportedCountyCoverage>();
+  let matchedRows = 0;
+  let skippedRows = 0;
+
+  for (const supplement of NAS_LIVE_COLLECTION_SUPPLEMENTS) {
+    const target = targetLookup.get(canonicalScientificName(supplement.scientificName));
+    if (!target) {
+      console.warn(
+        `Skipped NAS live collection supplement for missing target ${supplement.scientificName}.`,
+      );
+      continue;
+    }
+
+    const url = `${NAS_COLLECTION_INFO_BASE_URL}?SpeciesID=${supplement.speciesId}`;
+    const html = execFileSync(
+      "curl",
+      ["-k", "-sL", "-A", USER_AGENT, url],
+      { encoding: "utf8", maxBuffer: 5 * 1024 * 1024 },
+    );
+    const rows = extractNasCollectionRows(html);
+    const existing = imported.get(target.speciesId) ?? {
+      countyFips: new Set<string>(),
+      countyDataSources: [
+        {
+          source: "USGS NAS live collection pages",
+          matchType: "scientific-exact",
+          externalId: `SpeciesID ${supplement.speciesId}`,
+          url,
+        },
+      ],
+    };
+
+    for (const row of rows) {
+      const stateCode = (row.State ?? "").trim().toUpperCase();
+      const county = (row.County ?? "").trim();
+      const status = (row.Status ?? "").trim().toLowerCase();
+      if (stateCode !== "AL" || !county) continue;
+      if (status === "failed") {
+        skippedRows += 1;
+        continue;
+      }
+      if (supplement.allowedStatuses && !supplement.allowedStatuses.has(status)) {
+        skippedRows += 1;
+        continue;
+      }
+
+      const countyFips = resolveCountyFips(stateCode, county, countyLookup);
+      if (!countyFips || !lower48CountyFips.has(countyFips)) {
+        skippedRows += 1;
+        continue;
+      }
+
+      existing.countyFips.add(countyFips);
+      matchedRows += 1;
+    }
+
+    if (existing.countyFips.size > 0) {
+      imported.set(target.speciesId, existing);
+    }
+  }
+
+  const distinctCountyRows = [...imported.values()].reduce(
+    (total, coverage) => total + coverage.countyFips.size,
+    0,
+  );
+  console.log(
+    `Loaded ${imported.size} species from NAS live collection pages with ${distinctCountyRows} distinct Alabama county rows from ${matchedRows} matched records (${skippedRows} skipped records).`,
   );
 
   return imported;
@@ -1578,6 +1714,12 @@ async function main() {
     countyLookup,
     lower48CountyFips,
   );
+  const nasLiveCollectionSupplementCoverage =
+    await loadNasLiveCollectionSupplementCoverage(
+      targetLookup,
+      countyLookup,
+      lower48CountyFips,
+    );
   const sernecCountyCoverage = await loadSernecAlabamaCountyCoverage(
     targets,
     countyLookup,
@@ -1631,6 +1773,7 @@ async function main() {
         (source) =>
           ![
             "USGS NAS",
+            "USGS NAS live collection pages",
             "SERNEC",
             "EDDMapS ALIPC list",
             "Alabama Plant Atlas",
@@ -1656,6 +1799,15 @@ async function main() {
         countyFips.add(fips);
       }
       countyDataSources.push(...archiveCoverage.countyDataSources);
+    }
+
+    const nasLiveSupplementCoverage =
+      nasLiveCollectionSupplementCoverage.get(target.speciesId);
+    if (nasLiveSupplementCoverage) {
+      for (const fips of nasLiveSupplementCoverage.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(...nasLiveSupplementCoverage.countyDataSources);
     }
 
     const sernecCoverage = sernecCountyCoverage.get(target.speciesId);
@@ -1818,6 +1970,7 @@ async function main() {
       "iDigBio. 2026. iDigBio Search API. Preserved specimen records for Alabama, United States. Available online at https://search.idigbio.org/v2/search/records.",
       "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
       "USDA Forest Service. 2026. EDW current invasive plant locations FeatureServer layer, filtered to NFS in Alabama National Forest. Available online at https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0.",
+      "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database live collection pages for targeted Alabama ANS reconciliation gaps. Available online at https://nas.er.usgs.gov/queries/CollectionInfo.aspx.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,
