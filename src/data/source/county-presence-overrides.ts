@@ -116,6 +116,18 @@ export const countyPresenceOverrides: CountyCoverageSpeciesSnapshot[] = [
     ],
   },
   {
+    speciesId: "coptotermes-formosanus",
+    countyFips: ["01003", "01015", "01021", "01031", "01039", "01043", "01073", "01081", "01097"],
+    countyDataSources: [
+      {
+        source: "Auburn University thesis",
+        matchType: "manual-authoritative",
+        externalId: "formosan-termite-alabama-explicit-counties",
+        url: "https://auetd.auburn.edu/bitstream/handle/10415/3042/Charles%20Stephen-Thesis.pdf?isAllowed=y&sequence=2",
+      },
+    ],
+  },
+  {
     speciesId: "USRIIS-L48-Plantae7779",
     countyFips: ["01081"],
     countyDataSources: [

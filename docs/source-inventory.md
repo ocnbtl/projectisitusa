@@ -189,6 +189,12 @@ These sources are already referenced by current curated profiles, but the origin
 | https://extension.umn.edu/identify-invasive-species/jumping-worms | Jumping Worm | Clitellum cue, soil-impact framing, prevention guidance |
 | https://hort.extension.wisc.edu/articles/jumping-worms/ | Jumping Worm | Movement behavior, coffee-ground casting cue, disposal and sanitation framing |
 
+### Alabama county coverage follow-up, consulted on 2026-04-26
+
+| Source URL | Species using it | Used for |
+| --- | --- | --- |
+| https://auetd.auburn.edu/bitstream/handle/10415/3042/Charles%20Stephen-Thesis.pdf?isAllowed=y&sequence=2 | Formosan Termite | Explicit Alabama county records for Baldwin, Calhoun, Chilton, Coffee, Covington, Cullman, Jefferson, Lee, and Mobile counties. The source states 16 Alabama counties, but only these 9 county names were explicit in the reviewed text, so no other counties were imported. |
+
 ### Chunk 2E follow-up, consulted on 2026-04-16
 
 | Source URL | Species using it | Used for |
