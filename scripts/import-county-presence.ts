@@ -75,6 +75,10 @@ const GBIF_ALABAMA_SPECIMEN_SNAPSHOT_PATH = resolve(
   process.cwd(),
   "src/data/source/gbif-alabama-preserved-specimens-snapshot.json",
 );
+const IDIGBIO_ALABAMA_SPECIMEN_SNAPSHOT_PATH = resolve(
+  process.cwd(),
+  "src/data/source/idigbio-alabama-preserved-specimens-snapshot.json",
+);
 
 type EddMapsSummaryResponse = {
   columns: string[];
@@ -1276,6 +1280,34 @@ function loadGbifAlabamaPreservedSpecimenCoverage() {
   return imported;
 }
 
+function loadIdigbioAlabamaPreservedSpecimenCoverage() {
+  const imported = new Map<string, ImportedCountyCoverage>();
+  if (!existsSync(IDIGBIO_ALABAMA_SPECIMEN_SNAPSHOT_PATH)) {
+    console.log("Skipped iDigBio Alabama preserved specimen coverage: snapshot missing.");
+    return imported;
+  }
+
+  const snapshot = readJsonFile<CountyCoverageSnapshotFile>(
+    IDIGBIO_ALABAMA_SPECIMEN_SNAPSHOT_PATH,
+  );
+  let countyRows = 0;
+
+  for (const record of snapshot.species) {
+    const countyFips = new Set(record.countyFips);
+    countyRows += countyFips.size;
+    imported.set(record.speciesId, {
+      countyFips,
+      countyDataSources: record.countyDataSources,
+    });
+  }
+
+  console.log(
+    `Loaded ${imported.size} species from iDigBio Alabama preserved specimen snapshot with ${countyRows} county rows.`,
+  );
+
+  return imported;
+}
+
 async function loadAphisFederalQuarantineCountyCoverage(
   targetLookup: Map<string, ImportTarget>,
   lower48CountyFips: Set<string>,
@@ -1396,6 +1428,8 @@ async function main() {
     await loadAlienForestPestExplorerCountyCoverage(targetLookup, lower48CountyFips);
   const gbifAlabamaPreservedSpecimenCoverage =
     loadGbifAlabamaPreservedSpecimenCoverage();
+  const idigbioAlabamaPreservedSpecimenCoverage =
+    loadIdigbioAlabamaPreservedSpecimenCoverage();
   const aphisFederalQuarantineCoverage =
     await loadAphisFederalQuarantineCountyCoverage(targetLookup, lower48CountyFips);
 
@@ -1417,6 +1451,7 @@ async function main() {
             "Laurel Wilt public county layer",
             "USFS Alien Forest Pest Explorer",
             "GBIF preserved specimen records",
+            "iDigBio preserved specimen records",
             "APHIS Federal Quarantine county layer",
           ].includes(source.source),
       )),
@@ -1504,6 +1539,17 @@ async function main() {
       );
     }
 
+    const idigbioAlabamaPreservedSpecimenCoverageForSpecies =
+      idigbioAlabamaPreservedSpecimenCoverage.get(target.speciesId);
+    if (idigbioAlabamaPreservedSpecimenCoverageForSpecies) {
+      for (const fips of idigbioAlabamaPreservedSpecimenCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...idigbioAlabamaPreservedSpecimenCoverageForSpecies.countyDataSources,
+      );
+    }
+
     const aphisFederalQuarantineCoverageForSpecies =
       aphisFederalQuarantineCoverage.get(target.speciesId);
     if (aphisFederalQuarantineCoverageForSpecies) {
@@ -1569,6 +1615,7 @@ async function main() {
       "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",
       "Fei, S.; Morin, R.; Li, Y.; Kong, N. N.; Crocker, S.; Krist, F.; Liebhold, A.; Grong, K. A. 2024. Alien Forest Pest Detection by Counties in the United States. Purdue University Research Repository. doi:10.4231/HWQF-V087.",
       "GBIF.org. 2026. GBIF occurrence search. Preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
+      "iDigBio. 2026. iDigBio Search API. Preserved specimen records for Alabama, United States. Available online at https://search.idigbio.org/v2/search/records.",
       "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
     ],
     snapshotDate: new Date().toISOString(),
