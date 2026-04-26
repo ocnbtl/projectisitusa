@@ -4,6 +4,7 @@ import { writeFile } from "node:fs/promises";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 import { parse } from "csv-parse";
+import { parse as parseSync } from "csv-parse/sync";
 import { createInterface } from "node:readline";
 
 import { feature } from "topojson-client";
@@ -41,6 +42,14 @@ const LAUREL_WILT_SERVICE_URL =
   "https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1";
 const LAUREL_WILT_ALABAMA_QUERY_URL =
   "https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1/query?where=STATE_NAME%3D%27Alabama%27%20AND%20lw_detection_year%20IS%20NOT%20NULL&outFields=NAME,STATE_NAME,STATE_FIPS,CNTY_FIPS,FIPS,lw_detection_year,DetectionDate&orderByFields=FIPS&returnGeometry=false&f=json";
+const AFPE_DATASET_URL = "https://purr.purdue.edu/publications/4479";
+const AFPE_BUNDLE_URL =
+  "https://purr.purdue.edu/publications/4479/serve/1?render=archive";
+const AFPE_ARCHIVE_PATH = resolve("/tmp", "afpe-pest-2023-counties.zip");
+const AFPE_COUNTIES_CSV_PATH =
+  "10_4231_HWQF-V087/AFPE_PEST_2023_counties.csv";
+const AFPE_DATA_DICTIONARY_CSV_PATH =
+  "10_4231_HWQF-V087/AFPE_PEST_2023_counties_data_dictionary.csv";
 const ALIPC_LIST_URL = "https://www.invasiveplantatlas.org/list.html?id=71";
 const ALABAMA_PLANT_ATLAS_BASE_URL = "http://floraofalabama.org";
 const ALABAMA_PLANT_ATLAS_SOURCE_URL = `${ALABAMA_PLANT_ATLAS_BASE_URL}/Default.aspx`;
@@ -120,6 +129,16 @@ type ArcGisFeatureResponse = {
   }>;
 };
 
+type AfpeDataDictionaryRow = {
+  field: string;
+  Description: string;
+};
+
+type AfpeCountyRow = Record<string, string | undefined> & {
+  STATE?: string;
+  FIPS?: string;
+};
+
 type CountyGeometry = {
   id: string;
   properties?: {
@@ -180,6 +199,13 @@ function curlJson<T>(
   return JSON.parse(response) as T;
 }
 
+function unzipArchiveFile(archivePath: string, filePath: string) {
+  return execFileSync("unzip", ["-p", archivePath, filePath], {
+    encoding: "utf8",
+    maxBuffer: 20 * 1024 * 1024,
+  });
+}
+
 const TARGET_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
   "euphorbia esula": "euphorbia virgata",
 };
@@ -228,6 +254,21 @@ const AFC_COGONGRASS_COUNTY_ALIASES: Record<string, string> = {
 
 const AFC_COGONGRASS_EXCLUDED_COUNTY_VALUES = new Set(["MS", "Forestry"]);
 const ALIPC_LIST_ID = "ALIPC-2012";
+const AFPE_CODE_TO_SCIENTIFIC_NAME: Record<string, string> = {
+  DCA12138: "Popillia japonica",
+  DCA22023: "Cryphonectria parasitica",
+  DCA21019: "Phytophthora cinnamomi",
+  DCA24031: "Raffaelea lauricola",
+  DCA25020: "Discula destructiva",
+  DCA14079: "Icerya purchasi",
+  DCA15087: "Agrilus planipennis",
+  DCA14089: "Aspidiotus duplex",
+  DCA24022: "Ophiostoma ulmi",
+  DCA12216: "Homadaula albizziae",
+  DCA15101: "Anarsia lineatella",
+  DCA22053: "Ophiognomonia clavigignenti-juglandacearum",
+  DCA17023: "Dryocosmus kuriphilus",
+};
 
 function resolveNasScientificName(value: string) {
   const normalized = canonicalScientificName(value);
@@ -1116,6 +1157,84 @@ async function loadLaurelWiltCountyCoverage(
   return imported;
 }
 
+async function loadAlienForestPestExplorerCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  lower48CountyFips: Set<string>,
+) {
+  downloadFile(AFPE_BUNDLE_URL, AFPE_ARCHIVE_PATH, { reuseExisting: true });
+
+  const dictionary = parseSync(
+    unzipArchiveFile(AFPE_ARCHIVE_PATH, AFPE_DATA_DICTIONARY_CSV_PATH),
+    { columns: true, bom: true, skip_empty_lines: true },
+  ) as AfpeDataDictionaryRow[];
+  const rows = parseSync(
+    unzipArchiveFile(AFPE_ARCHIVE_PATH, AFPE_COUNTIES_CSV_PATH),
+    { columns: true, bom: true, skip_empty_lines: true },
+  ) as AfpeCountyRow[];
+  const dictionaryByCode = new Map(
+    dictionary
+      .filter((row) => row.field.startsWith("DCA"))
+      .map((row) => [row.field, row.Description]),
+  );
+  const alabamaRows = rows.filter((row) => row.STATE === "01");
+
+  const imported = new Map<string, ImportedCountyCoverage>();
+  let matchedCountyRows = 0;
+  const skippedCodes: string[] = [];
+
+  for (const [code, scientificName] of Object.entries(AFPE_CODE_TO_SCIENTIFIC_NAME)) {
+    const target = targetLookup.get(canonicalScientificName(scientificName));
+    if (!target) {
+      skippedCodes.push(`${code} missing catalog target`);
+      continue;
+    }
+
+    const sourceCommonName = dictionaryByCode.get(code);
+    if (!sourceCommonName) {
+      skippedCodes.push(`${code} missing AFPE dictionary row`);
+      continue;
+    }
+
+    const countyFips = new Set(
+      alabamaRows
+        .filter((row) => row[code] === "1")
+        .map((row) => row.FIPS?.padStart(5, "0") ?? "")
+        .filter((fips) => fips.startsWith("01") && lower48CountyFips.has(fips)),
+    );
+
+    matchedCountyRows += countyFips.size;
+    if (countyFips.size === 0) {
+      continue;
+    }
+
+    imported.set(target.speciesId, {
+      countyFips,
+      countyDataSources: [
+        {
+          source: "USFS Alien Forest Pest Explorer",
+          matchType: "scientific-exact",
+          externalId: code,
+          url: AFPE_DATASET_URL,
+        },
+      ],
+    });
+
+    console.log(
+      `Loaded AFPE coverage for ${sourceCommonName} (${scientificName}): ${countyFips.size} Alabama counties`,
+    );
+  }
+
+  console.log(
+    `Loaded ${imported.size} species from Alien Forest Pest Explorer county detections with ${matchedCountyRows} matched Alabama county rows (${skippedCodes.length} skipped code mappings).`,
+  );
+
+  if (skippedCodes.length > 0) {
+    console.log(`Skipped AFPE code mappings: ${skippedCodes.join(", ")}`);
+  }
+
+  return imported;
+}
+
 async function main() {
   const usRiis = readJsonFile<UsRiisSnapshotFile>(US_RIIS_PATH);
   const targets = buildTargets(usRiis);
@@ -1160,6 +1279,8 @@ async function main() {
     countyLookup,
     lower48CountyFips,
   );
+  const alienForestPestExplorerCoverage =
+    await loadAlienForestPestExplorerCountyCoverage(targetLookup, lower48CountyFips);
 
   console.log(`Loaded ${targets.length} import targets.`);
 
@@ -1177,6 +1298,7 @@ async function main() {
             "Alabama Forestry Commission Cogongrass GIS",
             "APHIS Emerald Ash Borer county layer",
             "Laurel Wilt public county layer",
+            "USFS Alien Forest Pest Explorer",
           ].includes(source.source),
       )),
     ];
@@ -1241,6 +1363,17 @@ async function main() {
       countyDataSources.push(...laurelWiltCoverageForSpecies.countyDataSources);
     }
 
+    const alienForestPestExplorerCoverageForSpecies =
+      alienForestPestExplorerCoverage.get(target.speciesId);
+    if (alienForestPestExplorerCoverageForSpecies) {
+      for (const fips of alienForestPestExplorerCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...alienForestPestExplorerCoverageForSpecies.countyDataSources,
+      );
+    }
+
     const uniqueSources = countyDataSources.filter(
       (source, sourceIndex, sources) =>
         sources.findIndex(
@@ -1293,6 +1426,7 @@ async function main() {
       "Alabama Forestry Commission. 2026. Cogongrass occurrence GIS service. Available online at https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer.",
       "USDA APHIS. 2026. Emerald ash borer known infested counties FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9.",
       "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",
+      "Fei, S.; Morin, R.; Li, Y.; Kong, N. N.; Crocker, S.; Krist, F.; Liebhold, A.; Grong, K. A. 2024. Alien Forest Pest Detection by Counties in the United States. Purdue University Research Repository. doi:10.4231/HWQF-V087.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,

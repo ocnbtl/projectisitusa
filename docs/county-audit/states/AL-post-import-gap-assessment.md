@@ -6,17 +6,17 @@ Assessment date: `2026-04-25`
 
 Alabama is audit complete, but it is not denominator complete.
 
-Runtime data generated after the ALIPC EDDMapS import, generalized Alabama Plant Atlas import, and narrow pest overrides shows:
+Runtime data generated after the ALIPC EDDMapS import, generalized Alabama Plant Atlas import, and AFPE forest-pest importer shows:
 
 - Alabama county audit progress: `67/67` counties and `14/14` chunks complete.
-- Alabama live mapped species: `572` distinct species.
-- Alabama average county species count: `136.33`.
-- Alabama county-species matrix known determinations: `9134` verified present, `0` verified absent, `0` not detected, and `158634` unknown.
-- Alabama county-species matrix known percent: `5.44%` of `167768` county-species determinations.
-- Alabama category mix: still plant-heavy, but this pass added meaningful insect and disease signal from USFS Alien Forest Pest Explorer records.
+- Alabama live mapped species: `579` distinct species.
+- Alabama average county species count: `137.03`.
+- Alabama county-species matrix known determinations: `9181` verified present, `0` verified absent, `0` not detected, and `158587` unknown.
+- Alabama county-species matrix known percent: `5.47%` of `167768` county-species determinations.
+- Alabama category mix: still plant-heavy, but this pass added broader insect and disease signal from the USFS Alien Forest Pest Explorer dataset.
 - ALIPC denominator reconciliation: `91` list species, `78` catalog matched, `74` live mapped in Alabama, `4` catalog matched but unmapped, and `13` unmatched or ambiguous.
 - Alabama ANS denominator reconciliation: `90` Appendix 12.B species, `46` catalog matched, `40` live mapped in Alabama, `6` catalog matched but unmapped, and `44` unmatched or ambiguous.
-- National generated catalog: `2504` species, with `1388` mapped and `1116` unmatched.
+- National generated catalog: `2504` species, with `1391` mapped and `1113` unmatched.
 
 This is a major improvement from the earlier Alabama coverage gap, but it does not prove that Project Isitusa maps 90 percent or more of every invasive species present in Alabama.
 
@@ -32,7 +32,7 @@ The denominator problem is real because Alabama has multiple credible invasive-s
 | Alabama Aquatic Nuisance Species Management Plan | `90` non-native aquatic species found in Alabama in Appendix 12.B, including fish, plants, crustaceans, mollusks, mammals, pathogens, and other taxa | Partly importable through USGS NAS and some state plan context | Strong aquatic denominator. Current NAS import covers many but not all catalog-matched ANS plan species. Some plan species are not in the current US-RIIS lower-48 catalog or have taxonomy/name gaps. This corrects the earlier stale `81` count. |
 | Alabama Cooperative Extension invasive plant outreach | Active 2026 statewide invasive-plant education project and ornamental replacement guidance | Not county structured by itself | Useful for denominator and public-facing priority, but not production county evidence without county-specific records. |
 | Alabama Department of Agriculture and Industries plant protection notices | Species-specific county detections and quarantines, including citrus canker and Africanized honey bee reports | Manual or future regulatory-notice importer | Strong county-specific evidence when species exists in the catalog. Not yet a bulk source family. |
-| USFS Alien Forest Pest Explorer | County-level forest pest and tree disease detections | Importable as a future source-family importer, currently added as reviewed manual source-family overrides | Strong county-level pest/pathogen evidence. This pass added Japanese beetle, chestnut blight, dogwood anthracnose, and cottony cushion scale Alabama counties. |
+| USFS Alien Forest Pest Explorer | County-level forest pest and tree disease detections | Importable through the PURR county dataset | Strong county-level pest/pathogen evidence. The importer currently maps `13` reviewed catalog species and `173` Alabama county detections, including Japanese beetle, chestnut blight, littleleaf disease, laurel wilt, dogwood anthracnose, cottony cushion scale, emerald ash borer, camphor scale, Dutch elm disease, mimosa webworm, peach twig borer, butternut canker, and Asian chestnut gall wasp. |
 
 ## What Alabama Covers Well Now
 
@@ -40,7 +40,7 @@ Current Alabama live coverage is strongest for:
 
 - Widespread terrestrial plants with SERNEC, ALIPC-backed EDDMapS, and Alabama Plant Atlas support, including Japanese honeysuckle, cogongrass, kudzu, sericea lespedeza, Chinese privet, mimosa, Johnsongrass, Chinese wisteria, Japanese climbing fern, sacred bamboo, Japanese stiltgrass, multiflora rose, tree-of-heaven, Chinese tallow, Callery pear, English ivy, autumn olive, camphor tree, Chinese yam, Morrow's honeysuckle, Japanese barberry, and hundreds of other exact Plant Atlas catalog matches.
 - Aquatic species covered by USGS NAS and prior EDDMapS rows, including Asiatic clam, grass carp, alligatorweed, Eurasian watermilfoil, common carp, hydrilla, bighead carp, nutria, zebra mussel, Brazilian waterweed, water hyacinth, parrot feather, and several lower-count aquatic records.
-- Forest pest and disease signals from structured public layers and reviewed source-family overrides, including emerald ash borer, laurel wilt, Japanese beetle, chestnut blight, dogwood anthracnose, cottony cushion scale, and citrus canker.
+- Forest pest and disease signals from structured public layers and imported source-family records, including emerald ash borer, laurel wilt, Japanese beetle, chestnut blight, littleleaf disease, dogwood anthracnose, cottony cushion scale, camphor scale, Dutch elm disease, mimosa webworm, peach twig borer, butternut canker, Asian chestnut gall wasp, and citrus canker.
 - Feral swine statewide coverage from Outdoor Alabama.
 
 ## Confirmed Gaps Or Weak Spots
