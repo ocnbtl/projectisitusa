@@ -37,6 +37,8 @@ const AFC_COGONGRASS_SERVICE_URL =
   "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer";
 const AFC_COGONGRASS_COUNTY_QUERY_URL =
   "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer/2/query?where=1%3D1&returnDistinctValues=true&returnGeometry=false&outFields=County&f=json";
+const AFC_AERIAL_DETECTION_SERVICE_URL =
+  "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/AerialDetectionP/FeatureServer/0";
 const APHIS_EAB_SERVICE_URL =
   "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9";
 const APHIS_EAB_ALABAMA_QUERY_URL =
@@ -166,6 +168,11 @@ type ArcGisFeatureResponse = {
   features?: Array<{
     attributes?: Record<string, string | number | null | undefined>;
   }>;
+  error?: {
+    code?: number;
+    message?: string;
+    details?: string[];
+  };
 };
 
 type AphisHoneyBeeSurveyRow = {
@@ -335,6 +342,11 @@ const AFC_COGONGRASS_COUNTY_ALIASES: Record<string, string> = {
 
 const AFC_COGONGRASS_EXCLUDED_COUNTY_VALUES = new Set(["MS", "Forestry"]);
 const ALIPC_LIST_ID = "ALIPC-2012";
+const AFC_AERIAL_DETECTION_TYPE_TO_SCIENTIFIC_NAME: Record<string, string> = {
+  EAB: "Agrilus planipennis",
+  Cogongrass: "Imperata cylindrica",
+  "Laurel Wilt Disease": "Raffaelea lauricola",
+};
 const AFPE_CODE_TO_SCIENTIFIC_NAME: Record<string, string> = {
   DCA12138: "Popillia japonica",
   DCA22023: "Cryphonectria parasitica",
@@ -1368,6 +1380,89 @@ async function loadAfcCogongrassCountyCoverage(
   return imported;
 }
 
+async function loadAfcAerialDetectionCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  const imported = new Map<string, ImportedCountyCoverage>();
+  const reviewedTypes = Object.keys(AFC_AERIAL_DETECTION_TYPE_TO_SCIENTIFIC_NAME);
+  let totalRows = 0;
+  let unresolvedRows = 0;
+
+  for (const [typeDetected, scientificName] of Object.entries(
+    AFC_AERIAL_DETECTION_TYPE_TO_SCIENTIFIC_NAME,
+  )) {
+    const speciesId = requireTargetSpeciesId(targetLookup, scientificName);
+    const where = encodeURIComponent(`TypeDetected='${typeDetected}'`);
+    const url =
+      `${AFC_AERIAL_DETECTION_SERVICE_URL}/query?where=${where}` +
+      "&outFields=TypeDetected,County,FiscalYear,SurveyedDate,NoOfTrees,GroundCover,OBJECTID" +
+      "&returnGeometry=false&f=json&resultRecordCount=32000";
+    const payload = curlJson<ArcGisFeatureResponse>(url);
+    if (payload.error) {
+      throw new Error(
+        `AFC aerial detection query failed for ${typeDetected}: ${
+          payload.error.message ?? payload.error.code
+        }`,
+      );
+    }
+
+    const countyFips = new Set<string>();
+    let typeRows = 0;
+    let typeUnresolvedRows = 0;
+    for (const feature of payload.features ?? []) {
+      const countyName =
+        typeof feature.attributes?.County === "string"
+          ? feature.attributes.County.trim()
+          : null;
+      if (!countyName) {
+        typeUnresolvedRows += 1;
+        continue;
+      }
+
+      const resolvedFips = resolveCountyFips("AL", countyName, countyLookup);
+      if (!resolvedFips || !lower48CountyFips.has(resolvedFips)) {
+        typeUnresolvedRows += 1;
+        continue;
+      }
+
+      typeRows += 1;
+      countyFips.add(resolvedFips);
+    }
+
+    totalRows += typeRows;
+    unresolvedRows += typeUnresolvedRows;
+
+    if (countyFips.size > 0) {
+      imported.set(speciesId, {
+        countyFips,
+        countyDataSources: [
+          {
+            source: "Alabama Forestry Commission Aerial Detection layer",
+            matchType: "scientific-exact",
+            externalId: `${typeDetected} (${scientificName})`,
+            url: AFC_AERIAL_DETECTION_SERVICE_URL,
+          },
+        ],
+      });
+    }
+
+    console.log(
+      `Loaded AFC aerial detection coverage for ${scientificName}: ${countyFips.size} counties from ${typeRows} rows (${typeUnresolvedRows} unresolved rows skipped).`,
+    );
+  }
+
+  console.log(
+    `Reviewed AFC aerial detection codes ${reviewedTypes.join(", ")}; skipped SPB, IPS, Needle Blight, and Sawfly because they are not exact current catalog species matches.`,
+  );
+  console.log(
+    `Loaded AFC aerial detection coverage for ${imported.size} species from ${totalRows} matched rows (${unresolvedRows} unresolved rows skipped).`,
+  );
+
+  return imported;
+}
+
 async function loadAphisEabCountyCoverage(
   targetLookup: Map<string, ImportTarget>,
   countyLookup: Map<string, string[]>,
@@ -1906,6 +2001,11 @@ async function main() {
     countyLookup,
     lower48CountyFips,
   );
+  const afcAerialDetectionCoverage = await loadAfcAerialDetectionCountyCoverage(
+    targetLookup,
+    countyLookup,
+    lower48CountyFips,
+  );
   const aphisEabCoverage = await loadAphisEabCountyCoverage(
     targetLookup,
     countyLookup,
@@ -1953,6 +2053,7 @@ async function main() {
             "EDDMapS ALIPC list",
             "Alabama Plant Atlas",
             "Alabama Forestry Commission Cogongrass GIS",
+            "Alabama Forestry Commission Aerial Detection layer",
             "APHIS Emerald Ash Borer county layer",
             "Laurel Wilt public county layer",
             "USFS Alien Forest Pest Explorer",
@@ -2024,6 +2125,17 @@ async function main() {
         countyFips.add(fips);
       }
       countyDataSources.push(...afcCoverage.countyDataSources);
+    }
+
+    const afcAerialDetectionCoverageForSpecies =
+      afcAerialDetectionCoverage.get(target.speciesId);
+    if (afcAerialDetectionCoverageForSpecies) {
+      for (const fips of afcAerialDetectionCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...afcAerialDetectionCoverageForSpecies.countyDataSources,
+      );
     }
 
     const eabCoverage = aphisEabCoverage.get(target.speciesId);
@@ -2158,6 +2270,7 @@ async function main() {
       "Alabama Invasive Plant Council. 2012. List of Alabama's invasive plants by land-use and water-use categories, mirrored by Invasive Plant Atlas of the United States. EDDMapS county presence queried by subject ID from https://www.invasiveplantatlas.org/list.html?id=71.",
       "Alabama Plant Atlas. 2026. County distribution maps based on vouchered Alabama Herbarium Consortium specimens. Available online at http://floraofalabama.org/.",
       "Alabama Forestry Commission. 2026. Cogongrass occurrence GIS service. Available online at https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/Cogongrass/MapServer.",
+      "Alabama Forestry Commission. 2026. Aerial Detection FeatureServer layer for forest health and invasive plant detections. Available online at https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/AerialDetectionP/FeatureServer/0.",
       "USDA APHIS. 2026. Emerald ash borer known infested counties FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9.",
       "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",
       "Fei, S.; Morin, R.; Li, Y.; Kong, N. N.; Crocker, S.; Krist, F.; Liebhold, A.; Grong, K. A. 2024. Alien Forest Pest Detection by Counties in the United States. Purdue University Research Repository. doi:10.4231/HWQF-V087.",
