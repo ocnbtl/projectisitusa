@@ -61,6 +61,8 @@ const USFS_CURRENT_INVASIVE_PLANTS_SERVICE_URL =
   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0";
 const USFS_ALABAMA_CURRENT_INVASIVE_PLANTS_QUERY_URL =
   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0/query?where=FS_UNIT_NAME%3D%27NFS%20IN%20ALABAMA%20NATIONAL%20FOREST%27&outFields=ACCEPTED_SCIENTIFIC_NAME,ACCEPTED_COMMON_NAME,ACCEPTED_PLANT_CODE,DATE_COLLECTED,INFESTED_AREA,SITE_ID_FS,FS_UNIT_NAME&returnGeometry=true&outSR=4326&f=geojson";
+const APHIS_HONEY_BEE_SURVEY_DOWNLOAD_PAGE_URL =
+  "https://www.usbeedata.org/state_reports/public_download/";
 const ALIPC_LIST_URL = "https://www.invasiveplantatlas.org/list.html?id=71";
 const ALABAMA_PLANT_ATLAS_BASE_URL = "http://floraofalabama.org";
 const ALABAMA_PLANT_ATLAS_SOURCE_URL = `${ALABAMA_PLANT_ATLAS_BASE_URL}/Default.aspx`;
@@ -164,6 +166,13 @@ type ArcGisFeatureResponse = {
   features?: Array<{
     attributes?: Record<string, string | number | null | undefined>;
   }>;
+};
+
+type AphisHoneyBeeSurveyRow = {
+  sample_year?: string;
+  state_code?: string;
+  sampling_county_from_gps?: string;
+  varroa_per_100_bees?: string;
 };
 
 type UsfsCurrentInvasivePlantsFeature = GeoJSON.Feature<
@@ -1671,6 +1680,115 @@ async function loadAphisFederalQuarantineCountyCoverage(
   return imported;
 }
 
+function extractAphisHoneyBeeSurveyDownloadUrl(html: string) {
+  const hrefMatch = html.match(
+    /href=["']([^"']*UploadCSVFile_[^"']+)["'][^>]*>\s*Download\s*</i,
+  );
+  const rawUrl = hrefMatch?.[1];
+  if (!rawUrl) {
+    throw new Error("APHIS Honey Bee Survey page did not expose a CSV download link.");
+  }
+
+  return decodeHtmlEntities(rawUrl);
+}
+
+function loadAphisHoneyBeeSurveyVarroaCountyCoverage(
+  targetLookup: Map<string, ImportTarget>,
+  countyLookup: Map<string, string[]>,
+  lower48CountyFips: Set<string>,
+) {
+  const pageHtml = execFileSync(
+    "curl",
+    ["-sL", "--max-time", "45", "-A", USER_AGENT, APHIS_HONEY_BEE_SURVEY_DOWNLOAD_PAGE_URL],
+    { encoding: "utf8", maxBuffer: 5 * 1024 * 1024 },
+  );
+  const downloadUrl = extractAphisHoneyBeeSurveyDownloadUrl(pageHtml);
+  const csvText = execFileSync(
+    "curl",
+    ["-sL", "--max-time", "120", "-A", USER_AGENT, downloadUrl],
+    { encoding: "utf8", maxBuffer: 25 * 1024 * 1024 },
+  );
+  const csvLines = csvText.split(/\r?\n/);
+  const generatedLine = csvLines[0]?.trim() ?? "";
+  const coverageLine = csvLines[1]?.trim() ?? "";
+  const rows = parseSync(csvLines.slice(2).join("\n"), {
+    columns: true,
+    skip_empty_lines: true,
+  }) as AphisHoneyBeeSurveyRow[];
+
+  const speciesId = requireTargetSpeciesId(targetLookup, "Varroa destructor");
+  const countyFips = new Set<string>();
+  const unresolvedCountyNames = new Set<string>();
+  let positiveRows = 0;
+  let zeroRows = 0;
+  let skippedRows = 0;
+
+  for (const row of rows) {
+    if (row.state_code !== "AL") continue;
+
+    const countyName = row.sampling_county_from_gps?.trim();
+    const rawVarroaCount = row.varroa_per_100_bees?.trim();
+    if (!countyName || !rawVarroaCount) {
+      skippedRows += 1;
+      continue;
+    }
+
+    const varroaCount = Number(rawVarroaCount);
+    if (!Number.isFinite(varroaCount)) {
+      skippedRows += 1;
+      continue;
+    }
+
+    if (varroaCount === 0) {
+      zeroRows += 1;
+      continue;
+    }
+    if (varroaCount < 0) {
+      skippedRows += 1;
+      continue;
+    }
+
+    const resolvedFips = resolveCountyFips("AL", countyName, countyLookup);
+    if (!resolvedFips || !lower48CountyFips.has(resolvedFips)) {
+      unresolvedCountyNames.add(countyName);
+      skippedRows += 1;
+      continue;
+    }
+
+    positiveRows += 1;
+    countyFips.add(resolvedFips);
+  }
+
+  const imported = new Map<string, ImportedCountyCoverage>();
+  if (countyFips.size > 0) {
+    imported.set(speciesId, {
+      countyFips,
+      countyDataSources: [
+        {
+          source: "APHIS National Honey Bee Survey",
+          matchType: "scientific-exact",
+          externalId: "Varroa destructor",
+          url: APHIS_HONEY_BEE_SURVEY_DOWNLOAD_PAGE_URL,
+        },
+      ],
+    });
+  }
+
+  console.log(
+    `Loaded APHIS National Honey Bee Survey Varroa coverage: ${countyFips.size} Alabama counties from ${positiveRows} positive rows (${zeroRows} zero-count rows skipped for presence, ${skippedRows} other rows skipped).`,
+  );
+  if (generatedLine || coverageLine) {
+    console.log(`APHIS National Honey Bee Survey file metadata: ${generatedLine} ${coverageLine}`.trim());
+  }
+  if (unresolvedCountyNames.size > 0) {
+    console.log(
+      `Skipped APHIS National Honey Bee Survey county values without Alabama FIPS matches: ${[...unresolvedCountyNames].sort().join(", ")}`,
+    );
+  }
+
+  return imported;
+}
+
 async function loadUsfsCurrentInvasivePlantCountyCoverage(
   targetLookup: Map<string, ImportTarget>,
   countyFeatures: CountyFeature[],
@@ -1806,6 +1924,12 @@ async function main() {
     loadIdigbioAlabamaPreservedSpecimenCoverage();
   const aphisFederalQuarantineCoverage =
     await loadAphisFederalQuarantineCountyCoverage(targetLookup, lower48CountyFips);
+  const aphisHoneyBeeSurveyVarroaCoverage =
+    loadAphisHoneyBeeSurveyVarroaCountyCoverage(
+      targetLookup,
+      countyLookup,
+      lower48CountyFips,
+    );
   const usfsCurrentInvasivePlantCoverage =
     await loadUsfsCurrentInvasivePlantCountyCoverage(
       targetLookup,
@@ -1835,6 +1959,7 @@ async function main() {
             "GBIF preserved specimen records",
             "iDigBio preserved specimen records",
             "APHIS Federal Quarantine county layer",
+            "APHIS National Honey Bee Survey",
             "USFS Current Invasive Plant Locations",
           ].includes(source.source),
       )),
@@ -1961,6 +2086,17 @@ async function main() {
       );
     }
 
+    const aphisHoneyBeeSurveyVarroaCoverageForSpecies =
+      aphisHoneyBeeSurveyVarroaCoverage.get(target.speciesId);
+    if (aphisHoneyBeeSurveyVarroaCoverageForSpecies) {
+      for (const fips of aphisHoneyBeeSurveyVarroaCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...aphisHoneyBeeSurveyVarroaCoverageForSpecies.countyDataSources,
+      );
+    }
+
     const usfsCurrentInvasivePlantCoverageForSpecies =
       usfsCurrentInvasivePlantCoverage.get(target.speciesId);
     if (usfsCurrentInvasivePlantCoverageForSpecies) {
@@ -2028,6 +2164,7 @@ async function main() {
       "GBIF.org. 2026. GBIF occurrence search. Preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
       "iDigBio. 2026. iDigBio Search API. Preserved specimen records for Alabama, United States. Available online at https://search.idigbio.org/v2/search/records.",
       "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
+      "USDA APHIS National Honey Bee Survey. 2026. Public county-resolved survey event data for honey bee samples, including Varroa mite counts per 100 bees. Available online at https://www.usbeedata.org/state_reports/public_download/.",
       "USDA Forest Service. 2026. EDW current invasive plant locations FeatureServer layer, filtered to NFS in Alabama National Forest. Available online at https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0.",
       "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database live collection pages for targeted Alabama ANS reconciliation gaps. Available online at https://nas.er.usgs.gov/queries/CollectionInfo.aspx.",
     ],

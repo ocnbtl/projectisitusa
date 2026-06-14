@@ -112,4 +112,30 @@ export const countySpeciesStatusOverrides: CountySpeciesStatusOverride[] = [
       "USFWS eDNA samples in Morgan County Wheeler National Wildlife Refuge and Tennessee River waterbodies reported No eDNA detected. This is survey-area non-detection evidence, not countywide absence.",
     reviewedAt: "2026-04-25",
   },
+  {
+    countyFips: "01025",
+    speciesId: "varroa-destructor",
+    status: "not-detected",
+    evidenceScope: "survey-area",
+    source: {
+      label: "APHIS National Honey Bee Survey public data",
+      url: "https://www.usbeedata.org/state_reports/public_download/",
+    },
+    notes:
+      "APHIS National Honey Bee Survey public rows for Clarke County Alabama reported 0 Varroa mites per 100 bees in sampled honey bee colonies, with no conflicting positive Clarke County Varroa row in the reviewed public file. This is sample-level non-detection evidence, not countywide absence.",
+    reviewedAt: "2026-06-14",
+  },
+  {
+    countyFips: "01119",
+    speciesId: "varroa-destructor",
+    status: "not-detected",
+    evidenceScope: "survey-area",
+    source: {
+      label: "APHIS National Honey Bee Survey public data",
+      url: "https://www.usbeedata.org/state_reports/public_download/",
+    },
+    notes:
+      "APHIS National Honey Bee Survey public rows for Sumter County Alabama reported 0 Varroa mites per 100 bees in sampled honey bee colonies, with no conflicting positive Sumter County Varroa row in the reviewed public file. This is sample-level non-detection evidence, not countywide absence.",
+    reviewedAt: "2026-06-14",
+  },
 ];
