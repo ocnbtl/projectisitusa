@@ -6,13 +6,13 @@ Assessment date: `2026-06-14`
 
 Alabama is audit complete, but it is not denominator complete.
 
-Runtime data generated after the broad EDDMapS county snapshot refresh, ALIPC EDDMapS import, generalized Alabama Plant Atlas import, USFS Alien Forest Pest Explorer importer, USFS current invasive plant polygon importer, GBIF and iDigBio preserved specimen snapshots, APHIS federal quarantine importer, targeted NAS live collection supplement, Auburn University Formosan termite county evidence, first USFWS invasive carp eDNA non-detection records, APHIS National Honey Bee Survey Varroa sample records, and Alabama Forestry Commission Aerial Detection records shows:
+Runtime data generated after the broad EDDMapS county snapshot refresh, ALIPC EDDMapS import, generalized Alabama Plant Atlas import, USFS Alien Forest Pest Explorer importer, USFS current invasive plant polygon importer, USDA Forest Service FIA DataMart invasive plant tables, GBIF and iDigBio preserved specimen snapshots, APHIS federal quarantine importer, targeted NAS live collection supplement, Auburn University Formosan termite county evidence, first USFWS invasive carp eDNA non-detection records, APHIS National Honey Bee Survey Varroa sample records, and Alabama Forestry Commission Aerial Detection records shows:
 
 - Alabama county audit progress: `67/67` counties and `14/14` chunks complete.
 - Alabama live mapped species: `846` distinct species.
-- Alabama average county species count: `174.36`.
-- Alabama county-species matrix known determinations: `11682` verified present, `0` verified absent, `10` not detected, and `156076` unknown.
-- Alabama county-species matrix known percent: `6.97%` of `167768` county-species determinations.
+- Alabama average county species count: `174.97`.
+- Alabama county-species matrix known determinations: `11723` verified present, `0` verified absent, `10` not detected, and `156035` unknown.
+- Alabama county-species matrix known percent: `6.99%` of `167768` county-species determinations.
 - Alabama category mix: still plant-heavy, but recent passes added broader insect, disease, wildlife, aquatic, specimen-backed, National Forest invasive plant, APHIS, and USFWS eDNA sampling signal.
 - ALIPC denominator reconciliation: `91` list species, `78` catalog matched, `75` live mapped in Alabama, `3` catalog matched but unmapped, and `13` unmatched or ambiguous.
 - Alabama ANS denominator reconciliation: `90` Appendix 12.B species, `46` catalog matched, `43` live mapped in Alabama, `3` catalog matched but unmapped, and `44` unmatched or ambiguous.
@@ -44,14 +44,14 @@ The denominator problem is real because Alabama has multiple credible invasive-s
 | Auburn University Formosan termite thesis | County checklist evidence for `Coptotermes formosanus` in Alabama | Manually importable for explicitly named county records | Useful narrow structural-pest source. This pass imported the 9 Alabama counties explicitly named in the reviewed thesis text: Baldwin, Calhoun, Chilton, Coffee, Covington, Cullman, Jefferson, Lee, and Mobile. The source states 16 Alabama counties, but the remaining 7 were not explicit in the reviewed text, so they were not inferred. |
 | PestTracker, CAPS, and NAPIS | Survey-status lane with positive and negative survey semantics where raw rows are exposed | Not importable for exact current-catalog Alabama rows today | Promising survey-status source family, but current public PestTracker map checks found no exact local catalog matches among the Alabama rows reviewed on `2026-06-14`. Reviewed Alabama rows were `Not Found`, so future imports must treat them as conservative `survey-area` non-detection records only where the species is an exact catalog target and no positive conflict exists. CAPS status-code definitions remain useful, but the `status_summary` download reviewed here exposed state totals rather than county rows. |
 | APHIS National Honey Bee Survey | Public sampling-event diagnostics for honey bee pests and pathogens | Importable for county-resolved Alabama `Varroa destructor` sample records | Reputable survey data with narrow exact catalog relevance. The live public CSV reviewed on `2026-06-14` exposes `sampling_county_from_gps` and `varroa_per_100_bees`. This pass imported `62` Alabama counties with positive Varroa sample counts and added `2` sample-level `not-detected` records for Clarke and Sumter counties where the reviewed file had zero-count rows and no positive county conflict. One Alabama-coded `Scott` county value was skipped because Alabama has no Scott County. Treat these as honey bee sample evidence, not countywide absence or full apiary inventory coverage. |
-| USDA Forest Service FIA DataMart invasive plant tables | Plot-observed invasive plant records with Alabama county codes and species symbols | Candidate import source, not imported in this pass | High-yield next source family. Current review found `AL_INVASIVE_SUBPLOT_SPP.csv`, `AL_PLOT.csv`, and reference tables with exact catalog candidates. Preliminary review found `38` Alabama invasive plant symbols, `22` exact current-catalog matches, about `650` gross exact county-species pairs, and about `36` likely net-new Alabama pairs after existing-source overlap. Import only row-backed verified-present plot observations, and do not infer absence from missing plot rows. |
+| USDA Forest Service FIA DataMart invasive plant tables | Plot-observed invasive plant records with Alabama county codes and species symbols | Importable for exact current-catalog plant species only | Strong plot-observation source family with important sampling caveats. This pass imported `54,836` Alabama invasive subplot rows from `38` FIA symbols. `25` exact current-catalog species were imported, producing `718` gross Alabama county-species source pairs and `41` net new Alabama matrix determinations after existing-source unioning. `13` genus-level or non-exact symbols were skipped: `BAMBU`, `DIOSC`, `ELAEA`, `HEDER`, `LESPE`, `LIGUS2`, `LIRIO2`, `LONIC`, `MABE2`, `POTR4`, `ROSA5`, `VINCA`, and `WISTE`. Import FIA as verified-present plot evidence only. Do not infer absence from missing rows, sampled plots without a species, or counties without matching plot records. |
 
 ## What Alabama Covers Well Now
 
 Current Alabama live coverage is strongest for:
 
 - Widespread terrestrial plants with broad EDDMapS, SERNEC, ALIPC-backed EDDMapS, and Alabama Plant Atlas support, including Japanese honeysuckle, cogongrass, kudzu, sericea lespedeza, Chinese privet, mimosa, Johnsongrass, Chinese wisteria, Japanese climbing fern, sacred bamboo, Japanese stiltgrass, multiflora rose, tree-of-heaven, Chinese tallow, Callery pear, English ivy, autumn olive, camphor tree, Chinese yam, Morrow's honeysuckle, Japanese barberry, and hundreds of other exact Plant Atlas catalog matches.
-- Current National Forest System invasive plant polygons for exact catalog matches, including kudzu, Chinese privet, Japanese honeysuckle, Japanese climbing fern, Japanese stiltgrass, cogongrass, alligatorweed, autumn olive, sericea lespedeza, multiflora rose, and related exact-match plant records. This supports current infestation presence on National Forest System land, not statewide absence or a complete Alabama plant inventory.
+- Current National Forest System invasive plant polygons and FIA plot-observed invasive plant rows for exact catalog matches, including kudzu, Japanese honeysuckle, Japanese climbing fern, Japanese stiltgrass, cogongrass, sericea lespedeza, Chinese privet relatives, Callery pear, tree-of-heaven, tallow tree, nandina, princess tree, and related exact-match plant records. These sources support land-management or plot observation presence, not statewide absence or a complete Alabama plant inventory.
 - Aquatic species covered by USGS NAS, targeted NAS live collection pages, and prior EDDMapS rows, including Asiatic clam, grass carp, alligatorweed, Eurasian watermilfoil, common carp, hydrilla, bighead carp, nutria, zebra mussel, Brazilian waterweed, water hyacinth, parrot feather, Blue Tilapia, Koi, and several lower-count aquatic records.
 - Physical specimen occurrence records from GBIF and iDigBio exact catalog matches, especially in counties with universities, museums, and herbarium collection history. These improve verified-present coverage but need source-language caution because specimen occurrence is not the same thing as a county invasive-status declaration.
 - Forest pest, disease, and regulatory signals from structured public layers and imported source-family records, including emerald ash borer, laurel wilt, Japanese beetle, chestnut blight, littleleaf disease, dogwood anthracnose, cottony cushion scale, camphor scale, Dutch elm disease, mimosa webworm, peach twig borer, butternut canker, Asian chestnut gall wasp, citrus canker, Asian citrus psyllid, red imported fire ant, and sweet orange scab. AFC aerial detections now provide additional official county evidence for emerald ash borer while corroborating already-covered cogongrass and laurel wilt rows.
@@ -81,6 +81,7 @@ On 2026-04-25, the remaining ANS plan catalog-matched but unmapped species were 
 - GBIF preserved specimens support verified physical occurrence by county. They do not prove establishment, invasive impact, absence in unsampled counties, or survey non-detection.
 - iDigBio preserved specimens support verified physical occurrence by county. They overlap heavily with GBIF, IPT, Symbiota, VertNet, and collection datasets, so they should not be treated as a fully independent denominator.
 - USFS Current Invasive Plant Locations supports current invasive plant infestation presence on National Forest System land in Alabama. It is not statewide plant absence evidence, and it should not be treated as complete county invasive-plant inventory coverage.
+- FIA DataMart invasive subplot rows support verified-present plot observation evidence where county and exact species identity are explicit. They do not prove countywide establishment, countywide abundance, absence in counties without rows, or absence on sampled plots where the species was not recorded.
 - APHIS quarantine rows support active regulatory county status for reviewed exact catalog matches. They do not cover every regulated pest, and skipped rows should remain skipped unless the species exists in the catalog or a reviewed catalog addition is made.
 - USFWS eDNA `No eDNA detected` samples are survey-area non-detection records, not countywide absence. Positive eDNA rows were not promoted to verified-present because the source cautions that DNA can come from live fish, dead fish, boats, birds, or water current.
 - NAS live collection pages are useful for targeted county evidence, but status semantics differ by species and row. Blue Tilapia was accepted only from an established row. Koi rows were accepted as collection presence only, not establishment evidence. Failed, state-only, no-county, and no-Alabama rows were skipped.
@@ -122,27 +123,32 @@ That label means:
    - Goal: expand toward ADAI notices, APHIS program pages, and CAPS or PestTracker survey records that may distinguish found, not found, and not surveyed.
    - Output: either narrow manual overrides with explicit source URLs or a small regulatory-notice import file. Promote `not-detected` only when a reputable source explicitly records a survey without detection.
 
-3. USDA Forest Service FIA DataMart invasive plant tables.
-   - Status: source-family reconnaissance found public Alabama invasive plant tables with county codes, species symbols, and reference dictionaries.
-   - Next goal: build a bounded importer for exact catalog scientific-name matches only, probably starting with the `22` exact-match symbols found in reconnaissance.
-   - Output: verified-present plot observation evidence only where FIA rows have a county and an exact reviewed species match. Do not infer absence from counties without rows.
+3. FIA skipped-symbol review.
+   - Status: FIA DataMart exact-match importer is now implemented for `25` catalog species.
+   - Next goal: review skipped symbols only where a source can support a species-level mapping, especially `MABE2` for `Mahonia bealei` and generic groups such as `LIGUS2`, `ROSA5`, `WISTE`, and `HEDER`.
+   - Output: add mappings only after a reviewed species-level decision. Keep genus-level FIA rows unknown until then.
 
-4. USFS and land-management plant layers.
+4. USDA NRCS PLANTS county distribution review.
+   - Status: source-family reconnaissance identified a public PLANTS API and ArcGIS county distribution layer with county-equivalent records keyed by `plant_master_id`.
+   - Next goal: test exact current-catalog plant matches against PLANTS IDs, then query Alabama county distribution rows and filter to introduced or nonnative semantics where the source supports that distinction.
+   - Output: verified-present county distribution evidence only where PLANTS has exact species identity and county-level rows. Do not infer absence from missing PLANTS county rows.
+
+5. USFS and land-management plant layers.
    - Status: USFS Current Invasive Plant Locations is imported for National Forest System land in Alabama exact catalog matches.
    - Next goal: look for other public land-management invasive plant layers with county-resolvable geometries and exact scientific names, while keeping their land-scope caveats visible.
    - Output: source-family imports only where geometry or attributes resolve to county evidence without inferring absence outside the managed land base.
 
-5. Remaining ALIPC plant gap review.
+6. Remaining ALIPC plant gap review.
    - Status: generalized Alabama Plant Atlas pass is imported and Australian-pine has a SERNEC-backed manual override.
    - Next goal: resolve the remaining `3` catalog-matched but unmapped ALIPC species only if county-level species evidence exists.
    - Output: another reviewed plant tranche only where county, species, and source records are exact.
 
-6. GBIF and museum-portal refinement.
+7. GBIF and museum-portal refinement.
    - Status: broad GBIF and iDigBio preserved specimen imports are now available as repeatable snapshots.
    - Next goal: review whether dataset allowlists, direct IPT downloads, SERNEC expansion, or institution-scoped GBIF downloads can strengthen the broad specimen lane and reduce cultivated or non-established noise.
    - Output: keep verified-present records where county and species evidence is exact, but document specimen evidence separately from invasive-status declarations.
 
-7. Survey-status source lane.
+8. Survey-status source lane.
    - Status: first USFWS invasive carp eDNA `not-detected` records are added with `survey-area` evidence scope. APHIS National Honey Bee Survey now adds county-resolved Alabama Varroa positive sample evidence and two conservative zero-count sample non-detections. PestTracker public map output exposed Alabama rows in the current review but no exact catalog matches among those Alabama rows.
    - Next goal: pursue PestTracker, CAPS, NAPIS, USFWS, APHIS, or other public monitoring sources that expose county-level found and not-found records for catalog species.
    - Output: add `not-detected` only where the source explicitly records a survey without detection and where no current verified-present or positive-detection conflict exists.

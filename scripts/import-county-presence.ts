@@ -55,6 +55,16 @@ const AFPE_COUNTIES_CSV_PATH =
   "10_4231_HWQF-V087/AFPE_PEST_2023_counties.csv";
 const AFPE_DATA_DICTIONARY_CSV_PATH =
   "10_4231_HWQF-V087/AFPE_PEST_2023_counties_data_dictionary.csv";
+const FIA_DATAMART_URL = "https://apps.fs.usda.gov/fia/datamart/datamart.html";
+const FIA_AL_INVASIVE_SUBPLOT_URL =
+  "https://apps.fs.usda.gov/fia/datamart/CSV/AL_INVASIVE_SUBPLOT_SPP.csv";
+const FIA_REF_PLANT_DICTIONARY_URL =
+  "https://apps.fs.usda.gov/fia/datamart/CSV/REF_PLANT_DICTIONARY.csv";
+const FIA_REF_INVASIVE_SPECIES_URL =
+  "https://apps.fs.usda.gov/fia/datamart/CSV/REF_INVASIVE_SPECIES.csv";
+const FIA_AL_INVASIVE_SUBPLOT_PATH = resolve("/tmp", "AL_INVASIVE_SUBPLOT_SPP.csv");
+const FIA_REF_PLANT_DICTIONARY_PATH = resolve("/tmp", "REF_PLANT_DICTIONARY.csv");
+const FIA_REF_INVASIVE_SPECIES_PATH = resolve("/tmp", "REF_INVASIVE_SPECIES.csv");
 const APHIS_FEDERAL_QUARANTINE_SERVICE_URL =
   "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1";
 const APHIS_FEDERAL_QUARANTINE_ALABAMA_QUERY_URL =
@@ -208,6 +218,24 @@ type AfpeDataDictionaryRow = {
 type AfpeCountyRow = Record<string, string | undefined> & {
   STATE?: string;
   FIPS?: string;
+};
+
+type FiaInvasiveSubplotRow = {
+  STATECD?: string;
+  COUNTYCD?: string;
+  VEG_FLDSPCD?: string;
+  VEG_SPCD?: string;
+};
+
+type FiaPlantDictionaryRow = {
+  SYMBOL?: string;
+  SCIENTIFIC_NAME?: string;
+  NEW_SCIENTIFIC_NAME?: string;
+};
+
+type FiaInvasiveSpeciesRefRow = {
+  STATECD?: string;
+  SYMBOL?: string;
 };
 
 type CountyGeometry = {
@@ -658,6 +686,13 @@ function parseArcGisCountyFips(value: string | number | null | undefined) {
   }
 
   return digitsOnly.padStart(5, "0");
+}
+
+function countyFipsFromFiaCountyCode(value: string | undefined) {
+  if (!value) return null;
+  const countyCode = Number.parseInt(value, 10);
+  if (!Number.isFinite(countyCode) || countyCode <= 0) return null;
+  return `01${String(countyCode).padStart(3, "0")}`;
 }
 
 function flattenGeometryCoordinates(
@@ -1647,6 +1682,137 @@ async function loadAlienForestPestExplorerCountyCoverage(
   return imported;
 }
 
+async function loadFiaAlabamaInvasivePlantCountyCoverage(
+  targets: ImportTarget[],
+  lower48CountyFips: Set<string>,
+) {
+  downloadFile(FIA_AL_INVASIVE_SUBPLOT_URL, FIA_AL_INVASIVE_SUBPLOT_PATH);
+  downloadFile(FIA_REF_PLANT_DICTIONARY_URL, FIA_REF_PLANT_DICTIONARY_PATH);
+  downloadFile(FIA_REF_INVASIVE_SPECIES_URL, FIA_REF_INVASIVE_SPECIES_PATH);
+
+  const invasiveRows = parseSync(
+    readFileSync(FIA_AL_INVASIVE_SUBPLOT_PATH, "utf8"),
+    { columns: true, bom: true, skip_empty_lines: true },
+  ) as FiaInvasiveSubplotRow[];
+  const dictionaryRows = parseSync(
+    readFileSync(FIA_REF_PLANT_DICTIONARY_PATH, "utf8"),
+    { columns: true, bom: true, skip_empty_lines: true },
+  ) as FiaPlantDictionaryRow[];
+  const invasiveRefRows = parseSync(
+    readFileSync(FIA_REF_INVASIVE_SPECIES_PATH, "utf8"),
+    { columns: true, bom: true, skip_empty_lines: true },
+  ) as FiaInvasiveSpeciesRefRow[];
+  const targetByScientificName = new Map(
+    targets.map((target) => [canonicalScientificName(target.scientificName), target]),
+  );
+  const alInvasiveSymbols = new Set(
+    invasiveRefRows
+      .filter((row) => row.STATECD === "1" && row.SYMBOL)
+      .map((row) => row.SYMBOL as string),
+  );
+  const symbolMatches = new Map<
+    string,
+    Array<{ speciesId: string; scientificName: string }>
+  >();
+
+  for (const row of dictionaryRows) {
+    const symbol = row.SYMBOL?.trim();
+    if (!symbol || !alInvasiveSymbols.has(symbol)) continue;
+
+    const scientificName = (row.NEW_SCIENTIFIC_NAME || row.SCIENTIFIC_NAME)?.trim();
+    if (!scientificName) continue;
+
+    const target = targetByScientificName.get(canonicalScientificName(scientificName));
+    if (!target) continue;
+
+    const matches = symbolMatches.get(symbol) ?? [];
+    if (!matches.some((match) => match.speciesId === target.speciesId)) {
+      matches.push({ speciesId: target.speciesId, scientificName: target.scientificName });
+      symbolMatches.set(symbol, matches);
+    }
+  }
+
+  const exactSymbolMatches = new Map(
+    [...symbolMatches.entries()].filter(([, matches]) => matches.length === 1),
+  );
+  const collected = new Map<
+    string,
+    {
+      scientificName: string;
+      symbols: Set<string>;
+      countyFips: Set<string>;
+      rows: number;
+    }
+  >();
+  const reviewedSymbols = new Set<string>();
+  const skippedSymbols = new Set<string>();
+  let skippedRows = 0;
+
+  for (const row of invasiveRows) {
+    if (row.STATECD !== "1") continue;
+
+    const symbol = row.VEG_SPCD?.trim() || row.VEG_FLDSPCD?.trim();
+    if (!symbol) {
+      skippedRows += 1;
+      continue;
+    }
+    reviewedSymbols.add(symbol);
+
+    const matches = exactSymbolMatches.get(symbol);
+    if (!matches || matches.length !== 1) {
+      skippedSymbols.add(symbol);
+      continue;
+    }
+
+    const countyFips = countyFipsFromFiaCountyCode(row.COUNTYCD);
+    if (!countyFips || !lower48CountyFips.has(countyFips)) {
+      skippedRows += 1;
+      continue;
+    }
+
+    const match = matches[0];
+    const coverage = collected.get(match.speciesId) ?? {
+      scientificName: match.scientificName,
+      symbols: new Set<string>(),
+      countyFips: new Set<string>(),
+      rows: 0,
+    };
+    coverage.symbols.add(symbol);
+    coverage.countyFips.add(countyFips);
+    coverage.rows += 1;
+    collected.set(match.speciesId, coverage);
+  }
+
+  const imported = new Map<string, ImportedCountyCoverage>();
+  for (const [speciesId, coverage] of collected) {
+    imported.set(speciesId, {
+      countyFips: coverage.countyFips,
+      countyDataSources: [
+        {
+          source: "USDA Forest Service FIA DataMart invasive plant tables",
+          matchType: "scientific-exact",
+          externalId: `${[...coverage.symbols].sort().join(", ")} (${coverage.scientificName})`,
+          url: FIA_DATAMART_URL,
+        },
+      ],
+    });
+
+    console.log(
+      `Loaded FIA invasive plant coverage for ${coverage.scientificName}: ${coverage.countyFips.size} Alabama counties from ${coverage.rows} rows (${[...coverage.symbols].sort().join(", ")}).`,
+    );
+  }
+
+  console.log(
+    `Loaded ${imported.size} species from FIA Alabama invasive plant tables from ${reviewedSymbols.size} reviewed symbols (${skippedSymbols.size} symbols without exact catalog matches, ${skippedRows} malformed or unresolved rows).`,
+  );
+
+  if (skippedSymbols.size > 0) {
+    console.log(`Skipped FIA invasive plant symbols: ${[...skippedSymbols].sort().join(", ")}`);
+  }
+
+  return imported;
+}
+
 function loadGbifAlabamaPreservedSpecimenCoverage() {
   const imported = new Map<string, ImportedCountyCoverage>();
   if (!existsSync(GBIF_ALABAMA_SPECIMEN_SNAPSHOT_PATH)) {
@@ -2018,6 +2184,8 @@ async function main() {
   );
   const alienForestPestExplorerCoverage =
     await loadAlienForestPestExplorerCountyCoverage(targetLookup, lower48CountyFips);
+  const fiaAlabamaInvasivePlantCoverage =
+    await loadFiaAlabamaInvasivePlantCountyCoverage(targets, lower48CountyFips);
   const gbifAlabamaPreservedSpecimenCoverage =
     loadGbifAlabamaPreservedSpecimenCoverage();
   const idigbioAlabamaPreservedSpecimenCoverage =
@@ -2057,6 +2225,7 @@ async function main() {
             "APHIS Emerald Ash Borer county layer",
             "Laurel Wilt public county layer",
             "USFS Alien Forest Pest Explorer",
+            "USDA Forest Service FIA DataMart invasive plant tables",
             "GBIF preserved specimen records",
             "iDigBio preserved specimen records",
             "APHIS Federal Quarantine county layer",
@@ -2162,6 +2331,17 @@ async function main() {
       }
       countyDataSources.push(
         ...alienForestPestExplorerCoverageForSpecies.countyDataSources,
+      );
+    }
+
+    const fiaAlabamaInvasivePlantCoverageForSpecies =
+      fiaAlabamaInvasivePlantCoverage.get(target.speciesId);
+    if (fiaAlabamaInvasivePlantCoverageForSpecies) {
+      for (const fips of fiaAlabamaInvasivePlantCoverageForSpecies.countyFips) {
+        countyFips.add(fips);
+      }
+      countyDataSources.push(
+        ...fiaAlabamaInvasivePlantCoverageForSpecies.countyDataSources,
       );
     }
 
@@ -2274,6 +2454,7 @@ async function main() {
       "USDA APHIS. 2026. Emerald ash borer known infested counties FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_EAB_Known_Infested_Counties_Feature_Layer_View/FeatureServer/9.",
       "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",
       "Fei, S.; Morin, R.; Li, Y.; Kong, N. N.; Crocker, S.; Krist, F.; Liebhold, A.; Grong, K. A. 2024. Alien Forest Pest Detection by Counties in the United States. Purdue University Research Repository. doi:10.4231/HWQF-V087.",
+      "USDA Forest Service Forest Inventory and Analysis. 2026. FIA DataMart Alabama invasive subplot species table, plant dictionary, and invasive species reference table. Available online at https://apps.fs.usda.gov/fia/datamart/datamart.html.",
       "GBIF.org. 2026. GBIF occurrence search. Preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
       "iDigBio. 2026. iDigBio Search API. Preserved specimen records for Alabama, United States. Available online at https://search.idigbio.org/v2/search/records.",
       "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
