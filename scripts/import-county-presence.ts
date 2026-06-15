@@ -2455,6 +2455,7 @@ async function main() {
       "USDA Forest Service. 2026. Laurel wilt public county distribution FeatureServer layer. Available online at https://services2.arcgis.com/iXA1dC6ldRMKRwra/arcgis/rest/services/Laurel_WIlt_Disease_Distribution_Public_View/FeatureServer/1.",
       "Fei, S.; Morin, R.; Li, Y.; Kong, N. N.; Crocker, S.; Krist, F.; Liebhold, A.; Grong, K. A. 2024. Alien Forest Pest Detection by Counties in the United States. Purdue University Research Repository. doi:10.4231/HWQF-V087.",
       "USDA Forest Service Forest Inventory and Analysis. 2026. FIA DataMart Alabama invasive subplot species table, plant dictionary, and invasive species reference table. Available online at https://apps.fs.usda.gov/fia/datamart/datamart.html.",
+      "USDA Natural Resources Conservation Service. 2026. PLANTS county distribution and nativity MapServer layer. Available online at https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6.",
       "GBIF.org. 2026. GBIF occurrence search. Preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
       "iDigBio. 2026. iDigBio Search API. Preserved specimen records for Alabama, United States. Available online at https://search.idigbio.org/v2/search/records.",
       "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
