@@ -38,6 +38,11 @@ npm run build
 
 The current app does not require project-specific environment variables for local build or deployment.
 
+## Deployment
+
+- Vercel project dashboard: [vercel.com/unigentamos/projectisitusa](https://vercel.com/unigentamos/projectisitusa)
+- Production branch alias: [projectisitusa-git-main-unigentamos.vercel.app](https://projectisitusa-git-main-unigentamos.vercel.app)
+
 ## Data And Project Shape
 
 - Framework: Next.js + TypeScript
