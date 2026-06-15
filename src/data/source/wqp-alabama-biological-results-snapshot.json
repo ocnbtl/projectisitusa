@@ -1,0 +1,234 @@
+{
+  "source": "Water Quality Portal biological results",
+  "citation": [
+    "National Water Quality Monitoring Council. 2026. Water Quality Portal. Available online at https://www.waterqualitydata.us/.",
+    "National Water Quality Monitoring Council. 2026. WQP Web Services Guide. Available online at https://www.waterqualitydata.us/webservices_documentation/."
+  ],
+  "accessedAt": "2026-06-15T09:51:26.340Z",
+  "filters": {
+    "statecode": "US:01",
+    "dataProfile": "biological",
+    "sampleMedia": "Biological",
+    "subjectTaxonomicName": "exact current catalog scientific name",
+    "characteristicName": "Count",
+    "minResultMeasureValue": 0,
+    "resultStatusIdentifier": [
+      "Final",
+      "Accepted"
+    ],
+    "coordinateResolution": "point must resolve to exactly one Alabama county"
+  },
+  "targetScientificNames": [
+    "Daphnia lumholtzi",
+    "Cyprinus carpio",
+    "Ctenopharyngodon idella",
+    "Corbicula fluminea"
+  ],
+  "species": [
+    {
+      "speciesId": "corbicula-fluminea",
+      "scientificName": "Corbicula fluminea",
+      "totalRows": 1,
+      "acceptedRecordCount": 1,
+      "skippedRows": 0,
+      "countyFips": [
+        "01123"
+      ],
+      "queryUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A01&dataProfile=biological&sampleMedia=Biological&subjectTaxonomicName=Corbicula+fluminea&mimeType=csv&zip=no&sorted=no",
+      "records": [
+        {
+          "activityId": "21GAEPD_WQX-A00196226",
+          "monitoringLocationId": "21GAEPD_WQX-RV_13_4401",
+          "organizationIdentifier": "21GAEPD_WQX",
+          "organizationFormalName": "Georgia DNR Environmental Protection Division",
+          "projectIdentifier": "EPDAMU",
+          "activityStartDate": "2004-11-01",
+          "countyFips": "01123",
+          "latitude": 32.98538,
+          "longitude": -85.86108,
+          "assemblageSampledName": "Benthic Macroinvertebrates",
+          "biologicalIntentName": "Frequency Class",
+          "characteristicName": "Count",
+          "resultMeasureValue": 4,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        }
+      ]
+    },
+    {
+      "speciesId": "ctenopharyngodon-idella",
+      "scientificName": "Ctenopharyngodon idella",
+      "totalRows": 1,
+      "acceptedRecordCount": 1,
+      "skippedRows": 0,
+      "countyFips": [
+        "01053"
+      ],
+      "queryUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A01&dataProfile=biological&sampleMedia=Biological&subjectTaxonomicName=Ctenopharyngodon+idella&mimeType=csv&zip=no&sorted=no",
+      "records": [
+        {
+          "activityId": "NARS_WQX-FW08AL015:20090815:SR:FULLMETRICS",
+          "monitoringLocationId": "NARS_WQX-FW08AL015",
+          "organizationIdentifier": "NARS_WQX",
+          "organizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+          "projectIdentifier": "NARS_NRSA2008_2009",
+          "activityStartDate": "2009-08-15",
+          "countyFips": "01053",
+          "latitude": 31.08686327,
+          "longitude": -87.08175172,
+          "assemblageSampledName": "Fish/Nekton",
+          "biologicalIntentName": "Population Census",
+          "characteristicName": "Count",
+          "resultMeasureValue": 1,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        }
+      ]
+    },
+    {
+      "speciesId": "cyprinus-carpio",
+      "scientificName": "Cyprinus carpio",
+      "totalRows": 2,
+      "acceptedRecordCount": 2,
+      "skippedRows": 0,
+      "countyFips": [
+        "01025",
+        "01043"
+      ],
+      "queryUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A01&dataProfile=biological&sampleMedia=Biological&subjectTaxonomicName=Cyprinus+carpio&mimeType=csv&zip=no&sorted=no",
+      "records": [
+        {
+          "activityId": "NARS_WQX-FW08AL026:20090724:SR:FULLMETRICS",
+          "monitoringLocationId": "NARS_WQX-FW08AL026",
+          "organizationIdentifier": "NARS_WQX",
+          "organizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+          "projectIdentifier": "NARS_NRSA2008_2009",
+          "activityStartDate": "2009-07-24",
+          "countyFips": "01025",
+          "latitude": 31.19892816,
+          "longitude": -87.90346053,
+          "assemblageSampledName": "Fish/Nekton",
+          "biologicalIntentName": "Population Census",
+          "characteristicName": "Count",
+          "resultMeasureValue": 1,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        },
+        {
+          "activityId": "NARS_WQX-FW08AL024:20090715:SR:FULLMETRICS",
+          "monitoringLocationId": "NARS_WQX-FW08AL024",
+          "organizationIdentifier": "NARS_WQX",
+          "organizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+          "projectIdentifier": "NARS_NRSA2008_2009",
+          "activityStartDate": "2009-07-15",
+          "countyFips": "01043",
+          "latitude": 34.00378128,
+          "longitude": -86.74110543,
+          "assemblageSampledName": "Fish/Nekton",
+          "biologicalIntentName": "Population Census",
+          "characteristicName": "Count",
+          "resultMeasureValue": 1,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        }
+      ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Animalia5208",
+      "scientificName": "Daphnia lumholtzi",
+      "totalRows": 8,
+      "acceptedRecordCount": 4,
+      "skippedRows": 4,
+      "countyFips": [
+        "01091",
+        "01121",
+        "01125"
+      ],
+      "queryUrl": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A01&dataProfile=biological&sampleMedia=Biological&subjectTaxonomicName=Daphnia+lumholtzi&mimeType=csv&zip=no&sorted=no",
+      "records": [
+        {
+          "activityId": "NARS_WQX-NLA_AL-10005:07122017:SR:ZOO:ZOCN",
+          "monitoringLocationId": "NARS_WQX-NLA_AL-10005",
+          "organizationIdentifier": "NARS_WQX",
+          "organizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+          "projectIdentifier": "NARS_NLA2017",
+          "activityStartDate": "2017-07-12",
+          "countyFips": "01091",
+          "latitude": 32.51724,
+          "longitude": -87.787,
+          "assemblageSampledName": "Phytoplankton/Zooplankton",
+          "biologicalIntentName": "Population Census",
+          "characteristicName": "Count",
+          "resultMeasureValue": 2,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        },
+        {
+          "activityId": "NARS_WQX-NLA_AL-10037:08142017:SR:ZOO:ZOCN",
+          "monitoringLocationId": "NARS_WQX-NLA_AL-10037",
+          "organizationIdentifier": "NARS_WQX",
+          "organizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+          "projectIdentifier": "NARS_NLA2017",
+          "activityStartDate": "2017-08-14",
+          "countyFips": "01121",
+          "latitude": 33.67333,
+          "longitude": -86.16453,
+          "assemblageSampledName": "Phytoplankton/Zooplankton",
+          "biologicalIntentName": "Population Census",
+          "characteristicName": "Count",
+          "resultMeasureValue": 15,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        },
+        {
+          "activityId": "NARS_WQX-NLA_AL-10029:07102017:SR:ZOO:ZOCN",
+          "monitoringLocationId": "NARS_WQX-NLA_AL-10029",
+          "organizationIdentifier": "NARS_WQX",
+          "organizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+          "projectIdentifier": "NARS_NLA2017",
+          "activityStartDate": "2017-07-10",
+          "countyFips": "01125",
+          "latitude": 33.29204,
+          "longitude": -87.39138,
+          "assemblageSampledName": "Phytoplankton/Zooplankton",
+          "biologicalIntentName": "Population Census",
+          "characteristicName": "Count",
+          "resultMeasureValue": 2,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        },
+        {
+          "activityId": "NARS_WQX-NLA_AL-10029:08142017:SR:ZOO:ZOCN",
+          "monitoringLocationId": "NARS_WQX-NLA_AL-10029",
+          "organizationIdentifier": "NARS_WQX",
+          "organizationFormalName": "EPA National Aquatic Resources Survey (NARS)",
+          "projectIdentifier": "NARS_NLA2017",
+          "activityStartDate": "2017-08-14",
+          "countyFips": "01125",
+          "latitude": 33.29204,
+          "longitude": -87.39138,
+          "assemblageSampledName": "Phytoplankton/Zooplankton",
+          "biologicalIntentName": "Population Census",
+          "characteristicName": "Count",
+          "resultMeasureValue": 2,
+          "resultMeasureUnitCode": "count",
+          "resultStatusIdentifier": "Final",
+          "providerName": "STORET"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "targetSpeciesCount": 4,
+    "importedSpeciesCount": 4,
+    "acceptedRecordCount": 8,
+    "countySpeciesPairs": 7
+  }
+}

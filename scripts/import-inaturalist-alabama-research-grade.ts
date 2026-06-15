@@ -55,6 +55,19 @@ const PILOT_TARGET_SCIENTIFIC_NAMES = [
   "Columba livia",
   "Tenodera sinensis",
   "Passer domesticus",
+  "Lonicera maackii",
+  "Carduus nutans",
+  "Plutella xylostella",
+  "Iris pseudacorus",
+  "Solanum sisymbriifolium",
+  "Ardisia crenata",
+  "Vernicia fordii",
+  "Odontomachus haematodus",
+  "Pseudomyrmex gracilis",
+  "Blattella asahinai",
+  "Naupactus peregrinus",
+  "Cyprinus carpio",
+  "Salvinia molesta",
 ];
 
 type InatTaxon = {
