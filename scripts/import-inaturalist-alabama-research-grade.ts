@@ -43,6 +43,18 @@ const PILOT_TARGET_SCIENTIFIC_NAMES = [
   "Nezara viridula",
   "Myocastor coypus",
   "Pomacea maculata",
+  "Pieris rapae",
+  "Pholcus phalangioides",
+  "Linepithema humile",
+  "Latrodectus geometricus",
+  "Metaltella simoni",
+  "Aphis nerii",
+  "Brachymyrmex patagonicus",
+  "Polistes dominula",
+  "Sturnus vulgaris",
+  "Columba livia",
+  "Tenodera sinensis",
+  "Passer domesticus",
 ];
 
 type InatTaxon = {
