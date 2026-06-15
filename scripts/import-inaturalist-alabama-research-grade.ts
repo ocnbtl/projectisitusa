@@ -61,6 +61,7 @@ const PILOT_TARGET_SCIENTIFIC_NAMES = [
   "Iris pseudacorus",
   "Solanum sisymbriifolium",
   "Ardisia crenata",
+  "Ardisia japonica",
   "Vernicia fordii",
   "Odontomachus haematodus",
   "Pseudomyrmex gracilis",
