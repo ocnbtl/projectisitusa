@@ -33,6 +33,16 @@ Survey-status lanes reviewed but not imported:
 - PestTracker and CAPS or NAPIS: public PestTracker map data was checked for `138` mapped pests across public map years `2017` through `2026`, including `36` exact catalog scientific-name matches. The public map output did not expose Alabama county FIPS rows for those reviewed maps, so no Alabama matrix rows were imported. CAPS status-code definitions remain useful because they distinguish positive and negative survey records where raw rows are accessible.
 - APHIS National Honey Bee Survey: the public CSV had `340` Alabama sample rows, but the `sampling_county` field was blank for the Alabama rows. This is reputable survey data, but it is not county-importable for the matrix in its public form.
 
+### Alabama Latest Update, 2026-06-16
+
+The current regenerated outputs supersede the older Alabama counts above. Alabama now has `860` distinct live mapped species, `187.16` average mapped species per county, `12540` verified-present determinations, `0` verified-absent determinations, `10` survey-area not-detected determinations, and `155218` unknown determinations out of `167768`. That is `7.48%` known.
+
+Recent source-family updates since the older ledger summary include USDA Forest Service FIA invasive plant tables, USDA NRCS PLANTS county distribution, Water Quality Portal biological results, iNaturalist Research Grade observations, GBIF eBird Observation Dataset rows, USGS Breeding Bird Survey route-start detections, APHIS National Honey Bee Survey county-resolved Varroa sample evidence, Alabama Forestry Commission Aerial Detection rows, and NEON TALL plant presence and percent cover records.
+
+The NEON TALL import reviewed `24` `RELEASE-2026` months and `30239` expanded `div_1m2Data` rows, accepted `48` introduced species-rank plant records for `9` exact current-catalog species, produced `13` gross county-species source pairs, and added `6` net Alabama matrix determinations. Treat NEON as plot observation presence and cover evidence only, not countywide absence, sampled-plot non-detection, establishment, invasive impact, or complete county plant inventory coverage.
+
+Contradiction to preserve: the older APHIS quarantine note said citrus greening was skipped because the current catalog had no exact `Candidatus Liberibacter asiaticus` target. Current generated catalog data now includes `Liberibacter asiaticus` for citrus huanglongbing, so APHIS HLB quarantine rows should be rechecked as a follow-up source-family import instead of treated as already resolved.
+
 ## Remaining States
 
 All other states are still `not-started` in this audit track until their statewide official source paths are logged here.

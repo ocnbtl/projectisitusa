@@ -13,7 +13,7 @@
     "counties": "src/data/generated/counties.json",
     "presence": "src/data/generated/presence.json",
     "nonPresenceOverrides": "src/data/source/county-species-status-overrides.ts",
-    "countyPresenceSnapshotDate": "2026-06-16T02:27:51.150Z"
+    "countyPresenceSnapshotDate": "2026-06-16T02:42:44.679Z"
   },
   "target": {
     "knownPercent": 90,
@@ -26,11 +26,11 @@
     "totalDeterminations": 167768,
     "targetKnownDeterminationsPerCounty": 2254,
     "targetKnownDeterminationsTotal": 151018,
-    "presentVerifiedDeterminations": 12534,
+    "presentVerifiedDeterminations": 12540,
     "verifiedAbsentDeterminations": 0,
     "notDetectedDeterminations": 10,
-    "knownDeterminations": 12544,
-    "unknownDeterminations": 155224,
+    "knownDeterminations": 12550,
+    "unknownDeterminations": 155218,
     "knownPercent": 7.48,
     "countiesAtTarget": 0
   },
@@ -850,6 +850,7 @@
         "colocasia-esculenta",
         "columba-livia",
         "commelina-communis",
+        "conyza-floribunda",
         "cryphonectria-parasitica",
         "culex-coronator",
         "culex-quinquefasciatus",
@@ -858,6 +859,7 @@
         "datura-stramonium",
         "daucus-carota",
         "diaphorina-citri",
+        "digitaria-sanguinalis",
         "digitaria-violascens",
         "dioscorea-oppositifolia",
         "echinochloa-colona",
@@ -885,6 +887,7 @@
         "lagerstroemia-indica",
         "lamium-amplexicaule",
         "lathyrus-latifolius",
+        "lepidium-bonariense",
         "lespedeza-bicolor",
         "lespedeza-cuneata",
         "leucanthemum-vulgare",
@@ -965,10 +968,10 @@
       ],
       "verifiedAbsentSpeciesIds": [],
       "notDetectedSpeciesIds": [],
-      "knownDeterminations": 142,
-      "unknownDeterminations": 2362,
-      "knownPercent": 5.67,
-      "targetGap": 2112
+      "knownDeterminations": 145,
+      "unknownDeterminations": 2359,
+      "knownPercent": 5.79,
+      "targetGap": 2109
     },
     {
       "countyFips": "01009",
@@ -6214,6 +6217,7 @@
         "coccinella-septempunctata",
         "columba-livia",
         "consolida-ajacis",
+        "conyza-floribunda",
         "corbicula-fluminea",
         "crotalaria-spectabilis",
         "cucumis-melo",
@@ -6248,8 +6252,10 @@
         "harmonia-axyridis",
         "hypochaeris-glabra",
         "imperata-cylindrica",
+        "ipomoea-purpurea",
         "ipomoea-quamoclit",
         "kudzu",
+        "kummerowia-striata",
         "lagerstroemia-indica",
         "lamium-amplexicaule",
         "lamium-purpureum",
@@ -6340,10 +6346,10 @@
       ],
       "verifiedAbsentSpeciesIds": [],
       "notDetectedSpeciesIds": [],
-      "knownDeterminations": 148,
-      "unknownDeterminations": 2356,
-      "knownPercent": 5.91,
-      "targetGap": 2106
+      "knownDeterminations": 151,
+      "unknownDeterminations": 2353,
+      "knownPercent": 6.03,
+      "targetGap": 2103
     },
     {
       "countyFips": "01067",
@@ -22660,11 +22666,14 @@
       "scientificName": "Conyza floribunda",
       "category": "plants",
       "profileType": "registry",
-      "presentVerifiedCountyFips": [],
+      "presentVerifiedCountyFips": [
+        "01007",
+        "01065"
+      ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 0,
-      "unknownCountyCount": 67
+      "knownCountyCount": 2,
+      "unknownCountyCount": 65
     },
     {
       "speciesId": "coptodon-zillii",
@@ -25605,6 +25614,7 @@
         "01001",
         "01003",
         "01005",
+        "01007",
         "01009",
         "01011",
         "01023",
@@ -25631,8 +25641,8 @@
       ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 26,
-      "unknownCountyCount": 41
+      "knownCountyCount": 27,
+      "unknownCountyCount": 40
     },
     {
       "speciesId": "digitaria-setigera",
@@ -32883,6 +32893,7 @@
         "01055",
         "01057",
         "01061",
+        "01065",
         "01069",
         "01071",
         "01073",
@@ -32905,8 +32916,8 @@
       ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 40,
-      "unknownCountyCount": 27
+      "knownCountyCount": 41,
+      "unknownCountyCount": 26
     },
     {
       "speciesId": "ipomoea-quamoclit",
@@ -33553,6 +33564,7 @@
         "01055",
         "01061",
         "01063",
+        "01065",
         "01067",
         "01069",
         "01071",
@@ -33583,8 +33595,8 @@
       ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 53,
-      "unknownCountyCount": 14
+      "knownCountyCount": 54,
+      "unknownCountyCount": 13
     },
     {
       "speciesId": "lablab-purpureus",
@@ -34411,11 +34423,13 @@
       "scientificName": "Lepidium bonariense",
       "category": "plants",
       "profileType": "registry",
-      "presentVerifiedCountyFips": [],
+      "presentVerifiedCountyFips": [
+        "01007"
+      ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 0,
-      "unknownCountyCount": 67
+      "knownCountyCount": 1,
+      "unknownCountyCount": 66
     },
     {
       "speciesId": "lepidium-campestre",
