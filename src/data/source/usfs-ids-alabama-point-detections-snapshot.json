@@ -1,0 +1,189 @@
+{
+  "source": "USDA Forest Service Insect and Disease Survey point detections",
+  "citation": [
+    "USDA Forest Service. 2026. Enterprise Data Warehouse Insect and Disease Survey IDS POINTS layer. Available online at https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0.",
+    "The IDS service describes locations of insect, disease, and abiotic forest damage. Project Isitusa imports only reviewed exact DCA label to catalog-species point detections with coordinates resolving to Alabama counties."
+  ],
+  "accessedAt": "2026-06-16T03:44:13.025Z",
+  "serviceUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer",
+  "pointLayerUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0",
+  "filters": {
+    "layer": "IDS POINTS",
+    "dcaCommonNames": [
+      "emerald ash borer",
+      "brown spot needle blight",
+      "laurel wilt"
+    ],
+    "geometry": "point",
+    "coordinateResolution": "point coordinates must resolve to exactly one Alabama county"
+  },
+  "reviewedButSkippedLabels": [
+    "fire",
+    "drought",
+    "salt damage",
+    "wind-tornado/hurricane",
+    "unknown",
+    "unknown bark beetle",
+    "ips engraver beetles",
+    "southern pine beetle",
+    "black turpentine beetle"
+  ],
+  "species": [
+    {
+      "speciesId": "emerald-ash-borer",
+      "scientificName": "Agrilus planipennis",
+      "commonName": "Emerald Ash Borer",
+      "dcaCommonName": "emerald ash borer",
+      "dcaCode": 15087,
+      "acceptedRecordCount": 4,
+      "countyFips": [
+        "01071",
+        "01089"
+      ],
+      "representativeRecords": [
+        {
+          "objectid": 2399647,
+          "damagePointId": "{b7912665-e133-4e1a-8984-9b8312ecc4eb}",
+          "dcaCode": 15087,
+          "dcaCommonName": "emerald ash borer",
+          "damageType": "Mortality",
+          "surveyYear": 2025,
+          "status": 1,
+          "dataSourceName": "NON_DMSM_GROUND",
+          "idsDataSource": "92",
+          "observationId": "{5f930ce3-3612-457c-b126-d547ccd94bee}",
+          "countyFips": "01071",
+          "latitude": 34.946764110937984,
+          "longitude": -85.73546167529314
+        },
+        {
+          "objectid": 2400017,
+          "damagePointId": "{9d58508a-e002-471b-9adb-61545e2e0749}",
+          "dcaCode": 15087,
+          "dcaCommonName": "emerald ash borer",
+          "damageType": "Mortality",
+          "surveyYear": 2025,
+          "status": 1,
+          "dataSourceName": "NON_DMSM_GROUND",
+          "idsDataSource": "92",
+          "observationId": "{4208dec4-9459-4abe-9af2-078a88dbae7a}",
+          "countyFips": "01089",
+          "latitude": 34.94711714413153,
+          "longitude": -86.59078766097663
+        }
+      ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Fungi299",
+      "scientificName": "Lecanosticta acicola",
+      "commonName": "Brown spot needle blight",
+      "dcaCommonName": "brown spot needle blight",
+      "dcaCode": 25054,
+      "acceptedRecordCount": 4,
+      "countyFips": [
+        "01051",
+        "01059"
+      ],
+      "representativeRecords": [
+        {
+          "objectid": 2411420,
+          "damagePointId": "{121b4449-0a35-4fc4-8c9c-f7860d3e1625}",
+          "dcaCode": 25054,
+          "dcaCommonName": "brown spot needle blight",
+          "damageType": "Mortality",
+          "surveyYear": 2025,
+          "status": 1,
+          "dataSourceName": "NON_DMSM_GROUND",
+          "idsDataSource": "92",
+          "observationId": "{491116ed-9123-4d42-95eb-2f7be10385be}",
+          "countyFips": "01051",
+          "latitude": 32.68836569024842,
+          "longitude": -86.22395340698773
+        },
+        {
+          "objectid": 2399660,
+          "damagePointId": "{094c4dc1-5e2f-4e95-86e7-5a6cab725b73}",
+          "dcaCode": 25054,
+          "dcaCommonName": "brown spot needle blight",
+          "damageType": "Mortality",
+          "surveyYear": 2025,
+          "status": 1,
+          "dataSourceName": "NON_DMSM_GROUND",
+          "idsDataSource": "92",
+          "observationId": "{9d427ec5-6b86-4446-8928-2c4e63d31ad5}",
+          "countyFips": "01059",
+          "latitude": 34.39570594647228,
+          "longitude": -87.53430221635188
+        }
+      ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Fungi404",
+      "scientificName": "Raffaelea lauricola",
+      "commonName": "Laurel wilt",
+      "dcaCommonName": "laurel wilt",
+      "dcaCode": 24031,
+      "acceptedRecordCount": 3,
+      "countyFips": [
+        "01011",
+        "01109",
+        "01121"
+      ],
+      "representativeRecords": [
+        {
+          "objectid": 2411944,
+          "damagePointId": "{6bdb4264-35ff-454d-8a2f-6eb0aa1c5ce1}",
+          "dcaCode": 24031,
+          "dcaCommonName": "laurel wilt",
+          "damageType": "Mortality",
+          "surveyYear": 2025,
+          "status": 1,
+          "dataSourceName": "NON_DMSM_GROUND",
+          "idsDataSource": "92",
+          "observationId": "{194aedf6-7205-498c-acbc-86ae1e64e2a3}",
+          "countyFips": "01011",
+          "latitude": 32.05316747571923,
+          "longitude": -85.85476049087222
+        },
+        {
+          "objectid": 2399648,
+          "damagePointId": "{99fe9240-4239-475b-bc7d-d4b8b2657496}",
+          "dcaCode": 24031,
+          "dcaCommonName": "laurel wilt",
+          "damageType": "Mortality",
+          "surveyYear": 2025,
+          "status": 1,
+          "dataSourceName": "NON_DMSM_GROUND",
+          "idsDataSource": "92",
+          "observationId": "{242a640a-4c2d-4368-9a6b-04be47475baf}",
+          "countyFips": "01109",
+          "latitude": 31.924950712654308,
+          "longitude": -85.99972852883772
+        },
+        {
+          "objectid": 2412739,
+          "damagePointId": "{3d40641f-88dc-497b-8a16-e45595b6af22}",
+          "dcaCode": 24031,
+          "dcaCommonName": "laurel wilt",
+          "damageType": "Mortality",
+          "surveyYear": 2025,
+          "status": 1,
+          "dataSourceName": "NON_DMSM_GROUND",
+          "idsDataSource": "92",
+          "observationId": "{9c1d7c64-9295-46de-b708-087de45b44f8}",
+          "countyFips": "01121",
+          "latitude": 33.12436347308611,
+          "longitude": -86.18428108227396
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "reviewedTargetCount": 3,
+    "exactCatalogTargetCount": 3,
+    "importedSpeciesCount": 3,
+    "rawFeatureCount": 193,
+    "acceptedRecordCount": 11,
+    "countySpeciesPairs": 7
+  }
+}

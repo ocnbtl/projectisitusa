@@ -23,9 +23,10 @@
     "Imani, J.; Audette, C.; Auer, T.; et al. 2025. EOD - eBird Observation Dataset. Cornell Lab of Ornithology. Occurrence dataset https://doi.org/10.15468/aomfnb accessed via GBIF.org on 2026-06-15.",
     "iNaturalist. 2026. Research Grade public observations API, filtered to Alabama place_id 19 with exact active species taxa, non-captive/cultivated observations, mappable non-obscured coordinates, and county-resolved point locations. Available online at https://api.inaturalist.org/v1/observations.",
     "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
-    "National Ecological Observatory Network. Plant presence and percent cover, DP1.10058.001, RELEASE-2026. Available online at https://data.neonscience.org/data-products/DP1.10058.001."
+    "National Ecological Observatory Network. Plant presence and percent cover, DP1.10058.001, RELEASE-2026. Available online at https://data.neonscience.org/data-products/DP1.10058.001.",
+    "USDA Forest Service. 2026. Enterprise Data Warehouse Insect and Disease Survey IDS POINTS layer. Available online at https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0."
   ],
-  "snapshotDate": "2026-06-16T02:42:44.679Z",
+  "snapshotDate": "2026-06-16T03:44:13.049Z",
   "species": [
     {
       "speciesId": "abrus-precatorius",
@@ -75933,6 +75934,12 @@
           "matchType": "scientific-exact",
           "externalId": "EAB (Agrilus planipennis)",
           "url": "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/AerialDetectionP/FeatureServer/0"
+        },
+        {
+          "source": "USDA Forest Service Insect and Disease Survey point detections",
+          "matchType": "scientific-exact",
+          "externalId": "emerald ash borer; DCA 15087; 4 IDS point detections across 2 Alabama counties",
+          "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0"
         }
       ]
     },
@@ -226756,6 +226763,21 @@
       ]
     },
     {
+      "speciesId": "USRIIS-L48-Fungi299",
+      "countyFips": [
+        "01051",
+        "01059"
+      ],
+      "countyDataSources": [
+        {
+          "source": "USDA Forest Service Insect and Disease Survey point detections",
+          "matchType": "scientific-exact",
+          "externalId": "brown spot needle blight; DCA 25054; 4 IDS point detections across 2 Alabama counties",
+          "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0"
+        }
+      ]
+    },
+    {
       "speciesId": "USRIIS-L48-Fungi322",
       "countyFips": [
         "24033"
@@ -226813,6 +226835,12 @@
           "matchType": "scientific-exact",
           "externalId": "Laurel Wilt Disease (Raffaelea lauricola)",
           "url": "https://gis.forestry.alabama.gov/arcgis/rest/services/AFCEnterprise/AerialDetectionP/FeatureServer/0"
+        },
+        {
+          "source": "USDA Forest Service Insect and Disease Survey point detections",
+          "matchType": "scientific-exact",
+          "externalId": "laurel wilt; DCA 24031; 3 IDS point detections across 3 Alabama counties",
+          "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0"
         }
       ]
     },
@@ -389786,7 +389814,6 @@
     "USRIIS-L48-Fungi262",
     "USRIIS-L48-Fungi270",
     "USRIIS-L48-Fungi274",
-    "USRIIS-L48-Fungi299",
     "USRIIS-L48-Fungi318",
     "USRIIS-L48-Fungi327",
     "USRIIS-L48-Fungi328",
@@ -390142,8 +390169,8 @@
   ],
   "coverageSummary": {
     "catalogSpeciesCount": 2504,
-    "mappedSpeciesCount": 1612,
-    "unmatchedSpeciesCount": 892,
+    "mappedSpeciesCount": 1613,
+    "unmatchedSpeciesCount": 891,
     "sourceSpeciesCounts": {
       "EDDMaps": 1402,
       "Alabama Plant Atlas": 541,
@@ -390159,6 +390186,7 @@
       "NEON TALL plant presence and percent cover": 9,
       "APHIS Emerald Ash Borer county layer": 1,
       "Alabama Forestry Commission Aerial Detection layer": 3,
+      "USDA Forest Service Insect and Disease Survey point detections": 3,
       "Alabama Forestry Commission Cogongrass GIS": 1,
       "GBIF eBird Observation Dataset": 5,
       "USGS NAS live collection pages": 2,
