@@ -13,7 +13,7 @@
     "counties": "src/data/generated/counties.json",
     "presence": "src/data/generated/presence.json",
     "nonPresenceOverrides": "src/data/source/county-species-status-overrides.ts",
-    "countyPresenceSnapshotDate": "2026-06-16T03:44:13.049Z"
+    "countyPresenceSnapshotDate": "2026-06-16T03:55:21.583Z"
   },
   "target": {
     "knownPercent": 90,
@@ -26,11 +26,11 @@
     "totalDeterminations": 167768,
     "targetKnownDeterminationsPerCounty": 2254,
     "targetKnownDeterminationsTotal": 151018,
-    "presentVerifiedDeterminations": 12542,
+    "presentVerifiedDeterminations": 12544,
     "verifiedAbsentDeterminations": 0,
     "notDetectedDeterminations": 10,
-    "knownDeterminations": 12552,
-    "unknownDeterminations": 155216,
+    "knownDeterminations": 12554,
+    "unknownDeterminations": 155214,
     "knownPercent": 7.48,
     "countiesAtTarget": 0
   },
@@ -427,6 +427,7 @@
         "lepidium-ruderale",
         "lespedeza-bicolor",
         "lespedeza-cuneata",
+        "liberibacter-asiaticus",
         "ligustrum-japonicum",
         "ligustrum-lucidum",
         "ligustrum-sinense",
@@ -628,10 +629,10 @@
       ],
       "verifiedAbsentSpeciesIds": [],
       "notDetectedSpeciesIds": [],
-      "knownDeterminations": 370,
-      "unknownDeterminations": 2134,
-      "knownPercent": 14.78,
-      "targetGap": 1884
+      "knownDeterminations": 371,
+      "unknownDeterminations": 2133,
+      "knownPercent": 14.82,
+      "targetGap": 1883
     },
     {
       "countyFips": "01005",
@@ -9912,6 +9913,7 @@
         "lepidosaphes-beckii",
         "lespedeza-bicolor",
         "lespedeza-cuneata",
+        "liberibacter-asiaticus",
         "ligustrum-japonicum",
         "ligustrum-lucidum",
         "ligustrum-sinense",
@@ -10160,10 +10162,10 @@
       ],
       "verifiedAbsentSpeciesIds": [],
       "notDetectedSpeciesIds": [],
-      "knownDeterminations": 487,
-      "unknownDeterminations": 2017,
-      "knownPercent": 19.45,
-      "targetGap": 1767
+      "knownDeterminations": 488,
+      "unknownDeterminations": 2016,
+      "knownPercent": 19.49,
+      "targetGap": 1766
     },
     {
       "countyFips": "01099",
@@ -35040,11 +35042,14 @@
       "scientificName": "Liberibacter asiaticus",
       "category": "fungi-diseases",
       "profileType": "registry",
-      "presentVerifiedCountyFips": [],
+      "presentVerifiedCountyFips": [
+        "01003",
+        "01097"
+      ],
       "verifiedAbsentCountyFips": [],
       "notDetectedCountyFips": [],
-      "knownCountyCount": 0,
-      "unknownCountyCount": 67
+      "knownCountyCount": 2,
+      "unknownCountyCount": 65
     },
     {
       "speciesId": "ligustrum-japonicum",

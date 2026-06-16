@@ -1,0 +1,52 @@
+{
+  "source": "APHIS Federal Quarantine county layer",
+  "citation": [
+    "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1."
+  ],
+  "accessedAt": "2026-06-16T03:55:21.583Z",
+  "serviceUrl": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1",
+  "queryUrl": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=Quarantine_State_Abbr%3D%27AL%27&outFields=Quarantine_County,Quarantine_Program,Quarantine_Status,Quarantine_County_FIPS&returnGeometry=false&f=json",
+  "filters": {
+    "state": "AL",
+    "program": "Citrus Greening (HLB)",
+    "status": "Active Federal Quarantine",
+    "evidenceScope": "regulatory quarantine county"
+  },
+  "caveats": [
+    "APHIS quarantine rows are regulatory county evidence for the named program, not a specimen or lab result record.",
+    "Rows are treated as verified-present support only for active Alabama county quarantine records with valid county FIPS.",
+    "Missing APHIS rows are not interpreted as absence or non-detection."
+  ],
+  "species": [
+    {
+      "speciesId": "USRIIS-L48-Bacteria67",
+      "scientificName": "Liberibacter asiaticus",
+      "commonName": "Citrus huanglongbing",
+      "acceptedRecordCount": 2,
+      "countyFips": [
+        "01003",
+        "01097"
+      ],
+      "records": [
+        {
+          "countyName": "Baldwin",
+          "countyFips": "01003",
+          "program": "Citrus Greening (HLB)",
+          "status": "Active Federal Quarantine"
+        },
+        {
+          "countyName": "Mobile",
+          "countyFips": "01097",
+          "program": "Citrus Greening (HLB)",
+          "status": "Active Federal Quarantine"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "reviewedProgramCount": 1,
+    "importedSpeciesCount": 1,
+    "acceptedRecordCount": 2,
+    "countySpeciesPairs": 2
+  }
+}

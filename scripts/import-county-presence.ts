@@ -392,6 +392,7 @@ const AFPE_CODE_TO_SCIENTIFIC_NAME: Record<string, string> = {
 };
 const APHIS_FEDERAL_QUARANTINE_PROGRAM_TO_SCIENTIFIC_NAME: Record<string, string> = {
   "Asian Citrus Psyllid": "Diaphorina citri",
+  "Citrus Greening (HLB)": "Liberibacter asiaticus",
   "Imported Fire Ant": "Solenopsis invicta",
   "Sweet Orange Scab": "Elsinoe australis",
 };
