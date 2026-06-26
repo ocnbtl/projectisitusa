@@ -47,6 +47,12 @@ The expanded iNaturalist Research Grade import reviewed `147` exact current-cata
 
 Resolved contradiction: the older APHIS quarantine note said citrus greening was skipped because the catalog had no exact `Candidatus Liberibacter asiaticus` target. Current generated catalog data includes `Liberibacter asiaticus` for citrus huanglongbing, and the 2026-06-16 APHIS HLB recheck imported active Baldwin and Mobile quarantine rows as regulatory county evidence.
 
+### Alabama Latest Update, 2026-06-26
+
+The current regenerated outputs supersede the older Alabama counts above. Alabama now has `865` distinct live mapped species, `201.31` average mapped species per county, `13488` verified-present determinations, `0` verified-absent determinations, `10` survey-area not-detected determinations, and `154270` unknown determinations out of `167768`. That is `8.05%` known.
+
+The GBIF Invasive Plant Atlas of the MidSouth import reviewed a separate invasive-plant source family from dataset `d587c7e5-d442-437a-a6d7-d1a78ecf2300`. It scanned `2701` bounded records, resolved `1727` records inside Alabama counties, accepted `1641` exact current-catalog plant records, imported `61` species, produced `308` gross Alabama county-species source pairs, and added `6` net Alabama matrix determinations after generated unioning. Treat IPAMS rows as invasive-plant observed-presence evidence only, not countywide absence, survey non-detection, establishment proof, abundance, or complete county plant inventory coverage.
+
 ## Remaining States
 
 All other states are still `not-started` in this audit track until their statewide official source paths are logged here.
