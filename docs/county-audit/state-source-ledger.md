@@ -49,9 +49,11 @@ Resolved contradiction: the older APHIS quarantine note said citrus greening was
 
 ### Alabama Latest Update, 2026-06-26
 
-The current regenerated outputs supersede the older Alabama counts above. Alabama now has `865` distinct live mapped species, `201.31` average mapped species per county, `13488` verified-present determinations, `0` verified-absent determinations, `10` survey-area not-detected determinations, and `154270` unknown determinations out of `167768`. That is `8.05%` known.
+The current regenerated outputs supersede the older Alabama counts above. Alabama now has `865` distinct live mapped species, `201.82` average mapped species per county, `13522` verified-present determinations, `0` verified-absent determinations, `10` survey-area not-detected determinations, and `154236` unknown determinations out of `167768`. That is `8.07%` known.
 
 The GBIF Invasive Plant Atlas of the MidSouth import reviewed a separate invasive-plant source family from dataset `d587c7e5-d442-437a-a6d7-d1a78ecf2300`. It scanned `2701` bounded records, resolved `1727` records inside Alabama counties, accepted `1641` exact current-catalog plant records, imported `61` species, produced `308` gross Alabama county-species source pairs, and added `6` net Alabama matrix determinations after generated unioning. Treat IPAMS rows as invasive-plant observed-presence evidence only, not countywide absence, survey non-detection, establishment proof, abundance, or complete county plant inventory coverage.
+
+The GBIF coordinate-resolved preserved specimen supplement reviewed `9` exact current-catalog targets identified from Alabama specimen facets, accepted `1946` preserved specimen records with coordinates resolving to Alabama county polygons, produced `149` gross Alabama county-species source pairs, and added `34` net Alabama matrix determinations after generated unioning. Treat these rows as physical specimen occurrence evidence only, not establishment proof, invasive-impact proof, abundance, absence, non-detection, or complete county inventory coverage.
 
 ## Remaining States
 
