@@ -55,6 +55,12 @@ The GBIF Invasive Plant Atlas of the MidSouth import reviewed a separate invasiv
 
 The GBIF coordinate-resolved preserved specimen supplement reviewed `9` exact current-catalog targets identified from Alabama specimen facets, accepted `1946` preserved specimen records with coordinates resolving to Alabama county polygons, produced `149` gross Alabama county-species source pairs, and added `34` net Alabama matrix determinations after generated unioning. Treat these rows as physical specimen occurrence evidence only, not establishment proof, invasive-impact proof, abundance, absence, non-detection, or complete county inventory coverage.
 
+### Alabama Latest Update, 2026-06-27
+
+The current regenerated outputs supersede the older Alabama counts above. Alabama now has `867` distinct live mapped species, `210.99` average mapped species per county, `14136` verified-present determinations, `0` verified-absent determinations, `10` survey-area not-detected determinations, and `153622` unknown determinations out of `167768`. That is `8.43%` known.
+
+The expanded iNaturalist Research Grade import now reviews `257` exact current-catalog targets and found `257` exact active iNaturalist taxa. The 2026-06-27 pass reviewed `66788` strict public non-captive, non-obscured Research Grade API observations, accepted `65691` county-resolved observations, produced `7118` gross Alabama county-species source pairs, reported `615` net new source-snapshot county-species pairs, and raised the regenerated Alabama matrix by `614` verified-present determinations after generated unioning. Treat iNaturalist rows as supplemental community-verified observed-presence evidence only, not agency survey evidence, establishment proof, invasive-impact proof, non-detection, absence, or complete county inventory coverage. Domestic Cat, Mute Swan, Koi, obvious crop records, and other high-ambiguity taxa remain excluded from this source alone; the latest expansion also left out additional crop or domestic taxa including `Felis catus`, `Cygnus olor`, `Cyprinus rubrofuscus`, `Cucumis melo`, `Triticum aestivum`, `Solanum lycopersicum`, `Solanum tuberosum`, `Ipomoea batatas`, `Sorghum bicolor`, `Citrullus lanatus`, `Avena sativa`, and `Prunus persica`.
+
 ## Remaining States
 
 All other states are still `not-started` in this audit track until their statewide official source paths are logged here.

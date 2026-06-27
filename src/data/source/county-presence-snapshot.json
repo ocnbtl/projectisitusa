@@ -24,11 +24,11 @@
     "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
     "National Ecological Observatory Network. Plant presence and percent cover, DP1.10058.001, RELEASE-2026. Available online at https://data.neonscience.org/data-products/DP1.10058.001.",
     "USDA Forest Service. 2026. Enterprise Data Warehouse Insect and Disease Survey IDS POINTS layer. Available online at https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InsectandDiseaseSurvey_01/MapServer/0.",
-    "iNaturalist. 2026. Research Grade public observations API, filtered to Alabama place_id 19 with exact active species taxa, non-captive/cultivated observations, mappable non-obscured coordinates, and county-resolved point locations. Available online at https://api.inaturalist.org/v1/observations.",
     "Invasive Plant Atlas of the MidSouth. Occurrence dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300 accessed via GBIF.org.",
-    "GBIF.org. 2026. GBIF occurrence search. Coordinate-resolved preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search."
+    "GBIF.org. 2026. GBIF occurrence search. Coordinate-resolved preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
+    "iNaturalist. 2026. Research Grade public observations API, filtered to Alabama place_id 19 with exact active species taxa, non-captive/cultivated observations, mappable non-obscured coordinates, and county-resolved point locations. Available online at https://api.inaturalist.org/v1/observations."
   ],
-  "snapshotDate": "2026-06-27T05:00:57.736Z",
+  "snapshotDate": "2026-06-27T06:09:25.142Z",
   "species": [
     {
       "speciesId": "abrus-precatorius",
@@ -82,6 +82,7 @@
         "01015",
         "01027",
         "01033",
+        "01037",
         "01043",
         "01045",
         "01053",
@@ -96,9 +97,11 @@
         "01089",
         "01091",
         "01095",
+        "01101",
         "01103",
         "01111",
         "01123",
+        "01125",
         "01127",
         "04013",
         "04019",
@@ -1424,6 +1427,12 @@
           "matchType": "scientific-exact",
           "externalId": "ABTH 65829 (Abutilon theophrasti)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 60214 (Abutilon theophrasti); 28 accepted observations across 13 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=60214&quality_grade=research"
         }
       ]
     },
@@ -2456,16 +2465,16 @@
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=7898"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 62984 (Aedes albopictus); 172 accepted observations across 37 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=62984&quality_grade=research"
-        },
-        {
           "source": "GBIF coordinate-resolved preserved specimen records",
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 1651430; 274 accepted specimens across 4 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=1651430&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 62984 (Aedes albopictus); 179 accepted observations across 37 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=62984&quality_grade=research"
         }
       ]
     },
@@ -7534,6 +7543,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 153 accepted observations across 33 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 47443 (Albizia julibrissin); 1919 accepted observations across 66 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=47443&quality_grade=research"
         }
       ]
     },
@@ -8753,6 +8768,7 @@
         "01013",
         "01015",
         "01017",
+        "01019",
         "01021",
         "01027",
         "01029",
@@ -8760,15 +8776,20 @@
         "01033",
         "01035",
         "01037",
+        "01039",
         "01041",
         "01043",
         "01045",
+        "01047",
         "01049",
+        "01051",
         "01053",
         "01055",
         "01057",
         "01059",
+        "01063",
         "01065",
+        "01069",
         "01071",
         "01073",
         "01075",
@@ -8784,12 +8805,17 @@
         "01097",
         "01101",
         "01103",
+        "01105",
+        "01107",
         "01109",
         "01111",
         "01115",
         "01117",
+        "01119",
         "01121",
+        "01123",
         "01125",
+        "01127",
         "01133",
         "05003",
         "05007",
@@ -9733,6 +9759,12 @@
           "matchType": "scientific-exact",
           "externalId": "ALVI 28096 (Allium vineale)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 75371 (Allium vineale); 334 accepted observations across 46 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=75371&quality_grade=research"
         }
       ]
     },
@@ -10600,6 +10632,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 8 accepted observations across 3 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 75386 (Alternanthera philoxeroides); 240 accepted observations across 47 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=75386&quality_grade=research"
         }
       ]
     },
@@ -10789,7 +10827,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 116461 (Anolis sagrei); 677 accepted observations across 18 Alabama counties",
+          "externalId": "taxon 116461 (Anolis sagrei); 686 accepted observations across 18 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=116461&quality_grade=research"
         }
       ]
@@ -15062,13 +15100,18 @@
         "01021",
         "01029",
         "01035",
+        "01045",
+        "01051",
         "01055",
         "01069",
         "01071",
         "01081",
+        "01089",
+        "01095",
         "01097",
         "01101",
         "01109",
+        "01123",
         "01125",
         "04019",
         "06051",
@@ -15678,6 +15721,12 @@
           "matchType": "scientific-exact",
           "externalId": "5148",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=5148"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52856 (Artemisia vulgaris); 25 accepted observations across 11 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52856&quality_grade=research"
         }
       ]
     },
@@ -16182,6 +16231,7 @@
       "countyFips": [
         "01001",
         "01003",
+        "01005",
         "01007",
         "01009",
         "01011",
@@ -16197,15 +16247,18 @@
         "01041",
         "01045",
         "01049",
+        "01051",
         "01055",
         "01061",
         "01063",
         "01065",
+        "01067",
         "01069",
         "01071",
         "01073",
         "01081",
         "01085",
+        "01087",
         "01091",
         "01095",
         "01097",
@@ -16217,6 +16270,7 @@
         "01113",
         "01117",
         "01119",
+        "01121",
         "01125",
         "01133",
         "04003",
@@ -16876,6 +16930,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 23 accepted observations across 10 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 64017 (Arundo donax); 85 accepted observations across 24 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=64017&quality_grade=research"
         }
       ]
     },
@@ -19752,16 +19812,22 @@
       "speciesId": "bothriochloa-ischaemum",
       "countyFips": [
         "01003",
+        "01011",
         "01013",
         "01035",
         "01039",
         "01041",
         "01047",
+        "01051",
+        "01053",
+        "01061",
         "01069",
         "01085",
+        "01091",
         "01097",
         "01101",
         "01109",
+        "01119",
         "01123",
         "04001",
         "04003",
@@ -20104,6 +20170,12 @@
           "matchType": "scientific-exact",
           "externalId": "55440",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=55440"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 75842 (Bothriochloa ischaemum); 20 accepted observations across 10 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=75842&quality_grade=research"
         }
       ]
     },
@@ -21787,10 +21859,12 @@
         "01003",
         "01005",
         "01007",
+        "01009",
         "01011",
         "01013",
         "01015",
         "01019",
+        "01021",
         "01029",
         "01031",
         "01035",
@@ -21809,20 +21883,26 @@
         "01071",
         "01073",
         "01075",
+        "01077",
         "01079",
         "01081",
         "01083",
         "01089",
         "01091",
+        "01093",
         "01095",
         "01097",
         "01101",
         "01103",
         "01105",
+        "01107",
         "01109",
         "01115",
+        "01117",
+        "01119",
         "01125",
         "01127",
+        "01129",
         "01133",
         "04001",
         "04003",
@@ -22490,6 +22570,12 @@
           "matchType": "scientific-exact",
           "externalId": "BRCA6 20894 (Bromus catharticus)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 60276 (Bromus catharticus); 69 accepted observations across 24 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=60276&quality_grade=research"
         }
       ]
     },
@@ -27026,6 +27112,7 @@
         "01017",
         "01019",
         "01021",
+        "01023",
         "01027",
         "01029",
         "01031",
@@ -27042,6 +27129,7 @@
         "01057",
         "01059",
         "01061",
+        "01063",
         "01065",
         "01067",
         "01069",
@@ -27067,11 +27155,13 @@
         "01111",
         "01113",
         "01115",
+        "01117",
         "01119",
         "01121",
         "01125",
         "01127",
         "01131",
+        "01133",
         "04001",
         "04003",
         "04005",
@@ -29215,6 +29305,12 @@
           "matchType": "scientific-exact",
           "externalId": "CABU2 62380 (Capsella bursa-pastoris)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56121 (Capsella bursa-pastoris); 156 accepted observations across 41 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56121&quality_grade=research"
         }
       ]
     },
@@ -29222,10 +29318,14 @@
       "speciesId": "celastrus-orbiculatus",
       "countyFips": [
         "01001",
+        "01009",
+        "01015",
         "01017",
         "01033",
         "01047",
         "01049",
+        "01055",
+        "01071",
         "01073",
         "01081",
         "01109",
@@ -29938,6 +30038,12 @@
           "matchType": "scientific-exact",
           "externalId": "3012",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=3012"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 64540 (Celastrus orbiculatus); 31 accepted observations across 10 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=64540&quality_grade=research"
         }
       ]
     },
@@ -34079,12 +34185,19 @@
           "matchType": "scientific-exact",
           "externalId": "CEGL2 57428 (Cerastium glomeratum)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52973 (Cerastium glomeratum); 106 accepted observations across 35 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52973&quality_grade=research"
         }
       ]
     },
     {
       "speciesId": "chenopodium-album",
       "countyFips": [
+        "01001",
         "01003",
         "01007",
         "01009",
@@ -34106,6 +34219,7 @@
         "01059",
         "01063",
         "01067",
+        "01069",
         "01071",
         "01073",
         "01077",
@@ -34114,6 +34228,7 @@
         "01085",
         "01087",
         "01089",
+        "01093",
         "01095",
         "01097",
         "01099",
@@ -34125,6 +34240,7 @@
         "01115",
         "01117",
         "01125",
+        "01133",
         "04001",
         "04005",
         "04013",
@@ -36099,6 +36215,12 @@
           "matchType": "scientific-exact",
           "externalId": "5294",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=5294"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 58127 (Chenopodium album); 31 accepted observations across 16 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=58127&quality_grade=research"
         }
       ]
     },
@@ -36141,30 +36263,41 @@
     {
       "speciesId": "cichorium-intybus",
       "countyFips": [
+        "01003",
+        "01007",
         "01009",
         "01011",
         "01015",
         "01019",
+        "01021",
+        "01039",
         "01043",
         "01047",
         "01049",
         "01055",
+        "01061",
         "01063",
         "01071",
         "01073",
+        "01077",
         "01079",
         "01081",
         "01083",
         "01085",
+        "01087",
         "01089",
+        "01095",
         "01097",
         "01099",
         "01101",
+        "01103",
+        "01105",
         "01107",
         "01109",
         "01117",
         "01119",
         "01123",
+        "01125",
         "01133",
         "04001",
         "04005",
@@ -37690,6 +37823,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 1 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52913 (Cichorium intybus); 83 accepted observations across 29 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52913&quality_grade=research"
         }
       ]
     },
@@ -39196,23 +39335,29 @@
     {
       "speciesId": "cirsium-vulgare",
       "countyFips": [
+        "01003",
+        "01005",
         "01009",
         "01013",
         "01015",
         "01019",
         "01021",
         "01033",
+        "01035",
         "01041",
         "01043",
         "01049",
         "01055",
         "01059",
         "01063",
+        "01065",
         "01071",
         "01073",
+        "01079",
         "01081",
         "01083",
         "01089",
+        "01093",
         "01095",
         "01101",
         "01103",
@@ -39220,6 +39365,7 @@
         "01117",
         "01125",
         "01131",
+        "01133",
         "04001",
         "04003",
         "04005",
@@ -41042,6 +41188,12 @@
           "matchType": "scientific-exact",
           "externalId": "CIVU 33818 (Cirsium vulgare)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52989 (Cirsium vulgare); 41 accepted observations across 21 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52989&quality_grade=research"
         }
       ]
     },
@@ -41687,7 +41839,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 62776 (Clematis terniflora); 347 accepted observations across 39 Alabama counties",
+          "externalId": "taxon 62776 (Clematis terniflora); 348 accepted observations across 39 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=62776&quality_grade=research"
         }
       ]
@@ -41701,6 +41853,7 @@
         "01007",
         "01009",
         "01011",
+        "01013",
         "01015",
         "01017",
         "01019",
@@ -41710,6 +41863,8 @@
         "01033",
         "01035",
         "01037",
+        "01039",
+        "01043",
         "01045",
         "01049",
         "01051",
@@ -41722,10 +41877,12 @@
         "01069",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
         "01083",
+        "01087",
         "01089",
         "01091",
         "01093",
@@ -41733,15 +41890,19 @@
         "01097",
         "01101",
         "01103",
+        "01105",
+        "01107",
         "01109",
         "01111",
         "01115",
         "01117",
         "01119",
         "01121",
+        "01123",
         "01125",
         "01127",
         "01129",
+        "01133",
         "05001",
         "05003",
         "05005",
@@ -42948,6 +43109,12 @@
           "matchType": "scientific-exact",
           "externalId": "COCO3 16897 (Commelina communis)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52927 (Commelina communis); 325 accepted observations across 45 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52927&quality_grade=research"
         }
       ]
     },
@@ -42955,15 +43122,18 @@
       "speciesId": "conium-maculatum",
       "countyFips": [
         "01015",
+        "01017",
         "01033",
         "01049",
         "01055",
         "01071",
         "01073",
+        "01077",
         "01079",
         "01083",
         "01089",
         "01097",
+        "01103",
         "01115",
         "01121",
         "01125",
@@ -44315,6 +44485,12 @@
           "matchType": "scientific-exact",
           "externalId": "COMA2 73869 (Conium maculatum)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52998 (Conium maculatum); 70 accepted observations across 12 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52998&quality_grade=research"
         }
       ]
     },
@@ -47823,6 +47999,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 8190231; 693 accepted specimens across 61 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=8190231&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 64006 (Corbicula fluminea); 981 accepted observations across 59 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=64006&quality_grade=research"
         }
       ]
     },
@@ -49692,10 +49874,15 @@
       "speciesId": "ctenopharyngodon-idella",
       "countyFips": [
         "01003",
+        "01009",
         "01013",
+        "01019",
+        "01021",
         "01025",
         "01029",
+        "01031",
         "01039",
+        "01049",
         "01051",
         "01053",
         "01061",
@@ -49704,15 +49891,18 @@
         "01077",
         "01081",
         "01083",
+        "01089",
         "01091",
         "01095",
         "01097",
         "01113",
+        "01117",
         "01119",
         "01121",
         "01123",
         "01125",
         "01129",
+        "01131",
         "04013",
         "04017",
         "04019",
@@ -50337,6 +50527,12 @@
           "matchType": "scientific-exact",
           "externalId": "Ctenopharyngodon idella; 1 accepted count records across 1 Alabama counties",
           "url": "https://www.waterqualitydata.us/data/Result/search?statecode=US%3A01&dataProfile=biological&sampleMedia=Biological&subjectTaxonomicName=Ctenopharyngodon+idella&mimeType=csv&zip=no&sorted=no"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 128500 (Ctenopharyngodon idella); 65 accepted observations across 17 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=128500&quality_grade=research"
         }
       ]
     },
@@ -50476,6 +50672,7 @@
         "01027",
         "01029",
         "01031",
+        "01033",
         "01035",
         "01037",
         "01039",
@@ -50508,6 +50705,7 @@
         "01113",
         "01115",
         "01117",
+        "01119",
         "01121",
         "01123",
         "01125",
@@ -51668,6 +51866,12 @@
           "matchType": "scientific-exact",
           "externalId": "CYDA 21453 (Cynodon dactylon)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 58371 (Cynodon dactylon); 49 accepted observations across 23 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=58371&quality_grade=research"
         }
       ]
     },
@@ -52614,14 +52818,19 @@
     {
       "speciesId": "cyperus-esculentus",
       "countyFips": [
+        "01001",
         "01003",
         "01005",
+        "01009",
         "01011",
         "01013",
         "01015",
+        "01023",
         "01031",
+        "01039",
         "01043",
         "01045",
+        "01047",
         "01053",
         "01055",
         "01061",
@@ -52630,6 +52839,7 @@
         "01067",
         "01071",
         "01073",
+        "01077",
         "01081",
         "01083",
         "01089",
@@ -52642,6 +52852,7 @@
         "01109",
         "01117",
         "01121",
+        "01127",
         "04001",
         "04003",
         "04005",
@@ -54152,6 +54363,12 @@
           "matchType": "scientific-exact",
           "externalId": "3016",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=3016"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 76584 (Cyperus esculentus); 28 accepted observations across 17 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=76584&quality_grade=research"
         }
       ]
     },
@@ -56235,6 +56452,7 @@
       "countyFips": [
         "01001",
         "01003",
+        "01007",
         "01009",
         "01011",
         "01015",
@@ -56260,8 +56478,10 @@
         "01079",
         "01081",
         "01083",
+        "01085",
         "01089",
         "01091",
+        "01093",
         "01095",
         "01097",
         "01101",
@@ -56269,7 +56489,9 @@
         "01109",
         "01111",
         "01115",
+        "01117",
         "01121",
+        "01123",
         "01125",
         "01127",
         "01133",
@@ -57978,6 +58200,12 @@
           "matchType": "scientific-exact",
           "externalId": "DAGL 21475 (Dactylis glomerata)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52720 (Dactylis glomerata); 96 accepted observations across 30 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52720&quality_grade=research"
         }
       ]
     },
@@ -58013,6 +58241,7 @@
         "01069",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
@@ -58029,8 +58258,11 @@
         "01109",
         "01111",
         "01115",
+        "01117",
         "01123",
         "01125",
+        "01127",
+        "01133",
         "04003",
         "04007",
         "04017",
@@ -59307,6 +59539,12 @@
           "matchType": "scientific-exact",
           "externalId": "DAST 55027 (Datura stramonium)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55854 (Datura stramonium); 82 accepted observations across 28 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55854&quality_grade=research"
         }
       ]
     },
@@ -59323,6 +59561,7 @@
         "01015",
         "01017",
         "01019",
+        "01021",
         "01025",
         "01027",
         "01029",
@@ -59330,22 +59569,27 @@
         "01033",
         "01035",
         "01037",
+        "01039",
         "01041",
         "01043",
         "01047",
         "01049",
+        "01051",
         "01055",
         "01059",
         "01061",
         "01063",
         "01065",
         "01067",
+        "01069",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
         "01083",
+        "01085",
         "01087",
         "01089",
         "01091",
@@ -59361,6 +59605,7 @@
         "01113",
         "01115",
         "01117",
+        "01119",
         "01121",
         "01123",
         "01125",
@@ -61207,6 +61452,12 @@
           "matchType": "scientific-exact",
           "externalId": "DACA6 73956 (Daucus carota)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 76610 (Daucus carota); 539 accepted observations across 49 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=76610&quality_grade=research"
         }
       ]
     },
@@ -61216,6 +61467,8 @@
         "01009",
         "01011",
         "01015",
+        "01017",
+        "01019",
         "01029",
         "01037",
         "01049",
@@ -61232,8 +61485,10 @@
         "01095",
         "01103",
         "01115",
+        "01117",
         "01121",
         "01125",
+        "01127",
         "04005",
         "04023",
         "05003",
@@ -62486,6 +62741,12 @@
           "matchType": "scientific-exact",
           "externalId": "DIAR 57458 (Dianthus armeria)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 64541 (Dianthus armeria); 25 accepted observations across 13 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=64541&quality_grade=research"
         }
       ]
     },
@@ -70198,6 +70459,7 @@
       "countyFips": [
         "01001",
         "01003",
+        "01005",
         "01007",
         "01009",
         "01011",
@@ -70206,11 +70468,15 @@
         "01017",
         "01019",
         "01021",
+        "01023",
+        "01027",
+        "01029",
         "01033",
         "01035",
         "01037",
         "01039",
         "01049",
+        "01051",
         "01053",
         "01057",
         "01059",
@@ -70226,11 +70492,14 @@
         "01081",
         "01083",
         "01085",
+        "01087",
+        "01089",
         "01093",
         "01095",
         "01097",
         "01099",
         "01101",
+        "01105",
         "01107",
         "01109",
         "01117",
@@ -70239,6 +70508,7 @@
         "01123",
         "01125",
         "01127",
+        "01131",
         "01133",
         "05005",
         "05011",
@@ -71442,6 +71712,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 12 accepted observations across 4 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 64697 (Elaeagnus umbellata); 168 accepted observations across 40 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=64697&quality_grade=research"
         }
       ]
     },
@@ -71510,6 +71786,7 @@
         "01011",
         "01013",
         "01015",
+        "01019",
         "01021",
         "01023",
         "01025",
@@ -71528,12 +71805,14 @@
         "01053",
         "01055",
         "01059",
+        "01061",
         "01063",
         "01065",
         "01067",
         "01069",
         "01071",
         "01073",
+        "01077",
         "01079",
         "01081",
         "01083",
@@ -71556,6 +71835,7 @@
         "01125",
         "01127",
         "01129",
+        "01133",
         "04001",
         "04005",
         "04012",
@@ -73059,6 +73339,12 @@
           "matchType": "scientific-exact",
           "externalId": "ELIN3 22281 (Eleusine indica)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 76790 (Eleusine indica); 112 accepted observations across 36 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=76790&quality_grade=research"
         }
       ]
     },
@@ -73156,7 +73442,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 22631 (Eleutherodactylus planirostris); 99 accepted observations across 7 Alabama counties",
+          "externalId": "taxon 22631 (Eleutherodactylus planirostris); 100 accepted observations across 7 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=22631&quality_grade=research"
         }
       ]
@@ -84692,6 +84978,12 @@
           "matchType": "scientific-exact",
           "externalId": "3874",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=3874"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 42134 (Sus scrofa); 170 accepted observations across 41 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=42134&quality_grade=research"
         }
       ]
     },
@@ -86486,6 +86778,7 @@
     {
       "speciesId": "glechoma-hederacea",
       "countyFips": [
+        "01001",
         "01003",
         "01007",
         "01009",
@@ -86493,12 +86786,19 @@
         "01013",
         "01015",
         "01019",
+        "01021",
+        "01027",
         "01029",
         "01033",
         "01043",
         "01045",
+        "01047",
+        "01049",
         "01055",
+        "01057",
         "01059",
+        "01063",
+        "01065",
         "01067",
         "01071",
         "01073",
@@ -86507,11 +86807,17 @@
         "01079",
         "01081",
         "01083",
+        "01087",
         "01089",
         "01091",
+        "01093",
         "01095",
+        "01097",
         "01101",
         "01103",
+        "01105",
+        "01107",
+        "01109",
         "01111",
         "01115",
         "01117",
@@ -87953,6 +88259,12 @@
           "matchType": "scientific-exact",
           "externalId": "GLHE2 45709 (Glechoma hederacea)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55830 (Glechoma hederacea); 524 accepted observations across 43 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55830&quality_grade=research"
         }
       ]
     },
@@ -88003,11 +88315,13 @@
         "01023",
         "01025",
         "01027",
+        "01029",
         "01031",
         "01033",
         "01035",
         "01037",
         "01039",
+        "01041",
         "01043",
         "01045",
         "01047",
@@ -89351,30 +89665,50 @@
           "matchType": "scientific-exact",
           "externalId": "9328",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=9328"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 81923 (Halyomorpha halys); 1462 accepted observations across 58 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=81923&quality_grade=research"
         }
       ]
     },
     {
       "speciesId": "harmonia-axyridis",
       "countyFips": [
+        "01001",
         "01003",
         "01005",
         "01007",
+        "01009",
         "01011",
         "01013",
+        "01015",
+        "01017",
         "01019",
         "01021",
         "01023",
+        "01025",
         "01027",
+        "01029",
         "01031",
         "01033",
+        "01035",
+        "01037",
         "01039",
+        "01041",
         "01043",
+        "01045",
+        "01047",
         "01049",
         "01051",
+        "01053",
         "01055",
+        "01061",
         "01063",
         "01065",
+        "01067",
         "01069",
         "01071",
         "01073",
@@ -89385,16 +89719,22 @@
         "01085",
         "01087",
         "01089",
+        "01091",
+        "01093",
         "01095",
         "01097",
+        "01099",
         "01101",
         "01103",
         "01105",
+        "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
+        "01121",
         "01123",
         "01125",
         "01127",
@@ -90875,6 +91215,12 @@
           "matchType": "scientific-exact",
           "externalId": "1020",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=1020"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 48484 (Harmonia axyridis); 1999 accepted observations across 63 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=48484&quality_grade=research"
         }
       ]
     },
@@ -90882,7 +91228,9 @@
       "speciesId": "hedera-helix",
       "countyFips": [
         "01001",
+        "01003",
         "01005",
+        "01007",
         "01009",
         "01011",
         "01013",
@@ -90890,17 +91238,25 @@
         "01017",
         "01021",
         "01025",
+        "01027",
         "01029",
         "01031",
         "01033",
         "01035",
         "01037",
+        "01039",
         "01041",
         "01043",
+        "01045",
         "01047",
+        "01049",
         "01051",
         "01053",
         "01055",
+        "01059",
+        "01061",
+        "01065",
+        "01069",
         "01071",
         "01073",
         "01075",
@@ -90908,6 +91264,7 @@
         "01079",
         "01081",
         "01083",
+        "01087",
         "01089",
         "01091",
         "01093",
@@ -90916,13 +91273,16 @@
         "01099",
         "01101",
         "01103",
+        "01105",
         "01107",
         "01109",
         "01115",
         "01117",
         "01119",
+        "01121",
         "01123",
         "01125",
+        "01127",
         "01131",
         "01133",
         "04003",
@@ -91738,6 +92098,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 3 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55882 (Hedera helix); 477 accepted observations across 47 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55882&quality_grade=research"
         }
       ]
     },
@@ -91747,25 +92113,32 @@
         "01001",
         "01003",
         "01005",
+        "01007",
         "01009",
         "01011",
         "01013",
         "01015",
         "01019",
+        "01021",
         "01023",
+        "01025",
         "01027",
         "01029",
         "01031",
         "01035",
         "01037",
+        "01039",
         "01041",
         "01043",
+        "01045",
         "01047",
         "01049",
         "01051",
         "01053",
         "01055",
         "01057",
+        "01065",
+        "01067",
         "01071",
         "01073",
         "01075",
@@ -91782,8 +92155,11 @@
         "01099",
         "01101",
         "01103",
+        "01105",
+        "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01121",
@@ -92868,6 +93244,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 13 accepted observations across 6 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 126583 (Hemerocallis fulva); 128 accepted observations across 47 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=126583&quality_grade=research"
         }
       ]
     },
@@ -93319,7 +93701,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 34435 (Hemidactylus turcicus); 1384 accepted observations across 53 Alabama counties",
+          "externalId": "taxon 34435 (Hemidactylus turcicus); 1394 accepted observations across 53 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=34435&quality_grade=research"
         }
       ]
@@ -95662,16 +96044,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 77468 (Hydrilla verticillata); 27 accepted observations across 12 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=77468&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 77468 (Hydrilla verticillata); 27 accepted observations across 12 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=77468&quality_grade=research"
         }
       ]
     },
@@ -97748,16 +98130,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 53104 (Hypochaeris radicata); 189 accepted observations across 36 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53104&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53104 (Hypochaeris radicata); 189 accepted observations across 36 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53104&quality_grade=research"
         }
       ]
     },
@@ -98900,16 +99282,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 164056 (Imperata cylindrica); 251 accepted observations across 41 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=164056&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 157 accepted observations across 10 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 164056 (Imperata cylindrica); 252 accepted observations across 41 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=164056&quality_grade=research"
         }
       ]
     },
@@ -98929,11 +99311,14 @@
         "01031",
         "01033",
         "01035",
+        "01037",
         "01039",
         "01041",
+        "01043",
         "01045",
         "01047",
         "01049",
+        "01051",
         "01055",
         "01057",
         "01061",
@@ -98941,21 +99326,28 @@
         "01069",
         "01071",
         "01073",
+        "01077",
+        "01079",
         "01081",
         "01083",
         "01089",
+        "01093",
         "01095",
         "01097",
         "01099",
         "01101",
         "01103",
+        "01105",
         "01109",
         "01111",
+        "01113",
         "01115",
+        "01117",
         "01119",
         "01121",
         "01123",
         "01125",
+        "01127",
         "01133",
         "04001",
         "04003",
@@ -99899,6 +100291,12 @@
           "matchType": "scientific-exact",
           "externalId": "Ipomoea purpurea; 11 introduced plant records across 2 TALL plot counties",
           "url": "https://data.neonscience.org/data-products/DP1.10058.001"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52344 (Ipomoea purpurea); 213 accepted observations across 32 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52344&quality_grade=research"
         }
       ]
     },
@@ -100680,7 +101078,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 47779 (Iris pseudacorus); 250 accepted observations across 29 Alabama counties",
+          "externalId": "taxon 47779 (Iris pseudacorus); 249 accepted observations across 29 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=47779&quality_grade=research"
         }
       ]
@@ -102057,8 +102455,10 @@
         "01011",
         "01013",
         "01015",
+        "01017",
         "01019",
         "01021",
+        "01023",
         "01025",
         "01027",
         "01029",
@@ -102066,13 +102466,17 @@
         "01033",
         "01035",
         "01037",
+        "01039",
         "01041",
         "01043",
         "01045",
         "01047",
         "01049",
+        "01051",
         "01053",
         "01055",
+        "01057",
+        "01059",
         "01061",
         "01063",
         "01065",
@@ -102094,15 +102498,20 @@
         "01099",
         "01101",
         "01103",
+        "01105",
+        "01107",
         "01109",
         "01111",
         "01113",
         "01115",
+        "01117",
         "01119",
         "01121",
+        "01123",
         "01125",
         "01129",
         "01131",
+        "01133",
         "05003",
         "05005",
         "05011",
@@ -102911,6 +103320,12 @@
           "matchType": "scientific-exact",
           "externalId": "Kummerowia striata; 3 introduced plant records across 2 TALL plot counties",
           "url": "https://data.neonscience.org/data-products/DP1.10058.001"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 143558 (Kummerowia striata); 262 accepted observations across 50 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=143558&quality_grade=research"
         }
       ]
     },
@@ -102944,13 +103359,16 @@
         "01017",
         "01019",
         "01021",
+        "01033",
         "01035",
         "01039",
         "01043",
         "01047",
+        "01049",
         "01051",
         "01053",
         "01055",
+        "01067",
         "01069",
         "01071",
         "01073",
@@ -102965,8 +103383,11 @@
         "01101",
         "01103",
         "01109",
+        "01117",
         "01119",
         "01125",
+        "01129",
+        "01133",
         "04001",
         "04003",
         "04005",
@@ -104846,6 +105267,12 @@
           "matchType": "scientific-exact",
           "externalId": "LASE 37118 (Lactuca serriola)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53107 (Lactuca serriola); 75 accepted observations across 21 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53107&quality_grade=research"
         }
       ]
     },
@@ -104863,6 +105290,7 @@
         "01017",
         "01019",
         "01021",
+        "01023",
         "01025",
         "01027",
         "01029",
@@ -104879,6 +105307,7 @@
         "01053",
         "01055",
         "01057",
+        "01059",
         "01061",
         "01063",
         "01065",
@@ -104905,6 +105334,7 @@
         "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
@@ -106755,6 +107185,12 @@
           "matchType": "scientific-exact",
           "externalId": "LAAM 45802 (Lamium amplexicaule)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55459 (Lamium amplexicaule); 1562 accepted observations across 66 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55459&quality_grade=research"
         }
       ]
     },
@@ -106764,10 +107200,12 @@
         "01001",
         "01003",
         "01005",
+        "01007",
         "01009",
         "01011",
         "01013",
         "01015",
+        "01017",
         "01019",
         "01021",
         "01027",
@@ -106777,6 +107215,8 @@
         "01039",
         "01041",
         "01043",
+        "01045",
+        "01047",
         "01049",
         "01051",
         "01055",
@@ -106796,9 +107236,11 @@
         "01091",
         "01093",
         "01095",
+        "01097",
         "01101",
         "01103",
         "01105",
+        "01107",
         "01109",
         "01111",
         "01115",
@@ -107891,6 +108333,12 @@
           "matchType": "scientific-exact",
           "externalId": "LAPU2 45806 (Lamium purpureum)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55851 (Lamium purpureum); 822 accepted observations across 48 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55851&quality_grade=research"
         }
       ]
     },
@@ -109893,6 +110341,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 3 accepted observations across 3 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 164566 (Lespedeza cuneata); 662 accepted observations across 56 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=164566&quality_grade=research"
         }
       ]
     },
@@ -109916,11 +110370,13 @@
         "01035",
         "01037",
         "01041",
+        "01043",
         "01047",
         "01049",
         "01051",
         "01055",
         "01057",
+        "01059",
         "01063",
         "01071",
         "01073",
@@ -109929,8 +110385,10 @@
         "01081",
         "01083",
         "01085",
+        "01087",
         "01089",
         "01091",
+        "01093",
         "01095",
         "01101",
         "01103",
@@ -109943,6 +110401,9 @@
         "01119",
         "01121",
         "01123",
+        "01125",
+        "01127",
+        "01133",
         "04001",
         "04005",
         "04007",
@@ -111719,6 +112180,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56057 (Leucanthemum vulgare); 161 accepted observations across 36 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56057&quality_grade=research"
         }
       ]
     },
@@ -112390,6 +112857,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 1 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 77739 (Ligustrum japonicum); 21 accepted observations across 9 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=77739&quality_grade=research"
         }
       ]
     },
@@ -113750,6 +114223,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 31 accepted observations across 13 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 128769 (Ligustrum sinense); 1995 accepted observations across 64 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=128769&quality_grade=research"
         }
       ]
     },
@@ -116142,16 +116621,16 @@
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=8468"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 68165 (Linepithema humile); 221 accepted observations across 20 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=68165&quality_grade=research"
-        },
-        {
           "source": "GBIF coordinate-resolved preserved specimen records",
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 1316908; 144 accepted specimens across 17 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=1316908&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 68165 (Linepithema humile); 221 accepted observations across 20 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=68165&quality_grade=research"
         }
       ]
     },
@@ -116162,6 +116641,7 @@
         "01005",
         "01007",
         "01009",
+        "01011",
         "01013",
         "01015",
         "01021",
@@ -116192,8 +116672,10 @@
         "01081",
         "01083",
         "01089",
+        "01091",
         "01095",
         "01097",
+        "01099",
         "01101",
         "01103",
         "01105",
@@ -117765,6 +118247,12 @@
           "matchType": "scientific-exact",
           "externalId": "LOPE 23808 (Lolium perenne)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52801 (Lolium perenne); 41 accepted observations across 22 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52801&quality_grade=research"
         }
       ]
     },
@@ -119608,6 +120096,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 11 accepted observations across 6 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 77835 (Lonicera japonica); 1977 accepted observations across 65 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=77835&quality_grade=research"
         }
       ]
     },
@@ -123750,12 +124244,6 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 164985 (Lygodium japonicum); 1382 accepted observations across 58 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=164985&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 30 accepted observations across 7 Alabama counties",
@@ -123766,6 +124254,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 2650436; 102 accepted specimens across 27 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=2650436&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 164985 (Lygodium japonicum); 1384 accepted observations across 58 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=164985&quality_grade=research"
         }
       ]
     },
@@ -124506,21 +125000,33 @@
     {
       "speciesId": "lysimachia-nummularia",
       "countyFips": [
+        "01003",
         "01009",
+        "01011",
         "01015",
         "01019",
         "01029",
         "01033",
+        "01043",
+        "01049",
+        "01051",
         "01055",
         "01063",
         "01071",
+        "01073",
         "01077",
+        "01081",
         "01083",
         "01089",
         "01095",
+        "01097",
         "01101",
+        "01103",
+        "01109",
         "01119",
         "01121",
+        "01125",
+        "01127",
         "05005",
         "05007",
         "05055",
@@ -125508,6 +126014,12 @@
           "matchType": "scientific-exact",
           "externalId": "5975",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=5975"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 51809 (Lysimachia nummularia); 52 accepted observations across 20 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=51809&quality_grade=research"
         }
       ]
     },
@@ -129274,29 +129786,37 @@
         "01043",
         "01045",
         "01047",
+        "01049",
+        "01051",
         "01053",
         "01055",
         "01057",
         "01059",
         "01061",
         "01063",
+        "01065",
         "01069",
         "01071",
         "01073",
         "01075",
+        "01077",
         "01079",
         "01081",
         "01083",
+        "01085",
         "01087",
         "01089",
         "01091",
+        "01093",
         "01095",
         "01097",
         "01099",
         "01101",
         "01103",
+        "01105",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
@@ -131296,6 +131816,12 @@
           "matchType": "scientific-exact",
           "externalId": "MELU 81176 (Medicago lupulina)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 57056 (Medicago lupulina); 411 accepted observations across 47 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=57056&quality_grade=research"
         }
       ]
     },
@@ -131996,6 +132522,12 @@
           "matchType": "scientific-exact",
           "externalId": "56834",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=56834"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 209176 (Megacopta cribraria); 787 accepted observations across 59 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=209176&quality_grade=research"
         }
       ]
     },
@@ -132738,6 +133270,7 @@
         "01069",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
@@ -132750,6 +133283,7 @@
         "01097",
         "01099",
         "01101",
+        "01103",
         "01105",
         "01107",
         "01109",
@@ -132764,6 +133298,7 @@
         "01127",
         "01129",
         "01131",
+        "01133",
         "04003",
         "04013",
         "04019",
@@ -133550,6 +134085,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 89 accepted observations across 22 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53720 (Melia azedarach); 511 accepted observations across 50 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53720&quality_grade=research"
         }
       ]
     },
@@ -133558,14 +134099,18 @@
       "countyFips": [
         "01001",
         "01003",
+        "01005",
         "01009",
         "01015",
+        "01019",
         "01029",
         "01031",
         "01033",
+        "01039",
         "01043",
         "01047",
         "01055",
+        "01059",
         "01063",
         "01065",
         "01069",
@@ -133577,6 +134122,7 @@
         "01083",
         "01085",
         "01089",
+        "01091",
         "01095",
         "01097",
         "01099",
@@ -133584,11 +134130,15 @@
         "01103",
         "01107",
         "01111",
+        "01113",
         "01115",
         "01117",
+        "01119",
         "01121",
         "01125",
         "01127",
+        "01129",
+        "01131",
         "01133",
         "04001",
         "04003",
@@ -134178,6 +134728,12 @@
           "matchType": "scientific-exact",
           "externalId": "3050",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=3050"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 58907 (Melilotus albus); 152 accepted observations across 31 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=58907&quality_grade=research"
         }
       ]
     },
@@ -136637,12 +137193,14 @@
         "01037",
         "01041",
         "01043",
+        "01045",
         "01047",
         "01049",
         "01051",
         "01055",
         "01057",
         "01059",
+        "01065",
         "01067",
         "01071",
         "01073",
@@ -136671,6 +137229,7 @@
         "01125",
         "01127",
         "01129",
+        "01131",
         "01133",
         "05001",
         "05005",
@@ -137766,12 +138325,19 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 23 accepted observations across 9 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 116710 (Microstegium vimineum); 438 accepted observations across 46 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=116710&quality_grade=research"
         }
       ]
     },
     {
       "speciesId": "miscanthus-sinensis",
       "countyFips": [
+        "01001",
         "01013",
         "01015",
         "01019",
@@ -137779,6 +138345,8 @@
         "01029",
         "01033",
         "01041",
+        "01043",
+        "01049",
         "01051",
         "01071",
         "01073",
@@ -138210,6 +138778,12 @@
           "matchType": "scientific-exact",
           "externalId": "3052",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=3052"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 165474 (Miscanthus sinensis); 26 accepted observations across 12 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=165474&quality_grade=research"
         }
       ]
     },
@@ -138267,6 +138841,7 @@
         "01041",
         "01045",
         "01047",
+        "01049",
         "01053",
         "01055",
         "01059",
@@ -138281,6 +138856,7 @@
         "01087",
         "01089",
         "01091",
+        "01093",
         "01095",
         "01097",
         "01101",
@@ -138290,6 +138866,8 @@
         "01115",
         "01119",
         "01121",
+        "01125",
+        "01127",
         "01129",
         "04001",
         "04003",
@@ -139712,6 +140290,12 @@
           "matchType": "scientific-exact",
           "externalId": "MOAL 70882 (Morus alba)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56090 (Morus alba); 44 accepted observations across 19 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56090&quality_grade=research"
         }
       ]
     },
@@ -139775,6 +140359,7 @@
       "countyFips": [
         "01001",
         "01003",
+        "01005",
         "01007",
         "01009",
         "01011",
@@ -139782,6 +140367,7 @@
         "01015",
         "01017",
         "01019",
+        "01021",
         "01023",
         "01027",
         "01029",
@@ -139796,6 +140382,7 @@
         "01051",
         "01053",
         "01055",
+        "01057",
         "01059",
         "01061",
         "01063",
@@ -139817,14 +140404,18 @@
         "01095",
         "01097",
         "01101",
+        "01103",
         "01105",
         "01107",
         "01109",
+        "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
         "01123",
         "01125",
+        "01127",
         "01129",
         "01131",
         "04003",
@@ -140417,6 +141008,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 9 accepted observations across 7 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 60202 (Myriophyllum aquaticum); 284 accepted observations across 47 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=60202&quality_grade=research"
         }
       ]
     },
@@ -142605,6 +143202,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 127010 (Nandina domestica); 1772 accepted observations across 60 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127010&quality_grade=research"
         }
       ]
     },
@@ -143910,6 +144513,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 1 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 78174 (Nasturtium officinale); 52 accepted observations across 17 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=78174&quality_grade=research"
         }
       ]
     },
@@ -151468,6 +152077,7 @@
         "01027",
         "01029",
         "01031",
+        "01033",
         "01037",
         "01039",
         "01041",
@@ -151489,6 +152099,7 @@
         "01079",
         "01081",
         "01083",
+        "01085",
         "01087",
         "01089",
         "01091",
@@ -151497,6 +152108,7 @@
         "01099",
         "01101",
         "01103",
+        "01105",
         "01109",
         "01111",
         "01115",
@@ -152262,6 +152874,12 @@
           "matchType": "scientific-exact",
           "externalId": "PADI3 24473 (Paspalum dilatatum)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 60295 (Paspalum dilatatum); 103 accepted observations across 35 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=60295&quality_grade=research"
         }
       ]
     },
@@ -153468,9 +154086,11 @@
         "01023",
         "01027",
         "01029",
+        "01031",
         "01033",
         "01035",
         "01037",
+        "01041",
         "01043",
         "01049",
         "01051",
@@ -153478,6 +154098,8 @@
         "01057",
         "01059",
         "01061",
+        "01063",
+        "01065",
         "01069",
         "01071",
         "01073",
@@ -154246,6 +154868,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 10 accepted observations across 6 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 119792 (Paulownia tomentosa); 326 accepted observations across 41 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=119792&quality_grade=research"
         }
       ]
     },
@@ -154500,28 +155128,37 @@
         "01011",
         "01013",
         "01015",
+        "01017",
         "01019",
         "01021",
         "01023",
+        "01025",
         "01027",
         "01029",
+        "01031",
         "01033",
+        "01035",
         "01037",
         "01039",
         "01041",
         "01043",
+        "01045",
         "01047",
         "01049",
         "01051",
         "01053",
         "01055",
         "01057",
+        "01059",
         "01061",
         "01063",
         "01067",
         "01069",
         "01071",
         "01073",
+        "01075",
+        "01077",
+        "01079",
         "01081",
         "01083",
         "01085",
@@ -154535,14 +155172,19 @@
         "01101",
         "01103",
         "01105",
+        "01107",
         "01109",
         "01111",
         "01113",
+        "01115",
         "01117",
+        "01119",
         "01121",
         "01123",
         "01125",
         "01127",
+        "01131",
+        "01133",
         "05009",
         "05061",
         "05073",
@@ -155209,6 +155851,12 @@
           "matchType": "scientific-exact",
           "externalId": "6213",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=6213"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 143803 (Persicaria longiseta); 813 accepted observations across 59 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=143803&quality_grade=research"
         }
       ]
     },
@@ -159647,6 +160295,7 @@
       "countyFips": [
         "01001",
         "01003",
+        "01005",
         "01007",
         "01009",
         "01011",
@@ -159676,6 +160325,7 @@
         "01059",
         "01063",
         "01065",
+        "01067",
         "01069",
         "01071",
         "01073",
@@ -159698,10 +160348,12 @@
         "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
         "01121",
+        "01123",
         "01125",
         "01127",
         "01131",
@@ -161553,6 +162205,12 @@
           "matchType": "scientific-exact",
           "externalId": "PLLA 47457 (Plantago lanceolata)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53178 (Plantago lanceolata); 945 accepted observations across 62 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53178&quality_grade=research"
         }
       ]
     },
@@ -161561,16 +162219,31 @@
       "countyFips": [
         "01003",
         "01005",
+        "01009",
+        "01013",
+        "01015",
+        "01021",
         "01031",
         "01039",
         "01041",
         "01045",
+        "01061",
+        "01073",
         "01081",
+        "01083",
+        "01085",
+        "01089",
         "01091",
         "01097",
         "01101",
+        "01105",
         "01109",
+        "01115",
         "01117",
+        "01119",
+        "01121",
+        "01125",
+        "01133",
         "04001",
         "04003",
         "04005",
@@ -162871,6 +163544,12 @@
           "matchType": "scientific-exact",
           "externalId": "PLMA2 47461 (Plantago major)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 58961 (Plantago major); 49 accepted observations across 19 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=58961&quality_grade=research"
         }
       ]
     },
@@ -162960,9 +163639,11 @@
         "01043",
         "01045",
         "01047",
+        "01049",
         "01051",
         "01053",
         "01055",
+        "01057",
         "01059",
         "01061",
         "01063",
@@ -162975,6 +163656,7 @@
         "01079",
         "01081",
         "01083",
+        "01085",
         "01089",
         "01091",
         "01093",
@@ -162989,6 +163671,7 @@
         "01113",
         "01115",
         "01117",
+        "01119",
         "01123",
         "01125",
         "01127",
@@ -164591,6 +165274,12 @@
           "matchType": "scientific-exact",
           "externalId": "POAN 24859 (Poa annua)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 52808 (Poa annua); 85 accepted observations across 30 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=52808&quality_grade=research"
         }
       ]
     },
@@ -166529,6 +167218,7 @@
         "01089",
         "01093",
         "01095",
+        "01099",
         "01101",
         "01103",
         "01105",
@@ -168253,6 +168943,12 @@
           "matchType": "scientific-exact",
           "externalId": "213",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=213"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 67760 (Popillia japonica); 603 accepted observations across 44 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=67760&quality_grade=research"
         }
       ]
     },
@@ -173364,6 +174060,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 667 accepted observations across 40 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 62671 (Pueraria montana); 841 accepted observations across 60 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=62671&quality_grade=research"
         }
       ]
     },
@@ -174481,6 +175183,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 87 accepted observations across 16 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 119793 (Pyrus calleryana); 442 accepted observations across 55 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=119793&quality_grade=research"
         }
       ]
     },
@@ -176809,21 +177517,30 @@
     {
       "speciesId": "ricinus-communis",
       "countyFips": [
+        "01003",
+        "01005",
+        "01007",
         "01009",
         "01013",
+        "01015",
         "01017",
         "01031",
         "01035",
+        "01039",
         "01041",
         "01045",
         "01049",
         "01061",
         "01067",
         "01069",
+        "01073",
         "01081",
+        "01089",
         "01097",
+        "01101",
         "01109",
         "01113",
+        "01117",
         "01133",
         "04013",
         "04021",
@@ -177053,6 +177770,12 @@
           "matchType": "scientific-exact",
           "externalId": "6320",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=6320"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56739 (Ricinus communis); 25 accepted observations across 14 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56739&quality_grade=research"
         }
       ]
     },
@@ -177065,10 +177788,14 @@
         "01011",
         "01013",
         "01015",
+        "01017",
         "01019",
         "01021",
+        "01023",
+        "01025",
         "01027",
         "01029",
+        "01033",
         "01035",
         "01037",
         "01039",
@@ -177080,6 +177807,7 @@
         "01055",
         "01059",
         "01061",
+        "01063",
         "01065",
         "01071",
         "01073",
@@ -177095,13 +177823,19 @@
         "01097",
         "01099",
         "01101",
+        "01103",
+        "01105",
         "01109",
         "01111",
+        "01113",
         "01115",
+        "01117",
         "01119",
         "01121",
         "01123",
         "01125",
+        "01127",
+        "01133",
         "05003",
         "05005",
         "05007",
@@ -178647,6 +179381,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 78882 (Rosa multiflora); 342 accepted observations across 38 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=78882&quality_grade=research"
         }
       ]
     },
@@ -180768,12 +181508,14 @@
         "01001",
         "01003",
         "01005",
+        "01007",
         "01009",
         "01011",
         "01013",
         "01015",
         "01017",
         "01019",
+        "01021",
         "01023",
         "01027",
         "01029",
@@ -180785,6 +181527,7 @@
         "01043",
         "01045",
         "01047",
+        "01049",
         "01051",
         "01053",
         "01055",
@@ -180807,9 +181550,11 @@
         "01101",
         "01103",
         "01105",
+        "01107",
         "01109",
         "01111",
         "01113",
+        "01115",
         "01117",
         "01119",
         "01121",
@@ -183072,6 +183817,12 @@
           "matchType": "scientific-exact",
           "externalId": "RUCR 61664 (Rumex crispus)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53197 (Rumex crispus); 173 accepted observations across 38 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53197&quality_grade=research"
         }
       ]
     },
@@ -185417,9 +186168,11 @@
         "01049",
         "01055",
         "01057",
+        "01059",
         "01065",
         "01071",
         "01073",
+        "01077",
         "01079",
         "01081",
         "01083",
@@ -185434,6 +186187,8 @@
         "01119",
         "01121",
         "01123",
+        "01125",
+        "01133",
         "04001",
         "04005",
         "04007",
@@ -186603,6 +187358,12 @@
           "matchType": "scientific-exact",
           "externalId": "SEVA4 82205 (Securigera varia)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 127186 (Securigera varia); 73 accepted observations across 18 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127186&quality_grade=research"
         }
       ]
     },
@@ -186614,6 +187375,7 @@
         "01015",
         "01019",
         "01023",
+        "01029",
         "01033",
         "01035",
         "01043",
@@ -186625,6 +187387,7 @@
         "01061",
         "01067",
         "01069",
+        "01073",
         "01077",
         "01079",
         "01083",
@@ -186634,7 +187397,10 @@
         "01097",
         "01101",
         "01103",
+        "01117",
+        "01125",
         "01129",
+        "01133",
         "04005",
         "04007",
         "04009",
@@ -187254,6 +188020,12 @@
           "matchType": "scientific-exact",
           "externalId": "SEVU 39787 (Senecio vulgaris)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53211 (Senecio vulgaris); 66 accepted observations across 16 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53211&quality_grade=research"
         }
       ]
     },
@@ -192827,16 +193599,16 @@
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=4675"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 67598 (Solenopsis invicta); 542 accepted observations across 46 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=67598&quality_grade=research"
-        },
-        {
           "source": "GBIF coordinate-resolved preserved specimen records",
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 5035230; 159 accepted specimens across 14 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=5035230&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 67598 (Solenopsis invicta); 543 accepted observations across 46 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=67598&quality_grade=research"
         }
       ]
     },
@@ -193909,6 +194681,7 @@
         "01053",
         "01055",
         "01057",
+        "01059",
         "01061",
         "01063",
         "01065",
@@ -193916,6 +194689,7 @@
         "01069",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
@@ -193929,13 +194703,18 @@
         "01099",
         "01101",
         "01103",
+        "01105",
         "01109",
+        "01113",
         "01115",
         "01117",
+        "01119",
         "01121",
         "01125",
+        "01127",
         "01129",
         "01131",
+        "01133",
         "04001",
         "04003",
         "04005",
@@ -195744,6 +196523,12 @@
           "matchType": "scientific-exact",
           "externalId": "SOAS 40258 (Sonchus asper)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53269 (Sonchus asper); 303 accepted observations across 43 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53269&quality_grade=research"
         }
       ]
     },
@@ -196927,6 +197712,7 @@
         "01011",
         "01013",
         "01015",
+        "01017",
         "01019",
         "01021",
         "01023",
@@ -196934,6 +197720,7 @@
         "01027",
         "01029",
         "01031",
+        "01033",
         "01035",
         "01037",
         "01039",
@@ -196946,6 +197733,7 @@
         "01053",
         "01055",
         "01059",
+        "01061",
         "01063",
         "01065",
         "01067",
@@ -198631,6 +199419,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 1 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 58387 (Sorghum halepense); 186 accepted observations across 43 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=58387&quality_grade=research"
         }
       ]
     },
@@ -199897,16 +200691,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 79187 (Sporobolus indicus); 30 accepted observations across 18 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79187&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 79187 (Sporobolus indicus); 30 accepted observations across 18 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79187&quality_grade=research"
         }
       ]
     },
@@ -200242,6 +201036,7 @@
         "01015",
         "01017",
         "01019",
+        "01021",
         "01023",
         "01025",
         "01027",
@@ -200283,6 +201078,7 @@
         "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
@@ -202069,6 +202865,12 @@
           "matchType": "scientific-exact",
           "externalId": "STME2 58499 (Stellaria media)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53298 (Stellaria media); 228 accepted observations across 45 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53298&quality_grade=research"
         }
       ]
     },
@@ -202429,7 +203231,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 14850 (Sturnus vulgaris); 724 accepted observations across 43 Alabama counties",
+          "externalId": "taxon 14850 (Sturnus vulgaris); 729 accepted observations across 43 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=14850&quality_grade=research"
         }
       ]
@@ -208283,6 +209085,7 @@
         "01055",
         "01057",
         "01059",
+        "01065",
         "01071",
         "01073",
         "01077",
@@ -209942,6 +210745,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 40 accepted observations across 12 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 57278 (Ailanthus altissima); 230 accepted observations across 26 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=57278&quality_grade=research"
         }
       ]
     },
@@ -210530,16 +211339,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 79388 (Triadica sebifera); 1772 accepted observations across 53 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79388&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 79 accepted observations across 12 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 79388 (Triadica sebifera); 1794 accepted observations across 53 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79388&quality_grade=research"
         }
       ]
     },
@@ -211435,6 +212244,7 @@
         "01041",
         "01045",
         "01047",
+        "01049",
         "01051",
         "01053",
         "01055",
@@ -211455,7 +212265,10 @@
         "01103",
         "01109",
         "01111",
+        "01113",
+        "01117",
         "01121",
+        "01123",
         "01125",
         "01129",
         "05003",
@@ -212288,6 +213101,12 @@
           "matchType": "scientific-exact",
           "externalId": "TRAR4 82798 (Trifolium arvense)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 79408 (Trifolium arvense); 78 accepted observations across 24 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79408&quality_grade=research"
         }
       ]
     },
@@ -212319,6 +213138,7 @@
         "01065",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
@@ -212327,6 +213147,7 @@
         "01087",
         "01089",
         "01091",
+        "01093",
         "01095",
         "01097",
         "01101",
@@ -212339,6 +213160,8 @@
         "01119",
         "01121",
         "01125",
+        "01127",
+        "01129",
         "01131",
         "01133",
         "04001",
@@ -214410,6 +215233,12 @@
           "matchType": "scientific-exact",
           "externalId": "TRPR2 83120 (Trifolium pratense)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 51875 (Trifolium pratense); 555 accepted observations across 42 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=51875&quality_grade=research"
         }
       ]
     },
@@ -214428,6 +215257,7 @@
         "01019",
         "01021",
         "01023",
+        "01025",
         "01027",
         "01029",
         "01031",
@@ -214452,6 +215282,7 @@
         "01069",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
@@ -214463,12 +215294,14 @@
         "01093",
         "01095",
         "01097",
+        "01099",
         "01101",
         "01103",
         "01105",
         "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
@@ -216783,6 +217616,12 @@
           "matchType": "scientific-exact",
           "externalId": "TRRE3 83132 (Trifolium repens)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55745 (Trifolium repens); 1998 accepted observations across 65 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55745&quality_grade=research"
         }
       ]
     },
@@ -219244,7 +220083,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 224975 (Metaltella simoni); 130 accepted observations across 27 Alabama counties",
+          "externalId": "taxon 224975 (Metaltella simoni); 131 accepted observations across 27 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=224975&quality_grade=research"
         }
       ]
@@ -219984,7 +220823,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 13858 (Passer domesticus); 1252 accepted observations across 54 Alabama counties",
+          "externalId": "taxon 13858 (Passer domesticus); 1263 accepted observations across 54 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=13858&quality_grade=research"
         }
       ]
@@ -220006,6 +220845,7 @@
         "01073",
         "01077",
         "01081",
+        "01083",
         "01089",
         "01091",
         "01095",
@@ -220121,7 +220961,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 44705 (Mus musculus); 28 accepted observations across 15 Alabama counties",
+          "externalId": "taxon 44705 (Mus musculus); 29 accepted observations across 16 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=44705&quality_grade=research"
         }
       ]
@@ -220506,6 +221346,28 @@
           "matchType": "scientific-exact",
           "externalId": "57329",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=57329"
+        }
+      ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Animalia12193",
+      "countyFips": [
+        "01051",
+        "01053",
+        "01073",
+        "01077",
+        "01081",
+        "01097",
+        "01101",
+        "01109",
+        "01111"
+      ],
+      "countyDataSources": [
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 522538 (Stephanitis pyrioides); 27 accepted observations across 9 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=522538&quality_grade=research"
         }
       ]
     },
@@ -220896,7 +221758,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 124184 (Plodia interpunctella); 71 accepted observations across 30 Alabama counties",
+          "externalId": "taxon 124184 (Plodia interpunctella); 75 accepted observations across 30 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=124184&quality_grade=research"
         }
       ]
@@ -220952,7 +221814,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 126765 (Plutella xylostella); 247 accepted observations across 28 Alabama counties",
+          "externalId": "taxon 126765 (Plutella xylostella); 248 accepted observations across 28 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=126765&quality_grade=research"
         }
       ]
@@ -221491,6 +222353,7 @@
         "01081",
         "01083",
         "01089",
+        "01093",
         "01097",
         "01105",
         "01109",
@@ -221502,7 +222365,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 333264 (Lucilia cuprina); 54 accepted observations across 14 Alabama counties",
+          "externalId": "taxon 333264 (Lucilia cuprina); 55 accepted observations across 15 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=333264&quality_grade=research"
         }
       ]
@@ -221974,7 +222837,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 51702 (Coccinella septempunctata); 475 accepted observations across 51 Alabama counties",
+          "externalId": "taxon 51702 (Coccinella septempunctata); 477 accepted observations across 51 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=51702&quality_grade=research"
         }
       ]
@@ -222086,7 +222949,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 71034 (Tenodera sinensis); 191 accepted observations across 32 Alabama counties",
+          "externalId": "taxon 71034 (Tenodera sinensis); 192 accepted observations across 32 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=71034&quality_grade=research"
         }
       ]
@@ -222855,6 +223718,20 @@
       ]
     },
     {
+      "speciesId": "USRIIS-L48-Animalia4746",
+      "countyFips": [
+        "01011"
+      ],
+      "countyDataSources": [
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 126738 (Etiella zinckenella); 22 accepted observations across 1 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=126738&quality_grade=research"
+        }
+      ]
+    },
+    {
       "speciesId": "USRIIS-L48-Animalia475",
       "countyFips": [
         "01081",
@@ -223001,16 +223878,16 @@
           "url": "https://portal.idigbio.org/portal/search?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united%20states%22%2C%22scientificname%22%3A%22odontomachus%20haematodus%22%2C%22stateprovince%22%3A%22alabama%22%7D"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 265999 (Odontomachus haematodus); 119 accepted observations across 3 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=265999&quality_grade=research"
-        },
-        {
           "source": "GBIF coordinate-resolved preserved specimen records",
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 5035385; 214 accepted specimens across 3 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=5035385&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 265999 (Odontomachus haematodus); 125 accepted observations across 3 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=265999&quality_grade=research"
         }
       ]
     },
@@ -223326,7 +224203,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 2969 (Streptopelia decaocto); 293 accepted observations across 39 Alabama counties",
+          "externalId": "taxon 2969 (Streptopelia decaocto); 294 accepted observations across 39 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=2969&quality_grade=research"
         }
       ]
@@ -223335,12 +224212,19 @@
       "speciesId": "USRIIS-L48-Animalia508",
       "countyFips": [
         "01003",
+        "01011",
+        "01013",
         "01039",
         "01067",
         "01069",
+        "01073",
+        "01081",
+        "01087",
         "01097",
         "01099",
-        "01123"
+        "01109",
+        "01123",
+        "01125"
       ],
       "countyDataSources": [
         {
@@ -223360,6 +224244,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 9239368; 153 accepted specimens across 6 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=9239368&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 891181 (Pheidole navigans); 25 accepted observations across 10 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=891181&quality_grade=research"
         }
       ]
     },
@@ -223463,7 +224353,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 121237 (Blattella germanica); 37 accepted observations across 18 Alabama counties",
+          "externalId": "taxon 121237 (Blattella germanica); 39 accepted observations across 18 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=121237&quality_grade=research"
         }
       ]
@@ -223502,16 +224392,16 @@
           "url": "https://portal.idigbio.org/portal/search?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united%20states%22%2C%22scientificname%22%3A%22pheidole%20obscurithorax%22%2C%22stateprovince%22%3A%22alabama%22%7D"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 710657 (Pheidole obscurithorax); 50 accepted observations across 14 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=710657&quality_grade=research"
-        },
-        {
           "source": "GBIF coordinate-resolved preserved specimen records",
           "matchType": "scientific-exact",
           "externalId": "GBIF coordinate specimens; speciesKey 8223587; 129 accepted specimens across 5 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?taxon_key=8223587&country=US&basis_of_record=PRESERVED_SPECIMEN"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 710657 (Pheidole obscurithorax); 50 accepted observations across 14 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=710657&quality_grade=research"
         }
       ]
     },
@@ -225803,7 +226693,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 509014 (Naupactus peregrinus); 70 accepted observations across 22 Alabama counties",
+          "externalId": "taxon 509014 (Naupactus peregrinus); 71 accepted observations across 22 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=509014&quality_grade=research"
         }
       ]
@@ -226058,12 +226948,24 @@
     {
       "speciesId": "USRIIS-L48-Animalia56",
       "countyFips": [
+        "01003",
         "01005",
+        "01009",
+        "01029",
         "01049",
         "01051",
+        "01061",
         "01065",
+        "01073",
+        "01077",
+        "01081",
+        "01095",
+        "01097",
         "01101",
+        "01117",
         "01125",
+        "01127",
+        "01133",
         "06001",
         "06013",
         "06037",
@@ -226114,6 +227016,12 @@
           "matchType": "scientific-exact",
           "externalId": "18326",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=18326"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 44575 (Rattus rattus); 21 accepted observations across 13 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=44575&quality_grade=research"
         }
       ]
     },
@@ -227317,7 +228225,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 47383 (Latrodectus geometricus); 195 accepted observations across 30 Alabama counties",
+          "externalId": "taxon 47383 (Latrodectus geometricus); 199 accepted observations across 30 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=47383&quality_grade=research"
         }
       ]
@@ -230078,6 +230986,12 @@
           "matchType": "scientific-exact",
           "externalId": "PYKO 90728 (Pyracantha koidzumii)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 78792 (Pyracantha koidzumii); 25 accepted observations across 7 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=78792&quality_grade=research"
         }
       ]
     },
@@ -233342,16 +234256,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 167976 (Rosa bracteata); 62 accepted observations across 18 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=167976&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 167976 (Rosa bracteata); 63 accepted observations across 18 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=167976&quality_grade=research"
         }
       ]
     },
@@ -238748,6 +239662,7 @@
         "01039",
         "01041",
         "01043",
+        "01049",
         "01055",
         "01059",
         "01063",
@@ -238755,6 +239670,7 @@
         "01069",
         "01071",
         "01073",
+        "01077",
         "01081",
         "01083",
         "01089",
@@ -238767,6 +239683,7 @@
         "01115",
         "01125",
         "01129",
+        "01133",
         "04003",
         "04005",
         "04011",
@@ -240382,6 +241299,12 @@
           "matchType": "scientific-exact",
           "externalId": "SAOF4 57938 (Saponaria officinalis)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56154 (Saponaria officinalis); 25 accepted observations across 11 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56154&quality_grade=research"
         }
       ]
     },
@@ -240478,6 +241401,7 @@
         "01031",
         "01033",
         "01035",
+        "01037",
         "01039",
         "01041",
         "01043",
@@ -240488,6 +241412,7 @@
         "01055",
         "01059",
         "01061",
+        "01063",
         "01065",
         "01067",
         "01069",
@@ -240506,10 +241431,12 @@
         "01101",
         "01103",
         "01105",
+        "01107",
         "01109",
         "01111",
         "01115",
         "01117",
+        "01119",
         "01123",
         "01125",
         "01127",
@@ -241280,6 +242207,12 @@
           "matchType": "scientific-exact",
           "externalId": "5095",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=5095"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 62917 (Amaranthus spinosus); 43 accepted observations across 23 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=62917&quality_grade=research"
         }
       ]
     },
@@ -241685,10 +242618,13 @@
         "01045",
         "01047",
         "01053",
+        "01057",
         "01067",
         "01069",
         "01081",
+        "01083",
         "01089",
+        "01095",
         "01097",
         "01101",
         "01105",
@@ -241771,6 +242707,12 @@
           "matchType": "scientific-exact",
           "externalId": "6380",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=6380"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 61935 (Scleranthus annuus); 24 accepted observations across 15 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=61935&quality_grade=research"
         }
       ]
     },
@@ -243235,16 +244177,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 79065 (Sesbania punicea); 196 accepted observations across 18 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79065&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 3 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 79065 (Sesbania punicea); 198 accepted observations across 18 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79065&quality_grade=research"
         }
       ]
     },
@@ -244119,12 +245061,20 @@
     {
       "speciesId": "USRIIS-L48-Plantae10553",
       "countyFips": [
+        "01001",
+        "01005",
+        "01007",
         "01009",
         "01011",
         "01013",
         "01015",
+        "01017",
+        "01019",
         "01021",
+        "01025",
+        "01027",
         "01029",
+        "01031",
         "01033",
         "01035",
         "01039",
@@ -244132,7 +245082,12 @@
         "01043",
         "01045",
         "01047",
+        "01049",
+        "01051",
         "01055",
+        "01057",
+        "01059",
+        "01061",
         "01063",
         "01065",
         "01067",
@@ -244140,6 +245095,7 @@
         "01071",
         "01073",
         "01075",
+        "01077",
         "01079",
         "01081",
         "01083",
@@ -244147,8 +245103,10 @@
         "01087",
         "01089",
         "01091",
+        "01093",
         "01095",
         "01097",
+        "01099",
         "01101",
         "01103",
         "01105",
@@ -244162,8 +245120,10 @@
         "01121",
         "01123",
         "01125",
+        "01127",
         "01129",
         "01131",
+        "01133",
         "04013",
         "04019",
         "05003",
@@ -244746,6 +245706,12 @@
           "matchType": "scientific-exact",
           "externalId": "SHAR2 48651 (Sherardia arvensis)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 47691 (Sherardia arvensis); 1401 accepted observations across 57 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=47691&quality_grade=research"
         }
       ]
     },
@@ -251294,16 +252260,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 79143 (Solanum sisymbriifolium); 209 accepted observations across 6 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79143&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 79143 (Solanum sisymbriifolium); 215 accepted observations across 6 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79143&quality_grade=research"
         }
       ]
     },
@@ -253682,7 +254648,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 246102 (Sphagneticola trilobata); 42 accepted observations across 5 Alabama counties",
+          "externalId": "taxon 246102 (Sphagneticola trilobata); 43 accepted observations across 5 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=246102&quality_grade=research"
         }
       ]
@@ -256938,6 +257904,8 @@
     {
       "speciesId": "USRIIS-L48-Plantae10885",
       "countyFips": [
+        "01001",
+        "01003",
         "01009",
         "01015",
         "01029",
@@ -256948,6 +257916,7 @@
         "01069",
         "01071",
         "01073",
+        "01077",
         "01079",
         "01081",
         "01083",
@@ -256956,8 +257925,11 @@
         "01093",
         "01095",
         "01097",
+        "01101",
         "01103",
+        "01105",
         "01107",
+        "01109",
         "01123",
         "04001",
         "04003",
@@ -257717,6 +258689,12 @@
           "matchType": "scientific-exact",
           "externalId": "75337",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=75337"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 79317 (Taraxacum erythrospermum); 65 accepted observations across 15 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79317&quality_grade=research"
         }
       ]
     },
@@ -258479,11 +259457,13 @@
         "01009",
         "01015",
         "01019",
+        "01021",
         "01027",
         "01029",
         "01033",
         "01043",
         "01047",
+        "01049",
         "01055",
         "01059",
         "01063",
@@ -258493,12 +259473,16 @@
         "01073",
         "01077",
         "01079",
+        "01081",
         "01083",
         "01089",
         "01091",
         "01095",
+        "01097",
         "01101",
         "01103",
+        "01105",
+        "01115",
         "01117",
         "01119",
         "01125",
@@ -259193,6 +260177,12 @@
           "matchType": "scientific-exact",
           "externalId": "TOAR 74638 (Torilis arvensis)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56846 (Torilis arvensis); 165 accepted observations across 29 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56846&quality_grade=research"
         }
       ]
     },
@@ -259348,10 +260338,14 @@
       "countyFips": [
         "01003",
         "01005",
+        "01013",
+        "01031",
         "01035",
+        "01061",
         "01069",
         "01081",
         "01097",
+        "01109",
         "01125",
         "06001",
         "06037",
@@ -259443,6 +260437,12 @@
           "matchType": "scientific-exact",
           "externalId": "TRFL 16975 (Tradescantia fluminensis)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 79382 (Tradescantia fluminensis); 23 accepted observations across 8 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=79382&quality_grade=research"
         }
       ]
     },
@@ -260731,6 +261731,8 @@
         "01017",
         "01019",
         "01021",
+        "01023",
+        "01025",
         "01027",
         "01029",
         "01031",
@@ -262146,6 +263148,12 @@
           "matchType": "scientific-exact",
           "externalId": "TRCA5 82835 (Trifolium campestre)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 57076 (Trifolium campestre); 712 accepted observations across 62 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=57076&quality_grade=research"
         }
       ]
     },
@@ -262161,12 +263169,16 @@
         "01013",
         "01015",
         "01017",
+        "01019",
+        "01023",
+        "01025",
         "01027",
         "01029",
         "01031",
         "01033",
         "01035",
         "01037",
+        "01039",
         "01041",
         "01043",
         "01045",
@@ -262178,30 +263190,39 @@
         "01061",
         "01063",
         "01065",
+        "01067",
         "01069",
         "01071",
+        "01073",
         "01075",
         "01077",
         "01079",
         "01081",
+        "01083",
         "01087",
         "01089",
+        "01091",
         "01093",
         "01095",
         "01097",
         "01099",
         "01101",
+        "01103",
+        "01105",
         "01107",
         "01109",
         "01111",
         "01113",
         "01115",
+        "01117",
         "01119",
         "01121",
         "01123",
         "01125",
         "01127",
+        "01129",
         "01131",
+        "01133",
         "04019",
         "05001",
         "05003",
@@ -262931,6 +263952,12 @@
           "matchType": "scientific-exact",
           "externalId": "TRDU2 82885 (Trifolium dubium)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53313 (Trifolium dubium); 300 accepted observations across 51 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53313&quality_grade=research"
         }
       ]
     },
@@ -267427,16 +268454,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 128698 (Verbena brasiliensis); 461 accepted observations across 61 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=128698&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 6 accepted observations across 5 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 128698 (Verbena brasiliensis); 462 accepted observations across 61 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=128698&quality_grade=research"
         }
       ]
     },
@@ -268072,16 +269099,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 127942 (Verbena rigida); 401 accepted observations across 48 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127942&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 66 accepted observations across 4 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 127942 (Verbena rigida); 401 accepted observations across 48 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127942&quality_grade=research"
         }
       ]
     },
@@ -268107,7 +269134,9 @@
         "01097",
         "01101",
         "01109",
+        "01123",
         "01129",
+        "01131",
         "06067",
         "12001",
         "12005",
@@ -268240,16 +269269,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 170171 (Vernicia fordii); 135 accepted observations across 17 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=170171&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 10 accepted observations across 3 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 170171 (Vernicia fordii); 143 accepted observations across 19 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=170171&quality_grade=research"
         }
       ]
     },
@@ -268902,7 +269931,9 @@
         "01003",
         "01005",
         "01007",
+        "01009",
         "01011",
+        "01031",
         "01035",
         "01045",
         "01047",
@@ -268918,7 +269949,9 @@
         "01101",
         "01109",
         "01113",
+        "01117",
         "01119",
+        "01125",
         "01129",
         "06009",
         "06017",
@@ -268964,6 +269997,12 @@
           "matchType": "scientific-exact",
           "externalId": "VIHI 83414 (Vicia hirsuta)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56188 (Vicia hirsuta); 20 accepted observations across 12 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56188&quality_grade=research"
         }
       ]
     },
@@ -268982,6 +270021,7 @@
         "01019",
         "01021",
         "01023",
+        "01025",
         "01027",
         "01029",
         "01031",
@@ -268993,6 +270033,7 @@
         "01043",
         "01045",
         "01047",
+        "01049",
         "01051",
         "01053",
         "01055",
@@ -269010,6 +270051,8 @@
         "01079",
         "01081",
         "01083",
+        "01085",
+        "01087",
         "01089",
         "01091",
         "01093",
@@ -269019,8 +270062,10 @@
         "01101",
         "01103",
         "01105",
+        "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
@@ -269028,6 +270073,7 @@
         "01123",
         "01125",
         "01127",
+        "01129",
         "01131",
         "01133",
         "04021",
@@ -270193,6 +271239,12 @@
           "matchType": "scientific-exact",
           "externalId": "VISA 83478 (Vicia sativa)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53324 (Vicia sativa); 601 accepted observations across 58 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53324&quality_grade=research"
         }
       ]
     },
@@ -273154,16 +274206,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 127066 (Youngia japonica); 747 accepted observations across 54 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127066&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 127066 (Youngia japonica); 747 accepted observations across 54 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127066&quality_grade=research"
         }
       ]
     },
@@ -276672,8 +277724,10 @@
       "speciesId": "USRIIS-L48-Plantae231",
       "countyFips": [
         "01003",
+        "01031",
         "01039",
         "01061",
+        "01069",
         "01081",
         "01097",
         "12001",
@@ -276760,6 +277814,12 @@
           "matchType": "scientific-exact",
           "externalId": "13995",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=13995"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 48556 (Drymaria cordata); 21 accepted observations across 5 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=48556&quality_grade=research"
         }
       ]
     },
@@ -284191,6 +285251,7 @@
         "01099",
         "01101",
         "01103",
+        "01105",
         "01107",
         "01109",
         "01111",
@@ -284202,6 +285263,7 @@
         "01123",
         "01125",
         "01127",
+        "01133",
         "04001",
         "05003",
         "05005",
@@ -285324,6 +286386,12 @@
           "matchType": "scientific-exact",
           "externalId": "Arenaria serpyllifolia; 1 introduced plant records across 1 TALL plot counties",
           "url": "https://data.neonscience.org/data-products/DP1.10058.001"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 75553 (Arenaria serpyllifolia); 29 accepted observations across 17 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=75553&quality_grade=research"
         }
       ]
     },
@@ -286260,8 +287328,16 @@
     {
       "speciesId": "USRIIS-L48-Plantae6490",
       "countyFips": [
+        "01035",
+        "01039",
+        "01069",
+        "01073",
         "01081",
+        "01083",
+        "01089",
         "01097",
+        "01109",
+        "01125",
         "04019",
         "06013",
         "06037",
@@ -286352,6 +287428,12 @@
           "matchType": "scientific-exact",
           "externalId": "13933",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=13933"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 75602 (Asclepias curassavica); 28 accepted observations across 10 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=75602&quality_grade=research"
         }
       ]
     },
@@ -288792,16 +289874,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 437555 (Berberis julianae); 31 accepted observations across 5 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=437555&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 1 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 437555 (Berberis julianae); 31 accepted observations across 5 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=437555&quality_grade=research"
         }
       ]
     },
@@ -296947,16 +298029,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 128032 (Broussonetia papyrifera); 267 accepted observations across 37 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=128032&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 4 accepted observations across 3 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 128032 (Broussonetia papyrifera); 267 accepted observations across 37 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=128032&quality_grade=research"
         }
       ]
     },
@@ -298377,6 +299459,12 @@
           "matchType": "scientific-exact",
           "externalId": "BUAR3 44581 (Buglossoides arvensis)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 135229 (Buglossoides arvensis); 37 accepted observations across 13 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=135229&quality_grade=research"
         }
       ]
     },
@@ -303515,16 +304603,16 @@
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=3011"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 76007 (Carduus nutans); 289 accepted observations across 29 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=76007&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 10 accepted observations across 6 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 76007 (Carduus nutans); 290 accepted observations across 29 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=76007&quality_grade=research"
         }
       ]
     },
@@ -304530,7 +305618,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 62924 (Catharanthus roseus); 46 accepted observations across 19 Alabama counties",
+          "externalId": "taxon 62924 (Catharanthus roseus); 48 accepted observations across 19 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=62924&quality_grade=research"
         }
       ]
@@ -305159,8 +306247,10 @@
       "speciesId": "USRIIS-L48-Plantae6997",
       "countyFips": [
         "01001",
+        "01003",
         "01005",
         "01007",
+        "01009",
         "01011",
         "01015",
         "01017",
@@ -305171,18 +306261,27 @@
         "01049",
         "01051",
         "01055",
+        "01057",
+        "01059",
         "01065",
         "01071",
+        "01073",
+        "01077",
         "01079",
         "01081",
         "01083",
         "01085",
+        "01087",
+        "01089",
         "01091",
+        "01095",
+        "01097",
         "01101",
         "01103",
         "01109",
         "01113",
         "01115",
+        "01117",
         "01121",
         "01123",
         "01125",
@@ -305872,6 +306971,12 @@
           "matchType": "scientific-exact",
           "externalId": "CECY2 33160 (Centaurea cyanus)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 933404 (Centaurea cyanus); 57 accepted observations across 22 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=933404&quality_grade=research"
         }
       ]
     },
@@ -312864,6 +313969,12 @@
           "matchType": "scientific-exact",
           "externalId": "13964",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=13964"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 160741 (Clerodendrum indicum); 21 accepted observations across 4 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=160741&quality_grade=research"
         }
       ]
     },
@@ -313230,16 +314341,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 122835 (Colocasia esculenta); 448 accepted observations across 48 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=122835&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 122835 (Colocasia esculenta); 451 accepted observations across 48 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=122835&quality_grade=research"
         }
       ]
     },
@@ -314550,7 +315661,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 48651 (Cosmos sulphureus); 154 accepted observations across 29 Alabama counties",
+          "externalId": "taxon 48651 (Cosmos sulphureus); 157 accepted observations across 29 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=48651&quality_grade=research"
         }
       ]
@@ -316287,16 +317398,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 161150 (Crotalaria spectabilis); 219 accepted observations across 37 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=161150&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 6 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 161150 (Crotalaria spectabilis); 219 accepted observations across 37 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=161150&quality_grade=research"
         }
       ]
     },
@@ -316664,9 +317775,12 @@
         "01013",
         "01015",
         "01021",
+        "01031",
+        "01033",
         "01035",
         "01037",
         "01039",
+        "01043",
         "01045",
         "01051",
         "01053",
@@ -316675,10 +317789,13 @@
         "01073",
         "01075",
         "01081",
+        "01095",
         "01097",
         "01109",
         "01117",
         "01121",
+        "01125",
+        "01131",
         "01133",
         "12053",
         "12073",
@@ -316722,6 +317839,12 @@
           "matchType": "scientific-exact",
           "externalId": "13980",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=13980"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 127861 (Cunninghamia lanceolata); 25 accepted observations across 14 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127861&quality_grade=research"
         }
       ]
     },
@@ -326094,16 +327217,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 162214 (Elaeagnus pungens); 540 accepted observations across 48 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=162214&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 8 accepted observations across 6 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 162214 (Elaeagnus pungens); 540 accepted observations across 48 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=162214&quality_grade=research"
         }
       ]
     },
@@ -326311,7 +327434,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 129103 (Emilia fosbergii); 28 accepted observations across 4 Alabama counties",
+          "externalId": "taxon 129103 (Emilia fosbergii); 29 accepted observations across 4 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=129103&quality_grade=research"
         }
       ]
@@ -328011,7 +329134,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 76949 (Eriobotrya japonica); 76 accepted observations across 16 Alabama counties",
+          "externalId": "taxon 76949 (Eriobotrya japonica); 77 accepted observations across 16 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=76949&quality_grade=research"
         }
       ]
@@ -333000,8 +334123,13 @@
       "countyFips": [
         "01013",
         "01031",
+        "01051",
         "01053",
+        "01069",
+        "01073",
+        "01081",
         "01097",
+        "01101",
         "12083",
         "12107"
       ],
@@ -333029,6 +334157,12 @@
           "matchType": "scientific-exact",
           "externalId": "FIPU2 70853 (Ficus pumila)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 162972 (Ficus pumila); 27 accepted observations across 7 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=162972&quality_grade=research"
         }
       ]
     },
@@ -333440,16 +334574,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 162991 (Firmiana simplex); 295 accepted observations across 36 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=162991&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 1 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 162991 (Firmiana simplex); 296 accepted observations across 36 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=162991&quality_grade=research"
         }
       ]
     },
@@ -336827,21 +337961,28 @@
       "speciesId": "USRIIS-L48-Plantae8292",
       "countyFips": [
         "01001",
+        "01003",
         "01007",
         "01011",
         "01013",
         "01015",
         "01017",
+        "01021",
+        "01023",
         "01035",
         "01041",
         "01043",
+        "01045",
+        "01055",
         "01061",
         "01065",
         "01069",
         "01071",
         "01087",
         "01097",
-        "01119"
+        "01113",
+        "01119",
+        "01129"
       ],
       "countyDataSources": [
         {
@@ -336861,6 +338002,12 @@
           "matchType": "scientific-exact",
           "externalId": "Gladiolus dalenii",
           "url": "https://portal.idigbio.org/portal/search?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united%20states%22%2C%22scientificname%22%3A%22gladiolus%20dalenii%22%2C%22stateprovince%22%3A%22alabama%22%7D"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 357461 (Gladiolus dalenii); 20 accepted observations across 13 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=357461&quality_grade=research"
         }
       ]
     },
@@ -345279,10 +346426,18 @@
     {
       "speciesId": "USRIIS-L48-Plantae8738",
       "countyFips": [
+        "01017",
+        "01027",
+        "01049",
         "01055",
         "01071",
         "01073",
         "01081",
+        "01089",
+        "01103",
+        "01113",
+        "01115",
+        "01125",
         "09001",
         "09011",
         "17077",
@@ -345349,6 +346504,12 @@
           "matchType": "scientific-exact",
           "externalId": "11556",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=11556"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 125788 (Kerria japonica); 21 accepted observations across 12 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=125788&quality_grade=research"
         }
       ]
     },
@@ -345506,6 +346667,7 @@
         "01011",
         "01013",
         "01015",
+        "01021",
         "01023",
         "01025",
         "01027",
@@ -345740,16 +346902,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 135394 (Lagerstroemia indica); 52 accepted observations across 24 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=135394&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 3 accepted observations across 3 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 135394 (Lagerstroemia indica); 53 accepted observations across 25 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=135394&quality_grade=research"
         }
       ]
     },
@@ -348320,6 +349482,12 @@
           "matchType": "scientific-exact",
           "externalId": "LALA4 79717 (Lathyrus latifolius)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 61009 (Lathyrus latifolius); 41 accepted observations across 11 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=61009&quality_grade=research"
         }
       ]
     },
@@ -351268,6 +352436,7 @@
         "01013",
         "01015",
         "01017",
+        "01019",
         "01021",
         "01023",
         "01025",
@@ -351279,6 +352448,7 @@
         "01037",
         "01039",
         "01041",
+        "01043",
         "01045",
         "01047",
         "01049",
@@ -351286,6 +352456,7 @@
         "01053",
         "01055",
         "01057",
+        "01061",
         "01063",
         "01065",
         "01067",
@@ -352015,6 +353186,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 5 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 129677 (Lespedeza bicolor); 118 accepted observations across 35 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=129677&quality_grade=research"
         }
       ]
     },
@@ -352447,16 +353624,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 77740 (Ligustrum lucidum); 368 accepted observations across 36 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=77740&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 5 accepted observations across 4 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 77740 (Ligustrum lucidum); 368 accepted observations across 36 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=77740&quality_grade=research"
         }
       ]
     },
@@ -353677,6 +354854,7 @@
         "01077",
         "01079",
         "01081",
+        "01083",
         "01089",
         "01097",
         "01099",
@@ -353782,7 +354960,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 68479 (Lolium multiflorum); 35 accepted observations across 16 Alabama counties",
+          "externalId": "taxon 68479 (Lolium multiflorum); 36 accepted observations across 17 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=68479&quality_grade=research"
         }
       ]
@@ -354051,7 +355229,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 164763 (Lonicera fragrantissima); 271 accepted observations across 18 Alabama counties",
+          "externalId": "taxon 164763 (Lonicera fragrantissima); 272 accepted observations across 18 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=164763&quality_grade=research"
         }
       ]
@@ -355422,7 +356600,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 165063 (Macrothelypteris torresiana); 509 accepted observations across 60 Alabama counties",
+          "externalId": "taxon 165063 (Macrothelypteris torresiana); 510 accepted observations across 60 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=165063&quality_grade=research"
         }
       ]
@@ -362097,7 +363275,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 165482 (Mitracarpus hirtus); 58 accepted observations across 14 Alabama counties",
+          "externalId": "taxon 165482 (Mitracarpus hirtus); 59 accepted observations across 14 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=165482&quality_grade=research"
         }
       ]
@@ -364316,7 +365494,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 47563 (Nerium oleander); 96 accepted observations across 9 Alabama counties",
+          "externalId": "taxon 47563 (Nerium oleander); 100 accepted observations across 9 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=47563&quality_grade=research"
         }
       ]
@@ -365376,12 +366554,22 @@
       "speciesId": "USRIIS-L48-Plantae9514",
       "countyFips": [
         "01003",
+        "01007",
+        "01009",
+        "01013",
         "01015",
+        "01017",
         "01019",
         "01021",
         "01027",
+        "01029",
         "01033",
+        "01043",
+        "01049",
+        "01051",
         "01055",
+        "01059",
+        "01065",
         "01071",
         "01073",
         "01077",
@@ -365391,13 +366579,19 @@
         "01087",
         "01089",
         "01091",
+        "01093",
         "01095",
+        "01101",
         "01103",
+        "01107",
         "01109",
         "01115",
+        "01117",
         "01119",
         "01121",
+        "01123",
         "01125",
+        "01127",
         "01133",
         "05003",
         "05005",
@@ -366210,6 +367404,12 @@
           "matchType": "scientific-exact",
           "externalId": "ORUM 29014 (Ornithogalum umbellatum)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 56137 (Ornithogalum umbellatum); 222 accepted observations across 34 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=56137&quality_grade=research"
         }
       ]
     },
@@ -366485,7 +367685,7 @@
         {
           "source": "iNaturalist Research Grade observations",
           "matchType": "scientific-exact",
-          "externalId": "taxon 61963 (Oxalis debilis); 305 accepted observations across 36 Alabama counties",
+          "externalId": "taxon 61963 (Oxalis debilis); 308 accepted observations across 36 Alabama counties",
           "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=61963&quality_grade=research"
         }
       ]
@@ -367209,16 +368409,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 166096 (Panicum repens); 39 accepted observations across 9 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=166096&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 166096 (Panicum repens); 39 accepted observations across 9 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=166096&quality_grade=research"
         }
       ]
     },
@@ -368869,6 +370069,7 @@
         "01005",
         "01007",
         "01009",
+        "01011",
         "01013",
         "01015",
         "01017",
@@ -368879,7 +370080,9 @@
         "01027",
         "01029",
         "01031",
+        "01033",
         "01035",
+        "01037",
         "01039",
         "01041",
         "01043",
@@ -368887,16 +370090,22 @@
         "01047",
         "01049",
         "01051",
+        "01053",
         "01055",
         "01059",
         "01061",
         "01063",
+        "01065",
         "01069",
         "01071",
         "01073",
+        "01075",
+        "01077",
         "01079",
         "01081",
         "01083",
+        "01085",
+        "01087",
         "01089",
         "01091",
         "01093",
@@ -368905,14 +370114,18 @@
         "01099",
         "01101",
         "01103",
+        "01105",
         "01109",
+        "01111",
         "01113",
         "01115",
         "01117",
         "01119",
         "01121",
+        "01123",
         "01125",
         "01127",
+        "01129",
         "01131",
         "01133",
         "05001",
@@ -369674,6 +370887,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 119136 (Perilla frutescens); 694 accepted observations across 61 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=119136&quality_grade=research"
         }
       ]
     },
@@ -379262,6 +380481,7 @@
       "countyFips": [
         "01001",
         "01003",
+        "01007",
         "01009",
         "01011",
         "01013",
@@ -379275,10 +380495,12 @@
         "01043",
         "01045",
         "01047",
+        "01049",
         "01051",
         "01055",
         "01059",
         "01063",
+        "01065",
         "01071",
         "01073",
         "01077",
@@ -379294,10 +380516,13 @@
         "01105",
         "01109",
         "01115",
+        "01117",
         "01119",
         "01121",
         "01125",
+        "01127",
         "01129",
+        "01131",
         "01133",
         "04001",
         "04003",
@@ -380586,6 +381811,12 @@
           "matchType": "scientific-exact",
           "externalId": "VEBL 52556 (Verbascum blattaria)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 59028 (Verbascum blattaria); 106 accepted observations across 23 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=59028&quality_grade=research"
         }
       ]
     },
@@ -380601,7 +381832,9 @@
         "01013",
         "01015",
         "01017",
+        "01019",
         "01021",
+        "01023",
         "01025",
         "01027",
         "01029",
@@ -380620,19 +381853,25 @@
         "01059",
         "01061",
         "01063",
+        "01065",
+        "01069",
         "01071",
         "01073",
+        "01075",
         "01077",
         "01079",
         "01081",
         "01083",
         "01087",
         "01089",
+        "01091",
+        "01093",
         "01095",
         "01097",
         "01099",
         "01101",
         "01103",
+        "01105",
         "01107",
         "01109",
         "01111",
@@ -380640,8 +381879,11 @@
         "01115",
         "01117",
         "01119",
+        "01121",
         "01123",
         "01125",
+        "01127",
+        "01129",
         "01131",
         "01133",
         "04001",
@@ -382896,6 +384138,12 @@
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 2 accepted observations across 2 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 59029 (Verbascum thapsus); 642 accepted observations across 61 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=59029&quality_grade=research"
         }
       ]
     },
@@ -382939,6 +384187,7 @@
         "01071",
         "01073",
         "01075",
+        "01077",
         "01079",
         "01081",
         "01083",
@@ -382960,7 +384209,10 @@
         "01121",
         "01123",
         "01125",
+        "01127",
+        "01129",
         "01131",
+        "01133",
         "04003",
         "04013",
         "04019",
@@ -384542,6 +385794,12 @@
           "matchType": "scientific-exact",
           "externalId": "VEAR 52596 (Veronica arvensis)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55748 (Veronica arvensis); 131 accepted observations across 36 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55748&quality_grade=research"
         }
       ]
     },
@@ -387287,6 +388545,7 @@
     {
       "speciesId": "vicia-villosa",
       "countyFips": [
+        "01001",
         "01003",
         "01007",
         "01009",
@@ -387297,18 +388556,22 @@
         "01019",
         "01021",
         "01023",
+        "01025",
         "01027",
         "01029",
         "01033",
         "01035",
         "01037",
+        "01039",
         "01041",
         "01043",
         "01045",
         "01047",
+        "01049",
         "01051",
         "01053",
         "01055",
+        "01059",
         "01061",
         "01063",
         "01065",
@@ -387321,6 +388584,8 @@
         "01085",
         "01087",
         "01089",
+        "01091",
+        "01093",
         "01095",
         "01097",
         "01099",
@@ -387330,13 +388595,16 @@
         "01107",
         "01109",
         "01111",
+        "01113",
         "01115",
         "01117",
         "01119",
         "01121",
         "01123",
         "01125",
+        "01127",
         "01131",
+        "01133",
         "04003",
         "04005",
         "04025",
@@ -389023,6 +390291,12 @@
           "matchType": "scientific-exact",
           "externalId": "VIVI 83514 (Vicia villosa)",
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 57317 (Vicia villosa); 309 accepted observations across 47 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=57317&quality_grade=research"
         }
       ]
     },
@@ -389493,34 +390767,43 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 53326 (Vinca major); 421 accepted observations across 39 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53326&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 1 accepted observations across 1 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 53326 (Vinca major); 423 accepted observations across 39 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=53326&quality_grade=research"
         }
       ]
     },
     {
       "speciesId": "vinca-minor",
       "countyFips": [
+        "01009",
         "01015",
+        "01019",
         "01029",
         "01033",
+        "01043",
+        "01049",
         "01055",
+        "01059",
         "01071",
+        "01073",
         "01077",
+        "01079",
         "01081",
         "01083",
         "01089",
+        "01095",
         "01103",
         "01111",
         "01115",
+        "01117",
         "01121",
         "01127",
         "01133",
@@ -390416,6 +391699,12 @@
           "matchType": "scientific-exact",
           "externalId": "3081",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=3081"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 55844 (Vinca minor); 89 accepted observations across 17 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=55844&quality_grade=research"
         }
       ]
     },
@@ -391210,16 +392499,16 @@
           "url": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer/6"
         },
         {
-          "source": "iNaturalist Research Grade observations",
-          "matchType": "scientific-exact",
-          "externalId": "taxon 127306 (Wisteria sinensis); 178 accepted observations across 35 Alabama counties",
-          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127306&quality_grade=research"
-        },
-        {
           "source": "GBIF Invasive Plant Atlas of the MidSouth records",
           "matchType": "scientific-exact",
           "externalId": "GBIF IPAMS dataset d587c7e5-d442-437a-a6d7-d1a78ecf2300; 3 accepted observations across 3 Alabama counties",
           "url": "https://www.gbif.org/occurrence/search?dataset_key=d587c7e5-d442-437a-a6d7-d1a78ecf2300&country=US&basis_of_record=HUMAN_OBSERVATION&occurrence_status=present"
+        },
+        {
+          "source": "iNaturalist Research Grade observations",
+          "matchType": "scientific-exact",
+          "externalId": "taxon 127306 (Wisteria sinensis); 178 accepted observations across 35 Alabama counties",
+          "url": "https://www.inaturalist.org/observations?place_id=19&taxon_id=127306&quality_grade=research"
         }
       ]
     },
@@ -391504,7 +392793,6 @@
     "USRIIS-L48-Animalia12182",
     "USRIIS-L48-Animalia1219",
     "USRIIS-L48-Animalia12190",
-    "USRIIS-L48-Animalia12193",
     "USRIIS-L48-Animalia1220",
     "USRIIS-L48-Animalia12203",
     "USRIIS-L48-Animalia1221",
@@ -391771,7 +393059,6 @@
     "USRIIS-L48-Animalia4735",
     "USRIIS-L48-Animalia4743",
     "USRIIS-L48-Animalia4744",
-    "USRIIS-L48-Animalia4746",
     "USRIIS-L48-Animalia4749",
     "USRIIS-L48-Animalia4750",
     "USRIIS-L48-Animalia4752",
@@ -392282,14 +393569,14 @@
   ],
   "coverageSummary": {
     "catalogSpeciesCount": 2504,
-    "mappedSpeciesCount": 1617,
-    "unmatchedSpeciesCount": 887,
+    "mappedSpeciesCount": 1619,
+    "unmatchedSpeciesCount": 885,
     "sourceSpeciesCounts": {
       "EDDMaps": 1402,
       "Alabama Plant Atlas": 541,
       "USDA NRCS PLANTS county distribution": 324,
+      "iNaturalist Research Grade observations": 257,
       "EDDMapS ALIPC list": 70,
-      "iNaturalist Research Grade observations": 147,
       "GBIF coordinate-resolved preserved specimen records": 9,
       "SERNEC": 28,
       "USFS Current Invasive Plant Locations": 23,
