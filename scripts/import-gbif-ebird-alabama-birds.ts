@@ -39,6 +39,11 @@ const PILOT_TARGET_SCIENTIFIC_NAMES = [
   "Streptopelia decaocto",
   "Columba livia",
   "Myiopsitta monachus",
+  "Alopochen aegyptiaca",
+  "Aratinga erythrogenys",
+  "Brotogeris versicolurus",
+  "Cygnus olor",
+  "Pycnonotus jocosus",
 ];
 
 type CountyGeometry = {
