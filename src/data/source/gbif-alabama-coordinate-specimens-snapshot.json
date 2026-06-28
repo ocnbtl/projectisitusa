@@ -3,7 +3,7 @@
   "citation": [
     "GBIF.org. 2026. GBIF occurrence search. Coordinate-resolved preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search."
   ],
-  "accessedAt": "2026-06-27T05:00:57.690Z",
+  "accessedAt": "2026-06-28T05:56:32.497Z",
   "filters": {
     "country": "US",
     "geometry": "Alabama bounding box, then local Alabama county polygon resolution",
@@ -11,7 +11,8 @@
     "occurrenceStatus": "PRESENT",
     "hasCoordinate": true,
     "hasGeospatialIssue": false,
-    "taxonMatch": "exact current catalog species and exact GBIF speciesKey"
+    "taxonMatch": "exact current catalog species and exact GBIF speciesKey",
+    "excludedContexts": "cultivated, planted, garden, nursery, arboretum, landscaped, and lab-colony context text"
   },
   "targetScientificNames": [
     "Odontomachus haematodus",
@@ -22,9 +23,94 @@
     "Aedes albopictus",
     "Corbicula fluminea",
     "Lygodium japonicum",
-    "Solenopsis invicta"
+    "Solenopsis invicta",
+    "Polygonum aviculare",
+    "Briza minor",
+    "Euphorbia cyparissias",
+    "Lolium temulentum",
+    "Abutilon theophrasti"
   ],
   "species": [
+    {
+      "speciesId": "abutilon-theophrasti",
+      "scientificName": "Abutilon theophrasti",
+      "speciesKey": 3152614,
+      "totalGbifOccurrenceCount": 5,
+      "scannedOccurrenceCount": 5,
+      "acceptedSpecimenCount": 3,
+      "skippedOccurrenceCount": 2,
+      "countyFips": [
+        "01009",
+        "01061",
+        "01131"
+      ],
+      "representativeSpecimens": [
+        {
+          "gbifKey": 3744687158,
+          "occurrenceId": "UNA00058538",
+          "eventDate": "1998-05-24",
+          "countyFips": "01009",
+          "latitude": 34.19,
+          "longitude": -86.49,
+          "acceptedScientificName": "Abutilon theophrasti Medik.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00058538",
+          "locality": "1 air mi S of Summit.",
+          "recordedBy": "Brian R. Keener, Robert Haynes",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744687160,
+          "occurrenceId": "UNA00045910",
+          "eventDate": "1998-05-29",
+          "countyFips": "01061",
+          "latitude": 31.06,
+          "longitude": -85.81,
+          "acceptedScientificName": "Abutilon theophrasti Medik.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00045910",
+          "locality": "southside of Hwy. 52 at 3.4 miles east of junction with Choctawhatchee River in Geneva",
+          "recordedBy": "John R. MacDonald",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744702849,
+          "occurrenceId": "UNA00073698",
+          "eventDate": "2013-07-25",
+          "countyFips": "01131",
+          "latitude": 32,
+          "longitude": -86.98,
+          "acceptedScientificName": "Abutilon theophrasti Medik.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00073698",
+          "locality": "3.63 air mi WNW Jefferson. Along N side AL Hwy 28 ca 0.82 mi WNW jct w/ Verbena Rd.",
+          "recordedBy": "Kevin England",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        }
+      ]
+    },
     {
       "speciesId": "aedes-albopictus",
       "scientificName": "Aedes albopictus",
@@ -132,8 +218,8 @@
       "speciesKey": 8190231,
       "totalGbifOccurrenceCount": 966,
       "scannedOccurrenceCount": 966,
-      "acceptedSpecimenCount": 693,
-      "skippedOccurrenceCount": 273,
+      "acceptedSpecimenCount": 692,
+      "skippedOccurrenceCount": 274,
       "countyFips": [
         "01003",
         "01005",
@@ -1405,6 +1491,149 @@
       ]
     },
     {
+      "speciesId": "euphorbia-cyparissias",
+      "scientificName": "Euphorbia cyparissias",
+      "speciesKey": 3070106,
+      "totalGbifOccurrenceCount": 10,
+      "scannedOccurrenceCount": 10,
+      "acceptedSpecimenCount": 7,
+      "skippedOccurrenceCount": 3,
+      "countyFips": [
+        "01003",
+        "01009",
+        "01017",
+        "01049",
+        "01055",
+        "01123"
+      ],
+      "representativeSpecimens": [
+        {
+          "gbifKey": 3744706457,
+          "occurrenceId": "UNA00009483",
+          "eventDate": "1887-05",
+          "countyFips": "01003",
+          "latitude": 30.68,
+          "longitude": -87.96,
+          "acceptedScientificName": "Euphorbia cyparissias L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00009483",
+          "locality": "Mobile; banks of Mobile River",
+          "recordedBy": "Charles Mohr",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744706463,
+          "occurrenceId": "UNA00068778",
+          "eventDate": "2008-03-24",
+          "countyFips": "01009",
+          "latitude": 33.98,
+          "longitude": -86.46,
+          "acceptedScientificName": "Euphorbia cyparissias L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00068778",
+          "locality": "2 air mi. N of Oneonta. Along S side of Palisades Parkway ca. 0.5 mi. SW of Palisades Park.",
+          "recordedBy": "Brian R. Keener",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3766311395,
+          "occurrenceId": "1b734547-8ab3-45b3-a70d-ef510b68c5c9",
+          "eventDate": "2013-03-30",
+          "countyFips": "01017",
+          "latitude": 32.783889,
+          "longitude": -85.470833,
+          "acceptedScientificName": "Euphorbia cyparissias L.",
+          "institutionCode": "AUA",
+          "locality": "U.S. 431 N AN D1 MILE NORTH OF INTERSECTION OF AL HWY 147.",
+          "recordedBy": "Willett, C. R.",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "COORDINATE_ROUNDED",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744706460,
+          "occurrenceId": "UNA00069055",
+          "eventDate": "2007-03-19",
+          "countyFips": "01049",
+          "latitude": 34.54,
+          "longitude": -85.52,
+          "acceptedScientificName": "Euphorbia cyparissias L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00069055",
+          "locality": "off SR-117 btwn CR-664 and Denise Rd E of Bankhead",
+          "recordedBy": "D. D. Spaulding",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3978732329,
+          "occurrenceId": "d204659d-8a84-49e1-84c9-44b4929fc200",
+          "eventDate": "1999-03-11",
+          "countyFips": "01055",
+          "latitude": 33.95482,
+          "longitude": -86.041917,
+          "acceptedScientificName": "Euphorbia cyparissias L.",
+          "institutionCode": "BAYLU",
+          "collectionCode": "BAYLU",
+          "catalogNumber": "BAYLU016473",
+          "locality": "Rainbow City, 545 Guy Lee Lake Rd., along banks of Coosa River",
+          "recordedBy": "C. Nguyen",
+          "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "issues": [
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_NONE"
+          ]
+        },
+        {
+          "gbifKey": 5103537121,
+          "occurrenceId": "https://arctos.database.museum/guid/UTEP:Herb:86706",
+          "eventDate": "2014-03-27",
+          "countyFips": "01123",
+          "latitude": 32.525833,
+          "longitude": -85.813944,
+          "acceptedScientificName": "Euphorbia cyparissias L.",
+          "institutionCode": "UTEP",
+          "collectionCode": "Botany",
+          "catalogNumber": "UTEP:Herb:86706",
+          "locality": "Alabama Highway 49, 0.05 miles S (by road) of Washington Boulevard",
+          "recordedBy": "Collector(s): Alvin Roosevelt Diamond",
+          "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "issues": [
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "INSTITUTION_MATCH_FUZZY",
+            "INSTITUTION_COLLECTION_MISMATCH"
+          ]
+        }
+      ]
+    },
+    {
       "speciesId": "linepithema-humile",
       "scientificName": "Linepithema humile",
       "speciesKey": 1316908,
@@ -1785,8 +2014,8 @@
       "speciesKey": 2650436,
       "totalGbifOccurrenceCount": 193,
       "scannedOccurrenceCount": 193,
-      "acceptedSpecimenCount": 102,
-      "skippedOccurrenceCount": 91,
+      "acceptedSpecimenCount": 100,
+      "skippedOccurrenceCount": 93,
       "countyFips": [
         "01003",
         "01007",
@@ -2386,13 +2615,244 @@
       ]
     },
     {
+      "speciesId": "polygonum-aviculare",
+      "scientificName": "Polygonum aviculare",
+      "speciesKey": 7821030,
+      "totalGbifOccurrenceCount": 16,
+      "scannedOccurrenceCount": 16,
+      "acceptedSpecimenCount": 13,
+      "skippedOccurrenceCount": 3,
+      "countyFips": [
+        "01003",
+        "01009",
+        "01047",
+        "01061",
+        "01071",
+        "01089",
+        "01097",
+        "01101",
+        "01121",
+        "01125"
+      ],
+      "representativeSpecimens": [
+        {
+          "gbifKey": 3744708116,
+          "occurrenceId": "UNA00034044",
+          "eventDate": "1894-08-18",
+          "countyFips": "01003",
+          "latitude": 30.68,
+          "longitude": -87.96,
+          "acceptedScientificName": "Polygonum aviculare subsp. neglectum (Besser) Arcang.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00034044",
+          "locality": "Royal St., Mobile",
+          "recordedBy": "Charles Mohr",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "IDENTIFIED_DATE_INVALID",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744703848,
+          "occurrenceId": "UNA00054307",
+          "eventDate": "1998-07-11",
+          "countyFips": "01009",
+          "latitude": 33.91,
+          "longitude": -86.35,
+          "acceptedScientificName": "Polygonum aviculare subsp. aviculare",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00054307",
+          "locality": "3.5 air mi NE of Highland Lake.",
+          "recordedBy": "Brian R. Keener",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744703834,
+          "occurrenceId": "UNA00062303",
+          "eventDate": "2003-06-28",
+          "countyFips": "01047",
+          "latitude": 32.43,
+          "longitude": -87.03,
+          "acceptedScientificName": "Polygonum aviculare subsp. aviculare",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00062303",
+          "locality": "Traveler's Inn Motell off US-80, Selma",
+          "recordedBy": "D. D. Spaulding",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3978746771,
+          "occurrenceId": "9bb041cd-706d-46bc-9e5b-34879c0dbca7",
+          "eventDate": "1998-06-29",
+          "countyFips": "01061",
+          "latitude": 31.032903,
+          "longitude": -85.982405,
+          "acceptedScientificName": "Polygonum aviculare L.",
+          "institutionCode": "BAYLU",
+          "collectionCode": "BAYLU",
+          "catalogNumber": "BAYLU026121",
+          "locality": "6-7 mi. W of Geneva; Just south of Hwy. 4 from Liberty Chapel Church, Harrison Farm",
+          "recordedBy": "John R. MacDonald",
+          "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "issues": [
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_NONE"
+          ]
+        },
+        {
+          "gbifKey": 3744703889,
+          "occurrenceId": "UNA00059388",
+          "eventDate": "2002-06-09",
+          "countyFips": "01071",
+          "latitude": 34.94,
+          "longitude": -85.71,
+          "acceptedScientificName": "Polygonum aviculare subsp. aviculare",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00059388",
+          "locality": "Off Broadway Street in Bridgeport by the Tennessee River. Sequatchie Valley district of the Cumberland Plateau.",
+          "recordedBy": "D. D. Spaulding",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 2859081569,
+          "occurrenceId": "D5F44657-FBB2-4AFB-B82B-44F5685F8D48",
+          "eventDate": "1991-05-30",
+          "countyFips": "01089",
+          "latitude": 34.745421,
+          "longitude": -86.512396,
+          "acceptedScientificName": "Polygonum aviculare L.",
+          "institutionCode": "CM",
+          "collectionCode": "botany",
+          "catalogNumber": "CM488656",
+          "locality": "Huntsville, campground at Monte Sano State Park",
+          "recordedBy": "Zanol, W.A.; Davidson, R.; Acciavatti, R.",
+          "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "issues": [
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY",
+            "COLLECTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 1424771797,
+          "occurrenceId": "9fd96e13-943c-4b64-bf90-d2966b4e856f",
+          "eventDate": "1894-09",
+          "countyFips": "01097",
+          "latitude": 30.694357,
+          "longitude": -88.043054,
+          "acceptedScientificName": "Polygonum aviculare subsp. neglectum (Besser) Arcang.",
+          "institutionCode": "F",
+          "collectionCode": "Botany",
+          "catalogNumber": "V0387810F",
+          "locality": "Mobile",
+          "recordedBy": "C. Mohr",
+          "license": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "AMBIGUOUS_COLLECTION",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 1503271824,
+          "occurrenceId": "8848276B-B580-470B-87D6-9788C04B21FC",
+          "eventDate": "2011-09-26",
+          "countyFips": "01101",
+          "latitude": 32,
+          "longitude": -86,
+          "acceptedScientificName": "Polygonum aviculare L.",
+          "institutionCode": "USF",
+          "collectionCode": "Herb",
+          "catalogNumber": "270364",
+          "locality": "US 29 at the E side of the Conecuh River.",
+          "recordedBy": "A. R. Diamond",
+          "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "INSTITUTION_COLLECTION_MISMATCH"
+          ]
+        },
+        {
+          "gbifKey": 3744703900,
+          "occurrenceId": "UNA00033950",
+          "eventDate": "1980-10-01",
+          "countyFips": "01121",
+          "latitude": 33.21,
+          "longitude": -86.45,
+          "acceptedScientificName": "Polygonum aviculare subsp. neglectum (Besser) Arcang.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00033950",
+          "locality": "University of Alabama,Tuscaloosa",
+          "recordedBy": "John S. Williams",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744703898,
+          "occurrenceId": "UNA00033960",
+          "eventDate": "1965-07-23",
+          "countyFips": "01125",
+          "latitude": 33.21,
+          "longitude": -87.54,
+          "acceptedScientificName": "Polygonum aviculare subsp. neglectum (Besser) Arcang.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00033960",
+          "locality": "Near Smith-Woods, University of Alabama, Tuscaloosa",
+          "recordedBy": "Rebecca Deramus",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        }
+      ]
+    },
+    {
       "speciesId": "solenopsis-invicta",
       "scientificName": "Solenopsis invicta",
       "speciesKey": 5035230,
       "totalGbifOccurrenceCount": 552,
       "scannedOccurrenceCount": 552,
-      "acceptedSpecimenCount": 159,
-      "skippedOccurrenceCount": 393,
+      "acceptedSpecimenCount": 156,
+      "skippedOccurrenceCount": 396,
       "countyFips": [
         "01003",
         "01005",
@@ -3344,12 +3804,547 @@
           ]
         }
       ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Plantae6694",
+      "scientificName": "Briza minor",
+      "speciesKey": 2702793,
+      "totalGbifOccurrenceCount": 61,
+      "scannedOccurrenceCount": 61,
+      "acceptedSpecimenCount": 33,
+      "skippedOccurrenceCount": 28,
+      "countyFips": [
+        "01003",
+        "01007",
+        "01039",
+        "01045",
+        "01061",
+        "01063",
+        "01065",
+        "01069",
+        "01081",
+        "01085",
+        "01087",
+        "01097",
+        "01099",
+        "01109",
+        "01113",
+        "01119",
+        "01121",
+        "01125",
+        "01131"
+      ],
+      "representativeSpecimens": [
+        {
+          "gbifKey": 3744705330,
+          "occurrenceId": "UNA00003765",
+          "eventDate": "1886-06",
+          "countyFips": "01003",
+          "latitude": 30.68,
+          "longitude": -87.96,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00003765",
+          "locality": "Mobile",
+          "recordedBy": "Charles Mohr",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744700730,
+          "occurrenceId": "UNA00050382",
+          "eventDate": "1983-05-13",
+          "countyFips": "01007",
+          "latitude": 32.9,
+          "longitude": -87.04,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00050382",
+          "locality": "E of Centreville off US 82, ca 1.5 mi W of Jct CR 29",
+          "recordedBy": "R. D. Whetstone, C. De Fiori, C.F. Nixon",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3766339696,
+          "occurrenceId": "373c4999-f915-11e2-9428-c94601350785",
+          "eventDate": "2009-04-15",
+          "countyFips": "01039",
+          "latitude": 31.13577,
+          "longitude": -86.65101,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "AUA",
+          "catalogNumber": "AUA000025021",
+          "locality": "SOLON DIXON FORESTRY EDUCATION CENTER, AROUND SINK HOLES AND SWAMP PONDS DOWN CLAY PIT RD, CA 1.4 AIR MI SE OF ROME, AL.",
+          "recordedBy": "Hansen, Curtis J.; Goertzen, Leslie R.",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705310,
+          "occurrenceId": "UNA00064453",
+          "eventDate": "2005-04-06",
+          "countyFips": "01045",
+          "latitude": 31.49,
+          "longitude": -85.65,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00064453",
+          "locality": "Un-numbered paved rd at powerline ROW. Ozark Quad",
+          "recordedBy": "Alvin R. Diamond",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 233097226,
+          "occurrenceId": "0c99b207-ba8b-11e3-8cfe-90b11c41863e",
+          "eventDate": "2001-04-14",
+          "countyFips": "01061",
+          "latitude": 31.03278,
+          "longitude": -85.86389,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "KU",
+          "collectionCode": "KANU",
+          "catalogNumber": "358904",
+          "locality": "AL 52, NE side of Geneva",
+          "recordedBy": "Robert Kral",
+          "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+          "issues": []
+        },
+        {
+          "gbifKey": 2234639526,
+          "occurrenceId": "dcaa9579-9df6-494f-85a4-56374e785aed",
+          "eventDate": "1963-05-10",
+          "countyFips": "01063",
+          "latitude": 32.815028,
+          "longitude": -87.918047,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "NCU",
+          "collectionCode": "Vascular Plants",
+          "catalogNumber": "NCU00175230",
+          "locality": "2.5 mi SW of Eutaw",
+          "recordedBy": "Thomas, Joab L.",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "IDENTIFIED_DATE_INVALID",
+            "INSTITUTION_MATCH_FUZZY",
+            "COLLECTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705306,
+          "occurrenceId": "UNA00004878",
+          "eventDate": "1966-05-09",
+          "countyFips": "01065",
+          "latitude": 32.49,
+          "longitude": -87.71,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00004878",
+          "locality": "Junct. at Gallion",
+          "recordedBy": "Sherrie E. Maginness",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705318,
+          "occurrenceId": "UNA00048598",
+          "eventDate": "1993-05-05",
+          "countyFips": "01069",
+          "latitude": 31.25,
+          "longitude": -85.11,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00048598",
+          "locality": "ca. 3 miles south of Columbia; George Andrews Lock & Dam public area T3N, R29E, S11, SW/4",
+          "recordedBy": "John R. MacDonald",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705321,
+          "occurrenceId": "UNA00057587",
+          "eventDate": "2001-04-30",
+          "countyFips": "01081",
+          "latitude": 32.58,
+          "longitude": -85.49,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00057587",
+          "locality": ".3 mi S on dirt road off Lem Morrison Dr. ca 6.2 km NW of center of Lake Ogletree; Auburn University; Auburn Quad T19N R25E S36 SE1/4",
+          "recordedBy": "C. J. Hansen, C. M. Morton",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705251,
+          "occurrenceId": "UNA00003724",
+          "eventDate": "1949-05-09",
+          "countyFips": "01085",
+          "latitude": 32.1,
+          "longitude": -86.43,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00003724",
+          "locality": "about 12 miles south of Thomaston,",
+          "recordedBy": "A. M. Harvill, Jr.",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3766282656,
+          "occurrenceId": "35e84aad-f915-11e2-9428-c94601350785",
+          "eventDate": "1999-05-02",
+          "countyFips": "01087",
+          "latitude": 32.5,
+          "longitude": -85.5,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "AUA",
+          "catalogNumber": "AUA000015457",
+          "locality": "MACON TOWNSHIP. OFF U.S. HWY 80, TUSKEGEE NATIONAL FOREST.",
+          "recordedBy": "Sweigert, Becky",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744685287,
+          "occurrenceId": "UNA00003745",
+          "eventDate": "1977-03-27",
+          "countyFips": "01097",
+          "latitude": 30.24,
+          "longitude": -88.19,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00003745",
+          "locality": "near Sea Lab, Dauphin Island T9S R1W S",
+          "recordedBy": "J. A. Daniels",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3766282529,
+          "occurrenceId": "2f7d061f-f915-11e2-9428-c94601350785",
+          "eventDate": "2006-04-08",
+          "countyFips": "01099",
+          "latitude": 31.811111,
+          "longitude": -86.964167,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "AUA",
+          "catalogNumber": "AUA000015461",
+          "locality": "ALABAMA HWY. 47 AT COBB ROAD.",
+          "recordedBy": "Diamond, Jr., Alvin R.",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "COORDINATE_ROUNDED",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705362,
+          "occurrenceId": "UNA00060392",
+          "eventDate": "2003-04-20",
+          "countyFips": "01109",
+          "latitude": 31.96,
+          "longitude": -86.18,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00060392",
+          "locality": "Montgomery Co. Hwy. 1 at the Pike County line; Grady quad",
+          "recordedBy": "Alvin R. Diamond",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3766282530,
+          "occurrenceId": "368e6a5d-f915-11e2-9428-c94601350785",
+          "eventDate": "2002-05-02",
+          "countyFips": "01113",
+          "latitude": 32.375916,
+          "longitude": -85.249557,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "AUA",
+          "catalogNumber": "AUA000015467",
+          "locality": "MEAD CORPORATION PRIVATE LAND. CA. 0.8MI S OF JCT. OF RUSSEL CO. ROAD 32. JUST 3.1MI W OF HWY 169.",
+          "recordedBy": "Gil, Glenda; And M. Gil C.",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "COORDINATE_ROUNDED",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 1990235312,
+          "occurrenceId": "aac93a18-aab4-4e55-ab70-92eb0349a610",
+          "eventDate": "1989-05-08",
+          "countyFips": "01119",
+          "latitude": 32.597481,
+          "longitude": -88.200057,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "NCSC",
+          "collectionCode": "NCSC",
+          "catalogNumber": "NCSC00006174",
+          "locality": "At I-20/59 Rest Area. S. side of road.",
+          "recordedBy": "Milo Pyne",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705357,
+          "occurrenceId": "UNA00003775",
+          "eventDate": "1959-04-27",
+          "countyFips": "01121",
+          "latitude": 33.16,
+          "longitude": -86.38,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00003775",
+          "locality": "Highways 11 and 43 between Tuscaloosa to Eutaw",
+          "recordedBy": "Jackie Edwards",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744685284,
+          "occurrenceId": "UNA00003704",
+          "eventDate": "1976-05-27",
+          "countyFips": "01125",
+          "latitude": 33.29,
+          "longitude": -87.48,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00003704",
+          "locality": "Lake Nicol",
+          "recordedBy": "Sara White",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744705253,
+          "occurrenceId": "UNA00003740",
+          "eventDate": "1980-04-16",
+          "countyFips": "01131",
+          "latitude": 32.11,
+          "longitude": -87.4,
+          "acceptedScientificName": "Briza minor L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00003740",
+          "locality": "Off hwy 28 at Shell Creek area, ca. 11 mi NW of Camden;",
+          "recordedBy": "L. J. Davenport",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        }
+      ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Plantae9007",
+      "scientificName": "Lolium temulentum",
+      "speciesKey": 2706242,
+      "totalGbifOccurrenceCount": 5,
+      "scannedOccurrenceCount": 5,
+      "acceptedSpecimenCount": 4,
+      "skippedOccurrenceCount": 1,
+      "countyFips": [
+        "01003",
+        "01063",
+        "01065",
+        "01097"
+      ],
+      "representativeSpecimens": [
+        {
+          "gbifKey": 3744721335,
+          "occurrenceId": "UNA00004418",
+          "countyFips": "01003",
+          "latitude": 30.68,
+          "longitude": -87.96,
+          "acceptedScientificName": "Lolium temulentum L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00004418",
+          "recordedBy": "Charles Mohr",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744721334,
+          "occurrenceId": "UNA00004408",
+          "eventDate": "1967-05-06",
+          "countyFips": "01063",
+          "latitude": 32.68,
+          "longitude": -87.89,
+          "acceptedScientificName": "Lolium temulentum L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00004408",
+          "locality": "About 11.5 miles south of Eutaw on Hwy 43.",
+          "recordedBy": "H. Naugle",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 3744721333,
+          "occurrenceId": "UNA00004403",
+          "eventDate": "1966-05-09",
+          "countyFips": "01065",
+          "latitude": 32.5,
+          "longitude": -87.66,
+          "acceptedScientificName": "Lolium temulentum L.",
+          "institutionCode": "UNA",
+          "catalogNumber": "UNA00004403",
+          "locality": "2 miles NE of Prairieville, on county road #12",
+          "recordedBy": "Sherrie E. Maginness",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "GEODETIC_DATUM_INVALID",
+            "GEODETIC_DATUM_ASSUMED_WGS84",
+            "TAXON_ID_NOT_FOUND",
+            "MODIFIED_DATE_UNLIKELY",
+            "COLLECTION_MATCH_NONE",
+            "INSTITUTION_MATCH_FUZZY"
+          ]
+        },
+        {
+          "gbifKey": 2234646397,
+          "occurrenceId": "c59244fe-28c2-4cbb-8def-3cf2bc4d21cd",
+          "eventDate": "1964-05-09",
+          "countyFips": "01097",
+          "latitude": 30.248322,
+          "longitude": -88.086074,
+          "acceptedScientificName": "Lolium temulentum L.",
+          "institutionCode": "NCU",
+          "collectionCode": "Vascular Plants",
+          "catalogNumber": "NCU00177515",
+          "locality": "near Audubon Bird Sanctuary",
+          "recordedBy": "Deramus, Rebecca",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+          "issues": [
+            "CONTINENT_DERIVED_FROM_COORDINATES",
+            "TAXON_ID_NOT_FOUND",
+            "INSTITUTION_MATCH_FUZZY",
+            "COLLECTION_MATCH_FUZZY"
+          ]
+        }
+      ]
     }
   ],
   "summary": {
-    "targetSpeciesCount": 9,
-    "importedSpeciesCount": 9,
-    "acceptedSpecimenCount": 1946,
-    "countySpeciesPairs": 149
+    "targetSpeciesCount": 14,
+    "importedSpeciesCount": 14,
+    "acceptedSpecimenCount": 2000,
+    "countySpeciesPairs": 191
   }
 }

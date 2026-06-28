@@ -42,7 +42,15 @@ const TARGETS = [
   { scientificName: "Corbicula fluminea", speciesKey: 8190231 },
   { scientificName: "Lygodium japonicum", speciesKey: 2650436 },
   { scientificName: "Solenopsis invicta", speciesKey: 5035230 },
+  { scientificName: "Polygonum aviculare", speciesKey: 7821030 },
+  { scientificName: "Briza minor", speciesKey: 2702793 },
+  { scientificName: "Euphorbia cyparissias", speciesKey: 3070106 },
+  { scientificName: "Lolium temulentum", speciesKey: 2706242 },
+  { scientificName: "Abutilon theophrasti", speciesKey: 3152614 },
 ] as const;
+
+const EXCLUDED_CONTEXT_PATTERN =
+  /\b(cultivated|cultivation|planted|planting|garden|greenhouse|nursery|arboretum|botanical garden|campus landscape|landscaped|lab\.? colony|laboratory colony)\b/i;
 
 type CountyGeometry = {
   id: string;
@@ -81,6 +89,9 @@ type GbifOccurrenceRecord = {
   catalogNumber?: string;
   eventDate?: string;
   locality?: string;
+  occurrenceRemarks?: string;
+  habitat?: string;
+  establishmentMeans?: string;
   recordedBy?: string;
   license?: string;
 };
@@ -138,6 +149,7 @@ type SourceSnapshotFile = {
     hasCoordinate: true;
     hasGeospatialIssue: false;
     taxonMatch: "exact current catalog species and exact GBIF speciesKey";
+    excludedContexts: "cultivated, planted, garden, nursery, arboretum, landscaped, and lab-colony context text";
   };
   targetScientificNames: string[];
   species: SourceSnapshotSpecies[];
@@ -290,6 +302,15 @@ function acceptedSpecimenRecord(
   ) {
     return null;
   }
+  const contextText = [
+    record.locality,
+    record.occurrenceRemarks,
+    record.habitat,
+    record.establishmentMeans,
+  ]
+    .filter((value): value is string => Boolean(value))
+    .join(" ");
+  if (EXCLUDED_CONTEXT_PATTERN.test(contextText)) return null;
 
   const countyFips = resolveCountyFips(record, countyFeatures);
   if (!countyFips) return null;
@@ -526,6 +547,7 @@ async function main() {
       hasCoordinate: true,
       hasGeospatialIssue: false,
       taxonMatch: "exact current catalog species and exact GBIF speciesKey",
+      excludedContexts: "cultivated, planted, garden, nursery, arboretum, landscaped, and lab-colony context text",
     },
     targetScientificNames: TARGETS.map((target) => target.scientificName),
     species: sourceSnapshotSpecies,
