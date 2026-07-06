@@ -712,6 +712,17 @@ const PILOT_TARGET_SCIENTIFIC_NAMES = [
   "Xyleborus glabratus",
   "Zachrysia provisoria",
   "Zoysia matrella",
+  "Solanum nigrescens",
+  "Hemidactylus garnotii",
+  "Mentha pulegium",
+  "Kalanchoe delagoensis",
+  "Cryptomeria japonica",
+  "Festuca rubra",
+  "Poa trivialis",
+  "Lasioderma serricorne",
+  "Phleum pratense",
+  "Fallopia convolvulus",
+  "Digitaria violascens",
 ];
 
 type InatTaxon = {
@@ -816,6 +827,8 @@ type InatSourceSnapshotFile = {
   source: string;
   citation: string[];
   accessedAt: string;
+  lastTargetedRefreshAt?: string;
+  lastTargetedRefreshScientificNames?: string[];
   placeId: number;
   filters: {
     qualityGrade: "research";
@@ -836,6 +849,20 @@ type InatSourceSnapshotFile = {
 
 function readJsonFile<T>(filePath: string) {
   return JSON.parse(readFileSync(filePath, "utf8")) as T;
+}
+
+function selectedTargetScientificNames() {
+  const rawTargetNames = process.env.INATURALIST_TARGETS?.trim();
+  if (!rawTargetNames) return PILOT_TARGET_SCIENTIFIC_NAMES;
+
+  return [
+    ...new Set(
+      rawTargetNames
+        .split(/[,\n|]+/)
+        .map((value) => value.trim())
+        .filter(Boolean),
+    ),
+  ];
 }
 
 function curlJson<T>(url: string, maxBuffer = 15 * 1024 * 1024) {
@@ -1042,7 +1069,11 @@ function loadStrictObservations(taxonId: number) {
   };
 }
 
-function collectImportedCoverage(species: Species[], counties: Record<string, CountyRecord>) {
+function collectImportedCoverage(
+  species: Species[],
+  counties: Record<string, CountyRecord>,
+  targetScientificNames: readonly string[],
+) {
   const speciesByScientificName = new Map(
     species.map((record) => [canonicalScientificName(record.scientificName), record]),
   );
@@ -1059,7 +1090,7 @@ function collectImportedCoverage(species: Species[], counties: Record<string, Co
   let observationsAccepted = 0;
   let observationsSkipped = 0;
 
-  for (const scientificName of PILOT_TARGET_SCIENTIFIC_NAMES) {
+  for (const scientificName of targetScientificNames) {
     const speciesRecord = speciesByScientificName.get(
       canonicalScientificName(scientificName),
     );
@@ -1148,7 +1179,7 @@ function collectImportedCoverage(species: Species[], counties: Record<string, Co
     0,
   );
   console.log(
-    `Reviewed ${PILOT_TARGET_SCIENTIFIC_NAMES.length} iNaturalist pilot species; ${exactCatalogTargets} exact current-catalog targets; ${exactTaxonMatches} exact active iNaturalist taxa.`,
+    `Reviewed ${targetScientificNames.length} iNaturalist pilot species; ${exactCatalogTargets} exact current-catalog targets; ${exactTaxonMatches} exact active iNaturalist taxa.`,
   );
   console.log(
     `Reviewed ${observationsReviewed} iNaturalist observations; accepted ${observationsAccepted}; skipped ${observationsSkipped}.`,
@@ -1164,19 +1195,31 @@ async function main() {
   const species = readJsonFile<Species[]>(SPECIES_PATH);
   const counties = readJsonFile<Record<string, CountyRecord>>(COUNTIES_PATH);
   const snapshot = readJsonFile<CountyCoverageSnapshotFile>(COUNTY_PRESENCE_PATH);
-  const imported = collectImportedCoverage(species, counties);
+  const targetScientificNames = selectedTargetScientificNames();
+  const isTargetedRefresh = Boolean(process.env.INATURALIST_TARGETS?.trim());
+  const imported = collectImportedCoverage(species, counties, targetScientificNames);
   const accessedAt = new Date().toISOString();
   const existingBySpeciesId = new Map(
     snapshot.species.map((record) => [record.speciesId, record]),
   );
+  const speciesByScientificName = new Map(
+    species.map((record) => [canonicalScientificName(record.scientificName), record]),
+  );
+  const targetedSpeciesIds = new Set(
+    targetScientificNames.flatMap((scientificName) => {
+      const record = speciesByScientificName.get(canonicalScientificName(scientificName));
+      return record ? relatedCountyPresenceSpeciesIds(record) : [];
+    }),
+  );
   const outputRecords = new Map<string, CountyCoverageSpeciesSnapshot>();
 
   for (const record of snapshot.species) {
+    const stripSource = !isTargetedRefresh || targetedSpeciesIds.has(record.speciesId);
     outputRecords.set(record.speciesId, {
       ...record,
-      countyDataSources: record.countyDataSources.filter(
-        (source) => source.source !== SOURCE_NAME,
-      ),
+      countyDataSources: stripSource
+        ? record.countyDataSources.filter((source) => source.source !== SOURCE_NAME)
+        : record.countyDataSources,
     });
   }
 
@@ -1241,6 +1284,31 @@ async function main() {
       observations: [...coverage.observations].sort((left, right) => left.id - right.id),
     }))
     .sort((left, right) => left.speciesId.localeCompare(right.speciesId));
+  const previousSourceSnapshot = isTargetedRefresh
+    ? readJsonFile<InatSourceSnapshotFile>(SOURCE_SNAPSHOT_PATH)
+    : null;
+  const mergedSourceSnapshotSpecies = previousSourceSnapshot
+    ? [
+        ...previousSourceSnapshot.species.filter(
+          (record) =>
+            !targetedSpeciesIds.has(record.speciesId) &&
+            !targetScientificNames.some(
+              (scientificName) =>
+                canonicalScientificName(scientificName) ===
+                canonicalScientificName(record.scientificName),
+            ),
+        ),
+        ...sourceSnapshotSpecies,
+      ].sort((left, right) => left.speciesId.localeCompare(right.speciesId))
+    : sourceSnapshotSpecies;
+  const sourceTargetScientificNames = previousSourceSnapshot
+    ? [
+        ...new Set([
+          ...previousSourceSnapshot.targetScientificNames,
+          ...targetScientificNames,
+        ]),
+      ]
+    : [...targetScientificNames];
   const sourceSnapshot: InatSourceSnapshotFile = {
     source: SOURCE_NAME,
     citation: [
@@ -1248,6 +1316,12 @@ async function main() {
       "iNaturalist. 2026. API documentation and Swagger schema. Available online at https://api.inaturalist.org/v1/docs/ and https://api.inaturalist.org/v1/swagger.json.",
     ],
     accessedAt,
+    ...(isTargetedRefresh
+      ? {
+          lastTargetedRefreshAt: accessedAt,
+          lastTargetedRefreshScientificNames: [...targetScientificNames],
+        }
+      : {}),
     placeId: INAT_ALABAMA_PLACE_ID,
     filters: {
       qualityGrade: "research",
@@ -1256,16 +1330,16 @@ async function main() {
       obscuration: "none",
       maxPublicPositionalAccuracyMeters: MAX_PUBLIC_POSITIONAL_ACCURACY_METERS,
     },
-    targetScientificNames: PILOT_TARGET_SCIENTIFIC_NAMES,
-    species: sourceSnapshotSpecies,
+    targetScientificNames: sourceTargetScientificNames,
+    species: mergedSourceSnapshotSpecies,
     summary: {
-      targetSpeciesCount: PILOT_TARGET_SCIENTIFIC_NAMES.length,
-      importedSpeciesCount: sourceSnapshotSpecies.length,
-      acceptedObservationCount: sourceSnapshotSpecies.reduce(
+      targetSpeciesCount: sourceTargetScientificNames.length,
+      importedSpeciesCount: mergedSourceSnapshotSpecies.length,
+      acceptedObservationCount: mergedSourceSnapshotSpecies.reduce(
         (total, record) => total + record.acceptedObservationCount,
         0,
       ),
-      countySpeciesPairs: sourceSnapshotSpecies.reduce(
+      countySpeciesPairs: mergedSourceSnapshotSpecies.reduce(
         (total, record) => total + record.countyFips.length,
         0,
       ),

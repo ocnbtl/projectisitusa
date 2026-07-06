@@ -47,6 +47,15 @@ const TARGETS = [
   { scientificName: "Euphorbia cyparissias", speciesKey: 3070106 },
   { scientificName: "Lolium temulentum", speciesKey: 2706242 },
   { scientificName: "Abutilon theophrasti", speciesKey: 3152614 },
+  { scientificName: "Harmonia axyridis", speciesKey: 4989904 },
+  { scientificName: "Culex coronator", speciesKey: 1653144 },
+  { scientificName: "Hemidactylus turcicus", speciesKey: 5221528 },
+  { scientificName: "Cactoblastis cactorum", speciesKey: 1870532 },
+  { scientificName: "Hypoponera opaciceps", speciesKey: 1326617 },
+  { scientificName: "Brachymyrmex patagonicus", speciesKey: 1317320 },
+  { scientificName: "Wahlenbergia marginata", speciesKey: 5413733 },
+  { scientificName: "Cyprinus carpio", speciesKey: 4286975 },
+  { scientificName: "Oreochromis niloticus", speciesKey: 4285694 },
 ] as const;
 
 const EXCLUDED_CONTEXT_PATTERN =
@@ -506,7 +515,8 @@ async function main() {
     ...snapshot,
     citation: [
       ...snapshot.citation.filter(
-        (entry) => !entry.includes("coordinate-resolved preserved specimen"),
+        (entry) =>
+          !entry.toLowerCase().includes("coordinate-resolved preserved specimen"),
       ),
       "GBIF.org. 2026. GBIF occurrence search. Coordinate-resolved preserved specimen records for Alabama, United States. Available online at https://www.gbif.org/occurrence/search.",
     ],
