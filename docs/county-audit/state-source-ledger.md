@@ -69,6 +69,14 @@ The 2026-07-06 GBIF coordinate-resolved preserved specimen expansion added anoth
 
 The expanded GBIF eBird Observation Dataset import now reviews all `10` exact current-catalog US-RIIS bird targets and found `10` exact GBIF species matches. The 2026-06-28 bird pass scanned and accepted `31696` public EOD occurrence rows, imported `7` species, produced `292` gross Alabama county-species source pairs, and raised the regenerated Alabama matrix by `21` verified-present determinations after generated unioning. `Aratinga erythrogenys`, `Brotogeris versicolurus`, and `Pycnonotus jocosus` had exact catalog and GBIF species matches but no Alabama EOD rows, so they remain unknown from this source. Treat EOD rows as occurrence-only public observed-presence evidence, not checklist non-detection, agency survey evidence, establishment proof, invasive-impact proof, absence, or complete county bird inventory coverage.
 
+### Alabama Latest Update, 2026-07-11
+
+The current regenerated outputs supersede the older Alabama counts above. Alabama now has `990` distinct live mapped species, `225.87` average mapped species per county, `15133` verified-present determinations, `0` verified-absent determinations, `8` survey-area not-detected determinations, and `152627` unknown determinations out of `167768`. That is `9.02%` known.
+
+The targeted USGS NAS occurrence API supplement replaces the paginated live-collection-page implementation with a structured query path shared by the full county importer and `npm run import:nas-alabama-api`. It reviewed `8` exact current-catalog Alabama ANS targets, accepted `166` of `178` API records, skipped `12` rows, imported `8` species, and produced `38` gross Alabama county-species source pairs. The source snapshot records every accepted and skipped row. The API supplement added `14` verified-present determinations across Daphnia lumholtzi, Zebra Mussel, Bighead Carp, Oriental weatherfish, and Nile Tilapia. It rejected a Pomacea maculata row assigned to Houston County because its locality explicitly says Panama City Beach, Florida. It also excludes failed, state-only, and no-county rows, and restricts Blue Tilapia to established NAS records. NAS rows are county occurrence or collection evidence only, not proof of countywide establishment, abundance, invasive impact, absence, non-detection, or a complete inventory.
+
+Resolved conflict: new NAS presence records for Bighead Carp in Colbert and Jackson counties conflicted with older USFWS eDNA `not-detected` survey-area overrides. The two conflicting non-detection records were removed under the existing rule that a positive county record supersedes a survey-area non-detection. The remaining six eDNA non-detection records stay unchanged and are not countywide absence claims.
+
 ## Remaining States
 
 All other states are still `not-started` in this audit track until their statewide official source paths are logged here.

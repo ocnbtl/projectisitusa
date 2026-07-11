@@ -1,7 +1,7 @@
 import { execFileSync, spawn } from "node:child_process";
 import { once } from "node:events";
 import { writeFile } from "node:fs/promises";
-import { existsSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readFileSync, renameSync, statSync, unlinkSync } from "node:fs";
 import { resolve } from "node:path";
 import { parse } from "csv-parse";
 import { parse as parseSync } from "csv-parse/sync";
@@ -12,6 +12,11 @@ import { feature } from "topojson-client";
 import countyTopology from "us-atlas/counties-10m.json";
 
 import { speciesSeed } from "@/data/source/species";
+import {
+  NAS_ALABAMA_API_SUPPLEMENTS,
+  NAS_ALABAMA_OCCURRENCE_API_BASE_URL,
+  NAS_ALABAMA_OCCURRENCE_SOURCE_NAME,
+} from "@/data/source/nas-alabama-api-supplements";
 import { STATE_FIPS_TO_INFO } from "@/data/source/state-fips";
 import { stateSpeciesDenominators } from "@/data/source/state-species-denominators";
 import type {
@@ -27,8 +32,6 @@ const EDDMAPS_SUBJECTS_URL =
   "https://api.bugwoodcloud.org/v2/occurrence/summary/subject?list=17";
 const NAS_ARCHIVE_URL = "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.331";
 const NAS_ARCHIVE_PATH = resolve("/tmp", "usgs-nas-dwca.zip");
-const NAS_COLLECTION_INFO_BASE_URL =
-  "https://nas.er.usgs.gov/queries/CollectionInfo.aspx";
 const SERNEC_PORTAL_URL =
   "https://sernecportal.org/portal/collections/harvestparams.php";
 const SERNEC_TABLE_URL =
@@ -155,10 +158,13 @@ type NasArchiveOccurrence = {
   scientificName?: string;
 };
 
-type NasLiveCollectionSupplement = {
-  scientificName: string;
-  speciesId: number;
-  allowedStatuses?: Set<string>;
+type NasOccurrenceSearchResponse = {
+  results?: Array<{
+    state?: string;
+    county?: string;
+    locality?: string;
+    status?: string;
+  }>;
 };
 
 type SernecAlabamaTarget = {
@@ -257,20 +263,42 @@ function readJsonFile<T>(filePath: string) {
 function downloadFile(
   url: string,
   outputPath: string,
-  options?: { reuseExisting?: boolean },
+  options?: { reuseExisting?: boolean; validateCachedFile?: (path: string) => boolean },
 ) {
-  if (options?.reuseExisting && existsSync(outputPath) && statSync(outputPath).size > 0) {
+  const canReuse =
+    options?.reuseExisting &&
+    existsSync(outputPath) &&
+    statSync(outputPath).size > 0 &&
+    (!options.validateCachedFile || options.validateCachedFile(outputPath));
+  if (canReuse) {
     console.log(`Reusing cached download at ${outputPath}`);
     return;
   }
 
-  execFileSync(
-    "curl",
-    ["-sL", "--max-time", "120", "-A", USER_AGENT, "-o", outputPath, url],
-    {
-      stdio: "inherit",
-    },
-  );
+  const temporaryPath = `${outputPath}.download`;
+  try {
+    execFileSync(
+      "curl",
+      ["--fail", "-sL", "--max-time", "120", "-A", USER_AGENT, "-o", temporaryPath, url],
+      {
+        stdio: "inherit",
+      },
+    );
+    renameSync(temporaryPath, outputPath);
+  } finally {
+    if (existsSync(temporaryPath)) {
+      unlinkSync(temporaryPath);
+    }
+  }
+}
+
+function hasZipSignature(filePath: string) {
+  try {
+    const prefix = readFileSync(filePath).subarray(0, 4);
+    return prefix.equals(Buffer.from([0x50, 0x4b, 0x03, 0x04]));
+  } catch {
+    return false;
+  }
 }
 
 function canonicalScientificName(value: string) {
@@ -317,18 +345,6 @@ const TARGET_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
 const NAS_SCIENTIFIC_NAME_ALIASES: Record<string, string> = {
   "hydrilla verticillata verticillata": "hydrilla verticillata",
 };
-
-const NAS_LIVE_COLLECTION_SUPPLEMENTS: NasLiveCollectionSupplement[] = [
-  {
-    scientificName: "Oreochromis aureus",
-    speciesId: 463,
-    allowedStatuses: new Set(["established", "locally established"]),
-  },
-  {
-    scientificName: "Cyprinus rubrofuscus",
-    speciesId: 3294,
-  },
-];
 
 const SERNEC_ALABAMA_SPECIES_IDS = [
   "lonicera-japonica",
@@ -470,45 +486,6 @@ function extractSernecTable(html: string) {
   }
 
   return { headers, rows };
-}
-
-function extractNasCollectionRows(html: string) {
-  const tableStart = html.search(/<table[^>]*id="ContentPlaceHolder1_myGridView"/i);
-  if (tableStart === -1) {
-    throw new Error("NAS collection page did not expose the expected result table.");
-  }
-
-  const sqlStatementStart = html.indexOf('id="ContentPlaceHolder1_SQLstmt"', tableStart);
-  const tableHtml = html.slice(
-    tableStart,
-    sqlStatementStart === -1 ? undefined : sqlStatementStart,
-  );
-  const rows: Array<Record<string, string>> = [];
-  let headers: string[] = [];
-
-  for (const rowMatch of tableHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
-    const rowHtml = rowMatch[1];
-    const headerCells = [...rowHtml.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((match) =>
-      stripHtml(match[1]),
-    );
-    if (headerCells.length > 0) {
-      headers = headerCells;
-      continue;
-    }
-
-    const cells = [...rowHtml.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((match) =>
-      stripHtml(match[1]),
-    );
-    if (headers.length === 0 || cells.length !== headers.length) {
-      continue;
-    }
-
-    rows.push(
-      Object.fromEntries(headers.map((header, index) => [header, cells[index] ?? ""])),
-    );
-  }
-
-  return rows;
 }
 
 function buildCountyLookup() {
@@ -771,7 +748,10 @@ async function loadNasArchiveCountyCoverage(
   countyLookup: Map<string, string[]>,
   lower48CountyFips: Set<string>,
 ) {
-  downloadFile(NAS_ARCHIVE_URL, NAS_ARCHIVE_PATH, { reuseExisting: true });
+  downloadFile(NAS_ARCHIVE_URL, NAS_ARCHIVE_PATH, {
+    reuseExisting: true,
+    validateCachedFile: hasZipSignature,
+  });
 
   const unzipProcess = spawn("unzip", ["-p", NAS_ARCHIVE_PATH, "occurrence.txt"], {
     stdio: ["ignore", "pipe", "pipe"],
@@ -859,7 +839,7 @@ async function loadNasLiveCollectionSupplementCoverage(
   let matchedRows = 0;
   let skippedRows = 0;
 
-  for (const supplement of NAS_LIVE_COLLECTION_SUPPLEMENTS) {
+  for (const supplement of NAS_ALABAMA_API_SUPPLEMENTS) {
     const target = targetLookup.get(canonicalScientificName(supplement.scientificName));
     if (!target) {
       console.warn(
@@ -868,18 +848,14 @@ async function loadNasLiveCollectionSupplementCoverage(
       continue;
     }
 
-    const url = `${NAS_COLLECTION_INFO_BASE_URL}?SpeciesID=${supplement.speciesId}`;
-    const html = execFileSync(
-      "curl",
-      ["-k", "-sL", "-A", USER_AGENT, url],
-      { encoding: "utf8", maxBuffer: 5 * 1024 * 1024 },
-    );
-    const rows = extractNasCollectionRows(html);
+    const url = `${NAS_ALABAMA_OCCURRENCE_API_BASE_URL}?species_ID=${supplement.speciesId}&state=AL`;
+    const response = curlJson<NasOccurrenceSearchResponse>(url);
+    const rows = response.results ?? [];
     const existing = imported.get(target.speciesId) ?? {
       countyFips: new Set<string>(),
       countyDataSources: [
         {
-          source: "USGS NAS live collection pages",
+          source: NAS_ALABAMA_OCCURRENCE_SOURCE_NAME,
           matchType: "scientific-exact",
           externalId: `SpeciesID ${supplement.speciesId}`,
           url,
@@ -888,20 +864,25 @@ async function loadNasLiveCollectionSupplementCoverage(
     };
 
     for (const row of rows) {
-      const stateCode = (row.State ?? "").trim().toUpperCase();
-      const county = (row.County ?? "").trim();
-      const status = (row.Status ?? "").trim().toLowerCase();
-      if (stateCode !== "AL" || !county) continue;
+      const state = (row.state ?? "").trim().toLowerCase();
+      const county = (row.county ?? "").trim();
+      const locality = (row.locality ?? "").trim();
+      const status = (row.status ?? "").trim().toLowerCase();
+      if (state !== "alabama" || !county) continue;
       if (status === "failed") {
         skippedRows += 1;
         continue;
       }
-      if (supplement.allowedStatuses && !supplement.allowedStatuses.has(status)) {
+      if (supplement.allowedStatuses && !supplement.allowedStatuses.includes(status)) {
+        skippedRows += 1;
+        continue;
+      }
+      if (supplement.excludedLocalityPatterns?.some((pattern) => pattern.test(locality))) {
         skippedRows += 1;
         continue;
       }
 
-      const countyFips = resolveCountyFips(stateCode, county, countyLookup);
+      const countyFips = resolveCountyFips("AL", county, countyLookup);
       if (!countyFips || !lower48CountyFips.has(countyFips)) {
         skippedRows += 1;
         continue;
@@ -921,7 +902,7 @@ async function loadNasLiveCollectionSupplementCoverage(
     0,
   );
   console.log(
-    `Loaded ${imported.size} species from NAS live collection pages with ${distinctCountyRows} distinct Alabama county rows from ${matchedRows} matched records (${skippedRows} skipped records).`,
+    `Loaded ${imported.size} species from the NAS occurrence API with ${distinctCountyRows} distinct Alabama county rows from ${matchedRows} matched records (${skippedRows} skipped records).`,
   );
 
   return imported;
@@ -2463,7 +2444,7 @@ async function main() {
       "USDA APHIS. 2026. PPQ federal quarantine county FeatureServer layer. Available online at https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1.",
       "USDA APHIS National Honey Bee Survey. 2026. Public county-resolved survey event data for honey bee samples, including Varroa mite counts per 100 bees. Available online at https://www.usbeedata.org/state_reports/public_download/.",
       "USDA Forest Service. 2026. EDW current invasive plant locations FeatureServer layer, filtered to NFS in Alabama National Forest. Available online at https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0.",
-      "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database live collection pages for targeted Alabama ANS reconciliation gaps. Available online at https://nas.er.usgs.gov/queries/CollectionInfo.aspx.",
+      "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database occurrence API for targeted Alabama ANS reconciliation gaps. Available online at https://nas.er.usgs.gov/api/v2/occurrence/search.",
     ],
     snapshotDate: new Date().toISOString(),
     species: speciesWithCountyData,

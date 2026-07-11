@@ -1,0 +1,1941 @@
+{
+  "source": "USGS NAS occurrence API",
+  "citation": [
+    "U.S. Geological Survey. 2026. Nonindigenous Aquatic Species Database occurrence API for targeted Alabama ANS reconciliation gaps. Available online at https://nas.er.usgs.gov/api/v2/occurrence/search."
+  ],
+  "accessedAt": "2026-07-11T20:29:35.732Z",
+  "endpoint": "https://nas.er.usgs.gov/api/v2/occurrence/search",
+  "targetScientificNames": [
+    "Oreochromis aureus",
+    "Cyprinus rubrofuscus",
+    "Daphnia lumholtzi",
+    "Dreissena polymorpha",
+    "Pomacea maculata",
+    "Hypophthalmichthys nobilis",
+    "Misgurnus anguillicaudatus",
+    "Oreochromis niloticus"
+  ],
+  "filters": {
+    "state": "Alabama",
+    "county": "explicit named Alabama county resolving to one county FIPS",
+    "status": "failed rows skipped; Blue Tilapia restricted to established rows",
+    "locality": "explicit Florida locality contradiction skipped",
+    "evidenceScope": "occurrence or collection evidence only"
+  },
+  "caveats": [
+    "An accepted NAS record verifies an occurrence or collection at the named county, not countywide distribution, abundance, invasive impact, a complete inventory, absence, or non-detection.",
+    "NAS warns that its data vary in accuracy, scale, completeness, extent of coverage, and origin. This bounded supplement therefore excludes failed records and the reviewed Florida locality contradiction.",
+    "Status values other than failed are retained only as occurrence evidence, except Blue Tilapia which is restricted to NAS established or locally established rows."
+  ],
+  "species": [
+    {
+      "speciesId": "USRIIS-L48-Animalia15445",
+      "scientificName": "Cyprinus rubrofuscus",
+      "nasSpeciesId": 3294,
+      "apiResultCount": 3,
+      "acceptedRecordCount": 3,
+      "skippedRecordCount": 0,
+      "countyFips": [
+        "01089",
+        "01097"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=3294&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 1739612,
+          "countyFips": "01089",
+          "countyName": "Madison",
+          "locality": "[No locality description provided]",
+          "date": "2024-5-23",
+          "year": 2024,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1729784,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2020-10-5",
+          "year": 2020,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1739224,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2024-3-24",
+          "year": 2024,
+          "status": "",
+          "recordType": "Literature"
+        }
+      ],
+      "skippedRecords": []
+    },
+    {
+      "speciesId": "USRIIS-L48-Animalia5208",
+      "scientificName": "Daphnia lumholtzi",
+      "nasSpeciesId": 164,
+      "apiResultCount": 51,
+      "acceptedRecordCount": 49,
+      "skippedRecordCount": 2,
+      "countyFips": [
+        "01003",
+        "01071",
+        "01079",
+        "01119"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=164&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 237539,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2002-5-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237540,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2002-6-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237541,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2002-7-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237542,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2004-6-4",
+          "year": 2004,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237543,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2004-10-4",
+          "year": 2004,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237544,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2005-4-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237545,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2005-6-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237547,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2005-7-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237548,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2005-8-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237549,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2005-11-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237550,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Dennis Lake [~6 mi S of Stockton]",
+          "date": "2005-12-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237551,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2002-8-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237552,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2004-6-4",
+          "year": 2004,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237553,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2005-4-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237554,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2005-5-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237555,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2005-6-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237556,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2005-7-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237557,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2005-8-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237558,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "McReynolds Lake [=The Basin, ~8 mi SW of Stockton]",
+          "date": "2005-12-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237559,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2002-5-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237560,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2002-6-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237561,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2002-7-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237562,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2002-10-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237563,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2003-11-4",
+          "year": 2003,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237564,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2004-6-4",
+          "year": 2004,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237565,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2005-5-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237566,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2005-6-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237567,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2005-7-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237568,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Gravine Island [in the Tensaw River, ~9 mi NE of Mobile]",
+          "date": "2005-8-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237569,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Crab Creek [E of Mobile, between Grand Bay and Tensaw River]",
+          "date": "2002-5-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237570,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Crab Creek [E of Mobile, between Grand Bay and Tensaw River]",
+          "date": "2002-6-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237571,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Crab Creek [E of Mobile, between Grand Bay and Tensaw River]",
+          "date": "2004-6-4",
+          "year": 2004,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237572,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Crab Creek [E of Mobile, between Grand Bay and Tensaw River]",
+          "date": "2005-4-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237573,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Crab Creek [E of Mobile, between Grand Bay and Tensaw River]",
+          "date": "2005-6-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237574,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Crab Creek [E of Mobile, between Grand Bay and Tensaw River]",
+          "date": "2005-7-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237575,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Crab Creek [E of Mobile, between Grand Bay and Tensaw River]",
+          "date": "2005-9-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237576,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Bay Minette Basin, Mobile Delta",
+          "date": "2002-5-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237577,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Bay Minette Basin, Mobile Delta",
+          "date": "2002-6-4",
+          "year": 2002,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237578,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Bay Minette Basin, Mobile Delta",
+          "date": "2005-5-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237579,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Bay Minette Basin, Mobile Delta",
+          "date": "2005-9-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237580,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Bay Minette Basin, Mobile Delta",
+          "date": "2005-12-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237581,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "D'Olive Bay [off east side of Mobile Bay and just N of Daphne]",
+          "date": "2004-6-4",
+          "year": 2004,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237582,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "D'Olive Bay [off east side of Mobile Bay and just N of Daphne]",
+          "date": "2005-2-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 237583,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "D'Olive Bay [off east side of Mobile Bay and just N of Daphne]",
+          "date": "2005-6-4",
+          "year": 2005,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 4182,
+          "countyFips": "01071",
+          "countyName": "Jackson",
+          "locality": "Tennessee River (Guntersville Lake) just upstream from Bridgeport, AL",
+          "date": "1997-7-25",
+          "year": 1997,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 4183,
+          "countyFips": "01071",
+          "countyName": "Jackson",
+          "locality": "Tennessee River (Guntersville Lake) just upstream from Bridgeport, AL",
+          "date": "1997-8-1",
+          "year": 1997,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 4184,
+          "countyFips": "01071",
+          "countyName": "Jackson",
+          "locality": "Tennessee River (Guntersville Lake) just upstream from Bridgeport, AL",
+          "date": "1997-8-8",
+          "year": 1997,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 4096,
+          "countyFips": "01079",
+          "countyName": "Lawrence",
+          "locality": "Wilson Reservoir (Lake)",
+          "date": "1992",
+          "year": 1992,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 162518,
+          "countyFips": "01119",
+          "countyName": "Sumter",
+          "locality": "Lake Demopolis below below Heflin Lock and Dam on the Tenn-Tom waterway [just N of Gainesville, AL]",
+          "date": "2004-6-4",
+          "year": 2004,
+          "status": "collected",
+          "recordType": "Personal communication"
+        }
+      ],
+      "skippedRecords": [
+        {
+          "occurrenceKey": 4095,
+          "countyName": "",
+          "locality": "Wheeler Lake",
+          "status": "established",
+          "reason": "No explicit Alabama county"
+        },
+        {
+          "occurrenceKey": 4118,
+          "countyName": "",
+          "locality": "Guntersville Lake",
+          "status": "established",
+          "reason": "No explicit Alabama county"
+        }
+      ]
+    },
+    {
+      "speciesId": "dreissena-polymorpha",
+      "scientificName": "Dreissena polymorpha",
+      "nasSpeciesId": 5,
+      "apiResultCount": 38,
+      "acceptedRecordCount": 37,
+      "skippedRecordCount": 1,
+      "countyFips": [
+        "01033",
+        "01063",
+        "01073",
+        "01077",
+        "01079",
+        "01083",
+        "01089",
+        "01095",
+        "01125"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=5&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 116453,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River (R.M. 250.0) (Upper Pickwick Res.) near Buck Island, 5 miles west of Florence, Alabama",
+          "date": "1992-8-25",
+          "year": 1992,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1407253,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, at Florence",
+          "date": "2017-6-19",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1407254,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, at Florence",
+          "date": "2017-6-20",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1407257,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, ~2 mi. downstream of Florence",
+          "date": "2017-6-21",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1407258,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, ~4.6 mi. downstream of Florence",
+          "date": "2017-6-21",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1407259,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, ~7  mi. downstream of Florence",
+          "date": "2017-6-21",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1410194,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, R.M. 257.0, at Florence",
+          "date": "2017-7-20",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1410195,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, R.M. 257.9, at Florence",
+          "date": "2017-7-20",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1699093,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "[No locality description provided]",
+          "date": "2021-6-23",
+          "year": 2021,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1713974,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Hog Island on Wilson Lake",
+          "date": "2023-7-5",
+          "year": 2023,
+          "status": "",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1713977,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Hog Island, Wilson Lake",
+          "date": "2023-7-5",
+          "year": 2023,
+          "status": "",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1724851,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, TRM 249.0, tail end of 3rd island of the Buck Island complex, ca. 100 m. from the island, [point estimated 2.4 air miles ENE center Pride], [Pride Quad].",
+          "date": "1999-8-11",
+          "year": 1999,
+          "status": "",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 887459,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Tennessee River, TRM 249.0, tail end of 3rd island of the Buck Island complex, ca. 100 m. from the island, [point estimated 2.4 air miles ENE center Pride], [Pride Quad].",
+          "date": "1999-8-11",
+          "year": 1999,
+          "status": "established",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 1407079,
+          "countyFips": "01063",
+          "countyName": "Greene",
+          "locality": "Black Warrior River RM 283.9 [~2 mi NW of Stewart]",
+          "date": "2017-6-13",
+          "year": 2017,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1406852,
+          "countyFips": "01073",
+          "countyName": "Jefferson",
+          "locality": "Black Warrior River, RM 381, Bankhead Reservoir, just north of Franklin Ferry Road Bridge",
+          "date": "2017-6-13",
+          "year": 2017,
+          "status": "unknown",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 117019,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River (R.M. 259.4) at Wilson Lock and Dam near Florence, AL",
+          "date": "1993-7-13",
+          "year": 1993,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1407255,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, ~5 mi downstream of Florence",
+          "date": "2017-6-20",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1407256,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, ~7 mi. downstream of Florence",
+          "date": "2017-6-20",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1410196,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, R.M. 258.0, at Florence",
+          "date": "2017-7-20",
+          "year": 2017,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1468313,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, in Pickwick Lake west of Florence",
+          "date": "2018-7-31",
+          "year": 2018,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1468314,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, in Pickwick Lake west of Florence",
+          "date": "2018-7-31",
+          "year": 2018,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1724856,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, TRM 255.5, [1.8 air miles SSW center Florence], [Florence Quad].",
+          "date": "1996-2-23",
+          "year": 1996,
+          "status": "",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 1724861,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, River Mile 242-245, [points estimated 5.36 air miles ENE to 7.25 air miles ESE center Cherokee], [Cherokee and Pride Quads].",
+          "date": "1994-2-23",
+          "year": 1994,
+          "status": "",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 887460,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, River Mile 242-245, [points estimated 5.36 air miles ENE to 7.25 air miles ESE center Cherokee], [Cherokee and Pride Quads].",
+          "date": "1994-8-11",
+          "year": 1994,
+          "status": "established",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 887461,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, TRM 255.5, [1.8 air miles SSW center Florence], [Florence Quad].",
+          "date": "1996-2-23",
+          "year": 1996,
+          "status": "established",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 116384,
+          "countyFips": "01079",
+          "countyName": "Lawrence",
+          "locality": "Tennessee River (R.M. 274.9) at Wheeler Dam, about 16 miles east of Florence, Alabama.",
+          "date": "1992-6-11",
+          "year": 1992,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 116476,
+          "countyFips": "01083",
+          "countyName": "Limestone",
+          "locality": "Tennessee River (R.M. 294) at Browns Ferry, Alabama (10 miles downstream of Decatur)",
+          "date": "1992-9-25",
+          "year": 1992,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 116717,
+          "countyFips": "01089",
+          "countyName": "Madison",
+          "locality": "Tennessee River (R.M. 336-339) in upper Wheeler Reservoir at Hobbs Island",
+          "date": "1992-6-18",
+          "year": 1992,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 116452,
+          "countyFips": "01095",
+          "countyName": "Marshall",
+          "locality": "Tennessee River (R.M. 349.0) at Guntersville Lock and Dam near Guntersville, Alabama",
+          "date": "1992-8-24",
+          "year": 1992,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1652542,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Peques Creek, at Holt Reservoir (Black Warrior River)",
+          "date": "2020-9-7",
+          "year": 2020,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1653697,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Black Warrior River, near Moundsville",
+          "date": "2018-9-20",
+          "year": 2018,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1655173,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Peques Creek, at Holt Reservoir (Black Warrior River)",
+          "date": "2020-11-28",
+          "year": 2020,
+          "status": "established",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1655189,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Peques Creek, at Holt Reservoir (Black Warrior River)",
+          "date": "2020-12-10",
+          "year": 2020,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1655190,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Peques Creek, at Holt Reservoir (Black Warrior River)",
+          "date": "2020-12-10",
+          "year": 2020,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1655191,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Black Warrior",
+          "date": "2020-12-10",
+          "year": 2020,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1655192,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Peques Creek, at Holt Reservoir (Black Warrior River)",
+          "date": "2020-12-10",
+          "year": 2020,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1695315,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Holt Pool of the Black Warrior",
+          "date": "2021-7-1",
+          "year": 2021,
+          "status": "unknown",
+          "recordType": "NAS sighting report"
+        }
+      ],
+      "skippedRecords": [
+        {
+          "occurrenceKey": 158363,
+          "countyName": "",
+          "locality": "Guntersville Lake",
+          "status": "established",
+          "reason": "No explicit Alabama county"
+        }
+      ]
+    },
+    {
+      "speciesId": "hypophthalmichthys-nobilis",
+      "scientificName": "Hypophthalmichthys nobilis",
+      "nasSpeciesId": 551,
+      "apiResultCount": 38,
+      "acceptedRecordCount": 34,
+      "skippedRecordCount": 4,
+      "countyFips": [
+        "01033",
+        "01063",
+        "01071",
+        "01077",
+        "01085",
+        "01091",
+        "01095",
+        "01099",
+        "01119",
+        "01125",
+        "01131"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=551&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 159268,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "Bear Creek on Pickwick Lake [Alabama portion of lake between Colbert County, AL and Tishomingo County, MS]",
+          "date": "1998-5-7",
+          "year": 1998,
+          "status": "established",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 1713773,
+          "countyFips": "01033",
+          "countyName": "Colbert",
+          "locality": "McKiernan Creek, first cove inside mouth upstream from confluence with Wilson Reservoir, Tennessee River",
+          "date": "2021-3-22",
+          "year": 2021,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 241163,
+          "countyFips": "01063",
+          "countyName": "Greene",
+          "locality": "Tennessee-Tombigbee Waterway (Demopolis Lake, Tombigbee Arm) downstream of Howell Heflin Dam in Gainesville and upstream of the Black Warrior River mouth [in Demopolis].",
+          "date": "2005-4-20",
+          "year": 2005,
+          "status": "unknown",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 159794,
+          "countyFips": "01071",
+          "countyName": "Jackson",
+          "locality": "unnamed creek near Scottsboro [tributary of the Tennessee River at Gunterville Lake]",
+          "date": "2004-7-20",
+          "year": 2004,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 158632,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River, in Wilson Lake below Wheeler Dam",
+          "date": "2003-3-7",
+          "year": 2003,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 159533,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Tennessee River in Florence just below A TVA dam [Wilson Dam]",
+          "date": "2004-7-1",
+          "year": 2004,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1713973,
+          "countyFips": "01077",
+          "countyName": "Lauderdale",
+          "locality": "Pickwick Lake below the Wilson dam",
+          "date": "2023-6-2",
+          "year": 2023,
+          "status": "",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1713778,
+          "countyFips": "01085",
+          "countyName": "Lowndes",
+          "locality": "Approx 1/4 mile from mouth of Tallawassee Creek (Jones Bluff Reservoir) and junction with mainstem Alabama River",
+          "date": "2022-8-2",
+          "year": 2022,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1735705,
+          "countyFips": "01085",
+          "countyName": "Lowndes",
+          "locality": "Omitted by NAS",
+          "date": "2010-1-1",
+          "year": 2010,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735706,
+          "countyFips": "01085",
+          "countyName": "Lowndes",
+          "locality": "Omitted by NAS",
+          "date": "2011-1-1",
+          "year": 2011,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735749,
+          "countyFips": "01085",
+          "countyName": "Lowndes",
+          "locality": "Omitted by NAS",
+          "date": "2008-1-1",
+          "year": 2008,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735759,
+          "countyFips": "01085",
+          "countyName": "Lowndes",
+          "locality": "Omitted by NAS",
+          "date": "2007-1-1",
+          "year": 2007,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735779,
+          "countyFips": "01085",
+          "countyName": "Lowndes",
+          "locality": "Omitted by NAS",
+          "date": "2012-1-1",
+          "year": 2012,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735780,
+          "countyFips": "01085",
+          "countyName": "Lowndes",
+          "locality": "Omitted by NAS",
+          "date": "2013-1-1",
+          "year": 2013,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1736874,
+          "countyFips": "01091",
+          "countyName": "Marengo",
+          "locality": "Lake Demopolis, directly below the confulence of Black Warrior and Tombigbee rivers",
+          "date": "2023-9-21",
+          "year": 2023,
+          "status": "",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1713771,
+          "countyFips": "01095",
+          "countyName": "Marshall",
+          "locality": "Upper Browns Creek, Lake Guntersville",
+          "date": "2022-3-16",
+          "year": 2022,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 267219,
+          "countyFips": "01095",
+          "countyName": "Marshall",
+          "locality": "Tennessee River, in Guntersville Lake",
+          "date": "2004-7-2",
+          "year": 2004,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1735702,
+          "countyFips": "01099",
+          "countyName": "Monroe",
+          "locality": "Omitted by NAS",
+          "date": "2010-1-1",
+          "year": 2010,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735703,
+          "countyFips": "01099",
+          "countyName": "Monroe",
+          "locality": "Omitted by NAS",
+          "date": "2011-1-1",
+          "year": 2011,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735748,
+          "countyFips": "01099",
+          "countyName": "Monroe",
+          "locality": "Omitted by NAS",
+          "date": "2008-1-1",
+          "year": 2008,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735758,
+          "countyFips": "01099",
+          "countyName": "Monroe",
+          "locality": "Omitted by NAS",
+          "date": "2007-1-1",
+          "year": 2007,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735775,
+          "countyFips": "01099",
+          "countyName": "Monroe",
+          "locality": "Omitted by NAS",
+          "date": "2012-1-1",
+          "year": 2012,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735776,
+          "countyFips": "01099",
+          "countyName": "Monroe",
+          "locality": "Omitted by NAS",
+          "date": "2013-1-1",
+          "year": 2013,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 241164,
+          "countyFips": "01119",
+          "countyName": "Sumter",
+          "locality": "Tennessee-Tombigbee Waterway (Demopolis Lake, Tombigbee Arm) just W of Birdine",
+          "date": "2007-3-2",
+          "year": 2007,
+          "status": "unknown",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 158528,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "fish ponds, Tuscaloosa",
+          "date": "1992-3-7",
+          "year": 1992,
+          "status": "unknown",
+          "recordType": "Specimen"
+        },
+        {
+          "occurrenceKey": 1713772,
+          "countyFips": "01125",
+          "countyName": "Tuscaloosa",
+          "locality": "Oliver Spillway Fishing Pier Park, Tuscaloosa",
+          "date": "2021-6-28",
+          "year": 2021,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 157217,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Alabama River at Millers Ferry Lock and Dam [William Dannelly Reservoir just W of Millers Ferry, AL]",
+          "date": "2003-10-1",
+          "year": 2003,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1701984,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Alabama River at Millers Ferry Lock and Dam [William Dannelly Reservoir just W of Millers Ferry, AL]",
+          "date": "2014-2-2",
+          "year": 2014,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735704,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Omitted by NAS",
+          "date": "2011-1-1",
+          "year": 2011,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735736,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Omitted by NAS",
+          "date": "2010-1-1",
+          "year": 2010,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735747,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Omitted by NAS",
+          "date": "2008-1-1",
+          "year": 2008,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735757,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Omitted by NAS",
+          "date": "2007-1-1",
+          "year": 2007,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735777,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Omitted by NAS",
+          "date": "2012-1-1",
+          "year": 2012,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1735778,
+          "countyFips": "01131",
+          "countyName": "Wilcox",
+          "locality": "Omitted by NAS",
+          "date": "2013-1-1",
+          "year": 2013,
+          "status": "",
+          "recordType": "Literature"
+        }
+      ],
+      "skippedRecords": [
+        {
+          "occurrenceKey": 241162,
+          "countyName": "Greene",
+          "locality": "Tennessee-Tombigbee Waterway (Demopolis Lake, Tombigbee Arm) downstream of Howell Heflin Dam in Gainesville and upstream of the Black Warrior River mouth [in Demopolis].",
+          "status": "failed",
+          "reason": "NAS status is failed"
+        },
+        {
+          "occurrenceKey": 26229,
+          "countyName": "Tallapoosa",
+          "locality": "Yates Reservoir - cove 279 [Sougahatchee Creek], Tallassee",
+          "status": "failed",
+          "reason": "NAS status is failed"
+        },
+        {
+          "occurrenceKey": 26237,
+          "countyName": "Tallapoosa",
+          "locality": "Yates Reservoir [Sougahatchee Creek], Tallassee",
+          "status": "failed",
+          "reason": "NAS status is failed"
+        },
+        {
+          "occurrenceKey": 26240,
+          "countyName": "Tallapoosa",
+          "locality": "Yates Reservoir [Sougahatchee Creek], Tallassee",
+          "status": "failed",
+          "reason": "NAS status is failed"
+        }
+      ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Animalia5244",
+      "scientificName": "Misgurnus anguillicaudatus",
+      "nasSpeciesId": 498,
+      "apiResultCount": 11,
+      "acceptedRecordCount": 11,
+      "skippedRecordCount": 0,
+      "countyFips": [
+        "01073",
+        "01115",
+        "01117",
+        "01121"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=498&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 1709208,
+          "countyFips": "01073",
+          "countyName": "Jefferson",
+          "locality": "[No locality description provided]",
+          "date": "2022-10-1",
+          "year": 2022,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1522459,
+          "countyFips": "01115",
+          "countyName": "St. Clair",
+          "locality": "Coosa River Drainage, Cropwell branch",
+          "date": "2014-1-24",
+          "year": 2014,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1876628,
+          "countyFips": "01115",
+          "countyName": "St. Clair",
+          "locality": "Coosa River, upstream from mouth of Broken Arrow Creek, at Emory Bend",
+          "date": "2025-3-25",
+          "year": 2025,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1695757,
+          "countyFips": "01117",
+          "countyName": "Shelby",
+          "locality": "Clear Prong, upstream of Rock School Road",
+          "date": "2022-6-1",
+          "year": 2022,
+          "status": "unknown",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1522460,
+          "countyFips": "01121",
+          "countyName": "Talladega",
+          "locality": "Coosa River Drainage, Blue Eye Spring",
+          "date": "2013-4-18",
+          "year": 2013,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1522461,
+          "countyFips": "01121",
+          "countyName": "Talladega",
+          "locality": "Coosa River Drainage, Spring Hill Road Tributary",
+          "date": "2014-2-20",
+          "year": 2014,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1522462,
+          "countyFips": "01121",
+          "countyName": "Talladega",
+          "locality": "Coosa River Drainage, Goray Spring",
+          "date": "2013-10-22",
+          "year": 2013,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1522463,
+          "countyFips": "01121",
+          "countyName": "Talladega",
+          "locality": "Coosa River Drainage, Morgan Springs Rd Tributary",
+          "date": "2014-2-26",
+          "year": 2014,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1758163,
+          "countyFips": "01121",
+          "countyName": "Talladega",
+          "locality": "[No locality description provided]",
+          "date": "2024-8-31",
+          "year": 2024,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1758241,
+          "countyFips": "01121",
+          "countyName": "Talladega",
+          "locality": "[No locality description provided]",
+          "date": "2024-10-18",
+          "year": 2024,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 263551,
+          "countyFips": "01121",
+          "countyName": "Talladega",
+          "locality": "Poorhouse Branch, tributary of the Coosa River",
+          "date": "2009-9-29",
+          "year": 2009,
+          "status": "established",
+          "recordType": "Specimen"
+        }
+      ],
+      "skippedRecords": []
+    },
+    {
+      "speciesId": "oreochromis-aureus",
+      "scientificName": "Oreochromis aureus",
+      "nasSpeciesId": 463,
+      "apiResultCount": 4,
+      "acceptedRecordCount": 1,
+      "skippedRecordCount": 3,
+      "countyFips": [
+        "01081"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=463&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 26219,
+          "countyFips": "01081",
+          "countyName": "Lee",
+          "locality": "Sougahatchee Creek 1.8 miles NE of Loachapoka, 90 meters of stream",
+          "date": "1980-10",
+          "year": 1980,
+          "status": "established",
+          "recordType": "Personal communication"
+        }
+      ],
+      "skippedRecords": [
+        {
+          "occurrenceKey": 166595,
+          "countyName": "Crenshaw",
+          "locality": "Crenshaw County Public Lake, near Luverne",
+          "status": "failed",
+          "reason": "NAS status is failed"
+        },
+        {
+          "occurrenceKey": 26255,
+          "countyName": "Lee",
+          "locality": "Auburn University experimental pond",
+          "status": "failed",
+          "reason": "NAS status is failed"
+        },
+        {
+          "occurrenceKey": 26254,
+          "countyName": "",
+          "locality": "state non-specific",
+          "status": "collected",
+          "reason": "No explicit Alabama county"
+        }
+      ]
+    },
+    {
+      "speciesId": "USRIIS-L48-Animalia5255",
+      "scientificName": "Oreochromis niloticus",
+      "nasSpeciesId": 468,
+      "apiResultCount": 10,
+      "acceptedRecordCount": 9,
+      "skippedRecordCount": 1,
+      "countyFips": [
+        "01003",
+        "01081",
+        "01097",
+        "01117"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=468&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 1457468,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Magnolia River, between Weeks Bay and Magnolia Springs",
+          "date": "2014-7-11",
+          "year": 2014,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1714194,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Fish River, Marlow Ferry public boat launch",
+          "date": "2023-7-29",
+          "year": 2023,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1872882,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Fish River, exact location not reported",
+          "date": "2025-2-21",
+          "year": 2025,
+          "status": "unknown",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 238819,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Fish River, 1.5 miles North of Hwy 98 Fish River Bridge",
+          "date": "2007-7-31",
+          "year": 2007,
+          "status": "unknown",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 241012,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Magnolia River, Weeks Bay National Estuarine Reserve",
+          "date": "2007-8-4",
+          "year": 2007,
+          "status": "collected",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 26411,
+          "countyFips": "01081",
+          "countyName": "Lee",
+          "locality": "Sougahatchee Creek, Yates Reservoir",
+          "date": "1986-1-12",
+          "year": 1986,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1872883,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "Lower Mobile River, exact location not reported",
+          "date": "2025-3-6",
+          "year": 2025,
+          "status": "unknown",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 253177,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "Langan Park in Mobile",
+          "date": "2008-6-11",
+          "year": 2008,
+          "status": "unknown",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1752694,
+          "countyFips": "01117",
+          "countyName": "Shelby",
+          "locality": "[No locality description provided]",
+          "date": "2024-7-21",
+          "year": 2024,
+          "status": "",
+          "recordType": "Literature"
+        }
+      ],
+      "skippedRecords": [
+        {
+          "occurrenceKey": 167835,
+          "countyName": "",
+          "locality": "Gin Creek on Walter F. George Reservoir (Lake Eufala), Chattahoochee River",
+          "status": "unknown",
+          "reason": "No explicit Alabama county"
+        }
+      ]
+    },
+    {
+      "speciesId": "pomacea-maculata",
+      "scientificName": "Pomacea maculata",
+      "nasSpeciesId": 2633,
+      "apiResultCount": 23,
+      "acceptedRecordCount": 22,
+      "skippedRecordCount": 1,
+      "countyFips": [
+        "01003",
+        "01097",
+        "01101"
+      ],
+      "sourceUrl": "https://nas.er.usgs.gov/api/v2/occurrence/search?species_ID=2633&state=AL",
+      "records": [
+        {
+          "occurrenceKey": 1713666,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "Private pond at Wolf Bay Lodge restaurant",
+          "date": "2022-6-9",
+          "year": 2022,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1887996,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "[No locality description provided]",
+          "date": "2022-6-14",
+          "year": 2022,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1888512,
+          "countyFips": "01003",
+          "countyName": "Baldwin",
+          "locality": "[No locality description provided]",
+          "date": "2024-9-2",
+          "year": 2024,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 157496,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "Spring Hill Lake [just W of Mobile, AL]",
+          "date": "2003-12-12",
+          "year": 2003,
+          "status": "established",
+          "recordType": "Personal communication"
+        },
+        {
+          "occurrenceKey": 1617876,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "Langan Park Pond in Mobile",
+          "date": "2019-10-5",
+          "year": 2019,
+          "status": "established",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1672096,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2018-7-30",
+          "year": 2018,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1674198,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2019-4-19",
+          "year": 2019,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1678232,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2018-12-24",
+          "year": 2018,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1713667,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "Wetlands near rail line off Viaduct Road, Chickasaw, AL.",
+          "date": "2018-6-25",
+          "year": 2018,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1715053,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "Pond near Museum Rd in Langan Park, Alabama",
+          "date": "2010-6-16",
+          "year": 2010,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1741143,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2015-5-28",
+          "year": 2015,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1745520,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2020-10-4",
+          "year": 2020,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1886883,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2019-6-22",
+          "year": 2019,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1886904,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2019-9-8",
+          "year": 2019,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1886950,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2020-4-26",
+          "year": 2020,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1889123,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2025-3-20",
+          "year": 2025,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1889594,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "[No locality description provided]",
+          "date": "2024-10-24",
+          "year": 2024,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 253371,
+          "countyFips": "01097",
+          "countyName": "Mobile",
+          "locality": "Langan Park Pond in Mobile",
+          "date": "2008-6-11",
+          "year": 2008,
+          "status": "established",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1713665,
+          "countyFips": "01101",
+          "countyName": "Montgomery",
+          "locality": "Private subdivision pond",
+          "date": "2022-6-9",
+          "year": 2022,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1713668,
+          "countyFips": "01101",
+          "countyName": "Montgomery",
+          "locality": "Private pond in residential subdivision off Bon Terre, Pike Road",
+          "date": "2021-10-14",
+          "year": 2021,
+          "status": "",
+          "recordType": "NAS sighting report"
+        },
+        {
+          "occurrenceKey": 1758083,
+          "countyFips": "01101",
+          "countyName": "Montgomery",
+          "locality": "[No locality description provided]",
+          "date": "2021-9-17",
+          "year": 2021,
+          "status": "",
+          "recordType": "Literature"
+        },
+        {
+          "occurrenceKey": 1889215,
+          "countyFips": "01101",
+          "countyName": "Montgomery",
+          "locality": "[No locality description provided]",
+          "date": "2025-4-10",
+          "year": 2025,
+          "status": "",
+          "recordType": "Literature"
+        }
+      ],
+      "skippedRecords": [
+        {
+          "occurrenceKey": 1713685,
+          "countyName": "Houston",
+          "locality": "Private pond in Panama City Beach",
+          "status": "",
+          "reason": "Locality explicitly conflicts with the Alabama county assignment"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "targetSpeciesCount": 8,
+    "importedSpeciesCount": 8,
+    "apiResultCount": 178,
+    "acceptedRecordCount": 166,
+    "skippedRecordCount": 12,
+    "countySpeciesPairs": 38,
+    "netNewCountySpeciesPairs": 14
+  }
+}
