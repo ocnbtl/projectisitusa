@@ -46,28 +46,29 @@ const EMPTY_DATA_STORE = {
   datasetSnapshot: EMPTY_DATASET_SNAPSHOT,
 };
 
-const PUBLIC_DATA_SNAPSHOT_DATE = "April 14, 2026";
-const COUNTY_DATA_SOURCE_LINKS = [
-  {
-    label: "EDDMaps",
-    href: "https://www.eddmaps.org/",
-  },
-  {
-    label: "USGS NAS",
-    href: "https://nas.er.usgs.gov/",
-  },
-] as const;
-
 function AboutDataPanel({
   coverageSummary,
+  snapshotDate,
   isNavigating,
   variant,
 }: {
   coverageSummary: ClientDataStorePayload["datasetSnapshot"]["coverageSummary"];
+  snapshotDate: string;
   isNavigating: boolean;
   variant: "horizontal" | "vertical";
 }) {
   const isVertical = variant === "vertical";
+  const sourceFamilies = Object.entries(coverageSummary?.sourceSpeciesCounts ?? {})
+    .sort((left, right) => (right[1] ?? 0) - (left[1] ?? 0) || left[0].localeCompare(right[0]));
+  const displayedSources = sourceFamilies.slice(0, 6);
+  const formattedSnapshotDate = snapshotDate
+    ? new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+      }).format(new Date(snapshotDate))
+    : "the current generated snapshot";
 
   return (
     <div className="glass-panel rounded-[28px] p-5 text-sm leading-7 text-[var(--muted)]">
@@ -85,8 +86,9 @@ function AboutDataPanel({
           <p className="mt-3">
             This release combines the full verified lower-48 invasive species
             catalog from US-RIIS with a merged county presence snapshot captured on{" "}
-            {PUBLIC_DATA_SNAPSHOT_DATE}. County-level records currently come from
-            EDDMaps and USGS NAS where verified public records are available.
+            {formattedSnapshotDate}. County-level records currently draw from{" "}
+            {sourceFamilies.length.toLocaleString()} tracked source families where
+            verified public evidence is available.
           </p>
           <p className="mt-3">
             {coverageSummary ? (
@@ -112,21 +114,24 @@ function AboutDataPanel({
           }`}
         >
           <p className="text-sm leading-6 text-[var(--foreground)]">
-            Data snapshot on {PUBLIC_DATA_SNAPSHOT_DATE} from
+            Data snapshot on {formattedSnapshotDate}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {COUNTY_DATA_SOURCE_LINKS.map((source) => (
-              <Link
-                key={source.label}
-                href={source.href}
-                target="_blank"
-                rel="noreferrer"
+            {displayedSources.map(([label, count]) => (
+              <span
+                key={label}
                 className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--background)] px-3 py-1.5 text-xs font-medium tracking-[0.12em] text-[var(--foreground)] transition hover:border-[var(--accent)] hover:text-[var(--accent-strong)]"
               >
-                {source.label}
-              </Link>
+                {label} ({count?.toLocaleString() ?? 0})
+              </span>
             ))}
           </div>
+          <Link
+            href="/research"
+            className="mt-3 inline-flex text-sm font-medium text-[var(--accent-strong)] underline-offset-4 hover:underline"
+          >
+            View all sources and research status
+          </Link>
           {isNavigating ? (
             <p className="mt-3 text-sm text-[var(--accent-strong)]">
               Updating URL state…
@@ -646,7 +651,7 @@ export function MapExplorer({
   return (
     <div className="mx-auto w-full max-w-[1600px] px-4 pb-12 sm:px-6 lg:px-8">
       <div className="grid items-start gap-5 lg:grid-cols-[360px_minmax(0,1fr)]">
-        <div className="grid content-start gap-5">
+        <div className="grid min-w-0 content-start gap-5">
           <MapToolbar
             categories={selectedCategories}
             environment={selectedEnvironment}
@@ -675,13 +680,14 @@ export function MapExplorer({
           >
             <AboutDataPanel
               coverageSummary={coverageSummary}
+              snapshotDate={datasetSnapshot.snapshotDate}
               isNavigating={isNavigating}
               variant="vertical"
             />
           </div>
         </div>
 
-        <div className="grid content-start self-start gap-5">
+        <div className="grid min-w-0 content-start self-start gap-5">
           <UsCountyMap
             countyIndex={countyIndex}
             presenceIndex={presenceIndex}
@@ -714,6 +720,7 @@ export function MapExplorer({
       >
         <AboutDataPanel
           coverageSummary={coverageSummary}
+          snapshotDate={datasetSnapshot.snapshotDate}
           isNavigating={isNavigating}
           variant="horizontal"
         />

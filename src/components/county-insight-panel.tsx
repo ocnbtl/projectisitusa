@@ -97,7 +97,7 @@ export function CountyInsightPanel({
 
   if (!selectedCounty) {
     return (
-      <aside className="glass-panel rounded-[28px] p-5">
+      <aside className="glass-panel min-w-0 rounded-[28px] p-5">
         <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
           Local insight
         </p>
@@ -114,7 +114,7 @@ export function CountyInsightPanel({
   }
 
   return (
-    <aside className="glass-panel rounded-[28px] p-5">
+    <aside className="glass-panel min-w-0 rounded-[28px] p-5">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">

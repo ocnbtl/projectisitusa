@@ -20,7 +20,8 @@ If people only notice invasive species after major damage is visible, they are a
 1. Open the home page and browse the map explorer.
 2. Search for a species to view its profile page.
 3. Use the location lookup flow to jump from a ZIP code to county context.
-4. Review local presence, impact, and action guidance for the species that matter in that area.
+4. Open `/research` to inspect Alabama county-species status, source operations, evidence, and the priority queue.
+5. Review local presence, impact, and action guidance for the species that matter in that area.
 
 ## Local Development
 
@@ -32,6 +33,8 @@ npm run dev
 Useful verification commands:
 
 ```bash
+npm run check:data-integrity
+npm run check:research-integrity
 npm run typecheck
 npm run build
 ```
@@ -48,8 +51,9 @@ The current app does not require project-specific environment variables for loca
 - Framework: Next.js + TypeScript
 - Routing: App Router
 - Data model: generated local JSON files committed with the app
+- Research model: versioned evidence ledger, deterministic compiler, static county shards, and an ignored local SQLite query index
 - Images: local species image catalog under `public/species`
-- Current runtime routes include `/`, `/about`, `/api/lookup/zip`, and statically generated `/species/[slug]`
+- Current runtime routes include `/`, `/about`, `/research`, `/api/lookup/zip`, and statically generated `/species/[slug]`
 
 ## Open Source
 
@@ -57,5 +61,9 @@ This project is open-sourced under the MIT License. See [LICENSE](./LICENSE).
 
 ## Documentation
 
+- Repository guidance: [AGENTS.md](./AGENTS.md)
+- Evidence research architecture: [docs/architecture/evidence-research-system.md](./docs/architecture/evidence-research-system.md)
+- County-species research workflow: [docs/research/README.md](./docs/research/README.md)
+- Next-chat handoff prompt: [docs/handoffs/NEXT-CHAT-PROMPT.md](./docs/handoffs/NEXT-CHAT-PROMPT.md)
 - Source inventory: [docs/source-inventory.md](./docs/source-inventory.md)
 - Profile workflow: [docs/profile-content/workflow.md](./docs/profile-content/workflow.md)

@@ -78,7 +78,7 @@ export function MapToolbar({
   );
 
   return (
-    <section className="glass-panel relative z-20 rounded-[28px] p-5">
+    <section className="glass-panel relative z-20 min-w-0 rounded-[28px] p-5">
       <div className="flex justify-end">
         <button
           type="button"
@@ -92,26 +92,26 @@ export function MapToolbar({
 
       <div className="pt-4">
         <h2 className="font-[family-name:var(--font-display)] text-[1.5rem] font-semibold leading-[1.08] text-[var(--foreground)] sm:text-[1.65rem] xl:text-[1.8rem]">
-          <span className="block whitespace-nowrap">Find information about</span>
-          <span className="block whitespace-nowrap">invasive species near you</span>
+          <span className="block sm:whitespace-nowrap">Find information about</span>
+          <span className="block sm:whitespace-nowrap">invasive species near you</span>
         </h2>
       </div>
 
       <div className="mt-5 grid gap-5">
         <div className="grid gap-2">
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <label
               htmlFor="zip-search"
               className="text-sm font-medium text-[var(--foreground)]"
             >
               ZIP code
             </label>
-            <span className="whitespace-nowrap text-[11px] uppercase tracking-[0.18em] text-[var(--accent-strong)]">
+            <span className="text-right text-[11px] uppercase tracking-[0.18em] text-[var(--accent-strong)]">
               Quick local lookup
             </span>
           </div>
           <div className="flex gap-2">
-            <div className="relative flex-1">
+            <div className="relative min-w-0 flex-1">
               <LocateFixed
                 size={16}
                 className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[var(--muted)]"
@@ -137,14 +137,14 @@ export function MapToolbar({
               type="button"
               onClick={onZipSearch}
               disabled={isSearching}
-              className="locate-button inline-flex min-w-28 items-center justify-center gap-2 rounded-2xl bg-[var(--accent)] px-4 py-3 text-sm font-medium text-[#041009] hover:bg-[var(--accent-strong)] disabled:cursor-not-allowed disabled:opacity-70"
+              className="locate-button inline-flex min-w-28 shrink-0 items-center justify-center gap-2 rounded-2xl bg-[var(--accent)] px-3 py-3 text-sm font-medium text-[#041009] hover:bg-[var(--accent-strong)] disabled:cursor-not-allowed disabled:opacity-70 sm:px-4"
             >
               {isSearching ? (
                 <LoaderCircle size={16} className="animate-spin" />
               ) : (
                 <Search size={16} />
               )}
-              Locate
+              <span>Locate</span>
             </button>
           </div>
           {zipStatus ? (
@@ -163,14 +163,14 @@ export function MapToolbar({
         </div>
 
         <div className="grid gap-2">
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <label
               htmlFor="species-search"
-              className="whitespace-nowrap text-[13px] font-medium text-[var(--foreground)]"
+              className="text-[13px] font-medium text-[var(--foreground)]"
             >
               Species search
             </label>
-            <span className="whitespace-nowrap text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">
+            <span className="text-right text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">
               Common or scientific name
             </span>
           </div>
@@ -219,15 +219,15 @@ export function MapToolbar({
                   }}
                   className="flex w-full items-start justify-between gap-3 border-b border-[var(--border)] px-4 py-3 text-left last:border-b-0 hover:bg-[color:color-mix(in_srgb,var(--accent)_10%,transparent)]"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-sm font-medium text-[var(--foreground)]">
                       {species.commonName}
                     </div>
-                    <div className="text-xs text-[var(--muted)]">
+                    <div className="break-words text-xs text-[var(--muted)]">
                       <em>{species.scientificName}</em> · {species.displayGroup}
                     </div>
                   </div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
+                  <div className="shrink-0 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
                     {species.registry?.hasCountyData ? "Mapped" : "Catalog"}
                   </div>
                 </button>

@@ -90,14 +90,14 @@ export function UsCountyMap({
       : 0;
 
   return (
-    <section className="glass-panel rounded-[28px] p-4 lg:p-5">
-      <div className="mb-4 flex items-start justify-between gap-4">
-        <div>
+    <section className="glass-panel min-w-0 rounded-[28px] p-4 lg:p-5">
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
+        <div className="min-w-0">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--foreground)]">
             County-level invasive species explorer
           </h2>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <button
             type="button"
             onClick={() =>
@@ -248,11 +248,11 @@ export function UsCountyMap({
 
       <div className="mt-4 grid gap-3 rounded-[22px] border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <div className="whitespace-nowrap text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
+          <div className="min-w-0">
+            <div className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
               Map focus
             </div>
-            <div className="mt-1 whitespace-nowrap text-sm text-[var(--foreground)]">
+            <div className="mt-1 text-sm text-[var(--foreground)]">
               {hoveredCounty
                 ? `${hoveredCounty.name}, ${hoveredCounty.stateCode}${!hoveredCountyFips && selectedCountyHasCoverageGaps ? " *" : ""}`
                 : "Contiguous U.S. overview"}
@@ -275,7 +275,7 @@ export function UsCountyMap({
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--county-low)]" />
               <span className="whitespace-nowrap">Lower</span>
             </span>
-            <span className="inline-flex items-center gap-3 whitespace-nowrap">
+            <span className="inline-flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2">
                 <span className="h-2.5 w-2.5 rounded-full border border-[var(--border)] bg-[var(--county-none)]" />
                 <span className="whitespace-nowrap">No reports in view</span>
@@ -299,7 +299,7 @@ export function UsCountyMap({
           </span>
           <span className="inline-flex items-center gap-2">
             <span className="font-semibold text-[var(--accent-strong)]">*</span>
-            <span className="whitespace-nowrap">
+            <span>
               Some filtered species still lack county-level coverage
             </span>
           </span>

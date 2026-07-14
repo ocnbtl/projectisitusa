@@ -1,0 +1,2019 @@
+{
+  "schemaVersion": 1,
+  "stateCode": "AL",
+  "generatedAt": "2026-07-11T20:29:35.732Z",
+  "summary": {
+    "speciesCount": 2504,
+    "countyCount": 67,
+    "totalPairs": 167768,
+    "verifiedPresent": 15133,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 95580,
+    "notResearched": 57047,
+    "determinationCoveragePercent": 9.02,
+    "researchCoveragePercent": 66,
+    "conflictCount": 0
+  },
+  "statusDefinitions": {
+    "verified-present": "At least one reputable source supports a recorded presence in the county.",
+    "verified-absent": "An authoritative source explicitly supports absence for the county and species.",
+    "not-detected": "A documented survey or monitoring effort searched and did not detect the species. This is not absence.",
+    "researched-unresolved": "At least one source family was screened, but no defensible present, absent, or not-detected determination was established.",
+    "not-researched": "No recorded source-family screen or determination exists for this county-species pair."
+  },
+  "sourceOperations": [
+    {
+      "id": "eddmaps",
+      "label": "EDDMaps",
+      "authority": "University of Georgia Center for Invasive Species and Ecosystem Health",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": "2026-04-26T09:34:15.599Z",
+      "evidencePairCount": 6560,
+      "screenedSpeciesCount": 1409
+    },
+    {
+      "id": "usgs-nas",
+      "label": "USGS NAS",
+      "authority": "U.S. Geological Survey",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usgs-nas-api",
+      "label": "USGS NAS occurrence API",
+      "authority": "U.S. Geological Survey",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-07-11T20:29:35.732Z",
+      "evidencePairCount": 38,
+      "screenedSpeciesCount": 8
+    },
+    {
+      "id": "sernec",
+      "label": "SERNEC",
+      "authority": "Southeastern Regional Network of Expertise and Collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "eddmaps-alipc",
+      "label": "EDDMapS ALIPC list",
+      "authority": "Alabama Invasive Plant Council and EDDMaps",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "alabama-plant-atlas",
+      "label": "Alabama Plant Atlas",
+      "authority": "Alabama Herbarium Consortium",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "afc-cogongrass",
+      "label": "Alabama Forestry Commission Cogongrass GIS",
+      "authority": "Alabama Forestry Commission",
+      "tier": "official-state",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "afc-aerial-detection",
+      "label": "Alabama Forestry Commission Aerial Detection layer",
+      "authority": "Alabama Forestry Commission",
+      "tier": "official-state",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "aphis-eab",
+      "label": "APHIS Emerald Ash Borer county layer",
+      "authority": "USDA Animal and Plant Health Inspection Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "aphis-federal-quarantine",
+      "label": "APHIS Federal Quarantine county layer",
+      "authority": "USDA Animal and Plant Health Inspection Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-06-16T03:55:21.583Z",
+      "evidencePairCount": 2,
+      "screenedSpeciesCount": 1
+    },
+    {
+      "id": "aphis-honey-bee",
+      "label": "APHIS National Honey Bee Survey",
+      "authority": "USDA Animal and Plant Health Inspection Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 2,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfws-invasive-carp-edna",
+      "label": "USFWS invasive carp eDNA sample layer",
+      "authority": "U.S. Fish and Wildlife Service",
+      "tier": "official-national",
+      "status": "manual",
+      "lastRunAt": null,
+      "evidencePairCount": 6,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-laurel-wilt",
+      "label": "Laurel Wilt public county layer",
+      "authority": "USDA Forest Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-afpe",
+      "label": "USFS Alien Forest Pest Explorer",
+      "authority": "USDA Forest Service and Purdue University",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-fia-invasive-plants",
+      "label": "USDA Forest Service FIA DataMart invasive plant tables",
+      "authority": "USDA Forest Service Forest Inventory and Analysis",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-current-invasive-plants",
+      "label": "USFS Current Invasive Plant Locations",
+      "authority": "USDA Forest Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-ids",
+      "label": "USDA Forest Service Insect and Disease Survey point detections",
+      "authority": "USDA Forest Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-06-16T03:44:13.025Z",
+      "evidencePairCount": 7,
+      "screenedSpeciesCount": 3
+    },
+    {
+      "id": "usda-nrcs-plants",
+      "label": "USDA NRCS PLANTS county distribution",
+      "authority": "USDA Natural Resources Conservation Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "gbif-preserved-specimens",
+      "label": "GBIF preserved specimen records",
+      "authority": "Global Biodiversity Information Facility",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": "2026-04-26T02:05:55.456Z",
+      "evidencePairCount": 6477,
+      "screenedSpeciesCount": 686
+    },
+    {
+      "id": "gbif-coordinate-specimens",
+      "label": "GBIF coordinate-resolved preserved specimen records",
+      "authority": "Global Biodiversity Information Facility",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": "2026-07-06T22:47:17.903Z",
+      "evidencePairCount": 904,
+      "screenedSpeciesCount": 68
+    },
+    {
+      "id": "gbif-ipams",
+      "label": "GBIF Invasive Plant Atlas of the MidSouth records",
+      "authority": "Invasive Plant Atlas of the MidSouth via GBIF",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": "2026-06-26T11:22:25.724Z",
+      "evidencePairCount": 308,
+      "screenedSpeciesCount": 61
+    },
+    {
+      "id": "gbif-ebird",
+      "label": "GBIF eBird Observation Dataset",
+      "authority": "Cornell Lab of Ornithology via GBIF",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": "2026-06-28T05:33:30.608Z",
+      "evidencePairCount": 292,
+      "screenedSpeciesCount": 10
+    },
+    {
+      "id": "idigbio-preserved-specimens",
+      "label": "iDigBio preserved specimen records",
+      "authority": "Integrated Digitized Biocollections",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": "2026-04-26T04:31:18.149Z",
+      "evidencePairCount": 5197,
+      "screenedSpeciesCount": 643
+    },
+    {
+      "id": "inaturalist-research-grade",
+      "label": "iNaturalist Research Grade observations",
+      "authority": "iNaturalist",
+      "tier": "community-occurrence",
+      "status": "operational",
+      "lastRunAt": "2026-07-06T21:56:10.726Z",
+      "evidencePairCount": 8614,
+      "screenedSpeciesCount": 688
+    },
+    {
+      "id": "water-quality-portal",
+      "label": "Water Quality Portal biological results",
+      "authority": "National Water Quality Monitoring Council",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-06-15T09:51:26.340Z",
+      "evidencePairCount": 7,
+      "screenedSpeciesCount": 4
+    },
+    {
+      "id": "usgs-bbs",
+      "label": "USGS North American Breeding Bird Survey route-start detections",
+      "authority": "U.S. Geological Survey",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-06-16T02:27:51.130Z",
+      "evidencePairCount": 37,
+      "screenedSpeciesCount": 8
+    },
+    {
+      "id": "neon-tall",
+      "label": "NEON TALL plant presence and percent cover",
+      "authority": "National Ecological Observatory Network",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": "2026-06-16T02:42:44.656Z",
+      "evidencePairCount": 13,
+      "screenedSpeciesCount": 9
+    },
+    {
+      "id": "manual-authoritative",
+      "label": "Manual authoritative evidence",
+      "authority": "Named agency, academic, or regulatory source stored on each evidence record",
+      "tier": "manual-authority",
+      "status": "manual",
+      "lastRunAt": "2026-07-11T20:29:35.732Z",
+      "evidencePairCount": 108,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "legacy-merged-presence",
+      "label": "Legacy merged presence lineage",
+      "authority": "Project Isitusa migration record",
+      "tier": "legacy",
+      "status": "legacy-migration",
+      "lastRunAt": "2026-07-11T20:29:35.732Z",
+      "evidencePairCount": 1558,
+      "screenedSpeciesCount": 0
+    }
+  ],
+  "nextQueue": [
+    {
+      "speciesId": "abies-alba",
+      "commonName": "Silver fir",
+      "scientificName": "Abies alba",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "abutilon-hirtum",
+      "commonName": "Florida keys indian mallow",
+      "scientificName": "Abutilon hirtum",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "acacia-elata",
+      "commonName": "Cedar wattle",
+      "scientificName": "Acacia elata",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "acacia-podalyriifolia",
+      "commonName": "Pearl wattle",
+      "scientificName": "Acacia podalyriifolia",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "acaena-magellanica",
+      "commonName": "New Zealand burr",
+      "scientificName": "Acaena magellanica",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "achyranthes-aspera-var-pubescens",
+      "commonName": "Devil's horsewhip",
+      "scientificName": "Achyranthes aspera var. pubescens",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aclerda-takahashii",
+      "commonName": "Flat grass scale",
+      "scientificName": "Aclerda takahashii",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "acleris-comariana",
+      "commonName": "Strawberry tortrix",
+      "scientificName": "Acleris comariana",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "acrolepiopsis-assectella",
+      "commonName": "Leek moth",
+      "scientificName": "Acrolepiopsis assectella",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "acyrthosiphon-kondoi",
+      "commonName": "Blue alfalfa aphid",
+      "scientificName": "Acyrthosiphon kondoi",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "acyrthosiphon-primulae",
+      "commonName": "Pea aphid",
+      "scientificName": "Acyrthosiphon primulae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "adiantum-macrophyllum",
+      "commonName": "Largeleaf maidenhair",
+      "scientificName": "Adiantum macrophyllum",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aedeomyia-squamipennis",
+      "commonName": "Tropical mosquito",
+      "scientificName": "Aedeomyia squamipennis",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aedes-notoscriptus",
+      "commonName": "Australian backyard mosquito",
+      "scientificName": "Aedes notoscriptus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aegilops-tauschii",
+      "commonName": "Tausch's goatgrass",
+      "scientificName": "Aegilops tauschii",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "agdestis-clematidea",
+      "commonName": "Rockroot",
+      "scientificName": "Agdestis clematidea",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aglaonema-commutatum",
+      "commonName": "Philippine evergreen",
+      "scientificName": "Aglaonema commutatum",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "agrilus-cuprescens",
+      "commonName": "Rose stem girdler",
+      "scientificName": "Agrilus cuprescens",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "agrilus-cyanescens",
+      "commonName": "Bluish borer beetle",
+      "scientificName": "Agrilus cyanescens",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "agrilus-ribesi",
+      "commonName": "Currant stem girdler",
+      "scientificName": "Agrilus ribesi",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "agriotes-lineatus",
+      "commonName": "Lined click beetle",
+      "scientificName": "Agriotes lineatus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "agriotes-obscurus",
+      "commonName": "Dusky wireworm",
+      "scientificName": "Agriotes obscurus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "agrostis-castellana",
+      "commonName": "Bentgrass",
+      "scientificName": "Agrostis castellana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "albizia-procera",
+      "commonName": "Tall albizia",
+      "scientificName": "Albizia procera",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aleurites-moluccanus",
+      "commonName": "Candlenut tree",
+      "scientificName": "Aleurites moluccanus",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aleurocanthus-woglumi",
+      "commonName": "Citrus blackfly",
+      "scientificName": "Aleurocanthus woglumi",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aleuroclava-aucubae",
+      "commonName": "Aucuba whitefly",
+      "scientificName": "Aleuroclava aucubae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aleurodicus-dugesii",
+      "commonName": "Giant whitefly",
+      "scientificName": "Aleurodicus dugesii",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aleurodicus-rugioperculatus",
+      "commonName": "Rugose spiraling whitefly",
+      "scientificName": "Aleurodicus rugioperculatus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aleuroglandulus-subtilis",
+      "commonName": "Whitefly",
+      "scientificName": "Aleuroglandulus subtilis",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "allium-sativum",
+      "commonName": "Cultivated garlic",
+      "scientificName": "Allium sativum",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aloephagus-myersi",
+      "commonName": "Aloe aphid",
+      "scientificName": "Aloephagus myersi",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "alpinia-zerumbet",
+      "commonName": "Shellplant",
+      "scientificName": "Alpinia zerumbet",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "alternanthera-brasiliana",
+      "commonName": "Brazilian joyweed",
+      "scientificName": "Alternanthera brasiliana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "alternanthera-ficoidea",
+      "commonName": "Sanguinaria",
+      "scientificName": "Alternanthera ficoidea",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "alyssum-strigosum",
+      "commonName": "Alyssum",
+      "scientificName": "Alyssum strigosum",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "amaranthus-dubius",
+      "commonName": "Spleen amaranth",
+      "scientificName": "Amaranthus dubius",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "amaranthus-graecizans",
+      "commonName": "Mediterranean amaranth",
+      "scientificName": "Amaranthus graecizans",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "anastrepha-ludens",
+      "commonName": "Mexican fruit fly",
+      "scientificName": "Anastrepha ludens",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "anastrepha-suspensa",
+      "commonName": "Caribbean fruit fly",
+      "scientificName": "Anastrepha suspensa",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "andaspis-punicae",
+      "commonName": "Armoured scale",
+      "scientificName": "Andaspis punicae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "anisandrus-dispar",
+      "commonName": "Pear blight beetle",
+      "scientificName": "Anisandrus dispar",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "anobium-punctatum",
+      "commonName": "Furniture beetle",
+      "scientificName": "Anobium punctatum",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "anoecia-vagans",
+      "commonName": "Aphid",
+      "scientificName": "Anoecia vagans",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "antonina-pretiosa",
+      "commonName": "Noxious bamboo mealybug",
+      "scientificName": "Antonina pretiosa",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aonidiella-citrina",
+      "commonName": "Yellow scale",
+      "scientificName": "Aonidiella citrina",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aonidiella-orientalis",
+      "commonName": "Oriental yellow scale",
+      "scientificName": "Aonidiella orientalis",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aonidiella-taxus",
+      "commonName": "Armored scale",
+      "scientificName": "Aonidiella taxus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphidius-ervi",
+      "commonName": "Aphid parasite",
+      "scientificName": "Aphidius ervi",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphis-amaranthi",
+      "commonName": "Amaranth aphid",
+      "scientificName": "Aphis amaranthi",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphis-aurantii",
+      "commonName": "Black citrus aphid",
+      "scientificName": "Aphis aurantii",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphis-eugeniae",
+      "commonName": "Aphid",
+      "scientificName": "Aphis eugeniae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphis-fabae",
+      "commonName": "Bean aphid",
+      "scientificName": "Aphis fabae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphis-hederae",
+      "commonName": "Ivy aphid",
+      "scientificName": "Aphis hederae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphis-nasturtii",
+      "commonName": "Buckthorn aphid",
+      "scientificName": "Aphis nasturtii",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aphis-pomi",
+      "commonName": "Apple aphid",
+      "scientificName": "Aphis pomi",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "archips-fuscocupreanus",
+      "commonName": "Exotic leafroller moth",
+      "scientificName": "Archips fuscocupreanus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "ardisia-humilis",
+      "commonName": "Low shoebutton",
+      "scientificName": "Ardisia humilis",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aristolochia-ringens",
+      "commonName": "Gaping dutchman's pipe",
+      "scientificName": "Aristolochia ringens",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aristotelia-chilensis",
+      "commonName": "Maquei",
+      "scientificName": "Aristotelia chilensis",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "asiphonella-dactylonii",
+      "commonName": "Aphid",
+      "scientificName": "Asiphonella dactylonii",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aspidiella-sacchari",
+      "commonName": "Sugar cane root scale",
+      "scientificName": "Aspidiella sacchari",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aspidiotus-cryptomeriae",
+      "commonName": "Cryptomeria scale",
+      "scientificName": "Aspidiotus cryptomeriae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aspidiotus-destructor",
+      "commonName": "Coconut scale",
+      "scientificName": "Aspidiotus destructor",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aspidiotus-excisus",
+      "commonName": "Cyanotis scale",
+      "scientificName": "Aspidiotus excisus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "asterolecanium-miliaris",
+      "commonName": "Miliaris pit scale",
+      "scientificName": "Asterolecanium miliaris",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "asterolecanium-pustulans",
+      "commonName": "Oleander pit scale",
+      "scientificName": "Asterolecanium pustulans",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "atrichonotus-sordidus",
+      "commonName": "Parthenogenetic weevil",
+      "scientificName": "Atrichonotus sordidus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "atriplex-tatarica",
+      "commonName": "Tatarian orache",
+      "scientificName": "Atriplex tatarica",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "attagenus-pellio",
+      "commonName": "Fur carpet beetle",
+      "scientificName": "Attagenus pellio",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "attagenus-unicolor",
+      "commonName": "Black carpet beetle",
+      "scientificName": "Attagenus unicolor",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aulacaspis-rosae",
+      "commonName": "Rose scale",
+      "scientificName": "Aulacaspis rosae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aulacaspis-tubercularis",
+      "commonName": "White mango scale",
+      "scientificName": "Aulacaspis tubercularis",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "aulacorthum-solani",
+      "commonName": "Foxglove aphid",
+      "scientificName": "Aulacorthum solani",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bactrocera-dorsalis",
+      "commonName": "Oriental fruit fly",
+      "scientificName": "Bactrocera dorsalis",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bactrocera-oleae",
+      "commonName": "Olive fruit fly",
+      "scientificName": "Bactrocera oleae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "balanococcus-diminutus",
+      "commonName": "New Zealand flax mealybug",
+      "scientificName": "Balanococcus diminutus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bambusaspis-bambusae",
+      "commonName": "Bamboo pit scale",
+      "scientificName": "Bambusaspis bambusae",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "barleria-lupulina",
+      "commonName": "Hophead philippine violet",
+      "scientificName": "Barleria lupulina",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bauhinia-monandra",
+      "commonName": "Napoleon's plume",
+      "scientificName": "Bauhinia monandra",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bemisia-tabaci",
+      "commonName": "Sweetpotato whitefly",
+      "scientificName": "Bemisia tabaci",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "betula-pubescens",
+      "commonName": "Downy birch",
+      "scientificName": "Betula pubescens",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bifora-radians",
+      "commonName": "Wild bishop",
+      "scientificName": "Bifora radians",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "billardiera-heterophylla",
+      "commonName": "Bluebell creeper",
+      "scientificName": "Billardiera heterophylla",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bixa-orellana",
+      "commonName": "Lipsticktree",
+      "scientificName": "Bixa orellana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "blaberus-craniifer",
+      "commonName": "Death's head cockroach",
+      "scientificName": "Blaberus craniifer",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "blaberus-discoidalis",
+      "commonName": "Discoid cockroach",
+      "scientificName": "Blaberus discoidalis",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "brachypeplus-basalis",
+      "commonName": "Sap beetle",
+      "scientificName": "Brachypeplus basalis",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "brachyplatys-subaeneus",
+      "commonName": "Black bean bug",
+      "scientificName": "Brachyplatys subaeneus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "brachyrhynchus-membranaceus",
+      "commonName": "Aradid flat bug",
+      "scientificName": "Brachyrhynchus membranaceus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "brassicogethes-viridescens",
+      "commonName": "Pollen beetle",
+      "scientificName": "Brassicogethes viridescens",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bromus-diandrus-var-rigidus",
+      "commonName": "Ripgut brome",
+      "scientificName": "Bromus diandrus var. rigidus",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bromus-hordeaceus-ssp-divaricatus",
+      "commonName": "Soft brome",
+      "scientificName": "Bromus hordeaceus ssp. divaricatus",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "bromus-squarrosus",
+      "commonName": "Corn brome",
+      "scientificName": "Bromus squarrosus",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "browallia-americana",
+      "commonName": "Jamaican forget-me-not",
+      "scientificName": "Browallia americana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "cadra-cautella",
+      "commonName": "Almond moth",
+      "scientificName": "Cadra cautella",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "cadra-figulilella",
+      "commonName": "Raisin moth",
+      "scientificName": "Cadra figulilella",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "callidium-violaceum",
+      "commonName": "Violet tanbark beetle",
+      "scientificName": "Callidium violaceum",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "aphis-federal-quarantine",
+        "usfs-ids",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "callisia-repens",
+      "commonName": "Creeping inchplant",
+      "scientificName": "Callisia repens",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "calophyllum-brasiliense",
+      "commonName": "Santa maria",
+      "scientificName": "Calophyllum brasiliense",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "eddmaps",
+        "usda-nrcs-plants",
+        "alabama-plant-atlas",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade"
+      ],
+      "priorityScore": 67006
+    }
+  ]
+}

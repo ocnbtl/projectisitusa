@@ -10,11 +10,17 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "check:data-integrity": "node --import tsx scripts/check-data-integrity.ts",
+    "check:research-integrity": "node --import tsx scripts/check-research-integrity.ts",
+    "validate:data": "npm run check:data-integrity && npm run check:research-integrity",
     "check:profiles": "node --import tsx scripts/check-curated-profiles.ts",
     "county-audit:progress": "node --import tsx scripts/county-audit-progress.ts",
     "build:county-matrix": "node --import tsx scripts/build-state-coverage-matrix.ts",
     "reconcile:state-denominators": "node --import tsx scripts/reconcile-state-denominators.ts",
     "prepare:data": "node --import tsx scripts/build-data.ts",
+    "research:migrate": "node --import tsx scripts/migrate-research-ledger.ts",
+    "research:compile": "node --import tsx scripts/compile-research-index.ts",
+    "research:index": "node --import tsx scripts/build-research-db.ts",
+    "research:refresh": "npm run research:migrate && npm run research:compile && npm run research:index",
     "import:alipc-list": "node --import tsx scripts/import-alipc-list.ts",
     "import:eddmaps": "node --import tsx scripts/import-eddmaps.ts",
     "merge:eddmaps-county-data": "node --import tsx scripts/merge-eddmaps-county-presence.ts",
@@ -38,7 +44,7 @@
     "import:usriis": "node --import tsx scripts/import-usriis.ts",
     "import:species-images": "node --import tsx scripts/import-species-images.ts",
     "optimize:species-images": "node --import tsx scripts/optimize-species-images.ts",
-    "refresh:data": "npm run import:usriis && npm run import:county-data && npm run prepare:data"
+    "refresh:data": "npm run import:usriis && npm run import:county-data && npm run prepare:data && npm run build:county-matrix -- AL && npm run research:refresh"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
