@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T155957Z__gbif-preserved-specimens__8655237d432f",
+  "status": "complete",
+  "started_at": "2026-07-15T15:59:57.000Z",
+  "finished_at": "2026-07-15T16:00:13.698Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.1.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "22586e1505fd6ca55f3e1c4b0cf8670d83cf72ec6d5ded1192e8de39fd1a2467",
+  "code_commit": "4e608152c69efc6196a9a597683736ce409ed69f",
+  "parameter_hash": "8655237d432f142511d53826c07eb5854cdbcf647084ce8d35333ca300ee4223",
+  "parameters": {
+    "stateCode": "AL",
+    "stateProvince": "Alabama",
+    "candidateLimit": 20,
+    "candidatePairs": [
+      "01099:ctenopharyngodon-idella",
+      "01105:ctenopharyngodon-idella",
+      "01007:dianthus-armeria",
+      "01059:dianthus-armeria",
+      "01079:eragrostis-cilianensis",
+      "01093:eragrostis-cilianensis",
+      "01019:festuca-rubra",
+      "01065:festuca-rubra",
+      "01047:hypochaeris-radicata",
+      "01093:hypochaeris-radicata",
+      "01073:ligustrum-obtusifolium",
+      "01081:ligustrum-obtusifolium",
+      "01053:persicaria-maculosa",
+      "01089:persicaria-maculosa",
+      "01039:setaria-faberi",
+      "01069:setaria-faberi",
+      "01041:setaria-viridis",
+      "01053:setaria-viridis",
+      "01015:vicia-cracca",
+      "01083:vicia-cracca"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01007",
+      "01015",
+      "01019",
+      "01039",
+      "01041",
+      "01047",
+      "01053",
+      "01059",
+      "01065",
+      "01069",
+      "01073",
+      "01079",
+      "01081",
+      "01083",
+      "01089",
+      "01093",
+      "01099",
+      "01105"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "dianthus-armeria",
+      "eragrostis-cilianensis",
+      "festuca-rubra",
+      "hypochaeris-radicata",
+      "ligustrum-obtusifolium",
+      "persicaria-maculosa",
+      "setaria-faberi",
+      "setaria-viridis",
+      "vicia-cracca"
+    ],
+    "pair_keys": [
+      "01099:ctenopharyngodon-idella",
+      "01105:ctenopharyngodon-idella",
+      "01007:dianthus-armeria",
+      "01059:dianthus-armeria",
+      "01079:eragrostis-cilianensis",
+      "01093:eragrostis-cilianensis",
+      "01019:festuca-rubra",
+      "01065:festuca-rubra",
+      "01047:hypochaeris-radicata",
+      "01093:hypochaeris-radicata",
+      "01073:ligustrum-obtusifolium",
+      "01081:ligustrum-obtusifolium",
+      "01053:persicaria-maculosa",
+      "01089:persicaria-maculosa",
+      "01039:setaria-faberi",
+      "01069:setaria-faberi",
+      "01041:setaria-viridis",
+      "01053:setaria-viridis",
+      "01015:vicia-cracca",
+      "01083:vicia-cracca"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Ctenopharyngodon+idella&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:06.483Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2362030&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:06.916Z",
+      "record_count": 13
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Dianthus+armeria&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:07.268Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3085413&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:07.731Z",
+      "record_count": 34
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Eragrostis+cilianensis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:08.299Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2705369&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:08.745Z",
+      "record_count": 48
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Festuca+rubra&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:08.998Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2704922&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:09.436Z",
+      "record_count": 11
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Hypochaeris+radicata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:09.650Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3093702&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:10.168Z",
+      "record_count": 82
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Ligustrum+obtusifolium&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:10.514Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3172296&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:10.954Z",
+      "record_count": 4
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Persicaria+maculosa&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:11.186Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=6391194&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:11.666Z",
+      "record_count": 28
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Setaria+faberi&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:11.906Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5289666&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:12.355Z",
+      "record_count": 26
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Setaria+viridis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:12.598Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5289684&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:13.022Z",
+      "record_count": 29
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Vicia+cracca&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:13.262Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2975287&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:00:13.696Z",
+      "record_count": 2
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-ctenopharyngodon-idella-000000.json",
+      "sha256": "4333470b2dc27c5a3d3998ff3821a8a5ead6edfa9e56c791331866b9589aa365",
+      "bytes": 73565,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-dianthus-armeria-000000.json",
+      "sha256": "93de648aaa8e267b5c88c8b9801f854f9533e87f33fb51c2784b528fc6b521d0",
+      "bytes": 247545,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-eragrostis-cilianensis-000000.json",
+      "sha256": "1fec8fea230e4623bd43d10bd99e8422b4fe9ab28290d9f6d165705a2570eba1",
+      "bytes": 338890,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-festuca-rubra-000000.json",
+      "sha256": "316411c8a0cb007634b2830031670b5b8d81304ea820c863f5b705ebe0fd3e78",
+      "bytes": 74886,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-hypochaeris-radicata-000000.json",
+      "sha256": "8fb8054151d22f2cca9dc53a1f36508c0f15414fcbee0adcd5b530b4152c938c",
+      "bytes": 570514,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-ligustrum-obtusifolium-000000.json",
+      "sha256": "c646a73e8a0fc026d41afe65b70ebf9ffe65adda70ddbb6a2e82c57eba4dc49b",
+      "bytes": 26823,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-persicaria-maculosa-000000.json",
+      "sha256": "42cd8270fb83e05f888c810ef82f9ffae2d5cc08a90a5c16013f88158989c9eb",
+      "bytes": 185734,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-setaria-faberi-000000.json",
+      "sha256": "1b77d15f30f8a308ee0604e98e63fd64ac5733756e45df5005545e95ef8be829",
+      "bytes": 173241,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-setaria-viridis-000000.json",
+      "sha256": "bca21623dec761c6fb8774d96b35b1f7aa576df383799f44736640406b7f49cb",
+      "bytes": 199680,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-occurrences-vicia-cracca-000000.json",
+      "sha256": "4a427c51971666b5e8dbb4bff02b8b075407e4838a5837d004d8f1a6676d0ac3",
+      "bytes": 13519,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-ctenopharyngodon-idella.json",
+      "sha256": "d983f319cf7007ab47a15008a07bc6e4fc2f05de7c02c397641b514a6f5fb419",
+      "bytes": 452,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-dianthus-armeria.json",
+      "sha256": "64ab3e06f2402d8f060b5937ce0cff099c5ac848c7bef76dcf13b724cf0a6b07",
+      "bytes": 457,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-eragrostis-cilianensis.json",
+      "sha256": "34c27b9609735d7bf127eeec7c5b644ac7901cb20078c6a03a21d029c37442db",
+      "bytes": 481,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-festuca-rubra.json",
+      "sha256": "0a75d67224096f72533daddd175190114c037f53bd15c713c81268acbaf607f9",
+      "bytes": 429,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-hypochaeris-radicata.json",
+      "sha256": "bc3f9c366b4d6e8e430d8a0b4c366ce552c7ae4580e8eadf82c8c896a3b6b0ab",
+      "bytes": 462,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-ligustrum-obtusifolium.json",
+      "sha256": "8f0cf70700ebaee3ea0885b826ac8bd41430c6e2ea6199d82f373a4d6046419d",
+      "bytes": 476,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-persicaria-maculosa.json",
+      "sha256": "9cbbb4bfd3a7c8834224e077b26f162968bc72dc185c73fa8823d916b4251278",
+      "bytes": 467,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-setaria-faberi.json",
+      "sha256": "108493b8b3b9d19d0617a118f53da045ee0fcd560d2c3338796bb6d994120b34",
+      "bytes": 442,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-setaria-viridis.json",
+      "sha256": "0607a5e4edc152e3c349fe40c02ac13f337b1edcd5d59143994124c9b305c365",
+      "bytes": 446,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/artifacts/gbif-species-match-vicia-cracca.json",
+      "sha256": "e7e587001d36441986ee05fb23ae0db76229c629b2f947aebd66c39f85119ceb",
+      "bytes": 429,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/assertions.ndjson",
+      "sha256": "d51c7e50bf214db233293d577258195da79f96963ae1c9a53259966a2c80e960",
+      "bytes": 48314,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/reviews.ndjson",
+      "sha256": "3fed3cde935e27fc1fa3908757b922bdb00d46b24b1c18b7abd0e343c3107420",
+      "bytes": 25327,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/rejections.ndjson",
+      "sha256": "5e70d97be83620762e365ba0175c3d7de234cd24df7b4a6d2cb472d455a88b2d",
+      "bytes": 37500,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155957Z__gbif-preserved-specimens__8655237d432f/outcomes.ndjson",
+      "sha256": "ad2cc535051e7508e7b45d222f8b3208343ac308cc3e065a86e2f4cbf5444d21",
+      "bytes": 25484,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 20,
+    "candidate_records": 277,
+    "assertion_events": 26,
+    "review_events": 26,
+    "rejection_records": 54,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 20
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-file src/data/research/migration-candidates.json --output-root src/data/research/runs --pairs 01099:ctenopharyngodon-idella,01105:ctenopharyngodon-idella,01007:dianthus-armeria,01059:dianthus-armeria,01079:eragrostis-cilianensis,01093:eragrostis-cilianensis,01019:festuca-rubra,01065:festuca-rubra,01047:hypochaeris-radicata,01093:hypochaeris-radicata,01073:ligustrum-obtusifolium,01081:ligustrum-obtusifolium,01053:persicaria-maculosa,01089:persicaria-maculosa,01039:setaria-faberi,01069:setaria-faberi,01041:setaria-viridis,01053:setaria-viridis,01015:vicia-cracca,01083:vicia-cracca"
+}
