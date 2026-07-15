@@ -551,7 +551,9 @@ function EvidenceDetails({
                   <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-[var(--muted)]">
                     <span>Scope: {formatLabel(evidence.scope)}</span>
                     <span>Observed: {formatDate(evidence.observedAt)}</span>
-                    <span>Evidence ID: {evidence.evidenceId}</span>
+                    <span className="min-w-0 break-all">
+                      Evidence ID: {evidence.evidenceId}
+                    </span>
                   </div>
                   {evidence.caveat ? (
                     <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
