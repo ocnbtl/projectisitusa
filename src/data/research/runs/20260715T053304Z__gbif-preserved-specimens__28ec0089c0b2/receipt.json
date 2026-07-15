@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2",
+  "status": "complete",
+  "started_at": "2026-07-15T05:33:04.581Z",
+  "finished_at": "2026-07-15T05:33:06.783Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.0.2",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "58fa402babb928062d8290908ed1528297e55dc50cdda56773fcc3403988a98d",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.0.2",
+  "adapter_code_hash": "7045ac424bddfa05cda6622d0e48f5ba49f9402db5473fd18e91f1185cb6d9a7",
+  "code_commit": "4c1e9fecd37a8c420aea89da8f45640f1edadb56",
+  "parameter_hash": "28ec0089c0b27ec749a24b650195ee2967fa419d622311e36b272feb06beb970",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 13,
+    "candidatePairs": [
+      "01033:rumex-acetosella",
+      "01035:cerastium-fontanum",
+      "01041:cerastium-fontanum",
+      "01053:cerastium-fontanum",
+      "01053:rumex-acetosella",
+      "01059:cerastium-fontanum",
+      "01073:cerastium-fontanum",
+      "01079:cerastium-fontanum",
+      "01079:rumex-acetosella",
+      "01089:rumex-acetosella",
+      "01101:rumex-acetosella",
+      "01107:rumex-acetosella",
+      "01109:rumex-acetosella"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01033",
+      "01035",
+      "01041",
+      "01053",
+      "01059",
+      "01073",
+      "01079",
+      "01089",
+      "01101",
+      "01107",
+      "01109"
+    ],
+    "species_ids": [
+      "cerastium-fontanum",
+      "rumex-acetosella"
+    ],
+    "pair_keys": [
+      "01033:rumex-acetosella",
+      "01035:cerastium-fontanum",
+      "01041:cerastium-fontanum",
+      "01053:cerastium-fontanum",
+      "01053:rumex-acetosella",
+      "01059:cerastium-fontanum",
+      "01073:cerastium-fontanum",
+      "01079:cerastium-fontanum",
+      "01079:rumex-acetosella",
+      "01089:rumex-acetosella",
+      "01101:rumex-acetosella",
+      "01107:rumex-acetosella",
+      "01109:rumex-acetosella"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Rumex+acetosella&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:33:04.971Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2888995&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:33:05.476Z",
+      "record_count": 69
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cerastium+fontanum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:33:06.025Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3085458&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:33:06.566Z",
+      "record_count": 10
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/artifacts/gbif-occurrences-cerastium-fontanum-000000.json",
+      "sha256": "042a93c380ae4d6cfa63bcc4c7009010bf08c2678fec29ed51ec5ce6aa5d778d",
+      "bytes": 64852,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/artifacts/gbif-occurrences-rumex-acetosella-000000.json",
+      "sha256": "826fc6c714da6b659537766bfa636e9ca513d223d012b5b661ca33e34116057d",
+      "bytes": 440009,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/artifacts/gbif-species-match-cerastium-fontanum.json",
+      "sha256": "536187cfebbe3e3abaf117976cad4300b4cb2b99926134cc46112c9ddb1cf1cf",
+      "bytes": 468,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/artifacts/gbif-species-match-rumex-acetosella.json",
+      "sha256": "0fb712848aff34e2637a1d5f01fdb4805a7facf41ff408006bed9a6f7689cccb",
+      "bytes": 451,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/assertions.ndjson",
+      "sha256": "9c1dc08eddf0cbc103e45cbb24d74cce03c99a00f90c88b1ee0bd47ef18646f5",
+      "bytes": 29680,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/reviews.ndjson",
+      "sha256": "6190c39ef0dc18716cecdaf48b5bffcd8a5f341c16c25a1356a2eb51cd4097c9",
+      "bytes": 15564,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/rejections.ndjson",
+      "sha256": "ff13a251beaafc4b5db5ebfd47c175cf63d7c1a339edb90d5de3d67ab13f5dea",
+      "bytes": 7378,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053304Z__gbif-preserved-specimens__28ec0089c0b2/outcomes.ndjson",
+      "sha256": "7dbcd8c542421e3211bd533ad734ccc4579e44cf9c76a750cfffeec3c26c40f2",
+      "bytes": 16955,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 13,
+    "candidate_records": 79,
+    "assertion_events": 16,
+    "review_events": 16,
+    "rejection_records": 11,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 13
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --pairs 01033:rumex-acetosella,01035:cerastium-fontanum,01041:cerastium-fontanum,01053:cerastium-fontanum,01053:rumex-acetosella,01059:cerastium-fontanum,01073:cerastium-fontanum,01079:cerastium-fontanum,01079:rumex-acetosella,01089:rumex-acetosella,01101:rumex-acetosella,01107:rumex-acetosella,01109:rumex-acetosella"
+}
