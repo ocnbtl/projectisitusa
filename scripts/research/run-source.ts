@@ -165,10 +165,17 @@ function captureCommittedInputSnapshot(filepaths: string[]): CommittedInputSnaps
   for (const filepath of filepaths) {
     const relativePath = relativeGitPath(filepath);
     const current = readFileSync(filepath);
-    const committed = execFileSync("git", ["show", `${commit}:${relativePath}`], {
-      cwd: ROOT,
-    });
-    if (sha256(current) !== sha256(committed)) {
+    const currentBlobId = execFileSync(
+      "git",
+      ["hash-object", `--path=${relativePath}`, filepath],
+      { cwd: ROOT, encoding: "utf8" },
+    ).trim();
+    const committedBlobId = execFileSync(
+      "git",
+      ["rev-parse", `${commit}:${relativePath}`],
+      { cwd: ROOT, encoding: "utf8" },
+    ).trim();
+    if (currentBlobId !== committedBlobId) {
       throw new Error(`${relativePath} does not match acquisition commit ${commit}.`);
     }
     fileHashes.set(filepath, sha256(current));
