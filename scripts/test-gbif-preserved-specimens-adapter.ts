@@ -67,7 +67,7 @@ async function main() {
   const originalFetch = globalThis.fetch;
   const mockFetch = (
     handler: (input: URL | RequestInfo) => Promise<Response>,
-  ): typeof fetch => Object.assign(handler, { preconnect: originalFetch.preconnect });
+  ): typeof fetch => handler as typeof fetch;
   const routedUrls: string[] = [];
   globalThis.fetch = mockFetch(async (input) => {
     const url = String(input);
