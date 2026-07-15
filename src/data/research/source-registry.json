@@ -380,7 +380,19 @@
       "refreshCadenceDays": 180,
       "status": "operational",
       "adapter": "scripts/import-idigbio-alabama-specimens.ts",
-      "caveat": "Preserved specimen evidence only. Aggregated records may overlap GBIF and collection portals."
+      "researchAdapter": {
+        "id": "idigbio-preserved-specimens",
+        "module": "scripts/research/adapters/idigbio-preserved-specimens.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/idigbio-preserved-specimens-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact canonical binomial agreement across normalized iDigBio taxon terms and retained provider scientific name, with ambiguous taxon flags rejected.",
+        "geographyMatchingPolicy": "Explicit normalized Alabama county text must match the requested local county FIPS. Coordinates are retained as lineage only and never resolve a missing county.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 2
+      },
+      "caveat": "Historical preserved specimen evidence from the frozen iDigBio search index. Aggregated records may overlap GBIF and collection portals, and missing records never support absence or non-detection."
     },
     {
       "id": "inaturalist-research-grade",

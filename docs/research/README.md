@@ -81,9 +81,10 @@ The first implementation layer uses:
 - `scripts/check-research-integrity.ts`
 - `scripts/research/run-source.ts`
 - `scripts/research/adapters/gbif-preserved-specimens.ts`
+- `scripts/research/adapters/idigbio-preserved-specimens.ts`
 - `scripts/build-research-db.ts`
 
-Inspect and extend these files rather than creating a parallel model. The current event layer supports immutable initial assertions, reviews, rejections, pair outcomes, receipts, and later review events. It does not yet provide source-specific freshness policy, protocol-complete outcomes, general reviewer tooling, or adapters beyond Alabama GBIF preserved specimens. The architecture document controls acceptance when an early type or field name compresses those concerns.
+Inspect and extend these files rather than creating a parallel model. The current event layer supports immutable initial assertions, reviews, rejections, pair outcomes, receipts, and later review events. It does not yet provide a general source-specific freshness policy, protocol-complete outcomes, general reviewer tooling, or adapters beyond Alabama GBIF and iDigBio preserved specimens. The architecture document controls acceptance when an early type or field name compresses those concerns.
 
 The generated Alabama checkpoint verified on 2026-07-14 contains `30130` evidence records, `15` run records, and `29` registered sources. Across `167768` pairs it compiles to `15133` verified present, `0` verified absent, `8` not detected, `95580` researched unresolved, and `57047` not researched. Determination coverage is `9.02%`; source-screen research coverage is `66.00%`. Reverify these dated values before citing them.
 
@@ -130,12 +131,16 @@ An adapter may not:
 
 ## Run Workflow
 
-The implemented GBIF command accepts either the next bounded candidate count or explicit deferred pair keys:
+The implemented GBIF and iDigBio commands accept either the next bounded candidate count or explicit deferred pair keys:
 
 ```bash
 npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-limit 5
 npm run research:run -- --source gbif-preserved-specimens --state AL --pairs <FIPS:species-id,...>
+npm run research:run -- --source idigbio-preserved-specimens --state AL --candidate-limit 5
+npm run research:run -- --source idigbio-preserved-specimens --state AL --pairs <FIPS:species-id,...>
 ```
+
+The iDigBio adapter screens the frozen historical search index using stable UUID pagination. Publication requires exact target agreement across normalized and provider taxon names plus explicit indexed Alabama county text. Provider county text must agree when present. Coordinates are retained for lineage but never used to fill a missing county.
 
 For each run:
 

@@ -12,6 +12,7 @@ import path from "node:path";
 import { z } from "zod";
 
 import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specimens";
+import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
 
 import type { ResearchSourceAdapter } from "@/lib/research/source-adapter";
 import type {
@@ -177,7 +178,46 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === gbifPreservedSpecimensAdapter.sourceId) {
     return gbifPreservedSpecimensAdapter;
   }
+  if (sourceId === idigbioPreservedSpecimensAdapter.sourceId) {
+    return idigbioPreservedSpecimensAdapter;
+  }
   throw new Error(`No registered runner implementation exists for ${sourceId}.`);
+}
+
+function buildParameters(
+  sourceId: string,
+  stateCode: string,
+  requestedPairs: Array<{ countyFips: string; speciesId: string }>,
+) {
+  const candidatePairs = requestedPairs.map(
+    (pair) => `${pair.countyFips}:${pair.speciesId}`,
+  );
+  if (sourceId === gbifPreservedSpecimensAdapter.sourceId) {
+    return {
+      stateCode,
+      candidateLimit: requestedPairs.length,
+      candidatePairs,
+      basisOfRecord: "PRESERVED_SPECIMEN",
+      occurrenceStatus: "PRESENT",
+      minimumMatchConfidence: 95,
+      pageLimit: 300,
+    };
+  }
+  if (sourceId === idigbioPreservedSpecimensAdapter.sourceId) {
+    return {
+      stateCode,
+      candidateLimit: requestedPairs.length,
+      candidatePairs,
+      basisOfRecord: "preservedspecimen",
+      country: "united states",
+      stateProvince: "alabama",
+      pageLimit: 300,
+      maxPagesPerSpecies: 1000,
+      sortField: "uuid",
+      sortOrder: "asc",
+    };
+  }
+  throw new Error(`No parameter builder exists for ${sourceId}.`);
 }
 
 function selectCandidates(
@@ -310,15 +350,11 @@ async function main() {
     };
   });
 
-  const parameters = {
-    stateCode: options.stateCode,
-    candidateLimit: requestedPairs.length,
-    candidatePairs: requestedPairs.map((pair) => `${pair.countyFips}:${pair.speciesId}`),
-    basisOfRecord: "PRESERVED_SPECIMEN",
-    occurrenceStatus: "PRESENT",
-    minimumMatchConfidence: 95,
-    pageLimit: 300,
-  };
+  const parameters = buildParameters(
+    options.sourceId,
+    options.stateCode,
+    requestedPairs,
+  );
   const parameterSchema = JSON.parse(readFileSync(parameterSchemaPath, "utf8")) as Parameters<
     typeof z.fromJSONSchema
   >[0];

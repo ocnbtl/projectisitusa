@@ -111,8 +111,9 @@ Inspect current files before implementing a required target. Current paths are e
 | `scripts/build-research-db.ts` | Current | Disposable SQLite index builder |
 | `scripts/check-research-integrity.ts` | Current | Research parity and projection integrity checks |
 | `scripts/research/adapters/gbif-preserved-specimens.ts` | Current | Registered GBIF preserved-specimen adapter |
+| `scripts/research/adapters/idigbio-preserved-specimens.ts` | Current | Registered iDigBio preserved-specimen adapter for the frozen historical index |
 | `scripts/research/adapters/<adapter-id>.ts` | Required per source | Additional parameterized source adapters |
-| `scripts/research/run-source.ts` | Current for Alabama GBIF | Registered source-run orchestrator |
+| `scripts/research/run-source.ts` | Current for Alabama GBIF and iDigBio | Registered source-run orchestrator |
 | `src/data/generated/research/<STATE>/summary.json` | Current for Alabama | Generated build-time state summary |
 | `.cache/research/isitusa.sqlite` | Current | Disposable local query index, never authoritative |
 | `public/generated/research/<STATE>/summary.json` | Current for Alabama | Static public state projection |
@@ -120,7 +121,7 @@ Inspect current files before implementing a required target. Current paths are e
 
 `.cache/` is ignored. Verify the current ignore diff before changing it and do not overwrite concurrent ignore-file edits.
 
-The architecture remains the acceptance contract where the implementation is incomplete. Current gaps include source-specific freshness and review policy beyond the GBIF gate, protocol-complete pair outcomes and metrics, a reviewer command for later human events, parameterized adapters beyond Alabama GBIF preserved specimens, and a general state projection command.
+The architecture remains the acceptance contract where the implementation is incomplete. Current gaps include a general source-specific freshness and review policy beyond the registered specimen gates, protocol-complete pair outcomes and metrics, a reviewer command for later human events, parameterized adapters beyond Alabama GBIF and iDigBio preserved specimens, and a general state projection command.
 
 `app/research/page.tsx` remains a static route. `src/components/research-control-center.tsx` fetches the committed public state summary and county shards from `public/generated/research/AL/` so the large queue is not embedded in initial HTML. Do not claim the route is complete until generated input, build, and route behavior are verified together.
 
@@ -456,6 +457,7 @@ These commands exist and write tracked research artifacts except for the ignored
 ```bash
 npm run research:migrate
 npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-limit <1-100>
+npm run research:run -- --source idigbio-preserved-specimens --state AL --candidate-limit <1-100>
 npm run research:compile -- --as-of <YYYY-MM-DD>
 npm run research:index
 npm run research:refresh -- --as-of <YYYY-MM-DD>
@@ -487,7 +489,7 @@ Run `check:research-integrity`, `research:index`, and `research:verify` together
 5. Completed bootstrap: build the disposable SQLite index and research integrity gate.
 6. Completed bootstrap: add the public research control center without production source API or SQLite access.
 7. Completed foundation: add schemas, review events, retractions, superseding events, rejections, immutable detailed per-run receipts, and explicit pair outcomes.
-8. Started: move source families one at a time to registered parameterized adapters. GBIF preserved specimens is the first implemented adapter.
+8. Started: move source families one at a time to registered parameterized adapters. GBIF and frozen-index iDigBio preserved specimens are implemented.
 9. Started: review migration candidates through the source-family workflow and compile accepted changes with exact before, after, and net reporting.
 10. Next: add source-specific freshness, protocol-complete outcomes, reviewer tooling, and more registered adapters.
 11. Retire direct legacy truth edits only after adapter coverage and all acceptance gates pass.
