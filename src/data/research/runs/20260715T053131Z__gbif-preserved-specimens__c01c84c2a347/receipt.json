@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T053131Z__gbif-preserved-specimens__c01c84c2a347",
+  "status": "complete",
+  "started_at": "2026-07-15T05:31:31.470Z",
+  "finished_at": "2026-07-15T05:31:34.505Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.0.2",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "58fa402babb928062d8290908ed1528297e55dc50cdda56773fcc3403988a98d",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.0.2",
+  "adapter_code_hash": "7045ac424bddfa05cda6622d0e48f5ba49f9402db5473fd18e91f1185cb6d9a7",
+  "code_commit": "36b5164aef138a0eeecfa95fbbd81bc5c49bb32e",
+  "parameter_hash": "c01c84c2a3475a27414feb5dd79649177b675c490d9c73d78efb61ed691fb51b",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 16,
+    "candidatePairs": [
+      "01013:linepithema-humile",
+      "01035:linepithema-humile",
+      "01047:linepithema-humile",
+      "01053:linepithema-humile",
+      "01063:linepithema-humile",
+      "01079:veronica-serpyllifolia",
+      "01087:linepithema-humile",
+      "01107:linepithema-humile",
+      "01107:veronica-serpyllifolia",
+      "01111:linepithema-humile",
+      "01121:linepithema-humile",
+      "01123:linepithema-humile",
+      "01125:veronica-serpyllifolia",
+      "01129:linepithema-humile",
+      "01131:linepithema-humile",
+      "01133:linepithema-humile"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01013",
+      "01035",
+      "01047",
+      "01053",
+      "01063",
+      "01079",
+      "01087",
+      "01107",
+      "01111",
+      "01121",
+      "01123",
+      "01125",
+      "01129",
+      "01131",
+      "01133"
+    ],
+    "species_ids": [
+      "linepithema-humile",
+      "veronica-serpyllifolia"
+    ],
+    "pair_keys": [
+      "01013:linepithema-humile",
+      "01035:linepithema-humile",
+      "01047:linepithema-humile",
+      "01053:linepithema-humile",
+      "01063:linepithema-humile",
+      "01079:veronica-serpyllifolia",
+      "01087:linepithema-humile",
+      "01107:linepithema-humile",
+      "01107:veronica-serpyllifolia",
+      "01111:linepithema-humile",
+      "01121:linepithema-humile",
+      "01123:linepithema-humile",
+      "01125:veronica-serpyllifolia",
+      "01129:linepithema-humile",
+      "01131:linepithema-humile",
+      "01133:linepithema-humile"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Linepithema+humile&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:31:31.922Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=1316908&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:31:32.534Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=1316908&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:31:33.471Z",
+      "record_count": 49
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Veronica+serpyllifolia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:31:34.042Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3172057&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:31:34.495Z",
+      "record_count": 15
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/artifacts/gbif-occurrences-linepithema-humile-000000.json",
+      "sha256": "e000e07a13b80dbaabf9b86d2aeff7bd08bb12e870fe47fa08aae64865dd3358",
+      "bytes": 1543677,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/artifacts/gbif-occurrences-linepithema-humile-000300.json",
+      "sha256": "874a57baa912133a21a6e1cc11b41d1fe898c09797e4f1529a713ca8cb47fd36",
+      "bytes": 251674,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/artifacts/gbif-occurrences-veronica-serpyllifolia-000000.json",
+      "sha256": "b1e35143e5a41a8bdcd01ff4a7a042c644a25c56510480a7f1e0597558a89a02",
+      "bytes": 106392,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/artifacts/gbif-species-match-linepithema-humile.json",
+      "sha256": "4ffdb7a304d9a4c4e766dd3ef48ddaf7536d21bc3bf3cf32d24348567e314053",
+      "bytes": 457,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/artifacts/gbif-species-match-veronica-serpyllifolia.json",
+      "sha256": "2445da4e45b8877d83554ea27264a9c373785ed4a2f4edf9ba80b4cf485ba738",
+      "bytes": 468,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/assertions.ndjson",
+      "sha256": "dfe96d1035882ec09a1aac1bd8fa5155f50a3974e62e1b18c06f8a996a4e72b7",
+      "bytes": 105150,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/reviews.ndjson",
+      "sha256": "2b71ad4774761928b8fc1f8ba7122a443418401df00aded9d8ef573a8764361c",
+      "bytes": 54560,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/rejections.ndjson",
+      "sha256": "d6c63321eacd012eaa6668f665a971475584ca470e61526293824e5a6e126410",
+      "bytes": 47920,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053131Z__gbif-preserved-specimens__c01c84c2a347/outcomes.ndjson",
+      "sha256": "f66b03a434545905e4231c05446bb47e0c718bc8806f3ca3508a8e11c2a901a8",
+      "bytes": 90615,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 16,
+    "candidate_records": 364,
+    "assertion_events": 56,
+    "review_events": 56,
+    "rejection_records": 70,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 16
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --pairs 01013:linepithema-humile,01035:linepithema-humile,01047:linepithema-humile,01053:linepithema-humile,01063:linepithema-humile,01079:veronica-serpyllifolia,01087:linepithema-humile,01107:linepithema-humile,01107:veronica-serpyllifolia,01111:linepithema-humile,01121:linepithema-humile,01123:linepithema-humile,01125:veronica-serpyllifolia,01129:linepithema-humile,01131:linepithema-humile,01133:linepithema-humile"
+}
