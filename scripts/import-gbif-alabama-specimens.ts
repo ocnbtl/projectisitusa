@@ -4,7 +4,7 @@ import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 import { feature } from "topojson-client";
-import countyTopology from "us-atlas/counties-10m.json";
+import countyTopology from "@/data/source/county-equivalents-topology.json";
 
 import { STATE_FIPS_TO_INFO } from "@/data/source/state-fips";
 import type {

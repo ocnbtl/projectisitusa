@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 import { geoCentroid } from "d3-geo";
 import { feature, neighbors } from "topojson-client";
-import countyTopology from "us-atlas/counties-10m.json";
+import countyTopology from "@/data/source/county-equivalents-topology.json";
 
 import { isCommerciallySafeManifestEntry } from "@/lib/data/image-license";
 import { countyDetailSeed } from "@/data/source/county-details";
@@ -524,13 +524,6 @@ async function main() {
   for (const [speciesId, counties] of Object.entries(countyPresenceSeed.records)) {
     for (const countyFips of counties) {
       if (!countyRecords[countyFips]) continue;
-      if (
-        ["AK", "HI", "PR", "GU", "AS", "MP", "VI"].includes(
-          countyRecords[countyFips].stateCode,
-        )
-      ) {
-        continue;
-      }
 
       if (!presenceIndex[countyFips]) {
         presenceIndex[countyFips] = {

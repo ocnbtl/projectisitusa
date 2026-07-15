@@ -1,7 +1,13 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-import type { SpeciesCategory } from "@/lib/data/types";
+import type {
+  CountyPresence,
+  CountyRecord as PublicCountyRecord,
+  ExplorerSpecies,
+  Species,
+  SpeciesCategory,
+} from "@/lib/data/types";
 import type {
   EvidenceReviewEvent,
   EvidenceAssertion,
@@ -17,6 +23,14 @@ import type {
   ReviewStatus,
 } from "@/lib/research/types";
 import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
+import {
+  assertProjectionParity,
+  buildCompatibilityMatrix,
+  buildExplorerPresence,
+  recomputeCatalogCoverage,
+  renderCompatibilityMatrixMarkdown,
+  replaceStatePresenceFromResearch,
+} from "@/lib/research/compatibility-projection";
 import { listImmutableResearchRuns, readNdjson as readRunNdjson } from "@/lib/research/run-files";
 
 type SpeciesRecord = {
@@ -31,10 +45,6 @@ type CountyRecord = {
   name: string;
   stateCode: string;
   stateName: string;
-};
-
-type MatrixFile = {
-  generatedFrom: { countyPresenceSnapshotDate: string };
 };
 
 type ResearchRunsFile = {
@@ -148,14 +158,30 @@ function writeJson(filepath: string, value: unknown, pretty = false) {
   writeFileSync(filepath, `${JSON.stringify(value, null, pretty ? 2 : 0)}\n`);
 }
 
-const species = readJson<SpeciesRecord[]>(path.join(ROOT, "src/data/generated/species.json")).sort((left, right) =>
-  left.id.localeCompare(right.id),
+const catalogSpecies = readJson<Species[]>(path.join(ROOT, "src/data/generated/species.json"));
+const species = [...catalogSpecies].sort((left, right) => left.id.localeCompare(right.id));
+const explorerSpecies = readJson<ExplorerSpecies[]>(
+  path.join(ROOT, "src/data/generated/explorer-species.json"),
 );
-const counties = Object.values(
-  readJson<Record<string, CountyRecord>>(path.join(ROOT, "src/data/generated/counties.json")),
-)
+const countiesIndex = readJson<Record<string, CountyRecord & PublicCountyRecord>>(
+  path.join(ROOT, "src/data/generated/counties.json"),
+);
+const counties = Object.values(countiesIndex)
   .filter((county) => county.stateCode === STATE_CODE)
   .sort((left, right) => left.countyFips.localeCompare(right.countyFips));
+const currentPresence = readJson<Record<string, CountyPresence>>(
+  path.join(ROOT, "src/data/generated/presence.json"),
+);
+const datasetSnapshot = readJson<{
+  snapshotDate: string;
+  sourceRefs: string[];
+  coverageSummary?: {
+    catalogSpeciesCount: number;
+    mappedSpeciesCount: number;
+    unmatchedSpeciesCount: number;
+    sourceSpeciesCounts: Partial<Record<string, number>>;
+  };
+}>(path.join(ROOT, "src/data/generated/snapshot.json"));
 const registry = readJson<ResearchSourceRegistry>(path.join(ROOT, "src/data/research/source-registry.json"));
 const protocols = readJson<ResearchProtocolsFile>(path.join(ROOT, "src/data/research/research-protocols.json"));
 const runs = readJson<ResearchRunsFile>(path.join(ROOT, "src/data/research/research-runs.json")).runs;
@@ -181,11 +207,10 @@ const { evidence, runEvidence, projectedRunAssertions, resolvedRunEvidence } =
   sources: registry.sources,
   asOf: AS_OF,
   });
-const matrix = readJson<MatrixFile>(path.join(ROOT, "docs/county-coverage/states/AL.json"));
 const migrationCandidates = readJson<MigrationCandidatesFile>(
   path.join(ROOT, "src/data/research/migration-candidates.json"),
 );
-const sourceSnapshotDate = matrix.generatedFrom.countyPresenceSnapshotDate;
+const sourceSnapshotDate = datasetSnapshot.snapshotDate;
 const generatedAt = `${AS_OF}T00:00:00.000Z`;
 
 const reviewStatusByEvidenceId = new Map<string, ReviewStatus>();
@@ -551,11 +576,60 @@ const summary: ResearchStateSummary = {
   },
 };
 
+const compatibilityPresence = replaceStatePresenceFromResearch({
+  stateCode: STATE_CODE,
+  asOf: AS_OF,
+  counties: countiesIndex,
+  currentPresence,
+  countyFiles,
+});
+const explorerPresence = buildExplorerPresence(compatibilityPresence, explorerSpecies);
+const catalogCoverage = recomputeCatalogCoverage({
+  presence: compatibilityPresence,
+  species: catalogSpecies,
+  explorerSpecies,
+  snapshot: datasetSnapshot,
+});
+const compatibilityPresentCount = assertProjectionParity({
+  stateCode: STATE_CODE,
+  counties: countiesIndex,
+  countyFiles,
+  presence: compatibilityPresence,
+  explorerPresence,
+  explorerSpecies: catalogCoverage.explorerSpecies,
+});
+if (compatibilityPresentCount !== summary.summary.verifiedPresent) {
+  throw new Error(
+    `Compatibility present count ${compatibilityPresentCount} does not match research count ${summary.summary.verifiedPresent}.`,
+  );
+}
+const compatibilityMatrix = buildCompatibilityMatrix({
+  stateCode: STATE_CODE,
+  stateName: summary.stateName,
+  sourceSnapshotDate,
+  species: catalogCoverage.species,
+  countyFiles,
+});
+
 writeJson(path.join(SRC_OUTPUT, "summary.json"), summary, true);
 writeJson(path.join(PUBLIC_OUTPUT, "summary.json"), summary, true);
 for (const county of countyFiles) {
   writeJson(path.join(PUBLIC_OUTPUT, "counties", `${county.countyFips}.json`), county);
 }
+for (const root of [path.join(ROOT, "src/data/generated"), path.join(ROOT, "public/generated")]) {
+  writeJson(path.join(root, "presence.json"), compatibilityPresence, true);
+  writeJson(path.join(root, "explorer-presence.json"), explorerPresence, true);
+  writeJson(path.join(root, "species.json"), catalogCoverage.species, true);
+  writeJson(path.join(root, "explorer-species.json"), catalogCoverage.explorerSpecies, true);
+  writeJson(path.join(root, "snapshot.json"), catalogCoverage.snapshot, true);
+}
+const matrixOutput = path.join(ROOT, "docs/county-coverage/states");
+writeJson(path.join(matrixOutput, `${STATE_CODE}.json`), compatibilityMatrix, true);
+mkdirSync(matrixOutput, { recursive: true });
+writeFileSync(
+  path.join(matrixOutput, `${STATE_CODE}.md`),
+  renderCompatibilityMatrixMarkdown(compatibilityMatrix),
+);
 
 const progress = {
   schemaVersion: 2,

@@ -81,6 +81,7 @@ type CheckContext = {
   validSourceSpeciesIds: Set<string>;
   counties: Record<string, CountyRecord>;
   countyFips: Set<string>;
+  retiredCountyFips: Set<string>;
   presence: Record<string, CountyPresenceRecord>;
   explorerPresence: Record<string, number[]>;
   runtimeSnapshot: RuntimeSnapshot;
@@ -146,6 +147,7 @@ function checkSpeciesIdentity(ctx: CheckContext) {
 function checkRuntimePresence(ctx: CheckContext) {
   let presentDeterminations = 0;
   const mappedSpeciesIds = new Set<string>();
+  const mappedCountyCountBySpeciesId = new Map<string, number>();
 
   for (const [countyFips, record] of Object.entries(ctx.presence)) {
     if (!ctx.countyFips.has(countyFips)) {
@@ -162,6 +164,10 @@ function checkRuntimePresence(ctx: CheckContext) {
         fail(`Generated presence for ${countyFips} references unknown species: ${speciesId}`);
       }
       mappedSpeciesIds.add(speciesId);
+      mappedCountyCountBySpeciesId.set(
+        speciesId,
+        (mappedCountyCountBySpeciesId.get(speciesId) ?? 0) + 1,
+      );
       presentDeterminations += 1;
     }
   }
@@ -175,6 +181,16 @@ function checkRuntimePresence(ctx: CheckContext) {
   }
   if (summary.unmatchedSpeciesCount !== ctx.species.length - mappedSpeciesIds.size) {
     fail(`Runtime unmatchedSpeciesCount ${summary.unmatchedSpeciesCount} does not match generated species minus mapped species`);
+  }
+  for (const species of ctx.species) {
+    if (!species.registry) continue;
+    const mappedCountyCount = mappedCountyCountBySpeciesId.get(species.id) ?? 0;
+    if (species.registry.hasCountyData !== (mappedCountyCount > 0)) {
+      fail(`Species ${species.id} has stale registry.hasCountyData metadata`);
+    }
+    if ((species.registry.mappedCountyCount ?? 0) !== mappedCountyCount) {
+      fail(`Species ${species.id} has stale registry.mappedCountyCount metadata`);
+    }
   }
 
   pass(
@@ -221,6 +237,7 @@ function checkSourceSnapshot(ctx: CheckContext) {
   const mappedSourceSpecies = ctx.sourceSnapshot.species.filter((entry) => entry.countyFips.length > 0);
   const sourceCounts: Partial<Record<CountyDataSourceName, number>> = {};
 
+  let retiredGeographyReferences = 0;
   for (const entry of ctx.sourceSnapshot.species) {
     if (!ctx.validSourceSpeciesIds.has(entry.speciesId)) {
       fail(`County source snapshot references unknown species or registry occurrence ID: ${entry.speciesId}`);
@@ -229,7 +246,9 @@ function checkSourceSnapshot(ctx: CheckContext) {
     assertNoDuplicates(entry.countyFips, `County source snapshot county FIPS for ${entry.speciesId}`);
 
     for (const countyFips of entry.countyFips) {
-      if (!ctx.countyFips.has(countyFips)) {
+      if (ctx.retiredCountyFips.has(countyFips)) {
+        retiredGeographyReferences += 1;
+      } else if (!ctx.countyFips.has(countyFips)) {
         fail(`County source snapshot species ${entry.speciesId} references unknown county FIPS: ${countyFips}`);
       }
     }
@@ -256,7 +275,10 @@ function checkSourceSnapshot(ctx: CheckContext) {
     fail("Source snapshot sourceSpeciesCounts do not match species countyDataSources");
   }
 
-  pass("source snapshot", `${mappedSourceSpecies.length} mapped source species with valid county FIPS`);
+  pass(
+    "source snapshot",
+    `${mappedSourceSpecies.length} mapped source species with active or registered retired county FIPS; ${retiredGeographyReferences} retired-geography rows remain blocked from current projection`,
+  );
 }
 
 function checkRuntimeSourceCounts(ctx: CheckContext) {
@@ -322,7 +344,7 @@ function checkStatusOverrides(ctx: CheckContext) {
     }
 
     const presentSpecies = ctx.presence[override.countyFips]?.speciesIds ?? [];
-    if (presentSpecies.includes(override.speciesId)) {
+    if (override.status === "verified-absent" && presentSpecies.includes(override.speciesId)) {
       fail(`County status override conflicts with verified presence: ${override.countyFips}:${override.speciesId}`);
     }
 
@@ -466,6 +488,11 @@ const ctx: CheckContext = {
   validSourceSpeciesIds: new Set(),
   counties: readJson<Record<string, CountyRecord>>("src/data/generated/counties.json"),
   countyFips: new Set(),
+  retiredCountyFips: new Set(
+    readJson<{ retiredCountyEquivalents: Array<{ countyFips: string }> }>(
+      "src/data/research/county-equivalent-registry.json",
+    ).retiredCountyEquivalents.map((entry) => entry.countyFips),
+  ),
   presence: readJson<Record<string, CountyPresenceRecord>>("src/data/generated/presence.json"),
   explorerPresence: readJson<Record<string, number[]>>("src/data/generated/explorer-presence.json"),
   runtimeSnapshot: readJson<RuntimeSnapshot>("src/data/generated/snapshot.json"),

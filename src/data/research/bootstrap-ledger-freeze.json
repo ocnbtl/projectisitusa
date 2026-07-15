@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-07-15T11:30:00.000Z",
+  "frozenFromCommit": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
+  "stateCode": "AL",
+  "purpose": "Protect the completed legacy-to-ledger bootstrap from later reviewed-run publication and prevent lineage reclassification or double counting.",
+  "files": {
+    "evidenceAssertions": {
+      "path": "src/data/research/evidence-assertions.ndjson",
+      "bytes": 17544646,
+      "sha256": "3cfe085f030b089f116f6ea25f79121971f51590f5fd887278ec2ae7fe333cf6",
+      "recordCount": 30130
+    },
+    "researchRuns": {
+      "path": "src/data/research/research-runs.json",
+      "sha256": "1e823e327a91abe32189cbc2cabe82b65ace977c0e5c0a92df9f0f6893492bbb"
+    },
+    "migrationReport": {
+      "path": "src/data/research/migration-report.json",
+      "sha256": "6d7f74e066ca8b86fb89bad6aae73c9c255f059d6ce01a137e0987f265e05904"
+    },
+    "migrationCandidates": {
+      "path": "src/data/research/migration-candidates.json",
+      "sha256": "0898c8b402ad7f8f09b0269396de4f5fe35c1744a58190c44b091e83dd3fae02"
+    }
+  },
+  "assertionPairSets": {
+    "recorded-present": {
+      "recordCount": 30122,
+      "distinctPairCount": 15133,
+      "sortedPairSetSha256": "dcb50eae081ccc1b8f5a8f2f06470eadc7be729675a495a4449fe8d69c85b48a"
+    },
+    "officially-absent": {
+      "recordCount": 0,
+      "distinctPairCount": 0,
+      "sortedPairSetSha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "not-detected": {
+      "recordCount": 8,
+      "distinctPairCount": 8,
+      "sortedPairSetSha256": "db29e54964cfee0824acb1470e77335fb7601c73b1f55c3e4e06d4ed0697478e"
+    }
+  },
+  "rules": {
+    "initializationOnly": true,
+    "routineRefreshMayRunMigration": false,
+    "reviewedRunEvidenceMustRemainSeparate": true,
+    "rebaselineRequiresExplicitArchitectureReview": true
+  }
+}

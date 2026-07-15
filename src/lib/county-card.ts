@@ -1,6 +1,6 @@
 import { geoAlbersUsa, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
-import countyTopology from "us-atlas/counties-10m.json";
+import countyTopology from "@/data/source/county-equivalents-topology.json";
 import statesTopology from "us-atlas/states-10m.json";
 
 import type { CountyCategorySignal, CountyStat } from "@/lib/county-detail";

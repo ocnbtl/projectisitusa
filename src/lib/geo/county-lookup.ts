@@ -1,7 +1,7 @@
 import { geoContains } from "d3-geo";
 import { feature } from "topojson-client";
 import zipcodes from "zipcodes";
-import countyTopology from "us-atlas/counties-10m.json";
+import countyTopology from "@/data/source/county-equivalents-topology.json";
 
 import { countyIndex } from "@/lib/data/store";
 import type { CountyRecord, ZipLookupResult } from "@/lib/data/types";

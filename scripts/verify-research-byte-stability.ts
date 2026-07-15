@@ -9,6 +9,20 @@ const OUTPUT_ROOTS = [
   "public/generated/research/AL",
   "docs/research/generated",
 ];
+const OUTPUT_FILES = [
+  "src/data/generated/presence.json",
+  "public/generated/presence.json",
+  "src/data/generated/explorer-presence.json",
+  "public/generated/explorer-presence.json",
+  "src/data/generated/species.json",
+  "public/generated/species.json",
+  "src/data/generated/explorer-species.json",
+  "public/generated/explorer-species.json",
+  "src/data/generated/snapshot.json",
+  "public/generated/snapshot.json",
+  "docs/county-coverage/states/AL.json",
+  "docs/county-coverage/states/AL.md",
+];
 
 function compareText(left: string, right: string) {
   return left < right ? -1 : left > right ? 1 : 0;
@@ -32,10 +46,13 @@ function listFiles(directory: string): string[] {
 
 function snapshot() {
   return new Map(
-    OUTPUT_ROOTS.flatMap((relativeRoot) => listFiles(path.join(ROOT, relativeRoot))).map((filepath) => [
-      path.relative(ROOT, filepath).split(path.sep).join("/"),
-      createHash("sha256").update(readFileSync(filepath)).digest("hex"),
-    ]),
+    [
+      ...OUTPUT_ROOTS.flatMap((relativeRoot) => listFiles(path.join(ROOT, relativeRoot))),
+      ...OUTPUT_FILES.map((relativePath) => path.join(ROOT, relativePath)),
+    ].map((filepath) => [
+        path.relative(ROOT, filepath).split(path.sep).join("/"),
+        createHash("sha256").update(readFileSync(filepath)).digest("hex"),
+      ]),
   );
 }
 

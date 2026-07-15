@@ -18,6 +18,5 @@ function runScript(relativePath: string, arguments_: string[] = []) {
 }
 
 const asOf = parseAsOf(process.argv.slice(2));
-runScript("scripts/migrate-research-ledger.ts");
 runScript("scripts/compile-research-index.ts", ["--as-of", asOf]);
 runScript("scripts/build-research-db.ts");

@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "check:data-integrity": "node --import tsx scripts/check-data-integrity.ts",
     "check:research-integrity": "node --import tsx scripts/test-research-event-model.ts && node --import tsx scripts/test-gbif-preserved-specimens-adapter.ts && node --import tsx scripts/test-idigbio-preserved-specimens-adapter.ts && node --import tsx scripts/test-research-run-validation.ts && node --import tsx scripts/check-research-integrity.ts",
+    "check:geography-registry": "node --import tsx scripts/test-geography-registry.ts",
     "validate:data": "npm run check:data-integrity && npm run check:research-integrity",
     "check:profiles": "node --import tsx scripts/check-curated-profiles.ts",
     "county-audit:progress": "node --import tsx scripts/county-audit-progress.ts",
@@ -42,11 +43,12 @@
     "import:gbif-ipams-alabama": "node --import tsx scripts/import-gbif-ipams-alabama-plants.ts",
     "import:idigbio-alabama": "node --import tsx scripts/import-idigbio-alabama-specimens.ts",
     "import:county-data": "node --import tsx scripts/import-county-presence.ts",
+    "import:county-equivalents": "node scripts/import-census-county-equivalents.mjs",
     "import:nas-alabama-api": "node --import tsx scripts/import-nas-alabama-api-supplement.ts",
     "import:usriis": "node --import tsx scripts/import-usriis.ts",
     "import:species-images": "node --import tsx scripts/import-species-images.ts",
     "optimize:species-images": "node --import tsx scripts/optimize-species-images.ts",
-    "refresh:data": "npm run import:usriis && npm run import:county-data && npm run prepare:data && npm run build:county-matrix -- AL && npm run research:refresh"
+    "refresh:data": "npm run import:usriis && npm run import:county-data && npm run prepare:data && npm run research:refresh"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -73,7 +75,9 @@
     "@types/topojson-client": "^3.1.4",
     "eslint": "^9.38.0",
     "eslint-config-next": "^15.5.6",
+    "shapefile": "^0.6.6",
     "tailwindcss": "^4.1.14",
+    "topojson-server": "^3.0.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }

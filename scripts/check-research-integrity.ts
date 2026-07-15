@@ -44,6 +44,21 @@ type MigrationCandidatesFile = {
   distinctPairCount: number;
   candidates: Array<{ sourceId: string; countyFips: string; speciesId: string }>;
 };
+type BootstrapFreezeFile = {
+  files: Record<
+    "evidenceAssertions" | "researchRuns" | "migrationReport" | "migrationCandidates",
+    { path: string; sha256: string; bytes?: number; recordCount?: number }
+  >;
+  assertionPairSets: Record<
+    "recorded-present" | "officially-absent" | "not-detected",
+    { recordCount: number; distinctPairCount: number; sortedPairSetSha256: string }
+  >;
+  rules: {
+    initializationOnly: boolean;
+    routineRefreshMayRunMigration: boolean;
+    reviewedRunEvidenceMustRemainSeparate: boolean;
+  };
+};
 
 const ROOT = process.cwd();
 const SCHEMA_DIR = path.join(ROOT, "src/data/research/schemas");
@@ -194,7 +209,9 @@ const evidencePath = path.join(ROOT, "src/data/research/evidence-assertions.ndjs
 const runsPath = path.join(ROOT, "src/data/research/research-runs.json");
 const reviewEventsPath = path.join(ROOT, "src/data/research/review-events.ndjson");
 const rejectionsPath = path.join(ROOT, "src/data/research/rejections.ndjson");
+const migrationReportPath = path.join(ROOT, "src/data/research/migration-report.json");
 const migrationCandidatesPath = path.join(ROOT, "src/data/research/migration-candidates.json");
+const bootstrapFreezePath = path.join(ROOT, "src/data/research/bootstrap-ledger-freeze.json");
 const summaryPath = path.join(ROOT, "src/data/generated/research/AL/summary.json");
 const publicSummaryPath = path.join(ROOT, "public/generated/research/AL/summary.json");
 const publicCountyDir = path.join(ROOT, "public/generated/research/AL/counties");
@@ -205,7 +222,9 @@ for (const filepath of [
   runsPath,
   reviewEventsPath,
   rejectionsPath,
+  migrationReportPath,
   migrationCandidatesPath,
+  bootstrapFreezePath,
   summaryPath,
   publicSummaryPath,
 ]) {
@@ -225,6 +244,7 @@ const alabamaCountyFips = new Set(
     .map((county) => county.countyFips),
 );
 const matrix = readJson<MatrixFile>(path.join(ROOT, "docs/county-coverage/states/AL.json"));
+const bootstrapFreeze = readJson<BootstrapFreezeFile>(bootstrapFreezePath);
 const registry = readJson<ResearchSourceRegistry>(registryPath);
 const bootstrapEvidence = readNdjson<EvidenceAssertion>(evidencePath);
 const runsFile = readJson<RunsFile>(runsPath);
@@ -254,6 +274,29 @@ const projectedRejections = [
 const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
 const projectedOutcomes = projectedImmutableRuns.flatMap((bundle) => bundle.outcomes);
 const migrationCandidates = readJson<MigrationCandidatesFile>(migrationCandidatesPath);
+
+assert(bootstrapFreeze.rules.initializationOnly, "Bootstrap migration is no longer initialization-only.");
+assert(
+  bootstrapFreeze.rules.routineRefreshMayRunMigration === false,
+  "Routine refresh is incorrectly permitted to rerun bootstrap migration.",
+);
+assert(
+  bootstrapFreeze.rules.reviewedRunEvidenceMustRemainSeparate,
+  "Bootstrap freeze no longer separates reviewed run evidence.",
+);
+for (const [label, frozen] of Object.entries(bootstrapFreeze.files)) {
+  const absolute = path.join(ROOT, frozen.path);
+  assert(existsSync(absolute), `Frozen bootstrap file is missing: ${frozen.path}.`);
+  const bytes = readFileSync(absolute);
+  assert(sha256(bytes) === frozen.sha256, `Frozen bootstrap file changed: ${label}.`);
+  if (frozen.bytes !== undefined) {
+    assert(bytes.length === frozen.bytes, `Frozen bootstrap byte count changed: ${label}.`);
+  }
+}
+assert(
+  bootstrapFreeze.files.evidenceAssertions.recordCount === bootstrapEvidence.length,
+  "Frozen bootstrap record count changed.",
+);
 
 schemaValidator("source-registry.schema.json").parse(registry);
 schemaValidator("bootstrap-research-runs.schema.json").parse(runsFile);
@@ -517,17 +560,17 @@ const projectedRunEvidenceIds = new Set(
   compiledEvidence.projectedRunAssertions.map((entry) => entry.eventId),
 );
 
-const presentPairs = new Set(
+const bootstrapPresentPairs = new Set(
   bootstrapEvidence
     .filter((entry) => entry.assertion === "recorded-present")
     .map((entry) => pairKey(entry.countyFips, entry.speciesId)),
 );
-const absentPairs = new Set(
+const bootstrapAbsentPairs = new Set(
   bootstrapEvidence
     .filter((entry) => entry.assertion === "officially-absent")
     .map((entry) => pairKey(entry.countyFips, entry.speciesId)),
 );
-const notDetectedPairs = new Set(
+const bootstrapNotDetectedPairs = new Set(
   bootstrapEvidence
     .filter((entry) => entry.assertion === "not-detected")
     .map((entry) => pairKey(entry.countyFips, entry.speciesId)),
@@ -548,18 +591,95 @@ const matrixNotDetectedPairs = new Set(
   ),
 );
 
-assert(presentPairs.size === matrixPresentPairs.size, "Bootstrap present evidence does not match the matrix count.");
-assert(absentPairs.size === matrixAbsentPairs.size, "Bootstrap absence evidence does not match the matrix count.");
-assert(notDetectedPairs.size === matrixNotDetectedPairs.size, "Bootstrap not-detected evidence does not match the matrix count.");
-for (const key of matrixPresentPairs) assert(presentPairs.has(key), `Missing bootstrap present evidence for ${key}.`);
-for (const key of matrixAbsentPairs) assert(absentPairs.has(key), `Missing bootstrap absence evidence for ${key}.`);
-for (const key of matrixNotDetectedPairs) assert(notDetectedPairs.has(key), `Missing bootstrap not-detected evidence for ${key}.`);
+const frozenPairSets = {
+  "recorded-present": bootstrapPresentPairs,
+  "officially-absent": bootstrapAbsentPairs,
+  "not-detected": bootstrapNotDetectedPairs,
+};
+for (const [assertion, pairs] of Object.entries(frozenPairSets)) {
+  const frozen = bootstrapFreeze.assertionPairSets[
+    assertion as keyof BootstrapFreezeFile["assertionPairSets"]
+  ];
+  const recordCount = bootstrapEvidence.filter((entry) => entry.assertion === assertion).length;
+  const sortedPairSet = `${[...pairs].sort().join("\n")}\n`;
+  assert(recordCount === frozen.recordCount, `Frozen ${assertion} record count changed.`);
+  assert(pairs.size === frozen.distinctPairCount, `Frozen ${assertion} pair count changed.`);
+  assert(sha256(sortedPairSet) === frozen.sortedPairSetSha256, `Frozen ${assertion} pair set changed.`);
+}
+const bootstrapEvidenceIds = new Set(bootstrapEvidence.map((entry) => entry.evidenceId));
+for (const assertion of projectedRunAssertions) {
+  assert(
+    !bootstrapEvidenceIds.has(assertion.eventId),
+    `Run assertion ${assertion.eventId} collides with frozen bootstrap evidence.`,
+  );
+}
+
+const presentPairs = new Set(bootstrapPresentPairs);
+const absentPairs = new Set(bootstrapAbsentPairs);
+const notDetectedPairs = new Set(bootstrapNotDetectedPairs);
 
 for (const assertion of compiledEvidence.projectedRunAssertions) {
   const key = pairKey(assertion.county_fips, assertion.species_id);
   if (assertion.claim_type === "recorded-present") presentPairs.add(key);
   if (assertion.claim_type === "officially-absent") absentPairs.add(key);
   if (assertion.claim_type === "not-detected") notDetectedPairs.add(key);
+}
+for (const key of bootstrapPresentPairs) assert(presentPairs.has(key), `Compiled evidence lost bootstrap present pair ${key}.`);
+for (const key of bootstrapAbsentPairs) assert(absentPairs.has(key), `Compiled evidence lost bootstrap absence pair ${key}.`);
+for (const key of bootstrapNotDetectedPairs) assert(notDetectedPairs.has(key), `Compiled evidence lost bootstrap not-detected pair ${key}.`);
+
+const displayedNotDetectedPairs = new Set(
+  [...notDetectedPairs].filter((key) => !presentPairs.has(key) && !absentPairs.has(key)),
+);
+assert(presentPairs.size === matrixPresentPairs.size, "Compiled present evidence does not match the compatibility matrix count.");
+assert(absentPairs.size === matrixAbsentPairs.size, "Compiled absence evidence does not match the compatibility matrix count.");
+assert(displayedNotDetectedPairs.size === matrixNotDetectedPairs.size, "Compiled not-detected evidence does not match the compatibility matrix count.");
+for (const key of presentPairs) assert(matrixPresentPairs.has(key), `Compatibility matrix is missing present pair ${key}.`);
+for (const key of absentPairs) assert(matrixAbsentPairs.has(key), `Compatibility matrix is missing absence pair ${key}.`);
+for (const key of displayedNotDetectedPairs) assert(matrixNotDetectedPairs.has(key), `Compatibility matrix is missing not-detected pair ${key}.`);
+
+const compatibilityPresence = readJson<Record<string, { speciesIds: string[] }>>(
+  path.join(ROOT, "src/data/generated/presence.json"),
+);
+const compatibilityPresentPairs = new Set(
+  Object.entries(compatibilityPresence)
+    .filter(([countyFips]) => alabamaCountyFips.has(countyFips))
+    .flatMap(([countyFips, county]) =>
+      county.speciesIds.map((speciesId) => pairKey(countyFips, speciesId)),
+    ),
+);
+assert(
+  compatibilityPresentPairs.size === presentPairs.size,
+  "Normal compatibility presence count differs from research presence.",
+);
+for (const key of presentPairs) {
+  assert(compatibilityPresentPairs.has(key), `Normal compatibility presence is missing ${key}.`);
+}
+const explorerSpecies = readJson<Array<{ id: string }>>(
+  path.join(ROOT, "src/data/generated/explorer-species.json"),
+);
+const explorerPresence = readJson<Record<string, number[]>>(
+  path.join(ROOT, "src/data/generated/explorer-presence.json"),
+);
+for (const [countyFips, county] of Object.entries(compatibilityPresence)) {
+  const decoded = (explorerPresence[countyFips] ?? []).map((ordinal) => explorerSpecies[ordinal]?.id);
+  assert(
+    decoded.join("\n") === county.speciesIds.join("\n"),
+    `Explorer presence ordinals do not match normal presence for ${countyFips}.`,
+  );
+}
+for (const filename of [
+  "presence.json",
+  "explorer-presence.json",
+  "species.json",
+  "explorer-species.json",
+  "snapshot.json",
+]) {
+  assert(
+    readFileSync(path.join(ROOT, "src/data/generated", filename), "utf8") ===
+      readFileSync(path.join(ROOT, "public/generated", filename), "utf8"),
+    `Source and public ${filename} differ.`,
+  );
 }
 
 const totals = summary.summary;
@@ -582,6 +702,15 @@ assert(totals.evidenceRecordCount === bootstrapEvidence.length + compiledEvidenc
 assert(totals.rejectionRecordCount === projectedRejections.length, "Generated rejection count is stale.");
 assert(totals.researchRunCount === runs.length + projectedImmutableRuns.length, "Generated run count is stale.");
 assert(totals.conflictCount === 0, "Generated research index contains present-versus-absence conflicts.");
+assert(totals.verifiedPresent === presentPairs.size, "Research summary present count is stale.");
+assert(totals.verifiedAbsent === absentPairs.size, "Research summary absence count is stale.");
+assert(totals.notDetected === displayedNotDetectedPairs.size, "Research summary not-detected count is stale.");
+assert(
+  matrix.summary.presentVerifiedDeterminations === totals.verifiedPresent &&
+    matrix.summary.verifiedAbsentDeterminations === totals.verifiedAbsent &&
+    matrix.summary.notDetectedDeterminations === totals.notDetected,
+  "Compatibility matrix summary differs from research summary.",
+);
 assert(
   summary.migrationCandidates.sourceAssertionCount === migrationCandidates.candidateCount &&
     summary.migrationCandidates.distinctPairCount === migrationCandidates.distinctPairCount,

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Minus, Plus, RotateCcw } from "lucide-react";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
-import countyTopology from "us-atlas/counties-10m.json";
+import countyTopology from "@/data/source/county-equivalents-topology.json";
 import statesTopology from "us-atlas/states-10m.json";
 
 import { DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM } from "@/lib/constants";

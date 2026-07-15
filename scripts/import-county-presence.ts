@@ -9,7 +9,8 @@ import { createInterface } from "node:readline";
 
 import { geoContains } from "d3-geo";
 import { feature } from "topojson-client";
-import countyTopology from "us-atlas/counties-10m.json";
+import countyTopology from "@/data/source/county-equivalents-topology.json";
+import { getStateDefinition } from "@/lib/research/geography-registry";
 
 import { speciesSeed } from "@/data/source/species";
 import {
@@ -513,7 +514,7 @@ function buildCountyLookup() {
     const geometry = topology.objects.counties.geometries[index];
     const countyFips = geometry.id;
     const stateCode = stateCodeByFips[countyFips.slice(0, 2)];
-    if (!stateCode || ["AK", "HI", "PR", "GU", "AS", "MP", "VI"].includes(stateCode)) {
+    if (!stateCode || !getStateDefinition(stateCode)?.nationalV1Scope) {
       return;
     }
 
@@ -1033,7 +1034,7 @@ function loadEddMapsCountyCoverage(lower48CountyFips: Set<string>) {
   }
 
   console.log(
-    `Loaded ${imported.size} species from the EDDMapS county snapshot with ${countyRows} lower-48 county rows.`,
+    `Loaded ${imported.size} species from the EDDMapS county snapshot with ${countyRows} active national-v1 county-equivalent rows.`,
   );
 
   return imported;

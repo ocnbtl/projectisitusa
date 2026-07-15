@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import { countyPresenceOverrides } from "@/data/source/county-presence-overrides";
@@ -69,6 +69,18 @@ const LEDGER_PATH = path.join(RESEARCH_DIR, "evidence-assertions.ndjson");
 const RUNS_PATH = path.join(RESEARCH_DIR, "research-runs.json");
 const REPORT_PATH = path.join(RESEARCH_DIR, "migration-report.json");
 const CANDIDATES_PATH = path.join(RESEARCH_DIR, "migration-candidates.json");
+const FREEZE_PATH = path.join(RESEARCH_DIR, "bootstrap-ledger-freeze.json");
+
+if (process.argv.slice(2).join(" ") !== "--initialize-from-legacy") {
+  throw new Error(
+    "research:migrate is initialization-only and requires --initialize-from-legacy. Routine refresh must run research:compile instead.",
+  );
+}
+if (existsSync(FREEZE_PATH)) {
+  throw new Error(
+    "The bootstrap ledger is frozen. Reinitialization would reclassify reviewed evidence and is prohibited without an explicit architecture review.",
+  );
+}
 
 function readJson<T>(filepath: string): T {
   return JSON.parse(readFileSync(filepath, "utf8")) as T;
