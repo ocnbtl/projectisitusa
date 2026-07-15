@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e",
+  "status": "complete",
+  "started_at": "2026-07-15T05:35:42.810Z",
+  "finished_at": "2026-07-15T05:35:47.542Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.0.2",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "58fa402babb928062d8290908ed1528297e55dc50cdda56773fcc3403988a98d",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.0.2",
+  "adapter_code_hash": "7045ac424bddfa05cda6622d0e48f5ba49f9402db5473fd18e91f1185cb6d9a7",
+  "code_commit": "8021ef7beff2ce9622e61d7e5474fb1c7d4f3461",
+  "parameter_hash": "3b9b29478f2e7cb30a2e9417675279cdb47f35b85cfefb83833beefba376a41f",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 15,
+    "candidatePairs": [
+      "01023:hypericum-perforatum",
+      "01033:nasturtium-officinale",
+      "01039:linaria-vulgaris",
+      "01039:najas-minor",
+      "01045:linaria-vulgaris",
+      "01057:hypericum-perforatum",
+      "01075:cerastium-glomeratum",
+      "01077:hypericum-perforatum",
+      "01093:cerastium-glomeratum",
+      "01097:najas-minor",
+      "01101:nasturtium-officinale",
+      "01103:najas-minor",
+      "01105:cerastium-glomeratum",
+      "01107:nasturtium-officinale",
+      "01115:linaria-vulgaris"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01023",
+      "01033",
+      "01039",
+      "01045",
+      "01057",
+      "01075",
+      "01077",
+      "01093",
+      "01097",
+      "01101",
+      "01103",
+      "01105",
+      "01107",
+      "01115"
+    ],
+    "species_ids": [
+      "cerastium-glomeratum",
+      "hypericum-perforatum",
+      "linaria-vulgaris",
+      "najas-minor",
+      "nasturtium-officinale"
+    ],
+    "pair_keys": [
+      "01023:hypericum-perforatum",
+      "01033:nasturtium-officinale",
+      "01039:linaria-vulgaris",
+      "01039:najas-minor",
+      "01045:linaria-vulgaris",
+      "01057:hypericum-perforatum",
+      "01075:cerastium-glomeratum",
+      "01077:hypericum-perforatum",
+      "01093:cerastium-glomeratum",
+      "01097:najas-minor",
+      "01101:nasturtium-officinale",
+      "01103:najas-minor",
+      "01105:cerastium-glomeratum",
+      "01107:nasturtium-officinale",
+      "01115:linaria-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Hypericum+perforatum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:43.214Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3189486&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:43.652Z",
+      "record_count": 23
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Nasturtium+officinale&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:44.087Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=7701037&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:44.616Z",
+      "record_count": 87
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Linaria+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:45.265Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5415020&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:45.717Z",
+      "record_count": 9
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Najas+minor&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:45.929Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5329434&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:46.409Z",
+      "record_count": 55
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cerastium+glomeratum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:46.639Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3085440&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:35:47.186Z",
+      "record_count": 218
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-occurrences-cerastium-glomeratum-000000.json",
+      "sha256": "7cc17da2808f81e926cfc2e76effb3ba7321d386a2c67cc11bd45c677f32a3d2",
+      "bytes": 1469400,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-occurrences-hypericum-perforatum-000000.json",
+      "sha256": "fee27d83641001f7ff7c2518a7acdb2ad2740966e318b8d44f9afc4a81d60150",
+      "bytes": 152433,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-occurrences-linaria-vulgaris-000000.json",
+      "sha256": "1bbd4b18534849c63443d004e48c6d77eb180bc1ad9a8e1a9407288dfd0a380a",
+      "bytes": 58871,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-occurrences-najas-minor-000000.json",
+      "sha256": "338c954d012cf9972de06dc1b77957616b13c0988c5bd16fab51c787b9020ec3",
+      "bytes": 376211,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-occurrences-nasturtium-officinale-000000.json",
+      "sha256": "63edfebbfdcee5e48498e2a5f7b3bf528518fc42be6fd440b5839d314f2cdf9a",
+      "bytes": 593923,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-species-match-cerastium-glomeratum.json",
+      "sha256": "a65b1d0a8677543e7559fad4f95ed07239a4d2639eb4bf096ce8c20cbf726082",
+      "bytes": 475,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-species-match-hypericum-perforatum.json",
+      "sha256": "5e9613b21273f8172731ce1c5d3e66de1465d91cf5c8cd3de8556220d044b87e",
+      "bytes": 469,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-species-match-linaria-vulgaris.json",
+      "sha256": "08612b11643c4107680385f120ab5115b4149050c4499d694f608bc7c0dfa449",
+      "bytes": 452,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-species-match-najas-minor.json",
+      "sha256": "adfdc35a2dac430f7e79cb1728bbf85a9c7c1409b9a30a70e1e3dc661e9c7b93",
+      "bytes": 436,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/artifacts/gbif-species-match-nasturtium-officinale.json",
+      "sha256": "4a13c0a35e550f87465ad4aee0a273051f21ad6b726ca2487743d40223572c5c",
+      "bytes": 475,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/assertions.ndjson",
+      "sha256": "6a97e5c9541ad7d4817b6d9e71df20bf6c0dfed80e679c5311cba05770884f62",
+      "bytes": 44599,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/reviews.ndjson",
+      "sha256": "f70850f9c0e7c9f68da36dfe0fe61cba0d9444bdca3e1b0ed89a39f34755fba8",
+      "bytes": 23382,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/rejections.ndjson",
+      "sha256": "55d2b927f68a77fe1a314993a4976caa0c125fff14fdebda376e5d9121e2abbc",
+      "bytes": 4729,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053542Z__gbif-preserved-specimens__3b9b29478f2e/outcomes.ndjson",
+      "sha256": "636a89b0968164069ed53e147e5dc51c015116f084541c89c645bb61770d788f",
+      "bytes": 14562,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 15,
+    "candidate_records": 392,
+    "assertion_events": 24,
+    "review_events": 24,
+    "rejection_records": 7,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 15
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --pairs 01023:hypericum-perforatum,01033:nasturtium-officinale,01039:linaria-vulgaris,01039:najas-minor,01045:linaria-vulgaris,01057:hypericum-perforatum,01075:cerastium-glomeratum,01077:hypericum-perforatum,01093:cerastium-glomeratum,01097:najas-minor,01101:nasturtium-officinale,01103:najas-minor,01105:cerastium-glomeratum,01107:nasturtium-officinale,01115:linaria-vulgaris"
+}
