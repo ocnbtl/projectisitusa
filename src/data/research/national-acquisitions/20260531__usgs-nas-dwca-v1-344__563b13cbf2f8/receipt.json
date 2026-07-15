@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "acquisition_id": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+  "status": "complete",
+  "started_at": "2026-07-15T15:31:28.000Z",
+  "finished_at": "2026-07-15T15:33:18.370Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-national-acquisition@1.0.0",
+  "source_id": "usgs-nas",
+  "code_commit": "f97460c77b3b680cff4a18fffed02ae789d86bed",
+  "input_hashes": {
+    "scripts/research/national-usgs-nas-common.ts": "0d6231079c64cbc89578f2bd056d90aa7210fba52a12e9b02bf41ff45c1e42df",
+    "scripts/research/run-national-usgs-nas-acquisition.ts": "33ebea90700eaa77bf5b3c56a810f2bce6b9f3ef1afa643b76094eff20700659",
+    "src/data/research/schemas/national-usgs-nas-acquisition-receipt.schema.json": "866c46b96deebe4a2e30e5414b6b6654567f076cdd1d43d893a9f369eac828c4",
+    "src/data/research/source-registry.json": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f"
+  },
+  "parameter_hash": "b497e37bb482ebd367036819043985faf873b986f9bc6c662fe6635847164854",
+  "parameters": {
+    "archiveVersion": "1.344",
+    "archiveUrl": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+    "resourceUrl": "https://nas.er.usgs.gov/ipt/resource?r=nas",
+    "artifactBudgetBytes": 67108864
+  },
+  "upstream_requests": [
+    {
+      "url": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+      "response_url": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:31:44.999Z",
+      "bytes_received": 14009450,
+      "range_start": 0,
+      "content_range": null,
+      "content_length": null,
+      "attempt": 1,
+      "etag": null,
+      "last_modified": "Sun, 31 May 2026 17:03:21 GMT"
+    },
+    {
+      "url": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+      "response_url": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:33:00.760Z",
+      "bytes_received": 31174629,
+      "range_start": 14009450,
+      "content_range": null,
+      "content_length": null,
+      "attempt": 1,
+      "etag": null,
+      "last_modified": "Sun, 31 May 2026 17:03:21 GMT"
+    }
+  ],
+  "artifact": {
+    "path": "src/data/research/national-acquisitions/20260531__usgs-nas-dwca-v1-344__563b13cbf2f8/artifacts/usgs-nas-dwca-v1.344.zip",
+    "sha256": "563b13cbf2f83337c9528898ecb0a7de0719e3b68518147d638e60bc8c585f28",
+    "bytes": 31174629,
+    "media_type": "application/zip"
+  },
+  "archive": {
+    "title": "USGS Nonindigenous Aquatic Species database",
+    "publication_date": "2026-05-31",
+    "license": "CC0-1.0",
+    "record_count": 721752,
+    "core_file": "occurrence.txt",
+    "header_sha256": "c96d4bb9d93dcb3856718f4797040be02c8e83879b43f3f7296d9fd2b08f8726",
+    "entry_names": [
+      "eml.xml",
+      "meta.xml",
+      "occurrence.txt"
+    ]
+  },
+  "counts": {
+    "upstream_requests": 2,
+    "artifacts": 1,
+    "records": 721752,
+    "transient_failures": 0,
+    "resumed_bytes": 0
+  },
+  "errors": [],
+  "warnings": [
+    "Recovered 14009450 checkpointed bytes from interrupted request 1.",
+    "The USGS NAS archive is a provisional occurrence resource whose accuracy, completeness, scale, and temporal currency vary.",
+    "Archive silence and rejected records support research screening only, never absence or non-detection."
+  ],
+  "rerun_command": "npm run research:acquire:usgs-nas-national -- --version 1.344 --started-at 2026-07-15T15:31:28.000Z"
+}
