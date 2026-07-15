@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T155722Z__gbif-preserved-specimens__792ab9716783",
+  "status": "complete",
+  "started_at": "2026-07-15T15:57:22.000Z",
+  "finished_at": "2026-07-15T15:57:40.779Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.1.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "22586e1505fd6ca55f3e1c4b0cf8670d83cf72ec6d5ded1192e8de39fd1a2467",
+  "code_commit": "7ca3acf1764d6c82c2162566c6eb3a5a121e7389",
+  "parameter_hash": "792ab971678340e711ca8661158772d80b61411d8d8a96e7316d635dad954172",
+  "parameters": {
+    "stateCode": "AL",
+    "stateProvince": "Alabama",
+    "candidateLimit": 20,
+    "candidatePairs": [
+      "01093:abutilon-theophrasti",
+      "01097:abutilon-theophrasti",
+      "01053:agrostis-stolonifera",
+      "01071:agrostis-stolonifera",
+      "01095:anthoxanthum-odoratum",
+      "01099:anthoxanthum-odoratum",
+      "01031:artemisia-vulgaris",
+      "01073:artemisia-vulgaris",
+      "01045:bothriochloa-ischaemum",
+      "01065:bothriochloa-ischaemum",
+      "01075:bromus-tectorum",
+      "01125:bromus-tectorum",
+      "01013:cornu-aspersum",
+      "01097:cornu-aspersum",
+      "01047:oreochromis-aureus",
+      "01099:oreochromis-aureus",
+      "01105:oreochromis-aureus",
+      "01037:rumex-crispus",
+      "01061:rumex-crispus",
+      "01077:rumex-crispus"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01013",
+      "01031",
+      "01037",
+      "01045",
+      "01047",
+      "01053",
+      "01061",
+      "01065",
+      "01071",
+      "01073",
+      "01075",
+      "01077",
+      "01093",
+      "01095",
+      "01097",
+      "01099",
+      "01105",
+      "01125"
+    ],
+    "species_ids": [
+      "abutilon-theophrasti",
+      "agrostis-stolonifera",
+      "anthoxanthum-odoratum",
+      "artemisia-vulgaris",
+      "bothriochloa-ischaemum",
+      "bromus-tectorum",
+      "cornu-aspersum",
+      "oreochromis-aureus",
+      "rumex-crispus"
+    ],
+    "pair_keys": [
+      "01093:abutilon-theophrasti",
+      "01097:abutilon-theophrasti",
+      "01053:agrostis-stolonifera",
+      "01071:agrostis-stolonifera",
+      "01095:anthoxanthum-odoratum",
+      "01099:anthoxanthum-odoratum",
+      "01031:artemisia-vulgaris",
+      "01073:artemisia-vulgaris",
+      "01045:bothriochloa-ischaemum",
+      "01065:bothriochloa-ischaemum",
+      "01075:bromus-tectorum",
+      "01125:bromus-tectorum",
+      "01013:cornu-aspersum",
+      "01097:cornu-aspersum",
+      "01047:oreochromis-aureus",
+      "01099:oreochromis-aureus",
+      "01105:oreochromis-aureus",
+      "01037:rumex-crispus",
+      "01061:rumex-crispus",
+      "01077:rumex-crispus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Abutilon+theophrasti&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:33.612Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3152614&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:34.078Z",
+      "record_count": 17
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Agrostis+stolonifera&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:34.512Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2706435&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:35.016Z",
+      "record_count": 16
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Anthoxanthum+odoratum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:35.454Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2705975&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:35.926Z",
+      "record_count": 26
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Artemisia+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:36.159Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3120946&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:36.618Z",
+      "record_count": 22
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Bothriochloa+ischaemum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:36.854Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2704102&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:37.295Z",
+      "record_count": 29
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Bromus+tectorum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:37.530Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2703746&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:38.065Z",
+      "record_count": 87
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cornu+aspersum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:38.409Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5858758&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:38.899Z",
+      "record_count": 2
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Oreochromis+aureus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:39.087Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2372367&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:39.618Z",
+      "record_count": 11
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Rumex+crispus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:39.918Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8195144&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T15:57:40.441Z",
+      "record_count": 138
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-abutilon-theophrasti-000000.json",
+      "sha256": "c6ffffc078f54cb0b83fbaf97a594c610e58ddacfed283d6db3a9906ea4a8994",
+      "bytes": 106511,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-agrostis-stolonifera-000000.json",
+      "sha256": "6be0ff7876b5050abe26a81d5e8a84b8f4b11c897ba0b35cf4c413df5853967a",
+      "bytes": 106679,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-anthoxanthum-odoratum-000000.json",
+      "sha256": "dba1bf04c502d6d06aca99f094f9c2254d6e4b90220a1e45113e9cbdfe1e5c3f",
+      "bytes": 173236,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-artemisia-vulgaris-000000.json",
+      "sha256": "550d2d81127242c028c91bcf4144820b941f68c1369514c7ea83e35c231dec66",
+      "bytes": 152606,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-bothriochloa-ischaemum-000000.json",
+      "sha256": "23da580ac59408d322c3395123c8986fcf6c63e882af986b1f3dab220e586f5a",
+      "bytes": 204356,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-bromus-tectorum-000000.json",
+      "sha256": "b27ffe4d5447acb73f8dd0f7211154d8f26af21eeff5e434f12fe37c1b4d1a5f",
+      "bytes": 572844,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-cornu-aspersum-000000.json",
+      "sha256": "1d5b8dac4f727e2f0f71f538018e92d31ed74002416e67994179b4ee9f68c426",
+      "bytes": 9866,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-oreochromis-aureus-000000.json",
+      "sha256": "f9d7a4b17bf4d0ab79792778944829e6de34a1e465ee1eeb06a15b58c4d5f289",
+      "bytes": 61595,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-occurrences-rumex-crispus-000000.json",
+      "sha256": "5c10baac60f7f580c0af9ba9e16c1afb07c4870be1bed0847370611c35c8f510",
+      "bytes": 878863,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-abutilon-theophrasti.json",
+      "sha256": "fc622598ee07d260024e3639526fea5a089185e60d7c2b85e2313c1a16d693d7",
+      "bytes": 461,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-agrostis-stolonifera.json",
+      "sha256": "d97a383a3d5d66f60366fbea3cde6cea2d2b2b666f1218d85687119d9113bdff",
+      "bytes": 451,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-anthoxanthum-odoratum.json",
+      "sha256": "28edde30020391069f364a61c5bff483f0a7aef41e61f50de46999a67f6d4724",
+      "bytes": 458,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-artemisia-vulgaris.json",
+      "sha256": "3529c9b936aee6881155180e41e94f0ffb5558fd555d7ce6d8f93a8407cb0b24",
+      "bytes": 454,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-bothriochloa-ischaemum.json",
+      "sha256": "969fbde01fd5564f3044b5f766f80654ada4c34e6629daf91a9ada3734f0d06c",
+      "bytes": 468,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-bromus-tectorum.json",
+      "sha256": "e916d6df23f0b7f2b36c4842f1b907bdc2fb503c182c1b9894cfead987869784",
+      "bytes": 434,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-cornu-aspersum.json",
+      "sha256": "c1bf78e37d680a437622e7eb259e987d42d88e8eea62ab322062628bf969a595",
+      "bytes": 450,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-oreochromis-aureus.json",
+      "sha256": "2df3e71d3f0050511054697ee3b533fe8dd24cf1ce0bd6335a9facbfb09e4650",
+      "bytes": 428,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/artifacts/gbif-species-match-rumex-crispus.json",
+      "sha256": "8dbc2ad9b8224e4c6668a74eaaf1a59ed1b43e4b024057b33bf740298aeb52b3",
+      "bytes": 442,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/assertions.ndjson",
+      "sha256": "eab3eb21195fd0966e4b891ab97619ab3dc983feb7370175a8957a26460402a8",
+      "bytes": 39100,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/reviews.ndjson",
+      "sha256": "3b9549945c9b69e4f84b291b4d8c6ae693b1b25c0f4f13340fddf403b3f1d387",
+      "bytes": 20458,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/rejections.ndjson",
+      "sha256": "f0e8da6c7ee37091d812ae58a010d32f22ca205dc28c3430d1cb4f90d15b8265",
+      "bytes": 44575,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T155722Z__gbif-preserved-specimens__792ab9716783/outcomes.ndjson",
+      "sha256": "b362dd0389214f9c03f9bdaf349819ae520061a0925e77c0d7f5e5ff8d527a5e",
+      "bytes": 29991,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 20,
+    "candidate_records": 348,
+    "assertion_events": 21,
+    "review_events": 21,
+    "rejection_records": 66,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 20
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-file src/data/research/migration-candidates.json --output-root src/data/research/runs --pairs 01093:abutilon-theophrasti,01097:abutilon-theophrasti,01053:agrostis-stolonifera,01071:agrostis-stolonifera,01095:anthoxanthum-odoratum,01099:anthoxanthum-odoratum,01031:artemisia-vulgaris,01073:artemisia-vulgaris,01045:bothriochloa-ischaemum,01065:bothriochloa-ischaemum,01075:bromus-tectorum,01125:bromus-tectorum,01013:cornu-aspersum,01097:cornu-aspersum,01047:oreochromis-aureus,01099:oreochromis-aureus,01105:oreochromis-aureus,01037:rumex-crispus,01061:rumex-crispus,01077:rumex-crispus"
+}
