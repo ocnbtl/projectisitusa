@@ -366,6 +366,10 @@ function schemaValidator(root: string, filename: string) {
 
 export function validateNationalNasReceipt(root: string, receipt: NationalNasAcquisitionReceipt) {
   schemaValidator(root, "national-usgs-nas-acquisition-receipt.schema.json").parse(receipt);
+  assert(
+    stableJson(receipt.archive.entry_names) === stableJson([...USGS_NAS_ARCHIVE_ENTRIES]),
+    "USGS NAS acquisition receipt archive entry_names changed.",
+  );
 }
 
 export function validateNationalNasPlan(root: string, plan: NationalNasPlan) {

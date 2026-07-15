@@ -73,7 +73,13 @@
         "record_count": { "type": "integer", "minimum": 1 },
         "core_file": { "const": "occurrence.txt" },
         "header_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
-        "entry_names": { "const": ["eml.xml", "meta.xml", "occurrence.txt"] }
+        "entry_names": {
+          "type": "array",
+          "items": { "enum": ["eml.xml", "meta.xml", "occurrence.txt"] },
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true
+        }
       }
     },
     "counts": {

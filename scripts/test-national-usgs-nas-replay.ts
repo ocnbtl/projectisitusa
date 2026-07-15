@@ -23,6 +23,7 @@ import {
   nationalNasDownloadedCoverage,
   validateNationalNasCheckpointIdentity,
   validateNationalNasPlan,
+  validateNationalNasReceipt,
   validateNationalNasReference,
   validateNationalNasResumeResponse,
   validateNationalNasResponseBudget,
@@ -163,6 +164,77 @@ function buildSyntheticArchive(
 }
 
 async function main() {
+  const schemaHash = "a".repeat(64);
+  const receiptFixture: NationalNasAcquisitionReceipt = {
+    schemaVersion: 1,
+    acquisition_id: "test-national-nas-acquisition",
+    status: "complete",
+    started_at: "2026-07-15T10:00:00.000Z",
+    finished_at: "2026-07-15T10:01:00.000Z",
+    actor_type: "adapter",
+    actor_id: "usgs-nas-national-acquisition@1.0.0",
+    source_id: "usgs-nas",
+    code_commit: "a".repeat(40),
+    input_hashes: { "scripts/research/national-usgs-nas-common.ts": schemaHash },
+    parameter_hash: schemaHash,
+    parameters: {
+      archiveVersion: "1.344",
+      archiveUrl: canonicalNasArchiveUrl("1.344"),
+      resourceUrl: "https://nas.er.usgs.gov/ipt/resource?r=nas",
+      artifactBudgetBytes: 67_108_864,
+    },
+    upstream_requests: [{
+      url: canonicalNasArchiveUrl("1.344"),
+      response_url: canonicalNasArchiveUrl("1.344"),
+      method: "GET",
+      status: 200,
+      retrieved_at: "2026-07-15T10:00:30.000Z",
+      bytes_received: 1,
+      range_start: 0,
+      content_range: null,
+      content_length: 1,
+      attempt: 1,
+      etag: null,
+      last_modified: null,
+    }],
+    artifact: {
+      path: "src/data/research/national-acquisitions/test/artifacts/test.zip",
+      sha256: schemaHash,
+      bytes: 1,
+      media_type: "application/zip",
+    },
+    archive: {
+      title: "USGS Nonindigenous Aquatic Species database",
+      publication_date: "2026-05-31",
+      license: "CC0-1.0",
+      record_count: 1,
+      core_file: "occurrence.txt",
+      header_sha256: schemaHash,
+      entry_names: ["eml.xml", "meta.xml", "occurrence.txt"],
+    },
+    counts: {
+      upstream_requests: 1,
+      artifacts: 1,
+      records: 1,
+      transient_failures: 0,
+      resumed_bytes: 0,
+    },
+    errors: [],
+    warnings: ["Schema fixture."],
+    rerun_command: "npm run research:acquire:usgs-nas-national -- --version 1.344 --started-at 2026-07-15T10:00:00.000Z",
+  };
+  validateNationalNasReceipt(ROOT, receiptFixture);
+  expectFailure(
+    () => validateNationalNasReceipt(ROOT, {
+      ...receiptFixture,
+      archive: {
+        ...receiptFixture.archive,
+        entry_names: ["meta.xml", "eml.xml", "occurrence.txt"] as unknown as
+          NationalNasAcquisitionReceipt["archive"]["entry_names"],
+      },
+    }),
+    /entry_names|invalid/i,
+  );
   const akPairs = requestedPairs("AK", "myosotis-scorpioides", "Myosotis scorpioides");
   assert(akPairs.length === 30, `Expected 30 Alaska county equivalents, found ${akPairs.length}.`);
   const records = [
@@ -450,7 +522,8 @@ async function main() {
     checkpointIdentityValidated: true,
     byteRangeResumeSemanticsValidated: true,
     interruptedByteLineageValidated: true,
-    streamingArtifactBudgetValidated: true,
+      streamingArtifactBudgetValidated: true,
+      acquisitionReceiptEntriesValidated: true,
     wrongBaseAncestryRejected: true,
     archiveTamperCases: 2,
     pilotOutcomeFixtureCount: result.outcomes.length,
