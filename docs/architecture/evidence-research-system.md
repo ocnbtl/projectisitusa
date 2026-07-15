@@ -76,7 +76,7 @@ The current parity checkpoint freshly verified on 2026-07-15 is:
 
 Research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on the `15222` reviewed Alabama present pairs. This resolved the dated `15222` research versus `15133` public contradiction without hand-editing truth files or discarding the `8` not-detected survey records.
 
-The current v1 geography registry contains `51` state or district jurisdictions and `3144` active county equivalents. Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is lineage only. Connecticut has `9` current planning regions and retains its `8` former counties only as retired lineage. Alabama, Alaska, Arizona, and Arkansas have generated research projections. The latter three are bounded research-only pilots and are not normal compatibility publication or state certification.
+The current v1 geography registry contains `51` state or district jurisdictions and `3144` active county equivalents. Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is lineage only. Connecticut has `9` current planning regions and retains its `8` former counties only as retired lineage. Alabama, Alaska, Arizona, and Arkansas have generated research projections. The latter three contain integrated bounded NAS pilot evidence, remain research-only, and are not normal compatibility publication or state certification.
 
 ## System Boundary
 
@@ -261,6 +261,10 @@ Adapters may access the network. They must not edit legacy truth inputs, the com
 A national source is acquired once when its publisher exposes a stable versioned artifact. The acquisition and state partition are separate committed phases. The acquisition receipt pins code, parameters, upstream response metadata, artifact bytes and hash, archive structure, schema header, publication date, row count, license, retry history, and resume behavior. The repository commit containing that receipt and artifact becomes the ancestor of every dependent state-run receipt.
 
 The USGS NAS implementation uses official IPT archive version `1.344`, published `2026-05-31`, with `721752` rows and a `CC0-1.0` license as reverified on 2026-07-15. The legacy compatibility snapshot still cites `1.331`; both lineages remain explicit. The national archive is retained once. Each state run stores only assertions, reviews, grouped rejections, pair outcomes, and a hash-pinned acquisition reference.
+
+The first real national partition retained acquisition `20260531__usgs-nas-dwca-v1-344__563b13cbf2f8` and screened Alaska `myosotis-scorpioides`, Arkansas `daphnia-lumholtzi`, and Arizona `cyprinus-carpio`. One archive stream selected `4609` rows and produced `32` reviewed assertions, `13` grouped rejection events, `97` scope-complete outcomes, and `23` blocked outcomes. All state-specific network request counts were zero. Full integrity replay recomputed selected-row hashes and every assertion, review, rejection, and outcome from the retained archive. State compiler byte-stability passed for Alaska, Arkansas, and Arizona, and protected shared compatibility outputs did not change.
+
+The centralized pilot evaluation is durable at `ops/national-research/evaluations/usgs-nas-pilot-2026-07-15.json`. Its `21.9` day forecast is explicitly limited to automated national-source-equivalent county screens at the measured end-to-end rate. It is not a national certification forecast because `47` jurisdictions still lack complete applicability classification and state, manual, blocked, and source-specific work is not represented by the pilot.
 
 Partitioning streams the complete archive once for all selected screens. It requires exact canonical binomial agreement, exact state code, and exact active county-equivalent text. Missing, unknown, ambiguous, and retired geography is rejected. Coordinates are lineage only. Only explicit `collected` or `established` statuses pass the bounded positive-evidence gate. Archive silence and rejected rows can support a completed research outcome only when the declared screen completed; they never support absence or survey non-detection.
 
@@ -518,8 +522,8 @@ Run `check:research-integrity`, `check:state-research-projections`, `check:natio
 5. Completed protocol foundation: replace implicit category completion with explicit source-species applicability cells and separate completeness, freshness, blocked, and priority metrics.
 6. Completed orchestration foundation: add jobs, leases, manifests, integration queue, readiness dashboard, and adversarial validation.
 7. Blocked skill gate: preserve the failed third-cycle candidate evaluation and prohibit broad dispatch.
-8. In progress: acquire national source families once when possible, partition deterministically, integrate Alaska, Arizona, and Arkansas pilots, and continue Alabama deferred work.
-9. Next after two clean pilot integrations: maintain 5 to 10 bounded states in flight when memory and merge capacity permit without weakening evidence standards.
+8. Completed first national-source pilot: retain USGS NAS v1.344 once, partition it across Alaska, Arkansas, and Arizona, integrate three clean research-only projections, and preserve all blocked outcomes without negative inference.
+9. Current constraint: the two-clean-integration threshold is met for integration safety, but the independent skill gate remains blocked and the machine reached a `43` MiB free-disk low-water mark. Broad worker dispatch and 5 to 10 concurrent states remain prohibited. MAIN continues bounded centralized work until an evaluated skill version passes and machine capacity is sufficient.
 10. Continuing: add source-specific freshness policy, reviewer tooling, additional registered sources, and state applicability classifications.
 
 ## Acceptance Gates

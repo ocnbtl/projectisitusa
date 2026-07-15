@@ -7,21 +7,21 @@ Generated: `2026-07-15T00:00:00.000Z`
 - Species: `5`
 - Counties: `30`
 - County-species pairs: `150`
-- Verified present: `0`
+- Verified present: `10`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `0`
-- Not researched: `150`
-- Determination coverage: `0.00%`
-- Research coverage: `0.00%`
-- Explicit outcome coverage: `0.0000%`
+- Not researched: `140`
+- Determination coverage: `6.67%`
+- Research coverage: `6.67%`
+- Explicit outcome coverage: `6.6667%`
 - Applicable protocol cells: `6`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.00%`
 - Current protocol completion: `0.00%`
-- Evidence records: `0`
-- Research runs: `0`
-- Rejection records: `0`
+- Evidence records: `10`
+- Research runs: `1`
+- Rejection records: `2`
 - Deferred source assertions remaining: `5`
 - Deferred distinct pairs remaining: `5`
 - Conflicts: `0`
@@ -32,18 +32,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| True forget-me-not (`myosotis-scorpioides`) | plants | 30 | 0 | 2 |
 | Canada Thistle (`cirsium-arvense`) | plants | 30 | 0 | 1 |
 | Spruce Aphid (`elatobium-abietinum`) | insects | 30 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 30 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 30 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 20 | 0 | 2 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
 | EDDMaps | operational | not run | 0 | 0 |
-| USGS NAS | operational | not run | 0 | 0 |
+| USGS NAS | operational | 2026-07-15T15:41:25.000Z | 10 | 1 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
 | EDDMapS ALIPC list | operational | not run | 0 | 0 |

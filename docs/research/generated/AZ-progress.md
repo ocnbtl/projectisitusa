@@ -7,21 +7,21 @@ Generated: `2026-07-15T00:00:00.000Z`
 - Species: `4`
 - Counties: `15`
 - County-species pairs: `60`
-- Verified present: `0`
+- Verified present: `12`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `0`
-- Not researched: `60`
-- Determination coverage: `0.00%`
-- Research coverage: `0.00%`
-- Explicit outcome coverage: `0.0000%`
+- Not researched: `48`
+- Determination coverage: `20.00%`
+- Research coverage: `20.00%`
+- Explicit outcome coverage: `20.0000%`
 - Applicable protocol cells: `5`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.00%`
 - Current protocol completion: `0.00%`
-- Evidence records: `0`
-- Research runs: `0`
-- Rejection records: `0`
+- Evidence records: `12`
+- Research runs: `1`
+- Rejection records: `11`
 - Deferred source assertions remaining: `3`
 - Deferred distinct pairs remaining: `3`
 - Conflicts: `0`
@@ -32,17 +32,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Common Carp (`cyprinus-carpio`) | wildlife | 15 | 0 | 2 |
 | Canada Thistle (`cirsium-arvense`) | plants | 15 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 15 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 15 | 0 | 1 |
+| Common Carp (`cyprinus-carpio`) | wildlife | 3 | 0 | 2 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
 | EDDMaps | operational | not run | 0 | 0 |
-| USGS NAS | operational | not run | 0 | 0 |
+| USGS NAS | operational | 2026-07-15T15:41:25.000Z | 12 | 1 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
 | EDDMapS ALIPC list | operational | not run | 0 | 0 |

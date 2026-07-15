@@ -18,21 +18,21 @@
     "speciesCount": 3,
     "countyCount": 75,
     "totalPairs": 225,
-    "verifiedPresent": 0,
+    "verifiedPresent": 10,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 0,
-    "notResearched": 225,
-    "determinationCoveragePercent": 0,
-    "researchCoveragePercent": 0,
-    "explicitOutcomePairCount": 0,
-    "explicitOutcomeCoveragePercent": 0,
+    "researchedUnresolved": 65,
+    "notResearched": 150,
+    "determinationCoveragePercent": 4.44,
+    "researchCoveragePercent": 33.33,
+    "explicitOutcomePairCount": 75,
+    "explicitOutcomeCoveragePercent": 33.3333,
     "conflictCount": 0,
-    "evidenceRecordCount": 0,
+    "evidenceRecordCount": 10,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 0,
+    "runEvidenceRecordCount": 10,
     "rejectionRecordCount": 0,
-    "researchRunCount": 0
+    "researchRunCount": 1
   },
   "migrationCandidates": {
     "sourceAssertionCount": 2,
@@ -66,9 +66,9 @@
       "authority": "U.S. Geological Survey",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-07-15T15:41:25.000Z",
+      "evidencePairCount": 10,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "usgs-nas-api",
@@ -348,14 +348,14 @@
     "totalCells": 6,
     "applicableCells": 4,
     "notApplicableCells": 2,
-    "completeCells": 0,
-    "incompleteCells": 4,
+    "completeCells": 1,
+    "incompleteCells": 3,
     "blockedCells": 0,
-    "currentCells": 0,
+    "currentCells": 1,
     "staleCells": 0,
-    "undatedCells": 4,
-    "applicableCompletionPercent": 0,
-    "currentCompletePercent": 0,
+    "undatedCells": 3,
+    "applicableCompletionPercent": 25,
+    "currentCompletePercent": 25,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -370,8 +370,8 @@
       {
         "category": "wildlife",
         "applicableCells": 2,
-        "currentCompleteCells": 0,
-        "currentCompletePercent": 0
+        "currentCompleteCells": 1,
+        "currentCompletePercent": 50
       }
     ],
     "priorityCompletion": [
@@ -390,8 +390,8 @@
       {
         "priority": "pilot",
         "applicableCells": 4,
-        "currentCompleteCells": 0,
-        "currentCompletePercent": 0
+        "currentCompleteCells": 1,
+        "currentCompletePercent": 25
       },
       {
         "priority": "baseline",
@@ -410,25 +410,12 @@
       {
         "sourceId": "usgs-nas",
         "applicableCells": 1,
-        "currentCompleteCells": 0,
-        "processed": false
+        "currentCompleteCells": 1,
+        "processed": true
       }
     ]
   },
   "nextQueue": [
-    {
-      "speciesId": "daphnia-lumholtzi",
-      "commonName": "Spiny waterflea",
-      "scientificName": "Daphnia lumholtzi",
-      "category": "wildlife",
-      "notResearchedCountyCount": 75,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usgs-nas"
-      ],
-      "priorityScore": 75002
-    },
     {
       "speciesId": "matricaria-discoidea",
       "commonName": "Pineapple Weed",
@@ -452,6 +439,18 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 75001
+    },
+    {
+      "speciesId": "daphnia-lumholtzi",
+      "commonName": "Spiny waterflea",
+      "scientificName": "Daphnia lumholtzi",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 65,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 651
     }
   ]
 }

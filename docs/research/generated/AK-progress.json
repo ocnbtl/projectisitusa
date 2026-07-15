@@ -18,21 +18,21 @@
     "speciesCount": 5,
     "countyCount": 30,
     "totalPairs": 150,
-    "verifiedPresent": 0,
+    "verifiedPresent": 10,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 0,
-    "notResearched": 150,
-    "determinationCoveragePercent": 0,
-    "researchCoveragePercent": 0,
-    "explicitOutcomePairCount": 0,
-    "explicitOutcomeCoveragePercent": 0,
+    "notResearched": 140,
+    "determinationCoveragePercent": 6.67,
+    "researchCoveragePercent": 6.67,
+    "explicitOutcomePairCount": 10,
+    "explicitOutcomeCoveragePercent": 6.6667,
     "conflictCount": 0,
-    "evidenceRecordCount": 0,
+    "evidenceRecordCount": 10,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 0,
-    "rejectionRecordCount": 0,
-    "researchRunCount": 0
+    "runEvidenceRecordCount": 10,
+    "rejectionRecordCount": 2,
+    "researchRunCount": 1
   },
   "migrationCandidates": {
     "sourceAssertionCount": 5,
@@ -66,9 +66,9 @@
       "authority": "U.S. Geological Survey",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-07-15T15:41:25.000Z",
+      "evidencePairCount": 10,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "usgs-nas-api",
@@ -349,8 +349,8 @@
     "applicableCells": 6,
     "notApplicableCells": 4,
     "completeCells": 0,
-    "incompleteCells": 6,
-    "blockedCells": 0,
+    "incompleteCells": 5,
+    "blockedCells": 1,
     "currentCells": 0,
     "staleCells": 0,
     "undatedCells": 6,
@@ -417,19 +417,6 @@
   },
   "nextQueue": [
     {
-      "speciesId": "myosotis-scorpioides",
-      "commonName": "True forget-me-not",
-      "scientificName": "Myosotis scorpioides",
-      "category": "plants",
-      "notResearchedCountyCount": 30,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usgs-nas"
-      ],
-      "priorityScore": 30002
-    },
-    {
       "speciesId": "cirsium-arvense",
       "commonName": "Canada Thistle",
       "scientificName": "Cirsium arvense",
@@ -476,6 +463,19 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 30001
+    },
+    {
+      "speciesId": "myosotis-scorpioides",
+      "commonName": "True forget-me-not",
+      "scientificName": "Myosotis scorpioides",
+      "category": "plants",
+      "notResearchedCountyCount": 20,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
+        "usgs-nas"
+      ],
+      "priorityScore": 20002
     }
   ]
 }

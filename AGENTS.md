@@ -80,7 +80,11 @@ The national geography and bounded pilot projection checkpoint verified on 2026-
 - Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is not accepted as current scope
 - Connecticut uses `9` current planning regions; its `8` former counties are retained only as retired geography lineage
 - bounded research projections exist for Alabama, Alaska, Arizona, and Arkansas
-- Alaska, Arizona, and Arkansas pilot projections remain research-only and contain no published determinations before real pilot evidence is integrated
+- Alaska, Arizona, and Arkansas remain research-only, but the committed USGS NAS v1.344 pilot now contributes `32` reviewed present determinations and `65` researched-unresolved pairs across those projections
+- the single national archive contains `721752` rows; the three pilot partitions selected `4609` candidates, emitted `32` assertions and reviews, `13` grouped rejection events, `120` outcomes, and `23` honest blocked outcomes
+- Alaska compiles to `10` present and `20` blocked pilot outcomes, Arkansas to `10` present plus `65` researched-unresolved pairs, and Arizona to `12` present and `3` blocked pilot outcomes
+- all three state projections are byte-stable and did not modify compatibility, `presence.json`, or `explorer-presence.json`
+- the centralized pilot passed, but it does not override the blocked skill evaluation or authorize broad worker dispatch
 - explicit protocol cells remain separate from determination and source-screen coverage
 
 These are dated compiler checkpoints, not permanent constants. Reverify generated counts before every implementation, handoff, or count claim. Do not label the `8` not-detected pairs as determinations.

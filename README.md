@@ -20,7 +20,7 @@ If people only notice invasive species after major damage is visible, they are a
 1. Open the home page and browse the map explorer.
 2. Search for a species to view its profile page.
 3. Use the location lookup flow to jump from a ZIP code to county context.
-4. Open `/research` to inspect configured state research projections, source operations, evidence, protocol progress, and priority queues. Alabama is the certification baseline; Alaska, Arizona, and Arkansas are bounded research-only pilots until their evidence is integrated and release gates pass.
+4. Open `/research` to inspect configured state research projections, source operations, evidence, protocol progress, and priority queues. Alabama is the certification baseline. Alaska, Arizona, and Arkansas contain integrated bounded pilot evidence but remain research-only and are not state certifications.
 5. Review local presence, impact, and action guidance for the species that matter in that area.
 
 ## Local Development

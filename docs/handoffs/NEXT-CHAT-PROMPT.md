@@ -2,6 +2,8 @@
 
 > SUPERSEDED FOR ORDINARY CONTINUATION as of 2026-07-15. Do not use this file to claim current counts, task ownership, worker scope, or permission to write `main`. Current authority is the canonical checkout, current generated artifacts, `AGENTS.md`, the architecture and research guides, and `ops/national-research/`. Use this historical prompt only when the user explicitly transfers exclusive MAIN ownership under the handoff policy. Before transfer, stop dispatch, integrate or close all work, record every lease, branch, worktree, commit, blocker, and deployment, and confirm that no merge, build, push, or deployment is active.
 
+Latest superseding checkpoint: the centralized USGS NAS v1.344 national pilot is integrated into research-only Alaska, Arkansas, and Arizona projections with `32` reviewed present assertions, `65` researched-unresolved pairs, `13` grouped rejection events, `120` outcomes, and `23` blocked outcomes. Its machine-readable evaluation is `ops/national-research/evaluations/usgs-nas-pilot-2026-07-15.json`. The candidate worker skills remain blocked and unfrozen. This historical prompt still must not be used as a live handoff.
+
 The content below is retained as historical provenance. Its Alabama-only objective, counts, commands, and implementation gaps are stale.
 
 Copy everything below only for an explicitly authorized ownership transfer, then replace its dated state from current repository artifacts before acting.

@@ -23,6 +23,30 @@ type SkillEvaluation = {
     validatedResearchThroughputPairsPerHour?: number;
   };
 };
+type NationalPilotEvaluation = {
+  result: string;
+  partition: {
+    requestedPairs: number;
+    completeOutcomes: number;
+    blockedOutcomes: number;
+  };
+  safety: {
+    workerFailures: number;
+    mergeConflicts: number;
+  };
+  interventions: {
+    manualInterventions: number;
+    processFailuresBeforeValidatedIntegration: number;
+    minimumObservedFreeDiskMiB: number;
+  };
+  throughput: {
+    endToEndWallSeconds: number;
+    endToEndValidatedCompletePairsPerHour: number;
+  };
+  forecast: {
+    qualification: string;
+  };
+};
 
 const ROOT = process.cwd();
 
@@ -63,6 +87,13 @@ const evaluationPath = path.join(
 );
 const skillEvaluation = existsSync(evaluationPath)
   ? readJson<SkillEvaluation>(evaluationPath)
+  : null;
+const nationalPilotEvaluationPath = path.join(
+  operationsRoot,
+  "evaluations/usgs-nas-pilot-2026-07-15.json",
+);
+const nationalPilotEvaluation = existsSync(nationalPilotEvaluationPath)
+  ? readJson<NationalPilotEvaluation>(nationalPilotEvaluationPath)
   : null;
 
 const states = config.states
@@ -163,7 +194,10 @@ for (const job of jobs) {
 const completedWorkerLeases = leases.filter((entry) => entry.state === "completed").length;
 const integratedQueueItems = queue.filter((entry) => entry.decision === "integrated").length;
 const pilot = skillEvaluation?.realPilot;
-const measuredRate = pilot?.validatedResearchThroughputPairsPerHour ?? 0;
+const measuredRate =
+  nationalPilotEvaluation?.throughput.endToEndValidatedCompletePairsPerHour ??
+  pilot?.validatedResearchThroughputPairsPerHour ??
+  0;
 const remainingApplicableProtocolCountyScreens = states.reduce(
   (total, state) =>
     total +
@@ -231,6 +265,19 @@ const dashboard = {
     validatedStagingThroughputPairsPerHour: measuredRate,
     skillEvaluationResult: skillEvaluation?.result ?? "not-run",
     broadDispatchAllowed: skillEvaluation?.broadDispatchAllowed ?? false,
+    nationalPilotResult: nationalPilotEvaluation?.result ?? "not-run",
+    nationalPilotRequestedPairs: nationalPilotEvaluation?.partition.requestedPairs ?? 0,
+    nationalPilotCompleteOutcomes: nationalPilotEvaluation?.partition.completeOutcomes ?? 0,
+    nationalPilotBlockedOutcomes: nationalPilotEvaluation?.partition.blockedOutcomes ?? 0,
+    nationalPilotWallSeconds: nationalPilotEvaluation?.throughput.endToEndWallSeconds ?? 0,
+    nationalPilotThroughputPairsPerHour:
+      nationalPilotEvaluation?.throughput.endToEndValidatedCompletePairsPerHour ?? 0,
+    nationalPilotManualInterventions:
+      nationalPilotEvaluation?.interventions.manualInterventions ?? 0,
+    nationalPilotProcessFailures:
+      nationalPilotEvaluation?.interventions.processFailuresBeforeValidatedIntegration ?? 0,
+    minimumObservedFreeDiskMiB:
+      nationalPilotEvaluation?.interventions.minimumObservedFreeDiskMiB ?? null,
   },
   national: {
     completedStates: states.filter((entry) => entry.ready).map((entry) => entry.stateCode),
@@ -245,7 +292,8 @@ const dashboard = {
     targetGapDays:
       forecastDays === null ? null : round(Math.max(0, forecastDays - targetMaximumDays), 1),
     forecastQualification:
-      "This is a conservative single-lane forecast from one rejected staging pilot. It excludes 47 jurisdictions whose source-species applicability is not yet classified and will be recomputed after national-source reuse produces accepted integrated throughput.",
+      nationalPilotEvaluation?.forecast.qualification ??
+      "No accepted integrated national-source throughput measurement is available.",
   },
 };
 

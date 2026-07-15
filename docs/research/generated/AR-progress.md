@@ -7,20 +7,20 @@ Generated: `2026-07-15T00:00:00.000Z`
 - Species: `3`
 - Counties: `75`
 - County-species pairs: `225`
-- Verified present: `0`
+- Verified present: `10`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `0`
-- Not researched: `225`
-- Determination coverage: `0.00%`
-- Research coverage: `0.00%`
-- Explicit outcome coverage: `0.0000%`
+- Researched unresolved: `65`
+- Not researched: `150`
+- Determination coverage: `4.44%`
+- Research coverage: `33.33%`
+- Explicit outcome coverage: `33.3333%`
 - Applicable protocol cells: `4`
-- Current complete protocol cells: `0`
-- Protocol completion: `0.00%`
-- Current protocol completion: `0.00%`
-- Evidence records: `0`
-- Research runs: `0`
+- Current complete protocol cells: `1`
+- Protocol completion: `25.00%`
+- Current protocol completion: `25.00%`
+- Evidence records: `10`
+- Research runs: `1`
 - Rejection records: `0`
 - Deferred source assertions remaining: `2`
 - Deferred distinct pairs remaining: `2`
@@ -32,16 +32,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Spiny waterflea (`daphnia-lumholtzi`) | wildlife | 75 | 0 | 2 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 75 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 75 | 0 | 1 |
+| Spiny waterflea (`daphnia-lumholtzi`) | wildlife | 0 | 65 | 1 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
 | EDDMaps | operational | not run | 0 | 0 |
-| USGS NAS | operational | not run | 0 | 0 |
+| USGS NAS | operational | 2026-07-15T15:41:25.000Z | 10 | 1 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
 | EDDMapS ALIPC list | operational | not run | 0 | 0 |
