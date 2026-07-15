@@ -32,7 +32,19 @@
       "refreshCadenceDays": 90,
       "status": "operational",
       "adapter": "scripts/import-county-presence.ts",
-      "caveat": "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency."
+      "caveat": "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+      "researchAdapter": {
+        "id": "usgs-nas-archive",
+        "module": "scripts/research/adapters/usgs-nas-archive.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/usgs-nas-archive-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact canonical binomial agreement between the state plan, Project Isitusa catalog, and retained Darwin Core scientificName.",
+        "geographyMatchingPolicy": "Exact NAS state code and explicit county-equivalent name must resolve to one active registered county equivalent. Missing, ambiguous, unknown, and retired geography is rejected. Coordinates are never used.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "usgs-nas-api",

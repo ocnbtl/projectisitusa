@@ -9,21 +9,21 @@
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AR.json",
     "applicabilityAsOf": "2026-07-15",
-    "applicableSpeciesCount": 2,
+    "applicableSpeciesCount": 3,
     "undeterminedSpeciesPolicy": "excluded",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "protocol": {
-    "totalCells": 2,
-    "applicableCells": 2,
-    "notApplicableCells": 0,
+    "totalCells": 6,
+    "applicableCells": 4,
+    "notApplicableCells": 2,
     "completeCells": 0,
-    "incompleteCells": 2,
+    "incompleteCells": 4,
     "blockedCells": 0,
     "currentCells": 0,
     "staleCells": 0,
-    "undatedCells": 2,
+    "undatedCells": 4,
     "applicableCompletionPercent": 0,
     "currentCompletePercent": 0,
     "regulatedAndHighApplicableCells": 0,
@@ -32,6 +32,19 @@
     "requiredCurrentSourcesProcessed": false
   },
   "queue": [
+    {
+      "speciesId": "daphnia-lumholtzi",
+      "commonName": "Spiny waterflea",
+      "scientificName": "Daphnia lumholtzi",
+      "category": "wildlife",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
+        "usgs-nas"
+      ],
+      "priorityScore": 75002
+    },
     {
       "speciesId": "matricaria-discoidea",
       "commonName": "Pineapple Weed",

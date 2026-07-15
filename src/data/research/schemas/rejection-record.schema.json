@@ -26,7 +26,7 @@
         "county_fips": { "type": ["string", "null"], "pattern": "^[0-9]{5}$" }
       }
     },
-    "reason_code": { "enum": ["taxon-mismatch", "taxon-ambiguous", "geography-missing", "geography-ambiguous", "outside-scope", "cultivated-or-captive", "record-failed", "source-contradiction", "duplicate", "insufficient-negative-scope", "unsupported-claim-type"] },
+    "reason_code": { "enum": ["taxon-mismatch", "taxon-ambiguous", "geography-missing", "geography-ambiguous", "retired-geography", "outside-scope", "cultivated-or-captive", "record-failed", "source-contradiction", "duplicate", "insufficient-negative-scope", "unsupported-claim-type"] },
     "supporting_notes": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
   }
 }

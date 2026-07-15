@@ -4,18 +4,18 @@ Generated: `2026-07-15T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `4`
+- Species: `5`
 - Counties: `30`
-- County-species pairs: `120`
+- County-species pairs: `150`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `0`
-- Not researched: `120`
+- Not researched: `150`
 - Determination coverage: `0.00%`
 - Research coverage: `0.00%`
 - Explicit outcome coverage: `0.0000%`
-- Applicable protocol cells: `4`
+- Applicable protocol cells: `6`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.00%`
 - Current protocol completion: `0.00%`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 30 | 0 | 2 |
 | Canada Thistle (`cirsium-arvense`) | plants | 30 | 0 | 1 |
 | Spruce Aphid (`elatobium-abietinum`) | insects | 30 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 30 | 0 | 1 |

@@ -4,18 +4,18 @@ Generated: `2026-07-15T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `3`
+- Species: `4`
 - Counties: `15`
-- County-species pairs: `45`
+- County-species pairs: `60`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `0`
-- Not researched: `45`
+- Not researched: `60`
 - Determination coverage: `0.00%`
 - Research coverage: `0.00%`
 - Explicit outcome coverage: `0.0000%`
-- Applicable protocol cells: `3`
+- Applicable protocol cells: `5`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.00%`
 - Current protocol completion: `0.00%`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Common Carp (`cyprinus-carpio`) | wildlife | 15 | 0 | 2 |
 | Canada Thistle (`cirsium-arvense`) | plants | 15 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 15 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 15 | 0 | 1 |

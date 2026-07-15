@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "planId": "usgs-nas-pilot-v1",
+  "sourceId": "usgs-nas",
+  "archiveVersion": "1.344",
+  "acceptedOccurrenceStatuses": ["collected", "established"],
+  "screens": [
+    {
+      "stateCode": "AK",
+      "speciesId": "myosotis-scorpioides",
+      "scientificName": "Myosotis scorpioides"
+    },
+    {
+      "stateCode": "AR",
+      "speciesId": "daphnia-lumholtzi",
+      "scientificName": "Daphnia lumholtzi"
+    },
+    {
+      "stateCode": "AZ",
+      "speciesId": "cyprinus-carpio",
+      "scientificName": "Cyprinus carpio"
+    }
+  ],
+  "notes": [
+    "The versioned archive is acquired once and screened locally for every plan entry.",
+    "Only explicit collected or established NAS population statuses pass this bounded publication gate.",
+    "Archive silence and rejected records support only researched-unresolved outcomes, never absence or non-detection."
+  ]
+}

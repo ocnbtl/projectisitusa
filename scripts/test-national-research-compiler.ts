@@ -45,7 +45,11 @@ const alaska = resolveStateResearchScope({
   ...common,
   applicability,
 });
-assert(alaska.speciesIds.length === 4, "Alaska explicit pilot scope changed.");
+assert(alaska.speciesIds.length === 5, "Alaska explicit pilot scope changed.");
+assert(
+  alaska.speciesIds.includes("myosotis-scorpioides"),
+  "Alaska USGS NAS archive pilot species left the explicit state scope.",
+);
 assert(!alaska.config.compatibilityPublication, "Alaska pilot must not publish compatibility projections.");
 
 const duplicateConfig = structuredClone(configFile);

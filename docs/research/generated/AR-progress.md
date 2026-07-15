@@ -4,18 +4,18 @@ Generated: `2026-07-15T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `2`
+- Species: `3`
 - Counties: `75`
-- County-species pairs: `150`
+- County-species pairs: `225`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `0`
-- Not researched: `150`
+- Not researched: `225`
 - Determination coverage: `0.00%`
 - Research coverage: `0.00%`
 - Explicit outcome coverage: `0.0000%`
-- Applicable protocol cells: `2`
+- Applicable protocol cells: `4`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.00%`
 - Current protocol completion: `0.00%`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Spiny waterflea (`daphnia-lumholtzi`) | wildlife | 75 | 0 | 2 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 75 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 75 | 0 | 1 |
 

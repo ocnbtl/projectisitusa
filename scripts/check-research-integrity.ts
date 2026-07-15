@@ -25,6 +25,24 @@ import {
   assertImmutableRunStateConsistency,
   selectImmutableResearchRunsForState,
 } from "@/lib/research/state-run-selection";
+import {
+  type NasArchiveOccurrence,
+  type NationalNasReference,
+  USGS_NAS_SELECTED_RECORD_BUDGET_PER_PARTITION,
+  USGS_NAS_SELECTED_RECORD_BUDGET_PER_SCREEN,
+  assertCommitAncestor,
+  canonicalBinomial,
+  canonicalNasArchiveUrl,
+  nationalNasRecordAppliesToScreen,
+  streamNationalNasOccurrences,
+  validateNationalNasReference,
+  verifyNationalNasAcquisition,
+} from "./research/national-usgs-nas-common";
+import { replayNationalNasScreen } from "./research/adapters/usgs-nas-archive";
+import {
+  getStateDefinition,
+  listCountyEquivalents,
+} from "@/lib/research/geography-registry";
 
 type SpeciesRecord = { id: string };
 type CountyRecord = { countyFips: string; stateCode: string };
@@ -66,6 +84,10 @@ type BootstrapFreezeFile = {
 
 const ROOT = process.cwd();
 const SCHEMA_DIR = path.join(ROOT, "src/data/research/schemas");
+const NATIONAL_ACQUISITIONS_DIR = path.join(
+  ROOT,
+  "src/data/research/national-acquisitions",
+);
 const LEGACY_DIRTY_BOOTSTRAP_RUN_ID =
   "20260715T034832Z__gbif-preserved-specimens__090596ab4867";
 
@@ -208,6 +230,7 @@ function assertOutcomeInvariant(outcome: ResearchPairOutcome) {
   }
 }
 
+async function main() {
 const registryPath = path.join(ROOT, "src/data/research/source-registry.json");
 const evidencePath = path.join(ROOT, "src/data/research/evidence-assertions.ndjson");
 const runsPath = path.join(ROOT, "src/data/research/research-runs.json");
@@ -297,6 +320,35 @@ const projectedOutcomes = projectedAlabamaImmutableRuns.flatMap(
   (bundle) => bundle.outcomes,
 );
 const migrationCandidates = readJson<MigrationCandidatesFile>(migrationCandidatesPath);
+const nationalNasAcquisitions = [];
+if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
+  for (const entry of readdirSync(NATIONAL_ACQUISITIONS_DIR, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const directory = path.join(NATIONAL_ACQUISITIONS_DIR, entry.name);
+    const receiptPath = path.join(directory, "receipt.json");
+    assert(existsSync(receiptPath), `National acquisition ${entry.name} lacks a receipt.`);
+    const candidate = readJson<{ source_id?: string }>(receiptPath);
+    assert(
+      candidate.source_id === "usgs-nas",
+      `National acquisition ${entry.name} has unsupported source ${candidate.source_id ?? "missing"}.`,
+    );
+    const verified = await verifyNationalNasAcquisition(ROOT, directory, true);
+    assertCommitAncestor(ROOT, verified.receipt.code_commit, execFileSync(
+      "git",
+      ["rev-parse", "HEAD"],
+      { cwd: ROOT, encoding: "utf8" },
+    ).trim());
+    nationalNasAcquisitions.push(verified);
+  }
+}
+const nationalNasAcquisitionById = new Map(
+  nationalNasAcquisitions.map((entry) => [entry.receipt.acquisition_id, entry]),
+);
+const nationalNasReferences: NationalNasReference[] = [];
+const nationalNasReferenceEntries: Array<{
+  reference: NationalNasReference;
+  bundle: (typeof immutableRuns)[number];
+}> = [];
 
 assert(bootstrapFreeze.rules.initializationOnly, "Bootstrap migration is no longer initialization-only.");
 assert(
@@ -409,6 +461,72 @@ for (const bundle of immutableRuns) {
     cwd: ROOT,
     stdio: "ignore",
   });
+  if (receipt.source_id === "usgs-nas" && receipt.adapter_id === "usgs-nas-archive") {
+    const matchingArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/national-acquisition-reference.json"),
+    );
+    assert(
+      matchingArtifacts.length === 1,
+      `Immutable run ${receipt.run_id} must contain one national acquisition reference.`,
+    );
+    const artifact = matchingArtifacts[0]!;
+    const artifactBytes = readFileSync(path.join(ROOT, artifact.path));
+    assert(
+      artifactBytes.length === artifact.bytes && sha256(artifactBytes) === artifact.sha256,
+      `Immutable run ${receipt.run_id} national acquisition reference changed.`,
+    );
+    const reference = JSON.parse(artifactBytes.toString("utf8")) as NationalNasReference;
+    validateNationalNasReference(ROOT, reference);
+    nationalNasReferences.push(reference);
+    nationalNasReferenceEntries.push({ reference, bundle });
+    const acquisition = nationalNasAcquisitionById.get(reference.acquisitionId);
+    assert(acquisition, `Immutable run ${receipt.run_id} references an unknown national acquisition.`);
+    assert(
+      reference.acquisitionReceiptPath === path.relative(ROOT, acquisition.receiptPath).split(path.sep).join("/") &&
+        reference.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        reference.archivePath === path.relative(ROOT, acquisition.archivePath).split(path.sep).join("/") &&
+        reference.archiveSha256 === acquisition.receipt.artifact.sha256 &&
+        reference.archiveBytes === acquisition.receipt.artifact.bytes &&
+        reference.archiveVersion === acquisition.receipt.parameters.archiveVersion,
+      `Immutable run ${receipt.run_id} national acquisition lineage changed.`,
+    );
+    assertCommitAncestor(ROOT, acquisition.receipt.code_commit, receipt.code_commit);
+    assert(
+      reference.sourceId === receipt.source_id &&
+        reference.adapterVersion === receipt.adapter_version &&
+        reference.adapterCodeSha256 === receipt.adapter_code_hash &&
+        reference.stateCode === runStateCode &&
+        receipt.requested_scope.species_ids.length === 1 &&
+        reference.speciesId === receipt.requested_scope.species_ids[0],
+      `Immutable run ${receipt.run_id} national acquisition scope changed.`,
+    );
+    const committedPlan = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:${reference.planPath}`],
+      { cwd: ROOT },
+    );
+    const committedPartitionScript = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:scripts/research/partition-national-usgs-nas-acquisition.ts`],
+      { cwd: ROOT },
+    );
+    assert(
+      sha256(committedPlan) === reference.planSha256 &&
+        sha256(committedPartitionScript) === reference.partitionScriptSha256,
+      `Immutable run ${receipt.run_id} national partition inputs changed.`,
+    );
+    assert(
+      reference.reconciliation.selected_records === receipt.counts.candidate_records &&
+      reference.reconciliation.assertion_pairs === receipt.counts.assertion_events &&
+        reference.reconciliation.rejection_events === receipt.counts.rejection_records &&
+        reference.reconciliation.duplicate_record_ids === receipt.counts.duplicate_records &&
+        reference.reconciliation.blocked_outcome_pairs ===
+          bundle.outcomes.filter((entry) => entry.status === "blocked").length &&
+        reference.reconciliation.blocking_candidate_records <=
+          reference.reconciliation.rejected_candidate_records,
+      `Immutable run ${receipt.run_id} national reconciliation counts changed.`,
+    );
+  }
   if (receipt.run_id === LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
     assert(
       source.researchAdapter.id === receipt.adapter_id &&
@@ -553,6 +671,109 @@ for (const bundle of immutableRuns) {
       outcome.state_code === runStateCode,
       `Immutable run ${receipt.run_id} outcome ${outcome.outcome_id} disagrees with receipt state.`,
     );
+  }
+}
+
+for (const acquisition of nationalNasAcquisitions) {
+  const referenceEntries = nationalNasReferenceEntries.filter(
+    (entry) => entry.reference.acquisitionId === acquisition.receipt.acquisition_id,
+  );
+  if (referenceEntries.length === 0) continue;
+  const recordsByRun = new Map(
+    referenceEntries.map((entry) => [entry.bundle.receipt.run_id, [] as NasArchiveOccurrence[]]),
+  );
+  const referencesByTaxon = new Map<string, typeof referenceEntries>();
+  for (const entry of referenceEntries) {
+    const key = canonicalBinomial(entry.reference.scientificName);
+    const values = referencesByTaxon.get(key) ?? [];
+    values.push(entry);
+    referencesByTaxon.set(key, values);
+  }
+  let selectedRecordCount = 0;
+  const archiveRecordCount = await streamNationalNasOccurrences(
+    acquisition.archivePath,
+    (record) => {
+      const matchingEntries = referencesByTaxon.get(canonicalBinomial(record.scientificName)) ?? [];
+      for (const entry of matchingEntries) {
+        if (!nationalNasRecordAppliesToScreen({
+          recordStateProvince: record.stateProvince,
+          recordScientificName: record.scientificName,
+          screenStateCode: entry.reference.stateCode,
+          screenScientificName: entry.reference.scientificName,
+        })) continue;
+        const values = recordsByRun.get(entry.bundle.receipt.run_id)!;
+        assert(
+          values.length < USGS_NAS_SELECTED_RECORD_BUDGET_PER_SCREEN,
+          `Integrity replay exceeded the record budget for ${entry.bundle.receipt.run_id}.`,
+        );
+        assert(
+          selectedRecordCount < USGS_NAS_SELECTED_RECORD_BUDGET_PER_PARTITION,
+          `Integrity replay exceeded the ${USGS_NAS_SELECTED_RECORD_BUDGET_PER_PARTITION}-record acquisition budget.`,
+        );
+        values.push(record);
+        selectedRecordCount += 1;
+      }
+    },
+  );
+  assert(
+    archiveRecordCount === acquisition.receipt.archive.record_count,
+    `Integrity replay counted ${archiveRecordCount} USGS NAS rows instead of ${acquisition.receipt.archive.record_count}.`,
+  );
+  for (const entry of referenceEntries) {
+    const { bundle, reference } = entry;
+    const state = getStateDefinition(reference.stateCode);
+    assert(state, `Integrity replay has unknown state ${reference.stateCode}.`);
+    const requestedPairs = listCountyEquivalents(reference.stateCode).map((county) => ({
+      countyFips: county.countyFips,
+      countyName: county.shortName,
+      countyLegalName: county.legalName,
+      stateCode: reference.stateCode,
+      stateName: state.stateName,
+      speciesId: reference.speciesId,
+      scientificName: reference.scientificName,
+    }));
+    const acceptedOccurrenceStatuses = bundle.receipt.parameters.acceptedOccurrenceStatuses;
+    assert(
+      Array.isArray(acceptedOccurrenceStatuses) &&
+        acceptedOccurrenceStatuses.every((value): value is string => typeof value === "string"),
+      `Integrity replay lacks accepted statuses for ${bundle.receipt.run_id}.`,
+    );
+    const replay = replayNationalNasScreen({
+      context: {
+        runId: bundle.receipt.run_id,
+        sourceId: bundle.receipt.source_id,
+        stateCode: reference.stateCode,
+        requestedPairs: requestedPairs.map((pair) => ({
+          countyFips: pair.countyFips,
+          countyName: pair.countyName,
+          speciesId: pair.speciesId,
+          scientificName: pair.scientificName,
+        })),
+        runStartedAt: bundle.receipt.started_at,
+        parameters: bundle.receipt.parameters,
+      },
+      requestedPairs,
+      records: recordsByRun.get(bundle.receipt.run_id)!,
+      acceptedOccurrenceStatuses,
+      completedAt: bundle.receipt.finished_at,
+      archiveUrl: canonicalNasArchiveUrl(reference.archiveVersion),
+    });
+    assert(
+      replay.selectedRowsSha256 === reference.selectedRowsSha256 &&
+        stableJson(replay.reconciliation) === stableJson(reference.reconciliation),
+      `Integrity replay changed USGS NAS selection or reconciliation for ${bundle.receipt.run_id}.`,
+    );
+    for (const [label, actual, expected] of [
+      ["assertions", replay.assertions, bundle.assertions],
+      ["reviews", replay.reviews, bundle.reviews],
+      ["rejections", replay.rejections, bundle.rejections],
+      ["outcomes", replay.outcomes, bundle.outcomes],
+    ] as const) {
+      assert(
+        stableJson(actual) === stableJson(expected),
+        `Integrity replay changed USGS NAS ${label} for ${bundle.receipt.run_id}.`,
+      );
+    }
   }
 }
 
@@ -908,6 +1129,12 @@ console.log(
   JSON.stringify(
     {
       sourceCount: registry.sources.length,
+      nationalNasAcquisitionCount: nationalNasAcquisitions.length,
+      nationalNasAcquisitionRecordCount: nationalNasAcquisitions.reduce(
+        (sum, entry) => sum + entry.receipt.archive.record_count,
+        0,
+      ),
+      nationalNasReferenceCount: nationalNasReferences.length,
       bootstrapResearchRunCount: runs.length,
       immutableResearchRunCount: projectedAlabamaImmutableRuns.length,
       totalImmutableResearchRunCount: immutableRuns.length,
@@ -927,3 +1154,9 @@ console.log(
     2,
   ),
 );
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

@@ -157,9 +157,30 @@ npm run research:run -- --source gbif-preserved-specimens --state AL --candidate
 npm run research:run -- --source gbif-preserved-specimens --state AL --pairs <FIPS:species-id,...>
 npm run research:run -- --source idigbio-preserved-specimens --state AL --candidate-limit 5
 npm run research:run -- --source idigbio-preserved-specimens --state AL --pairs <FIPS:species-id,...>
+npm run research:acquire:usgs-nas-national -- --version <archive-version> --started-at <ISO-8601-UTC>
+npm run research:partition:usgs-nas-national -- --acquisition <acquisition-id> --plan <plan-id> --states <STATE,...> --recorded-at <ISO-8601-UTC>
 ```
 
 The iDigBio adapter screens the frozen historical search index using stable UUID pagination. Publication requires exact target agreement across normalized and provider taxon names plus explicit indexed state and current county-equivalent text. Provider county text must agree when present. Coordinates are retained for lineage but never used to fill a missing county. The iDigBio portal reports that its search index was frozen on 2026-05-08; treat it as a historical source until current availability and freshness are explicitly reverified.
+
+### Versioned National Archive Workflow
+
+Acquire a national dataset once when the publisher exposes a versioned archive, then partition the committed bytes locally. MAIN runs both phases sequentially from clean committed checkpoints:
+
+```bash
+npm run research:acquire:usgs-nas-national -- --version 1.344 --started-at <ISO-8601-UTC>
+git add src/data/research/national-acquisitions/<acquisition-id>
+git commit -m "Acquire USGS NAS national archive v1.344"
+npm run research:partition:usgs-nas-national -- --acquisition <acquisition-id> --plan usgs-nas-pilot-v1 --states AK,AR,AZ --recorded-at <ISO-8601-UTC>
+```
+
+The official USGS NAS IPT resource was reverified on 2026-07-15 at archive version `1.344`, publication date `2026-05-31`, and `721752` Darwin Core occurrence rows under `CC0-1.0`. The legacy compatibility snapshot still cites archive version `1.331`. That older citation remains dated bootstrap lineage and is not evidence that the current national archive is `1.331`.
+
+The acquisition receipt pins the canonical archive URL, clean code commit, input hashes, byte count, SHA-256, archive entries, Darwin Core header, publication date, row count, requests, retries, and resumable byte-range behavior. It retains the exact archive once under `src/data/research/national-acquisitions/`. A partition run references that archive and receipt by hash rather than copying raw rows into each state run.
+
+The current bounded plan accepts only explicit `collected` or `established` NAS occurrence statuses as positive occurrence evidence. Every other selected row is rejected with a counted reason. Exact state and active county-equivalent text are mandatory; coordinates do not fill missing or retired geography. A complete archive screen may emit `no-qualifying-evidence` and move a pair onto the researched axis, but it cannot emit verified absence or not detected.
+
+The public GBIF occurrence search API remains suitable for bounded adapter work, but it is not accepted as a complete national snapshot because ordinary search results use mutable offset paging. A future national GBIF lane must use a versioned or authenticated download receipt with complete artifact lineage rather than claiming snapshot completeness from search pagination.
 
 For each run:
 

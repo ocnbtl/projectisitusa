@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/usgs-nas-archive-parameters.schema.json",
+  "title": "USGS NAS versioned archive replay parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["stateCode", "mode", "nationalAcquisitionId", "nationalAcquisitionReceiptSha256", "archiveVersion", "planId", "candidateLimit", "candidatePairs", "acceptedOccurrenceStatuses"],
+  "properties": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "mode": { "const": "national-archive-replay" },
+    "nationalAcquisitionId": { "type": "string", "minLength": 1 },
+    "nationalAcquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "archiveVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+    "planId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "candidateLimit": { "type": "integer", "minimum": 1, "maximum": 1000 },
+    "candidatePairs": { "type": "array", "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" }, "minItems": 1, "maxItems": 1000, "uniqueItems": true },
+    "acceptedOccurrenceStatuses": { "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": { "enum": ["collected", "established"] } }
+  }
+}

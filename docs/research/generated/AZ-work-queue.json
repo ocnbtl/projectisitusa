@@ -9,21 +9,21 @@
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AZ.json",
     "applicabilityAsOf": "2026-07-15",
-    "applicableSpeciesCount": 3,
+    "applicableSpeciesCount": 4,
     "undeterminedSpeciesPolicy": "excluded",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "protocol": {
-    "totalCells": 3,
-    "applicableCells": 3,
-    "notApplicableCells": 0,
+    "totalCells": 8,
+    "applicableCells": 5,
+    "notApplicableCells": 3,
     "completeCells": 0,
-    "incompleteCells": 3,
+    "incompleteCells": 5,
     "blockedCells": 0,
     "currentCells": 0,
     "staleCells": 0,
-    "undatedCells": 3,
+    "undatedCells": 5,
     "applicableCompletionPercent": 0,
     "currentCompletePercent": 0,
     "regulatedAndHighApplicableCells": 0,
@@ -32,6 +32,19 @@
     "requiredCurrentSourcesProcessed": false
   },
   "queue": [
+    {
+      "speciesId": "cyprinus-carpio",
+      "commonName": "Common Carp",
+      "scientificName": "Cyprinus carpio",
+      "category": "wildlife",
+      "notResearchedCountyCount": 15,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
+        "usgs-nas"
+      ],
+      "priorityScore": 15002
+    },
     {
       "speciesId": "cirsium-arvense",
       "commonName": "Canada Thistle",

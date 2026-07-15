@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usgs-nas-acquisition-receipt.schema.json",
+  "title": "Project Isitusa immutable national USGS NAS acquisition receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisition_id", "status", "started_at", "finished_at", "actor_type", "actor_id", "source_id", "code_commit", "input_hashes", "parameter_hash", "parameters", "upstream_requests", "artifact", "archive", "counts", "errors", "warnings", "rerun_command"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisition_id": { "type": "string", "minLength": 1 },
+    "status": { "const": "complete" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "const": "adapter" },
+    "actor_id": { "const": "usgs-nas-national-acquisition@1.0.0" },
+    "source_id": { "const": "usgs-nas" },
+    "code_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "input_hashes": { "type": "object", "minProperties": 1, "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" } },
+    "parameter_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["archiveVersion", "archiveUrl", "resourceUrl", "artifactBudgetBytes"],
+      "properties": {
+        "archiveVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+        "archiveUrl": { "type": "string", "format": "uri" },
+        "resourceUrl": { "const": "https://nas.er.usgs.gov/ipt/resource?r=nas" },
+        "artifactBudgetBytes": { "const": 67108864 }
+      }
+    },
+    "upstream_requests": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "response_url", "method", "status", "retrieved_at", "bytes_received", "range_start", "content_range", "content_length", "attempt", "etag", "last_modified"],
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "response_url": { "type": "string", "format": "uri" },
+          "method": { "const": "GET" },
+          "status": { "type": "integer", "minimum": 100, "maximum": 599 },
+          "retrieved_at": { "type": "string", "format": "date-time" },
+          "bytes_received": { "type": "integer", "minimum": 0 },
+          "range_start": { "type": "integer", "minimum": 0 },
+          "content_range": { "type": ["string", "null"] },
+          "content_length": { "type": ["integer", "null"], "minimum": 0 },
+          "attempt": { "type": "integer", "minimum": 1 },
+          "etag": { "type": ["string", "null"] },
+          "last_modified": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "media_type"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytes": { "type": "integer", "minimum": 1, "maximum": 67108864 },
+        "media_type": { "const": "application/zip" }
+      }
+    },
+    "archive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "publication_date", "license", "record_count", "core_file", "header_sha256", "entry_names"],
+      "properties": {
+        "title": { "const": "USGS Nonindigenous Aquatic Species database" },
+        "publication_date": { "type": "string", "format": "date" },
+        "license": { "const": "CC0-1.0" },
+        "record_count": { "type": "integer", "minimum": 1 },
+        "core_file": { "const": "occurrence.txt" },
+        "header_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "entry_names": { "const": ["eml.xml", "meta.xml", "occurrence.txt"] }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["upstream_requests", "artifacts", "records", "transient_failures", "resumed_bytes"],
+      "properties": {
+        "upstream_requests": { "type": "integer", "minimum": 1 },
+        "artifacts": { "const": 1 },
+        "records": { "type": "integer", "minimum": 1 },
+        "transient_failures": { "type": "integer", "minimum": 0 },
+        "resumed_bytes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "errors": { "type": "array", "maxItems": 0 },
+    "warnings": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "rerun_command": { "type": "string", "minLength": 1 }
+  }
+}

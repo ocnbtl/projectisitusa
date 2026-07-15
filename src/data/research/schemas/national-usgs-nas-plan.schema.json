@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usgs-nas-plan.schema.json",
+  "title": "Project Isitusa USGS NAS national partition plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "planId", "sourceId", "archiveVersion", "acceptedOccurrenceStatuses", "screens", "notes"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "planId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "sourceId": { "const": "usgs-nas" },
+    "archiveVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+    "acceptedOccurrenceStatuses": { "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": { "enum": ["collected", "established"] } },
+    "screens": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stateCode", "speciesId", "scientificName"],
+        "properties": {
+          "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "scientificName": { "type": "string", "minLength": 3 }
+        }
+      }
+    },
+    "notes": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}

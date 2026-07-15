@@ -476,10 +476,10 @@ function checkStateMatrix(ctx: CheckContext, filepath: string) {
     }
   }
   if (matrix.summary.knownPercent !== roundPercent((knownDeterminations / matrix.summary.totalDeterminations) * 100)) {
-    fail(`${filepath} summary knownPercent does not match known divided by total determinations`);
+    fail(`${filepath} summary knownPercent does not match known compatibility statuses divided by total pairs`);
   }
 
-  pass("state matrix", `${matrix.stateCode} matrix has ${knownDeterminations} known determinations`);
+  pass("state matrix", `${matrix.stateCode} matrix has ${knownDeterminations} known compatibility statuses`);
 }
 
 const ctx: CheckContext = {

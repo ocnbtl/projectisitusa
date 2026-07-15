@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usgs-nas-reference.schema.json",
+  "title": "Project Isitusa USGS NAS state-run acquisition reference",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisitionId", "acquisitionReceiptPath", "acquisitionReceiptSha256", "archiveVersion", "archivePath", "archiveSha256", "archiveBytes", "planPath", "planSha256", "sourceId", "adapterVersion", "adapterCodeSha256", "partitionScriptSha256", "stateCode", "speciesId", "scientificName", "partitionMode", "selectedRowsSha256", "reconciliation"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisitionId": { "type": "string", "minLength": 1 },
+    "acquisitionReceiptPath": { "type": "string", "minLength": 1 },
+    "acquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "archiveVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+    "archivePath": { "type": "string", "minLength": 1 },
+    "archiveSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "archiveBytes": { "type": "integer", "minimum": 1 },
+    "planPath": { "type": "string", "minLength": 1 },
+    "planSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "sourceId": { "const": "usgs-nas" },
+    "adapterVersion": { "const": "1.0.0" },
+    "adapterCodeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "partitionScriptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "scientificName": { "type": "string", "minLength": 3 },
+    "partitionMode": { "const": "exact-state-county-name-and-status-no-coordinate-fallback" },
+    "selectedRowsSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "reconciliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_records", "accepted_records", "rejected_candidate_records", "assertion_pairs", "rejection_events", "duplicate_record_ids", "blank_status_records", "unsupported_status_records", "missing_geography_records", "retired_geography_records", "unknown_or_ambiguous_geography_records", "invalid_identity_records", "blocking_candidate_records", "blocked_outcome_pairs"],
+      "properties": {
+        "selected_records": { "type": "integer", "minimum": 0 },
+        "accepted_records": { "type": "integer", "minimum": 0 },
+        "rejected_candidate_records": { "type": "integer", "minimum": 0 },
+        "assertion_pairs": { "type": "integer", "minimum": 0 },
+        "rejection_events": { "type": "integer", "minimum": 0 },
+        "duplicate_record_ids": { "type": "integer", "minimum": 0 },
+        "blank_status_records": { "type": "integer", "minimum": 0 },
+        "unsupported_status_records": { "type": "integer", "minimum": 0 },
+        "missing_geography_records": { "type": "integer", "minimum": 0 },
+        "retired_geography_records": { "type": "integer", "minimum": 0 },
+        "unknown_or_ambiguous_geography_records": { "type": "integer", "minimum": 0 },
+        "invalid_identity_records": { "type": "integer", "minimum": 0 },
+        "blocking_candidate_records": { "type": "integer", "minimum": 0 },
+        "blocked_outcome_pairs": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

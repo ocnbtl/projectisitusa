@@ -203,7 +203,7 @@ export function buildProtocolCellProjection(input: {
           freshThrough: null,
           completionRunIds: [],
           outcomeSetHash: sha256("\n"),
-          applicabilityBasis: [],
+          applicabilityBasis,
         });
         continue;
       }
@@ -234,6 +234,8 @@ export function buildProtocolCellProjection(input: {
           ["evidence-found", "no-qualifying-evidence"].includes(outcome.status)
         ) {
           completeByCounty.set(outcome.county_fips, outcome);
+        } else {
+          completeByCounty.delete(outcome.county_fips);
         }
       }
       const incompleteCountyFips = input.countyFips.filter(

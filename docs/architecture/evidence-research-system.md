@@ -83,7 +83,9 @@ The current v1 geography registry contains `51` state or district jurisdictions 
 ```text
 registered source + parameters
   -> source adapter
-  -> immutable artifacts and source-run receipt
+  -> immutable national acquisition or bounded source artifact
+  -> deterministic state and county-equivalent partition when applicable
+  -> immutable source-run receipt
   -> evidence assertions, rejections, and pair outcomes
   -> review, retraction, and superseding events
   -> deterministic compiler
@@ -117,6 +119,8 @@ Inspect current files before implementing a required target. Current paths are e
 | `src/data/research/runs/<run-id>/receipt.json` | Current | Immutable detailed source-run receipt |
 | `src/data/research/runs/<run-id>/*.ndjson` | Current | Immutable initial assertions, reviews, rejections, and pair outcomes |
 | `src/data/research/runs/<run-id>/artifacts/*` | Current when allowed | Raw or normalized source artifacts subject to retention and licensing |
+| `src/data/research/national-acquisitions/<acquisition-id>/` | Current for versioned national sources | One immutable national archive and acquisition receipt reused by state partitions |
+| `src/data/research/national-acquisition-plans/*.json` | Current | Versioned state-species partition plans and positive-status gates |
 | `src/lib/research/types.ts` | Current | Research domain, event, receipt, review, rejection, and outcome types |
 | `src/lib/research/source-adapter.ts` | Current | Runner-owned parameterized adapter contract |
 | `scripts/migrate-research-ledger.ts` | Current bootstrap | Deterministic legacy evidence migration |
@@ -125,6 +129,9 @@ Inspect current files before implementing a required target. Current paths are e
 | `scripts/check-research-integrity.ts` | Current | Research parity and projection integrity checks |
 | `scripts/research/adapters/gbif-preserved-specimens.ts` | Current | Registered GBIF preserved-specimen adapter |
 | `scripts/research/adapters/idigbio-preserved-specimens.ts` | Current | Registered iDigBio preserved-specimen adapter for the frozen historical index |
+| `scripts/research/adapters/usgs-nas-archive.ts` | Current | Deterministic replay of exact state, taxon, county-equivalent, and positive-status NAS rows |
+| `scripts/research/run-national-usgs-nas-acquisition.ts` | Current | Resumable, version-pinned acquisition of one official NAS archive |
+| `scripts/research/partition-national-usgs-nas-acquisition.ts` | Current | Single-pass local partitioning into bounded immutable state runs |
 | `scripts/research/adapters/<adapter-id>.ts` | Required per source | Additional parameterized source adapters |
 | `scripts/research/run-source.ts` | Current for configured GBIF and iDigBio scopes | Registered source-run orchestrator |
 | `scripts/build-national-readiness-dashboard.ts` | Current | Separate readiness gates, protocol metrics, job metrics, and forecast |
@@ -248,6 +255,16 @@ Adapter outputs include:
 - receipt fields
 
 Adapters may access the network. They must not edit legacy truth inputs, the compiled truth matrix, generated SQLite, or public projections. Failed downloads must not replace a known-good cached artifact. Archive reuse must validate file type or signature as well as path existence.
+
+## National Acquisition And Partitioning
+
+A national source is acquired once when its publisher exposes a stable versioned artifact. The acquisition and state partition are separate committed phases. The acquisition receipt pins code, parameters, upstream response metadata, artifact bytes and hash, archive structure, schema header, publication date, row count, license, retry history, and resume behavior. The repository commit containing that receipt and artifact becomes the ancestor of every dependent state-run receipt.
+
+The USGS NAS implementation uses official IPT archive version `1.344`, published `2026-05-31`, with `721752` rows and a `CC0-1.0` license as reverified on 2026-07-15. The legacy compatibility snapshot still cites `1.331`; both lineages remain explicit. The national archive is retained once. Each state run stores only assertions, reviews, grouped rejections, pair outcomes, and a hash-pinned acquisition reference.
+
+Partitioning streams the complete archive once for all selected screens. It requires exact canonical binomial agreement, exact state code, and exact active county-equivalent text. Missing, unknown, ambiguous, and retired geography is rejected. Coordinates are lineage only. Only explicit `collected` or `established` statuses pass the bounded positive-evidence gate. Archive silence and rejected rows can support a completed research outcome only when the declared screen completed; they never support absence or survey non-detection.
+
+Mutable offset paging is not a national snapshot boundary. The public GBIF search API can support bounded adapter runs, but a national GBIF acquisition must use a versioned or authenticated complete download with an immutable receipt before it can claim national-source completion.
 
 ## Source-Run Receipts
 
@@ -473,6 +490,8 @@ These commands exist and write tracked research artifacts except for the ignored
 npm run research:migrate
 npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-limit <1-100>
 npm run research:run -- --source idigbio-preserved-specimens --state AL --candidate-limit <1-100>
+npm run research:acquire:usgs-nas-national -- --version <archive-version> --started-at <ISO-8601-UTC>
+npm run research:partition:usgs-nas-national -- --acquisition <acquisition-id> --plan <plan-id> --states <STATE,...> --recorded-at <ISO-8601-UTC>
 npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
 npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
@@ -486,7 +505,7 @@ npm run validate:data
 
 `research:migrate` reconstructs the migration ledger from current versioned compatibility inputs, preserves exact matrix parity, and writes deferred snapshot positives to `migration-candidates.json`. It is a bootstrap migration command, not the final append-only source-run interface.
 
-`research:run` implements state-parameterized registered GBIF and frozen-index iDigBio preserved-specimen adapters. `research:compile` consumes only runs matching the requested state. Alabama may update compatibility outputs; configured pilot states write research-only projections and cannot update shared compatibility outputs. `research:verify` runs two offline compilers for the same state and as-of date and fails if tracked projection bytes differ.
+`research:run` implements state-parameterized registered GBIF and frozen-index iDigBio preserved-specimen adapters. The USGS NAS acquisition command retains one versioned national archive, and its partition command streams that committed archive once for the selected state-species screens. `research:compile` consumes only runs matching the requested state. Alabama may update compatibility outputs; configured pilot states write research-only projections and cannot update shared compatibility outputs. `research:verify` runs two offline compilers for the same state and as-of date and fails if tracked projection bytes differ.
 
 Run `check:research-integrity`, `check:state-research-projections`, `check:national-research-config`, `build:national-readiness`, `research:index`, and state-scoped `research:verify` together for schema, hash, state isolation, readiness, local index, publication-boundary, and byte-stability verification.
 

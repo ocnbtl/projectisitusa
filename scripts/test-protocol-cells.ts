@@ -97,6 +97,14 @@ const blocked = project([
 assert(blocked.completionStatus === "blocked", "Explicit blocked remainder was not preserved.");
 assert(blocked.completeOutcomeCountyCount === 1, "Blocked cell lost completed county coverage.");
 
+const blockedRetry = project([
+  bundle({ runId: "run-g", countyFips: "01001", status: "evidence-found", scopeComplete: true, finishedAt: "2026-07-15T12:00:00.000Z" }),
+  bundle({ runId: "run-h", countyFips: "01001", status: "blocked", scopeComplete: false, finishedAt: "2026-07-15T13:00:00.000Z" }),
+  bundle({ runId: "run-i", countyFips: "01003", status: "no-qualifying-evidence", scopeComplete: true, finishedAt: "2026-07-15T12:00:00.000Z" }),
+]).cells[0]!;
+assert(blockedRetry.completionStatus === "blocked", "A later blocked retry did not revoke older complete coverage.");
+assert(blockedRetry.completeOutcomeCountyCount === 1, "A later blocked retry retained stale complete county coverage.");
+
 const stale = project([
   bundle({ runId: "run-e", countyFips: "01001", status: "evidence-found", scopeComplete: true, finishedAt: "2025-01-01T00:00:00.000Z" }),
   bundle({ runId: "run-f", countyFips: "01003", status: "no-qualifying-evidence", scopeComplete: true, finishedAt: "2025-01-01T00:00:00.000Z" }),
@@ -115,6 +123,7 @@ notApplicableProtocol.protocols[0]!.overrides.push({
 const notApplicable = project([], notApplicableProtocol).cells[0]!;
 assert(notApplicable.completionStatus === "not-applicable", "Not-applicable cell entered completion denominator.");
 assert(notApplicable.freshnessStatus === "not-applicable", "Not-applicable cell has freshness state.");
+assert(notApplicable.applicabilityBasis[0]?.reference === "override", "Not-applicable cell discarded its explicit basis.");
 
 console.log(
   JSON.stringify(
@@ -122,6 +131,7 @@ console.log(
       sourceSilenceRemainsIncomplete: true,
       noQualifyingEvidenceCompletesResearchOnly: true,
       blockedRemainderPreserved: true,
+      laterBlockedRetryRevokesCompletion: true,
       staleCompletionSeparated: true,
       notApplicableExcluded: true,
     },

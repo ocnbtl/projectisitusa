@@ -349,6 +349,7 @@ export type RejectionReasonCode =
   | "taxon-ambiguous"
   | "geography-missing"
   | "geography-ambiguous"
+  | "retired-geography"
   | "outside-scope"
   | "cultivated-or-captive"
   | "record-failed"

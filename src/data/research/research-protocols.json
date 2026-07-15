@@ -112,12 +112,12 @@
       "overrides": []
     },
     {
-      "id": "national-pilot-gbif-v1",
-      "label": "Alaska, Arizona, and Arkansas bounded GBIF pilot",
+      "id": "national-pilot-multisource-v1",
+      "label": "Alaska, Arizona, and Arkansas bounded national source pilot",
       "stateCodes": ["AK", "AZ", "AR"],
       "status": "active",
-      "sourceUniverse": ["gbif-preserved-specimens"],
-      "requiredCurrentSourceIds": ["gbif-preserved-specimens"],
+      "sourceUniverse": ["gbif-preserved-specimens", "usgs-nas"],
+      "requiredCurrentSourceIds": ["gbif-preserved-specimens", "usgs-nas"],
       "priorityPolicy": {
         "defaultPriority": "pilot",
         "classificationComplete": true
@@ -136,7 +136,47 @@
           ]
         }
       ],
-      "overrides": []
+      "overrides": [
+        {
+          "stateCode": "AK",
+          "speciesId": "myosotis-scorpioides",
+          "sourceId": "usgs-nas",
+          "applicability": "applicable",
+          "basis": [
+            {
+              "kind": "official-versioned-archive",
+              "reference": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+              "note": "USGS NAS is applicable to the bounded Alaska aquatic-plant pilot and provides a versioned national Darwin Core archive."
+            }
+          ]
+        },
+        {
+          "stateCode": "AZ",
+          "speciesId": "cyprinus-carpio",
+          "sourceId": "usgs-nas",
+          "applicability": "applicable",
+          "basis": [
+            {
+              "kind": "official-versioned-archive",
+              "reference": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+              "note": "USGS NAS is applicable to the bounded Arizona aquatic-animal pilot and provides a versioned national Darwin Core archive."
+            }
+          ]
+        },
+        {
+          "stateCode": "AR",
+          "speciesId": "daphnia-lumholtzi",
+          "sourceId": "usgs-nas",
+          "applicability": "applicable",
+          "basis": [
+            {
+              "kind": "official-versioned-archive",
+              "reference": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+              "note": "USGS NAS is applicable to the bounded Arkansas aquatic-invertebrate pilot and provides a versioned national Darwin Core archive."
+            }
+          ]
+        }
+      ]
     }
   ]
 }
