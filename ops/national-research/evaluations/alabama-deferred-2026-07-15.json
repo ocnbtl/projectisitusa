@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "alabama-deferred-source-screening-2026-07-15",
+  "evaluatedAt": "2026-07-15T16:15:55.000Z",
+  "result": "passed-centralized-execution",
+  "executionOwner": "MAIN",
+  "workerSkillDispatchUsed": false,
+  "workerSkillDispatchReason": "The third and final candidate skill cycle remains blocked and unfrozen. MAIN executed the bounded source runs centrally from clean commits.",
+  "skills": {
+    "evaluationResult": "blocked",
+    "broadDispatchAllowed": false,
+    "frozen": false,
+    "orchestratorCandidateSha256": "432eb9ca1ae90a4557d460767cf3f3239dfcc5ac77a51c39095670379c6177d6",
+    "workerCandidateSha256": "0e8f3fdd6d68aafa39abd4cb675f27e6686c156c51c2a00ba43767fae93a3745"
+  },
+  "lineage": {
+    "firstRunBaseCommit": "7ca3acf1764d6c82c2162566c6eb3a5a121e7389",
+    "evidenceCommits": [
+      "4e608152c69efc6196a9a597683736ce409ed69f",
+      "1af148fe1a635f19e728e93b09e1522d37d2b155",
+      "4f7286f9d67f2302bdb11cf8bb8e11d66b0f3a2e",
+      "6838225660bf48f041564f1ef04955ef0098b12b",
+      "b078cbe36c3392d6862e8ee118054cd774f44bf3"
+    ],
+    "asOf": "2026-07-15"
+  },
+  "sources": [
+    {
+      "sourceId": "gbif-preserved-specimens",
+      "runCount": 3,
+      "requestedSourceAssertions": 98,
+      "candidateRecords": 3872,
+      "assertions": 195,
+      "reviews": 195,
+      "rejections": 566,
+      "outcomes": 98,
+      "errors": 0,
+      "duplicates": 0,
+      "adapterWallSeconds": 95.164,
+      "status": "complete"
+    },
+    {
+      "sourceId": "idigbio-preserved-specimens",
+      "runCount": 2,
+      "requestedSourceAssertions": 101,
+      "candidateRecords": 2874,
+      "assertions": 154,
+      "reviews": 154,
+      "rejections": 545,
+      "outcomes": 101,
+      "errors": 0,
+      "duplicates": 0,
+      "adapterWallSeconds": 52.706,
+      "status": "complete-stale-source",
+      "availabilityObserved": "HTTP 200 during bounded API requests on 2026-07-15",
+      "freshness": "stale",
+      "frozenIndexDate": "2026-05-08",
+      "freshnessQualification": "Endpoint availability did not restore source indexing. Results remain historical and do not satisfy a required-current-source gate."
+    }
+  ],
+  "executionTotals": {
+    "runCount": 5,
+    "requestedSourceAssertions": 199,
+    "candidateRecords": 6746,
+    "assertions": 349,
+    "reviews": 349,
+    "rejections": 1111,
+    "outcomes": 199,
+    "blockedOutcomes": 0,
+    "errors": 0,
+    "duplicates": 0,
+    "adapterWallSeconds": 147.87
+  },
+  "baseline": {
+    "species": 2504,
+    "statesWithResearchProjections": 1,
+    "countiesOrCountyEquivalents": 67,
+    "countySpeciesPairs": 167768,
+    "verifiedPresent": 15222,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 95491,
+    "notResearched": 57047,
+    "evidenceRecords": 30291,
+    "reviewEvents": 161,
+    "rejections": 329,
+    "rawPairOutcomes": 113,
+    "distinctOutcomePairs": 110,
+    "conflicts": 0,
+    "researchRuns": 26,
+    "immutableRuns": 11,
+    "remainingDeferredSourceAssertions": 199,
+    "remainingDeferredPairsWithoutCompletedSource": 66
+  },
+  "final": {
+    "species": 2504,
+    "statesWithResearchProjections": 4,
+    "nationalJurisdictions": 51,
+    "nationalCountyEquivalents": 3144,
+    "alabamaCounties": 67,
+    "alabamaCountySpeciesPairs": 167768,
+    "verifiedPresent": 15293,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 95420,
+    "notResearched": 57047,
+    "evidenceRecords": 30640,
+    "reviewEvents": 510,
+    "rejections": 1440,
+    "rawPairOutcomes": 312,
+    "distinctOutcomePairs": 176,
+    "conflicts": 0,
+    "researchRuns": 31,
+    "immutableRuns": 16,
+    "remainingDeferredSourceAssertions": 0,
+    "remainingDeferredPairsWithoutCompletedSource": 0,
+    "publicProjectionParity": true
+  },
+  "net": {
+    "verifiedPresent": 71,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": -71,
+    "notResearched": 0,
+    "evidenceRecords": 349,
+    "reviewEvents": 349,
+    "rejections": 1111,
+    "rawPairOutcomes": 199,
+    "distinctOutcomePairs": 66,
+    "conflicts": 0,
+    "researchRuns": 5,
+    "immutableRuns": 5,
+    "remainingDeferredSourceAssertions": -199,
+    "remainingDeferredPairsWithoutCompletedSource": -66
+  },
+  "safety": {
+    "evidenceSemanticViolations": 0,
+    "unsupportedAbsenceClaims": 0,
+    "unsupportedNotDetectedClaims": 0,
+    "existingNotDetectedRecordsPreserved": 8,
+    "forbiddenWrites": 0,
+    "sharedSchemaChanges": 0,
+    "leaseCollisions": 0,
+    "mergeConflicts": 0,
+    "workerFailures": 0,
+    "publicProjectionParity": "pass",
+    "projectionByteStability": "pass",
+    "dataIntegrity": "pass",
+    "researchIntegrity": "pass"
+  },
+  "operations": {
+    "activeJobs": 0,
+    "blockedJobs": 1,
+    "completedLeases": 2,
+    "failedLeases": 1,
+    "activeLeases": 0,
+    "integrationItemsChangesRequested": 2,
+    "manualInterventions": 2,
+    "processFailures": 0,
+    "commandUsageFailures": 1,
+    "items": [
+      "Recovered completed iDigBio receipt evidence after the terminal session output was lost.",
+      "Repeated readiness generation with the required explicit as-of date after one rejected invocation."
+    ]
+  },
+  "resources": {
+    "executionTopology": "centralized-sequential",
+    "compilerMeasuredRealSeconds": 3.04,
+    "compilerMaximumResidentBytes": 606437376,
+    "compilerMaximumResidentMiB": 578.34,
+    "compilerSwaps": 0,
+    "availableDiskMiBAfterEvidenceIntegration": 2878,
+    "memoryPressure": "within-budget"
+  },
+  "throughput": {
+    "completedSourceAssertionsPerAdapterHour": 4844.7961,
+    "reviewedEvidenceEventsPerAdapterHour": 8496.6525,
+    "comparisonBaseline": "The dated handoff reported a prior pass of 105 deferred pairs, 154 evidence records, 246 rejections, and 84 new present determinations, but did not include comparable wall time.",
+    "demonstratedImprovement": "All remaining source assertions completed through resumable immutable registered runs with zero manual pair selection, zero semantic violations, and deterministic centralized integration."
+  },
+  "remainingWork": {
+    "deferredMigrationQueueComplete": true,
+    "alabamaCertified": false,
+    "blockers": [
+      "baseline research coverage is incomplete",
+      "applicable protocol completion is below 90 percent",
+      "regulated and high-priority protocol completion is not established",
+      "required current source families are not processed",
+      "iDigBio is stale",
+      "production QA is pending"
+    ]
+  }
+}

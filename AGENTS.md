@@ -63,15 +63,16 @@ Report research coverage separately from determination coverage.
 The Alabama compiler and public parity checkpoint verified on 2026-07-15 is:
 
 - `2504` species x `67` counties = `167768` county-species pairs
-- `15222` verified present
+- `15293` verified present
 - `0` verified absent
 - `8` not detected
-- `95491` researched unresolved
+- `95420` researched unresolved
 - `57047` not researched
-- `30291` evidence records
-- `329` rejections
-- `113` raw pair outcomes across `110` distinct pairs
-- `26` research runs
+- `30640` evidence records
+- `1440` rejections
+- `312` raw pair outcomes across `176` distinct pairs
+- `31` research runs, including `16` immutable source runs
+- all `312` dated migration source assertions across `176` distinct pairs have completed source screens
 - research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on reviewed presence
 
 The national geography and bounded pilot projection checkpoint verified on 2026-07-15 is:

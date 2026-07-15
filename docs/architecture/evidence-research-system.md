@@ -523,8 +523,9 @@ Run `check:research-integrity`, `check:state-research-projections`, `check:natio
 6. Completed orchestration foundation: add jobs, leases, manifests, integration queue, readiness dashboard, and adversarial validation.
 7. Blocked skill gate: preserve the failed third-cycle candidate evaluation and prohibit broad dispatch.
 8. Completed first national-source pilot: retain USGS NAS v1.344 once, partition it across Alaska, Arkansas, and Arizona, integrate three clean research-only projections, and preserve all blocked outcomes without negative inference.
-9. Current constraint: the two-clean-integration threshold is met for integration safety, but the independent skill gate remains blocked and the machine reached a `43` MiB free-disk low-water mark. Broad worker dispatch and 5 to 10 concurrent states remain prohibited. MAIN continues bounded centralized work until an evaluated skill version passes and machine capacity is sufficient.
-10. Continuing: add source-specific freshness policy, reviewer tooling, additional registered sources, and state applicability classifications.
+9. Completed dated Alabama migration queue: registered GBIF and frozen-index iDigBio runs screened all `312` source assertions across `176` distinct pairs. The final projection contains `15293` present, `0` absent, `8` not detected, `95420` researched unresolved, and `57047` not researched pairs. Queue completion is not state certification.
+10. Current constraint: the two-clean-integration threshold is met for integration safety, but the independent skill gate remains blocked. Broad worker dispatch and 5 to 10 concurrent states remain prohibited. MAIN continues bounded centralized work until an evaluated skill version passes and sustained machine capacity is sufficient.
+11. Continuing: add source-specific freshness policy, reviewer tooling, additional registered sources, and state applicability classifications.
 
 ## Acceptance Gates
 
