@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db",
+  "status": "complete",
+  "started_at": "2026-07-15T05:58:28.899Z",
+  "finished_at": "2026-07-15T05:58:30.558Z",
+  "actor_type": "adapter",
+  "actor_id": "idigbio-preserved-specimens@1.0.0",
+  "source_id": "idigbio-preserved-specimens",
+  "source_registry_hash": "db9642cbb57da6e121f0a625b01267867ec4b58b15e9d2758869f6aeeffebc2b",
+  "adapter_id": "idigbio-preserved-specimens",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "f7dfce7323dd5f6421e02eb17bf5ab3586be92bf8d883d2f49feaac54447fa28",
+  "code_commit": "1107ff95cf09e2afbe91ee74a53adc5c7940cf53",
+  "parameter_hash": "f4626b90c8db9dfa290637f2de8a6652b8e03af79361424f59a5e91a8bd46351",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 9,
+    "candidatePairs": [
+      "01003:leucanthemum-vulgare",
+      "01005:nezara-viridula",
+      "01007:puccinia-graminis",
+      "01015:puccinia-graminis",
+      "01035:puccinia-graminis",
+      "01081:puccinia-graminis",
+      "01099:nezara-viridula",
+      "01119:myriophyllum-spicatum",
+      "01129:nezara-viridula"
+    ],
+    "basisOfRecord": "preservedspecimen",
+    "country": "united states",
+    "stateProvince": "alabama",
+    "pageLimit": 300,
+    "maxPagesPerSpecies": 1000,
+    "sortField": "uuid",
+    "sortOrder": "asc"
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01003",
+      "01005",
+      "01007",
+      "01015",
+      "01035",
+      "01081",
+      "01099",
+      "01119",
+      "01129"
+    ],
+    "species_ids": [
+      "leucanthemum-vulgare",
+      "myriophyllum-spicatum",
+      "nezara-viridula",
+      "puccinia-graminis"
+    ],
+    "pair_keys": [
+      "01003:leucanthemum-vulgare",
+      "01005:nezara-viridula",
+      "01007:puccinia-graminis",
+      "01015:puccinia-graminis",
+      "01035:puccinia-graminis",
+      "01081:puccinia-graminis",
+      "01099:nezara-viridula",
+      "01119:myriophyllum-spicatum",
+      "01129:nezara-viridula"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22leucanthemum+vulgare%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:58:29.275Z",
+      "record_count": 28
+    },
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22nezara+viridula%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:58:29.485Z",
+      "record_count": 14
+    },
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22puccinia+graminis%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:58:29.990Z",
+      "record_count": 19
+    },
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22myriophyllum+spicatum%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:58:30.518Z",
+      "record_count": 46
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/artifacts/idigbio-records-leucanthemum-vulgare-000000.json",
+      "sha256": "f274a1e3c49f36561a2dd8c68334318b2d662c524a7498de2a089a89851d62e8",
+      "bytes": 48365,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/artifacts/idigbio-records-myriophyllum-spicatum-000000.json",
+      "sha256": "4facb08225bf8dcd4e8a2e5dc349129391dabe7e03967fb7233fdf7c56a84581",
+      "bytes": 92059,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/artifacts/idigbio-records-nezara-viridula-000000.json",
+      "sha256": "a6747c37db87cd5595e99d3b48caa40af572a63aa618841f6fc7a0b66de70809",
+      "bytes": 23793,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/artifacts/idigbio-records-puccinia-graminis-000000.json",
+      "sha256": "8cd302c25b1f3ebf9234cad340ad37ecb268dac4360c14105f3830cefcd21355",
+      "bytes": 38477,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/assertions.ndjson",
+      "sha256": "e7eaaf2c43f8e9cabc77234bfc5503412a8c767e184b7a6bbbb4309b1324146a",
+      "bytes": 23879,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/reviews.ndjson",
+      "sha256": "014c6ef2b48eedfcf68dfa35000ee91249cf0c5e16b968bf884adc656cd1eb32",
+      "bytes": 10180,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/rejections.ndjson",
+      "sha256": "cfd8021dbad1460402cb28a840b25ab8f330f671a392c49c2ce7ca18561f3320",
+      "bytes": 18956,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/outcomes.ndjson",
+      "sha256": "92988bbc12e6fc3be3734a8167d19e2128b0954670a4e7637a058fd6fc5b8cdb",
+      "bytes": 23384,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 9,
+    "candidate_records": 107,
+    "assertion_events": 10,
+    "review_events": 10,
+    "rejection_records": 24,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 9
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical preserved specimen evidence from the frozen iDigBio search index. Aggregated records may overlap GBIF and collection portals, and missing records never support absence or non-detection."
+  ],
+  "source_warnings": [
+    "The iDigBio search index is a frozen historical dataset and no longer receives source updates.",
+    "iDigBio reported source snapshot 2026-04-23T16:33:31.025Z for leucanthemum-vulgare.",
+    "iDigBio reported source snapshot 2025-03-24T18:35:34.590Z for nezara-viridula.",
+    "iDigBio reported source snapshot 2026-02-24T17:07:25.873Z for puccinia-graminis.",
+    "iDigBio reported source snapshot 2026-04-23T16:43:44.956Z for myriophyllum-spicatum."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source idigbio-preserved-specimens --state AL --pairs 01003:leucanthemum-vulgare,01005:nezara-viridula,01007:puccinia-graminis,01015:puccinia-graminis,01035:puccinia-graminis,01081:puccinia-graminis,01099:nezara-viridula,01119:myriophyllum-spicatum,01129:nezara-viridula"
+}
