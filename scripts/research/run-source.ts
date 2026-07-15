@@ -29,6 +29,10 @@ import {
   validateResearchRunInMemory,
   verifyStagedResearchRun,
 } from "@/lib/research/validate-run";
+import {
+  getStateDefinition,
+  listCountyEquivalents,
+} from "@/lib/research/geography-registry";
 
 type Candidate = {
   sourceId: string;
@@ -37,11 +41,11 @@ type Candidate = {
 };
 
 type CandidateFile = {
+  stateCode: string;
   candidates: Candidate[];
 };
 
 type Species = { id: string; scientificName: string };
-type County = { countyFips: string; name: string; stateCode: string };
 
 const ROOT = process.cwd();
 const RESEARCH_DIR = path.join(ROOT, "src/data/research");
@@ -79,9 +83,13 @@ function parseArguments(argv: string[]) {
     .map((value) => value.trim())
     .filter(Boolean);
   const startedAt = values.get("started-at")?.at(-1);
+  const candidateFileArgument = values.get("candidate-file")?.at(-1);
+  const outputRootArgument = values.get("output-root")?.at(-1);
 
   if (!sourceId) throw new Error("--source is required.");
-  if (stateCode !== "AL") throw new Error("The current runner supports --state AL only.");
+  const normalizedStateCode = stateCode.toUpperCase();
+  const state = getStateDefinition(normalizedStateCode);
+  if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state: ${stateCode}.`);
   if (!Number.isInteger(candidateLimit) || candidateLimit < 1 || candidateLimit > 100) {
     throw new Error("--candidate-limit must be an integer from 1 through 100.");
   }
@@ -89,7 +97,45 @@ function parseArguments(argv: string[]) {
     throw new Error("--started-at must be an ISO date-time when provided.");
   }
 
-  return { sourceId, stateCode, candidateLimit, pairs, startedAt };
+  const candidateFile = path.resolve(
+    ROOT,
+    candidateFileArgument ??
+      (normalizedStateCode === "AL"
+        ? "src/data/research/migration-candidates.json"
+        : `src/data/research/state-candidates/${normalizedStateCode}.json`),
+  );
+  const outputRoot = path.resolve(
+    ROOT,
+    outputRootArgument ?? "src/data/research/runs",
+  );
+  for (const [label, filepath] of [
+    ["candidate file", candidateFile],
+    ["output root", outputRoot],
+  ] as const) {
+    if (!filepath.startsWith(`${ROOT}${path.sep}`)) {
+      throw new Error(`The ${label} must remain inside the repository.`);
+    }
+  }
+  if (normalizedStateCode !== "AL" && !candidateFileArgument) {
+    throw new Error("Non-Alabama runs require an explicit --candidate-file.");
+  }
+  const sharedRunRoot = path.join(RESEARCH_DIR, "runs");
+  if (
+    outputRoot !== sharedRunRoot &&
+    !path.relative(ROOT, outputRoot).split(path.sep).join("/").includes("worker-results/")
+  ) {
+    throw new Error("A noncanonical --output-root must be inside a lease-specific worker-results path.");
+  }
+
+  return {
+    sourceId,
+    stateCode: normalizedStateCode,
+    candidateLimit,
+    pairs,
+    startedAt,
+    candidateFile,
+    outputRoot,
+  };
 }
 
 function readJson<T>(filepath: string): T {
@@ -189,12 +235,15 @@ function buildParameters(
   stateCode: string,
   requestedPairs: Array<{ countyFips: string; speciesId: string }>,
 ) {
+  const state = getStateDefinition(stateCode);
+  if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state ${stateCode}.`);
   const candidatePairs = requestedPairs.map(
     (pair) => `${pair.countyFips}:${pair.speciesId}`,
   );
   if (sourceId === gbifPreservedSpecimensAdapter.sourceId) {
     return {
       stateCode,
+      stateProvince: state.sourceStateNames.gbif,
       candidateLimit: requestedPairs.length,
       candidatePairs,
       basisOfRecord: "PRESERVED_SPECIMEN",
@@ -210,7 +259,7 @@ function buildParameters(
       candidatePairs,
       basisOfRecord: "preservedspecimen",
       country: "united states",
-      stateProvince: "alabama",
+      stateProvince: state.sourceStateNames.idigbio,
       pageLimit: 300,
       maxPagesPerSpecies: 1000,
       sortField: "uuid",
@@ -222,12 +271,21 @@ function buildParameters(
 
 function selectCandidates(
   sourceId: string,
+  stateCode: string,
+  candidateFilePath: string,
   requestedPairKeys: string[],
   limit: number,
 ) {
-  const candidates = readJson<CandidateFile>(
-    path.join(RESEARCH_DIR, "migration-candidates.json"),
-  ).candidates
+  if (!existsSync(candidateFilePath)) {
+    throw new Error(`Missing candidate file ${relativeGitPath(candidateFilePath)}.`);
+  }
+  const candidateFile = readJson<CandidateFile>(candidateFilePath);
+  if (candidateFile.stateCode !== stateCode) {
+    throw new Error(
+      `Candidate file state ${candidateFile.stateCode ?? "missing"} does not match ${stateCode}.`,
+    );
+  }
+  const candidates = candidateFile.candidates
     .filter((entry) => entry.sourceId === sourceId)
     .sort(
       (left, right) =>
@@ -251,7 +309,12 @@ function selectCandidates(
   const completedPairs = new Set(
     listImmutableResearchRuns(ROOT)
       .flatMap((bundle) => bundle.outcomes)
-      .filter((outcome) => outcome.source_id === sourceId && outcome.scope_complete)
+      .filter(
+        (outcome) =>
+          outcome.state_code === stateCode &&
+          outcome.source_id === sourceId &&
+          outcome.scope_complete,
+      )
       .map((outcome) => `${outcome.county_fips}:${outcome.species_id}`),
   );
   const pending = candidates.filter(
@@ -303,6 +366,9 @@ async function main() {
   }
   const adapterPath = path.join(ROOT, researchAdapter.module);
   const parameterSchemaPath = path.join(ROOT, researchAdapter.parameterSchema);
+  const speciesPath = path.join(ROOT, "src/data/generated/species.json");
+  const stateRegistryPath = path.join(RESEARCH_DIR, "state-registry.json");
+  const countyRegistryPath = path.join(RESEARCH_DIR, "county-equivalent-registry.json");
   if (!existsSync(parameterSchemaPath)) {
     throw new Error(`Missing registered parameter schema ${researchAdapter.parameterSchema}.`);
   }
@@ -315,10 +381,17 @@ async function main() {
     path.join(ROOT, "src/lib/research/run-files.ts"),
     path.join(ROOT, "src/lib/research/types.ts"),
     path.join(ROOT, "src/lib/research/validate-run.ts"),
+    path.join(ROOT, "src/lib/research/geography-registry.ts"),
+    speciesPath,
+    stateRegistryPath,
+    countyRegistryPath,
+    options.candidateFile,
   ]);
 
   const candidates = selectCandidates(
     options.sourceId,
+    options.stateCode,
+    options.candidateFile,
     options.pairs,
     options.candidateLimit,
   );
@@ -327,15 +400,11 @@ async function main() {
   }
 
   const speciesById = new Map(
-    readJson<Species[]>(path.join(ROOT, "src/data/generated/species.json"))
+    readJson<Species[]>(speciesPath)
       .map((entry) => [entry.id, entry]),
   );
   const countyByFips = new Map(
-    Object.values(
-      readJson<Record<string, County>>(path.join(ROOT, "src/data/generated/counties.json")),
-    )
-      .filter((entry) => entry.stateCode === options.stateCode)
-      .map((entry) => [entry.countyFips, entry]),
+    listCountyEquivalents(options.stateCode).map((entry) => [entry.countyFips, entry]),
   );
   const requestedPairs = candidates.map((candidate) => {
     const species = speciesById.get(candidate.speciesId);
@@ -344,7 +413,7 @@ async function main() {
     if (!county) throw new Error(`Unknown candidate county ${candidate.countyFips}.`);
     return {
       countyFips: county.countyFips,
-      countyName: county.name,
+      countyName: county.shortName,
       speciesId: species.id,
       scientificName: species.scientificName,
     };
@@ -364,7 +433,7 @@ async function main() {
     ? new Date(options.startedAt).toISOString()
     : new Date().toISOString();
   const runId = `${runTimestamp(startedAt)}__${options.sourceId}__${parameterHash.slice(0, 12)}`;
-  const finalDirectory = path.join(RESEARCH_DIR, "runs", runId);
+  const finalDirectory = path.join(options.outputRoot, runId);
   if (existsSync(finalDirectory)) {
     throw new Error(`Immutable run directory already exists: ${path.relative(ROOT, finalDirectory)}`);
   }
@@ -391,7 +460,7 @@ async function main() {
     ["rejections.ndjson", { contents: asNdjson(result.rejections), mediaType: "application/x-ndjson" }],
     ["outcomes.ndjson", { contents: asNdjson(result.outcomes), mediaType: "application/x-ndjson" }],
   ]);
-  const runRelativeDirectory = path.posix.join("src/data/research/runs", runId);
+  const runRelativeDirectory = relativeGitPath(finalDirectory);
   const outputs = [...outputContents.entries()].map(([filename, value]) =>
     fileReference(
       path.posix.join(runRelativeDirectory, filename),
@@ -455,7 +524,14 @@ async function main() {
     known_caveats: [source.caveat],
     source_warnings: result.warnings,
     deviations: [],
-    rerun_command: `npm run research:run -- --source ${options.sourceId} --state ${options.stateCode} --pairs ${parameters.candidatePairs.join(",")}`,
+    rerun_command: [
+      "npm run research:run --",
+      `--source ${options.sourceId}`,
+      `--state ${options.stateCode}`,
+      `--candidate-file ${relativeGitPath(options.candidateFile)}`,
+      `--output-root ${relativeGitPath(options.outputRoot)}`,
+      `--pairs ${parameters.candidatePairs.join(",")}`,
+    ].join(" "),
   };
 
   validateResearchRunInMemory({

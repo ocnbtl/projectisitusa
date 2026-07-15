@@ -20,7 +20,7 @@ If people only notice invasive species after major damage is visible, they are a
 1. Open the home page and browse the map explorer.
 2. Search for a species to view its profile page.
 3. Use the location lookup flow to jump from a ZIP code to county context.
-4. Open `/research` to inspect Alabama county-species status, source operations, evidence, and the priority queue.
+4. Open `/research` to inspect configured state research projections, source operations, evidence, protocol progress, and priority queues. Alabama is the certification baseline; Alaska, Arizona, and Arkansas are bounded research-only pilots until their evidence is integrated and release gates pass.
 5. Review local presence, impact, and action guidance for the species that matter in that area.
 
 ## Local Development
@@ -35,6 +35,10 @@ Useful verification commands:
 ```bash
 npm run check:data-integrity
 npm run check:research-integrity
+npm run check:state-research-projections
+npm run check:national-research-config
+npm run research:verify -- --state AL --as-of 2026-07-15
+npm run build:national-readiness -- --as-of 2026-07-15
 npm run typecheck
 npm run build
 ```
@@ -64,6 +68,6 @@ This project is open-sourced under the MIT License. See [LICENSE](./LICENSE).
 - Repository guidance: [AGENTS.md](./AGENTS.md)
 - Evidence research architecture: [docs/architecture/evidence-research-system.md](./docs/architecture/evidence-research-system.md)
 - County-species research workflow: [docs/research/README.md](./docs/research/README.md)
-- Next-chat handoff prompt: [docs/handoffs/NEXT-CHAT-PROMPT.md](./docs/handoffs/NEXT-CHAT-PROMPT.md)
+- Historical ownership-transfer handoff prompt: [docs/handoffs/NEXT-CHAT-PROMPT.md](./docs/handoffs/NEXT-CHAT-PROMPT.md)
 - Source inventory: [docs/source-inventory.md](./docs/source-inventory.md)
 - Profile workflow: [docs/profile-content/workflow.md](./docs/profile-content/workflow.md)

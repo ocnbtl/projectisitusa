@@ -12,11 +12,15 @@ import type {
   SourceAdapterContext,
   SourceAdapterResult,
 } from "@/lib/research/source-adapter";
+import {
+  getStateDefinition,
+  resolveCountyEquivalent,
+} from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "idigbio-preserved-specimens";
 const ADAPTER_ID = "idigbio-preserved-specimens";
-const ADAPTER_VERSION = "1.0.0";
+const ADAPTER_VERSION = "1.1.0";
 const API_BASE_URL = "https://search.idigbio.org/v2/search/records/";
 const PORTAL_RECORD_BASE_URL = "https://portal.idigbio.org/portal/records";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
@@ -29,12 +33,12 @@ const CULTIVATED_OR_CAPTIVE_PATTERN =
 const TAXON_FAILURE_PATTERN = /taxon.*(?:match|name).*(?:fail|problem|error)/i;
 
 interface IdigbioAdapterParameters {
-  stateCode: "AL";
+  stateCode: string;
   candidateLimit: number;
   candidatePairs: string[];
   basisOfRecord: "preservedspecimen";
   country: "united states";
-  stateProvince: "alabama";
+  stateProvince: string;
   pageLimit: number;
   maxPagesPerSpecies: number;
   sortField: "uuid";
@@ -44,6 +48,10 @@ interface IdigbioAdapterParameters {
 interface RequestedPair {
   countyFips: string;
   countyName: string;
+  countyLegalName: string;
+  stateCode: string;
+  stateName: string;
+  sourceStateName: string;
   speciesId: string;
   scientificName: string;
 }
@@ -142,20 +150,7 @@ function canonicalBinomial(value: string): string {
   return words.slice(0, 2).join(" ");
 }
 
-function normalizeCountyName(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[.'`()\-]/g, " ")
-    .replace(/\b(county|parish|borough|census area|municipality|city|co)\b/g, " ")
-    .replace(/\bsaint\b/g, "st")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function pairKey(pair: RequestedPair): string {
+function pairKey(pair: { countyFips: string; speciesId: string }): string {
   return `${pair.countyFips}:${pair.speciesId}`;
 }
 
@@ -189,13 +184,15 @@ function parseParameters(context: SourceAdapterContext): IdigbioAdapterParameter
   if (unsupportedKeys.length > 0) {
     throw new Error(`Unsupported iDigBio adapter parameters: ${unsupportedKeys.join(", ")}.`);
   }
-  if (parameters.stateCode !== "AL" || context.stateCode !== "AL") {
-    throw new Error("The iDigBio preserved specimen adapter currently supports Alabama only.");
+  const stateCode = String(parameters.stateCode ?? "").toUpperCase();
+  const state = getStateDefinition(stateCode);
+  if (!state?.nationalV1Scope || context.stateCode.toUpperCase() !== stateCode) {
+    throw new Error(`The iDigBio adapter received an unknown or mismatched state: ${stateCode}.`);
   }
   if (
     parameters.basisOfRecord !== "preservedspecimen" ||
     parameters.country !== "united states" ||
-    parameters.stateProvince !== "alabama" ||
+    parameters.stateProvince !== state.sourceStateNames.idigbio ||
     parameters.sortField !== "uuid" ||
     parameters.sortOrder !== "asc"
   ) {
@@ -220,12 +217,12 @@ function parseParameters(context: SourceAdapterContext): IdigbioAdapterParameter
     );
   }
   return {
-    stateCode: "AL",
+    stateCode,
     candidateLimit,
     candidatePairs,
     basisOfRecord: "preservedspecimen",
     country: "united states",
-    stateProvince: "alabama",
+    stateProvince: state.sourceStateNames.idigbio,
     pageLimit: requireInteger(parameters.pageLimit, "pageLimit", 1, 300),
     maxPagesPerSpecies: requireInteger(
       parameters.maxPagesPerSpecies,
@@ -248,13 +245,35 @@ function selectRequestedPairs(
     if (pairByKey.has(key)) {
       throw new Error(`Duplicate requested pair in adapter context: ${key}.`);
     }
-    if (!/^01[0-9]{3}$/.test(pair.countyFips)) {
-      throw new Error(`Requested pair ${key} does not use an Alabama county FIPS.`);
+    const countyResolution = resolveCountyEquivalent({
+      stateCode: parameters.stateCode,
+      countyFips: pair.countyFips,
+    });
+    if (countyResolution.status !== "resolved") {
+      throw new Error(`Requested pair ${key} has invalid geography: ${countyResolution.detail}`);
     }
-    if (!pair.countyName.trim() || canonicalBinomial(pair.scientificName).split(" ").length !== 2) {
+    const nameResolution = resolveCountyEquivalent({
+      stateCode: parameters.stateCode,
+      countyName: pair.countyName,
+      sourceId: SOURCE_ID,
+    });
+    if (
+      nameResolution.status !== "resolved" ||
+      nameResolution.county.countyFips !== countyResolution.county.countyFips
+    ) {
+      throw new Error(`Requested pair ${key} has a county name that does not match its FIPS.`);
+    }
+    if (canonicalBinomial(pair.scientificName).split(" ").length !== 2) {
       throw new Error(`Requested pair ${key} lacks an exact county name or scientific binomial.`);
     }
-    pairByKey.set(key, pair);
+    pairByKey.set(key, {
+      ...pair,
+      countyName: countyResolution.county.shortName,
+      countyLegalName: countyResolution.county.legalName,
+      stateCode: parameters.stateCode,
+      stateName: countyResolution.county.stateName,
+      sourceStateName: parameters.stateProvince,
+    });
   }
   return parameters.candidatePairs.map((key) => {
     const pair = pairByKey.get(key);
@@ -513,7 +532,7 @@ function makeRejection(
     candidate_taxon: candidateTaxonName,
     candidate_geography: geography,
     normalized_target: {
-      state_code: "AL",
+      state_code: pair.stateCode,
       species_id: pair.speciesId,
       county_fips: targetCountyFips,
     },
@@ -583,10 +602,12 @@ function occurrenceRejection(
       notes: [`The indexed country is ${terms.country ?? "missing"}, not United States.`],
     };
   }
-  if (canonicalText(terms.stateprovince ?? "") !== "alabama") {
+  if (canonicalText(terms.stateprovince ?? "") !== canonicalText(pair.sourceStateName)) {
     return {
       reason: "outside-scope",
-      notes: [`The indexed stateprovince is ${terms.stateprovince ?? "missing"}, not Alabama.`],
+      notes: [
+        `The indexed stateprovince is ${terms.stateprovince ?? "missing"}, not ${pair.sourceStateName}.`,
+      ],
     };
   }
   const rawCountry = rawText(record, "dwc:country");
@@ -597,10 +618,12 @@ function occurrenceRejection(
     };
   }
   const rawState = rawText(record, "dwc:stateProvince");
-  if (rawState && canonicalText(rawState) !== "alabama") {
+  if (rawState && canonicalText(rawState) !== canonicalText(pair.sourceStateName)) {
     return {
       reason: "source-contradiction",
-      notes: [`Provider stateProvince ${rawState} contradicts the Alabama index term.`],
+      notes: [
+        `Provider stateProvince ${rawState} contradicts the ${pair.sourceStateName} index term.`,
+      ],
     };
   }
   if (!terms.county?.trim()) {
@@ -611,25 +634,43 @@ function occurrenceRejection(
       ],
     };
   }
-  if (normalizeCountyName(terms.county) !== normalizeCountyName(pair.countyName)) {
+  const indexedCountyResolution = resolveCountyEquivalent({
+    stateCode: pair.stateCode,
+    countyName: terms.county,
+    sourceId: SOURCE_ID,
+  });
+  if (indexedCountyResolution.status !== "resolved") {
+    return {
+      reason: "geography-ambiguous",
+      notes: [indexedCountyResolution.detail],
+    };
+  }
+  if (indexedCountyResolution.county.countyFips !== pair.countyFips) {
     return {
       reason: "outside-scope",
       notes: [
-        `The indexed county ${terms.county} does not exactly resolve to requested ${pair.countyName} County.`,
+        `The indexed county ${terms.county} resolves to ${indexedCountyResolution.county.countyFips}, not requested ${pair.countyFips}.`,
       ],
     };
   }
   const rawCounty = rawText(record, "dwc:county");
-  if (
-    rawCounty &&
-    normalizeCountyName(rawCounty) !== normalizeCountyName(terms.county)
-  ) {
-    return {
-      reason: "source-contradiction",
-      notes: [
-        `Provider county ${rawCounty} contradicts normalized iDigBio county ${terms.county}.`,
-      ],
-    };
+  if (rawCounty) {
+    const rawCountyResolution = resolveCountyEquivalent({
+      stateCode: pair.stateCode,
+      countyName: rawCounty,
+      sourceId: SOURCE_ID,
+    });
+    if (
+      rawCountyResolution.status !== "resolved" ||
+      rawCountyResolution.county.countyFips !== indexedCountyResolution.county.countyFips
+    ) {
+      return {
+        reason: "source-contradiction",
+        notes: [
+          `Provider county ${rawCounty} contradicts normalized iDigBio county ${terms.county}.`,
+        ],
+      };
+    }
   }
   if (occurrenceLooksCultivatedOrCaptive(record)) {
     return {
@@ -791,7 +832,7 @@ function makeAssertionAndReview(
     actor_id: `${ADAPTER_ID}@${ADAPTER_VERSION}`,
     run_id: context.runId,
     source_id: SOURCE_ID,
-    state_code: "AL",
+    state_code: pair.stateCode,
     county_fips: pair.countyFips,
     species_id: pair.speciesId,
     claim_type: "recorded-present",
@@ -810,15 +851,15 @@ function makeAssertionAndReview(
     },
     geography_match: {
       method:
-        "Exact normalized Alabama county text matched to requested local county FIPS without coordinate-derived county resolution",
-      source_state: record.indexTerms?.stateprovince ?? "alabama",
+        "Registered exact county-equivalent name matched to requested Census county FIPS without coordinate-derived resolution",
+      source_state: record.indexTerms?.stateprovince ?? pair.sourceStateName,
       source_county: sourceCounty,
       county_fips: pair.countyFips,
     },
     temporal_scope: sourceDate
       ? `Preserved specimen event date reported through iDigBio as ${sourceDate}.`
       : "Historical preserved specimen record with no source event date available.",
-    spatial_scope: `Specimen locality reported within ${pair.countyName} County, Alabama. This does not imply countywide abundance or current distribution.`,
+    spatial_scope: `Specimen locality reported within ${pair.countyLegalName}, ${pair.stateName}. This does not imply countywide abundance or current distribution.`,
     survey_scope: null,
     normalized_payload_hash: normalizedPayloadHash,
     caveats: [
@@ -863,7 +904,7 @@ function makeAssertionAndReview(
     actor_id: `${ADAPTER_ID}@${ADAPTER_VERSION}`,
     run_id: context.runId,
     source_id: SOURCE_ID,
-    state_code: "AL",
+    state_code: pair.stateCode,
     county_fips: pair.countyFips,
     species_id: pair.speciesId,
     references: { assertion_event_id: eventId },
@@ -907,7 +948,7 @@ function makeOutcome(
     }),
     run_id: context.runId,
     source_id: SOURCE_ID,
-    state_code: "AL",
+    state_code: pair.stateCode,
     county_fips: pair.countyFips,
     species_id: pair.speciesId,
     status,
@@ -974,7 +1015,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           recordedAt,
           "adapter:artifact-byte-limit-exceeded",
           pair.scientificName,
-          `${pair.countyName} County, Alabama`,
+          `${pair.countyLegalName}, ${pair.stateName}`,
           "record-failed",
           ["The adapter stopped before this pair after reaching its retained artifact budget."],
           { resourceBudgetReached: true },
@@ -1222,12 +1263,17 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     const seenSharedRejectionIds = new Set<string>();
     for (const page of cachedPages) {
       for (const [recordIndex, record] of page.records.entries()) {
-        if (record.indexTerms?.county?.trim()) continue;
+        const sharedCountyResolution = resolveCountyEquivalent({
+          stateCode: representativePair.stateCode,
+          countyName: record.indexTerms?.county,
+          sourceId: SOURCE_ID,
+        });
+        if (sharedCountyResolution.status === "resolved") continue;
         const fallbackLocator = `${page.queryUrl}#result-${recordIndex}`;
         const rejectionResult = occurrenceRejection(record, representativePair);
         if (!rejectionResult) {
           throw new Error(
-            `County-free iDigBio record ${recordLocator(record, fallbackLocator)} unexpectedly passed validation.`,
+            `Unresolved-county iDigBio record ${recordLocator(record, fallbackLocator)} unexpectedly passed validation.`,
           );
         }
         const recordset = record.indexTerms?.recordset?.toLowerCase() ?? "";
@@ -1265,7 +1311,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           recordedAt,
           scopeFailure.locator,
           pair.scientificName,
-          `${pair.countyName} County, Alabama`,
+          `${pair.countyLegalName}, ${pair.stateName}`,
           "record-failed",
           scopeFailure.notes,
           scopeFailure.identityPayload,
@@ -1277,10 +1323,14 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
 
       for (const page of cachedPages) {
         for (const [recordIndex, record] of page.records.entries()) {
-          const indexedCounty = record.indexTerms?.county;
+          const indexedCountyResolution = resolveCountyEquivalent({
+            stateCode: pair.stateCode,
+            countyName: record.indexTerms?.county,
+            sourceId: SOURCE_ID,
+          });
           if (
-            !indexedCounty?.trim() ||
-            normalizeCountyName(indexedCounty) !== normalizeCountyName(pair.countyName)
+            indexedCountyResolution.status !== "resolved" ||
+            indexedCountyResolution.county.countyFips !== pair.countyFips
           ) {
             continue;
           }

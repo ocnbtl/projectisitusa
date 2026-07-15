@@ -22,6 +22,15 @@ const ROOT = process.cwd();
 // This database is a disposable query index. Versioned inputs and compiled projections remain authoritative.
 const OUTPUT = path.join(ROOT, ".cache/research/isitusa.sqlite");
 
+function parseState(argv: string[]) {
+  if (argv.length !== 2 || argv[0] !== "--state" || !/^[A-Za-z]{2}$/.test(argv[1] ?? "")) {
+    throw new Error("research:index requires --state <XX>.");
+  }
+  return argv[1].toUpperCase();
+}
+
+const STATE_CODE = parseState(process.argv.slice(2));
+
 function readJson<T>(filepath: string): T {
   return JSON.parse(readFileSync(filepath, "utf8")) as T;
 }
@@ -69,18 +78,20 @@ rmSync(OUTPUT, { force: true });
 const registry = readJson<ResearchSourceRegistry>(path.join(ROOT, "src/data/research/source-registry.json"));
 const bootstrapEvidence = readNdjson<EvidenceAssertion>(
   path.join(ROOT, "src/data/research/evidence-assertions.ndjson"),
-);
-const runs = readJson<RunsFile>(path.join(ROOT, "src/data/research/research-runs.json")).runs;
-const immutableRuns = listImmutableResearchRuns(ROOT);
+).filter((entry) => entry.stateCode === STATE_CODE);
+const runs = readJson<RunsFile>(path.join(ROOT, "src/data/research/research-runs.json")).runs
+  .filter((entry) => entry.stateCode === STATE_CODE);
+const immutableRuns = listImmutableResearchRuns(ROOT)
+  .filter((bundle) => bundle.receipt.requested_scope.state_code === STATE_CODE);
 const runAssertions = immutableRuns.flatMap((bundle) => bundle.assertions);
 const runReviewEvents = immutableRuns.flatMap((bundle) => bundle.reviews);
 const laterReviewEvents = readRunNdjson<EvidenceReviewEvent>(
   path.join(ROOT, "src/data/research/review-events.ndjson"),
-);
+).filter((entry) => entry.state_code === STATE_CODE);
 const runRejections = immutableRuns.flatMap((bundle) => bundle.rejections);
 const laterRejections = readRunNdjson<ResearchRejectionRecord>(
   path.join(ROOT, "src/data/research/rejections.ndjson"),
-);
+).filter((entry) => entry.normalized_target.state_code === STATE_CODE);
 const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
 const reviewRecords = mergeOriginRecords(
   [
@@ -96,14 +107,15 @@ const rejectionRecords = mergeOriginRecords(
   ],
   (record) => record.rejection_id,
 );
-const countyDir = path.join(ROOT, "public/generated/research/AL/counties");
+const countyDir = path.join(ROOT, `public/generated/research/${STATE_CODE}/counties`);
 const countyFiles = readdirSync(countyDir).filter((filename) => filename.endsWith(".json")).sort();
 const stateSummary = readJson<{
   asOf?: string;
   generatedAt: string;
   stateCode: string;
   summary: Record<string, unknown>;
-}>(path.join(ROOT, "public/generated/research/AL/summary.json"));
+}>(path.join(ROOT, `public/generated/research/${STATE_CODE}/summary.json`));
+if (stateSummary.stateCode !== STATE_CODE) throw new Error(`Research summary state ${stateSummary.stateCode} does not match ${STATE_CODE}.`);
 
 const db = new DatabaseSync(OUTPUT);
 db.exec(`
@@ -691,4 +703,4 @@ const counts = {
 };
 db.close();
 
-console.log(JSON.stringify({ output: path.relative(ROOT, OUTPUT), ...counts }, null, 2));
+console.log(JSON.stringify({ output: path.relative(ROOT, OUTPUT), stateCode: STATE_CODE, ...counts }, null, 2));

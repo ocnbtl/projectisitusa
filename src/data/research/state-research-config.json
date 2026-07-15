@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "states": [
+    {
+      "stateCode": "AL",
+      "mode": "authoritative",
+      "speciesScope": {
+        "mode": "catalog-all",
+        "applicabilityPath": null,
+        "undeterminedSpeciesPolicy": "included-grandfathered-baseline"
+      },
+      "bootstrapLedgerAllowed": true,
+      "compatibilityPublication": true,
+      "migrationCandidatesPath": "src/data/research/migration-candidates.json",
+      "publicResearchProjection": true
+    },
+    {
+      "stateCode": "AK",
+      "mode": "research-only",
+      "speciesScope": {
+        "mode": "explicit",
+        "applicabilityPath": "src/data/research/state-applicability/AK.json",
+        "undeterminedSpeciesPolicy": "excluded"
+      },
+      "bootstrapLedgerAllowed": false,
+      "compatibilityPublication": false,
+      "migrationCandidatesPath": "src/data/research/state-candidates/AK.json",
+      "publicResearchProjection": true
+    },
+    {
+      "stateCode": "AZ",
+      "mode": "research-only",
+      "speciesScope": {
+        "mode": "explicit",
+        "applicabilityPath": "src/data/research/state-applicability/AZ.json",
+        "undeterminedSpeciesPolicy": "excluded"
+      },
+      "bootstrapLedgerAllowed": false,
+      "compatibilityPublication": false,
+      "migrationCandidatesPath": "src/data/research/state-candidates/AZ.json",
+      "publicResearchProjection": true
+    },
+    {
+      "stateCode": "AR",
+      "mode": "research-only",
+      "speciesScope": {
+        "mode": "explicit",
+        "applicabilityPath": "src/data/research/state-applicability/AR.json",
+        "undeterminedSpeciesPolicy": "excluded"
+      },
+      "bootstrapLedgerAllowed": false,
+      "compatibilityPublication": false,
+      "migrationCandidatesPath": "src/data/research/state-candidates/AR.json",
+      "publicResearchProjection": true
+    }
+  ]
+}

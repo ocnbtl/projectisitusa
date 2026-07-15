@@ -3,11 +3,15 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 
-function parseAsOf(argv: string[]) {
-  if (argv.length !== 2 || argv[0] !== "--as-of" || !/^\d{4}-\d{2}-\d{2}$/.test(argv[1])) {
-    throw new Error("research:refresh requires --as-of <YYYY-MM-DD>.");
+function parseOptions(argv: string[]) {
+  const stateIndex = argv.indexOf("--state");
+  const asOfIndex = argv.indexOf("--as-of");
+  const stateCode = argv[stateIndex + 1]?.toUpperCase();
+  const asOf = argv[asOfIndex + 1];
+  if (argv.length !== 4 || !/^[A-Z]{2}$/.test(stateCode ?? "") || !/^\d{4}-\d{2}-\d{2}$/.test(asOf ?? "")) {
+    throw new Error("research:refresh requires --state <XX> --as-of <YYYY-MM-DD>.");
   }
-  return argv[1];
+  return { stateCode: stateCode!, asOf: asOf! };
 }
 
 function runScript(relativePath: string, arguments_: string[] = []) {
@@ -17,6 +21,6 @@ function runScript(relativePath: string, arguments_: string[] = []) {
   });
 }
 
-const asOf = parseAsOf(process.argv.slice(2));
-runScript("scripts/compile-research-index.ts", ["--as-of", asOf]);
-runScript("scripts/build-research-db.ts");
+const { stateCode, asOf } = parseOptions(process.argv.slice(2));
+runScript("scripts/compile-research-index.ts", ["--state", stateCode, "--as-of", asOf]);
+runScript("scripts/build-research-db.ts", ["--state", stateCode]);

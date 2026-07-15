@@ -12,11 +12,15 @@ import type {
   SourceAdapterContext,
   SourceAdapterResult,
 } from "@/lib/research/source-adapter";
+import {
+  getStateDefinition,
+  resolveCountyEquivalent,
+} from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 const ADAPTER_ID = "gbif-preserved-specimens";
-const ADAPTER_VERSION = "1.0.2";
+const ADAPTER_VERSION = "1.1.0";
 const GBIF_API_BASE_URL = "https://api.gbif.org/v1";
 const GBIF_OCCURRENCE_BASE_URL = "https://www.gbif.org/occurrence";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
@@ -41,7 +45,8 @@ const GEOSPATIAL_CONTRADICTION_ISSUES = new Set([
 ]);
 
 interface GbifAdapterParameters {
-  stateCode: "AL";
+  stateCode: string;
+  stateProvince: string;
   candidateLimit: number;
   candidatePairs: string[];
   basisOfRecord: "PRESERVED_SPECIMEN";
@@ -53,6 +58,10 @@ interface GbifAdapterParameters {
 interface RequestedPair {
   countyFips: string;
   countyName: string;
+  countyLegalName: string;
+  stateCode: string;
+  stateName: string;
+  sourceStateName: string;
   speciesId: string;
   scientificName: string;
 }
@@ -152,20 +161,7 @@ function canonicalBinomial(value: string): string {
   return words.slice(0, 2).join(" ");
 }
 
-function normalizeCountyName(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[.'`()\-]/g, " ")
-    .replace(/\b(county|parish|borough|census area|municipality|city|co)\b/g, " ")
-    .replace(/\bsaint\b/g, "st")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function pairKey(pair: RequestedPair): string {
+function pairKey(pair: { countyFips: string; speciesId: string }): string {
   return `${pair.countyFips}:${pair.speciesId}`;
 }
 
@@ -185,6 +181,7 @@ function parseParameters(context: SourceAdapterContext): GbifAdapterParameters {
   const parameters = context.parameters;
   const expectedKeys = new Set([
     "stateCode",
+    "stateProvince",
     "candidateLimit",
     "candidatePairs",
     "basisOfRecord",
@@ -196,8 +193,15 @@ function parseParameters(context: SourceAdapterContext): GbifAdapterParameters {
   if (unsupportedKeys.length > 0) {
     throw new Error(`Unsupported GBIF adapter parameters: ${unsupportedKeys.join(", ")}.`);
   }
-  if (parameters.stateCode !== "AL" || context.stateCode !== "AL") {
-    throw new Error("The GBIF preserved specimen adapter currently supports Alabama only.");
+  const stateCode = String(parameters.stateCode ?? "").toUpperCase();
+  const state = getStateDefinition(stateCode);
+  if (!state?.nationalV1Scope || context.stateCode.toUpperCase() !== stateCode) {
+    throw new Error(`The GBIF adapter received an unknown or mismatched state: ${stateCode}.`);
+  }
+  if (parameters.stateProvince !== state.sourceStateNames.gbif) {
+    throw new Error(
+      `stateProvince must match the registered GBIF state name ${state.sourceStateNames.gbif}.`,
+    );
   }
   if (parameters.basisOfRecord !== "PRESERVED_SPECIMEN") {
     throw new Error("basisOfRecord must be PRESERVED_SPECIMEN.");
@@ -224,7 +228,8 @@ function parseParameters(context: SourceAdapterContext): GbifAdapterParameters {
     );
   }
   return {
-    stateCode: "AL",
+    stateCode,
+    stateProvince: state.sourceStateNames.gbif,
     candidateLimit,
     candidatePairs,
     basisOfRecord: "PRESERVED_SPECIMEN",
@@ -249,13 +254,35 @@ function selectRequestedPairs(
     if (pairByKey.has(key)) {
       throw new Error(`Duplicate requested pair in adapter context: ${key}.`);
     }
-    if (!/^01[0-9]{3}$/.test(pair.countyFips)) {
-      throw new Error(`Requested pair ${key} does not use an Alabama county FIPS.`);
+    const countyResolution = resolveCountyEquivalent({
+      stateCode: parameters.stateCode,
+      countyFips: pair.countyFips,
+    });
+    if (countyResolution.status !== "resolved") {
+      throw new Error(`Requested pair ${key} has invalid geography: ${countyResolution.detail}`);
     }
-    if (!pair.countyName.trim() || canonicalBinomial(pair.scientificName).split(" ").length !== 2) {
+    const nameResolution = resolveCountyEquivalent({
+      stateCode: parameters.stateCode,
+      countyName: pair.countyName,
+      sourceId: SOURCE_ID,
+    });
+    if (
+      nameResolution.status !== "resolved" ||
+      nameResolution.county.countyFips !== countyResolution.county.countyFips
+    ) {
+      throw new Error(`Requested pair ${key} has a county name that does not match its FIPS.`);
+    }
+    if (canonicalBinomial(pair.scientificName).split(" ").length !== 2) {
       throw new Error(`Requested pair ${key} lacks an exact county name or scientific binomial.`);
     }
-    pairByKey.set(key, pair);
+    pairByKey.set(key, {
+      ...pair,
+      countyName: countyResolution.county.shortName,
+      countyLegalName: countyResolution.county.legalName,
+      stateCode: parameters.stateCode,
+      stateName: countyResolution.county.stateName,
+      sourceStateName: parameters.stateProvince,
+    });
   }
   return parameters.candidatePairs.map((key) => {
     const pair = pairByKey.get(key);
@@ -416,7 +443,7 @@ function occurrenceSearchUrl(
 ): string {
   const url = new URL(`${GBIF_API_BASE_URL}/occurrence/search`);
   url.searchParams.set("country", "US");
-  url.searchParams.set("stateProvince", "Alabama");
+  url.searchParams.set("stateProvince", parameters.stateProvince);
   url.searchParams.set("basisOfRecord", parameters.basisOfRecord);
   url.searchParams.set("occurrenceStatus", parameters.occurrenceStatus);
   url.searchParams.set("taxonKey", String(speciesKey));
@@ -524,7 +551,7 @@ function makeRejection(
     candidate_taxon: candidateTaxonName,
     candidate_geography: geography,
     normalized_target: {
-      state_code: "AL",
+      state_code: pair.stateCode,
       species_id: pair.speciesId,
       county_fips: targetCountyFips,
     },
@@ -595,11 +622,11 @@ function occurrenceRejection(
       notes: [`The record countryCode is ${record.countryCode ?? "missing"}, not US.`],
     };
   }
-  if (canonicalText(record.stateProvince ?? "") !== "alabama") {
+  if (canonicalText(record.stateProvince ?? "") !== canonicalText(pair.sourceStateName)) {
     return {
       reason: "outside-scope",
       notes: [
-        `The record stateProvince is ${record.stateProvince ?? "missing"}, not explicit Alabama.`,
+        `The record stateProvince is ${record.stateProvince ?? "missing"}, not explicit ${pair.sourceStateName}.`,
       ],
     };
   }
@@ -609,11 +636,25 @@ function occurrenceRejection(
       notes: ["The record does not contain explicit county text."],
     };
   }
-  if (normalizeCountyName(record.county) !== normalizeCountyName(pair.countyName)) {
+  const countyResolution = resolveCountyEquivalent({
+    stateCode: pair.stateCode,
+    countyName: record.county,
+    sourceId: SOURCE_ID,
+  });
+  if (countyResolution.status !== "resolved") {
+    return {
+      reason:
+        countyResolution.reasonCode === "missing-geography"
+          ? "geography-missing"
+          : "geography-ambiguous",
+      notes: [countyResolution.detail],
+    };
+  }
+  if (countyResolution.county.countyFips !== pair.countyFips) {
     return {
       reason: "outside-scope",
       notes: [
-        `The record county ${record.county} does not exactly resolve to requested ${pair.countyName} County.`,
+        `The record county ${record.county} resolves to ${countyResolution.county.countyFips}, not requested ${pair.countyFips}.`,
       ],
     };
   }
@@ -753,7 +794,7 @@ function makeAssertionAndReview(
     actor_id: `${ADAPTER_ID}@${ADAPTER_VERSION}`,
     run_id: context.runId,
     source_id: SOURCE_ID,
-    state_code: "AL",
+    state_code: pair.stateCode,
     county_fips: pair.countyFips,
     species_id: pair.speciesId,
     claim_type: "recorded-present",
@@ -770,15 +811,15 @@ function makeAssertionAndReview(
       source_taxon_key: String(match.speciesKey),
     },
     geography_match: {
-      method: "Exact normalized Alabama county text matched to requested local county FIPS",
-      source_state: record.stateProvince ?? "Alabama",
+      method: "Registered exact county-equivalent name matched to requested Census county FIPS",
+      source_state: record.stateProvince ?? pair.sourceStateName,
       source_county: record.county ?? pair.countyName,
       county_fips: pair.countyFips,
     },
     temporal_scope: sourceDate
       ? `Preserved specimen event date reported by GBIF as ${sourceDate}.`
       : "Historical preserved specimen record with no source event date available.",
-    spatial_scope: `Specimen locality reported within ${pair.countyName} County, Alabama. This does not imply countywide abundance or current distribution.`,
+    spatial_scope: `Specimen locality reported within ${pair.countyLegalName}, ${pair.stateName}. This does not imply countywide abundance or current distribution.`,
     survey_scope: null,
     normalized_payload_hash: normalizedPayloadHash,
     caveats: [
@@ -807,7 +848,7 @@ function makeAssertionAndReview(
     actor_id: `${ADAPTER_ID}@${ADAPTER_VERSION}`,
     run_id: context.runId,
     source_id: SOURCE_ID,
-    state_code: "AL",
+    state_code: pair.stateCode,
     county_fips: pair.countyFips,
     species_id: pair.speciesId,
     references: { assertion_event_id: eventId },
@@ -851,7 +892,7 @@ function makeOutcome(
     }),
     run_id: context.runId,
     source_id: SOURCE_ID,
-    state_code: "AL",
+    state_code: pair.stateCode,
     county_fips: pair.countyFips,
     species_id: pair.speciesId,
     status,
@@ -917,7 +958,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           recordedAt,
           "adapter:artifact-byte-limit-exceeded",
           pair.scientificName,
-          `${pair.countyName} County, Alabama`,
+          `${pair.countyLegalName}, ${pair.stateName}`,
           "record-failed",
           ["The adapter stopped before this pair after reaching its retained artifact budget."],
           { resourceBudgetReached: true },
@@ -954,7 +995,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           matchResult.retrievedAt,
           matchUrl,
           pair.scientificName,
-          `${pair.countyName} County, Alabama`,
+          `${pair.countyLegalName}, ${pair.stateName}`,
           "record-failed",
           ["The GBIF species match request did not return a usable response."],
           { matchUrl, requestFailed: true },
@@ -990,7 +1031,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           matchResult.retrievedAt,
           matchUrl,
           pair.scientificName,
-          `${pair.countyName} County, Alabama`,
+          `${pair.countyLegalName}, ${pair.stateName}`,
           matchValidation.reason,
           matchValidation.notes,
           matchResult.data,
@@ -1301,7 +1342,12 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     const seenSharedRejectionIds = new Set<string>();
     for (const page of cachedPages) {
       for (const [recordIndex, record] of page.records.entries()) {
-        if (record.county?.trim()) continue;
+        const sharedCountyResolution = resolveCountyEquivalent({
+          stateCode: representativePair.stateCode,
+          countyName: record.county,
+          sourceId: SOURCE_ID,
+        });
+        if (sharedCountyResolution.status === "resolved") continue;
         const fallbackLocator = `${page.queryUrl}#result-${recordIndex}`;
         const rejectionResult = occurrenceRejection(
           record,
@@ -1310,7 +1356,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         );
         if (!rejectionResult) {
           throw new Error(
-            `County-free GBIF record ${recordLocator(record, fallbackLocator)} unexpectedly passed validation.`,
+            `Unresolved-county GBIF record ${recordLocator(record, fallbackLocator)} unexpectedly passed validation.`,
           );
         }
         const rejection = makeRejection(
@@ -1343,7 +1389,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           recordedAt,
           scopeFailure.locator,
           pair.scientificName,
-          `${pair.countyName} County, Alabama`,
+          `${pair.countyLegalName}, ${pair.stateName}`,
           "record-failed",
           scopeFailure.notes,
           scopeFailure.identityPayload,
@@ -1356,7 +1402,15 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
       for (const page of cachedPages) {
         for (const [recordIndex, record] of page.records.entries()) {
           if (!record.county?.trim()) continue;
-          if (normalizeCountyName(record.county) !== normalizeCountyName(pair.countyName)) {
+          const recordCountyResolution = resolveCountyEquivalent({
+            stateCode: pair.stateCode,
+            countyName: record.county,
+            sourceId: SOURCE_ID,
+          });
+          if (
+            recordCountyResolution.status !== "resolved" ||
+            recordCountyResolution.county.countyFips !== pair.countyFips
+          ) {
             continue;
           }
           const fallbackLocator = `${page.queryUrl}#result-${recordIndex}`;

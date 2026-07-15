@@ -28,12 +28,33 @@ import {
   useState,
 } from "react";
 
+export interface ResearchStateOption {
+  stateCode: string;
+  stateName: string;
+}
+
+interface ResearchProjectionScope {
+  publicationMode: "authoritative" | "research-only";
+  speciesMode: "catalog-all" | "explicit";
+  certificationScope: "state-baseline" | "bounded-pilot";
+  applicabilityPath: string | null;
+  applicabilityAsOf: string | null;
+  applicableSpeciesCount: number;
+  undeterminedSpeciesPolicy: "excluded" | "included-grandfathered-baseline";
+  compatibilityPublication: boolean;
+  protocolModel:
+    | "explicit-source-species-legacy-migration"
+    | "explicit-source-species-active";
+}
+
 export interface ResearchSummaryFile {
   schemaVersion: string | number;
   stateCode: string;
   stateName: string;
+  asOf: string;
   generatedAt: string;
   sourceSnapshotDate: string;
+  scope: ResearchProjectionScope;
   summary: {
     speciesCount: number;
     countyCount: number;
@@ -85,7 +106,9 @@ interface CountyResearchFile {
   stateCode: string;
   countyFips: string;
   countyName: string;
+  asOf: string;
   generatedAt: string;
+  scope: ResearchProjectionScope;
   summary: {
     verifiedPresent: number;
     verifiedAbsent: number;
@@ -779,7 +802,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
     () =>
       [...summary.counties]
         .sort((left, right) => left.name.localeCompare(right.name))
-        .map((county) => ({ value: county.countyFips, label: `${county.name} County` })),
+        .map((county) => ({ value: county.countyFips, label: county.name })),
     [summary.counties],
   );
   const [selectedCountyFips, setSelectedCountyFips] = useState(
@@ -817,7 +840,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
       try {
         const response = await fetch(
-          `/generated/research/AL/counties/${encodeURIComponent(selectedCountyFips)}.json`,
+          `/generated/research/${encodeURIComponent(summary.stateCode)}/counties/${encodeURIComponent(selectedCountyFips)}.json`,
           { cache: "no-store", signal: controller.signal },
         );
         if (!response.ok) {
@@ -831,8 +854,14 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
         if (data.countyFips !== selectedCountyFips) {
           throw new Error("County file does not match the selected county.");
         }
+        if (data.stateCode !== summary.stateCode) {
+          throw new Error("County file does not match the selected state.");
+        }
         if (String(data.schemaVersion) !== String(summary.schemaVersion)) {
           throw new Error("County file schema does not match the state summary.");
+        }
+        if (data.asOf !== summary.asOf || JSON.stringify(data.scope) !== JSON.stringify(summary.scope)) {
+          throw new Error("County file scope does not match the state summary.");
         }
 
         setCountyData(data);
@@ -848,7 +877,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
 
     void loadCounty();
     return () => controller.abort();
-  }, [reloadKey, selectedCountyFips, summary.schemaVersion]);
+  }, [reloadKey, selectedCountyFips, summary.asOf, summary.schemaVersion, summary.scope, summary.stateCode]);
 
   useEffect(() => {
     setPage(1);
@@ -958,7 +987,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
       <div className="border-b border-[var(--border)] py-5">
         <div className="max-w-sm">
           <SelectField
-            label="County"
+            label="County or equivalent"
             value={selectedCountyFips}
             options={countyOptions}
             onChange={setSelectedCountyFips}
@@ -1003,7 +1032,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                   id="county-research-heading"
                   className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--foreground)]"
                 >
-                  {countyData.countyName} County
+                  {countyData.countyName}
                 </h2>
                 <p className="mt-1 text-xs text-[var(--muted)]">
                   FIPS {countyData.countyFips} | Generated{" "}
@@ -1148,6 +1177,10 @@ function SourceOperationsView({ summary }: { summary: ResearchSummaryFile }) {
           </h2>
           <p className="mt-1 text-sm text-[var(--muted)]">
             {formatNumber(sources.length)} of {formatNumber(summary.sources.length)} sources visible
+          </p>
+          <p className="mt-2 max-w-3xl text-xs leading-5 text-[var(--muted)]">
+            These rows describe the global source registry. Operational status does not establish
+            source-species applicability or protocol completion for {summary.stateName}.
           </p>
         </div>
       </div>
@@ -1402,11 +1435,16 @@ function QueueView({ summary }: { summary: ResearchSummaryFile }) {
   );
 }
 
-function isResearchSummaryFile(value: unknown): value is ResearchSummaryFile {
+function isResearchSummaryFile(
+  value: unknown,
+  expectedStateCode: string,
+): value is ResearchSummaryFile {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<ResearchSummaryFile>;
   return (
-    candidate.stateCode === "AL" &&
+    candidate.stateCode === expectedStateCode &&
+    typeof candidate.asOf === "string" &&
+    Boolean(candidate.scope) &&
     Boolean(candidate.summary) &&
     Array.isArray(candidate.counties) &&
     Array.isArray(candidate.sources) &&
@@ -1414,11 +1452,19 @@ function isResearchSummaryFile(value: unknown): value is ResearchSummaryFile {
   );
 }
 
-function ResearchControlCenterContent({ summary }: { summary: ResearchSummaryFile }) {
+function ResearchControlCenterContent({
+  summary,
+  availableStates,
+  onStateChange,
+}: {
+  summary: ResearchSummaryFile;
+  availableStates: ResearchStateOption[];
+  onStateChange: (stateCode: string) => void;
+}) {
   const [activeView, setActiveView] = useState<ControlCenterView>("county");
   const stateMetrics = [
     ["Species", formatNumber(summary.summary.speciesCount)],
-    ["Counties", formatNumber(summary.summary.countyCount)],
+    ["County equivalents", formatNumber(summary.summary.countyCount)],
     ["Total pairs", formatNumber(summary.summary.totalPairs)],
     ["Verified present", formatNumber(summary.summary.verifiedPresent)],
     ["Verified absent", formatNumber(summary.summary.verifiedAbsent)],
@@ -1447,12 +1493,42 @@ function ResearchControlCenterContent({ summary }: { summary: ResearchSummaryFil
             </p>
           </div>
           <div className="text-xs leading-5 text-[var(--muted)] sm:text-right">
-            <p>Source snapshot {formatDate(summary.sourceSnapshotDate)}</p>
+            <div className="mb-3 min-w-52 text-left sm:ml-auto">
+              <SelectField
+                label="State research projection"
+                value={summary.stateCode}
+                options={availableStates.map((entry) => ({
+                  value: entry.stateCode,
+                  label: `${entry.stateName} (${entry.stateCode})`,
+                }))}
+                onChange={onStateChange}
+              />
+            </div>
+            <p>Research as of {formatDate(summary.asOf)}</p>
+            <p>Registry snapshot {formatDate(summary.sourceSnapshotDate)}</p>
             <p>Generated {formatTimestamp(summary.generatedAt)}</p>
             <p>Schema {String(summary.schemaVersion)}</p>
           </div>
         </div>
       </header>
+
+      <div
+        className={`border-b px-4 py-3 text-sm leading-6 ${
+          summary.scope.certificationScope === "bounded-pilot"
+            ? "border-amber-500/30 bg-amber-500/10 text-amber-950 dark:text-amber-200"
+            : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)]"
+        }`}
+      >
+        {summary.scope.certificationScope === "bounded-pilot" ? (
+          <p>
+            <strong>Research-only bounded pilot.</strong> This projection covers {formatNumber(summary.scope.applicableSpeciesCount)} explicitly applicable species across {formatNumber(summary.summary.countyCount)} county equivalents. It does not publish to the normal county explorer and is not a certified state result.
+          </p>
+        ) : (
+          <p>
+            <strong className="text-[var(--foreground)]">State baseline projection.</strong> Public parity is required, but certification readiness remains a separate gate.
+          </p>
+        )}
+      </div>
 
       <dl className="grid grid-cols-2 divide-x divide-y divide-[var(--border)] border-b border-[var(--border)] sm:grid-cols-3 lg:grid-cols-6">
         {stateMetrics.map(([label, value]) => (
@@ -1501,10 +1577,33 @@ function ResearchControlCenterContent({ summary }: { summary: ResearchSummaryFil
   );
 }
 
-export function ResearchControlCenter() {
+export function ResearchControlCenter({
+  availableStates,
+}: {
+  availableStates: ResearchStateOption[];
+}) {
+  const allowedStateCodes = useMemo(
+    () => new Set(availableStates.map((entry) => entry.stateCode)),
+    [availableStates],
+  );
+  const defaultStateCode = availableStates[0]?.stateCode ?? "AL";
+  const [selectedStateCode, setSelectedStateCode] = useState(defaultStateCode);
   const [summary, setSummary] = useState<ResearchSummaryFile | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("state")?.toUpperCase();
+    if (requested && allowedStateCodes.has(requested)) setSelectedStateCode(requested);
+  }, [allowedStateCodes]);
+
+  function handleStateChange(stateCode: string) {
+    if (!allowedStateCodes.has(stateCode)) return;
+    setSelectedStateCode(stateCode);
+    const url = new URL(window.location.href);
+    url.searchParams.set("state", stateCode);
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+  }
 
   useEffect(() => {
     const controller = new AbortController();
@@ -1514,7 +1613,7 @@ export function ResearchControlCenter() {
       setLoadError(null);
 
       try {
-        const response = await fetch("/generated/research/AL/summary.json", {
+        const response = await fetch(`/generated/research/${encodeURIComponent(selectedStateCode)}/summary.json`, {
           cache: "force-cache",
           signal: controller.signal,
         });
@@ -1522,7 +1621,7 @@ export function ResearchControlCenter() {
           throw new Error(`Research summary request failed with status ${response.status}.`);
         }
         const data: unknown = await response.json();
-        if (!isResearchSummaryFile(data)) {
+        if (!isResearchSummaryFile(data, selectedStateCode)) {
           throw new Error("Research summary has an invalid data shape.");
         }
         setSummary(data);
@@ -1536,10 +1635,17 @@ export function ResearchControlCenter() {
 
     void loadSummary();
     return () => controller.abort();
-  }, [reloadKey]);
+  }, [reloadKey, selectedStateCode]);
 
   if (summary) {
-    return <ResearchControlCenterContent summary={summary} />;
+    return (
+      <ResearchControlCenterContent
+        key={summary.stateCode}
+        summary={summary}
+        availableStates={availableStates}
+        onStateChange={handleStateChange}
+      />
+    );
   }
 
   return (

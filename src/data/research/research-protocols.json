@@ -1,60 +1,142 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-07-14",
+  "schemaVersion": 2,
+  "updatedAt": "2026-07-15",
   "protocols": [
     {
-      "id": "plants-alabama-v1",
-      "label": "Alabama plant baseline",
-      "categories": ["plants"],
-      "requiredSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
+      "id": "alabama-explicit-migration-v2",
+      "label": "Alabama explicit source-species protocol migration",
+      "stateCodes": ["AL"],
+      "status": "legacy-migration",
+      "sourceUniverse": [
         "alabama-plant-atlas",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
-      ],
-      "status": "draft"
-    },
-    {
-      "id": "insects-alabama-v1",
-      "label": "Alabama insect baseline",
-      "categories": ["insects"],
-      "requiredSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants",
+        "usfs-ids",
+        "usgs-nas"
       ],
-      "status": "draft"
-    },
-    {
-      "id": "disease-alabama-v1",
-      "label": "Alabama fungi and disease baseline",
-      "categories": ["fungi-diseases"],
-      "requiredSourceIds": [
-        "eddmaps",
+      "requiredCurrentSourceIds": [
+        "alabama-plant-atlas",
         "aphis-federal-quarantine",
-        "usfs-ids",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens"
-      ],
-      "status": "draft"
-    },
-    {
-      "id": "wildlife-alabama-v1",
-      "label": "Alabama wildlife baseline",
-      "categories": ["wildlife"],
-      "requiredSourceIds": [
         "eddmaps",
-        "usgs-nas",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants",
+        "usfs-ids",
+        "usgs-nas"
       ],
-      "status": "draft"
+      "priorityPolicy": {
+        "defaultPriority": "baseline",
+        "classificationComplete": false
+      },
+      "rules": [
+        {
+          "ruleId": "alabama-plants-v2",
+          "speciesSelector": { "kind": "category", "values": ["plants"] },
+          "applicableSourceIds": [
+            "alabama-plant-atlas",
+            "eddmaps",
+            "gbif-preserved-specimens",
+            "idigbio-preserved-specimens",
+            "inaturalist-research-grade",
+            "usda-nrcs-plants"
+          ],
+          "basis": [
+            {
+              "kind": "legacy-migration",
+              "reference": "research-protocols.json@schemaVersion=1:plants-alabama-v1",
+              "note": "Migrates the prior category source set into explicit cells without treating legacy screens as protocol completion."
+            }
+          ]
+        },
+        {
+          "ruleId": "alabama-insects-v2",
+          "speciesSelector": { "kind": "category", "values": ["insects"] },
+          "applicableSourceIds": [
+            "aphis-federal-quarantine",
+            "eddmaps",
+            "gbif-preserved-specimens",
+            "idigbio-preserved-specimens",
+            "inaturalist-research-grade",
+            "usfs-ids"
+          ],
+          "basis": [
+            {
+              "kind": "legacy-migration",
+              "reference": "research-protocols.json@schemaVersion=1:insects-alabama-v1",
+              "note": "Migrates the prior category source set into explicit cells without treating legacy screens as protocol completion."
+            }
+          ]
+        },
+        {
+          "ruleId": "alabama-disease-v2",
+          "speciesSelector": { "kind": "category", "values": ["fungi-diseases"] },
+          "applicableSourceIds": [
+            "aphis-federal-quarantine",
+            "eddmaps",
+            "gbif-preserved-specimens",
+            "idigbio-preserved-specimens",
+            "usfs-ids"
+          ],
+          "basis": [
+            {
+              "kind": "legacy-migration",
+              "reference": "research-protocols.json@schemaVersion=1:disease-alabama-v1",
+              "note": "Migrates the prior category source set into explicit cells without treating legacy screens as protocol completion."
+            }
+          ]
+        },
+        {
+          "ruleId": "alabama-wildlife-v2",
+          "speciesSelector": { "kind": "category", "values": ["wildlife"] },
+          "applicableSourceIds": [
+            "eddmaps",
+            "gbif-preserved-specimens",
+            "idigbio-preserved-specimens",
+            "inaturalist-research-grade",
+            "usgs-nas"
+          ],
+          "basis": [
+            {
+              "kind": "legacy-migration",
+              "reference": "research-protocols.json@schemaVersion=1:wildlife-alabama-v1",
+              "note": "Migrates the prior category source set into explicit cells without treating legacy screens as protocol completion."
+            }
+          ]
+        }
+      ],
+      "overrides": []
+    },
+    {
+      "id": "national-pilot-gbif-v1",
+      "label": "Alaska, Arizona, and Arkansas bounded GBIF pilot",
+      "stateCodes": ["AK", "AZ", "AR"],
+      "status": "active",
+      "sourceUniverse": ["gbif-preserved-specimens"],
+      "requiredCurrentSourceIds": ["gbif-preserved-specimens"],
+      "priorityPolicy": {
+        "defaultPriority": "pilot",
+        "classificationComplete": true
+      },
+      "rules": [
+        {
+          "ruleId": "pilot-state-applicability-gbif-v1",
+          "speciesSelector": { "kind": "state-applicability", "values": ["applicable"] },
+          "applicableSourceIds": ["gbif-preserved-specimens"],
+          "basis": [
+            {
+              "kind": "implementation-plan",
+              "reference": "national-pilot-2026-07-15",
+              "note": "GBIF preserved specimen screening is explicitly applicable to each selected pilot species and every active county equivalent in the pilot state."
+            }
+          ]
+        }
+      ],
+      "overrides": []
     }
   ]
 }

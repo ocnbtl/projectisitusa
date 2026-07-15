@@ -42,14 +42,7 @@ export function replaceStatePresenceFromResearch(input: {
   const next: Record<string, CountyPresence> = Object.fromEntries(
     Object.entries(input.currentPresence)
       .filter(([countyFips]) => input.counties[countyFips]?.stateCode !== stateCode)
-      .map(([countyFips, entry]) => [
-        countyFips,
-        {
-          ...entry,
-          speciesIds: sortUnique(entry.speciesIds),
-          sourceRefs: sortUnique(entry.sourceRefs),
-        },
-      ]),
+      .map(([countyFips, entry]) => [countyFips, entry]),
   );
 
   for (const county of [...input.countyFiles].sort((left, right) =>

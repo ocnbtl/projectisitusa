@@ -99,6 +99,21 @@ function record(
   };
 }
 
+function stateRecord(suffix: number, county: string | null, stateName: string) {
+  const value = record(suffix, county);
+  return {
+    ...value,
+    data: {
+      ...value.data,
+      "dwc:stateProvince": stateName,
+    },
+    indexTerms: {
+      ...value.indexTerms,
+      stateprovince: stateName.toLowerCase(),
+    },
+  };
+}
+
 const attribution = [
   {
     uuid: "11111111-1111-4111-8111-111111111111",
@@ -303,7 +318,116 @@ async function main() {
       "A later immutable run reused assertion event IDs from an earlier run.",
     );
 
-    console.log("iDigBio preserved specimen adapter tests passed.");
+    const alaskaUrls: string[] = [];
+    globalThis.fetch = mockFetch(async (input) => {
+      alaskaUrls.push(String(input));
+      return jsonResponse(
+        response([
+          stateRecord(60, "Anchorage Municipality", "Alaska"),
+          stateRecord(61, "Bethel Census Area", "Alaska"),
+          stateRecord(62, "Chugach Census Area", "Alaska"),
+          stateRecord(63, "Copper River Census Area", "Alaska"),
+          stateRecord(64, "Valdez-Cordova Census Area", "Alaska"),
+          stateRecord(65, null, "Alaska"),
+        ]),
+      );
+    });
+    const alaskaPairs = [
+      ["02020", "Anchorage"],
+      ["02050", "Bethel"],
+      ["02063", "Chugach"],
+      ["02066", "Copper River"],
+    ].map(([countyFips, countyName]) => ({
+      countyFips,
+      countyName,
+      speciesId: "example-species",
+      scientificName: "Example species",
+    }));
+    const alaska = await idigbioPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-idigbio-alaska-run",
+      stateCode: "AK",
+      requestedPairs: alaskaPairs,
+      parameters: {
+        ...parameters,
+        stateCode: "AK",
+        stateProvince: "alaska",
+        candidateLimit: alaskaPairs.length,
+        candidatePairs: alaskaPairs.map(
+          (pair) => `${pair.countyFips}:${pair.speciesId}`,
+        ),
+      },
+    });
+    const alaskaRequest = new URL(alaskaUrls[0]);
+    const alaskaQuery = JSON.parse(alaskaRequest.searchParams.get("rq") ?? "{}") as {
+      stateprovince?: string;
+    };
+    assert(
+      alaskaQuery.stateprovince === "alaska",
+      "The iDigBio Alaska query did not use the registered source state name.",
+    );
+    assert(alaska.assertions.length === 4, "Active Alaska county equivalents were not routed exactly.");
+    assert(
+      alaska.assertions.some((entry) => entry.county_fips === "02063") &&
+        alaska.assertions.some((entry) => entry.county_fips === "02066"),
+      "Current Chugach and Copper River iDigBio geography was not accepted.",
+    );
+    assert(
+      alaska.rejections.some(
+        (entry) =>
+          entry.reason_code === "geography-ambiguous" &&
+          entry.supporting_notes.some((note) => note.includes("retired")),
+      ) && alaska.rejections.some((entry) => entry.reason_code === "geography-missing"),
+      "Retired or missing Alaska iDigBio geography was not preserved as rejection evidence.",
+    );
+
+    let retiredRequestedFetches = 0;
+    globalThis.fetch = mockFetch(async () => {
+      retiredRequestedFetches += 1;
+      return jsonResponse({});
+    });
+    let retiredRequestedRejected = false;
+    try {
+      await idigbioPreservedSpecimensAdapter.run({
+        ...context,
+        runId: "synthetic-idigbio-retired-alaska-run",
+        stateCode: "AK",
+        requestedPairs: [
+          {
+            countyFips: "02261",
+            countyName: "Valdez-Cordova",
+            speciesId: "example-species",
+            scientificName: "Example species",
+          },
+        ],
+        parameters: {
+          ...parameters,
+          stateCode: "AK",
+          stateProvince: "alaska",
+          candidateLimit: 1,
+          candidatePairs: ["02261:example-species"],
+        },
+      });
+    } catch (error) {
+      retiredRequestedRejected = String(error).includes("retired");
+    }
+    assert(
+      retiredRequestedRejected && retiredRequestedFetches === 0,
+      "A retired requested Alaska FIPS was not rejected before iDigBio network access.",
+    );
+
+    console.log(
+      JSON.stringify(
+        {
+          alabamaRegression: true,
+          alaskaCountyEquivalentRouting: true,
+          retiredAlaskaGeographyRejected: true,
+          coordinateOnlyGeographyRejected: true,
+        },
+        null,
+        2,
+      ),
+    );
   } finally {
     globalThis.fetch = originalFetch;
   }

@@ -6,6 +6,23 @@ This is the canonical operating guide for county-species research. Use it with `
 
 Research produces auditable inputs for a deterministic compiler. It does not edit truth directly. A useful research result can be accepted evidence, a documented rejection, a completed no-qualifying-evidence outcome, or a blocked outcome with a precise reason.
 
+## Current National Operating Model
+
+The national operating model implemented on 2026-07-15 has one long-lived MAIN integration owner. MAIN alone may modify, merge, commit, push, regenerate shared projections, or deploy `main`. Every bounded source, state, evidence-review, or infrastructure worker must use an isolated `codex/*` branch and worktree with a machine-readable lease under `ops/national-research/`. Workers may commit only to their leased branches. They may not modify shared schemas or skills, generate shared projections, merge, push `main`, or deploy.
+
+MAIN owns job planning, overlap checks, lease recovery, worker manifest review, integration, shared generation, release verification, and progress reporting. Current durable state is recorded in:
+
+- `ops/national-research/jobs.json`
+- `ops/national-research/leases.json`
+- `ops/national-research/integration-queue.json`
+- `ops/national-research/dashboard.json`
+- `ops/national-research/readiness-dashboard.json`
+- `ops/national-research/evaluations/`
+
+The candidate local skills under `.agents/skills/` are not approved for broad dispatch. Their third and final bounded refinement cycle found that a blind real-pilot receipt was invalid under the repository receipt schema even though the candidate worker validator accepted it. Preserve the evaluation evidence and keep broad dispatch disabled until a later skill version passes every safety and schema gate.
+
+Current national scope is explicit in `state-registry.json`, `county-equivalent-registry.json`, `state-research-config.json`, and `state-applicability/`. County routing is exact text-to-registry matching. Missing, retired, successor, or coordinate-only geography is rejected or blocked unless a separately reviewed geography policy is introduced.
+
 ## Before Starting
 
 Work only in the canonical checkout and inspect concurrent work:
@@ -84,11 +101,13 @@ The first implementation layer uses:
 - `scripts/research/adapters/idigbio-preserved-specimens.ts`
 - `scripts/build-research-db.ts`
 
-Inspect and extend these files rather than creating a parallel model. The current event layer supports immutable initial assertions, reviews, rejections, pair outcomes, receipts, and later review events. It does not yet provide a general source-specific freshness policy, protocol-complete outcomes, general reviewer tooling, or adapters beyond Alabama GBIF and iDigBio preserved specimens. The architecture document controls acceptance when an early type or field name compresses those concerns.
+Inspect and extend these files rather than creating a parallel model. The current event layer supports immutable initial assertions, reviews, rejections, pair outcomes, receipts, later review events, exact state-scoped compilation, deterministic static projections, and explicit protocol cells. General source-specific freshness policy and reviewer tooling remain incomplete. The architecture document controls acceptance when an early type or field name compresses those concerns.
 
-The generated Alabama checkpoint verified on 2026-07-14 contains `30130` evidence records, `15` run records, and `29` registered sources. Across `167768` pairs it compiles to `15133` verified present, `0` verified absent, `8` not detected, `95580` researched unresolved, and `57047` not researched. Determination coverage is `9.02%`; source-screen research coverage is `66.00%`. Reverify these dated values before citing them.
+The Alabama checkpoint freshly verified on 2026-07-15 contains `30291` evidence records, `329` rejections, `113` raw outcomes across `110` distinct pairs, `26` research runs, and `29` registered sources. Across `167768` pairs it compiles to `15222` verified present, `0` verified absent, `8` not detected, `95491` researched unresolved, and `57047` not researched. Research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on those reviewed present determinations.
 
-The migration also preserves `1558` legacy fallback pairs and records `176` distinct GBIF or iDigBio snapshot positives as deferred candidates. Review those candidates through their source families. Do not promote them merely because they appeared during migration.
+The current national v1 topology has `51` state or district jurisdictions and `3144` active county equivalents. Alaska, Arizona, and Arkansas have bounded research-only projections for their explicit pilot species. Those pilot projections do not publish to the normal compatibility experience and are not state certifications.
+
+The Alabama deferred queue currently contains `66` distinct pairs and `199` source assertions according to the dated 2026-07-15 handoff. Reverify those counts from generated queue inputs before each run. Candidates remain candidates until a registered source run produces reviewable evidence or an honest pair outcome.
 
 ## Source Registration
 
@@ -140,7 +159,7 @@ npm run research:run -- --source idigbio-preserved-specimens --state AL --candid
 npm run research:run -- --source idigbio-preserved-specimens --state AL --pairs <FIPS:species-id,...>
 ```
 
-The iDigBio adapter screens the frozen historical search index using stable UUID pagination. Publication requires exact target agreement across normalized and provider taxon names plus explicit indexed Alabama county text. Provider county text must agree when present. Coordinates are retained for lineage but never used to fill a missing county.
+The iDigBio adapter screens the frozen historical search index using stable UUID pagination. Publication requires exact target agreement across normalized and provider taxon names plus explicit indexed state and current county-equivalent text. Provider county text must agree when present. Coordinates are retained for lineage but never used to fill a missing county. The iDigBio portal reports that its search index was frozen on 2026-05-08; treat it as a historical source until current availability and freshness are explicitly reverified.
 
 For each run:
 
@@ -233,7 +252,7 @@ Write pair outcomes to `src/data/research/runs/<run-id>/outcomes.ndjson` under t
 
 Determination coverage counts only publishable verified-present and verified-absent pairs. Survey non-detection remains on the survey axis. The legacy compatibility known metric may include not-detected, but it must not be called determination coverage.
 
-The current bootstrap source-screen research metric counts a pair when it has a resolved status or its species was included in at least one completed statewide source-family screen. It does not mean the full category protocol is complete. The target outcome model will separately measure protocol completion from explicit current pair outcomes. Report every metric with its definition and denominator.
+The bootstrap source-screen research metric counts a pair when it has a resolved status or its species was included in at least one completed statewide source-family screen. It does not mean the full protocol is complete. The implemented protocol-cell projection separately measures explicit source-species applicability and current completed pair outcomes. Report each metric with its definition and denominator.
 
 ## Review Workflow
 
@@ -261,20 +280,17 @@ Compilation is a separate step from research and must not access the network. Th
 
 ```bash
 npm run research:migrate
-npm run research:compile -- --as-of <YYYY-MM-DD>
+npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
-npm run research:refresh -- --as-of <YYYY-MM-DD>
-npm run research:verify -- --as-of <YYYY-MM-DD>
+npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
+npm run research:verify -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run check:research-integrity
+npm run check:state-research-projections
+npm run check:national-research-config
+npm run build:national-readiness -- --as-of <YYYY-MM-DD>
 ```
 
-The general state projection command remains reserved:
-
-```bash
-npm run research:project -- --state <STATE>
-```
-
-`research:verify` proves byte stability across two offline compiler runs for one explicit as-of date. Run it with `check:research-integrity` and `research:index` for the complete current event, hash, projection, and disposable-index gate.
+`research:compile` is the implemented state projection command. Alabama is authoritative and may update compatibility outputs. Alaska, Arizona, and Arkansas are research-only and the compiler must not alter compatibility, `presence.json`, or `explorer-presence.json` for them. `research:verify` proves byte stability across two offline compiler runs for one explicit state and as-of date. Run it with the research integrity, state projection, national configuration, readiness, and disposable-index gates.
 
 During migration, use the current compatibility commands when the task calls for legacy generation:
 
@@ -311,18 +327,23 @@ Any receipt or handoff that uses this compatibility path must say that it was a 
 
 ## Agent Output Contract
 
-An agent research task is complete only when it leaves:
+Before any worker starts, MAIN must create a non-overlapping lease with the job ID, worker type, state or source-family scope, taxa or pair scope, branch, worktree, base SHA, permitted and prohibited paths, pinned skill versions and hashes, expected outputs, retry policy, expiration or recovery state, and completion criteria.
 
+A worker research task is complete only when its branch contains the leased outputs and a machine-readable completion manifest reporting:
+
+- lease, branch, worktree, base SHA, pinned skill versions and hashes, and worker commit SHA
+- exact source parameters and retained artifacts
 - evidence assertion events for accepted candidates
 - rejection events for materially rejected candidates
 - pair outcomes for completed or unresolved scope
 - one immutable source-run receipt
 - artifact hashes and retention status
 - review state, with no false publication claim
-- exact verification output and count deltas
-- a concise note about caveats, partial scope, and unresolved contradictions
+- exact baseline, final, and net counts
+- exact verification commands and results
+- blocked items, caveats, partial scope, unresolved contradictions, and remaining work
 
-The agent does not edit truth, metrics, SQLite, or public projections by hand. Those are compiler outputs.
+The worker does not edit truth, metrics, SQLite, shared schemas, skills, or public projections and does not merge, push `main`, or deploy. MAIN reviews the manifest and diff, runs integration checks, regenerates shared outputs, and publishes centrally.
 
 ## Handoff Template
 

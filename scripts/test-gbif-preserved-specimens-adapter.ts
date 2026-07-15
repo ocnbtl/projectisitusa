@@ -8,6 +8,7 @@ function assert(condition: unknown, message: string): asserts condition {
 
 const parameters = {
   stateCode: "AL",
+  stateProvince: "Alabama",
   candidateLimit: 2,
   candidatePairs: ["01001:example-species", "01003:example-species"],
   basisOfRecord: "PRESERVED_SPECIMEN",
@@ -464,6 +465,126 @@ async function main() {
           repeatedPageRecord.rejections.length,
       "Repeated page records produced a complete screen or duplicate rejection IDs.",
     );
+
+    const alaskaUrls: string[] = [];
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      alaskaUrls.push(url);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 6,
+        results: [
+          { ...occurrence(4001, "Anchorage Municipality"), stateProvince: "Alaska" },
+          { ...occurrence(4002, "Bethel Census Area"), stateProvince: "Alaska" },
+          { ...occurrence(4003, "Chugach Census Area"), stateProvince: "Alaska" },
+          { ...occurrence(4004, "Copper River Census Area"), stateProvince: "Alaska" },
+          { ...occurrence(4005, "Valdez-Cordova Census Area"), stateProvince: "Alaska" },
+          {
+            ...occurrence(4006, ""),
+            stateProvince: "Alaska",
+            county: undefined,
+            decimalLatitude: 61.2,
+            decimalLongitude: -145.1,
+          },
+        ],
+      });
+    });
+    const alaskaPairs = [
+      ["02020", "Anchorage"],
+      ["02050", "Bethel"],
+      ["02063", "Chugach"],
+      ["02066", "Copper River"],
+    ].map(([countyFips, countyName]) => ({
+      countyFips,
+      countyName,
+      speciesId: "example-species",
+      scientificName: "Example species",
+    }));
+    const alaska = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-alaska-run",
+      stateCode: "AK",
+      requestedPairs: alaskaPairs,
+      parameters: {
+        ...parameters,
+        stateCode: "AK",
+        stateProvince: "Alaska",
+        candidateLimit: alaskaPairs.length,
+        candidatePairs: alaskaPairs.map(
+          (pair) => `${pair.countyFips}:${pair.speciesId}`,
+        ),
+      },
+    });
+    assert(
+      alaskaUrls.some((url) => url.includes("stateProvince=Alaska")),
+      "The Alaska adapter query did not use the registered source state name.",
+    );
+    assert(alaska.assertions.length === 4, "Active Alaska county equivalents were not routed exactly.");
+    assert(
+      alaska.assertions.some((entry) => entry.county_fips === "02063") &&
+        alaska.assertions.some((entry) => entry.county_fips === "02066"),
+      "Current Chugach and Copper River county equivalents were not accepted.",
+    );
+    assert(
+      alaska.rejections.some(
+        (entry) =>
+          entry.reason_code === "geography-ambiguous" &&
+          entry.supporting_notes.some((note) => note.includes("retired")),
+      ),
+      "Retired Valdez-Cordova geography was not rejected explicitly.",
+    );
+    assert(
+      alaska.rejections.some((entry) => entry.reason_code === "geography-missing") &&
+        alaska.assertions.every((entry) => entry.source_record_id !== "4006"),
+      "Coordinate-only Alaska geography created a county determination.",
+    );
+
+    let retiredRequestedFetches = 0;
+    globalThis.fetch = mockFetch(async () => {
+      retiredRequestedFetches += 1;
+      return jsonResponse({});
+    });
+    let retiredRequestedRejected = false;
+    try {
+      await gbifPreservedSpecimensAdapter.run({
+        ...context,
+        runId: "synthetic-gbif-retired-alaska-run",
+        stateCode: "AK",
+        requestedPairs: [
+          {
+            countyFips: "02261",
+            countyName: "Valdez-Cordova",
+            speciesId: "example-species",
+            scientificName: "Example species",
+          },
+        ],
+        parameters: {
+          ...parameters,
+          stateCode: "AK",
+          stateProvince: "Alaska",
+          candidateLimit: 1,
+          candidatePairs: ["02261:example-species"],
+        },
+      });
+    } catch (error) {
+      retiredRequestedRejected = String(error).includes("retired");
+    }
+    assert(
+      retiredRequestedRejected && retiredRequestedFetches === 0,
+      "A retired requested Alaska FIPS was not rejected before network access.",
+    );
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -482,6 +603,9 @@ async function main() {
         missingSourceNameRejected: true,
         missingPublisherIdentityRejected: true,
         repeatedPageRecordIncomplete: true,
+        alaskaCountyEquivalentRouting: true,
+        retiredAlaskaGeographyRejected: true,
+        coordinateOnlyGeographyRejected: true,
       },
       null,
       2,

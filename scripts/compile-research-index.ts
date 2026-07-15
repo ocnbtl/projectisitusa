@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import type {
@@ -15,6 +15,7 @@ import type {
   PairDisplayStatus,
   ResearchCountyFile,
   ResearchPairRecord,
+  ResearchProjectionScope,
   ResearchQueueEntry,
   ResearchRejectionRecord,
   ResearchRunReceipt,
@@ -32,6 +33,17 @@ import {
   replaceStatePresenceFromResearch,
 } from "@/lib/research/compatibility-projection";
 import { listImmutableResearchRuns, readNdjson as readRunNdjson } from "@/lib/research/run-files";
+import { selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
+import {
+  buildProtocolCellProjection,
+  type ResearchProtocolsFile,
+} from "@/lib/research/protocol-cells";
+import {
+  resolveStateResearchScope,
+  selectStateResearchConfig,
+  type StateApplicabilityFile,
+  type StateResearchConfigFile,
+} from "@/lib/research/state-research-config";
 
 type SpeciesRecord = {
   id: string;
@@ -52,42 +64,60 @@ type ResearchRunsFile = {
   runs: ResearchRunReceipt[];
 };
 
-type ResearchProtocolsFile = {
-  schemaVersion: 1;
-  protocols: Array<{
-    id: string;
-    categories: SpeciesCategory[];
-    requiredSourceIds: string[];
-    status: "draft" | "active";
-  }>;
-};
-
 type MigrationCandidatesFile = {
+  schemaVersion?: 1;
+  stateCode?: string;
   candidateCount: number;
   distinctPairCount: number;
   candidates: Array<{ sourceId: string; countyFips: string; speciesId: string }>;
 };
 
+type StateRegistryFile = {
+  schemaVersion: 1;
+  jurisdictions: Array<{
+    stateCode: string;
+    stateName: string;
+    countyEquivalentCount: number;
+    nationalV1Scope: boolean;
+  }>;
+};
+
+type CountyEquivalentRegistryFile = {
+  schemaVersion: 1;
+  countyEquivalents: Array<{
+    countyFips: string;
+    stateCode: string;
+    stateName: string;
+    status: "active" | "retired";
+  }>;
+};
+
 const ROOT = process.cwd();
-const STATE_CODE = "AL";
-const SRC_OUTPUT = path.join(ROOT, "src/data/generated/research/AL");
-const PUBLIC_OUTPUT = path.join(ROOT, "public/generated/research/AL");
 const DOCS_OUTPUT = path.join(ROOT, "docs/research/generated");
 
-function parseAsOf(argv: string[]) {
-  const index = argv.indexOf("--as-of");
-  const value = index >= 0 ? argv[index + 1] : undefined;
-  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
-    throw new Error("research:compile requires --as-of <YYYY-MM-DD>.");
+function parseCompilerOptions(argv: string[]) {
+  const values = new Map<string, string>();
+  for (let index = 0; index < argv.length; index += 2) {
+    const flag = argv[index];
+    const value = argv[index + 1];
+    if (!new Set(["--state", "--as-of"]).has(flag) || !value || value.startsWith("--")) {
+      throw new Error("research:compile requires --state <XX> --as-of <YYYY-MM-DD>.");
+    }
+    if (values.has(flag)) throw new Error(`Duplicate research compiler argument: ${flag}.`);
+    values.set(flag, value);
   }
-  if (argv.some((entry, entryIndex) => entryIndex !== index && entryIndex !== index + 1)) {
-    throw new Error(`Unexpected research compiler arguments: ${argv.join(" ")}`);
+  const stateCode = values.get("--state")?.toUpperCase();
+  const asOf = values.get("--as-of");
+  if (!stateCode || !/^[A-Z]{2}$/.test(stateCode) || !asOf || !/^\d{4}-\d{2}-\d{2}$/.test(asOf)) {
+    throw new Error("research:compile requires --state <XX> --as-of <YYYY-MM-DD>.");
   }
-  return value;
+  return { stateCode, asOf };
 }
 
-const AS_OF = parseAsOf(process.argv.slice(2));
+const { stateCode: STATE_CODE, asOf: AS_OF } = parseCompilerOptions(process.argv.slice(2));
 const AS_OF_CUTOFF = Date.parse(`${AS_OF}T23:59:59.999Z`);
+const SRC_OUTPUT = path.join(ROOT, "src/data/generated/research", STATE_CODE);
+const PUBLIC_OUTPUT = path.join(ROOT, "public/generated/research", STATE_CODE);
 
 function atOrBeforeAsOf(value: string) {
   const timestamp = Date.parse(value);
@@ -158,8 +188,47 @@ function writeJson(filepath: string, value: unknown, pretty = false) {
   writeFileSync(filepath, `${JSON.stringify(value, null, pretty ? 2 : 0)}\n`);
 }
 
+const stateRegistry = readJson<StateRegistryFile>(path.join(ROOT, "src/data/research/state-registry.json"));
+const jurisdiction = stateRegistry.jurisdictions.find((entry) => entry.stateCode === STATE_CODE);
+if (!jurisdiction?.nationalV1Scope) {
+  throw new Error(`State ${STATE_CODE} is not an active national v1 jurisdiction.`);
+}
+const configFile = readJson<StateResearchConfigFile>(
+  path.join(ROOT, "src/data/research/state-research-config.json"),
+);
 const catalogSpecies = readJson<Species[]>(path.join(ROOT, "src/data/generated/species.json"));
-const species = [...catalogSpecies].sort((left, right) => left.id.localeCompare(right.id));
+const catalogById = new Map(catalogSpecies.map((entry) => [entry.id, entry]));
+const configuredState = selectStateResearchConfig(configFile, STATE_CODE);
+const applicability: StateApplicabilityFile | null = configuredState.speciesScope.applicabilityPath
+  ? readJson<StateApplicabilityFile>(path.join(ROOT, configuredState.speciesScope.applicabilityPath))
+  : null;
+const {
+  config: stateConfig,
+  speciesIds: selectedSpeciesIds,
+  applicabilityAsOf,
+} = resolveStateResearchScope({
+  configFile,
+  stateCode: STATE_CODE,
+  catalogSpeciesIds: catalogSpecies.map((entry) => entry.id),
+  asOf: AS_OF,
+  applicability,
+});
+const species = selectedSpeciesIds
+  .map((speciesId) => catalogById.get(speciesId)!)
+  .sort((left, right) => left.id.localeCompare(right.id));
+const projectionScope: ResearchProjectionScope = {
+  publicationMode: stateConfig.mode,
+  speciesMode: stateConfig.speciesScope.mode,
+  certificationScope: stateConfig.mode === "authoritative" ? "state-baseline" : "bounded-pilot",
+  applicabilityPath: stateConfig.speciesScope.applicabilityPath,
+  applicabilityAsOf,
+  applicableSpeciesCount: species.length,
+  undeterminedSpeciesPolicy: stateConfig.speciesScope.undeterminedSpeciesPolicy,
+  compatibilityPublication: stateConfig.compatibilityPublication,
+  protocolModel: stateConfig.mode === "authoritative"
+    ? "explicit-source-species-legacy-migration"
+    : "explicit-source-species-active",
+};
 const explorerSpecies = readJson<ExplorerSpecies[]>(
   path.join(ROOT, "src/data/generated/explorer-species.json"),
 );
@@ -169,6 +238,20 @@ const countiesIndex = readJson<Record<string, CountyRecord & PublicCountyRecord>
 const counties = Object.values(countiesIndex)
   .filter((county) => county.stateCode === STATE_CODE)
   .sort((left, right) => left.countyFips.localeCompare(right.countyFips));
+const countyRegistry = readJson<CountyEquivalentRegistryFile>(
+  path.join(ROOT, "src/data/research/county-equivalent-registry.json"),
+);
+const registeredCountyFips = countyRegistry.countyEquivalents
+  .filter((county) => county.stateCode === STATE_CODE && county.status === "active")
+  .map((county) => county.countyFips)
+  .sort();
+const generatedCountyFips = counties.map((county) => county.countyFips);
+if (registeredCountyFips.join("\n") !== generatedCountyFips.join("\n")) {
+  throw new Error(`Generated counties do not exactly match the active ${STATE_CODE} county-equivalent registry.`);
+}
+if (counties.length !== jurisdiction.countyEquivalentCount) {
+  throw new Error(`State ${STATE_CODE} expected ${jurisdiction.countyEquivalentCount} active county equivalents, found ${counties.length}.`);
+}
 const currentPresence = readJson<Record<string, CountyPresence>>(
   path.join(ROOT, "src/data/generated/presence.json"),
 );
@@ -183,22 +266,59 @@ const datasetSnapshot = readJson<{
   };
 }>(path.join(ROOT, "src/data/generated/snapshot.json"));
 const registry = readJson<ResearchSourceRegistry>(path.join(ROOT, "src/data/research/source-registry.json"));
+const registeredSourceIds = new Set(registry.sources.map((source) => source.id));
+for (const entry of applicability?.species ?? []) {
+  for (const basis of entry.basis) {
+    if (!registeredSourceIds.has(basis.sourceId)) throw new Error(`Applicability for ${STATE_CODE} references unknown source ${basis.sourceId}.`);
+  }
+}
 const protocols = readJson<ResearchProtocolsFile>(path.join(ROOT, "src/data/research/research-protocols.json"));
-const runs = readJson<ResearchRunsFile>(path.join(ROOT, "src/data/research/research-runs.json")).runs;
-const bootstrapEvidence = readNdjson<EvidenceAssertion>(path.join(ROOT, "src/data/research/evidence-assertions.ndjson"));
-const immutableRuns = listImmutableResearchRuns(ROOT).filter((bundle) =>
-  atOrBeforeAsOf(bundle.receipt.finished_at),
+const selectedSpeciesIdSet = new Set(species.map((entry) => entry.id));
+const activeCountyFips = new Set(registeredCountyFips);
+const runs = readJson<ResearchRunsFile>(path.join(ROOT, "src/data/research/research-runs.json")).runs
+  .filter((run) => run.stateCode === STATE_CODE);
+const bootstrapEvidence = stateConfig.bootstrapLedgerAllowed
+  ? readNdjson<EvidenceAssertion>(path.join(ROOT, "src/data/research/evidence-assertions.ndjson"))
+      .filter((entry) => entry.stateCode === STATE_CODE && selectedSpeciesIdSet.has(entry.speciesId))
+  : [];
+const immutableRuns = selectImmutableResearchRunsForState(
+  listImmutableResearchRuns(ROOT),
+  STATE_CODE,
+  AS_OF,
 );
-const runAssertions = immutableRuns.flatMap((bundle) => bundle.assertions);
-const runReviewEvents = immutableRuns.flatMap((bundle) => bundle.reviews);
+for (const bundle of immutableRuns) {
+  for (const [label, records] of [
+    ["assertion", bundle.assertions],
+    ["review", bundle.reviews],
+    ["rejection", bundle.rejections],
+    ["outcome", bundle.outcomes],
+  ] as const) {
+    for (const record of records) {
+      const recordState = "state_code" in record ? record.state_code : record.normalized_target.state_code;
+      const countyFips = "county_fips" in record ? record.county_fips : record.normalized_target.county_fips;
+      if (recordState !== STATE_CODE) throw new Error(`Immutable run ${bundle.receipt.run_id} ${label} has foreign state ${recordState}.`);
+      if (countyFips && !activeCountyFips.has(countyFips)) throw new Error(`Immutable run ${bundle.receipt.run_id} ${label} references inactive ${STATE_CODE} county ${countyFips}.`);
+    }
+  }
+}
+const runAssertions = immutableRuns.flatMap((bundle) =>
+  bundle.assertions.filter((entry) => selectedSpeciesIdSet.has(entry.species_id)),
+);
+const runReviewEvents = immutableRuns.flatMap((bundle) =>
+  bundle.reviews.filter((entry) => selectedSpeciesIdSet.has(entry.species_id)),
+);
 const lateReviewEvents = readRunNdjson<EvidenceReviewEvent>(
   path.join(ROOT, "src/data/research/review-events.ndjson"),
-).filter((event) => atOrBeforeAsOf(event.created_at));
+).filter((event) => event.state_code === STATE_CODE && selectedSpeciesIdSet.has(event.species_id) && atOrBeforeAsOf(event.created_at));
 const globalRejections = readRunNdjson<ResearchRejectionRecord>(
   path.join(ROOT, "src/data/research/rejections.ndjson"),
-).filter((record) => atOrBeforeAsOf(record.created_at));
-const runRejections = immutableRuns.flatMap((bundle) => bundle.rejections);
-const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
+).filter((record) => record.normalized_target.state_code === STATE_CODE && selectedSpeciesIdSet.has(record.normalized_target.species_id) && atOrBeforeAsOf(record.created_at));
+const runRejections = immutableRuns.flatMap((bundle) =>
+  bundle.rejections.filter((entry) => selectedSpeciesIdSet.has(entry.normalized_target.species_id)),
+);
+const outcomes = immutableRuns.flatMap((bundle) =>
+  bundle.outcomes.filter((entry) => selectedSpeciesIdSet.has(entry.species_id)),
+);
 const { evidence, runEvidence, projectedRunAssertions, resolvedRunEvidence } =
   compileAdditiveResearchEvidence({
   bootstrapEvidence,
@@ -208,10 +328,44 @@ const { evidence, runEvidence, projectedRunAssertions, resolvedRunEvidence } =
   asOf: AS_OF,
   });
 const migrationCandidates = readJson<MigrationCandidatesFile>(
-  path.join(ROOT, "src/data/research/migration-candidates.json"),
+  path.join(ROOT, stateConfig.migrationCandidatesPath),
 );
+if (migrationCandidates.stateCode && migrationCandidates.stateCode !== STATE_CODE) {
+  throw new Error(`Migration candidate state ${migrationCandidates.stateCode} does not match ${STATE_CODE}.`);
+}
+if (migrationCandidates.candidateCount !== migrationCandidates.candidates.length) {
+  throw new Error(`Migration candidate count does not match entries for ${STATE_CODE}.`);
+}
+const migrationPairCount = new Set(
+  migrationCandidates.candidates.map((candidate) => pairKey(candidate.countyFips, candidate.speciesId)),
+).size;
+if (migrationPairCount !== migrationCandidates.distinctPairCount) {
+  throw new Error(`Migration distinct pair count does not match entries for ${STATE_CODE}.`);
+}
+for (const candidate of migrationCandidates.candidates) {
+  if (!registeredSourceIds.has(candidate.sourceId)) throw new Error(`Migration candidate references unknown source ${candidate.sourceId}.`);
+  if (!selectedSpeciesIdSet.has(candidate.speciesId)) throw new Error(`Migration candidate references out-of-scope species ${candidate.speciesId}.`);
+  if (!activeCountyFips.has(candidate.countyFips)) throw new Error(`Migration candidate references inactive ${STATE_CODE} county ${candidate.countyFips}.`);
+}
 const sourceSnapshotDate = datasetSnapshot.snapshotDate;
 const generatedAt = `${AS_OF}T00:00:00.000Z`;
+const applicabilityPriorityBySpecies = new Map(
+  (applicability?.species ?? []).map((entry) => [entry.speciesId, entry.priority]),
+);
+const protocolCellProjection = buildProtocolCellProjection({
+  stateCode: STATE_CODE,
+  asOf: AS_OF,
+  generatedAt,
+  species: species.map((entry) => ({
+    id: entry.id,
+    category: entry.category,
+    priority: applicabilityPriorityBySpecies.get(entry.id),
+  })),
+  countyFips: registeredCountyFips,
+  protocols,
+  sources: registry.sources,
+  immutableRuns,
+});
 
 const reviewStatusByEvidenceId = new Map<string, ReviewStatus>();
 for (const entry of bootstrapEvidence) {
@@ -413,12 +567,13 @@ for (const county of counties) {
   const researchedPairs =
     countyVerifiedPresent + countyVerifiedAbsent + countyNotDetected + countyResearchedUnresolved;
   countyFiles.push({
-    schemaVersion: 2,
+    schemaVersion: 3,
     stateCode: STATE_CODE,
     countyFips: county.countyFips,
     countyName: county.name,
     asOf: AS_OF,
     generatedAt,
+    scope: projectionScope,
     summary: {
       verifiedPresent: countyVerifiedPresent,
       verifiedAbsent: countyVerifiedAbsent,
@@ -435,20 +590,24 @@ for (const county of counties) {
   });
 }
 
-const protocolByCategory = new Map<SpeciesCategory, ResearchProtocolsFile["protocols"][number]>();
-for (const protocol of protocols.protocols) {
-  for (const category of protocol.categories) {
-    protocolByCategory.set(category, protocol);
-  }
+const protocolCellsBySpecies = new Map<string, typeof protocolCellProjection.cells>();
+for (const cell of protocolCellProjection.cells) {
+  const values = protocolCellsBySpecies.get(cell.speciesId) ?? [];
+  values.push(cell);
+  protocolCellsBySpecies.set(cell.speciesId, values);
 }
 
 const queue: ResearchQueueEntry[] = species
   .map((speciesEntry) => {
     const counts = queueCounts.get(speciesEntry.id) ?? { notResearched: 0, researchedUnresolved: 0 };
-    const screenedSources = screensBySpecies.get(speciesEntry.id) ?? new Set<string>();
-    const missingProtocolSourceIds = (protocolByCategory.get(speciesEntry.category)?.requiredSourceIds ?? []).filter(
-      (sourceId) => !screenedSources.has(sourceId),
-    );
+    const missingProtocolSourceIds = (protocolCellsBySpecies.get(speciesEntry.id) ?? [])
+      .filter(
+        (cell) =>
+          cell.applicabilityStatus === "applicable" &&
+          (cell.completionStatus !== "complete" || cell.freshnessStatus !== "current"),
+      )
+      .map((cell) => cell.sourceId)
+      .sort();
     return {
       speciesId: speciesEntry.id,
       commonName: speciesEntry.commonName,
@@ -523,12 +682,13 @@ if (conflictCount > 0) {
 }
 
 const summary: ResearchStateSummary = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   stateCode: STATE_CODE,
-  stateName: counties[0]?.stateName ?? "Alabama",
+  stateName: jurisdiction.stateName,
   asOf: AS_OF,
   generatedAt,
   sourceSnapshotDate,
+  scope: projectionScope,
   summary: {
     speciesCount: species.length,
     countyCount: counties.length,
@@ -576,81 +736,144 @@ const summary: ResearchStateSummary = {
   },
 };
 
-const compatibilityPresence = replaceStatePresenceFromResearch({
-  stateCode: STATE_CODE,
-  asOf: AS_OF,
-  counties: countiesIndex,
-  currentPresence,
-  countyFiles,
-});
-const explorerPresence = buildExplorerPresence(compatibilityPresence, explorerSpecies);
-const catalogCoverage = recomputeCatalogCoverage({
-  presence: compatibilityPresence,
-  species: catalogSpecies,
-  explorerSpecies,
-  snapshot: datasetSnapshot,
-});
-const compatibilityPresentCount = assertProjectionParity({
-  stateCode: STATE_CODE,
-  counties: countiesIndex,
-  countyFiles,
-  presence: compatibilityPresence,
-  explorerPresence,
-  explorerSpecies: catalogCoverage.explorerSpecies,
-});
-if (compatibilityPresentCount !== summary.summary.verifiedPresent) {
-  throw new Error(
-    `Compatibility present count ${compatibilityPresentCount} does not match research count ${summary.summary.verifiedPresent}.`,
+const researchWritePaths = [
+  path.join(SRC_OUTPUT, "summary.json"),
+  path.join(SRC_OUTPUT, "protocol-cells.json"),
+  path.join(PUBLIC_OUTPUT, "summary.json"),
+  ...countyFiles.map((county) => path.join(PUBLIC_OUTPUT, "counties", `${county.countyFips}.json`)),
+  path.join(DOCS_OUTPUT, `${STATE_CODE}-progress.json`),
+  path.join(DOCS_OUTPUT, `${STATE_CODE}-work-queue.json`),
+  path.join(DOCS_OUTPUT, `${STATE_CODE}-progress.md`),
+];
+if (stateConfig.mode === "research-only") {
+  const allowedRoots = [SRC_OUTPUT, PUBLIC_OUTPUT, DOCS_OUTPUT].map((root) => `${path.resolve(root)}${path.sep}`);
+  const forbidden = researchWritePaths.filter((filepath) =>
+    !allowedRoots.some((root) => path.resolve(filepath).startsWith(root)),
   );
+  if (forbidden.length > 0 || stateConfig.compatibilityPublication) {
+    throw new Error(`Research-only write plan for ${STATE_CODE} contains shared compatibility output.`);
+  }
 }
-const compatibilityMatrix = buildCompatibilityMatrix({
-  stateCode: STATE_CODE,
-  stateName: summary.stateName,
-  sourceSnapshotDate,
-  species: catalogCoverage.species,
-  countyFiles,
-});
-
 writeJson(path.join(SRC_OUTPUT, "summary.json"), summary, true);
+writeJson(path.join(SRC_OUTPUT, "protocol-cells.json"), protocolCellProjection);
 writeJson(path.join(PUBLIC_OUTPUT, "summary.json"), summary, true);
 for (const county of countyFiles) {
   writeJson(path.join(PUBLIC_OUTPUT, "counties", `${county.countyFips}.json`), county);
 }
-for (const root of [path.join(ROOT, "src/data/generated"), path.join(ROOT, "public/generated")]) {
-  writeJson(path.join(root, "presence.json"), compatibilityPresence, true);
-  writeJson(path.join(root, "explorer-presence.json"), explorerPresence, true);
-  writeJson(path.join(root, "species.json"), catalogCoverage.species, true);
-  writeJson(path.join(root, "explorer-species.json"), catalogCoverage.explorerSpecies, true);
-  writeJson(path.join(root, "snapshot.json"), catalogCoverage.snapshot, true);
+const countyOutput = path.join(PUBLIC_OUTPUT, "counties");
+if (existsSync(countyOutput)) {
+  const expectedCountyFiles = new Set(countyFiles.map((county) => `${county.countyFips}.json`));
+  for (const filename of readdirSync(countyOutput).filter((entry) => entry.endsWith(".json"))) {
+    if (!expectedCountyFiles.has(filename)) unlinkSync(path.join(countyOutput, filename));
+  }
 }
-const matrixOutput = path.join(ROOT, "docs/county-coverage/states");
-writeJson(path.join(matrixOutput, `${STATE_CODE}.json`), compatibilityMatrix, true);
-mkdirSync(matrixOutput, { recursive: true });
-writeFileSync(
-  path.join(matrixOutput, `${STATE_CODE}.md`),
-  renderCompatibilityMatrixMarkdown(compatibilityMatrix),
-);
+
+if (stateConfig.compatibilityPublication) {
+  const targetCountyFips = new Set(counties.map((county) => county.countyFips));
+  if (projectionScope.speciesMode !== "catalog-all" || countyFiles.length !== targetCountyFips.size) {
+    throw new Error(`Compatibility publication for ${STATE_CODE} requires complete catalog and county scope.`);
+  }
+  const protectedPresenceBefore = JSON.stringify(
+    Object.fromEntries(
+      Object.entries(currentPresence).filter(([countyFips]) => countiesIndex[countyFips]?.stateCode !== STATE_CODE),
+    ),
+  );
+  const compatibilityPresence = replaceStatePresenceFromResearch({
+    stateCode: STATE_CODE,
+    asOf: AS_OF,
+    counties: countiesIndex,
+    currentPresence,
+    countyFiles,
+  });
+  const protectedPresenceAfter = JSON.stringify(
+    Object.fromEntries(
+      Object.entries(compatibilityPresence).filter(([countyFips]) => countiesIndex[countyFips]?.stateCode !== STATE_CODE),
+    ),
+  );
+  if (protectedPresenceAfter !== protectedPresenceBefore) {
+    throw new Error(`Compatibility compilation for ${STATE_CODE} changed non-target state presence.`);
+  }
+  const explorerPresence = buildExplorerPresence(compatibilityPresence, explorerSpecies);
+  const catalogCoverage = recomputeCatalogCoverage({
+    presence: compatibilityPresence,
+    species: catalogSpecies,
+    explorerSpecies,
+    snapshot: datasetSnapshot,
+  });
+  const compatibilityPresentCount = assertProjectionParity({
+    stateCode: STATE_CODE,
+    counties: countiesIndex,
+    countyFiles,
+    presence: compatibilityPresence,
+    explorerPresence,
+    explorerSpecies: catalogCoverage.explorerSpecies,
+  });
+  if (compatibilityPresentCount !== summary.summary.verifiedPresent) {
+    throw new Error(
+      `Compatibility present count ${compatibilityPresentCount} does not match research count ${summary.summary.verifiedPresent}.`,
+    );
+  }
+  const compatibilityMatrix = buildCompatibilityMatrix({
+    stateCode: STATE_CODE,
+    stateName: summary.stateName,
+    sourceSnapshotDate,
+    species: catalogCoverage.species,
+    countyFiles,
+  });
+  for (const root of [path.join(ROOT, "src/data/generated"), path.join(ROOT, "public/generated")]) {
+    writeJson(path.join(root, "presence.json"), compatibilityPresence, true);
+    writeJson(path.join(root, "explorer-presence.json"), explorerPresence, true);
+    writeJson(path.join(root, "species.json"), catalogCoverage.species, true);
+    writeJson(path.join(root, "explorer-species.json"), catalogCoverage.explorerSpecies, true);
+    writeJson(path.join(root, "snapshot.json"), catalogCoverage.snapshot, true);
+  }
+  const matrixOutput = path.join(ROOT, "docs/county-coverage/states");
+  writeJson(path.join(matrixOutput, `${STATE_CODE}.json`), compatibilityMatrix, true);
+  mkdirSync(matrixOutput, { recursive: true });
+  writeFileSync(
+    path.join(matrixOutput, `${STATE_CODE}.md`),
+    renderCompatibilityMatrixMarkdown(compatibilityMatrix),
+  );
+}
 
 const progress = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   stateCode: STATE_CODE,
   asOf: AS_OF,
   generatedAt,
+  scope: projectionScope,
   summary: summary.summary,
   migrationCandidates: summary.migrationCandidates,
   statusDefinitions: summary.statusDefinitions,
   sourceOperations: sourceSummaries,
+  protocol: {
+    protocolId: protocolCellProjection.protocolId,
+    protocolStatus: protocolCellProjection.protocolStatus,
+    priorityClassificationComplete: protocolCellProjection.priorityClassificationComplete,
+    ...protocolCellProjection.summary,
+    categoryCompletion: protocolCellProjection.categoryCompletion,
+    priorityCompletion: protocolCellProjection.priorityCompletion,
+    requiredSourceStatus: protocolCellProjection.requiredSourceStatus,
+  },
   nextQueue: queue.slice(0, 100),
 };
-writeJson(path.join(DOCS_OUTPUT, "AL-progress.json"), progress, true);
+writeJson(path.join(DOCS_OUTPUT, `${STATE_CODE}-progress.json`), progress, true);
 writeJson(
-  path.join(DOCS_OUTPUT, "AL-work-queue.json"),
-  { schemaVersion: 2, stateCode: STATE_CODE, asOf: AS_OF, generatedAt, queue },
+  path.join(DOCS_OUTPUT, `${STATE_CODE}-work-queue.json`),
+  {
+    schemaVersion: 3,
+    stateCode: STATE_CODE,
+    asOf: AS_OF,
+    generatedAt,
+    scope: projectionScope,
+    protocol: protocolCellProjection.summary,
+    queue,
+  },
   true,
 );
 
 const progressMarkdown = [
-  "# Alabama Research Progress",
+  `# ${summary.stateName} Research Progress`,
   "",
   `Generated: \`${generatedAt}\``,
   "",
@@ -667,6 +890,10 @@ const progressMarkdown = [
   `- Determination coverage: \`${summary.summary.determinationCoveragePercent.toFixed(2)}%\``,
   `- Research coverage: \`${summary.summary.researchCoveragePercent.toFixed(2)}%\``,
   `- Explicit outcome coverage: \`${summary.summary.explicitOutcomeCoveragePercent.toFixed(4)}%\``,
+  `- Applicable protocol cells: \`${protocolCellProjection.summary.applicableCells}\``,
+  `- Current complete protocol cells: \`${protocolCellProjection.summary.currentCells}\``,
+  `- Protocol completion: \`${protocolCellProjection.summary.applicableCompletionPercent.toFixed(2)}%\``,
+  `- Current protocol completion: \`${protocolCellProjection.summary.currentCompletePercent.toFixed(2)}%\``,
   `- Evidence records: \`${summary.summary.evidenceRecordCount}\``,
   `- Research runs: \`${summary.summary.researchRunCount}\``,
   `- Rejection records: \`${summary.summary.rejectionRecordCount}\``,
@@ -695,6 +922,6 @@ const progressMarkdown = [
   ),
 ];
 mkdirSync(DOCS_OUTPUT, { recursive: true });
-writeFileSync(path.join(DOCS_OUTPUT, "AL-progress.md"), `${progressMarkdown.join("\n")}\n`);
+writeFileSync(path.join(DOCS_OUTPUT, `${STATE_CODE}-progress.md`), `${progressMarkdown.join("\n")}\n`);
 
 console.log(JSON.stringify(summary.summary, null, 2));

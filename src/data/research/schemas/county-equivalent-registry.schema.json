@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/county-equivalent-registry.schema.json",
+  "title": "Project Isitusa county-equivalent registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "source", "geographyPolicy", "activeCountyEquivalentCount", "countyEquivalents", "retiredCountyEquivalents"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "source": { "$ref": "#/$defs/source" },
+    "geographyPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "exactFipsPreferred", "exactNameOrRegisteredAliasRequiredWhenFipsMissing", "ambiguousAliasRejected", "coordinateDerivationAllowed", "retiredGeographyAutomaticSuccessorAssignmentAllowed"],
+      "properties": {
+        "authority": { "const": "census-county-or-county-equivalent" },
+        "exactFipsPreferred": { "const": true },
+        "exactNameOrRegisteredAliasRequiredWhenFipsMissing": { "const": true },
+        "ambiguousAliasRejected": { "const": true },
+        "coordinateDerivationAllowed": { "const": false },
+        "retiredGeographyAutomaticSuccessorAssignmentAllowed": { "const": false }
+      }
+    },
+    "activeCountyEquivalentCount": { "type": "integer", "minimum": 1 },
+    "countyEquivalents": { "type": "array", "items": { "$ref": "#/$defs/activeCounty" }, "minItems": 1 },
+    "retiredCountyEquivalents": { "type": "array", "items": { "$ref": "#/$defs/retiredCounty" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "dataset", "sourceUrl", "sourceAsOf", "sourceSha256"],
+      "properties": {
+        "publisher": { "type": "string", "minLength": 1 },
+        "dataset": { "type": "string", "minLength": 1 },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "sourceAsOf": { "type": "string", "format": "date" },
+        "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+    "stateFips": { "type": "string", "pattern": "^[0-9]{2}$" },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "countyKind": { "enum": ["county", "parish", "borough", "census-area", "municipality", "city-and-borough", "independent-city", "planning-region", "federal-district", "municipio", "district", "island", "other-county-equivalent"] },
+    "activeCounty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["countyFips", "stateFips", "stateCode", "stateName", "shortName", "legalName", "kind", "legalStatisticalAreaCode", "censusNamespaceId", "status", "validFrom", "validThrough", "aliases", "sourceAliases", "predecessorFips", "successorFips", "topologyId", "coordinateDerivationAllowed"],
+      "properties": {
+        "countyFips": { "$ref": "#/$defs/countyFips" },
+        "stateFips": { "$ref": "#/$defs/stateFips" },
+        "stateCode": { "$ref": "#/$defs/stateCode" },
+        "stateName": { "type": "string", "minLength": 1 },
+        "shortName": { "type": "string", "minLength": 1 },
+        "legalName": { "type": "string", "minLength": 1 },
+        "kind": { "$ref": "#/$defs/countyKind" },
+        "legalStatisticalAreaCode": { "type": "string", "pattern": "^[A-Z0-9]{2}$" },
+        "censusNamespaceId": { "type": "string", "minLength": 1 },
+        "status": { "const": "active" },
+        "validFrom": { "type": "string", "format": "date" },
+        "validThrough": { "type": "null" },
+        "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
+        "sourceAliases": { "type": "object", "additionalProperties": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true } },
+        "predecessorFips": { "type": "array", "items": { "$ref": "#/$defs/countyFips" }, "uniqueItems": true },
+        "successorFips": { "type": "array", "items": { "$ref": "#/$defs/countyFips" }, "uniqueItems": true },
+        "topologyId": { "$ref": "#/$defs/countyFips" },
+        "coordinateDerivationAllowed": { "const": false }
+      }
+    },
+    "retiredCounty": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["countyFips", "stateFips", "stateCode", "stateName", "shortName", "legalName", "kind", "status", "successorFips", "automaticResolutionAllowed", "sourceUrl"],
+      "properties": {
+        "countyFips": { "$ref": "#/$defs/countyFips" },
+        "stateFips": { "$ref": "#/$defs/stateFips" },
+        "stateCode": { "$ref": "#/$defs/stateCode" },
+        "stateName": { "type": "string", "minLength": 1 },
+        "shortName": { "type": "string", "minLength": 1 },
+        "legalName": { "type": "string", "minLength": 1 },
+        "kind": { "$ref": "#/$defs/countyKind" },
+        "status": { "const": "retired" },
+        "successorFips": { "type": "array", "items": { "$ref": "#/$defs/countyFips" }, "uniqueItems": true },
+        "automaticResolutionAllowed": { "const": false },
+        "sourceUrl": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

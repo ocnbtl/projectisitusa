@@ -1,4 +1,9 @@
 import topology from "@/data/source/county-equivalents-topology.json";
+import countyRegistry from "@/data/research/county-equivalent-registry.json";
+import countyRegistrySchema from "@/data/research/schemas/county-equivalent-registry.schema.json";
+import stateRegistrySchema from "@/data/research/schemas/state-registry.schema.json";
+import stateRegistry from "@/data/research/state-registry.json";
+import { z } from "zod";
 import {
   assertCoordinateDerivationDisabled,
   getNationalV1Registry,
@@ -12,6 +17,12 @@ function assert(condition: unknown, message: string): asserts condition {
 }
 
 assertCoordinateDerivationDisabled();
+z.fromJSONSchema(
+  stateRegistrySchema as unknown as Parameters<typeof z.fromJSONSchema>[0],
+).parse(stateRegistry);
+z.fromJSONSchema(
+  countyRegistrySchema as unknown as Parameters<typeof z.fromJSONSchema>[0],
+).parse(countyRegistry);
 const national = getNationalV1Registry();
 assert(national.stateCount === 50, "National v1 must contain exactly 50 states.");
 assert(national.federalDistrictCount === 1, "National v1 must track DC separately.");

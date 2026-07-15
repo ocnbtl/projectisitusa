@@ -101,7 +101,213 @@
         "validate the manifest and keep every changed path inside the lease-specific worker-results root",
         "commit evidence content first and the finalized manifest second"
       ],
-      "transitionedAt": "2026-07-15T18:10:00.000Z"
+      "transitionedAt": "2026-07-15T12:30:21Z"
+    },
+    {
+      "leaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-2",
+      "jobId": "pilot-al-gbif-dreissena-bugensis-01063",
+      "attempt": 2,
+      "state": "failed",
+      "claimedAt": "2026-07-15T12:32:00Z",
+      "expiresAt": "2026-07-16T12:32:00Z",
+      "workerTaskId": "/root/real_skill_pilot_cycle3",
+      "expectedManifestPath": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3/manifest.json",
+      "previousLeaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-1",
+      "recoveryReason": "Candidate cycle 2 used a generic clean-worktree whitespace command that did not inspect committed raw header artifacts. Candidate cycle 3 preserves exact provider bytes through repository binary attributes and requires an independently validated base-to-head check.",
+      "recoveryAt": "2026-07-15T12:32:00Z",
+      "baseSha": "28997d885a42e495e359bf6fee3477f8c06b1f88",
+      "branch": "codex/real-skill-pilot-al-gbif-cycle3",
+      "worktree": "/tmp/isitusa-real-skill-pilot-al-gbif-cycle3",
+      "stateOrSourceScope": {
+        "states": [
+          "AL"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "dreissena-bugensis"
+        ],
+        "pairs": [
+          "01063:dreissena-bugensis"
+        ]
+      },
+      "scopeClaims": [
+        "state/AL/source/gbif-preserved-specimens/taxon/dreissena-bugensis/county/01063"
+      ],
+      "permittedPaths": [
+        "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "scripts/compile-research-index.ts",
+        "scripts/check-research-integrity.ts",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-cycle-3",
+          "gitCommit": "28997d885a42e495e359bf6fee3477f8c06b1f88",
+          "contentHash": "76dbadbcadbe92dac85e136957f722d146dea1fc6f3b5427e2c76c00317e5815",
+          "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-national-orchestrator"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-cycle-3",
+          "gitCommit": "28997d885a42e495e359bf6fee3477f8c06b1f88",
+          "contentHash": "0e8f3fdd6d68aafa39abd4cb675f27e6686c156c51c2a00ba43767fae93a3745",
+          "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-evidence-worker"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 5000000,
+        "maxWallMinutes": 20,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "retain and hash the GBIF species-match response and the complete one-page occurrence response",
+        "screen exactly 01063:dreissena-bugensis without coordinate-derived geography",
+        "emit one complete pair outcome and preserve every considered provider record as an assertion or rejection",
+        "validate the manifest and keep every changed path inside the lease-specific worker-results root",
+        "commit evidence content first and the finalized manifest second",
+        "record and pass git diff --check 28997d885a42e495e359bf6fee3477f8c06b1f88...HEAD"
+      ],
+      "transitionedAt": "2026-07-15T12:36:30Z"
+    },
+    {
+      "leaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-3",
+      "jobId": "pilot-al-gbif-dreissena-bugensis-01063",
+      "attempt": 3,
+      "state": "completed",
+      "claimedAt": "2026-07-15T12:38:00Z",
+      "expiresAt": "2026-07-16T12:38:00Z",
+      "workerTaskId": "/root/real_skill_pilot_cycle3_r3",
+      "expectedManifestPath": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/manifest.json",
+      "previousLeaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-2",
+      "recoveryReason": "Attempt 2 was not dispatched because the claim's post-validation rejected mismatched job paths and revealed missing rollback. Candidate cycle 3 now validates immutable retries and transactionally restores rejected claims.",
+      "recoveryAt": "2026-07-15T12:38:00Z",
+      "baseSha": "d9813621e085d35801d06cb792e26590f28a0ea3",
+      "branch": "codex/real-skill-pilot-al-gbif-cycle3-r3",
+      "worktree": "/tmp/isitusa-real-skill-pilot-al-gbif-cycle3-r3",
+      "stateOrSourceScope": {
+        "states": [
+          "AL"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "dreissena-bugensis"
+        ],
+        "pairs": [
+          "01063:dreissena-bugensis"
+        ]
+      },
+      "scopeClaims": [
+        "state/AL/source/gbif-preserved-specimens/taxon/dreissena-bugensis/county/01063"
+      ],
+      "permittedPaths": [
+        "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "scripts/compile-research-index.ts",
+        "scripts/check-research-integrity.ts",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-cycle-3",
+          "gitCommit": "d9813621e085d35801d06cb792e26590f28a0ea3",
+          "contentHash": "432eb9ca1ae90a4557d460767cf3f3239dfcc5ac77a51c39095670379c6177d6",
+          "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-national-orchestrator"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-cycle-3",
+          "gitCommit": "d9813621e085d35801d06cb792e26590f28a0ea3",
+          "contentHash": "0e8f3fdd6d68aafa39abd4cb675f27e6686c156c51c2a00ba43767fae93a3745",
+          "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-evidence-worker"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 5000000,
+        "maxWallMinutes": 20,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "retain and hash the GBIF species-match response and the complete one-page occurrence response",
+        "screen exactly 01063:dreissena-bugensis without coordinate-derived geography",
+        "emit one complete pair outcome and preserve every considered provider record as an assertion or rejection",
+        "validate the manifest and keep every changed path inside the lease-specific worker-results root",
+        "commit evidence content first and the finalized manifest second",
+        "record and pass git diff --check d9813621e085d35801d06cb792e26590f28a0ea3...HEAD"
+      ],
+      "transitionedAt": "2026-07-15T12:58:00Z"
     }
   ]
 }

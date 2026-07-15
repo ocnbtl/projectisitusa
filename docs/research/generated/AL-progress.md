@@ -15,6 +15,10 @@ Generated: `2026-07-15T00:00:00.000Z`
 - Determination coverage: `9.07%`
 - Research coverage: `66.00%`
 - Explicit outcome coverage: `0.0656%`
+- Applicable protocol cells: `14668`
+- Current complete protocol cells: `0`
+- Protocol completion: `0.00%`
+- Current protocol completion: `0.00%`
 - Evidence records: `30291`
 - Research runs: `26`
 - Rejection records: `329`

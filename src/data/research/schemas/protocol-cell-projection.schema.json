@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/protocol-cell-projection.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "stateCode", "asOf", "generatedAt", "protocolId", "protocolStatus", "priorityClassificationComplete", "requiredCurrentSourceIds", "summary", "categoryCompletion", "priorityCompletion", "requiredSourceStatus", "cells"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "asOf": { "type": "string", "format": "date" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "protocolId": { "type": "string", "minLength": 1 },
+    "protocolStatus": { "enum": ["draft", "active", "legacy-migration"] },
+    "priorityClassificationComplete": { "type": "boolean" },
+    "requiredCurrentSourceIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["totalCells", "applicableCells", "notApplicableCells", "completeCells", "incompleteCells", "blockedCells", "currentCells", "staleCells", "undatedCells", "applicableCompletionPercent", "currentCompletePercent", "regulatedAndHighApplicableCells", "regulatedAndHighCurrentCompleteCells", "regulatedAndHighCurrentCompletePercent", "requiredCurrentSourcesProcessed"],
+      "properties": {
+        "totalCells": { "type": "integer", "minimum": 0 },
+        "applicableCells": { "type": "integer", "minimum": 0 },
+        "notApplicableCells": { "type": "integer", "minimum": 0 },
+        "completeCells": { "type": "integer", "minimum": 0 },
+        "incompleteCells": { "type": "integer", "minimum": 0 },
+        "blockedCells": { "type": "integer", "minimum": 0 },
+        "currentCells": { "type": "integer", "minimum": 0 },
+        "staleCells": { "type": "integer", "minimum": 0 },
+        "undatedCells": { "type": "integer", "minimum": 0 },
+        "applicableCompletionPercent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "currentCompletePercent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "regulatedAndHighApplicableCells": { "type": "integer", "minimum": 0 },
+        "regulatedAndHighCurrentCompleteCells": { "type": "integer", "minimum": 0 },
+        "regulatedAndHighCurrentCompletePercent": { "type": "number", "minimum": 0, "maximum": 100 },
+        "requiredCurrentSourcesProcessed": { "type": "boolean" }
+      }
+    },
+    "categoryCompletion": { "type": "array", "items": { "$ref": "#/$defs/categoryAggregate" } },
+    "priorityCompletion": { "type": "array", "items": { "$ref": "#/$defs/priorityAggregate" } },
+    "requiredSourceStatus": { "type": "array", "items": { "$ref": "#/$defs/sourceAggregate" } },
+    "cells": { "type": "array", "items": { "$ref": "#/$defs/cell" } }
+  },
+  "$defs": {
+    "basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reference", "note"],
+      "properties": {
+        "kind": { "type": "string", "minLength": 1 },
+        "reference": { "type": "string", "minLength": 1 },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "required": ["applicableCells", "currentCompleteCells", "currentCompletePercent"],
+      "properties": {
+        "applicableCells": { "type": "integer", "minimum": 0 },
+        "currentCompleteCells": { "type": "integer", "minimum": 0 },
+        "currentCompletePercent": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "categoryAggregate": {
+      "allOf": [
+        { "$ref": "#/$defs/aggregate" },
+        { "type": "object", "additionalProperties": false, "required": ["category", "applicableCells", "currentCompleteCells", "currentCompletePercent"], "properties": { "category": { "enum": ["plants", "insects", "fungi-diseases", "wildlife"] }, "applicableCells": { "type": "integer", "minimum": 0 }, "currentCompleteCells": { "type": "integer", "minimum": 0 }, "currentCompletePercent": { "type": "number", "minimum": 0, "maximum": 100 } } }
+      ]
+    },
+    "priorityAggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["priority", "applicableCells", "currentCompleteCells", "currentCompletePercent"],
+      "properties": {
+        "priority": { "enum": ["regulated", "high", "pilot", "baseline"] },
+        "applicableCells": { "type": "integer", "minimum": 0 },
+        "currentCompleteCells": { "type": "integer", "minimum": 0 },
+        "currentCompletePercent": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "sourceAggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "applicableCells", "currentCompleteCells", "processed"],
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "applicableCells": { "type": "integer", "minimum": 0 },
+        "currentCompleteCells": { "type": "integer", "minimum": 0 },
+        "processed": { "type": "boolean" }
+      }
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cellKey", "stateCode", "speciesId", "category", "priority", "sourceId", "applicabilityStatus", "completionStatus", "freshnessStatus", "targetCountyCount", "completeOutcomeCountyCount", "blockedOutcomeCountyCount", "incompleteCountyCount", "latestCompleteRunFinishedAt", "freshThrough", "completionRunIds", "outcomeSetHash", "applicabilityBasis"],
+      "properties": {
+        "cellKey": { "type": "string", "minLength": 1 },
+        "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "speciesId": { "type": "string", "minLength": 1 },
+        "category": { "enum": ["plants", "insects", "fungi-diseases", "wildlife"] },
+        "priority": { "enum": ["regulated", "high", "pilot", "baseline"] },
+        "sourceId": { "type": "string", "minLength": 1 },
+        "applicabilityStatus": { "enum": ["applicable", "not-applicable"] },
+        "completionStatus": { "enum": ["complete", "incomplete", "blocked", "not-applicable"] },
+        "freshnessStatus": { "enum": ["current", "stale", "undated", "not-applicable"] },
+        "targetCountyCount": { "type": "integer", "minimum": 0 },
+        "completeOutcomeCountyCount": { "type": "integer", "minimum": 0 },
+        "blockedOutcomeCountyCount": { "type": "integer", "minimum": 0 },
+        "incompleteCountyCount": { "type": "integer", "minimum": 0 },
+        "latestCompleteRunFinishedAt": { "type": ["string", "null"] },
+        "freshThrough": { "type": ["string", "null"] },
+        "completionRunIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "outcomeSetHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "applicabilityBasis": { "type": "array", "items": { "$ref": "#/$defs/basis" } }
+      }
+    }
+  }
+}

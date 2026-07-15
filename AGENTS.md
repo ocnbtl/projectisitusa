@@ -4,7 +4,8 @@
 
 - Work in `/Users/ocean/Code/Project Isitusa`.
 - Treat `/Users/ocean/Documents/Project Isitusa` as a legacy checkout.
-- Work directly on `main` unless the user explicitly requests a branch.
+- The long-lived MAIN integration task is the only owner of `main`. MAIN alone may edit, merge, commit, push, regenerate shared public projections, or deploy from `main`.
+- Every bounded source, state, evidence-review, or infrastructure worker uses an isolated `codex/*` branch and worktree plus a machine-readable lease under `ops/national-research/`. Workers never merge, push `main`, deploy, edit shared schemas or skills, or generate shared projections.
 - Begin every task with `git status --short --branch` and `git log -1 --oneline`.
 - The repository may contain concurrent work. Do not revert, overwrite, stage, or reformat edits you did not make.
 - Keep commits scoped. Never include unrelated dirty files.
@@ -15,14 +16,25 @@ Read these files before changing county-species data or research tooling:
 
 1. `docs/architecture/evidence-research-system.md`: target architecture and invariants.
 2. `docs/research/README.md`: evidence research workflow and acceptance rules.
-3. `docs/handoffs/NEXT-CHAT-PROMPT.md`: current continuation prompt and verification checklist.
-4. `docs/source-inventory.md`: historical source inventory and source-specific caveats.
-5. `docs/county-audit/README.md`: historical county research framework.
-6. `docs/county-coverage/README.md`: legacy matrix behavior during migration.
+3. `ops/national-research/jobs.json`, `leases.json`, `integration-queue.json`, and `readiness-dashboard.json`: durable current orchestration state.
+4. `src/data/research/state-registry.json`, `county-equivalent-registry.json`, and `state-research-config.json`: current national scope and projection configuration.
+5. `docs/handoffs/NEXT-CHAT-PROMPT.md`: historical continuation material that is superseded unless MAIN ownership is explicitly transferred.
+6. `docs/source-inventory.md`: historical source inventory and source-specific caveats.
+7. `docs/county-audit/README.md`: historical county research framework.
+8. `docs/county-coverage/README.md`: legacy matrix behavior during migration.
 
 When guidance conflicts, current code and freshly generated outputs come first, followed by the architecture document, this file, the research workflow, and historical audit reports. Surface contradictions explicitly. Do not rewrite historical reports to make them look current.
 
-The current research foundation starts in `src/data/research/source-registry.json`, `src/data/research/research-protocols.json`, `src/lib/research/types.ts`, and `src/lib/research/source-adapter.ts`. Inspect and extend those files instead of creating a parallel model. Early implementation remains subject to the architecture acceptance gates.
+The current research foundation starts in `src/data/research/source-registry.json`, `src/data/research/research-protocols.json`, `src/data/research/state-registry.json`, `src/data/research/county-equivalent-registry.json`, `src/data/research/state-research-config.json`, `src/lib/research/types.ts`, and `src/lib/research/source-adapter.ts`. Inspect and extend those files instead of creating a parallel model.
+
+## National Orchestration Policy
+
+- MAIN plans work in the job registry, rejects overlapping active leases, reviews every worker manifest and diff, integrates validated commits, and runs all shared generation and release gates centrally.
+- Every lease pins a base SHA, branch, worktree, path allowlist, path denylist, skill versions and hashes, expected outputs, retry policy, expiration state, and completion criteria.
+- Every completion manifest reports source parameters, artifacts, assertions, reviews, rejections, outcomes, blocked items, exact baseline/final/net counts, verification commands, commit SHA, and remaining work.
+- A worker that discovers a shared-schema or shared-skill requirement records a blocker or proposal. It does not implement the shared change.
+- Durable job state belongs in repository artifacts, not chat history.
+- The 2026-07-15 candidate orchestrator and evidence-worker skills did not pass their third and final bounded refinement cycle because a blind real pilot produced a receipt rejected by the existing receipt schema. They are not frozen. Broad worker dispatch remains prohibited until a later candidate passes the full evaluation gate.
 
 ## Nonnegotiable Data Rules
 
@@ -48,32 +60,30 @@ Report research coverage separately from determination coverage.
 - Research completion does not create a determination.
 - Survey non-detection does not erase verified presence. The separate survey axis preserves both facts.
 
-The Alabama compatibility baseline verified on 2026-07-14 was:
+The Alabama compiler and public parity checkpoint verified on 2026-07-15 is:
 
 - `2504` species x `67` counties = `167768` county-species pairs
-- `15133` verified present
+- `15222` verified present
 - `0` verified absent
 - `8` not detected
-- `152627` legacy unknown
-- `15141` known, or `9.02%`
-
-The completed research compiler checkpoint verified on 2026-07-14 was:
-
-- `30130` evidence records
-- `15` research runs
-- `29` registered sources
-- `15133` verified present and `0` verified absent
-- `8` survey non-detections
-- `95580` researched unresolved
+- `95491` researched unresolved
 - `57047` not researched
-- `9.02%` determination coverage, counting present and explicitly absent only
-- `66.00%` research coverage, counting source-family screens and not-detected
-- `1558` legacy fallback pairs preserved
-- `176` distinct GBIF or iDigBio snapshot positives deferred as explicit migration candidates
+- `30291` evidence records
+- `329` rejections
+- `113` raw pair outcomes across `110` distinct pairs
+- `26` research runs
+- research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on reviewed presence
 
-The legacy compatibility known count remains `15141` and `9.02%`. Do not label the `8` not-detected pairs as determinations.
+The national geography and bounded pilot projection checkpoint verified on 2026-07-15 is:
 
-These values are a dated migration and compiler baseline, not permanent constants. Reverify generated counts before every implementation, handoff, or count claim.
+- `51` configured v1 state or district jurisdictions with `3144` current county equivalents
+- Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is not accepted as current scope
+- Connecticut uses `9` current planning regions; its `8` former counties are retained only as retired geography lineage
+- bounded research projections exist for Alabama, Alaska, Arizona, and Arkansas
+- Alaska, Arizona, and Arkansas pilot projections remain research-only and contain no published determinations before real pilot evidence is integrated
+- explicit protocol cells remain separate from determination and source-screen coverage
+
+These are dated compiler checkpoints, not permanent constants. Reverify generated counts before every implementation, handoff, or count claim. Do not label the `8` not-detected pairs as determinations.
 
 ## EDDMapS Bounded Merge
 
@@ -90,13 +100,16 @@ git log -1 --oneline
 npm run build:county-matrix -- AL
 npm run check:data-integrity
 npm run check:research-integrity
+npm run check:state-research-projections
+npm run check:national-research-config
+npm run build:national-readiness -- --as-of 2026-07-15
 npm run typecheck
 npm run build
 ```
 
 Do not run generation commands casually in a dirty worktree. They write tracked artifacts. Inspect the diff and report exact baseline, post-change, and net counts.
 
-The current compatibility foundation exposes `npm run research:migrate`, `npm run research:compile`, `npm run research:index`, and `npm run research:refresh`. Read `package.json` and the underlying scripts before use. Migration and compilation write tracked artifacts. Do not confuse these compatibility commands with the unfinished final adapter, receipt, review-event, and explicit `as_of` interfaces in the architecture document.
+The implemented compiler interface requires an explicit state and as-of date, for example `npm run research:compile -- --state AL --as-of 2026-07-15`. `research:verify` accepts the same scope and proves byte stability. `research:index` builds the ignored local index. Read `package.json` and the scripts before use because compilation and refresh commands write tracked artifacts.
 
 ## Writing Rules
 

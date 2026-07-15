@@ -53,6 +53,7 @@ export type CountyEquivalentRegistryEntry = {
 type RetiredCountyEquivalent = {
   countyFips: string;
   stateCode: string;
+  shortName?: string;
   legalName: string;
   status: "retired";
   successorFips: string[];
@@ -97,6 +98,7 @@ function normalizeAlias(value: string) {
 
 const countiesByState = new Map<string, CountyEquivalentRegistryEntry[]>();
 const aliasesByState = new Map<string, Map<string, CountyEquivalentRegistryEntry[]>>();
+const retiredAliasesByState = new Map<string, Map<string, RetiredCountyEquivalent[]>>();
 for (const county of countyRegistry.countyEquivalents) {
   const counties = countiesByState.get(county.stateCode) ?? [];
   counties.push(county);
@@ -119,6 +121,20 @@ for (const county of countyRegistry.countyEquivalents) {
 }
 for (const counties of countiesByState.values()) {
   counties.sort((left, right) => left.countyFips.localeCompare(right.countyFips));
+}
+for (const county of countyRegistry.retiredCountyEquivalents) {
+  const aliases =
+    retiredAliasesByState.get(county.stateCode) ??
+    new Map<string, RetiredCountyEquivalent[]>();
+  for (const alias of [county.shortName, county.legalName].filter(
+    (value): value is string => Boolean(value),
+  )) {
+    const normalized = normalizeAlias(alias);
+    const matches = aliases.get(normalized) ?? [];
+    if (!matches.some((entry) => entry.countyFips === county.countyFips)) matches.push(county);
+    aliases.set(normalized, matches);
+  }
+  retiredAliasesByState.set(county.stateCode, aliases);
 }
 
 export function getNationalV1Registry() {
@@ -199,6 +215,15 @@ export function resolveCountyEquivalent(input: {
   const normalized = normalizeAlias(input.countyName);
   const stateAliases = aliasesByState.get(stateCode) ?? new Map();
   const directMatches = stateAliases.get(normalized) ?? [];
+  const retiredMatches = retiredAliasesByState.get(stateCode)?.get(normalized) ?? [];
+  if (retiredMatches.length > 0) {
+    return {
+      status: "rejected",
+      reasonCode: "retired-geography",
+      detail: `${retiredMatches.map((entry) => entry.legalName).join(", ")} is retired and cannot be assigned automatically.`,
+      successorFips: [...new Set(retiredMatches.flatMap((entry) => entry.successorFips))].sort(),
+    };
+  }
   const sourceMatches = input.sourceId
     ? (countiesByState.get(stateCode) ?? []).filter((county) =>
         (county.sourceAliases[input.sourceId ?? ""] ?? []).some(

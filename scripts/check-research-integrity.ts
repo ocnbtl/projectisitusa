@@ -21,6 +21,10 @@ import {
   readNdjson as readRunNdjson,
   stableJson,
 } from "@/lib/research/run-files";
+import {
+  assertImmutableRunStateConsistency,
+  selectImmutableResearchRunsForState,
+} from "@/lib/research/state-run-selection";
 
 type SpeciesRecord = { id: string };
 type CountyRecord = { countyFips: string; stateCode: string };
@@ -236,10 +240,15 @@ const speciesIds = new Set(
     (entry) => entry.id,
   ),
 );
+const generatedCounties = Object.values(
+  readJson<Record<string, CountyRecord>>(path.join(ROOT, "src/data/generated/counties.json")),
+);
+const countyByFips = new Map(
+  generatedCounties.map((county) => [county.countyFips, county]),
+);
+const nationalStateCodes = new Set(generatedCounties.map((county) => county.stateCode));
 const alabamaCountyFips = new Set(
-  Object.values(
-    readJson<Record<string, CountyRecord>>(path.join(ROOT, "src/data/generated/counties.json")),
-  )
+  generatedCounties
     .filter((county) => county.stateCode === "AL")
     .map((county) => county.countyFips),
 );
@@ -252,27 +261,41 @@ const runs = runsFile.runs;
 const summary = readJson<ResearchStateSummary>(summaryPath);
 const asOfCutoff = Date.parse(`${summary.asOf}T23:59:59.999Z`);
 const immutableRuns = listImmutableResearchRuns(ROOT);
-const projectedImmutableRuns = immutableRuns.filter(
-  (bundle) => Date.parse(bundle.receipt.finished_at) <= asOfCutoff,
+for (const bundle of immutableRuns) assertImmutableRunStateConsistency(bundle);
+const projectedAlabamaImmutableRuns = selectImmutableResearchRunsForState(
+  immutableRuns,
+  "AL",
+  summary.asOf,
 );
 const runAssertions = immutableRuns.flatMap((bundle) => bundle.assertions);
-const projectedRunAssertions = projectedImmutableRuns.flatMap((bundle) => bundle.assertions);
+const projectedRunAssertions = projectedAlabamaImmutableRuns.flatMap(
+  (bundle) => bundle.assertions,
+);
 const perRunReviews = immutableRuns.flatMap((bundle) => bundle.reviews);
 const laterReviews = readRunNdjson<EvidenceReviewEvent>(reviewEventsPath);
 const reviews = [...perRunReviews, ...laterReviews];
 const projectedReviews = [
-  ...projectedImmutableRuns.flatMap((bundle) => bundle.reviews),
-  ...laterReviews.filter((event) => Date.parse(event.created_at) <= asOfCutoff),
+  ...projectedAlabamaImmutableRuns.flatMap((bundle) => bundle.reviews),
+  ...laterReviews.filter(
+    (event) =>
+      event.state_code === "AL" && Date.parse(event.created_at) <= asOfCutoff,
+  ),
 ];
 const perRunRejections = immutableRuns.flatMap((bundle) => bundle.rejections);
 const laterRejections = readRunNdjson<ResearchRejectionRecord>(rejectionsPath);
 const rejections = [...perRunRejections, ...laterRejections];
 const projectedRejections = [
-  ...projectedImmutableRuns.flatMap((bundle) => bundle.rejections),
-  ...laterRejections.filter((record) => Date.parse(record.created_at) <= asOfCutoff),
+  ...projectedAlabamaImmutableRuns.flatMap((bundle) => bundle.rejections),
+  ...laterRejections.filter(
+    (record) =>
+      record.normalized_target.state_code === "AL" &&
+      Date.parse(record.created_at) <= asOfCutoff,
+  ),
 ];
 const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
-const projectedOutcomes = projectedImmutableRuns.flatMap((bundle) => bundle.outcomes);
+const projectedOutcomes = projectedAlabamaImmutableRuns.flatMap(
+  (bundle) => bundle.outcomes,
+);
 const migrationCandidates = readJson<MigrationCandidatesFile>(migrationCandidatesPath);
 
 assert(bootstrapFreeze.rules.initializationOnly, "Bootstrap migration is no longer initialization-only.");
@@ -332,7 +355,7 @@ validateRecords(
 );
 schemaValidator("research-projection.schema.json").parse(summary);
 
-assert(summary.schemaVersion === 2, "Unsupported generated research projection version.");
+assert(summary.schemaVersion === 3, "Unsupported generated research projection version.");
 assert(registry.schemaVersion === 1, "Unsupported source registry schema version.");
 assertUnique(registry.sources.map((source) => source.id), "Source IDs");
 const registryLabels = registry.sources
@@ -375,6 +398,11 @@ const rejectionById = new Map(rejections.map((entry) => [entry.rejection_id, ent
 
 for (const bundle of immutableRuns) {
   const { receipt } = bundle;
+  const runStateCode = receipt.requested_scope.state_code;
+  assert(
+    nationalStateCodes.has(runStateCode),
+    `Immutable run ${receipt.run_id} has unknown state ${runStateCode}.`,
+  );
   const source = sourceById.get(receipt.source_id);
   assert(source?.researchAdapter, `Immutable run ${receipt.run_id} has no registered adapter.`);
   execFileSync("git", ["cat-file", "-e", `${receipt.code_commit}^{commit}`], {
@@ -502,30 +530,84 @@ for (const bundle of immutableRuns) {
   for (const requestedPair of requestedPairs) {
     assert(outcomePairs.includes(requestedPair), `Immutable run ${receipt.run_id} lacks outcome ${requestedPair}.`);
   }
+  for (const assertion of bundle.assertions) {
+    assert(
+      assertion.state_code === runStateCode,
+      `Immutable run ${receipt.run_id} assertion ${assertion.eventId} disagrees with receipt state.`,
+    );
+  }
+  for (const review of bundle.reviews) {
+    assert(
+      review.state_code === runStateCode,
+      `Immutable run ${receipt.run_id} review ${review.eventId} disagrees with receipt state.`,
+    );
+  }
+  for (const rejection of bundle.rejections) {
+    assert(
+      rejection.normalized_target.state_code === runStateCode,
+      `Immutable run ${receipt.run_id} rejection ${rejection.rejection_id} disagrees with receipt state.`,
+    );
+  }
+  for (const outcome of bundle.outcomes) {
+    assert(
+      outcome.state_code === runStateCode,
+      `Immutable run ${receipt.run_id} outcome ${outcome.outcome_id} disagrees with receipt state.`,
+    );
+  }
 }
 
 for (const entry of runAssertions) {
-  assert(entry.state_code === "AL", `Run assertion ${entry.eventId} is outside Alabama.`);
-  assert(alabamaCountyFips.has(entry.county_fips), `Run assertion ${entry.eventId} has an unknown county.`);
+  const county = countyByFips.get(entry.county_fips);
+  assert(county, `Run assertion ${entry.eventId} has an unknown county.`);
+  assert(
+    county.stateCode === entry.state_code,
+    `Run assertion ${entry.eventId} county does not belong to ${entry.state_code}.`,
+  );
   assert(speciesIds.has(entry.species_id), `Run assertion ${entry.eventId} has an unknown species.`);
   assert(sourceById.has(entry.source_id), `Run assertion ${entry.eventId} has an unknown source.`);
   assert(entry.geography_match.county_fips === entry.county_fips, `Run assertion ${entry.eventId} has inconsistent county mapping.`);
   assert(/^https?:\/\//.test(entry.source_url), `Run assertion ${entry.eventId} has a non-HTTP URL.`);
 }
-for (const event of reviews) assertReviewInvariant(event);
+for (const event of reviews) {
+  assertReviewInvariant(event);
+  assert(
+    nationalStateCodes.has(event.state_code),
+    `Review ${event.eventId} has unknown state ${event.state_code}.`,
+  );
+  const assertion = assertionById.get(event.references.assertion_event_id);
+  assert(assertion, `Review ${event.eventId} references an unknown assertion.`);
+  assert(
+    assertion.state_code === event.state_code &&
+      assertion.county_fips === event.county_fips &&
+      assertion.species_id === event.species_id,
+    `Review ${event.eventId} does not match its assertion state or pair.`,
+  );
+}
 for (const rejection of rejections) {
   assert(sourceById.has(rejection.source_id), `Rejection ${rejection.rejection_id} has an unknown source.`);
-  assert(rejection.normalized_target.state_code === "AL", `Rejection ${rejection.rejection_id} is outside Alabama.`);
+  assert(
+    nationalStateCodes.has(rejection.normalized_target.state_code),
+    `Rejection ${rejection.rejection_id} has an unknown state.`,
+  );
   assert(speciesIds.has(rejection.normalized_target.species_id), `Rejection ${rejection.rejection_id} has an unknown species.`);
   if (rejection.normalized_target.county_fips) {
-    assert(alabamaCountyFips.has(rejection.normalized_target.county_fips), `Rejection ${rejection.rejection_id} has an unknown county.`);
+    const county = countyByFips.get(rejection.normalized_target.county_fips);
+    assert(county, `Rejection ${rejection.rejection_id} has an unknown county.`);
+    assert(
+      county.stateCode === rejection.normalized_target.state_code,
+      `Rejection ${rejection.rejection_id} county does not belong to its state.`,
+    );
   }
 }
 for (const outcome of outcomes) {
   assertOutcomeInvariant(outcome);
   assert(sourceById.has(outcome.source_id), `Outcome ${outcome.outcome_id} has an unknown source.`);
-  assert(outcome.state_code === "AL", `Outcome ${outcome.outcome_id} is outside Alabama.`);
-  assert(alabamaCountyFips.has(outcome.county_fips), `Outcome ${outcome.outcome_id} has an unknown county.`);
+  const county = countyByFips.get(outcome.county_fips);
+  assert(county, `Outcome ${outcome.outcome_id} has an unknown county.`);
+  assert(
+    county.stateCode === outcome.state_code,
+    `Outcome ${outcome.outcome_id} county does not belong to ${outcome.state_code}.`,
+  );
   assert(speciesIds.has(outcome.species_id), `Outcome ${outcome.outcome_id} has an unknown species.`);
   for (const assertionId of outcome.assertion_event_ids) {
     const assertion = assertionById.get(assertionId);
@@ -700,7 +782,10 @@ assert(totals.bootstrapEvidenceRecordCount === bootstrapEvidence.length, "Genera
 assert(totals.runEvidenceRecordCount === compiledEvidence.runEvidence.length, "Generated run evidence count is stale.");
 assert(totals.evidenceRecordCount === bootstrapEvidence.length + compiledEvidence.runEvidence.length, "Generated total evidence count is stale.");
 assert(totals.rejectionRecordCount === projectedRejections.length, "Generated rejection count is stale.");
-assert(totals.researchRunCount === runs.length + projectedImmutableRuns.length, "Generated run count is stale.");
+assert(
+  totals.researchRunCount === runs.length + projectedAlabamaImmutableRuns.length,
+  "Generated run count is stale.",
+);
 assert(totals.conflictCount === 0, "Generated research index contains present-versus-absence conflicts.");
 assert(totals.verifiedPresent === presentPairs.size, "Research summary present count is stale.");
 assert(totals.verifiedAbsent === absentPairs.size, "Research summary absence count is stale.");
@@ -806,7 +891,7 @@ for (const filename of publicCountyFiles) {
   countyExplicitOutcomePairs += county.summary.explicitOutcomePairs;
 }
 
-for (const assertion of runAssertions) {
+for (const assertion of runAssertions.filter((entry) => entry.state_code === "AL")) {
   assert(
     projectedEvidenceIds.has(assertion.eventId) === projectedRunEvidenceIds.has(assertion.eventId),
     `Run assertion ${assertion.eventId} publication does not match its review state.`,
@@ -824,7 +909,7 @@ console.log(
     {
       sourceCount: registry.sources.length,
       bootstrapResearchRunCount: runs.length,
-      immutableResearchRunCount: projectedImmutableRuns.length,
+      immutableResearchRunCount: projectedAlabamaImmutableRuns.length,
       totalImmutableResearchRunCount: immutableRuns.length,
       bootstrapLedgerEvidenceCount: bootstrapEvidence.length,
       runAssertionEventCount: projectedRunAssertions.length,

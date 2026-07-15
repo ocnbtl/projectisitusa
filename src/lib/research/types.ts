@@ -181,13 +181,28 @@ export interface ResearchStatusCounts {
   explicitOutcomeCoveragePercent: number;
 }
 
+export interface ResearchProjectionScope {
+  publicationMode: "authoritative" | "research-only";
+  speciesMode: "catalog-all" | "explicit";
+  certificationScope: "state-baseline" | "bounded-pilot";
+  applicabilityPath: string | null;
+  applicabilityAsOf: string | null;
+  applicableSpeciesCount: number;
+  undeterminedSpeciesPolicy: "excluded" | "included-grandfathered-baseline";
+  compatibilityPublication: boolean;
+  protocolModel:
+    | "explicit-source-species-legacy-migration"
+    | "explicit-source-species-active";
+}
+
 export interface ResearchCountyFile {
-  schemaVersion: 2;
+  schemaVersion: 3;
   stateCode: string;
   countyFips: string;
   countyName: string;
   asOf: string;
   generatedAt: string;
+  scope: ResearchProjectionScope;
   summary: ResearchStatusCounts;
   pairs: ResearchPairRecord[];
 }
@@ -204,12 +219,13 @@ export interface ResearchQueueEntry {
 }
 
 export interface ResearchStateSummary {
-  schemaVersion: 2;
+  schemaVersion: 3;
   stateCode: string;
   stateName: string;
   asOf: string;
   generatedAt: string;
   sourceSnapshotDate: string;
+  scope: ResearchProjectionScope;
   summary: {
     speciesCount: number;
     countyCount: number;

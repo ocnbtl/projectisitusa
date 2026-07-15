@@ -1,6 +1,10 @@
 # Next Chat Prompt
 
-Copy everything below into a new Codex chat.
+> SUPERSEDED FOR ORDINARY CONTINUATION as of 2026-07-15. Do not use this file to claim current counts, task ownership, worker scope, or permission to write `main`. Current authority is the canonical checkout, current generated artifacts, `AGENTS.md`, the architecture and research guides, and `ops/national-research/`. Use this historical prompt only when the user explicitly transfers exclusive MAIN ownership under the handoff policy. Before transfer, stop dispatch, integrate or close all work, record every lease, branch, worktree, commit, blocker, and deployment, and confirm that no merge, build, push, or deployment is active.
+
+The content below is retained as historical provenance. Its Alabama-only objective, counts, commands, and implementation gaps are stale.
+
+Copy everything below only for an explicitly authorized ownership transfer, then replace its dated state from current repository artifacts before acting.
 
 ## Prompt
 
@@ -10,7 +14,8 @@ Treat this prompt as the current operating context for Project Isitusa, but reve
 
 - Canonical repository: `/Users/ocean/Code/Project Isitusa`
 - Legacy checkout: `/Users/ocean/Documents/Project Isitusa`. Never use it as source of truth.
-- Work directly on `main` unless I explicitly request otherwise.
+- This prompt grants `main` access only after the user explicitly transfers exclusive MAIN ownership and current orchestration state proves that no other task owns or writes `main`.
+- Every bounded worker uses an isolated `codex/*` branch and worktree plus a current non-overlapping machine-readable lease. Workers never merge, push `main`, deploy, modify shared schemas or skills, or regenerate shared public projections.
 - Preserve concurrent user changes. Do not revert, overwrite, stage, or reformat unrelated edits.
 - After proper evaluation, commit the scoped work and push `main` to GitHub.
 - Verify the resulting Vercel production deployment and live route behavior.
@@ -19,7 +24,7 @@ Treat this prompt as the current operating context for Project Isitusa, but reve
 
 ### Objective
 
-Continue the new county-species evidence research system and use it to accelerate accurate Alabama coverage. The system must make every county-species pair easy to classify as:
+Historical objective, now superseded: continue the county-species evidence research system and use it to accelerate accurate Alabama coverage. The system must make every county-species pair easy to classify as:
 
 - verified present
 - verified absent

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/research-protocols.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "updatedAt", "protocols"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "updatedAt": { "type": "string", "format": "date" },
+    "protocols": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/protocol" }
+    }
+  },
+  "$defs": {
+    "basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reference", "note"],
+      "properties": {
+        "kind": { "type": "string", "minLength": 1 },
+        "reference": { "type": "string", "minLength": 1 },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "stateCodes", "status", "sourceUniverse", "requiredCurrentSourceIds", "priorityPolicy", "rules", "overrides"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "stateCodes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[A-Z]{2}$" } },
+        "status": { "enum": ["draft", "active", "legacy-migration"] },
+        "sourceUniverse": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "requiredCurrentSourceIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "priorityPolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["defaultPriority", "classificationComplete"],
+          "properties": {
+            "defaultPriority": { "enum": ["regulated", "high", "pilot", "baseline"] },
+            "classificationComplete": { "type": "boolean" }
+          }
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["ruleId", "speciesSelector", "applicableSourceIds", "basis"],
+            "properties": {
+              "ruleId": { "type": "string", "minLength": 1 },
+              "speciesSelector": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind", "values"],
+                "properties": {
+                  "kind": { "enum": ["category", "state-applicability"] },
+                  "values": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+                }
+              },
+              "applicableSourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+              "basis": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/basis" } }
+            }
+          }
+        },
+        "overrides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["stateCode", "speciesId", "sourceId", "applicability", "basis"],
+            "properties": {
+              "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+              "speciesId": { "type": "string", "minLength": 1 },
+              "sourceId": { "type": "string", "minLength": 1 },
+              "applicability": { "enum": ["applicable", "not-applicable"] },
+              "basis": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/basis" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 ## Status
 
-This document defines the operating model for county-species evidence research. The bootstrap ledger, compiler, SQLite index, Alabama projections, and research control center are implemented. Paths marked `Required` remain acceptance work and must not be presented as complete.
+This document defines the operating model for county-species evidence research. The bootstrap ledger, immutable run model, state-scoped compiler, SQLite index, static research projections, explicit protocol cells, national geography registries, orchestration registries, and research control center are implemented. Paths marked `Required` remain acceptance work and must not be presented as complete.
 
 The public Next.js application remains static. Source acquisition, research, review, compilation, SQLite indexing, and projection generation happen before the application build or in local tooling. Production requests must not depend on source APIs, research agents, or SQLite.
 
@@ -29,11 +29,21 @@ The public Next.js application remains static. Source acquisition, research, rev
 - Research completion can leave a county-species pair unknown.
 - A survey non-detection can coexist with verified historical or current presence because survey and determination are separate axes.
 
-## Current Compatibility Baseline
+## Exclusive MAIN And Worker Boundary
+
+One long-lived MAIN integration task exclusively owns `main`. MAIN alone plans jobs, allocates leases, edits shared architecture or skills, reviews worker results, integrates commits, runs shared generation, pushes, deploys, and verifies releases.
+
+Every bounded source, state, evidence-review, or infrastructure worker must use an isolated `codex/*` branch and worktree plus a non-overlapping machine-readable lease. A lease pins the base SHA, branch, worktree, state or source scope, taxa or pair scope, permitted and prohibited paths, skill versions and hashes, expected outputs, retry policy, expiration state, and completion criteria. Workers may commit only to their assigned branches. They may not merge, push `main`, deploy, edit shared schemas or skills, or regenerate shared public projections. Shared requirements become proposals or blockers for MAIN.
+
+Jobs, leases, integration decisions, readiness, evaluations, and recovery state are durable artifacts under `ops/national-research/`. Chat history is not operational authority.
+
+The 2026-07-15 candidate orchestrator and evidence-worker skills remain blocked after their third and final bounded refinement cycle. A blind real pilot produced a run receipt that the candidate validator accepted but the repository run-receipt schema rejected. The skills are not frozen, their pilot output is not integrated, and broad worker dispatch is prohibited until a later version passes the complete regression and real-pilot gate.
+
+## Verified Checkpoints
 
 The current system builds presence from `src/data/generated/presence.json`, non-presence compatibility statuses from `src/data/source/county-species-status-overrides.ts`, and state matrix reports with `scripts/build-state-coverage-matrix.ts`.
 
-The Alabama baseline verified from `docs/county-coverage/states/AL.md` on 2026-07-14 at commit `ae9d573` was:
+The Alabama table below is historical migration context verified from `docs/county-coverage/states/AL.md` on 2026-07-14 at commit `ae9d573`. It is not current authority:
 
 | Metric | Count |
 | --- | ---: |
@@ -47,27 +57,26 @@ The Alabama baseline verified from `docs/county-coverage/states/AL.md` on 2026-0
 | Known | 15141 |
 | Known percent | 9.02% |
 
-This is a migration parity target, not an evergreen count. Rebuild and reread generated outputs before making any current count claim.
-
-The first compiler checkpoint verified on 2026-07-14 produced:
+The current parity checkpoint freshly verified on 2026-07-15 is:
 
 | Metric | Count |
 | --- | ---: |
 | Registered sources | 29 |
-| Research runs | 15 |
-| Evidence records | 30130 |
-| Verified present | 15133 |
+| Research runs | 26 |
+| Evidence records | 30291 |
+| Rejections | 329 |
+| Raw pair outcomes | 113 |
+| Distinct outcome pairs | 110 |
+| Verified present | 15222 |
 | Verified absent | 0 |
 | Survey not detected | 8 |
-| Researched unresolved | 95580 |
+| Researched unresolved | 95491 |
 | Not researched | 57047 |
-| Determination coverage | 9.02% |
-| Source-screen research coverage | 66.00% |
 | Conflicts | 0 |
-| Legacy fallback pairs | 1558 |
-| Deferred distinct migration candidates | 176 |
 
-The 66.00% bootstrap metric means the pair has a resolved status or its species has been included in at least one completed statewide source-family screen. It does not mean the category protocol is complete, all relevant sources were searched, or the species is absent from unresolved counties.
+Research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on the `15222` reviewed Alabama present pairs. This resolved the dated `15222` research versus `15133` public contradiction without hand-editing truth files or discarding the `8` not-detected survey records.
+
+The current v1 geography registry contains `51` state or district jurisdictions and `3144` active county equivalents. Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is lineage only. Connecticut has `9` current planning regions and retains its `8` former counties only as retired lineage. Alabama, Alaska, Arizona, and Arkansas have generated research projections. The latter three are bounded research-only pilots and are not normal compatibility publication or state certification.
 
 ## System Boundary
 
@@ -93,7 +102,11 @@ Inspect current files before implementing a required target. Current paths are e
 | Path | Status | Role |
 | --- | --- | --- |
 | `src/data/research/source-registry.json` | Current | Versioned source registry |
-| `src/data/research/research-protocols.json` | Current | Versioned category and source-screen protocols |
+| `src/data/research/research-protocols.json` | Current | Explicit source-species applicability protocols |
+| `src/data/research/state-registry.json` | Current | State and district jurisdiction registry |
+| `src/data/research/county-equivalent-registry.json` | Current | Active and retired county-equivalent geography registry |
+| `src/data/research/state-research-config.json` | Current | State projection and species-scope configuration |
+| `src/data/research/state-applicability/<STATE>.json` | Current for configured pilots | Explicit pilot species applicability |
 | `src/data/research/evidence-assertions.ndjson` | Current bootstrap | Deterministically reconstructed compatibility evidence ledger |
 | `src/data/research/research-runs.json` | Current bootstrap | Combined migration run records, not final immutable per-run receipts |
 | `src/data/research/migration-candidates.json` | Current bootstrap | Deferred migration candidates for review |
@@ -107,23 +120,25 @@ Inspect current files before implementing a required target. Current paths are e
 | `src/lib/research/types.ts` | Current | Research domain, event, receipt, review, rejection, and outcome types |
 | `src/lib/research/source-adapter.ts` | Current | Runner-owned parameterized adapter contract |
 | `scripts/migrate-research-ledger.ts` | Current bootstrap | Deterministic legacy evidence migration |
-| `scripts/compile-research-index.ts` | Current | Additive Alabama event compiler and static projection builder with explicit `--as-of` |
+| `scripts/compile-research-index.ts` | Current | State-scoped event compiler and static projection builder with explicit `--state` and `--as-of` |
 | `scripts/build-research-db.ts` | Current | Disposable SQLite index builder |
 | `scripts/check-research-integrity.ts` | Current | Research parity and projection integrity checks |
 | `scripts/research/adapters/gbif-preserved-specimens.ts` | Current | Registered GBIF preserved-specimen adapter |
 | `scripts/research/adapters/idigbio-preserved-specimens.ts` | Current | Registered iDigBio preserved-specimen adapter for the frozen historical index |
 | `scripts/research/adapters/<adapter-id>.ts` | Required per source | Additional parameterized source adapters |
-| `scripts/research/run-source.ts` | Current for Alabama GBIF and iDigBio | Registered source-run orchestrator |
-| `src/data/generated/research/<STATE>/summary.json` | Current for Alabama | Generated build-time state summary |
+| `scripts/research/run-source.ts` | Current for configured GBIF and iDigBio scopes | Registered source-run orchestrator |
+| `scripts/build-national-readiness-dashboard.ts` | Current | Separate readiness gates, protocol metrics, job metrics, and forecast |
+| `ops/national-research/*.json` | Current | Jobs, leases, integration queue, dashboard, readiness, and evaluations |
+| `src/data/generated/research/<STATE>/summary.json` | Current for configured states | Generated build-time state summary |
 | `.cache/research/isitusa.sqlite` | Current | Disposable local query index, never authoritative |
-| `public/generated/research/<STATE>/summary.json` | Current for Alabama | Static public state projection |
-| `public/generated/research/<STATE>/counties/<FIPS>.json` | Current for Alabama | Static public county projection |
+| `public/generated/research/<STATE>/summary.json` | Current for configured states | Static public research state projection |
+| `public/generated/research/<STATE>/counties/<FIPS>.json` | Current for configured states | Static public research county projection |
 
 `.cache/` is ignored. Verify the current ignore diff before changing it and do not overwrite concurrent ignore-file edits.
 
-The architecture remains the acceptance contract where the implementation is incomplete. Current gaps include a general source-specific freshness and review policy beyond the registered specimen gates, protocol-complete pair outcomes and metrics, a reviewer command for later human events, parameterized adapters beyond Alabama GBIF and iDigBio preserved specimens, and a general state projection command.
+The architecture remains the acceptance contract where implementation is incomplete. Current gaps include a general source-specific freshness and review policy beyond the registered specimen gates, a reviewer command for later human events, additional registered source-family adapters, broad state applicability classification, and enough completed protocol cells for certification.
 
-`app/research/page.tsx` remains a static route. `src/components/research-control-center.tsx` fetches the committed public state summary and county shards from `public/generated/research/AL/` so the large queue is not embedded in initial HTML. Do not claim the route is complete until generated input, build, and route behavior are verified together.
+`app/research/page.tsx` remains a static route. `src/components/research-control-center.tsx` fetches committed state summaries and county shards from `public/generated/research/<STATE>/` so large queues are not embedded in initial HTML. Alabama is labeled as the certification baseline. Alaska, Arizona, and Arkansas are labeled as bounded research-only pilots. Do not claim a route or state is complete until generated input, build, normal county behavior, and route behavior are verified together.
 
 ## Append-Only Evidence Events
 
@@ -383,11 +398,11 @@ All metrics use the explicit county-species denominator for the state.
 (resolved pairs + source-screened unresolved pairs) / total pairs
 ```
 
-This metric records whether at least one completed source-family screen or resolved determination exists. It is not protocol completion. The target event model will additionally report protocol-complete research coverage from explicit pair outcomes such as `reviewed-evidence-found` and `reviewed-no-qualifying-evidence` with `scope_complete: true`. `needs-followup`, `blocked`, partial runs, and inferred scope do not count as protocol complete.
+This metric records whether at least one completed source-family screen or resolved determination exists. It is not protocol completion. The explicit protocol-cell projection separately reports applicable, not applicable, incomplete, complete, blocked, stale, and current source-species cells. Only complete current pair outcomes with `scope_complete: true` can complete an applicable cell. `needs-followup`, `blocked`, stale, partial runs, inferred scope, and source silence without a completed outcome do not count as protocol complete.
 
 Also report survey, freshness, and review distributions. Do not create one blended progress percentage. A pair may be researched but unknown, determined but stale, or supported by an unreviewed assertion. Those differences must remain visible.
 
-For Alabama parity, determination coverage starts from `15133 / 167768 = 9.02%`. Legacy known compatibility coverage starts from `15141 / 167768 = 9.02%` and includes the `8` survey non-detection pairs. The generated bootstrap source-screen research baseline is `110721 / 167768 = 66.00%`, consisting of `15133` present, `8` not detected, and `95580` researched-unresolved pairs. Do not relabel that value as protocol completion.
+For the 2026-07-15 Alabama parity checkpoint, determination coverage starts from `15222 / 167768`; compatibility known coverage includes those determinations plus `8` survey non-detection pairs. Source-screen research coverage includes `15222` present, `8` not detected, and `95491` researched-unresolved pairs. The explicit Alabama protocol projection contains `22536` source-species cells: `14668` applicable and `7868` not applicable, with no applicable cell falsely marked complete during migration. Do not relabel source-screen coverage as protocol completion.
 
 ## Local SQLite Query Index
 
@@ -458,41 +473,35 @@ These commands exist and write tracked research artifacts except for the ignored
 npm run research:migrate
 npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-limit <1-100>
 npm run research:run -- --source idigbio-preserved-specimens --state AL --candidate-limit <1-100>
-npm run research:compile -- --as-of <YYYY-MM-DD>
+npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
-npm run research:refresh -- --as-of <YYYY-MM-DD>
-npm run research:verify -- --as-of <YYYY-MM-DD>
+npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
+npm run research:verify -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run check:research-integrity
+npm run check:state-research-projections
+npm run check:national-research-config
+npm run build:national-readiness -- --as-of <YYYY-MM-DD>
 npm run validate:data
 ```
 
 `research:migrate` reconstructs the migration ledger from current versioned compatibility inputs, preserves exact matrix parity, and writes deferred snapshot positives to `migration-candidates.json`. It is a bootstrap migration command, not the final append-only source-run interface.
 
-`research:run` currently implements the registered Alabama GBIF preserved-specimen adapter. `research:compile` consumes reviewed immutable run evidence additively with the bootstrap ledger. `research:verify` runs two offline compilers for the same as-of date and fails if their tracked projection bytes differ.
+`research:run` implements state-parameterized registered GBIF and frozen-index iDigBio preserved-specimen adapters. `research:compile` consumes only runs matching the requested state. Alabama may update compatibility outputs; configured pilot states write research-only projections and cannot update shared compatibility outputs. `research:verify` runs two offline compilers for the same state and as-of date and fails if tracked projection bytes differ.
 
-### Remaining Research Command Interface
-
-The general state projection command and adapters for other source families remain future interface work:
-
-```bash
-npm run research:project -- --state AL
-```
-
-Run `check:research-integrity`, `research:index`, and `research:verify` together for schema, hash, local index, publication-boundary, and byte-stability verification.
+Run `check:research-integrity`, `check:state-research-projections`, `check:national-research-config`, `build:national-readiness`, `research:index`, and state-scoped `research:verify` together for schema, hash, state isolation, readiness, local index, publication-boundary, and byte-stability verification.
 
 ## Migration Sequence
 
-1. Completed bootstrap: add the source registry, draft protocols, initial types, and adapter contract.
-2. Completed bootstrap: migrate accepted legacy assertions with exact matrix parity and explicit legacy fallback lineage.
-3. Completed bootstrap: defer 176 distinct GBIF or iDigBio positives that are not in the current matrix instead of silently promoting them.
-4. Completed bootstrap: compile Alabama status axes, source-screen state, queue, and static county shards.
-5. Completed bootstrap: build the disposable SQLite index and research integrity gate.
-6. Completed bootstrap: add the public research control center without production source API or SQLite access.
-7. Completed foundation: add schemas, review events, retractions, superseding events, rejections, immutable detailed per-run receipts, and explicit pair outcomes.
-8. Started: move source families one at a time to registered parameterized adapters. GBIF and frozen-index iDigBio preserved specimens are implemented.
-9. Started: review migration candidates through the source-family workflow and compile accepted changes with exact before, after, and net reporting.
-10. Next: add source-specific freshness, protocol-complete outcomes, reviewer tooling, and more registered adapters.
-11. Retire direct legacy truth edits only after adapter coverage and all acceptance gates pass.
+1. Completed foundation: migrate accepted legacy assertions with explicit bootstrap lineage and preserve deferred source candidates without silently promoting them.
+2. Completed foundation: add registered adapters, immutable runs, reviews, rejections, pair outcomes, exact as-of compilation, hash validation, byte stability, SQLite indexing, and static projections.
+3. Completed parity dependency: make reviewed compiler output authoritative for Alabama research and compatibility publication while retaining separate survey non-detection records.
+4. Completed national parameterization: add explicit state and county-equivalent registries, state applicability, state-scoped run selection, research-only pilot projections, and Alaska geography regressions.
+5. Completed protocol foundation: replace implicit category completion with explicit source-species applicability cells and separate completeness, freshness, blocked, and priority metrics.
+6. Completed orchestration foundation: add jobs, leases, manifests, integration queue, readiness dashboard, and adversarial validation.
+7. Blocked skill gate: preserve the failed third-cycle candidate evaluation and prohibit broad dispatch.
+8. In progress: acquire national source families once when possible, partition deterministically, integrate Alaska, Arizona, and Arkansas pilots, and continue Alabama deferred work.
+9. Next after two clean pilot integrations: maintain 5 to 10 bounded states in flight when memory and merge capacity permit without weakening evidence standards.
+10. Continuing: add source-specific freshness policy, reviewer tooling, additional registered sources, and state applicability classifications.
 
 ## Acceptance Gates
 
@@ -509,3 +518,19 @@ The new operating model is ready for production only when:
 - public projections contain no internal-only fields
 - the production Next.js build performs no source API or SQLite access
 - Alabama parity differences from the reverified baseline are fully explained
+
+## State Certification Gates
+
+A state is ready for v1 certification only when all of these are true:
+
+- public and research projections agree
+- deferred candidates are resolved or explicitly blocked
+- baseline research coverage is complete or has explicit blocked exceptions
+- at least 90 percent of applicable protocol cells are complete
+- regulated and high-priority species have 100 percent applicable protocol completion
+- required current source families are processed and freshness is reported separately
+- conflicts are zero or explicitly adjudicated
+- outputs compile deterministically and pass data and research integrity
+- normal county pages and research views pass desktop and mobile production QA
+
+Source-screen coverage, known-pair coverage, protocol completion, determination coverage, survey non-detection, freshness, and conflicts remain separate metrics. No state is ready merely because one percentage is high.

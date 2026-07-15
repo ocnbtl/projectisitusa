@@ -1,8 +1,19 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "stateCode": "AL",
   "asOf": "2026-07-15",
   "generatedAt": "2026-07-15T00:00:00.000Z",
+  "scope": {
+    "publicationMode": "authoritative",
+    "speciesMode": "catalog-all",
+    "certificationScope": "state-baseline",
+    "applicabilityPath": null,
+    "applicabilityAsOf": null,
+    "applicableSpeciesCount": 2504,
+    "undeterminedSpeciesPolicy": "included-grandfathered-baseline",
+    "compatibilityPublication": true,
+    "protocolModel": "explicit-source-species-legacy-migration"
+  },
   "summary": {
     "speciesCount": 2504,
     "countyCount": 67,
@@ -330,6 +341,134 @@
       "screenedSpeciesCount": 0
     }
   ],
+  "protocol": {
+    "protocolId": "alabama-explicit-migration-v2",
+    "protocolStatus": "legacy-migration",
+    "priorityClassificationComplete": false,
+    "totalCells": 22536,
+    "applicableCells": 14668,
+    "notApplicableCells": 7868,
+    "completeCells": 0,
+    "incompleteCells": 14668,
+    "blockedCells": 0,
+    "currentCells": 0,
+    "staleCells": 0,
+    "undatedCells": 14668,
+    "applicableCompletionPercent": 0,
+    "currentCompletePercent": 0,
+    "regulatedAndHighApplicableCells": 0,
+    "regulatedAndHighCurrentCompleteCells": 0,
+    "regulatedAndHighCurrentCompletePercent": 0,
+    "requiredCurrentSourcesProcessed": false,
+    "categoryCompletion": [
+      {
+        "category": "fungi-diseases",
+        "applicableCells": 560,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "category": "insects",
+        "applicableCells": 3210,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "category": "plants",
+        "applicableCells": 9678,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "category": "wildlife",
+        "applicableCells": 1220,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      }
+    ],
+    "priorityCompletion": [
+      {
+        "priority": "regulated",
+        "applicableCells": 0,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "priority": "high",
+        "applicableCells": 0,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "priority": "pilot",
+        "applicableCells": 0,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "priority": "baseline",
+        "applicableCells": 14668,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      }
+    ],
+    "requiredSourceStatus": [
+      {
+        "sourceId": "alabama-plant-atlas",
+        "applicableCells": 1613,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "aphis-federal-quarantine",
+        "applicableCells": 647,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "eddmaps",
+        "applicableCells": 2504,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "gbif-preserved-specimens",
+        "applicableCells": 2504,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "idigbio-preserved-specimens",
+        "applicableCells": 2504,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "inaturalist-research-grade",
+        "applicableCells": 2392,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "usda-nrcs-plants",
+        "applicableCells": 1613,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "usfs-ids",
+        "applicableCells": 647,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
+      {
+        "sourceId": "usgs-nas",
+        "applicableCells": 244,
+        "currentCompleteCells": 0,
+        "processed": false
+      }
+    ]
+  },
   "nextQueue": [
     {
       "speciesId": "abies-alba",
@@ -339,12 +478,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -356,12 +495,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -373,12 +512,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -390,12 +529,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -407,12 +546,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -424,12 +563,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -441,12 +580,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -458,12 +597,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -475,12 +614,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -492,12 +631,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -509,12 +648,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -526,12 +665,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -543,12 +682,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -560,12 +699,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -577,12 +716,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -594,12 +733,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -611,12 +750,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -628,12 +767,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -645,12 +784,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -662,12 +801,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -679,12 +818,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -696,12 +835,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -713,12 +852,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -730,12 +869,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -747,12 +886,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -764,12 +903,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -781,12 +920,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -798,12 +937,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -815,12 +954,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -832,12 +971,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -849,12 +988,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -866,12 +1005,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -883,12 +1022,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -900,12 +1039,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -917,12 +1056,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -934,12 +1073,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -951,12 +1090,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -968,12 +1107,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -985,12 +1124,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1002,12 +1141,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1019,12 +1158,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1036,12 +1175,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1053,12 +1192,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1070,12 +1209,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1087,12 +1226,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1104,12 +1243,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1121,12 +1260,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1138,12 +1277,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1155,12 +1294,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1172,12 +1311,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1189,12 +1328,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1206,12 +1345,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1223,12 +1362,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1240,12 +1379,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1257,12 +1396,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1274,12 +1413,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1291,12 +1430,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1308,12 +1447,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1325,12 +1464,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1342,12 +1481,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1359,12 +1498,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1376,12 +1515,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1393,12 +1532,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1410,12 +1549,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1427,12 +1566,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1444,12 +1583,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1461,12 +1600,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1478,12 +1617,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1495,12 +1634,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1512,12 +1651,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1529,12 +1668,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1546,12 +1685,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1563,12 +1702,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1580,12 +1719,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1597,12 +1736,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1614,12 +1753,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1631,12 +1770,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1648,12 +1787,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1665,12 +1804,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1682,12 +1821,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1699,12 +1838,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1716,12 +1855,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1733,12 +1872,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1750,12 +1889,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1767,12 +1906,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1784,12 +1923,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1801,12 +1940,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1818,12 +1957,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1835,12 +1974,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1852,12 +1991,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1869,12 +2008,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1886,12 +2025,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1903,12 +2042,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1920,12 +2059,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1937,12 +2076,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -1954,12 +2093,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1971,12 +2110,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -1988,12 +2127,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
         "aphis-federal-quarantine",
-        "usfs-ids",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usfs-ids"
       ],
       "priorityScore": 67006
     },
@@ -2005,12 +2144,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -2022,12 +2161,12 @@
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "eddmaps",
-        "usda-nrcs-plants",
         "alabama-plant-atlas",
+        "eddmaps",
         "gbif-preserved-specimens",
         "idigbio-preserved-specimens",
-        "inaturalist-research-grade"
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     }

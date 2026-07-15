@@ -9,6 +9,10 @@ import type {
   ResearchSourceDefinition,
 } from "@/lib/research/types";
 import { resolveRunEvidence } from "@/lib/research/event-resolution";
+import {
+  getStateDefinition,
+  resolveCountyEquivalent,
+} from "@/lib/research/geography-registry";
 import { sha256, stableJson } from "@/lib/research/run-files";
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -103,6 +107,16 @@ export function validateResearchRunInMemory(input: {
 
   const requestedPairs = new Set(requestedPairKeys);
   assert(requestedPairs.size === requestedPairKeys.length, "Requested pairs are not unique.");
+  const state = getStateDefinition(stateCode);
+  assert(state?.nationalV1Scope, `Run state ${stateCode} is not in the national-v1 registry.`);
+  for (const key of requestedPairKeys) {
+    const countyFips = key.slice(0, key.indexOf(":"));
+    const resolution = resolveCountyEquivalent({ stateCode, countyFips });
+    assert(
+      resolution.status === "resolved",
+      `Requested pair ${key} does not use an active county equivalent for ${stateCode}.`,
+    );
+  }
   const assertionById = new Map(result.assertions.map((entry) => [entry.eventId, entry]));
   const rejectionById = new Map(
     result.rejections.map((entry) => [entry.rejection_id, entry]),
@@ -117,6 +131,13 @@ export function validateResearchRunInMemory(input: {
     assert(
       assertion.state_code === stateCode,
       `Assertion ${assertion.eventId} has the wrong state.`,
+    );
+    assert(
+      resolveCountyEquivalent({
+        stateCode,
+        countyFips: assertion.county_fips,
+      }).status === "resolved",
+      `Assertion ${assertion.eventId} has unknown or retired geography.`,
     );
     assert(
       requestedPairs.has(pairKey(assertion.county_fips, assertion.species_id)),
@@ -168,6 +189,10 @@ export function validateResearchRunInMemory(input: {
     const countyFips = rejection.normalized_target.county_fips;
     if (countyFips) {
       assert(
+        resolveCountyEquivalent({ stateCode, countyFips }).status === "resolved",
+        `Rejection ${rejection.rejection_id} has unknown or retired target geography.`,
+      );
+      assert(
         requestedPairs.has(
           pairKey(countyFips, rejection.normalized_target.species_id),
         ),
@@ -196,6 +221,13 @@ export function validateResearchRunInMemory(input: {
     assert(outcome.run_id === runId, `Outcome ${outcome.outcome_id} has the wrong run.`);
     assert(outcome.source_id === sourceId, `Outcome ${outcome.outcome_id} has the wrong source.`);
     assert(outcome.state_code === stateCode, `Outcome ${outcome.outcome_id} has the wrong state.`);
+    assert(
+      resolveCountyEquivalent({
+        stateCode,
+        countyFips: outcome.county_fips,
+      }).status === "resolved",
+      `Outcome ${outcome.outcome_id} has unknown or retired geography.`,
+    );
     if (outcome.status === "evidence-found") {
       assert(
         outcome.assertion_event_ids.length > 0 && outcome.query_urls.length > 0,
@@ -268,6 +300,12 @@ export function validateResearchRunInMemory(input: {
     receipt.parameter_hash === sha256(stableJson(receipt.parameters)),
     "Receipt parameter hash does not match its parameters.",
   );
+  if (receipt.adapter_version === "1.1.0") {
+    assert(
+      typeof receipt.parameters.stateProvince === "string" && receipt.parameters.stateProvince.length > 0,
+      "Adapter version 1.1.0 requires an explicit stateProvince parameter.",
+    );
+  }
   const parameterPairs = receipt.parameters.candidatePairs;
   assert(
     Array.isArray(parameterPairs) &&

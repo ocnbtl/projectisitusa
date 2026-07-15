@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "isitusa-national-skills-2026-07-15",
+  "evaluatedAt": "2026-07-15T13:04:00Z",
+  "result": "blocked",
+  "criticalGatePassed": false,
+  "broadDispatchAllowed": false,
+  "freeze": {
+    "status": "not-frozen",
+    "reason": "The third and final bounded candidate cycle failed the immutable run receipt contract during blind real-pilot audit.",
+    "candidateGitCommit": "d9813621e085d35801d06cb792e26590f28a0ea3",
+    "candidateSkillHashes": {
+      "isitusa-national-orchestrator": "432eb9ca1ae90a4557d460767cf3f3239dfcc5ac77a51c39095670379c6177d6",
+      "isitusa-evidence-worker": "0e8f3fdd6d68aafa39abd4cb675f27e6686c156c51c2a00ba43767fae93a3745"
+    }
+  },
+  "staticValidation": {
+    "officialQuickValidate": "pass",
+    "bundledScriptsExecuted": true,
+    "regressionSuite": {
+      "candidateCycle": 3,
+      "result": "pass",
+      "total": 20,
+      "passed": 20,
+      "failed": 0,
+      "reportedCriticalSafetyViolations": 0,
+      "wallSeconds": 3.176,
+      "peakMemoryMb": 45.172,
+      "manualInterventions": 0
+    },
+    "blindAuditOverride": {
+      "result": "fail",
+      "criticalSafetyViolations": 1,
+      "missingRegressionCase": "Worker receipt must validate against src/data/research/schemas/run-receipt.schema.json.",
+      "validatorGap": "The candidate worker validator does not validate receipt descriptors, receipt schema, source-verification descriptors, or the complete expected-output contract."
+    }
+  },
+  "refinementCycles": [
+    {
+      "cycle": 1,
+      "result": "fail",
+      "defects": [
+        "The blind worker exposed an unsupported publication-gate assumption.",
+        "Committed provider header bytes caused an incomplete whitespace attestation."
+      ],
+      "changes": [
+        "Tightened evidence publication rules and worker manifest checks.",
+        "Required the exact lease-base-to-HEAD whitespace command."
+      ]
+    },
+    {
+      "cycle": 2,
+      "result": "fail",
+      "defects": [
+        "The worker preserved CRLF header bytes but the contract did not distinguish immutable binary artifacts from authored text.",
+        "A rejected retry claim revealed non-transactional orchestration state updates."
+      ],
+      "changes": [
+        "Declared provider-controlled header and raw artifacts as binary.",
+        "Added immutable retry validation and transactional claim rollback."
+      ]
+    },
+    {
+      "cycle": 3,
+      "result": "fail",
+      "defects": [
+        "The real blind worker emitted a receipt that fails the existing immutable run receipt schema.",
+        "The candidate validator passed the manifest while omitting receipt-schema validation."
+      ],
+      "changes": [
+        "No fourth refinement was attempted because the implementation plan permits at most three bounded cycles."
+      ]
+    }
+  ],
+  "realPilot": {
+    "jobId": "pilot-al-gbif-dreissena-bugensis-01063",
+    "leaseAttempts": 3,
+    "workerCompletedSubmissions": 2,
+    "acceptedIntegrations": 0,
+    "workerCompletionRate": 0,
+    "disposition": "staging-only-changes-requested",
+    "validPairsScreened": 1,
+    "publicationEligibleAssertions": 1,
+    "reviews": 1,
+    "rejections": 0,
+    "outcomes": 1,
+    "sourceRequests": 4,
+    "retainedArtifacts": 8,
+    "retainedArtifactBytes": 27078,
+    "workerWallSeconds": 751,
+    "observedPeakMemoryMb": 52,
+    "validatedResearchThroughputPairsPerHour": 4.7936,
+    "evidenceSemanticViolations": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "mergeConflicts": 0,
+    "manualInterventions": 2,
+    "deterministicOutput": true,
+    "retryAndResumeBehavior": "Synthetic retry and resume tests passed; transactional retry rollback passed; no interrupted provider page was resumed in the real pilot.",
+    "manifestCompleteness": false,
+    "criticalFailure": "receipt.json contains unsupported fields and is invalid under run-receipt.schema.json."
+  },
+  "comparisonWithPriorUnskilledWorkflow": {
+    "priorComparableWallTimeAvailable": false,
+    "priorReportedPairsScreened": 105,
+    "priorReportedSpeciesScreened": 33,
+    "priorReportedEvidenceAdded": 154,
+    "priorReportedRejectionsAdded": 246,
+    "priorReportedPresentDeterminationsAdded": 84,
+    "demonstratedImprovements": [
+      "Lease collision rejection, prohibited-path enforcement, deterministic manifest validation, retry metadata, and transaction rollback are automated."
+    ],
+    "qualityRegression": "A critical immutable receipt compatibility regression prevents a passing comparison.",
+    "passingRequirementMet": false
+  },
+  "requiredRecovery": {
+    "broadWorkerDispatch": "blocked",
+    "pilotIntegration": "blocked until MAIN performs a lossless schema-valid normalization or a later evaluated skill version is authorized",
+    "safeContinuation": [
+      "Continue shared national architecture and compiler work in MAIN.",
+      "Keep centralized MAIN acquisition bounded and immutable.",
+      "Do not advertise, freeze, or pin candidate-cycle-3 as a production skill version."
+    ]
+  }
+}

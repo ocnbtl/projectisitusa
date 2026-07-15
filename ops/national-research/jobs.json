@@ -23,11 +23,11 @@
       "scopeClaims": [
         "state/AL/source/gbif-preserved-specimens/taxon/dreissena-bugensis/county/01063"
       ],
-      "baseSha": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
-      "branch": "codex/real-skill-pilot-al-gbif",
-      "worktree": "/tmp/isitusa-real-skill-pilot-al-gbif",
+      "baseSha": "d9813621e085d35801d06cb792e26590f28a0ea3",
+      "branch": "codex/real-skill-pilot-al-gbif-cycle3-r3",
+      "worktree": "/tmp/isitusa-real-skill-pilot-al-gbif-cycle3-r3",
       "permittedPaths": [
-        "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063/**"
+        "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/**"
       ],
       "prohibitedPaths": [
         ".agents/skills/**",
@@ -49,16 +49,16 @@
       "skillPins": [
         {
           "name": "isitusa-national-orchestrator",
-          "version": "candidate-cycle-2",
-          "gitCommit": null,
-          "contentHash": "3f0d46dec332cf03c20406f8fc5bf69acc73ea0fcd9fe237476525b2e649a786",
+          "version": "candidate-cycle-3",
+          "gitCommit": "d9813621e085d35801d06cb792e26590f28a0ea3",
+          "contentHash": "432eb9ca1ae90a4557d460767cf3f3239dfcc5ac77a51c39095670379c6177d6",
           "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-national-orchestrator"
         },
         {
           "name": "isitusa-evidence-worker",
-          "version": "candidate-cycle-2",
-          "gitCommit": null,
-          "contentHash": "2fd592ceb62eff7000d8c0ebf2381cff6e3f3cfb617ef5b11255e1f9dadbf666",
+          "version": "candidate-cycle-3",
+          "gitCommit": "d9813621e085d35801d06cb792e26590f28a0ea3",
+          "contentHash": "0e8f3fdd6d68aafa39abd4cb675f27e6686c156c51c2a00ba43767fae93a3745",
           "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-evidence-worker"
         }
       ],
@@ -92,12 +92,13 @@
         "screen exactly 01063:dreissena-bugensis without coordinate-derived geography",
         "emit one complete pair outcome and preserve every considered provider record as an assertion or rejection",
         "validate the manifest and keep every changed path inside the lease-specific worker-results root",
-        "commit evidence content first and the finalized manifest second"
+        "commit evidence content first and the finalized manifest second",
+        "record and pass git diff --check d9813621e085d35801d06cb792e26590f28a0ea3...HEAD"
       ],
       "dependencies": [],
       "priority": 100,
-      "state": "submitted",
-      "currentLeaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-1"
+      "state": "blocked",
+      "currentLeaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-3"
     }
   ]
 }

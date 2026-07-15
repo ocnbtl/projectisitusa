@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-07-15",
+  "generatedAt": "2026-07-15T00:00:00.000Z",
+  "geography": {
+    "states": 50,
+    "federalDistricts": 1,
+    "jurisdictions": 51,
+    "countyEquivalents": 3144,
+    "currentlyConfiguredStates": 4
+  },
+  "states": [
+    {
+      "stateCode": "AL",
+      "scope": {
+        "publicationMode": "authoritative",
+        "speciesMode": "catalog-all",
+        "certificationScope": "state-baseline",
+        "applicabilityPath": null,
+        "applicabilityAsOf": null,
+        "applicableSpeciesCount": 2504,
+        "undeterminedSpeciesPolicy": "included-grandfathered-baseline",
+        "compatibilityPublication": true,
+        "protocolModel": "explicit-source-species-legacy-migration"
+      },
+      "pairStatusCounts": {
+        "speciesCount": 2504,
+        "countyCount": 67,
+        "totalPairs": 167768,
+        "verifiedPresent": 15222,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 95491,
+        "notResearched": 57047,
+        "determinationCoveragePercent": 9.07,
+        "researchCoveragePercent": 66,
+        "explicitOutcomePairCount": 110,
+        "explicitOutcomeCoveragePercent": 0.0656,
+        "conflictCount": 0,
+        "evidenceRecordCount": 30291,
+        "bootstrapEvidenceRecordCount": 30130,
+        "runEvidenceRecordCount": 161,
+        "rejectionRecordCount": 329,
+        "researchRunCount": 26
+      },
+      "baselineResearchCoveragePercent": 66,
+      "explicitOutcomeCoveragePercent": 0.0656,
+      "protocolCompletePairCoveragePercent": 0.0115,
+      "protocolCellCounts": {
+        "totalCells": 22536,
+        "applicableCells": 14668,
+        "notApplicableCells": 7868,
+        "completeCells": 0,
+        "incompleteCells": 14668,
+        "blockedCells": 0,
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 14668,
+        "applicableCompletionPercent": 0,
+        "currentCompletePercent": 0,
+        "regulatedAndHighApplicableCells": 0,
+        "regulatedAndHighCurrentCompleteCells": 0,
+        "regulatedAndHighCurrentCompletePercent": 0,
+        "requiredCurrentSourcesProcessed": false
+      },
+      "categoryCompletion": [
+        {
+          "category": "fungi-diseases",
+          "applicableCells": 560,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "category": "insects",
+          "applicableCells": 3210,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "category": "plants",
+          "applicableCells": 9678,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "category": "wildlife",
+          "applicableCells": 1220,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "priorityCompletion": [
+        {
+          "priority": "regulated",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "high",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "pilot",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "baseline",
+          "applicableCells": 14668,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "freshness": {
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 14668
+      },
+      "deferred": {
+        "sourceAssertionCount": 312,
+        "distinctPairCount": 176,
+        "reviewedSourceAssertionCount": 113,
+        "remainingSourceAssertionCount": 199,
+        "reviewedDistinctPairCount": 110,
+        "remainingDistinctPairCount": 66
+      },
+      "conflicts": 0,
+      "publicParity": true,
+      "gates": {
+        "authoritativeCertificationScope": true,
+        "publicAndResearchProjectionsAgree": true,
+        "deferredCandidatesResolvedOrBlocked": false,
+        "baselineResearchCoverageComplete": false,
+        "applicableProtocolCellsAtLeast90": false,
+        "regulatedAndHighPriorityCurrentComplete": false,
+        "requiredCurrentSourceFamiliesProcessed": false,
+        "conflictsAdjudicated": true,
+        "deterministicIntegrityVerified": false,
+        "productionQaVerified": false
+      },
+      "blockers": [
+        "deferredCandidatesResolvedOrBlocked",
+        "baselineResearchCoverageComplete",
+        "applicableProtocolCellsAtLeast90",
+        "regulatedAndHighPriorityCurrentComplete",
+        "requiredCurrentSourceFamiliesProcessed",
+        "deterministicIntegrityVerified",
+        "productionQaVerified"
+      ],
+      "ready": false
+    },
+    {
+      "stateCode": "AK",
+      "scope": {
+        "publicationMode": "research-only",
+        "speciesMode": "explicit",
+        "certificationScope": "bounded-pilot",
+        "applicabilityPath": "src/data/research/state-applicability/AK.json",
+        "applicabilityAsOf": "2026-07-15",
+        "applicableSpeciesCount": 4,
+        "undeterminedSpeciesPolicy": "excluded",
+        "compatibilityPublication": false,
+        "protocolModel": "explicit-source-species-active"
+      },
+      "pairStatusCounts": {
+        "speciesCount": 4,
+        "countyCount": 30,
+        "totalPairs": 120,
+        "verifiedPresent": 0,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": 120,
+        "determinationCoveragePercent": 0,
+        "researchCoveragePercent": 0,
+        "explicitOutcomePairCount": 0,
+        "explicitOutcomeCoveragePercent": 0,
+        "conflictCount": 0,
+        "evidenceRecordCount": 0,
+        "bootstrapEvidenceRecordCount": 0,
+        "runEvidenceRecordCount": 0,
+        "rejectionRecordCount": 0,
+        "researchRunCount": 0
+      },
+      "baselineResearchCoveragePercent": 0,
+      "explicitOutcomeCoveragePercent": 0,
+      "protocolCompletePairCoveragePercent": 0,
+      "protocolCellCounts": {
+        "totalCells": 4,
+        "applicableCells": 4,
+        "notApplicableCells": 0,
+        "completeCells": 0,
+        "incompleteCells": 4,
+        "blockedCells": 0,
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 4,
+        "applicableCompletionPercent": 0,
+        "currentCompletePercent": 0,
+        "regulatedAndHighApplicableCells": 0,
+        "regulatedAndHighCurrentCompleteCells": 0,
+        "regulatedAndHighCurrentCompletePercent": 0,
+        "requiredCurrentSourcesProcessed": false
+      },
+      "categoryCompletion": [
+        {
+          "category": "insects",
+          "applicableCells": 1,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "category": "plants",
+          "applicableCells": 3,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "priorityCompletion": [
+        {
+          "priority": "regulated",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "high",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "pilot",
+          "applicableCells": 4,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "baseline",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "freshness": {
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 4
+      },
+      "deferred": {
+        "sourceAssertionCount": 5,
+        "distinctPairCount": 5,
+        "reviewedSourceAssertionCount": 0,
+        "remainingSourceAssertionCount": 5,
+        "reviewedDistinctPairCount": 0,
+        "remainingDistinctPairCount": 5
+      },
+      "conflicts": 0,
+      "publicParity": true,
+      "gates": {
+        "authoritativeCertificationScope": false,
+        "publicAndResearchProjectionsAgree": true,
+        "deferredCandidatesResolvedOrBlocked": false,
+        "baselineResearchCoverageComplete": false,
+        "applicableProtocolCellsAtLeast90": false,
+        "regulatedAndHighPriorityCurrentComplete": true,
+        "requiredCurrentSourceFamiliesProcessed": false,
+        "conflictsAdjudicated": true,
+        "deterministicIntegrityVerified": false,
+        "productionQaVerified": false
+      },
+      "blockers": [
+        "authoritativeCertificationScope",
+        "deferredCandidatesResolvedOrBlocked",
+        "baselineResearchCoverageComplete",
+        "applicableProtocolCellsAtLeast90",
+        "requiredCurrentSourceFamiliesProcessed",
+        "deterministicIntegrityVerified",
+        "productionQaVerified"
+      ],
+      "ready": false
+    },
+    {
+      "stateCode": "AZ",
+      "scope": {
+        "publicationMode": "research-only",
+        "speciesMode": "explicit",
+        "certificationScope": "bounded-pilot",
+        "applicabilityPath": "src/data/research/state-applicability/AZ.json",
+        "applicabilityAsOf": "2026-07-15",
+        "applicableSpeciesCount": 3,
+        "undeterminedSpeciesPolicy": "excluded",
+        "compatibilityPublication": false,
+        "protocolModel": "explicit-source-species-active"
+      },
+      "pairStatusCounts": {
+        "speciesCount": 3,
+        "countyCount": 15,
+        "totalPairs": 45,
+        "verifiedPresent": 0,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": 45,
+        "determinationCoveragePercent": 0,
+        "researchCoveragePercent": 0,
+        "explicitOutcomePairCount": 0,
+        "explicitOutcomeCoveragePercent": 0,
+        "conflictCount": 0,
+        "evidenceRecordCount": 0,
+        "bootstrapEvidenceRecordCount": 0,
+        "runEvidenceRecordCount": 0,
+        "rejectionRecordCount": 0,
+        "researchRunCount": 0
+      },
+      "baselineResearchCoveragePercent": 0,
+      "explicitOutcomeCoveragePercent": 0,
+      "protocolCompletePairCoveragePercent": 0,
+      "protocolCellCounts": {
+        "totalCells": 3,
+        "applicableCells": 3,
+        "notApplicableCells": 0,
+        "completeCells": 0,
+        "incompleteCells": 3,
+        "blockedCells": 0,
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 3,
+        "applicableCompletionPercent": 0,
+        "currentCompletePercent": 0,
+        "regulatedAndHighApplicableCells": 0,
+        "regulatedAndHighCurrentCompleteCells": 0,
+        "regulatedAndHighCurrentCompletePercent": 0,
+        "requiredCurrentSourcesProcessed": false
+      },
+      "categoryCompletion": [
+        {
+          "category": "plants",
+          "applicableCells": 3,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "priorityCompletion": [
+        {
+          "priority": "regulated",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "high",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "pilot",
+          "applicableCells": 3,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "baseline",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "freshness": {
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 3
+      },
+      "deferred": {
+        "sourceAssertionCount": 3,
+        "distinctPairCount": 3,
+        "reviewedSourceAssertionCount": 0,
+        "remainingSourceAssertionCount": 3,
+        "reviewedDistinctPairCount": 0,
+        "remainingDistinctPairCount": 3
+      },
+      "conflicts": 0,
+      "publicParity": true,
+      "gates": {
+        "authoritativeCertificationScope": false,
+        "publicAndResearchProjectionsAgree": true,
+        "deferredCandidatesResolvedOrBlocked": false,
+        "baselineResearchCoverageComplete": false,
+        "applicableProtocolCellsAtLeast90": false,
+        "regulatedAndHighPriorityCurrentComplete": true,
+        "requiredCurrentSourceFamiliesProcessed": false,
+        "conflictsAdjudicated": true,
+        "deterministicIntegrityVerified": false,
+        "productionQaVerified": false
+      },
+      "blockers": [
+        "authoritativeCertificationScope",
+        "deferredCandidatesResolvedOrBlocked",
+        "baselineResearchCoverageComplete",
+        "applicableProtocolCellsAtLeast90",
+        "requiredCurrentSourceFamiliesProcessed",
+        "deterministicIntegrityVerified",
+        "productionQaVerified"
+      ],
+      "ready": false
+    },
+    {
+      "stateCode": "AR",
+      "scope": {
+        "publicationMode": "research-only",
+        "speciesMode": "explicit",
+        "certificationScope": "bounded-pilot",
+        "applicabilityPath": "src/data/research/state-applicability/AR.json",
+        "applicabilityAsOf": "2026-07-15",
+        "applicableSpeciesCount": 2,
+        "undeterminedSpeciesPolicy": "excluded",
+        "compatibilityPublication": false,
+        "protocolModel": "explicit-source-species-active"
+      },
+      "pairStatusCounts": {
+        "speciesCount": 2,
+        "countyCount": 75,
+        "totalPairs": 150,
+        "verifiedPresent": 0,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": 150,
+        "determinationCoveragePercent": 0,
+        "researchCoveragePercent": 0,
+        "explicitOutcomePairCount": 0,
+        "explicitOutcomeCoveragePercent": 0,
+        "conflictCount": 0,
+        "evidenceRecordCount": 0,
+        "bootstrapEvidenceRecordCount": 0,
+        "runEvidenceRecordCount": 0,
+        "rejectionRecordCount": 0,
+        "researchRunCount": 0
+      },
+      "baselineResearchCoveragePercent": 0,
+      "explicitOutcomeCoveragePercent": 0,
+      "protocolCompletePairCoveragePercent": 0,
+      "protocolCellCounts": {
+        "totalCells": 2,
+        "applicableCells": 2,
+        "notApplicableCells": 0,
+        "completeCells": 0,
+        "incompleteCells": 2,
+        "blockedCells": 0,
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 2,
+        "applicableCompletionPercent": 0,
+        "currentCompletePercent": 0,
+        "regulatedAndHighApplicableCells": 0,
+        "regulatedAndHighCurrentCompleteCells": 0,
+        "regulatedAndHighCurrentCompletePercent": 0,
+        "requiredCurrentSourcesProcessed": false
+      },
+      "categoryCompletion": [
+        {
+          "category": "plants",
+          "applicableCells": 2,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "priorityCompletion": [
+        {
+          "priority": "regulated",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "high",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "pilot",
+          "applicableCells": 2,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        },
+        {
+          "priority": "baseline",
+          "applicableCells": 0,
+          "currentCompleteCells": 0,
+          "currentCompletePercent": 0
+        }
+      ],
+      "freshness": {
+        "currentCells": 0,
+        "staleCells": 0,
+        "undatedCells": 2
+      },
+      "deferred": {
+        "sourceAssertionCount": 2,
+        "distinctPairCount": 2,
+        "reviewedSourceAssertionCount": 0,
+        "remainingSourceAssertionCount": 2,
+        "reviewedDistinctPairCount": 0,
+        "remainingDistinctPairCount": 2
+      },
+      "conflicts": 0,
+      "publicParity": true,
+      "gates": {
+        "authoritativeCertificationScope": false,
+        "publicAndResearchProjectionsAgree": true,
+        "deferredCandidatesResolvedOrBlocked": false,
+        "baselineResearchCoverageComplete": false,
+        "applicableProtocolCellsAtLeast90": false,
+        "regulatedAndHighPriorityCurrentComplete": true,
+        "requiredCurrentSourceFamiliesProcessed": false,
+        "conflictsAdjudicated": true,
+        "deterministicIntegrityVerified": false,
+        "productionQaVerified": false
+      },
+      "blockers": [
+        "authoritativeCertificationScope",
+        "deferredCandidatesResolvedOrBlocked",
+        "baselineResearchCoverageComplete",
+        "applicableProtocolCellsAtLeast90",
+        "requiredCurrentSourceFamiliesProcessed",
+        "deterministicIntegrityVerified",
+        "productionQaVerified"
+      ],
+      "ready": false
+    }
+  ],
+  "operations": {
+    "jobsByState": {
+      "AL": 1
+    },
+    "jobsByStatus": {
+      "blocked": 1
+    },
+    "leasesByStatus": {
+      "completed": 2,
+      "failed": 1
+    },
+    "queueDecisions": {
+      "changes-requested": 2
+    },
+    "activeJobs": 0,
+    "completedJobs": 0,
+    "blockedJobs": 1,
+    "activeLeases": 0,
+    "completedWorkerLeases": 2,
+    "workerFailures": 2,
+    "workerCompletionRatePercent": 0,
+    "measuredWallSeconds": 751,
+    "memoryHighWaterMb": 52,
+    "manualInterventions": 2,
+    "mergeConflicts": 0,
+    "validatedStagingPairs": 1,
+    "validatedStagingThroughputPairsPerHour": 4.7936,
+    "skillEvaluationResult": "blocked",
+    "broadDispatchAllowed": false
+  },
+  "national": {
+    "completedStates": [],
+    "remainingConfiguredStates": [
+      "AL",
+      "AK",
+      "AZ",
+      "AR"
+    ],
+    "applicabilityScopeCompleteForAllJurisdictions": false,
+    "remainingApplicableProtocolCountyScreens": 982958,
+    "measuredRatePairsPerHour": 4.7936,
+    "concurrencyAssumption": 1,
+    "hoursPerDayAssumption": 16,
+    "forecastDaysAtMeasuredRate": 12816,
+    "targetMaximumDays": 28,
+    "targetGapDays": 12788,
+    "forecastQualification": "This is a conservative single-lane forecast from one rejected staging pilot. It excludes 47 jurisdictions whose source-species applicability is not yet classified and will be recomputed after national-source reuse produces accepted integrated throughput."
+  }
+}

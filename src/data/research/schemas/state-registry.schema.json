@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/state-registry.schema.json",
+  "title": "Project Isitusa state and federal district registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "source", "nationalV1", "jurisdictions"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "source": { "$ref": "#/$defs/source" },
+    "nationalV1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stateCount", "federalDistrictCount", "jurisdictionCount", "countyEquivalentCount", "certificationOrder", "activeCertificationStateCode", "pilotStateCodes"],
+      "properties": {
+        "stateCount": { "const": 50 },
+        "federalDistrictCount": { "const": 1 },
+        "jurisdictionCount": { "const": 51 },
+        "countyEquivalentCount": { "type": "integer", "minimum": 1 },
+        "certificationOrder": { "type": "array", "items": { "$ref": "#/$defs/stateCode" }, "minItems": 51, "maxItems": 51, "uniqueItems": true },
+        "activeCertificationStateCode": { "$ref": "#/$defs/stateCode" },
+        "pilotStateCodes": { "type": "array", "items": { "$ref": "#/$defs/stateCode" }, "uniqueItems": true }
+      }
+    },
+    "jurisdictions": {
+      "type": "array",
+      "minItems": 51,
+      "items": { "$ref": "#/$defs/jurisdiction" }
+    }
+  },
+  "$defs": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "dataset", "sourceUrl", "sourceAsOf", "sourceSha256"],
+      "properties": {
+        "publisher": { "type": "string", "minLength": 1 },
+        "dataset": { "type": "string", "minLength": 1 },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "sourceAsOf": { "type": "string", "format": "date" },
+        "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stateCode", "stateFips", "stateName", "countyEquivalentCount", "jurisdictionKind", "nationalV1Scope", "certificationOrder", "countyEquivalentLabel", "sourceStateNames"],
+      "properties": {
+        "stateCode": { "$ref": "#/$defs/stateCode" },
+        "stateFips": { "type": "string", "pattern": "^[0-9]{2}$" },
+        "stateName": { "type": "string", "minLength": 1 },
+        "countyEquivalentCount": { "type": "integer", "minimum": 1 },
+        "jurisdictionKind": { "enum": ["state", "federal-district", "territory"] },
+        "nationalV1Scope": { "type": "boolean" },
+        "certificationOrder": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }] },
+        "countyEquivalentLabel": { "type": "string", "minLength": 1 },
+        "sourceStateNames": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["gbif", "idigbio"],
+          "properties": {
+            "gbif": { "type": "string", "minLength": 1 },
+            "idigbio": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    }
+  }
+}
