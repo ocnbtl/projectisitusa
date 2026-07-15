@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/bootstrap-research-runs.schema.json",
+  "title": "Project Isitusa bootstrap research run index",
+  "description": "Schema for the combined historical receipt index in research-runs.json. New source runs use immutable per-run receipts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "runs"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "runs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/run" }
+    }
+  },
+  "$defs": {
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runId",
+        "sourceId",
+        "sourceLabel",
+        "stateCode",
+        "status",
+        "scope",
+        "accessedAt",
+        "targetSpeciesIds",
+        "acceptedSpeciesIds",
+        "acceptedPairCount",
+        "filters",
+        "artifactPath",
+        "caveat"
+      ],
+      "properties": {
+        "runId": { "type": "string", "minLength": 1 },
+        "sourceId": { "type": "string", "minLength": 1 },
+        "sourceLabel": { "type": "string", "minLength": 1 },
+        "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "status": { "enum": ["complete", "legacy-import"] },
+        "scope": {
+          "enum": ["statewide-source-screen", "evidence-only", "legacy-migration"]
+        },
+        "accessedAt": {
+          "oneOf": [
+            { "type": "string", "format": "date-time" },
+            { "type": "null" }
+          ]
+        },
+        "targetSpeciesIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "acceptedSpeciesIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "acceptedPairCount": { "type": "integer", "minimum": 0 },
+        "filters": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "artifactPath": { "type": "string", "minLength": 1 },
+        "caveat": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

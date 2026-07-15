@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/gbif-preserved-specimens-parameters.schema.json",
+  "title": "GBIF preserved specimen adapter parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["stateCode", "candidateLimit", "candidatePairs", "basisOfRecord", "occurrenceStatus", "minimumMatchConfidence", "pageLimit"],
+  "properties": {
+    "stateCode": { "const": "AL" },
+    "candidateLimit": { "type": "integer", "minimum": 1, "maximum": 100 },
+    "candidatePairs": { "type": "array", "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" }, "minItems": 1, "uniqueItems": true },
+    "basisOfRecord": { "const": "PRESERVED_SPECIMEN" },
+    "occurrenceStatus": { "const": "PRESENT" },
+    "minimumMatchConfidence": { "type": "integer", "minimum": 95, "maximum": 100 },
+    "pageLimit": { "type": "integer", "minimum": 1, "maximum": 300 }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/evidence-assertion.schema.json",
+  "title": "Project Isitusa evidence assertion event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "eventId", "event_type", "created_at", "actor_type", "actor_id", "run_id", "source_id", "state_code", "county_fips", "species_id", "claim_type", "evidence_kind", "scope", "source_record_id", "source_url", "source_record_date", "retrieved_at", "taxon_match", "geography_match", "temporal_scope", "spatial_scope", "survey_scope", "normalized_payload_hash", "caveats", "notes"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "eventId": { "type": "string", "minLength": 1 },
+    "event_type": { "const": "evidence.asserted" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "enum": ["adapter", "agent", "human", "migration"] },
+    "actor_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "state_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "county_fips": { "type": "string", "pattern": "^[0-9]{5}$" },
+    "species_id": { "type": "string", "minLength": 1 },
+    "claim_type": { "enum": ["recorded-present", "officially-absent", "not-detected"] },
+    "evidence_kind": { "type": "string", "minLength": 1 },
+    "scope": { "enum": ["point", "survey-area", "county", "regulatory-area", "legacy-county-pair"] },
+    "source_record_id": { "type": "string", "minLength": 1 },
+    "source_url": { "type": "string", "format": "uri" },
+    "source_record_date": { "type": ["string", "null"] },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "taxon_match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "target_scientific_name", "source_scientific_name", "source_taxon_key"],
+      "properties": {
+        "method": { "type": "string", "minLength": 1 },
+        "target_scientific_name": { "type": "string", "minLength": 1 },
+        "source_scientific_name": { "type": "string", "minLength": 1 },
+        "source_taxon_key": { "type": ["string", "null"] }
+      }
+    },
+    "geography_match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "source_state", "source_county", "county_fips"],
+      "properties": {
+        "method": { "type": "string", "minLength": 1 },
+        "source_state": { "type": "string", "minLength": 1 },
+        "source_county": { "type": "string", "minLength": 1 },
+        "county_fips": { "type": "string", "pattern": "^[0-9]{5}$" }
+      }
+    },
+    "temporal_scope": { "type": "string", "minLength": 1 },
+    "spatial_scope": { "type": "string", "minLength": 1 },
+    "survey_scope": { "type": ["string", "null"] },
+    "normalized_payload_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "caveats": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

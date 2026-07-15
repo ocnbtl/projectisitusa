@@ -1,0 +1,387 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/research-projection.schema.json",
+  "title": "Project Isitusa static research projection",
+  "oneOf": [
+    { "$ref": "#/$defs/stateProjection" },
+    { "$ref": "#/$defs/countyProjection" }
+  ],
+  "$defs": {
+    "nonnegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "statusCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verifiedPresent",
+        "verifiedAbsent",
+        "notDetected",
+        "researchedUnresolved",
+        "notResearched",
+        "researchCoveragePercent",
+        "explicitOutcomePairs",
+        "explicitOutcomeCoveragePercent"
+      ],
+      "properties": {
+        "verifiedPresent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "verifiedAbsent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notDetected": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchedUnresolved": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notResearched": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "explicitOutcomePairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "explicitOutcomeCoveragePercent": { "$ref": "#/$defs/percentage" }
+      }
+    },
+    "stateTotals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "speciesCount",
+        "countyCount",
+        "totalPairs",
+        "verifiedPresent",
+        "verifiedAbsent",
+        "notDetected",
+        "researchedUnresolved",
+        "notResearched",
+        "determinationCoveragePercent",
+        "researchCoveragePercent",
+        "explicitOutcomePairCount",
+        "explicitOutcomeCoveragePercent",
+        "conflictCount",
+        "evidenceRecordCount",
+        "bootstrapEvidenceRecordCount",
+        "runEvidenceRecordCount",
+        "rejectionRecordCount",
+        "researchRunCount"
+      ],
+      "properties": {
+        "speciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "countyCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "totalPairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "verifiedPresent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "verifiedAbsent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notDetected": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchedUnresolved": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notResearched": { "$ref": "#/$defs/nonnegativeInteger" },
+        "determinationCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "researchCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "explicitOutcomePairCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "explicitOutcomeCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "conflictCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "evidenceRecordCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "bootstrapEvidenceRecordCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "runEvidenceRecordCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "rejectionRecordCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchRunCount": { "$ref": "#/$defs/nonnegativeInteger" }
+      }
+    },
+    "countySummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "countyFips",
+        "name",
+        "verifiedPresent",
+        "verifiedAbsent",
+        "notDetected",
+        "researchedUnresolved",
+        "notResearched",
+        "researchCoveragePercent",
+        "explicitOutcomePairs",
+        "explicitOutcomeCoveragePercent"
+      ],
+      "properties": {
+        "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "verifiedPresent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "verifiedAbsent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notDetected": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchedUnresolved": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notResearched": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "explicitOutcomePairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "explicitOutcomeCoveragePercent": { "$ref": "#/$defs/percentage" }
+      }
+    },
+    "sourceSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "authority",
+        "tier",
+        "status",
+        "lastRunAt",
+        "evidencePairCount",
+        "screenedSpeciesCount"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "authority": { "type": "string", "minLength": 1 },
+        "tier": {
+          "enum": [
+            "official-national",
+            "official-state",
+            "academic",
+            "structured-aggregator",
+            "community-occurrence",
+            "manual-authority",
+            "legacy"
+          ]
+        },
+        "status": { "enum": ["operational", "manual", "legacy-migration"] },
+        "lastRunAt": {
+          "oneOf": [
+            { "type": "string", "format": "date-time" },
+            { "type": "null" }
+          ]
+        },
+        "evidencePairCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "screenedSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" }
+      }
+    },
+    "queueEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "speciesId",
+        "commonName",
+        "scientificName",
+        "category",
+        "notResearchedCountyCount",
+        "researchedUnresolvedCountyCount",
+        "missingProtocolSourceIds",
+        "priorityScore"
+      ],
+      "properties": {
+        "speciesId": { "type": "string", "minLength": 1 },
+        "commonName": { "type": "string", "minLength": 1 },
+        "scientificName": { "type": "string", "minLength": 1 },
+        "category": { "enum": ["plants", "insects", "fungi-diseases", "wildlife"] },
+        "notResearchedCountyCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchedUnresolvedCountyCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "missingProtocolSourceIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "priorityScore": { "type": "number", "minimum": 0 }
+      }
+    },
+    "migrationCandidates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceAssertionCount",
+        "distinctPairCount",
+        "reviewedSourceAssertionCount",
+        "remainingSourceAssertionCount",
+        "reviewedDistinctPairCount",
+        "remainingDistinctPairCount"
+      ],
+      "properties": {
+        "sourceAssertionCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "distinctPairCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "reviewedSourceAssertionCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "remainingSourceAssertionCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "reviewedDistinctPairCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "remainingDistinctPairCount": { "$ref": "#/$defs/nonnegativeInteger" }
+      }
+    },
+    "statusDefinitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verified-present",
+        "verified-absent",
+        "not-detected",
+        "researched-unresolved",
+        "not-researched"
+      ],
+      "properties": {
+        "verified-present": { "type": "string", "minLength": 1 },
+        "verified-absent": { "type": "string", "minLength": 1 },
+        "not-detected": { "type": "string", "minLength": 1 },
+        "researched-unresolved": { "type": "string", "minLength": 1 },
+        "not-researched": { "type": "string", "minLength": 1 }
+      }
+    },
+    "pairEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidenceId",
+        "sourceId",
+        "sourceLabel",
+        "url",
+        "assertion",
+        "scope",
+        "caveat",
+        "lineage"
+      ],
+      "properties": {
+        "evidenceId": { "type": "string", "minLength": 1 },
+        "sourceId": { "type": "string", "minLength": 1 },
+        "sourceLabel": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "assertion": {
+          "enum": ["recorded-present", "officially-absent", "not-detected"]
+        },
+        "scope": {
+          "enum": ["point", "survey-area", "county", "regulatory-area", "legacy-county-pair"]
+        },
+        "observedAt": { "type": "string", "minLength": 1 },
+        "reviewedAt": { "type": "string", "minLength": 1 },
+        "caveat": { "type": "string", "minLength": 1 },
+        "lineage": {
+          "enum": ["source-record", "source-species-county", "manual-review", "legacy-merged"]
+        }
+      }
+    },
+    "pairRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "speciesId",
+        "commonName",
+        "scientificName",
+        "category",
+        "displayStatus",
+        "determinationStatus",
+        "surveyStatus",
+        "researchStatus",
+        "freshnessStatus",
+        "reviewStatus",
+        "conflict",
+        "evidence",
+        "screenedBySourceIds"
+      ],
+      "properties": {
+        "speciesId": { "type": "string", "minLength": 1 },
+        "commonName": { "type": "string", "minLength": 1 },
+        "scientificName": { "type": "string", "minLength": 1 },
+        "category": { "enum": ["plants", "insects", "fungi-diseases", "wildlife"] },
+        "displayStatus": {
+          "enum": ["verified-present", "verified-absent", "not-detected", "researched-unresolved", "not-researched"]
+        },
+        "determinationStatus": { "enum": ["recorded-present", "officially-absent", "none"] },
+        "surveyStatus": { "enum": ["detected", "not-detected", "inconclusive", "unassessed"] },
+        "researchStatus": {
+          "enum": [
+            "resolved",
+            "source-screened",
+            "not-started",
+            "reviewed-evidence-found",
+            "reviewed-no-qualifying-evidence",
+            "needs-followup",
+            "blocked"
+          ]
+        },
+        "freshnessStatus": { "enum": ["current", "aging", "stale", "undated"] },
+        "reviewStatus": {
+          "enum": [
+            "not-reviewed",
+            "machine-validated",
+            "agent-reviewed",
+            "human-approved",
+            "rejected",
+            "retracted"
+          ]
+        },
+        "conflict": { "type": "boolean" },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pairEvidence" }
+        },
+        "screenedBySourceIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "stateProjection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "stateCode",
+        "stateName",
+        "asOf",
+        "generatedAt",
+        "sourceSnapshotDate",
+        "summary",
+        "counties",
+        "sources",
+        "queue",
+        "migrationCandidates",
+        "statusDefinitions"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 2 },
+        "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "stateName": { "type": "string", "minLength": 1 },
+        "asOf": { "type": "string", "format": "date" },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "sourceSnapshotDate": { "type": "string", "format": "date-time" },
+        "summary": { "$ref": "#/$defs/stateTotals" },
+        "counties": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/countySummary" },
+          "uniqueItems": true
+        },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceSummary" },
+          "uniqueItems": true
+        },
+        "queue": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/queueEntry" },
+          "uniqueItems": true
+        },
+        "migrationCandidates": { "$ref": "#/$defs/migrationCandidates" },
+        "statusDefinitions": { "$ref": "#/$defs/statusDefinitions" }
+      }
+    },
+    "countyProjection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "stateCode",
+        "countyFips",
+        "countyName",
+        "asOf",
+        "generatedAt",
+        "summary",
+        "pairs"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 2 },
+        "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+        "countyName": { "type": "string", "minLength": 1 },
+        "asOf": { "type": "string", "format": "date" },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "summary": { "$ref": "#/$defs/statusCounts" },
+        "pairs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pairRecord" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

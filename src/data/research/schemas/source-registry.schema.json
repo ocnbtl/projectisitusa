@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/source-registry.schema.json",
+  "title": "Project Isitusa research source registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "updatedAt", "sources"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "updatedAt": { "type": "string", "format": "date" },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "aliases",
+        "authority",
+        "tier",
+        "homepage",
+        "access",
+        "geographicScope",
+        "evidenceCapabilities",
+        "negativeSemantics",
+        "refreshCadenceDays",
+        "status",
+        "adapter",
+        "caveat"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "label": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "authority": { "type": "string", "minLength": 1 },
+        "tier": { "enum": ["official-national", "official-state", "academic", "structured-aggregator", "community-occurrence", "manual-authority", "legacy"] },
+        "homepage": { "type": "string", "format": "uri" },
+        "access": { "enum": ["api", "download", "arcgis", "manual", "legacy-snapshot"] },
+        "geographicScope": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "evidenceCapabilities": {
+          "type": "array",
+          "items": { "enum": ["recorded-present", "officially-absent", "not-detected"] },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "negativeSemantics": { "enum": ["none", "explicit-survey-only", "explicit-authority-only"] },
+        "refreshCadenceDays": { "type": ["integer", "null"], "minimum": 1 },
+        "status": { "enum": ["operational", "manual", "legacy-migration"] },
+        "adapter": { "type": ["string", "null"] },
+        "caveat": { "type": "string", "minLength": 1 },
+        "researchAdapter": { "$ref": "#/$defs/researchAdapter" }
+      }
+    },
+    "researchAdapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "module", "allowedVersions", "parameterSchema", "publicationReviewGate", "taxonMatchingPolicy", "geographyMatchingPolicy", "artifactRetention", "claimPersistence", "rateLimitRequestsPerSecond"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "module": { "type": "string", "minLength": 1 },
+        "allowedVersions": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "parameterSchema": { "type": "string", "minLength": 1 },
+        "publicationReviewGate": { "enum": ["machine-validated", "agent-reviewed", "human-approved"] },
+        "taxonMatchingPolicy": { "type": "string", "minLength": 1 },
+        "geographyMatchingPolicy": { "type": "string", "minLength": 1 },
+        "artifactRetention": { "enum": ["versioned", "hash-only", "not-retained"] },
+        "claimPersistence": { "enum": ["historical", "current-only"] },
+        "rateLimitRequestsPerSecond": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    }
+  }
+}

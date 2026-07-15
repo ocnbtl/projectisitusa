@@ -3,16 +3,21 @@ import path from "node:path";
 
 import type { SpeciesCategory } from "@/lib/data/types";
 import type {
+  EvidenceReviewEvent,
   EvidenceAssertion,
   FreshnessStatus,
   PairDisplayStatus,
   ResearchCountyFile,
   ResearchPairRecord,
   ResearchQueueEntry,
+  ResearchRejectionRecord,
   ResearchRunReceipt,
   ResearchSourceRegistry,
   ResearchStateSummary,
+  ReviewStatus,
 } from "@/lib/research/types";
+import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
+import { listImmutableResearchRuns, readNdjson as readRunNdjson } from "@/lib/research/run-files";
 
 type SpeciesRecord = {
   id: string;
@@ -47,12 +52,40 @@ type ResearchProtocolsFile = {
   }>;
 };
 
+type MigrationCandidatesFile = {
+  candidateCount: number;
+  distinctPairCount: number;
+  candidates: Array<{ sourceId: string; countyFips: string; speciesId: string }>;
+};
+
 const ROOT = process.cwd();
 const STATE_CODE = "AL";
-const GENERATED_AT_FALLBACK = "2026-07-14";
 const SRC_OUTPUT = path.join(ROOT, "src/data/generated/research/AL");
 const PUBLIC_OUTPUT = path.join(ROOT, "public/generated/research/AL");
 const DOCS_OUTPUT = path.join(ROOT, "docs/research/generated");
+
+function parseAsOf(argv: string[]) {
+  const index = argv.indexOf("--as-of");
+  const value = index >= 0 ? argv[index + 1] : undefined;
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    throw new Error("research:compile requires --as-of <YYYY-MM-DD>.");
+  }
+  if (argv.some((entry, entryIndex) => entryIndex !== index && entryIndex !== index + 1)) {
+    throw new Error(`Unexpected research compiler arguments: ${argv.join(" ")}`);
+  }
+  return value;
+}
+
+const AS_OF = parseAsOf(process.argv.slice(2));
+const AS_OF_CUTOFF = Date.parse(`${AS_OF}T23:59:59.999Z`);
+
+function atOrBeforeAsOf(value: string) {
+  const timestamp = Date.parse(value);
+  if (Number.isNaN(timestamp)) {
+    throw new Error(`Invalid research timestamp: ${value}`);
+  }
+  return timestamp <= AS_OF_CUTOFF;
+}
 
 function readJson<T>(filepath: string): T {
   return JSON.parse(readFileSync(filepath, "utf8")) as T;
@@ -71,6 +104,10 @@ function sortUnique(values: string[]) {
 
 function roundPercent(value: number) {
   return Number(value.toFixed(2));
+}
+
+function roundDetailedPercent(value: number) {
+  return Number(value.toFixed(4));
 }
 
 function pairKey(countyFips: string, speciesId: string) {
@@ -122,13 +159,51 @@ const counties = Object.values(
 const registry = readJson<ResearchSourceRegistry>(path.join(ROOT, "src/data/research/source-registry.json"));
 const protocols = readJson<ResearchProtocolsFile>(path.join(ROOT, "src/data/research/research-protocols.json"));
 const runs = readJson<ResearchRunsFile>(path.join(ROOT, "src/data/research/research-runs.json")).runs;
-const evidence = readNdjson<EvidenceAssertion>(path.join(ROOT, "src/data/research/evidence-assertions.ndjson"));
+const bootstrapEvidence = readNdjson<EvidenceAssertion>(path.join(ROOT, "src/data/research/evidence-assertions.ndjson"));
+const immutableRuns = listImmutableResearchRuns(ROOT).filter((bundle) =>
+  atOrBeforeAsOf(bundle.receipt.finished_at),
+);
+const runAssertions = immutableRuns.flatMap((bundle) => bundle.assertions);
+const runReviewEvents = immutableRuns.flatMap((bundle) => bundle.reviews);
+const lateReviewEvents = readRunNdjson<EvidenceReviewEvent>(
+  path.join(ROOT, "src/data/research/review-events.ndjson"),
+).filter((event) => atOrBeforeAsOf(event.created_at));
+const globalRejections = readRunNdjson<ResearchRejectionRecord>(
+  path.join(ROOT, "src/data/research/rejections.ndjson"),
+).filter((record) => atOrBeforeAsOf(record.created_at));
+const runRejections = immutableRuns.flatMap((bundle) => bundle.rejections);
+const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
+const { evidence, resolvedRunEvidence } = compileAdditiveResearchEvidence({
+  bootstrapEvidence,
+  runAssertions,
+  reviewEvents: [...runReviewEvents, ...lateReviewEvents],
+  sources: registry.sources,
+  asOf: AS_OF,
+});
 const matrix = readJson<MatrixFile>(path.join(ROOT, "docs/county-coverage/states/AL.json"));
+const migrationCandidates = readJson<MigrationCandidatesFile>(
+  path.join(ROOT, "src/data/research/migration-candidates.json"),
+);
 const sourceSnapshotDate = matrix.generatedFrom.countyPresenceSnapshotDate;
-const generatedAt =
-  [...runs.map((run) => run.accessedAt).filter((value): value is string => Boolean(value)), sourceSnapshotDate]
-    .sort()
-    .at(-1) ?? GENERATED_AT_FALLBACK;
+const generatedAt = `${AS_OF}T00:00:00.000Z`;
+
+const reviewStatusByEvidenceId = new Map<string, ReviewStatus>();
+for (const entry of bootstrapEvidence) {
+  reviewStatusByEvidenceId.set(
+    entry.evidenceId,
+    entry.lineage === "manual-review"
+      ? "human-approved"
+      : entry.lineage === "legacy-merged"
+        ? "agent-reviewed"
+        : "machine-validated",
+  );
+}
+for (const [eventId, status] of resolvedRunEvidence.reviewStatusByAssertionId) {
+  reviewStatusByEvidenceId.set(eventId, status);
+}
+const evidenceKindById = new Map(
+  resolvedRunEvidence.publishedAssertions.map((entry) => [entry.eventId, entry.evidence_kind]),
+);
 
 const evidenceByPair = new Map<string, EvidenceAssertion[]>();
 for (const assertion of evidence) {
@@ -155,6 +230,35 @@ for (const run of runs.filter((entry) => entry.scope === "statewide-source-scree
   }
 }
 
+const outcomesByPair = new Map<string, typeof outcomes>();
+for (const outcome of outcomes) {
+  const key = pairKey(outcome.county_fips, outcome.species_id);
+  const values = outcomesByPair.get(key) ?? [];
+  values.push(outcome);
+  outcomesByPair.set(key, values);
+}
+for (const values of outcomesByPair.values()) {
+  values.sort(
+    (left, right) =>
+      left.recorded_at.localeCompare(right.recorded_at) ||
+      left.outcome_id.localeCompare(right.outcome_id),
+  );
+}
+
+function pairReviewStatus(pairEvidence: EvidenceAssertion[]): ReviewStatus {
+  const ranking = new Map<ReviewStatus, number>([
+    ["not-reviewed", 0],
+    ["machine-validated", 1],
+    ["agent-reviewed", 2],
+    ["human-approved", 3],
+    ["rejected", -1],
+    ["retracted", -2],
+  ]);
+  return pairEvidence
+    .map((entry) => reviewStatusByEvidenceId.get(entry.evidenceId) ?? "not-reviewed")
+    .sort((left, right) => (ranking.get(right) ?? 0) - (ranking.get(left) ?? 0))[0] ?? "not-reviewed";
+}
+
 const countyFiles: ResearchCountyFile[] = [];
 const queueCounts = new Map<
   string,
@@ -165,6 +269,7 @@ let verifiedAbsent = 0;
 let notDetected = 0;
 let researchedUnresolved = 0;
 let notResearched = 0;
+let explicitOutcomePairCount = 0;
 let conflictCount = 0;
 
 for (const county of counties) {
@@ -173,15 +278,37 @@ for (const county of counties) {
   let countyNotDetected = 0;
   let countyResearchedUnresolved = 0;
   let countyNotResearched = 0;
+  let countyExplicitOutcomePairs = 0;
 
   const pairs: ResearchPairRecord[] = species.map((speciesEntry) => {
-    const pairEvidence = evidenceByPair.get(pairKey(county.countyFips, speciesEntry.id)) ?? [];
+    const key = pairKey(county.countyFips, speciesEntry.id);
+    const pairEvidence = evidenceByPair.get(key) ?? [];
+    const pairOutcomes = outcomesByPair.get(key) ?? [];
+    const latestOutcome = pairOutcomes.at(-1);
+    const hasExplicitCompleteOutcome = pairOutcomes.some(
+      (outcome) =>
+        outcome.scope_complete &&
+        ["evidence-found", "no-qualifying-evidence"].includes(outcome.status),
+    );
     const hasPresent = pairEvidence.some((entry) => entry.assertion === "recorded-present");
     const hasAbsence = pairEvidence.some((entry) => entry.assertion === "officially-absent");
     const hasNotDetected = pairEvidence.some((entry) => entry.assertion === "not-detected");
-    const screenedBySourceIds = sortUnique([...(screensBySpecies.get(speciesEntry.id) ?? [])]);
+    const hasSurveyDetection = pairEvidence.some(
+      (entry) => evidenceKindById.get(entry.evidenceId) === "survey-detection",
+    );
+    const screenedBySourceIds = sortUnique([
+      ...(screensBySpecies.get(speciesEntry.id) ?? []),
+      ...pairOutcomes
+        .filter((outcome) => outcome.status !== "blocked")
+        .map((outcome) => outcome.source_id),
+    ]);
     const conflict = hasPresent && hasAbsence;
     let displayStatus: PairDisplayStatus;
+
+    if (hasExplicitCompleteOutcome) {
+      countyExplicitOutcomePairs += 1;
+      explicitOutcomePairCount += 1;
+    }
 
     if (hasPresent) {
       displayStatus = "verified-present";
@@ -225,14 +352,21 @@ for (const county of counties) {
       category: speciesEntry.category,
       displayStatus,
       determinationStatus: hasPresent ? "recorded-present" : hasAbsence ? "officially-absent" : "none",
-      surveyStatus: hasPresent ? "detected" : hasNotDetected ? "not-detected" : "not-surveyed",
+      surveyStatus: hasSurveyDetection ? "detected" : hasNotDetected ? "not-detected" : "unassessed",
       researchStatus:
         hasPresent || hasAbsence || hasNotDetected
-          ? "resolved"
+          ? "reviewed-evidence-found"
+          : latestOutcome?.status === "no-qualifying-evidence" && latestOutcome.scope_complete
+            ? "reviewed-no-qualifying-evidence"
+            : latestOutcome?.status === "needs-followup"
+              ? "needs-followup"
+              : latestOutcome?.status === "blocked"
+                ? "blocked"
           : screenedBySourceIds.length > 0
             ? "source-screened"
             : "not-started",
       freshnessStatus: freshnessFor(pairEvidence, generatedAt),
+      reviewStatus: pairReviewStatus(pairEvidence),
       conflict,
       evidence: pairEvidence.map((entry) => ({
         evidenceId: entry.evidenceId,
@@ -253,10 +387,11 @@ for (const county of counties) {
   const researchedPairs =
     countyVerifiedPresent + countyVerifiedAbsent + countyNotDetected + countyResearchedUnresolved;
   countyFiles.push({
-    schemaVersion: 1,
+    schemaVersion: 2,
     stateCode: STATE_CODE,
     countyFips: county.countyFips,
     countyName: county.name,
+    asOf: AS_OF,
     generatedAt,
     summary: {
       verifiedPresent: countyVerifiedPresent,
@@ -265,6 +400,10 @@ for (const county of counties) {
       researchedUnresolved: countyResearchedUnresolved,
       notResearched: countyNotResearched,
       researchCoveragePercent: roundPercent((researchedPairs / species.length) * 100),
+      explicitOutcomePairs: countyExplicitOutcomePairs,
+      explicitOutcomeCoveragePercent: roundDetailedPercent(
+        (countyExplicitOutcomePairs / species.length) * 100,
+      ),
     },
     pairs,
   });
@@ -305,6 +444,7 @@ const queue: ResearchQueueEntry[] = species
 
 const sourceSummaries = registry.sources.map((source) => {
   const sourceRuns = runs.filter((run) => run.sourceId === source.id);
+  const sourceImmutableRuns = immutableRuns.filter((bundle) => bundle.receipt.source_id === source.id);
   const sourceEvidencePairs = new Set(
     evidence
       .filter((entry) => entry.sourceId === source.id)
@@ -317,10 +457,18 @@ const sourceSummaries = registry.sources.map((source) => {
     tier: source.tier,
     status: source.status,
     lastRunAt:
-      sourceRuns.map((run) => run.accessedAt).filter((value): value is string => Boolean(value)).sort().at(-1) ?? null,
+      [
+        ...sourceRuns.map((run) => run.accessedAt).filter((value): value is string => Boolean(value)),
+        ...sourceImmutableRuns.map((bundle) => bundle.receipt.finished_at),
+      ].sort().at(-1) ?? null,
     evidencePairCount: sourceEvidencePairs.size,
     screenedSpeciesCount: new Set(
-      sourceRuns.filter((run) => run.scope === "statewide-source-screen").flatMap((run) => run.targetSpeciesIds),
+      [
+        ...sourceRuns
+          .filter((run) => run.scope === "statewide-source-screen")
+          .flatMap((run) => run.targetSpeciesIds),
+        ...sourceImmutableRuns.flatMap((bundle) => bundle.receipt.requested_scope.species_ids),
+      ],
     ).size,
   };
 });
@@ -328,10 +476,31 @@ const sourceSummaries = registry.sources.map((source) => {
 const totalPairs = counties.length * species.length;
 const determinationCount = verifiedPresent + verifiedAbsent;
 const researchedCount = totalPairs - notResearched;
+const completedCandidateSourceKeys = new Set(
+  outcomes
+    .filter(
+      (outcome) =>
+        outcome.scope_complete &&
+        ["evidence-found", "no-qualifying-evidence"].includes(outcome.status),
+    )
+    .map((outcome) => `${outcome.source_id}:${outcome.county_fips}:${outcome.species_id}`),
+);
+const reviewedCandidateSourceAssertions = migrationCandidates.candidates.filter((candidate) =>
+  completedCandidateSourceKeys.has(`${candidate.sourceId}:${candidate.countyFips}:${candidate.speciesId}`),
+);
+const reviewedCandidatePairKeys = new Set(
+  reviewedCandidateSourceAssertions.map((candidate) => pairKey(candidate.countyFips, candidate.speciesId)),
+);
+
+if (conflictCount > 0) {
+  throw new Error(`Research compilation found ${conflictCount} present-versus-absence conflicts.`);
+}
+
 const summary: ResearchStateSummary = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   stateCode: STATE_CODE,
   stateName: counties[0]?.stateName ?? "Alabama",
+  asOf: AS_OF,
   generatedAt,
   sourceSnapshotDate,
   summary: {
@@ -345,7 +514,16 @@ const summary: ResearchStateSummary = {
     notResearched,
     determinationCoveragePercent: roundPercent((determinationCount / totalPairs) * 100),
     researchCoveragePercent: roundPercent((researchedCount / totalPairs) * 100),
+    explicitOutcomePairCount,
+    explicitOutcomeCoveragePercent: roundDetailedPercent(
+      (explicitOutcomePairCount / totalPairs) * 100,
+    ),
     conflictCount,
+    evidenceRecordCount: bootstrapEvidence.length + runAssertions.length,
+    bootstrapEvidenceRecordCount: bootstrapEvidence.length,
+    runEvidenceRecordCount: runAssertions.length,
+    rejectionRecordCount: runRejections.length + globalRejections.length,
+    researchRunCount: runs.length + immutableRuns.length,
   },
   counties: countyFiles.map((county) => ({
     countyFips: county.countyFips,
@@ -354,6 +532,15 @@ const summary: ResearchStateSummary = {
   })),
   sources: sourceSummaries,
   queue,
+  migrationCandidates: {
+    sourceAssertionCount: migrationCandidates.candidateCount,
+    distinctPairCount: migrationCandidates.distinctPairCount,
+    reviewedSourceAssertionCount: reviewedCandidateSourceAssertions.length,
+    remainingSourceAssertionCount:
+      migrationCandidates.candidateCount - reviewedCandidateSourceAssertions.length,
+    reviewedDistinctPairCount: reviewedCandidatePairKeys.size,
+    remainingDistinctPairCount: migrationCandidates.distinctPairCount - reviewedCandidatePairKeys.size,
+  },
   statusDefinitions: {
     "verified-present": "At least one reputable source supports a recorded presence in the county.",
     "verified-absent": "An authoritative source explicitly supports absence for the county and species.",
@@ -370,16 +557,22 @@ for (const county of countyFiles) {
 }
 
 const progress = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   stateCode: STATE_CODE,
+  asOf: AS_OF,
   generatedAt,
   summary: summary.summary,
+  migrationCandidates: summary.migrationCandidates,
   statusDefinitions: summary.statusDefinitions,
   sourceOperations: sourceSummaries,
   nextQueue: queue.slice(0, 100),
 };
 writeJson(path.join(DOCS_OUTPUT, "AL-progress.json"), progress, true);
-writeJson(path.join(DOCS_OUTPUT, "AL-work-queue.json"), { schemaVersion: 1, stateCode: STATE_CODE, generatedAt, queue }, true);
+writeJson(
+  path.join(DOCS_OUTPUT, "AL-work-queue.json"),
+  { schemaVersion: 2, stateCode: STATE_CODE, asOf: AS_OF, generatedAt, queue },
+  true,
+);
 
 const progressMarkdown = [
   "# Alabama Research Progress",
@@ -398,9 +591,15 @@ const progressMarkdown = [
   `- Not researched: \`${summary.summary.notResearched}\``,
   `- Determination coverage: \`${summary.summary.determinationCoveragePercent.toFixed(2)}%\``,
   `- Research coverage: \`${summary.summary.researchCoveragePercent.toFixed(2)}%\``,
+  `- Explicit outcome coverage: \`${summary.summary.explicitOutcomeCoveragePercent.toFixed(4)}%\``,
+  `- Evidence records: \`${summary.summary.evidenceRecordCount}\``,
+  `- Research runs: \`${summary.summary.researchRunCount}\``,
+  `- Rejection records: \`${summary.summary.rejectionRecordCount}\``,
+  `- Deferred source assertions remaining: \`${summary.migrationCandidates.remainingSourceAssertionCount}\``,
+  `- Deferred distinct pairs remaining: \`${summary.migrationCandidates.remainingDistinctPairCount}\``,
   `- Conflicts: \`${summary.summary.conflictCount}\``,
   "",
-  "Determination coverage counts only verified present and verified absent pairs. Research coverage also counts explicit not-detected evidence and source-family screens. A source screen is not an absence determination.",
+  "Determination coverage counts only verified present and verified absent pairs. Research coverage also counts explicit not-detected evidence and source-family screens. Explicit outcome coverage counts completed immutable pair outcomes. None of these metrics implies absence.",
   "",
   "## Highest Priority Species",
   "",

@@ -94,24 +94,25 @@ Inspect current files before implementing a required target. Current paths are e
 | --- | --- | --- |
 | `src/data/research/source-registry.json` | Current | Versioned source registry |
 | `src/data/research/research-protocols.json` | Current | Versioned category and source-screen protocols |
-| `src/data/research/evidence-assertions.ndjson` | Current | Append-only migrated evidence assertion ledger |
+| `src/data/research/evidence-assertions.ndjson` | Current bootstrap | Deterministically reconstructed compatibility evidence ledger |
 | `src/data/research/research-runs.json` | Current bootstrap | Combined migration run records, not final immutable per-run receipts |
 | `src/data/research/migration-candidates.json` | Current bootstrap | Deferred migration candidates for review |
 | `src/data/research/migration-report.json` | Current bootstrap | Legacy migration summary |
-| `src/data/research/schemas/*.schema.json` | Required | Schemas for registry, events, receipts, outcomes, and projections |
-| `src/data/research/review-events.ndjson` | Required | Append-only review, retraction, and superseding events |
-| `src/data/research/rejections.ndjson` | Required | Append-only rejected candidate records |
-| `src/data/research/runs/<run-id>/receipt.json` | Required | Immutable detailed source-run receipt |
-| `src/data/research/runs/<run-id>/outcomes.ndjson` | Required | Pair-level research outcomes covered by the receipt |
-| `src/data/research/runs/<run-id>/artifacts/*` | Required when allowed | Raw or normalized source artifacts subject to retention and licensing |
-| `src/lib/research/types.ts` | Current | Research domain types that still need the full review and event model |
-| `src/lib/research/source-adapter.ts` | Current | Initial adapter contract |
+| `src/data/research/schemas/*.schema.json` | Current | Schemas for bootstrap records, registry, events, receipts, outcomes, parameters, and projections |
+| `src/data/research/review-events.ndjson` | Current | Append-only later review, retraction, and superseding events |
+| `src/data/research/rejections.ndjson` | Current | Append-only later rejected candidate records |
+| `src/data/research/runs/<run-id>/receipt.json` | Current | Immutable detailed source-run receipt |
+| `src/data/research/runs/<run-id>/*.ndjson` | Current | Immutable initial assertions, reviews, rejections, and pair outcomes |
+| `src/data/research/runs/<run-id>/artifacts/*` | Current when allowed | Raw or normalized source artifacts subject to retention and licensing |
+| `src/lib/research/types.ts` | Current | Research domain, event, receipt, review, rejection, and outcome types |
+| `src/lib/research/source-adapter.ts` | Current | Runner-owned parameterized adapter contract |
 | `scripts/migrate-research-ledger.ts` | Current bootstrap | Deterministic legacy evidence migration |
-| `scripts/compile-research-index.ts` | Current bootstrap | Alabama compiler and static projection builder |
+| `scripts/compile-research-index.ts` | Current | Additive Alabama event compiler and static projection builder with explicit `--as-of` |
 | `scripts/build-research-db.ts` | Current | Disposable SQLite index builder |
 | `scripts/check-research-integrity.ts` | Current | Research parity and projection integrity checks |
-| `scripts/research/adapters/<adapter-id>.ts` | Required | Parameterized source adapters for new acquisition runs |
-| `scripts/research/run-source.ts` | Required | Registered source-run orchestrator |
+| `scripts/research/adapters/gbif-preserved-specimens.ts` | Current | Registered GBIF preserved-specimen adapter |
+| `scripts/research/adapters/<adapter-id>.ts` | Required per source | Additional parameterized source adapters |
+| `scripts/research/run-source.ts` | Current for Alabama GBIF | Registered source-run orchestrator |
 | `src/data/generated/research/<STATE>/summary.json` | Current for Alabama | Generated build-time state summary |
 | `.cache/research/isitusa.sqlite` | Current | Disposable local query index, never authoritative |
 | `public/generated/research/<STATE>/summary.json` | Current for Alabama | Static public state projection |
@@ -119,13 +120,13 @@ Inspect current files before implementing a required target. Current paths are e
 
 `.cache/` is ignored. Verify the current ignore diff before changing it and do not overwrite concurrent ignore-file edits.
 
-The architecture remains the acceptance contract where the compatibility foundation is incomplete. Known gaps include append-only review, retraction, and superseding events, detailed immutable per-run receipts, explicit pair outcomes, source-specific freshness policy, the separate review axis, and an explicit compiler `as_of` input.
+The architecture remains the acceptance contract where the implementation is incomplete. Current gaps include source-specific freshness and review policy beyond the GBIF gate, protocol-complete pair outcomes and metrics, a reviewer command for later human events, parameterized adapters beyond Alabama GBIF preserved specimens, and a general state projection command.
 
 `app/research/page.tsx` remains a static route. `src/components/research-control-center.tsx` fetches the committed public state summary and county shards from `public/generated/research/AL/` so the large queue is not embedded in initial HTML. Do not claim the route is complete until generated input, build, and route behavior are verified together.
 
 ## Append-Only Evidence Events
 
-`src/data/research/evidence-assertions.ndjson` and `src/data/research/review-events.ndjson` form the logical evidence event stream. One JSON object occupies one line. Existing lines are never edited, reordered, or deleted. The assertions file exists now. The review-event file is required follow-up work.
+`src/data/research/evidence-assertions.ndjson` remains a reproducible bootstrap ledger and can be reconstructed by migration. New assertion authority lives inside immutable run directories. Initial reviews and rejections live beside their run assertions. Later review, retraction, superseding, and rejection events append to the top-level event ledgers. One JSON object occupies one line. Completed run files and appended later events are never edited, reordered, or deleted.
 
 Required event types:
 
@@ -446,34 +447,34 @@ Reverify Alabama counts without editing files:
 node -e "const m=require('./docs/county-coverage/states/AL.json'); console.log(JSON.stringify(m.summary,null,2))"
 ```
 
-### Implemented Research Bootstrap Commands
+### Implemented Research Commands
 
 These commands exist and write tracked research artifacts except for the ignored SQLite index:
 
 ```bash
 npm run research:migrate
-npm run research:compile
+npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-limit <1-100>
+npm run research:compile -- --as-of <YYYY-MM-DD>
 npm run research:index
-npm run research:refresh
+npm run research:refresh -- --as-of <YYYY-MM-DD>
+npm run research:verify -- --as-of <YYYY-MM-DD>
 npm run check:research-integrity
 npm run validate:data
 ```
 
 `research:migrate` reconstructs the migration ledger from current versioned compatibility inputs, preserves exact matrix parity, and writes deferred snapshot positives to `migration-candidates.json`. It is a bootstrap migration command, not the final append-only source-run interface.
 
-### Reserved Research Command Interface
+`research:run` currently implements the registered Alabama GBIF preserved-specimen adapter. `research:compile` consumes reviewed immutable run evidence additively with the bootstrap ledger. `research:verify` runs two offline compilers for the same as-of date and fails if their tracked projection bytes differ.
 
-These commands are the required future interface. Only `research:compile` and `research:index` have bootstrap implementations, and the current compiler does not yet accept `--as-of`:
+### Remaining Research Command Interface
+
+The general state projection command and adapters for other source families remain future interface work:
 
 ```bash
-npm run research:run -- --source <source-id> --state AL --species-set <set-id>
-npm run research:compile -- --as-of <YYYY-MM-DD>
-npm run research:index
 npm run research:project -- --state AL
-npm run research:verify -- --state AL --as-of <YYYY-MM-DD>
 ```
 
-`research:verify` should validate schemas and hashes, rebuild truth and SQLite, rebuild projections, rerun the compiler to prove byte stability, and print axis-specific before, after, and net metrics.
+Run `check:research-integrity`, `research:index`, and `research:verify` together for schema, hash, local index, publication-boundary, and byte-stability verification.
 
 ## Migration Sequence
 
@@ -483,10 +484,11 @@ npm run research:verify -- --state AL --as-of <YYYY-MM-DD>
 4. Completed bootstrap: compile Alabama status axes, source-screen state, queue, and static county shards.
 5. Completed bootstrap: build the disposable SQLite index and research integrity gate.
 6. Completed bootstrap: add the public research control center without production source API or SQLite access.
-7. Next: add schemas, review events, retractions, superseding events, rejections, and immutable detailed per-run receipts.
-8. Next: move source families one at a time to registered parameterized adapters and explicit pair outcomes.
-9. Next: review migration candidates through the source-family workflow, then compile accepted changes with exact before, after, and net reporting.
-10. Retire direct legacy truth edits only after adapter coverage, deterministic `as_of` rebuilds, and all acceptance gates pass.
+7. Completed foundation: add schemas, review events, retractions, superseding events, rejections, immutable detailed per-run receipts, and explicit pair outcomes.
+8. Started: move source families one at a time to registered parameterized adapters. GBIF preserved specimens is the first implemented adapter.
+9. Started: review migration candidates through the source-family workflow and compile accepted changes with exact before, after, and net reporting.
+10. Next: add source-specific freshness, protocol-complete outcomes, reviewer tooling, and more registered adapters.
+11. Retire direct legacy truth edits only after adapter coverage and all acceptance gates pass.
 
 ## Acceptance Gates
 

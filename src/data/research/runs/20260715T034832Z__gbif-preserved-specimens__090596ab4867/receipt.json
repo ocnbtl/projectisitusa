@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T034832Z__gbif-preserved-specimens__090596ab4867",
+  "status": "complete",
+  "started_at": "2026-07-15T03:48:32.297Z",
+  "finished_at": "2026-07-15T03:48:39.833Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.0.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "e6f4a5daa08249e5452f66db100f1837e8079fc6d114edc3869de1fd0307f850",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "e0ee2849f621b0076b841251f38e12e06e0acf6b705613fd7c1c8765bfdb88d6",
+  "code_commit": "27fc5029749d07d492e6b6abb1ded9a883198ee0",
+  "parameter_hash": "090596ab486716cd02a441d2503a3b6d9fe8bcddaa248c0ab28ce6e16dbbe43d",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "01001:corbicula-fluminea",
+      "01001:datura-stramonium",
+      "01001:linepithema-humile",
+      "01001:thlaspi-arvense",
+      "01001:veronica-serpyllifolia"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01001"
+    ],
+    "species_ids": [
+      "corbicula-fluminea",
+      "datura-stramonium",
+      "linepithema-humile",
+      "thlaspi-arvense",
+      "veronica-serpyllifolia"
+    ],
+    "pair_keys": [
+      "01001:corbicula-fluminea",
+      "01001:datura-stramonium",
+      "01001:linepithema-humile",
+      "01001:thlaspi-arvense",
+      "01001:veronica-serpyllifolia"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Corbicula+fluminea&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:32.872Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8190231&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:33.507Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8190231&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:34.613Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8190231&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:35.718Z",
+      "record_count": 233
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Datura+stramonium&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:36.175Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2928751&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:36.638Z",
+      "record_count": 63
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Linepithema+humile&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:36.879Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=1316908&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:37.540Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=1316908&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:38.152Z",
+      "record_count": 49
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Thlaspi+arvense&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:38.603Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3052680&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:39.062Z",
+      "record_count": 15
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Veronica+serpyllifolia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:39.272Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3172057&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T03:48:39.726Z",
+      "record_count": 15
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-corbicula-fluminea-000000.json",
+      "sha256": "a488ba7ee510805c7879bfcb7fd1f91479742e6c671e8cd583d1ceac5d3b9f8c",
+      "bytes": 1786523,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-corbicula-fluminea-000300.json",
+      "sha256": "537c38d0e90bca68bf0687b4a244134a12d73e0769568ce0cda4875e4d4ceb61",
+      "bytes": 1802319,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-corbicula-fluminea-000600.json",
+      "sha256": "83c015a6761002189378b5c853644a89f3db3fe7f349ae697e0c04e6962e1d31",
+      "bytes": 1411208,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-datura-stramonium-000000.json",
+      "sha256": "3cda751506f8da0befd68f3ff558fa22d3c93cf560040bfe23fa832fc0463604",
+      "bytes": 382341,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-linepithema-humile-000000.json",
+      "sha256": "e000e07a13b80dbaabf9b86d2aeff7bd08bb12e870fe47fa08aae64865dd3358",
+      "bytes": 1543677,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-linepithema-humile-000300.json",
+      "sha256": "874a57baa912133a21a6e1cc11b41d1fe898c09797e4f1529a713ca8cb47fd36",
+      "bytes": 251674,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-thlaspi-arvense-000000.json",
+      "sha256": "df02ecd74a315c7f7cce29984d4f1a1462479d520e13ddb9f6e418cb4cf440f1",
+      "bytes": 90435,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-occurrences-veronica-serpyllifolia-000000.json",
+      "sha256": "b1e35143e5a41a8bdcd01ff4a7a042c644a25c56510480a7f1e0597558a89a02",
+      "bytes": 106392,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-species-match-corbicula-fluminea.json",
+      "sha256": "8253e89b906a228cbf343de521ba6d710da6041b3ee00641b7810e76d29b00d9",
+      "bytes": 463,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-species-match-datura-stramonium.json",
+      "sha256": "27e57caa95254219207c77604bc43651e8013e94b1da1622f161b4f5fd471ae5",
+      "bytes": 449,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-species-match-linepithema-humile.json",
+      "sha256": "4ffdb7a304d9a4c4e766dd3ef48ddaf7536d21bc3bf3cf32d24348567e314053",
+      "bytes": 457,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-species-match-thlaspi-arvense.json",
+      "sha256": "09f2c9ddf3de403d3cdbd4a8914dd0cb2c7cd40db666d77207c605c56de47c07",
+      "bytes": 451,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/artifacts/gbif-species-match-veronica-serpyllifolia.json",
+      "sha256": "2445da4e45b8877d83554ea27264a9c373785ed4a2f4edf9ba80b4cf485ba738",
+      "bytes": 468,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/assertions.ndjson",
+      "sha256": "4d28bd582877de2b245629c7420f62344bd58221654c40a4617122e1004a5292",
+      "bytes": 13070,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/reviews.ndjson",
+      "sha256": "48f1b77aa87e6c728de6fcbee18f16352cd1393f22be24421a2cf6624c767410",
+      "bytes": 6818,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/rejections.ndjson",
+      "sha256": "85db04e5402607b131aa9777ce6ec3ce6ecd957e3565a4ad017c69cf09e77e1e",
+      "bytes": 57095,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T034832Z__gbif-preserved-specimens__090596ab4867/outcomes.ndjson",
+      "sha256": "5795aab185b2864db897dc4b19e1a92766213ca236e26d7edc87f322c7555548",
+      "bytes": 11525,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 1275,
+    "assertion_events": 7,
+    "review_events": 7,
+    "rejection_records": 83,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --pairs 01001:corbicula-fluminea,01001:datura-stramonium,01001:linepithema-humile,01001:thlaspi-arvense,01001:veronica-serpyllifolia"
+}

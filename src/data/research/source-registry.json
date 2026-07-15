@@ -304,6 +304,18 @@
       "refreshCadenceDays": 180,
       "status": "operational",
       "adapter": "scripts/import-gbif-alabama-specimens.ts",
+      "researchAdapter": {
+        "id": "gbif-preserved-specimens",
+        "module": "scripts/research/adapters/gbif-preserved-specimens.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/gbif-preserved-specimens-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Strict GBIF species match with EXACT match type, confidence at least 95, and exact canonical binomial agreement.",
+        "geographyMatchingPolicy": "Explicit Alabama county text must resolve uniquely to the requested local county FIPS. Records with missing or ambiguous county text are rejected.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 3
+      },
       "caveat": "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
     },
     {

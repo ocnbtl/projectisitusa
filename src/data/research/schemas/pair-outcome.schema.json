@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/pair-outcome.schema.json",
+  "title": "Project Isitusa pair research outcome",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "outcome_id", "run_id", "source_id", "state_code", "county_fips", "species_id", "status", "scope_complete", "recorded_at", "assertion_event_ids", "rejection_ids", "query_urls", "notes"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "outcome_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "state_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "county_fips": { "type": "string", "pattern": "^[0-9]{5}$" },
+    "species_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["evidence-found", "no-qualifying-evidence", "needs-followup", "blocked"] },
+    "scope_complete": { "type": "boolean" },
+    "recorded_at": { "type": "string", "format": "date-time" },
+    "assertion_event_ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "rejection_ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "query_urls": { "type": "array", "items": { "type": "string", "format": "uri" }, "uniqueItems": true },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "evidence-found" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "assertion_event_ids": { "minItems": 1 },
+          "query_urls": { "minItems": 1 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "no-qualifying-evidence" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "scope_complete": { "const": true },
+          "assertion_event_ids": { "maxItems": 0 },
+          "query_urls": { "minItems": 1 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "status": { "enum": ["needs-followup", "blocked"] } },
+        "required": ["status"]
+      },
+      "then": { "properties": { "scope_complete": { "const": false } } }
+    },
+    {
+      "if": { "properties": { "scope_complete": { "const": true } }, "required": ["scope_complete"] },
+      "then": {
+        "properties": {
+          "status": { "enum": ["evidence-found", "no-qualifying-evidence"] }
+        }
+      }
+    }
+  ]
+}

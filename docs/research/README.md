@@ -74,12 +74,16 @@ The first implementation layer uses:
 - `src/data/research/research-runs.json`
 - `src/data/research/migration-report.json`
 - `src/data/research/migration-candidates.json`
+- `src/data/research/schemas/*.schema.json`
+- `src/data/research/runs/<run-id>/`
 - `scripts/migrate-research-ledger.ts`
 - `scripts/compile-research-index.ts`
 - `scripts/check-research-integrity.ts`
+- `scripts/research/run-source.ts`
+- `scripts/research/adapters/gbif-preserved-specimens.ts`
 - `scripts/build-research-db.ts`
 
-Inspect and extend these files rather than creating a parallel model. Before treating the foundation as architecture-complete, verify that it supports append-only review, retraction, and superseding events, explicit pair outcomes, immutable detailed receipts, and all five required axes. The architecture document controls acceptance when an early type or field name compresses those concerns.
+Inspect and extend these files rather than creating a parallel model. The current event layer supports immutable initial assertions, reviews, rejections, pair outcomes, receipts, and later review events. It does not yet provide source-specific freshness policy, protocol-complete outcomes, general reviewer tooling, or adapters beyond Alabama GBIF preserved specimens. The architecture document controls acceptance when an early type or field name compresses those concerns.
 
 The generated Alabama checkpoint verified on 2026-07-14 contains `30130` evidence records, `15` run records, and `29` registered sources. Across `167768` pairs it compiles to `15133` verified present, `0` verified absent, `8` not detected, `95580` researched unresolved, and `57047` not researched. Determination coverage is `9.02%`; source-screen research coverage is `66.00%`. Reverify these dated values before citing them.
 
@@ -89,7 +93,7 @@ The migration also preserves `1558` legacy fallback pairs and records `176` dist
 
 Under the target model, do not run an unregistered source adapter. Add or review the entry in `src/data/research/source-registry.json`, validate it against the source schema, and include the registry hash in the run receipt. Category-level screening protocols live in `src/data/research/research-protocols.json`.
 
-Until the target registry is implemented, record source details in `docs/source-inventory.md` only when the task explicitly includes historical inventory maintenance. Do not pretend the inventory is the implemented registry.
+The registry is implemented. Record source details in `docs/source-inventory.md` only when the task explicitly includes historical inventory maintenance. The inventory is not runtime authority.
 
 A registry entry must state which claims the source can and cannot emit. Common capability limits include:
 
@@ -126,10 +130,11 @@ An adapter may not:
 
 ## Run Workflow
 
-The target command interface is reserved until it is implemented in `package.json`:
+The implemented GBIF command accepts either the next bounded candidate count or explicit deferred pair keys:
 
 ```bash
-npm run research:run -- --source <source-id> --state <STATE> --species-set <set-id>
+npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-limit 5
+npm run research:run -- --source gbif-preserved-specimens --state AL --pairs <FIPS:species-id,...>
 ```
 
 For each run:
@@ -245,25 +250,24 @@ Corrections append a retraction or superseding event. Never delete or rewrite th
 
 ## Compilation And Verification
 
-Compilation is a separate step from research and must not access the network. The implemented bootstrap interface is:
+Compilation is a separate step from research and must not access the network. The implemented interface is:
 
 ```bash
 npm run research:migrate
-npm run research:compile
+npm run research:compile -- --as-of <YYYY-MM-DD>
 npm run research:index
+npm run research:refresh -- --as-of <YYYY-MM-DD>
+npm run research:verify -- --as-of <YYYY-MM-DD>
 npm run check:research-integrity
 ```
 
-The target interface still reserves:
+The general state projection command remains reserved:
 
 ```bash
-npm run research:compile -- --as-of <YYYY-MM-DD>
-npm run research:index
 npm run research:project -- --state <STATE>
-npm run research:verify -- --state <STATE> --as-of <YYYY-MM-DD>
 ```
 
-Do not claim the reserved `research:run`, `research:project`, or `research:verify` commands exist until matching package scripts are implemented. The current `research:compile` command does not yet accept `--as-of`.
+`research:verify` proves byte stability across two offline compiler runs for one explicit as-of date. Run it with `check:research-integrity` and `research:index` for the complete current event, hash, projection, and disposable-index gate.
 
 During migration, use the current compatibility commands when the task calls for legacy generation:
 

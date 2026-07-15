@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/review-event.schema.json",
+  "title": "Project Isitusa evidence review event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "eventId", "event_type", "created_at", "actor_type", "actor_id", "run_id", "source_id", "state_code", "county_fips", "species_id", "references", "review_level", "decision", "publication_eligible", "reason_codes", "notes"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "eventId": { "type": "string", "minLength": 1 },
+    "event_type": { "enum": ["evidence.reviewed", "evidence.retracted", "evidence.superseded"] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "enum": ["adapter", "agent", "human", "migration"] },
+    "actor_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "state_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "county_fips": { "type": "string", "pattern": "^[0-9]{5}$" },
+    "species_id": { "type": "string", "minLength": 1 },
+    "references": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assertion_event_id"],
+      "properties": {
+        "assertion_event_id": { "type": "string", "minLength": 1 },
+        "replacement_assertion_event_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "review_level": { "enum": ["machine-validated", "agent-reviewed", "human-approved"] },
+    "decision": { "enum": ["accepted", "rejected", "retracted", "superseded"] },
+    "publication_eligible": { "type": "boolean" },
+    "reason_codes": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "event_type": { "const": "evidence.reviewed" } }, "required": ["event_type"] },
+      "then": {
+        "properties": {
+          "decision": { "enum": ["accepted", "rejected"] },
+          "references": { "maxProperties": 1 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "evidence.retracted" } }, "required": ["event_type"] },
+      "then": {
+        "properties": {
+          "decision": { "const": "retracted" },
+          "publication_eligible": { "const": false },
+          "references": { "maxProperties": 1 },
+          "reason_codes": { "minItems": 1 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "event_type": { "const": "evidence.superseded" } }, "required": ["event_type"] },
+      "then": {
+        "properties": {
+          "decision": { "const": "superseded" },
+          "publication_eligible": { "const": false },
+          "references": {
+            "required": ["assertion_event_id", "replacement_assertion_event_id"],
+            "minProperties": 2,
+            "maxProperties": 2
+          },
+          "reason_codes": { "minItems": 1 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "decision": { "const": "rejected" } }, "required": ["decision"] },
+      "then": {
+        "properties": {
+          "event_type": { "const": "evidence.reviewed" },
+          "publication_eligible": { "const": false },
+          "reason_codes": { "minItems": 1 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "decision": { "const": "accepted" } }, "required": ["decision"] },
+      "then": { "properties": { "event_type": { "const": "evidence.reviewed" } } }
+    },
+    {
+      "if": {
+        "properties": { "publication_eligible": { "const": true } },
+        "required": ["publication_eligible"]
+      },
+      "then": {
+        "properties": {
+          "event_type": { "const": "evidence.reviewed" },
+          "decision": { "const": "accepted" }
+        }
+      }
+    }
+  ]
+}

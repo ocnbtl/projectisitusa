@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/rejection-record.schema.json",
+  "title": "Project Isitusa research rejection record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "rejection_id", "created_at", "actor_type", "actor_id", "run_id", "source_id", "candidate_locator", "candidate_taxon", "candidate_geography", "normalized_target", "reason_code", "supporting_notes"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "rejection_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "enum": ["adapter", "agent", "human", "migration"] },
+    "actor_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "candidate_locator": { "type": "string", "minLength": 1 },
+    "candidate_taxon": { "type": "string", "minLength": 1 },
+    "candidate_geography": { "type": ["string", "null"] },
+    "normalized_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_code", "species_id", "county_fips"],
+      "properties": {
+        "state_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "species_id": { "type": "string", "minLength": 1 },
+        "county_fips": { "type": ["string", "null"], "pattern": "^[0-9]{5}$" }
+      }
+    },
+    "reason_code": { "enum": ["taxon-mismatch", "taxon-ambiguous", "geography-missing", "geography-ambiguous", "outside-scope", "cultivated-or-captive", "record-failed", "source-contradiction", "duplicate", "insufficient-negative-scope", "unsupported-claim-type"] },
+    "supporting_notes": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+  }
+}

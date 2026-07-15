@@ -23,14 +23,38 @@ export type DeterminationStatus =
   | "officially-absent"
   | "none";
 
-export type SurveyStatus = "detected" | "not-detected" | "not-surveyed";
+export type SurveyStatus =
+  | "detected"
+  | "not-detected"
+  | "inconclusive"
+  | "unassessed";
 
 export type ResearchStatus =
   | "resolved"
   | "source-screened"
-  | "not-started";
+  | "not-started"
+  | "reviewed-evidence-found"
+  | "reviewed-no-qualifying-evidence"
+  | "needs-followup"
+  | "blocked";
 
 export type FreshnessStatus = "current" | "aging" | "stale" | "undated";
+
+export type EvidenceKind =
+  | "occurrence"
+  | "preserved-specimen"
+  | "regulatory"
+  | "survey-detection"
+  | "survey-non-detection"
+  | "absence-statement";
+
+export type ReviewStatus =
+  | "not-reviewed"
+  | "machine-validated"
+  | "agent-reviewed"
+  | "human-approved"
+  | "rejected"
+  | "retracted";
 
 export type PairDisplayStatus =
   | "verified-present"
@@ -63,6 +87,18 @@ export interface ResearchSourceDefinition {
   status: "operational" | "manual" | "legacy-migration";
   adapter: string | null;
   caveat: string;
+  researchAdapter?: {
+    id: string;
+    module: string;
+    allowedVersions: string[];
+    parameterSchema: string;
+    publicationReviewGate: "machine-validated" | "agent-reviewed" | "human-approved";
+    taxonMatchingPolicy: string;
+    geographyMatchingPolicy: string;
+    artifactRetention: "versioned" | "hash-only" | "not-retained";
+    claimPersistence: "historical" | "current-only";
+    rateLimitRequestsPerSecond: number;
+  };
 }
 
 export interface ResearchSourceRegistry {
@@ -128,6 +164,7 @@ export interface ResearchPairRecord {
   surveyStatus: SurveyStatus;
   researchStatus: ResearchStatus;
   freshnessStatus: FreshnessStatus;
+  reviewStatus: ReviewStatus;
   conflict: boolean;
   evidence: PairEvidenceSummary[];
   screenedBySourceIds: string[];
@@ -140,13 +177,16 @@ export interface ResearchStatusCounts {
   researchedUnresolved: number;
   notResearched: number;
   researchCoveragePercent: number;
+  explicitOutcomePairs: number;
+  explicitOutcomeCoveragePercent: number;
 }
 
 export interface ResearchCountyFile {
-  schemaVersion: 1;
+  schemaVersion: 2;
   stateCode: string;
   countyFips: string;
   countyName: string;
+  asOf: string;
   generatedAt: string;
   summary: ResearchStatusCounts;
   pairs: ResearchPairRecord[];
@@ -164,9 +204,10 @@ export interface ResearchQueueEntry {
 }
 
 export interface ResearchStateSummary {
-  schemaVersion: 1;
+  schemaVersion: 2;
   stateCode: string;
   stateName: string;
+  asOf: string;
   generatedAt: string;
   sourceSnapshotDate: string;
   summary: {
@@ -180,7 +221,14 @@ export interface ResearchStateSummary {
     notResearched: number;
     determinationCoveragePercent: number;
     researchCoveragePercent: number;
+    explicitOutcomePairCount: number;
+    explicitOutcomeCoveragePercent: number;
     conflictCount: number;
+    evidenceRecordCount: number;
+    bootstrapEvidenceRecordCount: number;
+    runEvidenceRecordCount: number;
+    rejectionRecordCount: number;
+    researchRunCount: number;
   };
   counties: Array<
     {
@@ -199,5 +247,199 @@ export interface ResearchStateSummary {
     screenedSpeciesCount: number;
   }>;
   queue: ResearchQueueEntry[];
+  migrationCandidates: {
+    sourceAssertionCount: number;
+    distinctPairCount: number;
+    reviewedSourceAssertionCount: number;
+    remainingSourceAssertionCount: number;
+    reviewedDistinctPairCount: number;
+    remainingDistinctPairCount: number;
+  };
   statusDefinitions: Record<PairDisplayStatus, string>;
+}
+
+export type ResearchActorType = "adapter" | "agent" | "human" | "migration";
+
+export interface ResearchActor {
+  actor_type: ResearchActorType;
+  actor_id: string;
+}
+
+export interface RunEvidenceAssertionEvent extends ResearchActor {
+  schemaVersion: 1;
+  eventId: string;
+  event_type: "evidence.asserted";
+  created_at: string;
+  run_id: string;
+  source_id: string;
+  state_code: string;
+  county_fips: string;
+  species_id: string;
+  claim_type: EvidenceAssertionType;
+  evidence_kind: EvidenceKind;
+  scope: EvidenceScope;
+  source_record_id: string;
+  source_url: string;
+  source_record_date: string | null;
+  retrieved_at: string;
+  taxon_match: {
+    method: string;
+    target_scientific_name: string;
+    source_scientific_name: string;
+    source_taxon_key: string | null;
+  };
+  geography_match: {
+    method: string;
+    source_state: string;
+    source_county: string;
+    county_fips: string;
+  };
+  temporal_scope: string;
+  spatial_scope: string;
+  survey_scope: string | null;
+  normalized_payload_hash: string;
+  caveats: string[];
+  notes: string[];
+}
+
+export type ReviewEventType =
+  | "evidence.reviewed"
+  | "evidence.retracted"
+  | "evidence.superseded";
+
+export interface EvidenceReviewEvent extends ResearchActor {
+  schemaVersion: 1;
+  eventId: string;
+  event_type: ReviewEventType;
+  created_at: string;
+  run_id: string;
+  source_id: string;
+  state_code: string;
+  county_fips: string;
+  species_id: string;
+  references: {
+    assertion_event_id: string;
+    replacement_assertion_event_id?: string;
+  };
+  review_level: "machine-validated" | "agent-reviewed" | "human-approved";
+  decision: "accepted" | "rejected" | "retracted" | "superseded";
+  publication_eligible: boolean;
+  reason_codes: string[];
+  notes: string[];
+}
+
+export type RejectionReasonCode =
+  | "taxon-mismatch"
+  | "taxon-ambiguous"
+  | "geography-missing"
+  | "geography-ambiguous"
+  | "outside-scope"
+  | "cultivated-or-captive"
+  | "record-failed"
+  | "source-contradiction"
+  | "duplicate"
+  | "insufficient-negative-scope"
+  | "unsupported-claim-type";
+
+export interface ResearchRejectionRecord extends ResearchActor {
+  schemaVersion: 1;
+  rejection_id: string;
+  created_at: string;
+  run_id: string;
+  source_id: string;
+  candidate_locator: string;
+  candidate_taxon: string;
+  candidate_geography: string | null;
+  normalized_target: {
+    state_code: string;
+    species_id: string;
+    county_fips: string | null;
+  };
+  reason_code: RejectionReasonCode;
+  supporting_notes: string[];
+}
+
+export type PairOutcomeStatus =
+  | "evidence-found"
+  | "no-qualifying-evidence"
+  | "needs-followup"
+  | "blocked";
+
+export interface ResearchPairOutcome {
+  schemaVersion: 1;
+  outcome_id: string;
+  run_id: string;
+  source_id: string;
+  state_code: string;
+  county_fips: string;
+  species_id: string;
+  status: PairOutcomeStatus;
+  scope_complete: boolean;
+  recorded_at: string;
+  assertion_event_ids: string[];
+  rejection_ids: string[];
+  query_urls: string[];
+  notes: string[];
+}
+
+export interface ResearchRunFileReference {
+  path: string;
+  sha256: string;
+  bytes: number;
+  media_type: string;
+}
+
+export interface ImmutableResearchRunReceipt extends ResearchActor {
+  schemaVersion: 1;
+  run_id: string;
+  status: "complete" | "partial" | "failed";
+  started_at: string;
+  finished_at: string;
+  source_id: string;
+  source_registry_hash: string;
+  adapter_id: string;
+  adapter_version: string;
+  adapter_code_hash: string;
+  code_commit: string;
+  parameter_hash: string;
+  parameters: Record<string, unknown>;
+  requested_scope: {
+    state_code: string;
+    county_fips: string[];
+    species_ids: string[];
+    pair_keys: string[];
+    date_range: { start: string | null; end: string | null };
+  };
+  upstream_requests: Array<{
+    url: string;
+    status: number;
+    retrieved_at: string;
+    record_count: number;
+  }>;
+  artifacts: ResearchRunFileReference[];
+  outputs: ResearchRunFileReference[];
+  counts: {
+    requested_pairs: number;
+    candidate_records: number;
+    assertion_events: number;
+    review_events: number;
+    rejection_records: number;
+    duplicate_records: number;
+    error_count: number;
+    pair_outcomes: number;
+  };
+  errors: Array<{ code: string; message: string; retryable: boolean }>;
+  known_caveats: string[];
+  source_warnings: string[];
+  deviations: string[];
+  rerun_command: string;
+}
+
+export interface ImmutableResearchRunBundle {
+  directory: string;
+  receipt: ImmutableResearchRunReceipt;
+  assertions: RunEvidenceAssertionEvent[];
+  reviews: EvidenceReviewEvent[];
+  rejections: ResearchRejectionRecord[];
+  outcomes: ResearchPairOutcome[];
 }

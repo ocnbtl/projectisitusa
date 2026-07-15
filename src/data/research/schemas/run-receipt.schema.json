@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/run-receipt.schema.json",
+  "title": "Project Isitusa immutable source run receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "run_id", "status", "started_at", "finished_at", "actor_type", "actor_id", "source_id", "source_registry_hash", "adapter_id", "adapter_version", "adapter_code_hash", "code_commit", "parameter_hash", "parameters", "requested_scope", "upstream_requests", "artifacts", "outputs", "counts", "errors", "known_caveats", "source_warnings", "deviations", "rerun_command"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["complete", "partial", "failed"] },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "enum": ["adapter", "agent", "human", "migration"] },
+    "actor_id": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "source_registry_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "adapter_id": { "type": "string", "minLength": 1 },
+    "adapter_version": { "type": "string", "minLength": 1 },
+    "adapter_code_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "code_commit": { "type": "string", "minLength": 7 },
+    "parameter_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "parameters": { "type": "object" },
+    "requested_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_code", "county_fips", "species_ids", "pair_keys", "date_range"],
+      "properties": {
+        "state_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "county_fips": { "type": "array", "items": { "type": "string", "pattern": "^[0-9]{5}$" }, "uniqueItems": true },
+        "species_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "pair_keys": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "date_range": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start", "end"],
+          "properties": { "start": { "type": ["string", "null"] }, "end": { "type": ["string", "null"] } }
+        }
+      }
+    },
+    "upstream_requests": { "type": "array", "items": { "$ref": "#/$defs/request" } },
+    "artifacts": { "type": "array", "items": { "$ref": "#/$defs/file" } },
+    "outputs": { "type": "array", "items": { "$ref": "#/$defs/file" } },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested_pairs", "candidate_records", "assertion_events", "review_events", "rejection_records", "duplicate_records", "error_count", "pair_outcomes"],
+      "properties": {
+        "requested_pairs": { "type": "integer", "minimum": 0 },
+        "candidate_records": { "type": "integer", "minimum": 0 },
+        "assertion_events": { "type": "integer", "minimum": 0 },
+        "review_events": { "type": "integer", "minimum": 0 },
+        "rejection_records": { "type": "integer", "minimum": 0 },
+        "duplicate_records": { "type": "integer", "minimum": 0 },
+        "error_count": { "type": "integer", "minimum": 0 },
+        "pair_outcomes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "message", "retryable"],
+        "properties": {
+          "code": { "type": "string" },
+          "message": { "type": "string" },
+          "retryable": { "type": "boolean" }
+        }
+      }
+    },
+    "known_caveats": { "type": "array", "items": { "type": "string" } },
+    "source_warnings": { "type": "array", "items": { "type": "string" } },
+    "deviations": { "type": "array", "items": { "type": "string" } },
+    "rerun_command": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "media_type"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "media_type": { "type": "string", "minLength": 1 }
+      }
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "status", "retrieved_at", "record_count"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "status": { "type": "integer", "minimum": 100, "maximum": 599 },
+        "retrieved_at": { "type": "string", "format": "date-time" },
+        "record_count": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

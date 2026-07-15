@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/bootstrap-evidence-assertion.schema.json",
+  "title": "Project Isitusa bootstrap evidence assertion",
+  "description": "Schema for one historical compatibility assertion in evidence-assertions.ndjson. New source runs use evidence-assertion.schema.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidenceId",
+    "stateCode",
+    "countyFips",
+    "speciesId",
+    "assertion",
+    "scope",
+    "sourceId",
+    "sourceLabel",
+    "url",
+    "lineage",
+    "caveat"
+  ],
+  "properties": {
+    "evidenceId": { "type": "string", "minLength": 1 },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+    "speciesId": { "type": "string", "minLength": 1 },
+    "assertion": {
+      "enum": ["recorded-present", "officially-absent", "not-detected"]
+    },
+    "scope": {
+      "enum": ["point", "survey-area", "county", "regulatory-area", "legacy-county-pair"]
+    },
+    "sourceId": { "type": "string", "minLength": 1 },
+    "sourceLabel": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri" },
+    "externalRecordId": { "type": "string", "minLength": 1 },
+    "observedAt": { "type": "string", "minLength": 1 },
+    "reviewedAt": { "type": "string", "minLength": 1 },
+    "accessedAt": { "type": "string", "format": "date-time" },
+    "lineage": {
+      "enum": ["source-record", "source-species-county", "manual-review", "legacy-merged"]
+    },
+    "caveat": { "type": "string", "minLength": 1 }
+  }
+}
