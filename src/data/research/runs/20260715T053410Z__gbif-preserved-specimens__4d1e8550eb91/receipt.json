@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91",
+  "status": "complete",
+  "started_at": "2026-07-15T05:34:10.520Z",
+  "finished_at": "2026-07-15T05:34:12.994Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.0.2",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "58fa402babb928062d8290908ed1528297e55dc50cdda56773fcc3403988a98d",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.0.2",
+  "adapter_code_hash": "7045ac424bddfa05cda6622d0e48f5ba49f9402db5473fd18e91f1185cb6d9a7",
+  "code_commit": "7e1d7c33d0230c0fdf025fc5c468b26df2a34b80",
+  "parameter_hash": "4d1e8550eb9123070261d05f2565f09733f435601dfdf0bee299e41677b692ba",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 10,
+    "candidatePairs": [
+      "01015:digitaria-sanguinalis",
+      "01025:cyperus-esculentus",
+      "01027:digitaria-sanguinalis",
+      "01033:cyperus-esculentus",
+      "01041:cyperus-esculentus",
+      "01061:digitaria-sanguinalis",
+      "01069:cyperus-esculentus",
+      "01069:digitaria-sanguinalis",
+      "01079:cyperus-esculentus",
+      "01101:digitaria-sanguinalis"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01015",
+      "01025",
+      "01027",
+      "01033",
+      "01041",
+      "01061",
+      "01069",
+      "01079",
+      "01101"
+    ],
+    "species_ids": [
+      "cyperus-esculentus",
+      "digitaria-sanguinalis"
+    ],
+    "pair_keys": [
+      "01015:digitaria-sanguinalis",
+      "01025:cyperus-esculentus",
+      "01027:digitaria-sanguinalis",
+      "01033:cyperus-esculentus",
+      "01041:cyperus-esculentus",
+      "01061:digitaria-sanguinalis",
+      "01069:cyperus-esculentus",
+      "01069:digitaria-sanguinalis",
+      "01079:cyperus-esculentus",
+      "01101:digitaria-sanguinalis"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Digitaria+sanguinalis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:34:10.938Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5289972&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:34:11.376Z",
+      "record_count": 33
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cyperus+esculentus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:34:11.923Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2716226&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T05:34:12.454Z",
+      "record_count": 98
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/artifacts/gbif-occurrences-cyperus-esculentus-000000.json",
+      "sha256": "887da0846aef562da078753354c7206614a21a265e9ac30d357d5d80d95c70ca",
+      "bytes": 662167,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/artifacts/gbif-occurrences-digitaria-sanguinalis-000000.json",
+      "sha256": "930909a3c874593928102da23650cb97e3e3dffb89860b06125d8016e36c032d",
+      "bytes": 231971,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/artifacts/gbif-species-match-cyperus-esculentus.json",
+      "sha256": "2ab03b9f304c82fb14d81789b569afa41ebbc0326b67af1a5df0f6dd50330937",
+      "bytes": 447,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/artifacts/gbif-species-match-digitaria-sanguinalis.json",
+      "sha256": "53e71a90281abcf6a20aa58efed946522d39e77624390a47fce662a0a09ead25",
+      "bytes": 463,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/assertions.ndjson",
+      "sha256": "6fa174563754dd81c25e4babbd9f14d7e596f602d2807af667e47bde612944f0",
+      "bytes": 26058,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/reviews.ndjson",
+      "sha256": "ff06ed2da581c5dc2a1d73089405251feb85d21ed4685ea2bcb2bb72733a150d",
+      "bytes": 13654,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/rejections.ndjson",
+      "sha256": "739227fd7afa059841f15fd4e5e87535761b87ad97e6772dc34d3ae9521692ee",
+      "bytes": 12244,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T053410Z__gbif-preserved-specimens__4d1e8550eb91/outcomes.ndjson",
+      "sha256": "17ef1aa444761e95b988d558aeb66f4fe52fcac7143fa7316db776a2da68d084",
+      "bytes": 15793,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 10,
+    "candidate_records": 131,
+    "assertion_events": 14,
+    "review_events": 14,
+    "rejection_records": 18,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 10
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --pairs 01015:digitaria-sanguinalis,01025:cyperus-esculentus,01027:digitaria-sanguinalis,01033:cyperus-esculentus,01041:cyperus-esculentus,01061:digitaria-sanguinalis,01069:cyperus-esculentus,01069:digitaria-sanguinalis,01079:cyperus-esculentus,01101:digitaria-sanguinalis"
+}
