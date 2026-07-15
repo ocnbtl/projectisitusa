@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "jobs": [
+    {
+      "jobId": "pilot-al-gbif-dreissena-bugensis-01063",
+      "workerType": "evidence-review",
+      "stateOrSourceScope": {
+        "states": [
+          "AL"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "dreissena-bugensis"
+        ],
+        "pairs": [
+          "01063:dreissena-bugensis"
+        ]
+      },
+      "scopeClaims": [
+        "state/AL/source/gbif-preserved-specimens/taxon/dreissena-bugensis/county/01063"
+      ],
+      "baseSha": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
+      "branch": "codex/real-skill-pilot-al-gbif",
+      "worktree": "/tmp/isitusa-real-skill-pilot-al-gbif",
+      "permittedPaths": [
+        "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "scripts/compile-research-index.ts",
+        "scripts/check-research-integrity.ts",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-cycle-2",
+          "gitCommit": null,
+          "contentHash": "3f0d46dec332cf03c20406f8fc5bf69acc73ea0fcd9fe237476525b2e649a786",
+          "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-national-orchestrator"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-cycle-2",
+          "gitCommit": null,
+          "contentHash": "2fd592ceb62eff7000d8c0ebf2381cff6e3f3cfb617ef5b11255e1f9dadbf666",
+          "path": "/Users/ocean/Code/Project Isitusa/.agents/skills/isitusa-evidence-worker"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 5000000,
+        "maxWallMinutes": 20,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-16T12:00:00Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "retain and hash the GBIF species-match response and the complete one-page occurrence response",
+        "screen exactly 01063:dreissena-bugensis without coordinate-derived geography",
+        "emit one complete pair outcome and preserve every considered provider record as an assertion or rejection",
+        "validate the manifest and keep every changed path inside the lease-specific worker-results root",
+        "commit evidence content first and the finalized manifest second"
+      ],
+      "dependencies": [],
+      "priority": 100,
+      "state": "submitted",
+      "currentLeaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-1"
+    }
+  ]
+}

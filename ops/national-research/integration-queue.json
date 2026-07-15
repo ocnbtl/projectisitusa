@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "queueId": "queue-lease-pilot-al-gbif-dreissena-bugensis-01063-1",
+      "jobId": "pilot-al-gbif-dreissena-bugensis-01063",
+      "leaseId": "lease-pilot-al-gbif-dreissena-bugensis-01063-1",
+      "decision": "changes-requested",
+      "submittedAt": "2026-07-15T18:10:00.000Z",
+      "reviewedAt": "2026-07-15T18:10:00.000Z",
+      "reviewer": "MAIN",
+      "manifestPath": "../../../../../../tmp/isitusa-real-skill-pilot-al-gbif/src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063/manifest.json",
+      "manifestHash": "9319a892ab223234ac7a7abdbbb857623dbff8ef2432d6de9e4946558421a304",
+      "workerCommit": "4bb1170f012510aacd4579a4794bbb1a3b86d5fd",
+      "changedPaths": 16,
+      "checks": {
+        "manifestValidation": "pass",
+        "permittedPaths": "pass",
+        "evidenceSemantics": "pass",
+        "gitDiffCheckBaseToHead": "fail"
+      },
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "reason": "MAIN reran git diff --check baseSha..HEAD and found CRLF and trailing-whitespace failures in four retained HTTP header artifacts. The worker only ran the clean-worktree form, so the manifest attestation is incomplete. Preserve the raw bytes, revise the skill and validator, and rerun under a new pinned skill version before integration."
+    }
+  ]
+}

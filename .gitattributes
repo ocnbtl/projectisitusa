@@ -1,0 +1,5 @@
+# Exact response headers are immutable binary artifacts. Do not normalize or
+# whitespace-check provider bytes that happen to be readable as text.
+src/data/research/**/artifacts/*.headers.txt binary
+src/data/research/**/artifacts/*.raw binary
+src/data/research/**/artifacts/*.bin binary

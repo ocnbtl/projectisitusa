@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-07-15T11:11:59Z",
+  "git": {
+    "localMain": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
+    "originMain": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
+    "githubMain": "182299edfc53d49052cb3ba4cde1f45d4929f65f"
+  },
+  "deployment": {
+    "id": "dpl_2hwmZicg5xerudPbTgBcJA7qaNJ1",
+    "state": "READY",
+    "gitSha": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
+    "target": "production"
+  },
+  "research": {
+    "statesProjected": 1,
+    "species": 2504,
+    "countyEquivalents": 67,
+    "countySpeciesPairs": 167768,
+    "verifiedPresent": 15222,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 95491,
+    "notResearched": 57047,
+    "conflicts": 0,
+    "evidenceRecords": 30291,
+    "bootstrapEvidenceRecords": 30130,
+    "runEvidenceRecords": 161,
+    "reviewedRunAssertions": 161,
+    "rejections": 329,
+    "pairOutcomes": 113,
+    "distinctOutcomePairs": 110,
+    "researchRuns": 26,
+    "immutableRuns": 11,
+    "deferredPairs": 66,
+    "deferredSourceAssertions": 199,
+    "determinationCoveragePercent": 9.07,
+    "sourceScreenCoveragePercent": 66.0
+  },
+  "legacyRuntime": {
+    "presenceRows": 358891,
+    "countyIndexRows": 3108,
+    "mappedSpecies": 1681
+  },
+  "publicProjection": {
+    "researchPresent": 15222,
+    "compatibilityPresent": 15133,
+    "presenceJsonPresent": 15133,
+    "explorerPresencePresent": 15133,
+    "parity": false
+  },
+  "sourceFreshness": {
+    "idigbio": {
+      "availability": "operational",
+      "dataFreshness": "frozen",
+      "lastUpdated": "2026-05-08",
+      "verifiedApiResponseAt": "2026-07-15T10:56:00Z"
+    }
+  },
+  "contradictions": [
+    {
+      "id": "projection-parity",
+      "left": "research present 15222",
+      "right": "normal and compatibility present 15133",
+      "state": "confirmed"
+    },
+    {
+      "id": "documentation-main-policy",
+      "left": "AGENTS.md allows every task to work directly on main",
+      "right": "current plan reserves main exclusively for MAIN",
+      "state": "confirmed"
+    },
+    {
+      "id": "idigbio-currentness",
+      "left": "API remains operational",
+      "right": "data index stopped updating on 2026-05-08",
+      "state": "confirmed"
+    }
+  ]
+}
