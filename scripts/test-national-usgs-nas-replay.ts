@@ -496,7 +496,7 @@ async function main() {
     execFileSync("git", ["config", "user.name", "Project Isitusa test"], { cwd: gitFixture });
     execFileSync("git", ["config", "user.email", "test@isitusa.invalid"], { cwd: gitFixture });
     const largeCommittedInput = path.join(gitFixture, "large-input.bin");
-    writeFileSync(largeCommittedInput, Buffer.alloc(1_200_000, "x"));
+    writeFileSync(largeCommittedInput, Buffer.alloc(17_000_000, "x"));
     execFileSync("git", ["add", "large-input.bin"], { cwd: gitFixture });
     execFileSync("git", ["commit", "-q", "-m", "large fixture"], { cwd: gitFixture });
     const largeSnapshot = captureCommittedInputSnapshot(gitFixture, [largeCommittedInput]);
