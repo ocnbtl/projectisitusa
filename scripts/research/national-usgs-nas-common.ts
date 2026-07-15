@@ -21,6 +21,7 @@ export const USGS_NAS_ADAPTER_ID = "usgs-nas-archive" as const;
 export const USGS_NAS_ADAPTER_VERSION = "1.0.0" as const;
 export const USGS_NAS_RESOURCE_URL = "https://nas.er.usgs.gov/ipt/resource?r=nas" as const;
 export const USGS_NAS_ARTIFACT_BUDGET_BYTES = 67_108_864 as const;
+export const USGS_NAS_GIT_BLOB_BUDGET_BYTES = 16_777_216 as const;
 export const USGS_NAS_SELECTED_RECORD_BUDGET_PER_SCREEN = 50_000 as const;
 export const USGS_NAS_SELECTED_RECORD_BUDGET_PER_PARTITION = 250_000 as const;
 export const USGS_NAS_ACCEPTED_OCCURRENCE_STATUSES = ["collected", "established"] as const;
@@ -443,7 +444,10 @@ export function captureCommittedInputSnapshot(
   for (const filepath of [...new Set(filepaths)].sort(compareText)) {
     const relativePath = relativeGitPath(root, filepath);
     const current = readFileSync(filepath);
-    const committed = execFileSync("git", ["show", `${commit}:${relativePath}`], { cwd: root });
+    const committed = execFileSync("git", ["show", `${commit}:${relativePath}`], {
+      cwd: root,
+      maxBuffer: USGS_NAS_GIT_BLOB_BUDGET_BYTES,
+    });
     assert(
       sha256(current) === sha256(committed),
       `${relativePath} does not match commit ${commit}.`,

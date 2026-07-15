@@ -18,6 +18,7 @@ import {
   type NationalNasReference,
   assertCommitAncestor,
   canonicalNasArchiveUrl,
+  captureCommittedInputSnapshot,
   inspectNationalNasArchive,
   nationalNasRecordAppliesToScreen,
   nationalNasDownloadedCoverage,
@@ -489,6 +490,21 @@ async function main() {
 
   const temporary = mkdtempSync(path.join(os.tmpdir(), "isitusa-nas-test-"));
   try {
+    const gitFixture = path.join(temporary, "git-fixture");
+    execFileSync("mkdir", ["-p", gitFixture]);
+    execFileSync("git", ["init", "-q"], { cwd: gitFixture });
+    execFileSync("git", ["config", "user.name", "Project Isitusa test"], { cwd: gitFixture });
+    execFileSync("git", ["config", "user.email", "test@isitusa.invalid"], { cwd: gitFixture });
+    const largeCommittedInput = path.join(gitFixture, "large-input.bin");
+    writeFileSync(largeCommittedInput, Buffer.alloc(1_200_000, "x"));
+    execFileSync("git", ["add", "large-input.bin"], { cwd: gitFixture });
+    execFileSync("git", ["commit", "-q", "-m", "large fixture"], { cwd: gitFixture });
+    const largeSnapshot = captureCommittedInputSnapshot(gitFixture, [largeCommittedInput]);
+    assert(
+      largeSnapshot.fileHashes.get(largeCommittedInput)?.length === 64,
+      "Committed input snapshot failed above Node's default one-megabyte child-process buffer.",
+    );
+
     const validArchive = buildSyntheticArchive(temporary, "valid.zip");
     const inspected = await inspectNationalNasArchive(validArchive, true);
     assert(inspected.recordCount === 2 && inspected.publicationDate === "2026-05-31", "Synthetic archive inspection changed.");
@@ -523,7 +539,8 @@ async function main() {
     byteRangeResumeSemanticsValidated: true,
     interruptedByteLineageValidated: true,
       streamingArtifactBudgetValidated: true,
-      acquisitionReceiptEntriesValidated: true,
+    acquisitionReceiptEntriesValidated: true,
+    largeCommittedInputSnapshotValidated: true,
     wrongBaseAncestryRejected: true,
     archiveTamperCases: 2,
     pilotOutcomeFixtureCount: result.outcomes.length,
