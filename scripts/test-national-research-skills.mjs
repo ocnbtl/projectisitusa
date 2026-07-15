@@ -428,6 +428,29 @@ try {
   result = run("node", [ORCHESTRATOR, "validate", "--root", orchestrationRoot, "--now", NOW], REPO_ROOT);
   record("overlapping_leases", "reject", result, "Hierarchical overlapping active claims are rejected.");
 
+  const retryRoot = path.join(fixtureRoot, "retry-orchestration");
+  const retryJob = {
+    ...makeJob({ jobId: job.jobId, baseSha: "f".repeat(40), branch: "codex/test-job-retry", worktree: path.join(fixtureRoot, "worktree-retry"), claims: job.scopeClaims }),
+    state: "blocked",
+    currentLeaseId: lease.leaseId,
+  };
+  const completedFirstLease = { ...lease, state: "completed", transitionedAt: NOW };
+  const retryLease = makeLease(retryJob, {
+    leaseId: "lease-test-job-2",
+    attempt: 2,
+    previousLeaseId: lease.leaseId,
+    recoveryReason: "Retry under a corrected base and pinned skill version.",
+    recoveryAt: NOW,
+    workerTaskId: "worker-test-job-retry",
+  });
+  writeJson(path.join(retryRoot, "jobs.json"), { schemaVersion: 1, jobs: [retryJob] });
+  writeJson(path.join(retryRoot, "leases.json"), { schemaVersion: 1, leases: [completedFirstLease] });
+  writeJson(path.join(retryRoot, "integration-queue.json"), { schemaVersion: 1, items: [] });
+  const retryLeasePath = path.join(fixtureRoot, "retry-lease.json");
+  writeJson(retryLeasePath, retryLease);
+  result = run("node", [ORCHESTRATOR, "claim", "--root", retryRoot, "--job", retryJob.jobId, "--lease", retryLeasePath, "--now", NOW], REPO_ROOT);
+  record("retry_new_base_and_skill_snapshot", "pass", result, "A closed historical lease keeps its immutable snapshot while a bounded retry advances the current job and active lease.");
+
   const deterministicRoot = path.join(fixtureRoot, "deterministic-orchestration");
   writeJson(path.join(deterministicRoot, "jobs.json"), { schemaVersion: 1, jobs: [] });
   writeJson(path.join(deterministicRoot, "leases.json"), { schemaVersion: 1, leases: [] });

@@ -241,8 +241,22 @@ function validateLease(lease, index, jobsById, errors) {
   if (!Number.isFinite(Date.parse(lease.expiresAt))) errors.push(`${label}.expiresAt is invalid.`);
   if (typeof lease.workerTaskId !== "string" || !lease.workerTaskId) errors.push(`${label}.workerTaskId is required.`);
   if (typeof lease.expectedManifestPath !== "string" || !lease.expectedManifestPath) errors.push(`${label}.expectedManifestPath is required.`);
+  if (!isSha(lease.baseSha, 40)) errors.push(`${label}.baseSha must be a Git SHA.`);
+  if (typeof lease.branch !== "string" || !lease.branch.startsWith("codex/")) errors.push(`${label}.branch must start with codex/.`);
+  if (typeof lease.worktree !== "string" || !path.isAbsolute(lease.worktree)) errors.push(`${label}.worktree must be absolute.`);
+  if (!isObject(lease.stateOrSourceScope)) errors.push(`${label}.stateOrSourceScope is required.`);
+  if (!isObject(lease.taxaOrPairScope)) errors.push(`${label}.taxaOrPairScope is required.`);
+  if (!nonemptyStrings(lease.scopeClaims)) errors.push(`${label}.scopeClaims must be nonempty.`);
+  if (!nonemptyStrings(lease.permittedPaths)) errors.push(`${label}.permittedPaths must be nonempty.`);
+  if (!nonemptyStrings(lease.prohibitedPaths)) errors.push(`${label}.prohibitedPaths must be nonempty.`);
+  if (!Array.isArray(lease.skillPins) || lease.skillPins.length < 2) errors.push(`${label}.skillPins must pin both project skills.`);
+  else lease.skillPins.forEach((pin, pinIndex) => validatePin(pin, `${label}.skillPins[${pinIndex}]`, errors));
+  if (!nonemptyStrings(lease.expectedOutputs)) errors.push(`${label}.expectedOutputs must be nonempty.`);
+  if (!nonemptyStrings(lease.completionCriteria)) errors.push(`${label}.completionCriteria must be nonempty.`);
+  if (!isObject(lease.retryPolicy) || !Number.isInteger(lease.retryPolicy.maxAttempts) || lease.retryPolicy.maxAttempts < 1) errors.push(`${label}.retryPolicy is invalid.`);
+  if (!isObject(lease.resourcePolicy) || !Number.isFinite(lease.resourcePolicy.maxMemoryMb) || lease.resourcePolicy.maxMemoryMb <= 0) errors.push(`${label}.resourcePolicy is invalid.`);
   const job = jobsById.get(lease.jobId);
-  if (job) {
+  if (job && lease.state === "active") {
     for (const field of ["baseSha", "branch", "worktree"]) {
       if (lease[field] !== job[field]) errors.push(`${label}.${field} differs from its job.`);
     }
@@ -291,6 +305,27 @@ function validateState(root, nowText) {
   leases.forEach((lease, index) => validateLease(lease, index, jobsById, errors));
   const leaseIds = leases.map((lease) => lease.leaseId);
   if (new Set(leaseIds).size !== leaseIds.length) errors.push("Duplicate lease IDs are forbidden.");
+  const leasesById = new Map(leases.map((lease) => [lease.leaseId, lease]));
+  const attempts = new Set();
+  for (const lease of leases) {
+    const attemptKey = `${lease.jobId}:${lease.attempt}`;
+    if (attempts.has(attemptKey)) errors.push(`Duplicate lease attempt ${attemptKey}.`);
+    attempts.add(attemptKey);
+    const job = jobsById.get(lease.jobId);
+    if (job && lease.attempt > job.retryPolicy?.maxAttempts) errors.push(`Lease ${lease.leaseId} exceeds job retryPolicy.maxAttempts.`);
+    if (lease.attempt === 1 && lease.previousLeaseId !== null) errors.push(`First attempt ${lease.leaseId} must not reference a previous lease.`);
+    if (lease.attempt > 1) {
+      const previous = leasesById.get(lease.previousLeaseId);
+      if (!previous) errors.push(`Retry lease ${lease.leaseId} references a missing previous lease.`);
+      else {
+        if (previous.jobId !== lease.jobId) errors.push(`Retry lease ${lease.leaseId} references a previous lease for another job.`);
+        if (previous.attempt !== lease.attempt - 1) errors.push(`Retry lease ${lease.leaseId} does not follow the previous attempt.`);
+        if (previous.state === "active") errors.push(`Retry lease ${lease.leaseId} cannot follow an active lease.`);
+      }
+      if (typeof lease.recoveryReason !== "string" || !lease.recoveryReason) errors.push(`Retry lease ${lease.leaseId} requires a recovery reason.`);
+      if (!Number.isFinite(Date.parse(lease.recoveryAt))) errors.push(`Retry lease ${lease.leaseId} requires a recovery time.`);
+    }
+  }
   const active = leases.filter((lease) => lease.state === "active");
   const now = Date.parse(nowText);
   if (!Number.isFinite(now)) errors.push("Validation time must be an ISO date-time.");
@@ -320,6 +355,10 @@ function validateState(root, nowText) {
   }
   for (const job of jobs) {
     for (const dependency of job.dependencies ?? []) if (!jobsById.has(dependency)) errors.push(`Job ${job.jobId} depends on missing job ${dependency}.`);
+    if (job.state === "leased") {
+      const current = leasesById.get(job.currentLeaseId);
+      if (!current || current.jobId !== job.jobId || current.state !== "active") errors.push(`Leased job ${job.jobId} does not reference its active current lease.`);
+    }
   }
   return {
     state,
