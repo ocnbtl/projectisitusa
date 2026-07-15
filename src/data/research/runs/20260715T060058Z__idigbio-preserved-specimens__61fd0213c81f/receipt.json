@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f",
+  "status": "complete",
+  "started_at": "2026-07-15T06:00:58.773Z",
+  "finished_at": "2026-07-15T06:01:00.408Z",
+  "actor_type": "adapter",
+  "actor_id": "idigbio-preserved-specimens@1.0.0",
+  "source_id": "idigbio-preserved-specimens",
+  "source_registry_hash": "db9642cbb57da6e121f0a625b01267867ec4b58b15e9d2758869f6aeeffebc2b",
+  "adapter_id": "idigbio-preserved-specimens",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "f7dfce7323dd5f6421e02eb17bf5ab3586be92bf8d883d2f49feaac54447fa28",
+  "code_commit": "de10dd9beca30d0193040828d2bcd078da6a3afa",
+  "parameter_hash": "61fd0213c81f3bc812a961859d05fa63b61fb173579510b3ad069c2aece9dbbb",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 8,
+    "candidatePairs": [
+      "01019:festuca-rubra",
+      "01047:hypochaeris-radicata",
+      "01065:festuca-rubra",
+      "01079:eragrostis-cilianensis",
+      "01093:eragrostis-cilianensis",
+      "01093:hypochaeris-radicata",
+      "01099:ctenopharyngodon-idella",
+      "01105:ctenopharyngodon-idella"
+    ],
+    "basisOfRecord": "preservedspecimen",
+    "country": "united states",
+    "stateProvince": "alabama",
+    "pageLimit": 300,
+    "maxPagesPerSpecies": 1000,
+    "sortField": "uuid",
+    "sortOrder": "asc"
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01019",
+      "01047",
+      "01065",
+      "01079",
+      "01093",
+      "01099",
+      "01105"
+    ],
+    "species_ids": [
+      "ctenopharyngodon-idella",
+      "eragrostis-cilianensis",
+      "festuca-rubra",
+      "hypochaeris-radicata"
+    ],
+    "pair_keys": [
+      "01019:festuca-rubra",
+      "01047:hypochaeris-radicata",
+      "01065:festuca-rubra",
+      "01079:eragrostis-cilianensis",
+      "01093:eragrostis-cilianensis",
+      "01093:hypochaeris-radicata",
+      "01099:ctenopharyngodon-idella",
+      "01105:ctenopharyngodon-idella"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22festuca+rubra%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T06:00:59.080Z",
+      "record_count": 9
+    },
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22hypochaeris+radicata%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T06:00:59.426Z",
+      "record_count": 59
+    },
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22eragrostis+cilianensis%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T06:00:59.886Z",
+      "record_count": 35
+    },
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22ctenopharyngodon+idella%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T06:01:00.406Z",
+      "record_count": 13
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/artifacts/idigbio-records-ctenopharyngodon-idella-000000.json",
+      "sha256": "e0f110ae5bb0f48fb9282b5c5daf01bf42a5d9f1932d78f3c1ec2f7e551e6855",
+      "bytes": 28295,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/artifacts/idigbio-records-eragrostis-cilianensis-000000.json",
+      "sha256": "ed58e4b64f3e80becc0fdab82ffa108bc1d7803bb2c5beab48cc1cf2f348ad9c",
+      "bytes": 64419,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/artifacts/idigbio-records-festuca-rubra-000000.json",
+      "sha256": "4bcae1e4bd7047fd7499b805d00960869aca1ca879af76f03bbf24543c8769f6",
+      "bytes": 22891,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/artifacts/idigbio-records-hypochaeris-radicata-000000.json",
+      "sha256": "b95a0b6bf8243c4cb539468219fc3c0bf6d819539cdf0e646a6771aa0d9f786d",
+      "bytes": 99778,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/assertions.ndjson",
+      "sha256": "d097efbdcbd392554d69ea6160a929e6aca48ab5b002c33c223149cb7d44574d",
+      "bytes": 19103,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/reviews.ndjson",
+      "sha256": "ff1447f5bf44b87decc5f3143a09c672dbc437d5baa320c25e95b75731ab2e49",
+      "bytes": 8179,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/rejections.ndjson",
+      "sha256": "244dacbcbc9871f0871b09bc9c4baa817596993fd1213cc861635c1f139f7f2c",
+      "bytes": 24020,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/outcomes.ndjson",
+      "sha256": "a3749967cf0f42776ba0e336d01e644b4215faa54055a8cca16a0ac81a891ccd",
+      "bytes": 21229,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 8,
+    "candidate_records": 116,
+    "assertion_events": 8,
+    "review_events": 8,
+    "rejection_records": 30,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 8
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical preserved specimen evidence from the frozen iDigBio search index. Aggregated records may overlap GBIF and collection portals, and missing records never support absence or non-detection."
+  ],
+  "source_warnings": [
+    "The iDigBio search index is a frozen historical dataset and no longer receives source updates.",
+    "iDigBio reported source snapshot 2026-04-23T16:26:04.826Z for festuca-rubra.",
+    "iDigBio reported source snapshot 2026-04-23T16:26:04.826Z for hypochaeris-radicata.",
+    "iDigBio reported source snapshot 2026-02-24T17:26:56.507Z for eragrostis-cilianensis.",
+    "iDigBio reported source snapshot 2024-10-31T17:06:34.109Z for ctenopharyngodon-idella."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source idigbio-preserved-specimens --state AL --pairs 01019:festuca-rubra,01047:hypochaeris-radicata,01065:festuca-rubra,01079:eragrostis-cilianensis,01093:eragrostis-cilianensis,01093:hypochaeris-radicata,01099:ctenopharyngodon-idella,01105:ctenopharyngodon-idella"
+}
