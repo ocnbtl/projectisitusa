@@ -451,6 +451,21 @@ try {
   result = run("node", [ORCHESTRATOR, "claim", "--root", retryRoot, "--job", retryJob.jobId, "--lease", retryLeasePath, "--now", NOW], REPO_ROOT);
   record("retry_new_base_and_skill_snapshot", "pass", result, "A closed historical lease keeps its immutable snapshot while a bounded retry advances the current job and active lease.");
 
+  const rollbackRoot = path.join(fixtureRoot, "rollback-orchestration");
+  const rollbackJob = makeJob({ jobId: "rollback-job", baseSha, branch: "codex/rollback-job", worktree: path.join(fixtureRoot, "rollback-worktree"), claims: ["state/AR/source/synthetic-source/taxon/species-a"] });
+  writeJson(path.join(rollbackRoot, "jobs.json"), { schemaVersion: 1, jobs: [rollbackJob] });
+  writeJson(path.join(rollbackRoot, "leases.json"), { schemaVersion: 1, leases: [] });
+  writeJson(path.join(rollbackRoot, "integration-queue.json"), { schemaVersion: 1, items: [] });
+  const rollbackJobsBefore = fs.readFileSync(path.join(rollbackRoot, "jobs.json"));
+  const rollbackLeasesBefore = fs.readFileSync(path.join(rollbackRoot, "leases.json"));
+  const invalidClaimPath = path.join(fixtureRoot, "invalid-claim-lease.json");
+  writeJson(invalidClaimPath, makeLease(rollbackJob, { branch: "codex/mismatched-branch" }));
+  result = run("node", [ORCHESTRATOR, "claim", "--root", rollbackRoot, "--job", rollbackJob.jobId, "--lease", invalidClaimPath, "--now", NOW], REPO_ROOT);
+  const rollbackPreserved = result.status !== 0
+    && rollbackJobsBefore.equals(fs.readFileSync(path.join(rollbackRoot, "jobs.json")))
+    && rollbackLeasesBefore.equals(fs.readFileSync(path.join(rollbackRoot, "leases.json")));
+  record("failed_claim_rolls_back", "pass", { ...result, status: rollbackPreserved ? 0 : 1 }, "A rejected claim restores the exact pre-command jobs and leases documents.");
+
   const deterministicRoot = path.join(fixtureRoot, "deterministic-orchestration");
   writeJson(path.join(deterministicRoot, "jobs.json"), { schemaVersion: 1, jobs: [] });
   writeJson(path.join(deterministicRoot, "leases.json"), { schemaVersion: 1, leases: [] });

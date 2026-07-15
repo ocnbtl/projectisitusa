@@ -426,10 +426,19 @@ try {
         if (lease.jobId !== job.jobId || lease.state !== "active") throw new Error("Lease job or active state is invalid.");
         const nextLeases = { ...state.leasesDoc, leases: [...state.leasesDoc.leases, lease] };
         const nextJobs = { ...state.jobsDoc, jobs: state.jobsDoc.jobs.map((item) => item.jobId === job.jobId ? { ...item, state: "leased", currentLeaseId: lease.leaseId } : item) };
-        atomicWrite(state.files.leases, nextLeases);
-        atomicWrite(state.files.jobs, nextJobs);
-        const post = validateState(root, now).result;
-        if (!post.valid) throw new Error(`Claim produced invalid state: ${post.errors.join(" | ")}`);
+        let post;
+        try {
+          atomicWrite(state.files.leases, nextLeases);
+          atomicWrite(state.files.jobs, nextJobs);
+          post = validateState(root, now).result;
+          if (!post.valid) throw new Error(`Claim produced invalid state: ${post.errors.join(" | ")}`);
+        } catch (error) {
+          atomicWrite(state.files.leases, state.leasesDoc);
+          atomicWrite(state.files.jobs, state.jobsDoc);
+          const rollback = validateState(root, now).result;
+          if (!rollback.valid) throw new Error(`${error instanceof Error ? error.message : String(error)} | Claim rollback failed: ${rollback.errors.join(" | ")}`);
+          throw error;
+        }
         output({ ok: true, command, jobId: job.jobId, leaseId: lease.leaseId, validation: post });
       } finally { release(); }
     } else if (command === "transition") {
@@ -467,11 +476,21 @@ try {
             workerCommit: manifest.commitSha,
           }] };
         }
-        atomicWrite(state.files.leases, nextLeases);
-        atomicWrite(state.files.jobs, nextJobs);
-        atomicWrite(state.files.queue, nextQueue);
-        const post = validateState(root, now).result;
-        if (!post.valid) throw new Error(`Transition produced invalid state: ${post.errors.join(" | ")}`);
+        let post;
+        try {
+          atomicWrite(state.files.leases, nextLeases);
+          atomicWrite(state.files.jobs, nextJobs);
+          atomicWrite(state.files.queue, nextQueue);
+          post = validateState(root, now).result;
+          if (!post.valid) throw new Error(`Transition produced invalid state: ${post.errors.join(" | ")}`);
+        } catch (error) {
+          atomicWrite(state.files.leases, state.leasesDoc);
+          atomicWrite(state.files.jobs, state.jobsDoc);
+          atomicWrite(state.files.queue, state.queueDoc);
+          const rollback = validateState(root, now).result;
+          if (!rollback.valid) throw new Error(`${error instanceof Error ? error.message : String(error)} | Transition rollback failed: ${rollback.errors.join(" | ")}`);
+          throw error;
+        }
         output({ ok: true, command, leaseId: lease.leaseId, state: args.state, validation: post });
       } finally { release(); }
     } else if (command === "dashboard") {

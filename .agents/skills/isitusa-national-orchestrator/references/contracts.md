@@ -65,6 +65,8 @@ Do not mutate a completed attempt into a retry. Append a new attempt.
 
 The job registry describes the currently schedulable attempt and may advance to a new base, branch, worktree, or pinned skill after an earlier lease closes. Every historical lease retains its own complete immutable snapshot. Only an active lease must equal the job's current execution fields.
 
+Claim and transition commands are transactional across their repository state files. If the proposed state fails post-write validation, restore the exact pre-command documents before returning failure.
+
 ## Scope collision rules
 
 Normalize a claim by splitting on `/`. Reject empty segments, `..`, and embedded wildcards. Two claims overlap when they contain the same number of segments and each position is equal or at least one side is `*`.
