@@ -7,23 +7,23 @@ Generated: `2026-07-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `15240`
+- Verified present: `15293`
 - Verified absent: `0`
 - Not detected: `8`
-- Researched unresolved: `95473`
+- Researched unresolved: `95420`
 - Not researched: `57047`
-- Determination coverage: `9.08%`
+- Determination coverage: `9.12%`
 - Research coverage: `66.00%`
-- Explicit outcome coverage: `0.0721%`
+- Explicit outcome coverage: `0.1049%`
 - Applicable protocol cells: `14668`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.00%`
 - Current protocol completion: `0.00%`
-- Evidence records: `30338`
-- Research runs: `28`
-- Rejection records: `449`
-- Deferred source assertions remaining: `159`
-- Deferred distinct pairs remaining: `55`
+- Evidence records: `30486`
+- Research runs: `29`
+- Rejection records: `895`
+- Deferred source assertions remaining: `101`
+- Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
 
 Determination coverage counts only verified present and verified absent pairs. Research coverage also counts explicit not-detected evidence and source-family screens. Explicit outcome coverage counts completed immutable pair outcomes. None of these metrics implies absence.
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | 2026-06-16T03:44:13.025Z | 7 | 3 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-15T16:00:13.698Z | 6575 | 686 |
+| GBIF preserved specimen records | operational | 2026-07-15T16:04:29.687Z | 6630 | 686 |
 | GBIF coordinate-resolved preserved specimen records | operational | 2026-07-06T22:47:17.903Z | 904 | 68 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-06-26T11:22:25.724Z | 308 | 61 |
 | GBIF eBird Observation Dataset | operational | 2026-06-28T05:33:30.608Z | 292 | 10 |

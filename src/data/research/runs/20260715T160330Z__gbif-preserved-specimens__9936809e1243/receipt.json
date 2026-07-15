@@ -1,0 +1,1684 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T160330Z__gbif-preserved-specimens__9936809e1243",
+  "status": "complete",
+  "started_at": "2026-07-15T16:03:30.000Z",
+  "finished_at": "2026-07-15T16:04:29.687Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.1.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "22586e1505fd6ca55f3e1c4b0cf8670d83cf72ec6d5ded1192e8de39fd1a2467",
+  "code_commit": "1af148fe1a635f19e728e93b09e1522d37d2b155",
+  "parameter_hash": "9936809e12435e2401451cd44ea34e98437795687b4cea0b5a5da0c810815db3",
+  "parameters": {
+    "stateCode": "AL",
+    "stateProvince": "Alabama",
+    "candidateLimit": 58,
+    "candidatePairs": [
+      "01081:acer-platanoides",
+      "01115:barbarea-vulgaris",
+      "01063:bromus-catharticus",
+      "01003:cactoblastis-cactorum",
+      "01055:camelina-microcarpa",
+      "01027:cichorium-intybus",
+      "01081:clarias-batrachus",
+      "01065:commelina-communis",
+      "01107:convolvulus-arvensis",
+      "01057:corbicula-fluminea",
+      "01067:cynodon-dactylon",
+      "01125:cynoglossum-officinale",
+      "01091:cyprinus-carpio",
+      "01005:dactylis-glomerata",
+      "01061:datura-stramonium",
+      "01063:dreissena-bugensis",
+      "01103:dreissena-polymorpha",
+      "01129:echinochloa-crus-galli",
+      "01065:elaeagnus-umbellata",
+      "01055:holcus-lanatus",
+      "01069:hydrilla",
+      "01081:hypophthalmichthys-molitrix",
+      "01081:hypophthalmichthys-nobilis",
+      "01063:lactuca-serriola",
+      "01095:ligustrum-vulgare",
+      "01085:lolium-perenne",
+      "01055:lotus-corniculatus",
+      "01041:melilotus-albus",
+      "01117:melilotus-officinalis",
+      "01045:nepeta-cataria",
+      "01003:ostrinia-nubilalis",
+      "01081:oulema-melanopus",
+      "01071:plantago-major",
+      "01025:poa-trivialis",
+      "01081:polygonum-aviculare",
+      "01125:populus-alba",
+      "01035:potamogeton-crispus",
+      "01005:potentilla-recta",
+      "01081:puccinia-graminis",
+      "01081:rumex-obtusifolius",
+      "01027:salmo-trutta",
+      "01003:solenopsis-richteri",
+      "01037:sonchus-asper",
+      "01067:spergula-arvensis",
+      "01097:spergularia-rubra",
+      "01077:sporobolus-indicus",
+      "01131:stellaria-media",
+      "01023:thlaspi-arvense",
+      "01091:torilis-japonica",
+      "01005:trifolium-pratense",
+      "01037:tussilago-farfara",
+      "01061:typha-angustifolia",
+      "01079:ulmus-pumila",
+      "01113:veronica-arvensis",
+      "01005:vicia-villosa",
+      "01129:vicia-villosa",
+      "01069:vinca-major",
+      "01081:vincetoxicum-nigrum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01003",
+      "01005",
+      "01023",
+      "01025",
+      "01027",
+      "01035",
+      "01037",
+      "01041",
+      "01045",
+      "01055",
+      "01057",
+      "01061",
+      "01063",
+      "01065",
+      "01067",
+      "01069",
+      "01071",
+      "01077",
+      "01079",
+      "01081",
+      "01085",
+      "01091",
+      "01095",
+      "01097",
+      "01103",
+      "01107",
+      "01113",
+      "01115",
+      "01117",
+      "01125",
+      "01129",
+      "01131"
+    ],
+    "species_ids": [
+      "acer-platanoides",
+      "barbarea-vulgaris",
+      "bromus-catharticus",
+      "cactoblastis-cactorum",
+      "camelina-microcarpa",
+      "cichorium-intybus",
+      "clarias-batrachus",
+      "commelina-communis",
+      "convolvulus-arvensis",
+      "corbicula-fluminea",
+      "cynodon-dactylon",
+      "cynoglossum-officinale",
+      "cyprinus-carpio",
+      "dactylis-glomerata",
+      "datura-stramonium",
+      "dreissena-bugensis",
+      "dreissena-polymorpha",
+      "echinochloa-crus-galli",
+      "elaeagnus-umbellata",
+      "holcus-lanatus",
+      "hydrilla",
+      "hypophthalmichthys-molitrix",
+      "hypophthalmichthys-nobilis",
+      "lactuca-serriola",
+      "ligustrum-vulgare",
+      "lolium-perenne",
+      "lotus-corniculatus",
+      "melilotus-albus",
+      "melilotus-officinalis",
+      "nepeta-cataria",
+      "ostrinia-nubilalis",
+      "oulema-melanopus",
+      "plantago-major",
+      "poa-trivialis",
+      "polygonum-aviculare",
+      "populus-alba",
+      "potamogeton-crispus",
+      "potentilla-recta",
+      "puccinia-graminis",
+      "rumex-obtusifolius",
+      "salmo-trutta",
+      "solenopsis-richteri",
+      "sonchus-asper",
+      "spergula-arvensis",
+      "spergularia-rubra",
+      "sporobolus-indicus",
+      "stellaria-media",
+      "thlaspi-arvense",
+      "torilis-japonica",
+      "trifolium-pratense",
+      "tussilago-farfara",
+      "typha-angustifolia",
+      "ulmus-pumila",
+      "veronica-arvensis",
+      "vicia-villosa",
+      "vinca-major",
+      "vincetoxicum-nigrum"
+    ],
+    "pair_keys": [
+      "01081:acer-platanoides",
+      "01115:barbarea-vulgaris",
+      "01063:bromus-catharticus",
+      "01003:cactoblastis-cactorum",
+      "01055:camelina-microcarpa",
+      "01027:cichorium-intybus",
+      "01081:clarias-batrachus",
+      "01065:commelina-communis",
+      "01107:convolvulus-arvensis",
+      "01057:corbicula-fluminea",
+      "01067:cynodon-dactylon",
+      "01125:cynoglossum-officinale",
+      "01091:cyprinus-carpio",
+      "01005:dactylis-glomerata",
+      "01061:datura-stramonium",
+      "01063:dreissena-bugensis",
+      "01103:dreissena-polymorpha",
+      "01129:echinochloa-crus-galli",
+      "01065:elaeagnus-umbellata",
+      "01055:holcus-lanatus",
+      "01069:hydrilla",
+      "01081:hypophthalmichthys-molitrix",
+      "01081:hypophthalmichthys-nobilis",
+      "01063:lactuca-serriola",
+      "01095:ligustrum-vulgare",
+      "01085:lolium-perenne",
+      "01055:lotus-corniculatus",
+      "01041:melilotus-albus",
+      "01117:melilotus-officinalis",
+      "01045:nepeta-cataria",
+      "01003:ostrinia-nubilalis",
+      "01081:oulema-melanopus",
+      "01071:plantago-major",
+      "01025:poa-trivialis",
+      "01081:polygonum-aviculare",
+      "01125:populus-alba",
+      "01035:potamogeton-crispus",
+      "01005:potentilla-recta",
+      "01081:puccinia-graminis",
+      "01081:rumex-obtusifolius",
+      "01027:salmo-trutta",
+      "01003:solenopsis-richteri",
+      "01037:sonchus-asper",
+      "01067:spergula-arvensis",
+      "01097:spergularia-rubra",
+      "01077:sporobolus-indicus",
+      "01131:stellaria-media",
+      "01023:thlaspi-arvense",
+      "01091:torilis-japonica",
+      "01005:trifolium-pratense",
+      "01037:tussilago-farfara",
+      "01061:typha-angustifolia",
+      "01079:ulmus-pumila",
+      "01113:veronica-arvensis",
+      "01005:vicia-villosa",
+      "01129:vicia-villosa",
+      "01069:vinca-major",
+      "01081:vincetoxicum-nigrum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Acer+platanoides&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:43.797Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3189846&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:44.255Z",
+      "record_count": 3
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Barbarea+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:44.473Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5708780&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:44.954Z",
+      "record_count": 5
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Bromus+catharticus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:45.195Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2703723&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:45.741Z",
+      "record_count": 122
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cactoblastis+cactorum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:46.429Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=1870532&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:46.867Z",
+      "record_count": 36
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Camelina+microcarpa&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:47.104Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3042416&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:47.514Z",
+      "record_count": 2
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cichorium+intybus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:47.775Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5392252&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:48.246Z",
+      "record_count": 18
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Clarias+batrachus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:48.467Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5202683&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:48.960Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Commelina+communis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:49.147Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2764179&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:49.615Z",
+      "record_count": 88
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Convolvulus+arvensis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:50.060Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2928390&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:50.485Z",
+      "record_count": 17
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Corbicula+fluminea&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:50.731Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8190231&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:51.344Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8190231&limit=300&offset=300",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:52.044Z",
+      "record_count": 300
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8190231&limit=300&offset=600",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:53.585Z",
+      "record_count": 233
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cynodon+dactylon&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:54.297Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=6109637&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:54.806Z",
+      "record_count": 94
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cynoglossum+officinale&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:55.055Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2925815&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:55.493Z",
+      "record_count": 4
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cyprinus+carpio&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:55.726Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=4286975&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:56.222Z",
+      "record_count": 59
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Dactylis+glomerata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:56.463Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2705308&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:56.953Z",
+      "record_count": 86
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Datura+stramonium&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:57.203Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2928751&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:57.695Z",
+      "record_count": 63
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Dreissena+bugensis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:57.875Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2287073&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:58.305Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Dreissena+polymorpha&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:58.561Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2287072&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:59.027Z",
+      "record_count": 13
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Echinochloa+crus-galli&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:59.216Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2702808&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:03:59.713Z",
+      "record_count": 60
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Elaeagnus+umbellata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:00.059Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3039267&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:00.523Z",
+      "record_count": 47
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Holcus+lanatus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:00.753Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2706164&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:01.227Z",
+      "record_count": 21
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Hydrilla+verticillata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:01.431Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5329570&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:01.924Z",
+      "record_count": 81
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Hypophthalmichthys+molitrix&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:02.176Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2362473&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:02.617Z",
+      "record_count": 11
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Hypophthalmichthys+nobilis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:02.833Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2362486&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:03.333Z",
+      "record_count": 14
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Lactuca+serriola&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:03.513Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3140490&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:04.057Z",
+      "record_count": 23
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Ligustrum+vulgare&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:04.286Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3172300&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:04.737Z",
+      "record_count": 5
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Lolium+perenne&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:04.953Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2706241&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:05.662Z",
+      "record_count": 74
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Lotus+corniculatus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:06.216Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5357013&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:06.684Z",
+      "record_count": 5
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Melilotus+albus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:06.890Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2971095&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:07.398Z",
+      "record_count": 88
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Melilotus+officinalis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:07.756Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8193111&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:08.241Z",
+      "record_count": 87
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Nepeta+cataria&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:08.565Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5341499&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:08.961Z",
+      "record_count": 4
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Ostrinia+nubilalis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:09.249Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8223165&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:09.695Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Oulema+melanopus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:09.908Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=1048319&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:10.350Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Plantago+major&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:10.581Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3189767&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:11.098Z",
+      "record_count": 22
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Poa+trivialis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:11.322Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8300875&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:11.756Z",
+      "record_count": 3
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Polygonum+aviculare&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:11.999Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=7821030&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:12.443Z",
+      "record_count": 38
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Populus+alba&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:12.790Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3040233&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:13.234Z",
+      "record_count": 19
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Potamogeton+crispus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:13.457Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5301162&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:13.959Z",
+      "record_count": 46
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Potentilla+recta&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:14.187Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5367294&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:14.729Z",
+      "record_count": 99
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Puccinia+graminis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:15.080Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2514501&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:15.541Z",
+      "record_count": 22
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Rumex+obtusifolius&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:15.754Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2889011&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:16.223Z",
+      "record_count": 18
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Salmo+trutta&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:16.425Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8215487&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:16.873Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Solenopsis+richteri&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:17.098Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5035017&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:17.535Z",
+      "record_count": 21
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Sonchus+asper&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:17.771Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3105782&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:18.331Z",
+      "record_count": 106
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Spergula+arvensis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:18.810Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3085810&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:19.278Z",
+      "record_count": 30
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Spergularia+rubra&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:19.470Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3085633&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:19.906Z",
+      "record_count": 3
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Sporobolus+indicus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:20.144Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2704757&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:20.654Z",
+      "record_count": 103
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Stellaria+media&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:21.094Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5384604&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:21.608Z",
+      "record_count": 162
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Thlaspi+arvense&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:21.985Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3052680&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:22.427Z",
+      "record_count": 15
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Torilis+japonica&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:22.659Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3034820&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:23.129Z",
+      "record_count": 2
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Trifolium+pratense&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:23.327Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8324121&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:23.837Z",
+      "record_count": 109
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Tussilago+farfara&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:24.293Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3149879&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:24.742Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Typha+angustifolia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:24.970Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5289461&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:25.368Z",
+      "record_count": 18
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Ulmus+pumila&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:25.653Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5361877&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:26.052Z",
+      "record_count": 7
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Veronica+arvensis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:26.301Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3172048&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:26.838Z",
+      "record_count": 160
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Vicia+villosa&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:27.412Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=9182154&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:28.028Z",
+      "record_count": 193
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Vinca+major&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:28.399Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3169708&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:28.951Z",
+      "record_count": 81
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Vincetoxicum+nigrum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:29.229Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5414551&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:04:29.686Z",
+      "record_count": 1
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-acer-platanoides-000000.json",
+      "sha256": "1adf2a1f45c86eabe298075186eddd55ae993a14e50ba5881454a6178ebf055b",
+      "bytes": 17059,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-barbarea-vulgaris-000000.json",
+      "sha256": "a531e58dd18d96effad73fd88c4be5325180a435b1a457923e611d2fce6c0fbf",
+      "bytes": 32391,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-bromus-catharticus-000000.json",
+      "sha256": "a98784f349e4bf85123233b427e09770077265e8b7c9c8ca41d67e2a9fd80371",
+      "bytes": 821758,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-cactoblastis-cactorum-000000.json",
+      "sha256": "0e153ac5ab20a8265473a5fbe3f981172c19f0abf64adb3d18f1714d15ad115f",
+      "bytes": 193142,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-camelina-microcarpa-000000.json",
+      "sha256": "bdcd2e2c9f953aa7699ba791fc38b8a7454a1eb902440b7bccdc9c13bf727bc5",
+      "bytes": 13847,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-cichorium-intybus-000000.json",
+      "sha256": "c8aaf5455028190eb9edf6a34090324b3f12c58a692802982416be5ca1ffb15e",
+      "bytes": 124316,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-clarias-batrachus-000000.json",
+      "sha256": "26ad7cf48e49d552a576ebb1073fb1a7d26370b0f84a6173e2b1580ce3548848",
+      "bytes": 5469,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-commelina-communis-000000.json",
+      "sha256": "33d71db68b2049ece0e65284440609fa0209c3dc77defbca6c4303cb811e3bd8",
+      "bytes": 556950,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-convolvulus-arvensis-000000.json",
+      "sha256": "a52ce8808a0265dd98aa7dbe335ff8ab119d65f7ccde16272b3718341b0f3d7b",
+      "bytes": 111091,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-corbicula-fluminea-000000.json",
+      "sha256": "4d2f3b461ab085d15a5b4e497bb27a5c8f3c0a8105b709096e2e8ac62553f660",
+      "bytes": 1786523,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-corbicula-fluminea-000300.json",
+      "sha256": "1d36b023c87ac8bb7db539992d49b421c7fc1183c57f5ac7124ef44335c8e5b7",
+      "bytes": 1802319,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-corbicula-fluminea-000600.json",
+      "sha256": "6b28a303f32702f1a739e44631bf1e98b8c6c3907c2c27100b9d14bf4854fb6d",
+      "bytes": 1411208,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-cynodon-dactylon-000000.json",
+      "sha256": "73dcbf2b8c859b56fe4cf7b79058080035e94a875d9aaa2b564009a1e0448af6",
+      "bytes": 643922,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-cynoglossum-officinale-000000.json",
+      "sha256": "5ba4c80c080b0a2ca1f55fbdf8c74747ceff5b3b51bb5367d4f0d4f04750d462",
+      "bytes": 28246,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-cyprinus-carpio-000000.json",
+      "sha256": "ba9aeb290b704bc2fe30bd51e3208f33f990b30eff0916aefa30d49c61236178",
+      "bytes": 345774,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-dactylis-glomerata-000000.json",
+      "sha256": "373824c1b3bcbae514f4a1725bb9ed71f1b6ce13ddd144c5d8052b75e7864d97",
+      "bytes": 575233,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-datura-stramonium-000000.json",
+      "sha256": "857f4302cff815e9766a142697be11ef0bf2b8451197da10575065c9d7d6d91a",
+      "bytes": 382341,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-dreissena-bugensis-000000.json",
+      "sha256": "dff3dd03306c091f18c64d821065b7b9ca9bf500826cc347d2a64ff440384ac9",
+      "bytes": 14601,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-dreissena-polymorpha-000000.json",
+      "sha256": "d1b6ce332e75f1cd7fc8638ec94624dea03c06eced7434dfdeec3d252d21eb86",
+      "bytes": 77692,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-echinochloa-crus-galli-000000.json",
+      "sha256": "2228b2d39b635bd8fcf23203a0add1a26595c725bbf9fe1e7dc7e64aa2ebd663",
+      "bytes": 416498,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-elaeagnus-umbellata-000000.json",
+      "sha256": "770822737b17771e29490e58df1482aff94f602b649b46d897c49a5f12679332",
+      "bytes": 326544,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-holcus-lanatus-000000.json",
+      "sha256": "ab6c8daeabe14219414f23c012eb9fdbf495ca93617be148b6beb3c7c99762d9",
+      "bytes": 138475,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-hydrilla-000000.json",
+      "sha256": "1c8d09f73dcd5ad834c82f91a644c282426b1a7a10e0d8a444e583aefd36fef5",
+      "bytes": 563623,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-hypophthalmichthys-molitrix-000000.json",
+      "sha256": "d7826493f335f6c40da30f1ca24945e8944a957cb1ae38ab8f5bcdbafdff368f",
+      "bytes": 62686,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-hypophthalmichthys-nobilis-000000.json",
+      "sha256": "a2e33a1cdc55c3cda7f60b0bb410f5ce56ea0d092183c2b0c052cf4d2e35a160",
+      "bytes": 81280,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-lactuca-serriola-000000.json",
+      "sha256": "7a4e1304fb16ef91caff04bd4763cde7438d6727b91d5d704aa67d4c1b12815e",
+      "bytes": 155266,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-ligustrum-vulgare-000000.json",
+      "sha256": "026c999fef7798bf27d6a2cc7c4fe02dc2f864f6ecc6fefd41974231105fbc6e",
+      "bytes": 33966,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-lolium-perenne-000000.json",
+      "sha256": "28f673c2bacf4f8964dc355f3ed0f2d84d5f54aa2ba800245303d755ddc5bb9d",
+      "bytes": 504306,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-lotus-corniculatus-000000.json",
+      "sha256": "9674c3ce919dcbd929d9bf1dcaab2d3603e540cb13555b958f6e0897e9738735",
+      "bytes": 32479,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-melilotus-albus-000000.json",
+      "sha256": "4660d91d882c35ff5a96c2da2e61af14ce587fe5427713cb0f419bdace2e9cf3",
+      "bytes": 590341,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+      "sha256": "cb8c94eda766783502f06b93f19eab902c9956b80c9ed67a40dc0845a3ebd83b",
+      "bytes": 620807,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-nepeta-cataria-000000.json",
+      "sha256": "7e2ff32a638c34f21d5a1b4e3a974bbc7630b8a5c7962b7259e54f96fe5b63ce",
+      "bytes": 27195,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-ostrinia-nubilalis-000000.json",
+      "sha256": "9134bd2c47c19f2050b9c140a37424be4c84ccccfab75022d45f26e75a75bd7d",
+      "bytes": 6695,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-oulema-melanopus-000000.json",
+      "sha256": "45ea5d412fba838a6fc022f91a353fbfbf6c860fc8b22e1dd9cc030a953e6523",
+      "bytes": 4923,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-plantago-major-000000.json",
+      "sha256": "ab67fdb665353056de15b11a1928d158194bcfff6a2ca46f7e578c4e672d853e",
+      "bytes": 144549,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-poa-trivialis-000000.json",
+      "sha256": "939e336331a77c7b6fdb0972c81941489e11cd72e94d579ad837b83adacf03a6",
+      "bytes": 19613,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-polygonum-aviculare-000000.json",
+      "sha256": "29f857575044ac7b2d765e5df0c2099e3baa87c1a85a00aee1ba03789986b558",
+      "bytes": 266669,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-populus-alba-000000.json",
+      "sha256": "53ac7f8579b0e274e8dedc72f119d3858c0fec803596240368c9da57ec4329da",
+      "bytes": 125399,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-potamogeton-crispus-000000.json",
+      "sha256": "c98cbf49c4cc3d58e141e4424f739341baa40b5d1dd383b8bbdceb37969d6d0a",
+      "bytes": 314869,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-potentilla-recta-000000.json",
+      "sha256": "85dc280b941935636048ace90a991988116acbe69c81e7375b20bebb4d72ebb5",
+      "bytes": 624066,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-puccinia-graminis-000000.json",
+      "sha256": "297ca6d489c27167e096413bc284a5fb7b4f30625b340aede26871e826ff4003",
+      "bytes": 138499,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-rumex-obtusifolius-000000.json",
+      "sha256": "6166b4574bf892f390b36d8ef86b0aed245c49b74fe8d2e339befdf526930a67",
+      "bytes": 125075,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-salmo-trutta-000000.json",
+      "sha256": "c371ef17a2e9a87f44c250c5ae4e9abcb2d8fd2d91270ee6cb0dffd48a51f585",
+      "bytes": 5871,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-solenopsis-richteri-000000.json",
+      "sha256": "440cb6f3d9657d675af8d9df0739b57249c1b6047f903db58fd06bffb5805ec8",
+      "bytes": 121525,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-sonchus-asper-000000.json",
+      "sha256": "d85359c5100b8f5927ce24ec9d54e15d8856dc5b5302a7fde43ef42fc3a07919",
+      "bytes": 756609,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-spergula-arvensis-000000.json",
+      "sha256": "5e5d2b80d668b8c20491b922d2f9657085223dd4fd28ed214163f2f80cd6ea03",
+      "bytes": 183265,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-spergularia-rubra-000000.json",
+      "sha256": "e736b6bdfefaafbee129541798bd15ef233af35e30deaaa115f87aef543dafd8",
+      "bytes": 19882,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-sporobolus-indicus-000000.json",
+      "sha256": "593d9e74d569a543c78fa34b9c97ed03cffb3a328fd548a8da8b2fcd098197de",
+      "bytes": 709826,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-stellaria-media-000000.json",
+      "sha256": "30723daa00214c66056468fb2ae28607d0655c2626947ca68fe08dbe666b7ce4",
+      "bytes": 1122970,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-thlaspi-arvense-000000.json",
+      "sha256": "6cdb0ebceab7727b1ccfd2277c3448d51222a760704a1cbe85ae8f2dbecd8d16",
+      "bytes": 90435,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-torilis-japonica-000000.json",
+      "sha256": "0bb018e8d205664c51030942d4223423668a801f72c86510f746bbe9068f467e",
+      "bytes": 13871,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-trifolium-pratense-000000.json",
+      "sha256": "fdb7608643f95afdd9770f152f277b0f9a7910be11bad178a3371eacf17bb709",
+      "bytes": 748769,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-tussilago-farfara-000000.json",
+      "sha256": "605cc0d3681bef49fb219ef4dc4cf9355f9944928114d7d49babf1e711b9b2d3",
+      "bytes": 5587,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-typha-angustifolia-000000.json",
+      "sha256": "2b848a8d6490ffabd5f4423cdd2fba80d8a906f1606e257d73c5c8929eae712c",
+      "bytes": 119055,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-ulmus-pumila-000000.json",
+      "sha256": "c12d7ddc30e963b0a7ecd90336f30103e7f5c18a9ebc3b6d82c9ef1c78772a4e",
+      "bytes": 41168,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-veronica-arvensis-000000.json",
+      "sha256": "848fc6cc34d98573832b725eef5a3fc4d250d565ce1ca70999767cd75a44d5fc",
+      "bytes": 1022627,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-vicia-villosa-000000.json",
+      "sha256": "7f4ec50f494109ec5c7b508bfba940fe0fca1b449452db1b45dc7bc28e21c125",
+      "bytes": 1359074,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-vinca-major-000000.json",
+      "sha256": "9ab69598691b4170ee6293ba2cb02805f55be03c8231641f7012d6b9a4b8b0e1",
+      "bytes": 548573,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-occurrences-vincetoxicum-nigrum-000000.json",
+      "sha256": "52d53f933ba5c9e25f60791e12f2ff73b0286f9e30188fa06ea97afba8a8604f",
+      "bytes": 6051,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-acer-platanoides.json",
+      "sha256": "6663c5984e105cf30df0e7e17aa8b354ad1bc8a546aab3b9984b0b0bb842a886",
+      "bytes": 445,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-barbarea-vulgaris.json",
+      "sha256": "808eae4f1dcb6f5fa3864b6fb11e091ac900040531175d6e3a93d89d120866c6",
+      "bytes": 470,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-bromus-catharticus.json",
+      "sha256": "31e73ecf6738afc5ef2c13c9b9bce3c89ceeeb7d4333ca148b428cf4bddb2de7",
+      "bytes": 445,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-cactoblastis-cactorum.json",
+      "sha256": "f2f2f2fb79dedd14df5391cd8c32e86a5f5a3622b0a57bba5d235b72d7411324",
+      "bytes": 465,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-camelina-microcarpa.json",
+      "sha256": "20beef84a4e3ca1cb5ba768e4db4f68834c77962c0df268cd64e939b372f4062",
+      "bytes": 475,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-cichorium-intybus.json",
+      "sha256": "7f01c7ddd5d11ff791b95629b4996ab3a52dc8d6c189cf58c4cb610c7b066df4",
+      "bytes": 451,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-clarias-batrachus.json",
+      "sha256": "8b0a721e00b2ba409c4eccf38f97a24407175bd9433e651561e5f7bf19ce7632",
+      "bytes": 418,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-commelina-communis.json",
+      "sha256": "b96cfb717657815ff818c2d283a94e6b4d3d09682eb99a4b4c6e00c18477d906",
+      "bytes": 460,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-convolvulus-arvensis.json",
+      "sha256": "3ea4cded8ffc42389f1da704e0fb7897cd0436845afd4d83691aa3cc4abf569e",
+      "bytes": 467,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-corbicula-fluminea.json",
+      "sha256": "8253e89b906a228cbf343de521ba6d710da6041b3ee00641b7810e76d29b00d9",
+      "bytes": 463,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-cynodon-dactylon.json",
+      "sha256": "6ae642c8ef07a9ecef1393989d1c6903395a86ac69618ba84f66a45f1f80a087",
+      "bytes": 446,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-cynoglossum-officinale.json",
+      "sha256": "10c337f3411c2627bb26ae6c90583bcac39e9a50a7b54429ed7e5a3fcb12f328",
+      "bytes": 476,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-cyprinus-carpio.json",
+      "sha256": "aa589845cc4ba6465b7fa009b0278928ed2bb80fdcb72a98fe93852f88c10f83",
+      "bytes": 414,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-dactylis-glomerata.json",
+      "sha256": "742986d13339229a5c19d741fd2ae80e52b4909a177aece92d067dc34ffcf4b8",
+      "bytes": 445,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-datura-stramonium.json",
+      "sha256": "27e57caa95254219207c77604bc43651e8013e94b1da1622f161b4f5fd471ae5",
+      "bytes": 449,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-dreissena-bugensis.json",
+      "sha256": "b696682b4095db3e9b9b30c24f50aef28d7fe3591bd31481a536232e8a44d148",
+      "bytes": 457,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-dreissena-polymorpha.json",
+      "sha256": "e9c974d565100e2db44b641302e2c5541e3d805dd8c1faf382654aa70a9a41b6",
+      "bytes": 461,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-echinochloa-crus-galli.json",
+      "sha256": "1e8c53d39c36f08fed92e03cc80e402bb0139feedfa58c0a5a385aa19f28abd5",
+      "bytes": 471,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-elaeagnus-umbellata.json",
+      "sha256": "6d8f4e3b95f98ba2d20ec048c92f72b17d9652e30bd25a8752e50c3b0692d22f",
+      "bytes": 461,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-holcus-lanatus.json",
+      "sha256": "ac3a691e26d08f5d4ecf674911261edad9c4005c13b38de47652874a351ad66c",
+      "bytes": 431,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-hydrilla.json",
+      "sha256": "206ed6e8eb6e88f341828d3a6055fd27589c1275a8997d7652d1e5eef73288d1",
+      "bytes": 477,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-hypophthalmichthys-molitrix.json",
+      "sha256": "1f90cf3761bcfb49a651e1a77c1d41993c268fcd8a221051be3ff13ada63f266",
+      "bytes": 466,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-hypophthalmichthys-nobilis.json",
+      "sha256": "14300e0aff3d6ec976790e7ca1be1c7c4821a5c1e78ead14baeb43676d288296",
+      "bytes": 461,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-lactuca-serriola.json",
+      "sha256": "fe62514ca6b7b6210e6b18e68038eb8cdaf961ffa6478e66be2bec5db52e6e49",
+      "bytes": 446,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-ligustrum-vulgare.json",
+      "sha256": "8df999d5edc39e500f2fbc55726c1410eff7a2ccdb54a4fe256d8082fc776fb7",
+      "bytes": 448,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-lolium-perenne.json",
+      "sha256": "b93c091f7dd1fce3fb8708924350854bfc92cbcfb400bce78ddb46bc6483ecf1",
+      "bytes": 431,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-lotus-corniculatus.json",
+      "sha256": "cd7e62a2729071f754c1eb66ea9a84ad561f864cd25c1e1a4a087a386a53b0ce",
+      "bytes": 448,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-melilotus-albus.json",
+      "sha256": "72d21031eabcc741f891eedc45be9dc11a75560e27cf351539c860ff9d32829d",
+      "bytes": 446,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-melilotus-officinalis.json",
+      "sha256": "79f0fb0830b66d7568b1458b110c6e151e32a040bf7084df38c6ab49cf49f5ca",
+      "bytes": 467,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-nepeta-cataria.json",
+      "sha256": "82e0d0b95fe8096ff984e0f984047a54cec0554a87ca884f3f94a172cb58e1ce",
+      "bytes": 437,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-ostrinia-nubilalis.json",
+      "sha256": "df4fb9ae0b0d4ac7964b6439410fd1bc23d26c958a6bbf7c11c928c33298ef4b",
+      "bytes": 453,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-oulema-melanopus.json",
+      "sha256": "8efb251d4dd7ae5d34e83d042b42eb3726a978eb8864344fd191d02bf0b703c9",
+      "bytes": 452,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-plantago-major.json",
+      "sha256": "a7d577e79d2c13a54bbfd7aa9fbbce24f17991934032a60dd0479d09a1415644",
+      "bytes": 444,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-poa-trivialis.json",
+      "sha256": "7a66446e598406e13632bea1869b133b3ad96263f888c2be1be792576b5af848",
+      "bytes": 425,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-polygonum-aviculare.json",
+      "sha256": "4fe07e9255644b4891034fb2f614f6dcdd5dc1c576d56221c9ea30dfe5b04ac9",
+      "bytes": 464,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-populus-alba.json",
+      "sha256": "03cc346800f4870fc9d5f8e398d8aa0a23cf498180117163050ac585a29e5f4b",
+      "bytes": 438,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-potamogeton-crispus.json",
+      "sha256": "655d95af3452ac162ad400e03c3e91d7afd212cf557260c7543e037dfa6c909a",
+      "bytes": 464,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-potentilla-recta.json",
+      "sha256": "8ec32c993d935d02c716827867392942ef9b4aa0267a3c911ffd471d680baf21",
+      "bytes": 445,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-puccinia-graminis.json",
+      "sha256": "e7331176fcf1a42cffadd5c7925932567741d46d37dc967566729f37acc0239a",
+      "bytes": 454,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-rumex-obtusifolius.json",
+      "sha256": "ec8297e87019357637325bbf12bd55561344fc36f761f4dbb9a82a34a5649c42",
+      "bytes": 457,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-salmo-trutta.json",
+      "sha256": "52af3b50e49d37f82bd2b0d70228a59c8c5379db245d5501c65a05a7d3ca3001",
+      "bytes": 402,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-solenopsis-richteri.json",
+      "sha256": "0dbcb01b6bbabd57ad8e26fe5b2abe7604112392c3c39b005a7af10332a18856",
+      "bytes": 458,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-sonchus-asper.json",
+      "sha256": "a8c42b7b0ea7fa4e6f33fd98b3ac6233907885f8b13991e9619c45ff0acb4130",
+      "bytes": 444,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-spergula-arvensis.json",
+      "sha256": "7f54d280667ad8a59fcb18f49dcca2de95948105ea425e9177b4b72ea35a66fa",
+      "bytes": 460,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-spergularia-rubra.json",
+      "sha256": "cddc9ba3607f317afd1d7295552d1a2ee1234aa20ed9d68a38a3b22f3261fa2b",
+      "bytes": 483,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-sporobolus-indicus.json",
+      "sha256": "6ced5499cdeef37dc5698d6e791e26fb6ac05d94dfade8e936a136b50f5a6a9a",
+      "bytes": 455,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-stellaria-media.json",
+      "sha256": "653e6d854e1db9cdf77d5d2f05c36da32200c9d3c762c69c763051997b028459",
+      "bytes": 463,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-thlaspi-arvense.json",
+      "sha256": "09f2c9ddf3de403d3cdbd4a8914dd0cb2c7cd40db666d77207c605c56de47c07",
+      "bytes": 451,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-torilis-japonica.json",
+      "sha256": "81295393a6e2118d049e71ff57e12e9f4ee1f2dc0a9573a8cdbb987530f9e696",
+      "bytes": 453,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-trifolium-pratense.json",
+      "sha256": "bd4820aaade689482b62ba4838f8d832523c825969b8253065c0d532cc21dcb8",
+      "bytes": 451,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-tussilago-farfara.json",
+      "sha256": "f30090937d063acce889edc9ff68646a3a211fe9e3b703b26fbe5aa833ab6015",
+      "bytes": 451,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-typha-angustifolia.json",
+      "sha256": "7653d998bada6db43dcc784665f340d540625d104283851bb72e17c8cb7d77c6",
+      "bytes": 444,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-ulmus-pumila.json",
+      "sha256": "50bcc8650086c85f61c226760722a759342f506dbcea7c104edb325812d48dda",
+      "bytes": 428,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-veronica-arvensis.json",
+      "sha256": "58d5cc168a258af34aa06edb4db8f93d72df552b21ce45637f822d0708e655fa",
+      "bytes": 453,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-vicia-villosa.json",
+      "sha256": "1b00fae2d3300441c80291d37ba35f1d360f9043519fb532421cbd940e9ad812",
+      "bytes": 434,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-vinca-major.json",
+      "sha256": "25b8449e491f0a002d1b4bc593ffe47a9bdf4fc88ea9fe278aa5768a79524d34",
+      "bytes": 432,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/artifacts/gbif-species-match-vincetoxicum-nigrum.json",
+      "sha256": "4c492b616d4862a0aadfaaca0a34ecbefe4b97a4e4a5c29f53db3a70d100e345",
+      "bytes": 472,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/assertions.ndjson",
+      "sha256": "96518c6e5b0e23de2672504567cb9d3f08fee5523626924ee06623b7f44e5bde",
+      "bytes": 275874,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/reviews.ndjson",
+      "sha256": "59360d18b636b29767e3382abc01d785ca67f4c4e4a7a5362b79b10be264129a",
+      "bytes": 144241,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/rejections.ndjson",
+      "sha256": "726df968f5c8ed10c9d9f0c1626ba110c374ee8fe3f82ece77ef14f72eb18585",
+      "bytes": 306464,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T160330Z__gbif-preserved-specimens__9936809e1243/outcomes.ndjson",
+      "sha256": "e00ed2cd47cda7ed1a6c097a9c1a7a8552038a5c753e0e669c28a5bc783c58f0",
+      "bytes": 91699,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 58,
+    "candidate_records": 3247,
+    "assertion_events": 148,
+    "review_events": 148,
+    "rejection_records": 446,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 58
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AL --candidate-file src/data/research/migration-candidates.json --output-root src/data/research/runs --pairs 01081:acer-platanoides,01115:barbarea-vulgaris,01063:bromus-catharticus,01003:cactoblastis-cactorum,01055:camelina-microcarpa,01027:cichorium-intybus,01081:clarias-batrachus,01065:commelina-communis,01107:convolvulus-arvensis,01057:corbicula-fluminea,01067:cynodon-dactylon,01125:cynoglossum-officinale,01091:cyprinus-carpio,01005:dactylis-glomerata,01061:datura-stramonium,01063:dreissena-bugensis,01103:dreissena-polymorpha,01129:echinochloa-crus-galli,01065:elaeagnus-umbellata,01055:holcus-lanatus,01069:hydrilla,01081:hypophthalmichthys-molitrix,01081:hypophthalmichthys-nobilis,01063:lactuca-serriola,01095:ligustrum-vulgare,01085:lolium-perenne,01055:lotus-corniculatus,01041:melilotus-albus,01117:melilotus-officinalis,01045:nepeta-cataria,01003:ostrinia-nubilalis,01081:oulema-melanopus,01071:plantago-major,01025:poa-trivialis,01081:polygonum-aviculare,01125:populus-alba,01035:potamogeton-crispus,01005:potentilla-recta,01081:puccinia-graminis,01081:rumex-obtusifolius,01027:salmo-trutta,01003:solenopsis-richteri,01037:sonchus-asper,01067:spergula-arvensis,01097:spergularia-rubra,01077:sporobolus-indicus,01131:stellaria-media,01023:thlaspi-arvense,01091:torilis-japonica,01005:trifolium-pratense,01037:tussilago-farfara,01061:typha-angustifolia,01079:ulmus-pumila,01113:veronica-arvensis,01005:vicia-villosa,01129:vicia-villosa,01069:vinca-major,01081:vincetoxicum-nigrum"
+}
