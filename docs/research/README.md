@@ -153,6 +153,8 @@ For each run:
 
 A successful process exit does not make a run complete. Completion is a data claim and must be supported by the receipt and pair outcomes.
 
+The runner refuses acquisition unless the worktree and registered acquisition inputs match the captured commit. It rechecks HEAD and the input bytes after network activity, validates record schemas, IDs, references, counts, and hashes in memory, then verifies staged bytes before the immutable directory is renamed into place. Identical accepted source-record claims from later runs remain preserved as immutable events but collapse to one active projection row. A changed payload for the same active source-record claim requires an explicit superseding or retraction event.
+
 ## Evidence Acceptance
 
 An evidence assertion must answer all of these:

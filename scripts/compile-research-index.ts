@@ -173,13 +173,14 @@ const globalRejections = readRunNdjson<ResearchRejectionRecord>(
 ).filter((record) => atOrBeforeAsOf(record.created_at));
 const runRejections = immutableRuns.flatMap((bundle) => bundle.rejections);
 const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
-const { evidence, resolvedRunEvidence } = compileAdditiveResearchEvidence({
+const { evidence, runEvidence, projectedRunAssertions, resolvedRunEvidence } =
+  compileAdditiveResearchEvidence({
   bootstrapEvidence,
   runAssertions,
   reviewEvents: [...runReviewEvents, ...lateReviewEvents],
   sources: registry.sources,
   asOf: AS_OF,
-});
+  });
 const matrix = readJson<MatrixFile>(path.join(ROOT, "docs/county-coverage/states/AL.json"));
 const migrationCandidates = readJson<MigrationCandidatesFile>(
   path.join(ROOT, "src/data/research/migration-candidates.json"),
@@ -202,7 +203,7 @@ for (const [eventId, status] of resolvedRunEvidence.reviewStatusByAssertionId) {
   reviewStatusByEvidenceId.set(eventId, status);
 }
 const evidenceKindById = new Map(
-  resolvedRunEvidence.publishedAssertions.map((entry) => [entry.eventId, entry.evidence_kind]),
+  projectedRunAssertions.map((entry) => [entry.eventId, entry.evidence_kind]),
 );
 
 const evidenceByPair = new Map<string, EvidenceAssertion[]>();
@@ -519,9 +520,9 @@ const summary: ResearchStateSummary = {
       (explicitOutcomePairCount / totalPairs) * 100,
     ),
     conflictCount,
-    evidenceRecordCount: bootstrapEvidence.length + runAssertions.length,
+    evidenceRecordCount: bootstrapEvidence.length + runEvidence.length,
     bootstrapEvidenceRecordCount: bootstrapEvidence.length,
-    runEvidenceRecordCount: runAssertions.length,
+    runEvidenceRecordCount: runEvidence.length,
     rejectionRecordCount: runRejections.length + globalRejections.length,
     researchRunCount: runs.length + immutableRuns.length,
   },

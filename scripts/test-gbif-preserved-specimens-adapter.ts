@@ -47,6 +47,8 @@ function jsonResponse(value: unknown) {
 function occurrence(key: number, county: string, locality = "Wild collection") {
   return {
     key,
+    datasetKey: "synthetic-dataset",
+    institutionCode: "SYNTH",
     basisOfRecord: "PRESERVED_SPECIMEN",
     occurrenceStatus: "PRESENT",
     countryCode: "US",
@@ -226,6 +228,242 @@ async function main() {
       ),
       "A later immutable run reused rejection IDs from an earlier run.",
     );
+
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 2,
+        results: [occurrence(3001, "Autauga")],
+      });
+    });
+    const truncated = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-truncated-run",
+      requestedPairs: [context.requestedPairs[0]],
+      parameters: {
+        ...parameters,
+        candidateLimit: 1,
+        candidatePairs: ["01001:example-species"],
+      },
+    });
+    assert(
+      truncated.outcomes[0]?.status === "needs-followup" &&
+        !truncated.outcomes[0].scope_complete,
+      "A terminal count mismatch created a complete outcome.",
+    );
+    assert(
+      truncated.errors.some((entry) => entry.code === "gbif-terminal-count-mismatch"),
+      "A terminal count mismatch was not recorded explicitly.",
+    );
+
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: false,
+        count: 100001,
+        results: [occurrence(3101, "Autauga")],
+      });
+    });
+    const beyondWindow = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-window-run",
+      requestedPairs: [context.requestedPairs[0]],
+      parameters: {
+        ...parameters,
+        candidateLimit: 1,
+        candidatePairs: ["01001:example-species"],
+      },
+    });
+    assert(
+      beyondWindow.errors.some(
+        (entry) => entry.code === "gbif-search-window-limit-exceeded",
+      ) && beyondWindow.outcomes[0]?.status === "needs-followup",
+      "A result beyond the official GBIF search window was treated as complete.",
+    );
+
+    const countyFree = { ...occurrence(3201, "Autauga"), county: undefined };
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 1,
+        results: [countyFree],
+      });
+    });
+    const sharedMissingCounty = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-shared-rejection-run",
+    });
+    assert(
+      sharedMissingCounty.rejections.length === 1 &&
+        sharedMissingCounty.rejections[0]?.normalized_target.county_fips === null,
+      "A missing-county record was duplicated across requested counties.",
+    );
+    assert(
+      sharedMissingCounty.outcomes.every(
+        (outcome) => outcome.rejection_ids.length === 1 && outcome.scope_complete,
+      ),
+      "The shared missing-county rejection was not linked to each pair outcome.",
+    );
+
+    const missingSourceName = {
+      ...occurrence(3301, "Autauga"),
+      acceptedScientificName: undefined,
+    };
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 1,
+        results: [missingSourceName],
+      });
+    });
+    const missingName = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-missing-name-run",
+      requestedPairs: [context.requestedPairs[0]],
+      parameters: {
+        ...parameters,
+        candidateLimit: 1,
+        candidatePairs: ["01001:example-species"],
+      },
+    });
+    assert(
+      missingName.assertions.length === 0 &&
+        missingName.rejections.some((entry) => entry.reason_code === "taxon-ambiguous"),
+      "A record without an explicit source scientific name was published.",
+    );
+
+    const missingPublisher = {
+      ...occurrence(3401, "Autauga"),
+      datasetKey: undefined,
+      institutionCode: undefined,
+    };
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 1,
+        results: [missingPublisher],
+      });
+    });
+    const publisherless = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-missing-publisher-run",
+      requestedPairs: [context.requestedPairs[0]],
+      parameters: {
+        ...parameters,
+        candidateLimit: 1,
+        candidatePairs: ["01001:example-species"],
+      },
+    });
+    assert(
+      publisherless.assertions.length === 0 &&
+        publisherless.rejections.some((entry) => entry.reason_code === "record-failed"),
+      "A record without dataset or institution identity was published.",
+    );
+
+    let pageIndex = 0;
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      const offset = pageIndex;
+      pageIndex += 1;
+      return jsonResponse({
+        offset,
+        limit: 1,
+        endOfRecords: offset === 1,
+        count: 2,
+        results: [occurrence(3501, "Autauga", "University botanical garden")],
+      });
+    });
+    const repeatedPageRecord = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-repeated-page-run",
+      requestedPairs: [context.requestedPairs[0]],
+      parameters: {
+        ...parameters,
+        candidateLimit: 1,
+        candidatePairs: ["01001:example-species"],
+        pageLimit: 1,
+      },
+    });
+    assert(
+      repeatedPageRecord.outcomes[0]?.status === "needs-followup" &&
+        new Set(repeatedPageRecord.rejections.map((entry) => entry.rejection_id)).size ===
+          repeatedPageRecord.rejections.length,
+      "Repeated page records produced a complete screen or duplicate rejection IDs.",
+    );
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -238,6 +476,12 @@ async function main() {
         cultivatedRecordRejected: true,
         negativeClaimsEmitted: false,
         repeatRunEventIdsUnique: true,
+        terminalCountMismatchIncomplete: true,
+        searchWindowBoundaryEnforced: true,
+        sharedMissingCountyRejection: true,
+        missingSourceNameRejected: true,
+        missingPublisherIdentityRejected: true,
+        repeatedPageRecordIncomplete: true,
       },
       null,
       2,

@@ -5,6 +5,7 @@ import type {
   RunEvidenceAssertionEvent,
 } from "@/lib/research/types";
 import { resolveRunEvidence } from "@/lib/research/event-resolution";
+import { stableJson } from "@/lib/research/run-files";
 
 function compareText(left: string, right: string) {
   return left < right ? -1 : left > right ? 1 : 0;
@@ -15,6 +16,68 @@ function cutoffTimestamp(asOf: string) {
     throw new Error(`Invalid research as-of date: ${asOf}`);
   }
   return Date.parse(`${asOf}T23:59:59.999Z`);
+}
+
+function sourceRecordClaimKey(entry: RunEvidenceAssertionEvent) {
+  return [
+    entry.source_id,
+    entry.source_record_id,
+    entry.state_code,
+    entry.county_fips,
+    entry.species_id,
+    entry.claim_type,
+  ].join("|");
+}
+
+function semanticClaimFingerprint(entry: RunEvidenceAssertionEvent) {
+  const {
+    actor_id: _actorId,
+    actor_type: _actorType,
+    created_at: _createdAt,
+    eventId: _eventId,
+    retrieved_at: _retrievedAt,
+    run_id: _runId,
+    ...semanticClaim
+  } = entry;
+  return stableJson(semanticClaim);
+}
+
+function stableClaimKey(entry: RunEvidenceAssertionEvent) {
+  return `${sourceRecordClaimKey(entry)}|${semanticClaimFingerprint(entry)}`;
+}
+
+function projectDistinctRunAssertions(assertions: RunEvidenceAssertionEvent[]) {
+  const semanticClaimsBySourceRecord = new Map<string, Set<string>>();
+  for (const assertion of assertions) {
+    const key = sourceRecordClaimKey(assertion);
+    const semanticClaims = semanticClaimsBySourceRecord.get(key) ?? new Set<string>();
+    semanticClaims.add(semanticClaimFingerprint(assertion));
+    semanticClaimsBySourceRecord.set(key, semanticClaims);
+  }
+  for (const [key, semanticClaims] of semanticClaimsBySourceRecord) {
+    if (semanticClaims.size > 1) {
+      throw new Error(
+        `Active source-record claim ${key} has changed semantics without an explicit superseding or retraction event.`,
+      );
+    }
+  }
+
+  const selectedByClaim = new Map<string, RunEvidenceAssertionEvent>();
+  for (const assertion of assertions) {
+    const key = stableClaimKey(assertion);
+    const current = selectedByClaim.get(key);
+    if (
+      !current ||
+      compareText(current.created_at, assertion.created_at) < 0 ||
+      (current.created_at === assertion.created_at &&
+        compareText(current.eventId, assertion.eventId) < 0)
+    ) {
+      selectedByClaim.set(key, assertion);
+    }
+  }
+  return [...selectedByClaim.values()].sort((left, right) =>
+    compareText(left.eventId, right.eventId),
+  );
 }
 
 export function compileAdditiveResearchEvidence(input: {
@@ -29,6 +92,9 @@ export function compileAdditiveResearchEvidence(input: {
     input.reviewEvents,
     input.sources,
     input.asOf,
+  );
+  const projectedRunAssertions = projectDistinctRunAssertions(
+    resolvedRunEvidence.publishedAssertions,
   );
   const sourceLabelById = new Map(input.sources.map((source) => [source.id, source.label]));
   const cutoff = cutoffTimestamp(input.asOf);
@@ -47,7 +113,7 @@ export function compileAdditiveResearchEvidence(input: {
     acceptedReviewsByAssertion.set(review.references.assertion_event_id, values);
   }
 
-  const runEvidence: EvidenceAssertion[] = resolvedRunEvidence.publishedAssertions.map((entry) => {
+  const runEvidence: EvidenceAssertion[] = projectedRunAssertions.map((entry) => {
     const acceptedReviews = acceptedReviewsByAssertion.get(entry.eventId) ?? [];
     acceptedReviews.sort(
       (left, right) =>
@@ -75,6 +141,7 @@ export function compileAdditiveResearchEvidence(input: {
   return {
     evidence: [...input.bootstrapEvidence, ...runEvidence],
     runEvidence,
+    projectedRunAssertions,
     resolvedRunEvidence,
   };
 }

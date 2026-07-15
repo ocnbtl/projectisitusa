@@ -16,14 +16,14 @@ import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 const ADAPTER_ID = "gbif-preserved-specimens";
-const ADAPTER_VERSION = "1.0.1";
+const ADAPTER_VERSION = "1.0.2";
 const GBIF_API_BASE_URL = "https://api.gbif.org/v1";
 const GBIF_OCCURRENCE_BASE_URL = "https://www.gbif.org/occurrence";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
 const REQUEST_INTERVAL_MS = 334;
 const REQUEST_TIMEOUT_MS = 60_000;
 const MAX_RETAINED_ARTIFACT_BYTES = 32 * 1024 * 1024;
-const MAX_PAGES_PER_SPECIES = 1_000;
+const MAX_SEARCH_RESULT_WINDOW = 100_000;
 
 const CULTIVATED_OR_CAPTIVE_PATTERN =
   /\b(captive|captivity|cultivated|cultivation|cultured|garden|greenhouse|managed|nursery|planted|planting|arboretum|botanical garden|campus landscape|landscaped|zoo|aquarium)\b/i;
@@ -412,6 +412,7 @@ function occurrenceSearchUrl(
   speciesKey: number,
   parameters: GbifAdapterParameters,
   offset: number,
+  limit: number,
 ): string {
   const url = new URL(`${GBIF_API_BASE_URL}/occurrence/search`);
   url.searchParams.set("country", "US");
@@ -419,7 +420,7 @@ function occurrenceSearchUrl(
   url.searchParams.set("basisOfRecord", parameters.basisOfRecord);
   url.searchParams.set("occurrenceStatus", parameters.occurrenceStatus);
   url.searchParams.set("taxonKey", String(speciesKey));
-  url.searchParams.set("limit", String(parameters.pageLimit));
+  url.searchParams.set("limit", String(limit));
   url.searchParams.set("offset", String(offset));
   return url.toString();
 }
@@ -478,12 +479,12 @@ function recordLocator(record: GbifOccurrenceRecord, fallback: string): string {
   return fallback;
 }
 
-function candidateTaxon(record: GbifOccurrenceRecord, pair: RequestedPair): string {
+function candidateTaxon(record: GbifOccurrenceRecord): string | null {
   return (
     record.acceptedScientificName ??
     record.species ??
     record.scientificName ??
-    pair.scientificName
+    null
   );
 }
 
@@ -502,13 +503,14 @@ function makeRejection(
   reasonCode: RejectionReasonCode,
   notes: string[],
   identityPayload: unknown,
+  targetCountyFips: string | null = pair.countyFips,
 ): ResearchRejectionRecord {
   return {
     schemaVersion: 1,
     rejection_id: contentId("gbif-rejection", {
       runId: context.runId,
       sourceId: SOURCE_ID,
-      pair: pairKey(pair),
+      target: targetCountyFips ? pairKey(pair) : `species:${pair.speciesId}`,
       candidateLocator,
       reasonCode,
       identityPayload,
@@ -524,7 +526,7 @@ function makeRejection(
     normalized_target: {
       state_code: "AL",
       species_id: pair.speciesId,
-      county_fips: pair.countyFips,
+      county_fips: targetCountyFips,
     },
     reason_code: reasonCode,
     supporting_notes: notes,
@@ -638,7 +640,13 @@ function occurrenceRejection(
     };
   }
 
-  const sourceScientificName = candidateTaxon(record, pair);
+  const sourceScientificName = candidateTaxon(record);
+  if (!sourceScientificName) {
+    return {
+      reason: "taxon-ambiguous",
+      notes: ["The occurrence does not contain an explicit source scientific name."],
+    };
+  }
   const sourceTaxonKeys = [record.speciesKey, record.acceptedTaxonKey]
     .filter((key): key is number => Number.isInteger(key));
   if (
@@ -670,6 +678,14 @@ function occurrenceRejection(
       ],
     };
   }
+  if (!record.datasetKey && !record.institutionCode) {
+    return {
+      reason: "record-failed",
+      notes: [
+        "The occurrence lacks both GBIF dataset identity and publisher institution identity.",
+      ],
+    };
+  }
   return null;
 }
 
@@ -690,7 +706,7 @@ function supportingPayload(
     targetCountyFips: pair.countyFips,
     targetSpeciesId: pair.speciesId,
     targetScientificName: pair.scientificName,
-    sourceScientificName: candidateTaxon(record, pair),
+    sourceScientificName: candidateTaxon(record),
     matchedSpeciesKey: match.speciesKey,
     sourceTaxonKeys: [record.speciesKey, record.acceptedTaxonKey, record.taxonKey]
       .filter((key): key is number => Number.isInteger(key))
@@ -723,7 +739,10 @@ function makeAssertionAndReview(
     countyFips: pair.countyFips,
     normalizedPayloadHash,
   });
-  const sourceScientificName = candidateTaxon(record, pair);
+  const sourceScientificName = candidateTaxon(record);
+  if (!sourceScientificName) {
+    throw new Error("Validated GBIF occurrence unexpectedly lacks a source scientific name.");
+  }
   const sourceDate = recordDate(record);
   const assertion: RunEvidenceAssertionEvent = {
     schemaVersion: 1,
@@ -1010,7 +1029,8 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     } | null = null;
     let offset = 0;
     let expectedCount: number | null = null;
-    let pageCount = 0;
+    let returnedRecordCount = 0;
+    const seenSourceRecordIds = new Set<string>();
     let scopeComplete = !resourceBudgetReached;
     let recordedAt = matchResult.retrievedAt;
 
@@ -1025,33 +1045,36 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     }
 
     while (scopeComplete) {
-      if (pageCount >= MAX_PAGES_PER_SPECIES) {
+      const availableWindow = MAX_SEARCH_RESULT_WINDOW - offset;
+      if (availableWindow <= 0) {
         scopeComplete = false;
         warnings.push(
-          `Stopped ${representativePair.speciesId} after ${MAX_PAGES_PER_SPECIES} statewide GBIF pages; every requested county pair for this species remains incomplete.`,
+          `Stopped ${representativePair.speciesId} at GBIF's ${MAX_SEARCH_RESULT_WINDOW}-record search window.`,
         );
         errors.push({
-          code: "gbif-pagination-limit-exceeded",
-          message: `${representativePair.speciesId} exceeded ${MAX_PAGES_PER_SPECIES} statewide pages.`,
+          code: "gbif-search-window-limit-exceeded",
+          message: `${representativePair.speciesId} reached GBIF's ${MAX_SEARCH_RESULT_WINDOW}-record search window before a terminal page.`,
           retryable: false,
         });
         scopeFailure = {
-          locator: "adapter:pagination-limit-exceeded",
+          locator: "adapter:gbif-search-window-limit-exceeded",
           notes: [
-            `The statewide species screen exceeded ${MAX_PAGES_PER_SPECIES} response pages.`,
+            `The statewide species screen reached GBIF's ${MAX_SEARCH_RESULT_WINDOW}-record search window before completion.`,
           ],
           identityPayload: {
             speciesId: representativePair.speciesId,
-            pageCount,
+            offset,
           },
         };
         break;
       }
 
+      const requestLimit = Math.min(parameters.pageLimit, availableWindow);
       const queryUrl = occurrenceSearchUrl(
         matchValidation.match.speciesKey,
         parameters,
         offset,
+        requestLimit,
       );
       speciesQueryUrls.push(queryUrl);
       const pageResult = await requestJson<GbifOccurrenceSearchResponse>(
@@ -1059,7 +1082,6 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         `gbif-occurrences-${artifactStem(representativePair.speciesId)}-${String(offset).padStart(6, "0")}.json`,
         (payload) => (Array.isArray(payload.results) ? payload.results.length : 0),
       );
-      pageCount += 1;
       recordedAt = pageResult.retrievedAt;
       resourceBudgetReached ||= pageResult.artifactLimitReached;
 
@@ -1078,12 +1100,14 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         !Array.isArray(payload.results) ||
         typeof payload.count !== "number" ||
         !Number.isInteger(payload.count) ||
+        typeof payload.offset !== "number" ||
+        !Number.isInteger(payload.offset) ||
         typeof payload.endOfRecords !== "boolean"
       ) {
         scopeComplete = false;
         errors.push({
           code: "gbif-invalid-response-shape",
-          message: `GBIF occurrence response for ${representativePair.speciesId} lacks count, endOfRecords, or results.`,
+          message: `GBIF occurrence response for ${representativePair.speciesId} lacks offset, count, endOfRecords, or results.`,
           retryable: true,
         });
         scopeFailure = {
@@ -1099,11 +1123,67 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         retrievedAt: recordedAt,
         records: payload.results,
       });
-      if (payload.offset !== undefined && payload.offset !== offset) {
+      returnedRecordCount += payload.results.length;
+      let paginationIdentityFailure = false;
+      for (const record of payload.results) {
+        const recordId = sourceRecordId(record);
+        if (!recordId || seenSourceRecordIds.has(recordId)) {
+          paginationIdentityFailure = true;
+          continue;
+        }
+        seenSourceRecordIds.add(recordId);
+      }
+      if (paginationIdentityFailure) {
+        scopeComplete = false;
+        errors.push({
+          code: "gbif-pagination-record-identity-failed",
+          message: `${representativePair.speciesId} returned a missing or repeated stable occurrence ID while paging.`,
+          retryable: true,
+        });
+        scopeFailure = {
+          locator: queryUrl,
+          notes: [
+            "The statewide occurrence pages contained a missing or repeated stable GBIF record ID.",
+          ],
+          identityPayload: {
+            speciesId: representativePair.speciesId,
+            offset,
+            returnedRecordCount,
+            uniqueSourceRecordCount: seenSourceRecordIds.size,
+          },
+        };
+      }
+      if (payload.results.length > requestLimit) {
+        scopeComplete = false;
+        errors.push({
+          code: "gbif-page-limit-exceeded",
+          message: `${representativePair.speciesId} returned ${payload.results.length} records for a ${requestLimit}-record page.`,
+          retryable: true,
+        });
+        scopeFailure = {
+          locator: queryUrl,
+          notes: ["The occurrence response exceeded the requested page limit."],
+          identityPayload: {
+            requestedLimit: requestLimit,
+            returnedRecordCount: payload.results.length,
+          },
+        };
+      }
+      if (payload.offset !== offset) {
         scopeComplete = false;
         warnings.push(
           `GBIF returned offset ${payload.offset} for requested offset ${offset} on ${representativePair.speciesId}.`,
         );
+        errors.push({
+          code: "gbif-pagination-offset-mismatch",
+          message: `${representativePair.speciesId} returned offset ${payload.offset} for requested offset ${offset}.`,
+          retryable: true,
+        });
+        scopeFailure = {
+          locator: queryUrl,
+          notes: ["The occurrence response offset did not match the requested offset."],
+          identityPayload: { requestedOffset: offset, returnedOffset: payload.offset },
+        };
       }
       const payloadCount = payload.count;
       if (expectedCount === null) {
@@ -1113,6 +1193,31 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         warnings.push(
           `GBIF result count changed from ${expectedCount} to ${payloadCount} while paging ${representativePair.speciesId}.`,
         );
+        errors.push({
+          code: "gbif-pagination-count-drift",
+          message: `${representativePair.speciesId} result count changed from ${expectedCount} to ${payloadCount}.`,
+          retryable: true,
+        });
+        scopeFailure = {
+          locator: queryUrl,
+          notes: ["The declared occurrence result count changed during pagination."],
+          identityPayload: { expectedCount, returnedCount: payloadCount },
+        };
+      }
+      if (payloadCount > MAX_SEARCH_RESULT_WINDOW) {
+        scopeComplete = false;
+        errors.push({
+          code: "gbif-search-window-limit-exceeded",
+          message: `${representativePair.speciesId} declares ${payloadCount} records, beyond GBIF's ${MAX_SEARCH_RESULT_WINDOW}-record search window.`,
+          retryable: false,
+        });
+        scopeFailure = {
+          locator: queryUrl,
+          notes: [
+            `The declared result count exceeds GBIF's ${MAX_SEARCH_RESULT_WINDOW}-record search window.`,
+          ],
+          identityPayload: { declaredCount: payloadCount },
+        };
       }
       if (pageResult.artifactLimitReached) {
         scopeComplete = false;
@@ -1126,12 +1231,34 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           ],
           identityPayload: {
             speciesId: representativePair.speciesId,
-            pageCount,
+            offset,
           },
         };
         break;
       }
       if (payload.endOfRecords) {
+        if (
+          returnedRecordCount !== payloadCount ||
+          seenSourceRecordIds.size !== payloadCount
+        ) {
+          scopeComplete = false;
+          errors.push({
+            code: "gbif-terminal-count-mismatch",
+            message: `${representativePair.speciesId} terminated after ${returnedRecordCount} rows and ${seenSourceRecordIds.size} unique IDs, but GBIF declared ${payloadCount}.`,
+            retryable: true,
+          });
+          scopeFailure = {
+            locator: queryUrl,
+            notes: [
+              "The terminal occurrence page did not reconcile to the declared result count.",
+            ],
+            identityPayload: {
+              declaredCount: payloadCount,
+              returnedRecordCount,
+              uniqueSourceRecordCount: seenSourceRecordIds.size,
+            },
+          };
+        }
         break;
       }
       if (payload.results.length === 0) {
@@ -1139,20 +1266,76 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         warnings.push(
           `GBIF returned an empty nonterminal page for ${representativePair.speciesId} at offset ${offset}.`,
         );
+        errors.push({
+          code: "gbif-empty-nonterminal-page",
+          message: `${representativePair.speciesId} returned an empty nonterminal page at offset ${offset}.`,
+          retryable: true,
+        });
+        scopeFailure = {
+          locator: queryUrl,
+          notes: ["The occurrence search returned an empty nonterminal page."],
+          identityPayload: { offset, declaredCount: payloadCount },
+        };
         break;
       }
       const nextOffset = offset + payload.results.length;
       if (nextOffset <= offset) {
         scopeComplete = false;
         warnings.push(`GBIF pagination did not advance for ${representativePair.speciesId}.`);
+        errors.push({
+          code: "gbif-pagination-did-not-advance",
+          message: `${representativePair.speciesId} pagination did not advance from offset ${offset}.`,
+          retryable: true,
+        });
+        scopeFailure = {
+          locator: queryUrl,
+          notes: ["The occurrence search pagination did not advance."],
+          identityPayload: { offset, resultCount: payload.results.length },
+        };
         break;
       }
       offset = nextOffset;
     }
 
+    const sharedRejectionIds: string[] = [];
+    const seenSharedRejectionIds = new Set<string>();
+    for (const page of cachedPages) {
+      for (const [recordIndex, record] of page.records.entries()) {
+        if (record.county?.trim()) continue;
+        const fallbackLocator = `${page.queryUrl}#result-${recordIndex}`;
+        const rejectionResult = occurrenceRejection(
+          record,
+          representativePair,
+          matchValidation.match,
+        );
+        if (!rejectionResult) {
+          throw new Error(
+            `County-free GBIF record ${recordLocator(record, fallbackLocator)} unexpectedly passed validation.`,
+          );
+        }
+        const rejection = makeRejection(
+          context,
+          representativePair,
+          page.retrievedAt,
+          recordLocator(record, fallbackLocator),
+          candidateTaxon(record) ?? "missing",
+          candidateGeography(record),
+          rejectionResult.reason,
+          rejectionResult.notes,
+          supportingPayload(record, representativePair, matchValidation.match),
+          null,
+        );
+        if (seenSharedRejectionIds.has(rejection.rejection_id)) continue;
+        seenSharedRejectionIds.add(rejection.rejection_id);
+        rejections.push(rejection);
+        sharedRejectionIds.push(rejection.rejection_id);
+      }
+    }
+
     for (const pair of speciesPairs) {
       const pairAssertionIds: string[] = [];
-      const pairRejectionIds: string[] = [];
+      const pairRejectionIds: string[] = [...sharedRejectionIds];
+      const seenPairRejectionIds = new Set(pairRejectionIds);
       if (scopeFailure) {
         const rejection = makeRejection(
           context,
@@ -1167,14 +1350,13 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         );
         rejections.push(rejection);
         pairRejectionIds.push(rejection.rejection_id);
+        seenPairRejectionIds.add(rejection.rejection_id);
       }
 
       for (const page of cachedPages) {
         for (const [recordIndex, record] of page.records.entries()) {
-          if (
-            record.county?.trim() &&
-            normalizeCountyName(record.county) !== normalizeCountyName(pair.countyName)
-          ) {
+          if (!record.county?.trim()) continue;
+          if (normalizeCountyName(record.county) !== normalizeCountyName(pair.countyName)) {
             continue;
           }
           const fallbackLocator = `${page.queryUrl}#result-${recordIndex}`;
@@ -1189,14 +1371,17 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
               pair,
               page.retrievedAt,
               recordLocator(record, fallbackLocator),
-              candidateTaxon(record, pair),
+              candidateTaxon(record) ?? "missing",
               candidateGeography(record),
               rejectionResult.reason,
               rejectionResult.notes,
               supportingPayload(record, pair, matchValidation.match),
             );
-            rejections.push(rejection);
-            pairRejectionIds.push(rejection.rejection_id);
+            if (!seenPairRejectionIds.has(rejection.rejection_id)) {
+              seenPairRejectionIds.add(rejection.rejection_id);
+              rejections.push(rejection);
+              pairRejectionIds.push(rejection.rejection_id);
+            }
             continue;
           }
 
@@ -1214,7 +1399,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
               pair,
               page.retrievedAt,
               normalized.assertion.source_url,
-              candidateTaxon(record, pair),
+              candidateTaxon(record) ?? "missing",
               candidateGeography(record),
               "duplicate",
               [
@@ -1222,8 +1407,11 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
               ],
               supportingPayload(record, pair, matchValidation.match),
             );
-            rejections.push(rejection);
-            pairRejectionIds.push(rejection.rejection_id);
+            if (!seenPairRejectionIds.has(rejection.rejection_id)) {
+              seenPairRejectionIds.add(rejection.rejection_id);
+              rejections.push(rejection);
+              pairRejectionIds.push(rejection.rejection_id);
+            }
             continue;
           }
           seenAssertionIds.add(normalized.assertion.eventId);
@@ -1297,6 +1485,9 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     outcomes: outcomes.sort((left, right) => left.outcome_id.localeCompare(right.outcome_id)),
     artifacts: artifacts.sort((left, right) => left.filename.localeCompare(right.filename)),
     upstreamRequests,
+    candidateRecordCount: upstreamRequests
+      .filter((request) => request.url.includes("/occurrence/search"))
+      .reduce((total, request) => total + request.recordCount, 0),
     duplicateRecordCount,
     errors,
     warnings: [...new Set(warnings)],

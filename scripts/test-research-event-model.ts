@@ -80,12 +80,15 @@ function assertion(eventId: string, speciesId: string): RunEvidenceAssertionEven
   };
 }
 
-function acceptedReview(assertionEvent: RunEvidenceAssertionEvent): EvidenceReviewEvent {
+function acceptedReview(
+  assertionEvent: RunEvidenceAssertionEvent,
+  createdAt = "2026-07-14T12:01:00.000Z",
+): EvidenceReviewEvent {
   return {
     schemaVersion: 1,
     eventId: `review-${assertionEvent.eventId}`,
     event_type: "evidence.reviewed",
-    created_at: "2026-07-14T12:01:00.000Z",
+    created_at: createdAt,
     actor_type: "adapter",
     actor_id: "synthetic-source@1.0.0",
     run_id: assertionEvent.run_id,
@@ -145,12 +148,89 @@ assert(
   "A bootstrap refresh caused unreviewed immutable-run evidence to publish.",
 );
 
+const repeatedAccepted: RunEvidenceAssertionEvent = {
+  ...accepted,
+  eventId: "accepted-assertion-repeat",
+  run_id: "synthetic-run-repeat",
+  created_at: "2026-07-14T12:02:00.000Z",
+  retrieved_at: "2026-07-14T12:02:00.000Z",
+};
+const repeatedProjection = compileAdditiveResearchEvidence({
+  bootstrapEvidence: [],
+  runAssertions: [accepted, repeatedAccepted],
+  reviewEvents: [
+    acceptedReview(accepted),
+    acceptedReview(repeatedAccepted, "2026-07-14T12:03:00.000Z"),
+  ],
+  sources: [source],
+  asOf: "2026-07-14",
+});
+assert(
+  repeatedProjection.resolvedRunEvidence.publishedAssertions.length === 2,
+  "Repeated immutable assertion events were not preserved.",
+);
+assert(
+  repeatedProjection.runEvidence.length === 1 &&
+    repeatedProjection.runEvidence[0]?.evidenceId === repeatedAccepted.eventId,
+  "Repeated source-record claims were not deduplicated to the latest projection.",
+);
+
+let changedPayloadBlocked = false;
+try {
+  compileAdditiveResearchEvidence({
+    bootstrapEvidence: [],
+    runAssertions: [
+      accepted,
+      { ...repeatedAccepted, normalized_payload_hash: "b".repeat(64) },
+    ],
+    reviewEvents: [
+      acceptedReview(accepted),
+      acceptedReview(repeatedAccepted, "2026-07-14T12:03:00.000Z"),
+    ],
+    sources: [source],
+    asOf: "2026-07-14",
+  });
+} catch {
+  changedPayloadBlocked = true;
+}
+assert(
+  changedPayloadBlocked,
+  "Changed source-record payloads published without explicit superseding review.",
+);
+
+let changedSemanticsBlocked = false;
+try {
+  compileAdditiveResearchEvidence({
+    bootstrapEvidence: [],
+    runAssertions: [
+      accepted,
+      { ...repeatedAccepted, caveats: ["Changed publication caveat."] },
+    ],
+    reviewEvents: [
+      acceptedReview(accepted),
+      acceptedReview(repeatedAccepted, "2026-07-14T12:03:00.000Z"),
+    ],
+    sources: [source],
+    asOf: "2026-07-14",
+  });
+} catch {
+  changedSemanticsBlocked = true;
+}
+assert(
+  changedSemanticsBlocked,
+  "Changed source-record semantics published without explicit superseding review.",
+);
+
 console.log(
   JSON.stringify(
     {
       acceptedRunEvidencePublished: true,
       unreviewedRunEvidencePublished: false,
       acceptedRunEvidenceSurvivesBootstrapRefresh: true,
+      repeatedRunEventsPreserved: true,
+      repeatedSourceRecordProjectionDeduplicated: true,
+      changedPayloadRequiresSupersedingReview: true,
+      changedSemanticsRequireSupersedingReview: true,
     },
     null,
     2,

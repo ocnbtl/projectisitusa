@@ -15,10 +15,11 @@ import type {
   ResearchStateSummary,
   RunEvidenceAssertionEvent,
 } from "@/lib/research/types";
-import { resolveRunEvidence } from "@/lib/research/event-resolution";
+import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
 import {
   listImmutableResearchRuns,
   readNdjson as readRunNdjson,
+  stableJson,
 } from "@/lib/research/run-files";
 
 type SpeciesRecord = { id: string };
@@ -46,6 +47,8 @@ type MigrationCandidatesFile = {
 
 const ROOT = process.cwd();
 const SCHEMA_DIR = path.join(ROOT, "src/data/research/schemas");
+const LEGACY_DIRTY_BOOTSTRAP_RUN_ID =
+  "20260715T034832Z__gbif-preserved-specimens__090596ab4867";
 
 function readJson<T>(filepath: string): T {
   return JSON.parse(readFileSync(filepath, "utf8")) as T;
@@ -331,31 +334,72 @@ for (const bundle of immutableRuns) {
   const { receipt } = bundle;
   const source = sourceById.get(receipt.source_id);
   assert(source?.researchAdapter, `Immutable run ${receipt.run_id} has no registered adapter.`);
-  assert(
-    source.researchAdapter.id === receipt.adapter_id &&
-      source.researchAdapter.allowedVersions.includes(receipt.adapter_version),
-    `Immutable run ${receipt.run_id} uses an unregistered adapter or version.`,
-  );
-  const parameterSchemaPath = path.join(ROOT, source.researchAdapter.parameterSchema);
-  assert(existsSync(parameterSchemaPath), `Immutable run ${receipt.run_id} lacks its parameter schema.`);
-  const parameterSchema = JSON.parse(readFileSync(parameterSchemaPath, "utf8")) as Parameters<
-    typeof z.fromJSONSchema
-  >[0];
-  z.fromJSONSchema(parameterSchema).parse(receipt.parameters);
   execFileSync("git", ["cat-file", "-e", `${receipt.code_commit}^{commit}`], {
     cwd: ROOT,
     stdio: "ignore",
   });
-  assert(
-    versionedFileHashes(source.researchAdapter.module).has(receipt.adapter_code_hash),
-    `Immutable run ${receipt.run_id} adapter code hash is not present in git history.`,
-  );
-  assert(
-    versionedFileHashes("src/data/research/source-registry.json").has(
-      receipt.source_registry_hash,
-    ),
-    `Immutable run ${receipt.run_id} source registry hash is not present in git history.`,
-  );
+  if (receipt.run_id === LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
+    assert(
+      source.researchAdapter.id === receipt.adapter_id &&
+        source.researchAdapter.allowedVersions.includes(receipt.adapter_version),
+      `Legacy immutable run ${receipt.run_id} uses an unknown adapter or version.`,
+    );
+    const parameterSchemaPath = path.join(ROOT, source.researchAdapter.parameterSchema);
+    const parameterSchema = JSON.parse(
+      readFileSync(parameterSchemaPath, "utf8"),
+    ) as Parameters<typeof z.fromJSONSchema>[0];
+    z.fromJSONSchema(parameterSchema).parse(receipt.parameters);
+    assert(
+      versionedFileHashes(source.researchAdapter.module).has(receipt.adapter_code_hash),
+      `Legacy immutable run ${receipt.run_id} adapter hash is not present in git history.`,
+    );
+    assert(
+      versionedFileHashes("src/data/research/source-registry.json").has(
+        receipt.source_registry_hash,
+      ),
+      `Legacy immutable run ${receipt.run_id} registry hash is not present in git history.`,
+    );
+  } else {
+    const committedRegistry = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:src/data/research/source-registry.json`],
+      { cwd: ROOT },
+    );
+    assert(
+      sha256(committedRegistry) === receipt.source_registry_hash,
+      `Immutable run ${receipt.run_id} registry hash does not match its exact code commit.`,
+    );
+    const historicalRegistry = JSON.parse(
+      committedRegistry.toString("utf8"),
+    ) as ResearchSourceRegistry;
+    const historicalSource = historicalRegistry.sources.find(
+      (entry) => entry.id === receipt.source_id,
+    );
+    assert(
+      historicalSource?.researchAdapter &&
+        historicalSource.researchAdapter.id === receipt.adapter_id &&
+        historicalSource.researchAdapter.allowedVersions.includes(receipt.adapter_version),
+      `Immutable run ${receipt.run_id} is not registered at its exact code commit.`,
+    );
+    const committedAdapter = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:${historicalSource.researchAdapter.module}`],
+      { cwd: ROOT },
+    );
+    assert(
+      sha256(committedAdapter) === receipt.adapter_code_hash,
+      `Immutable run ${receipt.run_id} adapter hash does not match its exact code commit.`,
+    );
+    const committedParameterSchema = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:${historicalSource.researchAdapter.parameterSchema}`],
+      { cwd: ROOT },
+    );
+    const parameterSchema = JSON.parse(
+      committedParameterSchema.toString("utf8"),
+    ) as Parameters<typeof z.fromJSONSchema>[0];
+    z.fromJSONSchema(parameterSchema).parse(receipt.parameters);
+  }
   const startedAt = Date.parse(receipt.started_at);
   const finishedAt = Date.parse(receipt.finished_at);
   assert(startedAt <= finishedAt, `Immutable run ${receipt.run_id} finishes before it starts.`);
@@ -376,6 +420,34 @@ for (const bundle of immutableRuns) {
   assert(
     receipt.counts.requested_pairs === receipt.requested_scope.pair_keys.length,
     `Immutable run ${receipt.run_id} has a requested-pair count mismatch.`,
+  );
+  assert(
+    receipt.parameter_hash === sha256(stableJson(receipt.parameters)),
+    `Immutable run ${receipt.run_id} has a parameter hash mismatch.`,
+  );
+  const candidatePairs = receipt.parameters.candidatePairs;
+  assert(
+    Array.isArray(candidatePairs) &&
+      candidatePairs.every((value): value is string => typeof value === "string") &&
+      stableJson(candidatePairs) === stableJson(receipt.requested_scope.pair_keys),
+    `Immutable run ${receipt.run_id} parameter pairs disagree with requested scope.`,
+  );
+  const expectedCountyFips = [
+    ...new Set(receipt.requested_scope.pair_keys.map((key) => key.split(":", 1)[0])),
+  ].sort();
+  const expectedSpeciesIds = [
+    ...new Set(
+      receipt.requested_scope.pair_keys.map((key) => key.slice(key.indexOf(":") + 1)),
+    ),
+  ].sort();
+  assert(
+    stableJson(expectedCountyFips) === stableJson(receipt.requested_scope.county_fips) &&
+      stableJson(expectedSpeciesIds) === stableJson(receipt.requested_scope.species_ids),
+    `Immutable run ${receipt.run_id} requested scope arrays disagree with pair keys.`,
+  );
+  assert(
+    receipt.counts.error_count === receipt.errors.length,
+    `Immutable run ${receipt.run_id} has an error count mismatch.`,
   );
   assert(
     bundle.outcomes.length === receipt.requested_scope.pair_keys.length,
@@ -430,14 +502,19 @@ for (const outcome of outcomes) {
   }
 }
 
-const resolvedRunEvidence = resolveRunEvidence(
-  projectedRunAssertions,
-  projectedReviews,
-  registry.sources,
-  summary.asOf,
-);
+const compiledEvidence = compileAdditiveResearchEvidence({
+  bootstrapEvidence,
+  runAssertions: projectedRunAssertions,
+  reviewEvents: projectedReviews,
+  sources: registry.sources,
+  asOf: summary.asOf,
+});
+const resolvedRunEvidence = compiledEvidence.resolvedRunEvidence;
 const publishedRunEvidenceIds = new Set(
   resolvedRunEvidence.publishedAssertions.map((entry) => entry.eventId),
+);
+const projectedRunEvidenceIds = new Set(
+  compiledEvidence.projectedRunAssertions.map((entry) => entry.eventId),
 );
 
 const presentPairs = new Set(
@@ -478,7 +555,7 @@ for (const key of matrixPresentPairs) assert(presentPairs.has(key), `Missing boo
 for (const key of matrixAbsentPairs) assert(absentPairs.has(key), `Missing bootstrap absence evidence for ${key}.`);
 for (const key of matrixNotDetectedPairs) assert(notDetectedPairs.has(key), `Missing bootstrap not-detected evidence for ${key}.`);
 
-for (const assertion of resolvedRunEvidence.publishedAssertions) {
+for (const assertion of compiledEvidence.projectedRunAssertions) {
   const key = pairKey(assertion.county_fips, assertion.species_id);
   if (assertion.claim_type === "recorded-present") presentPairs.add(key);
   if (assertion.claim_type === "officially-absent") absentPairs.add(key);
@@ -500,8 +577,8 @@ assert(
   "Generated status counts do not sum to the total pair count.",
 );
 assert(totals.bootstrapEvidenceRecordCount === bootstrapEvidence.length, "Generated bootstrap evidence count is stale.");
-assert(totals.runEvidenceRecordCount === projectedRunAssertions.length, "Generated run evidence count is stale.");
-assert(totals.evidenceRecordCount === bootstrapEvidence.length + projectedRunAssertions.length, "Generated total evidence count is stale.");
+assert(totals.runEvidenceRecordCount === compiledEvidence.runEvidence.length, "Generated run evidence count is stale.");
+assert(totals.evidenceRecordCount === bootstrapEvidence.length + compiledEvidence.runEvidence.length, "Generated total evidence count is stale.");
 assert(totals.rejectionRecordCount === projectedRejections.length, "Generated rejection count is stale.");
 assert(totals.researchRunCount === runs.length + projectedImmutableRuns.length, "Generated run count is stale.");
 assert(totals.conflictCount === 0, "Generated research index contains present-versus-absence conflicts.");
@@ -602,7 +679,7 @@ for (const filename of publicCountyFiles) {
 
 for (const assertion of runAssertions) {
   assert(
-    projectedEvidenceIds.has(assertion.eventId) === publishedRunEvidenceIds.has(assertion.eventId),
+    projectedEvidenceIds.has(assertion.eventId) === projectedRunEvidenceIds.has(assertion.eventId),
     `Run assertion ${assertion.eventId} publication does not match its review state.`,
   );
 }
@@ -624,6 +701,7 @@ console.log(
       runAssertionEventCount: projectedRunAssertions.length,
       totalRunAssertionEventCount: runAssertions.length,
       publishedRunEvidenceCount: publishedRunEvidenceIds.size,
+      projectedRunEvidenceCount: projectedRunEvidenceIds.size,
       unreviewedRunEvidenceCount: resolvedRunEvidence.counts.unreviewed,
       ledgerRejectionCount: projectedRejections.length,
       totalLedgerRejectionCount: rejections.length,

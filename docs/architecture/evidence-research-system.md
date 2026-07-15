@@ -162,7 +162,7 @@ An `evidence.asserted` event also requires:
 - content hash of the normalized supporting payload
 - caveats and notes needed to prevent overclaiming
 
-Use content-derived IDs where practical so rerunning identical source input does not append duplicate assertions. A run may reference an existing assertion as corroboration instead of duplicating it.
+Acquisition event IDs remain run scoped so every immutable run preserves its own lineage. The compiler derives a stable source-record claim identity from source, record ID, species, county, claim type, and normalized payload hash. Identical accepted claims from later runs collapse to one active projection row while all immutable events remain available for audit. A changed payload for the same active source-record claim must be resolved by an explicit superseding or retraction event before publication can continue.
 
 ## Rejection Records
 
@@ -238,6 +238,8 @@ Adapters may access the network. They must not edit legacy truth inputs, the com
 The compatibility migration currently writes combined bootstrap records to `src/data/research/research-runs.json`. Those records support parity and source-screen migration, but they are not the final immutable receipt model.
 
 Every new adapter run writes `src/data/research/runs/<run-id>/receipt.json`. The receipt is immutable after completion. A correction creates a new run that references the old run.
+
+The first GBIF bootstrap run, `20260715T034832Z__gbif-preserved-specimens__090596ab4867`, was captured before the adapter and registry were committed. Its retained hashes are present in later history, but they cannot match its recorded commit. Integrity treats that single run ID as an explicit legacy lineage exception. New runs must match adapter and registry bytes at the exact receipt commit.
 
 A receipt records:
 

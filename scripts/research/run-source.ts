@@ -24,6 +24,10 @@ import {
   sha256,
   stableJson,
 } from "@/lib/research/run-files";
+import {
+  validateResearchRunInMemory,
+  verifyStagedResearchRun,
+} from "@/lib/research/validate-run";
 
 type Candidate = {
   sourceId: string;
@@ -40,6 +44,11 @@ type County = { countyFips: string; name: string; stateCode: string };
 
 const ROOT = process.cwd();
 const RESEARCH_DIR = path.join(ROOT, "src/data/research");
+
+type CommittedInputSnapshot = {
+  commit: string;
+  fileHashes: Map<string, string>;
+};
 
 function compareText(left: string, right: string) {
   return left < right ? -1 : left > right ? 1 : 0;
@@ -84,6 +93,63 @@ function parseArguments(argv: string[]) {
 
 function readJson<T>(filepath: string): T {
   return JSON.parse(readFileSync(filepath, "utf8")) as T;
+}
+
+function relativeGitPath(filepath: string) {
+  return path.relative(ROOT, filepath).split(path.sep).join("/");
+}
+
+function captureCommittedInputSnapshot(filepaths: string[]): CommittedInputSnapshot {
+  const status = execFileSync(
+    "git",
+    ["status", "--porcelain=v1", "--untracked-files=all"],
+    { cwd: ROOT, encoding: "utf8" },
+  ).trim();
+  if (status) {
+    throw new Error(
+      "Research acquisition requires a clean worktree. Commit or remove pending changes before running an adapter.",
+    );
+  }
+  const commit = execFileSync("git", ["rev-parse", "HEAD"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  }).trim();
+  const fileHashes = new Map<string, string>();
+  for (const filepath of filepaths) {
+    const relativePath = relativeGitPath(filepath);
+    const current = readFileSync(filepath);
+    const committed = execFileSync("git", ["show", `${commit}:${relativePath}`], {
+      cwd: ROOT,
+    });
+    if (sha256(current) !== sha256(committed)) {
+      throw new Error(`${relativePath} does not match acquisition commit ${commit}.`);
+    }
+    fileHashes.set(filepath, sha256(current));
+  }
+  return { commit, fileHashes };
+}
+
+function verifyCommittedInputSnapshot(snapshot: CommittedInputSnapshot) {
+  const currentCommit = execFileSync("git", ["rev-parse", "HEAD"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  }).trim();
+  if (currentCommit !== snapshot.commit) {
+    throw new Error("Repository HEAD changed during research acquisition.");
+  }
+  const status = execFileSync(
+    "git",
+    ["status", "--porcelain=v1", "--untracked-files=all"],
+    { cwd: ROOT, encoding: "utf8" },
+  ).trim();
+  if (status) {
+    throw new Error("The worktree changed during research acquisition.");
+  }
+  for (const [filepath, expectedHash] of snapshot.fileHashes) {
+    if (sha256(readFileSync(filepath)) !== expectedHash) {
+      throw new Error(`${relativeGitPath(filepath)} changed during research acquisition.`);
+    }
+  }
 }
 
 function asNdjson(values: unknown[]) {
@@ -148,9 +214,33 @@ function selectCandidates(
       .filter((outcome) => outcome.source_id === sourceId && outcome.scope_complete)
       .map((outcome) => `${outcome.county_fips}:${outcome.species_id}`),
   );
-  return candidates
-    .filter((entry) => !completedPairs.has(`${entry.countyFips}:${entry.speciesId}`))
-    .slice(0, limit);
+  const pending = candidates.filter(
+    (entry) => !completedPairs.has(`${entry.countyFips}:${entry.speciesId}`),
+  );
+  const groupsBySpecies = new Map<string, Candidate[]>();
+  for (const candidate of pending) {
+    const values = groupsBySpecies.get(candidate.speciesId) ?? [];
+    values.push(candidate);
+    groupsBySpecies.set(candidate.speciesId, values);
+  }
+  const groups = [...groupsBySpecies.entries()].sort(
+    ([leftSpecies, left], [rightSpecies, right]) =>
+      right.length - left.length || compareText(leftSpecies, rightSpecies),
+  );
+  const selected: Candidate[] = [];
+  for (const [, group] of groups) {
+    if (selected.length + group.length > limit) continue;
+    selected.push(...group);
+    if (selected.length === limit) break;
+  }
+  if (selected.length === 0 && pending.length > 0) {
+    return pending.slice(0, limit);
+  }
+  return selected.sort(
+    (left, right) =>
+      compareText(left.speciesId, right.speciesId) ||
+      compareText(left.countyFips, right.countyFips),
+  );
 }
 
 async function main() {
@@ -162,14 +252,30 @@ async function main() {
   if (!source?.researchAdapter) {
     throw new Error(`${options.sourceId} has no registered research adapter.`);
   }
+  const researchAdapter = source.researchAdapter;
 
   const adapter = resolveAdapter(options.sourceId);
-  if (source.researchAdapter.id !== adapter.adapterId) {
-    throw new Error(`Registry adapter ${source.researchAdapter.id} does not match ${adapter.adapterId}.`);
+  if (researchAdapter.id !== adapter.adapterId) {
+    throw new Error(`Registry adapter ${researchAdapter.id} does not match ${adapter.adapterId}.`);
   }
-  if (!source.researchAdapter.allowedVersions.includes(adapter.adapterVersion)) {
+  if (!researchAdapter.allowedVersions.includes(adapter.adapterVersion)) {
     throw new Error(`Adapter version ${adapter.adapterVersion} is not allowed for ${options.sourceId}.`);
   }
+  const adapterPath = path.join(ROOT, researchAdapter.module);
+  const parameterSchemaPath = path.join(ROOT, researchAdapter.parameterSchema);
+  if (!existsSync(parameterSchemaPath)) {
+    throw new Error(`Missing registered parameter schema ${researchAdapter.parameterSchema}.`);
+  }
+  const inputSnapshot = captureCommittedInputSnapshot([
+    registryPath,
+    adapterPath,
+    parameterSchemaPath,
+    path.join(ROOT, "scripts/research/run-source.ts"),
+    path.join(ROOT, "src/lib/research/source-adapter.ts"),
+    path.join(ROOT, "src/lib/research/run-files.ts"),
+    path.join(ROOT, "src/lib/research/types.ts"),
+    path.join(ROOT, "src/lib/research/validate-run.ts"),
+  ]);
 
   const candidates = selectCandidates(
     options.sourceId,
@@ -213,10 +319,6 @@ async function main() {
     minimumMatchConfidence: 95,
     pageLimit: 300,
   };
-  const parameterSchemaPath = path.join(ROOT, source.researchAdapter.parameterSchema);
-  if (!existsSync(parameterSchemaPath)) {
-    throw new Error(`Missing registered parameter schema ${source.researchAdapter.parameterSchema}.`);
-  }
   const parameterSchema = JSON.parse(readFileSync(parameterSchemaPath, "utf8")) as Parameters<
     typeof z.fromJSONSchema
   >[0];
@@ -239,6 +341,7 @@ async function main() {
     runStartedAt: startedAt,
     parameters,
   });
+  verifyCommittedInputSnapshot(inputSnapshot);
   const status: ImmutableResearchRunReceipt["status"] =
     result.outcomes.length === 0
       ? "failed"
@@ -271,11 +374,6 @@ async function main() {
     );
   });
 
-  const adapterPath = path.join(ROOT, source.researchAdapter.module);
-  const commit = execFileSync("git", ["rev-parse", "HEAD"], {
-    cwd: ROOT,
-    encoding: "utf8",
-  }).trim();
   const receipt: ImmutableResearchRunReceipt = {
     schemaVersion: 1,
     run_id: runId,
@@ -285,11 +383,11 @@ async function main() {
     actor_type: "adapter",
     actor_id: `${adapter.adapterId}@${adapter.adapterVersion}`,
     source_id: options.sourceId,
-    source_registry_hash: sha256(registryText),
+    source_registry_hash: inputSnapshot.fileHashes.get(registryPath)!,
     adapter_id: adapter.adapterId,
     adapter_version: adapter.adapterVersion,
-    adapter_code_hash: sha256(readFileSync(adapterPath)),
-    code_commit: commit,
+    adapter_code_hash: inputSnapshot.fileHashes.get(adapterPath)!,
+    code_commit: inputSnapshot.commit,
     parameter_hash: parameterHash,
     parameters,
     requested_scope: {
@@ -309,9 +407,7 @@ async function main() {
     outputs,
     counts: {
       requested_pairs: requestedPairs.length,
-      candidate_records: result.upstreamRequests
-        .filter((request) => request.url.includes("/occurrence/search"))
-        .reduce((total, request) => total + request.recordCount, 0),
+      candidate_records: result.candidateRecordCount,
       assertion_events: result.assertions.length,
       review_events: result.reviews.length,
       rejection_records: result.rejections.length,
@@ -325,6 +421,20 @@ async function main() {
     deviations: [],
     rerun_command: `npm run research:run -- --source ${options.sourceId} --state ${options.stateCode} --pairs ${parameters.candidatePairs.join(",")}`,
   };
+
+  validateResearchRunInMemory({
+    root: ROOT,
+    sourceId: options.sourceId,
+    source,
+    stateCode: options.stateCode,
+    runId,
+    requestedPairKeys: parameters.candidatePairs,
+    result,
+    receipt,
+    outputContents: new Map(
+      [...outputContents.entries()].map(([filename, value]) => [filename, value.contents]),
+    ),
+  });
 
   mkdirSync(path.dirname(finalDirectory), { recursive: true });
   const temporaryDirectory = mkdtempSync(
@@ -342,6 +452,13 @@ async function main() {
       path.join(temporaryDirectory, "receipt.json"),
       `${JSON.stringify(receipt, null, 2)}\n`,
     );
+    verifyStagedResearchRun(temporaryDirectory, receipt);
+    const stagedReceipt = JSON.parse(
+      readFileSync(path.join(temporaryDirectory, "receipt.json"), "utf8"),
+    ) as ImmutableResearchRunReceipt;
+    if (stableJson(stagedReceipt) !== stableJson(receipt)) {
+      throw new Error("Staged receipt bytes do not reproduce the validated receipt.");
+    }
     renameSync(temporaryDirectory, finalDirectory);
   } finally {
     rmSync(temporaryDirectory, { recursive: true, force: true });

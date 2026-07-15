@@ -36,6 +36,7 @@ export interface SourceAdapterResult {
     retrievedAt: string;
     recordCount: number;
   }>;
+  candidateRecordCount: number;
   duplicateRecordCount: number;
   errors: Array<{ code: string; message: string; retryable: boolean }>;
   warnings: string[];
