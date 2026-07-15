@@ -16,7 +16,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 const ADAPTER_ID = "gbif-preserved-specimens";
-const ADAPTER_VERSION = "1.0.0";
+const ADAPTER_VERSION = "1.0.1";
 const GBIF_API_BASE_URL = "https://api.gbif.org/v1";
 const GBIF_OCCURRENCE_BASE_URL = "https://www.gbif.org/occurrence";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
@@ -506,6 +506,7 @@ function makeRejection(
   return {
     schemaVersion: 1,
     rejection_id: contentId("gbif-rejection", {
+      runId: context.runId,
       sourceId: SOURCE_ID,
       pair: pairKey(pair),
       candidateLocator,
@@ -715,6 +716,7 @@ function makeAssertionAndReview(
   }
   const normalizedPayloadHash = sha256(stableJson(supportingPayload(record, pair, match)));
   const eventId = contentId("gbif-assertion", {
+    runId: context.runId,
     sourceId: SOURCE_ID,
     sourceRecordKey,
     speciesId: pair.speciesId,

@@ -154,6 +154,78 @@ async function main() {
       cultivated.assertions.every((entry) => entry.claim_type === "recorded-present"),
       "The adapter emitted negative evidence.",
     );
+
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 3,
+        results: [
+          occurrence(1001, "Autauga"),
+          occurrence(1002, "Baldwin"),
+          occurrence(1003, "Lee"),
+        ],
+      });
+    });
+    const repeated = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-repeated-run",
+    });
+    assert(
+      repeated.assertions.every(
+        (entry) => !routed.assertions.some((prior) => prior.eventId === entry.eventId),
+      ),
+      "A later immutable run reused assertion event IDs from an earlier run.",
+    );
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 1,
+        results: [occurrence(2001, "Autauga", "University botanical garden")],
+      });
+    });
+    const repeatedCultivated = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-repeated-cultivated-run",
+      requestedPairs: [context.requestedPairs[0]],
+      parameters: {
+        ...parameters,
+        candidateLimit: 1,
+        candidatePairs: ["01001:example-species"],
+      },
+    });
+    assert(
+      repeatedCultivated.rejections.every(
+        (entry) =>
+          !cultivated.rejections.some((prior) => prior.rejection_id === entry.rejection_id),
+      ),
+      "A later immutable run reused rejection IDs from an earlier run.",
+    );
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -165,6 +237,7 @@ async function main() {
         exactCountyRouting: true,
         cultivatedRecordRejected: true,
         negativeClaimsEmitted: false,
+        repeatRunEventIdsUnique: true,
       },
       null,
       2,

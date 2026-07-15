@@ -1,3 +1,5 @@
+import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
@@ -68,6 +70,31 @@ function pairKey(countyFips: string, speciesId: string) {
 
 function assertUnique(values: string[], label: string) {
   assert(new Set(values).size === values.length, `${label} contains duplicate values.`);
+}
+
+function sha256(value: string | Buffer) {
+  return createHash("sha256").update(value).digest("hex");
+}
+
+const versionedHashCache = new Map<string, Set<string>>();
+
+function versionedFileHashes(relativePath: string) {
+  const cached = versionedHashCache.get(relativePath);
+  if (cached) return cached;
+  const commits = execFileSync(
+    "git",
+    ["log", "--format=%H", "--all", "--", relativePath],
+    { cwd: ROOT, encoding: "utf8" },
+  )
+    .split("\n")
+    .filter(Boolean);
+  const hashes = new Set(
+    commits.map((commit) =>
+      sha256(execFileSync("git", ["show", `${commit}:${relativePath}`], { cwd: ROOT })),
+    ),
+  );
+  versionedHashCache.set(relativePath, hashes);
+  return hashes;
 }
 
 function schemaValidator(filename: string) {
@@ -315,6 +342,37 @@ for (const bundle of immutableRuns) {
     typeof z.fromJSONSchema
   >[0];
   z.fromJSONSchema(parameterSchema).parse(receipt.parameters);
+  execFileSync("git", ["cat-file", "-e", `${receipt.code_commit}^{commit}`], {
+    cwd: ROOT,
+    stdio: "ignore",
+  });
+  assert(
+    versionedFileHashes(source.researchAdapter.module).has(receipt.adapter_code_hash),
+    `Immutable run ${receipt.run_id} adapter code hash is not present in git history.`,
+  );
+  assert(
+    versionedFileHashes("src/data/research/source-registry.json").has(
+      receipt.source_registry_hash,
+    ),
+    `Immutable run ${receipt.run_id} source registry hash is not present in git history.`,
+  );
+  const startedAt = Date.parse(receipt.started_at);
+  const finishedAt = Date.parse(receipt.finished_at);
+  assert(startedAt <= finishedAt, `Immutable run ${receipt.run_id} finishes before it starts.`);
+  for (const [label, records] of [
+    ["assertion", bundle.assertions.map((record) => record.created_at)],
+    ["review", bundle.reviews.map((record) => record.created_at)],
+    ["rejection", bundle.rejections.map((record) => record.created_at)],
+    ["outcome", bundle.outcomes.map((record) => record.recorded_at)],
+  ] as const) {
+    for (const timestamp of records) {
+      const value = Date.parse(timestamp);
+      assert(
+        value >= startedAt && value <= finishedAt,
+        `Immutable run ${receipt.run_id} ${label} timestamp is outside the receipt interval.`,
+      );
+    }
+  }
   assert(
     receipt.counts.requested_pairs === receipt.requested_scope.pair_keys.length,
     `Immutable run ${receipt.run_id} has a requested-pair count mismatch.`,
