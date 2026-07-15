@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import {
   existsSync,
+  lstatSync,
   realpathSync,
   readFileSync,
   readdirSync,
@@ -203,10 +204,11 @@ export function verifyFileReference(
     );
   }
 
-  const stats = statSync(filepath);
-  if (!stats.isFile()) {
-    throw new Error(`Run file reference is not a file: ${reference.path}`);
+  const linkStats = lstatSync(filepath);
+  if (!linkStats.isFile() || linkStats.isSymbolicLink()) {
+    throw new Error(`Run file reference is not a regular non-symlink file: ${reference.path}`);
   }
+  const stats = statSync(filepath);
   if (stats.size !== reference.bytes) {
     throw new Error(`Run file byte count changed: ${reference.path}`);
   }
@@ -252,6 +254,146 @@ function assertReceiptCount(
   }
 }
 
+export function loadImmutableResearchRun(
+  root: string,
+  runDirectory: string,
+): ImmutableResearchRunBundle {
+  const absoluteDirectory = path.resolve(runDirectory);
+  const directory = path.basename(absoluteDirectory);
+  const receiptPath = path.join(absoluteDirectory, "receipt.json");
+  if (!existsSync(receiptPath)) {
+    throw new Error(`Research run ${directory} is missing receipt.json.`);
+  }
+  const receiptStats = lstatSync(receiptPath);
+  if (!receiptStats.isFile() || receiptStats.isSymbolicLink()) {
+    throw new Error(`Research run ${directory} receipt is not a regular non-symlink file.`);
+  }
+  const receipt = JSON.parse(
+    readFileSync(receiptPath, "utf8"),
+  ) as ImmutableResearchRunReceipt;
+  if (receipt.run_id !== directory) {
+    throw new Error(
+      `Research run directory ${directory} does not match receipt ${receipt.run_id}.`,
+    );
+  }
+
+  if (!Array.isArray(receipt.artifacts) || !Array.isArray(receipt.outputs)) {
+    throw new Error(
+      `Research run ${directory} receipt must declare artifacts and outputs arrays.`,
+    );
+  }
+
+  const verifiedFiles = new Map<string, Buffer>();
+  const declaredPaths = new Set<string>();
+  for (const [kind, references] of [
+    ["artifact", receipt.artifacts],
+    ["output", receipt.outputs],
+  ] as const) {
+    for (const reference of references) {
+      const relativePath = canonicalRunRelativePath(
+        root,
+        absoluteDirectory,
+        reference.path,
+      );
+      if (declaredPaths.has(relativePath)) {
+        throw new Error(
+          `Research run ${directory} declares the same file more than once: ${relativePath}.`,
+        );
+      }
+      declaredPaths.add(relativePath);
+      verifiedFiles.set(
+        relativePath,
+        verifyFileReference(root, absoluteDirectory, reference),
+      );
+
+      if (
+        kind === "artifact" &&
+        CONVENTIONAL_RUN_OUTPUTS.includes(
+          relativePath as (typeof CONVENTIONAL_RUN_OUTPUTS)[number],
+        )
+      ) {
+        throw new Error(
+          `Research run ${directory} declares conventional output ${relativePath} as an artifact.`,
+        );
+      }
+    }
+  }
+
+  const declaredOutputPaths = new Set(
+    receipt.outputs.map((reference) =>
+      canonicalRunRelativePath(root, absoluteDirectory, reference.path),
+    ),
+  );
+  for (const filename of CONVENTIONAL_RUN_OUTPUTS) {
+    const conventionalPath = path.join(absoluteDirectory, filename);
+    if (!existsSync(conventionalPath)) {
+      throw new Error(
+        `Research run ${directory} is missing conventional output ${filename}.`,
+      );
+    }
+    if (!declaredOutputPaths.has(filename)) {
+      throw new Error(
+        `Research run ${directory} does not declare conventional output ${filename}.`,
+      );
+    }
+  }
+
+  const assertions = parseNdjson<RunEvidenceAssertionEvent>(
+    verifiedFiles.get("assertions.ndjson")!,
+    path.join(absoluteDirectory, "assertions.ndjson"),
+  );
+  const reviews = parseNdjson<EvidenceReviewEvent>(
+    verifiedFiles.get("reviews.ndjson")!,
+    path.join(absoluteDirectory, "reviews.ndjson"),
+  );
+  const rejections = parseNdjson<ResearchRejectionRecord>(
+    verifiedFiles.get("rejections.ndjson")!,
+    path.join(absoluteDirectory, "rejections.ndjson"),
+  );
+  const outcomes = parseNdjson<ResearchPairOutcome>(
+    verifiedFiles.get("outcomes.ndjson")!,
+    path.join(absoluteDirectory, "outcomes.ndjson"),
+  );
+
+  assertRunIds(directory, "assertions.ndjson", assertions);
+  assertRunIds(directory, "reviews.ndjson", reviews);
+  assertRunIds(directory, "rejections.ndjson", rejections);
+  assertRunIds(directory, "outcomes.ndjson", outcomes);
+  assertReceiptCount(
+    directory,
+    "assertion events",
+    receipt.counts.assertion_events,
+    assertions.length,
+  );
+  assertReceiptCount(
+    directory,
+    "review events",
+    receipt.counts.review_events,
+    reviews.length,
+  );
+  assertReceiptCount(
+    directory,
+    "rejection records",
+    receipt.counts.rejection_records,
+    rejections.length,
+  );
+  assertReceiptCount(
+    directory,
+    "pair outcomes",
+    receipt.counts.pair_outcomes,
+    outcomes.length,
+  );
+
+  return {
+    directory: absoluteDirectory,
+    receipt,
+    assertions,
+    reviews,
+    rejections,
+    outcomes,
+  };
+}
+
 export function listImmutableResearchRuns(root: string): ImmutableResearchRunBundle[] {
   const runsDirectory = path.join(root, "src/data/research/runs");
   if (!existsSync(runsDirectory)) {
@@ -262,135 +404,5 @@ export function listImmutableResearchRuns(root: string): ImmutableResearchRunBun
     .filter((entry) => entry.isDirectory() && !entry.name.startsWith(".pending-research-run-"))
     .map((entry) => entry.name)
     .sort(compareCodePoints)
-    .map((directory) => {
-      const absoluteDirectory = path.join(runsDirectory, directory);
-      const receiptPath = path.join(absoluteDirectory, "receipt.json");
-      if (!existsSync(receiptPath)) {
-        throw new Error(`Research run ${directory} is missing receipt.json.`);
-      }
-      const receipt = JSON.parse(
-        readFileSync(receiptPath, "utf8"),
-      ) as ImmutableResearchRunReceipt;
-      if (receipt.run_id !== directory) {
-        throw new Error(
-          `Research run directory ${directory} does not match receipt ${receipt.run_id}.`,
-        );
-      }
-
-      if (!Array.isArray(receipt.artifacts) || !Array.isArray(receipt.outputs)) {
-        throw new Error(
-          `Research run ${directory} receipt must declare artifacts and outputs arrays.`,
-        );
-      }
-
-      const verifiedFiles = new Map<string, Buffer>();
-      const declaredPaths = new Set<string>();
-      for (const [kind, references] of [
-        ["artifact", receipt.artifacts],
-        ["output", receipt.outputs],
-      ] as const) {
-        for (const reference of references) {
-          const relativePath = canonicalRunRelativePath(
-            root,
-            absoluteDirectory,
-            reference.path,
-          );
-          if (declaredPaths.has(relativePath)) {
-            throw new Error(
-              `Research run ${directory} declares the same file more than once: ${relativePath}.`,
-            );
-          }
-          declaredPaths.add(relativePath);
-          verifiedFiles.set(
-            relativePath,
-            verifyFileReference(root, absoluteDirectory, reference),
-          );
-
-          if (
-            kind === "artifact" &&
-            CONVENTIONAL_RUN_OUTPUTS.includes(
-              relativePath as (typeof CONVENTIONAL_RUN_OUTPUTS)[number],
-            )
-          ) {
-            throw new Error(
-              `Research run ${directory} declares conventional output ${relativePath} as an artifact.`,
-            );
-          }
-        }
-      }
-
-      const declaredOutputPaths = new Set(
-        receipt.outputs.map((reference) =>
-          canonicalRunRelativePath(root, absoluteDirectory, reference.path),
-        ),
-      );
-      for (const filename of CONVENTIONAL_RUN_OUTPUTS) {
-        const conventionalPath = path.join(absoluteDirectory, filename);
-        if (!existsSync(conventionalPath)) {
-          throw new Error(
-            `Research run ${directory} is missing conventional output ${filename}.`,
-          );
-        }
-        if (!declaredOutputPaths.has(filename)) {
-          throw new Error(
-            `Research run ${directory} does not declare conventional output ${filename}.`,
-          );
-        }
-      }
-
-      const assertions = parseNdjson<RunEvidenceAssertionEvent>(
-        verifiedFiles.get("assertions.ndjson")!,
-        path.join(absoluteDirectory, "assertions.ndjson"),
-      );
-      const reviews = parseNdjson<EvidenceReviewEvent>(
-        verifiedFiles.get("reviews.ndjson")!,
-        path.join(absoluteDirectory, "reviews.ndjson"),
-      );
-      const rejections = parseNdjson<ResearchRejectionRecord>(
-        verifiedFiles.get("rejections.ndjson")!,
-        path.join(absoluteDirectory, "rejections.ndjson"),
-      );
-      const outcomes = parseNdjson<ResearchPairOutcome>(
-        verifiedFiles.get("outcomes.ndjson")!,
-        path.join(absoluteDirectory, "outcomes.ndjson"),
-      );
-
-      assertRunIds(directory, "assertions.ndjson", assertions);
-      assertRunIds(directory, "reviews.ndjson", reviews);
-      assertRunIds(directory, "rejections.ndjson", rejections);
-      assertRunIds(directory, "outcomes.ndjson", outcomes);
-      assertReceiptCount(
-        directory,
-        "assertion events",
-        receipt.counts.assertion_events,
-        assertions.length,
-      );
-      assertReceiptCount(
-        directory,
-        "review events",
-        receipt.counts.review_events,
-        reviews.length,
-      );
-      assertReceiptCount(
-        directory,
-        "rejection records",
-        receipt.counts.rejection_records,
-        rejections.length,
-      );
-      assertReceiptCount(
-        directory,
-        "pair outcomes",
-        receipt.counts.pair_outcomes,
-        outcomes.length,
-      );
-
-      return {
-        directory: absoluteDirectory,
-        receipt,
-        assertions,
-        reviews,
-        rejections,
-        outcomes,
-      };
-    });
+    .map((directory) => loadImmutableResearchRun(root, path.join(runsDirectory, directory)));
 }

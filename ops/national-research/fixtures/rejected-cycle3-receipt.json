@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "run_id": "pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3",
+  "status": "complete",
+  "started_at": "2026-07-15T12:41:13.000Z",
+  "finished_at": "2026-07-15T12:42:56.000Z",
+  "actor_type": "agent",
+  "actor_id": "lease-pilot-al-gbif-dreissena-bugensis-01063-3",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "db9642cbb57da6e121f0a625b01267867ec4b58b15e9d2758869f6aeeffebc2b",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.0.2",
+  "adapter_code_hash": "7045ac424bddfa05cda6622d0e48f5ba49f9402db5473fd18e91f1185cb6d9a7",
+  "parameter_schema_hash": "372177d12d850b12a75d037148729e25f938f40063e73dcd1b1c8fd7b30f8be3",
+  "code_commit": "d9813621e085d35801d06cb792e26590f28a0ea3",
+  "lease_id": "lease-pilot-al-gbif-dreissena-bugensis-01063-3",
+  "lease_attempt": 3,
+  "parameter_hash": "1198e4b0d362d40eae08e4882662ce3830daa7fbdc3b699240bd5d6051e5b8dd",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "01063:dreissena-bugensis"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01063"
+    ],
+    "species_ids": [
+      "dreissena-bugensis"
+    ],
+    "pair_keys": [
+      "01063:dreissena-bugensis"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "purpose": "strict-species-match",
+      "url": "https://api.gbif.org/v1/species/match?name=Dreissena%20bugensis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-15T12:41:34.000Z",
+      "record_count": 1,
+      "attempts": 1
+    },
+    {
+      "purpose": "complete-statewide-occurrence-screen",
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alabama&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2287073&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T12:41:53.000Z",
+      "record_count": 1,
+      "attempts": 1,
+      "declared_count": 1,
+      "offset": 0,
+      "limit": 300,
+      "end_of_records": true
+    },
+    {
+      "purpose": "dataset-identity-and-license-verification",
+      "url": "https://api.gbif.org/v1/dataset/f5cb509c-00bb-42f5-aafb-59b631722d60",
+      "status": 200,
+      "retrieved_at": "2026-07-15T12:42:43.000Z",
+      "record_count": 1,
+      "attempts": 1
+    },
+    {
+      "purpose": "publisher-identity-verification",
+      "url": "https://api.gbif.org/v1/organization/e794e60e-e558-4549-99f8-cfb241cdce24",
+      "status": 200,
+      "retrieved_at": "2026-07-15T12:42:56.000Z",
+      "record_count": 1,
+      "attempts": 1
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-dataset-f5cb509c-00bb-42f5-aafb-59b631722d60.headers.txt",
+      "sha256": "c62fac2a0dc62bebdc871954f3d8541df78ed2d84a64d85f371123e888893809",
+      "bytes": 409,
+      "media_type": "application/octet-stream"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-dataset-f5cb509c-00bb-42f5-aafb-59b631722d60.raw",
+      "sha256": "5edbeb3c65668e6ae55946a24e8b722ee0c4842b4fa3786c792451d0a3778c7a",
+      "bytes": 5463,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-occurrences-dreissena-bugensis-000000.headers.txt",
+      "sha256": "c2692c23e8f2f02b043d60057971c9e978583deb6cc0d0cd8aae13812152d22b",
+      "bytes": 470,
+      "media_type": "application/octet-stream"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-occurrences-dreissena-bugensis-000000.raw",
+      "sha256": "dff3dd03306c091f18c64d821065b7b9ca9bf500826cc347d2a64ff440384ac9",
+      "bytes": 14601,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-organization-e794e60e-e558-4549-99f8-cfb241cdce24.headers.txt",
+      "sha256": "5bd08d01e09d6c52425ed5663c0983aa5d30e89a392e73e745af126ceea5cdcd",
+      "bytes": 431,
+      "media_type": "application/octet-stream"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-organization-e794e60e-e558-4549-99f8-cfb241cdce24.raw",
+      "sha256": "b6a10f5e984d039fd39f488c47061cd3d3149a7595eb0b8df3e52022bfbba3a8",
+      "bytes": 4924,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-species-match-dreissena-bugensis.headers.txt",
+      "sha256": "151b31f4eb69ba89087e68830448d689458ec3c1d51b712d601fa4b548858847",
+      "bytes": 323,
+      "media_type": "application/octet-stream"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-species-match-dreissena-bugensis.raw",
+      "sha256": "b696682b4095db3e9b9b30c24f50aef28d7fe3591bd31481a536232e8a44d148",
+      "bytes": 457,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/assertions.ndjson",
+      "sha256": "ffd8ed9fcc58f6c3fff7864061abfd20a15d738d38e1cd281b952b29572bb682",
+      "bytes": 2352,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/reviews.ndjson",
+      "sha256": "9e23cd3729bf39245a0b3605c706e55655d05b5f98620919f9bdd27bcd72281e",
+      "bytes": 1198,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/outcomes.ndjson",
+      "sha256": "27b8e46af55be33e13155d22d47573a5a5375c57015db8ab8050af016592ae12",
+      "bytes": 995,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/source-verification.json",
+      "sha256": "632f2621e7d992de62ae722031f0e0346dec43e60d471c1de44437a6fad71176",
+      "bytes": 5012,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "source_requests": 4,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1,
+    "complete_pair_outcomes": 1,
+    "retained_artifacts": 8,
+    "retained_artifact_bytes": 27078
+  },
+  "errors": [],
+  "known_caveats": [
+    "GBIF preserved specimen evidence supports historical point presence only.",
+    "The occurrence's retained GBIF issues do not trigger the registered adapter's geospatial contradiction gate, but they remain material lineage caveats.",
+    "No shared projection, final matrix determination, or protocol cell was produced by this worker."
+  ],
+  "source_warnings": [
+    "GBIF is an aggregator and does not guarantee publisher-data accuracy.",
+    "Missing GBIF records can never support absence or non-detection."
+  ],
+  "deviations": [
+    "The shared research runner was not executed because the lease prohibits writes outside its worker-results root. The lease-bound agent applied the registered adapter 1.0.2 validation semantics directly to exact retained provider responses."
+  ],
+  "retry_resume": {
+    "attempt": 3,
+    "maxAttempts": 3,
+    "sourceRequestAttempts": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "lastSuccessfulPage": {
+      "offset": 0,
+      "limit": 300,
+      "declaredCount": 1,
+      "receivedCount": 1,
+      "endOfRecords": true,
+      "seenRecordIds": [
+        "5176175719"
+      ],
+      "artifactPath": "src/data/research/worker-results/pilot-al-gbif-dreissena-bugensis-01063-cycle3-r3/artifacts/gbif-occurrences-dreissena-bugensis-000000.raw",
+      "artifactSha256": "dff3dd03306c091f18c64d821065b7b9ca9bf500826cc347d2a64ff440384ac9"
+    },
+    "nextRequestParameters": null,
+    "remainingRequests": [],
+    "safeToReuseRetainedArtifacts": true
+  },
+  "preflight_history": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /Users/ocean/Code/Project Isitusa/ops/national-research/leases.json --repo /tmp/isitusa-real-skill-pilot-al-gbif-cycle3-r3",
+      "exitCode": 1,
+      "result": "parameter-error",
+      "detail": "A multi-lease document requires --lease-id; no files had been edited."
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /Users/ocean/Code/Project Isitusa/ops/national-research/leases.json --lease-id lease-pilot-al-gbif-dreissena-bugensis-01063-3 --repo /tmp/isitusa-real-skill-pilot-al-gbif-cycle3-r3",
+      "exitCode": 0,
+      "result": "pass",
+      "detail": "Exact lease, branch, isolated worktree, base SHA, expiry, paths, and both skill pins passed before any edit."
+    }
+  ],
+  "rerun_command": "Acquire a new immutable worker lease and repeat the normalized source URLs recorded here; never overwrite this completed run."
+}

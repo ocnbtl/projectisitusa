@@ -21,6 +21,7 @@ import {
   readNdjson as readRunNdjson,
   stableJson,
 } from "@/lib/research/run-files";
+import { validateImmutableResearchRunDirectory } from "@/lib/research/validate-run";
 import {
   assertImmutableRunStateConsistency,
   selectImmutableResearchRunsForState,
@@ -450,6 +451,13 @@ const rejectionById = new Map(rejections.map((entry) => [entry.rejection_id, ent
 
 for (const bundle of immutableRuns) {
   const { receipt } = bundle;
+  if (receipt.run_id !== LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
+    validateImmutableResearchRunDirectory({
+      repositoryRoot: ROOT,
+      validationRoot: ROOT,
+      runDirectory: bundle.directory,
+    });
+  }
   const runStateCode = receipt.requested_scope.state_code;
   assert(
     nationalStateCodes.has(runStateCode),

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "isitusa-national-skills-recovery-2026-07-15-r1",
+  "roundType": "bounded-validator-recovery",
+  "openedAt": "2026-07-15T22:18:44Z",
+  "status": "in-progress",
+  "result": null,
+  "baseCommit": "f51602460ddb76abff75fff7629c455483b7a2ba",
+  "candidateVersion": "candidate-recovery-1",
+  "iteration": 1,
+  "maximumIterations": 2,
+  "broadDispatchAllowed": false,
+  "freeze": {
+    "status": "not-frozen",
+    "candidateGitCommit": null,
+    "candidateSkillHashes": {
+      "isitusa-national-orchestrator": "d3ecf532701296150448e31866e4855121953937a98ee5639af7682d90e316ef",
+      "isitusa-evidence-worker": "ed05a3e070cc413bcdd3b71a1b04d68eca7a95a6a9e05b2cc4c8c2b691af8b1a"
+    }
+  },
+  "isolatedDefect": {
+    "historicalEvaluation": "ops/national-research/evaluations/skill-evaluation-2026-07-15.json",
+    "historicalFixture": "ops/national-research/fixtures/rejected-cycle3-receipt-fixture.json",
+    "summary": "The prior 20-case oracle never validated the complete receipt, source-verification, or expected-output contract.",
+    "receiptPolicy": "Keep run-receipt schema version 1 closed. Store lease, retry, request-purpose, pagination, and performance metadata in the manifest or source-verification record."
+  },
+  "redGreenRegression": {
+    "red": {
+      "result": "fail-as-expected",
+      "legacyCasesPassed": 20,
+      "newCasesFailed": 14,
+      "totalCases": 34,
+      "meaning": "The old oracle remained green while every newly added receipt-contract case exposed the missing validation path."
+    },
+    "green": {
+      "result": "pass",
+      "totalCases": 78,
+      "passed": 78,
+      "failed": 0,
+      "criticalSafetyViolations": 0,
+      "wallSeconds": 41.133,
+      "peakMemoryMb": 53,
+      "manualInterventions": 0,
+      "deterministicRepeatedValidation": true,
+      "transactionalCompletionGate": true,
+      "honestRetryResume": true,
+      "pinnedValidatorExecution": true,
+      "durableManifestReceipt": true,
+      "portableHistoricalFixture": true
+    }
+  },
+  "staticValidation": {
+    "officialQuickValidate": {
+      "isitusa-national-orchestrator": "pass",
+      "isitusa-evidence-worker": "pass"
+    },
+    "bundledScriptsExecuted": true,
+    "typecheck": "pass",
+    "lint": "pass",
+    "researchIntegrityWithSharedCanonicalValidator": "pass"
+  },
+  "validationArchitecture": {
+    "canonicalDirectoryLoader": "src/lib/research/run-files.ts#loadImmutableResearchRun",
+    "canonicalSemanticValidator": "src/lib/research/validate-run.ts#validateImmutableResearchRunDirectory",
+    "workerCli": "scripts/research/validate-immutable-run.ts",
+    "workerOracle": ".agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs",
+    "completionGate": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs",
+    "sourceVerificationSchema": "src/data/research/schemas/worker-source-verification.schema.json"
+  },
+  "requiredCases": {
+    "historicalMalformedReceiptRejected": true,
+    "canonicalReceiptAccepted": true,
+    "unsupportedReceiptFieldsRejected": true,
+    "missingDescriptorsRejected": true,
+    "descriptorPathHashByteMismatchRejected": true,
+    "completeExpectedOutputsRequired": true,
+    "receiptCountsReconciled": true,
+    "crossFileIdentityReconciled": true,
+    "missingExtraUnreportedFilesRejected": true,
+    "deterministicRepeatedValidation": true,
+    "failedRequestsRejectedForCompleteRuns": true,
+    "paginationCompletenessReconciled": true,
+    "providerGeographyAndTaxonBound": true,
+    "finalReviewResolutionBoundToOutcomes": true,
+    "workerActorAuthorityBound": true,
+    "dirtyOrUncommittedManifestRejected": true,
+    "durableQueueTamperingRejected": true,
+    "partialManifestArchivedWithoutQueue": true
+  },
+  "blindForwardTests": {
+    "status": "pending",
+    "agents": []
+  },
+  "realPilot": {
+    "status": "pending",
+    "jobId": null,
+    "leaseId": null,
+    "branch": null,
+    "worktree": null,
+    "runId": null,
+    "acceptedIntegrationSubmissions": 0
+  },
+  "metrics": {
+    "evidenceSemanticViolations": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "manifestCompleteness": null,
+    "deterministicOutput": true,
+    "retryResumeBehavior": "synthetic-pass-real-pilot-pending",
+    "workerCompletionRate": null,
+    "mergeConflicts": 0,
+    "manualInterventions": 0,
+    "wallSeconds": null,
+    "peakMemoryMb": 53,
+    "validatedResearchThroughputPairsPerHour": null
+  },
+  "comparisonWithPriorWorkflow": {
+    "priorCandidateResult": "blocked",
+    "improvementSoFar": "The full worker receipt contract and completion transition are now validated by the same canonical immutable-run path.",
+    "passingRequirementMet": false,
+    "reason": "Blind forward tests and an independently accepted real pilot remain required before freeze."
+  }
+}

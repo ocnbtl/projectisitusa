@@ -3,6 +3,27 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync, spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+
+const PROJECT_ROOT = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../../../..",
+);
+const EXPECTED_OUTPUT_CATEGORIES = [
+  "manifest",
+  "artifacts",
+  "assertions",
+  "reviews",
+  "rejections",
+  "outcomes",
+  "receipt",
+  "source-verification",
+];
+const REQUIRED_SKILL_NAMES = [
+  "isitusa-national-orchestrator",
+  "isitusa-evidence-worker",
+];
 
 const JOB_STATES = new Set([
   "planned",
@@ -95,6 +116,13 @@ function atomicWrite(file, value) {
   fs.renameSync(temporary, file);
 }
 
+function atomicWriteBytes(file, bytes) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  const temporary = `${file}.${process.pid}.tmp`;
+  fs.writeFileSync(temporary, bytes, { flag: "wx" });
+  fs.renameSync(temporary, file);
+}
+
 function acquireLock(root) {
   fs.mkdirSync(root, { recursive: true });
   const file = path.join(root, ".orchestration.lock");
@@ -115,6 +143,38 @@ function isSha(value, length) {
 
 function nonemptyStrings(value) {
   return Array.isArray(value) && value.length > 0 && value.every((item) => typeof item === "string" && item.length > 0);
+}
+
+function isSafeRelativePath(value) {
+  return typeof value === "string" &&
+    value.length > 0 &&
+    !value.includes("\\") &&
+    !path.posix.isAbsolute(value) &&
+    !path.win32.isAbsolute(value) &&
+    path.posix.normalize(value) === value &&
+    value.split("/").every((segment) => segment && segment !== "." && segment !== "..");
+}
+
+function isWithin(parent, candidate) {
+  const relative = path.relative(parent, candidate);
+  return relative === "" || (!path.isAbsolute(relative) && relative !== ".." && !relative.startsWith(`..${path.sep}`));
+}
+
+function validateExpectedOutputs(value, label, errors, warnings, requireComplete) {
+  if (!nonemptyStrings(value)) {
+    errors.push(`${label}.expectedOutputs must be nonempty.`);
+    return;
+  }
+  if (new Set(value).size !== value.length) errors.push(`${label}.expectedOutputs contains duplicates.`);
+  for (const category of value) {
+    if (!EXPECTED_OUTPUT_CATEGORIES.includes(category)) errors.push(`${label}.expectedOutputs contains unknown category ${category}.`);
+  }
+  const missing = EXPECTED_OUTPUT_CATEGORIES.filter((category) => !value.includes(category));
+  if (missing.length > 0) {
+    const message = `${label}.expectedOutputs is missing required categories: ${missing.join(", ")}.`;
+    if (requireComplete) errors.push(message);
+    else warnings.push(`Historical terminal contract: ${message}`);
+  }
 }
 
 function normalizeClaim(claim) {
@@ -180,7 +240,31 @@ function validatePin(pin, label, errors) {
   }
 }
 
-function validateJob(job, index, errors) {
+function validateSkillPins(value, label, errors, warnings, requireInternal) {
+  if (!Array.isArray(value) || value.length < 2) {
+    errors.push(`${label}.skillPins must pin both project skills.`);
+    return;
+  }
+  const names = value.map((pin) => pin?.name);
+  if (new Set(names).size !== names.length) errors.push(`${label}.skillPins contains duplicate skill names.`);
+  for (const name of REQUIRED_SKILL_NAMES) if (!names.includes(name)) errors.push(`${label}.skillPins is missing ${name}.`);
+  value.forEach((pin, pinIndex) => {
+    validatePin(pin, `${label}.skillPins[${pinIndex}]`, errors);
+    if (pin?.path !== undefined) {
+      const message = `${label}.skillPins[${pinIndex}].path is forbidden; pins resolve inside the leased worktree.`;
+      if (requireInternal) errors.push(message);
+      else warnings.push(`Historical terminal contract: ${message}`);
+    }
+  });
+}
+
+function validatePolicies(value, label, errors) {
+  if (!isObject(value.retryPolicy) || !Number.isInteger(value.retryPolicy.maxAttempts) || value.retryPolicy.maxAttempts < 1 || !Array.isArray(value.retryPolicy.backoffSeconds) || value.retryPolicy.backoffSeconds.some((entry) => !Number.isFinite(entry) || entry < 0) || typeof value.retryPolicy.resumeRequired !== "boolean") errors.push(`${label}.retryPolicy is invalid.`);
+  if (!isObject(value.resourcePolicy) || !Number.isFinite(value.resourcePolicy.maxArtifactBytes) || value.resourcePolicy.maxArtifactBytes < 0 || !Number.isFinite(value.resourcePolicy.maxWallMinutes) || value.resourcePolicy.maxWallMinutes <= 0 || !Number.isFinite(value.resourcePolicy.maxMemoryMb) || value.resourcePolicy.maxMemoryMb <= 0) errors.push(`${label}.resourcePolicy is invalid.`);
+  if (Number.isFinite(value.resourcePolicy?.maxMemoryMb) && value.resourcePolicy.maxMemoryMb > 2048) errors.push(`${label}.resourcePolicy.maxMemoryMb exceeds the bounded worker limit.`);
+}
+
+function validateJob(job, index, errors, warnings) {
   const label = `jobs[${index}]`;
   if (!isObject(job)) {
     errors.push(`${label} must be an object.`);
@@ -213,12 +297,15 @@ function validateJob(job, index, errors) {
       }
     }
   }
-  if (!Array.isArray(job.skillPins) || job.skillPins.length < 2) errors.push(`${label}.skillPins must pin both project skills.`);
-  else job.skillPins.forEach((pin, pinIndex) => validatePin(pin, `${label}.skillPins[${pinIndex}]`, errors));
-  if (!nonemptyStrings(job.expectedOutputs)) errors.push(`${label}.expectedOutputs must be nonempty.`);
-  if (!isObject(job.retryPolicy) || !Number.isInteger(job.retryPolicy.maxAttempts) || job.retryPolicy.maxAttempts < 1) errors.push(`${label}.retryPolicy is invalid.`);
-  if (!isObject(job.resourcePolicy) || !Number.isFinite(job.resourcePolicy.maxMemoryMb) || job.resourcePolicy.maxMemoryMb <= 0) errors.push(`${label}.resourcePolicy is invalid.`);
-  if (Number.isFinite(job.resourcePolicy?.maxMemoryMb) && job.resourcePolicy.maxMemoryMb > 2048) errors.push(`${label}.resourcePolicy.maxMemoryMb exceeds the bounded worker limit.`);
+  validateSkillPins(
+    job.skillPins,
+    label,
+    errors,
+    warnings,
+    new Set(["planned", "leased"]).has(job.state),
+  );
+  validateExpectedOutputs(job.expectedOutputs, label, errors, warnings, new Set(["planned", "leased"]).has(job.state));
+  validatePolicies(job, label, errors);
   if (!Number.isFinite(Date.parse(job.expiresAt))) errors.push(`${label}.expiresAt must be an ISO date-time.`);
   if (typeof job.recoveryState !== "string") errors.push(`${label}.recoveryState is required.`);
   if (!nonemptyStrings(job.completionCriteria)) errors.push(`${label}.completionCriteria must be nonempty.`);
@@ -227,7 +314,7 @@ function validateJob(job, index, errors) {
   if (!JOB_STATES.has(job.state)) errors.push(`${label}.state is invalid.`);
 }
 
-function validateLease(lease, index, jobsById, errors) {
+function validateLease(lease, index, jobsById, errors, warnings) {
   const label = `leases[${index}]`;
   if (!isObject(lease)) {
     errors.push(`${label} must be an object.`);
@@ -240,7 +327,7 @@ function validateLease(lease, index, jobsById, errors) {
   if (!Number.isFinite(Date.parse(lease.claimedAt))) errors.push(`${label}.claimedAt is invalid.`);
   if (!Number.isFinite(Date.parse(lease.expiresAt))) errors.push(`${label}.expiresAt is invalid.`);
   if (typeof lease.workerTaskId !== "string" || !lease.workerTaskId) errors.push(`${label}.workerTaskId is required.`);
-  if (typeof lease.expectedManifestPath !== "string" || !lease.expectedManifestPath) errors.push(`${label}.expectedManifestPath is required.`);
+  if (!isSafeRelativePath(lease.expectedManifestPath)) errors.push(`${label}.expectedManifestPath must be a normalized relative path.`);
   if (!isSha(lease.baseSha, 40)) errors.push(`${label}.baseSha must be a Git SHA.`);
   if (typeof lease.branch !== "string" || !lease.branch.startsWith("codex/")) errors.push(`${label}.branch must start with codex/.`);
   if (typeof lease.worktree !== "string" || !path.isAbsolute(lease.worktree)) errors.push(`${label}.worktree must be absolute.`);
@@ -249,12 +336,16 @@ function validateLease(lease, index, jobsById, errors) {
   if (!nonemptyStrings(lease.scopeClaims)) errors.push(`${label}.scopeClaims must be nonempty.`);
   if (!nonemptyStrings(lease.permittedPaths)) errors.push(`${label}.permittedPaths must be nonempty.`);
   if (!nonemptyStrings(lease.prohibitedPaths)) errors.push(`${label}.prohibitedPaths must be nonempty.`);
-  if (!Array.isArray(lease.skillPins) || lease.skillPins.length < 2) errors.push(`${label}.skillPins must pin both project skills.`);
-  else lease.skillPins.forEach((pin, pinIndex) => validatePin(pin, `${label}.skillPins[${pinIndex}]`, errors));
-  if (!nonemptyStrings(lease.expectedOutputs)) errors.push(`${label}.expectedOutputs must be nonempty.`);
+  validateSkillPins(
+    lease.skillPins,
+    label,
+    errors,
+    warnings,
+    lease.state === "active",
+  );
+  validateExpectedOutputs(lease.expectedOutputs, label, errors, warnings, lease.state === "active");
   if (!nonemptyStrings(lease.completionCriteria)) errors.push(`${label}.completionCriteria must be nonempty.`);
-  if (!isObject(lease.retryPolicy) || !Number.isInteger(lease.retryPolicy.maxAttempts) || lease.retryPolicy.maxAttempts < 1) errors.push(`${label}.retryPolicy is invalid.`);
-  if (!isObject(lease.resourcePolicy) || !Number.isFinite(lease.resourcePolicy.maxMemoryMb) || lease.resourcePolicy.maxMemoryMb <= 0) errors.push(`${label}.resourcePolicy is invalid.`);
+  validatePolicies(lease, label, errors);
   const job = jobsById.get(lease.jobId);
   if (job && lease.state === "active") {
     for (const field of ["baseSha", "branch", "worktree"]) {
@@ -298,11 +389,11 @@ function validateState(root, nowText) {
   const jobs = Array.isArray(state.jobsDoc.jobs) ? state.jobsDoc.jobs : [];
   const leases = Array.isArray(state.leasesDoc.leases) ? state.leasesDoc.leases : [];
   const queue = Array.isArray(state.queueDoc.items) ? state.queueDoc.items : [];
-  jobs.forEach((job, index) => validateJob(job, index, errors));
+  jobs.forEach((job, index) => validateJob(job, index, errors, warnings));
   const jobIds = jobs.map((job) => job.jobId);
   if (new Set(jobIds).size !== jobIds.length) errors.push("Duplicate job IDs are forbidden.");
   const jobsById = new Map(jobs.map((job) => [job.jobId, job]));
-  leases.forEach((lease, index) => validateLease(lease, index, jobsById, errors));
+  leases.forEach((lease, index) => validateLease(lease, index, jobsById, errors, warnings));
   const leaseIds = leases.map((lease) => lease.leaseId);
   if (new Set(leaseIds).size !== leaseIds.length) errors.push("Duplicate lease IDs are forbidden.");
   const leasesById = new Map(leases.map((lease) => [lease.leaseId, lease]));
@@ -352,6 +443,72 @@ function validateState(root, nowText) {
     else queueIds.add(item.queueId);
     if (!QUEUE_DECISIONS.has(item.decision)) errors.push(`queue[${index}].decision is invalid.`);
     if (!jobsById.has(item.jobId)) errors.push(`queue[${index}].jobId does not exist.`);
+    const strictManifest =
+      typeof item.manifestPath === "string" &&
+      isSafeRelativePath(item.manifestPath) &&
+      item.manifestPath.startsWith("manifests/");
+    if (item.decision === "pending" && !strictManifest) {
+      errors.push(`queue[${index}] pending manifestPath must be a durable manifests/ path.`);
+    } else if (!strictManifest) {
+      warnings.push(`Historical queue item ${item.queueId ?? index} has a non-durable manifest path.`);
+    }
+    if (strictManifest) {
+      const manifestFile = path.resolve(root, item.manifestPath);
+      try {
+        const stats = fs.lstatSync(manifestFile);
+        if (!stats.isFile() || stats.isSymbolicLink() || !isWithin(root, manifestFile)) {
+          throw new Error("manifest is not a contained regular file");
+        }
+        const bytes = fs.readFileSync(manifestFile);
+        const hash = crypto.createHash("sha256").update(bytes).digest("hex");
+        if (item.manifestBytes !== bytes.length || item.manifestHash !== hash) {
+          errors.push(`queue[${index}] durable manifest descriptor does not match its bytes.`);
+        }
+        const manifest = JSON.parse(bytes.toString("utf8"));
+        const lease = leasesById.get(item.leaseId);
+        const job = jobsById.get(item.jobId);
+        if (!lease || lease.jobId !== item.jobId) errors.push(`queue[${index}] lease identity is invalid.`);
+        if (manifest.jobId !== item.jobId || manifest.leaseId !== item.leaseId) errors.push(`queue[${index}] manifest identity is invalid.`);
+        if (manifest.commitSha !== item.workerCommit) errors.push(`queue[${index}] workerCommit differs from the manifest.`);
+        if (!isSha(item.workerBranchHead, 40)) errors.push(`queue[${index}].workerBranchHead is invalid.`);
+        if (item.decision === "pending") {
+          if (lease?.state !== "completed" || job?.state !== "submitted" || manifest.status !== "complete") {
+            errors.push(`queue[${index}] pending lifecycle state is invalid.`);
+          }
+          const resultManifest = lease?.resultManifest;
+          for (const field of ["path", "sha256", "bytes", "status", "workerCommit", "workerBranchHead"]) {
+            if (resultManifest?.[field] !== ({
+              path: item.manifestPath,
+              sha256: item.manifestHash,
+              bytes: item.manifestBytes,
+              status: manifest.status,
+              workerCommit: item.workerCommit,
+              workerBranchHead: item.workerBranchHead,
+            })[field]) errors.push(`queue[${index}] differs from lease.resultManifest.${field}.`);
+          }
+          try {
+            const worktree = fs.realpathSync(lease.worktree);
+            const head = execFileSync("git", ["-C", worktree, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+            if (head !== item.workerBranchHead) throw new Error("worker HEAD differs from the queue receipt");
+            if (execFileSync("git", ["-C", worktree, "status", "--porcelain=v1", "--untracked-files=all"], { encoding: "utf8" }).trim()) {
+              throw new Error("worker worktree is dirty");
+            }
+            execFileSync("git", ["-C", worktree, "merge-base", "--is-ancestor", item.workerCommit, item.workerBranchHead]);
+            const committedManifest = execFileSync("git", ["-C", worktree, "show", `${item.workerBranchHead}:${lease.expectedManifestPath}`]);
+            if (!committedManifest.equals(bytes)) throw new Error("committed manifest bytes differ from the durable receipt");
+          } catch (error) {
+            errors.push(`queue[${index}] worker branch receipt is invalid: ${error instanceof Error ? error.message : String(error)}`);
+          }
+        }
+      } catch (error) {
+        errors.push(`queue[${index}] durable manifest is invalid: ${error instanceof Error ? error.message : String(error)}`);
+      }
+    }
+  }
+  for (const lease of leases) {
+    if (lease.state !== "active" && !lease.resultManifest) {
+      warnings.push(`Historical terminal lease ${lease.leaseId} has no durable result manifest.`);
+    }
   }
   for (const job of jobs) {
     for (const dependency of job.dependencies ?? []) if (!jobsById.has(dependency)) errors.push(`Job ${job.jobId} depends on missing job ${dependency}.`);
@@ -397,6 +554,27 @@ function hashTree(root) {
     hash.update("\0");
   }
   return { contentHash: hash.digest("hex"), fileCount: files.length };
+}
+
+function verifyPinnedSkillTree(root, skillName, expectedHash) {
+  const skillRoot = path.resolve(root, ".agents", "skills", skillName);
+  if (!isWithin(path.resolve(root), skillRoot) || !fs.existsSync(skillRoot)) {
+    throw new Error(`Pinned skill ${skillName} is missing from ${root}.`);
+  }
+  function rejectLinks(directory) {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const absolute = path.join(directory, entry.name);
+      if (entry.isSymbolicLink()) throw new Error(`Pinned skill ${skillName} contains a symlink.`);
+      if (entry.isDirectory()) rejectLinks(absolute);
+      else if (!entry.isFile()) throw new Error(`Pinned skill ${skillName} contains an unsupported entry.`);
+    }
+  }
+  rejectLinks(skillRoot);
+  const actual = hashTree(skillRoot).contentHash;
+  if (actual !== expectedHash) {
+    throw new Error(`Pinned skill hash mismatch for ${skillName}: ${actual}.`);
+  }
+  return skillRoot;
 }
 
 const args = parseArgs(process.argv.slice(2));
@@ -451,42 +629,143 @@ try {
         const lease = state.leasesDoc.leases.find((item) => item.leaseId === args.lease);
         if (!lease || lease.state !== "active") throw new Error("Only an active lease can transition.");
         let manifest = null;
-        if (args.state === "completed") {
-          if (!args.manifest) throw new Error("A completed lease requires --manifest.");
-          const manifestPath = path.resolve(String(args.manifest));
-          manifest = readJson(manifestPath);
+        let validatedManifestPath = null;
+        let validatedManifestBytes = null;
+        let validatedManifestHash = null;
+        let workerBranchHead = null;
+        if (args.state === "completed" && !args.manifest) throw new Error("A completed lease requires --manifest.");
+        if (args.manifest) {
+          const worktree = fs.realpathSync(lease.worktree);
+          const expectedManifestPath = path.resolve(worktree, lease.expectedManifestPath);
+          if (!isWithin(worktree, expectedManifestPath)) throw new Error("Lease expected manifest path escapes the worker worktree.");
+          const expectedManifestStats = fs.lstatSync(expectedManifestPath);
+          if (!expectedManifestStats.isFile() || expectedManifestStats.isSymbolicLink()) throw new Error("Worker manifest must be a regular non-symlink file.");
+          const suppliedManifestPath = fs.realpathSync(path.resolve(String(args.manifest)));
+          if (suppliedManifestPath !== fs.realpathSync(expectedManifestPath)) throw new Error("Supplied manifest path differs from lease.expectedManifestPath.");
+          validatedManifestPath = suppliedManifestPath;
+          validatedManifestBytes = fs.readFileSync(validatedManifestPath);
+          validatedManifestHash = crypto.createHash("sha256").update(validatedManifestBytes).digest("hex");
+          manifest = JSON.parse(validatedManifestBytes.toString("utf8"));
           if (manifest.jobId !== lease.jobId || manifest.leaseId !== lease.leaseId) throw new Error("Manifest does not match the lease.");
+          const allowedManifestStatuses = args.state === "completed"
+            ? new Set(["complete"])
+            : args.state === "failed"
+              ? new Set(["partial", "failed"])
+              : new Set(["partial", "blocked", "failed"]);
+          if (!allowedManifestStatuses.has(manifest.status)) throw new Error(`Manifest status ${manifest.status} is invalid for transition ${args.state}.`);
+          const pinsByName = new Map((lease.skillPins ?? []).map((pin) => [pin.name, pin]));
+          const orchestratorPin = pinsByName.get("isitusa-national-orchestrator");
+          const workerPin = pinsByName.get("isitusa-evidence-worker");
+          if (!orchestratorPin || !workerPin) throw new Error("Lease does not pin both project skills.");
+          verifyPinnedSkillTree(PROJECT_ROOT, "isitusa-national-orchestrator", orchestratorPin.contentHash);
+          const workerSkillRoot = verifyPinnedSkillTree(worktree, "isitusa-evidence-worker", workerPin.contentHash);
+          const workerValidator = path.join(workerSkillRoot, "scripts", "validate-worker.mjs");
+          const workerValidatorStats = fs.lstatSync(workerValidator);
+          if (!workerValidatorStats.isFile() || workerValidatorStats.isSymbolicLink()) throw new Error("Pinned worker validator is not a regular file.");
+          const workerHeadBefore = execFileSync("git", ["-C", worktree, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+          const validationArgs = [
+            workerValidator,
+            "manifest",
+            "--lease",
+            state.files.leases,
+            "--lease-id",
+            lease.leaseId,
+            "--manifest",
+            validatedManifestPath,
+            "--repo",
+            worktree,
+            "--now",
+            now,
+          ];
+          if (process.env.ISITUSA_SKILL_TEST_VALIDATION_ROOT) {
+            validationArgs.push("--validation-root", process.env.ISITUSA_SKILL_TEST_VALIDATION_ROOT);
+          }
+          const validation = spawnSync(
+            process.execPath,
+            validationArgs,
+            { cwd: worktree, encoding: "utf8", maxBuffer: 20 * 1024 * 1024 },
+          );
+          let validationPayload = null;
+          try {
+            validationPayload = JSON.parse(validation.stdout || "null");
+          } catch {
+            throw new Error(`Worker validator emitted invalid JSON: ${validation.stdout || validation.stderr}`);
+          }
+          if (validation.status !== 0 || validationPayload?.ok !== true) {
+            throw new Error(`Worker manifest validation failed: ${validationPayload?.error ?? (validationPayload?.errors ?? []).join(" | ") ?? validation.stderr}`);
+          }
+          if (validationPayload.jobId !== lease.jobId || validationPayload.leaseId !== lease.leaseId) throw new Error("Worker validator returned the wrong lease identity.");
+          const workerHeadAfter = execFileSync("git", ["-C", worktree, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+          if (workerHeadAfter !== workerHeadBefore) throw new Error("Worker HEAD changed during manifest validation.");
+          if (!fs.readFileSync(validatedManifestPath).equals(validatedManifestBytes)) throw new Error("Worker manifest bytes changed during validation.");
+          if (execFileSync("git", ["-C", worktree, "status", "--porcelain=v1", "--untracked-files=all"], { encoding: "utf8" }).trim()) {
+            throw new Error("Worker worktree is dirty after manifest validation.");
+          }
+          const committedManifest = execFileSync("git", ["-C", worktree, "show", `${workerHeadAfter}:${lease.expectedManifestPath}`]);
+          if (!committedManifest.equals(validatedManifestBytes)) throw new Error("Worker manifest is not committed exactly at worker HEAD.");
+          workerBranchHead = workerHeadAfter;
         }
-        const leaseUpdate = { ...lease, state: args.state, transitionedAt: now };
+        const durableRelativePath = manifest ? `manifests/${lease.jobId}__${lease.leaseId}.json` : null;
+        const durableManifestPath = durableRelativePath ? path.join(root, durableRelativePath) : null;
+        const resultManifest = manifest ? {
+          path: durableRelativePath,
+          sha256: validatedManifestHash,
+          bytes: validatedManifestBytes.length,
+          status: manifest.status,
+          workerCommit: manifest.commitSha,
+          workerBranchHead,
+        } : null;
+        const leaseUpdate = {
+          ...lease,
+          state: args.state,
+          transitionedAt: now,
+          ...(resultManifest ? { resultManifest } : {}),
+        };
         const jobState = args.state === "completed" ? "submitted" : args.state === "cancelled" ? "cancelled" : args.state === "failed" ? "failed" : "blocked";
         const nextLeases = { ...state.leasesDoc, leases: state.leasesDoc.leases.map((item) => item.leaseId === lease.leaseId ? leaseUpdate : item) };
         const nextJobs = { ...state.jobsDoc, jobs: state.jobsDoc.jobs.map((item) => item.jobId === lease.jobId ? { ...item, state: jobState } : item) };
         let nextQueue = state.queueDoc;
-        if (manifest) {
-          const manifestBytes = fs.readFileSync(path.resolve(String(args.manifest)));
-          const manifestHash = crypto.createHash("sha256").update(manifestBytes).digest("hex");
+        if (manifest && args.state === "completed") {
           nextQueue = { ...state.queueDoc, items: [...state.queueDoc.items, {
             queueId: `queue-${lease.leaseId}`,
             jobId: lease.jobId,
             leaseId: lease.leaseId,
             decision: "pending",
             submittedAt: now,
-            manifestPath: path.relative(root, path.resolve(String(args.manifest))).split(path.sep).join("/"),
-            manifestHash,
+            manifestPath: durableRelativePath,
+            manifestHash: validatedManifestHash,
+            manifestBytes: validatedManifestBytes.length,
             workerCommit: manifest.commitSha,
+            workerBranchHead,
           }] };
         }
         let post;
+        const originalStateBytes = {
+          leases: fs.readFileSync(state.files.leases),
+          jobs: fs.readFileSync(state.files.jobs),
+          queue: fs.readFileSync(state.files.queue),
+        };
+        let createdDurableManifest = false;
         try {
+          if (durableManifestPath) {
+            if (fs.existsSync(durableManifestPath)) {
+              const existing = fs.readFileSync(durableManifestPath);
+              if (!existing.equals(validatedManifestBytes)) throw new Error("Durable manifest path already contains different bytes.");
+            } else {
+              atomicWriteBytes(durableManifestPath, validatedManifestBytes);
+              createdDurableManifest = true;
+            }
+          }
           atomicWrite(state.files.leases, nextLeases);
           atomicWrite(state.files.jobs, nextJobs);
           atomicWrite(state.files.queue, nextQueue);
           post = validateState(root, now).result;
           if (!post.valid) throw new Error(`Transition produced invalid state: ${post.errors.join(" | ")}`);
         } catch (error) {
-          atomicWrite(state.files.leases, state.leasesDoc);
-          atomicWrite(state.files.jobs, state.jobsDoc);
-          atomicWrite(state.files.queue, state.queueDoc);
+          atomicWriteBytes(state.files.leases, originalStateBytes.leases);
+          atomicWriteBytes(state.files.jobs, originalStateBytes.jobs);
+          atomicWriteBytes(state.files.queue, originalStateBytes.queue);
+          if (createdDurableManifest && durableManifestPath && fs.existsSync(durableManifestPath)) fs.unlinkSync(durableManifestPath);
           const rollback = validateState(root, now).result;
           if (!rollback.valid) throw new Error(`${error instanceof Error ? error.message : String(error)} | Transition rollback failed: ${rollback.errors.join(" | ")}`);
           throw error;

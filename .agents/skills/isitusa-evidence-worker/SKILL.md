@@ -21,6 +21,8 @@ Never:
 
 Read [references/evidence-contract.md](references/evidence-contract.md) and [references/event-examples.md](references/event-examples.md) before preflight or evidence work.
 
+The frozen evidence-run completion profile covers exactly one registered source, one state, and one or more exact county-species pairs. It is suitable for bounded state-source, evidence-review, and state-partition jobs that emit a complete immutable run. National acquisition, protocol-only, and bounded-infrastructure output shapes require a separately evaluated completion profile and must remain MAIN-only or blocked until one exists.
+
 ## 1. Preflight the lease
 
 Run the validator before editing:
@@ -60,6 +62,8 @@ Write only permitted worker artifacts. Use bounded pagination, request intervals
 
 Preserve provider bytes exactly. When a retained response can contain provider-controlled line endings or trailing whitespace, use a repository-declared binary artifact pattern such as `*.headers.txt`, `*.raw`, or `*.bin`. Never normalize or rewrite source bytes merely to satisfy a Git whitespace check.
 
+For every request, record one request-group ID, response status, retrieval time, declared and received counts, and explicit pagination mode, page index, offset or cursor lineage, and terminal-page state. Complete pagination requires contiguous pages, reconciled totals when the provider declares one, one terminal final page, and only successful upstream statuses.
+
 Never overwrite a completed immutable run. Never replace a known-good artifact with a failed or malformed response. On interruption, leave a resumable checkpoint and mark unfinished scope incomplete.
 
 ## 4. Emit honest evidence events
@@ -80,13 +84,19 @@ Preserve positive and non-detection evidence together when both exist. Positive 
 
 Apply the registered publication gate. Emit review events; never mutate an assertion into a reviewed state. Keep assertions, reviews, rejections, outcomes, receipts, and artifacts internally consistent.
 
+Keep the immutable run receipt on the stable closed `run-receipt.schema.json` contract. Put lease identity, retry history, request purpose, attempt telemetry, and performance data in the worker manifest or `source-verification.json`. Never add worker-only fields to the receipt.
+
+Bind agent actor IDs to the lease worker task ID and adapter actor IDs to `<adapter-id>@<adapter-version>`. Workers cannot claim human actors or `human-approved` review level. An `evidence-found` outcome must report exactly the final publication-eligible assertions for its pair. A `no-qualifying-evidence` outcome must have none.
+
 Report exact baseline, final, and net counts for every metric touched. Net must equal final minus baseline. Distinguish provider candidates, assertion events, projected evidence, distinct outcome pairs, final determinations, research statuses, and protocol cells.
 
 Do not call source-screen coverage or not-detected records determination coverage.
 
 ## 6. Validate, commit, and return
 
-Create the completion manifest at the lease path. It must include source parameters, artifacts, assertions, reviews, rejections, outcomes, blocked items, exact counts, verification commands and results, retry and resume state, content commit SHA, remaining work, performance measures, and pinned skill values.
+Create the completion manifest at the exact lease path. It must include source parameters, artifacts, assertions, reviews, rejections, outcomes, receipt and source-verification descriptors, blocked items, exact counts, verification commands and results, retry and resume state, content commit SHA, remaining work, performance measures, and pinned skill values.
+
+The receipt must declare every event file and `source-verification.json` as outputs. The manifest must report every changed worker file exactly once. Descriptor paths, bytes, and hashes must match the retained files and the content commit.
 
 Run before committing:
 
@@ -97,12 +107,15 @@ git diff --check
 
 Use the two-commit manifest sequence so the manifest does not claim its own impossible self-referential commit hash:
 
-1. Validate the dirty draft with `commitSha` set to the lease base SHA.
-2. Commit the evidence artifacts, events, outcomes, and receipt without the final manifest.
+1. Create the artifacts, events, outcomes, source verification, canonical receipt, and a local draft manifest.
+2. Commit the evidence outputs without the manifest.
 3. Set `manifest.commitSha` to that non-base content commit SHA and record the passing commands.
-4. Commit the final manifest as a second permitted commit.
-5. Run `git diff --check <lease-base-sha>...HEAD` and record that exact base-to-head command in `verificationCommands`.
-6. Rerun manifest validation. The validator independently runs both the worktree and base-to-head whitespace checks. The reported content commit must be an ancestor of branch HEAD.
+4. Run manifest validation against the dirty final manifest. The validator invokes the project's canonical immutable-run validator and verifies every reported file at the content commit.
+5. Commit the final manifest as a second permitted commit.
+6. Run `git diff --check <lease-base-sha>...HEAD` and record that exact base-to-head command in `verificationCommands`.
+7. Rerun manifest validation. The validator independently runs the worktree and base-to-head whitespace checks. The reported content commit must be an ancestor of branch HEAD.
+
+MAIN completion additionally requires the worktree to be clean, the final manifest bytes to exist exactly at branch HEAD, and the executed validator tree to match the lease pin. MAIN archives those exact manifest bytes under durable orchestration state. A partial or failed manifest may be archived for recovery but is never queued for integration.
 
 Commit only permitted files to the assigned branch. Do not push unless the lease explicitly permits pushing that worker branch.
 

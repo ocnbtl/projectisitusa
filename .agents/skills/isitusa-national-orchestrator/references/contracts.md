@@ -35,7 +35,7 @@ Each job object requires:
   "permittedPaths": ["src/data/research/worker-results/source-gbif-national-001/**"],
   "prohibitedPaths": [".agents/skills/**", "public/generated/**", "src/data/generated/**"],
   "skillPins": [{"name": "isitusa-evidence-worker", "gitCommit": "40 lowercase hex characters", "contentHash": "64 lowercase hex characters"}],
-  "expectedOutputs": ["manifest", "artifacts", "assertions", "reviews", "rejections", "outcomes", "receipt"],
+  "expectedOutputs": ["manifest", "artifacts", "assertions", "reviews", "rejections", "outcomes", "receipt", "source-verification"],
   "retryPolicy": {"maxAttempts": 3, "backoffSeconds": [5, 30, 120], "resumeRequired": true},
   "resourcePolicy": {"maxArtifactBytes": 50000000, "maxWallMinutes": 45, "maxMemoryMb": 1536},
   "expiresAt": "ISO date-time",
@@ -66,6 +66,14 @@ Do not mutate a completed attempt into a retry. Append a new attempt.
 The job registry describes the currently schedulable attempt and may advance to a new base, branch, worktree, or pinned skill after an earlier lease closes. Every historical lease retains its own complete immutable snapshot. Only an active lease must equal the job's current execution fields.
 
 Claim and transition commands are transactional across their repository state files. If the proposed state fails post-write validation, restore the exact pre-command documents before returning failure.
+
+Every new job and active lease uses the complete fixed output vocabulary shown above. Historical terminal leases retain their original snapshots and may produce validation warnings when they predate `source-verification`, but they cannot be reactivated under the weaker contract.
+
+`expectedManifestPath` is a normalized worktree-relative path. A completed transition derives the worktree from the lease, requires the supplied manifest to equal that path, independently verifies the pinned skill trees, and executes the worktree-pinned evidence-worker validator while the lease is still active. It requires a clean worktree, a complete manifest committed exactly at worker HEAD, and unchanged manifest bytes and HEAD. Only then may it archive the exact bytes, close the lease, submit the job, and append a pending queue item.
+
+The durable result descriptor records manifest path, SHA-256, byte count, manifest status, content commit, and worker branch HEAD. The queue path stays under `manifests/`. Pending queue validation rechecks the durable bytes, lifecycle identities, clean worker worktree, branch HEAD, commit ancestry, and committed manifest bytes. Historical nonpending queue items can retain older external paths only as warnings and can never become pending again.
+
+A noncompleted transition may include a canonically valid partial, blocked, or failed manifest. Archive it with the same durable descriptor on the terminal lease, but do not append it to the integration queue.
 
 ## Scope collision rules
 

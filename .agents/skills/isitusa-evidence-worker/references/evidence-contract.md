@@ -82,8 +82,14 @@ The manifest requires:
   "reviews": [{"path": "relative/reviews.ndjson", "count": 1}],
   "rejections": [{"path": "relative/rejections.ndjson", "count": 0}],
   "outcomes": [{"path": "relative/outcomes.ndjson", "count": 1}],
+  "receipt": {"path": "relative/receipt.json", "sha256": "64 lowercase hex characters", "bytes": 1},
+  "sourceVerification": {"path": "relative/source-verification.json", "sha256": "64 lowercase hex characters", "bytes": 1},
   "blockedItems": [],
-  "counts": {"baseline": {"evidence": 0}, "final": {"evidence": 1}, "net": {"evidence": 1}},
+  "counts": {
+    "baseline": {"retainedArtifacts": 0, "retainedArtifactBytes": 0, "sourceRequests": 0, "providerCandidates": 0, "assertionEvents": 0, "publicationEligibleAssertions": 0, "reviewEvents": 0, "rejectionRecords": 0, "duplicateRecords": 0, "distinctOutcomePairs": 0, "completeOutcomePairs": 0, "evidenceFoundOutcomes": 0, "noQualifyingEvidenceOutcomes": 0, "errors": 0},
+    "final": {"retainedArtifacts": 1, "retainedArtifactBytes": 1, "sourceRequests": 1, "providerCandidates": 1, "assertionEvents": 1, "publicationEligibleAssertions": 1, "reviewEvents": 1, "rejectionRecords": 0, "duplicateRecords": 0, "distinctOutcomePairs": 1, "completeOutcomePairs": 1, "evidenceFoundOutcomes": 1, "noQualifyingEvidenceOutcomes": 0, "errors": 0},
+    "net": {"retainedArtifacts": 1, "retainedArtifactBytes": 1, "sourceRequests": 1, "providerCandidates": 1, "assertionEvents": 1, "publicationEligibleAssertions": 1, "reviewEvents": 1, "rejectionRecords": 0, "duplicateRecords": 0, "distinctOutcomePairs": 1, "completeOutcomePairs": 1, "evidenceFoundOutcomes": 1, "noQualifyingEvidenceOutcomes": 0, "errors": 0}
+  },
   "verificationCommands": [{"command": "git diff --check <lease-base-sha>...HEAD", "exitCode": 0, "result": "pass"}],
   "retryResume": {"attempt": 1, "retryable": false, "resumeToken": null, "remainingRequests": []},
   "remainingWork": [],
@@ -99,6 +105,21 @@ A complete manifest must record the exact `git diff --check <lease-base-sha>...H
 
 `commitSha` is the non-base commit that contains the evidence outputs. Commit the finalized manifest in a second commit and return that branch HEAD separately. The content commit must be an ancestor of branch HEAD.
 
+## Receipt and source-verification ownership
+
+Use the closed project `run-receipt.schema.json` without worker extensions. The receipt carries the common immutable run identity, registered adapter provenance, parameters, requested scope, upstream request summaries, retained artifacts, declared outputs, common counts, errors, caveats, and rerun command.
+
+Put worker-only metadata elsewhere:
+
+- lease ID, attempt, retry and resume state, preflight history, exact operational counts, wall time, memory, and manual interventions belong in the manifest
+- request purpose, request attempts, pagination completeness, source authority, terms, freshness, stable identity fields, geography policy, taxon policy, negative-evidence limits, and retained-evidence lineage belong in `source-verification.json`
+
+`source-verification.json` must validate against `worker-source-verification.schema.json`. Its source, taxa, requests, retained-evidence descriptors, acquisition completeness, and negative-evidence claims must agree with the receipt and registered source. A complete receipt requires complete snapshot and pagination attestations.
+
+It also carries the exact run ID, state code, ordered pair keys, and receipt parameter hash. Every request records `requestGroupId`, status, retrieval time, declared and received counts, plus a closed pagination object. Page indexes start at zero and remain contiguous. Offset and cursor chains cannot skip. A complete group has one terminal final page, and declared totals must equal received totals when a total is available.
+
+The receipt must declare exactly one assertions, reviews, rejections, outcomes, and source-verification output for this worker contract. The manifest receipt and source-verification descriptors must match exact bytes and hashes. Extra, missing, duplicate, unchanged-but-reported, or changed-but-unreported worker files are validation failures.
+
 ## Cross-file identity rules
 
 - `assertion.eventId` is the assertion primary key.
@@ -106,7 +127,11 @@ A complete manifest must record the exact `git diff --check <lease-base-sha>...H
 - `outcome.assertion_event_ids` contains those same assertion IDs.
 - `rejection.rejection_id` is the rejection primary key.
 - `outcome.rejection_ids` contains those same rejection IDs.
+- receipt, source verification, assertions, reviews, rejections, and outcomes use one run, source, state, taxon, county-equivalent, and requested-pair identity.
+- provider county and state text must resolve through the explicit registry to the declared county FIPS and state. Provider and target taxon names must satisfy the registered exact-match policy and catalog identity.
+- agent actors equal the lease worker task ID, adapter actors equal `<adapter-id>@<adapter-version>`, and workers never claim human review authority.
 - A positive completed screen uses `status: "evidence-found"`, `scope_complete: true`, at least one assertion ID, and at least one real query URL.
+- the assertion IDs on `evidence-found` are exactly the final publication-eligible assertions for that pair after review resolution.
 - A completed applicable screen with no qualifying evidence uses `status: "no-qualifying-evidence"`, `scope_complete: true`, no assertion IDs, and at least one real query URL.
 - Failed, partial, ambiguous, interrupted, or unavailable work uses `needs-followup` or `blocked` with `scope_complete: false`.
 

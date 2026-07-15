@@ -139,11 +139,15 @@ const pendingReviewReference = pendingReceipt.outputs.find((reference) =>
 assert(pendingReviewReference, "The pending-review output reference is missing.");
 pendingReviewReference.bytes = 1;
 pendingReviewReference.sha256 = sha256("\n");
-validate(
-  { ...baseResult, reviews: [] },
-  source,
-  pendingReceipt,
-  pendingOutputContents,
+expectFailure(
+  () =>
+    validate(
+      { ...baseResult, reviews: [] },
+      source,
+      pendingReceipt,
+      pendingOutputContents,
+    ),
+  "Unreviewed evidence-found outcome",
 );
 
 console.log(
@@ -156,7 +160,7 @@ console.log(
       stateScopeMismatchRejected: true,
       belowGateReviewRejected: true,
       parameterHashMismatchRejected: true,
-      unreviewedAssertionsPreserved: true,
+      unreviewedEvidenceFoundRejected: true,
     },
     null,
     2,

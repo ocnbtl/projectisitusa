@@ -49,6 +49,8 @@ Use `scopeClaims` as slash-delimited paths with `*` only as a whole segment. Two
 
 Keep full compilers, public generation, builds, browser suites, and large transforms centralized and sequential. Use only bounded low-memory workers.
 
+The evaluated evidence-run worker profile accepts one source, one state, and exact county-species pairs. Dispatch only state-source, evidence-review, or state-partition jobs that fit that profile. Keep national acquisition, protocol-only, and bounded-infrastructure execution centralized until their distinct output contracts pass their own evaluation.
+
 ## 3. Freeze and pin skills
 
 Treat changed skill contents as candidates until static validation, every bundled script, the complete adversarial suite, blind forward tests, and a bounded real pilot pass.
@@ -86,8 +88,8 @@ Never trust a worker completion claim without independent checks.
 
 For each returned commit:
 
-1. Validate the lease and worker manifest.
-2. Verify branch, base SHA, pinned hashes, commit SHA, exact changed paths, and no prohibited path.
+1. Validate the lease and worker manifest. A completed transition invokes the same canonical worker validator before any job, lease, or queue mutation.
+2. Verify branch, base SHA, pinned hashes, content commit, branch-head commit, exact changed paths, and no prohibited path. Execute the validator only from the independently hash-checked worker skill tree.
 3. Inspect assertions, reviews, rejections, outcomes, receipts, raw artifacts, source parameters, hashes, retries, and resume state.
 4. Recheck evidence semantics. Source silence, an empty result, failure, rejection, missing geography, or incomplete coverage cannot create absence or non-detection.
 5. Run worker verification commands and the relevant MAIN integration checks.
@@ -95,6 +97,10 @@ For each returned commit:
 7. Record queue decision, merge conflicts, manual interventions, wall time, memory pressure, and valid throughput.
 
 MAIN alone regenerates shared research, compatibility, presence, explorer, county, dashboard, and public artifacts after validated integration. MAIN alone runs release gates, commits, pushes, and verifies production.
+
+Treat a pending integration-queue item as a validated submission, not as acceptance. MAIN still performs an independent diff, evidence, integrity, and merge review.
+
+The transition gate requires a clean worker worktree and exact committed manifest bytes at worker HEAD. It copies those exact bytes to `ops/national-research/manifests/`, records their hash, byte count, content commit, and branch head on the lease and queue item, and rejects later tampering. Valid partial results can be archived durably for retry but are not queued.
 
 ## 6. Recover safely
 
