@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667",
+  "status": "complete",
+  "started_at": "2026-07-15T16:12:00.000Z",
+  "finished_at": "2026-07-15T16:12:11.665Z",
+  "actor_type": "adapter",
+  "actor_id": "idigbio-preserved-specimens@1.1.0",
+  "source_id": "idigbio-preserved-specimens",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "idigbio-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "bc7e7e5d54ec8344ef2786f6ad92a31811906b84346a7a4543df2349e9710b80",
+  "code_commit": "6838225660bf48f041564f1ef04955ef0098b12b",
+  "parameter_hash": "4c35b02d766742b40bfd130225e4252a97c43ef379034ca4c3d025374b58cf6f",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "01081:vincetoxicum-nigrum"
+    ],
+    "basisOfRecord": "preservedspecimen",
+    "country": "united states",
+    "stateProvince": "alabama",
+    "pageLimit": 300,
+    "maxPagesPerSpecies": 1000,
+    "sortField": "uuid",
+    "sortOrder": "asc"
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01081"
+    ],
+    "species_ids": [
+      "vincetoxicum-nigrum"
+    ],
+    "pair_keys": [
+      "01081:vincetoxicum-nigrum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://search.idigbio.org/v2/search/records/?rq=%7B%22basisofrecord%22%3A%22preservedspecimen%22%2C%22country%22%3A%22united+states%22%2C%22scientificname%22%3A%22vincetoxicum+nigrum%22%2C%22stateprovince%22%3A%22alabama%22%7D&sort=%5B%7B%22uuid%22%3A%22asc%22%7D%5D&fields=%5B%22uuid%22%2C%22scientificname%22%2C%22canonicalname%22%2C%22taxonid%22%2C%22taxonrank%22%2C%22taxonomicstatus%22%2C%22basisofrecord%22%2C%22country%22%2C%22countrycode%22%2C%22stateprovince%22%2C%22county%22%2C%22geopoint%22%2C%22locality%22%2C%22datecollected%22%2C%22eventdate%22%2C%22institutioncode%22%2C%22collectioncode%22%2C%22catalognumber%22%2C%22recordset%22%2C%22occurrenceid%22%2C%22flags%22%2C%22data.dwc%3AscientificName%22%2C%22data.dwc%3AbasisOfRecord%22%2C%22data.dwc%3Acountry%22%2C%22data.dwc%3AstateProvince%22%2C%22data.dwc%3Acounty%22%2C%22data.dwc%3AeventDate%22%2C%22data.dwc%3AverbatimEventDate%22%2C%22data.dwc%3Alocality%22%2C%22data.dwc%3AverbatimLocality%22%2C%22data.dwc%3Ahabitat%22%2C%22data.dwc%3AoccurrenceRemarks%22%2C%22data.dwc%3AestablishmentMeans%22%2C%22data.dwc%3AdegreeOfEstablishment%22%2C%22data.dwc%3Apreparations%22%2C%22data.dwc%3AidentificationQualifier%22%2C%22data.dwc%3AoccurrenceStatus%22%2C%22data.dcterms%3Alicense%22%2C%22data.dcterms%3ArightsHolder%22%5D&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-15T16:12:11.658Z",
+      "record_count": 1
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667/artifacts/idigbio-records-vincetoxicum-nigrum-000000.json",
+      "sha256": "75cad0d44418a64cc633dacedb133a303560d8487c34bb8b8e75b638bdd3f3c5",
+      "bytes": 2993,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667/assertions.ndjson",
+      "sha256": "5044ad6d24996d7d3c653909d05c1f0c613253da639434398e763bf7cd4a1f2e",
+      "bytes": 2369,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667/reviews.ndjson",
+      "sha256": "a4417542fbace4879ff3b547e1270c7886a342468d9362aaa2aa0cbb28308464",
+      "bytes": 1021,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667/outcomes.ndjson",
+      "sha256": "d912600f69a48dc289b8e519119ce2faec923aaab5be52ca86f7822075a226a0",
+      "bytes": 2049,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Historical preserved specimen evidence from the iDigBio search index, officially frozen as of 2026-05-08. Aggregated records may overlap GBIF and collection portals, and missing records never support absence or non-detection."
+  ],
+  "source_warnings": [
+    "The iDigBio search index is a frozen historical dataset and no longer receives source updates.",
+    "iDigBio reported source snapshot 2025-11-25T19:38:59.779Z for vincetoxicum-nigrum."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source idigbio-preserved-specimens --state AL --candidate-file src/data/research/migration-candidates.json --output-root src/data/research/runs --pairs 01081:vincetoxicum-nigrum"
+}

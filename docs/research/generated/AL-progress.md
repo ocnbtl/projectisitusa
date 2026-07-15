@@ -19,10 +19,10 @@ Generated: `2026-07-15T00:00:00.000Z`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.00%`
 - Current protocol completion: `0.00%`
-- Evidence records: `30639`
-- Research runs: `30`
+- Evidence records: `30640`
+- Research runs: `31`
 - Rejection records: `1440`
-- Deferred source assertions remaining: `1`
+- Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
 
@@ -84,7 +84,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | GBIF coordinate-resolved preserved specimen records | operational | 2026-07-06T22:47:17.903Z | 904 | 68 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-06-26T11:22:25.724Z | 308 | 61 |
 | GBIF eBird Observation Dataset | operational | 2026-06-28T05:33:30.608Z | 292 | 10 |
-| iDigBio preserved specimen records | operational | 2026-07-15T16:08:02.041Z | 5276 | 643 |
+| iDigBio preserved specimen records | operational | 2026-07-15T16:12:11.665Z | 5277 | 643 |
 | iNaturalist Research Grade observations | operational | 2026-07-06T21:56:10.726Z | 8614 | 688 |
 | Water Quality Portal biological results | operational | 2026-06-15T09:51:26.340Z | 7 | 4 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-06-16T02:27:51.130Z | 37 | 8 |
