@@ -1,11 +1,13 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-07-16",
   "protocols": [
     {
       "id": "alabama-explicit-migration-v2",
       "label": "Alabama explicit source-species protocol migration",
-      "stateCodes": ["AL"],
+      "stateCodes": [
+        "AL"
+      ],
       "status": "legacy-migration",
       "sourceUniverse": [
         "alabama-plant-atlas",
@@ -36,7 +38,12 @@
       "rules": [
         {
           "ruleId": "alabama-plants-v2",
-          "speciesSelector": { "kind": "category", "values": ["plants"] },
+          "speciesSelector": {
+            "kind": "category",
+            "values": [
+              "plants"
+            ]
+          },
           "applicableSourceIds": [
             "alabama-plant-atlas",
             "eddmaps",
@@ -55,7 +62,12 @@
         },
         {
           "ruleId": "alabama-insects-v2",
-          "speciesSelector": { "kind": "category", "values": ["insects"] },
+          "speciesSelector": {
+            "kind": "category",
+            "values": [
+              "insects"
+            ]
+          },
           "applicableSourceIds": [
             "aphis-federal-quarantine",
             "eddmaps",
@@ -74,7 +86,12 @@
         },
         {
           "ruleId": "alabama-disease-v2",
-          "speciesSelector": { "kind": "category", "values": ["fungi-diseases"] },
+          "speciesSelector": {
+            "kind": "category",
+            "values": [
+              "fungi-diseases"
+            ]
+          },
           "applicableSourceIds": [
             "aphis-federal-quarantine",
             "eddmaps",
@@ -92,7 +109,12 @@
         },
         {
           "ruleId": "alabama-wildlife-v2",
-          "speciesSelector": { "kind": "category", "values": ["wildlife"] },
+          "speciesSelector": {
+            "kind": "category",
+            "values": [
+              "wildlife"
+            ]
+          },
           "applicableSourceIds": [
             "eddmaps",
             "gbif-preserved-specimens",
@@ -114,24 +136,42 @@
     {
       "id": "national-pilot-multisource-v1",
       "label": "Alaska, Arizona, and Arkansas bounded national source pilot",
-      "stateCodes": ["AK", "AZ", "AR"],
+      "stateCodes": [
+        "AK",
+        "AZ",
+        "AR"
+      ],
       "status": "active",
-      "sourceUniverse": ["gbif-preserved-specimens", "usgs-nas"],
-      "requiredCurrentSourceIds": ["gbif-preserved-specimens", "usgs-nas"],
+      "sourceUniverse": [
+        "gbif-preserved-specimens",
+        "usgs-nas"
+      ],
+      "requiredCurrentSourceIds": [
+        "gbif-preserved-specimens",
+        "usgs-nas"
+      ],
       "priorityPolicy": {
         "defaultPriority": "pilot",
         "classificationComplete": true
       },
       "rules": [
         {
-          "ruleId": "pilot-state-applicability-gbif-v1",
-          "speciesSelector": { "kind": "state-applicability", "values": ["applicable"] },
-          "applicableSourceIds": ["gbif-preserved-specimens"],
+          "ruleId": "pilot-state-applicability-multisource-v2",
+          "speciesSelector": {
+            "kind": "state-applicability",
+            "values": [
+              "applicable"
+            ]
+          },
+          "applicableSourceIds": [
+            "gbif-preserved-specimens",
+            "usgs-nas"
+          ],
           "basis": [
             {
               "kind": "implementation-plan",
-              "reference": "national-pilot-2026-07-15",
-              "note": "GBIF preserved specimen screening is explicitly applicable to each selected pilot species and every active county equivalent in the pilot state."
+              "reference": "national-pilot-2026-07-16",
+              "note": "GBIF preserved specimen screening and the versioned USGS NAS archive are explicitly applicable to the selected pilot species and active county equivalents in Alaska, Arizona, and Arkansas."
             }
           ]
         }
@@ -177,6 +217,92 @@
           ]
         }
       ]
+    },
+    {
+      "id": "national-usgs-nas-v1",
+      "label": "Versioned USGS NAS national county-equivalent screens",
+      "stateCodes": [
+        "CA",
+        "CO",
+        "CT",
+        "DE",
+        "DC",
+        "FL",
+        "GA",
+        "HI",
+        "ID",
+        "IL",
+        "IN",
+        "IA",
+        "KS",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MA",
+        "MI",
+        "MN",
+        "MS",
+        "MO",
+        "MT",
+        "NE",
+        "NV",
+        "NH",
+        "NJ",
+        "NM",
+        "NY",
+        "NC",
+        "ND",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VT",
+        "VA",
+        "WA",
+        "WV",
+        "WI",
+        "WY"
+      ],
+      "status": "active",
+      "sourceUniverse": [
+        "usgs-nas"
+      ],
+      "requiredCurrentSourceIds": [
+        "usgs-nas"
+      ],
+      "priorityPolicy": {
+        "defaultPriority": "pilot",
+        "classificationComplete": true
+      },
+      "rules": [
+        {
+          "ruleId": "national-state-applicability-usgs-nas-v1",
+          "speciesSelector": {
+            "kind": "state-applicability",
+            "values": [
+              "applicable"
+            ]
+          },
+          "applicableSourceIds": [
+            "usgs-nas"
+          ],
+          "basis": [
+            {
+              "kind": "official-versioned-archive",
+              "reference": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
+              "note": "The retained CC0 USGS NAS archive provides one reusable national occurrence snapshot with explicit state and county text. Silence and rejected records never create absence or non-detection."
+            }
+          ]
+        }
+      ],
+      "overrides": []
     }
   ]
 }
