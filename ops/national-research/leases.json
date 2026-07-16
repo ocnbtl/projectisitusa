@@ -533,7 +533,7 @@
       "leaseId": "lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
       "jobId": "postfreeze-ar-gbif-melilotus-05089-r1",
       "attempt": 1,
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-16T08:46:00Z",
       "expiresAt": "2026-07-17T12:00:00Z",
       "workerTaskId": "/root/postfreeze_ar_r1",
@@ -626,13 +626,22 @@
         "emit one complete pair outcome without unsupported negative evidence",
         "commit evidence content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 6b7e544dda6122003049e3024a26e2798d47a0ab...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-16T09:05:00Z",
+      "resultManifest": {
+        "path": "manifests/postfreeze-ar-gbif-melilotus-05089-r1__lease-postfreeze-ar-gbif-melilotus-05089-r1-1.json",
+        "sha256": "c44070a92fdbfec5f17db417fa05385bfa9301a38afa9fdbd78eff619023c0b6",
+        "bytes": 7681,
+        "status": "complete",
+        "workerCommit": "5123d1c76dae42889fae4ba2abaf70b42c41c549",
+        "workerBranchHead": "3983a3da58edeb11cb751964718f65318a0bf945"
+      }
     },
     {
       "leaseId": "lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
       "jobId": "postfreeze-ak-gbif-melilotus-02020-r1",
       "attempt": 1,
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-16T08:46:00Z",
       "expiresAt": "2026-07-17T12:00:00Z",
       "workerTaskId": "/root/postfreeze_ak_r1",
@@ -725,7 +734,16 @@
         "retain complete request and pagination lineage and emit one complete pair outcome without unsupported negative evidence",
         "commit evidence content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 6b7e544dda6122003049e3024a26e2798d47a0ab...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-16T09:05:01Z",
+      "resultManifest": {
+        "path": "manifests/postfreeze-ak-gbif-melilotus-02020-r1__lease-postfreeze-ak-gbif-melilotus-02020-r1-1.json",
+        "sha256": "9ac4c7e79d7691204426042c608ed0711c62cb42dff65e68a844e984242a4cd6",
+        "bytes": 7793,
+        "status": "complete",
+        "workerCommit": "2427afa95ebf9a1c1b25b577dfb774b5c3b0507d",
+        "workerBranchHead": "138ac33f8327e11936cdf91e21d223cd58818b03"
+      }
     }
   ]
 }
