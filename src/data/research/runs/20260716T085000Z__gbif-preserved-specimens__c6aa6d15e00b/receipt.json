@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b",
+  "status": "complete",
+  "started_at": "2026-07-16T08:50:00.000Z",
+  "finished_at": "2026-07-16T08:55:02.826Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.1.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "22586e1505fd6ca55f3e1c4b0cf8670d83cf72ec6d5ded1192e8de39fd1a2467",
+  "code_commit": "6b7e544dda6122003049e3024a26e2798d47a0ab",
+  "parameter_hash": "c6aa6d15e00bc264b6201202721062b6bc4849623560a5c03dbf78bc11a2dafa",
+  "parameters": {
+    "stateCode": "AR",
+    "stateProvince": "Arkansas",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "05089:melilotus-officinalis"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AR",
+    "county_fips": [
+      "05089"
+    ],
+    "species_ids": [
+      "melilotus-officinalis"
+    ],
+    "pair_keys": [
+      "05089:melilotus-officinalis"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Melilotus+officinalis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-16T08:55:01.765Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arkansas&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8193111&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-16T08:55:02.250Z",
+      "record_count": 100
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+      "sha256": "fd6761fe369ef4e9a9529476389291d1640870f283746ab43a7e9efe3698268a",
+      "bytes": 670221,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-species-match-melilotus-officinalis.json",
+      "sha256": "79f0fb0830b66d7568b1458b110c6e151e32a040bf7084df38c6ab49cf49f5ca",
+      "bytes": 467,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/assertions.ndjson",
+      "sha256": "06479a69b97ecfd7fc2b3ec5e1cbdc326ef6fb0838472dcb40a881ab0035a9f3",
+      "bytes": 11132,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/reviews.ndjson",
+      "sha256": "8fcf341e97120d5c99a22570383d65d5c74648e273b6edbf96f5b4c32c699835",
+      "bytes": 5862,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/rejections.ndjson",
+      "sha256": "db88637d4221312389775f96a247fb803d2a48c6bcd261b1977eec7d937808e7",
+      "bytes": 3540,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/outcomes.ndjson",
+      "sha256": "91a8074229e2eea3e1c1ab68079b9318f4d4e1cdcb813c96c383cb31b75e542c",
+      "bytes": 1631,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/source-verification.json",
+      "sha256": "15d751d24d603603b6fdb7f302ed1362965896ca0fee677d776ff1b8e6f45a64",
+      "bytes": 5182,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 100,
+    "assertion_events": 6,
+    "review_events": 6,
+    "rejection_records": 5,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AR --candidate-file src/data/research/state-candidates/AR.json --output-root src/data/research/runs --pairs 05089:melilotus-officinalis"
+}
