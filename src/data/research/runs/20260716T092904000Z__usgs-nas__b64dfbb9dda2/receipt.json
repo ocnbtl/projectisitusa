@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092904000Z__usgs-nas__b64dfbb9dda2",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:04.000Z",
+  "finished_at": "2026-07-16T09:29:04.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9fda6edc17c95daafb609e1fa3c21654a306fb94",
+  "parameter_hash": "72463c9d7ecbba1e77981124ab9ed1433fbd1d9b360bd5f52480cf88cb9a22da",
+  "parameters": {
+    "stateCode": "WY",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-05",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:potamopyrgus-antipodarum",
+      "56003:potamopyrgus-antipodarum",
+      "56005:potamopyrgus-antipodarum",
+      "56007:potamopyrgus-antipodarum",
+      "56009:potamopyrgus-antipodarum",
+      "56011:potamopyrgus-antipodarum",
+      "56013:potamopyrgus-antipodarum",
+      "56015:potamopyrgus-antipodarum",
+      "56017:potamopyrgus-antipodarum",
+      "56019:potamopyrgus-antipodarum",
+      "56021:potamopyrgus-antipodarum",
+      "56023:potamopyrgus-antipodarum",
+      "56025:potamopyrgus-antipodarum",
+      "56027:potamopyrgus-antipodarum",
+      "56029:potamopyrgus-antipodarum",
+      "56031:potamopyrgus-antipodarum",
+      "56033:potamopyrgus-antipodarum",
+      "56035:potamopyrgus-antipodarum",
+      "56037:potamopyrgus-antipodarum",
+      "56039:potamopyrgus-antipodarum",
+      "56041:potamopyrgus-antipodarum",
+      "56043:potamopyrgus-antipodarum",
+      "56045:potamopyrgus-antipodarum"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WY",
+    "county_fips": [
+      "56001",
+      "56003",
+      "56005",
+      "56007",
+      "56009",
+      "56011",
+      "56013",
+      "56015",
+      "56017",
+      "56019",
+      "56021",
+      "56023",
+      "56025",
+      "56027",
+      "56029",
+      "56031",
+      "56033",
+      "56035",
+      "56037",
+      "56039",
+      "56041",
+      "56043",
+      "56045"
+    ],
+    "species_ids": [
+      "potamopyrgus-antipodarum"
+    ],
+    "pair_keys": [
+      "56001:potamopyrgus-antipodarum",
+      "56003:potamopyrgus-antipodarum",
+      "56005:potamopyrgus-antipodarum",
+      "56007:potamopyrgus-antipodarum",
+      "56009:potamopyrgus-antipodarum",
+      "56011:potamopyrgus-antipodarum",
+      "56013:potamopyrgus-antipodarum",
+      "56015:potamopyrgus-antipodarum",
+      "56017:potamopyrgus-antipodarum",
+      "56019:potamopyrgus-antipodarum",
+      "56021:potamopyrgus-antipodarum",
+      "56023:potamopyrgus-antipodarum",
+      "56025:potamopyrgus-antipodarum",
+      "56027:potamopyrgus-antipodarum",
+      "56029:potamopyrgus-antipodarum",
+      "56031:potamopyrgus-antipodarum",
+      "56033:potamopyrgus-antipodarum",
+      "56035:potamopyrgus-antipodarum",
+      "56037:potamopyrgus-antipodarum",
+      "56039:potamopyrgus-antipodarum",
+      "56041:potamopyrgus-antipodarum",
+      "56043:potamopyrgus-antipodarum",
+      "56045:potamopyrgus-antipodarum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__b64dfbb9dda2/artifacts/national-acquisition-reference.json",
+      "sha256": "631d9668cd3ffa7e5a8807010f85c00cfb809078e2e9a9e18603951d554b09b3",
+      "bytes": 1804,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__b64dfbb9dda2/assertions.ndjson",
+      "sha256": "09143029bdc64b7bea274eea5c65c3e3a99ed288f3017bb77de8d0abf20ddd99",
+      "bytes": 9225,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__b64dfbb9dda2/reviews.ndjson",
+      "sha256": "9d84a1516957245e83496d9ae60fbcc320b1e5251717d3e3372d554c332f600d",
+      "bytes": 3808,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__b64dfbb9dda2/rejections.ndjson",
+      "sha256": "9cf5d71dd10ce31f071f1d3d9ec49c46cd35d2ec7014f90ba928b2dcf8404807",
+      "bytes": 915,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__b64dfbb9dda2/outcomes.ndjson",
+      "sha256": "aa2fd7866f00072d6132d503b94099eb18a44ce5a6715a304db4f2e59d704b43",
+      "bytes": 15366,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 23,
+    "candidate_records": 37,
+    "assertion_events": 4,
+    "review_events": 4,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 23
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 8.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-05 --states WY --recorded-at 2026-07-16T09:29:04.000Z"
+}

@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092904000Z__usgs-nas__61d935966f76",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:04.000Z",
+  "finished_at": "2026-07-16T09:29:04.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9fda6edc17c95daafb609e1fa3c21654a306fb94",
+  "parameter_hash": "06e05c6d193a9705729466cd8b46b078e95a86259d0a089656affa3faf0e9a75",
+  "parameters": {
+    "stateCode": "WY",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-05",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:potamogeton-crispus",
+      "56003:potamogeton-crispus",
+      "56005:potamogeton-crispus",
+      "56007:potamogeton-crispus",
+      "56009:potamogeton-crispus",
+      "56011:potamogeton-crispus",
+      "56013:potamogeton-crispus",
+      "56015:potamogeton-crispus",
+      "56017:potamogeton-crispus",
+      "56019:potamogeton-crispus",
+      "56021:potamogeton-crispus",
+      "56023:potamogeton-crispus",
+      "56025:potamogeton-crispus",
+      "56027:potamogeton-crispus",
+      "56029:potamogeton-crispus",
+      "56031:potamogeton-crispus",
+      "56033:potamogeton-crispus",
+      "56035:potamogeton-crispus",
+      "56037:potamogeton-crispus",
+      "56039:potamogeton-crispus",
+      "56041:potamogeton-crispus",
+      "56043:potamogeton-crispus",
+      "56045:potamogeton-crispus"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WY",
+    "county_fips": [
+      "56001",
+      "56003",
+      "56005",
+      "56007",
+      "56009",
+      "56011",
+      "56013",
+      "56015",
+      "56017",
+      "56019",
+      "56021",
+      "56023",
+      "56025",
+      "56027",
+      "56029",
+      "56031",
+      "56033",
+      "56035",
+      "56037",
+      "56039",
+      "56041",
+      "56043",
+      "56045"
+    ],
+    "species_ids": [
+      "potamogeton-crispus"
+    ],
+    "pair_keys": [
+      "56001:potamogeton-crispus",
+      "56003:potamogeton-crispus",
+      "56005:potamogeton-crispus",
+      "56007:potamogeton-crispus",
+      "56009:potamogeton-crispus",
+      "56011:potamogeton-crispus",
+      "56013:potamogeton-crispus",
+      "56015:potamogeton-crispus",
+      "56017:potamogeton-crispus",
+      "56019:potamogeton-crispus",
+      "56021:potamogeton-crispus",
+      "56023:potamogeton-crispus",
+      "56025:potamogeton-crispus",
+      "56027:potamogeton-crispus",
+      "56029:potamogeton-crispus",
+      "56031:potamogeton-crispus",
+      "56033:potamogeton-crispus",
+      "56035:potamogeton-crispus",
+      "56037:potamogeton-crispus",
+      "56039:potamogeton-crispus",
+      "56041:potamogeton-crispus",
+      "56043:potamogeton-crispus",
+      "56045:potamogeton-crispus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__61d935966f76/artifacts/national-acquisition-reference.json",
+      "sha256": "227d674a31b8d9dbd3005da987086e3c021f3b83b900bcedb374e969a6b8593c",
+      "bytes": 1792,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__61d935966f76/assertions.ndjson",
+      "sha256": "9ad22d13069ec50dd76013b968f97b123a860f7d6a09e1adfef6101501902fcc",
+      "bytes": 11158,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__61d935966f76/reviews.ndjson",
+      "sha256": "f0d403d0003368da61448d9836ab1b08bb3c843ecea8d2ac215ecd8a9e6d77eb",
+      "bytes": 4735,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__61d935966f76/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__61d935966f76/outcomes.ndjson",
+      "sha256": "1d1f420da4dd7144467c07e2b471713dbdb9ea273b21cae239c41c793a52252c",
+      "bytes": 15174,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 23,
+    "candidate_records": 5,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 23
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 0.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-05 --states WY --recorded-at 2026-07-16T09:29:04.000Z"
+}

@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092904000Z__usgs-nas__e60b24a51f02",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:04.000Z",
+  "finished_at": "2026-07-16T09:29:04.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9fda6edc17c95daafb609e1fa3c21654a306fb94",
+  "parameter_hash": "73b4f1cd08f235f3d13f247d229c87b9e6c6990506fd94537ce50394b17f8ca5",
+  "parameters": {
+    "stateCode": "WY",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-05",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:corbicula-fluminea",
+      "56003:corbicula-fluminea",
+      "56005:corbicula-fluminea",
+      "56007:corbicula-fluminea",
+      "56009:corbicula-fluminea",
+      "56011:corbicula-fluminea",
+      "56013:corbicula-fluminea",
+      "56015:corbicula-fluminea",
+      "56017:corbicula-fluminea",
+      "56019:corbicula-fluminea",
+      "56021:corbicula-fluminea",
+      "56023:corbicula-fluminea",
+      "56025:corbicula-fluminea",
+      "56027:corbicula-fluminea",
+      "56029:corbicula-fluminea",
+      "56031:corbicula-fluminea",
+      "56033:corbicula-fluminea",
+      "56035:corbicula-fluminea",
+      "56037:corbicula-fluminea",
+      "56039:corbicula-fluminea",
+      "56041:corbicula-fluminea",
+      "56043:corbicula-fluminea",
+      "56045:corbicula-fluminea"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WY",
+    "county_fips": [
+      "56001",
+      "56003",
+      "56005",
+      "56007",
+      "56009",
+      "56011",
+      "56013",
+      "56015",
+      "56017",
+      "56019",
+      "56021",
+      "56023",
+      "56025",
+      "56027",
+      "56029",
+      "56031",
+      "56033",
+      "56035",
+      "56037",
+      "56039",
+      "56041",
+      "56043",
+      "56045"
+    ],
+    "species_ids": [
+      "corbicula-fluminea"
+    ],
+    "pair_keys": [
+      "56001:corbicula-fluminea",
+      "56003:corbicula-fluminea",
+      "56005:corbicula-fluminea",
+      "56007:corbicula-fluminea",
+      "56009:corbicula-fluminea",
+      "56011:corbicula-fluminea",
+      "56013:corbicula-fluminea",
+      "56015:corbicula-fluminea",
+      "56017:corbicula-fluminea",
+      "56019:corbicula-fluminea",
+      "56021:corbicula-fluminea",
+      "56023:corbicula-fluminea",
+      "56025:corbicula-fluminea",
+      "56027:corbicula-fluminea",
+      "56029:corbicula-fluminea",
+      "56031:corbicula-fluminea",
+      "56033:corbicula-fluminea",
+      "56035:corbicula-fluminea",
+      "56037:corbicula-fluminea",
+      "56039:corbicula-fluminea",
+      "56041:corbicula-fluminea",
+      "56043:corbicula-fluminea",
+      "56045:corbicula-fluminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__e60b24a51f02/artifacts/national-acquisition-reference.json",
+      "sha256": "5f7a300a3804b8474ab6fbd998a3e19f00571b098cdc43a829e02662703d38e0",
+      "bytes": 1790,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__e60b24a51f02/assertions.ndjson",
+      "sha256": "93fe1fa18729bf30394f12c845ebbff6ad128f17386cc7aba5de414438953a27",
+      "bytes": 4572,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__e60b24a51f02/reviews.ndjson",
+      "sha256": "15cb5dad6dac479662b982410a8f333fde3c17061ff844c3578cfa7fc4ddf811",
+      "bytes": 1892,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__e60b24a51f02/rejections.ndjson",
+      "sha256": "f64504dcebce74b409195556333d262419d47f85ab8903667f5da95a4b3421ff",
+      "bytes": 816,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__e60b24a51f02/outcomes.ndjson",
+      "sha256": "76074f4fce07d0c691d9295856032523a98a13b3a691f0cc9b57dff09fa60618",
+      "bytes": 15212,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 23,
+    "candidate_records": 9,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 23
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 1.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-05 --states WY --recorded-at 2026-07-16T09:29:04.000Z"
+}

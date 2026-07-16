@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092904000Z__usgs-nas__3f7ea3feacb2",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:04.000Z",
+  "finished_at": "2026-07-16T09:29:04.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9fda6edc17c95daafb609e1fa3c21654a306fb94",
+  "parameter_hash": "753b55396e72386d7261480521c713763a56e33bc9c2bf5d96ef1224527710bb",
+  "parameters": {
+    "stateCode": "WY",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-05",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:xiphophorus-hellerii",
+      "56003:xiphophorus-hellerii",
+      "56005:xiphophorus-hellerii",
+      "56007:xiphophorus-hellerii",
+      "56009:xiphophorus-hellerii",
+      "56011:xiphophorus-hellerii",
+      "56013:xiphophorus-hellerii",
+      "56015:xiphophorus-hellerii",
+      "56017:xiphophorus-hellerii",
+      "56019:xiphophorus-hellerii",
+      "56021:xiphophorus-hellerii",
+      "56023:xiphophorus-hellerii",
+      "56025:xiphophorus-hellerii",
+      "56027:xiphophorus-hellerii",
+      "56029:xiphophorus-hellerii",
+      "56031:xiphophorus-hellerii",
+      "56033:xiphophorus-hellerii",
+      "56035:xiphophorus-hellerii",
+      "56037:xiphophorus-hellerii",
+      "56039:xiphophorus-hellerii",
+      "56041:xiphophorus-hellerii",
+      "56043:xiphophorus-hellerii",
+      "56045:xiphophorus-hellerii"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WY",
+    "county_fips": [
+      "56001",
+      "56003",
+      "56005",
+      "56007",
+      "56009",
+      "56011",
+      "56013",
+      "56015",
+      "56017",
+      "56019",
+      "56021",
+      "56023",
+      "56025",
+      "56027",
+      "56029",
+      "56031",
+      "56033",
+      "56035",
+      "56037",
+      "56039",
+      "56041",
+      "56043",
+      "56045"
+    ],
+    "species_ids": [
+      "xiphophorus-hellerii"
+    ],
+    "pair_keys": [
+      "56001:xiphophorus-hellerii",
+      "56003:xiphophorus-hellerii",
+      "56005:xiphophorus-hellerii",
+      "56007:xiphophorus-hellerii",
+      "56009:xiphophorus-hellerii",
+      "56011:xiphophorus-hellerii",
+      "56013:xiphophorus-hellerii",
+      "56015:xiphophorus-hellerii",
+      "56017:xiphophorus-hellerii",
+      "56019:xiphophorus-hellerii",
+      "56021:xiphophorus-hellerii",
+      "56023:xiphophorus-hellerii",
+      "56025:xiphophorus-hellerii",
+      "56027:xiphophorus-hellerii",
+      "56029:xiphophorus-hellerii",
+      "56031:xiphophorus-hellerii",
+      "56033:xiphophorus-hellerii",
+      "56035:xiphophorus-hellerii",
+      "56037:xiphophorus-hellerii",
+      "56039:xiphophorus-hellerii",
+      "56041:xiphophorus-hellerii",
+      "56043:xiphophorus-hellerii",
+      "56045:xiphophorus-hellerii"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__3f7ea3feacb2/artifacts/national-acquisition-reference.json",
+      "sha256": "b523c2ad2aa495244d0d03935b7c80b93720c48e5540082e94bb9e39fbd2bfab",
+      "bytes": 1794,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__3f7ea3feacb2/assertions.ndjson",
+      "sha256": "81d96b7f4bd5d2c449915504af6ea7c2c49c72f01a66e1ba7c4853eb69b353be",
+      "bytes": 2234,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__3f7ea3feacb2/reviews.ndjson",
+      "sha256": "21e738074b03a1630c4b0a19ff8aa0b3ba2c2286ccf5d3917d52e93f7bf683f8",
+      "bytes": 948,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__3f7ea3feacb2/rejections.ndjson",
+      "sha256": "414660cb47df43e4f2c107ff3c9a1bae95ff1af08a5d60d624c347b4b8aa193d",
+      "bytes": 815,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__3f7ea3feacb2/outcomes.ndjson",
+      "sha256": "bed4095bf71842bbce9585cac60fb9514b275d89d5cff1cbc1a1e198cfbc7914",
+      "bytes": 15165,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 23,
+    "candidate_records": 2,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 23
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 1.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-05 --states WY --recorded-at 2026-07-16T09:29:04.000Z"
+}

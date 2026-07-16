@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092904000Z__usgs-nas__fd381812f829",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:04.000Z",
+  "finished_at": "2026-07-16T09:29:04.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9fda6edc17c95daafb609e1fa3c21654a306fb94",
+  "parameter_hash": "fa0736aff4cc1a3de1dada1f44828eeedc5cd109620519ec75d2ff4b7af9a249",
+  "parameters": {
+    "stateCode": "WY",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-05",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:lythrum-salicaria",
+      "56003:lythrum-salicaria",
+      "56005:lythrum-salicaria",
+      "56007:lythrum-salicaria",
+      "56009:lythrum-salicaria",
+      "56011:lythrum-salicaria",
+      "56013:lythrum-salicaria",
+      "56015:lythrum-salicaria",
+      "56017:lythrum-salicaria",
+      "56019:lythrum-salicaria",
+      "56021:lythrum-salicaria",
+      "56023:lythrum-salicaria",
+      "56025:lythrum-salicaria",
+      "56027:lythrum-salicaria",
+      "56029:lythrum-salicaria",
+      "56031:lythrum-salicaria",
+      "56033:lythrum-salicaria",
+      "56035:lythrum-salicaria",
+      "56037:lythrum-salicaria",
+      "56039:lythrum-salicaria",
+      "56041:lythrum-salicaria",
+      "56043:lythrum-salicaria",
+      "56045:lythrum-salicaria"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "WY",
+    "county_fips": [
+      "56001",
+      "56003",
+      "56005",
+      "56007",
+      "56009",
+      "56011",
+      "56013",
+      "56015",
+      "56017",
+      "56019",
+      "56021",
+      "56023",
+      "56025",
+      "56027",
+      "56029",
+      "56031",
+      "56033",
+      "56035",
+      "56037",
+      "56039",
+      "56041",
+      "56043",
+      "56045"
+    ],
+    "species_ids": [
+      "lythrum-salicaria"
+    ],
+    "pair_keys": [
+      "56001:lythrum-salicaria",
+      "56003:lythrum-salicaria",
+      "56005:lythrum-salicaria",
+      "56007:lythrum-salicaria",
+      "56009:lythrum-salicaria",
+      "56011:lythrum-salicaria",
+      "56013:lythrum-salicaria",
+      "56015:lythrum-salicaria",
+      "56017:lythrum-salicaria",
+      "56019:lythrum-salicaria",
+      "56021:lythrum-salicaria",
+      "56023:lythrum-salicaria",
+      "56025:lythrum-salicaria",
+      "56027:lythrum-salicaria",
+      "56029:lythrum-salicaria",
+      "56031:lythrum-salicaria",
+      "56033:lythrum-salicaria",
+      "56035:lythrum-salicaria",
+      "56037:lythrum-salicaria",
+      "56039:lythrum-salicaria",
+      "56041:lythrum-salicaria",
+      "56043:lythrum-salicaria",
+      "56045:lythrum-salicaria"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__fd381812f829/artifacts/national-acquisition-reference.json",
+      "sha256": "9887f57cd7a233fb57cae1d38f35d491d0bab656464e82a719eecefad48bdef3",
+      "bytes": 1788,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__fd381812f829/assertions.ndjson",
+      "sha256": "aa8af7c2afa93d708c0454cea0cc9d8bd52aae5b0b56ed369aedd409f958ba06",
+      "bytes": 4542,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__fd381812f829/reviews.ndjson",
+      "sha256": "f0bd035017463f6cbe664aff216fadd789314f6e23856f2235c8c894ce24efd5",
+      "bytes": 1890,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__fd381812f829/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092904000Z__usgs-nas__fd381812f829/outcomes.ndjson",
+      "sha256": "a7af11425bbe917f4b26e4d0f0924a47cafe2dc9d2ad22a93ad8ab411a611bbd",
+      "bytes": 15104,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 23,
+    "candidate_records": 9,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 23
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 0.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-05 --states WY --recorded-at 2026-07-16T09:29:04.000Z"
+}
