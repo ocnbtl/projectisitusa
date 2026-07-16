@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092902000Z__usgs-nas__7813a36b6727",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:02.000Z",
+  "finished_at": "2026-07-16T09:29:02.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "1b1380ad92eac2e9230bd9a8143a191e8c6e9612",
+  "parameter_hash": "7629fcf9bd5da1b5a89febf04db1b21d5e135b65707463baf5f0d140c0c7bfd5",
+  "parameters": {
+    "stateCode": "NH",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-03",
+    "candidateLimit": 10,
+    "candidatePairs": [
+      "33001:myriophyllum-spicatum",
+      "33003:myriophyllum-spicatum",
+      "33005:myriophyllum-spicatum",
+      "33007:myriophyllum-spicatum",
+      "33009:myriophyllum-spicatum",
+      "33011:myriophyllum-spicatum",
+      "33013:myriophyllum-spicatum",
+      "33015:myriophyllum-spicatum",
+      "33017:myriophyllum-spicatum",
+      "33019:myriophyllum-spicatum"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NH",
+    "county_fips": [
+      "33001",
+      "33003",
+      "33005",
+      "33007",
+      "33009",
+      "33011",
+      "33013",
+      "33015",
+      "33017",
+      "33019"
+    ],
+    "species_ids": [
+      "myriophyllum-spicatum"
+    ],
+    "pair_keys": [
+      "33001:myriophyllum-spicatum",
+      "33003:myriophyllum-spicatum",
+      "33005:myriophyllum-spicatum",
+      "33007:myriophyllum-spicatum",
+      "33009:myriophyllum-spicatum",
+      "33011:myriophyllum-spicatum",
+      "33013:myriophyllum-spicatum",
+      "33015:myriophyllum-spicatum",
+      "33017:myriophyllum-spicatum",
+      "33019:myriophyllum-spicatum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__7813a36b6727/artifacts/national-acquisition-reference.json",
+      "sha256": "056532d1baf60972a35e5f3236aabd9f97ddae2c15e34f8de71c7794253a878b",
+      "bytes": 1800,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__7813a36b6727/assertions.ndjson",
+      "sha256": "1d76e5e0ea8e447bb60836839327825c481a3455aeed91033753c6d18ef0e282",
+      "bytes": 11445,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__7813a36b6727/reviews.ndjson",
+      "sha256": "49a4c874855c178f4527859f4dddf4eba7d70fbd162c23ee6430af4382896783",
+      "bytes": 4745,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__7813a36b6727/rejections.ndjson",
+      "sha256": "7c0e4d6978039207f7ed3bf9ff4cec83808bb167d82d3db831aa97f8452ce726",
+      "bytes": 2651,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__7813a36b6727/outcomes.ndjson",
+      "sha256": "eae96ee81eb7946b373ae10aa849afc0e616d83ab310a6f9253705d93321d809",
+      "bytes": 6895,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 10,
+    "candidate_records": 27,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 3,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 10
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 12.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-03 --states NH --recorded-at 2026-07-16T09:29:02.000Z"
+}

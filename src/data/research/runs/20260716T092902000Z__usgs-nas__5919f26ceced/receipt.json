@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092902000Z__usgs-nas__5919f26ceced",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:02.000Z",
+  "finished_at": "2026-07-16T09:29:02.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "1b1380ad92eac2e9230bd9a8143a191e8c6e9612",
+  "parameter_hash": "cdd8eb69fbdec18160246ab6719cb1609a1f029afc964d478e4087e035bb06bb",
+  "parameters": {
+    "stateCode": "NJ",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-03",
+    "candidateLimit": 21,
+    "candidatePairs": [
+      "34001:murdannia-keisak",
+      "34003:murdannia-keisak",
+      "34005:murdannia-keisak",
+      "34007:murdannia-keisak",
+      "34009:murdannia-keisak",
+      "34011:murdannia-keisak",
+      "34013:murdannia-keisak",
+      "34015:murdannia-keisak",
+      "34017:murdannia-keisak",
+      "34019:murdannia-keisak",
+      "34021:murdannia-keisak",
+      "34023:murdannia-keisak",
+      "34025:murdannia-keisak",
+      "34027:murdannia-keisak",
+      "34029:murdannia-keisak",
+      "34031:murdannia-keisak",
+      "34033:murdannia-keisak",
+      "34035:murdannia-keisak",
+      "34037:murdannia-keisak",
+      "34039:murdannia-keisak",
+      "34041:murdannia-keisak"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34001",
+      "34003",
+      "34005",
+      "34007",
+      "34009",
+      "34011",
+      "34013",
+      "34015",
+      "34017",
+      "34019",
+      "34021",
+      "34023",
+      "34025",
+      "34027",
+      "34029",
+      "34031",
+      "34033",
+      "34035",
+      "34037",
+      "34039",
+      "34041"
+    ],
+    "species_ids": [
+      "murdannia-keisak"
+    ],
+    "pair_keys": [
+      "34001:murdannia-keisak",
+      "34003:murdannia-keisak",
+      "34005:murdannia-keisak",
+      "34007:murdannia-keisak",
+      "34009:murdannia-keisak",
+      "34011:murdannia-keisak",
+      "34013:murdannia-keisak",
+      "34015:murdannia-keisak",
+      "34017:murdannia-keisak",
+      "34019:murdannia-keisak",
+      "34021:murdannia-keisak",
+      "34023:murdannia-keisak",
+      "34025:murdannia-keisak",
+      "34027:murdannia-keisak",
+      "34029:murdannia-keisak",
+      "34031:murdannia-keisak",
+      "34033:murdannia-keisak",
+      "34035:murdannia-keisak",
+      "34037:murdannia-keisak",
+      "34039:murdannia-keisak",
+      "34041:murdannia-keisak"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__5919f26ceced/artifacts/national-acquisition-reference.json",
+      "sha256": "5c3e69661e1d510f93ef0c0f41cc024870be1b5ae4120032a9555cc5824f8559",
+      "bytes": 1786,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__5919f26ceced/assertions.ndjson",
+      "sha256": "43efb52993ddd44a08889b7406ec01d9d9f8e3d53428561c3acc1ee839061aac",
+      "bytes": 2236,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__5919f26ceced/reviews.ndjson",
+      "sha256": "759c95d37788d4908286d6e295ac036b3bd6aa42aecbfcfd15119ec2278040b3",
+      "bytes": 944,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__5919f26ceced/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__5919f26ceced/outcomes.ndjson",
+      "sha256": "9b565d4bb83c71cebea4856c80e3b48b08c20f03d30bf61c1a9bfb770d0fb2c9",
+      "bytes": 13763,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 21,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 21
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 0.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-03 --states NJ --recorded-at 2026-07-16T09:29:02.000Z"
+}

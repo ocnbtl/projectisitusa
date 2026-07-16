@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092902000Z__usgs-nas__09acc942a13e",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:02.000Z",
+  "finished_at": "2026-07-16T09:29:02.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "1b1380ad92eac2e9230bd9a8143a191e8c6e9612",
+  "parameter_hash": "5cea23fe98b00b34548f1eb18ca4e8b10200c23f22085b2b8e0eaf57c3baa8f8",
+  "parameters": {
+    "stateCode": "NJ",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-03",
+    "candidateLimit": 21,
+    "candidatePairs": [
+      "34001:callitriche-stagnalis",
+      "34003:callitriche-stagnalis",
+      "34005:callitriche-stagnalis",
+      "34007:callitriche-stagnalis",
+      "34009:callitriche-stagnalis",
+      "34011:callitriche-stagnalis",
+      "34013:callitriche-stagnalis",
+      "34015:callitriche-stagnalis",
+      "34017:callitriche-stagnalis",
+      "34019:callitriche-stagnalis",
+      "34021:callitriche-stagnalis",
+      "34023:callitriche-stagnalis",
+      "34025:callitriche-stagnalis",
+      "34027:callitriche-stagnalis",
+      "34029:callitriche-stagnalis",
+      "34031:callitriche-stagnalis",
+      "34033:callitriche-stagnalis",
+      "34035:callitriche-stagnalis",
+      "34037:callitriche-stagnalis",
+      "34039:callitriche-stagnalis",
+      "34041:callitriche-stagnalis"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34001",
+      "34003",
+      "34005",
+      "34007",
+      "34009",
+      "34011",
+      "34013",
+      "34015",
+      "34017",
+      "34019",
+      "34021",
+      "34023",
+      "34025",
+      "34027",
+      "34029",
+      "34031",
+      "34033",
+      "34035",
+      "34037",
+      "34039",
+      "34041"
+    ],
+    "species_ids": [
+      "callitriche-stagnalis"
+    ],
+    "pair_keys": [
+      "34001:callitriche-stagnalis",
+      "34003:callitriche-stagnalis",
+      "34005:callitriche-stagnalis",
+      "34007:callitriche-stagnalis",
+      "34009:callitriche-stagnalis",
+      "34011:callitriche-stagnalis",
+      "34013:callitriche-stagnalis",
+      "34015:callitriche-stagnalis",
+      "34017:callitriche-stagnalis",
+      "34019:callitriche-stagnalis",
+      "34021:callitriche-stagnalis",
+      "34023:callitriche-stagnalis",
+      "34025:callitriche-stagnalis",
+      "34027:callitriche-stagnalis",
+      "34029:callitriche-stagnalis",
+      "34031:callitriche-stagnalis",
+      "34033:callitriche-stagnalis",
+      "34035:callitriche-stagnalis",
+      "34037:callitriche-stagnalis",
+      "34039:callitriche-stagnalis",
+      "34041:callitriche-stagnalis"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__09acc942a13e/artifacts/national-acquisition-reference.json",
+      "sha256": "14134108ebdad76c1dd1b980d3a9ed37fb5d90fd8deed2290b13d8c44cee8252",
+      "bytes": 1796,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__09acc942a13e/assertions.ndjson",
+      "sha256": "519b43204eba8510f2a509acebf750448964b5807d50b509bc1f2ca5042c77e2",
+      "bytes": 11231,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__09acc942a13e/reviews.ndjson",
+      "sha256": "53ff4c4e0d4c8afacf88c5c58d9247df50f2352fd59aa44822847d50a99a9434",
+      "bytes": 4745,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__09acc942a13e/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__09acc942a13e/outcomes.ndjson",
+      "sha256": "1d8b01c5530611653867dc3927abcc09a34b4150797a0edd51486b8fc487bf74",
+      "bytes": 13900,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 21,
+    "candidate_records": 5,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 21
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 0.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-03 --states NJ --recorded-at 2026-07-16T09:29:02.000Z"
+}

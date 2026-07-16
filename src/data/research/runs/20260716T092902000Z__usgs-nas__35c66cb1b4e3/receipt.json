@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092902000Z__usgs-nas__35c66cb1b4e3",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:02.000Z",
+  "finished_at": "2026-07-16T09:29:02.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "1b1380ad92eac2e9230bd9a8143a191e8c6e9612",
+  "parameter_hash": "6fd02761cf1d8e1ae02681ad9d455ebdc6d7d853716daa4feeea2b5491d101f6",
+  "parameters": {
+    "stateCode": "NH",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-03",
+    "candidateLimit": 10,
+    "candidatePairs": [
+      "33001:salmo-trutta",
+      "33003:salmo-trutta",
+      "33005:salmo-trutta",
+      "33007:salmo-trutta",
+      "33009:salmo-trutta",
+      "33011:salmo-trutta",
+      "33013:salmo-trutta",
+      "33015:salmo-trutta",
+      "33017:salmo-trutta",
+      "33019:salmo-trutta"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NH",
+    "county_fips": [
+      "33001",
+      "33003",
+      "33005",
+      "33007",
+      "33009",
+      "33011",
+      "33013",
+      "33015",
+      "33017",
+      "33019"
+    ],
+    "species_ids": [
+      "salmo-trutta"
+    ],
+    "pair_keys": [
+      "33001:salmo-trutta",
+      "33003:salmo-trutta",
+      "33005:salmo-trutta",
+      "33007:salmo-trutta",
+      "33009:salmo-trutta",
+      "33011:salmo-trutta",
+      "33013:salmo-trutta",
+      "33015:salmo-trutta",
+      "33017:salmo-trutta",
+      "33019:salmo-trutta"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__35c66cb1b4e3/artifacts/national-acquisition-reference.json",
+      "sha256": "7d98640fcb441065e50da688bb57f72ae7cce823a1cb5208b0dcce0f2b6e2c51",
+      "bytes": 1785,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__35c66cb1b4e3/assertions.ndjson",
+      "sha256": "5db6ca258d000414b1277c218fcb249691b326d08572408fb3fec187240a7247",
+      "bytes": 23073,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__35c66cb1b4e3/reviews.ndjson",
+      "sha256": "b3d015a0885bd6cf83721e295c070c8f6e51d080502afd21dbdf161ff3ba0eb1",
+      "bytes": 9400,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__35c66cb1b4e3/rejections.ndjson",
+      "sha256": "8ef6e20a11ff46cc03ff31786341d9fba7e67cad9aaca7edf9ed1b8e6a4b70fc",
+      "bytes": 6126,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__35c66cb1b4e3/outcomes.ndjson",
+      "sha256": "578c3914475594f15aaba3e5d8c97b9de4c6c8b03aab2794c461364f9bd36ed1",
+      "bytes": 8730,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 10,
+    "candidate_records": 728,
+    "assertion_events": 10,
+    "review_events": 10,
+    "rejection_records": 7,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 10
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 39.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-03 --states NH --recorded-at 2026-07-16T09:29:02.000Z"
+}

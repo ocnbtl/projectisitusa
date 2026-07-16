@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092902000Z__usgs-nas__f2ae3e75adfc",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:02.000Z",
+  "finished_at": "2026-07-16T09:29:02.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "1b1380ad92eac2e9230bd9a8143a191e8c6e9612",
+  "parameter_hash": "40042ff2b733a6923f895d525a47efdea4d989b2a75448f3493f1e8b678af40c",
+  "parameters": {
+    "stateCode": "NH",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-03",
+    "candidateLimit": 10,
+    "candidatePairs": [
+      "33001:potamogeton-crispus",
+      "33003:potamogeton-crispus",
+      "33005:potamogeton-crispus",
+      "33007:potamogeton-crispus",
+      "33009:potamogeton-crispus",
+      "33011:potamogeton-crispus",
+      "33013:potamogeton-crispus",
+      "33015:potamogeton-crispus",
+      "33017:potamogeton-crispus",
+      "33019:potamogeton-crispus"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NH",
+    "county_fips": [
+      "33001",
+      "33003",
+      "33005",
+      "33007",
+      "33009",
+      "33011",
+      "33013",
+      "33015",
+      "33017",
+      "33019"
+    ],
+    "species_ids": [
+      "potamogeton-crispus"
+    ],
+    "pair_keys": [
+      "33001:potamogeton-crispus",
+      "33003:potamogeton-crispus",
+      "33005:potamogeton-crispus",
+      "33007:potamogeton-crispus",
+      "33009:potamogeton-crispus",
+      "33011:potamogeton-crispus",
+      "33013:potamogeton-crispus",
+      "33015:potamogeton-crispus",
+      "33017:potamogeton-crispus",
+      "33019:potamogeton-crispus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__f2ae3e75adfc/artifacts/national-acquisition-reference.json",
+      "sha256": "89a2bc26ef8be50837b1d72c6d8606ab293e51f70b00f22762004749619d7ff6",
+      "bytes": 1793,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__f2ae3e75adfc/assertions.ndjson",
+      "sha256": "f84898cb56e19b71dd1adbd1bce31b4820b99f93b1aaab79e335b3c1186f5c26",
+      "bytes": 9092,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__f2ae3e75adfc/reviews.ndjson",
+      "sha256": "00a07f9ce2bae76420d64837c2a75071063cb82188ab038591a0ef7d724565dd",
+      "bytes": 3788,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__f2ae3e75adfc/rejections.ndjson",
+      "sha256": "06c36195401158e1433a7e19db8ea832f9f316f0d59691e00fc518b8e7d77fcc",
+      "bytes": 858,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092902000Z__usgs-nas__f2ae3e75adfc/outcomes.ndjson",
+      "sha256": "41e1dad020b77995a5938e03cf09ce4f3374c66670208abb4b8a388329cb4de5",
+      "bytes": 6697,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 10,
+    "candidate_records": 12,
+    "assertion_events": 4,
+    "review_events": 4,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 10
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 3.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-03 --states NH --recorded-at 2026-07-16T09:29:02.000Z"
+}
