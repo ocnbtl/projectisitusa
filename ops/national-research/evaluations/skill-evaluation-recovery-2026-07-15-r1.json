@@ -3,16 +3,19 @@
   "evaluationId": "isitusa-national-skills-recovery-2026-07-15-r1",
   "roundType": "bounded-validator-recovery",
   "openedAt": "2026-07-15T22:18:44Z",
-  "status": "in-progress",
-  "result": null,
+  "status": "complete",
+  "result": "pass",
   "baseCommit": "f51602460ddb76abff75fff7629c455483b7a2ba",
   "candidateVersion": "candidate-recovery-2",
   "iteration": 2,
   "maximumIterations": 2,
-  "broadDispatchAllowed": false,
+  "broadDispatchAllowed": true,
   "freeze": {
-    "status": "not-frozen",
-    "candidateGitCommit": "b45de2a14ff1838c9d0d250ca0f01735da683d86",
+    "status": "frozen",
+    "version": "frozen-recovery-2026-07-16-r1",
+    "frozenAt": "2026-07-16T08:42:00Z",
+    "candidateGitCommit": "1a0301e6a248956e46ba6faecd6d90b6f373a799",
+    "receiptPath": "receipts/skill-freezes/isitusa-national-skills-recovery-2026-07-15-r1.json",
     "candidateSkillHashes": {
       "isitusa-national-orchestrator": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb",
       "isitusa-evidence-worker": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
@@ -38,8 +41,8 @@
       "passed": 90,
       "failed": 0,
       "criticalSafetyViolations": 0,
-      "wallSeconds": 42.762,
-      "peakMemoryMb": 51.672,
+      "wallSeconds": 48.732,
+      "peakMemoryMb": 51.641,
       "manualInterventions": 0,
       "deterministicRepeatedValidation": true,
       "transactionalCompletionGate": true,
@@ -115,12 +118,12 @@
       "iteration": 2,
       "candidateVersion": "candidate-recovery-2",
       "candidateCommit": "0cb90249c9f7baab6e92dc28c6faa48ca0a04047",
-      "status": "integration-regression-pass-final-pilot-pending",
+      "status": "passed-and-frozen",
       "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, resolve the shared workspace dependency root automatically, add closed receipt-bound transactional review and canonical integration gates, and ignore the transient in-repository orchestration lock so its own clean-main check remains sound.",
       "regressionCases": 90,
       "regressionPassed": 90,
       "criticalViolations": 0,
-      "broadDispatchAllowed": false
+      "broadDispatchAllowed": true
     }
   ],
   "blindForwardTests": {
@@ -233,7 +236,32 @@
     "reviewReceiptSha256": "ed78ab970c03bef14ac3ed2ecf0268a240b99e75bf031c85a1e8d4972309e03d",
     "integrationReceiptSha256": "8590ef35ada708d11516a094624f0b10e562b75de7aa3b01115b661570037c54",
     "canonicalIntegrationCommit": "7df28ccb08b73507048ff58e11c2cf5098345fc2",
-    "discoveredDefect": "The first canonical integration attempt exposed an unignored transient orchestration lock. The repository-level lock contract and a positive in-repository regression were added; all 90 cases then passed and the transaction completed. This lease pinned the pre-lifecycle orchestrator hash, so one final exact-current-pin pilot is still required before freeze."
+    "discoveredDefect": "The first canonical integration attempt exposed an unignored transient orchestration lock. The repository-level lock contract and a positive in-repository regression were added; all 90 cases then passed and the transaction completed. Because this lease pinned the pre-lifecycle orchestrator hash, the separate Arkansas exact-current-pin pilot was required and subsequently passed before freeze."
+  },
+  "finalExactPinnedPilot": {
+    "status": "integrated",
+    "jobId": "recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
+    "leaseId": "lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1",
+    "branch": "codex/recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
+    "runId": "20260716T082500Z__gbif-preserved-specimens__23704b2cc75c",
+    "pinnedGitCommit": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+    "pinnedOrchestratorHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb",
+    "pinnedWorkerHash": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075",
+    "contentCommit": "f31cff46030a8fb633a4d9c2f526719a5a85c1de",
+    "branchHead": "b414c7c2bd0b3c6435c7bc4cf5db012035f9c6ff",
+    "manifestSha256": "9ea076635485354a59426fd84c919aadd71cf079bdf665ee524e06d981336c06",
+    "reviewReceiptSha256": "512f39af7ddaa19e4a5adf2bf19f386eecaf9f06c17fa1ab40e5513a8d241ceb",
+    "integrationReceiptSha256": "6ac8b59ecaa1514e9c5d53f715f81b010684b4b18daeb9b60f7cc32b561aca93",
+    "providerCandidates": 46,
+    "assertions": 6,
+    "reviews": 6,
+    "rejections": 6,
+    "outcomes": 1,
+    "errors": 0,
+    "negativeClaims": 0,
+    "resumedWithoutReacquisition": true,
+    "criticalViolations": 0,
+    "mergeConflicts": 0
   },
   "metrics": {
     "evidenceSemanticViolations": 0,
@@ -242,17 +270,31 @@
     "manifestCompleteness": 1,
     "deterministicOutput": true,
     "retryResumeBehavior": "synthetic-pass-and-real-transport-retry-preserved",
-    "workerCompletionRate": 0.25,
+    "workerCompletionRate": 1,
+    "realWorkerAttempts": 2,
+    "realWorkerCompletions": 2,
     "mergeConflicts": 0,
-    "manualInterventions": 5,
+    "manualInterventions": 3,
+    "manualInterventionBreakdown": {
+      "arWorkerResume": 1,
+      "azTransportRetry": 1,
+      "canonicalLockContractRepair": 1
+    },
     "wallSeconds": null,
-    "peakMemoryMb": 125.88,
-    "validatedResearchThroughputPairsPerHour": null
+    "peakMemoryMb": 196.7,
+    "measuredWallSeconds": {
+      "affectedBlind": 698,
+      "finalRegression": 48.732,
+      "azWorker": 7.91,
+      "arWorker": 2.95
+    },
+    "validatedResearchThroughputPairsPerHour": 662.9834,
+    "throughputCaveat": "Two bounded one-pair workers are sufficient to prove the integration path, not to forecast national certification."
   },
   "comparisonWithPriorWorkflow": {
     "priorCandidateResult": "blocked",
     "improvementSoFar": "The full worker receipt contract uses the canonical immutable-run path, checked-out and committed skill hashes share one deterministic order, sparse workers resolve canonical dependencies without local installation, and MAIN review plus integration now use durable closed receipts and rollback-safe lifecycle transitions.",
-    "passingRequirementMet": false,
-    "reason": "The expanded 90-case regression and affected blind safety test pass, and one real worker result completed the closed review and integration lifecycle. Freeze still requires one accepted real pilot pinned to the exact current orchestrator and worker commit plus content hashes."
+    "passingRequirementMet": true,
+    "reason": "All 90 regression cases pass with zero critical violations, the affected blind test preserved canonical-main ownership, two real worker results integrated without conflicts, and the exact-pin Arkansas worker resumed after interruption without reacquiring its verified source. This demonstrates improved resumability and merge reliability without evidence-quality regression."
   }
 }
