@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "jobId": "recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
+  "leaseId": "lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1",
+  "status": "complete",
+  "branch": "codex/recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
+  "worktree": "/private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1",
+  "baseSha": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+  "commitSha": "f31cff46030a8fb633a4d9c2f526719a5a85c1de",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "candidate-recovery-2",
+      "gitCommit": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+      "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "candidate-recovery-2",
+      "gitCommit": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+      "contentHash": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AR",
+    "stateProvince": "Arkansas",
+    "candidateFile": "src/data/research/state-candidates/AR.json",
+    "outputRoot": "src/data/research/runs",
+    "startedAt": "2026-07-16T08:25:00Z",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "05143:matricaria-discoidea"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "cc966262a94f49064edfcfbe9a22d6090122b12e49c5e287016b558fc79bfd71",
+      "bytes": 333622
+    },
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/assertions.ndjson",
+      "count": 6
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/reviews.ndjson",
+      "count": 6
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/rejections.ndjson",
+      "count": 6
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/outcomes.ndjson",
+      "count": 1
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/receipt.json",
+    "sha256": "5a9e83297e21fa28924168e52877526032384fa9f2e3289053932ffa683f472f",
+    "bytes": 4535
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/source-verification.json",
+    "sha256": "7a605ac7ab8013a539b367afcf704fa7ef4d6bb097df292a183d8390f7278164",
+    "bytes": 5172
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 334084,
+      "sourceRequests": 2,
+      "providerCandidates": 46,
+      "assertionEvents": 6,
+      "publicationEligibleAssertions": 6,
+      "reviewEvents": 6,
+      "rejectionRecords": 6,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 334084,
+      "sourceRequests": 2,
+      "providerCandidates": 46,
+      "assertionEvents": 6,
+      "publicationEligibleAssertions": 6,
+      "reviewEvents": 6,
+      "rejectionRecords": 6,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /private/tmp/isitusa-recovery-final-ar-lease-r1.json --repo /private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --import tsx scripts/research/validate-immutable-run.ts --repository-root /private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1 --validation-root /private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1 --run-directory /private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1/src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c --source-verification /private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1/src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/source-verification.json --run-id 20260716T082500Z__gbif-preserved-specimens__23704b2cc75c --source-id gbif-preserved-specimens --state-code AR --pair-keys 05143:matricaria-discoidea --code-commit dffe40c933f90f916b664ddc6ba51d31dc5c6a3a --worker-task-id /root/recovery_final_ar_r1",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check dffe40c933f90f916b664ddc6ba51d31dc5c6a3a...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /private/tmp/isitusa-recovery-final-ar-lease-r1.json --manifest src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/manifest.json --repo /private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": []
+  },
+  "retryHistory": [
+    {
+      "requestAttempt": 1,
+      "outcome": "complete",
+      "exitCode": 0,
+      "upstreamStatuses": [
+        200,
+        200
+      ],
+      "retainedArtifacts": 2,
+      "scopeComplete": true
+    }
+  ],
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 2.95,
+    "peakMemoryMb": 196.7,
+    "validPairsScreened": 1,
+    "manualInterventions": 1,
+    "acquisitionAttemptWallSeconds": [
+      2.95
+    ],
+    "maximumResidentBytes": 206258176
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  },
+  "violations": [],
+  "unexpectedBehavior": [
+    "The leased run path is intentionally outside the sparse checkout patterns; Git required explicit sparse staging for the content and manifest commits."
+  ]
+}
