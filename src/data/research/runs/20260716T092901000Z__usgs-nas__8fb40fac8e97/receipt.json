@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092901000Z__usgs-nas__8fb40fac8e97",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:01.000Z",
+  "finished_at": "2026-07-16T09:29:01.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9cfff0da1c82272f9b2883e53e73710c40a150c1",
+  "parameter_hash": "e22fc7f24cbf9bf3513fa82d610d0d9f7e8da4a79034f085f2868d0391c10aaa",
+  "parameters": {
+    "stateCode": "MD",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-02",
+    "candidateLimit": 24,
+    "candidatePairs": [
+      "24001:iris-pseudacorus",
+      "24003:iris-pseudacorus",
+      "24005:iris-pseudacorus",
+      "24009:iris-pseudacorus",
+      "24011:iris-pseudacorus",
+      "24013:iris-pseudacorus",
+      "24015:iris-pseudacorus",
+      "24017:iris-pseudacorus",
+      "24019:iris-pseudacorus",
+      "24021:iris-pseudacorus",
+      "24023:iris-pseudacorus",
+      "24025:iris-pseudacorus",
+      "24027:iris-pseudacorus",
+      "24029:iris-pseudacorus",
+      "24031:iris-pseudacorus",
+      "24033:iris-pseudacorus",
+      "24035:iris-pseudacorus",
+      "24037:iris-pseudacorus",
+      "24039:iris-pseudacorus",
+      "24041:iris-pseudacorus",
+      "24043:iris-pseudacorus",
+      "24045:iris-pseudacorus",
+      "24047:iris-pseudacorus",
+      "24510:iris-pseudacorus"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MD",
+    "county_fips": [
+      "24001",
+      "24003",
+      "24005",
+      "24009",
+      "24011",
+      "24013",
+      "24015",
+      "24017",
+      "24019",
+      "24021",
+      "24023",
+      "24025",
+      "24027",
+      "24029",
+      "24031",
+      "24033",
+      "24035",
+      "24037",
+      "24039",
+      "24041",
+      "24043",
+      "24045",
+      "24047",
+      "24510"
+    ],
+    "species_ids": [
+      "iris-pseudacorus"
+    ],
+    "pair_keys": [
+      "24001:iris-pseudacorus",
+      "24003:iris-pseudacorus",
+      "24005:iris-pseudacorus",
+      "24009:iris-pseudacorus",
+      "24011:iris-pseudacorus",
+      "24013:iris-pseudacorus",
+      "24015:iris-pseudacorus",
+      "24017:iris-pseudacorus",
+      "24019:iris-pseudacorus",
+      "24021:iris-pseudacorus",
+      "24023:iris-pseudacorus",
+      "24025:iris-pseudacorus",
+      "24027:iris-pseudacorus",
+      "24029:iris-pseudacorus",
+      "24031:iris-pseudacorus",
+      "24033:iris-pseudacorus",
+      "24035:iris-pseudacorus",
+      "24037:iris-pseudacorus",
+      "24039:iris-pseudacorus",
+      "24041:iris-pseudacorus",
+      "24043:iris-pseudacorus",
+      "24045:iris-pseudacorus",
+      "24047:iris-pseudacorus",
+      "24510:iris-pseudacorus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__8fb40fac8e97/artifacts/national-acquisition-reference.json",
+      "sha256": "4e99f9dd26cc90e912c0c18eab5815a244d1b98518b4862b4b32995931e9ddd3",
+      "bytes": 1786,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__8fb40fac8e97/assertions.ndjson",
+      "sha256": "07fd3aedd04e0ac78890c14bece2674f0bf12d862243c099263aec4ff1ca333f",
+      "bytes": 2234,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__8fb40fac8e97/reviews.ndjson",
+      "sha256": "4661e29493c6bfd93b98dc5bdbe249bbad130690438ce414339b237060a37351",
+      "bytes": 944,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__8fb40fac8e97/rejections.ndjson",
+      "sha256": "f68b302016a27c1a84a7735d0f8f9498efa884bf2b9d7b2ea502af30b9406793",
+      "bytes": 815,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__8fb40fac8e97/outcomes.ndjson",
+      "sha256": "204d64d329b806e71fbd1761fb5ad277472f1d7447af7706b4ffa6b2047fd220",
+      "bytes": 15813,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 24,
+    "candidate_records": 2,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 24
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 1.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-02 --states MD --recorded-at 2026-07-16T09:29:01.000Z"
+}

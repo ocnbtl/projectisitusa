@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092901000Z__usgs-nas__9576030d8817",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:01.000Z",
+  "finished_at": "2026-07-16T09:29:01.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9cfff0da1c82272f9b2883e53e73710c40a150c1",
+  "parameter_hash": "89864b498cc296132c936969df10402168ca06898de0ba489d97993e87e738df",
+  "parameters": {
+    "stateCode": "MD",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-02",
+    "candidateLimit": 24,
+    "candidatePairs": [
+      "24001:myriophyllum-aquaticum",
+      "24003:myriophyllum-aquaticum",
+      "24005:myriophyllum-aquaticum",
+      "24009:myriophyllum-aquaticum",
+      "24011:myriophyllum-aquaticum",
+      "24013:myriophyllum-aquaticum",
+      "24015:myriophyllum-aquaticum",
+      "24017:myriophyllum-aquaticum",
+      "24019:myriophyllum-aquaticum",
+      "24021:myriophyllum-aquaticum",
+      "24023:myriophyllum-aquaticum",
+      "24025:myriophyllum-aquaticum",
+      "24027:myriophyllum-aquaticum",
+      "24029:myriophyllum-aquaticum",
+      "24031:myriophyllum-aquaticum",
+      "24033:myriophyllum-aquaticum",
+      "24035:myriophyllum-aquaticum",
+      "24037:myriophyllum-aquaticum",
+      "24039:myriophyllum-aquaticum",
+      "24041:myriophyllum-aquaticum",
+      "24043:myriophyllum-aquaticum",
+      "24045:myriophyllum-aquaticum",
+      "24047:myriophyllum-aquaticum",
+      "24510:myriophyllum-aquaticum"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MD",
+    "county_fips": [
+      "24001",
+      "24003",
+      "24005",
+      "24009",
+      "24011",
+      "24013",
+      "24015",
+      "24017",
+      "24019",
+      "24021",
+      "24023",
+      "24025",
+      "24027",
+      "24029",
+      "24031",
+      "24033",
+      "24035",
+      "24037",
+      "24039",
+      "24041",
+      "24043",
+      "24045",
+      "24047",
+      "24510"
+    ],
+    "species_ids": [
+      "myriophyllum-aquaticum"
+    ],
+    "pair_keys": [
+      "24001:myriophyllum-aquaticum",
+      "24003:myriophyllum-aquaticum",
+      "24005:myriophyllum-aquaticum",
+      "24009:myriophyllum-aquaticum",
+      "24011:myriophyllum-aquaticum",
+      "24013:myriophyllum-aquaticum",
+      "24015:myriophyllum-aquaticum",
+      "24017:myriophyllum-aquaticum",
+      "24019:myriophyllum-aquaticum",
+      "24021:myriophyllum-aquaticum",
+      "24023:myriophyllum-aquaticum",
+      "24025:myriophyllum-aquaticum",
+      "24027:myriophyllum-aquaticum",
+      "24029:myriophyllum-aquaticum",
+      "24031:myriophyllum-aquaticum",
+      "24033:myriophyllum-aquaticum",
+      "24035:myriophyllum-aquaticum",
+      "24037:myriophyllum-aquaticum",
+      "24039:myriophyllum-aquaticum",
+      "24041:myriophyllum-aquaticum",
+      "24043:myriophyllum-aquaticum",
+      "24045:myriophyllum-aquaticum",
+      "24047:myriophyllum-aquaticum",
+      "24510:myriophyllum-aquaticum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__9576030d8817/artifacts/national-acquisition-reference.json",
+      "sha256": "8f10e133ec9124d7910836d5ac267b6800d00ba8ba22b32a44251cb1e84c042a",
+      "bytes": 1798,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__9576030d8817/assertions.ndjson",
+      "sha256": "415f8e6f3aa7a7a9a0464b2e53a9b675c12fb66d21b7195e56e57398d0666d53",
+      "bytes": 4603,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__9576030d8817/reviews.ndjson",
+      "sha256": "3b75c0f43dee4063d108082ec8ac548ec130015e576af8795e498c3ee666f191",
+      "bytes": 1900,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__9576030d8817/rejections.ndjson",
+      "sha256": "3c9dc4268db9ee5e4fc332187cc07e3e0b6d02c7af05c0a9f09bf6fcac8eb4bb",
+      "bytes": 822,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__9576030d8817/outcomes.ndjson",
+      "sha256": "567ceda44c8e3a2a30d94bf837eba5e491c066486232169807626ce8655c43ee",
+      "bytes": 15965,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 24,
+    "candidate_records": 7,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 24
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 1.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-02 --states MD --recorded-at 2026-07-16T09:29:01.000Z"
+}

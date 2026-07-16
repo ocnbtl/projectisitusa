@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092901000Z__usgs-nas__85db8f9e2738",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:01.000Z",
+  "finished_at": "2026-07-16T09:29:01.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9cfff0da1c82272f9b2883e53e73710c40a150c1",
+  "parameter_hash": "ae24d511c46141362ed7d7cc48bd4d585990766ef9633f6ca24c036c2723e984",
+  "parameters": {
+    "stateCode": "MA",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-02",
+    "candidateLimit": 14,
+    "candidatePairs": [
+      "25001:lythrum-salicaria",
+      "25003:lythrum-salicaria",
+      "25005:lythrum-salicaria",
+      "25007:lythrum-salicaria",
+      "25009:lythrum-salicaria",
+      "25011:lythrum-salicaria",
+      "25013:lythrum-salicaria",
+      "25015:lythrum-salicaria",
+      "25017:lythrum-salicaria",
+      "25019:lythrum-salicaria",
+      "25021:lythrum-salicaria",
+      "25023:lythrum-salicaria",
+      "25025:lythrum-salicaria",
+      "25027:lythrum-salicaria"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MA",
+    "county_fips": [
+      "25001",
+      "25003",
+      "25005",
+      "25007",
+      "25009",
+      "25011",
+      "25013",
+      "25015",
+      "25017",
+      "25019",
+      "25021",
+      "25023",
+      "25025",
+      "25027"
+    ],
+    "species_ids": [
+      "lythrum-salicaria"
+    ],
+    "pair_keys": [
+      "25001:lythrum-salicaria",
+      "25003:lythrum-salicaria",
+      "25005:lythrum-salicaria",
+      "25007:lythrum-salicaria",
+      "25009:lythrum-salicaria",
+      "25011:lythrum-salicaria",
+      "25013:lythrum-salicaria",
+      "25015:lythrum-salicaria",
+      "25017:lythrum-salicaria",
+      "25019:lythrum-salicaria",
+      "25021:lythrum-salicaria",
+      "25023:lythrum-salicaria",
+      "25025:lythrum-salicaria",
+      "25027:lythrum-salicaria"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__85db8f9e2738/artifacts/national-acquisition-reference.json",
+      "sha256": "c56df16a16234c61dd1c7444360190b4686ec7c69c503e931d979b6650e33408",
+      "bytes": 1793,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__85db8f9e2738/assertions.ndjson",
+      "sha256": "64bcbcee9379739923ae023d9bb89eecfaec3526f9ef6a87112c7ae4a7b7dab3",
+      "bytes": 32266,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__85db8f9e2738/reviews.ndjson",
+      "sha256": "5bf381d929f1fa3f6895b0d74541c6f69d65aecd7ff568e1fbaf863ae0dba777",
+      "bytes": 13230,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__85db8f9e2738/rejections.ndjson",
+      "sha256": "be1b7d768d6549a0fc321302014cbc954c26699a5b8fc84a1d1f7ecf12abf107",
+      "bytes": 810,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__85db8f9e2738/outcomes.ndjson",
+      "sha256": "ab3de208049935d23f13c022b30d9db7247385f57a5f98df3d3029e54e49d54a",
+      "bytes": 9381,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 123,
+    "assertion_events": 14,
+    "review_events": 14,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 1.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-02 --states MA --recorded-at 2026-07-16T09:29:01.000Z"
+}

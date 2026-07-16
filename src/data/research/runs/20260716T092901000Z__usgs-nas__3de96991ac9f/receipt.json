@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092901000Z__usgs-nas__3de96991ac9f",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:01.000Z",
+  "finished_at": "2026-07-16T09:29:01.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9cfff0da1c82272f9b2883e53e73710c40a150c1",
+  "parameter_hash": "8c48d06e3d9bde75c688c660d3948989e657a0d0aceca2c3a5c6dcc14ef948da",
+  "parameters": {
+    "stateCode": "MA",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-02",
+    "candidateLimit": 14,
+    "candidatePairs": [
+      "25001:corbicula-fluminea",
+      "25003:corbicula-fluminea",
+      "25005:corbicula-fluminea",
+      "25007:corbicula-fluminea",
+      "25009:corbicula-fluminea",
+      "25011:corbicula-fluminea",
+      "25013:corbicula-fluminea",
+      "25015:corbicula-fluminea",
+      "25017:corbicula-fluminea",
+      "25019:corbicula-fluminea",
+      "25021:corbicula-fluminea",
+      "25023:corbicula-fluminea",
+      "25025:corbicula-fluminea",
+      "25027:corbicula-fluminea"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MA",
+    "county_fips": [
+      "25001",
+      "25003",
+      "25005",
+      "25007",
+      "25009",
+      "25011",
+      "25013",
+      "25015",
+      "25017",
+      "25019",
+      "25021",
+      "25023",
+      "25025",
+      "25027"
+    ],
+    "species_ids": [
+      "corbicula-fluminea"
+    ],
+    "pair_keys": [
+      "25001:corbicula-fluminea",
+      "25003:corbicula-fluminea",
+      "25005:corbicula-fluminea",
+      "25007:corbicula-fluminea",
+      "25009:corbicula-fluminea",
+      "25011:corbicula-fluminea",
+      "25013:corbicula-fluminea",
+      "25015:corbicula-fluminea",
+      "25017:corbicula-fluminea",
+      "25019:corbicula-fluminea",
+      "25021:corbicula-fluminea",
+      "25023:corbicula-fluminea",
+      "25025:corbicula-fluminea",
+      "25027:corbicula-fluminea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__3de96991ac9f/artifacts/national-acquisition-reference.json",
+      "sha256": "c92fdbdbf5466098820987103744ba4d8ba2be9cfbac4dacf16a58aaedad387c",
+      "bytes": 1792,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__3de96991ac9f/assertions.ndjson",
+      "sha256": "be9dd7e5c1cf00120b85d59796dcb086c6251a19e725b823cc6239f94638a6bd",
+      "bytes": 15887,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__3de96991ac9f/reviews.ndjson",
+      "sha256": "995aef9329039622b7dba523f47374c6f5d0d4b848fbe231672823463c652af5",
+      "bytes": 6622,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__3de96991ac9f/rejections.ndjson",
+      "sha256": "ce8e109db5968978a1ff6023307c224e9bbe0bc9c68edb1d3eb0c6b3b9c3001d",
+      "bytes": 813,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__3de96991ac9f/outcomes.ndjson",
+      "sha256": "a6c035ad03cdbb119df0263ab89b849911710440224923f973c3727cf96d562d",
+      "bytes": 9339,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 18,
+    "assertion_events": 7,
+    "review_events": 7,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 1.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-02 --states MA --recorded-at 2026-07-16T09:29:01.000Z"
+}

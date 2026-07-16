@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092901000Z__usgs-nas__a503ebbe26a9",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:01.000Z",
+  "finished_at": "2026-07-16T09:29:01.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9cfff0da1c82272f9b2883e53e73710c40a150c1",
+  "parameter_hash": "dee57ea83bff94c38f9e1986f58e03c3ce81053b20d34c887768b11e1070c6d6",
+  "parameters": {
+    "stateCode": "ME",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-02",
+    "candidateLimit": 16,
+    "candidatePairs": [
+      "23001:cipangopaludina-chinensis",
+      "23003:cipangopaludina-chinensis",
+      "23005:cipangopaludina-chinensis",
+      "23007:cipangopaludina-chinensis",
+      "23009:cipangopaludina-chinensis",
+      "23011:cipangopaludina-chinensis",
+      "23013:cipangopaludina-chinensis",
+      "23015:cipangopaludina-chinensis",
+      "23017:cipangopaludina-chinensis",
+      "23019:cipangopaludina-chinensis",
+      "23021:cipangopaludina-chinensis",
+      "23023:cipangopaludina-chinensis",
+      "23025:cipangopaludina-chinensis",
+      "23027:cipangopaludina-chinensis",
+      "23029:cipangopaludina-chinensis",
+      "23031:cipangopaludina-chinensis"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "ME",
+    "county_fips": [
+      "23001",
+      "23003",
+      "23005",
+      "23007",
+      "23009",
+      "23011",
+      "23013",
+      "23015",
+      "23017",
+      "23019",
+      "23021",
+      "23023",
+      "23025",
+      "23027",
+      "23029",
+      "23031"
+    ],
+    "species_ids": [
+      "cipangopaludina-chinensis"
+    ],
+    "pair_keys": [
+      "23001:cipangopaludina-chinensis",
+      "23003:cipangopaludina-chinensis",
+      "23005:cipangopaludina-chinensis",
+      "23007:cipangopaludina-chinensis",
+      "23009:cipangopaludina-chinensis",
+      "23011:cipangopaludina-chinensis",
+      "23013:cipangopaludina-chinensis",
+      "23015:cipangopaludina-chinensis",
+      "23017:cipangopaludina-chinensis",
+      "23019:cipangopaludina-chinensis",
+      "23021:cipangopaludina-chinensis",
+      "23023:cipangopaludina-chinensis",
+      "23025:cipangopaludina-chinensis",
+      "23027:cipangopaludina-chinensis",
+      "23029:cipangopaludina-chinensis",
+      "23031:cipangopaludina-chinensis"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__a503ebbe26a9/artifacts/national-acquisition-reference.json",
+      "sha256": "445d68ee6067fe8a3aff5a689dcb085fa5ff09d8ef8b015ef4276edb4aacde50",
+      "bytes": 1805,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__a503ebbe26a9/assertions.ndjson",
+      "sha256": "1108d8d12ccd5c50b2a6b8a62150c91cc5bcbcce7b430169b609b35bb4c278e1",
+      "bytes": 4506,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__a503ebbe26a9/reviews.ndjson",
+      "sha256": "dce4298574f88e11fdeba8bbf1c4cbf967dc0f09e4e1fe535746813d1e79ad52",
+      "bytes": 1906,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__a503ebbe26a9/rejections.ndjson",
+      "sha256": "e16d32e00c2c7b147918d2ef23b7a6d758c590a9113c6c6e5c125544fcf3d8fe",
+      "bytes": 2612,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__a503ebbe26a9/outcomes.ndjson",
+      "sha256": "3091396549b536d9332668cafb04e412d095eb4e8535c4141f486d3ec7a043a0",
+      "bytes": 10895,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 16,
+    "candidate_records": 10,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 3,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 16
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 8.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-02 --states ME --recorded-at 2026-07-16T09:29:01.000Z"
+}

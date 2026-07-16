@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092901000Z__usgs-nas__b540c0361d2c",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:01.000Z",
+  "finished_at": "2026-07-16T09:29:01.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "9cfff0da1c82272f9b2883e53e73710c40a150c1",
+  "parameter_hash": "880401ee71a2b4e1439dcab0eb85e71d6df16ed0fd7bd5741d0391c71fe1ddce",
+  "parameters": {
+    "stateCode": "MD",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-02",
+    "candidateLimit": 24,
+    "candidatePairs": [
+      "24001:dreissena-polymorpha",
+      "24003:dreissena-polymorpha",
+      "24005:dreissena-polymorpha",
+      "24009:dreissena-polymorpha",
+      "24011:dreissena-polymorpha",
+      "24013:dreissena-polymorpha",
+      "24015:dreissena-polymorpha",
+      "24017:dreissena-polymorpha",
+      "24019:dreissena-polymorpha",
+      "24021:dreissena-polymorpha",
+      "24023:dreissena-polymorpha",
+      "24025:dreissena-polymorpha",
+      "24027:dreissena-polymorpha",
+      "24029:dreissena-polymorpha",
+      "24031:dreissena-polymorpha",
+      "24033:dreissena-polymorpha",
+      "24035:dreissena-polymorpha",
+      "24037:dreissena-polymorpha",
+      "24039:dreissena-polymorpha",
+      "24041:dreissena-polymorpha",
+      "24043:dreissena-polymorpha",
+      "24045:dreissena-polymorpha",
+      "24047:dreissena-polymorpha",
+      "24510:dreissena-polymorpha"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MD",
+    "county_fips": [
+      "24001",
+      "24003",
+      "24005",
+      "24009",
+      "24011",
+      "24013",
+      "24015",
+      "24017",
+      "24019",
+      "24021",
+      "24023",
+      "24025",
+      "24027",
+      "24029",
+      "24031",
+      "24033",
+      "24035",
+      "24037",
+      "24039",
+      "24041",
+      "24043",
+      "24045",
+      "24047",
+      "24510"
+    ],
+    "species_ids": [
+      "dreissena-polymorpha"
+    ],
+    "pair_keys": [
+      "24001:dreissena-polymorpha",
+      "24003:dreissena-polymorpha",
+      "24005:dreissena-polymorpha",
+      "24009:dreissena-polymorpha",
+      "24011:dreissena-polymorpha",
+      "24013:dreissena-polymorpha",
+      "24015:dreissena-polymorpha",
+      "24017:dreissena-polymorpha",
+      "24019:dreissena-polymorpha",
+      "24021:dreissena-polymorpha",
+      "24023:dreissena-polymorpha",
+      "24025:dreissena-polymorpha",
+      "24027:dreissena-polymorpha",
+      "24029:dreissena-polymorpha",
+      "24031:dreissena-polymorpha",
+      "24033:dreissena-polymorpha",
+      "24035:dreissena-polymorpha",
+      "24037:dreissena-polymorpha",
+      "24039:dreissena-polymorpha",
+      "24041:dreissena-polymorpha",
+      "24043:dreissena-polymorpha",
+      "24045:dreissena-polymorpha",
+      "24047:dreissena-polymorpha",
+      "24510:dreissena-polymorpha"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__b540c0361d2c/artifacts/national-acquisition-reference.json",
+      "sha256": "61dd18fd926c63ebe72dc0548c521d771997da99993e97d93cbd1cf82125084c",
+      "bytes": 1796,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__b540c0361d2c/assertions.ndjson",
+      "sha256": "53fdc6ff7041706b3376347eec99c91cec9f6b5925905d9813e6f03bc46df39c",
+      "bytes": 4654,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__b540c0361d2c/reviews.ndjson",
+      "sha256": "f7779e285be58f29757d3a002c3eda8e0b22f3be28e08b0e1d8c7a516d0aa2bd",
+      "bytes": 1896,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__b540c0361d2c/rejections.ndjson",
+      "sha256": "ea0a9fada61e04d0f6d0ce455f1fd494ebb2f923c6a3998f3e6edb020d7fb5eb",
+      "bytes": 3272,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092901000Z__usgs-nas__b540c0361d2c/outcomes.ndjson",
+      "sha256": "5ac8e088db0abce6f4f6fbbe402b979f7595dfbf32c5c77aba450bff97daeaba",
+      "bytes": 16002,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 24,
+    "candidate_records": 35,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 4,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 24
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 5.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-02 --states MD --recorded-at 2026-07-16T09:29:01.000Z"
+}
