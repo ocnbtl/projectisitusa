@@ -12,7 +12,7 @@
   "broadDispatchAllowed": false,
   "freeze": {
     "status": "not-frozen",
-    "candidateGitCommit": "0cb90249c9f7baab6e92dc28c6faa48ca0a04047",
+    "candidateGitCommit": "b45de2a14ff1838c9d0d250ca0f01735da683d86",
     "candidateSkillHashes": {
       "isitusa-national-orchestrator": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb",
       "isitusa-evidence-worker": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
@@ -34,12 +34,12 @@
     },
     "green": {
       "result": "pass",
-      "totalCases": 89,
-      "passed": 89,
+      "totalCases": 90,
+      "passed": 90,
       "failed": 0,
       "criticalSafetyViolations": 0,
-      "wallSeconds": 41.508,
-      "peakMemoryMb": 53.625,
+      "wallSeconds": 42.762,
+      "peakMemoryMb": 51.672,
       "manualInterventions": 0,
       "deterministicRepeatedValidation": true,
       "transactionalCompletionGate": true,
@@ -50,6 +50,7 @@
       "pinnedCommitHashMatchesSparseCheckout": true,
       "transactionalReviewGate": true,
       "transactionalIntegrationGate": true,
+      "inRepositoryTransactionLock": true,
       "canonicalTreeEntryComparison": true,
       "reviewAndIntegrationReceiptTamperDetection": true
     }
@@ -114,16 +115,16 @@
       "iteration": 2,
       "candidateVersion": "candidate-recovery-2",
       "candidateCommit": "0cb90249c9f7baab6e92dc28c6faa48ca0a04047",
-      "status": "integration-lifecycle-regression-pass-blind-pending",
-      "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, resolve the shared workspace dependency root automatically, and add closed receipt-bound transactional review and canonical integration gates after the first real pilot exposed the missing lifecycle commands.",
-      "regressionCases": 89,
-      "regressionPassed": 89,
+      "status": "integration-regression-pass-final-pilot-pending",
+      "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, resolve the shared workspace dependency root automatically, add closed receipt-bound transactional review and canonical integration gates, and ignore the transient in-repository orchestration lock so its own clean-main check remains sound.",
+      "regressionCases": 90,
+      "regressionPassed": 90,
       "criticalViolations": 0,
       "broadDispatchAllowed": false
     }
   ],
   "blindForwardTests": {
-    "status": "affected-orchestrator-blind-pending",
+    "status": "pass-with-isolated-main-safety-stop",
     "attempts": [
       {
         "iteration": 1,
@@ -192,12 +193,17 @@
         },
         "integrationLifecycleFollowup": {
           "candidateCommit": "0cb90249c9f7baab6e92dc28c6faa48ca0a04047",
-          "result": "regression-pass-blind-pending",
-          "cases": 89,
+          "result": "pass-with-isolated-main-safety-stop",
+          "cases": 90,
           "transactionalReviewGate": true,
           "transactionalIntegrationGate": true,
           "canonicalTreeEntryComparison": true,
-          "receiptTamperDetection": true
+          "receiptTamperDetection": true,
+          "blindTaskId": "/root/blind_worker_r2",
+          "blindDecision": "accepted-not-integrated",
+          "blindIntegrationStop": "Integration repository must be on main.",
+          "canonicalMainTouches": 0,
+          "blindWallSeconds": 698
         },
         "interruptedNoWriteAgents": [
           "/root/blind_worker_r2b",
@@ -208,7 +214,7 @@
     ]
   },
   "realPilot": {
-    "status": "submitted-regression-defect-found",
+    "status": "integrated-not-final-skill-pinned",
     "jobId": "recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
     "leaseId": "lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
     "branch": "codex/recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
@@ -223,8 +229,11 @@
     "outcomes": 1,
     "errors": 0,
     "criticalViolations": 0,
-    "acceptedIntegrationSubmissions": 0,
-    "discoveredDefect": "The candidate could validate and submit a worker result but had no transactional command to accept or integrate it. The result remains pending while the affected orchestrator surface is re-evaluated."
+    "acceptedIntegrationSubmissions": 1,
+    "reviewReceiptSha256": "ed78ab970c03bef14ac3ed2ecf0268a240b99e75bf031c85a1e8d4972309e03d",
+    "integrationReceiptSha256": "8590ef35ada708d11516a094624f0b10e562b75de7aa3b01115b661570037c54",
+    "canonicalIntegrationCommit": "7df28ccb08b73507048ff58e11c2cf5098345fc2",
+    "discoveredDefect": "The first canonical integration attempt exposed an unignored transient orchestration lock. The repository-level lock contract and a positive in-repository regression were added; all 90 cases then passed and the transaction completed. This lease pinned the pre-lifecycle orchestrator hash, so one final exact-current-pin pilot is still required before freeze."
   },
   "metrics": {
     "evidenceSemanticViolations": 0,
@@ -235,7 +244,7 @@
     "retryResumeBehavior": "synthetic-pass-and-real-transport-retry-preserved",
     "workerCompletionRate": 0.25,
     "mergeConflicts": 0,
-    "manualInterventions": 4,
+    "manualInterventions": 5,
     "wallSeconds": null,
     "peakMemoryMb": 125.88,
     "validatedResearchThroughputPairsPerHour": null
@@ -244,6 +253,6 @@
     "priorCandidateResult": "blocked",
     "improvementSoFar": "The full worker receipt contract uses the canonical immutable-run path, checked-out and committed skill hashes share one deterministic order, sparse workers resolve canonical dependencies without local installation, and MAIN review plus integration now use durable closed receipts and rollback-safe lifecycle transitions.",
     "passingRequirementMet": false,
-    "reason": "The expanded 89-case regression passes, but the changed orchestrator review and integration surface requires a fresh blind test and an exact-pinned accepted real pilot before freeze."
+    "reason": "The expanded 90-case regression and affected blind safety test pass, and one real worker result completed the closed review and integration lifecycle. Freeze still requires one accepted real pilot pinned to the exact current orchestrator and worker commit plus content hashes."
   }
 }
