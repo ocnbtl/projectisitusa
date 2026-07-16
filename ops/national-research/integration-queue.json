@@ -224,7 +224,7 @@
       "queueId": "queue-lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
       "jobId": "postfreeze-ar-gbif-melilotus-05089-r1",
       "leaseId": "lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-16T09:05:00Z",
       "manifestPath": "manifests/postfreeze-ar-gbif-melilotus-05089-r1__lease-postfreeze-ar-gbif-melilotus-05089-r1-1.json",
       "manifestHash": "c44070a92fdbfec5f17db417fa05385bfa9301a38afa9fdbd78eff619023c0b6",
@@ -271,6 +271,37 @@
         "path": "receipts/reviews/queue-lease-postfreeze-ar-gbif-melilotus-05089-r1-1.json",
         "sha256": "4add903f9926c6b75751a9ceb0b9889664335734cb389c164700b85b14e5c691",
         "bytes": 2493
+      },
+      "integratedAt": "2026-07-16T09:07:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "dd432cfb88457e41b116835252968ac9c21198b5",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation after integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact reviewed worker tree entries compared with canonical integration commit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical main clean status and whitespace check",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed Arkansas content and manifest commits without conflict, revalidated the immutable run on canonical main, and required the transactional gate to compare every reviewed worker tree entry with the integration commit.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-postfreeze-ar-gbif-melilotus-05089-r1-1.json",
+        "sha256": "e5de6d2fb9856404b66e19518feb0bec8660a2979f35c3ecf8006bcae55e2b24",
+        "bytes": 2428
       }
     },
     {
