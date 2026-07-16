@@ -12,7 +12,7 @@
   "broadDispatchAllowed": false,
   "freeze": {
     "status": "not-frozen",
-    "candidateGitCommit": null,
+    "candidateGitCommit": "0cb90249c9f7baab6e92dc28c6faa48ca0a04047",
     "candidateSkillHashes": {
       "isitusa-national-orchestrator": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb",
       "isitusa-evidence-worker": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
@@ -113,7 +113,7 @@
     {
       "iteration": 2,
       "candidateVersion": "candidate-recovery-2",
-      "candidateCommit": null,
+      "candidateCommit": "0cb90249c9f7baab6e92dc28c6faa48ca0a04047",
       "status": "integration-lifecycle-regression-pass-blind-pending",
       "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, resolve the shared workspace dependency root automatically, and add closed receipt-bound transactional review and canonical integration gates after the first real pilot exposed the missing lifecycle commands.",
       "regressionCases": 89,
@@ -189,6 +189,15 @@
           "cases": 79,
           "dependencyFreeSparseCanonicalValidation": true,
           "externalNodePathRequired": false
+        },
+        "integrationLifecycleFollowup": {
+          "candidateCommit": "0cb90249c9f7baab6e92dc28c6faa48ca0a04047",
+          "result": "regression-pass-blind-pending",
+          "cases": 89,
+          "transactionalReviewGate": true,
+          "transactionalIntegrationGate": true,
+          "canonicalTreeEntryComparison": true,
+          "receiptTamperDetection": true
         },
         "interruptedNoWriteAgents": [
           "/root/blind_worker_r2b",
