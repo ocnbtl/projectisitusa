@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092903000Z__usgs-nas__9bb87095a1c1",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:03.000Z",
+  "finished_at": "2026-07-16T09:29:03.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "6dc6a29e9f4da69f60e5a9d8feef2839152ebef1",
+  "parameter_hash": "44586d0357590672e23805f2a4d45b6325b1d541d914c26e383aa108adae5233",
+  "parameters": {
+    "stateCode": "NV",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-04",
+    "candidateLimit": 17,
+    "candidatePairs": [
+      "32001:tilapia-mariae",
+      "32003:tilapia-mariae",
+      "32005:tilapia-mariae",
+      "32007:tilapia-mariae",
+      "32009:tilapia-mariae",
+      "32011:tilapia-mariae",
+      "32013:tilapia-mariae",
+      "32015:tilapia-mariae",
+      "32017:tilapia-mariae",
+      "32019:tilapia-mariae",
+      "32021:tilapia-mariae",
+      "32023:tilapia-mariae",
+      "32027:tilapia-mariae",
+      "32029:tilapia-mariae",
+      "32031:tilapia-mariae",
+      "32033:tilapia-mariae",
+      "32510:tilapia-mariae"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "NV",
+    "county_fips": [
+      "32001",
+      "32003",
+      "32005",
+      "32007",
+      "32009",
+      "32011",
+      "32013",
+      "32015",
+      "32017",
+      "32019",
+      "32021",
+      "32023",
+      "32027",
+      "32029",
+      "32031",
+      "32033",
+      "32510"
+    ],
+    "species_ids": [
+      "tilapia-mariae"
+    ],
+    "pair_keys": [
+      "32001:tilapia-mariae",
+      "32003:tilapia-mariae",
+      "32005:tilapia-mariae",
+      "32007:tilapia-mariae",
+      "32009:tilapia-mariae",
+      "32011:tilapia-mariae",
+      "32013:tilapia-mariae",
+      "32015:tilapia-mariae",
+      "32017:tilapia-mariae",
+      "32019:tilapia-mariae",
+      "32021:tilapia-mariae",
+      "32023:tilapia-mariae",
+      "32027:tilapia-mariae",
+      "32029:tilapia-mariae",
+      "32031:tilapia-mariae",
+      "32033:tilapia-mariae",
+      "32510:tilapia-mariae"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__9bb87095a1c1/artifacts/national-acquisition-reference.json",
+      "sha256": "52da1be35fea3a64e91e1cb159a4e0b67325999163ca8c18d000f902274060c1",
+      "bytes": 1782,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__9bb87095a1c1/assertions.ndjson",
+      "sha256": "5808504c016035eca88bd33a72c14e9cf51c208278ca860cf7346981bacdbb18",
+      "bytes": 2213,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__9bb87095a1c1/reviews.ndjson",
+      "sha256": "9b2e1139a9aa9364fe4fdcd0ea989a51dbdf56fc2ad76131e3797748384a207c",
+      "bytes": 942,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__9bb87095a1c1/rejections.ndjson",
+      "sha256": "94c5411b4862b623d8631f85b327b7e5843e4b18e97bd7eca9c70555933064a5",
+      "bytes": 805,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__9bb87095a1c1/outcomes.ndjson",
+      "sha256": "231ecada32dc5a7c824e54a2dda814a8ea5baf1fdf8d6bf8413a9d4d82e718cc",
+      "bytes": 11109,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 17,
+    "candidate_records": 2,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 17
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 1.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-04 --states NV --recorded-at 2026-07-16T09:29:03.000Z"
+}

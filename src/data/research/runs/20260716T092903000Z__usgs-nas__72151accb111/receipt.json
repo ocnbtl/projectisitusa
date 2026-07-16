@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092903000Z__usgs-nas__72151accb111",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:03.000Z",
+  "finished_at": "2026-07-16T09:29:03.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "cfcbf64d560adb2d61140eba1f282136c6a4b9f4ff5dd6e0fe61403bac6c32f0",
+  "code_commit": "6dc6a29e9f4da69f60e5a9d8feef2839152ebef1",
+  "parameter_hash": "fa8e9bfc99295331a07882f08752eb2961fc03f7ead65feff69fad8a9739aeed",
+  "parameters": {
+    "stateCode": "RI",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-04",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:egeria-densa",
+      "44003:egeria-densa",
+      "44005:egeria-densa",
+      "44007:egeria-densa",
+      "44009:egeria-densa"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "RI",
+    "county_fips": [
+      "44001",
+      "44003",
+      "44005",
+      "44007",
+      "44009"
+    ],
+    "species_ids": [
+      "egeria-densa"
+    ],
+    "pair_keys": [
+      "44001:egeria-densa",
+      "44003:egeria-densa",
+      "44005:egeria-densa",
+      "44007:egeria-densa",
+      "44009:egeria-densa"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__72151accb111/artifacts/national-acquisition-reference.json",
+      "sha256": "3ab2647b45e31bc16a1270a190a11f8d619ded0999fb742b4e49d3373bbd362c",
+      "bytes": 1778,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__72151accb111/assertions.ndjson",
+      "sha256": "17be93df1f4f38f9a8b66254d602b5a88f124b6f718e8096e4ca2661e2a2902b",
+      "bytes": 4436,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__72151accb111/reviews.ndjson",
+      "sha256": "7745a5f9bbde1432b031837721bbdeed6fba1c42e3c7be9fab58a3f420be1490",
+      "bytes": 1880,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__72151accb111/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092903000Z__usgs-nas__72151accb111/outcomes.ndjson",
+      "sha256": "897a59d9af99d63849582e2f99683593051b4a6412ff39295292d973fbcaa63d",
+      "bytes": 3271,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 2,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 0.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-04 --states RI --recorded-at 2026-07-16T09:29:03.000Z"
+}
