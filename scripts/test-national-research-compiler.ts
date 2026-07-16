@@ -1,5 +1,6 @@
 import catalog from "@/data/generated/species.json";
 import alaskaApplicability from "@/data/research/state-applicability/AK.json";
+import stateRegistry from "@/data/research/state-registry.json";
 import stateResearchConfig from "@/data/research/state-research-config.json";
 import {
   resolveStateResearchScope,
@@ -27,8 +28,17 @@ const catalogSpeciesIds = catalog.map((entry) => entry.id);
 const applicability = structuredClone(alaskaApplicability) as StateApplicabilityFile;
 const common = {
   catalogSpeciesIds,
-  asOf: "2026-07-15",
+  asOf: applicability.asOf,
 };
+
+assert(
+  configFile.states.length === stateRegistry.nationalV1.jurisdictionCount,
+  "State research config does not cover every national-v1 jurisdiction.",
+);
+assert(
+  configFile.states.every((entry) => entry.publicResearchProjection),
+  "Every national-v1 jurisdiction must publish a research projection.",
+);
 
 const alabama = resolveStateResearchScope({
   configFile,
@@ -45,7 +55,10 @@ const alaska = resolveStateResearchScope({
   ...common,
   applicability,
 });
-assert(alaska.speciesIds.length === 5, "Alaska explicit pilot scope changed.");
+assert(
+  alaska.speciesIds.length === applicability.species.length,
+  "Alaska compiler scope differs from its explicit applicability file.",
+);
 assert(
   alaska.speciesIds.includes("myosotis-scorpioides"),
   "Alaska USGS NAS archive pilot species left the explicit state scope.",
@@ -102,7 +115,7 @@ expectFailure("unknown explicit species", /unknown catalog species/, () =>
 );
 
 const futureApplicability = structuredClone(applicability);
-futureApplicability.asOf = "2026-07-16";
+futureApplicability.asOf = "2026-07-17";
 expectFailure("future applicability", /newer than compiler as-of/, () =>
   resolveStateResearchScope({ configFile, stateCode: "AK", ...common, applicability: futureApplicability }),
 );
