@@ -105,6 +105,8 @@ A complete manifest must record the exact `git diff --check <lease-base-sha>...H
 
 `commitSha` is the non-base commit that contains the evidence outputs. Commit the finalized manifest in a second commit and return that branch HEAD separately. The content commit must be an ancestor of branch HEAD.
 
+Before acquisition, verify every pinned skill against both the checked-out tree and its declared Git commit when present. Both hashes use repository-relative file paths ordered by Unicode code point, with each path and file byte sequence separated by a null byte. Do not use locale-sensitive path ordering.
+
 ## Receipt and source-verification ownership
 
 Use the closed project `run-receipt.schema.json` without worker extensions. The receipt carries the common immutable run identity, registered adapter provenance, parameters, requested scope, upstream request summaries, retained artifacts, declared outputs, common counts, errors, caveats, and rerun command.

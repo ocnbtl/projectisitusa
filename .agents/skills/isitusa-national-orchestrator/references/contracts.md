@@ -69,6 +69,8 @@ Claim and transition commands are transactional across their repository state fi
 
 Every new job and active lease uses the complete fixed output vocabulary shown above. Historical terminal leases retain their original snapshots and may produce validation warnings when they predate `source-verification`, but they cannot be reactivated under the weaker contract.
 
+Compute every skill `contentHash` from repository-relative file paths ordered by Unicode code point, with each path and file byte sequence separated by a null byte. The filesystem-tree and pinned Git-tree procedures must use the identical ordering. Locale-sensitive ordering is forbidden because it can make a valid pinned commit fail in another worktree or host locale.
+
 `expectedManifestPath` is a normalized worktree-relative path. A completed transition derives the worktree from the lease, requires the supplied manifest to equal that path, independently verifies the pinned skill trees, and executes the worktree-pinned evidence-worker validator while the lease is still active. It requires a clean worktree, a complete manifest committed exactly at worker HEAD, and unchanged manifest bytes and HEAD. Only then may it archive the exact bytes, close the lease, submit the job, and append a pending queue item.
 
 The durable result descriptor records manifest path, SHA-256, byte count, manifest status, content commit, and worker branch HEAD. The queue path stays under `manifests/`. Pending queue validation rechecks the durable bytes, lifecycle identities, clean worker worktree, branch HEAD, commit ancestry, and committed manifest bytes. Historical nonpending queue items can retain older external paths only as warnings and can never become pending again.

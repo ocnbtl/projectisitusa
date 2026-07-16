@@ -6,16 +6,16 @@
   "status": "in-progress",
   "result": null,
   "baseCommit": "f51602460ddb76abff75fff7629c455483b7a2ba",
-  "candidateVersion": "candidate-recovery-1",
-  "iteration": 1,
+  "candidateVersion": "candidate-recovery-2",
+  "iteration": 2,
   "maximumIterations": 2,
   "broadDispatchAllowed": false,
   "freeze": {
     "status": "not-frozen",
     "candidateGitCommit": null,
     "candidateSkillHashes": {
-      "isitusa-national-orchestrator": "d3ecf532701296150448e31866e4855121953937a98ee5639af7682d90e316ef",
-      "isitusa-evidence-worker": "ed05a3e070cc413bcdd3b71a1b04d68eca7a95a6a9e05b2cc4c8c2b691af8b1a"
+      "isitusa-national-orchestrator": "535dac43ac4e9d904e36b683880141d14b7ebd3deb9c558119f4a70daf57d811",
+      "isitusa-evidence-worker": "4724a22954feac3e1d9e94bf0897015e17b7725953ca9be31f3ca6c82f804e8f"
     }
   },
   "isolatedDefect": {
@@ -34,19 +34,20 @@
     },
     "green": {
       "result": "pass",
-      "totalCases": 78,
-      "passed": 78,
+      "totalCases": 79,
+      "passed": 79,
       "failed": 0,
       "criticalSafetyViolations": 0,
-      "wallSeconds": 41.133,
-      "peakMemoryMb": 53,
+      "wallSeconds": 61.148,
+      "peakMemoryMb": 48.281,
       "manualInterventions": 0,
       "deterministicRepeatedValidation": true,
       "transactionalCompletionGate": true,
       "honestRetryResume": true,
       "pinnedValidatorExecution": true,
       "durableManifestReceipt": true,
-      "portableHistoricalFixture": true
+      "portableHistoricalFixture": true,
+      "pinnedCommitHashMatchesSparseCheckout": true
     }
   },
   "staticValidation": {
@@ -85,11 +86,65 @@
     "workerActorAuthorityBound": true,
     "dirtyOrUncommittedManifestRejected": true,
     "durableQueueTamperingRejected": true,
-    "partialManifestArchivedWithoutQueue": true
+    "partialManifestArchivedWithoutQueue": true,
+    "pinnedCommitHashMatchesSparseCheckout": true
   },
+  "repairIterations": [
+    {
+      "iteration": 1,
+      "candidateVersion": "candidate-recovery-1",
+      "candidateCommit": "34905a258cc10a979380b48fb0a141325855ff68",
+      "status": "failed-blind-forward",
+      "criticalViolations": 1,
+      "failure": "The checked-out skill trees matched their lease content hashes, but worker preflight used locale-sensitive filesystem ordering and bytewise Git ordering, so the same pinned commit produced different hashes and was rejected.",
+      "workerWritesBeforeFailure": 0,
+      "broadDispatchAllowed": false
+    },
+    {
+      "iteration": 2,
+      "candidateVersion": "candidate-recovery-2",
+      "candidateCommit": null,
+      "status": "in-progress",
+      "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, document the contract, and exercise a full pinned commit in a sparse linked worktree.",
+      "regressionCases": 79,
+      "regressionPassed": 79,
+      "criticalViolations": 0,
+      "broadDispatchAllowed": false
+    }
+  ],
   "blindForwardTests": {
-    "status": "pending",
-    "agents": []
+    "status": "iteration-2-pending",
+    "attempts": [
+      {
+        "iteration": 1,
+        "status": "failed",
+        "agents": [
+          {
+            "taskId": "/root/blind_orchestrator_r1",
+            "skill": "isitusa-national-orchestrator",
+            "result": "pass",
+            "wallSeconds": 11.4,
+            "criticalViolations": 0,
+            "observed": "A safe claim moved one planned job to one valid active lease transactionally."
+          },
+          {
+            "taskId": "/root/blind_worker_r1",
+            "skill": "isitusa-evidence-worker",
+            "result": "blocked-correctly-on-oracle-defect",
+            "wallSeconds": 34,
+            "criticalViolations": 1,
+            "filesCreated": 0,
+            "commitsCreated": 0,
+            "observed": "Filesystem hashes matched the lease, but committed-tree hashes disagreed for both skills and preflight stopped before evidence work."
+          }
+        ]
+      },
+      {
+        "iteration": 2,
+        "status": "pending",
+        "agents": []
+      }
+    ]
   },
   "realPilot": {
     "status": "pending",
@@ -109,15 +164,15 @@
     "retryResumeBehavior": "synthetic-pass-real-pilot-pending",
     "workerCompletionRate": null,
     "mergeConflicts": 0,
-    "manualInterventions": 0,
+    "manualInterventions": 1,
     "wallSeconds": null,
-    "peakMemoryMb": 53,
+    "peakMemoryMb": 48.281,
     "validatedResearchThroughputPairsPerHour": null
   },
   "comparisonWithPriorWorkflow": {
     "priorCandidateResult": "blocked",
-    "improvementSoFar": "The full worker receipt contract and completion transition are now validated by the same canonical immutable-run path.",
+    "improvementSoFar": "The full worker receipt contract uses the canonical immutable-run path, and the final recovery iteration now also binds checked-out and committed skill hashes with one deterministic path order.",
     "passingRequirementMet": false,
-    "reason": "Blind forward tests and an independently accepted real pilot remain required before freeze."
+    "reason": "Fresh iteration-two blind forward tests and an independently accepted real pilot remain required before freeze."
   }
 }

@@ -108,10 +108,21 @@ function canonicalPath(value) {
   return fs.realpathSync(path.resolve(value));
 }
 
+function compareCodePoints(left, right) {
+  const leftCodePoints = Array.from(left, (character) => character.codePointAt(0));
+  const rightCodePoints = Array.from(right, (character) => character.codePointAt(0));
+  const sharedLength = Math.min(leftCodePoints.length, rightCodePoints.length);
+  for (let index = 0; index < sharedLength; index += 1) {
+    const difference = leftCodePoints[index] - rightCodePoints[index];
+    if (difference !== 0) return difference;
+  }
+  return leftCodePoints.length - rightCodePoints.length;
+}
+
 function listFiles(root) {
   const files = [];
   function walk(directory) {
-    for (const entry of fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
       if (entry.name === ".DS_Store") continue;
       const absolute = path.join(directory, entry.name);
       if (entry.isDirectory()) walk(absolute);
@@ -119,7 +130,10 @@ function listFiles(root) {
     }
   }
   walk(root);
-  return files;
+  return files.sort((left, right) => compareCodePoints(
+    path.relative(root, left).split(path.sep).join("/"),
+    path.relative(root, right).split(path.sep).join("/"),
+  ));
 }
 
 function inventoryRunFiles(repo, runRoot, errors) {
@@ -156,7 +170,7 @@ function hashGitTree(repo, commit, skillName) {
   const files = git(repo, ["ls-tree", "-r", "--name-only", commit, "--", prefix])
     .split("\n")
     .filter(Boolean)
-    .sort();
+    .sort(compareCodePoints);
   if (files.length === 0) throw new Error(`Pinned skill ${skillName} is absent at ${commit}.`);
   const hash = crypto.createHash("sha256");
   for (const file of files) {

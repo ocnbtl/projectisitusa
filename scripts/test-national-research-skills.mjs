@@ -12,7 +12,7 @@ const ORCHESTRATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orche
 const WORKER_VALIDATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs");
 const ORCHESTRATOR_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orchestrator");
 const WORKER_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker");
-const RECOVERY_VERSION = "candidate-recovery-1";
+const RECOVERY_VERSION = "candidate-recovery-2";
 const NOW = "2026-07-15T12:00:00Z";
 const EXPIRES = "2026-07-16T12:00:00Z";
 const SOURCE_ID = "gbif-preserved-specimens";
@@ -65,6 +65,17 @@ function stableJson(value) {
   return JSON.stringify(value);
 }
 
+function compareCodePoints(left, right) {
+  const leftCodePoints = Array.from(left, (character) => character.codePointAt(0));
+  const rightCodePoints = Array.from(right, (character) => character.codePointAt(0));
+  const sharedLength = Math.min(leftCodePoints.length, rightCodePoints.length);
+  for (let index = 0; index < sharedLength; index += 1) {
+    const difference = leftCodePoints[index] - rightCodePoints[index];
+    if (difference !== 0) return difference;
+  }
+  return leftCodePoints.length - rightCodePoints.length;
+}
+
 function fileDescriptor(file, relativePath, mediaType) {
   return {
     path: relativePath,
@@ -77,7 +88,7 @@ function fileDescriptor(file, relativePath, mediaType) {
 function listFiles(root) {
   const files = [];
   function walk(directory) {
-    for (const entry of fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
       if (entry.name === ".DS_Store") continue;
       const absolute = path.join(directory, entry.name);
       if (entry.isDirectory()) walk(absolute);
@@ -85,7 +96,10 @@ function listFiles(root) {
     }
   }
   walk(root);
-  return files;
+  return files.sort((left, right) => compareCodePoints(
+    path.relative(root, left).split(path.sep).join("/"),
+    path.relative(root, right).split(path.sep).join("/"),
+  ));
 }
 
 function hashTree(root) {
@@ -530,6 +544,8 @@ const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), "isitusa-skill-regress
 
 try {
   const { worktree, baseSha } = setupGitFixture(fixtureRoot);
+  runGit(worktree, ["sparse-checkout", "init", "--cone"]);
+  runGit(worktree, ["sparse-checkout", "set", ".agents/skills", "public/generated", "scripts/research", "src/data/research", "worker-output"]);
   const job = makeJob({ jobId: "test-job", baseSha, branch: "codex/test-job", worktree, claims: [`state/${STATE_CODE}/source/${SOURCE_ID}/taxon/${SPECIES_ID}`] });
   const lease = makeLease(job);
   const leasePath = path.join(fixtureRoot, "lease.json");
@@ -537,6 +553,14 @@ try {
 
   let result = run("node", [WORKER_VALIDATOR, "preflight", "--lease", leasePath, "--repo", worktree, "--now", NOW], REPO_ROOT);
   record("valid_preflight", "pass", result, "A clean isolated worker with exact pins is accepted.");
+
+  const committedPinPath = path.join(fixtureRoot, "committed-pin.json");
+  writeJson(committedPinPath, {
+    ...lease,
+    skillPins: lease.skillPins.map((pin) => ({ ...pin, gitCommit: baseSha })),
+  });
+  result = run("node", [WORKER_VALIDATOR, "preflight", "--lease", committedPinPath, "--repo", worktree, "--now", NOW], REPO_ROOT);
+  record("pinned_commit_hash_matches_sparse_checkout", "pass", result, "A sparse linked worktree hashes checked-out and committed skill files in the same bytewise path order.");
 
   const wrongBasePath = path.join(fixtureRoot, "wrong-base.json");
   writeJson(wrongBasePath, { ...lease, baseSha: "0".repeat(40) });
