@@ -528,6 +528,204 @@
         "workerCommit": "f31cff46030a8fb633a4d9c2f526719a5a85c1de",
         "workerBranchHead": "b414c7c2bd0b3c6435c7bc4cf5db012035f9c6ff"
       }
+    },
+    {
+      "leaseId": "lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
+      "jobId": "postfreeze-ar-gbif-melilotus-05089-r1",
+      "attempt": 1,
+      "state": "active",
+      "claimedAt": "2026-07-16T08:46:00Z",
+      "expiresAt": "2026-07-17T12:00:00Z",
+      "workerTaskId": "/root/postfreeze_ar_r1",
+      "expectedManifestPath": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/manifest.json",
+      "previousLeaseId": null,
+      "recoveryReason": null,
+      "recoveryAt": null,
+      "baseSha": "6b7e544dda6122003049e3024a26e2798d47a0ab",
+      "branch": "codex/postfreeze-ar-gbif-melilotus-05089-r1",
+      "worktree": "/private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1",
+      "stateOrSourceScope": {
+        "states": [
+          "AR"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "melilotus-officinalis"
+        ],
+        "pairs": [
+          "05089:melilotus-officinalis"
+        ]
+      },
+      "scopeClaims": [
+        "state/AR/source/gbif-preserved-specimens/taxon/melilotus-officinalis/county/05089"
+      ],
+      "permittedPaths": [
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "scripts/compile-research-index.ts",
+        "scripts/check-research-integrity.ts",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-recovery-2026-07-16-r1",
+          "gitCommit": "1a0301e6a248956e46ba6faecd6d90b6f373a799",
+          "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-recovery-2026-07-16-r1",
+          "gitCommit": "1a0301e6a248956e46ba6faecd6d90b6f373a799",
+          "contentHash": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 10000000,
+        "maxWallMinutes": 30,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "screen exactly 05089:melilotus-officinalis with the frozen GBIF worker contract and started-at 2026-07-16T08:50:00Z",
+        "retain complete request and pagination lineage and use only registered explicit county text",
+        "emit one complete pair outcome without unsupported negative evidence",
+        "commit evidence content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 6b7e544dda6122003049e3024a26e2798d47a0ab...HEAD"
+      ]
+    },
+    {
+      "leaseId": "lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
+      "jobId": "postfreeze-ak-gbif-melilotus-02020-r1",
+      "attempt": 1,
+      "state": "active",
+      "claimedAt": "2026-07-16T08:46:00Z",
+      "expiresAt": "2026-07-17T12:00:00Z",
+      "workerTaskId": "/root/postfreeze_ak_r1",
+      "expectedManifestPath": "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/manifest.json",
+      "previousLeaseId": null,
+      "recoveryReason": null,
+      "recoveryAt": null,
+      "baseSha": "6b7e544dda6122003049e3024a26e2798d47a0ab",
+      "branch": "codex/postfreeze-ak-gbif-melilotus-02020-r1",
+      "worktree": "/private/tmp/isitusa-postfreeze-ak-gbif-melilotus-02020-r1",
+      "stateOrSourceScope": {
+        "states": [
+          "AK"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "melilotus-officinalis"
+        ],
+        "pairs": [
+          "02020:melilotus-officinalis"
+        ]
+      },
+      "scopeClaims": [
+        "state/AK/source/gbif-preserved-specimens/taxon/melilotus-officinalis/county/02020"
+      ],
+      "permittedPaths": [
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "scripts/compile-research-index.ts",
+        "scripts/check-research-integrity.ts",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-recovery-2026-07-16-r1",
+          "gitCommit": "1a0301e6a248956e46ba6faecd6d90b6f373a799",
+          "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-recovery-2026-07-16-r1",
+          "gitCommit": "1a0301e6a248956e46ba6faecd6d90b6f373a799",
+          "contentHash": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 15000000,
+        "maxWallMinutes": 30,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "screen exactly 02020:melilotus-officinalis with the frozen GBIF worker contract and started-at 2026-07-16T08:51:00Z",
+        "treat Anchorage Municipality as an Alaska county equivalent and use only registered explicit county text",
+        "retain complete request and pagination lineage and emit one complete pair outcome without unsupported negative evidence",
+        "commit evidence content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 6b7e544dda6122003049e3024a26e2798d47a0ab...HEAD"
+      ]
     }
   ]
 }
