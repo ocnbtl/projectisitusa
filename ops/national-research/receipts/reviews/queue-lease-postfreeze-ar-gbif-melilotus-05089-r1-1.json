@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
+  "jobId": "postfreeze-ar-gbif-melilotus-05089-r1",
+  "leaseId": "lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-16T09:06:00Z",
+  "workerCommit": "5123d1c76dae42889fae4ba2abaf70b42c41c549",
+  "workerBranchHead": "3983a3da58edeb11cb751964718f65318a0bf945",
+  "manifestHash": "c44070a92fdbfec5f17db417fa05385bfa9301a38afa9fdbd78eff619023c0b6",
+  "changedPaths": [
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-species-match-melilotus-officinalis.json",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/assertions.ndjson",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/manifest.json",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/outcomes.ndjson",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/receipt.json",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/rejections.ndjson",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/reviews.ndjson",
+    "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, pair, base commit, and worker task identities",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact base-to-head diff, whitespace, output inventory, and positive-only evidence semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 1,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable run, canonical receipt contract, complete descriptors, deterministic manifest, exact two-commit diff, explicit Arkansas county routing, recorded-present-only evidence, and all nine lease-permitted output paths."
+}

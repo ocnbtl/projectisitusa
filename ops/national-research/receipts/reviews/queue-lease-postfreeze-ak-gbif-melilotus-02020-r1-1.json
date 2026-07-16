@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
+  "jobId": "postfreeze-ak-gbif-melilotus-02020-r1",
+  "leaseId": "lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-16T09:06:01Z",
+  "workerCommit": "2427afa95ebf9a1c1b25b577dfb774b5c3b0507d",
+  "workerBranchHead": "138ac33f8327e11936cdf91e21d223cd58818b03",
+  "manifestHash": "9ac4c7e79d7691204426042c608ed0711c62cb42dff65e68a844e984242a4cd6",
+  "changedPaths": [
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-species-match-melilotus-officinalis.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/assertions.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/manifest.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/outcomes.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/receipt.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/rejections.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/reviews.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, pair, base commit, and worker task identities",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact base-to-head diff, whitespace, output inventory, retry lineage, and positive-only evidence semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 1,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable run, canonical receipt contract, complete descriptors, deterministic manifest, exact two-commit diff, explicit Anchorage Municipality routing, recorded-present-only evidence, safe retry lineage after an interrupted request, and all nine lease-permitted output paths."
+}

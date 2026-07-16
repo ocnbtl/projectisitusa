@@ -224,25 +224,107 @@
       "queueId": "queue-lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
       "jobId": "postfreeze-ar-gbif-melilotus-05089-r1",
       "leaseId": "lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-16T09:05:00Z",
       "manifestPath": "manifests/postfreeze-ar-gbif-melilotus-05089-r1__lease-postfreeze-ar-gbif-melilotus-05089-r1-1.json",
       "manifestHash": "c44070a92fdbfec5f17db417fa05385bfa9301a38afa9fdbd78eff619023c0b6",
       "manifestBytes": 7681,
       "workerCommit": "5123d1c76dae42889fae4ba2abaf70b42c41c549",
-      "workerBranchHead": "3983a3da58edeb11cb751964718f65318a0bf945"
+      "workerBranchHead": "3983a3da58edeb11cb751964718f65318a0bf945",
+      "reviewedAt": "2026-07-16T09:06:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable run, canonical receipt contract, complete descriptors, deterministic manifest, exact two-commit diff, explicit Arkansas county routing, recorded-present-only evidence, and all nine lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-species-match-melilotus-officinalis.json",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/assertions.ndjson",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/manifest.json",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/outcomes.ndjson",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/receipt.json",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/rejections.ndjson",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/reviews.ndjson",
+        "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, pair, base commit, and worker task identities",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact base-to-head diff, whitespace, output inventory, and positive-only evidence semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-postfreeze-ar-gbif-melilotus-05089-r1-1.json",
+        "sha256": "4add903f9926c6b75751a9ceb0b9889664335734cb389c164700b85b14e5c691",
+        "bytes": 2493
+      }
     },
     {
       "queueId": "queue-lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
       "jobId": "postfreeze-ak-gbif-melilotus-02020-r1",
       "leaseId": "lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-16T09:05:01Z",
       "manifestPath": "manifests/postfreeze-ak-gbif-melilotus-02020-r1__lease-postfreeze-ak-gbif-melilotus-02020-r1-1.json",
       "manifestHash": "9ac4c7e79d7691204426042c608ed0711c62cb42dff65e68a844e984242a4cd6",
       "manifestBytes": 7793,
       "workerCommit": "2427afa95ebf9a1c1b25b577dfb774b5c3b0507d",
-      "workerBranchHead": "138ac33f8327e11936cdf91e21d223cd58818b03"
+      "workerBranchHead": "138ac33f8327e11936cdf91e21d223cd58818b03",
+      "reviewedAt": "2026-07-16T09:06:01Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable run, canonical receipt contract, complete descriptors, deterministic manifest, exact two-commit diff, explicit Anchorage Municipality routing, recorded-present-only evidence, safe retry lineage after an interrupted request, and all nine lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-species-match-melilotus-officinalis.json",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/assertions.ndjson",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/manifest.json",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/outcomes.ndjson",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/receipt.json",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/rejections.ndjson",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/reviews.ndjson",
+        "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, pair, base commit, and worker task identities",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact base-to-head diff, whitespace, output inventory, retry lineage, and positive-only evidence semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-postfreeze-ak-gbif-melilotus-02020-r1-1.json",
+        "sha256": "8c18cb409cd6afece50988513a31f033c942072f44ea748aec86a2307d9f0f53",
+        "bytes": 2564
+      }
     }
   ]
 }
