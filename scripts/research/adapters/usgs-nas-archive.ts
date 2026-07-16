@@ -422,7 +422,7 @@ function assertionAndReview(input: {
     geography_match: {
       method: "Exact NAS state code and explicit county-equivalent name resolved to the active registry without coordinate inference",
       source_state: pair.stateCode,
-      source_county: sourceCounties.join(" | "),
+      source_county: sourceCounties[0]!,
       county_fips: pair.countyFips,
     },
     temporal_scope: sourceDates.length
@@ -441,7 +441,10 @@ function assertionAndReview(input: {
       `Qualifying retained record count: ${sortedRecords.length}.`,
       `Accepted NAS statuses: ${[...new Set(sortedRecords.map((entry) => canonicalText(entry.occurrenceStatus)))].sort(compareText).join(", ")}.`,
       `Occurrence identities, first five: ${identities.slice(0, 5).join(", ")}.`,
-    ],
+      sourceCounties.length > 1
+        ? `Source county values resolving to this county equivalent: ${sourceCounties.join(", ")}.`
+        : "",
+    ].filter(Boolean),
   };
   const review: EvidenceReviewEvent = {
     schemaVersion: 1,

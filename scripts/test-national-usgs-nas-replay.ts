@@ -300,6 +300,44 @@ async function main() {
   assert(nationalNasRecordAppliesToScreen({ recordStateProvince: "", recordScientificName: "Myosotis scorpioides", screenStateCode: "AK", screenScientificName: "Myosotis scorpioides" }), "Missing-state pilot record was silently excluded before adapter review.");
   assert(!nationalNasRecordAppliesToScreen({ recordStateProvince: "AZ", recordScientificName: "Myosotis scorpioides", screenStateCode: "AK", screenScientificName: "Myosotis scorpioides" }), "Explicit other-state record entered the Alaska screen.");
 
+  const maPairs = requestedPairs("MA", "potamogeton-crispus", "Potamogeton crispus");
+  const countyVariantResult = replayNationalNasScreen({
+    context: context("MA", "potamogeton-crispus", "Potamogeton crispus", "test-usgs-nas-county-variants"),
+    requestedPairs: maPairs,
+    records: [
+      makeRecord({
+        id: "urn:USGS:NAS:ma-1",
+        occurrenceID: "urn:USGS:NAS:ma-1",
+        stateProvince: "MA",
+        county: "Middlesex",
+        scientificName: "Potamogeton crispus",
+        genus: "Potamogeton",
+        specificEpithet: "crispus",
+      }),
+      makeRecord({
+        id: "urn:USGS:NAS:ma-2",
+        occurrenceID: "urn:USGS:NAS:ma-2",
+        stateProvince: "MA",
+        county: "Middlesex County",
+        scientificName: "Potamogeton crispus",
+        genus: "Potamogeton",
+        specificEpithet: "crispus",
+      }),
+    ],
+    acceptedOccurrenceStatuses: ["collected", "established"],
+    completedAt: "2026-07-15T10:01:00.000Z",
+    archiveUrl: canonicalNasArchiveUrl("1.344"),
+  });
+  assert(countyVariantResult.assertions.length === 1, "County name variants did not aggregate to one assertion.");
+  assert(
+    countyVariantResult.assertions[0]!.geography_match.source_county === "Middlesex",
+    "Aggregated county variants did not retain one independently resolvable source county value.",
+  );
+  assert(
+    countyVariantResult.assertions[0]!.notes.some((note) => note.includes("Middlesex County")),
+    "Aggregated county variants were not preserved in assertion notes.",
+  );
+
   const silent = replayNationalNasScreen({ ...replayInput, records: [] });
   assert(silent.assertions.length === 0 && silent.rejections.length === 0, "Source silence created assertions or rejections.");
   assert(silent.outcomes.every((entry) => entry.status === "no-qualifying-evidence" && entry.scope_complete), "Source silence did not remain research-only.");
