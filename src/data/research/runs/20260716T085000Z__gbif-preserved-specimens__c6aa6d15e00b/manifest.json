@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "jobId": "postfreeze-ar-gbif-melilotus-05089-r1",
+  "leaseId": "lease-postfreeze-ar-gbif-melilotus-05089-r1-1",
+  "status": "complete",
+  "branch": "codex/postfreeze-ar-gbif-melilotus-05089-r1",
+  "worktree": "/private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1",
+  "baseSha": "6b7e544dda6122003049e3024a26e2798d47a0ab",
+  "commitSha": "5123d1c76dae42889fae4ba2abaf70b42c41c549",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-recovery-2026-07-16-r1",
+      "gitCommit": "1a0301e6a248956e46ba6faecd6d90b6f373a799",
+      "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-recovery-2026-07-16-r1",
+      "gitCommit": "1a0301e6a248956e46ba6faecd6d90b6f373a799",
+      "contentHash": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AR",
+    "stateProvince": "Arkansas",
+    "candidateFile": "src/data/research/state-candidates/AR.json",
+    "outputRoot": "src/data/research/runs",
+    "startedAt": "2026-07-16T08:50:00Z",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "05089:melilotus-officinalis"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+      "sha256": "fd6761fe369ef4e9a9529476389291d1640870f283746ab43a7e9efe3698268a",
+      "bytes": 670221
+    },
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/artifacts/gbif-species-match-melilotus-officinalis.json",
+      "sha256": "79f0fb0830b66d7568b1458b110c6e151e32a040bf7084df38c6ab49cf49f5ca",
+      "bytes": 467
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/assertions.ndjson",
+      "count": 6
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/reviews.ndjson",
+      "count": 6
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/rejections.ndjson",
+      "count": 5
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/outcomes.ndjson",
+      "count": 1
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/receipt.json",
+    "sha256": "774ca83d07e87ad4d0ab25cf79ec0a36bd381c836e52c87014b82026f9a2a0c2",
+    "bytes": 4544
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/source-verification.json",
+    "sha256": "15d751d24d603603b6fdb7f302ed1362965896ca0fee677d776ff1b8e6f45a64",
+    "bytes": 5182
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 670688,
+      "sourceRequests": 2,
+      "providerCandidates": 100,
+      "assertionEvents": 6,
+      "publicationEligibleAssertions": 6,
+      "reviewEvents": 6,
+      "rejectionRecords": 5,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 670688,
+      "sourceRequests": 2,
+      "providerCandidates": 100,
+      "assertionEvents": 6,
+      "publicationEligibleAssertions": 6,
+      "reviewEvents": 6,
+      "rejectionRecords": 5,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /private/tmp/isitusa-postfreeze-ar-lease-r1.json --repo /private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --import tsx scripts/research/validate-immutable-run.ts --repository-root /private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1 --validation-root /private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1 --run-directory /private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1/src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b --source-verification /private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1/src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/source-verification.json --run-id 20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b --source-id gbif-preserved-specimens --state-code AR --pair-keys 05089:melilotus-officinalis --code-commit 6b7e544dda6122003049e3024a26e2798d47a0ab --worker-task-id /root/postfreeze_ar_r1",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 6b7e544dda6122003049e3024a26e2798d47a0ab...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /private/tmp/isitusa-postfreeze-ar-lease-r1.json --manifest src/data/research/runs/20260716T085000Z__gbif-preserved-specimens__c6aa6d15e00b/manifest.json --repo /private/tmp/isitusa-postfreeze-ar-gbif-melilotus-05089-r1",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": []
+  },
+  "retryHistory": [
+    {
+      "requestAttempt": 1,
+      "outcome": "complete",
+      "exitCode": 0,
+      "upstreamStatuses": [
+        200,
+        200
+      ],
+      "retainedArtifacts": 2,
+      "scopeComplete": true
+    }
+  ],
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 2.46,
+    "peakMemoryMb": 230.3,
+    "validPairsScreened": 1,
+    "manualInterventions": 1,
+    "acquisitionAttemptWallSeconds": [
+      2.46
+    ],
+    "maximumResidentBytes": 241467392
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  },
+  "violations": [],
+  "unexpectedBehavior": [
+    "The leased run path is intentionally outside the sparse-checkout patterns; Git required explicit sparse staging for the content and manifest commits."
+  ]
+}
