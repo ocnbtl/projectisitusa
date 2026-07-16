@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-16T08:54:53.539Z",
+  "runId": "20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AK",
+  "pairKeys": [
+    "02020:melilotus-officinalis"
+  ],
+  "parameterHash": "eb62e9c90b659afc97b663f6da224153ddd5aef0b00b1d3fcef4ad556eb15f6d",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat and the occurrence-record publishers identified in the retained response"
+  },
+  "terms": {
+    "license": "Retained occurrence records declare either CC BY 4.0 or CC0 1.0 record-level licenses.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-16T08:54:52.606Z",
+    "freshnessDate": "2026-07-13T12:15:14.495+00:00"
+  },
+  "geography": {
+    "method": "Registered exact provider county-equivalent text resolution: GBIF county text Anchorage uniquely resolves to active FIPS 02020, Anchorage Municipality, Alaska.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinate-derived county routing is forbidden for this run. Only explicit registered GBIF county text was considered; coordinates were neither used nor permitted to derive county identity."
+  },
+  "taxonomy": {
+    "method": "Registered strict GBIF EXACT species match with confidence at least 95 and exact canonical binomial agreement; Melilotus officinalis matched GBIF speciesKey 8193111 at confidence 98.",
+    "targetSpeciesIds": [
+      "melilotus-officinalis"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "GBIF occurrence key",
+      "datasetKey",
+      "gbifID",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "gbif-species-match-melilotus-officinalis",
+        "url": "https://api.gbif.org/v1/species/match?name=Melilotus+officinalis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the exact registered target binomial to a stable GBIF species key before occurrence acquisition. Attempt 1 failed before an HTTP response; attempt 2 completed successfully.",
+        "attempts": 2,
+        "status": 200,
+        "retrievedAt": "2026-07-16T08:54:52.606Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "gbif-occurrences-melilotus-officinalis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8193111&limit=300&offset=0",
+        "purpose": "Acquire the complete registered Alaska PRESERVED_SPECIMEN and PRESENT occurrence result set for exact speciesKey 8193111, then screen only explicit county-equivalent text for the leased pair.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-16T08:54:53.105Z",
+        "declaredRecordCount": 38,
+        "receivedRecordCount": 38,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF record silence, missing county text, rejected candidates, and empty or failed requests never support verified absence or not-detected claims."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+      "sha256": "d292e52690dc5656110f435c313d0357b59e18e37df972c93eb8cb9c209daed9",
+      "bytes": 293707
+    },
+    {
+      "path": "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-species-match-melilotus-officinalis.json",
+      "sha256": "79f0fb0830b66d7568b1458b110c6e151e32a040bf7084df38c6ab49cf49f5ca",
+      "bytes": 467
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The accepted record is historical point-scale preserved-specimen evidence and does not imply countywide abundance or current distribution.",
+    "The live search has no fixed snapshot identifier; retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Thirty-seven provider candidates lacked explicit county text and were rejected without coordinate-derived county assignment."
+  ]
+}
