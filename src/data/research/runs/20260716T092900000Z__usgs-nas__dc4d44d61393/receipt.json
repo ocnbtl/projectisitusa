@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092900000Z__usgs-nas__dc4d44d61393",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:00.000Z",
+  "finished_at": "2026-07-16T09:29:00.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "bd8c49c4e3f33a77dea625cff386be068572f936cdee531429f9967dd350af41",
+  "code_commit": "ac4c6a190093710b4d90901f6e8b440830f8ef50",
+  "parameter_hash": "357e39a488ceaa1bf957ec41e45ad5da68ebf6a844ce8cede46627924762fd97",
+  "parameters": {
+    "stateCode": "AK",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-01",
+    "candidateLimit": 30,
+    "candidatePairs": [
+      "02013:iris-pseudacorus",
+      "02016:iris-pseudacorus",
+      "02020:iris-pseudacorus",
+      "02050:iris-pseudacorus",
+      "02060:iris-pseudacorus",
+      "02063:iris-pseudacorus",
+      "02066:iris-pseudacorus",
+      "02068:iris-pseudacorus",
+      "02070:iris-pseudacorus",
+      "02090:iris-pseudacorus",
+      "02100:iris-pseudacorus",
+      "02105:iris-pseudacorus",
+      "02110:iris-pseudacorus",
+      "02122:iris-pseudacorus",
+      "02130:iris-pseudacorus",
+      "02150:iris-pseudacorus",
+      "02158:iris-pseudacorus",
+      "02164:iris-pseudacorus",
+      "02170:iris-pseudacorus",
+      "02180:iris-pseudacorus",
+      "02185:iris-pseudacorus",
+      "02188:iris-pseudacorus",
+      "02195:iris-pseudacorus",
+      "02198:iris-pseudacorus",
+      "02220:iris-pseudacorus",
+      "02230:iris-pseudacorus",
+      "02240:iris-pseudacorus",
+      "02275:iris-pseudacorus",
+      "02282:iris-pseudacorus",
+      "02290:iris-pseudacorus"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "AK",
+    "county_fips": [
+      "02013",
+      "02016",
+      "02020",
+      "02050",
+      "02060",
+      "02063",
+      "02066",
+      "02068",
+      "02070",
+      "02090",
+      "02100",
+      "02105",
+      "02110",
+      "02122",
+      "02130",
+      "02150",
+      "02158",
+      "02164",
+      "02170",
+      "02180",
+      "02185",
+      "02188",
+      "02195",
+      "02198",
+      "02220",
+      "02230",
+      "02240",
+      "02275",
+      "02282",
+      "02290"
+    ],
+    "species_ids": [
+      "iris-pseudacorus"
+    ],
+    "pair_keys": [
+      "02013:iris-pseudacorus",
+      "02016:iris-pseudacorus",
+      "02020:iris-pseudacorus",
+      "02050:iris-pseudacorus",
+      "02060:iris-pseudacorus",
+      "02063:iris-pseudacorus",
+      "02066:iris-pseudacorus",
+      "02068:iris-pseudacorus",
+      "02070:iris-pseudacorus",
+      "02090:iris-pseudacorus",
+      "02100:iris-pseudacorus",
+      "02105:iris-pseudacorus",
+      "02110:iris-pseudacorus",
+      "02122:iris-pseudacorus",
+      "02130:iris-pseudacorus",
+      "02150:iris-pseudacorus",
+      "02158:iris-pseudacorus",
+      "02164:iris-pseudacorus",
+      "02170:iris-pseudacorus",
+      "02180:iris-pseudacorus",
+      "02185:iris-pseudacorus",
+      "02188:iris-pseudacorus",
+      "02195:iris-pseudacorus",
+      "02198:iris-pseudacorus",
+      "02220:iris-pseudacorus",
+      "02230:iris-pseudacorus",
+      "02240:iris-pseudacorus",
+      "02275:iris-pseudacorus",
+      "02282:iris-pseudacorus",
+      "02290:iris-pseudacorus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__dc4d44d61393/artifacts/national-acquisition-reference.json",
+      "sha256": "c6ed71d13d9f76731da3959f300cbeb58926c807ed128ca1387bde98590f2a86",
+      "bytes": 1788,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__dc4d44d61393/assertions.ndjson",
+      "sha256": "626e4c7a8d80b8d560672d4f88f509e248e38642d097f22222e3673f169b21ec",
+      "bytes": 6811,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__dc4d44d61393/reviews.ndjson",
+      "sha256": "9f77b87e02c9a960b2581cd0ce4fda32b8b2fef736cbaf52ff2c92756439245f",
+      "bytes": 2832,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__dc4d44d61393/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__dc4d44d61393/outcomes.ndjson",
+      "sha256": "c72e12758df0d30c18a369c20729669eff936896540af55fc0fc7b0358c451f4",
+      "bytes": 19674,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 30,
+    "candidate_records": 10,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 30
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 0.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-01 --states AK --recorded-at 2026-07-16T09:29:00.000Z"
+}

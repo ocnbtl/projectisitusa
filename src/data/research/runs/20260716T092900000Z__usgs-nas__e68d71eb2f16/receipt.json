@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T092900000Z__usgs-nas__e68d71eb2f16",
+  "status": "complete",
+  "started_at": "2026-07-16T09:29:00.000Z",
+  "finished_at": "2026-07-16T09:29:00.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-nas-archive@1.0.0",
+  "source_id": "usgs-nas",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "usgs-nas-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "bd8c49c4e3f33a77dea625cff386be068572f936cdee531429f9967dd350af41",
+  "code_commit": "ac4c6a190093710b4d90901f6e8b440830f8ef50",
+  "parameter_hash": "b78efe5b30c32a15e4637a6fe316c6649d706e9b35ba23e47aaa7286e3223da0",
+  "parameters": {
+    "stateCode": "HI",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20260531__usgs-nas-dwca-v1-344__563b13cbf2f8",
+    "nationalAcquisitionReceiptSha256": "7d3a14c612282d77d8931d5a3b145aa1bcb70831cc7f28d4e57b22142a49ebb9",
+    "archiveVersion": "1.344",
+    "planId": "usgs-nas-national-v1-wave-01",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "15001:misgurnus-anguillicaudatus",
+      "15003:misgurnus-anguillicaudatus",
+      "15005:misgurnus-anguillicaudatus",
+      "15007:misgurnus-anguillicaudatus",
+      "15009:misgurnus-anguillicaudatus"
+    ],
+    "acceptedOccurrenceStatuses": [
+      "collected",
+      "established"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "HI",
+    "county_fips": [
+      "15001",
+      "15003",
+      "15005",
+      "15007",
+      "15009"
+    ],
+    "species_ids": [
+      "misgurnus-anguillicaudatus"
+    ],
+    "pair_keys": [
+      "15001:misgurnus-anguillicaudatus",
+      "15003:misgurnus-anguillicaudatus",
+      "15005:misgurnus-anguillicaudatus",
+      "15007:misgurnus-anguillicaudatus",
+      "15009:misgurnus-anguillicaudatus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__e68d71eb2f16/artifacts/national-acquisition-reference.json",
+      "sha256": "a99fb1653c4bec732760b32595e6887c740d4365732ee45431fdb48e7ec8b696",
+      "bytes": 1808,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__e68d71eb2f16/assertions.ndjson",
+      "sha256": "d30d74be76d966759eb28880a808b316e9804985bebc1d0aa7e9854b82a5c81a",
+      "bytes": 9275,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__e68d71eb2f16/reviews.ndjson",
+      "sha256": "893266646f5f66d4d4990af479e839dce5062818cfee9b697d8c5de59c584940",
+      "bytes": 3816,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__e68d71eb2f16/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T092900000Z__usgs-nas__e68d71eb2f16/outcomes.ndjson",
+      "sha256": "e11edf1cf9773af56b46f6f86f53740d5202d2b9f0bcbc7a88c57624a428d2bb",
+      "bytes": 3357,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 18,
+    "assertion_events": 4,
+    "review_events": 4,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Spatial occurrence evidence only. Records vary in scale, completeness, population status, and temporal currency.",
+    "Only exact collected or established rows passed this bounded plan's positive-evidence gate.",
+    "The complete archive screen can support researched-unresolved outcomes but never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "USGS NAS is an official national occurrence source, but its records remain provisional and heterogeneous.",
+    "Rejected raw candidate records: 0.",
+    "No archive result was interpreted as verified absence or survey non-detection."
+  ],
+  "deviations": [
+    "The versioned national archive was acquired once, then streamed locally and partitioned without state-specific network requests.",
+    "Qualifying raw records were aggregated to one assertion per county-species pair while every raw row remained in the hash-pinned archive.",
+    "The explicit partition recorded-at value is the deterministic logical timestamp for this offline replay and both receipt boundaries."
+  ],
+  "rerun_command": "npm run research:partition:usgs-nas-national -- --acquisition 20260531__usgs-nas-dwca-v1-344__563b13cbf2f8 --plan usgs-nas-national-v1-wave-01 --states HI --recorded-at 2026-07-16T09:29:00.000Z"
+}
