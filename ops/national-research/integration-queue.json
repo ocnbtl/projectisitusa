@@ -51,13 +51,54 @@
       "queueId": "queue-lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
       "jobId": "recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
       "leaseId": "lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-16T07:41:00Z",
       "manifestPath": "manifests/recovery-pilot-az-gbif-matricaria-discoidea-04013-r2__lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1.json",
       "manifestHash": "1565e3719413abd22ea121f1a92d4ebfdbe24b2b04ed022c11b06f17620b0eaf",
       "manifestBytes": 7511,
       "workerCommit": "1b71934f22d6accf3183ac6f55acf4e06f09f7d4",
-      "workerBranchHead": "8bb37c3337ba30ccb359908c510eb7e695f29dff"
+      "workerBranchHead": "8bb37c3337ba30ccb359908c510eb7e695f29dff",
+      "reviewedAt": "2026-07-16T08:08:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the canonical immutable-run contract, pinned worker manifest, exact two-commit diff, explicit county routing, positive-only evidence semantics, complete outcome, and retained retry telemetry. All nine changed paths are lease-permitted immutable run outputs.",
+      "changedPaths": [
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/artifacts/gbif-species-match-matricaria-discoidea.json",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/assertions.ndjson",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/manifest.json",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/outcomes.ndjson",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/receipt.json",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/rejections.ndjson",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/reviews.ndjson",
+        "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "node --import tsx scripts/research/validate-immutable-run.ts --repository-root /private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2 --validation-root /Users/ocean/Code/Project Isitusa --run-directory /private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2/src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d --source-verification /private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2/src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/source-verification.json --run-id 20260716T065000Z__gbif-preserved-specimens__dff867ba251d --source-id gbif-preserved-specimens --state-code AZ --pair-keys 04013:matricaria-discoidea --code-commit ed6c692337990f9c08736f0ea5c8fbba558e0381 --worker-task-id /root/recovery_pilot_az_r2",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "node validate-worker.mjs manifest --lease ops/national-research/leases.json --lease-id lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1 --manifest manifest.json --repo /private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2 --validation-root /Users/ocean/Code/Project Isitusa --now 2026-07-16T08:06:12Z",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check ed6c692337990f9c08736f0ea5c8fbba558e0381...8bb37c3337ba30ccb359908c510eb7e695f29dff",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1.json",
+        "sha256": "ed78ab970c03bef14ac3ed2ecf0268a240b99e75bf031c85a1e8d4972309e03d",
+        "bytes": 3487
+      }
     }
   ]
 }
