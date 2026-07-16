@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "jobId": "recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
+  "leaseId": "lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
+  "status": "complete",
+  "branch": "codex/recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
+  "worktree": "/private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2",
+  "baseSha": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
+  "commitSha": "1b71934f22d6accf3183ac6f55acf4e06f09f7d4",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "candidate-recovery-2",
+      "gitCommit": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
+      "contentHash": "535dac43ac4e9d904e36b683880141d14b7ebd3deb9c558119f4a70daf57d811"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "candidate-recovery-2",
+      "gitCommit": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
+      "contentHash": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AZ",
+    "stateProvince": "Arizona",
+    "candidateFile": "src/data/research/state-candidates/AZ.json",
+    "outputRoot": "src/data/research/runs",
+    "startedAt": "2026-07-16T06:50:00Z",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "04013:matricaria-discoidea"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "03964efc508203f107c21e677aaa842b9dfe4d26d9d528163da787d92dcff46d",
+      "bytes": 831949
+    },
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/assertions.ndjson",
+      "count": 51
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/reviews.ndjson",
+      "count": 51
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/rejections.ndjson",
+      "count": 19
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/outcomes.ndjson",
+      "count": 1
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/receipt.json",
+    "sha256": "b3120fe227755b326057afd8ae00e12a5b1695031a4bfc59efa2fd7deee91a0e",
+    "bytes": 4540
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/source-verification.json",
+    "sha256": "613a842b50bf238d096f52d249dec0127410286efaa00113f0c0890fd7deae8e",
+    "bytes": 5318
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 832411,
+      "sourceRequests": 2,
+      "providerCandidates": 110,
+      "assertionEvents": 51,
+      "publicationEligibleAssertions": 51,
+      "reviewEvents": 51,
+      "rejectionRecords": 19,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 832411,
+      "sourceRequests": 2,
+      "providerCandidates": 110,
+      "assertionEvents": 51,
+      "publicationEligibleAssertions": 51,
+      "reviewEvents": 51,
+      "rejectionRecords": 19,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 1,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /private/tmp/isitusa-recovery-pilot-lease-r2.json --repo /private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check ed6c692337990f9c08736f0ea5c8fbba558e0381...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /private/tmp/isitusa-recovery-pilot-lease-r2.json --manifest src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/manifest.json --repo /private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": []
+  },
+  "retryHistory": [
+    {
+      "requestAttempt": 1,
+      "outcome": "retryable-failure",
+      "wrapperExitCode": 1,
+      "runnerStatus": "partial",
+      "failureCode": "gbif-request-failed",
+      "failureMessage": "https://api.gbif.org/v1/species/match?name=Matricaria+discoidea&rank=SPECIES&strict=true: fetch failed",
+      "upstreamResponses": 0,
+      "retainedArtifacts": 0,
+      "scopeComplete": false,
+      "disposition": "Removed the uncommitted zero-artifact partial run before the lease-authorized retry; preserved this telemetry and inferred no negative result."
+    },
+    {
+      "requestAttempt": 2,
+      "outcome": "complete",
+      "exitCode": 0,
+      "upstreamStatuses": [
+        200,
+        200
+      ],
+      "retainedArtifacts": 2,
+      "scopeComplete": true
+    }
+  ],
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 7.91,
+    "peakMemoryMb": 125.88,
+    "validPairsScreened": 1,
+    "manualInterventions": 1,
+    "acquisitionAttemptWallSeconds": [
+      1.67,
+      6.24
+    ],
+    "maximumResidentBytes": 131989504
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  },
+  "violations": [],
+  "unexpectedBehavior": [
+    "The sandboxed first attempt could not reach GBIF, and /usr/bin/time -l returned exit 1 after the runner emitted its partial result because sysctl kern.clockrate was blocked; no provider response or artifact existed in that attempt.",
+    "The inherited C.UTF-8 locale caused shasum to abort; retained-file hashes were independently verified with openssl."
+  ]
+}

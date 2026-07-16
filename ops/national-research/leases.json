@@ -313,7 +313,7 @@
       "leaseId": "lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
       "jobId": "recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
       "attempt": 1,
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-16T07:20:00Z",
       "expiresAt": "2026-07-17T12:00:00Z",
       "workerTaskId": "/root/recovery_pilot_az_r2",
@@ -408,7 +408,16 @@
         "emit a schema-valid source-verification record with request and pagination lineage",
         "commit evidence content first and the finalized manifest second",
         "pass the worktree-pinned worker validator and git diff --check ed6c692337990f9c08736f0ea5c8fbba558e0381...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-16T07:41:00Z",
+      "resultManifest": {
+        "path": "manifests/recovery-pilot-az-gbif-matricaria-discoidea-04013-r2__lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1.json",
+        "sha256": "1565e3719413abd22ea121f1a92d4ebfdbe24b2b04ed022c11b06f17620b0eaf",
+        "bytes": 7511,
+        "status": "complete",
+        "workerCommit": "1b71934f22d6accf3183ac6f55acf4e06f09f7d4",
+        "workerBranchHead": "8bb37c3337ba30ccb359908c510eb7e695f29dff"
+      }
     }
   ]
 }
