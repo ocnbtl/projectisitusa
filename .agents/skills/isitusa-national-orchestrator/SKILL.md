@@ -102,6 +102,10 @@ Treat a pending integration-queue item as a validated submission, not as accepta
 
 The transition gate requires a clean worker worktree and exact committed manifest bytes at worker HEAD. It copies those exact bytes to `ops/national-research/manifests/`, records their hash, byte count, content commit, and branch head on the lease and queue item, and rejects later tampering. Valid partial results can be archived durably for retry but are not queued.
 
+Before acceptance, write a closed machine-readable review receipt with the exact queue, job, lease, manifest, content commit, branch head, changed paths, checks, conflicts, interventions, and violation counts. The `review` command independently requires exactly the content commit followed by the manifest commit, recomputes the base-to-head path set, archives the exact receipt bytes, and transactionally moves `pending` to `accepted` plus the job to `integrating`. An accepted receipt requires zero conflicts, critical safety violations, evidence-semantic violations, and forbidden writes.
+
+After acceptance, integrate the two reviewed worker commits on canonical `main`, commit the worker content, and run fresh canonical checks. Write a closed integration receipt for that clean canonical commit. The `integrate` command compares every reviewed worker path by Git tree entry against canonical `main`, archives the exact receipt bytes, and transactionally moves the queue item to `integrated` plus the job to `completed`. Central generation follows this recorded integration.
+
 ## 6. Recover safely
 
 Expire or recover a lease only through MAIN. Preserve partial artifacts and resume tokens. Never overwrite a completed immutable run. A retry uses the same job ID with an incremented attempt and a new lease ID, branch or clean worktree state as recorded by policy.
@@ -131,6 +135,8 @@ Run from the canonical repository:
 node .agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs validate --root ops/national-research
 node .agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs claim --root ops/national-research --job <job-id> --lease <lease-json>
 node .agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs transition --root ops/national-research --lease <lease-id> --state completed --manifest <manifest-json>
+node .agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs review --root ops/national-research --queue <queue-id> --decision accepted --receipt <review-receipt-json>
+node .agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs integrate --root ops/national-research --queue <queue-id> --receipt <integration-receipt-json> --repo <canonical-repository>
 node .agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs dashboard --root ops/national-research --as-of <ISO-time>
 ```
 

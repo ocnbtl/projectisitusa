@@ -12,9 +12,9 @@
   "broadDispatchAllowed": false,
   "freeze": {
     "status": "not-frozen",
-    "candidateGitCommit": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
+    "candidateGitCommit": null,
     "candidateSkillHashes": {
-      "isitusa-national-orchestrator": "535dac43ac4e9d904e36b683880141d14b7ebd3deb9c558119f4a70daf57d811",
+      "isitusa-national-orchestrator": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb",
       "isitusa-evidence-worker": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
     }
   },
@@ -34,12 +34,12 @@
     },
     "green": {
       "result": "pass",
-      "totalCases": 79,
-      "passed": 79,
+      "totalCases": 89,
+      "passed": 89,
       "failed": 0,
       "criticalSafetyViolations": 0,
-      "wallSeconds": 61.148,
-      "peakMemoryMb": 48.281,
+      "wallSeconds": 41.508,
+      "peakMemoryMb": 53.625,
       "manualInterventions": 0,
       "deterministicRepeatedValidation": true,
       "transactionalCompletionGate": true,
@@ -47,7 +47,11 @@
       "pinnedValidatorExecution": true,
       "durableManifestReceipt": true,
       "portableHistoricalFixture": true,
-      "pinnedCommitHashMatchesSparseCheckout": true
+      "pinnedCommitHashMatchesSparseCheckout": true,
+      "transactionalReviewGate": true,
+      "transactionalIntegrationGate": true,
+      "canonicalTreeEntryComparison": true,
+      "reviewAndIntegrationReceiptTamperDetection": true
     }
   },
   "staticValidation": {
@@ -65,7 +69,7 @@
     "canonicalSemanticValidator": "src/lib/research/validate-run.ts#validateImmutableResearchRunDirectory",
     "workerCli": "scripts/research/validate-immutable-run.ts",
     "workerOracle": ".agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs",
-    "completionGate": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs",
+    "completionReviewAndIntegrationGate": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs",
     "sourceVerificationSchema": "src/data/research/schemas/worker-source-verification.schema.json"
   },
   "requiredCases": {
@@ -87,7 +91,13 @@
     "dirtyOrUncommittedManifestRejected": true,
     "durableQueueTamperingRejected": true,
     "partialManifestArchivedWithoutQueue": true,
-    "pinnedCommitHashMatchesSparseCheckout": true
+    "pinnedCommitHashMatchesSparseCheckout": true,
+    "reviewReceiptClosedAndDurable": true,
+    "acceptedReviewRequiresZeroCriticalViolations": true,
+    "reviewChangedPathsRecomputed": true,
+    "acceptedAndIntegratedLifecycleValidated": true,
+    "integrationReceiptClosedAndDurable": true,
+    "canonicalIntegrationBytesReconciled": true
   },
   "repairIterations": [
     {
@@ -103,17 +113,17 @@
     {
       "iteration": 2,
       "candidateVersion": "candidate-recovery-2",
-      "candidateCommit": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
-      "status": "blind-pass-real-pilot-in-progress",
-      "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, document the contract, exercise a full pinned commit in a sparse linked worktree, and resolve the shared workspace dependency root automatically for canonical child validation.",
-      "regressionCases": 79,
-      "regressionPassed": 79,
+      "candidateCommit": null,
+      "status": "integration-lifecycle-regression-pass-blind-pending",
+      "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, resolve the shared workspace dependency root automatically, and add closed receipt-bound transactional review and canonical integration gates after the first real pilot exposed the missing lifecycle commands.",
+      "regressionCases": 89,
+      "regressionPassed": 89,
       "criticalViolations": 0,
       "broadDispatchAllowed": false
     }
   ],
   "blindForwardTests": {
-    "status": "pass",
+    "status": "affected-orchestrator-blind-pending",
     "attempts": [
       {
         "iteration": 1,
@@ -189,32 +199,42 @@
     ]
   },
   "realPilot": {
-    "status": "active",
+    "status": "submitted-regression-defect-found",
     "jobId": "recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
     "leaseId": "lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
     "branch": "codex/recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
     "worktree": "/private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2",
     "runId": "20260716T065000Z__gbif-preserved-specimens__dff867ba251d",
-    "acceptedIntegrationSubmissions": 0
+    "contentCommit": "1b71934f22d6accf3183ac6f55acf4e06f09f7d4",
+    "branchHead": "8bb37c3337ba30ccb359908c510eb7e695f29dff",
+    "manifestSha256": "1565e3719413abd22ea121f1a92d4ebfdbe24b2b04ed022c11b06f17620b0eaf",
+    "assertions": 51,
+    "reviews": 51,
+    "rejections": 19,
+    "outcomes": 1,
+    "errors": 0,
+    "criticalViolations": 0,
+    "acceptedIntegrationSubmissions": 0,
+    "discoveredDefect": "The candidate could validate and submit a worker result but had no transactional command to accept or integrate it. The result remains pending while the affected orchestrator surface is re-evaluated."
   },
   "metrics": {
     "evidenceSemanticViolations": 0,
     "leaseCollisions": 0,
     "forbiddenWrites": 0,
-    "manifestCompleteness": null,
+    "manifestCompleteness": 1,
     "deterministicOutput": true,
-    "retryResumeBehavior": "synthetic-pass-real-pilot-pending",
+    "retryResumeBehavior": "synthetic-pass-and-real-transport-retry-preserved",
     "workerCompletionRate": 0.25,
     "mergeConflicts": 0,
     "manualInterventions": 4,
     "wallSeconds": null,
-    "peakMemoryMb": 48.281,
+    "peakMemoryMb": 125.88,
     "validatedResearchThroughputPairsPerHour": null
   },
   "comparisonWithPriorWorkflow": {
     "priorCandidateResult": "blocked",
-    "improvementSoFar": "The full worker receipt contract uses the canonical immutable-run path, checked-out and committed skill hashes share one deterministic order, and sparse workers resolve canonical validation dependencies without local installation or external environment setup.",
+    "improvementSoFar": "The full worker receipt contract uses the canonical immutable-run path, checked-out and committed skill hashes share one deterministic order, sparse workers resolve canonical dependencies without local installation, and MAIN review plus integration now use durable closed receipts and rollback-safe lifecycle transitions.",
     "passingRequirementMet": false,
-    "reason": "Blind forward tests pass. The active real pilot still requires independent acceptance before freeze."
+    "reason": "The expanded 89-case regression passes, but the changed orchestrator review and integration surface requires a fresh blind test and an exact-pinned accepted real pilot before freeze."
   }
 }

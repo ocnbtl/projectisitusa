@@ -11,7 +11,7 @@ Store durable state under `ops/national-research/`:
 - `leases.json`: immutable lease attempts with explicit recovery state
 - `integration-queue.json`: worker results awaiting MAIN decisions
 - `dashboard.json`: generated national progress and throughput snapshot
-- `manifests/<job-id>.json`: worker completion manifests
+- `manifests/<job-id>__<lease-id>.json`: exact worker completion manifests
 - `evaluations/<evaluation-id>.json`: skill and pilot evidence
 - `receipts/`: freeze, integration, generation, release, and recovery receipts
 - `fixtures/`: synthetic adversarial inputs only
@@ -110,6 +110,23 @@ Worker run directories may be permitted only when the lease assigns a unique, no
 Queue decisions are `pending`, `accepted`, `changes-requested`, `rejected`, `integrated`, and `superseded`. Record reviewer, timestamp, worker commit, manifest hash, changed paths, checks, conflicts, manual interventions, and reason.
 
 Integration requires zero prohibited writes, exact skill pins, complete manifest fields, valid count arithmetic, valid evidence semantics, and fresh relevant checks. Central generation follows integration and never runs in a worker worktree.
+
+Use only the transactional `review` and `integrate` commands for modern durable queue items. Do not edit a queue decision or job lifecycle field by hand.
+
+The closed review receipt requires:
+
+- queue, job, and lease identity
+- `accepted`, `changes-requested`, `rejected`, or `superseded` decision
+- reviewer and review timestamp
+- worker content commit, worker branch head, and manifest hash
+- the exact code-point-ordered base-to-head changed-path set
+- nonempty command checks with exit codes and results
+- conflict, manual-intervention, critical-safety, evidence-semantic, and forbidden-write counts
+- a nonempty reason
+
+Acceptance requires all checks to pass and all safety, semantic, forbidden-write, and conflict counts to be zero. The review gate also requires exactly two worker commits after the lease base: content first and finalized manifest second. It archives the exact review receipt under `receipts/reviews/`, updates the queue, and moves the job from `submitted` to `integrating` in one rollback-safe transaction.
+
+The closed integration receipt repeats the immutable worker and manifest identities and adds the integrator, integration timestamp, and clean canonical integration commit. Before marking the result integrated, compare every reviewed changed path by Git tree entry between the worker branch head and canonical `main`. Archive the exact receipt under `receipts/integrations/`, move `accepted` to `integrated`, and move the job from `integrating` to `completed` in one rollback-safe transaction. The receipt commit itself is later than the integration commit it records, so it does not self-attest its own Git future.
 
 ## Readiness and throughput
 

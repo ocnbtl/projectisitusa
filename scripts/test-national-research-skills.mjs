@@ -559,7 +559,7 @@ function buildValidWorkerOutput(worktree, lease) {
 const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), "isitusa-skill-regression-"));
 
 try {
-  const { worktree, baseSha } = setupGitFixture(fixtureRoot);
+  const { repo, worktree, baseSha } = setupGitFixture(fixtureRoot);
   runGit(worktree, ["sparse-checkout", "init", "--cone"]);
   runGit(worktree, ["sparse-checkout", "set", ".agents/skills", "public/generated", "scripts/research", "src/data/generated", "src/data/research", "src/lib/research", "worker-output"]);
   const job = makeJob({ jobId: "test-job", baseSha, branch: "codex/test-job", worktree, claims: [`state/${STATE_CODE}/source/${SOURCE_ID}/taxon/${SPECIES_ID}`] });
@@ -701,6 +701,148 @@ try {
   result = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
   recordRejectsWith("durable_queue_branch_head_tamper", result, "worker branch receipt is invalid", "The queue receipt cannot substitute a different worker branch head.");
   writeJson(path.join(completionGateRoot, "integration-queue.json"), completionQueueDocument);
+
+  const queueId = completionQueue[0].queueId;
+  const workerBranchHead = completionQueue[0].workerBranchHead;
+  const reviewedChangedPaths = runGit(worktree, ["diff", "--name-only", `${baseSha}..${workerBranchHead}`])
+    .split("\n")
+    .filter(Boolean)
+    .sort(compareCodePoints);
+  const reviewReceiptPath = path.join(fixtureRoot, "review-receipt.json");
+  const makeReviewReceipt = (overrides = {}) => ({
+    schemaVersion: 1,
+    queueId,
+    jobId: job.jobId,
+    leaseId: lease.leaseId,
+    decision: "accepted",
+    reviewer: "MAIN",
+    reviewedAt: NOW,
+    workerCommit: valid.manifest.commitSha,
+    workerBranchHead,
+    manifestHash: completionQueue[0].manifestHash,
+    changedPaths: reviewedChangedPaths,
+    checks: [
+      { command: "canonical immutable run validation", exitCode: 0, result: "pass" },
+      { command: "worker manifest validation", exitCode: 0, result: "pass" },
+      { command: `git diff --check ${baseSha}...${workerBranchHead}`, exitCode: 0, result: "pass" },
+    ],
+    conflicts: 0,
+    manualInterventions: 0,
+    criticalSafetyViolations: 0,
+    evidenceSemanticViolations: 0,
+    forbiddenWrites: 0,
+    reason: "The independently reviewed worker result satisfies the complete leased contract.",
+    ...overrides,
+  });
+
+  const reviewStateBefore = {
+    jobs: fs.readFileSync(path.join(completionGateRoot, "jobs.json")),
+    queue: fs.readFileSync(path.join(completionGateRoot, "integration-queue.json")),
+  };
+  writeJson(reviewReceiptPath, makeReviewReceipt({ unexpected: true }));
+  result = run("node", [ORCHESTRATOR, "review", "--root", completionGateRoot, "--queue", queueId, "--decision", "accepted", "--receipt", reviewReceiptPath, "--now", NOW], REPO_ROOT);
+  const unsupportedReviewPreserved = result.status !== 0
+    && reviewStateBefore.jobs.equals(fs.readFileSync(path.join(completionGateRoot, "jobs.json")))
+    && reviewStateBefore.queue.equals(fs.readFileSync(path.join(completionGateRoot, "integration-queue.json")));
+  recordRejectsWith("unsupported_review_receipt_field", { ...result, status: unsupportedReviewPreserved ? result.status : 0 }, "unsupported field", "A closed review receipt rejects undeclared metadata and preserves lifecycle state.");
+
+  writeJson(reviewReceiptPath, makeReviewReceipt({ criticalSafetyViolations: 1 }));
+  result = run("node", [ORCHESTRATOR, "review", "--root", completionGateRoot, "--queue", queueId, "--decision", "accepted", "--receipt", reviewReceiptPath, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("accepted_review_with_critical_violation", result, "zero critical safety violations", "Acceptance cannot conceal a critical safety violation.");
+
+  writeJson(reviewReceiptPath, makeReviewReceipt({ changedPaths: reviewedChangedPaths.slice(1) }));
+  result = run("node", [ORCHESTRATOR, "review", "--root", completionGateRoot, "--queue", queueId, "--decision", "accepted", "--receipt", reviewReceiptPath, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("review_changed_path_mismatch", result, "changedPaths differs", "The review receipt must report the exact base-to-head worker diff.");
+
+  writeJson(reviewReceiptPath, makeReviewReceipt());
+  result = run("node", [ORCHESTRATOR, "review", "--root", completionGateRoot, "--queue", queueId, "--decision", "accepted", "--receipt", reviewReceiptPath, "--now", NOW], REPO_ROOT);
+  const acceptedJob = readJson(path.join(completionGateRoot, "jobs.json")).jobs[0];
+  const acceptedQueue = readJson(path.join(completionGateRoot, "integration-queue.json")).items[0];
+  const durableReviewReceiptPath = path.join(completionGateRoot, acceptedQueue.reviewReceipt?.path ?? "missing");
+  const reviewAccepted = result.status === 0
+    && acceptedJob.state === "integrating"
+    && acceptedQueue.decision === "accepted"
+    && acceptedQueue.reviewedAt === NOW
+    && fs.existsSync(durableReviewReceiptPath)
+    && fs.readFileSync(durableReviewReceiptPath).equals(fs.readFileSync(reviewReceiptPath));
+  record("transactional_review_acceptance", "pass", { ...result, status: reviewAccepted ? 0 : 1 }, "A valid independent review atomically archives its receipt and advances the queue and job.");
+
+  const acceptedValidationFirst = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
+  const acceptedValidationSecond = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
+  record("deterministic_accepted_queue_validation", "pass", { ...acceptedValidationSecond, status: acceptedValidationFirst.status === 0 && acceptedValidationSecond.status === 0 && acceptedValidationFirst.stdout === acceptedValidationSecond.stdout ? 0 : 1 }, "Repeated accepted-queue validation is deterministic.");
+
+  runGit(repo, ["cherry-pick", valid.manifest.commitSha]);
+  runGit(repo, ["cherry-pick", workerBranchHead]);
+  const integrationCommit = runGit(repo, ["rev-parse", "HEAD"]);
+  const integrationReceiptPath = path.join(fixtureRoot, "integration-receipt.json");
+  const makeIntegrationReceipt = (overrides = {}) => ({
+    schemaVersion: 1,
+    queueId,
+    jobId: job.jobId,
+    leaseId: lease.leaseId,
+    integrator: "MAIN",
+    integratedAt: NOW,
+    integrationCommit,
+    workerCommit: valid.manifest.commitSha,
+    workerBranchHead,
+    manifestHash: completionQueue[0].manifestHash,
+    changedPaths: reviewedChangedPaths,
+    checks: [
+      { command: "canonical immutable run validation after integration", exitCode: 0, result: "pass" },
+      { command: "git diff --check after integration", exitCode: 0, result: "pass" },
+    ],
+    conflicts: 0,
+    manualInterventions: 0,
+    criticalSafetyViolations: 0,
+    evidenceSemanticViolations: 0,
+    forbiddenWrites: 0,
+    reason: "Canonical commit bytes match every reviewed worker output path.",
+    ...overrides,
+  });
+
+  const integrationStateBefore = {
+    jobs: fs.readFileSync(path.join(completionGateRoot, "jobs.json")),
+    queue: fs.readFileSync(path.join(completionGateRoot, "integration-queue.json")),
+  };
+  writeJson(integrationReceiptPath, makeIntegrationReceipt({ integrationCommit: "0".repeat(40) }));
+  result = run("node", [ORCHESTRATOR, "integrate", "--root", completionGateRoot, "--queue", queueId, "--receipt", integrationReceiptPath, "--repo", repo, "--now", NOW], REPO_ROOT);
+  const rejectedIntegrationPreserved = result.status !== 0
+    && integrationStateBefore.jobs.equals(fs.readFileSync(path.join(completionGateRoot, "jobs.json")))
+    && integrationStateBefore.queue.equals(fs.readFileSync(path.join(completionGateRoot, "integration-queue.json")));
+  recordRejectsWith("wrong_integration_commit_rolls_back", { ...result, status: rejectedIntegrationPreserved ? result.status : 0 }, "integrationCommit differs", "An integration receipt cannot claim a different canonical commit and failed integration preserves state.");
+
+  writeJson(integrationReceiptPath, makeIntegrationReceipt());
+  result = run("node", [ORCHESTRATOR, "integrate", "--root", completionGateRoot, "--queue", queueId, "--receipt", integrationReceiptPath, "--repo", repo, "--now", NOW], REPO_ROOT);
+  const integratedJob = readJson(path.join(completionGateRoot, "jobs.json")).jobs[0];
+  const integratedQueue = readJson(path.join(completionGateRoot, "integration-queue.json")).items[0];
+  const durableIntegrationReceiptPath = path.join(completionGateRoot, integratedQueue.integrationReceipt?.path ?? "missing");
+  const integrationAccepted = result.status === 0
+    && integratedJob.state === "completed"
+    && integratedQueue.decision === "integrated"
+    && integratedQueue.integrationCommit === integrationCommit
+    && fs.existsSync(durableIntegrationReceiptPath)
+    && fs.readFileSync(durableIntegrationReceiptPath).equals(fs.readFileSync(integrationReceiptPath));
+  record("transactional_integration_completion", "pass", { ...result, status: integrationAccepted ? 0 : 1 }, "A byte-identical canonical integration atomically archives its receipt and completes the job.");
+
+  const integratedValidationFirst = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
+  const integratedValidationSecond = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
+  record("deterministic_integrated_queue_validation", "pass", { ...integratedValidationSecond, status: integratedValidationFirst.status === 0 && integratedValidationSecond.status === 0 && integratedValidationFirst.stdout === integratedValidationSecond.stdout ? 0 : 1 }, "Repeated integrated-queue validation is deterministic.");
+
+  if (fs.existsSync(durableIntegrationReceiptPath)) {
+    const durableIntegrationReceiptBytes = fs.readFileSync(durableIntegrationReceiptPath);
+    fs.appendFileSync(durableIntegrationReceiptPath, " ");
+    result = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
+    recordRejectsWith("durable_integration_receipt_tamper", result, "integration receipt descriptor does not match", "Changed integration receipt bytes are detected.");
+    fs.writeFileSync(durableIntegrationReceiptPath, durableIntegrationReceiptBytes);
+  } else {
+    record("durable_integration_receipt_tamper", "pass", { status: 1, stdout: "", stderr: "Missing durable integration receipt." }, "Changed integration receipt bytes are detected.");
+  }
+
+  const integratedJobsDocument = readJson(path.join(completionGateRoot, "jobs.json"));
+  writeJson(path.join(completionGateRoot, "jobs.json"), { ...integratedJobsDocument, jobs: [{ ...integratedJobsDocument.jobs[0], state: "submitted" }] });
+  result = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("integrated_queue_job_lifecycle_mismatch", result, "integrated lifecycle state is invalid", "An integrated queue item cannot coexist with a submitted job.");
+  writeJson(path.join(completionGateRoot, "jobs.json"), integratedJobsDocument);
 
   const rejectedReceiptPath = path.join(REPO_ROOT, "ops/national-research/fixtures/rejected-cycle3-receipt.json");
   const rejectedReceipt = fs.readFileSync(rejectedReceiptPath);

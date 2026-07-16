@@ -59,6 +59,52 @@ const QUEUE_DECISIONS = new Set([
   "integrated",
   "superseded",
 ]);
+const REVIEW_DECISIONS = new Set([
+  "accepted",
+  "changes-requested",
+  "rejected",
+  "superseded",
+]);
+const REVIEW_RECEIPT_FIELDS = new Set([
+  "schemaVersion",
+  "queueId",
+  "jobId",
+  "leaseId",
+  "decision",
+  "reviewer",
+  "reviewedAt",
+  "workerCommit",
+  "workerBranchHead",
+  "manifestHash",
+  "changedPaths",
+  "checks",
+  "conflicts",
+  "manualInterventions",
+  "criticalSafetyViolations",
+  "evidenceSemanticViolations",
+  "forbiddenWrites",
+  "reason",
+]);
+const INTEGRATION_RECEIPT_FIELDS = new Set([
+  "schemaVersion",
+  "queueId",
+  "jobId",
+  "leaseId",
+  "integrator",
+  "integratedAt",
+  "integrationCommit",
+  "workerCommit",
+  "workerBranchHead",
+  "manifestHash",
+  "changedPaths",
+  "checks",
+  "conflicts",
+  "manualInterventions",
+  "criticalSafetyViolations",
+  "evidenceSemanticViolations",
+  "forbiddenWrites",
+  "reason",
+]);
 const REQUIRED_PROHIBITED = [
   ".agents/skills/**",
   "AGENTS.md",
@@ -379,6 +425,214 @@ function loadState(root) {
   };
 }
 
+function arraysEqual(left, right) {
+  return Array.isArray(left) &&
+    Array.isArray(right) &&
+    left.length === right.length &&
+    left.every((entry, index) => entry === right[index]);
+}
+
+function jsonEqual(left, right) {
+  return JSON.stringify(left) === JSON.stringify(right);
+}
+
+function validateClosedFields(value, allowed, label, errors) {
+  if (!isObject(value)) {
+    errors.push(`${label} must be an object.`);
+    return;
+  }
+  for (const field of Object.keys(value)) {
+    if (!allowed.has(field)) errors.push(`${label} contains unsupported field ${field}.`);
+  }
+  for (const field of allowed) {
+    if (!(field in value)) errors.push(`${label}.${field} is required.`);
+  }
+}
+
+function validateReceiptChecks(value, label, errors, requirePass) {
+  if (!Array.isArray(value) || value.length === 0) {
+    errors.push(`${label} must be a nonempty array.`);
+    return;
+  }
+  for (const [index, check] of value.entries()) {
+    const checkLabel = `${label}[${index}]`;
+    if (!isObject(check)) {
+      errors.push(`${checkLabel} must be an object.`);
+      continue;
+    }
+    const fields = Object.keys(check);
+    if (!arraysEqual(fields.sort(compareCodePoints), ["command", "exitCode", "result"])) {
+      errors.push(`${checkLabel} must contain only command, exitCode, and result.`);
+    }
+    if (typeof check.command !== "string" || !check.command) errors.push(`${checkLabel}.command is required.`);
+    if (!Number.isInteger(check.exitCode)) errors.push(`${checkLabel}.exitCode must be an integer.`);
+    if (!new Set(["pass", "fail"]).has(check.result)) errors.push(`${checkLabel}.result is invalid.`);
+    if (requirePass && (check.exitCode !== 0 || check.result !== "pass")) {
+      errors.push(`${checkLabel} must report a passing zero-exit check.`);
+    }
+  }
+}
+
+function validateChangedPaths(value, label, errors) {
+  if (!nonemptyStrings(value)) {
+    errors.push(`${label} must be nonempty.`);
+    return;
+  }
+  if (new Set(value).size !== value.length) errors.push(`${label} contains duplicates.`);
+  if (!arraysEqual(value, [...value].sort(compareCodePoints))) errors.push(`${label} must use Unicode code-point order.`);
+  for (const entry of value) {
+    if (!isSafeRelativePath(entry) || entry.includes(":")) errors.push(`${label} contains unsafe path ${entry}.`);
+  }
+}
+
+function validateReviewReceipt(receipt, expected = {}) {
+  const errors = [];
+  validateClosedFields(receipt, REVIEW_RECEIPT_FIELDS, "review receipt", errors);
+  if (!isObject(receipt)) return errors;
+  if (receipt.schemaVersion !== 1) errors.push("review receipt.schemaVersion must be 1.");
+  if (typeof receipt.queueId !== "string" || !receipt.queueId) errors.push("review receipt.queueId is required.");
+  if (typeof receipt.jobId !== "string" || !receipt.jobId) errors.push("review receipt.jobId is required.");
+  if (typeof receipt.leaseId !== "string" || !receipt.leaseId) errors.push("review receipt.leaseId is required.");
+  if (!REVIEW_DECISIONS.has(receipt.decision)) errors.push("review receipt.decision is invalid.");
+  if (typeof receipt.reviewer !== "string" || !receipt.reviewer) errors.push("review receipt.reviewer is required.");
+  if (!Number.isFinite(Date.parse(receipt.reviewedAt))) errors.push("review receipt.reviewedAt is invalid.");
+  for (const field of ["workerCommit", "workerBranchHead"]) {
+    if (!isSha(receipt[field], 40)) errors.push(`review receipt.${field} must be a Git SHA.`);
+  }
+  if (!isSha(receipt.manifestHash, 64)) errors.push("review receipt.manifestHash must be a SHA-256.");
+  validateChangedPaths(receipt.changedPaths, "review receipt.changedPaths", errors);
+  validateReceiptChecks(receipt.checks, "review receipt.checks", errors, receipt.decision === "accepted");
+  for (const field of ["conflicts", "manualInterventions", "criticalSafetyViolations", "evidenceSemanticViolations", "forbiddenWrites"]) {
+    if (!Number.isInteger(receipt[field]) || receipt[field] < 0) errors.push(`review receipt.${field} must be a nonnegative integer.`);
+  }
+  if (receipt.decision === "accepted" && (
+    receipt.conflicts !== 0 ||
+    receipt.criticalSafetyViolations !== 0 ||
+    receipt.evidenceSemanticViolations !== 0 ||
+    receipt.forbiddenWrites !== 0
+  )) errors.push("An accepted review requires zero critical safety violations, evidence semantic violations, forbidden writes, and conflicts.");
+  if (typeof receipt.reason !== "string" || !receipt.reason) errors.push("review receipt.reason is required.");
+  for (const [field, expectedValue] of Object.entries(expected)) {
+    if (!jsonEqual(receipt[field], expectedValue)) errors.push(`review receipt.${field} differs from the queue contract.`);
+  }
+  return errors;
+}
+
+function validateIntegrationReceipt(receipt, expected = {}) {
+  const errors = [];
+  validateClosedFields(receipt, INTEGRATION_RECEIPT_FIELDS, "integration receipt", errors);
+  if (!isObject(receipt)) return errors;
+  if (receipt.schemaVersion !== 1) errors.push("integration receipt.schemaVersion must be 1.");
+  if (typeof receipt.queueId !== "string" || !receipt.queueId) errors.push("integration receipt.queueId is required.");
+  if (typeof receipt.jobId !== "string" || !receipt.jobId) errors.push("integration receipt.jobId is required.");
+  if (typeof receipt.leaseId !== "string" || !receipt.leaseId) errors.push("integration receipt.leaseId is required.");
+  if (typeof receipt.integrator !== "string" || !receipt.integrator) errors.push("integration receipt.integrator is required.");
+  if (!Number.isFinite(Date.parse(receipt.integratedAt))) errors.push("integration receipt.integratedAt is invalid.");
+  for (const field of ["integrationCommit", "workerCommit", "workerBranchHead"]) {
+    if (!isSha(receipt[field], 40)) errors.push(`integration receipt.${field} must be a Git SHA.`);
+  }
+  if (!isSha(receipt.manifestHash, 64)) errors.push("integration receipt.manifestHash must be a SHA-256.");
+  validateChangedPaths(receipt.changedPaths, "integration receipt.changedPaths", errors);
+  validateReceiptChecks(receipt.checks, "integration receipt.checks", errors, true);
+  for (const field of ["conflicts", "manualInterventions", "criticalSafetyViolations", "evidenceSemanticViolations", "forbiddenWrites"]) {
+    if (!Number.isInteger(receipt[field]) || receipt[field] < 0) errors.push(`integration receipt.${field} must be a nonnegative integer.`);
+  }
+  if (
+    receipt.conflicts !== 0 ||
+    receipt.criticalSafetyViolations !== 0 ||
+    receipt.evidenceSemanticViolations !== 0 ||
+    receipt.forbiddenWrites !== 0
+  ) errors.push("Integration requires zero critical safety violations, evidence semantic violations, forbidden writes, and conflicts.");
+  if (typeof receipt.reason !== "string" || !receipt.reason) errors.push("integration receipt.reason is required.");
+  for (const [field, expectedValue] of Object.entries(expected)) {
+    if (!jsonEqual(receipt[field], expectedValue)) errors.push(`integration receipt.${field} differs from the accepted queue contract.`);
+  }
+  return errors;
+}
+
+function loadDurableReceipt(root, descriptor, expectedPrefix, label, errors) {
+  if (!isObject(descriptor)) {
+    errors.push(`${label} descriptor is required.`);
+    return null;
+  }
+  for (const field of ["path", "sha256", "bytes"]) {
+    if (!(field in descriptor)) errors.push(`${label} descriptor.${field} is required.`);
+  }
+  for (const field of Object.keys(descriptor)) {
+    if (!new Set(["path", "sha256", "bytes"]).has(field)) errors.push(`${label} descriptor contains unsupported field ${field}.`);
+  }
+  if (!isSafeRelativePath(descriptor.path) || !descriptor.path.startsWith(expectedPrefix)) {
+    errors.push(`${label} descriptor path must stay under ${expectedPrefix}.`);
+    return null;
+  }
+  if (!isSha(descriptor.sha256, 64)) errors.push(`${label} descriptor sha256 is invalid.`);
+  if (!Number.isInteger(descriptor.bytes) || descriptor.bytes < 0) errors.push(`${label} descriptor bytes is invalid.`);
+  const file = path.resolve(root, descriptor.path);
+  try {
+    const stats = fs.lstatSync(file);
+    if (!stats.isFile() || stats.isSymbolicLink() || !isWithin(root, file)) throw new Error("receipt is not a contained regular file");
+    const bytes = fs.readFileSync(file);
+    const hash = crypto.createHash("sha256").update(bytes).digest("hex");
+    if (descriptor.bytes !== bytes.length || descriptor.sha256 !== hash) {
+      errors.push(`${label} descriptor does not match its bytes.`);
+    }
+    return { receipt: JSON.parse(bytes.toString("utf8")), bytes };
+  } catch (error) {
+    errors.push(`${label} is invalid: ${error instanceof Error ? error.message : String(error)}`);
+    return null;
+  }
+}
+
+function receiptDescriptor(relativePath, bytes) {
+  return {
+    path: relativePath,
+    sha256: crypto.createHash("sha256").update(bytes).digest("hex"),
+    bytes: bytes.length,
+  };
+}
+
+function readSuppliedReceipt(file, label) {
+  const resolved = fs.realpathSync(path.resolve(String(file)));
+  const stats = fs.lstatSync(resolved);
+  if (!stats.isFile() || stats.isSymbolicLink()) throw new Error(`${label} must be a regular non-symlink file.`);
+  const bytes = fs.readFileSync(resolved);
+  return { bytes, value: JSON.parse(bytes.toString("utf8")) };
+}
+
+function workerChangedPaths(worktree, baseSha, branchHead) {
+  execFileSync("git", ["-C", worktree, "merge-base", "--is-ancestor", baseSha, branchHead]);
+  return execFileSync("git", ["-C", worktree, "diff", "--name-only", `${baseSha}..${branchHead}`], { encoding: "utf8" })
+    .split("\n")
+    .filter(Boolean)
+    .sort(compareCodePoints);
+}
+
+function validateWorkerReviewDiff(lease, item, receipt) {
+  const worktree = fs.realpathSync(lease.worktree);
+  const head = execFileSync("git", ["-C", worktree, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+  if (head !== item.workerBranchHead) throw new Error("Worker HEAD differs from the queue receipt.");
+  if (execFileSync("git", ["-C", worktree, "status", "--porcelain=v1", "--untracked-files=all"], { encoding: "utf8" }).trim()) {
+    throw new Error("Worker worktree is dirty during MAIN review.");
+  }
+  const commits = execFileSync("git", ["-C", worktree, "rev-list", "--reverse", `${lease.baseSha}..${item.workerBranchHead}`], { encoding: "utf8" })
+    .split("\n")
+    .filter(Boolean);
+  if (commits.length !== 2 || commits[0] !== item.workerCommit || commits[1] !== item.workerBranchHead) {
+    throw new Error("Worker branch must contain exactly the reviewed content commit followed by the manifest commit.");
+  }
+  const changedPaths = workerChangedPaths(worktree, lease.baseSha, item.workerBranchHead);
+  if (!arraysEqual(receipt.changedPaths, changedPaths)) throw new Error("review receipt.changedPaths differs from the exact worker diff.");
+  for (const changedPath of changedPaths) {
+    if (!(lease.permittedPaths ?? []).some((pattern) => globToRegex(pattern).test(changedPath))) {
+      throw new Error(`Reviewed changed path is not permitted: ${changedPath}.`);
+    }
+    if ((lease.prohibitedPaths ?? []).some((pattern) => globToRegex(pattern).test(changedPath))) {
+      throw new Error(`Reviewed changed path is prohibited: ${changedPath}.`);
+    }
+  }
+  return changedPaths;
+}
+
 function validateState(root, nowText) {
   const state = loadState(root);
   const errors = [];
@@ -498,6 +752,97 @@ function validateState(root, nowText) {
             if (!committedManifest.equals(bytes)) throw new Error("committed manifest bytes differ from the durable receipt");
           } catch (error) {
             errors.push(`queue[${index}] worker branch receipt is invalid: ${error instanceof Error ? error.message : String(error)}`);
+          }
+        } else {
+          if (lease?.state !== "completed" || manifest.status !== "complete") {
+            errors.push(`queue[${index}] reviewed lifecycle lease or manifest state is invalid.`);
+          }
+          const expectedJobState = ({
+            accepted: "integrating",
+            "changes-requested": "blocked",
+            rejected: "failed",
+            superseded: "cancelled",
+            integrated: "completed",
+          })[item.decision];
+          if (expectedJobState && job?.state !== expectedJobState) {
+            errors.push(`queue[${index}] ${item.decision} lifecycle state is invalid.`);
+          }
+          const resultManifest = lease?.resultManifest;
+          for (const field of ["path", "sha256", "bytes", "status", "workerCommit", "workerBranchHead"]) {
+            if (resultManifest?.[field] !== ({
+              path: item.manifestPath,
+              sha256: item.manifestHash,
+              bytes: item.manifestBytes,
+              status: manifest.status,
+              workerCommit: item.workerCommit,
+              workerBranchHead: item.workerBranchHead,
+            })[field]) errors.push(`queue[${index}] differs from lease.resultManifest.${field}.`);
+          }
+          const reviewResult = loadDurableReceipt(root, item.reviewReceipt, "receipts/reviews/", `queue[${index}] review receipt`, errors);
+          if (reviewResult) {
+            const reviewDecision = item.decision === "integrated" ? "accepted" : item.decision;
+            const reviewErrors = validateReviewReceipt(reviewResult.receipt, {
+              queueId: item.queueId,
+              jobId: item.jobId,
+              leaseId: item.leaseId,
+              decision: reviewDecision,
+              workerCommit: item.workerCommit,
+              workerBranchHead: item.workerBranchHead,
+              manifestHash: item.manifestHash,
+            });
+            errors.push(...reviewErrors.map((message) => `queue[${index}] ${message}`));
+            const reviewQueueFields = {
+              reviewedAt: "reviewedAt",
+              reviewer: "reviewer",
+              reviewReason: "reason",
+              changedPaths: "changedPaths",
+              reviewChecks: "checks",
+              conflicts: "conflicts",
+              manualInterventions: "manualInterventions",
+              criticalSafetyViolations: "criticalSafetyViolations",
+              evidenceSemanticViolations: "evidenceSemanticViolations",
+              forbiddenWrites: "forbiddenWrites",
+            };
+            for (const [queueField, receiptField] of Object.entries(reviewQueueFields)) {
+              if (!jsonEqual(item[queueField], reviewResult.receipt[receiptField])) {
+                errors.push(`queue[${index}].${queueField} differs from its review receipt.`);
+              }
+            }
+            if (item.decision === "accepted" && item.integrationReceipt !== undefined) {
+              errors.push(`queue[${index}] accepted item cannot have an integration receipt.`);
+            }
+            if (item.decision === "integrated") {
+              const integrationResult = loadDurableReceipt(root, item.integrationReceipt, "receipts/integrations/", `queue[${index}] integration receipt`, errors);
+              if (integrationResult) {
+                const integrationErrors = validateIntegrationReceipt(integrationResult.receipt, {
+                  queueId: item.queueId,
+                  jobId: item.jobId,
+                  leaseId: item.leaseId,
+                  workerCommit: item.workerCommit,
+                  workerBranchHead: item.workerBranchHead,
+                  manifestHash: item.manifestHash,
+                  changedPaths: reviewResult.receipt.changedPaths,
+                });
+                errors.push(...integrationErrors.map((message) => `queue[${index}] ${message}`));
+                const integrationQueueFields = {
+                  integratedAt: "integratedAt",
+                  integrator: "integrator",
+                  integrationCommit: "integrationCommit",
+                  integrationChecks: "checks",
+                  integrationConflicts: "conflicts",
+                  integrationManualInterventions: "manualInterventions",
+                  integrationCriticalSafetyViolations: "criticalSafetyViolations",
+                  integrationEvidenceSemanticViolations: "evidenceSemanticViolations",
+                  integrationForbiddenWrites: "forbiddenWrites",
+                  integrationReason: "reason",
+                };
+                for (const [queueField, receiptField] of Object.entries(integrationQueueFields)) {
+                  if (!jsonEqual(item[queueField], integrationResult.receipt[receiptField])) {
+                    errors.push(`queue[${index}].${queueField} differs from its integration receipt.`);
+                  }
+                }
+              }
+            }
           }
         }
       } catch (error) {
@@ -786,6 +1131,170 @@ try {
         }
         output({ ok: true, command, leaseId: lease.leaseId, state: args.state, validation: post });
       } finally { release(); }
+    } else if (command === "review") {
+      if (!args.queue || !args.decision || !args.receipt) throw new Error("review requires --queue, --decision, and --receipt.");
+      if (!REVIEW_DECISIONS.has(args.decision)) throw new Error("Unsupported review decision.");
+      const release = acquireLock(root);
+      try {
+        const { state, result } = validateState(root, now);
+        if (!result.valid) throw new Error(`Current orchestration state is invalid: ${result.errors.join(" | ")}`);
+        const item = state.queueDoc.items.find((entry) => entry.queueId === args.queue);
+        if (!item || item.decision !== "pending") throw new Error("Only a pending queue item can be reviewed.");
+        const job = state.jobsDoc.jobs.find((entry) => entry.jobId === item.jobId);
+        const lease = state.leasesDoc.leases.find((entry) => entry.leaseId === item.leaseId);
+        if (!job || job.state !== "submitted" || !lease || lease.state !== "completed") {
+          throw new Error("Pending review lifecycle state is invalid.");
+        }
+        const supplied = readSuppliedReceipt(args.receipt, "Review receipt");
+        const receiptErrors = validateReviewReceipt(supplied.value, {
+          queueId: item.queueId,
+          jobId: item.jobId,
+          leaseId: item.leaseId,
+          decision: args.decision,
+          reviewedAt: now,
+          workerCommit: item.workerCommit,
+          workerBranchHead: item.workerBranchHead,
+          manifestHash: item.manifestHash,
+        });
+        if (receiptErrors.length > 0) throw new Error(receiptErrors.join(" | "));
+        validateWorkerReviewDiff(lease, item, supplied.value);
+        const receiptRelativePath = `receipts/reviews/${item.queueId}.json`;
+        const receiptPath = path.join(root, receiptRelativePath);
+        const descriptor = receiptDescriptor(receiptRelativePath, supplied.bytes);
+        const queueUpdate = {
+          ...item,
+          decision: args.decision,
+          reviewedAt: supplied.value.reviewedAt,
+          reviewer: supplied.value.reviewer,
+          reviewReason: supplied.value.reason,
+          changedPaths: supplied.value.changedPaths,
+          reviewChecks: supplied.value.checks,
+          conflicts: supplied.value.conflicts,
+          manualInterventions: supplied.value.manualInterventions,
+          criticalSafetyViolations: supplied.value.criticalSafetyViolations,
+          evidenceSemanticViolations: supplied.value.evidenceSemanticViolations,
+          forbiddenWrites: supplied.value.forbiddenWrites,
+          reviewReceipt: descriptor,
+        };
+        const jobState = ({
+          accepted: "integrating",
+          "changes-requested": "blocked",
+          rejected: "failed",
+          superseded: "cancelled",
+        })[args.decision];
+        const nextQueue = { ...state.queueDoc, items: state.queueDoc.items.map((entry) => entry.queueId === item.queueId ? queueUpdate : entry) };
+        const nextJobs = { ...state.jobsDoc, jobs: state.jobsDoc.jobs.map((entry) => entry.jobId === job.jobId ? { ...entry, state: jobState } : entry) };
+        const originalQueue = fs.readFileSync(state.files.queue);
+        const originalJobs = fs.readFileSync(state.files.jobs);
+        let createdReceipt = false;
+        let post;
+        try {
+          if (fs.existsSync(receiptPath)) {
+            if (!fs.readFileSync(receiptPath).equals(supplied.bytes)) throw new Error("Review receipt path already contains different bytes.");
+          } else {
+            atomicWriteBytes(receiptPath, supplied.bytes);
+            createdReceipt = true;
+          }
+          atomicWrite(state.files.queue, nextQueue);
+          atomicWrite(state.files.jobs, nextJobs);
+          post = validateState(root, now).result;
+          if (!post.valid) throw new Error(`Review produced invalid state: ${post.errors.join(" | ")}`);
+        } catch (error) {
+          atomicWriteBytes(state.files.queue, originalQueue);
+          atomicWriteBytes(state.files.jobs, originalJobs);
+          if (createdReceipt && fs.existsSync(receiptPath)) fs.unlinkSync(receiptPath);
+          const rollback = validateState(root, now).result;
+          if (!rollback.valid) throw new Error(`${error instanceof Error ? error.message : String(error)} | Review rollback failed: ${rollback.errors.join(" | ")}`);
+          throw error;
+        }
+        output({ ok: true, command, queueId: item.queueId, decision: args.decision, reviewReceipt: descriptor, validation: post });
+      } finally { release(); }
+    } else if (command === "integrate") {
+      if (!args.queue || !args.receipt || !args.repo) throw new Error("integrate requires --queue, --receipt, and --repo.");
+      const release = acquireLock(root);
+      try {
+        const { state, result } = validateState(root, now);
+        if (!result.valid) throw new Error(`Current orchestration state is invalid: ${result.errors.join(" | ")}`);
+        const item = state.queueDoc.items.find((entry) => entry.queueId === args.queue);
+        if (!item || item.decision !== "accepted") throw new Error("Only an accepted queue item can be integrated.");
+        const job = state.jobsDoc.jobs.find((entry) => entry.jobId === item.jobId);
+        const lease = state.leasesDoc.leases.find((entry) => entry.leaseId === item.leaseId);
+        if (!job || job.state !== "integrating" || !lease || lease.state !== "completed") {
+          throw new Error("Accepted integration lifecycle state is invalid.");
+        }
+        const supplied = readSuppliedReceipt(args.receipt, "Integration receipt");
+        const receiptErrors = validateIntegrationReceipt(supplied.value, {
+          queueId: item.queueId,
+          jobId: item.jobId,
+          leaseId: item.leaseId,
+          integratedAt: now,
+          workerCommit: item.workerCommit,
+          workerBranchHead: item.workerBranchHead,
+          manifestHash: item.manifestHash,
+          changedPaths: item.changedPaths,
+        });
+        if (receiptErrors.length > 0) throw new Error(receiptErrors.join(" | "));
+        const repository = fs.realpathSync(path.resolve(String(args.repo)));
+        const repositoryStats = fs.lstatSync(repository);
+        if (!repositoryStats.isDirectory() || repositoryStats.isSymbolicLink()) throw new Error("Integration repository must be a regular directory.");
+        const branch = execFileSync("git", ["-C", repository, "branch", "--show-current"], { encoding: "utf8" }).trim();
+        if (branch !== "main") throw new Error("Integration repository must be on main.");
+        if (execFileSync("git", ["-C", repository, "status", "--porcelain=v1", "--untracked-files=all"], { encoding: "utf8" }).trim()) {
+          throw new Error("Integration repository must be clean.");
+        }
+        const integrationCommit = execFileSync("git", ["-C", repository, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+        if (supplied.value.integrationCommit !== integrationCommit) throw new Error("integration receipt.integrationCommit differs from canonical HEAD.");
+        const workerRepository = fs.realpathSync(lease.worktree);
+        for (const changedPath of item.changedPaths) {
+          const workerTreeEntry = execFileSync("git", ["-C", workerRepository, "ls-tree", item.workerBranchHead, "--", changedPath], { encoding: "utf8" }).trim();
+          const integrationTreeEntry = execFileSync("git", ["-C", repository, "ls-tree", integrationCommit, "--", changedPath], { encoding: "utf8" }).trim();
+          if (workerTreeEntry !== integrationTreeEntry) throw new Error(`Canonical integration bytes or file mode differ for ${changedPath}.`);
+        }
+        const receiptRelativePath = `receipts/integrations/${item.queueId}.json`;
+        const receiptPath = path.join(root, receiptRelativePath);
+        const descriptor = receiptDescriptor(receiptRelativePath, supplied.bytes);
+        const queueUpdate = {
+          ...item,
+          decision: "integrated",
+          integratedAt: supplied.value.integratedAt,
+          integrator: supplied.value.integrator,
+          integrationCommit: supplied.value.integrationCommit,
+          integrationChecks: supplied.value.checks,
+          integrationConflicts: supplied.value.conflicts,
+          integrationManualInterventions: supplied.value.manualInterventions,
+          integrationCriticalSafetyViolations: supplied.value.criticalSafetyViolations,
+          integrationEvidenceSemanticViolations: supplied.value.evidenceSemanticViolations,
+          integrationForbiddenWrites: supplied.value.forbiddenWrites,
+          integrationReason: supplied.value.reason,
+          integrationReceipt: descriptor,
+        };
+        const nextQueue = { ...state.queueDoc, items: state.queueDoc.items.map((entry) => entry.queueId === item.queueId ? queueUpdate : entry) };
+        const nextJobs = { ...state.jobsDoc, jobs: state.jobsDoc.jobs.map((entry) => entry.jobId === job.jobId ? { ...entry, state: "completed" } : entry) };
+        const originalQueue = fs.readFileSync(state.files.queue);
+        const originalJobs = fs.readFileSync(state.files.jobs);
+        let createdReceipt = false;
+        let post;
+        try {
+          if (fs.existsSync(receiptPath)) {
+            if (!fs.readFileSync(receiptPath).equals(supplied.bytes)) throw new Error("Integration receipt path already contains different bytes.");
+          } else {
+            atomicWriteBytes(receiptPath, supplied.bytes);
+            createdReceipt = true;
+          }
+          atomicWrite(state.files.queue, nextQueue);
+          atomicWrite(state.files.jobs, nextJobs);
+          post = validateState(root, now).result;
+          if (!post.valid) throw new Error(`Integration produced invalid state: ${post.errors.join(" | ")}`);
+        } catch (error) {
+          atomicWriteBytes(state.files.queue, originalQueue);
+          atomicWriteBytes(state.files.jobs, originalJobs);
+          if (createdReceipt && fs.existsSync(receiptPath)) fs.unlinkSync(receiptPath);
+          const rollback = validateState(root, now).result;
+          if (!rollback.valid) throw new Error(`${error instanceof Error ? error.message : String(error)} | Integration rollback failed: ${rollback.errors.join(" | ")}`);
+          throw error;
+        }
+        output({ ok: true, command, queueId: item.queueId, decision: "integrated", integrationReceipt: descriptor, validation: post });
+      } finally { release(); }
     } else if (command === "dashboard") {
       if (!args["as-of"]) throw new Error("dashboard requires --as-of.");
       const asOf = String(args["as-of"]);
@@ -809,7 +1318,7 @@ try {
       atomicWrite(state.files.dashboard, dashboard);
       output({ ok: true, command, dashboard });
     } else {
-      output({ ok: false, error: "Usage: orchestrate.mjs <validate|claim|transition|dashboard|hash-tree> [options]" }, 1);
+      output({ ok: false, error: "Usage: orchestrate.mjs <validate|claim|transition|review|integrate|dashboard|hash-tree> [options]" }, 1);
     }
   }
 } catch (error) {
