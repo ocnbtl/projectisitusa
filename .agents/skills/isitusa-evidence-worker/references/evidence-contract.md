@@ -107,6 +107,8 @@ A complete manifest must record the exact `git diff --check <lease-base-sha>...H
 
 Before acquisition, verify every pinned skill against both the checked-out tree and its declared Git commit when present. Both hashes use repository-relative file paths ordered by Unicode code point, with each path and file byte sequence separated by a null byte. Do not use locale-sensitive path ordering.
 
+The worker validator locates the shared workspace dependency runtime from the linked worktree and passes that dependency root to the canonical validation child. Workers must not need a local dependency installation or a manually supplied `NODE_PATH`.
+
 ## Receipt and source-verification ownership
 
 Use the closed project `run-receipt.schema.json` without worker extensions. The receipt carries the common immutable run identity, registered adapter provenance, parameters, requested scope, upstream request summaries, retained artifacts, declared outputs, common counts, errors, caveats, and rerun command.

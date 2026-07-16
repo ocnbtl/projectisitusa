@@ -115,10 +115,7 @@ function hashTree(root) {
 
 function run(command, args, cwd) {
   sampleMemory();
-  const normalizedArgs = command === "node" && args[0] === WORKER_VALIDATOR && args[1] === "manifest" && !args.includes("--validation-root")
-    ? [...args, "--validation-root", REPO_ROOT]
-    : args;
-  const result = spawnSync(command, normalizedArgs, {
+  const result = spawnSync(command, args, {
     cwd,
     encoding: "utf8",
     env: { ...process.env, ISITUSA_SKILL_TEST_VALIDATION_ROOT: REPO_ROOT },
@@ -236,14 +233,33 @@ function setupGitFixture(root) {
   fs.writeFileSync(path.join(repo, ".gitignore"), "worker-output/.ignored-secret\n");
   const provenanceFiles = [
     "src/data/research/source-registry.json",
-    "src/data/research/schemas/gbif-preserved-specimens-parameters.schema.json",
     "scripts/research/adapters/gbif-preserved-specimens.ts",
+  ];
+  const validationFiles = [
+    "scripts/research/validate-immutable-run.ts",
+    "src/data/generated/species.json",
+    "src/data/research/county-equivalent-registry.json",
+    "src/data/research/state-registry.json",
+    "tsconfig.json",
+  ];
+  const validationTrees = [
+    "src/data/research/schemas",
+    "src/lib/research",
   ];
   for (const filepath of provenanceFiles) {
     const destination = path.join(repo, filepath);
     fs.mkdirSync(path.dirname(destination), { recursive: true });
     fs.copyFileSync(path.join(REPO_ROOT, filepath), destination);
   }
+  for (const filepath of validationFiles) {
+    const destination = path.join(repo, filepath);
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    fs.copyFileSync(path.join(REPO_ROOT, filepath), destination);
+  }
+  for (const directory of validationTrees) {
+    fs.cpSync(path.join(REPO_ROOT, directory), path.join(repo, directory), { recursive: true });
+  }
+  fs.symlinkSync(path.join(REPO_ROOT, "node_modules"), path.join(repo, "node_modules"), "dir");
   for (const skillName of ["isitusa-national-orchestrator", "isitusa-evidence-worker"]) {
     fs.cpSync(
       path.join(REPO_ROOT, ".agents", "skills", skillName),
@@ -251,7 +267,7 @@ function setupGitFixture(root) {
       { recursive: true },
     );
   }
-  runGit(repo, ["add", "seed.txt", ".gitattributes", ".gitignore", ".agents/skills", ...provenanceFiles]);
+  runGit(repo, ["add", "seed.txt", ".gitattributes", ".gitignore", ".agents/skills", "node_modules", ...provenanceFiles, ...validationFiles, ...validationTrees]);
   runGit(repo, ["commit", "-m", "seed"]);
   const baseSha = runGit(repo, ["rev-parse", "HEAD"]);
   runGit(repo, ["worktree", "add", "-b", "codex/test-job", worktree, baseSha]);
@@ -545,7 +561,7 @@ const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), "isitusa-skill-regress
 try {
   const { worktree, baseSha } = setupGitFixture(fixtureRoot);
   runGit(worktree, ["sparse-checkout", "init", "--cone"]);
-  runGit(worktree, ["sparse-checkout", "set", ".agents/skills", "public/generated", "scripts/research", "src/data/research", "worker-output"]);
+  runGit(worktree, ["sparse-checkout", "set", ".agents/skills", "public/generated", "scripts/research", "src/data/generated", "src/data/research", "src/lib/research", "worker-output"]);
   const job = makeJob({ jobId: "test-job", baseSha, branch: "codex/test-job", worktree, claims: [`state/${STATE_CODE}/source/${SOURCE_ID}/taxon/${SPECIES_ID}`] });
   const lease = makeLease(job);
   const leasePath = path.join(fixtureRoot, "lease.json");

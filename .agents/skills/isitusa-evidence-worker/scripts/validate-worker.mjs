@@ -265,11 +265,13 @@ function runCanonicalValidation({ repo, validationRoot, runRoot, sourceVerificat
   if (sourceIds.length !== 1 || stateCodes.length !== 1 || pairKeys.length === 0) {
     return { error: "Canonical validation requires one source, one state, and at least one exact pair in the lease." };
   }
+  const tsxImport = resolveTsxImport(repo, validationRoot);
+  const nodeModulesRoot = path.dirname(path.dirname(path.dirname(tsxImport)));
   const result = spawnSync(
     process.execPath,
     [
       "--import",
-      resolveTsxImport(repo, validationRoot),
+      tsxImport,
       path.join(validationRoot, "scripts/research/validate-immutable-run.ts"),
       "--repository-root",
       repo,
@@ -292,7 +294,14 @@ function runCanonicalValidation({ repo, validationRoot, runRoot, sourceVerificat
       "--worker-task-id",
       lease.workerTaskId,
     ],
-    { cwd: validationRoot, encoding: "utf8" },
+    {
+      cwd: validationRoot,
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        NODE_PATH: [nodeModulesRoot, process.env.NODE_PATH].filter(Boolean).join(path.delimiter),
+      },
+    },
   );
   let payload = null;
   try {
