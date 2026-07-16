@@ -418,6 +418,107 @@
         "workerCommit": "1b71934f22d6accf3183ac6f55acf4e06f09f7d4",
         "workerBranchHead": "8bb37c3337ba30ccb359908c510eb7e695f29dff"
       }
+    },
+    {
+      "leaseId": "lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1",
+      "jobId": "recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
+      "attempt": 1,
+      "state": "active",
+      "claimedAt": "2026-07-16T08:23:00Z",
+      "expiresAt": "2026-07-17T12:00:00Z",
+      "workerTaskId": "/root/recovery_final_ar_r1",
+      "expectedManifestPath": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/manifest.json",
+      "previousLeaseId": null,
+      "recoveryReason": null,
+      "recoveryAt": null,
+      "baseSha": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+      "branch": "codex/recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
+      "worktree": "/private/tmp/isitusa-recovery-final-ar-gbif-matricaria-05143-r1",
+      "stateOrSourceScope": {
+        "states": [
+          "AR"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "matricaria-discoidea"
+        ],
+        "pairs": [
+          "05143:matricaria-discoidea"
+        ]
+      },
+      "scopeClaims": [
+        "state/AR/source/gbif-preserved-specimens/taxon/matricaria-discoidea/county/05143"
+      ],
+      "permittedPaths": [
+        "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "scripts/compile-research-index.ts",
+        "scripts/check-research-integrity.ts",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-recovery-2",
+          "gitCommit": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+          "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-recovery-2",
+          "gitCommit": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+          "contentHash": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 5000000,
+        "maxWallMinutes": 30,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "run the registered GBIF preserved-specimen adapter from a clean sparse worktree with started-at 2026-07-16T08:25:00Z",
+        "retain and hash the exact species-match response and the complete statewide occurrence response for Matricaria discoidea in Arkansas",
+        "screen exactly 05143:matricaria-discoidea using registered explicit county-equivalent text only",
+        "emit one complete pair outcome and preserve every materially considered record as an assertion or rejection",
+        "emit schema-valid receipt and source-verification records with complete request and pagination lineage",
+        "commit evidence content first and the finalized manifest second",
+        "pass the worktree-pinned worker validator and git diff --check dffe40c933f90f916b664ddc6ba51d31dc5c6a3a...HEAD"
+      ]
     }
   ]
 }
