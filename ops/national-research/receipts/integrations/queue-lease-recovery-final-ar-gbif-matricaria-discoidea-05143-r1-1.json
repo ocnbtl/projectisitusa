@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1",
+  "jobId": "recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
+  "leaseId": "lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-16T08:41:00Z",
+  "integrationCommit": "36d94296e468d31f4af76005969cb7b7ffb018aa",
+  "workerCommit": "f31cff46030a8fb633a4d9c2f526719a5a85c1de",
+  "workerBranchHead": "b414c7c2bd0b3c6435c7bc4cf5db012035f9c6ff",
+  "manifestHash": "9ea076635485354a59426fd84c919aadd71cf079bdf665ee524e06d981336c06",
+  "changedPaths": [
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/artifacts/gbif-species-match-matricaria-discoidea.json",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/assertions.ndjson",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/manifest.json",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/outcomes.ndjson",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/receipt.json",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/rejections.ndjson",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/reviews.ndjson",
+    "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "node --import tsx scripts/research/validate-immutable-run.ts --repository-root /Users/ocean/Code/Project Isitusa --validation-root /Users/ocean/Code/Project Isitusa --run-directory /Users/ocean/Code/Project Isitusa/src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c --source-verification /Users/ocean/Code/Project Isitusa/src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/source-verification.json --run-id 20260716T082500Z__gbif-preserved-specimens__23704b2cc75c --source-id gbif-preserved-specimens --state-code AR --pair-keys 05143:matricaria-discoidea --code-commit dffe40c933f90f916b664ddc6ba51d31dc5c6a3a --worker-task-id /root/recovery_final_ar_r1",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node scripts/test-national-research-skills.mjs",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check and git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact current-pin Arkansas content and manifest commits without conflict. Canonical immutable-run validation and all 90 skill regression cases passed, the repository was clean, and the transactional gate compared every reviewed worker tree entry to canonical main before closing the job."
+}

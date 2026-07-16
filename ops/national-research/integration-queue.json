@@ -140,7 +140,7 @@
       "queueId": "queue-lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1",
       "jobId": "recovery-final-ar-gbif-matricaria-discoidea-05143-r1",
       "leaseId": "lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-16T08:37:00Z",
       "manifestPath": "manifests/recovery-final-ar-gbif-matricaria-discoidea-05143-r1__lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1.json",
       "manifestHash": "9ea076635485354a59426fd84c919aadd71cf079bdf665ee524e06d981336c06",
@@ -187,6 +187,37 @@
         "path": "receipts/reviews/queue-lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1.json",
         "sha256": "512f39af7ddaa19e4a5adf2bf19f386eecaf9f06c17fa1ab40e5513a8d241ceb",
         "bytes": 3569
+      },
+      "integratedAt": "2026-07-16T08:41:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "36d94296e468d31f4af76005969cb7b7ffb018aa",
+      "integrationChecks": [
+        {
+          "command": "node --import tsx scripts/research/validate-immutable-run.ts --repository-root /Users/ocean/Code/Project Isitusa --validation-root /Users/ocean/Code/Project Isitusa --run-directory /Users/ocean/Code/Project Isitusa/src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c --source-verification /Users/ocean/Code/Project Isitusa/src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/source-verification.json --run-id 20260716T082500Z__gbif-preserved-specimens__23704b2cc75c --source-id gbif-preserved-specimens --state-code AR --pair-keys 05143:matricaria-discoidea --code-commit dffe40c933f90f916b664ddc6ba51d31dc5c6a3a --worker-task-id /root/recovery_final_ar_r1",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "node scripts/test-national-research-skills.mjs",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check and git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact current-pin Arkansas content and manifest commits without conflict. Canonical immutable-run validation and all 90 skill regression cases passed, the repository was clean, and the transactional gate compared every reviewed worker tree entry to canonical main before closing the job.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-recovery-final-ar-gbif-matricaria-discoidea-05143-r1-1.json",
+        "sha256": "6ac8b59ecaa1514e9c5d53f715f81b010684b4b18daeb9b60f7cc32b561aca93",
+        "bytes": 3179
       }
     }
   ]
