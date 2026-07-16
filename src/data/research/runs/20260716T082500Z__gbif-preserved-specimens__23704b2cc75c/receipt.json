@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260716T082500Z__gbif-preserved-specimens__23704b2cc75c",
+  "status": "complete",
+  "started_at": "2026-07-16T08:25:00.000Z",
+  "finished_at": "2026-07-16T08:29:35.812Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.1.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "3ce14a61baea027f2e5c218f422735db362266906b80bc1edeb714526a65fd1f",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "22586e1505fd6ca55f3e1c4b0cf8670d83cf72ec6d5ded1192e8de39fd1a2467",
+  "code_commit": "dffe40c933f90f916b664ddc6ba51d31dc5c6a3a",
+  "parameter_hash": "23704b2cc75ca4bab6f76a8a709b68884274430956241084529207fc361f77d2",
+  "parameters": {
+    "stateCode": "AR",
+    "stateProvince": "Arkansas",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "05143:matricaria-discoidea"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AR",
+    "county_fips": [
+      "05143"
+    ],
+    "species_ids": [
+      "matricaria-discoidea"
+    ],
+    "pair_keys": [
+      "05143:matricaria-discoidea"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Matricaria+discoidea&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-16T08:29:34.786Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arkansas&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3103791&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-16T08:29:35.385Z",
+      "record_count": 46
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "cc966262a94f49064edfcfbe9a22d6090122b12e49c5e287016b558fc79bfd71",
+      "bytes": 333622,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/assertions.ndjson",
+      "sha256": "0a83450f8780ebec5f61d4ef7f2242692e8733e9154f2c8c9af1537307516670",
+      "bytes": 11115,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/reviews.ndjson",
+      "sha256": "a2fbe3717087b1edfb7506ed858388e79827174b1a1a5999e07fc4a617d9deea",
+      "bytes": 5856,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/rejections.ndjson",
+      "sha256": "bbc24e7e40aad689d66380045afe34690de515a45324bedf63fcf2a65adc8a60",
+      "bytes": 4192,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/outcomes.ndjson",
+      "sha256": "de5eecdb30e1661e250fd59a368a0ab65c2b3c58d272d146cef18f8670275667",
+      "bytes": 1712,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260716T082500Z__gbif-preserved-specimens__23704b2cc75c/source-verification.json",
+      "sha256": "7a605ac7ab8013a539b367afcf704fa7ef4d6bb097df292a183d8390f7278164",
+      "bytes": 5172,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 46,
+    "assertion_events": 6,
+    "review_events": 6,
+    "rejection_records": 6,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AR --candidate-file src/data/research/state-candidates/AR.json --output-root src/data/research/runs --pairs 05143:matricaria-discoidea"
+}
