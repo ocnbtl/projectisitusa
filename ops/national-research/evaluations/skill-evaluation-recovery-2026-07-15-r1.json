@@ -12,7 +12,7 @@
   "broadDispatchAllowed": false,
   "freeze": {
     "status": "not-frozen",
-    "candidateGitCommit": null,
+    "candidateGitCommit": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
     "candidateSkillHashes": {
       "isitusa-national-orchestrator": "535dac43ac4e9d904e36b683880141d14b7ebd3deb9c558119f4a70daf57d811",
       "isitusa-evidence-worker": "920129b34b4513f40beffe3caca5d68262100081b3d1060dbb2788b96ab57075"
@@ -103,8 +103,8 @@
     {
       "iteration": 2,
       "candidateVersion": "candidate-recovery-2",
-      "candidateCommit": null,
-      "status": "in-progress",
+      "candidateCommit": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
+      "status": "blind-pass-real-pilot-in-progress",
       "repair": "Use one Unicode code-point path order for filesystem and committed Git skill trees, document the contract, exercise a full pinned commit in a sparse linked worktree, and resolve the shared workspace dependency root automatically for canonical child validation.",
       "regressionCases": 79,
       "regressionPassed": 79,
@@ -113,7 +113,7 @@
     }
   ],
   "blindForwardTests": {
-    "status": "iteration-2-pending",
+    "status": "pass",
     "attempts": [
       {
         "iteration": 1,
@@ -141,18 +141,60 @@
       },
       {
         "iteration": 2,
-        "status": "pending",
-        "agents": []
+        "status": "pass",
+        "agents": [
+          {
+            "taskId": "/root/blind_orchestrator_r2",
+            "skill": "isitusa-national-orchestrator",
+            "result": "pass",
+            "candidateCommit": "69689f5715c4653f44d846c9e3bbea941fc5b0c6",
+            "wallSeconds": 78.637,
+            "criticalViolations": 0,
+            "leaseCollisions": 0,
+            "forbiddenWrites": 0,
+            "observed": "A safe claim transactionally produced one valid active lease with both pinned skill hashes exact."
+          },
+          {
+            "taskId": "/root/blind_worker_r2",
+            "skill": "isitusa-evidence-worker",
+            "result": "pass-with-portability-followup",
+            "candidateCommit": "69689f5715c4653f44d846c9e3bbea941fc5b0c6",
+            "contentCommit": "f617e26c39c2cb2ce1d37ec63c93ab8e691947b5",
+            "branchHead": "bc1af9cc97b572297b3a44102f824d9fa94d7f67",
+            "manifestSha256": "94beade5f2610dfd3b3ceb1cd88a525c4497ccd92ac98b6f8d19707bdd3d64c5",
+            "wallSeconds": 361,
+            "criticalViolations": 0,
+            "forbiddenWrites": 0,
+            "manifestCompleteness": 1,
+            "assertions": 1,
+            "reviews": 1,
+            "rejections": 0,
+            "outcomes": 1,
+            "observed": "The worker produced two clean commits and a canonical schema-valid complete manifest. A manually supplied dependency path was then eliminated in the final candidate."
+          }
+        ],
+        "affectedPostBlindRegression": {
+          "candidateCommit": "ed6c692337990f9c08736f0ea5c8fbba558e0381",
+          "result": "pass",
+          "cases": 79,
+          "dependencyFreeSparseCanonicalValidation": true,
+          "externalNodePathRequired": false
+        },
+        "interruptedNoWriteAgents": [
+          "/root/blind_worker_r2b",
+          "/root/blind_worker_r2c",
+          "/root/blind_worker_final"
+        ]
       }
     ]
   },
   "realPilot": {
-    "status": "pending",
-    "jobId": null,
-    "leaseId": null,
-    "branch": null,
-    "worktree": null,
-    "runId": null,
+    "status": "active",
+    "jobId": "recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
+    "leaseId": "lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
+    "branch": "codex/recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
+    "worktree": "/private/tmp/isitusa-recovery-pilot-az-gbif-matricaria-r2",
+    "runId": "20260716T065000Z__gbif-preserved-specimens__dff867ba251d",
     "acceptedIntegrationSubmissions": 0
   },
   "metrics": {
@@ -162,17 +204,17 @@
     "manifestCompleteness": null,
     "deterministicOutput": true,
     "retryResumeBehavior": "synthetic-pass-real-pilot-pending",
-    "workerCompletionRate": null,
+    "workerCompletionRate": 0.25,
     "mergeConflicts": 0,
-    "manualInterventions": 1,
+    "manualInterventions": 4,
     "wallSeconds": null,
     "peakMemoryMb": 48.281,
     "validatedResearchThroughputPairsPerHour": null
   },
   "comparisonWithPriorWorkflow": {
     "priorCandidateResult": "blocked",
-    "improvementSoFar": "The full worker receipt contract uses the canonical immutable-run path, and the final recovery iteration now also binds checked-out and committed skill hashes with one deterministic path order.",
+    "improvementSoFar": "The full worker receipt contract uses the canonical immutable-run path, checked-out and committed skill hashes share one deterministic order, and sparse workers resolve canonical validation dependencies without local installation or external environment setup.",
     "passingRequirementMet": false,
-    "reason": "Fresh iteration-two blind forward tests and an independently accepted real pilot remain required before freeze."
+    "reason": "Blind forward tests pass. The active real pilot still requires independent acceptance before freeze."
   }
 }
