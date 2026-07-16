@@ -308,7 +308,7 @@
       "queueId": "queue-lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
       "jobId": "postfreeze-ak-gbif-melilotus-02020-r1",
       "leaseId": "lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-16T09:05:01Z",
       "manifestPath": "manifests/postfreeze-ak-gbif-melilotus-02020-r1__lease-postfreeze-ak-gbif-melilotus-02020-r1-1.json",
       "manifestHash": "9ac4c7e79d7691204426042c608ed0711c62cb42dff65e68a844e984242a4cd6",
@@ -355,6 +355,37 @@
         "path": "receipts/reviews/queue-lease-postfreeze-ak-gbif-melilotus-02020-r1-1.json",
         "sha256": "8c18cb409cd6afece50988513a31f033c942072f44ea748aec86a2307d9f0f53",
         "bytes": 2564
+      },
+      "integratedAt": "2026-07-16T09:08:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "bc6ed2dd2a912e7ac9728e4ee2ffa14e8cc1f08c",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation after integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact reviewed worker tree entries compared with canonical integration commit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical main clean status and whitespace check",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed Alaska content and manifest commits without conflict, revalidated the immutable run on canonical main, and required the transactional gate to compare every reviewed worker tree entry with the integration commit.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-postfreeze-ak-gbif-melilotus-02020-r1-1.json",
+        "sha256": "ee595bddd817b4d0f54b615f958d64b72b1089e0870c382ff1aafab954a8c036",
+        "bytes": 2426
       }
     }
   ]

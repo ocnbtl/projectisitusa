@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
+  "jobId": "postfreeze-ak-gbif-melilotus-02020-r1",
+  "leaseId": "lease-postfreeze-ak-gbif-melilotus-02020-r1-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-16T09:08:00Z",
+  "integrationCommit": "bc6ed2dd2a912e7ac9728e4ee2ffa14e8cc1f08c",
+  "workerCommit": "2427afa95ebf9a1c1b25b577dfb774b5c3b0507d",
+  "workerBranchHead": "138ac33f8327e11936cdf91e21d223cd58818b03",
+  "manifestHash": "9ac4c7e79d7691204426042c608ed0711c62cb42dff65e68a844e984242a4cd6",
+  "changedPaths": [
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/artifacts/gbif-species-match-melilotus-officinalis.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/assertions.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/manifest.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/outcomes.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/receipt.json",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/rejections.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/reviews.ndjson",
+    "src/data/research/runs/20260716T085100Z__gbif-preserved-specimens__eb62e9c90b65/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation after integration",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact reviewed worker tree entries compared with canonical integration commit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "canonical main clean status and whitespace check",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact reviewed Alaska content and manifest commits without conflict, revalidated the immutable run on canonical main, and required the transactional gate to compare every reviewed worker tree entry with the integration commit."
+}
