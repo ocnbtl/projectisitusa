@@ -51,7 +51,7 @@
       "queueId": "queue-lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
       "jobId": "recovery-pilot-az-gbif-matricaria-discoidea-04013-r2",
       "leaseId": "lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-16T07:41:00Z",
       "manifestPath": "manifests/recovery-pilot-az-gbif-matricaria-discoidea-04013-r2__lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1.json",
       "manifestHash": "1565e3719413abd22ea121f1a92d4ebfdbe24b2b04ed022c11b06f17620b0eaf",
@@ -98,6 +98,42 @@
         "path": "receipts/reviews/queue-lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1.json",
         "sha256": "ed78ab970c03bef14ac3ed2ecf0268a240b99e75bf031c85a1e8d4972309e03d",
         "bytes": 3487
+      },
+      "integratedAt": "2026-07-16T08:15:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "7df28ccb08b73507048ff58e11c2cf5098345fc2",
+      "integrationChecks": [
+        {
+          "command": "node --import tsx scripts/research/validate-immutable-run.ts --repository-root /Users/ocean/Code/Project Isitusa --validation-root /Users/ocean/Code/Project Isitusa --run-directory /Users/ocean/Code/Project Isitusa/src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d --source-verification /Users/ocean/Code/Project Isitusa/src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/source-verification.json --run-id 20260716T065000Z__gbif-preserved-specimens__dff867ba251d --source-id gbif-preserved-specimens --state-code AZ --pair-keys 04013:matricaria-discoidea --code-commit ed6c692337990f9c08736f0ea5c8fbba558e0381 --worker-task-id /root/recovery_pilot_az_r2",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "node scripts/test-national-research-skills.mjs",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed content and manifest commits without conflict. Canonical immutable-run validation and the 90-case skill regression passed, the repository was clean, and the transactional gate compared every reviewed worker tree entry to canonical main before closing the job.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-recovery-pilot-az-gbif-matricaria-discoidea-04013-r2-1.json",
+        "sha256": "8590ef35ada708d11516a094624f0b10e562b75de7aa3b01115b661570037c54",
+        "bytes": 3239
       }
     }
   ]
