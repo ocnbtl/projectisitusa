@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-16T07:26:55.339Z",
+  "runId": "20260716T065000Z__gbif-preserved-specimens__dff867ba251d",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AZ",
+  "pairKeys": [
+    "04013:matricaria-discoidea"
+  ],
+  "parameterHash": "dff867ba251d599813b7277c8fae0774c0629064564db924eb1679bf26b0a34a",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat as API aggregator; 27 underlying occurrence publishing organizations are represented in the retained statewide response."
+  },
+  "terms": {
+    "license": "Per-record Creative Commons licenses retained from GBIF: CC BY 4.0, CC BY-NC 4.0, and CC0 1.0.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-16T07:26:55.339Z",
+    "freshnessDate": "2026-07-16T03:30:03.931+00:00"
+  },
+  "geography": {
+    "method": "Require explicit GBIF stateProvince text matching Arizona and explicit GBIF county text that resolves uniquely through the registered active county-equivalent registry to FIPS 04013.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment; missing, ambiguous, retired, conflicting, or coordinate-only county geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement; revalidate each occurrence taxon key and binomial.",
+    "targetSpeciesIds": [
+      "matricaria-discoidea"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "key",
+      "gbifID",
+      "occurrenceID",
+      "datasetKey"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-matricaria-discoidea",
+        "url": "https://api.gbif.org/v1/species/match?name=Matricaria+discoidea&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 2,
+        "status": 200,
+        "retrievedAt": "2026-07-16T07:26:54.759Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-matricaria-discoidea",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3103791&limit=300&offset=0",
+        "purpose": "Acquire the complete statewide Arizona preserved-specimen occurrence response for the exact matched taxon and screen the leased county-species pair by explicit county text.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-16T07:26:55.339Z",
+        "declaredRecordCount": 110,
+        "receivedRecordCount": 110,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "The registered source has no negative semantics; an empty query, source silence, or a rejected occurrence cannot support verified absence.",
+      "GBIF occurrence search does not provide target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "Only qualifying positive preserved-specimen occurrences can become determination evidence."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "03964efc508203f107c21e677aaa842b9dfe4d26d9d528163da787d92dcff46d",
+      "bytes": 831949
+    },
+    {
+      "path": "src/data/research/runs/20260716T065000Z__gbif-preserved-specimens__dff867ba251d/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The retained statewide response contains 110 records across 28 datasets and 27 publishing organizations with mixed per-record licenses.",
+    "The latest lastInterpreted value in the retained occurrence response is 2026-07-16T03:30:03.931+00:00; freshness does not make the source an exhaustive inventory.",
+    "The first acquisition attempt failed before any HTTP response or artifact was retained; the successful species-match request is attempt 2.",
+    "Accepted point-level specimen records support historical presence only and do not imply current countywide abundance, verified absence, or non-detection."
+  ]
+}
