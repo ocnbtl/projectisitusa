@@ -230,7 +230,10 @@ function setupGitFixture(root) {
   runGit(repo, ["config", "user.name", "Fixture"]);
   fs.writeFileSync(path.join(repo, "seed.txt"), "seed\n");
   fs.writeFileSync(path.join(repo, ".gitattributes"), "worker-output/*.headers.txt binary\n");
-  fs.writeFileSync(path.join(repo, ".gitignore"), "worker-output/.ignored-secret\n");
+  fs.writeFileSync(
+    path.join(repo, ".gitignore"),
+    "worker-output/.ignored-secret\nops/national-research/.orchestration.lock\n",
+  );
   const provenanceFiles = [
     "src/data/research/source-registry.json",
     "scripts/research/adapters/gbif-preserved-specimens.ts",
@@ -627,7 +630,7 @@ try {
     return updated;
   };
 
-  const completionGateRoot = path.join(fixtureRoot, "completion-gate-orchestration");
+  const completionGateRoot = path.join(repo, "ops", "national-research");
   writeJson(path.join(completionGateRoot, "jobs.json"), { schemaVersion: 1, jobs: [{ ...job, state: "leased", currentLeaseId: lease.leaseId }] });
   writeJson(path.join(completionGateRoot, "leases.json"), { schemaVersion: 1, leases: [lease] });
   writeJson(path.join(completionGateRoot, "integration-queue.json"), { schemaVersion: 1, items: [] });
@@ -771,6 +774,9 @@ try {
   const acceptedValidationSecond = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
   record("deterministic_accepted_queue_validation", "pass", { ...acceptedValidationSecond, status: acceptedValidationFirst.status === 0 && acceptedValidationSecond.status === 0 && acceptedValidationFirst.stdout === acceptedValidationSecond.stdout ? 0 : 1 }, "Repeated accepted-queue validation is deterministic.");
 
+  runGit(repo, ["add", "ops/national-research"]);
+  runGit(repo, ["commit", "-m", "record accepted worker review"]);
+
   runGit(repo, ["cherry-pick", valid.manifest.commitSha]);
   runGit(repo, ["cherry-pick", workerBranchHead]);
   const integrationCommit = runGit(repo, ["rev-parse", "HEAD"]);
@@ -823,6 +829,7 @@ try {
     && fs.existsSync(durableIntegrationReceiptPath)
     && fs.readFileSync(durableIntegrationReceiptPath).equals(fs.readFileSync(integrationReceiptPath));
   record("transactional_integration_completion", "pass", { ...result, status: integrationAccepted ? 0 : 1 }, "A byte-identical canonical integration atomically archives its receipt and completes the job.");
+  record("canonical_in_repo_transaction_lock", "pass", { ...result, status: integrationAccepted && completionGateRoot.startsWith(`${repo}${path.sep}`) ? 0 : 1 }, "An in-repository orchestration root can integrate on clean main because its transient lock is ignored.");
 
   const integratedValidationFirst = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
   const integratedValidationSecond = run("node", [ORCHESTRATOR, "validate", "--root", completionGateRoot, "--now", NOW], REPO_ROOT);
