@@ -184,7 +184,7 @@
       "access": "download",
       "geographicScope": ["US"],
       "evidenceCapabilities": ["recorded-present", "not-detected"],
-      "negativeSemantics": "explicit-survey-only",
+      "negativeSemantics": "none",
       "refreshCadenceDays": 365,
       "status": "operational",
       "adapter": "scripts/import-aphis-honey-bee-survey.ts",
@@ -264,8 +264,20 @@
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 365,
       "status": "operational",
-      "adapter": "scripts/import-fia-alabama-invasive-plants.ts",
-      "caveat": "Plot detections support occurrence at sampled locations. Missing detections are not countywide absence."
+      "adapter": "scripts/research/adapters/usfs-fia-invasive-plants.ts",
+      "caveat": "Plot detections support occurrence at sampled locations. Missing detections are source silence only and never countywide absence or survey non-detection.",
+      "researchAdapter": {
+        "id": "usfs-fia-national",
+        "module": "scripts/research/adapters/usfs-fia-invasive-plants.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/usfs-fia-invasive-plants-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "One-to-one exact catalog scientific-name match from a state-listed FIA invasive symbol through the hash-pinned FIA plant dictionary. Ambiguous and unmatched symbols never publish.",
+        "geographyMatchingPolicy": "Explicit FIA STATECD plus zero-padded COUNTYCD must match one active county equivalent. Coordinates and automatic retired-geography crosswalks are prohibited.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "usfs-current-invasive-plants",

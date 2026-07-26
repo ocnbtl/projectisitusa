@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usfs-fia-acquisition-receipt.schema.json",
+  "title": "Project Isitusa immutable national USFS FIA acquisition receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisition_id", "status", "started_at", "finished_at", "actor_type", "actor_id", "source_id", "code_commit", "input_hashes", "parameter_hash", "parameters", "upstream_requests", "artifacts", "source_verification", "counts", "errors", "warnings", "rerun_command"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisition_id": { "type": "string", "pattern": "^[a-z0-9.-]+(?:__[a-z0-9.-]+)*$" },
+    "status": { "const": "complete" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "const": "adapter" },
+    "actor_id": { "const": "usfs-fia-national-acquisition@1.0.0" },
+    "source_id": { "const": "usfs-fia-invasive-plants" },
+    "code_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "input_hashes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    },
+    "parameter_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["snapshotDate", "dataMartUrl", "artifactBudgetBytes", "stateCodes", "referenceFiles"],
+      "properties": {
+        "snapshotDate": { "type": "string", "format": "date" },
+        "dataMartUrl": { "const": "https://apps.fs.usda.gov/fia/datamart/datamart.html" },
+        "artifactBudgetBytes": { "const": 134217728 },
+        "stateCodes": {
+          "type": "array",
+          "minItems": 50,
+          "maxItems": 50,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z]{2}$" }
+        },
+        "referenceFiles": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["REF_INVASIVE_SPECIES.csv", "REF_PLANT_DICTIONARY.csv"] }
+        }
+      }
+    },
+    "upstream_requests": {
+      "type": "array",
+      "minItems": 51,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["request_id", "url", "response_url", "method", "status", "retrieved_at", "bytes_received", "content_length", "attempt", "etag", "last_modified", "artifact_path", "expected_not_found"],
+        "properties": {
+          "request_id": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" },
+          "response_url": { "type": "string", "format": "uri" },
+          "method": { "const": "GET" },
+          "status": { "type": "integer", "minimum": 100, "maximum": 599 },
+          "retrieved_at": { "type": "string", "format": "date-time" },
+          "bytes_received": { "type": "integer", "minimum": 0 },
+          "content_length": { "type": ["integer", "null"], "minimum": 0 },
+          "attempt": { "type": "integer", "minimum": 1 },
+          "etag": { "type": ["string", "null"] },
+          "last_modified": { "type": ["string", "null"] },
+          "artifact_path": { "type": ["string", "null"] },
+          "expected_not_found": { "type": "boolean" }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 52,
+      "maxItems": 52,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "bytes", "media_type", "role", "state_code", "source_url", "row_count", "header_sha256"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "media_type": { "const": "text/csv" },
+          "role": { "enum": ["state-observations", "invasive-reference", "plant-dictionary"] },
+          "state_code": { "type": ["string", "null"], "pattern": "^[A-Z]{2}$" },
+          "source_url": { "type": "string", "format": "uri" },
+          "row_count": { "type": "integer", "minimum": 0 },
+          "header_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "source_verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "terms_url", "license", "freshness_status", "geography_policy", "taxon_policy", "positive_semantics", "negative_semantics", "snapshot_completeness", "unavailable_jurisdictions", "header_only_jurisdictions", "known_caveats"],
+      "properties": {
+        "publisher": { "const": "USDA Forest Service Forest Inventory and Analysis" },
+        "terms_url": { "const": "https://research.fs.usda.gov/products/dataandtools" },
+        "license": { "const": "No dataset-specific machine-readable license surfaced; official Forest Service data-use terms and citation retained" },
+        "freshness_status": { "const": "current-delivery-underlying-date-undated" },
+        "geography_policy": { "type": "string", "minLength": 1 },
+        "taxon_policy": { "type": "string", "minLength": 1 },
+        "positive_semantics": { "type": "string", "minLength": 1 },
+        "negative_semantics": { "type": "string", "minLength": 1 },
+        "snapshot_completeness": { "type": "string", "minLength": 1 },
+        "unavailable_jurisdictions": {
+          "type": "array",
+          "items": { "const": "DC" },
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "header_only_jurisdictions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z]{2}$" }
+        },
+        "known_caveats": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["upstream_requests", "artifacts", "artifact_bytes", "state_rows", "invasive_reference_rows", "plant_dictionary_rows", "transient_failures", "reused_verified_files", "expected_not_found"],
+      "properties": {
+        "upstream_requests": { "type": "integer", "minimum": 51 },
+        "artifacts": { "const": 52 },
+        "artifact_bytes": { "type": "integer", "minimum": 1, "maximum": 134217728 },
+        "state_rows": { "type": "integer", "minimum": 0 },
+        "invasive_reference_rows": { "type": "integer", "minimum": 1 },
+        "plant_dictionary_rows": { "type": "integer", "minimum": 1 },
+        "transient_failures": { "type": "integer", "minimum": 0 },
+        "reused_verified_files": { "type": "integer", "minimum": 0, "maximum": 52 },
+        "expected_not_found": { "const": 1 }
+      }
+    },
+    "errors": { "type": "array", "maxItems": 0 },
+    "warnings": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "rerun_command": { "type": "string", "minLength": 1 }
+  }
+}
