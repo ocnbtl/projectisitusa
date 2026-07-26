@@ -12,7 +12,7 @@ const ORCHESTRATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orche
 const WORKER_VALIDATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs");
 const ORCHESTRATOR_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orchestrator");
 const WORKER_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker");
-const RECOVERY_VERSION = "candidate-recovery-2";
+const RECOVERY_VERSION = "candidate-postfreeze-buffer-r1";
 const NOW = "2026-07-15T12:00:00Z";
 const EXPIRES = "2026-07-16T12:00:00Z";
 const SOURCE_ID = "gbif-preserved-specimens";
@@ -352,7 +352,7 @@ function outcome(overrides = {}) {
   };
 }
 
-function buildValidWorkerOutput(worktree, lease) {
+function buildValidWorkerOutput(worktree, lease, options = {}) {
   const outputRoot = path.join(worktree, "worker-output");
   fs.mkdirSync(outputRoot, { recursive: true });
   const rawPath = path.join(outputRoot, "raw.json");
@@ -363,7 +363,7 @@ function buildValidWorkerOutput(worktree, lease) {
   const outcomesPath = path.join(outputRoot, "outcomes.ndjson");
   const sourceVerificationPath = path.join(outputRoot, "source-verification.json");
   const receiptPath = path.join(outputRoot, "receipt.json");
-  fs.writeFileSync(rawPath, "{\"record\":1}\n");
+  fs.writeFileSync(rawPath, options.rawBytes ?? "{\"record\":1}\n");
   fs.writeFileSync(rawHeadersPath, Buffer.from("HTTP/2 200\r\nx-provider: value  \r\n\r\n", "utf8"));
   writeNdjson(assertionsPath, [assertion()]);
   writeNdjson(reviewsPath, [review()]);
@@ -607,6 +607,76 @@ try {
   const deterministicFirst = result.stdout;
   const deterministicSecond = run("node", [WORKER_VALIDATOR, "manifest", "--lease", leasePath, "--manifest", valid.manifestPath, "--repo", worktree, "--now", NOW], REPO_ROOT);
   record("deterministic_manifest_validation", "pass", { ...deterministicSecond, status: deterministicSecond.status === 0 && deterministicSecond.stdout === deterministicFirst ? 0 : 1 }, "Repeated validation emits identical JSON.");
+
+  const largeFixture = setupGitFixture(path.join(fixtureRoot, "large-content"));
+  const largeJob = makeJob({
+    jobId: "test-job",
+    baseSha: largeFixture.baseSha,
+    branch: "codex/test-job",
+    worktree: largeFixture.worktree,
+    claims: [`state/${STATE_CODE}/source/${SOURCE_ID}/taxon/${SPECIES_ID}`],
+  });
+  largeJob.resourcePolicy.maxArtifactBytes = 2000000;
+  const largeLease = makeLease(largeJob);
+  const largeLeasePath = path.join(fixtureRoot, "large-content-lease.json");
+  writeJson(largeLeasePath, largeLease);
+  const largeRawBytes = Buffer.from(
+    `{"record":"${"x".repeat(1200000)}"}\n`,
+    "utf8",
+  );
+  const largeValid = buildValidWorkerOutput(
+    largeFixture.worktree,
+    largeLease,
+    { rawBytes: largeRawBytes },
+  );
+  result = run("node", [WORKER_VALIDATOR, "manifest", "--lease", largeLeasePath, "--manifest", largeValid.manifestPath, "--repo", largeFixture.worktree, "--now", NOW], REPO_ROOT);
+  record("committed_artifact_over_1_mib_within_lease_limit", "pass", result, "A committed provider artifact above Node's default buffer passes within the pinned lease byte limit.");
+
+  const largeRawPath = path.join(largeFixture.worktree, "worker-output/raw.json");
+  const largeOriginalManifest = fs.readFileSync(largeValid.manifestPath);
+  const sameLengthMutation = Buffer.from(largeRawBytes);
+  sameLengthMutation[20] = sameLengthMutation[20] === 120 ? 121 : 120;
+  fs.writeFileSync(largeRawPath, sameLengthMutation);
+  runGit(largeFixture.worktree, ["add", "worker-output/raw.json"]);
+  runGit(largeFixture.worktree, ["commit", "-m", "same length content mismatch"]);
+  const hashMismatchCommit = runGit(largeFixture.worktree, ["rev-parse", "HEAD"]);
+  fs.writeFileSync(largeRawPath, largeRawBytes);
+  writeJson(largeValid.manifestPath, {
+    ...largeValid.manifest,
+    commitSha: hashMismatchCommit,
+  });
+  result = run("node", [WORKER_VALIDATOR, "manifest", "--lease", largeLeasePath, "--manifest", largeValid.manifestPath, "--repo", largeFixture.worktree, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("committed_artifact_hash_mismatch", result, "artifacts[0] hash differs from manifest.commitSha", "Committed same-length artifact mutations are detected by content hash.");
+  fs.writeFileSync(largeValid.manifestPath, largeOriginalManifest);
+  runGit(largeFixture.worktree, ["add", "worker-output/raw.json"]);
+  runGit(largeFixture.worktree, ["commit", "-m", "restore large artifact after hash test"]);
+
+  fs.writeFileSync(largeRawPath, Buffer.concat([largeRawBytes, Buffer.from(" ")]));
+  runGit(largeFixture.worktree, ["add", "worker-output/raw.json"]);
+  runGit(largeFixture.worktree, ["commit", "-m", "different length content mismatch"]);
+  const byteMismatchCommit = runGit(largeFixture.worktree, ["rev-parse", "HEAD"]);
+  fs.writeFileSync(largeRawPath, largeRawBytes);
+  writeJson(largeValid.manifestPath, {
+    ...largeValid.manifest,
+    commitSha: byteMismatchCommit,
+  });
+  result = run("node", [WORKER_VALIDATOR, "manifest", "--lease", largeLeasePath, "--manifest", largeValid.manifestPath, "--repo", largeFixture.worktree, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("committed_artifact_byte_mismatch", result, "artifacts[0] bytes differ from manifest.commitSha", "Committed different-length artifact mutations are detected by byte count.");
+  fs.writeFileSync(largeValid.manifestPath, largeOriginalManifest);
+  runGit(largeFixture.worktree, ["add", "worker-output/raw.json"]);
+  runGit(largeFixture.worktree, ["commit", "-m", "restore large artifact after byte test"]);
+
+  fs.unlinkSync(largeRawPath);
+  runGit(largeFixture.worktree, ["add", "worker-output/raw.json"]);
+  runGit(largeFixture.worktree, ["commit", "-m", "remove committed large artifact"]);
+  const unavailableCommit = runGit(largeFixture.worktree, ["rev-parse", "HEAD"]);
+  fs.writeFileSync(largeRawPath, largeRawBytes);
+  writeJson(largeValid.manifestPath, {
+    ...largeValid.manifest,
+    commitSha: unavailableCommit,
+  });
+  result = run("node", [WORKER_VALIDATOR, "manifest", "--lease", largeLeasePath, "--manifest", largeValid.manifestPath, "--repo", largeFixture.worktree, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("committed_artifact_unavailable_at_manifest_commit", result, "artifacts[0] is not available at manifest.commitSha", "A worktree file cannot conceal a missing artifact at the reported content commit.");
 
   const originalManifest = fs.readFileSync(valid.manifestPath);
   const originalReceipt = fs.readFileSync(valid.receiptPath);

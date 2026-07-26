@@ -494,12 +494,25 @@ function readJsonForValidation(file, label, errors) {
   }
 }
 
-function validateContentCommit(repo, commitSha, descriptors, errors) {
+function validateContentCommit(
+  repo,
+  commitSha,
+  descriptors,
+  maxContentBytes,
+  errors,
+) {
   for (const [label, descriptor] of descriptors) {
+    if (descriptor.bytes > maxContentBytes) {
+      errors.push(
+        `${label} exceeds the lease content byte limit at manifest.commitSha: ${descriptor.path}.`,
+      );
+      continue;
+    }
     try {
       const contents = execFileSync(
         "git",
         ["-C", repo, "show", `${commitSha}:${descriptor.path}`],
+        { maxBuffer: maxContentBytes },
       );
       if (contents.length !== descriptor.bytes) errors.push(`${label} bytes differ from manifest.commitSha: ${descriptor.path}.`);
       if (crypto.createHash("sha256").update(contents).digest("hex") !== descriptor.sha256) {
@@ -739,7 +752,15 @@ function validateManifest(lease, manifest, manifestPath, repo, validationRoot, n
   for (const [file, label] of reportedPaths.entries()) {
     if (!changed.includes(file)) errors.push(`${label} is reported but is not changed from the lease base: ${file}.`);
   }
-  if (isSha(manifest.commitSha, 40)) validateContentCommit(repo, manifest.commitSha, contentDescriptors, errors);
+  if (isSha(manifest.commitSha, 40)) {
+    validateContentCommit(
+      repo,
+      manifest.commitSha,
+      contentDescriptors,
+      lease.resourcePolicy.maxArtifactBytes,
+      errors,
+    );
+  }
   return { errors, changedPaths: changed, touchedPaths: touched, recordCounts: { assertions: assertions.length, reviews: reviews.length, rejections: rejections.length, outcomes: outcomes.length } };
 }
 
