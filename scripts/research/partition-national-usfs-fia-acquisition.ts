@@ -21,6 +21,7 @@ import {
   type FiaInvasiveReferenceRow,
   type FiaObservationRow,
   type FiaPlantDictionaryRow,
+  type NationalFiaReference,
   asNdjson,
   assertCommitAncestor,
   captureCommittedInputSnapshot,
@@ -82,47 +83,6 @@ type StateRegistry = {
 type Species = {
   id: string;
   scientificName: string;
-};
-
-type NationalFiaReference = {
-  schemaVersion: 1;
-  acquisitionId: string;
-  acquisitionReceiptPath: string;
-  acquisitionReceiptSha256: string;
-  snapshotDate: string;
-  sourceId: typeof FIA_SOURCE_ID;
-  stateCode: string;
-  stateArtifact: {
-    path: string;
-    sha256: string;
-    bytes: number;
-    rowCount: number;
-  };
-  invasiveReference: {
-    path: string;
-    sha256: string;
-    bytes: number;
-    rowCount: number;
-  };
-  plantDictionary: {
-    path: string;
-    sha256: string;
-    bytes: number;
-    rowCount: number;
-  };
-  adapterVersion: typeof FIA_ADAPTER_VERSION;
-  adapterCodeSha256: string;
-  partitionScriptSha256: string;
-  partitionMode:
-    "exact-state-county-codes-and-exact-taxon-no-coordinate-fallback";
-  selectedRowsSha256: string;
-  mappings: Array<{
-    symbol: string;
-    speciesId: string;
-    scientificName: string;
-  }>;
-  mappingReconciliation: Record<string, number>;
-  replayReconciliation: Record<string, number>;
 };
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -450,9 +410,20 @@ async function main() {
       continue;
     }
     const counties = listCountyEquivalents(stateCode);
+    const applicableSpecies = [...new Map(
+      mapping.mappings.map((entry) => [
+        entry.speciesId,
+        {
+          speciesId: entry.speciesId,
+          scientificName: entry.scientificName,
+        },
+      ]),
+    ).values()].sort(
+      (left, right) => compareText(left.speciesId, right.speciesId),
+    );
     const requestedPairs = counties
       .flatMap((county) =>
-        mapping.mappings.map((entry) => ({
+        applicableSpecies.map((entry) => ({
           countyFips: county.countyFips,
           countyName: county.shortName,
           speciesId: entry.speciesId,
@@ -595,10 +566,8 @@ async function main() {
       },
       taxonomy: {
         method:
-          "One-to-one exact catalog scientific-name match from a state-listed FIA invasive symbol through the retained plant dictionary.",
-        targetSpeciesIds: mapping.mappings
-          .map((entry) => entry.speciesId)
-          .sort(compareText),
+          "Each state-listed FIA symbol resolves through the retained plant dictionary to the same exact catalog scientific name. Multiple exact source symbols may converge on one catalog species.",
+        targetSpeciesIds: applicableSpecies.map((entry) => entry.speciesId),
       },
       acquisition: {
         snapshotComplete: stateArtifact.row_count > 0,
@@ -703,9 +672,7 @@ async function main() {
       requested_scope: {
         state_code: stateCode,
         county_fips: counties.map((entry) => entry.countyFips).sort(compareText),
-        species_ids: mapping.mappings
-          .map((entry) => entry.speciesId)
-          .sort(compareText),
+        species_ids: applicableSpecies.map((entry) => entry.speciesId),
         pair_keys: candidatePairs,
         date_range: { start: null, end: null },
       },

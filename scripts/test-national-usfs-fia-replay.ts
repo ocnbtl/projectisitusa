@@ -8,6 +8,7 @@ import {
   FIA_ACCEPT_HEADER,
   type FiaObservationRow,
 } from "./research/national-usfs-fia-common";
+import fs from "node:fs";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -17,6 +18,24 @@ assert(
   FIA_ACCEPT_HEADER.includes("application/octet-stream") &&
     FIA_ACCEPT_HEADER.includes("*/*"),
   "FIA acquisition must accept the DataMart octet-stream CSV delivery.",
+);
+const registry = JSON.parse(
+  fs.readFileSync("src/data/research/source-registry.json", "utf8"),
+) as {
+  sources: Array<{
+    id: string;
+    negativeSemantics: string;
+  }>;
+};
+assert(
+  registry.sources.find((entry) => entry.id === "usfs-fia-invasive-plants")
+      ?.negativeSemantics === "none",
+  "FIA positive detections must not advertise negative evidence semantics.",
+);
+assert(
+  registry.sources.find((entry) => entry.id === "aphis-honey-bee")
+      ?.negativeSemantics === "explicit-survey-only",
+  "APHIS explicit zero-count survey semantics must remain registered.",
 );
 
 const completedAt = "2026-07-26T15:00:00.000Z";
@@ -28,6 +47,8 @@ const mapping: FiaTaxonMapping = {
 const mappingReconciliation = {
   state_invasive_symbols: 1,
   exact_catalog_mappings: 1,
+  distinct_catalog_species: 1,
+  duplicate_species_symbol_mappings: 0,
   no_catalog_match_symbols: 0,
   ambiguous_dictionary_symbols: 0,
   duplicate_reference_rows: 0,
@@ -213,6 +234,78 @@ assert(
   mapped.mappings.length === 2 &&
     mapped.reconciliation.ambiguous_dictionary_symbols === 1,
   "FIA mapping must reject ambiguous symbols and retain exact one-to-one matches.",
+);
+
+const converged = buildFiaTaxonMappings({
+  stateFips: "01",
+  catalog: [
+    {
+      id: "schedonorus-arundinaceus",
+      scientificName: "Schedonorus arundinaceus",
+    },
+  ],
+  invasiveReferenceRows: [
+    { STATECD: "1", SYMBOL: "SCPH" },
+    { STATECD: "1", SYMBOL: "SCAR7" },
+  ],
+  dictionaryRows: [
+    {
+      SYMBOL: "SCPH",
+      SCIENTIFIC_NAME: "Schedonorus phoenix",
+      NEW_SCIENTIFIC_NAME: "Schedonorus arundinaceus",
+    },
+    {
+      SYMBOL: "SCAR7",
+      SCIENTIFIC_NAME: "Schedonorus arundinaceus",
+    },
+  ],
+});
+assert(
+  converged.mappings.length === 2 &&
+    converged.reconciliation.distinct_catalog_species === 1 &&
+    converged.reconciliation.duplicate_species_symbol_mappings === 1,
+  "Multiple exact FIA symbols may converge on one catalog species without duplicating pair scope.",
+);
+const convergedReplay = replayNationalFiaState({
+  context: {
+    runId: "fia-test-converged-symbols",
+    sourceId: "usfs-fia-invasive-plants",
+    stateCode: "AL",
+    requestedPairs: [
+      {
+        countyFips: "01001",
+        countyName: "Autauga",
+        speciesId: "schedonorus-arundinaceus",
+        scientificName: "Schedonorus arundinaceus",
+      },
+    ],
+    runStartedAt: completedAt,
+    parameters: {},
+  },
+  observationRows: [
+    {
+      ...observation({ cn: "fia-converged-1", state: "1", county: "1" }),
+      VEG_FLDSPCD: "SCAR7",
+      VEG_SPCD: "SCAR7",
+    },
+    {
+      ...observation({ cn: "fia-converged-2", state: "1", county: "1" }),
+      VEG_FLDSPCD: "SCPH",
+      VEG_SPCD: "SCPH",
+    },
+  ],
+  mappings: converged.mappings,
+  mappingReconciliation: converged.reconciliation,
+  completedAt,
+  headerOnly: false,
+});
+assert(
+  convergedReplay.assertions.length === 1 &&
+    convergedReplay.outcomes.length === 1 &&
+    convergedReplay.outcomes[0]?.status === "evidence-found" &&
+    convergedReplay.assertions[0]?.taxon_match.source_taxon_key ===
+      "SCAR7|SCPH",
+  "Converged FIA symbols must publish one exact county-species assertion while preserving both source keys.",
 );
 
 const deterministicLeft = replayNationalFiaState({

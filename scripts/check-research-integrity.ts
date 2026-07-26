@@ -52,11 +52,25 @@ import {
   verifyNationalAfpeAcquisition,
 } from "./research/national-usfs-afpe-common";
 import {
+  buildFiaTaxonMappings,
+  replayNationalFiaState,
+} from "./research/adapters/usfs-fia-invasive-plants";
+import {
+  FIA_SOURCE_ID,
+  type FiaInvasiveReferenceRow,
+  type FiaObservationRow,
+  type FiaPlantDictionaryRow,
+  type NationalFiaReference,
+  parseFiaCsv,
+  validateNationalFiaReference,
+  verifyNationalFiaAcquisition,
+} from "./research/national-usfs-fia-common";
+import {
   getStateDefinition,
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
 
-type SpeciesRecord = { id: string };
+type SpeciesRecord = { id: string; scientificName: string };
 type CountyRecord = { countyFips: string; stateCode: string };
 type MatrixFile = {
   summary: {
@@ -270,11 +284,10 @@ for (const filepath of [
   assert(existsSync(filepath), `Missing required research artifact: ${path.relative(ROOT, filepath)}`);
 }
 
-const speciesIds = new Set(
-  readJson<SpeciesRecord[]>(path.join(ROOT, "src/data/generated/species.json")).map(
-    (entry) => entry.id,
-  ),
+const speciesCatalog = readJson<SpeciesRecord[]>(
+  path.join(ROOT, "src/data/generated/species.json"),
 );
+const speciesIds = new Set(speciesCatalog.map((entry) => entry.id));
 const generatedCounties = Object.values(
   readJson<Record<string, CountyRecord>>(path.join(ROOT, "src/data/generated/counties.json")),
 );
@@ -334,6 +347,7 @@ const projectedOutcomes = projectedAlabamaImmutableRuns.flatMap(
 const migrationCandidates = readJson<MigrationCandidatesFile>(migrationCandidatesPath);
 const nationalNasAcquisitions = [];
 const nationalAfpeAcquisitions = [];
+const nationalFiaAcquisitions = [];
 if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
   for (const entry of readdirSync(NATIONAL_ACQUISITIONS_DIR, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
@@ -345,6 +359,8 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
       ? await verifyNationalNasAcquisition(ROOT, directory, true)
       : candidate.source_id === AFPE_SOURCE_ID
         ? verifyNationalAfpeAcquisition(ROOT, directory)
+        : candidate.source_id === FIA_SOURCE_ID
+          ? verifyNationalFiaAcquisition(ROOT, directory)
         : null;
     assert(
       verified,
@@ -359,9 +375,13 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
       nationalNasAcquisitions.push(
         verified as Awaited<ReturnType<typeof verifyNationalNasAcquisition>>,
       );
-    } else {
+    } else if (candidate.source_id === AFPE_SOURCE_ID) {
       nationalAfpeAcquisitions.push(
         verified as ReturnType<typeof verifyNationalAfpeAcquisition>,
+      );
+    } else {
+      nationalFiaAcquisitions.push(
+        verified as ReturnType<typeof verifyNationalFiaAcquisition>,
       );
     }
   }
@@ -383,6 +403,17 @@ const nationalAfpeAcquisitionById = new Map(
 const nationalAfpeReferences: NationalAfpeReference[] = [];
 const nationalAfpeReferenceEntries: Array<{
   reference: NationalAfpeReference;
+  bundle: (typeof immutableRuns)[number];
+}> = [];
+const nationalFiaAcquisitionById = new Map(
+  nationalFiaAcquisitions.map((entry) => [
+    entry.receipt.acquisition_id,
+    entry,
+  ]),
+);
+const nationalFiaReferences: NationalFiaReference[] = [];
+const nationalFiaReferenceEntries: Array<{
+  reference: NationalFiaReference;
   bundle: (typeof immutableRuns)[number];
 }> = [];
 
@@ -673,6 +704,117 @@ for (const bundle of immutableRuns) {
         stableJson(sourceVerification.stateReconciliation) ===
           stableJson(reference.reconciliation),
       `Immutable AFPE run ${receipt.run_id} source verification changed.`,
+    );
+  }
+  if (
+    receipt.source_id === FIA_SOURCE_ID &&
+    receipt.adapter_id === "usfs-fia-national"
+  ) {
+    const matchingArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/national-acquisition-reference.json")
+    );
+    assert(
+      matchingArtifacts.length === 1,
+      `Immutable FIA run ${receipt.run_id} must contain one acquisition reference.`,
+    );
+    const artifact = matchingArtifacts[0]!;
+    const artifactBytes = readFileSync(path.join(ROOT, artifact.path));
+    assert(
+      artifactBytes.length === artifact.bytes &&
+        sha256(artifactBytes) === artifact.sha256,
+      `Immutable FIA run ${receipt.run_id} acquisition reference changed.`,
+    );
+    const reference = JSON.parse(
+      artifactBytes.toString("utf8"),
+    ) as NationalFiaReference;
+    validateNationalFiaReference(ROOT, reference);
+    nationalFiaReferences.push(reference);
+    nationalFiaReferenceEntries.push({ reference, bundle });
+    const acquisition = nationalFiaAcquisitionById.get(reference.acquisitionId);
+    assert(
+      acquisition,
+      `Immutable FIA run ${receipt.run_id} references an unknown acquisition.`,
+    );
+    const stateArtifact = acquisition.receipt.artifacts.find(
+      (entry) =>
+        entry.role === "state-observations" &&
+        entry.state_code === runStateCode,
+    );
+    const invasiveReference = acquisition.receipt.artifacts.find(
+      (entry) => entry.role === "invasive-reference",
+    );
+    const plantDictionary = acquisition.receipt.artifacts.find(
+      (entry) => entry.role === "plant-dictionary",
+    );
+    assert(
+      stateArtifact && invasiveReference && plantDictionary,
+      `Immutable FIA run ${receipt.run_id} acquisition artifacts are incomplete.`,
+    );
+    assert(
+      reference.acquisitionReceiptPath ===
+          path.relative(ROOT, acquisition.receiptPath).split(path.sep).join("/") &&
+        reference.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        reference.snapshotDate === acquisition.receipt.parameters.snapshotDate &&
+        stableJson(reference.stateArtifact) === stableJson({
+          path: stateArtifact.path,
+          sha256: stateArtifact.sha256,
+          bytes: stateArtifact.bytes,
+          rowCount: stateArtifact.row_count,
+        }) &&
+        stableJson(reference.invasiveReference) === stableJson({
+          path: invasiveReference.path,
+          sha256: invasiveReference.sha256,
+          bytes: invasiveReference.bytes,
+          rowCount: invasiveReference.row_count,
+        }) &&
+        stableJson(reference.plantDictionary) === stableJson({
+          path: plantDictionary.path,
+          sha256: plantDictionary.sha256,
+          bytes: plantDictionary.bytes,
+          rowCount: plantDictionary.row_count,
+        }),
+      `Immutable FIA run ${receipt.run_id} acquisition lineage changed.`,
+    );
+    assertCommitAncestor(
+      ROOT,
+      acquisition.receipt.code_commit,
+      receipt.code_commit,
+    );
+    assert(
+      reference.sourceId === receipt.source_id &&
+        reference.adapterVersion === receipt.adapter_version &&
+        reference.adapterCodeSha256 === receipt.adapter_code_hash &&
+        reference.stateCode === runStateCode,
+      `Immutable FIA run ${receipt.run_id} acquisition scope changed.`,
+    );
+    const committedPartitionScript = execFileSync(
+      "git",
+      [
+        "show",
+        `${receipt.code_commit}:scripts/research/partition-national-usfs-fia-acquisition.ts`,
+      ],
+      { cwd: ROOT },
+    );
+    assert(
+      sha256(committedPartitionScript) === reference.partitionScriptSha256,
+      `Immutable FIA run ${receipt.run_id} partition input changed.`,
+    );
+    assert(
+      reference.replayReconciliation.source_rows ===
+          receipt.counts.candidate_records &&
+        reference.replayReconciliation.assertion_pairs ===
+          receipt.counts.assertion_events &&
+        reference.replayReconciliation.rejection_events ===
+          receipt.counts.rejection_records &&
+        reference.replayReconciliation.duplicate_record_ids ===
+          receipt.counts.duplicate_records &&
+        reference.replayReconciliation.blocked_pairs ===
+          bundle.outcomes.filter((entry) => entry.status === "blocked").length &&
+        reference.mappingReconciliation.exact_catalog_mappings ===
+          reference.mappings.length &&
+        reference.mappingReconciliation.distinct_catalog_species ===
+          new Set(reference.mappings.map((entry) => entry.speciesId)).size,
+      `Immutable FIA run ${receipt.run_id} reconciliation counts changed.`,
     );
   }
   if (receipt.run_id === LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
@@ -985,6 +1127,115 @@ for (const acquisition of nationalAfpeAcquisitions) {
       assert(
         stableJson(actual) === stableJson(expected),
         `Integrity replay changed AFPE ${label} for ${bundle.receipt.run_id}.`,
+      );
+    }
+  }
+}
+
+for (const acquisition of nationalFiaAcquisitions) {
+  const referenceEntries = nationalFiaReferenceEntries.filter(
+    (entry) =>
+      entry.reference.acquisitionId === acquisition.receipt.acquisition_id,
+  );
+  if (referenceEntries.length === 0) continue;
+  const invasiveArtifact = acquisition.receipt.artifacts.find(
+    (entry) => entry.role === "invasive-reference",
+  );
+  const dictionaryArtifact = acquisition.receipt.artifacts.find(
+    (entry) => entry.role === "plant-dictionary",
+  );
+  assert(
+    invasiveArtifact && dictionaryArtifact,
+    `FIA acquisition ${acquisition.receipt.acquisition_id} lacks reference artifacts.`,
+  );
+  const invasiveRows = parseFiaCsv<FiaInvasiveReferenceRow>(
+    readFileSync(path.join(ROOT, invasiveArtifact.path)),
+  );
+  const dictionaryRows = parseFiaCsv<FiaPlantDictionaryRow>(
+    readFileSync(path.join(ROOT, dictionaryArtifact.path)),
+  );
+  for (const entry of referenceEntries) {
+    const { bundle, reference } = entry;
+    const state = getStateDefinition(reference.stateCode);
+    assert(state, `FIA integrity replay has unknown state ${reference.stateCode}.`);
+    const mapping = buildFiaTaxonMappings({
+      stateFips: state.stateFips,
+      catalog: speciesCatalog,
+      dictionaryRows,
+      invasiveReferenceRows: invasiveRows,
+    });
+    assert(
+      stableJson(mapping.mappings) === stableJson(reference.mappings) &&
+        stableJson(mapping.reconciliation) ===
+          stableJson(reference.mappingReconciliation),
+      `Integrity replay changed FIA taxon mapping for ${bundle.receipt.run_id}.`,
+    );
+    const applicableSpecies = [...new Map(
+      mapping.mappings.map((mappingEntry) => [
+        mappingEntry.speciesId,
+        {
+          speciesId: mappingEntry.speciesId,
+          scientificName: mappingEntry.scientificName,
+        },
+      ]),
+    ).values()].sort(
+      (left, right) => left.speciesId.localeCompare(right.speciesId),
+    );
+    const requestedPairs = listCountyEquivalents(reference.stateCode)
+      .flatMap((county) =>
+        applicableSpecies.map((mappingEntry) => ({
+          countyFips: county.countyFips,
+          countyName: county.shortName,
+          speciesId: mappingEntry.speciesId,
+          scientificName: mappingEntry.scientificName,
+        }))
+      )
+      .sort(
+        (left, right) =>
+          left.countyFips.localeCompare(right.countyFips) ||
+          left.speciesId.localeCompare(right.speciesId),
+      );
+    assert(
+      stableJson(
+        requestedPairs.map((pair) =>
+          `${pair.countyFips}:${pair.speciesId}`
+        ),
+      ) === stableJson(bundle.receipt.requested_scope.pair_keys),
+      `Integrity replay changed FIA requested pairs for ${bundle.receipt.run_id}.`,
+    );
+    const observationRows = parseFiaCsv<FiaObservationRow>(
+      readFileSync(path.join(ROOT, reference.stateArtifact.path)),
+    );
+    const replay = replayNationalFiaState({
+      context: {
+        runId: bundle.receipt.run_id,
+        sourceId: bundle.receipt.source_id,
+        stateCode: reference.stateCode,
+        requestedPairs,
+        runStartedAt: bundle.receipt.started_at,
+        parameters: bundle.receipt.parameters,
+      },
+      observationRows,
+      mappings: mapping.mappings,
+      mappingReconciliation: mapping.reconciliation,
+      completedAt: bundle.receipt.finished_at,
+      headerOnly: reference.stateArtifact.rowCount === 0,
+    });
+    assert(
+      replay.selectedRowsSha256 === reference.selectedRowsSha256 &&
+        stableJson(replay.reconciliation) ===
+          stableJson(reference.replayReconciliation),
+      `Integrity replay changed FIA selection or reconciliation for ${bundle.receipt.run_id}.`,
+    );
+    for (const [label, actual, expected] of [
+      ["assertions", replay.assertions, bundle.assertions],
+      ["reviews", replay.reviews, bundle.reviews],
+      ["rejections", replay.rejections, bundle.rejections],
+      ["outcomes", replay.outcomes, bundle.outcomes],
+    ] as const) {
+      assert(
+        stableJson(actual) === stableJson(expected),
+        `Integrity replay changed FIA ${label} for ${bundle.receipt.run_id}.`,
       );
     }
   }
@@ -1354,6 +1605,12 @@ console.log(
         0,
       ),
       nationalAfpeReferenceCount: nationalAfpeReferences.length,
+      nationalFiaAcquisitionCount: nationalFiaAcquisitions.length,
+      nationalFiaAcquisitionRecordCount: nationalFiaAcquisitions.reduce(
+        (sum, entry) => sum + entry.receipt.counts.state_rows,
+        0,
+      ),
+      nationalFiaReferenceCount: nationalFiaReferences.length,
       bootstrapResearchRunCount: runs.length,
       immutableResearchRunCount: projectedAlabamaImmutableRuns.length,
       totalImmutableResearchRunCount: immutableRuns.length,

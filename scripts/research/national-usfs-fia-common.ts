@@ -33,7 +33,7 @@ export const FIA_SOURCE_ID = "usfs-fia-invasive-plants" as const;
 export const FIA_ACQUISITION_ACTOR =
   "usfs-fia-national-acquisition@1.0.0" as const;
 export const FIA_ADAPTER_ID = "usfs-fia-national" as const;
-export const FIA_ADAPTER_VERSION = "1.0.0" as const;
+export const FIA_ADAPTER_VERSION = "1.1.0" as const;
 export const FIA_DATAMART_URL =
   "https://apps.fs.usda.gov/fia/datamart/datamart.html" as const;
 export const FIA_DATA_ROOT =
@@ -207,6 +207,47 @@ export type NationalFiaAcquisitionReceipt = {
   rerun_command: string;
 };
 
+export type NationalFiaReference = {
+  schemaVersion: 1;
+  acquisitionId: string;
+  acquisitionReceiptPath: string;
+  acquisitionReceiptSha256: string;
+  snapshotDate: string;
+  sourceId: typeof FIA_SOURCE_ID;
+  stateCode: string;
+  stateArtifact: {
+    path: string;
+    sha256: string;
+    bytes: number;
+    rowCount: number;
+  };
+  invasiveReference: {
+    path: string;
+    sha256: string;
+    bytes: number;
+    rowCount: number;
+  };
+  plantDictionary: {
+    path: string;
+    sha256: string;
+    bytes: number;
+    rowCount: number;
+  };
+  adapterVersion: typeof FIA_ADAPTER_VERSION;
+  adapterCodeSha256: string;
+  partitionScriptSha256: string;
+  partitionMode:
+    "exact-state-county-codes-and-exact-taxon-no-coordinate-fallback";
+  selectedRowsSha256: string;
+  mappings: Array<{
+    symbol: string;
+    speciesId: string;
+    scientificName: string;
+  }>;
+  mappingReconciliation: Record<string, number>;
+  replayReconciliation: Record<string, number>;
+};
+
 export type VerifiedNationalFiaAcquisition = {
   directory: string;
   receiptPath: string;
@@ -350,6 +391,22 @@ export function validateNationalFiaReceipt(
       expectedBytes <= FIA_ARTIFACT_BUDGET_BYTES,
     "FIA artifact byte total is stale or over budget.",
   );
+}
+
+export function validateNationalFiaReference(
+  root: string,
+  reference: NationalFiaReference,
+) {
+  const schema = JSON.parse(
+    readFileSync(
+      path.join(
+        root,
+        "src/data/research/schemas/national-usfs-fia-reference.schema.json",
+      ),
+      "utf8",
+    ),
+  ) as Parameters<typeof z.fromJSONSchema>[0];
+  z.fromJSONSchema(schema).parse(reference);
 }
 
 export function verifyNationalFiaAcquisition(

@@ -45,6 +45,8 @@ export type FiaTaxonMapping = {
 export type FiaMappingReconciliation = {
   state_invasive_symbols: number;
   exact_catalog_mappings: number;
+  distinct_catalog_species: number;
+  duplicate_species_symbol_mappings: number;
   no_catalog_match_symbols: number;
   ambiguous_dictionary_symbols: number;
   duplicate_reference_rows: number;
@@ -181,23 +183,17 @@ export function buildFiaTaxonMappings(input: {
       compareText(left.speciesId, right.speciesId) ||
       compareText(left.symbol, right.symbol),
   );
-  const duplicateSpecies = mappings.filter(
-    (entry, index) =>
-      mappings.findIndex((candidate) =>
-        candidate.speciesId === entry.speciesId
-      ) !== index,
-  );
-  assert(
-    duplicateSpecies.length === 0,
-    `FIA symbols map more than once to ${duplicateSpecies
-      .map((entry) => entry.speciesId)
-      .join(", ")}.`,
-  );
+  const distinctCatalogSpecies = new Set(
+    mappings.map((entry) => entry.speciesId),
+  ).size;
   return {
     mappings,
     reconciliation: {
       state_invasive_symbols: symbolCounts.size,
       exact_catalog_mappings: mappings.length,
+      distinct_catalog_species: distinctCatalogSpecies,
+      duplicate_species_symbol_mappings:
+        mappings.length - distinctCatalogSpecies,
       no_catalog_match_symbols: noCatalogMatchSymbols,
       ambiguous_dictionary_symbols: ambiguousDictionarySymbols,
       duplicate_reference_rows: [...symbolCounts.values()].reduce(
@@ -248,7 +244,7 @@ function rejection(input: {
 
 function assertionAndReview(input: {
   context: SourceAdapterContext;
-  mapping: FiaTaxonMapping;
+  mappings: FiaTaxonMapping[];
   pair: SourceAdapterContext["requestedPairs"][number];
   rows: FiaObservationRow[];
   completedAt: string;
@@ -259,12 +255,31 @@ function assertionAndReview(input: {
       compareText(stableJson(left), stableJson(right)),
   );
   const representative = sortedRows[0]!;
+  const sourceSymbols = [...new Set(sortedRows.map(rowSymbol))]
+    .sort(compareText);
+  const mappingBySymbol = new Map(
+    input.mappings.map((entry) => [entry.symbol, entry]),
+  );
+  assert(
+    sourceSymbols.length > 0 &&
+      sourceSymbols.every((symbol) => mappingBySymbol.has(symbol)),
+    "FIA accepted evidence contains an unmapped source symbol.",
+  );
+  const representativeMapping = input.mappings[0]!;
+  assert(
+    input.mappings.every(
+      (entry) =>
+        entry.speciesId === representativeMapping.speciesId &&
+        entry.scientificName === representativeMapping.scientificName,
+    ),
+    "FIA pair mappings do not converge on one catalog species.",
+  );
   const recordIds = sortedRows.map((row) => row.CN ?? "").filter(Boolean);
   const payload = {
     representativeCn: representative.CN,
     stateCd: representative.STATECD,
     countyCd: representative.COUNTYCD,
-    symbol: input.mapping.symbol,
+    symbols: sourceSymbols,
     inventoryYears: [...new Set(
       sortedRows
         .map((row) => row.INVYR)
@@ -298,7 +313,7 @@ function assertionAndReview(input: {
     scope: "point",
     source_record_id:
       representative.CN ||
-      `fia:${input.context.stateCode}:${input.pair.countyFips}:${input.mapping.symbol}:${normalizedPayloadHash.slice(0, 16)}`,
+      `fia:${input.context.stateCode}:${input.pair.countyFips}:${sourceSymbols.join("+")}:${normalizedPayloadHash.slice(0, 16)}`,
     source_url: fiaArtifactUrl(fiaStateArtifactName(input.context.stateCode)),
     source_record_date:
       representative.MODIFIED_DATE ||
@@ -308,10 +323,10 @@ function assertionAndReview(input: {
     retrieved_at: input.completedAt,
     taxon_match: {
       method:
-        "Exact one-to-one FIA state invasive symbol through the retained plant dictionary to one catalog scientific name",
-      target_scientific_name: input.mapping.scientificName,
-      source_scientific_name: input.mapping.scientificName,
-      source_taxon_key: input.mapping.symbol,
+        "Each retained FIA state invasive symbol resolves through the plant dictionary to the same exact catalog scientific name",
+      target_scientific_name: representativeMapping.scientificName,
+      source_scientific_name: representativeMapping.scientificName,
+      source_taxon_key: sourceSymbols.join("|"),
     },
     geography_match: {
       method:
@@ -332,7 +347,7 @@ function assertionAndReview(input: {
       "This assertion records presence only at the county scope supplied by explicit FIA codes.",
     ],
     notes: [
-      `FIA symbol: ${input.mapping.symbol}.`,
+      `FIA symbols: ${sourceSymbols.join(", ")}.`,
       `Supporting source rows: ${sortedRows.length}.`,
       `Supporting record identity hash: ${payload.supportingRecordIdsSha256}.`,
     ],
@@ -388,20 +403,24 @@ export function replayNationalFiaState(input: {
   const mappingBySymbol = new Map(
     input.mappings.map((entry) => [entry.symbol, entry]),
   );
-  const mappingBySpecies = new Map(
-    input.mappings.map((entry) => [entry.speciesId, entry]),
-  );
+  const mappingBySpecies = new Map<string, FiaTaxonMapping[]>();
+  for (const mapping of input.mappings) {
+    const entries = mappingBySpecies.get(mapping.speciesId) ?? [];
+    entries.push(mapping);
+    mappingBySpecies.set(mapping.speciesId, entries);
+  }
   assert(
-    mappingBySymbol.size === input.mappings.length &&
-      mappingBySpecies.size === input.mappings.length,
-    "FIA mappings are not one-to-one.",
+    mappingBySymbol.size === input.mappings.length,
+    "FIA source symbols are not unique.",
   );
   for (const pair of context.requestedPairs) {
     assert(countyByFips.has(pair.countyFips), `FIA pair uses inactive FIPS ${pair.countyFips}.`);
-    const mapping = mappingBySpecies.get(pair.speciesId);
-    assert(mapping, `FIA pair uses unmapped species ${pair.speciesId}.`);
+    const mappings = mappingBySpecies.get(pair.speciesId);
+    assert(mappings?.length, `FIA pair uses unmapped species ${pair.speciesId}.`);
     assert(
-      mapping.scientificName === pair.scientificName,
+      mappings.every((mapping) =>
+        mapping.scientificName === pair.scientificName
+      ),
       `FIA pair scientific name changed for ${pair.speciesId}.`,
     );
   }
@@ -589,7 +608,7 @@ export function replayNationalFiaState(input: {
     if (rows.length > 0) {
       const emitted = assertionAndReview({
         context,
-        mapping: mappingBySpecies.get(pair.speciesId)!,
+        mappings: mappingBySpecies.get(pair.speciesId)!,
         pair,
         rows,
         completedAt,
