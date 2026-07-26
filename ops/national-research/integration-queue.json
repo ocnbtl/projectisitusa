@@ -449,7 +449,7 @@
       "queueId": "queue-lease-deferred-ak-gbif-migration-r2-1",
       "jobId": "deferred-ak-gbif-migration-r2",
       "leaseId": "lease-deferred-ak-gbif-migration-r2-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-26T12:20:01Z",
       "manifestPath": "manifests/deferred-ak-gbif-migration-r2__lease-deferred-ak-gbif-migration-r2-1.json",
       "manifestHash": "d9c904b57187a7067179633dbb834453ccd533df364220e053c38182ac6372cc",
@@ -500,6 +500,37 @@
         "path": "receipts/reviews/queue-lease-deferred-ak-gbif-migration-r2-1.json",
         "sha256": "f661ea37d035c3cafe48b30f8172239d91fd355861c7c478eb3d3414ecea7646",
         "bytes": 3088
+      },
+      "integratedAt": "2026-07-26T12:25:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "639e9d1056db62b591130de2cc83f5a5b2fc2272",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation after integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Git tree entry equality for every reviewed Alaska path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check after integration",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Canonical main contains byte-identical reviewed Alaska run content and manifest. The acquisition receipt remains pinned to its original code commit and all integration checks pass.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-deferred-ak-gbif-migration-r2-1.json",
+        "sha256": "6d800f488d7f4788850561385440db42dc9e3b75252c075732457f51cce90109",
+        "bytes": 2863
       }
     },
     {
