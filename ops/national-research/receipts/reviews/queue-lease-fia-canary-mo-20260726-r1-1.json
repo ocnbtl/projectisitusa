@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-fia-canary-mo-20260726-r1-1",
+  "jobId": "fia-canary-mo-20260726-r1",
+  "leaseId": "lease-fia-canary-mo-20260726-r1-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-26T13:44:00Z",
+  "workerCommit": "8a084dc844fc0842247dd7f6c715b4f5f396bdce",
+  "workerBranchHead": "3561713ab1b8fa761c3452c4fd29eebdc8eed07c",
+  "manifestHash": "9d80f55f1ae6f7e0f6ff1679465b818d2f0573fbae5cc998cbac8e473128c9a2",
+  "changedPaths": [
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/artifacts/national-acquisition-reference.json",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/assertions.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/manifest.json",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/outcomes.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/receipt.json",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/rejections.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/reviews.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "frozen worker manifest validation repeated twice",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git -C /private/tmp/isitusa-fia-canary-mo-r1 diff --check f9986b4790b61e2a19681fea6025fc0f088748bd...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact eight-file permitted-path diff review",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN reproduced deterministic frozen validation, reviewed the exact two-commit diff, confirmed all files are inside the leased run path, and found complete source screening with no unsupported negative evidence."
+}

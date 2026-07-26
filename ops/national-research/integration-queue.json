@@ -712,25 +712,105 @@
       "queueId": "queue-lease-fia-canary-mo-20260726-r1-1",
       "jobId": "fia-canary-mo-20260726-r1",
       "leaseId": "lease-fia-canary-mo-20260726-r1-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-26T13:43:00Z",
       "manifestPath": "manifests/fia-canary-mo-20260726-r1__lease-fia-canary-mo-20260726-r1-1.json",
       "manifestHash": "9d80f55f1ae6f7e0f6ff1679465b818d2f0573fbae5cc998cbac8e473128c9a2",
       "manifestBytes": 10142,
       "workerCommit": "8a084dc844fc0842247dd7f6c715b4f5f396bdce",
-      "workerBranchHead": "3561713ab1b8fa761c3452c4fd29eebdc8eed07c"
+      "workerBranchHead": "3561713ab1b8fa761c3452c4fd29eebdc8eed07c",
+      "reviewedAt": "2026-07-26T13:44:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN reproduced deterministic frozen validation, reviewed the exact two-commit diff, confirmed all files are inside the leased run path, and found complete source screening with no unsupported negative evidence.",
+      "changedPaths": [
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/artifacts/national-acquisition-reference.json",
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/assertions.ndjson",
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/manifest.json",
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/outcomes.ndjson",
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/receipt.json",
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/rejections.ndjson",
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/reviews.ndjson",
+        "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "frozen worker manifest validation repeated twice",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git -C /private/tmp/isitusa-fia-canary-mo-r1 diff --check f9986b4790b61e2a19681fea6025fc0f088748bd...HEAD",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact eight-file permitted-path diff review",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-fia-canary-mo-20260726-r1-1.json",
+        "sha256": "93d3ba88275bb7c0c9fbe3a90ea26c95e6c2383aae90ce15f2f5d4233a287f85",
+        "bytes": 2195
+      }
     },
     {
       "queueId": "queue-lease-fia-canary-ks-20260726-r1-1",
       "jobId": "fia-canary-ks-20260726-r1",
       "leaseId": "lease-fia-canary-ks-20260726-r1-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-26T13:43:01Z",
       "manifestPath": "manifests/fia-canary-ks-20260726-r1__lease-fia-canary-ks-20260726-r1-1.json",
       "manifestHash": "3d9598dbb8434a104726644355db91dee495e735b23317516c3621c5a17a3711",
       "manifestBytes": 9812,
       "workerCommit": "5282560f90bd9479efd8303c114ce50cbc6e0ec8",
-      "workerBranchHead": "9d6a268c216c0fb1880960ce4fea13c47bd8e614"
+      "workerBranchHead": "9d6a268c216c0fb1880960ce4fea13c47bd8e614",
+      "reviewedAt": "2026-07-26T13:44:01Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN reproduced deterministic frozen validation, reviewed the exact two-commit diff, confirmed all files are inside the leased run path, and found complete source screening with no unsupported negative evidence.",
+      "changedPaths": [
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/artifacts/national-acquisition-reference.json",
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/assertions.ndjson",
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/manifest.json",
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/outcomes.ndjson",
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/receipt.json",
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/rejections.ndjson",
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/reviews.ndjson",
+        "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "frozen worker manifest validation repeated twice",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git -C /private/tmp/isitusa-fia-canary-ks-r1 diff --check f9986b4790b61e2a19681fea6025fc0f088748bd...HEAD",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact eight-file permitted-path diff review",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-fia-canary-ks-20260726-r1-1.json",
+        "sha256": "42e481a2db729c51e7dc8dc32be6d2cdb27c685a021ebc20d66a6e709153d9a6",
+        "bytes": 2195
+      }
     }
   ]
 }
