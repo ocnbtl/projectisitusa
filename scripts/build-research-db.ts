@@ -15,6 +15,7 @@ import {
   readNdjson as readRunNdjson,
   stableJson,
 } from "@/lib/research/run-files";
+import type { StateResearchConfigFile } from "@/lib/research/state-research-config";
 
 type RunsFile = { schemaVersion: 1; runs: ResearchRunReceipt[] };
 
@@ -22,14 +23,17 @@ const ROOT = process.cwd();
 // This database is a disposable query index. Versioned inputs and compiled projections remain authoritative.
 const OUTPUT = path.join(ROOT, ".cache/research/isitusa.sqlite");
 
-function parseState(argv: string[]) {
-  if (argv.length !== 2 || argv[0] !== "--state" || !/^[A-Za-z]{2}$/.test(argv[1] ?? "")) {
-    throw new Error("research:index requires --state <XX>.");
+function parseOptions(argv: string[]) {
+  if (argv.length === 1 && argv[0] === "--all") {
+    return { mode: "all" as const, stateCode: null };
   }
-  return argv[1].toUpperCase();
+  if (argv.length === 2 && argv[0] === "--state" && /^[A-Za-z]{2}$/.test(argv[1] ?? "")) {
+    return { mode: "state" as const, stateCode: argv[1]!.toUpperCase() };
+  }
+  throw new Error("research:index requires --all or --state <XX>.");
 }
 
-const STATE_CODE = parseState(process.argv.slice(2));
+const options = parseOptions(process.argv.slice(2));
 
 function readJson<T>(filepath: string): T {
   return JSON.parse(readFileSync(filepath, "utf8")) as T;
@@ -41,6 +45,23 @@ function readNdjson<T>(filepath: string): T[] {
     .filter(Boolean)
     .map((line) => JSON.parse(line) as T);
 }
+
+const stateConfig = readJson<StateResearchConfigFile>(
+  path.join(ROOT, "src/data/research/state-research-config.json"),
+);
+const configuredStateCodes = stateConfig.states
+  .filter((entry) => entry.publicResearchProjection)
+  .map((entry) => entry.stateCode)
+  .sort();
+const stateCodes = options.mode === "all"
+  ? configuredStateCodes
+  : [options.stateCode!];
+for (const stateCode of stateCodes) {
+  if (!configuredStateCodes.includes(stateCode)) {
+    throw new Error(`No public research projection is configured for ${stateCode}.`);
+  }
+}
+const stateCodeSet = new Set(stateCodes);
 
 function mergeOriginRecords<T>(
   inputs: Array<{ origin: string; records: T[] }>,
@@ -78,20 +99,20 @@ rmSync(OUTPUT, { force: true });
 const registry = readJson<ResearchSourceRegistry>(path.join(ROOT, "src/data/research/source-registry.json"));
 const bootstrapEvidence = readNdjson<EvidenceAssertion>(
   path.join(ROOT, "src/data/research/evidence-assertions.ndjson"),
-).filter((entry) => entry.stateCode === STATE_CODE);
+).filter((entry) => stateCodeSet.has(entry.stateCode));
 const runs = readJson<RunsFile>(path.join(ROOT, "src/data/research/research-runs.json")).runs
-  .filter((entry) => entry.stateCode === STATE_CODE);
+  .filter((entry) => stateCodeSet.has(entry.stateCode));
 const immutableRuns = listImmutableResearchRuns(ROOT)
-  .filter((bundle) => bundle.receipt.requested_scope.state_code === STATE_CODE);
+  .filter((bundle) => stateCodeSet.has(bundle.receipt.requested_scope.state_code));
 const runAssertions = immutableRuns.flatMap((bundle) => bundle.assertions);
 const runReviewEvents = immutableRuns.flatMap((bundle) => bundle.reviews);
 const laterReviewEvents = readRunNdjson<EvidenceReviewEvent>(
   path.join(ROOT, "src/data/research/review-events.ndjson"),
-).filter((entry) => entry.state_code === STATE_CODE);
+).filter((entry) => stateCodeSet.has(entry.state_code));
 const runRejections = immutableRuns.flatMap((bundle) => bundle.rejections);
 const laterRejections = readRunNdjson<ResearchRejectionRecord>(
   path.join(ROOT, "src/data/research/rejections.ndjson"),
-).filter((entry) => entry.normalized_target.state_code === STATE_CODE);
+).filter((entry) => stateCodeSet.has(entry.normalized_target.state_code));
 const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
 const reviewRecords = mergeOriginRecords(
   [
@@ -107,15 +128,22 @@ const rejectionRecords = mergeOriginRecords(
   ],
   (record) => record.rejection_id,
 );
-const countyDir = path.join(ROOT, `public/generated/research/${STATE_CODE}/counties`);
-const countyFiles = readdirSync(countyDir).filter((filename) => filename.endsWith(".json")).sort();
-const stateSummary = readJson<{
-  asOf?: string;
-  generatedAt: string;
-  stateCode: string;
-  summary: Record<string, unknown>;
-}>(path.join(ROOT, `public/generated/research/${STATE_CODE}/summary.json`));
-if (stateSummary.stateCode !== STATE_CODE) throw new Error(`Research summary state ${stateSummary.stateCode} does not match ${STATE_CODE}.`);
+const stateProjectionInputs = stateCodes.map((stateCode) => {
+  const countyDir = path.join(ROOT, `public/generated/research/${stateCode}/counties`);
+  const countyFiles = readdirSync(countyDir)
+    .filter((filename) => filename.endsWith(".json"))
+    .sort();
+  const summary = readJson<{
+    asOf?: string;
+    generatedAt: string;
+    stateCode: string;
+    summary: Record<string, unknown>;
+  }>(path.join(ROOT, `public/generated/research/${stateCode}/summary.json`));
+  if (summary.stateCode !== stateCode) {
+    throw new Error(`Research summary state ${summary.stateCode} does not match ${stateCode}.`);
+  }
+  return { stateCode, countyDir, countyFiles, summary };
+});
 
 const db = new DatabaseSync(OUTPUT);
 db.exec(`
@@ -625,39 +653,41 @@ try {
       stableJson(outcome.notes),
     );
   }
-  for (const filename of countyFiles) {
-    const county = readJson<ResearchCountyFile>(path.join(countyDir, filename));
-    for (const pair of county.pairs) {
-      insertPair.run(
-        county.stateCode,
-        county.countyFips,
-        county.countyName,
-        pair.speciesId,
-        pair.commonName,
-        pair.scientificName,
-        pair.category,
-        pair.displayStatus,
-        pair.determinationStatus,
-        pair.surveyStatus,
-        pair.researchStatus,
-        pair.freshnessStatus,
-        pair.conflict ? 1 : 0,
-        pair.evidence.length,
-        stableJson(pair.screenedBySourceIds),
-      );
+  for (const stateInput of stateProjectionInputs) {
+    for (const filename of stateInput.countyFiles) {
+      const county = readJson<ResearchCountyFile>(path.join(stateInput.countyDir, filename));
+      for (const pair of county.pairs) {
+        insertPair.run(
+          county.stateCode,
+          county.countyFips,
+          county.countyName,
+          pair.speciesId,
+          pair.commonName,
+          pair.scientificName,
+          pair.category,
+          pair.displayStatus,
+          pair.determinationStatus,
+          pair.surveyStatus,
+          pair.researchStatus,
+          pair.freshnessStatus,
+          pair.conflict ? 1 : 0,
+          pair.evidence.length,
+          stableJson(pair.screenedBySourceIds),
+        );
+      }
     }
-  }
-  for (const [metric, value] of Object.entries(stateSummary.summary).sort(
-    ([left], [right]) => left.localeCompare(right),
-  )) {
-    if (typeof value === "number" && Number.isFinite(value)) {
-      insertCoverageMetric.run(
-        stateSummary.stateCode,
-        stateSummary.asOf ?? null,
-        stateSummary.generatedAt,
-        metric,
-        value,
-      );
+    for (const [metric, value] of Object.entries(stateInput.summary.summary).sort(
+      ([left], [right]) => left.localeCompare(right),
+    )) {
+      if (typeof value === "number" && Number.isFinite(value)) {
+        insertCoverageMetric.run(
+          stateInput.summary.stateCode,
+          stateInput.summary.asOf ?? null,
+          stateInput.summary.generatedAt,
+          metric,
+          value,
+        );
+      }
     }
   }
   db.exec("COMMIT");
@@ -703,4 +733,16 @@ const counts = {
 };
 db.close();
 
-console.log(JSON.stringify({ output: path.relative(ROOT, OUTPUT), stateCode: STATE_CODE, ...counts }, null, 2));
+console.log(
+  JSON.stringify(
+    {
+      output: path.relative(ROOT, OUTPUT),
+      scope: options.mode,
+      stateCount: stateCodes.length,
+      states: stateCodes,
+      ...counts,
+    },
+    null,
+    2,
+  ),
+);

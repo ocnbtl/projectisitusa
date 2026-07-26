@@ -7,6 +7,7 @@ import {
   type StateApplicabilityFile,
   type StateResearchConfigFile,
 } from "@/lib/research/state-research-config";
+import { serializePresenceOutsideState } from "@/lib/research/compatibility-projection";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -124,12 +125,66 @@ expectFailure("catalog-all applicability injection", /must not declare applicabi
   resolveStateResearchScope({ configFile, stateCode: "AL", ...common, applicability }),
 );
 
+const presenceCounties = {
+  "01001": { stateCode: "AL" },
+  "02013": { stateCode: "AK" },
+  "04001": { stateCode: "AZ" },
+};
+const alaskaPresence = {
+  countyFips: "02013",
+  speciesIds: ["species-a"],
+  sourceRefs: ["source-a"],
+};
+const arizonaPresence = {
+  countyFips: "04001",
+  speciesIds: ["species-b"],
+  sourceRefs: ["source-b"],
+};
+const insertionOrderOne = {
+  "02013": alaskaPresence,
+  "04001": arizonaPresence,
+};
+const insertionOrderTwo = {
+  "04001": arizonaPresence,
+  "02013": alaskaPresence,
+};
+assert(
+  serializePresenceOutsideState({
+    stateCode: "AL",
+    counties: presenceCounties,
+    presence: insertionOrderOne,
+  }) ===
+    serializePresenceOutsideState({
+      stateCode: "AL",
+      counties: presenceCounties,
+      presence: insertionOrderTwo,
+    }),
+  "Non-target presence parity must ignore object insertion order.",
+);
+assert(
+  serializePresenceOutsideState({
+    stateCode: "AL",
+    counties: presenceCounties,
+    presence: insertionOrderOne,
+  }) !==
+    serializePresenceOutsideState({
+      stateCode: "AL",
+      counties: presenceCounties,
+      presence: {
+        ...insertionOrderTwo,
+        "02013": { ...alaskaPresence, speciesIds: ["species-changed"] },
+      },
+    }),
+  "Non-target presence parity must detect semantic changes.",
+);
+
 console.log(
   JSON.stringify(
     {
       validScopes: { AL: alabama.speciesIds.length, AK: alaska.speciesIds.length },
-      adversarialCases: 8,
+      adversarialCases: 10,
       compatibilityPublicationRestrictedToCompleteAuthoritativeScope: true,
+      nonTargetPresenceParityIgnoresInsertionOrder: true,
     },
     null,
     2,

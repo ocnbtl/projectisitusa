@@ -14,6 +14,13 @@ type StateRegistryFile = {
 type SkillEvaluation = {
   result: string;
   broadDispatchAllowed: boolean;
+  redGreenRegression?: {
+    green?: {
+      wallSeconds?: number;
+      peakMemoryMb?: number;
+      manualInterventions?: number;
+    };
+  };
   realPilot?: {
     validPairsScreened?: number;
     workerWallSeconds?: number;
@@ -22,6 +29,23 @@ type SkillEvaluation = {
     mergeConflicts?: number;
     validatedResearchThroughputPairsPerHour?: number;
   };
+};
+type ReleaseVerificationFile = {
+  schemaVersion: 1;
+  receipts: Array<{
+    verificationId: string;
+    verifiedAt: string;
+    commitSha: string;
+    githubMainSha: string;
+    githubDeploymentId: number;
+    vercelDeploymentId: string;
+    vercelDeploymentUrl: string;
+    productionUrl: string;
+    target: "production";
+    state: "READY" | "ERROR" | "CANCELED";
+    routeChecks: Array<{ path: string; status: number }>;
+    evidenceScope: string;
+  }>;
 };
 type NationalPilotEvaluation = {
   result: string;
@@ -83,7 +107,7 @@ const leases = readJson<LeasesFile>(path.join(operationsRoot, "leases.json")).le
 const queue = readJson<QueueFile>(path.join(operationsRoot, "integration-queue.json")).items;
 const evaluationPath = path.join(
   operationsRoot,
-  "evaluations/skill-evaluation-2026-07-15.json",
+  "evaluations/skill-evaluation-recovery-2026-07-15-r1.json",
 );
 const skillEvaluation = existsSync(evaluationPath)
   ? readJson<SkillEvaluation>(evaluationPath)
@@ -95,6 +119,15 @@ const nationalPilotEvaluationPath = path.join(
 const nationalPilotEvaluation = existsSync(nationalPilotEvaluationPath)
   ? readJson<NationalPilotEvaluation>(nationalPilotEvaluationPath)
   : null;
+const releaseVerificationPath = path.join(
+  operationsRoot,
+  "release-verification.json",
+);
+const releaseVerification = existsSync(releaseVerificationPath)
+  ? readJson<ReleaseVerificationFile>(releaseVerificationPath)
+  : null;
+const latestVerifiedRelease = [...(releaseVerification?.receipts ?? [])]
+  .sort((left, right) => right.verifiedAt.localeCompare(left.verifiedAt))[0] ?? null;
 
 const states = config.states
   .filter((entry) => entry.publicResearchProjection)
@@ -134,7 +167,7 @@ const states = config.states
       protocol.priorityClassificationComplete &&
       (protocol.summary.regulatedAndHighApplicableCells === 0 ||
         protocol.summary.regulatedAndHighCurrentCompletePercent === 100);
-    const gates = {
+    const buildTimeGates = {
       authoritativeCertificationScope:
         summary.scope.certificationScope === "state-baseline" &&
         summary.scope.speciesMode === "catalog-all",
@@ -148,10 +181,8 @@ const states = config.states
       requiredCurrentSourceFamiliesProcessed:
         protocol.summary.requiredCurrentSourcesProcessed,
       conflictsAdjudicated: summary.summary.conflictCount === 0,
-      deterministicIntegrityVerified: false,
-      productionQaVerified: false,
     };
-    const blockers = Object.entries(gates)
+    const buildTimeBlockers = Object.entries(buildTimeGates)
       .filter(([, value]) => !value)
       .map(([name]) => name);
     return {
@@ -172,9 +203,9 @@ const states = config.states
       deferred: summary.migrationCandidates,
       conflicts: summary.summary.conflictCount,
       publicParity,
-      gates,
-      blockers,
-      ready: blockers.length === 0,
+      buildTimeGates,
+      buildTimeBlockers,
+      buildTimeReady: buildTimeBlockers.length === 0,
     };
   });
 
@@ -220,9 +251,26 @@ const forecastDays = measuredRate > 0
   ? remainingApplicableProtocolCountyScreens / measuredRate / hoursPerDayAssumption
   : null;
 const targetMaximumDays = 28;
+const nationalV1JurisdictionCodes = stateRegistry.jurisdictions
+  .filter((entry) => entry.nationalV1Scope)
+  .map((entry) => entry.stateCode)
+  .sort();
+const applicabilityClassifiedJurisdictionCodes = config.states
+  .filter((entry) => {
+    if (!entry.publicResearchProjection) return false;
+    if (entry.speciesScope.mode === "catalog-all") return true;
+    return Boolean(
+      entry.speciesScope.applicabilityPath &&
+      existsSync(path.join(ROOT, entry.speciesScope.applicabilityPath)),
+    );
+  })
+  .map((entry) => entry.stateCode)
+  .sort();
+const applicabilityUnclassifiedJurisdictionCodes = nationalV1JurisdictionCodes
+  .filter((stateCode) => !applicabilityClassifiedJurisdictionCodes.includes(stateCode));
 
 const dashboard = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   asOf,
   generatedAt,
   geography: {
@@ -254,10 +302,17 @@ const dashboard = {
       completedWorkerLeases === 0
         ? 0
         : round((integratedQueueItems / completedWorkerLeases) * 100),
-    measuredWallSeconds: pilot?.workerWallSeconds ?? 0,
-    memoryHighWaterMb: pilot?.observedPeakMemoryMb ?? 0,
+    measuredWallSeconds:
+      pilot?.workerWallSeconds ??
+      skillEvaluation?.redGreenRegression?.green?.wallSeconds ??
+      0,
+    memoryHighWaterMb:
+      pilot?.observedPeakMemoryMb ??
+      skillEvaluation?.redGreenRegression?.green?.peakMemoryMb ??
+      0,
     manualInterventions:
       pilot?.manualInterventions ??
+      skillEvaluation?.redGreenRegression?.green?.manualInterventions ??
       queue.reduce((total, entry) => total + (entry.manualInterventions ?? 0), 0),
     mergeConflicts:
       pilot?.mergeConflicts ?? queue.reduce((total, entry) => total + (entry.conflicts ?? 0), 0),
@@ -279,10 +334,35 @@ const dashboard = {
     minimumObservedFreeDiskMiB:
       nationalPilotEvaluation?.interventions.minimumObservedFreeDiskMiB ?? null,
   },
+  releaseVerification: {
+    currentBuildState: "pending-external-verification",
+    requiredChecks: [
+      "deterministic-integrity",
+      "production-browser-qa",
+      "github-main-commit-match",
+      "vercel-production-commit-match",
+      "live-route-parity",
+    ],
+    latestVerifiedPriorRelease: latestVerifiedRelease,
+    selfAttestationAllowed: false,
+    note:
+      "Build-time readiness and deployed-release evidence are separate. A committed artifact cannot attest to a future deployment of its own commit.",
+  },
   national: {
-    completedStates: states.filter((entry) => entry.ready).map((entry) => entry.stateCode),
-    remainingConfiguredStates: states.filter((entry) => !entry.ready).map((entry) => entry.stateCode),
-    applicabilityScopeCompleteForAllJurisdictions: false,
+    buildTimeReadyStates: states
+      .filter((entry) => entry.buildTimeReady)
+      .map((entry) => entry.stateCode),
+    completedStates: [],
+    remainingConfiguredStates: states
+      .filter((entry) => !entry.buildTimeReady)
+      .map((entry) => entry.stateCode),
+    applicabilityClassificationScope:
+      "Configured source-species scope only. This is not evidence of presence, absence, screening completion, or full-catalog applicability.",
+    applicabilityClassifiedJurisdictions: applicabilityClassifiedJurisdictionCodes.length,
+    applicabilityUnclassifiedJurisdictions: applicabilityUnclassifiedJurisdictionCodes.length,
+    applicabilityUnclassifiedJurisdictionCodes,
+    applicabilityScopeCompleteForAllJurisdictions:
+      applicabilityUnclassifiedJurisdictionCodes.length === 0,
     remainingApplicableProtocolCountyScreens,
     measuredRatePairsPerHour: measuredRate,
     concurrencyAssumption: 1,
@@ -292,8 +372,11 @@ const dashboard = {
     targetGapDays:
       forecastDays === null ? null : round(Math.max(0, forecastDays - targetMaximumDays), 1),
     forecastQualification:
-      nationalPilotEvaluation?.forecast.qualification ??
-      "No accepted integrated national-source throughput measurement is available.",
+      measuredRate > 0
+        ? "Capacity forecast for versioned automated national-source screens at the validated pilot rate. It is not a national certification forecast because state-specific, manual, blocked, freshness, production QA, and integration workloads remain separately unmeasured."
+        : "No accepted integrated national-source throughput measurement is available.",
+    historicalPilotForecastQualification:
+      nationalPilotEvaluation?.forecast.qualification ?? null,
   },
 };
 

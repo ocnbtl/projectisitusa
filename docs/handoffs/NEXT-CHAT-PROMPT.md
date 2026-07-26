@@ -2,7 +2,7 @@
 
 > SUPERSEDED FOR ORDINARY CONTINUATION as of 2026-07-15. Do not use this file to claim current counts, task ownership, worker scope, or permission to write `main`. Current authority is the canonical checkout, current generated artifacts, `AGENTS.md`, the architecture and research guides, and `ops/national-research/`. Use this historical prompt only when the user explicitly transfers exclusive MAIN ownership under the handoff policy. Before transfer, stop dispatch, integrate or close all work, record every lease, branch, worktree, commit, blocker, and deployment, and confirm that no merge, build, push, or deployment is active.
 
-Latest superseding checkpoint: the centralized USGS NAS v1.344 national pilot is integrated into research-only Alaska, Arkansas, and Arizona projections with `32` reviewed present assertions, `65` researched-unresolved pairs, `13` grouped rejection events, `120` outcomes, and `23` blocked outcomes. Alabama now compiles to `15293` present, `0` absent, `8` not detected, `95420` researched unresolved, and `57047` not researched pairs. All `312` dated migration source assertions across `176` distinct pairs have completed source screens. The candidate worker skills remain blocked and unfrozen. This historical prompt still must not be used as a live handoff.
+Historical checkpoint: the centralized USGS NAS v1.344 pilot was integrated into research-only Alaska, Arkansas, and Arizona projections with `32` reviewed present assertions, `65` researched-unresolved pairs, `13` grouped rejection events, `120` outcomes, and `23` blocked outcomes. The later validator-recovery evaluation passed and froze both project skills as `frozen-recovery-2026-07-16-r1`. Current code, generated artifacts, and orchestration records supersede every count in this historical prompt, which must not be used as a live handoff.
 
 The content below is retained as historical provenance. Its Alabama-only objective, counts, commands, and implementation gaps are stale.
 
@@ -127,16 +127,17 @@ The public app remains static. The `/research` page fetches the committed public
 
 ```bash
 npm run research:migrate
-npm run research:compile
+npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
-npm run research:refresh
+npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
+npm run prepare:data -- --as-of <YYYY-MM-DD>
 npm run check:research-integrity
 npm run validate:data
 ```
 
-`research:migrate` and `research:compile` write tracked artifacts. `research:index` writes only the ignored local SQLite file. Inspect the worktree before running generation commands.
+`research:migrate`, `research:compile`, and `prepare:data` write tracked artifacts. `research:index` writes only the ignored local SQLite file. `prepare:data` builds the legacy base first and then restores compiler-owned compatibility outputs from reviewed evidence. Inspect the worktree before running generation commands.
 
-The current compiler does not yet accept an explicit `--as-of` parameter. The combined `research-runs.json` is a bootstrap receipt index, not the final immutable per-run receipt layout.
+This file is historical continuation material and does not transfer MAIN ownership. Current code, generated artifacts, orchestration records, and `AGENTS.md` override stale counts or commands here.
 
 ### Locked Data Semantics
 

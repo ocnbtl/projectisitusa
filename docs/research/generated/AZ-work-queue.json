@@ -1,31 +1,31 @@
 {
   "schemaVersion": 3,
   "stateCode": "AZ",
-  "asOf": "2026-07-15",
-  "generatedAt": "2026-07-15T00:00:00.000Z",
+  "asOf": "2026-07-16",
+  "generatedAt": "2026-07-16T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "explicit",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AZ.json",
-    "applicabilityAsOf": "2026-07-15",
-    "applicableSpeciesCount": 4,
+    "applicabilityAsOf": "2026-07-16",
+    "applicableSpeciesCount": 9,
     "undeterminedSpeciesPolicy": "excluded",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "protocol": {
-    "totalCells": 8,
-    "applicableCells": 5,
-    "notApplicableCells": 3,
-    "completeCells": 0,
-    "incompleteCells": 4,
+    "totalCells": 18,
+    "applicableCells": 18,
+    "notApplicableCells": 0,
+    "completeCells": 5,
+    "incompleteCells": 12,
     "blockedCells": 1,
-    "currentCells": 0,
+    "currentCells": 5,
     "staleCells": 0,
-    "undatedCells": 5,
-    "applicableCompletionPercent": 0,
-    "currentCompletePercent": 0,
+    "undatedCells": 13,
+    "applicableCompletionPercent": 27.78,
+    "currentCompletePercent": 27.78,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -40,21 +40,10 @@
       "notResearchedCountyCount": 15,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 15001
-    },
-    {
-      "speciesId": "matricaria-discoidea",
-      "commonName": "Pineapple Weed",
-      "scientificName": "Matricaria discoidea",
-      "category": "plants",
-      "notResearchedCountyCount": 15,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 15001
+      "priorityScore": 15002
     },
     {
       "speciesId": "melilotus-officinalis",
@@ -64,9 +53,23 @@
       "notResearchedCountyCount": 15,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 15001
+      "priorityScore": 15002
+    },
+    {
+      "speciesId": "matricaria-discoidea",
+      "commonName": "Pineapple Weed",
+      "scientificName": "Matricaria discoidea",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
+        "usgs-nas"
+      ],
+      "priorityScore": 14002
     },
     {
       "speciesId": "cyprinus-carpio",
@@ -80,6 +83,66 @@
         "usgs-nas"
       ],
       "priorityScore": 3002
+    },
+    {
+      "speciesId": "cipangopaludina-chinensis",
+      "commonName": "Chinese mysterysnail",
+      "scientificName": "Cipangopaludina chinensis",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
+    },
+    {
+      "speciesId": "potamopyrgus-antipodarum",
+      "commonName": "New Zealand Mud Snail",
+      "scientificName": "Potamopyrgus antipodarum",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 13,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 131
+    },
+    {
+      "speciesId": "schyzocotyle-acheilognathi",
+      "commonName": "Asian tapeworm",
+      "scientificName": "Schyzocotyle acheilognathi",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 13,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 131
+    },
+    {
+      "speciesId": "corbicula-fluminea",
+      "commonName": "Asiatic Clam",
+      "scientificName": "Corbicula fluminea",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 9,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 91
+    },
+    {
+      "speciesId": "myriophyllum-spicatum",
+      "commonName": "Eurasian Watermilfoil",
+      "scientificName": "Myriophyllum spicatum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 9,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 91
     }
   ]
 }

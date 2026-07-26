@@ -1,46 +1,46 @@
 {
   "schemaVersion": 3,
   "stateCode": "AK",
-  "asOf": "2026-07-15",
-  "generatedAt": "2026-07-15T00:00:00.000Z",
+  "asOf": "2026-07-16",
+  "generatedAt": "2026-07-16T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "explicit",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AK.json",
-    "applicabilityAsOf": "2026-07-15",
-    "applicableSpeciesCount": 5,
+    "applicabilityAsOf": "2026-07-16",
+    "applicableSpeciesCount": 10,
     "undeterminedSpeciesPolicy": "excluded",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 5,
+    "speciesCount": 10,
     "countyCount": 30,
-    "totalPairs": 150,
-    "verifiedPresent": 10,
+    "totalPairs": 300,
+    "verifiedPresent": 24,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 0,
-    "notResearched": 140,
-    "determinationCoveragePercent": 6.67,
-    "researchCoveragePercent": 6.67,
-    "explicitOutcomePairCount": 10,
-    "explicitOutcomeCoveragePercent": 6.6667,
+    "researchedUnresolved": 137,
+    "notResearched": 139,
+    "determinationCoveragePercent": 8,
+    "researchCoveragePercent": 53.67,
+    "explicitOutcomePairCount": 161,
+    "explicitOutcomeCoveragePercent": 53.6667,
     "conflictCount": 0,
-    "evidenceRecordCount": 10,
+    "evidenceRecordCount": 24,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 10,
-    "rejectionRecordCount": 2,
-    "researchRunCount": 1
+    "runEvidenceRecordCount": 24,
+    "rejectionRecordCount": 39,
+    "researchRunCount": 7
   },
   "migrationCandidates": {
     "sourceAssertionCount": 5,
     "distinctPairCount": 5,
-    "reviewedSourceAssertionCount": 0,
-    "remainingSourceAssertionCount": 5,
-    "reviewedDistinctPairCount": 0,
-    "remainingDistinctPairCount": 5
+    "reviewedSourceAssertionCount": 1,
+    "remainingSourceAssertionCount": 4,
+    "reviewedDistinctPairCount": 1,
+    "remainingDistinctPairCount": 4
   },
   "statusDefinitions": {
     "verified-present": "At least one reputable source supports a recorded presence in the county.",
@@ -66,9 +66,9 @@
       "authority": "U.S. Geological Survey",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": "2026-07-15T15:41:25.000Z",
-      "evidencePairCount": 10,
-      "screenedSpeciesCount": 1
+      "lastRunAt": "2026-07-16T09:29:00.000Z",
+      "evidencePairCount": 23,
+      "screenedSpeciesCount": 6
     },
     {
       "id": "usgs-nas-api",
@@ -236,9 +236,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-07-16T08:54:53.539Z",
+      "evidencePairCount": 1,
+      "screenedSpeciesCount": 1
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -345,17 +345,17 @@
     "protocolId": "national-pilot-multisource-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 10,
-    "applicableCells": 6,
-    "notApplicableCells": 4,
-    "completeCells": 0,
-    "incompleteCells": 5,
+    "totalCells": 20,
+    "applicableCells": 20,
+    "notApplicableCells": 0,
+    "completeCells": 5,
+    "incompleteCells": 14,
     "blockedCells": 1,
-    "currentCells": 0,
+    "currentCells": 5,
     "staleCells": 0,
-    "undatedCells": 6,
-    "applicableCompletionPercent": 0,
-    "currentCompletePercent": 0,
+    "undatedCells": 15,
+    "applicableCompletionPercent": 25,
+    "currentCompletePercent": 25,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -363,15 +363,21 @@
     "categoryCompletion": [
       {
         "category": "insects",
-        "applicableCells": 1,
+        "applicableCells": 2,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "plants",
-        "applicableCells": 5,
-        "currentCompleteCells": 0,
-        "currentCompletePercent": 0
+        "applicableCells": 16,
+        "currentCompleteCells": 4,
+        "currentCompletePercent": 25
+      },
+      {
+        "category": "wildlife",
+        "applicableCells": 2,
+        "currentCompleteCells": 1,
+        "currentCompletePercent": 50
       }
     ],
     "priorityCompletion": [
@@ -389,9 +395,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 6,
-        "currentCompleteCells": 0,
-        "currentCompletePercent": 0
+        "applicableCells": 20,
+        "currentCompleteCells": 5,
+        "currentCompletePercent": 25
       },
       {
         "priority": "baseline",
@@ -403,14 +409,14 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 5,
+        "applicableCells": 10,
         "currentCompleteCells": 0,
         "processed": false
       },
       {
         "sourceId": "usgs-nas",
-        "applicableCells": 1,
-        "currentCompleteCells": 0,
+        "applicableCells": 10,
+        "currentCompleteCells": 5,
         "processed": false
       }
     ]
@@ -424,9 +430,10 @@
       "notResearchedCountyCount": 30,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 30001
+      "priorityScore": 30002
     },
     {
       "speciesId": "elatobium-abietinum",
@@ -436,9 +443,10 @@
       "notResearchedCountyCount": 30,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 30001
+      "priorityScore": 30002
     },
     {
       "speciesId": "matricaria-discoidea",
@@ -448,21 +456,23 @@
       "notResearchedCountyCount": 30,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 30001
+      "priorityScore": 30002
     },
     {
       "speciesId": "melilotus-officinalis",
       "commonName": "Yellow Sweetclover",
       "scientificName": "Melilotus officinalis",
       "category": "plants",
-      "notResearchedCountyCount": 30,
+      "notResearchedCountyCount": 29,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 30001
+      "priorityScore": 29002
     },
     {
       "speciesId": "myosotis-scorpioides",
@@ -476,6 +486,66 @@
         "usgs-nas"
       ],
       "priorityScore": 20002
+    },
+    {
+      "speciesId": "didemnum-vexillum",
+      "commonName": "Sea vomit tunicate",
+      "scientificName": "Didemnum vexillum",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 29,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 291
+    },
+    {
+      "speciesId": "lysimachia-nummularia",
+      "commonName": "Moneywort",
+      "scientificName": "Lysimachia nummularia",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 28,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 281
+    },
+    {
+      "speciesId": "rorippa-sylvestris",
+      "commonName": "Creeping yellowcress",
+      "scientificName": "Rorippa sylvestris",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 28,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 281
+    },
+    {
+      "speciesId": "iris-pseudacorus",
+      "commonName": "Yellow Flag Iris",
+      "scientificName": "Iris pseudacorus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 27,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 271
+    },
+    {
+      "speciesId": "alopecurus-geniculatus",
+      "commonName": "Water foxtail",
+      "scientificName": "Alopecurus geniculatus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 25,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 251
     }
   ]
 }

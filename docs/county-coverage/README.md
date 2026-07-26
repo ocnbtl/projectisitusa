@@ -37,11 +37,13 @@ This avoids committing a huge repetitive table where most entries are unknown.
 
 ## Commands
 
-Build a state matrix:
+Build canonical runtime data and every compiler-owned state matrix:
 
 ```bash
-npm run build:county-matrix -- AL
+npm run prepare:data -- --as-of <YYYY-MM-DD>
 ```
+
+`prepare:data` runs the legacy base generator first, then the reviewed evidence compiler for each state configured for compatibility publication. The legacy `build:county-matrix` command is intentionally blocked for those states.
 
 Reconcile a maintained state denominator list against the catalog and state matrix:
 
@@ -77,7 +79,7 @@ The ALIPC import command writes:
 3. Add verified absence and not-detected records only in `src/data/source/county-species-status-overrides.ts`.
 4. Every non-presence record must include a reputable source URL, notes, and a review date.
 5. Do not convert unknown to absent just because no record was found.
-6. Regenerate the state matrix after source data changes.
+6. Regenerate compiler-owned runtime data with `prepare:data -- --as-of <YYYY-MM-DD>` after source data changes.
 7. Keep maintained denominator lists in `src/data/source/state-species-denominators.ts`.
 8. Run denominator reconciliation after adding or changing a maintained list.
 9. Use denominator snapshots to preserve external subject IDs and other source-table metadata when a reputable source exposes them.

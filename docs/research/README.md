@@ -184,7 +184,7 @@ The centralized 2026-07-15 pilot retained acquisition `20260531__usgs-nas-dwca-v
 
 The pilot evaluation is `ops/national-research/evaluations/usgs-nas-pilot-2026-07-15.json`. Its validated end-to-end automated rate is `2806.104` complete pair screens per hour after including one archive acquisition. At `16` hours per day, the current `982902` configured remaining applicable county screens would take `21.9` days if they were all equivalent automated national-source screens. They are not. The forecast excludes `47` applicability-unclassified jurisdictions and does not measure state, manual, blocked, or source-specific work, so it is a capacity result rather than a national certification date.
 
-This accepted centralized pilot does not repair the blocked skill gate. The candidate orchestrator and evidence-worker skills remain unfrozen, and broad worker dispatch remains prohibited. MAIN may continue bounded centralized acquisition and integration while a future evaluated skill version is pending.
+This accepted centralized pilot did not by itself repair the blocked skill gate. The later bounded validator-recovery evaluation passed `90/90` regression cases with zero critical violations and froze both skills as `frozen-recovery-2026-07-16-r1`. Current leases must pin the exact commit and hashes in the freeze receipt.
 
 The public GBIF occurrence search API remains suitable for bounded adapter work, but it is not accepted as a complete national snapshot because ordinary search results use mutable offset paging. A future national GBIF lane must use a versioned or authenticated download receipt with complete artifact lineage rather than claiming snapshot completeness from search pagination.
 
@@ -309,8 +309,10 @@ Compilation is a separate step from research and must not access the network. Th
 npm run research:migrate
 npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
+npm run research:index:state -- --state <STATE>
 npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:verify -- --state <STATE> --as-of <YYYY-MM-DD>
+npm run research:verify:all -- --as-of <YYYY-MM-DD>
 npm run check:research-integrity
 npm run check:state-research-projections
 npm run check:national-research-config
@@ -319,18 +321,18 @@ npm run build:national-readiness -- --as-of <YYYY-MM-DD>
 
 `research:compile` is the implemented state projection command. Alabama is authoritative and may update compatibility outputs. Alaska, Arizona, and Arkansas are research-only and the compiler must not alter compatibility, `presence.json`, or `explorer-presence.json` for them. `research:verify` proves byte stability across two offline compiler runs for one explicit state and as-of date. Run it with the research integrity, state projection, national configuration, readiness, and disposable-index gates.
 
-During migration, use the current compatibility commands when the task calls for legacy generation:
+For canonical runtime generation, use the reviewed-evidence publication sequence:
 
 ```bash
-npm run prepare:data
-npm run build:county-matrix -- AL
+npm run prepare:data -- --as-of <YYYY-MM-DD>
+npm run check:prepare-data-plan
 npm run check:data-integrity
 npm run check:research-integrity
 npm run typecheck
 npm run build
 ```
 
-`npm run prepare:data` must precede the Alabama matrix build after source presence changes.
+`prepare:data` rebuilds legacy runtime inputs first and then invokes the authoritative compiler for every compatibility-publication state with the same explicit as-of date. Do not run `build:county-matrix` for a compiler-owned state. That legacy path is guarded because it would discard reviewed run evidence and emit the old matrix schema.
 
 Reverify the generated Alabama summary with:
 

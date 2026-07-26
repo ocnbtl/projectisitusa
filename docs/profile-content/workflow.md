@@ -59,7 +59,7 @@ After drafting a sub-batch:
 
 1. Update `src/data/source/species.ts`
 2. Run `npm run check:profiles`
-3. Run `npm run prepare:data`
+3. Run `npm run prepare:data -- --as-of <YYYY-MM-DD>`
 4. Run `npm run build`
 5. Spot-check the rendered pages for the batch
 6. Write a short chunk report covering quality, misses, and next improvements

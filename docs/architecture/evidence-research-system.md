@@ -37,7 +37,7 @@ Every bounded source, state, evidence-review, or infrastructure worker must use 
 
 Jobs, leases, integration decisions, readiness, evaluations, and recovery state are durable artifacts under `ops/national-research/`. Chat history is not operational authority.
 
-The 2026-07-15 candidate orchestrator and evidence-worker skills remain blocked after their third and final bounded refinement cycle. A blind real pilot produced a run receipt that the candidate validator accepted but the repository run-receipt schema rejected. The skills are not frozen, their pilot output is not integrated, and broad worker dispatch is prohibited until a later version passes the complete regression and real-pilot gate.
+The first three 2026-07-15 skill evaluation cycles remain failed historical evidence. A bounded validator-recovery evaluation then consolidated worker validation onto the canonical immutable-run schemas and semantic validator. It passed `90/90` regression cases with zero critical violations and two accepted real integrations. The frozen version is `frozen-recovery-2026-07-16-r1` at commit `1a0301e6a248956e46ba6faecd6d90b6f373a799`; exact content hashes and the pin contract are recorded in `ops/national-research/receipts/skill-freezes/isitusa-national-skills-recovery-2026-07-15-r1.json`.
 
 ## Verified Checkpoints
 
@@ -471,14 +471,14 @@ cd "/Users/ocean/Code/Project Isitusa"
 npm run import:eddmaps
 npm run merge:eddmaps-county-data
 npm run import:county-data
-npm run prepare:data
-npm run build:county-matrix -- AL
+npm run prepare:data -- --as-of <YYYY-MM-DD>
+npm run check:prepare-data-plan
 npm run check:data-integrity
 npm run typecheck
 npm run build
 ```
 
-When source inputs change, `npm run prepare:data` must run before `npm run build:county-matrix -- AL` so the matrix reads the updated generated presence data.
+`prepare:data` first rebuilds the legacy runtime base and then recompiles every state whose research configuration enables compatibility publication. This preserves reviewed research evidence in `presence.json`, `explorer-presence.json`, the compatibility matrix, and the normal county experience. The legacy matrix generator is blocked for compiler-owned states because it cannot reproduce the authoritative event projection.
 
 Reverify Alabama counts without editing files:
 
@@ -498,8 +498,10 @@ npm run research:acquire:usgs-nas-national -- --version <archive-version> --star
 npm run research:partition:usgs-nas-national -- --acquisition <acquisition-id> --plan <plan-id> --states <STATE,...> --recorded-at <ISO-8601-UTC>
 npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
+npm run research:index:state -- --state <STATE>
 npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:verify -- --state <STATE> --as-of <YYYY-MM-DD>
+npm run research:verify:all -- --as-of <YYYY-MM-DD>
 npm run check:research-integrity
 npm run check:state-research-projections
 npm run check:national-research-config

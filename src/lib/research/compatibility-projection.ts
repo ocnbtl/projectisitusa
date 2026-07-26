@@ -31,6 +31,21 @@ function roundPercent(value: number) {
   return Number(value.toFixed(2));
 }
 
+export function serializePresenceOutsideState(input: {
+  stateCode: string;
+  counties: Record<string, Pick<CountyRecord, "stateCode">>;
+  presence: Record<string, CountyPresence>;
+}) {
+  const stateCode = input.stateCode.toUpperCase();
+  return JSON.stringify(
+    Object.fromEntries(
+      Object.entries(input.presence)
+        .filter(([countyFips]) => input.counties[countyFips]?.stateCode !== stateCode)
+        .sort(([left], [right]) => left.localeCompare(right)),
+    ),
+  );
+}
+
 export function replaceStatePresenceFromResearch(input: {
   stateCode: string;
   asOf: string;

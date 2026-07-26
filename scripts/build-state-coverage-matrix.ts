@@ -2,6 +2,8 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { countySpeciesStatusOverrides } from "@/data/source/county-species-status-overrides";
 import type { CountySpeciesNonPresenceStatus } from "@/lib/data/types";
+import { assertLegacyMatrixWriteAllowed } from "@/lib/research/prepare-data-plan";
+import type { StateResearchConfigFile } from "@/lib/research/state-research-config";
 
 type SpeciesRecord = {
   id: string;
@@ -204,6 +206,11 @@ if (!requestedStateCode) {
   console.error("Usage: npm run build:county-matrix -- <STATE>");
   process.exit(1);
 }
+
+const researchConfig = readJson<StateResearchConfigFile>(
+  path.join(process.cwd(), "src/data/research/state-research-config.json"),
+);
+assertLegacyMatrixWriteAllowed(researchConfig, requestedStateCode);
 
 const species = readJson<SpeciesRecord[]>(path.join(process.cwd(), "src/data/generated/species.json"));
 const countiesIndex = readJson<Record<string, CountyRecord>>(path.join(process.cwd(), "src/data/generated/counties.json"));

@@ -31,6 +31,7 @@ import {
   recomputeCatalogCoverage,
   renderCompatibilityMatrixMarkdown,
   replaceStatePresenceFromResearch,
+  serializePresenceOutsideState,
 } from "@/lib/research/compatibility-projection";
 import { listImmutableResearchRuns, readNdjson as readRunNdjson } from "@/lib/research/run-files";
 import { selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
@@ -773,11 +774,11 @@ if (stateConfig.compatibilityPublication) {
   if (projectionScope.speciesMode !== "catalog-all" || countyFiles.length !== targetCountyFips.size) {
     throw new Error(`Compatibility publication for ${STATE_CODE} requires complete catalog and county scope.`);
   }
-  const protectedPresenceBefore = JSON.stringify(
-    Object.fromEntries(
-      Object.entries(currentPresence).filter(([countyFips]) => countiesIndex[countyFips]?.stateCode !== STATE_CODE),
-    ),
-  );
+  const protectedPresenceBefore = serializePresenceOutsideState({
+    stateCode: STATE_CODE,
+    counties: countiesIndex,
+    presence: currentPresence,
+  });
   const compatibilityPresence = replaceStatePresenceFromResearch({
     stateCode: STATE_CODE,
     asOf: AS_OF,
@@ -785,11 +786,11 @@ if (stateConfig.compatibilityPublication) {
     currentPresence,
     countyFiles,
   });
-  const protectedPresenceAfter = JSON.stringify(
-    Object.fromEntries(
-      Object.entries(compatibilityPresence).filter(([countyFips]) => countiesIndex[countyFips]?.stateCode !== STATE_CODE),
-    ),
-  );
+  const protectedPresenceAfter = serializePresenceOutsideState({
+    stateCode: STATE_CODE,
+    counties: countiesIndex,
+    presence: compatibilityPresence,
+  });
   if (protectedPresenceAfter !== protectedPresenceBefore) {
     throw new Error(`Compatibility compilation for ${STATE_CODE} changed non-target state presence.`);
   }

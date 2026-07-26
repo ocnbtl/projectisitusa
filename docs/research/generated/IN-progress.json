@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 3,
+  "stateCode": "IN",
+  "asOf": "2026-07-16",
+  "generatedAt": "2026-07-16T00:00:00.000Z",
+  "scope": {
+    "publicationMode": "research-only",
+    "speciesMode": "explicit",
+    "certificationScope": "bounded-pilot",
+    "applicabilityPath": "src/data/research/state-applicability/IN.json",
+    "applicabilityAsOf": "2026-07-16",
+    "applicableSpeciesCount": 5,
+    "undeterminedSpeciesPolicy": "excluded",
+    "compatibilityPublication": false,
+    "protocolModel": "explicit-source-species-active"
+  },
+  "summary": {
+    "speciesCount": 5,
+    "countyCount": 92,
+    "totalPairs": 460,
+    "verifiedPresent": 153,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 307,
+    "notResearched": 0,
+    "determinationCoveragePercent": 33.26,
+    "researchCoveragePercent": 100,
+    "explicitOutcomePairCount": 460,
+    "explicitOutcomeCoveragePercent": 100,
+    "conflictCount": 0,
+    "evidenceRecordCount": 153,
+    "bootstrapEvidenceRecordCount": 0,
+    "runEvidenceRecordCount": 153,
+    "rejectionRecordCount": 7,
+    "researchRunCount": 5
+  },
+  "migrationCandidates": {
+    "sourceAssertionCount": 0,
+    "distinctPairCount": 0,
+    "reviewedSourceAssertionCount": 0,
+    "remainingSourceAssertionCount": 0,
+    "reviewedDistinctPairCount": 0,
+    "remainingDistinctPairCount": 0
+  },
+  "statusDefinitions": {
+    "verified-present": "At least one reputable source supports a recorded presence in the county.",
+    "verified-absent": "An authoritative source explicitly supports absence for the county and species.",
+    "not-detected": "A documented survey or monitoring effort searched and did not detect the species. This is not absence.",
+    "researched-unresolved": "At least one source family was screened, but no defensible present, absent, or not-detected determination was established.",
+    "not-researched": "No recorded source-family screen or determination exists for this county-species pair."
+  },
+  "sourceOperations": [
+    {
+      "id": "eddmaps",
+      "label": "EDDMaps",
+      "authority": "University of Georgia Center for Invasive Species and Ecosystem Health",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usgs-nas",
+      "label": "USGS NAS",
+      "authority": "U.S. Geological Survey",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": "2026-07-16T09:29:01.000Z",
+      "evidencePairCount": 153,
+      "screenedSpeciesCount": 5
+    },
+    {
+      "id": "usgs-nas-api",
+      "label": "USGS NAS occurrence API",
+      "authority": "U.S. Geological Survey",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "sernec",
+      "label": "SERNEC",
+      "authority": "Southeastern Regional Network of Expertise and Collections",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "eddmaps-alipc",
+      "label": "EDDMapS ALIPC list",
+      "authority": "Alabama Invasive Plant Council and EDDMaps",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "alabama-plant-atlas",
+      "label": "Alabama Plant Atlas",
+      "authority": "Alabama Herbarium Consortium",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "afc-cogongrass",
+      "label": "Alabama Forestry Commission Cogongrass GIS",
+      "authority": "Alabama Forestry Commission",
+      "tier": "official-state",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "afc-aerial-detection",
+      "label": "Alabama Forestry Commission Aerial Detection layer",
+      "authority": "Alabama Forestry Commission",
+      "tier": "official-state",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "aphis-eab",
+      "label": "APHIS Emerald Ash Borer county layer",
+      "authority": "USDA Animal and Plant Health Inspection Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "aphis-federal-quarantine",
+      "label": "APHIS Federal Quarantine county layer",
+      "authority": "USDA Animal and Plant Health Inspection Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "aphis-honey-bee",
+      "label": "APHIS National Honey Bee Survey",
+      "authority": "USDA Animal and Plant Health Inspection Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfws-invasive-carp-edna",
+      "label": "USFWS invasive carp eDNA sample layer",
+      "authority": "U.S. Fish and Wildlife Service",
+      "tier": "official-national",
+      "status": "manual",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-laurel-wilt",
+      "label": "Laurel Wilt public county layer",
+      "authority": "USDA Forest Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-afpe",
+      "label": "USFS Alien Forest Pest Explorer",
+      "authority": "USDA Forest Service and Purdue University",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-fia-invasive-plants",
+      "label": "USDA Forest Service FIA DataMart invasive plant tables",
+      "authority": "USDA Forest Service Forest Inventory and Analysis",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-current-invasive-plants",
+      "label": "USFS Current Invasive Plant Locations",
+      "authority": "USDA Forest Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usfs-ids",
+      "label": "USDA Forest Service Insect and Disease Survey point detections",
+      "authority": "USDA Forest Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usda-nrcs-plants",
+      "label": "USDA NRCS PLANTS county distribution",
+      "authority": "USDA Natural Resources Conservation Service",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "gbif-preserved-specimens",
+      "label": "GBIF preserved specimen records",
+      "authority": "Global Biodiversity Information Facility",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "gbif-coordinate-specimens",
+      "label": "GBIF coordinate-resolved preserved specimen records",
+      "authority": "Global Biodiversity Information Facility",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "gbif-ipams",
+      "label": "GBIF Invasive Plant Atlas of the MidSouth records",
+      "authority": "Invasive Plant Atlas of the MidSouth via GBIF",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "gbif-ebird",
+      "label": "GBIF eBird Observation Dataset",
+      "authority": "Cornell Lab of Ornithology via GBIF",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "idigbio-preserved-specimens",
+      "label": "iDigBio preserved specimen records",
+      "authority": "Integrated Digitized Biocollections",
+      "tier": "structured-aggregator",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "inaturalist-research-grade",
+      "label": "iNaturalist Research Grade observations",
+      "authority": "iNaturalist",
+      "tier": "community-occurrence",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "water-quality-portal",
+      "label": "Water Quality Portal biological results",
+      "authority": "National Water Quality Monitoring Council",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "usgs-bbs",
+      "label": "USGS North American Breeding Bird Survey route-start detections",
+      "authority": "U.S. Geological Survey",
+      "tier": "official-national",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "neon-tall",
+      "label": "NEON TALL plant presence and percent cover",
+      "authority": "National Ecological Observatory Network",
+      "tier": "academic",
+      "status": "operational",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "manual-authoritative",
+      "label": "Manual authoritative evidence",
+      "authority": "Named agency, academic, or regulatory source stored on each evidence record",
+      "tier": "manual-authority",
+      "status": "manual",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    },
+    {
+      "id": "legacy-merged-presence",
+      "label": "Legacy merged presence lineage",
+      "authority": "Project Isitusa migration record",
+      "tier": "legacy",
+      "status": "legacy-migration",
+      "lastRunAt": null,
+      "evidencePairCount": 0,
+      "screenedSpeciesCount": 0
+    }
+  ],
+  "protocol": {
+    "protocolId": "national-usgs-nas-v1",
+    "protocolStatus": "active",
+    "priorityClassificationComplete": true,
+    "totalCells": 5,
+    "applicableCells": 5,
+    "notApplicableCells": 0,
+    "completeCells": 5,
+    "incompleteCells": 0,
+    "blockedCells": 0,
+    "currentCells": 5,
+    "staleCells": 0,
+    "undatedCells": 0,
+    "applicableCompletionPercent": 100,
+    "currentCompletePercent": 100,
+    "regulatedAndHighApplicableCells": 0,
+    "regulatedAndHighCurrentCompleteCells": 0,
+    "regulatedAndHighCurrentCompletePercent": 0,
+    "requiredCurrentSourcesProcessed": true,
+    "categoryCompletion": [
+      {
+        "category": "plants",
+        "applicableCells": 3,
+        "currentCompleteCells": 3,
+        "currentCompletePercent": 100
+      },
+      {
+        "category": "wildlife",
+        "applicableCells": 2,
+        "currentCompleteCells": 2,
+        "currentCompletePercent": 100
+      }
+    ],
+    "priorityCompletion": [
+      {
+        "priority": "regulated",
+        "applicableCells": 0,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "priority": "high",
+        "applicableCells": 0,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "priority": "pilot",
+        "applicableCells": 5,
+        "currentCompleteCells": 5,
+        "currentCompletePercent": 100
+      },
+      {
+        "priority": "baseline",
+        "applicableCells": 0,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      }
+    ],
+    "requiredSourceStatus": [
+      {
+        "sourceId": "usgs-nas",
+        "applicableCells": 5,
+        "currentCompleteCells": 5,
+        "processed": true
+      }
+    ]
+  },
+  "nextQueue": [
+    {
+      "speciesId": "corbicula-fluminea",
+      "commonName": "Asiatic Clam",
+      "scientificName": "Corbicula fluminea",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 71,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 710
+    },
+    {
+      "speciesId": "dreissena-polymorpha",
+      "commonName": "Zebra Mussel",
+      "scientificName": "Dreissena polymorpha",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 70,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 700
+    },
+    {
+      "speciesId": "typha-angustifolia",
+      "commonName": "Narrowleaf Cattail",
+      "scientificName": "Typha angustifolia",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 62,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 620
+    },
+    {
+      "speciesId": "rorippa-sylvestris",
+      "commonName": "Creeping yellowcress",
+      "scientificName": "Rorippa sylvestris",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 57,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 570
+    },
+    {
+      "speciesId": "lysimachia-nummularia",
+      "commonName": "Moneywort",
+      "scientificName": "Lysimachia nummularia",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 47,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 470
+    }
+  ]
+}

@@ -34,7 +34,7 @@ The current research foundation starts in `src/data/research/source-registry.jso
 - Every completion manifest reports source parameters, artifacts, assertions, reviews, rejections, outcomes, blocked items, exact baseline/final/net counts, verification commands, commit SHA, and remaining work.
 - A worker that discovers a shared-schema or shared-skill requirement records a blocker or proposal. It does not implement the shared change.
 - Durable job state belongs in repository artifacts, not chat history.
-- The 2026-07-15 candidate orchestrator and evidence-worker skills did not pass their third and final bounded refinement cycle because a blind real pilot produced a receipt rejected by the existing receipt schema. They are not frozen. Broad worker dispatch remains prohibited until a later candidate passes the full evaluation gate.
+- The first three 2026-07-15 skill evaluation cycles remain failed historical evidence. The bounded validator-recovery evaluation later passed `90/90` cases with zero critical violations. The frozen version is `frozen-recovery-2026-07-16-r1` at commit `1a0301e6a248956e46ba6faecd6d90b6f373a799`. Every worker lease must pin the exact skill hashes recorded in `ops/national-research/receipts/skill-freezes/isitusa-national-skills-recovery-2026-07-15-r1.json`. Do not edit a frozen skill while a pinned worker is active.
 
 ## Nonnegotiable Data Rules
 
@@ -85,7 +85,7 @@ The national geography and bounded pilot projection checkpoint verified on 2026-
 - the single national archive contains `721752` rows; the three pilot partitions selected `4609` candidates, emitted `32` assertions and reviews, `13` grouped rejection events, `120` outcomes, and `23` honest blocked outcomes
 - Alaska compiles to `10` present and `20` blocked pilot outcomes, Arkansas to `10` present plus `65` researched-unresolved pairs, and Arizona to `12` present and `3` blocked pilot outcomes
 - all three state projections are byte-stable and did not modify compatibility, `presence.json`, or `explorer-presence.json`
-- the centralized pilot passed, but it does not override the blocked skill evaluation or authorize broad worker dispatch
+- the centralized pilot did not by itself authorize broad dispatch; the later frozen skill recovery and accepted worker integrations now govern dispatch authority
 - explicit protocol cells remain separate from determination and source-screen coverage
 
 These are dated compiler checkpoints, not permanent constants. Reverify generated counts before every implementation, handoff, or count claim. Do not label the `8` not-detected pairs as determinations.
@@ -102,7 +102,8 @@ Use the narrowest relevant checks, then broaden when generated behavior or publi
 cd "/Users/ocean/Code/Project Isitusa"
 git status --short --branch
 git log -1 --oneline
-npm run build:county-matrix -- AL
+npm run prepare:data -- --as-of <YYYY-MM-DD>
+npm run check:prepare-data-plan
 npm run check:data-integrity
 npm run check:research-integrity
 npm run check:state-research-projections
@@ -112,9 +113,11 @@ npm run typecheck
 npm run build
 ```
 
-Do not run generation commands casually in a dirty worktree. They write tracked artifacts. Inspect the diff and report exact baseline, post-change, and net counts.
+Do not run generation commands casually in a dirty worktree. They write tracked artifacts. Inspect the diff and report exact baseline, post-change, and net counts. `prepare:data` builds legacy runtime data first and then recompiles every compatibility-publication state so reviewed evidence remains authoritative. The legacy `build:county-matrix` command is blocked for compiler-owned states.
 
-The implemented compiler interface requires an explicit state and as-of date, for example `npm run research:compile -- --state AL --as-of 2026-07-15`. `research:verify` accepts the same scope and proves byte stability. `research:index` builds the ignored local index. Read `package.json` and the scripts before use because compilation and refresh commands write tracked artifacts.
+The implemented compiler interface requires an explicit state and as-of date, for example `npm run research:compile -- --state AL --as-of 2026-07-15`. `research:verify` accepts the same scope and proves byte stability. `research:index` builds one ignored national index from all configured projections. Use `research:index:state -- --state <STATE>` only for a bounded diagnostic index. Read `package.json` and the scripts before use because compilation and refresh commands write tracked artifacts.
+
+Use `npm run research:verify:all -- --as-of <YYYY-MM-DD>` for sequential byte-stability verification of every configured public research projection. It deliberately avoids parallel compilers on the 16 GB development machine.
 
 ## Writing Rules
 

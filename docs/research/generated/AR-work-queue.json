@@ -1,31 +1,31 @@
 {
   "schemaVersion": 3,
   "stateCode": "AR",
-  "asOf": "2026-07-15",
-  "generatedAt": "2026-07-15T00:00:00.000Z",
+  "asOf": "2026-07-16",
+  "generatedAt": "2026-07-16T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "explicit",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AR.json",
-    "applicabilityAsOf": "2026-07-15",
-    "applicableSpeciesCount": 3,
+    "applicabilityAsOf": "2026-07-16",
+    "applicableSpeciesCount": 7,
     "undeterminedSpeciesPolicy": "excluded",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "protocol": {
-    "totalCells": 6,
-    "applicableCells": 4,
-    "notApplicableCells": 2,
-    "completeCells": 1,
-    "incompleteCells": 3,
+    "totalCells": 14,
+    "applicableCells": 14,
+    "notApplicableCells": 0,
+    "completeCells": 5,
+    "incompleteCells": 9,
     "blockedCells": 0,
-    "currentCells": 1,
+    "currentCells": 5,
     "staleCells": 0,
-    "undatedCells": 3,
-    "applicableCompletionPercent": 25,
-    "currentCompletePercent": 25,
+    "undatedCells": 9,
+    "applicableCompletionPercent": 35.71,
+    "currentCompletePercent": 35.71,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -37,24 +37,26 @@
       "commonName": "Pineapple Weed",
       "scientificName": "Matricaria discoidea",
       "category": "plants",
-      "notResearchedCountyCount": 75,
+      "notResearchedCountyCount": 74,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 75001
+      "priorityScore": 74002
     },
     {
       "speciesId": "melilotus-officinalis",
       "commonName": "Yellow Sweetclover",
       "scientificName": "Melilotus officinalis",
       "category": "plants",
-      "notResearchedCountyCount": 75,
+      "notResearchedCountyCount": 74,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
+        "gbif-preserved-specimens",
+        "usgs-nas"
       ],
-      "priorityScore": 75001
+      "priorityScore": 74002
     },
     {
       "speciesId": "daphnia-lumholtzi",
@@ -67,6 +69,54 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 651
+    },
+    {
+      "speciesId": "eichhornia-crassipes",
+      "commonName": "Water Hyacinth",
+      "scientificName": "Eichhornia crassipes",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 65,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 651
+    },
+    {
+      "speciesId": "myriophyllum-aquaticum",
+      "commonName": "Parrot Feather",
+      "scientificName": "Myriophyllum aquaticum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 63,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 631
+    },
+    {
+      "speciesId": "nutria",
+      "commonName": "Nutria",
+      "scientificName": "Myocastor coypus",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 19,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 191
+    },
+    {
+      "speciesId": "corbicula-fluminea",
+      "commonName": "Asiatic Clam",
+      "scientificName": "Corbicula fluminea",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 11,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 111
     }
   ]
 }

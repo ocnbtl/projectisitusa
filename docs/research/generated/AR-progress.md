@@ -1,29 +1,29 @@
 # Arkansas Research Progress
 
-Generated: `2026-07-15T00:00:00.000Z`
+Generated: `2026-07-16T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `3`
+- Species: `7`
 - Counties: `75`
-- County-species pairs: `225`
-- Verified present: `10`
+- County-species pairs: `525`
+- Verified present: `154`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `65`
-- Not researched: `150`
-- Determination coverage: `4.44%`
-- Research coverage: `33.33%`
-- Explicit outcome coverage: `33.3333%`
-- Applicable protocol cells: `4`
-- Current complete protocol cells: `1`
-- Protocol completion: `25.00%`
-- Current protocol completion: `25.00%`
-- Evidence records: `10`
-- Research runs: `1`
-- Rejection records: `0`
-- Deferred source assertions remaining: `2`
-- Deferred distinct pairs remaining: `2`
+- Researched unresolved: `223`
+- Not researched: `148`
+- Determination coverage: `29.33%`
+- Research coverage: `71.81%`
+- Explicit outcome coverage: `71.8095%`
+- Applicable protocol cells: `14`
+- Current complete protocol cells: `5`
+- Protocol completion: `35.71%`
+- Current protocol completion: `35.71%`
+- Evidence records: `164`
+- Research runs: `7`
+- Rejection records: `19`
+- Deferred source assertions remaining: `0`
+- Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
 
 Determination coverage counts only verified present and verified absent pairs. Research coverage also counts explicit not-detected evidence and source-family screens. Explicit outcome coverage counts completed immutable pair outcomes. None of these metrics implies absence.
@@ -32,16 +32,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 75 | 0 | 1 |
-| Yellow Sweetclover (`melilotus-officinalis`) | plants | 75 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 74 | 0 | 2 |
+| Yellow Sweetclover (`melilotus-officinalis`) | plants | 74 | 0 | 2 |
 | Spiny waterflea (`daphnia-lumholtzi`) | wildlife | 0 | 65 | 1 |
+| Water Hyacinth (`eichhornia-crassipes`) | plants | 0 | 65 | 1 |
+| Parrot Feather (`myriophyllum-aquaticum`) | plants | 0 | 63 | 1 |
+| Nutria (`nutria`) | wildlife | 0 | 19 | 1 |
+| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 11 | 1 |
 
 ## Source Operations
 
 | Source | Status | Last run | Evidence pairs | Screened species |
 | --- | --- | --- | ---: | ---: |
 | EDDMaps | operational | not run | 0 | 0 |
-| USGS NAS | operational | 2026-07-15T15:41:25.000Z | 10 | 1 |
+| USGS NAS | operational | 2026-07-16T09:29:00.000Z | 152 | 5 |
 | USGS NAS occurrence API | operational | not run | 0 | 0 |
 | SERNEC | operational | not run | 0 | 0 |
 | EDDMapS ALIPC list | operational | not run | 0 | 0 |
@@ -58,7 +62,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-16T08:55:02.826Z | 2 | 2 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
