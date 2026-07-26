@@ -116,6 +116,63 @@
         }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, Vercel, live routes, and selected live bytes were verified. It does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-725a0c71-2026-07-26",
+      "verifiedAt": "2026-07-26T16:24:31Z",
+      "commitSha": "725a0c711fea62f85fc51f612b35790bbd250f59",
+      "githubMainSha": "725a0c711fea62f85fc51f612b35790bbd250f59",
+      "githubDeploymentId": 5611926851,
+      "vercelDeploymentId": "dpl_FCfgZY3Vx3NEjvsYLW7RK3oBjsis",
+      "vercelDeploymentUrl": "projectisitusa-8v230bmq4-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AL/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AK/counties/02020.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/?county=01001&species=acanthospermum-australe",
+          "status": 200
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "c09fb01f6b4e4c5f70a3f30a86580e4325c6f82bd28c374722a5ea8cc2a62668"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "7a6b020ab00c1463aa5b159daf9c304cc568bab43b4579ff28f9c0e14bdb2569"
+        },
+        {
+          "path": "/generated/research/AK/counties/02020.json",
+          "sha256": "5c40a6fa3e1e3ae856badcba4d949f79e57c87bbcdbea87c337a9bff877b354f"
+        }
+      ],
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, Vercel, live routes, selected live bytes, and live browser behavior were verified. It does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
