@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "jobId": "deferred-az-gbif-migration-r2",
+  "leaseId": "lease-deferred-az-gbif-migration-r2-1",
+  "status": "complete",
+  "branch": "codex/deferred-az-gbif-migration-r3",
+  "worktree": "/private/tmp/isitusa-deferred-az-gbif-r3",
+  "baseSha": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+  "commitSha": "ece8e3f7f01e4443c7834b7a728ae2c0db12eb73",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "candidate-postfreeze-lineage-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "candidate-postfreeze-lineage-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AZ",
+    "stateProvince": "Arizona",
+    "candidateFile": "src/data/research/state-candidates/AZ.json",
+    "outputRoot": "src/data/research/runs",
+    "startedAt": "2026-07-26T11:31:00Z",
+    "candidateLimit": 2,
+    "candidatePairs": [
+      "04001:cirsium-arvense",
+      "04005:melilotus-officinalis"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+      "sha256": "77f807e28dd2c845eb8df7419d0e07e2e2347a441b1491f891b5c18900e46655",
+      "bytes": 90559
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+      "sha256": "eda340c3cc65e00319c1c0f8846e30209ccee767abd62c4c076a2396e776fc09",
+      "bytes": 2280310
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000300.json",
+      "sha256": "0b6a4d4be6df9f158972d3871c58405c8d33b8bb417373ae412a5ff018001b35",
+      "bytes": 91934
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-cirsium-arvense.json",
+      "sha256": "ec5a89284a28183bec6a9740e4c8dc56081486269cb1fb5d5f4b20b8bc94d372",
+      "bytes": 451
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-melilotus-officinalis.json",
+      "sha256": "79f0fb0830b66d7568b1458b110c6e151e32a040bf7084df38c6ab49cf49f5ca",
+      "bytes": 467
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/assertions.ndjson",
+      "count": 134
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/reviews.ndjson",
+      "count": 134
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/rejections.ndjson",
+      "count": 30
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/outcomes.ndjson",
+      "count": 2
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/receipt.json",
+    "sha256": "34a06a591d316cd0721d9badbfbd241b50eb7920f5196fc67b8badf834aa4193",
+    "bytes": 6404
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/source-verification.json",
+    "sha256": "7079649dd4b52b4fb011cc388dc82eb1f557b04faeca70ba302ea11611676b97",
+    "bytes": 8390
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 5,
+      "retainedArtifactBytes": 2463721,
+      "sourceRequests": 5,
+      "providerCandidates": 326,
+      "assertionEvents": 134,
+      "publicationEligibleAssertions": 134,
+      "reviewEvents": 134,
+      "rejectionRecords": 30,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 2,
+      "completeOutcomePairs": 2,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 5,
+      "retainedArtifactBytes": 2463721,
+      "sourceRequests": 5,
+      "providerCandidates": 326,
+      "assertionEvents": 134,
+      "publicationEligibleAssertions": 134,
+      "reviewEvents": 134,
+      "rejectionRecords": 30,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 2,
+      "completeOutcomePairs": 2,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /private/tmp/isitusa-deferred-az-gbif-lease-r3.json --repo /private/tmp/isitusa-deferred-az-gbif-r3",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "NODE_PATH='/Users/ocean/Code/Project Isitusa/node_modules' node --import '/Users/ocean/Code/Project Isitusa/node_modules/tsx/dist/loader.mjs' scripts/research/validate-immutable-run.ts --repository-root /private/tmp/isitusa-deferred-az-gbif-r3 --validation-root /private/tmp/isitusa-deferred-az-gbif-r3 --run-directory /private/tmp/isitusa-deferred-az-gbif-r3/src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227 --source-verification /private/tmp/isitusa-deferred-az-gbif-r3/src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/source-verification.json --run-id 20260726T113100Z__gbif-preserved-specimens__ed72e066b227 --source-id gbif-preserved-specimens --state-code AZ --pair-keys 04001:cirsium-arvense,04005:melilotus-officinalis --code-commit 5569089be087bb6ed632b2d821764fb47ff98d66 --worker-task-id /root/blind_az_lineage_worker",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 52da0a7377e03ab7c0d9ff49e761a760d4bd73f1...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /private/tmp/isitusa-deferred-az-gbif-lease-r3.json --manifest src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/manifest.json --repo /private/tmp/isitusa-deferred-az-gbif-r3",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": []
+  },
+  "recovery": {
+    "mode": "byte-preserving",
+    "sourceCommit": "16a8f927182b7c8828e6c33ccfa61ca5a6b6485e",
+    "originalAcquisitionCodeCommit": "5569089be087bb6ed632b2d821764fb47ff98d66",
+    "networkAcquisitionPerformed": false,
+    "contentFilesRecovered": 11
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 180,
+    "peakMemoryMb": 0,
+    "peakMemoryMeasured": false,
+    "validPairsScreened": 2,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  },
+  "violations": [],
+  "unexpectedBehavior": []
+}
