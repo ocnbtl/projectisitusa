@@ -244,7 +244,7 @@
         "parameterSchema": "src/data/research/schemas/usfs-afpe-archive-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact versioned mapping from one published AFPE DCA column and dictionary label to one reviewed Project Isitusa catalog species. Only the 13 hash-pinned mappings are authorized.",
-        "geographyMatchingPolicy": "Exact five-digit source FIPS must match one active county equivalent and the source county label must independently agree. Retired, abolished, superseded, missing, unknown, and out-of-scope FIPS are rejected without automatic crosswalks. Coordinates are never used.",
+        "geographyMatchingPolicy": "Exact five-digit source FIPS must match one active county equivalent. The source county label must normalize to that exact-FIPS target name, but label ambiguity alone does not override an exact FIPS. Retired, abolished, superseded, missing, unknown, and out-of-scope FIPS are rejected without automatic crosswalks. Coordinates are never used.",
         "artifactRetention": "versioned",
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 1

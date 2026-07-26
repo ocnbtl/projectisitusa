@@ -13,7 +13,6 @@ import type {
 import {
   getStateDefinition,
   listCountyEquivalents,
-  resolveCountyEquivalent,
 } from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
 
@@ -86,6 +85,14 @@ function contentId(prefix: string, value: unknown) {
 
 function pairKey(countyFips: string, speciesId: string) {
   return `${countyFips}:${speciesId}`;
+}
+
+function canonicalGeographyLabel(value: string) {
+  return value
+    .normalize("NFKD")
+    .replace(/\p{Mark}+/gu, "")
+    .toLocaleLowerCase("en-US")
+    .replace(/[^a-z0-9]+/gu, "");
 }
 
 function sortedRows(rows: AfpeCountyRow[]) {
@@ -346,14 +353,12 @@ export function replayNationalAfpeState(input: {
       const values = [...new Set(sourceRows.map((row) => row[mapping.columnId]))].sort(
         compareText,
       );
+      const county = countyByFips.get(pair.countyFips)!;
       const sourceNameMismatch = sourceRows.some((row) => {
-        const resolution = resolveCountyEquivalent({
-          stateCode: context.stateCode,
-          countyName: row.NAME,
-          sourceId: AFPE_SOURCE_ID,
-        });
-        return resolution.status !== "resolved" ||
-          resolution.county.countyFips !== pair.countyFips ||
+        return canonicalGeographyLabel(row.NAME) !==
+            canonicalGeographyLabel(county.shortName) ||
+          canonicalGeographyLabel(row.STATENAME) !==
+            canonicalGeographyLabel(state.stateName) ||
           row.STATE !== state.stateFips ||
           row.FIPS !== `${row.STATE}${row.COUNTY}`;
       });
@@ -412,7 +417,6 @@ export function replayNationalAfpeState(input: {
           }));
         }
         if (values[0] === "1") {
-          const county = countyByFips.get(pair.countyFips)!;
           const evidence = assertionAndReview({
             context,
             mapping,

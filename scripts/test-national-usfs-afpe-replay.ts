@@ -56,6 +56,26 @@ function context(runId: string, pairKeys: string[]): SourceAdapterContext {
   };
 }
 
+function exactFipsAmbiguousNameContext(): SourceAdapterContext {
+  const county = listCountyEquivalents("MD").find((entry) =>
+    entry.countyFips === "24510"
+  );
+  assert(county, "Missing Baltimore city fixture.");
+  return {
+    runId: "afpe-test-exact-fips-ambiguous-name",
+    sourceId: "usfs-afpe",
+    stateCode: "MD",
+    requestedPairs: [{
+      countyFips: county.countyFips,
+      countyName: county.shortName,
+      speciesId: mapping.speciesId,
+      scientificName: mapping.scientificName,
+    }],
+    runStartedAt: "2026-07-26T04:00:00.000Z",
+    parameters: {},
+  };
+}
+
 const pairKeys = [
   "01001:emerald-ash-borer",
   "01003:emerald-ash-borer",
@@ -128,6 +148,24 @@ assert(contradiction.assertions.length === 0, "Conflicting AFPE duplicates publi
 assert(contradiction.outcomes[0]?.status === "blocked", "Conflicting AFPE duplicates were not blocked.");
 assert(!contradiction.outcomes[0]?.scope_complete, "Conflicting AFPE duplicate was marked complete.");
 
+const exactFipsAmbiguousName = replayNationalAfpeState({
+  context: exactFipsAmbiguousNameContext(),
+  rows: [{
+    ...row("24510", "1", "Baltimore"),
+    STATE: "24",
+    COUNTY: "510",
+    FIPS: "24510",
+    STATENAME: "Maryland",
+  }],
+  mappings: [mapping],
+  completedAt: "2026-07-26T04:00:00.000Z",
+  archiveUrl: "https://purr.purdue.edu/publications/4479/serve/1?render=archive",
+});
+assert(
+  exactFipsAmbiguousName.outcomes[0]?.status === "evidence-found",
+  "An exact current FIPS was incorrectly blocked because its valid source name is ambiguous.",
+);
+
 console.log(
   JSON.stringify(
     {
@@ -136,6 +174,7 @@ console.log(
       missingCurrentGeographyBlocked: true,
       identicalDuplicateCollapsed: true,
       conflictingDuplicateBlocked: true,
+      exactFipsDisambiguatesSharedName: true,
       deterministic: JSON.stringify(base) === JSON.stringify(
         replayNationalAfpeState({
           context: context("afpe-test-base", pairKeys),
