@@ -16,7 +16,7 @@
     "stateArtifact": { "$ref": "#/$defs/file" },
     "invasiveReference": { "$ref": "#/$defs/file" },
     "plantDictionary": { "$ref": "#/$defs/file" },
-    "adapterVersion": { "const": "1.0.0" },
+    "adapterVersion": { "enum": ["1.0.0", "1.1.0"] },
     "adapterCodeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "partitionScriptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "partitionMode": { "const": "exact-state-county-codes-and-exact-taxon-no-coordinate-fallback" },
