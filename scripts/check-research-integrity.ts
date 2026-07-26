@@ -1185,7 +1185,7 @@ for (const acquisition of nationalFiaAcquisitions) {
       .flatMap((county) =>
         applicableSpecies.map((mappingEntry) => ({
           countyFips: county.countyFips,
-          countyName: county.shortName,
+          countyName: county.legalName,
           speciesId: mappingEntry.speciesId,
           scientificName: mappingEntry.scientificName,
         }))

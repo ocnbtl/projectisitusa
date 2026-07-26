@@ -425,7 +425,7 @@ async function main() {
       .flatMap((county) =>
         applicableSpecies.map((entry) => ({
           countyFips: county.countyFips,
-          countyName: county.shortName,
+          countyName: county.legalName,
           speciesId: entry.speciesId,
           scientificName: entry.scientificName,
         }))

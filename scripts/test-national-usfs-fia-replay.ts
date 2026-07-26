@@ -9,6 +9,7 @@ import {
   type FiaObservationRow,
 } from "./research/national-usfs-fia-common";
 import fs from "node:fs";
+import { resolveCountyEquivalent } from "@/lib/research/geography-registry";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -36,6 +37,21 @@ assert(
   registry.sources.find((entry) => entry.id === "aphis-honey-bee")
       ?.negativeSemantics === "explicit-survey-only",
   "APHIS explicit zero-count survey semantics must remain registered.",
+);
+assert(
+  resolveCountyEquivalent({
+    stateCode: "MD",
+    countyName: "Baltimore",
+  }).status === "rejected" &&
+    resolveCountyEquivalent({
+      stateCode: "MD",
+      countyName: "Baltimore County",
+    }).status === "resolved" &&
+    resolveCountyEquivalent({
+      stateCode: "MD",
+      countyName: "Baltimore city",
+    }).status === "resolved",
+  "FIA explicit FIPS must be rendered with unambiguous legal county names.",
 );
 
 const completedAt = "2026-07-26T15:00:00.000Z";
