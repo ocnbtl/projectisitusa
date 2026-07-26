@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-fia-canary-co-20260726-r1-1",
+  "jobId": "fia-canary-co-20260726-r1",
+  "leaseId": "lease-fia-canary-co-20260726-r1-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-26T13:34:00Z",
+  "integrationCommit": "fed543f6d9827e0a7a9afa08695dae3531a79dbb",
+  "workerCommit": "c07c5b3f33b2594253abb0af48337189e1d1fae2",
+  "workerBranchHead": "605bf88d2af3fbdab2e4f0ca1ac1a406872af914",
+  "manifestHash": "9d087189e9aa3b8d91070b511559ebc5b4013516f90d6e704952cd42c002451e",
+  "changedPaths": [
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/artifacts/national-acquisition-reference.json",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/assertions.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/manifest.json",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/outcomes.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/receipt.json",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/rejections.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/reviews.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "git cherry-pick c07c5b3f33b2594253abb0af48337189e1d1fae2 605bf88d2af3fbdab2e4f0ca1ac1a406872af914",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 81af808...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "orchestrator exact worker-to-main tree-entry comparison",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated both accepted worker commits without conflict and the frozen orchestrator verified identical file modes and bytes for every reviewed path."
+}
