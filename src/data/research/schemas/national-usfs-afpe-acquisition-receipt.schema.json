@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usfs-afpe-acquisition-receipt.schema.json",
+  "title": "Project Isitusa immutable national USFS AFPE acquisition receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisition_id", "status", "started_at", "finished_at", "actor_type", "actor_id", "source_id", "code_commit", "input_hashes", "parameter_hash", "parameters", "upstream_requests", "artifact", "archive", "source_verification", "counts", "errors", "warnings", "rerun_command"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisition_id": { "type": "string", "minLength": 1 },
+    "status": { "const": "complete" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "const": "adapter" },
+    "actor_id": { "const": "usfs-afpe-national-acquisition@1.0.0" },
+    "source_id": { "const": "usfs-afpe" },
+    "code_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "input_hashes": { "type": "object", "minProperties": 1, "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" } },
+    "parameter_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["archiveVersion", "archiveUrl", "publicationUrl", "doiUrl", "artifactBudgetBytes"],
+      "properties": {
+        "archiveVersion": { "const": "1.0" },
+        "archiveUrl": { "const": "https://purr.purdue.edu/publications/4479/serve/1?render=archive" },
+        "publicationUrl": { "const": "https://purr.purdue.edu/publications/4479/1" },
+        "doiUrl": { "const": "https://doi.org/10.4231/HWQF-V087" },
+        "artifactBudgetBytes": { "const": 16777216 }
+      }
+    },
+    "upstream_requests": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "response_url", "method", "status", "retrieved_at", "bytes_received", "range_start", "content_range", "content_length", "attempt", "etag", "last_modified"],
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "response_url": { "type": "string", "format": "uri" },
+          "method": { "const": "GET" },
+          "status": { "type": "integer", "minimum": 100, "maximum": 599 },
+          "retrieved_at": { "type": "string", "format": "date-time" },
+          "bytes_received": { "type": "integer", "minimum": 0 },
+          "range_start": { "type": "integer", "minimum": 0 },
+          "content_range": { "type": ["string", "null"] },
+          "content_length": { "type": ["integer", "null"], "minimum": 0 },
+          "attempt": { "type": "integer", "minimum": 1 },
+          "etag": { "type": ["string", "null"] },
+          "last_modified": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "media_type"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "const": "ca1988d2f900a71ff5efab2b32642f757d64189c4bd0dd2dbdda98a6cf222383" },
+        "bytes": { "const": 5396559 },
+        "media_type": { "const": "application/zip" }
+      }
+    },
+    "archive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "version", "publication_date", "archived_at", "source_data_last_updated", "license", "doi", "record_count", "pest_column_count", "entry_names", "county_csv", "dictionary_csv"],
+      "properties": {
+        "title": { "const": "Alien Forest Pest Detection by Counties in US" },
+        "version": { "const": "1.0" },
+        "publication_date": { "const": "2024-03-28" },
+        "archived_at": { "const": "2024-04-29" },
+        "source_data_last_updated": { "const": "2023-04" },
+        "license": { "const": "CC0-1.0" },
+        "doi": { "const": "10.4231/HWQF-V087" },
+        "record_count": { "const": 3221 },
+        "pest_column_count": { "const": 93 },
+        "entry_names": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "county_csv": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256", "bytes"],
+          "properties": {
+            "path": { "const": "10_4231_HWQF-V087/AFPE_PEST_2023_counties.csv" },
+            "sha256": { "const": "8df95f50028b4dfe3880c9cfb71ae4fbc5d691287703eb504382582d20f0f8fc" },
+            "bytes": { "const": 1092467 }
+          }
+        },
+        "dictionary_csv": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256", "bytes"],
+          "properties": {
+            "path": { "const": "10_4231_HWQF-V087/AFPE_PEST_2023_counties_data_dictionary.csv" },
+            "sha256": { "const": "8444b4560943fa54ea7fe20d96b131ee12fa6d9e054756448049beb8e8fa29a4" },
+            "bytes": { "const": 3137 }
+          }
+        }
+      }
+    },
+    "source_verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "license_url", "geography_policy", "taxon_policy", "positive_semantics", "negative_semantics", "freshness_status", "snapshot_completeness", "known_contradictions"],
+      "properties": {
+        "publisher": { "const": "Purdue University Research Repository, USDA Forest Service Northern Research Station, and Forest Health Protection" },
+        "license_url": { "const": "http://creativecommons.org/publicdomain/zero/1.0/legalcode" },
+        "geography_policy": { "type": "string", "minLength": 1 },
+        "taxon_policy": { "type": "string", "minLength": 1 },
+        "positive_semantics": { "type": "string", "minLength": 1 },
+        "negative_semantics": { "type": "string", "minLength": 1 },
+        "freshness_status": { "const": "stale-historical" },
+        "snapshot_completeness": { "type": "string", "minLength": 1 },
+        "known_contradictions": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["upstream_requests", "artifacts", "records", "pest_cells", "zero_cells", "one_cells", "transient_failures", "resumed_bytes"],
+      "properties": {
+        "upstream_requests": { "type": "integer", "minimum": 1 },
+        "artifacts": { "const": 1 },
+        "records": { "const": 3221 },
+        "pest_cells": { "const": 299553 },
+        "zero_cells": { "const": 280805 },
+        "one_cells": { "const": 18748 },
+        "transient_failures": { "type": "integer", "minimum": 0 },
+        "resumed_bytes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "errors": { "type": "array", "maxItems": 0 },
+    "warnings": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "rerun_command": { "type": "string", "minLength": 1 }
+  }
+}

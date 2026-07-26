@@ -78,6 +78,21 @@ function project(runs: ImmutableResearchRunBundle[], protocols = baseProtocol) {
   });
 }
 
+const speciesIdProtocol = structuredClone(baseProtocol);
+speciesIdProtocol.protocols[0]!.rules[0]!.speciesSelector = {
+  kind: "species-id",
+  values: ["test-plant"],
+};
+assert(
+  project([], speciesIdProtocol).cells[0]!.applicabilityStatus === "applicable",
+  "Explicit species-id protocol selector did not apply to the named taxon.",
+);
+speciesIdProtocol.protocols[0]!.rules[0]!.speciesSelector.values = ["another-species"];
+assert(
+  project([], speciesIdProtocol).cells[0]!.applicabilityStatus === "not-applicable",
+  "Explicit species-id protocol selector leaked to an unnamed taxon.",
+);
+
 const empty = project([]).cells[0]!;
 assert(empty.completionStatus === "incomplete", "Source silence completed a protocol cell.");
 assert(empty.completeOutcomeCountyCount === 0, "Source silence created outcome coverage.");
@@ -129,6 +144,7 @@ console.log(
   JSON.stringify(
     {
       sourceSilenceRemainsIncomplete: true,
+      speciesIdSelectorBounded: true,
       noQualifyingEvidenceCompletesResearchOnly: true,
       blockedRemainderPreserved: true,
       laterBlockedRetryRevokesCompletion: true,

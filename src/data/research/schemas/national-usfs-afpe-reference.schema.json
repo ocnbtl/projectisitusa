@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usfs-afpe-reference.schema.json",
+  "title": "Project Isitusa USFS AFPE state-run acquisition reference",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisitionId", "acquisitionReceiptPath", "acquisitionReceiptSha256", "archiveVersion", "archivePath", "archiveSha256", "archiveBytes", "mappingPath", "mappingVersion", "mappingSha256", "sourceId", "adapterVersion", "adapterCodeSha256", "partitionScriptSha256", "stateCode", "partitionMode", "selectedRowsSha256", "reconciliation"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisitionId": { "type": "string", "minLength": 1 },
+    "acquisitionReceiptPath": { "type": "string", "minLength": 1 },
+    "acquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "archiveVersion": { "const": "1.0" },
+    "archivePath": { "type": "string", "minLength": 1 },
+    "archiveSha256": { "const": "ca1988d2f900a71ff5efab2b32642f757d64189c4bd0dd2dbdda98a6cf222383" },
+    "archiveBytes": { "const": 5396559 },
+    "mappingPath": { "const": "src/data/research/source-mappings/usfs-afpe-v1.json" },
+    "mappingVersion": { "const": "2026-07-25.1" },
+    "mappingSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "sourceId": { "const": "usfs-afpe" },
+    "adapterVersion": { "const": "1.0.0" },
+    "adapterCodeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "partitionScriptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "partitionMode": { "const": "exact-current-fips-binary-cell-no-crosswalk" },
+    "selectedRowsSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "reconciliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_rows", "source_cells", "matched_current_county_rows", "unregistered_or_retired_rows", "missing_current_counties", "duplicate_source_rows", "duplicate_source_cells", "conflicting_duplicate_cells", "positive_pairs", "no_qualifying_evidence_pairs", "blocked_pairs", "assertion_pairs", "rejection_events"],
+      "properties": {
+        "source_rows": { "type": "integer", "minimum": 0 },
+        "source_cells": { "type": "integer", "minimum": 0 },
+        "matched_current_county_rows": { "type": "integer", "minimum": 0 },
+        "unregistered_or_retired_rows": { "type": "integer", "minimum": 0 },
+        "missing_current_counties": { "type": "integer", "minimum": 0 },
+        "duplicate_source_rows": { "type": "integer", "minimum": 0 },
+        "duplicate_source_cells": { "type": "integer", "minimum": 0 },
+        "conflicting_duplicate_cells": { "type": "integer", "minimum": 0 },
+        "positive_pairs": { "type": "integer", "minimum": 0 },
+        "no_qualifying_evidence_pairs": { "type": "integer", "minimum": 0 },
+        "blocked_pairs": { "type": "integer", "minimum": 0 },
+        "assertion_pairs": { "type": "integer", "minimum": 0 },
+        "rejection_events": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

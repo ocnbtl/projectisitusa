@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-16",
+  "updatedAt": "2026-07-25",
   "protocols": [
     {
       "id": "alabama-explicit-migration-v2",
@@ -17,6 +17,7 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usda-nrcs-plants",
+        "usfs-afpe",
         "usfs-ids",
         "usgs-nas"
       ],
@@ -129,6 +130,37 @@
               "note": "Migrates the prior category source set into explicit cells without treating legacy screens as protocol completion."
             }
           ]
+        },
+        {
+          "ruleId": "usfs-afpe-reviewed-taxa-v1",
+          "speciesSelector": {
+            "kind": "species-id",
+            "values": [
+              "anarsia-lineatella",
+              "aspidiotus-duplex",
+              "cryphonectria-parasitica",
+              "discula-destructiva",
+              "dryocosmus-kuriphilus",
+              "emerald-ash-borer",
+              "homadaula-albizziae",
+              "icerya-purchasi",
+              "ophiognomonia-clavigignenti-juglandacearum",
+              "ophiostoma-ulmi",
+              "phytophthora-cinnamomi",
+              "popillia-japonica",
+              "raffaelea-lauricola"
+            ]
+          },
+          "applicableSourceIds": [
+            "usfs-afpe"
+          ],
+          "basis": [
+            {
+              "kind": "hash-pinned-cc0-archive",
+              "reference": "src/data/research/source-mappings/usfs-afpe-v1.json",
+              "note": "The AFPE v1.0 archive is explicitly applicable to the 13 reviewed DCA mappings across current county-equivalent scope. It is historical and stale, and it cannot create absence or non-detection."
+            }
+          ]
         }
       ],
       "overrides": []
@@ -144,6 +176,7 @@
       "status": "active",
       "sourceUniverse": [
         "gbif-preserved-specimens",
+        "usfs-afpe",
         "usgs-nas"
       ],
       "requiredCurrentSourceIds": [
@@ -172,6 +205,37 @@
               "kind": "implementation-plan",
               "reference": "national-pilot-2026-07-16",
               "note": "GBIF preserved specimen screening and the versioned USGS NAS archive are explicitly applicable to the selected pilot species and active county equivalents in Alaska, Arizona, and Arkansas."
+            }
+          ]
+        },
+        {
+          "ruleId": "usfs-afpe-reviewed-taxa-v1",
+          "speciesSelector": {
+            "kind": "species-id",
+            "values": [
+              "anarsia-lineatella",
+              "aspidiotus-duplex",
+              "cryphonectria-parasitica",
+              "discula-destructiva",
+              "dryocosmus-kuriphilus",
+              "emerald-ash-borer",
+              "homadaula-albizziae",
+              "icerya-purchasi",
+              "ophiognomonia-clavigignenti-juglandacearum",
+              "ophiostoma-ulmi",
+              "phytophthora-cinnamomi",
+              "popillia-japonica",
+              "raffaelea-lauricola"
+            ]
+          },
+          "applicableSourceIds": [
+            "usfs-afpe"
+          ],
+          "basis": [
+            {
+              "kind": "hash-pinned-cc0-archive",
+              "reference": "src/data/research/source-mappings/usfs-afpe-v1.json",
+              "note": "The AFPE v1.0 archive is explicitly applicable to the 13 reviewed DCA mappings across current county-equivalent scope. It is historical and stale, and it cannot create absence or non-detection."
             }
           ]
         }
@@ -272,6 +336,7 @@
       ],
       "status": "active",
       "sourceUniverse": [
+        "usfs-afpe",
         "usgs-nas"
       ],
       "requiredCurrentSourceIds": [
@@ -298,6 +363,37 @@
               "kind": "official-versioned-archive",
               "reference": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
               "note": "The retained CC0 USGS NAS archive provides one reusable national occurrence snapshot with explicit state and county text. Silence and rejected records never create absence or non-detection."
+            }
+          ]
+        },
+        {
+          "ruleId": "usfs-afpe-reviewed-taxa-v1",
+          "speciesSelector": {
+            "kind": "species-id",
+            "values": [
+              "anarsia-lineatella",
+              "aspidiotus-duplex",
+              "cryphonectria-parasitica",
+              "discula-destructiva",
+              "dryocosmus-kuriphilus",
+              "emerald-ash-borer",
+              "homadaula-albizziae",
+              "icerya-purchasi",
+              "ophiognomonia-clavigignenti-juglandacearum",
+              "ophiostoma-ulmi",
+              "phytophthora-cinnamomi",
+              "popillia-japonica",
+              "raffaelea-lauricola"
+            ]
+          },
+          "applicableSourceIds": [
+            "usfs-afpe"
+          ],
+          "basis": [
+            {
+              "kind": "hash-pinned-cc0-archive",
+              "reference": "src/data/research/source-mappings/usfs-afpe-v1.json",
+              "note": "The AFPE v1.0 archive is explicitly applicable to the 13 reviewed DCA mappings across current county-equivalent scope. It is historical and stale, and it cannot create absence or non-detection."
             }
           ]
         }

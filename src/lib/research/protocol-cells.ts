@@ -25,7 +25,7 @@ export type ResearchProtocolsFile = {
     rules: Array<{
       ruleId: string;
       speciesSelector: {
-        kind: "category" | "state-applicability";
+        kind: "category" | "state-applicability" | "species-id";
         values: string[];
       };
       applicableSourceIds: string[];
@@ -123,9 +123,12 @@ function ratioPercent(numerator: number, denominator: number) {
 
 function appliesToSpecies(
   rule: ResearchProtocolsFile["protocols"][number]["rules"][number],
-  species: { category: SpeciesCategory },
+  species: { id: string; category: SpeciesCategory },
 ) {
   if (rule.speciesSelector.kind === "state-applicability") return true;
+  if (rule.speciesSelector.kind === "species-id") {
+    return rule.speciesSelector.values.includes(species.id);
+  }
   return rule.speciesSelector.values.includes(species.category);
 }
 

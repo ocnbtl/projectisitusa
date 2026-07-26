@@ -116,7 +116,9 @@ expectFailure("unknown explicit species", /unknown catalog species/, () =>
 );
 
 const futureApplicability = structuredClone(applicability);
-futureApplicability.asOf = "2026-07-17";
+futureApplicability.asOf = new Date(
+  Date.parse(`${applicability.asOf}T00:00:00.000Z`) + 86_400_000,
+).toISOString().slice(0, 10);
 expectFailure("future applicability", /newer than compiler as-of/, () =>
   resolveStateResearchScope({ configFile, stateCode: "AK", ...common, applicability: futureApplicability }),
 );

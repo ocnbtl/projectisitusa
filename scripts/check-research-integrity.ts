@@ -41,6 +41,17 @@ import {
 } from "./research/national-usgs-nas-common";
 import { replayNationalNasScreen } from "./research/adapters/usgs-nas-archive";
 import {
+  AFPE_SOURCE_ID,
+  replayNationalAfpeState,
+} from "./research/adapters/usfs-afpe-archive";
+import {
+  type NationalAfpeReference,
+  inspectNationalAfpeArchive,
+  readAfpeMapping,
+  validateNationalAfpeReference,
+  verifyNationalAfpeAcquisition,
+} from "./research/national-usfs-afpe-common";
+import {
   getStateDefinition,
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
@@ -322,6 +333,7 @@ const projectedOutcomes = projectedAlabamaImmutableRuns.flatMap(
 );
 const migrationCandidates = readJson<MigrationCandidatesFile>(migrationCandidatesPath);
 const nationalNasAcquisitions = [];
+const nationalAfpeAcquisitions = [];
 if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
   for (const entry of readdirSync(NATIONAL_ACQUISITIONS_DIR, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
@@ -329,17 +341,29 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
     const receiptPath = path.join(directory, "receipt.json");
     assert(existsSync(receiptPath), `National acquisition ${entry.name} lacks a receipt.`);
     const candidate = readJson<{ source_id?: string }>(receiptPath);
+    const verified = candidate.source_id === "usgs-nas"
+      ? await verifyNationalNasAcquisition(ROOT, directory, true)
+      : candidate.source_id === AFPE_SOURCE_ID
+        ? verifyNationalAfpeAcquisition(ROOT, directory)
+        : null;
     assert(
-      candidate.source_id === "usgs-nas",
+      verified,
       `National acquisition ${entry.name} has unsupported source ${candidate.source_id ?? "missing"}.`,
     );
-    const verified = await verifyNationalNasAcquisition(ROOT, directory, true);
     assertCommitAncestor(ROOT, verified.receipt.code_commit, execFileSync(
       "git",
       ["rev-parse", "HEAD"],
       { cwd: ROOT, encoding: "utf8" },
     ).trim());
-    nationalNasAcquisitions.push(verified);
+    if (candidate.source_id === "usgs-nas") {
+      nationalNasAcquisitions.push(
+        verified as Awaited<ReturnType<typeof verifyNationalNasAcquisition>>,
+      );
+    } else {
+      nationalAfpeAcquisitions.push(
+        verified as ReturnType<typeof verifyNationalAfpeAcquisition>,
+      );
+    }
   }
 }
 const nationalNasAcquisitionById = new Map(
@@ -348,6 +372,17 @@ const nationalNasAcquisitionById = new Map(
 const nationalNasReferences: NationalNasReference[] = [];
 const nationalNasReferenceEntries: Array<{
   reference: NationalNasReference;
+  bundle: (typeof immutableRuns)[number];
+}> = [];
+const nationalAfpeAcquisitionById = new Map(
+  nationalAfpeAcquisitions.map((entry) => [
+    entry.receipt.acquisition_id,
+    entry,
+  ]),
+);
+const nationalAfpeReferences: NationalAfpeReference[] = [];
+const nationalAfpeReferenceEntries: Array<{
+  reference: NationalAfpeReference;
   bundle: (typeof immutableRuns)[number];
 }> = [];
 
@@ -533,6 +568,111 @@ for (const bundle of immutableRuns) {
         reference.reconciliation.blocking_candidate_records <=
           reference.reconciliation.rejected_candidate_records,
       `Immutable run ${receipt.run_id} national reconciliation counts changed.`,
+    );
+  }
+  if (
+    receipt.source_id === AFPE_SOURCE_ID &&
+    receipt.adapter_id === "usfs-afpe-archive"
+  ) {
+    const matchingArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/national-acquisition-reference.json")
+    );
+    const verificationArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/source-verification.json")
+    );
+    assert(
+      matchingArtifacts.length === 1 && verificationArtifacts.length === 1,
+      `Immutable AFPE run ${receipt.run_id} must contain one acquisition reference and one source verification artifact.`,
+    );
+    const artifact = matchingArtifacts[0]!;
+    const artifactBytes = readFileSync(path.join(ROOT, artifact.path));
+    assert(
+      artifactBytes.length === artifact.bytes &&
+        sha256(artifactBytes) === artifact.sha256,
+      `Immutable AFPE run ${receipt.run_id} acquisition reference changed.`,
+    );
+    const reference = JSON.parse(
+      artifactBytes.toString("utf8"),
+    ) as NationalAfpeReference;
+    validateNationalAfpeReference(ROOT, reference);
+    nationalAfpeReferences.push(reference);
+    nationalAfpeReferenceEntries.push({ reference, bundle });
+    const acquisition = nationalAfpeAcquisitionById.get(reference.acquisitionId);
+    assert(
+      acquisition,
+      `Immutable AFPE run ${receipt.run_id} references an unknown acquisition.`,
+    );
+    assert(
+      reference.acquisitionReceiptPath ===
+          path.relative(ROOT, acquisition.receiptPath).split(path.sep).join("/") &&
+        reference.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        reference.archivePath ===
+          path.relative(ROOT, acquisition.archivePath).split(path.sep).join("/") &&
+        reference.archiveSha256 === acquisition.receipt.artifact.sha256 &&
+        reference.archiveBytes === acquisition.receipt.artifact.bytes &&
+        reference.archiveVersion === acquisition.receipt.parameters.archiveVersion,
+      `Immutable AFPE run ${receipt.run_id} acquisition lineage changed.`,
+    );
+    assertCommitAncestor(
+      ROOT,
+      acquisition.receipt.code_commit,
+      receipt.code_commit,
+    );
+    assert(
+      reference.sourceId === receipt.source_id &&
+        reference.adapterVersion === receipt.adapter_version &&
+        reference.adapterCodeSha256 === receipt.adapter_code_hash &&
+        reference.stateCode === runStateCode,
+      `Immutable AFPE run ${receipt.run_id} acquisition scope changed.`,
+    );
+    const committedMapping = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:${reference.mappingPath}`],
+      { cwd: ROOT },
+    );
+    const committedPartitionScript = execFileSync(
+      "git",
+      [
+        "show",
+        `${receipt.code_commit}:scripts/research/partition-national-usfs-afpe-acquisition.ts`,
+      ],
+      { cwd: ROOT },
+    );
+    assert(
+      sha256(committedMapping) === reference.mappingSha256 &&
+        sha256(committedPartitionScript) === reference.partitionScriptSha256,
+      `Immutable AFPE run ${receipt.run_id} partition inputs changed.`,
+    );
+    assert(
+      reference.reconciliation.source_cells ===
+          receipt.counts.candidate_records &&
+        reference.reconciliation.assertion_pairs ===
+          receipt.counts.assertion_events &&
+        reference.reconciliation.rejection_events ===
+          receipt.counts.rejection_records &&
+        reference.reconciliation.duplicate_source_cells ===
+          receipt.counts.duplicate_records &&
+        reference.reconciliation.blocked_pairs ===
+          bundle.outcomes.filter((entry) => entry.status === "blocked").length,
+      `Immutable AFPE run ${receipt.run_id} reconciliation counts changed.`,
+    );
+    const verificationArtifact = verificationArtifacts[0]!;
+    const sourceVerification = readJson<{
+      sourceId: string;
+      stateCode: string;
+      acquisitionId: string;
+      acquisitionReceiptSha256: string;
+      stateReconciliation: NationalAfpeReference["reconciliation"];
+    }>(path.join(ROOT, verificationArtifact.path));
+    assert(
+      sourceVerification.sourceId === receipt.source_id &&
+        sourceVerification.stateCode === runStateCode &&
+        sourceVerification.acquisitionId === reference.acquisitionId &&
+        sourceVerification.acquisitionReceiptSha256 ===
+          reference.acquisitionReceiptSha256 &&
+        stableJson(sourceVerification.stateReconciliation) ===
+          stableJson(reference.reconciliation),
+      `Immutable AFPE run ${receipt.run_id} source verification changed.`,
     );
   }
   if (receipt.run_id === LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
@@ -780,6 +920,71 @@ for (const acquisition of nationalNasAcquisitions) {
       assert(
         stableJson(actual) === stableJson(expected),
         `Integrity replay changed USGS NAS ${label} for ${bundle.receipt.run_id}.`,
+      );
+    }
+  }
+}
+
+const afpeMapping = readAfpeMapping(ROOT);
+for (const acquisition of nationalAfpeAcquisitions) {
+  const referenceEntries = nationalAfpeReferenceEntries.filter(
+    (entry) =>
+      entry.reference.acquisitionId === acquisition.receipt.acquisition_id,
+  );
+  if (referenceEntries.length === 0) continue;
+  const archive = inspectNationalAfpeArchive(acquisition.archivePath);
+  for (const entry of referenceEntries) {
+    const { bundle, reference } = entry;
+    assert(
+      sha256(readFileSync(path.join(ROOT, reference.mappingPath))) ===
+        reference.mappingSha256,
+      `Integrity replay mapping changed for ${bundle.receipt.run_id}.`,
+    );
+    const state = getStateDefinition(reference.stateCode);
+    assert(state, `AFPE integrity replay has unknown state ${reference.stateCode}.`);
+    const requestedPairs = listCountyEquivalents(reference.stateCode)
+      .flatMap((county) =>
+        afpeMapping.mappings.map((mapping) => ({
+          countyFips: county.countyFips,
+          countyName: county.shortName,
+          speciesId: mapping.speciesId,
+          scientificName: mapping.scientificName,
+        }))
+      )
+      .sort(
+        (left, right) =>
+          left.countyFips.localeCompare(right.countyFips) ||
+          left.speciesId.localeCompare(right.speciesId),
+      );
+    const replay = replayNationalAfpeState({
+      context: {
+        runId: bundle.receipt.run_id,
+        sourceId: bundle.receipt.source_id,
+        stateCode: reference.stateCode,
+        requestedPairs,
+        runStartedAt: bundle.receipt.started_at,
+        parameters: bundle.receipt.parameters,
+      },
+      rows: archive.rows.filter((row) => row.STATE === state.stateFips),
+      mappings: afpeMapping.mappings,
+      completedAt: bundle.receipt.finished_at,
+      archiveUrl: acquisition.receipt.parameters.archiveUrl,
+    });
+    assert(
+      replay.selectedRowsSha256 === reference.selectedRowsSha256 &&
+        stableJson(replay.reconciliation) ===
+          stableJson(reference.reconciliation),
+      `Integrity replay changed AFPE selection or reconciliation for ${bundle.receipt.run_id}.`,
+    );
+    for (const [label, actual, expected] of [
+      ["assertions", replay.assertions, bundle.assertions],
+      ["reviews", replay.reviews, bundle.reviews],
+      ["rejections", replay.rejections, bundle.rejections],
+      ["outcomes", replay.outcomes, bundle.outcomes],
+    ] as const) {
+      assert(
+        stableJson(actual) === stableJson(expected),
+        `Integrity replay changed AFPE ${label} for ${bundle.receipt.run_id}.`,
       );
     }
   }
@@ -1143,6 +1348,12 @@ console.log(
         0,
       ),
       nationalNasReferenceCount: nationalNasReferences.length,
+      nationalAfpeAcquisitionCount: nationalAfpeAcquisitions.length,
+      nationalAfpeAcquisitionRecordCount: nationalAfpeAcquisitions.reduce(
+        (sum, entry) => sum + entry.receipt.archive.record_count,
+        0,
+      ),
+      nationalAfpeReferenceCount: nationalAfpeReferences.length,
       bootstrapResearchRunCount: runs.length,
       immutableResearchRunCount: projectedAlabamaImmutableRuns.length,
       totalImmutableResearchRunCount: immutableRuns.length,
