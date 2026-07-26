@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-26T11:31:31.359Z",
+  "runId": "20260726T113100Z__gbif-preserved-specimens__ed72e066b227",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AZ",
+  "pairKeys": [
+    "04001:cirsium-arvense",
+    "04005:melilotus-officinalis"
+  ],
+  "parameterHash": "ed72e066b22777adc557a1dac468422345f6d7345f3ede82e2393d858c65367a",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat and the occurrence-record publishers identified in the retained responses"
+  },
+  "terms": {
+    "license": "Retained occurrence records declare CC BY 4.0, CC BY-NC 4.0, or CC0 1.0 record-level licenses.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-26T11:31:21.467Z",
+    "freshnessDate": "2026-07-25T20:23:09.066+00:00"
+  },
+  "geography": {
+    "method": "Registered exact provider county-equivalent text resolution: GBIF county text Apache uniquely resolves to active FIPS 04001, Apache County, Arizona; GBIF county text Coconino or Coconino County uniquely resolves to active FIPS 04005, Coconino County, Arizona.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinate-derived county routing is forbidden for this run. Only explicit registered GBIF county text was considered; coordinates were neither used nor permitted to derive county identity."
+  },
+  "taxonomy": {
+    "method": "Registered strict GBIF EXACT species match with confidence at least 95 and exact canonical binomial agreement; Cirsium arvense matched GBIF speciesKey 3113414 at confidence 99, and Melilotus officinalis matched GBIF speciesKey 8193111 at confidence 98.",
+    "targetSpeciesIds": [
+      "cirsium-arvense",
+      "melilotus-officinalis"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "GBIF occurrence key",
+      "datasetKey",
+      "gbifID",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "gbif-species-match-cirsium-arvense",
+        "url": "https://api.gbif.org/v1/species/match?name=Cirsium+arvense&rank=SPECIES&strict=true",
+        "purpose": "Resolve the exact registered target binomial to a stable GBIF species key before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:31:21.467Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "gbif-occurrences-cirsium-arvense",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3113414&limit=300&offset=0",
+        "purpose": "Acquire the complete registered Arizona PRESERVED_SPECIMEN and PRESENT occurrence result set for exact speciesKey 3113414, then screen only explicit county-equivalent text for the leased pair.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:31:21.875Z",
+        "declaredRecordCount": 11,
+        "receivedRecordCount": 11,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "gbif-species-match-melilotus-officinalis",
+        "url": "https://api.gbif.org/v1/species/match?name=Melilotus+officinalis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the exact registered target binomial to a stable GBIF species key before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:31:22.263Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "gbif-occurrences-melilotus-officinalis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8193111&limit=300&offset=0",
+        "purpose": "Acquire page 0 of the complete registered Arizona PRESERVED_SPECIMEN and PRESENT occurrence result set for exact speciesKey 8193111, then screen only explicit county-equivalent text for the leased pair.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:31:22.603Z",
+        "declaredRecordCount": 315,
+        "receivedRecordCount": 300,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": false
+        }
+      },
+      {
+        "requestGroupId": "gbif-occurrences-melilotus-officinalis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8193111&limit=300&offset=300",
+        "purpose": "Acquire terminal page 1 of the complete registered Arizona PRESERVED_SPECIMEN and PRESENT occurrence result set for exact speciesKey 8193111, then screen only explicit county-equivalent text for the leased pair.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:31:31.078Z",
+        "declaredRecordCount": 315,
+        "receivedRecordCount": 15,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 1,
+          "offset": 300,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF record silence, missing county text, rejected candidates, and empty or failed requests never support verified absence or not-detected claims."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+      "sha256": "77f807e28dd2c845eb8df7419d0e07e2e2347a441b1491f891b5c18900e46655",
+      "bytes": 90559
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+      "sha256": "eda340c3cc65e00319c1c0f8846e30209ccee767abd62c4c076a2396e776fc09",
+      "bytes": 2280310
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000300.json",
+      "sha256": "0b6a4d4be6df9f158972d3871c58405c8d33b8bb417373ae412a5ff018001b35",
+      "bytes": 91934
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-cirsium-arvense.json",
+      "sha256": "ec5a89284a28183bec6a9740e4c8dc56081486269cb1fb5d5f4b20b8bc94d372",
+      "bytes": 451
+    },
+    {
+      "path": "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-melilotus-officinalis.json",
+      "sha256": "79f0fb0830b66d7568b1458b110c6e151e32a040bf7084df38c6ab49cf49f5ca",
+      "bytes": 467
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "Accepted records are historical point-scale preserved-specimen evidence and do not imply countywide abundance or current distribution.",
+    "The live searches have no fixed snapshot identifier; retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Thirty provider candidates were rejected for missing or ambiguous county text or source contradiction; none created a negative determination."
+  ]
+}
