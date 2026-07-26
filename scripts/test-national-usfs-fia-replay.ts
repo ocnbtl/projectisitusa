@@ -65,6 +65,8 @@ const mappingReconciliation = {
   exact_catalog_mappings: 1,
   distinct_catalog_species: 1,
   duplicate_species_symbol_mappings: 0,
+  selected_exact_catalog_mappings: 1,
+  selected_distinct_catalog_species: 1,
   no_catalog_match_symbols: 0,
   ambiguous_dictionary_symbols: 0,
   duplicate_reference_rows: 0,

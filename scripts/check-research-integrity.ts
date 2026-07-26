@@ -810,9 +810,9 @@ for (const bundle of immutableRuns) {
           receipt.counts.duplicate_records &&
         reference.replayReconciliation.blocked_pairs ===
           bundle.outcomes.filter((entry) => entry.status === "blocked").length &&
-        reference.mappingReconciliation.exact_catalog_mappings ===
+        reference.mappingReconciliation.selected_exact_catalog_mappings ===
           reference.mappings.length &&
-        reference.mappingReconciliation.distinct_catalog_species ===
+        reference.mappingReconciliation.selected_distinct_catalog_species ===
           new Set(reference.mappings.map((entry) => entry.speciesId)).size,
       `Immutable FIA run ${receipt.run_id} reconciliation counts changed.`,
     );
@@ -1165,13 +1165,32 @@ for (const acquisition of nationalFiaAcquisitions) {
       invasiveReferenceRows: invasiveRows,
     });
     assert(
-      stableJson(mapping.mappings) === stableJson(reference.mappings) &&
-        stableJson(mapping.reconciliation) ===
-          stableJson(reference.mappingReconciliation),
+      stableJson(
+        mapping.mappings.filter((entry) =>
+          reference.mappings.some(
+            (candidate) =>
+              candidate.symbol === entry.symbol &&
+              candidate.speciesId === entry.speciesId,
+          )
+        ),
+      ) === stableJson(reference.mappings) &&
+        stableJson({
+          ...mapping.reconciliation,
+          selected_exact_catalog_mappings: reference.mappings.length,
+          selected_distinct_catalog_species: new Set(
+            reference.mappings.map((entry) => entry.speciesId),
+          ).size,
+        }) === stableJson(reference.mappingReconciliation),
       `Integrity replay changed FIA taxon mapping for ${bundle.receipt.run_id}.`,
     );
+    const selectedMapping = {
+      mappings: reference.mappings,
+      reconciliation: reference.mappingReconciliation as ReturnType<
+        typeof buildFiaTaxonMappings
+      >["reconciliation"],
+    };
     const applicableSpecies = [...new Map(
-      mapping.mappings.map((mappingEntry) => [
+      selectedMapping.mappings.map((mappingEntry) => [
         mappingEntry.speciesId,
         {
           speciesId: mappingEntry.speciesId,
@@ -1216,8 +1235,8 @@ for (const acquisition of nationalFiaAcquisitions) {
         parameters: bundle.receipt.parameters,
       },
       observationRows,
-      mappings: mapping.mappings,
-      mappingReconciliation: mapping.reconciliation,
+      mappings: selectedMapping.mappings,
+      mappingReconciliation: selectedMapping.reconciliation,
       completedAt: bundle.receipt.finished_at,
       headerOnly: reference.stateArtifact.rowCount === 0,
     });

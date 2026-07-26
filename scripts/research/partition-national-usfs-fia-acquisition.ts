@@ -103,7 +103,15 @@ function parseArguments(argv: string[]) {
     values.set(key, value);
   }
   const unsupported = [...values.keys()].filter(
-    (key) => !["acquisition", "states", "recorded-at", "plan-only"].includes(key),
+    (key) =>
+      ![
+        "acquisition",
+        "states",
+        "recorded-at",
+        "plan-only",
+        "species",
+        "include-pair-keys",
+      ].includes(key),
   );
   assert(
     unsupported.length === 0,
@@ -131,11 +139,19 @@ function parseArguments(argv: string[]) {
     planOnlyValue === "true" || planOnlyValue === "false",
     "--plan-only must be true or false.",
   );
+  const includePairKeysValue = values.get("include-pair-keys") ?? "false";
+  assert(
+    includePairKeysValue === "true" || includePairKeysValue === "false",
+    "--include-pair-keys must be true or false.",
+  );
+  const speciesArgument = values.get("species") ?? "ALL";
   return {
     acquisitionId,
     stateArgument,
     recordedAt: new Date(recordedMilliseconds).toISOString(),
     planOnly: planOnlyValue === "true",
+    includePairKeys: includePairKeysValue === "true",
+    speciesArgument,
   };
 }
 
@@ -393,22 +409,62 @@ async function main() {
     const observationRows = parseFiaCsv<FiaObservationRow>(
       readFileSync(path.join(ROOT, stateArtifact.path)),
     );
-    const mapping = buildFiaTaxonMappings({
+    const fullMapping = buildFiaTaxonMappings({
       stateFips: state.stateFips,
       catalog,
       dictionaryRows,
       invasiveReferenceRows: invasiveRows,
     });
-    if (mapping.mappings.length === 0) {
+    if (fullMapping.mappings.length === 0) {
       skippedStates.push({
         stateCode,
         reason:
           "No state-listed FIA invasive symbol has a one-to-one exact catalog scientific-name match.",
         stateInvasiveSymbols:
-          mapping.reconciliation.state_invasive_symbols,
+          fullMapping.reconciliation.state_invasive_symbols,
       });
       continue;
     }
+    const requestedSpeciesIds = options.speciesArgument === "ALL"
+      ? null
+      : [...new Set(
+          options.speciesArgument
+            .split(",")
+            .map((entry) => entry.trim())
+            .filter(Boolean),
+        )].sort(compareText);
+    assert(
+      requestedSpeciesIds === null || requestedSpeciesIds.length > 0,
+      "--species must be ALL or a comma-separated list of catalog species IDs.",
+    );
+    const fullMappedSpecies = new Set(
+      fullMapping.mappings.map((entry) => entry.speciesId),
+    );
+    if (requestedSpeciesIds) {
+      const missingSpecies = requestedSpeciesIds.filter(
+        (speciesId) => !fullMappedSpecies.has(speciesId),
+      );
+      assert(
+        missingSpecies.length === 0,
+        `${stateCode} FIA scope does not map requested species: ${missingSpecies.join(", ")}.`,
+      );
+    }
+    const selectedMappings = requestedSpeciesIds
+      ? fullMapping.mappings.filter((entry) =>
+          requestedSpeciesIds.includes(entry.speciesId)
+        )
+      : fullMapping.mappings;
+    const selectedDistinctSpecies = new Set(
+      selectedMappings.map((entry) => entry.speciesId),
+    ).size;
+    const mapping = {
+      mappings: selectedMappings,
+      reconciliation: {
+        ...fullMapping.reconciliation,
+        selected_exact_catalog_mappings: selectedMappings.length,
+        selected_distinct_catalog_species: selectedDistinctSpecies,
+      },
+    };
     const counties = listCountyEquivalents(stateCode);
     const applicableSpecies = [...new Map(
       mapping.mappings.map((entry) => [
@@ -702,7 +758,7 @@ async function main() {
         "Coordinates and automatic retired-geography crosswalks were not used.",
       ],
       rerun_command:
-        `npm run research:partition:usfs-fia-national -- --acquisition ${options.acquisitionId} --states ${stateCode} --recorded-at ${options.recordedAt}`,
+        `npm run research:partition:usfs-fia-national -- --acquisition ${options.acquisitionId} --states ${stateCode} --species ${options.speciesArgument} --recorded-at ${options.recordedAt}`,
     };
     const validationResult: SourceAdapterResult = {
       ...result,
@@ -822,10 +878,14 @@ async function main() {
             rejections: run.receipt.counts.rejection_records,
             duplicateRecords: run.receipt.counts.duplicate_records,
             outcomes: run.receipt.counts.pair_outcomes,
+            speciesIds: run.receipt.requested_scope.species_ids,
             outputBytes: [...run.contents.values()].reduce(
               (total, value) => total + Buffer.byteLength(value),
               0,
             ),
+            ...(options.includePairKeys
+              ? { pairKeys: run.receipt.requested_scope.pair_keys }
+              : {}),
           })),
         },
         null,

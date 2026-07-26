@@ -47,6 +47,8 @@ export type FiaMappingReconciliation = {
   exact_catalog_mappings: number;
   distinct_catalog_species: number;
   duplicate_species_symbol_mappings: number;
+  selected_exact_catalog_mappings: number;
+  selected_distinct_catalog_species: number;
   no_catalog_match_symbols: number;
   ambiguous_dictionary_symbols: number;
   duplicate_reference_rows: number;
@@ -194,6 +196,8 @@ export function buildFiaTaxonMappings(input: {
       distinct_catalog_species: distinctCatalogSpecies,
       duplicate_species_symbol_mappings:
         mappings.length - distinctCatalogSpecies,
+      selected_exact_catalog_mappings: mappings.length,
+      selected_distinct_catalog_species: distinctCatalogSpecies,
       no_catalog_match_symbols: noCatalogMatchSymbols,
       ambiguous_dictionary_symbols: ambiguousDictionarySymbols,
       duplicate_reference_rows: [...symbolCounts.values()].reduce(
