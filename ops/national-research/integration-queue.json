@@ -712,7 +712,7 @@
       "queueId": "queue-lease-fia-canary-mo-20260726-r1-1",
       "jobId": "fia-canary-mo-20260726-r1",
       "leaseId": "lease-fia-canary-mo-20260726-r1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-26T13:43:00Z",
       "manifestPath": "manifests/fia-canary-mo-20260726-r1__lease-fia-canary-mo-20260726-r1-1.json",
       "manifestHash": "9d80f55f1ae6f7e0f6ff1679465b818d2f0573fbae5cc998cbac8e473128c9a2",
@@ -758,6 +758,37 @@
         "path": "receipts/reviews/queue-lease-fia-canary-mo-20260726-r1-1.json",
         "sha256": "93d3ba88275bb7c0c9fbe3a90ea26c95e6c2383aae90ce15f2f5d4233a287f85",
         "bytes": 2195
+      },
+      "integratedAt": "2026-07-26T13:46:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "2b58065711dc621428632209a6677908b5498cc4",
+      "integrationChecks": [
+        {
+          "command": "git cherry-pick 8a084dc844fc0842247dd7f6c715b4f5f396bdce 3561713ab1b8fa761c3452c4fd29eebdc8eed07c",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check 65582dc...HEAD",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "orchestrator exact worker-to-main tree-entry comparison",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated both accepted Missouri commits without conflict and verified identical file modes and bytes for every reviewed path.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-fia-canary-mo-20260726-r1-1.json",
+        "sha256": "00e806078c852dd175cef2931cb9143426d2718a2aa7263229947bdffb95f617",
+        "bytes": 2148
       }
     },
     {

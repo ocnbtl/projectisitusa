@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-fia-canary-mo-20260726-r1-1",
+  "jobId": "fia-canary-mo-20260726-r1",
+  "leaseId": "lease-fia-canary-mo-20260726-r1-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-26T13:46:00Z",
+  "integrationCommit": "2b58065711dc621428632209a6677908b5498cc4",
+  "workerCommit": "8a084dc844fc0842247dd7f6c715b4f5f396bdce",
+  "workerBranchHead": "3561713ab1b8fa761c3452c4fd29eebdc8eed07c",
+  "manifestHash": "9d80f55f1ae6f7e0f6ff1679465b818d2f0573fbae5cc998cbac8e473128c9a2",
+  "changedPaths": [
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/artifacts/national-acquisition-reference.json",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/assertions.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/manifest.json",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/outcomes.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/receipt.json",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/rejections.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/reviews.ndjson",
+    "src/data/research/runs/20260726T133410000Z__usfs-fia-invasive-plants__d1e39d6b5734/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "git cherry-pick 8a084dc844fc0842247dd7f6c715b4f5f396bdce 3561713ab1b8fa761c3452c4fd29eebdc8eed07c",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 65582dc...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "orchestrator exact worker-to-main tree-entry comparison",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated both accepted Missouri commits without conflict and verified identical file modes and bytes for every reviewed path."
+}
