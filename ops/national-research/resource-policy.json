@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "filesystemPath": "/Users/ocean/Code/Project Isitusa",
+  "minimumFreeBytesBeforeDispatch": 3221225472,
+  "minimumFreeBytesAfterWorker": 2684354560,
+  "minimumFreeBytesBeforeHeavyTask": 4294967296,
+  "reservedBytesPerWorker": 536870912,
+  "maximumArtifactBytesPerWorker": 20971520,
+  "maximumWorkerMemoryMb": 768,
+  "maximumWorkerWallMinutes": 45,
+  "heavyTaskConcurrency": 1,
+  "lightweightConcurrencyTiers": [
+    {
+      "minimumFreeBytes": 3221225472,
+      "maximumWorkers": 2
+    },
+    {
+      "minimumFreeBytes": 8589934592,
+      "maximumWorkers": 5
+    },
+    {
+      "minimumFreeBytes": 17179869184,
+      "maximumWorkers": 10
+    }
+  ],
+  "disposablePaths": [
+    ".next",
+    ".cache/research/isitusa.sqlite",
+    "playwright-report",
+    "test-results"
+  ],
+  "protectedPaths": [
+    ".git",
+    "src/data/research/national-acquisitions",
+    "src/data/research/runs",
+    "src/data/research/evidence-assertions.ndjson",
+    "src/data/research/review-events.ndjson",
+    "src/data/research/rejections.ndjson",
+    "ops/national-research/receipts",
+    "ops/national-research/manifests"
+  ]
+}
