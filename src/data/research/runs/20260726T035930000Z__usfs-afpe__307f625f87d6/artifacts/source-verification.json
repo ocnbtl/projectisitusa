@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "usfs-afpe",
+  "stateCode": "NM",
+  "acquisitionId": "20240328__usfs-afpe-v1-0__ca1988d2f900",
+  "acquisitionReceiptSha256": "d257c5ce1564cfd02517e1755f3671ccd10496a107a898b404ff6d534104f2e2",
+  "verifiedAt": "2026-07-26T03:59:30.000Z",
+  "snapshot": {
+    "archiveVersion": "1.0",
+    "archiveSha256": "ca1988d2f900a71ff5efab2b32642f757d64189c4bd0dd2dbdda98a6cf222383",
+    "archiveBytes": 5396559,
+    "sourceDataLastUpdated": "2023-04",
+    "license": "CC0-1.0",
+    "doi": "10.4231/HWQF-V087"
+  },
+  "policies": {
+    "publisher": "Purdue University Research Repository, USDA Forest Service Northern Research Station, and Forest Health Protection",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+    "geography_policy": "Only exact five-digit source FIPS matching one active national-v1 county equivalent may publish. Retired, abolished, superseded, missing, and out-of-scope FIPS are never reassigned automatically.",
+    "taxon_policy": "Only the 13 hash-pinned, manually reviewed DCA-column mappings may publish. The remaining common-name-only columns are not automatically mapped.",
+    "positive_semantics": "A binary value of 1 supports recorded-present historical county detection evidence only.",
+    "negative_semantics": "A binary value of 0 may complete an applicable source screen as no-qualifying-evidence. It never supports verified absence or survey non-detection.",
+    "freshness_status": "stale-historical",
+    "snapshot_completeness": "The archive is complete for the published v1.0 bundle but is missing 19 current national-v1 county equivalents and is not a current pest inventory.",
+    "known_contradictions": [
+      "PURR metadata describes 74 insects plus 15 pathogens, or 89 pests, while the published CSV and dictionary contain 93 DCA pest columns.",
+      "The current online AFPE v2 application is newer and volatile, but it has no equivalent CC0 snapshot manifest and was not substituted for this archive."
+    ]
+  },
+  "stateReconciliation": {
+    "source_rows": 33,
+    "source_cells": 429,
+    "matched_current_county_rows": 33,
+    "unregistered_or_retired_rows": 0,
+    "missing_current_counties": 0,
+    "duplicate_source_rows": 0,
+    "duplicate_source_cells": 0,
+    "conflicting_duplicate_cells": 0,
+    "positive_pairs": 11,
+    "no_qualifying_evidence_pairs": 418,
+    "blocked_pairs": 0,
+    "assertion_pairs": 11,
+    "rejection_events": 0
+  }
+}

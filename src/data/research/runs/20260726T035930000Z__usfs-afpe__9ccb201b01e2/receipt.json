@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260726T035930000Z__usfs-afpe__9ccb201b01e2",
+  "status": "complete",
+  "started_at": "2026-07-26T03:59:30.000Z",
+  "finished_at": "2026-07-26T03:59:30.000Z",
+  "actor_type": "adapter",
+  "actor_id": "usfs-afpe-archive@1.0.0",
+  "source_id": "usfs-afpe",
+  "source_registry_hash": "4de49fa193b72da9da6f02c00ee21ed2f6583e9f56d484926f89614bef74fe11",
+  "adapter_id": "usfs-afpe-archive",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "c5c796276cfec7b0e2bd483eb9985e85a3f93ac512c352978ec6631c724a993f",
+  "code_commit": "69d4f37f829525a0338f8efd3dcb85bf2d639df5",
+  "parameter_hash": "deae91ba09d49d468a85549a6639e73b53e121d188102c9bbc0d2aa97b91a7e4",
+  "parameters": {
+    "stateCode": "DC",
+    "mode": "national-archive-replay",
+    "nationalAcquisitionId": "20240328__usfs-afpe-v1-0__ca1988d2f900",
+    "nationalAcquisitionReceiptSha256": "d257c5ce1564cfd02517e1755f3671ccd10496a107a898b404ff6d534104f2e2",
+    "archiveVersion": "1.0",
+    "mappingVersion": "2026-07-25.1",
+    "mappingSha256": "e7ab66984210cb4d26bb2e574c2b6e69b6b8cce6dfb683a87c6bcd9deea5b0ef",
+    "candidateLimit": 13,
+    "candidatePairs": [
+      "11001:anarsia-lineatella",
+      "11001:aspidiotus-duplex",
+      "11001:cryphonectria-parasitica",
+      "11001:discula-destructiva",
+      "11001:dryocosmus-kuriphilus",
+      "11001:emerald-ash-borer",
+      "11001:homadaula-albizziae",
+      "11001:icerya-purchasi",
+      "11001:ophiognomonia-clavigignenti-juglandacearum",
+      "11001:ophiostoma-ulmi",
+      "11001:phytophthora-cinnamomi",
+      "11001:popillia-japonica",
+      "11001:raffaelea-lauricola"
+    ],
+    "sourceDataLastUpdated": "2023-04"
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "anarsia-lineatella",
+      "aspidiotus-duplex",
+      "cryphonectria-parasitica",
+      "discula-destructiva",
+      "dryocosmus-kuriphilus",
+      "emerald-ash-borer",
+      "homadaula-albizziae",
+      "icerya-purchasi",
+      "ophiognomonia-clavigignenti-juglandacearum",
+      "ophiostoma-ulmi",
+      "phytophthora-cinnamomi",
+      "popillia-japonica",
+      "raffaelea-lauricola"
+    ],
+    "pair_keys": [
+      "11001:anarsia-lineatella",
+      "11001:aspidiotus-duplex",
+      "11001:cryphonectria-parasitica",
+      "11001:discula-destructiva",
+      "11001:dryocosmus-kuriphilus",
+      "11001:emerald-ash-borer",
+      "11001:homadaula-albizziae",
+      "11001:icerya-purchasi",
+      "11001:ophiognomonia-clavigignenti-juglandacearum",
+      "11001:ophiostoma-ulmi",
+      "11001:phytophthora-cinnamomi",
+      "11001:popillia-japonica",
+      "11001:raffaelea-lauricola"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260726T035930000Z__usfs-afpe__9ccb201b01e2/artifacts/national-acquisition-reference.json",
+      "sha256": "d6706a4123ea4d89dfcad4ecd48f8841c96e6e9d3a4f8ba9c0e7569fee4d4e8b",
+      "bytes": 1620,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260726T035930000Z__usfs-afpe__9ccb201b01e2/artifacts/source-verification.json",
+      "sha256": "112eee2fc1728ac3e24c17f6f2771d8cec1fb062214423cc258a6fe9e776f627",
+      "bytes": 2460,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260726T035930000Z__usfs-afpe__9ccb201b01e2/assertions.ndjson",
+      "sha256": "76f06346bc1e6aba092395a2e816cc42e78528c290a036d003f66a1493044552",
+      "bytes": 17205,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260726T035930000Z__usfs-afpe__9ccb201b01e2/reviews.ndjson",
+      "sha256": "31f3a3de4369b1e880a4fad5d09b26b51b19874aab54e8cfab7c8f54187b201c",
+      "bytes": 7317,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260726T035930000Z__usfs-afpe__9ccb201b01e2/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260726T035930000Z__usfs-afpe__9ccb201b01e2/outcomes.ndjson",
+      "sha256": "0dc0b788f4b6e787ce82bd0a260814d7142a253d7f3da6a419589fe48a3aaf16",
+      "bytes": 9106,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 13,
+    "candidate_records": 13,
+    "assertion_events": 8,
+    "review_events": 8,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 13
+  },
+  "errors": [],
+  "known_caveats": [
+    "County detection compilation. The retained v1.0 snapshot uses underlying data last updated in April 2023 and is stale for current-source readiness. Missing values and binary zero cells do not establish absence or non-detection.",
+    "AFPE v1.0 is stale historical evidence and does not satisfy a current-source readiness gate.",
+    "A value of 0 supports only a completed no-qualifying-evidence source screen, never verified absence or not-detected."
+  ],
+  "source_warnings": [
+    "AFPE v1.0 underlying pest data was last updated in April 2023 and is stale for current-source readiness.",
+    "PURR metadata describes 89 pests while the published CSV and dictionary contain 93 DCA pest columns.",
+    "The live AFPE v2 application is a separate volatile source and was not substituted for this hash-pinned CC0 archive."
+  ],
+  "deviations": [
+    "The CC0 national archive was acquired once and partitioned locally without state-specific network requests.",
+    "Only 13 versioned, manually reviewed DCA mappings were processed.",
+    "Retired, abolished, superseded, missing, and unknown FIPS were never crosswalked automatically."
+  ],
+  "rerun_command": "npm run research:partition:usfs-afpe-national -- --acquisition 20240328__usfs-afpe-v1-0__ca1988d2f900 --states DC --recorded-at 2026-07-26T03:59:30.000Z"
+}
