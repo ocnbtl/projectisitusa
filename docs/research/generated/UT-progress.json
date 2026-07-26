@@ -5,34 +5,59 @@
   "generatedAt": "2026-07-26T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
-    "speciesMode": "explicit",
+    "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/UT.json",
     "applicabilityAsOf": "2026-07-25",
+    "catalogSpeciesCount": 2504,
+    "stateSpeciesDenominator": 2504,
     "applicableSpeciesCount": 18,
-    "undeterminedSpeciesPolicy": "excluded",
+    "notApplicableSpeciesCount": 0,
+    "unknownSpeciesCount": 2486,
+    "blockedSpeciesCount": 0,
+    "explicitApplicabilityDecisionCount": 18,
+    "resolvedStateSpeciesDecisionCount": 2504,
+    "boundedAcquisitionSpeciesCount": 18,
+    "defaultApplicability": "unknown",
+    "fullCatalogApplicabilityComplete": false,
+    "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 18,
+    "speciesCount": 2504,
     "countyCount": 29,
-    "totalPairs": 522,
+    "totalPairs": 72616,
+    "resolvablePairCount": 72616,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
     "verifiedPresent": 46,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 476,
-    "notResearched": 0,
-    "determinationCoveragePercent": 8.81,
-    "researchCoveragePercent": 100,
+    "notResearched": 72094,
+    "determinationCoveragePercent": 0.06,
+    "researchCoveragePercent": 0.72,
     "explicitOutcomePairCount": 522,
-    "explicitOutcomeCoveragePercent": 100,
+    "explicitOutcomeCoveragePercent": 0.7188,
     "conflictCount": 0,
     "evidenceRecordCount": 46,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 46,
     "rejectionRecordCount": 7,
-    "researchRunCount": 6
+    "researchRunCount": 6,
+    "boundedAcquisition": {
+      "speciesCount": 18,
+      "totalPairs": 522,
+      "verifiedPresent": 46,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 476,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 522,
+      "explicitOutcomeCoveragePercent": 100
+    }
   },
   "migrationCandidates": {
     "sourceAssertionCount": 0,
@@ -346,30 +371,30 @@
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
     "totalCells": 36,
-    "applicableCells": 31,
-    "notApplicableCells": 5,
+    "applicableCells": 18,
+    "notApplicableCells": 18,
     "completeCells": 18,
-    "incompleteCells": 13,
+    "incompleteCells": 0,
     "blockedCells": 0,
     "currentCells": 5,
     "staleCells": 13,
-    "undatedCells": 13,
-    "applicableCompletionPercent": 58.06,
-    "currentCompletePercent": 16.13,
+    "undatedCells": 0,
+    "applicableCompletionPercent": 100,
+    "currentCompletePercent": 27.78,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
-    "requiredCurrentSourcesProcessed": false,
+    "requiredCurrentSourcesProcessed": true,
     "categoryCompletion": [
       {
         "category": "fungi-diseases",
-        "applicableCells": 12,
+        "applicableCells": 6,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "insects",
-        "applicableCells": 14,
+        "applicableCells": 7,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
@@ -407,7 +432,7 @@
       },
       {
         "priority": "baseline",
-        "applicableCells": 26,
+        "applicableCells": 13,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
@@ -415,9 +440,9 @@
     "requiredSourceStatus": [
       {
         "sourceId": "usgs-nas",
-        "applicableCells": 18,
+        "applicableCells": 5,
         "currentCompleteCells": 5,
-        "processed": false
+        "processed": true
       }
     ]
   },
@@ -430,10 +455,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "aspidiotus-duplex",
@@ -443,10 +467,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -456,10 +479,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "discula-destructiva",
@@ -469,10 +491,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "dryocosmus-kuriphilus",
@@ -482,10 +503,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "homadaula-albizziae",
@@ -495,10 +515,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "icerya-purchasi",
@@ -508,10 +527,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -521,10 +539,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "popillia-japonica",
@@ -534,10 +551,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "raffaelea-lauricola",
@@ -547,10 +563,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 292
+      "priorityScore": 291
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -560,10 +575,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 28,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 282
+      "priorityScore": 281
     },
     {
       "speciesId": "cipangopaludina-chinensis",
@@ -583,10 +597,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 24,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 242
+      "priorityScore": 241
     },
     {
       "speciesId": "lythrum-salicaria",
@@ -636,10 +649,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     }
   ]
 }

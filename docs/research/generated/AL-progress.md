@@ -15,7 +15,7 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Determination coverage: `9.12%`
 - Research coverage: `66.11%`
 - Explicit outcome coverage: `0.6241%`
-- Applicable protocol cells: `14681`
+- Applicable protocol cells: `14437`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.09%`
 - Current protocol completion: `0.00%`

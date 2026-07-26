@@ -27,15 +27,16 @@ expectFailure(() => parsePrepareDataOptions(["--state", "AL"]), /requires --as-o
 expectFailure(() => parsePrepareDataOptions(["--as-of", "2026-02-30"]), /valid calendar date/);
 
 const config: StateResearchConfigFile = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   states: [
     {
       stateCode: "ZZ",
       mode: "authoritative",
       speciesScope: {
         mode: "catalog-all",
-        applicabilityPath: null,
-        undeterminedSpeciesPolicy: "included-grandfathered-baseline",
+        applicabilityPath: "zz.json",
+        defaultApplicability: "unknown",
+        undeterminedSpeciesPolicy: "included-as-unknown",
       },
       bootstrapLedgerAllowed: true,
       compatibilityPublication: true,
@@ -46,9 +47,10 @@ const config: StateResearchConfigFile = {
       stateCode: "AK",
       mode: "research-only",
       speciesScope: {
-        mode: "explicit",
+        mode: "sparse-default",
         applicabilityPath: "ak.json",
-        undeterminedSpeciesPolicy: "excluded",
+        defaultApplicability: "unknown",
+        undeterminedSpeciesPolicy: "included-as-unknown",
       },
       bootstrapLedgerAllowed: false,
       compatibilityPublication: false,
@@ -60,8 +62,9 @@ const config: StateResearchConfigFile = {
       mode: "authoritative",
       speciesScope: {
         mode: "catalog-all",
-        applicabilityPath: null,
-        undeterminedSpeciesPolicy: "included-grandfathered-baseline",
+        applicabilityPath: "al.json",
+        defaultApplicability: "unknown",
+        undeterminedSpeciesPolicy: "included-as-unknown",
       },
       bootstrapLedgerAllowed: true,
       compatibilityPublication: true,
@@ -98,7 +101,7 @@ assert.equal(
 );
 
 expectFailure(
-  () => buildPrepareDataPlan({ schemaVersion: 1, states: [config.states[1]!] }, "2026-07-16"),
+  () => buildPrepareDataPlan({ schemaVersion: 2, states: [config.states[1]!] }, "2026-07-16"),
   /at least one compatibility publication state/,
 );
 expectFailure(() => assertLegacyMatrixWriteAllowed(config, "AL"), /compiler-owned/);

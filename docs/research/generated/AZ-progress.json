@@ -5,42 +5,67 @@
   "generatedAt": "2026-07-26T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
-    "speciesMode": "explicit",
+    "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AZ.json",
     "applicabilityAsOf": "2026-07-25",
+    "catalogSpeciesCount": 2504,
+    "stateSpeciesDenominator": 2504,
     "applicableSpeciesCount": 22,
-    "undeterminedSpeciesPolicy": "excluded",
+    "notApplicableSpeciesCount": 0,
+    "unknownSpeciesCount": 2482,
+    "blockedSpeciesCount": 0,
+    "explicitApplicabilityDecisionCount": 22,
+    "resolvedStateSpeciesDecisionCount": 2504,
+    "boundedAcquisitionSpeciesCount": 22,
+    "defaultApplicability": "unknown",
+    "fullCatalogApplicabilityComplete": false,
+    "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 22,
+    "speciesCount": 2504,
     "countyCount": 15,
-    "totalPairs": 330,
-    "verifiedPresent": 41,
+    "totalPairs": 37560,
+    "resolvablePairCount": 37560,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
+    "verifiedPresent": 43,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 242,
-    "notResearched": 47,
-    "determinationCoveragePercent": 12.42,
-    "researchCoveragePercent": 85.76,
-    "explicitOutcomePairCount": 283,
-    "explicitOutcomeCoveragePercent": 85.7576,
+    "notResearched": 37275,
+    "determinationCoveragePercent": 0.11,
+    "researchCoveragePercent": 0.76,
+    "explicitOutcomePairCount": 285,
+    "explicitOutcomeCoveragePercent": 0.7588,
     "conflictCount": 0,
-    "evidenceRecordCount": 91,
+    "evidenceRecordCount": 225,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 91,
-    "rejectionRecordCount": 38,
-    "researchRunCount": 8
+    "runEvidenceRecordCount": 225,
+    "rejectionRecordCount": 68,
+    "researchRunCount": 9,
+    "boundedAcquisition": {
+      "speciesCount": 22,
+      "totalPairs": 330,
+      "verifiedPresent": 43,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 242,
+      "notResearched": 45,
+      "researchCoveragePercent": 86.36,
+      "explicitOutcomePairs": 285,
+      "explicitOutcomeCoveragePercent": 86.3636
+    }
   },
   "migrationCandidates": {
     "sourceAssertionCount": 3,
     "distinctPairCount": 3,
-    "reviewedSourceAssertionCount": 1,
-    "remainingSourceAssertionCount": 2,
-    "reviewedDistinctPairCount": 1,
-    "remainingDistinctPairCount": 2
+    "reviewedSourceAssertionCount": 3,
+    "remainingSourceAssertionCount": 0,
+    "reviewedDistinctPairCount": 3,
+    "remainingDistinctPairCount": 0
   },
   "statusDefinitions": {
     "verified-present": "At least one reputable source supports a recorded presence in the county.",
@@ -236,9 +261,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": "2026-07-16T07:26:55.916Z",
-      "evidencePairCount": 1,
-      "screenedSpeciesCount": 1
+      "lastRunAt": "2026-07-26T11:31:31.359Z",
+      "evidencePairCount": 3,
+      "screenedSpeciesCount": 3
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -346,16 +371,16 @@
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
     "totalCells": 66,
-    "applicableCells": 57,
-    "notApplicableCells": 9,
+    "applicableCells": 41,
+    "notApplicableCells": 25,
     "completeCells": 18,
-    "incompleteCells": 38,
+    "incompleteCells": 22,
     "blockedCells": 1,
     "currentCells": 5,
     "staleCells": 13,
-    "undatedCells": 39,
-    "applicableCompletionPercent": 31.58,
-    "currentCompletePercent": 8.77,
+    "undatedCells": 23,
+    "applicableCompletionPercent": 43.9,
+    "currentCompletePercent": 12.2,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -363,21 +388,21 @@
     "categoryCompletion": [
       {
         "category": "fungi-diseases",
-        "applicableCells": 18,
+        "applicableCells": 12,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "insects",
-        "applicableCells": 21,
+        "applicableCells": 14,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "plants",
-        "applicableCells": 8,
+        "applicableCells": 5,
         "currentCompleteCells": 1,
-        "currentCompletePercent": 12.5
+        "currentCompletePercent": 20
       },
       {
         "category": "wildlife",
@@ -401,13 +426,13 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 18,
+        "applicableCells": 15,
         "currentCompleteCells": 5,
-        "currentCompletePercent": 27.78
+        "currentCompletePercent": 33.33
       },
       {
         "priority": "baseline",
-        "applicableCells": 39,
+        "applicableCells": 26,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
@@ -421,7 +446,7 @@
       },
       {
         "sourceId": "usgs-nas",
-        "applicableCells": 22,
+        "applicableCells": 6,
         "currentCompleteCells": 5,
         "processed": false
       }
@@ -433,26 +458,12 @@
       "commonName": "Canada Thistle",
       "scientificName": "Cirsium arvense",
       "category": "plants",
-      "notResearchedCountyCount": 15,
+      "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usgs-nas"
+        "gbif-preserved-specimens"
       ],
-      "priorityScore": 15002
-    },
-    {
-      "speciesId": "melilotus-officinalis",
-      "commonName": "Yellow Sweetclover",
-      "scientificName": "Melilotus officinalis",
-      "category": "plants",
-      "notResearchedCountyCount": 15,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usgs-nas"
-      ],
-      "priorityScore": 15002
+      "priorityScore": 14001
     },
     {
       "speciesId": "matricaria-discoidea",
@@ -462,10 +473,21 @@
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usgs-nas"
+        "gbif-preserved-specimens"
       ],
-      "priorityScore": 14002
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "melilotus-officinalis",
+      "commonName": "Yellow Sweetclover",
+      "scientificName": "Melilotus officinalis",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
     },
     {
       "speciesId": "cyprinus-carpio",
@@ -489,10 +511,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "aspidiotus-duplex",
@@ -503,10 +524,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -517,10 +537,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "discula-destructiva",
@@ -531,10 +550,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "dryocosmus-kuriphilus",
@@ -545,10 +563,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "homadaula-albizziae",
@@ -559,10 +576,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -573,10 +589,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "ophiostoma-ulmi",
@@ -587,10 +602,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -601,10 +615,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "popillia-japonica",
@@ -615,10 +628,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "raffaelea-lauricola",
@@ -629,10 +641,9 @@
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 153
+      "priorityScore": 152
     },
     {
       "speciesId": "cipangopaludina-chinensis",
@@ -679,10 +690,9 @@
       "researchedUnresolvedCountyCount": 11,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 113
+      "priorityScore": 112
     },
     {
       "speciesId": "corbicula-fluminea",
@@ -717,10 +727,9 @@
       "researchedUnresolvedCountyCount": 8,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 83
+      "priorityScore": 82
     }
   ]
 }

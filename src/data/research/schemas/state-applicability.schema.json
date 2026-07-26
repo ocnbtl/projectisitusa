@@ -4,12 +4,23 @@
   "title": "Project Isitusa explicit state species applicability",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "stateCode", "asOf", "species", "undeterminedSpeciesPolicy"],
+  "required": ["schemaVersion", "stateCode", "asOf", "catalogSpeciesCount", "catalogSpeciesIdsSha256", "defaultDecision", "species", "undeterminedSpeciesPolicy"],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
     "asOf": { "type": "string", "format": "date" },
-    "undeterminedSpeciesPolicy": { "const": "excluded" },
+    "catalogSpeciesCount": { "type": "integer", "minimum": 1 },
+    "catalogSpeciesIdsSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "undeterminedSpeciesPolicy": { "const": "included-as-unknown" },
+    "defaultDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applicability", "note"],
+      "properties": {
+        "applicability": { "const": "unknown" },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
     "species": {
       "type": "array",
       "uniqueItems": true,
@@ -19,7 +30,7 @@
         "required": ["speciesId", "applicability", "priority", "basis"],
         "properties": {
           "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-          "applicability": { "const": "applicable" },
+          "applicability": { "enum": ["applicable", "not-applicable", "unknown", "blocked"] },
           "priority": { "enum": ["regulated", "high", "pilot", "baseline"] },
           "basis": {
             "type": "array",

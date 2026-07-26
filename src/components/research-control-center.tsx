@@ -27,6 +27,14 @@ import {
   useMemo,
   useState,
 } from "react";
+import {
+  resolveSparseCountyPairs,
+  type ResearchCatalogSpecies,
+} from "@/lib/research/pair-resolution";
+import type {
+  ResearchCountyFile,
+  ResearchPairRecord,
+} from "@/lib/research/types";
 
 export interface ResearchStateOption {
   stateCode: string;
@@ -35,12 +43,22 @@ export interface ResearchStateOption {
 
 interface ResearchProjectionScope {
   publicationMode: "authoritative" | "research-only";
-  speciesMode: "catalog-all" | "explicit";
+  speciesMode: "catalog-all" | "sparse-default";
   certificationScope: "state-baseline" | "bounded-pilot";
-  applicabilityPath: string | null;
-  applicabilityAsOf: string | null;
+  applicabilityPath: string;
+  applicabilityAsOf: string;
+  catalogSpeciesCount: number;
+  stateSpeciesDenominator: number;
   applicableSpeciesCount: number;
-  undeterminedSpeciesPolicy: "excluded" | "included-grandfathered-baseline";
+  notApplicableSpeciesCount: number;
+  unknownSpeciesCount: number;
+  blockedSpeciesCount: number;
+  explicitApplicabilityDecisionCount: number;
+  resolvedStateSpeciesDecisionCount: number;
+  boundedAcquisitionSpeciesCount: number;
+  defaultApplicability: "unknown";
+  fullCatalogApplicabilityComplete: boolean;
+  undeterminedSpeciesPolicy: "included-as-unknown";
   compatibilityPublication: boolean;
   protocolModel:
     | "explicit-source-species-legacy-migration"
@@ -59,6 +77,9 @@ export interface ResearchSummaryFile {
     speciesCount: number;
     countyCount: number;
     totalPairs: number;
+    resolvablePairCount: number;
+    notApplicablePairCount: number;
+    blockedPairCount: number;
     verifiedPresent: number;
     verifiedAbsent: number;
     notDetected: number;
@@ -67,6 +88,11 @@ export interface ResearchSummaryFile {
     determinationCoveragePercent: number;
     researchCoveragePercent: number;
     conflictCount: number;
+    boundedAcquisition: {
+      speciesCount: number;
+      totalPairs: number;
+      researchCoveragePercent: number;
+    };
   };
   counties: Array<{
     countyFips: string;
@@ -101,50 +127,8 @@ export interface ResearchSummaryFile {
   statusDefinitions: unknown;
 }
 
-interface CountyResearchFile {
-  schemaVersion: string | number;
-  stateCode: string;
-  countyFips: string;
-  countyName: string;
-  asOf: string;
-  generatedAt: string;
-  scope: ResearchProjectionScope;
-  summary: {
-    verifiedPresent: number;
-    verifiedAbsent: number;
-    notDetected: number;
-    researchedUnresolved: number;
-    notResearched: number;
-    researchCoveragePercent: number;
-  };
-  pairs: CountyResearchPair[];
-}
-
-interface CountyResearchPair {
-  speciesId: string;
-  commonName: string;
-  scientificName: string;
-  category: string;
-  displayStatus: string;
-  determinationStatus: string;
-  surveyStatus: string;
-  researchStatus: string;
-  freshnessStatus: string;
-  conflict: boolean;
-  evidence: Array<{
-    evidenceId: string;
-    sourceId: string;
-    sourceLabel: string;
-    url: string;
-    assertion: string;
-    scope: string;
-    observedAt: string | null;
-    reviewedAt: string | null;
-    caveat: string | null;
-    lineage: unknown;
-  }>;
-  screenedBySourceIds: string[];
-}
+type CountyResearchFile = ResearchCountyFile;
+type CountyResearchPair = ResearchPairRecord & { sparseDefault?: boolean };
 
 type ControlCenterView = "county" | "sources" | "queue";
 type PairSortKey =
@@ -232,7 +216,7 @@ function parseDate(value: string) {
   return new Date(normalized);
 }
 
-function formatDate(value: string | null) {
+function formatDate(value: string | null | undefined) {
   if (!value) return "Not recorded";
   const date = parseDate(value);
   if (Number.isNaN(date.getTime())) return value;
@@ -795,6 +779,7 @@ function isCountyResearchFile(value: unknown): value is CountyResearchFile {
     typeof candidate.countyFips === "string" &&
     typeof candidate.countyName === "string" &&
     Boolean(candidate.summary) &&
+    Boolean(candidate.pairResolution) &&
     Array.isArray(candidate.pairs)
   );
 }
@@ -841,15 +826,24 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
       setCountyData(null);
 
       try {
-        const response = await fetch(
-          `/generated/research/${encodeURIComponent(summary.stateCode)}/counties/${encodeURIComponent(selectedCountyFips)}.json`,
-          { cache: "no-store", signal: controller.signal },
-        );
-        if (!response.ok) {
-          throw new Error(`County file request failed with status ${response.status}.`);
+        const [countyResponse, catalogResponse] = await Promise.all([
+          fetch(
+            `/generated/research/${encodeURIComponent(summary.stateCode)}/counties/${encodeURIComponent(selectedCountyFips)}.json`,
+            { cache: "no-store", signal: controller.signal },
+          ),
+          fetch("/generated/species.json", {
+            cache: "no-store",
+            signal: controller.signal,
+          }),
+        ]);
+        if (!countyResponse.ok) {
+          throw new Error(`County file request failed with status ${countyResponse.status}.`);
+        }
+        if (!catalogResponse.ok) {
+          throw new Error(`Species catalog request failed with status ${catalogResponse.status}.`);
         }
 
-        const data: unknown = await response.json();
+        const data: unknown = await countyResponse.json();
         if (!isCountyResearchFile(data)) {
           throw new Error("County file has an invalid research data shape.");
         }
@@ -866,7 +860,29 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
           throw new Error("County file scope does not match the state summary.");
         }
 
-        setCountyData(data);
+        const catalog: unknown = await catalogResponse.json();
+        if (!Array.isArray(catalog)) {
+          throw new Error("Species catalog has an invalid data shape.");
+        }
+        const catalogSpecies = catalog.filter(
+          (entry): entry is ResearchCatalogSpecies =>
+            Boolean(entry) &&
+            typeof entry === "object" &&
+            typeof (entry as Partial<ResearchCatalogSpecies>).id === "string" &&
+            typeof (entry as Partial<ResearchCatalogSpecies>).commonName === "string" &&
+            typeof (entry as Partial<ResearchCatalogSpecies>).scientificName === "string" &&
+            typeof (entry as Partial<ResearchCatalogSpecies>).category === "string",
+        );
+        if (catalogSpecies.length !== catalog.length) {
+          throw new Error("Species catalog contains an invalid research entry.");
+        }
+        setCountyData({
+          ...data,
+          pairs: resolveSparseCountyPairs({
+            catalogSpecies,
+            county: data,
+          }),
+        });
         setLoadState("success");
       } catch (error) {
         if (error instanceof Error && error.name === "AbortError") return;
@@ -1042,7 +1058,7 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
                 </p>
               </div>
               <p className="text-sm font-medium tabular-nums text-[var(--foreground)]">
-                {formatPercent(countyData.summary.researchCoveragePercent)} research coverage
+                {formatPercent(countyData.summary.researchCoveragePercent)} full-catalog research coverage
               </p>
             </div>
 
@@ -1465,16 +1481,18 @@ function ResearchControlCenterContent({
 }) {
   const [activeView, setActiveView] = useState<ControlCenterView>("county");
   const stateMetrics = [
-    ["Species", formatNumber(summary.summary.speciesCount)],
+    ["Catalog species", formatNumber(summary.summary.speciesCount)],
     ["County equivalents", formatNumber(summary.summary.countyCount)],
-    ["Total pairs", formatNumber(summary.summary.totalPairs)],
+    ["Full denominator", formatNumber(summary.summary.totalPairs)],
+    ["Bounded species", formatNumber(summary.scope.boundedAcquisitionSpeciesCount)],
+    ["Unknown decisions", formatNumber(summary.scope.unknownSpeciesCount)],
     ["Verified present", formatNumber(summary.summary.verifiedPresent)],
     ["Verified absent", formatNumber(summary.summary.verifiedAbsent)],
     ["Not detected", formatNumber(summary.summary.notDetected)],
     ["Unresolved", formatNumber(summary.summary.researchedUnresolved)],
     ["Not researched", formatNumber(summary.summary.notResearched)],
-    ["Determination coverage", formatPercent(summary.summary.determinationCoveragePercent)],
-    ["Research coverage", formatPercent(summary.summary.researchCoveragePercent)],
+    ["Full research coverage", formatPercent(summary.summary.researchCoveragePercent)],
+    ["Bounded coverage", formatPercent(summary.summary.boundedAcquisition.researchCoveragePercent)],
     ["Conflicts", formatNumber(summary.summary.conflictCount)],
   ];
 
@@ -1523,11 +1541,11 @@ function ResearchControlCenterContent({
       >
         {summary.scope.certificationScope === "bounded-pilot" ? (
           <p>
-            <strong>Research-only bounded pilot.</strong> This projection covers {formatNumber(summary.scope.applicableSpeciesCount)} explicitly applicable species across {formatNumber(summary.summary.countyCount)} county equivalents. It does not publish to the normal county explorer and is not a certified state result.
+            <strong>Research-only bounded acquisition.</strong> The full denominator covers {formatNumber(summary.scope.catalogSpeciesCount)} catalog species and {formatNumber(summary.summary.totalPairs)} county-species pairs. Existing source work materializes {formatNumber(summary.scope.boundedAcquisitionSpeciesCount)} species, while every omitted eligible pair resolves to not researched. This is not a certified state result.
           </p>
         ) : (
           <p>
-            <strong className="text-[var(--foreground)]">State baseline projection.</strong> Public parity is required, but certification readiness remains a separate gate.
+            <strong className="text-[var(--foreground)]">State baseline projection.</strong> Public parity is required, and {formatNumber(summary.scope.unknownSpeciesCount)} state-species applicability decisions remain unknown. Certification readiness remains a separate gate.
           </p>
         )}
       </div>

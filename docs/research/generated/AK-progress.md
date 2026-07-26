@@ -4,26 +4,26 @@ Generated: `2026-07-26T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `23`
+- Species: `2504`
 - Counties: `30`
-- County-species pairs: `690`
-- Verified present: `25`
+- County-species pairs: `75120`
+- Verified present: `27`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `422`
-- Not researched: `243`
-- Determination coverage: `3.62%`
-- Research coverage: `64.78%`
-- Explicit outcome coverage: `64.7826%`
-- Applicable protocol cells: `59`
+- Researched unresolved: `424`
+- Not researched: `74669`
+- Determination coverage: `0.04%`
+- Research coverage: `0.60%`
+- Explicit outcome coverage: `0.6004%`
+- Applicable protocol cells: `42`
 - Current complete protocol cells: `5`
-- Protocol completion: `8.47%`
-- Current protocol completion: `8.47%`
-- Evidence records: `25`
-- Research runs: `8`
-- Rejection records: `208`
-- Deferred source assertions remaining: `4`
-- Deferred distinct pairs remaining: `4`
+- Protocol completion: `11.90%`
+- Current protocol completion: `11.90%`
+- Evidence records: `29`
+- Research runs: `9`
+- Rejection records: `436`
+- Deferred source assertions remaining: `0`
+- Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
 
 Determination coverage counts only verified present and verified absent pairs. Research coverage also counts explicit not-detected evidence and source-family screens. Explicit outcome coverage counts completed immutable pair outcomes. None of these metrics implies absence.
@@ -32,24 +32,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Canada Thistle (`cirsium-arvense`) | plants | 30 | 0 | 2 |
-| Spruce Aphid (`elatobium-abietinum`) | insects | 30 | 0 | 2 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 30 | 0 | 2 |
-| Yellow Sweetclover (`melilotus-officinalis`) | plants | 29 | 0 | 2 |
+| Canada Thistle (`cirsium-arvense`) | plants | 29 | 0 | 1 |
+| Spruce Aphid (`elatobium-abietinum`) | insects | 29 | 0 | 1 |
+| Yellow Sweetclover (`melilotus-officinalis`) | plants | 29 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 28 | 2 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 20 | 0 | 2 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 8 | 22 | 3 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 8 | 22 | 3 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 8 | 22 | 3 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 8 | 22 | 3 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 8 | 22 | 3 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 8 | 22 | 3 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 8 | 22 | 3 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 8 | 22 | 3 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 8 | 22 | 3 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 8 | 22 | 3 |
-| Japanese Beetle (`popillia-japonica`) | insects | 8 | 22 | 3 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 8 | 22 | 3 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 8 | 21 | 3 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 8 | 22 | 2 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 8 | 22 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 8 | 22 | 2 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 8 | 22 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 8 | 22 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 8 | 22 | 2 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 8 | 22 | 2 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 8 | 22 | 2 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 8 | 22 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 8 | 22 | 2 |
+| Japanese Beetle (`popillia-japonica`) | insects | 8 | 22 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 8 | 22 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 8 | 21 | 2 |
 | Sea vomit tunicate (`didemnum-vexillum`) | wildlife | 0 | 29 | 1 |
 | Moneywort (`lysimachia-nummularia`) | plants | 0 | 28 | 1 |
 | Creeping yellowcress (`rorippa-sylvestris`) | plants | 0 | 28 | 1 |
@@ -78,7 +78,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-16T08:54:53.539Z | 1 | 1 |
+| GBIF preserved specimen records | operational | 2026-07-26T11:30:20.869Z | 3 | 4 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

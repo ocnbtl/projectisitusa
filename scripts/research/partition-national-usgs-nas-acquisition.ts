@@ -157,7 +157,7 @@ async function main() {
     assert(state?.nationalV1Scope, `Unknown national-v1 state ${stateCode}.`);
     const config = configByState.get(stateCode);
     assert(
-      config?.speciesScope.mode === "explicit" && config.speciesScope.applicabilityPath,
+      config?.speciesScope.mode === "sparse-default" && config.speciesScope.applicabilityPath,
       `${stateCode} lacks explicit applicability.`,
     );
     const filepath = path.join(ROOT, config.speciesScope.applicabilityPath);

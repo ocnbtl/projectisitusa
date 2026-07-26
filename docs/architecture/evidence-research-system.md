@@ -37,7 +37,7 @@ Every bounded source, state, evidence-review, or infrastructure worker must use 
 
 Jobs, leases, integration decisions, readiness, evaluations, and recovery state are durable artifacts under `ops/national-research/`. Chat history is not operational authority.
 
-The first three 2026-07-15 skill evaluation cycles remain failed historical evidence. A bounded validator-recovery evaluation then consolidated worker validation onto the canonical immutable-run schemas and semantic validator. It passed `90/90` regression cases with zero critical violations and two accepted real integrations. The frozen version is `frozen-recovery-2026-07-16-r1` at commit `1a0301e6a248956e46ba6faecd6d90b6f373a799`; exact content hashes and the pin contract are recorded in `ops/national-research/receipts/skill-freezes/isitusa-national-skills-recovery-2026-07-15-r1.json`.
+The first three 2026-07-15 skill evaluation cycles remain failed historical evidence. A bounded validator-recovery evaluation then consolidated worker validation onto the canonical immutable-run schemas and semantic validator. The first post-freeze recovery also remains rejected because it rewrote acquisition code lineage. The repaired suite passed `97/97` regression cases with zero critical violations and two accepted lineage-preserving worker integrations. The frozen version is `frozen-postfreeze-lineage-2026-07-26-r2` at commit `52da0a7377e03ab7c0d9ff49e761a760d4bd73f1`. Its orchestrator hash is `9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757`, its worker hash is `1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151`, and the complete pin contract is recorded in `ops/national-research/receipts/skill-freezes/isitusa-national-skills-postfreeze-lineage-2026-07-26-r2.json`.
 
 ## Verified Checkpoints
 
@@ -78,7 +78,9 @@ Research, compatibility, `presence.json`, `explorer-presence.json`, and the norm
 
 The current v1 geography registry contains `51` state or district jurisdictions and `3144` active county equivalents. Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is lineage only. Connecticut has `9` current planning regions and retains its `8` former counties only as retired lineage. All `51` jurisdictions have deterministic generated research projections. Alabama is compatibility-authoritative. The other `50` remain research-only and are not normal compatibility publication or state certification.
 
-The national projection checkpoint at explicit as-of `2026-07-26` contains `3407` state-species entries and `223326` county-species pairs: `26569` verified present, `0` verified absent, `8` not detected, `139185` researched unresolved, and `57564` not researched. It contains `42149` evidence records, `3393` rejection events, `55893` distinct outcome pairs, `330` projected research runs, and `0` conflicts. Configured source-species applicability classification covers all `51` jurisdictions, but it is not full-catalog applicability or evidence of completed research.
+The national projection checkpoint at explicit as-of `2026-07-26` contains a bounded acquisition scope of `3407` state-species entries and `223326` explicit county-species pairs: `26569` verified present, `0` verified absent, `8` not detected, `139185` researched unresolved, and `57564` not researched. It contains `42149` evidence records, `3393` rejection events, `55893` distinct outcome pairs, `330` projected research runs, and `0` conflicts.
+
+The complete catalog denominator is different: `2504` species across `51` jurisdictions creates `127704` state-species decisions, and `2504` species across `3144` county equivalents creates `7872576` county-species pairs. The sparse model stores explicit acquisition rows plus state-applicability overrides and resolves missing applicable or unknown catalog pairs as `not-researched`. At this checkpoint, state applicability is `903` applicable, `0` not applicable, `126801` unknown, and `0` blocked. Full status resolution is `26569` verified present, `0` verified absent, `8` not detected, `139185` researched unresolved, and `7706814` not researched. Bounded acquisition coverage and full-catalog certification coverage are always reported separately.
 
 ## System Boundary
 
@@ -407,7 +409,7 @@ The compiler accepts `--as-of <YYYY-MM-DD>`. Identical inputs and the same `as_o
 
 ## Coverage Metrics
 
-All metrics use the explicit county-species denominator for the state.
+Certification metrics use the full catalog county-species denominator for the state. Bounded acquisition metrics use only their declared source scope and are labeled separately. A sparse default row is still part of the full denominator even when it is not materialized in a county JSON file.
 
 `determination coverage` is:
 
@@ -428,6 +430,8 @@ All metrics use the explicit county-species denominator for the state.
 ```
 
 This metric records whether at least one completed source-family screen or resolved determination exists. It is not protocol completion. The explicit protocol-cell projection separately reports applicable, not applicable, incomplete, complete, blocked, stale, and current source-species cells. Only complete current pair outcomes with `scope_complete: true` can complete an applicable cell. `needs-followup`, `blocked`, stale, partial runs, inferred scope, and source silence without a completed outcome do not count as protocol complete.
+
+State-species applicability and source-species applicability are separate. Every catalog species has one state decision in every jurisdiction: `applicable`, `not-applicable`, `unknown`, or `blocked`. `unknown` is not silently excluded. A source may be explicitly not applicable to an unknown state-species pair, and an exact source rule may screen an unknown pair without resolving its broader state applicability.
 
 Also report survey, freshness, and review distributions. Do not create one blended progress percentage. A pair may be researched but unknown, determined but stale, or supported by an unreviewed assertion. Those differences must remain visible.
 

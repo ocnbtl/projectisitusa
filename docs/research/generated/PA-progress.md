@@ -4,21 +4,21 @@ Generated: `2026-07-26T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `18`
+- Species: `2504`
 - Counties: `67`
-- County-species pairs: `1206`
+- County-species pairs: `167768`
 - Verified present: `691`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `502`
-- Not researched: `13`
-- Determination coverage: `57.30%`
-- Research coverage: `98.92%`
-- Explicit outcome coverage: `98.9221%`
-- Applicable protocol cells: `31`
+- Not researched: `166575`
+- Determination coverage: `0.41%`
+- Research coverage: `0.71%`
+- Explicit outcome coverage: `0.7111%`
+- Applicable protocol cells: `18`
 - Current complete protocol cells: `4`
-- Protocol completion: `54.84%`
-- Current protocol completion: `12.90%`
+- Protocol completion: `94.44%`
+- Current protocol completion: `22.22%`
 - Evidence records: `691`
 - Research runs: `6`
 - Rejection records: `57`
@@ -33,22 +33,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 13 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 67 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 67 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 67 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 63 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 55 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 33 | 2 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 67 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 67 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 67 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 63 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 55 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 33 | 1 |
 | Creeping yellowcress (`rorippa-sylvestris`) | plants | 0 | 22 | 0 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 17 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 17 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 17 | 1 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 17 | 1 |
 | Watercress (`nasturtium-officinale`) | plants | 0 | 16 | 0 |
 | Moneywort (`lysimachia-nummularia`) | plants | 0 | 11 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 0 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 0 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 2 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 0 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 0 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 1 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
 | Common Carp (`cyprinus-carpio`) | wildlife | 0 | 0 | 0 |
 
 ## Source Operations

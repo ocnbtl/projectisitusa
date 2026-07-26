@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "stateCode": "DC",
   "stateName": "District of Columbia",
   "asOf": "2026-07-26",
@@ -7,39 +7,50 @@
   "sourceSnapshotDate": "2026-07-11T20:29:35.732Z",
   "scope": {
     "publicationMode": "research-only",
-    "speciesMode": "explicit",
+    "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/DC.json",
     "applicabilityAsOf": "2026-07-25",
+    "catalogSpeciesCount": 2504,
+    "stateSpeciesDenominator": 2504,
     "applicableSpeciesCount": 18,
-    "undeterminedSpeciesPolicy": "excluded",
+    "notApplicableSpeciesCount": 0,
+    "unknownSpeciesCount": 2486,
+    "blockedSpeciesCount": 0,
+    "explicitApplicabilityDecisionCount": 18,
+    "resolvedStateSpeciesDecisionCount": 2504,
+    "boundedAcquisitionSpeciesCount": 18,
+    "defaultApplicability": "unknown",
+    "fullCatalogApplicabilityComplete": false,
+    "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 18,
+    "speciesCount": 2504,
     "countyCount": 1,
-    "totalPairs": 18,
+    "totalPairs": 2504,
+    "resolvablePairCount": 2504,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
     "verifiedPresent": 13,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 5,
-    "notResearched": 0,
-    "determinationCoveragePercent": 72.22,
-    "researchCoveragePercent": 100,
+    "notResearched": 2486,
+    "determinationCoveragePercent": 0.52,
+    "researchCoveragePercent": 0.72,
     "explicitOutcomePairCount": 18,
-    "explicitOutcomeCoveragePercent": 100,
+    "explicitOutcomeCoveragePercent": 0.7188,
     "conflictCount": 0,
     "evidenceRecordCount": 13,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 13,
     "rejectionRecordCount": 3,
-    "researchRunCount": 6
-  },
-  "counties": [
-    {
-      "countyFips": "11001",
-      "name": "District of Columbia",
+    "researchRunCount": 6,
+    "boundedAcquisition": {
+      "speciesCount": 18,
+      "totalPairs": 18,
       "verifiedPresent": 13,
       "verifiedAbsent": 0,
       "notDetected": 0,
@@ -48,6 +59,37 @@
       "researchCoveragePercent": 100,
       "explicitOutcomePairs": 18,
       "explicitOutcomeCoveragePercent": 100
+    }
+  },
+  "counties": [
+    {
+      "countyFips": "11001",
+      "name": "District of Columbia",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
+      "verifiedPresent": 13,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 5,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
+      "explicitOutcomePairs": 18,
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 13,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 5,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     }
   ],
   "sources": [
@@ -351,10 +393,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 12
+      "priorityScore": 11
     },
     {
       "speciesId": "icerya-purchasi",
@@ -364,10 +405,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 12
+      "priorityScore": 11
     },
     {
       "speciesId": "ophiostoma-ulmi",
@@ -377,10 +417,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 12
+      "priorityScore": 11
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -390,10 +429,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 12
+      "priorityScore": 11
     },
     {
       "speciesId": "raffaelea-lauricola",
@@ -403,10 +441,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 12
+      "priorityScore": 11
     },
     {
       "speciesId": "emerald-ash-borer",
@@ -416,10 +453,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "anarsia-lineatella",
@@ -429,10 +465,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "aspidiotus-duplex",
@@ -442,10 +477,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -455,10 +489,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "discula-destructiva",
@@ -468,10 +501,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "homadaula-albizziae",
@@ -481,10 +513,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -494,10 +525,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "popillia-japonica",
@@ -507,10 +537,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "bithynia-tentaculata",

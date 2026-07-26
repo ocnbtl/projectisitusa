@@ -80,8 +80,8 @@ type StateConfig = {
   states: Array<{
     stateCode: string;
     speciesScope: {
-      mode: "catalog-all" | "explicit";
-      applicabilityPath: string | null;
+      mode: "catalog-all" | "sparse-default";
+      applicabilityPath: string;
     };
   }>;
 };

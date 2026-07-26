@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["schemaVersion", "states"],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "states": {
       "type": "array",
       "items": {
@@ -19,11 +19,12 @@
           "speciesScope": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["mode", "applicabilityPath", "undeterminedSpeciesPolicy"],
+            "required": ["mode", "applicabilityPath", "defaultApplicability", "undeterminedSpeciesPolicy"],
             "properties": {
-              "mode": { "enum": ["catalog-all", "explicit"] },
-              "applicabilityPath": { "anyOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }] },
-              "undeterminedSpeciesPolicy": { "enum": ["excluded", "included-grandfathered-baseline"] }
+              "mode": { "enum": ["catalog-all", "sparse-default"] },
+              "applicabilityPath": { "type": "string", "minLength": 1 },
+              "defaultApplicability": { "const": "unknown" },
+              "undeterminedSpeciesPolicy": { "const": "included-as-unknown" }
             }
           },
           "bootstrapLedgerAllowed": { "type": "boolean" },

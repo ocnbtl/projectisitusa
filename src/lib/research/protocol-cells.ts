@@ -25,7 +25,11 @@ export type ResearchProtocolsFile = {
     rules: Array<{
       ruleId: string;
       speciesSelector: {
-        kind: "category" | "state-applicability" | "species-id";
+        kind:
+          | "category"
+          | "state-applicability"
+          | "species-id"
+          | "state-species-pair";
         values: string[];
       };
       applicableSourceIds: string[];
@@ -123,9 +127,21 @@ function ratioPercent(numerator: number, denominator: number) {
 
 function appliesToSpecies(
   rule: ResearchProtocolsFile["protocols"][number]["rules"][number],
-  species: { id: string; category: SpeciesCategory },
+  species: {
+    id: string;
+    stateCode: string;
+    category: SpeciesCategory;
+    applicability: "applicable" | "not-applicable" | "unknown" | "blocked";
+  },
 ) {
-  if (rule.speciesSelector.kind === "state-applicability") return true;
+  if (rule.speciesSelector.kind === "state-species-pair") {
+    return rule.speciesSelector.values.includes(
+      `${species.stateCode}:${species.id}`,
+    );
+  }
+  if (rule.speciesSelector.kind === "state-applicability") {
+    return rule.speciesSelector.values.includes(species.applicability);
+  }
   if (rule.speciesSelector.kind === "species-id") {
     return rule.speciesSelector.values.includes(species.id);
   }
@@ -138,7 +154,9 @@ export function buildProtocolCellProjection(input: {
   generatedAt: string;
   species: Array<{
     id: string;
+    stateCode: string;
     category: SpeciesCategory;
+    applicability: "applicable" | "not-applicable" | "unknown" | "blocked";
     priority?: ProtocolPriority;
   }>;
   countyFips: string[];
@@ -171,6 +189,10 @@ export function buildProtocolCellProjection(input: {
   const cells: ProtocolCell[] = [];
 
   for (const species of [...input.species].sort((left, right) => left.id.localeCompare(right.id))) {
+    assert(
+      species.stateCode === input.stateCode,
+      `Protocol species ${species.id} has a different state.`,
+    );
     const matchingRules = protocol.rules.filter((rule) => appliesToSpecies(rule, species));
     const ruleSourceIds = new Set(matchingRules.flatMap((rule) => rule.applicableSourceIds));
     for (const sourceId of [...protocol.sourceUniverse].sort()) {
@@ -333,7 +355,7 @@ export function buildProtocolCellProjection(input: {
       sourceId,
       applicableCells: sourceCells.length,
       currentCompleteCells: currentSourceCells.length,
-      processed: sourceCells.length > 0 && sourceCells.length === currentSourceCells.length,
+      processed: sourceCells.length === currentSourceCells.length,
     };
   });
   const projection: ProtocolCellProjection = {

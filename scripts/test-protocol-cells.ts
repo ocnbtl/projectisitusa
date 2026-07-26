@@ -70,7 +70,7 @@ function project(runs: ImmutableResearchRunBundle[], protocols = baseProtocol) {
     stateCode: "AL",
     asOf: "2026-07-15",
     generatedAt: "2026-07-15T00:00:00.000Z",
-    species: [{ id: "test-plant", category: "plants", priority: "high" }],
+    species: [{ id: "test-plant", stateCode: "AL", category: "plants", applicability: "applicable", priority: "high" }],
     countyFips: ["01001", "01003"],
     protocols,
     sources: [source],
@@ -91,6 +91,80 @@ speciesIdProtocol.protocols[0]!.rules[0]!.speciesSelector.values = ["another-spe
 assert(
   project([], speciesIdProtocol).cells[0]!.applicabilityStatus === "not-applicable",
   "Explicit species-id protocol selector leaked to an unnamed taxon.",
+);
+
+const stateApplicabilityProtocol = structuredClone(baseProtocol);
+stateApplicabilityProtocol.protocols[0]!.rules[0]!.speciesSelector = {
+  kind: "state-applicability",
+  values: ["applicable"],
+};
+const unknownStateSpecies = buildProtocolCellProjection({
+  stateCode: "AL",
+  asOf: "2026-07-15",
+  generatedAt: "2026-07-15T00:00:00.000Z",
+  species: [{
+    id: "test-plant",
+    stateCode: "AL",
+    category: "plants",
+    applicability: "unknown",
+    priority: "high",
+  }],
+  countyFips: ["01001", "01003"],
+  protocols: stateApplicabilityProtocol,
+  sources: [source],
+  immutableRuns: [],
+}).cells[0]!;
+assert(
+  unknownStateSpecies.applicabilityStatus === "not-applicable",
+  "Unknown state applicability incorrectly activated a source protocol.",
+);
+stateApplicabilityProtocol.protocols[0]!.rules[0]!.speciesSelector = {
+  kind: "species-id",
+  values: ["test-plant"],
+};
+const explicitlyTargetedUnknown = buildProtocolCellProjection({
+  stateCode: "AL",
+  asOf: "2026-07-15",
+  generatedAt: "2026-07-15T00:00:00.000Z",
+  species: [{
+    id: "test-plant",
+    stateCode: "AL",
+    category: "plants",
+    applicability: "unknown",
+    priority: "high",
+  }],
+  countyFips: ["01001", "01003"],
+  protocols: stateApplicabilityProtocol,
+  sources: [source],
+  immutableRuns: [],
+}).cells[0]!;
+assert(
+  explicitlyTargetedUnknown.applicabilityStatus === "applicable",
+  "An explicit source protocol could not target a state-unknown species.",
+);
+stateApplicabilityProtocol.protocols[0]!.rules[0]!.speciesSelector = {
+  kind: "state-species-pair",
+  values: ["AL:test-plant"],
+};
+assert(
+  project([], stateApplicabilityProtocol).cells[0]!.applicabilityStatus ===
+    "applicable",
+  "An exact state-species source rule did not apply.",
+);
+stateApplicabilityProtocol.protocols[0]!.rules[0]!.speciesSelector.values = [
+  "AK:test-plant",
+];
+assert(
+  project([], stateApplicabilityProtocol).cells[0]!.applicabilityStatus ===
+    "not-applicable",
+  "An exact source rule leaked across states.",
+);
+const noApplicableRequiredSource = project([], stateApplicabilityProtocol);
+assert(
+  noApplicableRequiredSource.requiredSourceStatus[0]?.applicableCells === 0 &&
+    noApplicableRequiredSource.requiredSourceStatus[0]?.processed === true &&
+    noApplicableRequiredSource.summary.requiredCurrentSourcesProcessed === true,
+  "A required source with an explicit zero-applicable scope was treated as unprocessed.",
 );
 
 const empty = project([]).cells[0]!;
@@ -135,7 +209,7 @@ const historicalSnapshot = buildProtocolCellProjection({
   stateCode: "AL",
   asOf: "2026-07-15",
   generatedAt: "2026-07-15T00:00:00.000Z",
-  species: [{ id: "test-plant", category: "plants", priority: "high" }],
+  species: [{ id: "test-plant", stateCode: "AL", category: "plants", applicability: "applicable", priority: "high" }],
   countyFips: ["01001", "01003"],
   protocols: baseProtocol,
   sources: [historicalSnapshotSource],
@@ -171,6 +245,10 @@ console.log(
     {
       sourceSilenceRemainsIncomplete: true,
       speciesIdSelectorBounded: true,
+      stateApplicabilityDoesNotImplySourceApplicability: true,
+      explicitSourceRuleCanTargetUnknownStateSpecies: true,
+      exactStateSpeciesSourceScope: true,
+      zeroApplicableRequiredSourceProcessed: true,
       noQualifyingEvidenceCompletesResearchOnly: true,
       blockedRemainderPreserved: true,
       laterBlockedRetryRevokesCompletion: true,

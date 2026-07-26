@@ -160,6 +160,7 @@ export interface ResearchPairRecord {
   commonName: string;
   scientificName: string;
   category: SpeciesCategory;
+  applicabilityStatus: "applicable" | "not-applicable" | "unknown" | "blocked";
   displayStatus: PairDisplayStatus;
   determinationStatus: DeterminationStatus;
   surveyStatus: SurveyStatus;
@@ -171,7 +172,9 @@ export interface ResearchPairRecord {
   screenedBySourceIds: string[];
 }
 
-export interface ResearchStatusCounts {
+export interface BoundedAcquisitionStatusCounts {
+  speciesCount: number;
+  totalPairs: number;
   verifiedPresent: number;
   verifiedAbsent: number;
   notDetected: number;
@@ -182,14 +185,41 @@ export interface ResearchStatusCounts {
   explicitOutcomeCoveragePercent: number;
 }
 
+export interface ResearchStatusCounts {
+  catalogSpeciesCount: number;
+  fullCountySpeciesDenominator: number;
+  resolvablePairs: number;
+  notApplicablePairs: number;
+  blockedPairs: number;
+  verifiedPresent: number;
+  verifiedAbsent: number;
+  notDetected: number;
+  researchedUnresolved: number;
+  notResearched: number;
+  researchCoveragePercent: number;
+  explicitOutcomePairs: number;
+  explicitOutcomeCoveragePercent: number;
+  boundedAcquisition: BoundedAcquisitionStatusCounts;
+}
+
 export interface ResearchProjectionScope {
   publicationMode: "authoritative" | "research-only";
-  speciesMode: "catalog-all" | "explicit";
+  speciesMode: "catalog-all" | "sparse-default";
   certificationScope: "state-baseline" | "bounded-pilot";
-  applicabilityPath: string | null;
-  applicabilityAsOf: string | null;
+  applicabilityPath: string;
+  applicabilityAsOf: string;
+  catalogSpeciesCount: number;
+  stateSpeciesDenominator: number;
   applicableSpeciesCount: number;
-  undeterminedSpeciesPolicy: "excluded" | "included-grandfathered-baseline";
+  notApplicableSpeciesCount: number;
+  unknownSpeciesCount: number;
+  blockedSpeciesCount: number;
+  explicitApplicabilityDecisionCount: number;
+  resolvedStateSpeciesDecisionCount: number;
+  boundedAcquisitionSpeciesCount: number;
+  defaultApplicability: "unknown";
+  fullCatalogApplicabilityComplete: boolean;
+  undeterminedSpeciesPolicy: "included-as-unknown";
   compatibilityPublication: boolean;
   protocolModel:
     | "explicit-source-species-legacy-migration"
@@ -197,7 +227,7 @@ export interface ResearchProjectionScope {
 }
 
 export interface ResearchCountyFile {
-  schemaVersion: 3;
+  schemaVersion: 4;
   stateCode: string;
   countyFips: string;
   countyName: string;
@@ -205,6 +235,16 @@ export interface ResearchCountyFile {
   generatedAt: string;
   scope: ResearchProjectionScope;
   summary: ResearchStatusCounts;
+  pairResolution: {
+    catalogSpeciesPath: "/generated/species.json";
+    defaultApplicability: "unknown";
+    defaultDisplayStatus: "not-researched";
+    explicitPairCount: number;
+    applicabilityOverrides: Array<{
+      speciesId: string;
+      applicability: "applicable" | "not-applicable" | "unknown" | "blocked";
+    }>;
+  };
   pairs: ResearchPairRecord[];
 }
 
@@ -220,7 +260,7 @@ export interface ResearchQueueEntry {
 }
 
 export interface ResearchStateSummary {
-  schemaVersion: 3;
+  schemaVersion: 4;
   stateCode: string;
   stateName: string;
   asOf: string;
@@ -231,6 +271,9 @@ export interface ResearchStateSummary {
     speciesCount: number;
     countyCount: number;
     totalPairs: number;
+    resolvablePairCount: number;
+    notApplicablePairCount: number;
+    blockedPairCount: number;
     verifiedPresent: number;
     verifiedAbsent: number;
     notDetected: number;
@@ -246,6 +289,7 @@ export interface ResearchStateSummary {
     runEvidenceRecordCount: number;
     rejectionRecordCount: number;
     researchRunCount: number;
+    boundedAcquisition: BoundedAcquisitionStatusCounts;
   };
   counties: Array<
     {

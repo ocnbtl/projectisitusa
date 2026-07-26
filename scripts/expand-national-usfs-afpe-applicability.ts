@@ -20,20 +20,26 @@ type StateConfig = {
   states: Array<{
     stateCode: string;
     speciesScope: {
-      mode: "catalog-all" | "explicit";
-      applicabilityPath: string | null;
+      mode: "catalog-all" | "sparse-default";
+      applicabilityPath: string;
     };
   }>;
 };
 
 type Applicability = {
-  schemaVersion: 1;
+  schemaVersion: 2;
   stateCode: string;
   asOf: string;
-  undeterminedSpeciesPolicy: "excluded";
+  catalogSpeciesCount: number;
+  catalogSpeciesIdsSha256: string;
+  undeterminedSpeciesPolicy: "included-as-unknown";
+  defaultDecision: {
+    applicability: "unknown";
+    note: string;
+  };
   species: Array<{
     speciesId: string;
-    applicability: "applicable";
+    applicability: "applicable" | "not-applicable" | "unknown" | "blocked";
     priority: "regulated" | "high" | "pilot" | "baseline";
     basis: Array<{
       sourceId: string;
@@ -97,7 +103,7 @@ const countyRegistry = readJson<CountyRegistry>(
 );
 let addedSpeciesEntries = 0;
 let addedPairScope = 0;
-const explicitStates: string[] = [];
+const sparseStates: string[] = [];
 
 for (const config of stateConfig.states) {
   if (config.speciesScope.mode === "catalog-all") continue;
@@ -149,7 +155,7 @@ for (const config of stateConfig.states) {
   ).length;
   addedSpeciesEntries += stateAdditions;
   addedPairScope += stateAdditions * countyCount;
-  explicitStates.push(config.stateCode);
+  sparseStates.push(config.stateCode);
 }
 
 const protocolsPath = path.join(
@@ -200,8 +206,8 @@ protocols.updatedAt = AS_OF;
 writeJson(protocolsPath, protocols);
 
 assert(
-  explicitStates.length === 50,
-  `Expected 50 explicit national-v1 jurisdictions, found ${explicitStates.length}.`,
+  sparseStates.length === 50,
+  `Expected 50 sparse national-v1 jurisdictions, found ${sparseStates.length}.`,
 );
 assert(
   addedSpeciesEntries === 0 || addedSpeciesEntries === 650,
@@ -215,7 +221,7 @@ assert(
 console.log(JSON.stringify({
   mappingVersion: mapping.mappingVersion,
   mappingTaxa: mapping.mappings.length,
-  explicitJurisdictions: explicitStates.length,
+  sparseJurisdictions: sparseStates.length,
   addedSpeciesEntries,
   addedPairScope,
   protocolCount: updatedProtocols,

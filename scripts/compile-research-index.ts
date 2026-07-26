@@ -178,6 +178,12 @@ const {
   config: stateConfig,
   speciesIds: selectedSpeciesIds,
   applicabilityAsOf,
+  applicabilityDecisionCounts,
+  explicitApplicabilityDecisionCount,
+  resolvedStateSpeciesDecisionCount,
+  fullCatalogApplicabilityComplete,
+  defaultApplicability,
+  applicabilityBySpeciesId,
 } = resolveStateResearchScope({
   configFile,
   stateCode: STATE_CODE,
@@ -194,7 +200,17 @@ const projectionScope: ResearchProjectionScope = {
   certificationScope: stateConfig.mode === "authoritative" ? "state-baseline" : "bounded-pilot",
   applicabilityPath: stateConfig.speciesScope.applicabilityPath,
   applicabilityAsOf,
-  applicableSpeciesCount: species.length,
+  catalogSpeciesCount: catalogSpecies.length,
+  stateSpeciesDenominator: catalogSpecies.length,
+  applicableSpeciesCount: applicabilityDecisionCounts.applicable,
+  notApplicableSpeciesCount: applicabilityDecisionCounts["not-applicable"],
+  unknownSpeciesCount: applicabilityDecisionCounts.unknown,
+  blockedSpeciesCount: applicabilityDecisionCounts.blocked,
+  explicitApplicabilityDecisionCount,
+  resolvedStateSpeciesDecisionCount,
+  boundedAcquisitionSpeciesCount: species.length,
+  defaultApplicability,
+  fullCatalogApplicabilityComplete,
   undeterminedSpeciesPolicy: stateConfig.speciesScope.undeterminedSpeciesPolicy,
   compatibilityPublication: stateConfig.compatibilityPublication,
   protocolModel: stateConfig.mode === "authoritative"
@@ -324,13 +340,26 @@ const generatedAt = `${AS_OF}T00:00:00.000Z`;
 const applicabilityPriorityBySpecies = new Map(
   (applicability?.species ?? []).map((entry) => [entry.speciesId, entry.priority]),
 );
+const applicabilityOverrides = (applicability?.species ?? [])
+  .map((entry) => ({
+    speciesId: entry.speciesId,
+    applicability: entry.applicability,
+  }))
+  .sort(
+    (left, right) =>
+      left.speciesId.localeCompare(right.speciesId),
+  );
 const protocolCellProjection = buildProtocolCellProjection({
   stateCode: STATE_CODE,
   asOf: AS_OF,
   generatedAt,
   species: species.map((entry) => ({
     id: entry.id,
+    stateCode: STATE_CODE,
     category: entry.category,
+    applicability:
+      applicabilityBySpeciesId.get(entry.id) ??
+      defaultApplicability,
     priority: applicabilityPriorityBySpecies.get(entry.id),
   })),
   countyFips: registeredCountyFips,
@@ -502,6 +531,9 @@ for (const county of counties) {
       commonName: speciesEntry.commonName,
       scientificName: speciesEntry.scientificName,
       category: speciesEntry.category,
+      applicabilityStatus:
+        applicabilityBySpeciesId.get(speciesEntry.id) ??
+        defaultApplicability,
       displayStatus,
       determinationStatus: hasPresent ? "recorded-present" : hasAbsence ? "officially-absent" : "none",
       surveyStatus: hasSurveyDetection ? "detected" : hasNotDetected ? "not-detected" : "unassessed",
@@ -536,10 +568,24 @@ for (const county of counties) {
     };
   });
 
-  const researchedPairs =
+  const boundedResearchedPairs =
     countyVerifiedPresent + countyVerifiedAbsent + countyNotDetected + countyResearchedUnresolved;
+  const boundedTotalPairs = species.length;
+  const unmaterializedResolvableSpeciesCount =
+    projectionScope.applicableSpeciesCount +
+    projectionScope.unknownSpeciesCount -
+    boundedTotalPairs;
+  if (unmaterializedResolvableSpeciesCount < 0) {
+    throw new Error(`Bounded ${STATE_CODE} species exceed the resolvable full-catalog scope.`);
+  }
+  const fullCountyNotResearched =
+    countyNotResearched + unmaterializedResolvableSpeciesCount;
+  const fullCountyResearchedPairs = boundedResearchedPairs;
+  const fullCountySpeciesDenominator = projectionScope.catalogSpeciesCount;
+  const fullCountyResolvablePairs =
+    projectionScope.applicableSpeciesCount + projectionScope.unknownSpeciesCount;
   countyFiles.push({
-    schemaVersion: 3,
+    schemaVersion: 4,
     stateCode: STATE_CODE,
     countyFips: county.countyFips,
     countyName: county.name,
@@ -547,16 +593,50 @@ for (const county of counties) {
     generatedAt,
     scope: projectionScope,
     summary: {
+      catalogSpeciesCount: projectionScope.catalogSpeciesCount,
+      fullCountySpeciesDenominator,
+      resolvablePairs: fullCountyResolvablePairs,
+      notApplicablePairs: projectionScope.notApplicableSpeciesCount,
+      blockedPairs: projectionScope.blockedSpeciesCount,
       verifiedPresent: countyVerifiedPresent,
       verifiedAbsent: countyVerifiedAbsent,
       notDetected: countyNotDetected,
       researchedUnresolved: countyResearchedUnresolved,
-      notResearched: countyNotResearched,
-      researchCoveragePercent: roundPercent((researchedPairs / species.length) * 100),
+      notResearched: fullCountyNotResearched,
+      researchCoveragePercent: fullCountyResolvablePairs === 0
+        ? 0
+        : roundPercent((fullCountyResearchedPairs / fullCountyResolvablePairs) * 100),
       explicitOutcomePairs: countyExplicitOutcomePairs,
       explicitOutcomeCoveragePercent: roundDetailedPercent(
-        (countyExplicitOutcomePairs / species.length) * 100,
+        fullCountyResolvablePairs === 0
+          ? 0
+          : (countyExplicitOutcomePairs / fullCountyResolvablePairs) * 100,
       ),
+      boundedAcquisition: {
+        speciesCount: boundedTotalPairs,
+        totalPairs: boundedTotalPairs,
+        verifiedPresent: countyVerifiedPresent,
+        verifiedAbsent: countyVerifiedAbsent,
+        notDetected: countyNotDetected,
+        researchedUnresolved: countyResearchedUnresolved,
+        notResearched: countyNotResearched,
+        researchCoveragePercent: boundedTotalPairs === 0
+          ? 0
+          : roundPercent((boundedResearchedPairs / boundedTotalPairs) * 100),
+        explicitOutcomePairs: countyExplicitOutcomePairs,
+        explicitOutcomeCoveragePercent: boundedTotalPairs === 0
+          ? 0
+          : roundDetailedPercent(
+              (countyExplicitOutcomePairs / boundedTotalPairs) * 100,
+            ),
+      },
+    },
+    pairResolution: {
+      catalogSpeciesPath: "/generated/species.json",
+      defaultApplicability,
+      defaultDisplayStatus: "not-researched",
+      explicitPairCount: pairs.length,
+      applicabilityOverrides,
     },
     pairs,
   });
@@ -630,9 +710,31 @@ const sourceSummaries = registry.sources.map((source) => {
   };
 });
 
-const totalPairs = counties.length * species.length;
+const boundedAcquisitionTotalPairs = counties.length * species.length;
+const boundedNotResearched = notResearched;
+const boundedResearchedCount =
+  verifiedPresent + verifiedAbsent + notDetected + researchedUnresolved;
+const unmaterializedResolvableSpeciesCount =
+  projectionScope.applicableSpeciesCount +
+  projectionScope.unknownSpeciesCount -
+  species.length;
+if (unmaterializedResolvableSpeciesCount < 0) {
+  throw new Error(`Bounded ${STATE_CODE} species exceed the resolvable full-catalog scope.`);
+}
+const defaultNotResearchedPairCount =
+  unmaterializedResolvableSpeciesCount * counties.length;
+notResearched += defaultNotResearchedPairCount;
+const totalPairs = counties.length * projectionScope.catalogSpeciesCount;
+const resolvablePairCount =
+  counties.length *
+  (projectionScope.applicableSpeciesCount + projectionScope.unknownSpeciesCount);
+const notApplicablePairCount =
+  counties.length * projectionScope.notApplicableSpeciesCount;
+const blockedPairCount =
+  counties.length * projectionScope.blockedSpeciesCount;
 const determinationCount = verifiedPresent + verifiedAbsent;
-const researchedCount = totalPairs - notResearched;
+const researchedCount =
+  verifiedPresent + verifiedAbsent + notDetected + researchedUnresolved;
 const completedCandidateSourceKeys = new Set(
   outcomes
     .filter(
@@ -654,7 +756,7 @@ if (conflictCount > 0) {
 }
 
 const summary: ResearchStateSummary = {
-  schemaVersion: 3,
+  schemaVersion: 4,
   stateCode: STATE_CODE,
   stateName: jurisdiction.stateName,
   asOf: AS_OF,
@@ -662,19 +764,28 @@ const summary: ResearchStateSummary = {
   sourceSnapshotDate,
   scope: projectionScope,
   summary: {
-    speciesCount: species.length,
+    speciesCount: projectionScope.catalogSpeciesCount,
     countyCount: counties.length,
     totalPairs,
+    resolvablePairCount,
+    notApplicablePairCount,
+    blockedPairCount,
     verifiedPresent,
     verifiedAbsent,
     notDetected,
     researchedUnresolved,
     notResearched,
-    determinationCoveragePercent: roundPercent((determinationCount / totalPairs) * 100),
-    researchCoveragePercent: roundPercent((researchedCount / totalPairs) * 100),
+    determinationCoveragePercent: totalPairs === 0
+      ? 0
+      : roundPercent((determinationCount / totalPairs) * 100),
+    researchCoveragePercent: resolvablePairCount === 0
+      ? 0
+      : roundPercent((researchedCount / resolvablePairCount) * 100),
     explicitOutcomePairCount,
     explicitOutcomeCoveragePercent: roundDetailedPercent(
-      (explicitOutcomePairCount / totalPairs) * 100,
+      resolvablePairCount === 0
+        ? 0
+        : (explicitOutcomePairCount / resolvablePairCount) * 100,
     ),
     conflictCount,
     evidenceRecordCount: bootstrapEvidence.length + runEvidence.length,
@@ -682,6 +793,26 @@ const summary: ResearchStateSummary = {
     runEvidenceRecordCount: runEvidence.length,
     rejectionRecordCount: runRejections.length + globalRejections.length,
     researchRunCount: runs.length + immutableRuns.length,
+    boundedAcquisition: {
+      speciesCount: species.length,
+      totalPairs: boundedAcquisitionTotalPairs,
+      verifiedPresent,
+      verifiedAbsent,
+      notDetected,
+      researchedUnresolved,
+      notResearched: boundedNotResearched,
+      researchCoveragePercent: boundedAcquisitionTotalPairs === 0
+        ? 0
+        : roundPercent(
+            (boundedResearchedCount / boundedAcquisitionTotalPairs) * 100,
+          ),
+      explicitOutcomePairs: explicitOutcomePairCount,
+      explicitOutcomeCoveragePercent: boundedAcquisitionTotalPairs === 0
+        ? 0
+        : roundDetailedPercent(
+            (explicitOutcomePairCount / boundedAcquisitionTotalPairs) * 100,
+          ),
+    },
   },
   counties: countyFiles.map((county) => ({
     countyFips: county.countyFips,

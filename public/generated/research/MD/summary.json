@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "stateCode": "MD",
   "stateName": "Maryland",
   "asOf": "2026-07-26",
@@ -7,323 +7,756 @@
   "sourceSnapshotDate": "2026-07-11T20:29:35.732Z",
   "scope": {
     "publicationMode": "research-only",
-    "speciesMode": "explicit",
+    "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/MD.json",
     "applicabilityAsOf": "2026-07-25",
+    "catalogSpeciesCount": 2504,
+    "stateSpeciesDenominator": 2504,
     "applicableSpeciesCount": 18,
-    "undeterminedSpeciesPolicy": "excluded",
+    "notApplicableSpeciesCount": 0,
+    "unknownSpeciesCount": 2486,
+    "blockedSpeciesCount": 0,
+    "explicitApplicabilityDecisionCount": 18,
+    "resolvedStateSpeciesDecisionCount": 2504,
+    "boundedAcquisitionSpeciesCount": 18,
+    "defaultApplicability": "unknown",
+    "fullCatalogApplicabilityComplete": false,
+    "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 18,
+    "speciesCount": 2504,
     "countyCount": 24,
-    "totalPairs": 432,
+    "totalPairs": 60096,
+    "resolvablePairCount": 60096,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
     "verifiedPresent": 141,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 291,
-    "notResearched": 0,
-    "determinationCoveragePercent": 32.64,
-    "researchCoveragePercent": 100,
+    "notResearched": 59664,
+    "determinationCoveragePercent": 0.23,
+    "researchCoveragePercent": 0.72,
     "explicitOutcomePairCount": 432,
-    "explicitOutcomeCoveragePercent": 100,
+    "explicitOutcomeCoveragePercent": 0.7188,
     "conflictCount": 0,
     "evidenceRecordCount": 141,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 141,
     "rejectionRecordCount": 6,
-    "researchRunCount": 6
+    "researchRunCount": 6,
+    "boundedAcquisition": {
+      "speciesCount": 18,
+      "totalPairs": 432,
+      "verifiedPresent": 141,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 291,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 432,
+      "explicitOutcomeCoveragePercent": 100
+    }
   },
   "counties": [
     {
       "countyFips": "24001",
       "name": "Allegany",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 7,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 11,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 7,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 11,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24003",
       "name": "Anne Arundel",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 10,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 8,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 10,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 8,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24005",
       "name": "Baltimore",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 6,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 12,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 6,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 12,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24009",
       "name": "Calvert",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 5,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 13,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 5,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24011",
       "name": "Caroline",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 5,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 13,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 5,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24013",
       "name": "Carroll",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 5,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 13,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 5,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24015",
       "name": "Cecil",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 8,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 10,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 8,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 10,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24017",
       "name": "Charles",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 4,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 14,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 4,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 14,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24019",
       "name": "Dorchester",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 5,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 13,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 5,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24021",
       "name": "Frederick",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 9,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 9,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 9,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 9,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24023",
       "name": "Garrett",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 7,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 11,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 7,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 11,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24025",
       "name": "Harford",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 7,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 11,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 7,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 11,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24027",
       "name": "Howard",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 5,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 13,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 5,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24029",
       "name": "Kent",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 4,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 14,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 4,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 14,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24031",
       "name": "Montgomery",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 9,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 9,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 9,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 9,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24033",
       "name": "Prince George's",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 8,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 10,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 8,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 10,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24035",
       "name": "Queen Anne's",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 4,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 14,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 4,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 14,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24037",
       "name": "St. Mary's",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 4,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 14,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 4,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 14,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24039",
       "name": "Somerset",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 4,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 14,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 4,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 14,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24041",
       "name": "Talbot",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 4,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 14,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 4,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 14,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24043",
       "name": "Washington",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 6,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 12,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 6,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 12,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24045",
       "name": "Wicomico",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 6,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 12,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 6,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 12,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24047",
       "name": "Worcester",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 4,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 14,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 4,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 14,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     },
     {
       "countyFips": "24510",
       "name": "Baltimore",
+      "catalogSpeciesCount": 2504,
+      "fullCountySpeciesDenominator": 2504,
+      "resolvablePairs": 2504,
+      "notApplicablePairs": 0,
+      "blockedPairs": 0,
       "verifiedPresent": 5,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 13,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2486,
+      "researchCoveragePercent": 0.72,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 0.7188,
+      "boundedAcquisition": {
+        "speciesCount": 18,
+        "totalPairs": 18,
+        "verifiedPresent": 5,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13,
+        "notResearched": 0,
+        "researchCoveragePercent": 100,
+        "explicitOutcomePairs": 18,
+        "explicitOutcomeCoveragePercent": 100
+      }
     }
   ],
   "sources": [
@@ -627,10 +1060,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 24,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 242
+      "priorityScore": 241
     },
     {
       "speciesId": "icerya-purchasi",
@@ -640,10 +1072,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 24,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 242
+      "priorityScore": 241
     },
     {
       "speciesId": "raffaelea-lauricola",
@@ -653,10 +1084,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 24,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 242
+      "priorityScore": 241
     },
     {
       "speciesId": "anarsia-lineatella",
@@ -666,10 +1096,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 23,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 232
+      "priorityScore": 231
     },
     {
       "speciesId": "dryocosmus-kuriphilus",
@@ -679,10 +1108,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 23,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 232
+      "priorityScore": 231
     },
     {
       "speciesId": "iris-pseudacorus",
@@ -742,10 +1170,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 18,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 182
+      "priorityScore": 181
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -755,10 +1182,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 18,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 182
+      "priorityScore": 181
     },
     {
       "speciesId": "ophiostoma-ulmi",
@@ -768,10 +1194,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 142
+      "priorityScore": 141
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -781,10 +1206,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 10,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 102
+      "priorityScore": 101
     },
     {
       "speciesId": "emerald-ash-borer",
@@ -794,10 +1218,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 12
+      "priorityScore": 11
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -807,10 +1230,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 12
+      "priorityScore": 11
     },
     {
       "speciesId": "discula-destructiva",
@@ -820,10 +1242,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     },
     {
       "speciesId": "popillia-japonica",
@@ -833,10 +1254,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 2
+      "priorityScore": 1
     }
   ],
   "migrationCandidates": {

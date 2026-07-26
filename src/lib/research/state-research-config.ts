@@ -1,10 +1,13 @@
+import { createHash } from "node:crypto";
+
 export type StateResearchConfig = {
   stateCode: string;
   mode: "authoritative" | "research-only";
   speciesScope: {
-    mode: "catalog-all" | "explicit";
-    applicabilityPath: string | null;
-    undeterminedSpeciesPolicy: "excluded" | "included-grandfathered-baseline";
+    mode: "catalog-all" | "sparse-default";
+    applicabilityPath: string;
+    defaultApplicability: "unknown";
+    undeterminedSpeciesPolicy: "included-as-unknown";
   };
   bootstrapLedgerAllowed: boolean;
   compatibilityPublication: boolean;
@@ -13,22 +16,42 @@ export type StateResearchConfig = {
 };
 
 export type StateResearchConfigFile = {
-  schemaVersion: 1;
+  schemaVersion: 2;
   states: StateResearchConfig[];
 };
 
+export type StateSpeciesApplicability =
+  | "applicable"
+  | "not-applicable"
+  | "unknown"
+  | "blocked";
+
 export type StateApplicabilityFile = {
-  schemaVersion: 1;
+  schemaVersion: 2;
   stateCode: string;
   asOf: string;
-  undeterminedSpeciesPolicy: "excluded";
+  catalogSpeciesCount: number;
+  catalogSpeciesIdsSha256: string;
+  undeterminedSpeciesPolicy: "included-as-unknown";
+  defaultDecision: {
+    applicability: "unknown";
+    note: string;
+  };
   species: Array<{
     speciesId: string;
-    applicability: "applicable";
+    applicability: StateSpeciesApplicability;
     priority: "regulated" | "high" | "pilot" | "baseline";
     basis: Array<{ sourceId: string; sourceRecordId: string; url: string; note: string }>;
   }>;
 };
+
+export type StateApplicabilityDecisionCounts = Record<StateSpeciesApplicability, number>;
+
+export function hashCatalogSpeciesIds(speciesIds: string[]) {
+  return createHash("sha256")
+    .update(`${JSON.stringify([...speciesIds].sort())}\n`)
+    .digest("hex");
+}
 
 export function selectStateResearchConfig(
   configFile: StateResearchConfigFile,
@@ -59,14 +82,8 @@ export function resolveStateResearchScope(input: {
   if (config.mode === "research-only" && (config.bootstrapLedgerAllowed || config.compatibilityPublication)) {
     throw new Error(`Research-only state ${input.stateCode} cannot use the bootstrap ledger or publish compatibility outputs.`);
   }
-  if (config.speciesScope.mode === "catalog-all") {
-    if (config.speciesScope.applicabilityPath !== null || input.applicability !== null) {
-      throw new Error(`Catalog-all state ${input.stateCode} must not declare applicability data.`);
-    }
-    return { config, speciesIds: [...input.catalogSpeciesIds], applicabilityAsOf: null };
-  }
   if (!config.speciesScope.applicabilityPath || !input.applicability) {
-    throw new Error(`Explicit state ${input.stateCode} requires applicability data.`);
+    throw new Error(`State ${input.stateCode} requires an applicability decision file.`);
   }
   if (input.applicability.stateCode !== input.stateCode) {
     throw new Error(`Applicability state ${input.applicability.stateCode} does not match ${input.stateCode}.`);
@@ -74,19 +91,70 @@ export function resolveStateResearchScope(input: {
   if (input.applicability.undeterminedSpeciesPolicy !== config.speciesScope.undeterminedSpeciesPolicy) {
     throw new Error(`Applicability policy differs from the ${input.stateCode} research config.`);
   }
+  if (
+    input.applicability.defaultDecision.applicability !==
+    config.speciesScope.defaultApplicability
+  ) {
+    throw new Error(`Applicability default differs from the ${input.stateCode} research config.`);
+  }
+  if (input.applicability.catalogSpeciesCount !== input.catalogSpeciesIds.length) {
+    throw new Error(`Applicability catalog count differs from the ${input.stateCode} compiler catalog.`);
+  }
+  if (
+    input.applicability.catalogSpeciesIdsSha256 !==
+    hashCatalogSpeciesIds(input.catalogSpeciesIds)
+  ) {
+    throw new Error(`Applicability catalog fingerprint differs from the ${input.stateCode} compiler catalog.`);
+  }
   const compilerCutoff = Date.parse(`${input.asOf}T23:59:59.999Z`);
   const applicabilityCutoff = Date.parse(`${input.applicability.asOf}T23:59:59.999Z`);
   if (!Number.isFinite(applicabilityCutoff) || applicabilityCutoff > compilerCutoff) {
     throw new Error(`Applicability for ${input.stateCode} is invalid or newer than compiler as-of ${input.asOf}.`);
   }
   const speciesIds = input.applicability.species.map((entry) => entry.speciesId);
-  if (speciesIds.length === 0) throw new Error(`Explicit applicability for ${input.stateCode} is empty.`);
   if (new Set(speciesIds).size !== speciesIds.length) {
-    throw new Error(`Explicit applicability for ${input.stateCode} contains duplicate species.`);
+    throw new Error(`Sparse applicability for ${input.stateCode} contains duplicate species.`);
   }
   const catalogSpeciesIdSet = new Set(input.catalogSpeciesIds);
   for (const speciesId of speciesIds) {
     if (!catalogSpeciesIdSet.has(speciesId)) throw new Error(`Applicability references unknown catalog species ${speciesId}.`);
   }
-  return { config, speciesIds, applicabilityAsOf: input.applicability.asOf };
+  const applicabilityBySpeciesId = new Map(
+    input.applicability.species.map((entry) => [entry.speciesId, entry.applicability]),
+  );
+  const boundedSpeciesIds = input.applicability.species
+    .filter((entry) => entry.applicability === "applicable")
+    .map((entry) => entry.speciesId);
+  if (
+    config.speciesScope.mode === "sparse-default" &&
+    boundedSpeciesIds.length === 0
+  ) {
+    throw new Error(`Sparse applicability for ${input.stateCode} contains no applicable acquisition species.`);
+  }
+  const applicabilityDecisionCounts: StateApplicabilityDecisionCounts = {
+    applicable: 0,
+    "not-applicable": 0,
+    unknown: input.catalogSpeciesIds.length - speciesIds.length,
+    blocked: 0,
+  };
+  for (const entry of input.applicability.species) {
+    applicabilityDecisionCounts[entry.applicability] += 1;
+  }
+  const selectedSpeciesIds =
+    config.speciesScope.mode === "catalog-all"
+      ? [...input.catalogSpeciesIds]
+      : boundedSpeciesIds;
+  return {
+    config,
+    speciesIds: selectedSpeciesIds,
+    applicabilityAsOf: input.applicability.asOf,
+    applicabilityDecisionCounts,
+    explicitApplicabilityDecisionCount: speciesIds.length,
+    resolvedStateSpeciesDecisionCount: input.catalogSpeciesIds.length,
+    fullCatalogApplicabilityComplete:
+      applicabilityDecisionCounts.unknown === 0 &&
+      applicabilityDecisionCounts.blocked === 0,
+    defaultApplicability: input.applicability.defaultDecision.applicability,
+    applicabilityBySpeciesId,
+  };
 }

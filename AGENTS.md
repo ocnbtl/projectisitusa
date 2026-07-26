@@ -30,11 +30,11 @@ The current research foundation starts in `src/data/research/source-registry.jso
 ## National Orchestration Policy
 
 - MAIN plans work in the job registry, rejects overlapping active leases, reviews every worker manifest and diff, integrates validated commits, and runs all shared generation and release gates centrally.
-- Every lease pins a base SHA, branch, worktree, path allowlist, path denylist, skill versions and hashes, expected outputs, retry policy, expiration state, and completion criteria.
+- Every lease pins a base SHA, branch, worktree, path allowlist, path denylist, skill versions and hashes, expected outputs, retry policy, expiration state, and completion criteria. A byte-preserving recovery may also pin an older `expectedReceiptCodeCommit`; this preserves the acquisition code identity instead of falsely rewriting it to the newer worker base.
 - Every completion manifest reports source parameters, artifacts, assertions, reviews, rejections, outcomes, blocked items, exact baseline/final/net counts, verification commands, commit SHA, and remaining work.
 - A worker that discovers a shared-schema or shared-skill requirement records a blocker or proposal. It does not implement the shared change.
 - Durable job state belongs in repository artifacts, not chat history.
-- The first three 2026-07-15 skill evaluation cycles remain failed historical evidence. The bounded validator-recovery evaluation later passed `90/90` cases with zero critical violations. The frozen version is `frozen-recovery-2026-07-16-r1` at commit `1a0301e6a248956e46ba6faecd6d90b6f373a799`. Every worker lease must pin the exact skill hashes recorded in `ops/national-research/receipts/skill-freezes/isitusa-national-skills-recovery-2026-07-15-r1.json`. Do not edit a frozen skill while a pinned worker is active.
+- The first three 2026-07-15 skill evaluation cycles remain failed historical evidence. The first post-freeze recovery also remains rejected because it rewrote acquisition code lineage. The repaired regression passed `97/97` cases with zero critical violations and two accepted lineage-preserving worker integrations. The frozen version is `frozen-postfreeze-lineage-2026-07-26-r2` at commit `52da0a7377e03ab7c0d9ff49e761a760d4bd73f1`. Every new worker lease must pin orchestrator hash `9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757` and worker hash `1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151` from `ops/national-research/receipts/skill-freezes/isitusa-national-skills-postfreeze-lineage-2026-07-26-r2.json`. Do not edit a frozen skill while a pinned worker is active.
 
 ## Nonnegotiable Data Rules
 
@@ -57,6 +57,9 @@ Report research coverage separately from determination coverage.
 - Survey non-detection is reported on the survey axis. Legacy known compatibility coverage may also count `not-detected`, but it must not be mislabeled as determination coverage.
 - Bootstrap source-screen research coverage counts pairs with a resolved status or at least one completed source-family screen. It does not mean the category protocol is complete.
 - Protocol-complete research coverage requires explicit current pair outcomes under the target event model and must be reported separately once implemented.
+- Full-catalog coverage uses all `2504` catalog species for every configured jurisdiction and county equivalent. Bounded acquisition scopes remain separate reporting dimensions and never shrink the certification denominator.
+- State-species applicability is explicit for all catalog combinations. `unknown` and `blocked` remain in the denominator. Source-species applicability is a separate axis and cannot classify state applicability by implication.
+- Sparse county projections resolve missing applicable or unknown catalog pairs deterministically as `not-researched`; they do not need millions of duplicated JSON rows.
 - Research completion does not create a determination.
 - Survey non-detection does not erase verified presence. The separate survey axis preserves both facts.
 
@@ -81,13 +84,15 @@ The national projection checkpoint verified with explicit as-of `2026-07-26` is:
 - Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is not accepted as current scope
 - Connecticut uses `9` current planning regions; its `8` former counties are retained only as retired geography lineage
 - deterministic research projections exist for all `51` jurisdictions; Alabama is compatibility-authoritative and the other `50` remain research-only
+- the full national denominator is `127704` state-species combinations and `7872576` county-species pairs; all pairs are resolvable through explicit rows plus a sparse default
 - Alaska, Arizona, and Arkansas remain research-only, but the committed USGS NAS v1.344 pilot now contributes `32` reviewed present determinations and `65` researched-unresolved pairs across those projections
 - the single national archive contains `721752` rows; the three pilot partitions selected `4609` candidates, emitted `32` assertions and reviews, `13` grouped rejection events, `120` outcomes, and `23` honest blocked outcomes
 - the retained AFPE v1.0 CC0 archive was acquired once and partitioned across all `51` jurisdictions for `13` reviewed taxa, producing `40872` outcomes, `7642` reviewed assertions, `32983` no-qualifying-evidence outcomes, `247` blocked outcomes, and `481` rejection events
-- national totals are `3407` state-species entries and `223326` county-species pairs: `26569` verified present, `0` verified absent, `8` not detected, `139185` researched unresolved, and `57564` not researched
+- the bounded acquisition scope contains `3407` state-species entries and `223326` county-species pairs: `26569` verified present, `0` verified absent, `8` not detected, `139185` researched unresolved, and `57564` not researched
+- the full sparse denominator contains the same explicit statuses plus `7649250` default pairs, for `7706814` total not-researched pairs
 - the AFPE net change from the pre-source checkpoint is `40001` pairs, `7469` verified present, `32480` researched unresolved, `52` not researched, `7642` evidence records, and `0` conflicts
 - all `51` state projections are byte-stable; compatibility publication remains limited to Alabama
-- configured applicability classification covers all `51` jurisdictions, with `0` unclassified jurisdictions; this does not mean full-catalog applicability or completed research
+- all `127704` state-species combinations have an explicit decision record: `903` applicable and `126801` unknown at this checkpoint. No state has complete full-catalog applicability classification.
 - protocol cells total `26911`: `16299` applicable, `10612` not applicable, `848` complete, `15392` incomplete, and `59` blocked
 - the centralized pilot did not by itself authorize broad dispatch; the later frozen skill recovery and accepted worker integrations now govern dispatch authority
 - explicit protocol cells remain separate from determination and source-screen coverage

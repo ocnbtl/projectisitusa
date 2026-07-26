@@ -148,7 +148,21 @@ for (const configuredState of configFile.states.filter(
     certificationScope: config.mode === "authoritative" ? "state-baseline" : "bounded-pilot",
     applicabilityPath: config.speciesScope.applicabilityPath,
     applicabilityAsOf: resolvedScope.applicabilityAsOf,
-    applicableSpeciesCount: resolvedScope.speciesIds.length,
+    catalogSpeciesCount: catalogSpeciesIds.length,
+    stateSpeciesDenominator: catalogSpeciesIds.length,
+    applicableSpeciesCount: resolvedScope.applicabilityDecisionCounts.applicable,
+    notApplicableSpeciesCount:
+      resolvedScope.applicabilityDecisionCounts["not-applicable"],
+    unknownSpeciesCount: resolvedScope.applicabilityDecisionCounts.unknown,
+    blockedSpeciesCount: resolvedScope.applicabilityDecisionCounts.blocked,
+    explicitApplicabilityDecisionCount:
+      resolvedScope.explicitApplicabilityDecisionCount,
+    resolvedStateSpeciesDecisionCount:
+      resolvedScope.resolvedStateSpeciesDecisionCount,
+    boundedAcquisitionSpeciesCount: resolvedScope.speciesIds.length,
+    defaultApplicability: resolvedScope.defaultApplicability,
+    fullCatalogApplicabilityComplete:
+      resolvedScope.fullCatalogApplicabilityComplete,
     undeterminedSpeciesPolicy: config.speciesScope.undeterminedSpeciesPolicy,
     compatibilityPublication: config.compatibilityPublication,
     protocolModel: config.mode === "authoritative"
@@ -260,15 +274,35 @@ for (const configuredState of configFile.states.filter(
     assert(
       [...pairSpeciesIds].sort().join("\n") ===
         [...selectedSpeciesIds].sort().join("\n"),
-      `${filename} does not contain the exact applicable species scope.`,
+      `${filename} does not contain the exact bounded acquisition scope.`,
     );
-    const statusTotal =
+    const fullStatusTotal =
       county.summary.verifiedPresent +
       county.summary.verifiedAbsent +
       county.summary.notDetected +
       county.summary.researchedUnresolved +
       county.summary.notResearched;
-    assert(statusTotal === selectedSpeciesIds.size, `${filename} status counts are incomplete.`);
+    assert(
+      fullStatusTotal === county.summary.resolvablePairs,
+      `${filename} full-catalog status counts are incomplete.`,
+    );
+    const bounded = county.summary.boundedAcquisition;
+    const boundedStatusTotal =
+      bounded.verifiedPresent +
+      bounded.verifiedAbsent +
+      bounded.notDetected +
+      bounded.researchedUnresolved +
+      bounded.notResearched;
+    assert(
+      bounded.speciesCount === selectedSpeciesIds.size &&
+        bounded.totalPairs === selectedSpeciesIds.size &&
+        boundedStatusTotal === selectedSpeciesIds.size,
+      `${filename} bounded acquisition status counts are incomplete.`,
+    );
+    assert(
+      county.pairResolution.explicitPairCount === county.pairs.length,
+      `${filename} sparse pair descriptor is stale.`,
+    );
     for (const pair of county.pairs) {
       for (const evidence of pair.evidence) {
         assert(sourceIds.has(evidence.sourceId), `${filename} references an unknown source.`);
@@ -284,11 +318,17 @@ for (const configuredState of configFile.states.filter(
   }
 
   const totals = summary.summary;
-  assert(totals.speciesCount === selectedSpeciesIds.size, `${stateCode} species count is stale.`);
+  assert(totals.speciesCount === catalogSpeciesIds.length, `${stateCode} catalog species count is stale.`);
   assert(totals.countyCount === countyFips.length, `${stateCode} county count is stale.`);
   assert(
-    totals.totalPairs === selectedSpeciesIds.size * countyFips.length,
-    `${stateCode} total pair count is stale.`,
+    totals.totalPairs === catalogSpeciesIds.length * countyFips.length,
+    `${stateCode} full denominator pair count is stale.`,
+  );
+  assert(
+    totals.boundedAcquisition.speciesCount === selectedSpeciesIds.size &&
+      totals.boundedAcquisition.totalPairs ===
+        selectedSpeciesIds.size * countyFips.length,
+    `${stateCode} bounded acquisition denominator is stale.`,
   );
   for (const field of [
     "verifiedPresent",

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "national-source-feasibility-2026-07-26",
+  "evaluatedAt": "2026-07-26T14:20:00Z",
+  "mode": "read-only",
+  "criteria": {
+    "authority": 15,
+    "freshness": 15,
+    "countyGeographySafety": 20,
+    "stableIdentityAndTaxonomy": 15,
+    "nationalReuseAndCompleteness": 15,
+    "diskAndNetworkFit": 10,
+    "licensingClarity": 5,
+    "reviewBurden": 5
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "sourceId": "fia-invasive-plants",
+      "score": 94,
+      "decision": "selected",
+      "authority": "USDA Forest Service Forest Inventory and Analysis",
+      "freshness": "Current state files checked 2026-07-26",
+      "stableRecordId": "CN",
+      "geographyPolicy": "Exact STATECD plus zero-padded COUNTYCD must match the active county-equivalent registry. No coordinate routing is permitted.",
+      "nationalArtifactBytes": 77012449,
+      "artifactCount": 52,
+      "jurisdictionNotes": {
+        "DC": "No state file was available. Source applicability is not-applicable unless FIA documents another delivery.",
+        "OR": "The current file is header-only. Empty source output is not evidence of absence or non-detection.",
+        "WA": "The current file is header-only. Empty source output is not evidence of absence or non-detection."
+      },
+      "negativeEvidenceLimitation": "FIA invasive plant rows are sampled plot detections. Source silence cannot create verified absence or not-detected.",
+      "licenseAndTerms": "Public first-party federal download. Preserve the official citation and terms snapshot because the DataMart did not expose a dataset-specific machine-readable license.",
+      "officialUrls": [
+        "https://apps.fs.usda.gov/fia/datamart/datamart.html",
+        "https://research.fs.usda.gov/programs/fia",
+        "https://research.fs.usda.gov/understory/forest-inventory-and-analysis-database-user-guide-nfi",
+        "https://apps.fs.usda.gov/fia/datamart/CSV/REF_PLANT_DICTIONARY.csv",
+        "https://apps.fs.usda.gov/fia/datamart/CSV/REF_INVASIVE_SPECIES.csv"
+      ]
+    },
+    {
+      "rank": 2,
+      "sourceId": "gbif-preserved-specimens",
+      "score": 77,
+      "decision": "bounded-follow-on",
+      "reason": "The existing exact-text adapter is safe, but a complete national snapshot requires an authenticated download and materially larger retained artifacts."
+    },
+    {
+      "rank": 3,
+      "sourceId": "nrcs-plants",
+      "score": 76,
+      "decision": "blocked-geography",
+      "reason": "County rows do not expose state or FIPS. The existing geometry-derived routing is prohibited without a separately approved and audited policy."
+    },
+    {
+      "rank": 4,
+      "sourceId": "usfs-current-invasive-plants",
+      "score": 69,
+      "decision": "blocked-geography",
+      "reason": "The current national layer exposes polygons but no county identifier. Spatial overlay is outside the approved geography policy."
+    }
+  ],
+  "selectedImplementation": {
+    "sourceId": "fia-invasive-plants",
+    "acquireOnce": true,
+    "hashPinEveryArtifact": true,
+    "resumeWithoutReplacingVerifiedCache": true,
+    "partitionDeterministically": true,
+    "positiveEvidenceFirst": true,
+    "noEvidenceOutcomePolicy": "Emit researched-unresolved outcomes only for documented applicable scope after completeness validation. Never create absence or non-detection from silence.",
+    "coordinateDerivedCountyRoutingUsed": false
+  }
+}

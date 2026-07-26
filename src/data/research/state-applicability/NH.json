@@ -1,8 +1,14 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "stateCode": "NH",
   "asOf": "2026-07-25",
-  "undeterminedSpeciesPolicy": "excluded",
+  "catalogSpeciesCount": 2504,
+  "catalogSpeciesIdsSha256": "75dec35ece4ed3e31a46b8d21b5ba8a6e4b90f472ced8302995fdca417716baa",
+  "undeterminedSpeciesPolicy": "included-as-unknown",
+  "defaultDecision": {
+    "applicability": "unknown",
+    "note": "Catalog species without an explicit state override remain unknown. They stay inside the full denominator and resolve to not-researched until applicable evidence or a reviewed state decision changes that status."
+  },
   "species": [
     {
       "speciesId": "anarsia-lineatella",

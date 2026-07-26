@@ -1,13 +1,14 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "states": [
     {
       "stateCode": "AL",
       "mode": "authoritative",
       "speciesScope": {
         "mode": "catalog-all",
-        "applicabilityPath": null,
-        "undeterminedSpeciesPolicy": "included-grandfathered-baseline"
+        "applicabilityPath": "src/data/research/state-applicability/AL.json",
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": true,
       "compatibilityPublication": true,
@@ -18,9 +19,10 @@
       "stateCode": "AK",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/AK.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -31,9 +33,10 @@
       "stateCode": "AZ",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/AZ.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -44,9 +47,10 @@
       "stateCode": "AR",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/AR.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -57,9 +61,10 @@
       "stateCode": "CA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/CA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -70,9 +75,10 @@
       "stateCode": "CO",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/CO.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -83,9 +89,10 @@
       "stateCode": "CT",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/CT.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -96,9 +103,10 @@
       "stateCode": "DE",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/DE.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -109,9 +117,10 @@
       "stateCode": "DC",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/DC.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -122,9 +131,10 @@
       "stateCode": "FL",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/FL.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -135,9 +145,10 @@
       "stateCode": "GA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/GA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -148,9 +159,10 @@
       "stateCode": "HI",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/HI.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -161,9 +173,10 @@
       "stateCode": "ID",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/ID.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -174,9 +187,10 @@
       "stateCode": "IL",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/IL.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -187,9 +201,10 @@
       "stateCode": "IN",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/IN.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -200,9 +215,10 @@
       "stateCode": "IA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/IA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -213,9 +229,10 @@
       "stateCode": "KS",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/KS.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -226,9 +243,10 @@
       "stateCode": "KY",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/KY.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -239,9 +257,10 @@
       "stateCode": "LA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/LA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -252,9 +271,10 @@
       "stateCode": "ME",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/ME.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -265,9 +285,10 @@
       "stateCode": "MD",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/MD.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -278,9 +299,10 @@
       "stateCode": "MA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/MA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -291,9 +313,10 @@
       "stateCode": "MI",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/MI.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -304,9 +327,10 @@
       "stateCode": "MN",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/MN.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -317,9 +341,10 @@
       "stateCode": "MS",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/MS.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -330,9 +355,10 @@
       "stateCode": "MO",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/MO.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -343,9 +369,10 @@
       "stateCode": "MT",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/MT.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -356,9 +383,10 @@
       "stateCode": "NE",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/NE.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -369,9 +397,10 @@
       "stateCode": "NV",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/NV.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -382,9 +411,10 @@
       "stateCode": "NH",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/NH.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -395,9 +425,10 @@
       "stateCode": "NJ",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/NJ.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -408,9 +439,10 @@
       "stateCode": "NM",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/NM.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -421,9 +453,10 @@
       "stateCode": "NY",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/NY.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -434,9 +467,10 @@
       "stateCode": "NC",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/NC.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -447,9 +481,10 @@
       "stateCode": "ND",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/ND.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -460,9 +495,10 @@
       "stateCode": "OH",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/OH.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -473,9 +509,10 @@
       "stateCode": "OK",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/OK.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -486,9 +523,10 @@
       "stateCode": "OR",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/OR.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -499,9 +537,10 @@
       "stateCode": "PA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/PA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -512,9 +551,10 @@
       "stateCode": "RI",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/RI.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -525,9 +565,10 @@
       "stateCode": "SC",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/SC.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -538,9 +579,10 @@
       "stateCode": "SD",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/SD.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -551,9 +593,10 @@
       "stateCode": "TN",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/TN.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -564,9 +607,10 @@
       "stateCode": "TX",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/TX.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -577,9 +621,10 @@
       "stateCode": "UT",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/UT.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -590,9 +635,10 @@
       "stateCode": "VT",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/VT.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -603,9 +649,10 @@
       "stateCode": "VA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/VA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -616,9 +663,10 @@
       "stateCode": "WA",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/WA.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -629,9 +677,10 @@
       "stateCode": "WV",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/WV.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -642,9 +691,10 @@
       "stateCode": "WI",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/WI.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,
@@ -655,9 +705,10 @@
       "stateCode": "WY",
       "mode": "research-only",
       "speciesScope": {
-        "mode": "explicit",
+        "mode": "sparse-default",
         "applicabilityPath": "src/data/research/state-applicability/WY.json",
-        "undeterminedSpeciesPolicy": "excluded"
+        "undeterminedSpeciesPolicy": "included-as-unknown",
+        "defaultApplicability": "unknown"
       },
       "bootstrapLedgerAllowed": false,
       "compatibilityPublication": false,

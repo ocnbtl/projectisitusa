@@ -7,10 +7,20 @@
     "publicationMode": "authoritative",
     "speciesMode": "catalog-all",
     "certificationScope": "state-baseline",
-    "applicabilityPath": null,
-    "applicabilityAsOf": null,
-    "applicableSpeciesCount": 2504,
-    "undeterminedSpeciesPolicy": "included-grandfathered-baseline",
+    "applicabilityPath": "src/data/research/state-applicability/AL.json",
+    "applicabilityAsOf": "2026-07-26",
+    "catalogSpeciesCount": 2504,
+    "stateSpeciesDenominator": 2504,
+    "applicableSpeciesCount": 0,
+    "notApplicableSpeciesCount": 0,
+    "unknownSpeciesCount": 2504,
+    "blockedSpeciesCount": 0,
+    "explicitApplicabilityDecisionCount": 0,
+    "resolvedStateSpeciesDecisionCount": 2504,
+    "boundedAcquisitionSpeciesCount": 2504,
+    "defaultApplicability": "unknown",
+    "fullCatalogApplicabilityComplete": false,
+    "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": true,
     "protocolModel": "explicit-source-species-legacy-migration"
   },
@@ -18,6 +28,9 @@
     "speciesCount": 2504,
     "countyCount": 67,
     "totalPairs": 167768,
+    "resolvablePairCount": 167768,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
     "verifiedPresent": 15293,
     "verifiedAbsent": 0,
     "notDetected": 8,
@@ -32,7 +45,19 @@
     "bootstrapEvidenceRecordCount": 30130,
     "runEvidenceRecordCount": 683,
     "rejectionRecordCount": 1440,
-    "researchRunCount": 32
+    "researchRunCount": 32,
+    "boundedAcquisition": {
+      "speciesCount": 2504,
+      "totalPairs": 167768,
+      "verifiedPresent": 15293,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 95615,
+      "notResearched": 56852,
+      "researchCoveragePercent": 66.11,
+      "explicitOutcomePairs": 1047,
+      "explicitOutcomeCoveragePercent": 0.6241
+    }
   },
   "migrationCandidates": {
     "sourceAssertionCount": 312,
@@ -346,14 +371,14 @@
     "protocolStatus": "legacy-migration",
     "priorityClassificationComplete": false,
     "totalCells": 25040,
-    "applicableCells": 14681,
-    "notApplicableCells": 10359,
+    "applicableCells": 14437,
+    "notApplicableCells": 10603,
     "completeCells": 13,
-    "incompleteCells": 14668,
+    "incompleteCells": 14424,
     "blockedCells": 0,
     "currentCells": 0,
     "staleCells": 13,
-    "undatedCells": 14668,
+    "undatedCells": 14424,
     "applicableCompletionPercent": 0.09,
     "currentCompletePercent": 0,
     "regulatedAndHighApplicableCells": 0,
@@ -381,7 +406,7 @@
       },
       {
         "category": "wildlife",
-        "applicableCells": 1220,
+        "applicableCells": 976,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
@@ -407,7 +432,7 @@
       },
       {
         "priority": "baseline",
-        "applicableCells": 14681,
+        "applicableCells": 14437,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
@@ -463,9 +488,9 @@
       },
       {
         "sourceId": "usgs-nas",
-        "applicableCells": 244,
+        "applicableCells": 0,
         "currentCompleteCells": 0,
-        "processed": false
+        "processed": true
       }
     ]
   },

@@ -5,34 +5,59 @@
   "generatedAt": "2026-07-26T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
-    "speciesMode": "explicit",
+    "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/MI.json",
     "applicabilityAsOf": "2026-07-25",
+    "catalogSpeciesCount": 2504,
+    "stateSpeciesDenominator": 2504,
     "applicableSpeciesCount": 18,
-    "undeterminedSpeciesPolicy": "excluded",
+    "notApplicableSpeciesCount": 0,
+    "unknownSpeciesCount": 2486,
+    "blockedSpeciesCount": 0,
+    "explicitApplicabilityDecisionCount": 18,
+    "resolvedStateSpeciesDecisionCount": 2504,
+    "boundedAcquisitionSpeciesCount": 18,
+    "defaultApplicability": "unknown",
+    "fullCatalogApplicabilityComplete": false,
+    "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 18,
+    "speciesCount": 2504,
     "countyCount": 83,
-    "totalPairs": 1494,
+    "totalPairs": 207832,
+    "resolvablePairCount": 207832,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
     "verifiedPresent": 560,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 903,
-    "notResearched": 31,
-    "determinationCoveragePercent": 37.48,
-    "researchCoveragePercent": 97.93,
+    "notResearched": 206369,
+    "determinationCoveragePercent": 0.27,
+    "researchCoveragePercent": 0.7,
     "explicitOutcomePairCount": 1463,
-    "explicitOutcomeCoveragePercent": 97.925,
+    "explicitOutcomeCoveragePercent": 0.7039,
     "conflictCount": 0,
     "evidenceRecordCount": 560,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 560,
     "rejectionRecordCount": 89,
-    "researchRunCount": 6
+    "researchRunCount": 6,
+    "boundedAcquisition": {
+      "speciesCount": 18,
+      "totalPairs": 1494,
+      "verifiedPresent": 560,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 903,
+      "notResearched": 31,
+      "researchCoveragePercent": 97.93,
+      "explicitOutcomePairs": 1463,
+      "explicitOutcomeCoveragePercent": 97.925
+    }
   },
   "migrationCandidates": {
     "sourceAssertionCount": 0,
@@ -346,16 +371,16 @@
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
     "totalCells": 36,
-    "applicableCells": 31,
-    "notApplicableCells": 5,
+    "applicableCells": 18,
+    "notApplicableCells": 18,
     "completeCells": 17,
-    "incompleteCells": 13,
+    "incompleteCells": 0,
     "blockedCells": 1,
     "currentCells": 4,
     "staleCells": 13,
-    "undatedCells": 14,
-    "applicableCompletionPercent": 54.84,
-    "currentCompletePercent": 12.9,
+    "undatedCells": 1,
+    "applicableCompletionPercent": 94.44,
+    "currentCompletePercent": 22.22,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -363,13 +388,13 @@
     "categoryCompletion": [
       {
         "category": "fungi-diseases",
-        "applicableCells": 12,
+        "applicableCells": 6,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "insects",
-        "applicableCells": 14,
+        "applicableCells": 7,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
@@ -407,7 +432,7 @@
       },
       {
         "priority": "baseline",
-        "applicableCells": 26,
+        "applicableCells": 13,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
@@ -415,7 +440,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "usgs-nas",
-        "applicableCells": 18,
+        "applicableCells": 5,
         "currentCompleteCells": 4,
         "processed": false
       }
@@ -442,10 +467,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 83,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 832
+      "priorityScore": 831
     },
     {
       "speciesId": "dryocosmus-kuriphilus",
@@ -455,10 +479,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 83,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 832
+      "priorityScore": 831
     },
     {
       "speciesId": "icerya-purchasi",
@@ -468,10 +491,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 83,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 832
+      "priorityScore": 831
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -481,10 +503,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 83,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 832
+      "priorityScore": 831
     },
     {
       "speciesId": "raffaelea-lauricola",
@@ -494,10 +515,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 83,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 832
+      "priorityScore": 831
     },
     {
       "speciesId": "anarsia-lineatella",
@@ -507,10 +527,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 81,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 812
+      "priorityScore": 811
     },
     {
       "speciesId": "homadaula-albizziae",
@@ -520,10 +539,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 81,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 812
+      "priorityScore": 811
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -533,10 +551,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 78,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 782
+      "priorityScore": 781
     },
     {
       "speciesId": "discula-destructiva",
@@ -546,10 +563,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 53,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 532
+      "priorityScore": 531
     },
     {
       "speciesId": "ophiostoma-ulmi",
@@ -559,10 +575,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 48,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 482
+      "priorityScore": 481
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -572,10 +587,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 38,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 382
+      "priorityScore": 381
     },
     {
       "speciesId": "potamogeton-crispus",
@@ -605,10 +619,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 24,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 242
+      "priorityScore": 241
     },
     {
       "speciesId": "typha-angustifolia",
@@ -638,10 +651,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 3,
       "missingProtocolSourceIds": [
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 32
+      "priorityScore": 31
     }
   ]
 }

@@ -4,26 +4,26 @@ Generated: `2026-07-26T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `22`
+- Species: `2504`
 - Counties: `15`
-- County-species pairs: `330`
-- Verified present: `41`
+- County-species pairs: `37560`
+- Verified present: `43`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `242`
-- Not researched: `47`
-- Determination coverage: `12.42%`
-- Research coverage: `85.76%`
-- Explicit outcome coverage: `85.7576%`
-- Applicable protocol cells: `57`
+- Not researched: `37275`
+- Determination coverage: `0.11%`
+- Research coverage: `0.76%`
+- Explicit outcome coverage: `0.7588%`
+- Applicable protocol cells: `41`
 - Current complete protocol cells: `5`
-- Protocol completion: `31.58%`
-- Current protocol completion: `8.77%`
-- Evidence records: `91`
-- Research runs: `8`
-- Rejection records: `38`
-- Deferred source assertions remaining: `2`
-- Deferred distinct pairs remaining: `2`
+- Protocol completion: `43.90%`
+- Current protocol completion: `12.20%`
+- Evidence records: `225`
+- Research runs: `9`
+- Rejection records: `68`
+- Deferred source assertions remaining: `0`
+- Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
 
 Determination coverage counts only verified present and verified absent pairs. Research coverage also counts explicit not-detected evidence and source-family screens. Explicit outcome coverage counts completed immutable pair outcomes. None of these metrics implies absence.
@@ -32,28 +32,28 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Canada Thistle (`cirsium-arvense`) | plants | 15 | 0 | 2 |
-| Yellow Sweetclover (`melilotus-officinalis`) | plants | 15 | 0 | 2 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 14 | 0 | 2 |
+| Canada Thistle (`cirsium-arvense`) | plants | 14 | 0 | 1 |
+| Pineapple Weed (`matricaria-discoidea`) | plants | 14 | 0 | 1 |
+| Yellow Sweetclover (`melilotus-officinalis`) | plants | 14 | 0 | 1 |
 | Common Carp (`cyprinus-carpio`) | wildlife | 3 | 0 | 2 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 3 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 3 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 3 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 3 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 3 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 3 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 3 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 3 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 3 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 15 | 3 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 3 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 2 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 2 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 2 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 2 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 2 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 15 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 2 |
 | Chinese mysterysnail (`cipangopaludina-chinensis`) | wildlife | 0 | 14 | 1 |
 | New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 0 | 13 | 1 |
 | Asian tapeworm (`schyzocotyle-acheilognathi`) | wildlife | 0 | 13 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 11 | 3 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 11 | 2 |
 | Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 9 | 1 |
 | Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 9 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 8 | 3 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 8 | 2 |
 
 ## Source Operations
 
@@ -77,7 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-16T07:26:55.916Z | 1 | 1 |
+| GBIF preserved specimen records | operational | 2026-07-26T11:31:31.359Z | 3 | 3 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -443,7 +443,7 @@ validateRecords(
 );
 schemaValidator("research-projection.schema.json").parse(summary);
 
-assert(summary.schemaVersion === 3, "Unsupported generated research projection version.");
+assert(summary.schemaVersion === 4, "Unsupported generated research projection version.");
 assert(registry.schemaVersion === 1, "Unsupported source registry schema version.");
 assertUnique(registry.sources.map((source) => source.id), "Source IDs");
 const registryLabels = registry.sources

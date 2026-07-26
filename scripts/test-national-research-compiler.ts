@@ -1,9 +1,11 @@
 import catalog from "@/data/generated/species.json";
+import alabamaApplicability from "@/data/research/state-applicability/AL.json";
 import alaskaApplicability from "@/data/research/state-applicability/AK.json";
 import stateRegistry from "@/data/research/state-registry.json";
 import stateResearchConfig from "@/data/research/state-research-config.json";
 import {
   resolveStateResearchScope,
+  hashCatalogSpeciesIds,
   type StateApplicabilityFile,
   type StateResearchConfigFile,
 } from "@/lib/research/state-research-config";
@@ -27,10 +29,21 @@ function expectFailure(label: string, expected: RegExp, run: () => unknown) {
 const configFile = structuredClone(stateResearchConfig) as StateResearchConfigFile;
 const catalogSpeciesIds = catalog.map((entry) => entry.id);
 const applicability = structuredClone(alaskaApplicability) as StateApplicabilityFile;
+const alabamaApplicabilityFile = structuredClone(
+  alabamaApplicability,
+) as StateApplicabilityFile;
 const common = {
   catalogSpeciesIds,
-  asOf: applicability.asOf,
+  asOf: "2026-07-26",
 };
+const applicableStateSpeciesDecisions = configFile.states.reduce((sum, entry) => {
+  const file = JSON.parse(
+    readFileSync(path.join(process.cwd(), entry.speciesScope.applicabilityPath), "utf8"),
+  ) as StateApplicabilityFile;
+  return sum + file.species.filter(
+    (species) => species.applicability === "applicable",
+  ).length;
+}, 0);
 
 assert(
   configFile.states.length === stateRegistry.nationalV1.jurisdictionCount,
@@ -45,9 +58,14 @@ const alabama = resolveStateResearchScope({
   configFile,
   stateCode: "AL",
   ...common,
-  applicability: null,
+  applicability: alabamaApplicabilityFile,
 });
 assert(alabama.speciesIds.length === catalogSpeciesIds.length, "Alabama catalog-all scope lost species.");
+assert(
+  alabama.applicabilityDecisionCounts.unknown === catalogSpeciesIds.length &&
+    alabama.applicabilityDecisionCounts.applicable === 0,
+  "Alabama source screening scope was incorrectly promoted to state applicability.",
+);
 assert(alabama.config.compatibilityPublication, "Alabama must publish compatibility projections.");
 
 const alaska = resolveStateResearchScope({
@@ -57,8 +75,9 @@ const alaska = resolveStateResearchScope({
   applicability,
 });
 assert(
-  alaska.speciesIds.length === applicability.species.length,
-  "Alaska compiler scope differs from its explicit applicability file.",
+  alaska.speciesIds.length ===
+    applicability.species.filter((entry) => entry.applicability === "applicable").length,
+  "Alaska compiler scope differs from its bounded applicability overrides.",
 );
 assert(
   alaska.speciesIds.includes("myosotis-scorpioides"),
@@ -99,7 +118,7 @@ expectFailure("partial authoritative compatibility publication", /requires autho
 
 const emptyApplicability = structuredClone(applicability);
 emptyApplicability.species = [];
-expectFailure("empty explicit applicability", /is empty/, () =>
+expectFailure("empty sparse applicability", /contains no applicable acquisition species/, () =>
   resolveStateResearchScope({ configFile, stateCode: "AK", ...common, applicability: emptyApplicability }),
 );
 
@@ -117,14 +136,66 @@ expectFailure("unknown explicit species", /unknown catalog species/, () =>
 
 const futureApplicability = structuredClone(applicability);
 futureApplicability.asOf = new Date(
-  Date.parse(`${applicability.asOf}T00:00:00.000Z`) + 86_400_000,
+  Date.parse(`${common.asOf}T00:00:00.000Z`) + 86_400_000,
 ).toISOString().slice(0, 10);
 expectFailure("future applicability", /newer than compiler as-of/, () =>
   resolveStateResearchScope({ configFile, stateCode: "AK", ...common, applicability: futureApplicability }),
 );
 
-expectFailure("catalog-all applicability injection", /must not declare applicability data/, () =>
-  resolveStateResearchScope({ configFile, stateCode: "AL", ...common, applicability }),
+const wrongCatalogCount = structuredClone(applicability);
+wrongCatalogCount.catalogSpeciesCount -= 1;
+expectFailure("catalog count drift", /catalog count differs/, () =>
+  resolveStateResearchScope({ configFile, stateCode: "AK", ...common, applicability: wrongCatalogCount }),
+);
+
+const wrongCatalogHash = structuredClone(applicability);
+wrongCatalogHash.catalogSpeciesIdsSha256 = "0".repeat(64);
+expectFailure("catalog fingerprint drift", /catalog fingerprint differs/, () =>
+  resolveStateResearchScope({ configFile, stateCode: "AK", ...common, applicability: wrongCatalogHash }),
+);
+
+expectFailure("missing applicability descriptor", /requires an applicability decision file/, () =>
+  resolveStateResearchScope({ configFile, stateCode: "AL", ...common, applicability: null }),
+);
+
+const statusFixture = structuredClone(applicability);
+statusFixture.species = [
+  {
+    ...structuredClone(applicability.species[0]),
+    applicability: "applicable",
+  },
+  {
+    ...structuredClone(applicability.species[1]),
+    applicability: "not-applicable",
+  },
+  {
+    ...structuredClone(applicability.species[2]),
+    applicability: "unknown",
+  },
+  {
+    ...structuredClone(applicability.species[3]),
+    applicability: "blocked",
+  },
+];
+statusFixture.catalogSpeciesCount = catalogSpeciesIds.length;
+statusFixture.catalogSpeciesIdsSha256 = hashCatalogSpeciesIds(catalogSpeciesIds);
+const fourStatusScope = resolveStateResearchScope({
+  configFile,
+  stateCode: "AK",
+  ...common,
+  applicability: statusFixture,
+});
+assert(
+  fourStatusScope.applicabilityDecisionCounts.applicable === 1 &&
+    fourStatusScope.applicabilityDecisionCounts["not-applicable"] === 1 &&
+    fourStatusScope.applicabilityDecisionCounts.blocked === 1 &&
+    fourStatusScope.applicabilityDecisionCounts.unknown ===
+      catalogSpeciesIds.length - 3,
+  "All four state applicability statuses did not resolve deterministically.",
+);
+assert(
+  !fourStatusScope.fullCatalogApplicabilityComplete,
+  "Unknown or blocked state decisions must prevent full-catalog completion.",
 );
 
 const presenceCounties = {
@@ -184,7 +255,9 @@ console.log(
   JSON.stringify(
     {
       validScopes: { AL: alabama.speciesIds.length, AK: alaska.speciesIds.length },
-      adversarialCases: 10,
+      stateSpeciesDenominator: catalogSpeciesIds.length * configFile.states.length,
+      applicableStateSpeciesDecisions,
+      adversarialCases: 13,
       compatibilityPublicationRestrictedToCompleteAuthoritativeScope: true,
       nonTargetPresenceParityIgnoresInsertionOrder: true,
     },
@@ -192,3 +265,5 @@ console.log(
     2,
   ),
 );
+import { readFileSync } from "node:fs";
+import path from "node:path";

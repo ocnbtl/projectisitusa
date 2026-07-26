@@ -5,34 +5,59 @@
   "generatedAt": "2026-07-26T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
-    "speciesMode": "explicit",
+    "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AR.json",
     "applicabilityAsOf": "2026-07-25",
+    "catalogSpeciesCount": 2504,
+    "stateSpeciesDenominator": 2504,
     "applicableSpeciesCount": 20,
-    "undeterminedSpeciesPolicy": "excluded",
+    "notApplicableSpeciesCount": 0,
+    "unknownSpeciesCount": 2484,
+    "blockedSpeciesCount": 0,
+    "explicitApplicabilityDecisionCount": 20,
+    "resolvedStateSpeciesDecisionCount": 2504,
+    "boundedAcquisitionSpeciesCount": 20,
+    "defaultApplicability": "unknown",
+    "fullCatalogApplicabilityComplete": false,
+    "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 20,
+    "speciesCount": 2504,
     "countyCount": 75,
-    "totalPairs": 1500,
+    "totalPairs": 187800,
+    "resolvablePairCount": 187800,
+    "notApplicablePairCount": 0,
+    "blockedPairCount": 0,
     "verifiedPresent": 253,
     "verifiedAbsent": 0,
     "notDetected": 0,
     "researchedUnresolved": 1099,
-    "notResearched": 148,
-    "determinationCoveragePercent": 16.87,
-    "researchCoveragePercent": 90.13,
+    "notResearched": 186448,
+    "determinationCoveragePercent": 0.13,
+    "researchCoveragePercent": 0.72,
     "explicitOutcomePairCount": 1352,
-    "explicitOutcomeCoveragePercent": 90.1333,
+    "explicitOutcomeCoveragePercent": 0.7199,
     "conflictCount": 0,
     "evidenceRecordCount": 263,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 263,
     "rejectionRecordCount": 19,
-    "researchRunCount": 8
+    "researchRunCount": 8,
+    "boundedAcquisition": {
+      "speciesCount": 20,
+      "totalPairs": 1500,
+      "verifiedPresent": 253,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 1099,
+      "notResearched": 148,
+      "researchCoveragePercent": 90.13,
+      "explicitOutcomePairs": 1352,
+      "explicitOutcomeCoveragePercent": 90.1333
+    }
   },
   "migrationCandidates": {
     "sourceAssertionCount": 2,
@@ -346,16 +371,16 @@
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
     "totalCells": 60,
-    "applicableCells": 53,
-    "notApplicableCells": 7,
+    "applicableCells": 38,
+    "notApplicableCells": 22,
     "completeCells": 18,
-    "incompleteCells": 35,
+    "incompleteCells": 20,
     "blockedCells": 0,
     "currentCells": 5,
     "staleCells": 13,
-    "undatedCells": 35,
-    "applicableCompletionPercent": 33.96,
-    "currentCompletePercent": 9.43,
+    "undatedCells": 20,
+    "applicableCompletionPercent": 47.37,
+    "currentCompletePercent": 13.16,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -363,21 +388,21 @@
     "categoryCompletion": [
       {
         "category": "fungi-diseases",
-        "applicableCells": 18,
+        "applicableCells": 12,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "insects",
-        "applicableCells": 21,
+        "applicableCells": 14,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "plants",
-        "applicableCells": 8,
+        "applicableCells": 6,
         "currentCompleteCells": 2,
-        "currentCompletePercent": 25
+        "currentCompletePercent": 33.33
       },
       {
         "category": "wildlife",
@@ -401,13 +426,13 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 14,
+        "applicableCells": 12,
         "currentCompleteCells": 5,
-        "currentCompletePercent": 35.71
+        "currentCompletePercent": 41.67
       },
       {
         "priority": "baseline",
-        "applicableCells": 39,
+        "applicableCells": 26,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
@@ -421,9 +446,9 @@
       },
       {
         "sourceId": "usgs-nas",
-        "applicableCells": 20,
+        "applicableCells": 5,
         "currentCompleteCells": 5,
-        "processed": false
+        "processed": true
       }
     ]
   },
@@ -436,10 +461,9 @@
       "notResearchedCountyCount": 74,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usgs-nas"
+        "gbif-preserved-specimens"
       ],
-      "priorityScore": 74002
+      "priorityScore": 74001
     },
     {
       "speciesId": "melilotus-officinalis",
@@ -449,10 +473,9 @@
       "notResearchedCountyCount": 74,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usgs-nas"
+        "gbif-preserved-specimens"
       ],
-      "priorityScore": 74002
+      "priorityScore": 74001
     },
     {
       "speciesId": "anarsia-lineatella",
@@ -463,10 +486,9 @@
       "researchedUnresolvedCountyCount": 75,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 753
+      "priorityScore": 752
     },
     {
       "speciesId": "aspidiotus-duplex",
@@ -477,10 +499,9 @@
       "researchedUnresolvedCountyCount": 75,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 753
+      "priorityScore": 752
     },
     {
       "speciesId": "discula-destructiva",
@@ -491,10 +512,9 @@
       "researchedUnresolvedCountyCount": 75,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 753
+      "priorityScore": 752
     },
     {
       "speciesId": "dryocosmus-kuriphilus",
@@ -505,10 +525,9 @@
       "researchedUnresolvedCountyCount": 75,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 753
+      "priorityScore": 752
     },
     {
       "speciesId": "homadaula-albizziae",
@@ -519,10 +538,9 @@
       "researchedUnresolvedCountyCount": 75,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 753
+      "priorityScore": 752
     },
     {
       "speciesId": "icerya-purchasi",
@@ -533,10 +551,9 @@
       "researchedUnresolvedCountyCount": 75,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 753
+      "priorityScore": 752
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -547,10 +564,9 @@
       "researchedUnresolvedCountyCount": 75,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 753
+      "priorityScore": 752
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -561,10 +577,9 @@
       "researchedUnresolvedCountyCount": 74,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 743
+      "priorityScore": 742
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -575,10 +590,9 @@
       "researchedUnresolvedCountyCount": 71,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 713
+      "priorityScore": 712
     },
     {
       "speciesId": "daphnia-lumholtzi",
@@ -625,10 +639,9 @@
       "researchedUnresolvedCountyCount": 61,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 613
+      "priorityScore": 612
     },
     {
       "speciesId": "popillia-japonica",
@@ -639,10 +652,9 @@
       "researchedUnresolvedCountyCount": 54,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 543
+      "priorityScore": 542
     },
     {
       "speciesId": "emerald-ash-borer",
@@ -653,10 +665,9 @@
       "researchedUnresolvedCountyCount": 50,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 503
+      "priorityScore": 502
     },
     {
       "speciesId": "ophiostoma-ulmi",
@@ -667,10 +678,9 @@
       "researchedUnresolvedCountyCount": 41,
       "missingProtocolSourceIds": [
         "gbif-preserved-specimens",
-        "usfs-afpe",
-        "usgs-nas"
+        "usfs-afpe"
       ],
-      "priorityScore": 413
+      "priorityScore": 412
     },
     {
       "speciesId": "nutria",

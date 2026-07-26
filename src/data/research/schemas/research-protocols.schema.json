@@ -58,7 +58,7 @@
                 "additionalProperties": false,
                 "required": ["kind", "values"],
                 "properties": {
-                  "kind": { "enum": ["category", "state-applicability", "species-id"] },
+                  "kind": { "enum": ["category", "state-applicability", "species-id", "state-species-pair"] },
                   "values": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
                 }
               },

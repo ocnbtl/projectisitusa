@@ -25,37 +25,49 @@
         "certificationScope",
         "applicabilityPath",
         "applicabilityAsOf",
+        "catalogSpeciesCount",
+        "stateSpeciesDenominator",
         "applicableSpeciesCount",
+        "notApplicableSpeciesCount",
+        "unknownSpeciesCount",
+        "blockedSpeciesCount",
+        "explicitApplicabilityDecisionCount",
+        "resolvedStateSpeciesDecisionCount",
+        "boundedAcquisitionSpeciesCount",
+        "defaultApplicability",
+        "fullCatalogApplicabilityComplete",
         "undeterminedSpeciesPolicy",
         "compatibilityPublication",
         "protocolModel"
       ],
       "properties": {
         "publicationMode": { "enum": ["authoritative", "research-only"] },
-        "speciesMode": { "enum": ["catalog-all", "explicit"] },
+        "speciesMode": { "enum": ["catalog-all", "sparse-default"] },
         "certificationScope": { "enum": ["state-baseline", "bounded-pilot"] },
-        "applicabilityPath": {
-          "anyOf": [
-            { "type": "string", "minLength": 1 },
-            { "type": "null" }
-          ]
-        },
-        "applicabilityAsOf": {
-          "anyOf": [
-            { "type": "string", "format": "date" },
-            { "type": "null" }
-          ]
-        },
+        "applicabilityPath": { "type": "string", "minLength": 1 },
+        "applicabilityAsOf": { "type": "string", "format": "date" },
+        "catalogSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "stateSpeciesDenominator": { "$ref": "#/$defs/nonnegativeInteger" },
         "applicableSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
-        "undeterminedSpeciesPolicy": { "enum": ["excluded", "included-grandfathered-baseline"] },
+        "notApplicableSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "unknownSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "blockedSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "explicitApplicabilityDecisionCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "resolvedStateSpeciesDecisionCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "boundedAcquisitionSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "defaultApplicability": { "const": "unknown" },
+        "fullCatalogApplicabilityComplete": { "type": "boolean" },
+        "undeterminedSpeciesPolicy": { "const": "included-as-unknown" },
         "compatibilityPublication": { "type": "boolean" },
         "protocolModel": { "enum": ["explicit-source-species-legacy-migration", "explicit-source-species-active"] }
       }
     },
-    "statusCounts": {
+    "boundedStatusCounts": {
       "type": "object",
       "additionalProperties": false,
       "required": [
+        "speciesCount",
+        "totalPairs",
         "verifiedPresent",
         "verifiedAbsent",
         "notDetected",
@@ -66,6 +78,8 @@
         "explicitOutcomeCoveragePercent"
       ],
       "properties": {
+        "speciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "totalPairs": { "$ref": "#/$defs/nonnegativeInteger" },
         "verifiedPresent": { "$ref": "#/$defs/nonnegativeInteger" },
         "verifiedAbsent": { "$ref": "#/$defs/nonnegativeInteger" },
         "notDetected": { "$ref": "#/$defs/nonnegativeInteger" },
@@ -76,6 +90,42 @@
         "explicitOutcomeCoveragePercent": { "$ref": "#/$defs/percentage" }
       }
     },
+    "statusCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalogSpeciesCount",
+        "fullCountySpeciesDenominator",
+        "resolvablePairs",
+        "notApplicablePairs",
+        "blockedPairs",
+        "verifiedPresent",
+        "verifiedAbsent",
+        "notDetected",
+        "researchedUnresolved",
+        "notResearched",
+        "researchCoveragePercent",
+        "explicitOutcomePairs",
+        "explicitOutcomeCoveragePercent",
+        "boundedAcquisition"
+      ],
+      "properties": {
+        "catalogSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "fullCountySpeciesDenominator": { "$ref": "#/$defs/nonnegativeInteger" },
+        "resolvablePairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notApplicablePairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "blockedPairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "verifiedPresent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "verifiedAbsent": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notDetected": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchedUnresolved": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notResearched": { "$ref": "#/$defs/nonnegativeInteger" },
+        "researchCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "explicitOutcomePairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "explicitOutcomeCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "boundedAcquisition": { "$ref": "#/$defs/boundedStatusCounts" }
+      }
+    },
     "stateTotals": {
       "type": "object",
       "additionalProperties": false,
@@ -83,6 +133,9 @@
         "speciesCount",
         "countyCount",
         "totalPairs",
+        "resolvablePairCount",
+        "notApplicablePairCount",
+        "blockedPairCount",
         "verifiedPresent",
         "verifiedAbsent",
         "notDetected",
@@ -97,12 +150,16 @@
         "bootstrapEvidenceRecordCount",
         "runEvidenceRecordCount",
         "rejectionRecordCount",
-        "researchRunCount"
+        "researchRunCount",
+        "boundedAcquisition"
       ],
       "properties": {
         "speciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "countyCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "totalPairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "resolvablePairCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notApplicablePairCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "blockedPairCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "verifiedPresent": { "$ref": "#/$defs/nonnegativeInteger" },
         "verifiedAbsent": { "$ref": "#/$defs/nonnegativeInteger" },
         "notDetected": { "$ref": "#/$defs/nonnegativeInteger" },
@@ -117,7 +174,8 @@
         "bootstrapEvidenceRecordCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "runEvidenceRecordCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "rejectionRecordCount": { "$ref": "#/$defs/nonnegativeInteger" },
-        "researchRunCount": { "$ref": "#/$defs/nonnegativeInteger" }
+        "researchRunCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "boundedAcquisition": { "$ref": "#/$defs/boundedStatusCounts" }
       }
     },
     "countySummary": {
@@ -126,6 +184,11 @@
       "required": [
         "countyFips",
         "name",
+        "catalogSpeciesCount",
+        "fullCountySpeciesDenominator",
+        "resolvablePairs",
+        "notApplicablePairs",
+        "blockedPairs",
         "verifiedPresent",
         "verifiedAbsent",
         "notDetected",
@@ -133,11 +196,17 @@
         "notResearched",
         "researchCoveragePercent",
         "explicitOutcomePairs",
-        "explicitOutcomeCoveragePercent"
+        "explicitOutcomeCoveragePercent",
+        "boundedAcquisition"
       ],
       "properties": {
         "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
         "name": { "type": "string", "minLength": 1 },
+        "catalogSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "fullCountySpeciesDenominator": { "$ref": "#/$defs/nonnegativeInteger" },
+        "resolvablePairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "notApplicablePairs": { "$ref": "#/$defs/nonnegativeInteger" },
+        "blockedPairs": { "$ref": "#/$defs/nonnegativeInteger" },
         "verifiedPresent": { "$ref": "#/$defs/nonnegativeInteger" },
         "verifiedAbsent": { "$ref": "#/$defs/nonnegativeInteger" },
         "notDetected": { "$ref": "#/$defs/nonnegativeInteger" },
@@ -145,7 +214,8 @@
         "notResearched": { "$ref": "#/$defs/nonnegativeInteger" },
         "researchCoveragePercent": { "$ref": "#/$defs/percentage" },
         "explicitOutcomePairs": { "$ref": "#/$defs/nonnegativeInteger" },
-        "explicitOutcomeCoveragePercent": { "$ref": "#/$defs/percentage" }
+        "explicitOutcomeCoveragePercent": { "$ref": "#/$defs/percentage" },
+        "boundedAcquisition": { "$ref": "#/$defs/boundedStatusCounts" }
       }
     },
     "sourceSummary": {
@@ -293,6 +363,7 @@
         "commonName",
         "scientificName",
         "category",
+        "applicabilityStatus",
         "displayStatus",
         "determinationStatus",
         "surveyStatus",
@@ -308,6 +379,9 @@
         "commonName": { "type": "string", "minLength": 1 },
         "scientificName": { "type": "string", "minLength": 1 },
         "category": { "enum": ["plants", "insects", "fungi-diseases", "wildlife"] },
+        "applicabilityStatus": {
+          "enum": ["applicable", "not-applicable", "unknown", "blocked"]
+        },
         "displayStatus": {
           "enum": ["verified-present", "verified-absent", "not-detected", "researched-unresolved", "not-researched"]
         },
@@ -366,7 +440,7 @@
         "statusDefinitions"
       ],
       "properties": {
-        "schemaVersion": { "const": 3 },
+        "schemaVersion": { "const": 4 },
         "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
         "stateName": { "type": "string", "minLength": 1 },
         "asOf": { "type": "string", "format": "date" },
@@ -405,10 +479,11 @@
         "generatedAt",
         "scope",
         "summary",
+        "pairResolution",
         "pairs"
       ],
       "properties": {
-        "schemaVersion": { "const": 3 },
+        "schemaVersion": { "const": 4 },
         "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
         "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
         "countyName": { "type": "string", "minLength": 1 },
@@ -416,6 +491,38 @@
         "generatedAt": { "type": "string", "format": "date-time" },
         "scope": { "$ref": "#/$defs/projectionScope" },
         "summary": { "$ref": "#/$defs/statusCounts" },
+        "pairResolution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "catalogSpeciesPath",
+            "defaultApplicability",
+            "defaultDisplayStatus",
+            "explicitPairCount",
+            "applicabilityOverrides"
+          ],
+          "properties": {
+            "catalogSpeciesPath": { "const": "/generated/species.json" },
+            "defaultApplicability": { "const": "unknown" },
+            "defaultDisplayStatus": { "const": "not-researched" },
+            "explicitPairCount": { "$ref": "#/$defs/nonnegativeInteger" },
+            "applicabilityOverrides": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["speciesId", "applicability"],
+                "properties": {
+                  "speciesId": { "type": "string", "minLength": 1 },
+                  "applicability": {
+                    "enum": ["applicable", "not-applicable", "unknown", "blocked"]
+                  }
+                }
+              }
+            }
+          }
+        },
         "pairs": {
           "type": "array",
           "items": { "$ref": "#/$defs/pairRecord" },

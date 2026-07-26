@@ -171,6 +171,10 @@ const states = config.states
       authoritativeCertificationScope:
         summary.scope.certificationScope === "state-baseline" &&
         summary.scope.speciesMode === "catalog-all",
+      fullCatalogApplicabilityClassified:
+        summary.scope.fullCatalogApplicabilityComplete &&
+        summary.scope.unknownSpeciesCount === 0 &&
+        summary.scope.blockedSpeciesCount === 0,
       publicAndResearchProjectionsAgree: publicParity,
       deferredCandidatesResolvedOrBlocked:
         summary.migrationCandidates.remainingSourceAssertionCount === 0,
@@ -189,6 +193,16 @@ const states = config.states
       stateCode: entry.stateCode,
       scope: summary.scope,
       pairStatusCounts: summary.summary,
+      fullCatalogApplicability: {
+        denominator: summary.scope.stateSpeciesDenominator,
+        applicable: summary.scope.applicableSpeciesCount,
+        notApplicable: summary.scope.notApplicableSpeciesCount,
+        unknown: summary.scope.unknownSpeciesCount,
+        blocked: summary.scope.blockedSpeciesCount,
+        explicitOverrides: summary.scope.explicitApplicabilityDecisionCount,
+        complete: summary.scope.fullCatalogApplicabilityComplete,
+      },
+      boundedAcquisitionScope: summary.summary.boundedAcquisition,
       baselineResearchCoveragePercent: summary.summary.researchCoveragePercent,
       explicitOutcomeCoveragePercent: summary.summary.explicitOutcomeCoveragePercent,
       protocolCompletePairCoveragePercent: protocolCompletePairCoverage,
@@ -255,19 +269,64 @@ const nationalV1JurisdictionCodes = stateRegistry.jurisdictions
   .filter((entry) => entry.nationalV1Scope)
   .map((entry) => entry.stateCode)
   .sort();
-const applicabilityClassifiedJurisdictionCodes = config.states
-  .filter((entry) => {
-    if (!entry.publicResearchProjection) return false;
-    if (entry.speciesScope.mode === "catalog-all") return true;
-    return Boolean(
-      entry.speciesScope.applicabilityPath &&
-      existsSync(path.join(ROOT, entry.speciesScope.applicabilityPath)),
-    );
-  })
+const applicabilityClassifiedJurisdictionCodes = states
+  .filter((entry) => entry.fullCatalogApplicability.complete)
   .map((entry) => entry.stateCode)
   .sort();
 const applicabilityUnclassifiedJurisdictionCodes = nationalV1JurisdictionCodes
   .filter((stateCode) => !applicabilityClassifiedJurisdictionCodes.includes(stateCode));
+const denominator = states.reduce(
+  (total, state) => {
+    total.fullStateSpeciesDenominator +=
+      state.fullCatalogApplicability.denominator;
+    total.applicableStateSpeciesDecisions +=
+      state.fullCatalogApplicability.applicable;
+    total.notApplicableStateSpeciesDecisions +=
+      state.fullCatalogApplicability.notApplicable;
+    total.unknownStateSpeciesDecisions +=
+      state.fullCatalogApplicability.unknown;
+    total.blockedStateSpeciesDecisions +=
+      state.fullCatalogApplicability.blocked;
+    total.explicitStateSpeciesOverrides +=
+      state.fullCatalogApplicability.explicitOverrides;
+    total.fullCountySpeciesDenominator += state.pairStatusCounts.totalPairs;
+    total.resolvableCountySpeciesPairs +=
+      state.pairStatusCounts.resolvablePairCount;
+    total.notApplicableCountySpeciesPairs +=
+      state.pairStatusCounts.notApplicablePairCount;
+    total.blockedCountySpeciesPairs +=
+      state.pairStatusCounts.blockedPairCount;
+    total.verifiedPresent += state.pairStatusCounts.verifiedPresent;
+    total.verifiedAbsent += state.pairStatusCounts.verifiedAbsent;
+    total.notDetected += state.pairStatusCounts.notDetected;
+    total.researchedUnresolved += state.pairStatusCounts.researchedUnresolved;
+    total.notResearched += state.pairStatusCounts.notResearched;
+    total.boundedAcquisitionSpecies +=
+      state.boundedAcquisitionScope.speciesCount;
+    total.boundedAcquisitionPairs +=
+      state.boundedAcquisitionScope.totalPairs;
+    return total;
+  },
+  {
+    fullStateSpeciesDenominator: 0,
+    applicableStateSpeciesDecisions: 0,
+    notApplicableStateSpeciesDecisions: 0,
+    unknownStateSpeciesDecisions: 0,
+    blockedStateSpeciesDecisions: 0,
+    explicitStateSpeciesOverrides: 0,
+    fullCountySpeciesDenominator: 0,
+    resolvableCountySpeciesPairs: 0,
+    notApplicableCountySpeciesPairs: 0,
+    blockedCountySpeciesPairs: 0,
+    verifiedPresent: 0,
+    verifiedAbsent: 0,
+    notDetected: 0,
+    researchedUnresolved: 0,
+    notResearched: 0,
+    boundedAcquisitionSpecies: 0,
+    boundedAcquisitionPairs: 0,
+  },
+);
 
 const dashboard = {
   schemaVersion: 2,
@@ -297,7 +356,9 @@ const dashboard = {
     blockedJobs: jobs.filter((entry) => entry.state === "blocked").length,
     activeLeases: leases.filter((entry) => entry.state === "active").length,
     completedWorkerLeases,
-    workerFailures: queue.filter((entry) => ["changes-requested", "rejected"].includes(entry.decision)).length,
+    workerFailures:
+      leases.filter((entry) => entry.state === "failed").length +
+      queue.filter((entry) => ["changes-requested", "rejected"].includes(entry.decision)).length,
     workerCompletionRatePercent:
       completedWorkerLeases === 0
         ? 0
@@ -349,6 +410,7 @@ const dashboard = {
       "Build-time readiness and deployed-release evidence are separate. A committed artifact cannot attest to a future deployment of its own commit.",
   },
   national: {
+    denominator,
     buildTimeReadyStates: states
       .filter((entry) => entry.buildTimeReady)
       .map((entry) => entry.stateCode),
@@ -357,7 +419,8 @@ const dashboard = {
       .filter((entry) => !entry.buildTimeReady)
       .map((entry) => entry.stateCode),
     applicabilityClassificationScope:
-      "Configured source-species scope only. This is not evidence of presence, absence, screening completion, or full-catalog applicability.",
+      "Full-catalog state-species applicability only. Source applicability and bounded source screening remain separate.",
+    sourceScopeConfiguredJurisdictions: states.length,
     applicabilityClassifiedJurisdictions: applicabilityClassifiedJurisdictionCodes.length,
     applicabilityUnclassifiedJurisdictions: applicabilityUnclassifiedJurisdictionCodes.length,
     applicabilityUnclassifiedJurisdictionCodes,
