@@ -86,6 +86,8 @@ Apply the registered publication gate. Emit review events; never mutate an asser
 
 Keep the immutable run receipt on the stable closed `run-receipt.schema.json` contract. Put lease identity, retry history, request purpose, attempt telemetry, and performance data in the worker manifest or `source-verification.json`. Never add worker-only fields to the receipt.
 
+Use `lease.expectedReceiptCodeCommit` as the canonical receipt code identity when it is present; otherwise use `lease.baseSha`. The optional value is only for a byte-preserving recovery and must be an ancestor of the worker base. Never rewrite an older valid receipt to imply that recovery validation code performed the original acquisition.
+
 Bind agent actor IDs to the lease worker task ID and adapter actor IDs to `<adapter-id>@<adapter-version>`. Workers cannot claim human actors or `human-approved` review level. An `evidence-found` outcome must report exactly the final publication-eligible assertions for its pair. A `no-qualifying-evidence` outcome must have none.
 
 Report exact baseline, final, and net counts for every metric touched. Net must equal final minus baseline. Distinguish provider candidates, assertion events, projected evidence, distinct outcome pairs, final determinations, research statuses, and protocol cells.

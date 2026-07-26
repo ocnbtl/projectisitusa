@@ -325,6 +325,7 @@ function validateJob(job, index, errors, warnings) {
     try { normalizeClaim(claim); } catch (error) { errors.push(`${label}: ${error.message}`); }
   }
   if (!isSha(job.baseSha, 40)) errors.push(`${label}.baseSha must be a Git SHA.`);
+  if (job.expectedReceiptCodeCommit !== undefined && !isSha(job.expectedReceiptCodeCommit, 40)) errors.push(`${label}.expectedReceiptCodeCommit must be a Git SHA.`);
   if (typeof job.branch !== "string" || !job.branch.startsWith("codex/")) errors.push(`${label}.branch must start with codex/.`);
   if (typeof job.worktree !== "string" || !path.isAbsolute(job.worktree)) errors.push(`${label}.worktree must be absolute.`);
   if (!nonemptyStrings(job.permittedPaths)) errors.push(`${label}.permittedPaths must be nonempty.`);
@@ -375,6 +376,7 @@ function validateLease(lease, index, jobsById, errors, warnings) {
   if (typeof lease.workerTaskId !== "string" || !lease.workerTaskId) errors.push(`${label}.workerTaskId is required.`);
   if (!isSafeRelativePath(lease.expectedManifestPath)) errors.push(`${label}.expectedManifestPath must be a normalized relative path.`);
   if (!isSha(lease.baseSha, 40)) errors.push(`${label}.baseSha must be a Git SHA.`);
+  if (lease.expectedReceiptCodeCommit !== undefined && !isSha(lease.expectedReceiptCodeCommit, 40)) errors.push(`${label}.expectedReceiptCodeCommit must be a Git SHA.`);
   if (typeof lease.branch !== "string" || !lease.branch.startsWith("codex/")) errors.push(`${label}.branch must start with codex/.`);
   if (typeof lease.worktree !== "string" || !path.isAbsolute(lease.worktree)) errors.push(`${label}.worktree must be absolute.`);
   if (!isObject(lease.stateOrSourceScope)) errors.push(`${label}.stateOrSourceScope is required.`);
@@ -394,7 +396,7 @@ function validateLease(lease, index, jobsById, errors, warnings) {
   validatePolicies(lease, label, errors);
   const job = jobsById.get(lease.jobId);
   if (job && lease.state === "active") {
-    for (const field of ["baseSha", "branch", "worktree"]) {
+    for (const field of ["baseSha", "expectedReceiptCodeCommit", "branch", "worktree"]) {
       if (lease[field] !== job[field]) errors.push(`${label}.${field} differs from its job.`);
     }
     for (const field of ["scopeClaims", "permittedPaths", "prohibitedPaths", "expectedOutputs", "completionCriteria"]) {

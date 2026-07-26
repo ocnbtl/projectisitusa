@@ -290,7 +290,7 @@ function runCanonicalValidation({ repo, validationRoot, runRoot, sourceVerificat
       "--pair-keys",
       pairKeys.join(","),
       "--code-commit",
-      lease.baseSha,
+      lease.expectedReceiptCodeCommit ?? lease.baseSha,
       "--worker-task-id",
       lease.workerTaskId,
     ],
@@ -369,6 +369,7 @@ function verifyLease(lease, repo, now, requireCleanBase) {
   if (lease.state === "active" && (!Number.isFinite(Date.parse(lease.expiresAt)) || Date.parse(lease.expiresAt) <= Date.parse(now))) errors.push("Lease is expired or has an invalid expiration.");
   if (typeof lease.branch !== "string" || !lease.branch.startsWith("codex/")) errors.push("Lease branch must start with codex/.");
   if (!isSha(lease.baseSha, 40)) errors.push("Lease baseSha is invalid.");
+  if (lease.expectedReceiptCodeCommit !== undefined && !isSha(lease.expectedReceiptCodeCommit, 40)) errors.push("Lease expectedReceiptCodeCommit is invalid.");
   if (!Array.isArray(lease.permittedPaths) || lease.permittedPaths.length === 0) errors.push("Lease permittedPaths is empty.");
   if (!Array.isArray(lease.prohibitedPaths) || lease.prohibitedPaths.length === 0) errors.push("Lease prohibitedPaths is empty.");
   if (!Array.isArray(lease.scopeClaims) || lease.scopeClaims.length === 0) errors.push("Lease scopeClaims is empty.");
@@ -405,6 +406,10 @@ function verifyLease(lease, repo, now, requireCleanBase) {
     if (!requireCleanBase) {
       try { git(repo, ["merge-base", "--is-ancestor", lease.baseSha, head]); }
       catch { errors.push(`Lease base ${lease.baseSha} is not an ancestor of worker HEAD ${head}.`); }
+    }
+    if (isSha(lease.expectedReceiptCodeCommit, 40)) {
+      try { git(repo, ["merge-base", "--is-ancestor", lease.expectedReceiptCodeCommit, lease.baseSha]); }
+      catch { errors.push(`Lease expected receipt code commit ${lease.expectedReceiptCodeCommit} is not an ancestor of worker base ${lease.baseSha}.`); }
     }
     if (requireCleanBase && git(repo, ["status", "--porcelain"])) errors.push("Preflight worktree is not clean.");
   } catch (error) {

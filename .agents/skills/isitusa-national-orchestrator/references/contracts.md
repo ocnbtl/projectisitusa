@@ -30,6 +30,7 @@ Each job object requires:
   "taxaOrPairScope": {"taxa": ["*"], "pairs": []},
   "scopeClaims": ["source/gbif/state/AK/taxon/*", "source/gbif/state/AZ/taxon/*"],
   "baseSha": "40 lowercase hex characters",
+  "expectedReceiptCodeCommit": "40 lowercase hex characters; normally equal to baseSha",
   "branch": "codex/source-gbif-national-001",
   "worktree": "/absolute/noncanonical/path",
   "permittedPaths": ["src/data/research/worker-results/source-gbif-national-001/**"],
@@ -60,6 +61,8 @@ A lease copies every safety-critical job field and adds:
 - expected manifest path
 - previous lease ID on retry
 - recovery reason and recovery timestamp when applicable
+
+`baseSha` identifies the worker branch and validator starting point. `expectedReceiptCodeCommit` identifies the acquisition code recorded by the immutable run receipt. It normally equals `baseSha`. A byte-preserving recovery may pin an older ancestor so validation preserves original acquisition provenance instead of rewriting the receipt to the recovery base.
 
 Do not mutate a completed attempt into a retry. Append a new attempt.
 

@@ -12,7 +12,7 @@ const ORCHESTRATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orche
 const WORKER_VALIDATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs");
 const ORCHESTRATOR_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orchestrator");
 const WORKER_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker");
-const RECOVERY_VERSION = "candidate-postfreeze-buffer-r1";
+const RECOVERY_VERSION = "candidate-postfreeze-lineage-r2";
 const NOW = "2026-07-15T12:00:00Z";
 const EXPIRES = "2026-07-16T12:00:00Z";
 const SOURCE_ID = "gbif-preserved-specimens";
@@ -166,7 +166,7 @@ function pins() {
   ];
 }
 
-function makeJob({ jobId, baseSha, branch, worktree, claims }) {
+function makeJob({ jobId, baseSha, branch, worktree, claims, expectedReceiptCodeCommit = baseSha }) {
   return {
     jobId,
     workerType: "evidence-review",
@@ -174,6 +174,7 @@ function makeJob({ jobId, baseSha, branch, worktree, claims }) {
     taxaOrPairScope: { taxa: [SPECIES_ID], pairs: [`${COUNTY_FIPS}:${SPECIES_ID}`] },
     scopeClaims: claims,
     baseSha,
+    expectedReceiptCodeCommit,
     branch,
     worktree,
     permittedPaths: ["worker-output/**"],
@@ -205,6 +206,7 @@ function makeLease(job, overrides = {}) {
     recoveryReason: null,
     recoveryAt: null,
     baseSha: job.baseSha,
+    expectedReceiptCodeCommit: job.expectedReceiptCodeCommit,
     branch: job.branch,
     worktree: job.worktree,
     stateOrSourceScope: job.stateOrSourceScope,
@@ -272,9 +274,13 @@ function setupGitFixture(root) {
   }
   runGit(repo, ["add", "seed.txt", ".gitattributes", ".gitignore", ".agents/skills", "node_modules", ...provenanceFiles, ...validationFiles, ...validationTrees]);
   runGit(repo, ["commit", "-m", "seed"]);
+  const acquisitionSha = runGit(repo, ["rev-parse", "HEAD"]);
+  fs.writeFileSync(path.join(repo, "validator-seed.txt"), "validator\n");
+  runGit(repo, ["add", "validator-seed.txt"]);
+  runGit(repo, ["commit", "-m", "validator seed"]);
   const baseSha = runGit(repo, ["rev-parse", "HEAD"]);
   runGit(repo, ["worktree", "add", "-b", "codex/test-job", worktree, baseSha]);
-  return { repo, worktree, baseSha };
+  return { repo, worktree, baseSha, acquisitionSha };
 }
 
 function assertion(overrides = {}) {
@@ -469,7 +475,7 @@ function buildValidWorkerOutput(worktree, lease, options = {}) {
     adapter_id: SOURCE_ID,
     adapter_version: "1.0.2",
     adapter_code_hash: sha256File(path.join(REPO_ROOT, "scripts/research/adapters/gbif-preserved-specimens.ts")),
-    code_commit: lease.baseSha,
+    code_commit: lease.expectedReceiptCodeCommit ?? lease.baseSha,
     parameter_hash: sha256Value(stableJson(parameters)),
     parameters,
     requested_scope: {
@@ -607,6 +613,36 @@ try {
   const deterministicFirst = result.stdout;
   const deterministicSecond = run("node", [WORKER_VALIDATOR, "manifest", "--lease", leasePath, "--manifest", valid.manifestPath, "--repo", worktree, "--now", NOW], REPO_ROOT);
   record("deterministic_manifest_validation", "pass", { ...deterministicSecond, status: deterministicSecond.status === 0 && deterministicSecond.stdout === deterministicFirst ? 0 : 1 }, "Repeated validation emits identical JSON.");
+
+  const lineageFixture = setupGitFixture(path.join(fixtureRoot, "recovery-lineage"));
+  const lineageJob = makeJob({
+    jobId: "test-job",
+    baseSha: lineageFixture.baseSha,
+    expectedReceiptCodeCommit: lineageFixture.acquisitionSha,
+    branch: "codex/test-job",
+    worktree: lineageFixture.worktree,
+    claims: [`state/${STATE_CODE}/source/${SOURCE_ID}/taxon/${SPECIES_ID}`],
+  });
+  const lineageLease = makeLease(lineageJob);
+  const lineageLeasePath = path.join(fixtureRoot, "recovery-lineage-lease.json");
+  writeJson(lineageLeasePath, lineageLease);
+  const lineageValid = buildValidWorkerOutput(lineageFixture.worktree, lineageLease);
+  result = run("node", [WORKER_VALIDATOR, "manifest", "--lease", lineageLeasePath, "--manifest", lineageValid.manifestPath, "--repo", lineageFixture.worktree, "--now", NOW], REPO_ROOT);
+  record("recovered_run_preserves_acquisition_code_commit", "pass", result, "A recovery lease can pin an older acquisition commit without rewriting the immutable receipt to the validator base.");
+
+  const unpinnedLineageLeasePath = path.join(fixtureRoot, "recovery-lineage-unpinned.json");
+  const { expectedReceiptCodeCommit: _omittedReceiptCommit, ...unpinnedLineageLease } = lineageLease;
+  writeJson(unpinnedLineageLeasePath, unpinnedLineageLease);
+  result = run("node", [WORKER_VALIDATOR, "manifest", "--lease", unpinnedLineageLeasePath, "--manifest", lineageValid.manifestPath, "--repo", lineageFixture.worktree, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("recovered_run_requires_explicit_acquisition_commit_pin", result, "Receipt code commit differs", "An older receipt commit is rejected unless the recovery lease pins it explicitly.");
+
+  const unrelatedLineageLeasePath = path.join(fixtureRoot, "recovery-lineage-unrelated.json");
+  writeJson(unrelatedLineageLeasePath, {
+    ...lineageLease,
+    expectedReceiptCodeCommit: "f".repeat(40),
+  });
+  result = run("node", [WORKER_VALIDATOR, "manifest", "--lease", unrelatedLineageLeasePath, "--manifest", lineageValid.manifestPath, "--repo", lineageFixture.worktree, "--now", NOW], REPO_ROOT);
+  recordRejectsWith("recovered_run_rejects_unrelated_acquisition_commit", result, "not an ancestor", "A recovery lease cannot pin an unavailable or unrelated acquisition commit.");
 
   const largeFixture = setupGitFixture(path.join(fixtureRoot, "large-content"));
   const largeJob = makeJob({

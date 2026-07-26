@@ -40,6 +40,7 @@ Every job must define:
 - taxon or exact pair scope
 - hierarchical `scopeClaims`
 - base SHA, branch, worktree, permitted paths, and prohibited paths
+- expected immutable-run receipt code commit when it differs from the worker base during a byte-preserving recovery
 - expected outputs and completion criteria
 - retry, artifact, pagination, time, and memory limits
 - pinned orchestrator and evidence-worker versions and content hashes
@@ -109,6 +110,8 @@ After acceptance, integrate the two reviewed worker commits on canonical `main`,
 ## 6. Recover safely
 
 Expire or recover a lease only through MAIN. Preserve partial artifacts and resume tokens. Never overwrite a completed immutable run. A retry uses the same job ID with an incremented attempt and a new lease ID, branch or clean worktree state as recorded by policy.
+
+The worker base commit identifies the validator and branch starting point. The immutable-run receipt code commit identifies the acquisition code that produced the retained bytes. They are normally equal. A byte-preserving recovery may set `expectedReceiptCodeCommit` to an older ancestor of `baseSha`; never rewrite the receipt to claim that newer recovery code performed the original acquisition.
 
 If a worker discovers a needed shared-schema or architecture change, require a proposal or blocker in its manifest. End that worker scope without making the shared change.
 
