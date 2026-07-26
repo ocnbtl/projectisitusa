@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `43`
+- Verified present: `79`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `242`
-- Not researched: `37275`
-- Determination coverage: `0.11%`
-- Research coverage: `0.76%`
-- Explicit outcome coverage: `0.7588%`
+- Researched unresolved: `1405`
+- Not researched: `36076`
+- Determination coverage: `0.21%`
+- Research coverage: `3.95%`
+- Explicit outcome coverage: `3.9510%`
 - Applicable protocol cells: `41`
 - Current complete protocol cells: `5`
 - Protocol completion: `43.90%`
 - Current protocol completion: `12.20%`
-- Evidence records: `225`
-- Research runs: `9`
+- Evidence records: `261`
+- Research runs: `10`
 - Rejection records: `68`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,7 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Canada Thistle (`cirsium-arvense`) | plants | 14 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 14 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 14 | 0 | 1 |
 | Common Carp (`cyprinus-carpio`) | wildlife | 3 | 0 | 2 |
@@ -47,13 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 15 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 2 |
-| Chinese mysterysnail (`cipangopaludina-chinensis`) | wildlife | 0 | 14 | 1 |
-| New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 0 | 13 | 1 |
-| Asian tapeworm (`schyzocotyle-acheilognathi`) | wildlife | 0 | 13 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 11 | 2 |
-| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 9 | 1 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 9 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 8 | 2 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 15 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 15 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 0 | 15 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 15 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 15 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 15 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 15 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 15 | 0 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 15 | 0 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 15 | 0 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 15 | 0 |
 
 ## Source Operations
 
@@ -73,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 11 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 81 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

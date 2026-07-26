@@ -7,21 +7,21 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `301`
+- Verified present: `836`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `905`
-- Not researched: `166562`
-- Determination coverage: `0.18%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `3534`
+- Not researched: `163398`
+- Determination coverage: `0.50%`
+- Research coverage: `2.60%`
+- Explicit outcome coverage: `2.6048%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `301`
-- Research runs: `6`
-- Rejection records: `157`
+- Evidence records: `836`
+- Research runs: `7`
+- Rejection records: `198`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,6 +32,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Java plum (`syzygium-cumini`) | plants | 62 | 0 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 57 | 0 | 0 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 67 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 1 |
@@ -39,17 +41,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 67 | 1 |
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 67 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 67 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 0 | 67 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 67 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 67 | 0 |
+| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 67 | 0 |
+| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 67 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 67 | 0 |
+| Rose natal grass (`melinis-repens`) | plants | 0 | 67 | 0 |
+| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 0 | 67 | 0 |
+| Callery Pear (`pyrus-calleryana`) | plants | 0 | 67 | 0 |
+| Crown Vetch (`securigera-varia`) | plants | 0 | 67 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 67 | 0 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 66 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 65 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 65 | 1 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 49 | 0 |
-| Orinoco sailfin catfish (`pterygoplichthys-multiradiatus`) | wildlife | 0 | 45 | 0 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 43 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 37 | 1 |
-| Cuban treefrog (`osteopilus-septentrionalis`) | wildlife | 0 | 26 | 0 |
-| Giant Applesnail (`pomacea-maculata`) | wildlife | 0 | 25 | 0 |
-| Water spangles (`salvinia-minima`) | plants | 0 | 15 | 0 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 0 | 1 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 66 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 66 | 0 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 0 | 66 | 0 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 0 | 66 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 126 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 535 | 49 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

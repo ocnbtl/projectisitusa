@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `3`
 - County-species pairs: `7512`
-- Verified present: `33`
+- Verified present: `63`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `21`
-- Not researched: `7458`
-- Determination coverage: `0.44%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `87`
+- Not researched: `7362`
+- Determination coverage: `0.84%`
+- Research coverage: `2.00%`
+- Explicit outcome coverage: `1.9968%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `33`
-- Research runs: `6`
+- Evidence records: `63`
+- Research runs: `7`
 - Rejection records: `9`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,19 +37,26 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 3 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 3 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 3 | 1 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 3 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 3 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 3 | 0 |
+| Canada Thistle (`cirsium-arvense`) | plants | 0 | 3 | 0 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 3 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 3 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 3 | 0 |
+| Dames rocket (`hesperis-matronalis`) | plants | 0 | 3 | 0 |
+| Morrow's Honeysuckle (`lonicera-morrowii`) | plants | 0 | 3 | 0 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 3 | 0 |
+| Moneywort (`lysimachia-nummularia`) | plants | 0 | 3 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 3 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 3 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 3 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 0 | 3 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 3 | 0 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 3 | 0 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 2 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 2 | 1 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 1 | 0 |
-| Brittle Waternymph (`najas-minor`) | plants | 0 | 1 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 0 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 0 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 0 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
-| Northern Snakehead (`northern-snakehead`) | wildlife | 0 | 0 | 0 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 0 | 0 | 0 |
-| Brazilian Waterweed (`egeria-densa`) | plants | 0 | 0 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 2 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 20 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 30 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

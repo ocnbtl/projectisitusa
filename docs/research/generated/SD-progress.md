@@ -7,21 +7,21 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `66`
 - County-species pairs: `165264`
-- Verified present: `43`
+- Verified present: `73`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1132`
-- Not researched: `164089`
-- Determination coverage: `0.03%`
-- Research coverage: `0.71%`
-- Explicit outcome coverage: `0.7110%`
+- Researched unresolved: `3223`
+- Not researched: `161968`
+- Determination coverage: `0.04%`
+- Research coverage: `1.99%`
+- Explicit outcome coverage: `1.9944%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `27.78%`
 - Current protocol completion: `27.78%`
-- Evidence records: `43`
-- Research runs: `6`
-- Rejection records: `32`
+- Evidence records: `73`
+- Research runs: `7`
+- Rejection records: `34`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,6 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Canada Thistle (`cirsium-arvense`) | plants | 57 | 0 | 0 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 1 | 65 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 1 | 65 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 1 | 65 | 1 |
@@ -45,11 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 1 | 63 | 1 |
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 1 | 63 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 1 | 55 | 1 |
-| Brittle Waternymph (`najas-minor`) | plants | 0 | 64 | 0 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 63 | 0 |
-| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 62 | 0 |
-| Zebra Mussel (`dreissena-polymorpha`) | wildlife | 0 | 60 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 52 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 66 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 66 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 66 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 66 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 66 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 66 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 66 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 66 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 66 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 66 | 0 |
+| European Privet (`ligustrum-vulgare`) | plants | 0 | 66 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 14 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 30 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

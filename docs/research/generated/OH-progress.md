@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `88`
 - County-species pairs: `220352`
-- Verified present: `725`
+- Verified present: `1338`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `806`
-- Not researched: `218821`
-- Determination coverage: `0.33%`
-- Research coverage: `0.69%`
-- Explicit outcome coverage: `0.6948%`
+- Researched unresolved: `2921`
+- Not researched: `216093`
+- Determination coverage: `0.61%`
+- Research coverage: `1.93%`
+- Explicit outcome coverage: `1.9328%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `4`
 - Protocol completion: `94.44%`
 - Current protocol completion: `22.22%`
-- Evidence records: `725`
-- Research runs: `6`
+- Evidence records: `1366`
+- Research runs: `7`
 - Rejection records: `43`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,19 +37,26 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 88 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 88 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 88 | 1 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 88 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 88 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 88 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 88 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 0 | 88 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 88 | 0 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 88 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 86 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 86 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 86 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 86 | 0 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 82 | 1 |
+| Tatarian Honeysuckle (`lonicera-tatarica`) | plants | 0 | 81 | 0 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 80 | 0 |
+| Dames rocket (`hesperis-matronalis`) | plants | 0 | 80 | 0 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 78 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 77 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 57 | 1 |
-| Creeping yellowcress (`rorippa-sylvestris`) | plants | 0 | 44 | 0 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 0 | 40 | 0 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 37 | 0 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 33 | 1 |
-| Moneywort (`lysimachia-nummularia`) | plants | 0 | 6 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 0 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
+| Common Buckthorn (`rhamnus-cathartica`) | plants | 0 | 77 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 76 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 76 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 465 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 641 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

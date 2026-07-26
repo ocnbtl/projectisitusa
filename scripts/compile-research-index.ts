@@ -40,6 +40,7 @@ import {
   type ResearchProtocolsFile,
 } from "@/lib/research/protocol-cells";
 import {
+  resolveBoundedAcquisitionSpeciesIds,
   resolveStateResearchScope,
   selectStateResearchConfig,
   type StateApplicabilityFile,
@@ -176,7 +177,7 @@ const applicability: StateApplicabilityFile | null = configuredState.speciesScop
   : null;
 const {
   config: stateConfig,
-  speciesIds: selectedSpeciesIds,
+  speciesIds: stateScopeSpeciesIds,
   applicabilityAsOf,
   applicabilityDecisionCounts,
   explicitApplicabilityDecisionCount,
@@ -190,6 +191,18 @@ const {
   catalogSpeciesIds: catalogSpecies.map((entry) => entry.id),
   asOf: AS_OF,
   applicability,
+});
+const immutableRuns = selectImmutableResearchRunsForState(
+  listImmutableResearchRuns(ROOT),
+  STATE_CODE,
+  AS_OF,
+);
+const selectedSpeciesIds = resolveBoundedAcquisitionSpeciesIds({
+  catalogSpeciesIds: catalogSpecies.map((entry) => entry.id),
+  stateScopeSpeciesIds,
+  outcomeSpeciesIds: immutableRuns.flatMap((bundle) =>
+    bundle.outcomes.map((entry) => entry.species_id)
+  ),
 });
 const species = selectedSpeciesIds
   .map((speciesId) => catalogById.get(speciesId)!)
@@ -269,11 +282,6 @@ const bootstrapEvidence = stateConfig.bootstrapLedgerAllowed
   ? readNdjson<EvidenceAssertion>(path.join(ROOT, "src/data/research/evidence-assertions.ndjson"))
       .filter((entry) => entry.stateCode === STATE_CODE && selectedSpeciesIdSet.has(entry.speciesId))
   : [];
-const immutableRuns = selectImmutableResearchRunsForState(
-  listImmutableResearchRuns(ROOT),
-  STATE_CODE,
-  AS_OF,
-);
 for (const bundle of immutableRuns) {
   for (const [label, records] of [
     ["assertion", bundle.assertions],

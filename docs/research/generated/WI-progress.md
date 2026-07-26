@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `72`
 - County-species pairs: `180288`
-- Verified present: `475`
+- Verified present: `891`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `799`
-- Not researched: `179014`
-- Determination coverage: `0.26%`
-- Research coverage: `0.71%`
-- Explicit outcome coverage: `0.7066%`
+- Researched unresolved: `2687`
+- Not researched: `176710`
+- Determination coverage: `0.49%`
+- Research coverage: `1.98%`
+- Explicit outcome coverage: `1.9846%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `4`
 - Protocol completion: `94.44%`
 - Current protocol completion: `22.22%`
-- Evidence records: `475`
-- Research runs: `6`
+- Evidence records: `891`
+- Research runs: `7`
 - Rejection records: `36`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -41,15 +41,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 72 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 72 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 72 | 1 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 72 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 72 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 72 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 72 | 0 |
+| Japanese Stiltgrass (`microstegium-vimineum`) | plants | 0 | 72 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 72 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 72 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 0 | 72 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 72 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 71 | 0 |
+| European Privet (`ligustrum-vulgare`) | plants | 0 | 71 | 0 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 70 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 59 | 1 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 0 | 29 | 0 |
-| Zebra Mussel (`dreissena-polymorpha`) | wildlife | 0 | 25 | 0 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 22 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 10 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 5 | 1 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 3 | 0 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 0 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 70 | 0 |
+| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 70 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 69 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 68 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 194 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 416 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

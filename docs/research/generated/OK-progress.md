@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `77`
 - County-species pairs: `192808`
-- Verified present: `74`
+- Verified present: `335`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1312`
-- Not researched: `191422`
-- Determination coverage: `0.04%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `3746`
+- Not researched: `188727`
+- Determination coverage: `0.17%`
+- Research coverage: `2.12%`
+- Explicit outcome coverage: `2.1166%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `74`
-- Research runs: `6`
+- Evidence records: `335`
+- Research runs: `7`
 - Rejection records: `2`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -41,15 +41,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 77 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 77 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 77 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 76 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 1 |
-| Yellow Floating Heart (`nymphoides-peltata`) | plants | 0 | 74 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 73 | 0 |
-| Brazilian Waterweed (`egeria-densa`) | plants | 0 | 72 | 0 |
-| Bighead Carp (`hypophthalmichthys-nobilis`) | wildlife | 0 | 71 | 0 |
-| Spiny waterflea (`daphnia-lumholtzi`) | wildlife | 0 | 64 | 0 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 56 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 0 | 77 | 0 |
+| Hen's eyes (`ardisia-crenata`) | plants | 0 | 77 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 77 | 0 |
+| Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 77 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 77 | 0 |
+| Camphortree (`cinnamomum-camphora`) | plants | 0 | 77 | 0 |
+| Thorny olive (`elaeagnus-pungens`) | plants | 0 | 77 | 0 |
+| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 77 | 0 |
+| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 77 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 77 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 77 | 0 |
+| Rose natal grass (`melinis-repens`) | plants | 0 | 77 | 0 |
+| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 0 | 77 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 77 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 77 | 0 |
+| Tungoil tree (`vernicia-fordii`) | plants | 0 | 77 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 43 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 261 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

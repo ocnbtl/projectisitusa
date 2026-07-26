@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `7`
+- Verified present: `19`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `299`
-- Not researched: `42262`
-- Determination coverage: `0.02%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `1579`
+- Not researched: `40970`
+- Determination coverage: `0.04%`
+- Research coverage: `3.75%`
+- Explicit outcome coverage: `3.7540%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `7`
-- Research runs: `6`
+- Evidence records: `19`
+- Research runs: `7`
 - Rejection records: `3`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,12 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 17 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 17 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 17 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 16 | 1 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 16 | 0 |
-| New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 0 | 16 | 0 |
-| Asian tapeworm (`schyzocotyle-acheilognathi`) | wildlife | 0 | 16 | 0 |
-| Spotted Tilapia (`tilapia-mariae`) | wildlife | 0 | 16 | 0 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 15 | 0 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 17 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 17 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 0 | 17 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 17 | 0 |
+| Stinking Chamomile (`anthemis-cotula`) | plants | 0 | 17 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 17 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 17 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 17 | 0 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 17 | 0 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 17 | 0 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 17 | 0 |
+| Asian mustard (`brassica-tournefortii`) | plants | 0 | 17 | 0 |
+| Field Brome (`bromus-arvensis`) | plants | 0 | 17 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 1 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 12 | 77 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

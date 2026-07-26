@@ -1,29 +1,33 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-07-15T13:15:00Z",
+  "asOf": "2026-07-26T16:00:00Z",
   "jobs": {
-    "total": 1,
+    "total": 13,
     "byState": {
-      "blocked": 1
+      "blocked": 1,
+      "completed": 9,
+      "failed": 3
     }
   },
   "leases": {
-    "total": 3,
+    "total": 17,
     "byState": {
-      "completed": 2,
-      "failed": 1
+      "completed": 12,
+      "failed": 5
     }
   },
   "integrationQueue": {
-    "total": 2,
+    "total": 12,
     "byDecision": {
-      "changes-requested": 2
+      "changes-requested": 2,
+      "integrated": 9,
+      "rejected": 1
     }
   },
   "throughput": {
-    "manifests": 0,
-    "validPairsScreened": 0,
-    "wallSeconds": 0,
-    "validPairsPerHour": 0
+    "manifests": 11,
+    "validPairsScreened": 303,
+    "wallSeconds": 719.759,
+    "validPairsPerHour": 1515.5073
   }
 }

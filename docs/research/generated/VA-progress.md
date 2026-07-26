@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `133`
 - County-species pairs: `333032`
-- Verified present: `569`
+- Verified present: `1500`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1825`
-- Not researched: `330638`
-- Determination coverage: `0.17%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `5549`
+- Not researched: `325983`
+- Determination coverage: `0.45%`
+- Research coverage: `2.12%`
+- Explicit outcome coverage: `2.1166%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `569`
-- Research runs: `6`
+- Evidence records: `1500`
+- Research runs: `7`
 - Rejection records: `54`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,23 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 133 | 1 |
+| Camphortree (`cinnamomum-camphora`) | plants | 0 | 133 | 0 |
+| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 133 | 0 |
+| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 133 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 133 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 133 | 0 |
+| Japanese Climbing Fern (`lygodium-japonicum`) | plants | 0 | 133 | 0 |
+| Rose natal grass (`melinis-repens`) | plants | 0 | 133 | 0 |
+| Tropical soda apple (`solanum-viarum`) | plants | 0 | 133 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 133 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 133 | 0 |
+| Tungoil tree (`vernicia-fordii`) | plants | 0 | 133 | 0 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 132 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 132 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 0 | 132 | 0 |
+| Hen's eyes (`ardisia-crenata`) | plants | 0 | 132 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 132 | 0 |
+| Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 132 | 0 |
 | Asian shore crab (`hemigrapsus-sanguineus`) | wildlife | 0 | 131 | 0 |
 | Yellow Floating Heart (`nymphoides-peltata`) | plants | 0 | 131 | 0 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 130 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 130 | 1 |
 | Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 130 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 130 | 0 |
 | Nutria (`nutria`) | wildlife | 0 | 130 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 130 | 0 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 128 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 114 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 105 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 62 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 44 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 36 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 27 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 556 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 931 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

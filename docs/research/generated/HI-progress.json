@@ -17,7 +17,7 @@
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 18,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 18,
+    "boundedAcquisitionSpeciesCount": 39,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "undeterminedSpeciesPolicy": "included-as-unknown",
@@ -31,31 +31,31 @@
     "resolvablePairCount": 12520,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 25,
+    "verifiedPresent": 70,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 65,
-    "notResearched": 12430,
-    "determinationCoveragePercent": 0.2,
-    "researchCoveragePercent": 0.72,
-    "explicitOutcomePairCount": 90,
-    "explicitOutcomeCoveragePercent": 0.7188,
+    "researchedUnresolved": 125,
+    "notResearched": 12325,
+    "determinationCoveragePercent": 0.56,
+    "researchCoveragePercent": 1.56,
+    "explicitOutcomePairCount": 195,
+    "explicitOutcomeCoveragePercent": 1.5575,
     "conflictCount": 0,
-    "evidenceRecordCount": 25,
+    "evidenceRecordCount": 70,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 25,
+    "runEvidenceRecordCount": 70,
     "rejectionRecordCount": 0,
-    "researchRunCount": 6,
+    "researchRunCount": 7,
     "boundedAcquisition": {
-      "speciesCount": 18,
-      "totalPairs": 90,
-      "verifiedPresent": 25,
+      "speciesCount": 39,
+      "totalPairs": 195,
+      "verifiedPresent": 70,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 65,
+      "researchedUnresolved": 125,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 90,
+      "explicitOutcomePairs": 195,
       "explicitOutcomeCoveragePercent": 100
     }
   },
@@ -221,9 +221,9 @@
       "authority": "USDA Forest Service Forest Inventory and Analysis",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-07-26T13:44:30.000Z",
+      "evidencePairCount": 45,
+      "screenedSpeciesCount": 21
     },
     {
       "id": "usfs-current-invasive-plants",
@@ -370,9 +370,9 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 36,
+    "totalCells": 78,
     "applicableCells": 18,
-    "notApplicableCells": 18,
+    "notApplicableCells": 60,
     "completeCells": 18,
     "incompleteCells": 0,
     "blockedCells": 0,
@@ -580,6 +580,56 @@
       "priorityScore": 51
     },
     {
+      "speciesId": "tree-of-heaven",
+      "commonName": "Tree-of-Heaven",
+      "scientificName": "Ailanthus altissima",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 50
+    },
+    {
+      "speciesId": "albizia-julibrissin",
+      "commonName": "Mimosa Tree",
+      "scientificName": "Albizia julibrissin",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 50
+    },
+    {
+      "speciesId": "paulownia-tomentosa",
+      "commonName": "Princess Tree",
+      "scientificName": "Paulownia tomentosa",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 50
+    },
+    {
+      "speciesId": "triadica-sebifera",
+      "commonName": "Chinese Tallow",
+      "scientificName": "Triadica sebifera",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 50
+    },
+    {
+      "speciesId": "ulmus-pumila",
+      "commonName": "Siberian Elm",
+      "scientificName": "Ulmus pumila",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 50
+    },
+    {
       "speciesId": "phytophthora-cinnamomi",
       "commonName": "Phytophthora Root Rot",
       "scientificName": "Phytophthora cinnamomi",
@@ -592,6 +642,96 @@
       "priorityScore": 41
     },
     {
+      "speciesId": "ficus-rubiginosa",
+      "commonName": "Port Jackson fig",
+      "scientificName": "Ficus rubiginosa",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 4,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 40
+    },
+    {
+      "speciesId": "rhodomyrtus-tomentosa",
+      "commonName": "Rose myrtle",
+      "scientificName": "Rhodomyrtus tomentosa",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 4,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 40
+    },
+    {
+      "speciesId": "rubus-niveus",
+      "commonName": "Snowpeaks raspberry",
+      "scientificName": "Rubus niveus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 4,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 40
+    },
+    {
+      "speciesId": "ulex-europaeus",
+      "commonName": "Common gorse",
+      "scientificName": "Ulex europaeus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 4,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 40
+    },
+    {
+      "speciesId": "cyathea-cooperi",
+      "commonName": "Cooper's cyathea",
+      "scientificName": "Cyathea cooperi",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 3,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 30
+    },
+    {
+      "speciesId": "melaleuca-quinquenervia",
+      "commonName": "Punktree",
+      "scientificName": "Melaleuca quinquenervia",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 3,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 30
+    },
+    {
+      "speciesId": "cestrum-nocturnum",
+      "commonName": "Night jessamine",
+      "scientificName": "Cestrum nocturnum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 2,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 20
+    },
+    {
+      "speciesId": "ficus-microcarpa",
+      "commonName": "Chinese banyan",
+      "scientificName": "Ficus microcarpa",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 2,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 20
+    },
+    {
+      "speciesId": "melia-azedarach",
+      "commonName": "Chinaberry Tree",
+      "scientificName": "Melia azedarach",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 2,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 20
+    },
+    {
       "speciesId": "icerya-purchasi",
       "commonName": "Cottony cushion scale",
       "scientificName": "Icerya purchasi",
@@ -602,6 +742,16 @@
         "usfs-afpe"
       ],
       "priorityScore": 11
+    },
+    {
+      "speciesId": "ardisia-elliptica",
+      "commonName": "Shoebutton",
+      "scientificName": "Ardisia elliptica",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 10
     },
     {
       "speciesId": "bugula-neritina",
@@ -634,6 +784,36 @@
       "priorityScore": 10
     },
     {
+      "speciesId": "grevillea-robusta",
+      "commonName": "Silkoak",
+      "scientificName": "Grevillea robusta",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 10
+    },
+    {
+      "speciesId": "lantana-camara",
+      "commonName": "Lantana",
+      "scientificName": "Lantana camara",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 10
+    },
+    {
+      "speciesId": "leucaena-leucocephala",
+      "commonName": "White leadtree",
+      "scientificName": "Leucaena leucocephala",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 10
+    },
+    {
       "speciesId": "misgurnus-anguillicaudatus",
       "commonName": "Oriental weatherfish",
       "scientificName": "Misgurnus anguillicaudatus",
@@ -644,10 +824,40 @@
       "priorityScore": 10
     },
     {
+      "speciesId": "psidium-cattleianum",
+      "commonName": "Strawberry guava",
+      "scientificName": "Psidium cattleianum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 10
+    },
+    {
+      "speciesId": "psidium-guajava",
+      "commonName": "Guava",
+      "scientificName": "Psidium guajava",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 10
+    },
+    {
       "speciesId": "rhinella-marina",
       "commonName": "Cane Toad",
       "scientificName": "Rhinella marina",
       "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 10
+    },
+    {
+      "speciesId": "spathodea-campanulata",
+      "commonName": "African tuliptree",
+      "scientificName": "Spathodea campanulata",
+      "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [],

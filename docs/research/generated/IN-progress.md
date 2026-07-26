@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `593`
+- Verified present: `1067`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1063`
-- Not researched: `228712`
-- Determination coverage: `0.26%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `3533`
+- Not researched: `225768`
+- Determination coverage: `0.46%`
+- Research coverage: `2.00%`
+- Explicit outcome coverage: `1.9968%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `593`
-- Research runs: `6`
+- Evidence records: `1078`
+- Research runs: `7`
 - Rejection records: `7`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,20 +36,27 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 92 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 92 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 92 | 1 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 92 | 0 |
+| Morrow's Honeysuckle (`lonicera-morrowii`) | plants | 0 | 92 | 0 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 92 | 0 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 92 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 92 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 92 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 92 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 0 | 92 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 92 | 0 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 91 | 1 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 91 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 91 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 91 | 0 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 91 | 0 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 90 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 79 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 71 | 1 |
-| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 71 | 0 |
-| Zebra Mussel (`dreissena-polymorpha`) | wildlife | 0 | 70 | 0 |
-| Narrowleaf Cattail (`typha-angustifolia`) | plants | 0 | 62 | 0 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 57 | 1 |
-| Creeping yellowcress (`rorippa-sylvestris`) | plants | 0 | 57 | 0 |
-| Moneywort (`lysimachia-nummularia`) | plants | 0 | 47 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 0 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 90 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 90 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 88 | 0 |
+| Common Buckthorn (`rhamnus-cathartica`) | plants | 0 | 85 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 83 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 440 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 485 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

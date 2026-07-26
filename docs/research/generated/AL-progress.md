@@ -14,13 +14,13 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Not researched: `56852`
 - Determination coverage: `9.12%`
 - Research coverage: `66.11%`
-- Explicit outcome coverage: `0.6241%`
+- Explicit outcome coverage: `2.0218%`
 - Applicable protocol cells: `14437`
 - Current complete protocol cells: `0`
 - Protocol completion: `0.09%`
 - Current protocol completion: `0.00%`
-- Evidence records: `30813`
-- Research runs: `32`
+- Evidence records: `31531`
+- Research runs: `33`
 - Rejection records: `1440`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -76,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 6 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 173 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 718 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | 2026-06-16T03:44:13.025Z | 7 | 3 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

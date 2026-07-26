@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `74`
+- Verified present: `133`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `214`
-- Not researched: `39776`
-- Determination coverage: `0.18%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `667`
+- Not researched: `39264`
+- Determination coverage: `0.33%`
+- Research coverage: `2.00%`
+- Explicit outcome coverage: `1.9968%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `74`
-- Research runs: `6`
+- Evidence records: `133`
+- Research runs: `7`
 - Rejection records: `4`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,17 +39,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 16 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 16 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 16 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 1 |
-| Chinese mysterysnail (`cipangopaludina-chinensis`) | wildlife | 0 | 14 | 0 |
-| Sea vomit tunicate (`didemnum-vexillum`) | wildlife | 0 | 14 | 0 |
-| Asian shore crab (`hemigrapsus-sanguineus`) | wildlife | 0 | 14 | 0 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 14 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 12 | 1 |
-| Watercress (`nasturtium-officinale`) | plants | 0 | 11 | 0 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 5 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 1 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 1 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 1 | 1 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 16 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 16 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 16 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 16 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 16 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 16 | 0 |
+| Dames rocket (`hesperis-matronalis`) | plants | 0 | 16 | 0 |
+| European Privet (`ligustrum-vulgare`) | plants | 0 | 16 | 0 |
+| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 16 | 0 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 16 | 0 |
+| Moneywort (`lysimachia-nummularia`) | plants | 0 | 16 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 16 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 16 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 16 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 16 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 0 | 16 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 16 | 0 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 16 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 61 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 59 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

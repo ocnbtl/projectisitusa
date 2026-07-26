@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `126`
+- Verified present: `584`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1026`
-- Not researched: `159104`
-- Determination coverage: `0.08%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `2808`
+- Not researched: `156864`
+- Determination coverage: `0.36%`
+- Research coverage: `2.12%`
+- Explicit outcome coverage: `2.1166%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `126`
-- Research runs: `6`
+- Evidence records: `584`
+- Research runs: `7`
 - Rejection records: `10`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,18 +38,25 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 64 | 1 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 64 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 64 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 0 | 64 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 64 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 64 | 0 |
+| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 64 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 64 | 0 |
+| Rose natal grass (`melinis-repens`) | plants | 0 | 64 | 0 |
+| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 0 | 64 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 64 | 0 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 63 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 63 | 1 |
-| Brittle Waternymph (`najas-minor`) | plants | 0 | 59 | 0 |
-| Asian Tiger Shrimp (`penaeus-monodon`) | wildlife | 0 | 59 | 0 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 57 | 1 |
-| Zebra Mussel (`dreissena-polymorpha`) | wildlife | 0 | 57 | 0 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 56 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 0 | 53 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 51 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 50 | 1 |
-| Rice (`oryza-sativa`) | plants | 0 | 39 | 0 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 35 | 1 |
+| Thorny olive (`elaeagnus-pungens`) | plants | 0 | 63 | 0 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 0 | 63 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 63 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 63 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 62 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 62 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 62 | 0 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 0 | 62 | 0 |
+| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 62 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 73 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 458 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

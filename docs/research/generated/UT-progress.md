@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `46`
+- Verified present: `121`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `476`
-- Not researched: `72094`
-- Determination coverage: `0.06%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `2286`
+- Not researched: `70209`
+- Determination coverage: `0.17%`
+- Research coverage: `3.31%`
+- Explicit outcome coverage: `3.3147%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `46`
-- Research runs: `6`
+- Evidence records: `121`
+- Research runs: `7`
 - Rejection records: `7`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,14 +42,21 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 29 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 29 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 29 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 28 | 1 |
-| Chinese mysterysnail (`cipangopaludina-chinensis`) | wildlife | 0 | 28 | 0 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 24 | 1 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 23 | 0 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 23 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 23 | 0 |
-| New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 0 | 22 | 0 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 15 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 29 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 29 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 0 | 29 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 29 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 29 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 29 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 29 | 0 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 29 | 0 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 29 | 0 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 29 | 0 |
+| Asian mustard (`brassica-tournefortii`) | plants | 0 | 29 | 0 |
+| Field Brome (`bromus-arvensis`) | plants | 0 | 29 | 0 |
+| Ripgut brome (`bromus-diandrus`) | plants | 0 | 29 | 0 |
+| Smooth Brome (`bromus-inermis`) | plants | 0 | 29 | 0 |
+| Red brome (`bromus-rubens`) | plants | 0 | 29 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 20 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 75 | 67 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

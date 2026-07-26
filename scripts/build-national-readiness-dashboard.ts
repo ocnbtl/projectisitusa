@@ -14,20 +14,26 @@ type StateRegistryFile = {
 type SkillEvaluation = {
   result: string;
   broadDispatchAllowed: boolean;
-  redGreenRegression?: {
-    green?: {
+  staticValidation?: {
+    regression?: {
       wallSeconds?: number;
       peakMemoryMb?: number;
       manualInterventions?: number;
     };
   };
-  realPilot?: {
+  metrics?: {
     validPairsScreened?: number;
-    workerWallSeconds?: number;
-    observedPeakMemoryMb?: number;
+    validatedResearchThroughputPairsPerHour?: number | null;
     manualInterventions?: number;
     mergeConflicts?: number;
-    validatedResearchThroughputPairsPerHour?: number;
+  };
+};
+type OperationsDashboard = {
+  throughput: {
+    manifests: number;
+    validPairsScreened: number;
+    wallSeconds: number;
+    validPairsPerHour: number;
   };
 };
 type ReleaseVerificationFile = {
@@ -47,7 +53,7 @@ type ReleaseVerificationFile = {
     evidenceScope: string;
   }>;
 };
-type NationalPilotEvaluation = {
+type HistoricalNationalPilotEvaluation = {
   result: string;
   partition: {
     requestedPairs: number;
@@ -66,6 +72,36 @@ type NationalPilotEvaluation = {
   throughput: {
     endToEndWallSeconds: number;
     endToEndValidatedCompletePairsPerHour: number;
+  };
+  forecast: {
+    qualification: string;
+  };
+};
+type NationalSourceEvaluation = {
+  result: string;
+  partition: {
+    requestedPairs: number;
+    completeOutcomes: number;
+    blockedOutcomes: number;
+  };
+  workerCanaries: {
+    issued: number;
+    accepted: number;
+    partial: number;
+    failed: number;
+    acceptedPairs: number;
+    acceptedWallSeconds: number;
+    acceptedPairsPerHour: number;
+    manualInterventions: number;
+    mergeConflicts: number;
+  };
+  disk: {
+    lowestRecordedAvailableBytes: number;
+    maximumSafeWorkersAtRecordedCapacity: number;
+  };
+  throughput: {
+    acquisitionWallSeconds: number;
+    endToEndValidatedCompletePairsPerHour: number | null;
   };
   forecast: {
     qualification: string;
@@ -107,17 +143,28 @@ const leases = readJson<LeasesFile>(path.join(operationsRoot, "leases.json")).le
 const queue = readJson<QueueFile>(path.join(operationsRoot, "integration-queue.json")).items;
 const evaluationPath = path.join(
   operationsRoot,
-  "evaluations/skill-evaluation-recovery-2026-07-15-r1.json",
+  "evaluations/skill-evaluation-postfreeze-recovery-2026-07-26-r2.json",
 );
 const skillEvaluation = existsSync(evaluationPath)
   ? readJson<SkillEvaluation>(evaluationPath)
   : null;
-const nationalPilotEvaluationPath = path.join(
+const operationsDashboardPath = path.join(operationsRoot, "dashboard.json");
+const operationsDashboard = existsSync(operationsDashboardPath)
+  ? readJson<OperationsDashboard>(operationsDashboardPath)
+  : null;
+const nationalSourceEvaluationPath = path.join(
+  operationsRoot,
+  "evaluations/usfs-fia-national-2026-07-26.json",
+);
+const nationalSourceEvaluation = existsSync(nationalSourceEvaluationPath)
+  ? readJson<NationalSourceEvaluation>(nationalSourceEvaluationPath)
+  : null;
+const historicalNationalPilotEvaluationPath = path.join(
   operationsRoot,
   "evaluations/usgs-nas-pilot-2026-07-15.json",
 );
-const nationalPilotEvaluation = existsSync(nationalPilotEvaluationPath)
-  ? readJson<NationalPilotEvaluation>(nationalPilotEvaluationPath)
+const historicalNationalPilotEvaluation = existsSync(historicalNationalPilotEvaluationPath)
+  ? readJson<HistoricalNationalPilotEvaluation>(historicalNationalPilotEvaluationPath)
   : null;
 const releaseVerificationPath = path.join(
   operationsRoot,
@@ -238,10 +285,8 @@ for (const job of jobs) {
 }
 const completedWorkerLeases = leases.filter((entry) => entry.state === "completed").length;
 const integratedQueueItems = queue.filter((entry) => entry.decision === "integrated").length;
-const pilot = skillEvaluation?.realPilot;
 const measuredRate =
-  nationalPilotEvaluation?.throughput.endToEndValidatedCompletePairsPerHour ??
-  pilot?.validatedResearchThroughputPairsPerHour ??
+  nationalSourceEvaluation?.throughput.endToEndValidatedCompletePairsPerHour ??
   0;
 const remainingApplicableProtocolCountyScreens = states.reduce(
   (total, state) =>
@@ -356,44 +401,63 @@ const dashboard = {
     blockedJobs: jobs.filter((entry) => entry.state === "blocked").length,
     activeLeases: leases.filter((entry) => entry.state === "active").length,
     completedWorkerLeases,
-    workerFailures:
-      leases.filter((entry) => entry.state === "failed").length +
+    workerAttemptFailures: leases.filter((entry) => entry.state === "failed").length,
+    rejectedWorkerSubmissions:
       queue.filter((entry) => ["changes-requested", "rejected"].includes(entry.decision)).length,
+    acceptedWorkerIntegrations: integratedQueueItems,
     workerCompletionRatePercent:
       completedWorkerLeases === 0
         ? 0
         : round((integratedQueueItems / completedWorkerLeases) * 100),
+    workerManifestCount: operationsDashboard?.throughput.manifests ?? 0,
+    workerManifestPairsScreened:
+      operationsDashboard?.throughput.validPairsScreened ?? 0,
+    workerManifestWallSeconds:
+      operationsDashboard?.throughput.wallSeconds ?? 0,
+    workerManifestPairsPerHour:
+      operationsDashboard?.throughput.validPairsPerHour ?? 0,
     measuredWallSeconds:
-      pilot?.workerWallSeconds ??
-      skillEvaluation?.redGreenRegression?.green?.wallSeconds ??
+      nationalSourceEvaluation?.workerCanaries.acceptedWallSeconds ??
+      skillEvaluation?.staticValidation?.regression?.wallSeconds ??
       0,
     memoryHighWaterMb:
-      pilot?.observedPeakMemoryMb ??
-      skillEvaluation?.redGreenRegression?.green?.peakMemoryMb ??
-      0,
+      skillEvaluation?.staticValidation?.regression?.peakMemoryMb ?? 0,
     manualInterventions:
-      pilot?.manualInterventions ??
-      skillEvaluation?.redGreenRegression?.green?.manualInterventions ??
+      nationalSourceEvaluation?.workerCanaries.manualInterventions ??
+      skillEvaluation?.metrics?.manualInterventions ??
       queue.reduce((total, entry) => total + (entry.manualInterventions ?? 0), 0),
     mergeConflicts:
-      pilot?.mergeConflicts ?? queue.reduce((total, entry) => total + (entry.conflicts ?? 0), 0),
-    validatedStagingPairs: pilot?.validPairsScreened ?? 0,
-    validatedStagingThroughputPairsPerHour: measuredRate,
+      nationalSourceEvaluation?.workerCanaries.mergeConflicts ??
+      skillEvaluation?.metrics?.mergeConflicts ??
+      queue.reduce((total, entry) => total + (entry.conflicts ?? 0), 0),
+    validatedStagingPairs:
+      nationalSourceEvaluation?.workerCanaries.acceptedPairs ??
+      skillEvaluation?.metrics?.validPairsScreened ??
+      0,
+    validatedStagingThroughputPairsPerHour:
+      nationalSourceEvaluation?.workerCanaries.acceptedPairsPerHour ??
+      skillEvaluation?.metrics?.validatedResearchThroughputPairsPerHour ??
+      0,
     skillEvaluationResult: skillEvaluation?.result ?? "not-run",
     broadDispatchAllowed: skillEvaluation?.broadDispatchAllowed ?? false,
-    nationalPilotResult: nationalPilotEvaluation?.result ?? "not-run",
-    nationalPilotRequestedPairs: nationalPilotEvaluation?.partition.requestedPairs ?? 0,
-    nationalPilotCompleteOutcomes: nationalPilotEvaluation?.partition.completeOutcomes ?? 0,
-    nationalPilotBlockedOutcomes: nationalPilotEvaluation?.partition.blockedOutcomes ?? 0,
-    nationalPilotWallSeconds: nationalPilotEvaluation?.throughput.endToEndWallSeconds ?? 0,
+    nationalPilotResult: nationalSourceEvaluation?.result ?? "not-run",
+    nationalPilotRequestedPairs: nationalSourceEvaluation?.partition.requestedPairs ?? 0,
+    nationalPilotCompleteOutcomes: nationalSourceEvaluation?.partition.completeOutcomes ?? 0,
+    nationalPilotBlockedOutcomes: nationalSourceEvaluation?.partition.blockedOutcomes ?? 0,
+    nationalPilotWallSeconds: 0,
     nationalPilotThroughputPairsPerHour:
-      nationalPilotEvaluation?.throughput.endToEndValidatedCompletePairsPerHour ?? 0,
+      nationalSourceEvaluation?.throughput.endToEndValidatedCompletePairsPerHour ?? 0,
     nationalPilotManualInterventions:
-      nationalPilotEvaluation?.interventions.manualInterventions ?? 0,
-    nationalPilotProcessFailures:
-      nationalPilotEvaluation?.interventions.processFailuresBeforeValidatedIntegration ?? 0,
-    minimumObservedFreeDiskMiB:
-      nationalPilotEvaluation?.interventions.minimumObservedFreeDiskMiB ?? null,
+      nationalSourceEvaluation?.workerCanaries.manualInterventions ?? 0,
+    nationalPilotProcessFailures: nationalSourceEvaluation?.workerCanaries.failed ?? 0,
+    currentEvaluationRecordedFreeDiskMiB:
+      nationalSourceEvaluation
+        ? round(nationalSourceEvaluation.disk.lowestRecordedAvailableBytes / 1_048_576, 1)
+        : null,
+    maximumSafeWorkersAtRecordedCapacity:
+      nationalSourceEvaluation?.disk.maximumSafeWorkersAtRecordedCapacity ?? 0,
+    historicalMinimumObservedFreeDiskMiB:
+      historicalNationalPilotEvaluation?.interventions.minimumObservedFreeDiskMiB ?? null,
   },
   releaseVerification: {
     currentBuildState: "pending-external-verification",
@@ -429,10 +493,15 @@ const dashboard = {
     remainingApplicableProtocolCountyScreens,
     measuredRatePairsPerHour: measuredRate,
     measuredRateEvidence: {
-      estimateType: "single-accepted-pilot-point-estimate",
+      estimateType:
+        measuredRate > 0
+          ? "current-national-source-end-to-end-point-estimate"
+          : "not-durably-measured",
       confidenceInterval: null,
       confidenceQualification:
-        "No statistical confidence interval is available from one accepted end-to-end national-source pilot.",
+        measuredRate > 0
+          ? "No statistical confidence interval is available from one accepted end-to-end national-source run."
+          : "The current FIA partition did not retain one durable end-to-end timer, so no national-source rate is claimed.",
     },
     concurrencyAssumption: 1,
     hoursPerDayAssumption,
@@ -444,11 +513,12 @@ const dashboard = {
     forecastQualification:
       measuredRate > 0
         ? "Capacity forecast for versioned automated national-source screens at the validated pilot rate. It is not a national certification forecast because state-specific, manual, blocked, freshness, production QA, and integration workloads remain separately unmeasured."
-        : "No accepted integrated national-source throughput measurement is available.",
-    historicalPilotForecast: nationalPilotEvaluation
+        : nationalSourceEvaluation?.forecast.qualification ??
+          "No accepted integrated national-source throughput measurement is available.",
+    historicalPilotForecast: historicalNationalPilotEvaluation
       ? {
           status: "superseded-by-current-applicability-classification",
-          qualificationAtMeasurement: nationalPilotEvaluation.forecast.qualification,
+          qualificationAtMeasurement: historicalNationalPilotEvaluation.forecast.qualification,
           currentApplicabilityUnclassifiedJurisdictions:
             applicabilityUnclassifiedJurisdictionCodes.length,
           note:

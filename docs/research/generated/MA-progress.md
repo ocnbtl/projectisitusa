@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `119`
+- Verified present: `203`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `133`
-- Not researched: `34804`
-- Determination coverage: `0.34%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `497`
+- Not researched: `34356`
+- Determination coverage: `0.58%`
+- Research coverage: `2.00%`
+- Explicit outcome coverage: `1.9968%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `119`
-- Research runs: `6`
+- Evidence records: `203`
+- Research runs: `7`
 - Rejection records: `7`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,19 +37,26 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 14 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 14 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 14 | 1 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 14 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 14 | 0 |
+| Canada Thistle (`cirsium-arvense`) | plants | 0 | 14 | 0 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 14 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 14 | 0 |
+| Dames rocket (`hesperis-matronalis`) | plants | 0 | 14 | 0 |
+| Amur Honeysuckle (`lonicera-maackii`) | plants | 0 | 14 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 14 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 14 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 14 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 14 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 0 | 14 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 14 | 0 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 14 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 13 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 13 | 0 |
+| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 13 | 0 |
+| Tatarian Honeysuckle (`lonicera-tatarica`) | plants | 0 | 13 | 0 |
+| Moneywort (`lysimachia-nummularia`) | plants | 0 | 13 | 0 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 12 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 11 | 1 |
-| Yellow Floating Heart (`nymphoides-peltata`) | plants | 0 | 8 | 0 |
-| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 7 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 7 | 0 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 6 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 4 | 1 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 4 | 0 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 2 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 2 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 0 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 75 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 84 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `25`
+- Verified present: `70`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `65`
-- Not researched: `12430`
-- Determination coverage: `0.20%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `125`
+- Not researched: `12325`
+- Determination coverage: `0.56%`
+- Research coverage: `1.56%`
+- Explicit outcome coverage: `1.5575%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `25`
-- Research runs: `6`
+- Evidence records: `70`
+- Research runs: `7`
 - Rejection records: `0`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,13 +43,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 5 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 5 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 1 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 5 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 5 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 5 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 5 | 0 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 5 | 0 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 4 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 1 | 1 |
-| Brown bryozoan (`bugula-neritina`) | wildlife | 0 | 1 | 0 |
-| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 1 | 0 |
-| Water Hyacinth (`eichhornia-crassipes`) | plants | 0 | 1 | 0 |
-| Oriental weatherfish (`misgurnus-anguillicaudatus`) | wildlife | 0 | 1 | 0 |
-| Cane Toad (`rhinella-marina`) | wildlife | 0 | 1 | 0 |
+| Port Jackson fig (`ficus-rubiginosa`) | plants | 0 | 4 | 0 |
+| Rose myrtle (`rhodomyrtus-tomentosa`) | plants | 0 | 4 | 0 |
+| Snowpeaks raspberry (`rubus-niveus`) | plants | 0 | 4 | 0 |
+| Common gorse (`ulex-europaeus`) | plants | 0 | 4 | 0 |
+| Cooper's cyathea (`cyathea-cooperi`) | plants | 0 | 3 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 3 | 0 |
+| Night jessamine (`cestrum-nocturnum`) | plants | 0 | 2 | 0 |
+| Chinese banyan (`ficus-microcarpa`) | plants | 0 | 2 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 5 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 45 | 21 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

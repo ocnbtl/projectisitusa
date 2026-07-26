@@ -53,6 +53,24 @@ export function hashCatalogSpeciesIds(speciesIds: string[]) {
     .digest("hex");
 }
 
+export function resolveBoundedAcquisitionSpeciesIds(input: {
+  catalogSpeciesIds: string[];
+  stateScopeSpeciesIds: string[];
+  outcomeSpeciesIds: string[];
+}) {
+  const catalogSpeciesIdSet = new Set(input.catalogSpeciesIds);
+  const boundedSpeciesIds = new Set(input.stateScopeSpeciesIds);
+  for (const speciesId of input.outcomeSpeciesIds) {
+    if (!catalogSpeciesIdSet.has(speciesId)) {
+      throw new Error(
+        `Immutable outcome references unknown catalog species ${speciesId}.`,
+      );
+    }
+    boundedSpeciesIds.add(speciesId);
+  }
+  return [...boundedSpeciesIds].sort();
+}
+
 export function selectStateResearchConfig(
   configFile: StateResearchConfigFile,
   stateCode: string,

@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `17`
+- Verified present: `53`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `478`
-- Not researched: `82137`
-- Determination coverage: `0.02%`
-- Research coverage: `0.60%`
-- Explicit outcome coverage: `0.5990%`
+- Researched unresolved: `2752`
+- Not researched: `79827`
+- Determination coverage: `0.06%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `15`
 - Current complete protocol cells: `2`
 - Protocol completion: `100.00%`
 - Current protocol completion: `13.33%`
-- Evidence records: `17`
-- Research runs: `3`
+- Evidence records: `53`
+- Research runs: `4`
 - Rejection records: `0`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,10 +43,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 33 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 33 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 33 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 32 | 1 |
-| Nutria (`nutria`) | wildlife | 0 | 30 | 0 |
-| Asian tapeworm (`schyzocotyle-acheilognathi`) | wildlife | 0 | 30 | 0 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 23 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 33 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 33 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 0 | 33 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 33 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 33 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 33 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 33 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 33 | 0 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 33 | 0 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 33 | 0 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 33 | 0 |
+| Asian mustard (`brassica-tournefortii`) | plants | 0 | 33 | 0 |
+| Field Brome (`bromus-arvensis`) | plants | 0 | 33 | 0 |
+| Ripgut brome (`bromus-diandrus`) | plants | 0 | 33 | 0 |
 
 ## Source Operations
 
@@ -66,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 11 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 70 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

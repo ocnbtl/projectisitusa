@@ -20,6 +20,7 @@ import {
   stableJson,
 } from "@/lib/research/run-files";
 import {
+  resolveBoundedAcquisitionSpeciesIds,
   resolveStateResearchScope,
   selectStateResearchConfig,
   type StateApplicabilityFile,
@@ -141,7 +142,18 @@ for (const configuredState of configFile.states.filter(
     asOf: summary.asOf,
     applicability,
   });
-  const selectedSpeciesIds = new Set(resolvedScope.speciesIds);
+  const immutableRuns = selectImmutableResearchRunsForState(
+    allImmutableRuns,
+    stateCode,
+    summary.asOf,
+  );
+  const selectedSpeciesIds = new Set(resolveBoundedAcquisitionSpeciesIds({
+    catalogSpeciesIds,
+    stateScopeSpeciesIds: resolvedScope.speciesIds,
+    outcomeSpeciesIds: immutableRuns.flatMap((bundle) =>
+      bundle.outcomes.map((entry) => entry.species_id)
+    ),
+  }));
   const expectedScope = {
     publicationMode: config.mode,
     speciesMode: config.speciesScope.mode,
@@ -159,7 +171,7 @@ for (const configuredState of configFile.states.filter(
       resolvedScope.explicitApplicabilityDecisionCount,
     resolvedStateSpeciesDecisionCount:
       resolvedScope.resolvedStateSpeciesDecisionCount,
-    boundedAcquisitionSpeciesCount: resolvedScope.speciesIds.length,
+    boundedAcquisitionSpeciesCount: selectedSpeciesIds.size,
     defaultApplicability: resolvedScope.defaultApplicability,
     fullCatalogApplicabilityComplete:
       resolvedScope.fullCatalogApplicabilityComplete,
@@ -196,16 +208,13 @@ for (const configuredState of configFile.states.filter(
     `${stateCode} county research files do not exactly match active county equivalents.`,
   );
 
-  const immutableRuns = selectImmutableResearchRunsForState(
-    allImmutableRuns,
-    stateCode,
-    summary.asOf,
-  );
   const runAssertions = immutableRuns
     .flatMap((bundle) => bundle.assertions)
     .filter((entry) => selectedSpeciesIds.has(entry.species_id));
   const reviewEvents = [
-    ...immutableRuns.flatMap((bundle) => bundle.reviews),
+    ...immutableRuns
+      .flatMap((bundle) => bundle.reviews)
+      .filter((entry) => selectedSpeciesIds.has(entry.species_id)),
     ...laterReviews.filter(
       (entry) =>
         entry.state_code === stateCode &&

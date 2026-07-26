@@ -37,7 +37,7 @@ const decisionTotals = {
   blocked: 0,
 };
 let resolvedStateSpeciesDecisions = 0;
-let boundedAcquisitionSpecies = 0;
+let configuredStateScopeSpecies = 0;
 
 for (const config of configFile.states) {
   const applicability = readJson<StateApplicabilityFile>(
@@ -56,7 +56,7 @@ for (const config of configFile.states) {
     applicability,
   });
   resolvedStateSpeciesDecisions += resolved.resolvedStateSpeciesDecisionCount;
-  boundedAcquisitionSpecies += resolved.speciesIds.length;
+  configuredStateScopeSpecies += resolved.speciesIds.length;
   for (const status of Object.keys(decisionTotals) as Array<
     keyof typeof decisionTotals
   >) {
@@ -97,6 +97,7 @@ const boundedStatus = {
   notResearched: 0,
   totalPairs: 0,
 };
+let boundedAcquisitionSpecies = 0;
 for (const config of configFile.states) {
   const summary = readJson<ResearchStateSummary>(
     `src/data/generated/research/${config.stateCode}/summary.json`,
@@ -105,6 +106,7 @@ for (const config of configFile.states) {
     ...summary.summary,
     totalPairs: summary.summary.totalPairs,
   };
+  boundedAcquisitionSpecies += bounded.speciesCount;
   boundedStatus.verifiedPresent += bounded.verifiedPresent;
   boundedStatus.verifiedAbsent += bounded.verifiedAbsent;
   boundedStatus.notDetected += bounded.notDetected;
@@ -125,6 +127,18 @@ assert(
   Object.values(fullStatus).reduce((sum, count) => sum + count, 0) ===
     fullCountySpeciesDenominator,
   "Sparse county statuses do not partition the full denominator.",
+);
+
+const alaskaPlantago = readJson<ResearchCountyFile>(
+  "public/generated/research/AK/counties/02020.json",
+).pairs.find((entry) => entry.speciesId === "plantago-major");
+assert(
+  alaskaPlantago?.applicabilityStatus === "unknown" &&
+    alaskaPlantago.displayStatus === "verified-present" &&
+    alaskaPlantago.evidence.some(
+      (entry) => entry.sourceId === "usfs-fia-invasive-plants",
+    ),
+  "A source-targeted outcome for an unknown state-species decision was excluded from the sparse projection.",
 );
 
 const fixture = {
@@ -203,6 +217,7 @@ console.log(
       fullStateSpeciesDenominator,
       stateApplicabilityDecisions: decisionTotals,
       resolvedStateSpeciesDecisions,
+      configuredStateScopeSpecies,
       fullCountySpeciesDenominator,
       boundedAcquisitionSpecies,
       boundedStatus,

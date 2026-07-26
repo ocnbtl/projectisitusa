@@ -10,18 +10,18 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9`
-- Not researched: `22527`
+- Researched unresolved: `153`
+- Not researched: `22383`
 - Determination coverage: `0.00%`
-- Research coverage: `0.04%`
-- Explicit outcome coverage: `0.0399%`
+- Research coverage: `0.68%`
+- Explicit outcome coverage: `0.6789%`
 - Applicable protocol cells: `14`
 - Current complete protocol cells: `1`
 - Protocol completion: `7.14%`
 - Current protocol completion: `7.14%`
 - Evidence records: `0`
-- Research runs: `2`
-- Rejection records: `222`
+- Research runs: `3`
+- Rejection records: `1016`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -45,7 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 9 | 0 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 1 |
-| Brown bryozoan (`bugula-neritina`) | wildlife | 0 | 9 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 9 | 0 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 9 | 0 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 9 | 0 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 9 | 0 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 9 | 0 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 9 | 0 | 0 |
+| Canada Thistle (`cirsium-arvense`) | plants | 9 | 0 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 9 | 0 | 0 |
+| Autumn Olive (`elaeagnus-umbellata`) | plants | 9 | 0 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 9 | 0 | 0 |
+| European Privet (`ligustrum-vulgare`) | plants | 9 | 0 | 0 |
+| Japanese Honeysuckle (`lonicera-japonica`) | plants | 9 | 0 | 0 |
 
 ## Source Operations
 
@@ -65,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 0 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

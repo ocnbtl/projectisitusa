@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `158`
+- Verified present: `209`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `886`
-- Not researched: `144188`
-- Determination coverage: `0.11%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `2807`
+- Not researched: `142216`
+- Determination coverage: `0.14%`
+- Research coverage: `2.08%`
+- Explicit outcome coverage: `2.0767%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `158`
-- Research runs: `6`
+- Evidence records: `209`
+- Research runs: `7`
 - Rejection records: `31`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -40,16 +40,23 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 58 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 58 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 56 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 55 | 1 |
-| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 50 | 0 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 49 | 1 |
-| Sea vomit tunicate (`didemnum-vexillum`) | wildlife | 0 | 48 | 0 |
-| Australian tubeworm (`ficopomatus-enigmaticus`) | wildlife | 0 | 47 | 0 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 30 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 29 | 1 |
-| Hyssop loosestrife (`lythrum-hyssopifolia`) | plants | 0 | 29 | 0 |
-| New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 0 | 29 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 58 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 58 | 0 |
+| Cheatgrass (`bromus-tectorum`) | plants | 0 | 58 | 0 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 0 | 58 | 0 |
+| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 0 | 58 | 0 |
+| Diffuse Knapweed (`centaurea-diffusa`) | plants | 0 | 58 | 0 |
+| Maltese star-thistle (`centaurea-melitensis`) | plants | 0 | 58 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 58 | 0 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 58 | 0 |
+| Purple pampas grass (`cortaderia-jubata`) | plants | 0 | 58 | 0 |
+| Orange cotoneaster (`cotoneaster-franchetii`) | plants | 0 | 58 | 0 |
+| Silverleaf cotoneaster (`cotoneaster-pannosus`) | plants | 0 | 58 | 0 |
+| Common Houndstongue (`cynoglossum-officinale`) | plants | 0 | 58 | 0 |
+| Scotch broom (`cytisus-scoparius`) | plants | 0 | 58 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 58 | 0 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 0 | 58 | 0 |
+| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 71 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 51 | 34 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

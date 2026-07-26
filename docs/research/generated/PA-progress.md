@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `691`
+- Verified present: `1446`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `502`
-- Not researched: `166575`
-- Determination coverage: `0.41%`
-- Research coverage: `0.71%`
-- Explicit outcome coverage: `0.7111%`
+- Researched unresolved: `1891`
+- Not researched: `164431`
+- Determination coverage: `0.86%`
+- Research coverage: `1.99%`
+- Explicit outcome coverage: `1.9891%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `4`
 - Protocol completion: `94.44%`
 - Current protocol completion: `22.22%`
-- Evidence records: `691`
-- Research runs: `6`
+- Evidence records: `1461`
+- Research runs: `7`
 - Rejection records: `57`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -37,19 +37,26 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 67 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 67 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 67 | 1 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 67 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 67 | 0 |
+| Chinaberry Tree (`melia-azedarach`) | plants | 0 | 67 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 0 | 67 | 0 |
+| Chinese Tallow (`triadica-sebifera`) | plants | 0 | 67 | 0 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 66 | 0 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 66 | 0 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 64 | 0 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 63 | 1 |
+| English Ivy (`hedera-helix`) | plants | 0 | 63 | 0 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 61 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 60 | 0 |
+| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 60 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 59 | 0 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 55 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 33 | 1 |
-| Creeping yellowcress (`rorippa-sylvestris`) | plants | 0 | 22 | 0 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 17 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 17 | 1 |
-| Watercress (`nasturtium-officinale`) | plants | 0 | 16 | 0 |
-| Moneywort (`lysimachia-nummularia`) | plants | 0 | 11 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 0 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 0 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 0 | 0 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 51 | 0 |
+| Canada Thistle (`cirsium-arvense`) | plants | 0 | 51 | 0 |
+| Tatarian Honeysuckle (`lonicera-tatarica`) | plants | 0 | 50 | 0 |
+| Common Buckthorn (`rhamnus-cathartica`) | plants | 0 | 50 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 49 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 418 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 770 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

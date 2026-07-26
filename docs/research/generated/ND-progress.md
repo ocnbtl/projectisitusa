@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `14`
+- Verified present: `33`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `887`
-- Not researched: `131811`
-- Determination coverage: `0.01%`
-- Research coverage: `0.68%`
-- Explicit outcome coverage: `0.6789%`
+- Researched unresolved: `2617`
+- Not researched: `130062`
+- Determination coverage: `0.02%`
+- Research coverage: `2.00%`
+- Explicit outcome coverage: `1.9968%`
 - Applicable protocol cells: `17`
 - Current complete protocol cells: `4`
 - Protocol completion: `100.00%`
 - Current protocol completion: `23.53%`
-- Evidence records: `14`
-- Research runs: `5`
+- Evidence records: `33`
+- Research runs: `6`
 - Rejection records: `4`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,11 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 53 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 53 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 53 | 1 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 52 | 0 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 51 | 1 |
-| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 51 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 49 | 0 |
-| Zebra Mussel (`dreissena-polymorpha`) | wildlife | 0 | 48 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 53 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 53 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 53 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 53 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 53 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 53 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 53 | 0 |
+| Autumn Olive (`elaeagnus-umbellata`) | plants | 0 | 53 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 53 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 53 | 0 |
+| Dames rocket (`hesperis-matronalis`) | plants | 0 | 53 | 0 |
+| European Privet (`ligustrum-vulgare`) | plants | 0 | 53 | 0 |
+| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 53 | 0 |
 
 ## Source Operations
 
@@ -68,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 2 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 19 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `83`
+- Verified present: `122`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `97`
-- Not researched: `24860`
-- Determination coverage: `0.33%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `388`
+- Not researched: `24530`
+- Determination coverage: `0.49%`
+- Research coverage: `2.04%`
+- Explicit outcome coverage: `2.0367%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `100.00%`
 - Current protocol completion: `27.78%`
-- Evidence records: `83`
-- Research runs: `6`
+- Evidence records: `122`
+- Research runs: `7`
 - Rejection records: `17`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,17 +39,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 10 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 10 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 10 | 1 |
-| Brittle Waternymph (`najas-minor`) | plants | 0 | 6 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 6 | 0 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 5 | 0 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 4 | 1 |
-| Yellow Flag Iris (`iris-pseudacorus`) | plants | 0 | 4 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 1 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 1 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
-| Brown Trout (`salmo-trutta`) | wildlife | 0 | 0 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 10 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 10 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 10 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 10 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 10 | 0 |
+| Canada Thistle (`cirsium-arvense`) | plants | 0 | 10 | 0 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 10 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 10 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 10 | 0 |
+| Dames rocket (`hesperis-matronalis`) | plants | 0 | 10 | 0 |
+| European Privet (`ligustrum-vulgare`) | plants | 0 | 10 | 0 |
+| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 10 | 0 |
+| Amur Honeysuckle (`lonicera-maackii`) | plants | 0 | 10 | 0 |
+| Morrow's Honeysuckle (`lonicera-morrowii`) | plants | 0 | 10 | 0 |
+| Tatarian Honeysuckle (`lonicera-tatarica`) | plants | 0 | 10 | 0 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 10 | 0 |
+| Moneywort (`lysimachia-nummularia`) | plants | 0 | 10 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 10 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 54 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 39 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |

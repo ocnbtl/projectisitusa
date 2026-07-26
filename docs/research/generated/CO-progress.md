@@ -7,20 +7,20 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `69`
+- Verified present: `394`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1070`
-- Not researched: `159117`
-- Determination coverage: `0.04%`
-- Research coverage: `0.71%`
-- Explicit outcome coverage: `0.7107%`
+- Researched unresolved: `6313`
+- Not researched: `153549`
+- Determination coverage: `0.25%`
+- Research coverage: `4.19%`
+- Explicit outcome coverage: `4.1852%`
 - Applicable protocol cells: `18`
 - Current complete protocol cells: `5`
 - Protocol completion: `27.78%`
 - Current protocol completion: `27.78%`
-- Evidence records: `69`
-- Research runs: `6`
+- Evidence records: `394`
+- Research runs: `8`
 - Rejection records: `36`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,11 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 1 | 58 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 1 | 52 | 1 |
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 1 | 45 | 1 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 61 | 0 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 0 | 61 | 0 |
-| New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 0 | 61 | 0 |
-| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 54 | 0 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 51 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 64 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 64 | 0 |
+| Stinking Chamomile (`anthemis-cotula`) | plants | 0 | 64 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 64 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 64 | 0 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 64 | 0 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 64 | 0 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 64 | 0 |
+| Asian mustard (`brassica-tournefortii`) | plants | 0 | 64 | 0 |
+| Field Brome (`bromus-arvensis`) | plants | 0 | 64 | 0 |
+| Ripgut brome (`bromus-diandrus`) | plants | 0 | 64 | 0 |
+| Smooth Brome (`bromus-inermis`) | plants | 0 | 64 | 0 |
 
 ## Source Operations
 
@@ -69,7 +76,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 37 | 13 |
-| USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
+| USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:30.000Z | 325 | 89 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
