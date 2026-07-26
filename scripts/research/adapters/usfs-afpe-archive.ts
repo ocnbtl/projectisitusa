@@ -146,7 +146,7 @@ function assertionAndReview(input: {
   context: SourceAdapterContext;
   mapping: AfpeTaxonMapping;
   row: AfpeCountyRow;
-  countyName: string;
+  countyLegalName: string;
   stateName: string;
   completedAt: string;
 }) {
@@ -198,9 +198,9 @@ function assertionAndReview(input: {
     },
     geography_match: {
       method:
-        "Exact five-digit source FIPS matched one active county equivalent; coordinates were not used",
+        "Exact five-digit source FIPS and a normalized source label matched one active registered legal county-equivalent name; coordinates were not used",
       source_state: input.stateName,
-      source_county: input.countyName,
+      source_county: input.countyLegalName,
       county_fips: input.row.FIPS,
     },
     temporal_scope:
@@ -421,7 +421,7 @@ export function replayNationalAfpeState(input: {
             context,
             mapping,
             row: sourceRows[0]!,
-            countyName: county.shortName,
+            countyLegalName: county.legalName,
             stateName: state.stateName,
             completedAt,
           });
