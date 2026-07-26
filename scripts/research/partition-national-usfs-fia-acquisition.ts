@@ -143,7 +143,7 @@ function parseArguments(argv: string[]) {
     values.set(key, value);
   }
   const unsupported = [...values.keys()].filter(
-    (key) => !["acquisition", "states", "recorded-at"].includes(key),
+    (key) => !["acquisition", "states", "recorded-at", "plan-only"].includes(key),
   );
   assert(
     unsupported.length === 0,
@@ -166,10 +166,16 @@ function parseArguments(argv: string[]) {
     recordedMilliseconds <= Date.now(),
     "--recorded-at cannot be in the future.",
   );
+  const planOnlyValue = values.get("plan-only") ?? "false";
+  assert(
+    planOnlyValue === "true" || planOnlyValue === "false",
+    "--plan-only must be true or false.",
+  );
   return {
     acquisitionId,
     stateArgument,
     recordedAt: new Date(recordedMilliseconds).toISOString(),
+    planOnly: planOnlyValue === "true",
   };
 }
 
@@ -375,8 +381,10 @@ async function main() {
     options.acquisitionId,
     snapshot.commit,
   );
-  rmSync(replayCacheRoot, { recursive: true, force: true });
-  mkdirSync(replayCacheRoot, { recursive: true });
+  if (!options.planOnly) {
+    rmSync(replayCacheRoot, { recursive: true, force: true });
+    mkdirSync(replayCacheRoot, { recursive: true });
+  }
   const generatedRuns: Array<{
     runId: string;
     stateCode: string;
@@ -762,12 +770,14 @@ async function main() {
       ["artifacts/national-acquisition-reference.json", referenceContents],
       ["receipt.json", `${JSON.stringify(receipt, null, 2)}\n`],
     ]);
-    mkdirSync(path.join(stagedDirectory, "artifacts"), { recursive: true });
-    for (const [filename, value] of contents) {
-      writeFileSync(path.join(stagedDirectory, filename), value);
+    if (!options.planOnly) {
+      mkdirSync(path.join(stagedDirectory, "artifacts"), { recursive: true });
+      for (const [filename, value] of contents) {
+        writeFileSync(path.join(stagedDirectory, filename), value);
+      }
+      exactFileSet(stagedDirectory, [...contents.keys()]);
+      verifyStagedResearchRun(stagedDirectory, receipt);
     }
-    exactFileSet(stagedDirectory, [...contents.keys()]);
-    verifyStagedResearchRun(stagedDirectory, receipt);
     generatedRuns.push({
       runId,
       stateCode,
@@ -793,6 +803,70 @@ async function main() {
     expectedOutcomes === actualOutcomes,
     "FIA requested-pair and outcome totals differ.",
   );
+  if (options.planOnly) {
+    verifyCommittedInputSnapshot(ROOT, snapshot);
+    console.log(
+      JSON.stringify(
+        {
+          acquisitionId: options.acquisitionId,
+          recordedAt: options.recordedAt,
+          planOnly: true,
+          stateCodes: generatedRuns.map((entry) => entry.stateCode),
+          skippedStates,
+          generatedRunCount: generatedRuns.length,
+          requestedPairs: expectedOutcomes,
+          candidateRecords: generatedRuns.reduce(
+            (total, entry) => total + entry.receipt.counts.candidate_records,
+            0,
+          ),
+          assertions: generatedRuns.reduce(
+            (total, entry) => total + entry.receipt.counts.assertion_events,
+            0,
+          ),
+          reviews: generatedRuns.reduce(
+            (total, entry) => total + entry.receipt.counts.review_events,
+            0,
+          ),
+          rejectionEvents: generatedRuns.reduce(
+            (total, entry) => total + entry.receipt.counts.rejection_records,
+            0,
+          ),
+          duplicateRecords: generatedRuns.reduce(
+            (total, entry) => total + entry.receipt.counts.duplicate_records,
+            0,
+          ),
+          outcomes: actualOutcomes,
+          blockedOutcomes: generatedRuns.reduce((total, run) => {
+            return total + run.contents
+              .get("outcomes.ndjson")!
+              .split("\n")
+              .filter(Boolean)
+              .map((line) => JSON.parse(line) as { status: string })
+              .filter((entry) => entry.status === "blocked").length;
+          }, 0),
+          runs: generatedRuns.map((run) => ({
+            stateCode: run.stateCode,
+            runId: run.runId,
+            outputPath: relativeGitPath(ROOT, run.finalDirectory),
+            requestedPairs: run.receipt.counts.requested_pairs,
+            candidateRecords: run.receipt.counts.candidate_records,
+            assertions: run.receipt.counts.assertion_events,
+            reviews: run.receipt.counts.review_events,
+            rejections: run.receipt.counts.rejection_records,
+            duplicateRecords: run.receipt.counts.duplicate_records,
+            outcomes: run.receipt.counts.pair_outcomes,
+            outputBytes: [...run.contents.values()].reduce(
+              (total, value) => total + Buffer.byteLength(value),
+              0,
+            ),
+          })),
+        },
+        null,
+        2,
+      ),
+    );
+    return;
+  }
   const existingBundles = new Map(
     listImmutableResearchRuns(ROOT).map((bundle) => [
       bundle.receipt.run_id,
