@@ -537,7 +537,7 @@
       "queueId": "queue-lease-deferred-az-gbif-migration-r2-1",
       "jobId": "deferred-az-gbif-migration-r2",
       "leaseId": "lease-deferred-az-gbif-migration-r2-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-26T12:22:01Z",
       "manifestPath": "manifests/deferred-az-gbif-migration-r2__lease-deferred-az-gbif-migration-r2-1.json",
       "manifestHash": "1b69cb77de9944bfe98900bae5129636431ccadc4266349998e8df930d599cec",
@@ -587,6 +587,37 @@
         "path": "receipts/reviews/queue-lease-deferred-az-gbif-migration-r2-1.json",
         "sha256": "89218cd135372bf17991d4cbd3874cdbbe4b072e960fdc23884f9c44c8432c7c",
         "bytes": 2961
+      },
+      "integratedAt": "2026-07-26T12:26:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "3050e47a19d2e40b710a21508a6a96eba400e796",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation after integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "Git tree entry equality for every reviewed Arizona path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check after integration",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Canonical main contains byte-identical reviewed Arizona run content and manifest. The acquisition receipt remains pinned to its original code commit and all integration checks pass.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-deferred-az-gbif-migration-r2-1.json",
+        "sha256": "1a52068ef005be8d57b2d1395fc5b11f4fe6c819df093ea28013145d225cd049",
+        "bytes": 2728
       }
     }
   ]
