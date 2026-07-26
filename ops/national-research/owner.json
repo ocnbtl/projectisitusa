@@ -7,8 +7,9 @@
   "branch": "main",
   "baseSha": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
   "acquiredAt": "2026-07-15T11:11:59Z",
-  "lastReverifiedAt": "2026-07-26T11:17:02Z",
+  "lastReverifiedAt": "2026-07-26T12:50:19Z",
   "currentCheckpointSha": "baa9435781facf5c3fc74399219ca11b3fe196e8",
+  "localHeadAtLastReverification": "94c46f03d236525cc0547cc61cc836c1d26fb02b",
   "state": "active",
   "ownershipEvidence": {
     "activeProjectTasks": ["019f6562-b8c2-7281-a853-bcbb055ae9e4"],
@@ -30,6 +31,16 @@
       "supersededOriginMainSha": "f51602460ddb76abff75fff7629c455483b7a2ba",
       "replacementCheckpointSha": "baa9435781facf5c3fc74399219ca11b3fe196e8",
       "reason": "Canonical main, GitHub main, Vercel production metadata, and live release bytes were freshly reverified after the baa9435 release."
+    }
+  ],
+  "localCheckpointObservations": [
+    {
+      "observedAt": "2026-07-26T12:50:19Z",
+      "localHeadSha": "94c46f03d236525cc0547cc61cc836c1d26fb02b",
+      "originMainSha": "baa9435781facf5c3fc74399219ca11b3fe196e8",
+      "githubMainSha": "baa9435781facf5c3fc74399219ca11b3fe196e8",
+      "vercelProductionCommitSha": "baa9435781facf5c3fc74399219ca11b3fe196e8",
+      "reason": "Crash recovery reverified a clean local MAIN checkpoint 13 commits ahead of the unchanged externally verified baa9435 release. This records observed parent state and does not self-attest to the commit that contains the receipt."
     }
   ],
   "exclusiveOperations": ["modify-main", "merge", "commit-main", "push-main", "shared-generation", "build", "deploy"]

@@ -15,6 +15,7 @@ export type NationalResourcePolicy = {
   minimumFreeBytesBeforeHeavyTask: number;
   reservedBytesPerWorker: number;
   maximumArtifactBytesPerWorker: number;
+  maximumNationalAcquisitionArtifactBytes: number;
   maximumWorkerMemoryMb: number;
   maximumWorkerWallMinutes: number;
   heavyTaskConcurrency: number;
@@ -25,7 +26,7 @@ export type NationalResourcePolicy = {
 
 export type DiskBudgetInput = {
   phase: "preflight" | "postflight";
-  operation: "dispatch" | "heavy" | "network";
+  operation: "dispatch" | "heavy" | "network" | "national-network";
   availableBytes: number;
   workers: number;
   artifactBudgetBytes: number;
@@ -55,6 +56,7 @@ export function validateNationalResourcePolicy(policy: NationalResourcePolicy): 
     "minimumFreeBytesBeforeHeavyTask",
     "reservedBytesPerWorker",
     "maximumArtifactBytesPerWorker",
+    "maximumNationalAcquisitionArtifactBytes",
   ];
 
   if (policy.schemaVersion !== 1) errors.push("Unsupported resource policy schema version.");
@@ -137,6 +139,14 @@ export function evaluateDiskBudget(
     if (input.artifactBudgetBytes > policy.maximumArtifactBytesPerWorker) {
       errors.push("Network acquisition artifact budget exceeds the bounded policy.");
     }
+  } else if (input.phase === "preflight" && input.operation === "national-network") {
+    requiredBytes = policy.minimumFreeBytesBeforeDispatch + input.artifactBudgetBytes;
+    if (input.workers !== 0) {
+      errors.push("MAIN national acquisition preflight does not accept worker reservations.");
+    }
+    if (input.artifactBudgetBytes > policy.maximumNationalAcquisitionArtifactBytes) {
+      errors.push("National acquisition artifact budget exceeds the bounded policy.");
+    }
   }
 
   if (input.availableBytes < requiredBytes) {
@@ -182,7 +192,9 @@ function runCli(): void {
   const phase = (argumentValue(args, "--phase") ?? "preflight") as DiskBudgetInput["phase"];
   const operation = (argumentValue(args, "--operation") ?? "dispatch") as DiskBudgetInput["operation"];
   if (!["preflight", "postflight"].includes(phase)) throw new Error("Unsupported disk-check phase.");
-  if (!["dispatch", "heavy", "network"].includes(operation)) throw new Error("Unsupported disk-check operation.");
+  if (!["dispatch", "heavy", "network", "national-network"].includes(operation)) {
+    throw new Error("Unsupported disk-check operation.");
+  }
   const workers = parsePositiveInteger(argumentValue(args, "--workers") ?? "0", "workers");
   const artifactBudgetBytes = parsePositiveInteger(
     argumentValue(args, "--artifact-budget-bytes") ?? "0",

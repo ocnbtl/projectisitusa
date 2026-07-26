@@ -66,6 +66,44 @@ const parallelHeavy = evaluateDiskBudget(policy, {
 assert.equal(parallelHeavy.ok, false);
 assert.match(parallelHeavy.errors.join(" "), /sequentially/);
 
+const boundedWorkerNetwork = evaluateDiskBudget(policy, {
+  phase: "preflight",
+  operation: "network",
+  availableBytes: 8589934592,
+  workers: 1,
+  artifactBudgetBytes: policy.maximumArtifactBytesPerWorker,
+});
+assert.equal(boundedWorkerNetwork.ok, true);
+
+const boundedNationalNetwork = evaluateDiskBudget(policy, {
+  phase: "preflight",
+  operation: "national-network",
+  availableBytes: 8589934592,
+  workers: 0,
+  artifactBudgetBytes: 134217728,
+});
+assert.equal(boundedNationalNetwork.ok, true);
+
+const oversizedNationalNetwork = evaluateDiskBudget(policy, {
+  phase: "preflight",
+  operation: "national-network",
+  availableBytes: 8589934592,
+  workers: 0,
+  artifactBudgetBytes: policy.maximumNationalAcquisitionArtifactBytes + 1,
+});
+assert.equal(oversizedNationalNetwork.ok, false);
+assert.match(oversizedNationalNetwork.errors.join(" "), /National acquisition artifact budget/);
+
+const nationalNetworkWithWorkerReservation = evaluateDiskBudget(policy, {
+  phase: "preflight",
+  operation: "national-network",
+  availableBytes: 8589934592,
+  workers: 1,
+  artifactBudgetBytes: 134217728,
+});
+assert.equal(nationalNetworkWithWorkerReservation.ok, false);
+assert.match(nationalNetworkWithWorkerReservation.errors.join(" "), /does not accept worker reservations/);
+
 const failedPostflight = evaluateDiskBudget(policy, {
   phase: "postflight",
   operation: "dispatch",
