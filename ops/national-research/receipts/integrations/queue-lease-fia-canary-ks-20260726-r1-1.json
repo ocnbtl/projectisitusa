@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-fia-canary-ks-20260726-r1-1",
+  "jobId": "fia-canary-ks-20260726-r1",
+  "leaseId": "lease-fia-canary-ks-20260726-r1-1",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-26T13:46:01Z",
+  "integrationCommit": "c37b81d96432690a8fbaad307b715ca5ce32a268",
+  "workerCommit": "5282560f90bd9479efd8303c114ce50cbc6e0ec8",
+  "workerBranchHead": "9d6a268c216c0fb1880960ce4fea13c47bd8e614",
+  "manifestHash": "3d9598dbb8434a104726644355db91dee495e735b23317516c3621c5a17a3711",
+  "changedPaths": [
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/artifacts/national-acquisition-reference.json",
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/assertions.ndjson",
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/manifest.json",
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/outcomes.ndjson",
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/receipt.json",
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/rejections.ndjson",
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/reviews.ndjson",
+    "src/data/research/runs/20260726T133411000Z__usfs-fia-invasive-plants__66d468e75ca2/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "git cherry-pick 5282560f90bd9479efd8303c114ce50cbc6e0ec8 9d6a268c216c0fb1880960ce4fea13c47bd8e614",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 65582dc...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "orchestrator exact worker-to-main tree-entry comparison",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated both accepted Kansas commits without conflict and verified identical file modes and bytes for every reviewed path."
+}
