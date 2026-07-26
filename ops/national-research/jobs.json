@@ -915,6 +915,300 @@
       "priority": 121,
       "state": "completed",
       "currentLeaseId": "lease-deferred-az-gbif-migration-r2-1"
+    },
+    {
+      "jobId": "fia-canary-ak-20260726-r1",
+      "workerType": "partition",
+      "stateOrSourceScope": {
+        "states": [
+          "AK"
+        ],
+        "sourceFamilies": [
+          "usfs-fia-invasive-plants"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "plantago-major"
+        ],
+        "pairs": [
+          "02013:plantago-major",
+          "02016:plantago-major",
+          "02020:plantago-major",
+          "02050:plantago-major",
+          "02060:plantago-major",
+          "02063:plantago-major",
+          "02066:plantago-major",
+          "02068:plantago-major",
+          "02070:plantago-major",
+          "02090:plantago-major",
+          "02100:plantago-major",
+          "02105:plantago-major",
+          "02110:plantago-major",
+          "02122:plantago-major",
+          "02130:plantago-major",
+          "02150:plantago-major",
+          "02158:plantago-major",
+          "02164:plantago-major",
+          "02170:plantago-major",
+          "02180:plantago-major",
+          "02185:plantago-major",
+          "02188:plantago-major",
+          "02195:plantago-major",
+          "02198:plantago-major",
+          "02220:plantago-major",
+          "02230:plantago-major",
+          "02240:plantago-major",
+          "02275:plantago-major",
+          "02282:plantago-major",
+          "02290:plantago-major"
+        ]
+      },
+      "scopeClaims": [
+        "state/AK/source/usfs-fia-invasive-plants/taxon/plantago-major"
+      ],
+      "baseSha": "6c2bde115499ecb4144c514841b130d00c8c4578",
+      "expectedReceiptCodeCommit": "6c2bde115499ecb4144c514841b130d00c8c4578",
+      "branch": "codex/fia-canary-ak-20260726-r1",
+      "worktree": "/private/tmp/isitusa-fia-canary-ak-r1",
+      "permittedPaths": [
+        "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 1,
+        "backoffSeconds": [
+          5
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2000000,
+        "maxWallMinutes": 20,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-27T13:17:00Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "reuse acquisition 20260726__usfs-fia-invasive-plants__d900318e6b0e without network access",
+        "partition exactly the leased Alaska Plantago major pairs with explicit county-equivalent geography only",
+        "preserve source silence as researched unresolved and invalid geography as blocked",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 6c2bde115499ecb4144c514841b130d00c8c4578...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 130,
+      "state": "planned",
+      "currentLeaseId": null
+    },
+    {
+      "jobId": "fia-canary-co-20260726-r1",
+      "workerType": "partition",
+      "stateOrSourceScope": {
+        "states": [
+          "CO"
+        ],
+        "sourceFamilies": [
+          "usfs-fia-invasive-plants"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "bromus-tectorum"
+        ],
+        "pairs": [
+          "08001:bromus-tectorum",
+          "08003:bromus-tectorum",
+          "08005:bromus-tectorum",
+          "08007:bromus-tectorum",
+          "08009:bromus-tectorum",
+          "08011:bromus-tectorum",
+          "08013:bromus-tectorum",
+          "08014:bromus-tectorum",
+          "08015:bromus-tectorum",
+          "08017:bromus-tectorum",
+          "08019:bromus-tectorum",
+          "08021:bromus-tectorum",
+          "08023:bromus-tectorum",
+          "08025:bromus-tectorum",
+          "08027:bromus-tectorum",
+          "08029:bromus-tectorum",
+          "08031:bromus-tectorum",
+          "08033:bromus-tectorum",
+          "08035:bromus-tectorum",
+          "08037:bromus-tectorum",
+          "08039:bromus-tectorum",
+          "08041:bromus-tectorum",
+          "08043:bromus-tectorum",
+          "08045:bromus-tectorum",
+          "08047:bromus-tectorum",
+          "08049:bromus-tectorum",
+          "08051:bromus-tectorum",
+          "08053:bromus-tectorum",
+          "08055:bromus-tectorum",
+          "08057:bromus-tectorum",
+          "08059:bromus-tectorum",
+          "08061:bromus-tectorum",
+          "08063:bromus-tectorum",
+          "08065:bromus-tectorum",
+          "08067:bromus-tectorum",
+          "08069:bromus-tectorum",
+          "08071:bromus-tectorum",
+          "08073:bromus-tectorum",
+          "08075:bromus-tectorum",
+          "08077:bromus-tectorum",
+          "08079:bromus-tectorum",
+          "08081:bromus-tectorum",
+          "08083:bromus-tectorum",
+          "08085:bromus-tectorum",
+          "08087:bromus-tectorum",
+          "08089:bromus-tectorum",
+          "08091:bromus-tectorum",
+          "08093:bromus-tectorum",
+          "08095:bromus-tectorum",
+          "08097:bromus-tectorum",
+          "08099:bromus-tectorum",
+          "08101:bromus-tectorum",
+          "08103:bromus-tectorum",
+          "08105:bromus-tectorum",
+          "08107:bromus-tectorum",
+          "08109:bromus-tectorum",
+          "08111:bromus-tectorum",
+          "08113:bromus-tectorum",
+          "08115:bromus-tectorum",
+          "08117:bromus-tectorum",
+          "08119:bromus-tectorum",
+          "08121:bromus-tectorum",
+          "08123:bromus-tectorum",
+          "08125:bromus-tectorum"
+        ]
+      },
+      "scopeClaims": [
+        "state/CO/source/usfs-fia-invasive-plants/taxon/bromus-tectorum"
+      ],
+      "baseSha": "6c2bde115499ecb4144c514841b130d00c8c4578",
+      "expectedReceiptCodeCommit": "6c2bde115499ecb4144c514841b130d00c8c4578",
+      "branch": "codex/fia-canary-co-20260726-r1",
+      "worktree": "/private/tmp/isitusa-fia-canary-co-r1",
+      "permittedPaths": [
+        "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 1,
+        "backoffSeconds": [
+          5
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 2000000,
+        "maxWallMinutes": 20,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-27T13:17:00Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "reuse acquisition 20260726__usfs-fia-invasive-plants__d900318e6b0e without network access",
+        "partition exactly the leased Colorado Bromus tectorum pairs with explicit county geography only",
+        "preserve source silence as researched unresolved",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 6c2bde115499ecb4144c514841b130d00c8c4578...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 130,
+      "state": "planned",
+      "currentLeaseId": null
     }
   ]
 }
