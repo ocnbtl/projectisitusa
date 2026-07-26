@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "jobId": "deferred-ak-gbif-migration-r2",
+  "leaseId": "lease-deferred-ak-gbif-migration-r2-1",
+  "status": "complete",
+  "branch": "codex/deferred-ak-gbif-migration-r3",
+  "worktree": "/private/tmp/isitusa-deferred-ak-gbif-r3",
+  "baseSha": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+  "commitSha": "952cac43cf790ccd89a8e5fd989a5a2634065084",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "candidate-postfreeze-lineage-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "candidate-postfreeze-lineage-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AK",
+    "stateProvince": "Alaska",
+    "candidateLimit": 4,
+    "candidatePairs": [
+      "02063:matricaria-discoidea",
+      "02066:matricaria-discoidea",
+      "02100:cirsium-arvense",
+      "02122:elatobium-abietinum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "acquisitionMode": "byte-preserving-recovery",
+    "historicalContentCommit": "3d2d1ec8a8d9589bbad11cd5693bc6f75e2a0b72",
+    "originalAcquisitionCodeCommit": "5569089be087bb6ed632b2d821764fb47ff98d66"
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+      "sha256": "7ef3e859c7772ed32ef563e58629d116230f19c2eb3cd9b64fcd4b0f9e73112c",
+      "bytes": 287614
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+      "sha256": "504132da67db65872d3ef2d52f42b05ed0e505d919f17479d0efe3545ef61478",
+      "bytes": 21167
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "2c3154d40fa3f28f6db4fbc3f1a1fe0ad855e5509d01eefa10f58d94be14d7ad",
+      "bytes": 1779438
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+      "sha256": "ec5a89284a28183bec6a9740e4c8dc56081486269cb1fb5d5f4b20b8bc94d372",
+      "bytes": 451
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+      "sha256": "b890414dcc47ff69ec9ffd78cd1848173dd9cf8f6761bb4f54ba0199c2811556",
+      "bytes": 456
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/assertions.ndjson",
+      "count": 4
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/reviews.ndjson",
+      "count": 4
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/rejections.ndjson",
+      "count": 228
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/outcomes.ndjson",
+      "count": 4
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/receipt.json",
+    "sha256": "2fd173f371c05ae393d2b2a94b1f9c454c6e6d8f97881dc02e11d76f9635c8ba",
+    "bytes": 7156
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/source-verification.json",
+    "sha256": "6c2d77bbf2db0ae408f9bd01dabc993e1a8d9c375c18c45e7ba7da9c1e2e1922",
+    "bytes": 9713
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 6,
+      "retainedArtifactBytes": 2089588,
+      "sourceRequests": 6,
+      "providerCandidates": 258,
+      "assertionEvents": 4,
+      "publicationEligibleAssertions": 4,
+      "reviewEvents": 4,
+      "rejectionRecords": 228,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 4,
+      "completeOutcomePairs": 4,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 2,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 6,
+      "retainedArtifactBytes": 2089588,
+      "sourceRequests": 6,
+      "providerCandidates": 258,
+      "assertionEvents": 4,
+      "publicationEligibleAssertions": 4,
+      "reviewEvents": 4,
+      "rejectionRecords": 228,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 4,
+      "completeOutcomePairs": 4,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 2,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /private/tmp/isitusa-deferred-ak-gbif-lease-r3.json --repo /private/tmp/isitusa-deferred-ak-gbif-r3",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "canonical immutable-run validation with code commit 5569089be087bb6ed632b2d821764fb47ff98d66",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git hash-object identity against 3d2d1ec8a8d9589bbad11cd5693bc6f75e2a0b72 for all 12 immutable-run content files",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 52da0a7377e03ab7c0d9ff49e761a760d4bd73f1...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "acquisition-lineage-pinned",
+    "recoveredFromCommit": "3d2d1ec8a8d9589bbad11cd5693bc6f75e2a0b72"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 17,
+    "peakMemoryMb": 64,
+    "validPairsScreened": 4,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
