@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import {
   existsSync,
   mkdirSync,
@@ -339,6 +340,32 @@ async function main() {
     receipt: ImmutableResearchRunReceipt;
     contents: Map<string, string>;
   }> = [];
+  const verifiedReusableCommits = new Set<string>();
+
+  function receiptCodeCommit(finalDirectory: string) {
+    if (!existsSync(finalDirectory)) return snapshot.commit;
+    const existing = readJson<ImmutableResearchRunReceipt>(
+      path.join(finalDirectory, "receipt.json"),
+    );
+    const commit = existing.code_commit;
+    assertCommitAncestor(ROOT, commit, snapshot.commit);
+    if (!verifiedReusableCommits.has(commit)) {
+      for (const filepath of inputPaths) {
+        const relativePath = relativeGitPath(ROOT, filepath);
+        const committed = execFileSync(
+          "git",
+          ["show", `${commit}:${relativePath}`],
+          { cwd: ROOT, maxBuffer: 32 * 1024 * 1024 },
+        );
+        assert(
+          sha256(committed) === snapshot.fileHashes.get(filepath),
+          `Existing AFPE receipt commit ${commit} differs at ${relativePath}.`,
+        );
+      }
+      verifiedReusableCommits.add(commit);
+    }
+    return commit;
+  }
 
   for (const stateCode of requestedStates) {
     const state = nationalStates.find((entry) => entry.stateCode === stateCode)!;
@@ -382,6 +409,7 @@ async function main() {
       `${runTimestamp(options.recordedAt)}__${AFPE_SOURCE_ID}__${runIdentityHash.slice(0, 12)}`;
     const finalDirectory = path.join(RUNS_ROOT, runId);
     const stagedDirectory = path.join(replayCacheRoot, runId);
+    const codeCommit = receiptCodeCommit(finalDirectory);
     const context = {
       runId,
       sourceId: AFPE_SOURCE_ID,
@@ -501,7 +529,7 @@ async function main() {
       adapter_id: AFPE_ADAPTER_ID,
       adapter_version: AFPE_ADAPTER_VERSION,
       adapter_code_hash: adapterCodeHash,
-      code_commit: snapshot.commit,
+      code_commit: codeCommit,
       parameter_hash: parameterHash,
       parameters,
       requested_scope: {
