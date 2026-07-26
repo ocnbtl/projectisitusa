@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260726T113000Z__gbif-preserved-specimens__70a8902d2feb",
+  "status": "complete",
+  "started_at": "2026-07-26T11:30:00.000Z",
+  "finished_at": "2026-07-26T11:30:20.869Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.1.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "3ea7f3b7c633f5e64a532b1b7be2cbed3623f6cd382d9e03835f8a11b820029f",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "22586e1505fd6ca55f3e1c4b0cf8670d83cf72ec6d5ded1192e8de39fd1a2467",
+  "code_commit": "5569089be087bb6ed632b2d821764fb47ff98d66",
+  "parameter_hash": "70a8902d2feb7b227c7d805a626f352a4d186cbf314a291a0c309621c6d2f4a8",
+  "parameters": {
+    "stateCode": "AK",
+    "stateProvince": "Alaska",
+    "candidateLimit": 4,
+    "candidatePairs": [
+      "02063:matricaria-discoidea",
+      "02066:matricaria-discoidea",
+      "02100:cirsium-arvense",
+      "02122:elatobium-abietinum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AK",
+    "county_fips": [
+      "02063",
+      "02066",
+      "02100",
+      "02122"
+    ],
+    "species_ids": [
+      "cirsium-arvense",
+      "elatobium-abietinum",
+      "matricaria-discoidea"
+    ],
+    "pair_keys": [
+      "02063:matricaria-discoidea",
+      "02066:matricaria-discoidea",
+      "02100:cirsium-arvense",
+      "02122:elatobium-abietinum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Matricaria+discoidea&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-26T11:30:18.118Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3103791&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-26T11:30:18.543Z",
+      "record_count": 220
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Cirsium+arvense&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-26T11:30:19.514Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3113414&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-26T11:30:19.849Z",
+      "record_count": 36
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Elatobium+abietinum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-26T11:30:20.501Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2076533&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-26T11:30:20.868Z",
+      "record_count": 2
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+      "sha256": "7ef3e859c7772ed32ef563e58629d116230f19c2eb3cd9b64fcd4b0f9e73112c",
+      "bytes": 287614,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+      "sha256": "504132da67db65872d3ef2d52f42b05ed0e505d919f17479d0efe3545ef61478",
+      "bytes": 21167,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "2c3154d40fa3f28f6db4fbc3f1a1fe0ad855e5509d01eefa10f58d94be14d7ad",
+      "bytes": 1779438,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+      "sha256": "ec5a89284a28183bec6a9740e4c8dc56081486269cb1fb5d5f4b20b8bc94d372",
+      "bytes": 451,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+      "sha256": "b890414dcc47ff69ec9ffd78cd1848173dd9cf8f6761bb4f54ba0199c2811556",
+      "bytes": 456,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/assertions.ndjson",
+      "sha256": "c027f43c1bd840018654c357dc832af8f837736cdbfa0c61c89b79d70c8b663b",
+      "bytes": 7468,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/reviews.ndjson",
+      "sha256": "21fcbe8bb1c9947271fa8fd2d21554701112e54ae6ff799cbc2c8cd1b83d73dd",
+      "bytes": 3888,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/rejections.ndjson",
+      "sha256": "e9a607394f25d42fa7b5d91f81a14cfdc1c30a44e55cf5a0c07c45bfe6375ea0",
+      "bytes": 154771,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/outcomes.ndjson",
+      "sha256": "33d67f3a59912b47930b9e6d330bcc0aadbc6d376523d21ca70f3d97a8d4873f",
+      "bytes": 38148,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/source-verification.json",
+      "sha256": "6c2d77bbf2db0ae408f9bd01dabc993e1a8d9c375c18c45e7ba7da9c1e2e1922",
+      "bytes": 9713,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 4,
+    "candidate_records": 258,
+    "assertion_events": 4,
+    "review_events": 4,
+    "rejection_records": 228,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 4
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AK --candidate-file src/data/research/state-candidates/AK.json --output-root src/data/research/runs --pairs 02063:matricaria-discoidea,02066:matricaria-discoidea,02100:cirsium-arvense,02122:elatobium-abietinum"
+}

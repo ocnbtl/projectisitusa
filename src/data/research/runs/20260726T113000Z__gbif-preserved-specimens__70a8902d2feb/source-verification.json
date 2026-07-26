@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-26T11:30:20.868Z",
+  "runId": "20260726T113000Z__gbif-preserved-specimens__70a8902d2feb",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AK",
+  "pairKeys": [
+    "02063:matricaria-discoidea",
+    "02066:matricaria-discoidea",
+    "02100:cirsium-arvense",
+    "02122:elatobium-abietinum"
+  ],
+  "parameterHash": "70a8902d2feb7b227c7d805a626f352a4d186cbf314a291a0c309621c6d2f4a8",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat as API aggregator; 30 underlying occurrence publishing organizations are represented in the retained statewide responses."
+  },
+  "terms": {
+    "license": "Per-record Creative Commons licenses retained from GBIF: CC BY 4.0, CC BY-NC 4.0, and CC0 1.0.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-26T11:30:20.868Z",
+    "freshnessDate": "2026-07-25T05:55:48.038+00:00"
+  },
+  "geography": {
+    "method": "Require explicit GBIF stateProvince text matching Alaska and explicit GBIF county-equivalent text that resolves uniquely through the registered active county-equivalent registry to FIPS 02063, 02066, 02100, or 02122.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment; missing, ambiguous, retired, conflicting, or coordinate-only county-equivalent geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement; revalidate each occurrence taxon key and binomial.",
+    "targetSpeciesIds": [
+      "cirsium-arvense",
+      "elatobium-abietinum",
+      "matricaria-discoidea"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "key",
+      "gbifID",
+      "occurrenceID",
+      "datasetKey"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-matricaria-discoidea",
+        "url": "https://api.gbif.org/v1/species/match?name=Matricaria+discoidea&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:30:18.118Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-matricaria-discoidea",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3103791&limit=300&offset=0",
+        "purpose": "Acquire the complete statewide Alaska preserved-specimen occurrence response for the exact matched taxon and screen the two leased county-species pairs by explicit county-equivalent text.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:30:18.543Z",
+        "declaredRecordCount": 220,
+        "receivedRecordCount": 220,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-cirsium-arvense",
+        "url": "https://api.gbif.org/v1/species/match?name=Cirsium+arvense&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:30:19.514Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-cirsium-arvense",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3113414&limit=300&offset=0",
+        "purpose": "Acquire the complete statewide Alaska preserved-specimen occurrence response for the exact matched taxon and screen the leased county-species pair by explicit county-equivalent text.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:30:19.849Z",
+        "declaredRecordCount": 36,
+        "receivedRecordCount": 36,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-elatobium-abietinum",
+        "url": "https://api.gbif.org/v1/species/match?name=Elatobium+abietinum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:30:20.501Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-elatobium-abietinum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2076533&limit=300&offset=0",
+        "purpose": "Acquire the complete statewide Alaska preserved-specimen occurrence response for the exact matched taxon and screen the leased county-species pair by explicit county-equivalent text.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-26T11:30:20.868Z",
+        "declaredRecordCount": 2,
+        "receivedRecordCount": 2,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "The registered source has no negative semantics; an empty query, source silence, or a rejected occurrence cannot support verified absence.",
+      "GBIF occurrence search does not provide target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "Only qualifying positive preserved-specimen occurrences can become determination evidence."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+      "sha256": "7ef3e859c7772ed32ef563e58629d116230f19c2eb3cd9b64fcd4b0f9e73112c",
+      "bytes": 287614
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+      "sha256": "504132da67db65872d3ef2d52f42b05ed0e505d919f17479d0efe3545ef61478",
+      "bytes": 21167
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "2c3154d40fa3f28f6db4fbc3f1a1fe0ad855e5509d01eefa10f58d94be14d7ad",
+      "bytes": 1779438
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+      "sha256": "ec5a89284a28183bec6a9740e4c8dc56081486269cb1fb5d5f4b20b8bc94d372",
+      "bytes": 451
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+      "sha256": "b890414dcc47ff69ec9ffd78cd1848173dd9cf8f6761bb4f54ba0199c2811556",
+      "bytes": 456
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The retained statewide responses contain 258 records across 35 datasets and 30 publishing organizations with mixed per-record licenses.",
+    "The latest lastInterpreted value in the retained occurrence responses is 2026-07-25T05:55:48.038+00:00; freshness does not make the source an exhaustive inventory.",
+    "Accepted point-level specimen records support historical presence only and do not imply current countywide abundance, verified absence, or non-detection.",
+    "The two completed Matricaria discoidea county-equivalent screens produced no qualifying positive assertion and remain researched unresolved."
+  ]
+}
