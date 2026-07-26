@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "isitusa-national-skills-postfreeze-recovery-2026-07-26-r2",
+  "roundType": "bounded-postfreeze-correctness-recovery",
+  "openedAt": "2026-07-26T11:00:00Z",
+  "closedAt": "2026-07-26T12:27:00Z",
+  "status": "complete",
+  "result": "pass",
+  "baseCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+  "candidateVersion": "candidate-postfreeze-lineage-r2",
+  "candidateGitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+  "iteration": 2,
+  "maximumIterations": 2,
+  "broadDispatchAllowed": true,
+  "historicalEvaluationsPreserved": [
+    "ops/national-research/evaluations/skill-evaluation-2026-07-15.json",
+    "ops/national-research/evaluations/skill-evaluation-recovery-2026-07-15-r1.json",
+    "ops/national-research/fixtures/rejected-cycle3-receipt-fixture.json"
+  ],
+  "isolatedDefects": [
+    {
+      "iteration": 1,
+      "candidateVersion": "candidate-postfreeze-buffer-r1",
+      "candidateCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+      "status": "failed-real-pilot",
+      "defect": "Committed artifact validation used Node's default child-process output buffer, so valid provider artifacts above one MiB were reported as unavailable.",
+      "repair": "Bound committed-content reads by the lease artifact budget and add red-green hash, byte, missing-content, and large-artifact cases.",
+      "regressionCases": 94,
+      "regressionPassed": 94,
+      "criticalSafetyViolations": 0,
+      "pilotResult": "failed",
+      "pilotFailure": "Recovery instructions rebound receipt.code_commit to the newer validator base, which would misstate the code that performed the original acquisition."
+    },
+    {
+      "iteration": 2,
+      "candidateVersion": "candidate-postfreeze-lineage-r2",
+      "candidateCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "status": "passed-and-frozen",
+      "repair": "Separate the worker branch base from the immutable acquisition code identity. A recovery lease may explicitly pin expectedReceiptCodeCommit to an older ancestor while the stable run receipt remains unchanged.",
+      "regressionCases": 97,
+      "regressionPassed": 97,
+      "criticalSafetyViolations": 0,
+      "pilotResult": "pass"
+    }
+  ],
+  "staticValidation": {
+    "officialQuickValidate": {
+      "isitusa-national-orchestrator": "pass",
+      "isitusa-evidence-worker": "pass"
+    },
+    "bundledScriptsExecuted": true,
+    "regression": {
+      "total": 97,
+      "passed": 97,
+      "failed": 0,
+      "criticalSafetyViolations": 0,
+      "wallSeconds": 46.674,
+      "peakMemoryMb": 54.063,
+      "manualInterventions": 0
+    },
+    "requiredCases": {
+      "historicalMalformedReceiptRejected": true,
+      "canonicalReceiptAccepted": true,
+      "unsupportedReceiptFieldsRejected": true,
+      "missingDescriptorsRejected": true,
+      "descriptorPathHashByteMismatchRejected": true,
+      "completeExpectedOutputsRequired": true,
+      "receiptCountsReconciled": true,
+      "crossFileIdentityReconciled": true,
+      "missingExtraUnreportedFilesRejected": true,
+      "deterministicRepeatedValidation": true,
+      "committedArtifactAboveOneMiBAcceptedWithinLeaseBudget": true,
+      "committedArtifactHashByteAndMissingContentRejected": true,
+      "recoveryPreservesAcquisitionCodeCommit": true,
+      "olderReceiptCommitRequiresExplicitLeasePin": true,
+      "unrelatedAcquisitionCommitRejected": true,
+      "transactionalReviewAndIntegration": true
+    }
+  },
+  "validationArchitecture": {
+    "canonicalSemanticValidator": "src/lib/research/validate-run.ts#validateImmutableResearchRunDirectory",
+    "canonicalWorkerCli": "scripts/research/validate-immutable-run.ts",
+    "workerOracle": ".agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs",
+    "orchestrationGate": ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs",
+    "receiptSchema": "src/data/research/schemas/run-receipt.schema.json",
+    "receiptPolicy": "Keep the immutable receipt schema closed. Store lease and recovery metadata outside the receipt. Preserve the original acquisition code commit and pin it explicitly in a recovery lease when it differs from the worker base."
+  },
+  "blindForwardTests": {
+    "status": "pass",
+    "agents": [
+      {
+        "taskId": "/root/blind_ak_lineage_worker",
+        "jobId": "deferred-ak-gbif-migration-r2",
+        "leaseId": "lease-deferred-ak-gbif-migration-r2-1",
+        "contentCommit": "952cac43cf790ccd89a8e5fd989a5a2634065084",
+        "branchHead": "7f92a54bf610d9e6578b8cd3a7f6a484b20766fb",
+        "manifestSha256": "d9c904b57187a7067179633dbb834453ccd533df364220e053c38182ac6372cc",
+        "assertions": 4,
+        "reviews": 4,
+        "rejections": 228,
+        "outcomes": 4,
+        "result": "integrated",
+        "rawAndEventBlobMismatches": 0
+      },
+      {
+        "taskId": "/root/blind_az_lineage_worker",
+        "jobId": "deferred-az-gbif-migration-r2",
+        "leaseId": "lease-deferred-az-gbif-migration-r2-1",
+        "contentCommit": "ece8e3f7f01e4443c7834b7a728ae2c0db12eb73",
+        "branchHead": "174f525d0565c84cb32a1a1632166efaab76042d",
+        "manifestSha256": "1b69cb77de9944bfe98900bae5129636431ccadc4266349998e8df930d599cec",
+        "assertions": 134,
+        "reviews": 134,
+        "rejections": 30,
+        "outcomes": 2,
+        "result": "integrated",
+        "rawAndEventBlobMismatches": 0
+      }
+    ]
+  },
+  "metrics": {
+    "evidenceSemanticViolations": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "manifestCompleteness": 1,
+    "deterministicOutput": true,
+    "retryResumeBehavior": "pass-without-reacquisition",
+    "finalWorkerCompletionRate": 1,
+    "finalWorkerAttempts": 2,
+    "finalWorkerCompletions": 2,
+    "allRecoveryPilotAttempts": 4,
+    "allRecoveryPilotIntegrations": 2,
+    "mergeConflicts": 0,
+    "manualInterventions": 4,
+    "validPairsScreened": 6,
+    "validatedResearchThroughputPairsPerHour": null,
+    "throughputCaveat": "The final pilots replayed already acquired bytes and prove resumability plus integration safety. They are not a network acquisition throughput sample.",
+    "disk": {
+      "minimumObservedFreeGiB": 2.9,
+      "declaredArtifactBudgetsBytes": 35000000,
+      "heavyTasksDeferredUntilWorktreesRemoved": true
+    }
+  },
+  "comparisonWithPriorWorkflow": {
+    "priorFrozenVersion": "frozen-recovery-2026-07-16-r1",
+    "priorResultUnderLargeArtifacts": "blocked-by-false-content-unavailable-error",
+    "passingRequirementMet": true,
+    "improvement": "Large committed artifacts validate within lease budgets, acquisition provenance remains truthful across recovery bases, and two blind workers resumed without network reacquisition or merge conflicts.",
+    "evidenceQualityRegressed": false
+  },
+  "freeze": {
+    "status": "frozen",
+    "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+    "frozenAt": "2026-07-26T12:27:00Z",
+    "candidateGitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+    "receiptPath": "receipts/skill-freezes/isitusa-national-skills-postfreeze-lineage-2026-07-26-r2.json",
+    "candidateSkillHashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+    }
+  }
+}

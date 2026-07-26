@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "freezeId": "isitusa-national-skills-freeze-postfreeze-lineage-2026-07-26-r2",
+  "evaluationId": "isitusa-national-skills-postfreeze-recovery-2026-07-26-r2",
+  "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+  "status": "frozen",
+  "frozenAt": "2026-07-26T12:27:00Z",
+  "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+  "skills": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "path": ".agents/skills/isitusa-national-orchestrator",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "fileCount": 4,
+      "quickValidate": "pass"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "path": ".agents/skills/isitusa-evidence-worker",
+      "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151",
+      "fileCount": 5,
+      "quickValidate": "pass"
+    }
+  ],
+  "evaluation": {
+    "regressionCases": 97,
+    "regressionPassed": 97,
+    "regressionFailed": 0,
+    "criticalSafetyViolations": 0,
+    "evidenceSemanticViolations": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "mergeConflicts": 0,
+    "deterministicRepeatedValidation": true,
+    "blindForwardResult": "pass",
+    "acceptedRealIntegrations": 2,
+    "acquisitionCodeCommitPreserved": true,
+    "largeCommittedArtifactsValidated": true
+  },
+  "demonstratedImprovements": {
+    "canonicalReceiptValidation": true,
+    "interruptedWorkerResumedWithoutReacquisition": true,
+    "transactionalReviewAndIntegration": true,
+    "largeArtifactContentValidation": true,
+    "truthfulAcquisitionLineageAcrossRecovery": true,
+    "evidenceQualityRegressed": false
+  },
+  "pinContract": {
+    "requiredVersion": "frozen-postfreeze-lineage-2026-07-26-r2",
+    "requiredGitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+    "editsWhilePinnedWorkersAreActive": "forbidden",
+    "laterChangesRequireNewVersionAndRegression": true
+  }
+}
