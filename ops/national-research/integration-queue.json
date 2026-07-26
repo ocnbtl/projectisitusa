@@ -387,6 +387,176 @@
         "sha256": "ee595bddd817b4d0f54b615f958d64b72b1089e0870c382ff1aafab954a8c036",
         "bytes": 2426
       }
+    },
+    {
+      "queueId": "queue-lease-deferred-ak-gbif-migration-r1-2",
+      "jobId": "deferred-ak-gbif-migration-r1",
+      "leaseId": "lease-deferred-ak-gbif-migration-r1-2",
+      "decision": "rejected",
+      "submittedAt": "2026-07-26T11:57:42.880Z",
+      "manifestPath": "manifests/deferred-ak-gbif-migration-r1__lease-deferred-ak-gbif-migration-r1-2.json",
+      "manifestHash": "caefe16b63916463e0051e3f3c5eeb3cbbc7d84701667616a40a924e2239a040",
+      "manifestBytes": 8254,
+      "workerCommit": "857ab54b5bffdca54e5d546a46772a68d51b3399",
+      "workerBranchHead": "98df9d7d096074f5865cdb3446e4e0abad4bd5d7",
+      "reviewedAt": "2026-07-26T12:05:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "Rejected because recovery rewrote receipt.code_commit from the original acquisition commit to the newer validator base. Provider and event bytes remain historically preserved, but the receipt would misstate which code produced the acquisition. The final repair candidate preserves this distinction in an explicit lease pin.",
+      "changedPaths": [
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/assertions.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/manifest.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/outcomes.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/receipt.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/rejections.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/reviews.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "candidate worker manifest validation with exact lease and committed manifest",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical immutable-run structural and event validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "independent immutable acquisition-lineage audit",
+          "exitCode": 1,
+          "result": "fail"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 1,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-deferred-ak-gbif-migration-r1-2.json",
+        "sha256": "b17e3556c3e4625be66b56214149647af118ad5324a044ecdb437a73ad7b1fca",
+        "bytes": 2999
+      }
+    },
+    {
+      "queueId": "queue-lease-deferred-ak-gbif-migration-r2-1",
+      "jobId": "deferred-ak-gbif-migration-r2",
+      "leaseId": "lease-deferred-ak-gbif-migration-r2-1",
+      "decision": "accepted",
+      "submittedAt": "2026-07-26T12:20:01Z",
+      "manifestPath": "manifests/deferred-ak-gbif-migration-r2__lease-deferred-ak-gbif-migration-r2-1.json",
+      "manifestHash": "d9c904b57187a7067179633dbb834453ccd533df364220e053c38182ac6372cc",
+      "manifestBytes": 7392,
+      "workerCommit": "952cac43cf790ccd89a8e5fd989a5a2634065084",
+      "workerBranchHead": "7f92a54bf610d9e6578b8cd3a7f6a484b20766fb",
+      "reviewedAt": "2026-07-26T12:21:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently verified the lineage-correct blind-forward result. All provider and event bytes match the historical acquisition commit, the stable receipt retains its original code commit, the lease explicitly pins that ancestor, all four outcomes are conservative, and the worker changed only the unique leased run directory.",
+      "changedPaths": [
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/assertions.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/manifest.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/outcomes.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/receipt.json",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/rejections.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/reviews.ndjson",
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "candidate worker manifest validation repeated twice with deterministic output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical immutable-run validation with acquisition commit 5569089 and exact run identities",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit Git diff, whitespace, descriptor, event, geography, and byte-identity audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-deferred-ak-gbif-migration-r2-1.json",
+        "sha256": "f661ea37d035c3cafe48b30f8172239d91fd355861c7c478eb3d3414ecea7646",
+        "bytes": 3088
+      }
+    },
+    {
+      "queueId": "queue-lease-deferred-az-gbif-migration-r2-1",
+      "jobId": "deferred-az-gbif-migration-r2",
+      "leaseId": "lease-deferred-az-gbif-migration-r2-1",
+      "decision": "accepted",
+      "submittedAt": "2026-07-26T12:22:01Z",
+      "manifestPath": "manifests/deferred-az-gbif-migration-r2__lease-deferred-az-gbif-migration-r2-1.json",
+      "manifestHash": "1b69cb77de9944bfe98900bae5129636431ccadc4266349998e8df930d599cec",
+      "manifestBytes": 8365,
+      "workerCommit": "ece8e3f7f01e4443c7834b7a728ae2c0db12eb73",
+      "workerBranchHead": "174f525d0565c84cb32a1a1632166efaab76042d",
+      "reviewedAt": "2026-07-26T12:23:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently verified the lineage-correct blind-forward result. All provider and event bytes match the historical acquisition commit, the stable receipt retains its original code commit, the lease explicitly pins that ancestor, both outcomes are reviewed presence evidence, and the worker changed only the unique leased run directory.",
+      "changedPaths": [
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000300.json",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-cirsium-arvense.json",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-melilotus-officinalis.json",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/assertions.ndjson",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/manifest.json",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/outcomes.ndjson",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/receipt.json",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/rejections.ndjson",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/reviews.ndjson",
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "candidate worker manifest validation repeated twice with deterministic output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical immutable-run validation with acquisition commit 5569089 and exact run identities",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit Git diff, whitespace, descriptor, event, geography, and byte-identity audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-deferred-az-gbif-migration-r2-1.json",
+        "sha256": "89218cd135372bf17991d4cbd3874cdbbe4b072e960fdc23884f9c44c8432c7c",
+        "bytes": 2961
+      }
     }
   ]
 }

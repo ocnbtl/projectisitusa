@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-deferred-az-gbif-migration-r2-1",
+  "jobId": "deferred-az-gbif-migration-r2",
+  "leaseId": "lease-deferred-az-gbif-migration-r2-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-26T12:23:00Z",
+  "workerCommit": "ece8e3f7f01e4443c7834b7a728ae2c0db12eb73",
+  "workerBranchHead": "174f525d0565c84cb32a1a1632166efaab76042d",
+  "manifestHash": "1b69cb77de9944bfe98900bae5129636431ccadc4266349998e8df930d599cec",
+  "changedPaths": [
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000000.json",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-occurrences-melilotus-officinalis-000300.json",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-cirsium-arvense.json",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/artifacts/gbif-species-match-melilotus-officinalis.json",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/assertions.ndjson",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/manifest.json",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/outcomes.ndjson",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/receipt.json",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/rejections.ndjson",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/reviews.ndjson",
+    "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "candidate worker manifest validation repeated twice with deterministic output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "canonical immutable-run validation with acquisition commit 5569089 and exact run identities",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit Git diff, whitespace, descriptor, event, geography, and byte-identity audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently verified the lineage-correct blind-forward result. All provider and event bytes match the historical acquisition commit, the stable receipt retains its original code commit, the lease explicitly pins that ancestor, both outcomes are reviewed presence evidence, and the worker changed only the unique leased run directory."
+}

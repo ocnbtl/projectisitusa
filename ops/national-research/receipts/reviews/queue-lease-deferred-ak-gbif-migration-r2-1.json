@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-deferred-ak-gbif-migration-r2-1",
+  "jobId": "deferred-ak-gbif-migration-r2",
+  "leaseId": "lease-deferred-ak-gbif-migration-r2-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-26T12:21:00Z",
+  "workerCommit": "952cac43cf790ccd89a8e5fd989a5a2634065084",
+  "workerBranchHead": "7f92a54bf610d9e6578b8cd3a7f6a484b20766fb",
+  "manifestHash": "d9c904b57187a7067179633dbb834453ccd533df364220e053c38182ac6372cc",
+  "changedPaths": [
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/assertions.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/manifest.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/outcomes.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/receipt.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/rejections.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/reviews.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "candidate worker manifest validation repeated twice with deterministic output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "canonical immutable-run validation with acquisition commit 5569089 and exact run identities",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit Git diff, whitespace, descriptor, event, geography, and byte-identity audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently verified the lineage-correct blind-forward result. All provider and event bytes match the historical acquisition commit, the stable receipt retains its original code commit, the lease explicitly pins that ancestor, all four outcomes are conservative, and the worker changed only the unique leased run directory."
+}

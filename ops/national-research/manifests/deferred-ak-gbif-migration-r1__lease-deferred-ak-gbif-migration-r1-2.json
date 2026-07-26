@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "jobId": "deferred-ak-gbif-migration-r1",
+  "leaseId": "lease-deferred-ak-gbif-migration-r1-2",
+  "status": "complete",
+  "branch": "codex/deferred-ak-gbif-migration-r2",
+  "worktree": "/private/tmp/isitusa-deferred-ak-gbif-r2",
+  "baseSha": "580772906ba186ae9fc734d65c7c3f900471d718",
+  "commitSha": "857ab54b5bffdca54e5d546a46772a68d51b3399",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "candidate-postfreeze-buffer-r1",
+      "gitCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+      "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "candidate-postfreeze-buffer-r1",
+      "gitCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+      "contentHash": "44527144dda3ded7b838c41dcc827ad5096c3cd9880480615dc052656e498be0"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AK",
+    "stateProvince": "Alaska",
+    "candidateFile": "src/data/research/state-candidates/AK.json",
+    "outputRoot": "src/data/research/runs",
+    "startedAt": "2026-07-26T11:30:00Z",
+    "candidateLimit": 4,
+    "candidatePairs": [
+      "02063:matricaria-discoidea",
+      "02066:matricaria-discoidea",
+      "02100:cirsium-arvense",
+      "02122:elatobium-abietinum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+      "sha256": "7ef3e859c7772ed32ef563e58629d116230f19c2eb3cd9b64fcd4b0f9e73112c",
+      "bytes": 287614
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+      "sha256": "504132da67db65872d3ef2d52f42b05ed0e505d919f17479d0efe3545ef61478",
+      "bytes": 21167
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+      "sha256": "2c3154d40fa3f28f6db4fbc3f1a1fe0ad855e5509d01eefa10f58d94be14d7ad",
+      "bytes": 1779438
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+      "sha256": "ec5a89284a28183bec6a9740e4c8dc56081486269cb1fb5d5f4b20b8bc94d372",
+      "bytes": 451
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+      "sha256": "b890414dcc47ff69ec9ffd78cd1848173dd9cf8f6761bb4f54ba0199c2811556",
+      "bytes": 456
+    },
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+      "sha256": "2cf1b95888b175a54e467afbc619590ff8996e55503f2a6438e9ddac64144938",
+      "bytes": 462
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/assertions.ndjson",
+      "count": 4
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/reviews.ndjson",
+      "count": 4
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/rejections.ndjson",
+      "count": 228
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/outcomes.ndjson",
+      "count": 4
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/receipt.json",
+    "sha256": "2296252173a4a225aecceb3d165c91902188c608044a4a93a440c63562f3b326",
+    "bytes": 7156
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/source-verification.json",
+    "sha256": "6c2d77bbf2db0ae408f9bd01dabc993e1a8d9c375c18c45e7ba7da9c1e2e1922",
+    "bytes": 9713
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 6,
+      "retainedArtifactBytes": 2089588,
+      "sourceRequests": 6,
+      "providerCandidates": 258,
+      "assertionEvents": 4,
+      "publicationEligibleAssertions": 4,
+      "reviewEvents": 4,
+      "rejectionRecords": 228,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 4,
+      "completeOutcomePairs": 4,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 2,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 6,
+      "retainedArtifactBytes": 2089588,
+      "sourceRequests": 6,
+      "providerCandidates": 258,
+      "assertionEvents": 4,
+      "publicationEligibleAssertions": 4,
+      "reviewEvents": 4,
+      "rejectionRecords": 228,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 4,
+      "completeOutcomePairs": 4,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 2,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /private/tmp/isitusa-deferred-ak-gbif-lease-r2.json --repo /private/tmp/isitusa-deferred-ak-gbif-r2",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 580772906ba186ae9fc734d65c7c3f900471d718...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /private/tmp/isitusa-deferred-ak-gbif-lease-r2.json --manifest src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/manifest.json --repo /private/tmp/isitusa-deferred-ak-gbif-r2",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 2,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": []
+  },
+  "retryHistory": [
+    {
+      "requestAttempt": 1,
+      "outcome": "discarded-before-write",
+      "exitCode": 1,
+      "upstreamStatuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "retainedArtifacts": 0,
+      "scopeComplete": false,
+      "reason": "The frozen started-at value was still in the future, so validation correctly rejected the unretained result because finished_at preceded started_at."
+    },
+    {
+      "requestAttempt": 2,
+      "outcome": "complete",
+      "exitCode": 0,
+      "upstreamStatuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "retainedArtifacts": 6,
+      "scopeComplete": true
+    }
+  ],
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 10.9,
+    "peakMemoryMb": 198.02,
+    "validPairsScreened": 4,
+    "manualInterventions": 2,
+    "acquisitionAttemptWallSeconds": [
+      6.5,
+      4.4
+    ],
+    "maximumResidentBytes": 207634432
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  },
+  "violations": [],
+  "unexpectedBehavior": []
+}

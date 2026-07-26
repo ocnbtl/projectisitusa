@@ -487,6 +487,434 @@
       "priority": 100,
       "state": "completed",
       "currentLeaseId": "lease-postfreeze-ak-gbif-melilotus-02020-r1-1"
+    },
+    {
+      "jobId": "deferred-ak-gbif-migration-r1",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "AK"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "cirsium-arvense",
+          "elatobium-abietinum",
+          "matricaria-discoidea"
+        ],
+        "pairs": [
+          "02063:matricaria-discoidea",
+          "02066:matricaria-discoidea",
+          "02100:cirsium-arvense",
+          "02122:elatobium-abietinum"
+        ]
+      },
+      "scopeClaims": [
+        "state/AK/source/gbif-preserved-specimens/taxon/matricaria-discoidea/county/02063",
+        "state/AK/source/gbif-preserved-specimens/taxon/matricaria-discoidea/county/02066",
+        "state/AK/source/gbif-preserved-specimens/taxon/cirsium-arvense/county/02100",
+        "state/AK/source/gbif-preserved-specimens/taxon/elatobium-abietinum/county/02122"
+      ],
+      "baseSha": "580772906ba186ae9fc734d65c7c3f900471d718",
+      "branch": "codex/deferred-ak-gbif-migration-r2",
+      "worktree": "/private/tmp/isitusa-deferred-ak-gbif-r2",
+      "permittedPaths": [
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-postfreeze-buffer-r1",
+          "gitCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+          "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-postfreeze-buffer-r1",
+          "gitCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+          "contentHash": "44527144dda3ded7b838c41dcc827ad5096c3cd9880480615dc052656e498be0"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-27T12:00:00Z",
+      "recoveryState": "validator-buffer-retry",
+      "completionCriteria": [
+        "reuse the exact durable provider artifacts from content commit 3d2d1ec8a8d9589bbad11cd5693bc6f75e2a0b72 without network acquisition",
+        "use only registered explicit Alaska county-equivalent text and never infer county identity from coordinates",
+        "preserve complete request and pagination lineage plus one honest outcome for every declared pair",
+        "rebind worker actor and receipt lineage to this recovery lease and base commit",
+        "commit evidence content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 580772906ba186ae9fc734d65c7c3f900471d718...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 120,
+      "state": "failed",
+      "currentLeaseId": "lease-deferred-ak-gbif-migration-r1-2"
+    },
+    {
+      "jobId": "deferred-az-gbif-migration-r1",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "AZ"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "cirsium-arvense",
+          "melilotus-officinalis"
+        ],
+        "pairs": [
+          "04001:cirsium-arvense",
+          "04005:melilotus-officinalis"
+        ]
+      },
+      "scopeClaims": [
+        "state/AZ/source/gbif-preserved-specimens/taxon/cirsium-arvense/county/04001",
+        "state/AZ/source/gbif-preserved-specimens/taxon/melilotus-officinalis/county/04005"
+      ],
+      "baseSha": "580772906ba186ae9fc734d65c7c3f900471d718",
+      "branch": "codex/deferred-az-gbif-migration-r2",
+      "worktree": "/private/tmp/isitusa-deferred-az-gbif-r2",
+      "permittedPaths": [
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-postfreeze-buffer-r1",
+          "gitCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+          "contentHash": "cd8a6a3e39da07a4d819552ed314a763fe9c3d0a2625538ae81ad04d50494fdb"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-postfreeze-buffer-r1",
+          "gitCommit": "580772906ba186ae9fc734d65c7c3f900471d718",
+          "contentHash": "44527144dda3ded7b838c41dcc827ad5096c3cd9880480615dc052656e498be0"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 15000000,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-27T12:00:00Z",
+      "recoveryState": "validator-buffer-retry",
+      "completionCriteria": [
+        "reuse the exact durable provider artifacts from content commit 16a8f927182b7c8828e6c33ccfa61ca5a6b6485e without network acquisition",
+        "use only registered explicit Arizona county text and never infer county identity from coordinates",
+        "preserve complete request and pagination lineage plus one honest outcome for every declared pair",
+        "rebind worker actor and receipt lineage to this recovery lease and base commit",
+        "commit evidence content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 580772906ba186ae9fc734d65c7c3f900471d718...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 120,
+      "state": "failed",
+      "currentLeaseId": "lease-deferred-az-gbif-migration-r1-2"
+    },
+    {
+      "jobId": "deferred-ak-gbif-migration-r2",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "AK"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "cirsium-arvense",
+          "elatobium-abietinum",
+          "matricaria-discoidea"
+        ],
+        "pairs": [
+          "02063:matricaria-discoidea",
+          "02066:matricaria-discoidea",
+          "02100:cirsium-arvense",
+          "02122:elatobium-abietinum"
+        ]
+      },
+      "scopeClaims": [
+        "state/AK/source/gbif-preserved-specimens/taxon/matricaria-discoidea/county/02063",
+        "state/AK/source/gbif-preserved-specimens/taxon/matricaria-discoidea/county/02066",
+        "state/AK/source/gbif-preserved-specimens/taxon/cirsium-arvense/county/02100",
+        "state/AK/source/gbif-preserved-specimens/taxon/elatobium-abietinum/county/02122"
+      ],
+      "baseSha": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "expectedReceiptCodeCommit": "5569089be087bb6ed632b2d821764fb47ff98d66",
+      "branch": "codex/deferred-ak-gbif-migration-r3",
+      "worktree": "/private/tmp/isitusa-deferred-ak-gbif-r3",
+      "permittedPaths": [
+        "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-postfreeze-lineage-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-postfreeze-lineage-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 1,
+        "backoffSeconds": [
+          5
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-27T12:00:00Z",
+      "recoveryState": "acquisition-lineage-pinned",
+      "completionCriteria": [
+        "reuse exact durable provider, assertion, review, rejection, and outcome bytes from acquisition commit 5569089be087bb6ed632b2d821764fb47ff98d66 without network acquisition",
+        "retain receipt.code_commit 5569089be087bb6ed632b2d821764fb47ff98d66 and validate it through expectedReceiptCodeCommit",
+        "use only registered explicit Alaska county-equivalent text and never infer county identity from coordinates",
+        "commit recovered immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 52da0a7377e03ab7c0d9ff49e761a760d4bd73f1...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 121,
+      "state": "integrating",
+      "currentLeaseId": "lease-deferred-ak-gbif-migration-r2-1"
+    },
+    {
+      "jobId": "deferred-az-gbif-migration-r2",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "AZ"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "cirsium-arvense",
+          "melilotus-officinalis"
+        ],
+        "pairs": [
+          "04001:cirsium-arvense",
+          "04005:melilotus-officinalis"
+        ]
+      },
+      "scopeClaims": [
+        "state/AZ/source/gbif-preserved-specimens/taxon/cirsium-arvense/county/04001",
+        "state/AZ/source/gbif-preserved-specimens/taxon/melilotus-officinalis/county/04005"
+      ],
+      "baseSha": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "expectedReceiptCodeCommit": "5569089be087bb6ed632b2d821764fb47ff98d66",
+      "branch": "codex/deferred-az-gbif-migration-r3",
+      "worktree": "/private/tmp/isitusa-deferred-az-gbif-r3",
+      "permittedPaths": [
+        "src/data/research/runs/20260726T113100Z__gbif-preserved-specimens__ed72e066b227/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "candidate-postfreeze-lineage-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "candidate-postfreeze-lineage-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 1,
+        "backoffSeconds": [
+          5
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 15000000,
+        "maxWallMinutes": 45,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-27T12:00:00Z",
+      "recoveryState": "acquisition-lineage-pinned",
+      "completionCriteria": [
+        "reuse exact durable provider, assertion, review, rejection, and outcome bytes from acquisition commit 5569089be087bb6ed632b2d821764fb47ff98d66 without network acquisition",
+        "retain receipt.code_commit 5569089be087bb6ed632b2d821764fb47ff98d66 and validate it through expectedReceiptCodeCommit",
+        "use only registered explicit Arizona county text and never infer county identity from coordinates",
+        "commit recovered immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 52da0a7377e03ab7c0d9ff49e761a760d4bd73f1...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 121,
+      "state": "integrating",
+      "currentLeaseId": "lease-deferred-az-gbif-migration-r2-1"
     }
   ]
 }

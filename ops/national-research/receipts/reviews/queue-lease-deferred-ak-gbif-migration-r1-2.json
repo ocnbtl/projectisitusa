@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-deferred-ak-gbif-migration-r1-2",
+  "jobId": "deferred-ak-gbif-migration-r1",
+  "leaseId": "lease-deferred-ak-gbif-migration-r1-2",
+  "decision": "rejected",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-26T12:05:00Z",
+  "workerCommit": "857ab54b5bffdca54e5d546a46772a68d51b3399",
+  "workerBranchHead": "98df9d7d096074f5865cdb3446e4e0abad4bd5d7",
+  "manifestHash": "caefe16b63916463e0051e3f3c5eeb3cbbc7d84701667616a40a924e2239a040",
+  "changedPaths": [
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-cirsium-arvense-000000.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-elatobium-abietinum-000000.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-occurrences-matricaria-discoidea-000000.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-cirsium-arvense.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-elatobium-abietinum.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/artifacts/gbif-species-match-matricaria-discoidea.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/assertions.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/manifest.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/outcomes.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/receipt.json",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/rejections.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/reviews.ndjson",
+    "src/data/research/runs/20260726T113000Z__gbif-preserved-specimens__70a8902d2feb/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "candidate worker manifest validation with exact lease and committed manifest",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "canonical immutable-run structural and event validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "independent immutable acquisition-lineage audit",
+      "exitCode": 1,
+      "result": "fail"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 1,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 1,
+  "forbiddenWrites": 0,
+  "reason": "Rejected because recovery rewrote receipt.code_commit from the original acquisition commit to the newer validator base. Provider and event bytes remain historically preserved, but the receipt would misstate which code produced the acquisition. The final repair candidate preserves this distinction in an explicit lease pin."
+}
