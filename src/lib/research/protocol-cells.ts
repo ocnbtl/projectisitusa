@@ -260,10 +260,11 @@ export function buildProtocolCellProjection(input: {
         .filter((value): value is string => Boolean(value))
         .sort();
       const latestCompleteRunFinishedAt = completionFinishedAt.at(-1) ?? null;
+      const source = sourceById.get(sourceId)!;
       const freshThrough = completionStatus === "complete"
-        ? completionFinishedAt.at(0) ?? null
+        ? source.dataFreshThrough ?? completionFinishedAt.at(0) ?? null
         : null;
-      const refreshCadenceDays = sourceById.get(sourceId)?.refreshCadenceDays ?? null;
+      const refreshCadenceDays = source.refreshCadenceDays;
       const ageDays = freshThrough
         ? Math.max(
             0,

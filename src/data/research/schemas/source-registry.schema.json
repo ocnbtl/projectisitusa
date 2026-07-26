@@ -50,6 +50,7 @@
         },
         "negativeSemantics": { "enum": ["none", "explicit-survey-only", "explicit-authority-only"] },
         "refreshCadenceDays": { "type": ["integer", "null"], "minimum": 1 },
+        "dataFreshThrough": { "type": "string", "format": "date" },
         "status": { "enum": ["operational", "manual", "legacy-migration"] },
         "adapter": { "type": ["string", "null"] },
         "caveat": { "type": "string", "minLength": 1 },

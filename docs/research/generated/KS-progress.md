@@ -1,26 +1,26 @@
 # Kansas Research Progress
 
-Generated: `2026-07-16T00:00:00.000Z`
+Generated: `2026-07-26T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `5`
+- Species: `18`
 - Counties: `105`
-- County-species pairs: `525`
-- Verified present: `26`
+- County-species pairs: `1890`
+- Verified present: `115`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `499`
+- Researched unresolved: `1775`
 - Not researched: `0`
-- Determination coverage: `4.95%`
+- Determination coverage: `6.08%`
 - Research coverage: `100.00%`
 - Explicit outcome coverage: `100.0000%`
-- Applicable protocol cells: `5`
+- Applicable protocol cells: `31`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `100.00%`
-- Evidence records: `26`
-- Research runs: `5`
+- Protocol completion: `58.06%`
+- Current protocol completion: `16.13%`
+- Evidence records: `115`
+- Research runs: `6`
 - Rejection records: `4`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,11 +32,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 105 | 2 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 105 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 105 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 105 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 105 | 2 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 105 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 105 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 105 | 2 |
 | Water Hyacinth (`eichhornia-crassipes`) | plants | 0 | 104 | 0 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 103 | 2 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 103 | 2 |
 | Chinese mysterysnail (`cipangopaludina-chinensis`) | wildlife | 0 | 103 | 0 |
 | Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 0 | 101 | 0 |
 | Zebra Mussel (`dreissena-polymorpha`) | wildlife | 0 | 96 | 0 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 95 | 2 |
 | Spiny waterflea (`daphnia-lumholtzi`) | wildlife | 0 | 95 | 0 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 91 | 2 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 44 | 2 |
 
 ## Source Operations
 
@@ -55,7 +68,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
-| USFS Alien Forest Pest Explorer | operational | not run | 0 | 0 |
+| USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 89 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

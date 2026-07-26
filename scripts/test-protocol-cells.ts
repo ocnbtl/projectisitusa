@@ -127,6 +127,32 @@ const stale = project([
 assert(stale.completionStatus === "complete", "Stale historical completion was discarded.");
 assert(stale.freshnessStatus === "stale", "Historical completion was not marked stale.");
 
+const historicalSnapshotSource = {
+  ...source,
+  dataFreshThrough: "2023-04-30",
+} as ResearchSourceDefinition;
+const historicalSnapshot = buildProtocolCellProjection({
+  stateCode: "AL",
+  asOf: "2026-07-15",
+  generatedAt: "2026-07-15T00:00:00.000Z",
+  species: [{ id: "test-plant", category: "plants", priority: "high" }],
+  countyFips: ["01001", "01003"],
+  protocols: baseProtocol,
+  sources: [historicalSnapshotSource],
+  immutableRuns: [
+    bundle({ runId: "run-j", countyFips: "01001", status: "evidence-found", scopeComplete: true }),
+    bundle({ runId: "run-k", countyFips: "01003", status: "no-qualifying-evidence", scopeComplete: true }),
+  ],
+}).cells[0]!;
+assert(
+  historicalSnapshot.freshThrough === "2023-04-30",
+  "Historical source data horizon was replaced by its acquisition time.",
+);
+assert(
+  historicalSnapshot.freshnessStatus === "stale",
+  "Historical source snapshot was incorrectly current after a recent acquisition.",
+);
+
 const notApplicableProtocol = structuredClone(baseProtocol);
 notApplicableProtocol.protocols[0]!.overrides.push({
   stateCode: "AL",
@@ -149,6 +175,7 @@ console.log(
       blockedRemainderPreserved: true,
       laterBlockedRetryRevokesCompletion: true,
       staleCompletionSeparated: true,
+      historicalSourceHorizonPreserved: true,
       notApplicableExcluded: true,
     },
     null,

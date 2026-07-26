@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "AL",
-  "asOf": "2026-07-16",
-  "generatedAt": "2026-07-16T00:00:00.000Z",
+  "asOf": "2026-07-26",
+  "generatedAt": "2026-07-26T00:00:00.000Z",
   "scope": {
     "publicationMode": "authoritative",
     "speciesMode": "catalog-all",
@@ -15,16 +15,16 @@
     "protocolModel": "explicit-source-species-legacy-migration"
   },
   "protocol": {
-    "totalCells": 22536,
-    "applicableCells": 14668,
-    "notApplicableCells": 7868,
-    "completeCells": 0,
+    "totalCells": 25040,
+    "applicableCells": 14681,
+    "notApplicableCells": 10359,
+    "completeCells": 13,
     "incompleteCells": 14668,
     "blockedCells": 0,
     "currentCells": 0,
-    "staleCells": 0,
+    "staleCells": 13,
     "undatedCells": 14668,
-    "applicableCompletionPercent": 0,
+    "applicableCompletionPercent": 0.09,
     "currentCompletePercent": 0,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
@@ -14156,40 +14156,6 @@
       "priorityScore": 66006
     },
     {
-      "speciesId": "aspidiotus-duplex",
-      "commonName": "Camphor scale",
-      "scientificName": "Aspidiotus duplex",
-      "category": "insects",
-      "notResearchedCountyCount": 65,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
-      ],
-      "priorityScore": 65006
-    },
-    {
-      "speciesId": "homadaula-albizziae",
-      "commonName": "Mimosa webworm",
-      "scientificName": "Homadaula albizziae",
-      "category": "insects",
-      "notResearchedCountyCount": 65,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
-      ],
-      "priorityScore": 65006
-    },
-    {
       "speciesId": "laportea-aestuans",
       "commonName": "West indian woodnettle",
       "scientificName": "Laportea aestuans",
@@ -14210,22 +14176,6 @@
       "speciesId": "elsinoe-australis",
       "commonName": "Sweet orange scab",
       "scientificName": "Elsinoe australis",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 65,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "usfs-ids"
-      ],
-      "priorityScore": 65005
-    },
-    {
-      "speciesId": "ophiostoma-ulmi",
-      "commonName": "Dutch elm disease",
-      "scientificName": "Ophiostoma ulmi",
       "category": "fungi-diseases",
       "notResearchedCountyCount": 65,
       "researchedUnresolvedCountyCount": 0,
@@ -29199,6 +29149,60 @@
       "priorityScore": 665
     },
     {
+      "speciesId": "anarsia-lineatella",
+      "commonName": "Peach twig borer",
+      "scientificName": "Anarsia lineatella",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 65,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 657
+    },
+    {
+      "speciesId": "aspidiotus-duplex",
+      "commonName": "Camphor scale",
+      "scientificName": "Aspidiotus duplex",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 65,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 657
+    },
+    {
+      "speciesId": "homadaula-albizziae",
+      "commonName": "Mimosa webworm",
+      "scientificName": "Homadaula albizziae",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 65,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 657
+    },
+    {
       "speciesId": "acanthoscelides-obtectus",
       "commonName": "Bean weevil",
       "scientificName": "Acanthoscelides obtectus",
@@ -29314,23 +29318,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usda-nrcs-plants"
-      ],
-      "priorityScore": 656
-    },
-    {
-      "speciesId": "anarsia-lineatella",
-      "commonName": "Peach twig borer",
-      "scientificName": "Anarsia lineatella",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 65,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
       ],
       "priorityScore": 656
     },
@@ -30368,6 +30355,23 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usda-nrcs-plants"
+      ],
+      "priorityScore": 656
+    },
+    {
+      "speciesId": "ophiostoma-ulmi",
+      "commonName": "Dutch elm disease",
+      "scientificName": "Ophiostoma ulmi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 65,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "usfs-afpe",
+        "usfs-ids"
       ],
       "priorityScore": 656
     },
@@ -31553,6 +31557,23 @@
       "priorityScore": 646
     },
     {
+      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
+      "commonName": "Butternut Canker Fungus",
+      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 646
+    },
+    {
       "speciesId": "opuntia-ficus-indica",
       "commonName": "Barbary fig",
       "scientificName": "Opuntia ficus-indica",
@@ -32022,22 +32043,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usgs-nas"
-      ],
-      "priorityScore": 645
-    },
-    {
-      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
-      "commonName": "Butternut Canker Fungus",
-      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 64,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "usfs-ids"
       ],
       "priorityScore": 645
     },
@@ -32955,6 +32960,24 @@
       "priorityScore": 635
     },
     {
+      "speciesId": "dryocosmus-kuriphilus",
+      "commonName": "Asian Chestnut Gall Wasp",
+      "scientificName": "Dryocosmus kuriphilus",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 62,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 627
+    },
+    {
       "speciesId": "aedes-japonicus",
       "commonName": "Asian bush mosquito",
       "scientificName": "Aedes japonicus",
@@ -33172,23 +33195,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usda-nrcs-plants"
-      ],
-      "priorityScore": 626
-    },
-    {
-      "speciesId": "dryocosmus-kuriphilus",
-      "commonName": "Asian Chestnut Gall Wasp",
-      "scientificName": "Dryocosmus kuriphilus",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 62,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
       ],
       "priorityScore": 626
     },
@@ -35812,6 +35818,23 @@
       "priorityScore": 566
     },
     {
+      "speciesId": "discula-destructiva",
+      "commonName": "Dogwood Anthracnose",
+      "scientificName": "Discula destructiva",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 56,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 566
+    },
+    {
       "speciesId": "fallopia-convolvulus",
       "commonName": "Black bindweed",
       "scientificName": "Fallopia convolvulus",
@@ -35963,22 +35986,6 @@
         "usda-nrcs-plants"
       ],
       "priorityScore": 566
-    },
-    {
-      "speciesId": "discula-destructiva",
-      "commonName": "Dogwood Anthracnose",
-      "scientificName": "Discula destructiva",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 56,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "usfs-ids"
-      ],
-      "priorityScore": 565
     },
     {
       "speciesId": "limax-maximus",
@@ -36201,6 +36208,24 @@
       "priorityScore": 556
     },
     {
+      "speciesId": "icerya-purchasi",
+      "commonName": "Cottony cushion scale",
+      "scientificName": "Icerya purchasi",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 54,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 547
+    },
+    {
       "speciesId": "conyza-bonariensis",
       "commonName": "Asthmaweed",
       "scientificName": "Conyza bonariensis",
@@ -36248,23 +36273,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usda-nrcs-plants"
-      ],
-      "priorityScore": 546
-    },
-    {
-      "speciesId": "icerya-purchasi",
-      "commonName": "Cottony cushion scale",
-      "scientificName": "Icerya purchasi",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 54,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
       ],
       "priorityScore": 546
     },
@@ -37218,6 +37226,24 @@
       "priorityScore": 505
     },
     {
+      "speciesId": "emerald-ash-borer",
+      "commonName": "Emerald Ash Borer",
+      "scientificName": "Agrilus planipennis",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 49,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 497
+    },
+    {
       "speciesId": "acanthospermum-hispidum",
       "commonName": "Hispid starbur",
       "scientificName": "Acanthospermum hispidum",
@@ -37231,23 +37257,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usda-nrcs-plants"
-      ],
-      "priorityScore": 496
-    },
-    {
-      "speciesId": "emerald-ash-borer",
-      "commonName": "Emerald Ash Borer",
-      "scientificName": "Agrilus planipennis",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 49,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
       ],
       "priorityScore": 496
     },
@@ -37912,6 +37921,23 @@
       "priorityScore": 456
     },
     {
+      "speciesId": "raffaelea-lauricola",
+      "commonName": "Laurel wilt",
+      "scientificName": "Raffaelea lauricola",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 45,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 456
+    },
+    {
       "speciesId": "vernicia-fordii",
       "commonName": "Tungoil tree",
       "scientificName": "Vernicia fordii",
@@ -37927,22 +37953,6 @@
         "usda-nrcs-plants"
       ],
       "priorityScore": 456
-    },
-    {
-      "speciesId": "raffaelea-lauricola",
-      "commonName": "Laurel wilt",
-      "scientificName": "Raffaelea lauricola",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 45,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "usfs-ids"
-      ],
-      "priorityScore": 455
     },
     {
       "speciesId": "brassica-juncea",
@@ -39352,6 +39362,23 @@
       "priorityScore": 336
     },
     {
+      "speciesId": "phytophthora-cinnamomi",
+      "commonName": "Phytophthora Root Rot",
+      "scientificName": "Phytophthora cinnamomi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 33,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 336
+    },
+    {
       "speciesId": "populus-alba",
       "commonName": "White Poplar",
       "scientificName": "Populus alba",
@@ -39367,22 +39394,6 @@
         "usda-nrcs-plants"
       ],
       "priorityScore": 336
-    },
-    {
-      "speciesId": "phytophthora-cinnamomi",
-      "commonName": "Phytophthora Root Rot",
-      "scientificName": "Phytophthora cinnamomi",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 33,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "usfs-ids"
-      ],
-      "priorityScore": 335
     },
     {
       "speciesId": "citrullus-lanatus",
@@ -40098,6 +40109,23 @@
       "priorityScore": 246
     },
     {
+      "speciesId": "cryphonectria-parasitica",
+      "commonName": "Chestnut Blight",
+      "scientificName": "Cryphonectria parasitica",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 24,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 246
+    },
+    {
       "speciesId": "cuphea-carthagenensis",
       "commonName": "Colombian waxweed",
       "scientificName": "Cuphea carthagenensis",
@@ -40130,22 +40158,6 @@
         "usda-nrcs-plants"
       ],
       "priorityScore": 246
-    },
-    {
-      "speciesId": "cryphonectria-parasitica",
-      "commonName": "Chestnut Blight",
-      "scientificName": "Cryphonectria parasitica",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 24,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "usfs-ids"
-      ],
-      "priorityScore": 245
     },
     {
       "speciesId": "arundo-donax",
@@ -40486,6 +40498,24 @@
       "priorityScore": 186
     },
     {
+      "speciesId": "popillia-japonica",
+      "commonName": "Japanese Beetle",
+      "scientificName": "Popillia japonica",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 17,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-afpe",
+        "usfs-ids"
+      ],
+      "priorityScore": 177
+    },
+    {
       "speciesId": "geranium-dissectum",
       "commonName": "Cutleaf geranium",
       "scientificName": "Geranium dissectum",
@@ -40516,23 +40546,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usda-nrcs-plants"
-      ],
-      "priorityScore": 176
-    },
-    {
-      "speciesId": "popillia-japonica",
-      "commonName": "Japanese Beetle",
-      "scientificName": "Popillia japonica",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 17,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
       ],
       "priorityScore": 176
     },

@@ -365,9 +365,16 @@ const dashboard = {
       applicabilityUnclassifiedJurisdictionCodes.length === 0,
     remainingApplicableProtocolCountyScreens,
     measuredRatePairsPerHour: measuredRate,
+    measuredRateEvidence: {
+      estimateType: "single-accepted-pilot-point-estimate",
+      confidenceInterval: null,
+      confidenceQualification:
+        "No statistical confidence interval is available from one accepted end-to-end national-source pilot.",
+    },
     concurrencyAssumption: 1,
     hoursPerDayAssumption,
     forecastDaysAtMeasuredRate: forecastDays === null ? null : round(forecastDays, 1),
+    forecastDaysConfidenceInterval: null,
     targetMaximumDays,
     targetGapDays:
       forecastDays === null ? null : round(Math.max(0, forecastDays - targetMaximumDays), 1),
@@ -375,8 +382,16 @@ const dashboard = {
       measuredRate > 0
         ? "Capacity forecast for versioned automated national-source screens at the validated pilot rate. It is not a national certification forecast because state-specific, manual, blocked, freshness, production QA, and integration workloads remain separately unmeasured."
         : "No accepted integrated national-source throughput measurement is available.",
-    historicalPilotForecastQualification:
-      nationalPilotEvaluation?.forecast.qualification ?? null,
+    historicalPilotForecast: nationalPilotEvaluation
+      ? {
+          status: "superseded-by-current-applicability-classification",
+          qualificationAtMeasurement: nationalPilotEvaluation.forecast.qualification,
+          currentApplicabilityUnclassifiedJurisdictions:
+            applicabilityUnclassifiedJurisdictionCodes.length,
+          note:
+            "The historical qualification is retained as dated evaluation evidence. Its 47-jurisdiction applicability statement is not a current fact.",
+        }
+      : null,
   },
 };
 

@@ -84,6 +84,7 @@ export interface ResearchSourceDefinition {
   evidenceCapabilities: EvidenceAssertionType[];
   negativeSemantics: "none" | "explicit-survey-only" | "explicit-authority-only";
   refreshCadenceDays: number | null;
+  dataFreshThrough?: string;
   status: "operational" | "manual" | "legacy-migration";
   adapter: string | null;
   caveat: string;

@@ -1,27 +1,27 @@
 # Alaska Research Progress
 
-Generated: `2026-07-16T00:00:00.000Z`
+Generated: `2026-07-26T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `10`
+- Species: `23`
 - Counties: `30`
-- County-species pairs: `300`
-- Verified present: `24`
+- County-species pairs: `690`
+- Verified present: `25`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `137`
-- Not researched: `139`
-- Determination coverage: `8.00%`
-- Research coverage: `53.67%`
-- Explicit outcome coverage: `53.6667%`
-- Applicable protocol cells: `20`
+- Researched unresolved: `422`
+- Not researched: `243`
+- Determination coverage: `3.62%`
+- Research coverage: `64.78%`
+- Explicit outcome coverage: `64.7826%`
+- Applicable protocol cells: `59`
 - Current complete protocol cells: `5`
-- Protocol completion: `25.00%`
-- Current protocol completion: `25.00%`
-- Evidence records: `24`
-- Research runs: `7`
-- Rejection records: `39`
+- Protocol completion: `8.47%`
+- Current protocol completion: `8.47%`
+- Evidence records: `25`
+- Research runs: `8`
+- Rejection records: `208`
 - Deferred source assertions remaining: `4`
 - Deferred distinct pairs remaining: `4`
 - Conflicts: `0`
@@ -37,6 +37,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Pineapple Weed (`matricaria-discoidea`) | plants | 30 | 0 | 2 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 29 | 0 | 2 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 20 | 0 | 2 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 8 | 22 | 3 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 8 | 22 | 3 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 8 | 22 | 3 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 8 | 22 | 3 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 8 | 22 | 3 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 8 | 22 | 3 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 8 | 22 | 3 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 8 | 22 | 3 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 8 | 22 | 3 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 8 | 22 | 3 |
+| Japanese Beetle (`popillia-japonica`) | insects | 8 | 22 | 3 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 8 | 22 | 3 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 8 | 21 | 3 |
 | Sea vomit tunicate (`didemnum-vexillum`) | wildlife | 0 | 29 | 1 |
 | Moneywort (`lysimachia-nummularia`) | plants | 0 | 28 | 1 |
 | Creeping yellowcress (`rorippa-sylvestris`) | plants | 0 | 28 | 1 |
@@ -60,7 +73,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
-| USFS Alien Forest Pest Explorer | operational | not run | 0 | 0 |
+| USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 1 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

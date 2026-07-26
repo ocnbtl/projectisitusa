@@ -1,38 +1,38 @@
 {
   "schemaVersion": 3,
   "stateCode": "IL",
-  "asOf": "2026-07-16",
-  "generatedAt": "2026-07-16T00:00:00.000Z",
+  "asOf": "2026-07-26",
+  "generatedAt": "2026-07-26T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "explicit",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/IL.json",
-    "applicabilityAsOf": "2026-07-16",
-    "applicableSpeciesCount": 5,
+    "applicabilityAsOf": "2026-07-25",
+    "applicableSpeciesCount": 18,
     "undeterminedSpeciesPolicy": "excluded",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 5,
+    "speciesCount": 18,
     "countyCount": 102,
-    "totalPairs": 510,
-    "verifiedPresent": 256,
+    "totalPairs": 1836,
+    "verifiedPresent": 629,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 254,
+    "researchedUnresolved": 1207,
     "notResearched": 0,
-    "determinationCoveragePercent": 50.2,
+    "determinationCoveragePercent": 34.26,
     "researchCoveragePercent": 100,
-    "explicitOutcomePairCount": 510,
+    "explicitOutcomePairCount": 1836,
     "explicitOutcomeCoveragePercent": 100,
     "conflictCount": 0,
-    "evidenceRecordCount": 256,
+    "evidenceRecordCount": 629,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 256,
+    "runEvidenceRecordCount": 629,
     "rejectionRecordCount": 14,
-    "researchRunCount": 5
+    "researchRunCount": 6
   },
   "migrationCandidates": {
     "sourceAssertionCount": 0,
@@ -186,9 +186,9 @@
       "authority": "USDA Forest Service and Purdue University",
       "tier": "academic",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-07-26T03:59:30.000Z",
+      "evidencePairCount": 373,
+      "screenedSpeciesCount": 13
     },
     {
       "id": "usfs-fia-invasive-plants",
@@ -345,22 +345,34 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 5,
-    "applicableCells": 5,
-    "notApplicableCells": 0,
-    "completeCells": 5,
-    "incompleteCells": 0,
+    "totalCells": 36,
+    "applicableCells": 31,
+    "notApplicableCells": 5,
+    "completeCells": 18,
+    "incompleteCells": 13,
     "blockedCells": 0,
     "currentCells": 5,
-    "staleCells": 0,
-    "undatedCells": 0,
-    "applicableCompletionPercent": 100,
-    "currentCompletePercent": 100,
+    "staleCells": 13,
+    "undatedCells": 13,
+    "applicableCompletionPercent": 58.06,
+    "currentCompletePercent": 16.13,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
-    "requiredCurrentSourcesProcessed": true,
+    "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
+      {
+        "category": "fungi-diseases",
+        "applicableCells": 12,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
+      {
+        "category": "insects",
+        "applicableCells": 14,
+        "currentCompleteCells": 0,
+        "currentCompletePercent": 0
+      },
       {
         "category": "plants",
         "applicableCells": 5,
@@ -389,7 +401,7 @@
       },
       {
         "priority": "baseline",
-        "applicableCells": 0,
+        "applicableCells": 26,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
@@ -397,13 +409,130 @@
     "requiredSourceStatus": [
       {
         "sourceId": "usgs-nas",
-        "applicableCells": 5,
+        "applicableCells": 18,
         "currentCompleteCells": 5,
-        "processed": true
+        "processed": false
       }
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "aspidiotus-duplex",
+      "commonName": "Camphor scale",
+      "scientificName": "Aspidiotus duplex",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 102,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 1022
+    },
+    {
+      "speciesId": "discula-destructiva",
+      "commonName": "Dogwood Anthracnose",
+      "scientificName": "Discula destructiva",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 102,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 1022
+    },
+    {
+      "speciesId": "dryocosmus-kuriphilus",
+      "commonName": "Asian Chestnut Gall Wasp",
+      "scientificName": "Dryocosmus kuriphilus",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 102,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 1022
+    },
+    {
+      "speciesId": "icerya-purchasi",
+      "commonName": "Cottony cushion scale",
+      "scientificName": "Icerya purchasi",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 102,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 1022
+    },
+    {
+      "speciesId": "phytophthora-cinnamomi",
+      "commonName": "Phytophthora Root Rot",
+      "scientificName": "Phytophthora cinnamomi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 102,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 1022
+    },
+    {
+      "speciesId": "raffaelea-lauricola",
+      "commonName": "Laurel wilt",
+      "scientificName": "Raffaelea lauricola",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 102,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 1022
+    },
+    {
+      "speciesId": "anarsia-lineatella",
+      "commonName": "Peach twig borer",
+      "scientificName": "Anarsia lineatella",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 101,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 1012
+    },
+    {
+      "speciesId": "cryphonectria-parasitica",
+      "commonName": "Chestnut Blight",
+      "scientificName": "Cryphonectria parasitica",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 992
+    },
+    {
+      "speciesId": "homadaula-albizziae",
+      "commonName": "Mimosa webworm",
+      "scientificName": "Homadaula albizziae",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 992
+    },
     {
       "speciesId": "lythrum-salicaria",
       "commonName": "Purple Loosestrife",
@@ -445,6 +574,19 @@
       "priorityScore": 460
     },
     {
+      "speciesId": "emerald-ash-borer",
+      "commonName": "Emerald Ash Borer",
+      "scientificName": "Agrilus planipennis",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 30,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 302
+    },
+    {
       "speciesId": "lysimachia-nummularia",
       "commonName": "Moneywort",
       "scientificName": "Lysimachia nummularia",
@@ -453,6 +595,45 @@
       "researchedUnresolvedCountyCount": 24,
       "missingProtocolSourceIds": [],
       "priorityScore": 240
+    },
+    {
+      "speciesId": "popillia-japonica",
+      "commonName": "Japanese Beetle",
+      "scientificName": "Popillia japonica",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 12,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 122
+    },
+    {
+      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
+      "commonName": "Butternut Canker Fungus",
+      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 2
+    },
+    {
+      "speciesId": "ophiostoma-ulmi",
+      "commonName": "Dutch elm disease",
+      "scientificName": "Ophiostoma ulmi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 2
     }
   ]
 }

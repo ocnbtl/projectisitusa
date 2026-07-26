@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usfs-afpe-national-2026-07-26",
+  "evaluatedAt": "2026-07-26T04:15:00.000Z",
+  "result": "passed-centralized-national-partition",
+  "executionOwner": "MAIN",
+  "workerSkillDispatchUsed": false,
+  "workerSkillDispatchReason": "This was one centralized immutable national acquisition and deterministic partition, not duplicated state acquisition.",
+  "source": {
+    "sourceId": "usfs-afpe",
+    "title": "Alien Forest Pest Detection by Counties in US",
+    "publisher": "Purdue University Research Repository, USDA Forest Service Northern Research Station, and Forest Health Protection",
+    "doi": "10.4231/HWQF-V087",
+    "archiveVersion": "1.0",
+    "publicationDate": "2024-03-28",
+    "sourceDataLastUpdated": "2023-04",
+    "license": "CC0-1.0",
+    "freshnessStatus": "stale-historical",
+    "negativeEvidencePolicy": "Binary zero completes only the declared source screen as no-qualifying-evidence. It never supports verified absence or not-detected."
+  },
+  "acquisition": {
+    "acquisitionId": "20240328__usfs-afpe-v1-0__ca1988d2f900",
+    "codeCommit": "2477799c9a4fda7b7f94a3dfbbdc4a747393d817",
+    "acquisitionCommit": "6c58e44354e57d029ac842c6a83ed7de6b5ecbf7",
+    "startedAt": "2026-07-26T03:57:50.000Z",
+    "finishedAt": "2026-07-26T03:59:34.102Z",
+    "successfulWallSeconds": 104.102,
+    "upstreamRequestCount": 1,
+    "artifactBytes": 5396559,
+    "artifactSha256": "ca1988d2f900a71ff5efab2b32642f757d64189c4bd0dd2dbdda98a6cf222383",
+    "receiptSha256": "d257c5ce1564cfd02517e1755f3671ccd10496a107a898b404ff6d534104f2e2",
+    "countyRows": 3221,
+    "pestColumns": 93,
+    "pestCells": 299553,
+    "zeroCells": 280805,
+    "oneCells": 18748,
+    "transientFailures": 0,
+    "resumedBytes": 0
+  },
+  "partition": {
+    "partitionCommit": "eea0bda6e1b1f87c028316a6434a9abcc7f3eccf",
+    "recordedAt": "2026-07-26T03:59:30.000Z",
+    "stateCount": 51,
+    "stateNetworkRequests": 0,
+    "mappingVersion": "2026-07-25.1",
+    "reviewedTaxonMappings": 13,
+    "requestedPairs": 40872,
+    "candidateSourceCells": 40859,
+    "assertions": 7642,
+    "reviews": 7642,
+    "rejectionEvents": 481,
+    "duplicateSourceCells": 26,
+    "outcomes": 40872,
+    "evidenceFoundOutcomes": 7642,
+    "noQualifyingEvidenceOutcomes": 32983,
+    "blockedOutcomes": 247,
+    "verifiedAbsentClaims": 0,
+    "notDetectedClaims": 0,
+    "rejectionReasons": {
+      "missingCurrentCountyEquivalentPairs": 247,
+      "duplicateSourceCells": 26,
+      "retiredAbolishedOrUnregisteredSourceCells": 208
+    }
+  },
+  "projectionBaseline": {
+    "commit": "3efd9ee273530c7c45b1e9d52cb1d75aecf086c1",
+    "stateSpeciesEntries": 2757,
+    "countyEquivalents": 3144,
+    "countySpeciesPairs": 183325,
+    "verifiedPresent": 19100,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 106705,
+    "notResearched": 57512,
+    "distinctOutcomePairs": 15268,
+    "evidenceRecords": 34507,
+    "rejections": 2912,
+    "projectedResearchRuns": 279,
+    "conflicts": 0
+  },
+  "projectionFinal": {
+    "asOf": "2026-07-26",
+    "stateSpeciesEntries": 3407,
+    "countyEquivalents": 3144,
+    "countySpeciesPairs": 223326,
+    "verifiedPresent": 26569,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 139185,
+    "notResearched": 57564,
+    "distinctOutcomePairs": 55893,
+    "evidenceRecords": 42149,
+    "rejections": 3393,
+    "projectedResearchRuns": 330,
+    "conflicts": 0
+  },
+  "projectionNetChange": {
+    "stateSpeciesEntries": 650,
+    "countyEquivalents": 0,
+    "countySpeciesPairs": 40001,
+    "verifiedPresent": 7469,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 32480,
+    "notResearched": 52,
+    "distinctOutcomePairs": 40625,
+    "evidenceRecords": 7642,
+    "rejections": 481,
+    "projectedResearchRuns": 51,
+    "conflicts": 0
+  },
+  "protocolCells": {
+    "baseline": {
+      "total": 22815,
+      "applicable": 14947,
+      "notApplicable": 7868,
+      "complete": 237,
+      "incomplete": 14703,
+      "blocked": 7,
+      "current": 237,
+      "stale": 0,
+      "undated": 14710
+    },
+    "final": {
+      "total": 26911,
+      "applicable": 16299,
+      "notApplicable": 10612,
+      "complete": 848,
+      "incomplete": 15392,
+      "blocked": 59,
+      "current": 237,
+      "stale": 611,
+      "undated": 15451
+    },
+    "net": {
+      "total": 4096,
+      "applicable": 1352,
+      "notApplicable": 2744,
+      "complete": 611,
+      "incomplete": 689,
+      "blocked": 52,
+      "current": 0,
+      "stale": 611,
+      "undated": 741
+    }
+  },
+  "determinism": {
+    "repeatedPartitionWallSeconds": 7.8859,
+    "repeatedPartitionNewRuns": 0,
+    "repeatedPartitionExistingRuns": 51,
+    "repeatedPartitionCountsMatched": true,
+    "allStateProjectionByteStable": true,
+    "readinessDashboardSha256": "1c73cf9f1a2493a52ebedde198967e61862c7ff9bb514f9902c7d650c5e1789b"
+  },
+  "safety": {
+    "evidenceSemanticViolations": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "workerFailures": 0,
+    "mergeConflicts": 0,
+    "sharedGeneratedOutputConflicts": 0,
+    "unsupportedAbsenceClaims": 0,
+    "unsupportedNotDetectedClaims": 0,
+    "conflicts": 0,
+    "fullArchiveReplayIntegrity": "pass",
+    "projectionByteStability": "pass-all-51-jurisdictions"
+  },
+  "interventions": {
+    "manualInterventions": 5,
+    "processFailuresBeforeValidatedIntegration": 3,
+    "items": [
+      "Replaced ambiguous county-name blocking with exact-FIPS primary routing plus normalized raw-name consistency.",
+      "Normalized assertion source county labels to registered legal names while retaining raw source labels in lineage.",
+      "Made committed national partition replay idempotent by retaining the original receipt code commit only when every committed byte matches.",
+      "Removed only confirmed orphaned Git temporary pack files after the crash and disabled automatic repository maintenance during this disk-constrained run.",
+      "Separated evidence observation freshness from retrieval and review dates, and pinned the AFPE source data horizon to 2023-04-30 so recent partitioning cannot make the historical snapshot current."
+    ]
+  },
+  "throughput": {
+    "acquisitionPlusDeterministicReplayWallSeconds": 111.9879,
+    "completePairScreensPerHourPointEstimate": 1305944.6601,
+    "grossOutcomesPerHourPointEstimate": 1313884.8036,
+    "confidenceInterval": null,
+    "qualification": "This is a single small-archive acquisition and local deterministic partition point estimate. It excludes implementation time and is not comparable to state-specific API work, manual evidence review, freshness work, blocked geography resolution, integration, production QA, or national certification."
+  },
+  "knownContradictions": [
+    "PURR metadata describes 74 insects plus 15 pathogens, or 89 pests, while the published CSV and dictionary contain 93 DCA pest columns.",
+    "The current online AFPE v2 application is newer and volatile, but it has no equivalent CC0 snapshot manifest and was not substituted for the retained v1.0 archive.",
+    "The first partition policy blocked exact current FIPS when a county name was shared across jurisdictions. That result was rejected and replaced by exact-FIPS primary validation before immutable runs were accepted.",
+    "The first generated projections called AFPE protocol cells and pair evidence current because they used 2026 partition, retrieval, and review timestamps. Release QA rejected that interpretation. Regenerated projections now preserve April 2023 source freshness while retaining the accepted historical positive evidence and completed source screens."
+  ]
+}

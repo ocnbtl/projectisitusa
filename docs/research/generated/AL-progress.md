@@ -1,6 +1,6 @@
 # Alabama Research Progress
 
-Generated: `2026-07-16T00:00:00.000Z`
+Generated: `2026-07-26T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-07-16T00:00:00.000Z`
 - Verified present: `15293`
 - Verified absent: `0`
 - Not detected: `8`
-- Researched unresolved: `95420`
-- Not researched: `57047`
+- Researched unresolved: `95615`
+- Not researched: `56852`
 - Determination coverage: `9.12%`
-- Research coverage: `66.00%`
-- Explicit outcome coverage: `0.1049%`
-- Applicable protocol cells: `14668`
+- Research coverage: `66.11%`
+- Explicit outcome coverage: `0.6241%`
+- Applicable protocol cells: `14681`
 - Current complete protocol cells: `0`
-- Protocol completion: `0.00%`
+- Protocol completion: `0.09%`
 - Current protocol completion: `0.00%`
-- Evidence records: `30640`
-- Research runs: `31`
+- Evidence records: `30813`
+- Research runs: `32`
 - Rejection records: `1440`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -75,7 +75,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | APHIS National Honey Bee Survey | operational | not run | 2 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 6 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
-| USFS Alien Forest Pest Explorer | operational | not run | 0 | 0 |
+| USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 173 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | 2026-06-16T03:44:13.025Z | 7 | 3 |

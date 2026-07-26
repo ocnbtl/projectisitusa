@@ -57,26 +57,28 @@ The Alabama table below is historical migration context verified from `docs/coun
 | Known | 15141 |
 | Known percent | 9.02% |
 
-The current parity checkpoint freshly verified on 2026-07-15 is:
+The current Alabama parity checkpoint freshly verified with explicit as-of `2026-07-26` is:
 
 | Metric | Count |
 | --- | ---: |
 | Registered sources | 29 |
-| Research runs | 26 |
-| Evidence records | 30291 |
-| Rejections | 329 |
-| Raw pair outcomes | 113 |
-| Distinct outcome pairs | 110 |
-| Verified present | 15222 |
+| Research runs | 32 |
+| Evidence records | 30813 |
+| Rejections | 1440 |
+| Raw pair outcomes | 1183 |
+| Distinct outcome pairs | 1047 |
+| Verified present | 15293 |
 | Verified absent | 0 |
 | Survey not detected | 8 |
-| Researched unresolved | 95491 |
-| Not researched | 57047 |
+| Researched unresolved | 95615 |
+| Not researched | 56852 |
 | Conflicts | 0 |
 
-Research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on the `15222` reviewed Alabama present pairs. This resolved the dated `15222` research versus `15133` public contradiction without hand-editing truth files or discarding the `8` not-detected survey records.
+Research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on the `15293` reviewed Alabama present pairs. This preserves the prior parity repair and the `8` not-detected survey records.
 
-The current v1 geography registry contains `51` state or district jurisdictions and `3144` active county equivalents. Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is lineage only. Connecticut has `9` current planning regions and retains its `8` former counties only as retired lineage. Alabama, Alaska, Arizona, and Arkansas have generated research projections. The latter three contain integrated bounded NAS pilot evidence, remain research-only, and are not normal compatibility publication or state certification.
+The current v1 geography registry contains `51` state or district jurisdictions and `3144` active county equivalents. Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is lineage only. Connecticut has `9` current planning regions and retains its `8` former counties only as retired lineage. All `51` jurisdictions have deterministic generated research projections. Alabama is compatibility-authoritative. The other `50` remain research-only and are not normal compatibility publication or state certification.
+
+The national projection checkpoint at explicit as-of `2026-07-26` contains `3407` state-species entries and `223326` county-species pairs: `26569` verified present, `0` verified absent, `8` not detected, `139185` researched unresolved, and `57564` not researched. It contains `42149` evidence records, `3393` rejection events, `55893` distinct outcome pairs, `330` projected research runs, and `0` conflicts. Configured source-species applicability classification covers all `51` jurisdictions, but it is not full-catalog applicability or evidence of completed research.
 
 ## System Boundary
 
@@ -143,7 +145,7 @@ Inspect current files before implementing a required target. Current paths are e
 
 `.cache/` is ignored. Verify the current ignore diff before changing it and do not overwrite concurrent ignore-file edits.
 
-The architecture remains the acceptance contract where implementation is incomplete. Current gaps include a general source-specific freshness and review policy beyond the registered specimen gates, a reviewer command for later human events, additional registered source-family adapters, broad state applicability classification, and enough completed protocol cells for certification.
+The architecture remains the acceptance contract where implementation is incomplete. Pair freshness now uses observation dates rather than retrieval or review activity, and the source registry can pin a fixed data horizon for historical snapshots. Current gaps include completing source-by-source freshness audits, a reviewer command for later human events, additional registered source-family adapters, and enough completed protocol cells for certification.
 
 `app/research/page.tsx` remains a static route. `src/components/research-control-center.tsx` fetches committed state summaries and county shards from `public/generated/research/<STATE>/` so large queues are not embedded in initial HTML. Alabama is labeled as the certification baseline. Alaska, Arizona, and Arkansas are labeled as bounded research-only pilots. Do not claim a route or state is complete until generated input, build, normal county behavior, and route behavior are verified together.
 
@@ -264,7 +266,13 @@ The USGS NAS implementation uses official IPT archive version `1.344`, published
 
 The first real national partition retained acquisition `20260531__usgs-nas-dwca-v1-344__563b13cbf2f8` and screened Alaska `myosotis-scorpioides`, Arkansas `daphnia-lumholtzi`, and Arizona `cyprinus-carpio`. One archive stream selected `4609` rows and produced `32` reviewed assertions, `13` grouped rejection events, `97` scope-complete outcomes, and `23` blocked outcomes. All state-specific network request counts were zero. Full integrity replay recomputed selected-row hashes and every assertion, review, rejection, and outcome from the retained archive. State compiler byte-stability passed for Alaska, Arkansas, and Arizona, and protected shared compatibility outputs did not change.
 
-The centralized pilot evaluation is durable at `ops/national-research/evaluations/usgs-nas-pilot-2026-07-15.json`. Its `21.9` day forecast is explicitly limited to automated national-source-equivalent county screens at the measured end-to-end rate. It is not a national certification forecast because `47` jurisdictions still lack complete applicability classification and state, manual, blocked, and source-specific work is not represented by the pilot.
+The centralized pilot evaluation is durable at `ops/national-research/evaluations/usgs-nas-pilot-2026-07-15.json`. Its forecast is explicitly limited to automated national-source-equivalent county screens at one measured end-to-end point estimate. The readiness artifact reports no statistical confidence interval and does not treat the result as a national certification forecast. The dated evaluation statement that `47` jurisdictions lacked applicability classification is superseded by the current configured count of `0`; state-specific, manual, blocked, freshness, integration, and production QA work remain separately unmeasured.
+
+The second national implementation uses the Purdue University Research Repository AFPE v1.0 CC0 archive, acquisition `20240328__usfs-afpe-v1-0__ca1988d2f900`. It contains `3221` county rows and `93` DCA pest columns, with source data last updated in April 2023. Only `13` hash-pinned reviewed taxon mappings may publish. A value of `1` supports historical recorded-present evidence. A value of `0` completes only the declared source screen as no-qualifying-evidence and cannot support verified absence or not detected.
+
+AFPE partitioning uses exact five-digit current FIPS as the primary geography identity and requires the raw county label to normalize consistently. A shared county name does not block an exact valid FIPS. Retired, abolished, superseded, missing, and unknown FIPS are rejected or blocked and are never reassigned automatically. The accepted partition emitted `40872` outcomes, `7642` reviewed assertions, `32983` no-qualifying-evidence outcomes, `247` blocked outcomes, and `481` rejection events across all `51` jurisdictions. A repeated partition created `0` new runs and matched all `51` committed run bundles exactly. The evaluation is `ops/national-research/evaluations/usfs-afpe-national-2026-07-26.json`.
+
+AFPE v1.0 remains stale historical evidence and cannot satisfy current-source readiness. PURR metadata describes `89` pests while the published CSV and dictionary contain `93` DCA pest columns. The live AFPE v2 application is newer and volatile but has no equivalent hash-pinned CC0 snapshot manifest, so it was not substituted for the retained archive.
 
 Partitioning streams the complete archive once for all selected screens. It requires exact canonical binomial agreement, exact state code, and exact active county-equivalent text. Missing, unknown, ambiguous, and retired geography is rejected. Coordinates are lineage only. Only explicit `collected` or `established` statuses pass the bounded positive-evidence gate. Archive silence and rejected rows can support a completed research outcome only when the declared screen completed; they never support absence or survey non-detection.
 
@@ -527,7 +535,7 @@ Run `check:research-integrity`, `check:state-research-projections`, `check:natio
 8. Completed first national-source pilot: retain USGS NAS v1.344 once, partition it across Alaska, Arkansas, and Arizona, integrate three clean research-only projections, and preserve all blocked outcomes without negative inference.
 9. Completed dated Alabama migration queue: registered GBIF and frozen-index iDigBio runs screened all `312` source assertions across `176` distinct pairs. The final projection contains `15293` present, `0` absent, `8` not detected, `95420` researched unresolved, and `57047` not researched pairs. Queue completion is not state certification.
 10. Current constraint: the two-clean-integration threshold is met for integration safety, but the independent skill gate remains blocked. Broad worker dispatch and 5 to 10 concurrent states remain prohibited. MAIN continues bounded centralized work until an evaluated skill version passes and sustained machine capacity is sufficient.
-11. Continuing: add source-specific freshness policy, reviewer tooling, additional registered sources, and state applicability classifications.
+11. Continuing: complete source-specific freshness audits, reviewer tooling, additional registered sources, and protocol screening.
 
 ## Acceptance Gates
 

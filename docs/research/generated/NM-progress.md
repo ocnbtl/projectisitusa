@@ -1,26 +1,26 @@
 # New Mexico Research Progress
 
-Generated: `2026-07-16T00:00:00.000Z`
+Generated: `2026-07-26T00:00:00.000Z`
 
 ## Exact Counts
 
-- Species: `2`
+- Species: `15`
 - Counties: `33`
-- County-species pairs: `66`
-- Verified present: `6`
+- County-species pairs: `495`
+- Verified present: `17`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `60`
+- Researched unresolved: `478`
 - Not researched: `0`
-- Determination coverage: `9.09%`
+- Determination coverage: `3.43%`
 - Research coverage: `100.00%`
 - Explicit outcome coverage: `100.0000%`
-- Applicable protocol cells: `2`
+- Applicable protocol cells: `28`
 - Current complete protocol cells: `2`
-- Protocol completion: `100.00%`
-- Current protocol completion: `100.00%`
-- Evidence records: `6`
-- Research runs: `2`
+- Protocol completion: `53.57%`
+- Current protocol completion: `7.14%`
+- Evidence records: `17`
+- Research runs: `3`
 - Rejection records: `0`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,8 +32,21 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 33 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 33 | 2 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 33 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 33 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 33 | 2 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 33 | 2 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 33 | 2 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 33 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 33 | 2 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 33 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 33 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 32 | 2 |
 | Nutria (`nutria`) | wildlife | 0 | 30 | 0 |
 | Asian tapeworm (`schyzocotyle-acheilognathi`) | wildlife | 0 | 30 | 0 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 23 | 2 |
 
 ## Source Operations
 
@@ -52,7 +65,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
-| USFS Alien Forest Pest Explorer | operational | not run | 0 | 0 |
+| USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 11 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |

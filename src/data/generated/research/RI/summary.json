@@ -2,99 +2,99 @@
   "schemaVersion": 3,
   "stateCode": "RI",
   "stateName": "Rhode Island",
-  "asOf": "2026-07-16",
-  "generatedAt": "2026-07-16T00:00:00.000Z",
+  "asOf": "2026-07-26",
+  "generatedAt": "2026-07-26T00:00:00.000Z",
   "sourceSnapshotDate": "2026-07-11T20:29:35.732Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "explicit",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/RI.json",
-    "applicabilityAsOf": "2026-07-16",
-    "applicableSpeciesCount": 5,
+    "applicabilityAsOf": "2026-07-25",
+    "applicableSpeciesCount": 18,
     "undeterminedSpeciesPolicy": "excluded",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "summary": {
-    "speciesCount": 5,
+    "speciesCount": 18,
     "countyCount": 5,
-    "totalPairs": 25,
-    "verifiedPresent": 15,
+    "totalPairs": 90,
+    "verifiedPresent": 38,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 10,
+    "researchedUnresolved": 52,
     "notResearched": 0,
-    "determinationCoveragePercent": 60,
+    "determinationCoveragePercent": 42.22,
     "researchCoveragePercent": 100,
-    "explicitOutcomePairCount": 25,
+    "explicitOutcomePairCount": 90,
     "explicitOutcomeCoveragePercent": 100,
     "conflictCount": 0,
-    "evidenceRecordCount": 15,
+    "evidenceRecordCount": 38,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 15,
+    "runEvidenceRecordCount": 38,
     "rejectionRecordCount": 3,
-    "researchRunCount": 5
+    "researchRunCount": 6
   },
   "counties": [
     {
       "countyFips": "44001",
       "name": "Bristol",
-      "verifiedPresent": 1,
+      "verifiedPresent": 5,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 4,
+      "researchedUnresolved": 13,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 5,
+      "explicitOutcomePairs": 18,
       "explicitOutcomeCoveragePercent": 100
     },
     {
       "countyFips": "44003",
       "name": "Kent",
-      "verifiedPresent": 4,
+      "verifiedPresent": 9,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 1,
+      "researchedUnresolved": 9,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 5,
+      "explicitOutcomePairs": 18,
       "explicitOutcomeCoveragePercent": 100
     },
     {
       "countyFips": "44005",
       "name": "Newport",
-      "verifiedPresent": 3,
+      "verifiedPresent": 7,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 2,
+      "researchedUnresolved": 11,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 5,
+      "explicitOutcomePairs": 18,
       "explicitOutcomeCoveragePercent": 100
     },
     {
       "countyFips": "44007",
       "name": "Providence",
-      "verifiedPresent": 2,
+      "verifiedPresent": 7,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 3,
+      "researchedUnresolved": 11,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 5,
+      "explicitOutcomePairs": 18,
       "explicitOutcomeCoveragePercent": 100
     },
     {
       "countyFips": "44009",
       "name": "Washington",
-      "verifiedPresent": 5,
+      "verifiedPresent": 10,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 0,
+      "researchedUnresolved": 8,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 5,
+      "explicitOutcomePairs": 18,
       "explicitOutcomeCoveragePercent": 100
     }
   ],
@@ -235,9 +235,9 @@
       "authority": "USDA Forest Service and Purdue University",
       "tier": "academic",
       "status": "operational",
-      "lastRunAt": null,
-      "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "lastRunAt": "2026-07-26T03:59:30.000Z",
+      "evidencePairCount": 23,
+      "screenedSpeciesCount": 13
     },
     {
       "id": "usfs-fia-invasive-plants",
@@ -392,6 +392,110 @@
   ],
   "queue": [
     {
+      "speciesId": "anarsia-lineatella",
+      "commonName": "Peach twig borer",
+      "scientificName": "Anarsia lineatella",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
+      "speciesId": "aspidiotus-duplex",
+      "commonName": "Camphor scale",
+      "scientificName": "Aspidiotus duplex",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
+      "speciesId": "dryocosmus-kuriphilus",
+      "commonName": "Asian Chestnut Gall Wasp",
+      "scientificName": "Dryocosmus kuriphilus",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
+      "speciesId": "homadaula-albizziae",
+      "commonName": "Mimosa webworm",
+      "scientificName": "Homadaula albizziae",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
+      "speciesId": "icerya-purchasi",
+      "commonName": "Cottony cushion scale",
+      "scientificName": "Icerya purchasi",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
+      "speciesId": "ophiostoma-ulmi",
+      "commonName": "Dutch elm disease",
+      "scientificName": "Ophiostoma ulmi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
+      "speciesId": "phytophthora-cinnamomi",
+      "commonName": "Phytophthora Root Rot",
+      "scientificName": "Phytophthora cinnamomi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
+      "speciesId": "raffaelea-lauricola",
+      "commonName": "Laurel wilt",
+      "scientificName": "Raffaelea lauricola",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 5,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 52
+    },
+    {
       "speciesId": "didemnum-vexillum",
       "commonName": "Sea vomit tunicate",
       "scientificName": "Didemnum vexillum",
@@ -410,6 +514,19 @@
       "researchedUnresolvedCountyCount": 3,
       "missingProtocolSourceIds": [],
       "priorityScore": 30
+    },
+    {
+      "speciesId": "emerald-ash-borer",
+      "commonName": "Emerald Ash Borer",
+      "scientificName": "Agrilus planipennis",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 2,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 22
     },
     {
       "speciesId": "myriophyllum-spicatum",
@@ -440,6 +557,58 @@
       "researchedUnresolvedCountyCount": 1,
       "missingProtocolSourceIds": [],
       "priorityScore": 10
+    },
+    {
+      "speciesId": "cryphonectria-parasitica",
+      "commonName": "Chestnut Blight",
+      "scientificName": "Cryphonectria parasitica",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 2
+    },
+    {
+      "speciesId": "discula-destructiva",
+      "commonName": "Dogwood Anthracnose",
+      "scientificName": "Discula destructiva",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 2
+    },
+    {
+      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
+      "commonName": "Butternut Canker Fungus",
+      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 2
+    },
+    {
+      "speciesId": "popillia-japonica",
+      "commonName": "Japanese Beetle",
+      "scientificName": "Popillia japonica",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "usfs-afpe",
+        "usgs-nas"
+      ],
+      "priorityScore": 2
     }
   ],
   "migrationCandidates": {

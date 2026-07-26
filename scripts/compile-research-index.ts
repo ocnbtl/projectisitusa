@@ -11,7 +11,6 @@ import type {
 import type {
   EvidenceReviewEvent,
   EvidenceAssertion,
-  FreshnessStatus,
   PairDisplayStatus,
   ResearchCountyFile,
   ResearchPairRecord,
@@ -24,6 +23,7 @@ import type {
   ReviewStatus,
 } from "@/lib/research/types";
 import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
+import { evidenceFreshnessStatus } from "@/lib/research/freshness";
 import {
   assertProjectionParity,
   buildCompatibilityMatrix,
@@ -153,35 +153,6 @@ function roundDetailedPercent(value: number) {
 
 function pairKey(countyFips: string, speciesId: string) {
   return `${countyFips}:${speciesId}`;
-}
-
-function dateTimestamp(value: string | undefined) {
-  if (!value) {
-    return undefined;
-  }
-  const yearOnly = /^\d{4}$/.test(value) ? `${value}-01-01` : value;
-  const timestamp = Date.parse(yearOnly);
-  return Number.isNaN(timestamp) ? undefined : timestamp;
-}
-
-function freshnessFor(evidence: EvidenceAssertion[], generatedAt: string): FreshnessStatus {
-  const latest = evidence
-    .flatMap((entry) => [entry.observedAt, entry.reviewedAt, entry.accessedAt])
-    .map(dateTimestamp)
-    .filter((value): value is number => value !== undefined)
-    .sort((left, right) => right - left)[0];
-  const generatedTimestamp = dateTimestamp(generatedAt);
-  if (latest === undefined || generatedTimestamp === undefined) {
-    return "undated";
-  }
-  const ageDays = Math.max(0, (generatedTimestamp - latest) / 86_400_000);
-  if (ageDays <= 365) {
-    return "current";
-  }
-  if (ageDays <= 730) {
-    return "aging";
-  }
-  return "stale";
 }
 
 function writeJson(filepath: string, value: unknown, pretty = false) {
@@ -546,7 +517,7 @@ for (const county of counties) {
           : screenedBySourceIds.length > 0
             ? "source-screened"
             : "not-started",
-      freshnessStatus: freshnessFor(pairEvidence, generatedAt),
+      freshnessStatus: evidenceFreshnessStatus(pairEvidence, generatedAt),
       reviewStatus: pairReviewStatus(pairEvidence),
       conflict,
       evidence: pairEvidence.map((entry) => ({

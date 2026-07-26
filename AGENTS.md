@@ -60,31 +60,35 @@ Report research coverage separately from determination coverage.
 - Research completion does not create a determination.
 - Survey non-detection does not erase verified presence. The separate survey axis preserves both facts.
 
-The Alabama compiler and public parity checkpoint verified on 2026-07-15 is:
+The Alabama compiler and public parity checkpoint verified with explicit as-of `2026-07-26` is:
 
 - `2504` species x `67` counties = `167768` county-species pairs
 - `15293` verified present
 - `0` verified absent
 - `8` not detected
-- `95420` researched unresolved
-- `57047` not researched
-- `30640` evidence records
+- `95615` researched unresolved
+- `56852` not researched
+- `30813` evidence records
 - `1440` rejections
-- `312` raw pair outcomes across `176` distinct pairs
-- `31` research runs, including `16` immutable source runs
+- `1183` raw pair outcomes across `1047` distinct pairs
+- `32` research runs, including `17` immutable source runs
 - all `312` dated migration source assertions across `176` distinct pairs have completed source screens
 - research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on reviewed presence
 
-The national geography and bounded pilot projection checkpoint verified on 2026-07-15 is:
+The national projection checkpoint verified with explicit as-of `2026-07-26` is:
 
 - `51` configured v1 state or district jurisdictions with `3144` current county equivalents
 - Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is not accepted as current scope
 - Connecticut uses `9` current planning regions; its `8` former counties are retained only as retired geography lineage
-- bounded research projections exist for Alabama, Alaska, Arizona, and Arkansas
+- deterministic research projections exist for all `51` jurisdictions; Alabama is compatibility-authoritative and the other `50` remain research-only
 - Alaska, Arizona, and Arkansas remain research-only, but the committed USGS NAS v1.344 pilot now contributes `32` reviewed present determinations and `65` researched-unresolved pairs across those projections
 - the single national archive contains `721752` rows; the three pilot partitions selected `4609` candidates, emitted `32` assertions and reviews, `13` grouped rejection events, `120` outcomes, and `23` honest blocked outcomes
-- Alaska compiles to `10` present and `20` blocked pilot outcomes, Arkansas to `10` present plus `65` researched-unresolved pairs, and Arizona to `12` present and `3` blocked pilot outcomes
-- all three state projections are byte-stable and did not modify compatibility, `presence.json`, or `explorer-presence.json`
+- the retained AFPE v1.0 CC0 archive was acquired once and partitioned across all `51` jurisdictions for `13` reviewed taxa, producing `40872` outcomes, `7642` reviewed assertions, `32983` no-qualifying-evidence outcomes, `247` blocked outcomes, and `481` rejection events
+- national totals are `3407` state-species entries and `223326` county-species pairs: `26569` verified present, `0` verified absent, `8` not detected, `139185` researched unresolved, and `57564` not researched
+- the AFPE net change from the pre-source checkpoint is `40001` pairs, `7469` verified present, `32480` researched unresolved, `52` not researched, `7642` evidence records, and `0` conflicts
+- all `51` state projections are byte-stable; compatibility publication remains limited to Alabama
+- configured applicability classification covers all `51` jurisdictions, with `0` unclassified jurisdictions; this does not mean full-catalog applicability or completed research
+- protocol cells total `26911`: `16299` applicable, `10612` not applicable, `848` complete, `15392` incomplete, and `59` blocked
 - the centralized pilot did not by itself authorize broad dispatch; the later frozen skill recovery and accepted worker integrations now govern dispatch authority
 - explicit protocol cells remain separate from determination and source-screen coverage
 
@@ -108,7 +112,7 @@ npm run check:data-integrity
 npm run check:research-integrity
 npm run check:state-research-projections
 npm run check:national-research-config
-npm run build:national-readiness -- --as-of 2026-07-15
+npm run build:national-readiness -- --as-of <YYYY-MM-DD>
 npm run typecheck
 npm run build
 ```
