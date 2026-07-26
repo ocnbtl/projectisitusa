@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "acquisition_id": "20240328__usfs-afpe-v1-0__ca1988d2f900",
+  "status": "complete",
+  "started_at": "2026-07-26T03:57:50.000Z",
+  "finished_at": "2026-07-26T03:59:34.102Z",
+  "actor_type": "adapter",
+  "actor_id": "usfs-afpe-national-acquisition@1.0.0",
+  "source_id": "usfs-afpe",
+  "code_commit": "2477799c9a4fda7b7f94a3dfbbdc4a747393d817",
+  "input_hashes": {
+    "scripts/research/adapters/usfs-afpe-archive.ts": "b5593d52b227b962044aec4b8078b089cb35bf494e83b8a65dfb1ce13667b3d6",
+    "scripts/research/national-usfs-afpe-common.ts": "001b95312a894d0bad79d983e032102685c42e9e4ff042fcb807cce3e5a6c4f9",
+    "scripts/research/run-national-usfs-afpe-acquisition.ts": "558d033c8f6112a3eb851b5089b8d756aae1b46d9f0988578c01f810d3b10887",
+    "src/data/research/schemas/national-usfs-afpe-acquisition-receipt.schema.json": "be2c0175cb2cc4e360ce48b80c33fb6074b6b510b2f9f788766b134b8fe6e345",
+    "src/data/research/source-mappings/usfs-afpe-v1.json": "e7ab66984210cb4d26bb2e574c2b6e69b6b8cce6dfb683a87c6bcd9deea5b0ef",
+    "src/data/research/source-registry.json": "c0123643d9b311a075f38d3a54b46e47106e88e1c9eb1320879cb4df59fabfb9"
+  },
+  "parameter_hash": "e9f34cde5e58d2c6db82381d199979f163d015aea47c59d10d925168acb5fa0f",
+  "parameters": {
+    "archiveVersion": "1.0",
+    "archiveUrl": "https://purr.purdue.edu/publications/4479/serve/1?render=archive",
+    "publicationUrl": "https://purr.purdue.edu/publications/4479/1",
+    "doiUrl": "https://doi.org/10.4231/HWQF-V087",
+    "artifactBudgetBytes": 16777216
+  },
+  "upstream_requests": [
+    {
+      "url": "https://purr.purdue.edu/publications/4479/serve/1?render=archive",
+      "response_url": "https://purr.purdue.edu/publications/4479/serve/1?render=archive",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-07-26T03:59:33.378Z",
+      "bytes_received": 5396559,
+      "range_start": 0,
+      "content_range": null,
+      "content_length": 5396559,
+      "attempt": 1,
+      "etag": null,
+      "last_modified": null
+    }
+  ],
+  "artifact": {
+    "path": "src/data/research/national-acquisitions/20240328__usfs-afpe-v1-0__ca1988d2f900/artifacts/usfs-afpe-v1.0.zip",
+    "sha256": "ca1988d2f900a71ff5efab2b32642f757d64189c4bd0dd2dbdda98a6cf222383",
+    "bytes": 5396559,
+    "media_type": "application/zip"
+  },
+  "archive": {
+    "title": "Alien Forest Pest Detection by Counties in US",
+    "version": "1.0",
+    "publication_date": "2024-03-28",
+    "archived_at": "2024-04-29",
+    "source_data_last_updated": "2023-04",
+    "license": "CC0-1.0",
+    "doi": "10.4231/HWQF-V087",
+    "record_count": 3221,
+    "pest_column_count": 93,
+    "entry_names": [
+      "10_4231_HWQF-V087/AFPE_PEST_2023_counties.csv",
+      "10_4231_HWQF-V087/AFPE_PEST_2023_counties_data_dictionary.csv",
+      "10_4231_HWQF-V087/gallery/AFPE_about-82058.PNG",
+      "10_4231_HWQF-V087/gallery/AFPE_countymap-82059.PNG",
+      "10_4231_HWQF-V087/hubREADME.txt"
+    ],
+    "county_csv": {
+      "path": "10_4231_HWQF-V087/AFPE_PEST_2023_counties.csv",
+      "sha256": "8df95f50028b4dfe3880c9cfb71ae4fbc5d691287703eb504382582d20f0f8fc",
+      "bytes": 1092467
+    },
+    "dictionary_csv": {
+      "path": "10_4231_HWQF-V087/AFPE_PEST_2023_counties_data_dictionary.csv",
+      "sha256": "8444b4560943fa54ea7fe20d96b131ee12fa6d9e054756448049beb8e8fa29a4",
+      "bytes": 3137
+    }
+  },
+  "source_verification": {
+    "publisher": "Purdue University Research Repository, USDA Forest Service Northern Research Station, and Forest Health Protection",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+    "geography_policy": "Only exact five-digit source FIPS matching one active national-v1 county equivalent may publish. Retired, abolished, superseded, missing, and out-of-scope FIPS are never reassigned automatically.",
+    "taxon_policy": "Only the 13 hash-pinned, manually reviewed DCA-column mappings may publish. The remaining common-name-only columns are not automatically mapped.",
+    "positive_semantics": "A binary value of 1 supports recorded-present historical county detection evidence only.",
+    "negative_semantics": "A binary value of 0 may complete an applicable source screen as no-qualifying-evidence. It never supports verified absence or survey non-detection.",
+    "freshness_status": "stale-historical",
+    "snapshot_completeness": "The archive is complete for the published v1.0 bundle but is missing 19 current national-v1 county equivalents and is not a current pest inventory.",
+    "known_contradictions": [
+      "PURR metadata describes 74 insects plus 15 pathogens, or 89 pests, while the published CSV and dictionary contain 93 DCA pest columns.",
+      "The current online AFPE v2 application is newer and volatile, but it has no equivalent CC0 snapshot manifest and was not substituted for this archive."
+    ]
+  },
+  "counts": {
+    "upstream_requests": 1,
+    "artifacts": 1,
+    "records": 3221,
+    "pest_cells": 299553,
+    "zero_cells": 280805,
+    "one_cells": 18748,
+    "transient_failures": 0,
+    "resumed_bytes": 0
+  },
+  "errors": [],
+  "warnings": [
+    "AFPE v1.0 underlying pest data was last updated in April 2023 and is stale for current-source readiness.",
+    "Values of 0 support research-only no-qualifying outcomes, never absence or non-detection.",
+    "Nineteen current national-v1 county equivalents are absent from the published archive and must remain blocked."
+  ],
+  "rerun_command": "npm run research:acquire:usfs-afpe-national -- --version 1.0 --started-at 2026-07-26T03:57:50.000Z"
+}
