@@ -15,6 +15,7 @@ import path from "node:path";
 
 import {
   FIA_ACQUISITION_ACTOR,
+  FIA_ACCEPT_HEADER,
   FIA_ARTIFACT_BUDGET_BYTES,
   FIA_DATAMART_URL,
   FIA_REFERENCE_FILES,
@@ -203,7 +204,7 @@ async function acquireFile(input: {
     try {
       const response = await fetch(url, {
         headers: {
-          Accept: "text/csv",
+          Accept: FIA_ACCEPT_HEADER,
           ...(rangeStart > 0 ? { Range: `bytes=${rangeStart}-` } : {}),
           "User-Agent": "Project-Isitusa/1.0 (national evidence acquisition)",
         },
@@ -325,7 +326,7 @@ async function verifyDcNotApplicable(
   try {
     const response = await fetch(url, {
       headers: {
-        Accept: "text/csv",
+        Accept: FIA_ACCEPT_HEADER,
         "User-Agent": "Project-Isitusa/1.0 (national evidence acquisition)",
       },
       redirect: "follow",

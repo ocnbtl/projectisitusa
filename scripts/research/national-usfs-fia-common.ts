@@ -41,6 +41,8 @@ export const FIA_DATA_ROOT =
 export const FIA_TERMS_URL =
   "https://research.fs.usda.gov/products/dataandtools" as const;
 export const FIA_ARTIFACT_BUDGET_BYTES = 134_217_728 as const;
+export const FIA_ACCEPT_HEADER =
+  "text/csv, application/octet-stream;q=0.9, */*;q=0.8";
 export const FIA_STATE_CODES = [
   "AK",
   "AL",

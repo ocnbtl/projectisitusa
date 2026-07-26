@@ -4,11 +4,20 @@ import {
   type FiaTaxonMapping,
 } from "./research/adapters/usfs-fia-invasive-plants";
 
-import type { FiaObservationRow } from "./research/national-usfs-fia-common";
+import {
+  FIA_ACCEPT_HEADER,
+  type FiaObservationRow,
+} from "./research/national-usfs-fia-common";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
+
+assert(
+  FIA_ACCEPT_HEADER.includes("application/octet-stream") &&
+    FIA_ACCEPT_HEADER.includes("*/*"),
+  "FIA acquisition must accept the DataMart octet-stream CSV delivery.",
+);
 
 const completedAt = "2026-07-26T15:00:00.000Z";
 const mapping: FiaTaxonMapping = {
