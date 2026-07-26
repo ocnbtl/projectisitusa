@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-fia-canary-co-20260726-r1-1",
+  "jobId": "fia-canary-co-20260726-r1",
+  "leaseId": "lease-fia-canary-co-20260726-r1-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-26T13:32:00Z",
+  "workerCommit": "c07c5b3f33b2594253abb0af48337189e1d1fae2",
+  "workerBranchHead": "605bf88d2af3fbdab2e4f0ca1ac1a406872af914",
+  "manifestHash": "9d087189e9aa3b8d91070b511559ebc5b4013516f90d6e704952cd42c002451e",
+  "changedPaths": [
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/artifacts/national-acquisition-reference.json",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/assertions.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/manifest.json",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/outcomes.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/receipt.json",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/rejections.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/reviews.ndjson",
+    "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /private/tmp/fia-canary-co-lease.json --manifest /private/tmp/isitusa-fia-canary-co-r1/src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__a1f620d56746/manifest.json --repo /private/tmp/isitusa-fia-canary-co-r1",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "repeat frozen worker manifest validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git -C /private/tmp/isitusa-fia-canary-co-r1 diff --check 6c2bde115499ecb4144c514841b130d00c8c4578...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact eight-file permitted-path diff review",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently reproduced deterministic frozen validation, reviewed the exact two-commit diff, confirmed all eight changed files are inside the leased run path, and found complete source screening with no unsupported negative evidence."
+}
