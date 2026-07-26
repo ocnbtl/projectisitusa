@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "jobId": "fia-canary-ak-20260726-r1",
+  "leaseId": "lease-fia-canary-ak-20260726-r1-1",
+  "status": "partial",
+  "branch": "codex/fia-canary-ak-20260726-r1",
+  "worktree": "/private/tmp/isitusa-fia-canary-ak-r1",
+  "baseSha": "6c2bde115499ecb4144c514841b130d00c8c4578",
+  "commitSha": "1598378c990b51c04c21b54f06e3fb5b3952d227",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "usfs-fia-invasive-plants",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AK",
+    "mode": "national-snapshot-replay",
+    "nationalAcquisitionId": "20260726__usfs-fia-invasive-plants__d900318e6b0e",
+    "nationalAcquisitionReceiptSha256": "5457cd80b04902be5cd1cf1df94e60de847fbfc19990822e48712e4446d4c93b",
+    "snapshotDate": "2026-07-26",
+    "stateArtifactSha256": "054a693627d5798f216ae3200ec5fbea76747554382e57b1c5d2f289d27327e7",
+    "invasiveReferenceSha256": "0f63386d2a7acb83339bbf640ba4ebb82ea804a2f6f26959cc4d84518b6c3b08",
+    "plantDictionarySha256": "840c6ea87a88ba5cdb5561fdc508f86454e8124c2a389d710218843172452388",
+    "candidateLimit": 30,
+    "candidatePairs": [
+      "02013:plantago-major",
+      "02016:plantago-major",
+      "02020:plantago-major",
+      "02050:plantago-major",
+      "02060:plantago-major",
+      "02063:plantago-major",
+      "02066:plantago-major",
+      "02068:plantago-major",
+      "02070:plantago-major",
+      "02090:plantago-major",
+      "02100:plantago-major",
+      "02105:plantago-major",
+      "02110:plantago-major",
+      "02122:plantago-major",
+      "02130:plantago-major",
+      "02150:plantago-major",
+      "02158:plantago-major",
+      "02164:plantago-major",
+      "02170:plantago-major",
+      "02180:plantago-major",
+      "02185:plantago-major",
+      "02188:plantago-major",
+      "02195:plantago-major",
+      "02198:plantago-major",
+      "02220:plantago-major",
+      "02230:plantago-major",
+      "02240:plantago-major",
+      "02275:plantago-major",
+      "02282:plantago-major",
+      "02290:plantago-major"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/artifacts/national-acquisition-reference.json",
+      "sha256": "15ca323d62ce4fe2807cb059650852e99a617443fe6748128e464dbacac05c59",
+      "bytes": 3074
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/assertions.ndjson",
+      "count": 5
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/reviews.ndjson",
+      "count": 5
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/rejections.ndjson",
+      "count": 2
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/outcomes.ndjson",
+      "count": 30
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/receipt.json",
+    "sha256": "68509e485d5401d274c06bb310b6ebb3047aaa3e58df39b599f43a41b2310d40",
+    "bytes": 6853
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/source-verification.json",
+    "sha256": "40f5d7444d0d412a33f175e96c448249965ce5915b1ff615cd63597f49d32764",
+    "bytes": 3323
+  },
+  "blockedItems": [
+    {
+      "pairKey": "02013:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02016:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02050:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02060:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02063:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02066:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02070:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02090:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02100:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02105:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02110:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02130:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02150:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02158:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02164:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02180:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02185:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02188:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02195:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02198:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02220:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02230:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02240:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02275:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    },
+    {
+      "pairKey": "02290:plantago-major",
+      "reasonCode": "unresolved-retired-county-geography"
+    }
+  ],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 1,
+      "retainedArtifactBytes": 3074,
+      "sourceRequests": 0,
+      "providerCandidates": 128,
+      "assertionEvents": 5,
+      "publicationEligibleAssertions": 5,
+      "reviewEvents": 5,
+      "rejectionRecords": 2,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 30,
+      "completeOutcomePairs": 5,
+      "evidenceFoundOutcomes": 5,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 1,
+      "retainedArtifactBytes": 3074,
+      "sourceRequests": 0,
+      "providerCandidates": 128,
+      "assertionEvents": 5,
+      "publicationEligibleAssertions": 5,
+      "reviewEvents": 5,
+      "rejectionRecords": 2,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 30,
+      "completeOutcomePairs": 5,
+      "evidenceFoundOutcomes": 5,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /private/tmp/fia-canary-ak-lease.json --repo /private/tmp/isitusa-fia-canary-ak-r1",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "npm run research:partition:usfs-fia-national -- --acquisition 20260726__usfs-fia-invasive-plants__d900318e6b0e --states AK --species plantago-major --recorded-at 2026-07-26T13:16:07Z",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 6c2bde115499ecb4144c514841b130d00c8c4578...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /private/tmp/fia-canary-ak-lease.json --manifest src/data/research/runs/20260726T131607000Z__usfs-fia-invasive-plants__9ed38a4cb2cc/manifest.json --repo /private/tmp/isitusa-fia-canary-ak-r1",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "none"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [
+    {
+      "proposal": "Evaluate a separately approved deterministic Alaska retired-county policy for FIA county codes 02232 and 02280.",
+      "reason": "The retained positive candidates cannot be assigned safely under the current active-county-only policy."
+    }
+  ],
+  "performance": {
+    "wallSeconds": 10,
+    "peakMemoryMb": 0,
+    "validPairsScreened": 5,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}

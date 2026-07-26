@@ -1444,7 +1444,7 @@
       "leaseId": "lease-fia-canary-ak-20260726-r1-1",
       "jobId": "fia-canary-ak-20260726-r1",
       "attempt": 1,
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-26T13:21:00Z",
       "expiresAt": "2026-07-27T13:17:00Z",
       "workerTaskId": "/root/fia_canary_ak",
@@ -1572,13 +1572,22 @@
         "preserve source silence as researched unresolved and invalid geography as blocked",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 6c2bde115499ecb4144c514841b130d00c8c4578...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-26T13:28:00Z",
+      "resultManifest": {
+        "path": "manifests/fia-canary-ak-20260726-r1__lease-fia-canary-ak-20260726-r1-1.json",
+        "sha256": "9880095faa65077956aa39263c8d3eaed322d99bd4643f92ac53413daa7fa1c0",
+        "bytes": 10207,
+        "status": "partial",
+        "workerCommit": "1598378c990b51c04c21b54f06e3fb5b3952d227",
+        "workerBranchHead": "73188efca5a11aeb27903c22d1fcfa8c3d1f8635"
+      }
     },
     {
       "leaseId": "lease-fia-canary-co-20260726-r1-1",
       "jobId": "fia-canary-co-20260726-r1",
       "attempt": 1,
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-26T13:21:01Z",
       "expiresAt": "2026-07-27T13:17:00Z",
       "workerTaskId": "/root/fia_canary_co",
@@ -1740,7 +1749,16 @@
         "preserve source silence as researched unresolved",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 6c2bde115499ecb4144c514841b130d00c8c4578...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-26T13:28:01Z",
+      "resultManifest": {
+        "path": "manifests/fia-canary-co-20260726-r1__lease-fia-canary-co-20260726-r1-1.json",
+        "sha256": "9d087189e9aa3b8d91070b511559ebc5b4013516f90d6e704952cd42c002451e",
+        "bytes": 8390,
+        "status": "complete",
+        "workerCommit": "c07c5b3f33b2594253abb0af48337189e1d1fae2",
+        "workerBranchHead": "605bf88d2af3fbdab2e4f0ca1ac1a406872af914"
+      }
     }
   ]
 }
