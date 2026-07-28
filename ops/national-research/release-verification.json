@@ -368,6 +368,91 @@
         }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, Vercel, live routes, and selected live bytes were verified. It does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-b65a6c0a-2026-07-28",
+      "verifiedAt": "2026-07-28T08:43:15Z",
+      "commitSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
+      "githubMainSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
+      "githubDeploymentId": 5636675630,
+      "vercelDeploymentId": "dpl_85F7uddAE19hAdQjzjdtCXbaVHBK",
+      "vercelDeploymentUrl": "projectisitusa-n1pcvxk5f-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AL/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AL/counties/01003.json",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "03077f572eb748b3d7c0a49111aa4b67e6d28a7b9e7ac8330422630583ddc51c"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "3c48d18bebd56f1f8350671b7fea93909409c85a4f79ff632a5ae77ac78fa74c"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "35692c058d109e2034751187212599fb47f43540f95dba1acacbca44d7a2b11d"
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "14d8440ec831c3670c9001b2bb485b9db0385bac2d245a943129ff6bb43e7c6b"
+        },
+        {
+          "path": "/generated/research/AL/counties/01003.json",
+          "sha256": "587ca36972fe6aadcddc0c04f5c88fd9275dab99970f00464a96a5dda3ca537a"
+        }
+      ],
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, Vercel, live routes, selected live bytes, and desktop and mobile browser behavior were verified. It does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
