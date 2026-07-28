@@ -64327,7 +64327,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_bulk_r2_002",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-28T07:25:00Z",
       "expiresAt": "2026-07-29T07:25:00.000Z",
       "recoveryAt": null,
@@ -67876,7 +67876,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 67148882b1980876a999ba7722c8598f5b70f3b7...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-28T06:43:01Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260728-r2-al-015__lease-gbif-bulk-20260728-r2-al-015-1.json",
+        "sha256": "02bf560b2bffe5a3593335141a9c8a8afc4c081a7bb3dbbf14c00e03bfc8073b",
+        "bytes": 150662,
+        "status": "partial",
+        "workerCommit": "aa5e41feb45b3bc97fc2988d78eec7f43e88f1b8",
+        "workerBranchHead": "edf51157fc859c9139d68d3cd362589fd2d7e864"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260728-r2-ar-001-1",
@@ -67884,7 +67893,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/state_lists_wave_1",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-28T07:27:00Z",
       "expiresAt": "2026-07-29T07:27:00.000Z",
       "recoveryAt": null,
@@ -71833,7 +71842,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 67148882b1980876a999ba7722c8598f5b70f3b7...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-28T06:43:00Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260728-r2-ar-001__lease-gbif-bulk-20260728-r2-ar-001-1.json",
+        "sha256": "eb0eb2544ed430e4eacdcb5a90f1d6dc7b2c7d8dad7ae1f3ec1b4cd59542393c",
+        "bytes": 165047,
+        "status": "complete",
+        "workerCommit": "564c3d4419b7bf2a40baabfde9882210a64006fb",
+        "workerBranchHead": "e0363b08b8e1937663e66bdfcee8afc858638cda"
+      }
     }
   ]
 }
