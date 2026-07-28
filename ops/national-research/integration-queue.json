@@ -1143,7 +1143,7 @@
       "queueId": "queue-lease-gbif-bulk-ar-20260728-r1-001-1",
       "jobId": "gbif-bulk-ar-20260728-r1-001",
       "leaseId": "lease-gbif-bulk-ar-20260728-r1-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-28T04:30:00Z",
       "manifestPath": "manifests/gbif-bulk-ar-20260728-r1-001__lease-gbif-bulk-ar-20260728-r1-001-1.json",
       "manifestHash": "ee00f3ed1bd7b08ab52200b3ed83b74383c83d00c5a5af63f467e0da2967351e",
@@ -1198,6 +1198,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-ar-20260728-r1-001-1.json",
         "sha256": "c4c5a4b2f13bfaeb400bf86d566fac02def76d7fb042d58dc8399a7cb1ed2ca3",
         "bytes": 3802
+      },
+      "integratedAt": "2026-07-28T04:40:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "9f8905211b64f3102612d87b359f7d3f78783d91",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 375 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed Arkansas statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 375 complete county outcomes, 484 accepted assertions and reviews, 102 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-ar-20260728-r1-001-1.json",
+        "sha256": "78dbe222d673f847847627a6e75dd4bd8af2fc0741fbb4a7e9c5028851318436",
+        "bytes": 3868
       }
     }
   ]
