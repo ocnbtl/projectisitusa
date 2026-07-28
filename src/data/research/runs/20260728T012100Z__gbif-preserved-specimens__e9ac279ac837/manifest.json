@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-canary-ar-agrostemma-05119-20260728-r1",
+  "leaseId": "lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2",
+  "status": "complete",
+  "branch": "codex/gbif-canary-ar-agrostemma-05119-20260728-r1",
+  "worktree": "/private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1",
+  "baseSha": "a278d64a57981fe974df9bf3130eb4636f56c629",
+  "commitSha": "0caa3e13553a0443f16c0dd7f26bcb10ee02d307",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AR",
+    "stateProvince": "Arkansas",
+    "candidateFile": "ops/national-research/inputs/gbif-canary-ar-agrostemma-githago-05119.json",
+    "outputRoot": "src/data/research/runs",
+    "startedAt": "2026-07-28T01:21:00.000Z",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "05119:agrostemma-githago"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300,
+    "geographyPolicyApproved": false,
+    "geographyPolicy": "Provider county-equivalent text only; coordinate routing is forbidden."
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/artifacts/gbif-occurrences-agrostemma-githago-000000.json",
+      "sha256": "ac072b393dd8c98b5c20ed56bca5e057b3552c9417be9952bcbae72682850aa1",
+      "bytes": 279655
+    },
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/artifacts/gbif-species-match-agrostemma-githago.json",
+      "sha256": "f9c5c1c5918c6d3ddb19eb2a598d41a9480cfcc194ba96e4fb5a5a4cf7e9cf29",
+      "bytes": 465
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/assertions.ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/reviews.ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/rejections.ndjson",
+      "count": 6
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/outcomes.ndjson",
+      "count": 1
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/receipt.json",
+    "sha256": "f718bbac5478175d257aeefc0328674d7dd37ae4682ba47d879cd4ab8f3ee6d8",
+    "bytes": 4545
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/source-verification.json",
+    "sha256": "8382e822c8f072882eac2e85b4cff0cc589be6aaae33583dbbd47580d2bec78a",
+    "bytes": 5456
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 280120,
+      "sourceRequests": 2,
+      "providerCandidates": 43,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 6,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 1,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 280120,
+      "sourceRequests": 2,
+      "providerCandidates": 43,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 6,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 1,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease /Users/ocean/Code/Project Isitusa/ops/national-research/leases.json --lease-id lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2 --repo /private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1 --now 2026-07-28T01:32:02Z",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --import '/Users/ocean/Code/Project Isitusa/node_modules/tsx/dist/loader.mjs' scripts/research/run-source.ts --source gbif-preserved-specimens --state AR --candidate-file ops/national-research/inputs/gbif-canary-ar-agrostemma-githago-05119.json --output-root src/data/research/runs --pairs 05119:agrostemma-githago --started-at 2026-07-28T01:21:00.000Z",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --import '/Users/ocean/Code/Project Isitusa/node_modules/tsx/dist/loader.mjs' scripts/research/validate-immutable-run.ts --repository-root /private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1 --validation-root /private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1 --run-directory /private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1/src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837 --source-verification /private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1/src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/source-verification.json --run-id 20260728T012100Z__gbif-preserved-specimens__e9ac279ac837 --source-id gbif-preserved-specimens --state-code AR --pair-keys 05119:agrostemma-githago --code-commit a278d64a57981fe974df9bf3130eb4636f56c629 --worker-task-id /root/gbif_canary_ar",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check a278d64a57981fe974df9bf3130eb4636f56c629...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease /Users/ocean/Code/Project Isitusa/ops/national-research/leases.json --lease-id lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2 --manifest src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/manifest.json --repo /private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 2,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "previousLeaseId": "lease-gbif-canary-ar-agrostemma-05119-20260728-r1-1",
+    "recoveryReason": "Attempt 1 used a frozen started-at later than the host clock, so canonical receipt validation rejected finished-at before started-at without retaining files.",
+    "approvalAttempts": [
+      {
+        "attempt": 1,
+        "status": "rejected",
+        "retainedFiles": 0,
+        "notes": "The approval reviewer rejected direct external GBIF execution in the worker runtime."
+      },
+      {
+        "attempt": 2,
+        "status": "rejected",
+        "retainedFiles": 0,
+        "notes": "The approval reviewer again rejected the same direct canonical execution after explicit user authorization was relayed."
+      }
+    ],
+    "completedExecution": {
+      "executor": "MAIN",
+      "command": "exact lease-authorized canonical runner",
+      "status": "complete",
+      "sourceErrors": 0,
+      "retainedRun": true
+    }
+  },
+  "retryHistory": [
+    {
+      "leaseAttempt": 1,
+      "outcome": "clock-ordering-failure",
+      "retainedFiles": 0,
+      "scopeComplete": false
+    },
+    {
+      "leaseAttempt": 2,
+      "stage": "worker-network-runtime",
+      "outcome": "restricted-runtime-unavailable",
+      "retainedFiles": 0,
+      "scopeComplete": false,
+      "notes": "An artifact-free partial run was removed before the direct authorized retry. No provider status or source error was retained."
+    },
+    {
+      "leaseAttempt": 2,
+      "stage": "external-approval",
+      "approvalAttempt": 1,
+      "outcome": "rejected",
+      "retainedFiles": 0
+    },
+    {
+      "leaseAttempt": 2,
+      "stage": "external-approval",
+      "approvalAttempt": 2,
+      "outcome": "rejected",
+      "retainedFiles": 0
+    },
+    {
+      "leaseAttempt": 2,
+      "stage": "canonical-acquisition",
+      "executor": "MAIN",
+      "outcome": "complete",
+      "exitCode": 0,
+      "upstreamStatuses": [
+        200,
+        200
+      ],
+      "retainedArtifacts": 2,
+      "scopeComplete": true
+    }
+  ],
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 8,
+    "peakMemoryMb": 0,
+    "validPairsScreened": 1,
+    "manualInterventions": 1,
+    "peakMemoryMeasurement": "Not captured by MAIN execution; zero is the schema sentinel and not an observed memory measurement.",
+    "manualInterventionNotes": [
+      "MAIN executed the exact canonical runner once after the worker approval gate rejected direct external execution."
+    ]
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  },
+  "violations": [],
+  "unexpectedBehavior": [
+    "The worker approval gate rejected the same direct lease-authorized external command twice, so MAIN executed it once in the assigned clean worktree."
+  ]
+}
