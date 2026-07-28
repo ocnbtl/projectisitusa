@@ -35805,7 +35805,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_bulk_r2_002",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-28T06:03:48Z",
       "expiresAt": "2026-07-29T06:03:48.000Z",
       "recoveryAt": null,
@@ -39348,7 +39348,16 @@
         "reuse the committed canonical immutable run content without provider reacquisition or evidence-byte changes",
         "validate the exact receipt-ordered pair keys and runner-authentic parameter hash",
         "archive the truthful partial result and its 67 strict-taxonomy blockers"
-      ]
+      ],
+      "transitionedAt": "2026-07-28T06:07:07Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260728-r2-al-007-recovery2__lease-gbif-bulk-20260728-r2-al-007-recovery2-1.json",
+        "sha256": "6e30b1efa79766632c9b675860f8f88a85fbaad94493090cdc6c9cb542be2e13",
+        "bytes": 156767,
+        "status": "partial",
+        "workerCommit": "bb25b04159afc146578ca56b0b17db62547f2a20",
+        "workerBranchHead": "493fa45ebe6e137dbc5ed9faa4c74283163d8f86"
+      }
     }
   ]
 }
