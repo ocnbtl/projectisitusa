@@ -1,4 +1,5 @@
 import path from "node:path";
+import { gunzipSync } from "node:zlib";
 
 import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type { ImmutableResearchRunReceipt } from "@/lib/research/types";
@@ -36,10 +37,20 @@ function parseArtifact(
   artifacts: SourceAdapterResult["artifacts"],
   filename: string,
 ): Record<string, unknown> | null {
-  const artifact = artifacts.find((entry) => entry.filename === filename);
+  const artifact = artifacts.find(
+    (entry) =>
+      entry.filename === filename ||
+      entry.filename === `${filename}.gz`,
+  );
   if (!artifact) return null;
   try {
-    const parsed = JSON.parse(artifact.contents) as unknown;
+    const bytes = Buffer.isBuffer(artifact.contents)
+      ? artifact.contents
+      : Buffer.from(artifact.contents);
+    const contents = artifact.filename.endsWith(".gz")
+      ? gunzipSync(bytes).toString("utf8")
+      : bytes.toString("utf8");
+    const parsed = JSON.parse(contents) as unknown;
     return parsed && typeof parsed === "object" && !Array.isArray(parsed)
       ? parsed as Record<string, unknown>
       : null;

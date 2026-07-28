@@ -15,10 +15,10 @@ Generated: `2026-07-28T00:00:00.000Z`
 - Determination coverage: `0.06%`
 - Research coverage: `1.84%`
 - Explicit outcome coverage: `1.8424%`
-- Applicable protocol cells: `63`
+- Applicable protocol cells: `98`
 - Current complete protocol cells: `5`
-- Protocol completion: `7.94%`
-- Current protocol completion: `7.94%`
+- Protocol completion: `5.10%`
+- Current protocol completion: `5.10%`
 - Evidence records: `50`
 - Research runs: `11`
 - Rejection records: `440`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 30 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 30 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 30 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 30 | 0 | 1 |
 | Wild oat (`avena-fatua`) | plants | 30 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 30 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 30 | 0 | 1 |
 | Brown mustard (`brassica-juncea`) | plants | 30 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 30 | 0 | 1 |
 | Field Bindweed (`convolvulus-arvensis`) | plants | 30 | 0 | 1 |
+| Common crupina (`crupina-vulgaris`) | plants | 30 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 30 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 30 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 30 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 30 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 30 | 0 | 1 |
 | Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 30 | 0 | 1 |
-| Annual Bluegrass (`poa-annua`) | plants | 30 | 0 | 1 |
-| Wild radish (`raphanus-raphanistrum`) | plants | 30 | 0 | 1 |
-| Charlock mustard (`sinapis-arvensis`) | plants | 30 | 0 | 1 |
-| Bird Vetch (`vicia-cracca`) | plants | 30 | 0 | 1 |
-| Shepherd's Purse (`capsella-bursa-pastoris`) | plants | 30 | 0 | 0 |
-| Austrian yellowcress (`rorippa-austriaca`) | plants | 29 | 1 | 1 |
-| Spruce Aphid (`elatobium-abietinum`) | insects | 29 | 0 | 1 |
-| Creeping Buttercup (`ranunculus-repens`) | plants | 29 | 0 | 1 |
-| Common Plantain (`plantago-major`) | plants | 25 | 0 | 1 |
-| True forget-me-not (`myosotis-scorpioides`) | plants | 20 | 0 | 2 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 8 | 22 | 2 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 8 | 22 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 8 | 22 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 8 | 22 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 8 | 22 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 8 | 22 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 8 | 22 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 8 | 22 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 8 | 22 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 8 | 22 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 8 | 22 | 2 |
+| Hydrilla (`hydrilla`) | plants | 30 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 30 | 0 | 1 |
+| Cogongrass (`imperata-cylindrica`) | plants | 30 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 30 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 30 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 30 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 30 | 0 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 30 | 0 | 1 |
 
 ## Source Operations
 

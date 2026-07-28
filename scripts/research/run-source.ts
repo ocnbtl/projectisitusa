@@ -216,13 +216,13 @@ function asNdjson(values: unknown[]) {
 
 function fileReference(
   relativePath: string,
-  contents: string,
+  contents: string | Buffer,
   mediaType: string,
 ): ResearchRunFileReference {
   return {
     path: relativePath,
     sha256: sha256(contents),
-    bytes: Buffer.byteLength(contents),
+    bytes: Buffer.isBuffer(contents) ? contents.length : Buffer.byteLength(contents),
     media_type: mediaType,
   };
 }

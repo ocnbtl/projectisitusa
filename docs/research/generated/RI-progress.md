@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 5 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 5 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 5 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 5 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 5 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 5 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 5 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 1 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 5 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 5 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 5 | 0 |
-| Common Barberry (`berberis-vulgaris`) | plants | 0 | 5 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 5 | 0 |
-| Canada Thistle (`cirsium-arvense`) | plants | 0 | 5 | 0 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 5 | 0 |
-| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 5 | 0 |
-| English Ivy (`hedera-helix`) | plants | 0 | 5 | 0 |
-| Dames rocket (`hesperis-matronalis`) | plants | 0 | 5 | 0 |
-| European Privet (`ligustrum-vulgare`) | plants | 0 | 5 | 0 |
-| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 5 | 0 |
-| Amur Honeysuckle (`lonicera-maackii`) | plants | 0 | 5 | 0 |
-| Tatarian Honeysuckle (`lonicera-tatarica`) | plants | 0 | 5 | 0 |
-| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 5 | 0 |
-| Moneywort (`lysimachia-nummularia`) | plants | 0 | 5 | 0 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 5 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 5 | 0 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 5 | 0 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 5 | 0 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 5 | 0 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 5 | 0 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 5 | 0 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 5 | 0 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 5 | 0 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 5 | 0 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 5 | 0 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 5 | 0 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 5 | 0 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 5 | 0 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 5 | 0 | 0 |
+| Hydrilla (`hydrilla`) | plants | 5 | 0 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 5 | 0 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 5 | 0 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 5 | 0 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 5 | 0 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 5 | 0 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 5 | 0 | 0 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 5 | 0 | 0 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 5 | 0 | 0 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 5 | 0 | 0 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 5 | 0 | 0 |
 
 ## Source Operations
 

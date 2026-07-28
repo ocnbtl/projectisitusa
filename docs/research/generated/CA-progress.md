@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 58 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 58 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 58 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 58 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 58 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 58 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 58 | 1 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 58 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 58 | 0 |
-| Cheatgrass (`bromus-tectorum`) | plants | 0 | 58 | 0 |
-| Orange eye butterflybush (`buddleja-davidii`) | plants | 0 | 58 | 0 |
-| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 0 | 58 | 0 |
-| Diffuse Knapweed (`centaurea-diffusa`) | plants | 0 | 58 | 0 |
-| Maltese star-thistle (`centaurea-melitensis`) | plants | 0 | 58 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 58 | 0 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 58 | 0 |
-| Purple pampas grass (`cortaderia-jubata`) | plants | 0 | 58 | 0 |
-| Orange cotoneaster (`cotoneaster-franchetii`) | plants | 0 | 58 | 0 |
-| Silverleaf cotoneaster (`cotoneaster-pannosus`) | plants | 0 | 58 | 0 |
-| Common Houndstongue (`cynoglossum-officinale`) | plants | 0 | 58 | 0 |
-| Scotch broom (`cytisus-scoparius`) | plants | 0 | 58 | 0 |
-| English Ivy (`hedera-helix`) | plants | 0 | 58 | 0 |
-| Atlantic ivy (`hedera-hibernica`) | plants | 0 | 58 | 0 |
-| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 0 | 58 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 58 | 0 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 58 | 0 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 58 | 0 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 58 | 0 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 58 | 0 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 58 | 0 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 58 | 0 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 58 | 0 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 58 | 0 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 58 | 0 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 58 | 0 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 58 | 0 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 58 | 0 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 58 | 0 | 0 |
+| Hydrilla (`hydrilla`) | plants | 58 | 0 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 58 | 0 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 58 | 0 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 58 | 0 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 58 | 0 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 58 | 0 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 58 | 0 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 58 | 0 | 0 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 58 | 0 | 0 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 58 | 0 | 0 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 58 | 0 | 0 |
 
 ## Source Operations
 

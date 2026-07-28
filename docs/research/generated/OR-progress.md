@@ -32,8 +32,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 36 | 0 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 36 | 0 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 36 | 0 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 36 | 0 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 36 | 0 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 36 | 0 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 36 | 0 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 36 | 0 | 0 |
 | Slender false brome (`brachypodium-sylvaticum`) | plants | 36 | 0 | 0 |
 | Cheatgrass (`bromus-tectorum`) | plants | 36 | 0 | 0 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 36 | 0 | 0 |
@@ -47,16 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Canada Thistle (`cirsium-arvense`) | plants | 36 | 0 | 0 |
 | Bull Thistle (`cirsium-vulgare`) | plants | 36 | 0 | 0 |
 | Evergreen clematis (`clematis-vitalba`) | plants | 36 | 0 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 36 | 0 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 36 | 0 | 0 |
 | Common Houndstongue (`cynoglossum-officinale`) | plants | 36 | 0 | 0 |
 | Scotch broom (`cytisus-scoparius`) | plants | 36 | 0 | 0 |
-| French broom (`genista-monspessulana`) | plants | 36 | 0 | 0 |
-| English Ivy (`hedera-helix`) | plants | 36 | 0 | 0 |
-| Atlantic ivy (`hedera-hibernica`) | plants | 36 | 0 | 0 |
-| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 36 | 0 | 0 |
-| Meadow hawkweed (`hieracium-caespitosum`) | plants | 36 | 0 | 0 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 36 | 0 | 0 |
-| English holly (`ilex-aquifolium`) | plants | 36 | 0 | 0 |
-| Himalayan Balsam (`impatiens-glandulifera`) | plants | 36 | 0 | 0 |
 
 ## Source Operations
 

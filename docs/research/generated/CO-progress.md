@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Camphor scale (`aspidiotus-duplex`) | insects | 1 | 63 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 1 | 63 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 1 | 63 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 1 | 63 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 1 | 63 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 1 | 63 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 1 | 63 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 1 | 63 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 1 | 63 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 1 | 60 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 1 | 58 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 1 | 52 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 1 | 45 | 1 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 64 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 64 | 0 |
-| Stinking Chamomile (`anthemis-cotula`) | plants | 0 | 64 | 0 |
-| Absinthium (`artemisia-absinthium`) | plants | 0 | 64 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 64 | 0 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 64 | 0 |
-| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 64 | 0 |
-| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 64 | 0 |
-| Asian mustard (`brassica-tournefortii`) | plants | 0 | 64 | 0 |
-| Field Brome (`bromus-arvensis`) | plants | 0 | 64 | 0 |
-| Ripgut brome (`bromus-diandrus`) | plants | 0 | 64 | 0 |
-| Smooth Brome (`bromus-inermis`) | plants | 0 | 64 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 64 | 0 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 64 | 0 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 64 | 0 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 64 | 0 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 64 | 0 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 64 | 0 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 64 | 0 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 64 | 0 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 64 | 0 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 64 | 0 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 64 | 0 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 64 | 0 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 64 | 0 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 64 | 0 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 64 | 0 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 64 | 0 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 64 | 0 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 64 | 0 | 0 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 64 | 0 | 0 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 64 | 0 | 0 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 64 | 0 | 0 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 64 | 0 | 0 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 64 | 0 | 0 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 64 | 0 | 0 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 64 | 0 | 0 |
 
 ## Source Operations
 

@@ -32,24 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 1 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 1 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 1 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 1 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 1 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 0 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 0 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 0 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 0 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 0 | 1 |
-| Faucet snail (`bithynia-tentaculata`) | wildlife | 0 | 0 | 0 |
-| Asiatic Clam (`corbicula-fluminea`) | wildlife | 0 | 0 | 0 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 0 | 0 | 0 |
-| Yellow Flag Iris (`iris-pseudacorus`) | plants | 0 | 0 | 0 |
-| Copepod (`mesocyclops-pehpeiensis`) | wildlife | 0 | 0 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 1 | 0 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 1 | 0 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 1 | 0 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 1 | 0 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 1 | 0 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 1 | 0 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 1 | 0 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 1 | 0 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 1 | 0 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 1 | 0 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 1 | 0 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 1 | 0 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 1 | 0 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 1 | 0 | 0 |
+| Hydrilla (`hydrilla`) | plants | 1 | 0 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 1 | 0 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 1 | 0 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 1 | 0 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 1 | 0 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 1 | 0 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 1 | 0 | 0 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 1 | 0 | 0 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 1 | 0 | 0 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 1 | 0 | 0 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 1 | 0 | 0 |
 
 ## Source Operations
 

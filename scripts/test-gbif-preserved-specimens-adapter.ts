@@ -1,4 +1,5 @@
 import { gbifPreservedSpecimensAdapter } from "./research/adapters/gbif-preserved-specimens";
+import { gunzipSync } from "node:zlib";
 
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
 import { listCountyEquivalents } from "@/lib/research/geography-registry";
@@ -110,6 +111,16 @@ async function main() {
         routed.outcomes.every((outcome) => outcome.status === "evidence-found" && outcome.scope_complete),
       "The routed county outcomes are not complete evidence-found results.",
     );
+    assert(
+      routed.artifacts.every(
+        (artifact) =>
+          artifact.filename.endsWith(".json.gz") &&
+          artifact.mediaType === "application/gzip" &&
+          Buffer.isBuffer(artifact.contents) &&
+          JSON.parse(gunzipSync(artifact.contents).toString("utf8")),
+      ),
+      "The adapter did not retain replayable deterministic gzip artifacts.",
+    );
 
     const cultivatedUrls: string[] = [];
     globalThis.fetch = mockFetch(async (input) => {
@@ -187,6 +198,20 @@ async function main() {
       ...context,
       runId: "synthetic-gbif-repeated-run",
     });
+    assert(
+      repeated.artifacts.length === routed.artifacts.length &&
+        repeated.artifacts.every((artifact, index) => {
+          const prior = routed.artifacts[index];
+          return (
+            prior &&
+            artifact.filename === prior.filename &&
+            Buffer.isBuffer(artifact.contents) &&
+            Buffer.isBuffer(prior.contents) &&
+            artifact.contents.equals(prior.contents)
+          );
+        }),
+      "Identical GBIF response bytes did not produce byte-stable gzip artifacts.",
+    );
     assert(
       repeated.assertions.every(
         (entry) => !routed.assertions.some((prior) => prior.eventId === entry.eventId),

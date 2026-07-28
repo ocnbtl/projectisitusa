@@ -15,10 +15,10 @@ Generated: `2026-07-28T00:00:00.000Z`
 - Determination coverage: `0.21%`
 - Research coverage: `3.95%`
 - Explicit outcome coverage: `3.9510%`
-- Applicable protocol cells: `52`
+- Applicable protocol cells: `87`
 - Current complete protocol cells: `5`
-- Protocol completion: `34.62%`
-- Current protocol completion: `9.62%`
+- Protocol completion: `20.69%`
+- Current protocol completion: `5.75%`
 - Evidence records: `261`
 - Research runs: `10`
 - Rejection records: `68`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 14 | 0 | 1 |
-| Yellow Sweetclover (`melilotus-officinalis`) | plants | 14 | 0 | 1 |
-| Common Carp (`cyprinus-carpio`) | wildlife | 3 | 0 | 2 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 15 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 2 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 15 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 15 | 0 |
-| Camelthorn (`alhagi-maurorum`) | plants | 0 | 15 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 15 | 0 |
-| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 15 | 0 |
-| Common Burdock (`arctium-minus`) | plants | 0 | 15 | 0 |
-| Absinthium (`artemisia-absinthium`) | plants | 0 | 15 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 15 | 0 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 15 | 0 |
-| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 15 | 0 |
-| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 15 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 15 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 15 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 15 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 15 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 15 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 15 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 15 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 15 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 15 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 15 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 15 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 15 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 15 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 15 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 15 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 15 | 0 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 15 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 15 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 15 | 0 | 1 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 15 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 15 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 15 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 15 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 15 | 0 | 1 |
+| Simple-stem burr-reed (`sparganium-erectum`) | plants | 15 | 0 | 1 |
 
 ## Source Operations
 

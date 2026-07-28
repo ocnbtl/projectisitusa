@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { gzipSync } from "node:zlib";
 
 import type {
   EvidenceReviewEvent,
@@ -20,7 +21,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 const ADAPTER_ID = "gbif-preserved-specimens";
-const ADAPTER_VERSION = "1.2.0";
+const ADAPTER_VERSION = "1.3.0";
 const GBIF_API_BASE_URL = "https://api.gbif.org/v1";
 const GBIF_OCCURRENCE_BASE_URL = "https://www.gbif.org/occurrence";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
@@ -380,14 +381,22 @@ function createRequester(
       clearTimeout(timeout);
     }
 
-    const artifactBytes = Buffer.byteLength(contents);
+    const compressedContents = gzipSync(Buffer.from(contents), {
+      level: 9,
+    });
+    const compressedFilename = `${filename}.gz`;
+    const artifactBytes = compressedContents.length;
     retainedArtifactBytes += artifactBytes;
-    artifacts.push({ filename, mediaType: "application/json", contents });
+    artifacts.push({
+      filename: compressedFilename,
+      mediaType: "application/gzip",
+      contents: compressedContents,
+    });
     const artifactLimitReached = retainedArtifactBytes > MAX_RETAINED_ARTIFACT_BYTES;
     if (artifactLimitReached && !artifactLimitReported) {
       artifactLimitReported = true;
       warnings.push(
-        `Raw GBIF response artifacts exceeded the ${MAX_RETAINED_ARTIFACT_BYTES}-byte adapter budget. The current response was retained and the active pair was left incomplete.`,
+        `Compressed GBIF response artifacts exceeded the ${MAX_RETAINED_ARTIFACT_BYTES}-byte adapter budget. The current response was retained and the active pair was left incomplete.`,
       );
       errors.push({
         code: "artifact-byte-limit-exceeded",

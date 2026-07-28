@@ -7,21 +7,21 @@ Generated: `2026-07-28T00:00:00.000Z`
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `746`
+- Verified present: `940`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3232`
-- Not researched: `183822`
-- Determination coverage: `0.40%`
-- Research coverage: `2.12%`
-- Explicit outcome coverage: `2.1182%`
-- Applicable protocol cells: `70`
-- Current complete protocol cells: `5`
-- Protocol completion: `25.71%`
-- Current protocol completion: `7.14%`
-- Evidence records: `756`
-- Research runs: `10`
-- Rejection records: `25`
+- Researched unresolved: `3413`
+- Not researched: `183447`
+- Determination coverage: `0.50%`
+- Research coverage: `2.32%`
+- Explicit outcome coverage: `2.3179%`
+- Applicable protocol cells: `101`
+- Current complete protocol cells: `10`
+- Protocol completion: `22.77%`
+- Current protocol completion: `9.90%`
+- Evidence records: `1240`
+- Research runs: `11`
+- Rejection records: `127`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Meadow brome (`bromus-commutatus`) | plants | 75 | 0 | 1 |
-| Rye brome (`bromus-secalinus`) | plants | 75 | 0 | 1 |
-| Balloon vine (`cardiospermum-halicacabum`) | plants | 75 | 0 | 1 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 75 | 0 | 1 |
-| Bermudagrass (`cynodon-dactylon`) | plants | 75 | 0 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 75 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 75 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 75 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 75 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 75 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 75 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 75 | 0 | 1 |
+| Common crupina (`crupina-vulgaris`) | plants | 75 | 0 | 1 |
 | Purple Nutsedge (`cyperus-rotundus`) | plants | 75 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 75 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 75 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 75 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 75 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 75 | 0 | 1 |
+| Giant Hogweed (`giant-hogweed`) | plants | 75 | 0 | 1 |
+| Hydrilla (`hydrilla`) | plants | 75 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 75 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 75 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 75 | 0 | 1 |
 | Darnel ryegrass (`lolium-temulentum`) | plants | 75 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 75 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 75 | 0 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 75 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 75 | 0 | 1 |
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 75 | 0 | 1 |
-| Buckhorn Plantain (`plantago-lanceolata`) | plants | 75 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 75 | 0 | 1 |
-| Giant Foxtail (`setaria-faberi`) | plants | 75 | 0 | 1 |
-| Johnsongrass (`sorghum-halepense`) | plants | 75 | 0 | 1 |
-| Common corncockle (`agrostemma-githago`) | plants | 74 | 1 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 74 | 0 | 1 |
-| Yellow Sweetclover (`melilotus-officinalis`) | plants | 74 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 75 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 75 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 75 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 75 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 75 | 2 |
-| Tropical soda apple (`solanum-viarum`) | plants | 0 | 75 | 1 |
-| Chocolate Vine (`akebia-quinata`) | plants | 0 | 75 | 0 |
-| Hen's eyes (`ardisia-crenata`) | plants | 0 | 75 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-28T01:34:53.009Z | 2 | 3 |
+| GBIF preserved specimen records | operational | 2026-07-28T03:58:29.027Z | 196 | 8 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

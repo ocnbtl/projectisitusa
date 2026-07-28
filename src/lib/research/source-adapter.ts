@@ -28,7 +28,7 @@ export interface SourceAdapterResult {
   artifacts: Array<{
     filename: string;
     mediaType: string;
-    contents: string;
+    contents: string | Buffer;
   }>;
   upstreamRequests: Array<{
     url: string;

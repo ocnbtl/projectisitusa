@@ -47,7 +47,10 @@ import {
   type StateResearchConfigFile,
 } from "@/lib/research/state-research-config";
 import { deriveStateSpeciesResolution } from "@/lib/research/state-species-resolution";
-import type { StateApplicabilitySourceRegistry } from "@/lib/research/state-applicability-sources";
+import {
+  stateApplicabilityProjectionStates,
+  type StateApplicabilitySourceRegistry,
+} from "@/lib/research/state-applicability-sources";
 
 type SpeciesRecord = {
   id: string;
@@ -257,9 +260,12 @@ for (const entry of applicability?.species ?? []) {
     const applicabilitySource = applicabilitySourceRegistry.sources.find(
       (source) => source.id === basis.sourceId,
     );
-    if (applicabilitySource && applicabilitySource.stateCode !== STATE_CODE) {
+    if (
+      applicabilitySource &&
+      !stateApplicabilityProjectionStates(applicabilitySource).includes(STATE_CODE)
+    ) {
       throw new Error(
-        `Applicability for ${STATE_CODE} references state-list source ${basis.sourceId} for ${applicabilitySource.stateCode}.`,
+        `Applicability for ${STATE_CODE} references state-list source ${basis.sourceId} outside its declared projection.`,
       );
     }
   }

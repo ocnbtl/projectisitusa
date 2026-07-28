@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Java plum (`syzygium-cumini`) | plants | 62 | 0 | 0 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 57 | 0 | 0 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 67 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 67 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 67 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 67 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 67 | 1 |
-| Chocolate Vine (`akebia-quinata`) | plants | 0 | 67 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 67 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 67 | 0 |
-| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 67 | 0 |
-| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 67 | 0 |
-| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 67 | 0 |
-| Rose natal grass (`melinis-repens`) | plants | 0 | 67 | 0 |
-| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 0 | 67 | 0 |
-| Callery Pear (`pyrus-calleryana`) | plants | 0 | 67 | 0 |
-| Crown Vetch (`securigera-varia`) | plants | 0 | 67 | 0 |
-| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 67 | 0 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 66 | 1 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 66 | 0 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 66 | 0 |
-| Winged Burning Bush (`euonymus-alatus`) | plants | 0 | 66 | 0 |
-| Wintercreeper (`euonymus-fortunei`) | plants | 0 | 66 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 67 | 0 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 67 | 0 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 67 | 0 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 67 | 0 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 67 | 0 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 67 | 0 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 67 | 0 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 67 | 0 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 67 | 0 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 67 | 0 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 67 | 0 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 67 | 0 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 67 | 0 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 67 | 0 | 0 |
+| Hydrilla (`hydrilla`) | plants | 67 | 0 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 67 | 0 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 67 | 0 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 67 | 0 | 0 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 67 | 0 | 0 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 67 | 0 | 0 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 67 | 0 | 0 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 67 | 0 | 0 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 67 | 0 | 0 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 67 | 0 | 0 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 67 | 0 | 0 |
 
 ## Source Operations
 
