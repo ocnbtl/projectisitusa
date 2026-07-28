@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-28T01:34:53.009Z",
+  "runId": "20260728T012100Z__gbif-preserved-specimens__e9ac279ac837",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AR",
+  "pairKeys": [
+    "05119:agrostemma-githago"
+  ],
+  "parameterHash": "e9ac279ac8371a3dcae2ebf02df5e0890c69b1a4d4816da29f8a13bdb81c1b2d",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat as API aggregator; 13 underlying occurrence publishing organizations are represented in the retained statewide response."
+  },
+  "terms": {
+    "license": "Per-record Creative Commons licenses retained from GBIF: CC BY 4.0, CC BY-NC 4.0, and CC0 1.0.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-28T01:34:53.009Z",
+    "freshnessDate": "2026-07-27T22:31:33.907+00:00"
+  },
+  "geography": {
+    "method": "Require explicit GBIF stateProvince text matching Arkansas and explicit GBIF county-equivalent text that resolves uniquely through the registered active county-equivalent registry to FIPS 05119.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment; missing, ambiguous, retired, conflicting, or coordinate-only county-equivalent geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement; revalidate each occurrence taxon key and binomial.",
+    "targetSpeciesIds": [
+      "agrostemma-githago"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "key",
+      "gbifID",
+      "occurrenceID",
+      "datasetKey"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-agrostemma-githago",
+        "url": "https://api.gbif.org/v1/species/match?name=Agrostemma+githago&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-28T01:34:51.936Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-agrostemma-githago",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arkansas&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3085368&limit=300&offset=0",
+        "purpose": "Acquire the complete statewide Arkansas preserved-specimen occurrence response for the exact matched taxon and screen the leased Pulaski County pair by explicit provider county-equivalent text.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-28T01:34:52.468Z",
+        "declaredRecordCount": 43,
+        "receivedRecordCount": 43,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "The registered source has no negative semantics; an empty query, source silence, or a rejected occurrence cannot support verified absence.",
+      "GBIF occurrence search does not provide target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "Only qualifying positive preserved-specimen occurrences can become determination evidence."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/artifacts/gbif-occurrences-agrostemma-githago-000000.json",
+      "sha256": "ac072b393dd8c98b5c20ed56bca5e057b3552c9417be9952bcbae72682850aa1",
+      "bytes": 279655
+    },
+    {
+      "path": "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/artifacts/gbif-species-match-agrostemma-githago.json",
+      "sha256": "f9c5c1c5918c6d3ddb19eb2a598d41a9480cfcc194ba96e4fb5a5a4cf7e9cf29",
+      "bytes": 465
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The retained statewide response contains 43 records across 14 datasets and 13 publishing organizations with mixed per-record licenses.",
+    "The latest lastInterpreted value in the retained occurrence response is 2026-07-27T22:31:33.907+00:00; freshness does not make the source an exhaustive inventory.",
+    "No retained occurrence explicitly identifies Pulaski County, Arkansas. Six records with ambiguous provider county text were preserved as explicit rejections; exact resolvable provider counties represented other Arkansas counties.",
+    "The completed Pulaski County screen produced no qualifying positive assertion and remains researched unresolved only. It does not support verified absence or non-detection."
+  ]
+}
