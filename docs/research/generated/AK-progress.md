@@ -1,6 +1,6 @@
 # Alaska Research Progress
 
-Generated: `2026-07-26T00:00:00.000Z`
+Generated: `2026-07-27T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -15,10 +15,10 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Determination coverage: `0.06%`
 - Research coverage: `1.84%`
 - Explicit outcome coverage: `1.8411%`
-- Applicable protocol cells: `42`
+- Applicable protocol cells: `50`
 - Current complete protocol cells: `5`
-- Protocol completion: `11.90%`
-- Current protocol completion: `11.90%`
+- Protocol completion: `10.00%`
+- Current protocol completion: `10.00%`
 - Evidence records: `50`
 - Research runs: `10`
 - Rejection records: `440`
@@ -34,8 +34,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Shepherd's Purse (`capsella-bursa-pastoris`) | plants | 30 | 0 | 0 |
 | Spruce Aphid (`elatobium-abietinum`) | insects | 29 | 0 | 1 |
-| Creeping Buttercup (`ranunculus-repens`) | plants | 29 | 0 | 0 |
-| Common Plantain (`plantago-major`) | plants | 25 | 0 | 0 |
+| Creeping Buttercup (`ranunculus-repens`) | plants | 29 | 0 | 1 |
+| Common Plantain (`plantago-major`) | plants | 25 | 0 | 1 |
 | True forget-me-not (`myosotis-scorpioides`) | plants | 20 | 0 | 2 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 8 | 22 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 8 | 22 | 2 |

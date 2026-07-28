@@ -1,6 +1,6 @@
 # Arizona Research Progress
 
-Generated: `2026-07-26T00:00:00.000Z`
+Generated: `2026-07-27T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -15,10 +15,10 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Determination coverage: `0.21%`
 - Research coverage: `3.95%`
 - Explicit outcome coverage: `3.9510%`
-- Applicable protocol cells: `41`
+- Applicable protocol cells: `52`
 - Current complete protocol cells: `5`
-- Protocol completion: `43.90%`
-- Current protocol completion: `12.20%`
+- Protocol completion: `34.62%`
+- Current protocol completion: `9.62%`
 - Evidence records: `261`
 - Research runs: `10`
 - Rejection records: `68`

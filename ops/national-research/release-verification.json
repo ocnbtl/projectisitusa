@@ -173,6 +173,55 @@
         }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, Vercel, live routes, selected live bytes, and live browser behavior were verified. It does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-2f606e6d-2026-07-28",
+      "verifiedAt": "2026-07-28T00:31:20Z",
+      "commitSha": "2f606e6d76057e44d66af7ba42cf26d25252e469",
+      "githubMainSha": "2f606e6d76057e44d66af7ba42cf26d25252e469",
+      "githubDeploymentId": 5611986249,
+      "vercelDeploymentId": "dpl_C1mxmEgFjvsHPVnTSDtBkhXMeGFB",
+      "vercelDeploymentUrl": "projectisitusa-4kts5qfws-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AL/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "status": 200
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "c09fb01f6b4e4c5f70a3f30a86580e4325c6f82bd28c374722a5ea8cc2a62668"
+        }
+      ],
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, Vercel, live routes, and selected live bytes were verified. It does not attest to the commit that contains it or any future deployment."
     }
   ]
 }

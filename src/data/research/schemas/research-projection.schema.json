@@ -32,10 +32,12 @@
         "unknownSpeciesCount",
         "blockedSpeciesCount",
         "explicitApplicabilityDecisionCount",
+        "derivedApplicableSpeciesCount",
         "resolvedStateSpeciesDecisionCount",
         "boundedAcquisitionSpeciesCount",
         "defaultApplicability",
         "fullCatalogApplicabilityComplete",
+        "fullCatalogResearchAccounted",
         "undeterminedSpeciesPolicy",
         "compatibilityPublication",
         "protocolModel"
@@ -53,13 +55,119 @@
         "unknownSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "blockedSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "explicitApplicabilityDecisionCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "derivedApplicableSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "resolvedStateSpeciesDecisionCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "boundedAcquisitionSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
         "defaultApplicability": { "const": "unknown" },
         "fullCatalogApplicabilityComplete": { "type": "boolean" },
+        "fullCatalogResearchAccounted": { "type": "boolean" },
         "undeterminedSpeciesPolicy": { "const": "included-as-unknown" },
         "compatibilityPublication": { "type": "boolean" },
         "protocolModel": { "enum": ["explicit-source-species-legacy-migration", "explicit-source-species-active"] }
+      }
+    },
+    "stateSpeciesResolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "defaultStatus",
+        "denominator",
+        "countyEquivalentCount",
+        "applicabilityDecisionCounts",
+        "derivedApplicableSpeciesCount",
+        "counts",
+        "fullyAccountedSpeciesCount",
+        "partiallyAccountedSpeciesCount",
+        "untouchedSpeciesCount",
+        "fullCatalogResearchAccounted",
+        "overrides"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "defaultStatus": { "const": "not-researched" },
+        "denominator": { "$ref": "#/$defs/nonnegativeInteger" },
+        "countyEquivalentCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "applicabilityDecisionCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["applicable", "not-applicable", "unknown", "blocked"],
+          "properties": {
+            "applicable": { "$ref": "#/$defs/nonnegativeInteger" },
+            "not-applicable": { "$ref": "#/$defs/nonnegativeInteger" },
+            "unknown": { "$ref": "#/$defs/nonnegativeInteger" },
+            "blocked": { "$ref": "#/$defs/nonnegativeInteger" }
+          }
+        },
+        "derivedApplicableSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "applicable",
+            "not-applicable",
+            "researched-unresolved",
+            "researched-blocked",
+            "partially-researched",
+            "not-researched",
+            "blocked"
+          ],
+          "properties": {
+            "applicable": { "$ref": "#/$defs/nonnegativeInteger" },
+            "not-applicable": { "$ref": "#/$defs/nonnegativeInteger" },
+            "researched-unresolved": { "$ref": "#/$defs/nonnegativeInteger" },
+            "researched-blocked": { "$ref": "#/$defs/nonnegativeInteger" },
+            "partially-researched": { "$ref": "#/$defs/nonnegativeInteger" },
+            "not-researched": { "$ref": "#/$defs/nonnegativeInteger" },
+            "blocked": { "$ref": "#/$defs/nonnegativeInteger" }
+          }
+        },
+        "fullyAccountedSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "partiallyAccountedSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "untouchedSpeciesCount": { "$ref": "#/$defs/nonnegativeInteger" },
+        "fullCatalogResearchAccounted": { "type": "boolean" },
+        "overrides": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "speciesId",
+              "status",
+              "applicabilityStatus",
+              "applicabilityBasis",
+              "researchedCountyCount",
+              "blockedCountyCount",
+              "accountedCountyCount",
+              "notResearchedCountyCount"
+            ],
+            "properties": {
+              "speciesId": { "type": "string", "minLength": 1 },
+              "status": {
+                "enum": [
+                  "applicable",
+                  "not-applicable",
+                  "researched-unresolved",
+                  "researched-blocked",
+                  "partially-researched",
+                  "not-researched",
+                  "blocked"
+                ]
+              },
+              "applicabilityStatus": {
+                "enum": ["applicable", "not-applicable", "unknown", "blocked"]
+              },
+              "applicabilityBasis": {
+                "enum": ["explicit", "accepted-reviewed-presence", "unresolved"]
+              },
+              "researchedCountyCount": { "$ref": "#/$defs/nonnegativeInteger" },
+              "blockedCountyCount": { "$ref": "#/$defs/nonnegativeInteger" },
+              "accountedCountyCount": { "$ref": "#/$defs/nonnegativeInteger" },
+              "notResearchedCountyCount": { "$ref": "#/$defs/nonnegativeInteger" }
+            }
+          }
+        }
       }
     },
     "boundedStatusCounts": {
@@ -432,6 +540,7 @@
         "generatedAt",
         "sourceSnapshotDate",
         "scope",
+        "stateSpeciesResearch",
         "summary",
         "counties",
         "sources",
@@ -447,6 +556,7 @@
         "generatedAt": { "type": "string", "format": "date-time" },
         "sourceSnapshotDate": { "type": "string", "format": "date-time" },
         "scope": { "$ref": "#/$defs/projectionScope" },
+        "stateSpeciesResearch": { "$ref": "#/$defs/stateSpeciesResolution" },
         "summary": { "$ref": "#/$defs/stateTotals" },
         "counties": {
           "type": "array",

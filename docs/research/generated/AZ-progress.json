@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "AZ",
-  "asOf": "2026-07-26",
-  "generatedAt": "2026-07-26T00:00:00.000Z",
+  "asOf": "2026-07-27",
+  "generatedAt": "2026-07-27T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
@@ -11,15 +11,17 @@
     "applicabilityAsOf": "2026-07-25",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 22,
+    "applicableSpeciesCount": 33,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2482,
+    "unknownSpeciesCount": 2471,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 22,
+    "derivedApplicableSpeciesCount": 11,
     "resolvedStateSpeciesDecisionCount": 2504,
     "boundedAcquisitionSpeciesCount": 101,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
+    "fullCatalogResearchAccounted": false,
     "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
@@ -371,16 +373,16 @@
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
     "totalCells": 303,
-    "applicableCells": 41,
-    "notApplicableCells": 262,
+    "applicableCells": 52,
+    "notApplicableCells": 251,
     "completeCells": 18,
-    "incompleteCells": 22,
+    "incompleteCells": 33,
     "blockedCells": 1,
     "currentCells": 5,
     "staleCells": 13,
-    "undatedCells": 23,
-    "applicableCompletionPercent": 43.9,
-    "currentCompletePercent": 12.2,
+    "undatedCells": 34,
+    "applicableCompletionPercent": 34.62,
+    "currentCompletePercent": 9.62,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -400,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 5,
+        "applicableCells": 16,
         "currentCompleteCells": 1,
-        "currentCompletePercent": 20
+        "currentCompletePercent": 6.25
       },
       {
         "category": "wildlife",
@@ -426,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 15,
+        "applicableCells": 26,
         "currentCompleteCells": 5,
-        "currentCompletePercent": 33.33
+        "currentCompletePercent": 19.23
       },
       {
         "priority": "baseline",
@@ -440,7 +442,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 22,
+        "applicableCells": 33,
         "currentCompleteCells": 0,
         "processed": false
       },
@@ -1332,8 +1334,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
     },
     {
       "speciesId": "medicago-polymorpha",
@@ -1342,8 +1346,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
     },
     {
       "speciesId": "tribulus-terrestris",
@@ -1352,8 +1358,46 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
+    },
+    {
+      "speciesId": "carduus-acanthoides",
+      "commonName": "Spiny plumeless thistle",
+      "scientificName": "Carduus acanthoides",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 13,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 131
+    },
+    {
+      "speciesId": "centaurea-calcitrapa",
+      "commonName": "Red star-thistle",
+      "scientificName": "Centaurea calcitrapa",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 13,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 131
+    },
+    {
+      "speciesId": "halogeton-glomeratus",
+      "commonName": "Saltlover",
+      "scientificName": "Halogeton glomeratus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 13,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 131
     },
     {
       "speciesId": "potamopyrgus-antipodarum",
@@ -1380,44 +1424,16 @@
       "priorityScore": 131
     },
     {
-      "speciesId": "carduus-acanthoides",
-      "commonName": "Spiny plumeless thistle",
-      "scientificName": "Carduus acanthoides",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 13,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 130
-    },
-    {
-      "speciesId": "centaurea-calcitrapa",
-      "commonName": "Red star-thistle",
-      "scientificName": "Centaurea calcitrapa",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 13,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 130
-    },
-    {
-      "speciesId": "halogeton-glomeratus",
-      "commonName": "Saltlover",
-      "scientificName": "Halogeton glomeratus",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 13,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 130
-    },
-    {
       "speciesId": "sonchus-arvensis",
       "commonName": "Field Sowthistle",
       "scientificName": "Sonchus arvensis",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 13,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 130
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 131
     },
     {
       "speciesId": "centaurea-solstitialis",
@@ -1426,8 +1442,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 12,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 120
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 121
     },
     {
       "speciesId": "linaria-dalmatica",
@@ -1436,8 +1454,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 12,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 120
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 121
     },
     {
       "speciesId": "anarsia-lineatella",
@@ -1459,8 +1479,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 11,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 110
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 111
     },
     {
       "speciesId": "corbicula-fluminea",

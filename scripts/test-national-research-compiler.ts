@@ -9,7 +9,11 @@ import {
   type StateApplicabilityFile,
   type StateResearchConfigFile,
 } from "@/lib/research/state-research-config";
-import { serializePresenceOutsideState } from "@/lib/research/compatibility-projection";
+import {
+  replaceStatePresenceFromResearch,
+  serializePresenceOutsideState,
+} from "@/lib/research/compatibility-projection";
+import type { ResearchCountyFile } from "@/lib/research/types";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -32,6 +36,56 @@ const applicability = structuredClone(alaskaApplicability) as StateApplicability
 const alabamaApplicabilityFile = structuredClone(
   alabamaApplicability,
 ) as StateApplicabilityFile;
+
+const replacedPresence = replaceStatePresenceFromResearch({
+  stateCode: "AL",
+  asOf: "2026-07-27",
+  counties: {
+    "01001": {
+      countyFips: "01001",
+      name: "Autauga",
+      stateCode: "AL",
+      stateName: "Alabama",
+      neighborFips: [],
+      center: [-86.64, 32.53],
+    },
+  },
+  currentPresence: {
+    "01001": {
+      countyFips: "01001",
+      speciesIds: ["alliaria-petiolata"],
+      sourceRefs: [
+        "Independent source",
+        "Reviewed Project Isitusa research evidence through 2026-07-26",
+      ],
+    },
+  },
+  countyFiles: [
+    {
+      stateCode: "AL",
+      countyFips: "01001",
+      pairs: [
+        {
+          speciesId: "alliaria-petiolata",
+          displayStatus: "verified-present",
+        },
+      ],
+    },
+  ] as ResearchCountyFile[],
+});
+const researchReferences =
+  replacedPresence["01001"].sourceRefs.filter((entry) =>
+    entry.startsWith("Reviewed Project Isitusa research evidence through "),
+  );
+if (
+  researchReferences.length !== 1 ||
+  researchReferences[0] !==
+    "Reviewed Project Isitusa research evidence through 2026-07-27"
+) {
+  throw new Error(
+    "Compatibility compilation retained duplicate dated research references.",
+  );
+}
 const common = {
   catalogSpeciesIds,
   asOf: "2026-07-26",

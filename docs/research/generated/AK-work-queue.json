@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "AK",
-  "asOf": "2026-07-26",
-  "generatedAt": "2026-07-26T00:00:00.000Z",
+  "asOf": "2026-07-27",
+  "generatedAt": "2026-07-27T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
@@ -11,31 +11,33 @@
     "applicabilityAsOf": "2026-07-25",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 23,
+    "applicableSpeciesCount": 31,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2481,
+    "unknownSpeciesCount": 2473,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 23,
+    "derivedApplicableSpeciesCount": 8,
     "resolvedStateSpeciesDecisionCount": 2504,
     "boundedAcquisitionSpeciesCount": 54,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
+    "fullCatalogResearchAccounted": false,
     "undeterminedSpeciesPolicy": "included-as-unknown",
     "compatibilityPublication": false,
     "protocolModel": "explicit-source-species-active"
   },
   "protocol": {
     "totalCells": 162,
-    "applicableCells": 42,
-    "notApplicableCells": 120,
+    "applicableCells": 50,
+    "notApplicableCells": 112,
     "completeCells": 5,
-    "incompleteCells": 23,
+    "incompleteCells": 31,
     "blockedCells": 14,
     "currentCells": 5,
     "staleCells": 0,
-    "undatedCells": 37,
-    "applicableCompletionPercent": 11.9,
-    "currentCompletePercent": 11.9,
+    "undatedCells": 45,
+    "applicableCompletionPercent": 10,
+    "currentCompletePercent": 10,
     "regulatedAndHighApplicableCells": 0,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
@@ -71,8 +73,10 @@
       "category": "plants",
       "notResearchedCountyCount": 29,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 29000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 29001
     },
     {
       "speciesId": "plantago-major",
@@ -81,8 +85,10 @@
       "category": "plants",
       "notResearchedCountyCount": 25,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 25000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 25001
     },
     {
       "speciesId": "myosotis-scorpioides",
@@ -511,6 +517,18 @@
       "priorityScore": 291
     },
     {
+      "speciesId": "linaria-vulgaris",
+      "commonName": "Butter and Eggs",
+      "scientificName": "Linaria vulgaris",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 29,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 291
+    },
+    {
       "speciesId": "melilotus-officinalis",
       "commonName": "Yellow Sweetclover",
       "scientificName": "Melilotus officinalis",
@@ -523,29 +541,57 @@
       "priorityScore": 291
     },
     {
-      "speciesId": "linaria-vulgaris",
-      "commonName": "Butter and Eggs",
-      "scientificName": "Linaria vulgaris",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 29,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 290
-    },
-    {
       "speciesId": "stellaria-media",
       "commonName": "Common Chickweed",
       "scientificName": "Stellaria media",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 29,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 290
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 291
+    },
+    {
+      "speciesId": "crepis-tectorum",
+      "commonName": "Narrowleaf hawksbeard",
+      "scientificName": "Crepis tectorum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 28,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 281
+    },
+    {
+      "speciesId": "leucanthemum-vulgare",
+      "commonName": "Oxeye Daisy",
+      "scientificName": "Leucanthemum vulgare",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 28,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 281
     },
     {
       "speciesId": "lysimachia-nummularia",
       "commonName": "Moneywort",
       "scientificName": "Lysimachia nummularia",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 28,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 281
+    },
+    {
+      "speciesId": "prunus-padus",
+      "commonName": "European bird cherry",
+      "scientificName": "Prunus padus",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 28,
@@ -567,36 +613,6 @@
       "priorityScore": 281
     },
     {
-      "speciesId": "crepis-tectorum",
-      "commonName": "Narrowleaf hawksbeard",
-      "scientificName": "Crepis tectorum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 28,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 280
-    },
-    {
-      "speciesId": "leucanthemum-vulgare",
-      "commonName": "Oxeye Daisy",
-      "scientificName": "Leucanthemum vulgare",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 28,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 280
-    },
-    {
-      "speciesId": "prunus-padus",
-      "commonName": "European bird cherry",
-      "scientificName": "Prunus padus",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 28,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 280
-    },
-    {
       "speciesId": "iris-pseudacorus",
       "commonName": "Yellow Flag Iris",
       "scientificName": "Iris pseudacorus",
@@ -615,8 +631,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 27,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 270
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 271
     },
     {
       "speciesId": "matricaria-discoidea",

@@ -1,6 +1,6 @@
 # Florida Research Progress
 
-Generated: `2026-07-26T00:00:00.000Z`
+Generated: `2026-07-27T00:00:00.000Z`
 
 ## Exact Counts
 

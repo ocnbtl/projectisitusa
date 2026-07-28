@@ -57,11 +57,21 @@ for (const config of configFile.states) {
   });
   resolvedStateSpeciesDecisions += resolved.resolvedStateSpeciesDecisionCount;
   configuredStateScopeSpecies += resolved.speciesIds.length;
-  for (const status of Object.keys(decisionTotals) as Array<
-    keyof typeof decisionTotals
-  >) {
-    decisionTotals[status] += resolved.applicabilityDecisionCounts[status];
-  }
+  const summary = readJson<ResearchStateSummary>(
+    `src/data/generated/research/${config.stateCode}/summary.json`,
+  );
+  decisionTotals.applicable += summary.scope.applicableSpeciesCount;
+  decisionTotals["not-applicable"] +=
+    summary.scope.notApplicableSpeciesCount;
+  decisionTotals.unknown += summary.scope.unknownSpeciesCount;
+  decisionTotals.blocked += summary.scope.blockedSpeciesCount;
+  assert(
+    Object.values(summary.stateSpeciesResearch.counts).reduce(
+      (sum, count) => sum + count,
+      0,
+    ) === catalogSpeciesIds.length,
+    `${config.stateCode} state-species research statuses do not partition the catalog.`,
+  );
 }
 
 const jurisdictionCount = stateRegistry.nationalV1.jurisdictionCount;
@@ -133,12 +143,12 @@ const alaskaPlantago = readJson<ResearchCountyFile>(
   "public/generated/research/AK/counties/02020.json",
 ).pairs.find((entry) => entry.speciesId === "plantago-major");
 assert(
-  alaskaPlantago?.applicabilityStatus === "unknown" &&
+  alaskaPlantago?.applicabilityStatus === "applicable" &&
     alaskaPlantago.displayStatus === "verified-present" &&
     alaskaPlantago.evidence.some(
       (entry) => entry.sourceId === "usfs-fia-invasive-plants",
     ),
-  "A source-targeted outcome for an unknown state-species decision was excluded from the sparse projection.",
+  "Reviewed Alaska presence did not derive effective state applicability.",
 );
 
 const fixture = {

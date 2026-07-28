@@ -218,14 +218,24 @@ const states = config.states
       authoritativeCertificationScope:
         summary.scope.certificationScope === "state-baseline" &&
         summary.scope.speciesMode === "catalog-all",
-      fullCatalogApplicabilityClassified:
-        summary.scope.fullCatalogApplicabilityComplete &&
-        summary.scope.unknownSpeciesCount === 0 &&
-        summary.scope.blockedSpeciesCount === 0,
+      stateApplicabilityEvidenceConsistent:
+        summary.scope.applicableSpeciesCount ===
+          summary.stateSpeciesResearch.applicabilityDecisionCounts.applicable &&
+        summary.scope.notApplicableSpeciesCount ===
+          summary.stateSpeciesResearch.applicabilityDecisionCounts[
+            "not-applicable"
+          ] &&
+        summary.scope.unknownSpeciesCount ===
+          summary.stateSpeciesResearch.applicabilityDecisionCounts.unknown &&
+        summary.scope.blockedSpeciesCount ===
+          summary.stateSpeciesResearch.applicabilityDecisionCounts.blocked,
+      fullCatalogResearchAccounted:
+        summary.stateSpeciesResearch.fullCatalogResearchAccounted,
       publicAndResearchProjectionsAgree: publicParity,
       deferredCandidatesResolvedOrBlocked:
         summary.migrationCandidates.remainingSourceAssertionCount === 0,
-      baselineResearchCoverageComplete: summary.summary.researchCoveragePercent === 100,
+      baselineResearchCoverageCompleteOrBlocked:
+        summary.stateSpeciesResearch.fullCatalogResearchAccounted,
       applicableProtocolCellsAtLeast90:
         protocol.summary.currentCompletePercent >= 90,
       regulatedAndHighPriorityCurrentComplete: priorityGate,
@@ -249,6 +259,7 @@ const states = config.states
         explicitOverrides: summary.scope.explicitApplicabilityDecisionCount,
         complete: summary.scope.fullCatalogApplicabilityComplete,
       },
+      stateSpeciesResearch: summary.stateSpeciesResearch,
       boundedAcquisitionScope: summary.summary.boundedAcquisition,
       baselineResearchCoveragePercent: summary.summary.researchCoveragePercent,
       explicitOutcomeCoveragePercent: summary.summary.explicitOutcomeCoveragePercent,
@@ -320,6 +331,10 @@ const applicabilityClassifiedJurisdictionCodes = states
   .sort();
 const applicabilityUnclassifiedJurisdictionCodes = nationalV1JurisdictionCodes
   .filter((stateCode) => !applicabilityClassifiedJurisdictionCodes.includes(stateCode));
+const researchAccountedJurisdictionCodes = states
+  .filter((entry) => entry.stateSpeciesResearch.fullCatalogResearchAccounted)
+  .map((entry) => entry.stateCode)
+  .sort();
 const denominator = states.reduce(
   (total, state) => {
     total.fullStateSpeciesDenominator +=
@@ -334,6 +349,16 @@ const denominator = states.reduce(
       state.fullCatalogApplicability.blocked;
     total.explicitStateSpeciesOverrides +=
       state.fullCatalogApplicability.explicitOverrides;
+    total.derivedApplicableStateSpeciesDecisions +=
+      state.stateSpeciesResearch.derivedApplicableSpeciesCount;
+    total.researchedUnresolvedStateSpeciesDecisions +=
+      state.stateSpeciesResearch.counts["researched-unresolved"];
+    total.researchedBlockedStateSpeciesDecisions +=
+      state.stateSpeciesResearch.counts["researched-blocked"];
+    total.partiallyResearchedStateSpeciesDecisions +=
+      state.stateSpeciesResearch.counts["partially-researched"];
+    total.untouchedStateSpeciesDecisions +=
+      state.stateSpeciesResearch.counts["not-researched"];
     total.fullCountySpeciesDenominator += state.pairStatusCounts.totalPairs;
     total.resolvableCountySpeciesPairs +=
       state.pairStatusCounts.resolvablePairCount;
@@ -359,6 +384,11 @@ const denominator = states.reduce(
     unknownStateSpeciesDecisions: 0,
     blockedStateSpeciesDecisions: 0,
     explicitStateSpeciesOverrides: 0,
+    derivedApplicableStateSpeciesDecisions: 0,
+    researchedUnresolvedStateSpeciesDecisions: 0,
+    researchedBlockedStateSpeciesDecisions: 0,
+    partiallyResearchedStateSpeciesDecisions: 0,
+    untouchedStateSpeciesDecisions: 0,
     fullCountySpeciesDenominator: 0,
     resolvableCountySpeciesPairs: 0,
     notApplicableCountySpeciesPairs: 0,
@@ -490,6 +520,11 @@ const dashboard = {
     applicabilityUnclassifiedJurisdictionCodes,
     applicabilityScopeCompleteForAllJurisdictions:
       applicabilityUnclassifiedJurisdictionCodes.length === 0,
+    researchAccountedJurisdictions: researchAccountedJurisdictionCodes.length,
+    researchUnaccountedJurisdictions:
+      nationalV1JurisdictionCodes.length -
+      researchAccountedJurisdictionCodes.length,
+    researchAccountedJurisdictionCodes,
     remainingApplicableProtocolCountyScreens,
     measuredRatePairsPerHour: measuredRate,
     measuredRateEvidence: {

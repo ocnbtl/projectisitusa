@@ -27,6 +27,7 @@ import {
   type StateResearchConfigFile,
 } from "@/lib/research/state-research-config";
 import { selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
+import { deriveStateSpeciesResolution } from "@/lib/research/state-species-resolution";
 import type { ProtocolCellProjection } from "@/lib/research/protocol-cells";
 
 type Species = { id: string };
@@ -154,37 +155,6 @@ for (const configuredState of configFile.states.filter(
       bundle.outcomes.map((entry) => entry.species_id)
     ),
   }));
-  const expectedScope = {
-    publicationMode: config.mode,
-    speciesMode: config.speciesScope.mode,
-    certificationScope: config.mode === "authoritative" ? "state-baseline" : "bounded-pilot",
-    applicabilityPath: config.speciesScope.applicabilityPath,
-    applicabilityAsOf: resolvedScope.applicabilityAsOf,
-    catalogSpeciesCount: catalogSpeciesIds.length,
-    stateSpeciesDenominator: catalogSpeciesIds.length,
-    applicableSpeciesCount: resolvedScope.applicabilityDecisionCounts.applicable,
-    notApplicableSpeciesCount:
-      resolvedScope.applicabilityDecisionCounts["not-applicable"],
-    unknownSpeciesCount: resolvedScope.applicabilityDecisionCounts.unknown,
-    blockedSpeciesCount: resolvedScope.applicabilityDecisionCounts.blocked,
-    explicitApplicabilityDecisionCount:
-      resolvedScope.explicitApplicabilityDecisionCount,
-    resolvedStateSpeciesDecisionCount:
-      resolvedScope.resolvedStateSpeciesDecisionCount,
-    boundedAcquisitionSpeciesCount: selectedSpeciesIds.size,
-    defaultApplicability: resolvedScope.defaultApplicability,
-    fullCatalogApplicabilityComplete:
-      resolvedScope.fullCatalogApplicabilityComplete,
-    undeterminedSpeciesPolicy: config.speciesScope.undeterminedSpeciesPolicy,
-    compatibilityPublication: config.compatibilityPublication,
-    protocolModel: config.mode === "authoritative"
-      ? "explicit-source-species-legacy-migration"
-      : "explicit-source-species-active",
-  };
-  assert(
-    stableJson(summary.scope) === stableJson(expectedScope),
-    `${stateCode} projection scope differs from its state config.`,
-  );
   const protocolCells = readJson<ProtocolCellProjection>(protocolCellsPath);
   protocolProjectionSchema.parse(protocolCells);
   assert(protocolCells.stateCode === stateCode, `${stateCode} protocol cells have a different state.`);
@@ -256,6 +226,108 @@ for (const configuredState of configFile.states.filter(
       )
       .map((entry) => pairKey(entry.county_fips, entry.species_id)),
   );
+  const stateLegacyRuns = legacyRuns.filter(
+    (entry) => entry.stateCode === stateCode,
+  );
+  const researchedPairKeys = new Set(
+    compiled.evidence.map((entry) =>
+      pairKey(entry.countyFips, entry.speciesId),
+    ),
+  );
+  for (const run of stateLegacyRuns.filter(
+    (entry) => entry.scope === "statewide-source-screen",
+  )) {
+    for (const speciesId of run.targetSpeciesIds) {
+      for (const county of countyFips) {
+        researchedPairKeys.add(pairKey(county, speciesId));
+      }
+    }
+  }
+  for (const outcome of outcomes) {
+    if (
+      outcome.scope_complete &&
+      ["evidence-found", "no-qualifying-evidence"].includes(outcome.status)
+    ) {
+      researchedPairKeys.add(
+        pairKey(outcome.county_fips, outcome.species_id),
+      );
+    }
+  }
+  const blockedPairKeys = new Set(
+    outcomes
+      .filter(
+        (outcome) =>
+          outcome.status === "blocked" &&
+          !researchedPairKeys.has(
+            pairKey(outcome.county_fips, outcome.species_id),
+          ),
+      )
+      .map((outcome) => pairKey(outcome.county_fips, outcome.species_id)),
+  );
+  const stateSpeciesResolution = deriveStateSpeciesResolution({
+    catalogSpeciesIds,
+    countyFips,
+    explicitApplicabilityBySpeciesId:
+      resolvedScope.applicabilityBySpeciesId,
+    acceptedPresentSpeciesIds: new Set(
+      compiled.evidence
+        .filter((entry) => entry.assertion === "recorded-present")
+        .map((entry) => entry.speciesId),
+    ),
+    researchedPairKeys,
+    blockedPairKeys,
+  });
+  const {
+    applicabilityBySpeciesId: effectiveApplicabilityBySpeciesId,
+    applicabilityDecisionCounts,
+    ...expectedStateSpeciesResearch
+  } = stateSpeciesResolution;
+  const expectedScope = {
+    publicationMode: config.mode,
+    speciesMode: config.speciesScope.mode,
+    certificationScope:
+      config.mode === "authoritative" ? "state-baseline" : "bounded-pilot",
+    applicabilityPath: config.speciesScope.applicabilityPath,
+    applicabilityAsOf: resolvedScope.applicabilityAsOf,
+    catalogSpeciesCount: catalogSpeciesIds.length,
+    stateSpeciesDenominator: catalogSpeciesIds.length,
+    applicableSpeciesCount: applicabilityDecisionCounts.applicable,
+    notApplicableSpeciesCount:
+      applicabilityDecisionCounts["not-applicable"],
+    unknownSpeciesCount: applicabilityDecisionCounts.unknown,
+    blockedSpeciesCount: applicabilityDecisionCounts.blocked,
+    explicitApplicabilityDecisionCount:
+      resolvedScope.explicitApplicabilityDecisionCount,
+    derivedApplicableSpeciesCount:
+      stateSpeciesResolution.derivedApplicableSpeciesCount,
+    resolvedStateSpeciesDecisionCount:
+      resolvedScope.resolvedStateSpeciesDecisionCount,
+    boundedAcquisitionSpeciesCount: selectedSpeciesIds.size,
+    defaultApplicability: resolvedScope.defaultApplicability,
+    fullCatalogApplicabilityComplete:
+      applicabilityDecisionCounts.unknown === 0 &&
+      applicabilityDecisionCounts.blocked === 0,
+    fullCatalogResearchAccounted:
+      stateSpeciesResolution.fullCatalogResearchAccounted,
+    undeterminedSpeciesPolicy: config.speciesScope.undeterminedSpeciesPolicy,
+    compatibilityPublication: config.compatibilityPublication,
+    protocolModel:
+      config.mode === "authoritative"
+        ? "explicit-source-species-legacy-migration"
+        : "explicit-source-species-active",
+  };
+  assert(
+    stableJson(summary.scope) === stableJson(expectedScope),
+    `${stateCode} projection scope differs from its state config and reviewed evidence.`,
+  );
+  assert(
+    stableJson(summary.stateSpeciesResearch) ===
+      stableJson({
+        ...expectedStateSpeciesResearch,
+        applicabilityDecisionCounts,
+      }),
+    `${stateCode} state-species research resolution is stale.`,
+  );
 
   const aggregate = {
     verifiedPresent: 0,
@@ -313,6 +385,19 @@ for (const configuredState of configFile.states.filter(
       `${filename} sparse pair descriptor is stale.`,
     );
     for (const pair of county.pairs) {
+      const expectedApplicability =
+        effectiveApplicabilityBySpeciesId.get(pair.speciesId) ??
+        resolvedScope.defaultApplicability;
+      assert(
+        pair.applicabilityStatus === expectedApplicability,
+        `${filename} ${pair.speciesId} applicability differs from reviewed evidence.`,
+      );
+      if (pair.displayStatus === "verified-present") {
+        assert(
+          pair.applicabilityStatus === "applicable",
+          `${filename} ${pair.speciesId} is verified present but not state applicable.`,
+        );
+      }
       for (const evidence of pair.evidence) {
         assert(sourceIds.has(evidence.sourceId), `${filename} references an unknown source.`);
         projectedEvidenceIds.add(evidence.evidenceId);
@@ -364,7 +449,6 @@ for (const configuredState of configFile.states.filter(
     totals.rejectionRecordCount === runRejections.length + globalRejections.length,
     `${stateCode} rejection count is stale.`,
   );
-  const stateLegacyRuns = legacyRuns.filter((entry) => entry.stateCode === stateCode);
   assert(
     totals.researchRunCount === stateLegacyRuns.length + immutableRuns.length,
     `${stateCode} research run count is stale.`,

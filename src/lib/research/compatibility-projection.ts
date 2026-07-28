@@ -27,6 +27,9 @@ function sortUnique(values: string[]) {
   return [...new Set(values)].sort();
 }
 
+const REVIEWED_RESEARCH_REFERENCE_PREFIX =
+  "Reviewed Project Isitusa research evidence through ";
+
 function roundPercent(value: number) {
   return Number(value.toFixed(2));
 }
@@ -77,13 +80,18 @@ export function replaceStatePresenceFromResearch(input: {
       .map((pair) => pair.speciesId)
       .sort();
     if (speciesIds.length === 0) continue;
-    const previousRefs = input.currentPresence[county.countyFips]?.sourceRefs ?? [];
+    const previousRefs = (
+      input.currentPresence[county.countyFips]?.sourceRefs ?? []
+    ).filter(
+      (sourceRef) =>
+        !sourceRef.startsWith(REVIEWED_RESEARCH_REFERENCE_PREFIX),
+    );
     next[county.countyFips] = {
       countyFips: county.countyFips,
       speciesIds: sortUnique(speciesIds),
       sourceRefs: sortUnique([
         ...previousRefs,
-        `Reviewed Project Isitusa research evidence through ${input.asOf}`,
+        `${REVIEWED_RESEARCH_REFERENCE_PREFIX}${input.asOf}`,
       ]),
     };
   }

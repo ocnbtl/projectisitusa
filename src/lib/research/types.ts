@@ -1,4 +1,9 @@
 import type { SpeciesCategory } from "@/lib/data/types";
+import type {
+  StateSpeciesApplicability,
+  StateSpeciesResearchCounts,
+  StateSpeciesResolutionOverride,
+} from "@/lib/research/state-species-resolution";
 
 export type EvidenceAssertionType =
   | "recorded-present"
@@ -215,10 +220,12 @@ export interface ResearchProjectionScope {
   unknownSpeciesCount: number;
   blockedSpeciesCount: number;
   explicitApplicabilityDecisionCount: number;
+  derivedApplicableSpeciesCount: number;
   resolvedStateSpeciesDecisionCount: number;
   boundedAcquisitionSpeciesCount: number;
   defaultApplicability: "unknown";
   fullCatalogApplicabilityComplete: boolean;
+  fullCatalogResearchAccounted: boolean;
   undeterminedSpeciesPolicy: "included-as-unknown";
   compatibilityPublication: boolean;
   protocolModel:
@@ -267,6 +274,20 @@ export interface ResearchStateSummary {
   generatedAt: string;
   sourceSnapshotDate: string;
   scope: ResearchProjectionScope;
+  stateSpeciesResearch: {
+    schemaVersion: 1;
+    defaultStatus: "not-researched";
+    denominator: number;
+    countyEquivalentCount: number;
+    applicabilityDecisionCounts: Record<StateSpeciesApplicability, number>;
+    derivedApplicableSpeciesCount: number;
+    counts: StateSpeciesResearchCounts;
+    fullyAccountedSpeciesCount: number;
+    partiallyAccountedSpeciesCount: number;
+    untouchedSpeciesCount: number;
+    fullCatalogResearchAccounted: boolean;
+    overrides: StateSpeciesResolutionOverride[];
+  };
   summary: {
     speciesCount: number;
     countyCount: number;

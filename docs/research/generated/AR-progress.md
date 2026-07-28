@@ -1,6 +1,6 @@
 # Arkansas Research Progress
 
-Generated: `2026-07-26T00:00:00.000Z`
+Generated: `2026-07-27T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -15,10 +15,10 @@ Generated: `2026-07-26T00:00:00.000Z`
 - Determination coverage: `0.40%`
 - Research coverage: `2.12%`
 - Explicit outcome coverage: `2.1177%`
-- Applicable protocol cells: `38`
+- Applicable protocol cells: `56`
 - Current complete protocol cells: `5`
-- Protocol completion: `47.37%`
-- Current protocol completion: `13.16%`
+- Protocol completion: `32.14%`
+- Current protocol completion: `8.93%`
 - Evidence records: `756`
 - Research runs: `9`
 - Rejection records: `19`

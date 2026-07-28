@@ -54,10 +54,12 @@ interface ResearchProjectionScope {
   unknownSpeciesCount: number;
   blockedSpeciesCount: number;
   explicitApplicabilityDecisionCount: number;
+  derivedApplicableSpeciesCount: number;
   resolvedStateSpeciesDecisionCount: number;
   boundedAcquisitionSpeciesCount: number;
   defaultApplicability: "unknown";
   fullCatalogApplicabilityComplete: boolean;
+  fullCatalogResearchAccounted: boolean;
   undeterminedSpeciesPolicy: "included-as-unknown";
   compatibilityPublication: boolean;
   protocolModel:
@@ -73,6 +75,12 @@ export interface ResearchSummaryFile {
   generatedAt: string;
   sourceSnapshotDate: string;
   scope: ResearchProjectionScope;
+  stateSpeciesResearch: {
+    fullyAccountedSpeciesCount: number;
+    partiallyAccountedSpeciesCount: number;
+    untouchedSpeciesCount: number;
+    fullCatalogResearchAccounted: boolean;
+  };
   summary: {
     speciesCount: number;
     countyCount: number;
@@ -1545,7 +1553,7 @@ function ResearchControlCenterContent({
           </p>
         ) : (
           <p>
-            <strong className="text-[var(--foreground)]">State baseline projection.</strong> Public parity is required, and {formatNumber(summary.scope.unknownSpeciesCount)} state-species applicability decisions remain unknown. Certification readiness remains a separate gate.
+            <strong className="text-[var(--foreground)]">State baseline projection.</strong> Accepted county presence deterministically establishes {formatNumber(summary.scope.derivedApplicableSpeciesCount)} state-species applicability decisions. Of {formatNumber(summary.scope.catalogSpeciesCount)} catalog species, {formatNumber(summary.stateSpeciesResearch.fullyAccountedSpeciesCount)} are fully researched or explicitly blocked, {formatNumber(summary.stateSpeciesResearch.partiallyAccountedSpeciesCount)} are partial, and {formatNumber(summary.stateSpeciesResearch.untouchedSpeciesCount)} remain untouched. A defensible researched-unresolved result may pass research accounting, but an untouched species cannot. Certification readiness remains a separate gate.
           </p>
         )}
       </div>
