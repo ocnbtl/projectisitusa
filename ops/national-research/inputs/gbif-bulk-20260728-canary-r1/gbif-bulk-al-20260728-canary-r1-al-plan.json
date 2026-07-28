@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-al-20260728-canary-r1",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AL",
+  "asOf": "2026-07-28",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "ranking": [
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "8833abaa65343c2255f449ce9c1e955f7aaed19fc1f18b8506b6d4f4919c6ff3",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "d5d5ac657f072a022ed72b28c78212fa3b55b6a970193064e1d6ada3e2b8238b",
+    "protocolCells": "c39cb9058396d5d78e4cc91cecfb6c107a3e4e7c92de2b6d4fa4dd1ec4a96ce7"
+  },
+  "availableStateSpeciesScreenCount": 977,
+  "selectedStateSpeciesScreenCount": 5,
+  "selectedCountyOutcomeCount": 335,
+  "countyCount": 67,
+  "selected": [
+    {
+      "stateCode": "AL",
+      "speciesId": "alliaria-petiolata",
+      "scientificName": "Alliaria petiolata",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 67,
+      "incompleteCountyCount": 67,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AL",
+      "speciesId": "cardiospermum-halicacabum",
+      "scientificName": "Cardiospermum halicacabum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 67,
+      "incompleteCountyCount": 67,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AL",
+      "speciesId": "dioscorea-bulbifera",
+      "scientificName": "Dioscorea bulbifera",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 67,
+      "incompleteCountyCount": 67,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AL",
+      "speciesId": "egeria-densa",
+      "scientificName": "Egeria densa",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 67,
+      "incompleteCountyCount": 67,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AL",
+      "speciesId": "fatoua-villosa",
+      "scientificName": "Fatoua villosa",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 67,
+      "incompleteCountyCount": 67,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-bulk-al-20260728-canary-r1-al-001",
+      "stateCode": "AL",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "alliaria-petiolata",
+        "cardiospermum-halicacabum",
+        "dioscorea-bulbifera",
+        "egeria-densa",
+        "fatoua-villosa"
+      ],
+      "stateSpeciesScreenCount": 5,
+      "countyOutcomeCount": 335,
+      "candidateFile": "gbif-bulk-al-20260728-canary-r1-al-001.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-bulk-al-20260728-canary-r1-al-001",
+      "path": "ops/national-research/inputs/gbif-bulk-20260728-canary-r1/gbif-bulk-al-20260728-canary-r1-al-001.json",
+      "sha256": "e825e5a41e86eadc1bdd09dca18c820f370c5987577892f4097db1fa7385dcff",
+      "bytes": 42954
+    }
+  ]
+}

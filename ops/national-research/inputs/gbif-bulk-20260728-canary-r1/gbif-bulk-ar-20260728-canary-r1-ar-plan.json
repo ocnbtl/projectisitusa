@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-ar-20260728-canary-r1",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AR",
+  "asOf": "2026-07-28",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "ranking": [
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "8833abaa65343c2255f449ce9c1e955f7aaed19fc1f18b8506b6d4f4919c6ff3",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "b0b3de2a9804c5c07a2f5fd125a880f0c4a2e9fbd2ad838134648ea0c9f353b2",
+    "protocolCells": "b4a37578ad28ece34f9812446cce70e63e3040457d18ad58ccf0f1db732cdad3"
+  },
+  "availableStateSpeciesScreenCount": 51,
+  "selectedStateSpeciesScreenCount": 5,
+  "selectedCountyOutcomeCount": 375,
+  "countyCount": 75,
+  "selected": [
+    {
+      "stateCode": "AR",
+      "speciesId": "bromus-commutatus",
+      "scientificName": "Bromus commutatus",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 75,
+      "incompleteCountyCount": 75,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AR",
+      "speciesId": "bromus-secalinus",
+      "scientificName": "Bromus secalinus",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 75,
+      "incompleteCountyCount": 75,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AR",
+      "speciesId": "cardiospermum-halicacabum",
+      "scientificName": "Cardiospermum halicacabum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 75,
+      "incompleteCountyCount": 75,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AR",
+      "speciesId": "convolvulus-arvensis",
+      "scientificName": "Convolvulus arvensis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 75,
+      "incompleteCountyCount": 75,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    },
+    {
+      "stateCode": "AR",
+      "speciesId": "cynodon-dactylon",
+      "scientificName": "Cynodon dactylon",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 75,
+      "incompleteCountyCount": 75,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-bulk-ar-20260728-canary-r1-ar-001",
+      "stateCode": "AR",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "bromus-commutatus",
+        "bromus-secalinus",
+        "cardiospermum-halicacabum",
+        "convolvulus-arvensis",
+        "cynodon-dactylon"
+      ],
+      "stateSpeciesScreenCount": 5,
+      "countyOutcomeCount": 375,
+      "candidateFile": "gbif-bulk-ar-20260728-canary-r1-ar-001.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-bulk-ar-20260728-canary-r1-ar-001",
+      "path": "ops/national-research/inputs/gbif-bulk-20260728-canary-r1/gbif-bulk-ar-20260728-canary-r1-ar-001.json",
+      "sha256": "f25d9baa2b14a3b1f95aa5413e3dea8a94f5b3bb90a53634bd0615e5b006f4ac",
+      "bytes": 48508
+    }
+  ]
+}

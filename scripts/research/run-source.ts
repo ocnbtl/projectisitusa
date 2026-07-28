@@ -33,6 +33,10 @@ import {
   getStateDefinition,
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
+import {
+  buildGbifSourceVerification,
+  gbifSourceVerificationFilename,
+} from "./gbif-source-verification";
 
 type Candidate = {
   sourceId: string;
@@ -90,8 +94,8 @@ function parseArguments(argv: string[]) {
   const normalizedStateCode = stateCode.toUpperCase();
   const state = getStateDefinition(normalizedStateCode);
   if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state: ${stateCode}.`);
-  if (!Number.isInteger(candidateLimit) || candidateLimit < 1 || candidateLimit > 100) {
-    throw new Error("--candidate-limit must be an integer from 1 through 100.");
+  if (!Number.isInteger(candidateLimit) || candidateLimit < 1 || candidateLimit > 5_000) {
+    throw new Error("--candidate-limit must be an integer from 1 through 5000.");
   }
   if (startedAt && Number.isNaN(Date.parse(startedAt))) {
     throw new Error("--started-at must be an ISO date-time when provided.");
@@ -384,6 +388,7 @@ async function main() {
     adapterPath,
     parameterSchemaPath,
     path.join(ROOT, "scripts/research/run-source.ts"),
+    path.join(ROOT, "scripts/research/gbif-source-verification.ts"),
     path.join(ROOT, "src/lib/research/source-adapter.ts"),
     path.join(ROOT, "src/lib/research/run-files.ts"),
     path.join(ROOT, "src/lib/research/types.ts"),
@@ -540,6 +545,30 @@ async function main() {
       `--pairs ${parameters.candidatePairs.join(",")}`,
     ].join(" "),
   };
+
+  if (options.sourceId === gbifPreservedSpecimensAdapter.sourceId) {
+    const sourceVerification = buildGbifSourceVerification({
+      receipt,
+      artifacts: result.artifacts,
+      speciesScopes: requestedPairs.map((pair) => ({
+        speciesId: pair.speciesId,
+        scientificName: pair.scientificName,
+      })),
+    });
+    const contents = `${JSON.stringify(sourceVerification, null, 2)}\n`;
+    const filename = "source-verification.json";
+    outputContents.set(filename, {
+      contents,
+      mediaType: "application/json",
+    });
+    receipt.outputs.push(
+      fileReference(
+        gbifSourceVerificationFilename(runRelativeDirectory),
+        contents,
+        "application/json",
+      ),
+    );
+  }
 
   validateResearchRunInMemory({
     root: ROOT,

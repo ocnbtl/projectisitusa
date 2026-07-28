@@ -20,13 +20,13 @@ import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 const ADAPTER_ID = "gbif-preserved-specimens";
-const ADAPTER_VERSION = "1.1.0";
+const ADAPTER_VERSION = "1.2.0";
 const GBIF_API_BASE_URL = "https://api.gbif.org/v1";
 const GBIF_OCCURRENCE_BASE_URL = "https://www.gbif.org/occurrence";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
 const REQUEST_INTERVAL_MS = 334;
 const REQUEST_TIMEOUT_MS = 60_000;
-const MAX_RETAINED_ARTIFACT_BYTES = 32 * 1024 * 1024;
+const MAX_RETAINED_ARTIFACT_BYTES = 18 * 1024 * 1024;
 const MAX_SEARCH_RESULT_WINDOW = 100_000;
 
 const CULTIVATED_OR_CAPTIVE_PATTERN =
@@ -221,7 +221,12 @@ function parseParameters(context: SourceAdapterContext): GbifAdapterParameters {
   if (new Set(candidatePairs).size !== candidatePairs.length) {
     throw new Error("candidatePairs must not contain duplicates.");
   }
-  const candidateLimit = requireInteger(parameters.candidateLimit, "candidateLimit", 1, 100);
+  const candidateLimit = requireInteger(
+    parameters.candidateLimit,
+    "candidateLimit",
+    1,
+    5_000,
+  );
   if (candidatePairs.length > candidateLimit) {
     throw new Error(
       `candidatePairs contains ${candidatePairs.length} entries, exceeding candidateLimit ${candidateLimit}.`,

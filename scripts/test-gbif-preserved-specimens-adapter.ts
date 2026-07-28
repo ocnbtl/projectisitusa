@@ -1,6 +1,7 @@
 import { gbifPreservedSpecimensAdapter } from "./research/adapters/gbif-preserved-specimens";
 
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
+import { listCountyEquivalents } from "@/lib/research/geography-registry";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -585,6 +586,64 @@ async function main() {
       retiredRequestedRejected && retiredRequestedFetches === 0,
       "A retired requested Alaska FIPS was not rejected before network access.",
     );
+
+    const texasUrls: string[] = [];
+    globalThis.fetch = mockFetch(async (input) => {
+      const url = String(input);
+      texasUrls.push(url);
+      if (url.includes("/species/match")) {
+        return jsonResponse({
+          usageKey: 123,
+          speciesKey: 123,
+          matchType: "EXACT",
+          confidence: 100,
+          rank: "SPECIES",
+          canonicalName: "Example species",
+        });
+      }
+      return jsonResponse({
+        offset: 0,
+        limit: 300,
+        endOfRecords: true,
+        count: 0,
+        results: [],
+      });
+    });
+    const texasPairs = listCountyEquivalents("TX").map((county) => ({
+      countyFips: county.countyFips,
+      countyName: county.shortName,
+      speciesId: "example-species",
+      scientificName: "Example species",
+    }));
+    assert(texasPairs.length === 254, "The Texas bulk fixture has a stale county count.");
+    const texas = await gbifPreservedSpecimensAdapter.run({
+      ...context,
+      runId: "synthetic-gbif-texas-state-species-run",
+      stateCode: "TX",
+      requestedPairs: texasPairs,
+      parameters: {
+        ...parameters,
+        stateCode: "TX",
+        stateProvince: "Texas",
+        candidateLimit: texasPairs.length,
+        candidatePairs: texasPairs.map(
+          (pair) => `${pair.countyFips}:${pair.speciesId}`,
+        ),
+      },
+    });
+    assert(
+      texasUrls.length === 2,
+      "The Texas state-species scope did not use one match and one statewide occurrence request.",
+    );
+    assert(
+      texas.outcomes.length === texasPairs.length &&
+        texas.outcomes.every(
+          (outcome) =>
+            outcome.status === "no-qualifying-evidence" &&
+            outcome.scope_complete,
+        ),
+      "The statewide query did not emit one honest completed outcome per active Texas county equivalent.",
+    );
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -606,6 +665,7 @@ async function main() {
         alaskaCountyEquivalentRouting: true,
         retiredAlaskaGeographyRejected: true,
         coordinateOnlyGeographyRejected: true,
+        texasStateSpeciesBulkOutcomes: 254,
       },
       null,
       2,
