@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-ar-20260728-r1-001-1",
+  "jobId": "gbif-bulk-ar-20260728-r1-001",
+  "leaseId": "lease-gbif-bulk-ar-20260728-r1-001-1",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-28T04:35:00Z",
+  "workerCommit": "f0978a7275f7b46e4c0d4280398385298adca85f",
+  "workerBranchHead": "6b4b6f37ffe5257d8d95117d4d612bc17de4176c",
+  "manifestHash": "ee00f3ed1bd7b08ab52200b3ed83b74383c83d00c5a5af63f467e0da2967351e",
+  "changedPaths": [
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-occurrences-bromus-commutatus-000000.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-occurrences-bromus-secalinus-000000.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-occurrences-cardiospermum-halicacabum-000000.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-occurrences-convolvulus-arvensis-000000.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-occurrences-cynodon-dactylon-000000.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-species-match-bromus-commutatus.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-species-match-bromus-secalinus.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-species-match-cardiospermum-halicacabum.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-species-match-convolvulus-arvensis.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/artifacts/gbif-species-match-cynodon-dactylon.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/assertions.ndjson",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/manifest.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/outcomes.ndjson",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/receipt.json",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/rejections.ndjson",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/reviews.ndjson",
+    "src/data/research/runs/20260728T033130Z__gbif-preserved-specimens__22d4c1892704/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 375 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 2,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 375 ordered county outcomes, 484 accepted assertions and reviews, 102 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths. Two setup interventions stopped before network access and corrected only sparse-worktree dependency visibility."
+}
