@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-28T01:32:38.226Z",
+  "runId": "20260728T012000Z__gbif-preserved-specimens__a43239b354d1",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AK",
+  "pairKeys": [
+    "02020:rorippa-austriaca"
+  ],
+  "parameterHash": "a43239b354d1c3af671ab2c5c771d2a414f87466f7bf452f1d51a62d11690b4c",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat as API aggregator; no underlying occurrence publisher was represented because the retained statewide occurrence response was empty."
+  },
+  "terms": {
+    "license": "GBIF occurrence data uses record-level Creative Commons licenses; the retained empty occurrence response contains no occurrence records.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-28T01:32:38.225Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require explicit GBIF stateProvince text matching Alaska and explicit GBIF county-equivalent text that resolves uniquely through the registered active county-equivalent registry to FIPS 02020, Anchorage Municipality, Alaska.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment; missing, ambiguous, retired, conflicting, or coordinate-only county-equivalent geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement; Rorippa austriaca matched GBIF speciesKey 3053406 with EXACT match type and confidence 99.",
+    "targetSpeciesIds": [
+      "rorippa-austriaca"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "key",
+      "gbifID",
+      "occurrenceID",
+      "datasetKey"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-rorippa-austriaca",
+        "url": "https://api.gbif.org/v1/species/match?name=Rorippa+austriaca&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-28T01:32:37.779Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-rorippa-austriaca",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3053406&limit=300&offset=0",
+        "purpose": "Acquire the complete statewide Alaska preserved-specimen occurrence response for the exact matched taxon and screen the leased county-species pair by explicit county-equivalent text.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-28T01:32:38.225Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "The registered source has no negative semantics; an empty query, source silence, or a rejected occurrence cannot support verified absence.",
+      "GBIF occurrence search does not provide target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "Only qualifying positive preserved-specimen occurrences can become determination evidence."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-occurrences-rorippa-austriaca-000000.json",
+      "sha256": "895e98c4fc942ab7d7a88a36b939ef457d89aa6b53c9aed51a7fd67ff354269a",
+      "bytes": 79
+    },
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-species-match-rorippa-austriaca.json",
+      "sha256": "fe095b32d7648059a7ade35fad72e884dcd3774b4da3d869e4b7218207c17747",
+      "bytes": 470
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The retained statewide occurrence response contains zero records, so no occurrence publisher, record license, or source freshness field is available for this screen.",
+    "The live search has no fixed snapshot identifier; retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "The completed empty screen is researched unresolved only and does not support verified absence or not-detected."
+  ]
+}

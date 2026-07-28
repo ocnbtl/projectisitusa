@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260728T012000Z__gbif-preserved-specimens__a43239b354d1",
+  "status": "complete",
+  "started_at": "2026-07-28T01:20:00.000Z",
+  "finished_at": "2026-07-28T01:32:38.226Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.1.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "d63d8e5da9c3a72f48182596014f426c164ab08f1b5875bb2690ed5c09320062",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.1.0",
+  "adapter_code_hash": "22586e1505fd6ca55f3e1c4b0cf8670d83cf72ec6d5ded1192e8de39fd1a2467",
+  "code_commit": "a278d64a57981fe974df9bf3130eb4636f56c629",
+  "parameter_hash": "a43239b354d1c3af671ab2c5c771d2a414f87466f7bf452f1d51a62d11690b4c",
+  "parameters": {
+    "stateCode": "AK",
+    "stateProvince": "Alaska",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "02020:rorippa-austriaca"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AK",
+    "county_fips": [
+      "02020"
+    ],
+    "species_ids": [
+      "rorippa-austriaca"
+    ],
+    "pair_keys": [
+      "02020:rorippa-austriaca"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Rorippa+austriaca&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-28T01:32:37.779Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Alaska&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3053406&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-28T01:32:38.225Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-occurrences-rorippa-austriaca-000000.json",
+      "sha256": "895e98c4fc942ab7d7a88a36b939ef457d89aa6b53c9aed51a7fd67ff354269a",
+      "bytes": 79,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-species-match-rorippa-austriaca.json",
+      "sha256": "fe095b32d7648059a7ade35fad72e884dcd3774b4da3d869e4b7218207c17747",
+      "bytes": 470,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/outcomes.ndjson",
+      "sha256": "02b64cf099444b38613c5d9f6efeef5b4e101740ca6a59d4b477cff9b7896d5d",
+      "bytes": 801,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/source-verification.json",
+      "sha256": "f5dec8660697cac44a3adb6312c5f1b25f209d4933c03bff9e3ac95a6fdcb18f",
+      "bytes": 5225,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AK --candidate-file ops/national-research/inputs/gbif-canary-ak-rorippa-austriaca-02020.json --output-root src/data/research/runs --pairs 02020:rorippa-austriaca"
+}
