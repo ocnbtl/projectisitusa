@@ -77611,7 +77611,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/state_lists_wave_1",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-28T07:22:00Z",
       "expiresAt": "2026-07-29T07:22:00.000Z",
       "recoveryAt": null,
@@ -81160,7 +81160,8 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check e241215744e46ac383963bce3f32b533c1537a44...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-28T07:28:00Z"
     }
   ]
 }
