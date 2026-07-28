@@ -1614,7 +1614,7 @@
       "queueId": "queue-lease-gbif-bulk-20260728-r2-al-003-1",
       "jobId": "gbif-bulk-20260728-r2-al-003",
       "leaseId": "lease-gbif-bulk-20260728-r2-al-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-28T05:20:00Z",
       "manifestPath": "manifests/gbif-bulk-20260728-r2-al-003__lease-gbif-bulk-20260728-r2-al-003-1.json",
       "manifestHash": "de025f3e4298030b4b5d759e2caf7311cb580c254f37ac1071ef91ee887d8f7b",
@@ -1759,6 +1759,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260728-r2-al-003-1.json",
         "sha256": "1a663d6d3d641214feeb04adb359e82b1a217820053f1e035974a52d384cb46a",
         "bytes": 16729
+      },
+      "integratedAt": "2026-07-28T05:20:10Z",
+      "integrator": "MAIN",
+      "integrationCommit": "c1b7a2715b1f4d70fce5c47c172b675561637a2c",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 3350 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 3350 complete county outcomes, 565 accepted assertions and reviews, 182 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260728-r2-al-003-1.json",
+        "sha256": "9ea67b3f102bca7d005438f3b885464e5e966c48a1fc85236ad4d2e6333d7a26",
+        "bytes": 16898
       }
     }
   ]
