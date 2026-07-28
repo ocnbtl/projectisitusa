@@ -1615,15 +1615,14 @@ export function ResearchControlCenter({
     [availableStates],
   );
   const defaultStateCode = availableStates[0]?.stateCode ?? "AL";
-  const [selectedStateCode, setSelectedStateCode] = useState(defaultStateCode);
+  const [selectedStateCode, setSelectedStateCode] = useState(() => {
+    if (typeof window === "undefined") return defaultStateCode;
+    const requested = new URLSearchParams(window.location.search).get("state")?.toUpperCase();
+    return requested && allowedStateCodes.has(requested) ? requested : defaultStateCode;
+  });
   const [summary, setSummary] = useState<ResearchSummaryFile | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
-
-  useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get("state")?.toUpperCase();
-    if (requested && allowedStateCodes.has(requested)) setSelectedStateCode(requested);
-  }, [allowedStateCodes]);
 
   function handleStateChange(stateCode: string) {
     if (!allowedStateCodes.has(stateCode)) return;
