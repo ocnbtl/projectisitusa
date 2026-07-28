@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "regulated-list-gbif-canary-wave-2026-07-28",
+  "evaluatedAt": "2026-07-28T01:55:00Z",
+  "result": "passed-two-worker-canary",
+  "executionOwner": "MAIN",
+  "baseCommit": "a278d64a57981fe974df9bf3130eb4636f56c629",
+  "projectionAsOf": "2026-07-28",
+  "frozenSkills": {
+    "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+    "freezeCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+    "isitusaNationalOrchestratorSha256": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "isitusaEvidenceWorkerSha256": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+  },
+  "scope": [
+    {
+      "stateCode": "AK",
+      "countyEquivalentId": "02020",
+      "speciesId": "rorippa-austriaca",
+      "sourceFamily": "gbif-preserved-specimens",
+      "runId": "20260728T012000Z__gbif-preserved-specimens__a43239b354d1",
+      "result": "accepted-and-integrated",
+      "contentCommit": "f1c5ffd3c256c9529e8a03e3d7a8c5b89661fbb1",
+      "branchHead": "77a09b11ca085257502643bb8ecc9bdaa8562bb1",
+      "manifestSha256": "ce0ad102886ef93131c13f2cf674ef13d64d077ef309f084dc344dfd02a6d31a",
+      "artifacts": 2,
+      "artifactBytes": 549,
+      "requests": 2,
+      "candidates": 0,
+      "assertions": 0,
+      "reviews": 0,
+      "rejections": 0,
+      "outcomes": 1,
+      "outcomeStatus": "no-qualifying-evidence"
+    },
+    {
+      "stateCode": "AR",
+      "countyEquivalentId": "05119",
+      "speciesId": "agrostemma-githago",
+      "sourceFamily": "gbif-preserved-specimens",
+      "runId": "20260728T012100Z__gbif-preserved-specimens__e9ac279ac837",
+      "result": "accepted-and-integrated",
+      "contentCommit": "0caa3e13553a0443f16c0dd7f26bcb10ee02d307",
+      "branchHead": "905cc07011eaa6b2213104e5d97ed4af55ea9971",
+      "manifestSha256": "2ee7feb8fedfd7001682e06fb2fc17cf0a08ac044a49fd7ae039c09140736536",
+      "artifacts": 2,
+      "artifactBytes": 280120,
+      "requests": 2,
+      "candidates": 43,
+      "assertions": 0,
+      "reviews": 0,
+      "rejections": 6,
+      "outcomes": 1,
+      "outcomeStatus": "no-qualifying-evidence"
+    }
+  ],
+  "workerLifecycle": {
+    "jobsIssued": 2,
+    "leasesIssued": 4,
+    "initialAttemptFailures": 2,
+    "completedLeases": 2,
+    "acceptedSubmissions": 2,
+    "integratedSubmissions": 2,
+    "rejectedSubmissions": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "mergeConflicts": 0,
+    "criticalSafetyViolations": 0,
+    "evidenceSemanticViolations": 0,
+    "manualInterventions": 2,
+    "initialFailure": "Both first leases used planned start times later than the host clock. Canonical receipt validation rejected the impossible interval before any output was accepted.",
+    "recovery": "Replacement leases used host-valid timestamps, linked the failed attempts, and retained the same non-overlapping pair scopes.",
+    "approvalQualification": "The Arkansas adapter command required one MAIN execution in the leased worktree after two worker approval denials. The worker then independently finalized and validated the immutable result."
+  },
+  "validation": {
+    "workerValidator": "pass-twice",
+    "canonicalImmutableRunValidator": "pass-twice",
+    "manifestValidator": "pass",
+    "descriptorHashesAndBytes": "pass",
+    "exactBaseToHeadDiff": "pass",
+    "permittedPathCheck": "pass",
+    "receiptCountReconciliation": "pass",
+    "deterministicRepeatedValidation": "pass",
+    "transactionalIntegration": "pass"
+  },
+  "grossSourceActivity": {
+    "artifacts": 4,
+    "artifactBytes": 280669,
+    "requests": 4,
+    "candidates": 43,
+    "assertions": 0,
+    "reviews": 0,
+    "rejections": 6,
+    "outcomes": 2,
+    "noQualifyingEvidenceOutcomes": 2,
+    "errors": 0
+  },
+  "netProjectionChange": {
+    "verifiedPresent": 0,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 2,
+    "notResearched": -2,
+    "evidenceRecords": 0,
+    "rejections": 6,
+    "explicitOutcomePairs": 2,
+    "conflicts": 0,
+    "remainingApplicableProtocolCountyScreens": -2
+  },
+  "semantics": {
+    "sourceSilenceCreatedOnlyResearchedUnresolved": true,
+    "unsupportedAbsenceClaims": 0,
+    "unsupportedNotDetectedClaims": 0,
+    "coordinateDerivedCountyClaims": 0,
+    "positiveEvidenceClaims": 0
+  },
+  "performance": {
+    "workerWallSeconds": 46.226,
+    "validatedPairsPerHour": 155.7565,
+    "throughputQualification": "This two-pair canary measures orchestration and validation overhead only. It is not a national acquisition or certification forecast.",
+    "peakWorkerMemoryMb": null,
+    "peakWorkerMemoryQualification": "Worker peak memory was not durably measured.",
+    "disk": {
+      "minimumFreeGiBBeforeDispatchWithFullWorktrees": 2.4,
+      "dispatchAtThatPoint": false,
+      "minimumFreeGiBDuringSparseCanary": 4.7,
+      "freeGiBAfterWorktreeRemoval": 5.8,
+      "safeguardResult": "Full worktrees were rejected before lease activation. Sparse worktrees excluded generated public output and remained within declared artifact budgets."
+    },
+    "peakConcurrentWorkers": 2
+  },
+  "conclusion": "Two frozen-skill worker submissions completed on non-overlapping state scopes, passed independent MAIN validation, and integrated without shared changes, collisions, conflicts, forbidden writes, or evidence-semantic violations."
+}

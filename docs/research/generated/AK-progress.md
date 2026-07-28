@@ -10,17 +10,17 @@ Generated: `2026-07-28T00:00:00.000Z`
 - Verified present: `48`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1335`
-- Not researched: `73737`
+- Researched unresolved: `1336`
+- Not researched: `73736`
 - Determination coverage: `0.06%`
 - Research coverage: `1.84%`
-- Explicit outcome coverage: `1.8411%`
+- Explicit outcome coverage: `1.8424%`
 - Applicable protocol cells: `63`
 - Current complete protocol cells: `5`
 - Protocol completion: `7.94%`
 - Current protocol completion: `7.94%`
 - Evidence records: `50`
-- Research runs: `10`
+- Research runs: `11`
 - Rejection records: `440`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,10 +38,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 30 | 0 | 1 |
 | Annual Bluegrass (`poa-annua`) | plants | 30 | 0 | 1 |
 | Wild radish (`raphanus-raphanistrum`) | plants | 30 | 0 | 1 |
-| Austrian yellowcress (`rorippa-austriaca`) | plants | 30 | 0 | 1 |
 | Charlock mustard (`sinapis-arvensis`) | plants | 30 | 0 | 1 |
 | Bird Vetch (`vicia-cracca`) | plants | 30 | 0 | 1 |
 | Shepherd's Purse (`capsella-bursa-pastoris`) | plants | 30 | 0 | 0 |
+| Austrian yellowcress (`rorippa-austriaca`) | plants | 29 | 1 | 1 |
 | Spruce Aphid (`elatobium-abietinum`) | insects | 29 | 0 | 1 |
 | Creeping Buttercup (`ranunculus-repens`) | plants | 29 | 0 | 1 |
 | Common Plantain (`plantago-major`) | plants | 25 | 0 | 1 |
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-26T11:30:20.869Z | 3 | 4 |
+| GBIF preserved specimen records | operational | 2026-07-28T01:32:38.226Z | 3 | 5 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

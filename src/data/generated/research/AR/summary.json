@@ -44,8 +44,8 @@
       "blocked": 0
     },
     "fullyAccountedSpeciesCount": 53,
-    "partiallyAccountedSpeciesCount": 2,
-    "untouchedSpeciesCount": 2449,
+    "partiallyAccountedSpeciesCount": 3,
+    "untouchedSpeciesCount": 2448,
     "fullCatalogResearchAccounted": false,
     "overrides": [
       {
@@ -53,10 +53,10 @@
         "status": "applicable",
         "applicabilityStatus": "applicable",
         "applicabilityBasis": "explicit",
-        "researchedCountyCount": 0,
+        "researchedCountyCount": 1,
         "blockedCountyCount": 0,
-        "accountedCountyCount": 0,
-        "notResearchedCountyCount": 75
+        "accountedCountyCount": 1,
+        "notResearchedCountyCount": 74
       },
       {
         "speciesId": "akebia-quinata",
@@ -746,29 +746,29 @@
     "verifiedPresent": 746,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 3231,
-    "notResearched": 183823,
+    "researchedUnresolved": 3232,
+    "notResearched": 183822,
     "determinationCoveragePercent": 0.4,
     "researchCoveragePercent": 2.12,
-    "explicitOutcomePairCount": 3977,
-    "explicitOutcomeCoveragePercent": 2.1177,
+    "explicitOutcomePairCount": 3978,
+    "explicitOutcomeCoveragePercent": 2.1182,
     "conflictCount": 0,
     "evidenceRecordCount": 756,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 756,
-    "rejectionRecordCount": 19,
-    "researchRunCount": 9,
+    "rejectionRecordCount": 25,
+    "researchRunCount": 10,
     "boundedAcquisition": {
       "speciesCount": 68,
       "totalPairs": 5100,
       "verifiedPresent": 746,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 3231,
-      "notResearched": 1123,
-      "researchCoveragePercent": 77.98,
-      "explicitOutcomePairs": 3977,
-      "explicitOutcomeCoveragePercent": 77.9804
+      "researchedUnresolved": 3232,
+      "notResearched": 1122,
+      "researchCoveragePercent": 78,
+      "explicitOutcomePairs": 3978,
+      "explicitOutcomeCoveragePercent": 78
     }
   },
   "counties": [
@@ -2494,22 +2494,22 @@
       "verifiedPresent": 15,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 38,
-      "notResearched": 2451,
-      "researchCoveragePercent": 2.12,
-      "explicitOutcomePairs": 53,
-      "explicitOutcomeCoveragePercent": 2.1166,
+      "researchedUnresolved": 39,
+      "notResearched": 2450,
+      "researchCoveragePercent": 2.16,
+      "explicitOutcomePairs": 54,
+      "explicitOutcomeCoveragePercent": 2.1565,
       "boundedAcquisition": {
         "speciesCount": 68,
         "totalPairs": 68,
         "verifiedPresent": 15,
         "verifiedAbsent": 0,
         "notDetected": 0,
-        "researchedUnresolved": 38,
-        "notResearched": 15,
-        "researchCoveragePercent": 77.94,
-        "explicitOutcomePairs": 53,
-        "explicitOutcomeCoveragePercent": 77.9412
+        "researchedUnresolved": 39,
+        "notResearched": 14,
+        "researchCoveragePercent": 79.41,
+        "explicitOutcomePairs": 54,
+        "explicitOutcomeCoveragePercent": 79.4118
       }
     },
     {
@@ -3135,9 +3135,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": "2026-07-16T08:55:02.826Z",
+      "lastRunAt": "2026-07-28T01:34:53.009Z",
       "evidencePairCount": 2,
-      "screenedSpeciesCount": 2
+      "screenedSpeciesCount": 3
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -3241,18 +3241,6 @@
     }
   ],
   "queue": [
-    {
-      "speciesId": "agrostemma-githago",
-      "commonName": "Common corncockle",
-      "scientificName": "Agrostemma githago",
-      "category": "plants",
-      "notResearchedCountyCount": 75,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 75001
-    },
     {
       "speciesId": "bromus-commutatus",
       "commonName": "Meadow brome",
@@ -3396,6 +3384,18 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 75001
+    },
+    {
+      "speciesId": "agrostemma-githago",
+      "commonName": "Common corncockle",
+      "scientificName": "Agrostemma githago",
+      "category": "plants",
+      "notResearchedCountyCount": 74,
+      "researchedUnresolvedCountyCount": 1,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 74011
     },
     {
       "speciesId": "matricaria-discoidea",

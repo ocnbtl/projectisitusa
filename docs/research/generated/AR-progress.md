@@ -10,18 +10,18 @@ Generated: `2026-07-28T00:00:00.000Z`
 - Verified present: `746`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3231`
-- Not researched: `183823`
+- Researched unresolved: `3232`
+- Not researched: `183822`
 - Determination coverage: `0.40%`
 - Research coverage: `2.12%`
-- Explicit outcome coverage: `2.1177%`
+- Explicit outcome coverage: `2.1182%`
 - Applicable protocol cells: `70`
 - Current complete protocol cells: `5`
 - Protocol completion: `25.71%`
 - Current protocol completion: `7.14%`
 - Evidence records: `756`
-- Research runs: `9`
-- Rejection records: `19`
+- Research runs: `10`
+- Rejection records: `25`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,7 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Common corncockle (`agrostemma-githago`) | plants | 75 | 0 | 1 |
 | Meadow brome (`bromus-commutatus`) | plants | 75 | 0 | 1 |
 | Rye brome (`bromus-secalinus`) | plants | 75 | 0 | 1 |
 | Balloon vine (`cardiospermum-halicacabum`) | plants | 75 | 0 | 1 |
@@ -45,6 +44,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Itchgrass (`rottboellia-cochinchinensis`) | plants | 75 | 0 | 1 |
 | Giant Foxtail (`setaria-faberi`) | plants | 75 | 0 | 1 |
 | Johnsongrass (`sorghum-halepense`) | plants | 75 | 0 | 1 |
+| Common corncockle (`agrostemma-githago`) | plants | 74 | 1 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 74 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 74 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 2 |
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-16T08:55:02.826Z | 2 | 2 |
+| GBIF preserved specimen records | operational | 2026-07-28T01:34:53.009Z | 2 | 3 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
