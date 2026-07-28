@@ -1041,6 +1041,67 @@
         "sha256": "f5b10360d973833be18454d43ac9a217aa874f19e041416bd99e22e51213d9a7",
         "bytes": 2381
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-bulk-al-20260728-r1-001-2",
+      "jobId": "gbif-bulk-al-20260728-r1-001",
+      "leaseId": "lease-gbif-bulk-al-20260728-r1-001-2",
+      "decision": "accepted",
+      "submittedAt": "2026-07-28T03:58:00Z",
+      "manifestPath": "manifests/gbif-bulk-al-20260728-r1-001__lease-gbif-bulk-al-20260728-r1-001-2.json",
+      "manifestHash": "1aeaddaf9f48f5e2a3c9d71e1b70fbdbbba15ff9b794a3129364ca66c35c43f7",
+      "manifestBytes": 21543,
+      "workerCommit": "d7b7be660ca277a0c5e257f4a0c1c4d901200118",
+      "workerBranchHead": "4c741f04d3f8da5886d649914709efa4406b5dcd",
+      "reviewedAt": "2026-07-28T04:02:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 335 ordered county outcomes, 98 accepted assertions and reviews, 73 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths. Two MAIN interventions preserved attempt 1 and corrected omitted and misordered exact pair scope before acceptance.",
+      "changedPaths": [
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-occurrences-alliaria-petiolata-000000.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-occurrences-cardiospermum-halicacabum-000000.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-occurrences-dioscorea-bulbifera-000000.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-occurrences-egeria-densa-000000.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-occurrences-fatoua-villosa-000000.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-species-match-alliaria-petiolata.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-species-match-cardiospermum-halicacabum.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-species-match-dioscorea-bulbifera.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-species-match-egeria-densa.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/artifacts/gbif-species-match-fatoua-villosa.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/assertions.ndjson",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/manifest.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/outcomes.ndjson",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/receipt.json",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/rejections.ndjson",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/reviews.ndjson",
+        "src/data/research/runs/20260728T033100Z__gbif-preserved-specimens__0f9fdb6c2fbf/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 335 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 2,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-bulk-al-20260728-r1-001-2.json",
+        "sha256": "5d6b2ba58779fd27d3c3839ca44eefe498ee880be39e11e6e7d0575e04ee48b0",
+        "bytes": 3792
+      }
     }
   ]
 }

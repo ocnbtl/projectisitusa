@@ -5,6 +5,7 @@ import { z } from "zod";
 
 import {
   mergeReviewedApplicability,
+  stateApplicabilityProjectionStates,
   stablePrettyJson,
   validateStateApplicabilityReview,
   type CatalogSpecies,
@@ -101,7 +102,13 @@ for (const source of sourceRegistry.sources) {
 }
 
 const stateCodes = [
-  ...new Set(reviewEntries.map((entry) => entry.review.stateCode)),
+  ...new Set(
+    reviewEntries.flatMap((entry) =>
+      stateApplicabilityProjectionStates(
+        registryById.get(entry.review.sourceId)!,
+      )
+    ),
+  ),
 ].sort();
 const states = [];
 for (const stateCode of stateCodes) {
@@ -112,8 +119,12 @@ for (const stateCode of stateCodes) {
   );
   const current = readJson<StateApplicabilityFile>(filepath);
   const reviews = reviewEntries
-    .filter((entry) => entry.review.stateCode === stateCode)
-    .map((entry) => entry.review);
+    .filter((entry) =>
+      stateApplicabilityProjectionStates(
+        registryById.get(entry.review.sourceId)!,
+      ).includes(stateCode)
+    )
+    .map((entry) => ({ ...entry.review, stateCode }));
   const merged = mergeReviewedApplicability({ current, reviews });
   const expected = stablePrettyJson(merged.output);
   const actual = readFileSync(filepath, "utf8");

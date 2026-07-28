@@ -14,6 +14,7 @@ export type StateApplicabilitySource = {
   label: string;
   authority: string;
   stateCode: string;
+  appliesToStateCodes?: string[];
   homepage: string;
   access: "download" | "official-web";
   claimSemantics: "regulated-state-applicability";
@@ -77,6 +78,29 @@ export type CatalogSpecies = {
   scientificName: string;
 };
 
+export function stateApplicabilityProjectionStates(
+  source: StateApplicabilitySource,
+): string[] {
+  const states = source.appliesToStateCodes ?? [source.stateCode];
+  assertUnique(states, `Applicability source ${source.id} projected states`);
+  const sorted = [...states].sort();
+  if (states.join("\n") !== sorted.join("\n")) {
+    throw new Error(
+      `Applicability source ${source.id} projected states are not sorted.`,
+    );
+  }
+  if (
+    source.stateCode === "US"
+      ? states.length === 0 || states.includes("US")
+      : states.length !== 1 || states[0] !== source.stateCode
+  ) {
+    throw new Error(
+      `Applicability source ${source.id} has an invalid jurisdiction projection.`,
+    );
+  }
+  return states;
+}
+
 export function sha256Bytes(value: Buffer | string) {
   return createHash("sha256").update(value).digest("hex");
 }
@@ -122,6 +146,7 @@ export function validateStateApplicabilityReview(input: {
       `Review ${review.reviewId} state ${review.stateCode} differs from source state ${source.stateCode}.`,
     );
   }
+  const projectedStateCodes = stateApplicabilityProjectionStates(source);
 
   const artifactPath = path.resolve(reviewDirectory, review.artifact.path);
   const reviewRoot = `${path.resolve(reviewDirectory)}${path.sep}`;
@@ -182,6 +207,7 @@ export function validateStateApplicabilityReview(input: {
     reviewId: review.reviewId,
     sourceId: review.sourceId,
     stateCode: review.stateCode,
+    projectedStateCodes,
     acceptedEventCount: review.acceptedEvents.length,
     blockedRowCount: review.blockedRows.length,
     artifactBytes: artifactBytes.length,

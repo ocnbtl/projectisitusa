@@ -8,6 +8,7 @@ import {
   mergeReviewedApplicability,
   sha256Bytes,
   stablePrettyJson,
+  stateApplicabilityProjectionStates,
   validateStateApplicabilityReview,
   type CatalogSpecies,
   type StateApplicabilityReview,
@@ -188,6 +189,37 @@ try {
     silence.output.species.length === 0,
     "Source silence created a state applicability decision.",
   );
+  const federalSource: StateApplicabilitySource = {
+    ...source,
+    id: "federal-official-test",
+    stateCode: "US",
+    appliesToStateCodes: ["AK", "AL"],
+  };
+  const federalReview: StateApplicabilityReview = {
+    ...review,
+    reviewId: "federal-official-test-20260728",
+    sourceId: federalSource.id,
+    stateCode: "US",
+  };
+  validateStateApplicabilityReview({
+    review: federalReview,
+    reviewDirectory,
+    registryById: new Map([[federalSource.id, federalSource]]),
+    catalogById: new Map([[species.id, species]]),
+  });
+  const projectedStates = stateApplicabilityProjectionStates(federalSource);
+  assert(
+    projectedStates.join(",") === "AK,AL",
+    "Federal applicability source did not project to its explicit jurisdictions.",
+  );
+  const federalMerge = mergeReviewedApplicability({
+    current,
+    reviews: [{ ...federalReview, stateCode: "AL" }],
+  });
+  assert(
+    federalMerge.netNewApplicable === 1,
+    "Federal applicability event did not merge into a projected jurisdiction.",
+  );
   const notApplicable: StateApplicabilityFile = {
     ...current,
     species: [
@@ -214,7 +246,7 @@ try {
 
   console.log(
     JSON.stringify({
-      cases: 10,
+      cases: 11,
       status: "pass",
       deterministic: true,
       sourceSilenceCreatedDecision: false,
