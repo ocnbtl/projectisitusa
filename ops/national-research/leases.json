@@ -7296,7 +7296,7 @@
       "leaseId": "lease-gbif-bulk-20260728-r2-al-001-retry1-1",
       "jobId": "gbif-bulk-20260728-r2-al-001-retry1",
       "attempt": 1,
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-28T04:17:00Z",
       "expiresAt": "2026-07-29T04:17:00Z",
       "workerTaskId": "/root/gbif_bulk_r2_001",
@@ -10847,7 +10847,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 67148882b1980876a999ba7722c8598f5b70f3b7...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-28T04:40:00Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260728-r2-al-001-retry1__lease-gbif-bulk-20260728-r2-al-001-retry1-1.json",
+        "sha256": "c8a5adfca3ce783ac1831171332225f70dc16e7a63fff7a774b2eb0a3734029a",
+        "bytes": 152774,
+        "status": "complete",
+        "workerCommit": "29ded58b4a8470ce68ee1f3f6e984b357c105a62",
+        "workerBranchHead": "3ded07c0fb7e73222e05e680760957fbfe89702c"
+      }
     }
   ]
 }
