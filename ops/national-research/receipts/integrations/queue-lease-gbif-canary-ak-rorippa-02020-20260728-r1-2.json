@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
+  "jobId": "gbif-canary-ak-rorippa-02020-20260728-r1",
+  "leaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-28T01:51:00Z",
+  "integrationCommit": "f477c558a153dd510aefa92b32197499fccae243",
+  "workerCommit": "f1c5ffd3c256c9529e8a03e3d7a8c5b89661fbb1",
+  "workerBranchHead": "77a09b11ca085257502643bb8ecc9bdaa8562bb1",
+  "manifestHash": "ce0ad102886ef93131c13f2cf674ef13d64d077ef309f084dc344dfd02a6d31a",
+  "changedPaths": [
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-occurrences-rorippa-austriaca-000000.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-species-match-rorippa-austriaca.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/assertions.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/manifest.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/outcomes.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/receipt.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/rejections.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/reviews.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation after integration",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact reviewed worker tree entries compared with canonical integration commit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "canonical main clean status and whitespace check",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact reviewed Alaska evidence and manifest commits without conflict, revalidated the immutable run on canonical main, and required byte-identical worker tree entries."
+}

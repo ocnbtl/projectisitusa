@@ -878,7 +878,7 @@
       "queueId": "queue-lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
       "jobId": "gbif-canary-ak-rorippa-02020-20260728-r1",
       "leaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-28T01:46:00Z",
       "manifestPath": "manifests/gbif-canary-ak-rorippa-02020-20260728-r1__lease-gbif-canary-ak-rorippa-02020-20260728-r1-2.json",
       "manifestHash": "ce0ad102886ef93131c13f2cf674ef13d64d077ef309f084dc344dfd02a6d31a",
@@ -925,6 +925,37 @@
         "path": "receipts/reviews/queue-lease-gbif-canary-ak-rorippa-02020-20260728-r1-2.json",
         "sha256": "62e94b5750c01f461c7a938d91a414afe3bcd01d8603a99f7546d73728d32542",
         "bytes": 2509
+      },
+      "integratedAt": "2026-07-28T01:51:00Z",
+      "integrator": "MAIN",
+      "integrationCommit": "f477c558a153dd510aefa92b32197499fccae243",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation after integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact reviewed worker tree entries compared with canonical integration commit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical main clean status and whitespace check",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed Alaska evidence and manifest commits without conflict, revalidated the immutable run on canonical main, and required byte-identical worker tree entries.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-canary-ak-rorippa-02020-20260728-r1-2.json",
+        "sha256": "e9e229c3d1063d41758a1025bce55701b35f59dbe7edbd540508180ea2b345a6",
+        "bytes": 2368
       }
     },
     {
