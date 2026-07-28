@@ -71859,7 +71859,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/state_lists_wave_1",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-28T06:51:00Z",
       "expiresAt": "2026-07-29T06:51:00.000Z",
       "recoveryAt": null,
@@ -74037,7 +74037,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 67148882b1980876a999ba7722c8598f5b70f3b7...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-28T07:11:00Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260728-r2-ar-002__lease-gbif-bulk-20260728-r2-ar-002-1.json",
+        "sha256": "a5a5bc10b0a5349c18b9f54a2975a8bf5a0f8115b185953bb15ef36ec37203c9",
+        "bytes": 94314,
+        "status": "partial",
+        "workerCommit": "557c9d09015027f63af95d0fef5dad5615f55b36",
+        "workerBranchHead": "a49b7fdeaa82acf4338126afe59fb66f553012e7"
+      }
     }
   ]
 }
