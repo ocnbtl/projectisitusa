@@ -878,25 +878,107 @@
       "queueId": "queue-lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
       "jobId": "gbif-canary-ak-rorippa-02020-20260728-r1",
       "leaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-28T01:46:00Z",
       "manifestPath": "manifests/gbif-canary-ak-rorippa-02020-20260728-r1__lease-gbif-canary-ak-rorippa-02020-20260728-r1-2.json",
       "manifestHash": "ce0ad102886ef93131c13f2cf674ef13d64d077ef309f084dc344dfd02a6d31a",
       "manifestBytes": 8356,
       "workerCommit": "f1c5ffd3c256c9529e8a03e3d7a8c5b89661fbb1",
-      "workerBranchHead": "77a09b11ca085257502643bb8ecc9bdaa8562bb1"
+      "workerBranchHead": "77a09b11ca085257502643bb8ecc9bdaa8562bb1",
+      "reviewedAt": "2026-07-28T01:49:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable run, canonical receipt, complete descriptors, deterministic manifest, exact two-commit diff, provider-county-only geography, and source silence preserved only as researched unresolved after one clock-ordering recovery.",
+      "changedPaths": [
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-occurrences-rorippa-austriaca-000000.json",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-species-match-rorippa-austriaca.json",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/assertions.ndjson",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/manifest.json",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/outcomes.ndjson",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/receipt.json",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/rejections.ndjson",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/reviews.ndjson",
+        "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, pair, base commit, and worker task identities",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact base-to-head diff, whitespace, output inventory, retry lineage, and source-silence semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-canary-ak-rorippa-02020-20260728-r1-2.json",
+        "sha256": "62e94b5750c01f461c7a938d91a414afe3bcd01d8603a99f7546d73728d32542",
+        "bytes": 2509
+      }
     },
     {
       "queueId": "queue-lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2",
       "jobId": "gbif-canary-ar-agrostemma-05119-20260728-r1",
       "leaseId": "lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-28T01:48:00Z",
       "manifestPath": "manifests/gbif-canary-ar-agrostemma-05119-20260728-r1__lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2.json",
       "manifestHash": "2ee7feb8fedfd7001682e06fb2fc17cf0a08ac044a49fd7ae039c09140736536",
       "manifestBytes": 10502,
       "workerCommit": "0caa3e13553a0443f16c0dd7f26bcb10ee02d307",
-      "workerBranchHead": "905cc07011eaa6b2213104e5d97ed4af55ea9971"
+      "workerBranchHead": "905cc07011eaa6b2213104e5d97ed4af55ea9971",
+      "reviewedAt": "2026-07-28T01:49:01Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable run, canonical receipt, complete descriptors, deterministic manifest, exact two-commit diff, all six explicit geography rejections, no Pulaski provider-county assertion, and the single documented MAIN runner intervention after the worker approval gate rejected the exact lease-authorized query.",
+      "changedPaths": [
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/artifacts/gbif-occurrences-agrostemma-githago-000000.json",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/artifacts/gbif-species-match-agrostemma-githago.json",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/assertions.ndjson",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/manifest.json",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/outcomes.ndjson",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/receipt.json",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/rejections.ndjson",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/reviews.ndjson",
+        "src/data/research/runs/20260728T012100Z__gbif-preserved-specimens__e9ac279ac837/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, pair, base commit, and worker task identities",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact base-to-head diff, whitespace, complete rejection inventory, manual-run lineage, and provider-county semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2.json",
+        "sha256": "56600b2e4195d9f418e28e1a3b576bb477e2bb478b289a888ec2a524e7176f69",
+        "bytes": 2614
+      }
     }
   ]
 }

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
+  "jobId": "gbif-canary-ak-rorippa-02020-20260728-r1",
+  "leaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-28T01:49:00Z",
+  "workerCommit": "f1c5ffd3c256c9529e8a03e3d7a8c5b89661fbb1",
+  "workerBranchHead": "77a09b11ca085257502643bb8ecc9bdaa8562bb1",
+  "manifestHash": "ce0ad102886ef93131c13f2cf674ef13d64d077ef309f084dc344dfd02a6d31a",
+  "changedPaths": [
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-occurrences-rorippa-austriaca-000000.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-species-match-rorippa-austriaca.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/assertions.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/manifest.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/outcomes.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/receipt.json",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/rejections.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/reviews.ndjson",
+    "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, pair, base commit, and worker task identities",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact base-to-head diff, whitespace, output inventory, retry lineage, and source-silence semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 1,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable run, canonical receipt, complete descriptors, deterministic manifest, exact two-commit diff, provider-county-only geography, and source silence preserved only as researched unresolved after one clock-ordering recovery."
+}
