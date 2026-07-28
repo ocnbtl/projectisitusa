@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "stateCode": "AK",
-  "asOf": "2026-07-25",
+  "asOf": "2026-07-28",
   "catalogSpeciesCount": 2504,
   "catalogSpeciesIdsSha256": "75dec35ece4ed3e31a46b8d21b5ba8a6e4b90f472ced8302995fdca417716baa",
   "undeterminedSpeciesPolicy": "included-as-unknown",
@@ -50,15 +50,60 @@
       ]
     },
     {
+      "speciesId": "avena-fatua",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/restricted/wild-oats",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska restricted noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
+      "speciesId": "brassica-juncea",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/restricted/mustard-brassica",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska restricted noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
       "speciesId": "cirsium-arvense",
       "applicability": "applicable",
-      "priority": "pilot",
+      "priority": "regulated",
       "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/canada-thistle",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
+        },
         {
           "sourceId": "eddmaps",
           "sourceRecordId": "2792",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=2792",
           "note": "The 2026-04-26 EDDMapS snapshot contains explicit Alaska county evidence, including current Haines Borough FIPS 02100."
+        }
+      ]
+    },
+    {
+      "speciesId": "convolvulus-arvensis",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/field-bindweed",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
         }
       ]
     },
@@ -120,16 +165,29 @@
       "priority": "pilot",
       "basis": [
         {
-          "sourceId": "manual-authoritative",
-          "sourceRecordId": "usfs-r10-spruce-aphid",
-          "url": "https://www.fs.usda.gov/r10/natural-resources/forest-health/spruce-aphid",
-          "note": "USDA Forest Service Alaska Region documents current Alaska distribution and supports inclusion in the bounded Alaska pilot."
-        },
-        {
           "sourceId": "eddmaps",
           "sourceRecordId": "301",
           "url": "https://www.eddmaps.org/species/subject.cfm?sub=301",
           "note": "The 2026-04-26 EDDMapS snapshot contains explicit Alaska county evidence, including current Kenai Peninsula Borough FIPS 02122."
+        },
+        {
+          "sourceId": "manual-authoritative",
+          "sourceRecordId": "usfs-r10-spruce-aphid",
+          "url": "https://www.fs.usda.gov/r10/natural-resources/forest-health/spruce-aphid",
+          "note": "USDA Forest Service Alaska Region documents current Alaska distribution and supports inclusion in the bounded Alaska pilot."
+        }
+      ]
+    },
+    {
+      "speciesId": "elymus-repens",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/quackgrass",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
         }
       ]
     },
@@ -143,6 +201,32 @@
           "sourceRecordId": "doi:10.4231/HWQF-V087:v1.0:DCA15087",
           "url": "https://purr.purdue.edu/publications/4479/1",
           "note": "The hash-pinned CC0 AFPE v1.0 archive defines a county detection column for Emerald Ash Borer. This establishes bounded historical source applicability only. A value of 0 is not absence or non-detection, and missing current geography remains blocked."
+        }
+      ]
+    },
+    {
+      "speciesId": "galeopsis-tetrahit",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/hempnettle",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
+      "speciesId": "hieracium-aurantiacum",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/orange-hawkweed",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
         }
       ]
     },
@@ -186,6 +270,19 @@
       ]
     },
     {
+      "speciesId": "linaria-vulgaris",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/restricted/yellow-toadflax",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska restricted noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
       "speciesId": "lysimachia-nummularia",
       "applicability": "applicable",
       "priority": "pilot",
@@ -195,6 +292,19 @@
           "sourceRecordId": "dwca-v1.344:Lysimachia nummularia:AK",
           "url": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
           "note": "The official versioned USGS NAS archive contains Alaska occurrence rows for Lysimachia nummularia. This establishes bounded source applicability only; publication still requires the registered status, identity, and county-equivalent gates."
+        }
+      ]
+    },
+    {
+      "speciesId": "lythrum-salicaria",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/purple-loosestrife",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
         }
       ]
     },
@@ -277,6 +387,19 @@
       ]
     },
     {
+      "speciesId": "poa-annua",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/restricted/annual-bluegrass",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska restricted noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
       "speciesId": "popillia-japonica",
       "applicability": "applicable",
       "priority": "baseline",
@@ -303,6 +426,32 @@
       ]
     },
     {
+      "speciesId": "raphanus-raphanistrum",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/restricted/radish",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska restricted noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
+      "speciesId": "rorippa-austriaca",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/austrian-fieldcress",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
       "speciesId": "rorippa-sylvestris",
       "applicability": "applicable",
       "priority": "pilot",
@@ -312,6 +461,45 @@
           "sourceRecordId": "dwca-v1.344:Rorippa sylvestris:AK",
           "url": "https://nas.er.usgs.gov/ipt/archive.do?r=nas&v=1.344",
           "note": "The official versioned USGS NAS archive contains Alaska occurrence rows for Rorippa sylvestris. This establishes bounded source applicability only; publication still requires the registered status, identity, and county-equivalent gates."
+        }
+      ]
+    },
+    {
+      "speciesId": "sinapis-arvensis",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/restricted/mustard-sinapis",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska restricted noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
+      "speciesId": "sonchus-arvensis",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/prohibited/perennial-sowthistle",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska noxious-weed membership establishes regulatory applicability only."
+        }
+      ]
+    },
+    {
+      "speciesId": "vicia-cracca",
+      "applicability": "applicable",
+      "priority": "regulated",
+      "basis": [
+        {
+          "sourceId": "ak-11-aac-34-020",
+          "sourceRecordId": "11-AAC-34.020/restricted/tufted-vetch",
+          "url": "https://dnr.alaska.gov/ag/akpmc/invasives/pdf/noxious-weeds.pdf",
+          "note": "Official Alaska restricted noxious-weed membership establishes regulatory applicability only."
         }
       ]
     }

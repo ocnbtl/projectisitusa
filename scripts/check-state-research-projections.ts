@@ -29,6 +29,7 @@ import {
 import { selectImmutableResearchRunsForState } from "@/lib/research/state-run-selection";
 import { deriveStateSpeciesResolution } from "@/lib/research/state-species-resolution";
 import type { ProtocolCellProjection } from "@/lib/research/protocol-cells";
+import type { StateApplicabilitySourceRegistry } from "@/lib/research/state-applicability-sources";
 
 type Species = { id: string };
 type LegacyRunsFile = { schemaVersion: 1; runs: ResearchRunReceipt[] };
@@ -77,6 +78,12 @@ const registry = readJson<ResearchSourceRegistry>(
   path.join(ROOT, "src/data/research/source-registry.json"),
 );
 const sourceIds = new Set(registry.sources.map((entry) => entry.id));
+const applicabilitySourceRegistry = readJson<StateApplicabilitySourceRegistry>(
+  path.join(ROOT, "src/data/research/state-applicability-source-registry.json"),
+);
+for (const source of applicabilitySourceRegistry.sources) {
+  sourceIds.add(source.id);
+}
 const allImmutableRuns = listImmutableResearchRuns(ROOT);
 const bootstrapEvidence = readNdjson<EvidenceAssertion>(
   path.join(ROOT, "src/data/research/evidence-assertions.ndjson"),

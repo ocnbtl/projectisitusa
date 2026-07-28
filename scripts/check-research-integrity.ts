@@ -441,6 +441,17 @@ assert(
 );
 
 schemaValidator("source-registry.schema.json").parse(registry);
+schemaValidator("state-applicability-source-registry.schema.json").parse(
+  JSON.parse(
+    readFileSync(
+      path.join(
+        ROOT,
+        "src/data/research/state-applicability-source-registry.json",
+      ),
+      "utf8",
+    ),
+  ),
+);
 schemaValidator("bootstrap-research-runs.schema.json").parse(runsFile);
 validateRecords(
   schemaValidator("bootstrap-evidence-assertion.schema.json"),

@@ -1,24 +1,24 @@
 {
   "schemaVersion": 3,
   "stateCode": "AK",
-  "asOf": "2026-07-27",
-  "generatedAt": "2026-07-27T00:00:00.000Z",
+  "asOf": "2026-07-28",
+  "generatedAt": "2026-07-28T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AK.json",
-    "applicabilityAsOf": "2026-07-25",
+    "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 31,
+    "applicableSpeciesCount": 44,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2473,
+    "unknownSpeciesCount": 2460,
     "blockedSpeciesCount": 0,
-    "explicitApplicabilityDecisionCount": 23,
-    "derivedApplicableSpeciesCount": 8,
+    "explicitApplicabilityDecisionCount": 37,
+    "derivedApplicableSpeciesCount": 7,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 54,
+    "boundedAcquisitionSpeciesCount": 63,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -49,16 +49,16 @@
     "rejectionRecordCount": 440,
     "researchRunCount": 10,
     "boundedAcquisition": {
-      "speciesCount": 54,
-      "totalPairs": 1620,
+      "speciesCount": 63,
+      "totalPairs": 1890,
       "verifiedPresent": 48,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 1335,
-      "notResearched": 237,
-      "researchCoveragePercent": 85.37,
+      "notResearched": 507,
+      "researchCoveragePercent": 73.17,
       "explicitOutcomePairs": 1383,
-      "explicitOutcomeCoveragePercent": 85.3704
+      "explicitOutcomeCoveragePercent": 73.1746
     }
   },
   "migrationCandidates": {
@@ -372,18 +372,18 @@
     "protocolId": "national-pilot-multisource-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 162,
-    "applicableCells": 50,
-    "notApplicableCells": 112,
+    "totalCells": 189,
+    "applicableCells": 63,
+    "notApplicableCells": 126,
     "completeCells": 5,
-    "incompleteCells": 31,
+    "incompleteCells": 44,
     "blockedCells": 14,
     "currentCells": 5,
     "staleCells": 0,
-    "undatedCells": 45,
-    "applicableCompletionPercent": 10,
-    "currentCompletePercent": 10,
-    "regulatedAndHighApplicableCells": 0,
+    "undatedCells": 58,
+    "applicableCompletionPercent": 7.94,
+    "currentCompletePercent": 7.94,
+    "regulatedAndHighApplicableCells": 15,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
     "requiredCurrentSourcesProcessed": false,
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 21,
+        "applicableCells": 34,
         "currentCompleteCells": 4,
-        "currentCompletePercent": 19.05
+        "currentCompletePercent": 11.76
       },
       {
         "category": "wildlife",
@@ -416,7 +416,7 @@
     "priorityCompletion": [
       {
         "priority": "regulated",
-        "applicableCells": 0,
+        "applicableCells": 15,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
@@ -428,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 24,
+        "applicableCells": 22,
         "currentCompleteCells": 5,
-        "currentCompletePercent": 20.83
+        "currentCompletePercent": 22.73
       },
       {
         "priority": "baseline",
@@ -442,7 +442,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 31,
+        "applicableCells": 44,
         "currentCompleteCells": 0,
         "processed": false
       },
@@ -455,6 +455,114 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "avena-fatua",
+      "commonName": "Wild oat",
+      "scientificName": "Avena fatua",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "brassica-juncea",
+      "commonName": "Brown mustard",
+      "scientificName": "Brassica juncea",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "convolvulus-arvensis",
+      "commonName": "Field Bindweed",
+      "scientificName": "Convolvulus arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "galeopsis-tetrahit",
+      "commonName": "Brittlestem hempnettle",
+      "scientificName": "Galeopsis tetrahit",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "poa-annua",
+      "commonName": "Annual Bluegrass",
+      "scientificName": "Poa annua",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "raphanus-raphanistrum",
+      "commonName": "Wild radish",
+      "scientificName": "Raphanus raphanistrum",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "rorippa-austriaca",
+      "commonName": "Austrian yellowcress",
+      "scientificName": "Rorippa austriaca",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "sinapis-arvensis",
+      "commonName": "Charlock mustard",
+      "scientificName": "Sinapis arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
+    {
+      "speciesId": "vicia-cracca",
+      "commonName": "Bird Vetch",
+      "scientificName": "Vicia cracca",
+      "category": "plants",
+      "notResearchedCountyCount": 30,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 30001
+    },
     {
       "speciesId": "capsella-bursa-pastoris",
       "commonName": "Shepherd's Purse",
@@ -684,6 +792,54 @@
       "priorityScore": 8212
     },
     {
+      "speciesId": "elymus-repens",
+      "commonName": "Quackgrass",
+      "scientificName": "Elymus repens",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 30,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 301
+    },
+    {
+      "speciesId": "hieracium-aurantiacum",
+      "commonName": "Orange Hawkweed",
+      "scientificName": "Hieracium aurantiacum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 30,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 301
+    },
+    {
+      "speciesId": "lythrum-salicaria",
+      "commonName": "Purple Loosestrife",
+      "scientificName": "Lythrum salicaria",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 30,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 301
+    },
+    {
+      "speciesId": "sonchus-arvensis",
+      "commonName": "Field Sowthistle",
+      "scientificName": "Sonchus arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 30,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 301
+    },
+    {
       "speciesId": "alliaria-petiolata",
       "commonName": "Garlic Mustard",
       "scientificName": "Alliaria petiolata",
@@ -764,29 +920,9 @@
       "priorityScore": 300
     },
     {
-      "speciesId": "elymus-repens",
-      "commonName": "Quackgrass",
-      "scientificName": "Elymus repens",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 30,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 300
-    },
-    {
       "speciesId": "giant-hogweed",
       "commonName": "Giant Hogweed",
       "scientificName": "Heracleum mantegazzianum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 30,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 300
-    },
-    {
-      "speciesId": "hieracium-aurantiacum",
-      "commonName": "Orange Hawkweed",
-      "scientificName": "Hieracium aurantiacum",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 30,
@@ -844,16 +980,6 @@
       "priorityScore": 300
     },
     {
-      "speciesId": "lythrum-salicaria",
-      "commonName": "Purple Loosestrife",
-      "scientificName": "Lythrum salicaria",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 30,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 300
-    },
-    {
       "speciesId": "polygonum-aviculare",
       "commonName": "Prostrate Knotweed",
       "scientificName": "Polygonum aviculare",
@@ -867,16 +993,6 @@
       "speciesId": "senecio-vulgaris",
       "commonName": "Common Groundsel",
       "scientificName": "Senecio vulgaris",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 30,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 300
-    },
-    {
-      "speciesId": "sonchus-arvensis",
-      "commonName": "Field Sowthistle",
-      "scientificName": "Sonchus arvensis",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 30,

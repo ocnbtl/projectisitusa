@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2 CAR &#xA7; 34-102. Noxious weeds of Arkansas - Code of Arkansas Rules</title>
+    <link rel="preload" as="script" type="text/javascript" href="/js/site.min.js?v=wnHqKWdRjrSJzcTI_rS-5u3upsbVxqM61qRvT3q4NDM" importance="high" />
+    <link rel="preload" as="image" type="image/avif" href="/img/mainpage_header_base.avif" />
+    <link rel="stylesheet" href="/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/ej2/bootstrap5.css?v=XXBtA1Sk8_qdSDncftxzp2sKuO0Fb45XANE1hgnxG3U" />
+    <link rel="stylesheet" href="/lib/adminlte/css/adminlte.min.css?v=rhU0oslUDWrWDxTY4JxI2a2OdRtG7YSf3v5zcRbcySE">
+    <link rel="stylesheet" href="/css/site.min.css?v=BBzoOlPWH4QAIG3G-zX5sQ_JArwew_lpRbPQgwyrBfI" />
+    <script src="/js/jquery/dist/jquery.min.js"></script>
+    <script src="/js/jquery-dirty/dist/jquery.dirty.js"></script>
+    <script src="/js/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/js/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="/js/site.min.js?v=wnHqKWdRjrSJzcTI_rS-5u3upsbVxqM61qRvT3q4NDM"></script>
+</head>
+<body>
+    <noscript b-fz4f12buib>
+        <div b-fz4f12buib class="errormessage" aria-hidden="true" style="text-align:center; padding-left:5px; padding-right:5px;">For full functionality of this site it is necessary to enable JavaScript. <a b-fz4f12buib href="https://enablejavascript.co/" target="_blank" style="text-decoration:underline;" rel="noopener noreferrer">Find out how.</a></div>
+    </noscript>
+    <header b-fz4f12buib role="banner" id="headerBanner">
+        <div b-fz4f12buib id="siteHeading">
+            <a b-fz4f12buib id="logo" href="/"><picture b-fz4f12buib>
+                    <source srcset="/img/seal_of_arkansas.avif" type="image/avif" width="43" height="43" />
+                    <source srcset="/img/seal_of_arkansas.png" type="image/png" width="43" height="43" />
+                    <img src="/img/seal_of_arkansas.gif" alt="Seal of Arkansas" width="43" height="43" />
+                </picture></a>
+            Code of Arkansas Rules
+        </div>
+        <div b-fz4f12buib id="topNav">
+            <a b-fz4f12buib href="/Rules/Search">Search</a> |
+            <a b-fz4f12buib href="/Rules/Emergency">Emergency Rules</a> |
+            <a b-fz4f12buib href="/Home/Contact">Contact</a>
+        </div>
+    </header>
+	<div b-fz4f12buib class="row" id="quickSearchBar">
+        <div role="search">
+    <form id="formQuickSearch" action="/Rules/RuleQuickSearch" method="get">
+        <b id="quickHeading">QUICK FIND</b>&nbsp;<div class="mobileBreak"><br /></div>
+        <label for="titleNumber">Title:</label><input type="text" name="titleNumber" id="titleNumber" placeholder=" " maxlength="2" required="true" pattern="[1-9][0-9]*" /><div class="mobileBreak"><br /></div>
+        <label for="chapterNumber">Chapter:</label><input type="text" name="chapterNumber" id="chapterNumber" placeholder=" " maxlength="6" width="2" pattern="[A-z][A-z]*" style="text-transform:uppercase;" /><div class="mobileBreak"><br /></div>
+        <label for="subChapterLetter">Subchapter:</label><input type="text" name="subChapterLetter" id="subChapterLetter" placeholder=" " maxlength="3" width="3" pattern="[A-z]*" style="text-transform:uppercase;" /><div class="mobileBreak"><br /></div>
+        <label for="partNumber">Part:</label><input type="text" name="partNumber" id="partNumber" placeholder=" " maxlength="4" width="3" pattern="[1-9][0-9]*" style="width:45px;" /><div class="mobileBreak"><br /></div>
+        <label for="subPartNumber">Subpart:</label><input type="text" name="subPartNumber" id="subPartNumber" placeholder=" " maxlength="3" width="2" pattern="[Aa]*[1-9][0-9]*" /><div class="mobileBreak"><br /></div>
+        <label for="sectionNumber">Section:</label><input type="text" name="sectionNumber" id="sectionNumber" placeholder=" " maxlength="4" width="2" pattern="[1-9][0-9]*" /><div class="mobileBreak"><br /></div>
+        <label for="appendixNumber">Appendix:</label><input type="text" name="appendixNumber" id="appendixNumber" placeholder=" " maxlength="4" width="2" pattern="[A-z][0-9]*" /><div class="mobileBreak"><br /></div>
+        <input type="submit" value="Go" />
+    </form>
+</div>
+
+    </div>
+    <div b-fz4f12buib class="row">
+        <div b-fz4f12buib id="sliderToggle">&raquo;</div>
+        <div b-fz4f12buib id="navWrapper">
+            <div b-fz4f12buib id="navHeader"></div>
+            <nav b-fz4f12buib id="mainNav" role="navigation">
+                
+<div id="navLinks"></div>
+<script type="text/javascript">
+	var CodeTreeViewJson = null;
+	$(document).ready(function () {
+		var dataUrl = "/Home/GetRulesTreeViewData?levelType=TITLE";
+		try {
+			if (window.Promise) {
+				fetch(dataUrl).then(function (response) {
+					response.text().then(function (responseText) {
+						//sectionData.innerHTML = response;
+						CodeTreeViewJson = JSON.parse(responseText);
+						//console.log(CodeTreeViewJson);
+						outputNavLinks(CodeTreeViewJson, 'navLinks', '2-2-3-193-3739-22987');
+						//let qsTitleID = qsParams.titleID;
+						//if (qsTitleID) {
+							//expandCurrentNavigation('2-2-3-193-3739-22987', 'section');
+						//}
+					})
+				});
+			}
+			else {
+				var xmlHttp = null;
+				xmlHttp = new XMLHttpRequest();
+				xmlHttp.async = false;
+				xmlHttp.open("GET", dataUrl, false);
+				xmlHttp.send(null);
+				CodeTreeViewJson = JSON.parse(xmlHttp.responseText);
+				outputNavLinks(CodeTreeViewJson);
+			}
+		}
+		catch (error) {
+			console.error(error);
+		}
+	});
+
+</script>
+
+            </nav>
+            <div b-fz4f12buib id="navFooter"></div>
+        </div>
+        <main b-fz4f12buib role="main" id="mainContent">
+            <style>  #sectionData2-2-3-193-3739-22987 { background-color:#296282 !important; }  #sectionData2-2-3-193-3739-22987 > a { filter:invert(1); font-weight:bold; }</style>
+<style>
+	#docxContent {
+	padding: 25px 20px 20px 20px;
+	/*border: 1px solid #C0C0C0;*/
+	/*height: 755px;
+	overflow: scroll;
+	scrollbar-gutter:stable;*/
+	}
+
+	#docxContent p, #docxContent span {
+	font-family: Tahoma,Arial;
+	font-size: 12pt;
+	line-height: 1.81;
+	}
+
+	#documenteditor_container_panel {
+	height: unset;
+	}
+
+	/*::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 7px;
+	}
+
+	::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+	}*/
+
+	@media print {
+	#docxContent {
+	border: unset;
+	height: unset;
+	overflow: unset;
+	}
+	}
+</style>
+<script src="/js/RulesViewerV2.js?v=gESusxcLb38LNSjPwPFCfyEziApn1Ixz8hUJrEOtmZs"></script>
+
+			<div id="breadcrumbNav">
+				<a href="/"><img src="/img/home_18x14_blue.svg" width="20" height="20" alt="Homepage" style="margin-top:-3px;" /></a> /&nbsp;
+				<a href="?levelType=title&titleID=2&chapterID=&subChapterID=&partID=&subPartID=&sectionID=">Title 2</a>
+ &nbsp;/&nbsp; 					<a href="?levelType=chapter&titleID=2&chapterID=2&subChapterID=&partID=&subPartID=&sectionID=">Chapter II</a>
+ &nbsp;/&nbsp; 					<a href="?levelType=subchapter&titleID=2&chapterID=2&subChapterID=3&partID=&subPartID=&sectionID=">Subchapter A</a>
+ &nbsp;/&nbsp; 					<a href="?levelType=part&titleID=2&chapterID=2&subChapterID=3&partID=193&subPartID=&sectionID=">Part 34</a>
+ &nbsp;/&nbsp; 					<a href="?levelType=subpart&titleID=2&chapterID=2&subChapterID=3&partID=193&subPartID=3739&sectionID=">Subpart 1</a>
+				<div id="prevnextLinks">
+						<a href="?levelType=section&titleID=2&chapterID=2&subChapterID=3&partID=193&subPartID=3739&sectionID=22986"><b><img src="/img/arrow_left_circle.svg" width="25" height="25" alt="left arrow" style="margin-top:-3px;" /> PREVIOUS</b></a>
+						<a style="float:right;" href="?levelType=section&titleID=2&chapterID=2&subChapterID=3&partID=193&subPartID=3739&sectionID=22988"><b>NEXT <img src="/img/arrow_right_circle.svg" width="25" height="25" alt="right arrow" style="margin-left:-3px; margin-top:-3px;" /></b></a>
+				</div>
+			</div>
+			<h1>2 CAR &#xA7; 34-102. Noxious weeds of Arkansas</h1>
+			<div id="RuleContent" class="card-body">
+				<ul class="nav nav-tabs" id="rules-tabs-section-tab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" id="rules-tabs-content-tab" data-toggle="pill" href="#rules-tabs-content" role="tab" aria-controls="rules-tabs-content" aria-selected="true">Content</a>
+							</li>
+					<!--<li class="nav-item">
+					<a class="nav-link" id="rules-tabs-general-tab" data-toggle="pill" href="#rules-tabs-general" role="tab" aria-controls="rules-tabs-general" aria-selected="true">General Info</a>
+					</li>-->
+					<li class="nav-item">
+						<a class="nav-link" id="rules-tabs-notes-tab" data-toggle="pill" href="#rules-tabs-notes" role="tab" aria-controls="rules-tabs-notes" aria-selected="false">Notes</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="rules-tabs-tabContent">
+							<div class="tab-pane fade active show" id="rules-tabs-content" role="tabpanel" aria-labelledby="rules-tabs-section-content-tab">
+								<div id="documentPrintStyles"></div>
+								<div id="documenteditor_container_panel">
+										<div id="docxContent">
+
+	
+		
+		
+		<style type="text/css">
+			.cs55B29B31{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt;line-height:1.65}
+			.csB6B021BF{color:#000000;background-color:transparent;font-family:Tahoma,Arial;font-size:12pt;font-weight:bold;font-style:normal;}
+			.cs321AFB82{color:#000000;background-color:transparent;font-family:Tahoma,Arial;font-size:12pt;font-weight:normal;font-style:normal;}
+			.csD25D2613{color:#000000;background-color:transparent;font-family:Tahoma,Arial;font-size:12pt;font-weight:normal;font-style:italic;}
+		</style>
+	
+	
+		<p class="cs55B29B31"><span class="csB6B021BF">        2 CAR &sect; 34-102. Noxious weeds of Arkansas. </span></p><p class="cs55B29B31"><span class="cs321AFB82">        (a) Every certified seed grower should know and learn to recognize the noxious weeds of the state. </span></p><p class="cs55B29B31"><span class="cs321AFB82">        (b) By knowing these weeds, a certified seed grower is in a much better position to successfully rogue his or her fields, thus enabling him or her to conform more easily to the rules. &nbsp;</span></p><p class="cs55B29B31"><span class="cs321AFB82">        (c)(1) The noxious weeds of Arkansas are as follows:</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (A) Field bindweed (</span><span class="csD25D2613">Convolvulus arvensis</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (B) Nutgrass (</span><span class="csD25D2613">Cyperus rotundus</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (C) Crotalaria (</span><span class="csD25D2613">Crotalaria</span><span class="cs321AFB82"> spp.);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (D) Wild onion and/or wild garlic (</span><span class="csD25D2613">Allium</span><span class="cs321AFB82"> spp.);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (E) Johnson grass (</span><span class="csD25D2613">Sorghum halepense</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (F) Dodder (</span><span class="csD25D2613">Cuscuta</span><span class="cs321AFB82"> spp.);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (G) Bermuda grass (</span><span class="csD25D2613">Cynodon dactylon</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (H) Cheat or chess (</span><span class="csD25D2613">Bromus secalinus</span><span class="cs321AFB82"> and/or </span><span class="csD25D2613">Bromus commutatus</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (I) Darnel (</span><span class="csD25D2613">Lolium temulentum</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (J) Corncockle (</span><span class="csD25D2613">Agrostemma githago</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (K) Horsenettle (</span><span class="csD25D2613">Solanum carolinense</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (L) Purple nightshade (</span><span class="csD25D2613">Solanum elaeagnifolium</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (M) Buckhorn plantain (</span><span class="csD25D2613">Plantago lanceolata</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (N) Dock and/or sorrel (</span><span class="csD25D2613">Rumex</span><span class="cs321AFB82"> spp.);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (O) Blueweed (</span><span class="csD25D2613">Helianthus ciliaris</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (P) Morning glory (</span><span class="csD25D2613">Ipomoea</span><span class="cs321AFB82"> spp.);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (Q) Hedge bindweed (</span><span class="csD25D2613">Calystegia sepium</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (R) Giant foxtail (</span><span class="csD25D2613">Setaria faberi</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (S) Cocklebur (</span><span class="csD25D2613">Xanthium spp.);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (T) Moonflower (</span><span class="csD25D2613">Ipomoea turbinata</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (U) Balloon vine (</span><span class="csD25D2613">Cardiospermum halicacabum</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (V) Itchgrass (</span><span class="csD25D2613">Rottboellia cochinchinensis</span><span class="cs321AFB82">);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (W) Serrated tussock (Nassella trichotoma);</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (X) Barnyard grass (</span><span class="csD25D2613">Echinochloa crusgalli</span><span class="cs321AFB82">); and</span></p><p class="cs55B29B31"><span class="cs321AFB82">                        (Y) Tropical soda apple (</span><span class="csD25D2613">Solanum viarum</span><span class="cs321AFB82">).</span></p><p class="cs55B29B31"><span class="cs321AFB82">                (2) Weeds listed in subdivisions (c)(1)(U), (V), (W), and (Y) of this section are prohibited in both Field Standards and Cleaned Seed Standards for all crops certified.</span></p><p class="cs55B29B31"><span class="cs321AFB82">        (d) When found in rice, the following weeds shall, in addition, be classed as noxious, and their presence must be indicated in accordance with the requirements for other noxious weeds: </span></p><p class="cs55B29B31"><span class="cs321AFB82">                (1) Red rice (</span><span class="csD25D2613">Oryza sativa</span><span class="cs321AFB82"> var.); </span></p><p class="cs55B29B31"><span class="cs321AFB82">                (2) Curly indigo (</span><span class="csD25D2613">Aeschynomene</span><span class="cs321AFB82"> spp.); and</span></p><p class="cs55B29B31"><span class="cs321AFB82">                (3) Tall indigo or coffee bean (</span><span class="csD25D2613">Sesbania macrocarpa</span><span class="cs321AFB82">).</span></p>
+
+</div>
+										<pre style="display:none; height:750px; overflow:scroll;">&#xD;&#xA;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&lt;style type=&quot;text/css&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;.cs55B29B31{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt;line-height:1.65}&#xD;&#xA;&#x9;&#x9;&#x9;.csB6B021BF{color:#000000;background-color:transparent;font-family:Tahoma,Arial;font-size:12pt;font-weight:bold;font-style:normal;}&#xD;&#xA;&#x9;&#x9;&#x9;.cs321AFB82{color:#000000;background-color:transparent;font-family:Tahoma,Arial;font-size:12pt;font-weight:normal;font-style:normal;}&#xD;&#xA;&#x9;&#x9;&#x9;.csD25D2613{color:#000000;background-color:transparent;font-family:Tahoma,Arial;font-size:12pt;font-weight:normal;font-style:italic;}&#xD;&#xA;&#x9;&#x9;&lt;/style&gt;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&#x9;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;csB6B021BF&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; 2 CAR &amp;sect; 34-102. Noxious weeds of Arkansas. &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (a) Every certified seed grower should know and learn to recognize the noxious weeds of the state. &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (b) By knowing these weeds, a certified seed grower is in a much better position to successfully rogue his or her fields, thus enabling him or her to conform more easily to the rules. &amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (c)(1) The noxious weeds of Arkansas are as follows:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (A) Field bindweed (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Convolvulus arvensis&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (B) Nutgrass (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Cyperus rotundus&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (C) Crotalaria (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Crotalaria&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; spp.);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (D) Wild onion and/or wild garlic (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Allium&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; spp.);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (E) Johnson grass (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Sorghum halepense&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (F) Dodder (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Cuscuta&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; spp.);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (G) Bermuda grass (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Cynodon dactylon&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (H) Cheat or chess (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Bromus secalinus&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; and/or &lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Bromus commutatus&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (I) Darnel (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Lolium temulentum&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (J) Corncockle (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Agrostemma githago&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (K) Horsenettle (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Solanum carolinense&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (L) Purple nightshade (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Solanum elaeagnifolium&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (M) Buckhorn plantain (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Plantago lanceolata&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (N) Dock and/or sorrel (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Rumex&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; spp.);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (O) Blueweed (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Helianthus ciliaris&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (P) Morning glory (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Ipomoea&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; spp.);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (Q) Hedge bindweed (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Calystegia sepium&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (R) Giant foxtail (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Setaria faberi&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (S) Cocklebur (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Xanthium spp.);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (T) Moonflower (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Ipomoea turbinata&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (U) Balloon vine (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Cardiospermum halicacabum&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (V) Itchgrass (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Rottboellia cochinchinensis&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (W) Serrated tussock (Nassella trichotoma);&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (X) Barnyard grass (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Echinochloa crusgalli&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;); and&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (Y) Tropical soda apple (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Solanum viarum&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;).&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (2) Weeds listed in subdivisions (c)(1)(U), (V), (W), and (Y) of this section are prohibited in both Field Standards and Cleaned Seed Standards for all crops certified.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (d) When found in rice, the following weeds shall, in addition, be classed as noxious, and their presence must be indicated in accordance with the requirements for other noxious weeds: &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (1) Red rice (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Oryza sativa&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; var.); &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (2) Curly indigo (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Aeschynomene&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt; spp.); and&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;cs55B29B31&quot;&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; (3) Tall indigo or coffee bean (&lt;/span&gt;&lt;span class=&quot;csD25D2613&quot;&gt;Sesbania macrocarpa&lt;/span&gt;&lt;span class=&quot;cs321AFB82&quot;&gt;).&lt;/span&gt;&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;</pre>
+								</div>
+							</div>
+
+					<!--<div class="tab-pane fade" id="rules-tabs-general" role="tabpanel" aria-labelledby="rules-tabs-section-general-tab">
+					Section Details
+					</div>-->
+					<div class="tab-pane fade" id="rules-tabs-notes" role="tabpanel" aria-labelledby="rules-tabs-section-notes-tab">
+						<!--Section Notes-->
+						<div class="container mt-2" style="padding-left:15px;">
+									<div class="row">
+										<div class="col-lg-12 m-2" style="border: 0 0 2px 0;">
+											<i>No notes are currently available.</i>
+										</div>
+									</div>
+										<div class="row" style="margin-top:15px;">
+											<label class="col-lg-3">
+Authority:
+											</label>
+											<div class="col-lg-9">
+Arkansas Code &#xA7; 2-18-104											</div>
+										</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+        </main>
+    </div>
+
+    <footer b-fz4f12buib class="border-top footer">
+        <div b-fz4f12buib class="row">
+            <div b-fz4f12buib class="col-md-12">
+                <div b-fz4f12buib id="footerLogoTitle">
+                    <picture b-fz4f12buib>
+                        <source b-fz4f12buib srcset="/img/seal_footer-logo_grey.avif" type="image/avif" width="40" height="40">
+                        <source b-fz4f12buib srcset="/img/seal_footer-logo_grey.png" type="image/png" width="40" height="40">
+                        <img b-fz4f12buib id="footerLogo" src="/Images/seal_footer-logo_grey.gif" alt="Seal of Arkansas" loading="lazy" fetchpriority="low" width="40" height="40">
+                    </picture>
+                    Code of Arkansas Rules
+                </div>
+                <div b-fz4f12buib>
+                    Pursuant to Arkansas Code § 25-15-218, the Code of Arkansas Rules is a codification of the general and permanent rules of Arkansas agencies.  This online searchable database constitutes the official version of the Code of Arkansas Rules and became effective on January 1, 2025.  It is updated on a weekly basis and may not reflect recent rulemaking. Please check with the <a b-fz4f12buib href="https://portal.arkansas.gov/agencies/" target="_blank">respective agency</a> for information on recent rulemaking.<br b-fz4f12buib /><br b-fz4f12buib />
+                    <b b-fz4f12buib>DISCLAIMER:</b> The inclusion of a rule in the Code of Arkansas Rules shall not be construed to represent an expression that the rule is consistent with state or federal law or legislative intent.<br b-fz4f12buib /><br b-fz4f12buib />
+                </div>
+                <p b-fz4f12buib style="color:#C0C0C0;">
+                    <a b-fz4f12buib href="/Rules/Search">Search</a> |
+                    <a b-fz4f12buib href="/Rules/Emergency">Emergency Rules</a> |
+                    <a b-fz4f12buib href="/Home/Contact">Contact</a>
+                </p>
+                <p b-fz4f12buib>
+                    <b b-fz4f12buib>Last Updated: 7/27/2026 11:17:14 AM</b>
+                </p>
+                &copy; 2026 - Arkansas State Government<br b-fz4f12buib /><br b-fz4f12buib />
+            </div>
+        </div>
+    </footer>
+    <!-- REQUIRED SCRIPTS -->
+    <ejs-scripts b-fz4f12buib></ejs-scripts>
+    
+	<script>
+
+		document.addEventListener("DOMContentLoaded", function () {
+
+			var tabContent = document.getElementById('rules-tabs-content-tab');
+			if (tabContent) {
+				tabContent.onclick = function (e) {
+					e.preventDefault();
+					var tabPaneID = tabContent.getAttribute('aria-controls');
+					var tabPanes = document.getElementsByClassName('tab-pane');
+					for (i = 0; i < tabPanes.length; i++) {
+						tabPanes[i].style.display = "none";
+						var tabPanesID = '#' + tabPanes[i].id;
+						$(tabPanesID).removeClass('active').removeClass('show');
+					}
+					var navLinks = document.getElementsByClassName('nav-link');
+					for (j = 0; j < navLinks.length; j++) {
+						var navLinkID = '#' + navLinks[j].id;
+						$(navLinkID).removeClass('active');
+					}
+					var tabPane = document.getElementById(tabPaneID);
+					tabPane.style.display = "block";
+					$('#' + tabPane.id).addClass('show');
+					$('#rules-tabs-content-tab').addClass('active');
+					//console.log(docxContainer);
+					/*if (docxContainer) {
+						docxContainer.resize(); //document editor sometimes gets reduced to miniumum size after printing the page while on the Notes tab, resize it back to normal when clicking back to Content tab
+					}*/
+				}
+			}
+
+			/*var tabGeneral = document.getElementById('rules-tabs-general-tab');
+			tabGeneral.onclick = function (e) {
+				e.preventDefault();
+				var tabPaneID = tabGeneral.getAttribute('aria-controls');
+				var tabPanes = document.getElementsByClassName('tab-pane');
+				for (i = 0; i < tabPanes.length; i++) {
+					tabPanes[i].style.display = "none";
+					var tabPanesID = '#' + tabPanes[i].id;
+					$(tabPanesID).removeClass('active').removeClass('show');
+				}
+				var navLinks = document.getElementsByClassName('nav-link');
+				for (j = 0; j < navLinks.length; j++) {
+					var navLinkID = '#' + navLinks[j].id;
+					$(navLinkID).removeClass('active');
+				}
+				var tabPane = document.getElementById(tabPaneID);
+				tabPane.style.display = "block";
+				$('#' + tabPane.id).addClass('show');
+				$('#rules-tabs-general-tab').addClass('active');
+			}*/
+
+			var tabNotes = document.getElementById('rules-tabs-notes-tab');
+			if (tabNotes) {
+				tabNotes.onclick = function (e) {
+					e.preventDefault();
+					var tabPaneID = tabNotes.getAttribute('aria-controls');
+					var tabPanes = document.getElementsByClassName('tab-pane');
+					for (i = 0; i < tabPanes.length; i++) {
+						tabPanes[i].style.display = "none";
+						var tabPanesID = '#' + tabPanes[i].id;
+						$(tabPanesID).removeClass('active').removeClass('show');
+					}
+					var navLinks = document.getElementsByClassName('nav-link');
+					for (j = 0; j < navLinks.length; j++) {
+						var navLinkID = '#' + navLinks[j].id;
+						$(navLinkID).removeClass('active');
+					}
+					var tabPane = document.getElementById(tabPaneID);
+					tabPane.style.display = "block";
+					$('#' + tabPane.id).addClass('show');
+					$('#rules-tabs-notes-tab').addClass('active');
+				}
+			}
+
+			getLevelDetails('section', '22987');
+
+		});
+
+		/*var keysArray = [];
+		window.addEventListener('keydown', function (event) {
+			keysArray[keysArray.length] = event.key;
+			//console.log(event.key);
+			if (keysArray[0] == 'Control' && (keysArray[1] == 'p' || keysArray[1] == 'P')) {
+				event.preventDefault();
+				docxEditor.print();
+				//console.log('printing prevented?');
+			}
+			//console.log(keysArray);
+			if (keysArray.length > 1) {
+				keysArray = [];
+			}
+		});*/
+	</script>
+
+    <style>
+        /* Safari 10.1 to current */
+        @media not all and (min-resolution:.001dpcm) {
+            @media {
+                #formQuickSearch input[type="text"] {
+                    height: 18px;
+                }
+            }
+        }
+    </style>
+
+</body>
+</html>

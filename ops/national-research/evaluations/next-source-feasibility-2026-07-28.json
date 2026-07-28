@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "next-source-feasibility-2026-07-28",
+  "evaluatedAt": "2026-07-28T01:20:00Z",
+  "executionOwner": "MAIN",
+  "result": "one-state-family-implemented-national-high-throughput-blocked",
+  "candidateRanking": [
+    {
+      "rank": 1,
+      "candidate": "official-state-invasive-and-regulated-lists",
+      "scope": "state-applicability",
+      "decision": "implemented",
+      "authority": "first-party-state",
+      "freshness": "current-at-retrieval",
+      "stableIdentifiers": "rule-section-and-row",
+      "geography": "state-scope-only",
+      "nationalReuse": "low",
+      "expectedPairYield": 0,
+      "expectedApplicabilityYield": "moderate",
+      "artifactBurden": "low",
+      "reviewBurden": "manual-exact-name",
+      "qualification": "The Alabama, Alaska, and Arkansas official artifacts were retained and reviewed. Arizona remains blocked by provider challenge pages."
+    },
+    {
+      "rank": 2,
+      "candidate": "inaturalist-provider-county-place",
+      "scope": "county-evidence",
+      "decision": "safe-only-for-bounded-pilots",
+      "authority": "community-observation-provider",
+      "freshness": "current-api",
+      "stableIdentifiers": "observation-id-and-place-id",
+      "geography": "provider-place-membership",
+      "nationalReuse": "moderate",
+      "expectedPairYield": "moderate",
+      "artifactBurden": "bounded-by-pair-scope",
+      "reviewBurden": "moderate",
+      "qualification": "Provider-native county place queries avoid coordinate-derived county inference. Alaska has reviewed place coverage for 28 of 30 current county equivalents; Chugach and Copper River remain blocked. Per-pair national execution would require too many requests and cannot support the requested 250000-outcome checkpoint safely."
+    },
+    {
+      "rank": 3,
+      "candidate": "usgs-nas-v1-344",
+      "scope": "national-county-evidence",
+      "decision": "exhausted-existing-archive",
+      "authority": "federal-first-party",
+      "freshness": "version-pinned",
+      "stableIdentifiers": "archive-record-and-occurrence-id",
+      "geography": "provider-county",
+      "nationalReuse": "high",
+      "expectedPairYield": 0,
+      "artifactBurden": "already-retained",
+      "reviewBurden": "complete",
+      "qualification": "All 244 applicable state-species cells and 15242 county outcomes are reported. The remaining 154 blocked pairs preserve missing or retired provider geography. The archive was not reacquired."
+    },
+    {
+      "rank": 4,
+      "candidate": "gbif-national-preserved-specimens",
+      "scope": "national-county-evidence",
+      "decision": "blocked",
+      "authority": "national-aggregator",
+      "freshness": "current",
+      "stableIdentifiers": "gbif-occurrence-id-and-download-doi",
+      "geography": "provider-declared-county-only",
+      "nationalReuse": "high",
+      "expectedPairYield": "high",
+      "artifactBurden": "very-high",
+      "reviewBurden": "high",
+      "qualification": "A safe national route requires authenticated asynchronous Darwin Core download, DOI and predicate retention, controlled taxon mapping, and license review. The current US preserved-specimen universe is too large for the 5.8 GiB free-space envelope, and a substantial share is CC BY-NC. No acquisition was attempted."
+    },
+    {
+      "rank": 5,
+      "candidate": "eddmaps-national",
+      "scope": "national-county-evidence",
+      "decision": "blocked",
+      "authority": "university-and-government-partner-aggregator",
+      "freshness": "current-service",
+      "stableIdentifiers": "insufficient-in-county-aggregate",
+      "geography": "county-aggregate-with-child-place-risk",
+      "nationalReuse": "high",
+      "expectedPairYield": "high",
+      "artifactBurden": "very-high",
+      "reviewBurden": "high",
+      "qualification": "The current county aggregate lacks occurrence identities, may include child aggregation, and does not have confirmed bulk licensing, rate, or completeness terms. The provider workflow directs downloads above 200000 records through authenticated contact. A safe event expansion is estimated above 1 GiB. The bounded additive compatibility caveat remains unchanged."
+    }
+  ],
+  "geographyPolicyEvaluation": {
+    "status": "research-only-not-approved-for-publication",
+    "recommendedBoundary": "2025-detailed-tiger-line",
+    "rejectedBoundary": "census-cartographic-boundary",
+    "requirements": [
+      "retain original source geography",
+      "retain boundary version and hash",
+      "retain coordinate precision and uncertainty",
+      "use deterministic point-in-polygon",
+      "reject border ambiguity",
+      "preserve retired county handling",
+      "label derived geography",
+      "pass deterministic replay and adversarial tests"
+    ],
+    "publishedDerivedCountyEvidence": 0
+  },
+  "throughputConstraint": {
+    "targetOutcomes": 250000,
+    "minimumSubstantialOutcomes": 100000,
+    "newCountyPairOutcomes": 0,
+    "newStateApplicabilityEvents": 49,
+    "constraint": "No evaluated high-throughput national path satisfies authority, provider identity, licensing, explicit county geography, artifact budget, and completeness gates inside the current disk envelope.",
+    "syntheticOutcomesCreated": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatesAbsence": false,
+    "sourceSilenceCreatesNotDetected": false,
+    "sourceSilenceCreatesNotApplicable": false,
+    "coordinateDerivedCountyPublicationUsed": false,
+    "failedDownloadReplacedVerifiedCache": false
+  }
+}

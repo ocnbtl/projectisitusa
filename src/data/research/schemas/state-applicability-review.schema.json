@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/state-applicability-review.schema.json",
+  "title": "Project Isitusa reviewed state applicability source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "reviewId",
+    "sourceId",
+    "stateCode",
+    "sourceUrl",
+    "retrievedAt",
+    "reviewedAt",
+    "artifact",
+    "acceptedEvents",
+    "blockedRows",
+    "attestations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "reviewId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sourceId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "sourceUrl": { "type": "string", "format": "uri" },
+    "retrievedAt": { "type": "string", "format": "date-time" },
+    "reviewedAt": { "type": "string", "format": "date-time" },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "mediaType"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "mediaType": { "type": "string", "minLength": 1 }
+      }
+    },
+    "acceptedEvents": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/acceptedEvent" }
+    },
+    "blockedRows": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/blockedRow" }
+    },
+    "attestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stateApplicabilityOnly",
+        "countyDeterminationCreated",
+        "absenceCreated",
+        "notDetectedCreated",
+        "sourceSilenceCreatedNotApplicable"
+      ],
+      "properties": {
+        "stateApplicabilityOnly": { "const": true },
+        "countyDeterminationCreated": { "const": false },
+        "absenceCreated": { "const": false },
+        "notDetectedCreated": { "const": false },
+        "sourceSilenceCreatedNotApplicable": { "const": false }
+      }
+    }
+  },
+  "$defs": {
+    "acceptedEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventId",
+        "sourceRecordId",
+        "originalTaxonText",
+        "scientificName",
+        "speciesId",
+        "applicability",
+        "priority",
+        "matchMethod",
+        "reviewStatus",
+        "note"
+      ],
+      "properties": {
+        "eventId": { "type": "string", "minLength": 1 },
+        "sourceRecordId": { "type": "string", "minLength": 1 },
+        "originalTaxonText": { "type": "string", "minLength": 1 },
+        "scientificName": { "type": "string", "minLength": 1 },
+        "speciesId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "applicability": { "const": "applicable" },
+        "priority": { "const": "regulated" },
+        "matchMethod": { "const": "exact-canonical-binomial" },
+        "reviewStatus": { "const": "accepted" },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "blockedRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceRecordId",
+        "originalTaxonText",
+        "reason",
+        "reviewStatus"
+      ],
+      "properties": {
+        "sourceRecordId": { "type": "string", "minLength": 1 },
+        "originalTaxonText": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "reviewStatus": { "const": "blocked" }
+      }
+    }
+  }
+}

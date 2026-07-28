@@ -1,24 +1,24 @@
 {
   "schemaVersion": 3,
   "stateCode": "AR",
-  "asOf": "2026-07-27",
-  "generatedAt": "2026-07-27T00:00:00.000Z",
+  "asOf": "2026-07-28",
+  "generatedAt": "2026-07-28T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/AR.json",
-    "applicabilityAsOf": "2026-07-25",
+    "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 38,
+    "applicableSpeciesCount": 52,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2466,
+    "unknownSpeciesCount": 2452,
     "blockedSpeciesCount": 0,
-    "explicitApplicabilityDecisionCount": 20,
+    "explicitApplicabilityDecisionCount": 34,
     "derivedApplicableSpeciesCount": 18,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 55,
+    "boundedAcquisitionSpeciesCount": 68,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -49,16 +49,16 @@
     "rejectionRecordCount": 19,
     "researchRunCount": 9,
     "boundedAcquisition": {
-      "speciesCount": 55,
-      "totalPairs": 4125,
+      "speciesCount": 68,
+      "totalPairs": 5100,
       "verifiedPresent": 746,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 3231,
-      "notResearched": 148,
-      "researchCoveragePercent": 96.41,
+      "notResearched": 1123,
+      "researchCoveragePercent": 77.98,
       "explicitOutcomePairs": 3977,
-      "explicitOutcomeCoveragePercent": 96.4121
+      "explicitOutcomeCoveragePercent": 77.9804
     }
   },
   "migrationCandidates": {
@@ -372,18 +372,18 @@
     "protocolId": "national-pilot-multisource-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 165,
-    "applicableCells": 56,
-    "notApplicableCells": 109,
+    "totalCells": 204,
+    "applicableCells": 70,
+    "notApplicableCells": 134,
     "completeCells": 18,
-    "incompleteCells": 38,
+    "incompleteCells": 52,
     "blockedCells": 0,
     "currentCells": 5,
     "staleCells": 13,
-    "undatedCells": 38,
-    "applicableCompletionPercent": 32.14,
-    "currentCompletePercent": 8.93,
-    "regulatedAndHighApplicableCells": 0,
+    "undatedCells": 52,
+    "applicableCompletionPercent": 25.71,
+    "currentCompletePercent": 7.14,
+    "regulatedAndHighApplicableCells": 14,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
     "requiredCurrentSourcesProcessed": false,
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 24,
+        "applicableCells": 38,
         "currentCompleteCells": 2,
-        "currentCompletePercent": 8.33
+        "currentCompletePercent": 5.26
       },
       {
         "category": "wildlife",
@@ -416,7 +416,7 @@
     "priorityCompletion": [
       {
         "priority": "regulated",
-        "applicableCells": 0,
+        "applicableCells": 14,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
@@ -442,7 +442,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 38,
+        "applicableCells": 52,
         "currentCompleteCells": 0,
         "processed": false
       },
@@ -455,6 +455,162 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "agrostemma-githago",
+      "commonName": "Common corncockle",
+      "scientificName": "Agrostemma githago",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "bromus-commutatus",
+      "commonName": "Meadow brome",
+      "scientificName": "Bromus commutatus",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "bromus-secalinus",
+      "commonName": "Rye brome",
+      "scientificName": "Bromus secalinus",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "cardiospermum-halicacabum",
+      "commonName": "Balloon vine",
+      "scientificName": "Cardiospermum halicacabum",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "convolvulus-arvensis",
+      "commonName": "Field Bindweed",
+      "scientificName": "Convolvulus arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "cynodon-dactylon",
+      "commonName": "Bermudagrass",
+      "scientificName": "Cynodon dactylon",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "cyperus-rotundus",
+      "commonName": "Purple Nutsedge",
+      "scientificName": "Cyperus rotundus",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "lolium-temulentum",
+      "commonName": "Darnel ryegrass",
+      "scientificName": "Lolium temulentum",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "nassella-trichotoma",
+      "commonName": "Serrated tussock grass",
+      "scientificName": "Nassella trichotoma",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "plantago-lanceolata",
+      "commonName": "Buckhorn Plantain",
+      "scientificName": "Plantago lanceolata",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "rottboellia-cochinchinensis",
+      "commonName": "Itchgrass",
+      "scientificName": "Rottboellia cochinchinensis",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "setaria-faberi",
+      "commonName": "Giant Foxtail",
+      "scientificName": "Setaria faberi",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
+    {
+      "speciesId": "sorghum-halepense",
+      "commonName": "Johnsongrass",
+      "scientificName": "Sorghum halepense",
+      "category": "plants",
+      "notResearchedCountyCount": 75,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 75001
+    },
     {
       "speciesId": "matricaria-discoidea",
       "commonName": "Pineapple Weed",
@@ -569,6 +725,18 @@
         "usfs-afpe"
       ],
       "priorityScore": 752
+    },
+    {
+      "speciesId": "solanum-viarum",
+      "commonName": "Tropical soda apple",
+      "scientificName": "Solanum viarum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 75,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 751
     },
     {
       "speciesId": "akebia-quinata",
@@ -704,16 +872,6 @@
       "speciesId": "securigera-varia",
       "commonName": "Crown Vetch",
       "scientificName": "Securigera varia",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 75,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 750
-    },
-    {
-      "speciesId": "solanum-viarum",
-      "commonName": "Tropical soda apple",
-      "scientificName": "Solanum viarum",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 75,

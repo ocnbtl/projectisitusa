@@ -1,6 +1,6 @@
 # Alaska Research Progress
 
-Generated: `2026-07-27T00:00:00.000Z`
+Generated: `2026-07-28T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -15,10 +15,10 @@ Generated: `2026-07-27T00:00:00.000Z`
 - Determination coverage: `0.06%`
 - Research coverage: `1.84%`
 - Explicit outcome coverage: `1.8411%`
-- Applicable protocol cells: `50`
+- Applicable protocol cells: `63`
 - Current complete protocol cells: `5`
-- Protocol completion: `10.00%`
-- Current protocol completion: `10.00%`
+- Protocol completion: `7.94%`
+- Current protocol completion: `7.94%`
 - Evidence records: `50`
 - Research runs: `10`
 - Rejection records: `440`
@@ -32,6 +32,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Wild oat (`avena-fatua`) | plants | 30 | 0 | 1 |
+| Brown mustard (`brassica-juncea`) | plants | 30 | 0 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 30 | 0 | 1 |
+| Brittlestem hempnettle (`galeopsis-tetrahit`) | plants | 30 | 0 | 1 |
+| Annual Bluegrass (`poa-annua`) | plants | 30 | 0 | 1 |
+| Wild radish (`raphanus-raphanistrum`) | plants | 30 | 0 | 1 |
+| Austrian yellowcress (`rorippa-austriaca`) | plants | 30 | 0 | 1 |
+| Charlock mustard (`sinapis-arvensis`) | plants | 30 | 0 | 1 |
+| Bird Vetch (`vicia-cracca`) | plants | 30 | 0 | 1 |
 | Shepherd's Purse (`capsella-bursa-pastoris`) | plants | 30 | 0 | 0 |
 | Spruce Aphid (`elatobium-abietinum`) | insects | 29 | 0 | 1 |
 | Creeping Buttercup (`ranunculus-repens`) | plants | 29 | 0 | 1 |
@@ -48,15 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 8 | 22 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 8 | 22 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 8 | 22 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 8 | 22 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 8 | 21 | 2 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 30 | 0 |
-| Smooth Brome (`bromus-inermis`) | plants | 0 | 30 | 0 |
-| Cheatgrass (`bromus-tectorum`) | plants | 0 | 30 | 0 |
-| Siberian peashrub (`caragana-arborescens`) | plants | 0 | 30 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 30 | 0 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 30 | 0 |
-| Scotch broom (`cytisus-scoparius`) | plants | 0 | 30 | 0 |
 
 ## Source Operations
 

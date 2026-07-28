@@ -1,6 +1,6 @@
 # Arkansas Research Progress
 
-Generated: `2026-07-27T00:00:00.000Z`
+Generated: `2026-07-28T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -15,10 +15,10 @@ Generated: `2026-07-27T00:00:00.000Z`
 - Determination coverage: `0.40%`
 - Research coverage: `2.12%`
 - Explicit outcome coverage: `2.1177%`
-- Applicable protocol cells: `56`
+- Applicable protocol cells: `70`
 - Current complete protocol cells: `5`
-- Protocol completion: `32.14%`
-- Current protocol completion: `8.93%`
+- Protocol completion: `25.71%`
+- Current protocol completion: `7.14%`
 - Evidence records: `756`
 - Research runs: `9`
 - Rejection records: `19`
@@ -32,6 +32,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Common corncockle (`agrostemma-githago`) | plants | 75 | 0 | 1 |
+| Meadow brome (`bromus-commutatus`) | plants | 75 | 0 | 1 |
+| Rye brome (`bromus-secalinus`) | plants | 75 | 0 | 1 |
+| Balloon vine (`cardiospermum-halicacabum`) | plants | 75 | 0 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 75 | 0 | 1 |
+| Bermudagrass (`cynodon-dactylon`) | plants | 75 | 0 | 1 |
+| Purple Nutsedge (`cyperus-rotundus`) | plants | 75 | 0 | 1 |
+| Darnel ryegrass (`lolium-temulentum`) | plants | 75 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 75 | 0 | 1 |
+| Buckhorn Plantain (`plantago-lanceolata`) | plants | 75 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 75 | 0 | 1 |
+| Giant Foxtail (`setaria-faberi`) | plants | 75 | 0 | 1 |
+| Johnsongrass (`sorghum-halepense`) | plants | 75 | 0 | 1 |
 | Pineapple Weed (`matricaria-discoidea`) | plants | 74 | 0 | 1 |
 | Yellow Sweetclover (`melilotus-officinalis`) | plants | 74 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 2 |
@@ -41,22 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 75 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 75 | 2 |
+| Tropical soda apple (`solanum-viarum`) | plants | 0 | 75 | 1 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 75 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 75 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 75 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 75 | 0 |
-| Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 75 | 0 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 75 | 0 |
-| Camphortree (`cinnamomum-camphora`) | plants | 0 | 75 | 0 |
-| Thorny olive (`elaeagnus-pungens`) | plants | 0 | 75 | 0 |
-| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 75 | 0 |
-| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 75 | 0 |
-| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 75 | 0 |
-| Rose natal grass (`melinis-repens`) | plants | 0 | 75 | 0 |
-| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 0 | 75 | 0 |
-| Crown Vetch (`securigera-varia`) | plants | 0 | 75 | 0 |
-| Tropical soda apple (`solanum-viarum`) | plants | 0 | 75 | 0 |
-| Japanese meadowsweet (`spiraea-japonica`) | plants | 0 | 75 | 0 |
 
 ## Source Operations
 

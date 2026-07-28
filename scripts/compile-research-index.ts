@@ -47,6 +47,7 @@ import {
   type StateResearchConfigFile,
 } from "@/lib/research/state-research-config";
 import { deriveStateSpeciesResolution } from "@/lib/research/state-species-resolution";
+import type { StateApplicabilitySourceRegistry } from "@/lib/research/state-applicability-sources";
 
 type SpeciesRecord = {
   id: string;
@@ -243,10 +244,24 @@ const datasetSnapshot = readJson<{
   };
 }>(path.join(ROOT, "src/data/generated/snapshot.json"));
 const registry = readJson<ResearchSourceRegistry>(path.join(ROOT, "src/data/research/source-registry.json"));
-const registeredSourceIds = new Set(registry.sources.map((source) => source.id));
+const applicabilitySourceRegistry = readJson<StateApplicabilitySourceRegistry>(
+  path.join(ROOT, "src/data/research/state-applicability-source-registry.json"),
+);
+const registeredSourceIds = new Set([
+  ...registry.sources.map((source) => source.id),
+  ...applicabilitySourceRegistry.sources.map((source) => source.id),
+]);
 for (const entry of applicability?.species ?? []) {
   for (const basis of entry.basis) {
     if (!registeredSourceIds.has(basis.sourceId)) throw new Error(`Applicability for ${STATE_CODE} references unknown source ${basis.sourceId}.`);
+    const applicabilitySource = applicabilitySourceRegistry.sources.find(
+      (source) => source.id === basis.sourceId,
+    );
+    if (applicabilitySource && applicabilitySource.stateCode !== STATE_CODE) {
+      throw new Error(
+        `Applicability for ${STATE_CODE} references state-list source ${basis.sourceId} for ${applicabilitySource.stateCode}.`,
+      );
+    }
   }
 }
 const protocols = readJson<ResearchProtocolsFile>(path.join(ROOT, "src/data/research/research-protocols.json"));

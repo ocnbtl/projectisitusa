@@ -57,16 +57,16 @@ The Alabama table below is historical migration context verified from `docs/coun
 | Known | 15141 |
 | Known percent | 9.02% |
 
-The current Alabama parity checkpoint freshly verified with explicit as-of `2026-07-26` is:
+The current Alabama parity checkpoint freshly verified with explicit as-of `2026-07-28` is:
 
 | Metric | Count |
 | --- | ---: |
 | Registered sources | 29 |
-| Research runs | 32 |
-| Evidence records | 30813 |
+| Research runs | 33 |
+| Evidence records | 31531 |
 | Rejections | 1440 |
-| Raw pair outcomes | 1183 |
-| Distinct outcome pairs | 1047 |
+| Raw pair outcomes | 3528 |
+| Distinct outcome pairs | 3392 |
 | Verified present | 15293 |
 | Verified absent | 0 |
 | Survey not detected | 8 |
@@ -78,9 +78,11 @@ Research, compatibility, `presence.json`, `explorer-presence.json`, and the norm
 
 The current v1 geography registry contains `51` state or district jurisdictions and `3144` active county equivalents. Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is lineage only. Connecticut has `9` current planning regions and retains its `8` former counties only as retired lineage. All `51` jurisdictions have deterministic generated research projections. Alabama is compatibility-authoritative. The other `50` remain research-only and are not normal compatibility publication or state certification.
 
-The national projection checkpoint at explicit as-of `2026-07-27` contains a bounded acquisition scope of `5367` state-species entries and `339628` county-species pairs: `41781` verified present, `0` verified absent, `8` not detected, `237118` researched unresolved, and `60721` not researched. It contains `58279` evidence records, `4492` rejection events, `171383` explicit outcome pairs, and `0` conflicts.
+The national projection checkpoint at explicit as-of `2026-07-28` contains a bounded acquisition scope of `5389` state-species entries and `340873` county-species pairs: `41781` verified present, `0` verified absent, `8` not detected, `237118` researched unresolved, and `61966` not researched. It contains `58279` evidence records, `4492` rejection events, `171383` explicit outcome pairs, and `0` conflicts.
 
-The complete catalog denominator is different: `2504` species across `51` jurisdictions creates `127704` state-species decisions, and `2504` species across `3144` county equivalents creates `7872576` county-species pairs. The sparse model stores explicit acquisition rows plus state-applicability overrides and resolves missing applicable or unknown catalog pairs as `not-researched`. At this checkpoint, state applicability is `2744` applicable, `0` not applicable, `124960` unknown, and `0` blocked. Accepted reviewed county presence derives `1841` of the applicable decisions. State-species research accounting separately contains `1689` researched-unresolved, `94` researched-blocked, and `123177` untouched decisions outside the applicable category. Full pair status resolution is `41781` verified present, `0` verified absent, `8` not detected, `237118` researched unresolved, and `7593669` not researched. Bounded acquisition coverage and full-catalog certification coverage are always reported separately.
+The complete catalog denominator is different: `2504` species across `51` jurisdictions creates `127704` state-species decisions, and `2504` species across `3144` county equivalents creates `7872576` county-species pairs. The sparse model stores explicit acquisition rows plus state-applicability overrides and resolves missing applicable or unknown catalog pairs as `not-researched`. At this checkpoint, state applicability is `2772` applicable, `0` not applicable, `124932` unknown, and `0` blocked. Accepted reviewed county presence derives `1821` of the applicable decisions, while `951` are explicit overrides. State-species research accounting separately contains `1683` researched-unresolved, `94` researched-blocked, and `123155` untouched decisions outside the applicable category. Full pair status resolution is `41781` verified present, `0` verified absent, `8` not detected, `237118` researched unresolved, and `7593669` not researched. Bounded acquisition coverage and full-catalog certification coverage are always reported separately.
+
+Official state applicability sources use a registry separate from county evidence sources. Each immutable review directory contains one declared hashed artifact and one schema-validated review record. The deterministic `research:apply:state-lists` command accepts only exact canonical catalog binomials, rejects missing or extra files and descriptor mismatches, and adds state-level applicability bases without creating county evidence, absence, non-detection, or not-applicable decisions. The first family retains Alabama, Alaska, and Arkansas artifacts, accepts `49` exact events, preserves `22` ambiguous or unmatched rows as blocked, and records Arizona as an acquisition blocker because the official provider returned challenge pages.
 
 ## System Boundary
 

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/state-applicability-source-registry.schema.json",
+  "title": "Project Isitusa state applicability source registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "updatedAt", "sources"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "updatedAt": { "type": "string", "format": "date" },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "authority",
+        "stateCode",
+        "homepage",
+        "access",
+        "claimSemantics",
+        "negativeSemantics",
+        "refreshCadenceDays",
+        "status",
+        "caveat"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "label": { "type": "string", "minLength": 1 },
+        "authority": { "type": "string", "minLength": 1 },
+        "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "homepage": { "type": "string", "format": "uri" },
+        "access": { "enum": ["download", "official-web"] },
+        "claimSemantics": {
+          "enum": ["regulated-state-applicability"]
+        },
+        "negativeSemantics": { "const": "none" },
+        "refreshCadenceDays": { "type": "integer", "minimum": 1 },
+        "status": { "enum": ["operational", "blocked"] },
+        "caveat": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

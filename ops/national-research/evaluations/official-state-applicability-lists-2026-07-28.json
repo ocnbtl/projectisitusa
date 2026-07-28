@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-lists-2026-07-28",
+  "evaluatedAt": "2026-07-28T01:20:00Z",
+  "result": "passed-centralized-state-applicability",
+  "executionOwner": "MAIN",
+  "baselineCommit": "290272a0159d678a0b362a5f7db8b9f521a0ba0d",
+  "projectionAsOf": "2026-07-28",
+  "sources": [
+    {
+      "sourceId": "al-80-10-14-04",
+      "stateCode": "AL",
+      "status": "operational",
+      "artifactPath": "src/data/research/state-list-sources/20260727__al-80-10-14-04__6dc55b8e49b9/artifacts/chapter-80-10-14.pdf",
+      "artifactSha256": "6dc55b8e49b987946ba098faefb859c4209d72a8f3f07c9663d7ad8299fe6291",
+      "artifactBytes": 34611,
+      "acceptedEvents": 20,
+      "blockedRows": 9
+    },
+    {
+      "sourceId": "ak-11-aac-34-020",
+      "stateCode": "AK",
+      "status": "operational",
+      "artifactPath": "src/data/research/state-list-sources/20260727__ak-11-aac-34-020__09e11ccb496d/artifacts/noxious-weeds.pdf",
+      "artifactSha256": "09e11ccb496d341da02b428fba3fb06e452e325b3466fbf39131e8456ca80884",
+      "artifactBytes": 581891,
+      "acceptedEvents": 15,
+      "blockedRows": 9
+    },
+    {
+      "sourceId": "ar-2-car-34-102",
+      "stateCode": "AR",
+      "status": "operational",
+      "artifactPath": "src/data/research/state-list-sources/20260727__ar-2-car-34-102__13ab57db3e00/artifacts/rule.html",
+      "artifactSha256": "13ab57db3e00704f84b4f516d1fd308c8c45b0ce531d22c659eeda291844cae7",
+      "artifactBytes": 36960,
+      "acceptedEvents": 14,
+      "blockedRows": 4
+    },
+    {
+      "sourceId": "az-r3-4-245",
+      "stateCode": "AZ",
+      "status": "blocked",
+      "artifactPath": null,
+      "artifactSha256": null,
+      "artifactBytes": 0,
+      "acceptedEvents": 0,
+      "blockedRows": 0,
+      "blocker": "Official automated acquisition returned provider challenge pages. No source artifact was accepted."
+    }
+  ],
+  "reviewTotals": {
+    "registeredSources": 4,
+    "operationalSources": 3,
+    "blockedSources": 1,
+    "retainedArtifacts": 3,
+    "artifactBytes": 653462,
+    "grossAcceptedEvents": 49,
+    "blockedRows": 22,
+    "unsupportedAbsenceClaims": 0,
+    "unsupportedNotDetectedClaims": 0,
+    "countyEvidenceAssertions": 0
+  },
+  "stateApplicability": {
+    "baseline": {
+      "fullStateSpeciesDenominator": 127704,
+      "applicable": 2744,
+      "notApplicable": 0,
+      "unknown": 124960,
+      "blocked": 0,
+      "explicitOverrides": 903,
+      "derivedApplicable": 1841,
+      "researchedUnresolved": 1689,
+      "researchedBlocked": 94,
+      "untouched": 123177
+    },
+    "final": {
+      "fullStateSpeciesDenominator": 127704,
+      "applicable": 2772,
+      "notApplicable": 0,
+      "unknown": 124932,
+      "blocked": 0,
+      "explicitOverrides": 951,
+      "derivedApplicable": 1821,
+      "researchedUnresolved": 1683,
+      "researchedBlocked": 94,
+      "untouched": 123155
+    },
+    "net": {
+      "fullStateSpeciesDenominator": 0,
+      "applicable": 28,
+      "notApplicable": 0,
+      "unknown": -28,
+      "blocked": 0,
+      "explicitOverrides": 48,
+      "derivedApplicable": -20,
+      "researchedUnresolved": -6,
+      "researchedBlocked": 0,
+      "untouched": -22
+    },
+    "qualification": "Forty-nine accepted list events add 48 new explicit override rows because one Alaska species already had an explicit basis. Twenty of the new explicit bases overlap species already derived applicable from accepted county presence, so net effective applicability increases by 28."
+  },
+  "stateDetails": [
+    {
+      "stateCode": "AL",
+      "baselineApplicable": 996,
+      "finalApplicable": 997,
+      "netApplicable": 1,
+      "baselineExplicit": 0,
+      "finalExplicit": 20,
+      "baselineDerived": 996,
+      "finalDerived": 977,
+      "boundedSpeciesNet": 0,
+      "boundedCountyPairsNet": 0
+    },
+    {
+      "stateCode": "AK",
+      "baselineApplicable": 31,
+      "finalApplicable": 44,
+      "netApplicable": 13,
+      "baselineExplicit": 23,
+      "finalExplicit": 37,
+      "baselineDerived": 8,
+      "finalDerived": 7,
+      "boundedSpeciesNet": 9,
+      "boundedCountyPairsNet": 270
+    },
+    {
+      "stateCode": "AR",
+      "baselineApplicable": 38,
+      "finalApplicable": 52,
+      "netApplicable": 14,
+      "baselineExplicit": 20,
+      "finalExplicit": 34,
+      "baselineDerived": 18,
+      "finalDerived": 18,
+      "boundedSpeciesNet": 13,
+      "boundedCountyPairsNet": 975
+    }
+  ],
+  "countyPairProjection": {
+    "baseline": {
+      "fullCountySpeciesDenominator": 7872576,
+      "boundedSpeciesEntries": 5367,
+      "boundedCountySpeciesPairs": 339628,
+      "verifiedPresent": 41781,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 237118,
+      "boundedNotResearched": 60721,
+      "fullNotResearched": 7593669,
+      "evidenceRecords": 58279,
+      "rejections": 4492,
+      "explicitOutcomePairs": 171383,
+      "conflicts": 0
+    },
+    "final": {
+      "fullCountySpeciesDenominator": 7872576,
+      "boundedSpeciesEntries": 5389,
+      "boundedCountySpeciesPairs": 340873,
+      "verifiedPresent": 41781,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 237118,
+      "boundedNotResearched": 61966,
+      "fullNotResearched": 7593669,
+      "evidenceRecords": 58279,
+      "rejections": 4492,
+      "explicitOutcomePairs": 171383,
+      "conflicts": 0
+    },
+    "net": {
+      "fullCountySpeciesDenominator": 0,
+      "boundedSpeciesEntries": 22,
+      "boundedCountySpeciesPairs": 1245,
+      "verifiedPresent": 0,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "boundedNotResearched": 1245,
+      "fullNotResearched": 0,
+      "evidenceRecords": 0,
+      "rejections": 0,
+      "explicitOutcomePairs": 0,
+      "conflicts": 0
+    }
+  },
+  "protocolCells": {
+    "baseline": {
+      "total": 30976,
+      "applicable": 15433,
+      "notApplicable": 15543,
+      "complete": 848,
+      "incomplete": 14526,
+      "blocked": 59,
+      "current": 237,
+      "stale": 611,
+      "undated": 14585
+    },
+    "final": {
+      "total": 31042,
+      "applicable": 15460,
+      "notApplicable": 15582,
+      "complete": 848,
+      "incomplete": 14553,
+      "blocked": 59,
+      "current": 237,
+      "stale": 611,
+      "undated": 14612
+    },
+    "net": {
+      "total": 66,
+      "applicable": 27,
+      "notApplicable": 39,
+      "complete": 0,
+      "incomplete": 27,
+      "blocked": 0,
+      "current": 0,
+      "stale": 0,
+      "undated": 27
+    }
+  },
+  "validation": {
+    "adversarialCases": 10,
+    "artifactDescriptorValidation": "pass",
+    "exactCatalogIdentityValidation": "pass",
+    "duplicateIdentityValidation": "pass",
+    "unreportedFileValidation": "pass",
+    "sourceSilenceSemanticValidation": "pass",
+    "deterministicRepeatedApplication": "pass",
+    "allStateProjectionByteStability": "pass",
+    "frozenSkillRegression": "97/97",
+    "criticalSafetyViolations": 0
+  },
+  "semanticAttestation": {
+    "stateApplicabilityOnly": true,
+    "countyDeterminationCreated": false,
+    "absenceCreated": false,
+    "notDetectedCreated": false,
+    "sourceSilenceCreatedNotApplicable": false,
+    "ambiguousTaxonTextBlocked": true
+  }
+}

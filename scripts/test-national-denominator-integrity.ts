@@ -48,18 +48,18 @@ for (const config of configFile.states) {
       applicability.catalogSpeciesIdsSha256 === catalogHash,
     `${config.stateCode} applicability is not pinned to the current catalog.`,
   );
+  const summary = readJson<ResearchStateSummary>(
+    `src/data/generated/research/${config.stateCode}/summary.json`,
+  );
   const resolved = resolveStateResearchScope({
     configFile,
     stateCode: config.stateCode,
     catalogSpeciesIds,
-    asOf: "2026-07-26",
+    asOf: summary.asOf,
     applicability,
   });
   resolvedStateSpeciesDecisions += resolved.resolvedStateSpeciesDecisionCount;
   configuredStateScopeSpecies += resolved.speciesIds.length;
-  const summary = readJson<ResearchStateSummary>(
-    `src/data/generated/research/${config.stateCode}/summary.json`,
-  );
   decisionTotals.applicable += summary.scope.applicableSpeciesCount;
   decisionTotals["not-applicable"] +=
     summary.scope.notApplicableSpeciesCount;

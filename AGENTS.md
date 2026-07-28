@@ -64,7 +64,7 @@ Report research coverage separately from determination coverage.
 - Research completion does not create a determination.
 - Survey non-detection does not erase verified presence. The separate survey axis preserves both facts.
 
-The Alabama compiler and public parity checkpoint verified with explicit as-of `2026-07-27` is:
+The Alabama compiler and public parity checkpoint verified with explicit as-of `2026-07-28` is:
 
 - `2504` species x `67` counties = `167768` county-species pairs
 - `15293` verified present
@@ -79,7 +79,7 @@ The Alabama compiler and public parity checkpoint verified with explicit as-of `
 - all `312` dated migration source assertions across `176` distinct pairs have completed source screens
 - research, compatibility, `presence.json`, `explorer-presence.json`, and the normal county experience agree on reviewed presence
 
-The national projection checkpoint verified with explicit as-of `2026-07-27` is:
+The national projection checkpoint verified with explicit as-of `2026-07-28` is:
 
 - `51` configured v1 state or district jurisdictions with `3144` current county equivalents
 - Alaska has `30` current county equivalents, including `02063` and `02066`; retired `02261` is not accepted as current scope
@@ -89,12 +89,13 @@ The national projection checkpoint verified with explicit as-of `2026-07-27` is:
 - Alaska, Arizona, and Arkansas remain research-only, but the committed USGS NAS v1.344 pilot now contributes `32` reviewed present determinations and `65` researched-unresolved pairs across those projections
 - the single national archive contains `721752` rows; the three pilot partitions selected `4609` candidates, emitted `32` assertions and reviews, `13` grouped rejection events, `120` outcomes, and `23` honest blocked outcomes
 - the retained AFPE v1.0 CC0 archive was acquired once and partitioned across all `51` jurisdictions for `13` reviewed taxa, producing `40872` outcomes, `7642` reviewed assertions, `32983` no-qualifying-evidence outcomes, `247` blocked outcomes, and `481` rejection events
-- the bounded acquisition scope contains `5367` state-species entries and `339628` county-species pairs: `41781` verified present, `0` verified absent, `8` not detected, `237118` researched unresolved, and `60721` not researched
-- the full sparse denominator contains the same explicit statuses plus `7532948` default pairs, for `7593669` total not-researched pairs
+- the bounded acquisition scope contains `5389` state-species entries and `340873` county-species pairs: `41781` verified present, `0` verified absent, `8` not detected, `237118` researched unresolved, and `61966` not researched
+- the full sparse denominator contains the same explicit statuses plus `7531703` default pairs, for `7593669` total not-researched pairs
 - the AFPE net change from the pre-source checkpoint is `40001` pairs, `7469` verified present, `32480` researched unresolved, `52` not researched, `7642` evidence records, and `0` conflicts
 - all `51` state projections are byte-stable; compatibility publication remains limited to Alabama
-- all `127704` state-species combinations resolve deterministically: `2744` applicable and `124960` unknown at this checkpoint. Of the applicable decisions, `1841` are derived from accepted reviewed presence and `903` are explicit overrides.
-- state-species research accounting contains `1689` researched-unresolved, `94` researched-blocked, and `123177` untouched decisions outside the applicable category. No state has complete full-catalog research accounting.
+- all `127704` state-species combinations resolve deterministically: `2772` applicable and `124932` unknown at this checkpoint. Of the applicable decisions, `1821` are derived from accepted reviewed presence and `951` are explicit overrides.
+- the first official state-list family retains three hashed artifacts and `49` accepted exact canonical applicability events across Alabama, Alaska, and Arkansas. It preserves `22` ambiguous or unmatched rows as blocked review rows and records Arizona acquisition as blocked by provider challenge pages. These events establish state regulatory applicability only and create no county evidence or negative determinations.
+- state-species research accounting contains `1683` researched-unresolved, `94` researched-blocked, and `123155` untouched decisions outside the applicable category. No state has complete full-catalog research accounting.
 - the centralized pilot did not by itself authorize broad dispatch; the later frozen skill recovery and accepted worker integrations now govern dispatch authority
 - explicit protocol cells remain separate from determination and source-screen coverage
 
