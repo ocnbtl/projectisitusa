@@ -962,7 +962,7 @@
       "queueId": "queue-lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2",
       "jobId": "gbif-canary-ar-agrostemma-05119-20260728-r1",
       "leaseId": "lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-28T01:48:00Z",
       "manifestPath": "manifests/gbif-canary-ar-agrostemma-05119-20260728-r1__lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2.json",
       "manifestHash": "2ee7feb8fedfd7001682e06fb2fc17cf0a08ac044a49fd7ae039c09140736536",
@@ -1009,6 +1009,37 @@
         "path": "receipts/reviews/queue-lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2.json",
         "sha256": "56600b2e4195d9f418e28e1a3b576bb477e2bb478b289a888ec2a524e7176f69",
         "bytes": 2614
+      },
+      "integratedAt": "2026-07-28T01:51:01Z",
+      "integrator": "MAIN",
+      "integrationCommit": "54726d5788a4e90b1fd9252a0c10f6d976f9e92a",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation after integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact reviewed worker tree entries compared with canonical integration commit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical main clean status and whitespace check",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed Arkansas evidence and manifest commits without conflict, revalidated the immutable run on canonical main, and required byte-identical worker tree entries.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-canary-ar-agrostemma-05119-20260728-r1-2.json",
+        "sha256": "f5b10360d973833be18454d43ac9a217aa874f19e041416bd99e22e51213d9a7",
+        "bytes": 2381
       }
     }
   ]
