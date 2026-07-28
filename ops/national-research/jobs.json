@@ -1629,6 +1629,212 @@
       "priority": 131,
       "state": "completed",
       "currentLeaseId": "lease-fia-canary-ks-20260726-r1-1"
+    },
+    {
+      "jobId": "gbif-canary-ak-rorippa-02020-20260728-r1",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "AK"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "rorippa-austriaca"
+        ],
+        "pairs": [
+          "02020:rorippa-austriaca"
+        ]
+      },
+      "scopeClaims": [
+        "state/AK/source/gbif-preserved-specimens/taxon/rorippa-austriaca/county/02020"
+      ],
+      "baseSha": "a278d64a57981fe974df9bf3130eb4636f56c629",
+      "expectedReceiptCodeCommit": "a278d64a57981fe974df9bf3130eb4636f56c629",
+      "branch": "codex/gbif-canary-ak-rorippa-02020-20260728-r1",
+      "worktree": "/private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1",
+      "permittedPaths": [
+        "src/data/research/runs/20260728T020000Z__gbif-preserved-specimens__a43239b354d1/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 5000000,
+        "maxWallMinutes": 30,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-29T04:00:00Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered GBIF preserved-specimen adapter from a clean worktree with started-at 2026-07-28T02:00:00.000Z",
+        "screen exactly 02020:rorippa-austriaca with provider county geography only",
+        "preserve a complete empty result as researched unresolved, never absence or not-detected",
+        "emit a canonical receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check a278d64a57981fe974df9bf3130eb4636f56c629...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 140,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-canary-ar-agrostemma-05119-20260728-r1",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "AR"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "agrostemma-githago"
+        ],
+        "pairs": [
+          "05119:agrostemma-githago"
+        ]
+      },
+      "scopeClaims": [
+        "state/AR/source/gbif-preserved-specimens/taxon/agrostemma-githago/county/05119"
+      ],
+      "baseSha": "a278d64a57981fe974df9bf3130eb4636f56c629",
+      "expectedReceiptCodeCommit": "a278d64a57981fe974df9bf3130eb4636f56c629",
+      "branch": "codex/gbif-canary-ar-agrostemma-05119-20260728-r1",
+      "worktree": "/private/tmp/isitusa-gbif-canary-ar-agrostemma-05119-r1",
+      "permittedPaths": [
+        "src/data/research/runs/20260728T020100Z__gbif-preserved-specimens__e9ac279ac837/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+          "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+          "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "backoffSeconds": [
+          5,
+          30
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 5000000,
+        "maxWallMinutes": 30,
+        "maxMemoryMb": 768
+      },
+      "expiresAt": "2026-07-29T04:00:00Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered GBIF preserved-specimen adapter from a clean worktree with started-at 2026-07-28T02:01:00.000Z",
+        "screen exactly 05119:agrostemma-githago with provider county geography only",
+        "preserve every materially considered record as an accepted assertion or explicit rejection",
+        "emit a canonical receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check a278d64a57981fe974df9bf3130eb4636f56c629...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 141,
+      "state": "planned"
     }
   ]
 }
