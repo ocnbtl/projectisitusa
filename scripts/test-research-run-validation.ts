@@ -3,7 +3,11 @@ import path from "node:path";
 
 import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type { ResearchSourceRegistry } from "@/lib/research/types";
-import { listImmutableResearchRuns, sha256 } from "@/lib/research/run-files";
+import {
+  assertRunStartNotFuture,
+  listImmutableResearchRuns,
+  sha256,
+} from "@/lib/research/run-files";
 import { validateResearchRunInMemory } from "@/lib/research/validate-run";
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -68,6 +72,18 @@ const validate = (
   });
 
 validate(baseResult);
+assertRunStartNotFuture(
+  "2026-07-28T05:00:00.000Z",
+  new Date("2026-07-28T05:00:00.000Z"),
+);
+expectFailure(
+  () =>
+    assertRunStartNotFuture(
+      "2026-07-28T05:00:00.001Z",
+      new Date("2026-07-28T05:00:00.000Z"),
+    ),
+  "Future run start",
+);
 expectFailure(
   () => validate({ ...baseResult, assertions: [...baseResult.assertions, baseResult.assertions[0]] }),
   "Duplicate assertion ID",
@@ -154,6 +170,7 @@ console.log(
   JSON.stringify(
     {
       validBundleAccepted: true,
+      futureRunStartRejectedBeforeAcquisition: true,
       duplicateIdRejected: true,
       badCrossReferenceRejected: true,
       schemaViolationRejected: true,

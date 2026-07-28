@@ -23,6 +23,21 @@ export function sha256(value: string | Buffer) {
   return createHash("sha256").update(value).digest("hex");
 }
 
+export function assertRunStartNotFuture(
+  startedAt: string,
+  now = new Date(),
+) {
+  const startedAtMilliseconds = Date.parse(startedAt);
+  if (!Number.isFinite(startedAtMilliseconds)) {
+    throw new Error(`Invalid research run start time: ${startedAt}.`);
+  }
+  if (startedAtMilliseconds > now.getTime()) {
+    throw new Error(
+      `Research run start time ${startedAt} is later than the current host time ${now.toISOString()}.`,
+    );
+  }
+}
+
 function compareCodePoints(left: string, right: string): number {
   const leftCodePoints = Array.from(left, (character) =>
     character.codePointAt(0)!,

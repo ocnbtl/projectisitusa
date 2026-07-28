@@ -21,6 +21,7 @@ import type {
   ResearchSourceRegistry,
 } from "@/lib/research/types";
 import {
+  assertRunStartNotFuture,
   listImmutableResearchRuns,
   sha256,
   stableJson,
@@ -444,6 +445,7 @@ async function main() {
   const startedAt = options.startedAt
     ? new Date(options.startedAt).toISOString()
     : new Date().toISOString();
+  assertRunStartNotFuture(startedAt);
   const runId = `${runTimestamp(startedAt)}__${options.sourceId}__${parameterHash.slice(0, 12)}`;
   const finalDirectory = path.join(options.outputRoot, runId);
   if (existsSync(finalDirectory)) {
