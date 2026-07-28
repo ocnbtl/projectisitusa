@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 92 | 0 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 92 | 0 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 92 | 0 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 92 | 0 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 92 | 0 | 0 |
+| Mugwort (`artemisia-vulgaris`) | plants | 92 | 0 | 0 |
+| Small Carpgrass (`arthraxon-hispidus`) | plants | 92 | 0 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 92 | 0 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 92 | 0 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 92 | 0 | 0 |
+| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 92 | 0 | 0 |
+| Nodding plumeless thistle (`carduus-nutans`) | plants | 92 | 0 | 0 |
+| Spotted Knapweed (`centaurea-stoebe`) | plants | 92 | 0 | 0 |
 | Jio (`commelina-benghalensis`) | plants | 92 | 0 | 0 |
+| Poison Hemlock (`conium-maculatum`) | plants | 92 | 0 | 0 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 92 | 0 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 92 | 0 | 0 |
+| Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 92 | 0 | 0 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 92 | 0 | 0 |
 | Southern threecornerjack (`emex-australis`) | plants | 92 | 0 | 0 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 92 | 0 | 0 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 92 | 0 | 0 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 92 | 0 | 0 |
+| Leafy Spurge (`euphorbia-virgata`) | plants | 92 | 0 | 0 |
 | Professor-weed (`galega-officinalis`) | plants | 92 | 0 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 92 | 0 | 0 |
-| Hydrilla (`hydrilla`) | plants | 92 | 0 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 92 | 0 | 0 |
-| Cogongrass (`imperata-cylindrica`) | plants | 92 | 0 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 92 | 0 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 92 | 0 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 92 | 0 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 92 | 0 | 0 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 92 | 0 | 0 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 92 | 0 | 0 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 92 | 0 | 0 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 92 | 0 | 0 |
 
 ## Source Operations
 
