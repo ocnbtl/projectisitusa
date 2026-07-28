@@ -175,6 +175,63 @@ assert(
   "Repeated source-record claims were not deduplicated to the latest projection.",
 );
 
+const legacyExactCountyMethod: RunEvidenceAssertionEvent = {
+  ...accepted,
+  geography_match: {
+    ...accepted.geography_match,
+    method: "Exact normalized Alabama county text matched to requested local county FIPS",
+  },
+};
+const registeredExactCountyMethod: RunEvidenceAssertionEvent = {
+  ...repeatedAccepted,
+  geography_match: {
+    ...repeatedAccepted.geography_match,
+    method: "Registered exact county-equivalent name matched to requested Census county FIPS",
+  },
+};
+const exactCountyMethodProjection = compileAdditiveResearchEvidence({
+  bootstrapEvidence: [],
+  runAssertions: [legacyExactCountyMethod, registeredExactCountyMethod],
+  reviewEvents: [
+    acceptedReview(legacyExactCountyMethod),
+    acceptedReview(registeredExactCountyMethod, "2026-07-14T12:03:00.000Z"),
+  ],
+  sources: [source],
+  asOf: "2026-07-14",
+});
+assert(
+  exactCountyMethodProjection.runEvidence.length === 1 &&
+    exactCountyMethodProjection.runEvidence[0]?.evidenceId === registeredExactCountyMethod.eventId,
+  "Equivalent provider-declared exact-county method labels were treated as changed claim semantics.",
+);
+
+let derivedGeographyBlocked = false;
+try {
+  const coordinateDerived: RunEvidenceAssertionEvent = {
+    ...registeredExactCountyMethod,
+    geography_match: {
+      ...registeredExactCountyMethod.geography_match,
+      method: "Coordinate point-in-polygon county inference",
+    },
+  };
+  compileAdditiveResearchEvidence({
+    bootstrapEvidence: [],
+    runAssertions: [legacyExactCountyMethod, coordinateDerived],
+    reviewEvents: [
+      acceptedReview(legacyExactCountyMethod),
+      acceptedReview(coordinateDerived, "2026-07-14T12:03:00.000Z"),
+    ],
+    sources: [source],
+    asOf: "2026-07-14",
+  });
+} catch {
+  derivedGeographyBlocked = true;
+}
+assert(
+  derivedGeographyBlocked,
+  "A coordinate-derived geography method replaced exact provider county geography without superseding review.",
+);
+
 let changedPayloadBlocked = false;
 try {
   compileAdditiveResearchEvidence({
@@ -229,6 +286,8 @@ console.log(
       acceptedRunEvidenceSurvivesBootstrapRefresh: true,
       repeatedRunEventsPreserved: true,
       repeatedSourceRecordProjectionDeduplicated: true,
+      equivalentExactCountyMethodLabelsDeduplicated: true,
+      derivedGeographyRequiresSupersedingReview: true,
       changedPayloadRequiresSupersedingReview: true,
       changedSemanticsRequireSupersedingReview: true,
     },

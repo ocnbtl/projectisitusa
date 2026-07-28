@@ -116,6 +116,8 @@ const NATIONAL_ACQUISITIONS_DIR = path.join(
 );
 const LEGACY_DIRTY_BOOTSTRAP_RUN_ID =
   "20260715T034832Z__gbif-preserved-specimens__090596ab4867";
+const LEGACY_DIRTY_BOOTSTRAP_PARAMETER_SCHEMA_COMMIT =
+  "afa95b1bfad9ee0901017f2209ec64d1cd55d202";
 
 function readJson<T>(filepath: string): T {
   return JSON.parse(readFileSync(filepath, "utf8")) as T;
@@ -834,9 +836,16 @@ for (const bundle of immutableRuns) {
         source.researchAdapter.allowedVersions.includes(receipt.adapter_version),
       `Legacy immutable run ${receipt.run_id} uses an unknown adapter or version.`,
     );
-    const parameterSchemaPath = path.join(ROOT, source.researchAdapter.parameterSchema);
+    const committedParameterSchema = execFileSync(
+      "git",
+      [
+        "show",
+        `${LEGACY_DIRTY_BOOTSTRAP_PARAMETER_SCHEMA_COMMIT}:${source.researchAdapter.parameterSchema}`,
+      ],
+      { cwd: ROOT },
+    );
     const parameterSchema = JSON.parse(
-      readFileSync(parameterSchemaPath, "utf8"),
+      committedParameterSchema.toString("utf8"),
     ) as Parameters<typeof z.fromJSONSchema>[0];
     z.fromJSONSchema(parameterSchema).parse(receipt.parameters);
     assert(

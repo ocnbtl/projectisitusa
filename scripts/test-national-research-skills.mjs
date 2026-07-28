@@ -381,6 +381,7 @@ function buildValidWorkerOutput(worktree, lease, options = {}) {
   ];
   const parameters = {
     stateCode: STATE_CODE,
+    stateProvince: "Alabama",
     candidateLimit: 1,
     candidatePairs: [`${COUNTY_FIPS}:${SPECIES_ID}`],
     basisOfRecord: "PRESERVED_SPECIMEN",

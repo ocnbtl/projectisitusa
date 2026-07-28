@@ -29,6 +29,16 @@ function sourceRecordClaimKey(entry: RunEvidenceAssertionEvent) {
   ].join("|");
 }
 
+function canonicalGeographyMethod(method: string) {
+  if (
+    method === "Exact normalized Alabama county text matched to requested local county FIPS" ||
+    method === "Registered exact county-equivalent name matched to requested Census county FIPS"
+  ) {
+    return "provider-declared-exact-county-equivalent-name";
+  }
+  return method;
+}
+
 function semanticClaimFingerprint(entry: RunEvidenceAssertionEvent) {
   const {
     actor_id: _actorId,
@@ -39,7 +49,13 @@ function semanticClaimFingerprint(entry: RunEvidenceAssertionEvent) {
     run_id: _runId,
     ...semanticClaim
   } = entry;
-  return stableJson(semanticClaim);
+  return stableJson({
+    ...semanticClaim,
+    geography_match: {
+      ...entry.geography_match,
+      method: canonicalGeographyMethod(entry.geography_match.method),
+    },
+  });
 }
 
 function stableClaimKey(entry: RunEvidenceAssertionEvent) {
