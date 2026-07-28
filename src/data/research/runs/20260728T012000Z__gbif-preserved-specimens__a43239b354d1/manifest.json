@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-canary-ak-rorippa-02020-20260728-r1",
+  "leaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
+  "status": "complete",
+  "branch": "codex/gbif-canary-ak-rorippa-02020-20260728-r1",
+  "worktree": "/private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1",
+  "baseSha": "a278d64a57981fe974df9bf3130eb4636f56c629",
+  "commitSha": "f1c5ffd3c256c9529e8a03e3d7a8c5b89661fbb1",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-postfreeze-lineage-2026-07-26-r2",
+      "gitCommit": "52da0a7377e03ab7c0d9ff49e761a760d4bd73f1",
+      "contentHash": "1f63422c4d55e7f6c712ca08db60ab39d8824d600ff78ea160ac7283734d5151"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.1.0",
+    "stateCode": "AK",
+    "stateProvince": "Alaska",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "02020:rorippa-austriaca"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-occurrences-rorippa-austriaca-000000.json",
+      "sha256": "895e98c4fc942ab7d7a88a36b939ef457d89aa6b53c9aed51a7fd67ff354269a",
+      "bytes": 79
+    },
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/artifacts/gbif-species-match-rorippa-austriaca.json",
+      "sha256": "fe095b32d7648059a7ade35fad72e884dcd3774b4da3d869e4b7218207c17747",
+      "bytes": 470
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/assertions.ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/reviews.ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/rejections.ndjson",
+      "count": 0
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/outcomes.ndjson",
+      "count": 1
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/receipt.json",
+    "sha256": "0d15d0fe1f8a204d037df419b44f3fd36b3cbd2bb14d94c691494858bbcee263",
+    "bytes": 4523
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/source-verification.json",
+    "sha256": "f5dec8660697cac44a3adb6312c5f1b25f209d4933c03bff9e3ac95a6fdcb18f",
+    "bytes": 5225
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 549,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 1,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 549,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 1,
+      "completeOutcomePairs": 1,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 1,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs preflight --lease '/Users/ocean/Code/Project Isitusa/ops/national-research/leases.json' --lease-id lease-gbif-canary-ak-rorippa-02020-20260728-r1-2 --repo /private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1 --now 2026-07-28T01:32:02Z",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node --import '/Users/ocean/Code/Project Isitusa/node_modules/tsx/dist/loader.mjs' scripts/research/validate-immutable-run.ts --repository-root /private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1 --validation-root /private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1 --run-directory /private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1/src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1 --source-verification /private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1/src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/source-verification.json --run-id 20260728T012000Z__gbif-preserved-specimens__a43239b354d1 --source-id gbif-preserved-specimens --state-code AK --pair-keys 02020:rorippa-austriaca --code-commit a278d64a57981fe974df9bf3130eb4636f56c629 --worker-task-id /root/gbif_canary_ak",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check a278d64a57981fe974df9bf3130eb4636f56c629...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease '/Users/ocean/Code/Project Isitusa/ops/national-research/leases.json' --lease-id lease-gbif-canary-ak-rorippa-02020-20260728-r1-2 --manifest src/data/research/runs/20260728T012000Z__gbif-preserved-specimens__a43239b354d1/manifest.json --repo /private/tmp/isitusa-gbif-canary-ak-rorippa-02020-r1",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 2,
+    "acquisitionAttempts": 2,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-1",
+        "status": "failed",
+        "finishedAt": "2026-07-28T01:30:33.300Z",
+        "retryable": true,
+        "errorCodes": [
+          "receipt-finishes-before-starts"
+        ],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 0,
+        "retainedArtifacts": 0
+      },
+      {
+        "attempt": 2,
+        "leaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-2",
+        "status": "complete",
+        "finishedAt": "2026-07-28T01:32:38.226Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 0,
+        "retainedArtifacts": 2,
+        "receiptSha256": "0d15d0fe1f8a204d037df419b44f3fd36b3cbd2bb14d94c691494858bbcee263"
+      }
+    ],
+    "previousLeaseId": "lease-gbif-canary-ak-rorippa-02020-20260728-r1-1",
+    "recoveryReason": "Attempt 1 started_at was ahead of the host clock, so canonical receipt validation rejected finished_at before started_at without writing files.",
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 38.226,
+    "peakMemoryMb": 0,
+    "peakMemoryMeasured": false,
+    "validPairsScreened": 1,
+    "manualInterventions": 1
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
