@@ -1641,7 +1641,7 @@ export function ResearchControlCenter({
 
       try {
         const response = await fetch(`/generated/research/${encodeURIComponent(selectedStateCode)}/summary.json`, {
-          cache: "force-cache",
+          cache: "no-store",
           signal: controller.signal,
         });
         if (!response.ok) {
