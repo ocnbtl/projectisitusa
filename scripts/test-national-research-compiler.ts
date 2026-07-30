@@ -88,7 +88,7 @@ if (
 }
 const common = {
   catalogSpeciesIds,
-  asOf: "2026-07-26",
+  asOf: "2026-07-28",
 };
 const applicableStateSpeciesDecisions = configFile.states.reduce((sum, entry) => {
   const file = JSON.parse(
@@ -115,10 +115,14 @@ const alabama = resolveStateResearchScope({
   applicability: alabamaApplicabilityFile,
 });
 assert(alabama.speciesIds.length === catalogSpeciesIds.length, "Alabama catalog-all scope lost species.");
+const alabamaApplicableSpeciesCount = alabamaApplicabilityFile.species.filter(
+  (entry) => entry.applicability === "applicable",
+).length;
 assert(
-  alabama.applicabilityDecisionCounts.unknown === catalogSpeciesIds.length &&
-    alabama.applicabilityDecisionCounts.applicable === 0,
-  "Alabama source screening scope was incorrectly promoted to state applicability.",
+  alabama.applicabilityDecisionCounts.unknown ===
+      catalogSpeciesIds.length - alabamaApplicabilityFile.species.length &&
+    alabama.applicabilityDecisionCounts.applicable === alabamaApplicableSpeciesCount,
+  "Alabama applicability counts differ from its authoritative decision file.",
 );
 assert(alabama.config.compatibilityPublication, "Alabama must publish compatibility projections.");
 
