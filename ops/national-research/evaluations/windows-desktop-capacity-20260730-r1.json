@@ -78,6 +78,47 @@
         "mean": 0.01,
         "maximum": 0.04
       }
+    },
+    {
+      "observedAt": "2026-07-30T14:03:33.1630115Z",
+      "durationSeconds": 30,
+      "requiredRamHeadroomMib": 7975.23,
+      "availableMemoryMib": {
+        "minimum": 5362,
+        "mean": 5679.23,
+        "maximum": 6033
+      },
+      "availableMemoryPercent": {
+        "minimum": 16.81,
+        "mean": 17.8,
+        "maximum": 18.91
+      },
+      "processorUtilizationPercent": {
+        "minimum": 20.42,
+        "mean": 38.99,
+        "maximum": 58.14
+      },
+      "pageReadsPerSecond": {
+        "minimum": 2.97,
+        "mean": 35.79,
+        "maximum": 210.12
+      },
+      "pageWritesPerSecond": {
+        "minimum": 0,
+        "mean": 0,
+        "maximum": 0
+      },
+      "pageFileUsagePercent": 1.5,
+      "diskBytesPerSecond": {
+        "minimum": 1083434.39,
+        "mean": 4971361.33,
+        "maximum": 13326300.48
+      },
+      "diskQueueLength": {
+        "minimum": 0,
+        "mean": 0.03,
+        "maximum": 0.19
+      }
     }
   ],
   "pageFile": {
@@ -212,7 +253,7 @@
     ]
   },
   "schedulerDecision": {
-    "recordedAt": "2026-07-30T13:56:38.1464029Z",
+    "recordedAt": "2026-07-30T14:03:33.1630115Z",
     "hardwareTier": "32-gb-ram-and-more-than-100-gb-free-disk",
     "cleanHardwareEnvelope": {
       "heavyAcquisitionWorkers": 6,
@@ -225,7 +266,7 @@
       "artifactWorkers": 0
     },
     "decision": "dispatch-paused-by-ram-headroom",
-    "reason": "The 30-second sample stayed below the required 25 percent available-RAM floor. Disk, CPU, page-file writes, and network were healthy.",
-    "nextAction": "Apply and test the Windows scheduler, re-sample memory, and start the required four-worker calibration only when its declared reservations preserve the 25 percent floor."
+    "reason": "Two consecutive 30-second samples stayed below the required 25 percent available-RAM floor, and the latest window declined to 16.81 to 18.91 percent. Disk, page-file writes, and network remained healthy.",
+    "nextAction": "Release memory from user-owned background applications, re-sample memory, and start the required four-worker calibration only when its declared reservations preserve the 25 percent floor."
   }
 }
