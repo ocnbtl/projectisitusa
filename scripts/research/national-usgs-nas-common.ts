@@ -1,4 +1,4 @@
-import { execFileSync, spawn } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import { once } from "node:events";
 import {
   existsSync,
@@ -14,6 +14,11 @@ import { z } from "zod";
 
 import type { ResearchRunFileReference } from "@/lib/research/types";
 import { sha256, stableJson } from "@/lib/research/run-files";
+import {
+  listZipEntries,
+  readZipEntry,
+  spawnZipEntry,
+} from "./zip-tools";
 
 export const USGS_NAS_SOURCE_ID = "usgs-nas" as const;
 export const USGS_NAS_ACQUISITION_ACTOR = "usgs-nas-national-acquisition@1.0.0" as const;
@@ -494,12 +499,11 @@ export function assertCommitAncestor(root: string, ancestor: string, descendant:
 }
 
 function readArchiveEntry(archivePath: string, entry: string, maxBuffer: number) {
-  return execFileSync("unzip", ["-p", archivePath, entry], { maxBuffer });
+  return readZipEntry(archivePath, entry, maxBuffer);
 }
 
 function archiveEntries(archivePath: string) {
-  return execFileSync("unzip", ["-Z1", archivePath], { encoding: "utf8" })
-    .split("\n")
+  return listZipEntries(archivePath)
     .map((entry) => entry.trim())
     .filter(Boolean)
     .sort(compareText);
@@ -509,9 +513,7 @@ export async function streamNationalNasOccurrences(
   archivePath: string,
   onRecord?: (record: NasArchiveOccurrence, index: number) => void | Promise<void>,
 ) {
-  const unzip = spawn("unzip", ["-p", archivePath, "occurrence.txt"], {
-    stdio: ["ignore", "pipe", "pipe"],
-  });
+  const unzip = spawnZipEntry(archivePath, "occurrence.txt");
   const closePromise = once(unzip, "close") as Promise<[number | null, NodeJS.Signals | null]>;
   let stderr = "";
   unzip.stderr.on("data", (chunk: Buffer) => {

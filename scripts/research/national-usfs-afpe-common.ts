@@ -27,6 +27,10 @@ import {
   compareText,
   relativeGitPath,
 } from "./national-usgs-nas-common";
+import {
+  listZipEntries,
+  readZipEntry,
+} from "./zip-tools";
 
 import { sha256, stableJson } from "@/lib/research/run-files";
 
@@ -225,15 +229,14 @@ function isWithin(parent: string, candidate: string) {
 }
 
 function archiveEntries(archivePath: string) {
-  return execFileSync("unzip", ["-Z1", archivePath], { encoding: "utf8" })
-    .split("\n")
+  return listZipEntries(archivePath)
     .map((entry) => entry.trim())
     .filter(Boolean)
     .sort(compareText);
 }
 
 function readArchiveEntry(archivePath: string, entry: string, maxBuffer: number) {
-  return execFileSync("unzip", ["-p", archivePath, entry], { maxBuffer });
+  return readZipEntry(archivePath, entry, maxBuffer);
 }
 
 function listFilesRecursive(directory: string, prefix = ""): string[] {

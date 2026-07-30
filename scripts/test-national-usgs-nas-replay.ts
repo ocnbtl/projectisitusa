@@ -1,5 +1,6 @@
 import { execFileSync } from "node:child_process";
 import {
+  mkdirSync,
   mkdtempSync,
   readFileSync,
   rmSync,
@@ -33,6 +34,7 @@ import {
   type NasRequestedPair,
   replayNationalNasScreen,
 } from "./research/adapters/usgs-nas-archive";
+import { createZipArchive } from "./research/zip-tools";
 
 import { listCountyEquivalents } from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
@@ -160,7 +162,7 @@ function buildSyntheticArchive(
     entries.push("unexpected.txt");
   }
   const archivePath = path.join(directory, filename);
-  execFileSync("zip", ["-q", archivePath, ...entries], { cwd: directory });
+  createZipArchive(directory, archivePath, entries);
   return archivePath;
 }
 
@@ -529,7 +531,7 @@ async function main() {
   const temporary = mkdtempSync(path.join(os.tmpdir(), "isitusa-nas-test-"));
   try {
     const gitFixture = path.join(temporary, "git-fixture");
-    execFileSync("mkdir", ["-p", gitFixture]);
+    mkdirSync(gitFixture, { recursive: true });
     execFileSync("git", ["init", "-q"], { cwd: gitFixture });
     execFileSync("git", ["config", "user.name", "Project Isitusa test"], { cwd: gitFixture });
     execFileSync("git", ["config", "user.email", "test@isitusa.invalid"], { cwd: gitFixture });
@@ -548,14 +550,14 @@ async function main() {
     assert(inspected.recordCount === 2 && inspected.publicationDate === "2026-05-31", "Synthetic archive inspection changed.");
 
     const badHeaderDirectory = path.join(temporary, "bad-header");
-    execFileSync("mkdir", ["-p", badHeaderDirectory]);
+    mkdirSync(badHeaderDirectory, { recursive: true });
     const badHeader: string[] = [...USGS_NAS_OCCURRENCE_HEADER];
     badHeader[18] = "countyName";
     const badHeaderArchive = buildSyntheticArchive(badHeaderDirectory, "bad-header.zip", badHeader);
     await expectAsyncFailure(() => inspectNationalNasArchive(badHeaderArchive, true), /header changed/i);
 
     const extraDirectory = path.join(temporary, "extra");
-    execFileSync("mkdir", ["-p", extraDirectory]);
+    mkdirSync(extraDirectory, { recursive: true });
     const extraArchive = buildSyntheticArchive(extraDirectory, "extra.zip", [...USGS_NAS_OCCURRENCE_HEADER], true);
     await expectAsyncFailure(() => inspectNationalNasArchive(extraArchive, true), /entries changed/i);
   } finally {

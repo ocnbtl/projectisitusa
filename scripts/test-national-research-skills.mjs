@@ -12,7 +12,7 @@ const ORCHESTRATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orche
 const WORKER_VALIDATOR = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs");
 const ORCHESTRATOR_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-national-orchestrator");
 const WORKER_SKILL = path.join(REPO_ROOT, ".agents/skills/isitusa-evidence-worker");
-const RECOVERY_VERSION = "candidate-postfreeze-lineage-r2";
+const RECOVERY_VERSION = "candidate-windows-portability-2026-07-30-r1";
 const NOW = "2026-07-15T12:00:00Z";
 const EXPIRES = "2026-07-16T12:00:00Z";
 const SOURCE_ID = "gbif-preserved-specimens";
@@ -228,13 +228,19 @@ function setupGitFixture(root) {
   const worktree = path.join(root, "worktree");
   fs.mkdirSync(repo, { recursive: true });
   runGit(repo, ["init", "-b", "main"]);
+  runGit(repo, ["config", "core.autocrlf", "false"]);
   runGit(repo, ["config", "user.email", "fixture@example.com"]);
   runGit(repo, ["config", "user.name", "Fixture"]);
   fs.writeFileSync(path.join(repo, "seed.txt"), "seed\n");
   fs.writeFileSync(path.join(repo, ".gitattributes"), "worker-output/*.headers.txt binary\n");
   fs.writeFileSync(
     path.join(repo, ".gitignore"),
-    "worker-output/.ignored-secret\nops/national-research/.orchestration.lock\n",
+    [
+      "worker-output/.ignored-secret",
+      "ops/national-research/.orchestration.lock",
+      ...(process.platform === "win32" ? ["node_modules/"] : []),
+      "",
+    ].join("\n"),
   );
   const provenanceFiles = [
     "src/data/research/source-registry.json",
@@ -264,7 +270,11 @@ function setupGitFixture(root) {
   for (const directory of validationTrees) {
     fs.cpSync(path.join(REPO_ROOT, directory), path.join(repo, directory), { recursive: true });
   }
-  fs.symlinkSync(path.join(REPO_ROOT, "node_modules"), path.join(repo, "node_modules"), "dir");
+  fs.symlinkSync(
+    path.join(REPO_ROOT, "node_modules"),
+    path.join(repo, "node_modules"),
+    process.platform === "win32" ? "junction" : "dir",
+  );
   for (const skillName of ["isitusa-national-orchestrator", "isitusa-evidence-worker"]) {
     fs.cpSync(
       path.join(REPO_ROOT, ".agents", "skills", skillName),
@@ -272,7 +282,17 @@ function setupGitFixture(root) {
       { recursive: true },
     );
   }
-  runGit(repo, ["add", "seed.txt", ".gitattributes", ".gitignore", ".agents/skills", "node_modules", ...provenanceFiles, ...validationFiles, ...validationTrees]);
+  runGit(repo, [
+    "add",
+    "seed.txt",
+    ".gitattributes",
+    ".gitignore",
+    ".agents/skills",
+    ...(process.platform === "win32" ? [] : ["node_modules"]),
+    ...provenanceFiles,
+    ...validationFiles,
+    ...validationTrees,
+  ]);
   runGit(repo, ["commit", "-m", "seed"]);
   const acquisitionSha = runGit(repo, ["rev-parse", "HEAD"]);
   fs.writeFileSync(path.join(repo, "validator-seed.txt"), "validator\n");
@@ -280,6 +300,13 @@ function setupGitFixture(root) {
   runGit(repo, ["commit", "-m", "validator seed"]);
   const baseSha = runGit(repo, ["rev-parse", "HEAD"]);
   runGit(repo, ["worktree", "add", "-b", "codex/test-job", worktree, baseSha]);
+  if (process.platform === "win32") {
+    fs.symlinkSync(
+      path.join(REPO_ROOT, "node_modules"),
+      path.join(worktree, "node_modules"),
+      "junction",
+    );
+  }
   return { repo, worktree, baseSha, acquisitionSha };
 }
 

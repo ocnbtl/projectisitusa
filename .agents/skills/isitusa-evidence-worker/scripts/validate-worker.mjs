@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync, spawnSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const PROJECT_ROOT = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -271,7 +271,7 @@ function runCanonicalValidation({ repo, validationRoot, runRoot, sourceVerificat
     process.execPath,
     [
       "--import",
-      tsxImport,
+      pathToFileURL(tsxImport).href,
       path.join(validationRoot, "scripts/research/validate-immutable-run.ts"),
       "--repository-root",
       repo,
