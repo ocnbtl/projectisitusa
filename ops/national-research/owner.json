@@ -1,28 +1,31 @@
 {
   "schemaVersion": 1,
   "ownerType": "main-integration-task",
-  "taskId": "019f6562-b8c2-7281-a853-bcbb055ae9e4",
-  "taskTitle": "projectisitusa 14 , MAIN 1",
-  "canonicalCheckout": "/Users/ocean/Code/Project Isitusa",
+  "taskId": "019fb2a4-b0ed-71e1-b5e0-613bf28ec745",
+  "taskTitle": "Project Isitusa Windows MAIN",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
   "branch": "main",
-  "baseSha": "182299edfc53d49052cb3ba4cde1f45d4929f65f",
-  "acquiredAt": "2026-07-15T11:11:59Z",
-  "lastReverifiedAt": "2026-07-28T08:43:15Z",
-  "currentCheckpointSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
-  "localHeadAtLastReverification": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
+  "baseSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+  "acquiredAt": "2026-07-30T11:45:59Z",
+  "lastReverifiedAt": "2026-07-30T11:45:59Z",
+  "currentCheckpointSha": "17d92d27f79322f3be6048c2e157ae9540f196d6",
+  "localHeadAtLastReverification": "17d92d27f79322f3be6048c2e157ae9540f196d6",
   "state": "active",
   "ownershipEvidence": {
-    "activeProjectTasks": ["019f6562-b8c2-7281-a853-bcbb055ae9e4"],
-    "idleProjectTasks": ["019f12a5-8adc-7d63-9f03-1aa6df0143ff"],
-    "notLoadedProjectTasks": ["019f5f66-7ff1-76a1-8410-bfec16bc2ba5"],
-    "gitWorktreeCount": 1,
+    "activeProjectTasks": ["019fb2a4-b0ed-71e1-b5e0-613bf28ec745"],
+    "supersededOwnerTaskId": "019f6562-b8c2-7281-a853-bcbb055ae9e4",
+    "gitWorktreeCount": 2,
     "mainWriterProcesses": 0,
-    "originMainSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
-    "githubMainSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
-    "vercelProductionCommitSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
-    "vercelDeploymentId": "dpl_85F7uddAE19hAdQjzjdtCXbaVHBK",
-    "gitFetchTransport": "https-authenticated-api-verified",
-    "sshFetchStatus": "failed-publickey"
+    "originMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+    "githubMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+    "vercelProductionCommitSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+    "vercelDeploymentId": "dpl_HQzusu96St2uouxobxTUu5cw1veY",
+    "gitFetchTransport": "https-authenticated",
+    "githubCliAccount": "ocnbtl",
+    "vercelCliAccount": "ocn",
+    "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
+    "laptopRemoteRefCount": 48,
+    "browserQa": "desktop-and-mobile-pass"
   },
   "reverificationHistory": [
     {
@@ -66,6 +69,13 @@
       "supersededOriginMainSha": "462b281ccb3ed47c4a05447ae196b0fcb1e9fd18",
       "replacementCheckpointSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
       "reason": "Canonical main, GitHub main, GitHub deployment status, Vercel production metadata, live routes, selected live bytes, and desktop and mobile browser behavior were freshly reverified after the statewide GBIF bulk research release."
+    },
+    {
+      "recordedAt": "2026-07-30T11:45:59Z",
+      "supersededCheckpointSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
+      "supersededOriginMainSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
+      "replacementCheckpointSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+      "reason": "The receiving Windows MAIN task verified the recovery archive, canonical GitHub checkpoint, private laptop lineage, Vercel production metadata, live routes, selected live bytes, all-state byte stability, and desktop plus mobile browser behavior before resuming research."
     }
   ],
   "localCheckpointObservations": [
@@ -84,6 +94,14 @@
       "githubMainSha": "baa9435781facf5c3fc74399219ca11b3fe196e8",
       "vercelProductionCommitSha": "baa9435781facf5c3fc74399219ca11b3fe196e8",
       "reason": "MAIN reverified the latest clean immutable FIA integration parent before recording generated and operations changes. External release evidence remains pinned to the prior deployed baa9435 release."
+    },
+    {
+      "observedAt": "2026-07-30T11:45:59Z",
+      "localHeadSha": "17d92d27f79322f3be6048c2e157ae9540f196d6",
+      "originMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+      "githubMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+      "vercelProductionCommitSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+      "reason": "Windows MAIN is two local portability and freeze commits ahead of the independently verified external checkpoint. This records observed parent state and does not self-attest to a future deployment."
     }
   ],
   "exclusiveOperations": ["modify-main", "merge", "commit-main", "push-main", "shared-generation", "build", "deploy"]
