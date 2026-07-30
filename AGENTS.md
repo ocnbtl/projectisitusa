@@ -2,8 +2,8 @@
 
 ## Canonical Checkout
 
-- Work in `/Users/ocean/Code/Project Isitusa`.
-- Treat `/Users/ocean/Documents/Project Isitusa` as a legacy checkout.
+- Work in `C:\Code\project-isitusa` on the Windows desktop.
+- Treat `/Users/ocean/Code/Project Isitusa` as the retired Mac canonical path and `C:\Users\Ocean\Documents\Project Isitusa` as a legacy checkout. Do not overlay either path onto the Windows canonical repository.
 - The long-lived MAIN integration task is the only owner of `main`. MAIN alone may edit, merge, commit, push, regenerate shared public projections, or deploy from `main`.
 - Every bounded source, state, evidence-review, or infrastructure worker uses an isolated `codex/*` branch and worktree plus a machine-readable lease under `ops/national-research/`. Workers never merge, push `main`, deploy, edit shared schemas or skills, or generate shared projections.
 - Begin every task with `git status --short --branch` and `git log -1 --oneline`.
@@ -34,6 +34,12 @@ The current research foundation starts in `src/data/research/source-registry.jso
 - Every completion manifest reports source parameters, artifacts, assertions, reviews, rejections, outcomes, blocked items, exact baseline/final/net counts, verification commands, commit SHA, and remaining work.
 - A worker that discovers a shared-schema or shared-skill requirement records a blocker or proposal. It does not implement the shared change.
 - Durable job state belongs in repository artifacts, not chat history.
+- The Windows scheduler is resource-aware. Before dispatch and during every sustained wave, enforce `ops/national-research/resource-policy.json` against total and available RAM, total and free disk, page-file activity, provider throttling, and declared per-worker budgets.
+- Start a newly calibrated desktop acquisition wave with four non-overlapping heavy lanes only when the preflight preserves at least 25 percent RAM headroom and 15 percent disk headroom. Never cross the absolute 20 GB free-disk stop floor.
+- Scale network-bound acquisition from four toward six lanes on the measured 32 GB desktop only after a clean wave. A future host with at least 64 GB RAM and 200 GB free disk may test up to eight lanes. Provider throttling can impose a lower ceiling than the machine.
+- Lightweight review may scale from eight toward sixteen lanes, and artifact processing from two toward four lanes, only when the corresponding resource tier and per-worker reservation pass.
+- Shared compilers, projection generators, production builds, deployments, and MAIN integration remain exactly sequential.
+- Treat the GBIF search rate as dynamic. Reduce on HTTP 429, keep bounded complete pagination, and prefer the authenticated asynchronous download API for work expected to exceed 15 minutes rather than increasing search concurrency indefinitely.
 - The first three 2026-07-15 skill evaluation cycles remain failed historical evidence. The first post-freeze recovery also remains rejected because it rewrote acquisition code lineage. Prior freezes remain preserved under `ops/national-research/receipts/skill-freezes/`. The current native-Windows regression passed `97/97` cases with zero critical violations, and the preserved 3,149-pair run passed canonical validation without constructing an oversized Windows command line. The frozen version is `frozen-windows-bulk-validation-2026-07-30-r2` at commit `e3513cc6bde303432320d1d3904ea638eec6333c`. Every new worker lease must pin orchestrator hash `9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757` and worker hash `52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b` from `ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json`. Do not edit a frozen skill while a pinned worker is active.
 
 ## Nonnegotiable Data Rules
@@ -110,7 +116,7 @@ These are dated compiler checkpoints, not permanent constants. Reverify generate
 Use the narrowest relevant checks, then broaden when generated behavior or public routes are affected:
 
 ```bash
-cd "/Users/ocean/Code/Project Isitusa"
+Set-Location -LiteralPath "C:\Code\project-isitusa"
 git status --short --branch
 git log -1 --oneline
 npm run prepare:data -- --as-of <YYYY-MM-DD>
@@ -128,7 +134,7 @@ Do not run generation commands casually in a dirty worktree. They write tracked 
 
 The implemented compiler interface requires an explicit state and as-of date, for example `npm run research:compile -- --state AL --as-of 2026-07-15`. `research:verify` accepts the same scope and proves byte stability. `research:index` builds one ignored national index from all configured projections. Use `research:index:state -- --state <STATE>` only for a bounded diagnostic index. Read `package.json` and the scripts before use because compilation and refresh commands write tracked artifacts.
 
-Use `npm run research:verify:all -- --as-of <YYYY-MM-DD>` for sequential byte-stability verification of every configured public research projection. It deliberately avoids parallel compilers on the 16 GB development machine.
+Use `npm run research:verify:all -- --as-of <YYYY-MM-DD>` for sequential byte-stability verification of every configured public research projection. Shared projection compilation remains sequential even when acquisition and bounded review run concurrently.
 
 ## Writing Rules
 

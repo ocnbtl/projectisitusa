@@ -1,29 +1,92 @@
 {
-  "schemaVersion": 1,
-  "filesystemPath": "/Users/ocean/Code/Project Isitusa",
-  "minimumFreeBytesBeforeDispatch": 3221225472,
-  "minimumFreeBytesAfterWorker": 2684354560,
-  "minimumFreeBytesBeforeHeavyTask": 4294967296,
-  "reservedBytesPerWorker": 536870912,
+  "schemaVersion": 2,
+  "filesystemPath": "C:\\Code\\project-isitusa",
+  "minimumDiskHeadroomPercent": 15,
+  "absoluteMinimumFreeBytes": 21474836480,
+  "minimumRamHeadroomPercent": 25,
+  "reservedDiskBytesPerWorker": 1073741824,
   "maximumArtifactBytesPerWorker": 20971520,
   "maximumNationalAcquisitionArtifactBytes": 268435456,
-  "maximumWorkerMemoryMb": 768,
+  "workerMemoryReservationsMb": {
+    "acquisition": 1024,
+    "lightweight": 384,
+    "artifact": 2048
+  },
   "maximumWorkerWallMinutes": 45,
-  "heavyTaskConcurrency": 1,
+  "sharedHeavyTaskConcurrency": 1,
+  "mainIntegrationConcurrency": 1,
+  "heavyAcquisitionConcurrencyTiers": [
+    {
+      "minimumTotalMemoryBytes": 16000000000,
+      "minimumFreeDiskBytes": 50000000000,
+      "maximumWorkers": 4
+    },
+    {
+      "minimumTotalMemoryBytes": 32000000000,
+      "minimumFreeDiskBytes": 100000000000,
+      "maximumWorkers": 6
+    },
+    {
+      "minimumTotalMemoryBytes": 64000000000,
+      "minimumFreeDiskBytes": 200000000000,
+      "maximumWorkers": 8
+    }
+  ],
   "lightweightConcurrencyTiers": [
     {
-      "minimumFreeBytes": 3221225472,
+      "minimumTotalMemoryBytes": 16000000000,
+      "minimumFreeDiskBytes": 50000000000,
+      "maximumWorkers": 8
+    },
+    {
+      "minimumTotalMemoryBytes": 32000000000,
+      "minimumFreeDiskBytes": 100000000000,
+      "maximumWorkers": 12
+    },
+    {
+      "minimumTotalMemoryBytes": 64000000000,
+      "minimumFreeDiskBytes": 200000000000,
+      "maximumWorkers": 16
+    }
+  ],
+  "artifactProcessingConcurrencyTiers": [
+    {
+      "minimumTotalMemoryBytes": 16000000000,
+      "minimumFreeDiskBytes": 50000000000,
       "maximumWorkers": 2
     },
     {
-      "minimumFreeBytes": 8589934592,
-      "maximumWorkers": 5
+      "minimumTotalMemoryBytes": 32000000000,
+      "minimumFreeDiskBytes": 100000000000,
+      "maximumWorkers": 3
     },
     {
-      "minimumFreeBytes": 17179869184,
-      "maximumWorkers": 10
+      "minimumTotalMemoryBytes": 64000000000,
+      "minimumFreeDiskBytes": 200000000000,
+      "maximumWorkers": 4
     }
   ],
+  "providerPolicies": {
+    "gbif-preserved-specimens": {
+      "requestIntervalMsPerWorker": 334,
+      "initialConcurrentWorkers": 4,
+      "maximumConcurrentWorkersWithoutFreshCalibration": 4,
+      "reduceOnHttpStatuses": [429],
+      "downloadApiPreferredAfterMinutes": 15,
+      "maximumPageSize": 300,
+      "maximumSearchResultWindow": 100000,
+      "rateLimitModel": "dynamic-provider-load-no-guaranteed-request-rate"
+    }
+  },
+  "telemetryPolicy": {
+    "sampleIntervalSeconds": 5,
+    "sustainedWindowSeconds": 30,
+    "reduceConcurrencyWhenAvailableRamBelowPercent": 25,
+    "stopDispatchWhenFreeDiskBelowPercent": 15,
+    "absoluteFreeDiskStopBytes": 21474836480,
+    "reduceOnSustainedPageFileWrites": true,
+    "reduceOnProviderThrottle": true
+  },
   "disposablePaths": [
     ".next",
     ".cache/research/isitusa.sqlite",

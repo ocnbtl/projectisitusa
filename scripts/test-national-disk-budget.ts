@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import {
   evaluateDiskBudget,
-  maximumWorkersForBytes,
+  maximumWorkersForResources,
   type NationalResourcePolicy,
   validateNationalResourcePolicy,
 } from "./check-national-disk-budget";
@@ -12,35 +12,74 @@ const policy = JSON.parse(
 ) as NationalResourcePolicy;
 
 assert.deepEqual(validateNationalResourcePolicy(policy), []);
-assert.equal(maximumWorkersForBytes(policy, 3221225471), 0);
-assert.equal(maximumWorkersForBytes(policy, 3221225472), 2);
-assert.equal(maximumWorkersForBytes(policy, 8589934592), 5);
-assert.equal(maximumWorkersForBytes(policy, 17179869184), 10);
+const desktopDisk = {
+  availableBytes: 1179952852992,
+  totalBytes: 1999284203520,
+};
+assert.equal(
+  maximumWorkersForResources(policy, "acquisition", {
+    ...desktopDisk,
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 7340032000,
+  }),
+  0,
+);
+assert.equal(
+  maximumWorkersForResources(policy, "acquisition", {
+    ...desktopDisk,
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 16106127360,
+  }),
+  6,
+);
+assert.equal(
+  maximumWorkersForResources(policy, "lightweight", {
+    ...desktopDisk,
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 16106127360,
+  }),
+  12,
+);
+assert.equal(
+  maximumWorkersForResources(policy, "artifact", {
+    ...desktopDisk,
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 16106127360,
+  }),
+  3,
+);
 
-const twoWorkerCanary = evaluateDiskBudget(policy, {
+const fourWorkerCalibration = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "dispatch",
-  availableBytes: 4563402752,
-  workers: 2,
-  artifactBudgetBytes: 31457280,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
+  workers: 4,
+  artifactBudgetBytes: 83886080,
 });
-assert.equal(twoWorkerCanary.ok, true);
-assert.equal(twoWorkerCanary.maximumWorkersAtCurrentCapacity, 2);
+assert.equal(fourWorkerCalibration.ok, true);
+assert.equal(fourWorkerCalibration.maximumWorkersAtCurrentCapacity, 6);
 
-const unsafeFiveWorkerWave = evaluateDiskBudget(policy, {
+const blockedCurrentMemoryWave = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "dispatch",
-  availableBytes: 4563402752,
-  workers: 5,
-  artifactBudgetBytes: 52428800,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 7340032000,
+  workers: 4,
+  artifactBudgetBytes: 83886080,
 });
-assert.equal(unsafeFiveWorkerWave.ok, false);
-assert.match(unsafeFiveWorkerWave.errors.join(" "), /at most 2/);
+assert.equal(blockedCurrentMemoryWave.ok, false);
+assert.match(blockedCurrentMemoryWave.errors.join(" "), /at most 0/);
+assert.match(blockedCurrentMemoryWave.errors.join(" "), /RAM headroom failed/);
 
 const oversizedArtifacts = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "dispatch",
-  availableBytes: 17179869184,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
   workers: 2,
   artifactBudgetBytes: 52428800,
 });
@@ -50,16 +89,32 @@ assert.match(oversizedArtifacts.errors.join(" "), /per-worker policy/);
 const sequentialHeavy = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "heavy",
-  availableBytes: 5368709120,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
   workers: 1,
   artifactBudgetBytes: 0,
 });
 assert.equal(sequentialHeavy.ok, true);
 
+const memoryBlockedSharedHeavy = evaluateDiskBudget(policy, {
+  phase: "preflight",
+  operation: "heavy",
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 7340032000,
+  workers: 1,
+  artifactBudgetBytes: 0,
+});
+assert.equal(memoryBlockedSharedHeavy.ok, false);
+assert.match(memoryBlockedSharedHeavy.errors.join(" "), /RAM headroom failed/);
+
 const parallelHeavy = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "heavy",
-  availableBytes: 5368709120,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
   workers: 2,
   artifactBudgetBytes: 0,
 });
@@ -69,7 +124,9 @@ assert.match(parallelHeavy.errors.join(" "), /sequentially/);
 const boundedWorkerNetwork = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "network",
-  availableBytes: 8589934592,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
   workers: 1,
   artifactBudgetBytes: policy.maximumArtifactBytesPerWorker,
 });
@@ -78,7 +135,9 @@ assert.equal(boundedWorkerNetwork.ok, true);
 const boundedNationalNetwork = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "national-network",
-  availableBytes: 8589934592,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
   workers: 0,
   artifactBudgetBytes: 134217728,
 });
@@ -87,7 +146,9 @@ assert.equal(boundedNationalNetwork.ok, true);
 const oversizedNationalNetwork = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "national-network",
-  availableBytes: 8589934592,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
   workers: 0,
   artifactBudgetBytes: policy.maximumNationalAcquisitionArtifactBytes + 1,
 });
@@ -97,7 +158,9 @@ assert.match(oversizedNationalNetwork.errors.join(" "), /National acquisition ar
 const nationalNetworkWithWorkerReservation = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "national-network",
-  availableBytes: 8589934592,
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 15032385536,
   workers: 1,
   artifactBudgetBytes: 134217728,
 });
@@ -108,10 +171,14 @@ const failedPostflight = evaluateDiskBudget(policy, {
   phase: "postflight",
   operation: "dispatch",
   availableBytes: 2147483648,
+  totalBytes: 1999284203520,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 7340032000,
   workers: 0,
   artifactBudgetBytes: 0,
 });
 assert.equal(failedPostflight.ok, false);
 assert.match(failedPostflight.errors.join(" "), /Free-space floor failed/);
+assert.match(failedPostflight.errors.join(" "), /RAM headroom floor failed/);
 
 console.log("National disk budget tests passed.");

@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r1",
+  "machine": {
+    "hostname": "SAKURA",
+    "manufacturer": "ASUS",
+    "model": "System Product Name",
+    "operatingSystem": "Microsoft Windows 11 Home 10.0.26200",
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalProcessors": 16,
+    "maximumClockMhz": 4700,
+    "totalPhysicalMemoryBytes": 33450536960
+  },
+  "observationWindows": [
+    {
+      "observedAt": "2026-07-30T13:53:28.1055837Z",
+      "durationSeconds": 10,
+      "availableMemoryMib": {
+        "minimum": 7797,
+        "mean": 7935.5,
+        "maximum": 8355
+      },
+      "processorUtilizationPercent": {
+        "minimum": 19.76,
+        "mean": 30.72,
+        "maximum": 49.92
+      },
+      "pageReadsPerSecond": {
+        "minimum": 3,
+        "mean": 21.03,
+        "maximum": 70.97
+      },
+      "pageWritesPerSecond": {
+        "minimum": 0,
+        "mean": 0,
+        "maximum": 0
+      },
+      "pageFileUsagePercent": 1.5,
+      "diskQueueLength": {
+        "minimum": 0.01,
+        "mean": 0.02,
+        "maximum": 0.05
+      }
+    },
+    {
+      "observedAt": "2026-07-30T13:56:38.1464029Z",
+      "durationSeconds": 30,
+      "requiredRamHeadroomMib": 7975.23,
+      "availableMemoryMib": {
+        "minimum": 6944,
+        "mean": 7120.63,
+        "maximum": 7320
+      },
+      "availableMemoryPercent": {
+        "minimum": 21.77,
+        "mean": 22.32,
+        "maximum": 22.95
+      },
+      "processorUtilizationPercent": {
+        "minimum": 17.05,
+        "mean": 26.11,
+        "maximum": 43.03
+      },
+      "pageReadsPerSecond": {
+        "minimum": 2.96,
+        "mean": 8.13,
+        "maximum": 26.83
+      },
+      "pageWritesPerSecond": {
+        "minimum": 0,
+        "mean": 0,
+        "maximum": 0
+      },
+      "pageFileUsagePercent": 1.5,
+      "diskQueueLength": {
+        "minimum": 0,
+        "mean": 0.01,
+        "maximum": 0.04
+      }
+    }
+  ],
+  "pageFile": {
+    "path": "C:\\pagefile.sys",
+    "allocatedMib": 19456,
+    "currentUsageMib": 292,
+    "peakUsageMib": 3676,
+    "temporary": false,
+    "sustainedWritesObserved": false
+  },
+  "storage": {
+    "device": "Samsung SSD 990 PRO 2TB",
+    "mediaType": "SSD",
+    "busType": "NVMe",
+    "healthStatus": "Healthy",
+    "operationalStatus": "OK",
+    "volume": "C:\\",
+    "driveFormat": "NTFS",
+    "totalBytes": 1999284203520,
+    "freeBytes": 1179952852992,
+    "freePercent": 59.02,
+    "pathsOnVolume": {
+      "repository": "C:\\Code\\project-isitusa",
+      "worktrees": "C:\\Code\\project-isitusa-worktrees",
+      "temporary": "C:\\Users\\Ocean\\AppData\\Local\\Temp",
+      "packageCache": "C:\\Users\\Ocean\\AppData\\Local\\npm-cache"
+    },
+    "readOnlySequentialProbe": {
+      "path": "C:\\Code\\project-isitusa\\src\\data\\source\\inaturalist-alabama-research-grade-snapshot.json",
+      "bytes": 46382372,
+      "seconds": 0.018,
+      "mebibytesPerSecond": 2455.95,
+      "limitation": "Single read of an existing file may include operating-system cache and is not a sustained write benchmark."
+    }
+  },
+  "runtime": {
+    "nodeVersion": "v22.23.2",
+    "npmVersion": "10.9.8",
+    "nodeHeapLimitBytes": 4345298944,
+    "nodeUvThreadpoolSize": 4,
+    "gitVersion": "2.53.0.windows.3",
+    "gitPackThreads": "default",
+    "gitHttpMaxRequests": "default",
+    "gitIndexThreads": "default",
+    "operatingSystemProcessLimit": 4294967295,
+    "observedProcessCount": 424
+  },
+  "backgroundProcesses": {
+    "projectMainWriters": 0,
+    "projectAcquisitionWorkers": 0,
+    "notableCounts": {
+      "brave": 76,
+      "node": 16,
+      "node_repl": 7,
+      "ChatGPT": 11,
+      "codex": 3
+    },
+    "largestWorkingSets": [
+      {
+        "process": "Memory Compression",
+        "workingSetBytes": 3653431296
+      },
+      {
+        "process": "codex",
+        "workingSetBytes": 1250709504
+      },
+      {
+        "process": "ChatGPT",
+        "workingSetBytes": 787750912
+      },
+      {
+        "process": "brave",
+        "workingSetBytes": 685006848
+      },
+      {
+        "process": "MsMpEng",
+        "workingSetBytes": 504975360
+      }
+    ],
+    "limitation": "Counts are volatile and include user-owned desktop applications that MAIN did not stop."
+  },
+  "network": [
+    {
+      "target": "GBIF occurrence search",
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&limit=0",
+      "requests": 20,
+      "successes": 20,
+      "httpStatus": 200,
+      "latencyMilliseconds": {
+        "minimum": 110.34,
+        "mean": 136.02,
+        "maximum": 510.73
+      },
+      "throttledRequests": 0,
+      "rateLimitHeadersObserved": false
+    },
+    {
+      "target": "GitHub repository",
+      "url": "https://github.com/ocnbtl/projectisitusa",
+      "requests": 5,
+      "successes": 5,
+      "httpStatus": 200,
+      "latencyMilliseconds": {
+        "minimum": 996.66,
+        "mean": 1215.26,
+        "maximum": 1759.71
+      }
+    },
+    {
+      "target": "Project Isitusa production summary",
+      "url": "https://isitusa.com/generated/research/AL/summary.json",
+      "requests": 5,
+      "successes": 5,
+      "httpStatus": 200,
+      "latencyMilliseconds": {
+        "minimum": 1008.37,
+        "mean": 1258.91,
+        "maximum": 1995.76
+      }
+    }
+  ],
+  "providerPolicy": {
+    "sourceId": "gbif-preserved-specimens",
+    "officialRateLimitModel": "Dynamic server-load throttling with HTTP 429 and no guaranteed request rate.",
+    "searchGuidance": "Prefer the asynchronous download API for search work expected to exceed 15 minutes.",
+    "maximumPageSize": 300,
+    "maximumSearchResultWindow": 100000,
+    "adapterRequestIntervalMillisecondsPerWorker": 334,
+    "documentation": [
+      "https://techdocs.gbif.org/en/openapi/",
+      "https://techdocs.gbif.org/en/openapi/v1/occurrence"
+    ]
+  },
+  "schedulerDecision": {
+    "recordedAt": "2026-07-30T13:56:38.1464029Z",
+    "hardwareTier": "32-gb-ram-and-more-than-100-gb-free-disk",
+    "cleanHardwareEnvelope": {
+      "heavyAcquisitionWorkers": 6,
+      "lightweightWorkers": 12,
+      "artifactWorkers": 3
+    },
+    "currentPermittedWorkers": {
+      "heavyAcquisitionWorkers": 0,
+      "lightweightWorkers": 0,
+      "artifactWorkers": 0
+    },
+    "decision": "dispatch-paused-by-ram-headroom",
+    "reason": "The 30-second sample stayed below the required 25 percent available-RAM floor. Disk, CPU, page-file writes, and network were healthy.",
+    "nextAction": "Apply and test the Windows scheduler, re-sample memory, and start the required four-worker calibration only when its declared reservations preserve the 25 percent floor."
+  }
+}
