@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "isitusa-national-skills-windows-portability-2026-07-30-r1",
+  "roundType": "bounded-native-windows-portability",
+  "openedAt": "2026-07-30T11:03:00Z",
+  "closedAt": "2026-07-30T11:34:13Z",
+  "status": "complete",
+  "result": "pass",
+  "baseCommit": "669cd2ac4d8323453db2e513d204208113711ed2",
+  "candidateVersion": "candidate-windows-portability-2026-07-30-r1",
+  "candidateGitCommit": "9b9f5f948f589cfc6d4686974265b5fe2459a413",
+  "iteration": 1,
+  "maximumIterations": 1,
+  "broadDispatchAllowed": true,
+  "historicalEvaluationsPreserved": [
+    "ops/national-research/evaluations/skill-evaluation-2026-07-15.json",
+    "ops/national-research/evaluations/skill-evaluation-recovery-2026-07-15-r1.json",
+    "ops/national-research/evaluations/skill-evaluation-postfreeze-recovery-2026-07-26-r2.json",
+    "ops/national-research/fixtures/rejected-cycle3-receipt-fixture.json"
+  ],
+  "isolatedDefect": {
+    "platform": "win32",
+    "summary": "Native Windows could not run the frozen validator because Node rejected an absolute drive-letter path passed directly to --import. Regression fixtures also inherited system CRLF conversion and required Windows junction handling.",
+    "repair": "Convert the tsx loader path to a file URL, force LF in fixture repositories, use directory junctions for fixture dependencies, and use platform-native ZIP tooling for national archive replay.",
+    "evidenceSemanticsChanged": false,
+    "historicalReceiptsChanged": false
+  },
+  "staticValidation": {
+    "regression": {
+      "total": 97,
+      "passed": 97,
+      "failed": 0,
+      "criticalSafetyViolations": 0,
+      "wallSeconds": 81.246,
+      "peakMemoryMb": 44.867,
+      "manualInterventions": 0
+    },
+    "nativeWindows": {
+      "node": "v22.23.2",
+      "dataIntegrity": "pass",
+      "researchIntegrity": "pass",
+      "nasReplay": "pass",
+      "afpeReplay": "pass",
+      "typecheck": "pass",
+      "lint": "pass",
+      "diffCheck": "pass"
+    },
+    "requiredCases": {
+      "pinnedCommitHashMatchesSparseCheckout": true,
+      "canonicalWorkerValidationRunsOnWindows": true,
+      "deterministicRepeatedValidation": true,
+      "transactionalReviewAndIntegration": true,
+      "sourceSilenceCreatesNoNegativeEvidence": true,
+      "unsupportedNegativeEvidenceRejected": true,
+      "historicalMalformedReceiptRejected": true
+    }
+  },
+  "comparisonWithPriorWorkflow": {
+    "priorFrozenVersion": "frozen-postfreeze-lineage-2026-07-26-r2",
+    "priorResultOnNativeWindows": "blocked-by-drive-letter-esm-loader-path",
+    "passingRequirementMet": true,
+    "improvement": "Native Windows now executes the same pinned canonical validator and national archive replay gates without changing evidence semantics or historical lineage.",
+    "evidenceQualityRegressed": false
+  },
+  "freeze": {
+    "status": "frozen",
+    "version": "frozen-windows-portability-2026-07-30-r1",
+    "frozenAt": "2026-07-30T11:34:13Z",
+    "candidateGitCommit": "9b9f5f948f589cfc6d4686974265b5fe2459a413",
+    "receiptPath": "receipts/skill-freezes/isitusa-national-skills-windows-portability-2026-07-30-r1.json",
+    "candidateSkillHashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "f44812ba1f03c2ef663be080b604165c3474726464c253d4e9bcc6df96eaf432"
+    }
+  }
+}

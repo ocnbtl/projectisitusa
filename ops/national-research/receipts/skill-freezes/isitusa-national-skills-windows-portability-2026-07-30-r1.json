@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "freezeId": "isitusa-national-skills-freeze-windows-portability-2026-07-30-r1",
+  "evaluationId": "isitusa-national-skills-windows-portability-2026-07-30-r1",
+  "version": "frozen-windows-portability-2026-07-30-r1",
+  "status": "frozen",
+  "frozenAt": "2026-07-30T11:34:13Z",
+  "gitCommit": "9b9f5f948f589cfc6d4686974265b5fe2459a413",
+  "skills": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "path": ".agents/skills/isitusa-national-orchestrator",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "fileCount": 4,
+      "quickValidate": "pass"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "path": ".agents/skills/isitusa-evidence-worker",
+      "contentHash": "f44812ba1f03c2ef663be080b604165c3474726464c253d4e9bcc6df96eaf432",
+      "fileCount": 5,
+      "quickValidate": "pass"
+    }
+  ],
+  "evaluation": {
+    "platform": "win32",
+    "node": "v22.23.2",
+    "regressionCases": 97,
+    "regressionPassed": 97,
+    "regressionFailed": 0,
+    "criticalSafetyViolations": 0,
+    "evidenceSemanticViolations": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "mergeConflicts": 0,
+    "deterministicRepeatedValidation": true,
+    "nativeArchiveReplay": true,
+    "canonicalWorkerValidation": true
+  },
+  "demonstratedImprovements": {
+    "windowsEsmLoaderPortability": true,
+    "windowsFixtureLineageStability": true,
+    "windowsArchiveReplayPortability": true,
+    "historicalLineagePreserved": true,
+    "evidenceQualityRegressed": false
+  },
+  "pinContract": {
+    "requiredVersion": "frozen-windows-portability-2026-07-30-r1",
+    "requiredGitCommit": "9b9f5f948f589cfc6d4686974265b5fe2459a413",
+    "editsWhilePinnedWorkersAreActive": "forbidden",
+    "laterChangesRequireNewVersionAndRegression": true
+  }
+}
