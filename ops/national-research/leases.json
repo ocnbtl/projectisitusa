@@ -112811,7 +112811,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/windows_gbif_20260730_r1_al_001_recovery1",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-30T12:24:00Z",
       "expiresAt": "2026-07-31T13:00:00Z",
       "recoveryAt": null,
@@ -116150,7 +116150,16 @@
         "emit a new complete worker manifest bound to this lease and branch",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check fa1beb644100386297f3f1428971db8b12af9647...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-30T12:27:00Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260730-r1-al-001-recovery2__lease-gbif-bulk-20260730-r1-al-001-recovery2-1.json",
+        "sha256": "3c16c9d4f7235d9c4c89966a8dc81d0544f8b0c7a52348bde777d93680e0a76d",
+        "bytes": 144412,
+        "status": "complete",
+        "workerCommit": "e40ae82976074ee475bb22fa921d0f8495c72f03",
+        "workerBranchHead": "8e881514a1085caffb9048a7f5d54654c9911508"
+      }
     }
   ]
 }
