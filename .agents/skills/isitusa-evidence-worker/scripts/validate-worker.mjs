@@ -287,8 +287,8 @@ function runCanonicalValidation({ repo, validationRoot, runRoot, sourceVerificat
       sourceIds[0],
       "--state-code",
       stateCodes[0],
-      "--pair-keys",
-      pairKeys.join(","),
+      "--pair-keys-stdin",
+      "true",
       "--code-commit",
       lease.expectedReceiptCodeCommit ?? lease.baseSha,
       "--worker-task-id",
@@ -297,12 +297,18 @@ function runCanonicalValidation({ repo, validationRoot, runRoot, sourceVerificat
     {
       cwd: validationRoot,
       encoding: "utf8",
+      input: `${JSON.stringify(pairKeys)}\n`,
       env: {
         ...process.env,
         NODE_PATH: [nodeModulesRoot, process.env.NODE_PATH].filter(Boolean).join(path.delimiter),
       },
     },
   );
+  if (result.error) {
+    return {
+      error: `Canonical validator process failed: ${result.error.code ?? result.error.name}: ${result.error.message}`,
+    };
+  }
   let payload = null;
   try {
     payload = JSON.parse(result.stdout || "null");

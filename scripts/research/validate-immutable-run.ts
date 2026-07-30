@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import { validateImmutableResearchRunDirectory } from "@/lib/research/validate-run";
@@ -25,6 +26,25 @@ function required(args: Map<string, string>, key: string) {
   return value;
 }
 
+function pairKeysFromArgs(args: Map<string, string>) {
+  const readFromStdin = args.get("pair-keys-stdin");
+  if (readFromStdin !== undefined) {
+    if (readFromStdin !== "true") {
+      throw new Error("--pair-keys-stdin must be true when supplied.");
+    }
+    const value: unknown = JSON.parse(readFileSync(0, "utf8"));
+    if (
+      !Array.isArray(value)
+      || value.length === 0
+      || value.some((entry) => typeof entry !== "string" || entry.length === 0)
+    ) {
+      throw new Error("Standard-input pair keys must be a nonempty JSON string array.");
+    }
+    return value as string[];
+  }
+  return required(args, "pair-keys").split(",").filter(Boolean);
+}
+
 try {
   const args = parseArgs(process.argv.slice(2));
   const repositoryRoot = path.resolve(required(args, "repository-root"));
@@ -33,7 +53,7 @@ try {
   const sourceVerificationPath = path.resolve(
     required(args, "source-verification"),
   );
-  const pairKeys = required(args, "pair-keys").split(",").filter(Boolean);
+  const pairKeys = pairKeysFromArgs(args);
   const bundle = validateImmutableResearchRunDirectory({
     repositoryRoot,
     validationRoot,
