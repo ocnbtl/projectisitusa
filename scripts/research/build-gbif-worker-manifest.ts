@@ -57,6 +57,10 @@ function sha256(bytes: Buffer) {
   return crypto.createHash("sha256").update(bytes).digest("hex");
 }
 
+function repositoryRelative(repo: string, filePath: string) {
+  return path.relative(repo, filePath).split(path.sep).join("/");
+}
+
 function fileDescriptor(repo: string, relativePath: string, mediaType: string) {
   const bytes = fs.readFileSync(path.join(repo, relativePath));
   return {
@@ -171,7 +175,7 @@ try {
   const zeroCounts = Object.fromEntries(COUNT_KEYS.map((key) => [key, 0]));
   const receiptDescriptor = fileDescriptor(
     repo,
-    path.relative(repo, receiptPath),
+    repositoryRelative(repo, receiptPath),
     "application/json",
   );
   const sourceParameters = {
@@ -229,7 +233,7 @@ try {
         result: "pass",
       },
       {
-        command: `node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease '${leaseRegistry}' --lease-id ${leaseId} --manifest ${path.relative(repo, outputPath)} --repo ${repo}`,
+        command: `node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease '${leaseRegistry}' --lease-id ${leaseId} --manifest ${repositoryRelative(repo, outputPath)} --repo ${repo}`,
         exitCode: 0,
         result: "pass",
       },
