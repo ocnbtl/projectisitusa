@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "freezeId": "isitusa-national-skills-freeze-windows-bulk-validation-2026-07-30-r2",
+  "evaluationId": "isitusa-national-skills-windows-bulk-validation-2026-07-30-r2",
+  "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+  "status": "frozen",
+  "frozenAt": "2026-07-30T12:21:16Z",
+  "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+  "skills": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "path": ".agents/skills/isitusa-national-orchestrator",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "fileCount": 4,
+      "quickValidate": "pass"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "path": ".agents/skills/isitusa-evidence-worker",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+      "fileCount": 5,
+      "quickValidate": "pass"
+    }
+  ],
+  "evaluation": {
+    "platform": "win32",
+    "node": "v22.23.2",
+    "regressionCases": 97,
+    "regressionPassed": 97,
+    "regressionFailed": 0,
+    "criticalSafetyViolations": 0,
+    "evidenceSemanticViolations": 0,
+    "leaseCollisions": 0,
+    "forbiddenWrites": 0,
+    "mergeConflicts": 0,
+    "bulkPairCount": 3149,
+    "avoidedCommandLineCharacters": 79863,
+    "deterministicRepeatedValidation": true,
+    "canonicalWorkerValidation": true,
+    "canonicalBulkRunValidation": true
+  },
+  "demonstratedImprovements": {
+    "windowsBulkScopeStandardInput": true,
+    "windowsLaunchErrorReporting": true,
+    "exactLeaseScopePreserved": true,
+    "providerReacquisitionAvoided": true,
+    "historicalLineagePreserved": true,
+    "evidenceQualityRegressed": false
+  },
+  "pinContract": {
+    "requiredVersion": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "requiredGitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "editsWhilePinnedWorkersAreActive": "forbidden",
+    "laterChangesRequireNewVersionAndRegression": true
+  }
+}
