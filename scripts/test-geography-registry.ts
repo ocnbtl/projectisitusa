@@ -6,6 +6,7 @@ import stateRegistry from "@/data/research/state-registry.json";
 import { z } from "zod";
 import {
   assertCoordinateDerivationDisabled,
+  countyEquivalentNameMatchesFips,
   getNationalV1Registry,
   getStateDefinition,
   listCountyEquivalents,
@@ -75,6 +76,39 @@ const ambiguous = resolveCountyEquivalent({ stateCode: "VA", countyName: "Fairfa
 assert(
   ambiguous.status === "rejected" && ambiguous.reasonCode === "ambiguous-county-name",
   "Ambiguous county versus independent-city aliases must be rejected.",
+);
+const ambiguousMissouri = resolveCountyEquivalent({
+  stateCode: "MO",
+  countyName: "St. Louis",
+});
+assert(
+  ambiguousMissouri.status === "rejected" &&
+    ambiguousMissouri.reasonCode === "ambiguous-county-name",
+  "Ambiguous Missouri county versus independent-city aliases must be rejected without FIPS.",
+);
+assert(
+  countyEquivalentNameMatchesFips({
+    stateCode: "MO",
+    countyFips: "29189",
+    countyName: "St. Louis",
+    sourceId: "gbif-preserved-specimens",
+  }) &&
+    countyEquivalentNameMatchesFips({
+      stateCode: "MO",
+      countyFips: "29510",
+      countyName: "St. Louis",
+      sourceId: "gbif-preserved-specimens",
+    }),
+  "An exact FIPS must disambiguate a registered shared Missouri short name.",
+);
+assert(
+  !countyEquivalentNameMatchesFips({
+    stateCode: "MO",
+    countyFips: "29189",
+    countyName: "Jackson",
+    sourceId: "gbif-preserved-specimens",
+  }),
+  "A mismatched county name must still be rejected when FIPS is present.",
 );
 const stateMismatch = resolveCountyEquivalent({ stateCode: "AK", countyFips: "01001" });
 assert(

@@ -152,6 +152,31 @@ export function listCountyEquivalents(stateCode: string) {
   return [...(countiesByState.get(stateCode.toUpperCase()) ?? [])];
 }
 
+export function countyEquivalentNameMatchesFips(input: {
+  stateCode: string;
+  countyFips: string;
+  countyName: string;
+  sourceId?: string | null;
+}) {
+  const stateCode = input.stateCode.toUpperCase();
+  const county = countiesByFips.get(input.countyFips);
+  if (
+    !county ||
+    county.stateCode !== stateCode ||
+    !input.countyName.trim()
+  ) {
+    return false;
+  }
+  const normalized = normalizeAlias(input.countyName);
+  const aliases = [
+    county.shortName,
+    county.legalName,
+    ...county.aliases,
+    ...(input.sourceId ? county.sourceAliases[input.sourceId] ?? [] : []),
+  ];
+  return aliases.some((alias) => normalizeAlias(alias) === normalized);
+}
+
 export type CountyResolution =
   | { status: "resolved"; county: CountyEquivalentRegistryEntry; method: "fips" | "alias" }
   | {

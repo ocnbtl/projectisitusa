@@ -14,6 +14,7 @@ import type {
   SourceAdapterResult,
 } from "@/lib/research/source-adapter";
 import {
+  countyEquivalentNameMatchesFips,
   getStateDefinition,
   resolveCountyEquivalent,
 } from "@/lib/research/geography-registry";
@@ -21,7 +22,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 const ADAPTER_ID = "gbif-preserved-specimens";
-const ADAPTER_VERSION = "1.3.0";
+const ADAPTER_VERSION = "1.3.1";
 const GBIF_API_BASE_URL = "https://api.gbif.org/v1";
 const GBIF_OCCURRENCE_BASE_URL = "https://www.gbif.org/occurrence";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
@@ -267,15 +268,13 @@ function selectRequestedPairs(
     if (countyResolution.status !== "resolved") {
       throw new Error(`Requested pair ${key} has invalid geography: ${countyResolution.detail}`);
     }
-    const nameResolution = resolveCountyEquivalent({
+    const nameMatchesFips = countyEquivalentNameMatchesFips({
       stateCode: parameters.stateCode,
+      countyFips: pair.countyFips,
       countyName: pair.countyName,
       sourceId: SOURCE_ID,
     });
-    if (
-      nameResolution.status !== "resolved" ||
-      nameResolution.county.countyFips !== countyResolution.county.countyFips
-    ) {
+    if (!nameMatchesFips) {
       throw new Error(`Requested pair ${key} has a county name that does not match its FIPS.`);
     }
     if (canonicalBinomial(pair.scientificName).split(" ").length !== 2) {
