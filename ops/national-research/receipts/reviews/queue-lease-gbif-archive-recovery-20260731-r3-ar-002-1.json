@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-archive-recovery-20260731-r3-ar-002-1",
+  "jobId": "gbif-archive-recovery-20260731-r3-ar-002",
+  "leaseId": "lease-gbif-archive-recovery-20260731-r3-ar-002-1",
+  "workerCommit": "c821ee63c2e1e221021c9c32f871b12d5103ef2a",
+  "workerBranchHead": "e1ca7bbde32ac9f9f8ff074c3de207e84363a0ec",
+  "manifestHash": "8cf263027e4801c9cf6dc9be81b552f3e21cbd007c424f203a24c9670acf2325",
+  "changedPaths": [
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/artifacts/gbif-occurrences-aspidiotus-duplex-000000.json.gz",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/artifacts/gbif-species-match-aspidiotus-duplex.json.gz",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/assertions.ndjson",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/manifest.json",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/outcomes.ndjson",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/receipt.json",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/rejections.ndjson",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/reviews.ndjson",
+    "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run and pinned worker manifest validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact base-to-head path, whitespace, hash, receipt, taxonomy, geography, pagination, and unsupported-negative audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "clean isolated worker worktree and deterministic two-commit inventory",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Accepted after exact base-to-HEAD validation, complete selected pagination, verified two-artifact replay, zero live provider requests, and zero semantic or safety violations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-31T12:55:53.1861624Z"
+}
