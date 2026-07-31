@@ -228708,7 +228708,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r4_ga_001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T12:55:30.404Z",
       "expiresAt": "2026-07-31T16:55:09.823Z",
       "recoveryAt": null,
@@ -231866,7 +231866,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check db07ba8efcf295081b77ad33e3f217f81cd1815c...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T13:06:28.0092323Z",
+      "resultManifest": {
+        "path": "manifests/gbif-archive-recovery-20260731-r7-ga-001__lease-gbif-archive-recovery-20260731-r7-ga-001-1.json",
+        "sha256": "2298ab7ef8cdc48f04fc6009913a7e4be5f12943b054772b943c9ce99659359a",
+        "bytes": 122878,
+        "status": "complete",
+        "workerCommit": "59676cf12af501f8281546e30d89cfe160ff6c48",
+        "workerBranchHead": "d72f21548f3e4a6a37de12ba8ced3975d0e6ee94"
+      }
     },
     {
       "leaseId": "lease-gbif-archive-recovery-20260731-r4-az-001-1",
@@ -231874,7 +231883,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r4_fl_retry1",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T12:57:09.738Z",
       "expiresAt": "2026-07-31T16:10:43.582Z",
       "recoveryAt": null,
@@ -232007,7 +232016,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 38d30c7d662c9d6d0965d44e9fda05874450d0f1...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T13:06:28.0092323Z",
+      "resultManifest": {
+        "path": "manifests/gbif-archive-recovery-20260731-r4-az-001__lease-gbif-archive-recovery-20260731-r4-az-001-1.json",
+        "sha256": "32e17a8dbec2c066b160d4e464daff5185dfd1bbbf0ecd228da98c60e461b58a",
+        "bytes": 9171,
+        "status": "complete",
+        "workerCommit": "ddfea1767bb11ad4ed81ee7d3319c8a628402fc8",
+        "workerBranchHead": "be60f848a610f2c5a750f9592b979d26390fca06"
+      }
     }
   ]
 }
