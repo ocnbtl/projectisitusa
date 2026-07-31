@@ -231867,6 +231867,147 @@
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check db07ba8efcf295081b77ad33e3f217f81cd1815c...HEAD"
       ]
+    },
+    {
+      "leaseId": "lease-gbif-archive-recovery-20260731-r4-az-001-1",
+      "jobId": "gbif-archive-recovery-20260731-r4-az-001",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "gbif_r4_fl_retry1",
+      "state": "active",
+      "claimedAt": "2026-07-31T12:57:09.738Z",
+      "expiresAt": "2026-07-31T16:10:43.582Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "AZ"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "alternanthera-sessilis",
+          "azolla-pinnata"
+        ],
+        "pairs": [
+          "04001:alternanthera-sessilis",
+          "04001:azolla-pinnata",
+          "04003:alternanthera-sessilis",
+          "04003:azolla-pinnata",
+          "04005:alternanthera-sessilis",
+          "04005:azolla-pinnata",
+          "04007:alternanthera-sessilis",
+          "04007:azolla-pinnata",
+          "04009:alternanthera-sessilis",
+          "04009:azolla-pinnata",
+          "04011:alternanthera-sessilis",
+          "04011:azolla-pinnata",
+          "04012:alternanthera-sessilis",
+          "04012:azolla-pinnata",
+          "04013:alternanthera-sessilis",
+          "04013:azolla-pinnata",
+          "04015:alternanthera-sessilis",
+          "04015:azolla-pinnata",
+          "04017:alternanthera-sessilis",
+          "04017:azolla-pinnata",
+          "04019:alternanthera-sessilis",
+          "04019:azolla-pinnata",
+          "04021:alternanthera-sessilis",
+          "04021:azolla-pinnata",
+          "04023:alternanthera-sessilis",
+          "04023:azolla-pinnata",
+          "04025:alternanthera-sessilis",
+          "04025:azolla-pinnata",
+          "04027:alternanthera-sessilis",
+          "04027:azolla-pinnata"
+        ]
+      },
+      "scopeClaims": [
+        "state/AZ/source/gbif-preserved-specimens/taxon/alternanthera-sessilis",
+        "state/AZ/source/gbif-preserved-specimens/taxon/azolla-pinnata"
+      ],
+      "branch": "codex/gbif-archive-recovery-20260731-r4-az-001",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-archive-recovery-20260731-r4-az-001",
+      "baseSha": "38d30c7d662c9d6d0965d44e9fda05874450d0f1",
+      "expectedReceiptCodeCommit": "38d30c7d662c9d6d0965d44e9fda05874450d0f1",
+      "permittedPaths": [
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1024
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/inputs/gbif-archive-recovery-20260731-r4/gbif-archive-recovery-20260731-r4-az-001.json with started-at 2026-07-31T12:10:41.582Z, --archive-replay-commit 8862e46fc2190ee0e4f04b635380b3e0bdf2371f, and --archive-replay-run-id 20260731T112944Z__gbif-preserved-specimens__962505b405f1",
+        "screen all 30 leased AZ county-species pairs using provider-declared county geography only",
+        "issue zero live provider requests and verify every reused response artifact against its archived receipt hash and byte count",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 38d30c7d662c9d6d0965d44e9fda05874450d0f1...HEAD"
+      ]
     }
   ]
 }
