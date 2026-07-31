@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r4",
+  "observedAt": "2026-07-31T03:43:14.017Z",
+  "durationSeconds": 5,
+  "availableMemoryMib": {
+    "minimum": 1814,
+    "mean": 1868.4,
+    "maximum": 1923
+  },
+  "commitChargePercent": {
+    "minimum": 95.82,
+    "mean": 96.06,
+    "maximum": 96.18
+  },
+  "pageReadsPerSecond": {
+    "minimum": 735.64,
+    "mean": 3815.02,
+    "maximum": 7513.5
+  },
+  "pageWritesPerSecond": {
+    "minimum": 0,
+    "mean": 0,
+    "maximum": 0
+  },
+  "processorUtilizationPercent": {
+    "minimum": 57.24,
+    "mean": 61.8,
+    "maximum": 71.05
+  },
+  "disk": {
+    "drive": "C:",
+    "freeGib": 1063.36,
+    "totalGib": 1861.98,
+    "freePercent": 57.11
+  },
+  "capacityTier": "red",
+  "capacityTierReasons": [
+    "Commit charge remained at or above the 95 percent hard-red threshold.",
+    "Available memory fell below the 10 percent red threshold.",
+    "Page reads exceeded the 4096 per-second red threshold during the sample."
+  ],
+  "schedulerDecision": {
+    "acquisitionConcurrency": 0,
+    "artifactConcurrency": 0,
+    "sharedCompilerConcurrency": 0,
+    "lightweightRepositoryWorkOnly": true,
+    "userApplicationsClosed": 0,
+    "nextAction": "Complete deterministic planning and archived-run recovery design, then remeasure before any provider, compiler, or build process."
+  },
+  "backgroundProcessContext": [
+    {
+      "processName": "Marvel-Win64-Shipping",
+      "workingSetMib": 6544.9,
+      "ownership": "user",
+      "action": "preserved"
+    },
+    {
+      "processName": "Memory Compression",
+      "workingSetMib": 3824.8,
+      "ownership": "system",
+      "action": "preserved"
+    },
+    {
+      "processName": "codex",
+      "workingSetMib": 1542.6,
+      "ownership": "project-interface",
+      "action": "preserved"
+    },
+    {
+      "processName": "ChatGPT",
+      "workingSetMib": 1497.4,
+      "ownership": "user",
+      "action": "preserved"
+    }
+  ],
+  "contradictionsPreserved": [
+    "The prior r3 observation was a yellow window with 5574 to 6236 MiB available and low page reads.",
+    "This later r4 observation is red and supersedes r3 for immediate dispatch decisions without invalidating the earlier measurement.",
+    "Page writes remained zero, but high commit charge, low available RAM, and the page-read spike independently require the red tier."
+  ]
+}

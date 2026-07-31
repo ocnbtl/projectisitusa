@@ -2,7 +2,10 @@ import { readFileSync } from "node:fs";
 
 import { buildGbifStateSpeciesPlan } from "./plan-gbif-state-species-batches";
 
-import { stableJson } from "@/lib/research/run-files";
+import {
+  listImmutableResearchRuns,
+  stableJson,
+} from "@/lib/research/run-files";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -31,8 +34,9 @@ assert(
 );
 assert(
   first.selectedStateSpeciesScreenCount === 10 &&
-    first.selectedCountyOutcomeCount === 670,
-  "The Alabama planner did not expand ten state-species screens to all 67 counties.",
+    first.selectedCountyOutcomeCount > 0 &&
+    first.selectedCountyOutcomeCount <= 670,
+  "The Alabama planner did not emit ten bounded state-species screens.",
 );
 assert(
   first.selected.every(
@@ -56,11 +60,38 @@ assert(
 assert(
   first.candidateFiles.every(
     (file) =>
-      file.candidateCount ===
+      file.candidateCount <=
         file.stateSpeciesScreenCount * first.countyCount &&
       file.candidateCount === file.distinctPairCount,
   ),
-  "A planned batch does not contain every active county exactly once per species.",
+  "A planned batch exceeds its state-species denominator or contains duplicate pairs.",
+);
+assert(
+  pairKeys.length === first.selectedCountyOutcomeCount,
+  "The plan county-outcome total differs from its candidate files.",
+);
+const completePairs = new Set(
+  listImmutableResearchRuns(process.cwd())
+    .flatMap((bundle) => bundle.outcomes)
+    .filter(
+      (outcome) =>
+        outcome.state_code === "AL" &&
+        outcome.source_id === "gbif-preserved-specimens" &&
+        outcome.scope_complete,
+    )
+    .map(
+      (outcome) => `${outcome.county_fips}:${outcome.species_id}`,
+    ),
+);
+assert(
+  pairKeys.every((pairKey) => !completePairs.has(pairKey)),
+  "The planner emitted a county-species pair already complete in an immutable run.",
+);
+assert(
+  first.deduplication.immutableCompletePairCount === completePairs.size &&
+    first.deduplication.preventedCompletedPairCount >= 0 &&
+    first.deduplication.fullyCompletedStateSpeciesExcluded >= 0,
+  "The planner did not report its immutable-run deduplication accounting.",
 );
 
 console.log(

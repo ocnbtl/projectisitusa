@@ -2,7 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-import { sha256, stableJson } from "@/lib/research/run-files";
+import {
+  listImmutableResearchRuns,
+  sha256,
+  stableJson,
+} from "@/lib/research/run-files";
 
 type Species = {
   id: string;
@@ -142,6 +146,22 @@ function countCurrentEvidence(root: string, stateCode: string) {
   return counts;
 }
 
+function completedPairKeys(root: string, stateCode: string) {
+  return new Set(
+    listImmutableResearchRuns(root)
+      .flatMap((bundle) => bundle.outcomes)
+      .filter(
+        (outcome) =>
+          outcome.state_code === stateCode &&
+          outcome.source_id === SOURCE_ID &&
+          outcome.scope_complete,
+      )
+      .map(
+        (outcome) => `${outcome.county_fips}:${outcome.species_id}`,
+      ),
+  );
+}
+
 export function buildGbifStateSpeciesPlan(input: {
   root: string;
   planId: string;
@@ -199,6 +219,9 @@ export function buildGbifStateSpeciesPlan(input: {
   );
   const protocol = readJson<{ cells: ProtocolCell[] }>(protocolPath);
   const evidenceCounts = countCurrentEvidence(input.root, stateCode);
+  const completedPairs = completedPairKeys(input.root, stateCode);
+  let preventedCompletedPairCount = 0;
+  let fullyCompletedStateSpeciesExcluded = 0;
   const candidates = protocol.cells
     .filter(
       (cell) =>
@@ -222,6 +245,18 @@ export function buildGbifStateSpeciesPlan(input: {
         verifiedPresentCount: 0,
         gbifEvidenceCount: 0,
       };
+      const remainingCountyFips = countyFips.filter(
+        (countyFipsEntry) =>
+          !completedPairs.has(
+            `${countyFipsEntry}:${cell.speciesId}`,
+          ),
+      );
+      preventedCompletedPairCount +=
+        countyFips.length - remainingCountyFips.length;
+      if (remainingCountyFips.length === 0) {
+        fullyCompletedStateSpeciesExcluded += 1;
+        return [];
+      }
       return [{
         stateCode,
         speciesId: cell.speciesId,
@@ -233,10 +268,12 @@ export function buildGbifStateSpeciesPlan(input: {
         protocolCompletionStatus: cell.completionStatus,
         freshnessStatus: cell.freshnessStatus,
         countyCount: countyFips.length,
-        incompleteCountyCount: cell.incompleteCountyCount,
-        priorCompleteGbifCountyCount: cell.completeOutcomeCountyCount,
+        incompleteCountyCount: remainingCountyFips.length,
+        priorCompleteGbifCountyCount:
+          countyFips.length - remainingCountyFips.length,
         gbifEvidenceCountyCount: counts.gbifEvidenceCount,
         verifiedPresentCountyCount: counts.verifiedPresentCount,
+        remainingCountyFips,
       }];
     })
     .sort(
@@ -260,10 +297,13 @@ export function buildGbifStateSpeciesPlan(input: {
       sourceId: SOURCE_ID,
       speciesIds: selectedSpecies.map((entry) => entry.speciesId),
       stateSpeciesScreenCount: selectedSpecies.length,
-      countyOutcomeCount: selectedSpecies.length * countyFips.length,
+      countyOutcomeCount: selectedSpecies.reduce(
+        (sum, entry) => sum + entry.remainingCountyFips.length,
+        0,
+      ),
       candidateFile: `${batchId}.json`,
       candidates: selectedSpecies.flatMap((entry) =>
-        countyFips.map((countyFipsEntry) => ({
+        entry.remainingCountyFips.map((countyFipsEntry) => ({
           sourceId: SOURCE_ID,
           speciesId: entry.speciesId,
           countyFips: countyFipsEntry,
@@ -297,9 +337,17 @@ export function buildGbifStateSpeciesPlan(input: {
       stateSummary: sha256(fs.readFileSync(summaryPath)),
       protocolCells: sha256(fs.readFileSync(protocolPath)),
     },
+    deduplication: {
+      immutableCompletePairCount: completedPairs.size,
+      preventedCompletedPairCount,
+      fullyCompletedStateSpeciesExcluded,
+    },
     availableStateSpeciesScreenCount: candidates.length,
     selectedStateSpeciesScreenCount: selected.length,
-    selectedCountyOutcomeCount: selected.length * countyFips.length,
+    selectedCountyOutcomeCount: selected.reduce(
+      (sum, entry) => sum + entry.remainingCountyFips.length,
+      0,
+    ),
     countyCount: countyFips.length,
     selected,
     batches: batches.map(({ candidates: _candidates, ...batch }) => batch),
