@@ -5783,7 +5783,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r2-co-001-1",
       "jobId": "gbif-bulk-20260731-r2-co-001",
       "leaseId": "lease-gbif-bulk-20260731-r2-co-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T06:24:16.1595787Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r2-co-001__lease-gbif-bulk-20260731-r2-co-001-1.json",
       "manifestHash": "371c4b1395d5d567b9ebe2c1123ce352227b911e6bda2dcda2484196069eb777",
@@ -5992,6 +5992,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r2-co-001-1.json",
         "sha256": "11f693d4d465024f0bf39c30d5f7901f0c3947ad9ae276a005b14edc1ff62fc8",
         "bytes": 26060
+      },
+      "integratedAt": "2026-07-31T06:26:21.824Z",
+      "integrator": "MAIN",
+      "integrationCommit": "7102561eadb0f389389ddf447b68af71ccc9b269",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Colorado GBIF run with 4992 ordered county pairs",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed Colorado GBIF content and manifest commits without conflict. Canonical validation confirmed 4992 complete county outcomes, 6333 accepted assertions and reviews, 1218 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r2-co-001-1.json",
+        "sha256": "1214f2473c79e71aa335ef4aac5d758e6263a4deb00348dd5a39876561ec7b2f",
+        "bytes": 26219
       }
     }
   ]
