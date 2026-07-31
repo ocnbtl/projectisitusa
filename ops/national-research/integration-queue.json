@@ -6335,13 +6335,84 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r2-ca-002-1",
       "jobId": "gbif-bulk-20260731-r2-ca-002",
       "leaseId": "lease-gbif-bulk-20260731-r2-ca-002-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-31T06:41:40.293Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r2-ca-002__lease-gbif-bulk-20260731-r2-ca-002-1.json",
       "manifestHash": "7919183c042ad4a4d0eb0174643aec6564549579ae4802a0ee4e19e199e820d8",
       "manifestBytes": 44558,
       "workerCommit": "8db7551091ce4f719ddb18cd0bad58e38b620592",
-      "workerBranchHead": "bceda5b051254c519424681bd4828a8eef83d008"
+      "workerBranchHead": "bceda5b051254c519424681bd4828a8eef83d008",
+      "reviewedAt": "2026-07-31T06:44:29.852Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide California GBIF run, complete receipt and source-verification descriptors, 812 ordered county outcomes, 1595 accepted assertions and reviews, 241 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-panicum-antidotale-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-parthenium-hysterophorus-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-peganum-harmala-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-potentilla-recta-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-rorippa-austriaca-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-rorippa-sylvestris-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-salsola-tragus-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-salsola-tragus-000300.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-salsola-tragus-000600.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-salsola-tragus-000900.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-salsola-tragus-001200.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-salvia-aethiopis-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-senecio-linearifolius-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-senecio-squalidus-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-occurrences-sesbania-punicea-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-panicum-antidotale.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-parthenium-hysterophorus.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-peganum-harmala.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-potentilla-recta.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-rorippa-austriaca.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-rorippa-sylvestris.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-salsola-tragus.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-salvia-aethiopis.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-senecio-linearifolius.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-senecio-squalidus.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/artifacts/gbif-species-match-sesbania-punicea.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/assertions.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/manifest.json",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/outcomes.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/receipt.json",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/rejections.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/reviews.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__ab2f3952a5fc/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation for California CA-002 GBIF statewide tranche",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r2-ca-002-1.json",
+        "sha256": "b2aa3c3f9ba2ff52eb738818eda79c3a1e998fd73855c20d07df49122db290e7",
+        "bytes": 6890
+      }
     }
   ]
 }
