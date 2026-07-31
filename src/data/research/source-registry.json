@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-07-31",
   "sources": [
     {
       "id": "eddmaps",
@@ -344,7 +344,7 @@
       "researchAdapter": {
         "id": "gbif-preserved-specimens",
         "module": "scripts/research/adapters/gbif-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.0.1", "1.0.2", "1.1.0", "1.2.0", "1.3.0"],
+        "allowedVersions": ["1.0.0", "1.0.1", "1.0.2", "1.1.0", "1.2.0", "1.3.0", "1.3.1"],
         "parameterSchema": "src/data/research/schemas/gbif-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Strict GBIF species match with EXACT match type, confidence at least 95, and exact canonical binomial agreement.",
@@ -420,7 +420,7 @@
       "researchAdapter": {
         "id": "idigbio-preserved-specimens",
         "module": "scripts/research/adapters/idigbio-preserved-specimens.ts",
-        "allowedVersions": ["1.0.0", "1.1.0"],
+        "allowedVersions": ["1.0.0", "1.1.0", "1.1.1"],
         "parameterSchema": "src/data/research/schemas/idigbio-preserved-specimens-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact canonical binomial agreement across normalized iDigBio taxon terms and retained provider scientific name, with ambiguous taxon flags rejected.",

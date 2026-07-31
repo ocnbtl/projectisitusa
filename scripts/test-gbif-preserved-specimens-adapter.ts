@@ -1,12 +1,23 @@
 import { gbifPreservedSpecimensAdapter } from "./research/adapters/gbif-preserved-specimens";
 import { gunzipSync } from "node:zlib";
 
+import sourceRegistry from "@/data/research/source-registry.json";
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
 import { listCountyEquivalents } from "@/lib/research/geography-registry";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
+
+const gbifSource = sourceRegistry.sources.find(
+  (source) => source.id === gbifPreservedSpecimensAdapter.sourceId,
+);
+assert(
+  gbifSource?.researchAdapter?.allowedVersions.includes(
+    gbifPreservedSpecimensAdapter.adapterVersion,
+  ),
+  "The active GBIF adapter version is not allowed by the source registry.",
+);
 
 const parameters = {
   stateCode: "AL",

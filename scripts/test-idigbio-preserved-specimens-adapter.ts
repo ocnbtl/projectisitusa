@@ -1,10 +1,21 @@
 import { idigbioPreservedSpecimensAdapter } from "./research/adapters/idigbio-preserved-specimens";
 
+import sourceRegistry from "@/data/research/source-registry.json";
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
+
+const idigbioSource = sourceRegistry.sources.find(
+  (source) => source.id === idigbioPreservedSpecimensAdapter.sourceId,
+);
+assert(
+  idigbioSource?.researchAdapter?.allowedVersions.includes(
+    idigbioPreservedSpecimensAdapter.adapterVersion,
+  ),
+  "The active iDigBio adapter version is not allowed by the source registry.",
+);
 
 const parameters = {
   stateCode: "AL",
