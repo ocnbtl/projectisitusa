@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-ca-20260730-r1",
+  "createdAt": "2026-07-31T05:35:00.000Z",
+  "asOf": "2026-07-30",
+  "stateCode": "CA",
+  "sourceId": "ca-3-ccr-4500",
+  "authority": "California Department of Food and Agriculture",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "providerRequests": 4,
+    "successfulRequests": 3,
+    "blockedRequests": 1,
+    "pagesReviewed": 3,
+    "artifactCount": 1,
+    "artifactBytes": 44693,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260730__ca-3-ccr-4500__f305ea2e7205/artifacts/california-3-ccr-4500-2026.html",
+      "url": "https://govt.westlaw.com/calregs/Document/IA726D610093D11EFB745E3F7EC85B8C4?needToInjectTerms=False&originationContext=document&transitionType=Default&viewType=FullText",
+      "sha256": "f305ea2e7205067ca00bc4c565866b44849278eb5883a4a6d9dfc966e3d730fd",
+      "bytes": 44693,
+      "captureMethod": "browser-serialized-designated-current-code-dom",
+      "currentThrough": "2026-07-17",
+      "register": "2026-29"
+    },
+    "departmentCrossChecks": [
+      {
+        "url": "https://www.cdfa.ca.gov/plant/regulations_completed.html",
+        "result": "The Department records the latest Section 4500 action as effective July 1, 2024 and links the designated California Code of Regulations service for current law."
+      },
+      {
+        "url": "https://www.cdfa.ca.gov/plant/docs/2024/4500_Text_202402.pdf",
+        "result": "The Department PDF endpoint returned HTTP 200 to a HEAD request and identifies the 2024 correction, but its bytes were not retained because the current-code artifact supersedes it for this review."
+      }
+    ]
+  },
+  "review": {
+    "reviewId": "ca-3-ccr-4500-20260730",
+    "reviewSha256": "22cc1c5e6b780fc6c2f92516fb689e1c682190ffb1311827ac012baf697f0a4a",
+    "regulatoryRows": 176,
+    "grossAcceptedEvents": 86,
+    "blockedTaxonomyRows": 90,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 129,
+    "netNewApplicableDecisions": 76,
+    "supportingBasisAdded": 86,
+    "alreadyApplicableDecisionsReceivingNewBasis": 10,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "registry-source-age",
+      "priorState": "The registry pointed to a July 1, 2024 Department rule PDF and remained blocked pending exact retained bytes and row-level review.",
+      "currentEvidence": "California's designated current-code page states that it is current through July 17, 2026, Register 2026 No. 29, and contains 176 Section 4500 taxon rows.",
+      "resolution": "The current-code page supersedes the older candidate as the operative artifact. The 2024 Department action remains preserved as regulatory history."
+    },
+    {
+      "subject": "designated-code-publisher",
+      "priorState": "The source authority is the California Department of Food and Agriculture while the current regulation is published through the designated Westlaw California Code of Regulations service.",
+      "currentEvidence": "The Department links the California Code of Regulations service under Current Laws and Regulations, and the retained page identifies 3 CCR Section 4500 with an explicit currentness marker.",
+      "resolution": "Authority remains the Department. The capture method, currentness marker, URL, hash, byte count, and parser denominator are explicit."
+    },
+    {
+      "subject": "qualified-and-composite-rows",
+      "priorState": "Section 4500 includes genus, synonym, hybrid, variety, aggregate, and condition-bearing taxon rows.",
+      "currentEvidence": "Ninety of 176 rows do not pass the exact current catalog binomial gate.",
+      "resolution": "All ninety remain blocked for explicit taxonomy or scope review. No list silence or rejected row creates not-applicability or a county determination."
+    }
+  ]
+}
