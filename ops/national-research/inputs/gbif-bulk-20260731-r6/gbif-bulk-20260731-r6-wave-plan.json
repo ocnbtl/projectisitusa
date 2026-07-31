@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260731-r6",
+  "createdAt": "2026-07-31T12:08:00.000Z",
+  "recoveryOf": {
+    "jobId": "gbif-bulk-20260731-r4-ga-001",
+    "leaseId": "lease-gbif-bulk-20260731-r4-ga-001-1",
+    "archiveCommit": "92bd8266e45fd000fa4cf1ff26be368c91492fe1",
+    "archiveRunId": "20260731T112946Z__gbif-preserved-specimens__bf1b2fc82181"
+  },
+  "selected": {
+    "batchId": "gbif-bulk-20260731-r6-ga-001-retry1",
+    "stateCode": "GA",
+    "stateSpeciesScreens": 5,
+    "countySpeciesPairs": 795,
+    "expectedProviderRequests": 5,
+    "excludedTaxonomyScreens": [
+      "schedonorus-arundinaceus"
+    ],
+    "selectedReason": "Retry only the five transport-incomplete Georgia screens while routing the strict-match taxonomy ambiguity to the existing taxonomy review."
+  }
+}

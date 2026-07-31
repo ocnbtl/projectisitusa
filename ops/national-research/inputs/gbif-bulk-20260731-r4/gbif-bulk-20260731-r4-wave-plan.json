@@ -56,5 +56,29 @@
     "stateSpeciesScreens": 44,
     "countySpeciesPairs": 4364,
     "expectedProviderRequests": 44
+  },
+  "postExecutionAudit": {
+    "arizona": {
+      "directIntegrationDecision": "rejected",
+      "forbiddenWriteCount": 1,
+      "manualInterventions": 1,
+      "candidatePairs": 255,
+      "alreadyCompletePairsDetectedByArchivePlanner": 225,
+      "netNewReplayPairs": 30,
+      "correction": "The manually filtered retry input did not recheck complete GBIF outcomes from other immutable runs. MAIN rejected direct integration and routed only the 30 deduplicated pairs to zero-download replay."
+    },
+    "florida": {
+      "integrationDecision": "accepted",
+      "completePairs": 134,
+      "incompletePairs": 0
+    },
+    "georgia": {
+      "terminalState": "failed",
+      "manifestStatus": "partial",
+      "completePairs": 3021,
+      "providerIncompletePairs": 795,
+      "taxonomyIncompletePairs": 159,
+      "recovery": "Complete pairs are queued for zero-download replay, the five provider failures are queued for exact retry, and the taxonomy ambiguity remains under catalog review."
+    }
   }
 }

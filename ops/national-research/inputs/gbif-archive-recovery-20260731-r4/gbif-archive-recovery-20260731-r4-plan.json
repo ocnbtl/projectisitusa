@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-archive-recovery-20260731-r4",
+  "sourceId": "gbif-preserved-specimens",
+  "createdAt": "2026-07-31T12:08:00.000Z",
+  "descriptor": {
+    "path": "ops/national-research/inputs/gbif-archive-recovery-20260731-r4/gbif-archive-recovery-20260731-r4-sources.json",
+    "sha256": "e7554cc3c2b8de0a46982c38a834177909299c28251698830e0c1bf2c71d7879"
+  },
+  "deduplication": {
+    "currentCompletePairCountBeforePlanning": 99660,
+    "preventedAlreadyCompletePairCount": 225
+  },
+  "totals": {
+    "archives": 2,
+    "selectedStateSpeciesScreenCount": 21,
+    "selectedPairCount": 3051,
+    "selectedProviderRequestCount": 44,
+    "selectedArtifactCount": 44,
+    "selectedArtifactBytes": 859405
+  },
+  "archives": [
+    {
+      "archiveIndex": 1,
+      "archiveCommit": "8862e46fc2190ee0e4f04b635380b3e0bdf2371f",
+      "archiveRunId": "20260731T112944Z__gbif-preserved-specimens__962505b405f1",
+      "archiveReceiptStatus": "complete",
+      "stateCode": "AZ",
+      "receiptSha256": "37a83410a67e02c1e1c0f17072fb24d0b4fed109a07c3af380b7091212648f7c",
+      "outcomesSha256": "1de030ff38831b1a898cfd333e54533795729e518df925ea8cccbcab2ed612d2",
+      "sourceVerificationSha256": "8945989b94dda7b8598ee68ce78dd46df2c060691a5e32011e6d469017e190cf",
+      "originalRequestedPairCount": 255,
+      "originalCompletePairCount": 255,
+      "originalIncompletePairCount": 0,
+      "preventedAlreadyCompletePairCount": 225,
+      "selectedPairCount": 30,
+      "selectedStateSpeciesScreenCount": 2,
+      "selectedProviderRequestCount": 4,
+      "selectedArtifactCount": 4,
+      "selectedArtifactBytes": 3227,
+      "candidateFile": "gbif-archive-recovery-20260731-r4-az-001.json",
+      "candidateSha256": "6b9039e1e4fe2eb81bd96f9983d4098c57d415d5644635ff3f878183e92ec0c6"
+    },
+    {
+      "archiveIndex": 2,
+      "archiveCommit": "92bd8266e45fd000fa4cf1ff26be368c91492fe1",
+      "archiveRunId": "20260731T112946Z__gbif-preserved-specimens__bf1b2fc82181",
+      "archiveReceiptStatus": "partial",
+      "stateCode": "GA",
+      "receiptSha256": "872d6cba23825f27ff89b1c9a85c1e9f84a1e4535ed0d913c682e17f3c709275",
+      "outcomesSha256": "1db96476ff29612e88e7aa61f292b2090720a89d72db8d37bcf255cb3726530f",
+      "sourceVerificationSha256": "0d4375b983ef46d16c760a385719a428fbdd567b9d7c5da50d156f7910c4f732",
+      "originalRequestedPairCount": 3975,
+      "originalCompletePairCount": 3021,
+      "originalIncompletePairCount": 954,
+      "preventedAlreadyCompletePairCount": 0,
+      "selectedPairCount": 3021,
+      "selectedStateSpeciesScreenCount": 19,
+      "selectedProviderRequestCount": 40,
+      "selectedArtifactCount": 40,
+      "selectedArtifactBytes": 856178,
+      "candidateFile": "gbif-archive-recovery-20260731-r4-ga-002.json",
+      "candidateSha256": "97d7f7ab2dee697370c53afc687f56816e85c7a4bd89a529c362ae9ae8d7dfd9"
+    }
+  ]
+}
