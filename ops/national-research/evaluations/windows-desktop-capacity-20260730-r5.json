@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r5",
+  "observedAt": "2026-07-31T04:52:53.317Z",
+  "durationSeconds": 5,
+  "availableMemoryMib": {
+    "minimum": 15740,
+    "mean": 15823.4,
+    "maximum": 15872
+  },
+  "commitChargePercent": {
+    "minimum": 62.05,
+    "mean": 62.19,
+    "maximum": 62.36
+  },
+  "pageReadsPerSecond": {
+    "minimum": 2.99,
+    "mean": 10.12,
+    "maximum": 20.86
+  },
+  "pageWritesPerSecond": {
+    "minimum": 0,
+    "mean": 0,
+    "maximum": 0
+  },
+  "processorUtilizationPercent": {
+    "minimum": 10.55,
+    "mean": 15.2,
+    "maximum": 20.94
+  },
+  "disk": {
+    "drive": "C:",
+    "freeGib": 1085.1,
+    "totalGib": 1861.98,
+    "freePercent": 58.28
+  },
+  "capacityTier": "green",
+  "capacityTierReasons": [
+    "Available memory remained above 15 GiB and above the preferred 25 percent reserve.",
+    "Commit charge remained near 62 percent.",
+    "Page input stayed below 21 pages per second and page output remained zero.",
+    "Disk retained more than 1 TiB free and 58 percent headroom."
+  ],
+  "schedulerDecision": {
+    "acquisitionConcurrency": 4,
+    "artifactConcurrency": 3,
+    "lightweightConcurrency": 8,
+    "sharedCompilerConcurrency": 1,
+    "mainIntegrationConcurrency": 1,
+    "userApplicationsClosedByMain": 0,
+    "nextAction": "Finish the remaining leased archive lane, then use three artifact or acquisition lanes while MAIN continues sequential validation and integration."
+  },
+  "processContext": {
+    "activeProjectWorkerProcessesObserved": 0,
+    "measurementProcessExcluded": true,
+    "note": "No independently identifiable Project Isitusa worker process was present in the process snapshot. The remaining worker was between subprocess invocations or its generic runtime command line did not include the repository path."
+  },
+  "measurementNotes": [
+    "The first read-only formatter attempt returned disk and process context but omitted counter values. A corrected read-only counter sample supplied all five complete observations.",
+    "No project process was stopped and no user application was closed."
+  ],
+  "contradictionsPreserved": [
+    "The r4 sample was red with 1814 to 1923 MiB available, commit charge above 95 percent, and high page input while a user-owned application consumed substantial memory.",
+    "The later pre-wave sample was green with more than 16 GiB available, and this post-integration r5 sample remains green with at least 15740 MiB available.",
+    "The r4 reason text cites a 4096 page-read threshold while the current resource policy hard-red threshold is 500 pages per second. The r4 observation exceeded both thresholds, so its red decision remains valid even though its explanatory threshold text is stale."
+  ]
+}
