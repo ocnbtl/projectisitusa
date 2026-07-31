@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2",
+  "status": "complete",
+  "started_at": "2026-07-31T12:10:41.582Z",
+  "finished_at": "2026-07-31T13:01:25.852Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "43fd9d4b960670850632775eeb6e22c811faf6d8e398c70ce452b2fb64382ea9",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.0",
+  "adapter_code_hash": "7cf5e6d79e9df34beaba12580148470129caab866947c0289d4c22f94f918620",
+  "code_commit": "38d30c7d662c9d6d0965d44e9fda05874450d0f1",
+  "parameter_hash": "7ff431b69bd21283991872ceefe0bd635be7cd7d143ed692fe13405e571250ec",
+  "parameters": {
+    "stateCode": "AZ",
+    "stateProvince": "Arizona",
+    "candidateLimit": 30,
+    "candidatePairs": [
+      "04001:alternanthera-sessilis",
+      "04001:azolla-pinnata",
+      "04003:alternanthera-sessilis",
+      "04003:azolla-pinnata",
+      "04005:alternanthera-sessilis",
+      "04005:azolla-pinnata",
+      "04007:alternanthera-sessilis",
+      "04007:azolla-pinnata",
+      "04009:alternanthera-sessilis",
+      "04009:azolla-pinnata",
+      "04011:alternanthera-sessilis",
+      "04011:azolla-pinnata",
+      "04012:alternanthera-sessilis",
+      "04012:azolla-pinnata",
+      "04013:alternanthera-sessilis",
+      "04013:azolla-pinnata",
+      "04015:alternanthera-sessilis",
+      "04015:azolla-pinnata",
+      "04017:alternanthera-sessilis",
+      "04017:azolla-pinnata",
+      "04019:alternanthera-sessilis",
+      "04019:azolla-pinnata",
+      "04021:alternanthera-sessilis",
+      "04021:azolla-pinnata",
+      "04023:alternanthera-sessilis",
+      "04023:azolla-pinnata",
+      "04025:alternanthera-sessilis",
+      "04025:azolla-pinnata",
+      "04027:alternanthera-sessilis",
+      "04027:azolla-pinnata"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AZ",
+    "county_fips": [
+      "04001",
+      "04003",
+      "04005",
+      "04007",
+      "04009",
+      "04011",
+      "04012",
+      "04013",
+      "04015",
+      "04017",
+      "04019",
+      "04021",
+      "04023",
+      "04025",
+      "04027"
+    ],
+    "species_ids": [
+      "alternanthera-sessilis",
+      "azolla-pinnata"
+    ],
+    "pair_keys": [
+      "04001:alternanthera-sessilis",
+      "04001:azolla-pinnata",
+      "04003:alternanthera-sessilis",
+      "04003:azolla-pinnata",
+      "04005:alternanthera-sessilis",
+      "04005:azolla-pinnata",
+      "04007:alternanthera-sessilis",
+      "04007:azolla-pinnata",
+      "04009:alternanthera-sessilis",
+      "04009:azolla-pinnata",
+      "04011:alternanthera-sessilis",
+      "04011:azolla-pinnata",
+      "04012:alternanthera-sessilis",
+      "04012:azolla-pinnata",
+      "04013:alternanthera-sessilis",
+      "04013:azolla-pinnata",
+      "04015:alternanthera-sessilis",
+      "04015:azolla-pinnata",
+      "04017:alternanthera-sessilis",
+      "04017:azolla-pinnata",
+      "04019:alternanthera-sessilis",
+      "04019:azolla-pinnata",
+      "04021:alternanthera-sessilis",
+      "04021:azolla-pinnata",
+      "04023:alternanthera-sessilis",
+      "04023:azolla-pinnata",
+      "04025:alternanthera-sessilis",
+      "04025:azolla-pinnata",
+      "04027:alternanthera-sessilis",
+      "04027:azolla-pinnata"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Alternanthera+sessilis&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-31T13:01:24.826Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3084939&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-31T13:01:25.176Z",
+      "record_count": 2
+    },
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Azolla+pinnata&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-31T13:01:25.511Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2650106&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-31T13:01:25.852Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-alternanthera-sessilis-000000.json.gz",
+      "sha256": "c7caf0335362ceec3ca64cf893438e227bd36909c636ae4b57bcca3371167ed6",
+      "bytes": 2550,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-azolla-pinnata-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-alternanthera-sessilis.json.gz",
+      "sha256": "8b58be5de42f5fb319e80963e1e669a4ef8e76dd049311233ecd9b2d7196bfe6",
+      "bytes": 303,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-azolla-pinnata.json.gz",
+      "sha256": "550c490107a5e2c8552b761818b070ce2b0ab2fbd260b7adeccc4e476e9167bc",
+      "bytes": 284,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/rejections.ndjson",
+      "sha256": "065172761ae0406a123ddd8c986a147fc41fd6893357e13747aff0670ffd87d6",
+      "bytes": 1430,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/outcomes.ndjson",
+      "sha256": "c59fb9d47122d911db2b587e2b93289fd06e0b96c62c199f67baa6ebe7373b88",
+      "bytes": 26535,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/source-verification.json",
+      "sha256": "0e5e3245359e9d8dccb27dee578bec613627de724304e424fc507ef4d7137bfd",
+      "bytes": 7827,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 30,
+    "candidate_records": 2,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 2,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 30
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Replayed 4 provider response artifact(s) from archived run 20260731T112944Z__gbif-preserved-specimens__962505b405f1 at commit 8862e46fc2190ee0e4f04b635380b3e0bdf2371f; no live provider request was issued."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state AZ --candidate-file ops/national-research/inputs/gbif-archive-recovery-20260731-r4/gbif-archive-recovery-20260731-r4-az-001.json --output-root src/data/research/runs --pairs 04001:alternanthera-sessilis,04001:azolla-pinnata,04003:alternanthera-sessilis,04003:azolla-pinnata,04005:alternanthera-sessilis,04005:azolla-pinnata,04007:alternanthera-sessilis,04007:azolla-pinnata,04009:alternanthera-sessilis,04009:azolla-pinnata,04011:alternanthera-sessilis,04011:azolla-pinnata,04012:alternanthera-sessilis,04012:azolla-pinnata,04013:alternanthera-sessilis,04013:azolla-pinnata,04015:alternanthera-sessilis,04015:azolla-pinnata,04017:alternanthera-sessilis,04017:azolla-pinnata,04019:alternanthera-sessilis,04019:azolla-pinnata,04021:alternanthera-sessilis,04021:azolla-pinnata,04023:alternanthera-sessilis,04023:azolla-pinnata,04025:alternanthera-sessilis,04025:azolla-pinnata,04027:alternanthera-sessilis,04027:azolla-pinnata --archive-replay-commit 8862e46fc2190ee0e4f04b635380b3e0bdf2371f --archive-replay-run-id 20260731T112944Z__gbif-preserved-specimens__962505b405f1"
+}

@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-31T13:01:25.852Z",
+  "runId": "20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AZ",
+  "pairKeys": [
+    "04001:alternanthera-sessilis",
+    "04001:azolla-pinnata",
+    "04003:alternanthera-sessilis",
+    "04003:azolla-pinnata",
+    "04005:alternanthera-sessilis",
+    "04005:azolla-pinnata",
+    "04007:alternanthera-sessilis",
+    "04007:azolla-pinnata",
+    "04009:alternanthera-sessilis",
+    "04009:azolla-pinnata",
+    "04011:alternanthera-sessilis",
+    "04011:azolla-pinnata",
+    "04012:alternanthera-sessilis",
+    "04012:azolla-pinnata",
+    "04013:alternanthera-sessilis",
+    "04013:azolla-pinnata",
+    "04015:alternanthera-sessilis",
+    "04015:azolla-pinnata",
+    "04017:alternanthera-sessilis",
+    "04017:azolla-pinnata",
+    "04019:alternanthera-sessilis",
+    "04019:azolla-pinnata",
+    "04021:alternanthera-sessilis",
+    "04021:azolla-pinnata",
+    "04023:alternanthera-sessilis",
+    "04023:azolla-pinnata",
+    "04025:alternanthera-sessilis",
+    "04025:azolla-pinnata",
+    "04027:alternanthera-sessilis",
+    "04027:azolla-pinnata"
+  ],
+  "parameterHash": "7ff431b69bd21283991872ceefe0bd635be7cd7d143ed692fe13405e571250ec",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-31T13:01:25.852Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Arizona and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "alternanthera-sessilis",
+      "azolla-pinnata"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-alternanthera-sessilis",
+        "url": "https://api.gbif.org/v1/species/match?name=Alternanthera+sessilis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T13:01:24.826Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-alternanthera-sessilis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3084939&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for alternanthera-sessilis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T13:01:25.176Z",
+        "declaredRecordCount": 2,
+        "receivedRecordCount": 2,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-azolla-pinnata",
+        "url": "https://api.gbif.org/v1/species/match?name=Azolla+pinnata&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T13:01:25.511Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-azolla-pinnata",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arizona&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2650106&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for azolla-pinnata and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T13:01:25.852Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-alternanthera-sessilis-000000.json.gz",
+      "sha256": "c7caf0335362ceec3ca64cf893438e227bd36909c636ae4b57bcca3371167ed6",
+      "bytes": 2550
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-azolla-pinnata-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-alternanthera-sessilis.json.gz",
+      "sha256": "8b58be5de42f5fb319e80963e1e669a4ef8e76dd049311233ecd9b2d7196bfe6",
+      "bytes": 303
+    },
+    {
+      "path": "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-azolla-pinnata.json.gz",
+      "sha256": "550c490107a5e2c8552b761818b070ce2b0ab2fbd260b7adeccc4e476e9167bc",
+      "bytes": 284
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
