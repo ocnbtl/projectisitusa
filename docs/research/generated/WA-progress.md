@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.13%`
 - Research coverage: `0.72%`
 - Explicit outcome coverage: `0.7188%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `71`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `25.35%`
+- Current protocol completion: `7.04%`
 - Evidence records: `128`
 - Research runs: `7`
 - Rejection records: `80`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 39 | 0 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 39 | 0 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 39 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 39 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 39 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 39 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 39 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 39 | 0 | 0 |
-| Slender false brome (`brachypodium-sylvaticum`) | plants | 39 | 0 | 0 |
-| Cheatgrass (`bromus-tectorum`) | plants | 39 | 0 | 0 |
-| Orange eye butterflybush (`buddleja-davidii`) | plants | 39 | 0 | 0 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 39 | 0 | 0 |
-| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 39 | 0 | 0 |
-| Diffuse Knapweed (`centaurea-diffusa`) | plants | 39 | 0 | 0 |
-| Maltese star-thistle (`centaurea-melitensis`) | plants | 39 | 0 | 0 |
-| Yellow star-thistle (`centaurea-solstitialis`) | plants | 39 | 0 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 39 | 0 | 0 |
-| Rush skeletonweed (`chondrilla-juncea`) | plants | 39 | 0 | 0 |
-| Canada Thistle (`cirsium-arvense`) | plants | 39 | 0 | 0 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 39 | 0 | 0 |
-| Evergreen clematis (`clematis-vitalba`) | plants | 39 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 39 | 0 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 39 | 0 | 0 |
-| Common Houndstongue (`cynoglossum-officinale`) | plants | 39 | 0 | 0 |
-| Scotch broom (`cytisus-scoparius`) | plants | 39 | 0 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 39 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 39 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 39 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 39 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 39 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 39 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 39 | 0 | 1 |
+| Common crupina (`crupina-vulgaris`) | plants | 39 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 39 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 39 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 39 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 39 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 39 | 0 | 1 |
+| Giant Hogweed (`giant-hogweed`) | plants | 39 | 0 | 1 |
+| Hydrilla (`hydrilla`) | plants | 39 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 39 | 0 | 1 |
+| Cogongrass (`imperata-cylindrica`) | plants | 39 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 39 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 39 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 39 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 39 | 0 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 39 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 39 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 39 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 39 | 0 | 1 |
 
 ## Source Operations
 

@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.00%`
 - Research coverage: `0.68%`
 - Explicit outcome coverage: `0.6789%`
-- Applicable protocol cells: `14`
+- Applicable protocol cells: `123`
 - Current complete protocol cells: `1`
-- Protocol completion: `7.14%`
-- Current protocol completion: `7.14%`
+- Protocol completion: `0.81%`
+- Current protocol completion: `0.81%`
 - Evidence records: `0`
 - Research runs: `3`
 - Rejection records: `1016`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 9 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 9 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 9 | 0 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 9 | 0 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 9 | 0 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 9 | 0 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 9 | 0 | 1 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 9 | 0 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 9 | 0 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 9 | 0 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 9 | 0 | 1 |
-| Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 1 |
-| Norway Maple (`acer-platanoides`) | plants | 9 | 0 | 0 |
-| Sycamore Maple (`acer-pseudoplatanus`) | plants | 9 | 0 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 9 | 0 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 9 | 0 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 9 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 9 | 0 | 0 |
-| Japanese angelica tree (`aralia-elata`) | plants | 9 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 9 | 0 | 0 |
-| Mugwort (`artemisia-vulgaris`) | plants | 9 | 0 | 0 |
-| Small Carpgrass (`arthraxon-hispidus`) | plants | 9 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 9 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 9 | 0 | 0 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 9 | 0 | 2 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 9 | 0 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 9 | 0 | 2 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 9 | 0 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 9 | 0 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 9 | 0 | 2 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 9 | 0 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 9 | 0 | 2 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 9 | 0 | 2 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 9 | 0 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 9 | 0 | 2 |
+| Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 2 |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 9 | 0 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 9 | 0 | 1 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 9 | 0 | 1 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 9 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 9 | 0 | 1 |
+| Japanese angelica tree (`aralia-elata`) | plants | 9 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 9 | 0 | 1 |
+| Mugwort (`artemisia-vulgaris`) | plants | 9 | 0 | 1 |
+| Small Carpgrass (`arthraxon-hispidus`) | plants | 9 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 9 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 9 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 9 | 0 | 1 |
 
 ## Source Operations
 

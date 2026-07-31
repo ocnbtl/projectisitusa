@@ -372,53 +372,53 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 192,
-    "applicableCells": 18,
-    "notApplicableCells": 174,
+    "totalCells": 288,
+    "applicableCells": 103,
+    "notApplicableCells": 185,
     "completeCells": 18,
-    "incompleteCells": 0,
+    "incompleteCells": 85,
     "blockedCells": 0,
     "currentCells": 5,
     "staleCells": 13,
-    "undatedCells": 0,
-    "applicableCompletionPercent": 100,
-    "currentCompletePercent": 27.78,
-    "regulatedAndHighApplicableCells": 1,
+    "undatedCells": 85,
+    "applicableCompletionPercent": 17.48,
+    "currentCompletePercent": 4.85,
+    "regulatedAndHighApplicableCells": 36,
     "regulatedAndHighCurrentCompleteCells": 1,
-    "regulatedAndHighCurrentCompletePercent": 100,
-    "requiredCurrentSourcesProcessed": true,
+    "regulatedAndHighCurrentCompletePercent": 2.78,
+    "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
       {
         "category": "fungi-diseases",
-        "applicableCells": 6,
+        "applicableCells": 12,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "insects",
-        "applicableCells": 7,
+        "applicableCells": 14,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
       {
         "category": "plants",
-        "applicableCells": 2,
+        "applicableCells": 71,
         "currentCompleteCells": 2,
-        "currentCompletePercent": 100
+        "currentCompletePercent": 2.82
       },
       {
         "category": "wildlife",
-        "applicableCells": 3,
+        "applicableCells": 6,
         "currentCompleteCells": 3,
-        "currentCompletePercent": 100
+        "currentCompletePercent": 50
       }
     ],
     "priorityCompletion": [
       {
         "priority": "regulated",
-        "applicableCells": 1,
+        "applicableCells": 36,
         "currentCompleteCells": 1,
-        "currentCompletePercent": 100
+        "currentCompletePercent": 2.78
       },
       {
         "priority": "high",
@@ -428,18 +428,24 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 4,
+        "applicableCells": 41,
         "currentCompleteCells": 4,
-        "currentCompletePercent": 100
+        "currentCompletePercent": 9.76
       },
       {
         "priority": "baseline",
-        "applicableCells": 13,
+        "applicableCells": 26,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       }
     ],
     "requiredSourceStatus": [
+      {
+        "sourceId": "gbif-preserved-specimens",
+        "applicableCells": 85,
+        "currentCompleteCells": 0,
+        "processed": false
+      },
       {
         "sourceId": "usgs-nas",
         "applicableCells": 5,
@@ -456,8 +462,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "alternanthera-sessilis",
@@ -466,8 +474,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "arctotheca-calendula",
@@ -476,8 +486,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "asphodelus-fistulosus",
@@ -486,8 +498,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "avena-sterilis",
@@ -496,8 +510,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "azolla-pinnata",
@@ -506,8 +522,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "commelina-benghalensis",
@@ -516,8 +534,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "crupina-vulgaris",
@@ -526,8 +546,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "eichhornia-azurea",
@@ -536,8 +558,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "emex-australis",
@@ -546,8 +570,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "emex-spinosa",
@@ -556,8 +582,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "euphorbia-terracina",
@@ -566,8 +594,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "galega-officinalis",
@@ -576,8 +606,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "giant-hogweed",
@@ -586,8 +618,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "hydrilla",
@@ -596,8 +630,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "ipomoea-aquatica",
@@ -606,8 +642,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "limnophila-sessiliflora",
@@ -616,8 +654,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "lycium-ferocissimum",
@@ -626,8 +666,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "mikania-micrantha",
@@ -636,8 +678,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "nassella-trichotoma",
@@ -646,8 +690,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "onopordum-illyricum",
@@ -656,8 +702,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "ottelia-alismoides",
@@ -666,8 +714,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "rottboellia-cochinchinensis",
@@ -676,8 +726,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "saccharum-spontaneum",
@@ -686,8 +738,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "salvinia-molesta",
@@ -696,8 +750,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "solanum-torvum",
@@ -706,8 +762,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "sparganium-erectum",
@@ -716,8 +774,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "tridax-procumbens",
@@ -726,8 +786,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "urochloa-panicoides",
@@ -736,8 +798,10 @@
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 67000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
     },
     {
       "speciesId": "syzygium-cumini",
@@ -746,8 +810,10 @@
       "category": "plants",
       "notResearchedCountyCount": 62,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 62000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 62001
     },
     {
       "speciesId": "melaleuca-quinquenervia",
@@ -756,8 +822,10 @@
       "category": "plants",
       "notResearchedCountyCount": 57,
       "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 57000
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 57001
     },
     {
       "speciesId": "emerald-ash-borer",
@@ -767,9 +835,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 67,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 671
+      "priorityScore": 672
     },
     {
       "speciesId": "anarsia-lineatella",
@@ -779,9 +848,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 67,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 671
+      "priorityScore": 672
     },
     {
       "speciesId": "discula-destructiva",
@@ -791,9 +861,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 67,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 671
+      "priorityScore": 672
     },
     {
       "speciesId": "dryocosmus-kuriphilus",
@@ -803,9 +874,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 67,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 671
+      "priorityScore": 672
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -815,9 +887,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 67,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 671
+      "priorityScore": 672
     },
     {
       "speciesId": "ophiostoma-ulmi",
@@ -827,9 +900,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 67,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 671
+      "priorityScore": 672
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -839,9 +913,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 67,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 671
+      "priorityScore": 672
     },
     {
       "speciesId": "akebia-quinata",
@@ -961,9 +1036,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 66,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 661
+      "priorityScore": 662
     },
     {
       "speciesId": "arundo-donax",
@@ -972,8 +1048,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 66,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 660
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 661
     },
     {
       "speciesId": "celastrus-orbiculatus",
@@ -982,8 +1060,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 66,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 660
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 661
     },
     {
       "speciesId": "euonymus-alatus",
@@ -992,8 +1072,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 66,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 660
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 661
     },
     {
       "speciesId": "euonymus-fortunei",
@@ -1002,8 +1084,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 66,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 660
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 661
     },
     {
       "speciesId": "schedonorus-arundinaceus",
@@ -1012,8 +1096,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 66,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 660
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 661
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -1023,9 +1109,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 65,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 651
+      "priorityScore": 652
     },
     {
       "speciesId": "homadaula-albizziae",
@@ -1035,9 +1122,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 65,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 651
+      "priorityScore": 652
     },
     {
       "speciesId": "paulownia-tomentosa",
@@ -1046,8 +1134,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 65,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 650
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 651
     },
     {
       "speciesId": "schefflera-actinophylla",
@@ -1056,8 +1146,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 65,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 650
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 651
     },
     {
       "speciesId": "tree-of-heaven",
@@ -1066,8 +1158,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 64,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 640
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 641
     },
     {
       "speciesId": "broussonetia-papyrifera",
@@ -1076,8 +1170,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 630
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 631
     },
     {
       "speciesId": "elaeagnus-pungens",
@@ -1086,8 +1182,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 630
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 631
     },
     {
       "speciesId": "eugenia-uniflora",
@@ -1096,8 +1194,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 630
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 631
     },
     {
       "speciesId": "leucaena-leucocephala",
@@ -1106,8 +1206,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 630
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 631
     },
     {
       "speciesId": "acacia-auriculiformis",
@@ -1116,8 +1218,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 62,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 620
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 621
     },
     {
       "speciesId": "lespedeza-cuneata",
@@ -1126,8 +1230,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 62,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 620
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 621
     },
     {
       "speciesId": "kudzu",
@@ -1136,8 +1242,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 62,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 620
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 621
     },
     {
       "speciesId": "vernicia-fordii",
@@ -1146,8 +1254,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 62,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 620
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 621
     },
     {
       "speciesId": "microstegium-vimineum",
@@ -1156,8 +1266,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 61,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 610
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 611
     },
     {
       "speciesId": "paederia-foetida",
@@ -1166,8 +1278,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 60,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 600
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 601
     },
     {
       "speciesId": "rhodomyrtus-tomentosa",
@@ -1176,8 +1290,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 60,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 600
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 601
     },
     {
       "speciesId": "cupaniopsis-anacardioides",
@@ -1186,8 +1302,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 57,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 570
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 571
     },
     {
       "speciesId": "nandina-domestica",
@@ -1196,8 +1314,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 56,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 560
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 561
     },
     {
       "speciesId": "solanum-tampicense",
@@ -1206,8 +1326,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 55,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 550
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 551
     },
     {
       "speciesId": "hygrophila-polysperma",
@@ -1216,8 +1338,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 49,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 490
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 491
     },
     {
       "speciesId": "lantana-camara",
@@ -1226,8 +1350,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 49,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 490
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 491
     },
     {
       "speciesId": "abrus-precatorius",
@@ -1236,8 +1362,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 47,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 470
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 471
     },
     {
       "speciesId": "ligustrum-japonicum",
@@ -1246,8 +1374,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 47,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 470
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 471
     },
     {
       "speciesId": "melia-azedarach",
@@ -1256,8 +1386,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 47,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 470
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 471
     },
     {
       "speciesId": "solanum-viarum",
@@ -1266,8 +1398,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 46,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 460
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 461
     },
     {
       "speciesId": "ardisia-crenata",
@@ -1276,8 +1410,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 45,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 450
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 451
     },
     {
       "speciesId": "pterygoplichthys-multiradiatus",
@@ -1286,8 +1422,10 @@
       "category": "wildlife",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 45,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 450
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 451
     },
     {
       "speciesId": "icerya-purchasi",
@@ -1297,9 +1435,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 43,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 431
+      "priorityScore": 432
     },
     {
       "speciesId": "lygodium-microphyllum",
@@ -1308,8 +1447,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 42,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 420
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 421
     },
     {
       "speciesId": "lonicera-japonica",
@@ -1318,8 +1459,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 39,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 390
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 391
     },
     {
       "speciesId": "aspidiotus-duplex",
@@ -1329,9 +1472,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 37,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 371
+      "priorityScore": 372
     },
     {
       "speciesId": "albizia-julibrissin",
@@ -1340,8 +1484,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 34,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 340
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 341
     },
     {
       "speciesId": "urena-lobata",
@@ -1350,8 +1496,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 34,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 340
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 341
     },
     {
       "speciesId": "imperata-cylindrica",
@@ -1360,8 +1508,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 27,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 270
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 271
     },
     {
       "speciesId": "cinnamomum-camphora",
@@ -1370,8 +1520,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 26,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 260
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 261
     },
     {
       "speciesId": "osteopilus-septentrionalis",
@@ -1380,8 +1532,10 @@
       "category": "wildlife",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 26,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 260
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 261
     },
     {
       "speciesId": "pomacea-maculata",
@@ -1390,8 +1544,10 @@
       "category": "wildlife",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 25,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 250
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 251
     },
     {
       "speciesId": "triadica-sebifera",
@@ -1400,8 +1556,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 20,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 200
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 201
     },
     {
       "speciesId": "lygodium-japonicum",
@@ -1410,8 +1568,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 16,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 160
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 161
     },
     {
       "speciesId": "salvinia-minima",
@@ -1420,8 +1580,10 @@
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 150
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 151
     },
     {
       "speciesId": "raffaelea-lauricola",
@@ -1431,9 +1593,10 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 0,
       "missingProtocolSourceIds": [
+        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 1
+      "priorityScore": 2
     }
   ]
 }

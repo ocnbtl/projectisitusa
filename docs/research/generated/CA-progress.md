@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.14%`
 - Research coverage: `2.08%`
 - Explicit outcome coverage: `2.0767%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `147`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `12.24%`
+- Current protocol completion: `3.40%`
 - Evidence records: `209`
 - Research runs: `7`
 - Rejection records: `31`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Paradox acacia (`acacia-paradoxa`) | plants | 58 | 0 | 0 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 58 | 0 | 0 |
-| Barbed goatgrass (`aegilops-triuncialis`) | plants | 58 | 0 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 58 | 0 | 0 |
-| Camelthorn (`alhagi-maurorum`) | plants | 58 | 0 | 0 |
-| Crow Garlic (`allium-vineale`) | plants | 58 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 58 | 0 | 0 |
-| White bladderflower (`araujia-sericifera`) | plants | 58 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 58 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 58 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 58 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 58 | 0 | 0 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 58 | 0 | 0 |
-| Slender false brome (`brachypodium-sylvaticum`) | plants | 58 | 0 | 0 |
-| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 58 | 0 | 0 |
-| Curly plumeless thistle (`carduus-crispus`) | plants | 58 | 0 | 0 |
-| Woolly distaff thistle (`carthamus-lanatus`) | plants | 58 | 0 | 0 |
-| Red star-thistle (`centaurea-calcitrapa`) | plants | 58 | 0 | 0 |
-| Brownray knapweed (`centaurea-jacea`) | plants | 58 | 0 | 0 |
-| Spotted Knapweed (`centaurea-stoebe`) | plants | 58 | 0 | 0 |
-| Crossflower (`chorispora-tenella`) | plants | 58 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 58 | 0 | 0 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 58 | 0 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 58 | 0 | 0 |
-| Cantaloupe (`cucumis-melo`) | plants | 58 | 0 | 0 |
+| Paradox acacia (`acacia-paradoxa`) | plants | 58 | 0 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 58 | 0 | 1 |
+| Barbed goatgrass (`aegilops-triuncialis`) | plants | 58 | 0 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 58 | 0 | 1 |
+| Camelthorn (`alhagi-maurorum`) | plants | 58 | 0 | 1 |
+| Crow Garlic (`allium-vineale`) | plants | 58 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 58 | 0 | 1 |
+| White bladderflower (`araujia-sericifera`) | plants | 58 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 58 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 58 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 58 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 58 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 58 | 0 | 1 |
+| Slender false brome (`brachypodium-sylvaticum`) | plants | 58 | 0 | 1 |
+| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 58 | 0 | 1 |
+| Curly plumeless thistle (`carduus-crispus`) | plants | 58 | 0 | 1 |
+| Woolly distaff thistle (`carthamus-lanatus`) | plants | 58 | 0 | 1 |
+| Red star-thistle (`centaurea-calcitrapa`) | plants | 58 | 0 | 1 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 58 | 0 | 1 |
+| Spotted Knapweed (`centaurea-stoebe`) | plants | 58 | 0 | 1 |
+| Crossflower (`chorispora-tenella`) | plants | 58 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 58 | 0 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 58 | 0 | 1 |
+| Common crupina (`crupina-vulgaris`) | plants | 58 | 0 | 1 |
+| Cantaloupe (`cucumis-melo`) | plants | 58 | 0 | 1 |
 
 ## Source Operations
 

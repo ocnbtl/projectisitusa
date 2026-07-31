@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r7",
+  "observedAt": "2026-07-31T05:42:36.0398414Z",
+  "durationSeconds": 5,
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalProcessors": 16,
+    "totalPhysicalMemoryBytes": 33450536960
+  },
+  "availableMemoryMib": {
+    "minimum": 14749,
+    "mean": 14809.4,
+    "maximum": 14839
+  },
+  "commitChargePercent": {
+    "minimum": 63.29,
+    "mean": 63.4,
+    "maximum": 63.53
+  },
+  "pageReadsPerSecond": {
+    "minimum": 2.97,
+    "mean": 6.72,
+    "maximum": 19.72
+  },
+  "pageWritesPerSecond": {
+    "minimum": 0,
+    "mean": 0,
+    "maximum": 0
+  },
+  "processorUtilizationPercent": {
+    "minimum": 8.34,
+    "mean": 13.52,
+    "maximum": 20.16
+  },
+  "disk": {
+    "drive": "C:",
+    "freeGib": 1087.23,
+    "totalGib": 1861.98,
+    "freePercent": 58.39
+  },
+  "capacityTier": "green",
+  "capacityTierReasons": [
+    "Available memory remained above 14 GiB and above the preferred 25 percent reserve.",
+    "Commit charge remained below 64 percent.",
+    "Page input stayed below 20 pages per second and page output remained zero.",
+    "Disk retained more than 1 TiB free and 58 percent headroom."
+  ],
+  "schedulerDecision": {
+    "acquisitionConcurrency": 4,
+    "platformConcurrentWorkerSlotsAvailable": 3,
+    "artifactConcurrency": 3,
+    "lightweightConcurrency": 8,
+    "sharedCompilerConcurrency": 1,
+    "mainIntegrationConcurrency": 1,
+    "userApplicationsClosedByMain": 0,
+    "nextAction": "Plan four non-overlapping multi-state GBIF lanes, execute three concurrently because the current task exposes three worker slots, then execute the fourth without weakening machine resource policy."
+  },
+  "processContext": {
+    "activeProjectWorkerProcessesObserved": 0,
+    "measurementProcessExcluded": true,
+    "note": "Node processes belonged to Codex runtimes and tooling. No node or Git command line identified an active Project Isitusa acquisition or compiler process."
+  },
+  "contradictionsPreserved": [
+    "The r4 sample was red with 1814 to 1923 MiB available, commit charge above 95 percent, and high page input while a user-owned application consumed substantial memory.",
+    "The r5, r6, and this r7 sample are green. The available worker topology remains limited to three concurrent worker agents by the current task runtime even though the machine resource envelope supports four acquisition lanes.",
+    "The r4 reason text cites a 4096 page-read threshold while the current resource policy hard-red threshold is 500 pages per second. The r4 observation exceeded both thresholds, so its red decision remains valid even though its explanatory threshold text is stale."
+  ]
+}

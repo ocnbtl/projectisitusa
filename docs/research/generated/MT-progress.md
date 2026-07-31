@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.19%`
 - Research coverage: `3.35%`
 - Explicit outcome coverage: `3.3546%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `88`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `20.45%`
+- Current protocol completion: `5.68%`
 - Evidence records: `267`
 - Research runs: `7`
 - Rejection records: `6`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 56 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 56 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 56 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 56 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 56 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 56 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 56 | 0 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 56 | 0 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 56 | 0 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 56 | 0 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 56 | 0 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 56 | 0 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 56 | 0 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 56 | 0 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 56 | 0 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 56 | 0 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 56 | 0 | 0 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 56 | 0 | 0 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 56 | 0 | 0 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 56 | 0 | 0 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 56 | 0 | 0 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 56 | 0 | 0 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 56 | 0 | 0 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 56 | 0 | 0 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 56 | 0 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 56 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 56 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 56 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 56 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 56 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 56 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 56 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 56 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 56 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 56 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 56 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 56 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 56 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 56 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 56 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 56 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 56 | 0 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 56 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 56 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 56 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 56 | 0 | 1 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 56 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 56 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 56 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 56 | 0 | 1 |
 
 ## Source Operations
 

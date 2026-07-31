@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.66%`
 - Research coverage: `2.04%`
 - Explicit outcome coverage: `2.0367%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `97`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `18.56%`
+- Current protocol completion: `5.15%`
 - Evidence records: `1022`
 - Research runs: `7`
 - Rejection records: `172`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 62 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 62 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 62 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 62 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 62 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 62 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 62 | 0 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 62 | 0 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 62 | 0 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 62 | 0 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 62 | 0 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 62 | 0 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 62 | 0 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 62 | 0 | 0 |
-| Hydrilla (`hydrilla`) | plants | 62 | 0 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 62 | 0 | 0 |
-| Cogongrass (`imperata-cylindrica`) | plants | 62 | 0 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 62 | 0 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 62 | 0 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 62 | 0 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 62 | 0 | 0 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 62 | 0 | 0 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 62 | 0 | 0 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 62 | 0 | 0 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 62 | 0 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 62 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 62 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 62 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 62 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 62 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 62 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 62 | 0 | 1 |
+| Common crupina (`crupina-vulgaris`) | plants | 62 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 62 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 62 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 62 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 62 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 62 | 0 | 1 |
+| Giant Hogweed (`giant-hogweed`) | plants | 62 | 0 | 1 |
+| Hydrilla (`hydrilla`) | plants | 62 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 62 | 0 | 1 |
+| Cogongrass (`imperata-cylindrica`) | plants | 62 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 62 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 62 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 62 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 62 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 62 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 62 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 62 | 0 | 1 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 62 | 0 | 1 |
 
 ## Source Operations
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-26",
+  "updatedAt": "2026-07-31",
   "protocols": [
     {
       "id": "alabama-explicit-migration-v2",
@@ -317,7 +317,7 @@
     },
     {
       "id": "national-usgs-nas-v1",
-      "label": "Versioned USGS NAS national county-equivalent screens",
+      "label": "National GBIF, AFPE, and versioned USGS NAS county-equivalent screens",
       "stateCodes": [
         "CA",
         "CO",
@@ -369,10 +369,12 @@
       ],
       "status": "active",
       "sourceUniverse": [
+        "gbif-preserved-specimens",
         "usfs-afpe",
         "usgs-nas"
       ],
       "requiredCurrentSourceIds": [
+        "gbif-preserved-specimens",
         "usgs-nas"
       ],
       "priorityPolicy": {
@@ -380,6 +382,25 @@
         "classificationComplete": true
       },
       "rules": [
+        {
+          "ruleId": "national-state-applicability-gbif-v1",
+          "speciesSelector": {
+            "kind": "state-applicability",
+            "values": [
+              "applicable"
+            ]
+          },
+          "applicableSourceIds": [
+            "gbif-preserved-specimens"
+          ],
+          "basis": [
+            {
+              "kind": "national-source-policy",
+              "reference": "src/data/research/source-registry.json#gbif-preserved-specimens",
+              "note": "GBIF preserved-specimen screening is applicable to species with an independently established applicable state decision across active county equivalents. This source rule creates a research obligation only and never establishes presence, absence, not-detected, or state applicability by itself."
+            }
+          ]
+        },
         {
           "ruleId": "usfs-afpe-reviewed-taxa-v1",
           "speciesSelector": {

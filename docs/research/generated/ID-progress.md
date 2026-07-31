@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.14%`
 - Research coverage: `3.47%`
 - Explicit outcome coverage: `3.4744%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `113`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `15.93%`
+- Current protocol completion: `4.42%`
 - Evidence records: `158`
 - Research runs: `7`
 - Rejection records: `6`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 44 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 44 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 44 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 44 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 44 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 44 | 0 | 0 |
-| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 44 | 0 | 0 |
-| Spotted Knapweed (`centaurea-stoebe`) | plants | 44 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 44 | 0 | 0 |
-| Brazilian Waterweed (`egeria-densa`) | plants | 44 | 0 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 44 | 0 | 0 |
-| Water Hyacinth (`eichhornia-crassipes`) | plants | 44 | 0 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 44 | 0 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 44 | 0 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 44 | 0 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 44 | 0 | 0 |
-| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 44 | 0 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 44 | 0 | 0 |
-| Himalayan Balsam (`impatiens-glandulifera`) | plants | 44 | 0 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 44 | 0 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 44 | 0 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 44 | 0 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 44 | 0 | 0 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 44 | 0 | 0 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 44 | 0 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 44 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 44 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 44 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 44 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 44 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 44 | 0 | 1 |
+| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 44 | 0 | 1 |
+| Spotted Knapweed (`centaurea-stoebe`) | plants | 44 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 44 | 0 | 1 |
+| Brazilian Waterweed (`egeria-densa`) | plants | 44 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 44 | 0 | 1 |
+| Water Hyacinth (`eichhornia-crassipes`) | plants | 44 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 44 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 44 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 44 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 44 | 0 | 1 |
+| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 44 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 44 | 0 | 1 |
+| Himalayan Balsam (`impatiens-glandulifera`) | plants | 44 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 44 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 44 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 44 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 44 | 0 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 44 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 44 | 0 | 1 |
 
 ## Source Operations
 

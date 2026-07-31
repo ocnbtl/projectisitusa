@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.84%`
 - Research coverage: `2.00%`
 - Explicit outcome coverage: `1.9968%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `102`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `17.65%`
+- Current protocol completion: `4.90%`
 - Evidence records: `63`
 - Research runs: `7`
 - Rejection records: `9`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Calamus (`acorus-calamus`) | plants | 3 | 0 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 3 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 3 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 3 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 3 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 3 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 3 | 0 | 0 |
-| Sweet Autumn Clematis (`clematis-terniflora`) | plants | 3 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 3 | 0 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 3 | 0 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 3 | 0 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 3 | 0 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 3 | 0 | 0 |
-| Winged Burning Bush (`euonymus-alatus`) | plants | 3 | 0 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 3 | 0 | 0 |
-| Japanese Knotweed (`fallopia-japonica`) | plants | 3 | 0 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 3 | 0 | 0 |
-| Orange Daylily (`hemerocallis-fulva`) | plants | 3 | 0 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 3 | 0 | 0 |
-| Hydrilla (`hydrilla`) | plants | 3 | 0 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 3 | 0 | 0 |
-| Cogongrass (`imperata-cylindrica`) | plants | 3 | 0 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 3 | 0 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 3 | 0 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 3 | 0 | 0 |
+| Calamus (`acorus-calamus`) | plants | 3 | 0 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 3 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 3 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 3 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 3 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 3 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 3 | 0 | 1 |
+| Sweet Autumn Clematis (`clematis-terniflora`) | plants | 3 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 3 | 0 | 1 |
+| Common crupina (`crupina-vulgaris`) | plants | 3 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 3 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 3 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 3 | 0 | 1 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 3 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 3 | 0 | 1 |
+| Japanese Knotweed (`fallopia-japonica`) | plants | 3 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 3 | 0 | 1 |
+| Orange Daylily (`hemerocallis-fulva`) | plants | 3 | 0 | 1 |
+| Giant Hogweed (`giant-hogweed`) | plants | 3 | 0 | 1 |
+| Hydrilla (`hydrilla`) | plants | 3 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 3 | 0 | 1 |
+| Cogongrass (`imperata-cylindrica`) | plants | 3 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 3 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 3 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 3 | 0 | 1 |
 
 ## Source Operations
 

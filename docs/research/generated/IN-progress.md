@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.46%`
 - Research coverage: `2.00%`
 - Explicit outcome coverage: `1.9968%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `120`
 - Current complete protocol cells: `5`
-- Protocol completion: `100.00%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `15.00%`
+- Current protocol completion: `4.17%`
 - Evidence records: `1078`
 - Research runs: `7`
 - Rejection records: `7`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 92 | 0 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 92 | 0 | 0 |
-| European Alder (`alnus-glutinosa`) | plants | 92 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 92 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 92 | 0 | 0 |
-| Mugwort (`artemisia-vulgaris`) | plants | 92 | 0 | 0 |
-| Small Carpgrass (`arthraxon-hispidus`) | plants | 92 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 92 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 92 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 92 | 0 | 0 |
-| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 92 | 0 | 0 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 92 | 0 | 0 |
-| Spotted Knapweed (`centaurea-stoebe`) | plants | 92 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 92 | 0 | 0 |
-| Poison Hemlock (`conium-maculatum`) | plants | 92 | 0 | 0 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 92 | 0 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 92 | 0 | 0 |
-| Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 92 | 0 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 92 | 0 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 92 | 0 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 92 | 0 | 0 |
-| Wintercreeper (`euonymus-fortunei`) | plants | 92 | 0 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 92 | 0 | 0 |
-| Leafy Spurge (`euphorbia-virgata`) | plants | 92 | 0 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 92 | 0 | 0 |
+| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 92 | 0 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 92 | 0 | 1 |
+| European Alder (`alnus-glutinosa`) | plants | 92 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 92 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 92 | 0 | 1 |
+| Mugwort (`artemisia-vulgaris`) | plants | 92 | 0 | 1 |
+| Small Carpgrass (`arthraxon-hispidus`) | plants | 92 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 92 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 92 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 92 | 0 | 1 |
+| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 92 | 0 | 1 |
+| Nodding plumeless thistle (`carduus-nutans`) | plants | 92 | 0 | 1 |
+| Spotted Knapweed (`centaurea-stoebe`) | plants | 92 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 92 | 0 | 1 |
+| Poison Hemlock (`conium-maculatum`) | plants | 92 | 0 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 92 | 0 | 1 |
+| Common crupina (`crupina-vulgaris`) | plants | 92 | 0 | 1 |
+| Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 92 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 92 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 92 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 92 | 0 | 1 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 92 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 92 | 0 | 1 |
+| Leafy Spurge (`euphorbia-virgata`) | plants | 92 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 92 | 0 | 1 |
 
 ## Source Operations
 

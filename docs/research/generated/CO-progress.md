@@ -15,10 +15,10 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Determination coverage: `0.25%`
 - Research coverage: `4.19%`
 - Explicit outcome coverage: `4.1852%`
-- Applicable protocol cells: `18`
+- Applicable protocol cells: `151`
 - Current complete protocol cells: `5`
-- Protocol completion: `27.78%`
-- Current protocol completion: `27.78%`
+- Protocol completion: `3.31%`
+- Current protocol completion: `3.31%`
 - Evidence records: `394`
 - Research runs: `8`
 - Rejection records: `36`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 64 | 0 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 64 | 0 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 64 | 0 | 0 |
-| Tall Oatgrass (`arrhenatherum-elatius`) | plants | 64 | 0 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 64 | 0 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 64 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 64 | 0 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 64 | 0 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 64 | 0 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 64 | 0 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 64 | 0 | 0 |
-| Codlins and cream (`epilobium-hirsutum`) | plants | 64 | 0 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 64 | 0 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 64 | 0 | 0 |
-| Bachelor's button (`gypsophila-paniculata`) | plants | 64 | 0 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 64 | 0 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 64 | 0 | 0 |
-| Perennial pea (`lathyrus-latifolius`) | plants | 64 | 0 | 0 |
-| Whitetop (`lepidium-draba`) | plants | 64 | 0 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 64 | 0 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 64 | 0 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 64 | 0 | 0 |
-| Garden yellow loosestrife (`lysimachia-vulgaris`) | plants | 64 | 0 | 0 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 64 | 0 | 0 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 64 | 0 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 64 | 0 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 64 | 0 | 1 |
+| Capeweed (`arctotheca-calendula`) | plants | 64 | 0 | 1 |
+| Tall Oatgrass (`arrhenatherum-elatius`) | plants | 64 | 0 | 1 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 64 | 0 | 1 |
+| Animated oat (`avena-sterilis`) | plants | 64 | 0 | 1 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 64 | 0 | 1 |
+| Jio (`commelina-benghalensis`) | plants | 64 | 0 | 1 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 64 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 64 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 64 | 0 | 1 |
+| Codlins and cream (`epilobium-hirsutum`) | plants | 64 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 64 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 64 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 64 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 64 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 64 | 0 | 1 |
+| Perennial pea (`lathyrus-latifolius`) | plants | 64 | 0 | 1 |
+| Whitetop (`lepidium-draba`) | plants | 64 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 64 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 64 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 64 | 0 | 1 |
+| Garden yellow loosestrife (`lysimachia-vulgaris`) | plants | 64 | 0 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 64 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 64 | 0 | 1 |
 
 ## Source Operations
 
