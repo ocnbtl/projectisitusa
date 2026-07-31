@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-archive-recovery-20260731-r4-az-001-1",
+  "jobId": "gbif-archive-recovery-20260731-r4-az-001",
+  "leaseId": "lease-gbif-archive-recovery-20260731-r4-az-001-1",
+  "workerCommit": "ddfea1767bb11ad4ed81ee7d3319c8a628402fc8",
+  "workerBranchHead": "be60f848a610f2c5a750f9592b979d26390fca06",
+  "manifestHash": "32e17a8dbec2c066b160d4e464daff5185dfd1bbbf0ecd228da98c60e461b58a",
+  "changedPaths": [
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-alternanthera-sessilis-000000.json.gz",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-azolla-pinnata-000000.json.gz",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-alternanthera-sessilis.json.gz",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-azolla-pinnata.json.gz",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/assertions.ndjson",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/manifest.json",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/outcomes.ndjson",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/receipt.json",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/rejections.ndjson",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/reviews.ndjson",
+    "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "transactional immutable-content and finalized-manifest cherry-picks",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact worker-to-main tree-entry parity for every reviewed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Integrated the accepted Arizona net-new archive recovery transactionally with exact worker bytes and zero conflicts after the prior Georgia integration was durably committed.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-31T13:08:57.2773712Z",
+  "integrationCommit": "242ab24dbaf8e8af372bc81625be85d3f6579a4b"
+}

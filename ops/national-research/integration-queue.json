@@ -7656,7 +7656,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r4-az-001-1",
       "jobId": "gbif-archive-recovery-20260731-r4-az-001",
       "leaseId": "lease-gbif-archive-recovery-20260731-r4-az-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T13:06:28.0092323Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r4-az-001__lease-gbif-archive-recovery-20260731-r4-az-001-1.json",
       "manifestHash": "32e17a8dbec2c066b160d4e464daff5185dfd1bbbf0ecd228da98c60e461b58a",
@@ -7705,6 +7705,37 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r4-az-001-1.json",
         "sha256": "e944cb88e4e8a154bca7d4c21c2ca7c83b55c93469760d2b11fe41304592e205",
         "bytes": 2678
+      },
+      "integratedAt": "2026-07-31T13:08:57.2773712Z",
+      "integrator": "MAIN",
+      "integrationCommit": "242ab24dbaf8e8af372bc81625be85d3f6579a4b",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated the accepted Arizona net-new archive recovery transactionally with exact worker bytes and zero conflicts after the prior Georgia integration was durably committed.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r4-az-001-1.json",
+        "sha256": "9bd4e3d8b7a90c97aae0d0e52ff3f7090ab70800c18a53caa340ad2300fc461f",
+        "bytes": 2661
       }
     }
   ]
