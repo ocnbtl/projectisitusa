@@ -68,7 +68,7 @@ export function SpeciesCard({
 
   return (
     <article className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)] p-4">
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
         <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-[var(--border)] bg-transparent">
           {species.image && !imageFailed ? (
             <Image

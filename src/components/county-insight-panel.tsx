@@ -143,7 +143,7 @@ export function CountyInsightPanel({
         ) : null}
       </div>
 
-      <div className="mt-5 grid gap-6">
+      <div className="mt-5 grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6">
         <div className="grid w-full grid-cols-[0.72fr_1.38fr_1.6fr] gap-2">
           <button
             type="button"
@@ -245,7 +245,7 @@ export function CountyInsightPanel({
             />
           </section>
         ) : (
-          <section className="grid gap-4">
+          <section className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-[var(--foreground)]">
@@ -260,7 +260,7 @@ export function CountyInsightPanel({
                 </p>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <div className="text-sm text-[var(--muted)]">
                   {activeSpecies.length.toLocaleString()} found
                 </div>
