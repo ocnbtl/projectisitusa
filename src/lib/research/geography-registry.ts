@@ -68,6 +68,9 @@ const stateRegistry = stateRegistryJson as {
     countyEquivalentCount: number;
     certificationOrder: string[];
     activeCertificationStateCode: string;
+    activeCertificationCohort: number;
+    nextCertificationCohort: number;
+    certificationCohorts: Array<{ cohort: number; stateCodes: string[] }>;
     pilotStateCodes: string[];
   };
   jurisdictions: StateRegistryEntry[];

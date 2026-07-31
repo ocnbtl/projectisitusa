@@ -9,6 +9,13 @@ type JobsFile = { jobs: Array<{ jobId: string; state: string; stateOrSourceScope
 type LeasesFile = { leases: Array<{ leaseId: string; state: string; stateOrSourceScope?: { states?: string[] } }> };
 type QueueFile = { items: Array<{ decision: string; manualInterventions?: number; conflicts?: number }> };
 type StateRegistryFile = {
+  nationalV1: {
+    certificationOrder: string[];
+    activeCertificationStateCode: string;
+    activeCertificationCohort: number;
+    nextCertificationCohort: number;
+    certificationCohorts: Array<{ cohort: number; stateCodes: string[] }>;
+  };
   jurisdictions: Array<{ stateCode: string; countyEquivalentCount: number; nationalV1Scope: boolean }>;
 };
 type SkillEvaluation = {
@@ -335,6 +342,14 @@ const researchAccountedJurisdictionCodes = states
   .filter((entry) => entry.stateSpeciesResearch.fullCatalogResearchAccounted)
   .map((entry) => entry.stateCode)
   .sort();
+const activeCertificationCohort = stateRegistry.nationalV1.certificationCohorts.find(
+  (entry) => entry.cohort === stateRegistry.nationalV1.activeCertificationCohort,
+);
+const nextCertificationCohort = stateRegistry.nationalV1.certificationCohorts.find(
+  (entry) => entry.cohort === stateRegistry.nationalV1.nextCertificationCohort,
+);
+assert(activeCertificationCohort, "Active certification cohort is missing from the state registry.");
+assert(nextCertificationCohort, "Next certification cohort is missing from the state registry.");
 const denominator = states.reduce(
   (total, state) => {
     total.fullStateSpeciesDenominator +=
@@ -505,6 +520,24 @@ const dashboard = {
   },
   national: {
     denominator,
+    certification: {
+      activeCohort: activeCertificationCohort.cohort,
+      activeStateCode: stateRegistry.nationalV1.activeCertificationStateCode,
+      activeStates: activeCertificationCohort.stateCodes.map((stateCode) => {
+        const state = states.find((entry) => entry.stateCode === stateCode);
+        assert(state, `Active certification state ${stateCode} is not configured.`);
+        return {
+          stateCode,
+          buildTimeReady: state.buildTimeReady,
+          blockers: state.buildTimeBlockers,
+        };
+      }),
+      nextCohort: nextCertificationCohort.cohort,
+      nextStates: nextCertificationCohort.stateCodes,
+      cohorts: stateRegistry.nationalV1.certificationCohorts,
+      promotionPolicy:
+        "Promote the next cohort when the active cohort is certified. Blocked states retain their blockers while independent states and the next cohort continue.",
+    },
     buildTimeReadyStates: states
       .filter((entry) => entry.buildTimeReady)
       .map((entry) => entry.stateCode),

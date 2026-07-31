@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {
+  classifyCapacityTier,
   evaluateDiskBudget,
   maximumWorkersForResources,
   type NationalResourcePolicy,
@@ -22,7 +23,7 @@ assert.equal(
     totalMemoryBytes: 33450536960,
     availableMemoryBytes: 7340032000,
   }),
-  0,
+  2,
 );
 assert.equal(
   maximumWorkersForResources(policy, "acquisition", {
@@ -48,6 +49,23 @@ assert.equal(
   }),
   3,
 );
+assert.deepEqual(
+  classifyCapacityTier(policy, {
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 7340032000,
+  }).tier,
+  "yellow",
+);
+assert.deepEqual(
+  classifyCapacityTier(policy, {
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 958275584,
+    commitChargePercent: 91.96,
+    pageReadsPerSecond: 428.28,
+    pageWritesPerSecond: 0,
+  }).tier,
+  "red",
+);
 
 const fourWorkerCalibration = evaluateDiskBudget(policy, {
   phase: "preflight",
@@ -71,8 +89,21 @@ const blockedCurrentMemoryWave = evaluateDiskBudget(policy, {
   artifactBudgetBytes: 83886080,
 });
 assert.equal(blockedCurrentMemoryWave.ok, false);
-assert.match(blockedCurrentMemoryWave.errors.join(" "), /at most 0/);
+assert.match(blockedCurrentMemoryWave.errors.join(" "), /at most 2/);
 assert.match(blockedCurrentMemoryWave.errors.join(" "), /RAM headroom failed/);
+
+const yellowTwoWorkerWave = evaluateDiskBudget(policy, {
+  phase: "preflight",
+  operation: "dispatch",
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 7340032000,
+  workers: 2,
+  artifactBudgetBytes: 41943040,
+});
+assert.equal(yellowTwoWorkerWave.ok, true);
+assert.equal(yellowTwoWorkerWave.capacityTier, "yellow");
+assert.equal(yellowTwoWorkerWave.maximumWorkersAtCurrentCapacity, 2);
 
 const oversizedArtifacts = evaluateDiskBudget(policy, {
   phase: "preflight",
@@ -97,7 +128,7 @@ const sequentialHeavy = evaluateDiskBudget(policy, {
 });
 assert.equal(sequentialHeavy.ok, true);
 
-const memoryBlockedSharedHeavy = evaluateDiskBudget(policy, {
+const yellowSharedHeavy = evaluateDiskBudget(policy, {
   phase: "preflight",
   operation: "heavy",
   ...desktopDisk,
@@ -106,8 +137,24 @@ const memoryBlockedSharedHeavy = evaluateDiskBudget(policy, {
   workers: 1,
   artifactBudgetBytes: 0,
 });
-assert.equal(memoryBlockedSharedHeavy.ok, false);
-assert.match(memoryBlockedSharedHeavy.errors.join(" "), /RAM headroom failed/);
+assert.equal(yellowSharedHeavy.ok, true);
+assert.equal(yellowSharedHeavy.capacityTier, "yellow");
+
+const redSharedHeavy = evaluateDiskBudget(policy, {
+  phase: "preflight",
+  operation: "heavy",
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 958275584,
+  commitChargePercent: 91.96,
+  pageReadsPerSecond: 428.28,
+  pageWritesPerSecond: 0,
+  workers: 1,
+  artifactBudgetBytes: 0,
+});
+assert.equal(redSharedHeavy.ok, false);
+assert.equal(redSharedHeavy.capacityTier, "red");
+assert.match(redSharedHeavy.errors.join(" "), /Red resource tier pauses shared/);
 
 const parallelHeavy = evaluateDiskBudget(policy, {
   phase: "preflight",
@@ -179,6 +226,21 @@ const failedPostflight = evaluateDiskBudget(policy, {
 });
 assert.equal(failedPostflight.ok, false);
 assert.match(failedPostflight.errors.join(" "), /Free-space floor failed/);
-assert.match(failedPostflight.errors.join(" "), /RAM headroom floor failed/);
+assert.doesNotMatch(failedPostflight.errors.join(" "), /red tier/);
+
+const redPostflight = evaluateDiskBudget(policy, {
+  phase: "postflight",
+  operation: "dispatch",
+  ...desktopDisk,
+  totalMemoryBytes: 33450536960,
+  availableMemoryBytes: 958275584,
+  commitChargePercent: 91.96,
+  pageReadsPerSecond: 428.28,
+  pageWritesPerSecond: 0,
+  workers: 0,
+  artifactBudgetBytes: 0,
+});
+assert.equal(redPostflight.ok, false);
+assert.match(redPostflight.errors.join(" "), /entered the red tier/);
 
 console.log("National disk budget tests passed.");

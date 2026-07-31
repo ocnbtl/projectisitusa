@@ -10,13 +10,25 @@ type ConcurrencyTier = {
 };
 
 type WorkerClass = "acquisition" | "lightweight" | "artifact";
+export type CapacityTier = "green" | "yellow" | "red";
+
+type CapacityTierThresholds = {
+  greenMinimumAvailableRamPercent: number;
+  redBelowAvailableRamPercent: number;
+  redAtOrAboveCommitChargePercent: number;
+  redAtOrAbovePageReadsPerSecond: number;
+  redAtOrAbovePageWritesPerSecond: number;
+};
+
+type WorkerClassCaps = Record<WorkerClass, number>;
 
 export type NationalResourcePolicy = {
   schemaVersion: number;
   filesystemPath: string;
   minimumDiskHeadroomPercent: number;
   absoluteMinimumFreeBytes: number;
-  minimumRamHeadroomPercent: number;
+  preferredRamHeadroomPercent: number;
+  minimumOperationalRamHeadroomPercent: number;
   reservedDiskBytesPerWorker: number;
   maximumArtifactBytesPerWorker: number;
   maximumNationalAcquisitionArtifactBytes: number;
@@ -24,6 +36,9 @@ export type NationalResourcePolicy = {
   maximumWorkerWallMinutes: number;
   sharedHeavyTaskConcurrency: number;
   mainIntegrationConcurrency: number;
+  capacityTierThresholds: CapacityTierThresholds;
+  yellowConcurrencyCaps: WorkerClassCaps;
+  redConcurrencyCaps: WorkerClassCaps;
   heavyAcquisitionConcurrencyTiers: ConcurrencyTier[];
   lightweightConcurrencyTiers: ConcurrencyTier[];
   artifactProcessingConcurrencyTiers: ConcurrencyTier[];
@@ -48,6 +63,9 @@ export type DiskBudgetInput = {
   totalMemoryBytes: number;
   workers: number;
   artifactBudgetBytes: number;
+  commitChargePercent?: number;
+  pageReadsPerSecond?: number;
+  pageWritesPerSecond?: number;
 };
 
 export type DiskBudgetResult = {
@@ -64,6 +82,8 @@ export type DiskBudgetResult = {
   requiredAvailableMemoryBytes: number;
   projectedAvailableMemoryBytes: number;
   workerClass: WorkerClass | null;
+  capacityTier: CapacityTier;
+  capacityTierReasons: string[];
   errors: string[];
 };
 
@@ -79,7 +99,7 @@ export function validateNationalResourcePolicy(policy: NationalResourcePolicy): 
     "maximumNationalAcquisitionArtifactBytes",
   ];
 
-  if (policy.schemaVersion !== 2) errors.push("Unsupported resource policy schema version.");
+  if (policy.schemaVersion !== 3) errors.push("Unsupported resource policy schema version.");
   if (!path.isAbsolute(policy.filesystemPath)) errors.push("Resource policy filesystemPath must be absolute.");
   for (const field of byteFields) {
     if (!isFiniteNonnegativeInteger(policy[field])) errors.push(`${field} must be a nonnegative integer.`);
@@ -92,11 +112,20 @@ export function validateNationalResourcePolicy(policy: NationalResourcePolicy): 
     errors.push("minimumDiskHeadroomPercent must be between zero and 100.");
   }
   if (
-    !Number.isFinite(policy.minimumRamHeadroomPercent) ||
-    policy.minimumRamHeadroomPercent <= 0 ||
-    policy.minimumRamHeadroomPercent >= 100
+    !Number.isFinite(policy.preferredRamHeadroomPercent) ||
+    policy.preferredRamHeadroomPercent <= 0 ||
+    policy.preferredRamHeadroomPercent >= 100
   ) {
-    errors.push("minimumRamHeadroomPercent must be between zero and 100.");
+    errors.push("preferredRamHeadroomPercent must be between zero and 100.");
+  }
+  if (
+    !Number.isFinite(policy.minimumOperationalRamHeadroomPercent) ||
+    policy.minimumOperationalRamHeadroomPercent <= 0 ||
+    policy.minimumOperationalRamHeadroomPercent >= policy.preferredRamHeadroomPercent
+  ) {
+    errors.push(
+      "minimumOperationalRamHeadroomPercent must be positive and below preferredRamHeadroomPercent.",
+    );
   }
   for (const workerClass of ["acquisition", "lightweight", "artifact"] as const) {
     const reservation = policy.workerMemoryReservationsMb?.[workerClass];
@@ -112,6 +141,37 @@ export function validateNationalResourcePolicy(policy: NationalResourcePolicy): 
   }
   if (policy.mainIntegrationConcurrency !== 1) {
     errors.push("MAIN integration concurrency must remain exactly one.");
+  }
+  const thresholds = policy.capacityTierThresholds;
+  if (!thresholds || typeof thresholds !== "object") {
+    errors.push("capacityTierThresholds is required.");
+  } else {
+    const thresholdEntries = Object.entries(thresholds);
+    for (const [label, value] of thresholdEntries) {
+      if (!Number.isFinite(value) || value < 0) {
+        errors.push(`capacityTierThresholds.${label} must be a nonnegative number.`);
+      }
+    }
+    if (
+      thresholds.greenMinimumAvailableRamPercent !== policy.preferredRamHeadroomPercent ||
+      thresholds.redBelowAvailableRamPercent !== policy.minimumOperationalRamHeadroomPercent
+    ) {
+      errors.push("Capacity-tier RAM thresholds must match the policy headroom percentages.");
+    }
+  }
+  for (const [label, caps, maximums] of [
+    ["yellowConcurrencyCaps", policy.yellowConcurrencyCaps, { acquisition: 2, lightweight: 6, artifact: 1 }],
+    ["redConcurrencyCaps", policy.redConcurrencyCaps, { acquisition: 0, lightweight: 0, artifact: 0 }],
+  ] as const) {
+    if (!caps || typeof caps !== "object") {
+      errors.push(`${label} is required.`);
+      continue;
+    }
+    for (const workerClass of ["acquisition", "lightweight", "artifact"] as const) {
+      if (!Number.isInteger(caps[workerClass]) || caps[workerClass] < 0 || caps[workerClass] > maximums[workerClass]) {
+        errors.push(`${label}.${workerClass} is outside the allowed adaptive envelope.`);
+      }
+    }
   }
   const tierSets: Array<[string, ConcurrencyTier[] | undefined, number]> = [
     ["heavyAcquisitionConcurrencyTiers", policy.heavyAcquisitionConcurrencyTiers, 8],
@@ -179,8 +239,79 @@ function diskHeadroomBytes(policy: NationalResourcePolicy, totalBytes: number): 
   );
 }
 
-function ramHeadroomBytes(policy: NationalResourcePolicy, totalMemoryBytes: number): number {
-  return Math.ceil((totalMemoryBytes * policy.minimumRamHeadroomPercent) / 100);
+function ramHeadroomBytes(
+  policy: NationalResourcePolicy,
+  totalMemoryBytes: number,
+  capacityTier: CapacityTier,
+): number {
+  const percentage =
+    capacityTier === "green"
+      ? policy.preferredRamHeadroomPercent
+      : policy.minimumOperationalRamHeadroomPercent;
+  return Math.ceil((totalMemoryBytes * percentage) / 100);
+}
+
+export function classifyCapacityTier(
+  policy: NationalResourcePolicy,
+  resources: Pick<
+    DiskBudgetInput,
+    | "availableMemoryBytes"
+    | "totalMemoryBytes"
+    | "commitChargePercent"
+    | "pageReadsPerSecond"
+    | "pageWritesPerSecond"
+  >,
+): { tier: CapacityTier; reasons: string[] } {
+  const availableRamPercent =
+    resources.totalMemoryBytes > 0
+      ? (resources.availableMemoryBytes / resources.totalMemoryBytes) * 100
+      : 0;
+  const thresholds = policy.capacityTierThresholds;
+  const redReasons: string[] = [];
+  if (availableRamPercent < thresholds.redBelowAvailableRamPercent) {
+    redReasons.push(
+      `available RAM ${availableRamPercent.toFixed(2)} percent is below ${thresholds.redBelowAvailableRamPercent} percent`,
+    );
+  }
+  if (
+    resources.commitChargePercent !== undefined &&
+    resources.commitChargePercent >= thresholds.redAtOrAboveCommitChargePercent
+  ) {
+    redReasons.push(
+      `commit charge ${resources.commitChargePercent.toFixed(2)} percent is at or above ${thresholds.redAtOrAboveCommitChargePercent} percent`,
+    );
+  }
+  if (
+    resources.pageReadsPerSecond !== undefined &&
+    resources.pageReadsPerSecond >= thresholds.redAtOrAbovePageReadsPerSecond
+  ) {
+    redReasons.push(
+      `page reads ${resources.pageReadsPerSecond.toFixed(2)} per second are at or above ${thresholds.redAtOrAbovePageReadsPerSecond}`,
+    );
+  }
+  if (
+    resources.pageWritesPerSecond !== undefined &&
+    resources.pageWritesPerSecond >= thresholds.redAtOrAbovePageWritesPerSecond
+  ) {
+    redReasons.push(
+      `page writes ${resources.pageWritesPerSecond.toFixed(2)} per second are at or above ${thresholds.redAtOrAbovePageWritesPerSecond}`,
+    );
+  }
+  if (redReasons.length > 0) return { tier: "red", reasons: redReasons };
+  if (availableRamPercent >= thresholds.greenMinimumAvailableRamPercent) {
+    return {
+      tier: "green",
+      reasons: [
+        `available RAM ${availableRamPercent.toFixed(2)} percent meets the preferred ${thresholds.greenMinimumAvailableRamPercent} percent target`,
+      ],
+    };
+  }
+  return {
+    tier: "yellow",
+    reasons: [
+      `available RAM ${availableRamPercent.toFixed(2)} percent is below the preferred ${thresholds.greenMinimumAvailableRamPercent} percent target but above the red threshold`,
+    ],
+  };
 }
 
 export function maximumWorkersForResources(
@@ -188,9 +319,17 @@ export function maximumWorkersForResources(
   workerClass: WorkerClass,
   resources: Pick<
     DiskBudgetInput,
-    "availableBytes" | "totalBytes" | "availableMemoryBytes" | "totalMemoryBytes"
+    | "availableBytes"
+    | "totalBytes"
+    | "availableMemoryBytes"
+    | "totalMemoryBytes"
+    | "commitChargePercent"
+    | "pageReadsPerSecond"
+    | "pageWritesPerSecond"
   >,
 ): number {
+  const { tier: capacityTier } = classifyCapacityTier(policy, resources);
+  if (capacityTier === "red") return policy.redConcurrencyCaps[workerClass];
   let tierMaximum = 0;
   for (const tier of tiersForClass(policy, workerClass)) {
     if (
@@ -207,11 +346,16 @@ export function maximumWorkersForResources(
   const diskMaximum = Math.floor(availableDiskForWorkers / policy.reservedDiskBytesPerWorker);
   const availableMemoryForWorkers = Math.max(
     0,
-    resources.availableMemoryBytes - ramHeadroomBytes(policy, resources.totalMemoryBytes),
+    resources.availableMemoryBytes -
+      ramHeadroomBytes(policy, resources.totalMemoryBytes, capacityTier),
   );
   const memoryReservationBytes = policy.workerMemoryReservationsMb[workerClass] * 1024 * 1024;
   const memoryMaximum = Math.floor(availableMemoryForWorkers / memoryReservationBytes);
-  return Math.max(0, Math.min(tierMaximum, diskMaximum, memoryMaximum));
+  const adaptiveMaximum =
+    capacityTier === "yellow"
+      ? policy.yellowConcurrencyCaps[workerClass]
+      : tierMaximum;
+  return Math.max(0, Math.min(tierMaximum, adaptiveMaximum, diskMaximum, memoryMaximum));
 }
 
 export function evaluateDiskBudget(
@@ -247,12 +391,23 @@ export function evaluateDiskBudget(
     totalBytes: input.totalBytes,
     availableMemoryBytes: input.availableMemoryBytes,
     totalMemoryBytes: input.totalMemoryBytes,
+    commitChargePercent: input.commitChargePercent,
+    pageReadsPerSecond: input.pageReadsPerSecond,
+    pageWritesPerSecond: input.pageWritesPerSecond,
   };
+  const { tier: capacityTier, reasons: capacityTierReasons } = classifyCapacityTier(
+    policy,
+    resourceSnapshot,
+  );
   const maximumWorkersAtCurrentCapacity = workerClass
     ? maximumWorkersForResources(policy, workerClass, resourceSnapshot)
     : 0;
   const minimumDiskHeadroomBytes = diskHeadroomBytes(policy, input.totalBytes);
-  const minimumRamHeadroomBytes = ramHeadroomBytes(policy, input.totalMemoryBytes);
+  const minimumRamHeadroomBytes = ramHeadroomBytes(
+    policy,
+    input.totalMemoryBytes,
+    capacityTier,
+  );
   const memoryReservationBytes = workerClass
     ? policy.workerMemoryReservationsMb[workerClass] * 1024 * 1024
     : 0;
@@ -284,6 +439,9 @@ export function evaluateDiskBudget(
     if (input.workers > policy.sharedHeavyTaskConcurrency) {
       errors.push("Heavy compilers, builds, and archive expansion must run sequentially.");
     }
+    if (capacityTier === "red") {
+      errors.push("Red resource tier pauses shared compilers, builds, and archive expansion.");
+    }
   } else if (input.phase === "preflight" && input.operation === "network") {
     requiredBytes = minimumDiskHeadroomBytes + input.artifactBudgetBytes;
     if (input.workers > maximumWorkersAtCurrentCapacity) {
@@ -302,6 +460,9 @@ export function evaluateDiskBudget(
     if (input.artifactBudgetBytes > policy.maximumNationalAcquisitionArtifactBytes) {
       errors.push("National acquisition artifact budget exceeds the bounded policy.");
     }
+    if (capacityTier === "red") {
+      errors.push("Red resource tier pauses MAIN national acquisition.");
+    }
   }
 
   if (input.availableBytes < requiredBytes) {
@@ -314,9 +475,9 @@ export function evaluateDiskBudget(
         : `RAM headroom failed: ${input.availableMemoryBytes} available, ${requiredAvailableMemoryBytes} required before ${input.operation}.`,
     );
   }
-  if (input.phase === "postflight" && input.availableMemoryBytes < minimumRamHeadroomBytes) {
+  if (input.phase === "postflight" && capacityTier === "red") {
     errors.push(
-      `RAM headroom floor failed: ${input.availableMemoryBytes} available, ${minimumRamHeadroomBytes} required.`,
+      `Postflight resources entered the red tier: ${capacityTierReasons.join("; ")}.`,
     );
   }
 
@@ -334,6 +495,8 @@ export function evaluateDiskBudget(
     requiredAvailableMemoryBytes,
     projectedAvailableMemoryBytes,
     workerClass,
+    capacityTier,
+    capacityTierReasons,
     errors,
   };
 }
@@ -341,6 +504,15 @@ export function evaluateDiskBudget(
 function parsePositiveInteger(value: string | undefined, label: string): number {
   const parsed = Number(value);
   if (!Number.isInteger(parsed) || parsed < 0) throw new Error(`${label} must be a nonnegative integer.`);
+  return parsed;
+}
+
+function parseOptionalNonnegativeNumber(value: string | undefined, label: string): number | undefined {
+  if (value === undefined) return undefined;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < 0) {
+    throw new Error(`${label} must be a nonnegative number.`);
+  }
   return parsed;
 }
 
@@ -393,6 +565,18 @@ function runCli(): void {
     totalMemoryBytes: os.totalmem(),
     workers,
     artifactBudgetBytes,
+    commitChargePercent: parseOptionalNonnegativeNumber(
+      argumentValue(args, "--commit-charge-percent"),
+      "commit-charge-percent",
+    ),
+    pageReadsPerSecond: parseOptionalNonnegativeNumber(
+      argumentValue(args, "--page-reads-per-second"),
+      "page-reads-per-second",
+    ),
+    pageWritesPerSecond: parseOptionalNonnegativeNumber(
+      argumentValue(args, "--page-writes-per-second"),
+      "page-writes-per-second",
+    ),
   });
   process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
   if (!result.ok) process.exitCode = 1;

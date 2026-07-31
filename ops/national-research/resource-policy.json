@@ -1,9 +1,10 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "filesystemPath": "C:\\Code\\project-isitusa",
   "minimumDiskHeadroomPercent": 15,
   "absoluteMinimumFreeBytes": 21474836480,
-  "minimumRamHeadroomPercent": 25,
+  "preferredRamHeadroomPercent": 25,
+  "minimumOperationalRamHeadroomPercent": 10,
   "reservedDiskBytesPerWorker": 1073741824,
   "maximumArtifactBytesPerWorker": 20971520,
   "maximumNationalAcquisitionArtifactBytes": 268435456,
@@ -15,6 +16,23 @@
   "maximumWorkerWallMinutes": 45,
   "sharedHeavyTaskConcurrency": 1,
   "mainIntegrationConcurrency": 1,
+  "capacityTierThresholds": {
+    "greenMinimumAvailableRamPercent": 25,
+    "redBelowAvailableRamPercent": 10,
+    "redAtOrAboveCommitChargePercent": 90,
+    "redAtOrAbovePageReadsPerSecond": 500,
+    "redAtOrAbovePageWritesPerSecond": 10
+  },
+  "yellowConcurrencyCaps": {
+    "acquisition": 2,
+    "lightweight": 6,
+    "artifact": 1
+  },
+  "redConcurrencyCaps": {
+    "acquisition": 0,
+    "lightweight": 0,
+    "artifact": 0
+  },
   "heavyAcquisitionConcurrencyTiers": [
     {
       "minimumTotalMemoryBytes": 16000000000,
@@ -81,10 +99,15 @@
   "telemetryPolicy": {
     "sampleIntervalSeconds": 5,
     "sustainedWindowSeconds": 30,
-    "reduceConcurrencyWhenAvailableRamBelowPercent": 25,
+    "preferredGreenAvailableRamPercent": 25,
+    "yellowMinimumAvailableRamPercent": 10,
+    "redCommitChargePercent": 90,
+    "redPageReadsPerSecond": 500,
+    "redPageWritesPerSecond": 10,
     "stopDispatchWhenFreeDiskBelowPercent": 15,
     "absoluteFreeDiskStopBytes": 21474836480,
-    "reduceOnSustainedPageFileWrites": true,
+    "redTierPausesAcquisitionArtifactAndSharedHeavyDispatch": true,
+    "redTierContinuesMainLowMemoryWork": true,
     "reduceOnProviderThrottle": true
   },
   "disposablePaths": [

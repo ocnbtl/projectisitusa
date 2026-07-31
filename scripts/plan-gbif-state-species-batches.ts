@@ -114,7 +114,7 @@ function countCurrentEvidence(root: string, stateCode: string) {
   >();
   const countiesDirectory = path.join(
     root,
-    "src/data/generated/research",
+    "public/generated/research",
     stateCode,
     "counties",
   );

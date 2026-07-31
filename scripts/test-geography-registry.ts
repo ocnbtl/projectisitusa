@@ -30,6 +30,15 @@ assert(national.jurisdictionCount === 51, "National v1 must contain 51 jurisdict
 assert(national.countyEquivalentCount === 3144, "National v1 county-equivalent count is stale.");
 assert(national.certificationOrder.slice(0, 4).join(",") === "AL,AK,AZ,AR", "Certification order is not alphabetical.");
 assert(national.activeCertificationStateCode === "AL", "Alabama must remain the active certification lane.");
+assert(national.activeCertificationCohort === 1, "Certification cohort 1 must remain active.");
+assert(national.nextCertificationCohort === 2, "Certification cohort 2 must remain next.");
+assert(national.certificationCohorts.length === 13, "Certification cohort count is stale.");
+assert(
+  national.certificationCohorts
+    .flatMap((entry) => entry.stateCodes)
+    .join(",") === national.certificationOrder.join(","),
+  "Certification cohorts do not preserve the national certification order.",
+);
 assert(national.pilotStateCodes.join(",") === "AK,AZ,AR", "Pilot state registry changed.");
 
 assert(getStateDefinition("AL")?.countyEquivalentCount === 67, "Alabama must have 67 counties.");

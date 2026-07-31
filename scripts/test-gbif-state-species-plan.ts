@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+
 import { buildGbifStateSpeciesPlan } from "./plan-gbif-state-species-batches";
 
 import { stableJson } from "@/lib/research/run-files";
@@ -5,6 +7,13 @@ import { stableJson } from "@/lib/research/run-files";
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
+
+assert(
+  readFileSync("scripts/plan-gbif-state-species-batches.ts", "utf8").includes(
+    '"public/generated/research"',
+  ),
+  "The GBIF planner must rank current evidence from the published county projections.",
+);
 
 const input = {
   root: process.cwd(),

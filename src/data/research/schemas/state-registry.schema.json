@@ -6,12 +6,12 @@
   "additionalProperties": false,
   "required": ["schemaVersion", "source", "nationalV1", "jurisdictions"],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "source": { "$ref": "#/$defs/source" },
     "nationalV1": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["stateCount", "federalDistrictCount", "jurisdictionCount", "countyEquivalentCount", "certificationOrder", "activeCertificationStateCode", "pilotStateCodes"],
+      "required": ["stateCount", "federalDistrictCount", "jurisdictionCount", "countyEquivalentCount", "certificationOrder", "activeCertificationStateCode", "activeCertificationCohort", "nextCertificationCohort", "certificationCohorts", "pilotStateCodes"],
       "properties": {
         "stateCount": { "const": 50 },
         "federalDistrictCount": { "const": 1 },
@@ -19,6 +19,14 @@
         "countyEquivalentCount": { "type": "integer", "minimum": 1 },
         "certificationOrder": { "type": "array", "items": { "$ref": "#/$defs/stateCode" }, "minItems": 51, "maxItems": 51, "uniqueItems": true },
         "activeCertificationStateCode": { "$ref": "#/$defs/stateCode" },
+        "activeCertificationCohort": { "type": "integer", "minimum": 1, "maximum": 13 },
+        "nextCertificationCohort": { "type": "integer", "minimum": 2, "maximum": 13 },
+        "certificationCohorts": {
+          "type": "array",
+          "minItems": 13,
+          "maxItems": 13,
+          "items": { "$ref": "#/$defs/certificationCohort" }
+        },
         "pilotStateCodes": { "type": "array", "items": { "$ref": "#/$defs/stateCode" }, "uniqueItems": true }
       }
     },
@@ -30,6 +38,21 @@
   },
   "$defs": {
     "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "certificationCohort": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cohort", "stateCodes"],
+      "properties": {
+        "cohort": { "type": "integer", "minimum": 1, "maximum": 13 },
+        "stateCodes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stateCode" },
+          "minItems": 3,
+          "maxItems": 4,
+          "uniqueItems": true
+        }
+      }
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,

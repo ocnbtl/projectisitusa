@@ -119,6 +119,121 @@
         "mean": 0.03,
         "maximum": 0.19
       }
+    },
+    {
+      "observedAt": "2026-07-31T02:10:18Z",
+      "durationSeconds": 15,
+      "availableMemoryMib": {
+        "minimum": 745,
+        "mean": 1626.67,
+        "maximum": 2390
+      },
+      "availableMemoryPercent": {
+        "minimum": 2.34,
+        "mean": 5.1,
+        "maximum": 7.5
+      },
+      "processorUtilizationPercent": {
+        "mean": 44.94,
+        "maximum": 84.16
+      },
+      "commitChargeBytes": {
+        "minimum": 58743000000,
+        "mean": 59585000000,
+        "maximum": 60868000000,
+        "limit": 64796000000
+      },
+      "commitChargePercent": {
+        "minimum": 90.66,
+        "mean": 91.96,
+        "maximum": 93.94
+      },
+      "pageReadsPerSecond": {
+        "mean": 428.28,
+        "maximum": 2352.76
+      },
+      "pageWritesPerSecond": {
+        "mean": 0,
+        "maximum": 0
+      },
+      "pagesPerSecond": {
+        "mean": 5546.9,
+        "maximum": 55147.91
+      },
+      "diskBytesPerSecond": {
+        "mean": 26500000,
+        "maximum": 229000000
+      },
+      "diskQueueLength": {
+        "mean": 0.37,
+        "maximum": 4.55
+      },
+      "capacityTier": "red",
+      "limitation": "This is a volatile observation window. It proves current pressure, not a permanent desktop limit."
+    },
+    {
+      "observedAt": "2026-07-31T02:19:46.6020379Z",
+      "durationSeconds": 12,
+      "availableMemoryMib": {
+        "minimum": 3533,
+        "mean": 3827.5,
+        "maximum": 4319
+      },
+      "processorUtilizationPercent": {
+        "minimum": 28.64,
+        "mean": 39.43,
+        "maximum": 49.77
+      },
+      "commitChargeBytes": {
+        "minimum": 58536886272,
+        "mean": 59299851605,
+        "maximum": 59690168320,
+        "limit": 64795906048
+      },
+      "pageReadsPerSecond": {
+        "minimum": 21.98,
+        "mean": 1449.82,
+        "maximum": 3434.95
+      },
+      "pageWritesPerSecond": {
+        "minimum": 0,
+        "mean": 0,
+        "maximum": 0
+      },
+      "capacityTier": "red",
+      "limitation": "Available RAM recovered above 10 percent, but commit charge and page reads remained above the red thresholds."
+    },
+    {
+      "observedAt": "2026-07-31T02:24:19.6718802Z",
+      "durationSeconds": 10,
+      "availableMemoryMib": {
+        "minimum": 5980,
+        "mean": 6011.6,
+        "maximum": 6050
+      },
+      "processorUtilizationPercent": {
+        "minimum": 26.53,
+        "mean": 34.78,
+        "maximum": 44.97
+      },
+      "commitChargeBytes": {
+        "minimum": 56831897600,
+        "mean": 56868057088,
+        "maximum": 56918863872,
+        "limit": 64795906048
+      },
+      "pageReadsPerSecond": {
+        "minimum": 3.49,
+        "mean": 32.51,
+        "maximum": 141.12
+      },
+      "pageWritesPerSecond": {
+        "minimum": 0,
+        "mean": 0,
+        "maximum": 0
+      },
+      "capacityTier": "yellow",
+      "limitation": "This yellow classification is a dispatch-time window and must be remeasured during the wave."
     }
   ],
   "pageFile": {
@@ -127,6 +242,15 @@
     "currentUsageMib": 292,
     "peakUsageMib": 3676,
     "temporary": false,
+    "sustainedWritesObserved": false
+  },
+  "latestPageFileObservation": {
+    "observedAt": "2026-07-31T02:10:18Z",
+    "path": "C:\\pagefile.sys",
+    "allocatedMib": 29893,
+    "currentUsageMib": 4882,
+    "peakUsageMib": 5556,
+    "currentUsagePercent": 16.32,
     "sustainedWritesObserved": false
   },
   "storage": {
@@ -198,7 +322,29 @@
         "workingSetBytes": 504975360
       }
     ],
-    "limitation": "Counts are volatile and include user-owned desktop applications that MAIN did not stop."
+    "limitation": "Counts are volatile and include user-owned desktop applications that MAIN did not stop.",
+    "latestObservation": {
+      "observedAt": "2026-07-31T02:10:18Z",
+      "projectMainWriters": 0,
+      "projectAcquisitionWorkers": 0,
+      "largestWorkingSets": [
+        {
+          "process": "Marvel-Win64-Shipping",
+          "pid": 18248,
+          "workingSetBytes": 6610000000,
+          "privateBytes": 10140000000,
+          "ownership": "user-owned-not-stopped"
+        },
+        {
+          "process": "codex",
+          "pid": 34772,
+          "workingSetBytes": 1790000000,
+          "privateBytes": 3370000000,
+          "ownership": "project-control-surface"
+        }
+      ],
+      "obsoleteProjectOwnedProcessesStopped": 0
+    }
   },
   "network": [
     {
@@ -253,7 +399,7 @@
     ]
   },
   "schedulerDecision": {
-    "recordedAt": "2026-07-30T14:03:33.1630115Z",
+    "recordedAt": "2026-07-31T02:24:19.6718802Z",
     "hardwareTier": "32-gb-ram-and-more-than-100-gb-free-disk",
     "cleanHardwareEnvelope": {
       "heavyAcquisitionWorkers": 6,
@@ -261,12 +407,18 @@
       "artifactWorkers": 3
     },
     "currentPermittedWorkers": {
-      "heavyAcquisitionWorkers": 0,
-      "lightweightWorkers": 0,
-      "artifactWorkers": 0
+      "heavyAcquisitionWorkers": 2,
+      "lightweightWorkers": 6,
+      "artifactWorkers": 1
     },
-    "decision": "dispatch-paused-by-ram-headroom",
-    "reason": "Two consecutive 30-second samples stayed below the required 25 percent available-RAM floor, and the latest window declined to 16.81 to 18.91 percent. Disk, page-file writes, and network remained healthy.",
-    "nextAction": "Release memory from user-owned background applications, re-sample memory, and start the required four-worker calibration only when its declared reservations preserve the 25 percent floor."
+    "capacityTier": "yellow",
+    "decision": "two-bounded-acquisition-lanes-permitted",
+    "reason": "Available RAM recovered to 5,980 to 6,050 MiB, commit charge fell below 90 percent, page reads stabilized, page writes remained zero, disk remained healthy, and the two-worker resource preflight passed.",
+    "nextAction": "Run at most two bounded non-overlapping acquisition lanes with 20 MiB artifact budgets each, keep shared integration and generation sequential, remeasure during the wave, and reduce immediately if telemetry returns to red.",
+    "contradictionsPreserved": [
+      "Earlier samples were yellow under the superseding adaptive policy, not a universal dispatch block.",
+      "The same desktop currently measures red because workload and user applications changed; the hardware envelope itself did not shrink.",
+      "The older 25 percent hard-stop decision is superseded but retained in Git history and the earlier observation fields."
+    ]
   }
 }
