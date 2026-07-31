@@ -6335,7 +6335,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r2-ca-002-1",
       "jobId": "gbif-bulk-20260731-r2-ca-002",
       "leaseId": "lease-gbif-bulk-20260731-r2-ca-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T06:41:40.293Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r2-ca-002__lease-gbif-bulk-20260731-r2-ca-002-1.json",
       "manifestHash": "7919183c042ad4a4d0eb0174643aec6564549579ae4802a0ee4e19e199e820d8",
@@ -6412,6 +6412,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r2-ca-002-1.json",
         "sha256": "b2aa3c3f9ba2ff52eb738818eda79c3a1e998fd73855c20d07df49122db290e7",
         "bytes": 6890
+      },
+      "integratedAt": "2026-07-31T06:45:51.951Z",
+      "integrator": "MAIN",
+      "integrationCommit": "bbd437904638e26822f66dbcef94abcfa77764b3",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for California CA-002 GBIF statewide tranche",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN transactionally integrated the accepted California CA-002 GBIF immutable content and manifest commits with exact reviewed paths, no conflicts, and a clean canonical worktree.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r2-ca-002-1.json",
+        "sha256": "0021e06a0e05903f06ddf4bbddb9bcc4bf0679b9066fc63e6de5bc6ecf18d604",
+        "bytes": 6912
       }
     }
   ]
