@@ -7450,7 +7450,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r3-ar-002-1",
       "jobId": "gbif-archive-recovery-20260731-r3-ar-002",
       "leaseId": "lease-gbif-archive-recovery-20260731-r3-ar-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T12:54:46.3189039Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r3-ar-002__lease-gbif-archive-recovery-20260731-r3-ar-002-1.json",
       "manifestHash": "8cf263027e4801c9cf6dc9be81b552f3e21cbd007c424f203a24c9670acf2325",
@@ -7497,6 +7497,37 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r3-ar-002-1.json",
         "sha256": "c1a30a79f8c1d59fc6941f8ddf30b69d1d52ef25dfc4aff2abfc732edc59ad69",
         "bytes": 2392
+      },
+      "integratedAt": "2026-07-31T12:56:11.1709844Z",
+      "integrator": "MAIN",
+      "integrationCommit": "02b3cda1e201b26152f9700a0cac97918335f871",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated the accepted Arkansas archive replay transactionally on MAIN with exact bytes and zero conflicts.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r3-ar-002-1.json",
+        "sha256": "8c63de43260878f4182754e493def9b879e86920097f8a4f2b31214599833f77",
+        "bytes": 2302
       }
     }
   ]
