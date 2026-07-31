@@ -6710,13 +6710,76 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r2-tx-004-1",
       "jobId": "gbif-bulk-20260731-r2-tx-004",
       "leaseId": "lease-gbif-bulk-20260731-r2-tx-004-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-31T07:05:24.429Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r2-tx-004__lease-gbif-bulk-20260731-r2-tx-004-1.json",
       "manifestHash": "4009ecd38c535895b5d4048d3eb4c7e85f0c88e4a3fb0367b88d0814a26d31ef",
       "manifestBytes": 126432,
       "workerCommit": "08d98fd8753629bd912a13285f0547419c3c0432",
-      "workerBranchHead": "50d872165b0fe8da3c44321d6be9ef415c4c9051"
+      "workerBranchHead": "50d872165b0fe8da3c44321d6be9ef415c4c9051",
+      "reviewedAt": "2026-07-31T07:05:46.569Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide Texas GBIF run, complete receipt and source-verification descriptors, 3048 ordered county outcomes, 60 accepted assertions and reviews, 34 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-cryphonectria-parasitica-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-discula-destructiva-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-ophiognomonia-clavigignenti-juglandacearum-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-cryphonectria-parasitica.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-discula-destructiva.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-ophiognomonia-clavigignenti-juglandacearum.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-solanum-torvum.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/assertions.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/manifest.json",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/outcomes.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/receipt.json",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/rejections.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/reviews.ndjson",
+        "src/data/research/runs/20260731T061106Z__gbif-preserved-specimens__7fe87bb43d90/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation for Texas TX-004 GBIF statewide tranche",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r2-tx-004-1.json",
+        "sha256": "f12b1b7f5e5a0e4079c3e0752bcf2948a19b60d980b575d23bb8019d1d9c4edf",
+        "bytes": 5780
+      }
     }
   ]
 }
