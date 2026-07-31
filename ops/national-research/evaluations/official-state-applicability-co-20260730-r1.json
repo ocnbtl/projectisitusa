@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-co-20260730-r1",
+  "createdAt": "2026-07-31T05:18:00.000Z",
+  "asOf": "2026-07-30",
+  "stateCode": "CO",
+  "sourceId": "co-8-ccr-1206-2",
+  "authority": "Colorado Department of Agriculture and Colorado Secretary of State",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "providerRequests": 4,
+    "successfulBrowserRequests": 2,
+    "blockedDirectRequests": 2,
+    "pagesReviewed": 2,
+    "artifactCount": 1,
+    "artifactBytes": 124110,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260730__co-8-ccr-1206-2__8779e4b8a255/artifacts/colorado-noxious-weed-list-2026.html",
+      "url": "https://ag.colorado.gov/conservation/noxious-weeds/colorado-noxious-weed-list",
+      "sha256": "8779e4b8a255befa94a2b12620e53f3a640361b1fd0e8f6a1dba87715384eaa5",
+      "bytes": 124110,
+      "captureMethod": "browser-serialized-official-dom"
+    },
+    "supportingRule": {
+      "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=8+CCR+1206-2&ruleVersionId=10787",
+      "browserReadable": true,
+      "directDownloadBlocked": true,
+      "retainedArtifact": false,
+      "use": "Authority and list-structure cross-check only. No event depends on unretained PDF bytes."
+    }
+  },
+  "review": {
+    "reviewId": "co-8-ccr-1206-2-20260730",
+    "reviewSha256": "757068aa5681e7ea38d85ee495e3b571ad4b391bd567bde9b40a83a9107dde00",
+    "listARows": 25,
+    "listBRows": 35,
+    "listCRows": 18,
+    "watchListRows": 18,
+    "grossAcceptedEvents": 77,
+    "blockedTaxonomyRows": 19,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 124,
+    "netNewApplicableDecisions": 71,
+    "supportingBasisAdded": 77,
+    "alreadyApplicableDecisionsReceivingNewBasis": 6,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "official-rule-access",
+      "priorState": "The source registry was blocked pending retained official rule bytes and row-level review of Lists A, B, and C.",
+      "currentEvidence": "The Secretary of State rule PDF was browser-readable but rejected the local direct client. The current Department of Agriculture page exposed Lists A, B, C, and Watch and was retained as a hash-verified browser DOM serialization.",
+      "resolution": "The Department page is the operative row-level artifact. The PDF is an authority cross-check only, and no accepted event depends on unretained PDF bytes."
+    },
+    {
+      "subject": "browser-versus-direct-access",
+      "priorState": "Direct non-browser requests to both official Colorado endpoints returned access blocks.",
+      "currentEvidence": "A normal browser rendered the official Department page, and the serialized DOM contains 96 stable row-level taxon cards.",
+      "resolution": "The capture method is explicit in the registry and evaluation. The artifact hash, byte count, exact parser denominator, and deterministic replay protect the evidence lineage."
+    },
+    {
+      "subject": "state-distribution-language",
+      "priorState": "The page groups some taxa by statewide distribution or population descriptions.",
+      "currentEvidence": "Those descriptions do not identify exact county evidence and do not satisfy an approved county-geography policy.",
+      "resolution": "Only state regulatory applicability was created. No county occurrence, absence, not-detected, or not-applicable claim was created."
+    }
+  ]
+}
