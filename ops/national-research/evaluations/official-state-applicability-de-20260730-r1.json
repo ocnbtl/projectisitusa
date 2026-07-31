@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-de-20260730-r1",
+  "createdAt": "2026-07-31T04:45:00.000Z",
+  "asOf": "2026-07-30",
+  "stateCode": "DE",
+  "sourceId": "de-3-admin-code-806",
+  "authority": "Delaware Department of Agriculture",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "providerRequests": 2,
+    "pages": 2,
+    "artifactCount": 2,
+    "artifactBytes": 1294664,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260730__de-3-admin-code-806__fef0758b1329/artifacts/nursery-inspection-2026.html",
+      "url": "https://agriculture.delaware.gov/plant-industries/nursery-inspection/",
+      "sha256": "fef0758b13291962490ca2824350160e21eaf263c21316a885eda70756f315cc",
+      "bytes": 76699
+    },
+    "finalOrderSupportArtifact": {
+      "path": "src/data/research/state-list-source-support/20260730__de-3-admin-code-806__final-order/may-2026-register.pdf",
+      "url": "https://regulations.delaware.gov/api/register/May2026/428efbc1-23e5-47a9-b127-094062022717",
+      "sha256": "9b303812d44cdb8820417df3eb03efc27b1a9bd0535be55345aaff295fc64674",
+      "bytes": 1217965
+    }
+  },
+  "review": {
+    "reviewId": "de-3-admin-code-806-20260730",
+    "reviewSha256": "1fe634e9df229134fa4fad06b50ee30c1675c700900855f284fb19aa16d8608b",
+    "invasiveListRows": 39,
+    "watchListRows": 1,
+    "cultivarExemptionRows": 12,
+    "grossAcceptedEvents": 31,
+    "unmatchedTaxonomyRows": 9,
+    "blockedRows": 21,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 82,
+    "netNewApplicableDecisions": 29,
+    "supportingBasisAdded": 31,
+    "alreadyApplicableDecisionsReceivingNewBasis": 2,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "consolidated-code-lag",
+      "priorState": "The source registry was blocked because the consolidated code appeared to lag the May 2026 final order.",
+      "currentEvidence": "The current Department of Agriculture page is marked Updated May 2026 and presents the final invasive list, enforcement schedule, cultivar exemptions, and watch list. The retained May 2026 final order independently records the rule amendment.",
+      "resolution": "The source is operational only for exact current list membership and retained regulatory context. The earlier lag remains preserved as historical acquisition context."
+    },
+    {
+      "subject": "future-enforcement",
+      "priorState": "Four newly added list taxa have enforcement dates in 2028 or 2029.",
+      "currentEvidence": "The Department currently labels all four as newly added species on the Final Invasive Plant List while separately stating their future enforcement dates.",
+      "resolution": "Exact catalog matches establish current Delaware state regulatory applicability from list membership. The review preserves future enforcement timing and does not claim that enforcement has begun."
+    },
+    {
+      "subject": "cultivar-exemptions",
+      "priorState": "Twelve named cultivars are exempt or conditionally exempt.",
+      "currentEvidence": "The operative page lists five Chinese fountaingrass, four Chinese silvergrass, and three Japanese barberry cultivar exemptions.",
+      "resolution": "All twelve rows remain blocked regulatory context. No species-level not-applicability decision was created."
+    }
+  ]
+}
