@@ -228507,6 +228507,190 @@
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 38d30c7d662c9d6d0965d44e9fda05874450d0f1...HEAD"
       ]
+    },
+    {
+      "leaseId": "lease-gbif-archive-recovery-20260731-r3-ar-002-1",
+      "jobId": "gbif-archive-recovery-20260731-r3-ar-002",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "gbif_r4_fl_retry1",
+      "state": "active",
+      "claimedAt": "2026-07-31T12:50:58.175Z",
+      "expiresAt": "2026-07-31T15:44:35.391Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "AR"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "aspidiotus-duplex"
+        ],
+        "pairs": [
+          "05001:aspidiotus-duplex",
+          "05003:aspidiotus-duplex",
+          "05005:aspidiotus-duplex",
+          "05007:aspidiotus-duplex",
+          "05009:aspidiotus-duplex",
+          "05011:aspidiotus-duplex",
+          "05013:aspidiotus-duplex",
+          "05015:aspidiotus-duplex",
+          "05017:aspidiotus-duplex",
+          "05019:aspidiotus-duplex",
+          "05021:aspidiotus-duplex",
+          "05023:aspidiotus-duplex",
+          "05025:aspidiotus-duplex",
+          "05027:aspidiotus-duplex",
+          "05029:aspidiotus-duplex",
+          "05031:aspidiotus-duplex",
+          "05033:aspidiotus-duplex",
+          "05035:aspidiotus-duplex",
+          "05037:aspidiotus-duplex",
+          "05039:aspidiotus-duplex",
+          "05041:aspidiotus-duplex",
+          "05043:aspidiotus-duplex",
+          "05045:aspidiotus-duplex",
+          "05047:aspidiotus-duplex",
+          "05049:aspidiotus-duplex",
+          "05051:aspidiotus-duplex",
+          "05053:aspidiotus-duplex",
+          "05055:aspidiotus-duplex",
+          "05057:aspidiotus-duplex",
+          "05059:aspidiotus-duplex",
+          "05061:aspidiotus-duplex",
+          "05063:aspidiotus-duplex",
+          "05065:aspidiotus-duplex",
+          "05067:aspidiotus-duplex",
+          "05069:aspidiotus-duplex",
+          "05071:aspidiotus-duplex",
+          "05073:aspidiotus-duplex",
+          "05075:aspidiotus-duplex",
+          "05077:aspidiotus-duplex",
+          "05079:aspidiotus-duplex",
+          "05081:aspidiotus-duplex",
+          "05083:aspidiotus-duplex",
+          "05085:aspidiotus-duplex",
+          "05087:aspidiotus-duplex",
+          "05089:aspidiotus-duplex",
+          "05091:aspidiotus-duplex",
+          "05093:aspidiotus-duplex",
+          "05095:aspidiotus-duplex",
+          "05097:aspidiotus-duplex",
+          "05099:aspidiotus-duplex",
+          "05101:aspidiotus-duplex",
+          "05103:aspidiotus-duplex",
+          "05105:aspidiotus-duplex",
+          "05107:aspidiotus-duplex",
+          "05109:aspidiotus-duplex",
+          "05111:aspidiotus-duplex",
+          "05113:aspidiotus-duplex",
+          "05115:aspidiotus-duplex",
+          "05117:aspidiotus-duplex",
+          "05119:aspidiotus-duplex",
+          "05121:aspidiotus-duplex",
+          "05123:aspidiotus-duplex",
+          "05125:aspidiotus-duplex",
+          "05127:aspidiotus-duplex",
+          "05129:aspidiotus-duplex",
+          "05131:aspidiotus-duplex",
+          "05133:aspidiotus-duplex",
+          "05135:aspidiotus-duplex",
+          "05137:aspidiotus-duplex",
+          "05139:aspidiotus-duplex",
+          "05141:aspidiotus-duplex",
+          "05143:aspidiotus-duplex",
+          "05145:aspidiotus-duplex",
+          "05147:aspidiotus-duplex",
+          "05149:aspidiotus-duplex"
+        ]
+      },
+      "scopeClaims": [
+        "state/AR/source/gbif-preserved-specimens/taxon/aspidiotus-duplex"
+      ],
+      "branch": "codex/gbif-archive-recovery-20260731-r3-ar-002",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-archive-recovery-20260731-r3-ar-002",
+      "baseSha": "6205d77519e29121f9039a3c8d8bb5d37d66e605",
+      "expectedReceiptCodeCommit": "6205d77519e29121f9039a3c8d8bb5d37d66e605",
+      "permittedPaths": [
+        "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1024
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/inputs/gbif-archive-recovery-20260731-r3/gbif-archive-recovery-20260731-r3-ar-002.json with started-at 2026-07-31T11:44:32.391Z, --archive-replay-commit b851eaaf51cb185d7cd2caf7945fe72837b19f2b, and --archive-replay-run-id 20260731T055502Z__gbif-preserved-specimens__f5275c5fb67f",
+        "screen all 75 leased AR county-species pairs using provider-declared county geography only",
+        "issue zero live provider requests and verify every reused response artifact against its archived receipt hash and byte count",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 6205d77519e29121f9039a3c8d8bb5d37d66e605...HEAD"
+      ]
     }
   ]
 }
