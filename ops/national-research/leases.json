@@ -125008,7 +125008,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_archive_recovery_al_002",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T04:12:57.546Z",
       "expiresAt": "2026-07-31T11:58:31.180Z",
       "recoveryAt": null,
@@ -128488,7 +128488,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 333e6fb5fd57392d572c6ee1d870263c3ca2b2c0...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T04:27:59.4477053Z",
+      "resultManifest": {
+        "path": "manifests/gbif-archive-recovery-20260730-r1-al-002__lease-gbif-archive-recovery-20260730-r1-al-002-1.json",
+        "sha256": "a6e42dfdcf6217cf79e248ad31a1cfd156272d9c959bf461a570a2a5397127fb",
+        "bytes": 149723,
+        "status": "complete",
+        "workerCommit": "20e023848ab8a575d37ab1b2660f3f3a6dc59445",
+        "workerBranchHead": "9929bdcd5a629d638f8d2a3014d828c4983b0a4d"
+      }
     },
     {
       "leaseId": "lease-gbif-archive-recovery-20260730-r1-al-003-1",
@@ -128496,7 +128505,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_archive_recovery_al_003",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T04:12:57.546Z",
       "expiresAt": "2026-07-31T11:58:31.180Z",
       "recoveryAt": null,
@@ -131976,7 +131985,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 333e6fb5fd57392d572c6ee1d870263c3ca2b2c0...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T04:27:59.4477053Z",
+      "resultManifest": {
+        "path": "manifests/gbif-archive-recovery-20260730-r1-al-003__lease-gbif-archive-recovery-20260730-r1-al-003-1.json",
+        "sha256": "23ecd402f6fc5309a76a4a487ec4e7ced70a3546f6572a63de7f5eb9d64b2ea4",
+        "bytes": 147035,
+        "status": "complete",
+        "workerCommit": "43cf1da910067202dd266734b3022351254707e4",
+        "workerBranchHead": "a8a940e8bdc2212cf1d55ee0956125e25ed8ebd3"
+      }
     }
   ]
 }
