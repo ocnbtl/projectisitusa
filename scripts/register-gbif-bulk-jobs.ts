@@ -4,6 +4,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import stateRegistry from "@/data/research/state-registry.json";
+import { canonicalCandidatePairKeys } from "@/lib/research/candidate-pairs";
 import { stableJson } from "@/lib/research/run-files";
 
 type CandidateFile = {
@@ -131,9 +132,7 @@ const newJobs = entries.map((serializedEntry) => {
     `${batchId} contains a different source.`,
   );
 
-  const pairs = candidate.candidates
-    .map((entry) => `${entry.countyFips}:${entry.speciesId}`)
-    .sort(compareText);
+  const pairs = canonicalCandidatePairKeys(candidate.candidates);
   assert(new Set(pairs).size === pairs.length, `${batchId} contains duplicate pairs.`);
   const taxa = [...new Set(candidate.candidates.map((entry) => entry.speciesId))]
     .sort(compareText);

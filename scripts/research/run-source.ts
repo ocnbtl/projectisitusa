@@ -26,6 +26,7 @@ import {
   sha256,
   stableJson,
 } from "@/lib/research/run-files";
+import { canonicalCandidatePairKeys } from "@/lib/research/candidate-pairs";
 import {
   validateResearchRunInMemory,
   verifyStagedResearchRun,
@@ -249,9 +250,7 @@ function buildParameters(
 ) {
   const state = getStateDefinition(stateCode);
   if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state ${stateCode}.`);
-  const candidatePairs = requestedPairs.map(
-    (pair) => `${pair.countyFips}:${pair.speciesId}`,
-  );
+  const candidatePairs = canonicalCandidatePairKeys(requestedPairs);
   if (sourceId === gbifPreservedSpecimensAdapter.sourceId) {
     return {
       stateCode,
