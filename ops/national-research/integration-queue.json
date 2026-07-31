@@ -7534,25 +7534,147 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r7-ga-001-1",
       "jobId": "gbif-archive-recovery-20260731-r7-ga-001",
       "leaseId": "lease-gbif-archive-recovery-20260731-r7-ga-001-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-31T13:06:28.0092323Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r7-ga-001__lease-gbif-archive-recovery-20260731-r7-ga-001-1.json",
       "manifestHash": "2298ab7ef8cdc48f04fc6009913a7e4be5f12943b054772b943c9ce99659359a",
       "manifestBytes": 122878,
       "workerCommit": "59676cf12af501f8281546e30d89cfe160ff6c48",
-      "workerBranchHead": "d72f21548f3e4a6a37de12ba8ced3975d0e6ee94"
+      "workerBranchHead": "d72f21548f3e4a6a37de12ba8ced3975d0e6ee94",
+      "reviewedAt": "2026-07-31T13:07:08.9018786Z",
+      "reviewer": "MAIN",
+      "reviewReason": "Accepted after corrected 2048 MiB lease validation, measured 1068 MiB peak, exact archive equivalence, complete pagination, zero live requests, and zero semantic or safety violations.",
+      "changedPaths": [
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-albizia-julibrissin-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-cinnamomum-camphora-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-corbicula-fluminea-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-corbicula-fluminea-000300.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-cryphonectria-parasitica-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-discula-destructiva-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-elaeagnus-pungens-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-emerald-ash-borer-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-lespedeza-cuneata-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-ligustrum-japonicum-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-lonicera-japonica-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-lonicera-japonica-000300.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-lygodium-japonicum-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-melia-azedarach-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-paulownia-tomentosa-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-pyrus-calleryana-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-tree-of-heaven-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-occurrences-triadica-sebifera-000000.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-albizia-julibrissin.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-cinnamomum-camphora.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-corbicula-fluminea.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-cryphonectria-parasitica.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-discula-destructiva.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-elaeagnus-pungens.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-emerald-ash-borer.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-lespedeza-cuneata.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-ligustrum-japonicum.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-lonicera-japonica.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-lygodium-japonicum.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-melia-azedarach.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-paulownia-tomentosa.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-pyrus-calleryana.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-tree-of-heaven.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/artifacts/gbif-species-match-triadica-sebifera.json.gz",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/assertions.ndjson",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/manifest.json",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/outcomes.ndjson",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/receipt.json",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/rejections.ndjson",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/reviews.ndjson",
+        "src/data/research/runs/20260731T125509Z__gbif-preserved-specimens__f8b7b5772831/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run and pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact base-to-head path, whitespace, hash, receipt, taxonomy, geography, pagination, and unsupported-negative audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "clean isolated worker worktree and deterministic two-commit inventory",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r7-ga-001-1.json",
+        "sha256": "a6676046536bb97e6e8cbcba1ad1405249214f713ae3bc0d3706cd403929ea6c",
+        "bytes": 7946
+      }
     },
     {
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r4-az-001-1",
       "jobId": "gbif-archive-recovery-20260731-r4-az-001",
       "leaseId": "lease-gbif-archive-recovery-20260731-r4-az-001-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-31T13:06:28.0092323Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r4-az-001__lease-gbif-archive-recovery-20260731-r4-az-001-1.json",
       "manifestHash": "32e17a8dbec2c066b160d4e464daff5185dfd1bbbf0ecd228da98c60e461b58a",
       "manifestBytes": 9171,
       "workerCommit": "ddfea1767bb11ad4ed81ee7d3319c8a628402fc8",
-      "workerBranchHead": "be60f848a610f2c5a750f9592b979d26390fca06"
+      "workerBranchHead": "be60f848a610f2c5a750f9592b979d26390fca06",
+      "reviewedAt": "2026-07-31T13:07:09.8603869Z",
+      "reviewer": "MAIN",
+      "reviewReason": "Accepted as a clean recovery of the 30 net-new Arizona pairs after exact archive, path, manifest, pagination, and evidence-semantic validation with zero live requests.",
+      "changedPaths": [
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-alternanthera-sessilis-000000.json.gz",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-occurrences-azolla-pinnata-000000.json.gz",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-alternanthera-sessilis.json.gz",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/artifacts/gbif-species-match-azolla-pinnata.json.gz",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/assertions.ndjson",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/manifest.json",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/outcomes.ndjson",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/receipt.json",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/rejections.ndjson",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/reviews.ndjson",
+        "src/data/research/runs/20260731T121041Z__gbif-preserved-specimens__7ff431b69bd2/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run and pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact base-to-head path, whitespace, hash, receipt, taxonomy, geography, pagination, and unsupported-negative audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "clean isolated worker worktree and deterministic two-commit inventory",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r4-az-001-1.json",
+        "sha256": "e944cb88e4e8a154bca7d4c21c2ca7c83b55c93469760d2b11fe41304592e205",
+        "bytes": 2678
+      }
     }
   ]
 }
