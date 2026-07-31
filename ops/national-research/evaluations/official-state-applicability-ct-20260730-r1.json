@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-ct-20260730-r1",
+  "evaluatedAt": "2026-07-31T04:05:30.000Z",
+  "executionOwner": "MAIN",
+  "baselineCommit": "567fa7de719d6f65520813b70cd3b50e08058ec3",
+  "source": {
+    "sourceId": "ct-cgs-22a-381d",
+    "stateCode": "CT",
+    "authority": "Connecticut General Assembly",
+    "url": "https://prdext2.cga.ct.gov/2026/sup/chap_446i.htm",
+    "retrievedAt": "2026-07-31T03:59:00.000Z",
+    "artifactPath": "src/data/research/state-list-sources/20260730__ct-cgs-22a-381d__b4ed0a14d703/artifacts/chapter-446i-2026.html",
+    "artifactSha256": "b4ed0a14d70359846b21935d895c1d6bf3eb89e89506b51fd3c092fbd6db472c",
+    "artifactBytes": 53329
+  },
+  "rowReview": {
+    "currentlyEffectiveRows": 87,
+    "futureEffectiveRows": 10,
+    "acceptedExactCatalogRows": 63,
+    "blockedCurrentTaxonomyRows": 24,
+    "blockedFutureRows": 10,
+    "acceptedSynonymExpansions": 0,
+    "unsupportedNegativeClaims": 0,
+    "countyEvidenceAssertions": 0
+  },
+  "stateApplicability": {
+    "baseline": {
+      "explicitSpecies": 49,
+      "regulatedSpecies": 35,
+      "supportingBasisRecords": 49,
+      "connecticutStatuteBasisSpecies": 0
+    },
+    "final": {
+      "explicitSpecies": 109,
+      "regulatedSpecies": 95,
+      "supportingBasisRecords": 112,
+      "connecticutStatuteBasisSpecies": 63
+    },
+    "gross": {
+      "acceptedEvents": 63,
+      "blockedRows": 34
+    },
+    "net": {
+      "explicitSpecies": 60,
+      "regulatedSpecies": 60,
+      "supportingBasisRecords": 63
+    }
+  },
+  "validation": {
+    "artifactHashAndBytes": "pass",
+    "deterministicRepeatedReviewBuild": "pass",
+    "stateApplicabilitySchemaAndSemantics": "pass",
+    "stateApplicabilityProjectionCheck": "pass",
+    "sourceSilenceCreatedDecision": false
+  },
+  "contradictionsPreserved": [
+    "The Connecticut source was previously blocked because exact official content had not been retained and future effective dates had not been separated.",
+    "The official 2026 supplement is now retained and operational for exact currently effective rows only.",
+    "Ten rows effective in 2027, 2028, or 2030 remain blocked and create no current applicability.",
+    "Twenty-four currently effective source rows remain blocked because exact current catalog binomial identity was not established.",
+    "The Colorado official PDF remains readable through independent web retrieval but direct acquisition returned HTTP 403 and then a 4600-byte HTML challenge document. The challenge document was discarded and the Colorado source remains blocked."
+  ],
+  "semanticAttestation": {
+    "stateApplicabilityOnly": true,
+    "countyDeterminationCreated": false,
+    "absenceCreated": false,
+    "notDetectedCreated": false,
+    "sourceSilenceCreatedNotApplicable": false,
+    "futureEffectiveRowsPublished": false
+  }
+}
