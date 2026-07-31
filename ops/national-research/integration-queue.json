@@ -6710,7 +6710,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r2-tx-004-1",
       "jobId": "gbif-bulk-20260731-r2-tx-004",
       "leaseId": "lease-gbif-bulk-20260731-r2-tx-004-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T07:05:24.429Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r2-tx-004__lease-gbif-bulk-20260731-r2-tx-004-1.json",
       "manifestHash": "4009ecd38c535895b5d4048d3eb4c7e85f0c88e4a3fb0367b88d0814a26d31ef",
@@ -6779,6 +6779,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r2-tx-004-1.json",
         "sha256": "f12b1b7f5e5a0e4079c3e0752bcf2948a19b60d980b575d23bb8019d1d9c4edf",
         "bytes": 5780
+      },
+      "integratedAt": "2026-07-31T07:06:01.786Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1fe44657dcd0dc7dbdebe3138ea8aedf50183c76",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Texas TX-004 GBIF statewide tranche",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN transactionally integrated the accepted Texas TX-004 GBIF immutable content and manifest commits with exact reviewed paths, no conflicts, and a clean canonical worktree.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r2-tx-004-1.json",
+        "sha256": "3d895d5c76a5eef052566eccfc5f10c94a5b28f3c1a0abc0fa107a13b869a460",
+        "bytes": 5804
       }
     }
   ]
