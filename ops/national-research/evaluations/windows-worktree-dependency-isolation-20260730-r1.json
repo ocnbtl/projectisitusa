@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-worktree-dependency-isolation-20260730-r1",
+  "recordedAt": "2026-07-31T03:04:43.714Z",
+  "platform": "Windows 11",
+  "incident": {
+    "summary": "Removing a project worktree that contained a node_modules junction emptied the canonical junction target.",
+    "reproducedBy": [
+      "git worktree remove on a clean worktree containing the junction",
+      "PowerShell Remove-Item on the junction without recursive flags"
+    ],
+    "repositoryTrackedFilesAffected": 0,
+    "immutableResearchRunsAffected": 0,
+    "userOwnedProcessesStopped": 0,
+    "canonicalDependencyDirectoryAffected": true
+  },
+  "recovery": {
+    "command": "npm ci",
+    "lockfileChanged": false,
+    "installedPackages": 364,
+    "auditedPackages": 365,
+    "auditFindings": {
+      "low": 1,
+      "high": 5
+    },
+    "automaticAuditFixApplied": false
+  },
+  "supersedingWorktreePolicy": {
+    "sharedNodeModulesJunctionsAllowed": false,
+    "dependencyStrategy": "Run npm ci independently in each acquisition worktree.",
+    "cleanupOrder": [
+      "Validate the worker branch and worktree are clean or fully preserved.",
+      "Remove only the isolated worktree through git worktree remove.",
+      "Retain failed and rejected branches required for audit lineage."
+    ],
+    "reason": "The measured disk has ample headroom, while junction cleanup is destructive to the shared dependency target in this Windows environment."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r2",
+  "supersedesCurrentDecisionFrom": "windows-desktop-capacity-20260730-r1",
+  "observedAt": "2026-07-31T03:04:00.000Z",
+  "durationSeconds": 10,
+  "availableMemoryMib": {
+    "minimum": 4298,
+    "mean": 4779.3,
+    "maximum": 5636
+  },
+  "commitChargePercent": {
+    "minimum": 92.26,
+    "mean": 93.88,
+    "maximum": 94.77
+  },
+  "pageReadsPerSecond": {
+    "minimum": 13.84,
+    "mean": 89.82,
+    "maximum": 578.41
+  },
+  "pageWritesPerSecond": {
+    "minimum": 0,
+    "mean": 0,
+    "maximum": 0
+  },
+  "processorUtilizationPercent": {
+    "minimum": 31.62,
+    "mean": 52.81,
+    "maximum": 79.05
+  },
+  "diskQueueLength": {
+    "minimum": 0,
+    "mean": 0.2,
+    "maximum": 1
+  },
+  "storage": {
+    "lastVerifiedFreeBytes": 1179952852992,
+    "lastVerifiedFreePercent": 59.02,
+    "status": "healthy-with-large-headroom"
+  },
+  "capacityTier": "red",
+  "schedulerDecision": {
+    "heavyAcquisitionWorkersStarted": 0,
+    "activeHeavyLeasesHeld": 2,
+    "lightweightWorkContinued": [
+      "federal blocked-taxonomy audit",
+      "archived GBIF recovery design",
+      "lease and run-identity validation",
+      "operational incident recording"
+    ],
+    "decision": "Hold provider execution until a fresh observation falls below the red commit-charge and paging thresholds.",
+    "userApplicationsClosed": 0,
+    "reason": "Commit charge exceeded 90 percent even though page writes were zero and disk remained healthy."
+  },
+  "contradictionsPreserved": [
+    "The immediately preceding dispatch window was yellow and permitted two bounded lanes.",
+    "The current window is red because volatile commit charge rose after dependency restoration and worker setup.",
+    "The machine hardware envelope remains unchanged; the current tier is not a permanent worker cap."
+  ]
+}

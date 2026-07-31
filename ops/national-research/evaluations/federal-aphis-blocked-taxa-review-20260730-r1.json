@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "federal-aphis-blocked-taxa-review-20260730-r1",
+  "reviewedAt": "2026-07-31T02:46:00.000Z",
+  "sourceId": "federal-aphis-noxious-weeds",
+  "catalogSpeciesCount": 2504,
+  "blockedSourceRowsReviewed": 76,
+  "acceptedCandidates": 0,
+  "duplicatesOfExistingAcceptedEvents": 0,
+  "reviewPolicy": {
+    "acceptedTaxonomy": "exact canonical binomial with exact source scope",
+    "forbiddenInferences": [
+      "synonym substitution",
+      "corrected spelling",
+      "genus migration",
+      "common-name convergence",
+      "genus descendant expansion",
+      "infraspecific expansion"
+    ]
+  },
+  "blockedCategories": {
+    "genusOrExceptionBearingScope": 5,
+    "strainOrInfraspecificScope": 4,
+    "ambiguousComplexScope": 1,
+    "exactSourceBinomialAbsentFromCatalog": 66
+  },
+  "notableExactBinomial": {
+    "sourceRecordId": "7-cfr-360.200/c/mimosa-pigra",
+    "sourceScope": "Mimosa pigra var. pigra",
+    "catalogSpeciesId": "mimosa-pigra",
+    "decision": "blocked",
+    "reason": "The source regulates var. pigra. Expanding it to the full species would exceed the retained source scope."
+  },
+  "existingProjection": {
+    "acceptedFederalEvents": 35,
+    "jurisdictions": 51,
+    "grossApplicabilityReferences": 1785,
+    "incrementalReferencesFromThisReview": 0
+  },
+  "semantics": [
+    "No state applicability event was added.",
+    "No county evidence, presence, absence, or non-detection was created.",
+    "All 76 source rows remain explicitly blocked for exact taxonomy or scope review."
+  ]
+}
