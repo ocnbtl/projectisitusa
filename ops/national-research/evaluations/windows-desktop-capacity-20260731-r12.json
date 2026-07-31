@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260731-r12",
+  "observedAt": "2026-07-31T21:14:32.1632788Z",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalProcessors": 16,
+    "totalPhysicalMemoryMib": 31900.92
+  },
+  "memory": {
+    "availablePhysicalMemoryMib": 8691.81,
+    "sampleMinimumAvailableMib": 8236,
+    "sampleAverageAvailableMib": 8320.33,
+    "availablePercentAtSnapshot": 27.25,
+    "committedBytesAverage": 40791730858.67,
+    "commitLimitBytes": 53851631616,
+    "pageFileAllocatedMib": 19456,
+    "pageFileCurrentUsageMib": 1070,
+    "pageFilePeakUsageMib": 5556,
+    "pageFileUsagePercent": 5.5,
+    "pagesOutputPerSecondMaximum": 0,
+    "hardHeavyWorkerFloorMib": 3072,
+    "predictedAvailableAfterThree1536MibReservations": 3712.33,
+    "sustainedThrashingObserved": false
+  },
+  "disk": {
+    "drive": "C:",
+    "repositoryPath": "C:\\Code\\project-isitusa",
+    "worktreeRoot": "C:\\Code\\project-isitusa-worktrees",
+    "temporaryPath": "C:\\Users\\Ocean\\AppData\\Local\\Temp",
+    "packageCachePath": "C:\\Users\\Ocean\\AppData\\Local\\npm-cache",
+    "totalGib": 1861.98,
+    "freeGib": 1078.91,
+    "freePercent": 57.94,
+    "absoluteStopFloorGib": 20,
+    "minimumRequiredHeadroomPercent": 15,
+    "safeThroughputMeasurement": "Passive three-second system counters only; no synthetic write benchmark was run.",
+    "readBytesPerSecondAverage": 68676.03,
+    "writeBytesPerSecondAverage": 2581647.14,
+    "averageDiskQueueLength": 0.01
+  },
+  "runtime": {
+    "projectNode": "v22.23.2",
+    "projectNpm": "10.9.8",
+    "git": "2.53.0.windows.3"
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "probeCount": 3,
+    "http200Count": 3,
+    "http429Count": 0,
+    "retryAfterHeaders": 0,
+    "latencyMilliseconds": [549, 264, 244],
+    "probeTargets": [
+      "Alaska:Rottboellia cochinchinensis",
+      "California:Setaria faberi",
+      "Kansas:Ophiostoma ulmi"
+    ]
+  },
+  "repository": {
+    "localHead": "7f617d2dea2a0571144e5ec4d69dc847a8d6a85e",
+    "originMain": "7f617d2dea2a0571144e5ec4d69dc847a8d6a85e",
+    "githubMain": "7f617d2dea2a0571144e5ec4d69dc847a8d6a85e",
+    "githubDeploymentId": 5693309487,
+    "vercelDeploymentId": "dpl_7Xc4Te54Z4QpdHqZyFWRM4KKbCX6",
+    "vercelReadyState": "READY",
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrations": 0,
+    "mergeConflicts": 0
+  },
+  "skills": {
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "recomputedWithPinnedValidator": true,
+    "orchestrationValidation": "pass-with-historical-terminal-warnings"
+  },
+  "schedulerDecision": {
+    "capacityTier": "green-calibrated",
+    "availableWorkerAgentSlots": 3,
+    "acquisitionLanes": 3,
+    "artifactProcessingLanes": 0,
+    "lightweightLanes": 0,
+    "mainIntegrationConcurrency": 1,
+    "sharedCompilerConcurrency": 1,
+    "perWorkerMemoryReservationMib": 1536,
+    "selectedStates": ["AK", "CA", "KS"],
+    "selectedReason": "AK advances the active certification cohort, CA advances the next cohort, and KS had the highest measured later-state expected net-new pair yield. Scopes are non-overlapping and three lanes preserve the 3 GiB hard floor under declared reservations.",
+    "remeasureBeforeDispatch": true,
+    "remeasureBeforeNextWave": true
+  },
+  "contradictionsPreserved": [
+    "The reusable prompt checkpoint at 326f9838 is superseded by exact production commit 7f617d2d.",
+    "The dated 19 provider failures are already closed and were not recreated.",
+    "A restricted-sandbox TSX process reported uv_os_get_passwd ENOMEM while the host had more than 8 GiB available; the same read-only command succeeded outside the sandbox.",
+    "The first live-route pass received successful responses but Windows PowerShell lacked the static SHA256.HashData method; a compatible SHA256.Create pass then verified all route bytes.",
+    "The skill contract prose describes repository-relative hash paths, while the frozen validator computes paths relative to each skill root. The validator and freeze receipt agree, so leases retain the frozen hashes without editing a pinned skill."
+  ]
+}
