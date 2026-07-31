@@ -209892,7 +209892,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r4_az_retry2",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T11:30:55.000Z",
       "expiresAt": "2026-07-31T15:29:47.525Z",
       "recoveryAt": null,
@@ -210279,7 +210279,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 976e0b5c7a3466e5bf7e39b2f633acc6f7404a82...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T11:57:31.417Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r4-az-001-retry2__lease-gbif-bulk-20260731-r4-az-001-retry2-1.json",
+        "sha256": "e5be64c84232b0c6e8f46fbbb1d135fb4197458381fe9e0aa227090336a8ae65",
+        "bytes": 22469,
+        "status": "complete",
+        "workerCommit": "175028859011de5e6c12d945be18435d345dafa7",
+        "workerBranchHead": "8862e46fc2190ee0e4f04b635380b3e0bdf2371f"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r4-fl-001-retry1-1",
