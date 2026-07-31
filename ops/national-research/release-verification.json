@@ -538,6 +538,111 @@
         }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, Vercel, live routes, selected live bytes, and desktop and mobile browser behavior were verified. It does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-a3b072e8-2026-07-31",
+      "verifiedAt": "2026-07-31T15:33:06Z",
+      "commitSha": "a3b072e81934cc7da8d7c4317624258bda3445e5",
+      "githubMainSha": "a3b072e81934cc7da8d7c4317624258bda3445e5",
+      "githubDeploymentId": 5693055595,
+      "vercelDeploymentId": "dpl_8nKfsvL1HMmLufBXkkqGhFkfdnPu",
+      "vercelDeploymentUrl": "projectisitusa-9ofbr5vrg-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CO",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CT",
+          "status": 200
+        },
+        {
+          "path": "/research?state=DE",
+          "status": 200
+        },
+        {
+          "path": "/research?state=TX",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/CO/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/CT/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/FL/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "2c046bdb1171ceedcf691fb788395048483053c8db181f33525cfca968c1d6f2"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "4608ad17e0c40e64a4c5ffc5bd745c1b039e9200dae1d2d868a5f151cb084879"
+        },
+        {
+          "path": "/generated/research/CO/summary.json",
+          "sha256": "d8b5e501eb846df53da0928fe5323b5133a2769d63b69662aebcb325ea00e3f7"
+        },
+        {
+          "path": "/generated/research/CT/summary.json",
+          "sha256": "3fd47042b13cb4ff7b0cabef38baf952f96d444dc8349442e3eb68986f8901ba"
+        },
+        {
+          "path": "/generated/research/FL/summary.json",
+          "sha256": "327ce4ae54b9732bc2faa0389ea5627812d64be5f6dd4c653403e0e4180008e9"
+        }
+      ],
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, GitHub deployment success, Vercel production metadata, live routes, selected live bytes, source operations, research queue, evidence expansion, ZIP lookup, cache refresh, and desktop and mobile browser behavior were verified. It does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
