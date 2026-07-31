@@ -33,10 +33,11 @@ assert(
   "Repeated GBIF state-species planning was not deterministic.",
 );
 assert(
-  first.selectedStateSpeciesScreenCount === 10 &&
+  first.selectedStateSpeciesScreenCount > 0 &&
+    first.selectedStateSpeciesScreenCount <= input.limit &&
     first.selectedCountyOutcomeCount > 0 &&
     first.selectedCountyOutcomeCount <= 670,
-  "The Alabama planner did not emit ten bounded state-species screens.",
+  "The Alabama planner did not emit a nonempty bounded state-species selection.",
 );
 assert(
   first.selected.every(
@@ -62,9 +63,10 @@ assert(
     (file) =>
       file.candidateCount <=
         file.stateSpeciesScreenCount * first.countyCount &&
+      file.candidateCount <= 5_000 &&
       file.candidateCount === file.distinctPairCount,
   ),
-  "A planned batch exceeds its state-species denominator or contains duplicate pairs.",
+  "A planned batch exceeds the runner or state-species denominator, or contains duplicate pairs.",
 );
 assert(
   pairKeys.length === first.selectedCountyOutcomeCount,

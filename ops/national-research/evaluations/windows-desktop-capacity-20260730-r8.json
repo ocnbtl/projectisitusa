@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r8",
+  "observedAt": "2026-07-31T06:00:50Z",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalProcessors": 16,
+    "totalPhysicalMemoryBytes": 33450536960
+  },
+  "samples": [
+    {
+      "sampleId": "first-wave-cold-start",
+      "observedAt": "2026-07-31T05:59:59Z",
+      "durationSeconds": 5,
+      "availableMemoryMib": {
+        "minimum": 13500,
+        "mean": 13968,
+        "maximum": 14227
+      },
+      "commitChargePercent": {
+        "minimum": 63.58,
+        "mean": 64.22,
+        "maximum": 65.12
+      },
+      "pageReadsPerSecond": {
+        "minimum": 3.96,
+        "mean": 687.78,
+        "maximum": 3233.49
+      },
+      "pageWritesPerSecond": {
+        "minimum": 0,
+        "mean": 0,
+        "maximum": 0
+      },
+      "processorUtilizationPercent": {
+        "minimum": 11.91,
+        "mean": 26.16,
+        "maximum": 38.5
+      },
+      "activeAcquisitionProcessesObserved": 1,
+      "largestAcquisitionProcessWorkingSetMib": 660,
+      "classification": "transient-yellow-warning"
+    },
+    {
+      "sampleId": "first-wave-steady-followup",
+      "observedAt": "2026-07-31T06:00:38Z",
+      "durationSeconds": 12,
+      "availableMemoryMib": {
+        "minimum": 13992,
+        "mean": 14039,
+        "maximum": 14072
+      },
+      "commitChargePercent": {
+        "minimum": 63.6,
+        "mean": 63.75,
+        "maximum": 63.9
+      },
+      "pageReadsPerSecond": {
+        "minimum": 3.5,
+        "mean": 106.74,
+        "maximum": 532.25
+      },
+      "pageWritesPerSecond": {
+        "minimum": 0,
+        "mean": 0,
+        "maximum": 0
+      },
+      "processorUtilizationPercent": {
+        "minimum": 13.73,
+        "mean": 20.47,
+        "maximum": 27.51
+      },
+      "activeAcquisitionProcessesObserved": 0,
+      "classification": "green-normalizing"
+    }
+  ],
+  "disk": {
+    "drive": "C:",
+    "minimumFreeGib": 1079.62,
+    "totalGib": 1861.98,
+    "minimumFreePercent": 57.98
+  },
+  "capacityTier": "green",
+  "capacityTierReasons": [
+    "Available memory remained above 13 GiB and above the preferred 25 percent reserve.",
+    "The cold-start page-input spike declined on the longer followup sample and page output remained zero throughout.",
+    "Commit charge remained below 66 percent.",
+    "Disk retained more than 1 TiB free and 57 percent headroom."
+  ],
+  "schedulerDecision": {
+    "acquisitionConcurrency": 3,
+    "platformConcurrentWorkerSlotsAvailable": 3,
+    "additionalLaneStartedDuringSample": false,
+    "resourceTriggeredConcurrencyReduction": false,
+    "nextAction": "Correct the invalid worker pair envelope, preserve all pre-network failures, and run the replacement three-lane multi-state wave under the same telemetry policy."
+  },
+  "providerContext": {
+    "providerRequestsObservedDuringFailedCaliforniaAndTexasLaunches": 0,
+    "providerThrottlesObserved": 0,
+    "machineLimited": false,
+    "providerLimited": false
+  },
+  "contradictionsPreserved": [
+    "The first five-second sample crossed the current page-input warning threshold, but the longer followup sample normalized without page writes or loss of memory reserve.",
+    "California and Texas did not fail from machine or provider pressure. Their original leases exceeded the frozen runner limit of 5000 candidate pairs.",
+    "Only one acquisition process was observed because the invalid California and Texas scopes stopped before provider access."
+  ]
+}

@@ -73,6 +73,7 @@ type PlannedBatch = {
 };
 
 const SOURCE_ID = "gbif-preserved-specimens";
+const MAX_CANDIDATE_PAIRS_PER_BATCH = 5_000;
 const PRIORITY_ORDER = {
   regulated: 0,
   high: 1,
@@ -286,8 +287,10 @@ export function buildGbifStateSpeciesPlan(input: {
     );
   const selected = candidates.slice(0, input.limit);
   const batches: PlannedBatch[] = [];
-  for (let index = 0; index < selected.length; index += input.speciesPerBatch) {
-    const selectedSpecies = selected.slice(index, index + input.speciesPerBatch);
+  let currentSpecies: typeof selected = [];
+  let currentPairCount = 0;
+  const flushBatch = () => {
+    if (currentSpecies.length === 0) return;
     const batchNumber: number = batches.length + 1;
     const batchId: string =
       `${input.planId}-${stateCode.toLowerCase()}-${String(batchNumber).padStart(3, "0")}`;
@@ -295,14 +298,14 @@ export function buildGbifStateSpeciesPlan(input: {
       batchId,
       stateCode,
       sourceId: SOURCE_ID,
-      speciesIds: selectedSpecies.map((entry) => entry.speciesId),
-      stateSpeciesScreenCount: selectedSpecies.length,
-      countyOutcomeCount: selectedSpecies.reduce(
+      speciesIds: currentSpecies.map((entry) => entry.speciesId),
+      stateSpeciesScreenCount: currentSpecies.length,
+      countyOutcomeCount: currentSpecies.reduce(
         (sum, entry) => sum + entry.remainingCountyFips.length,
         0,
       ),
       candidateFile: `${batchId}.json`,
-      candidates: selectedSpecies.flatMap((entry) =>
+      candidates: currentSpecies.flatMap((entry) =>
         entry.remainingCountyFips.map((countyFipsEntry) => ({
           sourceId: SOURCE_ID,
           speciesId: entry.speciesId,
@@ -310,7 +313,26 @@ export function buildGbifStateSpeciesPlan(input: {
         }))
       ),
     });
+    currentSpecies = [];
+    currentPairCount = 0;
+  };
+  for (const entry of selected) {
+    const entryPairCount = entry.remainingCountyFips.length;
+    if (entryPairCount > MAX_CANDIDATE_PAIRS_PER_BATCH) {
+      throw new Error(
+        `State-species target ${stateCode}:${entry.speciesId} exceeds the ${MAX_CANDIDATE_PAIRS_PER_BATCH}-pair runner limit.`,
+      );
+    }
+    if (
+      currentSpecies.length >= input.speciesPerBatch ||
+      currentPairCount + entryPairCount > MAX_CANDIDATE_PAIRS_PER_BATCH
+    ) {
+      flushBatch();
+    }
+    currentSpecies.push(entry);
+    currentPairCount += entryPairCount;
   }
+  flushBatch();
 
   return {
     schemaVersion: 1,
@@ -323,6 +345,11 @@ export function buildGbifStateSpeciesPlan(input: {
       protocolApplicability: "applicable",
       protocolCompletion: "incomplete-or-blocked",
       taxonomy: "exact-two-token-binomial",
+      batchLimits: {
+        maximumStateSpeciesScreens: input.speciesPerBatch,
+        maximumCountySpeciesPairs: MAX_CANDIDATE_PAIRS_PER_BATCH,
+        stateSpeciesQueriesRemainWhole: true,
+      },
       ranking: [
         "incomplete-county-count-desc",
         "existing-gbif-evidence-count-desc",
