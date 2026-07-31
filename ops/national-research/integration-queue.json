@@ -7534,7 +7534,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r7-ga-001-1",
       "jobId": "gbif-archive-recovery-20260731-r7-ga-001",
       "leaseId": "lease-gbif-archive-recovery-20260731-r7-ga-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T13:06:28.0092323Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r7-ga-001__lease-gbif-archive-recovery-20260731-r7-ga-001-1.json",
       "manifestHash": "2298ab7ef8cdc48f04fc6009913a7e4be5f12943b054772b943c9ce99659359a",
@@ -7619,6 +7619,37 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r7-ga-001-1.json",
         "sha256": "a6676046536bb97e6e8cbcba1ad1405249214f713ae3bc0d3706cd403929ea6c",
         "bytes": 7946
+      },
+      "integratedAt": "2026-07-31T13:08:20.7369362Z",
+      "integrator": "MAIN",
+      "integrationCommit": "8b739aefdca59ce0d450cc9f94f6a9c1f18adf20",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated the corrected Georgia replay transactionally with exact worker bytes, measured memory within budget, zero conflicts, and no provider reacquisition.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r7-ga-001-1.json",
+        "sha256": "6f00b8deeda7452076de1ef3c0f27f26ccce547b70dede7d9ae7f6732811a390",
+        "bytes": 7897
       }
     },
     {
