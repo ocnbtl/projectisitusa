@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `1749`
+- Verified present: `1799`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4611`
-- Not researched: `294120`
-- Determination coverage: `0.58%`
-- Research coverage: `2.12%`
-- Explicit outcome coverage: `2.1166%`
+- Researched unresolved: `6121`
+- Not researched: `292560`
+- Determination coverage: `0.60%`
+- Research coverage: `2.64%`
+- Explicit outcome coverage: `2.6358%`
 - Applicable protocol cells: `93`
-- Current complete protocol cells: `5`
-- Protocol completion: `19.35%`
-- Current protocol completion: `5.38%`
-- Evidence records: `1749`
-- Research runs: `7`
-- Rejection records: `74`
+- Current complete protocol cells: `30`
+- Protocol completion: `46.24%`
+- Current protocol completion: `32.26%`
+- Evidence records: `1864`
+- Research runs: `8`
+- Rejection records: `83`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,19 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 120 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 120 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 120 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 120 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 120 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 120 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 120 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 120 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 120 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 120 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 120 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 120 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 120 | 0 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 120 | 0 | 1 |
 | Hydrilla (`hydrilla`) | plants | 120 | 0 | 1 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 120 | 0 | 1 |
@@ -57,6 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 120 | 0 | 1 |
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 120 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 120 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 120 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 120 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 120 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 120 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 120 | 0 | 1 |
+| Simple-stem burr-reed (`sparganium-erectum`) | plants | 120 | 0 | 1 |
+| Coatbuttons (`tridax-procumbens`) | plants | 120 | 0 | 1 |
+| Panic liverseed grass (`urochloa-panicoides`) | plants | 120 | 0 | 1 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 120 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 120 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 120 | 2 |
+| Tropical soda apple (`solanum-viarum`) | plants | 0 | 120 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 120 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-31T22:49:24.958Z | 59 | 25 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

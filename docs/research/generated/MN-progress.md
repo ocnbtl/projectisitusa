@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `87`
 - County-species pairs: `217848`
-- Verified present: `611`
+- Verified present: `949`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3652`
-- Not researched: `213585`
-- Determination coverage: `0.28%`
-- Research coverage: `1.96%`
-- Explicit outcome coverage: `1.9569%`
+- Researched unresolved: `5576`
+- Not researched: `211323`
+- Determination coverage: `0.44%`
+- Research coverage: `3.00%`
+- Explicit outcome coverage: `2.9952%`
 - Applicable protocol cells: `87`
-- Current complete protocol cells: `5`
-- Protocol completion: `20.69%`
-- Current protocol completion: `5.75%`
-- Evidence records: `615`
-- Research runs: `7`
-- Rejection records: `219`
+- Current complete protocol cells: `55`
+- Protocol completion: `78.16%`
+- Current protocol completion: `63.22%`
+- Evidence records: `2446`
+- Research runs: `9`
+- Rejection records: `548`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 87 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 87 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 87 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 87 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 87 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 87 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 87 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 87 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 87 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 87 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 87 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 87 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 87 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 87 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 87 | 0 | 1 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 87 | 0 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 87 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 87 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 87 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 87 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 87 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 87 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 87 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 87 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 87 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 87 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 87 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 87 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 87 | 0 | 1 |
+| Tropical soda apple (`solanum-viarum`) | plants | 87 | 0 | 1 |
+| Simple-stem burr-reed (`sparganium-erectum`) | plants | 87 | 0 | 1 |
+| Coatbuttons (`tridax-procumbens`) | plants | 87 | 0 | 1 |
+| Panic liverseed grass (`urochloa-panicoides`) | plants | 87 | 0 | 1 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 87 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 87 | 2 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 87 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 87 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 87 | 2 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 87 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 87 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 87 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 87 | 2 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 87 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 87 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 87 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 87 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 87 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 87 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 87 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 87 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-31T22:01:44.779Z | 682 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

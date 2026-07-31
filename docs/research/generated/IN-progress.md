@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `1067`
+- Verified present: `1680`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3533`
-- Not researched: `225768`
-- Determination coverage: `0.46%`
-- Research coverage: `2.00%`
-- Explicit outcome coverage: `1.9968%`
+- Researched unresolved: `8164`
+- Not researched: `220524`
+- Determination coverage: `0.73%`
+- Research coverage: `4.27%`
+- Explicit outcome coverage: `4.2732%`
 - Applicable protocol cells: `120`
-- Current complete protocol cells: `5`
-- Protocol completion: `15.00%`
-- Current protocol completion: `4.17%`
-- Evidence records: `1078`
-- Research runs: `7`
-- Rejection records: `7`
+- Current complete protocol cells: `105`
+- Protocol completion: `98.33%`
+- Current protocol completion: `87.50%`
+- Evidence records: `3004`
+- Research runs: `11`
+- Rejection records: `955`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 92 | 0 | 1 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 92 | 0 | 1 |
-| European Alder (`alnus-glutinosa`) | plants | 92 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 92 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 92 | 0 | 1 |
-| Mugwort (`artemisia-vulgaris`) | plants | 92 | 0 | 1 |
-| Small Carpgrass (`arthraxon-hispidus`) | plants | 92 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 92 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 92 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 92 | 0 | 1 |
-| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 92 | 0 | 1 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 92 | 0 | 1 |
-| Spotted Knapweed (`centaurea-stoebe`) | plants | 92 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 92 | 0 | 1 |
-| Poison Hemlock (`conium-maculatum`) | plants | 92 | 0 | 1 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 92 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 92 | 0 | 1 |
-| Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 92 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 92 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 92 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 92 | 0 | 1 |
-| Wintercreeper (`euonymus-fortunei`) | plants | 92 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 92 | 0 | 1 |
-| Leafy Spurge (`euphorbia-virgata`) | plants | 92 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 92 | 0 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 92 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 92 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 92 | 1 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 92 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 92 | 1 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 92 | 0 |
+| Japanese Chaff Flower (`achyranthes-japonica`) | plants | 0 | 92 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 92 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 92 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 92 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 92 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 92 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 92 | 0 |
+| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 0 | 92 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 92 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 92 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 92 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 92 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 92 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 92 | 0 |
+| Japanese Hop (`humulus-japonicus`) | plants | 0 | 92 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 92 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 92 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 92 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 92 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-31T23:24:44.905Z | 874 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

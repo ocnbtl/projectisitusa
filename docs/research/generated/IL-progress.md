@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `982`
+- Verified present: `1398`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4016`
-- Not researched: `250410`
-- Determination coverage: `0.38%`
-- Research coverage: `1.96%`
-- Explicit outcome coverage: `1.9569%`
+- Researched unresolved: `5232`
+- Not researched: `248778`
+- Determination coverage: `0.55%`
+- Research coverage: `2.60%`
+- Explicit outcome coverage: `2.5958%`
 - Applicable protocol cells: `94`
-- Current complete protocol cells: `5`
-- Protocol completion: `19.15%`
-- Current protocol completion: `5.32%`
-- Evidence records: `990`
-- Research runs: `7`
-- Rejection records: `14`
+- Current complete protocol cells: `55`
+- Protocol completion: `72.34%`
+- Current protocol completion: `58.51%`
+- Evidence records: `3282`
+- Research runs: `9`
+- Rejection records: `1298`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,22 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 102 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 102 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 102 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 102 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 102 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 102 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 102 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 102 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 102 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 102 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 102 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 102 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 102 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 102 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 102 | 0 | 1 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 102 | 0 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 102 | 0 | 1 |
 | Swamp morning-glory (`ipomoea-aquatica`) | plants | 102 | 0 | 1 |
 | Asian marshweed (`limnophila-sessiliflora`) | plants | 102 | 0 | 1 |
@@ -57,6 +41,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 102 | 0 | 1 |
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 102 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 102 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 102 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 102 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 102 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 102 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 102 | 0 | 1 |
+| Tropical soda apple (`solanum-viarum`) | plants | 102 | 0 | 1 |
+| Simple-stem burr-reed (`sparganium-erectum`) | plants | 102 | 0 | 1 |
+| Coatbuttons (`tridax-procumbens`) | plants | 102 | 0 | 1 |
+| Panic liverseed grass (`urochloa-panicoides`) | plants | 102 | 0 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 102 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 102 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 102 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 102 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 102 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 102 | 2 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 102 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-31T22:50:18.356Z | 742 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

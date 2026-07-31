@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `1538`
+- Verified present: `1879`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5654`
-- Not researched: `138040`
-- Determination coverage: `1.06%`
-- Research coverage: `4.95%`
-- Explicit outcome coverage: `4.9521%`
+- Researched unresolved: `6299`
+- Not researched: `137054`
+- Determination coverage: `1.29%`
+- Research coverage: `5.63%`
+- Explicit outcome coverage: `5.6310%`
 - Applicable protocol cells: `147`
-- Current complete protocol cells: `105`
-- Protocol completion: `80.27%`
-- Current protocol completion: `71.43%`
-- Evidence records: `19645`
-- Research runs: `9`
-- Rejection records: `2021`
+- Current complete protocol cells: `134`
+- Protocol completion: `100.00%`
+- Current protocol completion: `91.16%`
+- Evidence records: `24429`
+- Research runs: `10`
+- Rejection records: `2435`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Giant Foxtail (`setaria-faberi`) | plants | 58 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 58 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 58 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 58 | 0 | 1 |
-| Field Sowthistle (`sonchus-arvensis`) | plants | 58 | 0 | 1 |
-| Johnsongrass (`sorghum-halepense`) | plants | 58 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 58 | 0 | 1 |
-| Prickly comfrey (`symphytum-asperum`) | plants | 58 | 0 | 1 |
-| Muster john henry (`tagetes-minuta`) | plants | 58 | 0 | 1 |
-| Five-stamen tamarisk (`tamarix-chinensis`) | plants | 58 | 0 | 1 |
-| French tamarisk (`tamarix-gallica`) | plants | 58 | 0 | 1 |
-| Smallflower tamarisk (`tamarix-parviflora`) | plants | 58 | 0 | 1 |
-| Puncturevine (`tribulus-terrestris`) | plants | 58 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 58 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 58 | 0 | 1 |
-| Desert knapweed (`volutaria-tubuliflora`) | plants | 58 | 0 | 1 |
-| Syrian beancaper (`zygophyllum-fabago`) | plants | 58 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 58 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 58 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 58 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 58 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 58 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 58 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 58 | 2 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 58 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 58 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 58 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 58 | 1 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 58 | 1 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 58 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 58 | 0 |
+| Cheatgrass (`bromus-tectorum`) | plants | 0 | 58 | 0 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 0 | 58 | 0 |
+| Curly plumeless thistle (`carduus-crispus`) | plants | 0 | 58 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 58 | 0 |
+| Orange cotoneaster (`cotoneaster-franchetii`) | plants | 0 | 58 | 0 |
+| Silverleaf cotoneaster (`cotoneaster-pannosus`) | plants | 0 | 58 | 0 |
+| Common Houndstongue (`cynoglossum-officinale`) | plants | 0 | 58 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 58 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 58 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 58 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 58 | 0 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 0 | 58 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 0 | 58 | 0 |
+| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 0 | 58 | 0 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 0 | 58 | 0 |
+| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 0 | 58 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T06:36:40.814Z | 1434 | 100 |
+| GBIF preserved specimen records | operational | 2026-07-31T21:39:59.698Z | 1775 | 129 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
