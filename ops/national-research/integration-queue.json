@@ -11031,7 +11031,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r19-nc-003-1",
       "jobId": "gbif-bulk-20260731-r19-nc-003",
       "leaseId": "lease-gbif-bulk-20260731-r19-nc-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T23:21:32.666Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r19-nc-003__lease-gbif-bulk-20260731-r19-nc-003-1.json",
       "manifestHash": "4708d24fbf4d0272e6c93c01a3113bde3a52a73505bb67d84c12697e3828a041",
@@ -11124,6 +11124,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r19-nc-003-1.json",
         "sha256": "efc0341751ee48356704ceef04b5030ba6b1bbcf9b7065604f05a87fd6f39a8c",
         "bytes": 9237
+      },
+      "integratedAt": "2026-07-31T23:23:03.440Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1c77bd49802f2a22dfa8e545e91b969d8fc906ba",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for North Carolina batch 3, 24 complete statewide species screens and 2400 explicit county outcomes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the accepted byte-identical North Carolina statewide GBIF batch 3 immutable run with the unmeasured runtime-peak caveat preserved.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r19-nc-003-1.json",
+        "sha256": "f2f008ca2673c614742e9e70437d0c604baa7a649d2cd9757f5e34c083e8d701",
+        "bytes": 9269
       }
     }
   ]
