@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-archive-recovery-20260731-r13-ct-001-1",
+  "jobId": "gbif-archive-recovery-20260731-r13-ct-001",
+  "leaseId": "lease-gbif-archive-recovery-20260731-r13-ct-001-1",
+  "workerCommit": "72fde6adfa746cfd7924d949ff1393c4797cb5de",
+  "workerBranchHead": "db868141dff7aeb5ebb66adb824fe9d04e3807ba",
+  "manifestHash": "e0dfe8096d8cb5ec139530f4953b1235167a8b40963b9d08aa88672854bc4a4a",
+  "changedPaths": [
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-alliaria-petiolata-000000.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-artemisia-vulgaris-000000.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-arthraxon-hispidus-000000.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-azolla-pinnata-000000.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-berberis-vulgaris-000000.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-bromus-tectorum-000000.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-butomus-umbellatus-000000.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-alliaria-petiolata.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-artemisia-vulgaris.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-arthraxon-hispidus.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-azolla-pinnata.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-berberis-vulgaris.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-bromus-tectorum.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-butomus-umbellatus.json.gz",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/assertions.ndjson",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/manifest.json",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/outcomes.ndjson",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/receipt.json",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/rejections.ndjson",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/reviews.ndjson",
+    "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 63 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 63 ordered county outcomes, 0 accepted assertions and reviews, 514 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-07-31T14:36:51.0295334Z"
+}
