@@ -6821,13 +6821,56 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r4-fl-001-retry1-1",
       "jobId": "gbif-bulk-20260731-r4-fl-001-retry1",
       "leaseId": "lease-gbif-bulk-20260731-r4-fl-001-retry1-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-07-31T11:53:38.070Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r4-fl-001-retry1__lease-gbif-bulk-20260731-r4-fl-001-retry1-1.json",
       "manifestHash": "6d4f09464fb37193731203048b92cd7265c4ef4366591ef5724601929da926f4",
       "manifestBytes": 12865,
       "workerCommit": "90511b859f8ebedc2213a1be0af959936140843c",
-      "workerBranchHead": "ce39ccbe1b75c8fea806f5ea20e370c948b4f20a"
+      "workerBranchHead": "ce39ccbe1b75c8fea806f5ea20e370c948b4f20a",
+      "reviewedAt": "2026-07-31T11:55:53.139Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the complete Florida GBIF retry run: exactly two previously failed state-species screens, 134 complete county outcomes, 149 qualifying assertions and reviews, 89 explicit rejections, zero duplicates, zero incomplete pagination, zero unsupported negative claims, and only lease-permitted immutable paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-occurrences-albizia-julibrissin-000000.json.gz",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-occurrences-ligustrum-japonicum-000000.json.gz",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-species-match-albizia-julibrissin.json.gz",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-species-match-ligustrum-japonicum.json.gz",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/assertions.ndjson",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/manifest.json",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/outcomes.ndjson",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/receipt.json",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/rejections.ndjson",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/reviews.ndjson",
+        "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run and pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact base-to-head path, whitespace, hash, receipt, taxonomy, geography, pagination, and unsupported-negative audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "clean isolated worker worktree and deterministic two-commit inventory",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r4-fl-001-retry1-1.json",
+        "sha256": "170b00517bf54f67525513a8d25d8f881c9c84faf1f793ea9c095a0368615406",
+        "bytes": 2828
+      }
     }
   ]
 }
