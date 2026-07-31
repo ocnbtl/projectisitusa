@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-31T12:52:27.880Z",
+  "runId": "20260731T114432Z__gbif-preserved-specimens__ef72a6855eee",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AR",
+  "pairKeys": [
+    "05001:aspidiotus-duplex",
+    "05003:aspidiotus-duplex",
+    "05005:aspidiotus-duplex",
+    "05007:aspidiotus-duplex",
+    "05009:aspidiotus-duplex",
+    "05011:aspidiotus-duplex",
+    "05013:aspidiotus-duplex",
+    "05015:aspidiotus-duplex",
+    "05017:aspidiotus-duplex",
+    "05019:aspidiotus-duplex",
+    "05021:aspidiotus-duplex",
+    "05023:aspidiotus-duplex",
+    "05025:aspidiotus-duplex",
+    "05027:aspidiotus-duplex",
+    "05029:aspidiotus-duplex",
+    "05031:aspidiotus-duplex",
+    "05033:aspidiotus-duplex",
+    "05035:aspidiotus-duplex",
+    "05037:aspidiotus-duplex",
+    "05039:aspidiotus-duplex",
+    "05041:aspidiotus-duplex",
+    "05043:aspidiotus-duplex",
+    "05045:aspidiotus-duplex",
+    "05047:aspidiotus-duplex",
+    "05049:aspidiotus-duplex",
+    "05051:aspidiotus-duplex",
+    "05053:aspidiotus-duplex",
+    "05055:aspidiotus-duplex",
+    "05057:aspidiotus-duplex",
+    "05059:aspidiotus-duplex",
+    "05061:aspidiotus-duplex",
+    "05063:aspidiotus-duplex",
+    "05065:aspidiotus-duplex",
+    "05067:aspidiotus-duplex",
+    "05069:aspidiotus-duplex",
+    "05071:aspidiotus-duplex",
+    "05073:aspidiotus-duplex",
+    "05075:aspidiotus-duplex",
+    "05077:aspidiotus-duplex",
+    "05079:aspidiotus-duplex",
+    "05081:aspidiotus-duplex",
+    "05083:aspidiotus-duplex",
+    "05085:aspidiotus-duplex",
+    "05087:aspidiotus-duplex",
+    "05089:aspidiotus-duplex",
+    "05091:aspidiotus-duplex",
+    "05093:aspidiotus-duplex",
+    "05095:aspidiotus-duplex",
+    "05097:aspidiotus-duplex",
+    "05099:aspidiotus-duplex",
+    "05101:aspidiotus-duplex",
+    "05103:aspidiotus-duplex",
+    "05105:aspidiotus-duplex",
+    "05107:aspidiotus-duplex",
+    "05109:aspidiotus-duplex",
+    "05111:aspidiotus-duplex",
+    "05113:aspidiotus-duplex",
+    "05115:aspidiotus-duplex",
+    "05117:aspidiotus-duplex",
+    "05119:aspidiotus-duplex",
+    "05121:aspidiotus-duplex",
+    "05123:aspidiotus-duplex",
+    "05125:aspidiotus-duplex",
+    "05127:aspidiotus-duplex",
+    "05129:aspidiotus-duplex",
+    "05131:aspidiotus-duplex",
+    "05133:aspidiotus-duplex",
+    "05135:aspidiotus-duplex",
+    "05137:aspidiotus-duplex",
+    "05139:aspidiotus-duplex",
+    "05141:aspidiotus-duplex",
+    "05143:aspidiotus-duplex",
+    "05145:aspidiotus-duplex",
+    "05147:aspidiotus-duplex",
+    "05149:aspidiotus-duplex"
+  ],
+  "parameterHash": "ef72a6855eee5c6d1e73a31c81e373e0d13bcb03cfd96c14a9b6c3552998e6cb",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-31T12:52:27.879Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Arkansas and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "aspidiotus-duplex"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-aspidiotus-duplex",
+        "url": "https://api.gbif.org/v1/species/match?name=Aspidiotus+duplex&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T12:52:27.551Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-aspidiotus-duplex",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Arkansas&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=10452781&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for aspidiotus-duplex and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T12:52:27.879Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/artifacts/gbif-occurrences-aspidiotus-duplex-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260731T114432Z__gbif-preserved-specimens__ef72a6855eee/artifacts/gbif-species-match-aspidiotus-duplex.json.gz",
+      "sha256": "4b933adc7b985f37afc60c1bbcbb626536a4bacb20106fdd4500ed381bbc8d7e",
+      "bytes": 289
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
