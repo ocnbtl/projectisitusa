@@ -88,6 +88,16 @@ assert(
 );
 const expiresAt = new Date(valueFor(args, "expires-at")).toISOString();
 const now = new Date(valueFor(args, "now")).toISOString();
+const maxMemoryValues = valuesFor(args, "max-memory-mb");
+assert(
+  maxMemoryValues.length <= 1,
+  "At most one --max-memory-mb may be provided.",
+);
+const maxMemoryMb = Number(maxMemoryValues[0] ?? "1024");
+assert(
+  Number.isInteger(maxMemoryMb) && maxMemoryMb > 0,
+  "--max-memory-mb must be a positive integer.",
+);
 const entries = valuesFor(args, "entry");
 assert(entries.length > 0, "At least one --entry is required.");
 const baseSha = execFileSync("git", ["rev-parse", "HEAD"], {
@@ -257,7 +267,7 @@ const newJobs = entries.map((serializedEntry) => {
     resourcePolicy: {
       maxArtifactBytes: 20_000_000,
       maxWallMinutes: 60,
-      maxMemoryMb: 1024,
+      maxMemoryMb,
     },
     expiresAt,
     recoveryState:

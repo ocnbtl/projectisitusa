@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "gbif-archive-resource-overrun-20260731-r1",
+  "observedAt": "2026-07-31T12:53:56.1412105Z",
+  "jobId": "gbif-archive-recovery-20260731-r4-ga-002",
+  "leaseId": "lease-gbif-archive-recovery-20260731-r4-ga-002-1",
+  "workerBranch": "codex/gbif-archive-recovery-20260731-r4-ga-002",
+  "workerBranchHead": "9fba0cf62f59d40d580c07ab535583b6a0b5a912",
+  "runId": "20260731T121042Z__gbif-preserved-specimens__f8b7b5772831",
+  "declaredMemoryLimitMib": 1024,
+  "measuredPeakWorkingSetMib": 1241,
+  "overrunMib": 217,
+  "scientificRunState": {
+    "completeOutcomePairs": 3021,
+    "evidenceFoundOutcomes": 618,
+    "noQualifyingEvidenceOutcomes": 2403,
+    "assertions": 1729,
+    "reviews": 1729,
+    "rejections": 227,
+    "duplicates": 0,
+    "errors": 0,
+    "liveProviderRequests": 0,
+    "reusedArtifacts": 40,
+    "reusedArtifactBytes": 856178
+  },
+  "validatorErrors": [
+    "Worker peak memory exceeded the lease limit.",
+    "A complete manifest requires passing verification commands."
+  ],
+  "mainDisposition": {
+    "leaseState": "failed",
+    "integrated": false,
+    "preservedBranch": true,
+    "preservedImmutableBytes": true,
+    "providerReacquisitionAuthorized": false,
+    "replacementMemoryBudgetMib": 2048,
+    "replacementMode": "replay-verified-archive"
+  },
+  "schedulerEffect": {
+    "resourceTriggeredConcurrencyReduction": 1,
+    "artifactWorkerP95MemoryMib": 1241,
+    "futureArchiveReplayReservationMib": 2048
+  },
+  "contradictionsPreserved": [
+    "The scientific run completed with complete pagination and zero provider requests, but the worker contract did not complete because measured peak memory exceeded the lease limit.",
+    "The machine-level scheduler reserved 2048 MiB for an artifact worker, but the individual job registrar had emitted a 1024 MiB lease budget.",
+    "The preserved worker manifest is truthful and intentionally fails the frozen validator. It is not eligible for MAIN integration."
+  ]
+}
