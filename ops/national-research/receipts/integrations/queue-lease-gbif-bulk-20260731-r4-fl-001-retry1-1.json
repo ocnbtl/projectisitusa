@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260731-r4-fl-001-retry1-1",
+  "jobId": "gbif-bulk-20260731-r4-fl-001-retry1",
+  "leaseId": "lease-gbif-bulk-20260731-r4-fl-001-retry1-1",
+  "workerCommit": "90511b859f8ebedc2213a1be0af959936140843c",
+  "workerBranchHead": "ce39ccbe1b75c8fea806f5ea20e370c948b4f20a",
+  "manifestHash": "6d4f09464fb37193731203048b92cd7265c4ef4366591ef5724601929da926f4",
+  "changedPaths": [
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-occurrences-albizia-julibrissin-000000.json.gz",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-occurrences-ligustrum-japonicum-000000.json.gz",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-species-match-albizia-julibrissin.json.gz",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/artifacts/gbif-species-match-ligustrum-japonicum.json.gz",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/assertions.ndjson",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/manifest.json",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/outcomes.ndjson",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/receipt.json",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/rejections.ndjson",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/reviews.ndjson",
+    "src/data/research/runs/20260731T112945Z__gbif-preserved-specimens__386ce4377de0/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "transactional immutable-content and finalized-manifest cherry-picks",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact worker-to-main tree-entry parity for every reviewed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN transactionally integrated the accepted Florida GBIF retry content and finalized manifest with exact worker tree parity, no conflicts, no forbidden paths, and a clean canonical worktree.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-31T11:56:40.842Z",
+  "integrationCommit": "7b9d935bbf28ec693de9a235b885a69deb95f5e3"
+}

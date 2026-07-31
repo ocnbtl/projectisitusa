@@ -6821,7 +6821,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r4-fl-001-retry1-1",
       "jobId": "gbif-bulk-20260731-r4-fl-001-retry1",
       "leaseId": "lease-gbif-bulk-20260731-r4-fl-001-retry1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T11:53:38.070Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r4-fl-001-retry1__lease-gbif-bulk-20260731-r4-fl-001-retry1-1.json",
       "manifestHash": "6d4f09464fb37193731203048b92cd7265c4ef4366591ef5724601929da926f4",
@@ -6870,6 +6870,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r4-fl-001-retry1-1.json",
         "sha256": "170b00517bf54f67525513a8d25d8f881c9c84faf1f793ea9c095a0368615406",
         "bytes": 2828
+      },
+      "integratedAt": "2026-07-31T11:56:40.842Z",
+      "integrator": "MAIN",
+      "integrationCommit": "7b9d935bbf28ec693de9a235b885a69deb95f5e3",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN transactionally integrated the accepted Florida GBIF retry content and finalized manifest with exact worker tree parity, no conflicts, no forbidden paths, and a clean canonical worktree.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r4-fl-001-retry1-1.json",
+        "sha256": "6519f1a1f276e8b0115d2e0fa23cb5a2e39cc3585595e3bbe97fb9eb58f6d81c",
+        "bytes": 2663
       }
     }
   ]
