@@ -7874,7 +7874,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r8-ga-001-1",
       "jobId": "gbif-archive-recovery-20260731-r8-ga-001",
       "leaseId": "lease-gbif-archive-recovery-20260731-r8-ga-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T13:39:32.757Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r8-ga-001__lease-gbif-archive-recovery-20260731-r8-ga-001-1.json",
       "manifestHash": "9bac4fd88b2c2c1c2351a471f910d2d4982b5151f99df33be5162030ff3252e8",
@@ -7959,6 +7959,37 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r8-ga-001-1.json",
         "sha256": "4ccc098b45c473ea2be9c030f4a10d9edcd477718cb3df7f068472467179a04a",
         "bytes": 7880
+      },
+      "integratedAt": "2026-07-31T13:42:06.393Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1216ee62037b2bed349fc8a715c6646aa5d2da03",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated reviewed Georgia zero-network replay after exact worker-to-MAIN tree parity and clean repository checks.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r8-ga-001-1.json",
+        "sha256": "e1570da6dceb25078183e5761a4b18cfc23cafc7cb03f126d691f3d3824fa53e",
+        "bytes": 7794
       }
     }
   ]
