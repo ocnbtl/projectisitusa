@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260731-r10",
+  "observedAt": "2026-07-31T11:27:23.3448410Z",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalProcessors": 16,
+    "totalPhysicalMemoryBytes": 33450536960
+  },
+  "sample": {
+    "sampleId": "round-start",
+    "availableMemoryMib": 10549,
+    "availableMemoryPercent": 33.07,
+    "commitChargePercent": 84.4,
+    "pageReadsPerSecond": 34.64,
+    "pageWritesPerSecond": 0,
+    "processorUtilizationPercent": 18.74,
+    "activeProjectWorkerProcesses": 0,
+    "activeGitProcesses": 0
+  },
+  "disk": {
+    "drive": "C:",
+    "freeGib": 1085.36,
+    "totalGib": 1861.98,
+    "freePercent": 58.29,
+    "repositoryPath": "C:\\Code\\project-isitusa",
+    "worktreeRoot": "C:\\Code\\project-isitusa-worktrees",
+    "temporaryPath": "C:\\Users\\Ocean\\AppData\\Local\\Temp",
+    "packageCachePath": "C:\\Users\\Ocean\\AppData\\Local\\npm-cache"
+  },
+  "runtime": {
+    "projectNode": "v22.23.2",
+    "projectNpm": "10.9.8",
+    "systemNode": "v24.18.1",
+    "systemNpm": "11.16.0",
+    "git": "2.53.0.windows.1"
+  },
+  "network": {
+    "gbifProbeCount": 5,
+    "gbifHttpStatus": 200,
+    "gbifLatencySeconds": {
+      "minimum": 0.36,
+      "maximum": 0.46
+    },
+    "githubHttpStatus": 200,
+    "productionHttpStatus": 200,
+    "providerThrottlingObserved": false
+  },
+  "capacityTier": "green",
+  "capacityGate": {
+    "requestedWorkerCount": 4,
+    "maxWorkersCurrent": 4,
+    "requiredMemoryBytes": 12657601536,
+    "projectedAvailableMemoryBytes": 9241481216,
+    "availableDiskBytes": 1165095690240,
+    "requiredDiskBytes": 304267597824,
+    "projectedAvailableDiskBytes": 860828092416,
+    "hardHeavyWorkerMemoryFloorBytes": 3221225472,
+    "passed": true
+  },
+  "schedulerDecision": {
+    "machineHeavyWorkerEnvelope": 4,
+    "availableWorkerAgentSlots": 3,
+    "dispatchedHeavyWorkers": 3,
+    "preferredRamReservePercent": 25,
+    "hardHeavyWorkerMemoryFloorGib": 3,
+    "decision": "Dispatch three non-overlapping acquisition workers and retain MAIN for sequential integration.",
+    "reason": "The four-worker machine gate passed with more than 8 GiB projected available memory, while this Codex task exposes only three worker-agent slots alongside MAIN."
+  },
+  "contradictionsPreserved": [
+    "The immediately preceding checkpoint reported a 745 MiB minimum, but the current round-start sample has more than 10 GiB available and zero page output.",
+    "The machine safely admits four heavy workers at current measured budgets, but the current task exposes only three parallel worker-agent slots alongside MAIN.",
+    "The skill regression reported uv_os_get_passwd ENOMEM inside the restricted sandbox despite healthy physical memory; the identical regression passed 97 of 97 outside that sandbox.",
+    "The readiness dashboard still contains older resource samples and must not override this dated capacity evaluation."
+  ]
+}

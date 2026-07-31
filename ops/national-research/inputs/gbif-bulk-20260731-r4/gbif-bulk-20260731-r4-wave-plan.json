@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260731-r4",
+  "createdAt": "2026-07-31T11:27:23.3448410Z",
+  "capacityEvaluation": "ops/national-research/evaluations/windows-desktop-capacity-20260731-r10.json",
+  "objective": "Recover all retryable incomplete GBIF screens before equivalent fresh acquisition while keeping an independent high-value later-state lane active.",
+  "rankingPolicy": [
+    "recover verified partial work before equivalent new acquisition",
+    "maximize currently not-researched county-species pairs moved per provider request",
+    "preserve active certification cohort progress",
+    "keep later jurisdictions receiving national-source screening"
+  ],
+  "selected": [
+    {
+      "batchId": "gbif-bulk-20260731-r4-az-001-retry2",
+      "stateCode": "AZ",
+      "kind": "retry",
+      "stateSpeciesScreens": 17,
+      "countySpeciesPairs": 255,
+      "expectedProviderRequests": 17,
+      "priorRunId": "20260730T165217Z__gbif-preserved-specimens__8abcc723a952",
+      "selectedReason": "Exact recovery of the 17 remaining retryable provider failures in the active certification cohort; 33 completed screens from the partial run are excluded."
+    },
+    {
+      "batchId": "gbif-bulk-20260731-r4-fl-001-retry1",
+      "stateCode": "FL",
+      "kind": "retry",
+      "stateSpeciesScreens": 2,
+      "countySpeciesPairs": 134,
+      "expectedProviderRequests": 2,
+      "priorRunId": "20260731T061755Z__gbif-preserved-specimens__3383a5aec9f3",
+      "selectedReason": "Exact recovery of both retryable provider failures; the completed 71 screens and the taxonomy-blocked screen are excluded."
+    },
+    {
+      "batchId": "gbif-bulk-20260731-r4-ga-001",
+      "stateCode": "GA",
+      "kind": "fresh",
+      "stateSpeciesScreens": 25,
+      "countySpeciesPairs": 3975,
+      "expectedProviderRequests": 25,
+      "selectedReason": "Highest expected net-new unique-pair yield among the previewed non-overlapping batches, extending reusable national-source screening beyond the first two certification cohorts."
+    }
+  ],
+  "excluded": {
+    "taxonomyAmbiguities": {
+      "screens": 11,
+      "reason": "These require exact taxonomy review and are not eligible for repeated provider calls under the current strict canonical-binomial policy."
+    },
+    "completedPartialRunScreens": {
+      "screens": 104,
+      "reason": "Verified completed screens remain preserved in their original immutable runs and are excluded from retry acquisition."
+    }
+  },
+  "aggregate": {
+    "workers": 3,
+    "stateSpeciesScreens": 44,
+    "countySpeciesPairs": 4364,
+    "expectedProviderRequests": 44
+  }
+}

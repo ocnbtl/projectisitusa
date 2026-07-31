@@ -7,25 +7,28 @@
   "branch": "main",
   "baseSha": "669cd2ac4d8323453db2e513d204208113711ed2",
   "acquiredAt": "2026-07-30T11:45:59Z",
-  "lastReverifiedAt": "2026-07-30T11:45:59Z",
-  "currentCheckpointSha": "17d92d27f79322f3be6048c2e157ae9540f196d6",
-  "localHeadAtLastReverification": "17d92d27f79322f3be6048c2e157ae9540f196d6",
+  "lastReverifiedAt": "2026-07-31T11:27:23.3448410Z",
+  "currentCheckpointSha": "326f98383ce0f532078c9346964ad950e24a38bd",
+  "localHeadAtLastReverification": "326f98383ce0f532078c9346964ad950e24a38bd",
   "state": "active",
   "ownershipEvidence": {
-    "activeProjectTasks": ["019fb2a4-b0ed-71e1-b5e0-613bf28ec745"],
+    "activeProjectTasks": [
+      "019fb2a4-b0ed-71e1-b5e0-613bf28ec745"
+    ],
     "supersededOwnerTaskId": "019f6562-b8c2-7281-a853-bcbb055ae9e4",
     "gitWorktreeCount": 2,
     "mainWriterProcesses": 0,
-    "originMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
-    "githubMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
-    "vercelProductionCommitSha": "669cd2ac4d8323453db2e513d204208113711ed2",
-    "vercelDeploymentId": "dpl_HQzusu96St2uouxobxTUu5cw1veY",
+    "originMainSha": "326f98383ce0f532078c9346964ad950e24a38bd",
+    "githubMainSha": "326f98383ce0f532078c9346964ad950e24a38bd",
+    "vercelProductionCommitSha": "326f98383ce0f532078c9346964ad950e24a38bd",
+    "vercelDeploymentId": "dpl_HcEvtdQePviCd9NfYKJukHyh365r",
     "gitFetchTransport": "https-authenticated",
     "githubCliAccount": "ocnbtl",
     "vercelCliAccount": "ocn",
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "desktop-and-mobile-pass"
+    "browserQa": "live-http-and-byte-parity-reverified-browser-qa-pending",
+    "githubDeploymentId": 5688353287
   },
   "reverificationHistory": [
     {
@@ -76,6 +79,13 @@
       "supersededOriginMainSha": "b65a6c0a516418a402e8e4050a0f45cfedae1709",
       "replacementCheckpointSha": "669cd2ac4d8323453db2e513d204208113711ed2",
       "reason": "The receiving Windows MAIN task verified the recovery archive, canonical GitHub checkpoint, private laptop lineage, Vercel production metadata, live routes, selected live bytes, all-state byte stability, and desktop plus mobile browser behavior before resuming research."
+    },
+    {
+      "recordedAt": "2026-07-31T11:27:23.3448410Z",
+      "supersededCheckpointSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+      "supersededOriginMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
+      "replacementCheckpointSha": "326f98383ce0f532078c9346964ad950e24a38bd",
+      "reason": "Windows MAIN reverified canonical main, origin and GitHub main, GitHub deployment success, Vercel production metadata, live HTTP routes, and selected generated-byte parity before resuming the next bounded national research round."
     }
   ],
   "localCheckpointObservations": [
@@ -104,5 +114,13 @@
       "reason": "Windows MAIN is two local portability and freeze commits ahead of the independently verified external checkpoint. This records observed parent state and does not self-attest to a future deployment."
     }
   ],
-  "exclusiveOperations": ["modify-main", "merge", "commit-main", "push-main", "shared-generation", "build", "deploy"]
+  "exclusiveOperations": [
+    "modify-main",
+    "merge",
+    "commit-main",
+    "push-main",
+    "shared-generation",
+    "build",
+    "deploy"
+  ]
 }
