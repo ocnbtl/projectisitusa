@@ -7,7 +7,10 @@ import type {
   ImmutableResearchRunReceipt,
   ResearchPairOutcome,
 } from "@/lib/research/types";
-import { sha256 } from "@/lib/research/run-files";
+import {
+  listImmutableResearchRuns,
+  sha256,
+} from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 
@@ -110,8 +113,29 @@ export function buildGbifPartialRetry(input: {
     .split(/\r?\n/u)
     .filter(Boolean)
     .map((line) => JSON.parse(line) as ResearchPairOutcome);
-  const incomplete = outcomes
-    .filter((outcome) => !outcome.scope_complete)
+  const archivedIncomplete = outcomes.filter(
+    (outcome) => !outcome.scope_complete,
+  );
+  const completedPairKeys = new Set(
+    listImmutableResearchRuns(input.root)
+      .flatMap((bundle) => bundle.outcomes)
+      .filter(
+        (outcome) =>
+          outcome.source_id === SOURCE_ID &&
+          outcome.state_code === receipt.requested_scope.state_code &&
+          outcome.scope_complete,
+      )
+      .map(
+        (outcome) => `${outcome.county_fips}:${outcome.species_id}`,
+      ),
+  );
+  const incomplete = archivedIncomplete
+    .filter(
+      (outcome) =>
+        !completedPairKeys.has(
+          `${outcome.county_fips}:${outcome.species_id}`,
+        ),
+    )
     .sort(
       (left, right) =>
         compareText(left.species_id, right.species_id) ||
@@ -148,7 +172,9 @@ export function buildGbifPartialRetry(input: {
       outcomesSha256: sha256(outcomesBytes),
       originalRequestedPairCount: outcomes.length,
       originalCompletePairCount: outcomes.length - incomplete.length,
-      originalIncompletePairCount: incomplete.length,
+      originalIncompletePairCount: archivedIncomplete.length,
+      preventedAlreadyCompletePairCount:
+        archivedIncomplete.length - incomplete.length,
     },
     candidates: incomplete.map((outcome) => ({
       sourceId: SOURCE_ID,
