@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "gbif-geography-blocker-mo-20260731-r1",
+  "recordedAt": "2026-07-31T21:55:26.6736119Z",
+  "jobId": "gbif-bulk-20260731-r17-mo-001",
+  "leaseId": "lease-gbif-bulk-20260731-r17-mo-001-1",
+  "stateCode": "MO",
+  "sourceId": "gbif-preserved-specimens",
+  "baseSha": "7660cfa98f262261671a9f467f897ae325a76a9c",
+  "disposition": "failed-before-provider-acquisition",
+  "error": "Requested pair 29189:alliaria-petiolata has a county name that does not match its FIPS.",
+  "cause": {
+    "countyFips": [
+      "29189",
+      "29510"
+    ],
+    "legalNames": [
+      "St. Louis County",
+      "St. Louis city"
+    ],
+    "sharedShortName": "St. Louis",
+    "affectedTaxa": 25,
+    "affectedPairs": 50,
+    "otherwiseResolvablePairs": 2825,
+    "finding": "The frozen runner supplies the shared short name and the adapter re-resolves it by name, so two active county equivalents cannot be distinguished consistently by FIPS."
+  },
+  "execution": {
+    "attempts": 1,
+    "retries": 0,
+    "wallSeconds": 5.078,
+    "peakWorkingSetMiB": 1040.69,
+    "providerRequests": 0,
+    "providerPages": 0,
+    "artifacts": 0,
+    "artifactBytes": 0,
+    "outputPairs": 0,
+    "commits": 0,
+    "worktreeClean": true
+  },
+  "evidenceSafety": {
+    "partialCompletionClaimed": false,
+    "noQualifyingEvidenceEmitted": false,
+    "absenceEmitted": false,
+    "notDetectedEmitted": false,
+    "notApplicableEmitted": false
+  },
+  "replacementRequirements": [
+    "Correct the adapter input so unique FIPS-consistent legal county names or approved unambiguous source aliases are used.",
+    "Add a regression covering St. Louis County and St. Louis city.",
+    "Validate the corrected base before issuing a new non-overlapping replacement lease.",
+    "Do not retry this unchanged base or omit any of the 50 affected leased pairs."
+  ]
+}
