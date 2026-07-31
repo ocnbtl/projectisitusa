@@ -92,6 +92,18 @@ function integerArg(args: Map<string, string>, key: string, fallback?: number) {
   return Number(value);
 }
 
+function booleanArg(
+  args: Map<string, string>,
+  key: string,
+  fallback: boolean,
+) {
+  const raw = args.get(key);
+  if (raw === undefined) return fallback;
+  if (raw === "true") return true;
+  if (raw === "false") return false;
+  throw new Error(`--${key} must be true or false.`);
+}
+
 try {
   const args = parseArgs(process.argv.slice(2));
   const repo = path.resolve(required(args, "repo"));
@@ -102,6 +114,16 @@ try {
   const outputPath = path.resolve(required(args, "output"));
   const wallSeconds = integerArg(args, "wall-seconds");
   const peakMemoryMb = integerArg(args, "peak-memory-mb");
+  const peakMemoryMeasured = booleanArg(
+    args,
+    "peak-memory-measured",
+    true,
+  );
+  if (!peakMemoryMeasured && peakMemoryMb !== 0) {
+    throw new Error(
+      "An unmeasured peak memory value must use the zero schema sentinel.",
+    );
+  }
   const manualInterventions = integerArg(args, "manual-interventions", 0);
   const acquisitionAttempts = integerArg(args, "acquisition-attempts", 1);
   const leases = readJson<{ leases: JsonObject[] }>(leaseRegistry).leases;
@@ -267,7 +289,13 @@ try {
     performance: {
       wallSeconds,
       peakMemoryMb,
-      peakMemoryMeasured: true,
+      peakMemoryMeasured,
+      ...(!peakMemoryMeasured
+        ? {
+            peakMemoryMeasurement:
+              "Not captured by MAIN execution; zero is the schema sentinel and not an observed memory measurement.",
+          }
+        : {}),
       validPairsScreened: completeOutcomePairs,
       manualInterventions,
     },
