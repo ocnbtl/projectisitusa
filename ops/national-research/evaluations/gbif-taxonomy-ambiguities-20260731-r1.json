@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "gbif-taxonomy-ambiguities-20260731-r1",
+  "evaluatedAt": "2026-07-31T11:36:00.000Z",
+  "sourceId": "gbif-preserved-specimens",
+  "policy": {
+    "matchType": "EXACT",
+    "rank": "SPECIES",
+    "minimumConfidence": 95,
+    "canonicalBinomialMustEqualCatalogName": true,
+    "automaticSynonymSubstitutionPermitted": false
+  },
+  "summary": {
+    "stateSpeciesScreens": 11,
+    "uniqueCatalogTaxa": 8,
+    "providerRetriesRequired": 0,
+    "catalogTaxonomyReviewsRequired": 8,
+    "resolvedForNewAcquisition": 0
+  },
+  "reviews": [
+    {
+      "speciesId": "cyperus-involucratus",
+      "catalogScientificName": "Cyperus involucratus",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Cyperus",
+        "rank": "GENUS",
+        "usageKey": 2713455
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "The archived response resolves only to genus and cannot support a species acquisition."
+    },
+    {
+      "speciesId": "datura-inoxia",
+      "catalogScientificName": "Datura inoxia",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "FUZZY",
+        "confidence": 97,
+        "canonicalName": "Datura innoxia",
+        "rank": "SPECIES",
+        "usageKey": 2928755
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "The archived response uses a different spelling and the current policy does not permit automatic alias substitution."
+    },
+    {
+      "speciesId": "desmodium-triflorum",
+      "catalogScientificName": "Desmodium triflorum",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Grona",
+        "rank": "GENUS",
+        "usageKey": 9615544
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "The archived response resolves only to a different genus and cannot support a species acquisition."
+    },
+    {
+      "speciesId": "echinochloa-colona",
+      "catalogScientificName": "Echinochloa colona",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "FUZZY",
+        "confidence": 97,
+        "canonicalName": "Echinochloa colonum",
+        "rank": "SPECIES",
+        "usageKey": 6431411
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "The archived response uses a different species ending and the current policy does not permit automatic alias substitution."
+    },
+    {
+      "speciesId": "malus-pumila",
+      "catalogScientificName": "Malus pumila",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Malus",
+        "rank": "GENUS",
+        "usageKey": 3001068
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "The archived response resolves only to genus and cannot support a species acquisition."
+    },
+    {
+      "speciesId": "salix-alba",
+      "catalogScientificName": "Salix alba",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "NONE",
+        "confidence": 99,
+        "canonicalName": null,
+        "rank": null,
+        "usageKey": null
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "The archived provider response contains no usable taxon match."
+    },
+    {
+      "speciesId": "schedonorus-arundinaceus",
+      "catalogScientificName": "Schedonorus arundinaceus",
+      "states": ["AL", "AR", "FL", "TX"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Poaceae",
+        "rank": "FAMILY",
+        "usageKey": 3073
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "Four independently retained state artifacts resolve only to family, so another identical provider call would be duplicate low-value work."
+    },
+    {
+      "speciesId": "vulpia-myuros",
+      "catalogScientificName": "Vulpia myuros",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Festuca",
+        "rank": "GENUS",
+        "usageKey": 2704913
+      },
+      "disposition": "catalog-taxonomy-review-required",
+      "reason": "The archived response resolves only to a different genus and cannot support a species acquisition."
+    }
+  ],
+  "evidence": {
+    "manifests": [
+      "ops/national-research/manifests/gbif-bulk-20260731-r1-al-001__lease-gbif-bulk-20260731-r1-al-001-1.json",
+      "ops/national-research/manifests/gbif-bulk-20260731-r1-ar-001__lease-gbif-bulk-20260731-r1-ar-001-1.json",
+      "ops/national-research/manifests/gbif-bulk-20260731-r2-tx-002__lease-gbif-bulk-20260731-r2-tx-002-1.json",
+      "ops/national-research/manifests/gbif-bulk-20260731-r3-fl-001__lease-gbif-bulk-20260731-r3-fl-001-1.json"
+    ],
+    "artifactAuthority": "Hash-verified archived match artifacts on the recorded failed worker branch heads",
+    "providerRequestsPrevented": 11
+  },
+  "nextAction": "Resolve catalog aliases or accepted names through an approved authoritative taxonomy policy before issuing new provider leases for these taxa."
+}
