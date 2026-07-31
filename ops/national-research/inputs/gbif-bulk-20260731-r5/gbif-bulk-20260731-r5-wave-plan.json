@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260731-r5",
+  "createdAt": "2026-07-31T11:47:00.000Z",
+  "predecessorPlan": "gbif-bulk-20260731-r4",
+  "objective": "Continue directly into a multi-state wave after retry and archive recovery, prioritizing net-new unique-pair movement and the next certification cohort.",
+  "selected": [
+    {
+      "batchId": "gbif-bulk-20260731-r5-ga-001",
+      "stateCode": "GA",
+      "stateSpeciesScreens": 25,
+      "countySpeciesPairs": 3975,
+      "expectedProviderRequests": 25,
+      "selectedReason": "Next non-overlapping Georgia batch with the highest expected net-new pair movement per provider request."
+    },
+    {
+      "batchId": "gbif-bulk-20260731-r5-co-001",
+      "stateCode": "CO",
+      "stateSpeciesScreens": 25,
+      "countySpeciesPairs": 1600,
+      "expectedProviderRequests": 25,
+      "selectedReason": "Active next-certification-cohort work with 64 county outcomes per state-species request."
+    },
+    {
+      "batchId": "gbif-bulk-20260731-r5-ct-001",
+      "stateCode": "CT",
+      "stateSpeciesScreens": 25,
+      "countySpeciesPairs": 225,
+      "expectedProviderRequests": 25,
+      "selectedReason": "Active next-certification-cohort work that keeps the wave multi-state and advances 25 protocol cells."
+    }
+  ],
+  "aggregate": {
+    "workers": 3,
+    "stateSpeciesScreens": 75,
+    "countySpeciesPairs": 5800,
+    "expectedProviderRequests": 75
+  }
+}
