@@ -6034,7 +6034,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r2-ca-001-1",
       "jobId": "gbif-bulk-20260731-r2-ca-001",
       "leaseId": "lease-gbif-bulk-20260731-r2-ca-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T06:27:56.050Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r2-ca-001__lease-gbif-bulk-20260731-r2-ca-001-1.json",
       "manifestHash": "dbf41ee63a7e4327fae27929c5630062678c48c9eef6e6f389d8a79006c222f4",
@@ -6293,6 +6293,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r2-ca-001-1.json",
         "sha256": "61a59f6bf8b049bbe249f4b4e95a519dbfc5f98efe7617de245a415a66dc45b9",
         "bytes": 33686
+      },
+      "integratedAt": "2026-07-31T06:28:46.610Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1edac14dbdd9b1453dcebfaf2a3b7b93387f8576",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for California GBIF run with 4988 ordered county pairs",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed California GBIF content and manifest commits without conflict. Canonical validation confirmed 4988 complete county outcomes, 17841 accepted assertions and reviews, 1749 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths. The single MAIN intervention raised the measured lease content ceiling without changing scope, acquisition, or content bytes.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r2-ca-001-1.json",
+        "sha256": "89027797fe65c53e95ed01a39dc90ff6cb5d177503ba40b3707dcfaab4ea226b",
+        "bytes": 33845
       }
     }
   ]
