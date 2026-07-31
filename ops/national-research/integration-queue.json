@@ -10620,7 +10620,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r19-oh-002-1",
       "jobId": "gbif-bulk-20260731-r19-oh-002",
       "leaseId": "lease-gbif-bulk-20260731-r19-oh-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T23:08:21.236Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r19-oh-002__lease-gbif-bulk-20260731-r19-oh-002-1.json",
       "manifestHash": "73aa8fa1b1b03e23bc5f297bc89294663e4d646975a6d7a66e88f09af00ad44c",
@@ -10715,6 +10715,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r19-oh-002-1.json",
         "sha256": "0ee5c5167cf8e4baee026140cc038211371f6d71fe716f67cda162162f367b2d",
         "bytes": 9397
+      },
+      "integratedAt": "2026-07-31T23:08:59.681Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1f6f233d2428d59c93c5c46254a9545ed4435458",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Ohio batch 2, 25 complete statewide species screens and 2200 explicit county outcomes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the accepted byte-identical Ohio statewide GBIF batch 2 immutable run after sequential review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r19-oh-002-1.json",
+        "sha256": "e614cd89119e57fc5eb165f7441086a7f19beb6a4b3c99c006fadbb08b562922",
+        "bytes": 9478
       }
     }
   ]
