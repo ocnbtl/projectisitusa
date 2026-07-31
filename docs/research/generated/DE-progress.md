@@ -1,6 +1,6 @@
 # Delaware Research Progress
 
-Generated: `2026-07-30T00:00:00.000Z`
+Generated: `2026-07-31T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -32,19 +32,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Calamus (`acorus-calamus`) | plants | 3 | 0 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 3 | 0 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 3 | 0 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 3 | 0 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 3 | 0 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 3 | 0 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 3 | 0 | 0 |
+| Sweet Autumn Clematis (`clematis-terniflora`) | plants | 3 | 0 | 0 |
 | Jio (`commelina-benghalensis`) | plants | 3 | 0 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 3 | 0 | 0 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 3 | 0 | 0 |
 | Southern threecornerjack (`emex-australis`) | plants | 3 | 0 | 0 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 3 | 0 | 0 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 3 | 0 | 0 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 3 | 0 | 0 |
+| Japanese Knotweed (`fallopia-japonica`) | plants | 3 | 0 | 0 |
 | Professor-weed (`galega-officinalis`) | plants | 3 | 0 | 0 |
+| Orange Daylily (`hemerocallis-fulva`) | plants | 3 | 0 | 0 |
 | Giant Hogweed (`giant-hogweed`) | plants | 3 | 0 | 0 |
 | Hydrilla (`hydrilla`) | plants | 3 | 0 | 0 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 3 | 0 | 0 |
@@ -52,11 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Swamp morning-glory (`ipomoea-aquatica`) | plants | 3 | 0 | 0 |
 | Asian marshweed (`limnophila-sessiliflora`) | plants | 3 | 0 | 0 |
 | African boxthorn (`lycium-ferocissimum`) | plants | 3 | 0 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 3 | 0 | 0 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 3 | 0 | 0 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 3 | 0 | 0 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 3 | 0 | 0 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 3 | 0 | 0 |
 
 ## Source Operations
 

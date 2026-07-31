@@ -1,27 +1,27 @@
 # Arkansas Research Progress
 
-Generated: `2026-07-30T00:00:00.000Z`
+Generated: `2026-07-31T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `1201`
+- Verified present: `1422`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6002`
-- Not researched: `180597`
-- Determination coverage: `0.64%`
-- Research coverage: `3.84%`
-- Explicit outcome coverage: `3.8355%`
+- Researched unresolved: `6003`
+- Not researched: `180375`
+- Determination coverage: `0.76%`
+- Research coverage: `3.95%`
+- Explicit outcome coverage: `3.9537%`
 - Applicable protocol cells: `101`
-- Current complete protocol cells: `60`
-- Protocol completion: `72.28%`
-- Current protocol completion: `59.41%`
-- Evidence records: `3239`
-- Research runs: `12`
-- Rejection records: `368`
+- Current complete protocol cells: `85`
+- Protocol completion: `97.03%`
+- Current protocol completion: `84.16%`
+- Evidence records: `4098`
+- Research runs: `13`
+- Rejection records: `460`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,16 +32,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Common corncockle (`agrostemma-githago`) | plants | 74 | 1 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 74 | 0 | 1 |
-| Yellow Sweetclover (`melilotus-officinalis`) | plants | 74 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 75 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 75 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 75 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 75 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 75 | 2 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 75 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 75 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 75 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 75 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 75 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 75 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 75 | 0 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Jio (`commelina-benghalensis`) | plants | 0 | 75 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 75 | 0 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 75 | 0 |
+| Thorny olive (`elaeagnus-pungens`) | plants | 0 | 75 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 75 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 75 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-28T06:39:05.999Z | 692 | 58 |
+| GBIF preserved specimen records | operational | 2026-07-31T04:39:52.945Z | 1027 | 80 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

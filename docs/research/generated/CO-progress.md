@@ -1,6 +1,6 @@
 # Colorado Research Progress
 
-Generated: `2026-07-30T00:00:00.000Z`
+Generated: `2026-07-31T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -35,6 +35,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 64 | 0 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 64 | 0 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 64 | 0 | 0 |
+| Tall Oatgrass (`arrhenatherum-elatius`) | plants | 64 | 0 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 64 | 0 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 64 | 0 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 64 | 0 | 0 |
@@ -42,21 +43,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 64 | 0 | 0 |
 | Southern threecornerjack (`emex-australis`) | plants | 64 | 0 | 0 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 64 | 0 | 0 |
+| Codlins and cream (`epilobium-hirsutum`) | plants | 64 | 0 | 0 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 64 | 0 | 0 |
 | Professor-weed (`galega-officinalis`) | plants | 64 | 0 | 0 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 64 | 0 | 0 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 64 | 0 | 0 |
 | Swamp morning-glory (`ipomoea-aquatica`) | plants | 64 | 0 | 0 |
+| Perennial pea (`lathyrus-latifolius`) | plants | 64 | 0 | 0 |
+| Whitetop (`lepidium-draba`) | plants | 64 | 0 | 0 |
 | Asian marshweed (`limnophila-sessiliflora`) | plants | 64 | 0 | 0 |
 | African boxthorn (`lycium-ferocissimum`) | plants | 64 | 0 | 0 |
 | Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 64 | 0 | 0 |
+| Garden yellow loosestrife (`lysimachia-vulgaris`) | plants | 64 | 0 | 0 |
 | Punktree (`melaleuca-quinquenervia`) | plants | 64 | 0 | 0 |
 | Mile-a-minute (`mikania-micrantha`) | plants | 64 | 0 | 0 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 64 | 0 | 0 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 64 | 0 | 0 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 64 | 0 | 0 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 64 | 0 | 0 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 64 | 0 | 0 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 64 | 0 | 0 |
 
 ## Source Operations
 

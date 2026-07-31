@@ -1,6 +1,6 @@
 # California Research Progress
 
-Generated: `2026-07-30T00:00:00.000Z`
+Generated: `2026-07-31T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Paradox acacia (`acacia-paradoxa`) | plants | 58 | 0 | 0 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 58 | 0 | 0 |
+| Barbed goatgrass (`aegilops-triuncialis`) | plants | 58 | 0 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 58 | 0 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 58 | 0 | 0 |
+| Crow Garlic (`allium-vineale`) | plants | 58 | 0 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 58 | 0 | 0 |
+| White bladderflower (`araujia-sericifera`) | plants | 58 | 0 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 58 | 0 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 58 | 0 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 58 | 0 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 58 | 0 | 0 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 58 | 0 | 0 |
+| Slender false brome (`brachypodium-sylvaticum`) | plants | 58 | 0 | 0 |
+| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 58 | 0 | 0 |
+| Curly plumeless thistle (`carduus-crispus`) | plants | 58 | 0 | 0 |
+| Woolly distaff thistle (`carthamus-lanatus`) | plants | 58 | 0 | 0 |
+| Red star-thistle (`centaurea-calcitrapa`) | plants | 58 | 0 | 0 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 58 | 0 | 0 |
+| Spotted Knapweed (`centaurea-stoebe`) | plants | 58 | 0 | 0 |
+| Crossflower (`chorispora-tenella`) | plants | 58 | 0 | 0 |
 | Jio (`commelina-benghalensis`) | plants | 58 | 0 | 0 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 58 | 0 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 58 | 0 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 58 | 0 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 58 | 0 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 58 | 0 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 58 | 0 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 58 | 0 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 58 | 0 | 0 |
-| Hydrilla (`hydrilla`) | plants | 58 | 0 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 58 | 0 | 0 |
-| Cogongrass (`imperata-cylindrica`) | plants | 58 | 0 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 58 | 0 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 58 | 0 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 58 | 0 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 58 | 0 | 0 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 58 | 0 | 0 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 58 | 0 | 0 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 58 | 0 | 0 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 58 | 0 | 0 |
+| Cantaloupe (`cucumis-melo`) | plants | 58 | 0 | 0 |
 
 ## Source Operations
 

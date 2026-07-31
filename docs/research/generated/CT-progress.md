@@ -1,6 +1,6 @@
 # Connecticut Research Progress
 
-Generated: `2026-07-30T00:00:00.000Z`
+Generated: `2026-07-31T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 1 |
 | Norway Maple (`acer-platanoides`) | plants | 9 | 0 | 0 |
+| Sycamore Maple (`acer-pseudoplatanus`) | plants | 9 | 0 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 9 | 0 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 9 | 0 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 9 | 0 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 9 | 0 | 0 |
+| Japanese angelica tree (`aralia-elata`) | plants | 9 | 0 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 9 | 0 | 0 |
+| Mugwort (`artemisia-vulgaris`) | plants | 9 | 0 | 0 |
+| Small Carpgrass (`arthraxon-hispidus`) | plants | 9 | 0 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 9 | 0 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 9 | 0 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 9 | 0 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 9 | 0 | 0 |
-| Common Barberry (`berberis-vulgaris`) | plants | 9 | 0 | 0 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 9 | 0 | 0 |
 
 ## Source Operations
 
