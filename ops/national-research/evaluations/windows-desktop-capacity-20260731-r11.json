@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260731-r11",
+  "observedAt": "2026-07-31T14:55:00.000Z",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalProcessors": 16,
+    "totalPhysicalMemoryBytes": 33450536960
+  },
+  "disk": {
+    "drive": "C:",
+    "minimumFreeGib": 1072.99,
+    "finalFreeGib": 1079.02,
+    "totalGib": 1861.98,
+    "minimumFreePercent": 57.63,
+    "repositoryPath": "C:\\Code\\project-isitusa",
+    "worktreeRoot": "C:\\Code\\project-isitusa-worktrees",
+    "temporaryPath": "C:\\Users\\Ocean\\AppData\\Local\\Temp",
+    "packageCachePath": "C:\\Users\\Ocean\\AppData\\Local\\npm-cache",
+    "absoluteStopFloorGib": 20,
+    "stopFloorBreached": false
+  },
+  "memory": {
+    "roundMinimumAvailableMib": 6153,
+    "finalAvailableMib": 12508,
+    "hardHeavyWorkerFloorMib": 3072,
+    "secondsObservedBelowHardFloor": 0,
+    "pageWritesPerSecondMaximum": 0,
+    "pagesOutputPerSecondMaximum": 0,
+    "pageFileUsagePercentFinal": 5.43,
+    "sustainedThrashingObserved": false
+  },
+  "runtime": {
+    "projectNode": "v22.23.2",
+    "projectNpm": "10.9.8",
+    "systemNode": "v24.18.1",
+    "systemNpm": "11.16.0",
+    "git": "2.53.0.windows.1"
+  },
+  "scheduler": {
+    "peakConcurrentAcquisitionWorkers": 3,
+    "peakConcurrentArtifactWorkers": 2,
+    "peakConcurrentLightweightWorkers": 3,
+    "mainIntegrationConcurrency": 1,
+    "sharedCompilerConcurrency": 1,
+    "resourceTriggeredConcurrencyReductions": 1,
+    "acceptedWorkerPeakMemoryMib": 1068,
+    "rejectedWorkerPeakMemoryMib": 1241,
+    "correctedLiveAcquisitionLeaseMib": 1536,
+    "correctedArchiveReplayLeaseMib": 2048
+  },
+  "roundResearch": {
+    "acceptedImmutableRuns": 13,
+    "completeStateSpeciesScreens": 193,
+    "completeCountySpeciesOutcomes": 19184,
+    "evidenceFoundOutcomes": 2240,
+    "noQualifyingEvidenceOutcomes": 16944,
+    "acceptedAssertions": 13124,
+    "reviewEvents": 13124,
+    "rejections": 5223,
+    "duplicateRecords": 0,
+    "providerRequestsAndArchivedPages": 412,
+    "retainedArtifacts": 412,
+    "retainedArtifactBytes": 7339903,
+    "reusedArtifactsAndPages": 336,
+    "reusedArtifactBytes": 6226253,
+    "preventedLiveProviderRequests": 336,
+    "liveProviderRequests": 76,
+    "providerThrottlingResponses": 0
+  },
+  "retryRecovery": {
+    "previousRetryableScreenCount": 19,
+    "remainingRetryableProviderScreenCount": 0,
+    "taxonomyReviewScreenCount": 12,
+    "taxonomyReviewUniqueCatalogTaxa": 8,
+    "duplicateProviderRetriesPreventedForTaxonomy": 12,
+    "providerFailureRecovery": "All provider-failure screens in the dated queue were either completed from verified archive pages or completed through exact bounded retries.",
+    "taxonomyDisposition": "The remaining taxonomy screens require an approved catalog alias or accepted-name policy and were not sent back to the provider."
+  },
+  "throughputSeparation": {
+    "machine": "The desktop sustained three acquisition lanes, two archive-processing lanes, and sequential MAIN integration without crossing the 3 GiB heavy-worker floor or producing page writes.",
+    "provider": "Transient GBIF request and response-read failures required bounded retries. No HTTP 429 response was observed, and the remaining retry tail completed on the final exact request.",
+    "archiveReuse": "Verified archive replay moved 15851 county-species pairs without a live provider request."
+  },
+  "contradictionsPreserved": [
+    "The dated checkpoint reported 19 retryable provider failures and 11 taxonomy ambiguities. Durable taxonomy review found 12 state-species screens across 8 unique catalog taxa because one ambiguous taxon affected five jurisdictions.",
+    "The restricted sandbox reported uv_os_get_passwd ENOMEM while Windows still had more than 12 GiB available. The same Node 22 commands succeeded outside that sandbox, so this was not treated as physical-memory exhaustion.",
+    "One Georgia archive run was scientifically complete but rejected at 1241 MiB against a 1024 MiB lease. Its 2048 MiB replacement replay was validated and integrated without reacquisition.",
+    "A Georgia retry produced a discarded partial result before later attempts exhausted a 1024 MiB lease. The truthful failed bundle was preserved, and a corrected 1536 MiB replacement completed all 795 pairs.",
+    "A Connecticut retry preserved nine incomplete pairs after a response-read failure, and the first replacement preserved the same nine pairs after a provider request failure. A final exact replacement completed all nine pairs without negative inference from either failed request.",
+    "The machine had capacity for more lanes at several samples, but only three worker-agent slots were available alongside MAIN."
+  ]
+}
