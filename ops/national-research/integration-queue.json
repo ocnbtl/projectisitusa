@@ -10757,7 +10757,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r19-oh-003-1",
       "jobId": "gbif-bulk-20260731-r19-oh-003",
       "leaseId": "lease-gbif-bulk-20260731-r19-oh-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T23:18:52.438Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r19-oh-003__lease-gbif-bulk-20260731-r19-oh-003-1.json",
       "manifestHash": "7b4fd15667f1294d1616f816474b51957d8977f8ef4107efce142bcf1509bc05",
@@ -10852,6 +10852,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r19-oh-003-1.json",
         "sha256": "d1bd25c041092994ab02633c0d42f88aa8f5c23a51d36ddfa77f222ab7593180",
         "bytes": 9503
+      },
+      "integratedAt": "2026-07-31T23:19:42.322Z",
+      "integrator": "MAIN",
+      "integrationCommit": "b9e053d58327ecf2d2ff9e9ecec1b06d9a28c34c",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Ohio batch 3, 25 complete statewide species screens and 2200 explicit county outcomes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the accepted byte-identical Ohio statewide GBIF batch 3 immutable run with its explicit telemetry caveat preserved.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r19-oh-003-1.json",
+        "sha256": "b59e88d64f52dc83e639d3deaa06ea83b9b4af8902a48730c64cc0b51d073688",
+        "bytes": 9541
       }
     }
   ]
