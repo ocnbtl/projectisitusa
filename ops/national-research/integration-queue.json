@@ -7742,7 +7742,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r5-co-001-1",
       "jobId": "gbif-bulk-20260731-r5-co-001",
       "leaseId": "lease-gbif-bulk-20260731-r5-co-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T13:34:40.757Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r5-co-001__lease-gbif-bulk-20260731-r5-co-001-1.json",
       "manifestHash": "67a36c996136de141c309793657b375ade43871310fae823d455d5eb00401fe2",
@@ -7837,6 +7837,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r5-co-001-1.json",
         "sha256": "94f4521a0c9a19eb6395b3f96e4abcab1c8030d3e0bc7671fca59fac4f45ca31",
         "bytes": 9355
+      },
+      "integratedAt": "2026-07-31T13:35:47.566Z",
+      "integrator": "MAIN",
+      "integrationCommit": "2767e61a0cec18b10e2fd35d963d372d285397e6",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated reviewed Colorado immutable GBIF run after exact tree-entry parity and clean MAIN checks.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r5-co-001-1.json",
+        "sha256": "f27076117e56082669d6b55cd8e918ba8af94f100287cbb5a2326bba7888c6f9",
+        "bytes": 9204
       }
     }
   ]
