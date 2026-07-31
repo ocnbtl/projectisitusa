@@ -11,6 +11,10 @@ type CandidateFile = {
   schemaVersion: 1;
   stateCode: string;
   batchId: string;
+  archiveReplay?: {
+    commit: string;
+    runId: string;
+  };
   candidates: Array<{
     sourceId: string;
     speciesId: string;
@@ -145,6 +149,19 @@ const newJobs = entries.map((serializedEntry) => {
     candidate.candidates.every((entry) => entry.sourceId === SOURCE_ID),
     `${batchId} contains a different source.`,
   );
+  const archiveReplay = candidate.archiveReplay ?? null;
+  if (archiveReplay) {
+    assert(
+      /^[a-f0-9]{40}$/.test(archiveReplay.commit),
+      `${batchId} archived replay commit is not a full SHA.`,
+    );
+    assert(
+      /^[0-9]{8}T[0-9]{6}Z__gbif-preserved-specimens__[a-f0-9]{12}$/.test(
+        archiveReplay.runId,
+      ),
+      `${batchId} archived replay run ID is invalid.`,
+    );
+  }
 
   const pairs = canonicalCandidatePairKeys(candidate.candidates);
   assert(new Set(pairs).size === pairs.length, `${batchId} contains duplicate pairs.`);
@@ -244,10 +261,21 @@ const newJobs = entries.map((serializedEntry) => {
     },
     expiresAt,
     recoveryState:
-      candidateBatchId === batchId ? "none" : "recover-canonical-pair-identity",
+      archiveReplay
+        ? "replay-verified-archive"
+        : candidateBatchId === batchId
+          ? "none"
+          : "recover-canonical-pair-identity",
     completionCriteria: [
-      `run the registered statewide GBIF preserved-specimen adapter from ${path.relative(ROOT, candidatePath).split(path.sep).join("/")} with started-at ${startedAt}`,
+      archiveReplay
+        ? `run the registered statewide GBIF preserved-specimen adapter from ${path.relative(ROOT, candidatePath).split(path.sep).join("/")} with started-at ${startedAt}, --archive-replay-commit ${archiveReplay.commit}, and --archive-replay-run-id ${archiveReplay.runId}`
+        : `run the registered statewide GBIF preserved-specimen adapter from ${path.relative(ROOT, candidatePath).split(path.sep).join("/")} with started-at ${startedAt}`,
       `screen all ${pairs.length} leased ${stateCode} county-species pairs using provider-declared county geography only`,
+      ...(archiveReplay
+        ? [
+            "issue zero live provider requests and verify every reused response artifact against its archived receipt hash and byte count",
+          ]
+        : []),
       "complete bounded pagination for every state-species query and preserve retry state",
       "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
       "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
