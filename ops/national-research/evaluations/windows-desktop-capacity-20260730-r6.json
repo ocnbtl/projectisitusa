@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r6",
+  "observedAt": "2026-07-31T05:34:24.989Z",
+  "durationSeconds": 5,
+  "availableMemoryMib": {
+    "minimum": 15155,
+    "mean": 15183.4,
+    "maximum": 15208
+  },
+  "commitChargePercent": {
+    "minimum": 62.74,
+    "mean": 62.84,
+    "maximum": 62.92
+  },
+  "pageReadsPerSecond": {
+    "minimum": 2.96,
+    "mean": 3.97,
+    "maximum": 5.93
+  },
+  "pageWritesPerSecond": {
+    "minimum": 0,
+    "mean": 0,
+    "maximum": 0
+  },
+  "processorUtilizationPercent": {
+    "minimum": 12.09,
+    "mean": 14.63,
+    "maximum": 17.53
+  },
+  "disk": {
+    "drive": "C:",
+    "freeGib": 1087.07,
+    "totalGib": 1861.98,
+    "freePercent": 58.38
+  },
+  "capacityTier": "green",
+  "capacityTierReasons": [
+    "Available memory remained above 15 GiB and above the preferred 25 percent reserve.",
+    "Commit charge remained below 63 percent.",
+    "Page input stayed below 6 pages per second and page output remained zero.",
+    "Disk retained more than 1 TiB free and 58 percent headroom."
+  ],
+  "schedulerDecision": {
+    "acquisitionConcurrency": 4,
+    "artifactConcurrency": 3,
+    "lightweightConcurrency": 8,
+    "sharedCompilerConcurrency": 1,
+    "mainIntegrationConcurrency": 1,
+    "userApplicationsClosedByMain": 0,
+    "nextAction": "Run one centralized research compilation, then plan a four-lane multi-state GBIF wave from freshly generated deduplicated state projections."
+  },
+  "processContext": {
+    "activeProjectWorkerProcessesObserved": 0,
+    "measurementProcessExcluded": true,
+    "note": "The only matching command line was the read-only measurement shell itself. No active acquisition or compiler process remained."
+  },
+  "contradictionsPreserved": [
+    "The r4 sample was red with 1814 to 1923 MiB available, commit charge above 95 percent, and high page input while a user-owned application consumed substantial memory.",
+    "The r5 post-integration sample was green with at least 15740 MiB available. This r6 pre-compiler sample remains green with at least 15155 MiB available.",
+    "The r4 reason text cites a 4096 page-read threshold while the current resource policy hard-red threshold is 500 pages per second. The r4 observation exceeded both thresholds, so its red decision remains valid even though its explanatory threshold text is stale."
+  ]
+}
