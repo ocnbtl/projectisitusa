@@ -10346,7 +10346,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r19-in-002-1",
       "jobId": "gbif-bulk-20260731-r19-in-002",
       "leaseId": "lease-gbif-bulk-20260731-r19-in-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T23:02:56.329Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r19-in-002__lease-gbif-bulk-20260731-r19-in-002-1.json",
       "manifestHash": "c55246a719418eab72197c1c67cf15e8c3cffae579bcf79faa8ccaf371708f5b",
@@ -10441,6 +10441,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r19-in-002-1.json",
         "sha256": "c3fbdf93cffba1b5fb99db3681c2643ebbd5a8788d3856c5c87fe2a9424724b1",
         "bytes": 9413
+      },
+      "integratedAt": "2026-07-31T23:03:58.847Z",
+      "integrator": "MAIN",
+      "integrationCommit": "5916fe2b535caa5f90a2613fa97dc5d347b5260b",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Indiana batch 2, 25 complete statewide species screens and 2300 explicit county outcomes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the accepted byte-identical Indiana statewide GBIF batch 2 immutable run after sequential review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r19-in-002-1.json",
+        "sha256": "9fe5a5e9636120becd51e1e1a4234cc007c965049a8a95dc749b189da3efa85f",
+        "bytes": 9494
       }
     },
     {
