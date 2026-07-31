@@ -7239,7 +7239,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r6-ga-001-retry1-1",
       "jobId": "gbif-bulk-20260731-r6-ga-001-retry1",
       "leaseId": "lease-gbif-bulk-20260731-r6-ga-001-retry1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T12:34:51.7347869Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r6-ga-001-retry1__lease-gbif-bulk-20260731-r6-ga-001-retry1-1.json",
       "manifestHash": "04acf593f23cb63c76088d4a63cd7e54353983e699e2f5fe58a6e3cd5d49300d",
@@ -7294,6 +7294,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r6-ga-001-retry1-1.json",
         "sha256": "99439ac7ed459de1ad27124cdffde14e3629df1ea91a715fa927fd493d86cd24",
         "bytes": 3585
+      },
+      "integratedAt": "2026-07-31T12:40:25.7739371Z",
+      "integrator": "MAIN",
+      "integrationCommit": "cd86ed4b5107a9f274c1ec37555fb899daf9b711",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated the accepted Georgia five-screen retry transactionally on MAIN with exact worker bytes, zero merge conflicts, and no remaining retryable scope.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r6-ga-001-retry1-1.json",
+        "sha256": "6e6d712ade020bef355f987758d4ced0a094c6973109317958af9ed5468b166c",
+        "bytes": 3489
       }
     }
   ]

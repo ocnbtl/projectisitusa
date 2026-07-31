@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260731-r6-ga-001-retry1-1",
+  "jobId": "gbif-bulk-20260731-r6-ga-001-retry1",
+  "leaseId": "lease-gbif-bulk-20260731-r6-ga-001-retry1-1",
+  "workerCommit": "57d614e5509955d7b5895ed56288d02ad64eb7e0",
+  "workerBranchHead": "e9339e0d7039cc325122d8321cb810c7e6c423d9",
+  "manifestHash": "04acf593f23cb63c76088d4a63cd7e54353983e699e2f5fe58a6e3cd5d49300d",
+  "changedPaths": [
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-occurrences-microstegium-vimineum-000000.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-occurrences-nandina-domestica-000000.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-occurrences-pomacea-maculata-000000.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-occurrences-popillia-japonica-000000.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-species-match-microstegium-vimineum.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-species-match-nandina-domestica.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-species-match-pomacea-maculata.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-species-match-popillia-japonica.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/artifacts/gbif-species-match-solanum-viarum.json.gz",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/assertions.ndjson",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/manifest.json",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/outcomes.ndjson",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/receipt.json",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/rejections.ndjson",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/reviews.ndjson",
+    "src/data/research/runs/20260731T121040Z__gbif-preserved-specimens__5d07d05e1662/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "transactional immutable-content and finalized-manifest cherry-picks",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact worker-to-main tree-entry parity for every reviewed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Integrated the accepted Georgia five-screen retry transactionally on MAIN with exact worker bytes, zero merge conflicts, and no remaining retryable scope.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-07-31T12:40:25.7739371Z",
+  "integrationCommit": "cd86ed4b5107a9f274c1ec37555fb899daf9b711"
+}
