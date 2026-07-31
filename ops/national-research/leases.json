@@ -243090,7 +243090,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "worker-gbif-archive-recovery-20260731-r13-ct-001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T14:26:50.407Z",
       "expiresAt": "2026-07-31T17:20:39.841Z",
       "recoveryAt": null,
@@ -243266,7 +243266,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check cc34ab01925651616e33c93cf636a2d8287870e6...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T14:36:12.2053940Z",
+      "resultManifest": {
+        "path": "manifests/gbif-archive-recovery-20260731-r13-ct-001__lease-gbif-archive-recovery-20260731-r13-ct-001-1.json",
+        "sha256": "e0dfe8096d8cb5ec139530f4953b1235167a8b40963b9d08aa88672854bc4a4a",
+        "bytes": 13200,
+        "status": "complete",
+        "workerCommit": "72fde6adfa746cfd7924d949ff1393c4797cb5de",
+        "workerBranchHead": "db868141dff7aeb5ebb66adb824fe9d04e3807ba"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r12-ga-001-retry2-1",
@@ -243274,7 +243283,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "worker-gbif-bulk-20260731-r12-ga-001-retry2",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T14:26:50.407Z",
       "expiresAt": "2026-07-31T17:20:39.841Z",
       "recoveryAt": null,
@@ -244177,7 +244186,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check cc34ab01925651616e33c93cf636a2d8287870e6...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T14:35:48.9479282Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r12-ga-001-retry2__lease-gbif-bulk-20260731-r12-ga-001-retry2-1.json",
+        "sha256": "e69a0cb15d20f3c3331915a18b61c727a3b3845c2bf7222abd9491259135d8e0",
+        "bytes": 87283,
+        "status": "complete",
+        "workerCommit": "86cfe734523689847729048485c839006928c0dc",
+        "workerBranchHead": "2edcc46992035677158e9fab5fe32e6afbb56fa7"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r14-ct-001-retry2-1",
