@@ -10483,7 +10483,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r19-nc-002-1",
       "jobId": "gbif-bulk-20260731-r19-nc-002",
       "leaseId": "lease-gbif-bulk-20260731-r19-nc-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T23:02:56.329Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r19-nc-002__lease-gbif-bulk-20260731-r19-nc-002-1.json",
       "manifestHash": "17e7791637c6b5bf0b143d2148c85e73a71cf292206f659a3faaaa0810da101b",
@@ -10578,6 +10578,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r19-nc-002-1.json",
         "sha256": "95a0ab8c76ea926a61d00f383dd1a877df3628dc79be2f42ecf85993f440dd40",
         "bytes": 9405
+      },
+      "integratedAt": "2026-07-31T23:04:25.927Z",
+      "integrator": "MAIN",
+      "integrationCommit": "c35d8a036d4e89fb72ceac00e6ca0143e1d98ae2",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for North Carolina batch 2, 25 complete statewide species screens and 2500 explicit county outcomes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the accepted byte-identical North Carolina statewide GBIF batch 2 immutable run after sequential review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r19-nc-002-1.json",
+        "sha256": "1a465697350309e7a8d11760103c7121874fda753ad0d2d3a8921772b885c3de",
+        "bytes": 9486
       }
     }
   ]
