@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `1291`
+- Verified present: `1471`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7212`
-- Not researched: `151753`
-- Determination coverage: `0.81%`
-- Research coverage: `5.31%`
-- Explicit outcome coverage: `5.3059%`
+- Researched unresolved: `7802`
+- Not researched: `150983`
+- Determination coverage: `0.92%`
+- Research coverage: `5.79%`
+- Explicit outcome coverage: `5.7864%`
 - Applicable protocol cells: `151`
-- Current complete protocol cells: `105`
-- Protocol completion: `69.54%`
-- Current protocol completion: `69.54%`
-- Evidence records: `7326`
-- Research runs: `10`
-- Rejection records: `1365`
+- Current complete protocol cells: `130`
+- Protocol completion: `86.09%`
+- Current protocol completion: `86.09%`
+- Evidence records: `8105`
+- Research runs: `11`
+- Rejection records: `1742`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,20 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Ducklettuce (`ottelia-alismoides`) | plants | 64 | 0 | 1 |
-| Yellow mignonette (`reseda-lutea`) | plants | 64 | 0 | 1 |
-| Hardheads (`rhaponticum-repens`) | plants | 64 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 64 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 64 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 64 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 64 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 64 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 64 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 64 | 0 | 1 |
-| Scentless false mayweed (`tripleurospermum-inodorum`) | plants | 64 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 64 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 1 | 63 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 1 | 63 | 2 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 1 | 63 | 2 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 1 | 63 | 2 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 1 | 63 | 2 |
@@ -53,10 +39,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 1 | 63 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 1 | 63 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 1 | 63 | 2 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 64 | 1 |
-| Proso millet (`panicum-miliaceum`) | plants | 0 | 64 | 1 |
-| Harmal peganum (`peganum-harmala`) | plants | 0 | 64 | 1 |
-| Bulbous bluegrass (`poa-bulbosa`) | plants | 0 | 64 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 64 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 64 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 64 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 64 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 64 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 64 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 64 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 64 | 0 |
+| Asian mustard (`brassica-tournefortii`) | plants | 0 | 64 | 0 |
+| Field Brome (`bromus-arvensis`) | plants | 0 | 64 | 0 |
+| Ripgut brome (`bromus-diandrus`) | plants | 0 | 64 | 0 |
+| Smooth Brome (`bromus-inermis`) | plants | 0 | 64 | 0 |
+| Red brome (`bromus-rubens`) | plants | 0 | 64 | 0 |
+| White bryony (`bryonia-alba`) | plants | 0 | 64 | 0 |
+| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 64 | 0 |
+| Red star-thistle (`centaurea-calcitrapa`) | plants | 0 | 64 | 0 |
+| Maltese star-thistle (`centaurea-melitensis`) | plants | 0 | 64 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 64 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T06:49:24.830Z | 1150 | 100 |
+| GBIF preserved specimen records | operational | 2026-07-31T13:30:56.319Z | 1330 | 125 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

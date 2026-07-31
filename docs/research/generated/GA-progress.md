@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `1915`
+- Verified present: `2184`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6512`
-- Not researched: `389709`
-- Determination coverage: `0.48%`
-- Research coverage: `2.12%`
-- Explicit outcome coverage: `2.1166%`
+- Researched unresolved: `7674`
+- Not researched: `388278`
+- Determination coverage: `0.55%`
+- Research coverage: `2.48%`
+- Explicit outcome coverage: `2.4760%`
 - Applicable protocol cells: `95`
-- Current complete protocol cells: `5`
-- Protocol completion: `18.95%`
-- Current protocol completion: `5.26%`
-- Evidence records: `1915`
-- Research runs: `7`
-- Rejection records: `10`
+- Current complete protocol cells: `54`
+- Protocol completion: `70.53%`
+- Current protocol completion: `56.84%`
+- Evidence records: `4258`
+- Research runs: `11`
+- Rejection records: `303`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,15 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 159 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 159 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 159 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 159 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 159 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 159 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 159 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 159 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 159 | 0 | 1 |
 | Southern threecornerjack (`emex-australis`) | plants | 159 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 159 | 0 | 1 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 159 | 0 | 1 |
@@ -57,6 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 159 | 0 | 1 |
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 159 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 159 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 159 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 159 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 159 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 159 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 159 | 0 | 1 |
+| Simple-stem burr-reed (`sparganium-erectum`) | plants | 159 | 0 | 1 |
+| Coatbuttons (`tridax-procumbens`) | plants | 159 | 0 | 1 |
+| Panic liverseed grass (`urochloa-panicoides`) | plants | 159 | 0 | 1 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 159 | 2 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-31T14:31:02.540Z | 846 | 49 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

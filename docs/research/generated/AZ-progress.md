@@ -10,18 +10,18 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Verified present: `142`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1675`
-- Not researched: `35743`
+- Researched unresolved: `1705`
+- Not researched: `35713`
 - Determination coverage: `0.38%`
-- Research coverage: `4.84%`
-- Explicit outcome coverage: `4.8376%`
+- Research coverage: `4.92%`
+- Explicit outcome coverage: `4.9175%`
 - Applicable protocol cells: `87`
-- Current complete protocol cells: `53`
-- Protocol completion: `75.86%`
-- Current protocol completion: `60.92%`
+- Current complete protocol cells: `55`
+- Protocol completion: `78.16%`
+- Current protocol completion: `63.22%`
 - Evidence records: `1383`
-- Research runs: `11`
-- Rejection records: `225`
+- Research runs: `12`
+- Rejection records: `227`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,8 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 15 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 15 | 0 | 1 |
 | Simple-stem burr-reed (`sparganium-erectum`) | plants | 15 | 0 | 1 |
 | Coatbuttons (`tridax-procumbens`) | plants | 15 | 0 | 1 |
 | Panic liverseed grass (`urochloa-panicoides`) | plants | 15 | 0 | 1 |
@@ -57,6 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 15 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 15 | 0 |
 | Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 15 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 15 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 15 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T05:26:45.979Z | 106 | 51 |
+| GBIF preserved specimen records | operational | 2026-07-31T13:01:25.852Z | 106 | 53 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

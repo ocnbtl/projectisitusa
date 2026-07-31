@@ -10,18 +10,18 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `153`
-- Not researched: `22383`
+- Researched unresolved: `378`
+- Not researched: `22158`
 - Determination coverage: `0.00%`
-- Research coverage: `0.68%`
-- Explicit outcome coverage: `0.6789%`
+- Research coverage: `1.68%`
+- Explicit outcome coverage: `1.6773%`
 - Applicable protocol cells: `123`
-- Current complete protocol cells: `1`
-- Protocol completion: `0.81%`
-- Current protocol completion: `0.81%`
+- Current complete protocol cells: `26`
+- Protocol completion: `21.14%`
+- Current protocol completion: `21.14%`
 - Evidence records: `0`
-- Research runs: `3`
-- Rejection records: `1016`
+- Research runs: `6`
+- Rejection records: `2246`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -45,18 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 9 | 0 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 2 |
-| Sycamore Maple (`acer-pseudoplatanus`) | plants | 9 | 0 | 1 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 9 | 0 | 1 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 9 | 0 | 1 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 9 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 9 | 0 | 1 |
-| Japanese angelica tree (`aralia-elata`) | plants | 9 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 9 | 0 | 1 |
-| Mugwort (`artemisia-vulgaris`) | plants | 9 | 0 | 1 |
-| Small Carpgrass (`arthraxon-hispidus`) | plants | 9 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 9 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 9 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 9 | 0 | 1 |
+| Crested latesummer mint (`elsholtzia-ciliata`) | plants | 9 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 9 | 0 | 1 |
+| Southern threecornerjack (`emex-australis`) | plants | 9 | 0 | 1 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 9 | 0 | 1 |
+| Cypress Spurge (`euphorbia-cyparissias`) | plants | 9 | 0 | 1 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 9 | 0 | 1 |
+| Professor-weed (`galega-officinalis`) | plants | 9 | 0 | 1 |
+| Ground Ivy (`glechoma-hederacea`) | plants | 9 | 0 | 1 |
+| Reed mannagrass (`glyceria-maxima`) | plants | 9 | 0 | 1 |
+| Giant Hogweed (`giant-hogweed`) | plants | 9 | 0 | 1 |
+| Japanese Hop (`humulus-japonicus`) | plants | 9 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-31T14:47:08.181Z | 0 | 25 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

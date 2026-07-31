@@ -16,11 +16,11 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Research coverage: `3.95%`
 - Explicit outcome coverage: `3.9537%`
 - Applicable protocol cells: `101`
-- Current complete protocol cells: `85`
-- Protocol completion: `97.03%`
-- Current protocol completion: `84.16%`
+- Current complete protocol cells: `86`
+- Protocol completion: `98.02%`
+- Current protocol completion: `85.15%`
 - Evidence records: `4098`
-- Research runs: `13`
+- Research runs: `14`
 - Rejection records: `460`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,8 +32,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 75 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 75 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 75 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 75 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 75 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 1 |
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T04:39:52.945Z | 1027 | 80 |
+| GBIF preserved specimen records | operational | 2026-07-31T12:52:27.880Z | 1027 | 81 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
