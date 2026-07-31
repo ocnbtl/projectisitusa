@@ -7996,7 +7996,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r9-ct-001-1",
       "jobId": "gbif-archive-recovery-20260731-r9-ct-001",
       "leaseId": "lease-gbif-archive-recovery-20260731-r9-ct-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T13:45:22.316Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r9-ct-001__lease-gbif-archive-recovery-20260731-r9-ct-001-1.json",
       "manifestHash": "9b2c741d4a3d839fc2a44721e9b80657b7697b2598918aacc013401976a73e01",
@@ -8075,6 +8075,37 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r9-ct-001-1.json",
         "sha256": "ff862d4311dafab7d0b22e424e235e608ae9184b914ffb2e81d662a49f9ff411",
         "bytes": 7024
+      },
+      "integratedAt": "2026-07-31T13:46:38.751Z",
+      "integrator": "MAIN",
+      "integrationCommit": "d13a37fbef68b30311bee0a2dd40b42166df8069",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated reviewed Connecticut zero-network replay after exact worker-to-MAIN tree parity and clean repository checks.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r9-ct-001-1.json",
+        "sha256": "c69d349d5cf0b89821c62c78400f8ace0b4d5a65a64a6b2712484991a5aebff2",
+        "bytes": 6959
       }
     }
   ]
