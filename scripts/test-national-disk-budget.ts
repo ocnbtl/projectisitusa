@@ -66,6 +66,26 @@ assert.deepEqual(
   }).tier,
   "red",
 );
+assert.deepEqual(
+  classifyCapacityTier(policy, {
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 6105853952,
+    commitChargePercent: 91.57,
+    pageReadsPerSecond: 22.66,
+    pageWritesPerSecond: 0,
+  }).tier,
+  "yellow",
+);
+assert.deepEqual(
+  classifyCapacityTier(policy, {
+    totalMemoryBytes: 33450536960,
+    availableMemoryBytes: 6105853952,
+    commitChargePercent: 95,
+    pageReadsPerSecond: 22.66,
+    pageWritesPerSecond: 0,
+  }).tier,
+  "red",
+);
 
 const fourWorkerCalibration = evaluateDiskBudget(policy, {
   phase: "preflight",

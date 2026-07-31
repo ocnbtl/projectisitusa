@@ -19,7 +19,7 @@
   "capacityTierThresholds": {
     "greenMinimumAvailableRamPercent": 25,
     "redBelowAvailableRamPercent": 10,
-    "redAtOrAboveCommitChargePercent": 90,
+    "redAtOrAboveCommitChargePercent": 95,
     "redAtOrAbovePageReadsPerSecond": 500,
     "redAtOrAbovePageWritesPerSecond": 10
   },
@@ -101,7 +101,8 @@
     "sustainedWindowSeconds": 30,
     "preferredGreenAvailableRamPercent": 25,
     "yellowMinimumAvailableRamPercent": 10,
-    "redCommitChargePercent": 90,
+    "elevatedCommitChargePercent": 90,
+    "redCommitChargePercent": 95,
     "redPageReadsPerSecond": 500,
     "redPageWritesPerSecond": 10,
     "stopDispatchWhenFreeDiskBelowPercent": 15,

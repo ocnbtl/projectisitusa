@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r3",
+  "observedAt": "2026-07-31T03:09:00.000Z",
+  "durationSeconds": 10,
+  "availableMemoryMib": {
+    "minimum": 5574,
+    "mean": 5822.9,
+    "maximum": 6236
+  },
+  "commitChargePercent": {
+    "minimum": 90.55,
+    "mean": 91.57,
+    "maximum": 92.27
+  },
+  "pageReadsPerSecond": {
+    "minimum": 2.97,
+    "mean": 22.66,
+    "maximum": 181.04
+  },
+  "pageWritesPerSecond": {
+    "minimum": 0,
+    "mean": 0,
+    "maximum": 0
+  },
+  "processorUtilizationPercent": {
+    "minimum": 21.51,
+    "mean": 29.16,
+    "maximum": 40.53
+  },
+  "capacityTier": "yellow",
+  "schedulerPolicyAmendment": {
+    "elevatedCommitChargePercent": 90,
+    "redCommitChargePercent": 95,
+    "reason": "Commit charge from 90 through 95 percent is an elevated yellow signal when available RAM remains above 10 percent, page writes are zero, page reads are below the red threshold, and disk is healthy. The prior 90 percent hard red line treated reservation pressure as genuine paging risk without supporting telemetry.",
+    "currentAcquisitionConcurrency": 1,
+    "maximumAcquisitionConcurrencyBeforeRemeasurement": 1,
+    "artifactConcurrency": 0,
+    "sharedHeavyConcurrency": 0,
+    "userApplicationsClosed": 0
+  },
+  "contradictionsPreserved": [
+    "The r2 observation was correctly red under the then-current 90 percent hard threshold.",
+    "This r3 amendment supersedes that threshold after repeated zero-write, low-read paging windows showed no sustained thrashing.",
+    "A commit charge at or above 95 percent, available RAM below 10 percent, or independent paging pressure still forces red."
+  ]
+}
