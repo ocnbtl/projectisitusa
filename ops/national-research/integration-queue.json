@@ -10894,7 +10894,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r19-in-003-1",
       "jobId": "gbif-bulk-20260731-r19-in-003",
       "leaseId": "lease-gbif-bulk-20260731-r19-in-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T23:20:29.078Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r19-in-003__lease-gbif-bulk-20260731-r19-in-003-1.json",
       "manifestHash": "d00e168a23d533e159e45a7eb08a74295159a8a553cfaf3a63b088e1ace94c8c",
@@ -10989,6 +10989,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r19-in-003-1.json",
         "sha256": "c30d1a35e9d6e159f2fb05a764e4bcd1301dc87e044e8a209547fbdb7900a122",
         "bytes": 9484
+      },
+      "integratedAt": "2026-07-31T23:22:39.305Z",
+      "integrator": "MAIN",
+      "integrationCommit": "f7680200ccbcf7700109865c5d60dcdec5cf7de4",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Indiana batch 3, 25 complete statewide species screens and 2300 explicit county outcomes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the accepted byte-identical Indiana statewide GBIF batch 3 immutable run with its pre-provider wrapper correction preserved.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r19-in-003-1.json",
+        "sha256": "1349d49a8088768d931b1b86602448789291c8f0a2b687a5117fa661a289494c",
+        "bytes": 9511
       }
     },
     {
