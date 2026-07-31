@@ -11166,7 +11166,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r16-ks-002-1",
       "jobId": "gbif-bulk-20260731-r16-ks-002",
       "leaseId": "lease-gbif-bulk-20260731-r16-ks-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T23:29:33.833Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r16-ks-002__lease-gbif-bulk-20260731-r16-ks-002-1.json",
       "manifestHash": "afd3e53014dfaf80a874430e3f0231eca9a91680077ac5fe7b470cad5efc5e48",
@@ -11261,6 +11261,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r16-ks-002-1.json",
         "sha256": "7b440917ec819221b5bc1d353a40c377b0566dd07fb73575dafaefa63f147b8d",
         "bytes": 9469
+      },
+      "integratedAt": "2026-07-31T23:30:22.275Z",
+      "integrator": "MAIN",
+      "integrationCommit": "adaebcf46eb938c6462e8c083ea484a914bdf8d5",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Kansas GBIF batch 2 immutable acquisition: 25 state-species screens and 2,625 complete county outcomes.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated exact validated Kansas GBIF batch 2 content and manifest commits after accepted MAIN review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r16-ks-002-1.json",
+        "sha256": "93084b6eb68644073b7e18fee3fc5ff49bb53bbb2a38d79332bd37d2a7919104",
+        "bytes": 9521
       }
     }
   ]
