@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260730-r9",
+  "observedAt": "2026-07-31T08:02:03.4970855Z",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalProcessors": 16,
+    "totalPhysicalMemoryBytes": 33450536960
+  },
+  "sample": {
+    "sampleId": "pre-production-build",
+    "availableMemoryMib": 8616,
+    "availableMemoryPercent": 27.01,
+    "commitChargePercent": 91.99,
+    "pageReadsPerSecond": 0,
+    "pageWritesPerSecond": 0,
+    "processorUtilizationPercent": 15,
+    "activeNodeProcesses": 19,
+    "activeGitProcesses": 0
+  },
+  "disk": {
+    "drive": "C:",
+    "freeGib": 1085.89,
+    "totalGib": 1861.98,
+    "freePercent": 58.32,
+    "repositoryPath": "C:\\Code\\project-isitusa",
+    "worktreeRoot": "C:\\Code\\project-isitusa-worktrees",
+    "temporaryPath": "C:\\Users\\Ocean\\AppData\\Local\\Temp",
+    "packageCachePath": "C:\\Users\\Ocean\\AppData\\Local\\npm-cache"
+  },
+  "capacityTier": "yellow",
+  "capacityTierReasons": [
+    "Available memory was above the preferred 25 percent reserve.",
+    "Commit charge was elevated above 90 percent but remained below the 95 percent red threshold.",
+    "Page input and page output were both zero.",
+    "Disk retained more than 1 TiB free and 58 percent headroom."
+  ],
+  "roundExtremesFromR1ThroughR9": {
+    "minimumAvailableMemoryMib": 745,
+    "maximumAvailableMemoryMib": 15872,
+    "peakPageReadsPerSecond": 7513.5,
+    "peakPageWritesPerSecond": 0,
+    "minimumFreeDiskGib": 1079.62,
+    "peakConcurrentAcquisitionWorkers": 3,
+    "peakConcurrentLightweightWorkers": 0,
+    "peakSharedCompilerBuildOrDeployment": 1,
+    "peakMainIntegrationOperations": 1
+  },
+  "schedulerDecision": {
+    "resourceTriggeredConcurrencyReduction": true,
+    "userApplicationsClosedByMain": 0,
+    "sharedProductionBuildPermitted": true,
+    "decision": "Run exactly one production build, then remeasure before browser QA and deployment.",
+    "reason": "The final candidate was not in the red tier, no paging was active, and disk headroom was healthy."
+  },
+  "roundOperationalDeltaFromCheckpoint669cd2a": {
+    "workerJobs": 28,
+    "workerLeases": 28,
+    "workerManifests": 21,
+    "acceptedIntegrations": 16,
+    "rejectedIntegrations": 0,
+    "failedOrPartialJobs": 12,
+    "validatedCompletedCountySpeciesOutcomes": 58455,
+    "measuredWorkerWallSeconds": 6971.025,
+    "mergeConflicts": 0
+  },
+  "contradictionsPreserved": [
+    "The desktop has a six-lane clean hardware envelope, but the current task exposed only three worker-agent slots alongside MAIN.",
+    "The round included genuine red samples with memory and page-input pressure, followed by green and yellow recovery without closing user applications.",
+    "The final build sample had more than 25 percent available RAM while commit charge remained elevated, so the correct classification was yellow rather than fully green.",
+    "Peak page input occurred during transient pressure, but page output remained zero in every recorded capacity sample."
+  ]
+}

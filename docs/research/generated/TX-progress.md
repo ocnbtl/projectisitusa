@@ -7,21 +7,21 @@ Generated: `2026-07-31T00:00:00.000Z`
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `678`
+- Verified present: `1023`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13292`
-- Not researched: `622046`
-- Determination coverage: `0.11%`
-- Research coverage: `2.20%`
-- Explicit outcome coverage: `2.1965%`
+- Researched unresolved: `19043`
+- Not researched: `615950`
+- Determination coverage: `0.16%`
+- Research coverage: `3.15%`
+- Explicit outcome coverage: `3.1550%`
 - Applicable protocol cells: `88`
-- Current complete protocol cells: `5`
-- Protocol completion: `20.45%`
-- Current protocol completion: `5.68%`
-- Evidence records: `678`
-- Research runs: `7`
-- Rejection records: `29`
+- Current complete protocol cells: `55`
+- Protocol completion: `77.27%`
+- Current protocol completion: `62.50%`
+- Evidence records: `2936`
+- Research runs: `10`
+- Rejection records: `389`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -41,22 +41,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Jio (`commelina-benghalensis`) | plants | 254 | 0 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 254 | 0 | 1 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 254 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 254 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 254 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 254 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 254 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 254 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 254 | 0 | 1 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 254 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 254 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 254 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 254 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 254 | 0 | 1 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 254 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 254 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 254 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 254 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 254 | 0 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 254 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 254 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 254 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 254 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 254 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 254 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 0 | 254 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 254 | 0 |
+| Hen's eyes (`ardisia-crenata`) | plants | 0 | 254 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 254 | 0 |
+| Japanese netvein hollyfern (`cyrtomium-falcatum`) | plants | 0 | 254 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 254 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 254 | 0 |
+| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 254 | 0 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 0 | 254 | 0 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-07-31T07:02:39.282Z | 618 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
