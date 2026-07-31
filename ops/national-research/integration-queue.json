@@ -7331,7 +7331,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r3-tx-003-1",
       "jobId": "gbif-archive-recovery-20260731-r3-tx-003",
       "leaseId": "lease-gbif-archive-recovery-20260731-r3-tx-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T12:49:37.1669342Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r3-tx-003__lease-gbif-archive-recovery-20260731-r3-tx-003-1.json",
       "manifestHash": "15ab056b59894c5ee00cd18ae0fc17e49edb8c5012928c63b86317dfdcf73181",
@@ -7413,6 +7413,37 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r3-tx-003-1.json",
         "sha256": "33706ce04a00b895cd3b8f3838f658712a7b8366dcff668096375206e100ec07",
         "bytes": 7510
+      },
+      "integratedAt": "2026-07-31T12:50:30.0344405Z",
+      "integrator": "MAIN",
+      "integrationCommit": "17a0802ed9ecb05abcfd97519e6d27e8ec0850e2",
+      "integrationChecks": [
+        {
+          "command": "transactional immutable-content and finalized-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact worker-to-main tree-entry parity for every reviewed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated the accepted Texas archive replay transactionally on MAIN with exact worker bytes, zero conflicts, and centralized generation deferred to the coherent milestone.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r3-tx-003-1.json",
+        "sha256": "2fcf204d33ae74b0f60bfedb848fe02775823ea211325a7d23ecd65931d84460",
+        "bytes": 7453
       }
     }
   ]
