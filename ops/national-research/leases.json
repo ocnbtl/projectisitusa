@@ -225348,7 +225348,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r4_ga_001",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-31T12:38:05.877Z",
       "expiresAt": "2026-07-31T16:10:43.582Z",
       "recoveryAt": null,
@@ -228506,7 +228506,8 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 38d30c7d662c9d6d0965d44e9fda05874450d0f1...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T12:53:56.1412105Z"
     },
     {
       "leaseId": "lease-gbif-archive-recovery-20260731-r3-ar-002-1",
