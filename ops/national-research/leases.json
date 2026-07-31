@@ -188735,7 +188735,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_wave_ca_20260731_r2_002",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T06:34:58.972Z",
       "expiresAt": "2026-07-31T10:11:06.984Z",
       "recoveryAt": null,
@@ -189673,7 +189673,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 696f3b4e54d913b59470a1bef0045457a5f3116e...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T06:41:40.293Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r2-ca-002__lease-gbif-bulk-20260731-r2-ca-002-1.json",
+        "sha256": "7919183c042ad4a4d0eb0174643aec6564549579ae4802a0ee4e19e199e820d8",
+        "bytes": 44558,
+        "status": "complete",
+        "workerCommit": "8db7551091ce4f719ddb18cd0bad58e38b620592",
+        "workerBranchHead": "bceda5b051254c519424681bd4828a8eef83d008"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r2-tx-002-1",
@@ -189681,7 +189690,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_wave_tx_20260731_r2_002",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-31T06:34:58.972Z",
       "expiresAt": "2026-07-31T10:11:06.984Z",
       "recoveryAt": null,
@@ -194643,7 +194652,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 696f3b4e54d913b59470a1bef0045457a5f3116e...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T06:41:40.293Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r2-tx-002__lease-gbif-bulk-20260731-r2-tx-002-1.json",
+        "sha256": "948761b629c5045d51c6d2c9ddef3d0bba12115d8e5a088cd3d5e6fa1000f1e5",
+        "bytes": 184364,
+        "status": "partial",
+        "workerCommit": "6536ffe379266c70e4b8bdffee261248e65b91ff",
+        "workerBranchHead": "0688f3a2f5c62edec9b44ca8f9fb0d2894c144d5"
+      }
     }
   ]
 }
