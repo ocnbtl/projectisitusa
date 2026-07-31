@@ -10072,7 +10072,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r18-ky-002-1",
       "jobId": "gbif-bulk-20260731-r18-ky-002",
       "leaseId": "lease-gbif-bulk-20260731-r18-ky-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T22:54:12.425Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r18-ky-002__lease-gbif-bulk-20260731-r18-ky-002-1.json",
       "manifestHash": "92ae06222f398b55cce3ab222cc11859db206aa9f999538e71d794e1a3d5b304",
@@ -10167,6 +10167,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r18-ky-002-1.json",
         "sha256": "71460bc5530e888d0db959650c341d4d545c2ce4e3ccc2c39ed988f52da658c5",
         "bytes": 9531
+      },
+      "integratedAt": "2026-07-31T22:57:13.042Z",
+      "integrator": "MAIN",
+      "integrationCommit": "e4e8fd8fd373c993b80584063c8accf5fcc86a71",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 3000 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 3000 complete county outcomes, 115 accepted assertions and reviews, 9 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r18-ky-002-1.json",
+        "sha256": "7cf3dc2d4248f71282d92ec2492ebfe0e2a98ebd55031acf7fba3082fc28b77f",
+        "bytes": 9700
       }
     },
     {
