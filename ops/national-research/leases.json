@@ -118831,7 +118831,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_bulk_20260730_r2_ak_001_retry1",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T02:57:00.000Z",
       "expiresAt": "2026-07-31T05:00:00.000Z",
       "recoveryAt": null,
@@ -120529,7 +120529,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check e4530849c835b0eafe0aaec0abfb1bac8ad0a437...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T03:36:00.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260730-r2-ak-001-retry1__lease-gbif-bulk-20260730-r2-ak-001-retry1-1.json",
+        "sha256": "79b8f79ea5f1a2824fbfe324d84ae21bfe2d1e63db3fa3b0c5dc526b50fdcee6",
+        "bytes": 87929,
+        "status": "complete",
+        "workerCommit": "dbd6c92896f38530d13ccdefb122307fb2f16324",
+        "workerBranchHead": "63a24358bd85774e55578bb9863f23b7b4078cc9"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260730-r2-az-001-retry1-1",
@@ -120537,7 +120546,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_bulk_20260730_r2_az_001_retry1",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-07-31T02:57:01.000Z",
       "expiresAt": "2026-07-31T05:00:00.000Z",
       "recoveryAt": null,
@@ -121485,7 +121494,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check e4530849c835b0eafe0aaec0abfb1bac8ad0a437...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T03:32:00.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260730-r2-az-001-retry1__lease-gbif-bulk-20260730-r2-az-001-retry1-1.json",
+        "sha256": "71b9f359f73762bf855a95b66450958bca60ca6ef469d886e6b8f061e7473431",
+        "bytes": 55621,
+        "status": "partial",
+        "workerCommit": "2def2ae78ea68d74c228bf94e7f626c730acb868",
+        "workerBranchHead": "22161d510ee7dddade3c908cc4855b0d4a6ac194"
+      }
     }
   ]
 }
