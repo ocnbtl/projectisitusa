@@ -235454,6 +235454,119 @@
       "priority": 118,
       "state": "failed",
       "currentLeaseId": "lease-gbif-bulk-20260731-r14-ct-001-retry2-1"
+    },
+    {
+      "jobId": "gbif-bulk-20260731-r15-ct-001-retry3",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "CT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "acer-pseudoplatanus"
+        ],
+        "pairs": [
+          "09110:acer-pseudoplatanus",
+          "09120:acer-pseudoplatanus",
+          "09130:acer-pseudoplatanus",
+          "09140:acer-pseudoplatanus",
+          "09150:acer-pseudoplatanus",
+          "09160:acer-pseudoplatanus",
+          "09170:acer-pseudoplatanus",
+          "09180:acer-pseudoplatanus",
+          "09190:acer-pseudoplatanus"
+        ]
+      },
+      "scopeClaims": [
+        "state/CT/source/gbif-preserved-specimens/taxon/acer-pseudoplatanus"
+      ],
+      "branch": "codex/gbif-bulk-20260731-r15-ct-001-retry3",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260731-r15-ct-001-retry3",
+      "baseSha": "d1d0dfa1a3860f13bc4044794c621a585a36672d",
+      "expectedReceiptCodeCommit": "d1d0dfa1a3860f13bc4044794c621a585a36672d",
+      "permittedPaths": [
+        "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1536
+      },
+      "expiresAt": "2026-07-31T17:42:45.817Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/inputs/gbif-bulk-20260731-r15/gbif-bulk-20260731-r15-ct-001-retry3.json with started-at 2026-07-31T14:42:44.817Z",
+        "screen all 9 leased CT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check d1d0dfa1a3860f13bc4044794c621a585a36672d...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 117,
+      "state": "planned"
     }
   ]
 }
