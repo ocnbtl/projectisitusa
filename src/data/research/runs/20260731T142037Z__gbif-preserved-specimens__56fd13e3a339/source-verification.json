@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-07-31T14:30:08.518Z",
+  "runId": "20260731T142037Z__gbif-preserved-specimens__56fd13e3a339",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CT",
+  "pairKeys": [
+    "09110:alliaria-petiolata",
+    "09110:artemisia-vulgaris",
+    "09110:arthraxon-hispidus",
+    "09110:azolla-pinnata",
+    "09110:berberis-vulgaris",
+    "09110:bromus-tectorum",
+    "09110:butomus-umbellatus",
+    "09120:alliaria-petiolata",
+    "09120:artemisia-vulgaris",
+    "09120:arthraxon-hispidus",
+    "09120:azolla-pinnata",
+    "09120:berberis-vulgaris",
+    "09120:bromus-tectorum",
+    "09120:butomus-umbellatus",
+    "09130:alliaria-petiolata",
+    "09130:artemisia-vulgaris",
+    "09130:arthraxon-hispidus",
+    "09130:azolla-pinnata",
+    "09130:berberis-vulgaris",
+    "09130:bromus-tectorum",
+    "09130:butomus-umbellatus",
+    "09140:alliaria-petiolata",
+    "09140:artemisia-vulgaris",
+    "09140:arthraxon-hispidus",
+    "09140:azolla-pinnata",
+    "09140:berberis-vulgaris",
+    "09140:bromus-tectorum",
+    "09140:butomus-umbellatus",
+    "09150:alliaria-petiolata",
+    "09150:artemisia-vulgaris",
+    "09150:arthraxon-hispidus",
+    "09150:azolla-pinnata",
+    "09150:berberis-vulgaris",
+    "09150:bromus-tectorum",
+    "09150:butomus-umbellatus",
+    "09160:alliaria-petiolata",
+    "09160:artemisia-vulgaris",
+    "09160:arthraxon-hispidus",
+    "09160:azolla-pinnata",
+    "09160:berberis-vulgaris",
+    "09160:bromus-tectorum",
+    "09160:butomus-umbellatus",
+    "09170:alliaria-petiolata",
+    "09170:artemisia-vulgaris",
+    "09170:arthraxon-hispidus",
+    "09170:azolla-pinnata",
+    "09170:berberis-vulgaris",
+    "09170:bromus-tectorum",
+    "09170:butomus-umbellatus",
+    "09180:alliaria-petiolata",
+    "09180:artemisia-vulgaris",
+    "09180:arthraxon-hispidus",
+    "09180:azolla-pinnata",
+    "09180:berberis-vulgaris",
+    "09180:bromus-tectorum",
+    "09180:butomus-umbellatus",
+    "09190:alliaria-petiolata",
+    "09190:artemisia-vulgaris",
+    "09190:arthraxon-hispidus",
+    "09190:azolla-pinnata",
+    "09190:berberis-vulgaris",
+    "09190:bromus-tectorum",
+    "09190:butomus-umbellatus"
+  ],
+  "parameterHash": "56fd13e3a339ada8482143575b4b8a014e530757be9953273afc8384f59bb178",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-07-31T14:30:08.514Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Connecticut and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "alliaria-petiolata",
+      "artemisia-vulgaris",
+      "arthraxon-hispidus",
+      "azolla-pinnata",
+      "berberis-vulgaris",
+      "bromus-tectorum",
+      "butomus-umbellatus"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-alliaria-petiolata",
+        "url": "https://api.gbif.org/v1/species/match?name=Alliaria+petiolata&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:04.105Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-alliaria-petiolata",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5376075&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for alliaria-petiolata and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:04.417Z",
+        "declaredRecordCount": 137,
+        "receivedRecordCount": 137,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-artemisia-vulgaris",
+        "url": "https://api.gbif.org/v1/species/match?name=Artemisia+vulgaris&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:04.762Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-artemisia-vulgaris",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3120946&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for artemisia-vulgaris and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:05.103Z",
+        "declaredRecordCount": 77,
+        "receivedRecordCount": 77,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-arthraxon-hispidus",
+        "url": "https://api.gbif.org/v1/species/match?name=Arthraxon+hispidus&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:05.452Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-arthraxon-hispidus",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5290201&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for arthraxon-hispidus and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:05.787Z",
+        "declaredRecordCount": 3,
+        "receivedRecordCount": 3,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-azolla-pinnata",
+        "url": "https://api.gbif.org/v1/species/match?name=Azolla+pinnata&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:06.127Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-azolla-pinnata",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2650106&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for azolla-pinnata and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:06.466Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-berberis-vulgaris",
+        "url": "https://api.gbif.org/v1/species/match?name=Berberis+vulgaris&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:06.816Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-berberis-vulgaris",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3033894&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for berberis-vulgaris and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:07.145Z",
+        "declaredRecordCount": 137,
+        "receivedRecordCount": 137,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-bromus-tectorum",
+        "url": "https://api.gbif.org/v1/species/match?name=Bromus+tectorum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:07.487Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-bromus-tectorum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2703746&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for bromus-tectorum and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:07.828Z",
+        "declaredRecordCount": 144,
+        "receivedRecordCount": 144,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-butomus-umbellatus",
+        "url": "https://api.gbif.org/v1/species/match?name=Butomus+umbellatus&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:08.182Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-butomus-umbellatus",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2864467&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for butomus-umbellatus and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-07-31T14:30:08.514Z",
+        "declaredRecordCount": 16,
+        "receivedRecordCount": 16,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-alliaria-petiolata-000000.json.gz",
+      "sha256": "d77b021617a5a773f19f51b6cecb3d5947f5c486808cc683ee73864d05e2c539",
+      "bytes": 67820
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-artemisia-vulgaris-000000.json.gz",
+      "sha256": "376df82ae8db1b0181a24835bb7ffaf6f476453b4d1e268f6c3cbb0a2a3b2887",
+      "bytes": 35562
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-arthraxon-hispidus-000000.json.gz",
+      "sha256": "ea9e193ed62e167402fe713623699c47778fca0d2fd0edcd56009fbc3141e59a",
+      "bytes": 3424
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-azolla-pinnata-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-berberis-vulgaris-000000.json.gz",
+      "sha256": "de7bcae3d5a8463e607a6c04fa8201ccf79e33e4c9ce354b0287a140ecaf3c02",
+      "bytes": 64050
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-bromus-tectorum-000000.json.gz",
+      "sha256": "469d11808c8586a926d4c07cff33cda9237998e2acc82b4abfe369d9fd7f3440",
+      "bytes": 62010
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-occurrences-butomus-umbellatus-000000.json.gz",
+      "sha256": "d1eb77a603e81056cc9cbd076fc1661cd724d5982bc8033449ddb61d22b936b3",
+      "bytes": 8725
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-alliaria-petiolata.json.gz",
+      "sha256": "b28cd27767cccba38a39289319d766cb5bafcfa48f9465501e53632bd1ab1289",
+      "bytes": 306
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-artemisia-vulgaris.json.gz",
+      "sha256": "2932a6e449cabfc2053a196fae876ea871751800200e667921fdcc3fbdb8ab9b",
+      "bytes": 281
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-arthraxon-hispidus.json.gz",
+      "sha256": "26482134ae7d7653a16689a0917b12d50807a88a257cb64dd88106f555de5b8b",
+      "bytes": 292
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-azolla-pinnata.json.gz",
+      "sha256": "550c490107a5e2c8552b761818b070ce2b0ab2fbd260b7adeccc4e476e9167bc",
+      "bytes": 284
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-berberis-vulgaris.json.gz",
+      "sha256": "f5e8a138452b9f2af62e825195f2ec97dcd6f2e5c1dcac2b37114b2654f20c9c",
+      "bytes": 284
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-bromus-tectorum.json.gz",
+      "sha256": "5be4bac6930213f721be4c199da87cc1e977b925ff21a25992e8163ee95aea3b",
+      "bytes": 276
+    },
+    {
+      "path": "src/data/research/runs/20260731T142037Z__gbif-preserved-specimens__56fd13e3a339/artifacts/gbif-species-match-butomus-umbellatus.json.gz",
+      "sha256": "b2e0635fbd70798b6a370e85c2d772533cdc73738fdbc115a03a76050c03a3df",
+      "bytes": 279
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
