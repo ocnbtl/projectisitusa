@@ -9661,7 +9661,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r17-mo-001-recovery2-1",
       "jobId": "gbif-bulk-20260731-r17-mo-001-recovery2",
       "leaseId": "lease-gbif-bulk-20260731-r17-mo-001-recovery2-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T22:45:37.713Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r17-mo-001-recovery2__lease-gbif-bulk-20260731-r17-mo-001-recovery2-1.json",
       "manifestHash": "fdf313659cd73743aa3dcf4fc5770827937203ccccd99d3e8259b079518f1b17",
@@ -9756,6 +9756,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r17-mo-001-recovery2-1.json",
         "sha256": "638344fba8d807e0d6b99bf94c0190155edf9b4b51a3a4cc5005c1140fc93d1b",
         "bytes": 9571
+      },
+      "integratedAt": "2026-07-31T22:48:46.474Z",
+      "integrator": "MAIN",
+      "integrationCommit": "422c7bf663dec34660658f90c9e16190d01dc059",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 2875 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 2875 complete county outcomes, 883 accepted assertions and reviews, 355 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r17-mo-001-recovery2-1.json",
+        "sha256": "d41b1c3c523a03d769839f7cc29718ac04b9e3cee588183502c7d2cd2f1cc5d6",
+        "bytes": 9740
       }
     },
     {
