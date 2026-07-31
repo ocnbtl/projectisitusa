@@ -14,7 +14,10 @@ import { z } from "zod";
 import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specimens";
 import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
 
-import type { ResearchSourceAdapter } from "@/lib/research/source-adapter";
+import type {
+  ResearchSourceAdapter,
+  SourceAdapterResult,
+} from "@/lib/research/source-adapter";
 import type {
   ImmutableResearchRunReceipt,
   ResearchRunFileReference,
@@ -35,6 +38,7 @@ import {
   getStateDefinition,
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
+import { loadGbifArchivedReplay } from "./gbif-archived-replay";
 import {
   buildGbifSourceVerification,
   gbifSourceVerificationFilename,
@@ -91,6 +95,8 @@ function parseArguments(argv: string[]) {
   const startedAt = values.get("started-at")?.at(-1);
   const candidateFileArgument = values.get("candidate-file")?.at(-1);
   const outputRootArgument = values.get("output-root")?.at(-1);
+  const archiveReplayCommit = values.get("archive-replay-commit")?.at(-1);
+  const archiveReplayRunId = values.get("archive-replay-run-id")?.at(-1);
 
   if (!sourceId) throw new Error("--source is required.");
   const normalizedStateCode = stateCode.toUpperCase();
@@ -101,6 +107,17 @@ function parseArguments(argv: string[]) {
   }
   if (startedAt && Number.isNaN(Date.parse(startedAt))) {
     throw new Error("--started-at must be an ISO date-time when provided.");
+  }
+  if (Boolean(archiveReplayCommit) !== Boolean(archiveReplayRunId)) {
+    throw new Error(
+      "--archive-replay-commit and --archive-replay-run-id must be provided together.",
+    );
+  }
+  if (archiveReplayCommit && !/^[a-f0-9]{40}$/u.test(archiveReplayCommit)) {
+    throw new Error("--archive-replay-commit must be a full Git SHA.");
+  }
+  if (archiveReplayCommit && sourceId !== "gbif-preserved-specimens") {
+    throw new Error("Archived replay is currently limited to GBIF preserved specimens.");
   }
 
   const candidateFile = path.resolve(
@@ -141,6 +158,13 @@ function parseArguments(argv: string[]) {
     startedAt,
     candidateFile,
     outputRoot,
+    archiveReplay:
+      archiveReplayCommit && archiveReplayRunId
+        ? {
+            commit: archiveReplayCommit,
+            runId: archiveReplayRunId,
+          }
+        : null,
   };
 }
 
@@ -388,6 +412,7 @@ async function main() {
     adapterPath,
     parameterSchemaPath,
     path.join(ROOT, "scripts/research/run-source.ts"),
+    path.join(ROOT, "scripts/research/gbif-archived-replay.ts"),
     path.join(ROOT, "scripts/research/gbif-source-verification.ts"),
     path.join(ROOT, "src/lib/research/source-adapter.ts"),
     path.join(ROOT, "src/lib/research/run-files.ts"),
@@ -451,14 +476,31 @@ async function main() {
     throw new Error(`Immutable run directory already exists: ${path.relative(ROOT, finalDirectory)}`);
   }
 
-  const result = await adapter.run({
-    runId,
-    sourceId: options.sourceId,
-    stateCode: options.stateCode,
-    requestedPairs,
-    runStartedAt: startedAt,
-    parameters,
-  });
+  const archivedReplay = options.archiveReplay
+    ? loadGbifArchivedReplay({
+        repositoryRoot: ROOT,
+        archiveCommit: options.archiveReplay.commit,
+        archiveRunId: options.archiveReplay.runId,
+        stateCode: options.stateCode,
+        sourceId: options.sourceId,
+        requestedPairKeys: parameters.candidatePairs,
+      })
+    : null;
+  const originalFetch = globalThis.fetch;
+  let result: SourceAdapterResult;
+  try {
+    if (archivedReplay) globalThis.fetch = archivedReplay.fetch;
+    result = await adapter.run({
+      runId,
+      sourceId: options.sourceId,
+      stateCode: options.stateCode,
+      requestedPairs,
+      runStartedAt: startedAt,
+      parameters,
+    });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
   verifyCommittedInputSnapshot(inputSnapshot);
   const status: ImmutableResearchRunReceipt["status"] =
     result.outcomes.length === 0
@@ -536,7 +578,11 @@ async function main() {
     errors: result.errors,
     known_caveats: [source.caveat],
     source_warnings: result.warnings,
-    deviations: [],
+    deviations: archivedReplay
+      ? [
+          `Replayed ${archivedReplay.preventedProviderRequestCount} provider response artifact(s) from archived run ${archivedReplay.archiveRunId} at commit ${archivedReplay.archiveCommit}; no live provider request was issued.`,
+        ]
+      : [],
     rerun_command: [
       "npm run research:run --",
       `--source ${options.sourceId}`,
@@ -544,6 +590,12 @@ async function main() {
       `--candidate-file ${relativeGitPath(options.candidateFile)}`,
       `--output-root ${relativeGitPath(options.outputRoot)}`,
       `--pairs ${parameters.candidatePairs.join(",")}`,
+      ...(archivedReplay
+        ? [
+            `--archive-replay-commit ${archivedReplay.archiveCommit}`,
+            `--archive-replay-run-id ${archivedReplay.archiveRunId}`,
+          ]
+        : []),
     ].join(" "),
   };
 
