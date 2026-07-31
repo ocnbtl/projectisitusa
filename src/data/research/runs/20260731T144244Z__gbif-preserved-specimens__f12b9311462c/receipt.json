@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260731T144244Z__gbif-preserved-specimens__f12b9311462c",
+  "status": "complete",
+  "started_at": "2026-07-31T14:42:44.817Z",
+  "finished_at": "2026-07-31T14:47:08.181Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "43fd9d4b960670850632775eeb6e22c811faf6d8e398c70ce452b2fb64382ea9",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.0",
+  "adapter_code_hash": "7cf5e6d79e9df34beaba12580148470129caab866947c0289d4c22f94f918620",
+  "code_commit": "d1d0dfa1a3860f13bc4044794c621a585a36672d",
+  "parameter_hash": "f12b9311462cc1a506a87ce0c35ca4a6c68a14015679b7de388687fbcebe16e4",
+  "parameters": {
+    "stateCode": "CT",
+    "stateProvince": "Connecticut",
+    "candidateLimit": 9,
+    "candidatePairs": [
+      "09110:acer-pseudoplatanus",
+      "09120:acer-pseudoplatanus",
+      "09130:acer-pseudoplatanus",
+      "09140:acer-pseudoplatanus",
+      "09150:acer-pseudoplatanus",
+      "09160:acer-pseudoplatanus",
+      "09170:acer-pseudoplatanus",
+      "09180:acer-pseudoplatanus",
+      "09190:acer-pseudoplatanus"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "CT",
+    "county_fips": [
+      "09110",
+      "09120",
+      "09130",
+      "09140",
+      "09150",
+      "09160",
+      "09170",
+      "09180",
+      "09190"
+    ],
+    "species_ids": [
+      "acer-pseudoplatanus"
+    ],
+    "pair_keys": [
+      "09110:acer-pseudoplatanus",
+      "09120:acer-pseudoplatanus",
+      "09130:acer-pseudoplatanus",
+      "09140:acer-pseudoplatanus",
+      "09150:acer-pseudoplatanus",
+      "09160:acer-pseudoplatanus",
+      "09170:acer-pseudoplatanus",
+      "09180:acer-pseudoplatanus",
+      "09190:acer-pseudoplatanus"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Acer+pseudoplatanus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-07-31T14:47:06.130Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3189870&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-07-31T14:47:06.716Z",
+      "record_count": 58
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/artifacts/gbif-occurrences-acer-pseudoplatanus-000000.json.gz",
+      "sha256": "81a41ea496451400c7a04bffabf7bd0ffa8f7b61982bf379d30fecf88335dbb9",
+      "bytes": 27935,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/artifacts/gbif-species-match-acer-pseudoplatanus.json.gz",
+      "sha256": "2e39e5bcf660a14a4538ed6ff288fde5abe501a5583b4bceea06dc0d156ce1f0",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/rejections.ndjson",
+      "sha256": "a19b28292ee45906f855cc769855bac2652d2f6ffd2c7f79d1d8fe4b99878a88",
+      "bytes": 41422,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/outcomes.ndjson",
+      "sha256": "f862ced3b61388e3ed62f3a6ebfd64e7dddf7d94984a6af0f680ac9614310272",
+      "bytes": 50067,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260731T144244Z__gbif-preserved-specimens__f12b9311462c/source-verification.json",
+      "sha256": "f5bbee86c6bf20130ada5f7cd2e2a1d5a982b0a5c88b0fb3cc7872c623681176",
+      "bytes": 5072,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 9,
+    "candidate_records": 58,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 58,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 9
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state CT --candidate-file ops/national-research/inputs/gbif-bulk-20260731-r15/gbif-bulk-20260731-r15-ct-001-retry3.json --output-root src/data/research/runs --pairs 09110:acer-pseudoplatanus,09120:acer-pseudoplatanus,09130:acer-pseudoplatanus,09140:acer-pseudoplatanus,09150:acer-pseudoplatanus,09160:acer-pseudoplatanus,09170:acer-pseudoplatanus,09180:acer-pseudoplatanus,09190:acer-pseudoplatanus"
+}
