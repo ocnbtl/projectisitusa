@@ -99,7 +99,13 @@ const jurisdictions = new Map(
   stateRegistry.jurisdictions.map((entry) => [entry.stateCode, entry]),
 );
 const newJobs = entries.map((serializedEntry) => {
-  const [stateCodeInput, batchId, startedAtInput, priorityInput] =
+  const [
+    stateCodeInput,
+    batchId,
+    startedAtInput,
+    priorityInput,
+    candidateBatchIdInput,
+  ] =
     serializedEntry.split(",");
   const stateCode = stateCodeInput?.toUpperCase() ?? "";
   const state = jurisdictions.get(stateCode);
@@ -120,11 +126,19 @@ const newJobs = entries.map((serializedEntry) => {
     `Job ${batchId} already exists.`,
   );
 
-  const candidatePath = path.join(planDirectory, `${batchId}.json`);
+  const candidateBatchId = candidateBatchIdInput || batchId;
+  assert(
+    /^[a-z0-9][a-z0-9-]*$/.test(candidateBatchId),
+    `Invalid candidate batch ID ${candidateBatchId}.`,
+  );
+  const candidatePath = path.join(planDirectory, `${candidateBatchId}.json`);
   const candidate = JSON.parse(
     readFileSync(candidatePath, "utf8"),
   ) as CandidateFile;
-  assert(candidate.batchId === batchId, `${batchId} candidate identity differs.`);
+  assert(
+    candidate.batchId === candidateBatchId,
+    `${batchId} candidate identity differs from ${candidateBatchId}.`,
+  );
   assert(candidate.stateCode === stateCode, `${batchId} candidate state differs.`);
   assert(candidate.candidates.length > 0, `${batchId} has no candidates.`);
   assert(
@@ -229,7 +243,8 @@ const newJobs = entries.map((serializedEntry) => {
       maxMemoryMb: 1024,
     },
     expiresAt,
-    recoveryState: "none",
+    recoveryState:
+      candidateBatchId === batchId ? "none" : "recover-canonical-pair-identity",
     completionCriteria: [
       `run the registered statewide GBIF preserved-specimen adapter from ${path.relative(ROOT, candidatePath).split(path.sep).join("/")} with started-at ${startedAt}`,
       `screen all ${pairs.length} leased ${stateCode} county-species pairs using provider-declared county geography only`,
