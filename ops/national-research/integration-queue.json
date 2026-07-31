@@ -5655,7 +5655,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r2-tx-001-1",
       "jobId": "gbif-bulk-20260731-r2-tx-001",
       "leaseId": "lease-gbif-bulk-20260731-r2-tx-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-07-31T06:17:38.1101118Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r2-tx-001__lease-gbif-bulk-20260731-r2-tx-001-1.json",
       "manifestHash": "b564fa846bbb8522e5aa5c42ed5472b9f0fffb4485c655d61f4554afa8ce9b0d",
@@ -5741,6 +5741,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r2-tx-001-1.json",
         "sha256": "34b8237dfe41419c006a932dd38404e513005e56220b83fdfec1b21c7f80be43",
         "bytes": 8335
+      },
+      "integratedAt": "2026-07-31T06:22:00.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "b245cbb3acdd126173343b67d77da286ff43b35b",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 4826 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed Texas GBIF content and manifest commits without conflict. Canonical validation confirmed 4826 complete county outcomes, 2085 accepted assertions and reviews, 311 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths. The single manual intervention monitored a child process after its shell wrapper timed out and did not issue a duplicate provider request.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r2-tx-001-1.json",
+        "sha256": "ac75e7615bd4289eb716a8f3f4a9cc3792eaec7b41d765f206a88f759367b263",
+        "bytes": 8494
       }
     }
   ]
