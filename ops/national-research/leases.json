@@ -297750,7 +297750,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_r4_fl_retry1",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T22:52:38.510Z",
       "expiresAt": "2026-08-01T01:49:54.582Z",
       "recoveryAt": null,
@@ -300398,7 +300398,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 262b54b33cec7f89ad06e24d07a7db7e2b0741f4...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T23:02:56.329Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r19-nc-002__lease-gbif-bulk-20260731-r19-nc-002-1.json",
+        "sha256": "17e7791637c6b5bf0b143d2148c85e73a71cf292206f659a3faaaa0810da101b",
+        "bytes": 105116,
+        "status": "complete",
+        "workerCommit": "1016243efb31d7422ef5a8c09654983504f2dfd7",
+        "workerBranchHead": "92d1e37b45ced98e1787532d80749f89d12d4fcc"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r19-in-002-1",
@@ -300406,7 +300415,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "/root/gbif_r4_ga_001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-07-31T22:54:36.059Z",
       "expiresAt": "2026-08-01T01:49:54.582Z",
       "recoveryAt": null,
@@ -302854,7 +302863,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 262b54b33cec7f89ad06e24d07a7db7e2b0741f4...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-07-31T23:02:56.329Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r19-in-002__lease-gbif-bulk-20260731-r19-in-002-1.json",
+        "sha256": "c55246a719418eab72197c1c67cf15e8c3cffae579bcf79faa8ccaf371708f5b",
+        "bytes": 99536,
+        "status": "complete",
+        "workerCommit": "145b91bdbde9ef7bc7694a16dc5be78ec66372b0",
+        "workerBranchHead": "81a0da395e7779837e430e05c4a224aa416512da"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r19-oh-002-1",
