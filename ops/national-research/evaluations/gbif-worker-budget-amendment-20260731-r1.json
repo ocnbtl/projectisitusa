@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "gbif-worker-budget-amendment-20260731-r1",
+  "observedAt": "2026-07-31T06:23:00.000Z",
+  "jobId": "gbif-bulk-20260731-r2-ca-001",
+  "leaseId": "lease-gbif-bulk-20260731-r2-ca-001-1",
+  "stateCode": "CA",
+  "priorMaxArtifactBytes": 20000000,
+  "amendedMaxArtifactBytes": 40000000,
+  "measuredContent": {
+    "retainedArtifactBytes": 11493987,
+    "assertionsBytes": 33049859,
+    "reviewsBytes": 17397302,
+    "outcomesBytes": 8629631
+  },
+  "resourceEvidence": {
+    "availableMemoryMibMinimum": 11241,
+    "commitChargePercentMaximum": 69.78,
+    "pageWritesPerSecondMaximum": 0,
+    "diskFreeGibMinimum": 1079.19,
+    "diskFreePercentMinimum": 57.96
+  },
+  "decision": "amend-active-lease-budget",
+  "reason": "The acquired raw artifact set remained below the original 20 MB budget. The frozen worker validator also applies maxArtifactBytes as a per-file content ceiling, and the deterministic assertions file is 33049859 bytes. A 40 MB lease budget permits validation without reacquisition, output mutation, pagination loss, or unsupported evidence semantics.",
+  "providerRequestsRepeated": 0,
+  "acquisitionRestarted": false,
+  "scopeChanged": false,
+  "candidatePairsChanged": false,
+  "frozenSkillChanged": false,
+  "manualInterventionsAdded": 1
+}
