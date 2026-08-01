@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.28%`
 - Research coverage: `2.96%`
 - Explicit outcome coverage: `2.9553%`
-- Applicable protocol cells: `89`
+- Applicable protocol cells: `98`
 - Current complete protocol cells: `55`
-- Protocol completion: `76.40%`
-- Current protocol completion: `61.80%`
+- Protocol completion: `69.39%`
+- Current protocol completion: `56.12%`
 - Evidence records: `933`
 - Research runs: `9`
 - Rejection records: `91`
@@ -32,8 +32,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Flowering Rush (`butomus-umbellatus`) | plants | 99 | 0 | 1 |
+| Fishhook waterflea (`cercopagis-pengoi`) | wildlife | 99 | 0 | 1 |
+| Quagga Mussel (`dreissena-bugensis`) | wildlife | 99 | 0 | 1 |
+| Silver Carp (`hypophthalmichthys-molitrix`) | wildlife | 99 | 0 | 1 |
+| Black carp (`mylopharyngodon-piceus`) | wildlife | 99 | 0 | 1 |
+| Brittle Waternymph (`najas-minor`) | plants | 99 | 0 | 1 |
+| Round Goby (`neogobius-melanostomus`) | wildlife | 99 | 0 | 1 |
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 99 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 99 | 0 | 1 |
+| New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 99 | 0 | 1 |
 | Itchgrass (`rottboellia-cochinchinensis`) | plants | 99 | 0 | 1 |
 | Wild sugarcane (`saccharum-spontaneum`) | plants | 99 | 0 | 1 |
 | Giant Salvinia (`salvinia-molesta`) | plants | 99 | 0 | 1 |
@@ -49,14 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 99 | 2 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 99 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 99 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 99 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 99 | 2 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 99 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 99 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 99 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 99 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 99 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 99 | 0 |
 
 ## Source Operations
 

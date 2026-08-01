@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.85%`
 - Research coverage: `3.71%`
 - Explicit outcome coverage: `3.7141%`
-- Applicable protocol cells: `103`
+- Applicable protocol cells: `121`
 - Current complete protocol cells: `78`
-- Protocol completion: `88.35%`
-- Current protocol completion: `75.73%`
+- Protocol completion: `75.21%`
+- Current protocol completion: `64.46%`
 - Evidence records: `10410`
 - Research runs: `9`
 - Rejection records: `3421`
@@ -32,6 +32,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 67 | 0 | 1 |
+| Shoebutton (`ardisia-elliptica`) | plants | 67 | 0 | 1 |
+| River sheoak (`casuarina-cunninghamiana`) | plants | 67 | 0 | 1 |
+| Beach sheoak (`casuarina-equisetifolia`) | plants | 67 | 0 | 1 |
+| Gray sheoak (`casuarina-glauca`) | plants | 67 | 0 | 1 |
+| Asian nakedwood (`colubrina-asiatica`) | plants | 67 | 0 | 1 |
+| Water yam (`dioscorea-alata`) | plants | 67 | 0 | 1 |
+| Air yam (`dioscorea-bulbifera`) | plants | 67 | 0 | 1 |
+| Catclaw vine (`dolichandra-unguis-cati`) | plants | 67 | 0 | 1 |
+| Littlebell (`ipomoea-triloba`) | plants | 67 | 0 | 1 |
+| Chinese Privet (`ligustrum-sinense`) | plants | 67 | 0 | 1 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 67 | 0 | 1 |
+| Black mimosa (`mimosa-pigra`) | plants | 67 | 0 | 1 |
+| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 67 | 0 | 1 |
+| Silkreed (`neyraudia-reynaudiana`) | plants | 67 | 0 | 1 |
+| Yellow Floating Heart (`nymphoides-peltata`) | plants | 67 | 0 | 1 |
+| Sewer vine (`paederia-cruddasiana`) | plants | 67 | 0 | 1 |
+| Kudzu (`pueraria-montana`) | plants | 67 | 0 | 1 |
 | Simple-stem burr-reed (`sparganium-erectum`) | plants | 67 | 0 | 1 |
 | Coatbuttons (`tridax-procumbens`) | plants | 67 | 0 | 1 |
 | Panic liverseed grass (`urochloa-panicoides`) | plants | 67 | 0 | 1 |
@@ -39,24 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 2 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 2 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 67 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 67 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 67 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 67 | 2 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
-| Chocolate Vine (`akebia-quinata`) | plants | 0 | 67 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 67 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 67 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 67 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 67 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 67 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 67 | 0 |
-| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 67 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 67 | 0 |
-| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 67 | 0 |
-| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 67 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 0 | 67 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 

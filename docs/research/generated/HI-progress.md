@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.56%`
 - Research coverage: `1.56%`
 - Explicit outcome coverage: `1.5575%`
-- Applicable protocol cells: `86`
+- Applicable protocol cells: `109`
 - Current complete protocol cells: `5`
-- Protocol completion: `20.93%`
-- Current protocol completion: `5.81%`
+- Protocol completion: `16.51%`
+- Current protocol completion: `4.59%`
 - Evidence records: `70`
 - Research runs: `7`
 - Rejection records: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Black wattle (`acacia-mearnsii`) | plants | 5 | 0 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 5 | 0 | 1 |
+| Crow Garlic (`allium-vineale`) | plants | 5 | 0 | 1 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 5 | 0 | 1 |
+| Heartleaf madeiravine (`anredera-cordifolia`) | plants | 5 | 0 | 1 |
 | Capeweed (`arctotheca-calendula`) | plants | 5 | 0 | 1 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 5 | 0 | 1 |
 | Animated oat (`avena-sterilis`) | plants | 5 | 0 | 1 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 5 | 0 | 1 |
+| Canada Thistle (`cirsium-arvense`) | plants | 5 | 0 | 1 |
+| Ivy gourd (`coccinia-grandis`) | plants | 5 | 0 | 1 |
 | Jio (`commelina-benghalensis`) | plants | 5 | 0 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 5 | 0 | 1 |
+| Purple pampas grass (`cortaderia-jubata`) | plants | 5 | 0 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 5 | 0 | 1 |
+| Yellow Nutsedge (`cyperus-esculentus`) | plants | 5 | 0 | 1 |
+| Scotch broom (`cytisus-scoparius`) | plants | 5 | 0 | 1 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 5 | 0 | 1 |
 | Southern threecornerjack (`emex-australis`) | plants | 5 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 5 | 0 | 1 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 5 | 0 | 1 |
 | Professor-weed (`galega-officinalis`) | plants | 5 | 0 | 1 |
+| Saltlover (`halogeton-glomeratus`) | plants | 5 | 0 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 5 | 0 | 1 |
 | Hydrilla (`hydrilla`) | plants | 5 | 0 | 1 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 5 | 0 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 5 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 5 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 5 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 5 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 5 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 5 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 5 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 5 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 5 | 0 | 1 |
 
 ## Source Operations
 

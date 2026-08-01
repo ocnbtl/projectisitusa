@@ -8,17 +8,17 @@
     "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/IL.json",
-    "applicabilityAsOf": "2026-07-28",
+    "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 76,
+    "applicableSpeciesCount": 85,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2428,
+    "unknownSpeciesCount": 2419,
     "blockedSpeciesCount": 0,
-    "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 23,
+    "explicitApplicabilityDecisionCount": 75,
+    "derivedApplicableSpeciesCount": 10,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 83,
+    "boundedAcquisitionSpeciesCount": 92,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -49,16 +49,16 @@
     "rejectionRecordCount": 1306,
     "researchRunCount": 10,
     "boundedAcquisition": {
-      "speciesCount": 83,
-      "totalPairs": 8466,
+      "speciesCount": 92,
+      "totalPairs": 9384,
       "verifiedPresent": 1401,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 7065,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 918,
+      "researchCoveragePercent": 90.22,
       "explicitOutcomePairs": 8466,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 90.2174
     }
   },
   "migrationCandidates": {
@@ -372,20 +372,20 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 249,
-    "applicableCells": 94,
-    "notApplicableCells": 155,
+    "totalCells": 276,
+    "applicableCells": 103,
+    "notApplicableCells": 173,
     "completeCells": 93,
-    "incompleteCells": 1,
+    "incompleteCells": 10,
     "blockedCells": 0,
     "currentCells": 80,
     "staleCells": 13,
-    "undatedCells": 1,
-    "applicableCompletionPercent": 98.94,
-    "currentCompletePercent": 85.11,
-    "regulatedAndHighApplicableCells": 35,
-    "regulatedAndHighCurrentCompleteCells": 35,
-    "regulatedAndHighCurrentCompletePercent": 100,
+    "undatedCells": 10,
+    "applicableCompletionPercent": 90.29,
+    "currentCompletePercent": 77.67,
+    "regulatedAndHighApplicableCells": 59,
+    "regulatedAndHighCurrentCompleteCells": 50,
+    "regulatedAndHighCurrentCompletePercent": 84.75,
     "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
       {
@@ -402,17 +402,17 @@
       },
       {
         "category": "plants",
-        "applicableCells": 68,
+        "applicableCells": 77,
         "currentCompleteCells": 67,
-        "currentCompletePercent": 98.53
+        "currentCompletePercent": 87.01
       }
     ],
     "priorityCompletion": [
       {
         "priority": "regulated",
-        "applicableCells": 35,
-        "currentCompleteCells": 35,
-        "currentCompletePercent": 100
+        "applicableCells": 59,
+        "currentCompleteCells": 50,
+        "currentCompletePercent": 84.75
       },
       {
         "priority": "high",
@@ -422,9 +422,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 33,
-        "currentCompleteCells": 32,
-        "currentCompletePercent": 96.97
+        "applicableCells": 18,
+        "currentCompleteCells": 17,
+        "currentCompletePercent": 94.44
       },
       {
         "priority": "baseline",
@@ -436,7 +436,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 76,
+        "applicableCells": 85,
         "currentCompleteCells": 75,
         "processed": false
       },
@@ -449,6 +449,114 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "conium-maculatum",
+      "commonName": "Poison Hemlock",
+      "scientificName": "Conium maculatum",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "elaeagnus-pungens",
+      "commonName": "Thorny olive",
+      "scientificName": "Elaeagnus pungens",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "euphorbia-virgata",
+      "commonName": "Leafy Spurge",
+      "scientificName": "Euphorbia virgata",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "lespedeza-cuneata",
+      "commonName": "Sericea Lespedeza",
+      "scientificName": "Lespedeza cuneata",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "lonicera-fragrantissima",
+      "commonName": "Sweet breath of spring",
+      "scientificName": "Lonicera fragrantissima",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "phellodendron-amurense",
+      "commonName": "Amur corktree",
+      "scientificName": "Phellodendron amurense",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "pueraria-montana",
+      "commonName": "Kudzu",
+      "scientificName": "Pueraria montana",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "vincetoxicum-nigrum",
+      "commonName": "Black Swallow-Wort",
+      "scientificName": "Vincetoxicum nigrum",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
+    {
+      "speciesId": "vincetoxicum-rossicum",
+      "commonName": "Pale swallow-wort",
+      "scientificName": "Vincetoxicum rossicum",
+      "category": "plants",
+      "notResearchedCountyCount": 102,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 102001
+    },
     {
       "speciesId": "aspidiotus-duplex",
       "commonName": "Camphor scale",

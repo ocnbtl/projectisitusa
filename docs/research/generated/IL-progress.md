@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.55%`
 - Research coverage: `3.31%`
 - Explicit outcome coverage: `3.3147%`
-- Applicable protocol cells: `94`
+- Applicable protocol cells: `103`
 - Current complete protocol cells: `80`
-- Protocol completion: `98.94%`
-- Current protocol completion: `85.11%`
+- Protocol completion: `90.29%`
+- Current protocol completion: `77.67%`
 - Evidence records: `3323`
 - Research runs: `10`
 - Rejection records: `1306`
@@ -32,6 +32,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Poison Hemlock (`conium-maculatum`) | plants | 102 | 0 | 1 |
+| Thorny olive (`elaeagnus-pungens`) | plants | 102 | 0 | 1 |
+| Leafy Spurge (`euphorbia-virgata`) | plants | 102 | 0 | 1 |
+| Sericea Lespedeza (`lespedeza-cuneata`) | plants | 102 | 0 | 1 |
+| Sweet breath of spring (`lonicera-fragrantissima`) | plants | 102 | 0 | 1 |
+| Amur corktree (`phellodendron-amurense`) | plants | 102 | 0 | 1 |
+| Kudzu (`pueraria-montana`) | plants | 102 | 0 | 1 |
+| Black Swallow-Wort (`vincetoxicum-nigrum`) | plants | 102 | 0 | 1 |
+| Pale swallow-wort (`vincetoxicum-rossicum`) | plants | 102 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 102 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 102 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 102 | 1 |
@@ -48,15 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Jio (`commelina-benghalensis`) | plants | 0 | 102 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 102 | 0 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 102 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 102 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 102 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 102 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 0 | 102 | 0 |
-| English Ivy (`hedera-helix`) | plants | 0 | 102 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 102 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 102 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 102 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 102 | 0 |
 
 ## Source Operations
 

@@ -8,17 +8,17 @@
     "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/GA.json",
-    "applicabilityAsOf": "2026-07-28",
+    "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 77,
+    "applicableSpeciesCount": 90,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2427,
+    "unknownSpeciesCount": 2414,
     "blockedSpeciesCount": 0,
-    "explicitApplicabilityDecisionCount": 53,
+    "explicitApplicabilityDecisionCount": 66,
     "derivedApplicableSpeciesCount": 24,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 86,
+    "boundedAcquisitionSpeciesCount": 99,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -49,16 +49,16 @@
     "rejectionRecordCount": 333,
     "researchRunCount": 12,
     "boundedAcquisition": {
-      "speciesCount": 86,
-      "totalPairs": 13674,
+      "speciesCount": 99,
+      "totalPairs": 15741,
       "verifiedPresent": 2204,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 11470,
-      "notResearched": 0,
-      "researchCoveragePercent": 100,
+      "notResearched": 2067,
+      "researchCoveragePercent": 86.87,
       "explicitOutcomePairs": 13674,
-      "explicitOutcomeCoveragePercent": 100
+      "explicitOutcomeCoveragePercent": 86.8687
     }
   },
   "migrationCandidates": {
@@ -372,20 +372,20 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 258,
-    "applicableCells": 95,
-    "notApplicableCells": 163,
+    "totalCells": 297,
+    "applicableCells": 108,
+    "notApplicableCells": 189,
     "completeCells": 92,
-    "incompleteCells": 3,
+    "incompleteCells": 16,
     "blockedCells": 0,
     "currentCells": 79,
     "staleCells": 13,
-    "undatedCells": 3,
-    "applicableCompletionPercent": 96.84,
-    "currentCompletePercent": 83.16,
-    "regulatedAndHighApplicableCells": 35,
+    "undatedCells": 16,
+    "applicableCompletionPercent": 85.19,
+    "currentCompletePercent": 73.15,
+    "regulatedAndHighApplicableCells": 48,
     "regulatedAndHighCurrentCompleteCells": 35,
-    "regulatedAndHighCurrentCompletePercent": 100,
+    "regulatedAndHighCurrentCompletePercent": 72.92,
     "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
       {
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 65,
+        "applicableCells": 78,
         "currentCompleteCells": 63,
-        "currentCompletePercent": 96.92
+        "currentCompletePercent": 80.77
       },
       {
         "category": "wildlife",
@@ -416,9 +416,9 @@
     "priorityCompletion": [
       {
         "priority": "regulated",
-        "applicableCells": 35,
+        "applicableCells": 48,
         "currentCompleteCells": 35,
-        "currentCompletePercent": 100
+        "currentCompletePercent": 72.92
       },
       {
         "priority": "high",
@@ -442,7 +442,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 77,
+        "applicableCells": 90,
         "currentCompleteCells": 74,
         "processed": false
       },
@@ -455,6 +455,162 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "agrostemma-githago",
+      "commonName": "Common corncockle",
+      "scientificName": "Agrostemma githago",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "cardiospermum-halicacabum",
+      "commonName": "Balloon vine",
+      "scientificName": "Cardiospermum halicacabum",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "cirsium-arvense",
+      "commonName": "Canada Thistle",
+      "scientificName": "Cirsium arvense",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "convolvulus-arvensis",
+      "commonName": "Field Bindweed",
+      "scientificName": "Convolvulus arvensis",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "cynodon-dactylon",
+      "commonName": "Bermudagrass",
+      "scientificName": "Cynodon dactylon",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "cyperus-esculentus",
+      "commonName": "Yellow Nutsedge",
+      "scientificName": "Cyperus esculentus",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "cyperus-rotundus",
+      "commonName": "Purple Nutsedge",
+      "scientificName": "Cyperus rotundus",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "elymus-repens",
+      "commonName": "Quackgrass",
+      "scientificName": "Elymus repens",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "lolium-temulentum",
+      "commonName": "Darnel ryegrass",
+      "scientificName": "Lolium temulentum",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "rhaponticum-repens",
+      "commonName": "Hardheads",
+      "scientificName": "Rhaponticum repens",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "rumex-acetosella",
+      "commonName": "Common Sheep Sorrel",
+      "scientificName": "Rumex acetosella",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "setaria-faberi",
+      "commonName": "Giant Foxtail",
+      "scientificName": "Setaria faberi",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
+    {
+      "speciesId": "sorghum-halepense",
+      "commonName": "Johnsongrass",
+      "scientificName": "Sorghum halepense",
+      "category": "plants",
+      "notResearchedCountyCount": 159,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 159001
+    },
     {
       "speciesId": "homadaula-albizziae",
       "commonName": "Mimosa webworm",

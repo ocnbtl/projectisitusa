@@ -8,17 +8,17 @@
     "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/DC.json",
-    "applicabilityAsOf": "2026-07-28",
+    "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 53,
+    "applicableSpeciesCount": 67,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2451,
+    "unknownSpeciesCount": 2437,
     "blockedSpeciesCount": 0,
-    "explicitApplicabilityDecisionCount": 53,
+    "explicitApplicabilityDecisionCount": 67,
     "derivedApplicableSpeciesCount": 0,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 53,
+    "boundedAcquisitionSpeciesCount": 67,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -49,16 +49,16 @@
     "rejectionRecordCount": 3,
     "researchRunCount": 6,
     "boundedAcquisition": {
-      "speciesCount": 53,
-      "totalPairs": 53,
+      "speciesCount": 67,
+      "totalPairs": 67,
       "verifiedPresent": 13,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 5,
-      "notResearched": 35,
-      "researchCoveragePercent": 33.96,
+      "notResearched": 49,
+      "researchCoveragePercent": 26.87,
       "explicitOutcomePairs": 18,
-      "explicitOutcomeCoveragePercent": 33.9623
+      "explicitOutcomeCoveragePercent": 26.8657
     }
   },
   "migrationCandidates": {
@@ -372,18 +372,18 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 159,
-    "applicableCells": 71,
-    "notApplicableCells": 88,
+    "totalCells": 201,
+    "applicableCells": 85,
+    "notApplicableCells": 116,
     "completeCells": 18,
-    "incompleteCells": 53,
+    "incompleteCells": 67,
     "blockedCells": 0,
     "currentCells": 5,
     "staleCells": 13,
-    "undatedCells": 53,
-    "applicableCompletionPercent": 25.35,
-    "currentCompletePercent": 7.04,
-    "regulatedAndHighApplicableCells": 35,
+    "undatedCells": 67,
+    "applicableCompletionPercent": 21.18,
+    "currentCompletePercent": 5.88,
+    "regulatedAndHighApplicableCells": 49,
     "regulatedAndHighCurrentCompleteCells": 0,
     "regulatedAndHighCurrentCompletePercent": 0,
     "requiredCurrentSourcesProcessed": false,
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 37,
+        "applicableCells": 51,
         "currentCompleteCells": 1,
-        "currentCompletePercent": 2.7
+        "currentCompletePercent": 1.96
       },
       {
         "category": "wildlife",
@@ -422,7 +422,7 @@
       },
       {
         "priority": "high",
-        "applicableCells": 0,
+        "applicableCells": 14,
         "currentCompleteCells": 0,
         "currentCompletePercent": 0
       },
@@ -442,7 +442,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 53,
+        "applicableCells": 67,
         "currentCompleteCells": 0,
         "processed": false
       },
@@ -456,9 +456,33 @@
   },
   "nextQueue": [
     {
+      "speciesId": "acer-platanoides",
+      "commonName": "Norway Maple",
+      "scientificName": "Acer platanoides",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
       "speciesId": "ageratina-adenophora",
       "commonName": "Sticky snakeroot",
       "scientificName": "Ageratina adenophora",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "akebia-quinata",
+      "commonName": "Chocolate Vine",
+      "scientificName": "Akebia quinata",
       "category": "plants",
       "notResearchedCountyCount": 1,
       "researchedUnresolvedCountyCount": 0,
@@ -528,6 +552,42 @@
       "priorityScore": 1001
     },
     {
+      "speciesId": "berberis-thunbergii",
+      "commonName": "Japanese barberry",
+      "scientificName": "Berberis thunbergii",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "buddleja-davidii",
+      "commonName": "Orange eye butterflybush",
+      "scientificName": "Buddleja davidii",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "celastrus-orbiculatus",
+      "commonName": "Oriental Bittersweet",
+      "scientificName": "Celastrus orbiculatus",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
       "speciesId": "commelina-benghalensis",
       "commonName": "Jio",
       "scientificName": "Commelina benghalensis",
@@ -588,6 +648,30 @@
       "priorityScore": 1001
     },
     {
+      "speciesId": "euonymus-alatus",
+      "commonName": "Winged Burning Bush",
+      "scientificName": "Euonymus alatus",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "euonymus-fortunei",
+      "commonName": "Wintercreeper",
+      "scientificName": "Euonymus fortunei",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
       "speciesId": "euphorbia-terracina",
       "commonName": "Geraldton carnation weed",
       "scientificName": "Euphorbia terracina",
@@ -603,6 +687,18 @@
       "speciesId": "galega-officinalis",
       "commonName": "Professor-weed",
       "scientificName": "Galega officinalis",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "hemerocallis-fulva",
+      "commonName": "Orange Daylily",
+      "scientificName": "Hemerocallis fulva",
       "category": "plants",
       "notResearchedCountyCount": 1,
       "researchedUnresolvedCountyCount": 0,
@@ -732,6 +828,30 @@
       "priorityScore": 1001
     },
     {
+      "speciesId": "miscanthus-sinensis",
+      "commonName": "Chinese Silvergrass",
+      "scientificName": "Miscanthus sinensis",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "nandina-domestica",
+      "commonName": "Sacred Bamboo",
+      "scientificName": "Nandina domestica",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
       "speciesId": "nassella-trichotoma",
       "commonName": "Serrated tussock grass",
       "scientificName": "Nassella trichotoma",
@@ -759,6 +879,42 @@
       "speciesId": "ottelia-alismoides",
       "commonName": "Ducklettuce",
       "scientificName": "Ottelia alismoides",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "perilla-frutescens",
+      "commonName": "Beefsteakplant",
+      "scientificName": "Perilla frutescens",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "pyrus-calleryana",
+      "commonName": "Callery Pear",
+      "scientificName": "Pyrus calleryana",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "rhodotypos-scandens",
+      "commonName": "Jetbead",
+      "scientificName": "Rhodotypos scandens",
       "category": "plants",
       "notResearchedCountyCount": 1,
       "researchedUnresolvedCountyCount": 0,
@@ -867,6 +1023,18 @@
       "speciesId": "urochloa-panicoides",
       "commonName": "Panic liverseed grass",
       "scientificName": "Urochloa panicoides",
+      "category": "plants",
+      "notResearchedCountyCount": 1,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 1001
+    },
+    {
+      "speciesId": "vinca-minor",
+      "commonName": "Common Periwinkle",
+      "scientificName": "Vinca minor",
       "category": "plants",
       "notResearchedCountyCount": 1,
       "researchedUnresolvedCountyCount": 0,

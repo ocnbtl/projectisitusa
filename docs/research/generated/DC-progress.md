@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.52%`
 - Research coverage: `0.72%`
 - Explicit outcome coverage: `0.7188%`
-- Applicable protocol cells: `71`
+- Applicable protocol cells: `85`
 - Current complete protocol cells: `5`
-- Protocol completion: `25.35%`
-- Current protocol completion: `7.04%`
+- Protocol completion: `21.18%`
+- Current protocol completion: `5.88%`
 - Evidence records: `13`
 - Research runs: `6`
 - Rejection records: `3`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Norway Maple (`acer-platanoides`) | plants | 1 | 0 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 1 | 0 | 1 |
+| Chocolate Vine (`akebia-quinata`) | plants | 1 | 0 | 1 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 1 | 0 | 1 |
 | Capeweed (`arctotheca-calendula`) | plants | 1 | 0 | 1 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 1 | 0 | 1 |
 | Animated oat (`avena-sterilis`) | plants | 1 | 0 | 1 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 1 | 0 | 1 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 1 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 1 | 0 | 1 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 1 | 0 | 1 |
 | Jio (`commelina-benghalensis`) | plants | 1 | 0 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 1 | 0 | 1 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 1 | 0 | 1 |
 | Southern threecornerjack (`emex-australis`) | plants | 1 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 1 | 0 | 1 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 1 | 0 | 1 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 1 | 0 | 1 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 1 | 0 | 1 |
 | Professor-weed (`galega-officinalis`) | plants | 1 | 0 | 1 |
+| Orange Daylily (`hemerocallis-fulva`) | plants | 1 | 0 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 1 | 0 | 1 |
 | Hydrilla (`hydrilla`) | plants | 1 | 0 | 1 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 1 | 0 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 1 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 1 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 1 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 1 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 1 | 0 | 1 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 1 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 1 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 1 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 1 | 0 | 1 |
 
 ## Source Operations
 

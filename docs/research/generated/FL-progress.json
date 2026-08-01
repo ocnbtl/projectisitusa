@@ -8,17 +8,17 @@
     "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/FL.json",
-    "applicabilityAsOf": "2026-07-28",
+    "applicabilityAsOf": "2026-08-01",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 85,
+    "applicableSpeciesCount": 103,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2419,
+    "unknownSpeciesCount": 2401,
     "blockedSpeciesCount": 0,
-    "explicitApplicabilityDecisionCount": 52,
-    "derivedApplicableSpeciesCount": 33,
+    "explicitApplicabilityDecisionCount": 78,
+    "derivedApplicableSpeciesCount": 25,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 96,
+    "boundedAcquisitionSpeciesCount": 114,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -49,16 +49,16 @@
     "rejectionRecordCount": 3421,
     "researchRunCount": 9,
     "boundedAcquisition": {
-      "speciesCount": 96,
-      "totalPairs": 6432,
+      "speciesCount": 114,
+      "totalPairs": 7638,
       "verifiedPresent": 1431,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 4800,
-      "notResearched": 201,
-      "researchCoveragePercent": 96.88,
+      "notResearched": 1407,
+      "researchCoveragePercent": 81.58,
       "explicitOutcomePairs": 6231,
-      "explicitOutcomeCoveragePercent": 96.875
+      "explicitOutcomeCoveragePercent": 81.5789
     }
   },
   "migrationCandidates": {
@@ -372,20 +372,20 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 288,
-    "applicableCells": 103,
-    "notApplicableCells": 185,
+    "totalCells": 342,
+    "applicableCells": 121,
+    "notApplicableCells": 221,
     "completeCells": 91,
-    "incompleteCells": 12,
+    "incompleteCells": 30,
     "blockedCells": 0,
     "currentCells": 78,
     "staleCells": 13,
-    "undatedCells": 12,
-    "applicableCompletionPercent": 88.35,
-    "currentCompletePercent": 75.73,
-    "regulatedAndHighApplicableCells": 36,
-    "regulatedAndHighCurrentCompleteCells": 33,
-    "regulatedAndHighCurrentCompletePercent": 91.67,
+    "undatedCells": 30,
+    "applicableCompletionPercent": 75.21,
+    "currentCompletePercent": 64.46,
+    "regulatedAndHighApplicableCells": 62,
+    "regulatedAndHighCurrentCompleteCells": 41,
+    "regulatedAndHighCurrentCompletePercent": 66.13,
     "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
       {
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 71,
+        "applicableCells": 89,
         "currentCompleteCells": 66,
-        "currentCompletePercent": 92.96
+        "currentCompletePercent": 74.16
       },
       {
         "category": "wildlife",
@@ -416,9 +416,9 @@
     "priorityCompletion": [
       {
         "priority": "regulated",
-        "applicableCells": 36,
-        "currentCompleteCells": 33,
-        "currentCompletePercent": 91.67
+        "applicableCells": 62,
+        "currentCompleteCells": 41,
+        "currentCompletePercent": 66.13
       },
       {
         "priority": "high",
@@ -428,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 41,
-        "currentCompleteCells": 39,
-        "currentCompletePercent": 95.12
+        "applicableCells": 33,
+        "currentCompleteCells": 31,
+        "currentCompletePercent": 93.94
       },
       {
         "priority": "baseline",
@@ -442,7 +442,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 85,
+        "applicableCells": 103,
         "currentCompleteCells": 73,
         "processed": false
       },
@@ -455,6 +455,222 @@
     ]
   },
   "nextQueue": [
+    {
+      "speciesId": "alternanthera-philoxeroides",
+      "commonName": "Alligatorweed",
+      "scientificName": "Alternanthera philoxeroides",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "ardisia-elliptica",
+      "commonName": "Shoebutton",
+      "scientificName": "Ardisia elliptica",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "casuarina-cunninghamiana",
+      "commonName": "River sheoak",
+      "scientificName": "Casuarina cunninghamiana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "casuarina-equisetifolia",
+      "commonName": "Beach sheoak",
+      "scientificName": "Casuarina equisetifolia",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "casuarina-glauca",
+      "commonName": "Gray sheoak",
+      "scientificName": "Casuarina glauca",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "colubrina-asiatica",
+      "commonName": "Asian nakedwood",
+      "scientificName": "Colubrina asiatica",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "dioscorea-alata",
+      "commonName": "Water yam",
+      "scientificName": "Dioscorea alata",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "dioscorea-bulbifera",
+      "commonName": "Air yam",
+      "scientificName": "Dioscorea bulbifera",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "dolichandra-unguis-cati",
+      "commonName": "Catclaw vine",
+      "scientificName": "Dolichandra unguis-cati",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "ipomoea-triloba",
+      "commonName": "Littlebell",
+      "scientificName": "Ipomoea triloba",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "ligustrum-sinense",
+      "commonName": "Chinese Privet",
+      "scientificName": "Ligustrum sinense",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "lythrum-salicaria",
+      "commonName": "Purple Loosestrife",
+      "scientificName": "Lythrum salicaria",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "mimosa-pigra",
+      "commonName": "Black mimosa",
+      "scientificName": "Mimosa pigra",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "myriophyllum-spicatum",
+      "commonName": "Eurasian Watermilfoil",
+      "scientificName": "Myriophyllum spicatum",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "neyraudia-reynaudiana",
+      "commonName": "Silkreed",
+      "scientificName": "Neyraudia reynaudiana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "nymphoides-peltata",
+      "commonName": "Yellow Floating Heart",
+      "scientificName": "Nymphoides peltata",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "paederia-cruddasiana",
+      "commonName": "Sewer vine",
+      "scientificName": "Paederia cruddasiana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
+    {
+      "speciesId": "pueraria-montana",
+      "commonName": "Kudzu",
+      "scientificName": "Pueraria montana",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 67001
+    },
     {
       "speciesId": "sparganium-erectum",
       "commonName": "Simple-stem burr-reed",
@@ -1315,148 +1531,6 @@
       "researchedUnresolvedCountyCount": 34,
       "missingProtocolSourceIds": [],
       "priorityScore": 340
-    },
-    {
-      "speciesId": "urena-lobata",
-      "commonName": "Caesarweed",
-      "scientificName": "Urena lobata",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 26,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 260
-    },
-    {
-      "speciesId": "lonicera-japonica",
-      "commonName": "Japanese Honeysuckle",
-      "scientificName": "Lonicera japonica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 25,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 250
-    },
-    {
-      "speciesId": "pomacea-maculata",
-      "commonName": "Giant Applesnail",
-      "scientificName": "Pomacea maculata",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 25,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 250
-    },
-    {
-      "speciesId": "solanum-viarum",
-      "commonName": "Tropical soda apple",
-      "scientificName": "Solanum viarum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 25,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 250
-    },
-    {
-      "speciesId": "albizia-julibrissin",
-      "commonName": "Mimosa Tree",
-      "scientificName": "Albizia julibrissin",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 23,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 230
-    },
-    {
-      "speciesId": "lantana-camara",
-      "commonName": "Lantana",
-      "scientificName": "Lantana camara",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 22,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 220
-    },
-    {
-      "speciesId": "melia-azedarach",
-      "commonName": "Chinaberry Tree",
-      "scientificName": "Melia azedarach",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 20,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 200
-    },
-    {
-      "speciesId": "cinnamomum-camphora",
-      "commonName": "Camphortree",
-      "scientificName": "Cinnamomum camphora",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 19,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 190
-    },
-    {
-      "speciesId": "triadica-sebifera",
-      "commonName": "Chinese Tallow",
-      "scientificName": "Triadica sebifera",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 15,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 150
-    },
-    {
-      "speciesId": "osteopilus-septentrionalis",
-      "commonName": "Cuban treefrog",
-      "scientificName": "Osteopilus septentrionalis",
-      "category": "wildlife",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 13,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 130
-    },
-    {
-      "speciesId": "imperata-cylindrica",
-      "commonName": "Cogongrass",
-      "scientificName": "Imperata cylindrica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 11,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 110
-    },
-    {
-      "speciesId": "lygodium-japonicum",
-      "commonName": "Japanese Climbing Fern",
-      "scientificName": "Lygodium japonicum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 7,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 70
-    },
-    {
-      "speciesId": "salvinia-minima",
-      "commonName": "Water spangles",
-      "scientificName": "Salvinia minima",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 6,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 60
-    },
-    {
-      "speciesId": "raffaelea-lauricola",
-      "commonName": "Laurel wilt",
-      "scientificName": "Raffaelea lauricola",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "usfs-afpe"
-      ],
-      "priorityScore": 1
     }
   ]
 }

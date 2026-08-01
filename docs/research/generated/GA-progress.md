@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.55%`
 - Research coverage: `3.43%`
 - Explicit outcome coverage: `3.4345%`
-- Applicable protocol cells: `95`
+- Applicable protocol cells: `108`
 - Current complete protocol cells: `79`
-- Protocol completion: `96.84%`
-- Current protocol completion: `83.16%`
+- Protocol completion: `85.19%`
+- Current protocol completion: `73.15%`
 - Evidence records: `4394`
 - Research runs: `12`
 - Rejection records: `333`
@@ -32,6 +32,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Common corncockle (`agrostemma-githago`) | plants | 159 | 0 | 1 |
+| Balloon vine (`cardiospermum-halicacabum`) | plants | 159 | 0 | 1 |
+| Canada Thistle (`cirsium-arvense`) | plants | 159 | 0 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 159 | 0 | 1 |
+| Bermudagrass (`cynodon-dactylon`) | plants | 159 | 0 | 1 |
+| Yellow Nutsedge (`cyperus-esculentus`) | plants | 159 | 0 | 1 |
+| Purple Nutsedge (`cyperus-rotundus`) | plants | 159 | 0 | 1 |
+| Quackgrass (`elymus-repens`) | plants | 159 | 0 | 1 |
+| Darnel ryegrass (`lolium-temulentum`) | plants | 159 | 0 | 1 |
+| Hardheads (`rhaponticum-repens`) | plants | 159 | 0 | 1 |
+| Common Sheep Sorrel (`rumex-acetosella`) | plants | 159 | 0 | 1 |
+| Giant Foxtail (`setaria-faberi`) | plants | 159 | 0 | 1 |
+| Johnsongrass (`sorghum-halepense`) | plants | 159 | 0 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 159 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 159 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 159 | 0 |
@@ -44,19 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 159 | 0 |
 | Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 159 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 159 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 159 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 159 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 159 | 0 |
-| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 159 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 159 | 0 |
-| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 159 | 0 |
-| Professor-weed (`galega-officinalis`) | plants | 0 | 159 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 0 | 159 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 159 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 159 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 159 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 159 | 0 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
