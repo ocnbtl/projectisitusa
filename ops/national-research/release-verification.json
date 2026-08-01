@@ -756,6 +756,87 @@
         }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source metadata, live routes, selected live bytes, ZIP lookup, sparse default resolution, returning-browser cache refresh, source operations, evidence expansion, and desktop plus mobile browser behavior were verified without console errors. It does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-4608299a-2026-08-01",
+      "verifiedAt": "2026-08-01T05:23:29.025Z",
+      "commitSha": "4608299a230f1aa26637d61314c7561449ce2482",
+      "githubMainSha": "4608299a230f1aa26637d61314c7561449ce2482",
+      "githubDeploymentId": 5701531773,
+      "vercelDeploymentId": "dpl_BYWaZzCF7ZRn8hXHCHfbEBrsiFpF",
+      "vercelDeploymentUrl": "projectisitusa-dn4vxu87j-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=GA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=IL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=VA",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "d599c84ce729fdb2a4160c182f8ef3673f3a3e90bfd86cb4d180a8924c994f1a"
+        },
+        {
+          "path": "/generated/research/GA/summary.json",
+          "sha256": "2d0520f00e31204b477a9e46fe0c41a890cc57c6fbd0e083a195de0019ea1291"
+        },
+        {
+          "path": "/generated/research/IL/summary.json",
+          "sha256": "652a244aefff0e7f47a88ccbd2d008753d38d511c25a56f0983e835a3b6240a5"
+        },
+        {
+          "path": "/generated/research/VA/summary.json",
+          "sha256": "3e99f25c523ee777a0aedf52348061b45cd974a2e632936d4a97bd2a16fdcccd"
+        }
+      ],
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source metadata, live routes, selected live bytes, ZIP lookup, sparse default resolution, returning-browser cache refresh, source operations, evidence expansion, active-cohort and later-state research views, and desktop plus mobile browser behavior were verified without console warnings or errors. It does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
