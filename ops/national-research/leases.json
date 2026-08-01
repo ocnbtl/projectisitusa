@@ -320933,7 +320933,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r4_az_retry2",
-      "state": "active",
+      "state": "cancelled",
       "claimedAt": "2026-08-01T02:12:16.783Z",
       "expiresAt": "2026-08-01T03:40:39.141Z",
       "recoveryAt": null,
@@ -321583,7 +321583,8 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check fe54c00c3c105dfe7f8fcdd0de708c5f299b0284...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-01T02:22:00.000Z"
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r20-va-001-1",
