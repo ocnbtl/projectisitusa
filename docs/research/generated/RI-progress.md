@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.44%`
 - Research coverage: `2.04%`
 - Explicit outcome coverage: `2.0367%`
-- Applicable protocol cells: `79`
+- Applicable protocol cells: `82`
 - Current complete protocol cells: `5`
-- Protocol completion: `22.78%`
-- Current protocol completion: `6.33%`
+- Protocol completion: `21.95%`
+- Current protocol completion: `6.10%`
 - Evidence records: `55`
 - Research runs: `7`
 - Rejection records: `3`
@@ -38,8 +38,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Onionweed (`asphodelus-fistulosus`) | plants | 5 | 0 | 1 |
 | Animated oat (`avena-sterilis`) | plants | 5 | 0 | 1 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 5 | 0 | 1 |
+| Fishhook waterflea (`cercopagis-pengoi`) | wildlife | 5 | 0 | 1 |
 | Jio (`commelina-benghalensis`) | plants | 5 | 0 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 5 | 0 | 1 |
+| Zebra Mussel (`dreissena-polymorpha`) | wildlife | 5 | 0 | 1 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 5 | 0 | 1 |
 | Southern threecornerjack (`emex-australis`) | plants | 5 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 5 | 0 | 1 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 5 | 0 | 1 |
 | Mile-a-minute (`mikania-micrantha`) | plants | 5 | 0 | 1 |
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 5 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 5 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 5 | 0 | 1 |
 
 ## Source Operations
 
