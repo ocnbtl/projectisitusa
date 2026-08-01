@@ -12122,7 +12122,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r24-tn-001-1",
       "jobId": "gbif-bulk-20260731-r24-tn-001",
       "leaseId": "lease-gbif-bulk-20260731-r24-tn-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T03:09:46.620Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r24-tn-001__lease-gbif-bulk-20260731-r24-tn-001-1.json",
       "manifestHash": "aa742d97c903f72307cc431061f86bf1fe0a2e9ac9987bf1b90e66a1323afa0d",
@@ -12218,6 +12218,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r24-tn-001-1.json",
         "sha256": "a4c1f0490d3c88ad83b520bb7522082ae4c75d95427a82d4a62151001d9ba597",
         "bytes": 9643
+      },
+      "integratedAt": "2026-08-01T03:10:13.120Z",
+      "integrator": "MAIN",
+      "integrationCommit": "8e6c46dde8780d61efe1cb8d2ad05ca7a31c8907",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Integrated 25 complete state-species screens and 2375 Tennessee county-species outcomes from 51 retained GBIF artifacts.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Accepted Tennessee acquisition was cherry-picked sequentially after frozen validation and review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r24-tn-001-1.json",
+        "sha256": "7f23404ca3b491d03ece72abcd934bae96669320905fcee478248dad8c3e4495",
+        "bytes": 9749
       }
     }
   ]
