@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.73%`
 - Research coverage: `4.27%`
 - Explicit outcome coverage: `4.2732%`
-- Applicable protocol cells: `120`
+- Applicable protocol cells: `131`
 - Current complete protocol cells: `105`
-- Protocol completion: `98.33%`
-- Current protocol completion: `87.50%`
+- Protocol completion: `90.08%`
+- Current protocol completion: `80.15%`
 - Evidence records: `3004`
 - Research runs: `11`
 - Rejection records: `955`
@@ -32,6 +32,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Flowering Rush (`butomus-umbellatus`) | plants | 92 | 0 | 1 |
+| Brazilian Waterweed (`egeria-densa`) | plants | 92 | 0 | 1 |
+| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 92 | 0 | 1 |
+| Yellow Flag Iris (`iris-pseudacorus`) | plants | 92 | 0 | 1 |
+| Parrot Feather (`myriophyllum-aquaticum`) | plants | 92 | 0 | 1 |
+| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 92 | 0 | 1 |
+| Brittle Waternymph (`najas-minor`) | plants | 92 | 0 | 1 |
+| Starry Stonewort (`nitellopsis-obtusa`) | plants | 92 | 0 | 1 |
+| Yellow Floating Heart (`nymphoides-peltata`) | plants | 92 | 0 | 1 |
+| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 92 | 0 | 1 |
+| Water Chestnut (`trapa-natans`) | plants | 92 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 92 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 92 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 92 | 1 |
@@ -46,17 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Animated oat (`avena-sterilis`) | plants | 0 | 92 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 92 | 0 |
 | Spiny plumeless thistle (`carduus-acanthoides`) | plants | 0 | 92 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 92 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 92 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 92 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 92 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 92 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 92 | 0 |
-| Japanese Hop (`humulus-japonicus`) | plants | 0 | 92 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 92 | 0 |
-| Cogongrass (`imperata-cylindrica`) | plants | 0 | 92 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 92 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 92 | 0 |
 
 ## Source Operations
 

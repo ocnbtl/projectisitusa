@@ -15,10 +15,10 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Determination coverage: `0.69%`
 - Research coverage: `3.31%`
 - Explicit outcome coverage: `3.3147%`
-- Applicable protocol cells: `95`
+- Applicable protocol cells: `114`
 - Current complete protocol cells: `79`
-- Protocol completion: `96.84%`
-- Current protocol completion: `83.16%`
+- Protocol completion: `80.70%`
+- Current protocol completion: `69.30%`
 - Evidence records: `2447`
 - Research runs: `10`
 - Rejection records: `1503`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Flowering Rush (`butomus-umbellatus`) | plants | 88 | 0 | 1 |
+| Cutleaf Teasel (`dipsacus-laciniatus`) | plants | 88 | 0 | 1 |
+| Brazilian Waterweed (`egeria-densa`) | plants | 88 | 0 | 1 |
+| Codlins and cream (`epilobium-hirsutum`) | plants | 88 | 0 | 1 |
+| Japanese Knotweed (`fallopia-japonica`) | plants | 88 | 0 | 1 |
+| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 88 | 0 | 1 |
+| Yellow Flag Iris (`iris-pseudacorus`) | plants | 88 | 0 | 1 |
+| White Mulberry (`morus-alba`) | plants | 88 | 0 | 1 |
+| Parrot Feather (`myriophyllum-aquaticum`) | plants | 88 | 0 | 1 |
+| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 88 | 0 | 1 |
+| Brittle Waternymph (`najas-minor`) | plants | 88 | 0 | 1 |
+| Yellow Floating Heart (`nymphoides-peltata`) | plants | 88 | 0 | 1 |
+| Mile-a-Minute Vine (`persicaria-perfoliata`) | plants | 88 | 0 | 1 |
+| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 88 | 0 | 1 |
+| Callery Pear (`pyrus-calleryana`) | plants | 88 | 0 | 1 |
+| Water spangles (`salvinia-minima`) | plants | 88 | 0 | 1 |
+| Water Chestnut (`trapa-natans`) | plants | 88 | 0 | 1 |
+| Black Swallow-Wort (`vincetoxicum-nigrum`) | plants | 88 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 88 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 88 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 88 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 88 | 1 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 88 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 88 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 88 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 88 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 88 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 88 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 88 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 88 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 88 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 88 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 88 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 88 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 88 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 88 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 0 | 88 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 88 | 0 |
-| Cogongrass (`imperata-cylindrica`) | plants | 0 | 88 | 0 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 88 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 88 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 88 | 0 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 88 | 0 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 88 | 0 |
 
 ## Source Operations
 
