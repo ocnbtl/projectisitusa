@@ -1,6 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import { canonicalCandidatePairKeys } from "@/lib/research/candidate-pairs";
+import { getStateDefinition } from "@/lib/research/geography-registry";
+import { sha256, stableJson } from "@/lib/research/run-files";
+
 type CandidateFile = {
   schemaVersion: 1;
   stateCode: string;
@@ -49,6 +53,10 @@ function assert(condition: unknown, message: string): asserts condition {
 
 function compareText(left: string, right: string) {
   return left < right ? -1 : left > right ? 1 : 0;
+}
+
+function runTimestamp(value: string) {
+  return value.replace(/[-:]/gu, "").replace(/\.\d{3}Z$/u, "Z");
 }
 
 const args = process.argv.slice(2);
@@ -114,6 +122,33 @@ const taxa = [
 assert(
   taxa.length === candidate.stateSpeciesScreenCount,
   "Archived-recovery candidate state-species count changed.",
+);
+const state = getStateDefinition(candidate.stateCode);
+assert(
+  state?.nationalV1Scope && state.sourceStateNames.gbif,
+  `Archived-recovery candidate has no GBIF state identity for ${candidate.stateCode}.`,
+);
+const candidatePairs = canonicalCandidatePairKeys(
+  candidate.candidates.map((entry) => ({
+    countyFips: entry.countyFips,
+    speciesId: entry.speciesId,
+  })),
+);
+const parameters = {
+  stateCode: candidate.stateCode,
+  stateProvince: state.sourceStateNames.gbif,
+  candidateLimit: candidate.candidateCount,
+  candidatePairs,
+  basisOfRecord: "PRESERVED_SPECIMEN",
+  occurrenceStatus: "PRESENT",
+  minimumMatchConfidence: 95,
+  pageLimit: 300,
+};
+const parameterHash = sha256(stableJson(parameters));
+const expectedOutputRunId = `${runTimestamp(startedAt)}__gbif-preserved-specimens__${parameterHash.slice(0, 12)}`;
+assert(
+  outputRunId === expectedOutputRunId,
+  `--output-run-id ${outputRunId} differs from canonical ${expectedOutputRunId}.`,
 );
 const relativeCandidate = path
   .relative(process.cwd(), candidatePath)
@@ -237,6 +272,7 @@ process.stdout.write(
       archiveRunId: candidate.archiveReplay.runId,
       baseSha,
       outputRunId,
+      parameterHash,
       state: "planned",
     },
     null,
