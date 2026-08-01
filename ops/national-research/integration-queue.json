@@ -12397,7 +12397,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r25-ms-001-1",
       "jobId": "gbif-bulk-20260731-r25-ms-001",
       "leaseId": "lease-gbif-bulk-20260731-r25-ms-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T03:28:00.000Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r25-ms-001__lease-gbif-bulk-20260731-r25-ms-001-1.json",
       "manifestHash": "ca98fb4a06b3d92d4f1bcf83a3381682c8db5af91dbe388619d0c3625c28fd9b",
@@ -12493,6 +12493,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r25-ms-001-1.json",
         "sha256": "61b471d65023fbae3d979e2cb8be08e4a5f742bd1566dde1eadeea8dfb5b68d7",
         "bytes": 9622
+      },
+      "integratedAt": "2026-08-01T03:33:00.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "7faa7a410e2d54a8e4c12f994a971334c58175df",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Mississippi GBIF preserved-specimen tranche integrated with 2,050 complete outcomes, 1,973 assertions, 1,973 reviews, and 335 rejections.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated validated Mississippi GBIF run and manifest sequentially through MAIN.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r25-ms-001-1.json",
+        "sha256": "afc580abc91d39e46cfbc1cc8374bbb961792c824c3b9c08ceb807eac4dabf84",
+        "bytes": 9692
       }
     }
   ]
