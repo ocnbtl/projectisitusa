@@ -12670,7 +12670,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r26-va-001-1",
       "jobId": "gbif-bulk-20260731-r26-va-001",
       "leaseId": "lease-gbif-bulk-20260731-r26-va-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T03:42:00.000Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r26-va-001__lease-gbif-bulk-20260731-r26-va-001-1.json",
       "manifestHash": "f2cf1281c76d5f821cc04cfbc9368782840c2ef64fde9376e49ad5ed3332d0a7",
@@ -12765,6 +12765,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r26-va-001-1.json",
         "sha256": "274ad76ac5dfde12a5ce8a57759b00baca865b453fbf8fd21a0e34270f6f86f5",
         "bytes": 9436
+      },
+      "integratedAt": "2026-08-01T03:43:15.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "917fa61b716ed5ff31d737016cbbe2094f1dff69",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Virginia GBIF preserved-specimen tranche integrated with 3,325 complete outcomes, 47 assertions, 47 reviews, and 28 rejections.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated validated Virginia GBIF run and manifest sequentially through MAIN.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r26-va-001-1.json",
+        "sha256": "fa5c1bd82207d1cea51502a7d86c1256adb08e6ce72d698d120579f98de60aaa",
+        "bytes": 9512
       }
     }
   ]
