@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-ia-aquatic-20260801-r1",
+  "createdAt": "2026-08-01T06:58:00.000Z",
+  "asOf": "2026-08-01",
+  "baselineCommitSha": "3f50dff5f1077ab92bff0a81ae146d22016df8c9",
+  "stateCode": "IA",
+  "sourceId": "ia-571-iac-90-2",
+  "authority": "Iowa Natural Resource Commission and Iowa Legislature",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://www.legis.iowa.gov/docs/ACO/chapter/571.90.pdf",
+    "rulemakingUrl": "https://www.legis.iowa.gov/docs/aco/arc/0278D.pdf",
+    "providerRequests": 5,
+    "successfulRequests": 5,
+    "failedProviderRequests": 0,
+    "stabilityProbeRequests": 3,
+    "sourceDiscoveryRequests": 1,
+    "artifactCaptureRequests": 1,
+    "pdfPages": 2,
+    "sourceRows": 19,
+    "reviewedTaxa": 20,
+    "artifactCount": 1,
+    "artifactBytes": 120451,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__ia-571-iac-90-2__caff2c77f3e9/artifacts/iowa-571-iac-90-current.pdf",
+      "sha256": "caff2c77f3e9fd8ede3dc46a2b7cd33663dbf639b319342b85bde3faa51679d8",
+      "bytes": 120451,
+      "mediaType": "application/pdf",
+      "captureMethod": "exact-current-official-chapter-download",
+      "stableIndependentCaptures": 3,
+      "stableIndependentCapturesRequired": 3
+    },
+    "visualVerification": {
+      "pagesRendered": [1, 2],
+      "explicitRowsVisuallyAccounted": 19,
+      "reviewedTaxaVisuallyAccounted": 20,
+      "effectiveDateVisible": true,
+      "layoutDefectsAffectingReview": 0,
+      "temporaryRendersCommitted": false
+    }
+  },
+  "review": {
+    "reviewId": "ia-571-iac-90-2-20260801",
+    "reviewSha256": "04a7e964c030f321ad86891cb88b923375a63575838fe62265c1cd3d1409d274",
+    "reviewBytes": 13271,
+    "grossAcceptedEvents": 13,
+    "uniqueAcceptedSpecies": 13,
+    "blockedTaxonomyRows": 7,
+    "duplicateAcceptedEventIds": 0,
+    "duplicateSourceRecordIds": 0,
+    "deterministicReplay": true,
+    "reviewMethod": "Complete pdfplumber text extraction and visual review of both pages, with taxon-level identities for the two-species purple-loosestrife row."
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 62,
+    "netNewApplicableDecisions": 9,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 48,
+    "netNewRegulatedDecisions": 13,
+    "supportingBasisAdded": 13,
+    "alreadyApplicableDecisionsReceivingNewBasis": 4,
+    "priorityUpgrades": 4,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "incompleteDependencies": {
+    "incorporatedFederalNoxiousWeedListProcessed": false,
+    "incorporatedFederalInjuriousWildlifeListProcessed": false,
+    "requiredCutoffDate": "2026-06-17",
+    "reason": "The rule incorporates exact federal lists as amended to June 17, 2026. Existing federal artifacts cannot be assumed to represent that precise cutoff without separate version verification.",
+    "completionClaimed": false
+  },
+  "contradictions": [
+    {
+      "subject": "row-count-versus-taxon-count",
+      "priorState": "The explicit rule display contains nineteen common-name rows.",
+      "currentEvidence": "The purple-loosestrife row names two scientific taxa, so the nineteen rows contain twenty taxon strings.",
+      "resolution": "Both taxon strings are preserved under unique deterministic source-record identities linked to the same legal row. Thirteen exact catalog taxa are accepted and seven remain blocked."
+    },
+    {
+      "subject": "incorporated-federal-lists",
+      "priorState": "Chapter 571.90.2 incorporates federal aquatic noxious-weed and injurious-wildlife lists.",
+      "currentEvidence": "The rule fixes those dependencies as amended to June 17, 2026, while the repository's retained federal acquisitions do not yet prove exact parity to both cutoff lists.",
+      "resolution": "Only the nineteen explicit Iowa rows were processed. Both incorporated federal dependencies remain explicit certification gaps, and no broad reacquisition or unsupported completion claim was made."
+    },
+    {
+      "subject": "infested-waters-language",
+      "priorState": "The chapter authorizes Iowa DNR to designate infested waters and discusses species distribution.",
+      "currentEvidence": "The retained chapter does not itself enumerate current county-equivalent occurrences, a complete survey, or negative results.",
+      "resolution": "The review creates state regulatory applicability only. It creates no county occurrence, absence, not-detected, or not-applicable evidence."
+    },
+    {
+      "subject": "initial-source-record-collision",
+      "priorState": "The first generated review assigned one source-record ID to both scientific taxa on the purple-loosestrife row.",
+      "currentEvidence": "Central validation rejected the review before any shared applicability write because source-record IDs must be unique.",
+      "resolution": "The generator now includes a deterministic taxon suffix. The corrected replay has zero duplicate source-record IDs and the failed first merge changed no shared applicability output."
+    }
+  ]
+}
