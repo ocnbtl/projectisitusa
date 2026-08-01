@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-fl-20260801-r1",
+  "createdAt": "2026-08-01T06:10:23.690Z",
+  "asOf": "2026-08-01",
+  "baselineCommitSha": "c29f5eae3b45fddd63899949a0a1ea8fe6fb681c",
+  "stateCode": "FL",
+  "sourceId": "fl-5b-57-007",
+  "authority": "Florida Department of Agriculture and Consumer Services",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://flrules.org/gateway/ruleno.asp?id=5B-57.007",
+    "artifactUrl": "https://flrules.org/gateway/readFile.asp?sid=0&tid=23639596&type=1&file=5B-57.007.doc",
+    "providerRequests": 12,
+    "successfulRequests": 12,
+    "failedRequests": 0,
+    "stabilityProbeRequests": 3,
+    "sourceDiscoveryRequests": 1,
+    "pagesReviewed": 2,
+    "sourceRows": 105,
+    "noxiousRows": 102,
+    "prohibitedAquaticRows": 3,
+    "artifactCount": 1,
+    "artifactBytes": 32256,
+    "preventedDuplicateAcquisitions": 0,
+    "preventedProviderRequests": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__fl-5b-57-007__e4ed8ee8b326/artifacts/florida-5b-57.007-2020.doc",
+      "sha256": "e4ed8ee8b32687675e30dabe5d33c976c9964753c3d09f7626defa188c72c754",
+      "bytes": 32256,
+      "mediaType": "application/msword",
+      "captureMethod": "exact-official-final-rule-download",
+      "stableIndependentCaptures": 3,
+      "stableIndependentCapturesRequired": 3,
+      "effectiveDate": "2020-09-28"
+    }
+  },
+  "review": {
+    "reviewId": "fl-5b-57-007-20260801",
+    "reviewSha256": "b6d5ff90940f7ed5b9547f0cc55116474ce3aa8f11a2e328dee423f361ac4a24",
+    "reviewBytes": 60411,
+    "grossAcceptedEvents": 54,
+    "blockedTaxonomyRows": 51,
+    "blockedRegulatoryContextRows": 12,
+    "totalBlockedRows": 63,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 52,
+    "finalApplicableDecisions": 78,
+    "netNewApplicableDecisions": 26,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 61,
+    "netNewRegulatedDecisions": 26,
+    "supportingBasisAdded": 54,
+    "alreadyApplicableDecisionsReceivingNewBasis": 28,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "qualified-candidate-status",
+      "priorState": "The registry preserved Florida Rule 5B-57.007 as blocked pending exact retained bytes and row-level review.",
+      "currentEvidence": "The official rule page presents the September 28, 2020 document as the latest final adopted rule. The exact 32256-byte official document was stable across three independent probes, retained, hashed, and deterministically parsed into 105 list rows.",
+      "resolution": "The source is operational. Fifty-four exact catalog binomials establish Florida regulatory applicability; all other taxonomy and regulatory context remains blocked."
+    },
+    {
+      "subject": "pending-rulemaking",
+      "priorState": "The official history page includes later proposal and meeting records.",
+      "currentEvidence": "The same page separately identifies the September 28, 2020 text as the latest final adopted rule.",
+      "resolution": "Only the latest final adopted document is operative for this review. Later proposals are preserved as pending history and do not alter effective applicability."
+    },
+    {
+      "subject": "exceptions-and-conditions",
+      "priorState": "The rule contains genus rows, named native exceptions, a species exception, a Salvinia exception, and two Ligustrum cultivar conditions.",
+      "currentEvidence": "Fifty-one of 105 list rows do not pass the exact current catalog-binomial gate, and twelve additional named exception or cultivar conditions require explicit scope review.",
+      "resolution": "All sixty-three rows remain blocked. Exceptions create no species-level not-applicability, and no list row creates county occurrence or negative evidence."
+    }
+  ]
+}
