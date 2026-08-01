@@ -11849,7 +11849,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r22-va-002-1",
       "jobId": "gbif-archive-recovery-20260731-r22-va-002",
       "leaseId": "lease-gbif-archive-recovery-20260731-r22-va-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T03:00:04.944Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r22-va-002__lease-gbif-archive-recovery-20260731-r22-va-002-1.json",
       "manifestHash": "358b0037d2f9925039d9735a347f0ae869588144cee37ca0456b49ebb59f3ac7",
@@ -11945,6 +11945,42 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r22-va-002-1.json",
         "sha256": "199280d96855f913afa21115a5673e2aec5dd6b2caacb93f9b95f287c1d42632",
         "bytes": 9696
+      },
+      "integratedAt": "2026-08-01T03:01:07.169Z",
+      "integrator": "MAIN",
+      "integrationCommit": "d9b7e5955f86ab1b99b733ea56ca9367cb0d9cbb",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Integrated 24 complete state-species screens and 3192 Virginia county-species outcomes from 51 verified archived GBIF artifacts.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Accepted Virginia archive replay was cherry-picked sequentially after frozen validation and review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r22-va-002-1.json",
+        "sha256": "e9097c2c74769a13b3afc00908eeffa8e483c93cf03cc43c6ce8147cdc2111dd",
+        "bytes": 9776
       }
     }
   ]
