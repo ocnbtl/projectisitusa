@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-in-aquatic-20260801-r1",
+  "createdAt": "2026-08-01T09:16:00.000Z",
+  "asOf": "2026-08-01",
+  "roundBaselineCommitSha": "b79d8b18980200d6e94d5b36b5b61e0417b4e5af",
+  "applicabilityBaselineCommitSha": "bf628b48a53b24fe7d7cdd30f283a04ea54b1b43",
+  "stateCode": "IN",
+  "sourceId": "in-312-iac-18-3-23",
+  "authority": "Indiana Department of Natural Resources",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://www.in.gov/dnr/rules-and-regulations/invasive-species/aquatic-invasive-species-plants/",
+    "providerRequests": 3,
+    "successfulRequests": 3,
+    "failedProviderRequests": 0,
+    "sourceDiscoveryRequests": 1,
+    "artifactPreflightRequests": 1,
+    "artifactCaptureRequests": 1,
+    "sourceRows": 30,
+    "reviewedTaxa": 30,
+    "artifactCount": 1,
+    "artifactBytes": 88609,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__in-312-iac-18-3-23__1fb33cdcf581/artifacts/indiana-aquatic-invasive-species-plants.html",
+      "sha256": "1fb33cdcf581e4ee975ffa6c5fc92b68bdda76ce902eb197a7cebd6f0067880d",
+      "bytes": 88609,
+      "mediaType": "text/html",
+      "captureMethod": "exact-current-official-page-download",
+      "stableIndependentByteCaptures": 2
+    }
+  },
+  "review": {
+    "reviewId": "in-312-iac-18-3-23-20260801",
+    "reviewSha256": "0ee1c82c60681dca151f2c15c429945bbbe1bc348df24b001579d1825e162738",
+    "reviewBytes": 19183,
+    "grossAcceptedEvents": 20,
+    "uniqueAcceptedSpecies": 20,
+    "blockedTaxonomyRows": 10,
+    "duplicateAcceptedEventIds": 0,
+    "duplicateSourceRecordIds": 0,
+    "deterministicReplay": true,
+    "reviewMethod": "Complete review of all thirty scientific-name rows on the official Indiana DNR page with exact current-catalog binomial matching only."
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 92,
+    "finalApplicableDecisions": 103,
+    "netNewApplicableDecisions": 11,
+    "baselineRegulatedDecisions": 74,
+    "finalRegulatedDecisions": 86,
+    "netNewRegulatedDecisions": 12,
+    "supportingBasisAdded": 20,
+    "alreadyApplicableDecisionsReceivingNewBasis": 9,
+    "priorityUpgrades": 1,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "source-spelling-versus-catalog",
+      "priorState": "The official page prints Hygrophilia polysperma as one regulated row.",
+      "currentEvidence": "The current catalog does not contain that exact binomial; the related catalog spelling is not silently substituted.",
+      "resolution": "The source row remains blocked for explicit taxonomy review and creates no applicability decision."
+    },
+    {
+      "subject": "rule-membership-versus-occurrence",
+      "priorState": "The official page designates thirty aquatic plants as invasive and prohibits specified commerce and transport.",
+      "currentEvidence": "The page does not provide a complete county occurrence survey or explicit negative evidence.",
+      "resolution": "Only exact state regulatory applicability is recorded. No county presence, absence, not-detected, or not-applicable claim is created."
+    }
+  ]
+}
