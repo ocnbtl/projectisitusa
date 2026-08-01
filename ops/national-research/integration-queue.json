@@ -13081,7 +13081,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r28-il-001-1",
       "jobId": "gbif-bulk-20260731-r28-il-001",
       "leaseId": "lease-gbif-bulk-20260731-r28-il-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T04:22:01.371Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r28-il-001__lease-gbif-bulk-20260731-r28-il-001-1.json",
       "manifestHash": "aedcd9d34f251ec9c274fe221957c384ede9044678bf0b5aa495b0d3d39a2a2d",
@@ -13176,6 +13176,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r28-il-001-1.json",
         "sha256": "60466c1b279f8f2d859e5ebe3cadd0f78b58f56badaf1cd2daf3b8e88ae93823",
         "bytes": 9346
+      },
+      "integratedAt": "2026-08-01T04:22:43.745Z",
+      "integrator": "MAIN",
+      "integrationCommit": "b0664b81113c420ec7b83e72e672b0ee477d3c99",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Illinois GBIF r28 statewide species screens",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated exact validated immutable-run bytes without conflicts; dependency restoration was pre-provider only.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r28-il-001-1.json",
+        "sha256": "a39509046e30c777db24ec6739bcf6739dbaa0afd4432fd1e477d0b3e2171f35",
+        "bytes": 9509
       }
     }
   ]
