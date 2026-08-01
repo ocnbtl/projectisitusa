@@ -11712,7 +11712,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r20-nc-003-1",
       "jobId": "gbif-archive-recovery-20260731-r20-nc-003",
       "leaseId": "lease-gbif-archive-recovery-20260731-r20-nc-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T02:52:08.201Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r20-nc-003__lease-gbif-archive-recovery-20260731-r20-nc-003-1.json",
       "manifestHash": "5376d24d1e2c1ff7a785427d86a7f706d507094caf660898a5d9d8cf98463337",
@@ -11807,6 +11807,42 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r20-nc-003-1.json",
         "sha256": "2b939b0159b5e3876a4095be9bad86d7244731dc1e8ebaa0049e345c3688dc11",
         "bytes": 9576
+      },
+      "integratedAt": "2026-08-01T02:53:08.245Z",
+      "integrator": "MAIN",
+      "integrationCommit": "014c590976374fb3a955ab247ea4b7695fd95044",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Integrated 24 complete state-species screens and 2400 North Carolina county-species outcomes from 50 verified archived GBIF artifacts.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Accepted North Carolina archive replay was cherry-picked sequentially after frozen validation and review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r20-nc-003-1.json",
+        "sha256": "71470420a750ad1e989a0b92af9ce6ec869d6eeb0ee2885492b4d23fbdcbc902",
+        "bytes": 9659
       }
     }
   ]
