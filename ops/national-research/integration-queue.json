@@ -12944,7 +12944,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r27-ne-001-1",
       "jobId": "gbif-bulk-20260731-r27-ne-001",
       "leaseId": "lease-gbif-bulk-20260731-r27-ne-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T04:10:47.602Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r27-ne-001__lease-gbif-bulk-20260731-r27-ne-001-1.json",
       "manifestHash": "71c0b93655f19990837a9e0554679a057212a9859863a0e844507fd942527ee5",
@@ -13039,6 +13039,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r27-ne-001-1.json",
         "sha256": "70e2f36438839592d8eccbe2a1d52aa8c8e52136771bdc969fbb4b27be551c59",
         "bytes": 9257
+      },
+      "integratedAt": "2026-08-01T04:12:28.229Z",
+      "integrator": "MAIN",
+      "integrationCommit": "23808623f42dbc1b00d4535206a1f9428242dcfd",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Nebraska GBIF r27 statewide species screens",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated exact validated immutable-run bytes without conflicts.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r27-ne-001-1.json",
+        "sha256": "d97f6e9b132c7e705e269a9073791be6002823b8e0c8087f7f0d583246a01311",
+        "bytes": 9407
       }
     }
   ]
