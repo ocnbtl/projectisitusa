@@ -643,6 +643,119 @@
         }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub, GitHub deployment success, Vercel production metadata, live routes, selected live bytes, source operations, research queue, evidence expansion, ZIP lookup, cache refresh, and desktop and mobile browser behavior were verified. It does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-5676c2de-2026-07-31",
+      "verifiedAt": "2026-08-01T00:29:57Z",
+      "commitSha": "5676c2de5a040f5974c71922955d20ae7b5a3515",
+      "githubMainSha": "5676c2de5a040f5974c71922955d20ae7b5a3515",
+      "githubDeploymentId": 5699318961,
+      "vercelDeploymentId": "dpl_4pS1fpzbWpg9KQYog7Db3Ebr6WMA",
+      "vercelDeploymentUrl": "projectisitusa-j4cbxmt70-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=OH",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AL/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/OH/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "7e49347428bab40ff2ed2615e5dff7f13478aad34e63f1276c9d43ef90efc725"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "ccffa2ea509f741f6775d03f1692f5104db039fdbed1feff112a50a18953b5a5"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "4608ad17e0c40e64a4c5ffc5bd745c1b039e9200dae1d2d868a5f151cb084879"
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "2c046bdb1171ceedcf691fb788395048483053c8db181f33525cfca968c1d6f2"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "b353062e82985cf3714d92604111cd3e20599020a9ca06c941faad9437b215d9"
+        },
+        {
+          "path": "/generated/research/OH/summary.json",
+          "sha256": "3de5f652a88cd43d186f07ac38aabdfd4f6a9d470eba936c23259a617dee4a14"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "sha256": "d6d100adfaf800166f2542fdb0b14e9bf8e4d8e3e429151fa7b07417f3f22db3"
+        }
+      ],
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source metadata, live routes, selected live bytes, ZIP lookup, sparse default resolution, returning-browser cache refresh, source operations, evidence expansion, and desktop plus mobile browser behavior were verified without console errors. It does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
