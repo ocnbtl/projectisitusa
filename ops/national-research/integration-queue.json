@@ -11987,7 +11987,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r22-ky-001-1",
       "jobId": "gbif-archive-recovery-20260731-r22-ky-001",
       "leaseId": "lease-gbif-archive-recovery-20260731-r22-ky-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T03:01:25.772Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r22-ky-001__lease-gbif-archive-recovery-20260731-r22-ky-001-1.json",
       "manifestHash": "c25e54626a60f11a4276275a1fd40cd3f53d8947d1f96b24b8bc5279341831bf",
@@ -12080,6 +12080,42 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r22-ky-001-1.json",
         "sha256": "0d378422442d1bff69b0edaf36012724beedfe8055908bc96ec8342fe3b8d6f1",
         "bytes": 9340
+      },
+      "integratedAt": "2026-08-01T03:01:52.971Z",
+      "integrator": "MAIN",
+      "integrationCommit": "22675c5ed0766a2ef60d8b135ab2034ee8cb4b97",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Integrated 24 complete state-species screens and 2880 Kentucky county-species outcomes from 48 verified archived GBIF artifacts.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Accepted Kentucky archive replay was cherry-picked sequentially after frozen validation and review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r22-ky-001-1.json",
+        "sha256": "9ed4601eada12d35a1616266f3a89da6cfa8219003a35279cb9a37d2f4959548",
+        "bytes": 9379
       }
     }
   ]
