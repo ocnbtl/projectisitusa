@@ -7,21 +7,21 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `1398`
+- Verified present: `1401`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5232`
-- Not researched: `248778`
+- Researched unresolved: `7065`
+- Not researched: `246942`
 - Determination coverage: `0.55%`
-- Research coverage: `2.60%`
-- Explicit outcome coverage: `2.5958%`
+- Research coverage: `3.31%`
+- Explicit outcome coverage: `3.3147%`
 - Applicable protocol cells: `94`
-- Current complete protocol cells: `55`
-- Protocol completion: `72.34%`
-- Current protocol completion: `58.51%`
-- Evidence records: `3282`
-- Research runs: `9`
-- Rejection records: `1298`
+- Current complete protocol cells: `80`
+- Protocol completion: `98.94%`
+- Current protocol completion: `85.11%`
+- Evidence records: `3323`
+- Research runs: `10`
+- Rejection records: `1306`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Cogongrass (`imperata-cylindrica`) | plants | 102 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 102 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 102 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 102 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 102 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 102 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 102 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 102 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 102 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 102 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 102 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 102 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 102 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 102 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 102 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 102 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 102 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 102 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 102 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 102 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 102 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 102 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 102 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 102 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 102 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 102 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 102 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 102 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 102 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 102 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 102 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 102 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 102 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 102 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 102 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 102 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 102 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 102 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 102 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 102 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 102 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 102 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 102 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 102 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 0 | 102 | 0 |
+| English Ivy (`hedera-helix`) | plants | 0 | 102 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 102 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 102 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 102 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 102 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T22:50:18.356Z | 742 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-01T04:18:45.409Z | 745 | 75 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
