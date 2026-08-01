@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-pa-noxious-weeds-20260801-r1",
+  "createdAt": "2026-08-01T08:45:00.000Z",
+  "asOf": "2026-08-01",
+  "roundBaselineCommitSha": "b79d8b18980200d6e94d5b36b5b61e0417b4e5af",
+  "applicabilityBaselineCommitSha": "9f2ec550ebe7769192896961d72b41da4eb479ce",
+  "stateCode": "PA",
+  "sourceId": "pa-pda-controlled-plant-noxious-weeds",
+  "authority": "Pennsylvania Department of Agriculture",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://www.pa.gov/agencies/pda/plants-land-water/plant-industry/noxious-weeds-and-controlled-plants/controlled-plant-noxious-weed-lists",
+    "providerRequests": 3,
+    "successfulRequests": 3,
+    "failedProviderRequests": 0,
+    "sourceDiscoveryRequests": 1,
+    "artifactPreflightRequests": 1,
+    "artifactCaptureRequests": 1,
+    "sourceRows": 62,
+    "reviewedTaxa": 63,
+    "artifactCount": 1,
+    "artifactBytes": 291810,
+    "preventedDuplicateAcquisitions": 1,
+    "preventedProviderRequests": 1,
+    "reusedNationalArtifacts": 1,
+    "reusedNationalArtifactBytes": 34012,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__pa-pda-controlled-plant-noxious-weeds__acf00a8c218e/artifacts/pennsylvania-controlled-plant-noxious-weed-lists.html",
+      "sha256": "acf00a8c218ea5a913c92aa2118c1de67b65776684ad4781adde3341c541ed2f",
+      "bytes": 291810,
+      "mediaType": "text/html",
+      "captureMethod": "exact-current-official-page-download",
+      "stableIndependentByteCaptures": 2
+    },
+    "reusedNationalArtifact": {
+      "sourceId": "usda-aphis-federal-noxious-weeds",
+      "path": "src/data/research/state-list-sources/20260728__usda-aphis-federal-noxious-weeds__4ab0c640fcf5/artifacts/title-7-part-360-20260724.xml",
+      "sha256": "4ab0c640fcf597db17442427a2b6ca1f95494033ef4298080ce81b9295cb023c",
+      "bytes": 34012,
+      "reuseReason": "Pennsylvania incorporates the federal noxious-weed list as Class C. The complete verified national artifact already projects federal regulatory applicability to Pennsylvania, so it was not downloaded or duplicated for this state review."
+    }
+  },
+  "review": {
+    "reviewId": "pa-pda-controlled-plant-noxious-weeds-20260801",
+    "reviewSha256": "4e5240244ed9dbe2406d6f7eca58574b12fcef7eb1e1ec00fd210aa2de472ed1",
+    "reviewBytes": 42081,
+    "grossAcceptedEvents": 42,
+    "uniqueAcceptedSpecies": 42,
+    "blockedTaxonomyRows": 21,
+    "duplicateAcceptedEventIds": 0,
+    "duplicateSourceRecordIds": 0,
+    "deterministicReplay": true,
+    "reviewMethod": "Deterministic review of the controlled-hemp row and all sixty-one explicit Class A, B, and C source rows followed by exact current-catalog binomial matching only."
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 91,
+    "netNewApplicableDecisions": 38,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 73,
+    "netNewRegulatedDecisions": 38,
+    "supportingBasisAdded": 42,
+    "alreadyApplicableDecisionsReceivingNewBasis": 4,
+    "priorityUpgrades": 0,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "statewide-class-description-versus-county-occurrence",
+      "priorState": "The official page describes Class A weeds as established but geographically limited and Class B weeds as widely established in Pennsylvania.",
+      "currentEvidence": "The page does not provide a complete reviewed county mapping for every listed taxon.",
+      "resolution": "Only state regulatory applicability is recorded. The class descriptions create no county presence claim."
+    },
+    {
+      "subject": "class-c-description-versus-negative-evidence",
+      "priorState": "The official page describes Class C weeds as not known to exist in Pennsylvania.",
+      "currentEvidence": "That regulatory class definition does not document an exact-scope survey method, effort, time, or negative result for each catalog species and county.",
+      "resolution": "Class C exact list membership may establish state regulatory applicability only. It creates no verified absence, not-detected, county, or not-applicable claim."
+    },
+    {
+      "subject": "incorporated-federal-list-versus-duplicate-acquisition",
+      "priorState": "The Pennsylvania page incorporates the federal noxious-weed list by default as Class C.",
+      "currentEvidence": "A complete verified APHIS national artifact already exists and already projects its accepted federal applicability events to Pennsylvania.",
+      "resolution": "The national artifact was reused. One duplicate state acquisition and one provider request were prevented."
+    },
+    {
+      "subject": "controlled-hemp-row-versus-invasive-species-scope",
+      "priorState": "The page separately identifies Cannabis sativa under the controlled-hemp program.",
+      "currentEvidence": "That row is outside the page's Class A, B, and C noxious-weed lists and does not by itself establish current invasive-species applicability under the reviewed policy.",
+      "resolution": "The row is preserved and blocked for separate category review. It creates no applicability or county event."
+    }
+  ]
+}
