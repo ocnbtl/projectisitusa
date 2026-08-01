@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-ga-20260801-r1",
+  "createdAt": "2026-08-01T06:16:22.155Z",
+  "asOf": "2026-08-01",
+  "baselineCommitSha": "a0ad6082c50af30048c0f31935318c6558933d2e",
+  "stateCode": "GA",
+  "sourceId": "ga-40-12-4-01",
+  "authority": "Georgia Department of Agriculture and Georgia Secretary of State",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://rules.sos.ga.gov/gac/40-12-4",
+    "providerRequests": 8,
+    "successfulRequests": 8,
+    "failedRequests": 0,
+    "stabilityProbeRequests": 3,
+    "sourceDiscoveryRequests": 1,
+    "pagesReviewed": 1,
+    "sourceRows": 40,
+    "prohibitedRows": 11,
+    "restrictedRows": 29,
+    "artifactCount": 1,
+    "artifactBytes": 16541,
+    "preventedDuplicateAcquisitions": 1,
+    "preventedProviderRequests": 1,
+    "preventedBytes": 34012,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__ga-40-12-4-01__540ff38116a4/artifacts/georgia-40-12-4-2026.html",
+      "sha256": "540ff38116a41dd03faa9613a750a26a14b83f2ca0241214afd39e992ac24828",
+      "bytes": 16541,
+      "mediaType": "text/html",
+      "captureMethod": "exact-official-rule-page-download",
+      "stableIndependentCaptures": 3,
+      "stableIndependentCapturesRequired": 3
+    },
+    "reusedNationalArtifact": {
+      "sourceId": "usda-aphis-federal-noxious-weeds",
+      "path": "src/data/research/state-list-sources/20260728__usda-aphis-federal-noxious-weeds__4ab0c640fcf5/artifacts/title-7-part-360-20260724.xml",
+      "sha256": "4ab0c640fcf597db17442427a2b6ca1f95494033ef4298080ce81b9295cb023c",
+      "bytes": 34012,
+      "reason": "Georgia incorporates 7 C.F.R. 360 by reference. The complete verified national APHIS acquisition already projects to Georgia, so it was reused rather than reacquired."
+    }
+  },
+  "review": {
+    "reviewId": "ga-40-12-4-01-20260801",
+    "reviewSha256": "19735ee1342cb001d75d953714fb6cca98ec575738183d45173db1eee4a9dbd7",
+    "reviewBytes": 21869,
+    "grossAcceptedEvents": 18,
+    "uniqueAcceptedSpecies": 16,
+    "blockedTaxonomyRows": 22,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 66,
+    "netNewApplicableDecisions": 13,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 48,
+    "netNewRegulatedDecisions": 13,
+    "supportingBasisAdded": 18,
+    "alreadyApplicableDecisionsReceivingNewBasis": 3,
+    "duplicateListRowsSupportingExistingDecisions": 2,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "qualified-candidate-status",
+      "priorState": "The registry preserved Georgia Rule 40-12-4-.01 as blocked pending exact retained bytes, state-row review, and federal deduplication.",
+      "currentEvidence": "The current official Secretary of State page was stable across three independent probes, retained, hashed, and deterministically parsed into 40 state table rows.",
+      "resolution": "The Georgia source is operational. Eighteen qualifying rows across sixteen exact catalog species establish seed-commerce regulatory applicability; twenty-two rows remain blocked."
+    },
+    {
+      "subject": "federal-incorporation-deduplication",
+      "priorState": "The Georgia rule incorporates 7 C.F.R. 360 including subsequent amendments and editions.",
+      "currentEvidence": "The verified APHIS national artifact with hash 4ab0c640fcf597db17442427a2b6ca1f95494033ef4298080ce81b9295cb023c already projects federal applicability to Georgia.",
+      "resolution": "The national artifact was reused. No second federal acquisition or state-specific duplicate review was created."
+    },
+    {
+      "subject": "source-taxonomy",
+      "priorState": "The state tables contain genus, composite, variety, exception, source-spelling, and unmatched taxon text.",
+      "currentEvidence": "Twenty-two of forty rows do not pass the exact current catalog-binomial gate.",
+      "resolution": "All twenty-two remain blocked for explicit review. Neither source silence nor unusable taxonomy creates not-applicability, occurrence, absence, or not-detected evidence."
+    }
+  ]
+}
