@@ -12807,7 +12807,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r27-ga-001-1",
       "jobId": "gbif-bulk-20260731-r27-ga-001",
       "leaseId": "lease-gbif-bulk-20260731-r27-ga-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T04:10:47.602Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r27-ga-001__lease-gbif-bulk-20260731-r27-ga-001-1.json",
       "manifestHash": "b1126600c05b3a72494fa827653238b76c00899cfdffc62e6eb2d82242d10de1",
@@ -12902,6 +12902,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r27-ga-001-1.json",
         "sha256": "e5571673fa217bdf2e4352ce44bcbf048c7b59bea35afaa89038355c29a8e819",
         "bytes": 9266
+      },
+      "integratedAt": "2026-08-01T04:12:11.744Z",
+      "integrator": "MAIN",
+      "integrationCommit": "ddde5c840803ccb217702ece70a712afccc7fbbd",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Georgia GBIF r27 statewide species screens",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated exact validated immutable-run bytes without conflicts.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r27-ga-001-1.json",
+        "sha256": "a0a4203bfb8a2e0b94b43c625216dfa645b7c4da7193c9df66258e71304fc126",
+        "bytes": 9416
       }
     },
     {
