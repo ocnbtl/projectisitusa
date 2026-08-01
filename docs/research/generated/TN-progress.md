@@ -1,27 +1,27 @@
 # Tennessee Research Progress
 
-Generated: `2026-07-31T00:00:00.000Z`
+Generated: `2026-08-01T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `1426`
+- Verified present: `1559`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3609`
+- Researched unresolved: `3476`
 - Not researched: `232845`
-- Determination coverage: `0.60%`
+- Determination coverage: `0.66%`
 - Research coverage: `2.12%`
 - Explicit outcome coverage: `2.1166%`
 - Applicable protocol cells: `94`
-- Current complete protocol cells: `5`
-- Protocol completion: `19.15%`
-- Current protocol completion: `5.32%`
-- Evidence records: `1426`
-- Research runs: `7`
-- Rejection records: `10`
+- Current complete protocol cells: `30`
+- Protocol completion: `45.74%`
+- Current protocol completion: `31.91%`
+- Evidence records: `3190`
+- Research runs: `8`
+- Rejection records: `379`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-08-01T03:06:33.613Z | 533 | 25 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,27 +1,27 @@
 # Oklahoma Research Progress
 
-Generated: `2026-07-31T00:00:00.000Z`
+Generated: `2026-08-01T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `77`
 - County-species pairs: `192808`
-- Verified present: `338`
+- Verified present: `363`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5437`
+- Researched unresolved: `5412`
 - Not researched: `187033`
-- Determination coverage: `0.18%`
+- Determination coverage: `0.19%`
 - Research coverage: `3.00%`
 - Explicit outcome coverage: `2.9952%`
 - Applicable protocol cells: `89`
-- Current complete protocol cells: `30`
-- Protocol completion: `48.31%`
-- Current protocol completion: `33.71%`
-- Evidence records: `342`
-- Research runs: `8`
-- Rejection records: `3`
+- Current complete protocol cells: `54`
+- Protocol completion: `75.28%`
+- Current protocol completion: `60.67%`
+- Evidence records: `514`
+- Research runs: `9`
+- Rejection records: `56`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T22:10:10.760Z | 3 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-01T02:32:58.412Z | 78 | 49 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
