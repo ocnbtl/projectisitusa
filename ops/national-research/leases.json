@@ -355970,7 +355970,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r27_ga_001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-08-01T04:04:27.396Z",
       "expiresAt": "2026-08-01T09:59:45.000Z",
       "recoveryAt": null,
@@ -360093,7 +360093,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check f70ac809874cd4bcf67f80098ad95fa73b5442dc...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-01T04:10:47.602Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r27-ga-001__lease-gbif-bulk-20260731-r27-ga-001-1.json",
+        "sha256": "b1126600c05b3a72494fa827653238b76c00899cfdffc62e6eb2d82242d10de1",
+        "bytes": 157132,
+        "status": "complete",
+        "workerCommit": "d6acf6b2cabbecf88fb902be762bcf166fd9b548",
+        "workerBranchHead": "e22354b39cb79bc4a08d16358eb1073b8c6724b9"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260731-r27-ne-001-1",
@@ -360101,7 +360110,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r27_ne_001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-08-01T04:04:27.396Z",
       "expiresAt": "2026-08-01T09:59:45.000Z",
       "recoveryAt": null,
@@ -362574,7 +362583,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check f70ac809874cd4bcf67f80098ad95fa73b5442dc...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-01T04:10:47.602Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260731-r27-ne-001__lease-gbif-bulk-20260731-r27-ne-001-1.json",
+        "sha256": "71c0b93655f19990837a9e0554679a057212a9859863a0e844507fd942527ee5",
+        "bytes": 100579,
+        "status": "complete",
+        "workerCommit": "59f421cc71b9d68b038029d7417021ed9a4f7e03",
+        "workerBranchHead": "fb34f9fa332a6dab155fcc460bfd718f0a54e143"
+      }
     }
   ]
 }
