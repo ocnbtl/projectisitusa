@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-source-cohorts-2-3-audit-20260731-r1",
+  "evaluatedAt": "2026-08-01T03:35:00.000Z",
+  "executionOwner": "MAIN",
+  "baselineCommit": "cef88dc4176db2368cb0ea7e27ac69a72bdb3ac2",
+  "scope": {
+    "certificationCohorts": [2, 3],
+    "states": ["CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI"],
+    "mode": "read-only-deduplicated-source-audit"
+  },
+  "deduplication": {
+    "freshAcceptedSourcesNotToReacquire": [
+      {"stateCode": "CA", "sourceId": "ca-3-ccr-4500", "asOf": "2026-07-31", "explicitApplicableSpecies": 129},
+      {"stateCode": "CO", "sourceId": "co-8-ccr-1206-2", "asOf": "2026-07-31", "explicitApplicableSpecies": 124},
+      {"stateCode": "CT", "sourceId": "ct-cgs-22a-381d", "asOf": "2026-07-31", "explicitApplicableSpecies": 109},
+      {"stateCode": "DE", "sourceId": "de-3-admin-code-806", "asOf": "2026-07-31", "explicitApplicableSpecies": 82}
+    ],
+    "preventedEquivalentAcquisitions": 4,
+    "preventedEquivalentProviderRequests": 4,
+    "preventedBytes": null,
+    "reason": "Each source has a retained official artifact, completed review, and current state evaluation dated 2026-07-30. Equivalent acquisition is prohibited."
+  },
+  "rankedNextAcquisitions": [
+    {
+      "rank": 1,
+      "stateCode": "FL",
+      "sourceId": "fl-5b-57-007",
+      "authority": "Florida Department of Agriculture and Consumer Services",
+      "url": "https://flrules.org/gateway/RuleNo.asp?id=5B-57.007",
+      "versionBoundary": "latest final adopted rule effective 2020-09-28",
+      "selectionReason": "Largest unresolved Cohort 3 regulatory source with a clear current-final boundary.",
+      "reviewCaveat": "Later meeting proposals are not adopted rules and must remain separate."
+    },
+    {
+      "rank": 2,
+      "stateCode": "GA",
+      "sourceId": "ga-40-12-4-01",
+      "authority": "Georgia Department of Agriculture",
+      "url": "https://rules.sos.ga.gov/gac/40-12-4",
+      "versionBoundary": "official compilation current through rules filed 2026-06-30",
+      "selectionReason": "Structured live content can close a registered Cohort 3 source gap at moderate review cost.",
+      "reviewCaveat": "Rows incorporated from 7 CFR 360 must be deduplicated against the retained APHIS source."
+    },
+    {
+      "rank": 3,
+      "stateCode": "HI",
+      "sourceId": "hi-har-4-68",
+      "authority": "Hawaii Department of Agriculture",
+      "url": "https://dab.hawaii.gov/wp-content/uploads/2012/12/AR-68.pdf",
+      "versionBoundary": "agency-hosted Chapter 68 list adopted 1992-06-18",
+      "selectionReason": "Broad registered state list with likely applicability yield.",
+      "reviewCaveat": "Agency hosting does not prove identity with the copy filed with the Lieutenant Governor; legacy taxonomy and island language require explicit review."
+    },
+    {
+      "rank": 4,
+      "stateCode": "DC",
+      "sourceId": "dc-doee-invasive-pollinator-plants",
+      "authority": "District of Columbia Department of Energy and Environment",
+      "url": "https://doee.dc.gov/service/native-and-invasive-pollinator-plants",
+      "versionBoundary": "undated live page; retrieval timestamp and raw hash must define the snapshot",
+      "selectionReason": "Fills the only Cohort 3 jurisdiction without a local state-list registry entry using a direct 22-row official list.",
+      "reviewCaveat": "Genus-level rows, source spelling, and nomenclatural drift require explicit taxonomy review."
+    }
+  ],
+  "lowerPriorityComplements": [
+    {"stateCode": "CA", "sourceId": "ca-14-ccr-671", "scope": "restricted live animals", "reviewCost": "high"},
+    {"stateCode": "CO", "sourceId": "co-2-ccr-405-8", "scope": "aquatic nuisance species", "reviewCost": "low-moderate"},
+    {"stateCode": "CT", "sourceId": "ct-caes-slf-quarantine-2026", "scope": "spotted lanternfly quarantine", "reviewCost": "low with document-state review"},
+    {"stateCode": "DE", "sourceId": "de-dnrec-non-native-plants-2024", "scope": "official non-regulatory invasive and watch list", "reviewCost": "high"}
+  ],
+  "currentState": {
+    "registeredButBlocked": ["FL", "GA", "HI"],
+    "missingLocalRegistryEntry": ["DC"],
+    "nationalOnlyExplicitApplicability": [
+      {"stateCode": "DC", "species": 53},
+      {"stateCode": "FL", "species": 52},
+      {"stateCode": "GA", "species": 53},
+      {"stateCode": "HI", "species": 53}
+    ]
+  },
+  "contradictionsPreserved": [
+    "The Connecticut evaluation contains a dated statement that Colorado remained blocked; the later Colorado evaluation and current registry supersede it.",
+    "Florida has later rulemaking discussions, but the official history still identifies the 2020 rule as the latest adopted final.",
+    "Connecticut 2026 spotted lanternfly renewal surfaces disagree on displayed dates and the prior expiration.",
+    "Hawaii agency references support continued Chapter 68 use but do not establish filed-copy identity.",
+    "Blocked local sources do not mean zero state applicability because retained national APHIS, NAS, and AFPE sources already support 52 or 53 decisions in DC, FL, GA, and HI."
+  ],
+  "semanticAttestation": {
+    "stateApplicabilityOnly": true,
+    "countyPresenceCreated": false,
+    "absenceCreated": false,
+    "notDetectedCreated": false,
+    "sourceSilenceCreatedNotApplicable": false,
+    "acquisitionPerformed": false
+  }
+}
