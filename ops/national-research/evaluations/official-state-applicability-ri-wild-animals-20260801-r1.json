@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-ri-wild-animals-20260801-r1",
+  "createdAt": "2026-08-01T11:37:00.000Z",
+  "asOf": "2026-08-01",
+  "roundBaselineCommitSha": "4a74dd6e67c0b86aa2741e9b5573d7ab97e5a42b",
+  "applicabilityBaselineCommitSha": "cf32b9b40a18173efa965bb22fab15ca3f7f571f",
+  "stateCode": "RI",
+  "sourceId": "ri-250-ricr-40-05-3",
+  "authority": "Rhode Island Department of Environmental Management and Rhode Island Department of State",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://rules.sos.ri.gov/regulations/part/250-40-05-3",
+    "artifactUrl": "https://risos-apa-production-public.s3.amazonaws.com/DEM/REG_13475_20260708093853560.pdf",
+    "providerRequests": 6,
+    "successfulRequests": 6,
+    "failedProviderRequests": 0,
+    "sourceDiscoveryRequests": 4,
+    "artifactPreflightRequests": 1,
+    "artifactCaptureRequests": 1,
+    "sourceRows": 19,
+    "reviewedTaxa": 19,
+    "artifactCount": 1,
+    "artifactBytes": 482778,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__ri-250-ricr-40-05-3__45ff33f76347/artifacts/rhode-island-250-ricr-40-05-3-current.pdf",
+      "sha256": "45ff33f76347aa8de54690a490c31b09682f378e01d3142b655f2c3aba318303",
+      "bytes": 482778,
+      "mediaType": "application/pdf",
+      "captureMethod": "exact-current-official-pdf-download",
+      "stableIndependentByteCaptures": 2,
+      "etag": "6718c35c03ae08f9f00e9ed0d5539cca",
+      "lastModified": "2026-07-08T13:38:55.000Z"
+    }
+  },
+  "review": {
+    "reviewId": "ri-250-ricr-40-05-3-20260801",
+    "reviewSha256": "1373a73fc7af14478872f189cb1f73125ba61c6f8ef200805d3ba46a6def2f7b",
+    "reviewBytes": 9796,
+    "grossAcceptedEvents": 3,
+    "uniqueAcceptedSpecies": 3,
+    "blockedTaxonomyRows": 16,
+    "duplicateAcceptedEventIds": 0,
+    "duplicateSourceRecordIds": 0,
+    "deterministicReplay": true,
+    "reviewMethod": "Exact catalog-binomial review of the narrow direct-restriction boundary in sections 3.7(D) through 3.7(G), 3.17(A)(1)(c), and 3.17(A)(2)(b)."
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 56,
+    "netNewApplicableDecisions": 3,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 38,
+    "netNewRegulatedDecisions": 3,
+    "supportingBasisAdded": 3,
+    "alreadyApplicableDecisionsReceivingNewBasis": 0,
+    "priorityUpgrades": 0,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "waveDeduplication": {
+    "equivalentCompleteAcquisitionsFound": 2,
+    "preventedDuplicateAcquisitions": 2,
+    "preventedProviderRequests": 2,
+    "preventedArtifactBytes": 138505,
+    "reusedArtifactCount": 2,
+    "reusedArtifactBytes": 138505,
+    "reusedSources": [
+      {
+        "sourceId": "ia-571-iac-90-2",
+        "artifactSha256": "caff2c77f3e9fd8ede3dc46a2b7cd33663dbf639b319342b85bde3faa51679d8",
+        "artifactBytes": 120451
+      },
+      {
+        "sourceId": "il-17-iac-1100",
+        "artifactSha256": "231ac5b37c4dd4143b69c40ce85acb7a5f522e125cf3ae556e68c5252e56ccfd",
+        "artifactBytes": 18054
+      }
+    ]
+  },
+  "contradictions": [
+    {
+      "subject": "canonical-status-versus-version-detail",
+      "priorState": "The version-detail crawl labels the July 28 amendment inactive and the prior technical revision active.",
+      "currentEvidence": "The canonical current rule page labels the amendment active and effective July 28, 2026.",
+      "resolution": "The canonical current page controls current status for this review; the version-detail discrepancy remains recorded."
+    },
+    {
+      "subject": "rule-scope-versus-invasive-applicability",
+      "priorState": "The rule contains broad native-animal and exotic-animal possession provisions beyond invasive and nuisance restrictions.",
+      "currentEvidence": "Only the direct restrictions in the declared nineteen-row boundary have sufficiently narrow invasive or nuisance semantics for this acquisition.",
+      "resolution": "Native-animal lists and broader permit-only exceptions are excluded. Three exact restricted taxa are accepted and sixteen rows remain blocked."
+    },
+    {
+      "subject": "source-taxonomy-versus-catalog-taxonomy",
+      "priorState": "Several rows use abbreviations, spellings, genus, family, or category scope that resemble catalog taxa.",
+      "currentEvidence": "Only three rows match current catalog binomials exactly.",
+      "resolution": "No abbreviation, spelling correction, synonym, genus, family, category, or common-name expansion is inferred."
+    },
+    {
+      "subject": "rule-membership-versus-occurrence",
+      "priorState": "Rhode Island restricts possession or importation for the reviewed rows.",
+      "currentEvidence": "The rule contains no complete county occurrence survey or explicit negative evidence.",
+      "resolution": "Only state regulatory applicability is recorded. No county presence, absence, not-detected, or not-applicable claim is created."
+    }
+  ]
+}
