@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-il-20260801-r1",
+  "createdAt": "2026-08-01T06:50:00.000Z",
+  "asOf": "2026-08-01",
+  "baselineCommitSha": "308e0d8ba8ff47bdb935f54e48e42d7468358ec7",
+  "stateCode": "IL",
+  "sourceId": "il-17-iac-1100",
+  "authority": "Illinois Department of Natural Resources and Illinois General Assembly",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "authorityUrl": "https://www.ilga.gov/agencies/JCAR/EntirePart?titlepart=01701100",
+    "sourceUrl": "https://www.ilga.gov/ftp/JCAR/AdminCode/017/017011000000300R.html",
+    "providerRequests": 7,
+    "successfulRequests": 7,
+    "failedProviderRequests": 0,
+    "stabilityProbeRequests": 3,
+    "sourceDiscoveryRequests": 1,
+    "markupInspectionRequests": 2,
+    "artifactCaptureRequests": 1,
+    "pagesReviewed": 1,
+    "sourceRows": 35,
+    "currentlyEffectiveRows": 34,
+    "futureEffectiveRows": 1,
+    "artifactCount": 1,
+    "artifactBytes": 18054,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__il-17-iac-1100__231ac5b37c4d/artifacts/illinois-17-iac-1100-30.html",
+      "sha256": "231ac5b37c4dd4143b69c40ce85acb7a5f522e125cf3ae556e68c5252e56ccfd",
+      "bytes": 18054,
+      "mediaType": "text/html",
+      "captureMethod": "exact-official-section-html-download",
+      "stableIndependentCaptures": 3,
+      "stableIndependentCapturesRequired": 3
+    }
+  },
+  "review": {
+    "reviewId": "il-17-iac-1100-20260801",
+    "reviewSha256": "d3f443abfdcd9769b77c0227c7364cb30456dff96792568afe1993c3e4c08713",
+    "reviewBytes": 20741,
+    "grossAcceptedEvents": 24,
+    "uniqueAcceptedSpecies": 24,
+    "blockedTaxonomyRows": 10,
+    "blockedFutureRows": 1,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 75,
+    "netNewApplicableDecisions": 22,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 58,
+    "netNewRegulatedDecisions": 23,
+    "supportingBasisAdded": 24,
+    "alreadyApplicableDecisionsReceivingNewBasis": 2,
+    "priorityUpgrades": 1,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "official-pdf-label-versus-content",
+      "priorState": "The Illinois DNR path named 17-1100.pdf appeared to offer an official portable copy of the exotic weeds rule.",
+      "currentEvidence": "The file served on August 1, 2026 contained unrelated 17 IAC Part 720 turkey rules rather than Part 1100.",
+      "resolution": "The mislabeled PDF was not retained or used. The current Illinois General Assembly Part 1100 authority page and exact Section 1100.30 HTML are the operative sources."
+    },
+    {
+      "subject": "future-effective-callery-pear",
+      "priorState": "Callery pear appears in the official list table.",
+      "currentEvidence": "The same rule states that Callery pear is included only starting January 1, 2028.",
+      "resolution": "The row is preserved as blocked future context and creates no current applicability decision."
+    },
+    {
+      "subject": "source-taxonomy",
+      "priorState": "The list contains genus, hybrid, synonym, source-spelling, and unmatched taxon text.",
+      "currentEvidence": "Ten currently effective rows do not pass the exact current catalog-binomial gate.",
+      "resolution": "All ten remain blocked for explicit taxonomy review. Unusable or unmatched rows create no not-applicability, occurrence, absence, or not-detected evidence."
+    },
+    {
+      "subject": "local-powershell-probe-failure",
+      "priorState": "The first stability probe attempted to use Invoke-WebRequest and RawContentStream without writing an artifact.",
+      "currentEvidence": "The Windows PowerShell cmdlet failed locally with a null-reference error before a valid provider response was recorded.",
+      "resolution": "The failed local attempt is not counted as a provider request. Three independent .NET byte probes and the deterministic builder capture all returned the same 18054-byte hash."
+    }
+  ]
+}
