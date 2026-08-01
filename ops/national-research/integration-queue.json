@@ -11577,7 +11577,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260731-r20-ok-002-1",
       "jobId": "gbif-archive-recovery-20260731-r20-ok-002",
       "leaseId": "lease-gbif-archive-recovery-20260731-r20-ok-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T02:39:00.000Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260731-r20-ok-002__lease-gbif-archive-recovery-20260731-r20-ok-002-1.json",
       "manifestHash": "1a5b397539fa003e02e0dfd881625411aa09a57dc60c1c1e9a2e80a0cef76293",
@@ -11670,6 +11670,42 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260731-r20-ok-002-1.json",
         "sha256": "bbb3cb234992f3bfa0a59a402580bf0959b63445681b31a5e4c3106238e2c516",
         "bytes": 9087
+      },
+      "integratedAt": "2026-08-01T02:42:00.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "f1c2d9e5ed5da663a3c84d0b80a42b951d9a7684",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Oklahoma GBIF archive replay for 1848 completed county species pairs",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated accepted Oklahoma archive replay transactionally with exact worker bytes, zero conflicts, and centralized generation deferred to the coherent milestone.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260731-r20-ok-002-1.json",
+        "sha256": "df46651a8310be8a6b16fb62ade815ea982f91eb484bcde92bfb3cb3703b9a95",
+        "bytes": 9243
       }
     }
   ]
