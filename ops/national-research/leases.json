@@ -325082,7 +325082,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r4_az_retry2",
-      "state": "active",
+      "state": "cancelled",
       "claimedAt": "2026-08-01T02:23:00.000Z",
       "expiresAt": "2026-08-01T04:20:00.000Z",
       "recoveryAt": null,
@@ -328109,7 +328109,8 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 37aa5a356fbe0c902efef8367bd2966f03178f26...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-01T02:29:00.000Z"
     },
     {
       "leaseId": "lease-gbif-archive-recovery-20260731-r21-va-001-1",
@@ -328117,7 +328118,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_r4_fl_retry1",
-      "state": "active",
+      "state": "cancelled",
       "claimedAt": "2026-08-01T02:27:00.000Z",
       "expiresAt": "2026-08-01T04:26:00.000Z",
       "recoveryAt": null,
@@ -331456,7 +331457,8 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 076837aa6f21e5dc6c6a94052023f865594160fe...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-01T02:29:01.000Z"
     }
   ]
 }
