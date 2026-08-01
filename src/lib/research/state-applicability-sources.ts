@@ -17,7 +17,9 @@ export type StateApplicabilitySource = {
   appliesToStateCodes?: string[];
   homepage: string;
   access: "download" | "official-web";
-  claimSemantics: "regulated-state-applicability";
+  claimSemantics:
+    | "regulated-state-applicability"
+    | "high-priority-state-applicability";
   negativeSemantics: "none";
   refreshCadenceDays: number;
   status: "operational" | "blocked";
@@ -37,7 +39,7 @@ export type StateApplicabilityAcceptedEvent = {
   scientificName: string;
   speciesId: string;
   applicability: "applicable";
-  priority: "regulated";
+  priority: "regulated" | "high";
   matchMethod: "exact-canonical-binomial";
   reviewStatus: "accepted";
   note: string;
@@ -201,6 +203,15 @@ export function validateStateApplicabilityReview(input: {
         `Review ${review.reviewId} event ${event.eventId} is not an exact canonical catalog match.`,
       );
     }
+    const expectedPriority =
+      source.claimSemantics === "regulated-state-applicability"
+        ? "regulated"
+        : "high";
+    if (event.priority !== expectedPriority) {
+      throw new Error(
+        `Review ${review.reviewId} event ${event.eventId} priority ${event.priority} differs from source semantics ${source.claimSemantics}.`,
+      );
+    }
   }
 
   return {
@@ -231,6 +242,12 @@ export function mergeReviewedApplicability(input: {
   );
   let netNewApplicable = 0;
   let supportingBasisAdded = 0;
+  const priorityRank = {
+    baseline: 0,
+    pilot: 1,
+    high: 2,
+    regulated: 3,
+  } as const;
 
   for (const review of [...input.reviews].sort((left, right) =>
     left.reviewId.localeCompare(right.reviewId)
@@ -255,7 +272,7 @@ export function mergeReviewedApplicability(input: {
         bySpeciesId.set(event.speciesId, {
           speciesId: event.speciesId,
           applicability: "applicable",
-          priority: "regulated",
+          priority: event.priority,
           basis: [basis],
         });
         netNewApplicable += 1;
@@ -266,7 +283,9 @@ export function mergeReviewedApplicability(input: {
         existing.applicability = "applicable";
         netNewApplicable += 1;
       }
-      existing.priority = "regulated";
+      if (priorityRank[event.priority] > priorityRank[existing.priority]) {
+        existing.priority = event.priority;
+      }
       const basisKey = `${basis.sourceId}\n${basis.sourceRecordId}\n${basis.url}\n${basis.note}`;
       const existingBasisKeys = new Set(
         existing.basis.map(

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-dc-20260801-r1",
+  "createdAt": "2026-08-01T06:00:02.010Z",
+  "asOf": "2026-08-01",
+  "baselineCommitSha": "879c3871ad73b7d38cd2396fcfe8a77b6df1b162",
+  "stateCode": "DC",
+  "sourceId": "dc-doee-invasive-pollinator-plants",
+  "authority": "District of Columbia Department of Energy and Environment",
+  "claimSemantics": "high-priority-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://doee.dc.gov/service/native-and-invasive-pollinator-plants",
+    "providerRequests": 7,
+    "successfulRequests": 7,
+    "failedRequests": 0,
+    "stabilityProbeRequests": 3,
+    "pagesReviewed": 1,
+    "sourceRows": 22,
+    "artifactCount": 1,
+    "artifactBytes": 4468,
+    "preventedDuplicateAcquisitions": 0,
+    "preventedProviderRequests": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__dc-doee-invasive-pollinator-plants__a809591eb8c6/artifacts/native-and-invasive-pollinator-plants.html",
+      "sha256": "a809591eb8c6e77fa9dff216b5c78bb932dcfb0a26bb886ca41d240cd68dfa65",
+      "bytes": 4468,
+      "captureMethod": "analytics-free-deterministic-official-table-serialization",
+      "stableIndependentCaptures": 3,
+      "stableIndependentCapturesRequired": 3
+    },
+    "preflight": {
+      "fullPageObservationBytes": 128993,
+      "fullPageObservationSha256": "670c60a0a1cd6d9fbf332c391b4527f9997978473f213971398475e2efeb30bb",
+      "fullPageRetained": false,
+      "reason": "The official page included changing analytics markup. Only the stable official invasive-plant table was serialized and retained after three matching independent captures."
+    }
+  },
+  "review": {
+    "reviewId": "dc-doee-invasive-pollinator-plants-20260801",
+    "reviewSha256": "6435070561a0abd151b368b0c3dd7f52c8e9586d78e8276971ab076d17894ab2",
+    "reviewBytes": 13739,
+    "grossAcceptedEvents": 14,
+    "blockedTaxonomyRows": 8,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 67,
+    "netNewApplicableDecisions": 14,
+    "baselineHighPriorityDecisions": 0,
+    "finalHighPriorityDecisions": 14,
+    "netNewHighPriorityDecisions": 14,
+    "supportingBasisAdded": 14,
+    "alreadyApplicableDecisionsReceivingNewBasis": 0,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "resources": {
+    "initialAvailablePhysicalMemoryMiB": 1873.41,
+    "highestAvailablePhysicalMemoryMiB": 3329.96,
+    "finalAvailablePhysicalMemoryMiB": 2648.89,
+    "heavyWorkerPhysicalMemoryFloorMiB": 3072,
+    "timeBelowHeavyWorkerFloorSeconds": "not-continuously-sampled",
+    "pageFileUsageMiBAtFinalSample": 6794,
+    "pageFilePeakUsageMiBAtFinalSample": 6794,
+    "sustainedPageFileThrashingObserved": false,
+    "minimumDiskFreeGiB": 981.63,
+    "heavyWorkersLaunched": 0,
+    "sharedCompilerBuildDeploymentOperations": 0,
+    "resourceTier": "red",
+    "userApplicationsStopped": 0,
+    "adaptation": "Heavy acquisition, shared compilation, production build, and deployment were not started. Low-memory official-source acquisition, deterministic normalization, exact taxonomy review, and integration preparation continued."
+  },
+  "contradictions": [
+    {
+      "subject": "dated-production-checkpoint",
+      "priorState": "The reusable prompt identified 326f98383ce0f532078c9346964ad950e24a38bd as the latest production checkpoint.",
+      "currentEvidence": "Canonical main, origin main, GitHub main, GitHub deployment 5701600051, Vercel deployment dpl_6MVatfaEsyds3ZU9RxpsrSJHt1Cn, and live production all resolved to 879c3871ad73b7d38cd2396fcfe8a77b6df1b162 before this source was acquired.",
+      "resolution": "The dated checkpoint remains preserved as history and was not recreated."
+    },
+    {
+      "subject": "source-claim-scope",
+      "priorState": "The source registry supported regulated applicability only, while the official District page is an advisory invasive-plant guide rather than a regulation.",
+      "currentEvidence": "The official table explicitly labels 22 plants as DC invasive pollinator plants, and 14 rows are exact current catalog binomials.",
+      "resolution": "The schema and deterministic merge now preserve a separate high-priority applicability semantic. No row was represented as regulated, and no county occurrence or negative evidence was created."
+    },
+    {
+      "subject": "dynamic-full-page-bytes",
+      "priorState": "A complete raw page capture was initially considered for the official-web source.",
+      "currentEvidence": "Analytics markup changed between requests while the official invasive table remained byte-stable across three independent captures.",
+      "resolution": "The changing full page was not retained. The analytics-free official table serialization is the only operative artifact, and its exact hash, byte count, parsing denominator, and capture method are pinned."
+    },
+    {
+      "subject": "memory-floor",
+      "priorState": "The reusable prompt requires a hard 3072 MiB available-memory floor before launching a new heavy worker.",
+      "currentEvidence": "Available physical memory was 1873.41 MiB initially and 2648.89 MiB at the final sample; a temporary high sample of 3329.96 MiB still did not leave the measured 1244 MiB worker safety budget above the floor.",
+      "resolution": "No heavy worker, compiler, build, or deployment was started. Productive low-memory official-source work continued without closing user applications."
+    }
+  ]
+}

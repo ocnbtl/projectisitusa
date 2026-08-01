@@ -47,7 +47,10 @@
         "homepage": { "type": "string", "format": "uri" },
         "access": { "enum": ["download", "official-web"] },
         "claimSemantics": {
-          "enum": ["regulated-state-applicability"]
+          "enum": [
+            "regulated-state-applicability",
+            "high-priority-state-applicability"
+          ]
         },
         "negativeSemantics": { "const": "none" },
         "refreshCadenceDays": { "type": "integer", "minimum": 1 },

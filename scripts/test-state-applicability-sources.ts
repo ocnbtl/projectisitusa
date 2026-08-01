@@ -121,6 +121,38 @@ try {
     });
   validate();
 
+  const highPrioritySource: StateApplicabilitySource = {
+    ...source,
+    id: "official-high-priority-test",
+    claimSemantics: "high-priority-state-applicability",
+  };
+  const highPriorityReview: StateApplicabilityReview = {
+    ...review,
+    reviewId: "official-high-priority-test-20260728",
+    sourceId: highPrioritySource.id,
+    acceptedEvents: review.acceptedEvents.map((event) => ({
+      ...event,
+      eventId: "official-high-priority-test-row-1",
+      priority: "high",
+    })),
+  };
+  validateStateApplicabilityReview({
+    review: highPriorityReview,
+    reviewDirectory,
+    registryById: new Map([[highPrioritySource.id, highPrioritySource]]),
+    catalogById: new Map([[species.id, species]]),
+  });
+  const mismatchedPriority = clone(highPriorityReview);
+  mismatchedPriority.acceptedEvents[0].priority = "regulated";
+  expectFailure("source priority semantics", /differs from source semantics/, () =>
+    validateStateApplicabilityReview({
+      review: mismatchedPriority,
+      reviewDirectory,
+      registryById: new Map([[highPrioritySource.id, highPrioritySource]]),
+      catalogById: new Map([[species.id, species]]),
+    })
+  );
+
   const wrongHash = clone(review);
   wrongHash.artifact.sha256 = "0".repeat(64);
   expectFailure("artifact hash", /artifact hash differs/, () =>
@@ -180,6 +212,30 @@ try {
       second.netNewApplicable === 0 &&
       second.supportingBasisAdded === 0,
     "State-list merge did not report exact gross and net changes.",
+  );
+  const highFirst = mergeReviewedApplicability({
+    current,
+    reviews: [highPriorityReview],
+  });
+  assert(
+    highFirst.output.species[0]?.priority === "high",
+    "High-priority source was not preserved as high priority.",
+  );
+  const regulatedUpgrade = mergeReviewedApplicability({
+    current: highFirst.output,
+    reviews: [review],
+  });
+  assert(
+    regulatedUpgrade.output.species[0]?.priority === "regulated",
+    "Regulated source did not upgrade high-priority applicability.",
+  );
+  const highCannotDowngrade = mergeReviewedApplicability({
+    current: regulatedUpgrade.output,
+    reviews: [highPriorityReview],
+  });
+  assert(
+    highCannotDowngrade.output.species[0]?.priority === "regulated",
+    "High-priority source downgraded a regulated applicability decision.",
   );
   const silence = mergeReviewedApplicability({
     current,
@@ -246,7 +302,7 @@ try {
 
   console.log(
     JSON.stringify({
-      cases: 11,
+      cases: 16,
       status: "pass",
       deterministic: true,
       sourceSilenceCreatedDecision: false,

@@ -95,7 +95,7 @@
           "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
         },
         "applicability": { "const": "applicable" },
-        "priority": { "const": "regulated" },
+        "priority": { "enum": ["regulated", "high"] },
         "matchMethod": { "const": "exact-canonical-binomial" },
         "reviewStatus": { "const": "accepted" },
         "note": { "type": "string", "minLength": 1 }
