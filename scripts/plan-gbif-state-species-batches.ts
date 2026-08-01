@@ -123,7 +123,11 @@ function compareText(left: string, right: string): number {
 function countCurrentEvidence(root: string, stateCode: string) {
   const counts = new Map<
     string,
-    { verifiedPresentCount: number; gbifEvidenceCount: number }
+    {
+      verifiedPresentCount: number;
+      gbifEvidenceCount: number;
+      notResearchedCount: number;
+    }
   >();
   const countiesDirectory = path.join(
     root,
@@ -136,12 +140,17 @@ function countCurrentEvidence(root: string, stateCode: string) {
       .filter((entry) => entry.endsWith(".json"))
       .sort(compareText)
     : [];
+  const inputDigests: Array<{ filename: string; sha256: string }> = [];
   for (const filename of countyFiles) {
-    const county = readJson<CountyFile>(path.join(countiesDirectory, filename));
+    const countyPath = path.join(countiesDirectory, filename);
+    const countyBytes = fs.readFileSync(countyPath);
+    inputDigests.push({ filename, sha256: sha256(countyBytes) });
+    const county = JSON.parse(countyBytes.toString("utf8")) as CountyFile;
     for (const pair of county.pairs) {
       const current = counts.get(pair.speciesId) ?? {
         verifiedPresentCount: 0,
         gbifEvidenceCount: 0,
+        notResearchedCount: 0,
       };
       if (pair.displayStatus === "verified-present") {
         current.verifiedPresentCount += 1;
@@ -149,10 +158,17 @@ function countCurrentEvidence(root: string, stateCode: string) {
       if (pair.evidence.some((entry) => entry.sourceId === SOURCE_ID)) {
         current.gbifEvidenceCount += 1;
       }
+      if (pair.displayStatus === "not-researched") {
+        current.notResearchedCount += 1;
+      }
       counts.set(pair.speciesId, current);
     }
   }
-  return counts;
+  return {
+    counts,
+    inputHash: sha256(stableJson(inputDigests)),
+    fileCount: countyFiles.length,
+  };
 }
 
 function completedPairKeys(root: string, stateCode: string) {
@@ -256,7 +272,8 @@ export function buildGbifStateSpeciesPlan(input: {
     ]),
   );
   const protocol = readJson<{ cells: ProtocolCell[] }>(protocolPath);
-  const evidenceCounts = countCurrentEvidence(input.root, stateCode);
+  const currentPairState = countCurrentEvidence(input.root, stateCode);
+  const evidenceCounts = currentPairState.counts;
   const completedPairs = completedPairKeys(input.root, stateCode);
   const taxonomyBlocks = taxonomyBlockedSpecies(input.root);
   let preventedCompletedPairCount = 0;
@@ -288,6 +305,7 @@ export function buildGbifStateSpeciesPlan(input: {
       const counts = evidenceCounts.get(cell.speciesId) ?? {
         verifiedPresentCount: 0,
         gbifEvidenceCount: 0,
+        notResearchedCount: 0,
       };
       const remainingCountyFips = countyFips.filter(
         (countyFipsEntry) =>
@@ -313,6 +331,7 @@ export function buildGbifStateSpeciesPlan(input: {
         freshnessStatus: cell.freshnessStatus,
         countyCount: countyFips.length,
         incompleteCountyCount: remainingCountyFips.length,
+        notResearchedCountyCount: counts.notResearchedCount,
         priorCompleteGbifCountyCount:
           countyFips.length - remainingCountyFips.length,
         gbifEvidenceCountyCount: counts.gbifEvidenceCount,
@@ -322,6 +341,7 @@ export function buildGbifStateSpeciesPlan(input: {
     })
     .sort(
       (left, right) =>
+        right.notResearchedCountyCount - left.notResearchedCountyCount ||
         right.incompleteCountyCount - left.incompleteCountyCount ||
         right.gbifEvidenceCountyCount - left.gbifEvidenceCountyCount ||
         right.verifiedPresentCountyCount - left.verifiedPresentCountyCount ||
@@ -394,6 +414,7 @@ export function buildGbifStateSpeciesPlan(input: {
         stateSpeciesQueriesRemainWhole: true,
       },
       ranking: [
+        "not-researched-county-count-desc",
         "incomplete-county-count-desc",
         "existing-gbif-evidence-count-desc",
         "verified-present-count-desc",
@@ -409,6 +430,11 @@ export function buildGbifStateSpeciesPlan(input: {
       taxonomyEvaluation: taxonomyBlocks.evaluationPath
         ? sha256(fs.readFileSync(taxonomyBlocks.evaluationPath))
         : null,
+      countyResearchProjections: currentPairState.inputHash,
+    },
+    rankingInputs: {
+      countyProjectionFileCount: currentPairState.fileCount,
+      expectedNetNewPairDefinition: "current displayStatus equals not-researched",
     },
     deduplication: {
       immutableCompletePairCount: completedPairs.size,
@@ -420,6 +446,10 @@ export function buildGbifStateSpeciesPlan(input: {
     selectedStateSpeciesScreenCount: selected.length,
     selectedCountyOutcomeCount: selected.reduce(
       (sum, entry) => sum + entry.remainingCountyFips.length,
+      0,
+    ),
+    expectedNetNewPairCount: selected.reduce(
+      (sum, entry) => sum + entry.notResearchedCountyCount,
       0,
     ),
     countyCount: countyFips.length,
@@ -497,6 +527,7 @@ function main() {
       selectedStateSpeciesScreenCount:
         plan.selectedStateSpeciesScreenCount,
       selectedCountyOutcomeCount: plan.selectedCountyOutcomeCount,
+      expectedNetNewPairCount: plan.expectedNetNewPairCount,
       batchCount: plan.batches.length,
     }, null, 2)}\n`,
   );

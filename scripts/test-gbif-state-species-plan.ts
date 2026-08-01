@@ -40,6 +40,25 @@ assert(
   "The Tennessee planner did not emit a nonempty bounded state-species selection.",
 );
 assert(
+  first.expectedNetNewPairCount > 0 &&
+    first.expectedNetNewPairCount <= first.selectedCountyOutcomeCount,
+  "The Tennessee planner did not report a bounded positive net-new pair estimate.",
+);
+assert(
+  first.inputHashes.countyResearchProjections.length === 64 &&
+    first.rankingInputs.countyProjectionFileCount === first.countyCount,
+  "The planner did not hash every current county projection used for net-new ranking.",
+);
+assert(
+  first.selected.every(
+    (entry, index, entries) =>
+      index === 0 ||
+      entries[index - 1].notResearchedCountyCount >=
+        entry.notResearchedCountyCount,
+  ),
+  "The planner did not rank state-species targets by net-new pair value first.",
+);
+assert(
   first.selected.every(
     (entry) =>
       entry.stateCode === "TN" &&
@@ -104,6 +123,7 @@ console.log(
       deterministic: true,
       stateSpeciesScreens: first.selectedStateSpeciesScreenCount,
       countyOutcomes: first.selectedCountyOutcomeCount,
+      expectedNetNewPairs: first.expectedNetNewPairCount,
       countyCount: first.countyCount,
       batchCount: first.batches.length,
       overlappingPairs: 0,
