@@ -13218,7 +13218,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r28-mo-001-1",
       "jobId": "gbif-bulk-20260731-r28-mo-001",
       "leaseId": "lease-gbif-bulk-20260731-r28-mo-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T04:27:03.988Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r28-mo-001__lease-gbif-bulk-20260731-r28-mo-001-1.json",
       "manifestHash": "40b2ae9d61776fdbc0a13cd13fa533b7e602941ed8e530c86ff8e79b26aae5f5",
@@ -13307,6 +13307,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r28-mo-001-1.json",
         "sha256": "fe10bde3cbd0625178661dad51929bdb7e744cdfb595a4cdbaf2bd3d40ea1c6f",
         "bytes": 8464
+      },
+      "integratedAt": "2026-08-01T04:27:46.941Z",
+      "integrator": "MAIN",
+      "integrationCommit": "13df4be34d52b789fed21349174fdbbd74a4686e",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Missouri GBIF r28 statewide species screens",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated exact validated immutable-run bytes without conflicts.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r28-mo-001-1.json",
+        "sha256": "c2004383a5e0173875b926d9e3bfcd3ebdce5a64cc75a38b78aa4391cc115d03",
+        "bytes": 8584
       }
     }
   ]
