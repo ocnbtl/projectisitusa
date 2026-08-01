@@ -12260,7 +12260,7 @@
       "queueId": "queue-lease-gbif-bulk-20260731-r23-mi-001-1",
       "jobId": "gbif-bulk-20260731-r23-mi-001",
       "leaseId": "lease-gbif-bulk-20260731-r23-mi-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-01T03:20:00.000Z",
       "manifestPath": "manifests/gbif-bulk-20260731-r23-mi-001__lease-gbif-bulk-20260731-r23-mi-001-1.json",
       "manifestHash": "d452dedc23c4ed160ba689be4ac28f25e0486cff3c7784f5d0c4eb49c2981226",
@@ -12355,6 +12355,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260731-r23-mi-001-1.json",
         "sha256": "7541be03fe03ab43682c16d3a03b9f8a31335ed5a8a67431e2de277d272cbc17",
         "bytes": 9474
+      },
+      "integratedAt": "2026-08-01T03:25:00.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "dc71d845dfb8c9017c1d086157873f46558ffc37",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Michigan GBIF preserved-specimen tranche integrated with 2,075 complete outcomes, 2,163 assertions, 2,163 reviews, and 649 rejections.",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated validated Michigan GBIF run and manifest sequentially through MAIN.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260731-r23-mi-001-1.json",
+        "sha256": "fe64957737ef9ebb6c5504b49d44b6b02ffa0081c77927dcbe00f086a325addd",
+        "bytes": 9553
       }
     }
   ]
