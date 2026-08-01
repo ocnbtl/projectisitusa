@@ -21,7 +21,7 @@ assert(
 const input = {
   root: process.cwd(),
   planId: "synthetic-determinism-check",
-  stateCode: "AL",
+  stateCode: "TN",
   limit: 10,
   speciesPerBatch: 4,
 };
@@ -36,18 +36,19 @@ assert(
   first.selectedStateSpeciesScreenCount > 0 &&
     first.selectedStateSpeciesScreenCount <= input.limit &&
     first.selectedCountyOutcomeCount > 0 &&
-    first.selectedCountyOutcomeCount <= 670,
-  "The Alabama planner did not emit a nonempty bounded state-species selection.",
+    first.selectedCountyOutcomeCount <= 950,
+  "The Tennessee planner did not emit a nonempty bounded state-species selection.",
 );
 assert(
   first.selected.every(
     (entry) =>
-      entry.stateCode === "AL" &&
+      entry.stateCode === "TN" &&
       entry.protocolCompletionStatus !== "complete" &&
       entry.researchStatus === "applicable" &&
+      entry.speciesId !== "schedonorus-arundinaceus" &&
       entry.scientificName.trim().split(/\s+/).length === 2,
   ),
-  "The planner admitted a completed, non-applicable, or non-binomial target.",
+  "The planner admitted a completed, taxonomy-blocked, non-applicable, or non-binomial target.",
 );
 const pairKeys = first.candidateFiles.flatMap((file) =>
   file.candidates.map(
@@ -77,7 +78,7 @@ const completePairs = new Set(
     .flatMap((bundle) => bundle.outcomes)
     .filter(
       (outcome) =>
-        outcome.state_code === "AL" &&
+        outcome.state_code === "TN" &&
         outcome.source_id === "gbif-preserved-specimens" &&
         outcome.scope_complete,
     )
@@ -92,7 +93,8 @@ assert(
 assert(
   first.deduplication.immutableCompletePairCount === completePairs.size &&
     first.deduplication.preventedCompletedPairCount >= 0 &&
-    first.deduplication.fullyCompletedStateSpeciesExcluded >= 0,
+    first.deduplication.fullyCompletedStateSpeciesExcluded >= 0 &&
+    first.deduplication.taxonomyBlockedStateSpeciesExcluded >= 1,
   "The planner did not report its immutable-run deduplication accounting.",
 );
 

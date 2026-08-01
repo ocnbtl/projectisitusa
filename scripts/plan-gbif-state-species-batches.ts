@@ -57,6 +57,14 @@ type CountyFile = {
   }>;
 };
 
+type GbifTaxonomyEvaluation = {
+  sourceId: string;
+  reviews: Array<{
+    speciesId: string;
+    disposition: string;
+  }>;
+};
+
 type PlannedBatch = {
   batchId: string;
   stateCode: string;
@@ -163,6 +171,35 @@ function completedPairKeys(root: string, stateCode: string) {
   );
 }
 
+function taxonomyBlockedSpecies(root: string) {
+  const evaluationPath = path.join(
+    root,
+    "ops/national-research/evaluations/gbif-taxonomy-ambiguities-20260731-r1.json",
+  );
+  if (!fs.existsSync(evaluationPath)) {
+    return {
+      evaluationPath: null,
+      speciesIds: new Set<string>(),
+    };
+  }
+  const evaluation = readJson<GbifTaxonomyEvaluation>(evaluationPath);
+  if (evaluation.sourceId !== SOURCE_ID) {
+    throw new Error(
+      `Taxonomy evaluation source ${evaluation.sourceId} does not match ${SOURCE_ID}.`,
+    );
+  }
+  return {
+    evaluationPath,
+    speciesIds: new Set(
+      evaluation.reviews
+        .filter(
+          (entry) => entry.disposition === "catalog-taxonomy-review-required",
+        )
+        .map((entry) => entry.speciesId),
+    ),
+  };
+}
+
 export function buildGbifStateSpeciesPlan(input: {
   root: string;
   planId: string;
@@ -221,8 +258,10 @@ export function buildGbifStateSpeciesPlan(input: {
   const protocol = readJson<{ cells: ProtocolCell[] }>(protocolPath);
   const evidenceCounts = countCurrentEvidence(input.root, stateCode);
   const completedPairs = completedPairKeys(input.root, stateCode);
+  const taxonomyBlocks = taxonomyBlockedSpecies(input.root);
   let preventedCompletedPairCount = 0;
   let fullyCompletedStateSpeciesExcluded = 0;
+  let taxonomyBlockedStateSpeciesExcluded = 0;
   const candidates = protocol.cells
     .filter(
       (cell) =>
@@ -234,6 +273,10 @@ export function buildGbifStateSpeciesPlan(input: {
     .flatMap((cell) => {
       const speciesEntry = speciesById.get(cell.speciesId);
       const stateResearch = stateResearchBySpecies.get(cell.speciesId);
+      if (taxonomyBlocks.speciesIds.has(cell.speciesId)) {
+        taxonomyBlockedStateSpeciesExcluded += 1;
+        return [];
+      }
       if (
         !speciesEntry ||
         !stateResearch ||
@@ -363,11 +406,15 @@ export function buildGbifStateSpeciesPlan(input: {
       countyRegistry: sha256(fs.readFileSync(countyRegistryPath)),
       stateSummary: sha256(fs.readFileSync(summaryPath)),
       protocolCells: sha256(fs.readFileSync(protocolPath)),
+      taxonomyEvaluation: taxonomyBlocks.evaluationPath
+        ? sha256(fs.readFileSync(taxonomyBlocks.evaluationPath))
+        : null,
     },
     deduplication: {
       immutableCompletePairCount: completedPairs.size,
       preventedCompletedPairCount,
       fullyCompletedStateSpeciesExcluded,
+      taxonomyBlockedStateSpeciesExcluded,
     },
     availableStateSpeciesScreenCount: candidates.length,
     selectedStateSpeciesScreenCount: selected.length,
