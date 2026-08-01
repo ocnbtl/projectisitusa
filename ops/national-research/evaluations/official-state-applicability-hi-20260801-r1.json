@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-hi-20260801-r1",
+  "createdAt": "2026-08-01T06:29:40.501Z",
+  "asOf": "2026-08-01",
+  "baselineCommitSha": "0b6951f7051c5ad1fd1514ea81bd1e4d020aaca6",
+  "stateCode": "HI",
+  "sourceId": "hi-har-4-68",
+  "authority": "Hawaii Department of Agriculture and Biosecurity",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://dab.hawaii.gov/pi/ppc/cm/",
+    "artifactUrl": "https://dab.hawaii.gov/wp-content/uploads/2012/12/Chapter-68.pdf",
+    "providerRequests": 9,
+    "successfulRequests": 9,
+    "failedRequests": 0,
+    "stabilityProbeRequests": 3,
+    "sourceDiscoveryRequests": 4,
+    "pdfPages": 15,
+    "listPages": 5,
+    "filingEvidencePages": 1,
+    "sourceRows": 79,
+    "artifactCount": 1,
+    "artifactBytes": 810188,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__hi-har-4-68__13a4cf5f9ef3/artifacts/hawaii-har-4-68-current.pdf",
+      "sha256": "13a4cf5f9ef36f4617a97149da9716a6415917567a8192a237c445ab2644fd21",
+      "bytes": 810188,
+      "mediaType": "application/pdf",
+      "captureMethod": "exact-current-program-linked-scanned-rule-download",
+      "stableIndependentCaptures": 3,
+      "stableIndependentCapturesRequired": 3
+    },
+    "supersededTextCrossCheck": {
+      "url": "https://dab.hawaii.gov/wp-content/uploads/2012/12/AR-68.pdf",
+      "sha256": "3453141bcc93c938dea1d3c46565a8f57ab943636e62ddcd34ab46267d3a62f9",
+      "bytes": 32417,
+      "retainedAsOperativeArtifact": false,
+      "disposition": "Used only for complete pdfplumber text cross-check, then removed from the untracked candidate directory after the current program-linked scan was verified."
+    },
+    "visualVerification": {
+      "currentScanPagesRendered": [10, 11, 12, 13, 14, 15],
+      "textCrossCheckPagesRendered": [10, 11, 12, 13, 14],
+      "currentScanListRowsVisuallyAccounted": 79,
+      "filingPagePresent": true,
+      "layoutDefectsAffectingReview": 0,
+      "textCrossCheckFontSubstitutionWarnings": true,
+      "textCrossCheckContentLossObserved": false,
+      "temporaryRendersCommitted": false
+    }
+  },
+  "review": {
+    "reviewId": "hi-har-4-68-20260801",
+    "reviewSha256": "3642bfd1a4690bdeda17d21dc5c988a6b427f1d7326223cfa6da8f6bb73c0fec",
+    "reviewBytes": 43211,
+    "grossAcceptedEvents": 31,
+    "blockedTaxonomyRows": 48,
+    "duplicateAcceptedEventIds": 0,
+    "deterministicReplay": true,
+    "reviewMethod": "Complete page-by-page transcription of the current scan, cross-checked against bundled pdfplumber extraction of the older official text copy and visual rendering of both copies."
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 80,
+    "netNewApplicableDecisions": 27,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 62,
+    "netNewRegulatedDecisions": 27,
+    "supportingBasisAdded": 31,
+    "alreadyApplicableDecisionsReceivingNewBasis": 4,
+    "explicitlyNotApplicableCreated": 0,
+    "islandDeterminationsCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "registered-pdf-versus-current-program-link",
+      "priorState": "The registry pointed directly to a 32417-byte AR-68 text compilation and preserved uncertainty about whether it was the filed official copy.",
+      "currentEvidence": "The current agency program page links a different 810188-byte scanned Chapter-68.pdf. Its list pages match the older text compilation, and page 15 contains the adoption, approval, and August 12, 1992 filing evidence.",
+      "resolution": "The current program-linked scan is the sole operative retained artifact. The older PDF is only a non-operative text-extraction cross-check and no superseded source basis remains in generated Hawaii applicability."
+    },
+    {
+      "subject": "program-count-wording",
+      "priorState": "The current program page says more than 79 plant species are designated under Chapter 68.",
+      "currentEvidence": "The complete current program-linked Chapter 68 table contains exactly 79 taxon rows across pages 10 through 14.",
+      "resolution": "All 79 explicit rows are preserved. The wording discrepancy remains an explicit currentness and certification caveat; no unlisted taxon is invented or silently omitted."
+    },
+    {
+      "subject": "island-free-language",
+      "priorState": "The official table includes an Islands Free or Relatively Free column and Chapter 68 defines procedures for area designation.",
+      "currentEvidence": "The table does not provide county scope, survey method, effort, time-bounded detection results, or a uniform meaning that supports county absence or not-detected status.",
+      "resolution": "The island column remains contextual only. This review creates state applicability and no island, county, absence, not-detected, or not-applicable determination."
+    },
+    {
+      "subject": "historical-taxonomy",
+      "priorState": "The 1992 adopted table includes genus, variety, synonym, source-spelling, and unmatched names.",
+      "currentEvidence": "Forty-eight of 79 rows do not pass the exact current catalog-binomial gate.",
+      "resolution": "All 48 remain blocked for explicit taxonomy review. Rejected or ambiguous rows create no negative evidence."
+    }
+  ]
+}
