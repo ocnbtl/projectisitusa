@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "official-state-applicability-oh-invasive-plants-20260801-r1",
+  "createdAt": "2026-08-01T09:29:00.000Z",
+  "asOf": "2026-08-01",
+  "roundBaselineCommitSha": "b79d8b18980200d6e94d5b36b5b61e0417b4e5af",
+  "applicabilityBaselineCommitSha": "548fa2acc4ccbde632257b6d465b3722288bd80d",
+  "stateCode": "OH",
+  "sourceId": "oh-oac-901-5-30-01",
+  "authority": "Ohio Department of Agriculture and Ohio Laws",
+  "claimSemantics": "regulated-state-applicability",
+  "negativeSemantics": "none",
+  "acquisition": {
+    "sourceUrl": "https://codes.ohio.gov/ohio-administrative-code/chapter-901%3A5-30",
+    "providerRequests": 5,
+    "successfulRequests": 5,
+    "failedProviderRequests": 0,
+    "sourceDiscoveryRequests": 3,
+    "artifactPreflightRequests": 1,
+    "artifactCaptureRequests": 1,
+    "sourceRows": 63,
+    "reviewedTaxa": 63,
+    "artifactCount": 1,
+    "artifactBytes": 29916,
+    "preventedDuplicateAcquisitions": 0,
+    "operativeArtifact": {
+      "path": "src/data/research/state-list-sources/20260801__oh-oac-901-5-30-01__b318d9a9c44c/artifacts/ohio-oac-901-5-30-current.html",
+      "sha256": "b318d9a9c44c73665ce871513ed0c4f9aaeb7db898bb728e2b2fcf0f6277e811",
+      "bytes": 29916,
+      "mediaType": "text/html",
+      "captureMethod": "exact-current-official-page-download",
+      "stableIndependentByteCaptures": 2
+    }
+  },
+  "review": {
+    "reviewId": "oh-oac-901-5-30-01-20260801",
+    "reviewSha256": "b874a255e4324671646a97452045423daff8d747e2bf7b4f7e5872116b3f4fc4",
+    "reviewBytes": 41236,
+    "grossAcceptedEvents": 45,
+    "uniqueAcceptedSpecies": 45,
+    "blockedTaxonomyRows": 18,
+    "duplicateAcceptedEventIds": 0,
+    "duplicateSourceRecordIds": 0,
+    "deterministicReplay": true,
+    "reviewMethod": "Deterministic parsing of the complete contiguous sixty-three-row rule section followed by exact current-catalog binomial matching only."
+  },
+  "applicability": {
+    "baselineApplicableDecisions": 53,
+    "finalApplicableDecisions": 87,
+    "netNewApplicableDecisions": 34,
+    "baselineRegulatedDecisions": 35,
+    "finalRegulatedDecisions": 71,
+    "netNewRegulatedDecisions": 36,
+    "supportingBasisAdded": 45,
+    "alreadyApplicableDecisionsReceivingNewBasis": 11,
+    "priorityUpgrades": 2,
+    "explicitlyNotApplicableCreated": 0,
+    "countyDeterminationsCreated": 0,
+    "absenceCreated": 0,
+    "notDetectedCreated": 0
+  },
+  "contradictions": [
+    {
+      "subject": "complete-rule-list-versus-exact-catalog-matches",
+      "priorState": "The official rule designates sixty-three botanical rows as invasive plants.",
+      "currentEvidence": "Forty-five rows match current catalog binomials exactly; eighteen subspecies, variety, hybrid, misspelled, synonym, or unmatched rows do not.",
+      "resolution": "All sixty-three source rows are preserved. Forty-five exact matches are accepted and eighteen remain blocked for explicit taxonomy review."
+    },
+    {
+      "subject": "expired-and-continuing-exceptions",
+      "priorState": "The rule text includes dated Callery pear and common privet exceptions plus continuing reed-canary-grass feed, controlled activity, research, education, and cultivar exceptions.",
+      "currentEvidence": "The dated Callery pear and common privet exceptions expired before the 2026-08-01 review date, while the other exceptions remain part of the rule context.",
+      "resolution": "Exact rule membership establishes regulated state applicability. The retained caveat preserves the continuing exceptions and does not create an unrestricted occurrence claim."
+    },
+    {
+      "subject": "rule-membership-versus-occurrence",
+      "priorState": "Ohio designates the listed plants as invasive and restricts specified commerce and dissemination.",
+      "currentEvidence": "The rule contains no complete county occurrence survey or explicit negative evidence.",
+      "resolution": "Only state regulatory applicability is recorded. No county presence, absence, not-detected, or not-applicable claim is created."
+    }
+  ]
+}
