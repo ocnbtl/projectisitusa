@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260731-r14",
+  "recordedAt": "2026-08-01T02:07:23.817Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "baseSha": "d33a02b636202ceb30af29b02d8af85238e9eb9c",
+  "hardware": {
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalCores": 16,
+    "totalPhysicalMemoryMiB": 31900.92
+  },
+  "resources": {
+    "availablePhysicalMemoryMiB": 7662.77,
+    "availablePhysicalMemoryPercent": 24.02,
+    "commitLimitMiB": 51356.92,
+    "commitAvailableMiB": 10278.03,
+    "pageFileAllocatedMiB": 19456,
+    "pageFileCurrentUsageMiB": 1170,
+    "pageFilePeakUsageMiB": 5556,
+    "pageFileUsagePercent": 6.0142,
+    "maximumObservedPageWritesPerSecond": 0,
+    "diskTotalGiB": 1861.98,
+    "diskFreeGiB": 1054.56,
+    "diskFreePercent": 56.64,
+    "passiveDiskBytesPerSecondSamples": [
+      3865790.3659,
+      2229508.89,
+      1552607.1767
+    ],
+    "cpuUtilizationPercentSamples": [
+      20.6806,
+      24.8585,
+      21.4846
+    ],
+    "syntheticDiskBenchmarkRun": false,
+    "absoluteDiskStopFloorGiB": 20,
+    "minimumDiskHeadroomPercent": 15,
+    "heavyWorkerPhysicalMemoryFloorMiB": 3072
+  },
+  "runtime": {
+    "projectGateNodeVersion": "v22.23.2",
+    "projectGateNpmVersion": "10.9.8",
+    "defaultShellNodeVersion": "v24.18.1",
+    "defaultShellNpmVersion": "11.16.0",
+    "gitVersion": "2.53.0.windows.3",
+    "nodeProcessLimit": "no explicit operating-system limit detected",
+    "gitProcessLimit": "no explicit operating-system limit detected",
+    "availableWorkerAgentSlots": 3,
+    "restrictedRunnerObservation": "The restricted runner can report uv_os_get_passwd ENOMEM despite more than 7 GiB available. Capacity and project gates use the real Windows account with Node 22."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "probeCount": 3,
+    "http200": 3,
+    "http429": 0,
+    "latencyMilliseconds": [348, 117, 112],
+    "status": "available",
+    "throttlingObserved": false
+  },
+  "productionBaseline": {
+    "localHead": "d33a02b636202ceb30af29b02d8af85238e9eb9c",
+    "originMain": "d33a02b636202ceb30af29b02d8af85238e9eb9c",
+    "githubMain": "d33a02b636202ceb30af29b02d8af85238e9eb9c",
+    "githubDeploymentId": 5699679413,
+    "githubDeploymentState": "success",
+    "vercelDeploymentId": "dpl_BsSMfyqetnTWj9LFaYC285mwLLUq",
+    "vercelReadyState": "READY",
+    "liveRouteHttp200Count": 10,
+    "selectedGeneratedByteHashMatches": 5
+  },
+  "orchestrationBaseline": {
+    "jobs": 124,
+    "leases": 133,
+    "integrationQueueItems": 84,
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingOrAcceptedQueueItems": 0,
+    "registeredWorktrees": 9,
+    "mainWriterProcesses": 0,
+    "frozenSkillValidation": "pass",
+    "orchestrationValidation": "pass"
+  },
+  "schedulerDecision": {
+    "tier": "yellow",
+    "reason": "Available physical memory was 24.02 percent, just below the preferred 25 percent green target. Two 1536 MiB heavy reservations preserve more than the 3 GiB hard floor while MAIN remains responsive.",
+    "initialHeavyWorkers": 2,
+    "maximumHeavyWorkersBeforeRemeasurement": 2,
+    "sharedIntegrationConcurrency": 1,
+    "sharedCompilerBuildDeploymentConcurrency": 1,
+    "remeasureBeforeAndAfterEveryWave": true,
+    "userApplicationsMayBeStopped": false,
+    "resourceTriggeredReductionAtStart": true
+  },
+  "rankedPairResearch": {
+    "selectionBasis": "Incomplete applicable GBIF protocol cells with exact two-token catalog binomials, complete immutable-run pair deduplication, and expected net-new county pair movement.",
+    "activeCohortRemaining": [
+      {"stateCode": "AL", "screens": 8, "outcomes": 536},
+      {"stateCode": "AZ", "screens": 18, "outcomes": 267, "preventedCompletedPairs": 3},
+      {"stateCode": "AR", "screens": 1, "outcomes": 75},
+      {"stateCode": "AK", "screens": 0, "outcomes": 0}
+    ],
+    "highestYieldLaterJurisdictions": [
+      {"stateCode": "VA", "screens": 76, "outcomes": 10108},
+      {"stateCode": "TN", "screens": 75, "outcomes": 7125},
+      {"stateCode": "MI", "screens": 76, "outcomes": 6308},
+      {"stateCode": "MS", "screens": 75, "outcomes": 6150},
+      {"stateCode": "KY", "screens": 49, "outcomes": 5880},
+      {"stateCode": "NE", "screens": 63, "outcomes": 5859}
+    ],
+    "initialWave": ["AL", "VA"],
+    "initialWaveReason": "One lane reduces the active certification cohort gap and one lane maximizes expected net-new unique-pair movement without overlapping scope."
+  },
+  "contradictions": [
+    "The attached prompt's 326f983 checkpoint is superseded by d33a02b6.",
+    "The prior 745 MiB minimum available RAM did not recur; this audit measured 7662.77 MiB.",
+    "The prior report's 637 artifact reuses remain dated history and are not claimed for this new wave.",
+    "The default shell now resolves Node 24.18.1, but frozen skills and project gates remain pinned to Node 22.23.2."
+  ]
+}
