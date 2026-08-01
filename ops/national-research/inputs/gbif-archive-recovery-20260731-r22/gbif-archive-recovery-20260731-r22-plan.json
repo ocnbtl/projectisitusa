@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-archive-recovery-20260731-r22",
+  "sourceId": "gbif-preserved-specimens",
+  "createdAt": "2026-08-01T02:32:00.000Z",
+  "descriptor": {
+    "path": "ops/national-research/inputs/gbif-archive-recovery-20260731-r22/descriptor.json",
+    "sha256": "aeaa7152f17d79e738e62145bc9cb53afbe8ba9a39288cc8c3f73c2e918babf4"
+  },
+  "deduplication": {
+    "currentCompletePairCountBeforePlanning": 172281,
+    "preventedAlreadyCompletePairCount": 0
+  },
+  "totals": {
+    "archives": 2,
+    "selectedStateSpeciesScreenCount": 48,
+    "selectedPairCount": 6072,
+    "selectedProviderRequestCount": 99,
+    "selectedArtifactCount": 99,
+    "selectedArtifactBytes": 2094943
+  },
+  "archives": [
+    {
+      "archiveIndex": 1,
+      "archiveCommit": "ae59a978ff530362531dd8c3fea7254b894375a5",
+      "archiveRunId": "20260731T220624Z__gbif-preserved-specimens__3c2b8560c537",
+      "archiveReceiptStatus": "partial",
+      "stateCode": "KY",
+      "receiptSha256": "dbd87d108028197818ebbd0bebf7a0d88388be420facd20ef7adea0f1421f24b",
+      "outcomesSha256": "1c544c06b6ae100bda487b273fbf46abfb899428d7adc1ecb639d31b3539fce2",
+      "sourceVerificationSha256": "63a0a2375f1525a450582216aad7a3154d20a33cb05cd0ad959aa91a4d07f182",
+      "originalRequestedPairCount": 3000,
+      "originalCompletePairCount": 2880,
+      "originalIncompletePairCount": 120,
+      "preventedAlreadyCompletePairCount": 0,
+      "selectedPairCount": 2880,
+      "selectedStateSpeciesScreenCount": 24,
+      "selectedProviderRequestCount": 48,
+      "selectedArtifactCount": 48,
+      "selectedArtifactBytes": 670327,
+      "candidateFile": "gbif-archive-recovery-20260731-r22-ky-001.json",
+      "candidateSha256": "42875d1ea15cf5c332f2c2ed0bb22a92c714772c0a5fd8e59577883b1d9b15ba"
+    },
+    {
+      "archiveIndex": 2,
+      "archiveCommit": "1677c9767dee818f5d235e59a454e836965c033a",
+      "archiveRunId": "20260801T021034Z__gbif-preserved-specimens__659ca55e02ea",
+      "archiveReceiptStatus": "partial",
+      "stateCode": "VA",
+      "receiptSha256": "eaeeb49d6faf8c40e8edfc5a8801d69403b2c71ea13ed001a74f795ecd6b6e37",
+      "outcomesSha256": "a716ccf39f723055a3a9e72485182d8556264cb97a4aabcced1d165ee6218247",
+      "sourceVerificationSha256": "78327f8cebd20a848c68ebff29ba0e304e957fa704670b386ae9c5fa2cde47d4",
+      "originalRequestedPairCount": 3325,
+      "originalCompletePairCount": 3192,
+      "originalIncompletePairCount": 133,
+      "preventedAlreadyCompletePairCount": 0,
+      "selectedPairCount": 3192,
+      "selectedStateSpeciesScreenCount": 24,
+      "selectedProviderRequestCount": 51,
+      "selectedArtifactCount": 51,
+      "selectedArtifactBytes": 1424616,
+      "candidateFile": "gbif-archive-recovery-20260731-r22-va-002.json",
+      "candidateSha256": "908b12ffaa074a6f79ffa8221002c75f0ad10d10b811dc804e6bb9f3e0c7cff5"
+    }
+  ]
+}
