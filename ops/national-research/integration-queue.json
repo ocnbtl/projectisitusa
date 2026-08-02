@@ -13856,13 +13856,80 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r30-ga-001-1",
       "jobId": "gbif-bulk-20260802-r30-ga-001",
       "leaseId": "lease-gbif-bulk-20260802-r30-ga-001-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-08-02T20:51:55Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r30-ga-001__lease-gbif-bulk-20260802-r30-ga-001-1.json",
       "manifestHash": "38230720c73cf2e91bb40e9a4a5058fd9da96fe194902cacf484716fc8d80002",
       "manifestBytes": 89720,
       "workerCommit": "9b7cfe8c3ddde340f5059559f68aa624b222b794",
-      "workerBranchHead": "8d2175430d36326df95d41955a3ecd528845fa2b"
+      "workerBranchHead": "8d2175430d36326df95d41955a3ecd528845fa2b",
+      "reviewedAt": "2026-08-02T20:52:27Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 2226 ordered county outcomes, 623 accepted assertions and reviews, 105 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-agrostemma-githago-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-cardiospermum-halicacabum-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-cirsium-arvense-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-convolvulus-arvensis-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-cynodon-dactylon-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-cyperus-esculentus-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-cyperus-rotundus-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-elymus-repens-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-lolium-temulentum-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-rhaponticum-repens-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-rumex-acetosella-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-setaria-faberi-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-occurrences-sorghum-halepense-000000.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-agrostemma-githago.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-cardiospermum-halicacabum.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-cirsium-arvense.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-convolvulus-arvensis.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-cynodon-dactylon.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-cyperus-esculentus.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-cyperus-rotundus.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-elymus-repens.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-lolium-temulentum.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-rhaponticum-repens.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-rumex-acetosella.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-setaria-faberi.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/artifacts/gbif-species-match-sorghum-halepense.json.gz",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/assertions.ndjson",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/manifest.json",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/outcomes.ndjson",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/receipt.json",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/rejections.ndjson",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/reviews.ndjson",
+        "src/data/research/runs/20260802T203610Z__gbif-preserved-specimens__139079a94686/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 2226 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r30-ga-001-1.json",
+        "sha256": "6eb9ce2756b9186fde5d9dcb760d1d304a81cd05bc0c997b20e46261224faf6a",
+        "bytes": 6316
+      }
     }
   ]
 }
