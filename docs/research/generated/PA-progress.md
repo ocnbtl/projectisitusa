@@ -1,27 +1,27 @@
 # Pennsylvania Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `1446`
+- Verified present: `1680`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1891`
-- Not researched: `164431`
-- Determination coverage: `0.86%`
-- Research coverage: `1.99%`
-- Explicit outcome coverage: `1.9891%`
+- Researched unresolved: `3332`
+- Not researched: `162756`
+- Determination coverage: `1.00%`
+- Research coverage: `2.99%`
+- Explicit outcome coverage: `2.9875%`
 - Applicable protocol cells: `123`
-- Current complete protocol cells: `4`
-- Protocol completion: `13.82%`
-- Current protocol completion: `3.25%`
-- Evidence records: `1461`
-- Research runs: `7`
-- Rejection records: `57`
+- Current complete protocol cells: `29`
+- Protocol completion: `34.15%`
+- Current protocol completion: `23.58%`
+- Evidence records: `2631`
+- Research runs: `8`
+- Rejection records: `407`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 67 | 0 | 1 |
-| Chocolate Vine (`akebia-quinata`) | plants | 67 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 67 | 0 | 1 |
-| Wild chervil (`anthriscus-sylvestris`) | plants | 67 | 0 | 1 |
-| Japanese angelica tree (`aralia-elata`) | plants | 67 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 67 | 0 | 1 |
-| Mugwort (`artemisia-vulgaris`) | plants | 67 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 67 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 67 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 67 | 0 | 1 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 67 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 67 | 0 | 1 |
-| Poison Hemlock (`conium-maculatum`) | plants | 67 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 67 | 0 | 1 |
-| Brazilian Waterweed (`egeria-densa`) | plants | 67 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 67 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 67 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 67 | 0 | 1 |
-| Winged Burning Bush (`euonymus-alatus`) | plants | 67 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 67 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 67 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 67 | 0 | 1 |
-| Japanese Hop (`humulus-japonicus`) | plants | 67 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 67 | 0 | 1 |
-| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 67 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 67 | 0 | 1 |
+| Cogongrass (`imperata-cylindrica`) | plants | 67 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 67 | 0 | 1 |
+| Japanese Privet (`ligustrum-japonicum`) | plants | 67 | 0 | 1 |
+| Border Privet (`ligustrum-obtusifolium`) | plants | 67 | 0 | 1 |
+| Chinese Privet (`ligustrum-sinense`) | plants | 67 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 67 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 67 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 67 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 67 | 0 | 1 |
+| Parrot Feather (`myriophyllum-aquaticum`) | plants | 67 | 0 | 1 |
+| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 67 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 67 | 0 | 1 |
+| Starry Stonewort (`nitellopsis-obtusa`) | plants | 67 | 0 | 1 |
+| Yellow Floating Heart (`nymphoides-peltata`) | plants | 67 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 67 | 0 | 1 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 67 | 0 | 1 |
+| Wild Parsnip (`pastinaca-sativa`) | plants | 67 | 0 | 1 |
+| Mile-a-Minute Vine (`persicaria-perfoliata`) | plants | 67 | 0 | 1 |
+| Callery Pear (`pyrus-calleryana`) | plants | 67 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 67 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 67 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 67 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 67 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 67 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-08-02T21:09:02.549Z | 234 | 25 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

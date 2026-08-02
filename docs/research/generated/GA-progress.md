@@ -1,27 +1,27 @@
 # Georgia Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `2204`
+- Verified present: `2462`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `11470`
-- Not researched: `384462`
-- Determination coverage: `0.55%`
-- Research coverage: `3.43%`
-- Explicit outcome coverage: `3.4345%`
+- Researched unresolved: `13279`
+- Not researched: `382395`
+- Determination coverage: `0.62%`
+- Research coverage: `3.95%`
+- Explicit outcome coverage: `3.9537%`
 - Applicable protocol cells: `108`
-- Current complete protocol cells: `79`
-- Protocol completion: `85.19%`
-- Current protocol completion: `73.15%`
-- Evidence records: `4394`
-- Research runs: `12`
-- Rejection records: `333`
+- Current complete protocol cells: `93`
+- Protocol completion: `98.15%`
+- Current protocol completion: `86.11%`
+- Evidence records: `5017`
+- Research runs: `13`
+- Rejection records: `438`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,21 +32,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Common corncockle (`agrostemma-githago`) | plants | 159 | 0 | 1 |
-| Balloon vine (`cardiospermum-halicacabum`) | plants | 159 | 0 | 1 |
-| Canada Thistle (`cirsium-arvense`) | plants | 159 | 0 | 1 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 159 | 0 | 1 |
-| Bermudagrass (`cynodon-dactylon`) | plants | 159 | 0 | 1 |
-| Yellow Nutsedge (`cyperus-esculentus`) | plants | 159 | 0 | 1 |
-| Purple Nutsedge (`cyperus-rotundus`) | plants | 159 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 159 | 0 | 1 |
-| Darnel ryegrass (`lolium-temulentum`) | plants | 159 | 0 | 1 |
-| Hardheads (`rhaponticum-repens`) | plants | 159 | 0 | 1 |
-| Common Sheep Sorrel (`rumex-acetosella`) | plants | 159 | 0 | 1 |
-| Giant Foxtail (`setaria-faberi`) | plants | 159 | 0 | 1 |
-| Johnsongrass (`sorghum-halepense`) | plants | 159 | 0 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 159 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 159 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 159 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 159 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 159 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 159 | 0 |
@@ -57,6 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 159 | 0 |
 | Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 159 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 159 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 159 | 0 |
+| Quackgrass (`elymus-repens`) | plants | 0 | 159 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 159 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 159 | 0 |
+| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 159 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 159 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 159 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 0 | 159 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 0 | 159 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 159 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 159 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 159 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-01T04:07:27.792Z | 866 | 74 |
+| GBIF preserved specimen records | operational | 2026-08-02T20:43:54.478Z | 1124 | 88 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

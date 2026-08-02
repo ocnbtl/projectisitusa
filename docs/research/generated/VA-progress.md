@@ -1,27 +1,27 @@
 # Virginia Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `133`
 - County-species pairs: `333032`
-- Verified present: `1789`
+- Verified present: `1923`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `8585`
-- Not researched: `322658`
-- Determination coverage: `0.54%`
-- Research coverage: `3.12%`
-- Explicit outcome coverage: `3.1150%`
+- Researched unresolved: `9515`
+- Not researched: `321594`
+- Determination coverage: `0.58%`
+- Research coverage: `3.43%`
+- Explicit outcome coverage: `3.4345%`
 - Applicable protocol cells: `95`
-- Current complete protocol cells: `54`
-- Protocol completion: `70.53%`
-- Current protocol completion: `56.84%`
-- Evidence records: `4041`
-- Research runs: `9`
-- Rejection records: `1141`
+- Current complete protocol cells: `79`
+- Protocol completion: `96.84%`
+- Current protocol completion: `83.16%`
+- Evidence records: `4362`
+- Research runs: `10`
+- Rejection records: `1290`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,17 +32,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 133 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 133 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 133 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 133 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 133 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 133 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 133 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 133 | 0 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 133 | 2 |
-| Cogongrass (`imperata-cylindrica`) | plants | 0 | 133 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 0 | 133 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 133 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 133 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 133 | 0 |
@@ -57,6 +47,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 133 | 0 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 133 | 0 |
 | Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 133 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 133 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 0 | 133 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 0 | 133 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 133 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 133 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 133 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 133 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 133 | 0 |
+| Japanese Climbing Fern (`lygodium-japonicum`) | plants | 0 | 133 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 133 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-01T03:36:52.513Z | 797 | 49 |
+| GBIF preserved specimen records | operational | 2026-08-02T20:20:48.400Z | 936 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

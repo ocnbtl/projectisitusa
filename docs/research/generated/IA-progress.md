@@ -1,6 +1,6 @@
 # Iowa Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Verified present: `683`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6643`
-- Not researched: `240570`
+- Researched unresolved: `7732`
+- Not researched: `239481`
 - Determination coverage: `0.28%`
-- Research coverage: `2.96%`
-- Explicit outcome coverage: `2.9553%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `98`
-- Current complete protocol cells: `55`
-- Protocol completion: `69.39%`
-- Current protocol completion: `56.12%`
+- Current complete protocol cells: `74`
+- Protocol completion: `88.78%`
+- Current protocol completion: `75.51%`
 - Evidence records: `933`
-- Research runs: `9`
-- Rejection records: `91`
+- Research runs: `10`
+- Rejection records: `92`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -39,24 +39,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Black carp (`mylopharyngodon-piceus`) | wildlife | 99 | 0 | 1 |
 | Brittle Waternymph (`najas-minor`) | plants | 99 | 0 | 1 |
 | Round Goby (`neogobius-melanostomus`) | wildlife | 99 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 99 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 99 | 0 | 1 |
 | New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 99 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 99 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 99 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 99 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 99 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 99 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 99 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 99 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 99 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 99 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 99 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 99 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 99 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 99 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 99 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 99 | 2 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 99 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 99 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 99 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 99 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 99 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 99 | 1 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 99 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 99 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 99 | 1 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 99 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 99 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 99 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 99 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 99 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 99 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 99 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 99 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T21:56:28.323Z | 182 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-02T20:20:10.332Z | 182 | 69 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

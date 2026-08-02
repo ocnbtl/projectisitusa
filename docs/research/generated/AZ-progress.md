@@ -1,27 +1,27 @@
 # Arizona Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `142`
+- Verified present: `165`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1705`
-- Not researched: `35713`
-- Determination coverage: `0.38%`
-- Research coverage: `4.92%`
-- Explicit outcome coverage: `4.9175%`
+- Researched unresolved: `1755`
+- Not researched: `35640`
+- Determination coverage: `0.44%`
+- Research coverage: `5.11%`
+- Explicit outcome coverage: `5.1118%`
 - Applicable protocol cells: `87`
-- Current complete protocol cells: `55`
-- Protocol completion: `78.16%`
-- Current protocol completion: `63.22%`
-- Evidence records: `1383`
-- Research runs: `12`
-- Rejection records: `227`
+- Current complete protocol cells: `73`
+- Protocol completion: `98.85%`
+- Current protocol completion: `83.91%`
+- Evidence records: `1597`
+- Research runs: `13`
+- Rejection records: `282`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,23 +32,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 15 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 15 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 15 | 0 | 1 |
-| Pineapple Weed (`matricaria-discoidea`) | plants | 14 | 0 | 1 |
-| Yellow Sweetclover (`melilotus-officinalis`) | plants | 14 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 15 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 2 |
-| Tropical soda apple (`solanum-viarum`) | plants | 0 | 15 | 1 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 1 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 1 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 15 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 15 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 15 | 0 |
@@ -57,6 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 15 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 15 | 0 |
 | Common Burdock (`arctium-minus`) | plants | 0 | 15 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 15 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 15 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 15 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 15 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 15 | 0 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 15 | 0 |
+| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 15 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T13:01:25.852Z | 106 | 53 |
+| GBIF preserved specimen records | operational | 2026-08-02T20:18:31.609Z | 130 | 68 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "AZ",
-  "asOf": "2026-08-01",
-  "generatedAt": "2026-08-01T00:00:00.000Z",
+  "asOf": "2026-08-02",
+  "generatedAt": "2026-08-02T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
@@ -33,32 +33,32 @@
     "resolvablePairCount": 37560,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 142,
+    "verifiedPresent": 165,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 1705,
-    "notResearched": 35713,
-    "determinationCoveragePercent": 0.38,
-    "researchCoveragePercent": 4.92,
-    "explicitOutcomePairCount": 1847,
-    "explicitOutcomeCoveragePercent": 4.9175,
+    "researchedUnresolved": 1755,
+    "notResearched": 35640,
+    "determinationCoveragePercent": 0.44,
+    "researchCoveragePercent": 5.11,
+    "explicitOutcomePairCount": 1920,
+    "explicitOutcomeCoveragePercent": 5.1118,
     "conflictCount": 0,
-    "evidenceRecordCount": 1383,
+    "evidenceRecordCount": 1597,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 1383,
-    "rejectionRecordCount": 227,
-    "researchRunCount": 12,
+    "runEvidenceRecordCount": 1597,
+    "rejectionRecordCount": 282,
+    "researchRunCount": 13,
     "boundedAcquisition": {
       "speciesCount": 128,
       "totalPairs": 1920,
-      "verifiedPresent": 142,
+      "verifiedPresent": 165,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 1705,
-      "notResearched": 73,
-      "researchCoveragePercent": 96.2,
-      "explicitOutcomePairs": 1847,
-      "explicitOutcomeCoveragePercent": 96.1979
+      "researchedUnresolved": 1755,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 1920,
+      "explicitOutcomeCoveragePercent": 100
     }
   },
   "migrationCandidates": {
@@ -263,9 +263,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": "2026-07-31T13:01:25.852Z",
-      "evidencePairCount": 106,
-      "screenedSpeciesCount": 53
+      "lastRunAt": "2026-08-02T20:18:31.609Z",
+      "evidencePairCount": 130,
+      "screenedSpeciesCount": 68
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -375,36 +375,36 @@
     "totalCells": 384,
     "applicableCells": 87,
     "notApplicableCells": 297,
-    "completeCells": 68,
-    "incompleteCells": 18,
+    "completeCells": 86,
+    "incompleteCells": 0,
     "blockedCells": 1,
-    "currentCells": 55,
+    "currentCells": 73,
     "staleCells": 13,
-    "undatedCells": 19,
-    "applicableCompletionPercent": 78.16,
-    "currentCompletePercent": 63.22,
+    "undatedCells": 1,
+    "applicableCompletionPercent": 98.85,
+    "currentCompletePercent": 83.91,
     "regulatedAndHighApplicableCells": 35,
-    "regulatedAndHighCurrentCompleteCells": 31,
-    "regulatedAndHighCurrentCompletePercent": 88.57,
+    "regulatedAndHighCurrentCompleteCells": 35,
+    "regulatedAndHighCurrentCompletePercent": 100,
     "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
       {
         "category": "fungi-diseases",
         "applicableCells": 12,
-        "currentCompleteCells": 0,
-        "currentCompletePercent": 0
+        "currentCompleteCells": 6,
+        "currentCompletePercent": 50
       },
       {
         "category": "insects",
         "applicableCells": 14,
-        "currentCompleteCells": 2,
-        "currentCompletePercent": 14.29
+        "currentCompleteCells": 7,
+        "currentCompletePercent": 50
       },
       {
         "category": "plants",
         "applicableCells": 51,
-        "currentCompleteCells": 44,
-        "currentCompletePercent": 86.27
+        "currentCompleteCells": 51,
+        "currentCompletePercent": 100
       },
       {
         "category": "wildlife",
@@ -417,8 +417,8 @@
       {
         "priority": "regulated",
         "applicableCells": 35,
-        "currentCompleteCells": 31,
-        "currentCompletePercent": 88.57
+        "currentCompleteCells": 35,
+        "currentCompletePercent": 100
       },
       {
         "priority": "high",
@@ -429,22 +429,22 @@
       {
         "priority": "pilot",
         "applicableCells": 26,
-        "currentCompleteCells": 22,
-        "currentCompletePercent": 84.62
+        "currentCompleteCells": 25,
+        "currentCompletePercent": 96.15
       },
       {
         "priority": "baseline",
         "applicableCells": 26,
-        "currentCompleteCells": 2,
-        "currentCompletePercent": 7.69
+        "currentCompleteCells": 13,
+        "currentCompletePercent": 50
       }
     ],
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
         "applicableCells": 68,
-        "currentCompleteCells": 50,
-        "processed": false
+        "currentCompleteCells": 68,
+        "processed": true
       },
       {
         "sourceId": "usgs-nas",
@@ -456,66 +456,6 @@
   },
   "nextQueue": [
     {
-      "speciesId": "sparganium-erectum",
-      "commonName": "Simple-stem burr-reed",
-      "scientificName": "Sparganium erectum",
-      "category": "plants",
-      "notResearchedCountyCount": 15,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 15001
-    },
-    {
-      "speciesId": "tridax-procumbens",
-      "commonName": "Coatbuttons",
-      "scientificName": "Tridax procumbens",
-      "category": "plants",
-      "notResearchedCountyCount": 15,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 15001
-    },
-    {
-      "speciesId": "urochloa-panicoides",
-      "commonName": "Panic liverseed grass",
-      "scientificName": "Urochloa panicoides",
-      "category": "plants",
-      "notResearchedCountyCount": 15,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 15001
-    },
-    {
-      "speciesId": "matricaria-discoidea",
-      "commonName": "Pineapple Weed",
-      "scientificName": "Matricaria discoidea",
-      "category": "plants",
-      "notResearchedCountyCount": 14,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 14001
-    },
-    {
-      "speciesId": "melilotus-officinalis",
-      "commonName": "Yellow Sweetclover",
-      "scientificName": "Melilotus officinalis",
-      "category": "plants",
-      "notResearchedCountyCount": 14,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 14001
-    },
-    {
       "speciesId": "emerald-ash-borer",
       "commonName": "Emerald Ash Borer",
       "scientificName": "Agrilus planipennis",
@@ -523,10 +463,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "aspidiotus-duplex",
@@ -536,10 +475,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "cryphonectria-parasitica",
@@ -549,10 +487,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "discula-destructiva",
@@ -562,10 +499,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "dryocosmus-kuriphilus",
@@ -575,10 +511,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "homadaula-albizziae",
@@ -588,10 +523,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
@@ -601,10 +535,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "ophiostoma-ulmi",
@@ -614,10 +547,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "phytophthora-cinnamomi",
@@ -627,23 +559,9 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
       ],
-      "priorityScore": 152
-    },
-    {
-      "speciesId": "popillia-japonica",
-      "commonName": "Japanese Beetle",
-      "scientificName": "Popillia japonica",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 15,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 152
+      "priorityScore": 151
     },
     {
       "speciesId": "raffaelea-lauricola",
@@ -653,20 +571,7 @@
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
       "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
         "usfs-afpe"
-      ],
-      "priorityScore": 152
-    },
-    {
-      "speciesId": "solanum-viarum",
-      "commonName": "Tropical soda apple",
-      "scientificName": "Solanum viarum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 15,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
       ],
       "priorityScore": 151
     },
@@ -1461,9 +1366,29 @@
       "priorityScore": 150
     },
     {
+      "speciesId": "solanum-viarum",
+      "commonName": "Tropical soda apple",
+      "scientificName": "Solanum viarum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 15,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 150
+    },
+    {
       "speciesId": "sorghum-halepense",
       "commonName": "Johnsongrass",
       "scientificName": "Sorghum halepense",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 15,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 150
+    },
+    {
+      "speciesId": "sparganium-erectum",
+      "commonName": "Simple-stem burr-reed",
+      "scientificName": "Sparganium erectum",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,
@@ -1494,6 +1419,56 @@
       "speciesId": "trapa-natans",
       "commonName": "Water Chestnut",
       "scientificName": "Trapa natans",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 15,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 150
+    },
+    {
+      "speciesId": "tridax-procumbens",
+      "commonName": "Coatbuttons",
+      "scientificName": "Tridax procumbens",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 15,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 150
+    },
+    {
+      "speciesId": "trifolium-arvense",
+      "commonName": "Rabbitfoot Clover",
+      "scientificName": "Trifolium arvense",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 15,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 150
+    },
+    {
+      "speciesId": "ulmus-pumila",
+      "commonName": "Siberian Elm",
+      "scientificName": "Ulmus pumila",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 15,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 150
+    },
+    {
+      "speciesId": "ventenata-dubia",
+      "commonName": "North Africa grass",
+      "scientificName": "Ventenata dubia",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 15,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 150
+    },
+    {
+      "speciesId": "zygophyllum-fabago",
+      "commonName": "Syrian beancaper",
+      "scientificName": "Zygophyllum fabago",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 15,

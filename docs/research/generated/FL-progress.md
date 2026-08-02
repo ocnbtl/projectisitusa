@@ -1,27 +1,27 @@
 # Florida Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `1431`
+- Verified present: `1777`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4800`
-- Not researched: `161537`
-- Determination coverage: `0.85%`
-- Research coverage: `3.71%`
-- Explicit outcome coverage: `3.7141%`
+- Researched unresolved: `5861`
+- Not researched: `160130`
+- Determination coverage: `1.06%`
+- Research coverage: `4.55%`
+- Explicit outcome coverage: `4.5527%`
 - Applicable protocol cells: `121`
-- Current complete protocol cells: `78`
-- Protocol completion: `75.21%`
-- Current protocol completion: `64.46%`
-- Evidence records: `10410`
-- Research runs: `9`
-- Rejection records: `3421`
+- Current complete protocol cells: `103`
+- Protocol completion: `95.87%`
+- Current protocol completion: `85.12%`
+- Evidence records: `11991`
+- Research runs: `10`
+- Rejection records: `4468`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Alligatorweed (`alternanthera-philoxeroides`) | plants | 67 | 0 | 1 |
-| Shoebutton (`ardisia-elliptica`) | plants | 67 | 0 | 1 |
-| River sheoak (`casuarina-cunninghamiana`) | plants | 67 | 0 | 1 |
-| Beach sheoak (`casuarina-equisetifolia`) | plants | 67 | 0 | 1 |
-| Gray sheoak (`casuarina-glauca`) | plants | 67 | 0 | 1 |
-| Asian nakedwood (`colubrina-asiatica`) | plants | 67 | 0 | 1 |
-| Water yam (`dioscorea-alata`) | plants | 67 | 0 | 1 |
-| Air yam (`dioscorea-bulbifera`) | plants | 67 | 0 | 1 |
-| Catclaw vine (`dolichandra-unguis-cati`) | plants | 67 | 0 | 1 |
-| Littlebell (`ipomoea-triloba`) | plants | 67 | 0 | 1 |
-| Chinese Privet (`ligustrum-sinense`) | plants | 67 | 0 | 1 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 67 | 0 | 1 |
-| Black mimosa (`mimosa-pigra`) | plants | 67 | 0 | 1 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 67 | 0 | 1 |
-| Silkreed (`neyraudia-reynaudiana`) | plants | 67 | 0 | 1 |
-| Yellow Floating Heart (`nymphoides-peltata`) | plants | 67 | 0 | 1 |
-| Sewer vine (`paederia-cruddasiana`) | plants | 67 | 0 | 1 |
-| Kudzu (`pueraria-montana`) | plants | 67 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 67 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 67 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 67 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 67 | 2 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 67 | 2 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 67 | 2 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 67 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 67 | 2 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 67 | 1 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 67 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
+| Chocolate Vine (`akebia-quinata`) | plants | 0 | 67 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 67 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 67 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 67 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 67 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 67 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 67 | 0 |
+| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 67 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 67 | 0 |
+| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 67 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 67 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 0 | 67 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 67 | 0 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 67 | 0 |
+| Rose natal grass (`melinis-repens`) | plants | 0 | 67 | 0 |
+| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T12:19:49.884Z | 1069 | 73 |
+| GBIF preserved specimen records | operational | 2026-08-02T20:46:06.791Z | 1415 | 98 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

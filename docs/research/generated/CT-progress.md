@@ -1,6 +1,6 @@
 # Connecticut Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `378`
-- Not researched: `22158`
+- Researched unresolved: `603`
+- Not researched: `21933`
 - Determination coverage: `0.00%`
-- Research coverage: `1.68%`
-- Explicit outcome coverage: `1.6773%`
+- Research coverage: `2.68%`
+- Explicit outcome coverage: `2.6757%`
 - Applicable protocol cells: `123`
-- Current complete protocol cells: `26`
-- Protocol completion: `21.14%`
-- Current protocol completion: `21.14%`
+- Current complete protocol cells: `51`
+- Protocol completion: `41.46%`
+- Current protocol completion: `41.46%`
 - Evidence records: `0`
-- Research runs: `6`
-- Rejection records: `2246`
+- Research runs: `7`
+- Rejection records: `3388`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 2 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 9 | 0 | 1 |
-| Crested latesummer mint (`elsholtzia-ciliata`) | plants | 9 | 0 | 1 |
-| Quackgrass (`elymus-repens`) | plants | 9 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 9 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 9 | 0 | 1 |
-| Cypress Spurge (`euphorbia-cyparissias`) | plants | 9 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 9 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 9 | 0 | 1 |
-| Ground Ivy (`glechoma-hederacea`) | plants | 9 | 0 | 1 |
-| Reed mannagrass (`glyceria-maxima`) | plants | 9 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 9 | 0 | 1 |
-| Japanese Hop (`humulus-japonicus`) | plants | 9 | 0 | 1 |
+| Garden yellow loosestrife (`lysimachia-vulgaris`) | plants | 9 | 0 | 1 |
+| European waterclover (`marsilea-quadrifolia`) | plants | 9 | 0 | 1 |
+| Japanese Stiltgrass (`microstegium-vimineum`) | plants | 9 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 9 | 0 | 1 |
+| True forget-me-not (`myosotis-scorpioides`) | plants | 9 | 0 | 1 |
+| Parrot Feather (`myriophyllum-aquaticum`) | plants | 9 | 0 | 1 |
+| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 9 | 0 | 1 |
+| Brittle Waternymph (`najas-minor`) | plants | 9 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 9 | 0 | 1 |
+| Yellow Floating Heart (`nymphoides-peltata`) | plants | 9 | 0 | 1 |
+| Scotch Thistle (`onopordum-acanthium`) | plants | 9 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T14:47:08.181Z | 0 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-02T20:51:23.120Z | 0 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

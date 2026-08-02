@@ -1,6 +1,6 @@
 # Minnesota Research Progress
 
-Generated: `2026-08-01T00:00:00.000Z`
+Generated: `2026-08-02T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-01T00:00:00.000Z`
 - Verified present: `949`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5576`
-- Not researched: `211323`
+- Researched unresolved: `6272`
+- Not researched: `210627`
 - Determination coverage: `0.44%`
-- Research coverage: `3.00%`
-- Explicit outcome coverage: `2.9952%`
+- Research coverage: `3.31%`
+- Explicit outcome coverage: `3.3147%`
 - Applicable protocol cells: `87`
-- Current complete protocol cells: `55`
-- Protocol completion: `78.16%`
-- Current protocol completion: `63.22%`
+- Current complete protocol cells: `72`
+- Protocol completion: `97.70%`
+- Current protocol completion: `82.76%`
 - Evidence records: `2446`
-- Research runs: `9`
-- Rejection records: `548`
+- Research runs: `10`
+- Rejection records: `549`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,23 +32,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 87 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 87 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 87 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 87 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 87 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 87 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 87 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 87 | 0 | 1 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 87 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 87 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 87 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 87 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 87 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 87 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 87 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 87 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 87 | 2 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 87 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 87 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 87 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 87 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 87 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 87 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 87 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 87 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 87 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 87 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 87 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 87 | 0 |
@@ -57,6 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 87 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 87 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 87 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 87 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 87 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 87 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 87 | 0 |
+| Autumn Olive (`elaeagnus-umbellata`) | plants | 0 | 87 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 87 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 87 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 0 | 87 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T22:01:44.779Z | 682 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-02T20:37:30.234Z | 682 | 67 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
