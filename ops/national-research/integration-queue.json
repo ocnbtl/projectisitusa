@@ -14247,7 +14247,7 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r31-ny-001-1",
       "jobId": "gbif-bulk-20260802-r31-ny-001",
       "leaseId": "lease-gbif-bulk-20260802-r31-ny-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-02T21:13:47Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r31-ny-001__lease-gbif-bulk-20260802-r31-ny-001-1.json",
       "manifestHash": "bf913d3d637d6cae9a21cb6d32aad7e962821c9f635e083ade2fdedb0af75dd5",
@@ -14342,6 +14342,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r31-ny-001-1.json",
         "sha256": "62846f0911fa1a747cca9a3876863e2b8d33244cff7f4048ccc65fc148ee6c52",
         "bytes": 9519
+      },
+      "integratedAt": "2026-08-02T21:15:43Z",
+      "integrator": "MAIN",
+      "integrationCommit": "527efd0a836b46824422e8be283034ca5ac89246",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 1550 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 1550 complete county outcomes, 14 accepted assertions and reviews, 27 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260802-r31-ny-001-1.json",
+        "sha256": "d4585e95d9393d8eea84319b009e4ac215fb9797d5a612eb2eec09754ecd2b70",
+        "bytes": 9688
       }
     }
   ]
