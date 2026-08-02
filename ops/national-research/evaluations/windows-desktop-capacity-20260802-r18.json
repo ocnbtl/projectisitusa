@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260802-r18",
+  "recordedAt": "2026-08-02T20:08:48.5459797Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "productionBaselineSha": "b8f81ffbf6ba11e8450747c0eebbbccfbb59f761",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalCores": 16,
+    "totalPhysicalMemoryMiB": 31900.92
+  },
+  "resources": {
+    "availablePhysicalMemoryMiB": 13559.72,
+    "availablePhysicalMemoryPercent": 42.51,
+    "committedMiB": 27419.45,
+    "commitLimitMiB": 51356.92,
+    "commitChargePercent": 53,
+    "pageReadsPerSecond": 11,
+    "pageWritesPerSecond": 0,
+    "pageFileAllocatedMiB": 19456,
+    "pageFileCurrentUsageMiB": 348,
+    "pageFilePeakUsageMiB": 9500,
+    "diskTotalGiB": 1861.98,
+    "diskFreeGiB": 1006.37,
+    "diskFreePercent": 54.05,
+    "heavyWorkerPhysicalMemoryFloorMiB": 3072,
+    "preferredGreenAvailableMemoryPercent": 25,
+    "absoluteDiskStopFloorGiB": 20,
+    "minimumDiskHeadroomPercent": 15,
+    "capacityTier": "green"
+  },
+  "runtime": {
+    "systemNode": "v24.18.1",
+    "systemNpm": "11.16.0",
+    "git": "2.53.0.windows.3",
+    "nodeProcessLimit": "no explicit operating-system limit detected",
+    "gitProcessLimit": "no explicit operating-system limit detected",
+    "activeProjectWriterProcesses": 0,
+    "registeredWorktreeCount": 24
+  },
+  "frozenSkills": {
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "freezeCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorContentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerContentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "validation": "pass"
+  },
+  "orchestration": {
+    "jobs": 142,
+    "leases": 150,
+    "integrationQueueItems": 97,
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrationItems": 0,
+    "validation": "pass"
+  },
+  "provider": {
+    "gbifAvailability": "not-yet-probed-this-round",
+    "githubMainSha": "b8f81ffbf6ba11e8450747c0eebbbccfbb59f761",
+    "vercelDeploymentId": "dpl_D5PE3EBNSnUzG1vbXHuZJiupjZtV",
+    "vercelState": "READY"
+  },
+  "scheduler": {
+    "initialTier": "green",
+    "predictedAcquisitionWorkerReservationMiB": 1536,
+    "safeAcquisitionWorkersByCurrentRam": 6,
+    "availableAgentWorkerSlots": 3,
+    "initialDispatchedAcquisitionWorkers": 3,
+    "sharedIntegrationConcurrency": 1,
+    "sharedCompilerConcurrency": 1,
+    "sharedBuildConcurrency": 1,
+    "sharedDeploymentConcurrency": 1,
+    "qualification": "Three worker-agent slots are available alongside MAIN. Their combined 4608 MiB declared reservation preserves more than the 3 GiB hard floor and the preferred 25 percent RAM headroom from this sample."
+  },
+  "contradictions": [
+    "The reusable prompt names 326f983 as its first-use checkpoint, but canonical and production truth already advanced to b8f81ff before this round.",
+    "The prior release receipt records browser QA on 39af2b96 and exact non-browser live verification for later data-only commits. Fresh browser QA remains required after the next data release.",
+    "The dated 19 retryable provider failures are closed. Twelve screens across eight unique taxonomy ambiguities remain catalog-policy review and must not be re-queried as provider failures.",
+    "The prior round observed memory below the 3 GiB floor during centralized checks. This fresh starting sample is green, but concurrency must still be reduced if telemetry degrades."
+  ]
+}
