@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260802-r30",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AR",
+  "asOf": "2026-08-01",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 25,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "5d1e8bb018af0eba8c33612a4514995ec96f34bf709e9a4b34e0a4e19cf59a80",
+    "protocolCells": "09f90b6ffd07757fce6f44426a0c18cdc07d70c68695550fb1fa6fddb566de00",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "ce9a67ad21eb773957fd0f70429d700f0c12bda45deae63d86002c2ecb94636b"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 75,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 6075,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 1
+  },
+  "availableStateSpeciesScreenCount": 0,
+  "selectedStateSpeciesScreenCount": 0,
+  "selectedCountyOutcomeCount": 0,
+  "expectedNetNewPairCount": 0,
+  "countyCount": 75,
+  "selected": [],
+  "batches": [],
+  "candidateFiles": []
+}

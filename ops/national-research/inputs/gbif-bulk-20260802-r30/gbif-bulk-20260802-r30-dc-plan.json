@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260802-r30",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "DC",
+  "asOf": "2026-08-01",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 25,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "36df9cc43588b64bdd44c815c33f9db7a736ed321b5b7847d252bc8b067ebeb1",
+    "protocolCells": "4a2837ef1fc7c720b37a9dd8458093d23e2b5ebcb8c6e6fea1b1ff37dc970e3b",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "a495861c0804e29f0b86d6cf5aad925e335dd72bf4fc97a06bef9a3d5154ce28"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 1,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 0,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0
+  },
+  "availableStateSpeciesScreenCount": 67,
+  "selectedStateSpeciesScreenCount": 25,
+  "selectedCountyOutcomeCount": 25,
+  "expectedNetNewPairCount": 25,
+  "countyCount": 1,
+  "selected": [
+    {
+      "stateCode": "DC",
+      "speciesId": "ageratina-adenophora",
+      "scientificName": "Ageratina adenophora",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "alternanthera-sessilis",
+      "scientificName": "Alternanthera sessilis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "arctotheca-calendula",
+      "scientificName": "Arctotheca calendula",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "asphodelus-fistulosus",
+      "scientificName": "Asphodelus fistulosus",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "avena-sterilis",
+      "scientificName": "Avena sterilis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "azolla-pinnata",
+      "scientificName": "Azolla pinnata",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "commelina-benghalensis",
+      "scientificName": "Commelina benghalensis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "crupina-vulgaris",
+      "scientificName": "Crupina vulgaris",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "eichhornia-azurea",
+      "scientificName": "Eichhornia azurea",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "emex-australis",
+      "scientificName": "Emex australis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "emex-spinosa",
+      "scientificName": "Emex spinosa",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "euphorbia-terracina",
+      "scientificName": "Euphorbia terracina",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "galega-officinalis",
+      "scientificName": "Galega officinalis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "giant-hogweed",
+      "scientificName": "Heracleum mantegazzianum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "hydrilla",
+      "scientificName": "Hydrilla verticillata",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "hygrophila-polysperma",
+      "scientificName": "Hygrophila polysperma",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "imperata-cylindrica",
+      "scientificName": "Imperata cylindrica",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "ipomoea-aquatica",
+      "scientificName": "Ipomoea aquatica",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "limnophila-sessiliflora",
+      "scientificName": "Limnophila sessiliflora",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "lycium-ferocissimum",
+      "scientificName": "Lycium ferocissimum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "lygodium-microphyllum",
+      "scientificName": "Lygodium microphyllum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "melaleuca-quinquenervia",
+      "scientificName": "Melaleuca quinquenervia",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "mikania-micrantha",
+      "scientificName": "Mikania micrantha",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "nassella-trichotoma",
+      "scientificName": "Nassella trichotoma",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "onopordum-illyricum",
+      "scientificName": "Onopordum illyricum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-bulk-20260802-r30-dc-001",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "ageratina-adenophora",
+        "alternanthera-sessilis",
+        "arctotheca-calendula",
+        "asphodelus-fistulosus",
+        "avena-sterilis",
+        "azolla-pinnata",
+        "commelina-benghalensis",
+        "crupina-vulgaris",
+        "eichhornia-azurea",
+        "emex-australis",
+        "emex-spinosa",
+        "euphorbia-terracina",
+        "galega-officinalis",
+        "giant-hogweed",
+        "hydrilla",
+        "hygrophila-polysperma",
+        "imperata-cylindrica",
+        "ipomoea-aquatica",
+        "limnophila-sessiliflora",
+        "lycium-ferocissimum",
+        "lygodium-microphyllum",
+        "melaleuca-quinquenervia",
+        "mikania-micrantha",
+        "nassella-trichotoma",
+        "onopordum-illyricum"
+      ],
+      "stateSpeciesScreenCount": 25,
+      "countyOutcomeCount": 25,
+      "candidateFile": "gbif-bulk-20260802-r30-dc-001.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-bulk-20260802-r30-dc-001",
+      "path": "ops/national-research/inputs/gbif-bulk-20260802-r30/gbif-bulk-20260802-r30-dc-001.json",
+      "sha256": "7924d86d54231b10430b780e0bf74f7156de60e47c99a5d8cc7e793fef2a4158",
+      "bytes": 3395
+    }
+  ]
+}

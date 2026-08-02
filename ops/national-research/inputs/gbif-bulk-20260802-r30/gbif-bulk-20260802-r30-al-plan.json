@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260802-r30",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AL",
+  "asOf": "2026-08-01",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 25,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716",
+    "protocolCells": "c9579c3c9e67b0b8d6347f8a75d90584c130deebefe259402f091bd867599c6c",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "12becc2b00c85a2c295bbd54d7c66166c4e4ac53d3414c1b4cd3cfc0056df8ed"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 67,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 66397,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 8
+  },
+  "availableStateSpeciesScreenCount": 0,
+  "selectedStateSpeciesScreenCount": 0,
+  "selectedCountyOutcomeCount": 0,
+  "expectedNetNewPairCount": 0,
+  "countyCount": 67,
+  "selected": [],
+  "batches": [],
+  "candidateFiles": []
+}

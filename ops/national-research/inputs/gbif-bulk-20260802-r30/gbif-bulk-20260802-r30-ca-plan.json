@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260802-r30",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CA",
+  "asOf": "2026-08-01",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 25,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "563ec7b3d0dc9f5c1266fe9f5908aedf19acd5cffde440f120f70057880d5aaa",
+    "protocolCells": "51f45ffb796c509bf2d296f16c5b3d5147472bfb038013ca880f979a124455ec",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "1c87e597d6523571e762c107a5bbedb062d3e647c8cd925a43c5e9cb07a7878c"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 58,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 7482,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0
+  },
+  "availableStateSpeciesScreenCount": 0,
+  "selectedStateSpeciesScreenCount": 0,
+  "selectedCountyOutcomeCount": 0,
+  "expectedNetNewPairCount": 0,
+  "countyCount": 58,
+  "selected": [],
+  "batches": [],
+  "candidateFiles": []
+}
