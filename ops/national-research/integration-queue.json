@@ -15971,7 +15971,7 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r33-ms-001-1",
       "jobId": "gbif-bulk-20260802-r33-ms-001",
       "leaseId": "lease-gbif-bulk-20260802-r33-ms-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-03T00:51:45.588Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r33-ms-001__lease-gbif-bulk-20260802-r33-ms-001-1.json",
       "manifestHash": "53aeb4a0da519cc2c1297ef569e4ae4d8f194f7e22497aaa87a50ea7e006ae6e",
@@ -16066,6 +16066,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r33-ms-001-1.json",
         "sha256": "cf06239c367c87dd516c75bc3b442a534d008a57a08e742a06b4a3cd8313b83d",
         "bytes": 9657
+      },
+      "integratedAt": "2026-08-03T00:52:52.499Z",
+      "integrator": "MAIN",
+      "integrationCommit": "feadbd51d74dd1441fb19089fc847d2ba214ef65",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Mississippi GBIF round 33 batch 1 on canonical main",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 2,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN transactionally integrated the exact accepted Mississippi batch 1 worker content and manifest commits onto clean canonical main. Fresh path, tree-entry, whitespace, immutable-run, evidence-semantic, and manifest checks passed with zero conflicts or forbidden writes; two pre-dispatch MAIN setup retries remain disclosed and did not affect worker acquisition bytes.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260802-r33-ms-001-1.json",
+        "sha256": "a7bdd88f887eec0f83317b8d11241abe6fa19fab3335faae7a05d2768313cee4",
+        "bytes": 9727
       }
     }
   ]
