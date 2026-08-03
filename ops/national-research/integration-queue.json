@@ -16380,7 +16380,7 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r33-sd-002-1",
       "jobId": "gbif-bulk-20260802-r33-sd-002",
       "leaseId": "lease-gbif-bulk-20260802-r33-sd-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-03T01:15:33.449Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r33-sd-002__lease-gbif-bulk-20260802-r33-sd-002-1.json",
       "manifestHash": "42b21729a92a22cd3ece321e963f4fb8e026af9fe21f8182965abf600955010f",
@@ -16475,6 +16475,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r33-sd-002-1.json",
         "sha256": "83161716b626ec9b423af0b28c657f35ec243b8e12e854412712a57bd144e2f3",
         "bytes": 9682
+      },
+      "integratedAt": "2026-08-03T01:19:29.546Z",
+      "integrator": "MAIN",
+      "integrationCommit": "25a27957fdb8e4bd2d66a69445fbd81720f10cff",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for South Dakota GBIF round 33 batch 2",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the independently validated South Dakota GBIF batch as two immutable worker commits after acceptance; the integrated run preserves 25 complete screens, 1650 pair outcomes, 35 evidence-found pairs, 1615 researched-unresolved pairs, 137 assertions and reviews, 36 rejections, exact artifacts and hashes, and zero conflicts or semantic violations.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260802-r33-sd-002-1.json",
+        "sha256": "5a4fea9a919520fbc39bea4e7f1ecc7c0ee6c6d5546d101a883ae99415e54fc0",
+        "bytes": 9763
       }
     }
   ]
