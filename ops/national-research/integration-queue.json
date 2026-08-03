@@ -16243,7 +16243,7 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r33-sd-001-1",
       "jobId": "gbif-bulk-20260802-r33-sd-001",
       "leaseId": "lease-gbif-bulk-20260802-r33-sd-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-03T01:08:08.441Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r33-sd-001__lease-gbif-bulk-20260802-r33-sd-001-1.json",
       "manifestHash": "3be45171e8d57be2261a071a42c335d1f65dfda17d60c525ddfb2d6ed0e96580",
@@ -16338,6 +16338,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r33-sd-001-1.json",
         "sha256": "8f7bfdcdcf48d586e3980063d435fcb0276495456ffe984bb6db91de4acad237",
         "bytes": 9567
+      },
+      "integratedAt": "2026-08-03T01:09:23.100Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1637dd502e31a9f0b3b2500543370335eb0e052a",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for South Dakota GBIF round 33 batch 1 on canonical main",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN transactionally integrated the exact accepted South Dakota batch 1 worker content and manifest commits onto clean canonical main. Fresh path, tree-entry, whitespace, immutable-run, evidence-semantic, and manifest checks passed with zero conflicts, interventions, or forbidden writes.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260802-r33-sd-001-1.json",
+        "sha256": "834e9223fd7556a46b36400a705bd8d5299754ab0c8a29de9c0f9c075b4e762b",
+        "bytes": 9639
       }
     }
   ]
