@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "gbif-incomplete-screen-audit-20260803-r1",
+  "evaluatedAt": "2026-08-03T20:34:54.109Z",
+  "sourceId": "gbif-preserved-specimens",
+  "manifestInventory": {
+    "complete": 123,
+    "partial": 22,
+    "failed": 1,
+    "historicalNonComplete": 23
+  },
+  "historicalProviderFailures": {
+    "screenCountAtPriorCheckpoint": 19,
+    "currentEquivalentRetryCount": 0,
+    "disposition": "superseded-by-later-immutable-recovery-or-current-planner-dedup",
+    "reason": "The fresh all-jurisdiction round 34 and round 35 planners found no currently eligible equivalent retry for the 19 historical provider-failure screens. Their archived partial and failed manifests remain immutable historical truth; no artifact was overwritten or relabeled."
+  },
+  "taxonomyBlocked": {
+    "evaluationPath": "ops/national-research/evaluations/gbif-taxonomy-dispositions-20260803-r1.json",
+    "stateSpeciesScreens": 12,
+    "uniqueCatalogTaxa": 8,
+    "providerRetriesRequired": 0,
+    "repeatProviderCallsProhibited": true
+  },
+  "currentPlanning": {
+    "plans": [
+      "ops/national-research/inputs/gbif-bulk-20260803-r34/plan.json",
+      "ops/national-research/inputs/gbif-bulk-20260803-r35/plan.json"
+    ],
+    "round35Jurisdictions": 35,
+    "round35Batches": 73,
+    "round35StateSpeciesScreens": 1529,
+    "round35CountySpeciesOutcomes": 51878,
+    "round35ExpectedNetNewPairs": 24685
+  },
+  "operationalDecision": {
+    "equivalentReacquisitionsIssued": 0,
+    "selectedUnaffectedJobs": [
+      "gbif-bulk-20260803-r35-la-001",
+      "gbif-bulk-20260803-r35-mt-001"
+    ],
+    "nextAction": "Preserve the historical manifests, keep taxonomy exclusions blocked, and continue ranked round 35 acquisition only for planner-eligible unaffected screens."
+  }
+}

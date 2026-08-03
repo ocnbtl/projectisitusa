@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r25",
+  "recordedAt": "2026-08-03T20:34:54.109Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "externallyVerifiedBaseSha": "5ac2cfa597763785dd9c5f7eaf0e905b9414da76",
+  "resources": {
+    "physicalMemoryMiB": 31900.92,
+    "availablePhysicalMemoryMiB": 8026.38,
+    "availablePhysicalMemoryPercent": 25.16,
+    "commitChargeMiB": 38388.09,
+    "pagefileCurrentUsageMiB": 367,
+    "pagefilePeakUsageMiB": 9500,
+    "pagefileAllocatedMiB": 19456,
+    "diskAvailableGiB": 1013.03,
+    "diskTotalGiB": 1861.98,
+    "capacityTier": "yellow",
+    "oneAcquisitionWorkerGate": "pass",
+    "twoAcquisitionWorkerGate": "pass",
+    "threeAcquisitionWorkerGate": "fail",
+    "maximumAcquisitionWorkersAtCurrentCapacity": 2,
+    "oneWorkerRequiredAvailableMemoryBytes": 4418795520,
+    "oneWorkerProjectedAvailableMemoryBytes": 6707523584,
+    "twoWorkerRequiredAvailableMemoryBytes": 5492537344,
+    "twoWorkerProjectedAvailableMemoryBytes": 5621739520,
+    "threeWorkerProjectedAvailableMemoryBytes": 4559020032
+  },
+  "schedulerDecision": {
+    "dispatchedWorkers": 2,
+    "selectedJobs": [
+      "gbif-bulk-20260803-r35-la-001",
+      "gbif-bulk-20260803-r35-mt-001"
+    ],
+    "selectedStates": ["LA", "MT"],
+    "selectedStateSpeciesScreens": 50,
+    "selectedExpectedCountySpeciesOutcomes": 3000,
+    "reason": "The fresh authoritative gate permits exactly two bounded acquisition workers. Louisiana and Montana are the two highest-ranked eligible round 35 batches and have no overlap with taxonomy-blocked or current retry-excluded screens."
+  }
+}
