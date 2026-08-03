@@ -15697,7 +15697,7 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r33-ct-001-1",
       "jobId": "gbif-bulk-20260802-r33-ct-001",
       "leaseId": "lease-gbif-bulk-20260802-r33-ct-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-03T00:30:00Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r33-ct-001__lease-gbif-bulk-20260802-r33-ct-001-1.json",
       "manifestHash": "29765a1089065040ac2e247281edd514d4d283ba84e055af35e05a17442761fe",
@@ -15792,6 +15792,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r33-ct-001-1.json",
         "sha256": "4a9445b91c6f6c61e9d2652341e33150ccc2adbb01f76f8f38edc7a103b6a25d",
         "bytes": 9710
+      },
+      "integratedAt": "2026-08-03T00:34:30.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "264c7631b4913c0313434eba75e421b53018a137",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Connecticut GBIF round 33 batch 1 with 25 state-species screens and 225 ordered county outcomes",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact accepted Connecticut content and manifest commits without conflict. Canonical tree comparison confirmed 225 complete researched-unresolved outcomes, 1719 explicit geography rejections, zero unsupported negative determinations, and only lease-permitted output paths. One integration retry occurred after the clean-repository gate required the already accepted orchestration state to be committed.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260802-r33-ct-001-1.json",
+        "sha256": "67b729b3c5b47ce24c6b01b3b154270b3b1c243ae405f664eeceea47b74c36e5",
+        "bytes": 9853
       }
     }
   ]
