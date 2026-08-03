@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260802-r21",
+  "recordedAt": "2026-08-03T02:01:35.7861446Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedProductionCheckpointSha": "066a81feabfd603d43bdaec282109940025b1d46",
+  "integratedLocalHeadSha": "a402aaf652e588cec2ab0e871861b52002053762",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalCores": 16,
+    "totalPhysicalMemoryMiB": 31900.92
+  },
+  "resources": {
+    "roundStartAvailablePhysicalMemoryMiB": 10630.74,
+    "minimumObservedAvailablePhysicalMemoryMiB": 8673,
+    "postCompilationAvailablePhysicalMemoryMiB": 11103.52,
+    "postCompilationAvailablePhysicalMemoryPercent": 34.81,
+    "postCompilationCommitChargePercent": 69.19,
+    "postCompilationPageReadsPerSecond": 7,
+    "postCompilationPageWritesPerSecond": 0,
+    "postCompilationPageFileCurrentUsageMiB": 438,
+    "preBuildAvailablePhysicalMemoryMiB": 10970.27,
+    "preBuildAvailablePhysicalMemoryPercent": 34.39,
+    "preBuildCommitChargePercent": 69.23,
+    "postBuildAvailablePhysicalMemoryMiB": 10894.7,
+    "postBuildAvailablePhysicalMemoryPercent": 34.15,
+    "postBuildCommitChargePercent": 69.31,
+    "postBuildPageWritesPerSecond": 0,
+    "minimumObservedFreeDiskGiB": 1003.56,
+    "postCompilationFreeDiskGiB": 1021.04,
+    "postCompilationFreeDiskPercent": 54.84,
+    "maximumWorkerWorkingSetMiB": 1461,
+    "heavyWorkerPhysicalMemoryFloorMiB": 3072,
+    "timeObservedBelowHeavyWorkerFloorSeconds": 0,
+    "capacityTierAtRoundStart": "green",
+    "capacityTierBeforeFinalGeneration": "green"
+  },
+  "dispatch": {
+    "workerJobs": 8,
+    "workerLeases": 8,
+    "peakActiveLeases": 2,
+    "peakProvenConcurrentAcquisitionWorkers": 1,
+    "acceptedIntegrations": 8,
+    "rejectedIntegrations": 0,
+    "mergeConflicts": 0,
+    "failedJobs": 0,
+    "retriedFinalJobs": 1,
+    "manualInterventions": 2,
+    "workerWallSeconds": 230,
+    "qualification": "Two acquisition leases were active at the same time, but process-overlap evidence does not prove two simultaneous provider acquisitions. Peak proven acquisition concurrency is therefore reported conservatively as one."
+  },
+  "researchProgress": {
+    "states": ["CT", "MS", "PA", "SD"],
+    "stateSpeciesScreens": 199,
+    "grossCountySpeciesOutcomes": 11118,
+    "uniquePairsMovedOutOfNotResearched": 7761,
+    "verifiedPresentNetIncrease": 453,
+    "researchedUnresolvedNetIncrease": 7308,
+    "acceptedAssertionEvents": 6047,
+    "reviewEvents": 6047,
+    "rejectionRecords": 3335,
+    "providerCandidates": 9382,
+    "immutableRuns": 8,
+    "retainedArtifacts": 410,
+    "retainedArtifactBytes": 4121104,
+    "providerRequests": 410,
+    "duplicateRecords": 0,
+    "blockedOutcomes": 0,
+    "errors": 0,
+    "remainingApplicableProtocolCountyScreensNetReduction": 11118,
+    "netNewPairsPerWorkerHour": 121475.4783,
+    "netNewPairsPerRetainedProviderRequest": 18.9293,
+    "grossOutcomesPerWorkerHour": 174020.8696
+  },
+  "stateMovement": {
+    "CT": {
+      "stateSpeciesScreens": 50,
+      "grossOutcomes": 450,
+      "uniquePairsMovedOutOfNotResearched": 450,
+      "verifiedPresentNet": 0,
+      "researchedUnresolvedNet": 450
+    },
+    "MS": {
+      "stateSpeciesScreens": 49,
+      "grossOutcomes": 4018,
+      "uniquePairsMovedOutOfNotResearched": 2706,
+      "verifiedPresentNet": 95,
+      "researchedUnresolvedNet": 2611
+    },
+    "PA": {
+      "stateSpeciesScreens": 50,
+      "grossOutcomes": 3350,
+      "uniquePairsMovedOutOfNotResearched": 2291,
+      "verifiedPresentNet": 334,
+      "researchedUnresolvedNet": 1957
+    },
+    "SD": {
+      "stateSpeciesScreens": 50,
+      "grossOutcomes": 3300,
+      "uniquePairsMovedOutOfNotResearched": 2314,
+      "verifiedPresentNet": 24,
+      "researchedUnresolvedNet": 2290
+    }
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "retainedRequests": 410,
+    "http429": 0,
+    "providerThrottleEvents": 0,
+    "completePaginationFailures": 0,
+    "knownRetainedArtifactReuses": 0,
+    "knownPreventedDuplicateAcquisitions": 0,
+    "rateLimitModel": "dynamic-provider-load-no-guaranteed-request-rate"
+  },
+  "incompleteWork": {
+    "datedRetryableProviderFailuresRemaining": 0,
+    "taxonomyBlockedStateSpeciesScreens": 12,
+    "taxonomyBlockedUniqueCatalogTaxa": 8,
+    "providerRequestsPreventedForTaxonomyAmbiguities": 12
+  },
+  "contradictions": [
+    "The local date was 2026-08-02 America/New_York while the eight immutable runs were sealed on 2026-08-03 UTC. A first 2026-08-02 compile correctly excluded them and produced no research movement. MAIN detected the cutoff mismatch before commit and reran the canonical compiler with an explicit 2026-08-03 cutoff.",
+    "An intermediate aggregate report stated 9468 outcomes and 6184 assertions. The eight sealed manifests instead sum to 11118 outcomes and 6047 assertion and review events; generated national movement and the remaining-screen reduction independently agree with 11118 gross outcomes.",
+    "The Pennsylvania batch 2 command first omitted the candidate limit and produced an uncommitted disposable partial run. Its exact 31-file, 1470755-byte path was verified and removed before the corrected sealed run. Exact provider requests from that discarded attempt were not captured and are not inferred.",
+    "The Pennsylvania batch 2 validator initially returned ENOMEM inside the sandbox and then passed unchanged outside it. No validation defect was found, and both observations remain preserved in the review and integration receipts.",
+    "A first bare check:national-disk-budget invocation used its default dispatch operation with zero workers and was correctly rejected because dispatch requires at least one worker. The declared shared-heavy preflight was rerun with operation heavy and zero workers and passed in the green tier with 34.44 percent RAM available.",
+    "Gross completed outcomes exceeded net-new pair movement because some screened pairs were already researched. This round reports 11118 gross outcomes separately from 7761 pairs moved out of not researched."
+  ]
+}

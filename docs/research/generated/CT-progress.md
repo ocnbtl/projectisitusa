@@ -1,6 +1,6 @@
 # Connecticut Research Progress
 
-Generated: `2026-08-02T00:00:00.000Z`
+Generated: `2026-08-03T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-02T00:00:00.000Z`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `603`
-- Not researched: `21933`
+- Researched unresolved: `1053`
+- Not researched: `21483`
 - Determination coverage: `0.00%`
-- Research coverage: `2.68%`
-- Explicit outcome coverage: `2.6757%`
+- Research coverage: `4.67%`
+- Explicit outcome coverage: `4.6725%`
 - Applicable protocol cells: `123`
-- Current complete protocol cells: `51`
-- Protocol completion: `41.46%`
-- Current protocol completion: `41.46%`
+- Current complete protocol cells: `101`
+- Protocol completion: `82.11%`
+- Current protocol completion: `82.11%`
 - Evidence records: `0`
-- Research runs: `7`
-- Rejection records: `3388`
+- Research runs: `9`
+- Rejection records: `5894`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 9 | 0 | 2 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 9 | 0 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 9 | 0 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 9 | 0 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 9 | 0 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 9 | 0 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 9 | 0 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 9 | 0 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 9 | 0 | 2 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 9 | 0 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 9 | 0 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 2 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 9 | 0 | 1 |
-| Garden yellow loosestrife (`lysimachia-vulgaris`) | plants | 9 | 0 | 1 |
-| European waterclover (`marsilea-quadrifolia`) | plants | 9 | 0 | 1 |
-| Japanese Stiltgrass (`microstegium-vimineum`) | plants | 9 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 9 | 0 | 1 |
-| True forget-me-not (`myosotis-scorpioides`) | plants | 9 | 0 | 1 |
-| Parrot Feather (`myriophyllum-aquaticum`) | plants | 9 | 0 | 1 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 9 | 0 | 1 |
-| Brittle Waternymph (`najas-minor`) | plants | 9 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 9 | 0 | 1 |
-| Yellow Floating Heart (`nymphoides-peltata`) | plants | 9 | 0 | 1 |
-| Scotch Thistle (`onopordum-acanthium`) | plants | 9 | 0 | 1 |
+| Norway Maple (`acer-platanoides`) | plants | 9 | 0 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 9 | 0 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 9 | 0 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 9 | 0 | 0 |
+| European Privet (`ligustrum-vulgare`) | plants | 9 | 0 | 0 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 9 | 0 | 0 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 9 | 1 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 9 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 9 | 1 |
+| Brown bryozoan (`bugula-neritina`) | wildlife | 0 | 9 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 9 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 9 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 9 | 1 |
+| Dames rocket (`hesperis-matronalis`) | plants | 0 | 9 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 9 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 9 | 1 |
+| Amur Honeysuckle (`lonicera-maackii`) | plants | 0 | 9 | 1 |
+| Tatarian Honeysuckle (`lonicera-tatarica`) | plants | 0 | 9 | 1 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 9 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 9 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 9 | 1 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 9 | 1 |
+| Princess Tree (`paulownia-tomentosa`) | plants | 0 | 9 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-02T20:51:23.120Z | 0 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-03T00:38:55.686Z | 0 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

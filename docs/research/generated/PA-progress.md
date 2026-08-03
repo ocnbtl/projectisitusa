@@ -1,27 +1,27 @@
 # Pennsylvania Research Progress
 
-Generated: `2026-08-02T00:00:00.000Z`
+Generated: `2026-08-03T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `1680`
+- Verified present: `2014`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3332`
-- Not researched: `162756`
-- Determination coverage: `1.00%`
-- Research coverage: `2.99%`
-- Explicit outcome coverage: `2.9875%`
+- Researched unresolved: `5289`
+- Not researched: `160465`
+- Determination coverage: `1.20%`
+- Research coverage: `4.35%`
+- Explicit outcome coverage: `4.3530%`
 - Applicable protocol cells: `123`
-- Current complete protocol cells: `29`
-- Protocol completion: `34.15%`
-- Current protocol completion: `23.58%`
-- Evidence records: `2631`
-- Research runs: `8`
-- Rejection records: `407`
+- Current complete protocol cells: `79`
+- Protocol completion: `74.80%`
+- Current protocol completion: `64.23%`
+- Evidence records: `8285`
+- Research runs: `10`
+- Rejection records: `1027`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 67 | 0 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 67 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 67 | 0 | 1 |
-| Japanese Privet (`ligustrum-japonicum`) | plants | 67 | 0 | 1 |
-| Border Privet (`ligustrum-obtusifolium`) | plants | 67 | 0 | 1 |
-| Chinese Privet (`ligustrum-sinense`) | plants | 67 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 67 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 67 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 67 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 67 | 0 | 1 |
-| Parrot Feather (`myriophyllum-aquaticum`) | plants | 67 | 0 | 1 |
-| Eurasian Watermilfoil (`myriophyllum-spicatum`) | plants | 67 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 67 | 0 | 1 |
-| Starry Stonewort (`nitellopsis-obtusa`) | plants | 67 | 0 | 1 |
-| Yellow Floating Heart (`nymphoides-peltata`) | plants | 67 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 67 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 67 | 0 | 1 |
-| Wild Parsnip (`pastinaca-sativa`) | plants | 67 | 0 | 1 |
-| Mile-a-Minute Vine (`persicaria-perfoliata`) | plants | 67 | 0 | 1 |
-| Callery Pear (`pyrus-calleryana`) | plants | 67 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 67 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 67 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 67 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 67 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 67 | 0 | 1 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 67 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 67 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 67 | 2 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 67 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 67 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 67 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 67 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 67 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 67 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 67 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 67 | 0 |
+| Brazilian Waterweed (`egeria-densa`) | plants | 0 | 67 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 67 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 67 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 67 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 0 | 67 | 0 |
+| Japanese Hop (`humulus-japonicus`) | plants | 0 | 67 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 67 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 67 | 0 |
+| Japanese Privet (`ligustrum-japonicum`) | plants | 0 | 67 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 67 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-02T21:09:02.549Z | 234 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-03T01:34:05.330Z | 1114 | 75 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
