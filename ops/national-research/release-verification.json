@@ -1022,6 +1022,54 @@
         {"path":"/generated/research/WI/summary.json","sha256":"7510c7b7f667dfb7bbe71e925a2dc5a681ff5c2c7ab7a742bb2a81f21518f56c"}
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source build metadata, production alias identity, live routes, ten selected live-byte parity checks, a successful non-mutating New York ZIP lookup POST, sparse county route resolution, returning-browser refresh, source operations, evidence expansion, active-cohort, next-cohort, affected-state, and later-state research views, and desktop plus mobile browser behavior were verified without console warnings, console errors, page overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-63953406-2026-08-03",
+      "verifiedAt": "2026-08-03T19:23:36.4038656Z",
+      "commitSha": "6395340613c7c0b2d76680f52ea9bb5d39c042c0",
+      "githubMainSha": "6395340613c7c0b2d76680f52ea9bb5d39c042c0",
+      "githubDeploymentId": 5731339240,
+      "vercelDeploymentId": "dpl_7pwoRrV4wJuG2H1yCYTtQoRtnfur",
+      "vercelDeploymentUrl": "projectisitusa-383x3nev8-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=AL","status":200},
+        {"path":"/research?state=AK","status":200},
+        {"path":"/research?state=AZ","status":200},
+        {"path":"/research?state=AR","status":200},
+        {"path":"/research?state=CA","status":200},
+        {"path":"/research?state=DE","status":200},
+        {"path":"/research?state=WA","status":200},
+        {"path":"/research?state=WY","status":200},
+        {"path":"/?county=53033&species=spotted-lanternfly","status":200},
+        {"path":"/species/spotted-lanternfly","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/AL/summary.json","sha256":"b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"},
+        {"path":"/generated/research/AK/summary.json","sha256":"74dd7649a0b508ab55b2fa6a409df45eabad8d25622859bd01714cad6e76ff43"},
+        {"path":"/generated/research/AZ/summary.json","sha256":"b3c322324557037c521cdd0bf5bd763960670d5fdc79f033559a64e4d2a27446"},
+        {"path":"/generated/research/AR/summary.json","sha256":"d68f99a4bcbfbbf2d0406b3aa1c8409695de04cc75345d8cba629361d603b7a4"},
+        {"path":"/generated/research/CA/summary.json","sha256":"91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"},
+        {"path":"/generated/research/DE/summary.json","sha256":"a52e2ebf13240f6de8e9de223bdcee7b03ac5c6a9fd6defd989dbf312626f75b"},
+        {"path":"/generated/research/WA/summary.json","sha256":"4460fd29adba7788740cb880878fc43359b5c4450be7765c1cf268a48804d173"},
+        {"path":"/generated/research/WY/summary.json","sha256":"68fc51edba5d93b0ef8c351e13c8b6cd9b18652690519230f5850f7fa0307265"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["WA", "DE"],
+        "county": "King, WA",
+        "returningBrowserRefresh": "pass",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "zipLookup": {"zip":"98101","status":200,"ok":true,"countyFips":"53033","countyName":"King, WA"},
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical and origin main matched, GitHub deployment 5731339240 succeeded, exact Vercel Git-source build metadata matched, the production aliases were assigned, twelve live routes passed, eight selected live summary files matched local bytes exactly, Seattle ZIP lookup succeeded, WA and DE research projections rendered with current counts, source operations exposed the current GBIF run, King County selection and returning-browser refresh worked, and desktop plus mobile browser behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
