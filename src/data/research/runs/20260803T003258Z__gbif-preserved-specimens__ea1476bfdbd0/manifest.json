@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-bulk-20260802-r33-ct-002",
+  "leaseId": "lease-gbif-bulk-20260802-r33-ct-002-1",
+  "status": "complete",
+  "branch": "codex/gbif-bulk-20260802-r33-ct-002",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260802-r33-ct-002",
+  "baseSha": "c6243c0144f3529791889e1fdc7721d331644580",
+  "commitSha": "07de04331bb48f50367910b6c4ed62eaa0f79405",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "CT",
+    "stateProvince": "Connecticut",
+    "candidateLimit": 225,
+    "candidatePairs": [
+      "09110:anarsia-lineatella",
+      "09110:aspidiotus-duplex",
+      "09110:cryphonectria-parasitica",
+      "09110:discula-destructiva",
+      "09110:dryocosmus-kuriphilus",
+      "09110:emerald-ash-borer",
+      "09110:homadaula-albizziae",
+      "09110:icerya-purchasi",
+      "09110:ophiognomonia-clavigignenti-juglandacearum",
+      "09110:ophiostoma-ulmi",
+      "09110:phytophthora-cinnamomi",
+      "09110:salvinia-molesta",
+      "09110:solanum-dulcamara",
+      "09110:solanum-tampicense",
+      "09110:solanum-torvum",
+      "09110:solanum-viarum",
+      "09110:sparganium-erectum",
+      "09110:trapa-natans",
+      "09110:tree-of-heaven",
+      "09110:tridax-procumbens",
+      "09110:tussilago-farfara",
+      "09110:urochloa-panicoides",
+      "09110:valeriana-officinalis",
+      "09110:wisteria-floribunda",
+      "09110:wisteria-sinensis",
+      "09120:anarsia-lineatella",
+      "09120:aspidiotus-duplex",
+      "09120:cryphonectria-parasitica",
+      "09120:discula-destructiva",
+      "09120:dryocosmus-kuriphilus",
+      "09120:emerald-ash-borer",
+      "09120:homadaula-albizziae",
+      "09120:icerya-purchasi",
+      "09120:ophiognomonia-clavigignenti-juglandacearum",
+      "09120:ophiostoma-ulmi",
+      "09120:phytophthora-cinnamomi",
+      "09120:salvinia-molesta",
+      "09120:solanum-dulcamara",
+      "09120:solanum-tampicense",
+      "09120:solanum-torvum",
+      "09120:solanum-viarum",
+      "09120:sparganium-erectum",
+      "09120:trapa-natans",
+      "09120:tree-of-heaven",
+      "09120:tridax-procumbens",
+      "09120:tussilago-farfara",
+      "09120:urochloa-panicoides",
+      "09120:valeriana-officinalis",
+      "09120:wisteria-floribunda",
+      "09120:wisteria-sinensis",
+      "09130:anarsia-lineatella",
+      "09130:aspidiotus-duplex",
+      "09130:cryphonectria-parasitica",
+      "09130:discula-destructiva",
+      "09130:dryocosmus-kuriphilus",
+      "09130:emerald-ash-borer",
+      "09130:homadaula-albizziae",
+      "09130:icerya-purchasi",
+      "09130:ophiognomonia-clavigignenti-juglandacearum",
+      "09130:ophiostoma-ulmi",
+      "09130:phytophthora-cinnamomi",
+      "09130:salvinia-molesta",
+      "09130:solanum-dulcamara",
+      "09130:solanum-tampicense",
+      "09130:solanum-torvum",
+      "09130:solanum-viarum",
+      "09130:sparganium-erectum",
+      "09130:trapa-natans",
+      "09130:tree-of-heaven",
+      "09130:tridax-procumbens",
+      "09130:tussilago-farfara",
+      "09130:urochloa-panicoides",
+      "09130:valeriana-officinalis",
+      "09130:wisteria-floribunda",
+      "09130:wisteria-sinensis",
+      "09140:anarsia-lineatella",
+      "09140:aspidiotus-duplex",
+      "09140:cryphonectria-parasitica",
+      "09140:discula-destructiva",
+      "09140:dryocosmus-kuriphilus",
+      "09140:emerald-ash-borer",
+      "09140:homadaula-albizziae",
+      "09140:icerya-purchasi",
+      "09140:ophiognomonia-clavigignenti-juglandacearum",
+      "09140:ophiostoma-ulmi",
+      "09140:phytophthora-cinnamomi",
+      "09140:salvinia-molesta",
+      "09140:solanum-dulcamara",
+      "09140:solanum-tampicense",
+      "09140:solanum-torvum",
+      "09140:solanum-viarum",
+      "09140:sparganium-erectum",
+      "09140:trapa-natans",
+      "09140:tree-of-heaven",
+      "09140:tridax-procumbens",
+      "09140:tussilago-farfara",
+      "09140:urochloa-panicoides",
+      "09140:valeriana-officinalis",
+      "09140:wisteria-floribunda",
+      "09140:wisteria-sinensis",
+      "09150:anarsia-lineatella",
+      "09150:aspidiotus-duplex",
+      "09150:cryphonectria-parasitica",
+      "09150:discula-destructiva",
+      "09150:dryocosmus-kuriphilus",
+      "09150:emerald-ash-borer",
+      "09150:homadaula-albizziae",
+      "09150:icerya-purchasi",
+      "09150:ophiognomonia-clavigignenti-juglandacearum",
+      "09150:ophiostoma-ulmi",
+      "09150:phytophthora-cinnamomi",
+      "09150:salvinia-molesta",
+      "09150:solanum-dulcamara",
+      "09150:solanum-tampicense",
+      "09150:solanum-torvum",
+      "09150:solanum-viarum",
+      "09150:sparganium-erectum",
+      "09150:trapa-natans",
+      "09150:tree-of-heaven",
+      "09150:tridax-procumbens",
+      "09150:tussilago-farfara",
+      "09150:urochloa-panicoides",
+      "09150:valeriana-officinalis",
+      "09150:wisteria-floribunda",
+      "09150:wisteria-sinensis",
+      "09160:anarsia-lineatella",
+      "09160:aspidiotus-duplex",
+      "09160:cryphonectria-parasitica",
+      "09160:discula-destructiva",
+      "09160:dryocosmus-kuriphilus",
+      "09160:emerald-ash-borer",
+      "09160:homadaula-albizziae",
+      "09160:icerya-purchasi",
+      "09160:ophiognomonia-clavigignenti-juglandacearum",
+      "09160:ophiostoma-ulmi",
+      "09160:phytophthora-cinnamomi",
+      "09160:salvinia-molesta",
+      "09160:solanum-dulcamara",
+      "09160:solanum-tampicense",
+      "09160:solanum-torvum",
+      "09160:solanum-viarum",
+      "09160:sparganium-erectum",
+      "09160:trapa-natans",
+      "09160:tree-of-heaven",
+      "09160:tridax-procumbens",
+      "09160:tussilago-farfara",
+      "09160:urochloa-panicoides",
+      "09160:valeriana-officinalis",
+      "09160:wisteria-floribunda",
+      "09160:wisteria-sinensis",
+      "09170:anarsia-lineatella",
+      "09170:aspidiotus-duplex",
+      "09170:cryphonectria-parasitica",
+      "09170:discula-destructiva",
+      "09170:dryocosmus-kuriphilus",
+      "09170:emerald-ash-borer",
+      "09170:homadaula-albizziae",
+      "09170:icerya-purchasi",
+      "09170:ophiognomonia-clavigignenti-juglandacearum",
+      "09170:ophiostoma-ulmi",
+      "09170:phytophthora-cinnamomi",
+      "09170:salvinia-molesta",
+      "09170:solanum-dulcamara",
+      "09170:solanum-tampicense",
+      "09170:solanum-torvum",
+      "09170:solanum-viarum",
+      "09170:sparganium-erectum",
+      "09170:trapa-natans",
+      "09170:tree-of-heaven",
+      "09170:tridax-procumbens",
+      "09170:tussilago-farfara",
+      "09170:urochloa-panicoides",
+      "09170:valeriana-officinalis",
+      "09170:wisteria-floribunda",
+      "09170:wisteria-sinensis",
+      "09180:anarsia-lineatella",
+      "09180:aspidiotus-duplex",
+      "09180:cryphonectria-parasitica",
+      "09180:discula-destructiva",
+      "09180:dryocosmus-kuriphilus",
+      "09180:emerald-ash-borer",
+      "09180:homadaula-albizziae",
+      "09180:icerya-purchasi",
+      "09180:ophiognomonia-clavigignenti-juglandacearum",
+      "09180:ophiostoma-ulmi",
+      "09180:phytophthora-cinnamomi",
+      "09180:salvinia-molesta",
+      "09180:solanum-dulcamara",
+      "09180:solanum-tampicense",
+      "09180:solanum-torvum",
+      "09180:solanum-viarum",
+      "09180:sparganium-erectum",
+      "09180:trapa-natans",
+      "09180:tree-of-heaven",
+      "09180:tridax-procumbens",
+      "09180:tussilago-farfara",
+      "09180:urochloa-panicoides",
+      "09180:valeriana-officinalis",
+      "09180:wisteria-floribunda",
+      "09180:wisteria-sinensis",
+      "09190:anarsia-lineatella",
+      "09190:aspidiotus-duplex",
+      "09190:cryphonectria-parasitica",
+      "09190:discula-destructiva",
+      "09190:dryocosmus-kuriphilus",
+      "09190:emerald-ash-borer",
+      "09190:homadaula-albizziae",
+      "09190:icerya-purchasi",
+      "09190:ophiognomonia-clavigignenti-juglandacearum",
+      "09190:ophiostoma-ulmi",
+      "09190:phytophthora-cinnamomi",
+      "09190:salvinia-molesta",
+      "09190:solanum-dulcamara",
+      "09190:solanum-tampicense",
+      "09190:solanum-torvum",
+      "09190:solanum-viarum",
+      "09190:sparganium-erectum",
+      "09190:trapa-natans",
+      "09190:tree-of-heaven",
+      "09190:tridax-procumbens",
+      "09190:tussilago-farfara",
+      "09190:urochloa-panicoides",
+      "09190:valeriana-officinalis",
+      "09190:wisteria-floribunda",
+      "09190:wisteria-sinensis"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-anarsia-lineatella-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-aspidiotus-duplex-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-cryphonectria-parasitica-000000.json.gz",
+      "sha256": "950de1b01f0c268b0b5509a492919610b601c06369c0e2ea663ff4c31980bd99",
+      "bytes": 48228,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-discula-destructiva-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-emerald-ash-borer-000000.json.gz",
+      "sha256": "9a7d53ad47c263d2a8d3784f24ed92db62db2bd75225abac3d6234ea01b0e800",
+      "bytes": 3315,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-icerya-purchasi-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-ophiognomonia-clavigignenti-juglandacearum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-ophiostoma-ulmi-000000.json.gz",
+      "sha256": "79bd329b425a2fb2323aeba9d3443f33048505d704a8ba324c0fec7e3cf644ce",
+      "bytes": 8783,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+      "sha256": "5f53055cc2000bb5a13869e3aa1e1bad2396d4ebedbc758134797e05a93f7476",
+      "bytes": 2140,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-solanum-dulcamara-000000.json.gz",
+      "sha256": "6cf3d3a33b223b9c55851d78d268e1d1d9d3325825303b3361ab07296368fbc0",
+      "bytes": 115408,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-trapa-natans-000000.json.gz",
+      "sha256": "3f8a3e8c50e853891f875ed3701f77c1d52d4ae1fac27e2b2c9e9c843a071084",
+      "bytes": 8804,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-tree-of-heaven-000000.json.gz",
+      "sha256": "caa4122e8a0120ab33315be5209518fb3f65352d8b6234b637fdf1512ed5ba2b",
+      "bytes": 65081,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-tussilago-farfara-000000.json.gz",
+      "sha256": "56c227d445f0e46bb504a6bcf1fe7183055ecfda2a829046e76b005816c3c19a",
+      "bytes": 44566,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-valeriana-officinalis-000000.json.gz",
+      "sha256": "4ee12a573353e450e1e955533db9a5f883e7fb788db49696c35a34f12814d93b",
+      "bytes": 23677,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-wisteria-floribunda-000000.json.gz",
+      "sha256": "ac7133e2673beff5e587c9dd57d7d6b3fcca73bcb3cc8485151deb888fb7ce99",
+      "bytes": 9604,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-occurrences-wisteria-sinensis-000000.json.gz",
+      "sha256": "096bfb8471df28dbd1c92beda37d460d6f9e171cc4982b6c49776d84938c925e",
+      "bytes": 8083,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-anarsia-lineatella.json.gz",
+      "sha256": "40d69cfa5e98e1cb83d7e31680c0c4f4ed420ca69d5a7051188289e1f15e8f9c",
+      "bytes": 283,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-aspidiotus-duplex.json.gz",
+      "sha256": "4b933adc7b985f37afc60c1bbcbb626536a4bacb20106fdd4500ed381bbc8d7e",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-cryphonectria-parasitica.json.gz",
+      "sha256": "1bffe2b889c5d9792039971f14bfe53e2f747f6feb10d64697801212b44efeb3",
+      "bytes": 298,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-discula-destructiva.json.gz",
+      "sha256": "0a878e5e48c45e1489dcb1558db20051083f48bc6343791bc95644ce4059d274",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+      "sha256": "18cbbd75a16af81884023a0cac379384cb3444ee6ef6a729a7af1c45f4d40505",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-emerald-ash-borer.json.gz",
+      "sha256": "f500fa0148e74c05b6348b1d202d60ce21d8455c443da615a510cffbc6a0ac1d",
+      "bytes": 288,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+      "sha256": "1e4c133d335f5ff26aa973329e42e23092a799db4cf80a601cb2b3757c4a3587",
+      "bytes": 300,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-icerya-purchasi.json.gz",
+      "sha256": "0a2cb0beaaa8dc3892bf28b3b203eabb60a284409ad65cb6461d6a572f694aaf",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-ophiognomonia-clavigignenti-juglandacearum.json.gz",
+      "sha256": "cd70efd397c719cdb6aa6bdf2b0a30ac0534c942addf03a7ecac640e10dc4c20",
+      "bytes": 347,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-ophiostoma-ulmi.json.gz",
+      "sha256": "47ada4a6d41ee2a6a4a985fe3d8eaade7b550ed85f3eb28c738ffae8fee394d0",
+      "bytes": 299,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+      "sha256": "7223c45dbf6d96b851425ec73d603cb5090b3d3b7827211d947794ed76386dc7",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+      "sha256": "967288084b92873e057464ed73a8cab27df3946733c18890228bfa138a516fcf",
+      "bytes": 296,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-solanum-dulcamara.json.gz",
+      "sha256": "299c6ff5c0992d5f8f6f4bc28c6ef2c5a098b87464f35e63b29b8f2a95123478",
+      "bytes": 277,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+      "sha256": "de6bda76df0af2b953e5908c013b9507be450e50456ab6e8256c1060cad8ba0d",
+      "bytes": 277,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-solanum-torvum.json.gz",
+      "sha256": "449f01369c536eb151a3b4811ae345c59e625a7e9a8aaa236f0b38d74107fdae",
+      "bytes": 276,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-solanum-viarum.json.gz",
+      "sha256": "901c25e85dcd2301e9dd4af864ba9fa1b0dc9718008a7a520672297b422af125",
+      "bytes": 277,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+      "sha256": "14db2b237f6595c0d6330ad17e13b9f1599a024b50acf61aa126d25c9c8981ab",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-trapa-natans.json.gz",
+      "sha256": "0d263529258bf7857fefe67bb5f7909d090a5355d9177ec3fd9f117ccff97036",
+      "bytes": 277,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-tree-of-heaven.json.gz",
+      "sha256": "6d246e1a2f08d0bb1c6a2c54f1d2a56be42ad2b1f5203f8fd3bbff84e7d0e945",
+      "bytes": 295,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+      "sha256": "c982debda9268a61f88fba3e3d870d4a0cc011c3958f955340405310e3b5f3ef",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-tussilago-farfara.json.gz",
+      "sha256": "5b17803fd4ddd4f6aad5cdd072d050cc3c894e7c68a94c44508c3be1e6e39aee",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+      "sha256": "96ff3da9fe029f20f590da671b2049d75e51eb7b66f97e4d435106101bb088bf",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-valeriana-officinalis.json.gz",
+      "sha256": "102e043a6cef0f3b303d1a84ddba9012758aae1b333080c3f09fe9fb8fa43258",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-wisteria-floribunda.json.gz",
+      "sha256": "f682d48db640c8bee804e45e7b9181c02a19bf9c7fa955a061e2fd9bf40ca8fc",
+      "bytes": 291,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/artifacts/gbif-species-match-wisteria-sinensis.json.gz",
+      "sha256": "e658e70a2a3b5f59d976b821df7ed66f00e956702c9f144324977e011903bad0",
+      "bytes": 291,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/rejections.ndjson",
+      "sha256": "2f5780ff8443aad6a9af3f55cf6fa1640cd3f088ef601ed33c79ce9cb9e4c1f3",
+      "bytes": 558565,
+      "media_type": "application/x-ndjson",
+      "count": 787
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/outcomes.ndjson",
+      "sha256": "e2ae04433fe5c6a9ab7b2f89c9e9d07e2f65437b008d886f0ed4874b038e4f10",
+      "bytes": 762399,
+      "media_type": "application/x-ndjson",
+      "count": 225
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/receipt.json",
+    "sha256": "f3dd1c44187c71dfff43db3caf06fc8454b379d37b15d390d6642ff8a7ce2147",
+    "bytes": 53744,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/source-verification.json",
+    "sha256": "845b251c00ca46475ed595b512551a37e35bca867c079914623dc1c1e4c06a72",
+    "bytes": 62953,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 50,
+      "retainedArtifactBytes": 346160,
+      "sourceRequests": 50,
+      "providerCandidates": 787,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 787,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 225,
+      "completeOutcomePairs": 225,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 225,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 50,
+      "retainedArtifactBytes": 346160,
+      "sourceRequests": 50,
+      "providerCandidates": 787,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 787,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 225,
+      "completeOutcomePairs": 225,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 225,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check c6243c0144f3529791889e1fdc7721d331644580...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-bulk-20260802-r33-ct-002-1 --manifest src/data/research/runs/20260803T003258Z__gbif-preserved-specimens__ea1476bfdbd0/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260802-r33-ct-002",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-bulk-20260802-r33-ct-002-1",
+        "status": "complete",
+        "finishedAt": "2026-08-03T00:38:55.686Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 50,
+        "providerCandidates": 787,
+        "retainedArtifacts": 50,
+        "receiptSha256": "f3dd1c44187c71dfff43db3caf06fc8454b379d37b15d390d6642ff8a7ce2147"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 28,
+    "peakMemoryMb": 1350,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 225,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
