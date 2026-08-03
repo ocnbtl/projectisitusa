@@ -1070,6 +1070,47 @@
       },
       "zipLookup": {"zip":"98101","status":200,"ok":true,"countyFips":"53033","countyName":"King, WA"},
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical and origin main matched, GitHub deployment 5731339240 succeeded, exact Vercel Git-source build metadata matched, the production aliases were assigned, twelve live routes passed, eight selected live summary files matched local bytes exactly, Seattle ZIP lookup succeeded, WA and DE research projections rendered with current counts, source operations exposed the current GBIF run, King County selection and returning-browser refresh worked, and desktop plus mobile browser behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-bb47a8e3-2026-08-03",
+      "verifiedAt": "2026-08-03T21:42:39.2429310Z",
+      "commitSha": "bb47a8e313c6c033f10d85f1ac5ab1a6aefe0bed",
+      "githubMainSha": "bb47a8e313c6c033f10d85f1ac5ab1a6aefe0bed",
+      "githubDeploymentId": 5733217275,
+      "vercelDeploymentId": "dpl_HfR82V2CpPrSLsMGu3PQnGNZc1WU",
+      "vercelDeploymentUrl": "projectisitusa-jg6hw7jq1-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=AL","status":200},
+        {"path":"/research?state=CA","status":200},
+        {"path":"/research?state=DE","status":200},
+        {"path":"/research?state=MT","status":200},
+        {"path":"/?county=30049&species=spotted-lanternfly","status":200},
+        {"path":"/species/spotted-lanternfly","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/AL/summary.json","sha256":"b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"},
+        {"path":"/generated/research/CA/summary.json","sha256":"91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"},
+        {"path":"/generated/research/DE/summary.json","sha256":"a52e2ebf13240f6de8e9de223bdcee7b03ac5c6a9fd6defd989dbf312626f75b"},
+        {"path":"/generated/research/MT/summary.json","sha256":"c9ef15d314a86d808c9b7d0c47e455f4f1691a73673dd897cc2db61c960546ed"},
+        {"path":"/generated/research/MT/counties/30049.json","sha256":"b7e2674ed91547c82d2c11d759cfef4b892bad1817e39bb5f74f3fd7bce0bd95"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["AL", "CA", "DE", "MT"],
+        "county": "Lewis and Clark, MT",
+        "returningBrowserRefresh": "pass",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "zipLookup": {"zip":"59601","status":200,"ok":true,"countyFips":"30049","countyName":"Lewis and Clark, MT"},
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after origin and GitHub main matched, GitHub deployment 5733217275 succeeded, Vercel deployment dpl_HfR82V2CpPrSLsMGu3PQnGNZc1WU reached READY with the exact Git-source SHA, eight live routes passed, five selected live generated files matched local bytes exactly, Helena ZIP 59601 resolved to Lewis and Clark County, AL, CA, DE, and MT research projections rendered current counts, Lewis and Clark county selection worked, and fresh desktop, mobile, and returning-browser behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
