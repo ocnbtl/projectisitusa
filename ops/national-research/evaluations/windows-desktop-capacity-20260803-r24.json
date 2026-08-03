@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r24",
+  "recordedAt": "2026-08-03T19:11:55.1074160Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "integratedLocalHeadSha": "accf0b92ecd901277bf5c414e4eba3e2e173f29d",
+  "completedMilestone": {
+    "planId": "gbif-bulk-20260803-r34",
+    "states": ["WA", "DE"],
+    "stateSpeciesScreens": 50,
+    "completeCountySpeciesOutcomes": 1050,
+    "verifiedPresentNetChange": 23,
+    "researchedUnresolvedNetChange": 1027,
+    "notResearchedNetChange": -1050,
+    "conflictCount": 0,
+    "allStateByteStable": true,
+    "stateProjectionCount": 51,
+    "researchSkillCasesPassed": 97,
+    "productionBuildStaticPages": 2512
+  },
+  "resources": {
+    "sampleCount": 3,
+    "sampleIntervalSeconds": 5,
+    "availablePhysicalMemoryMiBAverage": 8973.33,
+    "availablePhysicalMemoryMiBMinimum": 8953,
+    "availablePhysicalMemoryPercentAtFinalGate": 27.95,
+    "commitChargePercentAverage": 72.19,
+    "pageReadsPerSecondAverage": 4.99,
+    "pageWritesPerSecondAverage": 0,
+    "diskAvailableBytes": 1087734214656,
+    "diskHeadroom": "pass",
+    "capacityTier": "green",
+    "oneAcquisitionWorkerGate": "fail",
+    "twoAcquisitionWorkerGate": "fail",
+    "maximumAcquisitionWorkersAtCurrentCapacity": 0,
+    "oneWorkerRequiredAvailableMemoryBytes": 9436376064,
+    "oneWorkerObservedAvailableMemoryBytes": 9388376064,
+    "oneWorkerShortfallBytes": 48000000,
+    "oneWorkerProjectedAvailableMemoryBytes": 8314634240,
+    "twoWorkerRequiredAvailableMemoryBytes": 10510117888,
+    "twoWorkerObservedAvailableMemoryBytes": 9350856704,
+    "twoWorkerProjectedAvailableMemoryBytes": 7203373056,
+    "hardFloorBytes": 3221225472
+  },
+  "schedulerDecision": {
+    "dispatchedWorkers": 0,
+    "selectedButDeferredJobs": [
+      "gbif-bulk-20260803-r35-la-001",
+      "gbif-bulk-20260803-r35-mt-001"
+    ],
+    "selectedExpectedNetNewPairs": 3000,
+    "reason": "The fresh post-generation dispatch gate still permits zero acquisition workers. The one-worker check missed the declared preferred headroom by 48000000 bytes, and MAIN did not bypass the policy.",
+    "nextAction": "Publish and externally verify the coherent WA and DE evidence milestone. Retain the fully ranked round 35 queue for a later capacity-safe dispatch."
+  }
+}

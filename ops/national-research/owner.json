@@ -7,9 +7,9 @@
   "branch": "main",
   "baseSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
   "acquiredAt": "2026-08-03T18:04:42.3522944Z",
-  "lastReverifiedAt": "2026-08-03T18:04:42.3522944Z",
-  "currentCheckpointSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
-  "localHeadAtLastReverification": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
+  "lastReverifiedAt": "2026-08-03T19:11:55.1074160Z",
+  "currentCheckpointSha": "accf0b92ecd901277bf5c414e4eba3e2e173f29d",
+  "localHeadAtLastReverification": "accf0b92ecd901277bf5c414e4eba3e2e173f29d",
   "state": "active",
   "ownershipEvidence": {
     "activeProjectTasks": [
@@ -31,14 +31,16 @@
     "liveVerification": "seven HTTP 200 route checks, ten exact generated summary byte-parity checks, and New York ZIP 10001 lookup passed for the 6e0e1528 receipt-only release",
     "githubDeploymentId": 5719712746,
     "resourceCapacity": {
-      "tier": "yellow",
-      "availableMemoryMiBAverage": 7257.8,
-      "commitChargePercentAverage": 77.38,
-      "pageReadsPerSecondAverage": 3.56,
+      "tier": "green",
+      "availableMemoryMiBAverage": 8973.33,
+      "commitChargePercentAverage": 72.19,
+      "pageReadsPerSecondAverage": 4.99,
       "pageWritesPerSecondAverage": 0,
-      "freeDiskBytes": 1094190104576,
-      "maximumAcquisitionWorkers": 2,
-      "projectedAvailableMemoryBytesAfterTwoAcquisitionWorkers": 5454671872
+      "freeDiskBytes": 1087734214656,
+      "maximumAcquisitionWorkers": 0,
+      "projectedAvailableMemoryBytesAfterOneAcquisitionWorker": 8314634240,
+      "projectedAvailableMemoryBytesAfterTwoAcquisitionWorkers": 7203373056,
+      "oneWorkerShortfallBytes": 48000000
     },
     "skillFreeze": {
       "version": "frozen-windows-bulk-validation-2026-07-30-r2",
@@ -220,6 +222,14 @@
       "githubMainSha": "669cd2ac4d8323453db2e513d204208113711ed2",
       "vercelProductionCommitSha": "669cd2ac4d8323453db2e513d204208113711ed2",
       "reason": "Windows MAIN is two local portability and freeze commits ahead of the independently verified external checkpoint. This records observed parent state and does not self-attest to a future deployment."
+    },
+    {
+      "observedAt": "2026-08-03T19:11:55.1074160Z",
+      "localHeadSha": "accf0b92ecd901277bf5c414e4eba3e2e173f29d",
+      "originMainSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
+      "githubMainSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
+      "vercelProductionCommitSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
+      "reason": "Windows MAIN recorded the clean committed integration parent before the generated WA and DE milestone commit. External release evidence remains pinned to the prior deployed 6e0e1528 receipt-only release."
     }
   ],
   "exclusiveOperations": [
