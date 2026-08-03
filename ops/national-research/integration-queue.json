@@ -16517,7 +16517,7 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r33-pa-001-1",
       "jobId": "gbif-bulk-20260802-r33-pa-001",
       "leaseId": "lease-gbif-bulk-20260802-r33-pa-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-03T01:31:12.958Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r33-pa-001__lease-gbif-bulk-20260802-r33-pa-001-1.json",
       "manifestHash": "6a12c5d3a6553be1fc03eb15f43e936446c3a668c3abd0e91cdb0541e902d257",
@@ -16614,6 +16614,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r33-pa-001-1.json",
         "sha256": "fb7589c125d20f8a9f006fec59b54321d4bab26f75671d81a64fa2625d8b818d",
         "bytes": 9998
+      },
+      "integratedAt": "2026-08-03T01:32:12.129Z",
+      "integrator": "MAIN",
+      "integrationCommit": "7a21162d4d3a3767b551d8758581d54a11ca3f97",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Pennsylvania GBIF round 33 batch 1",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the independently validated Pennsylvania batch as two immutable worker commits after acceptance; the run preserves 25 complete screens, 1675 pair outcomes, 210 evidence-found pairs, 1465 researched-unresolved pairs, 1127 assertions and reviews, 80 rejections, complete multi-page artifacts and hashes, and zero conflicts or semantic violations.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260802-r33-pa-001-1.json",
+        "sha256": "31379468ca45ec1a2c1271f6ba7c2cfa159358aae65e237a7f215a8ff7125c77",
+        "bytes": 10061
       }
     }
   ]
