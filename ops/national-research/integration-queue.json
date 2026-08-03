@@ -17077,7 +17077,7 @@
       "queueId": "queue-lease-gbif-bulk-20260803-r35-mt-001-1",
       "jobId": "gbif-bulk-20260803-r35-mt-001",
       "leaseId": "lease-gbif-bulk-20260803-r35-mt-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-03T20:45:52.6469977Z",
       "manifestPath": "manifests/gbif-bulk-20260803-r35-mt-001__lease-gbif-bulk-20260803-r35-mt-001-1.json",
       "manifestHash": "2c563d6c95887d233942976352284f604fd8d761e7e26d386d1e7a5d0101b109",
@@ -17172,6 +17172,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260803-r35-mt-001-1.json",
         "sha256": "28938156418f34e93e7bdfbb0bd34e28980d3318835d346001996c782ba01acf",
         "bytes": 11090
+      },
+      "integratedAt": "2026-08-03T20:49:54.014Z",
+      "integrator": "MAIN",
+      "integrationCommit": "9db503376369881465eea16dd451444c8e6d933c",
+      "integrationChecks": [
+        {
+          "command": "exact Git tree-entry parity for all 57 reviewed worker paths at canonical integration commit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "clean canonical status and whitespace check after content-then-manifest cherry-picks",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "accepted frozen-validator and all-outcome semantic checks preserved byte-identically",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed Montana GBIF content and manifest commits without conflict. Git tree parity matched all 57 reviewed paths; canonical evidence retains 1400 complete researched-unresolved county-species outcomes and zero unsupported negative determinations.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260803-r35-mt-001-1.json",
+        "sha256": "0a9896697a137d128cbe9d7972a738beabcd670b1ee4aaaf435d5ef28acc7076",
+        "bytes": 9559
       }
     }
   ]
