@@ -15834,7 +15834,7 @@
       "queueId": "queue-lease-gbif-bulk-20260802-r33-ct-002-1",
       "jobId": "gbif-bulk-20260802-r33-ct-002",
       "leaseId": "lease-gbif-bulk-20260802-r33-ct-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-03T00:42:23.332Z",
       "manifestPath": "manifests/gbif-bulk-20260802-r33-ct-002__lease-gbif-bulk-20260802-r33-ct-002-1.json",
       "manifestHash": "133fdf678bd0b356c24f9bb3bb1471c7a1e6513c3e9610e13856a9cd20b94a78",
@@ -15929,6 +15929,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260802-r33-ct-002-1.json",
         "sha256": "c601980c220e0408e29e762302a5e2dd8c3d4f9a203e0d3651463ca773a22919",
         "bytes": 9744
+      },
+      "integratedAt": "2026-08-03T00:43:28.714Z",
+      "integrator": "MAIN",
+      "integrationCommit": "6785198a1ec10e2deb7fb40e0a3b597a0868aa2f",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Connecticut GBIF round 33 batch 2 on canonical main",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN transactionally integrated the exact accepted Connecticut batch 2 worker content and manifest commits onto clean canonical main. Fresh path, tree-entry, whitespace, immutable-run, evidence-semantic, and manifest checks passed with zero conflicts or forbidden writes; the one reported intervention is the transient sandboxed validator ENOMEM retry already disclosed at review.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260802-r33-ct-002-1.json",
+        "sha256": "af8b96eb9b2b3b602ab2c5413458f3e5229675e998d9c455ffc8bb844636c45d",
+        "bytes": 9770
       }
     }
   ]
