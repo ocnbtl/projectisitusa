@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r22",
+  "recordedAt": "2026-08-03T18:16:11.3570876Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedProductionCheckpointSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalCores": 16,
+    "totalPhysicalMemoryBytes": 33450536960
+  },
+  "resources": {
+    "availablePhysicalMemoryMiBAverage": 7449.33,
+    "availablePhysicalMemoryPercent": 23.15,
+    "commitChargePercentAverage": 77.16,
+    "pageReadsPerSecondAverage": 3.3,
+    "pageWritesPerSecondAverage": 0,
+    "diskAvailableBytes": 1094168821760,
+    "diskRequiredBytes": 302080114176,
+    "diskProjectedHeadroomBytes": 792088707584,
+    "artifactBudgetBytes": 40000000,
+    "heavyWorkerPhysicalMemoryFloorBytes": 3221225472,
+    "requiredAvailableMemoryBytes": 5492537344,
+    "projectedAvailableMemoryBytes": 5596127232,
+    "capacityTier": "yellow",
+    "capacityGate": "pass"
+  },
+  "runtime": {
+    "projectGateNodeVersion": "v22.23.2",
+    "defaultShellNodeVersion": "v24.18.1",
+    "activeProjectWriterProcesses": 0,
+    "registeredWorktreeCountBeforeDispatch": 24,
+    "availableWorkerAgentSlots": 3
+  },
+  "frozenSkills": {
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "freezeCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorContentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerContentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "hashTreeValidation": "pass"
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "probeCount": 3,
+    "http200": 3,
+    "http429": 0,
+    "latencyMilliseconds": [1423, 105, 104],
+    "retryAfterObserved": false,
+    "status": "available"
+  },
+  "queue": {
+    "planId": "gbif-bulk-20260803-r34",
+    "selectionBasis": "Current incomplete applicable GBIF protocol cells, exact immutable-run deduplication, certification cohort, and expected movement from not-researched county-species pairs.",
+    "jurisdictionsMeasured": 16,
+    "plans": [
+      {"rank": 1, "stateCode": "WA", "cohort": 12, "availableScreens": 53, "selectedScreens": 53, "countyOutcomes": 2067, "expectedNetNewPairs": 1365, "batchCount": 3, "planFileSha256": "6b4bf031f23f386f373ac341938ac9a7430be85789d6958e193a62bc9c988ae8"},
+      {"rank": 2, "stateCode": "DE", "cohort": 2, "availableScreens": 84, "selectedScreens": 84, "countyOutcomes": 252, "expectedNetNewPairs": 141, "batchCount": 4, "planFileSha256": "3429f57fe2a89eec5453bf2158fd8f2fc820fabce9c700b724561d165ed6e04d"},
+      {"rank": 3, "stateCode": "CT", "cohort": 2, "availableScreens": 9, "selectedScreens": 9, "countyOutcomes": 81, "expectedNetNewPairs": 18, "batchCount": 1, "planFileSha256": "536be6f0e7230196341ddcac75d1a4426b2c41a3b8158e3b5dc537c81a1d7ce3"},
+      {"rank": 4, "stateCode": "CO", "cohort": 2, "availableScreens": 7, "selectedScreens": 7, "countyOutcomes": 448, "expectedNetNewPairs": 7, "batchCount": 1, "planFileSha256": "3c07f836beee0e5ff333c4790df1097764d02ba29f4a53310a73c7df94f3967f"},
+      {"rank": 5, "stateCode": "AL", "cohort": 1, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "7425fc0f77d7a0f23c46c97f613b355852f39769002a6b532cc7c4d195dad837"},
+      {"rank": 6, "stateCode": "AK", "cohort": 1, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "cc893383a7441e1854c890ed0f71a9e85e03a106cf65406c1cff0a27be30dcd2"},
+      {"rank": 7, "stateCode": "AZ", "cohort": 1, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "071bff996ac95603f208de7dc65ea08a065caedbd2e5356ed22b1cfffb85f4b8"},
+      {"rank": 8, "stateCode": "AR", "cohort": 1, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "08518133f6ebb7a6f1826c587484591adec0c8978dc5e103c29552f4d2a6de5f"},
+      {"rank": 9, "stateCode": "CA", "cohort": 2, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "f79914a40fcc035c759738625a43971d9f5b041f4680bd0a21eda7f244137548"},
+      {"rank": 10, "stateCode": "FL", "cohort": 3, "availableScreens": 3, "selectedScreens": 3, "countyOutcomes": 201, "expectedNetNewPairs": 0, "batchCount": 1, "planFileSha256": "f8b78011aa416705cf291c64e0284d8da910ce16a8e6d3932af22c23a8e514a4"},
+      {"rank": 11, "stateCode": "GA", "cohort": 3, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "34bcfeef3f34cb61ee9850c7abfe583f70cb799c0445d77d7ddee36832feedab"},
+      {"rank": 12, "stateCode": "MS", "cohort": 7, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "c34332516ec52bcd318a58723125fa71365b154e1b4421cb6caf84809a8030d5"},
+      {"rank": 13, "stateCode": "PA", "cohort": 10, "availableScreens": 28, "selectedScreens": 28, "countyOutcomes": 1876, "expectedNetNewPairs": 0, "batchCount": 2, "planFileSha256": "38df697692fe847aed544c2ffbc86f12567442f9a9263c31b9be2f7dae6fb12b"},
+      {"rank": 14, "stateCode": "SD", "cohort": 11, "availableScreens": 12, "selectedScreens": 12, "countyOutcomes": 792, "expectedNetNewPairs": 0, "batchCount": 1, "planFileSha256": "9b06f1c333f9b5edfb35a2958a65e57a4bf304f0f6fa80519544ad79361fcf42"},
+      {"rank": 15, "stateCode": "TX", "cohort": 11, "availableScreens": 0, "selectedScreens": 0, "countyOutcomes": 0, "expectedNetNewPairs": 0, "batchCount": 0, "planFileSha256": "4562bc82efad37cd3d01413d87ebff80d9dfb12d38578c0f304d794e7c5298c5"},
+      {"rank": 16, "stateCode": "VA", "cohort": 12, "availableScreens": 1, "selectedScreens": 1, "countyOutcomes": 133, "expectedNetNewPairs": 0, "batchCount": 1, "planFileSha256": "a534d3a29b28f26674dfadf955b4196c4e22eb45e755476092c835df40cb4285"}
+    ]
+  },
+  "schedulerDecision": {
+    "initialHeavyWorkers": 2,
+    "maximumHeavyWorkersBeforeRemeasurement": 2,
+    "sharedIntegrationConcurrency": 1,
+    "sharedCompilerBuildDeploymentConcurrency": 1,
+    "selectedJobs": [
+      {
+        "jobId": "gbif-bulk-20260803-r34-wa-001",
+        "stateCode": "WA",
+        "lane": "later-high-net-value",
+        "stateSpeciesScreens": 25,
+        "countyOutcomes": 975,
+        "expectedNetNewPairs": 975,
+        "candidateFileSha256": "c021285485d7ef3f423800990e4176fb3c6c0c5ff203c1fce7725e88598c36aa",
+        "deduplicationKey": "state/WA/source/gbif-preserved-specimens/taxon/{leased-species-id}",
+        "expectedRequests": "At least one bounded match or occurrence request per species; final count depends on complete provider pagination and is recorded by the immutable receipt.",
+        "expectedArtifacts": "One match artifact and one or more occurrence page artifacts per species, within the 20000000 byte job ceiling.",
+        "selectedReason": "Highest measured expected net-new movement, with 975 fully not-researched pairs in the first 25-screen batch."
+      },
+      {
+        "jobId": "gbif-bulk-20260803-r34-de-001",
+        "stateCode": "DE",
+        "lane": "next-certification-cohort",
+        "stateSpeciesScreens": 25,
+        "countyOutcomes": 75,
+        "expectedNetNewPairs": 75,
+        "candidateFileSha256": "15bce1ed9fd6ac03be1b5ea3fbe894a8e8ca933b227385159707c7ef70036492",
+        "deduplicationKey": "state/DE/source/gbif-preserved-specimens/taxon/{leased-species-id}",
+        "expectedRequests": "At least one bounded match or occurrence request per species; final count depends on complete provider pagination and is recorded by the immutable receipt.",
+        "expectedArtifacts": "One match artifact and one or more occurrence page artifacts per species, within the 20000000 byte job ceiling.",
+        "selectedReason": "Highest-yield Cohort 2 batch and non-overlapping with WA; it advances the next certification cohort while all active-cohort GBIF screens are already complete or taxonomy-blocked."
+      }
+    ],
+    "expectedWaveNetNewPairs": 1050,
+    "reason": "Two 1536 MiB acquisition reservations preserve the 3 GiB hard floor. Active-cohort GBIF plans contain zero safe uncompleted screens, so the wave combines the top later-state yield with the top Cohort 2 yield instead of issuing duplicate work.",
+    "remeasureBeforeAnyReplacementWave": true
+  },
+  "taxonomy": {
+    "dispositionPath": "ops/national-research/evaluations/gbif-taxonomy-dispositions-20260803-r1.json",
+    "blockedScreens": 12,
+    "uniqueCatalogTaxa": 8,
+    "providerRequestsPrevented": 12
+  }
+}

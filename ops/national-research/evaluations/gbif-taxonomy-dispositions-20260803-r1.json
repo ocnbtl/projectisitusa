@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "gbif-taxonomy-dispositions-20260803-r1",
+  "evaluatedAt": "2026-08-03T18:09:12.7061811Z",
+  "sourceId": "gbif-preserved-specimens",
+  "supersedesEvaluation": {
+    "path": "ops/national-research/evaluations/gbif-taxonomy-ambiguities-20260731-r1.json",
+    "sha256": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89"
+  },
+  "catalogEvidence": {
+    "generatedSpeciesPath": "src/data/generated/species.json",
+    "generatedSpeciesSha256": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "sourceSnapshotPath": "src/data/source/usriis-snapshot.json",
+    "sourceSnapshotSha256": "8fa3d09fb00776560051ce2f41af55719a3dae7072b9327369690590e7436b65",
+    "authority": "USDA NRCS PLANTS names retained by the current US-RIIS catalog snapshot"
+  },
+  "policy": {
+    "matchType": "EXACT",
+    "rank": "SPECIES",
+    "minimumConfidence": 95,
+    "canonicalBinomialMustEqualCatalogName": true,
+    "automaticSynonymSubstitutionPermitted": false,
+    "policyChangedByThisEvaluation": false
+  },
+  "summary": {
+    "stateSpeciesScreens": 12,
+    "uniqueCatalogTaxa": 8,
+    "resolvedForNewAcquisition": 0,
+    "blocked": 12,
+    "providerRetriesRequired": 0,
+    "providerRequestsPrevented": 12
+  },
+  "reviews": [
+    {
+      "speciesId": "cyperus-involucratus",
+      "catalogScientificName": "Cyperus involucratus",
+      "catalogSymbol": "CYIN6",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Cyperus",
+        "rank": "GENUS",
+        "usageKey": 2713455
+      },
+      "authoritativeReview": {
+        "classification": "ambiguous-homonym-and-synonym-review-required",
+        "finding": "Kew lists two authored Cyperus involucratus names with different accepted placements, while the catalog omits the author. The archived genus-only result cannot disambiguate them.",
+        "sources": [
+          "https://powo.science.kew.org/results?q=Cyperus+involucratus"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "The catalog name lacks authorship needed to distinguish the homonyms, and no exact species-level provider match is archived.",
+      "nextAction": "Resolve catalog authorship against the source authority before proposing any provider alias."
+    },
+    {
+      "speciesId": "datura-inoxia",
+      "catalogScientificName": "Datura inoxia",
+      "catalogSymbol": "DAIN2",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "FUZZY",
+        "confidence": 97,
+        "canonicalName": "Datura innoxia",
+        "rank": "SPECIES",
+        "usageKey": 2928755
+      },
+      "authoritativeReview": {
+        "classification": "orthographic-variant",
+        "finding": "Kew treats inoxia as an orthographic error and uses Datura innoxia, but the current provider policy forbids automatic spelling substitution.",
+        "sources": [
+          "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A316945-2/general-information"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "The archived match is fuzzy and its canonical binomial differs from the catalog name.",
+      "nextAction": "Approve an explicit catalog alias or correct the catalog name through the catalog authority workflow."
+    },
+    {
+      "speciesId": "desmodium-triflorum",
+      "catalogScientificName": "Desmodium triflorum",
+      "catalogSymbol": "DETR4",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Grona",
+        "rank": "GENUS",
+        "usageKey": 9615544
+      },
+      "authoritativeReview": {
+        "classification": "synonym-of-different-genus",
+        "finding": "Kew treats Desmodium triflorum as a synonym of accepted Grona triflora, while the archived provider response stops at the Grona genus.",
+        "sources": [
+          "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77187443-1"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "The current policy does not permit automatic synonym substitution and the archived result is not species-level.",
+      "nextAction": "Approve a versioned Desmodium triflorum to Grona triflora alias before acquisition."
+    },
+    {
+      "speciesId": "echinochloa-colona",
+      "catalogScientificName": "Echinochloa colona",
+      "catalogSymbol": "ECCO2",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "FUZZY",
+        "confidence": 97,
+        "canonicalName": "Echinochloa colonum",
+        "rank": "SPECIES",
+        "usageKey": 6431411
+      },
+      "authoritativeReview": {
+        "classification": "provider-spelling-conflict",
+        "finding": "Kew accepts Echinochloa colona and specifically distinguishes it from the colonum spelling returned by the archived provider match.",
+        "sources": [
+          "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A399655-1"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "The archived fuzzy match fails the exact canonical-name policy and conflicts with the reviewed accepted spelling.",
+      "nextAction": "Do not alias to Echinochloa colonum; require a provider taxon key verified for exact Echinochloa colona."
+    },
+    {
+      "speciesId": "malus-pumila",
+      "catalogScientificName": "Malus pumila",
+      "catalogSymbol": "MAPU",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Malus",
+        "rank": "GENUS",
+        "usageKey": 3001068
+      },
+      "authoritativeReview": {
+        "classification": "synonym-of-different-species-name",
+        "finding": "Kew treats Malus pumila as a synonym of Malus domestica, while also recording alternative taxonomies that retain Malus pumila.",
+        "sources": [
+          "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A726372-1"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "The archived result is genus-only and the catalog/provider name choice requires an explicit taxonomy policy decision.",
+      "nextAction": "Resolve the catalog authority choice before proposing a Malus domestica alias."
+    },
+    {
+      "speciesId": "salix-alba",
+      "catalogScientificName": "Salix alba",
+      "catalogSymbol": "SAAL2",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "NONE",
+        "confidence": 99,
+        "canonicalName": null,
+        "rank": null,
+        "usageKey": null
+      },
+      "authoritativeReview": {
+        "classification": "accepted-name-provider-resolution-failure",
+        "finding": "Kew accepts Salix alba, but the archived provider response contains no usable match.",
+        "sources": [
+          "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A776974-1"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "Authoritative acceptance does not supply the exact GBIF species usage key required by the acquisition contract.",
+      "nextAction": "Require a separately reviewed exact GBIF usage key before acquisition; do not repeat the identical match call."
+    },
+    {
+      "speciesId": "schedonorus-arundinaceus",
+      "catalogScientificName": "Schedonorus arundinaceus",
+      "catalogSymbol": "SCAR7",
+      "states": ["AL", "AR", "FL", "GA", "TX"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Poaceae",
+        "rank": "FAMILY",
+        "usageKey": 3073
+      },
+      "authoritativeReview": {
+        "classification": "synonym-of-different-genus",
+        "finding": "Kew treats Schedonorus arundinaceus as a synonym of Lolium arundinaceum, while the five archived state artifacts resolve only to Poaceae.",
+        "sources": [
+          "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A1190051-2"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "The family-level archived result cannot support acquisition, and automatic genus-changing synonym substitution is prohibited.",
+      "nextAction": "Approve a versioned Schedonorus arundinaceus to Lolium arundinaceum alias before any affected state is leased."
+    },
+    {
+      "speciesId": "vulpia-myuros",
+      "catalogScientificName": "Vulpia myuros",
+      "catalogSymbol": "VUMY",
+      "states": ["AL"],
+      "archivedProviderMatch": {
+        "matchType": "HIGHERRANK",
+        "confidence": 98,
+        "canonicalName": "Festuca",
+        "rank": "GENUS",
+        "usageKey": 2704913
+      },
+      "authoritativeReview": {
+        "classification": "synonym-of-different-genus",
+        "finding": "Kew treats Vulpia myuros as a synonym of Festuca myuros, while the archived provider response stops at the Festuca genus.",
+        "sources": [
+          "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A94872-3"
+        ]
+      },
+      "disposition": "blocked",
+      "reason": "The current policy does not permit automatic synonym substitution and the archived result is not species-level.",
+      "nextAction": "Approve a versioned Vulpia myuros to Festuca myuros alias before acquisition."
+    }
+  ],
+  "screenDispositions": [
+    {"stateCode": "AL", "speciesId": "cyperus-involucratus", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AL", "speciesId": "datura-inoxia", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AL", "speciesId": "desmodium-triflorum", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AL", "speciesId": "echinochloa-colona", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AL", "speciesId": "malus-pumila", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AL", "speciesId": "salix-alba", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AL", "speciesId": "schedonorus-arundinaceus", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AR", "speciesId": "schedonorus-arundinaceus", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "FL", "speciesId": "schedonorus-arundinaceus", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "GA", "speciesId": "schedonorus-arundinaceus", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "TX", "speciesId": "schedonorus-arundinaceus", "disposition": "blocked", "newProviderRequestPermitted": false},
+    {"stateCode": "AL", "speciesId": "vulpia-myuros", "disposition": "blocked", "newProviderRequestPermitted": false}
+  ],
+  "operationalDecision": {
+    "providerCallsMadeDuringReview": 0,
+    "repeatProviderCallsProhibited": true,
+    "plannerBehavior": "The eight reviewed taxa remain global taxonomy exclusions. A fresh planner may therefore omit additional state-taxon combinations beyond these 12 archived screens.",
+    "nextAction": "Continue ranked acquisition with unaffected taxa. Change aliases only through a separately reviewed, versioned taxonomy-policy update."
+  }
+}
