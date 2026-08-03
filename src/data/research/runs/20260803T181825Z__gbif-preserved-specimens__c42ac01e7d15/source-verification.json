@@ -1,0 +1,1363 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-03T18:25:25.778Z",
+  "runId": "20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "DE",
+  "pairKeys": [
+    "10001:acorus-calamus",
+    "10001:ageratina-adenophora",
+    "10001:alternanthera-sessilis",
+    "10001:arctotheca-calendula",
+    "10001:asphodelus-fistulosus",
+    "10001:avena-sterilis",
+    "10001:azolla-pinnata",
+    "10001:clematis-terniflora",
+    "10001:commelina-benghalensis",
+    "10001:crupina-vulgaris",
+    "10001:eichhornia-azurea",
+    "10001:emex-australis",
+    "10001:emex-spinosa",
+    "10001:euonymus-alatus",
+    "10001:euphorbia-terracina",
+    "10001:fallopia-japonica",
+    "10001:galega-officinalis",
+    "10001:giant-hogweed",
+    "10001:hemerocallis-fulva",
+    "10001:hydrilla",
+    "10001:hygrophila-polysperma",
+    "10001:imperata-cylindrica",
+    "10001:ipomoea-aquatica",
+    "10001:limnophila-sessiliflora",
+    "10001:lycium-ferocissimum",
+    "10003:acorus-calamus",
+    "10003:ageratina-adenophora",
+    "10003:alternanthera-sessilis",
+    "10003:arctotheca-calendula",
+    "10003:asphodelus-fistulosus",
+    "10003:avena-sterilis",
+    "10003:azolla-pinnata",
+    "10003:clematis-terniflora",
+    "10003:commelina-benghalensis",
+    "10003:crupina-vulgaris",
+    "10003:eichhornia-azurea",
+    "10003:emex-australis",
+    "10003:emex-spinosa",
+    "10003:euonymus-alatus",
+    "10003:euphorbia-terracina",
+    "10003:fallopia-japonica",
+    "10003:galega-officinalis",
+    "10003:giant-hogweed",
+    "10003:hemerocallis-fulva",
+    "10003:hydrilla",
+    "10003:hygrophila-polysperma",
+    "10003:imperata-cylindrica",
+    "10003:ipomoea-aquatica",
+    "10003:limnophila-sessiliflora",
+    "10003:lycium-ferocissimum",
+    "10005:acorus-calamus",
+    "10005:ageratina-adenophora",
+    "10005:alternanthera-sessilis",
+    "10005:arctotheca-calendula",
+    "10005:asphodelus-fistulosus",
+    "10005:avena-sterilis",
+    "10005:azolla-pinnata",
+    "10005:clematis-terniflora",
+    "10005:commelina-benghalensis",
+    "10005:crupina-vulgaris",
+    "10005:eichhornia-azurea",
+    "10005:emex-australis",
+    "10005:emex-spinosa",
+    "10005:euonymus-alatus",
+    "10005:euphorbia-terracina",
+    "10005:fallopia-japonica",
+    "10005:galega-officinalis",
+    "10005:giant-hogweed",
+    "10005:hemerocallis-fulva",
+    "10005:hydrilla",
+    "10005:hygrophila-polysperma",
+    "10005:imperata-cylindrica",
+    "10005:ipomoea-aquatica",
+    "10005:limnophila-sessiliflora",
+    "10005:lycium-ferocissimum"
+  ],
+  "parameterHash": "c42ac01e7d158775ad1d053f50fb87a9fb615dd6de6a5824b08112f94d005be7",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-03T18:25:25.778Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Delaware and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "acorus-calamus",
+      "ageratina-adenophora",
+      "alternanthera-sessilis",
+      "arctotheca-calendula",
+      "asphodelus-fistulosus",
+      "avena-sterilis",
+      "azolla-pinnata",
+      "clematis-terniflora",
+      "commelina-benghalensis",
+      "crupina-vulgaris",
+      "eichhornia-azurea",
+      "emex-australis",
+      "emex-spinosa",
+      "euonymus-alatus",
+      "euphorbia-terracina",
+      "fallopia-japonica",
+      "galega-officinalis",
+      "giant-hogweed",
+      "hemerocallis-fulva",
+      "hydrilla",
+      "hygrophila-polysperma",
+      "imperata-cylindrica",
+      "ipomoea-aquatica",
+      "limnophila-sessiliflora",
+      "lycium-ferocissimum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-acorus-calamus",
+        "url": "https://api.gbif.org/v1/species/match?name=Acorus+calamus&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:07.483Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-acorus-calamus",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2873769&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for acorus-calamus and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:07.985Z",
+        "declaredRecordCount": 26,
+        "receivedRecordCount": 26,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-ageratina-adenophora",
+        "url": "https://api.gbif.org/v1/species/match?name=Ageratina+adenophora&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:08.426Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-ageratina-adenophora",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5400613&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for ageratina-adenophora and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:08.907Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-alternanthera-sessilis",
+        "url": "https://api.gbif.org/v1/species/match?name=Alternanthera+sessilis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:09.111Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-alternanthera-sessilis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3084939&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for alternanthera-sessilis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:09.677Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-arctotheca-calendula",
+        "url": "https://api.gbif.org/v1/species/match?name=Arctotheca+calendula&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:09.791Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-arctotheca-calendula",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3114986&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for arctotheca-calendula and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:10.426Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-asphodelus-fistulosus",
+        "url": "https://api.gbif.org/v1/species/match?name=Asphodelus+fistulosus&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:10.543Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-asphodelus-fistulosus",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2778437&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for asphodelus-fistulosus and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:11.026Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-avena-sterilis",
+        "url": "https://api.gbif.org/v1/species/match?name=Avena+sterilis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:11.228Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-avena-sterilis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2705286&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for avena-sterilis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:11.783Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-azolla-pinnata",
+        "url": "https://api.gbif.org/v1/species/match?name=Azolla+pinnata&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:11.895Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-azolla-pinnata",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2650106&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for azolla-pinnata and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:12.487Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-clematis-terniflora",
+        "url": "https://api.gbif.org/v1/species/match?name=Clematis+terniflora&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:12.595Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-clematis-terniflora",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3033546&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for clematis-terniflora and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:13.084Z",
+        "declaredRecordCount": 14,
+        "receivedRecordCount": 14,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-commelina-benghalensis",
+        "url": "https://api.gbif.org/v1/species/match?name=Commelina+benghalensis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:13.447Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-commelina-benghalensis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2763941&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for commelina-benghalensis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:13.899Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-crupina-vulgaris",
+        "url": "https://api.gbif.org/v1/species/match?name=Crupina+vulgaris&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:14.128Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-crupina-vulgaris",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3149965&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for crupina-vulgaris and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:14.595Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-eichhornia-azurea",
+        "url": "https://api.gbif.org/v1/species/match?name=Eichhornia+azurea&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:14.817Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-eichhornia-azurea",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=7494501&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for eichhornia-azurea and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:15.277Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-emex-australis",
+        "url": "https://api.gbif.org/v1/species/match?name=Emex+australis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:15.501Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-emex-australis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8909872&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for emex-australis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:15.967Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-emex-spinosa",
+        "url": "https://api.gbif.org/v1/species/match?name=Emex+spinosa&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:16.188Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-emex-spinosa",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2888870&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for emex-spinosa and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:16.676Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-euonymus-alatus",
+        "url": "https://api.gbif.org/v1/species/match?name=Euonymus+alatus&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:16.872Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-euonymus-alatus",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3169120&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for euonymus-alatus and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:17.425Z",
+        "declaredRecordCount": 10,
+        "receivedRecordCount": 10,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-euphorbia-terracina",
+        "url": "https://api.gbif.org/v1/species/match?name=Euphorbia+terracina&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:17.963Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-euphorbia-terracina",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3064472&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for euphorbia-terracina and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:18.201Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-fallopia-japonica",
+        "url": "https://api.gbif.org/v1/species/match?name=Fallopia+japonica&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:18.444Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-fallopia-japonica",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2889173&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for fallopia-japonica and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:18.950Z",
+        "declaredRecordCount": 31,
+        "receivedRecordCount": 31,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-galega-officinalis",
+        "url": "https://api.gbif.org/v1/species/match?name=Galega+officinalis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:19.403Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-galega-officinalis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2975667&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for galega-officinalis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:19.918Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-giant-hogweed",
+        "url": "https://api.gbif.org/v1/species/match?name=Heracleum+mantegazzianum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:20.119Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-giant-hogweed",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3034825&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for giant-hogweed and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:20.554Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-hemerocallis-fulva",
+        "url": "https://api.gbif.org/v1/species/match?name=Hemerocallis+fulva&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:20.779Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-hemerocallis-fulva",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2781074&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for hemerocallis-fulva and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:21.284Z",
+        "declaredRecordCount": 10,
+        "receivedRecordCount": 10,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-hydrilla",
+        "url": "https://api.gbif.org/v1/species/match?name=Hydrilla+verticillata&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:21.615Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-hydrilla",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5329570&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for hydrilla and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:22.143Z",
+        "declaredRecordCount": 28,
+        "receivedRecordCount": 28,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-hygrophila-polysperma",
+        "url": "https://api.gbif.org/v1/species/match?name=Hygrophila+polysperma&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:22.579Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-hygrophila-polysperma",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5415355&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for hygrophila-polysperma and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:23.086Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-imperata-cylindrica",
+        "url": "https://api.gbif.org/v1/species/match?name=Imperata+cylindrica&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:23.278Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-imperata-cylindrica",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=8424006&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for imperata-cylindrica and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:23.746Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-ipomoea-aquatica",
+        "url": "https://api.gbif.org/v1/species/match?name=Ipomoea+aquatica&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:23.967Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-ipomoea-aquatica",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2928525&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for ipomoea-aquatica and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:24.410Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-limnophila-sessiliflora",
+        "url": "https://api.gbif.org/v1/species/match?name=Limnophila+sessiliflora&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:24.658Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-limnophila-sessiliflora",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5415001&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for limnophila-sessiliflora and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:25.187Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-lycium-ferocissimum",
+        "url": "https://api.gbif.org/v1/species/match?name=Lycium+ferocissimum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:25.340Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-lycium-ferocissimum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3797394&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for lycium-ferocissimum and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-03T18:25:25.778Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-acorus-calamus-000000.json.gz",
+      "sha256": "46e6c17f2972feaf848cdcfdf787f6f8621ac437bcdf2a40a3e1f84d70092d7a",
+      "bytes": 12607
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-ageratina-adenophora-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-alternanthera-sessilis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-arctotheca-calendula-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-asphodelus-fistulosus-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-avena-sterilis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-azolla-pinnata-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-clematis-terniflora-000000.json.gz",
+      "sha256": "26abd54f7f03d13a051fb8c7920e34f2ca3f4c6d9d2400cc27cda040dd004575",
+      "bytes": 9912
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-commelina-benghalensis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-crupina-vulgaris-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-eichhornia-azurea-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-emex-australis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-emex-spinosa-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-euonymus-alatus-000000.json.gz",
+      "sha256": "b33ca26f6a9aebfc3a6ea61c74477891fecbac8b29920a5eacd67197ef4a9e57",
+      "bytes": 6906
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-euphorbia-terracina-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-fallopia-japonica-000000.json.gz",
+      "sha256": "6dfac28afa31a2fe69e84c3f56f5253be8c9dfb87217d9dd5ed0f981b97d1e84",
+      "bytes": 15524
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-galega-officinalis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-giant-hogweed-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-hemerocallis-fulva-000000.json.gz",
+      "sha256": "117de8057194318354720fa5439f482ac8bdea5504bcc62cea4a9f524e7ac076",
+      "bytes": 5197
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-hydrilla-000000.json.gz",
+      "sha256": "dcc3b06811025a46a41b990e8d2e8e28824fa0d99284d58060aea839ebca3c02",
+      "bytes": 8930
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-hygrophila-polysperma-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-imperata-cylindrica-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-ipomoea-aquatica-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-limnophila-sessiliflora-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-occurrences-lycium-ferocissimum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-acorus-calamus.json.gz",
+      "sha256": "997197cfd8ee54be5b7b10aa190b40c9e74af981f2e50a4524bf2b05e4599324",
+      "bytes": 277
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-ageratina-adenophora.json.gz",
+      "sha256": "a371d296dfe89fe062544a706c564a91a5e99f2fda4b140388952cecac3a8747",
+      "bytes": 306
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-alternanthera-sessilis.json.gz",
+      "sha256": "8b58be5de42f5fb319e80963e1e669a4ef8e76dd049311233ecd9b2d7196bfe6",
+      "bytes": 303
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-arctotheca-calendula.json.gz",
+      "sha256": "cd18f314cf2c313873ae26803d9751346b727596b0d2861aa92344ca4afc77c2",
+      "bytes": 290
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-asphodelus-fistulosus.json.gz",
+      "sha256": "66be102f7a6db88bfd85a21c8b77d29d18208b5122f724f9dd1ce7eb12b03fbb",
+      "bytes": 287
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-avena-sterilis.json.gz",
+      "sha256": "10d3df82acde4813531df11d8af0ec32136d01d186d664eb3f82b99e71eead7d",
+      "bytes": 272
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-azolla-pinnata.json.gz",
+      "sha256": "550c490107a5e2c8552b761818b070ce2b0ab2fbd260b7adeccc4e476e9167bc",
+      "bytes": 284
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-clematis-terniflora.json.gz",
+      "sha256": "e18bca8c63b3edadd27ae4a2ea22fd3bfbc2c145343391a5bafb2604766f1768",
+      "bytes": 285
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-commelina-benghalensis.json.gz",
+      "sha256": "78bee43ae991aa3147f7a8bcea63c469e260f1c1c2bcbed14f4e1833506923fe",
+      "bytes": 278
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-crupina-vulgaris.json.gz",
+      "sha256": "29f43a967b2d71daf27566870d01a42ae9d2ed4d0a81365f9a7e5e00896e8c70",
+      "bytes": 290
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-eichhornia-azurea.json.gz",
+      "sha256": "5de3444a995259e2f4d378c6323b762c9ed414232cd5f586293df92853f4e56f",
+      "bytes": 313
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-emex-australis.json.gz",
+      "sha256": "1b44c99754ae6b5435847d4939cee798d326c09f88cd62c8fb0fbf3d7b0adfc6",
+      "bytes": 308
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-emex-spinosa.json.gz",
+      "sha256": "a14a17a1602abfc57b122fb1bf9f3941258d09b23a4ecb498b8188fbdf0c0fc6",
+      "bytes": 306
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-euonymus-alatus.json.gz",
+      "sha256": "3eb4490e48f32b8bdc1fd17722b51967414951a56623d0ae2e3322ac7536f370",
+      "bytes": 289
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-euphorbia-terracina.json.gz",
+      "sha256": "06f9dfbe4f3e5e29cca5ac86db990f526dcc2f49457fa3da6883b33c1b4db360",
+      "bytes": 287
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-fallopia-japonica.json.gz",
+      "sha256": "6ac60a61decf5f210edaafbfd7c8c79917f1eb8c4820e38c83bfbbda7799d45f",
+      "bytes": 340
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-galega-officinalis.json.gz",
+      "sha256": "48bfa47a94a4d7d30e80f59777e46422ff4d3587979af23d7ac51b7cbe871dc0",
+      "bytes": 281
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-giant-hogweed.json.gz",
+      "sha256": "86e267603e50eea6b04d415eee9e20993c6ed0a51548eb02e4280bd0000fce59",
+      "bytes": 296
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-hemerocallis-fulva.json.gz",
+      "sha256": "493cf942ccdd32b8201c262f332be128c0026de076976d7f3ca4b3da1c064ffe",
+      "bytes": 296
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-hydrilla.json.gz",
+      "sha256": "fdd60317af2de042b2ae66f5b8e91849f25d37d53329967a758bac7f7a6c6bb6",
+      "bytes": 298
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-hygrophila-polysperma.json.gz",
+      "sha256": "0a30fef43d57df2b40cd4f9f7762a329b6709aa225e1e11c916cd1369f200354",
+      "bytes": 305
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-imperata-cylindrica.json.gz",
+      "sha256": "d477918828f3f0bfd8d1cbb450263a6769d143f7dae491ea4363183f73a6b057",
+      "bytes": 291
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-ipomoea-aquatica.json.gz",
+      "sha256": "5b1c20dd7828b368af1e234ec6614a767d530c1bdd398f66d63d7e2250391b99",
+      "bytes": 290
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-limnophila-sessiliflora.json.gz",
+      "sha256": "6ff2d257a82585b7c27c4ec28506a68c811850fbb5455fe7d197f8c26cbea2b2",
+      "bytes": 297
+    },
+    {
+      "path": "src/data/research/runs/20260803T181825Z__gbif-preserved-specimens__c42ac01e7d15/artifacts/gbif-species-match-lycium-ferocissimum.json.gz",
+      "sha256": "c57316874817171f16ed1cbbc525bd69a93b53d8aa27471d9f95a32d9e03fe0b",
+      "bytes": 284
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
