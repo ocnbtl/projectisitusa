@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-bulk-20260802-r33-ct-001",
+  "leaseId": "lease-gbif-bulk-20260802-r33-ct-001-1",
+  "status": "complete",
+  "branch": "codex/gbif-bulk-20260802-r33-ct-001",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260802-r33-ct-001",
+  "baseSha": "ee698ce22c16070497fcbf172060117028943f5d",
+  "commitSha": "fe129fbf0a1e950fc9a853e1eb5994910a4317e8",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "CT",
+    "stateProvince": "Connecticut",
+    "candidateLimit": 225,
+    "candidatePairs": [
+      "09110:lysimachia-vulgaris",
+      "09110:marsilea-quadrifolia",
+      "09110:microstegium-vimineum",
+      "09110:mikania-micrantha",
+      "09110:myosotis-scorpioides",
+      "09110:myriophyllum-aquaticum",
+      "09110:myriophyllum-spicatum",
+      "09110:najas-minor",
+      "09110:nassella-trichotoma",
+      "09110:nymphoides-peltata",
+      "09110:onopordum-acanthium",
+      "09110:onopordum-illyricum",
+      "09110:ornithogalum-umbellatum",
+      "09110:ottelia-alismoides",
+      "09110:poa-compressa",
+      "09110:populus-alba",
+      "09110:potamogeton-crispus",
+      "09110:pueraria-montana",
+      "09110:ranunculus-ficaria",
+      "09110:rhamnus-cathartica",
+      "09110:rosa-multiflora",
+      "09110:rottboellia-cochinchinensis",
+      "09110:rubus-phoenicolasius",
+      "09110:rumex-acetosella",
+      "09110:saccharum-spontaneum",
+      "09120:lysimachia-vulgaris",
+      "09120:marsilea-quadrifolia",
+      "09120:microstegium-vimineum",
+      "09120:mikania-micrantha",
+      "09120:myosotis-scorpioides",
+      "09120:myriophyllum-aquaticum",
+      "09120:myriophyllum-spicatum",
+      "09120:najas-minor",
+      "09120:nassella-trichotoma",
+      "09120:nymphoides-peltata",
+      "09120:onopordum-acanthium",
+      "09120:onopordum-illyricum",
+      "09120:ornithogalum-umbellatum",
+      "09120:ottelia-alismoides",
+      "09120:poa-compressa",
+      "09120:populus-alba",
+      "09120:potamogeton-crispus",
+      "09120:pueraria-montana",
+      "09120:ranunculus-ficaria",
+      "09120:rhamnus-cathartica",
+      "09120:rosa-multiflora",
+      "09120:rottboellia-cochinchinensis",
+      "09120:rubus-phoenicolasius",
+      "09120:rumex-acetosella",
+      "09120:saccharum-spontaneum",
+      "09130:lysimachia-vulgaris",
+      "09130:marsilea-quadrifolia",
+      "09130:microstegium-vimineum",
+      "09130:mikania-micrantha",
+      "09130:myosotis-scorpioides",
+      "09130:myriophyllum-aquaticum",
+      "09130:myriophyllum-spicatum",
+      "09130:najas-minor",
+      "09130:nassella-trichotoma",
+      "09130:nymphoides-peltata",
+      "09130:onopordum-acanthium",
+      "09130:onopordum-illyricum",
+      "09130:ornithogalum-umbellatum",
+      "09130:ottelia-alismoides",
+      "09130:poa-compressa",
+      "09130:populus-alba",
+      "09130:potamogeton-crispus",
+      "09130:pueraria-montana",
+      "09130:ranunculus-ficaria",
+      "09130:rhamnus-cathartica",
+      "09130:rosa-multiflora",
+      "09130:rottboellia-cochinchinensis",
+      "09130:rubus-phoenicolasius",
+      "09130:rumex-acetosella",
+      "09130:saccharum-spontaneum",
+      "09140:lysimachia-vulgaris",
+      "09140:marsilea-quadrifolia",
+      "09140:microstegium-vimineum",
+      "09140:mikania-micrantha",
+      "09140:myosotis-scorpioides",
+      "09140:myriophyllum-aquaticum",
+      "09140:myriophyllum-spicatum",
+      "09140:najas-minor",
+      "09140:nassella-trichotoma",
+      "09140:nymphoides-peltata",
+      "09140:onopordum-acanthium",
+      "09140:onopordum-illyricum",
+      "09140:ornithogalum-umbellatum",
+      "09140:ottelia-alismoides",
+      "09140:poa-compressa",
+      "09140:populus-alba",
+      "09140:potamogeton-crispus",
+      "09140:pueraria-montana",
+      "09140:ranunculus-ficaria",
+      "09140:rhamnus-cathartica",
+      "09140:rosa-multiflora",
+      "09140:rottboellia-cochinchinensis",
+      "09140:rubus-phoenicolasius",
+      "09140:rumex-acetosella",
+      "09140:saccharum-spontaneum",
+      "09150:lysimachia-vulgaris",
+      "09150:marsilea-quadrifolia",
+      "09150:microstegium-vimineum",
+      "09150:mikania-micrantha",
+      "09150:myosotis-scorpioides",
+      "09150:myriophyllum-aquaticum",
+      "09150:myriophyllum-spicatum",
+      "09150:najas-minor",
+      "09150:nassella-trichotoma",
+      "09150:nymphoides-peltata",
+      "09150:onopordum-acanthium",
+      "09150:onopordum-illyricum",
+      "09150:ornithogalum-umbellatum",
+      "09150:ottelia-alismoides",
+      "09150:poa-compressa",
+      "09150:populus-alba",
+      "09150:potamogeton-crispus",
+      "09150:pueraria-montana",
+      "09150:ranunculus-ficaria",
+      "09150:rhamnus-cathartica",
+      "09150:rosa-multiflora",
+      "09150:rottboellia-cochinchinensis",
+      "09150:rubus-phoenicolasius",
+      "09150:rumex-acetosella",
+      "09150:saccharum-spontaneum",
+      "09160:lysimachia-vulgaris",
+      "09160:marsilea-quadrifolia",
+      "09160:microstegium-vimineum",
+      "09160:mikania-micrantha",
+      "09160:myosotis-scorpioides",
+      "09160:myriophyllum-aquaticum",
+      "09160:myriophyllum-spicatum",
+      "09160:najas-minor",
+      "09160:nassella-trichotoma",
+      "09160:nymphoides-peltata",
+      "09160:onopordum-acanthium",
+      "09160:onopordum-illyricum",
+      "09160:ornithogalum-umbellatum",
+      "09160:ottelia-alismoides",
+      "09160:poa-compressa",
+      "09160:populus-alba",
+      "09160:potamogeton-crispus",
+      "09160:pueraria-montana",
+      "09160:ranunculus-ficaria",
+      "09160:rhamnus-cathartica",
+      "09160:rosa-multiflora",
+      "09160:rottboellia-cochinchinensis",
+      "09160:rubus-phoenicolasius",
+      "09160:rumex-acetosella",
+      "09160:saccharum-spontaneum",
+      "09170:lysimachia-vulgaris",
+      "09170:marsilea-quadrifolia",
+      "09170:microstegium-vimineum",
+      "09170:mikania-micrantha",
+      "09170:myosotis-scorpioides",
+      "09170:myriophyllum-aquaticum",
+      "09170:myriophyllum-spicatum",
+      "09170:najas-minor",
+      "09170:nassella-trichotoma",
+      "09170:nymphoides-peltata",
+      "09170:onopordum-acanthium",
+      "09170:onopordum-illyricum",
+      "09170:ornithogalum-umbellatum",
+      "09170:ottelia-alismoides",
+      "09170:poa-compressa",
+      "09170:populus-alba",
+      "09170:potamogeton-crispus",
+      "09170:pueraria-montana",
+      "09170:ranunculus-ficaria",
+      "09170:rhamnus-cathartica",
+      "09170:rosa-multiflora",
+      "09170:rottboellia-cochinchinensis",
+      "09170:rubus-phoenicolasius",
+      "09170:rumex-acetosella",
+      "09170:saccharum-spontaneum",
+      "09180:lysimachia-vulgaris",
+      "09180:marsilea-quadrifolia",
+      "09180:microstegium-vimineum",
+      "09180:mikania-micrantha",
+      "09180:myosotis-scorpioides",
+      "09180:myriophyllum-aquaticum",
+      "09180:myriophyllum-spicatum",
+      "09180:najas-minor",
+      "09180:nassella-trichotoma",
+      "09180:nymphoides-peltata",
+      "09180:onopordum-acanthium",
+      "09180:onopordum-illyricum",
+      "09180:ornithogalum-umbellatum",
+      "09180:ottelia-alismoides",
+      "09180:poa-compressa",
+      "09180:populus-alba",
+      "09180:potamogeton-crispus",
+      "09180:pueraria-montana",
+      "09180:ranunculus-ficaria",
+      "09180:rhamnus-cathartica",
+      "09180:rosa-multiflora",
+      "09180:rottboellia-cochinchinensis",
+      "09180:rubus-phoenicolasius",
+      "09180:rumex-acetosella",
+      "09180:saccharum-spontaneum",
+      "09190:lysimachia-vulgaris",
+      "09190:marsilea-quadrifolia",
+      "09190:microstegium-vimineum",
+      "09190:mikania-micrantha",
+      "09190:myosotis-scorpioides",
+      "09190:myriophyllum-aquaticum",
+      "09190:myriophyllum-spicatum",
+      "09190:najas-minor",
+      "09190:nassella-trichotoma",
+      "09190:nymphoides-peltata",
+      "09190:onopordum-acanthium",
+      "09190:onopordum-illyricum",
+      "09190:ornithogalum-umbellatum",
+      "09190:ottelia-alismoides",
+      "09190:poa-compressa",
+      "09190:populus-alba",
+      "09190:potamogeton-crispus",
+      "09190:pueraria-montana",
+      "09190:ranunculus-ficaria",
+      "09190:rhamnus-cathartica",
+      "09190:rosa-multiflora",
+      "09190:rottboellia-cochinchinensis",
+      "09190:rubus-phoenicolasius",
+      "09190:rumex-acetosella",
+      "09190:saccharum-spontaneum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-lysimachia-vulgaris-000000.json.gz",
+      "sha256": "8e47d420146237d766ac0d6e8d6e6bee1d22dc357c260c616af06ea2f5a2d9bc",
+      "bytes": 16452,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-marsilea-quadrifolia-000000.json.gz",
+      "sha256": "6bf6330d70b30fd19cd6cbd8bc8c43acc7f25f07616d12cca2e6d864a7b310e8",
+      "bytes": 99099,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-microstegium-vimineum-000000.json.gz",
+      "sha256": "30d9b32713c839b1a3ac38a922c9ce82f5a6464781135c3459aa07ade6a4bee4",
+      "bytes": 54720,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-mikania-micrantha-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-myosotis-scorpioides-000000.json.gz",
+      "sha256": "58a025b94845f5ae4d7f1b1619717351d9c4de6ec3d95c404d947ba86f4653b9",
+      "bytes": 69933,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-myriophyllum-aquaticum-000000.json.gz",
+      "sha256": "8e08e624ac938bd57f8a5817246216cca6c075d94203471ff38c6605c6fe4793",
+      "bytes": 5516,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-myriophyllum-spicatum-000000.json.gz",
+      "sha256": "941912d4f48e989fa8654f9b8e0cf1d6e9d022bc2ec1343d21ac5c3b103e7bd0",
+      "bytes": 28781,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-najas-minor-000000.json.gz",
+      "sha256": "6ec5098dd39e8c9246649b5e36bcf35b56235154c98fadbe8f67048de3ca8fdd",
+      "bytes": 18949,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-nassella-trichotoma-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-nymphoides-peltata-000000.json.gz",
+      "sha256": "d1417c118208beec70d7cb1bbc33d7f40ec9b0725ab6b8c1d4b62604d6f6240b",
+      "bytes": 8518,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-onopordum-acanthium-000000.json.gz",
+      "sha256": "41e24a2b11ef5025dbb3f56765d394d82cda63e8094539e2c6656cc8ac137c38",
+      "bytes": 13181,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-onopordum-illyricum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-ornithogalum-umbellatum-000000.json.gz",
+      "sha256": "727594036fde5b837bfa10a356ce5c12a01b0169de8a8fbf472855f90450463d",
+      "bytes": 13415,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-ottelia-alismoides-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-poa-compressa-000000.json.gz",
+      "sha256": "cc94d5643c9673f2912a06999dbc79f79bf0d5d50fe4deb5a321b29edfd136ca",
+      "bytes": 78300,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-populus-alba-000000.json.gz",
+      "sha256": "ae486e6839568e488a4363fa8ffa6630a4c7c9feab8ec594825ccef9975c9274",
+      "bytes": 33034,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-potamogeton-crispus-000000.json.gz",
+      "sha256": "8ce1cc4afc152a01f69ed7d0bec2463c636047174ab95bf5b7ca85285e7b34fe",
+      "bytes": 44299,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-pueraria-montana-000000.json.gz",
+      "sha256": "f3e3ee72a6a014659517a3a621c19e1707625f6b6c691b9b7914edef0f60c728",
+      "bytes": 14041,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-ranunculus-ficaria-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-rhamnus-cathartica-000000.json.gz",
+      "sha256": "eff15b8df4fa8c8a6d06361eda7e22f6614386e8b125b0df7812ed2b4ee70160",
+      "bytes": 54357,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-rosa-multiflora-000000.json.gz",
+      "sha256": "8f3afd533f223e385bcea636b35f7215c279f7d0fbf503a731f1ccc036ece17f",
+      "bytes": 52099,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-rubus-phoenicolasius-000000.json.gz",
+      "sha256": "c986c9ca406ee7a5483e07ae1cea7e81667e574c801c1f7aa2fa0eb13b35374d",
+      "bytes": 44445,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-rumex-acetosella-000000.json.gz",
+      "sha256": "359170cc2806b753b1652a3155cc1df92326d3e8b5fc5d229885f3087e565374",
+      "bytes": 76985,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-lysimachia-vulgaris.json.gz",
+      "sha256": "36411b35d9adf4526f9a32091965cf3d6cd466c4bb699e6e39ec47ccb33df8e8",
+      "bytes": 285,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-marsilea-quadrifolia.json.gz",
+      "sha256": "8a371d524f54e08d37a3a3cc8e828db4175dceb8ecdc3ed38b8bf165625a9d1c",
+      "bytes": 291,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-microstegium-vimineum.json.gz",
+      "sha256": "aa19ff9f35f3a3019242b27a31f8b6ef5d1527a9e07ae05f613d822872d0e8bd",
+      "bytes": 294,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-mikania-micrantha.json.gz",
+      "sha256": "f2e57b1352acb896bd41cdcb129a12cabc6b3a9884c26c6b95b2d57e9417d084",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-myosotis-scorpioides.json.gz",
+      "sha256": "7682f17f111867d8d284bbdc89a7aad81c1bf034ddf7279ad114129366028ddb",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-myriophyllum-aquaticum.json.gz",
+      "sha256": "db509794576d0a337ab7abcf4ddcaf9f769a578f7acb839cb3c87ab7d9ab9f4c",
+      "bytes": 306,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-myriophyllum-spicatum.json.gz",
+      "sha256": "83becffe6989d99378fa261b508f9b2972f515aaff790d37ccb368b79af9ce4d",
+      "bytes": 293,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-najas-minor.json.gz",
+      "sha256": "a532be9a5a1c639910792c743862d649f7aa349b7dfe9e43d82d4442bdc7317a",
+      "bytes": 287,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-nassella-trichotoma.json.gz",
+      "sha256": "42a2f514e60c51f6488f90139da52034722e04b9c35db79aa94a4ebd145f7f97",
+      "bytes": 298,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-nymphoides-peltata.json.gz",
+      "sha256": "f356e67614d2c409e9d29ea4ea9d0e766a4d1c2097847cd79fbf3ea19e21940d",
+      "bytes": 301,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-onopordum-acanthium.json.gz",
+      "sha256": "dcdf8d7cc72cd48fe120ae0a196e4fa403611515293a8e0af1ed010abb4bbc4c",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-onopordum-illyricum.json.gz",
+      "sha256": "c72bc8f77b02df6e80c97e6eb520c221c8cb5c94efa41346b3cb55004c589e41",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-ornithogalum-umbellatum.json.gz",
+      "sha256": "fa20903cf782f41bebae11541867b79b0cf9d6f3fc70b6ffde19dcac69e6a1f6",
+      "bytes": 287,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-ottelia-alismoides.json.gz",
+      "sha256": "6078ec6df44f936a684afd39e78b70702706031fcf8431af851a253ab7520538",
+      "bytes": 297,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-poa-compressa.json.gz",
+      "sha256": "9e5a8df4f1161be822cceb6811eb00b519d1c9cf8a571bd940324b5ae169b327",
+      "bytes": 270,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-populus-alba.json.gz",
+      "sha256": "7990772a4b90407f465b8a91c266bec099062b879ee120408b34be0bf5ed257f",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-potamogeton-crispus.json.gz",
+      "sha256": "2e5d0d49422238593f64a4ed223f2b8c2b43fc3c5e0b7e754a80cbf48d5567d7",
+      "bytes": 283,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-pueraria-montana.json.gz",
+      "sha256": "daeaa97f24ec24cee08a2f07f865a45a2a6468ce6e029d29622b77d4a63bb3f7",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-ranunculus-ficaria.json.gz",
+      "sha256": "270d3ed5cf85cf97f1211da2b6329cbdf2b41a02efcd4333275da110b5847850",
+      "bytes": 288,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-rhamnus-cathartica.json.gz",
+      "sha256": "b23ad10a5bb3f110df99e01d5454784a853e6eaa8864882b1fb6b9ce70ad1c04",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-rosa-multiflora.json.gz",
+      "sha256": "d60fc13e18947f3e54d11ccd72c31a73924ec661f8d30b1838d0c1d09b544a3e",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+      "sha256": "2eeee55b2f7afd7fa66f423e6c9d5fc4876ce724bcc745c5164eb72217639813",
+      "bytes": 293,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-rubus-phoenicolasius.json.gz",
+      "sha256": "78f799d2e8f0cffcd15a33363687549be9ef386cce9f5c8cdd04277973a5d8ed",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-rumex-acetosella.json.gz",
+      "sha256": "e10f713b75c6a69193add019ea57756a1337bb5747a7086a5608042eea4a3bfd",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+      "sha256": "05536495c6b3620dbc97c72fbaa0541464589a497a7e046e83f5f07e009f6a3c",
+      "bytes": 278,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/rejections.ndjson",
+      "sha256": "3256a82e88da3c24c9f8487a0f1e797ce00945348299579c6214168c5b94a1d3",
+      "bytes": 1225154,
+      "media_type": "application/x-ndjson",
+      "count": 1719
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/outcomes.ndjson",
+      "sha256": "0908dc2ffcaf5502526ea971a299047ddf34d5217632fd9779c987035555cc8d",
+      "bytes": 1450134,
+      "media_type": "application/x-ndjson",
+      "count": 225
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/receipt.json",
+    "sha256": "425e46f977c2dd28a597f41fcd1411d34dea18f310c45638a98174ff43f1b07c",
+    "bytes": 53746,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/source-verification.json",
+    "sha256": "0650932ae0905f26d44b584adfd75b6892cb0a4367c20c1860a048f9e12de960",
+    "bytes": 62979,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 50,
+      "retainedArtifactBytes": 733943,
+      "sourceRequests": 50,
+      "providerCandidates": 1719,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 1719,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 225,
+      "completeOutcomePairs": 225,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 225,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 50,
+      "retainedArtifactBytes": 733943,
+      "sourceRequests": 50,
+      "providerCandidates": 1719,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 1719,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 225,
+      "completeOutcomePairs": 225,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 225,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check ee698ce22c16070497fcbf172060117028943f5d...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-bulk-20260802-r33-ct-001-1 --manifest src/data/research/runs/20260803T002200Z__gbif-preserved-specimens__70f1ba64f73c/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260802-r33-ct-001",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-bulk-20260802-r33-ct-001-1",
+        "status": "complete",
+        "finishedAt": "2026-08-03T00:25:33.100Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 50,
+        "providerCandidates": 1719,
+        "retainedArtifacts": 50,
+        "receiptSha256": "425e46f977c2dd28a597f41fcd1411d34dea18f310c45638a98174ff43f1b07c"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 32,
+    "peakMemoryMb": 1364,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 225,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
