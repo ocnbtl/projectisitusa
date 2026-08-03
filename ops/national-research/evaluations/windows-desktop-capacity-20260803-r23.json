@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r23",
+  "recordedAt": "2026-08-03T18:37:24.2685251Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "integratedLocalHeadSha": "ebf9bdfac",
+  "completedWave": {
+    "planId": "gbif-bulk-20260803-r34",
+    "states": ["WA", "DE"],
+    "jobs": 2,
+    "stateSpeciesScreens": 50,
+    "completeCountySpeciesOutcomes": 1050,
+    "expectedPairsMovedOutOfNotResearched": 1050,
+    "assertionEvents": 108,
+    "reviewEvents": 108,
+    "rejectionRecords": 80,
+    "providerRequests": 100,
+    "http200": 100,
+    "http429": 0,
+    "retries": 0,
+    "errors": 0,
+    "mergeConflicts": 0
+  },
+  "nationalQueue": {
+    "coverage": "All 51 jurisdictions are represented by round 34 and round 35 plan files.",
+    "replacementPlanId": "gbif-bulk-20260803-r35",
+    "round35Jurisdictions": 35,
+    "round35SelectedStateSpeciesScreens": 1529,
+    "round35SelectedCountyOutcomes": 51878,
+    "round35ExpectedNetNewPairs": 24685,
+    "round35BatchCount": 73,
+    "rankingBasis": "Current incomplete applicable GBIF protocol cells, exact immutable-run deduplication, and expected movement from not-researched county-species pairs.",
+    "topBatches": [
+      {"rank": 1, "stateCode": "LA", "cohort": 5, "batchId": "gbif-bulk-20260803-r35-la-001", "screens": 25, "countyOutcomes": 1600, "expectedNetNewPairs": 1600, "candidateSha256": "e49ca1976afd8db74dcae93add1787e607ed89579cd0a87902dca1c48c432a72"},
+      {"rank": 2, "stateCode": "MT", "cohort": 7, "batchId": "gbif-bulk-20260803-r35-mt-001", "screens": 25, "countyOutcomes": 1400, "expectedNetNewPairs": 1400, "candidateSha256": "278ec28a5441d003caa18db768d63bcfed768fa0a3a47c90bf3d3a7c249b72ab"},
+      {"rank": 3, "stateCode": "WV", "cohort": 13, "batchId": "gbif-bulk-20260803-r35-wv-001", "screens": 25, "countyOutcomes": 1375, "expectedNetNewPairs": 1375},
+      {"rank": 4, "stateCode": "ND", "cohort": 9, "batchId": "gbif-bulk-20260803-r35-nd-001", "screens": 25, "countyOutcomes": 1325, "expectedNetNewPairs": 1325},
+      {"rank": 5, "stateCode": "SC", "cohort": 11, "batchId": "gbif-bulk-20260803-r35-sc-001", "screens": 25, "countyOutcomes": 1150, "expectedNetNewPairs": 1150},
+      {"rank": 6, "stateCode": "ID", "cohort": 4, "batchId": "gbif-bulk-20260803-r35-id-001", "screens": 25, "countyOutcomes": 1100, "expectedNetNewPairs": 1100},
+      {"rank": 7, "stateCode": "IN", "cohort": 4, "batchId": "gbif-bulk-20260803-r35-in-001", "screens": 11, "countyOutcomes": 1012, "expectedNetNewPairs": 1012},
+      {"rank": 8, "stateCode": "IL", "cohort": 4, "batchId": "gbif-bulk-20260803-r35-il-001", "screens": 9, "countyOutcomes": 918, "expectedNetNewPairs": 918},
+      {"rank": 9, "stateCode": "OR", "cohort": 10, "batchId": "gbif-bulk-20260803-r35-or-001", "screens": 25, "countyOutcomes": 900, "expectedNetNewPairs": 900},
+      {"rank": 10, "stateCode": "OK", "cohort": 10, "batchId": "gbif-bulk-20260803-r35-ok-001", "screens": 20, "countyOutcomes": 1540, "expectedNetNewPairs": 847}
+    ],
+    "nextSelectedJobs": ["gbif-bulk-20260803-r35-la-001", "gbif-bulk-20260803-r35-mt-001"],
+    "nextSelectedExpectedNetNewPairs": 3000
+  },
+  "resources": {
+    "availablePhysicalMemoryMiBAverage": 8383.33,
+    "availablePhysicalMemoryPercent": 26.08,
+    "commitChargePercentAverage": 74.19,
+    "pageReadsPerSecondAverage": 3.97,
+    "pageWritesPerSecondAverage": 0,
+    "diskAvailableBytes": 1088018481152,
+    "diskHeadroom": "pass",
+    "capacityTier": "green",
+    "oneAcquisitionWorkerGate": "fail",
+    "twoAcquisitionWorkerGate": "fail",
+    "maximumAcquisitionWorkersAtCurrentCapacity": 0,
+    "oneWorkerRequiredAvailableMemoryBytes": 9436376064,
+    "twoWorkerRequiredAvailableMemoryBytes": 10510117888,
+    "twoWorkerProjectedAvailableMemoryBytes": 6577913856,
+    "hardFloorBytes": 3221225472
+  },
+  "schedulerDecision": {
+    "dispatchedWorkers": 0,
+    "selectedButDeferredJobs": ["gbif-bulk-20260803-r35-la-001", "gbif-bulk-20260803-r35-mt-001"],
+    "reason": "The project dispatch gate currently permits zero acquisition workers even though the two-worker projection remains above the 3 GiB hard floor. MAIN will not bypass the declared gate and will remeasure after independent centralized work.",
+    "observedTierDiscontinuity": "The earlier yellow sample permitted two workers above the hard floor. The later green sample applied the stricter preferred 25 percent post-reservation headroom and permitted zero. This is recorded as policy behavior, not overridden.",
+    "nextAction": "Commit the full national plan, perform the coherent centralized generation and validation milestone, then remeasure before any replacement leases."
+  }
+}
