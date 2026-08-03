@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260802-r20",
+  "recordedAt": "2026-08-03T00:09:14.986Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "066a81feabfd603d43bdaec282109940025b1d46",
+  "hardware": {
+    "processor": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "physicalCores": 8,
+    "logicalCores": 16,
+    "totalPhysicalMemoryMiB": 31900.92
+  },
+  "resources": {
+    "availablePhysicalMemoryMiB": 10630.74,
+    "availablePhysicalMemoryPercent": 33.32,
+    "committedMiB": 34416.41,
+    "commitLimitMiB": 51356.92,
+    "commitChargePercent": 67.01,
+    "pageReadsPerSecond": 3,
+    "pageWritesPerSecond": 0,
+    "pageFileAllocatedMiB": 19456,
+    "pageFileCurrentUsageMiB": 405,
+    "pageFilePeakUsageMiB": 9500,
+    "diskTotalGiB": 1861.98,
+    "diskFreeGiB": 1006.29,
+    "diskFreePercent": 54.04,
+    "observedDiskBytesPerSecond": 1614045,
+    "observedDiskQueueLength": 0,
+    "observedDiskUtilizationPercent": 0,
+    "heavyWorkerPhysicalMemoryFloorMiB": 3072,
+    "preferredGreenAvailableMemoryPercent": 25,
+    "absoluteDiskStopFloorGiB": 20,
+    "minimumDiskHeadroomPercent": 15,
+    "capacityTier": "green"
+  },
+  "runtime": {
+    "systemNode": "v24.18.1",
+    "researchNode": "v22.23.2",
+    "systemNpm": "11.16.0",
+    "git": "2.53.0.windows.3",
+    "vercelCli": "58.4.0",
+    "githubCli": "2.96.0",
+    "nodeProcessLimit": "no explicit operating-system limit detected",
+    "gitProcessLimit": "no explicit operating-system limit detected",
+    "activeProjectWriterProcesses": 0,
+    "registeredWorktreeCount": 24
+  },
+  "recentWorkerMemory": {
+    "manifestCount": 18,
+    "manifestsWithMeasuredPeakMemory": 2,
+    "measuredP95PeakMemoryMiB": 1288,
+    "declaredMemoryReservationMiB": 1024,
+    "qualification": "Sixteen recent manifests recorded zero rather than a measured peak, so the measured p95 is treated as incomplete and does not override the repository resource gate."
+  },
+  "resourceGate": {
+    "requestedAcquisitionWorkers": 3,
+    "maximumWorkersAtCurrentCapacity": 1,
+    "threeWorkerResult": "rejected",
+    "twoWorkerResult": "rejected",
+    "oneWorkerDispatchRequired": true,
+    "reason": "The current checkout is green before launch, but the repository evaluator requires preserving the preferred 25 percent RAM reserve and permits only one 1024 MiB acquisition reservation at this snapshot. The reusable prompt explicitly permits a safe one-worker wave when a larger dispatch does not fit."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "probeRequests": 10,
+    "http200": 10,
+    "http429": 0,
+    "minimumLatencyMs": 111,
+    "maximumLatencyMs": 349,
+    "retryAfterObserved": false,
+    "explicitRateLimitHeadersObserved": false,
+    "policyRequestIntervalMsPerWorker": 334,
+    "rateLimitModel": "dynamic-provider-load-no-guaranteed-request-rate"
+  },
+  "frozenSkills": {
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "freezeCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorContentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerContentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "filesystemHashValidation": "pass",
+    "freezeCommitAncestorValidation": "pass"
+  },
+  "orchestration": {
+    "jobs": 160,
+    "completedJobs": 111,
+    "failedHistoricalJobs": 42,
+    "blockedHistoricalJobs": 2,
+    "cancelledHistoricalJobs": 5,
+    "leases": 168,
+    "activeLeases": 0,
+    "pendingIntegrationItems": 0,
+    "validation": "pass-with-preserved-historical-warnings"
+  },
+  "production": {
+    "localHead": "066a81feabfd603d43bdaec282109940025b1d46",
+    "originMain": "066a81feabfd603d43bdaec282109940025b1d46",
+    "githubMain": "066a81feabfd603d43bdaec282109940025b1d46",
+    "githubDeploymentId": 5718396475,
+    "githubDeploymentStatus": "success",
+    "vercelDeploymentId": "dpl_FULbaUTpVsfeQRhgweT7ZdTFJBfR",
+    "vercelReadyState": "READY",
+    "vercelGitSourceSha": "066a81feabfd603d43bdaec282109940025b1d46",
+    "liveRouteChecksPassed": 10,
+    "selectedGeneratedByteParityStates": ["AL", "AK", "AZ", "AR", "CA", "WI"]
+  },
+  "incompleteWork": {
+    "datedRetryableProviderFailuresRemaining": 0,
+    "taxonomyBlockedStateSpeciesScreens": 12,
+    "taxonomyBlockedUniqueCatalogTaxa": 8,
+    "providerRequestsPreventedForTaxonomyAmbiguities": 12
+  },
+  "contradictions": [
+    "The durable owner receipt still named 6d74b0fa as the current checkpoint even though local, origin, GitHub, GitHub deployment, and Vercel production had advanced to the separately deployed external-verification commit 066a81fe. This evaluation and owner update restore current operational truth without self-attesting a future release.",
+    "The reusable prompt cites a dated minimum available RAM of 745 MiB and three-worker peak concurrency. Current available RAM is 10630.74 MiB, but the repository resource evaluator still permits only one acquisition worker while preserving its preferred 25 percent reserve.",
+    "The desktop has ample disk and no page-file write pressure, but machine headroom rather than GBIF currently limits concurrent acquisition dispatch.",
+    "The dated 19 retryable provider failures remain closed. Twelve taxonomy-blocked state-species screens remain and must not be retried against GBIF without an approved catalog taxonomy decision."
+  ]
+}

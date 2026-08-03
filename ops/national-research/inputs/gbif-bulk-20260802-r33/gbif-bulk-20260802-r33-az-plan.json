@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260802-r33",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AZ",
+  "asOf": "2026-08-02",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 25,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "425436398c508af557a526f659f38449fdeabe0abdc47b4e20989b105e4092b2",
+    "protocolCells": "33c9bd8d07c7d5ea8791e1735731a2f2b1a616a27bf7063585835e81bef4b3f5",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "46ae56995164cb6dd42bdcaa3ca3b2197ba6c20954d6961c40ca711db9d27512"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 15,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 1020,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0
+  },
+  "availableStateSpeciesScreenCount": 0,
+  "selectedStateSpeciesScreenCount": 0,
+  "selectedCountyOutcomeCount": 0,
+  "expectedNetNewPairCount": 0,
+  "countyCount": 15,
+  "selected": [],
+  "batches": [],
+  "candidateFiles": []
+}

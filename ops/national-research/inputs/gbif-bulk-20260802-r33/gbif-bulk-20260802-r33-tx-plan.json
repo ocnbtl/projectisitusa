@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260802-r33",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "TX",
+  "asOf": "2026-08-02",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 25,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "a5d6a85f6d857e1130d2de5025da1534182f17db00e8551e6b7fd55e7cb92fd2",
+    "protocolCells": "524cb2e7d28e51f7b965eb6e4bcd6f4bd5f821bb11634aace515be8edb0ea18f",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "512ba8688b20fb2ddf9a66990e9b2eb7d82ae07507c344b61947db3a4ccea2e7"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 254,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 17272,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 1
+  },
+  "availableStateSpeciesScreenCount": 0,
+  "selectedStateSpeciesScreenCount": 0,
+  "selectedCountyOutcomeCount": 0,
+  "expectedNetNewPairCount": 0,
+  "countyCount": 254,
+  "selected": [],
+  "batches": [],
+  "candidateFiles": []
+}
