@@ -20087,7 +20087,7 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r46-nj-001-1",
       "jobId": "gbif-bulk-20260804-r46-nj-001",
       "leaseId": "lease-gbif-bulk-20260804-r46-nj-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T09:55:40.130Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r46-nj-001__lease-gbif-bulk-20260804-r46-nj-001-1.json",
       "manifestHash": "63d95e557491811b74b263c22c4de5d166d9aaee7291d1b1d3b119d66e2749ed",
@@ -20182,6 +20182,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r46-nj-001-1.json",
         "sha256": "d05558db21b3ca92f53d41c5c74920e33e5f699ccc17d20e47c0cc39276f0627",
         "bytes": 9425
+      },
+      "integratedAt": "2026-08-04T10:03:49.114Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1af2ffd89238faacee0e753b24469774b1bc1d4a",
+      "integrationChecks": [
+        {
+          "command": "fresh full canonical immutable-research integrity validation after R46 worker integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact accepted New Jersey worker-to-canonical Git tree-entry parity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact accepted worker-to-canonical tree parity and fresh full canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260804-r46-nj-001-1.json",
+        "sha256": "74e7da8a4e464eb315c1e98b0b152150c9585f95cd46ee82b4c4a64dc6236aa0",
+        "bytes": 9273
       }
     },
     {
