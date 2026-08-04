@@ -20219,7 +20219,7 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r46-wv-001-1",
       "jobId": "gbif-bulk-20260804-r46-wv-001",
       "leaseId": "lease-gbif-bulk-20260804-r46-wv-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T09:55:47.378Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r46-wv-001__lease-gbif-bulk-20260804-r46-wv-001-1.json",
       "manifestHash": "eb63c5de51f777ef90e22d168ebf4988df580d900abb85b9213600c83e7d0e41",
@@ -20314,6 +20314,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r46-wv-001-1.json",
         "sha256": "e21c9154ea5cea92b41584cace9919efe5d117a464ee106b1c7bdb55058ed0d0",
         "bytes": 9498
+      },
+      "integratedAt": "2026-08-04T10:03:57.277Z",
+      "integrator": "MAIN",
+      "integrationCommit": "9fdf4775bcd023dbd5c8eb0ae67a4d03e400db50",
+      "integrationChecks": [
+        {
+          "command": "fresh full canonical immutable-research integrity validation after R46 worker integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact accepted West Virginia worker-to-canonical Git tree-entry parity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact accepted worker-to-canonical tree parity and fresh full canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260804-r46-wv-001-1.json",
+        "sha256": "263680efed6ffa9b1e9a34063a1bf6f4021b898415778c15ca65de52ae18ba60",
+        "bytes": 9346
       }
     }
   ]
