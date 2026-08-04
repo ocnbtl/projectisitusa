@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260804-r35",
+  "recordedAt": "2026-08-04T06:29:42.0659562Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "canonicalHeadBeforePlanning": "0f1ca4e7c83111628ed306f18ef5e9a3bcf7e6ea",
+  "externallyVerifiedStartingSha": "3a531274e93838ad85e3e3d8a6c80836b103f13d",
+  "completedPriorWave": {
+    "planId": "gbif-bulk-20260804-r41",
+    "jurisdictions": [
+      "IL",
+      "IN"
+    ],
+    "stateSpeciesScreens": 20,
+    "completeCountySpeciesOutcomes": 1930,
+    "evidenceFoundOutcomes": 135,
+    "noQualifyingEvidenceOutcomes": 1795,
+    "sourceRequests": 40,
+    "http200": 40,
+    "providerRetries": 0,
+    "providerCandidates": 534,
+    "assertionEvents": 308,
+    "reviewEvents": 308,
+    "rejectionRecords": 226,
+    "duplicateRecords": 0,
+    "errors": 0,
+    "retainedArtifacts": 40,
+    "retainedArtifactBytes": 266665,
+    "manualRuntimeInterventions": 4,
+    "activeLeasesAfterIntegration": 0
+  },
+  "resourceSnapshot": {
+    "tier": "yellow",
+    "totalMemoryMiB": 31900.918,
+    "availableMemoryMiB": 6607.793,
+    "availableMemoryPercentOfTotal": 20.71,
+    "pagefileCurrentUsageMiB": 2285,
+    "pagefilePeakUsageMiB": 9500,
+    "pagefileAllocatedMiB": 21517,
+    "freeDiskGiB": 965.7,
+    "perWorkerMemoryPolicyMiB": 1536,
+    "hardMemoryFloorMiB": 3072,
+    "projectedAvailableAfterOneWorkerMiB": 5071.793,
+    "projectedAvailableAfterTwoWorkersMiB": 3535.793,
+    "projectedAvailableAfterThreeWorkersMiB": 1999.793,
+    "oneWorkerGate": "pass",
+    "twoWorkerGate": "pass",
+    "threeWorkerGate": "fail-hard-memory-floor",
+    "maximumAcquisitionWorkers": 2
+  },
+  "plannedWave": {
+    "planId": "gbif-bulk-20260804-r42",
+    "jurisdictions": [
+      "SC",
+      "ID"
+    ],
+    "stateSpeciesScreens": 50,
+    "countySpeciesPairs": 2250,
+    "expectedNetNewPairs": 2250,
+    "dispatchMode": "two-concurrent-isolated-workers",
+    "selectionBasis": "largest remaining fully not-researched pair movement among freshly planned jobs with zero same-state historical GBIF scope overlap and zero prevented completed pairs",
+    "ranking": [
+      {
+        "stateCode": "SC",
+        "stateSpeciesScreens": 25,
+        "countySpeciesPairs": 1150,
+        "expectedNetNewPairs": 1150,
+        "historicalSameStateGbifScopeOverlap": 0,
+        "taxonomyBlockedStateSpeciesExcluded": 1
+      },
+      {
+        "stateCode": "ID",
+        "stateSpeciesScreens": 25,
+        "countySpeciesPairs": 1100,
+        "expectedNetNewPairs": 1100,
+        "historicalSameStateGbifScopeOverlap": 0,
+        "taxonomyBlockedStateSpeciesExcluded": 0
+      }
+    ]
+  },
+  "authorityBoundary": {
+    "directUserConsentPresent": true,
+    "approvedProvider": "api.gbif.org",
+    "approvedData": "registered public state and scientific-name query scope plus returned public evidence/query metadata",
+    "secretsOrPrivateDataAuthorized": false,
+    "workerIsolation": "one registered source, one state, and exact candidate pairs per lease",
+    "sharedGenerationOwner": "MAIN"
+  }
+}
