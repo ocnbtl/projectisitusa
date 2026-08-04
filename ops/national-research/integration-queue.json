@@ -17346,7 +17346,7 @@
       "queueId": "queue-lease-gbif-bulk-20260803-r37-la-001-1",
       "jobId": "gbif-bulk-20260803-r37-la-001",
       "leaseId": "lease-gbif-bulk-20260803-r37-la-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T02:04:26.3585042Z",
       "manifestPath": "manifests/gbif-bulk-20260803-r37-la-001__lease-gbif-bulk-20260803-r37-la-001-1.json",
       "manifestHash": "69c21651fe5165917be55ba1c2e500a1411eda265ceec5c094cac7cbbe476779",
@@ -17441,6 +17441,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260803-r37-la-001-1.json",
         "sha256": "14baa1d376615bfb7a842142ebbfbe6ad33d587d3c68224bd7b1ae2493a19d86",
         "bytes": 9683
+      },
+      "integratedAt": "2026-08-04T02:05:33.144Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1f21043d24b6b5b43df3f5ffca93d549f5131dce",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for 25 Louisiana taxa and 1,600 parish-species pairs",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact worker-to-MAIN tree-entry parity for all 57 accepted Louisiana batch 001 paths, clean canonical main, zero conflicts, zero forbidden writes, and preserved no-negative evidence semantics.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260803-r37-la-001-1.json",
+        "sha256": "d488c5ba6a501357b62310dd96cc50f99c280dd58242d65a338f4d71a1a14064",
+        "bytes": 9564
       }
     }
   ]
