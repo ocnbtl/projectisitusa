@@ -19665,7 +19665,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260804-r45-md-001-1",
       "jobId": "gbif-archive-recovery-20260804-r45-md-001",
       "leaseId": "lease-gbif-archive-recovery-20260804-r45-md-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T09:32:00.000Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260804-r45-md-001__lease-gbif-archive-recovery-20260804-r45-md-001-1.json",
       "manifestHash": "ba0f9ea2435c54db3b02b47460f5be7a1d711c9ec7b4d169097163db9118a0b6",
@@ -19750,6 +19750,42 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260804-r45-md-001-1.json",
         "sha256": "1654169b71efd12cb897cd2b287c4cb8909b150d25b2f33b662ae686cb8cd6ff",
         "bytes": 7964
+      },
+      "integratedAt": "2026-08-04T09:42:33.727Z",
+      "integrator": "MAIN",
+      "integrationCommit": "833d50fd8d8f891c985c1846d02a132462ab6f01",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Maryland GBIF archive-replay run 20260804T092229Z__gbif-preserved-specimens__3251df1d7b57",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact worker-to-canonical tree parity and fresh canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260804-r45-md-001-1.json",
+        "sha256": "42e17e4ea6ec83cd8d8fe3c98adcd823826e3ce0c7a721fc459ad6a40792603e",
+        "bytes": 8088
       }
     },
     {
