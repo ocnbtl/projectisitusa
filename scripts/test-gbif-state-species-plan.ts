@@ -80,7 +80,7 @@ assert(
   "The planner did not report a bounded positive net-new pair estimate.",
 );
 assert(
-  first.inputHashes.countyResearchProjections.length === first.countyCount &&
+  /^[0-9a-f]{64}$/.test(first.inputHashes.countyResearchProjections) &&
     first.rankingInputs.countyProjectionFileCount === first.countyCount,
   "The planner did not hash every current county projection used for net-new ranking.",
 );

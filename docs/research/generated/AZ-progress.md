@@ -15,10 +15,10 @@ Generated: `2026-08-04T00:00:00.000Z`
 - Determination coverage: `0.44%`
 - Research coverage: `5.11%`
 - Explicit outcome coverage: `5.1118%`
-- Applicable protocol cells: `87`
+- Applicable protocol cells: `115`
 - Current complete protocol cells: `73`
-- Protocol completion: `98.85%`
-- Current protocol completion: `83.91%`
+- Protocol completion: `74.78%`
+- Current protocol completion: `63.48%`
 - Evidence records: `1597`
 - Research runs: `13`
 - Rejection records: `282`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Black mustard (`brassica-nigra`) | plants | 15 | 0 | 1 |
+| Nodding plumeless thistle (`carduus-nutans`) | plants | 15 | 0 | 1 |
+| Ward's weed (`carrichtera-annua`) | plants | 15 | 0 | 1 |
+| Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 15 | 0 | 1 |
+| Tall Morning-glory (`ipomoea-purpurea`) | plants | 15 | 0 | 1 |
+| Common kochia (`kochia-scoparia`) | plants | 15 | 0 | 1 |
+| Rose natal grass (`melinis-repens`) | plants | 15 | 0 | 1 |
+| Charlock mustard (`sinapis-arvensis`) | plants | 15 | 0 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 15 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 1 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 15 | 1 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 15 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 1 |
+| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 15 | 1 |
+| Asian mustard (`brassica-tournefortii`) | plants | 0 | 15 | 1 |
+| Ripgut brome (`bromus-diandrus`) | plants | 0 | 15 | 1 |
+| Red brome (`bromus-rubens`) | plants | 0 | 15 | 1 |
+| Cheatgrass (`bromus-tectorum`) | plants | 0 | 15 | 1 |
+| Maltese star-thistle (`centaurea-melitensis`) | plants | 0 | 15 | 1 |
+| Rush skeletonweed (`chondrilla-juncea`) | plants | 0 | 15 | 1 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 15 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 0 | 15 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 1 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 1 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 1 |
-| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 1 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 1 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 1 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 15 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 15 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 15 | 0 |
-| Camelthorn (`alhagi-maurorum`) | plants | 0 | 15 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 15 | 0 |
-| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 15 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 15 | 0 |
-| Common Burdock (`arctium-minus`) | plants | 0 | 15 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 15 | 0 |
-| Absinthium (`artemisia-absinthium`) | plants | 0 | 15 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 15 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 15 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 15 | 0 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 15 | 0 |
-| Caucasian bluestem (`bothriochloa-bladhii`) | plants | 0 | 15 | 0 |
 
 ## Source Operations
 
