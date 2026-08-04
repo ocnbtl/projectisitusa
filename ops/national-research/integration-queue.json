@@ -17209,7 +17209,7 @@
       "queueId": "queue-lease-gbif-bulk-20260803-r36-ne-001-1",
       "jobId": "gbif-bulk-20260803-r36-ne-001",
       "leaseId": "lease-gbif-bulk-20260803-r36-ne-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T01:52:59.3500864Z",
       "manifestPath": "manifests/gbif-bulk-20260803-r36-ne-001__lease-gbif-bulk-20260803-r36-ne-001-1.json",
       "manifestHash": "d21850d73db825ad9e7160fe4cfd8e570b9382795f927721b6fe83bd5903b51b",
@@ -17304,6 +17304,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260803-r36-ne-001-1.json",
         "sha256": "c372367cd03db0bc84d7f0897cf0415e84f81605b4d722130a74677f908344fe",
         "bytes": 9575
+      },
+      "integratedAt": "2026-08-04T01:54:27.394Z",
+      "integrator": "MAIN",
+      "integrationCommit": "1e81c829216c83543b079667bd3fee07d85e00dd",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for 25 Nebraska taxa and 2,325 county-species pairs",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact worker-to-MAIN tree-entry parity for all 57 accepted Nebraska paths, clean canonical main, zero conflicts, zero forbidden writes, and preserved no-negative evidence semantics.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260803-r36-ne-001-1.json",
+        "sha256": "a9ca8a11ecb1672ef7f9f74619c687375fa3ad974b13962a618907d023f5b02f",
+        "bytes": 9558
       }
     }
   ]
