@@ -217,10 +217,24 @@ const states = config.states
     const protocolCompletePairCoverage = protocolCountyScreens === 0
       ? 0
       : round((completeProtocolCountyScreens / protocolCountyScreens) * 100, 4);
+    const regulatedAndHighCells = protocol.cells.filter(
+      (cell) =>
+        cell.applicabilityStatus === "applicable" &&
+        ["regulated", "high"].includes(cell.priority),
+    );
+    const regulatedAndHighCompleteCells = regulatedAndHighCells.filter(
+      (cell) => cell.completionStatus === "complete",
+    );
+    const regulatedAndHighCompletePercent = regulatedAndHighCells.length === 0
+      ? 0
+      : round(
+          (regulatedAndHighCompleteCells.length / regulatedAndHighCells.length) * 100,
+          2,
+        );
     const priorityGate =
       protocol.priorityClassificationComplete &&
-      (protocol.summary.regulatedAndHighApplicableCells === 0 ||
-        protocol.summary.regulatedAndHighCurrentCompletePercent === 100);
+      (regulatedAndHighCells.length === 0 ||
+        regulatedAndHighCompleteCells.length === regulatedAndHighCells.length);
     const buildTimeGates = {
       authoritativeCertificationScope:
         summary.scope.certificationScope === "state-baseline" &&
@@ -244,8 +258,8 @@ const states = config.states
       baselineResearchCoverageCompleteOrBlocked:
         summary.stateSpeciesResearch.fullCatalogResearchAccounted,
       applicableProtocolCellsAtLeast90:
-        protocol.summary.currentCompletePercent >= 90,
-      regulatedAndHighPriorityCurrentComplete: priorityGate,
+        protocol.summary.applicableCompletionPercent >= 90,
+      regulatedAndHighPriorityComplete: priorityGate,
       requiredCurrentSourceFamiliesProcessed:
         protocol.summary.requiredCurrentSourcesProcessed,
       conflictsAdjudicated: summary.summary.conflictCount === 0,
@@ -272,6 +286,11 @@ const states = config.states
       explicitOutcomeCoveragePercent: summary.summary.explicitOutcomeCoveragePercent,
       protocolCompletePairCoveragePercent: protocolCompletePairCoverage,
       protocolCellCounts: protocol.summary,
+      regulatedAndHighPriorityCompletion: {
+        applicableCells: regulatedAndHighCells.length,
+        completeCells: regulatedAndHighCompleteCells.length,
+        completePercent: regulatedAndHighCompletePercent,
+      },
       categoryCompletion: protocol.categoryCompletion,
       priorityCompletion: protocol.priorityCompletion,
       freshness: {
