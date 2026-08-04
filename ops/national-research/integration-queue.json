@@ -19011,7 +19011,7 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r44-ia-001-1",
       "jobId": "gbif-bulk-20260804-r44-ia-001",
       "leaseId": "lease-gbif-bulk-20260804-r44-ia-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T08:52:30.000Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r44-ia-001__lease-gbif-bulk-20260804-r44-ia-001-1.json",
       "manifestHash": "2a60b6c62b58e753aca91af944a85d64a9ef8f304276d9df0513a6701fb181bf",
@@ -19074,6 +19074,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r44-ia-001-1.json",
         "sha256": "747da496dec9453fdf97fbebb29bfaa6c1aaad25847a820aa4a1ae798119bccc",
         "bytes": 4747
+      },
+      "integratedAt": "2026-08-04T09:00:46.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "48081616a9b63f74eadac4d11d8270d28d7832f5",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Iowa GBIF preserved-specimen run 20260804T084530Z__gbif-preserved-specimens__4ef15d865498",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact worker-to-canonical tree parity and fresh canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260804-r44-ia-001-1.json",
+        "sha256": "c873c82d63ac8f466601645eae9713939e963be557994cd1e4c380af5e79176b",
+        "bytes": 4881
       }
     },
     {

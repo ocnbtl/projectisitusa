@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260804-r44-ia-001-1",
+  "jobId": "gbif-bulk-20260804-r44-ia-001",
+  "leaseId": "lease-gbif-bulk-20260804-r44-ia-001-1",
+  "workerCommit": "cde3b72949b7cfe54c8dedcd309185b1a0588ac6",
+  "workerBranchHead": "aaf06cc36252f4597552d6b8cc6d7057d2dfa6f1",
+  "manifestHash": "2a60b6c62b58e753aca91af944a85d64a9ef8f304276d9df0513a6701fb181bf",
+  "changedPaths": [
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-butomus-umbellatus-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-cercopagis-pengoi-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-dreissena-bugensis-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-hypophthalmichthys-molitrix-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-lythrum-salicaria-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-mylopharyngodon-piceus-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-najas-minor-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-neogobius-melanostomus-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-occurrences-potamopyrgus-antipodarum-000000.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-butomus-umbellatus.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-cercopagis-pengoi.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-dreissena-bugensis.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-hypophthalmichthys-molitrix.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-lythrum-salicaria.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-mylopharyngodon-piceus.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-najas-minor.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-neogobius-melanostomus.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/artifacts/gbif-species-match-potamopyrgus-antipodarum.json.gz",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/assertions.ndjson",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/manifest.json",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/outcomes.ndjson",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/receipt.json",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/rejections.ndjson",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/reviews.ndjson",
+    "src/data/research/runs/20260804T084530Z__gbif-preserved-specimens__4ef15d865498/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for Iowa GBIF preserved-specimen run 20260804T084530Z__gbif-preserved-specimens__4ef15d865498",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Integrated after exact worker-to-canonical tree parity and fresh canonical research-integrity validation.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-04T09:00:46.000Z",
+  "integrationCommit": "48081616a9b63f74eadac4d11d8270d28d7832f5"
+}
