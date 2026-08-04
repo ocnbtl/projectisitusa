@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-04T09:34:36.001Z",
+  "runId": "20260804T092229Z__gbif-preserved-specimens__2681f8134e81",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "WY",
+  "pairKeys": [
+    "56001:eichhornia-azurea",
+    "56001:limnophila-sessiliflora",
+    "56003:eichhornia-azurea",
+    "56003:limnophila-sessiliflora",
+    "56005:eichhornia-azurea",
+    "56005:limnophila-sessiliflora",
+    "56007:eichhornia-azurea",
+    "56007:limnophila-sessiliflora",
+    "56009:eichhornia-azurea",
+    "56009:limnophila-sessiliflora",
+    "56011:eichhornia-azurea",
+    "56011:limnophila-sessiliflora",
+    "56013:eichhornia-azurea",
+    "56013:limnophila-sessiliflora",
+    "56015:eichhornia-azurea",
+    "56015:limnophila-sessiliflora",
+    "56017:eichhornia-azurea",
+    "56017:limnophila-sessiliflora",
+    "56019:eichhornia-azurea",
+    "56019:limnophila-sessiliflora",
+    "56021:eichhornia-azurea",
+    "56021:limnophila-sessiliflora",
+    "56023:eichhornia-azurea",
+    "56023:limnophila-sessiliflora",
+    "56025:eichhornia-azurea",
+    "56025:limnophila-sessiliflora",
+    "56027:eichhornia-azurea",
+    "56027:limnophila-sessiliflora",
+    "56029:eichhornia-azurea",
+    "56029:limnophila-sessiliflora",
+    "56031:eichhornia-azurea",
+    "56031:limnophila-sessiliflora",
+    "56033:eichhornia-azurea",
+    "56033:limnophila-sessiliflora",
+    "56035:eichhornia-azurea",
+    "56035:limnophila-sessiliflora",
+    "56037:eichhornia-azurea",
+    "56037:limnophila-sessiliflora",
+    "56039:eichhornia-azurea",
+    "56039:limnophila-sessiliflora",
+    "56041:eichhornia-azurea",
+    "56041:limnophila-sessiliflora",
+    "56043:eichhornia-azurea",
+    "56043:limnophila-sessiliflora",
+    "56045:eichhornia-azurea",
+    "56045:limnophila-sessiliflora"
+  ],
+  "parameterHash": "2681f8134e81b810a25a8f544f61656102d1f6de34f877aa54263e2e53e2c52b",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-04T09:34:36.000Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Wyoming and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "eichhornia-azurea",
+      "limnophila-sessiliflora"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-eichhornia-azurea",
+        "url": "https://api.gbif.org/v1/species/match?name=Eichhornia+azurea&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T09:34:34.888Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-eichhornia-azurea",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Wyoming&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=7494501&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for eichhornia-azurea and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T09:34:35.383Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-limnophila-sessiliflora",
+        "url": "https://api.gbif.org/v1/species/match?name=Limnophila+sessiliflora&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T09:34:35.502Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-limnophila-sessiliflora",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Wyoming&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5415001&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for limnophila-sessiliflora and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T09:34:36.000Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-occurrences-eichhornia-azurea-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-occurrences-limnophila-sessiliflora-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-species-match-eichhornia-azurea.json.gz",
+      "sha256": "5de3444a995259e2f4d378c6323b762c9ed414232cd5f586293df92853f4e56f",
+      "bytes": 313
+    },
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-species-match-limnophila-sessiliflora.json.gz",
+      "sha256": "6ff2d257a82585b7c27c4ec28506a68c811850fbb5455fe7d197f8c26cbea2b2",
+      "bytes": 297
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
