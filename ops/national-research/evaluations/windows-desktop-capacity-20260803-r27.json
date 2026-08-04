@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r27",
+  "recordedAt": "2026-08-04T01:43:30Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "externallyVerifiedStartingSha": "c385855d7fb835d481304ffeec1d9aee364a3a6c",
+  "externalVerification": {
+    "originMainSha": "c385855d7fb835d481304ffeec1d9aee364a3a6c",
+    "githubMainSha": "c385855d7fb835d481304ffeec1d9aee364a3a6c",
+    "githubDeploymentId": 5733438631,
+    "githubDeploymentState": "success",
+    "vercelDeploymentId": "dpl_Ubcx1YJzWhDDV5rR5zeB1ux7kT1U",
+    "vercelState": "READY",
+    "vercelAliasAssigned": true,
+    "productionRootHttpStatus": 200,
+    "montanaGeneratedByteParity": "pass",
+    "attestationBoundary": "This verification independently describes receipt commit c385855d7fb835d481304ffeec1d9aee364a3a6c before the round 36 launch mutation."
+  },
+  "authorityBoundary": {
+    "provider": "GBIF",
+    "approved": true,
+    "approvedAt": "2026-08-04T01:38:00Z",
+    "approvedDisclosure": "selected public scientific names, state scopes, and returned public evidence/query metadata required by the registered GBIF research protocol",
+    "excludedDisclosure": "credentials, secrets, private sessions, or unrelated private data",
+    "priorCancelledJob": "gbif-bulk-20260803-r35-la-001",
+    "priorCancelledLease": "lease-gbif-bulk-20260803-r35-la-001-1",
+    "immutability": "The prior untouched cancellation remains terminal and unchanged; Louisiana resumes through a newly registered job and lease."
+  },
+  "ranking": {
+    "planId": "gbif-bulk-20260803-r35",
+    "primaryMetric": "leased county-species outcome count",
+    "recoveryFirst": {
+      "jobId": "gbif-bulk-20260803-r36-la-001",
+      "candidateBatchId": "gbif-bulk-20260803-r35-la-001",
+      "stateCode": "LA",
+      "stateSpeciesScreens": 25,
+      "countySpeciesOutcomes": 1600,
+      "priority": 100,
+      "reason": "Explicit consent clears the only boundary that closed the prior untouched Louisiana attempt."
+    },
+    "highestRemainingIndependentBatch": {
+      "jobId": "gbif-bulk-20260803-r36-ne-001",
+      "candidateBatchId": "gbif-bulk-20260803-r35-ne-001",
+      "stateCode": "NE",
+      "stateSpeciesScreens": 25,
+      "countySpeciesOutcomes": 2325,
+      "priority": 99
+    }
+  },
+  "resources": {
+    "tier": "yellow",
+    "totalPhysicalMemoryMiB": 31900.92,
+    "availableMemoryMiB": 6563.35,
+    "availableMemoryPercent": 20.57,
+    "pagefileCurrentUsageMiB": 1848,
+    "pagefilePeakUsageMiB": 9500,
+    "freeDiskGiB": 1003.04,
+    "measuredAcquisitionWorkerPeakPrivateMemoryMiB": 1411.141,
+    "hardMemoryFloorMiB": 3072,
+    "projectedAvailableAfterOneWorkerMiB": 5152.209,
+    "projectedAvailableAfterTwoWorkersMiB": 3741.068,
+    "projectedAvailableAfterThreeWorkersMiB": 2329.927,
+    "maximumAcquisitionWorkers": 2,
+    "oneWorkerGate": "pass",
+    "twoWorkerGate": "pass",
+    "threeWorkerGate": "fail"
+  },
+  "skillFreeze": {
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+  },
+  "launch": {
+    "baseSha": "c385855d7fb835d481304ffeec1d9aee364a3a6c",
+    "jobs": [
+      "gbif-bulk-20260803-r36-la-001",
+      "gbif-bulk-20260803-r36-ne-001"
+    ],
+    "leases": [
+      "lease-gbif-bulk-20260803-r36-la-001-1",
+      "lease-gbif-bulk-20260803-r36-ne-001-1"
+    ],
+    "activeLeaseCount": 2,
+    "scopeOverlap": false,
+    "providerRequestsBeforeDispatch": 0,
+    "runWritesBeforeDispatch": 0
+  }
+}
