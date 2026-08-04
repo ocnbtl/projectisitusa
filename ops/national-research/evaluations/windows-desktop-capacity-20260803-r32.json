@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r32",
+  "recordedAt": "2026-08-04T04:07:52.0243897Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "canonicalHeadBeforePlanning": "04fb51d4e97b4094d0b01bc2b501c52f80f7a4c1",
+  "resourceSnapshot": {
+    "tier": "yellow",
+    "totalMemoryMiB": 31900.918,
+    "availableMemoryMiB": 7650.469,
+    "availableMemoryPercentOfTotal": 23.98,
+    "pagefileCurrentUsageMiB": 2273,
+    "pagefilePeakUsageMiB": 9500,
+    "pagefileAllocatedMiB": 19456,
+    "freeDiskGiB": 986.7,
+    "perWorkerMemoryPolicyMiB": 1536,
+    "hardMemoryFloorMiB": 3072,
+    "projectedAvailableAfterOneWorkerMiB": 6114.469,
+    "projectedAvailableAfterTwoWorkersMiB": 4578.469,
+    "projectedAvailableAfterThreeWorkersMiB": 3042.469,
+    "oneWorkerGate": "pass",
+    "twoWorkerGate": "pass",
+    "threeWorkerGate": "fail-hard-memory-floor",
+    "maximumAcquisitionWorkers": 2
+  },
+  "plannedWave": {
+    "planId": "gbif-bulk-20260803-r40",
+    "jurisdictions": [
+      "WV",
+      "ND"
+    ],
+    "stateSpeciesScreens": 50,
+    "countySpeciesPairs": 2700,
+    "expectedNetNewPairs": 2700,
+    "selectionBasis": "highest current expected net-new GBIF pair movement among eligible jurisdictions; active-cohort AL, AK, AZ, and AR have zero remaining eligible GBIF screens"
+  },
+  "providerHealth": {
+    "provider": "GBIF",
+    "taxonomyMatch": "pass",
+    "occurrenceSearch": "pass-on-bounded-retry-2",
+    "occurrenceCount": 110,
+    "transientHttp503Count": 1
+  },
+  "authorityBoundary": {
+    "directUserConsentPresent": true,
+    "approvedProvider": "api.gbif.org",
+    "approvedData": "registered public state and scientific-name query scope plus returned public evidence/query metadata",
+    "secretsOrPrivateDataAuthorized": false
+  }
+}
