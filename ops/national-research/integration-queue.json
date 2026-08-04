@@ -17624,7 +17624,7 @@
       "queueId": "queue-lease-gbif-bulk-20260803-r39-la-003-1",
       "jobId": "gbif-bulk-20260803-r39-la-003",
       "leaseId": "lease-gbif-bulk-20260803-r39-la-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T02:19:09.721Z",
       "manifestPath": "manifests/gbif-bulk-20260803-r39-la-003__lease-gbif-bulk-20260803-r39-la-003-1.json",
       "manifestHash": "38677fd66bca218aa5e184dcf1532f4997630100f5c28403bd96399642a0e571",
@@ -17719,6 +17719,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260803-r39-la-003-1.json",
         "sha256": "1dc0490adf0c7d449e25b5b2d49e3f9a928979d1cb0bb55882a89e8dd4a63e5c",
         "bytes": 9529
+      },
+      "integratedAt": "2026-08-04T02:20:06.974Z",
+      "integrator": "MAIN",
+      "integrationCommit": "6122ca451decbde73009c757daeaa7cf5e1ae9ed",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for 25 Louisiana taxa and 1,600 parish-species pairs",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 3,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated the exact accepted two-commit worker tree after conflict-free cherry-picks, clean canonical status, and byte parity for all 57 reviewed paths; three recorded pre-provider or validator-only interventions caused no duplicate acquisition.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260803-r39-la-003-1.json",
+        "sha256": "1467e2b0dec82ef049afd434cd83d20a1ac4145739a2b6b23f2c606b465d050b",
+        "bytes": 9623
       }
     }
   ]
