@@ -1,0 +1,58 @@
+{
+    "schemaVersion":  1,
+    "queueId":  "queue-lease-gbif-bulk-20260804-r47-nv-003-1",
+    "jobId":  "gbif-bulk-20260804-r47-nv-003",
+    "leaseId":  "lease-gbif-bulk-20260804-r47-nv-003-1",
+    "workerCommit":  "cc1d1602ae3af7aacf4ff5d8c4c3244af94663b7",
+    "workerBranchHead":  "d01dd4e66db041499e006c12f821546c6f393782",
+    "manifestHash":  "92082c3df87f0dd86fd2a4b43724914cb60012f4e3a66943ffa053c4a11fb995",
+    "changedPaths":  [
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-occurrences-icerya-purchasi-000000.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-occurrences-ophiognomonia-clavigignenti-juglandacearum-000000.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-occurrences-ophiostoma-ulmi-000000.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-occurrences-popillia-japonica-000000.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-species-match-icerya-purchasi.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-species-match-ophiognomonia-clavigignenti-juglandacearum.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-species-match-ophiostoma-ulmi.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-species-match-popillia-japonica.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/assertions.ndjson",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/manifest.json",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/outcomes.ndjson",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/receipt.json",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/rejections.ndjson",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/reviews.ndjson",
+                         "src/data/research/runs/20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b/source-verification.json"
+                     ],
+    "checks":  [
+                   {
+                       "command":  "canonical immutable-run validation for Nevada GBIF preserved-specimen run 20260804T182935Z__gbif-preserved-specimens__2f46699b3e6b",
+                       "exitCode":  0,
+                       "result":  "pass"
+                   },
+                   {
+                       "command":  "pinned worker manifest validation with committed exact bytes and clean worktree",
+                       "exitCode":  0,
+                       "result":  "pass"
+                   },
+                   {
+                       "command":  "exact two-commit base-to-head diff, whitespace, output inventory, complete provider pagination, and unsupported-negative semantic audit",
+                       "exitCode":  0,
+                       "result":  "pass"
+                   }
+               ],
+    "conflicts":  0,
+    "manualInterventions":  0,
+    "criticalSafetyViolations":  0,
+    "evidenceSemanticViolations":  0,
+    "forbiddenWrites":  0,
+    "reason":  "Accepted after independent pinned validation, exact two-commit and permitted-path audit, complete provider pagination review, and confirmation that no-qualifying-evidence outcomes remain researched unresolved rather than inferred absent.",
+    "decision":  "accepted",
+    "reviewer":  "MAIN",
+    "reviewedAt":  "2026-08-04T20:30:08.653Z"
+}
