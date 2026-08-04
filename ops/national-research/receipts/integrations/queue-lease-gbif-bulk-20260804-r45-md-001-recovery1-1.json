@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260804-r45-md-001-recovery1-1",
+  "jobId": "gbif-bulk-20260804-r45-md-001-recovery1",
+  "leaseId": "lease-gbif-bulk-20260804-r45-md-001-recovery1-1",
+  "workerCommit": "ac9f6d5540785fa515dbae21beeda05e346fc85b",
+  "workerBranchHead": "96f7d50fb1ae2d927af81b09d1f65ab8d690dd73",
+  "manifestHash": "3b25ea11f2a3e6df008630850defbf1ec13aa12916bfe81d92e4059a01a173fd",
+  "changedPaths": [
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-occurrences-avena-sterilis-000000.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-occurrences-commelina-benghalensis-000000.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-occurrences-crupina-vulgaris-000000.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-occurrences-emex-spinosa-000000.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-occurrences-euphorbia-terracina-000000.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-species-match-avena-sterilis.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-species-match-commelina-benghalensis.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-species-match-crupina-vulgaris.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-species-match-emex-spinosa.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/artifacts/gbif-species-match-euphorbia-terracina.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/assertions.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/manifest.json",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/outcomes.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/receipt.json",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/rejections.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/reviews.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for Maryland GBIF bounded-retry run 20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Integrated after exact worker-to-canonical tree parity and fresh canonical research-integrity validation.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-04T09:42:35.727Z",
+  "integrationCommit": "f25330273aa20ea646fb10792ead046735060d6b"
+}

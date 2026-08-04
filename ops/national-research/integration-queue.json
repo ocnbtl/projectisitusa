@@ -19640,7 +19640,7 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r45-md-001-recovery1-1",
       "jobId": "gbif-bulk-20260804-r45-md-001-recovery1",
       "leaseId": "lease-gbif-bulk-20260804-r45-md-001-recovery1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T09:31:00.000Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r45-md-001-recovery1__lease-gbif-bulk-20260804-r45-md-001-recovery1-1.json",
       "manifestHash": "3b25ea11f2a3e6df008630850defbf1ec13aa12916bfe81d92e4059a01a173fd",
@@ -19695,6 +19695,42 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r45-md-001-recovery1-1.json",
         "sha256": "53b90b9b96708844f948b47bca40d60e9a1894181a91c9c66e5470c05947c4cc",
         "bytes": 3580
+      },
+      "integratedAt": "2026-08-04T09:42:35.727Z",
+      "integrator": "MAIN",
+      "integrationCommit": "f25330273aa20ea646fb10792ead046735060d6b",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Maryland GBIF bounded-retry run 20260804T092229Z__gbif-preserved-specimens__f8c8603fdd1b",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact worker-to-canonical tree parity and fresh canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260804-r45-md-001-recovery1-1.json",
+        "sha256": "279de992b0d89d97900f620bef55cf7d60fb094da06902465276cd43b0f9aad9",
+        "bytes": 3704
       }
     },
     {
