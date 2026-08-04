@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260804-r34",
+  "recordedAt": "2026-08-04T06:04:01.9789556Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "canonicalHeadBeforePlanning": "3a531274e93838ad85e3e3d8a6c80836b103f13d",
+  "externallyVerifiedStartingSha": "3a531274e93838ad85e3e3d8a6c80836b103f13d",
+  "resourceSnapshot": {
+    "tier": "yellow",
+    "totalMemoryMiB": 31900.918,
+    "availableMemoryMiB": 5652.258,
+    "availableMemoryPercentOfTotal": 17.72,
+    "cpuPercent": 26.12,
+    "pagefileCurrentUsageMiB": 2229,
+    "pagefilePeakUsageMiB": 9500,
+    "pagefileAllocatedMiB": 21517,
+    "freeDiskGiB": 971.21,
+    "perWorkerMemoryPolicyMiB": 1536,
+    "hardMemoryFloorMiB": 3072,
+    "projectedAvailableAfterOneWorkerMiB": 4116.258,
+    "projectedAvailableAfterTwoWorkersMiB": 2580.258,
+    "projectedAvailableAfterThreeWorkersMiB": 1044.258,
+    "oneWorkerGate": "pass",
+    "twoWorkerGate": "fail-hard-memory-floor",
+    "threeWorkerGate": "fail-hard-memory-floor",
+    "maximumAcquisitionWorkers": 1
+  },
+  "plannedWave": {
+    "planId": "gbif-bulk-20260804-r41",
+    "jurisdictions": [
+      "IL",
+      "IN"
+    ],
+    "stateSpeciesScreens": 20,
+    "countySpeciesPairs": 1930,
+    "expectedNetNewPairs": 1930,
+    "dispatchMode": "sequential-one-worker-at-a-time",
+    "selectionBasis": "highest current expected net-new unique county-species pairs per planned provider screen across all 51 configured jurisdictions after immutable outcome, historical job-scope, and taxonomy-block deduplication",
+    "ranking": [
+      {
+        "stateCode": "IL",
+        "stateSpeciesScreens": 9,
+        "countySpeciesPairs": 918,
+        "expectedNetNewPairs": 918,
+        "expectedNetNewPairsPerPlannedScreen": 102,
+        "historicalSameStateGbifScopeOverlap": 0,
+        "preventedCompletedPairCount": 0
+      },
+      {
+        "stateCode": "IN",
+        "stateSpeciesScreens": 11,
+        "countySpeciesPairs": 1012,
+        "expectedNetNewPairs": 1012,
+        "expectedNetNewPairsPerPlannedScreen": 92,
+        "historicalSameStateGbifScopeOverlap": 0,
+        "preventedCompletedPairCount": 0
+      }
+    ]
+  },
+  "providerHealth": {
+    "provider": "GBIF",
+    "taxonomyMatch": "pass-exact-Lythrum-salicaria-usageKey-3188736",
+    "occurrenceSearch": "pass-Wisconsin-preserved-specimen-count-358",
+    "transientFailureCount": 0
+  },
+  "recoveryReconciliation": {
+    "currentEquivalentProviderRetryCount": 0,
+    "acceptedButNotIntegratedQueueItems": 0,
+    "oldNineteenProviderFailures": "fully-superseded-by-completed-immutable-work-and-archive-recovery",
+    "taxonomyPolicyOnlyStateSpeciesScreens": 17,
+    "taxonomyPolicyOnlyCountySpeciesPairs": 1616,
+    "taxonomyProviderRepeatCallsProhibited": true,
+    "fiaAlaskaRetiredCountyBlockedPairs": 25,
+    "fiaProviderRetryAuthorized": false
+  },
+  "cohortAudit": {
+    "activeCertificationCohort": 1,
+    "activeCertificationStateCode": "AL",
+    "activeCohortStates": [
+      "AL",
+      "AK",
+      "AZ",
+      "AR"
+    ],
+    "nextCertificationCohort": 2,
+    "nextCohortStates": [
+      "CA",
+      "CO",
+      "CT",
+      "DE"
+    ],
+    "buildTimeReadyStates": 0,
+    "certifiedStates": 0
+  },
+  "contractObservations": [
+    "Current AGENTS, freeze receipt, and executable code use frozen-windows-bulk-validation-2026-07-30-r2; older architecture and research documents still name frozen-postfreeze-lineage-2026-07-26-r2 and are treated as superseded for execution.",
+    "The written architecture separates protocol completion from freshness, while the current readiness implementation gates applicableProtocolCellsAtLeast90 on currentCompletePercent; this keeps AZ and AR blocked despite raw completion above 98 percent."
+  ],
+  "runtimeInterventions": {
+    "planningProcessesThatFailedBeforeRepositoryCodeOrWrite": 5,
+    "planningProcessBlockedAtCanonicalWriteBoundary": 1,
+    "providerRequestsDuringPlanningFailures": 0,
+    "retainedEvidenceArtifactsDuringPlanningFailures": 0,
+    "successfulPlannerExecutions": 2,
+    "classification": "Windows tsx userInfo launcher fault and canonical-checkout sandbox boundary, isolated from provider retry telemetry",
+    "untrackedRuntimeWorkaround": "Two ignored tsx runtime files use the already-known USERNAME environment value instead of the failing os.userInfo call; tracked dependency and source bytes are unchanged."
+  },
+  "authorityBoundary": {
+    "directUserConsentPresent": true,
+    "approvedProvider": "api.gbif.org",
+    "approvedData": "registered public state and scientific-name query scope plus returned public evidence/query metadata",
+    "secretsOrPrivateDataAuthorized": false,
+    "workerIsolation": "one registered source, one state, and exact candidate pairs per lease",
+    "sharedGenerationOwner": "MAIN"
+  }
+}
