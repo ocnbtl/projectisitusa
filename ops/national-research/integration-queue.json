@@ -20577,7 +20577,7 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r47-me-002-1",
       "jobId": "gbif-bulk-20260804-r47-me-002",
       "leaseId": "lease-gbif-bulk-20260804-r47-me-002-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T19:09:00Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r47-me-002__lease-gbif-bulk-20260804-r47-me-002-1.json",
       "manifestHash": "17d34e76accb314d71afad11bf8e4078cf38d723988cac282c0ce64a5c124c5f",
@@ -20672,6 +20672,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r47-me-002-1.json",
         "sha256": "b833476f9b9c0c80a8bdd43622307afafe877d7b6d96190967e9745e945753ab",
         "bytes": 10999
+      },
+      "integratedAt": "2026-08-04T20:15:46.437Z",
+      "integrator": "MAIN",
+      "integrationCommit": "67c30059dfb450fd1186d9ddda562b6876eca263",
+      "integrationChecks": [
+        {
+          "command": "fresh full canonical immutable-research integrity validation after Nevada recovery, Maine batch 2, and official Arizona applicability integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact accepted Maine batch 2 worker-to-canonical Git tree-entry parity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact accepted worker-to-canonical tree parity and fresh full canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260804-r47-me-002-1.json",
+        "sha256": "aaec09d5f7439127361dd9cd25103e569aa1b50007a3f7af4917a8da310da3bf",
+        "bytes": 10915
       }
     }
   ]
