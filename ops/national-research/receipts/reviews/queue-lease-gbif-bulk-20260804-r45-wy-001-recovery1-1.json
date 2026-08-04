@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260804-r45-wy-001-recovery1-1",
+  "jobId": "gbif-bulk-20260804-r45-wy-001-recovery1",
+  "leaseId": "lease-gbif-bulk-20260804-r45-wy-001-recovery1-1",
+  "workerCommit": "eb96c2f6e6bfb630ef4c66d97f0c70815d924276",
+  "workerBranchHead": "44792527cdd146d2c08591c57a3a3c12d01b8bca",
+  "manifestHash": "1454806ee48bbbb15296b5790873c9597eabf3a740d3fbfe74334a6b73f873cc",
+  "changedPaths": [
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-occurrences-eichhornia-azurea-000000.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-occurrences-limnophila-sessiliflora-000000.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-species-match-eichhornia-azurea.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-species-match-limnophila-sessiliflora.json.gz",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/assertions.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/manifest.json",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/outcomes.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/receipt.json",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/rejections.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/reviews.ndjson",
+    "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for Wyoming GBIF bounded-retry run 20260804T092229Z__gbif-preserved-specimens__2681f8134e81",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Accepted after independent pinned manifest validation, exact two-commit audit, permitted-path audit, and complete provider pagination review.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-04T09:38:00.000Z"
+}
