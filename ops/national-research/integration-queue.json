@@ -20957,7 +20957,7 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r47-nv-003-1",
       "jobId": "gbif-bulk-20260804-r47-nv-003",
       "leaseId": "lease-gbif-bulk-20260804-r47-nv-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T20:29:42.311Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r47-nv-003__lease-gbif-bulk-20260804-r47-nv-003-1.json",
       "manifestHash": "92082c3df87f0dd86fd2a4b43724914cb60012f4e3a66943ffa053c4a11fb995",
@@ -21016,6 +21016,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r47-nv-003-1.json",
         "sha256": "d35751052e0966ce88504ee954ef13c26e3e7333733974cddbe3818e96766524",
         "bytes": 5090
+      },
+      "integratedAt": "2026-08-04T20:37:54.805Z",
+      "integrator": "MAIN",
+      "integrationCommit": "2992fba3377dbf5b9b2c904f4459c3859fd751e7",
+      "integrationChecks": [
+        {
+          "command": "fresh full canonical immutable-research integrity validation including Nevada final batch",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact accepted Nevada final batch worker-to-canonical Git tree-entry parity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact accepted worker-to-canonical tree parity and fresh full canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260804-r47-nv-003-1.json",
+        "sha256": "d2dea32cc96973adca846ee859a1aa78c9afe3567d0d2e67ae8c8cf49d0353e3",
+        "bytes": 4105
       }
     }
   ]
