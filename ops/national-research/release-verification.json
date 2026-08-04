@@ -1164,6 +1164,41 @@
         "consoleErrors": 0
       },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and GitHub main matched; GitHub deployment 5741342354 succeeded for the exact content SHA; Vercel deployment dpl_9CdBBjeLF1RAhaM4HHZtje7RQND4 reached READY; fifteen live routes passed; twelve changed-state summary files matched local bytes exactly; New York and West Virginia rendered current projections; returning-browser refresh passed; and desktop plus mobile behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-3ae9109c-2026-08-04",
+      "verifiedAt": "2026-08-04T21:22:10.5648279Z",
+      "commitSha": "3ae9109cd8f3d175cbdab6377d80dfe281f8df61",
+      "githubMainSha": "3ae9109cd8f3d175cbdab6377d80dfe281f8df61",
+      "githubDeploymentId": 5750837552,
+      "vercelDeploymentId": "dpl_B7oUaUZ8WJEJfKABjp7iVNurAX49",
+      "vercelDeploymentUrl": "projectisitusa-36iguiao4-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=AZ","status":200},
+        {"path":"/research?state=ME","status":200},
+        {"path":"/research?state=NV","status":200},
+        {"path":"/species/spotted-lanternfly","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/AZ/summary.json","sha256":"1022b979293b7f1798c65d503e76680ddcc629ce102fcd1a0803a0d4ae62a500"},
+        {"path":"/generated/research/ME/summary.json","sha256":"afdf82abc19452f606b38ca2ec33bd7c64177dab5d897b2f4691de61b0f4ebeb"},
+        {"path":"/generated/research/NV/summary.json","sha256":"c4d6a29ef50049ee66cd5db04ae33595f51d32c38617fbbfc047c05ba418fefb"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["AZ", "ME", "NV"],
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "zipLookup": {"zip":"85001","status":200,"ok":true,"countyFips":"04013","countyName":"Maricopa, AZ"},
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and GitHub main matched; GitHub deployment 5750837552 succeeded for the exact content SHA; Vercel deployment dpl_B7oUaUZ8WJEJfKABjp7iVNurAX49 reached READY with exact Git-source identity and production aliases; six live routes passed; Arizona, Maine, and Nevada live summary files matched local bytes exactly; Phoenix ZIP 85001 resolved to Maricopa County; current state totals rendered; and fresh desktop plus mobile behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
