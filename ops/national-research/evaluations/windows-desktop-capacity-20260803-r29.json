@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r29",
+  "recordedAt": "2026-08-04T01:56:30Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "canonicalHeadBeforeLaunch": "5a9a3ea5ae1187b53a4af3d4f2529bfb88ce2526",
+  "milestone": {
+    "integratedJob": "gbif-bulk-20260803-r36-ne-001",
+    "integratedCountySpeciesOutcomes": 2325,
+    "integratedRecordedPresentAssertions": 681,
+    "integratedResearchedUnresolvedOutcomes": 2095,
+    "integrationReceiptCommit": "5a9a3ea5ae1187b53a4af3d4f2529bfb88ce2526"
+  },
+  "resourceSnapshot": {
+    "tier": "yellow",
+    "availableMemoryMiB": 5336,
+    "availableMemoryPercentOfTotal": 16.73,
+    "freeDiskGiB": 993.7,
+    "measuredMaximumWorkerPeakPrivateMemoryMiB": 1461.379,
+    "hardMemoryFloorMiB": 3072,
+    "projectedAvailableAfterFillingSecondLaneMiB": 3874.621,
+    "projectedAvailableAfterUnsafeThirdLaneMiB": 2413.242,
+    "secondLaneGate": "pass",
+    "thirdLaneGate": "fail",
+    "maximumAcquisitionWorkers": 2
+  },
+  "nextRankedDisjointScope": {
+    "jobId": "gbif-bulk-20260803-r38-la-002",
+    "leaseId": "lease-gbif-bulk-20260803-r38-la-002-1",
+    "candidateBatchId": "gbif-bulk-20260803-r35-la-002",
+    "stateCode": "LA",
+    "taxa": 25,
+    "countySpeciesPairs": 1600,
+    "priority": 99,
+    "activePeerJob": "gbif-bulk-20260803-r37-la-001",
+    "scopeOverlap": false,
+    "reason": "Batch 002 is the highest-ranked remaining candidate batch. Its exact taxon and pair scope is disjoint from active Louisiana batch 001."
+  },
+  "authorityBoundary": {
+    "directUserConsentPresent": true,
+    "approvedProvider": "api.gbif.org",
+    "approvedData": "registered public state and scientific-name query scope plus returned public evidence/query metadata",
+    "secretsOrPrivateDataAuthorized": false
+  },
+  "skillFreeze": {
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+  }
+}
