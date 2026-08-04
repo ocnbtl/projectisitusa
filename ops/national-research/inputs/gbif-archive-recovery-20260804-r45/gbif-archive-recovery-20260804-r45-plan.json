@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-archive-recovery-20260804-r45",
+  "sourceId": "gbif-preserved-specimens",
+  "createdAt": "2026-08-04T09:18:00.000Z",
+  "descriptor": {
+    "path": "ops/national-research/inputs/gbif-archive-recovery-20260804-r45/descriptor.json",
+    "sha256": "da41e74c0bbb215d2ab8c55758da4e9909a9e84c4daf20436aaee8fbf3d3fc37"
+  },
+  "deduplication": {
+    "currentCompletePairCountBeforePlanning": 270906,
+    "preventedAlreadyCompletePairCount": 0
+  },
+  "totals": {
+    "archives": 2,
+    "selectedStateSpeciesScreenCount": 43,
+    "selectedPairCount": 1009,
+    "selectedProviderRequestCount": 86,
+    "selectedArtifactCount": 86,
+    "selectedArtifactBytes": 40253
+  },
+  "archives": [
+    {
+      "archiveIndex": 1,
+      "archiveCommit": "805f491f341f8d9da2e2eb9772c05121c16e5b87",
+      "archiveRunId": "20260804T090616Z__gbif-preserved-specimens__465b6fc1aa06",
+      "archiveReceiptStatus": "partial",
+      "stateCode": "MD",
+      "receiptSha256": "cc379017e2e756a151ddac17659ed535cfebd9b623aa8ad17d322a3c9dec42ea",
+      "outcomesSha256": "c399e87e1a893c34b59fb588fa5ad21ea09b559d2998eb509fd2617ec74bde54",
+      "sourceVerificationSha256": "8b64f5140dd6e1e09b8dfc2a571908cb00dca96c9408709ad8e79b205d514ec0",
+      "originalRequestedPairCount": 600,
+      "originalCompletePairCount": 480,
+      "originalIncompletePairCount": 120,
+      "preventedAlreadyCompletePairCount": 0,
+      "selectedPairCount": 480,
+      "selectedStateSpeciesScreenCount": 20,
+      "selectedProviderRequestCount": 40,
+      "selectedArtifactCount": 40,
+      "selectedArtifactBytes": 31479,
+      "candidateFile": "gbif-archive-recovery-20260804-r45-md-001.json",
+      "candidateSha256": "6e5744096fd957c7a9b6a0ac5c296ebb6d36fcdde5b3f96a3736049807eda392"
+    },
+    {
+      "archiveIndex": 2,
+      "archiveCommit": "5c9350133a63c3a96208a3a538da95a0c72cf0c6",
+      "archiveRunId": "20260804T090616Z__gbif-preserved-specimens__bbd44c9f9906",
+      "archiveReceiptStatus": "partial",
+      "stateCode": "WY",
+      "receiptSha256": "2743f8d929c4f0f3f30a67f795819305a0cbe4eb372195165ac2a29f3e3f3c11",
+      "outcomesSha256": "a3d72f71e1919177a5d8a44d2fd040d7a021d9761acb2cc8741375fd29fecb72",
+      "sourceVerificationSha256": "6bd1772d00079092cf41c3661a288d54b46cd54614ffd8990994a47af382fa41",
+      "originalRequestedPairCount": 575,
+      "originalCompletePairCount": 529,
+      "originalIncompletePairCount": 46,
+      "preventedAlreadyCompletePairCount": 0,
+      "selectedPairCount": 529,
+      "selectedStateSpeciesScreenCount": 23,
+      "selectedProviderRequestCount": 46,
+      "selectedArtifactCount": 46,
+      "selectedArtifactBytes": 8774,
+      "candidateFile": "gbif-archive-recovery-20260804-r45-wy-002.json",
+      "candidateSha256": "9bc5a31e34a8c89dc6b9334fdc12292a7456ff0ac33e2c8a74db01883de743f4"
+    }
+  ]
+}
