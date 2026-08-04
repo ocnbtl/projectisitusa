@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-04T06:56:01.222Z",
+  "runId": "20260804T065300Z__gbif-preserved-specimens__6b57815da99f",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "SC",
+  "pairKeys": [
+    "45001:euphorbia-terracina",
+    "45001:giant-hogweed",
+    "45003:euphorbia-terracina",
+    "45003:giant-hogweed",
+    "45005:euphorbia-terracina",
+    "45005:giant-hogweed",
+    "45007:euphorbia-terracina",
+    "45007:giant-hogweed",
+    "45009:euphorbia-terracina",
+    "45009:giant-hogweed",
+    "45011:euphorbia-terracina",
+    "45011:giant-hogweed",
+    "45013:euphorbia-terracina",
+    "45013:giant-hogweed",
+    "45015:euphorbia-terracina",
+    "45015:giant-hogweed",
+    "45017:euphorbia-terracina",
+    "45017:giant-hogweed",
+    "45019:euphorbia-terracina",
+    "45019:giant-hogweed",
+    "45021:euphorbia-terracina",
+    "45021:giant-hogweed",
+    "45023:euphorbia-terracina",
+    "45023:giant-hogweed",
+    "45025:euphorbia-terracina",
+    "45025:giant-hogweed",
+    "45027:euphorbia-terracina",
+    "45027:giant-hogweed",
+    "45029:euphorbia-terracina",
+    "45029:giant-hogweed",
+    "45031:euphorbia-terracina",
+    "45031:giant-hogweed",
+    "45033:euphorbia-terracina",
+    "45033:giant-hogweed",
+    "45035:euphorbia-terracina",
+    "45035:giant-hogweed",
+    "45037:euphorbia-terracina",
+    "45037:giant-hogweed",
+    "45039:euphorbia-terracina",
+    "45039:giant-hogweed",
+    "45041:euphorbia-terracina",
+    "45041:giant-hogweed",
+    "45043:euphorbia-terracina",
+    "45043:giant-hogweed",
+    "45045:euphorbia-terracina",
+    "45045:giant-hogweed",
+    "45047:euphorbia-terracina",
+    "45047:giant-hogweed",
+    "45049:euphorbia-terracina",
+    "45049:giant-hogweed",
+    "45051:euphorbia-terracina",
+    "45051:giant-hogweed",
+    "45053:euphorbia-terracina",
+    "45053:giant-hogweed",
+    "45055:euphorbia-terracina",
+    "45055:giant-hogweed",
+    "45057:euphorbia-terracina",
+    "45057:giant-hogweed",
+    "45059:euphorbia-terracina",
+    "45059:giant-hogweed",
+    "45061:euphorbia-terracina",
+    "45061:giant-hogweed",
+    "45063:euphorbia-terracina",
+    "45063:giant-hogweed",
+    "45065:euphorbia-terracina",
+    "45065:giant-hogweed",
+    "45067:euphorbia-terracina",
+    "45067:giant-hogweed",
+    "45069:euphorbia-terracina",
+    "45069:giant-hogweed",
+    "45071:euphorbia-terracina",
+    "45071:giant-hogweed",
+    "45073:euphorbia-terracina",
+    "45073:giant-hogweed",
+    "45075:euphorbia-terracina",
+    "45075:giant-hogweed",
+    "45077:euphorbia-terracina",
+    "45077:giant-hogweed",
+    "45079:euphorbia-terracina",
+    "45079:giant-hogweed",
+    "45081:euphorbia-terracina",
+    "45081:giant-hogweed",
+    "45083:euphorbia-terracina",
+    "45083:giant-hogweed",
+    "45085:euphorbia-terracina",
+    "45085:giant-hogweed",
+    "45087:euphorbia-terracina",
+    "45087:giant-hogweed",
+    "45089:euphorbia-terracina",
+    "45089:giant-hogweed",
+    "45091:euphorbia-terracina",
+    "45091:giant-hogweed"
+  ],
+  "parameterHash": "6b57815da99fdbfbbcdceb18135f00ba168ef6aa8fcbee22df92c5d7b45bec41",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-04T06:56:01.221Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching South Carolina and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "euphorbia-terracina",
+      "giant-hogweed"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-euphorbia-terracina",
+        "url": "https://api.gbif.org/v1/species/match?name=Euphorbia+terracina&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T06:55:57.132Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-euphorbia-terracina",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=South+Carolina&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3064472&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for euphorbia-terracina and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T06:55:59.077Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-giant-hogweed",
+        "url": "https://api.gbif.org/v1/species/match?name=Heracleum+mantegazzianum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T06:55:59.189Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-giant-hogweed",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=South+Carolina&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3034825&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for giant-hogweed and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-04T06:56:01.221Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-occurrences-euphorbia-terracina-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-occurrences-giant-hogweed-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-species-match-euphorbia-terracina.json.gz",
+      "sha256": "06f9dfbe4f3e5e29cca5ac86db990f526dcc2f49457fa3da6883b33c1b4db360",
+      "bytes": 287
+    },
+    {
+      "path": "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-species-match-giant-hogweed.json.gz",
+      "sha256": "86e267603e50eea6b04d415eee9e20993c6ed0a51548eb02e4280bd0000fce59",
+      "bytes": 296
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
