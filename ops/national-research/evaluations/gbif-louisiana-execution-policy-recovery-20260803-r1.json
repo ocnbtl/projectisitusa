@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "gbif-louisiana-execution-policy-recovery-20260803-r1",
+  "recordedAt": "2026-08-04T01:50:10Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "directUserConsent": {
+    "presentInMainTask": true,
+    "scope": "send the selected public Louisiana species and state query scope to api.gbif.org and retain returned public evidence and query metadata in the lease run",
+    "secretsOrPrivateDataAuthorized": false
+  },
+  "untouchedAttempt": {
+    "jobId": "gbif-bulk-20260803-r36-la-001",
+    "leaseId": "lease-gbif-bulk-20260803-r36-la-001-1",
+    "finalState": "cancelled",
+    "preflight": "pass",
+    "providerRequests": 0,
+    "runWrites": 0,
+    "workerCommits": 0,
+    "reason": "The existing worker execution transcript did not itself contain direct trusted user consent, so its provider-call escalation was rejected. MAIN closed the untouched lease without retrying or manufacturing output."
+  },
+  "replacement": {
+    "jobId": "gbif-bulk-20260803-r37-la-001",
+    "leaseId": "lease-gbif-bulk-20260803-r37-la-001-1",
+    "workerTaskId": "gbif_la_r37_001",
+    "candidateBatchId": "gbif-bulk-20260803-r35-la-001",
+    "baseSha": "3e02235cf380a6f78de2bcc526a0252662b4a0ca",
+    "stateCode": "LA",
+    "taxa": 25,
+    "countySpeciesPairs": 1600,
+    "expectedRunPath": "src/data/research/runs/20260804T014942Z__gbif-preserved-specimens__aebcf2197e7a",
+    "contextPolicy": "A fresh worker is forked from the current MAIN conversation so the user's direct consent is part of its trusted execution context."
+  },
+  "concurrency": {
+    "activeAcquisitionLeases": 2,
+    "otherActiveJob": "gbif-bulk-20260803-r36-ne-001",
+    "scopeOverlap": false,
+    "maximumSafeAcquisitionWorkers": 2
+  }
+}
