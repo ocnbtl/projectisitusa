@@ -451777,7 +451777,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_nj_r46_001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-08-04T09:46:07.235Z",
       "expiresAt": "2026-08-04T11:45:41.505Z",
       "recoveryAt": null,
@@ -452450,7 +452450,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check eaf531fcb467e6adf1b94a9f9a693db5d639a7ea...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-04T09:55:40.130Z",
+      "resultManifest": {
+        "path": "manifests/gbif-bulk-20260804-r46-nj-001__lease-gbif-bulk-20260804-r46-nj-001-1.json",
+        "sha256": "63d95e557491811b74b263c22c4de5d166d9aaee7291d1b1d3b119d66e2749ed",
+        "bytes": 40102,
+        "status": "complete",
+        "workerCommit": "780c6ab286a279ccd71b0c222077851d351f7fbf",
+        "workerBranchHead": "3ac41009b4eb938f1657114d473bcc039a998abd"
+      }
     },
     {
       "leaseId": "lease-gbif-bulk-20260804-r46-wv-001-1",
