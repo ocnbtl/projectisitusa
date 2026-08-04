@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r33",
+  "recordedAt": "2026-08-04T04:58:40.7970080Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "validatedLocalParentSha": "8385678188fbc7133014ab28323b8b010907f830",
+  "externallyVerifiedStartingSha": "04fb51d4e97b4094d0b01bc2b501c52f80f7a4c1",
+  "milestone": {
+    "planIds": [
+      "gbif-bulk-20260803-r40"
+    ],
+    "completedJobs": [
+      "gbif-bulk-20260803-r40-wv-001",
+      "gbif-bulk-20260803-r40-nd-001"
+    ],
+    "completedStateSpeciesScreens": 50,
+    "grossCompleteCountySpeciesOutcomes": 2700,
+    "uniqueCountySpeciesMovement": 2700,
+    "verifiedPresentNetChange": 10,
+    "researchedUnresolvedNetChange": 2690,
+    "notResearchedNetChange": -2700,
+    "remainingApplicableProtocolCountyScreensNetChange": -2700,
+    "conflictCount": 0,
+    "allStateByteStable": true,
+    "stateProjectionCount": 51,
+    "researchSkillCasesPassed": 97,
+    "productionBuildStaticPages": 2512
+  },
+  "national": {
+    "baseline": {
+      "fullStateSpeciesDenominator": 127704,
+      "applicableStateSpeciesDecisions": 4901,
+      "notApplicableStateSpeciesDecisions": 0,
+      "unknownStateSpeciesDecisions": 122803,
+      "blockedStateSpeciesDecisions": 0,
+      "researchedUnresolvedStateSpeciesDecisions": 1517,
+      "researchedBlockedStateSpeciesDecisions": 83,
+      "partiallyResearchedStateSpeciesDecisions": 0,
+      "untouchedStateSpeciesDecisions": 121203,
+      "fullCountySpeciesDenominator": 7872576,
+      "verifiedPresent": 53559,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 325500,
+      "notResearched": 7493509,
+      "boundedAcquisitionSpecies": 7337,
+      "boundedAcquisitionPairs": 458954,
+      "remainingApplicableProtocolCountyScreens": 952703
+    },
+    "final": {
+      "fullStateSpeciesDenominator": 127704,
+      "applicableStateSpeciesDecisions": 4901,
+      "notApplicableStateSpeciesDecisions": 0,
+      "unknownStateSpeciesDecisions": 122803,
+      "blockedStateSpeciesDecisions": 0,
+      "researchedUnresolvedStateSpeciesDecisions": 1517,
+      "researchedBlockedStateSpeciesDecisions": 83,
+      "partiallyResearchedStateSpeciesDecisions": 0,
+      "untouchedStateSpeciesDecisions": 121203,
+      "fullCountySpeciesDenominator": 7872576,
+      "verifiedPresent": 53569,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 328190,
+      "notResearched": 7490809,
+      "boundedAcquisitionSpecies": 7337,
+      "boundedAcquisitionPairs": 458954,
+      "remainingApplicableProtocolCountyScreens": 950003
+    }
+  },
+  "jurisdictions": {
+    "WV": {
+      "baseline": {
+        "verifiedPresent": 751,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 2054,
+        "notResearched": 134915,
+        "explicitOutcomePairs": 2805,
+        "researchRunCount": 7
+      },
+      "final": {
+        "verifiedPresent": 761,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 3419,
+        "notResearched": 133540,
+        "explicitOutcomePairs": 4180,
+        "researchRunCount": 8
+      },
+      "net": {
+        "verifiedPresent": 10,
+        "researchedUnresolved": 1365,
+        "notResearched": -1375,
+        "uniqueCountySpeciesMovement": 1375,
+        "grossCompleteOutcomes": 1375
+      }
+    },
+    "ND": {
+      "baseline": {
+        "verifiedPresent": 33,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 2617,
+        "notResearched": 130062,
+        "explicitOutcomePairs": 2650,
+        "researchRunCount": 6
+      },
+      "final": {
+        "verifiedPresent": 33,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 3942,
+        "notResearched": 128737,
+        "explicitOutcomePairs": 3975,
+        "researchRunCount": 7
+      },
+      "net": {
+        "verifiedPresent": 0,
+        "researchedUnresolved": 1325,
+        "notResearched": -1325,
+        "uniqueCountySpeciesMovement": 1325,
+        "grossCompleteOutcomes": 1325
+      }
+    }
+  },
+  "sourceExecution": {
+    "provider": "GBIF",
+    "sourceRequests": 100,
+    "http200": 100,
+    "http429": 0,
+    "providerRetries": 0,
+    "providerCandidates": 32,
+    "assertions": 28,
+    "publicationEligibleAssertions": 28,
+    "reviews": 28,
+    "rejections": 4,
+    "duplicates": 0,
+    "errors": 0,
+    "retainedArtifacts": 100,
+    "retainedArtifactBytes": 38811,
+    "grossEvidenceFoundOutcomes": 10,
+    "grossNoQualifyingEvidenceOutcomes": 2690,
+    "negativeDeterminations": 0
+  },
+  "resources": {
+    "aggregateWorkerWallSeconds": 100,
+    "maximumMeasuredWorkerPeakMemoryMiB": 1491,
+    "unmeasuredWorkerPeakMemoryJobs": [
+      "gbif-bulk-20260803-r40-wv-001"
+    ],
+    "preBuildAvailableMemoryMiB": 7535.3,
+    "postBuildAvailableMemoryMiB": 7432.5,
+    "hardMemoryFloorMiB": 3072,
+    "pagefileCurrentUsageMiB": 2263,
+    "pagefilePeakUsageMiB": 9500,
+    "diskAvailableGiBAfterValidation": 971.44,
+    "resourcePolicyViolations": 0
+  },
+  "runtimeInterventions": {
+    "manualInterventions": 7,
+    "preRunnerLaunchFaults": 7,
+    "providerRequestsDuringFaults": 0,
+    "retainedArtifactsDuringFaults": 0,
+    "successfulRegisteredAcquisitionAttempts": 2,
+    "classification": "isolated-worktree dependency loader setup, preserved separately from provider retries"
+  },
+  "verification": {
+    "prepareDataPlan": "pass",
+    "dataIntegrity": "pass",
+    "researchIntegrity": "pass-489-immutable-runs-436707-outcomes",
+    "stateResearchProjections": "pass-51",
+    "nationalResearchConfig": "pass",
+    "allStateByteStability": "pass-51-in-794-seconds",
+    "disposableNationalIndex": "pass-51-states-489-immutable-runs-436707-outcomes",
+    "orchestrationValidation": "pass-zero-active-leases",
+    "frozenOrchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "frozenWorkerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "skillRegression": "pass-97-of-97",
+    "typecheck": "pass",
+    "productionBuild": "pass-2512-static-pages"
+  },
+  "authorityBoundary": {
+    "providerQueryConsent": "explicitly-approved-by-user",
+    "workerIsolation": "one-registered-source-one-state-exact-pairs",
+    "sharedGenerationOwner": "MAIN"
+  },
+  "releaseStatus": "validated-content-release-candidate"
+}
