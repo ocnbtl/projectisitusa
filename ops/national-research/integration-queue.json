@@ -20483,13 +20483,64 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r47-nv-001-retry1-1",
       "jobId": "gbif-bulk-20260804-r47-nv-001-retry1",
       "leaseId": "lease-gbif-bulk-20260804-r47-nv-001-retry1-1",
-      "decision": "pending",
+      "decision": "accepted",
       "submittedAt": "2026-08-04T19:03:00Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r47-nv-001-retry1__lease-gbif-bulk-20260804-r47-nv-001-retry1-1.json",
       "manifestHash": "60b661487f24414b584730bba3a9f41b6d9aa75188d5da5da0c93a26694b6310",
       "manifestBytes": 25294,
       "workerCommit": "8bd4799856d28611cf1522cd45dd70ac69480126",
-      "workerBranchHead": "afd8379bc939f56371e6107a3db8d3126b45a266"
+      "workerBranchHead": "afd8379bc939f56371e6107a3db8d3126b45a266",
+      "reviewedAt": "2026-08-04T19:07:00Z",
+      "reviewer": "MAIN",
+      "reviewReason": "Accepted after independent pinned manifest validation, exact two-commit audit, permitted-path audit, complete provider pagination review, and confirmation that no qualifying evidence outcomes remain researched unresolved rather than inferred absent.",
+      "changedPaths": [
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-occurrences-ageratina-adenophora-000000.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-occurrences-alternanthera-sessilis-000000.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-occurrences-asphodelus-fistulosus-000000.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-occurrences-avena-sterilis-000000.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-occurrences-commelina-benghalensis-000000.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-occurrences-emex-spinosa-000000.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-species-match-ageratina-adenophora.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-species-match-alternanthera-sessilis.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-species-match-asphodelus-fistulosus.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-species-match-avena-sterilis.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-species-match-commelina-benghalensis.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/artifacts/gbif-species-match-emex-spinosa.json.gz",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/assertions.ndjson",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/manifest.json",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/outcomes.ndjson",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/receipt.json",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/rejections.ndjson",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/reviews.ndjson",
+        "src/data/research/runs/20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation for Nevada GBIF preserved-specimen recovery run 20260804T190100Z__gbif-preserved-specimens__fa0131dad5c6",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, complete provider pagination, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r47-nv-001-retry1-1.json",
+        "sha256": "bea4532eb2b31907ffca4522e635466e361164167033a4c0b452270d39705092",
+        "bytes": 4756
+      }
     }
   ]
 }
