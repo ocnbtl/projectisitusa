@@ -1111,6 +1111,59 @@
       },
       "zipLookup": {"zip":"59601","status":200,"ok":true,"countyFips":"30049","countyName":"Lewis and Clark, MT"},
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after origin and GitHub main matched, GitHub deployment 5733217275 succeeded, Vercel deployment dpl_HfR82V2CpPrSLsMGu3PQnGNZc1WU reached READY with the exact Git-source SHA, eight live routes passed, five selected live generated files matched local bytes exactly, Helena ZIP 59601 resolved to Lewis and Clark County, AL, CA, DE, and MT research projections rendered current counts, Lewis and Clark county selection worked, and fresh desktop, mobile, and returning-browser behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-1eb8cadf-2026-08-04",
+      "verifiedAt": "2026-08-04T09:44:59Z",
+      "commitSha": "1eb8cadf26a9cbd3ed843940fda40c40ab808cd1",
+      "githubMainSha": "1eb8cadf26a9cbd3ed843940fda40c40ab808cd1",
+      "githubDeploymentId": 5741342354,
+      "vercelDeploymentId": "dpl_9CdBBjeLF1RAhaM4HHZtje7RQND4",
+      "vercelDeploymentUrl": "projectisitusa-i1kli58ht-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=IA","status":200},
+        {"path":"/research?state=ID","status":200},
+        {"path":"/research?state=KS","status":200},
+        {"path":"/research?state=MD","status":200},
+        {"path":"/research?state=NJ","status":200},
+        {"path":"/research?state=NM","status":200},
+        {"path":"/research?state=NY","status":200},
+        {"path":"/research?state=OK","status":200},
+        {"path":"/research?state=OR","status":200},
+        {"path":"/research?state=UT","status":200},
+        {"path":"/research?state=WV","status":200},
+        {"path":"/research?state=WY","status":200},
+        {"path":"/species/spotted-lanternfly","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/IA/summary.json","sha256":"2b416a6cc802fc33dbdeecef69610b6e85ab9b2e32df5263779c8ee97c7e4e02"},
+        {"path":"/generated/research/ID/summary.json","sha256":"8c70b749d0163cfe6030a4c2c28ae9ad3118432ada8e3d726d04d6b3f300d07b"},
+        {"path":"/generated/research/KS/summary.json","sha256":"3deef99dfcfedfefac3e047cdeb6d36e805d9f31fae8bc36877d6eecc60e12f7"},
+        {"path":"/generated/research/MD/summary.json","sha256":"cf424a367cafd88a831997703e021925b244c5aa5cdfbb228a21ef49ab9391d6"},
+        {"path":"/generated/research/NJ/summary.json","sha256":"735d55fcedf377c0c4eafc97d5dd260131cb4874d7003a84edf81a7e9b4481c6"},
+        {"path":"/generated/research/NM/summary.json","sha256":"52e4befbe8495c7b1e356a154557fb5afe2fd653c3e9dd8e895f35a99df0eaa3"},
+        {"path":"/generated/research/NY/summary.json","sha256":"7b9c0756ee9af4c2968f4a6debee1cf97818185d7ec7d248273279750eacb691"},
+        {"path":"/generated/research/OK/summary.json","sha256":"eae127a642f76bcfd75c3e7c4a486c3bcfa56e941312b090500f2833bc4bb554"},
+        {"path":"/generated/research/OR/summary.json","sha256":"581c49852df44b4c922dc34f80af68f914cafe9e793f710797e548cc97ff6a74"},
+        {"path":"/generated/research/UT/summary.json","sha256":"1e74e084a20f076d3534c48b0a4169cebc43a65a163563352c5bcaf2e1d9e45e"},
+        {"path":"/generated/research/WV/summary.json","sha256":"21b9f7670327266c7cd8e0d2802eb0f9794c0a33958723988ee0c3d4e7c33a87"},
+        {"path":"/generated/research/WY/summary.json","sha256":"7dfffd7bc875b08f963d7f27bf56eb183193da5b1ebfeeb9afa0e10c596938c4"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["NY", "WV"],
+        "returningBrowserRefresh": "pass",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and GitHub main matched; GitHub deployment 5741342354 succeeded for the exact content SHA; Vercel deployment dpl_9CdBBjeLF1RAhaM4HHZtje7RQND4 reached READY; fifteen live routes passed; twelve changed-state summary files matched local bytes exactly; New York and West Virginia rendered current projections; returning-browser refresh passed; and desktop plus mobile behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
