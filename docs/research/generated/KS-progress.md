@@ -10,18 +10,18 @@ Generated: `2026-08-04T00:00:00.000Z`
 - Verified present: `655`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7535`
-- Not researched: `254730`
+- Researched unresolved: `8270`
+- Not researched: `253995`
 - Determination coverage: `0.25%`
-- Research coverage: `3.12%`
-- Explicit outcome coverage: `3.1150%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `83`
-- Current complete protocol cells: `55`
-- Protocol completion: `81.93%`
-- Current protocol completion: `66.27%`
+- Current complete protocol cells: `70`
+- Protocol completion: `100.00%`
+- Current protocol completion: `84.34%`
 - Evidence records: `1621`
-- Research runs: `10`
-- Rejection records: `195`
+- Research runs: `11`
+- Rejection records: `197`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,21 +32,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Giant Salvinia (`salvinia-molesta`) | plants | 105 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 105 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 105 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 105 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 105 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 105 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 105 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 105 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 105 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 105 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 105 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 105 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 105 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 105 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 105 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 105 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 105 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 105 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 105 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 105 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 105 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 105 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 105 | 1 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 105 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 105 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 105 | 0 |
@@ -57,6 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Animated oat (`avena-sterilis`) | plants | 0 | 105 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 105 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 105 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 105 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 105 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 105 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 105 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 105 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 105 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 105 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T23:22:37.084Z | 525 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-04T08:49:33.133Z | 525 | 65 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

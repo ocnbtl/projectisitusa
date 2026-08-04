@@ -7,21 +7,21 @@ Generated: `2026-08-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `188`
+- Verified present: `235`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4740`
-- Not researched: `105248`
-- Determination coverage: `0.17%`
-- Research coverage: `4.47%`
-- Explicit outcome coverage: `4.4728%`
+- Researched unresolved: `5353`
+- Not researched: `104588`
+- Determination coverage: `0.21%`
+- Research coverage: `5.07%`
+- Explicit outcome coverage: `5.0719%`
 - Applicable protocol cells: `113`
-- Current complete protocol cells: `30`
-- Protocol completion: `38.05%`
-- Current protocol completion: `26.55%`
-- Evidence records: `271`
-- Research runs: `8`
-- Rejection records: `69`
+- Current complete protocol cells: `55`
+- Protocol completion: `60.18%`
+- Current protocol completion: `48.67%`
+- Evidence records: `761`
+- Research runs: `9`
+- Rejection records: `296`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,21 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Parrot Feather (`myriophyllum-aquaticum`) | plants | 44 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 44 | 0 | 1 |
-| Starry Stonewort (`nitellopsis-obtusa`) | plants | 44 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 44 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 44 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 44 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 44 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 44 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 44 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 44 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 44 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 44 | 0 | 1 |
-| Water Chestnut (`trapa-natans`) | plants | 44 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 44 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 44 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 44 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 44 | 2 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 44 | 2 |
@@ -57,6 +42,21 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 44 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 44 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 44 | 2 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 44 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 0 | 44 | 1 |
+| White bryony (`bryonia-alba`) | plants | 0 | 44 | 1 |
+| Red star-thistle (`centaurea-calcitrapa`) | plants | 0 | 44 | 1 |
+| Meadow knapweed (`centaurea-debeauxii`) | plants | 0 | 44 | 1 |
+| Poison Hemlock (`conium-maculatum`) | plants | 0 | 44 | 1 |
+| Common Houndstongue (`cynoglossum-officinale`) | plants | 0 | 44 | 1 |
+| Scotch broom (`cytisus-scoparius`) | plants | 0 | 44 | 1 |
+| Common viper's bugloss (`echium-vulgare`) | plants | 0 | 44 | 1 |
+| Giant Hogweed (`giant-hogweed`) | plants | 0 | 44 | 1 |
+| Tall hawkweed (`hieracium-piloselloides`) | plants | 0 | 44 | 1 |
+| Hydrilla (`hydrilla`) | plants | 0 | 44 | 1 |
+| Black henbane (`hyoscyamus-niger`) | plants | 0 | 44 | 1 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 44 | 1 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 0 | 44 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-04T06:35:23.980Z | 30 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-04T09:12:51.087Z | 135 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -7,21 +7,21 @@ Generated: `2026-08-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `1032`
+- Verified present: `1109`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3680`
-- Not researched: `150536`
-- Determination coverage: `0.66%`
-- Research coverage: `3.04%`
-- Explicit outcome coverage: `3.0351%`
+- Researched unresolved: `4161`
+- Not researched: `149978`
+- Determination coverage: `0.71%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `97`
-- Current complete protocol cells: `30`
-- Protocol completion: `44.33%`
-- Current protocol completion: `30.93%`
-- Evidence records: `1036`
-- Research runs: `8`
-- Rejection records: `199`
+- Current complete protocol cells: `55`
+- Protocol completion: `70.10%`
+- Current protocol completion: `56.70%`
+- Evidence records: `1986`
+- Research runs: `9`
+- Rejection records: `778`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,15 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 62 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 62 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 62 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 62 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 62 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 62 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 62 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 62 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 62 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 62 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 62 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 62 | 2 |
@@ -57,6 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 62 | 0 |
 | Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 62 | 0 |
 | Southern threecornerjack (`emex-australis`) | plants | 0 | 62 | 0 |
+| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 62 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 62 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 62 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 62 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 62 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 62 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 62 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 62 | 0 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 0 | 62 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-02T21:08:53.475Z | 10 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-04T09:50:11.815Z | 297 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

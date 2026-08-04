@@ -7,21 +7,21 @@ Generated: `2026-08-04T00:00:00.000Z`
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `683`
+- Verified present: `696`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7732`
-- Not researched: `239481`
+- Researched unresolved: `8511`
+- Not researched: `238689`
 - Determination coverage: `0.28%`
-- Research coverage: `3.39%`
-- Explicit outcome coverage: `3.3946%`
+- Research coverage: `3.71%`
+- Explicit outcome coverage: `3.7141%`
 - Applicable protocol cells: `98`
-- Current complete protocol cells: `74`
-- Protocol completion: `88.78%`
-- Current protocol completion: `75.51%`
-- Evidence records: `933`
-- Research runs: `10`
-- Rejection records: `92`
+- Current complete protocol cells: `83`
+- Protocol completion: `97.96%`
+- Current protocol completion: `84.69%`
+- Evidence records: `948`
+- Research runs: `11`
+- Rejection records: `98`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,21 +32,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Flowering Rush (`butomus-umbellatus`) | plants | 99 | 0 | 1 |
-| Fishhook waterflea (`cercopagis-pengoi`) | wildlife | 99 | 0 | 1 |
-| Quagga Mussel (`dreissena-bugensis`) | wildlife | 99 | 0 | 1 |
-| Silver Carp (`hypophthalmichthys-molitrix`) | wildlife | 99 | 0 | 1 |
-| Black carp (`mylopharyngodon-piceus`) | wildlife | 99 | 0 | 1 |
-| Brittle Waternymph (`najas-minor`) | plants | 99 | 0 | 1 |
-| Round Goby (`neogobius-melanostomus`) | wildlife | 99 | 0 | 1 |
-| New Zealand Mud Snail (`potamopyrgus-antipodarum`) | wildlife | 99 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 99 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 99 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 99 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 99 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 99 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 99 | 1 |
-| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 99 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 99 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 99 | 1 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 99 | 0 |
@@ -57,6 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 99 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 99 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 99 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 99 | 0 |
+| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 99 | 0 |
+| Fishhook waterflea (`cercopagis-pengoi`) | wildlife | 0 | 99 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 99 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 99 | 0 |
+| Quagga Mussel (`dreissena-bugensis`) | wildlife | 0 | 99 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 99 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 99 | 0 |
+| Southern threecornerjack (`emex-australis`) | plants | 0 | 99 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-02T20:20:10.332Z | 182 | 69 |
+| GBIF preserved specimen records | operational | 2026-08-04T08:49:29.066Z | 195 | 78 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
