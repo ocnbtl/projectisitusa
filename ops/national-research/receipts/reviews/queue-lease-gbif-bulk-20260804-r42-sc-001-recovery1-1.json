@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260804-r42-sc-001-recovery1-1",
+  "jobId": "gbif-bulk-20260804-r42-sc-001-recovery1",
+  "leaseId": "lease-gbif-bulk-20260804-r42-sc-001-recovery1-1",
+  "workerCommit": "041e2698a1caec8e6529c9c33b223cd27a723999",
+  "workerBranchHead": "8aaa33ce408aa23726b6598b7786f6390b8efe09",
+  "manifestHash": "46b77ae6ca9b1a5cc54d988d16e0c5298c5dd589cd9a8e16b8d85415416d5ef6",
+  "changedPaths": [
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-occurrences-euphorbia-terracina-000000.json.gz",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-occurrences-giant-hogweed-000000.json.gz",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-species-match-euphorbia-terracina.json.gz",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/artifacts/gbif-species-match-giant-hogweed.json.gz",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/assertions.ndjson",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/manifest.json",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/outcomes.ndjson",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/receipt.json",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/rejections.ndjson",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/reviews.ndjson",
+    "src/data/research/runs/20260804T065300Z__gbif-preserved-specimens__6b57815da99f/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 92 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 92 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-04T07:04:10.000Z"
+}
