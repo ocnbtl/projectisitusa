@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260804-r41-il-001-1",
+  "jobId": "gbif-bulk-20260804-r41-il-001",
+  "leaseId": "lease-gbif-bulk-20260804-r41-il-001-1",
+  "workerCommit": "f20712016c9366ea7a24284e01696a7cd3d5ced0",
+  "workerBranchHead": "834a66468f7f99a8dbbf144e140655536b9941c1",
+  "manifestHash": "0693ebc63de3df5cb705e9dd21b2094f8e69a440c94ce09ce3e237723869dc09",
+  "changedPaths": [
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-conium-maculatum-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-elaeagnus-pungens-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-euphorbia-virgata-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-lespedeza-cuneata-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-lonicera-fragrantissima-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-phellodendron-amurense-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-pueraria-montana-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-vincetoxicum-nigrum-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-vincetoxicum-rossicum-000000.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-conium-maculatum.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-elaeagnus-pungens.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-euphorbia-virgata.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-lespedeza-cuneata.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-lonicera-fragrantissima.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-phellodendron-amurense.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-pueraria-montana.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-vincetoxicum-nigrum.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-vincetoxicum-rossicum.json.gz",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/assertions.ndjson",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/manifest.json",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/outcomes.ndjson",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/receipt.json",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/rejections.ndjson",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/reviews.ndjson",
+    "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 918 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 4,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 918 complete county outcomes, 230 accepted assertions and reviews, 145 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-04T06:24:00.000Z",
+  "integrationCommit": "fc4ae56bcd8607315830b932bfb62763e1ded809"
+}
