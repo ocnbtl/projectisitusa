@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-bulk-20260804-r45-wy-001-recovery1",
+  "leaseId": "lease-gbif-bulk-20260804-r45-wy-001-recovery1-1",
+  "status": "complete",
+  "branch": "codex/gbif-bulk-20260804-r45-wy-001-recovery1",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260804-r45-wy-001-recovery1",
+  "baseSha": "1b3fb857fdae69578fda139523f513166fd88edc",
+  "commitSha": "eb96c2f6e6bfb630ef4c66d97f0c70815d924276",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "WY",
+    "stateProvince": "Wyoming",
+    "candidateLimit": 46,
+    "candidatePairs": [
+      "56001:eichhornia-azurea",
+      "56001:limnophila-sessiliflora",
+      "56003:eichhornia-azurea",
+      "56003:limnophila-sessiliflora",
+      "56005:eichhornia-azurea",
+      "56005:limnophila-sessiliflora",
+      "56007:eichhornia-azurea",
+      "56007:limnophila-sessiliflora",
+      "56009:eichhornia-azurea",
+      "56009:limnophila-sessiliflora",
+      "56011:eichhornia-azurea",
+      "56011:limnophila-sessiliflora",
+      "56013:eichhornia-azurea",
+      "56013:limnophila-sessiliflora",
+      "56015:eichhornia-azurea",
+      "56015:limnophila-sessiliflora",
+      "56017:eichhornia-azurea",
+      "56017:limnophila-sessiliflora",
+      "56019:eichhornia-azurea",
+      "56019:limnophila-sessiliflora",
+      "56021:eichhornia-azurea",
+      "56021:limnophila-sessiliflora",
+      "56023:eichhornia-azurea",
+      "56023:limnophila-sessiliflora",
+      "56025:eichhornia-azurea",
+      "56025:limnophila-sessiliflora",
+      "56027:eichhornia-azurea",
+      "56027:limnophila-sessiliflora",
+      "56029:eichhornia-azurea",
+      "56029:limnophila-sessiliflora",
+      "56031:eichhornia-azurea",
+      "56031:limnophila-sessiliflora",
+      "56033:eichhornia-azurea",
+      "56033:limnophila-sessiliflora",
+      "56035:eichhornia-azurea",
+      "56035:limnophila-sessiliflora",
+      "56037:eichhornia-azurea",
+      "56037:limnophila-sessiliflora",
+      "56039:eichhornia-azurea",
+      "56039:limnophila-sessiliflora",
+      "56041:eichhornia-azurea",
+      "56041:limnophila-sessiliflora",
+      "56043:eichhornia-azurea",
+      "56043:limnophila-sessiliflora",
+      "56045:eichhornia-azurea",
+      "56045:limnophila-sessiliflora"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-occurrences-eichhornia-azurea-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-occurrences-limnophila-sessiliflora-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-species-match-eichhornia-azurea.json.gz",
+      "sha256": "5de3444a995259e2f4d378c6323b762c9ed414232cd5f586293df92853f4e56f",
+      "bytes": 313,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/artifacts/gbif-species-match-limnophila-sessiliflora.json.gz",
+      "sha256": "6ff2d257a82585b7c27c4ec28506a68c811850fbb5455fe7d197f8c26cbea2b2",
+      "bytes": 297,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/outcomes.ndjson",
+      "sha256": "e7f7cd63d0b2f2d59cf573c84f50375ad2cf5bf92187512837f1f467e097b14c",
+      "bytes": 37030,
+      "media_type": "application/x-ndjson",
+      "count": 46
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/receipt.json",
+    "sha256": "570ff6d329b71635911d866d230c00da13fc5a95e6843301922d40aa841430c1",
+    "bytes": 10528,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/source-verification.json",
+    "sha256": "cdc611a51d95abacb483a7542fc71cc45f1ec0d8352411e96b8b946b7890c1dc",
+    "bytes": 8457,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 4,
+      "retainedArtifactBytes": 790,
+      "sourceRequests": 4,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 46,
+      "completeOutcomePairs": 46,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 46,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 4,
+      "retainedArtifactBytes": 790,
+      "sourceRequests": 4,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 46,
+      "completeOutcomePairs": 46,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 46,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 1b3fb857fdae69578fda139523f513166fd88edc...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-r45-wy-retry-lease.json' --lease-id lease-gbif-bulk-20260804-r45-wy-001-recovery1-1 --manifest src/data/research/runs/20260804T092229Z__gbif-preserved-specimens__2681f8134e81/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260804-r45-wy-001-recovery1",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-bulk-20260804-r45-wy-001-recovery1-1",
+        "status": "complete",
+        "finishedAt": "2026-08-04T09:34:36.001Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 4,
+        "providerCandidates": 0,
+        "retainedArtifacts": 4,
+        "receiptSha256": "570ff6d329b71635911d866d230c00da13fc5a95e6843301922d40aa841430c1"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 10,
+    "peakMemoryMb": 0,
+    "peakMemoryMeasured": false,
+    "peakMemoryMeasurement": "Not captured by MAIN execution; zero is the schema sentinel and not an observed memory measurement.",
+    "validPairsScreened": 46,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
