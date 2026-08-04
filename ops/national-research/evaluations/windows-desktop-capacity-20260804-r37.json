@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260804-r37",
+  "recordedAt": "2026-08-04T08:13:42.4807917Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "canonicalHeadBeforeGeneration": "c30b775b6e4fbc8fdccdb8df146bb355988d82d9",
+  "externallyVerifiedStartingSha": "c30b775b6e4fbc8fdccdb8df146bb355988d82d9",
+  "recoveryAudit": {
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingQueueItems": 0,
+    "transientProviderRetriesRequiredBeforeNewAcquisition": 0,
+    "gbifPolicyBlockedPairs": 1616,
+    "gbifPolicyBlockedTaxa": 8,
+    "gbifPolicyBlockedStateSpeciesScreens": 17,
+    "alaskaFiaPolicyBlockedPairs": 30,
+    "alaskaFiaCompletePositivePairs": 5,
+    "providerFailuresRequiringRecovery": 0,
+    "southCarolinaRound42CompleteCountySpeciesOutcomes": 1150,
+    "southCarolinaRound42DuplicateOutcomes": 0,
+    "decision": "Dispatch only new non-overlapping exact-binomial GBIF screens; do not infer or requery policy-blocked pairs."
+  },
+  "candidateRanking": [
+    {
+      "stateCode": "OR",
+      "stateSpeciesScreens": 25,
+      "grossCountySpeciesOutcomes": 900,
+      "expectedNetNewCountySpeciesOutcomes": 900,
+      "selected": true
+    },
+    {
+      "stateCode": "OK",
+      "stateSpeciesScreens": 20,
+      "grossCountySpeciesOutcomes": 1540,
+      "expectedNetNewCountySpeciesOutcomes": 847,
+      "taxonomyExcludedScreens": 1,
+      "selected": true
+    },
+    {
+      "stateCode": "NM",
+      "stateSpeciesScreens": 25,
+      "grossCountySpeciesOutcomes": 825,
+      "expectedNetNewCountySpeciesOutcomes": 825,
+      "selected": true
+    },
+    {
+      "stateCode": "IA",
+      "stateSpeciesScreens": 9,
+      "grossCountySpeciesOutcomes": 891,
+      "expectedNetNewCountySpeciesOutcomes": 792,
+      "selected": false
+    },
+    {
+      "stateCode": "KS",
+      "stateSpeciesScreens": 15,
+      "grossCountySpeciesOutcomes": 1575,
+      "expectedNetNewCountySpeciesOutcomes": 735,
+      "selected": false
+    },
+    {
+      "stateCode": "UT",
+      "stateSpeciesScreens": 25,
+      "grossCountySpeciesOutcomes": 725,
+      "expectedNetNewCountySpeciesOutcomes": 725,
+      "selected": false
+    }
+  ],
+  "selectedWave": {
+    "planId": "gbif-bulk-20260804-r43",
+    "jurisdictions": ["OR", "OK", "NM"],
+    "stateSpeciesScreens": 70,
+    "grossCountySpeciesOutcomes": 3265,
+    "expectedNetNewCountySpeciesOutcomes": 2572,
+    "batches": [
+      "gbif-bulk-20260804-r43-or-001",
+      "gbif-bulk-20260804-r43-ok-001",
+      "gbif-bulk-20260804-r43-nm-001"
+    ]
+  },
+  "resourceSnapshot": {
+    "tier": "green",
+    "totalMemoryMiB": 31900.918,
+    "availableMemoryMiB": 9928.797,
+    "availableMemoryPercentOfTotal": 31.12,
+    "pagefileCurrentUsageMiB": 4161,
+    "pagefilePeakUsageMiB": 9500,
+    "pagefileAllocatedMiB": 21517,
+    "freeDiskBytes": 1021968547840,
+    "freeDiskGiB": 951.782,
+    "perWorkerMemoryPolicyMiB": 1536,
+    "hardMemoryFloorMiB": 3072,
+    "projectedAvailableAfterOneWorkerMiB": 8392.797,
+    "projectedAvailableAfterTwoWorkersMiB": 6856.797,
+    "projectedAvailableAfterThreeWorkersMiB": 5320.797,
+    "projectedAvailableAfterFourWorkersMiB": 3784.797,
+    "oneWorkerGate": "pass",
+    "twoWorkerGate": "pass",
+    "threeWorkerGate": "pass",
+    "fourWorkerGate": "pass",
+    "memorySafeMaximumAcquisitionWorkers": 4,
+    "availableCollaborationWorkerSlots": 3,
+    "launchedMaximumAcquisitionWorkers": 3,
+    "projectProcessesAtMeasurement": 0
+  },
+  "readinessConformanceAudit": {
+    "status": "implementation-mismatch-confirmed",
+    "architectureRequirement": "Applicable protocol completion and regulated/high-priority completion use completion percentages; freshness is a separately reported readiness axis.",
+    "implementationObserved": "The readiness builder uses current-complete percentages for both completion gates.",
+    "owner": "MAIN",
+    "workerSharedWritesAuthorized": false
+  },
+  "authorityBoundary": {
+    "directUserConsentPresent": true,
+    "approvedProvider": "api.gbif.org",
+    "approvedData": "registered public state and scientific-name query scope plus returned public evidence/query metadata",
+    "secretsOrPrivateDataAuthorized": false,
+    "workerIsolation": "one registered source, one state, and exact candidate pairs per lease",
+    "sharedGenerationOwner": "MAIN"
+  }
+}
