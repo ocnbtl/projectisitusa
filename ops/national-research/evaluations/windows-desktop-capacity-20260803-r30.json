@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260803-r30",
+  "recordedAt": "2026-08-04T02:06:50Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "canonicalHeadBeforeLaunch": "218f8801c187ee1ccaf7ea919d332eec2c937806",
+  "resourceSnapshot": {
+    "tier": "yellow",
+    "availableMemoryMiB": 6162,
+    "availableMemoryPercentOfTotal": 19.32,
+    "freeDiskGiB": 990.82,
+    "measuredMaximumWorkerPeakPrivateMemoryMiB": 1461.379,
+    "hardMemoryFloorMiB": 3072,
+    "projectedAvailableAfterFillingSecondLaneMiB": 4700.621,
+    "projectedAvailableAfterUnsafeThirdLaneMiB": 3239.242,
+    "secondLaneGate": "pass",
+    "thirdLaneGate": "fail-resource-policy-remains-capped-at-two-workers",
+    "maximumAcquisitionWorkers": 2
+  },
+  "launch": {
+    "jobId": "gbif-bulk-20260803-r39-la-003",
+    "leaseId": "lease-gbif-bulk-20260803-r39-la-003-1",
+    "candidateBatchId": "gbif-bulk-20260803-r35-la-003",
+    "stateCode": "LA",
+    "taxa": 25,
+    "countySpeciesPairs": 1600,
+    "priority": 98,
+    "activePeerJob": "gbif-bulk-20260803-r38-la-002",
+    "scopeOverlap": false,
+    "milestonePurpose": "complete the three-batch, 75-screen Louisiana plan before shared generation and release"
+  },
+  "authorityBoundary": {
+    "directUserConsentPresent": true,
+    "approvedProvider": "api.gbif.org",
+    "approvedData": "registered public state and scientific-name query scope plus returned public evidence/query metadata",
+    "secretsOrPrivateDataAuthorized": false
+  }
+}
