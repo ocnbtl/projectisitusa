@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-bulk-20260804-r47-me-003",
+  "leaseId": "lease-gbif-bulk-20260804-r47-me-003-1",
+  "status": "complete",
+  "branch": "codex/gbif-bulk-20260804-r47-me-003",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260804-r47-me-003",
+  "baseSha": "f5f3047bfb31694f2fabd301213181d5f7982515",
+  "commitSha": "f581ed0edc3158323588c712465e109149bcd418",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "ME",
+    "stateProvince": "Maine",
+    "candidateLimit": 272,
+    "candidatePairs": [
+      "23001:alliaria-petiolata",
+      "23001:anarsia-lineatella",
+      "23001:aspidiotus-duplex",
+      "23001:cipangopaludina-chinensis",
+      "23001:didemnum-vexillum",
+      "23001:discula-destructiva",
+      "23001:dryocosmus-kuriphilus",
+      "23001:elaeagnus-umbellata",
+      "23001:hemigrapsus-sanguineus",
+      "23001:homadaula-albizziae",
+      "23001:icerya-purchasi",
+      "23001:lonicera-maackii",
+      "23001:lonicera-tatarica",
+      "23001:melaleuca-quinquenervia",
+      "23001:microstegium-vimineum",
+      "23001:phytophthora-cinnamomi",
+      "23001:raffaelea-lauricola",
+      "23003:alliaria-petiolata",
+      "23003:anarsia-lineatella",
+      "23003:aspidiotus-duplex",
+      "23003:cipangopaludina-chinensis",
+      "23003:didemnum-vexillum",
+      "23003:discula-destructiva",
+      "23003:dryocosmus-kuriphilus",
+      "23003:elaeagnus-umbellata",
+      "23003:hemigrapsus-sanguineus",
+      "23003:homadaula-albizziae",
+      "23003:icerya-purchasi",
+      "23003:lonicera-maackii",
+      "23003:lonicera-tatarica",
+      "23003:melaleuca-quinquenervia",
+      "23003:microstegium-vimineum",
+      "23003:phytophthora-cinnamomi",
+      "23003:raffaelea-lauricola",
+      "23005:alliaria-petiolata",
+      "23005:anarsia-lineatella",
+      "23005:aspidiotus-duplex",
+      "23005:cipangopaludina-chinensis",
+      "23005:didemnum-vexillum",
+      "23005:discula-destructiva",
+      "23005:dryocosmus-kuriphilus",
+      "23005:elaeagnus-umbellata",
+      "23005:hemigrapsus-sanguineus",
+      "23005:homadaula-albizziae",
+      "23005:icerya-purchasi",
+      "23005:lonicera-maackii",
+      "23005:lonicera-tatarica",
+      "23005:melaleuca-quinquenervia",
+      "23005:microstegium-vimineum",
+      "23005:phytophthora-cinnamomi",
+      "23005:raffaelea-lauricola",
+      "23007:alliaria-petiolata",
+      "23007:anarsia-lineatella",
+      "23007:aspidiotus-duplex",
+      "23007:cipangopaludina-chinensis",
+      "23007:didemnum-vexillum",
+      "23007:discula-destructiva",
+      "23007:dryocosmus-kuriphilus",
+      "23007:elaeagnus-umbellata",
+      "23007:hemigrapsus-sanguineus",
+      "23007:homadaula-albizziae",
+      "23007:icerya-purchasi",
+      "23007:lonicera-maackii",
+      "23007:lonicera-tatarica",
+      "23007:melaleuca-quinquenervia",
+      "23007:microstegium-vimineum",
+      "23007:phytophthora-cinnamomi",
+      "23007:raffaelea-lauricola",
+      "23009:alliaria-petiolata",
+      "23009:anarsia-lineatella",
+      "23009:aspidiotus-duplex",
+      "23009:cipangopaludina-chinensis",
+      "23009:didemnum-vexillum",
+      "23009:discula-destructiva",
+      "23009:dryocosmus-kuriphilus",
+      "23009:elaeagnus-umbellata",
+      "23009:hemigrapsus-sanguineus",
+      "23009:homadaula-albizziae",
+      "23009:icerya-purchasi",
+      "23009:lonicera-maackii",
+      "23009:lonicera-tatarica",
+      "23009:melaleuca-quinquenervia",
+      "23009:microstegium-vimineum",
+      "23009:phytophthora-cinnamomi",
+      "23009:raffaelea-lauricola",
+      "23011:alliaria-petiolata",
+      "23011:anarsia-lineatella",
+      "23011:aspidiotus-duplex",
+      "23011:cipangopaludina-chinensis",
+      "23011:didemnum-vexillum",
+      "23011:discula-destructiva",
+      "23011:dryocosmus-kuriphilus",
+      "23011:elaeagnus-umbellata",
+      "23011:hemigrapsus-sanguineus",
+      "23011:homadaula-albizziae",
+      "23011:icerya-purchasi",
+      "23011:lonicera-maackii",
+      "23011:lonicera-tatarica",
+      "23011:melaleuca-quinquenervia",
+      "23011:microstegium-vimineum",
+      "23011:phytophthora-cinnamomi",
+      "23011:raffaelea-lauricola",
+      "23013:alliaria-petiolata",
+      "23013:anarsia-lineatella",
+      "23013:aspidiotus-duplex",
+      "23013:cipangopaludina-chinensis",
+      "23013:didemnum-vexillum",
+      "23013:discula-destructiva",
+      "23013:dryocosmus-kuriphilus",
+      "23013:elaeagnus-umbellata",
+      "23013:hemigrapsus-sanguineus",
+      "23013:homadaula-albizziae",
+      "23013:icerya-purchasi",
+      "23013:lonicera-maackii",
+      "23013:lonicera-tatarica",
+      "23013:melaleuca-quinquenervia",
+      "23013:microstegium-vimineum",
+      "23013:phytophthora-cinnamomi",
+      "23013:raffaelea-lauricola",
+      "23015:alliaria-petiolata",
+      "23015:anarsia-lineatella",
+      "23015:aspidiotus-duplex",
+      "23015:cipangopaludina-chinensis",
+      "23015:didemnum-vexillum",
+      "23015:discula-destructiva",
+      "23015:dryocosmus-kuriphilus",
+      "23015:elaeagnus-umbellata",
+      "23015:hemigrapsus-sanguineus",
+      "23015:homadaula-albizziae",
+      "23015:icerya-purchasi",
+      "23015:lonicera-maackii",
+      "23015:lonicera-tatarica",
+      "23015:melaleuca-quinquenervia",
+      "23015:microstegium-vimineum",
+      "23015:phytophthora-cinnamomi",
+      "23015:raffaelea-lauricola",
+      "23017:alliaria-petiolata",
+      "23017:anarsia-lineatella",
+      "23017:aspidiotus-duplex",
+      "23017:cipangopaludina-chinensis",
+      "23017:didemnum-vexillum",
+      "23017:discula-destructiva",
+      "23017:dryocosmus-kuriphilus",
+      "23017:elaeagnus-umbellata",
+      "23017:hemigrapsus-sanguineus",
+      "23017:homadaula-albizziae",
+      "23017:icerya-purchasi",
+      "23017:lonicera-maackii",
+      "23017:lonicera-tatarica",
+      "23017:melaleuca-quinquenervia",
+      "23017:microstegium-vimineum",
+      "23017:phytophthora-cinnamomi",
+      "23017:raffaelea-lauricola",
+      "23019:alliaria-petiolata",
+      "23019:anarsia-lineatella",
+      "23019:aspidiotus-duplex",
+      "23019:cipangopaludina-chinensis",
+      "23019:didemnum-vexillum",
+      "23019:discula-destructiva",
+      "23019:dryocosmus-kuriphilus",
+      "23019:elaeagnus-umbellata",
+      "23019:hemigrapsus-sanguineus",
+      "23019:homadaula-albizziae",
+      "23019:icerya-purchasi",
+      "23019:lonicera-maackii",
+      "23019:lonicera-tatarica",
+      "23019:melaleuca-quinquenervia",
+      "23019:microstegium-vimineum",
+      "23019:phytophthora-cinnamomi",
+      "23019:raffaelea-lauricola",
+      "23021:alliaria-petiolata",
+      "23021:anarsia-lineatella",
+      "23021:aspidiotus-duplex",
+      "23021:cipangopaludina-chinensis",
+      "23021:didemnum-vexillum",
+      "23021:discula-destructiva",
+      "23021:dryocosmus-kuriphilus",
+      "23021:elaeagnus-umbellata",
+      "23021:hemigrapsus-sanguineus",
+      "23021:homadaula-albizziae",
+      "23021:icerya-purchasi",
+      "23021:lonicera-maackii",
+      "23021:lonicera-tatarica",
+      "23021:melaleuca-quinquenervia",
+      "23021:microstegium-vimineum",
+      "23021:phytophthora-cinnamomi",
+      "23021:raffaelea-lauricola",
+      "23023:alliaria-petiolata",
+      "23023:anarsia-lineatella",
+      "23023:aspidiotus-duplex",
+      "23023:cipangopaludina-chinensis",
+      "23023:didemnum-vexillum",
+      "23023:discula-destructiva",
+      "23023:dryocosmus-kuriphilus",
+      "23023:elaeagnus-umbellata",
+      "23023:hemigrapsus-sanguineus",
+      "23023:homadaula-albizziae",
+      "23023:icerya-purchasi",
+      "23023:lonicera-maackii",
+      "23023:lonicera-tatarica",
+      "23023:melaleuca-quinquenervia",
+      "23023:microstegium-vimineum",
+      "23023:phytophthora-cinnamomi",
+      "23023:raffaelea-lauricola",
+      "23025:alliaria-petiolata",
+      "23025:anarsia-lineatella",
+      "23025:aspidiotus-duplex",
+      "23025:cipangopaludina-chinensis",
+      "23025:didemnum-vexillum",
+      "23025:discula-destructiva",
+      "23025:dryocosmus-kuriphilus",
+      "23025:elaeagnus-umbellata",
+      "23025:hemigrapsus-sanguineus",
+      "23025:homadaula-albizziae",
+      "23025:icerya-purchasi",
+      "23025:lonicera-maackii",
+      "23025:lonicera-tatarica",
+      "23025:melaleuca-quinquenervia",
+      "23025:microstegium-vimineum",
+      "23025:phytophthora-cinnamomi",
+      "23025:raffaelea-lauricola",
+      "23027:alliaria-petiolata",
+      "23027:anarsia-lineatella",
+      "23027:aspidiotus-duplex",
+      "23027:cipangopaludina-chinensis",
+      "23027:didemnum-vexillum",
+      "23027:discula-destructiva",
+      "23027:dryocosmus-kuriphilus",
+      "23027:elaeagnus-umbellata",
+      "23027:hemigrapsus-sanguineus",
+      "23027:homadaula-albizziae",
+      "23027:icerya-purchasi",
+      "23027:lonicera-maackii",
+      "23027:lonicera-tatarica",
+      "23027:melaleuca-quinquenervia",
+      "23027:microstegium-vimineum",
+      "23027:phytophthora-cinnamomi",
+      "23027:raffaelea-lauricola",
+      "23029:alliaria-petiolata",
+      "23029:anarsia-lineatella",
+      "23029:aspidiotus-duplex",
+      "23029:cipangopaludina-chinensis",
+      "23029:didemnum-vexillum",
+      "23029:discula-destructiva",
+      "23029:dryocosmus-kuriphilus",
+      "23029:elaeagnus-umbellata",
+      "23029:hemigrapsus-sanguineus",
+      "23029:homadaula-albizziae",
+      "23029:icerya-purchasi",
+      "23029:lonicera-maackii",
+      "23029:lonicera-tatarica",
+      "23029:melaleuca-quinquenervia",
+      "23029:microstegium-vimineum",
+      "23029:phytophthora-cinnamomi",
+      "23029:raffaelea-lauricola",
+      "23031:alliaria-petiolata",
+      "23031:anarsia-lineatella",
+      "23031:aspidiotus-duplex",
+      "23031:cipangopaludina-chinensis",
+      "23031:didemnum-vexillum",
+      "23031:discula-destructiva",
+      "23031:dryocosmus-kuriphilus",
+      "23031:elaeagnus-umbellata",
+      "23031:hemigrapsus-sanguineus",
+      "23031:homadaula-albizziae",
+      "23031:icerya-purchasi",
+      "23031:lonicera-maackii",
+      "23031:lonicera-tatarica",
+      "23031:melaleuca-quinquenervia",
+      "23031:microstegium-vimineum",
+      "23031:phytophthora-cinnamomi",
+      "23031:raffaelea-lauricola"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-alliaria-petiolata-000000.json.gz",
+      "sha256": "7a99ae126805a69211c8367257a9e920d4c766d0cf0f9d10f80e9ba244c7b34e",
+      "bytes": 9915,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-anarsia-lineatella-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-aspidiotus-duplex-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-cipangopaludina-chinensis-000000.json.gz",
+      "sha256": "79de6d6217caf968baa86d66d5a2540ffbcd4bc10eee1b312a37083bce8125a6",
+      "bytes": 5783,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-didemnum-vexillum-000000.json.gz",
+      "sha256": "ee84ddccb79d98a06ebe883dd2f9b6606a7386d29b88488f622d75ee5b465d0b",
+      "bytes": 3943,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-discula-destructiva-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-elaeagnus-umbellata-000000.json.gz",
+      "sha256": "24ee6aa3577389f0608bd7eb5d668aacc2ce8e4ed65c0047f11fb4702d725397",
+      "bytes": 8825,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-hemigrapsus-sanguineus-000000.json.gz",
+      "sha256": "9e023f355a10f1ee68c04dd28e9cd93ee1087e26331e266b96302ccab215e88f",
+      "bytes": 2348,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-icerya-purchasi-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-lonicera-maackii-000000.json.gz",
+      "sha256": "f90c690af90a3faa27573ed5b48180ea86955f8f925e01b8301542ac22059adb",
+      "bytes": 4613,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-lonicera-tatarica-000000.json.gz",
+      "sha256": "4cf7fdcd72e5cc32a2c82edca7f8822dcbc4fdca47f607b5bf4a7f3fe0c84318",
+      "bytes": 18129,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-melaleuca-quinquenervia-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-microstegium-vimineum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-alliaria-petiolata.json.gz",
+      "sha256": "b28cd27767cccba38a39289319d766cb5bafcfa48f9465501e53632bd1ab1289",
+      "bytes": 306,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-anarsia-lineatella.json.gz",
+      "sha256": "40d69cfa5e98e1cb83d7e31680c0c4f4ed420ca69d5a7051188289e1f15e8f9c",
+      "bytes": 283,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-aspidiotus-duplex.json.gz",
+      "sha256": "4b933adc7b985f37afc60c1bbcbb626536a4bacb20106fdd4500ed381bbc8d7e",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-cipangopaludina-chinensis.json.gz",
+      "sha256": "d8e3af67447540f001056e71109807894f67e703cbf0d4bfc9f146eae3ca2aa0",
+      "bytes": 301,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-didemnum-vexillum.json.gz",
+      "sha256": "45768d461812b750be3559a6027e6df4e16e22d1d80939cec6ddc4068f1538fe",
+      "bytes": 287,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-discula-destructiva.json.gz",
+      "sha256": "0a878e5e48c45e1489dcb1558db20051083f48bc6343791bc95644ce4059d274",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+      "sha256": "18cbbd75a16af81884023a0cac379384cb3444ee6ef6a729a7af1c45f4d40505",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-elaeagnus-umbellata.json.gz",
+      "sha256": "e4f7ca147694c261114f82f480fbd51a4f57f80de17d61b7b4bcc615f59945f6",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-hemigrapsus-sanguineus.json.gz",
+      "sha256": "f9d47bc2982508b259df7ba8237e7e7970e05b7b14d96f52b6608ee512f4719b",
+      "bytes": 287,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+      "sha256": "1e4c133d335f5ff26aa973329e42e23092a799db4cf80a601cb2b3757c4a3587",
+      "bytes": 300,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-icerya-purchasi.json.gz",
+      "sha256": "0a2cb0beaaa8dc3892bf28b3b203eabb60a284409ad65cb6461d6a572f694aaf",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-lonicera-maackii.json.gz",
+      "sha256": "28cd64e75d71701a5fc56b40f23ab57f239a959e2fce15bbb5781b6a9cfafe8a",
+      "bytes": 300,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-lonicera-tatarica.json.gz",
+      "sha256": "5a63e2a01cc2a8c346182287dd75a7a83ce98da042eb4eb7a3082b6d43ab7ea6",
+      "bytes": 289,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-melaleuca-quinquenervia.json.gz",
+      "sha256": "9aa88a1473c80fa9b2089fea64b2c978d5facd659a0637e38a87ad50e35ffb15",
+      "bytes": 298,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-microstegium-vimineum.json.gz",
+      "sha256": "aa19ff9f35f3a3019242b27a31f8b6ef5d1527a9e07ae05f613d822872d0e8bd",
+      "bytes": 294,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+      "sha256": "7223c45dbf6d96b851425ec73d603cb5090b3d3b7827211d947794ed76386dc7",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+      "sha256": "070c063bae75c6ffa297dc16c6bb2a927702e1e706e0191a9897f45546db3a53",
+      "bytes": 310,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/assertions.ndjson",
+      "sha256": "59a5f74fc969f86ed34786e3325517bc01e1965846c6b870aaddffc2ff073d60",
+      "bytes": 107955,
+      "media_type": "application/x-ndjson",
+      "count": 58
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/reviews.ndjson",
+      "sha256": "fdc3446b29c2d419d3039edbb43dc05b99b8f902328accba34be2d74d532c1a9",
+      "bytes": 56488,
+      "media_type": "application/x-ndjson",
+      "count": 58
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/rejections.ndjson",
+      "sha256": "041543d179e191bcee26bed4df6325538691b86b9d26f2ff547cb08c5b0c5c2d",
+      "bytes": 9075,
+      "media_type": "application/x-ndjson",
+      "count": 13
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/outcomes.ndjson",
+      "sha256": "4b168f51ea3e7c82f7ffd25f73566f3b43b8fe2f3c9bf7fbf228e110daf206ba",
+      "bytes": 235604,
+      "media_type": "application/x-ndjson",
+      "count": 272
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/receipt.json",
+    "sha256": "9fc115231c24ff4b79fc738eeaef5dba9a655ff05b782120d506b2ff84549038",
+    "bytes": 49598,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/source-verification.json",
+    "sha256": "86908c5f6c10b7cad2ca654ab9605b7fe320d73e36c963b49bfa136058e4fa35",
+    "bytes": 47712,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 34,
+      "retainedArtifactBytes": 59417,
+      "sourceRequests": 34,
+      "providerCandidates": 71,
+      "assertionEvents": 58,
+      "publicationEligibleAssertions": 58,
+      "reviewEvents": 58,
+      "rejectionRecords": 13,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 272,
+      "completeOutcomePairs": 272,
+      "evidenceFoundOutcomes": 25,
+      "noQualifyingEvidenceOutcomes": 247,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 34,
+      "retainedArtifactBytes": 59417,
+      "sourceRequests": 34,
+      "providerCandidates": 71,
+      "assertionEvents": 58,
+      "publicationEligibleAssertions": 58,
+      "reviewEvents": 58,
+      "rejectionRecords": 13,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 272,
+      "completeOutcomePairs": 272,
+      "evidenceFoundOutcomes": 25,
+      "noQualifyingEvidenceOutcomes": 247,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check f5f3047bfb31694f2fabd301213181d5f7982515...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease C:\\Code\\project-isitusa\\ops\\national-research\\leases.json --lease-id lease-gbif-bulk-20260804-r47-me-003-1 --manifest src/data/research/runs/20260804T182934Z__gbif-preserved-specimens__290a0b49bdf4/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260804-r47-me-003",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-bulk-20260804-r47-me-003-1",
+        "status": "complete",
+        "finishedAt": "2026-08-04T20:19:42.603Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 34,
+        "providerCandidates": 71,
+        "retainedArtifacts": 34,
+        "receiptSha256": "9fc115231c24ff4b79fc738eeaef5dba9a655ff05b782120d506b2ff84549038"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 24,
+    "peakMemoryMb": 0,
+    "peakMemoryMeasured": false,
+    "peakMemoryMeasurement": "Not captured by worker execution; zero is the schema sentinel and not an observed memory measurement.",
+    "validPairsScreened": 272,
+    "manualInterventions": 1,
+    "runtimeInterventions": [
+      {
+        "stage": "pre-acquisition",
+        "result": "failed-before-runner-load",
+        "detail": "The first registered npm invocation failed because this isolated worktree lacked its ignored node_modules junction. The runner module did not load, no provider request occurred, and no run file was written."
+      },
+      {
+        "stage": "environment-repair",
+        "result": "complete",
+        "detail": "Created one ignored node_modules junction from the isolated worktree to the canonical dependency installation, then reran the same registered command under the lease retry policy."
+      }
+    ]
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
