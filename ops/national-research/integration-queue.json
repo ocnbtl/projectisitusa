@@ -20483,7 +20483,7 @@
       "queueId": "queue-lease-gbif-bulk-20260804-r47-nv-001-retry1-1",
       "jobId": "gbif-bulk-20260804-r47-nv-001-retry1",
       "leaseId": "lease-gbif-bulk-20260804-r47-nv-001-retry1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-04T19:03:00Z",
       "manifestPath": "manifests/gbif-bulk-20260804-r47-nv-001-retry1__lease-gbif-bulk-20260804-r47-nv-001-retry1-1.json",
       "manifestHash": "60b661487f24414b584730bba3a9f41b6d9aa75188d5da5da0c93a26694b6310",
@@ -20540,6 +20540,37 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r47-nv-001-retry1-1.json",
         "sha256": "bea4532eb2b31907ffca4522e635466e361164167033a4c0b452270d39705092",
         "bytes": 4756
+      },
+      "integratedAt": "2026-08-04T20:15:26.380Z",
+      "integrator": "MAIN",
+      "integrationCommit": "0de73a49deb33f240dcf13b7017a0fcd2688f8d4",
+      "integrationChecks": [
+        {
+          "command": "fresh full canonical immutable-research integrity validation after Nevada recovery, Maine batch 2, and official Arizona applicability integration",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact accepted Nevada recovery worker-to-canonical Git tree-entry parity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated after exact accepted worker-to-canonical tree parity and fresh full canonical research-integrity validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260804-r47-nv-001-retry1-1.json",
+        "sha256": "2ee2885d60d343bc199c5235036cc2d446c23ab7a3201fcb9b35960cf0c59ad9",
+        "bytes": 4585
       }
     },
     {
