@@ -18030,6 +18030,75 @@
         "sha256": "4fa87288e96eae7b8d83c7b86fcf738dcdfa2365af954b7d2e6ae18a31fb3a88",
         "bytes": 9694
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-bulk-20260804-r41-il-001-1",
+      "jobId": "gbif-bulk-20260804-r41-il-001",
+      "leaseId": "lease-gbif-bulk-20260804-r41-il-001-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-04T06:21:54.7693256Z",
+      "manifestPath": "manifests/gbif-bulk-20260804-r41-il-001__lease-gbif-bulk-20260804-r41-il-001-1.json",
+      "manifestHash": "0693ebc63de3df5cb705e9dd21b2094f8e69a440c94ce09ce3e237723869dc09",
+      "manifestBytes": 44350,
+      "workerCommit": "f20712016c9366ea7a24284e01696a7cd3d5ced0",
+      "workerBranchHead": "834a66468f7f99a8dbbf144e140655536b9941c1",
+      "reviewedAt": "2026-08-04T06:22:30.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 918 ordered county outcomes, 230 accepted assertions and reviews, 145 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-conium-maculatum-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-elaeagnus-pungens-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-euphorbia-virgata-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-lespedeza-cuneata-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-lonicera-fragrantissima-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-phellodendron-amurense-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-pueraria-montana-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-vincetoxicum-nigrum-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-occurrences-vincetoxicum-rossicum-000000.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-conium-maculatum.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-elaeagnus-pungens.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-euphorbia-virgata.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-lespedeza-cuneata.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-lonicera-fragrantissima.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-phellodendron-amurense.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-pueraria-montana.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-vincetoxicum-nigrum.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/artifacts/gbif-species-match-vincetoxicum-rossicum.json.gz",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/assertions.ndjson",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/manifest.json",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/outcomes.ndjson",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/receipt.json",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/rejections.ndjson",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/reviews.ndjson",
+        "src/data/research/runs/20260804T060800Z__gbif-preserved-specimens__063dac1c5318/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 918 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 4,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-bulk-20260804-r41-il-001-1.json",
+        "sha256": "5883fff5dc3a1532c40adf8f39c6fe5cf5b8a0e20a169a0927efc45783d6490b",
+        "bytes": 4895
+      }
     }
   ]
 }
