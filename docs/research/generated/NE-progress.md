@@ -1,27 +1,27 @@
 # Nebraska Research Progress
 
-Generated: `2026-08-03T00:00:00.000Z`
+Generated: `2026-08-04T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `188`
+- Verified present: `373`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6880`
-- Not researched: `225804`
-- Determination coverage: `0.08%`
-- Research coverage: `3.04%`
-- Explicit outcome coverage: `3.0351%`
+- Researched unresolved: `7532`
+- Not researched: `224967`
+- Determination coverage: `0.16%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `81`
-- Current complete protocol cells: `30`
-- Protocol completion: `53.09%`
-- Current protocol completion: `37.04%`
-- Evidence records: `188`
-- Research runs: `8`
-- Rejection records: `6`
+- Current complete protocol cells: `55`
+- Protocol completion: `83.95%`
+- Current protocol completion: `67.90%`
+- Evidence records: `869`
+- Research runs: `9`
+- Rejection records: `203`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,15 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 93 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 93 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 93 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 93 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 93 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 93 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 93 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 93 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 93 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 93 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 93 | 2 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 93 | 2 |
@@ -57,6 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 93 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 93 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 93 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 93 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 93 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 93 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 93 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 93 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 93 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 93 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 93 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 93 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-01T04:07:51.524Z | 2 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-04T01:49:06.385Z | 232 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
