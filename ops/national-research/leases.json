@@ -458364,7 +458364,7 @@
       "attempt": 3,
       "previousLeaseId": "lease-gbif-bulk-20260805-r48-mt-001-2",
       "workerTaskId": "gbif_la_r37_001",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-08-05T01:06:00.000Z",
       "expiresAt": "2026-08-05T02:06:00.000Z",
       "recoveryAt": "2026-08-05T01:06:00.000Z",
@@ -458752,7 +458752,8 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 571b4fdae76b0ed45c3417f9115226eb9a5e88ef...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-05T01:08:00.000Z"
     }
   ]
 }
