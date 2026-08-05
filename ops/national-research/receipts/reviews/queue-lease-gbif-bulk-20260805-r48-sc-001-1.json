@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260805-r48-sc-001-1",
+  "jobId": "gbif-bulk-20260805-r48-sc-001",
+  "leaseId": "lease-gbif-bulk-20260805-r48-sc-001-1",
+  "workerCommit": "39731fa75fa7b6306b7498bf71dd6b1ed00a31e0",
+  "workerBranchHead": "bf780046ace0589a59f36e445afd1bd5a5e2e98e",
+  "manifestHash": "250952e64f5986f827580225f5b1ad96ac7dc5b8e4cc58d5908f8db18b36bf24",
+  "changedPaths": [
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/artifacts/gbif-species-match-solanum-torvum.json.gz",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/assertions.ndjson",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/manifest.json",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/outcomes.ndjson",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/receipt.json",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/rejections.ndjson",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/reviews.ndjson",
+    "src/data/research/runs/20260805T001813Z__gbif-preserved-specimens__d8ee1163dd7d/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 230 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 230 ordered county outcomes, 16 accepted assertions and reviews, 4 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-05T00:33:25.1805624Z"
+}
