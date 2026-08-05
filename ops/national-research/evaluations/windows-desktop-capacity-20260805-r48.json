@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260805-r48",
+  "observedAt": "2026-08-05T00:40:12.4497035Z",
+  "decision": "retry-one-montana-worker-at-1280-mib",
+  "failedLease": {
+    "jobId": "gbif-bulk-20260805-r48-mt-001",
+    "leaseId": "lease-gbif-bulk-20260805-r48-mt-001-1",
+    "resourceLimitMiB": 1024,
+    "attempts": [
+      {
+        "attempt": 1,
+        "result": "memory-guard-stopped",
+        "elapsedSeconds": 5,
+        "observedWorkingSetMiB": 1111
+      },
+      {
+        "attempt": 2,
+        "result": "v8-out-of-memory",
+        "elapsedSeconds": 6,
+        "observedWorkingSetMiB": 886,
+        "heapLimitMiB": 640
+      },
+      {
+        "attempt": 3,
+        "result": "memory-guard-stopped",
+        "elapsedSeconds": 5,
+        "observedWorkingSetMiB": 1030,
+        "heapLimitMiB": 720
+      }
+    ],
+    "retainedRun": false,
+    "workerCommits": 0
+  },
+  "currentResources": {
+    "tier": "green",
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 10347356160,
+    "availableMemoryMiB": 9868.008,
+    "availableMemoryPercent": 30.93,
+    "availableDiskBytes": 945455411200,
+    "maximumStandardAcquisitionWorkers": 1
+  },
+  "retryGate": {
+    "workerCount": 1,
+    "resourceLimitMiB": 1280,
+    "requiredAvailableMemoryBytesFor25PercentReserve": 9704811520,
+    "projectedAvailableMemoryBytes": 9005178880,
+    "standardRepositoryPreflight": "pass",
+    "custom1280MiBReserveGate": "pass"
+  },
+  "reason": "The first lease exhausted its retry policy solely at the 1024 MiB ceiling and retained no run. A single 1280 MiB retry stays below the frozen 2048 MiB bounded-worker ceiling and preserves the repository's preferred 25 percent RAM reserve at the measured resource snapshot."
+}
