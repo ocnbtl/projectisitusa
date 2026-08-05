@@ -1199,6 +1199,40 @@
       },
       "zipLookup": {"zip":"85001","status":200,"ok":true,"countyFips":"04013","countyName":"Maricopa, AZ"},
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and GitHub main matched; GitHub deployment 5750837552 succeeded for the exact content SHA; Vercel deployment dpl_B7oUaUZ8WJEJfKABjp7iVNurAX49 reached READY with exact Git-source identity and production aliases; six live routes passed; Arizona, Maine, and Nevada live summary files matched local bytes exactly; Phoenix ZIP 85001 resolved to Maricopa County; current state totals rendered; and fresh desktop plus mobile behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-d6530785-2026-08-05",
+      "verifiedAt": "2026-08-05T01:41:00.000Z",
+      "commitSha": "d6530785709b23d7e75f9d1bdf3f3a90de97ea9d",
+      "githubMainSha": "d6530785709b23d7e75f9d1bdf3f3a90de97ea9d",
+      "githubDeploymentId": 5753721241,
+      "vercelDeploymentId": "dpl_8MPqWXwC6W5eNaK4y2ATjdq7mSdc",
+      "vercelDeploymentUrl": "projectisitusa-pib6wsw6p-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=AZ","status":200},
+        {"path":"/research?state=SC","status":200},
+        {"path":"/species/spotted-lanternfly","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/AZ/summary.json","sha256":"845b92c9d47bb98bd4ae7ed68485ea347230e2779bcf1ae756bdf67d7601566a"},
+        {"path":"/generated/research/SC/summary.json","sha256":"a20739bcaaec0c22a26ed482d9423953e73eb49131ee4a9da0eeae824a3e53fd"},
+        {"path":"/generated/presence.json","sha256":"d0caa9893fdd08b2375187d06c908614fa64438ab05c9dec57d0d137eae29a75"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["AZ", "SC"],
+        "returningBrowserRefresh": "pass",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and GitHub main matched the exact Round 48 content SHA; GitHub deployment 5753721241 succeeded; Vercel deployment dpl_8MPqWXwC6W5eNaK4y2ATjdq7mSdc completed and its production alias served the expected bytes; the public root, research, Arizona, South Carolina, species, deployment, and two GBIF health routes returned HTTP 200; Arizona, South Carolina, and the public presence projection matched local SHA-256 bytes exactly; current Arizona and South Carolina totals rendered; returning-browser refresh passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
