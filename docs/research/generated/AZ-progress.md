@@ -1,6 +1,6 @@
 # Arizona Research Progress
 
-Generated: `2026-08-04T00:00:00.000Z`
+Generated: `2026-08-05T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -15,10 +15,10 @@ Generated: `2026-08-04T00:00:00.000Z`
 - Determination coverage: `0.44%`
 - Research coverage: `5.11%`
 - Explicit outcome coverage: `5.1118%`
-- Applicable protocol cells: `115`
+- Applicable protocol cells: `121`
 - Current complete protocol cells: `73`
-- Protocol completion: `74.78%`
-- Current protocol completion: `63.48%`
+- Protocol completion: `71.07%`
+- Current protocol completion: `60.33%`
 - Evidence records: `1597`
 - Research runs: `13`
 - Rejection records: `282`
@@ -32,13 +32,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Pike killifish (`belonesox-belizanus`) | wildlife | 15 | 0 | 1 |
 | Black mustard (`brassica-nigra`) | plants | 15 | 0 | 1 |
 | Nodding plumeless thistle (`carduus-nutans`) | plants | 15 | 0 | 1 |
 | Ward's weed (`carrichtera-annua`) | plants | 15 | 0 | 1 |
+| Grass Carp (`ctenopharyngodon-idella`) | wildlife | 15 | 0 | 1 |
 | Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 15 | 0 | 1 |
+| Chinese mitten crab (`eriocheir-sinensis`) | wildlife | 15 | 0 | 1 |
+| Silver Carp (`hypophthalmichthys-molitrix`) | wildlife | 15 | 0 | 1 |
+| Bighead Carp (`hypophthalmichthys-nobilis`) | wildlife | 15 | 0 | 1 |
 | Tall Morning-glory (`ipomoea-purpurea`) | plants | 15 | 0 | 1 |
 | Common kochia (`kochia-scoparia`) | plants | 15 | 0 | 1 |
 | Rose natal grass (`melinis-repens`) | plants | 15 | 0 | 1 |
+| Black carp (`mylopharyngodon-piceus`) | wildlife | 15 | 0 | 1 |
 | Charlock mustard (`sinapis-arvensis`) | plants | 15 | 0 | 1 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 15 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 1 |
@@ -51,12 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Red brome (`bromus-rubens`) | plants | 0 | 15 | 1 |
 | Cheatgrass (`bromus-tectorum`) | plants | 0 | 15 | 1 |
 | Maltese star-thistle (`centaurea-melitensis`) | plants | 0 | 15 | 1 |
-| Rush skeletonweed (`chondrilla-juncea`) | plants | 0 | 15 | 1 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 15 | 1 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 0 | 15 | 1 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 1 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 1 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 1 |
 
 ## Source Operations
 

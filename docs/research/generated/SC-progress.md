@@ -1,27 +1,27 @@
 # South Carolina Research Progress
 
-Generated: `2026-08-04T00:00:00.000Z`
+Generated: `2026-08-05T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `666`
+- Verified present: `668`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `2922`
-- Not researched: `111596`
+- Researched unresolved: `3150`
+- Not researched: `111366`
 - Determination coverage: `0.58%`
-- Research coverage: `3.12%`
-- Explicit outcome coverage: `3.1150%`
+- Research coverage: `3.31%`
+- Explicit outcome coverage: `3.3147%`
 - Applicable protocol cells: `91`
-- Current complete protocol cells: `30`
-- Protocol completion: `47.25%`
-- Current protocol completion: `32.97%`
-- Evidence records: `765`
-- Research runs: `9`
-- Rejection records: `18`
+- Current complete protocol cells: `35`
+- Protocol completion: `52.75%`
+- Current protocol completion: `38.46%`
+- Evidence records: `781`
+- Research runs: `10`
+- Rejection records: `22`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,11 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 46 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 46 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 46 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 46 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 46 | 0 | 1 |
 | Simple-stem burr-reed (`sparganium-erectum`) | plants | 46 | 0 | 1 |
 | Coatbuttons (`tridax-procumbens`) | plants | 46 | 0 | 1 |
 | Panic liverseed grass (`urochloa-panicoides`) | plants | 46 | 0 | 1 |
@@ -57,6 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Southern threecornerjack (`emex-australis`) | plants | 0 | 46 | 0 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 46 | 0 |
 | Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 46 | 0 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 0 | 46 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 46 | 0 |
+| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 46 | 0 |
+| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 46 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-04T06:58:19.409Z | 26 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-05T00:27:56.525Z | 28 | 30 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
