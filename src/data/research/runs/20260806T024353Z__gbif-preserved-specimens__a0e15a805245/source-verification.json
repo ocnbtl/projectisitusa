@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-06T02:46:50.972Z",
+  "runId": "20260806T024353Z__gbif-preserved-specimens__a0e15a805245",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "ND",
+  "pairKeys": [
+    "38001:rottboellia-cochinchinensis",
+    "38003:rottboellia-cochinchinensis",
+    "38005:rottboellia-cochinchinensis",
+    "38007:rottboellia-cochinchinensis",
+    "38009:rottboellia-cochinchinensis",
+    "38011:rottboellia-cochinchinensis",
+    "38013:rottboellia-cochinchinensis",
+    "38015:rottboellia-cochinchinensis",
+    "38017:rottboellia-cochinchinensis",
+    "38019:rottboellia-cochinchinensis",
+    "38021:rottboellia-cochinchinensis",
+    "38023:rottboellia-cochinchinensis",
+    "38025:rottboellia-cochinchinensis",
+    "38027:rottboellia-cochinchinensis",
+    "38029:rottboellia-cochinchinensis",
+    "38031:rottboellia-cochinchinensis",
+    "38033:rottboellia-cochinchinensis",
+    "38035:rottboellia-cochinchinensis",
+    "38037:rottboellia-cochinchinensis",
+    "38039:rottboellia-cochinchinensis",
+    "38041:rottboellia-cochinchinensis",
+    "38043:rottboellia-cochinchinensis",
+    "38045:rottboellia-cochinchinensis",
+    "38047:rottboellia-cochinchinensis",
+    "38049:rottboellia-cochinchinensis",
+    "38051:rottboellia-cochinchinensis",
+    "38053:rottboellia-cochinchinensis",
+    "38055:rottboellia-cochinchinensis",
+    "38057:rottboellia-cochinchinensis",
+    "38059:rottboellia-cochinchinensis",
+    "38061:rottboellia-cochinchinensis",
+    "38063:rottboellia-cochinchinensis",
+    "38065:rottboellia-cochinchinensis",
+    "38067:rottboellia-cochinchinensis",
+    "38069:rottboellia-cochinchinensis",
+    "38071:rottboellia-cochinchinensis",
+    "38073:rottboellia-cochinchinensis",
+    "38075:rottboellia-cochinchinensis",
+    "38077:rottboellia-cochinchinensis",
+    "38079:rottboellia-cochinchinensis",
+    "38081:rottboellia-cochinchinensis",
+    "38083:rottboellia-cochinchinensis",
+    "38085:rottboellia-cochinchinensis",
+    "38087:rottboellia-cochinchinensis",
+    "38089:rottboellia-cochinchinensis",
+    "38091:rottboellia-cochinchinensis",
+    "38093:rottboellia-cochinchinensis",
+    "38095:rottboellia-cochinchinensis",
+    "38097:rottboellia-cochinchinensis",
+    "38099:rottboellia-cochinchinensis",
+    "38101:rottboellia-cochinchinensis",
+    "38103:rottboellia-cochinchinensis",
+    "38105:rottboellia-cochinchinensis"
+  ],
+  "parameterHash": "a0e15a80524550a055ff6c6db512dcfa006461a7d4fe8a75526606a228bf77ae",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-06T02:46:50.970Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching North Dakota and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "rottboellia-cochinchinensis"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-rottboellia-cochinchinensis",
+        "url": "https://api.gbif.org/v1/species/match?name=Rottboellia+cochinchinensis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-06T02:46:50.543Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-rottboellia-cochinchinensis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=North+Dakota&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2704075&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for rottboellia-cochinchinensis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-06T02:46:50.970Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+      "sha256": "2eeee55b2f7afd7fa66f423e6c9d5fc4876ce724bcc745c5164eb72217639813",
+      "bytes": 293
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
