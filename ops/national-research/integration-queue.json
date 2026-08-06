@@ -21150,7 +21150,7 @@
       "queueId": "queue-lease-gbif-bulk-20260805-r49-nd-recovery2-nd-001-1",
       "jobId": "gbif-bulk-20260805-r49-nd-recovery2-nd-001",
       "leaseId": "lease-gbif-bulk-20260805-r49-nd-recovery2-nd-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-06T02:50:11.896Z",
       "manifestPath": "manifests/gbif-bulk-20260805-r49-nd-recovery2-nd-001__lease-gbif-bulk-20260805-r49-nd-recovery2-nd-001-1.json",
       "manifestHash": "cbc783770ba53674edf50003645d461c34ed07728c3979b2e253a65c28d9f249",
@@ -21197,6 +21197,47 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260805-r49-nd-recovery2-nd-001-1.json",
         "sha256": "e7364a1ac3faaed7e44dfcb69594698ad7d2263fe38b7a4761cccf133c2f03b4",
         "bytes": 2627
+      },
+      "integratedAt": "2026-08-06T02:57:54.0652239Z",
+      "integrator": "MAIN",
+      "integrationCommit": "e2a8de52173aa3c039a40c909f79cc55a4f600aa",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 53 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, complete pagination, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical main tree entries matched the exact reviewed worker branch for all nine changed paths",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed North Dakota GBIF content and manifest commits without conflict. Canonical tree validation confirmed 53 complete researched-unresolved outcomes, zero provider candidates, zero unsupported negative determinations, and byte-identical worker outputs.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260805-r49-nd-recovery2-nd-001-1.json",
+        "sha256": "3384fce59ab8596020f98862ebfbe8a5098272f821aac95e7288178b19cae9ce",
+        "bytes": 2960
       }
     }
   ]
