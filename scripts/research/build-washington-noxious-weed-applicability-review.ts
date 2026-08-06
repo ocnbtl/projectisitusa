@@ -134,6 +134,7 @@ const review = {
   sourceUrl: "https://app.leg.wa.gov/WAC/default.aspx?cite=16-750&full=true",
   retrievedAt: "2026-08-06T02:17:00.840Z",
   reviewedAt: "2026-08-06T02:32:34.258Z",
+  applicabilityAsOf: "2026-08-05",
   artifact: {
     path: artifactRelativePath,
     sha256: artifactSha256,

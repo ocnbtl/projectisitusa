@@ -53,6 +53,7 @@ export type StateApplicabilityReview = {
   sourceUrl: string;
   retrievedAt: string;
   reviewedAt: string;
+  applicabilityAsOf?: string;
   artifact: {
     path: string;
     sha256: string;
@@ -149,6 +150,14 @@ export function validateStateApplicabilityReview(input: {
     );
   }
   const projectedStateCodes = stateApplicabilityProjectionStates(source);
+  if (
+    review.applicabilityAsOf &&
+    review.applicabilityAsOf > review.reviewedAt.slice(0, 10)
+  ) {
+    throw new Error(
+      "Review " + review.reviewId + " applicabilityAsOf is newer than its reviewedAt date.",
+    );
+  }
 
   const artifactPath = path.resolve(reviewDirectory, review.artifact.path);
   const reviewRoot = `${path.resolve(reviewDirectory)}${path.sep}`;
@@ -302,7 +311,7 @@ export function mergeReviewedApplicability(input: {
 
   const latestReviewDate = input.reviews
     .filter((review) => review.stateCode === current.stateCode)
-    .map((review) => review.reviewedAt.slice(0, 10))
+    .map((review) => review.applicabilityAsOf ?? review.reviewedAt.slice(0, 10))
     .sort()
     .at(-1);
   const species = [...bySpeciesId.values()]

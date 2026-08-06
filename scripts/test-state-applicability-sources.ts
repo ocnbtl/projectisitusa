@@ -78,6 +78,7 @@ try {
     sourceUrl: source.homepage,
     retrievedAt: "2026-07-28T00:00:00Z",
     reviewedAt: "2026-07-28T00:01:00Z",
+    applicabilityAsOf: "2026-07-27",
     artifact: {
       path: "artifacts/source.txt",
       sha256: sha256Bytes(artifact),
@@ -198,6 +199,10 @@ try {
     species: [],
   };
   const first = mergeReviewedApplicability({ current, reviews: [review] });
+  assert(
+    first.output.asOf === "2026-07-27",
+    "Explicit local applicability date was replaced by the UTC review date.",
+  );
   const second = mergeReviewedApplicability({
     current: first.output,
     reviews: [review],

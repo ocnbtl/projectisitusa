@@ -15,10 +15,10 @@ Generated: `2026-08-05T00:00:00.000Z`
 - Determination coverage: `0.14%`
 - Research coverage: `1.72%`
 - Explicit outcome coverage: `1.7173%`
-- Applicable protocol cells: `71`
+- Applicable protocol cells: `163`
 - Current complete protocol cells: `30`
-- Protocol completion: `60.56%`
-- Current protocol completion: `42.25%`
+- Protocol completion: `26.38%`
+- Current protocol completion: `18.40%`
 - Evidence records: `186`
 - Research runs: `8`
 - Rejection records: `91`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Ducklettuce (`ottelia-alismoides`) | plants | 39 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 39 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 39 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 39 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 39 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 39 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 39 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 39 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 39 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 39 | 0 | 1 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 39 | 0 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 39 | 0 | 0 |
-| Slender false brome (`brachypodium-sylvaticum`) | plants | 39 | 0 | 0 |
-| Cheatgrass (`bromus-tectorum`) | plants | 39 | 0 | 0 |
-| Orange eye butterflybush (`buddleja-davidii`) | plants | 39 | 0 | 0 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 39 | 0 | 0 |
-| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 39 | 0 | 0 |
-| Diffuse Knapweed (`centaurea-diffusa`) | plants | 39 | 0 | 0 |
-| Maltese star-thistle (`centaurea-melitensis`) | plants | 39 | 0 | 0 |
-| Yellow star-thistle (`centaurea-solstitialis`) | plants | 39 | 0 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 39 | 0 | 0 |
-| Rush skeletonweed (`chondrilla-juncea`) | plants | 39 | 0 | 0 |
-| Canada Thistle (`cirsium-arvense`) | plants | 39 | 0 | 0 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 39 | 0 | 0 |
-| Evergreen clematis (`clematis-vitalba`) | plants | 39 | 0 | 0 |
+| Velvetleaf (`abutilon-theophrasti`) | plants | 39 | 0 | 1 |
+| Norway Maple (`acer-platanoides`) | plants | 39 | 0 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 39 | 0 | 1 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 39 | 0 | 1 |
+| Camelthorn (`alhagi-maurorum`) | plants | 39 | 0 | 1 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 39 | 0 | 1 |
+| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 39 | 0 | 1 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 39 | 0 | 1 |
+| Absinthium (`artemisia-absinthium`) | plants | 39 | 0 | 1 |
+| Common Barberry (`berberis-vulgaris`) | plants | 39 | 0 | 1 |
+| Hoary Alyssum (`berteroa-incana`) | plants | 39 | 0 | 1 |
+| Slender false brome (`brachypodium-sylvaticum`) | plants | 39 | 0 | 1 |
+| White bryony (`bryonia-alba`) | plants | 39 | 0 | 1 |
+| Orange eye butterflybush (`buddleja-davidii`) | plants | 39 | 0 | 1 |
+| Flowering Rush (`butomus-umbellatus`) | plants | 39 | 0 | 1 |
+| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 39 | 0 | 1 |
+| Nodding plumeless thistle (`carduus-nutans`) | plants | 39 | 0 | 1 |
+| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 39 | 0 | 1 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 39 | 0 | 1 |
+| Red star-thistle (`centaurea-calcitrapa`) | plants | 39 | 0 | 1 |
+| Diffuse Knapweed (`centaurea-diffusa`) | plants | 39 | 0 | 1 |
+| Brownray knapweed (`centaurea-jacea`) | plants | 39 | 0 | 1 |
+| Bighead knapweed (`centaurea-macrocephala`) | plants | 39 | 0 | 1 |
+| Maltese star-thistle (`centaurea-melitensis`) | plants | 39 | 0 | 1 |
+| Lesser knapweed (`centaurea-nigra`) | plants | 39 | 0 | 1 |
 
 ## Source Operations
 

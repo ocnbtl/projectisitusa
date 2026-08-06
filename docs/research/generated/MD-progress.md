@@ -15,10 +15,10 @@ Generated: `2026-08-05T00:00:00.000Z`
 - Determination coverage: `0.48%`
 - Research coverage: `3.04%`
 - Explicit outcome coverage: `3.0351%`
-- Applicable protocol cells: `94`
+- Applicable protocol cells: `108`
 - Current complete protocol cells: `30`
-- Protocol completion: `45.74%`
-- Current protocol completion: `31.91%`
+- Protocol completion: `39.81%`
+- Current protocol completion: `27.78%`
 - Evidence records: `291`
 - Research runs: `9`
 - Rejection records: `37`
@@ -32,6 +32,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Chocolate Vine (`akebia-quinata`) | plants | 24 | 0 | 1 |
+| Japanese angelica tree (`aralia-elata`) | plants | 24 | 0 | 1 |
+| Scotch broom (`cytisus-scoparius`) | plants | 24 | 0 | 1 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 24 | 0 | 1 |
+| Wintercreeper (`euonymus-fortunei`) | plants | 24 | 0 | 1 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 24 | 0 | 1 |
+| Orange Daylily (`hemerocallis-fulva`) | plants | 24 | 0 | 1 |
+| Border Privet (`ligustrum-obtusifolium`) | plants | 24 | 0 | 1 |
+| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 24 | 0 | 1 |
+| Sacred Bamboo (`nandina-domestica`) | plants | 24 | 0 | 1 |
+| Yellow groove bamboo (`phyllostachys-aureosulcata`) | plants | 24 | 0 | 1 |
+| Callery Pear (`pyrus-calleryana`) | plants | 24 | 0 | 1 |
 | Itchgrass (`rottboellia-cochinchinensis`) | plants | 24 | 0 | 1 |
 | Wild sugarcane (`saccharum-spontaneum`) | plants | 24 | 0 | 1 |
 | Giant Salvinia (`salvinia-molesta`) | plants | 24 | 0 | 1 |
@@ -41,22 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Simple-stem burr-reed (`sparganium-erectum`) | plants | 24 | 0 | 1 |
 | Coatbuttons (`tridax-procumbens`) | plants | 24 | 0 | 1 |
 | Panic liverseed grass (`urochloa-panicoides`) | plants | 24 | 0 | 1 |
+| Japanese wisteria (`wisteria-floribunda`) | plants | 24 | 0 | 1 |
+| Chinese Wisteria (`wisteria-sinensis`) | plants | 24 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 24 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 24 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 24 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 24 | 1 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 24 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 24 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 24 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 24 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 24 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 24 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 24 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 24 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 24 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 24 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 24 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 24 | 0 |
 
 ## Source Operations
 

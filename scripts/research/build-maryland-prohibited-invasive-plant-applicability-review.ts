@@ -119,6 +119,7 @@ const review = {
   sourceUrl: "https://mda.maryland.gov/plants-pests/Pages/maryland_invasive_plant_law_and_regulations.aspx",
   retrievedAt: "2026-08-06T02:41:04.356Z",
   reviewedAt: "2026-08-06T02:53:00.000Z",
+  applicabilityAsOf: "2026-08-05",
   artifact: {
     path: artifactRelativePath,
     sha256: artifactSha256,
