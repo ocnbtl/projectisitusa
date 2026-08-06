@@ -1233,6 +1233,58 @@
         "consoleErrors": 0
       },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and GitHub main matched the exact Round 48 content SHA; GitHub deployment 5753721241 succeeded; Vercel deployment dpl_8MPqWXwC6W5eNaK4y2ATjdq7mSdc completed and its production alias served the expected bytes; the public root, research, Arizona, South Carolina, species, deployment, and two GBIF health routes returned HTTP 200; Arizona, South Carolina, and the public presence projection matched local SHA-256 bytes exactly; current Arizona and South Carolina totals rendered; returning-browser refresh passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-a82f997e-2026-08-06",
+      "verifiedAt": "2026-08-06T04:08:39.014Z",
+      "commitSha": "a82f997e7924c11cff7df349014b140eadf92184",
+      "githubMainSha": "a82f997e7924c11cff7df349014b140eadf92184",
+      "githubDeploymentId": 5772857550,
+      "vercelDeploymentId": "dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr",
+      "vercelDeploymentUrl": "projectisitusa-oy0ihutk7-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=AL","status":200},
+        {"path":"/research?state=CA","status":200},
+        {"path":"/research?state=MD","status":200},
+        {"path":"/research?state=ND","status":200},
+        {"path":"/research?state=WA","status":200},
+        {"path":"/species/spotted-lanternfly","status":200},
+        {"path":"/generated/research/MD/summary.json","status":200},
+        {"path":"/generated/research/WA/summary.json","status":200},
+        {"path":"/generated/research/MD/counties/24510.json","status":200},
+        {"path":"/generated/research/WA/counties/53033.json","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/MD/summary.json","sha256":"c62dbe5991daec9b09b3151294a7679e73a0b2373d25671eab4acde6c58bed40"},
+        {"path":"/generated/research/WA/summary.json","sha256":"8d08a175ba69fcc69ecdf72e00be63f227c0ef722959f7e60fb96142330b69a1"},
+        {"path":"/generated/research/MD/counties/24510.json","sha256":"da280e97acbdfcb91c3d5e4b3f7258d56e2e5be6d24fa132990c5223a3243ea8"},
+        {"path":"/generated/research/WA/counties/53033.json","sha256":"bcc424b6a1256fe380c9627eb7842425dc34829a4257835a1d3dda7346ce2cb6"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["AL", "CA", "MD", "ND", "WA"],
+        "county": "King, WA",
+        "sourceOperations": "pass",
+        "researchQueue": "pass",
+        "returningBrowserRefresh": "pass",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "zipLookup": {"zip":"21401","status":200,"ok":true,"countyFips":"24003","countyName":"Anne Arundel, MD"},
+      "runtimeQa": {
+        "deploymentId": "dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr",
+        "warningAndErrorLogs": 0,
+        "statusCodeCounts": {"200":29,"304":4,"405":2},
+        "qualification": "The two 405 responses were explicit read-only GET method probes against the POST-only ZIP endpoint. The UI-equivalent POST request and browser flow both returned successful Anne Arundel County data."
+      },
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched the exact Round 49 content SHA; GitHub deployment 5772857550 succeeded; Vercel deployment dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr reached READY with exact Git-source identity and production aliases; twelve intended live routes and the UI-equivalent ZIP POST passed; four changed Maryland and Washington generated files matched local SHA-256 bytes exactly; Alabama, California, Maryland, North Dakota, and Washington research views rendered current 2026-08-05 projections; King County selection, source operations, research queue, and returning-browser Anne Arundel state passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Two diagnostic GET probes against the POST-only ZIP endpoint returned the expected 405 and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
