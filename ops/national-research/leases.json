@@ -459143,7 +459143,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "gbif_nd_r49_recovery_001",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-08-06T02:25:12.666Z",
       "expiresAt": "2026-08-06T06:22:39.392Z",
       "recoveryAt": null,
@@ -459294,7 +459294,8 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check b9b2c98023d8c3090373597c8ea7cab74478976e...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-06T02:42:05.713Z"
     }
   ]
 }
