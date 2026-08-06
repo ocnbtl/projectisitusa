@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-bulk-20260805-r49-nd-recovery2-nd-001-1",
+  "jobId": "gbif-bulk-20260805-r49-nd-recovery2-nd-001",
+  "leaseId": "lease-gbif-bulk-20260805-r49-nd-recovery2-nd-001-1",
+  "workerCommit": "e899824189e837a78ef0da0ec2d73fdf3ddcc754",
+  "workerBranchHead": "b2962645e14bf591e6332468eef5addcbfe802e9",
+  "manifestHash": "cbc783770ba53674edf50003645d461c34ed07728c3979b2e253a65c28d9f249",
+  "changedPaths": [
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/assertions.ndjson",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/manifest.json",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/outcomes.ndjson",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/receipt.json",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/rejections.ndjson",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/reviews.ndjson",
+    "src/data/research/runs/20260806T024353Z__gbif-preserved-specimens__a0e15a805245/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 53 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, complete pagination, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable North Dakota GBIF run, complete receipt and source-verification descriptors, all 53 ordered county outcomes, complete pagination, zero provider candidates, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-06T02:51:38.4913786Z"
+}
