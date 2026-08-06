@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-bulk-20260805-r49-nd-recovery1",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "ND",
+  "asOf": "2026-08-05",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "70d3085836a1d71c64c36c844b5ef7d5038a0ab62d2a0ec3051a69ccb66e180f",
+    "protocolCells": "cc4356b5e29dd5ed229ba8e0d64d90ebc803487765cc6258023ab61dfab5ef06",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "7b7852b5865615ffa413600d3b848b634e769a2e9d9d91e3edf5622f621e9f1f"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 53,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 1325,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0
+  },
+  "availableStateSpeciesScreenCount": 34,
+  "selectedStateSpeciesScreenCount": 1,
+  "selectedCountyOutcomeCount": 53,
+  "expectedNetNewPairCount": 53,
+  "countyCount": 53,
+  "selected": [
+    {
+      "stateCode": "ND",
+      "speciesId": "rottboellia-cochinchinensis",
+      "scientificName": "Rottboellia cochinchinensis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 53,
+      "incompleteCountyCount": 53,
+      "notResearchedCountyCount": 53,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "38001",
+        "38003",
+        "38005",
+        "38007",
+        "38009",
+        "38011",
+        "38013",
+        "38015",
+        "38017",
+        "38019",
+        "38021",
+        "38023",
+        "38025",
+        "38027",
+        "38029",
+        "38031",
+        "38033",
+        "38035",
+        "38037",
+        "38039",
+        "38041",
+        "38043",
+        "38045",
+        "38047",
+        "38049",
+        "38051",
+        "38053",
+        "38055",
+        "38057",
+        "38059",
+        "38061",
+        "38063",
+        "38065",
+        "38067",
+        "38069",
+        "38071",
+        "38073",
+        "38075",
+        "38077",
+        "38079",
+        "38081",
+        "38083",
+        "38085",
+        "38087",
+        "38089",
+        "38091",
+        "38093",
+        "38095",
+        "38097",
+        "38099",
+        "38101",
+        "38103",
+        "38105"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-bulk-20260805-r49-nd-recovery1-nd-001",
+      "stateCode": "ND",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "rottboellia-cochinchinensis"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 53,
+      "candidateFile": "gbif-bulk-20260805-r49-nd-recovery1-nd-001.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-bulk-20260805-r49-nd-recovery1-nd-001",
+      "path": "ops/national-research/inputs/gbif-bulk-20260805-r49/gbif-bulk-20260805-r49-nd-recovery1-nd-001.json",
+      "sha256": "8feac0d03e9a606c1139359ffb9d6fa73ddbec58e187e06069106819ba17bc5e",
+      "bytes": 7471
+    }
+  ]
+}
