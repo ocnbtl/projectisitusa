@@ -1339,6 +1339,51 @@
         "qualification": "The 400 was the explicitly discarded malformed ZIP diagnostic; the 404 was the pre-alias Itchgrass probe and was superseded by HTTP 200 on all production aliases and the exact deployment URL; the 416 was a static root range probe. The correctly encoded ZIP request, final Itchgrass request, intended live routes, browser flows, and exact byte checks all passed."
       },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 50 content SHA 2f5fa264bc2c8dfbbe3f8581973092f221328889; GitHub Production deployment 5787224747 succeeded; Vercel deployment dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog reached READY with exact Git-source identity and all production aliases; thirteen intended live routes and the UI-equivalent District of Columbia ZIP POST passed; the North Dakota summary, Adams County projection, and public presence projection matched local SHA-256 bytes exactly; North Dakota and District of Columbia rendered current 2026-08-07 projections; Itchgrass rendered as researched unresolved with reviewed no qualifying evidence; source operations and the research queue passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Diagnostic 400, 404, and 416 probes are explicitly qualified in runtimeQa and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-db29d556-2026-08-07",
+      "verifiedAt": "2026-08-07T05:09:45.1164565Z",
+      "commitSha": "db29d5564ce1a41848b199951a82072bd69f142b",
+      "githubMainSha": "db29d5564ce1a41848b199951a82072bd69f142b",
+      "githubDeploymentId": 5788454156,
+      "vercelDeploymentId": "dpl_4qgEF8foPrkZX9oGcmgydEJSkWao",
+      "vercelDeploymentUrl": "projectisitusa-2vqspxtg1-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=HI","status":200},
+        {"path":"/research?state=VT","status":200},
+        {"path":"/generated/research/HI/summary.json","status":200},
+        {"path":"/generated/research/VT/summary.json","status":200},
+        {"path":"/generated/research/HI/counties/15003.json","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/HI/summary.json","bytes":81378,"sha256":"afa3dd7f5ac8c0f936480c2347f6cbecf37d862ce690c101e04260cb4f73d458"},
+        {"path":"/generated/research/VT/summary.json","bytes":95209,"sha256":"e2ffb6d3d1fe45d46d8f63163410602fd5c2376e9a3118730a6fc7d6d57f74e4"},
+        {"path":"/generated/research/HI/counties/15003.json","bytes":93551,"sha256":"2fb0c811bcf53920facf95b6cbdf2e762923049c4e63f5d3b2d3f8abd0549f06"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["HI", "VT"],
+        "county": "Honolulu, HI",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "zipLookup": {"zip":"96801","status":200,"ok":true,"countyFips":"15003","countyName":"Honolulu, HI"},
+      "runtimeQa": {
+        "activeDeploymentId": "dpl_4qgEF8foPrkZX9oGcmgydEJSkWao",
+        "githubLinkedDeploymentId": "dpl_GbtLJh18jycTV8rcbuQNXSS3zD5k",
+        "runtimeErrorClusters": 0,
+        "warningAndErrorLogs": 0,
+        "observedRuntimeLogEntries": 0,
+        "qualification": "The mostly static deployment emitted no runtime log entries in the observed post-deployment window. Runtime confidence therefore rests on successful intended route navigation, exact live-to-local byte parity, ZIP API browser behavior, provider READY metadata, and zero browser console warnings or errors. The first explicit CLI deployment attempt failed before build because an archive was required for more than 15,000 files; one exact retry with a tgz archive succeeded."
+      },
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact content SHA db29d5564ce1a41848b199951a82072bd69f142b; GitHub Production deployment 5788454156 succeeded; GitHub-linked Vercel deployment dpl_GbtLJh18jycTV8rcbuQNXSS3zD5k and active Vercel production deployment dpl_4qgEF8foPrkZX9oGcmgydEJSkWao reached READY with exact Git-source identity; the canonical production alias resolved to the active deployment; seven intended live routes passed; Hawaii and Vermont summaries plus Honolulu County matched local SHA-256 bytes exactly; Honolulu ZIP resolution and fresh desktop plus mobile browser behavior passed without console warnings, console errors, or horizontal overflow. Hawaii contributed 20 net-new verified-present county-species outcomes and 105 newly explicit unresolved outcomes; Vermont applicability expanded the denominator without asserting county occurrence. All 51 jurisdictions remain uncertified and no unsupported negative was inferred. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
