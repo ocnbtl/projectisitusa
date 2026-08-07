@@ -7,21 +7,21 @@ Generated: `2026-08-07T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `70`
+- Verified present: `90`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `125`
-- Not researched: `12325`
-- Determination coverage: `0.56%`
-- Research coverage: `1.56%`
-- Explicit outcome coverage: `1.5575%`
+- Researched unresolved: `230`
+- Not researched: `12200`
+- Determination coverage: `0.72%`
+- Research coverage: `2.56%`
+- Explicit outcome coverage: `2.5559%`
 - Applicable protocol cells: `109`
-- Current complete protocol cells: `5`
-- Protocol completion: `16.51%`
-- Current protocol completion: `4.59%`
-- Evidence records: `70`
-- Research runs: `7`
-- Rejection records: `0`
+- Current complete protocol cells: `30`
+- Protocol completion: `39.45%`
+- Current protocol completion: `27.52%`
+- Evidence records: `180`
+- Research runs: `8`
+- Rejection records: `501`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Black wattle (`acacia-mearnsii`) | plants | 5 | 0 | 1 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 5 | 0 | 1 |
-| Crow Garlic (`allium-vineale`) | plants | 5 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 5 | 0 | 1 |
-| Heartleaf madeiravine (`anredera-cordifolia`) | plants | 5 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 5 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 5 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 5 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 5 | 0 | 1 |
-| Canada Thistle (`cirsium-arvense`) | plants | 5 | 0 | 1 |
-| Ivy gourd (`coccinia-grandis`) | plants | 5 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 5 | 0 | 1 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 5 | 0 | 1 |
-| Purple pampas grass (`cortaderia-jubata`) | plants | 5 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 5 | 0 | 1 |
-| Yellow Nutsedge (`cyperus-esculentus`) | plants | 5 | 0 | 1 |
-| Scotch broom (`cytisus-scoparius`) | plants | 5 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 5 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 5 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 5 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 5 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 5 | 0 | 1 |
-| Saltlover (`halogeton-glomeratus`) | plants | 5 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 5 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 5 | 0 | 1 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 5 | 0 | 1 |
+| Comb bushmint (`hyptis-pectinata`) | plants | 5 | 0 | 1 |
+| Cogongrass (`imperata-cylindrica`) | plants | 5 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 5 | 0 | 1 |
+| Silkleaf (`lagascea-mollis`) | plants | 5 | 0 | 1 |
+| Broadleaved pepperweed (`lepidium-latifolium`) | plants | 5 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 5 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 5 | 0 | 1 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 5 | 0 | 1 |
+| Yellow leafbract (`malachra-alceifolia`) | plants | 5 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 5 | 0 | 1 |
+| Black mimosa (`mimosa-pigra`) | plants | 5 | 0 | 1 |
+| Pacific island silvergrass (`miscanthus-floridulus`) | plants | 5 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 5 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 5 | 0 | 1 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 5 | 0 | 1 |
+| Torpedo grass (`panicum-repens`) | plants | 5 | 0 | 1 |
+| Australian cheesewood (`pittosporum-undulatum`) | plants | 5 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 5 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 5 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 5 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 5 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 5 | 0 | 1 |
+| Tropical soda apple (`solanum-viarum`) | plants | 5 | 0 | 1 |
+| Field Sowthistle (`sonchus-arvensis`) | plants | 5 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-08-07T04:35:05.146Z | 20 | 25 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
