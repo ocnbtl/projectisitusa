@@ -8,17 +8,17 @@
     "speciesMode": "sparse-default",
     "certificationScope": "bounded-pilot",
     "applicabilityPath": "src/data/research/state-applicability/VT.json",
-    "applicabilityAsOf": "2026-07-28",
+    "applicabilityAsOf": "2026-08-06",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 68,
+    "applicableSpeciesCount": 91,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2436,
+    "unknownSpeciesCount": 2413,
     "blockedSpeciesCount": 0,
-    "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 15,
+    "explicitApplicabilityDecisionCount": 87,
+    "derivedApplicableSpeciesCount": 4,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 85,
+    "boundedAcquisitionSpeciesCount": 103,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -49,16 +49,16 @@
     "rejectionRecordCount": 18,
     "researchRunCount": 7,
     "boundedAcquisition": {
-      "speciesCount": 85,
-      "totalPairs": 1190,
+      "speciesCount": 103,
+      "totalPairs": 1442,
       "verifiedPresent": 156,
       "verifiedAbsent": 0,
       "notDetected": 0,
       "researchedUnresolved": 546,
-      "notResearched": 488,
-      "researchCoveragePercent": 58.99,
+      "notResearched": 740,
+      "researchCoveragePercent": 48.68,
       "explicitOutcomePairs": 702,
-      "explicitOutcomeCoveragePercent": 58.9916
+      "explicitOutcomeCoveragePercent": 48.6824
     }
   },
   "migrationCandidates": {
@@ -372,20 +372,20 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 255,
-    "applicableCells": 86,
-    "notApplicableCells": 169,
+    "totalCells": 309,
+    "applicableCells": 109,
+    "notApplicableCells": 200,
     "completeCells": 17,
-    "incompleteCells": 68,
+    "incompleteCells": 91,
     "blockedCells": 1,
     "currentCells": 4,
     "staleCells": 13,
-    "undatedCells": 69,
-    "applicableCompletionPercent": 19.77,
-    "currentCompletePercent": 4.65,
-    "regulatedAndHighApplicableCells": 35,
-    "regulatedAndHighCurrentCompleteCells": 0,
-    "regulatedAndHighCurrentCompletePercent": 0,
+    "undatedCells": 92,
+    "applicableCompletionPercent": 15.6,
+    "currentCompletePercent": 3.67,
+    "regulatedAndHighApplicableCells": 73,
+    "regulatedAndHighCurrentCompleteCells": 2,
+    "regulatedAndHighCurrentCompletePercent": 2.74,
     "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
       {
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 54,
+        "applicableCells": 77,
         "currentCompleteCells": 2,
-        "currentCompletePercent": 3.7
+        "currentCompletePercent": 2.6
       },
       {
         "category": "wildlife",
@@ -416,9 +416,9 @@
     "priorityCompletion": [
       {
         "priority": "regulated",
-        "applicableCells": 35,
-        "currentCompleteCells": 0,
-        "currentCompletePercent": 0
+        "applicableCells": 73,
+        "currentCompleteCells": 2,
+        "currentCompletePercent": 2.74
       },
       {
         "priority": "high",
@@ -428,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 25,
-        "currentCompleteCells": 4,
-        "currentCompletePercent": 16
+        "applicableCells": 10,
+        "currentCompleteCells": 2,
+        "currentCompletePercent": 20
       },
       {
         "priority": "baseline",
@@ -442,7 +442,7 @@
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 68,
+        "applicableCells": 91,
         "currentCompleteCells": 0,
         "processed": false
       },
@@ -456,9 +456,33 @@
   },
   "nextQueue": [
     {
+      "speciesId": "aegopodium-podagraria",
+      "commonName": "Bishop's Goutweed",
+      "scientificName": "Aegopodium podagraria",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "ageratina-adenophora",
       "commonName": "Sticky snakeroot",
       "scientificName": "Ageratina adenophora",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "alnus-glutinosa",
+      "commonName": "European Alder",
+      "scientificName": "Alnus glutinosa",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -528,6 +552,18 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "butomus-umbellatus",
+      "commonName": "Flowering Rush",
+      "scientificName": "Butomus umbellatus",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "commelina-benghalensis",
       "commonName": "Jio",
       "scientificName": "Commelina benghalensis",
@@ -564,6 +600,18 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "eichhornia-crassipes",
+      "commonName": "Water Hyacinth",
+      "scientificName": "Eichhornia crassipes",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "emex-australis",
       "commonName": "Southern threecornerjack",
       "scientificName": "Emex australis",
@@ -579,6 +627,30 @@
       "speciesId": "emex-spinosa",
       "commonName": "Spiny threecornerjack",
       "scientificName": "Emex spinosa",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "euonymus-alatus",
+      "commonName": "Winged Burning Bush",
+      "scientificName": "Euonymus alatus",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "euphorbia-cyparissias",
+      "commonName": "Cypress Spurge",
+      "scientificName": "Euphorbia cyparissias",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -624,9 +696,33 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "humulus-japonicus",
+      "commonName": "Japanese Hop",
+      "scientificName": "Humulus japonicus",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "hydrilla",
       "commonName": "Hydrilla",
       "scientificName": "Hydrilla verticillata",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "hydrocharis-morsus-ranae",
+      "commonName": "Common frogbit",
+      "scientificName": "Hydrocharis morsus-ranae",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -720,9 +816,45 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "myriophyllum-aquaticum",
+      "commonName": "Parrot Feather",
+      "scientificName": "Myriophyllum aquaticum",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "najas-minor",
+      "commonName": "Brittle Waternymph",
+      "scientificName": "Najas minor",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "nassella-trichotoma",
       "commonName": "Serrated tussock grass",
       "scientificName": "Nassella trichotoma",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "nymphoides-peltata",
+      "commonName": "Yellow Floating Heart",
+      "scientificName": "Nymphoides peltata",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -756,9 +888,81 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "persicaria-perfoliata",
+      "commonName": "Mile-a-Minute Vine",
+      "scientificName": "Persicaria perfoliata",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "phellodendron-amurense",
+      "commonName": "Amur corktree",
+      "scientificName": "Phellodendron amurense",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "potamogeton-crispus",
+      "commonName": "Curly-Leaf Pondweed",
+      "scientificName": "Potamogeton crispus",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "pueraria-montana",
+      "commonName": "Kudzu",
+      "scientificName": "Pueraria montana",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "pyrus-calleryana",
+      "commonName": "Callery Pear",
+      "scientificName": "Pyrus calleryana",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "rottboellia-cochinchinensis",
       "commonName": "Itchgrass",
       "scientificName": "Rottboellia cochinchinensis",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
+      "speciesId": "rubus-phoenicolasius",
+      "commonName": "Wine Raspberry",
+      "scientificName": "Rubus phoenicolasius",
       "category": "plants",
       "notResearchedCountyCount": 14,
       "researchedUnresolvedCountyCount": 0,
@@ -864,6 +1068,18 @@
       "priorityScore": 14001
     },
     {
+      "speciesId": "vincetoxicum-rossicum",
+      "commonName": "Pale swallow-wort",
+      "scientificName": "Vincetoxicum rossicum",
+      "category": "plants",
+      "notResearchedCountyCount": 14,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 14001
+    },
+    {
       "speciesId": "cyprinus-carpio",
       "commonName": "Common Carp",
       "scientificName": "Cyprinus carpio",
@@ -942,6 +1158,54 @@
       "priorityScore": 142
     },
     {
+      "speciesId": "acer-platanoides",
+      "commonName": "Norway Maple",
+      "scientificName": "Acer platanoides",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
+    },
+    {
+      "speciesId": "tree-of-heaven",
+      "commonName": "Tree-of-Heaven",
+      "scientificName": "Ailanthus altissima",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
+    },
+    {
+      "speciesId": "lonicera-japonica",
+      "commonName": "Japanese Honeysuckle",
+      "scientificName": "Lonicera japonica",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
+    },
+    {
+      "speciesId": "lonicera-maackii",
+      "commonName": "Amur Honeysuckle",
+      "scientificName": "Lonicera maackii",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
+    },
+    {
       "speciesId": "melaleuca-quinquenervia",
       "commonName": "Punktree",
       "scientificName": "Melaleuca quinquenervia",
@@ -954,24 +1218,16 @@
       "priorityScore": 141
     },
     {
-      "speciesId": "acer-platanoides",
-      "commonName": "Norway Maple",
-      "scientificName": "Acer platanoides",
+      "speciesId": "microstegium-vimineum",
+      "commonName": "Japanese Stiltgrass",
+      "scientificName": "Microstegium vimineum",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
-    },
-    {
-      "speciesId": "tree-of-heaven",
-      "commonName": "Tree-of-Heaven",
-      "scientificName": "Ailanthus altissima",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
+      "missingProtocolSourceIds": [
+        "gbif-preserved-specimens"
+      ],
+      "priorityScore": 141
     },
     {
       "speciesId": "albizia-julibrissin",
@@ -1024,26 +1280,6 @@
       "priorityScore": 140
     },
     {
-      "speciesId": "lonicera-japonica",
-      "commonName": "Japanese Honeysuckle",
-      "scientificName": "Lonicera japonica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
-    },
-    {
-      "speciesId": "lonicera-maackii",
-      "commonName": "Amur Honeysuckle",
-      "scientificName": "Lonicera maackii",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
-    },
-    {
       "speciesId": "lonicera-x-bella",
       "commonName": "Bell's Honeysuckle",
       "scientificName": "Lonicera x bella",
@@ -1057,16 +1293,6 @@
       "speciesId": "melia-azedarach",
       "commonName": "Chinaberry Tree",
       "scientificName": "Melia azedarach",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
-    },
-    {
-      "speciesId": "microstegium-vimineum",
-      "commonName": "Japanese Stiltgrass",
-      "scientificName": "Microstegium vimineum",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,
@@ -1415,45 +1641,6 @@
         "gbif-preserved-specimens"
       ],
       "priorityScore": 11
-    },
-    {
-      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
-      "commonName": "Butternut Canker Fungus",
-      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 2
-    },
-    {
-      "speciesId": "ophiostoma-ulmi",
-      "commonName": "Dutch elm disease",
-      "scientificName": "Ophiostoma ulmi",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 2
-    },
-    {
-      "speciesId": "popillia-japonica",
-      "commonName": "Japanese Beetle",
-      "scientificName": "Popillia japonica",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 2
     }
   ]
 }

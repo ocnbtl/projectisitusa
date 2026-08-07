@@ -69778,17 +69778,17 @@
         "speciesMode": "sparse-default",
         "certificationScope": "bounded-pilot",
         "applicabilityPath": "src/data/research/state-applicability/VT.json",
-        "applicabilityAsOf": "2026-07-28",
+        "applicabilityAsOf": "2026-08-06",
         "catalogSpeciesCount": 2504,
         "stateSpeciesDenominator": 2504,
-        "applicableSpeciesCount": 68,
+        "applicableSpeciesCount": 91,
         "notApplicableSpeciesCount": 0,
-        "unknownSpeciesCount": 2436,
+        "unknownSpeciesCount": 2413,
         "blockedSpeciesCount": 0,
-        "explicitApplicabilityDecisionCount": 53,
-        "derivedApplicableSpeciesCount": 15,
+        "explicitApplicabilityDecisionCount": 87,
+        "derivedApplicableSpeciesCount": 4,
         "resolvedStateSpeciesDecisionCount": 2504,
-        "boundedAcquisitionSpeciesCount": 85,
+        "boundedAcquisitionSpeciesCount": 103,
         "defaultApplicability": "unknown",
         "fullCatalogApplicabilityComplete": false,
         "fullCatalogResearchAccounted": false,
@@ -69819,25 +69819,25 @@
         "rejectionRecordCount": 18,
         "researchRunCount": 7,
         "boundedAcquisition": {
-          "speciesCount": 85,
-          "totalPairs": 1190,
+          "speciesCount": 103,
+          "totalPairs": 1442,
           "verifiedPresent": 156,
           "verifiedAbsent": 0,
           "notDetected": 0,
           "researchedUnresolved": 546,
-          "notResearched": 488,
-          "researchCoveragePercent": 58.99,
+          "notResearched": 740,
+          "researchCoveragePercent": 48.68,
           "explicitOutcomePairs": 702,
-          "explicitOutcomeCoveragePercent": 58.9916
+          "explicitOutcomeCoveragePercent": 48.6824
         }
       },
       "fullCatalogApplicability": {
         "denominator": 2504,
-        "applicable": 68,
+        "applicable": 91,
         "notApplicable": 0,
-        "unknown": 2436,
+        "unknown": 2413,
         "blocked": 0,
-        "explicitOverrides": 53,
+        "explicitOverrides": 87,
         "complete": false
       },
       "stateSpeciesResearch": {
@@ -69845,14 +69845,14 @@
         "defaultStatus": "not-researched",
         "denominator": 2504,
         "countyEquivalentCount": 14,
-        "derivedApplicableSpeciesCount": 15,
+        "derivedApplicableSpeciesCount": 4,
         "counts": {
-          "applicable": 68,
+          "applicable": 91,
           "not-applicable": 0,
-          "researched-unresolved": 17,
+          "researched-unresolved": 12,
           "researched-blocked": 0,
           "partially-researched": 0,
-          "not-researched": 2419,
+          "not-researched": 2401,
           "blocked": 0
         },
         "fullyAccountedSpeciesCount": 51,
@@ -69862,13 +69862,23 @@
         "overrides": [
           {
             "speciesId": "acer-platanoides",
-            "status": "researched-unresolved",
-            "applicabilityStatus": "unknown",
-            "applicabilityBasis": "unresolved",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
             "notResearchedCountyCount": 0
+          },
+          {
+            "speciesId": "aegopodium-podagraria",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
           },
           {
             "speciesId": "ageratina-adenophora",
@@ -69894,11 +69904,21 @@
             "speciesId": "alliaria-petiolata",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
             "notResearchedCountyCount": 0
+          },
+          {
+            "speciesId": "alnus-glutinosa",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
           },
           {
             "speciesId": "alternanthera-sessilis",
@@ -69974,7 +69994,7 @@
             "speciesId": "berberis-thunbergii",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -69984,17 +70004,27 @@
             "speciesId": "berberis-vulgaris",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
             "notResearchedCountyCount": 0
           },
           {
+            "speciesId": "butomus-umbellatus",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
             "speciesId": "celastrus-orbiculatus",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70121,6 +70151,16 @@
             "notResearchedCountyCount": 14
           },
           {
+            "speciesId": "eichhornia-crassipes",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
             "speciesId": "elaeagnus-angustifolia",
             "status": "researched-unresolved",
             "applicabilityStatus": "unknown",
@@ -70134,7 +70174,7 @@
             "speciesId": "elaeagnus-umbellata",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70171,6 +70211,26 @@
             "notResearchedCountyCount": 14
           },
           {
+            "speciesId": "euonymus-alatus",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "euphorbia-cyparissias",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
             "speciesId": "euphorbia-terracina",
             "status": "applicable",
             "applicabilityStatus": "applicable",
@@ -70184,7 +70244,7 @@
             "speciesId": "frangula-alnus",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70241,7 +70301,27 @@
             "notResearchedCountyCount": 0
           },
           {
+            "speciesId": "humulus-japonicus",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
             "speciesId": "hydrilla",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "hydrocharis-morsus-ranae",
             "status": "applicable",
             "applicabilityStatus": "applicable",
             "applicabilityBasis": "explicit",
@@ -70322,9 +70402,9 @@
           },
           {
             "speciesId": "lonicera-japonica",
-            "status": "researched-unresolved",
-            "applicabilityStatus": "unknown",
-            "applicabilityBasis": "unresolved",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70332,9 +70412,9 @@
           },
           {
             "speciesId": "lonicera-maackii",
-            "status": "researched-unresolved",
-            "applicabilityStatus": "unknown",
-            "applicabilityBasis": "unresolved",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70344,7 +70424,7 @@
             "speciesId": "lonicera-morrowii",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70354,7 +70434,7 @@
             "speciesId": "lonicera-tatarica",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70404,7 +70484,7 @@
             "speciesId": "lythrum-salicaria",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70432,9 +70512,9 @@
           },
           {
             "speciesId": "microstegium-vimineum",
-            "status": "researched-unresolved",
-            "applicabilityStatus": "unknown",
-            "applicabilityBasis": "unresolved",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70442,6 +70522,16 @@
           },
           {
             "speciesId": "mikania-micrantha",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "myriophyllum-aquaticum",
             "status": "applicable",
             "applicabilityStatus": "applicable",
             "applicabilityBasis": "explicit",
@@ -70461,7 +70551,27 @@
             "notResearchedCountyCount": 0
           },
           {
+            "speciesId": "najas-minor",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
             "speciesId": "nassella-trichotoma",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "nymphoides-peltata",
             "status": "applicable",
             "applicabilityStatus": "applicable",
             "applicabilityBasis": "explicit",
@@ -70521,6 +70631,26 @@
             "notResearchedCountyCount": 0
           },
           {
+            "speciesId": "persicaria-perfoliata",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "phellodendron-amurense",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
             "speciesId": "phytophthora-cinnamomi",
             "status": "applicable",
             "applicabilityStatus": "applicable",
@@ -70541,6 +70671,36 @@
             "notResearchedCountyCount": 0
           },
           {
+            "speciesId": "potamogeton-crispus",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "pueraria-montana",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "pyrus-calleryana",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
             "speciesId": "raffaelea-lauricola",
             "status": "applicable",
             "applicabilityStatus": "applicable",
@@ -70554,7 +70714,7 @@
             "speciesId": "rhamnus-cathartica",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70564,7 +70724,7 @@
             "speciesId": "rosa-multiflora",
             "status": "applicable",
             "applicabilityStatus": "applicable",
-            "applicabilityBasis": "accepted-reviewed-presence",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70572,6 +70732,16 @@
           },
           {
             "speciesId": "rottboellia-cochinchinensis",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "rubus-phoenicolasius",
             "status": "applicable",
             "applicabilityStatus": "applicable",
             "applicabilityBasis": "explicit",
@@ -70662,9 +70832,9 @@
           },
           {
             "speciesId": "tree-of-heaven",
-            "status": "researched-unresolved",
-            "applicabilityStatus": "unknown",
-            "applicabilityBasis": "unresolved",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
             "researchedCountyCount": 14,
             "blockedCountyCount": 0,
             "accountedCountyCount": 14,
@@ -70709,51 +70879,61 @@
             "blockedCountyCount": 0,
             "accountedCountyCount": 0,
             "notResearchedCountyCount": 14
+          },
+          {
+            "speciesId": "vincetoxicum-rossicum",
+            "status": "applicable",
+            "applicabilityStatus": "applicable",
+            "applicabilityBasis": "explicit",
+            "researchedCountyCount": 0,
+            "blockedCountyCount": 0,
+            "accountedCountyCount": 0,
+            "notResearchedCountyCount": 14
           }
         ],
         "applicabilityDecisionCounts": {
-          "applicable": 68,
+          "applicable": 91,
           "not-applicable": 0,
-          "unknown": 2436,
+          "unknown": 2413,
           "blocked": 0
         }
       },
       "boundedAcquisitionScope": {
-        "speciesCount": 85,
-        "totalPairs": 1190,
+        "speciesCount": 103,
+        "totalPairs": 1442,
         "verifiedPresent": 156,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "researchedUnresolved": 546,
-        "notResearched": 488,
-        "researchCoveragePercent": 58.99,
+        "notResearched": 740,
+        "researchCoveragePercent": 48.68,
         "explicitOutcomePairs": 702,
-        "explicitOutcomeCoveragePercent": 58.9916
+        "explicitOutcomeCoveragePercent": 48.6824
       },
       "baselineResearchCoveragePercent": 2,
       "explicitOutcomeCoveragePercent": 2.0025,
-      "protocolCompletePairCoveragePercent": 19.9336,
+      "protocolCompletePairCoveragePercent": 15.7274,
       "protocolCellCounts": {
-        "totalCells": 255,
-        "applicableCells": 86,
-        "notApplicableCells": 169,
+        "totalCells": 309,
+        "applicableCells": 109,
+        "notApplicableCells": 200,
         "completeCells": 17,
-        "incompleteCells": 68,
+        "incompleteCells": 91,
         "blockedCells": 1,
         "currentCells": 4,
         "staleCells": 13,
-        "undatedCells": 69,
-        "applicableCompletionPercent": 19.77,
-        "currentCompletePercent": 4.65,
-        "regulatedAndHighApplicableCells": 35,
-        "regulatedAndHighCurrentCompleteCells": 0,
-        "regulatedAndHighCurrentCompletePercent": 0,
+        "undatedCells": 92,
+        "applicableCompletionPercent": 15.6,
+        "currentCompletePercent": 3.67,
+        "regulatedAndHighApplicableCells": 73,
+        "regulatedAndHighCurrentCompleteCells": 2,
+        "regulatedAndHighCurrentCompletePercent": 2.74,
         "requiredCurrentSourcesProcessed": false
       },
       "regulatedAndHighPriorityCompletion": {
-        "applicableCells": 35,
-        "completeCells": 0,
-        "completePercent": 0
+        "applicableCells": 73,
+        "completeCells": 2,
+        "completePercent": 2.74
       },
       "categoryCompletion": [
         {
@@ -70770,9 +70950,9 @@
         },
         {
           "category": "plants",
-          "applicableCells": 54,
+          "applicableCells": 77,
           "currentCompleteCells": 2,
-          "currentCompletePercent": 3.7
+          "currentCompletePercent": 2.6
         },
         {
           "category": "wildlife",
@@ -70784,9 +70964,9 @@
       "priorityCompletion": [
         {
           "priority": "regulated",
-          "applicableCells": 35,
-          "currentCompleteCells": 0,
-          "currentCompletePercent": 0
+          "applicableCells": 73,
+          "currentCompleteCells": 2,
+          "currentCompletePercent": 2.74
         },
         {
           "priority": "high",
@@ -70796,9 +70976,9 @@
         },
         {
           "priority": "pilot",
-          "applicableCells": 25,
-          "currentCompleteCells": 4,
-          "currentCompletePercent": 16
+          "applicableCells": 10,
+          "currentCompleteCells": 2,
+          "currentCompletePercent": 20
         },
         {
           "priority": "baseline",
@@ -70810,7 +70990,7 @@
       "freshness": {
         "currentCells": 4,
         "staleCells": 13,
-        "undatedCells": 69
+        "undatedCells": 92
       },
       "deferred": {
         "sourceAssertionCount": 0,
@@ -77294,13 +77474,13 @@
       "blocked": 2,
       "cancelled": 7,
       "completed": 155,
-      "failed": 52,
-      "planned": 17
+      "failed": 53,
+      "planned": 16
     },
     "leasesByStatus": {
       "cancelled": 6,
       "completed": 159,
-      "failed": 59,
+      "failed": 60,
       "recovered": 2
     },
     "queueDecisions": {
@@ -77313,7 +77493,7 @@
     "blockedJobs": 2,
     "activeLeases": 0,
     "completedWorkerLeases": 159,
-    "workerAttemptFailures": 59,
+    "workerAttemptFailures": 60,
     "rejectedWorkerSubmissions": 4,
     "acceptedWorkerIntegrations": 155,
     "workerCompletionRatePercent": 97.48,
@@ -77351,13 +77531,13 @@
       "live-route-parity"
     ],
     "latestVerifiedPriorRelease": {
-      "verificationId": "production-a82f997e-2026-08-06",
-      "verifiedAt": "2026-08-06T04:08:39.014Z",
-      "commitSha": "a82f997e7924c11cff7df349014b140eadf92184",
-      "githubMainSha": "a82f997e7924c11cff7df349014b140eadf92184",
-      "githubDeploymentId": 5772857550,
-      "vercelDeploymentId": "dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr",
-      "vercelDeploymentUrl": "projectisitusa-oy0ihutk7-unigentamos.vercel.app",
+      "verificationId": "production-2f5fa264-2026-08-07",
+      "verifiedAt": "2026-08-07T02:45:34.506Z",
+      "commitSha": "2f5fa264bc2c8dfbbe3f8581973092f221328889",
+      "githubMainSha": "2f5fa264bc2c8dfbbe3f8581973092f221328889",
+      "githubDeploymentId": 5787224747,
+      "vercelDeploymentId": "dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog",
+      "vercelDeploymentUrl": "projectisitusa-5shysqbjg-unigentamos.vercel.app",
       "productionUrl": "https://isitusa.com",
       "target": "production",
       "state": "READY",
@@ -77371,100 +77551,101 @@
           "status": 200
         },
         {
-          "path": "/research?state=AL",
-          "status": 200
-        },
-        {
-          "path": "/research?state=CA",
-          "status": 200
-        },
-        {
-          "path": "/research?state=MD",
-          "status": 200
-        },
-        {
           "path": "/research?state=ND",
           "status": 200
         },
         {
-          "path": "/research?state=WA",
+          "path": "/research?state=DC",
           "status": 200
         },
         {
-          "path": "/species/spotted-lanternfly",
+          "path": "/research?state=HI",
           "status": 200
         },
         {
-          "path": "/generated/research/MD/summary.json",
+          "path": "/research?state=MA",
           "status": 200
         },
         {
-          "path": "/generated/research/WA/summary.json",
+          "path": "/research?state=NH",
           "status": 200
         },
         {
-          "path": "/generated/research/MD/counties/24510.json",
+          "path": "/research?state=RI",
           "status": 200
         },
         {
-          "path": "/generated/research/WA/counties/53033.json",
+          "path": "/research?state=VT",
+          "status": 200
+        },
+        {
+          "path": "/species/rottboellia-cochinchinensis",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/ND/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/ND/counties/38001.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/presence.json",
           "status": 200
         }
       ],
       "byteParityChecks": [
         {
-          "path": "/generated/research/MD/summary.json",
-          "sha256": "c62dbe5991daec9b09b3151294a7679e73a0b2373d25671eab4acde6c58bed40"
+          "path": "/generated/research/ND/summary.json",
+          "sha256": "900635152b6c5538d555e805881797aef83c5a46fe6f70b41143e4adbb64aa79"
         },
         {
-          "path": "/generated/research/WA/summary.json",
-          "sha256": "8d08a175ba69fcc69ecdf72e00be63f227c0ef722959f7e60fb96142330b69a1"
+          "path": "/generated/research/ND/counties/38001.json",
+          "sha256": "a7211f75c674fa77efd1994d193aad1e16a643cd4414a4dfdc92dfe9e9465eef"
         },
         {
-          "path": "/generated/research/MD/counties/24510.json",
-          "sha256": "da280e97acbdfcb91c3d5e4b3f7258d56e2e5be6d24fa132990c5223a3243ea8"
-        },
-        {
-          "path": "/generated/research/WA/counties/53033.json",
-          "sha256": "bcc424b6a1256fe380c9627eb7842425dc34829a4257835a1d3dda7346ce2cb6"
+          "path": "/generated/presence.json",
+          "sha256": "027b5910ba80aa15feb239d1fcd46ce398246ced8c331e40666819f0409fcd1b"
         }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
         "states": [
-          "AL",
-          "CA",
-          "MD",
           "ND",
-          "WA"
+          "DC"
         ],
-        "county": "King, WA",
+        "county": "Adams, ND",
         "sourceOperations": "pass",
         "researchQueue": "pass",
-        "returningBrowserRefresh": "pass",
+        "stateSelection": "DC",
+        "speciesRoute": "Itchgrass",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
         "consoleErrors": 0
       },
       "zipLookup": {
-        "zip": "21401",
+        "zip": "20001",
         "status": 200,
         "ok": true,
-        "countyFips": "24003",
-        "countyName": "Anne Arundel, MD"
+        "countyFips": "11001",
+        "countyName": "District of Columbia, DC"
       },
       "runtimeQa": {
-        "deploymentId": "dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr",
+        "deploymentId": "dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog",
+        "runtimeErrorClusters": 0,
         "warningAndErrorLogs": 0,
-        "statusCodeCounts": {
-          "200": 29,
-          "304": 4,
-          "405": 2
+        "observedStatusCodeCounts": {
+          "200": 24,
+          "304": 2,
+          "400": 1,
+          "404": 1,
+          "416": 1
         },
-        "qualification": "The two 405 responses were explicit read-only GET method probes against the POST-only ZIP endpoint. The UI-equivalent POST request and browser flow both returned successful Anne Arundel County data."
+        "qualification": "The 400 was the explicitly discarded malformed ZIP diagnostic; the 404 was the pre-alias Itchgrass probe and was superseded by HTTP 200 on all production aliases and the exact deployment URL; the 416 was a static root range probe. The correctly encoded ZIP request, final Itchgrass request, intended live routes, browser flows, and exact byte checks all passed."
       },
-      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched the exact Round 49 content SHA; GitHub deployment 5772857550 succeeded; Vercel deployment dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr reached READY with exact Git-source identity and production aliases; twelve intended live routes and the UI-equivalent ZIP POST passed; four changed Maryland and Washington generated files matched local SHA-256 bytes exactly; Alabama, California, Maryland, North Dakota, and Washington research views rendered current 2026-08-05 projections; King County selection, source operations, research queue, and returning-browser Anne Arundel state passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Two diagnostic GET probes against the POST-only ZIP endpoint returned the expected 405 and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 50 content SHA 2f5fa264bc2c8dfbbe3f8581973092f221328889; GitHub Production deployment 5787224747 succeeded; Vercel deployment dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog reached READY with exact Git-source identity and all production aliases; thirteen intended live routes and the UI-equivalent District of Columbia ZIP POST passed; the North Dakota summary, Adams County projection, and public presence projection matched local SHA-256 bytes exactly; North Dakota and District of Columbia rendered current 2026-08-07 projections; Itchgrass rendered as researched unresolved with reviewed no qualifying evidence; source operations and the research queue passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Diagnostic 400, 404, and 416 probes are explicitly qualified in runtimeQa and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
     },
     "selfAttestationAllowed": false,
     "note": "Build-time readiness and deployed-release evidence are separate. A committed artifact cannot attest to a future deployment of its own commit."
@@ -77472,16 +77653,16 @@
   "national": {
     "denominator": {
       "fullStateSpeciesDenominator": 127704,
-      "applicableStateSpeciesDecisions": 5041,
+      "applicableStateSpeciesDecisions": 5064,
       "notApplicableStateSpeciesDecisions": 0,
-      "unknownStateSpeciesDecisions": 122663,
+      "unknownStateSpeciesDecisions": 122640,
       "blockedStateSpeciesDecisions": 0,
-      "explicitStateSpeciesOverrides": 3392,
-      "derivedApplicableStateSpeciesDecisions": 1649,
-      "researchedUnresolvedStateSpeciesDecisions": 1497,
+      "explicitStateSpeciesOverrides": 3426,
+      "derivedApplicableStateSpeciesDecisions": 1638,
+      "researchedUnresolvedStateSpeciesDecisions": 1492,
       "researchedBlockedStateSpeciesDecisions": 54,
       "partiallyResearchedStateSpeciesDecisions": 0,
-      "untouchedStateSpeciesDecisions": 121112,
+      "untouchedStateSpeciesDecisions": 121094,
       "fullCountySpeciesDenominator": 7872576,
       "resolvableCountySpeciesPairs": 7872576,
       "notApplicableCountySpeciesPairs": 0,
@@ -77491,8 +77672,8 @@
       "notDetected": 8,
       "researchedUnresolved": 340970,
       "notResearched": 7477395,
-      "boundedAcquisitionSpecies": 7428,
-      "boundedAcquisitionPairs": 461957
+      "boundedAcquisitionSpecies": 7446,
+      "boundedAcquisitionPairs": 462209
     },
     "certification": {
       "activeCohort": 1,
@@ -77786,7 +77967,7 @@
     "researchAccountedJurisdictions": 0,
     "researchUnaccountedJurisdictions": 51,
     "researchAccountedJurisdictionCodes": [],
-    "remainingApplicableProtocolCountyScreens": 936075,
+    "remainingApplicableProtocolCountyScreens": 936397,
     "measuredRatePairsPerHour": 0,
     "measuredRateEvidence": {
       "estimateType": "not-durably-measured",

@@ -15,10 +15,10 @@ Generated: `2026-08-07T00:00:00.000Z`
 - Determination coverage: `0.45%`
 - Research coverage: `2.00%`
 - Explicit outcome coverage: `2.0025%`
-- Applicable protocol cells: `86`
+- Applicable protocol cells: `109`
 - Current complete protocol cells: `4`
-- Protocol completion: `19.77%`
-- Current protocol completion: `4.65%`
+- Protocol completion: `15.60%`
+- Current protocol completion: `3.67%`
 - Evidence records: `156`
 - Research runs: `7`
 - Rejection records: `18`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 14 | 0 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 14 | 0 | 1 |
+| European Alder (`alnus-glutinosa`) | plants | 14 | 0 | 1 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 14 | 0 | 1 |
 | Capeweed (`arctotheca-calendula`) | plants | 14 | 0 | 1 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 14 | 0 | 1 |
 | Animated oat (`avena-sterilis`) | plants | 14 | 0 | 1 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 14 | 0 | 1 |
+| Flowering Rush (`butomus-umbellatus`) | plants | 14 | 0 | 1 |
 | Jio (`commelina-benghalensis`) | plants | 14 | 0 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 14 | 0 | 1 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 14 | 0 | 1 |
+| Water Hyacinth (`eichhornia-crassipes`) | plants | 14 | 0 | 1 |
 | Southern threecornerjack (`emex-australis`) | plants | 14 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 14 | 0 | 1 |
+| Winged Burning Bush (`euonymus-alatus`) | plants | 14 | 0 | 1 |
+| Cypress Spurge (`euphorbia-cyparissias`) | plants | 14 | 0 | 1 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 14 | 0 | 1 |
 | Professor-weed (`galega-officinalis`) | plants | 14 | 0 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 14 | 0 | 1 |
+| Japanese Hop (`humulus-japonicus`) | plants | 14 | 0 | 1 |
 | Hydrilla (`hydrilla`) | plants | 14 | 0 | 1 |
+| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 14 | 0 | 1 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 14 | 0 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 14 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 14 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 14 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 14 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 14 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 14 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 14 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 14 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 14 | 0 | 1 |
 
 ## Source Operations
 
