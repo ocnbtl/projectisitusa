@@ -451979,8 +451979,8 @@
       ],
       "branch": "codex/gbif-bulk-20260806-r50-hi-002",
       "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260806-r50-hi-002",
-      "baseSha": "20bb0e797f8438bc88fca83735b183f44194fd15",
-      "expectedReceiptCodeCommit": "20bb0e797f8438bc88fca83735b183f44194fd15",
+      "baseSha": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
+      "expectedReceiptCodeCommit": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
       "permittedPaths": [
         "src/data/research/runs/20260807T013005Z__gbif-preserved-specimens__ef60cf16cf71/**"
       ],
@@ -452045,20 +452045,47 @@
         "maxWallMinutes": 60,
         "maxMemoryMb": 1600
       },
-      "expiresAt": "2026-08-07T07:30:00.000Z",
-      "recoveryState": "recover-canonical-pair-identity",
+      "expiresAt": "2026-08-08T03:00:00.000Z",
+      "recoveryState": "round-51-reranked-preflight-required",
       "completionCriteria": [
         "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-50-20260806/gbif-round50-hi-002.json with started-at 2026-08-07T01:30:05.000Z",
         "screen all 125 leased HI county-species pairs using provider-declared county geography only",
+        "reuse every compatible verified taxonomy response in src/data/research/caches/gbif-taxonomy-20260807-r51.json before live taxonomy access",
+        "write attempt telemetry before repository snapshot and update request counts before every cache or provider request",
         "complete bounded pagination for every state-species query and preserve retry state",
         "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
-        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "emit canonical artifacts, events, receipt, source-verification record, attempt telemetry, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
-        "pass the pinned worker validator and git diff --check 20bb0e797f8438bc88fca83735b183f44194fd15...HEAD"
+        "pass the pinned worker validator and git diff --check f7d5daae1a2b0d471f077f4a87f3e52a468adf18...HEAD"
       ],
       "dependencies": [],
-      "priority": 596,
-      "state": "planned"
+      "priority": 997,
+      "state": "planned",
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "round-51-20260807",
+        "portfolioRank": 4,
+        "candidateFile": "ops/national-research/plans/round-50-20260806/gbif-round50-hi-002.json",
+        "candidateLimit": 125,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-07T01:30:05.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-bulk-20260806-r50-hi-002\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 18,
+          "liveTaxonomyRequests": 7,
+          "plannedLiveInitialOccurrenceRequests": 25,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      }
     },
     {
       "jobId": "gbif-bulk-20260806-r50-hi-003",
@@ -452972,8 +452999,8 @@
       ],
       "branch": "codex/gbif-bulk-20260806-r50-ma-001",
       "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260806-r50-ma-001",
-      "baseSha": "20bb0e797f8438bc88fca83735b183f44194fd15",
-      "expectedReceiptCodeCommit": "20bb0e797f8438bc88fca83735b183f44194fd15",
+      "baseSha": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
+      "expectedReceiptCodeCommit": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
       "permittedPaths": [
         "src/data/research/runs/20260807T013008Z__gbif-preserved-specimens__61eef41e5e50/**"
       ],
@@ -453038,20 +453065,47 @@
         "maxWallMinutes": 60,
         "maxMemoryMb": 1600
       },
-      "expiresAt": "2026-08-07T07:30:00.000Z",
-      "recoveryState": "recover-canonical-pair-identity",
+      "expiresAt": "2026-08-08T03:00:00.000Z",
+      "recoveryState": "round-51-reranked-preflight-required",
       "completionCriteria": [
         "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-50-20260806/gbif-round50-ma-001.json with started-at 2026-08-07T01:30:08.000Z",
         "screen all 350 leased MA county-species pairs using provider-declared county geography only",
+        "reuse every compatible verified taxonomy response in src/data/research/caches/gbif-taxonomy-20260807-r51.json before live taxonomy access",
+        "write attempt telemetry before repository snapshot and update request counts before every cache or provider request",
         "complete bounded pagination for every state-species query and preserve retry state",
         "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
-        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "emit canonical artifacts, events, receipt, source-verification record, attempt telemetry, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
-        "pass the pinned worker validator and git diff --check 20bb0e797f8438bc88fca83735b183f44194fd15...HEAD"
+        "pass the pinned worker validator and git diff --check f7d5daae1a2b0d471f077f4a87f3e52a468adf18...HEAD"
       ],
       "dependencies": [],
-      "priority": 593,
-      "state": "planned"
+      "priority": 999,
+      "state": "planned",
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "round-51-20260807",
+        "portfolioRank": 2,
+        "candidateFile": "ops/national-research/plans/round-50-20260806/gbif-round50-ma-001.json",
+        "candidateLimit": 350,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-07T01:30:08.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-bulk-20260806-r50-ma-001\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 25,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 25,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      }
     },
     {
       "jobId": "gbif-bulk-20260806-r50-ma-002",
@@ -454282,8 +454336,8 @@
       ],
       "branch": "codex/gbif-bulk-20260806-r50-nh-001",
       "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260806-r50-nh-001",
-      "baseSha": "20bb0e797f8438bc88fca83735b183f44194fd15",
-      "expectedReceiptCodeCommit": "20bb0e797f8438bc88fca83735b183f44194fd15",
+      "baseSha": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
+      "expectedReceiptCodeCommit": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
       "permittedPaths": [
         "src/data/research/runs/20260807T013011Z__gbif-preserved-specimens__c545e19aedcd/**"
       ],
@@ -454348,20 +454402,47 @@
         "maxWallMinutes": 60,
         "maxMemoryMb": 1600
       },
-      "expiresAt": "2026-08-07T07:30:00.000Z",
-      "recoveryState": "recover-canonical-pair-identity",
+      "expiresAt": "2026-08-08T03:00:00.000Z",
+      "recoveryState": "round-51-reranked-preflight-required",
       "completionCriteria": [
         "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-50-20260806/gbif-round50-nh-001.json with started-at 2026-08-07T01:30:11.000Z",
         "screen all 250 leased NH county-species pairs using provider-declared county geography only",
+        "reuse every compatible verified taxonomy response in src/data/research/caches/gbif-taxonomy-20260807-r51.json before live taxonomy access",
+        "write attempt telemetry before repository snapshot and update request counts before every cache or provider request",
         "complete bounded pagination for every state-species query and preserve retry state",
         "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
-        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "emit canonical artifacts, events, receipt, source-verification record, attempt telemetry, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
-        "pass the pinned worker validator and git diff --check 20bb0e797f8438bc88fca83735b183f44194fd15...HEAD"
+        "pass the pinned worker validator and git diff --check f7d5daae1a2b0d471f077f4a87f3e52a468adf18...HEAD"
       ],
       "dependencies": [],
-      "priority": 590,
-      "state": "planned"
+      "priority": 998,
+      "state": "planned",
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "round-51-20260807",
+        "portfolioRank": 3,
+        "candidateFile": "ops/national-research/plans/round-50-20260806/gbif-round50-nh-001.json",
+        "candidateLimit": 250,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-07T01:30:11.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-bulk-20260806-r50-nh-001\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 25,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 25,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      }
     },
     {
       "jobId": "gbif-bulk-20260806-r50-nh-002",
@@ -456174,8 +456255,8 @@
       ],
       "branch": "codex/gbif-bulk-20260806-r50-vt-001",
       "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260806-r50-vt-001",
-      "baseSha": "20bb0e797f8438bc88fca83735b183f44194fd15",
-      "expectedReceiptCodeCommit": "20bb0e797f8438bc88fca83735b183f44194fd15",
+      "baseSha": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
+      "expectedReceiptCodeCommit": "f7d5daae1a2b0d471f077f4a87f3e52a468adf18",
       "permittedPaths": [
         "src/data/research/runs/20260807T013017Z__gbif-preserved-specimens__caaebde83e5b/**"
       ],
@@ -456240,20 +456321,47 @@
         "maxWallMinutes": 60,
         "maxMemoryMb": 1600
       },
-      "expiresAt": "2026-08-07T07:30:00.000Z",
-      "recoveryState": "recover-canonical-pair-identity",
+      "expiresAt": "2026-08-08T03:00:00.000Z",
+      "recoveryState": "round-51-reranked-preflight-required",
       "completionCriteria": [
         "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-50-20260806/gbif-round50-vt-001.json with started-at 2026-08-07T01:30:17.000Z",
         "screen all 350 leased VT county-species pairs using provider-declared county geography only",
+        "reuse every compatible verified taxonomy response in src/data/research/caches/gbif-taxonomy-20260807-r51.json before live taxonomy access",
+        "write attempt telemetry before repository snapshot and update request counts before every cache or provider request",
         "complete bounded pagination for every state-species query and preserve retry state",
         "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
-        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "emit canonical artifacts, events, receipt, source-verification record, attempt telemetry, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
-        "pass the pinned worker validator and git diff --check 20bb0e797f8438bc88fca83735b183f44194fd15...HEAD"
+        "pass the pinned worker validator and git diff --check f7d5daae1a2b0d471f077f4a87f3e52a468adf18...HEAD"
       ],
       "dependencies": [],
-      "priority": 584,
-      "state": "planned"
+      "priority": 1000,
+      "state": "planned",
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "round-51-20260807",
+        "portfolioRank": 1,
+        "candidateFile": "ops/national-research/plans/round-50-20260806/gbif-round50-vt-001.json",
+        "candidateLimit": 350,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-07T01:30:17.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-bulk-20260806-r50-vt-001\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 25,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 25,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      }
     },
     {
       "jobId": "gbif-bulk-20260806-r50-vt-002",
