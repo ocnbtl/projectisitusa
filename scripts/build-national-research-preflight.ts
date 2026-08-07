@@ -1,6 +1,13 @@
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  unlinkSync,
+  writeFileSync,
+} from "node:fs";
 import path from "node:path";
 
 type JsonRecord = Record<string, any>;
@@ -32,7 +39,7 @@ function sorted(values: string[]) {
 
 const args = process.argv.slice(2);
 const jobId = argument(args, "job-id");
-const dryRunPath = path.resolve(argument(args, "dry-run"));
+const workerRoot = path.resolve(argument(args, "worker-root"));
 const resourcePath = path.resolve(argument(args, "resources"));
 const outputPath = path.resolve(argument(args, "output"));
 const createdAt = new Date(argument(args, "created-at")).toISOString();
@@ -46,8 +53,59 @@ assert(job, `Unknown job ${jobId}.`);
 assert(job.state === "planned", `Job ${jobId} is not planned.`);
 const contract = job.executionContract as JsonRecord;
 assert(contract, `Job ${jobId} lacks an executionContract.`);
-const dryRunBytes = readFileSync(dryRunPath);
-const dryRun = JSON.parse(dryRunBytes.toString("utf8")) as JsonRecord;
+assert(workerRoot === path.resolve(job.worktree), "Worker root differs from the registered job worktree.");
+assert(
+  execFileSync("git", ["-C", workerRoot, "rev-parse", "HEAD"], { encoding: "utf8" }).trim() === job.baseSha,
+  "Worker worktree HEAD differs from the job base.",
+);
+assert(
+  execFileSync("git", ["-C", workerRoot, "branch", "--show-current"], { encoding: "utf8" }).trim() === job.branch,
+  "Worker branch differs from the registered job branch.",
+);
+assert(
+  !execFileSync("git", ["-C", workerRoot, "status", "--porcelain=v1", "--untracked-files=all"], { encoding: "utf8" }).trim(),
+  "Worker worktree is dirty before semantic dry-run.",
+);
+const nodePath = String(contract.dependencyResolution.nodePath);
+const dryRunArguments = [
+  "--import",
+  "tsx",
+  "scripts/research/run-source.ts",
+  "--source",
+  String(job.stateOrSourceScope.sourceFamilies[0]),
+  "--state",
+  String(job.stateOrSourceScope.states[0]),
+  "--candidate-file",
+  String(contract.candidateFile),
+  "--candidate-limit",
+  String(contract.candidateLimit),
+  "--started-at",
+  String(contract.startedAt),
+  "--output-root",
+  String(contract.outputRoot),
+  "--gbif-taxonomy-cache",
+  String(contract.taxonomyCache),
+  "--semantic-dry-run",
+  "true",
+];
+assert(existsSync(nodePath), "The pinned Node executable is missing.");
+assert(existsSync(path.join(workerRoot, "node_modules/tsx/package.json")), "tsx does not resolve inside the worker worktree.");
+assert(
+  execFileSync(nodePath, ["--version"], { encoding: "utf8" }).trim() === contract.dependencyResolution.nodeVersion,
+  "The pinned Node version changed.",
+);
+const dryRunText = execFileSync(nodePath, dryRunArguments, {
+  cwd: workerRoot,
+  encoding: "utf8",
+  maxBuffer: 50 * 1024 * 1024,
+});
+const dryRun = JSON.parse(dryRunText) as JsonRecord;
+const dryRunRelativePath = `ops/national-research/preflights/dry-runs/${jobId}.json`;
+const dryRunPath = path.join(root, dryRunRelativePath);
+mkdirSync(path.dirname(dryRunPath), { recursive: true });
+const dryRunSerialized = `${JSON.stringify(dryRun, null, 2)}\n`;
+writeFileSync(dryRunPath, dryRunSerialized);
+const dryRunBytes = Buffer.from(dryRunSerialized);
 const resourcesBytes = readFileSync(resourcePath);
 const resources = JSON.parse(resourcesBytes.toString("utf8")) as JsonRecord;
 assert(dryRun.result === "pass" && dryRun.networkRequestsIssued === 0, "Semantic dry-run did not pass without network access.");
@@ -98,6 +156,12 @@ assert(Number(resources.workerCount) >= 1, "Resource snapshot lacks a worker cou
 assert(Number(resources.projectedPostWorkerFreeCommitMiB) >= 3072, "Projected commit headroom is below 3 GiB.");
 assert(Number(resources.projectedPostWorkerFreePhysicalMiB) >= Number(resources.totalPhysicalMiB) * 0.1, "Projected physical memory is below the 10% floor.");
 assert(Number(resources.freeDiskMiB) >= Math.max(20480, Number(resources.totalDiskMiB) * 0.15), "Disk headroom is below policy.");
+const telemetryPath = path.resolve(String(contract.attemptTelemetryPath));
+assert(!telemetryPath.startsWith(`${workerRoot}${path.sep}`), "Attempt telemetry staging is inside the worker worktree.");
+mkdirSync(path.dirname(telemetryPath), { recursive: true });
+const stagingProbe = `${telemetryPath}.preflight-probe`;
+writeFileSync(stagingProbe, "preflight-write-probe\n");
+unlinkSync(stagingProbe);
 
 const targetPairs = new Set(job.taxaOrPairScope.pairs as string[]);
 let completePriorPairs = 0;
@@ -223,7 +287,7 @@ const preflight = {
   resources,
   retryAndResume: job.retryPolicy,
   semanticDryRun: {
-    path: path.relative(root, dryRunPath).split(path.sep).join("/"),
+    path: dryRunRelativePath,
     sha256: sha256(dryRunBytes),
     networkRequestsIssued: 0,
     result: "pass",
@@ -235,6 +299,7 @@ const preflight = {
     incompletePaginationCanCompleteScope: false,
   },
 };
+mkdirSync(path.dirname(outputPath), { recursive: true });
 writeFileSync(outputPath, `${JSON.stringify(preflight, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify({
   output: path.relative(root, outputPath).split(path.sep).join("/"),
