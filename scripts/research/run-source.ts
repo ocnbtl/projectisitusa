@@ -724,12 +724,6 @@ async function main() {
     ["reviews.ndjson", { contents: asNdjson(result.reviews), mediaType: "application/x-ndjson" }],
     ["rejections.ndjson", { contents: asNdjson(result.rejections), mediaType: "application/x-ndjson" }],
     ["outcomes.ndjson", { contents: asNdjson(result.outcomes), mediaType: "application/x-ndjson" }],
-    ...(attemptTelemetry
-      ? [["attempt-telemetry.json", {
-          contents: `${JSON.stringify(attemptTelemetry, null, 2)}\n`,
-          mediaType: "application/json",
-        }] as const]
-      : []),
   ]);
   const runRelativeDirectory = relativeGitPath(finalDirectory);
   const outputs = [...outputContents.entries()].map(([filename, value]) =>
