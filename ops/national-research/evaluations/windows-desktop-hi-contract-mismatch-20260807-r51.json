@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-hi-contract-mismatch-20260807-r51",
+  "observedAt": "2026-08-07T04:30:23.6307592Z",
+  "decision": "stop-and-correct-lease-contract-before-full-scope-recovery",
+  "jobId": "gbif-bulk-20260806-r50-hi-001",
+  "leaseId": "lease-gbif-bulk-20260806-r50-hi-001-1",
+  "expectedRunPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__57937865347d",
+  "derivedOutOfScopeRunPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__491dd5836f2f",
+  "preflight": {
+    "result": "pass",
+    "baseSha": "20bb0e797f8438bc88fca83735b183f44194fd15",
+    "branch": "codex/gbif-bulk-20260806-r50-hi-001"
+  },
+  "resourceGuard": {
+    "requiredFloorMiB": 3072,
+    "workerAllowanceMiB": 1600,
+    "firstProjectedAfterWorkerMiB": 4853.875,
+    "controllingProjectedAfterWorkerMiB": 4833.777,
+    "result": "pass"
+  },
+  "rootCause": "The required command used --candidate-limit 25 as though it limited taxa. The runner limits county-species candidate pairs, so it screened only 25 pairs (five taxa across five Hawaii counties) and correctly derived run suffix 491dd5836f2f. The lease expected suffix 57937865347d, which is the deterministic hash for all 125 leased pairs.",
+  "attempts": {
+    "first": {
+      "result": "failed-local-staging",
+      "errorClass": "EPERM",
+      "providerRequests": null,
+      "providerRequestTelemetry": "not-retained",
+      "retainedOutput": false
+    },
+    "second": {
+      "result": "completed-but-contract-prohibited",
+      "successfulRequests": 10,
+      "speciesMatchRequests": 5,
+      "occurrencePages": 5,
+      "providerRetries": 0,
+      "providerCandidates": 332,
+      "assertions": 60,
+      "reviews": 60,
+      "rejections": 272,
+      "outcomes": 25,
+      "evidenceFoundPairs": 10,
+      "noQualifyingEvidencePairs": 15,
+      "artifacts": 10,
+      "artifactBytes": 147713,
+      "outputBytes": 508825,
+      "runnerWallSeconds": 20.9,
+      "retainedOutput": false
+    }
+  },
+  "totals": {
+    "providerRequests": null,
+    "providerRequestsReason": "The first invocation did not retain request telemetry, so total provider requests across both invocations are unknowable.",
+    "screenedPairs": 25,
+    "remainingPairs": 100,
+    "remainingTaxa": 20,
+    "workerCommits": 0,
+    "manifestCreated": false
+  },
+  "cleanup": {
+    "outOfScopeRunRemoved": true,
+    "worktreeClean": true,
+    "branchHead": "20bb0e797f8438bc88fca83735b183f44194fd15",
+    "renamedOrReusedOutput": false
+  },
+  "requiredRecovery": {
+    "candidateLimit": 125,
+    "screenAllLeasedPairs": true,
+    "expectedRunSuffix": "57937865347d",
+    "freshCapacityGuardRequired": true
+  },
+  "semanticAttestation": {
+    "providerSilenceInferred": false,
+    "absenceCreated": false,
+    "notDetectedCreated": false,
+    "notApplicableCreated": false,
+    "acceptedEvidenceRetained": false
+  }
+}
