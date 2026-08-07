@@ -459828,6 +459828,163 @@
         "pass the pinned worker validator and git diff --check 20bb0e797f8438bc88fca83735b183f44194fd15...HEAD"
       ],
       "transitionedAt": "2026-08-07T01:44:30Z"
+    },
+    {
+      "leaseId": "lease-gbif-bulk-20260806-r50-dc-003-1",
+      "jobId": "gbif-bulk-20260806-r50-dc-003",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "gbif_r51_dc003_001",
+      "state": "active",
+      "claimedAt": "2026-08-07T03:15:00.000Z",
+      "expiresAt": "2026-08-07T07:30:00.000Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "DC"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "anarsia-lineatella",
+          "aspidiotus-duplex",
+          "corbicula-fluminea",
+          "cryphonectria-parasitica",
+          "cyprinus-carpio",
+          "discula-destructiva",
+          "dryocosmus-kuriphilus",
+          "emerald-ash-borer",
+          "homadaula-albizziae",
+          "icerya-purchasi",
+          "iris-pseudacorus",
+          "mesocyclops-pehpeiensis",
+          "ophiognomonia-clavigignenti-juglandacearum",
+          "ophiostoma-ulmi",
+          "phytophthora-cinnamomi",
+          "popillia-japonica",
+          "raffaelea-lauricola"
+        ],
+        "pairs": [
+          "11001:anarsia-lineatella",
+          "11001:aspidiotus-duplex",
+          "11001:corbicula-fluminea",
+          "11001:cryphonectria-parasitica",
+          "11001:cyprinus-carpio",
+          "11001:discula-destructiva",
+          "11001:dryocosmus-kuriphilus",
+          "11001:emerald-ash-borer",
+          "11001:homadaula-albizziae",
+          "11001:icerya-purchasi",
+          "11001:iris-pseudacorus",
+          "11001:mesocyclops-pehpeiensis",
+          "11001:ophiognomonia-clavigignenti-juglandacearum",
+          "11001:ophiostoma-ulmi",
+          "11001:phytophthora-cinnamomi",
+          "11001:popillia-japonica",
+          "11001:raffaelea-lauricola"
+        ]
+      },
+      "scopeClaims": [
+        "state/DC/source/gbif-preserved-specimens/taxon/anarsia-lineatella",
+        "state/DC/source/gbif-preserved-specimens/taxon/aspidiotus-duplex",
+        "state/DC/source/gbif-preserved-specimens/taxon/corbicula-fluminea",
+        "state/DC/source/gbif-preserved-specimens/taxon/cryphonectria-parasitica",
+        "state/DC/source/gbif-preserved-specimens/taxon/cyprinus-carpio",
+        "state/DC/source/gbif-preserved-specimens/taxon/discula-destructiva",
+        "state/DC/source/gbif-preserved-specimens/taxon/dryocosmus-kuriphilus",
+        "state/DC/source/gbif-preserved-specimens/taxon/emerald-ash-borer",
+        "state/DC/source/gbif-preserved-specimens/taxon/homadaula-albizziae",
+        "state/DC/source/gbif-preserved-specimens/taxon/icerya-purchasi",
+        "state/DC/source/gbif-preserved-specimens/taxon/iris-pseudacorus",
+        "state/DC/source/gbif-preserved-specimens/taxon/mesocyclops-pehpeiensis",
+        "state/DC/source/gbif-preserved-specimens/taxon/ophiognomonia-clavigignenti-juglandacearum",
+        "state/DC/source/gbif-preserved-specimens/taxon/ophiostoma-ulmi",
+        "state/DC/source/gbif-preserved-specimens/taxon/phytophthora-cinnamomi",
+        "state/DC/source/gbif-preserved-specimens/taxon/popillia-japonica",
+        "state/DC/source/gbif-preserved-specimens/taxon/raffaelea-lauricola"
+      ],
+      "branch": "codex/gbif-bulk-20260806-r50-dc-003",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-bulk-20260806-r50-dc-003",
+      "baseSha": "20bb0e797f8438bc88fca83735b183f44194fd15",
+      "expectedReceiptCodeCommit": "20bb0e797f8438bc88fca83735b183f44194fd15",
+      "permittedPaths": [
+        "src/data/research/runs/20260807T013003Z__gbif-preserved-specimens__48074bae9ebe/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260807T013003Z__gbif-preserved-specimens__48074bae9ebe/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-50-20260806/gbif-round50-dc-003.json with started-at 2026-08-07T01:30:03.000Z",
+        "screen all 17 leased DC county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 20bb0e797f8438bc88fca83735b183f44194fd15...HEAD"
+      ]
     }
   ]
 }
