@@ -1,6 +1,6 @@
 # North Dakota Research Progress
 
-Generated: `2026-08-05T00:00:00.000Z`
+Generated: `2026-08-07T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-05T00:00:00.000Z`
 - Verified present: `33`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3942`
-- Not researched: `128737`
+- Researched unresolved: `3995`
+- Not researched: `128684`
 - Determination coverage: `0.02%`
-- Research coverage: `3.00%`
-- Explicit outcome coverage: `2.9952%`
+- Research coverage: `3.04%`
+- Explicit outcome coverage: `3.0351%`
 - Applicable protocol cells: `76`
-- Current complete protocol cells: `29`
-- Protocol completion: `55.26%`
-- Current protocol completion: `38.16%`
+- Current complete protocol cells: `30`
+- Protocol completion: `56.58%`
+- Current protocol completion: `39.47%`
 - Evidence records: `33`
-- Research runs: `7`
+- Research runs: `8`
 - Rejection records: `4`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,7 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 53 | 0 | 1 |
 | Wild sugarcane (`saccharum-spontaneum`) | plants | 53 | 0 | 1 |
 | Giant Salvinia (`salvinia-molesta`) | plants | 53 | 0 | 1 |
 | Scrambling nightshade (`solanum-tampicense`) | plants | 53 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Norway Maple (`acer-platanoides`) | plants | 0 | 53 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 53 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 53 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 53 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-04T04:19:34.041Z | 0 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-06T02:46:50.972Z | 0 | 26 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

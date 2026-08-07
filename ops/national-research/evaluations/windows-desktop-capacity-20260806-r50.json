@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260806-r50",
+  "observedAt": "2026-08-07T01:44:55.3889169Z",
+  "decision": "stop-new-acquisition-and-compile-integrated-work",
+  "resourceFloor": {
+    "kind": "system-commit-pagefile-headroom",
+    "requiredBytes": 3221225472,
+    "requiredMiB": 3072,
+    "hardStop": true
+  },
+  "attemptedLeases": [
+    {
+      "jobId": "gbif-bulk-20260806-r50-dc-001",
+      "leaseId": "lease-gbif-bulk-20260806-r50-dc-001-1",
+      "resourceLimitMiB": 1600,
+      "maximumObservedHeadroomMiB": 3059.43,
+      "availablePhysicalMiB": 7527,
+      "pagingFileUsagePercent": 9.47,
+      "result": "pre-acquisition-resource-stop",
+      "providerRequests": 0,
+      "retainedRun": false,
+      "workerCommits": 0
+    },
+    {
+      "jobId": "gbif-bulk-20260806-r50-dc-002",
+      "leaseId": "lease-gbif-bulk-20260806-r50-dc-002-1",
+      "resourceLimitMiB": 1600,
+      "initialHeadroomBytes": 2613862400,
+      "maximumObservedHeadroomBytes": 3123761152,
+      "result": "pre-acquisition-resource-stop",
+      "providerRequests": 0,
+      "retainedRun": false,
+      "workerCommits": 0
+    }
+  ],
+  "topology": {
+    "initialWorkers": 2,
+    "reducedWorkers": 1,
+    "plannedJobsRetained": 17,
+    "failedResourceSafeJobs": 2
+  },
+  "semanticAttestation": {
+    "providerSilenceInferred": false,
+    "absenceCreated": false,
+    "notDetectedCreated": false,
+    "notApplicableCreated": false
+  },
+  "reason": "Both isolated workers passed their pinned repository preflight, but the non-negotiable 3 GiB system commit/pagefile headroom floor failed before acquisition even after reducing concurrency from two workers to one. No GBIF request, run path, outcome, or worker commit was created. New acquisition stopped while already-integrated evidence and deterministic national projections continued."
+}
