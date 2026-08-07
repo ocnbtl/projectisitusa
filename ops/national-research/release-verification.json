@@ -1285,6 +1285,60 @@
         "qualification": "The two 405 responses were explicit read-only GET method probes against the POST-only ZIP endpoint. The UI-equivalent POST request and browser flow both returned successful Anne Arundel County data."
       },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched the exact Round 49 content SHA; GitHub deployment 5772857550 succeeded; Vercel deployment dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr reached READY with exact Git-source identity and production aliases; twelve intended live routes and the UI-equivalent ZIP POST passed; four changed Maryland and Washington generated files matched local SHA-256 bytes exactly; Alabama, California, Maryland, North Dakota, and Washington research views rendered current 2026-08-05 projections; King County selection, source operations, research queue, and returning-browser Anne Arundel state passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Two diagnostic GET probes against the POST-only ZIP endpoint returned the expected 405 and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-2f5fa264-2026-08-07",
+      "verifiedAt": "2026-08-07T02:45:34.506Z",
+      "commitSha": "2f5fa264bc2c8dfbbe3f8581973092f221328889",
+      "githubMainSha": "2f5fa264bc2c8dfbbe3f8581973092f221328889",
+      "githubDeploymentId": 5787224747,
+      "vercelDeploymentId": "dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog",
+      "vercelDeploymentUrl": "projectisitusa-5shysqbjg-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research","status":200},
+        {"path":"/research?state=ND","status":200},
+        {"path":"/research?state=DC","status":200},
+        {"path":"/research?state=HI","status":200},
+        {"path":"/research?state=MA","status":200},
+        {"path":"/research?state=NH","status":200},
+        {"path":"/research?state=RI","status":200},
+        {"path":"/research?state=VT","status":200},
+        {"path":"/species/rottboellia-cochinchinensis","status":200},
+        {"path":"/generated/research/ND/summary.json","status":200},
+        {"path":"/generated/research/ND/counties/38001.json","status":200},
+        {"path":"/generated/presence.json","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/research/ND/summary.json","sha256":"900635152b6c5538d555e805881797aef83c5a46fe6f70b41143e4adbb64aa79"},
+        {"path":"/generated/research/ND/counties/38001.json","sha256":"a7211f75c674fa77efd1994d193aad1e16a643cd4414a4dfdc92dfe9e9465eef"},
+        {"path":"/generated/presence.json","sha256":"027b5910ba80aa15feb239d1fcd46ce398246ced8c331e40666819f0409fcd1b"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "states": ["ND", "DC"],
+        "county": "Adams, ND",
+        "sourceOperations": "pass",
+        "researchQueue": "pass",
+        "stateSelection": "DC",
+        "speciesRoute": "Itchgrass",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "zipLookup": {"zip":"20001","status":200,"ok":true,"countyFips":"11001","countyName":"District of Columbia, DC"},
+      "runtimeQa": {
+        "deploymentId": "dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog",
+        "runtimeErrorClusters": 0,
+        "warningAndErrorLogs": 0,
+        "observedStatusCodeCounts": {"200":24,"304":2,"400":1,"404":1,"416":1},
+        "qualification": "The 400 was the explicitly discarded malformed ZIP diagnostic; the 404 was the pre-alias Itchgrass probe and was superseded by HTTP 200 on all production aliases and the exact deployment URL; the 416 was a static root range probe. The correctly encoded ZIP request, final Itchgrass request, intended live routes, browser flows, and exact byte checks all passed."
+      },
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 50 content SHA 2f5fa264bc2c8dfbbe3f8581973092f221328889; GitHub Production deployment 5787224747 succeeded; Vercel deployment dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog reached READY with exact Git-source identity and all production aliases; thirteen intended live routes and the UI-equivalent District of Columbia ZIP POST passed; the North Dakota summary, Adams County projection, and public presence projection matched local SHA-256 bytes exactly; North Dakota and District of Columbia rendered current 2026-08-07 projections; Itchgrass rendered as researched unresolved with reviewed no qualifying evidence; source operations and the research queue passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Diagnostic 400, 404, and 416 probes are explicitly qualified in runtimeQa and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
