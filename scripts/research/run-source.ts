@@ -43,6 +43,7 @@ import {
   buildGbifSourceVerification,
   gbifSourceVerificationFilename,
 } from "./gbif-source-verification";
+import { loadGbifTaxonomyCache } from "./gbif-taxonomy-cache";
 
 type Candidate = {
   sourceId: string;
@@ -59,6 +60,77 @@ type Species = { id: string; scientificName: string };
 
 const ROOT = process.cwd();
 const RESEARCH_DIR = path.join(ROOT, "src/data/research");
+
+type AttemptTelemetry = {
+  schemaVersion: 1;
+  status: string;
+  command: string[];
+  startedAt: string;
+  updatedAt: string;
+  finishedAt: string | null;
+  wallSeconds: number;
+  processId: number;
+  peakObservedRssMb: number;
+  requestCounts: {
+    totalAttempts: number;
+    archiveReplayHits: number;
+    cachedTaxonomyHits: number;
+    liveProviderAttempts: number;
+    completedResponses: number;
+    failedAttempts: number;
+  };
+  result: Record<string, unknown> | null;
+  error: string | null;
+};
+
+let attemptTelemetryPath: string | null = null;
+let attemptTelemetry: AttemptTelemetry | null = null;
+
+function rssMb() {
+  return Number((process.memoryUsage().rss / (1024 * 1024)).toFixed(3));
+}
+
+function persistAttemptTelemetry(update: Partial<AttemptTelemetry> = {}) {
+  if (!attemptTelemetryPath || !attemptTelemetry) return;
+  const now = new Date().toISOString();
+  attemptTelemetry = {
+    ...attemptTelemetry,
+    ...update,
+    updatedAt: now,
+    wallSeconds: Number(
+      ((Date.now() - Date.parse(attemptTelemetry.startedAt)) / 1000).toFixed(3),
+    ),
+    peakObservedRssMb: Math.max(attemptTelemetry.peakObservedRssMb, rssMb()),
+  };
+  writeFileSync(attemptTelemetryPath, `${JSON.stringify(attemptTelemetry, null, 2)}\n`);
+}
+
+function initializeAttemptTelemetry(filepath: string) {
+  attemptTelemetryPath = filepath;
+  const startedAt = new Date().toISOString();
+  attemptTelemetry = {
+    schemaVersion: 1,
+    status: "initialized-before-repository-snapshot",
+    command: [process.execPath, ...process.execArgv, ...process.argv.slice(1)],
+    startedAt,
+    updatedAt: startedAt,
+    finishedAt: null,
+    wallSeconds: 0,
+    processId: process.pid,
+    peakObservedRssMb: rssMb(),
+    requestCounts: {
+      totalAttempts: 0,
+      archiveReplayHits: 0,
+      cachedTaxonomyHits: 0,
+      liveProviderAttempts: 0,
+      completedResponses: 0,
+      failedAttempts: 0,
+    },
+    result: null,
+    error: null,
+  };
+  persistAttemptTelemetry();
+}
 
 type CommittedInputSnapshot = {
   commit: string;
@@ -97,6 +169,9 @@ function parseArguments(argv: string[]) {
   const outputRootArgument = values.get("output-root")?.at(-1);
   const archiveReplayCommit = values.get("archive-replay-commit")?.at(-1);
   const archiveReplayRunId = values.get("archive-replay-run-id")?.at(-1);
+  const taxonomyCacheArgument = values.get("gbif-taxonomy-cache")?.at(-1);
+  const attemptTelemetryArgument = values.get("attempt-telemetry")?.at(-1);
+  const semanticDryRunValue = values.get("semantic-dry-run")?.at(-1) ?? "false";
 
   if (!sourceId) throw new Error("--source is required.");
   const normalizedStateCode = stateCode.toUpperCase();
@@ -119,6 +194,15 @@ function parseArguments(argv: string[]) {
   if (archiveReplayCommit && sourceId !== "gbif-preserved-specimens") {
     throw new Error("Archived replay is currently limited to GBIF preserved specimens.");
   }
+  if (!new Set(["true", "false"]).has(semanticDryRunValue)) {
+    throw new Error("--semantic-dry-run must be true or false.");
+  }
+  if (taxonomyCacheArgument && sourceId !== "gbif-preserved-specimens") {
+    throw new Error("--gbif-taxonomy-cache is limited to GBIF preserved specimens.");
+  }
+  if (taxonomyCacheArgument && archiveReplayCommit) {
+    throw new Error("Full archive replay and the GBIF taxonomy cache are mutually exclusive.");
+  }
 
   const candidateFile = path.resolve(
     ROOT,
@@ -131,6 +215,12 @@ function parseArguments(argv: string[]) {
     ROOT,
     outputRootArgument ?? "src/data/research/runs",
   );
+  const taxonomyCache = taxonomyCacheArgument
+    ? path.resolve(ROOT, taxonomyCacheArgument)
+    : null;
+  const telemetryPath = attemptTelemetryArgument
+    ? path.resolve(attemptTelemetryArgument)
+    : null;
   for (const [label, filepath] of [
     ["candidate file", candidateFile],
     ["output root", outputRoot],
@@ -149,6 +239,12 @@ function parseArguments(argv: string[]) {
   ) {
     throw new Error("A noncanonical --output-root must be inside a lease-specific worker-results path.");
   }
+  if (taxonomyCache && !taxonomyCache.startsWith(`${ROOT}${path.sep}`)) {
+    throw new Error("The GBIF taxonomy cache must remain inside the repository.");
+  }
+  if (telemetryPath && telemetryPath.startsWith(`${ROOT}${path.sep}`)) {
+    throw new Error("Attempt telemetry must use the lease-specific staging path outside the worktree.");
+  }
 
   return {
     sourceId,
@@ -158,6 +254,9 @@ function parseArguments(argv: string[]) {
     startedAt,
     candidateFile,
     outputRoot,
+    taxonomyCache,
+    telemetryPath,
+    semanticDryRun: semanticDryRunValue === "true",
     archiveReplay:
       archiveReplayCommit && archiveReplayRunId
         ? {
@@ -383,6 +482,9 @@ function selectCandidates(
 
 async function main() {
   const options = parseArguments(process.argv.slice(2));
+  if (options.telemetryPath && !options.semanticDryRun) {
+    initializeAttemptTelemetry(options.telemetryPath);
+  }
   const registryPath = path.join(RESEARCH_DIR, "source-registry.json");
   const registryText = readFileSync(registryPath, "utf8");
   const registry = JSON.parse(registryText) as ResearchSourceRegistry;
@@ -414,6 +516,7 @@ async function main() {
     path.join(ROOT, "scripts/research/run-source.ts"),
     path.join(ROOT, "scripts/research/gbif-archived-replay.ts"),
     path.join(ROOT, "scripts/research/gbif-source-verification.ts"),
+    path.join(ROOT, "scripts/research/gbif-taxonomy-cache.ts"),
     path.join(ROOT, "src/lib/research/source-adapter.ts"),
     path.join(ROOT, "src/lib/research/run-files.ts"),
     path.join(ROOT, "src/lib/research/types.ts"),
@@ -423,7 +526,9 @@ async function main() {
     stateRegistryPath,
     countyRegistryPath,
     options.candidateFile,
+    ...(options.taxonomyCache ? [options.taxonomyCache] : []),
   ]);
+  persistAttemptTelemetry({ status: "committed-input-snapshot-verified" });
 
   const candidates = selectCandidates(
     options.sourceId,
@@ -476,6 +581,66 @@ async function main() {
     throw new Error(`Immutable run directory already exists: ${path.relative(ROOT, finalDirectory)}`);
   }
 
+  const selectedSpecies = [...new Map(requestedPairs.map((pair) => [pair.speciesId, {
+    speciesId: pair.speciesId,
+    scientificName: pair.scientificName,
+  }])).values()].sort((left, right) => compareText(left.speciesId, right.speciesId));
+  const taxonomyCache = options.taxonomyCache
+    ? loadGbifTaxonomyCache({
+        repositoryRoot: ROOT,
+        cachePath: options.taxonomyCache,
+        adapterVersion: adapter.adapterVersion,
+        expectedSpecies: selectedSpecies,
+      })
+    : null;
+  if (options.semanticDryRun) {
+    const candidateFile = readJson<CandidateFile>(options.candidateFile);
+    console.log(JSON.stringify({
+      schemaVersion: 1,
+      mode: "no-network-semantic-dry-run",
+      networkRequestsIssued: 0,
+      baseSha: inputSnapshot.commit,
+      sourceId: options.sourceId,
+      sourceParameters: parameters,
+      stateCode: options.stateCode,
+      candidateFile: {
+        path: relativeGitPath(options.candidateFile),
+        declaredCandidateCount: candidateFile.candidates.length,
+        selectedPairCount: requestedPairs.length,
+        sha256: inputSnapshot.fileHashes.get(options.candidateFile),
+      },
+      candidateLimit: {
+        value: options.candidateLimit,
+        meaning: "maximum county-species candidate-pair count, not a taxon count",
+      },
+      selectedTaxa: selectedSpecies.map((entry) => entry.speciesId),
+      selectedPairKeys: parameters.candidatePairs,
+      selectedPairHash: sha256(stableJson(parameters.candidatePairs)),
+      parameterHash,
+      startedAt,
+      deterministicRunSuffix: parameterHash.slice(0, 12),
+      expectedRunPath: relativeGitPath(finalDirectory),
+      outputRoot: relativeGitPath(options.outputRoot),
+      taxonomyCache: taxonomyCache ? {
+        cacheId: taxonomyCache.cacheId,
+        path: relativeGitPath(taxonomyCache.cachePath),
+        sha256: taxonomyCache.cacheSha256,
+        selectedEntryCount: taxonomyCache.selectedEntries.length,
+        selectedEntries: taxonomyCache.selectedEntries,
+      } : null,
+      expectedProviderRequests: {
+        cachedTaxonomyResponses: taxonomyCache?.selectedEntries.length ?? 0,
+        liveTaxonomyRequests: taxonomyCache?.missingSpecies.length ?? selectedSpecies.length,
+        plannedLiveInitialOccurrenceRequests: selectedSpecies.length,
+        additionalOccurrencePages: "only when a provider-declared total exceeds the first complete page",
+      },
+      expandedCommand: [process.execPath, ...process.execArgv, ...process.argv.slice(1)],
+      result: "pass",
+    }, null, 2));
+    return;
+  }
+  persistAttemptTelemetry({ status: "semantic-scope-verified-before-network" });
+
   const archivedReplay = options.archiveReplay
     ? loadGbifArchivedReplay({
         repositoryRoot: ROOT,
@@ -489,7 +654,40 @@ async function main() {
   const originalFetch = globalThis.fetch;
   let result: SourceAdapterResult;
   try {
-    if (archivedReplay) globalThis.fetch = archivedReplay.fetch;
+    globalThis.fetch = async (input, init) => {
+      const url = input instanceof Request ? input.url : String(input);
+      if (attemptTelemetry) {
+        attemptTelemetry.requestCounts.totalAttempts += 1;
+      }
+      if (archivedReplay) {
+        if (attemptTelemetry) attemptTelemetry.requestCounts.archiveReplayHits += 1;
+        persistAttemptTelemetry({ status: "archive-replay-request" });
+        const response = await archivedReplay.fetch(input, init);
+        if (attemptTelemetry) attemptTelemetry.requestCounts.completedResponses += 1;
+        persistAttemptTelemetry();
+        return response;
+      }
+      if (taxonomyCache?.has(url)) {
+        if (attemptTelemetry) {
+          attemptTelemetry.requestCounts.cachedTaxonomyHits += 1;
+          attemptTelemetry.requestCounts.completedResponses += 1;
+        }
+        persistAttemptTelemetry({ status: "taxonomy-cache-hit" });
+        return taxonomyCache.response(url);
+      }
+      if (attemptTelemetry) attemptTelemetry.requestCounts.liveProviderAttempts += 1;
+      persistAttemptTelemetry({ status: "live-provider-request-started" });
+      try {
+        const response = await originalFetch(input, init);
+        if (attemptTelemetry) attemptTelemetry.requestCounts.completedResponses += 1;
+        persistAttemptTelemetry({ status: "live-provider-response-received" });
+        return response;
+      } catch (error) {
+        if (attemptTelemetry) attemptTelemetry.requestCounts.failedAttempts += 1;
+        persistAttemptTelemetry({ status: "live-provider-request-failed" });
+        throw error;
+      }
+    };
     result = await adapter.run({
       runId,
       sourceId: options.sourceId,
@@ -501,6 +699,18 @@ async function main() {
   } finally {
     globalThis.fetch = originalFetch;
   }
+  persistAttemptTelemetry({
+    status: "acquisition-complete-before-staging",
+    result: {
+      sourceRequests: result.upstreamRequests.length,
+      candidateRecords: result.candidateRecordCount,
+      assertions: result.assertions.length,
+      reviews: result.reviews.length,
+      rejections: result.rejections.length,
+      outcomes: result.outcomes.length,
+      errors: result.errors.length,
+    },
+  });
   verifyCommittedInputSnapshot(inputSnapshot);
   const status: ImmutableResearchRunReceipt["status"] =
     result.outcomes.length === 0
@@ -514,6 +724,12 @@ async function main() {
     ["reviews.ndjson", { contents: asNdjson(result.reviews), mediaType: "application/x-ndjson" }],
     ["rejections.ndjson", { contents: asNdjson(result.rejections), mediaType: "application/x-ndjson" }],
     ["outcomes.ndjson", { contents: asNdjson(result.outcomes), mediaType: "application/x-ndjson" }],
+    ...(attemptTelemetry
+      ? [["attempt-telemetry.json", {
+          contents: `${JSON.stringify(attemptTelemetry, null, 2)}\n`,
+          mediaType: "application/json",
+        }] as const]
+      : []),
   ]);
   const runRelativeDirectory = relativeGitPath(finalDirectory);
   const outputs = [...outputContents.entries()].map(([filename, value]) =>
@@ -578,11 +794,18 @@ async function main() {
     errors: result.errors,
     known_caveats: [source.caveat],
     source_warnings: result.warnings,
-    deviations: archivedReplay
-      ? [
-          `Replayed ${archivedReplay.preventedProviderRequestCount} provider response artifact(s) from archived run ${archivedReplay.archiveRunId} at commit ${archivedReplay.archiveCommit}; no live provider request was issued.`,
-        ]
-      : [],
+    deviations: [
+      ...(archivedReplay
+        ? [
+            `Replayed ${archivedReplay.preventedProviderRequestCount} provider response artifact(s) from archived run ${archivedReplay.archiveRunId} at commit ${archivedReplay.archiveCommit}; no live provider request was issued.`,
+          ]
+        : []),
+      ...(taxonomyCache
+        ? [
+            `Reused ${taxonomyCache.selectedEntries.length} verified GBIF species-match response(s) from taxonomy cache ${taxonomyCache.cacheId} at ${relativeGitPath(taxonomyCache.cachePath)} (${taxonomyCache.cacheSha256}); ${taxonomyCache.missingSpecies.length} uncached taxonomy request(s) remained eligible for live acquisition.`,
+          ]
+        : []),
+    ],
     rerun_command: [
       "npm run research:run --",
       `--source ${options.sourceId}`,
@@ -590,6 +813,9 @@ async function main() {
       `--candidate-file ${relativeGitPath(options.candidateFile)}`,
       `--output-root ${relativeGitPath(options.outputRoot)}`,
       `--pairs ${parameters.candidatePairs.join(",")}`,
+      ...(taxonomyCache
+        ? [`--gbif-taxonomy-cache ${relativeGitPath(taxonomyCache.cachePath)}`]
+        : []),
       ...(archivedReplay
         ? [
             `--archive-replay-commit ${archivedReplay.archiveCommit}`,
@@ -666,9 +892,23 @@ async function main() {
   }
 
   console.log(JSON.stringify({ directory: path.relative(ROOT, finalDirectory), ...receipt.counts, status }, null, 2));
+  persistAttemptTelemetry({
+    status: "complete",
+    finishedAt: new Date().toISOString(),
+    result: {
+      directory: relativeGitPath(finalDirectory),
+      status,
+      ...receipt.counts,
+    },
+  });
 }
 
 main().catch((error) => {
+  persistAttemptTelemetry({
+    status: "failed",
+    finishedAt: new Date().toISOString(),
+    error: error instanceof Error ? error.message : String(error),
+  });
   console.error(error);
   process.exit(1);
 });

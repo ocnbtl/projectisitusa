@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-50-final-matrix-20260807-r1",
+  "roundId": "round-50-20260806",
+  "evaluatedAt": "2026-08-07T23:24:16.096Z",
+  "result": "complete-with-guarded-partial-acquisition",
+  "baseline": {
+    "commit": "c2266a1a8503d2c5f613bc6ef7d0b9d79b2c5678",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5041,
+      "notApplicable": 0,
+      "unresolved": 122663,
+      "blocked": 0,
+      "researchedUnresolved": 1497,
+      "researchBlocked": 54,
+      "untouched": 121112
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54203,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 340917,
+      "notResearched": 7477448
+    },
+    "protocolCells": {
+      "total": 39812,
+      "complete": 4618,
+      "incomplete": 14676,
+      "blocked": 59,
+      "current": 4007,
+      "stale": 611,
+      "undated": 14735
+    },
+    "ledger": {
+      "assertions": 177000,
+      "reviews": 177000,
+      "rejections": 40111,
+      "explicitOutcomes": 350030,
+      "immutableRuns": 530,
+      "conflicts": 0
+    }
+  },
+  "planned": {
+    "jurisdictions": ["DC", "HI", "MA", "NH", "RI", "VT"],
+    "stateSpeciesScreens": 420,
+    "countySpeciesPairs": 3370,
+    "expectedNetNewPairs": 1823,
+    "jobs": 19
+  },
+  "execution": {
+    "pairsAttempted": {
+      "knownProviderScreened": 150,
+      "qualification": "125 accepted Hawaii pairs plus 25 overlapping pairs from a prohibited candidate-limit attempt. The first local-staging failure retained no request telemetry, so the exact all-attempt count is unknowable."
+    },
+    "pairsCompleted": 125,
+    "completedJobs": 1,
+    "resourceStoppedJobs": 3,
+    "contractStoppedJobs": 1,
+    "plannedJobsRemaining": 15,
+    "retries": 1,
+    "manualInterventions": 2,
+    "manualInterventionBasis": [
+      "Corrected the DC dependency invocation after tsx was unresolved in the isolated worktree.",
+      "Stopped the Hawaii pair-limit contract mismatch and dispatched one exact-scope recovery."
+    ]
+  },
+  "acceptedAcquisition": {
+    "jobId": "gbif-bulk-20260806-r50-hi-001-recovery1",
+    "pairs": 125,
+    "evidenceFound": 20,
+    "noQualifyingEvidence": 105,
+    "positiveYield": 0.16,
+    "providerCalls": 50,
+    "providerPages": 25,
+    "taxonomyCalls": 25,
+    "providerCandidates": 611,
+    "retainedArtifacts": 50,
+    "retainedArtifactBytes": 289128,
+    "immutableRunBytes": 1384701,
+    "pairsPerProviderCall": 2.5,
+    "netUniquePairMovementPerProviderCall": 2.5,
+    "wallSeconds": 44,
+    "netUniquePairMovementPerWorkerHour": 10227.273,
+    "peakMemoryMb": null,
+    "peakMemoryQualification": "The accepted manifest stored the historical zero sentinel, so no measured peak is claimed. The lease allowance was 1600 MiB."
+  },
+  "allAttemptAcquisition": {
+    "providerCalls": null,
+    "knownProviderCallLowerBound": 60,
+    "providerPagesLowerBound": 30,
+    "providerCandidatesLowerBound": 943,
+    "observedArtifactBytesLowerBound": 436841,
+    "observedOutputBytesLowerBound": 1893526,
+    "runtimeSecondsLowerBound": 64.9,
+    "netUniqueAcceptedPairs": 125,
+    "netUniquePairMovementPerProviderCall": null,
+    "upperBoundNetUniquePairMovementPerKnownProviderCall": 2.083,
+    "upperBoundNetUniquePairMovementPerWorkerHour": 6933.744,
+    "qualification": "Exact all-attempt rates cannot be reconstructed because the first staging failure did not retain request, time, or memory telemetry."
+  },
+  "final": {
+    "contentCommit": "db29d5564ce1a41848b199951a82072bd69f142b",
+    "verificationReceiptCommit": "47e94b857d20c23f0e17633144042e5aa741d43c",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54223,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 341075,
+      "notResearched": 7477270
+    },
+    "protocolCells": {
+      "total": 39866,
+      "complete": 4644,
+      "incomplete": 14673,
+      "blocked": 59,
+      "current": 4033,
+      "stale": 611,
+      "undated": 14732
+    },
+    "ledger": {
+      "assertions": 177110,
+      "reviews": 177110,
+      "rejections": 40612,
+      "explicitOutcomes": 350208,
+      "immutableRuns": 532,
+      "conflicts": 0
+    },
+    "certifiedStates": 0,
+    "certificationBlockersRemoved": 0
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 178,
+    "verifiedPresent": 20,
+    "researchedUnresolved": 158,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "notResearched": -178,
+    "affectedStates": {
+      "HI": {
+        "verifiedPresent": 20,
+        "researchedUnresolved": 105,
+        "notResearched": -125,
+        "assertions": 110,
+        "rejections": 501,
+        "explicitOutcomes": 125,
+        "immutableRuns": 1
+      },
+      "ND": {
+        "verifiedPresent": 0,
+        "researchedUnresolved": 53,
+        "notResearched": -53,
+        "explicitOutcomes": 53,
+        "immutableRuns": 1,
+        "qualification": "Previously accepted acquisition was promoted into the Round 50 final matrix."
+      },
+      "VT": {
+        "countyStatusMovement": 0,
+        "stateSpeciesApplicable": 23,
+        "stateSpeciesUnresolved": -23
+      }
+    }
+  },
+  "denominatorExpansion": {
+    "stateSpeciesApplicable": 23,
+    "stateSpeciesUnknown": -23,
+    "explicitApplicabilityOverrides": 34,
+    "derivedApplicability": -11,
+    "boundedAcquisitionSpecies": 18,
+    "boundedCountySpeciesPairs": 252,
+    "countyDenominatorChanged": false,
+    "qualification": "Vermont applicability expanded the bounded evidence-screen scope. It did not assert county occurrence and is not counted as county research movement."
+  },
+  "protocolClosure": {
+    "totalCells": 54,
+    "complete": 26,
+    "incomplete": -3,
+    "current": 26,
+    "undated": -3,
+    "blocked": 0,
+    "stale": 0
+  },
+  "expectedVersusActual": {
+    "plannedPairs": 3370,
+    "plannedExpectedNetNewPairs": 1823,
+    "completedPlannedPairs": 125,
+    "finalMatrixMovement": 178,
+    "plannedPairCompletionRate": 0.037092,
+    "expectedNetNewAchievementRate": 0.097641,
+    "qualification": "Final movement includes 53 North Dakota pairs acquired before the Round 50 dispatch."
+  },
+  "overhead": {
+    "roundWallSecondsToExternalVerification": 13087,
+    "acceptedWorkerFinishAt": "2026-08-07T04:35:05.146Z",
+    "reviewedAt": "2026-08-07T04:40:17.7908660Z",
+    "integratedAt": "2026-08-07T04:41:12.0549437Z",
+    "integrationLatencySeconds": 366.909,
+    "reviewLatencySeconds": 312.645,
+    "postReviewIntegrationSeconds": 54.264,
+    "projectionCommitAt": "2026-08-07T04:51:08Z",
+    "integrationToProjectionCommitSeconds": 595.945,
+    "externallyVerifiedAt": "2026-08-07T05:09:45.1164565Z",
+    "projectionCommitToExternalVerificationSeconds": 1117.116,
+    "generationSeconds": null,
+    "buildSeconds": null,
+    "deploymentSeconds": null,
+    "browserQaSeconds": null,
+    "timingQualification": "Fine-grained generation, build, deployment, and browser QA timers were not retained. Git commit and GitHub deployment timestamps also conflict chronologically, so no synthetic split is claimed."
+  },
+  "reuse": {
+    "providerRequestsPrevented": 0,
+    "reusedArtifacts": 0,
+    "qualification": "The accepted Hawaii recovery did not reuse its discarded output, and identical taxonomy requests were repeated."
+  },
+  "processLesson": {
+    "lesson": "Ambiguous limit semantics, worktree dependency assumptions, missing early-attempt telemetry, and repeated taxonomy matching made a small successful batch more expensive and less auditable than necessary.",
+    "appliedToNextWave": [
+      "A no-network semantic dry-run now proves the exact ordered pair scope, candidate-pair limit meaning, deterministic run suffix, and output path before lease claim or provider access.",
+      "Attempt telemetry is written to lease staging before repository snapshot and updated at every cache or provider request.",
+      "A provenance-bound GBIF taxonomy cache reuses compatible verified species-match responses and records each prevented provider request.",
+      "The next portfolio is limited to four resource-safe jobs with sequential integration and a 3 GiB projected commit-headroom floor."
+    ]
+  },
+  "nextRankedPortfolio": [
+    {
+      "rank": 1,
+      "jobId": "gbif-bulk-20260806-r50-vt-001",
+      "state": "VT",
+      "pairs": 350,
+      "expectedNetNewPairs": 350,
+      "taxa": 25,
+      "reason": "Closes evidence screens created by the separately reported Vermont applicability expansion."
+    },
+    {
+      "rank": 2,
+      "jobId": "gbif-bulk-20260806-r50-ma-001",
+      "state": "MA",
+      "pairs": 350,
+      "expectedNetNewPairs": 350,
+      "taxa": 25,
+      "reason": "High pair reuse per state query and full expected net-new movement."
+    },
+    {
+      "rank": 3,
+      "jobId": "gbif-bulk-20260806-r50-nh-001",
+      "state": "NH",
+      "pairs": 250,
+      "expectedNetNewPairs": 250,
+      "taxa": 25,
+      "reason": "Full expected net-new movement with the same reusable taxonomy cohort."
+    },
+    {
+      "rank": 4,
+      "jobId": "gbif-bulk-20260806-r50-hi-002",
+      "state": "HI",
+      "pairs": 125,
+      "expectedNetNewPairs": 125,
+      "taxa": 25,
+      "reason": "Continues the only measured Round 50 positive-yield jurisdiction while preserving bounded scope."
+    }
+  ],
+  "nextPortfolioEfficiency": {
+    "pairs": 1075,
+    "expectedNetNewPairs": 1075,
+    "taxonQueries": 100,
+    "uniqueTaxa": 40,
+    "verifiedTaxonomyCacheHits": 93,
+    "uncachedTaxonomyRequests": 7,
+    "plannedInitialOccurrenceRequests": 100,
+    "plannedLiveProviderRequestsBeforeAdditionalPagination": 107,
+    "preventedTaxonomyRequests": 93,
+    "expectedPairsPerPlannedLiveProviderRequest": 10.047,
+    "additionalPaginationPolicy": "Only provider-declared totals beyond the first complete page may add requests; incomplete pagination cannot complete a pair."
+  },
+  "semanticAttestation": {
+    "absenceCreatedFromSilence": false,
+    "notDetectedCreatedFromSilence": false,
+    "notApplicableCreatedFromSilence": false,
+    "failureConvertedToNegative": false
+  }
+}
