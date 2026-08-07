@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260807-r51",
+  "observedAt": "2026-08-07T03:36:24.0391543Z",
+  "decision": "stop-heavy-acquisition-after-final-guard-failure",
+  "resourceFloor": {
+    "kind": "system-commit-pagefile-headroom-after-worker-allowance",
+    "requiredBytes": 3221225472,
+    "requiredMiB": 3072,
+    "workerAllowanceMiB": 1600,
+    "hardStop": true
+  },
+  "attemptedLeases": [
+    {
+      "jobId": "gbif-bulk-20260806-r50-dc-003",
+      "leaseId": "lease-gbif-bulk-20260806-r50-dc-003-1",
+      "resourceLimitMiB": 1600,
+      "preDispatchSample": {
+        "observedAt": "2026-08-07T03:19:10.7617169Z",
+        "commitHeadroomBytes": 5558054912,
+        "commitHeadroomMiB": 5300.57,
+        "projectedAfterWorkerMiB": 3700.57,
+        "result": "pass"
+      },
+      "firstFinalSample": {
+        "observedAt": "2026-08-07T03:28:41.9517843Z",
+        "commitLimitBytes": 59952906240,
+        "committedBytes": 54861950976,
+        "commitHeadroomBytes": 5090955264,
+        "commitHeadroomMiB": 4855.113,
+        "projectedAfterWorkerBytes": 3413233664,
+        "projectedAfterWorkerMiB": 3255.113,
+        "availablePhysicalBytes": 7669829632,
+        "availablePhysicalMiB": 7314.52,
+        "pagefileAllocatedMiB": 25274,
+        "pagefileCurrentUsageMiB": 1917,
+        "pagefilePeakUsageMiB": 9500,
+        "result": "pass"
+      },
+      "preProviderToolchainAttempt": {
+        "command": "npm.cmd run research:run -- --source gbif-preserved-specimens --state DC --candidate-file ops/national-research/plans/round-50-20260806/gbif-round50-dc-003.json --candidate-limit 17 --started-at 2026-08-07T01:30:03.000Z",
+        "result": "failed-before-adapter-start",
+        "error": "ERR_MODULE_NOT_FOUND: tsx",
+        "providerRequests": 0,
+        "retainedRun": false
+      },
+      "finalSample": {
+        "observedAt": "2026-08-07T03:36:10.2547122Z",
+        "commitLimitBytes": 59952906240,
+        "committedBytes": 56485752832,
+        "commitHeadroomBytes": 3467153408,
+        "commitHeadroomMiB": 3306.535,
+        "projectedAfterWorkerBytes": 1789431808,
+        "projectedAfterWorkerMiB": 1706.535,
+        "floorDeficitMiB": 1365.465,
+        "availablePhysicalBytes": 6152298496,
+        "availablePhysicalMiB": 5867.289,
+        "pageReadsPerSecond": 3,
+        "pageWritesPerSecond": 0,
+        "pagefileAllocatedMiB": 25274,
+        "pagefileCurrentUsageMiB": 1910,
+        "pagefilePeakUsageMiB": 9500,
+        "result": "fail"
+      },
+      "result": "pre-acquisition-resource-stop",
+      "providerRequests": 0,
+      "providerPages": 0,
+      "rawRecords": 0,
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "assertions": 0,
+      "reviews": 0,
+      "rejections": 0,
+      "outcomes": 0,
+      "retainedRun": false,
+      "workerCommits": 0,
+      "remainingPairs": 17,
+      "workerActiveTimeBelowFloorSeconds": 0,
+      "manualInterventions": 1
+    }
+  ],
+  "topology": {
+    "initialWorkers": 1,
+    "maximumSafeWorkersAtFinalGate": 0,
+    "plannedJobsRetained": 16,
+    "failedResourceSafeJobsThisInvocation": 1,
+    "cumulativeRound50ResourceStoppedJobs": 3
+  },
+  "semanticAttestation": {
+    "providerSilenceInferred": false,
+    "absenceCreated": false,
+    "notDetectedCreated": false,
+    "notApplicableCreated": false,
+    "researchedUnresolvedCreated": false
+  },
+  "reason": "The isolated DC-003 worker passed its pinned preflight and an initial just-in-time resource sample, but the local npm wrapper failed before adapter or provider access because the worktree had no resolvable tsx package. Before the corrected read-only cached-toolchain invocation, MAIN required a fresh sample. System commit headroom had fallen far enough that the projected reserve after the lease's 1600 MiB allowance was only 1706.535 MiB, below the non-negotiable 3072 MiB floor. The guard stopped before the direct adapter command, and no GBIF request, run path, evidence event, outcome, manifest, or worker commit was created."
+}
