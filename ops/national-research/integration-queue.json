@@ -21244,7 +21244,7 @@
       "queueId": "queue-lease-gbif-bulk-20260806-r50-hi-001-recovery1-1",
       "jobId": "gbif-bulk-20260806-r50-hi-001-recovery1",
       "leaseId": "lease-gbif-bulk-20260806-r50-hi-001-recovery1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-07T04:37:43.9998963Z",
       "manifestPath": "manifests/gbif-bulk-20260806-r50-hi-001-recovery1__lease-gbif-bulk-20260806-r50-hi-001-recovery1-1.json",
       "manifestHash": "904575891ea0ee308f7af4910a846caf2294df5238e4dffd05b56ad7e2d97929",
@@ -21339,6 +21339,47 @@
         "path": "receipts/reviews/queue-lease-gbif-bulk-20260806-r50-hi-001-recovery1-1.json",
         "sha256": "5b5e14e2c77ae10e7b4e12e2b7727d7ecbefb12b82f5032752f9fbbb15f4368a",
         "bytes": 9625
+      },
+      "integratedAt": "2026-08-07T04:41:12.0549437Z",
+      "integrator": "MAIN",
+      "integrationCommit": "296f4d8f68f2f45cea39322bb53074cc7d51b48c",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact Hawaii run, source, state, 125 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical committed output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, 57-path whitelist, complete pagination, count reconciliation, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "canonical main tree entries matched the exact reviewed Hawaii worker branch for all 57 changed paths",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed Hawaii GBIF content and manifest commits without conflict. Canonical tree parity confirmed all 57 worker files byte-identical, 125 complete outcomes, 110 accepted assertions and reviews, zero unsupported negative determinations, and no forbidden writes.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-bulk-20260806-r50-hi-001-recovery1-1.json",
+        "sha256": "e932615e6bb699ec4de17f6751988bb39a1ad388c59a70d539b0838f69e00d72",
+        "bytes": 9899
       }
     }
   ]
