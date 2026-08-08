@@ -86,17 +86,16 @@ for (const specification of specifications) {
     `Job already exists: ${specification.jobId}`,
   );
   const candidate = readJson(path.join(root, specification.candidateFile));
-  const pairs = candidate.candidates.map(
+  const candidatePairs = candidate.candidates.map(
     (entry: JsonRecord) => `${entry.countyFips}:${entry.speciesId}`,
   );
-  const taxa = [...new Set(candidate.candidates.map((entry: JsonRecord) => entry.speciesId as string))].sort();
-  assert(candidate.candidateCount === pairs.length && new Set(pairs).size === pairs.length, "Candidate scope is inconsistent.");
+  assert(candidate.candidateCount === candidatePairs.length && new Set(candidatePairs).size === candidatePairs.length, "Candidate scope is inconsistent.");
   const dryRunArguments = [
     "--import", "tsx", "scripts/research/run-source.ts",
     "--source", "gbif-preserved-specimens",
     "--state", specification.stateCode,
     "--candidate-file", specification.candidateFile,
-    "--candidate-limit", String(pairs.length),
+    "--candidate-limit", String(candidatePairs.length),
     "--started-at", specification.startedAt,
     "--output-root", "src/data/research/runs",
     ...(specification.archiveReplay ? [] : ["--gbif-taxonomy-cache", cachePath]),
@@ -111,7 +110,9 @@ for (const specification of specifications) {
     maxBuffer: 50 * 1024 * 1024,
   })) as JsonRecord;
   assert(dryRun.result === "pass" && dryRun.networkRequestsIssued === 0, "Semantic dry-run failed.");
-  assert(JSON.stringify([...dryRun.selectedPairKeys].sort()) === JSON.stringify([...pairs].sort()), "Dry-run pair scope changed.");
+  assert(JSON.stringify([...dryRun.selectedPairKeys].sort()) === JSON.stringify([...candidatePairs].sort()), "Dry-run pair membership changed.");
+  const pairs = dryRun.selectedPairKeys as string[];
+  const taxa = dryRun.selectedTaxa as string[];
   const template = templates.get(specification.stateCode)!;
   const branch = `codex/${specification.jobId}`;
   const worktree = `C:\\Code\\project-isitusa-worktrees\\${specification.jobId}`;

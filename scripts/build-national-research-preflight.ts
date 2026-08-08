@@ -33,10 +33,6 @@ function sha256(value: Buffer | string) {
   return createHash("sha256").update(value).digest("hex");
 }
 
-function sorted(values: string[]) {
-  return [...values].sort((left, right) => left < right ? -1 : left > right ? 1 : 0);
-}
-
 const args = process.argv.slice(2);
 const jobId = argument(args, "job-id");
 const workerRoot = path.resolve(argument(args, "worker-root"));
@@ -109,7 +105,8 @@ const dryRunText = execFileSync(nodePath, dryRunArguments, {
   maxBuffer: 50 * 1024 * 1024,
 });
 const dryRun = JSON.parse(dryRunText) as JsonRecord;
-const dryRunRelativePath = `ops/national-research/preflights/dry-runs/${jobId}.json`;
+const outputStem = path.basename(outputPath, path.extname(outputPath));
+const dryRunRelativePath = `ops/national-research/preflights/dry-runs/${outputStem}.json`;
 const dryRunPath = path.join(root, dryRunRelativePath);
 mkdirSync(path.dirname(dryRunPath), { recursive: true });
 const dryRunSerialized = `${JSON.stringify(dryRun, null, 2)}\n`;
@@ -122,12 +119,12 @@ assert(dryRun.baseSha === job.baseSha, "Dry-run base SHA differs from the job ba
 assert(dryRun.sourceId === job.stateOrSourceScope.sourceFamilies[0], "Dry-run source differs from the job source.");
 assert(dryRun.stateCode === job.stateOrSourceScope.states[0], "Dry-run state differs from the job state.");
 assert(
-  JSON.stringify(sorted(dryRun.selectedPairKeys)) === JSON.stringify(sorted(job.taxaOrPairScope.pairs)),
-  "Dry-run pair scope differs from the leased job scope.",
+  JSON.stringify(dryRun.selectedPairKeys) === JSON.stringify(job.taxaOrPairScope.pairs),
+  "Dry-run ordered pair scope differs from the leased job scope.",
 );
 assert(
-  JSON.stringify(sorted(dryRun.selectedTaxa)) === JSON.stringify(sorted(job.taxaOrPairScope.taxa)),
-  "Dry-run taxon scope differs from the leased job scope.",
+  JSON.stringify(dryRun.selectedTaxa) === JSON.stringify(job.taxaOrPairScope.taxa),
+  "Dry-run ordered taxon scope differs from the leased job scope.",
 );
 assert(dryRun.candidateFile.selectedPairCount === job.taxaOrPairScope.pairs.length, "Dry-run pair count differs from the job.");
 assert(dryRun.candidateLimit.value === contract.candidateLimit, "Dry-run candidate limit differs from the execution contract.");
