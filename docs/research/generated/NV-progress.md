@@ -10,17 +10,17 @@ Generated: `2026-08-08T00:00:00.000Z`
 - Verified present: `46`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1722`
-- Not researched: `40800`
+- Researched unresolved: `2045`
+- Not researched: `40477`
 - Determination coverage: `0.11%`
-- Research coverage: `4.15%`
-- Explicit outcome coverage: `4.1534%`
+- Research coverage: `4.91%`
+- Explicit outcome coverage: `4.9121%`
 - Applicable protocol cells: `76`
-- Current complete protocol cells: `43`
-- Protocol completion: `73.68%`
-- Current protocol completion: `56.58%`
+- Current complete protocol cells: `62`
+- Protocol completion: `98.68%`
+- Current protocol completion: `81.58%`
 - Evidence records: `367`
-- Research runs: `10`
+- Research runs: `11`
 - Rejection records: `126`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Capeweed (`arctotheca-calendula`) | plants | 17 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 17 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 17 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 17 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 17 | 0 | 1 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 17 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 17 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 17 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 17 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 17 | 0 | 1 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 17 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 17 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 17 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 17 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 17 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 17 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 17 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 17 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 17 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 17 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 17 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 17 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 17 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 17 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 17 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 17 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 17 | 1 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 17 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 17 | 1 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 17 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 17 | 1 |
+| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 17 | 0 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 17 | 0 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 17 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 0 | 17 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 17 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 17 | 0 |
+| Stinking Chamomile (`anthemis-cotula`) | plants | 0 | 17 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 17 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 17 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 17 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 17 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 17 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 17 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-04T20:27:23.236Z | 37 | 38 |
+| GBIF preserved specimen records | operational | 2026-08-08T19:35:35.748Z | 37 | 57 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

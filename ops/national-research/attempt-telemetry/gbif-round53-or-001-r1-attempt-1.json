@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "command": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round53-or-001-r1\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "OR",
+    "--candidate-file",
+    "ops/national-research/plans/round-53-20260808/gbif-round53-or-001.json",
+    "--candidate-limit",
+    "900",
+    "--started-at",
+    "2026-08-08T17:55:01.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260808-r53.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round53-or-001-r1\\attempt-telemetry.json"
+  ],
+  "startedAt": "2026-08-08T19:35:16.113Z",
+  "updatedAt": "2026-08-08T19:35:50.595Z",
+  "finishedAt": "2026-08-08T19:35:50.595Z",
+  "wallSeconds": 34.482,
+  "processId": 63508,
+  "peakObservedRssMb": 1434.203,
+  "requestCounts": {
+    "totalAttempts": 50,
+    "archiveReplayHits": 0,
+    "cachedTaxonomyHits": 24,
+    "liveProviderAttempts": 26,
+    "completedResponses": 50,
+    "failedAttempts": 0
+  },
+  "result": {
+    "directory": "src/data/research/runs/20260808T175501Z__gbif-preserved-specimens__1ebb3025b2b7",
+    "status": "complete",
+    "requested_pairs": 900,
+    "candidate_records": 236,
+    "assertion_events": 208,
+    "review_events": 208,
+    "rejection_records": 28,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 900
+  },
+  "error": null
+}

@@ -7,21 +7,21 @@ Generated: `2026-08-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `159`
+- Verified present: `211`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `893`
-- Not researched: `34004`
-- Determination coverage: `0.45%`
-- Research coverage: `3.00%`
-- Explicit outcome coverage: `3.0009%`
+- Researched unresolved: `1191`
+- Not researched: `33654`
+- Determination coverage: `0.60%`
+- Research coverage: `4.00%`
+- Explicit outcome coverage: `3.9993%`
 - Applicable protocol cells: `109`
-- Current complete protocol cells: `29`
-- Protocol completion: `38.53%`
-- Current protocol completion: `26.61%`
-- Evidence records: `162`
-- Research runs: `9`
-- Rejection records: `19`
+- Current complete protocol cells: `54`
+- Protocol completion: `61.47%`
+- Current protocol completion: `49.54%`
+- Evidence records: `437`
+- Research runs: `10`
+- Rejection records: `95`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Bishop's Goutweed (`aegopodium-podagraria`) | plants | 14 | 0 | 1 |
-| European Alder (`alnus-glutinosa`) | plants | 14 | 0 | 1 |
-| Flowering Rush (`butomus-umbellatus`) | plants | 14 | 0 | 1 |
-| Water Hyacinth (`eichhornia-crassipes`) | plants | 14 | 0 | 1 |
-| Winged Burning Bush (`euonymus-alatus`) | plants | 14 | 0 | 1 |
-| Cypress Spurge (`euphorbia-cyparissias`) | plants | 14 | 0 | 1 |
-| Japanese Hop (`humulus-japonicus`) | plants | 14 | 0 | 1 |
-| Common frogbit (`hydrocharis-morsus-ranae`) | plants | 14 | 0 | 1 |
-| Parrot Feather (`myriophyllum-aquaticum`) | plants | 14 | 0 | 1 |
-| Brittle Waternymph (`najas-minor`) | plants | 14 | 0 | 1 |
-| Yellow Floating Heart (`nymphoides-peltata`) | plants | 14 | 0 | 1 |
-| Mile-a-Minute Vine (`persicaria-perfoliata`) | plants | 14 | 0 | 1 |
-| Amur corktree (`phellodendron-amurense`) | plants | 14 | 0 | 1 |
-| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 14 | 0 | 1 |
-| Kudzu (`pueraria-montana`) | plants | 14 | 0 | 1 |
-| Callery Pear (`pyrus-calleryana`) | plants | 14 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 14 | 0 | 1 |
-| Wine Raspberry (`rubus-phoenicolasius`) | plants | 14 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 14 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 14 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 14 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 14 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 14 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 14 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 14 | 0 | 1 |
+| Panic liverseed grass (`urochloa-panicoides`) | plants | 14 | 0 | 1 |
+| Pale swallow-wort (`vincetoxicum-rossicum`) | plants | 14 | 0 | 1 |
+| Common Carp (`cyprinus-carpio`) | wildlife | 12 | 0 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 14 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 14 | 2 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 14 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 14 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 14 | 2 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 14 | 1 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 14 | 1 |
+| Japanese Honeysuckle (`lonicera-japonica`) | plants | 0 | 14 | 1 |
+| Amur Honeysuckle (`lonicera-maackii`) | plants | 0 | 14 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 14 | 1 |
+| Japanese Stiltgrass (`microstegium-vimineum`) | plants | 0 | 14 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 14 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 14 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 14 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 14 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 14 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 14 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 14 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 14 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 14 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 14 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-08T00:42:29.547Z | 3 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-08T19:35:51.257Z | 55 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

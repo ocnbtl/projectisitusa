@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-53-gbif-portfolio-20260808-r1",
+  "roundId": "round-53-20260808",
+  "evaluatedAt": "2026-08-08T19:33:59.000Z",
+  "result": "material-release-candidate",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "A material GBIF source-family milestone moved 1033 unique county-species pairs across Nevada, Oregon, and Vermont, added 72 verified-present pairs, closed 69 protocol cells, removed four certification blockers, and retained three reusable immutable statewide partitions."
+  },
+  "priorRoundAudit": {
+    "evaluationId": "round-52-gbif-portfolio-20260808-r1",
+    "pairsPlanned": 1950,
+    "pairsAttempted": 1950,
+    "pairsCompleted": 1950,
+    "finalMatrixPairsMoved": 1737,
+    "verifiedPresentMovement": 480,
+    "researchedUnresolvedMovement": 1257,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0,
+    "protocolCellsClosed": 75,
+    "certificationBlockersRemoved": 0,
+    "evidenceFoundPairsGross": 490,
+    "noQualifyingEvidencePairsGross": 1460,
+    "positiveYield": 0.25128205,
+    "liveProviderCalls": 116,
+    "occurrencePages": 81,
+    "liveTaxonomyCalls": 35,
+    "cachedTaxonomyHits": 40,
+    "preventedProviderRequests": 40,
+    "providerCandidatesGross": 5552,
+    "retainedArtifacts": 156,
+    "integratedArtifactBytes": 3180702,
+    "pairsPerLiveProviderCall": 16.810345,
+    "netUniquePairMovementPerLiveProviderCall": 14.974138,
+    "netUniquePairMovementPerWorkerHour": 61215.859,
+    "workerProcessWallSeconds": 102.15,
+    "workerHours": 0.028375,
+    "peakMemoryMb": 1483.309,
+    "providerRequestRetries": 0,
+    "workerRetries": 0,
+    "manualInterventions": 3,
+    "integrationLatencyAverageSeconds": 276.994,
+    "knownSequentialReleaseSeconds": 1857.259,
+    "expectedVersusActual": {
+      "expectedNetNewPairs": 1737,
+      "actualFinalMatrixMovement": 1737,
+      "expectedLiveProviderCalls": 110,
+      "actualLiveProviderCalls": 116,
+      "expectedEvidenceFoundPairRange": { "minimum": 20, "maximum": 140 },
+      "actualEvidenceFoundPairsGross": 490
+    },
+    "processLesson": "Bind attempt telemetry before lease issuance and provider access, reconcile every planned pair against the current final matrix, and reuse provenance-bound taxonomy identities across jurisdictions."
+  },
+  "baseline": {
+    "commit": "aac2cb7f83e34be52567c540b7b0bffa7b1eaa75",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54724,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 343386,
+      "notResearched": 7474458
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4819,
+      "incomplete": 14498,
+      "blocked": 59,
+      "current": 4208,
+      "stale": 611,
+      "undated": 14557
+    },
+    "ledger": {
+      "projectedEvidence": 181681,
+      "immutableAssertions": 151863,
+      "immutableReviews": 151863,
+      "rejections": 42094,
+      "uniqueExplicitOutcomePairs": 353020,
+      "rawOutcomes": 458219,
+      "stateSelectedRuns": 541,
+      "immutableRunDirectories": 526,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": { "blocked": 2, "cancelled": 21, "completed": 165, "failed": 56, "planned": 0 },
+      "leases": { "cancelled": 9, "completed": 169, "failed": 65, "recovered": 2 },
+      "integrations": { "changesRequested": 2, "integrated": 165, "rejected": 2 },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "recoveryAudit": {
+    "partialRun": "gbif-round53-nv-recovery-001",
+    "originalPairs": 425,
+    "verifiedCompletePairsRecovered": 323,
+    "incompletePairsExcluded": 102,
+    "verifiedProviderResponsesReplayed": 38,
+    "retainedArchiveArtifacts": 38,
+    "retainedArchiveBytes": 7248,
+    "newLiveProviderCalls": 0,
+    "action": "replayed-only-verified-complete-pages",
+    "qualification": "Six occurrence requests had returned HTTP 503 in the earlier partial run. The 102 pairs depending on those failed requests remain incomplete and were excluded; failure and source silence created no absence, non-detection, or other negative determination."
+  },
+  "planned": {
+    "jurisdictions": ["NV", "OR", "VT"],
+    "countySpeciesPairs": 1573,
+    "expectedNetNewPairs": 1033,
+    "jobs": 3,
+    "expectedLiveProviderRequests": 52,
+    "expectedPositivePairRange": { "minimum": 0, "maximum": 40 },
+    "expectedProtocolCellsClosed": 69,
+    "safeConcurrentWorkers": 3,
+    "resourceFloor": "At least 10 percent physical-memory headroom; a fourth worker was rejected by the measured floor."
+  },
+  "execution": {
+    "pairsPlanned": 1573,
+    "pairsAttempted": 1573,
+    "pairsCompleted": 1573,
+    "finalMatrixPairsMoved": 1033,
+    "grossCompletionRate": 1,
+    "netMovementRate": 0.656707,
+    "workerAttempts": 3,
+    "integratedRuns": 3,
+    "failedWorkerAttempts": 0,
+    "workerProcessWallSeconds": 90.24,
+    "workerHours": 0.0250667,
+    "concurrentWaveWallSeconds": 35.243,
+    "peakMemoryMb": 1438.137,
+    "workerResults": {
+      "NV": { "pairs": 323, "wallSeconds": 20.515, "peakMemoryMb": 1434.66 },
+      "OR": { "pairs": 900, "wallSeconds": 34.482, "peakMemoryMb": 1434.203 },
+      "VT": { "pairs": 350, "wallSeconds": 35.243, "peakMemoryMb": 1438.137 }
+    },
+    "retries": {
+      "providerRequestRetries": 0,
+      "workerRetries": 0,
+      "acquisitionRetries": 0,
+      "releaseDeployments": 0
+    },
+    "manualInterventions": {
+      "workerAcquisition": 0,
+      "orchestrationCorrections": 5,
+      "items": [
+        "Corrected an archive-response registrar that emitted a placeholder count before any lease or provider access, then reran the no-network semantic dry-run.",
+        "Reran an integration-review command with the canonical millisecond-normalized ISO timestamp after the first exact-time assertion rejected before mutation.",
+        "Reran readiness generation with the mandatory explicit --as-of argument after the first invocation rejected before writing bytes.",
+        "Copied attempt telemetry from ephemeral worker staging into MAIN-owned durable paths after the preservation audit found that the completed runs did not retain it.",
+        "Changed the focused projection-validation invocation after tsx failed in os.userInfo() with ENOMEM through the shared Windows dependency junction; a one-shot preload shim bypassed that lookup, all 51 projections passed, and the shim was removed without changing project source or dependencies."
+      ]
+    }
+  },
+  "acquisition": {
+    "evidenceFoundPairsGross": 103,
+    "noQualifyingEvidencePairsGross": 1470,
+    "positiveYield": 0.06548,
+    "liveProviderCalls": 52,
+    "healthProbeCallsExcluded": 1,
+    "occurrencePages": 50,
+    "liveTaxonomyCalls": 2,
+    "cachedTaxonomyHits": 48,
+    "archiveResponseHits": 38,
+    "preventedProviderRequests": 86,
+    "providerCandidatesGross": 587,
+    "acceptedAssertions": 483,
+    "acceptedReviews": 483,
+    "rejections": 104,
+    "candidateAcceptanceRate": 0.822828,
+    "retainedArtifacts": 138,
+    "integratedArtifactBytes": 356327,
+    "pairsPerLiveProviderCall": 30.25,
+    "netUniquePairMovementPerLiveProviderCall": 19.865385,
+    "netUniquePairMovementPerWorkerHour": 41210.106,
+    "taxonomyCache": {
+      "path": "src/data/research/caches/gbif-taxonomy-20260808-r53.json",
+      "sha256": "fa608db74e2e4a96bb375754141458f8b493a8e08ffb039986fe811c7a699a67",
+      "identities": 53
+    },
+    "requestTelemetry": {
+      "responseRecords": 138,
+      "liveResponses": 52,
+      "cacheResponses": 48,
+      "archiveResponses": 38,
+      "failedAttempts": 0,
+      "qualification": "All 1573 leased pairs received complete explicit outcomes. No-qualifying-evidence outcomes remained researched-unresolved and created no negative determination."
+    }
+  },
+  "attemptTelemetry": {
+    "durableRecords": [
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round53-nv-recovery-001-attempt-1.json",
+        "sha256": "64e9ea3204e44a12daa65823146176a29e5e74cfcc22b1cf5f4ea1a49c58415a",
+        "bytes": 1659
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round53-or-001-r1-attempt-1.json",
+        "sha256": "b9aa12d283f96e45a83591f73ec21fd329bf5c6b4845676714a043edb9de417b",
+        "bytes": 1566
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round53-vt-001-r1-attempt-1.json",
+        "sha256": "4e3bb411381520d30efbfaa94d0e9b33db368cd129271b917cdbd9bfa99dc905",
+        "bytes": 1565
+      }
+    ],
+    "clockQualification": "The Windows host wall clock was approximately one hour fast relative to the authoritative provider-native timestamps. Elapsed duration, request counts, and peak-memory telemetry remain internally valid; host absolute timestamps are not used as source-observation time."
+  },
+  "grossEventVolume": {
+    "rawOutcomes": 1573,
+    "assertions": 483,
+    "reviews": 483,
+    "rejections": 104,
+    "projectedEvidence": 483,
+    "qualification": "Gross event volume is reported separately from 1033 unique final-matrix pair movements."
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 1033,
+    "verifiedPresent": 72,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 961,
+    "notResearched": -1033,
+    "conflicts": 0,
+    "affectedStates": {
+      "NV": {
+        "plannedAndCompletedPairs": 323,
+        "uniquePairsMoved": 323,
+        "verifiedPresent": 0,
+        "researchedUnresolved": 323,
+        "notResearched": -323,
+        "projectedEvidence": 0,
+        "rejections": 0,
+        "uniqueExplicitOutcomePairs": 323,
+        "immutableRuns": 1
+      },
+      "OR": {
+        "plannedAndCompletedPairs": 900,
+        "uniquePairsMoved": 360,
+        "verifiedPresent": 20,
+        "researchedUnresolved": 340,
+        "notResearched": -360,
+        "projectedEvidence": 208,
+        "rejections": 28,
+        "uniqueExplicitOutcomePairs": 360,
+        "immutableRuns": 1,
+        "overlapQualification": "The deterministic statewide partition completed 540 already-researched pairs; they remain valid explicit outcomes but are excluded from net movement."
+      },
+      "VT": {
+        "plannedAndCompletedPairs": 350,
+        "uniquePairsMoved": 350,
+        "verifiedPresent": 52,
+        "researchedUnresolved": 298,
+        "notResearched": -350,
+        "projectedEvidence": 275,
+        "rejections": 76,
+        "uniqueExplicitOutcomePairs": 350,
+        "immutableRuns": 1
+      }
+    }
+  },
+  "stateBaselinesAndFinals": {
+    "NV": {
+      "denominator": 42568,
+      "baseline": { "verifiedPresent": 46, "verifiedAbsent": 0, "notDetected": 0, "researchedUnresolved": 1722, "notResearched": 40800 },
+      "final": { "verifiedPresent": 46, "verifiedAbsent": 0, "notDetected": 0, "researchedUnresolved": 2045, "notResearched": 40477 },
+      "stateSpecies": { "applicable": 58, "notApplicable": 0, "unresolved": 2446, "researchedUnresolved": 65, "blocked": 0, "notResearched": 2381 },
+      "protocolBaseline": { "total": 369, "applicable": 76, "notApplicable": 293, "complete": 56, "incomplete": 20, "blocked": 0, "current": 43, "stale": 13, "undated": 20 },
+      "protocolFinal": { "total": 369, "applicable": 76, "notApplicable": 293, "complete": 75, "incomplete": 1, "blocked": 0, "current": 62, "stale": 13, "undated": 1 }
+    },
+    "OR": {
+      "denominator": 90144,
+      "baseline": { "verifiedPresent": 84, "verifiedAbsent": 0, "notDetected": 0, "researchedUnresolved": 1464, "notResearched": 88596 },
+      "final": { "verifiedPresent": 104, "verifiedAbsent": 0, "notDetected": 0, "researchedUnresolved": 1804, "notResearched": 88236 },
+      "stateSpecies": { "applicable": 53, "notApplicable": 0, "unresolved": 2451, "researchedUnresolved": 0, "blocked": 38, "notResearched": 2413 },
+      "protocolBaseline": { "total": 273, "applicable": 71, "notApplicable": 202, "complete": 43, "incomplete": 28, "blocked": 0, "current": 30, "stale": 13, "undated": 28 },
+      "protocolFinal": { "total": 273, "applicable": 71, "notApplicable": 202, "complete": 68, "incomplete": 3, "blocked": 0, "current": 55, "stale": 13, "undated": 3 }
+    },
+    "VT": {
+      "denominator": 35056,
+      "baseline": { "verifiedPresent": 159, "verifiedAbsent": 0, "notDetected": 0, "researchedUnresolved": 893, "notResearched": 34004 },
+      "final": { "verifiedPresent": 211, "verifiedAbsent": 0, "notDetected": 0, "researchedUnresolved": 1191, "notResearched": 33654 },
+      "stateSpecies": { "applicable": 91, "notApplicable": 0, "unresolved": 2413, "researchedUnresolved": 12, "blocked": 0, "notResearched": 2401 },
+      "protocolBaseline": { "total": 309, "applicable": 109, "notApplicable": 200, "complete": 42, "incomplete": 66, "blocked": 1, "current": 29, "stale": 13, "undated": 67 },
+      "protocolFinal": { "total": 309, "applicable": 109, "notApplicable": 200, "complete": 67, "incomplete": 41, "blocked": 1, "current": 54, "stale": 13, "undated": 42 }
+    }
+  },
+  "applicabilityAndDenominatorMovement": {
+    "stateSpeciesApplicable": 0,
+    "stateSpeciesNotApplicable": 0,
+    "stateSpeciesUnresolved": 0,
+    "countySpeciesDenominator": 0,
+    "qualification": "No applicability or denominator change is counted as county research movement in this round."
+  },
+  "protocolClosure": {
+    "totalCells": 0,
+    "complete": 69,
+    "incomplete": -69,
+    "blocked": 0,
+    "current": 69,
+    "stale": 0,
+    "undated": -69
+  },
+  "certificationMovement": {
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "blockersRemoved": 4,
+    "byState": {
+      "NV": ["applicableProtocolCellsAtLeast90", "regulatedAndHighPriorityComplete"],
+      "OR": ["applicableProtocolCellsAtLeast90", "regulatedAndHighPriorityComplete"],
+      "VT": []
+    },
+    "qualification": "Nevada and Oregon each crossed the two protocol-derived readiness gates. Vermont gained protocol coverage but remains below both thresholds."
+  },
+  "final": {
+    "contentCommit": null,
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54796,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 344347,
+      "notResearched": 7473425
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4888,
+      "incomplete": 14429,
+      "blocked": 59,
+      "current": 4277,
+      "stale": 611,
+      "undated": 14488
+    },
+    "ledger": {
+      "projectedEvidence": 182164,
+      "immutableAssertions": 152346,
+      "immutableReviews": 152346,
+      "rejections": 42198,
+      "uniqueExplicitOutcomePairs": 354053,
+      "rawOutcomes": 459792,
+      "stateSelectedRuns": 544,
+      "immutableRunDirectories": 529,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": { "blocked": 2, "cancelled": 21, "completed": 168, "failed": 56, "planned": 0 },
+      "leases": { "cancelled": 9, "completed": 172, "failed": 65, "recovered": 2 },
+      "integrations": { "changesRequested": 2, "integrated": 168, "rejected": 2 },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "certificationBlockersRemoved": 4
+  },
+  "expectedVersusActual": {
+    "plannedPairs": 1573,
+    "expectedNetNewPairs": 1033,
+    "actualCompletedPairs": 1573,
+    "actualFinalMatrixMovement": 1033,
+    "expectedLiveProviderCalls": 52,
+    "actualLiveProviderCalls": 52,
+    "providerCallVariance": 0,
+    "expectedEvidenceFoundPairRange": { "minimum": 0, "maximum": 40 },
+    "actualEvidenceFoundPairsGross": 103,
+    "positiveAboveExpectedMaximum": 63,
+    "actualNoQualifyingEvidencePairsGross": 1470,
+    "expectedProtocolCellsClosed": 69,
+    "actualProtocolCellsClosed": 69,
+    "pairMovementAchievementRate": 1,
+    "qualification": "Net movement, provider-call volume, and protocol closure matched semantic preflight exactly. Positive yield exceeded the historical maximum estimate by 63 pairs; that miss is retained rather than revised after the fact."
+  },
+  "integrationLatency": {
+    "secondsByRun": { "NV": 224, "OR": 294, "VT": 318 },
+    "averageSeconds": 278.667,
+    "maximumSeconds": 318,
+    "sequentialWaveWallSeconds": 320
+  },
+  "releaseOverhead": {
+    "explicitAsOf": "2026-08-08",
+    "allStateCompilationSeconds": 371.72,
+    "prepareDataSeconds": 29.167,
+    "readinessGenerationSeconds": 0.557,
+    "allStateByteStabilitySeconds": 750.894,
+    "dataAndResearchIntegritySeconds": 395.651,
+    "projectionConfigAndWhitespaceValidationSeconds": 30.777,
+    "typecheckSeconds": 2.493,
+    "lintSeconds": 3.548,
+    "localProductionBuildSeconds": 24.138,
+    "localBrowserQaSeconds": 160.215,
+    "rejectedReadinessInvocationSeconds": 0.312,
+    "focusedFinalValidationSeconds": 34.7,
+    "knownLocalSequentialSeconds": 1804.172,
+    "pushSeconds": null,
+    "deploymentSeconds": null,
+    "productionQaSeconds": null,
+    "qualification": "Known local generation, validation, build, and browser-QA time is retained. External push, deployment, production QA, and external receipt values remain pending and will be recorded only after observation of the content commit."
+  },
+  "externalVerification": {
+    "status": "pending",
+    "contentCommit": null,
+    "githubMainSha": null,
+    "githubDeploymentId": null,
+    "vercelDeploymentId": null,
+    "deploymentState": null,
+    "routeChecksPassed": 0,
+    "byteParityChecksPassed": 0,
+    "browserConsoleErrors": null,
+    "browserConsoleWarnings": null,
+    "mobileHorizontalOverflow": null,
+    "qualification": "This content-side evaluation does not attest to its own future deployment. A later receipt commit may record the already-observed deployment of this content commit without creating another receipt loop."
+  },
+  "processLesson": {
+    "lesson": "Attempt telemetry must be both captured before staging and copied into a durable MAIN-owned path before worker staging is retired; semantic preflight must also register real archive-response counts rather than placeholders.",
+    "applied": [
+      "All three exact commands bound the attempt-telemetry wrapper before lease issuance and provider access.",
+      "The Nevada recovery replayed 38 verified archive responses and excluded 102 failed-page pairs instead of reacquiring or converting failure into a negative claim.",
+      "Oregon and Vermont reused 48 provenance-bound taxonomy identities and Nevada reused 38 verified responses, preventing 86 provider requests.",
+      "The archive-response registrar was corrected and dry-run again before lease issuance when its placeholder count contradicted the candidate archive.",
+      "The three attempt records were promoted from worker staging into durable immutable operations paths before release.",
+      "The projection gate changed its dependency invocation after a Windows os.userInfo ENOMEM failure and then validated all 51 state projections without repeating the failing command shape."
+    ]
+  },
+  "remainingWork": {
+    "plannedJobs": 0,
+    "historicalBlockedJobs": 2,
+    "historicalFailedJobs": 56,
+    "unknownStateSpeciesApplicability": 122640,
+    "researchBlockedStateSpecies": 54,
+    "blockedProtocolCells": 59,
+    "staleProtocolCells": 611,
+    "undatedProtocolCells": 14488,
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "nextRankedSourcePortfolio": [
+    {
+      "rank": 1,
+      "workClass": "state-specific-gbif-with-national-cache-reuse",
+      "state": "ND",
+      "plannedPairs": 1325,
+      "expectedNetNewPairs": 424,
+      "historicalPositiveYield": 0,
+      "reason": "Largest verified remaining net scope and lower structural retry risk than Montana. It must receive a fresh exact cache search and semantic preflight before lease issuance."
+    },
+    {
+      "rank": 2,
+      "workClass": "structural-recovery-before-state-gbif",
+      "state": "MT",
+      "plannedPairs": 1400,
+      "expectedNetNewPairs": 336,
+      "historicalPositiveYield": 0,
+      "reason": "Meaningful movement remains, but prior memory pressure makes smaller taxon chunks, per-taxon child processes, streaming parsing, or verified cache recovery a prerequisite."
+    },
+    {
+      "rank": 3,
+      "workClass": "alphabetical-certification-and-applicability",
+      "state": "AL",
+      "reason": "Certification remains at zero and 122640 state-species applicability decisions remain unresolved. This work outranks additional low-yield tail acquisition when it can close authoritative scope, full-catalog accounting, source-family, or applicability blockers, but it requires source-specific review rather than extrapolation from GBIF throughput."
+    }
+  ],
+  "completionForecastByWorkClass": {
+    "automatedNationalAcquisition": {
+      "measuredRound53NetPairsPerWorkerHour": 41210.106,
+      "measuredConcurrentWaveSeconds": 35.243,
+      "northDakotaExpectedNetNewPairs": 424,
+      "qualification": "The measured rate is isolated worker time for this exact GBIF topology. It excludes preflight, review, integration, generation, release, and source-specific uncertainty and is not an end-to-end completion date."
+    },
+    "stateSpecificResearch": {
+      "forecast": null,
+      "qualification": "Each jurisdiction requires current source registration, overlap analysis, pagination, taxonomy, geography, and review-cost measurements; no blended rate is defensible."
+    },
+    "applicabilityReview": {
+      "unknownStateSpeciesDecisions": 122640,
+      "forecast": null,
+      "qualification": "Applicability is a separate evidence class and Round 53 measured no applicability-review rate."
+    },
+    "blockedExceptions": {
+      "researchBlockedStateSpecies": 54,
+      "blockedProtocolCells": 59,
+      "montanaStructuralRecoveryRequired": true,
+      "forecast": null,
+      "qualification": "These require exact source, taxonomy, or job-shape resolution and cannot be extrapolated from successful automated acquisition."
+    },
+    "freshnessWork": {
+      "staleProtocolCells": 611,
+      "undatedProtocolCells": 14488,
+      "forecast": null,
+      "qualification": "This round closed current source-family cells but did not measure a general freshness-remediation rate."
+    },
+    "releaseOverhead": {
+      "measuredLocalPrePushSeconds": 1804.172,
+      "priorRoundMeasuredPushSeconds": 11.323,
+      "priorRoundMeasuredDeploymentSeconds": 209.385,
+      "qualification": "Round 53 local overhead is measured. Round 52 push and deployment durations are historical comparators, not a promise; Round 53 external overhead will be added after observation."
+    }
+  },
+  "semanticAttestation": {
+    "absenceCreatedFromSilence": false,
+    "notDetectedCreatedFromSilence": false,
+    "notApplicableCreatedFromSilence": false,
+    "failureConvertedToNegative": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}

@@ -7,21 +7,21 @@ Generated: `2026-08-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `84`
+- Verified present: `104`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1464`
-- Not researched: `88596`
-- Determination coverage: `0.09%`
-- Research coverage: `1.72%`
-- Explicit outcome coverage: `1.7173%`
+- Researched unresolved: `1804`
+- Not researched: `88236`
+- Determination coverage: `0.12%`
+- Research coverage: `2.12%`
+- Explicit outcome coverage: `2.1166%`
 - Applicable protocol cells: `71`
-- Current complete protocol cells: `30`
-- Protocol completion: `60.56%`
-- Current protocol completion: `42.25%`
-- Evidence records: `102`
-- Research runs: `8`
-- Rejection records: `93`
+- Current complete protocol cells: `55`
+- Protocol completion: `95.77%`
+- Current protocol completion: `77.46%`
+- Evidence records: `310`
+- Research runs: `9`
+- Rejection records: `121`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,16 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Ducklettuce (`ottelia-alismoides`) | plants | 36 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 36 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 36 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 36 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 36 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 36 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 36 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 36 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 36 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 36 | 0 | 1 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 36 | 0 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 36 | 0 | 0 |
 | Slender false brome (`brachypodium-sylvaticum`) | plants | 36 | 0 | 0 |
@@ -57,6 +47,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Canada Thistle (`cirsium-arvense`) | plants | 36 | 0 | 0 |
 | Bull Thistle (`cirsium-vulgare`) | plants | 36 | 0 | 0 |
 | Evergreen clematis (`clematis-vitalba`) | plants | 36 | 0 | 0 |
+| Common Houndstongue (`cynoglossum-officinale`) | plants | 36 | 0 | 0 |
+| Scotch broom (`cytisus-scoparius`) | plants | 36 | 0 | 0 |
+| French broom (`genista-monspessulana`) | plants | 36 | 0 | 0 |
+| English Ivy (`hedera-helix`) | plants | 36 | 0 | 0 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 36 | 0 | 0 |
+| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 36 | 0 | 0 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 36 | 0 | 0 |
+| Common St. John's Wort (`hypericum-perforatum`) | plants | 36 | 0 | 0 |
+| English holly (`ilex-aquifolium`) | plants | 36 | 0 | 0 |
+| Himalayan Balsam (`impatiens-glandulifera`) | plants | 36 | 0 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-04T08:26:29.665Z | 10 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-08T19:35:50.416Z | 61 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
