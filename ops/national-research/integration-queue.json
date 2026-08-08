@@ -22088,7 +22088,7 @@
       "queueId": "queue-lease-gbif-round52-wa-001-r1-1",
       "jobId": "gbif-round52-wa-001-r1",
       "leaseId": "lease-gbif-round52-wa-001-r1-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-08T03:06:45.119Z",
       "manifestPath": "manifests/gbif-round52-wa-001-r1__lease-gbif-round52-wa-001-r1-1.json",
       "manifestHash": "bf811499c22e8a1f19d38c4863bb3f84dddd69c3fc538eeb02c5f9dc2b14dfc8",
@@ -22183,6 +22183,42 @@
         "path": "receipts/reviews/queue-lease-gbif-round52-wa-001-r1-1.json",
         "sha256": "efb57b6d2c3690768f79738ae35b4a2cfebee4cc812f75f52ee16063ea8e8448",
         "bytes": 9534
+      },
+      "integratedAt": "2026-08-08T03:08:56.885Z",
+      "integrator": "MAIN",
+      "integrationCommit": "32dad9719a4f54a337618b8b854a08d5b9a1cb44",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 975 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 975 complete county outcomes, 944 accepted assertions and reviews, 143 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-round52-wa-001-r1-1.json",
+        "sha256": "9bd51b1175ec2e3f15e85068d0cf400b23d4e7eb173b4bb2834e40658d650ce6",
+        "bytes": 9703
       }
     },
     {
