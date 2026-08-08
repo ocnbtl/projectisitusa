@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { execFileSync, spawnSync } from "node:child_process";
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import stateRegistry from "@/data/research/state-registry.json";
@@ -88,6 +88,54 @@ assert(
 );
 const expiresAt = new Date(valueFor(args, "expires-at")).toISOString();
 const now = new Date(valueFor(args, "now")).toISOString();
+const roundId = valueFor(args, "round-id");
+assert(
+  /^[a-z0-9][a-z0-9-]*$/.test(roundId),
+  "--round-id must be a lowercase stable identifier.",
+);
+const nodePath = path.resolve(valueFor(args, "node-path"));
+assert(existsSync(nodePath), `Pinned Node executable does not exist: ${nodePath}.`);
+const nodeVersion = execFileSync(nodePath, ["--version"], {
+  encoding: "utf8",
+}).trim();
+const npmCache = path.resolve(valueFor(args, "npm-cache"));
+assert(existsSync(npmCache), `Pinned npm cache does not exist: ${npmCache}.`);
+const telemetryRoot = path.resolve(valueFor(args, "telemetry-root"));
+assert(
+  !telemetryRoot.startsWith(`${ROOT}${path.sep}`),
+  "Attempt telemetry staging must remain outside the canonical repository.",
+);
+const taxonomyCacheValues = valuesFor(args, "taxonomy-cache");
+assert(
+  taxonomyCacheValues.length <= 1,
+  "At most one --taxonomy-cache may be provided.",
+);
+const taxonomyCachePath = taxonomyCacheValues[0]
+  ? path.resolve(ROOT, taxonomyCacheValues[0])
+  : null;
+if (taxonomyCachePath) {
+  assert(
+    taxonomyCachePath.startsWith(`${ROOT}${path.sep}`),
+    "The taxonomy cache must remain inside the repository.",
+  );
+}
+const taxonomyCache = taxonomyCachePath
+  ? JSON.parse(readFileSync(taxonomyCachePath, "utf8")) as {
+      sourceId: string;
+      compatibleAdapterVersions: string[];
+      entries: Array<{ speciesId: string }>;
+    }
+  : null;
+if (taxonomyCachePath) {
+  assert(
+    taxonomyCache?.sourceId === SOURCE_ID &&
+      taxonomyCache.compatibleAdapterVersions.includes("1.3.1"),
+    "The taxonomy cache is not compatible with the registered GBIF adapter.",
+  );
+}
+const cachedSpecies = new Set(
+  taxonomyCache?.entries.map((entry) => entry.speciesId) ?? [],
+);
 const maxMemoryValues = valuesFor(args, "max-memory-mb");
 assert(
   maxMemoryValues.length <= 1,
@@ -119,6 +167,8 @@ const newJobs = entries.map((serializedEntry) => {
     startedAtInput,
     priorityInput,
     candidateBatchIdInput,
+    positiveMinimumInput,
+    positiveMaximumInput,
   ] =
     serializedEntry.split(",");
   const stateCode = stateCodeInput?.toUpperCase() ?? "";
@@ -135,6 +185,15 @@ const newJobs = entries.map((serializedEntry) => {
   );
   const priority = Number(priorityInput);
   assert(Number.isInteger(priority), `Priority for ${batchId} must be an integer.`);
+  const positiveMinimum = Number(positiveMinimumInput);
+  const positiveMaximum = Number(positiveMaximumInput);
+  assert(
+    Number.isInteger(positiveMinimum) &&
+      Number.isInteger(positiveMaximum) &&
+      positiveMinimum >= 0 &&
+      positiveMaximum >= positiveMinimum,
+    `${batchId} requires an integer expected positive-pair range.`,
+  );
   assert(
     !jobs.jobs.some((job) => job.jobId === batchId),
     `Job ${batchId} already exists.`,
@@ -192,6 +251,26 @@ const newJobs = entries.map((serializedEntry) => {
   const branch = `codex/${batchId}`;
   const worktree = `C:\\Code\\project-isitusa-worktrees\\${batchId}`;
   const runPath = `src/data/research/runs/${runId}`;
+  const selectedCachedTaxonomyResponses = taxa.filter((speciesId) =>
+    cachedSpecies.has(speciesId)
+  ).length;
+  const liveTaxonomyRequests = archiveReplay
+    ? 0
+    : taxa.length - selectedCachedTaxonomyResponses;
+  const plannedLiveInitialOccurrenceRequests = archiveReplay ? 0 : taxa.length;
+  const providerNetworkRequests =
+    liveTaxonomyRequests + plannedLiveInitialOccurrenceRequests;
+  assert(
+    positiveMaximum <= pairs.length,
+    `${batchId} expected positive maximum exceeds its pair scope.`,
+  );
+  const candidateFile = path
+    .relative(ROOT, candidatePath)
+    .split(path.sep)
+    .join("/");
+  const taxonomyCacheRelativePath = taxonomyCachePath
+    ? path.relative(ROOT, taxonomyCachePath).split(path.sep).join("/")
+    : null;
 
   return {
     jobId: batchId,
@@ -268,6 +347,50 @@ const newJobs = entries.map((serializedEntry) => {
       maxArtifactBytes: 20_000_000,
       maxWallMinutes: 60,
       maxMemoryMb,
+    },
+    executionContract: {
+      schemaVersion: 1,
+      roundId,
+      portfolioRank: priority,
+      candidateFile,
+      candidateLimit: pairs.length,
+      candidateLimitMeaning:
+        "maximum county-species candidate-pair count, not a taxon count",
+      startedAt,
+      outputRoot: "src/data/research/runs",
+      taxonomyCache: archiveReplay ? null : taxonomyCacheRelativePath,
+      attemptTelemetryPath: path.join(
+        telemetryRoot,
+        batchId,
+        "attempt-telemetry.json",
+      ),
+      expectedProviderRequests: {
+        cachedTaxonomyResponses: archiveReplay
+          ? 0
+          : selectedCachedTaxonomyResponses,
+        archiveReplayResponses: archiveReplay ? "derived-by-semantic-dry-run" : 0,
+        liveTaxonomyRequests,
+        plannedLiveInitialOccurrenceRequests,
+        providerNetworkRequests,
+        additionalOccurrencePages: archiveReplay
+          ? 0
+          : "only when a provider-declared total exceeds the first complete page",
+      },
+      expectedPositivePairRange: {
+        minimum: positiveMinimum,
+        maximum: positiveMaximum,
+        meaning:
+          "expected completed outcome pairs with at least one final publication-eligible assertion",
+      },
+      ...(archiveReplay ? { archiveReplay } : {}),
+      dependencyResolution: {
+        nodePath,
+        nodeVersion,
+        packageRoot: path.join(ROOT, "node_modules"),
+        strategy:
+          "lease worktree node_modules junction to the canonical verified dependency tree",
+        npmCache,
+      },
     },
     expiresAt,
     recoveryState:
