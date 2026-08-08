@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-53-portfolio-preflight-20260808-r1",
+  "roundId": "round-53-20260808",
+  "evaluatedAt": "2026-08-08T18:10:14.000Z",
+  "result": "portfolio-selected-no-provider-contact",
+  "exactBaseSha": "aac2cb7f83e34be52567c540b7b0bffa7b1eaa75",
+  "baseline": {
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54724,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 343386,
+      "notResearched": 7474458
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4819,
+      "incomplete": 14498,
+      "blocked": 59,
+      "current": 4208,
+      "stale": 611,
+      "undated": 14557
+    },
+    "ledger": {
+      "projectedEvidence": 181681,
+      "immutableAssertions": 151863,
+      "immutableReviews": 151863,
+      "rejections": 42094,
+      "uniqueExplicitOutcomePairs": 353020,
+      "rawOutcomes": 458219,
+      "stateSelectedRuns": 541,
+      "immutableRunDirectories": 526,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": {
+        "blocked": 2,
+        "cancelled": 21,
+        "completed": 165,
+        "failed": 56,
+        "planned": 0
+      },
+      "leases": {
+        "cancelled": 9,
+        "completed": 169,
+        "failed": 65,
+        "recovered": 2
+      },
+      "integrations": {
+        "changesRequested": 2,
+        "integrated": 165,
+        "rejected": 2
+      },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "registryTruth": {
+    "jurisdictions": 56,
+    "nationalV1Jurisdictions": 51,
+    "activeCountyEquivalentInventory": 3235,
+    "retiredCountyEquivalentInventory": 9,
+    "nationalV1ActiveCountyEquivalents": 3144,
+    "registeredSources": 29,
+    "operationalSources": 26,
+    "researchProtocols": 3,
+    "qualification": "The national compiler correctly uses 51 jurisdictions and 3144 active county equivalents. The broader registry retains 3235 active and 9 retired entries, including jurisdictions outside national V1; these are separate inventories, not a denominator contradiction."
+  },
+  "previousRoundAudit": {
+    "source": "ops/national-research/evaluations/round-52-gbif-portfolio-20260808-r1.json",
+    "pairsPlanned": 1950,
+    "pairsAttempted": 1950,
+    "pairsCompleted": 1950,
+    "finalMatrixPairsMoved": 1737,
+    "verifiedPresentMovement": 480,
+    "researchedUnresolvedMovement": 1257,
+    "notResearchedMovement": -1737,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0,
+    "protocolCompleteMovement": 75,
+    "certificationBlockersRemoved": 0,
+    "liveProviderCalls": 116,
+    "occurrencePages": 81,
+    "liveTaxonomyCalls": 35,
+    "cachedTaxonomyHits": 40,
+    "providerCandidatesGross": 5552,
+    "retainedArtifacts": 156,
+    "integratedArtifactBytes": 3180702,
+    "workerProcessWallSeconds": 102.15,
+    "workerHours": 0.028375,
+    "peakMemoryMiB": 1483.309,
+    "providerRetries": 0,
+    "workerRetries": 0,
+    "manualInterventions": 3,
+    "preventedProviderRequests": 40,
+    "averageIntegrationLatencySeconds": 276.994,
+    "knownSequentialReleaseSeconds": 1857.259,
+    "netUniquePairMovementPerProviderCall": 14.974138,
+    "netUniquePairMovementPerWorkerHour": 61215.859,
+    "expectedVersusActual": {
+      "expectedNetNewPairs": 1737,
+      "actualFinalMatrixMovement": 1737,
+      "expectedInitialProviderCalls": 110,
+      "actualProviderCalls": 116,
+      "expectedPositivePairRange": {
+        "minimum": 20,
+        "maximum": 140
+      },
+      "actualPositivePairs": 490
+    }
+  },
+  "recoveryAudit": {
+    "registeredWorktreesSearched": 95,
+    "canonicalRunDirectories": 526,
+    "extraRunDirectories": 11,
+    "exactSelectedStateTaxonMatches": 1,
+    "recoveredRun": {
+      "state": "NV",
+      "branch": "codex/gbif-bulk-20260804-r47-nv-001",
+      "archiveCommit": "5f50485ab57b778c7f55ecbcdeb02adbef064b80",
+      "runId": "20260804T182931Z__gbif-preserved-specimens__54b7a81ae4ad",
+      "receiptStatus": "partial",
+      "originalPairs": 425,
+      "completePairs": 323,
+      "incompletePairs": 102,
+      "successfulRequests": 44,
+      "failedRequests": 6,
+      "selectedCompleteTaxa": 19,
+      "selectedCompletePairs": 323,
+      "selectedVerifiedRequests": 38,
+      "selectedArtifacts": 38,
+      "selectedArtifactBytes": 7248,
+      "selectedEvidenceFoundPairs": 0,
+      "selectedNoQualifyingEvidencePairs": 323
+    },
+    "action": "replay-complete-pages-only",
+    "qualification": "The 323 complete Nevada outcomes exactly equal the current ordered Nevada candidate scope. The six failed occurrence queries and their 102 needs-followup outcomes remain incomplete and are excluded from replay; failure and source silence create no negative determination."
+  },
+  "currentNationalPortfolioRanking": [
+    {
+      "rank": 1,
+      "state": "NV",
+      "plannedPairs": 323,
+      "expectedNetNewPairs": 323,
+      "liveProviderRequests": 0,
+      "archiveReplayResponses": 38,
+      "historicalPositiveYield": 0,
+      "selectionReason": "Exact hash-verified archive replay moves the full current scope with zero live provider calls."
+    },
+    {
+      "rank": 2,
+      "state": "OR",
+      "plannedPairs": 900,
+      "expectedNetNewPairs": 360,
+      "liveProviderRequests": 26,
+      "cachedTaxonomyResponses": 24,
+      "historicalPositiveYield": 0.011111,
+      "selectionReason": "Best remaining positive-yield movement after archive recovery, with 24 of 25 taxonomy identities reusable."
+    },
+    {
+      "rank": 3,
+      "state": "VT",
+      "plannedPairs": 350,
+      "expectedNetNewPairs": 350,
+      "liveProviderRequests": 26,
+      "cachedTaxonomyResponses": 24,
+      "historicalPositiveYield": 0.008571,
+      "selectionReason": "Near-total net movement, low request cost, and 24 of 25 taxonomy identities reusable."
+    },
+    {
+      "rank": 4,
+      "state": "ND",
+      "plannedPairs": 1325,
+      "expectedNetNewPairs": 424,
+      "historicalPositiveYield": 0,
+      "selectionReason": "Seventy-four more net pairs than Vermont would require 975 additional completed outcomes with measured zero positive yield."
+    },
+    {
+      "rank": 5,
+      "state": "MT",
+      "plannedPairs": 1400,
+      "expectedNetNewPairs": 336,
+      "historicalPositiveYield": 0,
+      "selectionReason": "Prior structural memory failure requires a changed per-taxon or streaming job shape before another lease."
+    }
+  ],
+  "selectedPortfolio": {
+    "states": [
+      "NV",
+      "OR",
+      "VT"
+    ],
+    "plannedPairs": 1573,
+    "expectedNetNewPairs": 1033,
+    "expectedApplicabilityMovement": 0,
+    "expectedDenominatorMovement": 0,
+    "expectedProtocolCellsCompleted": 69,
+    "expectedPositivePairRange": {
+      "minimum": 0,
+      "maximum": 40
+    },
+    "liveProviderRequestsBeforePagination": 52,
+    "archiveReplayResponses": 38,
+    "taxonomyCacheJobHits": 48,
+    "providerRequestsPreventedByReuse": 86,
+    "plans": [
+      {
+        "state": "NV",
+        "path": "ops/national-research/plans/round-53-20260808/gbif-round53-recovery-plan.json",
+        "candidatePath": "ops/national-research/plans/round-53-20260808/gbif-round53-recovery-nv-001.json",
+        "candidateSha256": "43af14158d248cc422d74da27232b9cd0443c3efb7cfe215c7040a737a45bcdb",
+        "taxa": 19,
+        "pairs": 323,
+        "expectedNetNewPairs": 323,
+        "liveProviderRequests": 0
+      },
+      {
+        "state": "OR",
+        "path": "ops/national-research/plans/round-53-20260808/gbif-round53-or-plan.json",
+        "candidatePath": "ops/national-research/plans/round-53-20260808/gbif-round53-or-001.json",
+        "candidateSha256": "237bf4d3a6cb4fdb3011d2b87688f737176c348c022ebda32a699c1fdaeea2c4",
+        "taxa": 25,
+        "pairs": 900,
+        "expectedNetNewPairs": 360,
+        "liveProviderRequests": 26
+      },
+      {
+        "state": "VT",
+        "path": "ops/national-research/plans/round-53-20260808/gbif-round53-vt-plan.json",
+        "candidatePath": "ops/national-research/plans/round-53-20260808/gbif-round53-vt-001.json",
+        "candidateSha256": "80717c1bbd6f656c024e1d804bd1c021d3fceef04c70e95b7a765cf51cbd3aa1",
+        "taxa": 25,
+        "pairs": 350,
+        "expectedNetNewPairs": 350,
+        "liveProviderRequests": 26
+      }
+    ]
+  },
+  "reuseAndProviderBudget": {
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260808-r53.json",
+    "taxonomyCacheSha256": "fa608defdd4699a8ad1e32237512ab4b1516aa64c0fe016088fa5e39a9c93b32",
+    "allSelectedUniqueTaxa": 55,
+    "liveJobUniqueTaxa": 41,
+    "taxonomyCacheEntries": 53,
+    "liveJobUniqueCachedTaxa": 39,
+    "liveJobTaxonomyCacheUses": 48,
+    "liveJobMissingTaxa": [
+      "aegopodium-podagraria",
+      "ludwigia-grandiflora"
+    ],
+    "plannedLiveTaxonomyRequests": 2,
+    "plannedInitialOccurrenceRequests": 50,
+    "plannedInitialProviderRequests": 52,
+    "additionalOccurrencePages": "provider-total-dependent"
+  },
+  "resources": {
+    "path": "ops/national-research/evaluations/windows-desktop-capacity-20260808-r53-r1.json",
+    "capacityTier": "green",
+    "safeConcurrentWorkers": 3,
+    "qualification": "Three 1600 MiB reservations pass physical, commit, and disk floors. Four measured Round 52 peaks fail the 10 percent physical reserve."
+  },
+  "processLesson": {
+    "lesson": "Search retained failed-worker branches by immutable run identity before state reacquisition, and bind attempt telemetry in the executable contract before lease claim.",
+    "applied": [
+      "The Nevada live plan was superseded by a zero-network replay of exactly 323 complete outcomes from a retained partial run.",
+      "The 102 outcomes backed by six failed requests remain incomplete and are excluded rather than converted to source-negative results.",
+      "The live portfolio uses a provenance-bound cache with 48 job hits, leaving only two species-match requests.",
+      "No provider is contacted until all three jobs pass machine-readable semantic dry-run with telemetry-bound expanded commands."
+    ]
+  },
+  "semanticAttestation": {
+    "absenceCreatedFromSilence": false,
+    "notDetectedCreatedFromSilence": false,
+    "notApplicableCreatedFromSilence": false,
+    "failureConvertedToNegative": false,
+    "incompleteScopeMarkedComplete": false,
+    "providerContactBeforePreflight": false
+  }
+}

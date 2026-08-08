@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260808-r53-r1",
+  "recordedAt": "2026-08-08T18:10:14.000Z",
+  "hostCounterTimestamp": "2026-08-08T19:12:12.6929153Z",
+  "clockQualification": "The Windows host clock is approximately one hour ahead of independently resolved UTC. Provider or independently resolved UTC controls acquisition timing; the host timestamp is retained only as raw counter lineage.",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "aac2cb7f83e34be52567c540b7b0bffa7b1eaa75",
+  "capacityTier": "green",
+  "workerCount": 3,
+  "perWorkerReservationMiB": 1600,
+  "observedRound52PeakMemoryMiB": 1483.309,
+  "totalPhysicalMiB": 31900.917969,
+  "freePhysicalMiB": 8271.074219,
+  "projectedPostWorkerFreePhysicalMiB": 3471.074219,
+  "commitHeadroomMiB": 13788.121094,
+  "projectedPostWorkerFreeCommitMiB": 8988.121094,
+  "freeDiskMiB": 854557.960938,
+  "totalDiskMiB": 1906665.996094,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 8672849920,
+    "committedBytes": 39393738752,
+    "commitLimitBytes": 53851631616,
+    "pagingFilePercent": 10.985405,
+    "diskFreeBytes": 896068968448,
+    "diskTotalBytes": 1999284203520
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091797,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.899414,
+    "qualification": "Three 1600 MiB reservations preserve 3471.07 MiB physical memory, 8988.12 MiB commit headroom, and 854557.96 MiB disk. A fourth worker is rejected because four measured Round 52 peaks would leave only 2337.84 MiB physical memory, below the 10 percent operational reserve."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": false,
+    "health": "not-probed-before-contract",
+    "qualification": "Provider health remains deliberately unprobed until every selected job has a passing machine-readable semantic preflight. The Nevada archive replay requires no provider access."
+  }
+}
