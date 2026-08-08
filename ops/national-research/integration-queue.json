@@ -21999,7 +21999,7 @@
       "queueId": "queue-lease-gbif-live-retry-20260808-r51-nh-001-1",
       "jobId": "gbif-live-retry-20260808-r51-nh-001",
       "leaseId": "lease-gbif-live-retry-20260808-r51-nh-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-08T00:42:03.000Z",
       "manifestPath": "manifests/gbif-live-retry-20260808-r51-nh-001__lease-gbif-live-retry-20260808-r51-nh-001-1.json",
       "manifestHash": "a8be07f0e6e16c2c96a31c1a8f0288eafcc380ee54b15d71eab38a3085bf423a",
@@ -22046,6 +22046,42 @@
         "path": "receipts/reviews/queue-lease-gbif-live-retry-20260808-r51-nh-001-1.json",
         "sha256": "a3779b3d28b0df8a714b310530cc3150c8363f815938fdf8031000336f08e035",
         "bytes": 2389
+      },
+      "integratedAt": "2026-08-08T00:48:00.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "847e0349914ffbca6c9a9f774db47cdea947807a",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for NH live retry: 10 exact crupina-vulgaris county pairs, one cached taxonomy resolution, one provider occurrence call",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated exact reviewed worker bytes after sequential MAIN conflict and semantic validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-live-retry-20260808-r51-nh-001-1.json",
+        "sha256": "6d068ecf1e20f9e49b46dab1ff5abff53233a084489a3f45c1dacac2de532ca3",
+        "bytes": 2554
       }
     }
   ]
