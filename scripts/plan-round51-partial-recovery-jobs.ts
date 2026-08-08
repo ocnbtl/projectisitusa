@@ -99,7 +99,7 @@ for (const specification of specifications) {
     "--candidate-limit", String(pairs.length),
     "--started-at", specification.startedAt,
     "--output-root", "src/data/research/runs",
-    "--gbif-taxonomy-cache", cachePath,
+    ...(specification.archiveReplay ? [] : ["--gbif-taxonomy-cache", cachePath]),
     ...(specification.archiveReplay
       ? ["--archive-replay-commit", specification.archiveReplay.commit, "--archive-replay-run-id", specification.archiveReplay.runId]
       : []),
@@ -155,7 +155,7 @@ for (const specification of specifications) {
       candidateLimitMeaning: "maximum county-species candidate-pair count, not a taxon count",
       startedAt: specification.startedAt,
       outputRoot: "src/data/research/runs",
-      taxonomyCache: cachePath,
+      taxonomyCache: specification.archiveReplay ? null : cachePath,
       attemptTelemetryPath: `C:\\Code\\project-isitusa-worker-staging\\${specification.jobId}\\attempt-telemetry.json`,
       expectedProviderRequests: dryRun.expectedProviderRequests,
       ...(specification.archiveReplay ? { archiveReplay: specification.archiveReplay } : {}),

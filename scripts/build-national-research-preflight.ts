@@ -83,8 +83,9 @@ const dryRunArguments = [
   String(contract.startedAt),
   "--output-root",
   String(contract.outputRoot),
-  "--gbif-taxonomy-cache",
-  String(contract.taxonomyCache),
+  ...(contract.taxonomyCache
+    ? ["--gbif-taxonomy-cache", String(contract.taxonomyCache)]
+    : []),
   ...(contract.archiveReplay
     ? [
         "--archive-replay-commit",
