@@ -21775,7 +21775,7 @@
       "queueId": "queue-lease-gbif-archive-recovery-20260808-r51-nh-001-2",
       "jobId": "gbif-archive-recovery-20260808-r51-nh-001",
       "leaseId": "lease-gbif-archive-recovery-20260808-r51-nh-001-2",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-08T00:42:01.000Z",
       "manifestPath": "manifests/gbif-archive-recovery-20260808-r51-nh-001__lease-gbif-archive-recovery-20260808-r51-nh-001-2.json",
       "manifestHash": "0bed4c3aa4adef5ce362ae7fe867c16927e7be6741782892f98c485b5a588618",
@@ -21868,6 +21868,42 @@
         "path": "receipts/reviews/queue-lease-gbif-archive-recovery-20260808-r51-nh-001-2.json",
         "sha256": "2fdc4835d0995b1e1ac5cf92625c3da04fab69280a8f312b1c46f158d1cd52c8",
         "bytes": 9072
+      },
+      "integratedAt": "2026-08-08T00:46:00.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "935230907edc46469be37d965951c88aebb2f88e",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for NH archive replay: 240 exact county-species pairs, 48 verified archive requests, zero provider calls",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 1,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "Integrated exact reviewed worker bytes after sequential MAIN conflict and semantic validation.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-archive-recovery-20260808-r51-nh-001-2.json",
+        "sha256": "0c9546971dd3f5cd082cf621f21854d5e92a6cbc5da6c8b807cdc75c5309c894",
+        "bytes": 9242
       }
     },
     {
