@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260808T001003Z__gbif-preserved-specimens__426830d36b99",
+  "status": "complete",
+  "started_at": "2026-08-08T00:10:03.000Z",
+  "finished_at": "2026-08-08T00:30:02.979Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "27585001e4e5650059e56ea2fc7b596a97dc362b",
+  "parameter_hash": "426830d36b99de9a92963c8024687bfdec84299659577c2c6cd179be2bf0047a",
+  "parameters": {
+    "stateCode": "NH",
+    "stateProvince": "New Hampshire",
+    "candidateLimit": 10,
+    "candidatePairs": [
+      "33001:crupina-vulgaris",
+      "33003:crupina-vulgaris",
+      "33005:crupina-vulgaris",
+      "33007:crupina-vulgaris",
+      "33009:crupina-vulgaris",
+      "33011:crupina-vulgaris",
+      "33013:crupina-vulgaris",
+      "33015:crupina-vulgaris",
+      "33017:crupina-vulgaris",
+      "33019:crupina-vulgaris"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "NH",
+    "county_fips": [
+      "33001",
+      "33003",
+      "33005",
+      "33007",
+      "33009",
+      "33011",
+      "33013",
+      "33015",
+      "33017",
+      "33019"
+    ],
+    "species_ids": [
+      "crupina-vulgaris"
+    ],
+    "pair_keys": [
+      "33001:crupina-vulgaris",
+      "33003:crupina-vulgaris",
+      "33005:crupina-vulgaris",
+      "33007:crupina-vulgaris",
+      "33009:crupina-vulgaris",
+      "33011:crupina-vulgaris",
+      "33013:crupina-vulgaris",
+      "33015:crupina-vulgaris",
+      "33017:crupina-vulgaris",
+      "33019:crupina-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Crupina+vulgaris&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-08T00:30:02.078Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=New+Hampshire&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3149965&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-08T00:30:02.978Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/artifacts/gbif-occurrences-crupina-vulgaris-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/artifacts/gbif-species-match-crupina-vulgaris.json.gz",
+      "sha256": "29f43a967b2d71daf27566870d01a42ae9d2ed4d0a81365f9a7e5e00896e8c70",
+      "bytes": 290,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/outcomes.ndjson",
+      "sha256": "164b87c0b632163f2af593b9ea3e81af62462c547f84414d40dd81062b6342f1",
+      "bytes": 8070,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/source-verification.json",
+      "sha256": "869596fe6747616e94396b79c02cbdb18a398cf650d0a87dc6062202eaf77c5e",
+      "bytes": 5053,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 10,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 10
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260807-r51 at src/data/research/caches/gbif-taxonomy-20260807-r51.json (2755da5da9d33926e2a27b411c8c281976036b0d6e88309bf46a93bacd8ef12b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state NH --candidate-file ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-nh-001.json --output-root src/data/research/runs --pairs 33001:crupina-vulgaris,33003:crupina-vulgaris,33005:crupina-vulgaris,33007:crupina-vulgaris,33009:crupina-vulgaris,33011:crupina-vulgaris,33013:crupina-vulgaris,33015:crupina-vulgaris,33017:crupina-vulgaris,33019:crupina-vulgaris --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260807-r51.json"
+}
