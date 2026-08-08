@@ -46,7 +46,7 @@ const specifications = [
     jobId: "gbif-archive-recovery-20260808-r51-vt-001",
     stateCode: "VT",
     candidateFile: `${planRoot}/gbif-archive-recovery-20260808-r51-vt-001.json`,
-    startedAt: "2026-08-08T02:10:00.000Z",
+    startedAt: "2026-08-08T00:10:00.000Z",
     archiveReplay: {
       commit: "8cceb5094233dc8a0ceb26fded4ffeb2969e3099",
       runId: "20260807T013017Z__gbif-preserved-specimens__caaebde83e5b",
@@ -57,7 +57,7 @@ const specifications = [
     jobId: "gbif-archive-recovery-20260808-r51-nh-001",
     stateCode: "NH",
     candidateFile: `${planRoot}/gbif-archive-recovery-20260808-r51-nh-002.json`,
-    startedAt: "2026-08-08T02:10:01.000Z",
+    startedAt: "2026-08-08T00:10:01.000Z",
     archiveReplay: {
       commit: "b7ed5e503eb6327de3b7d217cdcf8cc560d1dfeb",
       runId: "20260807T013011Z__gbif-preserved-specimens__c545e19aedcd",
@@ -68,14 +68,14 @@ const specifications = [
     jobId: "gbif-live-retry-20260808-r51-vt-001",
     stateCode: "VT",
     candidateFile: `${planRoot}/gbif-live-retry-20260808-r51-vt-001.json`,
-    startedAt: "2026-08-08T02:10:02.000Z",
+    startedAt: "2026-08-08T00:10:02.000Z",
     priority: 1180,
   },
   {
     jobId: "gbif-live-retry-20260808-r51-nh-001",
     stateCode: "NH",
     candidateFile: `${planRoot}/gbif-live-retry-20260808-r51-nh-001.json`,
-    startedAt: "2026-08-08T02:10:03.000Z",
+    startedAt: "2026-08-08T00:10:03.000Z",
     priority: 1170,
   },
 ];
