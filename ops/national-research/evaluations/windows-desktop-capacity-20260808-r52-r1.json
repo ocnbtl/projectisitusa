@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260808-r52-r1",
+  "recordedAt": "2026-08-08T03:00:45.145Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "db777bea818ca91dd1cd152416cf96a439250ceb",
+  "capacityTier": "green",
+  "workerCount": 3,
+  "perWorkerReservationMiB": 1600,
+  "totalPhysicalMiB": 31900.917969,
+  "freePhysicalMiB": 9349.566406,
+  "projectedPostWorkerFreePhysicalMiB": 4549.566406,
+  "commitHeadroomMiB": 16328.011719,
+  "projectedPostWorkerFreeCommitMiB": 11528.011719,
+  "freeDiskMiB": 865723.488281,
+  "totalDiskMiB": 1906665.996094,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 9803730944,
+    "committedBytes": 36730470400,
+    "commitLimitBytes": 53851631616,
+    "pagingFilePercent": 2.896239,
+    "diskFreeBytes": 907776872448,
+    "diskTotalBytes": 1999284203520
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091797,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.899414,
+    "qualification": "Three 1600 MiB reservations preserve 4549.57 MiB physical memory, 11528.01 MiB commit headroom, and 865723.49 MiB disk."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": false,
+    "health": "not-probed-before-contract",
+    "qualification": "No provider request was issued by the cancelled launch contracts. Live health remains deferred until corrected preflight and lease claim."
+  }
+}
