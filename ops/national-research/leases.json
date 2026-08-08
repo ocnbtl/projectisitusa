@@ -463174,7 +463174,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "main-local-gbif-live-retry-20260808-r51-vt-001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-08-08T00:26:12.000Z",
       "expiresAt": "2026-08-08T04:30:00.000Z",
       "recoveryAt": null,
@@ -463287,7 +463287,16 @@
         "capture attempt telemetry outside the immutable run before any artifact or provider access",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 27585001e4e5650059e56ea2fc7b596a97dc362b...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-08T00:42:02.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-live-retry-20260808-r51-vt-001__lease-gbif-live-retry-20260808-r51-vt-001-1.json",
+        "sha256": "0a9477eaa200366a1dfd48db74518b0a7f4a91d8d6f7a147b3ba718db1b06f78",
+        "bytes": 7763,
+        "status": "complete",
+        "workerCommit": "45d122fb5d7662d627768ee1df071021952e6aff",
+        "workerBranchHead": "0cf69c3263dc80684e6e59c49dc875b61db1f5a1"
+      }
     },
     {
       "leaseId": "lease-gbif-live-retry-20260808-r51-nh-001-1",
@@ -463295,7 +463304,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "main-local-gbif-live-retry-20260808-r51-nh-001",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-08-08T00:26:13.000Z",
       "expiresAt": "2026-08-08T04:30:00.000Z",
       "recoveryAt": null,
@@ -463404,7 +463413,16 @@
         "capture attempt telemetry outside the immutable run before any artifact or provider access",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 27585001e4e5650059e56ea2fc7b596a97dc362b...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-08T00:42:03.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-live-retry-20260808-r51-nh-001__lease-gbif-live-retry-20260808-r51-nh-001-1.json",
+        "sha256": "a8be07f0e6e16c2c96a31c1a8f0288eafcc380ee54b15d71eab38a3085bf423a",
+        "bytes": 7676,
+        "status": "complete",
+        "workerCommit": "42595d2f20099a10e089dfbaf0d5df7150be209c",
+        "workerBranchHead": "02765349653c7b7879a193bf4ba4c6d18f136046"
+      }
     },
     {
       "leaseId": "lease-gbif-archive-recovery-20260808-r51-vt-001-2",
@@ -463412,7 +463430,7 @@
       "attempt": 2,
       "previousLeaseId": "lease-gbif-archive-recovery-20260808-r51-vt-001-1",
       "workerTaskId": "main-local-gbif-archive-recovery-20260808-r51-vt-001-retry1",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-08-08T00:40:00.000Z",
       "expiresAt": "2026-08-08T04:30:00.000Z",
       "recoveryAt": "2026-08-08T00:40:00.000Z",
@@ -463894,7 +463912,16 @@
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 816592e070afbdafd0fd953154782172d387f12c...HEAD",
         "prove the lease pair array is byte-for-byte ordered like the canonical receipt pair scope"
-      ]
+      ],
+      "transitionedAt": "2026-08-08T00:42:00.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-archive-recovery-20260808-r51-vt-001__lease-gbif-archive-recovery-20260808-r51-vt-001-2.json",
+        "sha256": "a55c5a6a603715e1537c547834c52663648f61abb980d8fc7655d8623c2fc3fb",
+        "bytes": 33307,
+        "status": "complete",
+        "workerCommit": "f02ec4a75289390c63d40aa5e04606b738ac7a9c",
+        "workerBranchHead": "2f1880cedc6dbce5cc35d38220a837b280637d8e"
+      }
     },
     {
       "leaseId": "lease-gbif-archive-recovery-20260808-r51-nh-001-2",
@@ -463902,7 +463929,7 @@
       "attempt": 2,
       "previousLeaseId": "lease-gbif-archive-recovery-20260808-r51-nh-001-1",
       "workerTaskId": "main-local-gbif-archive-recovery-20260808-r51-nh-001-retry1",
-      "state": "active",
+      "state": "completed",
       "claimedAt": "2026-08-08T00:40:01.000Z",
       "expiresAt": "2026-08-08T04:30:00.000Z",
       "recoveryAt": "2026-08-08T00:40:01.000Z",
@@ -464288,7 +464315,16 @@
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check 816592e070afbdafd0fd953154782172d387f12c...HEAD",
         "prove the lease pair array is byte-for-byte ordered like the canonical receipt pair scope"
-      ]
+      ],
+      "transitionedAt": "2026-08-08T00:42:01.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-archive-recovery-20260808-r51-nh-001__lease-gbif-archive-recovery-20260808-r51-nh-001-2.json",
+        "sha256": "0bed4c3aa4adef5ce362ae7fe867c16927e7be6741782892f98c485b5a588618",
+        "bytes": 30016,
+        "status": "complete",
+        "workerCommit": "f0eb8aa552481e7f4b08c25ef978f8a048700a1e",
+        "workerBranchHead": "8d3459ce6fbe84534b40c9a603e1a64104f8d400"
+      }
     }
   ]
 }
