@@ -593,6 +593,17 @@ async function main() {
         expectedSpecies: selectedSpecies,
       })
     : null;
+  const archivedReplay = options.archiveReplay
+    ? loadGbifArchivedReplay({
+        repositoryRoot: ROOT,
+        archiveCommit: options.archiveReplay.commit,
+        archiveRunId: options.archiveReplay.runId,
+        stateCode: options.stateCode,
+        sourceId: options.sourceId,
+        requestedPairKeys: parameters.candidatePairs,
+      })
+    : null;
+
   if (options.semanticDryRun) {
     const candidateFile = readJson<CandidateFile>(options.candidateFile);
     console.log(JSON.stringify({
@@ -630,9 +641,18 @@ async function main() {
       } : null,
       expectedProviderRequests: {
         cachedTaxonomyResponses: taxonomyCache?.selectedEntries.length ?? 0,
-        liveTaxonomyRequests: taxonomyCache?.missingSpecies.length ?? selectedSpecies.length,
-        plannedLiveInitialOccurrenceRequests: selectedSpecies.length,
-        additionalOccurrencePages: "only when a provider-declared total exceeds the first complete page",
+        archiveReplayResponses: archivedReplay?.requestUrls.length ?? 0,
+        liveTaxonomyRequests: archivedReplay
+          ? 0
+          : taxonomyCache?.missingSpecies.length ?? selectedSpecies.length,
+        plannedLiveInitialOccurrenceRequests: archivedReplay ? 0 : selectedSpecies.length,
+        providerNetworkRequests: archivedReplay
+          ? 0
+          : (taxonomyCache?.missingSpecies.length ?? selectedSpecies.length) +
+            selectedSpecies.length,
+        additionalOccurrencePages: archivedReplay
+          ? 0
+          : "only when a provider-declared total exceeds the first complete page",
       },
       expandedCommand: [process.execPath, ...process.execArgv, ...process.argv.slice(1)],
       result: "pass",
@@ -641,16 +661,6 @@ async function main() {
   }
   persistAttemptTelemetry({ status: "semantic-scope-verified-before-network" });
 
-  const archivedReplay = options.archiveReplay
-    ? loadGbifArchivedReplay({
-        repositoryRoot: ROOT,
-        archiveCommit: options.archiveReplay.commit,
-        archiveRunId: options.archiveReplay.runId,
-        stateCode: options.stateCode,
-        sourceId: options.sourceId,
-        requestedPairKeys: parameters.candidatePairs,
-      })
-    : null;
   const originalFetch = globalThis.fetch;
   let result: SourceAdapterResult;
   try {

@@ -317,5 +317,6 @@ process.stdout.write(`${JSON.stringify({
   result: preflight.result,
   pairs: dryRun.selectedPairKeys.length,
   cachedTaxonomyResponses: dryRun.expectedProviderRequests.cachedTaxonomyResponses,
-  plannedLiveRequests: dryRun.expectedProviderRequests.liveTaxonomyRequests + dryRun.expectedProviderRequests.plannedLiveInitialOccurrenceRequests,
+  archiveReplayResponses: dryRun.expectedProviderRequests.archiveReplayResponses,
+  plannedLiveRequests: dryRun.expectedProviderRequests.providerNetworkRequests,
 }, null, 2)}\n`);
