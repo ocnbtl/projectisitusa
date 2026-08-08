@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260808-r52",
+  "recordedAt": "2026-08-08T02:53:08.091Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "67e6c9e79d9054122c381277eab552fb791a4cd4",
+  "capacityTier": "green",
+  "workerCount": 3,
+  "perWorkerReservationMiB": 1600,
+  "totalPhysicalMiB": 31900.917969,
+  "freePhysicalMiB": 9530.132813,
+  "projectedPostWorkerFreePhysicalMiB": 4730.132813,
+  "commitHeadroomMiB": 16442.550781,
+  "projectedPostWorkerFreeCommitMiB": 11642.550781,
+  "freeDiskMiB": 876693.417969,
+  "totalDiskMiB": 1906665.996094,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "nodeFreePhysicalBytes": 9976315904,
+    "availablePhysicalBytes": 9993068544,
+    "committedBytes": 36610367488,
+    "commitLimitBytes": 53851631616,
+    "pagingFilePercent": 2.896239,
+    "diskUsedBytes": 1080004526080,
+    "diskFreeBytes": 919279677440,
+    "diskTotalBytes": 1999284203520
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091797,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.899414,
+    "qualification": "Three 1600 MiB worker reservations preserve 4730.13 MiB physical memory, 11642.55 MiB commit headroom, and 876693.42 MiB disk. A fourth worker was not selected because measured execution should determine whether additional concurrency is safe."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": false,
+    "health": "not-probed-before-contract",
+    "qualification": "The source registry is operational. Live provider health is intentionally deferred until the executable semantic contracts pass and leases are claimed."
+  }
+}
