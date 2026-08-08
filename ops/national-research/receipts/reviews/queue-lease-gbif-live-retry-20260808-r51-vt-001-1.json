@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-live-retry-20260808-r51-vt-001-1",
+  "jobId": "gbif-live-retry-20260808-r51-vt-001",
+  "leaseId": "lease-gbif-live-retry-20260808-r51-vt-001-1",
+  "workerCommit": "45d122fb5d7662d627768ee1df071021952e6aff",
+  "workerBranchHead": "0cf69c3263dc80684e6e59c49dc875b61db1f5a1",
+  "manifestHash": "0a9477eaa200366a1dfd48db74518b0a7f4a91d8d6f7a147b3ba718db1b06f78",
+  "changedPaths": [
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-occurrences-giant-hogweed-000000.json.gz",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-species-match-giant-hogweed.json.gz",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/assertions.ndjson",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/manifest.json",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/outcomes.ndjson",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/receipt.json",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/rejections.ndjson",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/reviews.ndjson",
+    "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for VT live retry: 14 exact giant-hogweed county pairs, one cached taxonomy resolution, one provider occurrence call",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Accepted after exact-scope, immutable-byte, recorded-present-only, rejection, and complete-outcome review.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-08T00:44:02.000Z"
+}

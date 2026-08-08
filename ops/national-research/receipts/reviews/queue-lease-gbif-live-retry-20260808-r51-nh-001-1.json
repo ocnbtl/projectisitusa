@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-live-retry-20260808-r51-nh-001-1",
+  "jobId": "gbif-live-retry-20260808-r51-nh-001",
+  "leaseId": "lease-gbif-live-retry-20260808-r51-nh-001-1",
+  "workerCommit": "42595d2f20099a10e089dfbaf0d5df7150be209c",
+  "workerBranchHead": "02765349653c7b7879a193bf4ba4c6d18f136046",
+  "manifestHash": "a8be07f0e6e16c2c96a31c1a8f0288eafcc380ee54b15d71eab38a3085bf423a",
+  "changedPaths": [
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/artifacts/gbif-occurrences-crupina-vulgaris-000000.json.gz",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/artifacts/gbif-species-match-crupina-vulgaris.json.gz",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/assertions.ndjson",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/manifest.json",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/outcomes.ndjson",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/receipt.json",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/rejections.ndjson",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/reviews.ndjson",
+    "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for NH live retry: 10 exact crupina-vulgaris county pairs, one cached taxonomy resolution, one provider occurrence call",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "Accepted after exact-scope, immutable-byte, complete-outcome, and zero-unsupported-negative review.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-08T00:44:03.000Z"
+}
