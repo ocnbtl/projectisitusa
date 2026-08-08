@@ -1,27 +1,27 @@
 # Hawaii Research Progress
 
-Generated: `2026-08-07T00:00:00.000Z`
+Generated: `2026-08-08T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `90`
+- Verified present: `103`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `230`
-- Not researched: `12200`
-- Determination coverage: `0.72%`
-- Research coverage: `2.56%`
-- Explicit outcome coverage: `2.5559%`
+- Researched unresolved: `342`
+- Not researched: `12075`
+- Determination coverage: `0.82%`
+- Research coverage: `3.55%`
+- Explicit outcome coverage: `3.5543%`
 - Applicable protocol cells: `109`
-- Current complete protocol cells: `30`
-- Protocol completion: `39.45%`
-- Current protocol completion: `27.52%`
-- Evidence records: `180`
-- Research runs: `8`
-- Rejection records: `501`
+- Current complete protocol cells: `55`
+- Protocol completion: `62.39%`
+- Current protocol completion: `50.46%`
+- Evidence records: `218`
+- Research runs: `9`
+- Rejection records: `927`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 5 | 0 | 1 |
-| Comb bushmint (`hyptis-pectinata`) | plants | 5 | 0 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 5 | 0 | 1 |
-| Swamp morning-glory (`ipomoea-aquatica`) | plants | 5 | 0 | 1 |
-| Silkleaf (`lagascea-mollis`) | plants | 5 | 0 | 1 |
-| Broadleaved pepperweed (`lepidium-latifolium`) | plants | 5 | 0 | 1 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 5 | 0 | 1 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 5 | 0 | 1 |
-| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 5 | 0 | 1 |
-| Yellow leafbract (`malachra-alceifolia`) | plants | 5 | 0 | 1 |
-| Mile-a-minute (`mikania-micrantha`) | plants | 5 | 0 | 1 |
-| Black mimosa (`mimosa-pigra`) | plants | 5 | 0 | 1 |
-| Pacific island silvergrass (`miscanthus-floridulus`) | plants | 5 | 0 | 1 |
-| Serrated tussock grass (`nassella-trichotoma`) | plants | 5 | 0 | 1 |
-| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 5 | 0 | 1 |
-| Ducklettuce (`ottelia-alismoides`) | plants | 5 | 0 | 1 |
-| Torpedo grass (`panicum-repens`) | plants | 5 | 0 | 1 |
-| Australian cheesewood (`pittosporum-undulatum`) | plants | 5 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 5 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 5 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 5 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 5 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 5 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 5 | 0 | 1 |
-| Field Sowthistle (`sonchus-arvensis`) | plants | 5 | 0 | 1 |
+| Simple-stem burr-reed (`sparganium-erectum`) | plants | 5 | 0 | 1 |
+| Spanish broom (`spartium-junceum`) | plants | 5 | 0 | 1 |
+| Coatbuttons (`tridax-procumbens`) | plants | 5 | 0 | 1 |
+| Diamond burbark (`triumfetta-rhomboidea`) | plants | 5 | 0 | 1 |
+| Caesarweed (`urena-lobata`) | plants | 5 | 0 | 1 |
+| Panic liverseed grass (`urochloa-panicoides`) | plants | 5 | 0 | 1 |
+| Common Mullein (`verbascum-thapsus`) | plants | 5 | 0 | 1 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 5 | 2 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 5 | 2 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 5 | 2 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 5 | 2 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 5 | 2 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 5 | 2 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 5 | 2 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 5 | 2 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 5 | 2 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 5 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 2 |
+| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 5 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 5 | 0 |
+| Crow Garlic (`allium-vineale`) | plants | 0 | 5 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 5 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 5 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 5 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-07T04:35:05.146Z | 20 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-07T23:47:34.742Z | 33 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

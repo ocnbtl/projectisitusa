@@ -1,27 +1,27 @@
 # Vermont Research Progress
 
-Generated: `2026-08-07T00:00:00.000Z`
+Generated: `2026-08-08T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `156`
+- Verified present: `159`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `546`
-- Not researched: `34354`
+- Researched unresolved: `893`
+- Not researched: `34004`
 - Determination coverage: `0.45%`
-- Research coverage: `2.00%`
-- Explicit outcome coverage: `2.0025%`
+- Research coverage: `3.00%`
+- Explicit outcome coverage: `3.0009%`
 - Applicable protocol cells: `109`
-- Current complete protocol cells: `4`
-- Protocol completion: `15.60%`
-- Current protocol completion: `3.67%`
-- Evidence records: `156`
-- Research runs: `7`
-- Rejection records: `18`
+- Current complete protocol cells: `29`
+- Protocol completion: `38.53%`
+- Current protocol completion: `26.61%`
+- Evidence records: `162`
+- Research runs: `9`
+- Rejection records: `19`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -33,30 +33,30 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Bishop's Goutweed (`aegopodium-podagraria`) | plants | 14 | 0 | 1 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 14 | 0 | 1 |
 | European Alder (`alnus-glutinosa`) | plants | 14 | 0 | 1 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 14 | 0 | 1 |
-| Capeweed (`arctotheca-calendula`) | plants | 14 | 0 | 1 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 14 | 0 | 1 |
-| Animated oat (`avena-sterilis`) | plants | 14 | 0 | 1 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 14 | 0 | 1 |
 | Flowering Rush (`butomus-umbellatus`) | plants | 14 | 0 | 1 |
-| Jio (`commelina-benghalensis`) | plants | 14 | 0 | 1 |
-| Common crupina (`crupina-vulgaris`) | plants | 14 | 0 | 1 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 14 | 0 | 1 |
 | Water Hyacinth (`eichhornia-crassipes`) | plants | 14 | 0 | 1 |
-| Southern threecornerjack (`emex-australis`) | plants | 14 | 0 | 1 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 14 | 0 | 1 |
 | Winged Burning Bush (`euonymus-alatus`) | plants | 14 | 0 | 1 |
 | Cypress Spurge (`euphorbia-cyparissias`) | plants | 14 | 0 | 1 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 14 | 0 | 1 |
-| Professor-weed (`galega-officinalis`) | plants | 14 | 0 | 1 |
-| Giant Hogweed (`giant-hogweed`) | plants | 14 | 0 | 1 |
 | Japanese Hop (`humulus-japonicus`) | plants | 14 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 14 | 0 | 1 |
 | Common frogbit (`hydrocharis-morsus-ranae`) | plants | 14 | 0 | 1 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 14 | 0 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 14 | 0 | 1 |
+| Parrot Feather (`myriophyllum-aquaticum`) | plants | 14 | 0 | 1 |
+| Brittle Waternymph (`najas-minor`) | plants | 14 | 0 | 1 |
+| Yellow Floating Heart (`nymphoides-peltata`) | plants | 14 | 0 | 1 |
+| Mile-a-Minute Vine (`persicaria-perfoliata`) | plants | 14 | 0 | 1 |
+| Amur corktree (`phellodendron-amurense`) | plants | 14 | 0 | 1 |
+| Curly-Leaf Pondweed (`potamogeton-crispus`) | plants | 14 | 0 | 1 |
+| Kudzu (`pueraria-montana`) | plants | 14 | 0 | 1 |
+| Callery Pear (`pyrus-calleryana`) | plants | 14 | 0 | 1 |
+| Itchgrass (`rottboellia-cochinchinensis`) | plants | 14 | 0 | 1 |
+| Wine Raspberry (`rubus-phoenicolasius`) | plants | 14 | 0 | 1 |
+| Wild sugarcane (`saccharum-spontaneum`) | plants | 14 | 0 | 1 |
+| Giant Salvinia (`salvinia-molesta`) | plants | 14 | 0 | 1 |
+| Scrambling nightshade (`solanum-tampicense`) | plants | 14 | 0 | 1 |
+| Turkey berry (`solanum-torvum`) | plants | 14 | 0 | 1 |
+| Tropical soda apple (`solanum-viarum`) | plants | 14 | 0 | 1 |
+| Simple-stem burr-reed (`sparganium-erectum`) | plants | 14 | 0 | 1 |
+| Coatbuttons (`tridax-procumbens`) | plants | 14 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-08-08T00:42:29.547Z | 3 | 25 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
