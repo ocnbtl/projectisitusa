@@ -132,6 +132,27 @@ assert(dryRun.candidateLimit.meaning.includes("candidate-pair"), "Candidate limi
 const permittedRun = String(job.permittedPaths.find((entry: string) => entry.endsWith("/**")) ?? "").slice(0, -3);
 assert(permittedRun && permittedRun === dryRun.expectedRunPath, "Dry-run output path differs from the permitted immutable run.");
 assert(contract.startedAt === dryRun.startedAt, "Dry-run start time differs from the execution contract.");
+for (const field of [
+  "cachedTaxonomyResponses",
+  "archiveReplayResponses",
+  "liveTaxonomyRequests",
+  "plannedLiveInitialOccurrenceRequests",
+  "providerNetworkRequests",
+] as const) {
+  assert(
+    JSON.stringify(dryRun.expectedProviderRequests[field]) ===
+      JSON.stringify(contract.expectedProviderRequests[field]),
+    `Dry-run provider request field ${field} differs from the execution contract.`,
+  );
+}
+assert(
+  Number.isInteger(contract.expectedPositivePairRange?.minimum) &&
+    Number.isInteger(contract.expectedPositivePairRange?.maximum) &&
+    contract.expectedPositivePairRange.minimum >= 0 &&
+    contract.expectedPositivePairRange.maximum >= contract.expectedPositivePairRange.minimum &&
+    contract.expectedPositivePairRange.maximum <= dryRun.selectedPairKeys.length,
+  "Execution contract lacks a valid expected positive-pair range.",
+);
 
 const candidatePath = path.join(root, dryRun.candidateFile.path);
 const candidateBytes = readFileSync(candidatePath);
@@ -257,6 +278,7 @@ const preflight = {
   },
   expandedCommand: dryRun.expandedCommand,
   expectedProviderRequests: dryRun.expectedProviderRequests,
+  expectedPositivePairRange: contract.expectedPositivePairRange,
   deterministicRun: {
     startedAt: contract.startedAt,
     parameterHash: dryRun.parameterHash,

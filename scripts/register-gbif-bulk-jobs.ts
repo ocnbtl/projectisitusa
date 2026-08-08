@@ -34,6 +34,7 @@ const ORCHESTRATOR = path.join(
   ".agents/skills/isitusa-national-orchestrator/scripts/orchestrate.mjs",
 );
 const JOBS_PATH = path.join(ROOT, "ops/national-research/jobs.json");
+const LEASES_PATH = path.join(ROOT, "ops/national-research/leases.json");
 const OPERATIONS_ROOT = path.join(ROOT, "ops/national-research");
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -155,7 +156,37 @@ const baseSha = execFileSync("git", ["rev-parse", "HEAD"], {
 assert(/^[a-f0-9]{40}$/.test(baseSha), "Current HEAD is not a full Git SHA.");
 const originalBytes = readFileSync(JOBS_PATH);
 const jobs = JSON.parse(originalBytes.toString("utf8")) as JobsFile;
+const leases = JSON.parse(readFileSync(LEASES_PATH, "utf8")) as {
+  leases: Array<{ jobId: string; state: string }>;
+};
 validateOperations(now);
+
+const supersededJobIds = valuesFor(args, "supersede-job");
+assert(
+  new Set(supersededJobIds).size === supersededJobIds.length,
+  "--supersede-job values must be unique.",
+);
+const terminalLeaseStates = new Set(["completed", "failed", "recovered", "cancelled"]);
+for (const jobId of supersededJobIds) {
+  const superseded = jobs.jobs.find((job) => job.jobId === jobId);
+  assert(superseded, `Cannot supersede unknown job ${jobId}.`);
+  assert(superseded.state === "planned", `Only a planned job may be superseded: ${jobId}.`);
+  assert(
+    !leases.leases.some(
+      (lease) => lease.jobId === jobId && !terminalLeaseStates.has(lease.state),
+    ),
+    `Cannot supersede ${jobId} while it has a nonterminal lease.`,
+  );
+}
+const retainedJobs = jobs.jobs.map((job) =>
+  supersededJobIds.includes(job.jobId)
+    ? {
+        ...job,
+        state: "cancelled",
+        recoveryState: `superseded-by-${roundId}`,
+      }
+    : job,
+);
 
 const jurisdictions = new Map(
   stateRegistry.jurisdictions.map((entry) => [entry.stateCode, entry]),
@@ -423,7 +454,7 @@ const newJobs = entries.map((serializedEntry) => {
 
 const nextJobs: JobsFile = {
   ...jobs,
-  jobs: [...jobs.jobs, ...newJobs],
+  jobs: [...retainedJobs, ...newJobs],
 };
 try {
   writeFileSync(JOBS_PATH, `${JSON.stringify(nextJobs, null, 2)}\n`);
@@ -438,6 +469,7 @@ process.stdout.write(
   `${JSON.stringify(
     {
       baseSha,
+      superseded: supersededJobIds,
       registered: newJobs.map((job) => ({
         jobId: job.jobId,
         stateCode: job.stateOrSourceScope.states[0],
