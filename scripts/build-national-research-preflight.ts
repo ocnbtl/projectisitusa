@@ -90,6 +90,8 @@ const dryRunArguments = [
         String(contract.archiveReplay.runId),
       ]
     : []),
+  "--attempt-telemetry",
+  String(contract.attemptTelemetryPath),
   "--semantic-dry-run",
   "true",
 ];
@@ -105,6 +107,19 @@ const dryRunText = execFileSync(nodePath, dryRunArguments, {
   maxBuffer: 50 * 1024 * 1024,
 });
 const dryRun = JSON.parse(dryRunText) as JsonRecord;
+assert(
+  dryRun.expandedCommand.at(-2) === "--semantic-dry-run" &&
+    dryRun.expandedCommand.at(-1) === "true",
+  "Semantic dry-run did not retain the terminal no-network flag.",
+);
+const expandedAcquisitionCommand = dryRun.expandedCommand.slice(0, -2);
+const telemetryFlagIndex = expandedAcquisitionCommand.indexOf("--attempt-telemetry");
+assert(
+  telemetryFlagIndex >= 0 &&
+    expandedAcquisitionCommand[telemetryFlagIndex + 1] ===
+      contract.attemptTelemetryPath,
+  "Expanded acquisition command differs from the registered telemetry staging path.",
+);
 const outputStem = path.basename(outputPath, path.extname(outputPath));
 const dryRunRelativePath = `ops/national-research/preflights/dry-runs/${outputStem}.json`;
 const dryRunPath = path.join(root, dryRunRelativePath);
@@ -276,7 +291,7 @@ const preflight = {
       meaning: "maximum worker wall time before safe stop and resume",
     },
   },
-  expandedCommand: dryRun.expandedCommand,
+  expandedCommand: expandedAcquisitionCommand,
   expectedProviderRequests: dryRun.expectedProviderRequests,
   expectedPositivePairRange: contract.expectedPositivePairRange,
   deterministicRun: {
