@@ -81,6 +81,8 @@ for (const jobId of retryIds) {
   job.branch = `codex/${jobId}-retry1`;
   job.worktree = `C:\\Code\\project-isitusa-worktrees\\${jobId}-retry1`;
   job.recoveryState = "pair-order-validation-retry-with-verified-archive-replay";
+  job.state = "planned";
+  delete job.currentLeaseId;
   job.completionCriteria = [
     ...job.completionCriteria.map((entry: string) => entry.replaceAll(priorBase, baseSha)),
     "prove the lease pair array is byte-for-byte ordered like the canonical receipt pair scope",
