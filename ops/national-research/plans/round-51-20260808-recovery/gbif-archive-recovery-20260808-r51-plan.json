@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-archive-recovery-20260808-r51",
+  "sourceId": "gbif-preserved-specimens",
+  "createdAt": "2026-08-08T00:06:00.000Z",
+  "descriptor": {
+    "path": "ops/national-research/plans/round-51-20260808-recovery/archive-descriptor.json",
+    "sha256": "0af4372889006c518cde90b94e400ef5555ab47c9fe19ae48597be1d4c434563"
+  },
+  "deduplication": {
+    "currentCompletePairCountBeforePlanning": 279232,
+    "preventedAlreadyCompletePairCount": 0
+  },
+  "totals": {
+    "archives": 2,
+    "selectedStateSpeciesScreenCount": 48,
+    "selectedPairCount": 576,
+    "selectedProviderRequestCount": 96,
+    "selectedArtifactCount": 96,
+    "selectedArtifactBytes": 20971
+  },
+  "archives": [
+    {
+      "archiveIndex": 1,
+      "archiveCommit": "8cceb5094233dc8a0ceb26fded4ffeb2969e3099",
+      "archiveRunId": "20260807T013017Z__gbif-preserved-specimens__caaebde83e5b",
+      "archiveReceiptStatus": "partial",
+      "stateCode": "VT",
+      "receiptSha256": "550cc093badb65c645e4e2b64115386826ef645c9f764f9ca1916a98c8ac77d9",
+      "outcomesSha256": "c7c732ba98861650c81b6f156d499e4c41762266897bf716239303b95e55c1ee",
+      "sourceVerificationSha256": "52090be617c3e9f51aeca68af0f4b176bf474753985e5ad265501e147cfec264",
+      "originalRequestedPairCount": 350,
+      "originalCompletePairCount": 336,
+      "originalIncompletePairCount": 14,
+      "preventedAlreadyCompletePairCount": 0,
+      "selectedPairCount": 336,
+      "selectedStateSpeciesScreenCount": 24,
+      "selectedProviderRequestCount": 48,
+      "selectedArtifactCount": 48,
+      "selectedArtifactBytes": 11777,
+      "candidateFile": "gbif-archive-recovery-20260808-r51-vt-001.json",
+      "candidateSha256": "eaa48c8be1c8378f2cc0084733254f7991b8c7952193331a2e652bdda52a6a55"
+    },
+    {
+      "archiveIndex": 2,
+      "archiveCommit": "b7ed5e503eb6327de3b7d217cdcf8cc560d1dfeb",
+      "archiveRunId": "20260807T013011Z__gbif-preserved-specimens__c545e19aedcd",
+      "archiveReceiptStatus": "partial",
+      "stateCode": "NH",
+      "receiptSha256": "3cecc1f7626778f4c4b61ecf5b266a5d10cbe2537a682d21e9336d4f82eed4cb",
+      "outcomesSha256": "f463a3facc8fb524c1067b9382c27b611fc0de22cbae00f16e60f3c778de32ad",
+      "sourceVerificationSha256": "b056776c9740ed4c2dbf1c7676ce71bca779f4f434938ebc1f6609c89ddebb8b",
+      "originalRequestedPairCount": 250,
+      "originalCompletePairCount": 240,
+      "originalIncompletePairCount": 10,
+      "preventedAlreadyCompletePairCount": 0,
+      "selectedPairCount": 240,
+      "selectedStateSpeciesScreenCount": 24,
+      "selectedProviderRequestCount": 48,
+      "selectedArtifactCount": 48,
+      "selectedArtifactBytes": 9194,
+      "candidateFile": "gbif-archive-recovery-20260808-r51-nh-002.json",
+      "candidateSha256": "2ea5dd84100f414ff09d66302fa0376167c8f4532ddeee38fc2b6bea156b523c"
+    }
+  ]
+}

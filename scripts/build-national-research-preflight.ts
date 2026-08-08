@@ -85,6 +85,14 @@ const dryRunArguments = [
   String(contract.outputRoot),
   "--gbif-taxonomy-cache",
   String(contract.taxonomyCache),
+  ...(contract.archiveReplay
+    ? [
+        "--archive-replay-commit",
+        String(contract.archiveReplay.commit),
+        "--archive-replay-run-id",
+        String(contract.archiveReplay.runId),
+      ]
+    : []),
   "--semantic-dry-run",
   "true",
 ];
@@ -277,6 +285,7 @@ const preflight = {
   },
   existingCacheAndPartialRunSearch: {
     taxonomyCache: dryRun.taxonomyCache,
+    archiveReplay: contract.archiveReplay ?? null,
     completePriorPairs,
     incompletePriorPairs,
     matchingRunReceipts,
