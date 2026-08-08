@@ -200,6 +200,7 @@ const newJobs = entries.map((serializedEntry) => {
     candidateBatchIdInput,
     positiveMinimumInput,
     positiveMaximumInput,
+    archiveReplayResponsesInput,
   ] =
     serializedEntry.split(",");
   const stateCode = stateCodeInput?.toUpperCase() ?? "";
@@ -262,6 +263,18 @@ const newJobs = entries.map((serializedEntry) => {
       `${batchId} archived replay run ID is invalid.`,
     );
   }
+  const archiveReplayResponses = archiveReplay
+    ? Number(archiveReplayResponsesInput)
+    : 0;
+  assert(
+    archiveReplay
+      ? Number.isInteger(archiveReplayResponses) &&
+        archiveReplayResponses > 0
+      : !archiveReplayResponsesInput,
+    archiveReplay
+      ? `${batchId} requires an exact positive archive replay response count.`
+      : `${batchId} cannot declare archive replay responses without an archive.`,
+  );
 
   const pairs = canonicalCandidatePairKeys(candidate.candidates);
   assert(new Set(pairs).size === pairs.length, `${batchId} contains duplicate pairs.`);
@@ -399,7 +412,7 @@ const newJobs = entries.map((serializedEntry) => {
         cachedTaxonomyResponses: archiveReplay
           ? 0
           : selectedCachedTaxonomyResponses,
-        archiveReplayResponses: archiveReplay ? "derived-by-semantic-dry-run" : 0,
+        archiveReplayResponses,
         liveTaxonomyRequests,
         plannedLiveInitialOccurrenceRequests,
         providerNetworkRequests,
