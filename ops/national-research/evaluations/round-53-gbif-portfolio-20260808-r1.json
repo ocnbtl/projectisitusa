@@ -3,7 +3,7 @@
   "evaluationId": "round-53-gbif-portfolio-20260808-r1",
   "roundId": "round-53-20260808",
   "evaluatedAt": "2026-08-08T19:33:59.000Z",
-  "result": "material-release-candidate",
+  "result": "complete-released-and-externally-verified",
   "releaseThreshold": {
     "met": true,
     "basis": "A material GBIF source-family milestone moved 1033 unique county-species pairs across Nevada, Oregon, and Vermont, added 72 verified-present pairs, closed 69 protocol cells, removed four certification blockers, and retained three reusable immutable statewide partitions."
@@ -150,17 +150,21 @@
       "providerRequestRetries": 0,
       "workerRetries": 0,
       "acquisitionRetries": 0,
-      "releaseDeployments": 0
+      "releaseDeployments": 1
     },
     "manualInterventions": {
       "workerAcquisition": 0,
-      "orchestrationCorrections": 5,
+      "orchestrationCorrections": 9,
       "items": [
         "Corrected an archive-response registrar that emitted a placeholder count before any lease or provider access, then reran the no-network semantic dry-run.",
         "Reran an integration-review command with the canonical millisecond-normalized ISO timestamp after the first exact-time assertion rejected before mutation.",
         "Reran readiness generation with the mandatory explicit --as-of argument after the first invocation rejected before writing bytes.",
         "Copied attempt telemetry from ephemeral worker staging into MAIN-owned durable paths after the preservation audit found that the completed runs did not retain it.",
-        "Changed the focused projection-validation invocation after tsx failed in os.userInfo() with ENOMEM through the shared Windows dependency junction; a one-shot preload shim bypassed that lookup, all 51 projections passed, and the shim was removed without changing project source or dependencies."
+        "Changed the focused projection-validation invocation after tsx failed in os.userInfo() with ENOMEM through the shared Windows dependency junction; a one-shot preload shim bypassed that lookup, all 51 projections passed, and the shim was removed without changing project source or dependencies.",
+        "Corrected the live byte-parity harness after the first invocation failed before HTTP activity because this PowerShell host did not preload System.Net.Http or expose the newer static SHA API.",
+        "Changed the Playwright session flag from the skill example's older --session form to the installed CLI's -s=<name> contract after the first launch retained no controllable browser session.",
+        "Discarded one invalid Playwright run-code wait expression that returned SyntaxError while leaving the page intact; post-load snapshots and two subsequent clean desktop and mobile sessions supplied the production evidence.",
+        "Corrected the receipt-era integrity gate's NODE_OPTIONS preload from a backslash path that Node rejected before tests started to a forward-slash absolute path; the full suite then passed."
       ]
     }
   },
@@ -326,7 +330,7 @@
     "qualification": "Nevada and Oregon each crossed the two protocol-derived readiness gates. Vermont gained protocol coverage but remains below both thresholds."
   },
   "final": {
-    "contentCommit": null,
+    "contentCommit": "e69394f602de50a4638ae126311c9e6ac4786143",
     "stateSpecies": {
       "denominator": 127704,
       "applicable": 5064,
@@ -416,24 +420,41 @@
     "rejectedReadinessInvocationSeconds": 0.312,
     "focusedFinalValidationSeconds": 34.7,
     "knownLocalSequentialSeconds": 1804.172,
-    "pushSeconds": null,
-    "deploymentSeconds": null,
-    "productionQaSeconds": null,
-    "qualification": "Known local generation, validation, build, and browser-QA time is retained. External push, deployment, production QA, and external receipt values remain pending and will be recorded only after observation of the content commit."
+    "pushSeconds": 8.484,
+    "deploymentBuildSeconds": 166.875,
+    "deploymentSeconds": 205.141,
+    "productionQaSeconds": 845.737,
+    "receiptEraResearchIntegritySeconds": 410.235,
+    "rejectedPreloadInvocationSeconds": 0.1,
+    "knownSequentialReleaseSeconds": 3273.869,
+    "qualification": "Known local generation, validation, build, push, provider-native deployment, production QA, and receipt-era integrity time is retained. Production QA is measured from Vercel's deployment-completed timestamp to the GitHub API Date header captured after live routes, byte parity, browser, and runtime-log verification."
   },
   "externalVerification": {
-    "status": "pending",
-    "contentCommit": null,
-    "githubMainSha": null,
-    "githubDeploymentId": null,
-    "vercelDeploymentId": null,
-    "deploymentState": null,
-    "routeChecksPassed": 0,
-    "byteParityChecksPassed": 0,
-    "browserConsoleErrors": null,
-    "browserConsoleWarnings": null,
-    "mobileHorizontalOverflow": null,
-    "qualification": "This content-side evaluation does not attest to its own future deployment. A later receipt commit may record the already-observed deployment of this content commit without creating another receipt loop."
+    "status": "complete",
+    "verifiedAt": "2026-08-08T20:10:17.000Z",
+    "contentCommit": "e69394f602de50a4638ae126311c9e6ac4786143",
+    "githubMainSha": "e69394f602de50a4638ae126311c9e6ac4786143",
+    "githubDeploymentId": 5812149749,
+    "githubDeploymentState": "success",
+    "githubDeploymentEnvironmentUrl": "https://projectisitusa-hpe8n8745-unigentamos.vercel.app",
+    "vercelDeploymentId": "dpl_DN3qet2bCAuThYj2JvCKMqWR4c78",
+    "vercelDeploymentUrl": "projectisitusa-hpe8n8745-unigentamos.vercel.app",
+    "deploymentState": "READY",
+    "deploymentSource": "git",
+    "deploymentCommitSha": "e69394f602de50a4638ae126311c9e6ac4786143",
+    "productionAliasResolved": true,
+    "routeChecksPassed": 6,
+    "byteParityChecksPassed": 6,
+    "browserConsoleErrors": 0,
+    "browserConsoleWarnings": 0,
+    "desktopHorizontalOverflow": false,
+    "mobileHorizontalOverflow": false,
+    "runtimeErrorLogRows": 0,
+    "runtimeFiveHundredLogRows": 0,
+    "receiptEraResearchIntegritySeconds": 410.235,
+    "temporaryQaFilesRemoved": 7,
+    "temporaryQaBytesRemoved": 200309,
+    "qualification": "GitHub main and Production deployment matched the exact content SHA; the Vercel build log identified commit e69394f on main, provider state was READY, and the canonical production alias was assigned to that deployment. Six intended routes, six selected state and county byte identities, fresh desktop and mobile behavior, exact-deployment error and 5xx log queries, and the full receipt-era national research-integrity suite passed. This later receipt evidence attests only to the already-observed content commit, not to the commit that records it or any future deployment."
   },
   "processLesson": {
     "lesson": "Attempt telemetry must be both captured before staging and copied into a durable MAIN-owned path before worker staging is retired; semantic preflight must also register real archive-response counts rather than placeholders.",

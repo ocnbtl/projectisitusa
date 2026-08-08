@@ -1585,6 +1585,100 @@
       },
       "clockQualification": "The Windows host clock remains one hour ahead of GitHub and Vercel provider timestamps because of a DST configuration mismatch. Deployment duration uses only Vercel provider created, building, and ready epochs. The verification timestamp is the GitHub API Date header observed after deployment success, not the host clock.",
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact content SHA 1c3da68d585f5cac3c81eb9c58869024d8a1ac5f; GitHub Production deployment 5804910841 succeeded; Git-linked Vercel deployment dpl_9SVgM7NsxuVMevXts3Qf8zaQhMKT reached READY with exact commit metadata; the production alias resolved to that deployment; six intended live routes passed; four selected generated summaries matched local SHA-256 and bytes exactly; fresh desktop and mobile browser behavior passed without console warnings, console errors, or horizontal overflow; and the exact deployment returned zero error-level log rows in the verification window. Round 52 completed 1950 county-species outcomes and moved 1737 unique final-matrix pairs across Washington, Maryland, and Arizona, including 480 verified-present and 1257 researched-unresolved movements. It created no verified-absence, not-detected, applicability, denominator, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-e69394f60-2026-08-08",
+      "verifiedAt": "2026-08-08T20:10:17.000Z",
+      "commitSha": "e69394f602de50a4638ae126311c9e6ac4786143",
+      "githubMainSha": "e69394f602de50a4638ae126311c9e6ac4786143",
+      "githubDeploymentId": 5812149749,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-hpe8n8745-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": "dpl_DN3qet2bCAuThYj2JvCKMqWR4c78",
+      "vercelDeploymentId": "dpl_DN3qet2bCAuThYj2JvCKMqWR4c78",
+      "vercelDeploymentUrl": "projectisitusa-hpe8n8745-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "e69394f602de50a4638ae126311c9e6ac4786143",
+        "releaseCommitMetadata": "e69394f602de50a4638ae126311c9e6ac4786143",
+        "productionAliasResolvedToDeployment": true
+      },
+      "deploymentAttempts": [
+        {
+          "id": "dpl_DN3qet2bCAuThYj2JvCKMqWR4c78",
+          "source": "git",
+          "state": "READY",
+          "createdAt": "2026-08-08T19:52:46.122Z",
+          "buildCompletedAt": "2026-08-08T19:55:33.751Z",
+          "deploymentCompletedAt": "2026-08-08T19:56:11.263Z",
+          "durationSeconds": 205.141,
+          "buildSeconds": 166.875,
+          "githubCommitSha": "e69394f602de50a4638ae126311c9e6ac4786143",
+          "active": true
+        }
+      ],
+      "routeChecks": [
+        { "path": "/", "status": 200, "bytes": 3817212 },
+        { "path": "/research", "status": 200, "bytes": 13848 },
+        { "path": "/research?state=NV", "status": 200, "bytes": 13848 },
+        { "path": "/research?state=OR", "status": 200, "bytes": 13848 },
+        { "path": "/research?state=VT", "status": 200, "bytes": 13848 },
+        { "path": "/species/spotted-lanternfly", "status": 200, "bytes": 31347 }
+      ],
+      "byteParityChecks": [
+        { "path": "/generated/research/NV/summary.json", "bytes": 107194, "sha256": "454905207ce20b914f8158908462f019bde632a4d8f5786d3095401d96e7a421" },
+        { "path": "/generated/research/NV/counties/32001.json", "bytes": 71840, "sha256": "47c939a4c6f4900c34ab9d088a05518786e286d278cfccab4dbb7508ae123204" },
+        { "path": "/generated/research/OR/summary.json", "bytes": 103166, "sha256": "4003dfd98dbae61a1a07be91b9de4cae304ed8f10c41abbb35634691073b5b7f" },
+        { "path": "/generated/research/OR/counties/41001.json", "bytes": 44505, "sha256": "55c2c3ec598b1948df862616eb84cc1b190bb46822d0321ae9f15df954aaa8e0" },
+        { "path": "/generated/research/VT/summary.json", "bytes": 93135, "sha256": "ed5860526ecd65fde78a1c7943c86ab31b791e1d8258c1763cde36b98d006ce4" },
+        { "path": "/generated/research/VT/counties/50001.json", "bytes": 99054, "sha256": "80540b2f0346532be6a861ded4dd7a78adaccc50ee0b8146d555e10acc4af2b5" }
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "desktopState": "OR",
+        "desktopCounts": { "verifiedPresent": 104, "researchedUnresolved": 1804, "notResearched": 88236, "denominator": 90144 },
+        "mobileViewport": "390x844",
+        "mobileState": "VT",
+        "mobileCounts": { "verifiedPresent": 211, "researchedUnresolved": 1191, "notResearched": 33654, "denominator": 35056 },
+        "asOf": "2026-08-08",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "temporaryFilesRemoved": 7,
+        "temporaryBytesRemoved": 200309
+      },
+      "runtimeQa": {
+        "activeDeploymentId": "dpl_DN3qet2bCAuThYj2JvCKMqWR4c78",
+        "runtimeErrorLogRows": 0,
+        "runtimeFiveHundredLogRows": 0,
+        "receiptEraResearchIntegritySeconds": 410.235,
+        "qualification": "The configured Vercel CLI returned zero error-level and zero 5xx rows for the exact deployment after its provider-native creation timestamp. Runtime confidence also rests on exact READY and source identity, production-alias assignment, successful intended routes, six live-to-local byte identities, and zero production browser console messages."
+      },
+      "roundMovement": {
+        "plannedPairs": 1573,
+        "completedPairs": 1573,
+        "finalMatrixPairsMoved": 1033,
+        "verifiedPresent": 72,
+        "researchedUnresolved": 961,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 0,
+        "denominatorMovement": 0,
+        "protocolCellsClosed": 69,
+        "certificationBlockersRemoved": 4
+      },
+      "qaToolingInterventions": [
+        "The first parity harness failed before HTTP activity because this PowerShell host did not preload System.Net.Http or expose the newer static SHA API; the compatible harness then passed all checks.",
+        "The installed Playwright CLI required -s=<name> instead of the older --session skill example; the failed launch retained no controllable session and the corrected desktop and mobile sessions passed.",
+        "One invalid Playwright run-code wait expression returned SyntaxError without damaging the loaded page; post-load snapshots and subsequent clean sessions supplied the final evidence.",
+        "The first NODE_OPTIONS preload spelling lost Windows path separators and failed before the receipt-era integrity suite started; a forward-slash absolute preload path then passed the complete 410.235-second suite."
+      ],
+      "clockQualification": "The Windows host clock remains approximately one hour ahead of GitHub and Vercel provider timestamps. Deployment duration uses Vercel provider-native epochs, and verification time is the GitHub API Date header captured after all production checks.",
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 53 content SHA e69394f602de50a4638ae126311c9e6ac4786143; GitHub Production deployment 5812149749 succeeded; Git-linked Vercel deployment dpl_DN3qet2bCAuThYj2JvCKMqWR4c78 reached READY and its build log identified commit e69394f on main; the production alias resolved to that deployment; six intended live routes passed; Nevada, Oregon, and Vermont summary plus selected county files matched local SHA-256 and bytes exactly; fresh Oregon desktop and Vermont mobile browser behavior passed without console warnings, console errors, or horizontal overflow; the exact deployment returned zero error-level and zero 5xx log rows; and the complete receipt-era national research-integrity suite passed. Round 53 completed 1573 county-species outcomes and moved 1033 unique final-matrix pairs across Nevada, Oregon, and Vermont, including 72 verified-present and 961 researched-unresolved movements, closing 69 protocol cells and removing four certification blockers. It created no verified-absence, not-detected, applicability, denominator, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
