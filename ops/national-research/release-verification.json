@@ -1384,6 +1384,122 @@
         "qualification": "The mostly static deployment emitted no runtime log entries in the observed post-deployment window. Runtime confidence therefore rests on successful intended route navigation, exact live-to-local byte parity, ZIP API browser behavior, provider READY metadata, and zero browser console warnings or errors. The first explicit CLI deployment attempt failed before build because an archive was required for more than 15,000 files; one exact retry with a tgz archive succeeded."
       },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact content SHA db29d5564ce1a41848b199951a82072bd69f142b; GitHub Production deployment 5788454156 succeeded; GitHub-linked Vercel deployment dpl_GbtLJh18jycTV8rcbuQNXSS3zD5k and active Vercel production deployment dpl_4qgEF8foPrkZX9oGcmgydEJSkWao reached READY with exact Git-source identity; the canonical production alias resolved to the active deployment; seven intended live routes passed; Hawaii and Vermont summaries plus Honolulu County matched local SHA-256 bytes exactly; Honolulu ZIP resolution and fresh desktop plus mobile browser behavior passed without console warnings, console errors, or horizontal overflow. Hawaii contributed 20 net-new verified-present county-species outcomes and 105 newly explicit unresolved outcomes; Vermont applicability expanded the denominator without asserting county occurrence. All 51 jurisdictions remain uncertified and no unsupported negative was inferred. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-2276cb677-2026-08-08",
+      "verifiedAt": "2026-08-08T00:57:45.000Z",
+      "commitSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+      "githubMainSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+      "githubDeploymentId": 5804055229,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-o7wrsek9t-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": "dpl_G6pU4yx6mn825mq4WKVRQEoSRsdH",
+      "redeployVercelDeploymentId": "dpl_FChZ61ZXrya71yTn8py26bqMqV7L",
+      "vercelDeploymentId": "dpl_3vZSwxKqkuf52L9cbgdzttWevEQc",
+      "vercelDeploymentUrl": "projectisitusa-il2a6mtp0-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "sourceIdentity": {
+        "source": "cli",
+        "githubCommitRef": "main",
+        "githubCommitSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+        "releaseCommitMetadata": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+        "productionAliasResolvedToDeployment": true
+      },
+      "deploymentAttempts": [
+        {
+          "id": "dpl_G6pU4yx6mn825mq4WKVRQEoSRsdH",
+          "source": "git",
+          "state": "READY",
+          "durationSeconds": 212.252,
+          "githubCommitSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70"
+        },
+        {
+          "id": "dpl_FChZ61ZXrya71yTn8py26bqMqV7L",
+          "source": "cli-redeploy",
+          "state": "READY",
+          "durationSeconds": 249.608,
+          "githubCommitSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70"
+        },
+        {
+          "id": "dpl_3vZSwxKqkuf52L9cbgdzttWevEQc",
+          "source": "cli",
+          "state": "READY",
+          "durationSeconds": 232.195,
+          "githubCommitSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+          "active": true
+        }
+      ],
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/about","status":200},
+        {"path":"/research?state=MA","status":200},
+        {"path":"/research?state=HI","status":200},
+        {"path":"/research?state=VT","status":200},
+        {"path":"/research?state=NH","status":200},
+        {"path":"/generated/presence.json","status":200},
+        {"path":"/generated/research/MA/summary.json","status":200},
+        {"path":"/generated/research/MA/counties/25001.json","status":200},
+        {"path":"/generated/research/HI/summary.json","status":200},
+        {"path":"/generated/research/HI/counties/15001.json","status":200},
+        {"path":"/generated/research/VT/summary.json","status":200},
+        {"path":"/generated/research/VT/counties/50001.json","status":200},
+        {"path":"/generated/research/NH/summary.json","status":200},
+        {"path":"/generated/research/NH/counties/33001.json","status":200}
+      ],
+      "byteParityChecks": [
+        {"path":"/generated/presence.json","bytes":27830728,"sha256":"c8a8ad1c6766bfeb325ffeabf857b57c7aaf00c5573264bcc9066ff185432f30"},
+        {"path":"/generated/research/MA/summary.json","bytes":81349,"sha256":"b1c53208b7792da8155b217bc294d414b8e138b17649bdd298b4a29bb708e81b"},
+        {"path":"/generated/research/MA/counties/25001.json","bytes":55268,"sha256":"9c244264e614aaeb84f1aae1fe5643a7aff901fcd1de737cfe10b850a2274101"},
+        {"path":"/generated/research/HI/summary.json","bytes":80274,"sha256":"2180fb52bef64b640a416e6f0abd01b0013902d37559e7b267bc7a5dd05542e0"},
+        {"path":"/generated/research/HI/counties/15001.json","bytes":77017,"sha256":"8f801c3792f8d0b6660e37552eae624a318e377387f7b926be101b5989e15151"},
+        {"path":"/generated/research/VT/summary.json","bytes":94161,"sha256":"fa56dfb9497f7d692b2e1e58fe11ebcab3bd03000271c68954fa96cb3cae6043"},
+        {"path":"/generated/research/VT/counties/50001.json","bytes":60964,"sha256":"283346800b1aef65daf54d8855f95f40f1f4e4533fdc0a1c9c6841e32959cb63"},
+        {"path":"/generated/research/NH/summary.json","bytes":78018,"sha256":"a1bbd4717be3adeda0911a9036fd950ab9e8967f1c25cafe5c5f7486ed412049"},
+        {"path":"/generated/research/NH/counties/33001.json","bytes":52506,"sha256":"0e7e400745e708fcc5022f808d786a557b08227b88e8000f64ede4fe836c9efd"}
+      ],
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "desktopState": "MA",
+        "desktopCounts": {"verifiedPresent":208,"researchedUnresolved":842,"notResearched":34006},
+        "mobileViewport": "390x844",
+        "mobileState": "VT",
+        "mobileCounts": {"verifiedPresent":159,"researchedUnresolved":893,"notResearched":34004,"denominator":35056},
+        "asOf": "2026-08-08",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "zipLookup": {
+        "method": "POST",
+        "zip": "02108",
+        "status": 200,
+        "ok": true,
+        "cacheControl": "no-store, max-age=0",
+        "countyFips": "25025",
+        "countyName": "Suffolk, MA"
+      },
+      "runtimeQa": {
+        "activeDeploymentId": "dpl_3vZSwxKqkuf52L9cbgdzttWevEQc",
+        "runtimeErrorLogRows": 0,
+        "runtimeFiveHundredLogRows": 0,
+        "observedRuntimeLogEntries": 0,
+        "qualification": "The Vercel connector session returned 403 and the configured CLI returned zero rows for error, 5xx, and successful-request filters in the verification window. Runtime confidence therefore rests on authenticated provider READY and exact source metadata, the public alias resolving to the active deployment, successful intended page and POST API requests, exact live-to-local byte parity, and zero browser console warnings or errors."
+      },
+      "roundMovement": {
+        "plannedPairs": 1075,
+        "completedPairs": 1075,
+        "finalMatrixPairsMoved": 1075,
+        "verifiedPresent": 21,
+        "researchedUnresolved": 1054,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 0,
+        "denominatorMovement": 0
+      },
+      "clockQualification": "The Windows host clock converted UTC one hour ahead of GitHub and Vercel provider timestamps because of a DST configuration mismatch. Deployment durations in this receipt are calculated only from provider created and ready epochs. Two additional exact-source deployments were unnecessarily launched before this contradiction was resolved.",
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact content SHA 2276cb67799b8858e69d5fbd1d69d0fe7ac18d70; GitHub Production deployment 5804055229 succeeded; Git-linked Vercel deployment dpl_G6pU4yx6mn825mq4WKVRQEoSRsdH, exact redeploy dpl_FChZ61ZXrya71yTn8py26bqMqV7L, and active exact-source deployment dpl_3vZSwxKqkuf52L9cbgdzttWevEQc all reached READY with exact commit metadata; the canonical production alias resolved to the active deployment; fifteen intended live page and generated-data routes plus the POST ZIP API passed; nine selected national, state, and county files matched local SHA-256 bytes exactly; and fresh desktop plus mobile browser behavior passed without console warnings, console errors, or horizontal overflow. Round 51 moved 1075 unique county-species pairs across Massachusetts, Hawaii, Vermont, and New Hampshire, including 21 verified-present and 1054 researched-unresolved outcomes. It created no absence, not-detected, applicability, denominator, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }

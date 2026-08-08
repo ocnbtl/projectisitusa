@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-51-gbif-portfolio-20260808-r1",
+  "roundId": "round-51-20260808",
+  "evaluatedAt": "2026-08-08T00:57:45.000Z",
+  "result": "complete-released-and-externally-verified",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "A material body of 1075 unique county-species pairs moved across four jurisdictions, including a reusable partial-run recovery that completed 576 pairs from preserved provider responses without new provider calls."
+  },
+  "baseline": {
+    "commit": "47e94b857d20c23f0e17633144042e5aa741d43c",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54223,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 341075,
+      "notResearched": 7477270
+    },
+    "protocolCells": {
+      "total": 39866,
+      "complete": 4644,
+      "incomplete": 14673,
+      "blocked": 59,
+      "current": 4033,
+      "stale": 611,
+      "undated": 14732
+    },
+    "ledger": {
+      "projectedEvidence": 177110,
+      "immutableAssertions": 147292,
+      "immutableReviews": 147292,
+      "rejections": 40612,
+      "uniqueExplicitOutcomePairs": 350208,
+      "rawOutcomes": 455194,
+      "stateSelectedRuns": 532,
+      "immutableRunDirectories": 517,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": { "blocked": 2, "cancelled": 7, "completed": 156, "failed": 54, "planned": 15 },
+      "leases": { "cancelled": 6, "completed": 160, "failed": 61, "recovered": 2 },
+      "integrations": { "changesRequested": 2, "integrated": 156, "rejected": 2 },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "planned": {
+    "jurisdictions": ["HI", "MA", "NH", "VT"],
+    "countySpeciesPairs": 1075,
+    "expectedNetNewPairs": 1075,
+    "initialJobs": 4,
+    "plannedLiveProviderRequests": 109,
+    "expectedPositivePairRange": null,
+    "positiveRangeQualification": "Round 50 did not encode an expected positive-pair range. Future acquisition contracts must include one before lease claim."
+  },
+  "execution": {
+    "pairsPlanned": 1075,
+    "pairsAttempted": 1075,
+    "pairsCompleted": 1075,
+    "finalMatrixPairsMoved": 1075,
+    "completionRate": 1,
+    "workerAttempts": 10,
+    "integratedRuns": 6,
+    "failedWorkerAttempts": 4,
+    "failedAttemptClasses": {
+      "partialProviderRuns": 2,
+      "archiveOrderValidationStops": 2
+    },
+    "workerProcessWallSeconds": 241.557,
+    "workerHours": 0.067099,
+    "peakMemoryMb": 1405.688,
+    "retries": {
+      "liveMissingRequestRetries": 2,
+      "archiveReplayAttempts": 4,
+      "archiveReplaySuccessfulAttempts": 2,
+      "releaseDeployments": 3,
+      "releaseDeploymentsQualification": "One Git deployment, one redeploy, and one direct exact-source deployment all reached READY. The extra two deployments were triggered after a host UTC conversion was incorrectly compared with provider timestamps."
+    },
+    "manualInterventions": [
+      "Partitioned the two partial provider runs into preserved archive replay and exact missing-request retries.",
+      "Corrected archive lease pair order after the immutable manifest validator stopped both first replay attempts.",
+      "Changed post-build text validation from parallel to sequential after one ENOMEM launcher failure.",
+      "Issued two unnecessary additional production deployments after a host DST clock offset was mistaken for provider delay."
+    ]
+  },
+  "acquisition": {
+    "evidenceFoundPairs": 21,
+    "noQualifyingEvidencePairs": 1054,
+    "positiveYield": 0.019535,
+    "providerCalls": 109,
+    "occurrencePages": 102,
+    "liveTaxonomyCalls": 7,
+    "cachedTaxonomyHits": 95,
+    "grossArchiveReplayHits": 192,
+    "uniqueArchivedProviderResponsesReused": 96,
+    "pairsRecoveredWithoutProviderCalls": 576,
+    "grossPreventedProviderRequests": 287,
+    "grossPreventedProviderRequestsQualification": "The gross value is 95 taxonomy cache hits plus 192 archive replay hits. The first archive replays were repeated after an order-only contract stop, so the 96 source responses were each replayed twice.",
+    "providerCandidatesGross": 503,
+    "providerCandidatesIntegrated": 501,
+    "retainedArtifactRecords": 396,
+    "integratedArtifactBytes": 282062,
+    "originalPartialArtifactBytes": 22137,
+    "grossRetainedAndReplayedBytes": 325170,
+    "pairsPerProviderCall": 9.862385,
+    "netUniquePairMovementPerProviderCall": 9.862385,
+    "netUniquePairMovementPerWorkerHour": 16021.134,
+    "requestTelemetry": {
+      "attemptRecords": 396,
+      "completedResponses": 396,
+      "failedAttempts": 0,
+      "qualification": "Two original run results were partial because one occurrence query in each run received HTTP 429. Their completed pages were preserved; the telemetry aggregate counts retained response records and records no unsupported negative."
+    }
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 1075,
+    "verifiedPresent": 21,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 1054,
+    "notResearched": -1075,
+    "conflicts": 0,
+    "affectedStates": {
+      "MA": {
+        "pairs": 350,
+        "verifiedPresent": 5,
+        "researchedUnresolved": 345,
+        "notResearched": -350,
+        "projectedEvidence": 13,
+        "rejections": 17,
+        "uniqueExplicitOutcomePairs": 350,
+        "immutableRuns": 1
+      },
+      "HI": {
+        "pairs": 125,
+        "verifiedPresent": 13,
+        "researchedUnresolved": 112,
+        "notResearched": -125,
+        "projectedEvidence": 38,
+        "rejections": 426,
+        "uniqueExplicitOutcomePairs": 125,
+        "immutableRuns": 1
+      },
+      "VT": {
+        "pairs": 350,
+        "verifiedPresent": 3,
+        "researchedUnresolved": 347,
+        "notResearched": -350,
+        "projectedEvidence": 6,
+        "rejections": 1,
+        "uniqueExplicitOutcomePairs": 350,
+        "immutableRuns": 2
+      },
+      "NH": {
+        "pairs": 250,
+        "verifiedPresent": 0,
+        "researchedUnresolved": 250,
+        "notResearched": -250,
+        "projectedEvidence": 0,
+        "rejections": 0,
+        "uniqueExplicitOutcomePairs": 250,
+        "immutableRuns": 2
+      }
+    }
+  },
+  "stateBaselinesAndFinals": {
+    "MA": {
+      "baseline": { "verifiedPresent": 203, "researchedUnresolved": 497, "notResearched": 34356 },
+      "final": { "verifiedPresent": 208, "researchedUnresolved": 842, "notResearched": 34006 }
+    },
+    "HI": {
+      "baseline": { "verifiedPresent": 90, "researchedUnresolved": 230, "notResearched": 12200 },
+      "final": { "verifiedPresent": 103, "researchedUnresolved": 342, "notResearched": 12075 }
+    },
+    "VT": {
+      "baseline": { "verifiedPresent": 156, "researchedUnresolved": 546, "notResearched": 34354 },
+      "final": { "verifiedPresent": 159, "researchedUnresolved": 893, "notResearched": 34004 }
+    },
+    "NH": {
+      "baseline": { "verifiedPresent": 122, "researchedUnresolved": 388, "notResearched": 24530 },
+      "final": { "verifiedPresent": 122, "researchedUnresolved": 638, "notResearched": 24280 }
+    }
+  },
+  "applicabilityAndDenominatorMovement": {
+    "stateSpeciesApplicable": 0,
+    "stateSpeciesNotApplicable": 0,
+    "stateSpeciesUnresolved": 0,
+    "countySpeciesDenominator": 0,
+    "qualification": "No applicability or denominator change is counted as county research movement in this round."
+  },
+  "protocolClosure": {
+    "totalCells": 0,
+    "complete": 100,
+    "incomplete": -100,
+    "blocked": 0,
+    "current": 100,
+    "stale": 0,
+    "undated": -100
+  },
+  "final": {
+    "contentCommit": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54244,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 342129,
+      "notResearched": 7476195
+    },
+    "protocolCells": {
+      "total": 39866,
+      "complete": 4744,
+      "incomplete": 14573,
+      "blocked": 59,
+      "current": 4133,
+      "stale": 611,
+      "undated": 14632
+    },
+    "ledger": {
+      "projectedEvidence": 177167,
+      "immutableAssertions": 147349,
+      "immutableReviews": 147349,
+      "rejections": 41056,
+      "uniqueExplicitOutcomePairs": 351283,
+      "rawOutcomes": 456269,
+      "stateSelectedRuns": 538,
+      "immutableRunDirectories": 523,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": { "blocked": 2, "cancelled": 7, "completed": 162, "failed": 56, "planned": 11 },
+      "leases": { "cancelled": 6, "completed": 166, "failed": 65, "recovered": 2 },
+      "integrations": { "changesRequested": 2, "integrated": 162, "rejected": 2 },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "certificationBlockersRemoved": 0
+  },
+  "expectedVersusActual": {
+    "plannedPairs": 1075,
+    "expectedNetNewPairs": 1075,
+    "actualCompletedPairs": 1075,
+    "actualFinalMatrixMovement": 1075,
+    "expectedProviderCalls": 109,
+    "actualProviderCalls": 109,
+    "actualEvidenceFoundPairs": 21,
+    "actualNoQualifyingEvidencePairs": 1054,
+    "pairMovementAchievementRate": 1,
+    "providerCallVariance": 0,
+    "positiveYieldVariance": null,
+    "qualification": "No expected positive-pair range was encoded, so no fabricated positive-yield variance is reported."
+  },
+  "integrationLatency": {
+    "secondsByRun": {
+      "MA": 130,
+      "HI": 186,
+      "VTArchive": 180,
+      "NHArchive": 239,
+      "VTLive": 298,
+      "NHLive": 357
+    },
+    "averageSeconds": 231.667,
+    "maximumSeconds": 357
+  },
+  "releaseOverhead": {
+    "explicitAsOf": "2026-08-08",
+    "generationSeconds": 372.6,
+    "allStateByteStabilitySeconds": 791,
+    "dataAndResearchIntegritySeconds": 401.2,
+    "projectionValidationSeconds": 28.5,
+    "typecheckSeconds": 3.1,
+    "lintSeconds": 2.9,
+    "localProductionBuildSeconds": 25.1,
+    "localBuildCompileSeconds": 9,
+    "gitLinkedDeploymentSeconds": 212.252,
+    "redeploySeconds": 249.608,
+    "activeExactSourceDeploymentSeconds": 232.195,
+    "productionQaSeconds": 418.274,
+    "knownSequentialReleaseSeconds": 2275.869,
+    "knownSequentialReleaseQualification": "The total includes one active deployment duration, not all three overlapping deployment durations. Local browser QA duration and full cross-domain round wall time are not claimed because the Windows host clock is one hour ahead of provider timestamps."
+  },
+  "externalVerification": {
+    "githubMainSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+    "githubDeploymentId": 5804055229,
+    "githubDeploymentState": "success",
+    "gitLinkedVercelDeploymentId": "dpl_G6pU4yx6mn825mq4WKVRQEoSRsdH",
+    "redeployVercelDeploymentId": "dpl_FChZ61ZXrya71yTn8py26bqMqV7L",
+    "activeVercelDeploymentId": "dpl_3vZSwxKqkuf52L9cbgdzttWevEQc",
+    "activeDeploymentState": "READY",
+    "activeDeploymentSource": "cli",
+    "activeDeploymentCommitSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
+    "productionAliasResolved": true,
+    "routeChecksPassed": 16,
+    "byteParityChecksPassed": 9,
+    "browserConsoleErrors": 0,
+    "browserConsoleWarnings": 0,
+    "desktopHorizontalOverflow": false,
+    "mobileHorizontalOverflow": false,
+    "runtimeErrorLogRows": 0,
+    "runtimeFiveHundredLogRows": 0,
+    "runtimeLogQualification": "The connector session returned 403 and the configured CLI returned zero rows for error, 5xx, and success filters. Runtime confidence rests on provider READY metadata, intended route requests, exact byte parity, successful POST API behavior, and zero browser console messages."
+  },
+  "processLesson": {
+    "lesson": "Exact ordered scope is part of the immutable recovery contract, and cross-domain timing must use provider-native epochs rather than the Windows host's DST-shifted UTC conversion.",
+    "applied": [
+      "Archive recovery preflight now compares the serialized ordered pair array before lease claim, which made the second attempts validator-clean without new provider access.",
+      "Partial runs are partitioned into completed archive replay and exact missing-request retry scopes, preserving pages and preventing repeated provider work.",
+      "Taxonomy identities are reused from a provenance-bound cache instead of repeated species-match requests.",
+      "Post-build validation was reduced to sequential topology after one ENOMEM launcher failure.",
+      "Future release waits will calculate duration from provider created and ready epochs and will not redeploy based on the host clock."
+    ]
+  },
+  "nextRankedSourcePortfolio": [
+    {
+      "rank": 1,
+      "workClass": "national-reuse-preflight",
+      "pairs": 2103,
+      "reason": "Reconcile all remaining planned GBIF scopes against immutable runs, provider archives, candidate artifacts, partial manifests, and the taxonomy cache before any live request."
+    },
+    {
+      "rank": 2,
+      "workClass": "state-specific-gbif",
+      "state": "HI",
+      "pairs": 205,
+      "reason": "Highest observed positive yield in this wave and a bounded two-job continuation with strong taxonomy reuse."
+    },
+    {
+      "rank": 3,
+      "workClass": "state-specific-gbif",
+      "state": "RI",
+      "pairs": 320,
+      "reason": "Opens an untouched planned jurisdiction and provides more certification and protocol breadth than repeating low-yield tails first."
+    },
+    {
+      "rank": 4,
+      "workClass": "state-specific-gbif",
+      "state": "MA",
+      "pairs": 616,
+      "reason": "Largest remaining high-reuse cohort with measured positive evidence, ranked behind Hawaii and jurisdiction expansion because its observed yield was lower."
+    },
+    {
+      "rank": 5,
+      "workClass": "state-specific-gbif",
+      "states": ["NH", "VT"],
+      "pairs": 962,
+      "reason": "Completes the current cohort and protocol cells, but follows higher-yield and new-jurisdiction work because the observed positive yield was low."
+    }
+  ],
+  "completionForecastByWorkClass": {
+    "automatedNationalAcquisition": {
+      "measuredNetPairsPerWorkerHour": 16021.134,
+      "remainingPlannedPairs": 2103,
+      "rawWorkerHoursAtObservedRate": 0.131264,
+      "qualification": "This is process time for the measured GBIF topology, not an end-to-end completion date and not a forecast for other sources."
+    },
+    "stateSpecificResearch": {
+      "remainingPlannedGbifPairs": 2103,
+      "forecast": null,
+      "qualification": "Provider yield, pagination, archive reuse, and review burden must be re-preflighted by jurisdiction; no blended duration is defensible."
+    },
+    "applicabilityReview": {
+      "unknownStateSpeciesDecisions": 122640,
+      "forecast": null,
+      "qualification": "Applicability is a separate evidence class and this round measured no applicability-review rate."
+    },
+    "blockedExceptions": {
+      "researchBlockedStateSpecies": 54,
+      "blockedProtocolCells": 59,
+      "forecast": null,
+      "qualification": "These require source-specific or owner review and cannot be extrapolated from automated acquisition."
+    },
+    "freshnessWork": {
+      "staleProtocolCells": 611,
+      "undatedProtocolCells": 14632,
+      "forecast": null,
+      "qualification": "This round closed current protocol cells but did not measure a general freshness-remediation rate."
+    },
+    "releaseOverhead": {
+      "measuredKnownSequentialSeconds": 2275.869,
+      "qualification": "Approximately 37.9 minutes of measured sequential generation, validation, one deployment, and production QA for this checkpoint, excluding unretained local browser duration and overlapping deployment attempts."
+    }
+  },
+  "semanticAttestation": {
+    "absenceCreatedFromSilence": false,
+    "notDetectedCreatedFromSilence": false,
+    "notApplicableCreatedFromSilence": false,
+    "failureConvertedToNegative": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
