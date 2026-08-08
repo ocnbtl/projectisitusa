@@ -55,13 +55,19 @@ for (const stateCode of stateRegistry.nationalV1.certificationOrder) {
     stateCode,
   };
   const candidatePlan = buildGbifStateSpeciesPlan(candidateInput);
-  if (candidatePlan.selectedStateSpeciesScreenCount > 0) {
+  if (
+    candidatePlan.selectedStateSpeciesScreenCount > 0 &&
+    candidatePlan.expectedNetNewPairCount > 0
+  ) {
     input = candidateInput;
     first = candidatePlan;
     break;
   }
 }
-assert(input && first, "No jurisdiction exposed a nonempty GBIF planner scope.");
+assert(
+  input && first,
+  "No jurisdiction exposed a nonempty GBIF planner scope with net-new pairs.",
+);
 const second = buildGbifStateSpeciesPlan(input);
 
 assert(
