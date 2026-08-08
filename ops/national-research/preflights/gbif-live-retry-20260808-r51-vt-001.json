@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-live-retry-20260808-r51-vt-001-20260808T002442000Z",
+  "createdAt": "2026-08-08T00:24:42.000Z",
+  "result": "pass",
+  "jobId": "gbif-live-retry-20260808-r51-vt-001",
+  "exactBaseSha": "27585001e4e5650059e56ea2fc7b596a97dc362b",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "VT",
+      "stateProvince": "Vermont",
+      "candidateLimit": 14,
+      "candidatePairs": [
+        "50001:giant-hogweed",
+        "50003:giant-hogweed",
+        "50005:giant-hogweed",
+        "50007:giant-hogweed",
+        "50009:giant-hogweed",
+        "50011:giant-hogweed",
+        "50013:giant-hogweed",
+        "50015:giant-hogweed",
+        "50017:giant-hogweed",
+        "50019:giant-hogweed",
+        "50021:giant-hogweed",
+        "50023:giant-hogweed",
+        "50025:giant-hogweed",
+        "50027:giant-hogweed"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "VT"
+    ],
+    "taxa": [
+      "giant-hogweed"
+    ],
+    "pairs": [
+      "50001:giant-hogweed",
+      "50003:giant-hogweed",
+      "50005:giant-hogweed",
+      "50007:giant-hogweed",
+      "50009:giant-hogweed",
+      "50011:giant-hogweed",
+      "50013:giant-hogweed",
+      "50015:giant-hogweed",
+      "50017:giant-hogweed",
+      "50019:giant-hogweed",
+      "50021:giant-hogweed",
+      "50023:giant-hogweed",
+      "50025:giant-hogweed",
+      "50027:giant-hogweed"
+    ],
+    "pairCount": 14,
+    "pairHash": "8fc1131bcd6c036f6d1969066dc104636bc2f1b4ead786e8ebaeba9945a63b43"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-vt-001.json",
+    "declaredCandidateCount": 14,
+    "selectedPairCount": 14,
+    "sha256": "f825df07facb0713034815049d5d16349746b1e56936e1fcb1ff593ab355f589"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 14,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-live-retry-20260808-r51-vt-001\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "VT",
+    "--candidate-file",
+    "ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-vt-001.json",
+    "--candidate-limit",
+    "14",
+    "--started-at",
+    "2026-08-08T00:10:02.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-08T00:10:02.000Z",
+    "parameterHash": "3664b0509df7e4cc0586f5885cbe52007824083ec93e0468e9f6698cc43de333",
+    "suffix": "3664b0509df7",
+    "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7"
+  },
+  "expectedReceiptCodeCommit": "27585001e4e5650059e56ea2fc7b596a97dc362b",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-vt-001.json",
+        "blob": "ea341dfea174d19cab41b76b67b075ee5459ec61"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+        "blob": "0c370012294ed3e07efcbf0026088d28d81751e8"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-live-retry-20260808-r51-vt-001\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "VT",
+    "orderedPairHash": "8fc1131bcd6c036f6d1969066dc104636bc2f1b4ead786e8ebaeba9945a63b43",
+    "parameterHash": "3664b0509df7e4cc0586f5885cbe52007824083ec93e0468e9f6698cc43de333",
+    "runPath": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260807-r51",
+      "path": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+      "sha256": "2755da5da9d33926e2a27b411c8c281976036b0d6e88309bf46a93bacd8ef12b",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "giant-hogweed",
+          "scientificName": "Heracleum mantegazzianum",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Heracleum+mantegazzianum&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-07T04:35:00.603Z",
+          "responseBodySha256": "06aa5ec4585d631ac2cc9b800979451a4cbd3189607764381111ca32d789d36d",
+          "provenance": {
+            "runId": "20260807T013004Z__gbif-preserved-specimens__57937865347d",
+            "codeCommit": "88a4fa3e5d11b151282a0d9d534ac3b56b401e8b",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__57937865347d/source-verification.json",
+            "sourceVerificationSha256": "ca9ca6912f6933930db6fe400e7c4c0cb3d36c62bea9279e45b9a221b751ddb8",
+            "artifactPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__57937865347d/artifacts/gbif-species-match-giant-hogweed.json.gz",
+            "artifactSha256": "86e267603e50eea6b04d415eee9e20993c6ed0a51548eb02e4280bd0000fce59",
+            "artifactBytes": 296
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "observedAt": "2026-08-08T00:24:37.6538734Z",
+    "resourceTier": "four-worker-recovery",
+    "workerCount": 4,
+    "perWorkerAllowanceMiB": 1600,
+    "totalPhysicalMiB": 31900.918,
+    "freePhysicalMiB": 12750.23,
+    "projectedPostWorkerFreePhysicalMiB": 6350.23,
+    "totalCommitLimitMiB": 51356.918,
+    "freeCommitMiB": 20561.184,
+    "projectedPostWorkerFreeCommitMiB": 14161.184,
+    "pageFileAllocatedMiB": 19456,
+    "pageFileCurrentUsageMiB": 572,
+    "pageFilePeakUsageMiB": 9500,
+    "totalDiskMiB": 1906665.996,
+    "freeDiskMiB": 899964.285,
+    "decision": "pass-four-worker-recovery-preflight",
+    "rationale": "Four measured round-50 workers peaked below 1387 MiB each; reserve 1600 MiB per worker and retain the policy floors. Archive replay workers issue zero provider-network requests; live retries remain provider-serial."
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-live-retry-20260808-r51-vt-001.json",
+    "sha256": "a1949202a54ab5c53e5301372179f56daacd4a7e74ac32734173a36d70bd91b3",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}

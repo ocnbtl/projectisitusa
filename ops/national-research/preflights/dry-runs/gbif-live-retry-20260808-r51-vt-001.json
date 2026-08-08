@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "27585001e4e5650059e56ea2fc7b596a97dc362b",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "VT",
+    "stateProvince": "Vermont",
+    "candidateLimit": 14,
+    "candidatePairs": [
+      "50001:giant-hogweed",
+      "50003:giant-hogweed",
+      "50005:giant-hogweed",
+      "50007:giant-hogweed",
+      "50009:giant-hogweed",
+      "50011:giant-hogweed",
+      "50013:giant-hogweed",
+      "50015:giant-hogweed",
+      "50017:giant-hogweed",
+      "50019:giant-hogweed",
+      "50021:giant-hogweed",
+      "50023:giant-hogweed",
+      "50025:giant-hogweed",
+      "50027:giant-hogweed"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "VT",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-vt-001.json",
+    "declaredCandidateCount": 14,
+    "selectedPairCount": 14,
+    "sha256": "f825df07facb0713034815049d5d16349746b1e56936e1fcb1ff593ab355f589"
+  },
+  "candidateLimit": {
+    "value": 14,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "giant-hogweed"
+  ],
+  "selectedPairKeys": [
+    "50001:giant-hogweed",
+    "50003:giant-hogweed",
+    "50005:giant-hogweed",
+    "50007:giant-hogweed",
+    "50009:giant-hogweed",
+    "50011:giant-hogweed",
+    "50013:giant-hogweed",
+    "50015:giant-hogweed",
+    "50017:giant-hogweed",
+    "50019:giant-hogweed",
+    "50021:giant-hogweed",
+    "50023:giant-hogweed",
+    "50025:giant-hogweed",
+    "50027:giant-hogweed"
+  ],
+  "selectedPairHash": "8fc1131bcd6c036f6d1969066dc104636bc2f1b4ead786e8ebaeba9945a63b43",
+  "parameterHash": "3664b0509df7e4cc0586f5885cbe52007824083ec93e0468e9f6698cc43de333",
+  "startedAt": "2026-08-08T00:10:02.000Z",
+  "deterministicRunSuffix": "3664b0509df7",
+  "expectedRunPath": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260807-r51",
+    "path": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+    "sha256": "2755da5da9d33926e2a27b411c8c281976036b0d6e88309bf46a93bacd8ef12b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "giant-hogweed",
+        "scientificName": "Heracleum mantegazzianum",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Heracleum+mantegazzianum&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-07T04:35:00.603Z",
+        "responseBodySha256": "06aa5ec4585d631ac2cc9b800979451a4cbd3189607764381111ca32d789d36d",
+        "provenance": {
+          "runId": "20260807T013004Z__gbif-preserved-specimens__57937865347d",
+          "codeCommit": "88a4fa3e5d11b151282a0d9d534ac3b56b401e8b",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__57937865347d/source-verification.json",
+          "sourceVerificationSha256": "ca9ca6912f6933930db6fe400e7c4c0cb3d36c62bea9279e45b9a221b751ddb8",
+          "artifactPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__57937865347d/artifacts/gbif-species-match-giant-hogweed.json.gz",
+          "artifactSha256": "86e267603e50eea6b04d415eee9e20993c6ed0a51548eb02e4280bd0000fce59",
+          "artifactBytes": 296
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-live-retry-20260808-r51-vt-001\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "VT",
+    "--candidate-file",
+    "ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-vt-001.json",
+    "--candidate-limit",
+    "14",
+    "--started-at",
+    "2026-08-08T00:10:02.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

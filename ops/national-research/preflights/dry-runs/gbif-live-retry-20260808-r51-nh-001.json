@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "27585001e4e5650059e56ea2fc7b596a97dc362b",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "NH",
+    "stateProvince": "New Hampshire",
+    "candidateLimit": 10,
+    "candidatePairs": [
+      "33001:crupina-vulgaris",
+      "33003:crupina-vulgaris",
+      "33005:crupina-vulgaris",
+      "33007:crupina-vulgaris",
+      "33009:crupina-vulgaris",
+      "33011:crupina-vulgaris",
+      "33013:crupina-vulgaris",
+      "33015:crupina-vulgaris",
+      "33017:crupina-vulgaris",
+      "33019:crupina-vulgaris"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "NH",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-nh-001.json",
+    "declaredCandidateCount": 10,
+    "selectedPairCount": 10,
+    "sha256": "0a476dff6cf1fddb1e351a93f336f445cca71cf8f854b4244788c80ca9f79a92"
+  },
+  "candidateLimit": {
+    "value": 10,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "crupina-vulgaris"
+  ],
+  "selectedPairKeys": [
+    "33001:crupina-vulgaris",
+    "33003:crupina-vulgaris",
+    "33005:crupina-vulgaris",
+    "33007:crupina-vulgaris",
+    "33009:crupina-vulgaris",
+    "33011:crupina-vulgaris",
+    "33013:crupina-vulgaris",
+    "33015:crupina-vulgaris",
+    "33017:crupina-vulgaris",
+    "33019:crupina-vulgaris"
+  ],
+  "selectedPairHash": "504fa2e5629bd52a06e7a4bdca92f77dba7371ea1336923da7c179ecba9284be",
+  "parameterHash": "426830d36b99de9a92963c8024687bfdec84299659577c2c6cd179be2bf0047a",
+  "startedAt": "2026-08-08T00:10:03.000Z",
+  "deterministicRunSuffix": "426830d36b99",
+  "expectedRunPath": "src/data/research/runs/20260808T001003Z__gbif-preserved-specimens__426830d36b99",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260807-r51",
+    "path": "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+    "sha256": "2755da5da9d33926e2a27b411c8c281976036b0d6e88309bf46a93bacd8ef12b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "crupina-vulgaris",
+        "scientificName": "Crupina vulgaris",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Crupina+vulgaris&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-07T04:34:50.756Z",
+        "responseBodySha256": "7c4f5fcc4840fad2124428aeefc9343c533698f27650ba792e9602dfc77aadc1",
+        "provenance": {
+          "runId": "20260807T013004Z__gbif-preserved-specimens__57937865347d",
+          "codeCommit": "88a4fa3e5d11b151282a0d9d534ac3b56b401e8b",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__57937865347d/source-verification.json",
+          "sourceVerificationSha256": "ca9ca6912f6933930db6fe400e7c4c0cb3d36c62bea9279e45b9a221b751ddb8",
+          "artifactPath": "src/data/research/runs/20260807T013004Z__gbif-preserved-specimens__57937865347d/artifacts/gbif-species-match-crupina-vulgaris.json.gz",
+          "artifactSha256": "29f43a967b2d71daf27566870d01a42ae9d2ed4d0a81365f9a7e5e00896e8c70",
+          "artifactBytes": 290
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-live-retry-20260808-r51-nh-001\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "NH",
+    "--candidate-file",
+    "ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-nh-001.json",
+    "--candidate-limit",
+    "10",
+    "--started-at",
+    "2026-08-08T00:10:03.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260807-r51.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}
