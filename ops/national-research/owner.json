@@ -7,29 +7,29 @@
   "branch": "main",
   "baseSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
   "acquiredAt": "2026-08-03T18:04:42.3522944Z",
-  "lastReverifiedAt": "2026-08-08T02:38:25.000Z",
-  "currentCheckpointSha": "c21f03d8e193e98f92257c0809bca63b6e520418",
-  "localHeadAtLastReverification": "2e9b9e32e4ec8a5285018571a9cc028b5f00dde9",
+  "lastReverifiedAt": "2026-08-08T03:02:35.000Z",
+  "currentCheckpointSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+  "localHeadAtLastReverification": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
   "state": "active",
   "ownershipEvidence": {
     "activeProjectTasks": [
       "019fde6d-0daa-71b0-b3f6-3b19de15a34f"
     ],
     "supersededOwnerTaskId": "019fc8c2-d678-7cb3-a551-102df6f8aa23",
-    "gitWorktreeCount": 83,
+    "gitWorktreeCount": 94,
     "mainWriterProcesses": 0,
-    "originMainSha": "c21f03d8e193e98f92257c0809bca63b6e520418",
-    "githubMainSha": "c21f03d8e193e98f92257c0809bca63b6e520418",
-    "vercelProductionCommitSha": "c21f03d8e193e98f92257c0809bca63b6e520418",
-    "vercelDeploymentId": "dpl_7whV7oBG2bs9X55GWXWoY8GrgGGB",
+    "originMainSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+    "githubMainSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+    "vercelProductionCommitSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+    "vercelDeploymentId": "dpl_9SVgM7NsxuVMevXts3Qf8zaQhMKT",
     "gitFetchTransport": "https-authenticated",
     "githubCliAccount": "ocnbtl",
     "vercelCliAccount": "ocn",
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Current task has not yet rerun browser QA. The Round 51 browser receipt remains historical evidence until the next release gate.",
-    "liveVerification": "At task acquisition, clean canonical main, fetched origin main, and public GitHub main matched c21f03d8e. Vercel production deployment dpl_7whV7oBG2bs9X55GWXWoY8GrgGGB was READY with exact Git-source commit c21f03d8e. The home and research routes returned HTTP 200, and AL, HI, MA, NH, and VT generated summaries matched canonical bytes exactly. This observation does not attest the local execution-contract commit or any future release.",
-    "githubDeploymentId": 5804275734,
+    "browserQa": "Fresh production desktop 1440x900 and mobile 390x844 QA passed on the Washington research route with exact final counts, no horizontal overflow, zero console warnings, zero console errors, evidence-card expansion, and the source-silence caveat visible.",
+    "liveVerification": "Canonical, origin, public GitHub main, GitHub Production deployment 5804910841, and Vercel production deployment dpl_9SVgM7NsxuVMevXts3Qf8zaQhMKT matched exact Round 52 content SHA 1c3da68d5. Six intended live routes returned HTTP 200; AL, AZ, MD, and WA generated summaries matched canonical bytes and SHA-256 exactly; production browser QA passed; and the exact deployment returned zero error-level runtime log rows in the verification window. This observation does not attest the commit that records it or any future deployment.",
+    "githubDeploymentId": 5804910841,
     "resourceCapacity": {
       "tier": "green",
       "availableMemoryMiB": 9594,
@@ -60,6 +60,13 @@
     }
   },
   "reverificationHistory": [
+    {
+      "recordedAt": "2026-08-08T03:02:35.000Z",
+      "supersededCheckpointSha": "c21f03d8e193e98f92257c0809bca63b6e520418",
+      "githubMainSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+      "vercelProductionCommitSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+      "reason": "Round 52 released a three-jurisdiction GBIF source-family milestone. MAIN verified exact GitHub and Vercel source identity, GitHub deployment success, six HTTP routes, four generated-byte parity targets, production desktop and mobile behavior, zero error-level Vercel log rows, zero active jobs or leases, and the externally observed content SHA before recording this receipt. The receipt does not self-attest to its own future deployment."
+    },
     {
       "recordedAt": "2026-08-08T02:38:25.000Z",
       "supersededCheckpointSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",

@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-52-gbif-portfolio-20260808-r1",
+  "roundId": "round-52-20260808",
+  "evaluatedAt": "2026-08-08T03:02:35.000Z",
+  "result": "complete-released-and-externally-verified",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "A material GBIF source-family milestone moved 1737 unique county-species pairs across Washington, Maryland, and Arizona, added 480 verified-present pairs, closed 75 protocol cells, and produced three reusable immutable statewide partitions."
+  },
+  "baseline": {
+    "commit": "c21f03d8e193e98f92257c0809bca63b6e520418",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54244,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 342129,
+      "notResearched": 7476195
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4744,
+      "incomplete": 14573,
+      "blocked": 59,
+      "current": 4133,
+      "stale": 611,
+      "undated": 14632
+    },
+    "ledger": {
+      "projectedEvidence": 177167,
+      "immutableAssertions": 147349,
+      "immutableReviews": 147349,
+      "rejections": 41056,
+      "uniqueExplicitOutcomePairs": 351283,
+      "rawOutcomes": 456269,
+      "stateSelectedRuns": 538,
+      "immutableRunDirectories": 523,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": { "blocked": 2, "cancelled": 7, "completed": 162, "failed": 56, "planned": 11 },
+      "leases": { "cancelled": 6, "completed": 166, "failed": 65, "recovered": 2 },
+      "integrations": { "changesRequested": 2, "integrated": 162, "rejected": 2 },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "recoveryAudit": {
+    "stalePlannedJobsReviewed": 11,
+    "stalePlannedPairs": 2103,
+    "stalePlannedTaxa": 228,
+    "pairsStillNotResearched": 574,
+    "exactRecoverableProviderPages": 0,
+    "action": "superseded-and-cancelled-before-reacquisition",
+    "qualification": "The old jobs were bound to base 20bb and lacked exact executable output lineage. Their broad scope was not treated as a cache. No provider request was issued for those stale contracts."
+  },
+  "planned": {
+    "jurisdictions": ["WA", "MD", "AZ"],
+    "countySpeciesPairs": 1950,
+    "expectedNetNewPairs": 1737,
+    "initialJobs": 3,
+    "expectedInitialLiveProviderRequests": 110,
+    "expectedPositivePairRange": { "minimum": 20, "maximum": 140 },
+    "expectedProtocolCellsClosed": 75
+  },
+  "execution": {
+    "pairsPlanned": 1950,
+    "pairsAttempted": 1950,
+    "pairsCompleted": 1950,
+    "finalMatrixPairsMoved": 1737,
+    "grossCompletionRate": 1,
+    "netMovementRate": 0.890769,
+    "workerAttempts": 3,
+    "integratedRuns": 3,
+    "failedWorkerAttempts": 0,
+    "workerProcessWallSeconds": 102.15,
+    "workerHours": 0.028375,
+    "peakMemoryMb": 1483.309,
+    "retries": {
+      "providerRequestRetries": 0,
+      "workerRetries": 0,
+      "releaseDeployments": 1
+    },
+    "manualInterventions": [
+      "Cancelled three first-issued leases before staging or provider access when the expanded acquisition commands did not bind the attempt-telemetry wrapper required by the contract.",
+      "Reissued corrected jobs, preflights, leases, and queue entries with the telemetry-bound expanded command. The cancelled contracts made zero provider calls.",
+      "Corrected the national GBIF planner integrity test to select a nonempty state with positive net-new movement instead of assuming the first nonempty state must move after new integrations."
+    ]
+  },
+  "acquisition": {
+    "evidenceFoundPairsGross": 490,
+    "noQualifyingEvidencePairsGross": 1460,
+    "positiveYield": 0.25128205,
+    "liveProviderCalls": 116,
+    "occurrencePages": 81,
+    "liveTaxonomyCalls": 35,
+    "cachedTaxonomyHits": 40,
+    "preventedProviderRequests": 40,
+    "providerCandidatesGross": 5552,
+    "acceptedAssertions": 4514,
+    "acceptedReviews": 4514,
+    "rejections": 1038,
+    "retainedArtifacts": 156,
+    "integratedArtifactBytes": 3180702,
+    "pairsPerLiveProviderCall": 16.810345,
+    "netUniquePairMovementPerLiveProviderCall": 14.974138,
+    "netUniquePairMovementPerWorkerHour": 61215.859,
+    "requestTelemetry": {
+      "responseRecords": 156,
+      "liveResponses": 116,
+      "cacheResponses": 40,
+      "failedAttempts": 0,
+      "qualification": "Every leased pair received a complete explicit outcome. Source silence, rejection, and no qualifying specimen evidence remained researched-unresolved and created no negative determination."
+    }
+  },
+  "grossEventVolume": {
+    "rawOutcomes": 1950,
+    "assertions": 4514,
+    "reviews": 4514,
+    "rejections": 1038,
+    "projectedEvidence": 4514,
+    "qualification": "Gross event volume is reported separately from 1737 unique final-matrix pair movements."
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 1737,
+    "verifiedPresent": 480,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 1257,
+    "notResearched": -1737,
+    "conflicts": 0,
+    "affectedStates": {
+      "WA": {
+        "plannedAndCompletedPairs": 975,
+        "uniquePairsMoved": 975,
+        "verifiedPresent": 225,
+        "researchedUnresolved": 750,
+        "notResearched": -975,
+        "projectedEvidence": 944,
+        "rejections": 143,
+        "uniqueExplicitOutcomePairs": 975,
+        "immutableRuns": 1
+      },
+      "MD": {
+        "plannedAndCompletedPairs": 600,
+        "uniquePairsMoved": 552,
+        "verifiedPresent": 91,
+        "researchedUnresolved": 461,
+        "notResearched": -552,
+        "projectedEvidence": 337,
+        "rejections": 211,
+        "uniqueExplicitOutcomePairs": 552,
+        "immutableRuns": 1,
+        "overlapQualification": "Ten positive results and 38 no-qualifying-evidence outcomes were already researched, so 600 completed outcomes produced 552 unique final-matrix movements."
+      },
+      "AZ": {
+        "plannedAndCompletedPairs": 375,
+        "uniquePairsMoved": 210,
+        "verifiedPresent": 164,
+        "researchedUnresolved": 46,
+        "notResearched": -210,
+        "projectedEvidence": 3233,
+        "rejections": 684,
+        "uniqueExplicitOutcomePairs": 210,
+        "immutableRuns": 1,
+        "overlapQualification": "The exact leased scope intentionally completed 165 already-researched pairs to preserve deterministic statewide partitioning; they are excluded from net movement."
+      }
+    }
+  },
+  "stateBaselinesAndFinals": {
+    "WA": {
+      "denominator": 97656,
+      "baseline": { "verifiedPresent": 138, "researchedUnresolved": 1539, "notResearched": 95979 },
+      "final": { "verifiedPresent": 363, "researchedUnresolved": 2289, "notResearched": 95004 },
+      "protocolBaseline": { "complete": 43, "incomplete": 120, "current": 30, "stale": 13, "undated": 120 },
+      "protocolFinal": { "complete": 68, "incomplete": 95, "current": 55, "stale": 13, "undated": 95 }
+    },
+    "MD": {
+      "denominator": 60096,
+      "baseline": { "verifiedPresent": 287, "researchedUnresolved": 1537, "notResearched": 58272 },
+      "final": { "verifiedPresent": 378, "researchedUnresolved": 1998, "notResearched": 57720 },
+      "protocolBaseline": { "complete": 43, "incomplete": 65, "current": 30, "stale": 13, "undated": 65 },
+      "protocolFinal": { "complete": 68, "incomplete": 40, "current": 55, "stale": 13, "undated": 40 }
+    },
+    "AZ": {
+      "denominator": 37560,
+      "baseline": { "verifiedPresent": 165, "researchedUnresolved": 1755, "notResearched": 35640 },
+      "final": { "verifiedPresent": 329, "researchedUnresolved": 1801, "notResearched": 35430 },
+      "protocolBaseline": { "complete": 86, "incomplete": 34, "blocked": 1, "current": 73, "stale": 13, "undated": 35 },
+      "protocolFinal": { "complete": 111, "incomplete": 9, "blocked": 1, "current": 98, "stale": 13, "undated": 10 }
+    }
+  },
+  "applicabilityAndDenominatorMovement": {
+    "stateSpeciesApplicable": 0,
+    "stateSpeciesNotApplicable": 0,
+    "stateSpeciesUnresolved": 0,
+    "countySpeciesDenominator": 0,
+    "qualification": "No applicability or denominator change is counted as county research movement in this round."
+  },
+  "protocolClosure": {
+    "totalCells": 0,
+    "complete": 75,
+    "incomplete": -75,
+    "blocked": 0,
+    "current": 75,
+    "stale": 0,
+    "undated": -75
+  },
+  "final": {
+    "contentCommit": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54724,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 343386,
+      "notResearched": 7474458
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4819,
+      "incomplete": 14498,
+      "blocked": 59,
+      "current": 4208,
+      "stale": 611,
+      "undated": 14557
+    },
+    "ledger": {
+      "projectedEvidence": 181681,
+      "immutableAssertions": 151863,
+      "immutableReviews": 151863,
+      "rejections": 42094,
+      "uniqueExplicitOutcomePairs": 353020,
+      "rawOutcomes": 458219,
+      "stateSelectedRuns": 541,
+      "immutableRunDirectories": 526,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": { "blocked": 2, "cancelled": 21, "completed": 165, "failed": 56, "planned": 0 },
+      "leases": { "cancelled": 9, "completed": 169, "failed": 65, "recovered": 2 },
+      "integrations": { "changesRequested": 2, "integrated": 165, "rejected": 2 },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "certificationBlockersRemoved": 0
+  },
+  "expectedVersusActual": {
+    "plannedPairs": 1950,
+    "expectedNetNewPairs": 1737,
+    "actualCompletedPairs": 1950,
+    "actualFinalMatrixMovement": 1737,
+    "expectedInitialLiveProviderCalls": 110,
+    "actualLiveProviderCalls": 116,
+    "providerCallVariance": 6,
+    "providerCallVarianceRate": 0.054545,
+    "expectedEvidenceFoundPairRange": { "minimum": 20, "maximum": 140 },
+    "actualEvidenceFoundPairsGross": 490,
+    "positiveAboveExpectedMaximum": 350,
+    "actualNoQualifyingEvidencePairsGross": 1460,
+    "pairMovementAchievementRate": 1,
+    "qualification": "Net movement matched the semantic preflight exactly. Six additional provider calls were complete occurrence-pagination pages. Positive yield substantially exceeded the historical estimate; the estimate is retained as a miss rather than revised after the fact."
+  },
+  "integrationLatency": {
+    "secondsByRun": { "WA": 263.306, "MD": 281.962, "AZ": 285.714 },
+    "averageSeconds": 276.994,
+    "maximumSeconds": 285.714,
+    "firstFinishedToLastIntegratedSeconds": 304.304
+  },
+  "releaseOverhead": {
+    "explicitAsOf": "2026-08-08",
+    "prepareDataSeconds": 31.852,
+    "allStateCompilationSeconds": 334.128,
+    "allStateByteStabilitySeconds": 677.803,
+    "dataAndResearchIntegritySeconds": 396.437,
+    "projectionValidationSeconds": 28.109,
+    "nationalConfigValidationSeconds": 0.4,
+    "frozenSkillValidationSeconds": 113.242,
+    "orchestratorValidationSeconds": 0.472,
+    "researchIndexCompilationSeconds": 24.468,
+    "typecheckSeconds": 2.535,
+    "lintSeconds": 2.72,
+    "localProductionBuildSeconds": 24.385,
+    "localBuildCompileSeconds": 8.5,
+    "pushSeconds": 11.323,
+    "deploymentSeconds": 209.385,
+    "deploymentBuildSeconds": 208.292,
+    "knownSequentialReleaseSeconds": 1857.259,
+    "knownSequentialReleaseQualification": "Approximately 31.0 minutes of retained measured sequential work. Readiness generation, dashboard generation, local browser QA, production browser QA, and the planner-test repair were completed but their wall durations were not retained and are not fabricated."
+  },
+  "externalVerification": {
+    "githubMainSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+    "githubDeploymentId": 5804910841,
+    "githubDeploymentState": "success",
+    "vercelDeploymentId": "dpl_9SVgM7NsxuVMevXts3Qf8zaQhMKT",
+    "deploymentState": "READY",
+    "deploymentSource": "git",
+    "deploymentCommitSha": "1c3da68d585f5cac3c81eb9c58869024d8a1ac5f",
+    "productionAliasResolved": true,
+    "routeChecksPassed": 6,
+    "byteParityChecksPassed": 4,
+    "browserConsoleErrors": 0,
+    "browserConsoleWarnings": 0,
+    "mobileHorizontalOverflow": false,
+    "runtimeErrorLogRows": 0,
+    "runtimeLogQualification": "The configured Vercel CLI returned zero error-level rows for the exact deployment and verification window. Runtime confidence also includes provider READY and exact source metadata, successful public routes, selected byte parity, and fresh browser behavior."
+  },
+  "processLesson": {
+    "lesson": "An executable acquisition contract must bind attempt telemetry before staging or network activity, and planned pair volume must be netted against the current matrix before ranking.",
+    "applied": [
+      "The first three leases were cancelled before provider access when expanded commands omitted the telemetry wrapper, then reissued only after corrected dry-runs matched exact ordered scopes and deterministic paths.",
+      "Eleven stale planned jobs were cancelled after current-matrix reconciliation showed only 574 of 2103 pairs remained not researched and no exact recoverable pages existed.",
+      "The portfolio used one provenance-bound taxonomy cache across three jurisdictions, preventing 40 repeated species-match requests.",
+      "The national planner integrity test now finds a nonempty state with positive net-new movement instead of relying on a stale state-order assumption."
+    ]
+  },
+  "nextRankedSourcePortfolio": [
+    {
+      "rank": 1,
+      "workClass": "national-reuse-and-provider-native-preflight",
+      "reason": "Search immutable runs, exact provider pages, verified taxonomy identities, and provider-native bulk options across every jurisdiction before any new live state acquisition. This outranks queued state work because reuse can move multiple jurisdictions with lower request and review cost."
+    },
+    {
+      "rank": 2,
+      "workClass": "state-specific-gbif",
+      "state": "NV",
+      "expectedNetNewPairs": 323,
+      "historicalPositiveYield": 0.0573,
+      "reason": "Best remaining combination of bounded net movement and measured positive yield, with strong taxonomy reuse and lower structural risk than Montana."
+    },
+    {
+      "rank": 3,
+      "workClass": "state-specific-gbif",
+      "state": "OR",
+      "expectedNetNewPairs": 360,
+      "historicalPositiveYield": 0.0111,
+      "reason": "Higher expected movement than Nevada but lower measured positive yield; it remains ahead of zero-yield tails."
+    },
+    {
+      "rank": 4,
+      "workClass": "state-specific-gbif",
+      "state": "VT",
+      "expectedNetNewPairs": 350,
+      "historicalPositiveYield": 0.00857,
+      "reason": "Strong net movement and protocol closure with existing source-family lineage, but less positive yield than Nevada and Oregon."
+    },
+    {
+      "rank": 5,
+      "workClass": "state-specific-gbif",
+      "state": "ND",
+      "expectedNetNewPairs": 424,
+      "historicalPositiveYield": 0,
+      "reason": "Largest known remaining net scope, ranked after smaller positive-yield jurisdictions because its prior source-family yield was zero."
+    },
+    {
+      "rank": 6,
+      "workClass": "structural-recovery-before-state-gbif",
+      "state": "MT",
+      "expectedNetNewPairs": 336,
+      "historicalPositiveYield": 0,
+      "reason": "Meaningful movement remains, but prior memory pressure makes per-taxon child processes, streaming parsing, or verified cache recovery a prerequisite to another lease."
+    }
+  ],
+  "completionForecastByWorkClass": {
+    "automatedNationalAcquisition": {
+      "measuredNetPairsPerWorkerHour": 61215.859,
+      "knownRankedStatePairs": 1793,
+      "rawWorkerHoursAtObservedRate": 0.029291,
+      "qualification": "This is isolated worker process time for the measured GBIF topology, not an end-to-end completion date and not a forecast for other sources."
+    },
+    "stateSpecificResearch": {
+      "forecast": null,
+      "qualification": "Each jurisdiction needs a current semantic preflight for overlap, pagination, taxonomy reuse, and review burden; no blended duration is defensible."
+    },
+    "applicabilityReview": {
+      "unknownStateSpeciesDecisions": 122640,
+      "forecast": null,
+      "qualification": "Applicability remains a separate evidence class and this round measured no applicability-review rate."
+    },
+    "blockedExceptions": {
+      "researchBlockedStateSpecies": 54,
+      "blockedProtocolCells": 59,
+      "forecast": null,
+      "qualification": "These require source-specific or exact human review and cannot be extrapolated from automated acquisition."
+    },
+    "freshnessWork": {
+      "staleProtocolCells": 611,
+      "undatedProtocolCells": 14557,
+      "forecast": null,
+      "qualification": "This round closed current cells but did not measure a general freshness-remediation rate."
+    },
+    "releaseOverhead": {
+      "measuredKnownSequentialSeconds": 1857.259,
+      "qualification": "Approximately 31.0 minutes of retained measured sequential generation, validation, push, and one deployment, excluding completed but unretained browser and dashboard durations."
+    }
+  },
+  "semanticAttestation": {
+    "absenceCreatedFromSilence": false,
+    "notDetectedCreatedFromSilence": false,
+    "notApplicableCreatedFromSilence": false,
+    "failureConvertedToNegative": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
