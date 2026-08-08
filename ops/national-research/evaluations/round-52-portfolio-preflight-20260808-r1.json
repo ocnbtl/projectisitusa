@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-52-portfolio-preflight-20260808-r1",
+  "roundId": "round-52-20260808",
+  "evaluatedAt": "2026-08-08T02:50:00.000Z",
+  "result": "portfolio-selected-no-provider-contact",
+  "exactBaseSha": "7436546ddad1b9ddf937d66d5f018c9491dbabd3",
+  "baseline": {
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54244,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 342129,
+      "notResearched": 7476195
+    },
+    "protocolCells": {
+      "total": 39866,
+      "complete": 4744,
+      "incomplete": 14573,
+      "blocked": 59,
+      "current": 4133,
+      "stale": 611,
+      "undated": 14632
+    },
+    "ledger": {
+      "projectedEvidence": 177167,
+      "immutableAssertions": 147349,
+      "immutableReviews": 147349,
+      "rejections": 41056,
+      "uniqueExplicitOutcomePairs": 351283,
+      "rawOutcomes": 456269,
+      "stateSelectedRuns": 538,
+      "immutableRunDirectories": 523,
+      "conflicts": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "previousRoundAudit": {
+    "source": "ops/national-research/evaluations/round-51-gbif-portfolio-20260808-r1.json",
+    "pairsPlanned": 1075,
+    "pairsAttempted": 1075,
+    "pairsCompleted": 1075,
+    "finalMatrixPairsMoved": 1075,
+    "verifiedPresentMovement": 21,
+    "researchedUnresolvedMovement": 1054,
+    "notResearchedMovement": -1075,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0,
+    "protocolCompleteMovement": 100,
+    "certificationBlockersRemoved": 0,
+    "providerCalls": 109,
+    "occurrencePages": 102,
+    "liveTaxonomyCalls": 7,
+    "cachedTaxonomyHits": 95,
+    "providerCandidatesGross": 503,
+    "providerCandidatesIntegrated": 501,
+    "retainedArtifacts": 396,
+    "integratedArtifactBytes": 282062,
+    "workerProcessWallSeconds": 241.557,
+    "workerHours": 0.067099,
+    "peakMemoryMb": 1405.688,
+    "failedAttempts": 4,
+    "manualInterventions": 4,
+    "pairsRecoveredWithoutProviderCalls": 576,
+    "grossPreventedProviderRequests": 287,
+    "averageIntegrationLatencySeconds": 231.667,
+    "knownSequentialReleaseSeconds": 2275.869,
+    "netUniquePairMovementPerProviderCall": 9.862385,
+    "netUniquePairMovementPerWorkerHour": 16021.134,
+    "expectedVersusActual": {
+      "expectedNetNewPairs": 1075,
+      "actualFinalMatrixMovement": 1075,
+      "expectedProviderCalls": 109,
+      "actualProviderCalls": 109,
+      "positiveRange": null,
+      "qualification": "Round 51 did not encode a positive range, so this evaluation does not invent one after execution."
+    }
+  },
+  "recoveryAudit": {
+    "stalePlannedJobs": 11,
+    "stalePlannedPairs": 2103,
+    "stalePlannedTaxa": 228,
+    "staleBaseSha": "20bb0e797f8438bc88fca83735b183f44194fd15",
+    "pairsStillNotResearched": 574,
+    "pairsAlreadyMovedByLaterRuns": 1529,
+    "existingPlannedOutputPaths": 0,
+    "exactCompletePriorGbifPairOverlap": 0,
+    "sameStateTaxonArchivedOccurrenceResponses": 0,
+    "decision": "supersede-before-registering-round-52",
+    "qualification": "The stale jobs are not executed verbatim because 1529 of their 2103 pair claims already moved in the final matrix. No completed pages or partial output paths exist for these exact planned runs, so there is no provider response to replay from the stale plans.",
+    "stillNotResearchedByJob": {
+      "gbif-bulk-20260806-r50-hi-003": 35,
+      "gbif-bulk-20260806-r50-hi-004": 0,
+      "gbif-bulk-20260806-r50-ma-002": 126,
+      "gbif-bulk-20260806-r50-ma-003": 0,
+      "gbif-bulk-20260806-r50-nh-002": 90,
+      "gbif-bulk-20260806-r50-nh-003": 0,
+      "gbif-bulk-20260806-r50-ri-001": 125,
+      "gbif-bulk-20260806-r50-ri-002": 60,
+      "gbif-bulk-20260806-r50-ri-003": 0,
+      "gbif-bulk-20260806-r50-vt-002": 138,
+      "gbif-bulk-20260806-r50-vt-003": 0
+    }
+  },
+  "nationalPortfolioRanking": [
+    { "rank": 1, "state": "WA", "plannedPairs": 975, "expectedNetNewPairs": 975, "historicalPositiveYield": 0.010256 },
+    { "rank": 2, "state": "MD", "plannedPairs": 600, "expectedNetNewPairs": 552, "historicalPositiveYield": 0.016667 },
+    { "rank": 3, "state": "ND", "plannedPairs": 1325, "expectedNetNewPairs": 424, "historicalPositiveYield": 0 },
+    { "rank": 4, "state": "OR", "plannedPairs": 900, "expectedNetNewPairs": 360, "historicalPositiveYield": 0.011111 },
+    { "rank": 5, "state": "VT", "plannedPairs": 350, "expectedNetNewPairs": 350, "historicalPositiveYield": 0.008571 },
+    { "rank": 6, "state": "MT", "plannedPairs": 1400, "expectedNetNewPairs": 336, "historicalPositiveYield": 0 },
+    { "rank": 7, "state": "NV", "plannedPairs": 323, "expectedNetNewPairs": 323, "historicalPositiveYield": 0.0573 },
+    { "rank": 8, "state": "AZ", "plannedPairs": 375, "expectedNetNewPairs": 210, "historicalPositiveYield": 0.12745 }
+  ],
+  "selectedPortfolio": {
+    "states": ["WA", "MD", "AZ"],
+    "selectionBasis": "WA and MD maximize net-new movement with national taxonomy reuse; AZ adds the strongest measured positive yield and advances an active certification cohort despite higher live taxonomy cost.",
+    "plannedPairs": 1950,
+    "expectedNetNewPairs": 1737,
+    "expectedProtocolCellsCompleted": 75,
+    "expectedApplicabilityMovement": 0,
+    "expectedDenominatorMovement": 0,
+    "plans": [
+      {
+        "state": "WA",
+        "path": "ops/national-research/plans/round-52-20260808/gbif-round52-wa-plan.json",
+        "planHash": "ae7515a7b941ef32e2f38e1969640d9c17044ee0da6d77bdce4dc90a8b1febca",
+        "taxa": 25,
+        "pairs": 975,
+        "expectedNetNewPairs": 975,
+        "expectedPositivePairRange": { "minimum": 0, "maximum": 30 }
+      },
+      {
+        "state": "MD",
+        "path": "ops/national-research/plans/round-52-20260808/gbif-round52-md-plan.json",
+        "planHash": "f4ceaf5e445d4da03061c5cc773435a7634540a03b205b41a55bfe763e5d325f",
+        "taxa": 25,
+        "pairs": 600,
+        "expectedNetNewPairs": 552,
+        "expectedPositivePairRange": { "minimum": 0, "maximum": 30 }
+      },
+      {
+        "state": "AZ",
+        "path": "ops/national-research/plans/round-52-20260808/gbif-round52-az-plan.json",
+        "planHash": "c7397455759e6f98e4957773a76b55c26bb12672370e117f99eb58828c317022",
+        "taxa": 25,
+        "pairs": 375,
+        "expectedNetNewPairs": 210,
+        "expectedPositivePairRange": { "minimum": 20, "maximum": 80 }
+      }
+    ]
+  },
+  "reuseAndProviderBudget": {
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260808-r52.json",
+    "taxonomyCacheSha256": "214d8c151ec976300c4177226909430abea32c6e283a26b041920bf786f33724",
+    "uniqueSelectedTaxa": 72,
+    "uniqueCachedTaxonomyEntries": 39,
+    "uniqueMissingTaxonomyEntries": 33,
+    "selectedCachedTaxonomyJobUses": 40,
+    "plannedLiveTaxonomyRequests": 35,
+    "plannedInitialOccurrenceRequests": 75,
+    "plannedInitialProviderRequests": 110,
+    "additionalOccurrencePages": "provider-total-dependent",
+    "qualification": "The broad identity inventory used for portfolio scoring was not treated as an executable cache. The provenance-bound cache builder retained only compatible immutable-run identities; registration and semantic dry-run use the lower verified cache count."
+  },
+  "processLesson": {
+    "lesson": "A reusable taxonomy identity inventory is not equivalent to a provenance-bound executable cache, and stale planned pair counts are not current net movement.",
+    "applied": [
+      "The checked-in planner recalculated current final-matrix movement before job registration.",
+      "The taxonomy cache was rebuilt from compatible verified immutable runs and its selected hit counts replace the optimistic scoring estimate.",
+      "Each job contract will encode the exact expected provider-call budget and an expected positive-pair range before lease claim.",
+      "The semantic dry-run must match the registered provider-call fields, ordered pair array, taxon array, and deterministic run path before any provider access."
+    ]
+  }
+}
