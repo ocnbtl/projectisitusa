@@ -7,21 +7,21 @@ Generated: `2026-08-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `165`
+- Verified present: `329`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1755`
-- Not researched: `35640`
-- Determination coverage: `0.44%`
-- Research coverage: `5.11%`
-- Explicit outcome coverage: `5.1118%`
+- Researched unresolved: `1801`
+- Not researched: `35430`
+- Determination coverage: `0.88%`
+- Research coverage: `5.67%`
+- Explicit outcome coverage: `5.6709%`
 - Applicable protocol cells: `121`
-- Current complete protocol cells: `73`
-- Protocol completion: `71.07%`
-- Current protocol completion: `60.33%`
-- Evidence records: `1597`
-- Research runs: `13`
-- Rejection records: `282`
+- Current complete protocol cells: `98`
+- Protocol completion: `91.74%`
+- Current protocol completion: `80.99%`
+- Evidence records: `4830`
+- Research runs: `14`
+- Rejection records: `966`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Pike killifish (`belonesox-belizanus`) | wildlife | 15 | 0 | 1 |
-| Black mustard (`brassica-nigra`) | plants | 15 | 0 | 1 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 15 | 0 | 1 |
-| Ward's weed (`carrichtera-annua`) | plants | 15 | 0 | 1 |
-| Grass Carp (`ctenopharyngodon-idella`) | wildlife | 15 | 0 | 1 |
-| Lehmann lovegrass (`eragrostis-lehmanniana`) | plants | 15 | 0 | 1 |
-| Chinese mitten crab (`eriocheir-sinensis`) | wildlife | 15 | 0 | 1 |
-| Silver Carp (`hypophthalmichthys-molitrix`) | wildlife | 15 | 0 | 1 |
-| Bighead Carp (`hypophthalmichthys-nobilis`) | wildlife | 15 | 0 | 1 |
-| Tall Morning-glory (`ipomoea-purpurea`) | plants | 15 | 0 | 1 |
-| Common kochia (`kochia-scoparia`) | plants | 15 | 0 | 1 |
-| Rose natal grass (`melinis-repens`) | plants | 15 | 0 | 1 |
-| Black carp (`mylopharyngodon-piceus`) | wildlife | 15 | 0 | 1 |
-| Charlock mustard (`sinapis-arvensis`) | plants | 15 | 0 | 1 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 15 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 1 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 15 | 1 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 15 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 1 |
-| Yellow Bluestem (`bothriochloa-ischaemum`) | plants | 0 | 15 | 1 |
-| Asian mustard (`brassica-tournefortii`) | plants | 0 | 15 | 1 |
-| Ripgut brome (`bromus-diandrus`) | plants | 0 | 15 | 1 |
-| Red brome (`bromus-rubens`) | plants | 0 | 15 | 1 |
-| Cheatgrass (`bromus-tectorum`) | plants | 0 | 15 | 1 |
-| Maltese star-thistle (`centaurea-melitensis`) | plants | 0 | 15 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 1 |
+| Water Hyacinth (`eichhornia-crassipes`) | plants | 0 | 15 | 1 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 15 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 1 |
+| Littlebell (`ipomoea-triloba`) | plants | 0 | 15 | 1 |
+| Dyer's woad (`isatis-tinctoria`) | plants | 0 | 15 | 1 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 15 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 15 | 1 |
+| Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 15 | 1 |
+| Harmal peganum (`peganum-harmala`) | plants | 0 | 15 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 1 |
+| Johnsongrass (`sorghum-halepense`) | plants | 0 | 15 | 1 |
+| Siberian Elm (`ulmus-pumila`) | plants | 0 | 15 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 15 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 0 | 15 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 15 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 15 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 15 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 15 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-02T20:18:31.609Z | 130 | 68 |
+| GBIF preserved specimen records | operational | 2026-08-08T03:04:52.169Z | 294 | 93 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

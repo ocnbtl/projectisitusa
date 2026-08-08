@@ -7,21 +7,21 @@ Generated: `2026-08-08T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `138`
+- Verified present: `363`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1539`
-- Not researched: `95979`
-- Determination coverage: `0.14%`
-- Research coverage: `1.72%`
-- Explicit outcome coverage: `1.7173%`
+- Researched unresolved: `2289`
+- Not researched: `95004`
+- Determination coverage: `0.37%`
+- Research coverage: `2.72%`
+- Explicit outcome coverage: `2.7157%`
 - Applicable protocol cells: `163`
-- Current complete protocol cells: `30`
-- Protocol completion: `26.38%`
-- Current protocol completion: `18.40%`
-- Evidence records: `186`
-- Research runs: `8`
-- Rejection records: `91`
+- Current complete protocol cells: `55`
+- Protocol completion: `41.72%`
+- Current protocol completion: `33.74%`
+- Evidence records: `1130`
+- Research runs: `9`
+- Rejection records: `234`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Velvetleaf (`abutilon-theophrasti`) | plants | 39 | 0 | 1 |
-| Norway Maple (`acer-platanoides`) | plants | 39 | 0 | 1 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 39 | 0 | 1 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 39 | 0 | 1 |
-| Camelthorn (`alhagi-maurorum`) | plants | 39 | 0 | 1 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 39 | 0 | 1 |
-| Slender meadow foxtail (`alopecurus-myosuroides`) | plants | 39 | 0 | 1 |
-| Wild chervil (`anthriscus-sylvestris`) | plants | 39 | 0 | 1 |
-| Absinthium (`artemisia-absinthium`) | plants | 39 | 0 | 1 |
-| Common Barberry (`berberis-vulgaris`) | plants | 39 | 0 | 1 |
-| Hoary Alyssum (`berteroa-incana`) | plants | 39 | 0 | 1 |
-| Slender false brome (`brachypodium-sylvaticum`) | plants | 39 | 0 | 1 |
-| White bryony (`bryonia-alba`) | plants | 39 | 0 | 1 |
-| Orange eye butterflybush (`buddleja-davidii`) | plants | 39 | 0 | 1 |
-| Flowering Rush (`butomus-umbellatus`) | plants | 39 | 0 | 1 |
-| Spiny plumeless thistle (`carduus-acanthoides`) | plants | 39 | 0 | 1 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 39 | 0 | 1 |
-| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 39 | 0 | 1 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 39 | 0 | 1 |
-| Red star-thistle (`centaurea-calcitrapa`) | plants | 39 | 0 | 1 |
-| Diffuse Knapweed (`centaurea-diffusa`) | plants | 39 | 0 | 1 |
-| Brownray knapweed (`centaurea-jacea`) | plants | 39 | 0 | 1 |
-| Bighead knapweed (`centaurea-macrocephala`) | plants | 39 | 0 | 1 |
-| Maltese star-thistle (`centaurea-melitensis`) | plants | 39 | 0 | 1 |
-| Lesser knapweed (`centaurea-nigra`) | plants | 39 | 0 | 1 |
+| Spotted Knapweed (`centaurea-stoebe`) | plants | 39 | 0 | 1 |
+| Rush skeletonweed (`chondrilla-juncea`) | plants | 39 | 0 | 1 |
+| Canada Thistle (`cirsium-arvense`) | plants | 39 | 0 | 1 |
+| Marsh thistle (`cirsium-palustre`) | plants | 39 | 0 | 1 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 39 | 0 | 1 |
+| Evergreen clematis (`clematis-vitalba`) | plants | 39 | 0 | 1 |
+| Poison Hemlock (`conium-maculatum`) | plants | 39 | 0 | 1 |
+| Field Bindweed (`convolvulus-arvensis`) | plants | 39 | 0 | 1 |
+| Purple pampas grass (`cortaderia-jubata`) | plants | 39 | 0 | 1 |
+| Uruguayan pampas grass (`cortaderia-selloana`) | plants | 39 | 0 | 1 |
+| Oneseed hawthorn (`crataegus-monogyna`) | plants | 39 | 0 | 1 |
+| Common Houndstongue (`cynoglossum-officinale`) | plants | 39 | 0 | 1 |
+| Yellow Nutsedge (`cyperus-esculentus`) | plants | 39 | 0 | 1 |
+| Scotch broom (`cytisus-scoparius`) | plants | 39 | 0 | 1 |
+| Common viper's bugloss (`echium-vulgare`) | plants | 39 | 0 | 1 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 39 | 0 | 1 |
+| Codlins and cream (`epilobium-hirsutum`) | plants | 39 | 0 | 1 |
+| Leafy Spurge (`euphorbia-virgata`) | plants | 39 | 0 | 1 |
+| Japanese Knotweed (`fallopia-japonica`) | plants | 39 | 0 | 1 |
+| Giant Knotweed (`fallopia-sachalinensis`) | plants | 39 | 0 | 1 |
+| French broom (`genista-monspessulana`) | plants | 39 | 0 | 1 |
+| Reed mannagrass (`glyceria-maxima`) | plants | 39 | 0 | 1 |
+| Bachelor's button (`gypsophila-paniculata`) | plants | 39 | 0 | 1 |
+| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 39 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-03T18:25:19.885Z | 10 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-08T03:04:33.579Z | 235 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
