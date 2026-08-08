@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-08T00:29:33.424Z",
+  "runId": "20260808T001002Z__gbif-preserved-specimens__3664b0509df7",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "VT",
+  "pairKeys": [
+    "50001:giant-hogweed",
+    "50003:giant-hogweed",
+    "50005:giant-hogweed",
+    "50007:giant-hogweed",
+    "50009:giant-hogweed",
+    "50011:giant-hogweed",
+    "50013:giant-hogweed",
+    "50015:giant-hogweed",
+    "50017:giant-hogweed",
+    "50019:giant-hogweed",
+    "50021:giant-hogweed",
+    "50023:giant-hogweed",
+    "50025:giant-hogweed",
+    "50027:giant-hogweed"
+  ],
+  "parameterHash": "3664b0509df7e4cc0586f5885cbe52007824083ec93e0468e9f6698cc43de333",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-08T00:29:33.314Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Vermont and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "giant-hogweed"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-giant-hogweed",
+        "url": "https://api.gbif.org/v1/species/match?name=Heracleum+mantegazzianum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-08T00:29:32.310Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-giant-hogweed",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Vermont&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3034825&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for giant-hogweed and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-08T00:29:33.314Z",
+        "declaredRecordCount": 6,
+        "receivedRecordCount": 6,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-occurrences-giant-hogweed-000000.json.gz",
+      "sha256": "efd8ab715f0b53750119497739e36fd6d412aa734eb652306353db104430f01c",
+      "bytes": 4940
+    },
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-species-match-giant-hogweed.json.gz",
+      "sha256": "86e267603e50eea6b04d415eee9e20993c6ed0a51548eb02e4280bd0000fce59",
+      "bytes": 296
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}

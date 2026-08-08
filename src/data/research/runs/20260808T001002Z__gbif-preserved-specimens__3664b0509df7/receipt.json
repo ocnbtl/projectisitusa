@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260808T001002Z__gbif-preserved-specimens__3664b0509df7",
+  "status": "complete",
+  "started_at": "2026-08-08T00:10:02.000Z",
+  "finished_at": "2026-08-08T00:29:33.424Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "27585001e4e5650059e56ea2fc7b596a97dc362b",
+  "parameter_hash": "3664b0509df7e4cc0586f5885cbe52007824083ec93e0468e9f6698cc43de333",
+  "parameters": {
+    "stateCode": "VT",
+    "stateProvince": "Vermont",
+    "candidateLimit": 14,
+    "candidatePairs": [
+      "50001:giant-hogweed",
+      "50003:giant-hogweed",
+      "50005:giant-hogweed",
+      "50007:giant-hogweed",
+      "50009:giant-hogweed",
+      "50011:giant-hogweed",
+      "50013:giant-hogweed",
+      "50015:giant-hogweed",
+      "50017:giant-hogweed",
+      "50019:giant-hogweed",
+      "50021:giant-hogweed",
+      "50023:giant-hogweed",
+      "50025:giant-hogweed",
+      "50027:giant-hogweed"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "VT",
+    "county_fips": [
+      "50001",
+      "50003",
+      "50005",
+      "50007",
+      "50009",
+      "50011",
+      "50013",
+      "50015",
+      "50017",
+      "50019",
+      "50021",
+      "50023",
+      "50025",
+      "50027"
+    ],
+    "species_ids": [
+      "giant-hogweed"
+    ],
+    "pair_keys": [
+      "50001:giant-hogweed",
+      "50003:giant-hogweed",
+      "50005:giant-hogweed",
+      "50007:giant-hogweed",
+      "50009:giant-hogweed",
+      "50011:giant-hogweed",
+      "50013:giant-hogweed",
+      "50015:giant-hogweed",
+      "50017:giant-hogweed",
+      "50019:giant-hogweed",
+      "50021:giant-hogweed",
+      "50023:giant-hogweed",
+      "50025:giant-hogweed",
+      "50027:giant-hogweed"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Heracleum+mantegazzianum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-08T00:29:32.310Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Vermont&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3034825&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-08T00:29:33.314Z",
+      "record_count": 6
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-occurrences-giant-hogweed-000000.json.gz",
+      "sha256": "efd8ab715f0b53750119497739e36fd6d412aa734eb652306353db104430f01c",
+      "bytes": 4940,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-species-match-giant-hogweed.json.gz",
+      "sha256": "86e267603e50eea6b04d415eee9e20993c6ed0a51548eb02e4280bd0000fce59",
+      "bytes": 296,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/assertions.ndjson",
+      "sha256": "12e87bc556e52305af4b1cb92b118d6ecba3faa8ac604789e26a066491b7fc79",
+      "bytes": 9375,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/reviews.ndjson",
+      "sha256": "37f831a1e617f384cb670c33570f10cafb93d5de2fbb3092ed0e3070ff7792a7",
+      "bytes": 4845,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/rejections.ndjson",
+      "sha256": "8521d98f1cb1a7cc71c62a48bcb42cdc6f4400c9d942230027677e7fada9ab3d",
+      "bytes": 787,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/outcomes.ndjson",
+      "sha256": "c345c41d8d63281c002dc668519733eb8d81697089e4eeea012a005daa90e866",
+      "bytes": 11509,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/source-verification.json",
+      "sha256": "e86905e0cf7ef0b05574612d26688f2a68bc134079fae0c89a98d66a36a5d596",
+      "bytes": 5111,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 6,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260807-r51 at src/data/research/caches/gbif-taxonomy-20260807-r51.json (2755da5da9d33926e2a27b411c8c281976036b0d6e88309bf46a93bacd8ef12b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state VT --candidate-file ops/national-research/plans/round-51-20260808-recovery/gbif-live-retry-20260808-r51-vt-001.json --output-root src/data/research/runs --pairs 50001:giant-hogweed,50003:giant-hogweed,50005:giant-hogweed,50007:giant-hogweed,50009:giant-hogweed,50011:giant-hogweed,50013:giant-hogweed,50015:giant-hogweed,50017:giant-hogweed,50019:giant-hogweed,50021:giant-hogweed,50023:giant-hogweed,50025:giant-hogweed,50027:giant-hogweed --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260807-r51.json"
+}

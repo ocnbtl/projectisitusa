@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-live-retry-20260808-r51-vt-001",
+  "leaseId": "lease-gbif-live-retry-20260808-r51-vt-001-1",
+  "status": "complete",
+  "branch": "codex/gbif-live-retry-20260808-r51-vt-001",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-live-retry-20260808-r51-vt-001",
+  "baseSha": "27585001e4e5650059e56ea2fc7b596a97dc362b",
+  "commitSha": "45d122fb5d7662d627768ee1df071021952e6aff",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "VT",
+    "stateProvince": "Vermont",
+    "candidateLimit": 14,
+    "candidatePairs": [
+      "50001:giant-hogweed",
+      "50003:giant-hogweed",
+      "50005:giant-hogweed",
+      "50007:giant-hogweed",
+      "50009:giant-hogweed",
+      "50011:giant-hogweed",
+      "50013:giant-hogweed",
+      "50015:giant-hogweed",
+      "50017:giant-hogweed",
+      "50019:giant-hogweed",
+      "50021:giant-hogweed",
+      "50023:giant-hogweed",
+      "50025:giant-hogweed",
+      "50027:giant-hogweed"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-occurrences-giant-hogweed-000000.json.gz",
+      "sha256": "efd8ab715f0b53750119497739e36fd6d412aa734eb652306353db104430f01c",
+      "bytes": 4940,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/artifacts/gbif-species-match-giant-hogweed.json.gz",
+      "sha256": "86e267603e50eea6b04d415eee9e20993c6ed0a51548eb02e4280bd0000fce59",
+      "bytes": 296,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/assertions.ndjson",
+      "sha256": "12e87bc556e52305af4b1cb92b118d6ecba3faa8ac604789e26a066491b7fc79",
+      "bytes": 9375,
+      "media_type": "application/x-ndjson",
+      "count": 5
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/reviews.ndjson",
+      "sha256": "37f831a1e617f384cb670c33570f10cafb93d5de2fbb3092ed0e3070ff7792a7",
+      "bytes": 4845,
+      "media_type": "application/x-ndjson",
+      "count": 5
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/rejections.ndjson",
+      "sha256": "8521d98f1cb1a7cc71c62a48bcb42cdc6f4400c9d942230027677e7fada9ab3d",
+      "bytes": 787,
+      "media_type": "application/x-ndjson",
+      "count": 1
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/outcomes.ndjson",
+      "sha256": "c345c41d8d63281c002dc668519733eb8d81697089e4eeea012a005daa90e866",
+      "bytes": 11509,
+      "media_type": "application/x-ndjson",
+      "count": 14
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/receipt.json",
+    "sha256": "f7a52c0cf24c86fd538a10d6839f2f3059c73c7d3d0c2d56a33c5ad0ab1d0341",
+    "bytes": 6144,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/source-verification.json",
+    "sha256": "e86905e0cf7ef0b05574612d26688f2a68bc134079fae0c89a98d66a36a5d596",
+    "bytes": 5111,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 5236,
+      "sourceRequests": 2,
+      "providerCandidates": 6,
+      "assertionEvents": 5,
+      "publicationEligibleAssertions": 5,
+      "reviewEvents": 5,
+      "rejectionRecords": 1,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 14,
+      "completeOutcomePairs": 14,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 12,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 5236,
+      "sourceRequests": 2,
+      "providerCandidates": 6,
+      "assertionEvents": 5,
+      "publicationEligibleAssertions": 5,
+      "reviewEvents": 5,
+      "rejectionRecords": 1,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 14,
+      "completeOutcomePairs": 14,
+      "evidenceFoundOutcomes": 2,
+      "noQualifyingEvidenceOutcomes": 12,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 27585001e4e5650059e56ea2fc7b596a97dc362b...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-live-retry-20260808-r51-vt-001-1 --manifest src/data/research/runs/20260808T001002Z__gbif-preserved-specimens__3664b0509df7/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-live-retry-20260808-r51-vt-001",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-live-retry-20260808-r51-vt-001-1",
+        "status": "complete",
+        "finishedAt": "2026-08-08T00:29:33.424Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 6,
+        "retainedArtifacts": 2,
+        "receiptSha256": "f7a52c0cf24c86fd538a10d6839f2f3059c73c7d3d0c2d56a33c5ad0ab1d0341"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 9,
+    "peakMemoryMb": 1405,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 14,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
