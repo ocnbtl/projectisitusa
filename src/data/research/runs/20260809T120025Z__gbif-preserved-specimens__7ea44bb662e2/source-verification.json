@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T13:44:20.182Z",
+  "runId": "20260809T120025Z__gbif-preserved-specimens__7ea44bb662e2",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "UT",
+  "pairKeys": [
+    "49001:tridax-procumbens",
+    "49003:tridax-procumbens",
+    "49005:tridax-procumbens",
+    "49007:tridax-procumbens",
+    "49009:tridax-procumbens",
+    "49011:tridax-procumbens",
+    "49013:tridax-procumbens",
+    "49015:tridax-procumbens",
+    "49017:tridax-procumbens",
+    "49019:tridax-procumbens",
+    "49021:tridax-procumbens",
+    "49023:tridax-procumbens",
+    "49025:tridax-procumbens",
+    "49027:tridax-procumbens",
+    "49029:tridax-procumbens",
+    "49031:tridax-procumbens",
+    "49033:tridax-procumbens",
+    "49035:tridax-procumbens",
+    "49037:tridax-procumbens",
+    "49039:tridax-procumbens",
+    "49041:tridax-procumbens",
+    "49043:tridax-procumbens",
+    "49045:tridax-procumbens",
+    "49047:tridax-procumbens",
+    "49049:tridax-procumbens",
+    "49051:tridax-procumbens",
+    "49053:tridax-procumbens",
+    "49055:tridax-procumbens",
+    "49057:tridax-procumbens"
+  ],
+  "parameterHash": "7ea44bb662e2e9553bbe447dd3241610ee1ea26004c501525da7fbb6f357bc67",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T13:44:20.181Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Utah and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "tridax-procumbens"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-tridax-procumbens",
+        "url": "https://api.gbif.org/v1/species/match?name=Tridax+procumbens&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T13:44:19.278Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-tridax-procumbens",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Utah&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3149462&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for tridax-procumbens and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T13:44:20.181Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__7ea44bb662e2/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__7ea44bb662e2/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+      "sha256": "c982debda9268a61f88fba3e3d870d4a0cc011c3958f955340405310e3b5f3ef",
+      "bytes": 281
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
