@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T21:17:49.108Z",
+  "runId": "20260809T203000Z__gbif-preserved-specimens__4df190e404b8",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "NH",
+  "pairKeys": [
+    "33001:rottboellia-cochinchinensis",
+    "33003:rottboellia-cochinchinensis",
+    "33005:rottboellia-cochinchinensis",
+    "33007:rottboellia-cochinchinensis",
+    "33009:rottboellia-cochinchinensis",
+    "33011:rottboellia-cochinchinensis",
+    "33013:rottboellia-cochinchinensis",
+    "33015:rottboellia-cochinchinensis",
+    "33017:rottboellia-cochinchinensis",
+    "33019:rottboellia-cochinchinensis"
+  ],
+  "parameterHash": "4df190e404b8c3d596f8170be447d14c477fd2540e65db79962dafc1b6cedcfc",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T21:17:49.107Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching New Hampshire and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "rottboellia-cochinchinensis"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-rottboellia-cochinchinensis",
+        "url": "https://api.gbif.org/v1/species/match?name=Rottboellia+cochinchinensis&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:17:48.321Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-rottboellia-cochinchinensis",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=New+Hampshire&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2704075&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for rottboellia-cochinchinensis and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:17:49.107Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__4df190e404b8/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__4df190e404b8/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+      "sha256": "2eeee55b2f7afd7fa66f423e6c9d5fc4876ce724bcc745c5164eb72217639813",
+      "bytes": 293
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
