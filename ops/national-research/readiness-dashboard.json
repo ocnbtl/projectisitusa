@@ -77517,41 +77517,41 @@
       "live-route-parity"
     ],
     "latestVerifiedPriorRelease": {
-      "verificationId": "production-65aac9792-2026-08-09",
-      "verifiedAt": "2026-08-09T10:59:01.000Z",
-      "commitSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
-      "githubMainSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
-      "githubDeploymentId": 5817907147,
+      "verificationId": "production-71112ad84-2026-08-09",
+      "verifiedAt": "2026-08-09T16:18:22.000Z",
+      "commitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "githubMainSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "githubDeploymentId": 5820445545,
       "githubDeploymentState": "success",
-      "githubDeploymentEnvironmentUrl": "https://projectisitusa-fhuls2lbu-unigentamos.vercel.app",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-829wyzyzz-unigentamos.vercel.app",
       "gitLinkedVercelDeploymentId": null,
       "vercelDeploymentId": null,
-      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/ByTz1pbaaipSoHjtN66hLGnuSEec",
-      "vercelDeploymentUrl": "projectisitusa-fhuls2lbu-unigentamos.vercel.app",
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/GjWSveS3SvfAHzhgs8agaCPkMDgM",
+      "vercelDeploymentUrl": "projectisitusa-829wyzyzz-unigentamos.vercel.app",
       "productionUrl": "https://isitusa.com",
       "target": "production",
       "state": "success",
       "sourceIdentity": {
         "source": "git",
         "githubCommitRef": "main",
-        "githubCommitSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
-        "releaseCommitMetadata": "65aac9792ec50b6625892e86ac8d521a274bede8",
+        "githubCommitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+        "releaseCommitMetadata": "71112ad845734666501ef0f1f5fc992be1a81c4f",
         "productionAliasResolvedToDeployment": true,
-        "observationMethod": "GitHub commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
+        "observationMethod": "GitHub main and commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
       },
       "deploymentAttempts": [
         {
-          "githubDeploymentId": 5817907147,
-          "vercelInspectorSlug": "ByTz1pbaaipSoHjtN66hLGnuSEec",
+          "githubDeploymentId": 5820445545,
+          "vercelInspectorSlug": "GjWSveS3SvfAHzhgs8agaCPkMDgM",
           "source": "git",
           "state": "success",
-          "statusCreatedAt": "2026-08-09T10:46:35.000Z",
-          "githubDeploymentCompletedAt": "2026-08-09T10:46:36.000Z",
+          "statusCreatedAt": "2026-08-09T16:07:01.000Z",
+          "githubDeploymentCompletedAt": "2026-08-09T16:07:02.000Z",
           "durationSeconds": 1,
           "buildSeconds": null,
-          "githubCommitSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
+          "githubCommitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
           "active": true,
-          "qualification": "Duration is measured from provider-native GitHub deployment creation to its success status. Exact Vercel build duration and private deployment ID are unavailable because the configured Vercel CLI token is invalid."
+          "qualification": "Duration is measured from provider-native GitHub deployment creation to its success status. Exact Vercel build duration and private deployment ID are unavailable because the canonical repository has no Vercel CLI installed."
         }
       ],
       "routeChecks": [
@@ -77560,65 +77560,132 @@
           "status": 200
         },
         {
-          "path": "/research?state=MT",
+          "path": "/research?state=SC",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NM",
+          "status": 200
+        },
+        {
+          "path": "/research?state=UT",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
           "status": 200
         },
         {
           "path": "/species/tridax-procumbens",
           "status": 200
-        },
-        {
-          "path": "/generated/research/MT/summary.json",
-          "status": 200
-        },
-        {
-          "path": "/generated/research/MT/counties/30001.json",
-          "status": 200
-        },
-        {
-          "path": "/generated/research/MT/counties/30111.json",
-          "status": 200
         }
       ],
       "routeCheckHosts": [
-        "https://projectisitusa-fhuls2lbu-unigentamos.vercel.app",
+        "https://projectisitusa-829wyzyzz-unigentamos.vercel.app",
         "https://isitusa.com"
       ],
       "routeHostChecksPassed": 12,
       "byteParityChecks": [
         {
-          "path": "/generated/research/MT/summary.json",
-          "bytes": 137466,
-          "sha256": "8fc9f767fd776ecff14a6947a1c1af3d3c72cafebb35303b2b894cd1dc2b29f1"
+          "path": "/generated/research/SC/summary.json",
+          "bytes": 109906,
+          "sha256": "baf7d7e5bb87c35d795fa19d6d08447a11c5e4f12e62e44724f6aa8d19056cbf"
         },
         {
-          "path": "/generated/research/MT/counties/30001.json",
-          "bytes": 61026,
-          "sha256": "67d191bcbe0fe40683b9f78ed561a2cff3136caf8955b57830936dbc2d0be253"
+          "path": "/generated/research/SC/counties/45001.json",
+          "bytes": 54687,
+          "sha256": "1c6267ec769ccd425190ead1f553594ae7f79d17f1b7c2cc860414ff83f44ba2"
         },
         {
-          "path": "/generated/research/MT/counties/30111.json",
-          "bytes": 63190,
-          "sha256": "eaea33cd01866d1597754e5a2e404cc967c7d2fc1cff4a8db6fde4050d703cd9"
+          "path": "/generated/research/SC/counties/45091.json",
+          "bytes": 56916,
+          "sha256": "223310e330c3188744395d3d50cc5f696e5459f0ea284b09c0bbd78df8c4137c"
+        },
+        {
+          "path": "/generated/research/NM/summary.json",
+          "bytes": 116988,
+          "sha256": "d50cae8e1d4f11a55ec7b7c71b6ab6cc1401247a52b79cf26777da1a01ea5df4"
+        },
+        {
+          "path": "/generated/research/NM/counties/35001.json",
+          "bytes": 57328,
+          "sha256": "5e21d554dc1b2bc40f2a6fabd1421d3bfe030c9b06097baa767c0ad9afbf15bb"
+        },
+        {
+          "path": "/generated/research/NM/counties/35061.json",
+          "bytes": 58083,
+          "sha256": "4ef48c8aa2202ae33bd694a362149d5873211817efa9bb3e87c8b48539a0c477"
+        },
+        {
+          "path": "/generated/research/UT/summary.json",
+          "bytes": 112991,
+          "sha256": "f39a028047ceb0c876ddfee2c360e764d45e61239740d8039fa7e8c2144280a2"
+        },
+        {
+          "path": "/generated/research/UT/counties/49001.json",
+          "bytes": 57164,
+          "sha256": "b83f142790d6f1e3a41e12063e41d3b16d3effd9c3c533556060302eae04d4cd"
+        },
+        {
+          "path": "/generated/research/UT/counties/49057.json",
+          "bytes": 60931,
+          "sha256": "d34444d41af7bd4f99148e2686cbc30375fc9f53b71699cc086bd3b5e792ed69"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "bytes": 111290,
+          "sha256": "ede6d929f83cc5944999edbf48acc4e092a98037ed1c272ea536671b724615d0"
+        },
+        {
+          "path": "/generated/research/WY/counties/56001.json",
+          "bytes": 64641,
+          "sha256": "9d5e45f2e7446f1a8460c82096c4c269fdf74849526a53ee5cec7d8513dea534"
+        },
+        {
+          "path": "/generated/research/WY/counties/56045.json",
+          "bytes": 61756,
+          "sha256": "c17ba6e3d06ebb462073183db818af456526d2c589e29770bc80a8e8724d62a6"
         }
       ],
       "byteParityHosts": [
-        "https://projectisitusa-fhuls2lbu-unigentamos.vercel.app",
+        "https://projectisitusa-829wyzyzz-unigentamos.vercel.app",
         "https://isitusa.com"
       ],
-      "byteParityHostFileIdentitiesPassed": 6,
+      "byteParityHostFileIdentitiesPassed": 24,
       "browserQa": {
         "desktopViewport": "1440x1000",
         "mobileViewport": "390x844",
-        "state": "MT",
+        "states": [
+          "SC",
+          "NM",
+          "UT",
+          "WY"
+        ],
         "counts": {
-          "verifiedPresent": 267,
-          "researchedUnresolved": 6173,
-          "notResearched": 133784,
-          "denominator": 140224
+          "SC": {
+            "verifiedPresent": 668,
+            "researchedUnresolved": 3288,
+            "notResearched": 111228
+          },
+          "NM": {
+            "verifiedPresent": 55,
+            "researchedUnresolved": 3740,
+            "notResearched": 78837
+          },
+          "UT": {
+            "verifiedPresent": 124,
+            "researchedUnresolved": 3182,
+            "notResearched": 69310
+          },
+          "WY": {
+            "verifiedPresent": 83,
+            "researchedUnresolved": 2654,
+            "notResearched": 54855
+          }
         },
         "asOf": "2026-08-09",
-        "researchRoutePassed": true,
+        "routeViewportChecks": 12,
+        "finalCountAssertionsPassed": true,
         "speciesRoutePassed": true,
         "speciesScientificIdentity": "Tridax procumbens",
         "horizontalOverflow": false,
@@ -77626,41 +77693,42 @@
         "consoleWarnings": 0,
         "consoleErrors": 0,
         "screenshotsCaptured": 6,
-        "productionScreenshotsVisuallyInspected": 0,
-        "localEquivalentScreenshotsVisuallyInspected": 4,
-        "temporaryFilesRemoved": 26,
-        "temporaryBytesRemoved": 4198993,
-        "qualification": "Production DOM geometry, image integrity, route identity, screenshots, and console checks passed. The Windows image-view helper could not reopen the completed production captures, so no manual production-screenshot visual claim is made."
+        "productionScreenshotsVisuallyInspected": 2,
+        "localEquivalentScreenshotsVisuallyInspected": 3,
+        "temporaryQaDirectoriesRemoved": 4,
+        "qualification": "Production route identity, final counts, DOM geometry, image integrity, screenshots, and console checks passed. Two production and three local captures were manually inspected after compression solely for the renderer."
       },
       "runtimeQa": {
         "activeDeploymentId": null,
         "runtimeErrorLogRows": null,
         "runtimeFiveHundredLogRows": null,
-        "queryStatus": "unavailable-invalid-vercel-cli-token",
-        "contentReleaseResearchIntegritySeconds": 417.026,
-        "qualification": "Exact-deployment runtime log rows and the private Vercel deployment ID were not queryable because the configured Vercel CLI token returned invalid. No zero-log or private-ID claim is made. Runtime confidence is limited to exact GitHub Production deployment success, direct HTTP 200 from both hosts, six live-to-local byte identities, and zero production browser console warnings or errors."
+        "queryStatus": "unavailable-no-vercel-cli-in-canonical-toolchain",
+        "contentReleaseResearchIntegritySeconds": 420.1,
+        "qualification": "Exact-deployment runtime log rows and the private Vercel deployment ID were not queryable because the canonical repository has no Vercel CLI installed and the previously configured external CLI token was invalid. No zero-log or private-ID claim is made. Runtime confidence is limited to exact GitHub Production deployment success, direct HTTP 200 from both hosts, twenty-four live-to-local byte identities, and zero production browser console warnings or errors.",
+        "receiptEraResearchIntegritySeconds": 431.7
       },
       "roundMovement": {
-        "plannedPairs": 336,
-        "completedPairs": 336,
-        "finalMatrixPairsMoved": 336,
-        "verifiedPresent": 0,
-        "researchedUnresolved": 336,
+        "plannedPairs": 615,
+        "completedPairs": 615,
+        "finalMatrixPairsMoved": 615,
+        "verifiedPresent": 2,
+        "researchedUnresolved": 613,
         "verifiedAbsent": 0,
         "notDetected": 0,
         "applicabilityMovement": 0,
         "denominatorMovement": 0,
-        "protocolCellsClosed": 6,
+        "protocolCellsClosed": 20,
         "certificationBlockersRemoved": 0
       },
       "qaToolingInterventions": [
-        "The configured Vercel CLI token remains invalid, so exact runtime logs and private deployment metadata are not claimed.",
-        "One production Playwright DOM expression was parsed as an empty selector; the page remained loaded and a quote-free exact identity expression passed without a provider or navigation retry.",
-        "The image-view helper could not reopen completed production screenshots because the Windows sandbox returned CreateProcessWithLogonW access denied. DOM geometry, image integrity, console, HTTP, and screenshot completion passed; no manual production visual claim is made.",
-        "One literal GitHub API repository path returned 404; the repository-derived API endpoint then returned the exact main, Vercel status, and Production deployment identities."
+        "The default shell PATH omitted the portable GitHub CLI; MAIN resolved and used C:/Code/tools/gh-2.96.0/bin/gh.exe.",
+        "One PowerShell empty-array projection initially appeared as a null deployment object; MAIN discarded it, read the raw response, and waited for the real exact-SHA deployment.",
+        "The Windows npx.cmd wrapper misparsed one expression and suppressed large combined result streams; MAIN removed the two untracked tokens it created and invoked the same cached playwright-cli entrypoint directly with Node for all final assertions.",
+        "The image-view sandbox could not reopen screenshot paths. MAIN rendered compressed copies from captured bytes and manually inspected three local and two production viewports.",
+        "The canonical repository has no Vercel CLI installed, so private deployment metadata and runtime logs are not claimed."
       ],
-      "clockQualification": "Provider-native GitHub UTC timestamps control deployment and verification timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, and console checks.",
-      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 56 content SHA 65aac9792ec50b6625892e86ac8d521a274bede8; GitHub Production deployment 5817907147 succeeded; both its immutable host and canonical production alias served all intended routes; three selected Montana files matched local SHA-256 and bytes on both hosts; and fresh Montana desktop and Tridax mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete content-release national research-integrity suite passed in 417.026 seconds. Exact-deployment runtime logs and private Vercel deployment ID were unavailable because the configured CLI token is invalid. Round 56 completed 336 county-species outcomes and moved all 336 unique final-matrix pairs in Montana to researched unresolved, closing six protocol cells. It created no verified-present, verified-absence, not-detected, applicability, denominator, certification-blocker, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
+      "clockQualification": "Provider-native GitHub UTC timestamps control deployment and verification timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, visual, and console checks.",
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 57 content SHA 71112ad845734666501ef0f1f5fc992be1a81c4f; GitHub Production deployment 5820445545 succeeded; both its immutable host and canonical production alias served all six intended routes; twelve selected SC, NM, UT, and WY files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete content-release national research-integrity suite passed in 420.1 seconds, and the receipt-era suite passed in 431.7 seconds. Exact-deployment runtime logs and private Vercel deployment ID were unavailable because the canonical repository has no Vercel CLI installed. Round 57 completed 615 county-species outcomes and moved all 615 unique final-matrix pairs, including two verified-present and 613 researched-unresolved movements, closing twenty protocol cells. It created no verified-absence, not-detected, applicability, denominator, certification-blocker, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
     },
     "selfAttestationAllowed": false,
     "note": "Build-time readiness and deployed-release evidence are separate. A committed artifact cannot attest to a future deployment of its own commit."

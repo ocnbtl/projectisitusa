@@ -7,9 +7,9 @@
   "branch": "main",
   "baseSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
   "acquiredAt": "2026-08-03T18:04:42.3522944Z",
-  "lastReverifiedAt": "2026-08-09T15:52:32.622Z",
-  "currentCheckpointSha": "37d38670cf309dac2a97f98d43f8daaa50bf93ea",
-  "localHeadAtLastReverification": "37d38670cf309dac2a97f98d43f8daaa50bf93ea",
+  "lastReverifiedAt": "2026-08-09T16:18:22.000Z",
+  "currentCheckpointSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+  "localHeadAtLastReverification": "71112ad845734666501ef0f1f5fc992be1a81c4f",
   "state": "active",
   "ownershipEvidence": {
     "activeProjectTasks": [
@@ -18,18 +18,18 @@
     "supersededOwnerTaskId": "019fc8c2-d678-7cb3-a551-102df6f8aa23",
     "gitWorktreeCount": 149,
     "mainWriterProcesses": 0,
-    "originMainSha": "12054995e9067e22a0827dcbfc4a7717c4cc7635",
-    "githubMainSha": "12054995e9067e22a0827dcbfc4a7717c4cc7635",
-    "vercelProductionCommitSha": "12054995e9067e22a0827dcbfc4a7717c4cc7635",
+    "originMainSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+    "githubMainSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+    "vercelProductionCommitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
     "vercelDeploymentId": null,
     "gitFetchTransport": "https-authenticated",
     "githubCliAccount": "ocnbtl",
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Round 57 local production-build QA passed 12 route-viewport checks across the home page, SC, NM, UT, WY, and Tridax species views at 1440x1000 and 390x844. Final counts, route identity, zero overflow, and zero broken images passed; three representative captures were visually inspected. The expected local-only Vercel Insights 404 and MIME pair remains qualified. Production QA is not claimed until the new content commit deploys.",
-    "liveVerification": "Canonical main, origin, public GitHub main, and GitHub Production deployment 5818184862 matched Round 56 receipt commit 12054995e. Three intended routes returned HTTP 200 on both the immutable and canonical hosts, and three selected Montana generated files matched local bytes and SHA-256 on both hosts. Exact private Vercel deployment ID and runtime logs remain unavailable because the configured CLI token is invalid; no zero-log claim is made. This observation does not attest the Round 57 planning commit or a future deployment.",
-    "githubDeploymentId": 5818184862,
+    "browserQa": "Round 57 production QA passed twelve route-viewport checks across the home page, SC, NM, UT, WY, and Tridax species views at 1440x1000 and 390x844. Final counts, route identity, zero overflow, zero broken images, zero console warnings, and zero console errors passed. Two production and three local captures were visually inspected.",
+    "liveVerification": "Canonical main, origin, public GitHub main, and GitHub Production deployment 5820445545 matched Round 57 content commit 71112ad845734666501ef0f1f5fc992be1a81c4f. Six intended routes returned HTTP 200 on both the immutable and canonical hosts, and twelve selected SC, NM, UT, and WY generated files matched local bytes and SHA-256 on both hosts. Production desktop and mobile browser QA passed with zero broken images, overflow, console warnings, or console errors. Exact private Vercel deployment ID and runtime logs remain unavailable because the canonical repository has no Vercel CLI installed; no zero-log claim is made. This observation does not attest the receipt commit or any future deployment.",
+    "githubDeploymentId": 5820445545,
     "resourceCapacity": {
       "tier": "green-provider-limited",
       "availableMemoryMiB": 9538.926,
@@ -50,9 +50,16 @@
       "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
       "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
     },
-    "vercelCliStatus": "configured-token-invalid-during-round-56-external-verification"
+    "vercelCliStatus": "not-installed-in-canonical-repository; prior configured external token invalid"
   },
   "reverificationHistory": [
+    {
+      "recordedAt": "2026-08-09T16:18:22.000Z",
+      "supersededCheckpointSha": "37d38670cf309dac2a97f98d43f8daaa50bf93ea",
+      "githubMainSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "vercelProductionCommitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "reason": "Round 57 released a South Carolina, New Mexico, Utah, and Wyoming GBIF source-family milestone. MAIN verified exact public GitHub and GitHub Production source identity, twelve HTTP route-host checks, twenty-four generated-byte identities, fresh production desktop and mobile behavior, zero active jobs, leases, or pending integrations, and the complete 420.1-second content-era research-integrity pass before recording this receipt. Exact private Vercel deployment ID and runtime logs were unavailable because the canonical repository has no Vercel CLI installed. This observation does not attest the receipt commit that records it or any future deployment."
+    },
     {
       "recordedAt": "2026-08-09T15:52:32.622Z",
       "supersededCheckpointSha": "12054995e9067e22a0827dcbfc4a7717c4cc7635",

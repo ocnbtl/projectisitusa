@@ -3,7 +3,7 @@
   "evaluationId": "round-57-gbif-multi-state-20260809-r1",
   "roundId": "gbif-round57",
   "evaluatedAt": "2026-08-09T14:55:45.604Z",
-  "result": "complete-pending-release-verification",
+  "result": "complete-released-and-externally-verified",
   "releaseThreshold": {
     "met": true,
     "basis": "Twenty GBIF protocol cells closed across South Carolina, New Mexico, Utah, and Wyoming. All 615 exact county-species screens completed and moved in the final matrix, including two verified-present pairs and 613 researched-unresolved pairs."
@@ -510,6 +510,12 @@
       "prohibitedDash": {
         "status": "pass",
         "releaseFilesScanned": 179
+      },
+      "receiptEraResearchIntegrity": {
+        "seconds": 431.7,
+        "status": "pass",
+        "totalImmutableRuns": 575,
+        "totalRawOutcomes": 467226
       }
     },
     "build": {
@@ -572,11 +578,31 @@
     },
     "postDeploymentGate": {
       "phase": "POST-DEPLOYMENT",
-      "decision": "PENDING"
+      "decision": "GO",
+      "contentCommit": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "githubDeploymentId": 5820445545,
+      "immutableAndCanonicalRouteChecks": "PASSED",
+      "generatedByteParity": "PASSED",
+      "productionBrowserQa": "PASSED",
+      "runtimeLogs": "UNAVAILABLE - NO VERCEL CLI IN CANONICAL TOOLCHAIN",
+      "qualification": "GO applies to the externally observed Round 57 content deployment only. The receipt commit is not self-attested."
     },
     "externalVerification": {
-      "status": "pending",
-      "qualification": "This content record does not attest its own future deployment."
+      "status": "pass",
+      "verifiedAt": "2026-08-09T16:18:22.000Z",
+      "contentCommit": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "githubDeploymentId": 5820445545,
+      "githubDeploymentState": "success",
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/GjWSveS3SvfAHzhgs8agaCPkMDgM",
+      "privateVercelDeploymentId": null,
+      "immutableDeploymentUrl": "https://projectisitusa-829wyzyzz-unigentamos.vercel.app",
+      "canonicalProductionUrl": "https://isitusa.com",
+      "routeHostChecksPassed": 12,
+      "byteParityHostFileIdentitiesPassed": 24,
+      "productionConsoleWarnings": 0,
+      "productionConsoleErrors": 0,
+      "productionScreenshotsVisuallyInspected": 2,
+      "qualification": "This evaluation records only the already-observed deployment of content commit 71112ad845734666501ef0f1f5fc992be1a81c4f. Private Vercel deployment ID and runtime logs were unavailable because the canonical repository has no Vercel CLI installed. It does not attest to the receipt commit that contains this update or any future deployment."
     }
   },
   "processLesson": {
@@ -693,8 +719,8 @@
       "measuredRequiredCoreSecondsExcludingBrowserQa": 1693.7,
       "correctivePreliminaryReplaySeconds": 800.662,
       "browserQaSeconds": null,
-      "externalSeconds": null,
-      "qualification": "The required core total is prepare-data, final all-state compile and dashboards, final byte replay, aggregate research integrity, typecheck, lint, and build. Focused duplicate validators, index construction, and browser QA were not captured under one end-to-end timer and are reported separately rather than estimated."
+      "externalSeconds": 1017,
+      "qualification": "The required core total is prepare-data, final all-state compile and dashboards, final byte replay, aggregate research integrity, typecheck, lint, and build. Focused duplicate validators, index construction, and browser QA were not captured under one end-to-end timer and are reported separately rather than estimated. External overhead is measured from the content commit timestamp to the provider-native GitHub Date header captured after all live checks."
     }
   },
   "semanticAttestation": {

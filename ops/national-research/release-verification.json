@@ -850,35 +850,116 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=AK","status":200},
-        {"path":"/research?state=AZ","status":200},
-        {"path":"/research?state=AR","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=DC","status":200},
-        {"path":"/research?state=FL","status":200},
-        {"path":"/research?state=GA","status":200},
-        {"path":"/research?state=HI","status":200},
-        {"path":"/research?state=IA","status":200},
-        {"path":"/research?state=IL","status":200},
-        {"path":"/research?state=WY","status":200},
-        {"path":"/?county=01003&species=corbicula-fluminea","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=DC",
+          "status": 200
+        },
+        {
+          "path": "/research?state=FL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=GA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=HI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=IA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=IL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AL/summary.json","sha256":"f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716"},
-        {"path":"/generated/research/AK/summary.json","sha256":"d599c84ce729fdb2a4160c182f8ef3673f3a3e90bfd86cb4d180a8924c994f1a"},
-        {"path":"/generated/research/AZ/summary.json","sha256":"4d5170f33bf9330d69ef8df8b4169d8c38a7064ca49878a027e2bb87628998c9"},
-        {"path":"/generated/research/AR/summary.json","sha256":"5d1e8bb018af0eba8c33612a4514995ec96f34bf709e9a4b34e0a4e19cf59a80"},
-        {"path":"/generated/research/CA/summary.json","sha256":"563ec7b3d0dc9f5c1266fe9f5908aedf19acd5cffde440f120f70057880d5aaa"},
-        {"path":"/generated/research/DC/summary.json","sha256":"36df9cc43588b64bdd44c815c33f9db7a736ed321b5b7847d252bc8b067ebeb1"},
-        {"path":"/generated/research/FL/summary.json","sha256":"4ee044d286cce70d3c679fb179727206a92fde372c5de7979fba3bbc3a742c9d"},
-        {"path":"/generated/research/GA/summary.json","sha256":"bd411b9f4162d8f7a856cf5cad7294a41e1ab5a0f96eb4bafaecf088c67d5f80"},
-        {"path":"/generated/research/HI/summary.json","sha256":"6025b8eca051f256555edb9e0ada5c989d39a6ddb5a6cb4c4e08c7b9c5a87397"},
-        {"path":"/generated/research/IA/summary.json","sha256":"bb8e42c00f3710b89204e1dde5dc5a8c2203a70f2cc7306da737ee639760c88f"},
-        {"path":"/generated/research/IL/summary.json","sha256":"4c1b539642a35d6c73b814d941b2720e09785d2833a75bca03b4bcc473ba7a2f"},
-        {"path":"/generated/research/WY/summary.json","sha256":"cf39c838940e8b60b97b5d12e202cef6af433f584a7395b2dd51888dffcc85c7"}
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "d599c84ce729fdb2a4160c182f8ef3673f3a3e90bfd86cb4d180a8924c994f1a"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "4d5170f33bf9330d69ef8df8b4169d8c38a7064ca49878a027e2bb87628998c9"
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "5d1e8bb018af0eba8c33612a4514995ec96f34bf709e9a4b34e0a4e19cf59a80"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "563ec7b3d0dc9f5c1266fe9f5908aedf19acd5cffde440f120f70057880d5aaa"
+        },
+        {
+          "path": "/generated/research/DC/summary.json",
+          "sha256": "36df9cc43588b64bdd44c815c33f9db7a736ed321b5b7847d252bc8b067ebeb1"
+        },
+        {
+          "path": "/generated/research/FL/summary.json",
+          "sha256": "4ee044d286cce70d3c679fb179727206a92fde372c5de7979fba3bbc3a742c9d"
+        },
+        {
+          "path": "/generated/research/GA/summary.json",
+          "sha256": "bd411b9f4162d8f7a856cf5cad7294a41e1ab5a0f96eb4bafaecf088c67d5f80"
+        },
+        {
+          "path": "/generated/research/HI/summary.json",
+          "sha256": "6025b8eca051f256555edb9e0ada5c989d39a6ddb5a6cb4c4e08c7b9c5a87397"
+        },
+        {
+          "path": "/generated/research/IA/summary.json",
+          "sha256": "bb8e42c00f3710b89204e1dde5dc5a8c2203a70f2cc7306da737ee639760c88f"
+        },
+        {
+          "path": "/generated/research/IL/summary.json",
+          "sha256": "4c1b539642a35d6c73b814d941b2720e09785d2833a75bca03b4bcc473ba7a2f"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "sha256": "cf39c838940e8b60b97b5d12e202cef6af433f584a7395b2dd51888dffcc85c7"
+        }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source metadata, live routes, selected live bytes, ZIP lookup, sparse default route refresh, source operations, evidence expansion, active-cohort, next-cohort, affected-state, and later-state research views, and desktop plus mobile browser behavior were verified without console warnings or errors. It does not attest to the commit that contains it or any future deployment."
     },
@@ -894,30 +975,96 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=AK","status":200},
-        {"path":"/research?state=AZ","status":200},
-        {"path":"/research?state=AR","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=IN","status":200},
-        {"path":"/research?state=OH","status":200},
-        {"path":"/research?state=PA","status":200},
-        {"path":"/research?state=WY","status":200},
-        {"path":"/?county=01003&species=corbicula-fluminea","status":200},
-        {"path":"/species/corbicula-fluminea","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=IN",
+          "status": 200
+        },
+        {
+          "path": "/research?state=OH",
+          "status": 200
+        },
+        {
+          "path": "/research?state=PA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        },
+        {
+          "path": "/species/corbicula-fluminea",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AL/summary.json","sha256":"f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716"},
-        {"path":"/generated/research/AK/summary.json","sha256":"d599c84ce729fdb2a4160c182f8ef3673f3a3e90bfd86cb4d180a8924c994f1a"},
-        {"path":"/generated/research/AZ/summary.json","sha256":"4d5170f33bf9330d69ef8df8b4169d8c38a7064ca49878a027e2bb87628998c9"},
-        {"path":"/generated/research/AR/summary.json","sha256":"5d1e8bb018af0eba8c33612a4514995ec96f34bf709e9a4b34e0a4e19cf59a80"},
-        {"path":"/generated/research/CA/summary.json","sha256":"563ec7b3d0dc9f5c1266fe9f5908aedf19acd5cffde440f120f70057880d5aaa"},
-        {"path":"/generated/research/IN/summary.json","sha256":"8207395fb1eefda7e3c819ed35086fe9de90ab5fe8090636191093ea815ad4c4"},
-        {"path":"/generated/research/OH/summary.json","sha256":"33c81eb0757f4115faae9e70c97c3d290e5de0282da53a19d653b7eca5c6a242"},
-        {"path":"/generated/research/PA/summary.json","sha256":"fda1c0b2d5ce36a2a4dda2e861dbffaf08c1f20eb4c045a3371e4df9bcdb9c18"},
-        {"path":"/generated/research/WY/summary.json","sha256":"cf39c838940e8b60b97b5d12e202cef6af433f584a7395b2dd51888dffcc85c7"}
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "d599c84ce729fdb2a4160c182f8ef3673f3a3e90bfd86cb4d180a8924c994f1a"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "4d5170f33bf9330d69ef8df8b4169d8c38a7064ca49878a027e2bb87628998c9"
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "5d1e8bb018af0eba8c33612a4514995ec96f34bf709e9a4b34e0a4e19cf59a80"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "563ec7b3d0dc9f5c1266fe9f5908aedf19acd5cffde440f120f70057880d5aaa"
+        },
+        {
+          "path": "/generated/research/IN/summary.json",
+          "sha256": "8207395fb1eefda7e3c819ed35086fe9de90ab5fe8090636191093ea815ad4c4"
+        },
+        {
+          "path": "/generated/research/OH/summary.json",
+          "sha256": "33c81eb0757f4115faae9e70c97c3d290e5de0282da53a19d653b7eca5c6a242"
+        },
+        {
+          "path": "/generated/research/PA/summary.json",
+          "sha256": "fda1c0b2d5ce36a2a4dda2e861dbffaf08c1f20eb4c045a3371e4df9bcdb9c18"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "sha256": "cf39c838940e8b60b97b5d12e202cef6af433f584a7395b2dd51888dffcc85c7"
+        }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel production identity, live routes, nine selected live-byte parity checks, a successful non-mutating ZIP lookup POST, sparse default resolution, returning-browser refresh, source operations, evidence expansion, active-cohort, next-cohort, affected-state, and later-state research views, and desktop plus mobile browser behavior were verified without console warnings or errors. It does not attest to the commit that contains it or any future deployment."
     },
@@ -933,20 +1080,56 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=RI","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=WY","status":200},
-        {"path":"/?county=44007&species=dreissena-polymorpha","status":200},
-        {"path":"/generated/research/RI/summary.json","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=RI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
+          "status": 200
+        },
+        {
+          "path": "/?county=44007&species=dreissena-polymorpha",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/RI/summary.json",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AL/summary.json","sha256":"f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716"},
-        {"path":"/generated/research/CA/summary.json","sha256":"563ec7b3d0dc9f5c1266fe9f5908aedf19acd5cffde440f120f70057880d5aaa"},
-        {"path":"/generated/research/RI/summary.json","sha256":"6a5db6ac5c315ab35f53cd7bda1fe0a9659af7ac84b28fb7659e9d239f327efb"},
-        {"path":"/generated/research/WY/summary.json","sha256":"cf39c838940e8b60b97b5d12e202cef6af433f584a7395b2dd51888dffcc85c7"}
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "f52aee2d997088e838d836f02e14b77154bfadfe77879da7ffeca39486c0c716"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "563ec7b3d0dc9f5c1266fe9f5908aedf19acd5cffde440f120f70057880d5aaa"
+        },
+        {
+          "path": "/generated/research/RI/summary.json",
+          "sha256": "6a5db6ac5c315ab35f53cd7bda1fe0a9659af7ac84b28fb7659e9d239f327efb"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "sha256": "cf39c838940e8b60b97b5d12e202cef6af433f584a7395b2dd51888dffcc85c7"
+        }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source build metadata, production alias identity, live routes, four selected live-byte parity checks, and a successful non-mutating Rhode Island ZIP lookup POST were verified. Fresh desktop and mobile browser QA remains attached to the prior 39af2b96 application-code release; e246419a changes research evidence and generated projections only. This receipt does not attest to the commit that contains it or any future deployment."
     },
@@ -962,25 +1145,76 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=AK","status":200},
-        {"path":"/research?state=AZ","status":200},
-        {"path":"/research?state=AR","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=WI","status":200},
-        {"path":"/?county=01003&species=corbicula-fluminea","status":200},
-        {"path":"/generated/research/AL/summary.json","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WI",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/AL/summary.json",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AL/summary.json","sha256":"cc393893f55f2e328085cb61198aef3f0d83cc4a68b24b00d1770bddffdbfc9c"},
-        {"path":"/generated/research/AK/summary.json","sha256":"ec202357e085682e05814069bd92d452a0765579eeb6655410382db71e0b33a6"},
-        {"path":"/generated/research/AZ/summary.json","sha256":"425436398c508af557a526f659f38449fdeabe0abdc47b4e20989b105e4092b2"},
-        {"path":"/generated/research/AR/summary.json","sha256":"9653394c4a85df4f62d7fdd8647687b3005bd1c580748f8145c3e215e933e63e"},
-        {"path":"/generated/research/CA/summary.json","sha256":"c98688d4291a4c586621541aa55b40417734a3562e04d2230d88f8428b5b1841"},
-        {"path":"/generated/research/WI/summary.json","sha256":"e04f7ba0444dd58036a37cd47244bcf33e07eb40bedff6e8a53ed22d02630ab4"},
-        {"path":"/generated/presence.json","sha256":"5a53402a74d3470c41b343a046d050558827aaa1f65de4a6aa9d7c6c072465dd"}
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "cc393893f55f2e328085cb61198aef3f0d83cc4a68b24b00d1770bddffdbfc9c"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "ec202357e085682e05814069bd92d452a0765579eeb6655410382db71e0b33a6"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "425436398c508af557a526f659f38449fdeabe0abdc47b4e20989b105e4092b2"
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "9653394c4a85df4f62d7fdd8647687b3005bd1c580748f8145c3e215e933e63e"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "c98688d4291a4c586621541aa55b40417734a3562e04d2230d88f8428b5b1841"
+        },
+        {
+          "path": "/generated/research/WI/summary.json",
+          "sha256": "e04f7ba0444dd58036a37cd47244bcf33e07eb40bedff6e8a53ed22d02630ab4"
+        },
+        {
+          "path": "/generated/presence.json",
+          "sha256": "5a53402a74d3470c41b343a046d050558827aaa1f65de4a6aa9d7c6c072465dd"
+        }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source build metadata, production alias identity, live routes, seven selected live-byte parity checks, a successful non-mutating Ohio ZIP lookup POST, sparse county route resolution, returning-browser refresh, source operations, evidence expansion, active-cohort, next-cohort, affected-state, and later-state research views, and desktop plus mobile browser behavior were verified without console warnings or errors. This receipt does not attest to the commit that contains it or any future deployment."
     },
@@ -996,30 +1230,96 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=AK","status":200},
-        {"path":"/research?state=AZ","status":200},
-        {"path":"/research?state=AR","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=CT","status":200},
-        {"path":"/research?state=MS","status":200},
-        {"path":"/research?state=PA","status":200},
-        {"path":"/research?state=SD","status":200},
-        {"path":"/?county=01003&species=corbicula-fluminea","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CT",
+          "status": 200
+        },
+        {
+          "path": "/research?state=MS",
+          "status": 200
+        },
+        {
+          "path": "/research?state=PA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=SD",
+          "status": 200
+        },
+        {
+          "path": "/?county=01003&species=corbicula-fluminea",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AL/summary.json","sha256":"b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"},
-        {"path":"/generated/research/AK/summary.json","sha256":"74dd7649a0b508ab55b2fa6a409df45eabad8d25622859bd01714cad6e76ff43"},
-        {"path":"/generated/research/AZ/summary.json","sha256":"b3c322324557037c521cdd0bf5bd763960670d5fdc79f033559a64e4d2a27446"},
-        {"path":"/generated/research/AR/summary.json","sha256":"d68f99a4bcbfbbf2d0406b3aa1c8409695de04cc75345d8cba629361d603b7a4"},
-        {"path":"/generated/research/CA/summary.json","sha256":"91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"},
-        {"path":"/generated/research/CT/summary.json","sha256":"01ae1f6d7d7ffd60b5008f4a977b994c2cf7f0dee8a8f65cf3228d523668a595"},
-        {"path":"/generated/research/MS/summary.json","sha256":"99a06580ec06e1f2f4ef2a5ca8df97f12c3a7d3501bb87dec90e461c091307a4"},
-        {"path":"/generated/research/PA/summary.json","sha256":"32e1c36d444e59a4be49d9ada06f954be737bbb05ec4259ad66cf910b087c4fc"},
-        {"path":"/generated/research/SD/summary.json","sha256":"d18571af82ccbe171b210e5bda6261a82ecb3ba6d0f9822f61c54fb5d218e0de"},
-        {"path":"/generated/research/WI/summary.json","sha256":"7510c7b7f667dfb7bbe71e925a2dc5a681ff5c2c7ab7a742bb2a81f21518f56c"}
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "74dd7649a0b508ab55b2fa6a409df45eabad8d25622859bd01714cad6e76ff43"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "b3c322324557037c521cdd0bf5bd763960670d5fdc79f033559a64e4d2a27446"
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "d68f99a4bcbfbbf2d0406b3aa1c8409695de04cc75345d8cba629361d603b7a4"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"
+        },
+        {
+          "path": "/generated/research/CT/summary.json",
+          "sha256": "01ae1f6d7d7ffd60b5008f4a977b994c2cf7f0dee8a8f65cf3228d523668a595"
+        },
+        {
+          "path": "/generated/research/MS/summary.json",
+          "sha256": "99a06580ec06e1f2f4ef2a5ca8df97f12c3a7d3501bb87dec90e461c091307a4"
+        },
+        {
+          "path": "/generated/research/PA/summary.json",
+          "sha256": "32e1c36d444e59a4be49d9ada06f954be737bbb05ec4259ad66cf910b087c4fc"
+        },
+        {
+          "path": "/generated/research/SD/summary.json",
+          "sha256": "d18571af82ccbe171b210e5bda6261a82ecb3ba6d0f9822f61c54fb5d218e0de"
+        },
+        {
+          "path": "/generated/research/WI/summary.json",
+          "sha256": "7510c7b7f667dfb7bbe71e925a2dc5a681ff5c2c7ab7a742bb2a81f21518f56c"
+        }
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after GitHub main, GitHub deployment success, exact Vercel Git-source build metadata, production alias identity, live routes, ten selected live-byte parity checks, a successful non-mutating New York ZIP lookup POST, sparse county route resolution, returning-browser refresh, source operations, evidence expansion, active-cohort, next-cohort, affected-state, and later-state research views, and desktop plus mobile browser behavior were verified without console warnings, console errors, page overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     },
@@ -1035,40 +1335,109 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=AK","status":200},
-        {"path":"/research?state=AZ","status":200},
-        {"path":"/research?state=AR","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=DE","status":200},
-        {"path":"/research?state=WA","status":200},
-        {"path":"/research?state=WY","status":200},
-        {"path":"/?county=53033&species=spotted-lanternfly","status":200},
-        {"path":"/species/spotted-lanternfly","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=DE",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
+          "status": 200
+        },
+        {
+          "path": "/?county=53033&species=spotted-lanternfly",
+          "status": 200
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AL/summary.json","sha256":"b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"},
-        {"path":"/generated/research/AK/summary.json","sha256":"74dd7649a0b508ab55b2fa6a409df45eabad8d25622859bd01714cad6e76ff43"},
-        {"path":"/generated/research/AZ/summary.json","sha256":"b3c322324557037c521cdd0bf5bd763960670d5fdc79f033559a64e4d2a27446"},
-        {"path":"/generated/research/AR/summary.json","sha256":"d68f99a4bcbfbbf2d0406b3aa1c8409695de04cc75345d8cba629361d603b7a4"},
-        {"path":"/generated/research/CA/summary.json","sha256":"91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"},
-        {"path":"/generated/research/DE/summary.json","sha256":"a52e2ebf13240f6de8e9de223bdcee7b03ac5c6a9fd6defd989dbf312626f75b"},
-        {"path":"/generated/research/WA/summary.json","sha256":"4460fd29adba7788740cb880878fc43359b5c4450be7765c1cf268a48804d173"},
-        {"path":"/generated/research/WY/summary.json","sha256":"68fc51edba5d93b0ef8c351e13c8b6cd9b18652690519230f5850f7fa0307265"}
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"
+        },
+        {
+          "path": "/generated/research/AK/summary.json",
+          "sha256": "74dd7649a0b508ab55b2fa6a409df45eabad8d25622859bd01714cad6e76ff43"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "b3c322324557037c521cdd0bf5bd763960670d5fdc79f033559a64e4d2a27446"
+        },
+        {
+          "path": "/generated/research/AR/summary.json",
+          "sha256": "d68f99a4bcbfbbf2d0406b3aa1c8409695de04cc75345d8cba629361d603b7a4"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"
+        },
+        {
+          "path": "/generated/research/DE/summary.json",
+          "sha256": "a52e2ebf13240f6de8e9de223bdcee7b03ac5c6a9fd6defd989dbf312626f75b"
+        },
+        {
+          "path": "/generated/research/WA/summary.json",
+          "sha256": "4460fd29adba7788740cb880878fc43359b5c4450be7765c1cf268a48804d173"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "sha256": "68fc51edba5d93b0ef8c351e13c8b6cd9b18652690519230f5850f7fa0307265"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["WA", "DE"],
+        "states": [
+          "WA",
+          "DE"
+        ],
         "county": "King, WA",
         "returningBrowserRefresh": "pass",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
         "consoleErrors": 0
       },
-      "zipLookup": {"zip":"98101","status":200,"ok":true,"countyFips":"53033","countyName":"King, WA"},
+      "zipLookup": {
+        "zip": "98101",
+        "status": 200,
+        "ok": true,
+        "countyFips": "53033",
+        "countyName": "King, WA"
+      },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical and origin main matched, GitHub deployment 5731339240 succeeded, exact Vercel Git-source build metadata matched, the production aliases were assigned, twelve live routes passed, eight selected live summary files matched local bytes exactly, Seattle ZIP lookup succeeded, WA and DE research projections rendered with current counts, source operations exposed the current GBIF run, King County selection and returning-browser refresh worked, and desktop plus mobile browser behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     },
     {
@@ -1083,33 +1452,83 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=DE","status":200},
-        {"path":"/research?state=MT","status":200},
-        {"path":"/?county=30049&species=spotted-lanternfly","status":200},
-        {"path":"/species/spotted-lanternfly","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=DE",
+          "status": 200
+        },
+        {
+          "path": "/research?state=MT",
+          "status": 200
+        },
+        {
+          "path": "/?county=30049&species=spotted-lanternfly",
+          "status": 200
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AL/summary.json","sha256":"b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"},
-        {"path":"/generated/research/CA/summary.json","sha256":"91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"},
-        {"path":"/generated/research/DE/summary.json","sha256":"a52e2ebf13240f6de8e9de223bdcee7b03ac5c6a9fd6defd989dbf312626f75b"},
-        {"path":"/generated/research/MT/summary.json","sha256":"c9ef15d314a86d808c9b7d0c47e455f4f1691a73673dd897cc2db61c960546ed"},
-        {"path":"/generated/research/MT/counties/30049.json","sha256":"b7e2674ed91547c82d2c11d759cfef4b892bad1817e39bb5f74f3fd7bce0bd95"}
+        {
+          "path": "/generated/research/AL/summary.json",
+          "sha256": "b426931cde6b70fefc9c040f6cfb44ab243c8375a16d2319e6ea25079f830380"
+        },
+        {
+          "path": "/generated/research/CA/summary.json",
+          "sha256": "91986a3875c2e3ad889e859c9e5845f75e78b454c03aa41df5184cda8f56abe8"
+        },
+        {
+          "path": "/generated/research/DE/summary.json",
+          "sha256": "a52e2ebf13240f6de8e9de223bdcee7b03ac5c6a9fd6defd989dbf312626f75b"
+        },
+        {
+          "path": "/generated/research/MT/summary.json",
+          "sha256": "c9ef15d314a86d808c9b7d0c47e455f4f1691a73673dd897cc2db61c960546ed"
+        },
+        {
+          "path": "/generated/research/MT/counties/30049.json",
+          "sha256": "b7e2674ed91547c82d2c11d759cfef4b892bad1817e39bb5f74f3fd7bce0bd95"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["AL", "CA", "DE", "MT"],
+        "states": [
+          "AL",
+          "CA",
+          "DE",
+          "MT"
+        ],
         "county": "Lewis and Clark, MT",
         "returningBrowserRefresh": "pass",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
         "consoleErrors": 0
       },
-      "zipLookup": {"zip":"59601","status":200,"ok":true,"countyFips":"30049","countyName":"Lewis and Clark, MT"},
+      "zipLookup": {
+        "zip": "59601",
+        "status": 200,
+        "ok": true,
+        "countyFips": "30049",
+        "countyName": "Lewis and Clark, MT"
+      },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after origin and GitHub main matched, GitHub deployment 5733217275 succeeded, Vercel deployment dpl_HfR82V2CpPrSLsMGu3PQnGNZc1WU reached READY with the exact Git-source SHA, eight live routes passed, five selected live generated files matched local bytes exactly, Helena ZIP 59601 resolved to Lewis and Clark County, AL, CA, DE, and MT research projections rendered current counts, Lewis and Clark county selection worked, and fresh desktop, mobile, and returning-browser behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     },
     {
@@ -1124,40 +1543,124 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=IA","status":200},
-        {"path":"/research?state=ID","status":200},
-        {"path":"/research?state=KS","status":200},
-        {"path":"/research?state=MD","status":200},
-        {"path":"/research?state=NJ","status":200},
-        {"path":"/research?state=NM","status":200},
-        {"path":"/research?state=NY","status":200},
-        {"path":"/research?state=OK","status":200},
-        {"path":"/research?state=OR","status":200},
-        {"path":"/research?state=UT","status":200},
-        {"path":"/research?state=WV","status":200},
-        {"path":"/research?state=WY","status":200},
-        {"path":"/species/spotted-lanternfly","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=IA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=ID",
+          "status": 200
+        },
+        {
+          "path": "/research?state=KS",
+          "status": 200
+        },
+        {
+          "path": "/research?state=MD",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NJ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NM",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NY",
+          "status": 200
+        },
+        {
+          "path": "/research?state=OK",
+          "status": 200
+        },
+        {
+          "path": "/research?state=OR",
+          "status": 200
+        },
+        {
+          "path": "/research?state=UT",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WV",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
+          "status": 200
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/IA/summary.json","sha256":"2b416a6cc802fc33dbdeecef69610b6e85ab9b2e32df5263779c8ee97c7e4e02"},
-        {"path":"/generated/research/ID/summary.json","sha256":"8c70b749d0163cfe6030a4c2c28ae9ad3118432ada8e3d726d04d6b3f300d07b"},
-        {"path":"/generated/research/KS/summary.json","sha256":"3deef99dfcfedfefac3e047cdeb6d36e805d9f31fae8bc36877d6eecc60e12f7"},
-        {"path":"/generated/research/MD/summary.json","sha256":"cf424a367cafd88a831997703e021925b244c5aa5cdfbb228a21ef49ab9391d6"},
-        {"path":"/generated/research/NJ/summary.json","sha256":"735d55fcedf377c0c4eafc97d5dd260131cb4874d7003a84edf81a7e9b4481c6"},
-        {"path":"/generated/research/NM/summary.json","sha256":"52e4befbe8495c7b1e356a154557fb5afe2fd653c3e9dd8e895f35a99df0eaa3"},
-        {"path":"/generated/research/NY/summary.json","sha256":"7b9c0756ee9af4c2968f4a6debee1cf97818185d7ec7d248273279750eacb691"},
-        {"path":"/generated/research/OK/summary.json","sha256":"eae127a642f76bcfd75c3e7c4a486c3bcfa56e941312b090500f2833bc4bb554"},
-        {"path":"/generated/research/OR/summary.json","sha256":"581c49852df44b4c922dc34f80af68f914cafe9e793f710797e548cc97ff6a74"},
-        {"path":"/generated/research/UT/summary.json","sha256":"1e74e084a20f076d3534c48b0a4169cebc43a65a163563352c5bcaf2e1d9e45e"},
-        {"path":"/generated/research/WV/summary.json","sha256":"21b9f7670327266c7cd8e0d2802eb0f9794c0a33958723988ee0c3d4e7c33a87"},
-        {"path":"/generated/research/WY/summary.json","sha256":"7dfffd7bc875b08f963d7f27bf56eb183193da5b1ebfeeb9afa0e10c596938c4"}
+        {
+          "path": "/generated/research/IA/summary.json",
+          "sha256": "2b416a6cc802fc33dbdeecef69610b6e85ab9b2e32df5263779c8ee97c7e4e02"
+        },
+        {
+          "path": "/generated/research/ID/summary.json",
+          "sha256": "8c70b749d0163cfe6030a4c2c28ae9ad3118432ada8e3d726d04d6b3f300d07b"
+        },
+        {
+          "path": "/generated/research/KS/summary.json",
+          "sha256": "3deef99dfcfedfefac3e047cdeb6d36e805d9f31fae8bc36877d6eecc60e12f7"
+        },
+        {
+          "path": "/generated/research/MD/summary.json",
+          "sha256": "cf424a367cafd88a831997703e021925b244c5aa5cdfbb228a21ef49ab9391d6"
+        },
+        {
+          "path": "/generated/research/NJ/summary.json",
+          "sha256": "735d55fcedf377c0c4eafc97d5dd260131cb4874d7003a84edf81a7e9b4481c6"
+        },
+        {
+          "path": "/generated/research/NM/summary.json",
+          "sha256": "52e4befbe8495c7b1e356a154557fb5afe2fd653c3e9dd8e895f35a99df0eaa3"
+        },
+        {
+          "path": "/generated/research/NY/summary.json",
+          "sha256": "7b9c0756ee9af4c2968f4a6debee1cf97818185d7ec7d248273279750eacb691"
+        },
+        {
+          "path": "/generated/research/OK/summary.json",
+          "sha256": "eae127a642f76bcfd75c3e7c4a486c3bcfa56e941312b090500f2833bc4bb554"
+        },
+        {
+          "path": "/generated/research/OR/summary.json",
+          "sha256": "581c49852df44b4c922dc34f80af68f914cafe9e793f710797e548cc97ff6a74"
+        },
+        {
+          "path": "/generated/research/UT/summary.json",
+          "sha256": "1e74e084a20f076d3534c48b0a4169cebc43a65a163563352c5bcaf2e1d9e45e"
+        },
+        {
+          "path": "/generated/research/WV/summary.json",
+          "sha256": "21b9f7670327266c7cd8e0d2802eb0f9794c0a33958723988ee0c3d4e7c33a87"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "sha256": "7dfffd7bc875b08f963d7f27bf56eb183193da5b1ebfeeb9afa0e10c596938c4"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["NY", "WV"],
+        "states": [
+          "NY",
+          "WV"
+        ],
         "returningBrowserRefresh": "pass",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
@@ -1177,27 +1680,64 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AZ","status":200},
-        {"path":"/research?state=ME","status":200},
-        {"path":"/research?state=NV","status":200},
-        {"path":"/species/spotted-lanternfly","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=ME",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NV",
+          "status": 200
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AZ/summary.json","sha256":"1022b979293b7f1798c65d503e76680ddcc629ce102fcd1a0803a0d4ae62a500"},
-        {"path":"/generated/research/ME/summary.json","sha256":"afdf82abc19452f606b38ca2ec33bd7c64177dab5d897b2f4691de61b0f4ebeb"},
-        {"path":"/generated/research/NV/summary.json","sha256":"c4d6a29ef50049ee66cd5db04ae33595f51d32c38617fbbfc047c05ba418fefb"}
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "1022b979293b7f1798c65d503e76680ddcc629ce102fcd1a0803a0d4ae62a500"
+        },
+        {
+          "path": "/generated/research/ME/summary.json",
+          "sha256": "afdf82abc19452f606b38ca2ec33bd7c64177dab5d897b2f4691de61b0f4ebeb"
+        },
+        {
+          "path": "/generated/research/NV/summary.json",
+          "sha256": "c4d6a29ef50049ee66cd5db04ae33595f51d32c38617fbbfc047c05ba418fefb"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["AZ", "ME", "NV"],
+        "states": [
+          "AZ",
+          "ME",
+          "NV"
+        ],
         "horizontalOverflow": false,
         "consoleWarnings": 0,
         "consoleErrors": 0
       },
-      "zipLookup": {"zip":"85001","status":200,"ok":true,"countyFips":"04013","countyName":"Maricopa, AZ"},
+      "zipLookup": {
+        "zip": "85001",
+        "status": 200,
+        "ok": true,
+        "countyFips": "04013",
+        "countyName": "Maricopa, AZ"
+      },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and GitHub main matched; GitHub deployment 5750837552 succeeded for the exact content SHA; Vercel deployment dpl_B7oUaUZ8WJEJfKABjp7iVNurAX49 reached READY with exact Git-source identity and production aliases; six live routes passed; Arizona, Maine, and Nevada live summary files matched local bytes exactly; Phoenix ZIP 85001 resolved to Maricopa County; current state totals rendered; and fresh desktop plus mobile behavior passed without console warnings, console errors, horizontal overflow, or failed route requests. This receipt does not attest to the commit that contains it or any future deployment."
     },
     {
@@ -1212,21 +1752,48 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AZ","status":200},
-        {"path":"/research?state=SC","status":200},
-        {"path":"/species/spotted-lanternfly","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200
+        },
+        {
+          "path": "/research?state=SC",
+          "status": 200
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/AZ/summary.json","sha256":"845b92c9d47bb98bd4ae7ed68485ea347230e2779bcf1ae756bdf67d7601566a"},
-        {"path":"/generated/research/SC/summary.json","sha256":"a20739bcaaec0c22a26ed482d9423953e73eb49131ee4a9da0eeae824a3e53fd"},
-        {"path":"/generated/presence.json","sha256":"d0caa9893fdd08b2375187d06c908614fa64438ab05c9dec57d0d137eae29a75"}
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "sha256": "845b92c9d47bb98bd4ae7ed68485ea347230e2779bcf1ae756bdf67d7601566a"
+        },
+        {
+          "path": "/generated/research/SC/summary.json",
+          "sha256": "a20739bcaaec0c22a26ed482d9423953e73eb49131ee4a9da0eeae824a3e53fd"
+        },
+        {
+          "path": "/generated/presence.json",
+          "sha256": "d0caa9893fdd08b2375187d06c908614fa64438ab05c9dec57d0d137eae29a75"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["AZ", "SC"],
+        "states": [
+          "AZ",
+          "SC"
+        ],
         "returningBrowserRefresh": "pass",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
@@ -1246,29 +1813,83 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=AL","status":200},
-        {"path":"/research?state=CA","status":200},
-        {"path":"/research?state=MD","status":200},
-        {"path":"/research?state=ND","status":200},
-        {"path":"/research?state=WA","status":200},
-        {"path":"/species/spotted-lanternfly","status":200},
-        {"path":"/generated/research/MD/summary.json","status":200},
-        {"path":"/generated/research/WA/summary.json","status":200},
-        {"path":"/generated/research/MD/counties/24510.json","status":200},
-        {"path":"/generated/research/WA/counties/53033.json","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=AL",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=MD",
+          "status": 200
+        },
+        {
+          "path": "/research?state=ND",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WA",
+          "status": 200
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/MD/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/WA/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/MD/counties/24510.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/WA/counties/53033.json",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/MD/summary.json","sha256":"c62dbe5991daec9b09b3151294a7679e73a0b2373d25671eab4acde6c58bed40"},
-        {"path":"/generated/research/WA/summary.json","sha256":"8d08a175ba69fcc69ecdf72e00be63f227c0ef722959f7e60fb96142330b69a1"},
-        {"path":"/generated/research/MD/counties/24510.json","sha256":"da280e97acbdfcb91c3d5e4b3f7258d56e2e5be6d24fa132990c5223a3243ea8"},
-        {"path":"/generated/research/WA/counties/53033.json","sha256":"bcc424b6a1256fe380c9627eb7842425dc34829a4257835a1d3dda7346ce2cb6"}
+        {
+          "path": "/generated/research/MD/summary.json",
+          "sha256": "c62dbe5991daec9b09b3151294a7679e73a0b2373d25671eab4acde6c58bed40"
+        },
+        {
+          "path": "/generated/research/WA/summary.json",
+          "sha256": "8d08a175ba69fcc69ecdf72e00be63f227c0ef722959f7e60fb96142330b69a1"
+        },
+        {
+          "path": "/generated/research/MD/counties/24510.json",
+          "sha256": "da280e97acbdfcb91c3d5e4b3f7258d56e2e5be6d24fa132990c5223a3243ea8"
+        },
+        {
+          "path": "/generated/research/WA/counties/53033.json",
+          "sha256": "bcc424b6a1256fe380c9627eb7842425dc34829a4257835a1d3dda7346ce2cb6"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["AL", "CA", "MD", "ND", "WA"],
+        "states": [
+          "AL",
+          "CA",
+          "MD",
+          "ND",
+          "WA"
+        ],
         "county": "King, WA",
         "sourceOperations": "pass",
         "researchQueue": "pass",
@@ -1277,11 +1898,21 @@
         "consoleWarnings": 0,
         "consoleErrors": 0
       },
-      "zipLookup": {"zip":"21401","status":200,"ok":true,"countyFips":"24003","countyName":"Anne Arundel, MD"},
+      "zipLookup": {
+        "zip": "21401",
+        "status": 200,
+        "ok": true,
+        "countyFips": "24003",
+        "countyName": "Anne Arundel, MD"
+      },
       "runtimeQa": {
         "deploymentId": "dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr",
         "warningAndErrorLogs": 0,
-        "statusCodeCounts": {"200":29,"304":4,"405":2},
+        "statusCodeCounts": {
+          "200": 29,
+          "304": 4,
+          "405": 2
+        },
         "qualification": "The two 405 responses were explicit read-only GET method probes against the POST-only ZIP endpoint. The UI-equivalent POST request and browser flow both returned successful Anne Arundel County data."
       },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched the exact Round 49 content SHA; GitHub deployment 5772857550 succeeded; Vercel deployment dpl_4YSsaL76xLJhNjpQGU6HTvhbuqmr reached READY with exact Git-source identity and production aliases; twelve intended live routes and the UI-equivalent ZIP POST passed; four changed Maryland and Washington generated files matched local SHA-256 bytes exactly; Alabama, California, Maryland, North Dakota, and Washington research views rendered current 2026-08-05 projections; King County selection, source operations, research queue, and returning-browser Anne Arundel state passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Two diagnostic GET probes against the POST-only ZIP endpoint returned the expected 405 and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
@@ -1298,29 +1929,80 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=ND","status":200},
-        {"path":"/research?state=DC","status":200},
-        {"path":"/research?state=HI","status":200},
-        {"path":"/research?state=MA","status":200},
-        {"path":"/research?state=NH","status":200},
-        {"path":"/research?state=RI","status":200},
-        {"path":"/research?state=VT","status":200},
-        {"path":"/species/rottboellia-cochinchinensis","status":200},
-        {"path":"/generated/research/ND/summary.json","status":200},
-        {"path":"/generated/research/ND/counties/38001.json","status":200},
-        {"path":"/generated/presence.json","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=ND",
+          "status": 200
+        },
+        {
+          "path": "/research?state=DC",
+          "status": 200
+        },
+        {
+          "path": "/research?state=HI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=MA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NH",
+          "status": 200
+        },
+        {
+          "path": "/research?state=RI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=VT",
+          "status": 200
+        },
+        {
+          "path": "/species/rottboellia-cochinchinensis",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/ND/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/ND/counties/38001.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/presence.json",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/ND/summary.json","sha256":"900635152b6c5538d555e805881797aef83c5a46fe6f70b41143e4adbb64aa79"},
-        {"path":"/generated/research/ND/counties/38001.json","sha256":"a7211f75c674fa77efd1994d193aad1e16a643cd4414a4dfdc92dfe9e9465eef"},
-        {"path":"/generated/presence.json","sha256":"027b5910ba80aa15feb239d1fcd46ce398246ced8c331e40666819f0409fcd1b"}
+        {
+          "path": "/generated/research/ND/summary.json",
+          "sha256": "900635152b6c5538d555e805881797aef83c5a46fe6f70b41143e4adbb64aa79"
+        },
+        {
+          "path": "/generated/research/ND/counties/38001.json",
+          "sha256": "a7211f75c674fa77efd1994d193aad1e16a643cd4414a4dfdc92dfe9e9465eef"
+        },
+        {
+          "path": "/generated/presence.json",
+          "sha256": "027b5910ba80aa15feb239d1fcd46ce398246ced8c331e40666819f0409fcd1b"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["ND", "DC"],
+        "states": [
+          "ND",
+          "DC"
+        ],
         "county": "Adams, ND",
         "sourceOperations": "pass",
         "researchQueue": "pass",
@@ -1330,12 +2012,24 @@
         "consoleWarnings": 0,
         "consoleErrors": 0
       },
-      "zipLookup": {"zip":"20001","status":200,"ok":true,"countyFips":"11001","countyName":"District of Columbia, DC"},
+      "zipLookup": {
+        "zip": "20001",
+        "status": 200,
+        "ok": true,
+        "countyFips": "11001",
+        "countyName": "District of Columbia, DC"
+      },
       "runtimeQa": {
         "deploymentId": "dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog",
         "runtimeErrorClusters": 0,
         "warningAndErrorLogs": 0,
-        "observedStatusCodeCounts": {"200":24,"304":2,"400":1,"404":1,"416":1},
+        "observedStatusCodeCounts": {
+          "200": 24,
+          "304": 2,
+          "400": 1,
+          "404": 1,
+          "416": 1
+        },
         "qualification": "The 400 was the explicitly discarded malformed ZIP diagnostic; the 404 was the pre-alias Itchgrass probe and was superseded by HTTP 200 on all production aliases and the exact deployment URL; the 416 was a static root range probe. The correctly encoded ZIP request, final Itchgrass request, intended live routes, browser flows, and exact byte checks all passed."
       },
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 50 content SHA 2f5fa264bc2c8dfbbe3f8581973092f221328889; GitHub Production deployment 5787224747 succeeded; Vercel deployment dpl_HvCZCUHwY7UZJL9XCQMpmFwEnkog reached READY with exact Git-source identity and all production aliases; thirteen intended live routes and the UI-equivalent District of Columbia ZIP POST passed; the North Dakota summary, Adams County projection, and public presence projection matched local SHA-256 bytes exactly; North Dakota and District of Columbia rendered current 2026-08-07 projections; Itchgrass rendered as researched unresolved with reviewed no qualifying evidence; source operations and the research queue passed; and fresh desktop plus mobile behavior passed without console warnings, console errors, or horizontal overflow. Diagnostic 400, 404, and 416 probes are explicitly qualified in runtimeQa and are not presented as application failures. This receipt does not attest to the commit that contains it or any future deployment."
@@ -1352,29 +2046,71 @@
       "target": "production",
       "state": "READY",
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/research","status":200},
-        {"path":"/research?state=HI","status":200},
-        {"path":"/research?state=VT","status":200},
-        {"path":"/generated/research/HI/summary.json","status":200},
-        {"path":"/generated/research/VT/summary.json","status":200},
-        {"path":"/generated/research/HI/counties/15003.json","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research",
+          "status": 200
+        },
+        {
+          "path": "/research?state=HI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=VT",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/HI/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/VT/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/HI/counties/15003.json",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/research/HI/summary.json","bytes":81378,"sha256":"afa3dd7f5ac8c0f936480c2347f6cbecf37d862ce690c101e04260cb4f73d458"},
-        {"path":"/generated/research/VT/summary.json","bytes":95209,"sha256":"e2ffb6d3d1fe45d46d8f63163410602fd5c2376e9a3118730a6fc7d6d57f74e4"},
-        {"path":"/generated/research/HI/counties/15003.json","bytes":93551,"sha256":"2fb0c811bcf53920facf95b6cbdf2e762923049c4e63f5d3b2d3f8abd0549f06"}
+        {
+          "path": "/generated/research/HI/summary.json",
+          "bytes": 81378,
+          "sha256": "afa3dd7f5ac8c0f936480c2347f6cbecf37d862ce690c101e04260cb4f73d458"
+        },
+        {
+          "path": "/generated/research/VT/summary.json",
+          "bytes": 95209,
+          "sha256": "e2ffb6d3d1fe45d46d8f63163410602fd5c2376e9a3118730a6fc7d6d57f74e4"
+        },
+        {
+          "path": "/generated/research/HI/counties/15003.json",
+          "bytes": 93551,
+          "sha256": "2fb0c811bcf53920facf95b6cbdf2e762923049c4e63f5d3b2d3f8abd0549f06"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "mobileViewport": "390x844",
-        "states": ["HI", "VT"],
+        "states": [
+          "HI",
+          "VT"
+        ],
         "county": "Honolulu, HI",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
         "consoleErrors": 0
       },
-      "zipLookup": {"zip":"96801","status":200,"ok":true,"countyFips":"15003","countyName":"Honolulu, HI"},
+      "zipLookup": {
+        "zip": "96801",
+        "status": 200,
+        "ok": true,
+        "countyFips": "15003",
+        "countyName": "Honolulu, HI"
+      },
       "runtimeQa": {
         "activeDeploymentId": "dpl_4qgEF8foPrkZX9oGcmgydEJSkWao",
         "githubLinkedDeploymentId": "dpl_GbtLJh18jycTV8rcbuQNXSS3zD5k",
@@ -1432,40 +2168,130 @@
         }
       ],
       "routeChecks": [
-        {"path":"/","status":200},
-        {"path":"/about","status":200},
-        {"path":"/research?state=MA","status":200},
-        {"path":"/research?state=HI","status":200},
-        {"path":"/research?state=VT","status":200},
-        {"path":"/research?state=NH","status":200},
-        {"path":"/generated/presence.json","status":200},
-        {"path":"/generated/research/MA/summary.json","status":200},
-        {"path":"/generated/research/MA/counties/25001.json","status":200},
-        {"path":"/generated/research/HI/summary.json","status":200},
-        {"path":"/generated/research/HI/counties/15001.json","status":200},
-        {"path":"/generated/research/VT/summary.json","status":200},
-        {"path":"/generated/research/VT/counties/50001.json","status":200},
-        {"path":"/generated/research/NH/summary.json","status":200},
-        {"path":"/generated/research/NH/counties/33001.json","status":200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/about",
+          "status": 200
+        },
+        {
+          "path": "/research?state=MA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=HI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=VT",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NH",
+          "status": 200
+        },
+        {
+          "path": "/generated/presence.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/MA/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/MA/counties/25001.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/HI/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/HI/counties/15001.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/VT/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/VT/counties/50001.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/NH/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/NH/counties/33001.json",
+          "status": 200
+        }
       ],
       "byteParityChecks": [
-        {"path":"/generated/presence.json","bytes":27830728,"sha256":"c8a8ad1c6766bfeb325ffeabf857b57c7aaf00c5573264bcc9066ff185432f30"},
-        {"path":"/generated/research/MA/summary.json","bytes":81349,"sha256":"b1c53208b7792da8155b217bc294d414b8e138b17649bdd298b4a29bb708e81b"},
-        {"path":"/generated/research/MA/counties/25001.json","bytes":55268,"sha256":"9c244264e614aaeb84f1aae1fe5643a7aff901fcd1de737cfe10b850a2274101"},
-        {"path":"/generated/research/HI/summary.json","bytes":80274,"sha256":"2180fb52bef64b640a416e6f0abd01b0013902d37559e7b267bc7a5dd05542e0"},
-        {"path":"/generated/research/HI/counties/15001.json","bytes":77017,"sha256":"8f801c3792f8d0b6660e37552eae624a318e377387f7b926be101b5989e15151"},
-        {"path":"/generated/research/VT/summary.json","bytes":94161,"sha256":"fa56dfb9497f7d692b2e1e58fe11ebcab3bd03000271c68954fa96cb3cae6043"},
-        {"path":"/generated/research/VT/counties/50001.json","bytes":60964,"sha256":"283346800b1aef65daf54d8855f95f40f1f4e4533fdc0a1c9c6841e32959cb63"},
-        {"path":"/generated/research/NH/summary.json","bytes":78018,"sha256":"a1bbd4717be3adeda0911a9036fd950ab9e8967f1c25cafe5c5f7486ed412049"},
-        {"path":"/generated/research/NH/counties/33001.json","bytes":52506,"sha256":"0e7e400745e708fcc5022f808d786a557b08227b88e8000f64ede4fe836c9efd"}
+        {
+          "path": "/generated/presence.json",
+          "bytes": 27830728,
+          "sha256": "c8a8ad1c6766bfeb325ffeabf857b57c7aaf00c5573264bcc9066ff185432f30"
+        },
+        {
+          "path": "/generated/research/MA/summary.json",
+          "bytes": 81349,
+          "sha256": "b1c53208b7792da8155b217bc294d414b8e138b17649bdd298b4a29bb708e81b"
+        },
+        {
+          "path": "/generated/research/MA/counties/25001.json",
+          "bytes": 55268,
+          "sha256": "9c244264e614aaeb84f1aae1fe5643a7aff901fcd1de737cfe10b850a2274101"
+        },
+        {
+          "path": "/generated/research/HI/summary.json",
+          "bytes": 80274,
+          "sha256": "2180fb52bef64b640a416e6f0abd01b0013902d37559e7b267bc7a5dd05542e0"
+        },
+        {
+          "path": "/generated/research/HI/counties/15001.json",
+          "bytes": 77017,
+          "sha256": "8f801c3792f8d0b6660e37552eae624a318e377387f7b926be101b5989e15151"
+        },
+        {
+          "path": "/generated/research/VT/summary.json",
+          "bytes": 94161,
+          "sha256": "fa56dfb9497f7d692b2e1e58fe11ebcab3bd03000271c68954fa96cb3cae6043"
+        },
+        {
+          "path": "/generated/research/VT/counties/50001.json",
+          "bytes": 60964,
+          "sha256": "283346800b1aef65daf54d8855f95f40f1f4e4533fdc0a1c9c6841e32959cb63"
+        },
+        {
+          "path": "/generated/research/NH/summary.json",
+          "bytes": 78018,
+          "sha256": "a1bbd4717be3adeda0911a9036fd950ab9e8967f1c25cafe5c5f7486ed412049"
+        },
+        {
+          "path": "/generated/research/NH/counties/33001.json",
+          "bytes": 52506,
+          "sha256": "0e7e400745e708fcc5022f808d786a557b08227b88e8000f64ede4fe836c9efd"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "desktopState": "MA",
-        "desktopCounts": {"verifiedPresent":208,"researchedUnresolved":842,"notResearched":34006},
+        "desktopCounts": {
+          "verifiedPresent": 208,
+          "researchedUnresolved": 842,
+          "notResearched": 34006
+        },
         "mobileViewport": "390x844",
         "mobileState": "VT",
-        "mobileCounts": {"verifiedPresent":159,"researchedUnresolved":893,"notResearched":34004,"denominator":35056},
+        "mobileCounts": {
+          "verifiedPresent": 159,
+          "researchedUnresolved": 893,
+          "notResearched": 34004,
+          "denominator": 35056
+        },
         "asOf": "2026-08-08",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
@@ -1534,18 +2360,58 @@
         }
       ],
       "routeChecks": [
-        { "path": "/", "status": 200, "bytes": 3817212 },
-        { "path": "/research", "status": 200, "bytes": 13848 },
-        { "path": "/research?state=WA", "status": 200, "bytes": 13848 },
-        { "path": "/research?state=MD", "status": 200, "bytes": 13848 },
-        { "path": "/research?state=AZ", "status": 200, "bytes": 13848 },
-        { "path": "/species/spotted-lanternfly", "status": 200, "bytes": 31347 }
+        {
+          "path": "/",
+          "status": 200,
+          "bytes": 3817212
+        },
+        {
+          "path": "/research",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/research?state=WA",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/research?state=MD",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/research?state=AZ",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200,
+          "bytes": 31347
+        }
       ],
       "byteParityChecks": [
-        { "path": "/generated/research/AL/summary.json", "bytes": 1866946, "sha256": "1a23eab568b5c4411cffc811e23f6e181ee0b822d3b0a97c6a09930f6ea9b442" },
-        { "path": "/generated/research/AZ/summary.json", "bytes": 117718, "sha256": "976764016528092950f0ebbb35f4b6672fe358733f891f7cff23e0210de89754" },
-        { "path": "/generated/research/MD/summary.json", "bytes": 99225, "sha256": "1749cc411aedac9067fd8c04c9c4311e40279f33d47c26852ca5551bec6713cf" },
-        { "path": "/generated/research/WA/summary.json", "bytes": 149582, "sha256": "fb34b5d7ac239dd9a11f4d2d78ad5d70f7d23d101f3661bcd76b9fea32e9033a" }
+        {
+          "path": "/generated/research/AL/summary.json",
+          "bytes": 1866946,
+          "sha256": "1a23eab568b5c4411cffc811e23f6e181ee0b822d3b0a97c6a09930f6ea9b442"
+        },
+        {
+          "path": "/generated/research/AZ/summary.json",
+          "bytes": 117718,
+          "sha256": "976764016528092950f0ebbb35f4b6672fe358733f891f7cff23e0210de89754"
+        },
+        {
+          "path": "/generated/research/MD/summary.json",
+          "bytes": 99225,
+          "sha256": "1749cc411aedac9067fd8c04c9c4311e40279f33d47c26852ca5551bec6713cf"
+        },
+        {
+          "path": "/generated/research/WA/summary.json",
+          "bytes": 149582,
+          "sha256": "fb34b5d7ac239dd9a11f4d2d78ad5d70f7d23d101f3661bcd76b9fea32e9033a"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
@@ -1622,28 +2488,86 @@
         }
       ],
       "routeChecks": [
-        { "path": "/", "status": 200, "bytes": 3817212 },
-        { "path": "/research", "status": 200, "bytes": 13848 },
-        { "path": "/research?state=NV", "status": 200, "bytes": 13848 },
-        { "path": "/research?state=OR", "status": 200, "bytes": 13848 },
-        { "path": "/research?state=VT", "status": 200, "bytes": 13848 },
-        { "path": "/species/spotted-lanternfly", "status": 200, "bytes": 31347 }
+        {
+          "path": "/",
+          "status": 200,
+          "bytes": 3817212
+        },
+        {
+          "path": "/research",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/research?state=NV",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/research?state=OR",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/research?state=VT",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/species/spotted-lanternfly",
+          "status": 200,
+          "bytes": 31347
+        }
       ],
       "byteParityChecks": [
-        { "path": "/generated/research/NV/summary.json", "bytes": 107194, "sha256": "454905207ce20b914f8158908462f019bde632a4d8f5786d3095401d96e7a421" },
-        { "path": "/generated/research/NV/counties/32001.json", "bytes": 71840, "sha256": "47c939a4c6f4900c34ab9d088a05518786e286d278cfccab4dbb7508ae123204" },
-        { "path": "/generated/research/OR/summary.json", "bytes": 103166, "sha256": "4003dfd98dbae61a1a07be91b9de4cae304ed8f10c41abbb35634691073b5b7f" },
-        { "path": "/generated/research/OR/counties/41001.json", "bytes": 44505, "sha256": "55c2c3ec598b1948df862616eb84cc1b190bb46822d0321ae9f15df954aaa8e0" },
-        { "path": "/generated/research/VT/summary.json", "bytes": 93135, "sha256": "ed5860526ecd65fde78a1c7943c86ab31b791e1d8258c1763cde36b98d006ce4" },
-        { "path": "/generated/research/VT/counties/50001.json", "bytes": 99054, "sha256": "80540b2f0346532be6a861ded4dd7a78adaccc50ee0b8146d555e10acc4af2b5" }
+        {
+          "path": "/generated/research/NV/summary.json",
+          "bytes": 107194,
+          "sha256": "454905207ce20b914f8158908462f019bde632a4d8f5786d3095401d96e7a421"
+        },
+        {
+          "path": "/generated/research/NV/counties/32001.json",
+          "bytes": 71840,
+          "sha256": "47c939a4c6f4900c34ab9d088a05518786e286d278cfccab4dbb7508ae123204"
+        },
+        {
+          "path": "/generated/research/OR/summary.json",
+          "bytes": 103166,
+          "sha256": "4003dfd98dbae61a1a07be91b9de4cae304ed8f10c41abbb35634691073b5b7f"
+        },
+        {
+          "path": "/generated/research/OR/counties/41001.json",
+          "bytes": 44505,
+          "sha256": "55c2c3ec598b1948df862616eb84cc1b190bb46822d0321ae9f15df954aaa8e0"
+        },
+        {
+          "path": "/generated/research/VT/summary.json",
+          "bytes": 93135,
+          "sha256": "ed5860526ecd65fde78a1c7943c86ab31b791e1d8258c1763cde36b98d006ce4"
+        },
+        {
+          "path": "/generated/research/VT/counties/50001.json",
+          "bytes": 99054,
+          "sha256": "80540b2f0346532be6a861ded4dd7a78adaccc50ee0b8146d555e10acc4af2b5"
+        }
       ],
       "browserQa": {
         "desktopViewport": "1440x900",
         "desktopState": "OR",
-        "desktopCounts": { "verifiedPresent": 104, "researchedUnresolved": 1804, "notResearched": 88236, "denominator": 90144 },
+        "desktopCounts": {
+          "verifiedPresent": 104,
+          "researchedUnresolved": 1804,
+          "notResearched": 88236,
+          "denominator": 90144
+        },
         "mobileViewport": "390x844",
         "mobileState": "VT",
-        "mobileCounts": { "verifiedPresent": 211, "researchedUnresolved": 1191, "notResearched": 33654, "denominator": 35056 },
+        "mobileCounts": {
+          "verifiedPresent": 211,
+          "researchedUnresolved": 1191,
+          "notResearched": 33654,
+          "denominator": 35056
+        },
         "asOf": "2026-08-08",
         "horizontalOverflow": false,
         "consoleWarnings": 0,
@@ -2143,6 +3067,220 @@
       ],
       "clockQualification": "Provider-native GitHub UTC timestamps control deployment and verification timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, and console checks.",
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 56 content SHA 65aac9792ec50b6625892e86ac8d521a274bede8; GitHub Production deployment 5817907147 succeeded; both its immutable host and canonical production alias served all intended routes; three selected Montana files matched local SHA-256 and bytes on both hosts; and fresh Montana desktop and Tridax mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete content-release national research-integrity suite passed in 417.026 seconds. Exact-deployment runtime logs and private Vercel deployment ID were unavailable because the configured CLI token is invalid. Round 56 completed 336 county-species outcomes and moved all 336 unique final-matrix pairs in Montana to researched unresolved, closing six protocol cells. It created no verified-present, verified-absence, not-detected, applicability, denominator, certification-blocker, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-71112ad84-2026-08-09",
+      "verifiedAt": "2026-08-09T16:18:22.000Z",
+      "commitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "githubMainSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "githubDeploymentId": 5820445545,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-829wyzyzz-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": null,
+      "vercelDeploymentId": null,
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/GjWSveS3SvfAHzhgs8agaCPkMDgM",
+      "vercelDeploymentUrl": "projectisitusa-829wyzyzz-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "success",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+        "releaseCommitMetadata": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "GitHub main and commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
+      },
+      "deploymentAttempts": [
+        {
+          "githubDeploymentId": 5820445545,
+          "vercelInspectorSlug": "GjWSveS3SvfAHzhgs8agaCPkMDgM",
+          "source": "git",
+          "state": "success",
+          "statusCreatedAt": "2026-08-09T16:07:01.000Z",
+          "githubDeploymentCompletedAt": "2026-08-09T16:07:02.000Z",
+          "durationSeconds": 1,
+          "buildSeconds": null,
+          "githubCommitSha": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+          "active": true,
+          "qualification": "Duration is measured from provider-native GitHub deployment creation to its success status. Exact Vercel build duration and private deployment ID are unavailable because the canonical repository has no Vercel CLI installed."
+        }
+      ],
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/research?state=SC",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NM",
+          "status": 200
+        },
+        {
+          "path": "/research?state=UT",
+          "status": 200
+        },
+        {
+          "path": "/research?state=WY",
+          "status": 200
+        },
+        {
+          "path": "/species/tridax-procumbens",
+          "status": 200
+        }
+      ],
+      "routeCheckHosts": [
+        "https://projectisitusa-829wyzyzz-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "routeHostChecksPassed": 12,
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/SC/summary.json",
+          "bytes": 109906,
+          "sha256": "baf7d7e5bb87c35d795fa19d6d08447a11c5e4f12e62e44724f6aa8d19056cbf"
+        },
+        {
+          "path": "/generated/research/SC/counties/45001.json",
+          "bytes": 54687,
+          "sha256": "1c6267ec769ccd425190ead1f553594ae7f79d17f1b7c2cc860414ff83f44ba2"
+        },
+        {
+          "path": "/generated/research/SC/counties/45091.json",
+          "bytes": 56916,
+          "sha256": "223310e330c3188744395d3d50cc5f696e5459f0ea284b09c0bbd78df8c4137c"
+        },
+        {
+          "path": "/generated/research/NM/summary.json",
+          "bytes": 116988,
+          "sha256": "d50cae8e1d4f11a55ec7b7c71b6ab6cc1401247a52b79cf26777da1a01ea5df4"
+        },
+        {
+          "path": "/generated/research/NM/counties/35001.json",
+          "bytes": 57328,
+          "sha256": "5e21d554dc1b2bc40f2a6fabd1421d3bfe030c9b06097baa767c0ad9afbf15bb"
+        },
+        {
+          "path": "/generated/research/NM/counties/35061.json",
+          "bytes": 58083,
+          "sha256": "4ef48c8aa2202ae33bd694a362149d5873211817efa9bb3e87c8b48539a0c477"
+        },
+        {
+          "path": "/generated/research/UT/summary.json",
+          "bytes": 112991,
+          "sha256": "f39a028047ceb0c876ddfee2c360e764d45e61239740d8039fa7e8c2144280a2"
+        },
+        {
+          "path": "/generated/research/UT/counties/49001.json",
+          "bytes": 57164,
+          "sha256": "b83f142790d6f1e3a41e12063e41d3b16d3effd9c3c533556060302eae04d4cd"
+        },
+        {
+          "path": "/generated/research/UT/counties/49057.json",
+          "bytes": 60931,
+          "sha256": "d34444d41af7bd4f99148e2686cbc30375fc9f53b71699cc086bd3b5e792ed69"
+        },
+        {
+          "path": "/generated/research/WY/summary.json",
+          "bytes": 111290,
+          "sha256": "ede6d929f83cc5944999edbf48acc4e092a98037ed1c272ea536671b724615d0"
+        },
+        {
+          "path": "/generated/research/WY/counties/56001.json",
+          "bytes": 64641,
+          "sha256": "9d5e45f2e7446f1a8460c82096c4c269fdf74849526a53ee5cec7d8513dea534"
+        },
+        {
+          "path": "/generated/research/WY/counties/56045.json",
+          "bytes": 61756,
+          "sha256": "c17ba6e3d06ebb462073183db818af456526d2c589e29770bc80a8e8724d62a6"
+        }
+      ],
+      "byteParityHosts": [
+        "https://projectisitusa-829wyzyzz-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "byteParityHostFileIdentitiesPassed": 24,
+      "browserQa": {
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": [
+          "SC",
+          "NM",
+          "UT",
+          "WY"
+        ],
+        "counts": {
+          "SC": {
+            "verifiedPresent": 668,
+            "researchedUnresolved": 3288,
+            "notResearched": 111228
+          },
+          "NM": {
+            "verifiedPresent": 55,
+            "researchedUnresolved": 3740,
+            "notResearched": 78837
+          },
+          "UT": {
+            "verifiedPresent": 124,
+            "researchedUnresolved": 3182,
+            "notResearched": 69310
+          },
+          "WY": {
+            "verifiedPresent": 83,
+            "researchedUnresolved": 2654,
+            "notResearched": 54855
+          }
+        },
+        "asOf": "2026-08-09",
+        "routeViewportChecks": 12,
+        "finalCountAssertionsPassed": true,
+        "speciesRoutePassed": true,
+        "speciesScientificIdentity": "Tridax procumbens",
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 6,
+        "productionScreenshotsVisuallyInspected": 2,
+        "localEquivalentScreenshotsVisuallyInspected": 3,
+        "temporaryQaDirectoriesRemoved": 4,
+        "qualification": "Production route identity, final counts, DOM geometry, image integrity, screenshots, and console checks passed. Two production and three local captures were manually inspected after compression solely for the renderer."
+      },
+      "runtimeQa": {
+        "activeDeploymentId": null,
+        "runtimeErrorLogRows": null,
+        "runtimeFiveHundredLogRows": null,
+        "queryStatus": "unavailable-no-vercel-cli-in-canonical-toolchain",
+        "contentReleaseResearchIntegritySeconds": 420.1,
+        "qualification": "Exact-deployment runtime log rows and the private Vercel deployment ID were not queryable because the canonical repository has no Vercel CLI installed and the previously configured external CLI token was invalid. No zero-log or private-ID claim is made. Runtime confidence is limited to exact GitHub Production deployment success, direct HTTP 200 from both hosts, twenty-four live-to-local byte identities, and zero production browser console warnings or errors.",
+        "receiptEraResearchIntegritySeconds": 431.7
+      },
+      "roundMovement": {
+        "plannedPairs": 615,
+        "completedPairs": 615,
+        "finalMatrixPairsMoved": 615,
+        "verifiedPresent": 2,
+        "researchedUnresolved": 613,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 0,
+        "denominatorMovement": 0,
+        "protocolCellsClosed": 20,
+        "certificationBlockersRemoved": 0
+      },
+      "qaToolingInterventions": [
+        "The default shell PATH omitted the portable GitHub CLI; MAIN resolved and used C:/Code/tools/gh-2.96.0/bin/gh.exe.",
+        "One PowerShell empty-array projection initially appeared as a null deployment object; MAIN discarded it, read the raw response, and waited for the real exact-SHA deployment.",
+        "The Windows npx.cmd wrapper misparsed one expression and suppressed large combined result streams; MAIN removed the two untracked tokens it created and invoked the same cached playwright-cli entrypoint directly with Node for all final assertions.",
+        "The image-view sandbox could not reopen screenshot paths. MAIN rendered compressed copies from captured bytes and manually inspected three local and two production viewports.",
+        "The canonical repository has no Vercel CLI installed, so private deployment metadata and runtime logs are not claimed."
+      ],
+      "clockQualification": "Provider-native GitHub UTC timestamps control deployment and verification timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, visual, and console checks.",
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 57 content SHA 71112ad845734666501ef0f1f5fc992be1a81c4f; GitHub Production deployment 5820445545 succeeded; both its immutable host and canonical production alias served all six intended routes; twelve selected SC, NM, UT, and WY files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete content-release national research-integrity suite passed in 420.1 seconds, and the receipt-era suite passed in 431.7 seconds. Exact-deployment runtime logs and private Vercel deployment ID were unavailable because the canonical repository has no Vercel CLI installed. Round 57 completed 615 county-species outcomes and moved all 615 unique final-matrix pairs, including two verified-present and 613 researched-unresolved movements, closing twenty protocol cells. It created no verified-absence, not-detected, applicability, denominator, certification-blocker, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
