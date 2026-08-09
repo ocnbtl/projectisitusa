@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260809-r57",
+  "observedAt": "2026-08-09T11:45:45.226Z",
+  "result": "green-provider-limited",
+  "physicalMemory": {
+    "totalMiB": 31900.918,
+    "availableMiB": 9427.348,
+    "availablePercent": 29.552
+  },
+  "commitCharge": {
+    "usedMiB": 37253.094,
+    "limitMiB": 51356.918,
+    "usedPercent": 72.538,
+    "headroomMiB": 14103.824
+  },
+  "paging": {
+    "pagefileUsedMiB": 1280,
+    "writerProcesses": 0
+  },
+  "disk": {
+    "cFreeGiB": 739.007
+  },
+  "dispatch": {
+    "maximumMachineAcquisitionWorkers": 3,
+    "maximumLiveGbifWorkers": 1,
+    "workerMemoryReservationMiB": 1600,
+    "hardPostWorkerHeadroomMiB": 3072,
+    "projectedAvailableMiBAfterOneWorker": 7827.348,
+    "projectedCommitHeadroomMiBAfterOneWorker": 12503.824,
+    "reason": "Fresh capacity is green. Round 56 measured 1489.094 MiB peak RSS for the same adapter shape, so a 1600 MiB reservation passes. The source-wide GBIF contract and sequential MAIN integration keep one live provider lane even though additional preflight preparation may run independently."
+  }
+}

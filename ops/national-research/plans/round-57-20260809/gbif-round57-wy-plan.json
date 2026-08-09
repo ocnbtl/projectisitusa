@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-round57",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "WY",
+  "asOf": "2026-08-09",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "5952cb4345dd79a9a95492e45cd1c0662e9d9c9c748f71c2010bddb1305e3eb4",
+    "protocolCells": "2805e4906353ff70f7eb1c8f1e652c11845e90a627c1ea75314f2939879fe4fa",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "af9c54162fdfbf7fb0c8245c26771ca4f026435a32ac4ed73c67ab7cd76ecd03"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 23,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched"
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 575,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0
+  },
+  "availableStateSpeciesScreenCount": 42,
+  "selectedStateSpeciesScreenCount": 6,
+  "selectedCountyOutcomeCount": 138,
+  "expectedNetNewPairCount": 138,
+  "countyCount": 23,
+  "selected": [
+    {
+      "stateCode": "WY",
+      "speciesId": "solanum-tampicense",
+      "scientificName": "Solanum tampicense",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 23,
+      "incompleteCountyCount": 23,
+      "notResearchedCountyCount": 23,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "56001",
+        "56003",
+        "56005",
+        "56007",
+        "56009",
+        "56011",
+        "56013",
+        "56015",
+        "56017",
+        "56019",
+        "56021",
+        "56023",
+        "56025",
+        "56027",
+        "56029",
+        "56031",
+        "56033",
+        "56035",
+        "56037",
+        "56039",
+        "56041",
+        "56043",
+        "56045"
+      ]
+    },
+    {
+      "stateCode": "WY",
+      "speciesId": "solanum-torvum",
+      "scientificName": "Solanum torvum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 23,
+      "incompleteCountyCount": 23,
+      "notResearchedCountyCount": 23,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "56001",
+        "56003",
+        "56005",
+        "56007",
+        "56009",
+        "56011",
+        "56013",
+        "56015",
+        "56017",
+        "56019",
+        "56021",
+        "56023",
+        "56025",
+        "56027",
+        "56029",
+        "56031",
+        "56033",
+        "56035",
+        "56037",
+        "56039",
+        "56041",
+        "56043",
+        "56045"
+      ]
+    },
+    {
+      "stateCode": "WY",
+      "speciesId": "solanum-viarum",
+      "scientificName": "Solanum viarum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 23,
+      "incompleteCountyCount": 23,
+      "notResearchedCountyCount": 23,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "56001",
+        "56003",
+        "56005",
+        "56007",
+        "56009",
+        "56011",
+        "56013",
+        "56015",
+        "56017",
+        "56019",
+        "56021",
+        "56023",
+        "56025",
+        "56027",
+        "56029",
+        "56031",
+        "56033",
+        "56035",
+        "56037",
+        "56039",
+        "56041",
+        "56043",
+        "56045"
+      ]
+    },
+    {
+      "stateCode": "WY",
+      "speciesId": "sparganium-erectum",
+      "scientificName": "Sparganium erectum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 23,
+      "incompleteCountyCount": 23,
+      "notResearchedCountyCount": 23,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "56001",
+        "56003",
+        "56005",
+        "56007",
+        "56009",
+        "56011",
+        "56013",
+        "56015",
+        "56017",
+        "56019",
+        "56021",
+        "56023",
+        "56025",
+        "56027",
+        "56029",
+        "56031",
+        "56033",
+        "56035",
+        "56037",
+        "56039",
+        "56041",
+        "56043",
+        "56045"
+      ]
+    },
+    {
+      "stateCode": "WY",
+      "speciesId": "tridax-procumbens",
+      "scientificName": "Tridax procumbens",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 23,
+      "incompleteCountyCount": 23,
+      "notResearchedCountyCount": 23,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "56001",
+        "56003",
+        "56005",
+        "56007",
+        "56009",
+        "56011",
+        "56013",
+        "56015",
+        "56017",
+        "56019",
+        "56021",
+        "56023",
+        "56025",
+        "56027",
+        "56029",
+        "56031",
+        "56033",
+        "56035",
+        "56037",
+        "56039",
+        "56041",
+        "56043",
+        "56045"
+      ]
+    },
+    {
+      "stateCode": "WY",
+      "speciesId": "urochloa-panicoides",
+      "scientificName": "Urochloa panicoides",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 23,
+      "incompleteCountyCount": 23,
+      "notResearchedCountyCount": 23,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "56001",
+        "56003",
+        "56005",
+        "56007",
+        "56009",
+        "56011",
+        "56013",
+        "56015",
+        "56017",
+        "56019",
+        "56021",
+        "56023",
+        "56025",
+        "56027",
+        "56029",
+        "56031",
+        "56033",
+        "56035",
+        "56037",
+        "56039",
+        "56041",
+        "56043",
+        "56045"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-round57-wy-001",
+      "stateCode": "WY",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-tampicense"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 23,
+      "candidateFile": "gbif-round57-wy-001.json"
+    },
+    {
+      "batchId": "gbif-round57-wy-002",
+      "stateCode": "WY",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-torvum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 23,
+      "candidateFile": "gbif-round57-wy-002.json"
+    },
+    {
+      "batchId": "gbif-round57-wy-003",
+      "stateCode": "WY",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-viarum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 23,
+      "candidateFile": "gbif-round57-wy-003.json"
+    },
+    {
+      "batchId": "gbif-round57-wy-004",
+      "stateCode": "WY",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "sparganium-erectum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 23,
+      "candidateFile": "gbif-round57-wy-004.json"
+    },
+    {
+      "batchId": "gbif-round57-wy-005",
+      "stateCode": "WY",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "tridax-procumbens"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 23,
+      "candidateFile": "gbif-round57-wy-005.json"
+    },
+    {
+      "batchId": "gbif-round57-wy-006",
+      "stateCode": "WY",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "urochloa-panicoides"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 23,
+      "candidateFile": "gbif-round57-wy-006.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-round57-wy-001",
+      "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-001.json",
+      "sha256": "97c1e05fad988df14ef9d3f64089f5b606b756ae27e929c08db938acfc4fcbd2",
+      "bytes": 3131
+    },
+    {
+      "batchId": "gbif-round57-wy-002",
+      "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-002.json",
+      "sha256": "9671e0d8ade62eeb9e7b61f97df12babd07c6ba0eba87b6739e134c636472d13",
+      "bytes": 3039
+    },
+    {
+      "batchId": "gbif-round57-wy-003",
+      "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-003.json",
+      "sha256": "7f9dad8b1f508da79d536a6d42bbce497338b82b0503b024a4d172b4cad4c0fc",
+      "bytes": 3039
+    },
+    {
+      "batchId": "gbif-round57-wy-004",
+      "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-004.json",
+      "sha256": "65bacfa4f3a27fb56331efee0f38e70d52a86d556b03e4efcdb19fa8bfd1ab76",
+      "bytes": 3131
+    },
+    {
+      "batchId": "gbif-round57-wy-005",
+      "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-005.json",
+      "sha256": "1a21c96488e2777348e83ae1225ad82cb72ae782b4a1b99f6cb4288546c1ea77",
+      "bytes": 3108
+    },
+    {
+      "batchId": "gbif-round57-wy-006",
+      "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-006.json",
+      "sha256": "78ffd6901948d97ad427884d758a99b2029e7177f799d0e55b3e2aad1ef42142",
+      "bytes": 3154
+    }
+  ]
+}
