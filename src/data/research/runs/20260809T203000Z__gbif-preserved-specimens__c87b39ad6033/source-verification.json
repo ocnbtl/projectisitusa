@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T20:58:45.070Z",
+  "runId": "20260809T203000Z__gbif-preserved-specimens__c87b39ad6033",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "MA",
+  "pairKeys": [
+    "25001:saccharum-spontaneum",
+    "25003:saccharum-spontaneum",
+    "25005:saccharum-spontaneum",
+    "25007:saccharum-spontaneum",
+    "25009:saccharum-spontaneum",
+    "25011:saccharum-spontaneum",
+    "25013:saccharum-spontaneum",
+    "25015:saccharum-spontaneum",
+    "25017:saccharum-spontaneum",
+    "25019:saccharum-spontaneum",
+    "25021:saccharum-spontaneum",
+    "25023:saccharum-spontaneum",
+    "25025:saccharum-spontaneum",
+    "25027:saccharum-spontaneum"
+  ],
+  "parameterHash": "c87b39ad6033460ae12c83bfc9f00eb5df0584ae5e8b935e24461628a1bfe05f",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T20:58:45.070Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Massachusetts and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "saccharum-spontaneum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-saccharum-spontaneum",
+        "url": "https://api.gbif.org/v1/species/match?name=Saccharum+spontaneum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T20:58:40.298Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-saccharum-spontaneum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Massachusetts&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2703935&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for saccharum-spontaneum and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T20:58:45.070Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__c87b39ad6033/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__c87b39ad6033/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+      "sha256": "05536495c6b3620dbc97c72fbaa0541464589a497a7e046e83f5f07e009f6a3c",
+      "bytes": 278
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
