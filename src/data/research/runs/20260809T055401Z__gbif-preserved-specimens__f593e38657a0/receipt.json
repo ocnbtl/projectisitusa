@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T055401Z__gbif-preserved-specimens__f593e38657a0",
+  "status": "complete",
+  "started_at": "2026-08-09T05:54:01.000Z",
+  "finished_at": "2026-08-09T06:17:20.786Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "a55f6a9459afb13970f84a74a31e3fdec8b07d85",
+  "parameter_hash": "f593e38657a0039c0c7b68603f1135220d2003872c5654a41586c50a253a4dee",
+  "parameters": {
+    "stateCode": "NJ",
+    "stateProvince": "New Jersey",
+    "candidateLimit": 21,
+    "candidatePairs": [
+      "34001:raffaelea-lauricola",
+      "34003:raffaelea-lauricola",
+      "34005:raffaelea-lauricola",
+      "34007:raffaelea-lauricola",
+      "34009:raffaelea-lauricola",
+      "34011:raffaelea-lauricola",
+      "34013:raffaelea-lauricola",
+      "34015:raffaelea-lauricola",
+      "34017:raffaelea-lauricola",
+      "34019:raffaelea-lauricola",
+      "34021:raffaelea-lauricola",
+      "34023:raffaelea-lauricola",
+      "34025:raffaelea-lauricola",
+      "34027:raffaelea-lauricola",
+      "34029:raffaelea-lauricola",
+      "34031:raffaelea-lauricola",
+      "34033:raffaelea-lauricola",
+      "34035:raffaelea-lauricola",
+      "34037:raffaelea-lauricola",
+      "34039:raffaelea-lauricola",
+      "34041:raffaelea-lauricola"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34001",
+      "34003",
+      "34005",
+      "34007",
+      "34009",
+      "34011",
+      "34013",
+      "34015",
+      "34017",
+      "34019",
+      "34021",
+      "34023",
+      "34025",
+      "34027",
+      "34029",
+      "34031",
+      "34033",
+      "34035",
+      "34037",
+      "34039",
+      "34041"
+    ],
+    "species_ids": [
+      "raffaelea-lauricola"
+    ],
+    "pair_keys": [
+      "34001:raffaelea-lauricola",
+      "34003:raffaelea-lauricola",
+      "34005:raffaelea-lauricola",
+      "34007:raffaelea-lauricola",
+      "34009:raffaelea-lauricola",
+      "34011:raffaelea-lauricola",
+      "34013:raffaelea-lauricola",
+      "34015:raffaelea-lauricola",
+      "34017:raffaelea-lauricola",
+      "34019:raffaelea-lauricola",
+      "34021:raffaelea-lauricola",
+      "34023:raffaelea-lauricola",
+      "34025:raffaelea-lauricola",
+      "34027:raffaelea-lauricola",
+      "34029:raffaelea-lauricola",
+      "34031:raffaelea-lauricola",
+      "34033:raffaelea-lauricola",
+      "34035:raffaelea-lauricola",
+      "34037:raffaelea-lauricola",
+      "34039:raffaelea-lauricola",
+      "34041:raffaelea-lauricola"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Raffaelea+lauricola&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-09T06:17:19.970Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=New+Jersey&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=12199464&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-09T06:17:20.784Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T055401Z__gbif-preserved-specimens__f593e38657a0/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T055401Z__gbif-preserved-specimens__f593e38657a0/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+      "sha256": "070c063bae75c6ffa297dc16c6bb2a927702e1e706e0191a9897f45546db3a53",
+      "bytes": 310,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T055401Z__gbif-preserved-specimens__f593e38657a0/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T055401Z__gbif-preserved-specimens__f593e38657a0/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T055401Z__gbif-preserved-specimens__f593e38657a0/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T055401Z__gbif-preserved-specimens__f593e38657a0/outcomes.ndjson",
+      "sha256": "f0c6efee3115eed42478b6eeff7372ebf27148121692b21dbc3df4f827458921",
+      "bytes": 16968,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T055401Z__gbif-preserved-specimens__f593e38657a0/source-verification.json",
+      "sha256": "fd9a4fffd2caacfe6eee0e662c75a5f2a5393c2ef8547af23679a2e054a22e84",
+      "bytes": 5462,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 21,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 21
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state NJ --candidate-file ops/national-research/plans/round-55-20260809/gbif-round55-nj-007.json --output-root src/data/research/runs --pairs 34001:raffaelea-lauricola,34003:raffaelea-lauricola,34005:raffaelea-lauricola,34007:raffaelea-lauricola,34009:raffaelea-lauricola,34011:raffaelea-lauricola,34013:raffaelea-lauricola,34015:raffaelea-lauricola,34017:raffaelea-lauricola,34019:raffaelea-lauricola,34021:raffaelea-lauricola,34023:raffaelea-lauricola,34025:raffaelea-lauricola,34027:raffaelea-lauricola,34029:raffaelea-lauricola,34031:raffaelea-lauricola,34033:raffaelea-lauricola,34035:raffaelea-lauricola,34037:raffaelea-lauricola,34039:raffaelea-lauricola,34041:raffaelea-lauricola --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
