@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-round57-wy-005",
+  "leaseId": "lease-gbif-round57-wy-005-1",
+  "status": "complete",
+  "branch": "codex/gbif-round57-wy-005",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-005",
+  "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "commitSha": "a529cb5ea8dcb756d8c1cffe45a9daf62177276b",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "WY",
+    "stateProvince": "Wyoming",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:tridax-procumbens",
+      "56003:tridax-procumbens",
+      "56005:tridax-procumbens",
+      "56007:tridax-procumbens",
+      "56009:tridax-procumbens",
+      "56011:tridax-procumbens",
+      "56013:tridax-procumbens",
+      "56015:tridax-procumbens",
+      "56017:tridax-procumbens",
+      "56019:tridax-procumbens",
+      "56021:tridax-procumbens",
+      "56023:tridax-procumbens",
+      "56025:tridax-procumbens",
+      "56027:tridax-procumbens",
+      "56029:tridax-procumbens",
+      "56031:tridax-procumbens",
+      "56033:tridax-procumbens",
+      "56035:tridax-procumbens",
+      "56037:tridax-procumbens",
+      "56039:tridax-procumbens",
+      "56041:tridax-procumbens",
+      "56043:tridax-procumbens",
+      "56045:tridax-procumbens"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+      "sha256": "c982debda9268a61f88fba3e3d870d4a0cc011c3958f955340405310e3b5f3ef",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/outcomes.ndjson",
+      "sha256": "ef16c17d65b0164d58906565288735fb3dd9bbcddd359311ac4f0f33b9b73d7c",
+      "bytes": 18446,
+      "media_type": "application/x-ndjson",
+      "count": 23
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/receipt.json",
+    "sha256": "2368cdb1c05ea35572d3ce352c321514b05271d3f7f24ebfa83647449814df49",
+    "bytes": 7227,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/source-verification.json",
+    "sha256": "ef49c16387cb9f4253e5a1249ef03d7e116689f3d8762dc3f3fe9d64c6655aa7",
+    "bytes": 5461,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 371,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 23,
+      "completeOutcomePairs": 23,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 23,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 371,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 23,
+      "completeOutcomePairs": 23,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 23,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-round57-wy-005-1 --manifest src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-005",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-round57-wy-005-1",
+        "status": "complete",
+        "finishedAt": "2026-08-09T14:07:53.257Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 0,
+        "retainedArtifacts": 2,
+        "receiptSha256": "2368cdb1c05ea35572d3ce352c321514b05271d3f7f24ebfa83647449814df49"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 6,
+    "peakMemoryMb": 227,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 23,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
