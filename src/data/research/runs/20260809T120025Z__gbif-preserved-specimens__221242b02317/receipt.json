@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T120025Z__gbif-preserved-specimens__221242b02317",
+  "status": "complete",
+  "started_at": "2026-08-09T12:00:25.000Z",
+  "finished_at": "2026-08-09T13:26:39.692Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "parameter_hash": "221242b02317f4dd6d8c660f5af4e4aa19b19944792aa294c74d9269a61ab5a4",
+  "parameters": {
+    "stateCode": "NM",
+    "stateProvince": "New Mexico",
+    "candidateLimit": 33,
+    "candidatePairs": [
+      "35001:urochloa-panicoides",
+      "35003:urochloa-panicoides",
+      "35005:urochloa-panicoides",
+      "35006:urochloa-panicoides",
+      "35007:urochloa-panicoides",
+      "35009:urochloa-panicoides",
+      "35011:urochloa-panicoides",
+      "35013:urochloa-panicoides",
+      "35015:urochloa-panicoides",
+      "35017:urochloa-panicoides",
+      "35019:urochloa-panicoides",
+      "35021:urochloa-panicoides",
+      "35023:urochloa-panicoides",
+      "35025:urochloa-panicoides",
+      "35027:urochloa-panicoides",
+      "35028:urochloa-panicoides",
+      "35029:urochloa-panicoides",
+      "35031:urochloa-panicoides",
+      "35033:urochloa-panicoides",
+      "35035:urochloa-panicoides",
+      "35037:urochloa-panicoides",
+      "35039:urochloa-panicoides",
+      "35041:urochloa-panicoides",
+      "35043:urochloa-panicoides",
+      "35045:urochloa-panicoides",
+      "35047:urochloa-panicoides",
+      "35049:urochloa-panicoides",
+      "35051:urochloa-panicoides",
+      "35053:urochloa-panicoides",
+      "35055:urochloa-panicoides",
+      "35057:urochloa-panicoides",
+      "35059:urochloa-panicoides",
+      "35061:urochloa-panicoides"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "NM",
+    "county_fips": [
+      "35001",
+      "35003",
+      "35005",
+      "35006",
+      "35007",
+      "35009",
+      "35011",
+      "35013",
+      "35015",
+      "35017",
+      "35019",
+      "35021",
+      "35023",
+      "35025",
+      "35027",
+      "35028",
+      "35029",
+      "35031",
+      "35033",
+      "35035",
+      "35037",
+      "35039",
+      "35041",
+      "35043",
+      "35045",
+      "35047",
+      "35049",
+      "35051",
+      "35053",
+      "35055",
+      "35057",
+      "35059",
+      "35061"
+    ],
+    "species_ids": [
+      "urochloa-panicoides"
+    ],
+    "pair_keys": [
+      "35001:urochloa-panicoides",
+      "35003:urochloa-panicoides",
+      "35005:urochloa-panicoides",
+      "35006:urochloa-panicoides",
+      "35007:urochloa-panicoides",
+      "35009:urochloa-panicoides",
+      "35011:urochloa-panicoides",
+      "35013:urochloa-panicoides",
+      "35015:urochloa-panicoides",
+      "35017:urochloa-panicoides",
+      "35019:urochloa-panicoides",
+      "35021:urochloa-panicoides",
+      "35023:urochloa-panicoides",
+      "35025:urochloa-panicoides",
+      "35027:urochloa-panicoides",
+      "35028:urochloa-panicoides",
+      "35029:urochloa-panicoides",
+      "35031:urochloa-panicoides",
+      "35033:urochloa-panicoides",
+      "35035:urochloa-panicoides",
+      "35037:urochloa-panicoides",
+      "35039:urochloa-panicoides",
+      "35041:urochloa-panicoides",
+      "35043:urochloa-panicoides",
+      "35045:urochloa-panicoides",
+      "35047:urochloa-panicoides",
+      "35049:urochloa-panicoides",
+      "35051:urochloa-panicoides",
+      "35053:urochloa-panicoides",
+      "35055:urochloa-panicoides",
+      "35057:urochloa-panicoides",
+      "35059:urochloa-panicoides",
+      "35061:urochloa-panicoides"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Urochloa+panicoides&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-09T13:26:37.753Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=New+Mexico&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2705869&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-09T13:26:39.138Z",
+      "record_count": 19
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+      "sha256": "d9e79402a55eab1edb131c15ceff55f552c39602544c43fc7448498b6e8f8fa6",
+      "bytes": 11728,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+      "sha256": "96ff3da9fe029f20f590da671b2049d75e51eb7b66f97e4d435106101bb088bf",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/assertions.ndjson",
+      "sha256": "f3c2d9cae28d228c5d9479216a61bdb19e5536d3a1936f726a4910c51acb3043",
+      "bytes": 1877,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/reviews.ndjson",
+      "sha256": "efff858fbd90113b373fc9615f756e2988ebcdcd16b545fa4914d6e9f59cc3fb",
+      "bytes": 975,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/rejections.ndjson",
+      "sha256": "dc50d1dcc1b735757ee6a43a74e94f3a3e94c6389f85f665a7a133066ca84b8c",
+      "bytes": 12792,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/outcomes.ndjson",
+      "sha256": "74a84a0bdb216a4961c416e5ceac07536d02d661470081d41b98f3a7ade43cf4",
+      "bytes": 75311,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/source-verification.json",
+      "sha256": "2872315bea1ecd88f8415b793ca2102d9dce8543ba62657f40ebf970f44ecf4d",
+      "bytes": 5862,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 33,
+    "candidate_records": 19,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 18,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 33
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state NM --candidate-file ops/national-research/plans/round-57-20260809/gbif-round57-nm-005.json --output-root src/data/research/runs --pairs 35001:urochloa-panicoides,35003:urochloa-panicoides,35005:urochloa-panicoides,35006:urochloa-panicoides,35007:urochloa-panicoides,35009:urochloa-panicoides,35011:urochloa-panicoides,35013:urochloa-panicoides,35015:urochloa-panicoides,35017:urochloa-panicoides,35019:urochloa-panicoides,35021:urochloa-panicoides,35023:urochloa-panicoides,35025:urochloa-panicoides,35027:urochloa-panicoides,35028:urochloa-panicoides,35029:urochloa-panicoides,35031:urochloa-panicoides,35033:urochloa-panicoides,35035:urochloa-panicoides,35037:urochloa-panicoides,35039:urochloa-panicoides,35041:urochloa-panicoides,35043:urochloa-panicoides,35045:urochloa-panicoides,35047:urochloa-panicoides,35049:urochloa-panicoides,35051:urochloa-panicoides,35053:urochloa-panicoides,35055:urochloa-panicoides,35057:urochloa-panicoides,35059:urochloa-panicoides,35061:urochloa-panicoides --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
