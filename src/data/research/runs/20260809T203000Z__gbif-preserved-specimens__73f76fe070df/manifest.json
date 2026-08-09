@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-round58-ma-003",
+  "leaseId": "lease-gbif-round58-ma-003-1",
+  "status": "complete",
+  "branch": "codex/gbif-round58-ma-003",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round58-ma-003",
+  "baseSha": "4f35e0f780c7558e1fff70de483a3db93796ebdb",
+  "commitSha": "6a859ea6e062a23a499446b588bf216e7ed7b513",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "MA",
+    "stateProvince": "Massachusetts",
+    "candidateLimit": 14,
+    "candidatePairs": [
+      "25001:salvinia-molesta",
+      "25003:salvinia-molesta",
+      "25005:salvinia-molesta",
+      "25007:salvinia-molesta",
+      "25009:salvinia-molesta",
+      "25011:salvinia-molesta",
+      "25013:salvinia-molesta",
+      "25015:salvinia-molesta",
+      "25017:salvinia-molesta",
+      "25019:salvinia-molesta",
+      "25021:salvinia-molesta",
+      "25023:salvinia-molesta",
+      "25025:salvinia-molesta",
+      "25027:salvinia-molesta"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+      "sha256": "967288084b92873e057464ed73a8cab27df3946733c18890228bfa138a516fcf",
+      "bytes": 296,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/outcomes.ndjson",
+      "sha256": "988ec5434658cc97637c23ccbc6fc3a794eab994be8562b7fbbc0d27504ec5f2",
+      "bytes": 11298,
+      "media_type": "application/x-ndjson",
+      "count": 14
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/receipt.json",
+    "sha256": "56cbb72a0a27d2b07395043e97d03a6faa9f74586440d0098b3a5e3f0a45009b",
+    "bytes": 6248,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/source-verification.json",
+    "sha256": "375c1314eb510f24a6658a16b75bd1bbc0f599887089e6ad380de657a0829399",
+    "bytes": 5173,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 386,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 14,
+      "completeOutcomePairs": 14,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 14,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 386,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 14,
+      "completeOutcomePairs": 14,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 14,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 4f35e0f780c7558e1fff70de483a3db93796ebdb...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-round58-ma-003-1 --manifest src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__73f76fe070df/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-round58-ma-003",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-round58-ma-003-1",
+        "status": "complete",
+        "finishedAt": "2026-08-09T20:59:19.423Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 0,
+        "retainedArtifacts": 2,
+        "receiptSha256": "56cbb72a0a27d2b07395043e97d03a6faa9f74586440d0098b3a5e3f0a45009b"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 5,
+    "peakMemoryMb": 221,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 14,
+    "manualInterventions": 1
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
