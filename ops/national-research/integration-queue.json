@@ -24948,7 +24948,7 @@
       "queueId": "queue-lease-gbif-round56-mt-003-1",
       "jobId": "gbif-round56-mt-003",
       "leaseId": "lease-gbif-round56-mt-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-09T09:08:55.000Z",
       "manifestPath": "manifests/gbif-round56-mt-003__lease-gbif-round56-mt-003-1.json",
       "manifestHash": "a04a293f15a28c79ee8960ce67f7eea13e5878326c83c87bc8829019ba462b9c",
@@ -24995,6 +24995,42 @@
         "path": "receipts/reviews/queue-lease-gbif-round56-mt-003-1.json",
         "sha256": "fc32cd3faa902f9e8e605b5b692328581475990636843f9da4c28d2760926002",
         "bytes": 2379
+      },
+      "integratedAt": "2026-08-09T09:10:33.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "32405ba810b4082ada0396b9b13bf7574bcb585d",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Montana GBIF Solanum viarum 56-pair run",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed Montana Solanum viarum run and manifest with no conflicts or semantic changes.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-round56-mt-003-1.json",
+        "sha256": "e96def50af0b3b6bcb239da4963739f22cf0e291a2777e46c9341813b92df51e",
+        "bytes": 2445
       }
     }
   ]
