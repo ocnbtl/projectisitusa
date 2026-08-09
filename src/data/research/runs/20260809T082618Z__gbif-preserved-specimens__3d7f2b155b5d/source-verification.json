@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T08:47:06.967Z",
+  "runId": "20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "MT",
+  "pairKeys": [
+    "30001:solanum-tampicense",
+    "30003:solanum-tampicense",
+    "30005:solanum-tampicense",
+    "30007:solanum-tampicense",
+    "30009:solanum-tampicense",
+    "30011:solanum-tampicense",
+    "30013:solanum-tampicense",
+    "30015:solanum-tampicense",
+    "30017:solanum-tampicense",
+    "30019:solanum-tampicense",
+    "30021:solanum-tampicense",
+    "30023:solanum-tampicense",
+    "30025:solanum-tampicense",
+    "30027:solanum-tampicense",
+    "30029:solanum-tampicense",
+    "30031:solanum-tampicense",
+    "30033:solanum-tampicense",
+    "30035:solanum-tampicense",
+    "30037:solanum-tampicense",
+    "30039:solanum-tampicense",
+    "30041:solanum-tampicense",
+    "30043:solanum-tampicense",
+    "30045:solanum-tampicense",
+    "30047:solanum-tampicense",
+    "30049:solanum-tampicense",
+    "30051:solanum-tampicense",
+    "30053:solanum-tampicense",
+    "30055:solanum-tampicense",
+    "30057:solanum-tampicense",
+    "30059:solanum-tampicense",
+    "30061:solanum-tampicense",
+    "30063:solanum-tampicense",
+    "30065:solanum-tampicense",
+    "30067:solanum-tampicense",
+    "30069:solanum-tampicense",
+    "30071:solanum-tampicense",
+    "30073:solanum-tampicense",
+    "30075:solanum-tampicense",
+    "30077:solanum-tampicense",
+    "30079:solanum-tampicense",
+    "30081:solanum-tampicense",
+    "30083:solanum-tampicense",
+    "30085:solanum-tampicense",
+    "30087:solanum-tampicense",
+    "30089:solanum-tampicense",
+    "30091:solanum-tampicense",
+    "30093:solanum-tampicense",
+    "30095:solanum-tampicense",
+    "30097:solanum-tampicense",
+    "30099:solanum-tampicense",
+    "30101:solanum-tampicense",
+    "30103:solanum-tampicense",
+    "30105:solanum-tampicense",
+    "30107:solanum-tampicense",
+    "30109:solanum-tampicense",
+    "30111:solanum-tampicense"
+  ],
+  "parameterHash": "3d7f2b155b5da3f5540ccc522c3357a33ea346f939229875d2866bba4af8d82f",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T08:47:06.966Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Montana and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "solanum-tampicense"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-solanum-tampicense",
+        "url": "https://api.gbif.org/v1/species/match?name=Solanum+tampicense&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T08:47:06.183Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-solanum-tampicense",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Montana&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2929938&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for solanum-tampicense and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T08:47:06.966Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+      "sha256": "de6bda76df0af2b953e5908c013b9507be450e50456ab6e8256c1060cad8ba0d",
+      "bytes": 277
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
