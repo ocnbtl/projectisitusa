@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round57-nm-004-1",
+  "jobId": "gbif-round57-nm-004",
+  "leaseId": "lease-gbif-round57-nm-004-1",
+  "workerCommit": "78b39231b83b527933c82b0deb8f4eb524b425a1",
+  "workerBranchHead": "1ebbbddb5adb9abcceceaacce22431ab07d2721c",
+  "manifestHash": "818c56ee138d64610b564193a5e08296ea8f2470033f57c80f3f7af7287c96f1",
+  "changedPaths": [
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/assertions.ndjson",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/manifest.json",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/outcomes.ndjson",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/receipt.json",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/rejections.ndjson",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/reviews.ndjson",
+    "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 33 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 33 complete county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T13:37:00.000Z",
+  "integrationCommit": "7ba5ff77ca741b31c9ece5a1e197bf5e8b57f772"
+}
