@@ -23863,6 +23863,73 @@
         "sha256": "44ad34a189dfd7609fe5f58fe1ef30542918608b3563bbf22c1de1159c81aabb",
         "bytes": 4221
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round55-nj-002-1",
+      "jobId": "gbif-round55-nj-002",
+      "leaseId": "lease-gbif-round55-nj-002-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T06:13:28.000Z",
+      "manifestPath": "manifests/gbif-round55-nj-002__lease-gbif-round55-nj-002-1.json",
+      "manifestHash": "e7e0e897a0a72e36a1665a52a991755a64c660436e7c7cd345a4c3defc18c5d6",
+      "manifestBytes": 17967,
+      "workerCommit": "f59ae46556de7226f070cd1a649af04e6bd00549",
+      "workerBranchHead": "e4b5150a8b6c77735b243ffc17d252a8e7caa88d",
+      "reviewedAt": "2026-08-09T06:13:29.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable NJ GBIF run, exact two-commit inventory, 168 complete county outcomes, 322 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-corbicula-fluminea-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-cryphonectria-parasitica-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-emerald-ash-borer-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-lonicera-japonica-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-ophiognomonia-clavigignenti-juglandacearum-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-ophiostoma-ulmi-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-popillia-japonica-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-corbicula-fluminea.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-cryphonectria-parasitica.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-emerald-ash-borer.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-lonicera-japonica.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-ophiognomonia-clavigignenti-juglandacearum.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-ophiostoma-ulmi.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-popillia-japonica.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/assertions.ndjson",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/manifest.json",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/outcomes.ndjson",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/receipt.json",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/rejections.ndjson",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/reviews.ndjson",
+        "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check a55f6a9459afb13970f84a74a31e3fdec8b07d85...e4b5150a8b6c77735b243ffc17d252a8e7caa88d",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round55-nj-002-1.json",
+        "sha256": "23bf6e1070452f272822c786f538cc9f3c3c06e5794aa30b8d6dc00714673fc7",
+        "bytes": 4434
+      }
     }
   ]
 }
