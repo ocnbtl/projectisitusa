@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T13:47:30.140Z",
+  "runId": "20260809T120025Z__gbif-preserved-specimens__8383eaff689c",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "UT",
+  "pairKeys": [
+    "49001:urochloa-panicoides",
+    "49003:urochloa-panicoides",
+    "49005:urochloa-panicoides",
+    "49007:urochloa-panicoides",
+    "49009:urochloa-panicoides",
+    "49011:urochloa-panicoides",
+    "49013:urochloa-panicoides",
+    "49015:urochloa-panicoides",
+    "49017:urochloa-panicoides",
+    "49019:urochloa-panicoides",
+    "49021:urochloa-panicoides",
+    "49023:urochloa-panicoides",
+    "49025:urochloa-panicoides",
+    "49027:urochloa-panicoides",
+    "49029:urochloa-panicoides",
+    "49031:urochloa-panicoides",
+    "49033:urochloa-panicoides",
+    "49035:urochloa-panicoides",
+    "49037:urochloa-panicoides",
+    "49039:urochloa-panicoides",
+    "49041:urochloa-panicoides",
+    "49043:urochloa-panicoides",
+    "49045:urochloa-panicoides",
+    "49047:urochloa-panicoides",
+    "49049:urochloa-panicoides",
+    "49051:urochloa-panicoides",
+    "49053:urochloa-panicoides",
+    "49055:urochloa-panicoides",
+    "49057:urochloa-panicoides"
+  ],
+  "parameterHash": "8383eaff689c24d6a47cca053a91a5170c902cac7bc336948da53ff8fafb80eb",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T13:47:30.138Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Utah and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "urochloa-panicoides"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-urochloa-panicoides",
+        "url": "https://api.gbif.org/v1/species/match?name=Urochloa+panicoides&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T13:47:29.338Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-urochloa-panicoides",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Utah&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2705869&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for urochloa-panicoides and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T13:47:30.138Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+      "sha256": "96ff3da9fe029f20f590da671b2049d75e51eb7b66f97e4d435106101bb088bf",
+      "bytes": 282
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
