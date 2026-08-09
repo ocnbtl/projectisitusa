@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round54-wa-live-001-1",
+  "jobId": "gbif-round54-wa-live-001",
+  "leaseId": "lease-gbif-round54-wa-live-001-1",
+  "workerCommit": "8a256670c294c969b303ea39f792cb07a3fb6122",
+  "workerBranchHead": "d270a30933348f587a50941637720b72936a7324",
+  "manifestHash": "8c38d9e66f37892d324a761c9e120986ad16667e98840543b38f960a231659a5",
+  "changedPaths": [
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/artifacts/gbif-occurrences-echium-vulgare-000000.json.gz",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/artifacts/gbif-species-match-echium-vulgare.json.gz",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/assertions.ndjson",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/manifest.json",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/outcomes.ndjson",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/receipt.json",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/rejections.ndjson",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/reviews.ndjson",
+    "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T00:36:30.367Z",
+  "integrationCommit": "0ee24bcfbfa1e682a960a23519c5b6c71af1584f"
+}
