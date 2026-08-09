@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-round58",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CT",
+  "asOf": "2026-08-09",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ],
+    "portfolioFilter": "provenance-compatible-taxonomy-cache-and-positive-not-researched-movement",
+    "taxonomyCacheId": "gbif-taxonomy-20260809-r55",
+    "taxonomyCacheCompatibleAdapterVersions": [
+      "1.3.1"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "fb8c1ea7ffd3f218d10999fe297b6ea41311f6fa428c16a63ab24e2c20f07b22",
+    "protocolCells": "134fe344cff14de8a30055784dce0476e9a0db5cd15120580ebb1d236fefddd8",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "ccc02db4bcee4bd8fd5edbc1185b657e8c2bc28e7e378f144e9f9da56e892b0c",
+    "taxonomyCache": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 9,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched",
+    "cachedTaxonomyEntryCount": 53
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 900,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0,
+    "cachedEligibleStateSpeciesScreenCount": 2
+  },
+  "availableStateSpeciesScreenCount": 9,
+  "selectedStateSpeciesScreenCount": 2,
+  "selectedCountyOutcomeCount": 18,
+  "expectedNetNewPairCount": 18,
+  "countyCount": 9,
+  "selected": [
+    {
+      "stateCode": "CT",
+      "speciesId": "popillia-japonica",
+      "scientificName": "Popillia japonica",
+      "category": "insects",
+      "priority": "baseline",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 9,
+      "incompleteCountyCount": 9,
+      "notResearchedCountyCount": 9,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "09110",
+        "09120",
+        "09130",
+        "09140",
+        "09150",
+        "09160",
+        "09170",
+        "09180",
+        "09190"
+      ]
+    },
+    {
+      "stateCode": "CT",
+      "speciesId": "raffaelea-lauricola",
+      "scientificName": "Raffaelea lauricola",
+      "category": "fungi-diseases",
+      "priority": "baseline",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 9,
+      "incompleteCountyCount": 9,
+      "notResearchedCountyCount": 9,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "09110",
+        "09120",
+        "09130",
+        "09140",
+        "09150",
+        "09160",
+        "09170",
+        "09180",
+        "09190"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-round58-ct-001",
+      "stateCode": "CT",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "popillia-japonica"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 9,
+      "candidateFile": "gbif-round58-ct-001.json"
+    },
+    {
+      "batchId": "gbif-round58-ct-002",
+      "stateCode": "CT",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "raffaelea-lauricola"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 9,
+      "candidateFile": "gbif-round58-ct-002.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-round58-ct-001",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-ct-001.json",
+      "sha256": "0f0ee9082bf44c41e793511eaf7205567e5ec6c735d6d1e6a573ae098bdd7db9",
+      "bytes": 1328
+    },
+    {
+      "batchId": "gbif-round58-ct-002",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-ct-002.json",
+      "sha256": "90ef4837936441e1d068b2f2b4e8cadf229a4cfd5d3a31c9a78c0c48f4c70eb2",
+      "bytes": 1346
+    }
+  ]
+}

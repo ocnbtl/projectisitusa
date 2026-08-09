@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-round58",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "NH",
+  "asOf": "2026-08-09",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ],
+    "portfolioFilter": "provenance-compatible-taxonomy-cache-and-positive-not-researched-movement",
+    "taxonomyCacheId": "gbif-taxonomy-20260809-r55",
+    "taxonomyCacheCompatibleAdapterVersions": [
+      "1.3.1"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "1a9e5a359e1b356b2c1cb86707cf3c998df0f6425f6490cb174d5dcb5738c2d9",
+    "protocolCells": "6fafd832285fe7ddd52b971f1c6a395b4c9425fe418bd00923982eec94e1a556",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "60f32b6681f354af739cfe4c4d3bd5240631d5ffce24adb7d748c8a4fa4ac88a",
+    "taxonomyCache": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 10,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched",
+    "cachedTaxonomyEntryCount": 53
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 250,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0,
+    "cachedEligibleStateSpeciesScreenCount": 9
+  },
+  "availableStateSpeciesScreenCount": 36,
+  "selectedStateSpeciesScreenCount": 9,
+  "selectedCountyOutcomeCount": 90,
+  "expectedNetNewPairCount": 90,
+  "countyCount": 10,
+  "selected": [
+    {
+      "stateCode": "NH",
+      "speciesId": "rottboellia-cochinchinensis",
+      "scientificName": "Rottboellia cochinchinensis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "saccharum-spontaneum",
+      "scientificName": "Saccharum spontaneum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "salvinia-molesta",
+      "scientificName": "Salvinia molesta",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "solanum-tampicense",
+      "scientificName": "Solanum tampicense",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "solanum-torvum",
+      "scientificName": "Solanum torvum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "solanum-viarum",
+      "scientificName": "Solanum viarum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "sparganium-erectum",
+      "scientificName": "Sparganium erectum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "tridax-procumbens",
+      "scientificName": "Tridax procumbens",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    },
+    {
+      "stateCode": "NH",
+      "speciesId": "urochloa-panicoides",
+      "scientificName": "Urochloa panicoides",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 10,
+      "incompleteCountyCount": 10,
+      "notResearchedCountyCount": 10,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "33001",
+        "33003",
+        "33005",
+        "33007",
+        "33009",
+        "33011",
+        "33013",
+        "33015",
+        "33017",
+        "33019"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-round58-nh-001",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "rottboellia-cochinchinensis"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-001.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-002",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "saccharum-spontaneum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-002.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-003",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "salvinia-molesta"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-003.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-004",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-tampicense"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-004.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-005",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-torvum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-005.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-006",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-viarum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-006.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-007",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "sparganium-erectum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-007.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-008",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "tridax-procumbens"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-008.json"
+    },
+    {
+      "batchId": "gbif-round58-nh-009",
+      "stateCode": "NH",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "urochloa-panicoides"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 10,
+      "candidateFile": "gbif-round58-nh-009.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-round58-nh-001",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-001.json",
+      "sha256": "988451766d6620d3345780c753a5a223c0997f7e4ec806d11df1c95ef2ad436f",
+      "bytes": 1557
+    },
+    {
+      "batchId": "gbif-round58-nh-002",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-002.json",
+      "sha256": "6baad67a8e934da2c908c0f42b2ad75262c9dd02d214cc485bdbf95506d55755",
+      "bytes": 1487
+    },
+    {
+      "batchId": "gbif-round58-nh-003",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-003.json",
+      "sha256": "633db9ce2ad97d8231b1c3fa3d167e5e1af0ed13549babe24bee20ad89333fdb",
+      "bytes": 1447
+    },
+    {
+      "batchId": "gbif-round58-nh-004",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-004.json",
+      "sha256": "f9cc6e72a999f306cb994bc6b5f7e463d870f4bee0e246a23e16bb082639ceb1",
+      "bytes": 1467
+    },
+    {
+      "batchId": "gbif-round58-nh-005",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-005.json",
+      "sha256": "c52dcc80a83c02b6564633201080ba8632209ea0a87fdc33ff146b3b56941817",
+      "bytes": 1427
+    },
+    {
+      "batchId": "gbif-round58-nh-006",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-006.json",
+      "sha256": "ae386b7a937d217e65172b4923009498bd9efaebf6c840142b2960401f8e68c3",
+      "bytes": 1427
+    },
+    {
+      "batchId": "gbif-round58-nh-007",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-007.json",
+      "sha256": "6a8835ec6bddbd9a3fba1af7466f65e2c0b683a2fbe94351f21af98fdf2c8d66",
+      "bytes": 1467
+    },
+    {
+      "batchId": "gbif-round58-nh-008",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-008.json",
+      "sha256": "b21f97031e8c893edb4149ff75befff4f1e530d1faac83af2bccdadd63ad0d32",
+      "bytes": 1457
+    },
+    {
+      "batchId": "gbif-round58-nh-009",
+      "path": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-009.json",
+      "sha256": "93f94e1593340267fc52fe914c49c2e44b3c231a6e0cfc6770e37efe87519b87",
+      "bytes": 1477
+    }
+  ]
+}

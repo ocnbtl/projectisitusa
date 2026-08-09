@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-58-portfolio-selection-20260809-r1",
+  "roundId": "gbif-round58",
+  "evaluatedAt": "2026-08-09T20:26:10.094Z",
+  "result": "selected-awaiting-contract-registration",
+  "exactBaseSha": "6cd9bb6e10b35436437a6327616675edb644e10b",
+  "canonicalCheckout": "C:\\\\Code\\\\project-isitusa",
+  "currentTruth": {
+    "branch": "main",
+    "head": "6cd9bb6e10b35436437a6327616675edb644e10b",
+    "originMain": "6cd9bb6e10b35436437a6327616675edb644e10b",
+    "githubMain": "6cd9bb6e10b35436437a6327616675edb644e10b",
+    "dirtyBeforePlanning": false,
+    "worktreeCount": 149,
+    "dirtyLineageWorktreesPreserved": 4,
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrations": 0,
+    "writerProcessesDetected": 0,
+    "frozenSkillValidation": {
+      "receiptVersion": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "production": {
+      "githubDeploymentId": 5820678897,
+      "githubDeploymentState": "success",
+      "contentCommit": "71112ad845734666501ef0f1f5fc992be1a81c4f",
+      "currentReceiptCommit": "6cd9bb6e10b35436437a6327616675edb644e10b",
+      "immutableUrl": "https://projectisitusa-drbv3dgoy-unigentamos.vercel.app",
+      "canonicalUrl": "https://isitusa.com",
+      "routeChecksPassed": 12,
+      "byteParityChecksPassed": 8,
+      "qualification": "Fresh external evidence verifies the already-deployed Round 57 receipt commit. It does not attest this planning commit or a future deployment."
+    }
+  },
+  "baseline": {
+    "asOf": "2026-08-09",
+    "national": {
+      "jurisdictions": 51,
+      "activeCountyEquivalents": 3144,
+      "stateSpeciesDenominator": 127704,
+      "stateSpeciesApplicable": 5064,
+      "stateSpeciesNotApplicable": 0,
+      "stateSpeciesUnknown": 122640,
+      "stateSpeciesBlocked": 0,
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 56064,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 347646,
+      "notResearched": 7468858,
+      "protocolComplete": 5091,
+      "protocolIncomplete": 14226,
+      "protocolBlocked": 59,
+      "protocolCurrent": 4480,
+      "protocolStale": 611,
+      "protocolUndated": 14285,
+      "certifiedStates": 0,
+      "remainingApplicableProtocolCountyScreens": 924240
+    },
+    "selectedStates": {
+      "MA": {
+        "totalPairs": 35056,
+        "verifiedPresent": 208,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 842,
+        "notResearched": 34006,
+        "evidence": 216,
+        "rejections": 24,
+        "runs": 8,
+        "protocolComplete": 43,
+        "protocolIncomplete": 46,
+        "protocolBlocked": 0,
+        "protocolCurrent": 30,
+        "protocolStale": 13,
+        "protocolUndated": 46
+      },
+      "NH": {
+        "totalPairs": 25040,
+        "verifiedPresent": 122,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 638,
+        "notResearched": 24280,
+        "evidence": 122,
+        "rejections": 17,
+        "runs": 9,
+        "protocolComplete": 43,
+        "protocolIncomplete": 36,
+        "protocolBlocked": 0,
+        "protocolCurrent": 30,
+        "protocolStale": 13,
+        "protocolUndated": 36
+      },
+      "CT": {
+        "totalPairs": 22536,
+        "verifiedPresent": 0,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 1053,
+        "notResearched": 21483,
+        "evidence": 0,
+        "rejections": 5894,
+        "runs": 9,
+        "protocolComplete": 101,
+        "protocolIncomplete": 9,
+        "protocolBlocked": 13,
+        "protocolCurrent": 101,
+        "protocolStale": 0,
+        "protocolUndated": 22
+      }
+    },
+    "operations": {
+      "jobs": {
+        "total": 297,
+        "completed": 214,
+        "failed": 60,
+        "cancelled": 21,
+        "blocked": 2,
+        "active": 0
+      },
+      "leases": {
+        "total": 298,
+        "completed": 218,
+        "failed": 69,
+        "cancelled": 9,
+        "recovered": 2,
+        "active": 0
+      },
+      "integrations": {
+        "total": 218,
+        "integrated": 214,
+        "rejected": 2,
+        "changesRequested": 2,
+        "pending": 0
+      }
+    }
+  },
+  "previousRoundScore": {
+    "evaluationPath": "ops/national-research/evaluations/round-57-gbif-multi-state-20260809-r1.json",
+    "plannedPairs": 615,
+    "attemptedPairs": 615,
+    "completedPairs": 615,
+    "finalMatrixPairsMoved": 615,
+    "verifiedPresentMovement": 2,
+    "researchedUnresolvedMovement": 613,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0,
+    "protocolCellsClosed": 20,
+    "certificationBlockersRemoved": 0,
+    "liveProviderCalls": 20,
+    "cachedTaxonomyHits": 20,
+    "preventedProviderRequests": 20,
+    "providerCandidates": 21,
+    "retainedArtifacts": 40,
+    "retainedArtifactBytes": 23120,
+    "workerWallSeconds": 162.638,
+    "peakMemoryMiB": 1497.504,
+    "providerRequestRetries": 0,
+    "knownUniqueWorkerAndPreflightCorrections": 3,
+    "netMovementPerProviderCall": 30.75,
+    "netMovementPerSummedWorkerHour": 13613.05476
+  },
+  "recoveryAudit": {
+    "selectedStateSpeciesScreens": 20,
+    "selectedCountySpeciesPairs": 234,
+    "retainedOccurrencePagesOverlappingSelectedScope": 0,
+    "committedPartialReceiptsOverlappingSelectedScope": 0,
+    "committedPartialManifestsOverlappingSelectedScope": 0,
+    "unresolvedFailedJobsOverlappingSelectedScope": 0,
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "taxonomyCacheSha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "taxonomyCacheEntries": 53,
+    "uniqueSelectedTaxonomyIdentities": 11,
+    "reusableTaxonomyResponsesAcrossJobs": 20,
+    "preventedProviderRequests": 20,
+    "disposition": "No retained occurrence page overlaps the selected state-bound scopes. Reuse only the provenance-compatible taxonomy responses and acquire the 20 missing state-species occurrence screens."
+  },
+  "nationalProfileFeasibility": {
+    "status": "not-executable",
+    "registeredActorExists": false,
+    "evaluatedCompletionProfileExists": false,
+    "configuredGbifDownloadCredentialNamesPresent": false,
+    "publicSearchNationalSnapshotAccepted": false,
+    "reason": "The registered adapter requires one state and injects stateProvince. Repository architecture rejects mutable offset-paged public search as a national snapshot. A real acquire-once actor requires an authenticated or versioned complete download plus new MAIN-owned receipt, partition, replay, and adversarial contracts.",
+    "effect": "The earlier estimate of about six national calls remains a design opportunity, not an executable provider budget."
+  },
+  "rankedPortfolio": [
+    {
+      "rank": 1,
+      "states": [
+        "MA",
+        "NH",
+        "CT"
+      ],
+      "workClass": "ready-cached-taxonomy-state-gbif",
+      "expectedNetNewPairs": 234,
+      "protocolCells": 20,
+      "expectedLiveOccurrenceRequests": 20,
+      "expectedNetMovementPerProviderCall": 11.7,
+      "executionDecision": "selected",
+      "reason": "Highest current net movement per executable cached-taxonomy call, three jurisdictions, zero retained occurrence-page overlap, and exact one-taxon worker compatibility."
+    },
+    {
+      "rank": 2,
+      "states": [
+        "RI",
+        "HI",
+        "DE",
+        "VT"
+      ],
+      "workClass": "ready-cached-taxonomy-state-gbif",
+      "expectedNetNewPairs": 109,
+      "protocolCells": 24,
+      "expectedLiveOccurrenceRequests": 24,
+      "expectedNetMovementPerProviderCall": 4.5416666667,
+      "executionDecision": "next",
+      "reason": "Same reusable taxonomy family but lower net movement per call."
+    },
+    {
+      "rank": 3,
+      "states": [
+        "DC"
+      ],
+      "workClass": "ready-cached-taxonomy-state-gbif",
+      "expectedNetNewPairs": 13,
+      "protocolCells": 13,
+      "expectedLiveOccurrenceRequests": 13,
+      "expectedNetMovementPerProviderCall": 1,
+      "executionDecision": "later",
+      "reason": "Closes protocol cells but each call can move only one county-species pair."
+    },
+    {
+      "rank": 4,
+      "states": [
+        "CO"
+      ],
+      "workClass": "protocol-heavy-low-net-gbif",
+      "expectedNetNewPairs": 7,
+      "grossIncompletePairs": 448,
+      "protocolCells": 7,
+      "expectedLiveOccurrenceRequests": 7,
+      "executionDecision": "later",
+      "reason": "Gross incomplete volume is 448 outcomes but current net matrix movement is only seven pairs. Gross volume must not outrank net movement."
+    },
+    {
+      "rank": 5,
+      "states": [
+        "MT",
+        "AK",
+        "AZ",
+        "MI",
+        "OH",
+        "PA",
+        "VT",
+        "WI"
+      ],
+      "workClass": "taxonomy-and-geography-exceptions",
+      "expectedNetNewPairs": null,
+      "executionDecision": "exact-review-only",
+      "reason": "Existing responses and archives cannot resolve the one taxonomy and seven geography exceptions by replay."
+    }
+  ],
+  "selectedPortfolio": {
+    "states": [
+      "MA",
+      "NH",
+      "CT"
+    ],
+    "stateSpeciesScreens": 20,
+    "countySpeciesPairs": 234,
+    "expectedNetNewUniquePairs": 234,
+    "expectedProtocolCellsClosed": 20,
+    "expectedCertificationBlockersRemoved": 0,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0,
+    "jobs": 20,
+    "maximumTaxaPerJob": 1,
+    "distinctTaxa": 11,
+    "plans": [
+      {
+        "state": "MA",
+        "screens": 9,
+        "pairs": 126,
+        "net": 126,
+        "planPath": "ops/national-research/plans/round-58-20260809/gbif-round58-ma-plan.json",
+        "sha256": "8acd48f987d5b2284ed6907dfcd6fa10ee7e248f89915a32590db439c6e763d8",
+        "taxa": [
+          "rottboellia-cochinchinensis",
+          "saccharum-spontaneum",
+          "salvinia-molesta",
+          "solanum-tampicense",
+          "solanum-torvum",
+          "solanum-viarum",
+          "sparganium-erectum",
+          "tridax-procumbens",
+          "urochloa-panicoides"
+        ]
+      },
+      {
+        "state": "NH",
+        "screens": 9,
+        "pairs": 90,
+        "net": 90,
+        "planPath": "ops/national-research/plans/round-58-20260809/gbif-round58-nh-plan.json",
+        "sha256": "9bb1ec020aa891d60b1ba1d0fdc47309a0f0bb8f7764620611f2681fc564da72",
+        "taxa": [
+          "rottboellia-cochinchinensis",
+          "saccharum-spontaneum",
+          "salvinia-molesta",
+          "solanum-tampicense",
+          "solanum-torvum",
+          "solanum-viarum",
+          "sparganium-erectum",
+          "tridax-procumbens",
+          "urochloa-panicoides"
+        ]
+      },
+      {
+        "state": "CT",
+        "screens": 2,
+        "pairs": 18,
+        "net": 18,
+        "planPath": "ops/national-research/plans/round-58-20260809/gbif-round58-ct-plan.json",
+        "sha256": "da4a9a8e93115e15adf6dbd48581873b2958201efd7f60e6240aea7c704275e2",
+        "taxa": [
+          "popillia-japonica",
+          "raffaelea-lauricola"
+        ]
+      }
+    ],
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "taxonomyCacheSha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "cachedTaxonomyResponsesAcrossJobs": 20,
+    "liveTaxonomyRequests": 0,
+    "plannedInitialOccurrenceRequests": 20,
+    "expectedProviderRequestsBeforeAdditionalPagination": 20,
+    "preventedProviderRequests": 20,
+    "expectedPairsPerProviderCall": 11.7,
+    "expectedPositivePairRange": {
+      "minimum": 0,
+      "maximum": 234
+    },
+    "liveWorkerTopology": {
+      "initial": 1,
+      "postCanaryMaximum": 2
+    },
+    "releaseThreshold": "Completing 20 current regulated GBIF cells across three jurisdictions and moving up to 234 unique pairs is a material multi-jurisdiction source-family milestone."
+  },
+  "processLesson": {
+    "lesson": "Prefer an acquire-once national artifact only when an implemented and evaluated immutable snapshot contract exists; otherwise select the highest net movement under the executable state adapter and keep memory lifetime taxon-isolated.",
+    "applied": [
+      "Hard-gated the unimplemented national GBIF profile instead of presenting its six-call estimate as executable.",
+      "Reranked all provenance-compatible cached taxonomy screens and selected 234 net pairs at 11.7 pairs per call instead of the stale 227-pair cohort at 6.676 pairs per call.",
+      "Kept one taxon per sparse worker and planned scoped git add --sparse from the first commit.",
+      "Separated 20 protocol closures from zero expected applicability, denominator, absence, not-detected, and certification-blocker movement.",
+      "Recorded the pre-contract health probe as a process exception and prohibited evidence acquisition before machine-readable job preflights."
+    ]
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false,
+    "failedRequestCanCompleteScope": false,
+    "rejectionCanCreateDetermination": false,
+    "missingGeographyCanCreateDetermination": false
+  }
+}

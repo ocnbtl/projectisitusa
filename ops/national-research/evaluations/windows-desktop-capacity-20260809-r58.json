@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260809-r58",
+  "recordedAt": "2026-08-09T20:26:10.094Z",
+  "hostCounterTimestamp": "2026-08-09T20:26:10.0947917Z",
+  "clockQualification": "Windows UTC controls this resource gate. Provider-native response timestamps control acquisition receipts.",
+  "canonicalCheckout": "C:\\\\Code\\\\project-isitusa",
+  "verifiedCheckpointSha": "6cd9bb6e10b35436437a6327616675edb644e10b",
+  "capacityTier": "green-with-recent-yellow-variability",
+  "workerCount": 2,
+  "initialLiveProviderWorkerCount": 1,
+  "postCanaryMaximumLiveProviderWorkerCount": 2,
+  "machineCapacityWorkerCount": 6,
+  "perWorkerReservationMiB": 768,
+  "observedRound57FullPeakMemoryMiB": 1497.504,
+  "observedRound57SparsePeakMemoryRangeMiB": [
+    215.996,
+    226.113
+  ],
+  "totalPhysicalMiB": 31900.91796875,
+  "freePhysicalMiB": 9906.60546875,
+  "projectedPostWorkerFreePhysicalMiB": 8370.60546875,
+  "commitHeadroomMiB": 11406.9609375,
+  "projectedPostWorkerFreeCommitMiB": 9870.9609375,
+  "freeDiskMiB": 711230.73828125,
+  "totalDiskMiB": 1906665.99609375,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 10387828736,
+    "committedBytes": 41890566144,
+    "commitLimitBytes": 53851631616,
+    "pageReadsPerSecond": 0,
+    "pageWritesPerSecond": 0,
+    "diskFreeBytes": 745779482624,
+    "diskTotalBytes": 1999284203520
+  },
+  "recentVariability": {
+    "earlierObservedAt": "2026-08-09T20:18:00.000Z",
+    "earlierAvailablePhysicalMiB": 6090.391,
+    "earlierAvailablePercent": 19.092,
+    "qualification": "The earlier sample was yellow. Sparse 768 MiB reservations keep two workers above operational floors under both observations."
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091796875,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.8994140625,
+    "qualification": "Two 768 MiB sparse worker reservations preserve physical, commit, and disk floors. Start with one live provider canary and scale to two only after its complete no-retry result."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": true,
+    "healthProbeRequests": 1,
+    "health": "HTTP 200 in 398 ms",
+    "processException": "A read-only truth-audit health probe contacted the provider before the Round 58 job preflights existed. It acquired no evidence and is retained as a process exception. No occurrence acquisition is permitted until every selected job passes machine-readable semantic preflight and is leased.",
+    "recentObservedCondition": "Round 57 completed 20 live occurrence requests without retry."
+  }
+}
