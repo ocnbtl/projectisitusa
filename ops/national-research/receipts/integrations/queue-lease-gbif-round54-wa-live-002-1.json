@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round54-wa-live-002-1",
+  "jobId": "gbif-round54-wa-live-002",
+  "leaseId": "lease-gbif-round54-wa-live-002-1",
+  "workerCommit": "a956bc232e61916e3f202418fc70edf6e023bc33",
+  "workerBranchHead": "1abcd53b8faa5fc3cba37cee8ed4872aebfc5c30",
+  "manifestHash": "77c333da091b7c8a55b0f9032324fa832d38c949f1e1761f50b76f22b0f3e84e",
+  "changedPaths": [
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-occurrences-lysimachia-vulgaris-000000.json.gz",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-occurrences-lythrum-salicaria-000000.json.gz",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-species-match-lysimachia-vulgaris.json.gz",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-species-match-lythrum-salicaria.json.gz",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/assertions.ndjson",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/manifest.json",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/outcomes.ndjson",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/receipt.json",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/rejections.ndjson",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/reviews.ndjson",
+    "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T00:36:33.061Z",
+  "integrationCommit": "b77dbbcba3a02a661b7ddeb385b6cb831974f9ea"
+}
