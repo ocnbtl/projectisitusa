@@ -24407,6 +24407,73 @@
         "sha256": "9d439c545ef15138fe8db7c5dc4e139fc840cbf4844d1f0c94cf0811670c8ada",
         "bytes": 4227
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round55-nj-004-1",
+      "jobId": "gbif-round55-nj-004",
+      "leaseId": "lease-gbif-round55-nj-004-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T06:16:05.000Z",
+      "manifestPath": "manifests/gbif-round55-nj-004__lease-gbif-round55-nj-004-1.json",
+      "manifestHash": "af4a87c998a3180f5176dddc68f4660d20b43d896da3e4b3ef1b18b63a13b2f9",
+      "manifestBytes": 17469,
+      "workerCommit": "195b781b54a288009f409defec5f290ce7be7591",
+      "workerBranchHead": "4a25c9ef7238aeffecb9e6fc546c361bce2ac353",
+      "reviewedAt": "2026-08-09T06:16:06.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable NJ GBIF run, exact two-commit inventory, 168 complete county outcomes, 285 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-acer-platanoides-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-callitriche-stagnalis-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-cirsium-arvense-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-discula-destructiva-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-lonicera-maackii-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-marsilea-quadrifolia-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-myriophyllum-aquaticum-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-rhamnus-cathartica-000000.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-acer-platanoides.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-callitriche-stagnalis.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-cirsium-arvense.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-discula-destructiva.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-lonicera-maackii.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-marsilea-quadrifolia.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-myriophyllum-aquaticum.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-rhamnus-cathartica.json.gz",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/assertions.ndjson",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/manifest.json",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/outcomes.ndjson",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/receipt.json",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/rejections.ndjson",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/reviews.ndjson",
+        "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check a55f6a9459afb13970f84a74a31e3fdec8b07d85...4a25c9ef7238aeffecb9e6fc546c361bce2ac353",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round55-nj-004-1.json",
+        "sha256": "417eaefc5b8c7f25762f22a757c886b87d6044deccc9f6cfed198db874f08104",
+        "bytes": 4390
+      }
     }
   ]
 }
