@@ -24500,6 +24500,73 @@
         "sha256": "2b830460343ad2ca1f34c972c2abcb811b4679578e4228366301fe19caa892fe",
         "bytes": 4227
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round55-nj-005-1",
+      "jobId": "gbif-round55-nj-005",
+      "leaseId": "lease-gbif-round55-nj-005-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T06:16:26.000Z",
+      "manifestPath": "manifests/gbif-round55-nj-005__lease-gbif-round55-nj-005-1.json",
+      "manifestHash": "1090251181a18fdcba0a4e469efed7ca775ef7ae4e2433bc92b7842cda2fcc4c",
+      "manifestBytes": 17166,
+      "workerCommit": "ad953934549ae79cc17525207217b80e4e4a8c64",
+      "workerBranchHead": "244eb836be78ecc659242b24c0ad64679f37245d",
+      "reviewedAt": "2026-08-09T06:16:27.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable NJ GBIF run, exact two-commit inventory, 168 complete county outcomes, 308 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-cirsium-vulgare-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-elaeagnus-angustifolia-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-frangula-alnus-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-hedera-helix-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-hesperis-matronalis-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-lonicera-tatarica-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-tree-of-heaven-000000.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-cirsium-vulgare.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-elaeagnus-angustifolia.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-frangula-alnus.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-hedera-helix.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-hesperis-matronalis.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-lonicera-tatarica.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-tree-of-heaven.json.gz",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/assertions.ndjson",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/manifest.json",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/outcomes.ndjson",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/receipt.json",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/rejections.ndjson",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/reviews.ndjson",
+        "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check a55f6a9459afb13970f84a74a31e3fdec8b07d85...244eb836be78ecc659242b24c0ad64679f37245d",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round55-nj-005-1.json",
+        "sha256": "c9c522a5ff449ec3f5ea15ff4e499634103d60bfcd1b11f60c17fba34976a45a",
+        "bytes": 4364
+      }
     }
   ]
 }
