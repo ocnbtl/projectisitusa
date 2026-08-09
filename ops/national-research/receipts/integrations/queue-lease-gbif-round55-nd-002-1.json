@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nd-002-1",
+  "jobId": "gbif-round55-nd-002",
+  "leaseId": "lease-gbif-round55-nd-002-1",
+  "workerCommit": "5a323b00580d5675fc6dc428660fc909d4a96d48",
+  "workerBranchHead": "cb1542085cbec35621e7b64c525d35aa781b03cb",
+  "manifestHash": "6e1004448ed1872ff939fdca38e03dad7f3dc17d69f9bf51537553aca5f3551a",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-butomus-umbellatus-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-cirsium-arvense-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-cirsium-vulgare-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-dreissena-polymorpha-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-lonicera-tatarica-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-potamogeton-crispus-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-rhamnus-cathartica-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-occurrences-ulmus-pumila-000000.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-butomus-umbellatus.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-cirsium-arvense.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-cirsium-vulgare.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-dreissena-polymorpha.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-lonicera-tatarica.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-potamogeton-crispus.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-rhamnus-cathartica.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/artifacts/gbif-species-match-ulmus-pumila.json.gz",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/assertions.ndjson",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/manifest.json",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/outcomes.ndjson",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/receipt.json",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/rejections.ndjson",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/reviews.ndjson",
+    "src/data/research/runs/20260809T055353Z__gbif-preserved-specimens__4ae5c0674403/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:14:02.000Z",
+  "integrationCommit": "7769750b5f5a83f1d64488afbef14ad60c963e1b"
+}
