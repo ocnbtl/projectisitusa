@@ -1,0 +1,5140 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-54-gbif-washington-20260809-r1",
+  "roundId": "round-54-20260808",
+  "evaluatedAt": "2026-08-09T01:35:27.642Z",
+  "result": "complete-local-release-gates-pending-external-verification",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "A material Washington GBIF source-family milestone completed 3705 exact county-species screens, moved 3003 unique final-matrix pairs, added 956 verified-present pairs, closed 95 protocol cells, removed three certification blockers, and retained eight complete immutable recovery partitions."
+  },
+  "priorRoundAudit": {
+    "evaluationId": "round-53-gbif-portfolio-20260808-r1",
+    "pairsPlanned": 1573,
+    "pairsAttempted": 1573,
+    "pairsCompleted": 1573,
+    "finalMatrixPairsMoved": 1033,
+    "verifiedPresentMovement": 72,
+    "researchedUnresolvedMovement": 961,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0,
+    "protocolCellsClosed": 69,
+    "certificationBlockersRemoved": 4,
+    "evidenceFoundPairsGross": 103,
+    "noQualifyingEvidencePairsGross": 1470,
+    "positiveYield": 0.06548,
+    "liveProviderCalls": 52,
+    "providerCandidatesGross": 587,
+    "pairsPerLiveProviderCall": 30.25,
+    "netUniquePairMovementPerLiveProviderCall": 19.865385,
+    "netUniquePairMovementPerWorkerHour": 41210.106,
+    "workerProcessWallSeconds": 90.24,
+    "peakMemoryMb": 1438.137,
+    "retries": {
+      "providerRequestRetries": 0,
+      "workerRetries": 0,
+      "acquisitionRetries": 0,
+      "releaseDeployments": 1
+    },
+    "preventedProviderRequests": 86,
+    "integrationLatencyAverageSeconds": 278.667,
+    "knownSequentialReleaseSeconds": 3273.869,
+    "expectedVersusActual": {
+      "plannedPairs": 1573,
+      "expectedNetNewPairs": 1033,
+      "actualCompletedPairs": 1573,
+      "actualFinalMatrixMovement": 1033,
+      "expectedLiveProviderCalls": 52,
+      "actualLiveProviderCalls": 52,
+      "providerCallVariance": 0,
+      "expectedEvidenceFoundPairRange": {
+        "minimum": 0,
+        "maximum": 40
+      },
+      "actualEvidenceFoundPairsGross": 103,
+      "positiveAboveExpectedMaximum": 63,
+      "actualNoQualifyingEvidencePairsGross": 1470,
+      "expectedProtocolCellsClosed": 69,
+      "actualProtocolCellsClosed": 69,
+      "pairMovementAchievementRate": 1,
+      "qualification": "Net movement, provider-call volume, and protocol closure matched semantic preflight exactly. Positive yield exceeded the historical maximum estimate by 63 pairs; that miss is retained rather than revised after the fact."
+    },
+    "processLesson": "Attempt telemetry must be both captured before staging and copied into a durable MAIN-owned path before worker staging is retired; semantic preflight must also register real archive-response counts rather than placeholders."
+  },
+  "baseline": {
+    "commit": "f51af7909b0e81ba87fe9486ab48bb2885a30509",
+    "asOf": "2026-08-08",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "explicitOverrides": 3426,
+      "derivedApplicable": 1638,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "partiallyResearched": 0,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 54796,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 344347,
+      "notResearched": 7473425
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4888,
+      "incomplete": 14429,
+      "blocked": 59,
+      "current": 4277,
+      "stale": 611,
+      "undated": 14488
+    },
+    "ledger": {
+      "projectedEvidence": 182164,
+      "immutableAssertions": 152346,
+      "immutableReviews": 152346,
+      "rejections": 42198,
+      "uniqueExplicitOutcomePairs": 354053,
+      "rawOutcomes": 459792,
+      "stateSelectedRuns": 544,
+      "immutableRunDirectories": 529,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": {
+        "blocked": 2,
+        "cancelled": 21,
+        "completed": 168,
+        "failed": 56
+      },
+      "leases": {
+        "cancelled": 9,
+        "completed": 172,
+        "failed": 65,
+        "recovered": 2
+      },
+      "integrations": {
+        "changes-requested": 2,
+        "integrated": 168,
+        "rejected": 2
+      },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "recoveryAudit": {
+    "initialJobs": 4,
+    "initialPairs": 3705,
+    "verifiedCompletePairsPreserved": 3510,
+    "incompletePairsRetried": 195,
+    "initialRateLimitedOccurrenceRequests": 5,
+    "verifiedProviderResponsesReplayed": 182,
+    "archiveReplayJobs": 4,
+    "boundedLiveRetryJobs": 4,
+    "boundedLiveRetryProviderCalls": 5,
+    "action": "preserved-complete-pages-and-retried-only-five-missing-occurrence-requests",
+    "qualification": "Five initial GBIF occurrence responses returned HTTP 429. The 3510 completed pairs and 182 verified responses were preserved and replayed; only 195 affected pairs were retried. No failure, source silence, or incomplete page created absence, not-detection, not-applicability, or a complete claim."
+  },
+  "planned": {
+    "jurisdictions": [
+      "WA"
+    ],
+    "taxa": 95,
+    "countySpeciesPairs": 3705,
+    "expectedNetNewPairs": 3003,
+    "initialJobs": 4,
+    "preflightExpectedLiveProviderCalls": 136,
+    "recoveryAdjustedExpectedLiveProviderCalls": 141,
+    "expectedProtocolCellsClosed": 95,
+    "candidateFiles": 4,
+    "safeConcurrentAcquisitionWorkers": 4,
+    "resourceFloor": "Four 1600 MiB workers preserved 4904.711 MiB projected physical headroom and 10912.836 MiB projected commit headroom at preflight."
+  },
+  "execution": {
+    "pairsPlanned": 3705,
+    "uniquePairsAttempted": 3705,
+    "grossWorkerPairExecutions": 7410,
+    "liveRetriedPairs": 195,
+    "pairsCompleted": 3705,
+    "finalMatrixPairsMoved": 3003,
+    "grossCompletionRate": 1,
+    "netMovementRate": 0.8105263157894737,
+    "workerAttempts": 12,
+    "initialPartialAttempts": 4,
+    "recoveryAttempts": 8,
+    "integratedRuns": 8,
+    "failedInitialJobs": 4,
+    "workerProcessWallSeconds": 277.68499999999995,
+    "workerHours": 0.0771347222222222,
+    "initialConcurrentWaveWallSeconds": 38.373,
+    "archiveConcurrentWaveWallSeconds": 25.992,
+    "liveRetrySequentialWallSeconds": 40.655,
+    "peakMemoryMb": 1492.523,
+    "retries": {
+      "providerRequestRetries": 5,
+      "livePairRetries": 195,
+      "recoveryJobs": 8,
+      "releaseDeployments": 0
+    },
+    "manualInterventions": {
+      "workerAcquisition": 2,
+      "orchestrationCorrections": 6,
+      "items": [
+        "Changed the initial four-worker live topology after five HTTP 429 responses to four zero-network archive replays plus four sequential missing-request retries.",
+        "Promoted the verified Echium vulgare taxonomy identity into a provenance-bound recovery cache before the live retry, preventing a repeated taxonomy call.",
+        "Removed attempt telemetry accidentally copied inside eight immutable run directories because it was not declared by the closed run contract; preserved the same telemetry under MAIN-owned operations paths and rebuilt manifests.",
+        "Normalized generated recovery contract line endings after the whitespace gate rejected them before acquisition.",
+        "Reran two review receipts with millisecond-normalized UTC timestamps after seven-digit host formatting failed exact equality before queue mutation.",
+        "Reinvoked the disk-budget gate as a zero-worker postflight after the default dispatch contract correctly rejected zero workers."
+      ]
+    }
+  },
+  "acquisition": {
+    "evidenceFoundPairsGross": 1010,
+    "noQualifyingEvidencePairsGross": 2695,
+    "positiveYield": 0.2726045883940621,
+    "liveProviderCalls": 141,
+    "healthProbeCallsExcluded": 1,
+    "occurrencePageCalls": 102,
+    "liveTaxonomyCalls": 39,
+    "cachedTaxonomyHits": 61,
+    "archiveResponseHits": 182,
+    "preventedProviderRequests": 243,
+    "logicalResponseAttempts": 384,
+    "providerCandidatesFinal": 6091,
+    "providerCandidatesAcrossAttempts": 11964,
+    "acceptedAssertionsFinal": 5074,
+    "acceptedReviewsFinal": 5074,
+    "rejectionsFinal": 1017,
+    "candidateAcceptanceRate": 0.8330323428008537,
+    "retainedArtifacts": 192,
+    "integratedArtifactBytes": 2907002,
+    "pairsPerLiveProviderCall": 26.27659574468085,
+    "netUniquePairMovementPerLiveProviderCall": 21.29787234042553,
+    "netUniquePairMovementPerWorkerHour": 38931.88324900518,
+    "taxonomyCache": {
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json",
+      "sha256": "50df0aaaeb730fac009189827e70ebeb3061a8928f6fe6ab64ef4ede85d335ed",
+      "identities": 57
+    },
+    "requestTelemetry": {
+      "responseRecordsAcrossAttempts": 384,
+      "liveResponses": 141,
+      "cacheResponses": 61,
+      "archiveResponses": 182,
+      "transportFailedAttempts": 0,
+      "providerSemanticErrors": 5,
+      "qualification": "The five HTTP 429 responses completed at the transport layer but failed source acquisition semantics. Recovery closed those exact requests; all 3705 final outcomes are complete and no-qualifying-evidence outcomes remain researched-unresolved."
+    }
+  },
+  "attemptTelemetry": {
+    "durableRecords": [
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-001-attempt-1.json",
+        "sha256": "fbbbf607f4d8666c7e8118084b09d66b11f8d36053b4db376d2e67a1d07bf26c",
+        "bytes": 1566
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-002-attempt-1.json",
+        "sha256": "864d33ccc4a1bc93c7742b46d3695617d455f233bc24f3b2f136d31179252a4a",
+        "bytes": 1566
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-003-attempt-1.json",
+        "sha256": "a721d3d47e77310206080d94d4b73a1938fbefc49e2a0020b8861f86f3fd808e",
+        "bytes": 1566
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-004-attempt-1.json",
+        "sha256": "3666401c51bd8b6e862c61a64d0996dee3a1c38b6def346483db5e0d83061e09",
+        "bytes": 1562
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-archive-001-attempt-1.json",
+        "sha256": "ab617ad40137d3431f3272b2f54096be27b7fabe52753b145cb48d1dc1c69b06",
+        "bytes": 1679
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-archive-002-attempt-1.json",
+        "sha256": "54f811beafdffa3a389be461995eb5c36ece80f8ff7b0f9a379577ccb789cdb4",
+        "bytes": 1680
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-archive-003-attempt-1.json",
+        "sha256": "199f8831588c5f52e1900424926f0b2752888153c07cb40410fcdeec9a62f35e",
+        "bytes": 1680
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-archive-004-attempt-1.json",
+        "sha256": "4ab0324daf465bcd281c4bf6717c29a46f420f7b09f96ade5ec1d3278f1558fa",
+        "bytes": 1676
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-live-001-attempt-1.json",
+        "sha256": "e708f6af799ab6fa16a93c6fcf6a9317bab5b517f682d2308e72585f2414826a",
+        "bytes": 1581
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-live-002-attempt-1.json",
+        "sha256": "ed07d4b32562daadf2a0130ed50b208b166f78a9ebe6edf8b886cbb279a2f75b",
+        "bytes": 1586
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-live-003-attempt-1.json",
+        "sha256": "782ad402b6cdf1ef49c99395cc45e181bf91602e07198bb5bc0c138166c9c87b",
+        "bytes": 1578
+      },
+      {
+        "path": "ops/national-research/attempt-telemetry/gbif-round54-wa-live-004-attempt-1.json",
+        "sha256": "5a264b1f1cc9dfb544d2bbb6d1d603c438b416612201c7267225e6954cc70337",
+        "bytes": 1581
+      }
+    ],
+    "clockQualification": "Elapsed duration, request counts, and peak-memory telemetry are measured locally. Source observations use provider-native retrievedAt timestamps; host wall time is not used to establish evidence freshness."
+  },
+  "grossEventVolume": {
+    "workerPairExecutions": 7410,
+    "providerCandidates": 11964,
+    "rawOutcomes": 7410,
+    "assertions": 9953,
+    "reviews": 9953,
+    "rejections": 2206,
+    "providerSemanticErrors": 5,
+    "finalIntegratedOutcomes": 3705,
+    "finalIntegratedAssertions": 5074,
+    "qualification": "Gross attempt volume includes the four preserved partial executions and the eight recovery executions. It is reported separately from 3003 unique final-matrix movements and 3705 final integrated outcomes."
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 3003,
+    "verifiedPresent": 956,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 2047,
+    "notResearched": -3003,
+    "conflicts": 0,
+    "affectedStates": {
+      "WA": {
+        "plannedAndCompletedPairs": 3705,
+        "uniquePairsMoved": 3003,
+        "verifiedPresent": 956,
+        "researchedUnresolved": 2047,
+        "notResearched": -3003,
+        "integratedEvidenceRecords": 5074,
+        "rejections": 1017,
+        "uniqueExplicitOutcomePairs": 3003,
+        "immutableRuns": 8,
+        "overlapQualification": "The final partitions completed 702 already-researched pairs; they remain valid explicit outcomes but are excluded from net movement. Fifty-four evidence-found outcomes overlapped prior verified-present pairs."
+      }
+    }
+  },
+  "stateBaselinesAndFinals": {
+    "AL": {
+      "countySpeciesDenominator": 167768,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 15300,
+          "verifiedAbsent": 0,
+          "notDetected": 8,
+          "researchedUnresolved": 96388,
+          "notResearched": 56072,
+          "explicitOutcomePairs": 66598,
+          "evidenceRecords": 51679,
+          "rejections": 6286,
+          "selectedRuns": 54,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 1019,
+          "notApplicable": 0,
+          "unresolved": 1485,
+          "blocked": 0,
+          "researchedUnresolved": 649,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 836
+        },
+        "protocolCells": {
+          "total": 25040,
+          "applicable": 14437,
+          "notApplicable": 10603,
+          "complete": 1004,
+          "incomplete": 13433,
+          "blocked": 0,
+          "current": 991,
+          "stale": 13,
+          "undated": 13433
+        },
+        "certificationBlockers": [
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 15300,
+          "verifiedAbsent": 0,
+          "notDetected": 8,
+          "researchedUnresolved": 96388,
+          "notResearched": 56072,
+          "explicitOutcomePairs": 66598,
+          "evidenceRecords": 51679,
+          "rejections": 6286,
+          "selectedRuns": 54,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 1019,
+          "notApplicable": 0,
+          "unresolved": 1485,
+          "blocked": 0,
+          "researchedUnresolved": 649,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 836
+        },
+        "protocolCells": {
+          "total": 25040,
+          "applicable": 14437,
+          "notApplicable": 10603,
+          "complete": 1004,
+          "incomplete": 13433,
+          "blocked": 0,
+          "current": 991,
+          "stale": 13,
+          "undated": 13433
+        },
+        "certificationBlockers": [
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "AK": {
+      "countySpeciesDenominator": 75120,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 115,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 2765,
+          "notResearched": 72240,
+          "explicitOutcomePairs": 2880,
+          "evidenceRecords": 234,
+          "rejections": 2091,
+          "selectedRuns": 13,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 79,
+          "notApplicable": 0,
+          "unresolved": 2425,
+          "blocked": 0,
+          "researchedUnresolved": 17,
+          "researchBlocked": 1,
+          "partiallyResearched": 0,
+          "untouched": 2407
+        },
+        "protocolCells": {
+          "total": 291,
+          "applicable": 98,
+          "notApplicable": 193,
+          "complete": 84,
+          "incomplete": 0,
+          "blocked": 14,
+          "current": 84,
+          "stale": 0,
+          "undated": 14
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 115,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 2765,
+          "notResearched": 72240,
+          "explicitOutcomePairs": 2880,
+          "evidenceRecords": 234,
+          "rejections": 2091,
+          "selectedRuns": 13,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 79,
+          "notApplicable": 0,
+          "unresolved": 2425,
+          "blocked": 0,
+          "researchedUnresolved": 17,
+          "researchBlocked": 1,
+          "partiallyResearched": 0,
+          "untouched": 2407
+        },
+        "protocolCells": {
+          "total": 291,
+          "applicable": 98,
+          "notApplicable": 193,
+          "complete": 84,
+          "incomplete": 0,
+          "blocked": 14,
+          "current": 84,
+          "stale": 0,
+          "undated": 14
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "AZ": {
+      "countySpeciesDenominator": 37560,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 329,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1801,
+          "notResearched": 35430,
+          "explicitOutcomePairs": 2130,
+          "evidenceRecords": 4830,
+          "rejections": 966,
+          "selectedRuns": 14,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 102,
+          "notApplicable": 0,
+          "unresolved": 2402,
+          "blocked": 0,
+          "researchedUnresolved": 40,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2362
+        },
+        "protocolCells": {
+          "total": 426,
+          "applicable": 121,
+          "notApplicable": 305,
+          "complete": 111,
+          "incomplete": 9,
+          "blocked": 1,
+          "current": 98,
+          "stale": 13,
+          "undated": 10
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 329,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1801,
+          "notResearched": 35430,
+          "explicitOutcomePairs": 2130,
+          "evidenceRecords": 4830,
+          "rejections": 966,
+          "selectedRuns": 14,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 102,
+          "notApplicable": 0,
+          "unresolved": 2402,
+          "blocked": 0,
+          "researchedUnresolved": 40,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2362
+        },
+        "protocolCells": {
+          "total": 426,
+          "applicable": 121,
+          "notApplicable": 305,
+          "complete": 111,
+          "incomplete": 9,
+          "blocked": 1,
+          "current": 98,
+          "stale": 13,
+          "undated": 10
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "AR": {
+      "countySpeciesDenominator": 187800,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1422,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6003,
+          "notResearched": 180375,
+          "explicitOutcomePairs": 7425,
+          "evidenceRecords": 4098,
+          "rejections": 460,
+          "selectedRuns": 14,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 83,
+          "notApplicable": 0,
+          "unresolved": 2421,
+          "blocked": 0,
+          "researchedUnresolved": 16,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2405
+        },
+        "protocolCells": {
+          "total": 297,
+          "applicable": 101,
+          "notApplicable": 196,
+          "complete": 99,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 86,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1422,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6003,
+          "notResearched": 180375,
+          "explicitOutcomePairs": 7425,
+          "evidenceRecords": 4098,
+          "rejections": 460,
+          "selectedRuns": 14,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 83,
+          "notApplicable": 0,
+          "unresolved": 2421,
+          "blocked": 0,
+          "researchedUnresolved": 16,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2405
+        },
+        "protocolCells": {
+          "total": 297,
+          "applicable": 101,
+          "notApplicable": 196,
+          "complete": 99,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 86,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "CA": {
+      "countySpeciesDenominator": 145232,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1879,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6299,
+          "notResearched": 137054,
+          "explicitOutcomePairs": 8178,
+          "evidenceRecords": 24429,
+          "rejections": 2435,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 129,
+          "notApplicable": 0,
+          "unresolved": 2375,
+          "blocked": 0,
+          "researchedUnresolved": 12,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2363
+        },
+        "protocolCells": {
+          "total": 423,
+          "applicable": 147,
+          "notApplicable": 276,
+          "complete": 147,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 134,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1879,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6299,
+          "notResearched": 137054,
+          "explicitOutcomePairs": 8178,
+          "evidenceRecords": 24429,
+          "rejections": 2435,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 129,
+          "notApplicable": 0,
+          "unresolved": 2375,
+          "blocked": 0,
+          "researchedUnresolved": 12,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2363
+        },
+        "protocolCells": {
+          "total": 423,
+          "applicable": 147,
+          "notApplicable": 276,
+          "complete": 147,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 134,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      }
+    },
+    "CO": {
+      "countySpeciesDenominator": 160256,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1471,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7802,
+          "notResearched": 150983,
+          "explicitOutcomePairs": 9273,
+          "evidenceRecords": 8105,
+          "rejections": 1742,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 133,
+          "notApplicable": 0,
+          "unresolved": 2371,
+          "blocked": 0,
+          "researchedUnresolved": 12,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2359
+        },
+        "protocolCells": {
+          "total": 435,
+          "applicable": 151,
+          "notApplicable": 284,
+          "complete": 130,
+          "incomplete": 8,
+          "blocked": 13,
+          "current": 130,
+          "stale": 0,
+          "undated": 21
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1471,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7802,
+          "notResearched": 150983,
+          "explicitOutcomePairs": 9273,
+          "evidenceRecords": 8105,
+          "rejections": 1742,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 133,
+          "notApplicable": 0,
+          "unresolved": 2371,
+          "blocked": 0,
+          "researchedUnresolved": 12,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2359
+        },
+        "protocolCells": {
+          "total": 435,
+          "applicable": 151,
+          "notApplicable": 284,
+          "complete": 130,
+          "incomplete": 8,
+          "blocked": 13,
+          "current": 130,
+          "stale": 0,
+          "undated": 21
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "CT": {
+      "countySpeciesDenominator": 22536,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 0,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1053,
+          "notResearched": 21483,
+          "explicitOutcomePairs": 1053,
+          "evidenceRecords": 0,
+          "rejections": 5894,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 109,
+          "notApplicable": 0,
+          "unresolved": 2395,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 6,
+          "partiallyResearched": 0,
+          "untouched": 2379
+        },
+        "protocolCells": {
+          "total": 375,
+          "applicable": 123,
+          "notApplicable": 252,
+          "complete": 101,
+          "incomplete": 9,
+          "blocked": 13,
+          "current": 101,
+          "stale": 0,
+          "undated": 22
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 0,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1053,
+          "notResearched": 21483,
+          "explicitOutcomePairs": 1053,
+          "evidenceRecords": 0,
+          "rejections": 5894,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 109,
+          "notApplicable": 0,
+          "unresolved": 2395,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 6,
+          "partiallyResearched": 0,
+          "untouched": 2379
+        },
+        "protocolCells": {
+          "total": 375,
+          "applicable": 123,
+          "notApplicable": 252,
+          "complete": 101,
+          "incomplete": 9,
+          "blocked": 13,
+          "current": 101,
+          "stale": 0,
+          "undated": 22
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "DE": {
+      "countySpeciesDenominator": 7512,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 76,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 149,
+          "notResearched": 7287,
+          "explicitOutcomePairs": 225,
+          "evidenceRecords": 113,
+          "rejections": 78,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 84,
+          "notApplicable": 0,
+          "unresolved": 2420,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2429
+        },
+        "protocolCells": {
+          "total": 291,
+          "applicable": 102,
+          "notApplicable": 189,
+          "complete": 43,
+          "incomplete": 59,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 59
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 76,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 149,
+          "notResearched": 7287,
+          "explicitOutcomePairs": 225,
+          "evidenceRecords": 113,
+          "rejections": 78,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 84,
+          "notApplicable": 0,
+          "unresolved": 2420,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2429
+        },
+        "protocolCells": {
+          "total": 291,
+          "applicable": 102,
+          "notApplicable": 189,
+          "complete": 43,
+          "incomplete": 59,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 59
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "DC": {
+      "countySpeciesDenominator": 2504,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 13,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5,
+          "notResearched": 2486,
+          "explicitOutcomePairs": 18,
+          "evidenceRecords": 13,
+          "rejections": 3,
+          "selectedRuns": 6,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unresolved": 2437,
+          "blocked": 0,
+          "researchedUnresolved": 0,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2486
+        },
+        "protocolCells": {
+          "total": 201,
+          "applicable": 85,
+          "notApplicable": 116,
+          "complete": 18,
+          "incomplete": 67,
+          "blocked": 0,
+          "current": 5,
+          "stale": 13,
+          "undated": 67
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 13,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5,
+          "notResearched": 2486,
+          "explicitOutcomePairs": 18,
+          "evidenceRecords": 13,
+          "rejections": 3,
+          "selectedRuns": 6,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unresolved": 2437,
+          "blocked": 0,
+          "researchedUnresolved": 0,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2486
+        },
+        "protocolCells": {
+          "total": 201,
+          "applicable": 85,
+          "notApplicable": 116,
+          "complete": 18,
+          "incomplete": 67,
+          "blocked": 0,
+          "current": 5,
+          "stale": 13,
+          "undated": 67
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "FL": {
+      "countySpeciesDenominator": 167768,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1777,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5861,
+          "notResearched": 160130,
+          "explicitOutcomePairs": 7638,
+          "evidenceRecords": 11991,
+          "rejections": 4468,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 103,
+          "notApplicable": 0,
+          "unresolved": 2401,
+          "blocked": 0,
+          "researchedUnresolved": 11,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2390
+        },
+        "protocolCells": {
+          "total": 342,
+          "applicable": 121,
+          "notApplicable": 221,
+          "complete": 116,
+          "incomplete": 5,
+          "blocked": 0,
+          "current": 103,
+          "stale": 13,
+          "undated": 5
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1777,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5861,
+          "notResearched": 160130,
+          "explicitOutcomePairs": 7638,
+          "evidenceRecords": 11991,
+          "rejections": 4468,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 103,
+          "notApplicable": 0,
+          "unresolved": 2401,
+          "blocked": 0,
+          "researchedUnresolved": 11,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2390
+        },
+        "protocolCells": {
+          "total": 342,
+          "applicable": 121,
+          "notApplicable": 221,
+          "complete": 116,
+          "incomplete": 5,
+          "blocked": 0,
+          "current": 103,
+          "stale": 13,
+          "undated": 5
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "GA": {
+      "countySpeciesDenominator": 398136,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 2462,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 13279,
+          "notResearched": 382395,
+          "explicitOutcomePairs": 15741,
+          "evidenceRecords": 5017,
+          "rejections": 438,
+          "selectedRuns": 13,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 90,
+          "notApplicable": 0,
+          "unresolved": 2414,
+          "blocked": 0,
+          "researchedUnresolved": 9,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2405
+        },
+        "protocolCells": {
+          "total": 297,
+          "applicable": 108,
+          "notApplicable": 189,
+          "complete": 106,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 93,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 2462,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 13279,
+          "notResearched": 382395,
+          "explicitOutcomePairs": 15741,
+          "evidenceRecords": 5017,
+          "rejections": 438,
+          "selectedRuns": 13,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 90,
+          "notApplicable": 0,
+          "unresolved": 2414,
+          "blocked": 0,
+          "researchedUnresolved": 9,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2405
+        },
+        "protocolCells": {
+          "total": 297,
+          "applicable": 108,
+          "notApplicable": 189,
+          "complete": 106,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 93,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "HI": {
+      "countySpeciesDenominator": 12520,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 103,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 342,
+          "notResearched": 12075,
+          "explicitOutcomePairs": 445,
+          "evidenceRecords": 218,
+          "rejections": 927,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 91,
+          "notApplicable": 0,
+          "unresolved": 2413,
+          "blocked": 0,
+          "researchedUnresolved": 5,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2415
+        },
+        "protocolCells": {
+          "total": 288,
+          "applicable": 109,
+          "notApplicable": 179,
+          "complete": 68,
+          "incomplete": 41,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 41
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 103,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 342,
+          "notResearched": 12075,
+          "explicitOutcomePairs": 445,
+          "evidenceRecords": 218,
+          "rejections": 927,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 91,
+          "notApplicable": 0,
+          "unresolved": 2413,
+          "blocked": 0,
+          "researchedUnresolved": 5,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2415
+        },
+        "protocolCells": {
+          "total": 288,
+          "applicable": 109,
+          "notApplicable": 179,
+          "complete": 68,
+          "incomplete": 41,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 41
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "ID": {
+      "countySpeciesDenominator": 110176,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 235,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5353,
+          "notResearched": 104588,
+          "explicitOutcomePairs": 5588,
+          "evidenceRecords": 761,
+          "rejections": 296,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 95,
+          "notApplicable": 0,
+          "unresolved": 2409,
+          "blocked": 0,
+          "researchedUnresolved": 32,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2377
+        },
+        "protocolCells": {
+          "total": 381,
+          "applicable": 113,
+          "notApplicable": 268,
+          "complete": 68,
+          "incomplete": 45,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 45
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 235,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5353,
+          "notResearched": 104588,
+          "explicitOutcomePairs": 5588,
+          "evidenceRecords": 761,
+          "rejections": 296,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 95,
+          "notApplicable": 0,
+          "unresolved": 2409,
+          "blocked": 0,
+          "researchedUnresolved": 32,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2377
+        },
+        "protocolCells": {
+          "total": 381,
+          "applicable": 113,
+          "notApplicable": 268,
+          "complete": 68,
+          "incomplete": 45,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 45
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "IL": {
+      "countySpeciesDenominator": 255408,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1496,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7888,
+          "notResearched": 246024,
+          "explicitOutcomePairs": 9384,
+          "evidenceRecords": 3553,
+          "rejections": 1451,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 85,
+          "notApplicable": 0,
+          "unresolved": 2419,
+          "blocked": 0,
+          "researchedUnresolved": 7,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2412
+        },
+        "protocolCells": {
+          "total": 276,
+          "applicable": 103,
+          "notApplicable": 173,
+          "complete": 102,
+          "incomplete": 1,
+          "blocked": 0,
+          "current": 89,
+          "stale": 13,
+          "undated": 1
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1496,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7888,
+          "notResearched": 246024,
+          "explicitOutcomePairs": 9384,
+          "evidenceRecords": 3553,
+          "rejections": 1451,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 85,
+          "notApplicable": 0,
+          "unresolved": 2419,
+          "blocked": 0,
+          "researchedUnresolved": 7,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2412
+        },
+        "protocolCells": {
+          "total": 276,
+          "applicable": 103,
+          "notApplicable": 173,
+          "complete": 102,
+          "incomplete": 1,
+          "blocked": 0,
+          "current": 89,
+          "stale": 13,
+          "undated": 1
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "IN": {
+      "countySpeciesDenominator": 230368,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1720,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 9136,
+          "notResearched": 219512,
+          "explicitOutcomePairs": 10856,
+          "evidenceRecords": 3082,
+          "rejections": 1036,
+          "selectedRuns": 12,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 113,
+          "notApplicable": 0,
+          "unresolved": 2391,
+          "blocked": 0,
+          "researchedUnresolved": 5,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2386
+        },
+        "protocolCells": {
+          "total": 354,
+          "applicable": 131,
+          "notApplicable": 223,
+          "complete": 129,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 116,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1720,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 9136,
+          "notResearched": 219512,
+          "explicitOutcomePairs": 10856,
+          "evidenceRecords": 3082,
+          "rejections": 1036,
+          "selectedRuns": 12,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 113,
+          "notApplicable": 0,
+          "unresolved": 2391,
+          "blocked": 0,
+          "researchedUnresolved": 5,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2386
+        },
+        "protocolCells": {
+          "total": 354,
+          "applicable": 131,
+          "notApplicable": 223,
+          "complete": 129,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 116,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "IA": {
+      "countySpeciesDenominator": 247896,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 696,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8511,
+          "notResearched": 238689,
+          "explicitOutcomePairs": 9207,
+          "evidenceRecords": 948,
+          "rejections": 98,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 80,
+          "notApplicable": 0,
+          "unresolved": 2424,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2411
+        },
+        "protocolCells": {
+          "total": 279,
+          "applicable": 98,
+          "notApplicable": 181,
+          "complete": 96,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 83,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 696,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8511,
+          "notResearched": 238689,
+          "explicitOutcomePairs": 9207,
+          "evidenceRecords": 948,
+          "rejections": 98,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 80,
+          "notApplicable": 0,
+          "unresolved": 2424,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2411
+        },
+        "protocolCells": {
+          "total": 279,
+          "applicable": 98,
+          "notApplicable": 181,
+          "complete": 96,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 83,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "KS": {
+      "countySpeciesDenominator": 262920,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 655,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8270,
+          "notResearched": 253995,
+          "explicitOutcomePairs": 8925,
+          "evidenceRecords": 1621,
+          "rejections": 197,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 65,
+          "notApplicable": 0,
+          "unresolved": 2439,
+          "blocked": 0,
+          "researchedUnresolved": 20,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 83,
+          "notApplicable": 172,
+          "complete": 83,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 70,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 655,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8270,
+          "notResearched": 253995,
+          "explicitOutcomePairs": 8925,
+          "evidenceRecords": 1621,
+          "rejections": 197,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 65,
+          "notApplicable": 0,
+          "unresolved": 2439,
+          "blocked": 0,
+          "researchedUnresolved": 20,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 83,
+          "notApplicable": 172,
+          "complete": 83,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 70,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      }
+    },
+    "KY": {
+      "countySpeciesDenominator": 300480,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1951,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8369,
+          "notResearched": 290160,
+          "explicitOutcomePairs": 10320,
+          "evidenceRecords": 3380,
+          "rejections": 347,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 11,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 93,
+          "notApplicable": 165,
+          "complete": 91,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 78,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1951,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8369,
+          "notResearched": 290160,
+          "explicitOutcomePairs": 10320,
+          "evidenceRecords": 3380,
+          "rejections": 347,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 11,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 93,
+          "notApplicable": 165,
+          "complete": 91,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 78,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "LA": {
+      "countySpeciesDenominator": 160256,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 928,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 4512,
+          "notResearched": 154816,
+          "explicitOutcomePairs": 5440,
+          "evidenceRecords": 3309,
+          "rejections": 1223,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 77,
+          "notApplicable": 0,
+          "unresolved": 2427,
+          "blocked": 0,
+          "researchedUnresolved": 8,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 95,
+          "notApplicable": 160,
+          "complete": 93,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 80,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 928,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 4512,
+          "notResearched": 154816,
+          "explicitOutcomePairs": 5440,
+          "evidenceRecords": 3309,
+          "rejections": 1223,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 77,
+          "notApplicable": 0,
+          "unresolved": 2427,
+          "blocked": 0,
+          "researchedUnresolved": 8,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 95,
+          "notApplicable": 160,
+          "complete": 93,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 80,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "ME": {
+      "countySpeciesDenominator": 40064,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 226,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1118,
+          "notResearched": 38720,
+          "explicitOutcomePairs": 1344,
+          "evidenceRecords": 573,
+          "rejections": 90,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unresolved": 2437,
+          "blocked": 0,
+          "researchedUnresolved": 17,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2420
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 85,
+          "notApplicable": 167,
+          "complete": 85,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 72,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 226,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1118,
+          "notResearched": 38720,
+          "explicitOutcomePairs": 1344,
+          "evidenceRecords": 573,
+          "rejections": 90,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unresolved": 2437,
+          "blocked": 0,
+          "researchedUnresolved": 17,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2420
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 85,
+          "notApplicable": 167,
+          "complete": 85,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 72,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      }
+    },
+    "MD": {
+      "countySpeciesDenominator": 60096,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 378,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1998,
+          "notResearched": 57720,
+          "explicitOutcomePairs": 2376,
+          "evidenceRecords": 628,
+          "rejections": 248,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 90,
+          "notApplicable": 0,
+          "unresolved": 2414,
+          "blocked": 0,
+          "researchedUnresolved": 9,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2405
+        },
+        "protocolCells": {
+          "total": 297,
+          "applicable": 108,
+          "notApplicable": 189,
+          "complete": 68,
+          "incomplete": 40,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 40
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 378,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1998,
+          "notResearched": 57720,
+          "explicitOutcomePairs": 2376,
+          "evidenceRecords": 628,
+          "rejections": 248,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 90,
+          "notApplicable": 0,
+          "unresolved": 2414,
+          "blocked": 0,
+          "researchedUnresolved": 9,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2405
+        },
+        "protocolCells": {
+          "total": 297,
+          "applicable": 108,
+          "notApplicable": 189,
+          "complete": 68,
+          "incomplete": 40,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 40
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "MA": {
+      "countySpeciesDenominator": 35056,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 208,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 842,
+          "notResearched": 34006,
+          "explicitOutcomePairs": 1050,
+          "evidenceRecords": 216,
+          "rejections": 24,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 71,
+          "notApplicable": 0,
+          "unresolved": 2433,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2429
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 89,
+          "notApplicable": 163,
+          "complete": 43,
+          "incomplete": 46,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 46
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 208,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 842,
+          "notResearched": 34006,
+          "explicitOutcomePairs": 1050,
+          "evidenceRecords": 216,
+          "rejections": 24,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 71,
+          "notApplicable": 0,
+          "unresolved": 2433,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2429
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 89,
+          "notApplicable": 163,
+          "complete": 43,
+          "incomplete": 46,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 46
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "MI": {
+      "countySpeciesDenominator": 207832,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1573,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5482,
+          "notResearched": 200777,
+          "explicitOutcomePairs": 7055,
+          "evidenceRecords": 4003,
+          "rejections": 1022,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 78,
+          "notApplicable": 0,
+          "unresolved": 2426,
+          "blocked": 0,
+          "researchedUnresolved": 7,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 96,
+          "notApplicable": 159,
+          "complete": 93,
+          "incomplete": 2,
+          "blocked": 1,
+          "current": 80,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1573,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5482,
+          "notResearched": 200777,
+          "explicitOutcomePairs": 7055,
+          "evidenceRecords": 4003,
+          "rejections": 1022,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 78,
+          "notApplicable": 0,
+          "unresolved": 2426,
+          "blocked": 0,
+          "researchedUnresolved": 7,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 96,
+          "notApplicable": 159,
+          "complete": 93,
+          "incomplete": 2,
+          "blocked": 1,
+          "current": 80,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "MN": {
+      "countySpeciesDenominator": 217848,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 949,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6272,
+          "notResearched": 210627,
+          "explicitOutcomePairs": 7221,
+          "evidenceRecords": 2446,
+          "rejections": 549,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 69,
+          "notApplicable": 0,
+          "unresolved": 2435,
+          "blocked": 0,
+          "researchedUnresolved": 14,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2421
+        },
+        "protocolCells": {
+          "total": 249,
+          "applicable": 87,
+          "notApplicable": 162,
+          "complete": 85,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 72,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 949,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6272,
+          "notResearched": 210627,
+          "explicitOutcomePairs": 7221,
+          "evidenceRecords": 2446,
+          "rejections": 549,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 69,
+          "notApplicable": 0,
+          "unresolved": 2435,
+          "blocked": 0,
+          "researchedUnresolved": 14,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2421
+        },
+        "protocolCells": {
+          "total": 249,
+          "applicable": 87,
+          "notApplicable": 162,
+          "complete": 85,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 72,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "MS": {
+      "countySpeciesDenominator": 205328,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1202,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5850,
+          "notResearched": 198276,
+          "explicitOutcomePairs": 7052,
+          "evidenceRecords": 3161,
+          "rejections": 592,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 76,
+          "notApplicable": 0,
+          "unresolved": 2428,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 94,
+          "notApplicable": 164,
+          "complete": 92,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 79,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1202,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5850,
+          "notResearched": 198276,
+          "explicitOutcomePairs": 7052,
+          "evidenceRecords": 3161,
+          "rejections": 592,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 76,
+          "notApplicable": 0,
+          "unresolved": 2428,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 94,
+          "notApplicable": 164,
+          "complete": 92,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 79,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "MO": {
+      "countySpeciesDenominator": 287960,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1039,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8736,
+          "notResearched": 278185,
+          "explicitOutcomePairs": 9775,
+          "evidenceRecords": 1773,
+          "rejections": 460,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 72,
+          "notApplicable": 0,
+          "unresolved": 2432,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 90,
+          "notApplicable": 165,
+          "complete": 90,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 77,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1039,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 8736,
+          "notResearched": 278185,
+          "explicitOutcomePairs": 9775,
+          "evidenceRecords": 1773,
+          "rejections": 460,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 72,
+          "notApplicable": 0,
+          "unresolved": 2432,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 90,
+          "notApplicable": 165,
+          "complete": 90,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 77,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      }
+    },
+    "MT": {
+      "countySpeciesDenominator": 140224,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 267,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5837,
+          "notResearched": 134120,
+          "explicitOutcomePairs": 6104,
+          "evidenceRecords": 267,
+          "rejections": 6,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 70,
+          "notApplicable": 0,
+          "unresolved": 2434,
+          "blocked": 0,
+          "researchedUnresolved": 45,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2395
+        },
+        "protocolCells": {
+          "total": 345,
+          "applicable": 88,
+          "notApplicable": 257,
+          "complete": 43,
+          "incomplete": 45,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 45
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 267,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5837,
+          "notResearched": 134120,
+          "explicitOutcomePairs": 6104,
+          "evidenceRecords": 267,
+          "rejections": 6,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 70,
+          "notApplicable": 0,
+          "unresolved": 2434,
+          "blocked": 0,
+          "researchedUnresolved": 45,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2395
+        },
+        "protocolCells": {
+          "total": 345,
+          "applicable": 88,
+          "notApplicable": 257,
+          "complete": 43,
+          "incomplete": 45,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 45
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "NE": {
+      "countySpeciesDenominator": 232872,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 373,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7532,
+          "notResearched": 224967,
+          "explicitOutcomePairs": 7905,
+          "evidenceRecords": 869,
+          "rejections": 203,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 63,
+          "notApplicable": 0,
+          "unresolved": 2441,
+          "blocked": 0,
+          "researchedUnresolved": 22,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 81,
+          "notApplicable": 174,
+          "complete": 68,
+          "incomplete": 13,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 13
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 373,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7532,
+          "notResearched": 224967,
+          "explicitOutcomePairs": 7905,
+          "evidenceRecords": 869,
+          "rejections": 203,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 63,
+          "notApplicable": 0,
+          "unresolved": 2441,
+          "blocked": 0,
+          "researchedUnresolved": 22,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 81,
+          "notApplicable": 174,
+          "complete": 68,
+          "incomplete": 13,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 13
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "NV": {
+      "countySpeciesDenominator": 42568,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 46,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 2045,
+          "notResearched": 40477,
+          "explicitOutcomePairs": 2091,
+          "evidenceRecords": 367,
+          "rejections": 126,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 58,
+          "notApplicable": 0,
+          "unresolved": 2446,
+          "blocked": 0,
+          "researchedUnresolved": 65,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2381
+        },
+        "protocolCells": {
+          "total": 369,
+          "applicable": 76,
+          "notApplicable": 293,
+          "complete": 75,
+          "incomplete": 1,
+          "blocked": 0,
+          "current": 62,
+          "stale": 13,
+          "undated": 1
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 46,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 2045,
+          "notResearched": 40477,
+          "explicitOutcomePairs": 2091,
+          "evidenceRecords": 367,
+          "rejections": 126,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 58,
+          "notApplicable": 0,
+          "unresolved": 2446,
+          "blocked": 0,
+          "researchedUnresolved": 65,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2381
+        },
+        "protocolCells": {
+          "total": 369,
+          "applicable": 76,
+          "notApplicable": 293,
+          "complete": 75,
+          "incomplete": 1,
+          "blocked": 0,
+          "current": 62,
+          "stale": 13,
+          "undated": 1
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "NH": {
+      "countySpeciesDenominator": 25040,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 122,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 638,
+          "notResearched": 24280,
+          "explicitOutcomePairs": 760,
+          "evidenceRecords": 122,
+          "rejections": 17,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 61,
+          "notApplicable": 0,
+          "unresolved": 2443,
+          "blocked": 0,
+          "researchedUnresolved": 24,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2428
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 79,
+          "notApplicable": 176,
+          "complete": 43,
+          "incomplete": 36,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 36
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 122,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 638,
+          "notResearched": 24280,
+          "explicitOutcomePairs": 760,
+          "evidenceRecords": 122,
+          "rejections": 17,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 61,
+          "notApplicable": 0,
+          "unresolved": 2443,
+          "blocked": 0,
+          "researchedUnresolved": 24,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2428
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 79,
+          "notApplicable": 176,
+          "complete": 43,
+          "incomplete": 36,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 36
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "NJ": {
+      "countySpeciesDenominator": 52584,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 281,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1315,
+          "notResearched": 50988,
+          "explicitOutcomePairs": 1596,
+          "evidenceRecords": 287,
+          "rejections": 17,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2428
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 93,
+          "notApplicable": 162,
+          "complete": 43,
+          "incomplete": 50,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 50
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 281,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1315,
+          "notResearched": 50988,
+          "explicitOutcomePairs": 1596,
+          "evidenceRecords": 287,
+          "rejections": 17,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2428
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 93,
+          "notApplicable": 162,
+          "complete": 43,
+          "incomplete": 50,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 50
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "NM": {
+      "countySpeciesDenominator": 82632,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 54,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3576,
+          "notResearched": 79002,
+          "explicitOutcomePairs": 3630,
+          "evidenceRecords": 54,
+          "rejections": 0,
+          "selectedRuns": 5,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 59,
+          "notApplicable": 0,
+          "unresolved": 2445,
+          "blocked": 0,
+          "researchedUnresolved": 56,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2394
+        },
+        "protocolCells": {
+          "total": 345,
+          "applicable": 74,
+          "notApplicable": 271,
+          "complete": 40,
+          "incomplete": 34,
+          "blocked": 0,
+          "current": 27,
+          "stale": 13,
+          "undated": 34
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 54,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3576,
+          "notResearched": 79002,
+          "explicitOutcomePairs": 3630,
+          "evidenceRecords": 54,
+          "rejections": 0,
+          "selectedRuns": 5,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 59,
+          "notApplicable": 0,
+          "unresolved": 2445,
+          "blocked": 0,
+          "researchedUnresolved": 56,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2394
+        },
+        "protocolCells": {
+          "total": 345,
+          "applicable": 74,
+          "notApplicable": 271,
+          "complete": 40,
+          "incomplete": 34,
+          "blocked": 0,
+          "current": 27,
+          "stale": 13,
+          "undated": 34
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "NY": {
+      "countySpeciesDenominator": 155248,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1109,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 4161,
+          "notResearched": 149978,
+          "explicitOutcomePairs": 5270,
+          "evidenceRecords": 1986,
+          "rejections": 778,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 79,
+          "notApplicable": 0,
+          "unresolved": 2425,
+          "blocked": 0,
+          "researchedUnresolved": 6,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 97,
+          "notApplicable": 158,
+          "complete": 68,
+          "incomplete": 29,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 29
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1109,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 4161,
+          "notResearched": 149978,
+          "explicitOutcomePairs": 5270,
+          "evidenceRecords": 1986,
+          "rejections": 778,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 79,
+          "notApplicable": 0,
+          "unresolved": 2425,
+          "blocked": 0,
+          "researchedUnresolved": 6,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 97,
+          "notApplicable": 158,
+          "complete": 68,
+          "incomplete": 29,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 29
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "NC": {
+      "countySpeciesDenominator": 250400,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1530,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7070,
+          "notResearched": 241800,
+          "explicitOutcomePairs": 8600,
+          "evidenceRecords": 4362,
+          "rejections": 523,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 11,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 93,
+          "notApplicable": 165,
+          "complete": 91,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 78,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1530,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7070,
+          "notResearched": 241800,
+          "explicitOutcomePairs": 8600,
+          "evidenceRecords": 4362,
+          "rejections": 523,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 11,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 93,
+          "notApplicable": 165,
+          "complete": 91,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 78,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "ND": {
+      "countySpeciesDenominator": 132712,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 33,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3995,
+          "notResearched": 128684,
+          "explicitOutcomePairs": 4028,
+          "evidenceRecords": 33,
+          "rejections": 4,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 59,
+          "notApplicable": 0,
+          "unresolved": 2445,
+          "blocked": 0,
+          "researchedUnresolved": 25,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2428
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 76,
+          "notApplicable": 176,
+          "complete": 43,
+          "incomplete": 33,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 33
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 33,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3995,
+          "notResearched": 128684,
+          "explicitOutcomePairs": 4028,
+          "evidenceRecords": 33,
+          "rejections": 4,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 59,
+          "notApplicable": 0,
+          "unresolved": 2445,
+          "blocked": 0,
+          "researchedUnresolved": 25,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2428
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 76,
+          "notApplicable": 176,
+          "complete": 43,
+          "incomplete": 33,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 33
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "OH": {
+      "countySpeciesDenominator": 220352,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1671,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7217,
+          "notResearched": 211464,
+          "explicitOutcomePairs": 8888,
+          "evidenceRecords": 2807,
+          "rejections": 2277,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 96,
+          "notApplicable": 0,
+          "unresolved": 2408,
+          "blocked": 0,
+          "researchedUnresolved": 5,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2403
+        },
+        "protocolCells": {
+          "total": 303,
+          "applicable": 114,
+          "notApplicable": 189,
+          "complete": 111,
+          "incomplete": 2,
+          "blocked": 1,
+          "current": 98,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1671,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7217,
+          "notResearched": 211464,
+          "explicitOutcomePairs": 8888,
+          "evidenceRecords": 2807,
+          "rejections": 2277,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 96,
+          "notApplicable": 0,
+          "unresolved": 2408,
+          "blocked": 0,
+          "researchedUnresolved": 5,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2403
+        },
+        "protocolCells": {
+          "total": 303,
+          "applicable": 114,
+          "notApplicable": 189,
+          "complete": 111,
+          "incomplete": 2,
+          "blocked": 1,
+          "current": 98,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "OK": {
+      "countySpeciesDenominator": 192808,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 364,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6258,
+          "notResearched": 186186,
+          "explicitOutcomePairs": 6622,
+          "evidenceRecords": 515,
+          "rejections": 56,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 71,
+          "notApplicable": 0,
+          "unresolved": 2433,
+          "blocked": 0,
+          "researchedUnresolved": 15,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 89,
+          "notApplicable": 169,
+          "complete": 87,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 74,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 364,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6258,
+          "notResearched": 186186,
+          "explicitOutcomePairs": 6622,
+          "evidenceRecords": 515,
+          "rejections": 56,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 71,
+          "notApplicable": 0,
+          "unresolved": 2433,
+          "blocked": 0,
+          "researchedUnresolved": 15,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 89,
+          "notApplicable": 169,
+          "complete": 87,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 74,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "OR": {
+      "countySpeciesDenominator": 90144,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 104,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1804,
+          "notResearched": 88236,
+          "explicitOutcomePairs": 1908,
+          "evidenceRecords": 310,
+          "rejections": 121,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 53,
+          "notApplicable": 0,
+          "unresolved": 2451,
+          "blocked": 0,
+          "researchedUnresolved": 0,
+          "researchBlocked": 38,
+          "partiallyResearched": 0,
+          "untouched": 2413
+        },
+        "protocolCells": {
+          "total": 273,
+          "applicable": 71,
+          "notApplicable": 202,
+          "complete": 68,
+          "incomplete": 3,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 104,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1804,
+          "notResearched": 88236,
+          "explicitOutcomePairs": 1908,
+          "evidenceRecords": 310,
+          "rejections": 121,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 53,
+          "notApplicable": 0,
+          "unresolved": 2451,
+          "blocked": 0,
+          "researchedUnresolved": 0,
+          "researchBlocked": 38,
+          "partiallyResearched": 0,
+          "untouched": 2413
+        },
+        "protocolCells": {
+          "total": 273,
+          "applicable": 71,
+          "notApplicable": 202,
+          "complete": 68,
+          "incomplete": 3,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "PA": {
+      "countySpeciesDenominator": 167768,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 2014,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5289,
+          "notResearched": 160465,
+          "explicitOutcomePairs": 7303,
+          "evidenceRecords": 8285,
+          "rejections": 1027,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 105,
+          "notApplicable": 0,
+          "unresolved": 2399,
+          "blocked": 0,
+          "researchedUnresolved": 4,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2395
+        },
+        "protocolCells": {
+          "total": 327,
+          "applicable": 123,
+          "notApplicable": 204,
+          "complete": 92,
+          "incomplete": 30,
+          "blocked": 1,
+          "current": 79,
+          "stale": 13,
+          "undated": 31
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 2014,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5289,
+          "notResearched": 160465,
+          "explicitOutcomePairs": 7303,
+          "evidenceRecords": 8285,
+          "rejections": 1027,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 105,
+          "notApplicable": 0,
+          "unresolved": 2399,
+          "blocked": 0,
+          "researchedUnresolved": 4,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2395
+        },
+        "protocolCells": {
+          "total": 327,
+          "applicable": 123,
+          "notApplicable": 204,
+          "complete": 92,
+          "incomplete": 30,
+          "blocked": 1,
+          "current": 79,
+          "stale": 13,
+          "undated": 31
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "RI": {
+      "countySpeciesDenominator": 12520,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 55,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 200,
+          "notResearched": 12265,
+          "explicitOutcomePairs": 255,
+          "evidenceRecords": 55,
+          "rejections": 3,
+          "selectedRuns": 7,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 64,
+          "notApplicable": 0,
+          "unresolved": 2440,
+          "blocked": 0,
+          "researchedUnresolved": 24,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2453
+        },
+        "protocolCells": {
+          "total": 264,
+          "applicable": 82,
+          "notApplicable": 182,
+          "complete": 18,
+          "incomplete": 64,
+          "blocked": 0,
+          "current": 5,
+          "stale": 13,
+          "undated": 64
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 55,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 200,
+          "notResearched": 12265,
+          "explicitOutcomePairs": 255,
+          "evidenceRecords": 55,
+          "rejections": 3,
+          "selectedRuns": 7,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 64,
+          "notApplicable": 0,
+          "unresolved": 2440,
+          "blocked": 0,
+          "researchedUnresolved": 24,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2453
+        },
+        "protocolCells": {
+          "total": 264,
+          "applicable": 82,
+          "notApplicable": 182,
+          "complete": 18,
+          "incomplete": 64,
+          "blocked": 0,
+          "current": 5,
+          "stale": 13,
+          "undated": 64
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "SC": {
+      "countySpeciesDenominator": 115184,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 668,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3150,
+          "notResearched": 111366,
+          "explicitOutcomePairs": 3818,
+          "evidenceRecords": 781,
+          "rejections": 22,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 73,
+          "notApplicable": 0,
+          "unresolved": 2431,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2421
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 91,
+          "notApplicable": 167,
+          "complete": 48,
+          "incomplete": 43,
+          "blocked": 0,
+          "current": 35,
+          "stale": 13,
+          "undated": 43
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 668,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3150,
+          "notResearched": 111366,
+          "explicitOutcomePairs": 3818,
+          "evidenceRecords": 781,
+          "rejections": 22,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 73,
+          "notApplicable": 0,
+          "unresolved": 2431,
+          "blocked": 0,
+          "researchedUnresolved": 13,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2421
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 91,
+          "notApplicable": 167,
+          "complete": 48,
+          "incomplete": 43,
+          "blocked": 0,
+          "current": 35,
+          "stale": 13,
+          "undated": 43
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "SD": {
+      "countySpeciesDenominator": 165264,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 97,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5513,
+          "notResearched": 159654,
+          "explicitOutcomePairs": 5610,
+          "evidenceRecords": 210,
+          "rejections": 70,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 62,
+          "notApplicable": 0,
+          "unresolved": 2442,
+          "blocked": 0,
+          "researchedUnresolved": 23,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 80,
+          "notApplicable": 175,
+          "complete": 55,
+          "incomplete": 12,
+          "blocked": 13,
+          "current": 55,
+          "stale": 0,
+          "undated": 25
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 97,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5513,
+          "notResearched": 159654,
+          "explicitOutcomePairs": 5610,
+          "evidenceRecords": 210,
+          "rejections": 70,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 62,
+          "notApplicable": 0,
+          "unresolved": 2442,
+          "blocked": 0,
+          "researchedUnresolved": 23,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 80,
+          "notApplicable": 175,
+          "complete": 55,
+          "incomplete": 12,
+          "blocked": 13,
+          "current": 55,
+          "stale": 0,
+          "undated": 25
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "TN": {
+      "countySpeciesDenominator": 237880,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1695,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6475,
+          "notResearched": 229710,
+          "explicitOutcomePairs": 8170,
+          "evidenceRecords": 3615,
+          "rejections": 467,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 76,
+          "notApplicable": 0,
+          "unresolved": 2428,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 94,
+          "notApplicable": 164,
+          "complete": 92,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 79,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1695,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 6475,
+          "notResearched": 229710,
+          "explicitOutcomePairs": 8170,
+          "evidenceRecords": 3615,
+          "rejections": 467,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 76,
+          "notApplicable": 0,
+          "unresolved": 2428,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 94,
+          "notApplicable": 164,
+          "complete": 92,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 79,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "TX": {
+      "countySpeciesDenominator": 636016,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1167,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 21185,
+          "notResearched": 613664,
+          "explicitOutcomePairs": 22352,
+          "evidenceRecords": 3364,
+          "rejections": 487,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 70,
+          "notApplicable": 0,
+          "unresolved": 2434,
+          "blocked": 0,
+          "researchedUnresolved": 18,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2416
+        },
+        "protocolCells": {
+          "total": 264,
+          "applicable": 88,
+          "notApplicable": 176,
+          "complete": 86,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 73,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1167,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 21185,
+          "notResearched": 613664,
+          "explicitOutcomePairs": 22352,
+          "evidenceRecords": 3364,
+          "rejections": 487,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 70,
+          "notApplicable": 0,
+          "unresolved": 2434,
+          "blocked": 0,
+          "researchedUnresolved": 18,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2416
+        },
+        "protocolCells": {
+          "total": 264,
+          "applicable": 88,
+          "notApplicable": 176,
+          "complete": 86,
+          "incomplete": 2,
+          "blocked": 0,
+          "current": 73,
+          "stale": 13,
+          "undated": 2
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "UT": {
+      "countySpeciesDenominator": 72616,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 123,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3009,
+          "notResearched": 69484,
+          "explicitOutcomePairs": 3132,
+          "evidenceRecords": 150,
+          "rejections": 21,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 62,
+          "notApplicable": 0,
+          "unresolved": 2442,
+          "blocked": 0,
+          "researchedUnresolved": 52,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2396
+        },
+        "protocolCells": {
+          "total": 342,
+          "applicable": 80,
+          "notApplicable": 262,
+          "complete": 43,
+          "incomplete": 37,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 37
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 123,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3009,
+          "notResearched": 69484,
+          "explicitOutcomePairs": 3132,
+          "evidenceRecords": 150,
+          "rejections": 21,
+          "selectedRuns": 8,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 62,
+          "notApplicable": 0,
+          "unresolved": 2442,
+          "blocked": 0,
+          "researchedUnresolved": 52,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2396
+        },
+        "protocolCells": {
+          "total": 342,
+          "applicable": 80,
+          "notApplicable": 262,
+          "complete": 43,
+          "incomplete": 37,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 37
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "VT": {
+      "countySpeciesDenominator": 35056,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 211,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1191,
+          "notResearched": 33654,
+          "explicitOutcomePairs": 1402,
+          "evidenceRecords": 437,
+          "rejections": 95,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 91,
+          "notApplicable": 0,
+          "unresolved": 2413,
+          "blocked": 0,
+          "researchedUnresolved": 12,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2403
+        },
+        "protocolCells": {
+          "total": 309,
+          "applicable": 109,
+          "notApplicable": 200,
+          "complete": 67,
+          "incomplete": 41,
+          "blocked": 1,
+          "current": 54,
+          "stale": 13,
+          "undated": 42
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 211,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 1191,
+          "notResearched": 33654,
+          "explicitOutcomePairs": 1402,
+          "evidenceRecords": 437,
+          "rejections": 95,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 91,
+          "notApplicable": 0,
+          "unresolved": 2413,
+          "blocked": 0,
+          "researchedUnresolved": 12,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2403
+        },
+        "protocolCells": {
+          "total": 309,
+          "applicable": 109,
+          "notApplicable": 200,
+          "complete": 67,
+          "incomplete": 41,
+          "blocked": 1,
+          "current": 54,
+          "stale": 13,
+          "undated": 42
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "VA": {
+      "countySpeciesDenominator": 333032,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1923,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 9515,
+          "notResearched": 321594,
+          "explicitOutcomePairs": 11438,
+          "evidenceRecords": 4362,
+          "rejections": 1290,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 77,
+          "notApplicable": 0,
+          "unresolved": 2427,
+          "blocked": 0,
+          "researchedUnresolved": 9,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 95,
+          "notApplicable": 163,
+          "complete": 92,
+          "incomplete": 3,
+          "blocked": 0,
+          "current": 79,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1923,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 9515,
+          "notResearched": 321594,
+          "explicitOutcomePairs": 11438,
+          "evidenceRecords": 4362,
+          "rejections": 1290,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 77,
+          "notApplicable": 0,
+          "unresolved": 2427,
+          "blocked": 0,
+          "researchedUnresolved": 9,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2418
+        },
+        "protocolCells": {
+          "total": 258,
+          "applicable": 95,
+          "notApplicable": 163,
+          "complete": 92,
+          "incomplete": 3,
+          "blocked": 0,
+          "current": 79,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "WA": {
+      "countySpeciesDenominator": 97656,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 363,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 2289,
+          "notResearched": 95004,
+          "explicitOutcomePairs": 2652,
+          "evidenceRecords": 1130,
+          "rejections": 234,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 145,
+          "notApplicable": 0,
+          "unresolved": 2359,
+          "blocked": 0,
+          "researchedUnresolved": 0,
+          "researchBlocked": 9,
+          "partiallyResearched": 0,
+          "untouched": 2406
+        },
+        "protocolCells": {
+          "total": 462,
+          "applicable": 163,
+          "notApplicable": 299,
+          "complete": 68,
+          "incomplete": 95,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 95
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1319,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 4336,
+          "notResearched": 92001,
+          "explicitOutcomePairs": 5655,
+          "evidenceRecords": 6204,
+          "rejections": 1251,
+          "selectedRuns": 17,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 145,
+          "notApplicable": 0,
+          "unresolved": 2359,
+          "blocked": 0,
+          "researchedUnresolved": 0,
+          "researchBlocked": 9,
+          "partiallyResearched": 0,
+          "untouched": 2350
+        },
+        "protocolCells": {
+          "total": 462,
+          "applicable": 163,
+          "notApplicable": 299,
+          "complete": 163,
+          "incomplete": 0,
+          "blocked": 0,
+          "current": 150,
+          "stale": 13,
+          "undated": 0
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked"
+        ]
+      }
+    },
+    "WV": {
+      "countySpeciesDenominator": 137720,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 915,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3760,
+          "notResearched": 133045,
+          "explicitOutcomePairs": 4675,
+          "evidenceRecords": 2189,
+          "rejections": 89,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 93,
+          "notApplicable": 162,
+          "complete": 68,
+          "incomplete": 25,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 25
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 915,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 3760,
+          "notResearched": 133045,
+          "explicitOutcomePairs": 4675,
+          "evidenceRecords": 2189,
+          "rejections": 89,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 75,
+          "notApplicable": 0,
+          "unresolved": 2429,
+          "blocked": 0,
+          "researchedUnresolved": 10,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2419
+        },
+        "protocolCells": {
+          "total": 255,
+          "applicable": 93,
+          "notApplicable": 162,
+          "complete": 68,
+          "incomplete": 25,
+          "blocked": 0,
+          "current": 55,
+          "stale": 13,
+          "undated": 25
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "WI": {
+      "countySpeciesDenominator": 180288,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 1325,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 4723,
+          "notResearched": 174240,
+          "explicitOutcomePairs": 6048,
+          "evidenceRecords": 5343,
+          "rejections": 841,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 76,
+          "notApplicable": 0,
+          "unresolved": 2428,
+          "blocked": 0,
+          "researchedUnresolved": 8,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2420
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 94,
+          "notApplicable": 158,
+          "complete": 91,
+          "incomplete": 2,
+          "blocked": 1,
+          "current": 78,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 1325,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 4723,
+          "notResearched": 174240,
+          "explicitOutcomePairs": 6048,
+          "evidenceRecords": 5343,
+          "rejections": 841,
+          "selectedRuns": 10,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 76,
+          "notApplicable": 0,
+          "unresolved": 2428,
+          "blocked": 0,
+          "researchedUnresolved": 8,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2420
+        },
+        "protocolCells": {
+          "total": 252,
+          "applicable": 94,
+          "notApplicable": 158,
+          "complete": 91,
+          "incomplete": 2,
+          "blocked": 1,
+          "current": 78,
+          "stale": 13,
+          "undated": 3
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "WY": {
+      "countySpeciesDenominator": 57592,
+      "baseline": {
+        "countySpecies": {
+          "verifiedPresent": 83,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 2516,
+          "notResearched": 54993,
+          "explicitOutcomePairs": 2599,
+          "evidenceRecords": 83,
+          "rejections": 3,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unresolved": 2437,
+          "blocked": 0,
+          "researchedUnresolved": 52,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2391
+        },
+        "protocolCells": {
+          "total": 357,
+          "applicable": 85,
+          "notApplicable": 272,
+          "complete": 43,
+          "incomplete": 42,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 42
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "final": {
+        "countySpecies": {
+          "verifiedPresent": 83,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 2516,
+          "notResearched": 54993,
+          "explicitOutcomePairs": 2599,
+          "evidenceRecords": 83,
+          "rejections": 3,
+          "selectedRuns": 9,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unresolved": 2437,
+          "blocked": 0,
+          "researchedUnresolved": 52,
+          "researchBlocked": 0,
+          "partiallyResearched": 0,
+          "untouched": 2391
+        },
+        "protocolCells": {
+          "total": 357,
+          "applicable": 85,
+          "notApplicable": 272,
+          "complete": 43,
+          "incomplete": 42,
+          "blocked": 0,
+          "current": 30,
+          "stale": 13,
+          "undated": 42
+        },
+        "certificationBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    }
+  },
+  "applicabilityAndDenominatorMovement": {
+    "stateSpeciesApplicable": 0,
+    "stateSpeciesNotApplicable": 0,
+    "stateSpeciesUnresolved": 0,
+    "countySpeciesDenominator": 0,
+    "qualification": "Round 54 was the evidence-screen follow-up to existing Washington applicability decisions. No denominator expansion is counted as county research movement."
+  },
+  "protocolClosure": {
+    "totalCells": 0,
+    "complete": 95,
+    "incomplete": -95,
+    "blocked": 0,
+    "current": 95,
+    "stale": 0,
+    "undated": -95
+  },
+  "certificationMovement": {
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "blockersRemoved": 3,
+    "byState": {
+      "WA": [
+        "applicableProtocolCellsAtLeast90",
+        "regulatedAndHighPriorityComplete",
+        "requiredCurrentSourceFamiliesProcessed"
+      ]
+    },
+    "qualification": "Washington now has all 163 applicable protocol cells complete and 150 current, but authoritative scope, full-catalog accounting, and baseline coverage still block certification."
+  },
+  "final": {
+    "contentCommit": null,
+    "asOf": "2026-08-09",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "explicitOverrides": 3426,
+      "derivedApplicable": 1638,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "partiallyResearched": 0,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 55752,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 346394,
+      "notResearched": 7470422
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4983,
+      "incomplete": 14334,
+      "blocked": 59,
+      "current": 4372,
+      "stale": 611,
+      "undated": 14393
+    },
+    "ledger": {
+      "projectedEvidence": 187238,
+      "immutableAssertions": 157420,
+      "immutableReviews": 157420,
+      "rejections": 43215,
+      "uniqueExplicitOutcomePairs": 357056,
+      "rawOutcomes": 463497,
+      "stateSelectedRuns": 552,
+      "immutableRunDirectories": 537,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": {
+        "blocked": 2,
+        "cancelled": 21,
+        "completed": 176,
+        "failed": 60
+      },
+      "leases": {
+        "cancelled": 9,
+        "completed": 180,
+        "failed": 69,
+        "recovered": 2
+      },
+      "integrations": {
+        "changes-requested": 2,
+        "integrated": 176,
+        "rejected": 2
+      },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "certificationBlockersRemoved": 3
+  },
+  "expectedVersusActual": {
+    "plannedPairs": 3705,
+    "expectedNetNewPairs": 3003,
+    "actualCompletedPairs": 3705,
+    "actualFinalMatrixMovement": 3003,
+    "preflightExpectedLiveProviderCalls": 136,
+    "recoveryAdjustedExpectedLiveProviderCalls": 141,
+    "actualLiveProviderCalls": 141,
+    "providerCallVarianceFromInitial": 5,
+    "providerCallVarianceFromRecoveryContract": 0,
+    "actualEvidenceFoundPairsGross": 1010,
+    "actualNoQualifyingEvidencePairsGross": 2695,
+    "expectedProtocolCellsClosed": 95,
+    "actualProtocolCellsClosed": 95,
+    "pairMovementAchievementRate": 1,
+    "qualification": "Net movement and protocol closure matched semantic preflight exactly. Five rate-limited occurrence calls raised live-provider cost above the initial contract; the recovery contract then matched actual calls exactly while reusing every verified response."
+  },
+  "integrationLatency": {
+    "secondsByRun": {
+      "gbif-round54-wa-archive-001": 656.617,
+      "gbif-round54-wa-archive-002": 706.08,
+      "gbif-round54-wa-archive-003": 712.708,
+      "gbif-round54-wa-archive-004": 719.511,
+      "gbif-round54-wa-live-001": 725.367,
+      "gbif-round54-wa-live-002": 728.061,
+      "gbif-round54-wa-live-003": 730.932,
+      "gbif-round54-wa-live-004": 733.602
+    },
+    "averageSeconds": 714.10975,
+    "maximumSeconds": 733.602,
+    "minimumSeconds": 656.617
+  },
+  "releaseOverhead": {
+    "explicitAsOf": "2026-08-09",
+    "allStateCompilationAndReadinessSeconds": 388.4,
+    "prepareDataSeconds": 29.357,
+    "readinessGenerationSeconds": 0.567,
+    "allStateByteStabilitySeconds": 771.777,
+    "dataAndResearchIntegritySeconds": 399.043,
+    "rejectedFocusedWrapperSeconds": 30.618,
+    "focusedProjectionConfigAndSkillSeconds": 114.8,
+    "typecheckSeconds": 2.67,
+    "lintSeconds": 2.735,
+    "localProductionBuildSeconds": 23.874,
+    "localBrowserQaSeconds": 69.5,
+    "knownLocalSequentialSeconds": 1833.341,
+    "pushSeconds": null,
+    "deploymentBuildSeconds": null,
+    "deploymentSeconds": null,
+    "productionQaSeconds": null,
+    "qualification": "Build-time local generation, validation, build, and browser QA are measured. External push, deployment, live parity, browser, and runtime-log overhead remain null until observed and will be recorded only in the later external verification receipt commit."
+  },
+  "localBrowserQa": {
+    "routes": [
+      "/",
+      "/research",
+      "/species/tree-of-heaven"
+    ],
+    "desktopViewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "desktopHorizontalOverflow": false,
+    "mobileHorizontalOverflow": false,
+    "brokenImages": 0,
+    "browserWarnings": 0,
+    "localOnlyAnalyticsErrors": 2,
+    "localOnlyAnalyticsQualification": "The local production server does not serve Vercel Analytics and produced the expected insights-script 404 and MIME errors. Production console and exact-deployment logs remain required.",
+    "temporaryQaFilesRemoved": 20,
+    "temporaryQaBytesRemoved": 1834602
+  },
+  "externalVerification": {
+    "status": "pending",
+    "qualification": "No content commit, GitHub main observation, production deployment, live route parity, browser console result, or exact-deployment log result is claimed by this build-time evaluation."
+  },
+  "processLesson": {
+    "lesson": "When a national source wave is interrupted, preserve and replay every verified response, shrink live retry scope to only missing requests, and bind provider taxonomy identities to provenance before retry; HTTP failure remains an incomplete screen, never a negative determination.",
+    "applied": [
+      "Preserved 3510 completed pairs and 182 verified response artifacts from four partial runs.",
+      "Retried only five missing occurrence requests affecting 195 pairs, sequentially, after the provider returned HTTP 429 under four-way live concurrency.",
+      "Reused 61 provenance-bound taxonomy identities and 182 archived responses, preventing 243 provider requests.",
+      "Captured all twelve attempt records before staging and promoted them to durable MAIN-owned operations paths.",
+      "Kept the four partial worker branches and worktrees because their response lineage is required by the recovery runs."
+    ]
+  },
+  "remainingWork": {
+    "plannedJobs": 0,
+    "historicalBlockedJobs": 2,
+    "historicalFailedJobs": 60,
+    "unknownStateSpeciesApplicability": 122640,
+    "researchBlockedStateSpecies": 54,
+    "blockedProtocolCells": 59,
+    "staleProtocolCells": 611,
+    "undatedProtocolCells": 14393,
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51
+  },
+  "nextRankedSourcePortfolio": [
+    {
+      "rank": 1,
+      "workClass": "state-specific-gbif-with-national-cache-reuse",
+      "state": "ND",
+      "expectedNetNewPairs": 424,
+      "reason": "Largest verified remaining net scope after Washington with lower structural retry risk than Montana. A fresh cache search and exact semantic preflight remain mandatory before provider access."
+    },
+    {
+      "rank": 2,
+      "workClass": "structural-recovery-before-state-gbif",
+      "state": "MT",
+      "expectedNetNewPairs": 336,
+      "reason": "Second-largest verified remaining net scope, but three prior memory failures require smaller taxon chunks, per-taxon child processes, streaming parsing, or verified cache recovery before any retry."
+    },
+    {
+      "rank": 3,
+      "workClass": "state-specific-gbif-with-national-cache-reuse",
+      "state": "NJ",
+      "expectedNetNewPairs": 189,
+      "reason": "Higher verified net movement than Rhode Island and no known structural failure history; it remains behind North Dakota and Montana on expected movement."
+    },
+    {
+      "rank": 4,
+      "workClass": "alphabetical-certification-and-applicability",
+      "state": "AL",
+      "reason": "Certification remains at zero and full-catalog applicability/accounting dominates readiness. This should proceed concurrently with automated acquisition, but it requires authoritative source-specific review and cannot be forecast from GBIF throughput."
+    }
+  ],
+  "completionForecastByWorkClass": {
+    "automatedNationalAcquisition": {
+      "measuredRound54NetPairsPerWorkerHour": 38931.88324900518,
+      "northDakotaExpectedNetNewPairs": 424,
+      "qualification": "The rate includes initial partial and recovery worker time for this GBIF topology. It excludes preflight, MAIN review, integration, national generation, release, and future provider health; it is not an end-to-end completion date."
+    },
+    "stateSpecificResearch": {
+      "forecast": null,
+      "qualification": "State authority, pagination, taxonomy, geography, and review burden require source-specific measurement; no blended rate is defensible."
+    },
+    "applicabilityReview": {
+      "unknownStateSpeciesDecisions": 122640,
+      "forecast": null,
+      "qualification": "Applicability is a separate evidence class and Round 54 measured no applicability-review rate."
+    },
+    "blockedExceptions": {
+      "researchBlockedStateSpecies": 54,
+      "blockedProtocolCells": 59,
+      "montanaStructuralRecoveryRequired": true,
+      "forecast": null,
+      "qualification": "These require exact source, taxonomy, geography, or job-shape resolution and cannot be extrapolated from successful acquisition."
+    },
+    "freshnessWork": {
+      "staleProtocolCells": 611,
+      "undatedProtocolCells": 14393,
+      "forecast": null,
+      "qualification": "Round 54 closed Washington source-family cells but did not measure a general freshness-remediation rate."
+    },
+    "releaseOverhead": {
+      "measuredLocalPrePushSeconds": 1833.341,
+      "externalOverhead": null,
+      "qualification": "Local overhead is measured for this release. Push, deployment, production QA, and receipt-era integrity remain unmeasured until external observation."
+    }
+  },
+  "semanticAttestation": {
+    "absenceCreatedFromSilence": false,
+    "notDetectedCreatedFromSilence": false,
+    "notApplicableCreatedFromSilence": false,
+    "failureConvertedToNegative": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}

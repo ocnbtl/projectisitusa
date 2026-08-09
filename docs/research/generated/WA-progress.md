@@ -1,27 +1,27 @@
 # Washington Research Progress
 
-Generated: `2026-08-08T00:00:00.000Z`
+Generated: `2026-08-09T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `363`
+- Verified present: `1319`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `2289`
-- Not researched: `95004`
-- Determination coverage: `0.37%`
-- Research coverage: `2.72%`
-- Explicit outcome coverage: `2.7157%`
+- Researched unresolved: `4336`
+- Not researched: `92001`
+- Determination coverage: `1.35%`
+- Research coverage: `5.79%`
+- Explicit outcome coverage: `5.7907%`
 - Applicable protocol cells: `163`
-- Current complete protocol cells: `55`
-- Protocol completion: `41.72%`
-- Current protocol completion: `33.74%`
-- Evidence records: `1130`
-- Research runs: `9`
-- Rejection records: `234`
+- Current complete protocol cells: `150`
+- Protocol completion: `100.00%`
+- Current protocol completion: `92.02%`
+- Evidence records: `6204`
+- Research runs: `17`
+- Rejection records: `1251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 39 | 0 | 1 |
-| Spotted Knapweed (`centaurea-stoebe`) | plants | 39 | 0 | 1 |
-| Rush skeletonweed (`chondrilla-juncea`) | plants | 39 | 0 | 1 |
-| Canada Thistle (`cirsium-arvense`) | plants | 39 | 0 | 1 |
-| Marsh thistle (`cirsium-palustre`) | plants | 39 | 0 | 1 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 39 | 0 | 1 |
-| Evergreen clematis (`clematis-vitalba`) | plants | 39 | 0 | 1 |
-| Poison Hemlock (`conium-maculatum`) | plants | 39 | 0 | 1 |
-| Field Bindweed (`convolvulus-arvensis`) | plants | 39 | 0 | 1 |
-| Purple pampas grass (`cortaderia-jubata`) | plants | 39 | 0 | 1 |
-| Uruguayan pampas grass (`cortaderia-selloana`) | plants | 39 | 0 | 1 |
-| Oneseed hawthorn (`crataegus-monogyna`) | plants | 39 | 0 | 1 |
-| Common Houndstongue (`cynoglossum-officinale`) | plants | 39 | 0 | 1 |
-| Yellow Nutsedge (`cyperus-esculentus`) | plants | 39 | 0 | 1 |
-| Scotch broom (`cytisus-scoparius`) | plants | 39 | 0 | 1 |
-| Common viper's bugloss (`echium-vulgare`) | plants | 39 | 0 | 1 |
-| Russian Olive (`elaeagnus-angustifolia`) | plants | 39 | 0 | 1 |
-| Codlins and cream (`epilobium-hirsutum`) | plants | 39 | 0 | 1 |
-| Leafy Spurge (`euphorbia-virgata`) | plants | 39 | 0 | 1 |
-| Japanese Knotweed (`fallopia-japonica`) | plants | 39 | 0 | 1 |
-| Giant Knotweed (`fallopia-sachalinensis`) | plants | 39 | 0 | 1 |
-| French broom (`genista-monspessulana`) | plants | 39 | 0 | 1 |
-| Reed mannagrass (`glyceria-maxima`) | plants | 39 | 0 | 1 |
-| Bachelor's button (`gypsophila-paniculata`) | plants | 39 | 0 | 1 |
-| Orange Hawkweed (`hieracium-aurantiacum`) | plants | 39 | 0 | 1 |
+| Cheatgrass (`bromus-tectorum`) | plants | 39 | 0 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 39 | 0 | 0 |
+| English Ivy (`hedera-helix`) | plants | 39 | 0 | 0 |
+| Atlantic ivy (`hedera-hibernica`) | plants | 39 | 0 | 0 |
+| Meadow hawkweed (`hieracium-caespitosum`) | plants | 39 | 0 | 0 |
+| English holly (`ilex-aquifolium`) | plants | 39 | 0 | 0 |
+| Dalmatian Toadflax (`linaria-dalmatica`) | plants | 39 | 0 | 0 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 39 | 0 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 39 | 0 | 0 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 39 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 39 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 39 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 39 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 39 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 39 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 39 | 1 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 39 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 39 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 39 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 39 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 39 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 39 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 39 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 39 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 39 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-08T03:04:33.579Z | 235 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-09T00:14:38.878Z | 1245 | 145 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
