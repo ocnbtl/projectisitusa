@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nj-004-1",
+  "jobId": "gbif-round55-nj-004",
+  "leaseId": "lease-gbif-round55-nj-004-1",
+  "workerCommit": "195b781b54a288009f409defec5f290ce7be7591",
+  "workerBranchHead": "4a25c9ef7238aeffecb9e6fc546c361bce2ac353",
+  "manifestHash": "af4a87c998a3180f5176dddc68f4660d20b43d896da3e4b3ef1b18b63a13b2f9",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-acer-platanoides-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-callitriche-stagnalis-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-cirsium-arvense-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-discula-destructiva-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-lonicera-maackii-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-marsilea-quadrifolia-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-myriophyllum-aquaticum-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-occurrences-rhamnus-cathartica-000000.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-acer-platanoides.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-callitriche-stagnalis.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-cirsium-arvense.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-discula-destructiva.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-lonicera-maackii.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-marsilea-quadrifolia.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-myriophyllum-aquaticum.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/artifacts/gbif-species-match-rhamnus-cathartica.json.gz",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/assertions.ndjson",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/manifest.json",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/outcomes.ndjson",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/receipt.json",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/rejections.ndjson",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/reviews.ndjson",
+    "src/data/research/runs/20260809T055358Z__gbif-preserved-specimens__396e66f8ac21/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:16:07.000Z",
+  "integrationCommit": "64600531a7947d910643e7e9e7c3848b7896e9cd"
+}
