@@ -28760,6 +28760,59 @@
         "sha256": "e7c7c49815bbb759dfcc62dea6f8c95702d29b1eff4472d8c0623199ec5df5c1",
         "bytes": 2689
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round58-ct-002-1",
+      "jobId": "gbif-round58-ct-002",
+      "leaseId": "lease-gbif-round58-ct-002-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T21:52:18.5023657Z",
+      "manifestPath": "manifests/gbif-round58-ct-002__lease-gbif-round58-ct-002-1.json",
+      "manifestHash": "75a7d92589429d6a276c7b9f6778946361f663df533f1f1d0230a1d91d1af156",
+      "manifestBytes": 7553,
+      "workerCommit": "96ead3a43851e5664892cd0951355bacf34f47dd",
+      "workerBranchHead": "d78b6c36c3201a922911bf3abac68bd33aba837d",
+      "reviewedAt": "2026-08-09T21:52:18.5023657Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 9 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/assertions.ndjson",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/manifest.json",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/outcomes.ndjson",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/receipt.json",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/rejections.ndjson",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/reviews.ndjson",
+        "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__cfeceb1320b3/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 9 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round58-ct-002-1.json",
+        "sha256": "83f36e7e2450a99104bcc273fc5e9eacc3eef6f7a0fd8c8f7ea188dbc43e3aae",
+        "bytes": 2523
+      }
     }
   ]
 }
