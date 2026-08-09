@@ -24765,6 +24765,59 @@
         "sha256": "f87b082b705339df1f0224ee0deaa4899e9925b5fdf5a62f53c662390be7fc7b",
         "bytes": 2186
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round56-mt-001-1",
+      "jobId": "gbif-round56-mt-001",
+      "leaseId": "lease-gbif-round56-mt-001-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T08:54:38.000Z",
+      "manifestPath": "manifests/gbif-round56-mt-001__lease-gbif-round56-mt-001-1.json",
+      "manifestHash": "99f3480d42638971a453464abb07ff0496c6772e4f597f27fbc6989f749d3334",
+      "manifestBytes": 9148,
+      "workerCommit": "94894410aa4fbccff0ca991c9a9561d59dc239ea",
+      "workerBranchHead": "9f12e6a88aa822a2c0314cb8fe431f695b6a9789",
+      "reviewedAt": "2026-08-09T08:54:38.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable Montana GBIF Solanum tampicense run, exact two-commit inventory, 56 complete no-qualifying-evidence outcomes, zero assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/assertions.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/manifest.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/outcomes.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/receipt.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/rejections.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/reviews.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation for Montana GBIF Solanum tampicense 56-pair run",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round56-mt-001-1.json",
+        "sha256": "e212ee810d7ec0250e920d08fcb7e3132a3817721110124e3b1b049fe39a32e7",
+        "bytes": 2395
+      }
     }
   ]
 }
