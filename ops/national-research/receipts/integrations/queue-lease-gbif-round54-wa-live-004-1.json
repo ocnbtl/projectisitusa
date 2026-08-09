@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round54-wa-live-004-1",
+  "jobId": "gbif-round54-wa-live-004",
+  "leaseId": "lease-gbif-round54-wa-live-004-1",
+  "workerCommit": "9dd7d9aed2f92861d676554b475a8e7021dab3d2",
+  "workerBranchHead": "358e3bc138d95c62f81b95edf3cae153949d27e6",
+  "manifestHash": "2db8d0fddcaa31c0d84188354c4d8dc17cb3e9dcc4736d6b05af975f54f9cf0a",
+  "changedPaths": [
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-occurrences-nutria-000000.json.gz",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-species-match-nutria.json.gz",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/assertions.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/manifest.json",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/outcomes.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/receipt.json",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/rejections.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/reviews.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T00:36:38.602Z",
+  "integrationCommit": "c3b4ba6fbf206797d4481a1517a9efd017f8fc53"
+}
