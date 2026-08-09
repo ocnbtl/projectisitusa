@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round56-mt-001-1",
+  "jobId": "gbif-round56-mt-001",
+  "leaseId": "lease-gbif-round56-mt-001-1",
+  "workerCommit": "94894410aa4fbccff0ca991c9a9561d59dc239ea",
+  "workerBranchHead": "9f12e6a88aa822a2c0314cb8fe431f695b6a9789",
+  "manifestHash": "99f3480d42638971a453464abb07ff0496c6772e4f597f27fbc6989f749d3334",
+  "changedPaths": [
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/assertions.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/manifest.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/outcomes.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/receipt.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/rejections.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/reviews.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for Montana GBIF Solanum tampicense 56-pair run",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact reviewed Montana Solanum tampicense run and manifest with no conflicts or semantic changes.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T08:56:52.000Z",
+  "integrationCommit": "729e7a5693f8b5917511f62d010ded917cf6dabb"
+}

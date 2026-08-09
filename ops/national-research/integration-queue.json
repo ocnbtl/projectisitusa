@@ -24770,7 +24770,7 @@
       "queueId": "queue-lease-gbif-round56-mt-001-1",
       "jobId": "gbif-round56-mt-001",
       "leaseId": "lease-gbif-round56-mt-001-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-09T08:54:38.000Z",
       "manifestPath": "manifests/gbif-round56-mt-001__lease-gbif-round56-mt-001-1.json",
       "manifestHash": "99f3480d42638971a453464abb07ff0496c6772e4f597f27fbc6989f749d3334",
@@ -24817,6 +24817,42 @@
         "path": "receipts/reviews/queue-lease-gbif-round56-mt-001-1.json",
         "sha256": "e212ee810d7ec0250e920d08fcb7e3132a3817721110124e3b1b049fe39a32e7",
         "bytes": 2395
+      },
+      "integratedAt": "2026-08-09T08:56:52.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "729e7a5693f8b5917511f62d010ded917cf6dabb",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation for Montana GBIF Solanum tampicense 56-pair run",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact reviewed Montana Solanum tampicense run and manifest with no conflicts or semantic changes.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-round56-mt-001-1.json",
+        "sha256": "142a924b0812f78f3e5eb145208490ae3d72bfed5a2d19b5e9618721d5c89e9a",
+        "bytes": 2461
       }
     }
   ]
