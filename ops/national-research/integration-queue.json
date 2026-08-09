@@ -25210,6 +25210,59 @@
         "sha256": "67aa24c57b0320ac6f8a9a8121db9aacede4e4513f7efa22449aef6a5b37375f",
         "bytes": 2457
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round56-mt-006-1",
+      "jobId": "gbif-round56-mt-006",
+      "leaseId": "lease-gbif-round56-mt-006-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T09:36:00.000Z",
+      "manifestPath": "manifests/gbif-round56-mt-006__lease-gbif-round56-mt-006-1.json",
+      "manifestHash": "ca2d3f2af68d15372778eecd25abf6aa663933c9b14083249241d38673ea13d6",
+      "manifestBytes": 9206,
+      "workerCommit": "8c89be616433ce53963daadad374f1ed6c7c70a1",
+      "workerBranchHead": "5c2b10be48eef4aa12ac9c7ae8996cca608f4375",
+      "reviewedAt": "2026-08-09T09:36:00.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable MT GBIF run, exact two-commit inventory, 56 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/assertions.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/manifest.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/outcomes.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/receipt.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/rejections.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/reviews.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...5c2b10be48eef4aa12ac9c7ae8996cca608f4375",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round56-mt-006-1.json",
+        "sha256": "051345a466d0625f3892ee0df95371cdf5ccf5ec2c836522b000967c3dc2ffc4",
+        "bytes": 2346
+      }
     }
   ]
 }

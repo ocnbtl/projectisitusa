@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round56-mt-006-1",
+  "jobId": "gbif-round56-mt-006",
+  "leaseId": "lease-gbif-round56-mt-006-1",
+  "workerCommit": "8c89be616433ce53963daadad374f1ed6c7c70a1",
+  "workerBranchHead": "5c2b10be48eef4aa12ac9c7ae8996cca608f4375",
+  "manifestHash": "ca2d3f2af68d15372778eecd25abf6aa663933c9b14083249241d38673ea13d6",
+  "changedPaths": [
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/assertions.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/manifest.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/outcomes.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/receipt.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/rejections.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/reviews.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "orchestrator transition with pinned worker manifest validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...5c2b10be48eef4aa12ac9c7ae8996cca608f4375",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable MT GBIF run, exact two-commit inventory, 56 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-09T09:36:00.000Z"
+}
