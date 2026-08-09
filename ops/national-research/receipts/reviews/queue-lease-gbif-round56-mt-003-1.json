@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round56-mt-003-1",
+  "jobId": "gbif-round56-mt-003",
+  "leaseId": "lease-gbif-round56-mt-003-1",
+  "workerCommit": "550f0ac35360098527517fb32ff6f26c9b9d6ad8",
+  "workerBranchHead": "4a6c31216e45e11010413bc5ba9c4235a7139f4b",
+  "manifestHash": "a04a293f15a28c79ee8960ce67f7eea13e5878326c83c87bc8829019ba462b9c",
+  "changedPaths": [
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/artifacts/gbif-species-match-solanum-viarum.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/assertions.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/manifest.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/outcomes.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/receipt.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/rejections.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/reviews.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for Montana GBIF Solanum viarum 56-pair run",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 1,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable Montana GBIF Solanum viarum run, exact two-commit inventory, 56 complete no-qualifying-evidence outcomes, zero assertion events, and zero unsupported negative determinations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-09T09:08:55.000Z"
+}
