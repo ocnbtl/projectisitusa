@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T00:14:13.546Z",
+  "runId": "20260809T000145Z__gbif-preserved-specimens__e68d72ff030a",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "WA",
+  "pairKeys": [
+    "53001:lysimachia-vulgaris",
+    "53001:lythrum-salicaria",
+    "53003:lysimachia-vulgaris",
+    "53003:lythrum-salicaria",
+    "53005:lysimachia-vulgaris",
+    "53005:lythrum-salicaria",
+    "53007:lysimachia-vulgaris",
+    "53007:lythrum-salicaria",
+    "53009:lysimachia-vulgaris",
+    "53009:lythrum-salicaria",
+    "53011:lysimachia-vulgaris",
+    "53011:lythrum-salicaria",
+    "53013:lysimachia-vulgaris",
+    "53013:lythrum-salicaria",
+    "53015:lysimachia-vulgaris",
+    "53015:lythrum-salicaria",
+    "53017:lysimachia-vulgaris",
+    "53017:lythrum-salicaria",
+    "53019:lysimachia-vulgaris",
+    "53019:lythrum-salicaria",
+    "53021:lysimachia-vulgaris",
+    "53021:lythrum-salicaria",
+    "53023:lysimachia-vulgaris",
+    "53023:lythrum-salicaria",
+    "53025:lysimachia-vulgaris",
+    "53025:lythrum-salicaria",
+    "53027:lysimachia-vulgaris",
+    "53027:lythrum-salicaria",
+    "53029:lysimachia-vulgaris",
+    "53029:lythrum-salicaria",
+    "53031:lysimachia-vulgaris",
+    "53031:lythrum-salicaria",
+    "53033:lysimachia-vulgaris",
+    "53033:lythrum-salicaria",
+    "53035:lysimachia-vulgaris",
+    "53035:lythrum-salicaria",
+    "53037:lysimachia-vulgaris",
+    "53037:lythrum-salicaria",
+    "53039:lysimachia-vulgaris",
+    "53039:lythrum-salicaria",
+    "53041:lysimachia-vulgaris",
+    "53041:lythrum-salicaria",
+    "53043:lysimachia-vulgaris",
+    "53043:lythrum-salicaria",
+    "53045:lysimachia-vulgaris",
+    "53045:lythrum-salicaria",
+    "53047:lysimachia-vulgaris",
+    "53047:lythrum-salicaria",
+    "53049:lysimachia-vulgaris",
+    "53049:lythrum-salicaria",
+    "53051:lysimachia-vulgaris",
+    "53051:lythrum-salicaria",
+    "53053:lysimachia-vulgaris",
+    "53053:lythrum-salicaria",
+    "53055:lysimachia-vulgaris",
+    "53055:lythrum-salicaria",
+    "53057:lysimachia-vulgaris",
+    "53057:lythrum-salicaria",
+    "53059:lysimachia-vulgaris",
+    "53059:lythrum-salicaria",
+    "53061:lysimachia-vulgaris",
+    "53061:lythrum-salicaria",
+    "53063:lysimachia-vulgaris",
+    "53063:lythrum-salicaria",
+    "53065:lysimachia-vulgaris",
+    "53065:lythrum-salicaria",
+    "53067:lysimachia-vulgaris",
+    "53067:lythrum-salicaria",
+    "53069:lysimachia-vulgaris",
+    "53069:lythrum-salicaria",
+    "53071:lysimachia-vulgaris",
+    "53071:lythrum-salicaria",
+    "53073:lysimachia-vulgaris",
+    "53073:lythrum-salicaria",
+    "53075:lysimachia-vulgaris",
+    "53075:lythrum-salicaria",
+    "53077:lysimachia-vulgaris",
+    "53077:lythrum-salicaria"
+  ],
+  "parameterHash": "e68d72ff030adc0737786715fc85e29b5a025a92a4c430135d8bead629c91b18",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T00:14:12.121Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Washington and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "lysimachia-vulgaris",
+      "lythrum-salicaria"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-lysimachia-vulgaris",
+        "url": "https://api.gbif.org/v1/species/match?name=Lysimachia+vulgaris&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:14:09.708Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-lysimachia-vulgaris",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Washington&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3169386&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for lysimachia-vulgaris and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:14:10.791Z",
+        "declaredRecordCount": 20,
+        "receivedRecordCount": 20,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "species-match-lythrum-salicaria",
+        "url": "https://api.gbif.org/v1/species/match?name=Lythrum+salicaria&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:14:11.215Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-lythrum-salicaria",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Washington&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3188736&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for lythrum-salicaria and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:14:12.121Z",
+        "declaredRecordCount": 130,
+        "receivedRecordCount": 130,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-occurrences-lysimachia-vulgaris-000000.json.gz",
+      "sha256": "b725fa33e3c8c60bc9283a125c68940ae91ebbc918c35e75326fb2c19a645c2a",
+      "bytes": 10647
+    },
+    {
+      "path": "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-occurrences-lythrum-salicaria-000000.json.gz",
+      "sha256": "e794ad0d3b866e8bc0c2362d1d69eafccc49d071aab21faf7095e5c9ed6a797a",
+      "bytes": 59632
+    },
+    {
+      "path": "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-species-match-lysimachia-vulgaris.json.gz",
+      "sha256": "36411b35d9adf4526f9a32091965cf3d6cd466c4bb699e6e39ec47ccb33df8e8",
+      "bytes": 285
+    },
+    {
+      "path": "src/data/research/runs/20260809T000145Z__gbif-preserved-specimens__e68d72ff030a/artifacts/gbif-species-match-lythrum-salicaria.json.gz",
+      "sha256": "cd44eb2aa12828c5dfc5c5ab6090e15472e90f8750340499ef3c51de81d4e609",
+      "bytes": 279
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
