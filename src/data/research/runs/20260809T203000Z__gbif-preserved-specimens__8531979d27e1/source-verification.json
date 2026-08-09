@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T21:08:46.700Z",
+  "runId": "20260809T203000Z__gbif-preserved-specimens__8531979d27e1",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "MA",
+  "pairKeys": [
+    "25001:solanum-tampicense",
+    "25003:solanum-tampicense",
+    "25005:solanum-tampicense",
+    "25007:solanum-tampicense",
+    "25009:solanum-tampicense",
+    "25011:solanum-tampicense",
+    "25013:solanum-tampicense",
+    "25015:solanum-tampicense",
+    "25017:solanum-tampicense",
+    "25019:solanum-tampicense",
+    "25021:solanum-tampicense",
+    "25023:solanum-tampicense",
+    "25025:solanum-tampicense",
+    "25027:solanum-tampicense"
+  ],
+  "parameterHash": "8531979d27e125d418609c6ea2d47d32bf8ff51ceecd29afe9fab9e310357226",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T21:08:46.699Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Massachusetts and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "solanum-tampicense"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-solanum-tampicense",
+        "url": "https://api.gbif.org/v1/species/match?name=Solanum+tampicense&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:08:43.037Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-solanum-tampicense",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Massachusetts&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2929938&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for solanum-tampicense and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:08:46.699Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__8531979d27e1/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__8531979d27e1/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+      "sha256": "de6bda76df0af2b953e5908c013b9507be450e50456ab6e8256c1060cad8ba0d",
+      "bytes": 277
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
