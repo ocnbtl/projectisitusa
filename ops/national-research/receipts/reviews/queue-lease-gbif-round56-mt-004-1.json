@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round56-mt-004-1",
+  "jobId": "gbif-round56-mt-004",
+  "leaseId": "lease-gbif-round56-mt-004-1",
+  "workerCommit": "d2278946372429b46f87531ac82e19fd0527220d",
+  "workerBranchHead": "ab837e7597c56548fd36cea6a94c8762ecd146fb",
+  "manifestHash": "fea8dcc6c88ad3d7f292976710709860c6f1005e8391bb1acc6fa548b05a1e6a",
+  "changedPaths": [
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/assertions.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/manifest.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/outcomes.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/receipt.json",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/rejections.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/reviews.ndjson",
+    "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation for Montana GBIF Sparganium erectum 56-pair run",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable Montana GBIF Sparganium erectum run, exact two-commit inventory, 56 complete no-qualifying-evidence outcomes, zero assertion events, and zero unsupported negative determinations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-09T09:13:41.000Z"
+}
