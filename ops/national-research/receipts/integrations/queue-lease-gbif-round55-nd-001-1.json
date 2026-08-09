@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nd-001-1",
+  "jobId": "gbif-round55-nd-001",
+  "leaseId": "lease-gbif-round55-nd-001-1",
+  "workerCommit": "3670512f173505459e25d9294615574aaf2f3795",
+  "workerBranchHead": "cc30ddb8343424774a126206cdc3dd1d5e310307",
+  "manifestHash": "6ba1e6a698e468f326b6a3e18136104475b9925a026b15488dcd182a2f1d3c89",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-solanum-torvum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-solanum-viarum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/assertions.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/manifest.json",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/outcomes.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/receipt.json",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/rejections.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/reviews.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:11:28.000Z",
+  "integrationCommit": "d3a6fc956254bc4d7e6bc3ae1d50abd753c99a9d"
+}
