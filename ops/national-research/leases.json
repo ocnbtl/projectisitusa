@@ -484712,6 +484712,990 @@
         "workerCommit": "0b1b603fa746decc9ade3b56fa9d69f05f96ce0b",
         "workerBranchHead": "68e2c663cd5a75bfbcd7df3f44f7c15e9a3bc23f"
       }
+    },
+    {
+      "leaseId": "lease-gbif-round56-mt-001-1",
+      "jobId": "gbif-round56-mt-001",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "worker-gbif-round56-mt-001",
+      "state": "active",
+      "claimedAt": "2026-08-09T08:37:57.000Z",
+      "expiresAt": "2026-08-09T12:26:18.000Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "MT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-tampicense"
+        ],
+        "pairs": [
+          "30001:solanum-tampicense",
+          "30003:solanum-tampicense",
+          "30005:solanum-tampicense",
+          "30007:solanum-tampicense",
+          "30009:solanum-tampicense",
+          "30011:solanum-tampicense",
+          "30013:solanum-tampicense",
+          "30015:solanum-tampicense",
+          "30017:solanum-tampicense",
+          "30019:solanum-tampicense",
+          "30021:solanum-tampicense",
+          "30023:solanum-tampicense",
+          "30025:solanum-tampicense",
+          "30027:solanum-tampicense",
+          "30029:solanum-tampicense",
+          "30031:solanum-tampicense",
+          "30033:solanum-tampicense",
+          "30035:solanum-tampicense",
+          "30037:solanum-tampicense",
+          "30039:solanum-tampicense",
+          "30041:solanum-tampicense",
+          "30043:solanum-tampicense",
+          "30045:solanum-tampicense",
+          "30047:solanum-tampicense",
+          "30049:solanum-tampicense",
+          "30051:solanum-tampicense",
+          "30053:solanum-tampicense",
+          "30055:solanum-tampicense",
+          "30057:solanum-tampicense",
+          "30059:solanum-tampicense",
+          "30061:solanum-tampicense",
+          "30063:solanum-tampicense",
+          "30065:solanum-tampicense",
+          "30067:solanum-tampicense",
+          "30069:solanum-tampicense",
+          "30071:solanum-tampicense",
+          "30073:solanum-tampicense",
+          "30075:solanum-tampicense",
+          "30077:solanum-tampicense",
+          "30079:solanum-tampicense",
+          "30081:solanum-tampicense",
+          "30083:solanum-tampicense",
+          "30085:solanum-tampicense",
+          "30087:solanum-tampicense",
+          "30089:solanum-tampicense",
+          "30091:solanum-tampicense",
+          "30093:solanum-tampicense",
+          "30095:solanum-tampicense",
+          "30097:solanum-tampicense",
+          "30099:solanum-tampicense",
+          "30101:solanum-tampicense",
+          "30103:solanum-tampicense",
+          "30105:solanum-tampicense",
+          "30107:solanum-tampicense",
+          "30109:solanum-tampicense",
+          "30111:solanum-tampicense"
+        ]
+      },
+      "scopeClaims": [
+        "state/MT/source/gbif-preserved-specimens/taxon/solanum-tampicense"
+      ],
+      "branch": "codex/gbif-round56-mt-001",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round56-mt-001",
+      "baseSha": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "expectedReceiptCodeCommit": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__3d7f2b155b5d/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-56-20260809/gbif-round56-mt-001.json with started-at 2026-08-09T08:26:18.000Z",
+        "screen all 56 leased MT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...HEAD"
+      ]
+    },
+    {
+      "leaseId": "lease-gbif-round56-mt-002-1",
+      "jobId": "gbif-round56-mt-002",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "worker-gbif-round56-mt-002",
+      "state": "active",
+      "claimedAt": "2026-08-09T08:37:57.000Z",
+      "expiresAt": "2026-08-09T12:26:18.000Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "MT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-torvum"
+        ],
+        "pairs": [
+          "30001:solanum-torvum",
+          "30003:solanum-torvum",
+          "30005:solanum-torvum",
+          "30007:solanum-torvum",
+          "30009:solanum-torvum",
+          "30011:solanum-torvum",
+          "30013:solanum-torvum",
+          "30015:solanum-torvum",
+          "30017:solanum-torvum",
+          "30019:solanum-torvum",
+          "30021:solanum-torvum",
+          "30023:solanum-torvum",
+          "30025:solanum-torvum",
+          "30027:solanum-torvum",
+          "30029:solanum-torvum",
+          "30031:solanum-torvum",
+          "30033:solanum-torvum",
+          "30035:solanum-torvum",
+          "30037:solanum-torvum",
+          "30039:solanum-torvum",
+          "30041:solanum-torvum",
+          "30043:solanum-torvum",
+          "30045:solanum-torvum",
+          "30047:solanum-torvum",
+          "30049:solanum-torvum",
+          "30051:solanum-torvum",
+          "30053:solanum-torvum",
+          "30055:solanum-torvum",
+          "30057:solanum-torvum",
+          "30059:solanum-torvum",
+          "30061:solanum-torvum",
+          "30063:solanum-torvum",
+          "30065:solanum-torvum",
+          "30067:solanum-torvum",
+          "30069:solanum-torvum",
+          "30071:solanum-torvum",
+          "30073:solanum-torvum",
+          "30075:solanum-torvum",
+          "30077:solanum-torvum",
+          "30079:solanum-torvum",
+          "30081:solanum-torvum",
+          "30083:solanum-torvum",
+          "30085:solanum-torvum",
+          "30087:solanum-torvum",
+          "30089:solanum-torvum",
+          "30091:solanum-torvum",
+          "30093:solanum-torvum",
+          "30095:solanum-torvum",
+          "30097:solanum-torvum",
+          "30099:solanum-torvum",
+          "30101:solanum-torvum",
+          "30103:solanum-torvum",
+          "30105:solanum-torvum",
+          "30107:solanum-torvum",
+          "30109:solanum-torvum",
+          "30111:solanum-torvum"
+        ]
+      },
+      "scopeClaims": [
+        "state/MT/source/gbif-preserved-specimens/taxon/solanum-torvum"
+      ],
+      "branch": "codex/gbif-round56-mt-002",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round56-mt-002",
+      "baseSha": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "expectedReceiptCodeCommit": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-56-20260809/gbif-round56-mt-002.json with started-at 2026-08-09T08:26:18.000Z",
+        "screen all 56 leased MT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...HEAD"
+      ]
+    },
+    {
+      "leaseId": "lease-gbif-round56-mt-003-1",
+      "jobId": "gbif-round56-mt-003",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "worker-gbif-round56-mt-003",
+      "state": "active",
+      "claimedAt": "2026-08-09T08:37:57.000Z",
+      "expiresAt": "2026-08-09T12:26:18.000Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "MT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-viarum"
+        ],
+        "pairs": [
+          "30001:solanum-viarum",
+          "30003:solanum-viarum",
+          "30005:solanum-viarum",
+          "30007:solanum-viarum",
+          "30009:solanum-viarum",
+          "30011:solanum-viarum",
+          "30013:solanum-viarum",
+          "30015:solanum-viarum",
+          "30017:solanum-viarum",
+          "30019:solanum-viarum",
+          "30021:solanum-viarum",
+          "30023:solanum-viarum",
+          "30025:solanum-viarum",
+          "30027:solanum-viarum",
+          "30029:solanum-viarum",
+          "30031:solanum-viarum",
+          "30033:solanum-viarum",
+          "30035:solanum-viarum",
+          "30037:solanum-viarum",
+          "30039:solanum-viarum",
+          "30041:solanum-viarum",
+          "30043:solanum-viarum",
+          "30045:solanum-viarum",
+          "30047:solanum-viarum",
+          "30049:solanum-viarum",
+          "30051:solanum-viarum",
+          "30053:solanum-viarum",
+          "30055:solanum-viarum",
+          "30057:solanum-viarum",
+          "30059:solanum-viarum",
+          "30061:solanum-viarum",
+          "30063:solanum-viarum",
+          "30065:solanum-viarum",
+          "30067:solanum-viarum",
+          "30069:solanum-viarum",
+          "30071:solanum-viarum",
+          "30073:solanum-viarum",
+          "30075:solanum-viarum",
+          "30077:solanum-viarum",
+          "30079:solanum-viarum",
+          "30081:solanum-viarum",
+          "30083:solanum-viarum",
+          "30085:solanum-viarum",
+          "30087:solanum-viarum",
+          "30089:solanum-viarum",
+          "30091:solanum-viarum",
+          "30093:solanum-viarum",
+          "30095:solanum-viarum",
+          "30097:solanum-viarum",
+          "30099:solanum-viarum",
+          "30101:solanum-viarum",
+          "30103:solanum-viarum",
+          "30105:solanum-viarum",
+          "30107:solanum-viarum",
+          "30109:solanum-viarum",
+          "30111:solanum-viarum"
+        ]
+      },
+      "scopeClaims": [
+        "state/MT/source/gbif-preserved-specimens/taxon/solanum-viarum"
+      ],
+      "branch": "codex/gbif-round56-mt-003",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round56-mt-003",
+      "baseSha": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "expectedReceiptCodeCommit": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__12a161015674/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-56-20260809/gbif-round56-mt-003.json with started-at 2026-08-09T08:26:18.000Z",
+        "screen all 56 leased MT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...HEAD"
+      ]
+    },
+    {
+      "leaseId": "lease-gbif-round56-mt-004-1",
+      "jobId": "gbif-round56-mt-004",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "worker-gbif-round56-mt-004",
+      "state": "active",
+      "claimedAt": "2026-08-09T08:37:57.000Z",
+      "expiresAt": "2026-08-09T12:26:18.000Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "MT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "sparganium-erectum"
+        ],
+        "pairs": [
+          "30001:sparganium-erectum",
+          "30003:sparganium-erectum",
+          "30005:sparganium-erectum",
+          "30007:sparganium-erectum",
+          "30009:sparganium-erectum",
+          "30011:sparganium-erectum",
+          "30013:sparganium-erectum",
+          "30015:sparganium-erectum",
+          "30017:sparganium-erectum",
+          "30019:sparganium-erectum",
+          "30021:sparganium-erectum",
+          "30023:sparganium-erectum",
+          "30025:sparganium-erectum",
+          "30027:sparganium-erectum",
+          "30029:sparganium-erectum",
+          "30031:sparganium-erectum",
+          "30033:sparganium-erectum",
+          "30035:sparganium-erectum",
+          "30037:sparganium-erectum",
+          "30039:sparganium-erectum",
+          "30041:sparganium-erectum",
+          "30043:sparganium-erectum",
+          "30045:sparganium-erectum",
+          "30047:sparganium-erectum",
+          "30049:sparganium-erectum",
+          "30051:sparganium-erectum",
+          "30053:sparganium-erectum",
+          "30055:sparganium-erectum",
+          "30057:sparganium-erectum",
+          "30059:sparganium-erectum",
+          "30061:sparganium-erectum",
+          "30063:sparganium-erectum",
+          "30065:sparganium-erectum",
+          "30067:sparganium-erectum",
+          "30069:sparganium-erectum",
+          "30071:sparganium-erectum",
+          "30073:sparganium-erectum",
+          "30075:sparganium-erectum",
+          "30077:sparganium-erectum",
+          "30079:sparganium-erectum",
+          "30081:sparganium-erectum",
+          "30083:sparganium-erectum",
+          "30085:sparganium-erectum",
+          "30087:sparganium-erectum",
+          "30089:sparganium-erectum",
+          "30091:sparganium-erectum",
+          "30093:sparganium-erectum",
+          "30095:sparganium-erectum",
+          "30097:sparganium-erectum",
+          "30099:sparganium-erectum",
+          "30101:sparganium-erectum",
+          "30103:sparganium-erectum",
+          "30105:sparganium-erectum",
+          "30107:sparganium-erectum",
+          "30109:sparganium-erectum",
+          "30111:sparganium-erectum"
+        ]
+      },
+      "scopeClaims": [
+        "state/MT/source/gbif-preserved-specimens/taxon/sparganium-erectum"
+      ],
+      "branch": "codex/gbif-round56-mt-004",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round56-mt-004",
+      "baseSha": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "expectedReceiptCodeCommit": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__c2da20d65bac/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-56-20260809/gbif-round56-mt-004.json with started-at 2026-08-09T08:26:18.000Z",
+        "screen all 56 leased MT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...HEAD"
+      ]
+    },
+    {
+      "leaseId": "lease-gbif-round56-mt-005-1",
+      "jobId": "gbif-round56-mt-005",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "worker-gbif-round56-mt-005",
+      "state": "active",
+      "claimedAt": "2026-08-09T08:37:57.000Z",
+      "expiresAt": "2026-08-09T12:26:18.000Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "MT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "tridax-procumbens"
+        ],
+        "pairs": [
+          "30001:tridax-procumbens",
+          "30003:tridax-procumbens",
+          "30005:tridax-procumbens",
+          "30007:tridax-procumbens",
+          "30009:tridax-procumbens",
+          "30011:tridax-procumbens",
+          "30013:tridax-procumbens",
+          "30015:tridax-procumbens",
+          "30017:tridax-procumbens",
+          "30019:tridax-procumbens",
+          "30021:tridax-procumbens",
+          "30023:tridax-procumbens",
+          "30025:tridax-procumbens",
+          "30027:tridax-procumbens",
+          "30029:tridax-procumbens",
+          "30031:tridax-procumbens",
+          "30033:tridax-procumbens",
+          "30035:tridax-procumbens",
+          "30037:tridax-procumbens",
+          "30039:tridax-procumbens",
+          "30041:tridax-procumbens",
+          "30043:tridax-procumbens",
+          "30045:tridax-procumbens",
+          "30047:tridax-procumbens",
+          "30049:tridax-procumbens",
+          "30051:tridax-procumbens",
+          "30053:tridax-procumbens",
+          "30055:tridax-procumbens",
+          "30057:tridax-procumbens",
+          "30059:tridax-procumbens",
+          "30061:tridax-procumbens",
+          "30063:tridax-procumbens",
+          "30065:tridax-procumbens",
+          "30067:tridax-procumbens",
+          "30069:tridax-procumbens",
+          "30071:tridax-procumbens",
+          "30073:tridax-procumbens",
+          "30075:tridax-procumbens",
+          "30077:tridax-procumbens",
+          "30079:tridax-procumbens",
+          "30081:tridax-procumbens",
+          "30083:tridax-procumbens",
+          "30085:tridax-procumbens",
+          "30087:tridax-procumbens",
+          "30089:tridax-procumbens",
+          "30091:tridax-procumbens",
+          "30093:tridax-procumbens",
+          "30095:tridax-procumbens",
+          "30097:tridax-procumbens",
+          "30099:tridax-procumbens",
+          "30101:tridax-procumbens",
+          "30103:tridax-procumbens",
+          "30105:tridax-procumbens",
+          "30107:tridax-procumbens",
+          "30109:tridax-procumbens",
+          "30111:tridax-procumbens"
+        ]
+      },
+      "scopeClaims": [
+        "state/MT/source/gbif-preserved-specimens/taxon/tridax-procumbens"
+      ],
+      "branch": "codex/gbif-round56-mt-005",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round56-mt-005",
+      "baseSha": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "expectedReceiptCodeCommit": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-56-20260809/gbif-round56-mt-005.json with started-at 2026-08-09T08:26:18.000Z",
+        "screen all 56 leased MT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...HEAD"
+      ]
+    },
+    {
+      "leaseId": "lease-gbif-round56-mt-006-1",
+      "jobId": "gbif-round56-mt-006",
+      "attempt": 1,
+      "previousLeaseId": null,
+      "workerTaskId": "worker-gbif-round56-mt-006",
+      "state": "active",
+      "claimedAt": "2026-08-09T08:37:57.000Z",
+      "expiresAt": "2026-08-09T12:26:18.000Z",
+      "recoveryAt": null,
+      "recoveryReason": null,
+      "stateOrSourceScope": {
+        "states": [
+          "MT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "urochloa-panicoides"
+        ],
+        "pairs": [
+          "30001:urochloa-panicoides",
+          "30003:urochloa-panicoides",
+          "30005:urochloa-panicoides",
+          "30007:urochloa-panicoides",
+          "30009:urochloa-panicoides",
+          "30011:urochloa-panicoides",
+          "30013:urochloa-panicoides",
+          "30015:urochloa-panicoides",
+          "30017:urochloa-panicoides",
+          "30019:urochloa-panicoides",
+          "30021:urochloa-panicoides",
+          "30023:urochloa-panicoides",
+          "30025:urochloa-panicoides",
+          "30027:urochloa-panicoides",
+          "30029:urochloa-panicoides",
+          "30031:urochloa-panicoides",
+          "30033:urochloa-panicoides",
+          "30035:urochloa-panicoides",
+          "30037:urochloa-panicoides",
+          "30039:urochloa-panicoides",
+          "30041:urochloa-panicoides",
+          "30043:urochloa-panicoides",
+          "30045:urochloa-panicoides",
+          "30047:urochloa-panicoides",
+          "30049:urochloa-panicoides",
+          "30051:urochloa-panicoides",
+          "30053:urochloa-panicoides",
+          "30055:urochloa-panicoides",
+          "30057:urochloa-panicoides",
+          "30059:urochloa-panicoides",
+          "30061:urochloa-panicoides",
+          "30063:urochloa-panicoides",
+          "30065:urochloa-panicoides",
+          "30067:urochloa-panicoides",
+          "30069:urochloa-panicoides",
+          "30071:urochloa-panicoides",
+          "30073:urochloa-panicoides",
+          "30075:urochloa-panicoides",
+          "30077:urochloa-panicoides",
+          "30079:urochloa-panicoides",
+          "30081:urochloa-panicoides",
+          "30083:urochloa-panicoides",
+          "30085:urochloa-panicoides",
+          "30087:urochloa-panicoides",
+          "30089:urochloa-panicoides",
+          "30091:urochloa-panicoides",
+          "30093:urochloa-panicoides",
+          "30095:urochloa-panicoides",
+          "30097:urochloa-panicoides",
+          "30099:urochloa-panicoides",
+          "30101:urochloa-panicoides",
+          "30103:urochloa-panicoides",
+          "30105:urochloa-panicoides",
+          "30107:urochloa-panicoides",
+          "30109:urochloa-panicoides",
+          "30111:urochloa-panicoides"
+        ]
+      },
+      "scopeClaims": [
+        "state/MT/source/gbif-preserved-specimens/taxon/urochloa-panicoides"
+      ],
+      "branch": "codex/gbif-round56-mt-006",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round56-mt-006",
+      "baseSha": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "expectedReceiptCodeCommit": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__32e61e0d21cf/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-56-20260809/gbif-round56-mt-006.json with started-at 2026-08-09T08:26:18.000Z",
+        "screen all 56 leased MT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 07f7f88168ee0094dc570514e5456f40fb72c6f9...HEAD"
+      ]
     }
   ]
 }
