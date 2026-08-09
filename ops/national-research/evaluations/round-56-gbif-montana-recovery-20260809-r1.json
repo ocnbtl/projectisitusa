@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-56-gbif-montana-recovery-20260809-r1",
+  "roundId": "gbif-round56",
+  "evaluatedAt": "2026-08-09T09:50:00.000Z",
+  "result": "complete-local-gates-passed-pending-external-verification",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "The failed Montana GBIF scope was structurally recovered as six independently auditable one-taxon runs. All 336 exact county-species screens completed, all 336 moved in the final matrix, and six applicable protocol cells closed."
+  },
+  "baseline": {
+    "commit": "476861a91885b219da464c85e3f3cf610c01b20a",
+    "asOf": "2026-08-09",
+    "national": {
+      "jurisdictions": 51,
+      "activeCountyEquivalents": 3144,
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5064,
+        "notApplicable": 0,
+        "unknown": 122640,
+        "blocked": 0,
+        "researchedUnresolved": 1492,
+        "researchBlocked": 54,
+        "partiallyResearched": 0,
+        "untouched": 121094
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 56062,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 346697,
+        "notResearched": 7469809
+      },
+      "protocolCells": {
+        "total": 39866,
+        "applicable": 19376,
+        "notApplicable": 20490,
+        "complete": 5065,
+        "incomplete": 14252,
+        "blocked": 59,
+        "current": 4454,
+        "stale": 611,
+        "undated": 14311
+      },
+      "ledger": {
+        "projectedEvidence": 189224,
+        "immutableAssertions": 159406,
+        "immutableReviews": 159406,
+        "rejections": 43697,
+        "selectedExplicitOutcomePairs": 357669,
+        "rawOutcomes": 466275,
+        "stateSelectedRuns": 564,
+        "immutableRunDirectories": 549,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "remainingApplicableProtocolCountyScreens": 925191
+    },
+    "montana": {
+      "countyCount": 56,
+      "countySpeciesDenominator": 140224,
+      "verifiedPresent": 267,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 5837,
+      "notResearched": 134120,
+      "fullyAccountedStateSpecies": 109,
+      "applicableStateSpecies": 70,
+      "unknownStateSpecies": 2434,
+      "protocolApplicable": 88,
+      "protocolComplete": 43,
+      "protocolIncomplete": 45,
+      "protocolCurrent": 30,
+      "protocolStale": 13,
+      "protocolUndated": 45,
+      "certificationBlockers": 6
+    },
+    "operations": {
+      "jobs": {"total": 271, "completed": 188, "failed": 60, "cancelled": 21, "blocked": 2, "active": 0},
+      "leases": {"total": 272, "completed": 192, "failed": 69, "cancelled": 9, "recovered": 2, "active": 0},
+      "integrations": {"total": 192, "integrated": 188, "rejected": 2, "changesRequested": 2, "pending": 0}
+    }
+  },
+  "planned": {
+    "states": ["MT"],
+    "taxa": 6,
+    "countySpeciesPairs": 336,
+    "jobs": 6,
+    "expectedNetNewUniquePairs": 336,
+    "expectedProtocolCellsClosed": 6,
+    "expectedCertificationBlockersRemoved": 0,
+    "expectedProviderCalls": 6,
+    "expectedEvidenceFoundOutcomes": 64,
+    "expectedNoQualifyingEvidenceOutcomes": 272,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0
+  },
+  "recoveryAudit": {
+    "failedJobId": "gbif-bulk-20260805-r48-mt-001",
+    "failedPairsRecovered": 280,
+    "nextRankedPairsAdded": 56,
+    "retainedProviderPagesRecovered": 0,
+    "retainedFailedRun": false,
+    "taxonomyIdentitiesReused": 6,
+    "providerRequestsPrevented": 6,
+    "structuralChange": "The prior five-taxon in-memory process was replaced with six one-taxon child processes of 56 pairs each. One live provider lane was used and the prior failed command was not repeated.",
+    "qualification": "No missing artifact, failed request, source silence, or empty provider result was converted to absence or not detected."
+  },
+  "semanticPreflight": {
+    "jobsAttested": 6,
+    "exactBaseSha": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+    "selectionCommit": "07f7f88168ee0094dc570514e5456f40fb72c6f9",
+    "registrationCommit": "093b67499",
+    "preflightCommit": "0179cff7a",
+    "leaseCommit": "971b27599",
+    "frozenSkillVersion": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "frozenSkillCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "taxonomyCacheSha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "candidatePairCount": 336,
+    "expectedNetworkRequests": 6,
+    "actualPreflightNetworkRequests": 0,
+    "uniqueDeterministicRunPaths": 6,
+    "scopeMismatches": 0,
+    "overlappingLeases": 0,
+    "dependencyResolutionFailures": 0,
+    "writableStagingFailures": 0
+  },
+  "execution": {
+    "jobsAttempted": 6,
+    "jobsCompleted": 6,
+    "jobsFailed": 0,
+    "leasesCompleted": 6,
+    "integrationsCompleted": 6,
+    "mergeConflicts": 0,
+    "workerRetries": 0,
+    "providerRequestRetries": 0,
+    "failedProviderAttempts": 0,
+    "acquisitionManualInterventions": 0,
+    "workerManifestManualInterventions": 0,
+    "mainCommandCorrections": 11,
+    "mainCommandCorrectionDetail": [
+      "Corrected a CommonJS import shape in the portfolio planner before a durable selection was written.",
+      "Corrected a registration timestamp ordering mismatch after the registry rejected the proposal without mutation.",
+      "Corrected an invalid literal newline in the first lease proposal after the claim gate rejected it without mutation.",
+      "Moved the first integration receipt to external staging after the clean-main gate rejected an untracked in-repository receipt.",
+      "Corrected one worker-side semantic validator property name before review; no provider retry or data change occurred.",
+      "Corrected three read-only PowerShell wrapper expressions used for worker audits.",
+      "Replaced one guessed abbreviated worker SHA set with the exact branch SHAs before integration.",
+      "Reran the sixth pinned manifest validator from the worker worktree after a relative path resolved against main.",
+      "Replaced an unsupported PowerShell UTC formatting flag with explicit DateTime UTC formatting.",
+      "Used an exact shell fallback after the canonical patch helper returned Windows access denied.",
+      "Corrected one read-only nested-property aggregation expression while calculating durable metrics."
+    ],
+    "liveWorkerTopology": 1,
+    "machineCapacityWorkers": 3,
+    "providerLimitedTopology": true,
+    "acquisitionSpanSeconds": 2269.361,
+    "summedWorkerWallSeconds": 47.677,
+    "peakObservedRssMb": 1489.094,
+    "integrationLatency": {"averageSeconds": 108.5, "minimumSeconds": 71, "maximumSeconds": 134, "sumSeconds": 651}
+  },
+  "acquisition": {
+    "sourceId": "gbif-preserved-specimens",
+    "completedCountySpeciesOutcomes": 336,
+    "evidenceFoundOutcomes": 0,
+    "noQualifyingEvidenceOutcomes": 336,
+    "positiveYield": 0,
+    "liveProviderCalls": 6,
+    "providerPages": {"liveTaxonomyResponses": 0, "liveOccurrencePages": 6, "additionalPaginationPages": 0},
+    "cachedTaxonomyResponses": 6,
+    "preventedProviderRequests": 6,
+    "sourceResponsesIncludingCache": 12,
+    "providerCandidates": 0,
+    "retainedArtifacts": 12,
+    "retainedArtifactBytes": 2215,
+    "immutableRunBytes": 428603,
+    "pairsPerProviderCall": 56,
+    "netUniquePairMovementPerProviderCall": 56,
+    "netUniquePairMovementPerWorkerHour": 25370.723829099985,
+    "providerCandidatesPerCall": 0
+  },
+  "grossEventVolume": {
+    "pairOutcomes": 336,
+    "assertionEvents": 0,
+    "publicationEligibleAssertions": 0,
+    "reviewEvents": 0,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errors": 0
+  },
+  "netFinalMatrixMovement": {
+    "uniqueCountySpeciesPairs": 336,
+    "verifiedPresent": 0,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 336,
+    "notResearched": -336,
+    "conflicts": 0,
+    "grossOutcomesAlreadyAccountedOrOverlapping": 0
+  },
+  "final": {
+    "asOf": "2026-08-09",
+    "national": {
+      "stateSpecies": {"denominator": 127704, "applicable": 5064, "notApplicable": 0, "unknown": 122640, "blocked": 0, "researchedUnresolved": 1492, "researchBlocked": 54, "partiallyResearched": 0, "untouched": 121094},
+      "countySpecies": {"denominator": 7872576, "verifiedPresent": 56062, "verifiedAbsent": 0, "notDetected": 8, "researchedUnresolved": 347033, "notResearched": 7469473},
+      "protocolCells": {"total": 39866, "applicable": 19376, "notApplicable": 20490, "complete": 5071, "incomplete": 14246, "blocked": 59, "current": 4460, "stale": 611, "undated": 14305},
+      "ledger": {"projectedEvidence": 189224, "immutableAssertions": 159406, "immutableReviews": 159406, "rejections": 43697, "selectedExplicitOutcomePairs": 358005, "rawOutcomes": 466611, "stateSelectedRuns": 570, "immutableRunDirectories": 555, "conflicts": 0},
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "remainingApplicableProtocolCountyScreens": 924855
+    },
+    "montana": {
+      "countySpeciesDenominator": 140224,
+      "verifiedPresent": 267,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 6173,
+      "notResearched": 133784,
+      "fullyAccountedStateSpecies": 115,
+      "applicableStateSpecies": 70,
+      "unknownStateSpecies": 2434,
+      "protocolApplicable": 88,
+      "protocolComplete": 49,
+      "protocolIncomplete": 39,
+      "protocolCurrent": 36,
+      "protocolStale": 13,
+      "protocolUndated": 39,
+      "certificationBlockers": 6
+    },
+    "operations": {
+      "jobs": {"total": 277, "completed": 194, "failed": 60, "cancelled": 21, "blocked": 2, "active": 0},
+      "leases": {"total": 278, "completed": 198, "failed": 69, "cancelled": 9, "recovered": 2, "active": 0},
+      "integrations": {"total": 198, "integrated": 194, "rejected": 2, "changesRequested": 2, "pending": 0}
+    }
+  },
+  "expectedVersusActual": {
+    "expectedNetNewPairs": 336,
+    "actualNetNewPairs": 336,
+    "expectedEvidenceFoundOutcomes": 64,
+    "actualEvidenceFoundOutcomes": 0,
+    "expectedNoQualifyingEvidenceOutcomes": 272,
+    "actualNoQualifyingEvidenceOutcomes": 336,
+    "expectedProviderCalls": 6,
+    "actualProviderCalls": 6,
+    "expectedProtocolCellsClosed": 6,
+    "actualProtocolCellsClosed": 6,
+    "expectedCertificationBlockersRemoved": 0,
+    "actualCertificationBlockersRemoved": 0,
+    "expectedApplicabilityMovement": 0,
+    "actualApplicabilityMovement": 0,
+    "expectedDenominatorMovement": 0,
+    "actualDenominatorMovement": 0
+  },
+  "release": {
+    "generation": {"explicitAsOf": "2026-08-09", "allStateCompilationSeconds": 394.148, "dashboardSeconds": 0.417},
+    "gates": {
+      "status": "pass",
+      "allStateByteStability": {"stateCount": 51, "seconds": 790.748},
+      "researchIntegrity": {"seconds": 417.026, "totalImmutableRuns": 555, "totalRawOutcomes": 466611},
+      "dataIntegritySeconds": 0.562,
+      "stateProjectionIntegrity": {"stateCount": 51, "seconds": 29.595},
+      "orchestration": {"seconds": 0.516, "activeLeases": 0, "errors": 0, "historicalWarningsRetained": true},
+      "typecheckSeconds": 2.471,
+      "lintSeconds": 2.671,
+      "whitespace": "pass",
+      "prohibitedDash": "pass"
+    },
+    "build": {"status": "pass", "nextVersion": "15.5.15", "staticPages": 2512, "compileSeconds": 9.1, "wallSeconds": 24.497},
+    "browserQa": {
+      "status": "pass",
+      "routes": ["/", "/research?state=MT", "/species/tridax-procumbens"],
+      "desktopViewport": {"width": 1440, "height": 1000},
+      "mobileViewport": {"width": 390, "height": 844},
+      "routeViewportChecks": 6,
+      "http200": 6,
+      "horizontalOverflow": false,
+      "brokenImages": 0,
+      "pageWarnings": 0,
+      "localOnlyAnalyticsErrorsPerRoute": 2,
+      "localOnlyAnalyticsQualification": "The local production server does not serve Vercel Analytics and produced the expected insights-script 404 and MIME errors. Production console verification remains required.",
+      "montanaResearchCountVisible": 6173,
+      "tridaxIdentityVisible": true,
+      "screenshotsCaptured": 6,
+      "screenshotsVisuallyInspected": 4,
+      "temporaryQaDirectoriesRemoved": 2
+    },
+    "preDeploymentGate": {
+      "phase": "PRE-DEPLOYMENT",
+      "mode": "Project Isitusa generated data release",
+      "riskLevel": "high",
+      "decision": "GO TO DEPLOY",
+      "matrix": {
+        "sourceOfTruth": "PASSED",
+        "functionality": "PASSED",
+        "visualFidelity": "PASSED",
+        "accessibility": "PASSED",
+        "seoAndDiscovery": "PASSED",
+        "performanceAndResilience": "PASSED",
+        "securityAndPrivacy": "PASSED",
+        "analyticsAndConversion": "NOT APPLICABLE",
+        "monitoringAndOperations": "PASSED",
+        "deployment": "PASSED",
+        "contentAndApprovals": "PASSED",
+        "dataReleaseIntegrity": "PASSED"
+      },
+      "qualification": "GO TO DEPLOY applies only to the locally verified content artifact. Production health requires a separate post-deployment gate against the exact pushed commit."
+    },
+    "externalVerification": {
+      "status": "pending-content-commit-and-deployment",
+      "qualification": "This content evaluation does not self-attest to a future GitHub or Vercel deployment. A separate receipt commit may record only the already-observed content deployment."
+    }
+  },
+  "processLesson": {
+    "lesson": "Adapter memory lifetime, not request size alone, controls safe job shape. Exact one-taxon process isolation converted a nonrecoverable five-taxon failure into six predictable complete runs.",
+    "applied": [
+      "Split the failed multi-taxon scope into one taxon per process.",
+      "Reused all six verified taxonomy identities and prevented six provider requests.",
+      "Kept live provider concurrency at one while MAIN integration and shared generation remained sequential.",
+      "Reported six protocol closures separately from zero applicability, denominator, present, absence, not-detected, and certification-blocker movement.",
+      "Retained the excluded non-binomial cell for taxonomy review rather than repeating a provider call."
+    ],
+    "nextRoundChange": "Use the repository lease builder instead of hand-shaped lease JSON, and keep the next cached cohort one taxon per process until the adapter is redesigned for streaming or bounded per-taxon memory."
+  },
+  "remainingWork": {
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrations": 0,
+    "failedRound56Jobs": 0,
+    "blockedHistoricalJobs": 2,
+    "failedHistoricalJobs": 60,
+    "blockedProtocolCells": 59,
+    "staleProtocolCells": 611,
+    "undatedProtocolCells": 14305,
+    "unknownStateSpeciesApplicabilityDecisions": 122640,
+    "notResearchedCountySpeciesPairs": 7469473,
+    "certifiedStates": 0,
+    "montanaTaxonomyReviewCells": 1,
+    "usgsNasMissingGeographyCells": 7
+  },
+  "nextRankedSourcePortfolio": [
+    {
+      "rank": 1,
+      "workClass": "cached-taxonomy-gbif",
+      "states": ["SC", "NM", "UT", "WY"],
+      "expectedNetNewPairs": 615,
+      "taxa": 20,
+      "reason": "This multi-jurisdiction cohort has the strongest verified next net movement per expected occurrence request with reusable taxonomy identities and no unresolved structural failure."
+    },
+    {
+      "rank": 2,
+      "workClass": "exact-taxonomy-and-geography-exceptions",
+      "states": ["MT", "AK", "AZ", "MI", "OH", "PA", "VT", "WI"],
+      "expectedNetNewPairs": null,
+      "reason": "One Montana non-binomial cell and seven USGS NAS partial cells need exact record review. Replaying the same provider or archive cannot establish completeness."
+    },
+    {
+      "rank": 3,
+      "workClass": "national-bulk-design-plus-authoritative-applicability",
+      "states": ["AL"],
+      "expectedNetNewPairs": 56072,
+      "reason": "Alabama has the largest strategic scope and active certification impact, but 837 uncached taxa require a provider-native GBIF bulk design and separate authoritative applicability work."
+    },
+    {
+      "rank": 4,
+      "workClass": "lower-efficiency-cached-and-uncached-gbif",
+      "states": ["RI", "MA", "NH", "DC"],
+      "expectedNetNewPairs": null,
+      "reason": "These scopes remain useful but have lower expected movement per provider call or weaker verified cache coverage than the four-state cached cohort."
+    }
+  ],
+  "completionForecastByWorkClass": {
+    "automatedNationalAcquisition": {
+      "measuredRound56NetPairsPerWorkerHour": 25370.723829099985,
+      "qualification": "This is summed worker-process time for six zero-candidate one-page calls. It excludes preflight, queue gaps, MAIN integration, generation, provider variation, and release overhead, so it is not an end-to-end completion forecast."
+    },
+    "stateSpecificResearch": {"forecast": null, "qualification": "Authority, geography, taxonomy, pagination, and review burden remain source-specific and cannot be extrapolated from these GBIF screens."},
+    "applicabilityReview": {"unknownStateSpeciesDecisions": 122640, "forecast": null, "qualification": "Round 56 performed no applicability review and measured no applicability throughput."},
+    "blockedExceptions": {"blockedProtocolCells": 59, "taxonomyOrGeographyExceptionCells": 8, "forecast": null, "qualification": "These require exact source, taxonomy, or geography resolution and cannot be inferred from source silence."},
+    "freshnessWork": {"staleProtocolCells": 611, "undatedProtocolCells": 14305, "forecast": null, "qualification": "Round 56 made six current cells but did not measure a general freshness-remediation rate."},
+    "releaseOverhead": {"measuredLocalGenerationAndGateSeconds": 1662.703, "externalDeploymentAndQaSeconds": null, "qualification": "Compilation, dashboard generation, deterministic and integrity gates, projection checks, orchestration, typecheck, lint, and build are measured. Browser CLI wall time was not captured as one durable interval. Deployment, production QA, and the external receipt remain pending."
+    }
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationMarkedComplete": false,
+    "failedRequestMarkedComplete": false
+  }
+}

@@ -10,17 +10,17 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Verified present: `267`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5837`
-- Not researched: `134120`
+- Researched unresolved: `6173`
+- Not researched: `133784`
 - Determination coverage: `0.19%`
-- Research coverage: `4.35%`
-- Explicit outcome coverage: `4.3530%`
+- Research coverage: `4.59%`
+- Explicit outcome coverage: `4.5927%`
 - Applicable protocol cells: `88`
-- Current complete protocol cells: `30`
-- Protocol completion: `48.86%`
-- Current protocol completion: `34.09%`
+- Current complete protocol cells: `36`
+- Protocol completion: `55.68%`
+- Current protocol completion: `40.91%`
 - Evidence records: `267`
-- Research runs: `8`
+- Research runs: `14`
 - Rejection records: `6`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,12 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 56 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 56 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 56 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 56 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 56 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 56 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 56 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 56 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 56 | 2 |
@@ -57,6 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 56 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 56 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 56 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 56 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 56 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 56 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 56 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 56 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 56 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-03T20:41:07.422Z | 0 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-09T09:24:48.738Z | 0 | 31 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
