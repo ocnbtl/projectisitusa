@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260809-r55",
+  "recordedAt": "2026-08-09T05:40:04.000Z",
+  "hostCounterTimestamp": "2026-08-09T05:42:52.4870354Z",
+  "clockQualification": "GitHub API Date controls the Round 55 contract timestamp. Windows counters are retained only as raw resource lineage.",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "8738dace3649334c3c4fda3a8dafdd070c64743f",
+  "capacityTier": "green-provider-limited",
+  "workerCount": 1,
+  "machineCapacityWorkerCount": 3,
+  "providerSafeLiveWorkerCount": 1,
+  "perWorkerReservationMiB": 1600,
+  "observedRound54PeakMemoryMiB": 1492.523,
+  "totalPhysicalMiB": 31900.917969,
+  "freePhysicalMiB": 8555.058594,
+  "projectedPostWorkerFreePhysicalMiB": 6955.058594,
+  "commitHeadroomMiB": 11833.445313,
+  "projectedPostWorkerFreeCommitMiB": 10233.445313,
+  "freeDiskMiB": 809740.078125,
+  "totalDiskMiB": 1906665.996094,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 8970629120,
+    "committedBytes": 41443364864,
+    "commitLimitBytes": 53851631616,
+    "diskFreeBytes": 849074012160,
+    "diskTotalBytes": 1999284203520
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091797,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.899414,
+    "projectedThreeWorkerFreePhysicalMiB": 3755.058594,
+    "projectedThreeWorkerFreeCommitMiB": 7033.445313,
+    "qualification": "The machine can reserve three 1600 MiB workers while retaining 3755.059 MiB physical and 7033.445 MiB commit headroom. Round 55 deliberately binds one live worker because gbif-preserved-specimens is registered at three requests per second and Round 54 four-way acquisition produced five HTTP 429 semantic failures."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": false,
+    "health": "not-probed-before-contract",
+    "recentObservedCondition": "Round 54 completed after five HTTP 429 responses were recovered with archive replay and sequential live retries.",
+    "qualification": "No Round 55 provider request is permitted until all selected jobs pass machine-readable semantic preflight. One live lane applies the Round 54 rate-limit lesson."
+  }
+}
