@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "DE",
+    "stateProvince": "Delaware",
+    "candidateLimit": 3,
+    "candidatePairs": [
+      "10001:rottboellia-cochinchinensis",
+      "10003:rottboellia-cochinchinensis",
+      "10005:rottboellia-cochinchinensis"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "DE",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-de-002.json",
+    "declaredCandidateCount": 3,
+    "selectedPairCount": 3,
+    "sha256": "0dd6b5d1db5d447efe76b6102270a8b9c8a2f6345e5c4cbdabd24b1b4cd53773"
+  },
+  "candidateLimit": {
+    "value": 3,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "rottboellia-cochinchinensis"
+  ],
+  "selectedPairKeys": [
+    "10001:rottboellia-cochinchinensis",
+    "10003:rottboellia-cochinchinensis",
+    "10005:rottboellia-cochinchinensis"
+  ],
+  "selectedPairHash": "954a63af97cf41e81ceb2c850720166db68da121de1fbaf96347b28b8ccf7a9e",
+  "parameterHash": "6660963a529d7698a5a147454151661d23e0a4dffbe0b445892a65dc7296273b",
+  "startedAt": "2026-08-09T23:55:00.000Z",
+  "deterministicRunSuffix": "6660963a529d",
+  "expectedRunPath": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "rottboellia-cochinchinensis",
+        "scientificName": "Rottboellia cochinchinensis",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Rottboellia+cochinchinensis&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-09T00:13:18.548Z",
+        "responseBodySha256": "84f5874631da76a45687e80f31e0fb4ca882104e250e345f183b8e5d71b303d8",
+        "provenance": {
+          "runId": "20260809T000141Z__gbif-preserved-specimens__529528b04875",
+          "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260809T000141Z__gbif-preserved-specimens__529528b04875/source-verification.json",
+          "sourceVerificationSha256": "3ede9b9ab0cf67925eb45305b0ae31a1a8984550414b02cd035100c368ee8408",
+          "artifactPath": "src/data/research/runs/20260809T000141Z__gbif-preserved-specimens__529528b04875/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+          "artifactSha256": "2eeee55b2f7afd7fa66f423e6c9d5fc4876ce724bcc745c5164eb72217639813",
+          "artifactBytes": 293
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-de-002\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "DE",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-de-002.json",
+    "--candidate-limit",
+    "3",
+    "--started-at",
+    "2026-08-09T23:55:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-de-002\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

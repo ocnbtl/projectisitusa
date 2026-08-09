@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:sparganium-erectum",
+      "44003:sparganium-erectum",
+      "44005:sparganium-erectum",
+      "44007:sparganium-erectum",
+      "44009:sparganium-erectum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "RI",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-008.json",
+    "declaredCandidateCount": 5,
+    "selectedPairCount": 5,
+    "sha256": "171225f46dd3516d53f43de42fbeb3a2d70eb64bb231566a6a87068d5f771150"
+  },
+  "candidateLimit": {
+    "value": 5,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "sparganium-erectum"
+  ],
+  "selectedPairKeys": [
+    "44001:sparganium-erectum",
+    "44003:sparganium-erectum",
+    "44005:sparganium-erectum",
+    "44007:sparganium-erectum",
+    "44009:sparganium-erectum"
+  ],
+  "selectedPairHash": "a91b20da3c02edd376cab9485e0a6fe24d543a60a4a4bd6128d0dfe83daa5726",
+  "parameterHash": "fa045cab9b5f646ce9a06789c35102c4704b4d6de30f613e0512e9737f8ce555",
+  "startedAt": "2026-08-09T23:55:00.000Z",
+  "deterministicRunSuffix": "fa045cab9b5f",
+  "expectedRunPath": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "sparganium-erectum",
+        "scientificName": "Sparganium erectum",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Sparganium+erectum&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-09T00:14:24.754Z",
+        "responseBodySha256": "a8cb31028d8a2a2a64f8f48f1d163174c530e2378b1fba4b925855eed19d98ff",
+        "provenance": {
+          "runId": "20260809T000146Z__gbif-preserved-specimens__5680468ae83e",
+          "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260809T000146Z__gbif-preserved-specimens__5680468ae83e/source-verification.json",
+          "sourceVerificationSha256": "cb3b2b93104aecac1e8aaf0e2cbc72550a7565a7a1cc5bb8b905728d11564810",
+          "artifactPath": "src/data/research/runs/20260809T000146Z__gbif-preserved-specimens__5680468ae83e/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+          "artifactSha256": "14db2b237f6595c0d6330ad17e13b9f1599a024b50acf61aa126d25c9c8981ab",
+          "artifactBytes": 282
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-008\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "RI",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-ri-008.json",
+    "--candidate-limit",
+    "5",
+    "--started-at",
+    "2026-08-09T23:55:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-008\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

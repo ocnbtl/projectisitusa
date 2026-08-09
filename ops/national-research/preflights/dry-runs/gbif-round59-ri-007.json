@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:solanum-viarum",
+      "44003:solanum-viarum",
+      "44005:solanum-viarum",
+      "44007:solanum-viarum",
+      "44009:solanum-viarum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "RI",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-007.json",
+    "declaredCandidateCount": 5,
+    "selectedPairCount": 5,
+    "sha256": "e994b338598e5beaf0e08879fdafe939af67e71ae6e73fc7f85fe14df4a0a75b"
+  },
+  "candidateLimit": {
+    "value": 5,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "solanum-viarum"
+  ],
+  "selectedPairKeys": [
+    "44001:solanum-viarum",
+    "44003:solanum-viarum",
+    "44005:solanum-viarum",
+    "44007:solanum-viarum",
+    "44009:solanum-viarum"
+  ],
+  "selectedPairHash": "99ccd09a53553f1e76646bf7830b8ed9d457d645ddc797ebd26909dc6519323c",
+  "parameterHash": "fb4ce029925b7daf34e93c1ac1a93f2bf655f6edcc6cbf0af8eb04b2b1b3079d",
+  "startedAt": "2026-08-09T23:55:00.000Z",
+  "deterministicRunSuffix": "fb4ce029925b",
+  "expectedRunPath": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fb4ce029925b",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "solanum-viarum",
+        "scientificName": "Solanum viarum",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Solanum+viarum&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-09T00:13:09.237Z",
+        "responseBodySha256": "40837fb6fa9117d8b6b41cc307cbbd40b12912495197e5cb6440b974dfcd6c07",
+        "provenance": {
+          "runId": "20260809T000142Z__gbif-preserved-specimens__34cdc82b641d",
+          "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/source-verification.json",
+          "sourceVerificationSha256": "da58c450659ef0e3af8c383956493bcfa5315cf0f6d2aeb1104c96d7d24fa62b",
+          "artifactPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/artifacts/gbif-species-match-solanum-viarum.json.gz",
+          "artifactSha256": "901c25e85dcd2301e9dd4af864ba9fa1b0dc9718008a7a520672297b422af125",
+          "artifactBytes": 277
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-007\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "RI",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-ri-007.json",
+    "--candidate-limit",
+    "5",
+    "--started-at",
+    "2026-08-09T23:55:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-007\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

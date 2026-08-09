@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:urochloa-panicoides",
+      "44003:urochloa-panicoides",
+      "44005:urochloa-panicoides",
+      "44007:urochloa-panicoides",
+      "44009:urochloa-panicoides"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "RI",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-010.json",
+    "declaredCandidateCount": 5,
+    "selectedPairCount": 5,
+    "sha256": "0cd4c202362c4c3e59cab3e2b5fadab796644decca34220b0e15187da34cdb5d"
+  },
+  "candidateLimit": {
+    "value": 5,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "urochloa-panicoides"
+  ],
+  "selectedPairKeys": [
+    "44001:urochloa-panicoides",
+    "44003:urochloa-panicoides",
+    "44005:urochloa-panicoides",
+    "44007:urochloa-panicoides",
+    "44009:urochloa-panicoides"
+  ],
+  "selectedPairHash": "f02a79359fbea40528248a50b9f1bdfc3028be1fd7df394ad0c933bd958695f8",
+  "parameterHash": "f48bb5103e741007b5be73296eaa5a340c6dff1917eab0f82b620c86a75369f7",
+  "startedAt": "2026-08-09T23:55:00.000Z",
+  "deterministicRunSuffix": "f48bb5103e74",
+  "expectedRunPath": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "urochloa-panicoides",
+        "scientificName": "Urochloa panicoides",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Urochloa+panicoides&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-09T00:13:17.445Z",
+        "responseBodySha256": "6edcc445d9a70f6168677c4b0e6d947aa8b93087cbae5aaf2b2c67a53ef8bc09",
+        "provenance": {
+          "runId": "20260809T000142Z__gbif-preserved-specimens__34cdc82b641d",
+          "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/source-verification.json",
+          "sourceVerificationSha256": "da58c450659ef0e3af8c383956493bcfa5315cf0f6d2aeb1104c96d7d24fa62b",
+          "artifactPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+          "artifactSha256": "96ff3da9fe029f20f590da671b2049d75e51eb7b66f97e4d435106101bb088bf",
+          "artifactBytes": 282
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-010\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "RI",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-ri-010.json",
+    "--candidate-limit",
+    "5",
+    "--started-at",
+    "2026-08-09T23:55:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-010\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

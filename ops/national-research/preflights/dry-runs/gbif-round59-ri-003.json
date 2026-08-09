@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:saccharum-spontaneum",
+      "44003:saccharum-spontaneum",
+      "44005:saccharum-spontaneum",
+      "44007:saccharum-spontaneum",
+      "44009:saccharum-spontaneum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "RI",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-003.json",
+    "declaredCandidateCount": 5,
+    "selectedPairCount": 5,
+    "sha256": "f366dd65d0df8ace1df0cb1b06fb8b98ae0c6cf6e7a01ba017b1e719c43e9e1d"
+  },
+  "candidateLimit": {
+    "value": 5,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "saccharum-spontaneum"
+  ],
+  "selectedPairKeys": [
+    "44001:saccharum-spontaneum",
+    "44003:saccharum-spontaneum",
+    "44005:saccharum-spontaneum",
+    "44007:saccharum-spontaneum",
+    "44009:saccharum-spontaneum"
+  ],
+  "selectedPairHash": "432390a26474050893d612bfebe1bc7d32837a0d097a02e018a18d4f1710ba96",
+  "parameterHash": "c461c29f2b202338f62e3cb150a6a35397cb3a71d8358f400a1343f47d94094b",
+  "startedAt": "2026-08-09T23:55:00.000Z",
+  "deterministicRunSuffix": "c461c29f2b20",
+  "expectedRunPath": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "saccharum-spontaneum",
+        "scientificName": "Saccharum spontaneum",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Saccharum+spontaneum&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-09T00:13:03.086Z",
+        "responseBodySha256": "3c92809551d46b31c68c8ad6767e20ba9eb5319ddde7ccc0335f39f25f73ae89",
+        "provenance": {
+          "runId": "20260809T000142Z__gbif-preserved-specimens__34cdc82b641d",
+          "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/source-verification.json",
+          "sourceVerificationSha256": "da58c450659ef0e3af8c383956493bcfa5315cf0f6d2aeb1104c96d7d24fa62b",
+          "artifactPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+          "artifactSha256": "05536495c6b3620dbc97c72fbaa0541464589a497a7e046e83f5f07e009f6a3c",
+          "artifactBytes": 278
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-003\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "RI",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-ri-003.json",
+    "--candidate-limit",
+    "5",
+    "--started-at",
+    "2026-08-09T23:55:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-003\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

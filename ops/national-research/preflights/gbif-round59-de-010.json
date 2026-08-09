@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-round59-de-010-20260809T235800000Z",
+  "createdAt": "2026-08-09T23:58:00.000Z",
+  "result": "pass",
+  "jobId": "gbif-round59-de-010",
+  "exactBaseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "DE",
+      "stateProvince": "Delaware",
+      "candidateLimit": 3,
+      "candidatePairs": [
+        "10001:urochloa-panicoides",
+        "10003:urochloa-panicoides",
+        "10005:urochloa-panicoides"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "DE"
+    ],
+    "taxa": [
+      "urochloa-panicoides"
+    ],
+    "pairs": [
+      "10001:urochloa-panicoides",
+      "10003:urochloa-panicoides",
+      "10005:urochloa-panicoides"
+    ],
+    "pairCount": 3,
+    "pairHash": "d11f5957b4ac85fcc20333ca7675b4e01ac31d2378bcc34e337b8433fd831e88"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-de-010.json",
+    "declaredCandidateCount": 3,
+    "selectedPairCount": 3,
+    "sha256": "a63bf3aaea5989e20eab11c46a7f7047861a6ffcfa512954f461329df01cbc60"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 3,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-de-010\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "DE",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-de-010.json",
+    "--candidate-limit",
+    "3",
+    "--started-at",
+    "2026-08-09T23:55:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-de-010\\attempt-telemetry.json"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expectedPositivePairRange": {
+    "minimum": 0,
+    "maximum": 3,
+    "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-09T23:55:00.000Z",
+    "parameterHash": "0c00b106cc1cebce3c3b50e743bf0dc77e7f1be75245dce0878f012e84f36582",
+    "suffix": "0c00b106cc1c",
+    "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__0c00b106cc1c"
+  },
+  "expectedReceiptCodeCommit": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__0c00b106cc1c/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-59-20260809/gbif-round59-de-010.json",
+        "blob": "60b08b2c692a56aff5c57606f309556588e8e0d9"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "blob": "e39ef97d94a8dd6dbcd61a6020b42072bcfde344"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-de-010\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "DE",
+    "orderedPairHash": "d11f5957b4ac85fcc20333ca7675b4e01ac31d2378bcc34e337b8433fd831e88",
+    "parameterHash": "0c00b106cc1cebce3c3b50e743bf0dc77e7f1be75245dce0878f012e84f36582",
+    "runPath": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__0c00b106cc1c"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260809-r55",
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+      "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "urochloa-panicoides",
+          "scientificName": "Urochloa panicoides",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Urochloa+panicoides&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-09T00:13:17.445Z",
+          "responseBodySha256": "6edcc445d9a70f6168677c4b0e6d947aa8b93087cbae5aaf2b2c67a53ef8bc09",
+          "provenance": {
+            "runId": "20260809T000142Z__gbif-preserved-specimens__34cdc82b641d",
+            "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/source-verification.json",
+            "sourceVerificationSha256": "da58c450659ef0e3af8c383956493bcfa5315cf0f6d2aeb1104c96d7d24fa62b",
+            "artifactPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+            "artifactSha256": "96ff3da9fe029f20f590da671b2049d75e51eb7b66f97e4d435106101bb088bf",
+            "artifactBytes": 282
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "schemaVersion": 1,
+    "evaluationId": "windows-desktop-capacity-20260809-r59",
+    "recordedAt": "2026-08-09T23:57:06.2798023Z",
+    "hostCounterTimestamp": "2026-08-09T23:57:06.2813048Z",
+    "clockQualification": "Windows UTC controls this resource gate. Provider-native response timestamps control acquisition receipts.",
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+    "capacityTier": "green-with-recent-yellow-variability",
+    "workerCount": 4,
+    "initialLiveProviderWorkerCount": 1,
+    "postCanaryMaximumLiveProviderWorkerCount": 4,
+    "machineCapacityWorkerCount": 6,
+    "perWorkerReservationMiB": 768,
+    "observedRound58SparsePeakMemoryRangeMiB": [
+      193.102,
+      226.043
+    ],
+    "totalPhysicalMiB": 31900.91796875,
+    "freePhysicalMiB": 8525.0078125,
+    "projectedPostWorkerFreePhysicalMiB": 5453.0078125,
+    "commitHeadroomMiB": 10510.74609375,
+    "projectedPostWorkerFreeCommitMiB": 7438.74609375,
+    "freeDiskMiB": 703828.23828125,
+    "totalDiskMiB": 1906665.99609375,
+    "rawMeasurements": {
+      "totalPhysicalBytes": 33450536960,
+      "availablePhysicalBytes": 8939118592,
+      "committedBytes": 42830315520,
+      "commitLimitBytes": 53851631616,
+      "pageReadsPerSecond": 2.9883543829695673,
+      "pageWritesPerSecond": 0,
+      "diskFreeBytes": 738017398784,
+      "diskTotalBytes": 1999284203520
+    },
+    "recentVariability": {
+      "earlierObservedAt": "2026-08-09T20:18:00.000Z",
+      "earlierAvailablePhysicalMiB": 6090.391,
+      "earlierAvailablePercent": 19.092,
+      "qualification": "The earlier sample was yellow. Four sparse 768 MiB reservations would have fallen below the physical floor then, so live concurrency may increase only against a fresh green gate."
+    },
+    "resourceGate": {
+      "result": "pass",
+      "physicalFloorMiB": 3190.091796875,
+      "commitFloorMiB": 3072,
+      "diskFloorMiB": 285999.8994140625,
+      "qualification": "Four sparse 768 MiB reservations preserve current physical, commit, and disk floors. Start with one VT live canary; scale only after a fresh green sample and clean provider result."
+    },
+    "provider": {
+      "sourceId": "gbif-preserved-specimens",
+      "contactedBeforeSemanticPreflight": true,
+      "healthProbeRequests": 1,
+      "health": "HTTP 200 in 1,011 ms",
+      "processException": "A read-only truth-audit health probe contacted the provider before Round 59 job preflights existed. It acquired no evidence and is retained as a process exception. No occurrence acquisition is permitted until the selected job passes machine-readable semantic preflight and is leased.",
+      "recentObservedCondition": "Round 58 completed 20 live occurrence requests without provider failure or retry."
+    }
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-round59-de-010.json",
+    "sha256": "3a353828d1a025e0689e3748b918ad6f76d8faf72fac239f72b68e051c5bc90b",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}

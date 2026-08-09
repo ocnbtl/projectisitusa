@@ -1,0 +1,57 @@
+{
+    "schemaVersion":  1,
+    "evaluationId":  "windows-desktop-capacity-20260809-r59",
+    "recordedAt":  "2026-08-09T23:57:06.2798023Z",
+    "hostCounterTimestamp":  "2026-08-09T23:57:06.2813048Z",
+    "clockQualification":  "Windows UTC controls this resource gate. Provider-native response timestamps control acquisition receipts.",
+    "canonicalCheckout":  "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha":  "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+    "capacityTier":  "green-with-recent-yellow-variability",
+    "workerCount":  4,
+    "initialLiveProviderWorkerCount":  1,
+    "postCanaryMaximumLiveProviderWorkerCount":  4,
+    "machineCapacityWorkerCount":  6,
+    "perWorkerReservationMiB":  768,
+    "observedRound58SparsePeakMemoryRangeMiB":  [
+                                                    193.102,
+                                                    226.043
+                                                ],
+    "totalPhysicalMiB":  31900.91796875,
+    "freePhysicalMiB":  8525.0078125,
+    "projectedPostWorkerFreePhysicalMiB":  5453.0078125,
+    "commitHeadroomMiB":  10510.74609375,
+    "projectedPostWorkerFreeCommitMiB":  7438.74609375,
+    "freeDiskMiB":  703828.23828125,
+    "totalDiskMiB":  1906665.99609375,
+    "rawMeasurements":  {
+                            "totalPhysicalBytes":  33450536960,
+                            "availablePhysicalBytes":  8939118592,
+                            "committedBytes":  42830315520,
+                            "commitLimitBytes":  53851631616,
+                            "pageReadsPerSecond":  2.9883543829695673,
+                            "pageWritesPerSecond":  0,
+                            "diskFreeBytes":  738017398784,
+                            "diskTotalBytes":  1999284203520
+                        },
+    "recentVariability":  {
+                              "earlierObservedAt":  "2026-08-09T20:18:00.000Z",
+                              "earlierAvailablePhysicalMiB":  6090.391,
+                              "earlierAvailablePercent":  19.092,
+                              "qualification":  "The earlier sample was yellow. Four sparse 768 MiB reservations would have fallen below the physical floor then, so live concurrency may increase only against a fresh green gate."
+                          },
+    "resourceGate":  {
+                         "result":  "pass",
+                         "physicalFloorMiB":  3190.091796875,
+                         "commitFloorMiB":  3072,
+                         "diskFloorMiB":  285999.8994140625,
+                         "qualification":  "Four sparse 768 MiB reservations preserve current physical, commit, and disk floors. Start with one VT live canary; scale only after a fresh green sample and clean provider result."
+                     },
+    "provider":  {
+                     "sourceId":  "gbif-preserved-specimens",
+                     "contactedBeforeSemanticPreflight":  true,
+                     "healthProbeRequests":  1,
+                     "health":  "HTTP 200 in 1,011 ms",
+                     "processException":  "A read-only truth-audit health probe contacted the provider before Round 59 job preflights existed. It acquired no evidence and is retained as a process exception. No occurrence acquisition is permitted until the selected job passes machine-readable semantic preflight and is leased.",
+                     "recentObservedCondition":  "Round 58 completed 20 live occurrence requests without provider failure or retry."
+                 }
+}
