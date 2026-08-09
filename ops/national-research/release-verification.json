@@ -1679,6 +1679,164 @@
       ],
       "clockQualification": "The Windows host clock remains approximately one hour ahead of GitHub and Vercel provider timestamps. Deployment duration uses Vercel provider-native epochs, and verification time is the GitHub API Date header captured after all production checks.",
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 53 content SHA e69394f602de50a4638ae126311c9e6ac4786143; GitHub Production deployment 5812149749 succeeded; Git-linked Vercel deployment dpl_DN3qet2bCAuThYj2JvCKMqWR4c78 reached READY and its build log identified commit e69394f on main; the production alias resolved to that deployment; six intended live routes passed; Nevada, Oregon, and Vermont summary plus selected county files matched local SHA-256 and bytes exactly; fresh Oregon desktop and Vermont mobile browser behavior passed without console warnings, console errors, or horizontal overflow; the exact deployment returned zero error-level and zero 5xx log rows; and the complete receipt-era national research-integrity suite passed. Round 53 completed 1573 county-species outcomes and moved 1033 unique final-matrix pairs across Nevada, Oregon, and Vermont, including 72 verified-present and 961 researched-unresolved movements, closing 69 protocol cells and removing four certification blockers. It created no verified-absence, not-detected, applicability, denominator, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-12dc55c89-2026-08-09",
+      "verifiedAt": "2026-08-09T02:04:23.000Z",
+      "commitSha": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+      "githubMainSha": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+      "githubDeploymentId": 5814517673,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-ht8vezgay-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": "dpl_CCmnpRauE1cMmRGz9rRGHHGE8V1G",
+      "vercelDeploymentId": "dpl_CCmnpRauE1cMmRGz9rRGHHGE8V1G",
+      "vercelDeploymentUrl": "projectisitusa-ht8vezgay-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "READY",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+        "releaseCommitMetadata": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "GitHub commit status, GitHub Production deployment status, immutable deployment HTTP, and canonical alias HTTP"
+      },
+      "deploymentAttempts": [
+        {
+          "id": "dpl_CCmnpRauE1cMmRGz9rRGHHGE8V1G",
+          "source": "git",
+          "state": "READY",
+          "statusPendingAt": "2026-08-09T01:41:26.000Z",
+          "statusSuccessAt": "2026-08-09T01:45:12.000Z",
+          "githubDeploymentCompletedAt": "2026-08-09T01:45:13.000Z",
+          "durationSeconds": 226,
+          "buildSeconds": null,
+          "githubCommitSha": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+          "active": true,
+          "qualification": "Duration is measured from the GitHub Vercel commit status pending timestamp to its success timestamp. Exact Vercel build duration is unavailable because the configured Vercel CLI token is invalid."
+        }
+      ],
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200,
+          "bytes": 3817212
+        },
+        {
+          "path": "/about",
+          "status": 200,
+          "bytes": 21681
+        },
+        {
+          "path": "/research",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/research?state=WA",
+          "status": 200,
+          "bytes": 13848
+        },
+        {
+          "path": "/species/tree-of-heaven",
+          "status": 200,
+          "bytes": 30336
+        },
+        {
+          "path": "/?county=53033&species=tree-of-heaven",
+          "status": 200,
+          "bytes": 3817212
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/WA/summary.json",
+          "bytes": 145721,
+          "sha256": "d0c3d095b4fa9d45ada54ac88b0c2a3c8a3ddbf2ac60f71b6bfdea06ebb4bbaf"
+        },
+        {
+          "path": "/generated/research/WA/counties/53001.json",
+          "bytes": 115671,
+          "sha256": "b8d37044efa3e10e563cb8e8cf3205191af4ab99145a5a501bb68cd95f29afeb"
+        },
+        {
+          "path": "/generated/research/WA/counties/53033.json",
+          "bytes": 441918,
+          "sha256": "785c6939c43a3276daf6e78ef52049e4569702dbe625ed8321bb4189e549465e"
+        },
+        {
+          "path": "/generated/research/WA/counties/53053.json",
+          "bytes": 286615,
+          "sha256": "e1052754ea4234427ee05d7cce9febf36c0a9d1cf0f247aaa5e948b5e78bcb09"
+        },
+        {
+          "path": "/generated/research/WA/counties/53063.json",
+          "bytes": 226391,
+          "sha256": "57bdaf8c94c8354013c88962e0d9438abd146d8ec9477c663b2643855743f70d"
+        },
+        {
+          "path": "/generated/research/WA/counties/53077.json",
+          "bytes": 178545,
+          "sha256": "3bf88b12ad9dc7e9fee2d6d45105c6246eef3e130a9f4ac215c293cd163398c0"
+        }
+      ],
+      "byteParityHosts": [
+        "https://projectisitusa-ht8vezgay-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "byteParityHostFileIdentitiesPassed": 12,
+      "browserQa": {
+        "desktopViewport": "1440x900",
+        "mobileViewport": "390x844",
+        "state": "WA",
+        "counts": {
+          "verifiedPresent": 1319,
+          "researchedUnresolved": 4336,
+          "notResearched": 92001,
+          "denominator": 97656
+        },
+        "asOf": "2026-08-09",
+        "researchRoutePassed": true,
+        "speciesRoutePassed": true,
+        "speciesScientificIdentity": "Ailanthus altissima",
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "temporaryFilesRemoved": 9,
+        "temporaryBytesRemoved": 1092621
+      },
+      "runtimeQa": {
+        "activeDeploymentId": "dpl_CCmnpRauE1cMmRGz9rRGHHGE8V1G",
+        "runtimeErrorLogRows": null,
+        "runtimeFiveHundredLogRows": null,
+        "queryStatus": "unavailable-invalid-vercel-cli-token",
+        "receiptEraResearchIntegritySeconds": 396.207,
+        "qualification": "Exact-deployment runtime log rows were not queryable because the configured Vercel CLI token returned invalid. No zero-log claim is made. Runtime confidence is limited to exact GitHub Production deployment success, direct HTTP 200 responses from both the immutable deployment host and the canonical production alias, twelve live-to-local byte identities, and zero production browser console warnings or errors. The complete receipt-era national research-integrity suite passed in 396.207 seconds; the elapsed-duration field and this failed-wrapper disclosure were filled mechanically afterward."
+      },
+      "roundMovement": {
+        "plannedPairs": 3705,
+        "completedPairs": 3705,
+        "finalMatrixPairsMoved": 3003,
+        "verifiedPresent": 956,
+        "researchedUnresolved": 2047,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 0,
+        "denominatorMovement": 0,
+        "protocolCellsClosed": 95,
+        "certificationBlockersRemoved": 3
+      },
+      "qaToolingInterventions": [
+        "The configured Vercel CLI token returned invalid, so exact runtime logs and private deployment metadata were not claimed; GitHub provider status plus immutable and canonical HTTP evidence established the bounded release identity.",
+        "The sandboxed npx launcher attempted to resolve the Playwright package from the registry, so the already-cached CLI was invoked directly without downloading or changing dependencies.",
+        "One malformed quoted Playwright expression created a 235-byte temporary error-output file; it was inspected and removed before the receipt-era gate.",
+        "One Playwright run-code wait expression returned SyntaxError after navigation while leaving the page loaded; direct page evaluation, screenshots, and clean consoles supplied the final mobile evidence.",
+        "The first consolidated final assertion harness collapsed six comma-separated PowerShell checks into one scalar; direct named assertions then passed all six checks."
+      ],
+      "clockQualification": "Provider-native GitHub UTC timestamps control deployment and verification timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, desktop, mobile, and species-page checks.",
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched exact Round 54 content SHA 12dc55c8939d2a70d98c983fa6f897910270cdba; GitHub Production deployment 5814517673 succeeded; the Git-linked Vercel target identified deployment dpl_CCmnpRauE1cMmRGz9rRGHHGE8V1G; both its immutable host and the canonical production alias served all intended routes; six selected Washington files matched local SHA-256 and bytes on both hosts; and fresh Washington desktop, Washington mobile, and Tree-of-Heaven mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete receipt-era national research-integrity suite passed in 396.207 seconds. Exact-deployment runtime logs were unavailable because the configured Vercel CLI token is invalid, and no zero-log result is claimed. Round 54 completed 3705 county-species outcomes and moved 3003 unique final-matrix pairs in Washington, including 956 verified-present and 2047 researched-unresolved movements, closing 95 protocol cells and removing three certification blockers. It created no verified-absence, not-detected, applicability, denominator, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }

@@ -3,7 +3,7 @@
   "evaluationId": "round-54-gbif-washington-20260809-r1",
   "roundId": "round-54-20260808",
   "evaluatedAt": "2026-08-09T01:35:27.642Z",
-  "result": "complete-local-release-gates-pending-external-verification",
+  "result": "complete-released-and-externally-verified",
   "releaseThreshold": {
     "met": true,
     "basis": "A material Washington GBIF source-family milestone completed 3705 exact county-species screens, moved 3003 unique final-matrix pairs, added 956 verified-present pairs, closed 95 protocol cells, removed three certification blockers, and retained eight complete immutable recovery partitions."
@@ -183,18 +183,23 @@
       "providerRequestRetries": 5,
       "livePairRetries": 195,
       "recoveryJobs": 8,
-      "releaseDeployments": 0
+      "releaseDeployments": 1
     },
     "manualInterventions": {
       "workerAcquisition": 2,
-      "orchestrationCorrections": 6,
+      "orchestrationCorrections": 11,
       "items": [
         "Changed the initial four-worker live topology after five HTTP 429 responses to four zero-network archive replays plus four sequential missing-request retries.",
         "Promoted the verified Echium vulgare taxonomy identity into a provenance-bound recovery cache before the live retry, preventing a repeated taxonomy call.",
         "Removed attempt telemetry accidentally copied inside eight immutable run directories because it was not declared by the closed run contract; preserved the same telemetry under MAIN-owned operations paths and rebuilt manifests.",
         "Normalized generated recovery contract line endings after the whitespace gate rejected them before acquisition.",
         "Reran two review receipts with millisecond-normalized UTC timestamps after seven-digit host formatting failed exact equality before queue mutation.",
-        "Reinvoked the disk-budget gate as a zero-worker postflight after the default dispatch contract correctly rejected zero workers."
+        "Reinvoked the disk-budget gate as a zero-worker postflight after the default dispatch contract correctly rejected zero workers.",
+        "The configured Vercel CLI token returned invalid, so exact runtime logs and private deployment metadata were not claimed; GitHub provider status plus immutable and canonical HTTP evidence established the bounded release identity.",
+        "The sandboxed npx launcher attempted to resolve the Playwright package from the registry, so the already-cached CLI was invoked directly without downloading or changing dependencies.",
+        "One malformed quoted Playwright expression created a 235-byte temporary error-output file; it was inspected and removed before the receipt-era gate.",
+        "One Playwright run-code wait expression returned SyntaxError after navigation while leaving the page loaded; direct page evaluation, screenshots, and clean consoles supplied the final mobile evidence.",
+        "The first consolidated final assertion harness collapsed six comma-separated PowerShell checks into one scalar; direct named assertions then passed all six checks."
       ]
     }
   },
@@ -4896,7 +4901,7 @@
     "qualification": "Washington now has all 163 applicable protocol cells complete and 150 current, but authoritative scope, full-catalog accounting, and baseline coverage still block certification."
   },
   "final": {
-    "contentCommit": null,
+    "contentCommit": "12dc55c8939d2a70d98c983fa6f897910270cdba",
     "asOf": "2026-08-09",
     "stateSpecies": {
       "denominator": 127704,
@@ -5012,11 +5017,13 @@
     "localProductionBuildSeconds": 23.874,
     "localBrowserQaSeconds": 69.5,
     "knownLocalSequentialSeconds": 1833.341,
-    "pushSeconds": null,
+    "pushSeconds": 21.215,
     "deploymentBuildSeconds": null,
-    "deploymentSeconds": null,
-    "productionQaSeconds": null,
-    "qualification": "Build-time local generation, validation, build, and browser QA are measured. External push, deployment, live parity, browser, and runtime-log overhead remain null until observed and will be recorded only in the later external verification receipt commit."
+    "deploymentSeconds": 226,
+    "productionQaSeconds": 1150,
+    "qualification": "Known local generation, validation, build, push, provider-status deployment, production QA, and receipt-era integrity time is retained. Deployment duration uses provider-native GitHub Vercel status timestamps. Exact Vercel build and runtime-log timing are unavailable because the configured CLI token is invalid. The 396.207-second receipt-era suite passed on the complete external receipt object; the elapsed-duration field and this failed-wrapper disclosure were filled mechanically afterward.",
+    "receiptEraResearchIntegritySeconds": 396.207,
+    "knownSequentialReleaseSeconds": 3626.763
   },
   "localBrowserQa": {
     "routes": [
@@ -5042,8 +5049,34 @@
     "temporaryQaBytesRemoved": 1834602
   },
   "externalVerification": {
-    "status": "pending",
-    "qualification": "No content commit, GitHub main observation, production deployment, live route parity, browser console result, or exact-deployment log result is claimed by this build-time evaluation."
+    "status": "complete",
+    "verifiedAt": "2026-08-09T02:04:23.000Z",
+    "contentCommit": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+    "githubMainSha": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+    "githubDeploymentId": 5814517673,
+    "githubDeploymentState": "success",
+    "githubDeploymentEnvironmentUrl": "https://projectisitusa-ht8vezgay-unigentamos.vercel.app",
+    "vercelDeploymentId": "dpl_CCmnpRauE1cMmRGz9rRGHHGE8V1G",
+    "vercelDeploymentUrl": "projectisitusa-ht8vezgay-unigentamos.vercel.app",
+    "deploymentState": "READY",
+    "deploymentSource": "git",
+    "deploymentCommitSha": "12dc55c8939d2a70d98c983fa6f897910270cdba",
+    "productionAliasResolved": true,
+    "routeChecksPassed": 6,
+    "selectedByteParityFilesPassed": 6,
+    "byteParityHostFileIdentitiesPassed": 12,
+    "browserConsoleErrors": 0,
+    "browserConsoleWarnings": 0,
+    "desktopHorizontalOverflow": false,
+    "mobileHorizontalOverflow": false,
+    "brokenImages": 0,
+    "runtimeErrorLogRows": null,
+    "runtimeFiveHundredLogRows": null,
+    "runtimeLogQueryStatus": "unavailable-invalid-vercel-cli-token",
+    "receiptEraResearchIntegritySeconds": 396.207,
+    "temporaryQaFilesRemoved": 9,
+    "temporaryQaBytesRemoved": 1092621,
+    "qualification": "GitHub main and Production deployment matched the exact content SHA; both the immutable Vercel host and canonical production alias passed six routes and six selected Washington file identities, for twelve live-to-local byte matches. Fresh desktop, mobile, and species-route behavior passed. Exact runtime-log rows were unavailable because the configured Vercel CLI token is invalid, so no zero-log claim is made. This later receipt evidence attests only to the already-observed content commit, not to the commit that records it or any future deployment. The complete receipt-era national research-integrity suite passed in 396.207 seconds; the elapsed-duration field and this failed-wrapper disclosure were filled mechanically afterward."
   },
   "processLesson": {
     "lesson": "When a national source wave is interrupted, preserve and replay every verified response, shrink live retry scope to only missing requests, and bind provider taxonomy identities to provenance before retry; HTTP failure remains an incomplete screen, never a negative determination.",
