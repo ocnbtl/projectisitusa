@@ -26446,6 +26446,59 @@
         "sha256": "ce3dc66aa2fa22a842ffa1606e48d766402016b14181775cf147a3276d0fc3c9",
         "bytes": 2686
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round57-ut-006-1",
+      "jobId": "gbif-round57-ut-006",
+      "leaseId": "lease-gbif-round57-ut-006-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T14:07:00.000Z",
+      "manifestPath": "manifests/gbif-round57-ut-006__lease-gbif-round57-ut-006-1.json",
+      "manifestHash": "6c4b16d5604cd0155086c91e33603db6c8ec06ac6329b25f75b3c0a51768c94e",
+      "manifestBytes": 8258,
+      "workerCommit": "35dab8a4ff76ab9509ace420b9af1b12f421222b",
+      "workerBranchHead": "be76daa5a1ff6f0ed4bd496df958dcab883d1a00",
+      "reviewedAt": "2026-08-09T14:08:00.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 29 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/assertions.ndjson",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/manifest.json",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/outcomes.ndjson",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/receipt.json",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/rejections.ndjson",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/reviews.ndjson",
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 29 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round57-ut-006-1.json",
+        "sha256": "f64278e113f6a43808e41a4453860b58c7004044ffa9272dbe84573a5c6c93cd",
+        "bytes": 2521
+      }
     }
   ]
 }
