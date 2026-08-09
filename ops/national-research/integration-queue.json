@@ -23249,7 +23249,7 @@
       "queueId": "queue-lease-gbif-round54-wa-archive-004-1",
       "jobId": "gbif-round54-wa-archive-004",
       "leaseId": "lease-gbif-round54-wa-archive-004-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-09T00:24:25Z",
       "manifestPath": "manifests/gbif-round54-wa-archive-004__lease-gbif-round54-wa-archive-004-1.json",
       "manifestHash": "487aa4694420cba12445954d2c1c9cf1f2c256ca56008185a4d7c287ee8203f1",
@@ -23332,6 +23332,32 @@
         "path": "receipts/reviews/queue-lease-gbif-round54-wa-archive-004-1.json",
         "sha256": "1ff96409bb495f32c8cf476e997e142c17b55bf48a55804197431bca651de389",
         "bytes": 7669
+      },
+      "integratedAt": "2026-08-09T00:36:24.511Z",
+      "integrator": "MAIN",
+      "integrationCommit": "d511a51735b0a74eed6bcaf40274d2682b55c45a",
+      "integrationChecks": [
+        {
+          "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-round54-wa-archive-004-1.json",
+        "sha256": "b12a98b1b243877428335e0b7f048ce49feb01ad98d813815efe8df35e59ce9c",
+        "bytes": 7506
       }
     },
     {
