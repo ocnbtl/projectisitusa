@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nj-006-1",
+  "jobId": "gbif-round55-nj-006",
+  "leaseId": "lease-gbif-round55-nj-006-1",
+  "workerCommit": "3971886d796fcf2d275659fc1744100176044dce",
+  "workerBranchHead": "893a4505b6748b7d4463092703ff90a3f892a132",
+  "manifestHash": "630e95b756951656f726c71e9c13ae1b019b4b2a06067172739c815645d4cf74",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-anarsia-lineatella-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-aspidiotus-duplex-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-icerya-purchasi-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-melaleuca-quinquenervia-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-murdannia-keisak-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-spiraea-japonica-000000.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-anarsia-lineatella.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-aspidiotus-duplex.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-icerya-purchasi.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-melaleuca-quinquenervia.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-murdannia-keisak.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-spiraea-japonica.json.gz",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/assertions.ndjson",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/manifest.json",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/outcomes.ndjson",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/receipt.json",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/rejections.ndjson",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/reviews.ndjson",
+    "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:16:58.000Z",
+  "integrationCommit": "459d97b86e62d2edbaaf8a12e13d61e0cd0b7e91"
+}
