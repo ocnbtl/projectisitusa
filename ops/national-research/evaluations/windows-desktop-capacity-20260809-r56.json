@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260809-r56",
+  "recordedAt": "2026-08-09T08:26:18.000Z",
+  "hostCounterTimestamp": "2026-08-09T08:24:23.2997435Z",
+  "clockQualification": "GitHub API Date controls the Round 56 contract timestamp. Windows counters are retained only as raw resource lineage.",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "476861a91885b219da464c85e3f3cf610c01b20a",
+  "capacityTier": "green-provider-limited",
+  "workerCount": 1,
+  "machineCapacityWorkerCount": 3,
+  "providerSafeLiveWorkerCount": 1,
+  "perWorkerReservationMiB": 1600,
+  "observedRound55PeakMemoryMiB": 1473.941,
+  "totalPhysicalMiB": 31900.917969,
+  "freePhysicalMiB": 8154.367188,
+  "projectedPostWorkerFreePhysicalMiB": 6554.367188,
+  "commitHeadroomMiB": 11227.445313,
+  "projectedPostWorkerFreeCommitMiB": 9627.445313,
+  "freeDiskMiB": 773766.902344,
+  "totalDiskMiB": 1906665.996094,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 8550473728,
+    "committedBytes": 42078801920,
+    "commitLimitBytes": 53851631616,
+    "pageReadsPerSecond": 2.9673138510056325,
+    "pageWritesPerSecond": 0,
+    "pageFileUsagePercent": 6.938251696134869,
+    "diskFreeBytes": 811353403392,
+    "diskTotalBytes": 1999284203520
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091797,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.899414,
+    "projectedThreeWorkerFreePhysicalMiB": 3354.367188,
+    "projectedThreeWorkerFreeCommitMiB": 6427.445313,
+    "qualification": "The latest sample is green at 25.562 percent available RAM and can reserve three measured-peak workers while retaining the physical and commit floors. An earlier 08:04:36Z sample was yellow at 23.913 percent, so capacity is near the tier boundary. Round 56 binds one live worker because provider history and the source-wide dynamic rate contract are the tighter limits."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": false,
+    "health": "not-probed-before-contract",
+    "recentObservedCondition": "Round 55 completed 83 live requests without retry at one live worker; Round 54 had five HTTP 429 responses under wider concurrency.",
+    "qualification": "No Round 56 provider request is permitted until all selected jobs pass machine-readable semantic preflight. One live lane applies the measured provider-limit lesson."
+  }
+}
