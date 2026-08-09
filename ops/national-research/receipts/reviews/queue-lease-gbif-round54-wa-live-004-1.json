@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round54-wa-live-004-1",
+  "jobId": "gbif-round54-wa-live-004",
+  "leaseId": "lease-gbif-round54-wa-live-004-1",
+  "workerCommit": "9dd7d9aed2f92861d676554b475a8e7021dab3d2",
+  "workerBranchHead": "358e3bc138d95c62f81b95edf3cae153949d27e6",
+  "manifestHash": "2db8d0fddcaa31c0d84188354c4d8dc17cb3e9dcc4736d6b05af975f54f9cf0a",
+  "changedPaths": [
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-occurrences-nutria-000000.json.gz",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-species-match-nutria.json.gz",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/assertions.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/manifest.json",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/outcomes.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/receipt.json",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/rejections.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/reviews.ndjson",
+    "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "orchestrator transition with pinned worker manifest validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 4524fc9110819b20ed319f262b6028b1c9c34bbf...358e3bc138d95c62f81b95edf3cae153949d27e6",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable WA GBIF run, exact two-commit inventory, 39 complete county outcomes, 31 assertion events, and zero unsupported negative determinations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-09T00:34:25.115Z"
+}
