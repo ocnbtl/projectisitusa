@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1",
+  "status": "complete",
+  "started_at": "2026-08-09T12:00:25.000Z",
+  "finished_at": "2026-08-09T14:07:53.257Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "parameter_hash": "d1bf5f7c5bf173a26f08e6380c37fc2ac7b007ced6ebb1ddfdb7b2c351a4015d",
+  "parameters": {
+    "stateCode": "WY",
+    "stateProvince": "Wyoming",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:tridax-procumbens",
+      "56003:tridax-procumbens",
+      "56005:tridax-procumbens",
+      "56007:tridax-procumbens",
+      "56009:tridax-procumbens",
+      "56011:tridax-procumbens",
+      "56013:tridax-procumbens",
+      "56015:tridax-procumbens",
+      "56017:tridax-procumbens",
+      "56019:tridax-procumbens",
+      "56021:tridax-procumbens",
+      "56023:tridax-procumbens",
+      "56025:tridax-procumbens",
+      "56027:tridax-procumbens",
+      "56029:tridax-procumbens",
+      "56031:tridax-procumbens",
+      "56033:tridax-procumbens",
+      "56035:tridax-procumbens",
+      "56037:tridax-procumbens",
+      "56039:tridax-procumbens",
+      "56041:tridax-procumbens",
+      "56043:tridax-procumbens",
+      "56045:tridax-procumbens"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "WY",
+    "county_fips": [
+      "56001",
+      "56003",
+      "56005",
+      "56007",
+      "56009",
+      "56011",
+      "56013",
+      "56015",
+      "56017",
+      "56019",
+      "56021",
+      "56023",
+      "56025",
+      "56027",
+      "56029",
+      "56031",
+      "56033",
+      "56035",
+      "56037",
+      "56039",
+      "56041",
+      "56043",
+      "56045"
+    ],
+    "species_ids": [
+      "tridax-procumbens"
+    ],
+    "pair_keys": [
+      "56001:tridax-procumbens",
+      "56003:tridax-procumbens",
+      "56005:tridax-procumbens",
+      "56007:tridax-procumbens",
+      "56009:tridax-procumbens",
+      "56011:tridax-procumbens",
+      "56013:tridax-procumbens",
+      "56015:tridax-procumbens",
+      "56017:tridax-procumbens",
+      "56019:tridax-procumbens",
+      "56021:tridax-procumbens",
+      "56023:tridax-procumbens",
+      "56025:tridax-procumbens",
+      "56027:tridax-procumbens",
+      "56029:tridax-procumbens",
+      "56031:tridax-procumbens",
+      "56033:tridax-procumbens",
+      "56035:tridax-procumbens",
+      "56037:tridax-procumbens",
+      "56039:tridax-procumbens",
+      "56041:tridax-procumbens",
+      "56043:tridax-procumbens",
+      "56045:tridax-procumbens"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Tridax+procumbens&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-09T14:07:49.015Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Wyoming&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3149462&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-09T14:07:53.255Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+      "sha256": "c982debda9268a61f88fba3e3d870d4a0cc011c3958f955340405310e3b5f3ef",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/outcomes.ndjson",
+      "sha256": "ef16c17d65b0164d58906565288735fb3dd9bbcddd359311ac4f0f33b9b73d7c",
+      "bytes": 18446,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/source-verification.json",
+      "sha256": "ef49c16387cb9f4253e5a1249ef03d7e116689f3d8762dc3f3fe9d64c6655aa7",
+      "bytes": 5461,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 23,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 23
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state WY --candidate-file ops/national-research/plans/round-57-20260809/gbif-round57-wy-005.json --output-root src/data/research/runs --pairs 56001:tridax-procumbens,56003:tridax-procumbens,56005:tridax-procumbens,56007:tridax-procumbens,56009:tridax-procumbens,56011:tridax-procumbens,56013:tridax-procumbens,56015:tridax-procumbens,56017:tridax-procumbens,56019:tridax-procumbens,56021:tridax-procumbens,56023:tridax-procumbens,56025:tridax-procumbens,56027:tridax-procumbens,56029:tridax-procumbens,56031:tridax-procumbens,56033:tridax-procumbens,56035:tridax-procumbens,56037:tridax-procumbens,56039:tridax-procumbens,56041:tridax-procumbens,56043:tridax-procumbens,56045:tridax-procumbens --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
