@@ -3,7 +3,7 @@
   "evaluationId": "round-58-gbif-ma-nh-ct-20260809-r1",
   "roundId": "gbif-round58",
   "evaluatedAt": "2026-08-09T22:46:24.863Z",
-  "result": "complete-locally-verified-pending-release",
+  "result": "complete-released-and-externally-verified",
   "releaseThreshold": {
     "met": true,
     "basis": "Twenty GBIF protocol cells closed across Massachusetts, New Hampshire, and Connecticut. All 234 exact county-species screens completed and moved in the final matrix, including one verified-present pair and 233 researched-unresolved pairs."
@@ -191,7 +191,7 @@
       "observedIntegrationSpanSeconds": 2982.8758166
     },
     "telemetryArchive": {
-      "status": "prepared-for-content-commit",
+      "status": "durable-in-content-commit",
       "expectedFiles": 20,
       "archivedFiles": 20,
       "bytes": 30869,
@@ -327,12 +327,12 @@
       "nationalConfigSeconds": 0.351,
       "denominatorIntegritySeconds": 0.491,
       "frozenSkills": {"seconds":80.555,"pinnedCommit":"e3513cc6bde303432320d1d3904ea638eec6333c","byteIdentity":"pass"},
-      "typecheckSeconds": 2.438,
-      "lintSeconds": 6.694,
-      "whitespace": "pending-final-content-diff",
-      "prohibitedDash": {"status":"pending-final-content-diff"}
+      "typecheckSeconds": 2.279,
+      "lintSeconds": 2.053,
+      "whitespace": "pass",
+      "prohibitedDash": {"status":"pass","releaseFilesScanned":75}
     },
-    "build": {"status":"pass","nextVersion":"15.5.15","staticPages":2512,"compileSeconds":8.1,"wallSeconds":23.326},
+    "build": {"status":"pass","nextVersion":"15.5.15","staticPages":2512,"compileSeconds":8.7,"wallSeconds":23.819},
     "browserQa": {
       "status": "pass",
       "routes": ["/","/research?state=MA","/research?state=NH","/research?state=CT","/species/solanum-viarum"],
@@ -354,11 +354,11 @@
       "phase": "PRE-DEPLOYMENT",
       "mode": "Project Isitusa generated data release",
       "riskLevel": "high",
-      "decision": "GO TO DEPLOY AFTER FINAL CONTENT DIFF GATES",
-      "matrix": {"sourceOfTruth":"PASSED","functionality":"PASSED","visualFidelity":"PASSED","accessibility":"PASSED","seoAndDiscovery":"PASSED","performanceAndResilience":"PASSED","securityAndPrivacy":"PASSED","analyticsAndConversion":"NOT APPLICABLE","monitoringAndOperations":"PASSED","deployment":"PENDING","contentAndApprovals":"PASSED","dataReleaseIntegrity":"PASSED"}
+      "decision": "GO TO DEPLOY",
+      "matrix": {"sourceOfTruth":"PASSED","functionality":"PASSED","visualFidelity":"PASSED","accessibility":"PASSED","seoAndDiscovery":"PASSED","performanceAndResilience":"PASSED","securityAndPrivacy":"PASSED","analyticsAndConversion":"NOT APPLICABLE","monitoringAndOperations":"PASSED","deployment":"PASSED","contentAndApprovals":"PASSED","dataReleaseIntegrity":"PASSED"}
     },
-    "postDeploymentGate": {"phase":"POST-DEPLOYMENT","decision":"PENDING","contentCommit":null},
-    "externalVerification": {"status":"pending","contentCommit":null,"githubDeploymentId":null,"privateVercelDeploymentId":null,"immutableDeploymentUrl":null,"canonicalProductionUrl":"https://isitusa.com"}
+    "postDeploymentGate": {"phase":"POST-DEPLOYMENT","decision":"GO","contentCommit":"0e70584efae7ced342255cb247d15773b66720c2","githubDeploymentId":5823797479,"immutableAndCanonicalRouteChecks":"PASSED","generatedByteParity":"PASSED","productionBrowserQa":"PASSED","runtimeLogs":"UNAVAILABLE - NO VERCEL CLI IN CANONICAL TOOLCHAIN","qualification":"GO applies to the externally observed Round 58 content deployment only. The receipt commit is not self-attested."},
+    "externalVerification": {"status":"pass","verifiedAt":"2026-08-09T23:08:29.000Z","contentCommit":"0e70584efae7ced342255cb247d15773b66720c2","githubDeploymentId":5823797479,"githubDeploymentState":"success","vercelInspectorUrl":"https://vercel.com/unigentamos/projectisitusa/6ty3j1yMeUovWYHhT2dp4XfFxfmd","privateVercelDeploymentId":null,"immutableDeploymentUrl":"https://projectisitusa-ezxon508c-unigentamos.vercel.app","canonicalProductionUrl":"https://isitusa.com","routeHostChecksPassed":12,"byteParityHostFileIdentitiesPassed":20,"productionConsoleWarnings":0,"productionConsoleErrors":0,"productionScreenshotsVisuallyInspected":2,"externalVerificationSeconds":651,"qualification":"This evaluation records only the already-observed deployment of content commit 0e70584efae7ced342255cb247d15773b66720c2. Private Vercel deployment ID and runtime logs were unavailable because the canonical repository has no Vercel CLI installed. It does not attest to the receipt commit that contains this update or any future deployment."}
   },
   "processLesson": {
     "lesson": "Sparse workers materially changed the safe resource topology. Round 58 peak RSS was 226.043 MiB versus 1497.504 MiB in the comparable Round 57 full checkout, about 84.9 percent lower. Exact full-SHA validation must also precede manifest construction to avoid repeated packaging corrections.",
@@ -379,7 +379,7 @@
     "applicabilityReview": {"remainingUnclassifiedJurisdictions":51,"forecast":null,"qualification":"Applicability is a separate decision axis and has no measured automated completion rate."},
     "blockedExceptions": {"forecast":null,"qualification":"Taxonomy and record-level geography review are manual exception work."},
     "freshness": {"staleProtocolCells":611,"undatedProtocolCells":14265,"forecast":null,"qualification":"Freshness work depends on source-specific current snapshots."},
-    "releaseOverhead": {"measuredLocalGenerationSeconds":425.913,"allStateByteStabilitySeconds":802.916,"researchIntegritySeconds":426.871,"buildSeconds":23.326,"qualification":"External deployment and production verification remain pending in this build-time record."}
+    "releaseOverhead": {"measuredLocalGenerationSeconds":425.913,"allStateByteStabilitySeconds":802.916,"researchIntegritySeconds":426.871,"buildSeconds":23.819,"externalVerificationSeconds":651,"qualification":"Local release gates are recorded separately from provider-native external verification. External overhead is measured from the content commit timestamp to the GitHub API Date header captured after route, byte-parity, browser, visual, and console checks."}
   },
   "semanticAttestation": {
     "sourceSilenceCreatedAbsence": false,
