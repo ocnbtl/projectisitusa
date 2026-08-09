@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nj-005-1",
+  "jobId": "gbif-round55-nj-005",
+  "leaseId": "lease-gbif-round55-nj-005-1",
+  "workerCommit": "ad953934549ae79cc17525207217b80e4e4a8c64",
+  "workerBranchHead": "244eb836be78ecc659242b24c0ad64679f37245d",
+  "manifestHash": "1090251181a18fdcba0a4e469efed7ca775ef7ae4e2433bc92b7842cda2fcc4c",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-cirsium-vulgare-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-elaeagnus-angustifolia-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-frangula-alnus-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-hedera-helix-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-hesperis-matronalis-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-lonicera-tatarica-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-occurrences-tree-of-heaven-000000.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-cirsium-vulgare.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-elaeagnus-angustifolia.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-frangula-alnus.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-hedera-helix.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-hesperis-matronalis.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-lonicera-tatarica.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/artifacts/gbif-species-match-tree-of-heaven.json.gz",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/assertions.ndjson",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/manifest.json",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/outcomes.ndjson",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/receipt.json",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/rejections.ndjson",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/reviews.ndjson",
+    "src/data/research/runs/20260809T055359Z__gbif-preserved-specimens__d5f4c9b4e642/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:16:28.000Z",
+  "integrationCommit": "bbaada23536d40e82649a50ae141656bd07de0b9"
+}
