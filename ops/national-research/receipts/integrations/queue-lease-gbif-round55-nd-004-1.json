@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nd-004-1",
+  "jobId": "gbif-round55-nd-004",
+  "leaseId": "lease-gbif-round55-nd-004-1",
+  "workerCommit": "98c7f98293dee2c08efcb7ff18163ccfa2a630f5",
+  "workerBranchHead": "e504d9522e445e0623455a8344e2f445cf77366d",
+  "manifestHash": "151343db49b9288dfba3a288173ee5e7de14c1891115a4bc804e04e8b9d77807",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-discula-destructiva-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-emerald-ash-borer-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-icerya-purchasi-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-ophiognomonia-clavigignenti-juglandacearum-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-occurrences-popillia-japonica-000000.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-discula-destructiva.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-emerald-ash-borer.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-icerya-purchasi.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-ophiognomonia-clavigignenti-juglandacearum.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/artifacts/gbif-species-match-popillia-japonica.json.gz",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/assertions.ndjson",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/manifest.json",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/outcomes.ndjson",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/receipt.json",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/rejections.ndjson",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/reviews.ndjson",
+    "src/data/research/runs/20260809T055355Z__gbif-preserved-specimens__a95e4cdd16d8/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:14:45.000Z",
+  "integrationCommit": "cee3a31ac776c4ac9dfd568b183ce130d657da70"
+}
