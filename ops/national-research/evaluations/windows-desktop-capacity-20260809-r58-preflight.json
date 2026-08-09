@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260809-r58-preflight",
+  "recordedAt": "2026-08-09T20:47:37.0997794Z",
+  "hostCounterTimestamp": "2026-08-09T20:47:37.0997794Z",
+  "clockQualification": "Windows UTC controls this no-network resource gate. Provider-native response timestamps control acquisition receipts.",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "e9c0a7db322f74b11861489be2b15f9c1d6bbb2b",
+  "workerBaseSha": "4f35e0f780c7558e1fff70de483a3db93796ebdb",
+  "capacityTier": "green-with-recent-yellow-variability",
+  "workerCount": 2,
+  "initialLiveProviderWorkerCount": 1,
+  "postCanaryMaximumLiveProviderWorkerCount": 2,
+  "machineCapacityWorkerCount": 6,
+  "perWorkerReservationMiB": 768,
+  "observedRound57FullPeakMemoryMiB": 1497.504,
+  "observedRound57SparsePeakMemoryRangeMiB": [
+    215.996,
+    226.113
+  ],
+  "totalPhysicalMiB": 31900.91796875,
+  "freePhysicalMiB": 9855.41015625,
+  "projectedPostWorkerFreePhysicalMiB": 8319.41015625,
+  "commitHeadroomMiB": 11691.015625,
+  "projectedPostWorkerFreeCommitMiB": 10155.015625,
+  "freeDiskMiB": 709531.8125,
+  "totalDiskMiB": 1906665.99609375,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 10334146560,
+    "committedBytes": 41592713216,
+    "commitLimitBytes": 53851631616,
+    "pageReadsPerSecond": 0,
+    "pageWritesPerSecond": 0,
+    "diskFreeBytes": 743998029824,
+    "diskTotalBytes": 1999284203520,
+    "writerProcesses": 0
+  },
+  "recentVariability": {
+    "earlierObservedAt": "2026-08-09T20:18:00.000Z",
+    "earlierAvailablePhysicalMiB": 6090.391,
+    "earlierAvailablePercent": 19.092,
+    "qualification": "The earlier sample was yellow. Two sparse 768 MiB reservations preserve operational floors under both observations."
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091796875,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.8994140625,
+    "qualification": "Twenty clean sparse worktrees exist at the exact plan base. Two 768 MiB sparse reservations preserve physical, commit and disk floors. Start with one live provider canary and scale to at most two only after a complete no-retry result."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": true,
+    "healthProbeRequests": 1,
+    "health": "HTTP 200 in 398 ms",
+    "processException": "A read-only truth-audit health probe contacted the provider before Round 58 job preflights. It acquired no evidence. No occurrence acquisition is permitted until every selected job passes machine-readable semantic preflight and is leased.",
+    "recentObservedCondition": "Round 57 completed 20 live occurrence requests without retry; Round 58 starts with one live occurrence canary."
+  },
+  "noNetworkPreparationCorrections": [
+    "The first semantic dry-run wrapper used an invalid PowerShell backslash replacement and failed before adapter execution.",
+    "The corrected all-job sweep exceeded an undersized 120-second shell timeout after issuing zero network requests; the final sweep used the observed cache-validation cost and completed."
+  ]
+}
