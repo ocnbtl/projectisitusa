@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-round57-wy-003",
+  "leaseId": "lease-gbif-round57-wy-003-1",
+  "status": "complete",
+  "branch": "codex/gbif-round57-wy-003",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-003",
+  "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "commitSha": "6247fd4845e142e0811f203635670ef319f69586",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "WY",
+    "stateProvince": "Wyoming",
+    "candidateLimit": 23,
+    "candidatePairs": [
+      "56001:solanum-viarum",
+      "56003:solanum-viarum",
+      "56005:solanum-viarum",
+      "56007:solanum-viarum",
+      "56009:solanum-viarum",
+      "56011:solanum-viarum",
+      "56013:solanum-viarum",
+      "56015:solanum-viarum",
+      "56017:solanum-viarum",
+      "56019:solanum-viarum",
+      "56021:solanum-viarum",
+      "56023:solanum-viarum",
+      "56025:solanum-viarum",
+      "56027:solanum-viarum",
+      "56029:solanum-viarum",
+      "56031:solanum-viarum",
+      "56033:solanum-viarum",
+      "56035:solanum-viarum",
+      "56037:solanum-viarum",
+      "56039:solanum-viarum",
+      "56041:solanum-viarum",
+      "56043:solanum-viarum",
+      "56045:solanum-viarum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/artifacts/gbif-species-match-solanum-viarum.json.gz",
+      "sha256": "901c25e85dcd2301e9dd4af864ba9fa1b0dc9718008a7a520672297b422af125",
+      "bytes": 277,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/outcomes.ndjson",
+      "sha256": "6111aab8d3c0029492a8c82e8b85a96b1e50c65624c841913f1fdbb15ddc1142",
+      "bytes": 18377,
+      "media_type": "application/x-ndjson",
+      "count": 23
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/receipt.json",
+    "sha256": "6df097b80e69a5d2f1f2f3c3aa7ddd6fc776e2df4de61dce81a2e69bbe922c07",
+    "bytes": 7008,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/source-verification.json",
+    "sha256": "21e5b124da8b0bd5a112d031ecb3feb8932ac77afd41f2c392d3ead55a2d1807",
+    "bytes": 5371,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 367,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 23,
+      "completeOutcomePairs": 23,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 23,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 367,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 23,
+      "completeOutcomePairs": 23,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 23,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-round57-wy-003-1 --manifest src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-003",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-round57-wy-003-1",
+        "status": "complete",
+        "finishedAt": "2026-08-09T14:01:26.237Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 0,
+        "retainedArtifacts": 2,
+        "receiptSha256": "6df097b80e69a5d2f1f2f3c3aa7ddd6fc776e2df4de61dce81a2e69bbe922c07"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 3,
+    "peakMemoryMb": 222,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 23,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
