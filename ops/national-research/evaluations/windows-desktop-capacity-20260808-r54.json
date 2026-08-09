@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260808-r54",
+  "recordedAt": "2026-08-08T23:41:24.000Z",
+  "hostCounterTimestamp": "2026-08-08T23:41:24.7631650Z",
+  "clockQualification": "The independently resolved GitHub HTTP Date and Windows host UTC agreed to the second. The external timestamp controls Round 54 acquisition timing; the host timestamp is retained as raw counter lineage.",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "331182310131039f8c50e4985d275f4ba3f2af3f",
+  "capacityTier": "green",
+  "workerCount": 4,
+  "perWorkerReservationMiB": 1600,
+  "observedRound53PeakMemoryMiB": 1438.137,
+  "totalPhysicalMiB": 31900.917969,
+  "freePhysicalMiB": 11304.710938,
+  "projectedPostWorkerFreePhysicalMiB": 4904.710938,
+  "commitHeadroomMiB": 17312.835938,
+  "projectedPostWorkerFreeCommitMiB": 10912.835938,
+  "freeDiskMiB": 843646.167969,
+  "totalDiskMiB": 1906665.996094,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 11853848576,
+    "committedBytes": 35697807360,
+    "commitLimitBytes": 53851631616,
+    "pagingFilePercent": 6.427263,
+    "diskFreeBytes": 884627124224,
+    "diskTotalBytes": 1999284203520
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091797,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.899414,
+    "qualification": "Four 1600 MiB reservations preserve 4904.71 MiB physical memory, 10912.84 MiB commit headroom, and 843646.17 MiB disk. Four workers also exhaust the four independent Washington batches selected for this wave."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": false,
+    "health": "not-probed-before-contract",
+    "qualification": "Provider health remains deliberately unprobed until all four selected jobs have passing machine-readable semantic preflights."
+  }
+}
