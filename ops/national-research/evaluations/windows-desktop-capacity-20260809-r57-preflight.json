@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260809-r57-preflight",
+  "recordedAt": "2026-08-09T12:23:20.207Z",
+  "hostCounterTimestamp": "2026-08-09T12:23:20.2075311Z",
+  "clockQualification": "Windows UTC controls this no-network resource gate; provider-native timestamps will control acquisition responses.",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "fff6ec45a3f6b9c22f1ba93ad14ea806c446d63f",
+  "capacityTier": "green-provider-limited",
+  "workerCount": 1,
+  "machineCapacityWorkerCount": 3,
+  "providerSafeLiveWorkerCount": 1,
+  "perWorkerReservationMiB": 1600,
+  "observedRound56PeakMemoryMiB": 1489.094,
+  "totalPhysicalMiB": 31900.91796875,
+  "freePhysicalMiB": 9820.171875,
+  "projectedPostWorkerFreePhysicalMiB": 8220.171875,
+  "commitHeadroomMiB": 14485.24609375,
+  "projectedPostWorkerFreeCommitMiB": 12885.24609375,
+  "freeDiskMiB": 711629.03125,
+  "totalDiskMiB": 1906665.99609375,
+  "rawMeasurements": {
+    "totalPhysicalBytes": 33450536960,
+    "availablePhysicalBytes": 10297196544,
+    "committedBytes": 38662750208,
+    "commitLimitBytes": 53851631616,
+    "pageReadsPerSecond": null,
+    "pageWritesPerSecond": null,
+    "diskFreeBytes": 746197123072,
+    "diskTotalBytes": 1999284203520
+  },
+  "resourceGate": {
+    "result": "pass",
+    "physicalFloorMiB": 3190.091796875,
+    "commitFloorMiB": 3072,
+    "diskFloorMiB": 285999.8994140625,
+    "projectedThreeWorkerFreePhysicalMiB": 5020.171875,
+    "projectedThreeWorkerFreeCommitMiB": 9685.24609375,
+    "qualification": "Fresh capacity remains green after creating sixteen isolated worktrees. One measured-shape acquisition worker preserves all physical, commit, and disk floors; three machine reservations also fit, but only one GBIF provider lane is authorized."
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "contactedBeforeSemanticPreflight": false,
+    "health": "not-probed-before-contract",
+    "recentObservedCondition": "Round 56 completed six live requests without retry at one live worker; Round 55 completed 83 live requests without retry at one live worker.",
+    "qualification": "No Round 57 provider request is permitted until the selected job passes machine-readable semantic preflight and is leased. The first leased occurrence request doubles as the fresh provider-health observation."
+  }
+}
