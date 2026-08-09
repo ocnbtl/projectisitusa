@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T000147Z__gbif-preserved-specimens__632c5dabbf84",
+  "status": "complete",
+  "started_at": "2026-08-09T00:01:47.000Z",
+  "finished_at": "2026-08-09T00:14:38.878Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+  "parameter_hash": "632c5dabbf84f989d60cf75233f19d251b8f2a5ae08d0460e6512da6596c066b",
+  "parameters": {
+    "stateCode": "WA",
+    "stateProvince": "Washington",
+    "candidateLimit": 39,
+    "candidatePairs": [
+      "53001:nutria",
+      "53003:nutria",
+      "53005:nutria",
+      "53007:nutria",
+      "53009:nutria",
+      "53011:nutria",
+      "53013:nutria",
+      "53015:nutria",
+      "53017:nutria",
+      "53019:nutria",
+      "53021:nutria",
+      "53023:nutria",
+      "53025:nutria",
+      "53027:nutria",
+      "53029:nutria",
+      "53031:nutria",
+      "53033:nutria",
+      "53035:nutria",
+      "53037:nutria",
+      "53039:nutria",
+      "53041:nutria",
+      "53043:nutria",
+      "53045:nutria",
+      "53047:nutria",
+      "53049:nutria",
+      "53051:nutria",
+      "53053:nutria",
+      "53055:nutria",
+      "53057:nutria",
+      "53059:nutria",
+      "53061:nutria",
+      "53063:nutria",
+      "53065:nutria",
+      "53067:nutria",
+      "53069:nutria",
+      "53071:nutria",
+      "53073:nutria",
+      "53075:nutria",
+      "53077:nutria"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "WA",
+    "county_fips": [
+      "53001",
+      "53003",
+      "53005",
+      "53007",
+      "53009",
+      "53011",
+      "53013",
+      "53015",
+      "53017",
+      "53019",
+      "53021",
+      "53023",
+      "53025",
+      "53027",
+      "53029",
+      "53031",
+      "53033",
+      "53035",
+      "53037",
+      "53039",
+      "53041",
+      "53043",
+      "53045",
+      "53047",
+      "53049",
+      "53051",
+      "53053",
+      "53055",
+      "53057",
+      "53059",
+      "53061",
+      "53063",
+      "53065",
+      "53067",
+      "53069",
+      "53071",
+      "53073",
+      "53075",
+      "53077"
+    ],
+    "species_ids": [
+      "nutria"
+    ],
+    "pair_keys": [
+      "53001:nutria",
+      "53003:nutria",
+      "53005:nutria",
+      "53007:nutria",
+      "53009:nutria",
+      "53011:nutria",
+      "53013:nutria",
+      "53015:nutria",
+      "53017:nutria",
+      "53019:nutria",
+      "53021:nutria",
+      "53023:nutria",
+      "53025:nutria",
+      "53027:nutria",
+      "53029:nutria",
+      "53031:nutria",
+      "53033:nutria",
+      "53035:nutria",
+      "53037:nutria",
+      "53039:nutria",
+      "53041:nutria",
+      "53043:nutria",
+      "53045:nutria",
+      "53047:nutria",
+      "53049:nutria",
+      "53051:nutria",
+      "53053:nutria",
+      "53055:nutria",
+      "53057:nutria",
+      "53059:nutria",
+      "53061:nutria",
+      "53063:nutria",
+      "53065:nutria",
+      "53067:nutria",
+      "53069:nutria",
+      "53071:nutria",
+      "53073:nutria",
+      "53075:nutria",
+      "53077:nutria"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Myocastor+coypus&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-09T00:14:36.780Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Washington&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=4264680&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-09T00:14:37.828Z",
+      "record_count": 35
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-occurrences-nutria-000000.json.gz",
+      "sha256": "8ea91b8464789bcd8dd723f5cd9d228409984c26ae11ae5658a0a633041edcb6",
+      "bytes": 18612,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-species-match-nutria.json.gz",
+      "sha256": "fbda9aa683a5e0ae63f7fa01fd08f538c666b5f0419c7facf7bf2c17a1ffc24b",
+      "bytes": 280,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/assertions.ndjson",
+      "sha256": "a1d45b0887f71f5c2499919d502077ec36d55e79b5571bd25fb60e5b18f2b0ef",
+      "bytes": 58160,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/reviews.ndjson",
+      "sha256": "6bda3ed8f4efe6f078e783db0311e808419d7c844080fdbcfca2cd70eff9dcbd",
+      "bytes": 29822,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/rejections.ndjson",
+      "sha256": "a38a9897deef6f6c88e3f5aa834ba2f3b82f8eb77cf8752b684ce35233d5c1af",
+      "bytes": 2897,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/outcomes.ndjson",
+      "sha256": "9433b0082b5e3e721e5cfb9510c563a964215f2540e70323a0edeb2df3c09f8a",
+      "bytes": 39259,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/source-verification.json",
+      "sha256": "fce5ab9ae5a5d6948935df9298d874e2d70b45f0bc4c89c2b3a1086bfdb1bc51",
+      "bytes": 5472,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 39,
+    "candidate_records": 35,
+    "assertion_events": 31,
+    "review_events": 31,
+    "rejection_records": 4,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 39
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r54-recovery at src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json (50df0aaaeb730fac009189827e70ebeb3061a8928f6fe6ab64ef4ede85d335ed); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state WA --candidate-file ops/national-research/plans/round-54-20260808-recovery/gbif-round54-wa-live-004.json --output-root src/data/research/runs --pairs 53001:nutria,53003:nutria,53005:nutria,53007:nutria,53009:nutria,53011:nutria,53013:nutria,53015:nutria,53017:nutria,53019:nutria,53021:nutria,53023:nutria,53025:nutria,53027:nutria,53029:nutria,53031:nutria,53033:nutria,53035:nutria,53037:nutria,53039:nutria,53041:nutria,53043:nutria,53045:nutria,53047:nutria,53049:nutria,53051:nutria,53053:nutria,53055:nutria,53057:nutria,53059:nutria,53061:nutria,53063:nutria,53065:nutria,53067:nutria,53069:nutria,53071:nutria,53073:nutria,53075:nutria,53077:nutria --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json"
+}

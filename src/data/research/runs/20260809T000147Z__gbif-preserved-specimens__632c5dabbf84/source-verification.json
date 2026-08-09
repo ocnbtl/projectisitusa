@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T00:14:38.878Z",
+  "runId": "20260809T000147Z__gbif-preserved-specimens__632c5dabbf84",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "WA",
+  "pairKeys": [
+    "53001:nutria",
+    "53003:nutria",
+    "53005:nutria",
+    "53007:nutria",
+    "53009:nutria",
+    "53011:nutria",
+    "53013:nutria",
+    "53015:nutria",
+    "53017:nutria",
+    "53019:nutria",
+    "53021:nutria",
+    "53023:nutria",
+    "53025:nutria",
+    "53027:nutria",
+    "53029:nutria",
+    "53031:nutria",
+    "53033:nutria",
+    "53035:nutria",
+    "53037:nutria",
+    "53039:nutria",
+    "53041:nutria",
+    "53043:nutria",
+    "53045:nutria",
+    "53047:nutria",
+    "53049:nutria",
+    "53051:nutria",
+    "53053:nutria",
+    "53055:nutria",
+    "53057:nutria",
+    "53059:nutria",
+    "53061:nutria",
+    "53063:nutria",
+    "53065:nutria",
+    "53067:nutria",
+    "53069:nutria",
+    "53071:nutria",
+    "53073:nutria",
+    "53075:nutria",
+    "53077:nutria"
+  ],
+  "parameterHash": "632c5dabbf84f989d60cf75233f19d251b8f2a5ae08d0460e6512da6596c066b",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T00:14:37.828Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Washington and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "nutria"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-nutria",
+        "url": "https://api.gbif.org/v1/species/match?name=Myocastor+coypus&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:14:36.780Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-nutria",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Washington&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=4264680&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for nutria and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:14:37.828Z",
+        "declaredRecordCount": 35,
+        "receivedRecordCount": 35,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-occurrences-nutria-000000.json.gz",
+      "sha256": "8ea91b8464789bcd8dd723f5cd9d228409984c26ae11ae5658a0a633041edcb6",
+      "bytes": 18612
+    },
+    {
+      "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/artifacts/gbif-species-match-nutria.json.gz",
+      "sha256": "fbda9aa683a5e0ae63f7fa01fd08f538c666b5f0419c7facf7bf2c17a1ffc24b",
+      "bytes": 280
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
