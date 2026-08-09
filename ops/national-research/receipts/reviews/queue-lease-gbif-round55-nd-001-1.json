@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nd-001-1",
+  "jobId": "gbif-round55-nd-001",
+  "leaseId": "lease-gbif-round55-nd-001-1",
+  "workerCommit": "3670512f173505459e25d9294615574aaf2f3795",
+  "workerBranchHead": "cc30ddb8343424774a126206cdc3dd1d5e310307",
+  "manifestHash": "6ba1e6a698e468f326b6a3e18136104475b9925a026b15488dcd182a2f1d3c89",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-solanum-torvum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-solanum-viarum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/assertions.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/manifest.json",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/outcomes.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/receipt.json",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/rejections.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/reviews.ndjson",
+    "src/data/research/runs/20260809T055350Z__gbif-preserved-specimens__c89543b479c6/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "orchestrator transition with pinned worker manifest validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check a55f6a9459afb13970f84a74a31e3fdec8b07d85...cc30ddb8343424774a126206cdc3dd1d5e310307",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable ND GBIF run, exact two-commit inventory, 424 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-09T06:10:35.000Z"
+}
