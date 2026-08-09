@@ -24593,6 +24593,73 @@
         "sha256": "1dbf14a3481d3c4053f57435505e6d7fe63ec79b71873eb9c4c5b150391d0af2",
         "bytes": 4201
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round55-nj-006-1",
+      "jobId": "gbif-round55-nj-006",
+      "leaseId": "lease-gbif-round55-nj-006-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T06:16:56.000Z",
+      "manifestPath": "manifests/gbif-round55-nj-006__lease-gbif-round55-nj-006-1.json",
+      "manifestHash": "630e95b756951656f726c71e9c13ae1b019b4b2a06067172739c815645d4cf74",
+      "manifestBytes": 17398,
+      "workerCommit": "3971886d796fcf2d275659fc1744100176044dce",
+      "workerBranchHead": "893a4505b6748b7d4463092703ff90a3f892a132",
+      "reviewedAt": "2026-08-09T06:16:57.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable NJ GBIF run, exact two-commit inventory, 168 complete county outcomes, 7 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-anarsia-lineatella-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-aspidiotus-duplex-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-icerya-purchasi-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-melaleuca-quinquenervia-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-murdannia-keisak-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-occurrences-spiraea-japonica-000000.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-anarsia-lineatella.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-aspidiotus-duplex.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-icerya-purchasi.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-melaleuca-quinquenervia.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-murdannia-keisak.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/artifacts/gbif-species-match-spiraea-japonica.json.gz",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/assertions.ndjson",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/manifest.json",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/outcomes.ndjson",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/receipt.json",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/rejections.ndjson",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/reviews.ndjson",
+        "src/data/research/runs/20260809T055400Z__gbif-preserved-specimens__39e94fb716bc/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check a55f6a9459afb13970f84a74a31e3fdec8b07d85...893a4505b6748b7d4463092703ff90a3f892a132",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round55-nj-006-1.json",
+        "sha256": "c19b01eb0f4f53051152fbb9d0494ac2199c1dc2eafd890932ba550f082fdc12",
+        "bytes": 4386
+      }
     }
   ]
 }
