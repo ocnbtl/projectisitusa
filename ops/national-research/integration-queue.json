@@ -24854,6 +24854,59 @@
         "sha256": "142a924b0812f78f3e5eb145208490ae3d72bfed5a2d19b5e9618721d5c89e9a",
         "bytes": 2461
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round56-mt-002-1",
+      "jobId": "gbif-round56-mt-002",
+      "leaseId": "lease-gbif-round56-mt-002-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T09:02:25.000Z",
+      "manifestPath": "manifests/gbif-round56-mt-002__lease-gbif-round56-mt-002-1.json",
+      "manifestHash": "78317e35c374b1ddb353f3a16889a3cd3dab9ff85185ba641f84bfd431768132",
+      "manifestBytes": 8916,
+      "workerCommit": "cbbdd46c519471e5f34af38b98834ff18090e165",
+      "workerBranchHead": "17ef895f1ed7b5b60fafbcd0cfaa3a5d4c7b5835",
+      "reviewedAt": "2026-08-09T09:02:25.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable Montana GBIF Solanum torvum run, exact two-commit inventory, 56 complete no-qualifying-evidence outcomes, zero assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/artifacts/gbif-species-match-solanum-torvum.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/assertions.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/manifest.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/outcomes.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/receipt.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/rejections.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/reviews.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__468e4185e9da/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation for Montana GBIF Solanum torvum 56-pair run",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round56-mt-002-1.json",
+        "sha256": "f0d1a0ff6227bd3536e59967b025a4b065518854e14ba57b9a088cfdff5aaeb7",
+        "bytes": 2379
+      }
     }
   ]
 }
