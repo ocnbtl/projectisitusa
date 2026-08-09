@@ -7,21 +7,21 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `33`
+- Verified present: `167`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3995`
-- Not researched: `128684`
-- Determination coverage: `0.02%`
-- Research coverage: `3.04%`
-- Explicit outcome coverage: `3.0351%`
+- Researched unresolved: `4285`
+- Not researched: `128260`
+- Determination coverage: `0.13%`
+- Research coverage: `3.35%`
+- Explicit outcome coverage: `3.3546%`
 - Applicable protocol cells: `76`
-- Current complete protocol cells: `30`
-- Protocol completion: `56.58%`
-- Current protocol completion: `39.47%`
-- Evidence records: `33`
-- Research runs: `8`
-- Rejection records: `4`
+- Current complete protocol cells: `63`
+- Protocol completion: `100.00%`
+- Current protocol completion: `82.89%`
+- Evidence records: `480`
+- Research runs: `13`
+- Rejection records: `89`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 53 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 53 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 53 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 53 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 53 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 53 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 53 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 53 | 0 | 1 |
-| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 53 | 2 |
-| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 53 | 2 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 53 | 2 |
-| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 53 | 2 |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 53 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 53 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 53 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 53 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 53 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 53 | 2 |
-| Japanese Beetle (`popillia-japonica`) | insects | 0 | 53 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 53 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 53 | 1 |
+| Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 53 | 1 |
+| Peach twig borer (`anarsia-lineatella`) | insects | 0 | 53 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 53 | 1 |
+| Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 53 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 53 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 53 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 53 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 53 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 53 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 53 | 1 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 53 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 53 | 1 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 53 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 53 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 53 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 53 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 53 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 53 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 53 | 0 |
+| Animated oat (`avena-sterilis`) | plants | 0 | 53 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 53 | 0 |
+| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 53 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 53 | 0 |
+| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 53 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 53 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-06T02:46:50.972Z | 0 | 26 |
+| GBIF preserved specimen records | operational | 2026-08-09T06:15:12.914Z | 150 | 59 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

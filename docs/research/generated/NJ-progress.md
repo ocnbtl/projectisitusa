@@ -7,21 +7,21 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `281`
+- Verified present: `457`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1315`
-- Not researched: `50988`
-- Determination coverage: `0.53%`
-- Research coverage: `3.04%`
-- Explicit outcome coverage: `3.0351%`
+- Researched unresolved: `1328`
+- Not researched: `50799`
+- Determination coverage: `0.87%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `93`
-- Current complete protocol cells: `30`
-- Protocol completion: `46.24%`
-- Current protocol completion: `32.26%`
-- Evidence records: `287`
-- Research runs: `8`
-- Rejection records: `17`
+- Current complete protocol cells: `79`
+- Protocol completion: `98.92%`
+- Current protocol completion: `84.95%`
+- Evidence records: `1826`
+- Research runs: `15`
+- Rejection records: `414`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,20 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 21 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 21 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 21 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 21 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 21 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 21 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 21 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 21 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 21 | 0 | 1 |
-| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 21 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 21 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 21 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 21 | 2 |
-| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 21 | 1 |
+| Camphor scale (`aspidiotus-duplex`) | insects | 0 | 21 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 21 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 21 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 21 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 21 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 21 | 0 |
@@ -57,6 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 21 | 0 |
 | Southern threecornerjack (`emex-australis`) | plants | 0 | 21 | 0 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 21 | 0 |
+| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 21 | 0 |
+| Professor-weed (`galega-officinalis`) | plants | 0 | 21 | 0 |
+| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 21 | 0 |
+| Cogongrass (`imperata-cylindrica`) | plants | 0 | 21 | 0 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 0 | 21 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 21 | 0 |
+| Bell's Honeysuckle (`lonicera-x-bella`) | plants | 0 | 21 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 21 | 0 |
+| Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 0 | 21 | 0 |
+| Moneywort (`lysimachia-nummularia`) | plants | 0 | 21 | 0 |
+| Purple Loosestrife (`lythrum-salicaria`) | plants | 0 | 21 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-04T09:50:10.636Z | 6 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-09T06:17:20.786Z | 324 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

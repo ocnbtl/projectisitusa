@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-55-gbif-north-dakota-new-jersey-20260809-r1",
+  "roundId": "gbif-round55",
+  "evaluatedAt": "2026-08-09T07:01:27.361Z",
+  "result": "complete-local-validation-pending-external-release",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "A two-jurisdiction GBIF source-family milestone completed 2778 exact county-species screens, moved 613 unique final-matrix pairs, added 310 verified-present pairs, closed 82 protocol cells, and removed five certification blockers."
+  },
+  "baseline": {
+    "commit": "8738dace3649334c3c4fda3a8dafdd070c64743f",
+    "asOf": "2026-08-09",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "explicitOverrides": 3426,
+      "derivedApplicable": 1638,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "partiallyResearched": 0,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 55752,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 346394,
+      "notResearched": 7470422
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 4983,
+      "incomplete": 14334,
+      "blocked": 59,
+      "current": 4372,
+      "stale": 611,
+      "undated": 14393
+    },
+    "ledger": {
+      "projectedEvidence": 187238,
+      "immutableAssertions": 157420,
+      "immutableReviews": 157420,
+      "rejections": 43215,
+      "uniqueExplicitOutcomePairs": 357056,
+      "rawOutcomes": 463497,
+      "stateSelectedRuns": 552,
+      "immutableRunDirectories": 537,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": {
+        "blocked": 2,
+        "cancelled": 21,
+        "completed": 176,
+        "failed": 60
+      },
+      "leases": {
+        "cancelled": 9,
+        "completed": 180,
+        "failed": 69,
+        "recovered": 2
+      },
+      "integrations": {
+        "changesRequested": 2,
+        "integrated": 176,
+        "rejected": 2
+      },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "remainingApplicableProtocolCountyScreens": 927969
+  },
+  "planned": {
+    "states": [
+      "ND",
+      "NJ"
+    ],
+    "stateSpeciesScreens": 82,
+    "countySpeciesPairs": 2778,
+    "jobs": 12,
+    "maximumTaxaPerJob": 8,
+    "uniqueTaxa": 54,
+    "expectedNetNewUniquePairs": 613,
+    "expectedNetNewByState": {
+      "ND": 424,
+      "NJ": 189
+    },
+    "expectedProtocolCellsClosed": 82,
+    "expectedCertificationBlockersRemoved": 0,
+    "expectedProviderRequests": 83,
+    "expectedEvidenceFoundPairPoint": 317,
+    "expectedEvidenceFoundPairRange": {
+      "minimum": 107,
+      "maximum": 634
+    },
+    "expectedNoQualifyingEvidencePairPoint": 2461,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0
+  },
+  "recoveryAudit": {
+    "searched": [
+      "partial manifests",
+      "immutable artifacts",
+      "receipts",
+      "taxonomy caches",
+      "failed jobs",
+      "retry queues",
+      "historical worktrees"
+    ],
+    "northDakotaHistoricalWorktreesRetained": 4,
+    "unintegratedVerifiedPagesFound": 0,
+    "reacquisitionSuppressedByPartialRecovery": 0,
+    "taxonomyIdentitiesRecoveredFromVerifiedRuns": 53,
+    "jobLevelTaxonomyRequestsPrevented": 81,
+    "taxonomyAmbiguityRoutedToLiveExactMatch": 1,
+    "qualification": "No incomplete scope was marked complete. Failed, silent, rejected, or missing-geography records created no absence or not-detected determination."
+  },
+  "semanticPreflight": {
+    "jobsAttested": 12,
+    "exactBaseSha": "a55f6a9459afb13970f84a74a31e3fdec8b07d85",
+    "preflightCommit": "dcd9afc42",
+    "leaseCommit": "36d6762b4",
+    "frozenSkillVersion": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "frozenSkillCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "taxonomyCacheSha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "candidatePairCount": 2778,
+    "expectedNetworkRequests": 83,
+    "actualPreflightNetworkRequests": 0,
+    "uniqueDeterministicRunPaths": 12,
+    "scopeMismatches": 0,
+    "dependencyResolutionFailures": 0,
+    "writableStagingFailures": 0,
+    "overlappingLeases": 0
+  },
+  "execution": {
+    "jobsAttempted": 12,
+    "jobsCompleted": 12,
+    "jobsFailed": 0,
+    "leasesCompleted": 12,
+    "integrationsCompleted": 12,
+    "mergeConflicts": 0,
+    "workerRetries": 0,
+    "providerRequestRetries": 0,
+    "failedProviderAttempts": 0,
+    "acquisitionManualInterventions": 0,
+    "orchestrationManualInterventions": 2,
+    "orchestrationInterventionDetail": [
+      "A wrapper timestamp-format error failed before preflight, staging, or network access and created no worker output.",
+      "A stale guessed orchestrator entry path failed after three independent validation gates passed; MAIN reran only the missing gate from the frozen skill's registered path."
+    ],
+    "liveWorkerTopology": 1,
+    "machineCapacityWorkers": 3,
+    "providerLimitedTopology": true,
+    "acquisitionElapsedSeconds": 511.037,
+    "summedWorkerWallSeconds": 173.291,
+    "peakObservedRssMb": 1473.941,
+    "integrationLatency": {
+      "averageSeconds": 6.333,
+      "minimumSeconds": 2,
+      "maximumSeconds": 54,
+      "sumSeconds": 76,
+      "submissionToLastIntegrationSpanSeconds": 405
+    }
+  },
+  "acquisition": {
+    "sourceId": "gbif-preserved-specimens",
+    "completedCountySpeciesOutcomes": 2778,
+    "evidenceFoundOutcomes": 468,
+    "noQualifyingEvidenceOutcomes": 2310,
+    "positiveYield": 0.16846652267818574,
+    "providerCalls": 83,
+    "providerPages": {
+      "liveTaxonomyResponses": 1,
+      "liveOccurrencePages": 82,
+      "additionalPaginationPages": 0
+    },
+    "cachedTaxonomyResponses": 81,
+    "preventedProviderRequests": 81,
+    "sourceResponsesIncludingCache": 164,
+    "providerCandidates": 2468,
+    "retainedArtifacts": 164,
+    "retainedArtifactBytes": 1151785,
+    "pairsPerProviderCall": 33.46987951807229,
+    "netUniquePairMovementPerProviderCall": 7.385542168674699,
+    "netUniquePairMovementPerWorkerHour": 12734.648654575252,
+    "providerCandidatesPerCall": 29.734939759036145
+  },
+  "grossEventVolume": {
+    "pairOutcomes": 2778,
+    "assertionEvents": 1986,
+    "publicationEligibleAssertions": 1986,
+    "reviewEvents": 1986,
+    "rejectionRecords": 482,
+    "duplicateRecords": 0,
+    "errors": 0
+  },
+  "netFinalMatrixMovement": {
+    "uniqueCountySpeciesPairs": 613,
+    "verifiedPresent": 310,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 303,
+    "notResearched": -613,
+    "conflicts": 0,
+    "grossOutcomesAlreadyAccountedOrOverlapping": 2165
+  },
+  "stateBaselinesAndFinals": [
+    {
+      "stateCode": "ND",
+      "plannedPairs": 1749,
+      "completedPairs": 1749,
+      "evidenceFoundOutcomes": 150,
+      "noQualifyingEvidenceOutcomes": 1599,
+      "providerCalls": 33,
+      "providerCandidates": 532,
+      "workerWallSeconds": 68.324,
+      "peakObservedRssMb": 1473.91,
+      "baseline": {
+        "verifiedPresent": 33,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 3995,
+        "notResearched": 128684,
+        "protocolComplete": 43,
+        "protocolIncomplete": 33,
+        "protocolBlocked": 0,
+        "protocolCurrent": 30,
+        "protocolStale": 13,
+        "protocolUndated": 33,
+        "certificationBlockers": 6
+      },
+      "final": {
+        "verifiedPresent": 167,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 4285,
+        "notResearched": 128260,
+        "protocolComplete": 76,
+        "protocolIncomplete": 0,
+        "protocolBlocked": 0,
+        "protocolCurrent": 63,
+        "protocolStale": 13,
+        "protocolUndated": 0,
+        "applicableProtocolCompletionPercent": 100,
+        "certificationBlockers": 3
+      },
+      "net": {
+        "uniquePairsMoved": 424,
+        "verifiedPresent": 134,
+        "researchedUnresolved": 290,
+        "protocolCellsClosed": 33,
+        "certificationBlockersRemoved": 3
+      }
+    },
+    {
+      "stateCode": "NJ",
+      "plannedPairs": 1029,
+      "completedPairs": 1029,
+      "evidenceFoundOutcomes": 318,
+      "noQualifyingEvidenceOutcomes": 711,
+      "providerCalls": 50,
+      "providerCandidates": 1936,
+      "workerWallSeconds": 104.967,
+      "peakObservedRssMb": 1473.941,
+      "baseline": {
+        "verifiedPresent": 281,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 1315,
+        "notResearched": 50988,
+        "protocolComplete": 43,
+        "protocolIncomplete": 50,
+        "protocolBlocked": 0,
+        "protocolCurrent": 30,
+        "protocolStale": 13,
+        "protocolUndated": 50,
+        "certificationBlockers": 6
+      },
+      "final": {
+        "verifiedPresent": 457,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 1328,
+        "notResearched": 50799,
+        "protocolComplete": 92,
+        "protocolIncomplete": 1,
+        "protocolBlocked": 0,
+        "protocolCurrent": 79,
+        "protocolStale": 13,
+        "protocolUndated": 1,
+        "applicableProtocolCompletionPercent": 98.92,
+        "certificationBlockers": 4
+      },
+      "net": {
+        "uniquePairsMoved": 189,
+        "verifiedPresent": 176,
+        "researchedUnresolved": 13,
+        "protocolCellsClosed": 49,
+        "certificationBlockersRemoved": 2
+      }
+    }
+  ],
+  "applicabilityAndDenominatorMovement": {
+    "applicableStateSpecies": 0,
+    "notApplicableStateSpecies": 0,
+    "unknownStateSpecies": 0,
+    "blockedStateSpecies": 0,
+    "stateSpeciesDenominator": 0,
+    "countySpeciesDenominator": 0,
+    "qualification": "Round 55 screened evidence only. No applicability or denominator movement is counted as county research progress."
+  },
+  "protocolClosure": {
+    "complete": 82,
+    "incomplete": -82,
+    "blocked": 0,
+    "current": 82,
+    "stale": 0,
+    "undated": -82,
+    "remainingApplicableProtocolCountyScreens": -2778,
+    "qualification": "Protocol completion means the registered source-species screen is complete for its declared scope. It is separate from verified presence, absence, not detection, applicability, freshness, review, and conflict status."
+  },
+  "certificationMovement": {
+    "certifiedStates": 0,
+    "statesWithBlockers": 51,
+    "blockersRemoved": 5,
+    "northDakotaRemaining": [
+      "authoritativeCertificationScope",
+      "fullCatalogResearchAccounted",
+      "baselineResearchCoverageCompleteOrBlocked"
+    ],
+    "newJerseyRemaining": [
+      "authoritativeCertificationScope",
+      "fullCatalogResearchAccounted",
+      "baselineResearchCoverageCompleteOrBlocked",
+      "requiredCurrentSourceFamiliesProcessed"
+    ]
+  },
+  "final": {
+    "contentCommit": null,
+    "asOf": "2026-08-09",
+    "stateSpecies": {
+      "denominator": 127704,
+      "applicable": 5064,
+      "notApplicable": 0,
+      "unresolved": 122640,
+      "blocked": 0,
+      "explicitOverrides": 3426,
+      "derivedApplicable": 1638,
+      "researchedUnresolved": 1492,
+      "researchBlocked": 54,
+      "partiallyResearched": 0,
+      "untouched": 121094
+    },
+    "countySpecies": {
+      "denominator": 7872576,
+      "verifiedPresent": 56062,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 346697,
+      "notResearched": 7469809
+    },
+    "protocolCells": {
+      "total": 39866,
+      "applicable": 19376,
+      "notApplicable": 20490,
+      "complete": 5065,
+      "incomplete": 14252,
+      "blocked": 59,
+      "current": 4454,
+      "stale": 611,
+      "undated": 14311
+    },
+    "ledger": {
+      "projectedEvidence": 189224,
+      "immutableAssertions": 159406,
+      "immutableReviews": 159406,
+      "rejections": 43697,
+      "uniqueExplicitOutcomePairs": 357669,
+      "rawOutcomes": 466275,
+      "stateSelectedRuns": 564,
+      "immutableRunDirectories": 549,
+      "conflicts": 0
+    },
+    "operations": {
+      "jobs": {
+        "blocked": 2,
+        "cancelled": 21,
+        "completed": 188,
+        "failed": 60
+      },
+      "leases": {
+        "cancelled": 9,
+        "completed": 192,
+        "failed": 69,
+        "recovered": 2
+      },
+      "integrations": {
+        "changesRequested": 2,
+        "integrated": 188,
+        "rejected": 2
+      },
+      "activeJobs": 0,
+      "activeLeases": 0
+    },
+    "certifiedStates": 0,
+    "statesWithCertificationBlockers": 51,
+    "remainingApplicableProtocolCountyScreens": 925191
+  },
+  "expectedVersusActual": {
+    "plannedPairs": 2778,
+    "actualCompletedPairs": 2778,
+    "expectedNetNewPairs": 613,
+    "actualFinalMatrixMovement": 613,
+    "pairMovementAchievementRate": 1,
+    "expectedProviderCalls": 83,
+    "actualProviderCalls": 83,
+    "providerCallVariance": 0,
+    "expectedEvidenceFoundPairPoint": 317,
+    "expectedEvidenceFoundPairRange": {
+      "minimum": 107,
+      "maximum": 634
+    },
+    "actualEvidenceFoundPairs": 468,
+    "actualNoQualifyingEvidencePairs": 2310,
+    "expectedProtocolCellsClosed": 82,
+    "actualProtocolCellsClosed": 82,
+    "expectedCertificationBlockersRemoved": 0,
+    "actualCertificationBlockersRemoved": 5,
+    "qualification": "Net movement, provider-call volume, and protocol closure matched semantic preflight exactly. Positive outcomes remained inside the widened expected range and exceeded the point estimate by 151. Certification-gate movement was a beneficial unforecast result and is retained as such."
+  },
+  "validation": {
+    "explicitAsOfCompilationSeconds": 392.321,
+    "readinessGenerationSeconds": 0.578,
+    "allStateByteStability": {
+      "status": "pass",
+      "stateCount": 51,
+      "seconds": 791.6
+    },
+    "researchIntegrity": {
+      "status": "pass",
+      "seconds": 412.5,
+      "coverage": "source replay, immutable runs, receipts, schemas, reviews, hashes, lineage, denominators, protocol cells, freshness, frozen skills, and negative-evidence rejection semantics"
+    },
+    "dataIntegrity": "pass",
+    "stateProjectionIntegrity": "pass-51-states",
+    "nationalCompilerConfig": "pass",
+    "orchestration": {
+      "status": "pass",
+      "activeLeases": 0,
+      "errors": 0,
+      "warnings": "Historical terminal-contract warnings retained; no current Round 55 error."
+    },
+    "typecheck": "pass",
+    "lint": "pass-zero-warnings-zero-errors",
+    "productionBuild": {
+      "status": "pass",
+      "nextVersion": "15.5.15",
+      "staticPages": 2512,
+      "compileSeconds": 8.8
+    },
+    "whitespace": "pass",
+    "prohibitedDash": "pass"
+  },
+  "localBrowserQa": {
+    "routes": [
+      "/",
+      "/research",
+      "/species/tree-of-heaven"
+    ],
+    "desktopViewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "routeViewportChecks": 6,
+    "http200": 6,
+    "desktopHorizontalOverflow": false,
+    "mobileHorizontalOverflow": false,
+    "brokenImages": 0,
+    "pageErrors": 0,
+    "browserWarnings": 0,
+    "localOnlyAnalyticsErrorsPerRoute": 2,
+    "localOnlyAnalyticsQualification": "The local production server does not serve Vercel Analytics and produced the expected insights-script 404 and MIME errors on each route. Production console and exact deployment verification remain required.",
+    "screenshotCaptureCompleted": 6,
+    "visualInspection": "blocked-by-windows-sandbox-helper",
+    "visualInspectionQualification": "The browser completed six full-page screenshots, but the image-view helper could not reopen them because CreateProcessWithLogonW returned access denied. DOM geometry, image integrity, console, exceptions, HTTP status, and screenshot completion were verified; no manual visual claim is made.",
+    "temporaryQaFilesRemoved": 11
+  },
+  "externalVerification": {
+    "status": "pending-content-commit-and-deployment",
+    "qualification": "This content evaluation does not self-attest to a future GitHub or Vercel deployment. A separate receipt commit may record only the already-observed content deployment."
+  },
+  "processLesson": {
+    "lesson": "Small taxon chunks plus provenance-bound taxonomy reuse can make provider-limited work fully predictable, but source-family protocol closure must be forecast separately from certification-gate removal.",
+    "applied": [
+      "All twelve jobs contained at most eight taxa and completed without retry or provider failure.",
+      "One verified national taxonomy cache prevented 81 job-level provider requests.",
+      "Live concurrency remained one despite capacity for three workers because provider health, not RAM, was the limiting resource.",
+      "Gross outcomes and event volume were reported separately from 613 unique final-matrix movements.",
+      "Applicability and denominator movement remained zero and were not blended into research progress."
+    ],
+    "nextRoundChange": "Forecast certification-gate effects from the exact preflighted protocol-cell set, and invoke orchestration only through the frozen skill's registered entry path."
+  },
+  "remainingWork": {
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrations": 0,
+    "failedRound55Jobs": 0,
+    "blockedHistoricalJobs": 2,
+    "failedHistoricalJobs": 60,
+    "blockedProtocolCells": 59,
+    "staleProtocolCells": 611,
+    "undatedProtocolCells": 14311,
+    "unknownStateSpeciesApplicabilityDecisions": 122640,
+    "notResearchedCountySpeciesPairs": 7469809,
+    "certifiedStates": 0,
+    "newJerseyRequiredCurrentSourceCellsRemaining": 1,
+    "montanaStructuralRecoveryRequired": true
+  },
+  "nextRankedSourcePortfolio": [
+    {
+      "rank": 1,
+      "workClass": "structural-recovery-before-state-gbif",
+      "state": "MT",
+      "expectedNetNewPairs": 336,
+      "protocolCellsClosable": 44,
+      "reason": "It has the largest verified remaining GBIF net scope and protocol impact, but prior memory failures require per-taxon child processes or streaming parsing before any new lease."
+    },
+    {
+      "rank": 2,
+      "workClass": "alphabetical-certification-and-applicability",
+      "state": "AL",
+      "expectedNetNewPairs": null,
+      "reason": "The active certification state remains blocked by authoritative full-catalog applicability and baseline accounting. It outranks low-yield repeated occurrence work for certification impact but needs source-specific evidence review."
+    },
+    {
+      "rank": 3,
+      "workClass": "required-current-source-exception",
+      "state": "NJ",
+      "expectedNetNewPairs": null,
+      "protocolCellsClosable": 1,
+      "reason": "One exact required-current-source cell prevents complete current-source processing. Resolve the named cell once rather than repeating the completed GBIF scope."
+    },
+    {
+      "rank": 4,
+      "workClass": "national-source-family-reuse",
+      "state": "multi-jurisdiction",
+      "expectedNetNewPairs": null,
+      "reason": "Re-rank registered USGS, USFS, USDA, iDigBio, and other bulk-capable sources by current unresolved pair overlap before any state-by-state provider wave. No unverified blended yield is asserted."
+    }
+  ],
+  "completionForecastByWorkClass": {
+    "automatedNationalAcquisition": {
+      "measuredRound55NetPairsPerWorkerHour": 12734.648654575252,
+      "qualification": "This is summed acquisition-worker time only. It excludes preflight, MAIN review, integration, national generation, release, and future provider health, so it is not an end-to-end completion date."
+    },
+    "stateSpecificResearch": {
+      "forecast": null,
+      "qualification": "Authority, pagination, taxonomy, geography, and review burden require source-specific measurement; no blended rate is defensible."
+    },
+    "applicabilityReview": {
+      "unknownStateSpeciesDecisions": 122640,
+      "forecast": null,
+      "qualification": "Applicability is a separate evidence class and Round 55 measured no applicability-review rate."
+    },
+    "blockedExceptions": {
+      "researchBlockedStateSpecies": 54,
+      "blockedProtocolCells": 59,
+      "montanaStructuralRecoveryRequired": true,
+      "forecast": null,
+      "qualification": "These require exact source, taxonomy, geography, or job-shape resolution and cannot be extrapolated from successful acquisition."
+    },
+    "freshnessWork": {
+      "staleProtocolCells": 611,
+      "undatedProtocolCells": 14311,
+      "forecast": null,
+      "qualification": "Round 55 closed 82 current protocol cells but did not measure a general freshness-remediation rate."
+    },
+    "releaseOverhead": {
+      "localCompilationAndGateSeconds": 1597.499,
+      "externalOverhead": null,
+      "qualification": "Local generation and the three longest measured release gates are included. Push, deployment, production QA, and receipt verification remain unmeasured until external observation."
+    }
+  }
+}
