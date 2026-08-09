@@ -59,6 +59,7 @@
   },
   "noNetworkPreparationCorrections": [
     "The first semantic dry-run wrapper used an invalid PowerShell backslash replacement and failed before adapter execution.",
-    "The corrected all-job sweep exceeded an undersized 120-second shell timeout after issuing zero network requests; the final sweep used the observed cache-validation cost and completed."
+    "The corrected all-job sweep exceeded an undersized 120-second shell timeout after issuing zero network requests; the final sweep used the observed cache-validation cost and completed.",
+    "The first post-generation aggregate used an invalid PowerShell Measure-Object script expression; all 20 preflights had already passed, and the corrected read-only aggregate confirmed 234 unique pairs and zero network requests."
   ]
 }
