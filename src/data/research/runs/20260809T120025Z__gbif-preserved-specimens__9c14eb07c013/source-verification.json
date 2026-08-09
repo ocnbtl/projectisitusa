@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T14:01:26.237Z",
+  "runId": "20260809T120025Z__gbif-preserved-specimens__9c14eb07c013",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "WY",
+  "pairKeys": [
+    "56001:solanum-viarum",
+    "56003:solanum-viarum",
+    "56005:solanum-viarum",
+    "56007:solanum-viarum",
+    "56009:solanum-viarum",
+    "56011:solanum-viarum",
+    "56013:solanum-viarum",
+    "56015:solanum-viarum",
+    "56017:solanum-viarum",
+    "56019:solanum-viarum",
+    "56021:solanum-viarum",
+    "56023:solanum-viarum",
+    "56025:solanum-viarum",
+    "56027:solanum-viarum",
+    "56029:solanum-viarum",
+    "56031:solanum-viarum",
+    "56033:solanum-viarum",
+    "56035:solanum-viarum",
+    "56037:solanum-viarum",
+    "56039:solanum-viarum",
+    "56041:solanum-viarum",
+    "56043:solanum-viarum",
+    "56045:solanum-viarum"
+  ],
+  "parameterHash": "9c14eb07c0139216554e8fde66ca5a75d2387e950c4ae0ee07b0f68b706daa9a",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T14:01:26.236Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Wyoming and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "solanum-viarum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-solanum-viarum",
+        "url": "https://api.gbif.org/v1/species/match?name=Solanum+viarum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T14:01:25.383Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-solanum-viarum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Wyoming&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2931914&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for solanum-viarum and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T14:01:26.236Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/artifacts/gbif-species-match-solanum-viarum.json.gz",
+      "sha256": "901c25e85dcd2301e9dd4af864ba9fa1b0dc9718008a7a520672297b422af125",
+      "bytes": 277
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
