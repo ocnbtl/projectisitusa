@@ -23770,6 +23770,73 @@
         "sha256": "a65489fed1b2c08cf62e26758495a446e984cbc7ef4f75a6b1afdefd29f05afc",
         "bytes": 4205
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round55-nj-001-1",
+      "jobId": "gbif-round55-nj-001",
+      "leaseId": "lease-gbif-round55-nj-001-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T06:12:56.000Z",
+      "manifestPath": "manifests/gbif-round55-nj-001__lease-gbif-round55-nj-001-1.json",
+      "manifestHash": "36638e80273c317a2d3a0d3f558231601e3b09b3a705409008ad0dd7ab8631c0",
+      "manifestBytes": 17333,
+      "workerCommit": "c86129a939893721331975b8c7aa4db691f29a47",
+      "workerBranchHead": "e6c5a1c81344dca41a5a5ac655a035899be5f462",
+      "reviewedAt": "2026-08-09T06:12:57.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable NJ GBIF run, exact two-commit inventory, 168 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-solanum-torvum.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-solanum-viarum.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/assertions.ndjson",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/manifest.json",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/outcomes.ndjson",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/receipt.json",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/rejections.ndjson",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/reviews.ndjson",
+        "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check a55f6a9459afb13970f84a74a31e3fdec8b07d85...e6c5a1c81344dca41a5a5ac655a035899be5f462",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round55-nj-001-1.json",
+        "sha256": "ed16a0c427a44e3cc80edbce6b9664c79025ad6f6a346f830ee46aa95ab7d17b",
+        "bytes": 4382
+      }
     }
   ]
 }
