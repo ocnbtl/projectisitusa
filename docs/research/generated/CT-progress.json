@@ -36,29 +36,29 @@
     "verifiedPresent": 0,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 1053,
-    "notResearched": 21483,
+    "researchedUnresolved": 1071,
+    "notResearched": 21465,
     "determinationCoveragePercent": 0,
-    "researchCoveragePercent": 4.67,
-    "explicitOutcomePairCount": 1053,
-    "explicitOutcomeCoveragePercent": 4.6725,
+    "researchCoveragePercent": 4.75,
+    "explicitOutcomePairCount": 1071,
+    "explicitOutcomeCoveragePercent": 4.7524,
     "conflictCount": 0,
     "evidenceRecordCount": 0,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 0,
-    "rejectionRecordCount": 5894,
-    "researchRunCount": 9,
+    "rejectionRecordCount": 5931,
+    "researchRunCount": 11,
     "boundedAcquisition": {
       "speciesCount": 125,
       "totalPairs": 1125,
       "verifiedPresent": 0,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 1053,
-      "notResearched": 72,
-      "researchCoveragePercent": 93.6,
-      "explicitOutcomePairs": 1053,
-      "explicitOutcomeCoveragePercent": 93.6
+      "researchedUnresolved": 1071,
+      "notResearched": 54,
+      "researchCoveragePercent": 95.2,
+      "explicitOutcomePairs": 1071,
+      "explicitOutcomeCoveragePercent": 95.2
     }
   },
   "migrationCandidates": {
@@ -263,9 +263,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": "2026-08-03T00:38:55.686Z",
+      "lastRunAt": "2026-08-09T21:44:42.758Z",
       "evidencePairCount": 0,
-      "screenedSpeciesCount": 100
+      "screenedSpeciesCount": 102
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -375,14 +375,14 @@
     "totalCells": 375,
     "applicableCells": 123,
     "notApplicableCells": 252,
-    "completeCells": 101,
-    "incompleteCells": 9,
+    "completeCells": 103,
+    "incompleteCells": 7,
     "blockedCells": 13,
-    "currentCells": 101,
+    "currentCells": 103,
     "staleCells": 0,
-    "undatedCells": 22,
-    "applicableCompletionPercent": 82.11,
-    "currentCompletePercent": 82.11,
+    "undatedCells": 20,
+    "applicableCompletionPercent": 83.74,
+    "currentCompletePercent": 83.74,
     "regulatedAndHighApplicableCells": 95,
     "regulatedAndHighCurrentCompleteCells": 89,
     "regulatedAndHighCurrentCompletePercent": 93.68,
@@ -391,14 +391,14 @@
       {
         "category": "fungi-diseases",
         "applicableCells": 12,
-        "currentCompleteCells": 5,
-        "currentCompletePercent": 41.67
+        "currentCompleteCells": 6,
+        "currentCompletePercent": 50
       },
       {
         "category": "insects",
         "applicableCells": 14,
-        "currentCompleteCells": 6,
-        "currentCompletePercent": 42.86
+        "currentCompleteCells": 7,
+        "currentCompletePercent": 50
       },
       {
         "category": "plants",
@@ -435,15 +435,15 @@
       {
         "priority": "baseline",
         "applicableCells": 26,
-        "currentCompleteCells": 11,
-        "currentCompletePercent": 42.31
+        "currentCompleteCells": 13,
+        "currentCompletePercent": 50
       }
     ],
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
         "applicableCells": 109,
-        "currentCompleteCells": 100,
+        "currentCompleteCells": 102,
         "processed": false
       },
       {
@@ -455,32 +455,6 @@
     ]
   },
   "nextQueue": [
-    {
-      "speciesId": "popillia-japonica",
-      "commonName": "Japanese Beetle",
-      "scientificName": "Popillia japonica",
-      "category": "insects",
-      "notResearchedCountyCount": 9,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 9002
-    },
-    {
-      "speciesId": "raffaelea-lauricola",
-      "commonName": "Laurel wilt",
-      "scientificName": "Raffaelea lauricola",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 9,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 9002
-    },
     {
       "speciesId": "acer-platanoides",
       "commonName": "Norway Maple",
@@ -749,6 +723,30 @@
       "speciesId": "phytophthora-cinnamomi",
       "commonName": "Phytophthora Root Rot",
       "scientificName": "Phytophthora cinnamomi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 9,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 91
+    },
+    {
+      "speciesId": "popillia-japonica",
+      "commonName": "Japanese Beetle",
+      "scientificName": "Popillia japonica",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 9,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 91
+    },
+    {
+      "speciesId": "raffaelea-lauricola",
+      "commonName": "Laurel wilt",
+      "scientificName": "Raffaelea lauricola",
       "category": "fungi-diseases",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 9,

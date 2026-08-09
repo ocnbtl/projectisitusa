@@ -10,17 +10,17 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Verified present: `122`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `638`
-- Not researched: `24280`
+- Researched unresolved: `728`
+- Not researched: `24190`
 - Determination coverage: `0.49%`
-- Research coverage: `3.04%`
-- Explicit outcome coverage: `3.0351%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `79`
-- Current complete protocol cells: `30`
-- Protocol completion: `54.43%`
-- Current protocol completion: `37.97%`
+- Current complete protocol cells: `39`
+- Protocol completion: `65.82%`
+- Current protocol completion: `49.37%`
 - Evidence records: `122`
-- Research runs: `9`
+- Research runs: `18`
 - Rejection records: `17`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,15 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 10 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 10 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 10 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 10 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 10 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 10 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 10 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 10 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 10 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 10 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 10 | 2 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 10 | 2 |
@@ -57,6 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 10 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 10 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 10 | 0 |
+| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 10 | 0 |
+| Common Barberry (`berberis-vulgaris`) | plants | 0 | 10 | 0 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 10 | 0 |
+| Canada Thistle (`cirsium-arvense`) | plants | 0 | 10 | 0 |
+| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 10 | 0 |
+| Jio (`commelina-benghalensis`) | plants | 0 | 10 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 10 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 10 | 0 |
+| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 10 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-08T00:42:23.355Z | 0 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-09T21:36:37.623Z | 0 | 34 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

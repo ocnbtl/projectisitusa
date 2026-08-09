@@ -10,18 +10,18 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1053`
-- Not researched: `21483`
+- Researched unresolved: `1071`
+- Not researched: `21465`
 - Determination coverage: `0.00%`
-- Research coverage: `4.67%`
-- Explicit outcome coverage: `4.6725%`
+- Research coverage: `4.75%`
+- Explicit outcome coverage: `4.7524%`
 - Applicable protocol cells: `123`
-- Current complete protocol cells: `101`
-- Protocol completion: `82.11%`
-- Current protocol completion: `82.11%`
+- Current complete protocol cells: `103`
+- Protocol completion: `83.74%`
+- Current protocol completion: `83.74%`
 - Evidence records: `0`
-- Research runs: `9`
-- Rejection records: `5894`
+- Research runs: `11`
+- Rejection records: `5931`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,8 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Japanese Beetle (`popillia-japonica`) | insects | 9 | 0 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 9 | 0 | 2 |
 | Norway Maple (`acer-platanoides`) | plants | 9 | 0 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 9 | 0 | 0 |
 | Russian Olive (`elaeagnus-angustifolia`) | plants | 9 | 0 | 0 |
@@ -57,6 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 9 | 1 |
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 9 | 1 |
 | Princess Tree (`paulownia-tomentosa`) | plants | 0 | 9 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 9 | 1 |
+| Japanese Beetle (`popillia-japonica`) | insects | 0 | 9 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-03T00:38:55.686Z | 0 | 100 |
+| GBIF preserved specimen records | operational | 2026-08-09T21:44:42.758Z | 0 | 102 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
