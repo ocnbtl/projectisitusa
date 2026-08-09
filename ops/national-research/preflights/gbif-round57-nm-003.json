@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-round57-nm-003-20260809T122500000Z",
+  "createdAt": "2026-08-09T12:25:00.000Z",
+  "result": "pass",
+  "jobId": "gbif-round57-nm-003",
+  "exactBaseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "NM",
+      "stateProvince": "New Mexico",
+      "candidateLimit": 33,
+      "candidatePairs": [
+        "35001:sparganium-erectum",
+        "35003:sparganium-erectum",
+        "35005:sparganium-erectum",
+        "35006:sparganium-erectum",
+        "35007:sparganium-erectum",
+        "35009:sparganium-erectum",
+        "35011:sparganium-erectum",
+        "35013:sparganium-erectum",
+        "35015:sparganium-erectum",
+        "35017:sparganium-erectum",
+        "35019:sparganium-erectum",
+        "35021:sparganium-erectum",
+        "35023:sparganium-erectum",
+        "35025:sparganium-erectum",
+        "35027:sparganium-erectum",
+        "35028:sparganium-erectum",
+        "35029:sparganium-erectum",
+        "35031:sparganium-erectum",
+        "35033:sparganium-erectum",
+        "35035:sparganium-erectum",
+        "35037:sparganium-erectum",
+        "35039:sparganium-erectum",
+        "35041:sparganium-erectum",
+        "35043:sparganium-erectum",
+        "35045:sparganium-erectum",
+        "35047:sparganium-erectum",
+        "35049:sparganium-erectum",
+        "35051:sparganium-erectum",
+        "35053:sparganium-erectum",
+        "35055:sparganium-erectum",
+        "35057:sparganium-erectum",
+        "35059:sparganium-erectum",
+        "35061:sparganium-erectum"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "NM"
+    ],
+    "taxa": [
+      "sparganium-erectum"
+    ],
+    "pairs": [
+      "35001:sparganium-erectum",
+      "35003:sparganium-erectum",
+      "35005:sparganium-erectum",
+      "35006:sparganium-erectum",
+      "35007:sparganium-erectum",
+      "35009:sparganium-erectum",
+      "35011:sparganium-erectum",
+      "35013:sparganium-erectum",
+      "35015:sparganium-erectum",
+      "35017:sparganium-erectum",
+      "35019:sparganium-erectum",
+      "35021:sparganium-erectum",
+      "35023:sparganium-erectum",
+      "35025:sparganium-erectum",
+      "35027:sparganium-erectum",
+      "35028:sparganium-erectum",
+      "35029:sparganium-erectum",
+      "35031:sparganium-erectum",
+      "35033:sparganium-erectum",
+      "35035:sparganium-erectum",
+      "35037:sparganium-erectum",
+      "35039:sparganium-erectum",
+      "35041:sparganium-erectum",
+      "35043:sparganium-erectum",
+      "35045:sparganium-erectum",
+      "35047:sparganium-erectum",
+      "35049:sparganium-erectum",
+      "35051:sparganium-erectum",
+      "35053:sparganium-erectum",
+      "35055:sparganium-erectum",
+      "35057:sparganium-erectum",
+      "35059:sparganium-erectum",
+      "35061:sparganium-erectum"
+    ],
+    "pairCount": 33,
+    "pairHash": "d5802dea13be7349ad831212ea1306be915a700fe9118e6074452ca5762c4da6"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-57-20260809/gbif-round57-nm-003.json",
+    "declaredCandidateCount": 33,
+    "selectedPairCount": 33,
+    "sha256": "8752b1819c997b5c6c6a027a3ed1456bdd5fffa0f52448ef144994fcbc82ccc6"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 33,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round57-nm-003\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "NM",
+    "--candidate-file",
+    "ops/national-research/plans/round-57-20260809/gbif-round57-nm-003.json",
+    "--candidate-limit",
+    "33",
+    "--started-at",
+    "2026-08-09T12:00:25.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-nm-003\\attempt-telemetry.json"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expectedPositivePairRange": {
+    "minimum": 0,
+    "maximum": 33,
+    "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-09T12:00:25.000Z",
+    "parameterHash": "787858eccaa3c48cf4371fbdc5a0a30846b566d7feb6ee5fe947cac64a7425f8",
+    "suffix": "787858eccaa3",
+    "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__787858eccaa3"
+  },
+  "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__787858eccaa3/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-57-20260809/gbif-round57-nm-003.json",
+        "blob": "f09fe643076764e8f14a05cc7790c50580112c07"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "blob": "e39ef97d94a8dd6dbcd61a6020b42072bcfde344"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-nm-003\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "NM",
+    "orderedPairHash": "d5802dea13be7349ad831212ea1306be915a700fe9118e6074452ca5762c4da6",
+    "parameterHash": "787858eccaa3c48cf4371fbdc5a0a30846b566d7feb6ee5fe947cac64a7425f8",
+    "runPath": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__787858eccaa3"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260809-r55",
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+      "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "sparganium-erectum",
+          "scientificName": "Sparganium erectum",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Sparganium+erectum&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-09T00:14:24.754Z",
+          "responseBodySha256": "a8cb31028d8a2a2a64f8f48f1d163174c530e2378b1fba4b925855eed19d98ff",
+          "provenance": {
+            "runId": "20260809T000146Z__gbif-preserved-specimens__5680468ae83e",
+            "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/runs/20260809T000146Z__gbif-preserved-specimens__5680468ae83e/source-verification.json",
+            "sourceVerificationSha256": "cb3b2b93104aecac1e8aaf0e2cbc72550a7565a7a1cc5bb8b905728d11564810",
+            "artifactPath": "src/data/research/runs/20260809T000146Z__gbif-preserved-specimens__5680468ae83e/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+            "artifactSha256": "14db2b237f6595c0d6330ad17e13b9f1599a024b50acf61aa126d25c9c8981ab",
+            "artifactBytes": 282
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "schemaVersion": 1,
+    "evaluationId": "windows-desktop-capacity-20260809-r57-preflight",
+    "recordedAt": "2026-08-09T12:23:20.207Z",
+    "hostCounterTimestamp": "2026-08-09T12:23:20.2075311Z",
+    "clockQualification": "Windows UTC controls this no-network resource gate; provider-native timestamps will control acquisition responses.",
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha": "fff6ec45a3f6b9c22f1ba93ad14ea806c446d63f",
+    "capacityTier": "green-provider-limited",
+    "workerCount": 1,
+    "machineCapacityWorkerCount": 3,
+    "providerSafeLiveWorkerCount": 1,
+    "perWorkerReservationMiB": 1600,
+    "observedRound56PeakMemoryMiB": 1489.094,
+    "totalPhysicalMiB": 31900.91796875,
+    "freePhysicalMiB": 9820.171875,
+    "projectedPostWorkerFreePhysicalMiB": 8220.171875,
+    "commitHeadroomMiB": 14485.24609375,
+    "projectedPostWorkerFreeCommitMiB": 12885.24609375,
+    "freeDiskMiB": 711629.03125,
+    "totalDiskMiB": 1906665.99609375,
+    "rawMeasurements": {
+      "totalPhysicalBytes": 33450536960,
+      "availablePhysicalBytes": 10297196544,
+      "committedBytes": 38662750208,
+      "commitLimitBytes": 53851631616,
+      "pageReadsPerSecond": null,
+      "pageWritesPerSecond": null,
+      "diskFreeBytes": 746197123072,
+      "diskTotalBytes": 1999284203520
+    },
+    "resourceGate": {
+      "result": "pass",
+      "physicalFloorMiB": 3190.091796875,
+      "commitFloorMiB": 3072,
+      "diskFloorMiB": 285999.8994140625,
+      "projectedThreeWorkerFreePhysicalMiB": 5020.171875,
+      "projectedThreeWorkerFreeCommitMiB": 9685.24609375,
+      "qualification": "Fresh capacity remains green after creating sixteen isolated worktrees. One measured-shape acquisition worker preserves all physical, commit, and disk floors; three machine reservations also fit, but only one GBIF provider lane is authorized."
+    },
+    "provider": {
+      "sourceId": "gbif-preserved-specimens",
+      "contactedBeforeSemanticPreflight": false,
+      "health": "not-probed-before-contract",
+      "recentObservedCondition": "Round 56 completed six live requests without retry at one live worker; Round 55 completed 83 live requests without retry at one live worker.",
+      "qualification": "No Round 57 provider request is permitted until the selected job passes machine-readable semantic preflight and is leased. The first leased occurrence request doubles as the fresh provider-health observation."
+    }
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-round57-nm-003.json",
+    "sha256": "31ecb9930c1ad6cae87eb851b8dd1cab63f638e74bba13e6915e858a4dd7981d",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}

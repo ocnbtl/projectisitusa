@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-round57-wy-002-20260809T122500000Z",
+  "createdAt": "2026-08-09T12:25:00.000Z",
+  "result": "pass",
+  "jobId": "gbif-round57-wy-002",
+  "exactBaseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "WY",
+      "stateProvince": "Wyoming",
+      "candidateLimit": 23,
+      "candidatePairs": [
+        "56001:solanum-torvum",
+        "56003:solanum-torvum",
+        "56005:solanum-torvum",
+        "56007:solanum-torvum",
+        "56009:solanum-torvum",
+        "56011:solanum-torvum",
+        "56013:solanum-torvum",
+        "56015:solanum-torvum",
+        "56017:solanum-torvum",
+        "56019:solanum-torvum",
+        "56021:solanum-torvum",
+        "56023:solanum-torvum",
+        "56025:solanum-torvum",
+        "56027:solanum-torvum",
+        "56029:solanum-torvum",
+        "56031:solanum-torvum",
+        "56033:solanum-torvum",
+        "56035:solanum-torvum",
+        "56037:solanum-torvum",
+        "56039:solanum-torvum",
+        "56041:solanum-torvum",
+        "56043:solanum-torvum",
+        "56045:solanum-torvum"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "WY"
+    ],
+    "taxa": [
+      "solanum-torvum"
+    ],
+    "pairs": [
+      "56001:solanum-torvum",
+      "56003:solanum-torvum",
+      "56005:solanum-torvum",
+      "56007:solanum-torvum",
+      "56009:solanum-torvum",
+      "56011:solanum-torvum",
+      "56013:solanum-torvum",
+      "56015:solanum-torvum",
+      "56017:solanum-torvum",
+      "56019:solanum-torvum",
+      "56021:solanum-torvum",
+      "56023:solanum-torvum",
+      "56025:solanum-torvum",
+      "56027:solanum-torvum",
+      "56029:solanum-torvum",
+      "56031:solanum-torvum",
+      "56033:solanum-torvum",
+      "56035:solanum-torvum",
+      "56037:solanum-torvum",
+      "56039:solanum-torvum",
+      "56041:solanum-torvum",
+      "56043:solanum-torvum",
+      "56045:solanum-torvum"
+    ],
+    "pairCount": 23,
+    "pairHash": "6f5a0760de15ef1fc2b8bcdecce0355fe89115bb1ed413baca1c8ed9727d6ee7"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-002.json",
+    "declaredCandidateCount": 23,
+    "selectedPairCount": 23,
+    "sha256": "9671e0d8ade62eeb9e7b61f97df12babd07c6ba0eba87b6739e134c636472d13"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 23,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-002\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "WY",
+    "--candidate-file",
+    "ops/national-research/plans/round-57-20260809/gbif-round57-wy-002.json",
+    "--candidate-limit",
+    "23",
+    "--started-at",
+    "2026-08-09T12:00:25.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-002\\attempt-telemetry.json"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expectedPositivePairRange": {
+    "minimum": 0,
+    "maximum": 23,
+    "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-09T12:00:25.000Z",
+    "parameterHash": "1432bbcd4cc9404e57c79102b321a591219a15c2c62b5a0b9c6f418a840fb462",
+    "suffix": "1432bbcd4cc9",
+    "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__1432bbcd4cc9"
+  },
+  "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__1432bbcd4cc9/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-002.json",
+        "blob": "ec7731dfb30e409adca5637d84cdae35482dc705"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "blob": "e39ef97d94a8dd6dbcd61a6020b42072bcfde344"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-002\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "WY",
+    "orderedPairHash": "6f5a0760de15ef1fc2b8bcdecce0355fe89115bb1ed413baca1c8ed9727d6ee7",
+    "parameterHash": "1432bbcd4cc9404e57c79102b321a591219a15c2c62b5a0b9c6f418a840fb462",
+    "runPath": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__1432bbcd4cc9"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260809-r55",
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+      "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "solanum-torvum",
+          "scientificName": "Solanum torvum",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Solanum+torvum&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-09T00:13:08.554Z",
+          "responseBodySha256": "10d10a414585eea8f06d88edc3ca4c834cefcc96a92868079f6f08de1d5c2344",
+          "provenance": {
+            "runId": "20260809T000142Z__gbif-preserved-specimens__34cdc82b641d",
+            "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/source-verification.json",
+            "sourceVerificationSha256": "da58c450659ef0e3af8c383956493bcfa5315cf0f6d2aeb1104c96d7d24fa62b",
+            "artifactPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/artifacts/gbif-species-match-solanum-torvum.json.gz",
+            "artifactSha256": "449f01369c536eb151a3b4811ae345c59e625a7e9a8aaa236f0b38d74107fdae",
+            "artifactBytes": 276
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "schemaVersion": 1,
+    "evaluationId": "windows-desktop-capacity-20260809-r57-preflight",
+    "recordedAt": "2026-08-09T12:23:20.207Z",
+    "hostCounterTimestamp": "2026-08-09T12:23:20.2075311Z",
+    "clockQualification": "Windows UTC controls this no-network resource gate; provider-native timestamps will control acquisition responses.",
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha": "fff6ec45a3f6b9c22f1ba93ad14ea806c446d63f",
+    "capacityTier": "green-provider-limited",
+    "workerCount": 1,
+    "machineCapacityWorkerCount": 3,
+    "providerSafeLiveWorkerCount": 1,
+    "perWorkerReservationMiB": 1600,
+    "observedRound56PeakMemoryMiB": 1489.094,
+    "totalPhysicalMiB": 31900.91796875,
+    "freePhysicalMiB": 9820.171875,
+    "projectedPostWorkerFreePhysicalMiB": 8220.171875,
+    "commitHeadroomMiB": 14485.24609375,
+    "projectedPostWorkerFreeCommitMiB": 12885.24609375,
+    "freeDiskMiB": 711629.03125,
+    "totalDiskMiB": 1906665.99609375,
+    "rawMeasurements": {
+      "totalPhysicalBytes": 33450536960,
+      "availablePhysicalBytes": 10297196544,
+      "committedBytes": 38662750208,
+      "commitLimitBytes": 53851631616,
+      "pageReadsPerSecond": null,
+      "pageWritesPerSecond": null,
+      "diskFreeBytes": 746197123072,
+      "diskTotalBytes": 1999284203520
+    },
+    "resourceGate": {
+      "result": "pass",
+      "physicalFloorMiB": 3190.091796875,
+      "commitFloorMiB": 3072,
+      "diskFloorMiB": 285999.8994140625,
+      "projectedThreeWorkerFreePhysicalMiB": 5020.171875,
+      "projectedThreeWorkerFreeCommitMiB": 9685.24609375,
+      "qualification": "Fresh capacity remains green after creating sixteen isolated worktrees. One measured-shape acquisition worker preserves all physical, commit, and disk floors; three machine reservations also fit, but only one GBIF provider lane is authorized."
+    },
+    "provider": {
+      "sourceId": "gbif-preserved-specimens",
+      "contactedBeforeSemanticPreflight": false,
+      "health": "not-probed-before-contract",
+      "recentObservedCondition": "Round 56 completed six live requests without retry at one live worker; Round 55 completed 83 live requests without retry at one live worker.",
+      "qualification": "No Round 57 provider request is permitted until the selected job passes machine-readable semantic preflight and is leased. The first leased occurrence request doubles as the fresh provider-health observation."
+    }
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-round57-wy-002.json",
+    "sha256": "8cdfff8b038c8ef5bdd2a40f59fe25832e30a3d6098edc4d36dbe0b923236125",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}
