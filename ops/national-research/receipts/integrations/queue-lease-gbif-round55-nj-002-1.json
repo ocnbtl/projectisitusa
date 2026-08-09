@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nj-002-1",
+  "jobId": "gbif-round55-nj-002",
+  "leaseId": "lease-gbif-round55-nj-002-1",
+  "workerCommit": "f59ae46556de7226f070cd1a649af04e6bd00549",
+  "workerBranchHead": "e4b5150a8b6c77735b243ffc17d252a8e7caa88d",
+  "manifestHash": "e7e0e897a0a72e36a1665a52a991755a64c660436e7c7cd345a4c3defc18c5d6",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-corbicula-fluminea-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-cryphonectria-parasitica-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-emerald-ash-borer-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-lonicera-japonica-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-ophiognomonia-clavigignenti-juglandacearum-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-ophiostoma-ulmi-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-popillia-japonica-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-corbicula-fluminea.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-cryphonectria-parasitica.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-emerald-ash-borer.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-lonicera-japonica.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-ophiognomonia-clavigignenti-juglandacearum.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-ophiostoma-ulmi.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-popillia-japonica.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/assertions.ndjson",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/manifest.json",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/outcomes.ndjson",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/receipt.json",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/rejections.ndjson",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/reviews.ndjson",
+    "src/data/research/runs/20260809T055352Z__gbif-preserved-specimens__9d266615e92e/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:13:30.000Z",
+  "integrationCommit": "6a4a5c33412f8fdd1cd0313eb316c82df35e1078"
+}
