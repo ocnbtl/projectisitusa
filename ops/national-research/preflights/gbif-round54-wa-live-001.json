@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-round54-wa-live-001-20260809T000804000Z",
+  "createdAt": "2026-08-09T00:08:04.000Z",
+  "result": "pass",
+  "jobId": "gbif-round54-wa-live-001",
+  "exactBaseSha": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "WA",
+      "stateProvince": "Washington",
+      "candidateLimit": 39,
+      "candidatePairs": [
+        "53001:echium-vulgare",
+        "53003:echium-vulgare",
+        "53005:echium-vulgare",
+        "53007:echium-vulgare",
+        "53009:echium-vulgare",
+        "53011:echium-vulgare",
+        "53013:echium-vulgare",
+        "53015:echium-vulgare",
+        "53017:echium-vulgare",
+        "53019:echium-vulgare",
+        "53021:echium-vulgare",
+        "53023:echium-vulgare",
+        "53025:echium-vulgare",
+        "53027:echium-vulgare",
+        "53029:echium-vulgare",
+        "53031:echium-vulgare",
+        "53033:echium-vulgare",
+        "53035:echium-vulgare",
+        "53037:echium-vulgare",
+        "53039:echium-vulgare",
+        "53041:echium-vulgare",
+        "53043:echium-vulgare",
+        "53045:echium-vulgare",
+        "53047:echium-vulgare",
+        "53049:echium-vulgare",
+        "53051:echium-vulgare",
+        "53053:echium-vulgare",
+        "53055:echium-vulgare",
+        "53057:echium-vulgare",
+        "53059:echium-vulgare",
+        "53061:echium-vulgare",
+        "53063:echium-vulgare",
+        "53065:echium-vulgare",
+        "53067:echium-vulgare",
+        "53069:echium-vulgare",
+        "53071:echium-vulgare",
+        "53073:echium-vulgare",
+        "53075:echium-vulgare",
+        "53077:echium-vulgare"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "WA"
+    ],
+    "taxa": [
+      "echium-vulgare"
+    ],
+    "pairs": [
+      "53001:echium-vulgare",
+      "53003:echium-vulgare",
+      "53005:echium-vulgare",
+      "53007:echium-vulgare",
+      "53009:echium-vulgare",
+      "53011:echium-vulgare",
+      "53013:echium-vulgare",
+      "53015:echium-vulgare",
+      "53017:echium-vulgare",
+      "53019:echium-vulgare",
+      "53021:echium-vulgare",
+      "53023:echium-vulgare",
+      "53025:echium-vulgare",
+      "53027:echium-vulgare",
+      "53029:echium-vulgare",
+      "53031:echium-vulgare",
+      "53033:echium-vulgare",
+      "53035:echium-vulgare",
+      "53037:echium-vulgare",
+      "53039:echium-vulgare",
+      "53041:echium-vulgare",
+      "53043:echium-vulgare",
+      "53045:echium-vulgare",
+      "53047:echium-vulgare",
+      "53049:echium-vulgare",
+      "53051:echium-vulgare",
+      "53053:echium-vulgare",
+      "53055:echium-vulgare",
+      "53057:echium-vulgare",
+      "53059:echium-vulgare",
+      "53061:echium-vulgare",
+      "53063:echium-vulgare",
+      "53065:echium-vulgare",
+      "53067:echium-vulgare",
+      "53069:echium-vulgare",
+      "53071:echium-vulgare",
+      "53073:echium-vulgare",
+      "53075:echium-vulgare",
+      "53077:echium-vulgare"
+    ],
+    "pairCount": 39,
+    "pairHash": "a7082f2498c54d4964bb41fcfd21a85abe2337fc752e6f5e878d27338e4bf4d4"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-54-20260808-recovery/gbif-round54-wa-live-001.json",
+    "declaredCandidateCount": 39,
+    "selectedPairCount": 39,
+    "sha256": "4ab9fbcbbe5c6599812cee7d1573db9ce465fc8ffbeb84aa8c6d0d467dcea1ee"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 39,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round54-wa-live-001\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "WA",
+    "--candidate-file",
+    "ops/national-research/plans/round-54-20260808-recovery/gbif-round54-wa-live-001.json",
+    "--candidate-limit",
+    "39",
+    "--started-at",
+    "2026-08-09T00:01:44.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round54-wa-live-001\\attempt-telemetry.json"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expectedPositivePairRange": {
+    "minimum": 0,
+    "maximum": 39,
+    "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-09T00:01:44.000Z",
+    "parameterHash": "fb6903803b08dfbcfe2c5c4cf85b32799bf765f9f25dbf925879dd307c233166",
+    "suffix": "fb6903803b08",
+    "path": "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08"
+  },
+  "expectedReceiptCodeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-54-20260808-recovery/gbif-round54-wa-live-001.json",
+        "blob": "2af252936cdd13212391ca9d33462df0a99d0021"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json",
+        "blob": "65df742ee276668df87e1cd78a4a27b342cc11cb"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round54-wa-live-001\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "WA",
+    "orderedPairHash": "a7082f2498c54d4964bb41fcfd21a85abe2337fc752e6f5e878d27338e4bf4d4",
+    "parameterHash": "fb6903803b08dfbcfe2c5c4cf85b32799bf765f9f25dbf925879dd307c233166",
+    "runPath": "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260809-r54-recovery",
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json",
+      "sha256": "50df0aaaeb730fac009189827e70ebeb3061a8928f6fe6ab64ef4ede85d335ed",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "echium-vulgare",
+          "scientificName": "Echium vulgare",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Echium+vulgare&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-08T23:50:16.186Z",
+          "responseBodySha256": "311fc7a12a46804966f7a787ee20febca6d480cadbbd13e723cbfa73e10f0e88",
+          "provenance": {
+            "runId": "20260808T234350Z__gbif-preserved-specimens__70f2087c3c11",
+            "codeCommit": "331182310131039f8c50e4985d275f4ba3f2af3f",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/caches/provenance/gbif-round54-echium-vulgare/source-verification.json",
+            "sourceVerificationSha256": "4ad0887a369cc2e55a8170c1971199a0a2ab3fae9ce5624ee288849da46ecd9b",
+            "artifactPath": "src/data/research/caches/provenance/gbif-round54-echium-vulgare/gbif-species-match-echium-vulgare.json.gz",
+            "artifactSha256": "3ea02aab374e3a9b32375c88599608caaabdf1a623937cf519761368d61e145c",
+            "artifactBytes": 281
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "schemaVersion": 1,
+    "evaluationId": "windows-desktop-capacity-20260808-r54",
+    "recordedAt": "2026-08-08T23:41:24.000Z",
+    "hostCounterTimestamp": "2026-08-08T23:41:24.7631650Z",
+    "clockQualification": "The independently resolved GitHub HTTP Date and Windows host UTC agreed to the second. The external timestamp controls Round 54 acquisition timing; the host timestamp is retained as raw counter lineage.",
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha": "331182310131039f8c50e4985d275f4ba3f2af3f",
+    "capacityTier": "green",
+    "workerCount": 4,
+    "perWorkerReservationMiB": 1600,
+    "observedRound53PeakMemoryMiB": 1438.137,
+    "totalPhysicalMiB": 31900.917969,
+    "freePhysicalMiB": 11304.710938,
+    "projectedPostWorkerFreePhysicalMiB": 4904.710938,
+    "commitHeadroomMiB": 17312.835938,
+    "projectedPostWorkerFreeCommitMiB": 10912.835938,
+    "freeDiskMiB": 843646.167969,
+    "totalDiskMiB": 1906665.996094,
+    "rawMeasurements": {
+      "totalPhysicalBytes": 33450536960,
+      "availablePhysicalBytes": 11853848576,
+      "committedBytes": 35697807360,
+      "commitLimitBytes": 53851631616,
+      "pagingFilePercent": 6.427263,
+      "diskFreeBytes": 884627124224,
+      "diskTotalBytes": 1999284203520
+    },
+    "resourceGate": {
+      "result": "pass",
+      "physicalFloorMiB": 3190.091797,
+      "commitFloorMiB": 3072,
+      "diskFloorMiB": 285999.899414,
+      "qualification": "Four 1600 MiB reservations preserve 4904.71 MiB physical memory, 10912.84 MiB commit headroom, and 843646.17 MiB disk. Four workers also exhaust the four independent Washington batches selected for this wave."
+    },
+    "provider": {
+      "sourceId": "gbif-preserved-specimens",
+      "contactedBeforeSemanticPreflight": false,
+      "health": "not-probed-before-contract",
+      "qualification": "Provider health remains deliberately unprobed until all four selected jobs have passing machine-readable semantic preflights."
+    }
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-round54-wa-live-001.json",
+    "sha256": "3ae0cbe3b46bf0dcad635c3f621015888aee66cdacb40a02a5d9f88183b11997",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}

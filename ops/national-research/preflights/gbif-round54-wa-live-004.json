@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-round54-wa-live-004-20260809T000807000Z",
+  "createdAt": "2026-08-09T00:08:07.000Z",
+  "result": "pass",
+  "jobId": "gbif-round54-wa-live-004",
+  "exactBaseSha": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "WA",
+      "stateProvince": "Washington",
+      "candidateLimit": 39,
+      "candidatePairs": [
+        "53001:nutria",
+        "53003:nutria",
+        "53005:nutria",
+        "53007:nutria",
+        "53009:nutria",
+        "53011:nutria",
+        "53013:nutria",
+        "53015:nutria",
+        "53017:nutria",
+        "53019:nutria",
+        "53021:nutria",
+        "53023:nutria",
+        "53025:nutria",
+        "53027:nutria",
+        "53029:nutria",
+        "53031:nutria",
+        "53033:nutria",
+        "53035:nutria",
+        "53037:nutria",
+        "53039:nutria",
+        "53041:nutria",
+        "53043:nutria",
+        "53045:nutria",
+        "53047:nutria",
+        "53049:nutria",
+        "53051:nutria",
+        "53053:nutria",
+        "53055:nutria",
+        "53057:nutria",
+        "53059:nutria",
+        "53061:nutria",
+        "53063:nutria",
+        "53065:nutria",
+        "53067:nutria",
+        "53069:nutria",
+        "53071:nutria",
+        "53073:nutria",
+        "53075:nutria",
+        "53077:nutria"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "WA"
+    ],
+    "taxa": [
+      "nutria"
+    ],
+    "pairs": [
+      "53001:nutria",
+      "53003:nutria",
+      "53005:nutria",
+      "53007:nutria",
+      "53009:nutria",
+      "53011:nutria",
+      "53013:nutria",
+      "53015:nutria",
+      "53017:nutria",
+      "53019:nutria",
+      "53021:nutria",
+      "53023:nutria",
+      "53025:nutria",
+      "53027:nutria",
+      "53029:nutria",
+      "53031:nutria",
+      "53033:nutria",
+      "53035:nutria",
+      "53037:nutria",
+      "53039:nutria",
+      "53041:nutria",
+      "53043:nutria",
+      "53045:nutria",
+      "53047:nutria",
+      "53049:nutria",
+      "53051:nutria",
+      "53053:nutria",
+      "53055:nutria",
+      "53057:nutria",
+      "53059:nutria",
+      "53061:nutria",
+      "53063:nutria",
+      "53065:nutria",
+      "53067:nutria",
+      "53069:nutria",
+      "53071:nutria",
+      "53073:nutria",
+      "53075:nutria",
+      "53077:nutria"
+    ],
+    "pairCount": 39,
+    "pairHash": "c00fc9835d2916abc7572cb42ce850e6790cec7a279075c0393ba3026dd65ed5"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-54-20260808-recovery/gbif-round54-wa-live-004.json",
+    "declaredCandidateCount": 39,
+    "selectedPairCount": 39,
+    "sha256": "8b04bc6bf24b2ddf1b701a331c0ab1ee65e7e7e1a792a89f85d0c107ceb20678"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 39,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round54-wa-live-004\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "WA",
+    "--candidate-file",
+    "ops/national-research/plans/round-54-20260808-recovery/gbif-round54-wa-live-004.json",
+    "--candidate-limit",
+    "39",
+    "--started-at",
+    "2026-08-09T00:01:47.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round54-wa-live-004\\attempt-telemetry.json"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expectedPositivePairRange": {
+    "minimum": 0,
+    "maximum": 39,
+    "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-09T00:01:47.000Z",
+    "parameterHash": "632c5dabbf84f989d60cf75233f19d251b8f2a5ae08d0460e6512da6596c066b",
+    "suffix": "632c5dabbf84",
+    "path": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84"
+  },
+  "expectedReceiptCodeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-54-20260808-recovery/gbif-round54-wa-live-004.json",
+        "blob": "ac1a6970a908bc4abfe8bc5a306327dc9c1c45f7"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json",
+        "blob": "65df742ee276668df87e1cd78a4a27b342cc11cb"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round54-wa-live-004\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "WA",
+    "orderedPairHash": "c00fc9835d2916abc7572cb42ce850e6790cec7a279075c0393ba3026dd65ed5",
+    "parameterHash": "632c5dabbf84f989d60cf75233f19d251b8f2a5ae08d0460e6512da6596c066b",
+    "runPath": "src/data/research/runs/20260809T000147Z__gbif-preserved-specimens__632c5dabbf84"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260809-r54-recovery",
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r54-recovery.json",
+      "sha256": "50df0aaaeb730fac009189827e70ebeb3061a8928f6fe6ab64ef4ede85d335ed",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "nutria",
+          "scientificName": "Myocastor coypus",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Myocastor+coypus&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-02T20:20:35.698Z",
+          "responseBodySha256": "2034b8e9e7eb5bde763374b14214dd190119aceb274b1944803f303627e6ae5d",
+          "provenance": {
+            "runId": "20260802T201330Z__gbif-preserved-specimens__d57d7826ae57",
+            "codeCommit": "09a98a223be27193ad4bd066c5f52013dc905d06",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/runs/20260802T201330Z__gbif-preserved-specimens__d57d7826ae57/source-verification.json",
+            "sourceVerificationSha256": "6b9d91314581a74f77e6c0adac9b2b621f2773d59bd6fb4160986d263a006d78",
+            "artifactPath": "src/data/research/runs/20260802T201330Z__gbif-preserved-specimens__d57d7826ae57/artifacts/gbif-species-match-nutria.json.gz",
+            "artifactSha256": "fbda9aa683a5e0ae63f7fa01fd08f538c666b5f0419c7facf7bf2c17a1ffc24b",
+            "artifactBytes": 280
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "schemaVersion": 1,
+    "evaluationId": "windows-desktop-capacity-20260808-r54",
+    "recordedAt": "2026-08-08T23:41:24.000Z",
+    "hostCounterTimestamp": "2026-08-08T23:41:24.7631650Z",
+    "clockQualification": "The independently resolved GitHub HTTP Date and Windows host UTC agreed to the second. The external timestamp controls Round 54 acquisition timing; the host timestamp is retained as raw counter lineage.",
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha": "331182310131039f8c50e4985d275f4ba3f2af3f",
+    "capacityTier": "green",
+    "workerCount": 4,
+    "perWorkerReservationMiB": 1600,
+    "observedRound53PeakMemoryMiB": 1438.137,
+    "totalPhysicalMiB": 31900.917969,
+    "freePhysicalMiB": 11304.710938,
+    "projectedPostWorkerFreePhysicalMiB": 4904.710938,
+    "commitHeadroomMiB": 17312.835938,
+    "projectedPostWorkerFreeCommitMiB": 10912.835938,
+    "freeDiskMiB": 843646.167969,
+    "totalDiskMiB": 1906665.996094,
+    "rawMeasurements": {
+      "totalPhysicalBytes": 33450536960,
+      "availablePhysicalBytes": 11853848576,
+      "committedBytes": 35697807360,
+      "commitLimitBytes": 53851631616,
+      "pagingFilePercent": 6.427263,
+      "diskFreeBytes": 884627124224,
+      "diskTotalBytes": 1999284203520
+    },
+    "resourceGate": {
+      "result": "pass",
+      "physicalFloorMiB": 3190.091797,
+      "commitFloorMiB": 3072,
+      "diskFloorMiB": 285999.899414,
+      "qualification": "Four 1600 MiB reservations preserve 4904.71 MiB physical memory, 10912.84 MiB commit headroom, and 843646.17 MiB disk. Four workers also exhaust the four independent Washington batches selected for this wave."
+    },
+    "provider": {
+      "sourceId": "gbif-preserved-specimens",
+      "contactedBeforeSemanticPreflight": false,
+      "health": "not-probed-before-contract",
+      "qualification": "Provider health remains deliberately unprobed until all four selected jobs have passing machine-readable semantic preflights."
+    }
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-round54-wa-live-004.json",
+    "sha256": "213381c36dd9d30a0157c7cce035be6bcc7db63e8eb46885b0959dee36e9592b",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}
