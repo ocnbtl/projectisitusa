@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nj-001-1",
+  "jobId": "gbif-round55-nj-001",
+  "leaseId": "lease-gbif-round55-nj-001-1",
+  "workerCommit": "c86129a939893721331975b8c7aa4db691f29a47",
+  "workerBranchHead": "e6c5a1c81344dca41a5a5ac655a035899be5f462",
+  "manifestHash": "36638e80273c317a2d3a0d3f558231601e3b09b3a705409008ad0dd7ab8631c0",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-solanum-torvum.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-solanum-viarum.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/assertions.ndjson",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/manifest.json",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/outcomes.ndjson",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/receipt.json",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/rejections.ndjson",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/reviews.ndjson",
+    "src/data/research/runs/20260809T055351Z__gbif-preserved-specimens__80193bd7fc70/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:12:58.000Z",
+  "integrationCommit": "64ecf63a0842dcbcfd0282eaeea1007678ca3151"
+}
