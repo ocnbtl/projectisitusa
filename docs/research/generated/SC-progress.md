@@ -10,17 +10,17 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Verified present: `668`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3150`
-- Not researched: `111366`
+- Researched unresolved: `3288`
+- Not researched: `111228`
 - Determination coverage: `0.58%`
-- Research coverage: `3.31%`
-- Explicit outcome coverage: `3.3147%`
+- Research coverage: `3.43%`
+- Explicit outcome coverage: `3.4345%`
 - Applicable protocol cells: `91`
-- Current complete protocol cells: `35`
-- Protocol completion: `52.75%`
-- Current protocol completion: `38.46%`
+- Current complete protocol cells: `38`
+- Protocol completion: `56.04%`
+- Current protocol completion: `41.76%`
 - Evidence records: `781`
-- Research runs: `10`
+- Research runs: `13`
 - Rejection records: `22`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,9 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 46 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 46 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 46 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 46 | 2 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 46 | 2 |
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 46 | 1 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 46 | 0 |
 | Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 46 | 0 |
 | Professor-weed (`galega-officinalis`) | plants | 0 | 46 | 0 |
+| Giant Hogweed (`giant-hogweed`) | plants | 0 | 46 | 0 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 46 | 0 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-05T00:27:56.525Z | 28 | 30 |
+| GBIF preserved specimen records | operational | 2026-08-09T13:04:30.250Z | 28 | 33 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

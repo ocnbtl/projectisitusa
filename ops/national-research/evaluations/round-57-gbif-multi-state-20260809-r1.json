@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-57-gbif-multi-state-20260809-r1",
+  "roundId": "gbif-round57",
+  "evaluatedAt": "2026-08-09T14:55:45.604Z",
+  "result": "complete-pending-release-verification",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "Twenty GBIF protocol cells closed across South Carolina, New Mexico, Utah, and Wyoming. All 615 exact county-species screens completed and moved in the final matrix, including two verified-present pairs and 613 researched-unresolved pairs."
+  },
+  "baseline": {
+    "commit": "12054995e9067e22a0827dcbfc4a7717c4cc7635",
+    "asOf": "2026-08-09",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5064,
+        "notApplicable": 0,
+        "unknown": 122640,
+        "blocked": 0,
+        "fullyAccounted": 6454,
+        "partiallyAccounted": 1,
+        "untouchedByCountyResearch": 121249
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 56062,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 347033,
+        "notResearched": 7469473
+      },
+      "protocolCells": {
+        "total": 39866,
+        "applicable": 19376,
+        "notApplicable": 20490,
+        "complete": 5071,
+        "incomplete": 14246,
+        "blocked": 59,
+        "current": 4460,
+        "stale": 611,
+        "undated": 14305,
+        "regulatedAndHighPriorityCurrentComplete": 2290,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "projectedEvidence": 189224,
+        "runEvidence": 159094,
+        "bootstrapEvidence": 30130,
+        "rejections": 43697,
+        "selectedExplicitOutcomePairs": 358005,
+        "stateSelectedRuns": 570,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "remainingApplicableProtocolCountyScreens": 924855
+    },
+    "affectedStates": {
+      "SC": {
+        "verifiedPresent": 668,
+        "researchedUnresolved": 3150,
+        "notResearched": 111366,
+        "explicitOutcomePairs": 3818,
+        "evidence": 781,
+        "rejections": 22,
+        "runs": 10,
+        "protocolComplete": 48,
+        "protocolIncomplete": 43,
+        "protocolCurrent": 35,
+        "protocolStale": 13,
+        "protocolUndated": 43,
+        "regulatedCurrentComplete": 30,
+        "regulatedApplicable": 35
+      },
+      "NM": {
+        "verifiedPresent": 54,
+        "researchedUnresolved": 3576,
+        "notResearched": 79002,
+        "explicitOutcomePairs": 3630,
+        "evidence": 54,
+        "rejections": 0,
+        "runs": 5,
+        "protocolComplete": 40,
+        "protocolIncomplete": 34,
+        "protocolCurrent": 27,
+        "protocolStale": 13,
+        "protocolUndated": 34,
+        "regulatedCurrentComplete": 25,
+        "regulatedApplicable": 35
+      },
+      "UT": {
+        "verifiedPresent": 123,
+        "researchedUnresolved": 3009,
+        "notResearched": 69484,
+        "explicitOutcomePairs": 3132,
+        "evidence": 150,
+        "rejections": 21,
+        "runs": 8,
+        "protocolComplete": 43,
+        "protocolIncomplete": 37,
+        "protocolCurrent": 30,
+        "protocolStale": 13,
+        "protocolUndated": 37,
+        "regulatedCurrentComplete": 25,
+        "regulatedApplicable": 35
+      },
+      "WY": {
+        "verifiedPresent": 83,
+        "researchedUnresolved": 2516,
+        "notResearched": 54993,
+        "explicitOutcomePairs": 2599,
+        "evidence": 83,
+        "rejections": 3,
+        "runs": 9,
+        "protocolComplete": 43,
+        "protocolIncomplete": 42,
+        "protocolCurrent": 30,
+        "protocolStale": 13,
+        "protocolUndated": 42,
+        "regulatedCurrentComplete": 25,
+        "regulatedApplicable": 35
+      }
+    },
+    "operations": {
+      "jobs": {
+        "total": 277,
+        "completed": 194,
+        "failed": 60,
+        "cancelled": 21,
+        "blocked": 2,
+        "active": 0
+      },
+      "leases": {
+        "total": 278,
+        "completed": 198,
+        "failed": 69,
+        "cancelled": 9,
+        "recovered": 2,
+        "active": 0
+      },
+      "integrations": {
+        "total": 198,
+        "integrated": 194,
+        "rejected": 2,
+        "changesRequested": 2,
+        "pending": 0
+      }
+    }
+  },
+  "planned": {
+    "states": [
+      "SC",
+      "NM",
+      "UT",
+      "WY"
+    ],
+    "distinctTaxa": 6,
+    "stateTaxonScreens": 20,
+    "countySpeciesPairs": 615,
+    "jobs": 20,
+    "expectedNetNewUniquePairs": 615,
+    "expectedProtocolCellsClosed": 20,
+    "expectedCertificationBlockersRemoved": 0,
+    "expectedProviderCalls": 20,
+    "expectedEvidenceFoundOutcomes": 0,
+    "expectedEvidenceFoundRange": [
+      0,
+      615
+    ],
+    "expectedNoQualifyingEvidenceOutcomes": 615,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0
+  },
+  "recoveryAudit": {
+    "retainedOccurrencePagesMatchingScope": 0,
+    "partialRunsMatchingScope": 0,
+    "failedJobsWithCurrentUntouchedOverlap": 0,
+    "taxonomyIdentitiesReused": 20,
+    "providerRequestsPrevented": 20,
+    "structuralChange": "The source adapter remained state-scoped, but each acquisition ran as one taxon per process. Wyoming workers used sparse checkouts with exact Git-object provenance closure and planned scoped git add --sparse staging.",
+    "qualification": "No missing artifact, failed request, source silence, rejected record, or missing geography was converted to absence, not detected, or not applicable."
+  },
+  "semanticPreflight": {
+    "jobsAttested": 20,
+    "exactBaseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+    "frozenSkillVersion": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "frozenSkillCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "taxonomyCacheSha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "candidatePairCount": 615,
+    "expectedNetworkRequests": 20,
+    "actualPreflightNetworkRequests": 0,
+    "uniqueDeterministicRunPaths": 20,
+    "scopeMismatches": 0,
+    "overlappingLeases": 0,
+    "dependencyResolutionFailures": 0,
+    "writableStagingFailures": 0
+  },
+  "execution": {
+    "jobsAttempted": 20,
+    "jobsCompleted": 20,
+    "jobsFailed": 0,
+    "leasesCompleted": 20,
+    "integrationsCompleted": 20,
+    "mergeConflicts": 0,
+    "workerRetries": 0,
+    "providerRequestRetries": 0,
+    "failedProviderAttempts": 0,
+    "manifestRecordedManualInterventions": 1,
+    "reviewReceiptManualInterventions": 2,
+    "additionalObservedPreflightCorrections": 1,
+    "knownUniqueWorkerAndPreflightCorrections": 3,
+    "mainProcessCorrections": [
+      "The first sparse dry-run shape lacked complete provenance closure and was replaced before provider access with the exact 16-directory provenance set.",
+      "A duplicate final Wyoming transition was rejected by the inactive-lease gate after that job had already integrated; the rejection caused no mutation.",
+      "The Windows npx.cmd wrapper interpreted one Playwright expression as shell syntax and later suppressed two combined result blocks. MAIN removed the two resulting untracked tokens, closed all temporary sessions, and completed the same browser CLI checks by invoking the cached playwright-cli entrypoint directly with Node.",
+      "The image-view sandbox could not reopen canonical or visualization-root screenshots. MAIN rendered three compressed viewport copies from the captured bytes and made no visual claim for the unrendered captures."
+    ],
+    "liveWorkerTopology": 1,
+    "providerLimitedTopology": true,
+    "acquisitionSpanSeconds": 4885.491,
+    "summedWorkerWallSeconds": 162.638,
+    "peakObservedRssMb": 1497.504,
+    "integrationLatency": {
+      "averageSeconds": 189,
+      "minimumSeconds": 180,
+      "maximumSeconds": 360,
+      "sumSeconds": 3780
+    },
+    "submissionToReviewSeconds": 1260,
+    "reviewToIntegrationSeconds": 2520
+  },
+  "acquisition": {
+    "sourceId": "gbif-preserved-specimens",
+    "completedCountySpeciesOutcomes": 615,
+    "evidenceFoundOutcomes": 2,
+    "noQualifyingEvidenceOutcomes": 613,
+    "positiveYield": 0.0032520325203252032,
+    "liveProviderCalls": 20,
+    "providerPages": {
+      "liveTaxonomyResponses": 0,
+      "liveOccurrencePages": 20,
+      "additionalPaginationPages": 0
+    },
+    "cachedTaxonomyResponses": 20,
+    "preventedProviderRequests": 20,
+    "sourceResponsesIncludingCache": 40,
+    "providerCandidates": 21,
+    "acceptedCandidates": 2,
+    "retainedArtifacts": 40,
+    "retainedArtifactBytes": 23120,
+    "immutableRunFiles": 180,
+    "immutableRunBytes": 1027181,
+    "pairsPerProviderCall": 30.75,
+    "netUniquePairMovementPerProviderCall": 30.75,
+    "netUniquePairMovementPerSummedWorkerHour": 13613.05476,
+    "netUniquePairMovementPerObservedSpanHour": 453.178606,
+    "providerCandidatesPerCall": 1.05,
+    "candidateAcceptanceRate": 0.09523809523809523
+  },
+  "grossEventVolume": {
+    "totalEvents": 638,
+    "pairOutcomes": 615,
+    "assertionEvents": 2,
+    "publicationEligibleAssertions": 2,
+    "reviewEvents": 2,
+    "rejectionRecords": 19,
+    "duplicateRecords": 0,
+    "errors": 0,
+    "eventFileBytes": 564314,
+    "archivedManifestBytes": 165104
+  },
+  "netFinalMatrixMovement": {
+    "uniqueCountySpeciesPairs": 615,
+    "verifiedPresent": 2,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 613,
+    "notResearched": -615,
+    "applicability": 0,
+    "denominator": 0,
+    "conflicts": 0,
+    "grossOutcomesAlreadyAccountedOrOverlapping": 0
+  },
+  "final": {
+    "asOf": "2026-08-09",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5064,
+        "notApplicable": 0,
+        "unknown": 122640,
+        "blocked": 0,
+        "fullyAccounted": 6474,
+        "partiallyAccounted": 1,
+        "untouchedByCountyResearch": 121229
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 56064,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 347646,
+        "notResearched": 7468858
+      },
+      "protocolCells": {
+        "total": 39866,
+        "applicable": 19376,
+        "notApplicable": 20490,
+        "complete": 5091,
+        "incomplete": 14226,
+        "blocked": 59,
+        "current": 4480,
+        "stale": 611,
+        "undated": 14285,
+        "regulatedAndHighPriorityCurrentComplete": 2310,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "projectedEvidence": 189226,
+        "runEvidence": 159096,
+        "bootstrapEvidence": 30130,
+        "rejections": 43716,
+        "selectedExplicitOutcomePairs": 358620,
+        "stateSelectedRuns": 590,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "remainingApplicableProtocolCountyScreens": 924240
+    },
+    "affectedStates": {
+      "SC": {
+        "verifiedPresent": 668,
+        "researchedUnresolved": 3288,
+        "notResearched": 111228,
+        "explicitOutcomePairs": 3956,
+        "evidence": 781,
+        "rejections": 22,
+        "runs": 13,
+        "protocolComplete": 51,
+        "protocolIncomplete": 40,
+        "protocolCurrent": 38,
+        "protocolStale": 13,
+        "protocolUndated": 40,
+        "regulatedCurrentComplete": 33,
+        "regulatedApplicable": 35,
+        "boundedResearchCoveragePercent": 100
+      },
+      "NM": {
+        "verifiedPresent": 55,
+        "researchedUnresolved": 3740,
+        "notResearched": 78837,
+        "explicitOutcomePairs": 3795,
+        "evidence": 55,
+        "rejections": 18,
+        "runs": 10,
+        "protocolComplete": 45,
+        "protocolIncomplete": 29,
+        "protocolCurrent": 32,
+        "protocolStale": 13,
+        "protocolUndated": 29,
+        "regulatedCurrentComplete": 30,
+        "regulatedApplicable": 35,
+        "boundedResearchCoveragePercent": 100
+      },
+      "UT": {
+        "verifiedPresent": 124,
+        "researchedUnresolved": 3182,
+        "notResearched": 69310,
+        "explicitOutcomePairs": 3306,
+        "evidence": 151,
+        "rejections": 22,
+        "runs": 14,
+        "protocolComplete": 49,
+        "protocolIncomplete": 31,
+        "protocolCurrent": 36,
+        "protocolStale": 13,
+        "protocolUndated": 31,
+        "regulatedCurrentComplete": 31,
+        "regulatedApplicable": 35,
+        "boundedResearchCoveragePercent": 100
+      },
+      "WY": {
+        "verifiedPresent": 83,
+        "researchedUnresolved": 2654,
+        "notResearched": 54855,
+        "explicitOutcomePairs": 2737,
+        "evidence": 83,
+        "rejections": 3,
+        "runs": 15,
+        "protocolComplete": 49,
+        "protocolIncomplete": 36,
+        "protocolCurrent": 36,
+        "protocolStale": 13,
+        "protocolUndated": 36,
+        "regulatedCurrentComplete": 31,
+        "regulatedApplicable": 35,
+        "boundedResearchCoveragePercent": 100
+      }
+    },
+    "operations": {
+      "jobs": {
+        "total": 297,
+        "completed": 214,
+        "failed": 60,
+        "cancelled": 21,
+        "blocked": 2,
+        "active": 0
+      },
+      "leases": {
+        "total": 298,
+        "completed": 218,
+        "failed": 69,
+        "cancelled": 9,
+        "recovered": 2,
+        "active": 0
+      },
+      "integrations": {
+        "total": 218,
+        "integrated": 214,
+        "rejected": 2,
+        "changesRequested": 2,
+        "pending": 0
+      }
+    }
+  },
+  "expectedVersusActual": {
+    "expectedNetNewPairs": 615,
+    "actualNetNewPairs": 615,
+    "expectedEvidenceFoundOutcomes": 0,
+    "actualEvidenceFoundOutcomes": 2,
+    "expectedEvidenceFoundRange": [
+      0,
+      615
+    ],
+    "expectedNoQualifyingEvidenceOutcomes": 615,
+    "actualNoQualifyingEvidenceOutcomes": 613,
+    "expectedProviderCalls": 20,
+    "actualProviderCalls": 20,
+    "expectedProtocolCellsClosed": 20,
+    "actualProtocolCellsClosed": 20,
+    "expectedCertificationBlockersRemoved": 0,
+    "actualCertificationBlockersRemoved": 0,
+    "expectedApplicabilityMovement": 0,
+    "actualApplicabilityMovement": 0,
+    "expectedDenominatorMovement": 0,
+    "actualDenominatorMovement": 0
+  },
+  "release": {
+    "generation": {
+      "explicitAsOf": "2026-08-09",
+      "prepareDataSeconds": 30.1,
+      "allStateCompilationSeconds": 392.9,
+      "orchestrationDashboardSeconds": 0.7,
+      "readinessDashboardSeconds": 0.7
+    },
+    "gates": {
+      "status": "pass",
+      "preliminaryAllStateByteStability": {
+        "stateCount": 51,
+        "seconds": 800.662,
+        "status": "pass"
+      },
+      "finalAllStateByteStability": {
+        "stateCount": 51,
+        "seconds": 799.1,
+        "status": "pass"
+      },
+      "researchIndex": {
+        "seconds": 25.5,
+        "stateCount": 51,
+        "immutableRuns": 575,
+        "pairStatuses": 462209,
+        "status": "pass"
+      },
+      "researchIntegrity": {
+        "seconds": 420.1,
+        "totalImmutableRuns": 575,
+        "totalRawOutcomes": 467226,
+        "totalAssertions": 159408,
+        "totalReviews": 159408,
+        "totalRejections": 43716,
+        "status": "pass"
+      },
+      "dataIntegritySeconds": 0.7,
+      "stateProjectionIntegrity": {
+        "stateCount": 51,
+        "seconds": 29.9,
+        "status": "pass"
+      },
+      "orchestration": {
+        "activeLeases": 0,
+        "pendingIntegrations": 0,
+        "errors": 0,
+        "historicalWarningsRetained": true,
+        "status": "pass"
+      },
+      "frozenSkills": {
+        "validationCount": 97,
+        "pinnedCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "byteIdentity": "pass"
+      },
+      "typecheckSeconds": 2.7,
+      "lintSeconds": 3,
+      "whitespace": "pass",
+      "prohibitedDash": {
+        "status": "pass",
+        "releaseFilesScanned": 179
+      }
+    },
+    "build": {
+      "status": "pass",
+      "nextVersion": "15.5.15",
+      "staticPages": 2512,
+      "compileSeconds": 8.6,
+      "wallSeconds": 24.4
+    },
+    "browserQa": {
+      "status": "pass",
+      "routes": [
+        "/",
+        "/research?state=SC",
+        "/research?state=NM",
+        "/research?state=UT",
+        "/research?state=WY",
+        "/species/tridax-procumbens"
+      ],
+      "desktopViewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "mobileViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "routeViewportChecks": 12,
+      "visibleFinalCountChecks": 24,
+      "horizontalOverflowChecksFailed": 0,
+      "brokenImageChecksFailed": 0,
+      "screenshotsCaptured": 8,
+      "screenshotsVisuallyInspected": 3,
+      "localOnlyAnalyticsErrorsPerRoute": 2,
+      "localOnlyAnalyticsQualification": "The local production server does not serve Vercel Insights and produced the expected script 404 and MIME errors. Production console verification remains required.",
+      "toolingCorrections": 4,
+      "toolingQualification": "One help-command libuv assertion, one cmd-shell expression correction, one combined-result rerun, and one image-renderer fallback were required. All final route assertions used the same playwright-cli browser sessions and passed.",
+      "temporaryQaArtifactsRemoved": 5
+    },
+    "preDeploymentGate": {
+      "phase": "PRE-DEPLOYMENT",
+      "mode": "Project Isitusa generated data release",
+      "riskLevel": "high",
+      "decision": "GO TO DEPLOY",
+      "matrix": {
+        "sourceOfTruth": "PASSED",
+        "functionality": "PASSED",
+        "visualFidelity": "PASSED",
+        "accessibility": "PASSED",
+        "seoAndDiscovery": "PASSED",
+        "performanceAndResilience": "PASSED",
+        "securityAndPrivacy": "PASSED",
+        "analyticsAndConversion": "NOT APPLICABLE",
+        "monitoringAndOperations": "PASSED",
+        "deployment": "PASSED",
+        "contentAndApprovals": "PASSED",
+        "dataReleaseIntegrity": "PASSED"
+      },
+      "qualification": "GO TO DEPLOY applies only to the locally verified content artifact. Production health requires a separate post-deployment gate against the exact pushed content commit."
+    },
+    "postDeploymentGate": {
+      "phase": "POST-DEPLOYMENT",
+      "decision": "PENDING"
+    },
+    "externalVerification": {
+      "status": "pending",
+      "qualification": "This content record does not attest its own future deployment."
+    }
+  },
+  "processLesson": {
+    "lesson": "Sparse worker shape and exact Git-object provenance closure control memory more effectively than raising the heap. Planned scoped git add --sparse avoids post-acquisition staging corrections.",
+    "evidence": "A full 23-pair Wyoming worker peaked at 1497.504 MiB, while sparse Wyoming workers peaked at 226.113 MiB and 215.996 MiB, about 84.9 percent lower.",
+    "applied": [
+      "Kept each acquisition to one taxon per process and one live provider lane.",
+      "Used sparse workers only after exact frozen-skill, taxonomy, source-verification, dependency, and base-object closure passed.",
+      "Planned git add --sparse on the final two sparse workers, eliminating the staging correction seen on the first two.",
+      "Reported 20 protocol closures separately from zero applicability, denominator, absence, not-detected, and certification-blocker movement."
+    ],
+    "nextRoundChange": "Register a MAIN-owned acquire-once national six-taxon GBIF profile and deterministic state partitioner before repeating 34 low-yield state calls; preserve one-taxon child-process isolation or bounded streaming."
+  },
+  "remainingWork": {
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrations": 0,
+    "failedRound57Jobs": 0,
+    "blockedHistoricalJobs": 2,
+    "failedHistoricalJobs": 60,
+    "blockedProtocolCells": 59,
+    "staleProtocolCells": 611,
+    "undatedProtocolCells": 14285,
+    "unknownStateSpeciesApplicabilityDecisions": 122640,
+    "notResearchedCountySpeciesPairs": 7468858,
+    "certifiedStates": 0,
+    "montanaTaxonomyReviewCells": 1,
+    "usgsNasMissingGeographyCells": 7
+  },
+  "nextRankedSourcePortfolio": [
+    {
+      "rank": 1,
+      "workClass": "national-acquire-once-gbif-profile-and-partitions",
+      "states": [
+        "DC",
+        "DE",
+        "HI",
+        "MA",
+        "NH",
+        "RI",
+        "VT"
+      ],
+      "expectedNetNewPairs": 227,
+      "stateTaxonScreens": 34,
+      "distinctTaxa": 6,
+      "reason": "The remaining exact six-taxon national cohort can reuse verified taxonomy identities. A registered acquire-once profile is expected to replace 34 state occurrence calls with about six taxon calls plus deterministic partitions, so it outranks direct state-by-state reacquisition."
+    },
+    {
+      "rank": 2,
+      "workClass": "exact-taxonomy-and-geography-exceptions",
+      "states": [
+        "MT",
+        "AK",
+        "AZ",
+        "MI",
+        "OH",
+        "PA",
+        "VT",
+        "WI"
+      ],
+      "expectedNetNewPairs": null,
+      "reason": "One Montana non-binomial taxonomy cell and seven partial USGS NAS cells require authoritative identity or record-geography resolution. Replaying the same provider response or archive cannot close them."
+    },
+    {
+      "rank": 3,
+      "workClass": "authoritative-applicability-and-provider-native-bulk-design",
+      "states": [
+        "AL"
+      ],
+      "expectedNetNewPairs": null,
+      "reason": "Alabama has active certification impact, but its 56072 untouched county pairs are not presently GBIF-ready because 1485 state-applicability decisions remain unknown and no compatible cached taxonomy covers the large scope."
+    },
+    {
+      "rank": 4,
+      "workClass": "lower-efficiency-cached-state-gbif",
+      "states": [
+        "MA",
+        "NH",
+        "RI",
+        "DC"
+      ],
+      "expectedNetNewPairs": null,
+      "reason": "Direct state calls remain a fallback only if the national profile cannot be registered; they have lower movement per request and duplicate reusable national acquisition."
+    }
+  ],
+  "completionForecastByWorkClass": {
+    "automatedNationalAcquisition": {
+      "measuredRound57NetPairsPerSummedWorkerHour": 13613.05476,
+      "measuredRound57NetPairsPerObservedSpanHour": 453.178606,
+      "qualification": "The high worker-process rate excludes queue gaps, MAIN integration, generation, provider variation, and release overhead. It is not an end-to-end certification forecast."
+    },
+    "stateSpecificResearch": {
+      "forecast": null,
+      "qualification": "Authority, geography, taxonomy, pagination, and review burden remain source-specific and cannot be extrapolated from these one-page GBIF screens."
+    },
+    "applicabilityReview": {
+      "unknownStateSpeciesDecisions": 122640,
+      "forecast": null,
+      "qualification": "Round 57 performed no applicability review and measured no applicability throughput."
+    },
+    "blockedExceptions": {
+      "blockedProtocolCells": 59,
+      "taxonomyOrGeographyExceptionCells": 8,
+      "forecast": null,
+      "qualification": "These require exact source, taxonomy, or geography resolution and cannot be inferred from silence."
+    },
+    "freshnessWork": {
+      "staleProtocolCells": 611,
+      "undatedProtocolCells": 14285,
+      "forecast": null,
+      "qualification": "Round 57 made 20 current cells but did not measure a general freshness-remediation rate."
+    },
+    "releaseOverhead": {
+      "measuredRequiredCoreSecondsExcludingBrowserQa": 1693.7,
+      "correctivePreliminaryReplaySeconds": 800.662,
+      "browserQaSeconds": null,
+      "externalSeconds": null,
+      "qualification": "The required core total is prepare-data, final all-state compile and dashboards, final byte replay, aggregate research integrity, typecheck, lint, and build. Focused duplicate validators, index construction, and browser QA were not captured under one end-to-end timer and are reported separately rather than estimated."
+    }
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationMarkedComplete": false,
+    "failedRequestMarkedComplete": false,
+    "rejectionCreatedDetermination": false,
+    "missingGeographyCreatedDetermination": false
+  }
+}

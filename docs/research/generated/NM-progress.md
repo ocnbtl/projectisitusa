@@ -7,21 +7,21 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `54`
+- Verified present: `55`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3576`
-- Not researched: `79002`
+- Researched unresolved: `3740`
+- Not researched: `78837`
 - Determination coverage: `0.07%`
-- Research coverage: `4.39%`
-- Explicit outcome coverage: `4.3930%`
+- Research coverage: `4.59%`
+- Explicit outcome coverage: `4.5927%`
 - Applicable protocol cells: `74`
-- Current complete protocol cells: `27`
-- Protocol completion: `54.05%`
-- Current protocol completion: `36.49%`
-- Evidence records: `54`
-- Research runs: `5`
-- Rejection records: `0`
+- Current complete protocol cells: `32`
+- Protocol completion: `60.81%`
+- Current protocol completion: `43.24%`
+- Evidence records: `55`
+- Research runs: `10`
+- Rejection records: `18`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,11 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Turkey berry (`solanum-torvum`) | plants | 33 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 33 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 33 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 33 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 33 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 33 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 33 | 2 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 33 | 2 |
@@ -57,6 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 33 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 33 | 0 |
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 33 | 0 |
+| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 33 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 33 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 33 | 0 |
+| Absinthium (`artemisia-absinthium`) | plants | 0 | 33 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 33 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-04T08:28:04.706Z | 1 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-09T13:26:39.692Z | 2 | 30 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

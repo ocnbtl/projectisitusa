@@ -36,29 +36,29 @@
     "verifiedPresent": 668,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 3150,
-    "notResearched": 111366,
+    "researchedUnresolved": 3288,
+    "notResearched": 111228,
     "determinationCoveragePercent": 0.58,
-    "researchCoveragePercent": 3.31,
-    "explicitOutcomePairCount": 3818,
-    "explicitOutcomeCoveragePercent": 3.3147,
+    "researchCoveragePercent": 3.43,
+    "explicitOutcomePairCount": 3956,
+    "explicitOutcomeCoveragePercent": 3.4345,
     "conflictCount": 0,
     "evidenceRecordCount": 781,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 781,
     "rejectionRecordCount": 22,
-    "researchRunCount": 10,
+    "researchRunCount": 13,
     "boundedAcquisition": {
       "speciesCount": 86,
       "totalPairs": 3956,
       "verifiedPresent": 668,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 3150,
-      "notResearched": 138,
-      "researchCoveragePercent": 96.51,
-      "explicitOutcomePairs": 3818,
-      "explicitOutcomeCoveragePercent": 96.5116
+      "researchedUnresolved": 3288,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 3956,
+      "explicitOutcomeCoveragePercent": 100
     }
   },
   "migrationCandidates": {
@@ -263,9 +263,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": "2026-08-05T00:27:56.525Z",
+      "lastRunAt": "2026-08-09T13:04:30.250Z",
       "evidencePairCount": 28,
-      "screenedSpeciesCount": 30
+      "screenedSpeciesCount": 33
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -375,17 +375,17 @@
     "totalCells": 258,
     "applicableCells": 91,
     "notApplicableCells": 167,
-    "completeCells": 48,
-    "incompleteCells": 43,
+    "completeCells": 51,
+    "incompleteCells": 40,
     "blockedCells": 0,
-    "currentCells": 35,
+    "currentCells": 38,
     "staleCells": 13,
-    "undatedCells": 43,
-    "applicableCompletionPercent": 52.75,
-    "currentCompletePercent": 38.46,
+    "undatedCells": 40,
+    "applicableCompletionPercent": 56.04,
+    "currentCompletePercent": 41.76,
     "regulatedAndHighApplicableCells": 35,
-    "regulatedAndHighCurrentCompleteCells": 30,
-    "regulatedAndHighCurrentCompletePercent": 85.71,
+    "regulatedAndHighCurrentCompleteCells": 33,
+    "regulatedAndHighCurrentCompletePercent": 94.29,
     "requiredCurrentSourcesProcessed": false,
     "categoryCompletion": [
       {
@@ -403,8 +403,8 @@
       {
         "category": "plants",
         "applicableCells": 63,
-        "currentCompleteCells": 34,
-        "currentCompletePercent": 53.97
+        "currentCompleteCells": 37,
+        "currentCompletePercent": 58.73
       },
       {
         "category": "wildlife",
@@ -417,8 +417,8 @@
       {
         "priority": "regulated",
         "applicableCells": 35,
-        "currentCompleteCells": 30,
-        "currentCompletePercent": 85.71
+        "currentCompleteCells": 33,
+        "currentCompletePercent": 94.29
       },
       {
         "priority": "high",
@@ -443,7 +443,7 @@
       {
         "sourceId": "gbif-preserved-specimens",
         "applicableCells": 73,
-        "currentCompleteCells": 30,
+        "currentCompleteCells": 33,
         "processed": false
       },
       {
@@ -455,42 +455,6 @@
     ]
   },
   "nextQueue": [
-    {
-      "speciesId": "sparganium-erectum",
-      "commonName": "Simple-stem burr-reed",
-      "scientificName": "Sparganium erectum",
-      "category": "plants",
-      "notResearchedCountyCount": 46,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 46001
-    },
-    {
-      "speciesId": "tridax-procumbens",
-      "commonName": "Coatbuttons",
-      "scientificName": "Tridax procumbens",
-      "category": "plants",
-      "notResearchedCountyCount": 46,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 46001
-    },
-    {
-      "speciesId": "urochloa-panicoides",
-      "commonName": "Panic liverseed grass",
-      "scientificName": "Urochloa panicoides",
-      "category": "plants",
-      "notResearchedCountyCount": 46,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens"
-      ],
-      "priorityScore": 46001
-    },
     {
       "speciesId": "anarsia-lineatella",
       "commonName": "Peach twig borer",
@@ -880,9 +844,39 @@
       "priorityScore": 460
     },
     {
+      "speciesId": "sparganium-erectum",
+      "commonName": "Simple-stem burr-reed",
+      "scientificName": "Sparganium erectum",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 46,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 460
+    },
+    {
       "speciesId": "spiraea-japonica",
       "commonName": "Japanese meadowsweet",
       "scientificName": "Spiraea japonica",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 46,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 460
+    },
+    {
+      "speciesId": "tridax-procumbens",
+      "commonName": "Coatbuttons",
+      "scientificName": "Tridax procumbens",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 46,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 460
+    },
+    {
+      "speciesId": "urochloa-panicoides",
+      "commonName": "Panic liverseed grass",
+      "scientificName": "Urochloa panicoides",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 46,
