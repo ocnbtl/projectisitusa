@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T21:08:05.393Z",
+  "runId": "20260809T203000Z__gbif-preserved-specimens__d3cfadc96896",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "MA",
+  "pairKeys": [
+    "25001:solanum-viarum",
+    "25003:solanum-viarum",
+    "25005:solanum-viarum",
+    "25007:solanum-viarum",
+    "25009:solanum-viarum",
+    "25011:solanum-viarum",
+    "25013:solanum-viarum",
+    "25015:solanum-viarum",
+    "25017:solanum-viarum",
+    "25019:solanum-viarum",
+    "25021:solanum-viarum",
+    "25023:solanum-viarum",
+    "25025:solanum-viarum",
+    "25027:solanum-viarum"
+  ],
+  "parameterHash": "d3cfadc96896cc3600279bdacf8f340debf5df74c3d643b50a5d8a716bb8bc6f",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T21:08:05.391Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Massachusetts and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "solanum-viarum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-solanum-viarum",
+        "url": "https://api.gbif.org/v1/species/match?name=Solanum+viarum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:08:00.723Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-solanum-viarum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Massachusetts&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2931914&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for solanum-viarum and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:08:05.391Z",
+        "declaredRecordCount": 1,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__d3cfadc96896/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+      "sha256": "d8a765ce145f2f9cc4c06c78f4b0fefc2acad5918bf5fa3072538976f9b3891b",
+      "bytes": 2280
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__d3cfadc96896/artifacts/gbif-species-match-solanum-viarum.json.gz",
+      "sha256": "901c25e85dcd2301e9dd4af864ba9fa1b0dc9718008a7a520672297b422af125",
+      "bytes": 277
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
