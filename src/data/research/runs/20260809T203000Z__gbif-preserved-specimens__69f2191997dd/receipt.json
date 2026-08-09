@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T203000Z__gbif-preserved-specimens__69f2191997dd",
+  "status": "complete",
+  "started_at": "2026-08-09T20:30:00.000Z",
+  "finished_at": "2026-08-09T21:14:32.317Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "4f35e0f780c7558e1fff70de483a3db93796ebdb",
+  "parameter_hash": "69f2191997dd7b3c4f38f2ea762223adc48f35757356c490ff22ed7a60a48f84",
+  "parameters": {
+    "stateCode": "MA",
+    "stateProvince": "Massachusetts",
+    "candidateLimit": 14,
+    "candidatePairs": [
+      "25001:tridax-procumbens",
+      "25003:tridax-procumbens",
+      "25005:tridax-procumbens",
+      "25007:tridax-procumbens",
+      "25009:tridax-procumbens",
+      "25011:tridax-procumbens",
+      "25013:tridax-procumbens",
+      "25015:tridax-procumbens",
+      "25017:tridax-procumbens",
+      "25019:tridax-procumbens",
+      "25021:tridax-procumbens",
+      "25023:tridax-procumbens",
+      "25025:tridax-procumbens",
+      "25027:tridax-procumbens"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "MA",
+    "county_fips": [
+      "25001",
+      "25003",
+      "25005",
+      "25007",
+      "25009",
+      "25011",
+      "25013",
+      "25015",
+      "25017",
+      "25019",
+      "25021",
+      "25023",
+      "25025",
+      "25027"
+    ],
+    "species_ids": [
+      "tridax-procumbens"
+    ],
+    "pair_keys": [
+      "25001:tridax-procumbens",
+      "25003:tridax-procumbens",
+      "25005:tridax-procumbens",
+      "25007:tridax-procumbens",
+      "25009:tridax-procumbens",
+      "25011:tridax-procumbens",
+      "25013:tridax-procumbens",
+      "25015:tridax-procumbens",
+      "25017:tridax-procumbens",
+      "25019:tridax-procumbens",
+      "25021:tridax-procumbens",
+      "25023:tridax-procumbens",
+      "25025:tridax-procumbens",
+      "25027:tridax-procumbens"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Tridax+procumbens&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-09T21:14:31.389Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Massachusetts&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3149462&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-09T21:14:32.316Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__69f2191997dd/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__69f2191997dd/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+      "sha256": "c982debda9268a61f88fba3e3d870d4a0cc011c3958f955340405310e3b5f3ef",
+      "bytes": 281,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__69f2191997dd/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__69f2191997dd/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__69f2191997dd/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__69f2191997dd/outcomes.ndjson",
+      "sha256": "33f160eaefc8c8802960451365e1909ceb70ed563b82f50a391cdbcfb49f5592",
+      "bytes": 11312,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__69f2191997dd/source-verification.json",
+      "sha256": "7fcbb1433ec605fe920f7dcc7d4f5a52acf923bb8d8c38a2af84a7abdf0efffc",
+      "bytes": 5194,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 14,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 14
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state MA --candidate-file ops/national-research/plans/round-58-20260809/gbif-round58-ma-008.json --output-root src/data/research/runs --pairs 25001:tridax-procumbens,25003:tridax-procumbens,25005:tridax-procumbens,25007:tridax-procumbens,25009:tridax-procumbens,25011:tridax-procumbens,25013:tridax-procumbens,25015:tridax-procumbens,25017:tridax-procumbens,25019:tridax-procumbens,25021:tridax-procumbens,25023:tridax-procumbens,25025:tridax-procumbens,25027:tridax-procumbens --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
