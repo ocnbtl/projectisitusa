@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round55-nj-003-1",
+  "jobId": "gbif-round55-nj-003",
+  "leaseId": "lease-gbif-round55-nj-003-1",
+  "workerCommit": "a1ae2202509a7afd17684db471d0dffc0529633e",
+  "workerBranchHead": "262361f6f5d785a718d3f74aa2c0f8f0d5b84ca0",
+  "manifestHash": "f2ed0321b11af7f72dabbb010c56ec3af9ae79d17121e67e5ca08ce034212de5",
+  "changedPaths": [
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-alliaria-petiolata-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-berberis-thunbergii-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-celastrus-orbiculatus-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-elaeagnus-umbellata-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-ligustrum-vulgare-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-lonicera-morrowii-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-microstegium-vimineum-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-occurrences-rosa-multiflora-000000.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-alliaria-petiolata.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-berberis-thunbergii.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-celastrus-orbiculatus.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-elaeagnus-umbellata.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-ligustrum-vulgare.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-lonicera-morrowii.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-microstegium-vimineum.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/artifacts/gbif-species-match-rosa-multiflora.json.gz",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/assertions.ndjson",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/manifest.json",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/outcomes.ndjson",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/receipt.json",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/rejections.ndjson",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/reviews.ndjson",
+    "src/data/research/runs/20260809T055357Z__gbif-preserved-specimens__3294f0e96017/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-09T06:15:36.000Z",
+  "integrationCommit": "aec87ef41404dac6e593980a70c522d44436446c"
+}
