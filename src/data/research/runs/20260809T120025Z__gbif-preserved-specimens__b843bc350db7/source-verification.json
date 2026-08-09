@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T13:11:58.012Z",
+  "runId": "20260809T120025Z__gbif-preserved-specimens__b843bc350db7",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "NM",
+  "pairKeys": [
+    "35001:solanum-torvum",
+    "35003:solanum-torvum",
+    "35005:solanum-torvum",
+    "35006:solanum-torvum",
+    "35007:solanum-torvum",
+    "35009:solanum-torvum",
+    "35011:solanum-torvum",
+    "35013:solanum-torvum",
+    "35015:solanum-torvum",
+    "35017:solanum-torvum",
+    "35019:solanum-torvum",
+    "35021:solanum-torvum",
+    "35023:solanum-torvum",
+    "35025:solanum-torvum",
+    "35027:solanum-torvum",
+    "35028:solanum-torvum",
+    "35029:solanum-torvum",
+    "35031:solanum-torvum",
+    "35033:solanum-torvum",
+    "35035:solanum-torvum",
+    "35037:solanum-torvum",
+    "35039:solanum-torvum",
+    "35041:solanum-torvum",
+    "35043:solanum-torvum",
+    "35045:solanum-torvum",
+    "35047:solanum-torvum",
+    "35049:solanum-torvum",
+    "35051:solanum-torvum",
+    "35053:solanum-torvum",
+    "35055:solanum-torvum",
+    "35057:solanum-torvum",
+    "35059:solanum-torvum",
+    "35061:solanum-torvum"
+  ],
+  "parameterHash": "b843bc350db752af569248037acfaaee3385a2e9beede7a9a68f70b954937656",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T13:11:58.010Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching New Mexico and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "solanum-torvum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-solanum-torvum",
+        "url": "https://api.gbif.org/v1/species/match?name=Solanum+torvum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T13:11:57.067Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-solanum-torvum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=New+Mexico&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2932389&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for solanum-torvum and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T13:11:58.010Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__b843bc350db7/artifacts/gbif-occurrences-solanum-torvum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__b843bc350db7/artifacts/gbif-species-match-solanum-torvum.json.gz",
+      "sha256": "449f01369c536eb151a3b4811ae345c59e625a7e9a8aaa236f0b38d74107fdae",
+      "bytes": 276
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
