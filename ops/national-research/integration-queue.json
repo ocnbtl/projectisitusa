@@ -25121,6 +25121,59 @@
         "sha256": "9437a0763b0e641f3e402616485a00c747932b502705d311607d8afc408ab863",
         "bytes": 2461
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round56-mt-005-1",
+      "jobId": "gbif-round56-mt-005",
+      "leaseId": "lease-gbif-round56-mt-005-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-09T09:26:40.000Z",
+      "manifestPath": "manifests/gbif-round56-mt-005__lease-gbif-round56-mt-005-1.json",
+      "manifestHash": "8f9db16179d1207ae8eb4862a51f80297439e99579ee5dc28b5ee7deeda2dc6a",
+      "manifestBytes": 9090,
+      "workerCommit": "bbe11374d6f9008bcfaa8644237ff1cdcf85eb11",
+      "workerBranchHead": "b5563086264e4d781ddf9a2e571cec3f6b8f7e7e",
+      "reviewedAt": "2026-08-09T09:26:40.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable Montana GBIF Tridax procumbens run, exact two-commit inventory, 56 complete no-qualifying-evidence outcomes, zero assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/assertions.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/manifest.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/outcomes.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/receipt.json",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/rejections.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/reviews.ndjson",
+        "src/data/research/runs/20260809T082618Z__gbif-preserved-specimens__e39e21ac1d9e/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation for Montana GBIF Tridax procumbens 56-pair run",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation with committed exact bytes and clean worktree",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round56-mt-005-1.json",
+        "sha256": "e59b81d3cf018ebb54cf1a62c13ec17b575adb1ba9c5dd20b3fec7a48f50e5ec",
+        "bytes": 2391
+      }
     }
   ]
 }
