@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T21:40:22.824Z",
+  "runId": "20260809T203000Z__gbif-preserved-specimens__b038173897ed",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CT",
+  "pairKeys": [
+    "09110:popillia-japonica",
+    "09120:popillia-japonica",
+    "09130:popillia-japonica",
+    "09140:popillia-japonica",
+    "09150:popillia-japonica",
+    "09160:popillia-japonica",
+    "09170:popillia-japonica",
+    "09180:popillia-japonica",
+    "09190:popillia-japonica"
+  ],
+  "parameterHash": "b038173897ed5343fe4aae0378971012517edb37b7866c6e0be769aff41b788e",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T21:40:22.492Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Connecticut and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "popillia-japonica"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-popillia-japonica",
+        "url": "https://api.gbif.org/v1/species/match?name=Popillia+japonica&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:40:21.428Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-popillia-japonica",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=4425774&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for popillia-japonica and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T21:40:22.492Z",
+        "declaredRecordCount": 37,
+        "receivedRecordCount": 37,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/artifacts/gbif-occurrences-popillia-japonica-000000.json.gz",
+      "sha256": "9229fba0c6e0101975eac4030020d9aa11bb896c3586e5787f350c7ad8583b43",
+      "bytes": 11712
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/artifacts/gbif-species-match-popillia-japonica.json.gz",
+      "sha256": "914a9064237f4b586ed4d0a5f34b829a3fed5fd8d986ba3710b51a8ef81923b5",
+      "bytes": 285
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}

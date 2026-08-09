@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T203000Z__gbif-preserved-specimens__b038173897ed",
+  "status": "complete",
+  "started_at": "2026-08-09T20:30:00.000Z",
+  "finished_at": "2026-08-09T21:40:22.824Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "4f35e0f780c7558e1fff70de483a3db93796ebdb",
+  "parameter_hash": "b038173897ed5343fe4aae0378971012517edb37b7866c6e0be769aff41b788e",
+  "parameters": {
+    "stateCode": "CT",
+    "stateProvince": "Connecticut",
+    "candidateLimit": 9,
+    "candidatePairs": [
+      "09110:popillia-japonica",
+      "09120:popillia-japonica",
+      "09130:popillia-japonica",
+      "09140:popillia-japonica",
+      "09150:popillia-japonica",
+      "09160:popillia-japonica",
+      "09170:popillia-japonica",
+      "09180:popillia-japonica",
+      "09190:popillia-japonica"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "CT",
+    "county_fips": [
+      "09110",
+      "09120",
+      "09130",
+      "09140",
+      "09150",
+      "09160",
+      "09170",
+      "09180",
+      "09190"
+    ],
+    "species_ids": [
+      "popillia-japonica"
+    ],
+    "pair_keys": [
+      "09110:popillia-japonica",
+      "09120:popillia-japonica",
+      "09130:popillia-japonica",
+      "09140:popillia-japonica",
+      "09150:popillia-japonica",
+      "09160:popillia-japonica",
+      "09170:popillia-japonica",
+      "09180:popillia-japonica",
+      "09190:popillia-japonica"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Popillia+japonica&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-09T21:40:21.428Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Connecticut&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=4425774&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-09T21:40:22.492Z",
+      "record_count": 37
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/artifacts/gbif-occurrences-popillia-japonica-000000.json.gz",
+      "sha256": "9229fba0c6e0101975eac4030020d9aa11bb896c3586e5787f350c7ad8583b43",
+      "bytes": 11712,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/artifacts/gbif-species-match-popillia-japonica.json.gz",
+      "sha256": "914a9064237f4b586ed4d0a5f34b829a3fed5fd8d986ba3710b51a8ef81923b5",
+      "bytes": 285,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/rejections.ndjson",
+      "sha256": "2659c2ca27d9541167cf469429af14adc3c9670e872b4690c6a4a41f1611f059",
+      "bytes": 26499,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/outcomes.ndjson",
+      "sha256": "deadb0ae93c157e7c8bc6e8b3c9fc1079efa089e4451f2df55ea849a2a4856d9",
+      "bytes": 34551,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T203000Z__gbif-preserved-specimens__b038173897ed/source-verification.json",
+      "sha256": "2d1908e647f37445d04bf7962b185de4a1616835f9d4e39a46b38ed677a83035",
+      "bytes": 5040,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 9,
+    "candidate_records": 37,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 37,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 9
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state CT --candidate-file ops/national-research/plans/round-58-20260809/gbif-round58-ct-001.json --output-root src/data/research/runs --pairs 09110:popillia-japonica,09120:popillia-japonica,09130:popillia-japonica,09140:popillia-japonica,09150:popillia-japonica,09160:popillia-japonica,09170:popillia-japonica,09180:popillia-japonica,09190:popillia-japonica --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
