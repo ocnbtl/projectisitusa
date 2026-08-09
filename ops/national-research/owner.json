@@ -7,9 +7,9 @@
   "branch": "main",
   "baseSha": "6e0e15283865e21ce8ebf13b03a477b6b6f014da",
   "acquiredAt": "2026-08-03T18:04:42.3522944Z",
-  "lastReverifiedAt": "2026-08-09T08:26:18.000Z",
-  "currentCheckpointSha": "476861a91885b219da464c85e3f3cf610c01b20a",
-  "localHeadAtLastReverification": "476861a91885b219da464c85e3f3cf610c01b20a",
+  "lastReverifiedAt": "2026-08-09T10:59:01.000Z",
+  "currentCheckpointSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
+  "localHeadAtLastReverification": "65aac9792ec50b6625892e86ac8d521a274bede8",
   "state": "active",
   "ownershipEvidence": {
     "activeProjectTasks": [
@@ -18,18 +18,18 @@
     "supersededOwnerTaskId": "019fc8c2-d678-7cb3-a551-102df6f8aa23",
     "gitWorktreeCount": 123,
     "mainWriterProcesses": 0,
-    "originMainSha": "476861a91885b219da464c85e3f3cf610c01b20a",
-    "githubMainSha": "476861a91885b219da464c85e3f3cf610c01b20a",
-    "vercelProductionCommitSha": "476861a91885b219da464c85e3f3cf610c01b20a",
+    "originMainSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
+    "githubMainSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
+    "vercelProductionCommitSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
     "vercelDeploymentId": null,
     "gitFetchTransport": "https-authenticated",
     "githubCliAccount": "ocnbtl",
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Fresh Round 55 production North Dakota desktop, New Jersey mobile, and Tree-of-Heaven mobile QA remains the latest visual evidence. Current receipt-commit reverification added HTTP and byte identity checks only; it makes no new visual claim.",
-    "liveVerification": "Canonical main, origin, public GitHub main, and GitHub Production deployment 5816693942 matched the Round 55 external-receipt commit 476861a9. Six intended routes returned HTTP 200 on both the immutable and canonical hosts, and six North Dakota and New Jersey generated files matched local bytes and SHA-256 on both hosts. Exact private Vercel deployment ID and runtime logs remain unavailable because the configured CLI token is invalid; no zero-log claim is made.",
-    "githubDeploymentId": 5816693942,
+    "browserQa": "Fresh Round 56 production Montana desktop and Tridax mobile QA passed DOM geometry, exact content identity, image integrity, screenshots, and clean console checks. The image-view helper could not reopen production screenshots, so no manual production-screenshot visual claim is made; four equivalent local production-build screenshots were visually inspected.",
+    "liveVerification": "Canonical main, origin, public GitHub main, and GitHub Production deployment 5817907147 matched Round 56 content commit 65aac9792. Six intended routes returned HTTP 200 on both the immutable and canonical hosts, and three Montana generated files matched local bytes and SHA-256 on both hosts. Exact private Vercel deployment ID and runtime logs remain unavailable because the configured CLI token is invalid; no zero-log claim is made.",
+    "githubDeploymentId": 5817907147,
     "resourceCapacity": {
       "tier": "green-provider-limited",
       "availableMemoryMiB": 8154.367,
@@ -50,7 +50,7 @@
       "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
       "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
     },
-    "vercelCliStatus": "configured-token-invalid-during-round-55-external-verification"
+    "vercelCliStatus": "configured-token-invalid-during-round-56-external-verification"
   },
   "reverificationHistory": [
     {
@@ -471,6 +471,13 @@
       "githubMainSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
       "vercelProductionCommitSha": "2276cb67799b8858e69d5fbd1d69d0fe7ac18d70",
       "reason": "Windows MAIN independently verified the Round 51 Massachusetts, Hawaii, Vermont, and New Hampshire GBIF portfolio after exact isolated integration and explicit 2026-08-08 generation. Canonical, origin, and public GitHub main matched content SHA 2276cb677; GitHub Production deployment 5804055229 succeeded; all three exact-source Vercel attempts reached READY; the canonical alias resolved to active deployment dpl_3vZSwxKqkuf52L9cbgdzttWevEQc; fifteen intended live routes and the Suffolk ZIP POST returned HTTP 200; nine selected generated files matched local bytes exactly; and desktop plus mobile browser QA passed without console warnings, console errors, or horizontal overflow. Host and provider clocks differed by one hour, so provider-native epochs control deployment timing."
+    },
+    {
+      "recordedAt": "2026-08-09T10:59:01.000Z",
+      "supersededCheckpointSha": "476861a91885b219da464c85e3f3cf610c01b20a",
+      "githubMainSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
+      "vercelProductionCommitSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
+      "reason": "Windows MAIN independently verified Round 56 after structurally recovering the failed Montana GBIF scope as six exact one-taxon runs. Canonical, origin, and public GitHub main matched content SHA 65aac9792; GitHub Production deployment 5817907147 succeeded; twelve intended host-route checks and six selected generated-byte identities passed; and fresh production desktop and mobile QA had no overflow, broken images, console warnings, or console errors. The external receipt records that already-observed content deployment and does not self-attest its own future deployment."
     }
   ],
   "exclusiveOperations": [

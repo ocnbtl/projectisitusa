@@ -3,7 +3,7 @@
   "evaluationId": "round-56-gbif-montana-recovery-20260809-r1",
   "roundId": "gbif-round56",
   "evaluatedAt": "2026-08-09T09:50:00.000Z",
-  "result": "complete-local-gates-passed-pending-external-verification",
+  "result": "complete-released-and-externally-verified",
   "releaseThreshold": {
     "met": true,
     "basis": "The failed Montana GBIF scope was structurally recovered as six independently auditable one-taxon runs. All 336 exact county-species screens completed, all 336 moved in the final matrix, and six applicable protocol cells closed."
@@ -143,7 +143,7 @@
     "failedProviderAttempts": 0,
     "acquisitionManualInterventions": 0,
     "workerManifestManualInterventions": 0,
-    "mainCommandCorrections": 11,
+    "mainCommandCorrections": 14,
     "mainCommandCorrectionDetail": [
       "Corrected a CommonJS import shape in the portfolio planner before a durable selection was written.",
       "Corrected a registration timestamp ordering mismatch after the registry rejected the proposal without mutation.",
@@ -155,7 +155,10 @@
       "Reran the sixth pinned manifest validator from the worker worktree after a relative path resolved against main.",
       "Replaced an unsupported PowerShell UTC formatting flag with explicit DateTime UTC formatting.",
       "Used an exact shell fallback after the canonical patch helper returned Windows access denied.",
-      "Corrected one read-only nested-property aggregation expression while calculating durable metrics."
+      "Corrected one read-only nested-property aggregation expression while calculating durable metrics.",
+      "Corrected one production Playwright DOM expression after the CLI parsed a quoted literal as an empty selector; navigation remained loaded and the corrected assertion passed.",
+      "Corrected one read-only GitHub API repository-addressing attempt after a literal endpoint returned 404; the repository-derived endpoint returned the exact main, commit-status, and deployment identities.",
+      "Corrected one read-only PowerShell screenshot-enumeration wrapper syntax before exact temporary-file accounting."
     ],
     "liveWorkerTopology": 1,
     "machineCapacityWorkers": 3,
@@ -288,7 +291,36 @@
       "tridaxIdentityVisible": true,
       "screenshotsCaptured": 6,
       "screenshotsVisuallyInspected": 4,
-      "temporaryQaDirectoriesRemoved": 2
+      "temporaryQaDirectoriesRemoved": 2,
+      "production": {
+        "status": "pass",
+        "routes": [
+          "/",
+          "/research?state=MT",
+          "/species/tridax-procumbens"
+        ],
+        "routeHostChecksPassed": 12,
+        "desktopViewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "mobileViewport": {
+          "width": 390,
+          "height": 844
+        },
+        "montanaResearchCountVisible": 6173,
+        "tridaxIdentityVisible": true,
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 6,
+        "productionScreenshotsVisuallyInspected": 0,
+        "localEquivalentScreenshotsVisuallyInspected": 4,
+        "qualification": "Production DOM geometry, image integrity, route identity, screenshots, and console checks passed. The image-view helper could not reopen the completed production screenshots because the Windows sandbox returned CreateProcessWithLogonW access denied, so no manual production-screenshot visual claim is made; four corresponding local production-build captures were visually inspected.",
+        "temporaryFilesRemoved": 26,
+        "temporaryBytesRemoved": 4198993
+      }
     },
     "preDeploymentGate": {
       "phase": "PRE-DEPLOYMENT",
@@ -311,9 +343,32 @@
       },
       "qualification": "GO TO DEPLOY applies only to the locally verified content artifact. Production health requires a separate post-deployment gate against the exact pushed commit."
     },
+    "postDeploymentGate": {
+      "phase": "POST-DEPLOYMENT",
+      "decision": "GO",
+      "contentCommit": "65aac9792ec50b6625892e86ac8d521a274bede8",
+      "githubDeploymentId": 5817907147,
+      "immutableAndCanonicalRouteChecks": "PASSED",
+      "generatedByteParity": "PASSED",
+      "productionBrowserQa": "PASSED",
+      "runtimeLogs": "UNAVAILABLE - INVALID CONFIGURED VERCEL CLI TOKEN",
+      "qualification": "GO applies to the externally observed Round 56 content deployment only. The receipt commit is not self-attested."
+    },
     "externalVerification": {
-      "status": "pending-content-commit-and-deployment",
-      "qualification": "This content evaluation does not self-attest to a future GitHub or Vercel deployment. A separate receipt commit may record only the already-observed content deployment."
+      "status": "pass",
+      "verifiedAt": "2026-08-09T10:59:01.000Z",
+      "contentCommit": "65aac9792ec50b6625892e86ac8d521a274bede8",
+      "githubDeploymentId": 5817907147,
+      "githubDeploymentState": "success",
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/ByTz1pbaaipSoHjtN66hLGnuSEec",
+      "privateVercelDeploymentId": null,
+      "immutableDeploymentUrl": "https://projectisitusa-fhuls2lbu-unigentamos.vercel.app",
+      "canonicalProductionUrl": "https://isitusa.com",
+      "routeHostChecksPassed": 12,
+      "byteParityHostFileIdentitiesPassed": 6,
+      "productionConsoleWarnings": 0,
+      "productionConsoleErrors": 0,
+      "qualification": "This evaluation records only the already-observed deployment of content commit 65aac9792ec50b6625892e86ac8d521a274bede8. The private Vercel deployment ID and runtime logs were unavailable because the configured CLI token is invalid. It does not attest to the receipt commit that contains this update or any future deployment."
     }
   },
   "processLesson": {
@@ -383,7 +438,10 @@
     "applicabilityReview": {"unknownStateSpeciesDecisions": 122640, "forecast": null, "qualification": "Round 56 performed no applicability review and measured no applicability throughput."},
     "blockedExceptions": {"blockedProtocolCells": 59, "taxonomyOrGeographyExceptionCells": 8, "forecast": null, "qualification": "These require exact source, taxonomy, or geography resolution and cannot be inferred from source silence."},
     "freshnessWork": {"staleProtocolCells": 611, "undatedProtocolCells": 14305, "forecast": null, "qualification": "Round 56 made six current cells but did not measure a general freshness-remediation rate."},
-    "releaseOverhead": {"measuredLocalGenerationAndGateSeconds": 1662.703, "externalDeploymentAndQaSeconds": null, "qualification": "Compilation, dashboard generation, deterministic and integrity gates, projection checks, orchestration, typecheck, lint, and build are measured. Browser CLI wall time was not captured as one durable interval. Deployment, production QA, and the external receipt remain pending."
+    "releaseOverhead": {
+      "measuredLocalGenerationAndGateSeconds": 1662.703,
+      "externalDeploymentAndQaSeconds": 1084,
+      "qualification": "The external interval runs from the GitHub-recorded content-commit timestamp to the GitHub API Date header captured after production route, byte-parity, desktop, mobile, species, image-integrity, overflow, and console checks. The private Vercel deployment ID and runtime-log query remain unavailable."
     }
   },
   "semanticAttestation": {
