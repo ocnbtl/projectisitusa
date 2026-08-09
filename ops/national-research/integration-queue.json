@@ -25739,7 +25739,7 @@
       "queueId": "queue-lease-gbif-round57-nm-003-1",
       "jobId": "gbif-round57-nm-003",
       "leaseId": "lease-gbif-round57-nm-003-1",
-      "decision": "accepted",
+      "decision": "integrated",
       "submittedAt": "2026-08-09T13:29:00.000Z",
       "manifestPath": "manifests/gbif-round57-nm-003__lease-gbif-round57-nm-003-1.json",
       "manifestHash": "190af862178d3d99998b3d43591d238ce3c258e0d74e6bb5c85c04428ba6b2d9",
@@ -25786,6 +25786,42 @@
         "path": "receipts/reviews/queue-lease-gbif-round57-nm-003-1.json",
         "sha256": "dff651bf07431b1330e9ac53b8051be148f2cf78ad8800a12e79ac6145d66927",
         "bytes": 2519
+      },
+      "integratedAt": "2026-08-09T13:32:00.000Z",
+      "integrator": "MAIN",
+      "integrationCommit": "8994202263a6e6c217d9881c7a7059c171832009",
+      "integrationChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 33 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git status --porcelain=v1 --untracked-files=all",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "integrationConflicts": 0,
+      "integrationManualInterventions": 0,
+      "integrationCriticalSafetyViolations": 0,
+      "integrationEvidenceSemanticViolations": 0,
+      "integrationForbiddenWrites": 0,
+      "integrationReason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 33 complete county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+      "integrationReceipt": {
+        "path": "receipts/integrations/queue-lease-gbif-round57-nm-003-1.json",
+        "sha256": "a020f770d040415b148c13015b34a14a42541f196d9adc526982b69654b82128",
+        "bytes": 2688
       }
     }
   ]
