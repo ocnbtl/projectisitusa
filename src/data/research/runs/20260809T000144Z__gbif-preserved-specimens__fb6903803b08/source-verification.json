@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-09T00:13:58.620Z",
+  "runId": "20260809T000144Z__gbif-preserved-specimens__fb6903803b08",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "WA",
+  "pairKeys": [
+    "53001:echium-vulgare",
+    "53003:echium-vulgare",
+    "53005:echium-vulgare",
+    "53007:echium-vulgare",
+    "53009:echium-vulgare",
+    "53011:echium-vulgare",
+    "53013:echium-vulgare",
+    "53015:echium-vulgare",
+    "53017:echium-vulgare",
+    "53019:echium-vulgare",
+    "53021:echium-vulgare",
+    "53023:echium-vulgare",
+    "53025:echium-vulgare",
+    "53027:echium-vulgare",
+    "53029:echium-vulgare",
+    "53031:echium-vulgare",
+    "53033:echium-vulgare",
+    "53035:echium-vulgare",
+    "53037:echium-vulgare",
+    "53039:echium-vulgare",
+    "53041:echium-vulgare",
+    "53043:echium-vulgare",
+    "53045:echium-vulgare",
+    "53047:echium-vulgare",
+    "53049:echium-vulgare",
+    "53051:echium-vulgare",
+    "53053:echium-vulgare",
+    "53055:echium-vulgare",
+    "53057:echium-vulgare",
+    "53059:echium-vulgare",
+    "53061:echium-vulgare",
+    "53063:echium-vulgare",
+    "53065:echium-vulgare",
+    "53067:echium-vulgare",
+    "53069:echium-vulgare",
+    "53071:echium-vulgare",
+    "53073:echium-vulgare",
+    "53075:echium-vulgare",
+    "53077:echium-vulgare"
+  ],
+  "parameterHash": "fb6903803b08dfbcfe2c5c4cf85b32799bf765f9f25dbf925879dd307c233166",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-09T00:13:58.095Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Washington and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "echium-vulgare"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-echium-vulgare",
+        "url": "https://api.gbif.org/v1/species/match?name=Echium+vulgare&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:13:57.020Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-echium-vulgare",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Washington&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2925892&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for echium-vulgare and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-09T00:13:58.095Z",
+        "declaredRecordCount": 32,
+        "receivedRecordCount": 32,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/artifacts/gbif-occurrences-echium-vulgare-000000.json.gz",
+      "sha256": "73b178b6e40d2b8ba330604f5a5b5a82c0ba471036f6839dd5cf6786bf425444",
+      "bytes": 14598
+    },
+    {
+      "path": "src/data/research/runs/20260809T000144Z__gbif-preserved-specimens__fb6903803b08/artifacts/gbif-species-match-echium-vulgare.json.gz",
+      "sha256": "3ea02aab374e3a9b32375c88599608caaabdf1a623937cf519761368d61e145c",
+      "bytes": 281
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
