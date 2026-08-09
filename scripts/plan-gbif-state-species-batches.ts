@@ -222,6 +222,8 @@ export function buildGbifStateSpeciesPlan(input: {
   stateCode: string;
   limit: number;
   speciesPerBatch: number;
+  taxonomyCachePath?: string;
+  requirePositiveNet?: boolean;
 }) {
   const stateCode = input.stateCode.toUpperCase();
   const speciesPath = path.join(input.root, "src/data/generated/species.json");
@@ -249,6 +251,39 @@ export function buildGbifStateSpeciesPlan(input: {
   ]) {
     if (!fs.existsSync(filepath)) throw new Error(`Missing plan input ${filepath}.`);
   }
+
+  const taxonomyCachePath = input.taxonomyCachePath
+    ? path.resolve(input.root, input.taxonomyCachePath)
+    : null;
+  if (
+    taxonomyCachePath &&
+    !taxonomyCachePath.startsWith(`${path.resolve(input.root)}${path.sep}`)
+  ) {
+    throw new Error("The taxonomy cache must remain inside the repository.");
+  }
+  if (taxonomyCachePath && !fs.existsSync(taxonomyCachePath)) {
+    throw new Error(`Missing taxonomy cache ${taxonomyCachePath}.`);
+  }
+  const taxonomyCache = taxonomyCachePath
+    ? readJson<{
+        cacheId: string;
+        sourceId: string;
+        compatibleAdapterVersions: string[];
+        entries: Array<{ speciesId: string }>;
+      }>(taxonomyCachePath)
+    : null;
+  if (
+    taxonomyCache &&
+    (taxonomyCache.sourceId !== SOURCE_ID ||
+      !taxonomyCache.compatibleAdapterVersions.includes("1.3.1"))
+  ) {
+    throw new Error(
+      "The taxonomy cache is not compatible with the registered GBIF adapter.",
+    );
+  }
+  const cachedSpeciesIds = new Set(
+    taxonomyCache?.entries.map((entry) => entry.speciesId) ?? [],
+  );
 
   const species = readJson<Species[]>(speciesPath);
   const speciesById = new Map(species.map((entry) => [entry.id, entry]));
@@ -279,7 +314,7 @@ export function buildGbifStateSpeciesPlan(input: {
   let preventedCompletedPairCount = 0;
   let fullyCompletedStateSpeciesExcluded = 0;
   let taxonomyBlockedStateSpeciesExcluded = 0;
-  const candidates = protocol.cells
+  const availableCandidates = protocol.cells
     .filter(
       (cell) =>
         cell.sourceId === SOURCE_ID &&
@@ -348,6 +383,11 @@ export function buildGbifStateSpeciesPlan(input: {
         PRIORITY_ORDER[left.priority] - PRIORITY_ORDER[right.priority] ||
         compareText(left.speciesId, right.speciesId),
     );
+  const candidates = availableCandidates.filter(
+    (entry) =>
+      (!input.requirePositiveNet || entry.notResearchedCountyCount > 0) &&
+      (!taxonomyCache || cachedSpeciesIds.has(entry.speciesId)),
+  );
   const selected = candidates.slice(0, input.limit);
   const batches: PlannedBatch[] = [];
   let currentSpecies: typeof selected = [];
@@ -408,6 +448,15 @@ export function buildGbifStateSpeciesPlan(input: {
       protocolApplicability: "applicable",
       protocolCompletion: "incomplete-or-blocked",
       taxonomy: "exact-two-token-binomial",
+      ...(taxonomyCache
+        ? {
+            portfolioFilter:
+              "provenance-compatible-taxonomy-cache-and-positive-not-researched-movement",
+            taxonomyCacheId: taxonomyCache.cacheId,
+            taxonomyCacheCompatibleAdapterVersions:
+              taxonomyCache.compatibleAdapterVersions,
+          }
+        : {}),
       batchLimits: {
         maximumStateSpeciesScreens: input.speciesPerBatch,
         maximumCountySpeciesPairs: MAX_CANDIDATE_PAIRS_PER_BATCH,
@@ -431,18 +480,27 @@ export function buildGbifStateSpeciesPlan(input: {
         ? sha256(fs.readFileSync(taxonomyBlocks.evaluationPath))
         : null,
       countyResearchProjections: currentPairState.inputHash,
+      ...(taxonomyCachePath
+        ? { taxonomyCache: sha256(fs.readFileSync(taxonomyCachePath)) }
+        : {}),
     },
     rankingInputs: {
       countyProjectionFileCount: currentPairState.fileCount,
       expectedNetNewPairDefinition: "current displayStatus equals not-researched",
+      ...(taxonomyCache
+        ? { cachedTaxonomyEntryCount: taxonomyCache.entries.length }
+        : {}),
     },
     deduplication: {
       immutableCompletePairCount: completedPairs.size,
       preventedCompletedPairCount,
       fullyCompletedStateSpeciesExcluded,
       taxonomyBlockedStateSpeciesExcluded,
+      ...(taxonomyCache
+        ? { cachedEligibleStateSpeciesScreenCount: candidates.length }
+        : {}),
     },
-    availableStateSpeciesScreenCount: candidates.length,
+    availableStateSpeciesScreenCount: availableCandidates.length,
     selectedStateSpeciesScreenCount: selected.length,
     selectedCountyOutcomeCount: selected.reduce(
       (sum, entry) => sum + entry.remainingCountyFips.length,
@@ -482,6 +540,15 @@ function main() {
     "species-per-batch",
     100,
   );
+  const taxonomyCacheArgument = argumentValue(args, "taxonomy-cache");
+  const taxonomyCachePath = taxonomyCacheArgument
+    ? path.resolve(root, taxonomyCacheArgument)
+    : undefined;
+  const requirePositiveNetArgument =
+    argumentValue(args, "require-positive-net") ?? "false";
+  if (!["true", "false"].includes(requirePositiveNetArgument)) {
+    throw new Error("--require-positive-net must be true or false.");
+  }
   const outputDirectory = path.resolve(
     root,
     requiredArgument(args, "output-dir"),
@@ -495,6 +562,8 @@ function main() {
     stateCode,
     limit,
     speciesPerBatch,
+    taxonomyCachePath,
+    requirePositiveNet: requirePositiveNetArgument === "true",
   });
   fs.mkdirSync(outputDirectory, { recursive: true });
   const candidateFiles = plan.candidateFiles;

@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-round59",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "RI",
+  "asOf": "2026-08-09",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "portfolioFilter": "provenance-compatible-taxonomy-cache-and-positive-not-researched-movement",
+    "taxonomyCacheId": "gbif-taxonomy-20260809-r55",
+    "taxonomyCacheCompatibleAdapterVersions": [
+      "1.3.1"
+    ],
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "185a9feb982f5ddf543399f669206b1ff5a91c90db055343ce1d379515d4798b",
+    "protocolCells": "156ab826dc99e8ea701292bbdfb6a5c8de64e88bf3b707dd2a687fdb82f6e01a",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "2d70a312eb4abccedbfcec4676ce772005c3b9d85fb035d429be0e6f5d0ac328",
+    "taxonomyCache": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 5,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched",
+    "cachedTaxonomyEntryCount": 53
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 0,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0,
+    "cachedEligibleStateSpeciesScreenCount": 10
+  },
+  "availableStateSpeciesScreenCount": 64,
+  "selectedStateSpeciesScreenCount": 10,
+  "selectedCountyOutcomeCount": 50,
+  "expectedNetNewPairCount": 50,
+  "countyCount": 5,
+  "selected": [
+    {
+      "stateCode": "RI",
+      "speciesId": "dreissena-polymorpha",
+      "scientificName": "Dreissena polymorpha",
+      "category": "wildlife",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "rottboellia-cochinchinensis",
+      "scientificName": "Rottboellia cochinchinensis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "saccharum-spontaneum",
+      "scientificName": "Saccharum spontaneum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "salvinia-molesta",
+      "scientificName": "Salvinia molesta",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "solanum-tampicense",
+      "scientificName": "Solanum tampicense",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "solanum-torvum",
+      "scientificName": "Solanum torvum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "solanum-viarum",
+      "scientificName": "Solanum viarum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "sparganium-erectum",
+      "scientificName": "Sparganium erectum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "tridax-procumbens",
+      "scientificName": "Tridax procumbens",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    },
+    {
+      "stateCode": "RI",
+      "speciesId": "urochloa-panicoides",
+      "scientificName": "Urochloa panicoides",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "44001",
+        "44003",
+        "44005",
+        "44007",
+        "44009"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-round59-ri-001",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "dreissena-polymorpha"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-001.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-002",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "rottboellia-cochinchinensis"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-002.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-003",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "saccharum-spontaneum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-003.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-004",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "salvinia-molesta"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-004.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-005",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-tampicense"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-005.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-006",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-torvum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-006.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-007",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-viarum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-007.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-008",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "sparganium-erectum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-008.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-009",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "tridax-procumbens"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-009.json"
+    },
+    {
+      "batchId": "gbif-round59-ri-010",
+      "stateCode": "RI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "urochloa-panicoides"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-ri-010.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-round59-ri-001",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json",
+      "sha256": "e4a57ba9cd3bb61da5c3470dc1a18e866e8552db794d7fd322bdbc48ae26c675",
+      "bytes": 835
+    },
+    {
+      "batchId": "gbif-round59-ri-002",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-002.json",
+      "sha256": "b73c1fc34793de8ce7c56b01349a25c3a3331a329e41603a2c5a4edbea512363",
+      "bytes": 870
+    },
+    {
+      "batchId": "gbif-round59-ri-003",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-003.json",
+      "sha256": "f366dd65d0df8ace1df0cb1b06fb8b98ae0c6cf6e7a01ba017b1e719c43e9e1d",
+      "bytes": 835
+    },
+    {
+      "batchId": "gbif-round59-ri-004",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-004.json",
+      "sha256": "13f874263a40857fc7e1d1008782c7a1c70ad059bb2882fc511d7384ce6b9c72",
+      "bytes": 815
+    },
+    {
+      "batchId": "gbif-round59-ri-005",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-005.json",
+      "sha256": "35a6214e6a03e87d71cb364e4f4896075defddbcfda20b410f48eccac00c6b8c",
+      "bytes": 825
+    },
+    {
+      "batchId": "gbif-round59-ri-006",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-006.json",
+      "sha256": "3638aeabe1171890614c2d8d788716a4cb9514f7116bf845d1f7d7703d5bf8fe",
+      "bytes": 805
+    },
+    {
+      "batchId": "gbif-round59-ri-007",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-007.json",
+      "sha256": "e994b338598e5beaf0e08879fdafe939af67e71ae6e73fc7f85fe14df4a0a75b",
+      "bytes": 805
+    },
+    {
+      "batchId": "gbif-round59-ri-008",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-008.json",
+      "sha256": "171225f46dd3516d53f43de42fbeb3a2d70eb64bb231566a6a87068d5f771150",
+      "bytes": 825
+    },
+    {
+      "batchId": "gbif-round59-ri-009",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-009.json",
+      "sha256": "6ca534140bdbf292cae4f91bf15cf34a3c7dbf43705bfa7362d51bf12240bb68",
+      "bytes": 820
+    },
+    {
+      "batchId": "gbif-round59-ri-010",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-010.json",
+      "sha256": "0cd4c202362c4c3e59cab3e2b5fadab796644decca34220b0e15187da34cdb5d",
+      "bytes": 830
+    }
+  ]
+}

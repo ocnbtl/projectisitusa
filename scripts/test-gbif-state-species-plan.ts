@@ -158,6 +158,41 @@ assert(
   "The planner did not report its immutable-run deduplication accounting.",
 );
 
+const taxonomyCachePath =
+  "src/data/research/caches/gbif-taxonomy-20260809-r55.json";
+const taxonomyCache = JSON.parse(readFileSync(taxonomyCachePath, "utf8")) as {
+  entries: Array<{ speciesId: string }>;
+};
+const cachedSpeciesIds = new Set(
+  taxonomyCache.entries.map((entry) => entry.speciesId),
+);
+const cacheAware = buildGbifStateSpeciesPlan({
+  root: process.cwd(),
+  planId: "synthetic-cache-aware-check",
+  stateCode: "RI",
+  limit: 5_000,
+  speciesPerBatch: 1,
+  taxonomyCachePath,
+  requirePositiveNet: true,
+});
+assert(
+  cacheAware.selectedStateSpeciesScreenCount > 0 &&
+    cacheAware.selected.every(
+      (entry) =>
+        entry.notResearchedCountyCount > 0 &&
+        cachedSpeciesIds.has(entry.speciesId),
+    ),
+  "The cache-aware planner admitted an uncached or zero-net state-species screen.",
+);
+assert(
+  cacheAware.inputHashes.taxonomyCache &&
+    cacheAware.rankingInputs.cachedTaxonomyEntryCount ===
+      taxonomyCache.entries.length &&
+    cacheAware.deduplication.cachedEligibleStateSpeciesScreenCount ===
+      cacheAware.selectedStateSpeciesScreenCount,
+  "The cache-aware planner did not preserve its cache provenance and selection accounting.",
+);
+
 console.log(
   JSON.stringify(
     {

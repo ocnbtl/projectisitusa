@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-round59",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "HI",
+  "asOf": "2026-08-09",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "portfolioFilter": "provenance-compatible-taxonomy-cache-and-positive-not-researched-movement",
+    "taxonomyCacheId": "gbif-taxonomy-20260809-r55",
+    "taxonomyCacheCompatibleAdapterVersions": [
+      "1.3.1"
+    ],
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "1636058ae3f331601df160bec089aa19911d4bdba16b9d29131a38fc045edf20",
+    "protocolCells": "a001d778003f81aff6e16bdacb1a0ddd75426d53ea6a01b32ff639e2fc3012b1",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "90f81f0eb486aea56957981f07c73dea2c03a06afb6a5172447c774d01fcf38a",
+    "taxonomyCache": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 5,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched",
+    "cachedTaxonomyEntryCount": 53
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 250,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0,
+    "cachedEligibleStateSpeciesScreenCount": 3
+  },
+  "availableStateSpeciesScreenCount": 41,
+  "selectedStateSpeciesScreenCount": 3,
+  "selectedCountyOutcomeCount": 15,
+  "expectedNetNewPairCount": 15,
+  "countyCount": 5,
+  "selected": [
+    {
+      "stateCode": "HI",
+      "speciesId": "sparganium-erectum",
+      "scientificName": "Sparganium erectum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "15001",
+        "15003",
+        "15005",
+        "15007",
+        "15009"
+      ]
+    },
+    {
+      "stateCode": "HI",
+      "speciesId": "tridax-procumbens",
+      "scientificName": "Tridax procumbens",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "15001",
+        "15003",
+        "15005",
+        "15007",
+        "15009"
+      ]
+    },
+    {
+      "stateCode": "HI",
+      "speciesId": "urochloa-panicoides",
+      "scientificName": "Urochloa panicoides",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 5,
+      "incompleteCountyCount": 5,
+      "notResearchedCountyCount": 5,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "15001",
+        "15003",
+        "15005",
+        "15007",
+        "15009"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-round59-hi-001",
+      "stateCode": "HI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "sparganium-erectum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-hi-001.json"
+    },
+    {
+      "batchId": "gbif-round59-hi-002",
+      "stateCode": "HI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "tridax-procumbens"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-hi-002.json"
+    },
+    {
+      "batchId": "gbif-round59-hi-003",
+      "stateCode": "HI",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "urochloa-panicoides"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 5,
+      "candidateFile": "gbif-round59-hi-003.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-round59-hi-001",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-hi-001.json",
+      "sha256": "0c62e6da097e473a0c813b117b122e0534ce509036fddb0bf7fb29b0b09b544f",
+      "bytes": 825
+    },
+    {
+      "batchId": "gbif-round59-hi-002",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-hi-002.json",
+      "sha256": "9a182fb42c2636a72f0d26937d7bedee053f0905b826b8be4e25f38aca6ea17b",
+      "bytes": 820
+    },
+    {
+      "batchId": "gbif-round59-hi-003",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-hi-003.json",
+      "sha256": "39e4b18a9733e4ea7b085e7cb57d1e56962dc4c04025145ab02cb574731f2f54",
+      "bytes": 830
+    }
+  ]
+}

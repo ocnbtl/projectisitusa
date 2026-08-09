@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-round59",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "VT",
+  "asOf": "2026-08-09",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "portfolioFilter": "provenance-compatible-taxonomy-cache-and-positive-not-researched-movement",
+    "taxonomyCacheId": "gbif-taxonomy-20260809-r55",
+    "taxonomyCacheCompatibleAdapterVersions": [
+      "1.3.1"
+    ],
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "322837288ae0fb09deaa032d311d3563da146facc05fa45cae8cdfd4eb88b28d",
+    "protocolCells": "4bc8d5f7510a9f18f46004d4799085212c6799a592e3880d96f3da697e6315ff",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "37ddc98ec6eedad0ad535c013c64b107ae59b89e31badce9eaad5750a1c3437d",
+    "taxonomyCache": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 14,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched",
+    "cachedTaxonomyEntryCount": 53
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 700,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0,
+    "cachedEligibleStateSpeciesScreenCount": 1
+  },
+  "availableStateSpeciesScreenCount": 41,
+  "selectedStateSpeciesScreenCount": 1,
+  "selectedCountyOutcomeCount": 14,
+  "expectedNetNewPairCount": 14,
+  "countyCount": 14,
+  "selected": [
+    {
+      "stateCode": "VT",
+      "speciesId": "urochloa-panicoides",
+      "scientificName": "Urochloa panicoides",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 14,
+      "incompleteCountyCount": 14,
+      "notResearchedCountyCount": 14,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "50001",
+        "50003",
+        "50005",
+        "50007",
+        "50009",
+        "50011",
+        "50013",
+        "50015",
+        "50017",
+        "50019",
+        "50021",
+        "50023",
+        "50025",
+        "50027"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-round59-vt-001",
+      "stateCode": "VT",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "urochloa-panicoides"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 14,
+      "candidateFile": "gbif-round59-vt-001.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-round59-vt-001",
+      "path": "ops/national-research/plans/round-59-20260809/gbif-round59-vt-001.json",
+      "sha256": "f711a99daf05c9188509ea75f1d036ad95ac99f5f9f215241f00dc6798ce7719",
+      "bytes": 1993
+    }
+  ]
+}
