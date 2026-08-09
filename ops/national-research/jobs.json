@@ -481041,6 +481041,3341 @@
       "priority": 1,
       "state": "completed",
       "currentLeaseId": "lease-gbif-round56-mt-006-1"
+    },
+    {
+      "jobId": "gbif-round57-sc-001",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "SC"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "sparganium-erectum"
+        ],
+        "pairs": [
+          "45001:sparganium-erectum",
+          "45003:sparganium-erectum",
+          "45005:sparganium-erectum",
+          "45007:sparganium-erectum",
+          "45009:sparganium-erectum",
+          "45011:sparganium-erectum",
+          "45013:sparganium-erectum",
+          "45015:sparganium-erectum",
+          "45017:sparganium-erectum",
+          "45019:sparganium-erectum",
+          "45021:sparganium-erectum",
+          "45023:sparganium-erectum",
+          "45025:sparganium-erectum",
+          "45027:sparganium-erectum",
+          "45029:sparganium-erectum",
+          "45031:sparganium-erectum",
+          "45033:sparganium-erectum",
+          "45035:sparganium-erectum",
+          "45037:sparganium-erectum",
+          "45039:sparganium-erectum",
+          "45041:sparganium-erectum",
+          "45043:sparganium-erectum",
+          "45045:sparganium-erectum",
+          "45047:sparganium-erectum",
+          "45049:sparganium-erectum",
+          "45051:sparganium-erectum",
+          "45053:sparganium-erectum",
+          "45055:sparganium-erectum",
+          "45057:sparganium-erectum",
+          "45059:sparganium-erectum",
+          "45061:sparganium-erectum",
+          "45063:sparganium-erectum",
+          "45065:sparganium-erectum",
+          "45067:sparganium-erectum",
+          "45069:sparganium-erectum",
+          "45071:sparganium-erectum",
+          "45073:sparganium-erectum",
+          "45075:sparganium-erectum",
+          "45077:sparganium-erectum",
+          "45079:sparganium-erectum",
+          "45081:sparganium-erectum",
+          "45083:sparganium-erectum",
+          "45085:sparganium-erectum",
+          "45087:sparganium-erectum",
+          "45089:sparganium-erectum",
+          "45091:sparganium-erectum"
+        ]
+      },
+      "scopeClaims": [
+        "state/SC/source/gbif-preserved-specimens/taxon/sparganium-erectum"
+      ],
+      "branch": "codex/gbif-round57-sc-001",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-sc-001",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__1509ae219613/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 1,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-sc-001.json",
+        "candidateLimit": 46,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-sc-001\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 46,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-sc-001.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 46 leased SC county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 1,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-sc-002",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "SC"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "tridax-procumbens"
+        ],
+        "pairs": [
+          "45001:tridax-procumbens",
+          "45003:tridax-procumbens",
+          "45005:tridax-procumbens",
+          "45007:tridax-procumbens",
+          "45009:tridax-procumbens",
+          "45011:tridax-procumbens",
+          "45013:tridax-procumbens",
+          "45015:tridax-procumbens",
+          "45017:tridax-procumbens",
+          "45019:tridax-procumbens",
+          "45021:tridax-procumbens",
+          "45023:tridax-procumbens",
+          "45025:tridax-procumbens",
+          "45027:tridax-procumbens",
+          "45029:tridax-procumbens",
+          "45031:tridax-procumbens",
+          "45033:tridax-procumbens",
+          "45035:tridax-procumbens",
+          "45037:tridax-procumbens",
+          "45039:tridax-procumbens",
+          "45041:tridax-procumbens",
+          "45043:tridax-procumbens",
+          "45045:tridax-procumbens",
+          "45047:tridax-procumbens",
+          "45049:tridax-procumbens",
+          "45051:tridax-procumbens",
+          "45053:tridax-procumbens",
+          "45055:tridax-procumbens",
+          "45057:tridax-procumbens",
+          "45059:tridax-procumbens",
+          "45061:tridax-procumbens",
+          "45063:tridax-procumbens",
+          "45065:tridax-procumbens",
+          "45067:tridax-procumbens",
+          "45069:tridax-procumbens",
+          "45071:tridax-procumbens",
+          "45073:tridax-procumbens",
+          "45075:tridax-procumbens",
+          "45077:tridax-procumbens",
+          "45079:tridax-procumbens",
+          "45081:tridax-procumbens",
+          "45083:tridax-procumbens",
+          "45085:tridax-procumbens",
+          "45087:tridax-procumbens",
+          "45089:tridax-procumbens",
+          "45091:tridax-procumbens"
+        ]
+      },
+      "scopeClaims": [
+        "state/SC/source/gbif-preserved-specimens/taxon/tridax-procumbens"
+      ],
+      "branch": "codex/gbif-round57-sc-002",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-sc-002",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__824fdc96fde7/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 2,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-sc-002.json",
+        "candidateLimit": 46,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-sc-002\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 46,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-sc-002.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 46 leased SC county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 2,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-sc-003",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "SC"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "urochloa-panicoides"
+        ],
+        "pairs": [
+          "45001:urochloa-panicoides",
+          "45003:urochloa-panicoides",
+          "45005:urochloa-panicoides",
+          "45007:urochloa-panicoides",
+          "45009:urochloa-panicoides",
+          "45011:urochloa-panicoides",
+          "45013:urochloa-panicoides",
+          "45015:urochloa-panicoides",
+          "45017:urochloa-panicoides",
+          "45019:urochloa-panicoides",
+          "45021:urochloa-panicoides",
+          "45023:urochloa-panicoides",
+          "45025:urochloa-panicoides",
+          "45027:urochloa-panicoides",
+          "45029:urochloa-panicoides",
+          "45031:urochloa-panicoides",
+          "45033:urochloa-panicoides",
+          "45035:urochloa-panicoides",
+          "45037:urochloa-panicoides",
+          "45039:urochloa-panicoides",
+          "45041:urochloa-panicoides",
+          "45043:urochloa-panicoides",
+          "45045:urochloa-panicoides",
+          "45047:urochloa-panicoides",
+          "45049:urochloa-panicoides",
+          "45051:urochloa-panicoides",
+          "45053:urochloa-panicoides",
+          "45055:urochloa-panicoides",
+          "45057:urochloa-panicoides",
+          "45059:urochloa-panicoides",
+          "45061:urochloa-panicoides",
+          "45063:urochloa-panicoides",
+          "45065:urochloa-panicoides",
+          "45067:urochloa-panicoides",
+          "45069:urochloa-panicoides",
+          "45071:urochloa-panicoides",
+          "45073:urochloa-panicoides",
+          "45075:urochloa-panicoides",
+          "45077:urochloa-panicoides",
+          "45079:urochloa-panicoides",
+          "45081:urochloa-panicoides",
+          "45083:urochloa-panicoides",
+          "45085:urochloa-panicoides",
+          "45087:urochloa-panicoides",
+          "45089:urochloa-panicoides",
+          "45091:urochloa-panicoides"
+        ]
+      },
+      "scopeClaims": [
+        "state/SC/source/gbif-preserved-specimens/taxon/urochloa-panicoides"
+      ],
+      "branch": "codex/gbif-round57-sc-003",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-sc-003",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__744d2b7d0dc6/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 3,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-sc-003.json",
+        "candidateLimit": 46,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-sc-003\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 46,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-sc-003.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 46 leased SC county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 3,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-nm-001",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "NM"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-torvum"
+        ],
+        "pairs": [
+          "35001:solanum-torvum",
+          "35003:solanum-torvum",
+          "35005:solanum-torvum",
+          "35006:solanum-torvum",
+          "35007:solanum-torvum",
+          "35009:solanum-torvum",
+          "35011:solanum-torvum",
+          "35013:solanum-torvum",
+          "35015:solanum-torvum",
+          "35017:solanum-torvum",
+          "35019:solanum-torvum",
+          "35021:solanum-torvum",
+          "35023:solanum-torvum",
+          "35025:solanum-torvum",
+          "35027:solanum-torvum",
+          "35028:solanum-torvum",
+          "35029:solanum-torvum",
+          "35031:solanum-torvum",
+          "35033:solanum-torvum",
+          "35035:solanum-torvum",
+          "35037:solanum-torvum",
+          "35039:solanum-torvum",
+          "35041:solanum-torvum",
+          "35043:solanum-torvum",
+          "35045:solanum-torvum",
+          "35047:solanum-torvum",
+          "35049:solanum-torvum",
+          "35051:solanum-torvum",
+          "35053:solanum-torvum",
+          "35055:solanum-torvum",
+          "35057:solanum-torvum",
+          "35059:solanum-torvum",
+          "35061:solanum-torvum"
+        ]
+      },
+      "scopeClaims": [
+        "state/NM/source/gbif-preserved-specimens/taxon/solanum-torvum"
+      ],
+      "branch": "codex/gbif-round57-nm-001",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-nm-001",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__b843bc350db7/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 4,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-nm-001.json",
+        "candidateLimit": 33,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-nm-001\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 33,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-nm-001.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 33 leased NM county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 4,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-nm-002",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "NM"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-viarum"
+        ],
+        "pairs": [
+          "35001:solanum-viarum",
+          "35003:solanum-viarum",
+          "35005:solanum-viarum",
+          "35006:solanum-viarum",
+          "35007:solanum-viarum",
+          "35009:solanum-viarum",
+          "35011:solanum-viarum",
+          "35013:solanum-viarum",
+          "35015:solanum-viarum",
+          "35017:solanum-viarum",
+          "35019:solanum-viarum",
+          "35021:solanum-viarum",
+          "35023:solanum-viarum",
+          "35025:solanum-viarum",
+          "35027:solanum-viarum",
+          "35028:solanum-viarum",
+          "35029:solanum-viarum",
+          "35031:solanum-viarum",
+          "35033:solanum-viarum",
+          "35035:solanum-viarum",
+          "35037:solanum-viarum",
+          "35039:solanum-viarum",
+          "35041:solanum-viarum",
+          "35043:solanum-viarum",
+          "35045:solanum-viarum",
+          "35047:solanum-viarum",
+          "35049:solanum-viarum",
+          "35051:solanum-viarum",
+          "35053:solanum-viarum",
+          "35055:solanum-viarum",
+          "35057:solanum-viarum",
+          "35059:solanum-viarum",
+          "35061:solanum-viarum"
+        ]
+      },
+      "scopeClaims": [
+        "state/NM/source/gbif-preserved-specimens/taxon/solanum-viarum"
+      ],
+      "branch": "codex/gbif-round57-nm-002",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-nm-002",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__f89be418f42a/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 5,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-nm-002.json",
+        "candidateLimit": 33,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-nm-002\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 33,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-nm-002.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 33 leased NM county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 5,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-nm-003",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "NM"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "sparganium-erectum"
+        ],
+        "pairs": [
+          "35001:sparganium-erectum",
+          "35003:sparganium-erectum",
+          "35005:sparganium-erectum",
+          "35006:sparganium-erectum",
+          "35007:sparganium-erectum",
+          "35009:sparganium-erectum",
+          "35011:sparganium-erectum",
+          "35013:sparganium-erectum",
+          "35015:sparganium-erectum",
+          "35017:sparganium-erectum",
+          "35019:sparganium-erectum",
+          "35021:sparganium-erectum",
+          "35023:sparganium-erectum",
+          "35025:sparganium-erectum",
+          "35027:sparganium-erectum",
+          "35028:sparganium-erectum",
+          "35029:sparganium-erectum",
+          "35031:sparganium-erectum",
+          "35033:sparganium-erectum",
+          "35035:sparganium-erectum",
+          "35037:sparganium-erectum",
+          "35039:sparganium-erectum",
+          "35041:sparganium-erectum",
+          "35043:sparganium-erectum",
+          "35045:sparganium-erectum",
+          "35047:sparganium-erectum",
+          "35049:sparganium-erectum",
+          "35051:sparganium-erectum",
+          "35053:sparganium-erectum",
+          "35055:sparganium-erectum",
+          "35057:sparganium-erectum",
+          "35059:sparganium-erectum",
+          "35061:sparganium-erectum"
+        ]
+      },
+      "scopeClaims": [
+        "state/NM/source/gbif-preserved-specimens/taxon/sparganium-erectum"
+      ],
+      "branch": "codex/gbif-round57-nm-003",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-nm-003",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__787858eccaa3/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 6,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-nm-003.json",
+        "candidateLimit": 33,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-nm-003\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 33,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-nm-003.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 33 leased NM county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 6,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-nm-004",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "NM"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "tridax-procumbens"
+        ],
+        "pairs": [
+          "35001:tridax-procumbens",
+          "35003:tridax-procumbens",
+          "35005:tridax-procumbens",
+          "35006:tridax-procumbens",
+          "35007:tridax-procumbens",
+          "35009:tridax-procumbens",
+          "35011:tridax-procumbens",
+          "35013:tridax-procumbens",
+          "35015:tridax-procumbens",
+          "35017:tridax-procumbens",
+          "35019:tridax-procumbens",
+          "35021:tridax-procumbens",
+          "35023:tridax-procumbens",
+          "35025:tridax-procumbens",
+          "35027:tridax-procumbens",
+          "35028:tridax-procumbens",
+          "35029:tridax-procumbens",
+          "35031:tridax-procumbens",
+          "35033:tridax-procumbens",
+          "35035:tridax-procumbens",
+          "35037:tridax-procumbens",
+          "35039:tridax-procumbens",
+          "35041:tridax-procumbens",
+          "35043:tridax-procumbens",
+          "35045:tridax-procumbens",
+          "35047:tridax-procumbens",
+          "35049:tridax-procumbens",
+          "35051:tridax-procumbens",
+          "35053:tridax-procumbens",
+          "35055:tridax-procumbens",
+          "35057:tridax-procumbens",
+          "35059:tridax-procumbens",
+          "35061:tridax-procumbens"
+        ]
+      },
+      "scopeClaims": [
+        "state/NM/source/gbif-preserved-specimens/taxon/tridax-procumbens"
+      ],
+      "branch": "codex/gbif-round57-nm-004",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-nm-004",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__983eaff538e5/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 7,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-nm-004.json",
+        "candidateLimit": 33,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-nm-004\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 33,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-nm-004.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 33 leased NM county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 7,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-nm-005",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "NM"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "urochloa-panicoides"
+        ],
+        "pairs": [
+          "35001:urochloa-panicoides",
+          "35003:urochloa-panicoides",
+          "35005:urochloa-panicoides",
+          "35006:urochloa-panicoides",
+          "35007:urochloa-panicoides",
+          "35009:urochloa-panicoides",
+          "35011:urochloa-panicoides",
+          "35013:urochloa-panicoides",
+          "35015:urochloa-panicoides",
+          "35017:urochloa-panicoides",
+          "35019:urochloa-panicoides",
+          "35021:urochloa-panicoides",
+          "35023:urochloa-panicoides",
+          "35025:urochloa-panicoides",
+          "35027:urochloa-panicoides",
+          "35028:urochloa-panicoides",
+          "35029:urochloa-panicoides",
+          "35031:urochloa-panicoides",
+          "35033:urochloa-panicoides",
+          "35035:urochloa-panicoides",
+          "35037:urochloa-panicoides",
+          "35039:urochloa-panicoides",
+          "35041:urochloa-panicoides",
+          "35043:urochloa-panicoides",
+          "35045:urochloa-panicoides",
+          "35047:urochloa-panicoides",
+          "35049:urochloa-panicoides",
+          "35051:urochloa-panicoides",
+          "35053:urochloa-panicoides",
+          "35055:urochloa-panicoides",
+          "35057:urochloa-panicoides",
+          "35059:urochloa-panicoides",
+          "35061:urochloa-panicoides"
+        ]
+      },
+      "scopeClaims": [
+        "state/NM/source/gbif-preserved-specimens/taxon/urochloa-panicoides"
+      ],
+      "branch": "codex/gbif-round57-nm-005",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-nm-005",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__221242b02317/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 8,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-nm-005.json",
+        "candidateLimit": 33,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-nm-005\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 33,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-nm-005.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 33 leased NM county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 8,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-ut-001",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "UT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-tampicense"
+        ],
+        "pairs": [
+          "49001:solanum-tampicense",
+          "49003:solanum-tampicense",
+          "49005:solanum-tampicense",
+          "49007:solanum-tampicense",
+          "49009:solanum-tampicense",
+          "49011:solanum-tampicense",
+          "49013:solanum-tampicense",
+          "49015:solanum-tampicense",
+          "49017:solanum-tampicense",
+          "49019:solanum-tampicense",
+          "49021:solanum-tampicense",
+          "49023:solanum-tampicense",
+          "49025:solanum-tampicense",
+          "49027:solanum-tampicense",
+          "49029:solanum-tampicense",
+          "49031:solanum-tampicense",
+          "49033:solanum-tampicense",
+          "49035:solanum-tampicense",
+          "49037:solanum-tampicense",
+          "49039:solanum-tampicense",
+          "49041:solanum-tampicense",
+          "49043:solanum-tampicense",
+          "49045:solanum-tampicense",
+          "49047:solanum-tampicense",
+          "49049:solanum-tampicense",
+          "49051:solanum-tampicense",
+          "49053:solanum-tampicense",
+          "49055:solanum-tampicense",
+          "49057:solanum-tampicense"
+        ]
+      },
+      "scopeClaims": [
+        "state/UT/source/gbif-preserved-specimens/taxon/solanum-tampicense"
+      ],
+      "branch": "codex/gbif-round57-ut-001",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-ut-001",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__01a2f0a0f5ea/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 9,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-ut-001.json",
+        "candidateLimit": 29,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-ut-001\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 29,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-ut-001.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 29 leased UT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 9,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-ut-002",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "UT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-torvum"
+        ],
+        "pairs": [
+          "49001:solanum-torvum",
+          "49003:solanum-torvum",
+          "49005:solanum-torvum",
+          "49007:solanum-torvum",
+          "49009:solanum-torvum",
+          "49011:solanum-torvum",
+          "49013:solanum-torvum",
+          "49015:solanum-torvum",
+          "49017:solanum-torvum",
+          "49019:solanum-torvum",
+          "49021:solanum-torvum",
+          "49023:solanum-torvum",
+          "49025:solanum-torvum",
+          "49027:solanum-torvum",
+          "49029:solanum-torvum",
+          "49031:solanum-torvum",
+          "49033:solanum-torvum",
+          "49035:solanum-torvum",
+          "49037:solanum-torvum",
+          "49039:solanum-torvum",
+          "49041:solanum-torvum",
+          "49043:solanum-torvum",
+          "49045:solanum-torvum",
+          "49047:solanum-torvum",
+          "49049:solanum-torvum",
+          "49051:solanum-torvum",
+          "49053:solanum-torvum",
+          "49055:solanum-torvum",
+          "49057:solanum-torvum"
+        ]
+      },
+      "scopeClaims": [
+        "state/UT/source/gbif-preserved-specimens/taxon/solanum-torvum"
+      ],
+      "branch": "codex/gbif-round57-ut-002",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-ut-002",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__536347273796/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 10,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-ut-002.json",
+        "candidateLimit": 29,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-ut-002\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 29,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-ut-002.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 29 leased UT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 10,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-ut-003",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "UT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-viarum"
+        ],
+        "pairs": [
+          "49001:solanum-viarum",
+          "49003:solanum-viarum",
+          "49005:solanum-viarum",
+          "49007:solanum-viarum",
+          "49009:solanum-viarum",
+          "49011:solanum-viarum",
+          "49013:solanum-viarum",
+          "49015:solanum-viarum",
+          "49017:solanum-viarum",
+          "49019:solanum-viarum",
+          "49021:solanum-viarum",
+          "49023:solanum-viarum",
+          "49025:solanum-viarum",
+          "49027:solanum-viarum",
+          "49029:solanum-viarum",
+          "49031:solanum-viarum",
+          "49033:solanum-viarum",
+          "49035:solanum-viarum",
+          "49037:solanum-viarum",
+          "49039:solanum-viarum",
+          "49041:solanum-viarum",
+          "49043:solanum-viarum",
+          "49045:solanum-viarum",
+          "49047:solanum-viarum",
+          "49049:solanum-viarum",
+          "49051:solanum-viarum",
+          "49053:solanum-viarum",
+          "49055:solanum-viarum",
+          "49057:solanum-viarum"
+        ]
+      },
+      "scopeClaims": [
+        "state/UT/source/gbif-preserved-specimens/taxon/solanum-viarum"
+      ],
+      "branch": "codex/gbif-round57-ut-003",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-ut-003",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__03e97dde52cd/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 11,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-ut-003.json",
+        "candidateLimit": 29,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-ut-003\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 29,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-ut-003.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 29 leased UT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 11,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-ut-004",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "UT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "sparganium-erectum"
+        ],
+        "pairs": [
+          "49001:sparganium-erectum",
+          "49003:sparganium-erectum",
+          "49005:sparganium-erectum",
+          "49007:sparganium-erectum",
+          "49009:sparganium-erectum",
+          "49011:sparganium-erectum",
+          "49013:sparganium-erectum",
+          "49015:sparganium-erectum",
+          "49017:sparganium-erectum",
+          "49019:sparganium-erectum",
+          "49021:sparganium-erectum",
+          "49023:sparganium-erectum",
+          "49025:sparganium-erectum",
+          "49027:sparganium-erectum",
+          "49029:sparganium-erectum",
+          "49031:sparganium-erectum",
+          "49033:sparganium-erectum",
+          "49035:sparganium-erectum",
+          "49037:sparganium-erectum",
+          "49039:sparganium-erectum",
+          "49041:sparganium-erectum",
+          "49043:sparganium-erectum",
+          "49045:sparganium-erectum",
+          "49047:sparganium-erectum",
+          "49049:sparganium-erectum",
+          "49051:sparganium-erectum",
+          "49053:sparganium-erectum",
+          "49055:sparganium-erectum",
+          "49057:sparganium-erectum"
+        ]
+      },
+      "scopeClaims": [
+        "state/UT/source/gbif-preserved-specimens/taxon/sparganium-erectum"
+      ],
+      "branch": "codex/gbif-round57-ut-004",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-ut-004",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__56cbbc4814a0/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 12,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-ut-004.json",
+        "candidateLimit": 29,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-ut-004\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 29,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-ut-004.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 29 leased UT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 12,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-ut-005",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "UT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "tridax-procumbens"
+        ],
+        "pairs": [
+          "49001:tridax-procumbens",
+          "49003:tridax-procumbens",
+          "49005:tridax-procumbens",
+          "49007:tridax-procumbens",
+          "49009:tridax-procumbens",
+          "49011:tridax-procumbens",
+          "49013:tridax-procumbens",
+          "49015:tridax-procumbens",
+          "49017:tridax-procumbens",
+          "49019:tridax-procumbens",
+          "49021:tridax-procumbens",
+          "49023:tridax-procumbens",
+          "49025:tridax-procumbens",
+          "49027:tridax-procumbens",
+          "49029:tridax-procumbens",
+          "49031:tridax-procumbens",
+          "49033:tridax-procumbens",
+          "49035:tridax-procumbens",
+          "49037:tridax-procumbens",
+          "49039:tridax-procumbens",
+          "49041:tridax-procumbens",
+          "49043:tridax-procumbens",
+          "49045:tridax-procumbens",
+          "49047:tridax-procumbens",
+          "49049:tridax-procumbens",
+          "49051:tridax-procumbens",
+          "49053:tridax-procumbens",
+          "49055:tridax-procumbens",
+          "49057:tridax-procumbens"
+        ]
+      },
+      "scopeClaims": [
+        "state/UT/source/gbif-preserved-specimens/taxon/tridax-procumbens"
+      ],
+      "branch": "codex/gbif-round57-ut-005",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-ut-005",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__7ea44bb662e2/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 13,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-ut-005.json",
+        "candidateLimit": 29,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-ut-005\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 29,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-ut-005.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 29 leased UT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 13,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-ut-006",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "UT"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "urochloa-panicoides"
+        ],
+        "pairs": [
+          "49001:urochloa-panicoides",
+          "49003:urochloa-panicoides",
+          "49005:urochloa-panicoides",
+          "49007:urochloa-panicoides",
+          "49009:urochloa-panicoides",
+          "49011:urochloa-panicoides",
+          "49013:urochloa-panicoides",
+          "49015:urochloa-panicoides",
+          "49017:urochloa-panicoides",
+          "49019:urochloa-panicoides",
+          "49021:urochloa-panicoides",
+          "49023:urochloa-panicoides",
+          "49025:urochloa-panicoides",
+          "49027:urochloa-panicoides",
+          "49029:urochloa-panicoides",
+          "49031:urochloa-panicoides",
+          "49033:urochloa-panicoides",
+          "49035:urochloa-panicoides",
+          "49037:urochloa-panicoides",
+          "49039:urochloa-panicoides",
+          "49041:urochloa-panicoides",
+          "49043:urochloa-panicoides",
+          "49045:urochloa-panicoides",
+          "49047:urochloa-panicoides",
+          "49049:urochloa-panicoides",
+          "49051:urochloa-panicoides",
+          "49053:urochloa-panicoides",
+          "49055:urochloa-panicoides",
+          "49057:urochloa-panicoides"
+        ]
+      },
+      "scopeClaims": [
+        "state/UT/source/gbif-preserved-specimens/taxon/urochloa-panicoides"
+      ],
+      "branch": "codex/gbif-round57-ut-006",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-ut-006",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__8383eaff689c/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 14,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-ut-006.json",
+        "candidateLimit": 29,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-ut-006\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 29,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-ut-006.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 29 leased UT county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 14,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-wy-001",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "WY"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-tampicense"
+        ],
+        "pairs": [
+          "56001:solanum-tampicense",
+          "56003:solanum-tampicense",
+          "56005:solanum-tampicense",
+          "56007:solanum-tampicense",
+          "56009:solanum-tampicense",
+          "56011:solanum-tampicense",
+          "56013:solanum-tampicense",
+          "56015:solanum-tampicense",
+          "56017:solanum-tampicense",
+          "56019:solanum-tampicense",
+          "56021:solanum-tampicense",
+          "56023:solanum-tampicense",
+          "56025:solanum-tampicense",
+          "56027:solanum-tampicense",
+          "56029:solanum-tampicense",
+          "56031:solanum-tampicense",
+          "56033:solanum-tampicense",
+          "56035:solanum-tampicense",
+          "56037:solanum-tampicense",
+          "56039:solanum-tampicense",
+          "56041:solanum-tampicense",
+          "56043:solanum-tampicense",
+          "56045:solanum-tampicense"
+        ]
+      },
+      "scopeClaims": [
+        "state/WY/source/gbif-preserved-specimens/taxon/solanum-tampicense"
+      ],
+      "branch": "codex/gbif-round57-wy-001",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-001",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__05b58864e14d/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 15,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-001.json",
+        "candidateLimit": 23,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-001\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 23,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-wy-001.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 23 leased WY county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 15,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-wy-002",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "WY"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-torvum"
+        ],
+        "pairs": [
+          "56001:solanum-torvum",
+          "56003:solanum-torvum",
+          "56005:solanum-torvum",
+          "56007:solanum-torvum",
+          "56009:solanum-torvum",
+          "56011:solanum-torvum",
+          "56013:solanum-torvum",
+          "56015:solanum-torvum",
+          "56017:solanum-torvum",
+          "56019:solanum-torvum",
+          "56021:solanum-torvum",
+          "56023:solanum-torvum",
+          "56025:solanum-torvum",
+          "56027:solanum-torvum",
+          "56029:solanum-torvum",
+          "56031:solanum-torvum",
+          "56033:solanum-torvum",
+          "56035:solanum-torvum",
+          "56037:solanum-torvum",
+          "56039:solanum-torvum",
+          "56041:solanum-torvum",
+          "56043:solanum-torvum",
+          "56045:solanum-torvum"
+        ]
+      },
+      "scopeClaims": [
+        "state/WY/source/gbif-preserved-specimens/taxon/solanum-torvum"
+      ],
+      "branch": "codex/gbif-round57-wy-002",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-002",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__1432bbcd4cc9/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 16,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-002.json",
+        "candidateLimit": 23,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-002\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 23,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-wy-002.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 23 leased WY county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 16,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-wy-003",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "WY"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "solanum-viarum"
+        ],
+        "pairs": [
+          "56001:solanum-viarum",
+          "56003:solanum-viarum",
+          "56005:solanum-viarum",
+          "56007:solanum-viarum",
+          "56009:solanum-viarum",
+          "56011:solanum-viarum",
+          "56013:solanum-viarum",
+          "56015:solanum-viarum",
+          "56017:solanum-viarum",
+          "56019:solanum-viarum",
+          "56021:solanum-viarum",
+          "56023:solanum-viarum",
+          "56025:solanum-viarum",
+          "56027:solanum-viarum",
+          "56029:solanum-viarum",
+          "56031:solanum-viarum",
+          "56033:solanum-viarum",
+          "56035:solanum-viarum",
+          "56037:solanum-viarum",
+          "56039:solanum-viarum",
+          "56041:solanum-viarum",
+          "56043:solanum-viarum",
+          "56045:solanum-viarum"
+        ]
+      },
+      "scopeClaims": [
+        "state/WY/source/gbif-preserved-specimens/taxon/solanum-viarum"
+      ],
+      "branch": "codex/gbif-round57-wy-003",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-003",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__9c14eb07c013/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 17,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-003.json",
+        "candidateLimit": 23,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-003\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 23,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-wy-003.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 23 leased WY county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 17,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-wy-004",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "WY"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "sparganium-erectum"
+        ],
+        "pairs": [
+          "56001:sparganium-erectum",
+          "56003:sparganium-erectum",
+          "56005:sparganium-erectum",
+          "56007:sparganium-erectum",
+          "56009:sparganium-erectum",
+          "56011:sparganium-erectum",
+          "56013:sparganium-erectum",
+          "56015:sparganium-erectum",
+          "56017:sparganium-erectum",
+          "56019:sparganium-erectum",
+          "56021:sparganium-erectum",
+          "56023:sparganium-erectum",
+          "56025:sparganium-erectum",
+          "56027:sparganium-erectum",
+          "56029:sparganium-erectum",
+          "56031:sparganium-erectum",
+          "56033:sparganium-erectum",
+          "56035:sparganium-erectum",
+          "56037:sparganium-erectum",
+          "56039:sparganium-erectum",
+          "56041:sparganium-erectum",
+          "56043:sparganium-erectum",
+          "56045:sparganium-erectum"
+        ]
+      },
+      "scopeClaims": [
+        "state/WY/source/gbif-preserved-specimens/taxon/sparganium-erectum"
+      ],
+      "branch": "codex/gbif-round57-wy-004",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-004",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__ac8988eab393/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 18,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-004.json",
+        "candidateLimit": 23,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-004\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 23,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-wy-004.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 23 leased WY county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 18,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-wy-005",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "WY"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "tridax-procumbens"
+        ],
+        "pairs": [
+          "56001:tridax-procumbens",
+          "56003:tridax-procumbens",
+          "56005:tridax-procumbens",
+          "56007:tridax-procumbens",
+          "56009:tridax-procumbens",
+          "56011:tridax-procumbens",
+          "56013:tridax-procumbens",
+          "56015:tridax-procumbens",
+          "56017:tridax-procumbens",
+          "56019:tridax-procumbens",
+          "56021:tridax-procumbens",
+          "56023:tridax-procumbens",
+          "56025:tridax-procumbens",
+          "56027:tridax-procumbens",
+          "56029:tridax-procumbens",
+          "56031:tridax-procumbens",
+          "56033:tridax-procumbens",
+          "56035:tridax-procumbens",
+          "56037:tridax-procumbens",
+          "56039:tridax-procumbens",
+          "56041:tridax-procumbens",
+          "56043:tridax-procumbens",
+          "56045:tridax-procumbens"
+        ]
+      },
+      "scopeClaims": [
+        "state/WY/source/gbif-preserved-specimens/taxon/tridax-procumbens"
+      ],
+      "branch": "codex/gbif-round57-wy-005",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-005",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__d1bf5f7c5bf1/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 19,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-005.json",
+        "candidateLimit": 23,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-005\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 23,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-wy-005.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 23 leased WY county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 19,
+      "state": "planned"
+    },
+    {
+      "jobId": "gbif-round57-wy-006",
+      "workerType": "state-source",
+      "stateOrSourceScope": {
+        "states": [
+          "WY"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "urochloa-panicoides"
+        ],
+        "pairs": [
+          "56001:urochloa-panicoides",
+          "56003:urochloa-panicoides",
+          "56005:urochloa-panicoides",
+          "56007:urochloa-panicoides",
+          "56009:urochloa-panicoides",
+          "56011:urochloa-panicoides",
+          "56013:urochloa-panicoides",
+          "56015:urochloa-panicoides",
+          "56017:urochloa-panicoides",
+          "56019:urochloa-panicoides",
+          "56021:urochloa-panicoides",
+          "56023:urochloa-panicoides",
+          "56025:urochloa-panicoides",
+          "56027:urochloa-panicoides",
+          "56029:urochloa-panicoides",
+          "56031:urochloa-panicoides",
+          "56033:urochloa-panicoides",
+          "56035:urochloa-panicoides",
+          "56037:urochloa-panicoides",
+          "56039:urochloa-panicoides",
+          "56041:urochloa-panicoides",
+          "56043:urochloa-panicoides",
+          "56045:urochloa-panicoides"
+        ]
+      },
+      "scopeClaims": [
+        "state/WY/source/gbif-preserved-specimens/taxon/urochloa-panicoides"
+      ],
+      "branch": "codex/gbif-round57-wy-006",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round57-wy-006",
+      "baseSha": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "expectedReceiptCodeCommit": "58ba816ce929bee01d7e0e32e59afef4780ed875",
+      "permittedPaths": [
+        "src/data/research/runs/20260809T120025Z__gbif-preserved-specimens__310faf699d75/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 1600
+      },
+      "executionContract": {
+        "schemaVersion": 1,
+        "roundId": "gbif-round57",
+        "portfolioRank": 20,
+        "candidateFile": "ops/national-research/plans/round-57-20260809/gbif-round57-wy-006.json",
+        "candidateLimit": 23,
+        "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
+        "startedAt": "2026-08-09T12:00:25.000Z",
+        "outputRoot": "src/data/research/runs",
+        "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round57-wy-006\\attempt-telemetry.json",
+        "expectedProviderRequests": {
+          "cachedTaxonomyResponses": 1,
+          "archiveReplayResponses": 0,
+          "liveTaxonomyRequests": 0,
+          "plannedLiveInitialOccurrenceRequests": 1,
+          "providerNetworkRequests": 1,
+          "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+        },
+        "expectedPositivePairRange": {
+          "minimum": 0,
+          "maximum": 23,
+          "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+        },
+        "dependencyResolution": {
+          "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+          "nodeVersion": "v22.23.2",
+          "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+          "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+          "npmCache": "C:\\Code\\tools\\npm-cache"
+        }
+      },
+      "expiresAt": "2026-08-09T20:00:25.000Z",
+      "recoveryState": "none",
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-57-20260809/gbif-round57-wy-006.json with started-at 2026-08-09T12:00:25.000Z",
+        "screen all 23 leased WY county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 58ba816ce929bee01d7e0e32e59afef4780ed875...HEAD"
+      ],
+      "dependencies": [],
+      "priority": 20,
+      "state": "planned"
     }
   ]
 }
