@@ -3324,12 +3324,30 @@
         }
       ],
       "routeChecks": [
-        {"path": "/", "status": 200},
-        {"path": "/about", "status": 200},
-        {"path": "/research?state=MA", "status": 200},
-        {"path": "/research?state=NH", "status": 200},
-        {"path": "/research?state=CT", "status": 200},
-        {"path": "/species/solanum-viarum", "status": 200}
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/about",
+          "status": 200
+        },
+        {
+          "path": "/research?state=MA",
+          "status": 200
+        },
+        {
+          "path": "/research?state=NH",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CT",
+          "status": 200
+        },
+        {
+          "path": "/species/solanum-viarum",
+          "status": 200
+        }
       ],
       "routeCheckHosts": [
         "https://projectisitusa-ezxon508c-unigentamos.vercel.app",
@@ -3337,16 +3355,56 @@
       ],
       "routeHostChecksPassed": 12,
       "byteParityChecks": [
-        {"path":"/generated/research/MA/summary.json","bytes":80915,"sha256":"1c0a85c129d79b2e8d56987e6c7ae9c2dbc6ee8dfe148ef706983093c956d13d"},
-        {"path":"/generated/research/MA/counties/25001.json","bytes":55742,"sha256":"e976f8d11fae742ee6400d68c9f74e91eee0a53d45728d5afd411c1a6e1f66ab"},
-        {"path":"/generated/research/MA/counties/25017.json","bytes":61907,"sha256":"aef4b06572a9ea3709fa7707cee451c829ff756b3f42f40e56ba8efcdffd5f37"},
-        {"path":"/generated/research/MA/counties/25027.json","bytes":60272,"sha256":"12f1a0b9d308a0d20670d642aa56d280c62577cb6d2d28fb958a02a6f53619b3"},
-        {"path":"/generated/research/NH/summary.json","bytes":77565,"sha256":"8433691050713bd3b05aaf20e447c2f58b4385cde3fbe99feebb2a323a6b6b92"},
-        {"path":"/generated/research/NH/counties/33001.json","bytes":52977,"sha256":"101f498ef5ae8f32d2111c7e58191a3487985ec274dcabf0b49a3cf1c8f92b41"},
-        {"path":"/generated/research/NH/counties/33019.json","bytes":53124,"sha256":"43a11445072c115e0e0b653264c0bfb89e8893f43ba37da1bf7d8baf6ea2d9bf"},
-        {"path":"/generated/research/CT/summary.json","bytes":100856,"sha256":"e57edd80807d71c847f540785ffaa56803b6962addc6d2b95c49a07ed9ad9b9f"},
-        {"path":"/generated/research/CT/counties/09110.json","bytes":64283,"sha256":"5a4e58e9c57bbd457404fdce24f544a55048a9a3d0854bf65c198385ec7a3c20"},
-        {"path":"/generated/research/CT/counties/09190.json","bytes":64295,"sha256":"2b8ba5e3352cdbc11da72bd5880d299419070c5bc6135536ea8da183ed502605"}
+        {
+          "path": "/generated/research/MA/summary.json",
+          "bytes": 80915,
+          "sha256": "1c0a85c129d79b2e8d56987e6c7ae9c2dbc6ee8dfe148ef706983093c956d13d"
+        },
+        {
+          "path": "/generated/research/MA/counties/25001.json",
+          "bytes": 55742,
+          "sha256": "e976f8d11fae742ee6400d68c9f74e91eee0a53d45728d5afd411c1a6e1f66ab"
+        },
+        {
+          "path": "/generated/research/MA/counties/25017.json",
+          "bytes": 61907,
+          "sha256": "aef4b06572a9ea3709fa7707cee451c829ff756b3f42f40e56ba8efcdffd5f37"
+        },
+        {
+          "path": "/generated/research/MA/counties/25027.json",
+          "bytes": 60272,
+          "sha256": "12f1a0b9d308a0d20670d642aa56d280c62577cb6d2d28fb958a02a6f53619b3"
+        },
+        {
+          "path": "/generated/research/NH/summary.json",
+          "bytes": 77565,
+          "sha256": "8433691050713bd3b05aaf20e447c2f58b4385cde3fbe99feebb2a323a6b6b92"
+        },
+        {
+          "path": "/generated/research/NH/counties/33001.json",
+          "bytes": 52977,
+          "sha256": "101f498ef5ae8f32d2111c7e58191a3487985ec274dcabf0b49a3cf1c8f92b41"
+        },
+        {
+          "path": "/generated/research/NH/counties/33019.json",
+          "bytes": 53124,
+          "sha256": "43a11445072c115e0e0b653264c0bfb89e8893f43ba37da1bf7d8baf6ea2d9bf"
+        },
+        {
+          "path": "/generated/research/CT/summary.json",
+          "bytes": 100856,
+          "sha256": "e57edd80807d71c847f540785ffaa56803b6962addc6d2b95c49a07ed9ad9b9f"
+        },
+        {
+          "path": "/generated/research/CT/counties/09110.json",
+          "bytes": 64283,
+          "sha256": "5a4e58e9c57bbd457404fdce24f544a55048a9a3d0854bf65c198385ec7a3c20"
+        },
+        {
+          "path": "/generated/research/CT/counties/09190.json",
+          "bytes": 64295,
+          "sha256": "2b8ba5e3352cdbc11da72bd5880d299419070c5bc6135536ea8da183ed502605"
+        }
       ],
       "byteParityHosts": [
         "https://projectisitusa-ezxon508c-unigentamos.vercel.app",
@@ -3356,11 +3414,27 @@
       "browserQa": {
         "desktopViewport": "1440x1000",
         "mobileViewport": "390x844",
-        "states": ["MA", "NH", "CT"],
+        "states": [
+          "MA",
+          "NH",
+          "CT"
+        ],
         "counts": {
-          "MA": {"verifiedPresent":209,"researchedUnresolved":967,"notResearched":33880},
-          "NH": {"verifiedPresent":122,"researchedUnresolved":728,"notResearched":24190},
-          "CT": {"verifiedPresent":0,"researchedUnresolved":1071,"notResearched":21465}
+          "MA": {
+            "verifiedPresent": 209,
+            "researchedUnresolved": 967,
+            "notResearched": 33880
+          },
+          "NH": {
+            "verifiedPresent": 122,
+            "researchedUnresolved": 728,
+            "notResearched": 24190
+          },
+          "CT": {
+            "verifiedPresent": 0,
+            "researchedUnresolved": 1071,
+            "notResearched": 21465
+          }
         },
         "asOf": "2026-08-09",
         "routeViewportChecks": 10,
@@ -3408,6 +3482,224 @@
       "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, visual, and console checks.",
       "externalVerificationSecondsFromContentCommit": 651,
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and the GitHub API matched exact Round 58 content SHA 0e70584efae7ced342255cb247d15773b66720c2; GitHub Production deployment 5823797479 succeeded; both its immutable host and canonical production alias served all six intended routes; ten selected MA, NH, and CT files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete content-release national research-integrity suite passed in 426.871 seconds. Exact-deployment runtime logs and private Vercel deployment ID were unavailable because the canonical repository has no Vercel CLI installed. Round 58 completed 234 county-species outcomes and moved all 234 unique final-matrix pairs, including one verified-present and 233 researched-unresolved movements, closing twenty protocol cells. It created no verified-absence, not-detected, applicability, denominator, certification-blocker, or conflict movement. All 51 jurisdictions remain uncertified. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-d83ff41d7-2026-08-10",
+      "verifiedAt": "2026-08-10T03:27:06.000Z",
+      "commitSha": "d83ff41d7c746470c443e48aa2819639e212f5b4",
+      "githubMainSha": "d83ff41d7c746470c443e48aa2819639e212f5b4",
+      "githubDeploymentId": 5825692310,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-24qp3cxm9-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": null,
+      "vercelDeploymentId": null,
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/C5781HqWQzVaJFvtjzhztuw5Xdim",
+      "vercelDeploymentUrl": "projectisitusa-24qp3cxm9-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "success",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "d83ff41d7c746470c443e48aa2819639e212f5b4",
+        "releaseCommitMetadata": "d83ff41d7c746470c443e48aa2819639e212f5b4",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "GitHub main and commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
+      },
+      "deploymentAttempts": [
+        {
+          "githubDeploymentId": 5825692310,
+          "vercelInspectorSlug": "C5781HqWQzVaJFvtjzhztuw5Xdim",
+          "source": "git",
+          "state": "success",
+          "vercelCommitStatusCreatedAt": "2026-08-10T03:14:06.000Z",
+          "vercelCommitStatusCompletedAt": "2026-08-10T03:17:52.000Z",
+          "vercelCommitStatusDurationSeconds": 226,
+          "githubDeploymentCreatedAt": "2026-08-10T03:17:53.000Z",
+          "githubDeploymentCompletedAt": "2026-08-10T03:17:53.000Z",
+          "githubDeploymentDurationSeconds": 0,
+          "buildSeconds": null,
+          "githubCommitSha": "d83ff41d7c746470c443e48aa2819639e212f5b4",
+          "active": true,
+          "qualification": "Vercel commit-status timing and GitHub deployment timing are provider-native. Exact Vercel build duration and private deployment ID are unavailable because the canonical repository has no Vercel CLI."
+        }
+      ],
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/about",
+          "status": 200
+        },
+        {
+          "path": "/research?state=DE",
+          "status": 200
+        },
+        {
+          "path": "/research?state=HI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=RI",
+          "status": 200
+        },
+        {
+          "path": "/research?state=VT",
+          "status": 200
+        },
+        {
+          "path": "/species/myriophyllum-aquaticum",
+          "status": 200
+        },
+        {
+          "path": "/species/tridax-procumbens",
+          "status": 200
+        }
+      ],
+      "routeCheckHosts": [
+        "https://projectisitusa-24qp3cxm9-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "routeHostChecksPassed": 16,
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/DE/summary.json",
+          "bytes": 79516,
+          "sha256": "cd172af325e4d86e4257ae5b369a922e592f58fc5238422180249c169cfb820c"
+        },
+        {
+          "path": "/generated/research/HI/summary.json",
+          "bytes": 80144,
+          "sha256": "684ab375c7e6eb2a33feadd212258d75ebd4afbdc2cc357695716e03d6e39f8f"
+        },
+        {
+          "path": "/generated/research/RI/summary.json",
+          "bytes": 76126,
+          "sha256": "95a9587248fc12e978bca8e43177f8cd7ac31d1d4cecdddf3ca198d139c7f7d9"
+        },
+        {
+          "path": "/generated/research/VT/summary.json",
+          "bytes": 93094,
+          "sha256": "4ee3b0ba9ef7ff6663f789c624ac28f0bacf9d83d070b2aa23184ef7d3fc4ba0"
+        },
+        {
+          "path": "/generated/research/DE/counties/10001.json",
+          "bytes": 70501,
+          "sha256": "49e13954e37158ac78fe7eb6b316eaaa3b5dfcb9794dbff19f781511dc1254bb"
+        },
+        {
+          "path": "/generated/research/DE/counties/10003.json",
+          "bytes": 85393,
+          "sha256": "e6f76bc62ac696b3d5be39f8404a5c9ec2214bbc654fde64a9c4934232f0eb47"
+        },
+        {
+          "path": "/generated/research/HI/counties/15001.json",
+          "bytes": 77753,
+          "sha256": "4b518513b9565ed5b5bda7b97d486774e585203c9acb9f5dd3901bc8cac2d965"
+        },
+        {
+          "path": "/generated/research/HI/counties/15003.json",
+          "bytes": 99071,
+          "sha256": "5788698c2272fbe3022130a985073beb8986cc3f4065fe86ef0330552262e62a"
+        },
+        {
+          "path": "/generated/research/HI/counties/15005.json",
+          "bytes": 49977,
+          "sha256": "052de7c06494b7d70b629e34b0e2da4bfe6afeb254f57a13d7f9bda9fce1b2f3"
+        },
+        {
+          "path": "/generated/research/HI/counties/15009.json",
+          "bytes": 94863,
+          "sha256": "934f5a4f4d9fcfff158fe2a782732f198d060777f2474f0d4fc5e62db986083e"
+        }
+      ],
+      "byteParityHosts": [
+        "https://projectisitusa-24qp3cxm9-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "byteParityHostFileIdentitiesPassed": 20,
+      "browserQa": {
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": [
+          "DE",
+          "HI",
+          "RI",
+          "VT"
+        ],
+        "counts": {
+          "DE": {
+            "verifiedPresent": 78,
+            "researchedUnresolved": 177,
+            "notResearched": 7257
+          },
+          "HI": {
+            "verifiedPresent": 107,
+            "researchedUnresolved": 353,
+            "notResearched": 12060
+          },
+          "RI": {
+            "verifiedPresent": 55,
+            "researchedUnresolved": 250,
+            "notResearched": 12215
+          },
+          "VT": {
+            "verifiedPresent": 211,
+            "researchedUnresolved": 1205,
+            "notResearched": 33640
+          }
+        },
+        "asOf": "2026-08-10",
+        "routeViewportChecks": 14,
+        "finalCountAssertionsPassed": true,
+        "speciesRoutesPassed": true,
+        "speciesScientificIdentities": [
+          "Myriophyllum aquaticum",
+          "Tridax procumbens"
+        ],
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 2,
+        "productionScreenshotsVisuallyInspected": 2
+      },
+      "runtimeQa": {
+        "activeDeploymentId": null,
+        "runtimeErrorLogRows": null,
+        "runtimeFiveHundredLogRows": null,
+        "queryStatus": "unavailable-no-vercel-cli-in-canonical-toolchain",
+        "contentReleaseResearchIntegritySeconds": 441.765,
+        "qualification": "Exact-deployment runtime logs and the private Vercel deployment ID were not queryable because the canonical repository has no Vercel CLI installed. Runtime confidence is limited to exact GitHub Production success, direct HTTP 200, twenty live-to-local byte identities, and zero production browser console warnings or errors."
+      },
+      "roundMovement": {
+        "plannedPairs": 109,
+        "completedPairs": 109,
+        "finalMatrixPairsMoved": 109,
+        "verifiedPresent": 6,
+        "researchedUnresolved": 103,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 0,
+        "denominatorMovement": 0,
+        "protocolCellsClosed": 24,
+        "certificationBlockersRemoved": 0
+      },
+      "qaToolingInterventions": [
+        "The first explicit-as-of 2026-08-09 replay excluded all Round 59 receipts because finished_at crossed the UTC boundary; MAIN discarded it and regenerated explicitly as of 2026-08-10.",
+        "The first release-wrapper parameter used PowerShell's automatic args name and was corrected before project execution.",
+        "The generic disk-budget invocation omitted its required positive worker count; the corrected one-worker preflight passed green.",
+        "Windows blocked apply_patch in the canonical C: checkout, so MAIN authored patched temporary JSON and copied validated bytes into the canonical paths.",
+        "Playwright CLI help emitted a Windows libuv assertion after printing help; a clean named session completed all final checks.",
+        "The first local route sweep had Windows JSON argument quoting; literal JavaScript arrays corrected it without changing application bytes.",
+        "The image-view sandbox could not reopen screenshot paths, so MAIN rendered disposable compressed thumbnails and visually inspected local and production captures.",
+        "A thumbnail filter, a pre-stage hash-literal expression, a production host variable, an empty deployment collection, and a status-history endpoint each required bounded read-only wrapper corrections; final checks were rerun successfully."
+      ],
+      "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, visual, and console checks.",
+      "externalVerificationSecondsFromContentCommit": 840,
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and GitHub API matched exact Round 59 content SHA d83ff41d7c746470c443e48aa2819639e212f5b4; GitHub Production deployment 5825692310 succeeded; its immutable host and canonical production alias served all eight intended routes; ten selected DE, HI, RI, and VT files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete content-release research-integrity suite passed in 441.765 seconds. Exact-deployment runtime logs and private Vercel deployment ID were unavailable. Round 59 moved 109 unique final-matrix pairs, including six verified-present and 103 researched-unresolved movements, and closed 24 protocol cells. It created no verified-absence, not-detected, applicability, denominator, certification-blocker, or conflict movement. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
