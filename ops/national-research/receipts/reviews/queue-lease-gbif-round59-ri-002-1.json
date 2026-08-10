@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-ri-002-1",
+  "jobId": "gbif-round59-ri-002",
+  "leaseId": "lease-gbif-round59-ri-002-1",
+  "workerCommit": "3a44bcbe2c4f827bedd64c3dd93d3d1c1ae37e8a",
+  "workerBranchHead": "b377888f2553f064d041f10075c7a3581b800ef2",
+  "manifestHash": "57532ead4cd911a10dbc40e69512be89e05022acf595d516be893853eab00155",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__988d4d488a67/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "orchestrator transition with pinned worker manifest validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...b377888f2553f064d041f10075c7a3581b800ef2",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 1,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable RI GBIF run, exact two-commit inventory, 5 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-10T00:58:05.000Z"
+}
