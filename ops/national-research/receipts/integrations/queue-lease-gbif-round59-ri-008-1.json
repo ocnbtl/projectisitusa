@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-ri-008-1",
+  "jobId": "gbif-round59-ri-008",
+  "leaseId": "lease-gbif-round59-ri-008-1",
+  "workerCommit": "f35962cfd5830dafaf70a02573247625e8c6fb2d",
+  "workerBranchHead": "bd9507c55fda2b9544abee60927b42776acc3fad",
+  "manifestHash": "9dbc739681636e7190fd309aedfdc2d1f80810ee7618c3e75499ddc9fac31b30",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__fa045cab9b5f/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-10T01:28:17.065Z",
+  "integrationCommit": "b665323cb0f66940ef785686052a92dc87ea5565"
+}
