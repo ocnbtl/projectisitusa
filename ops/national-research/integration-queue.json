@@ -29244,6 +29244,59 @@
         "sha256": "7c7403507bb348a03732cae1dc23b27fbe48852e09b9af5013c0460a4414a748",
         "bytes": 2202
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round59-de-002-1",
+      "jobId": "gbif-round59-de-002",
+      "leaseId": "lease-gbif-round59-de-002-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-10T01:01:00.000Z",
+      "manifestPath": "manifests/gbif-round59-de-002__lease-gbif-round59-de-002-1.json",
+      "manifestHash": "a92f66693421f4e548acfa75e15fb7b18f5d2ee1ed5627342eb251e283452aab",
+      "manifestBytes": 7380,
+      "workerCommit": "ca626f03fcbcd51868d73929fb1db29507dffa96",
+      "workerBranchHead": "14c86186d940176b2097593ee8fcda3c320ee1a2",
+      "reviewedAt": "2026-08-10T01:01:05.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable DE GBIF run, exact two-commit inventory, 3 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/assertions.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/manifest.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/outcomes.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/receipt.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/rejections.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/reviews.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...14c86186d940176b2097593ee8fcda3c320ee1a2",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round59-de-002-1.json",
+        "sha256": "d592e982e6e0108d35f960987a06e232cf4da8793a8cb4666dd78fcec9f1b09b",
+        "bytes": 2361
+      }
     }
   ]
 }
