@@ -30508,6 +30508,59 @@
         "sha256": "bedbc81cf5b172e3ab960d8b0bdfabcfbd8e0ecee3c432fb84b5008e821ed2b5",
         "bytes": 2176
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round59-de-008-1",
+      "jobId": "gbif-round59-de-008",
+      "leaseId": "lease-gbif-round59-de-008-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-10T01:35:03.351Z",
+      "manifestPath": "manifests/gbif-round59-de-008__lease-gbif-round59-de-008-1.json",
+      "manifestHash": "17b6a5ff393f8a462c17cbcc42ca24de6702e8696348f7c50467ec2f25fc1fd8",
+      "manifestBytes": 7335,
+      "workerCommit": "e686877a48d9cdb386212c7b3955ff484b30b6c0",
+      "workerBranchHead": "c2b561c54b7aa1394c5dfbf865c6502d8f5edb31",
+      "reviewedAt": "2026-08-10T01:35:06.594Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable DE GBIF run, exact two-commit inventory, 3 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/assertions.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/manifest.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/outcomes.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/receipt.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/rejections.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/reviews.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__3aefde959f4d/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...c2b561c54b7aa1394c5dfbf865c6502d8f5edb31",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round59-de-008-1.json",
+        "sha256": "9968af1f28d265f7155ac0cb644615e5b414986e11b0024a58e33d6d379c4a99",
+        "bytes": 2343
+      }
     }
   ]
 }
