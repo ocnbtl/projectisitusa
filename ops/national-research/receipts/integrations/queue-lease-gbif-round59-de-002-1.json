@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-de-002-1",
+  "jobId": "gbif-round59-de-002",
+  "leaseId": "lease-gbif-round59-de-002-1",
+  "workerCommit": "ca626f03fcbcd51868d73929fb1db29507dffa96",
+  "workerBranchHead": "14c86186d940176b2097593ee8fcda3c320ee1a2",
+  "manifestHash": "a92f66693421f4e548acfa75e15fb7b18f5d2ee1ed5627342eb251e283452aab",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/artifacts/gbif-occurrences-rottboellia-cochinchinensis-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/artifacts/gbif-species-match-rottboellia-cochinchinensis.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__6660963a529d/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-10T01:01:30.000Z",
+  "integrationCommit": "5b74ffb9609496ce842beb0b7fb9e3d26c3d80ac"
+}
