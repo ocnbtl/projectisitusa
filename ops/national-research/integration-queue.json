@@ -29718,6 +29718,59 @@
         "sha256": "55602cbeebb1d395cbe893e869ab3358b077dfcd367b33ecbe7072a07fec764f",
         "bytes": 2180
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round59-ri-004-1",
+      "jobId": "gbif-round59-ri-004",
+      "leaseId": "lease-gbif-round59-ri-004-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-10T01:14:00.000Z",
+      "manifestPath": "manifests/gbif-round59-ri-004__lease-gbif-round59-ri-004-1.json",
+      "manifestHash": "de9bc80791727ac01ef52fa027f736ea45ef9d83644d4e7501eef8b5453fa186",
+      "manifestBytes": 7393,
+      "workerCommit": "d570fcfab0091e36c63da82aa80bc0d919e7276d",
+      "workerBranchHead": "2207ec124d37c198ea30eec45246176b57bdae9e",
+      "reviewedAt": "2026-08-10T01:14:05.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable RI GBIF run, exact two-commit inventory, 5 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/assertions.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/manifest.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/outcomes.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/receipt.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/rejections.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/reviews.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...2207ec124d37c198ea30eec45246176b57bdae9e",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round59-ri-004-1.json",
+        "sha256": "940bc63a717bc3fb2f458a2fc8cb0582d91e3cd1e3b8b4f617f4365f46b38f1f",
+        "bytes": 2339
+      }
     }
   ]
 }
