@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-10T00:53:04.273Z",
+  "runId": "20260809T235500Z__gbif-preserved-specimens__729edb020d30",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "DE",
+  "pairKeys": [
+    "10001:myriophyllum-aquaticum",
+    "10003:myriophyllum-aquaticum",
+    "10005:myriophyllum-aquaticum"
+  ],
+  "parameterHash": "729edb020d30248810367082cfaaebdffa332c84d1fb2ee1362a928c749f9be4",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-10T00:53:04.149Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Delaware and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "myriophyllum-aquaticum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-myriophyllum-aquaticum",
+        "url": "https://api.gbif.org/v1/species/match?name=Myriophyllum+aquaticum&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-10T00:53:03.008Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-myriophyllum-aquaticum",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5361785&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for myriophyllum-aquaticum and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-10T00:53:04.149Z",
+        "declaredRecordCount": 5,
+        "receivedRecordCount": 5,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-occurrences-myriophyllum-aquaticum-000000.json.gz",
+      "sha256": "4f477e98a7011193342dc537eaa7248d3cfd0d41e4ec9aad7a6e7ee2e9886035",
+      "bytes": 4290
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-species-match-myriophyllum-aquaticum.json.gz",
+      "sha256": "db509794576d0a337ab7abcf4ddcaf9f769a578f7acb839cb3c87ab7d9ab9f4c",
+      "bytes": 306
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}

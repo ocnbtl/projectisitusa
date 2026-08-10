@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T235500Z__gbif-preserved-specimens__729edb020d30",
+  "status": "complete",
+  "started_at": "2026-08-09T23:55:00.000Z",
+  "finished_at": "2026-08-10T00:53:04.273Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "parameter_hash": "729edb020d30248810367082cfaaebdffa332c84d1fb2ee1362a928c749f9be4",
+  "parameters": {
+    "stateCode": "DE",
+    "stateProvince": "Delaware",
+    "candidateLimit": 3,
+    "candidatePairs": [
+      "10001:myriophyllum-aquaticum",
+      "10003:myriophyllum-aquaticum",
+      "10005:myriophyllum-aquaticum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DE",
+    "county_fips": [
+      "10001",
+      "10003",
+      "10005"
+    ],
+    "species_ids": [
+      "myriophyllum-aquaticum"
+    ],
+    "pair_keys": [
+      "10001:myriophyllum-aquaticum",
+      "10003:myriophyllum-aquaticum",
+      "10005:myriophyllum-aquaticum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Myriophyllum+aquaticum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-10T00:53:03.008Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Delaware&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5361785&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-10T00:53:04.149Z",
+      "record_count": 5
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-occurrences-myriophyllum-aquaticum-000000.json.gz",
+      "sha256": "4f477e98a7011193342dc537eaa7248d3cfd0d41e4ec9aad7a6e7ee2e9886035",
+      "bytes": 4290,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-species-match-myriophyllum-aquaticum.json.gz",
+      "sha256": "db509794576d0a337ab7abcf4ddcaf9f769a578f7acb839cb3c87ab7d9ab9f4c",
+      "bytes": 306,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/assertions.ndjson",
+      "sha256": "1f0f4584e140de8ec59eff8664ba6b46617e5ff4906512c437e45dba4d360ea5",
+      "bytes": 9354,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/reviews.ndjson",
+      "sha256": "a35ca0dbc75c7dbecb78580f3ed6a1e00cea6ac49d7d13a4cc56edef3e1b22f9",
+      "bytes": 4890,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/outcomes.ndjson",
+      "sha256": "654329da9d4a476a85ccbd0950cf71fc388e59ce779ffc22c2202833e0479d24",
+      "bytes": 2680,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/source-verification.json",
+      "sha256": "f26f65bc21006fee3ce54b8f2d218656da4e2ffacc93a0012231677f0764b05b",
+      "bytes": 4895,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 5,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state DE --candidate-file ops/national-research/plans/round-59-20260809/gbif-round59-de-001.json --output-root src/data/research/runs --pairs 10001:myriophyllum-aquaticum,10003:myriophyllum-aquaticum,10005:myriophyllum-aquaticum --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
