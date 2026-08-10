@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-round59-hi-003",
+  "leaseId": "lease-gbif-round59-hi-003-1",
+  "status": "complete",
+  "branch": "codex/gbif-round59-hi-003",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round59-hi-003",
+  "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "commitSha": "8703289f261c6b90c0d76f947fd66dcde9bbf9e0",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "HI",
+    "stateProvince": "Hawaii",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "15001:urochloa-panicoides",
+      "15003:urochloa-panicoides",
+      "15005:urochloa-panicoides",
+      "15007:urochloa-panicoides",
+      "15009:urochloa-panicoides"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+      "sha256": "96ff3da9fe029f20f590da671b2049d75e51eb7b66f97e4d435106101bb088bf",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/outcomes.ndjson",
+      "sha256": "17b2469b43f17647450afafa278bc45e04be3d66092b929258894cd8ba19f86a",
+      "bytes": 4015,
+      "media_type": "application/x-ndjson",
+      "count": 5
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/receipt.json",
+    "sha256": "e05cdcbb970faa6ff9137ee74a3e703038c97239529f1f33b25633b5fb84bf90",
+    "bytes": 5369,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/source-verification.json",
+    "sha256": "2242bf84f885e847b4ea4a3e296f9f8e97b8393b68785c97766dbdee11ac4b57",
+    "bytes": 4925,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 372,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 5,
+      "completeOutcomePairs": 5,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 5,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 372,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 5,
+      "completeOutcomePairs": 5,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 5,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-round59-hi-003-1 --manifest src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__d2965686701c/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-round59-hi-003",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 1,
+    "acquisitionAttempts": 1,
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "leaseId": "lease-gbif-round59-hi-003-1",
+        "status": "complete",
+        "finishedAt": "2026-08-10T01:04:27.028Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 0,
+        "retainedArtifacts": 2,
+        "receiptSha256": "e05cdcbb970faa6ff9137ee74a3e703038c97239529f1f33b25633b5fb84bf90"
+      }
+    ],
+    "previousLeaseId": null,
+    "recoveryReason": null,
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 3,
+    "peakMemoryMb": 224,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 5,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
