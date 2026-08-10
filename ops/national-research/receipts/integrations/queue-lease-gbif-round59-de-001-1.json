@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-de-001-1",
+  "jobId": "gbif-round59-de-001",
+  "leaseId": "lease-gbif-round59-de-001-1",
+  "workerCommit": "363037b74a101462d0e0566f3c7fcd131ab08a2d",
+  "workerBranchHead": "be4d7322eadcc960b1eaafdc020257f71a508099",
+  "manifestHash": "cef8674ae25325ca9a51bb1c28a989353a82b7ef434838a7bc4314a7ce4e78b4",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-occurrences-myriophyllum-aquaticum-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-species-match-myriophyllum-aquaticum.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-10T00:56:30.000Z",
+  "integrationCommit": "ce22cc716cae58911f5727e2852a2f0f921a80d2"
+}
