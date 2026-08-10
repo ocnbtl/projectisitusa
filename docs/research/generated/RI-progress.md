@@ -1,6 +1,6 @@
 # Rhode Island Research Progress
 
-Generated: `2026-08-09T00:00:00.000Z`
+Generated: `2026-08-10T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Verified present: `55`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `200`
-- Not researched: `12265`
+- Researched unresolved: `250`
+- Not researched: `12215`
 - Determination coverage: `0.44%`
-- Research coverage: `2.04%`
-- Explicit outcome coverage: `2.0367%`
+- Research coverage: `2.44%`
+- Explicit outcome coverage: `2.4361%`
 - Applicable protocol cells: `82`
-- Current complete protocol cells: `5`
-- Protocol completion: `21.95%`
-- Current protocol completion: `6.10%`
+- Current complete protocol cells: `15`
+- Protocol completion: `34.15%`
+- Current protocol completion: `18.29%`
 - Evidence records: `55`
-- Research runs: `7`
+- Research runs: `17`
 - Rejection records: `3`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -41,7 +41,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Fishhook waterflea (`cercopagis-pengoi`) | wildlife | 5 | 0 | 1 |
 | Jio (`commelina-benghalensis`) | plants | 5 | 0 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 5 | 0 | 1 |
-| Zebra Mussel (`dreissena-polymorpha`) | wildlife | 5 | 0 | 1 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 5 | 0 | 1 |
 | Southern threecornerjack (`emex-australis`) | plants | 5 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 5 | 0 | 1 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 5 | 0 | 1 |
 | Mile-a-minute (`mikania-micrantha`) | plants | 5 | 0 | 1 |
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 5 | 0 | 1 |
+| Round Goby (`neogobius-melanostomus`) | wildlife | 5 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-08-10T01:30:01.493Z | 0 | 10 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

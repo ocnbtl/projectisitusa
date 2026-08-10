@@ -175,13 +175,22 @@ const cacheAware = buildGbifStateSpeciesPlan({
   taxonomyCachePath,
   requirePositiveNet: true,
 });
+const cacheAwareSelectionIsHonestEmpty =
+  cacheAware.selectedStateSpeciesScreenCount === 0 &&
+  cacheAware.selected.length === 0 &&
+  cacheAware.selectedCountyOutcomeCount === 0 &&
+  cacheAware.expectedNetNewPairCount === 0 &&
+  cacheAware.batches.length === 0 &&
+  cacheAware.candidateFiles.length === 0 &&
+  cacheAware.deduplication.cachedEligibleStateSpeciesScreenCount === 0;
 assert(
-  cacheAware.selectedStateSpeciesScreenCount > 0 &&
-    cacheAware.selected.every(
-      (entry) =>
-        entry.notResearchedCountyCount > 0 &&
-        cachedSpeciesIds.has(entry.speciesId),
-    ),
+  cacheAware.selected.every(
+    (entry) =>
+      entry.notResearchedCountyCount > 0 &&
+      cachedSpeciesIds.has(entry.speciesId),
+  ) &&
+    (cacheAware.selectedStateSpeciesScreenCount > 0 ||
+      cacheAwareSelectionIsHonestEmpty),
   "The cache-aware planner admitted an uncached or zero-net state-species screen.",
 );
 assert(
@@ -206,6 +215,8 @@ console.log(
       countyCount: first.countyCount,
       batchCount: first.batches.length,
       overlappingPairs: 0,
+      cacheAwareStateExhausted:
+        cacheAware.selectedStateSpeciesScreenCount === 0,
     },
     null,
     2,

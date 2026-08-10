@@ -1,6 +1,6 @@
 # Vermont Research Progress
 
-Generated: `2026-08-09T00:00:00.000Z`
+Generated: `2026-08-10T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-09T00:00:00.000Z`
 - Verified present: `211`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1191`
-- Not researched: `33654`
+- Researched unresolved: `1205`
+- Not researched: `33640`
 - Determination coverage: `0.60%`
-- Research coverage: `4.00%`
-- Explicit outcome coverage: `3.9993%`
+- Research coverage: `4.04%`
+- Explicit outcome coverage: `4.0393%`
 - Applicable protocol cells: `109`
-- Current complete protocol cells: `54`
-- Protocol completion: `61.47%`
-- Current protocol completion: `49.54%`
+- Current complete protocol cells: `55`
+- Protocol completion: `62.39%`
+- Current protocol completion: `50.46%`
 - Evidence records: `437`
-- Research runs: `10`
+- Research runs: `11`
 - Rejection records: `95`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,7 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 14 | 0 | 1 |
 | Pale swallow-wort (`vincetoxicum-rossicum`) | plants | 14 | 0 | 1 |
 | Common Carp (`cyprinus-carpio`) | wildlife | 12 | 0 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 14 | 2 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Jio (`commelina-benghalensis`) | plants | 0 | 14 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 14 | 0 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 14 | 0 |
+| Water Hyacinth (`eichhornia-crassipes`) | plants | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-08T19:35:51.257Z | 55 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-10T00:06:10.319Z | 55 | 51 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

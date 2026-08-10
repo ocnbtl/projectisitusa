@@ -1,26 +1,26 @@
 # Delaware Research Progress
 
-Generated: `2026-08-09T00:00:00.000Z`
+Generated: `2026-08-10T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `3`
 - County-species pairs: `7512`
-- Verified present: `76`
+- Verified present: `78`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `149`
-- Not researched: `7287`
-- Determination coverage: `1.01%`
-- Research coverage: `3.00%`
-- Explicit outcome coverage: `2.9952%`
+- Researched unresolved: `177`
+- Not researched: `7257`
+- Determination coverage: `1.04%`
+- Research coverage: `3.39%`
+- Explicit outcome coverage: `3.3946%`
 - Applicable protocol cells: `102`
-- Current complete protocol cells: `30`
-- Protocol completion: `42.16%`
-- Current protocol completion: `29.41%`
-- Evidence records: `113`
-- Research runs: `8`
+- Current complete protocol cells: `40`
+- Protocol completion: `51.96%`
+- Current protocol completion: `39.22%`
+- Evidence records: `118`
+- Research runs: `18`
 - Rejection records: `78`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,27 +36,27 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mile-a-minute (`mikania-micrantha`) | plants | 3 | 0 | 1 |
 | Chinese Silvergrass (`miscanthus-sinensis`) | plants | 3 | 0 | 1 |
 | Wartremoving herb (`murdannia-keisak`) | plants | 3 | 0 | 1 |
-| Parrot Feather (`myriophyllum-aquaticum`) | plants | 3 | 0 | 1 |
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 3 | 0 | 1 |
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 3 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 3 | 0 | 1 |
 | Mile-a-Minute Vine (`persicaria-perfoliata`) | plants | 3 | 0 | 1 |
 | Callery Pear (`pyrus-calleryana`) | plants | 3 | 0 | 1 |
-| Itchgrass (`rottboellia-cochinchinensis`) | plants | 3 | 0 | 1 |
 | Wine Raspberry (`rubus-phoenicolasius`) | plants | 3 | 0 | 1 |
-| Wild sugarcane (`saccharum-spontaneum`) | plants | 3 | 0 | 1 |
-| Giant Salvinia (`salvinia-molesta`) | plants | 3 | 0 | 1 |
-| Scrambling nightshade (`solanum-tampicense`) | plants | 3 | 0 | 1 |
-| Turkey berry (`solanum-torvum`) | plants | 3 | 0 | 1 |
-| Tropical soda apple (`solanum-viarum`) | plants | 3 | 0 | 1 |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 3 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 3 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 3 | 0 | 1 |
 | Common Periwinkle (`vinca-minor`) | plants | 3 | 0 | 1 |
 | Chinese Wisteria (`wisteria-sinensis`) | plants | 3 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 3 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 3 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 3 | 2 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 3 | 2 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 3 | 2 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 3 | 1 |
+| Morrow's Honeysuckle (`lonicera-morrowii`) | plants | 0 | 3 | 1 |
+| Moneywort (`lysimachia-nummularia`) | plants | 0 | 3 | 1 |
+| Punktree (`melaleuca-quinquenervia`) | plants | 0 | 3 | 1 |
+| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 3 | 0 |
+| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 3 | 0 |
+| Capeweed (`arctotheca-calendula`) | plants | 0 | 3 | 0 |
+| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 3 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-03T18:25:25.778Z | 13 | 25 |
+| GBIF preserved specimen records | operational | 2026-08-10T01:35:58.621Z | 15 | 35 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

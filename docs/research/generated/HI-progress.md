@@ -1,27 +1,27 @@
 # Hawaii Research Progress
 
-Generated: `2026-08-09T00:00:00.000Z`
+Generated: `2026-08-10T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `103`
+- Verified present: `107`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `342`
-- Not researched: `12075`
-- Determination coverage: `0.82%`
-- Research coverage: `3.55%`
-- Explicit outcome coverage: `3.5543%`
+- Researched unresolved: `353`
+- Not researched: `12060`
+- Determination coverage: `0.85%`
+- Research coverage: `3.67%`
+- Explicit outcome coverage: `3.6741%`
 - Applicable protocol cells: `109`
-- Current complete protocol cells: `55`
-- Protocol completion: `62.39%`
-- Current protocol completion: `50.46%`
-- Evidence records: `218`
-- Research runs: `9`
-- Rejection records: `927`
+- Current complete protocol cells: `58`
+- Protocol completion: `65.14%`
+- Current protocol completion: `53.21%`
+- Evidence records: `231`
+- Research runs: `12`
+- Rejection records: `1045`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,12 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Simple-stem burr-reed (`sparganium-erectum`) | plants | 5 | 0 | 1 |
 | Spanish broom (`spartium-junceum`) | plants | 5 | 0 | 1 |
-| Coatbuttons (`tridax-procumbens`) | plants | 5 | 0 | 1 |
 | Diamond burbark (`triumfetta-rhomboidea`) | plants | 5 | 0 | 1 |
 | Caesarweed (`urena-lobata`) | plants | 5 | 0 | 1 |
-| Panic liverseed grass (`urochloa-panicoides`) | plants | 5 | 0 | 1 |
 | Common Mullein (`verbascum-thapsus`) | plants | 5 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 5 | 2 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 5 | 2 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 5 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 5 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 5 | 0 |
+| Common crupina (`crupina-vulgaris`) | plants | 0 | 5 | 0 |
+| Scotch broom (`cytisus-scoparius`) | plants | 0 | 5 | 0 |
+| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-08-07T23:47:34.742Z | 33 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-10T01:04:27.028Z | 37 | 53 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
