@@ -29402,6 +29402,59 @@
         "sha256": "4513734cf3398372adb821218a365919deca175d64fd2c898287533f2361fa50",
         "bytes": 2182
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round59-ri-003-1",
+      "jobId": "gbif-round59-ri-003",
+      "leaseId": "lease-gbif-round59-ri-003-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-10T01:06:00.000Z",
+      "manifestPath": "manifests/gbif-round59-ri-003__lease-gbif-round59-ri-003-1.json",
+      "manifestHash": "5ed10cb1313a81306077fe8962f951e30b89255df560bd4f26e1964393a03f3b",
+      "manifestBytes": 7421,
+      "workerCommit": "c91b2dca3401dda89b99617bdb63e62b02a928a2",
+      "workerBranchHead": "4450d02f864b476200ca64607574fb20c6aed97b",
+      "reviewedAt": "2026-08-10T01:06:05.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable RI GBIF run, exact two-commit inventory, 5 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/assertions.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/manifest.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/outcomes.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/receipt.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/rejections.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/reviews.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c461c29f2b20/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...4450d02f864b476200ca64607574fb20c6aed97b",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round59-ri-003-1.json",
+        "sha256": "32d3af0ee5f060274e7ca4980cded927d2bc74c2cdf1c3d62fe30ced24f9c1b3",
+        "bytes": 2347
+      }
     }
   ]
 }
