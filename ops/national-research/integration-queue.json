@@ -29086,6 +29086,59 @@
         "sha256": "d56c0bf9b764490e862bbdae81691aad8693eecf1ec22f7bc13a970df4473982",
         "bytes": 2184
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round59-de-001-1",
+      "jobId": "gbif-round59-de-001",
+      "leaseId": "lease-gbif-round59-de-001-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-10T00:56:00.000Z",
+      "manifestPath": "manifests/gbif-round59-de-001__lease-gbif-round59-de-001-1.json",
+      "manifestHash": "cef8674ae25325ca9a51bb1c28a989353a82b7ef434838a7bc4314a7ce4e78b4",
+      "manifestBytes": 7365,
+      "workerCommit": "363037b74a101462d0e0566f3c7fcd131ab08a2d",
+      "workerBranchHead": "be4d7322eadcc960b1eaafdc020257f71a508099",
+      "reviewedAt": "2026-08-10T00:56:05.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable DE GBIF run, exact two-commit inventory, 3 complete county outcomes, 5 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-occurrences-myriophyllum-aquaticum-000000.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/artifacts/gbif-species-match-myriophyllum-aquaticum.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/assertions.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/manifest.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/outcomes.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/receipt.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/rejections.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/reviews.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__729edb020d30/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...be4d7322eadcc960b1eaafdc020257f71a508099",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round59-de-001-1.json",
+        "sha256": "d83bfad6bb37566453a414de4c2cf1e8ad71b1931da0998b53b9e1949f85daf9",
+        "bytes": 2351
+      }
     }
   ]
 }
