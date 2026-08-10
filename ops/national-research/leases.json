@@ -491417,7 +491417,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "worker-gbif-round59-ri-001",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-08-10T00:00:00.000Z",
       "expiresAt": "2026-08-10T07:55:00.000Z",
       "recoveryAt": null,
@@ -491522,7 +491522,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-10T00:23:00.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-round59-ri-001__lease-gbif-round59-ri-001-1.json",
+        "sha256": "16e493967b27f91b395bec8e1622802179ff10ad20dbeb6303260cf03ced308d",
+        "bytes": 7845,
+        "status": "partial",
+        "workerCommit": "6c06afef3e9e29b241ea79d7605a1d2055fc6d44",
+        "workerBranchHead": "2429efe57dd76da81807ac9e345d311a12c5c395"
+      }
     },
     {
       "leaseId": "lease-gbif-round59-ri-002-1",
@@ -492547,7 +492556,7 @@
       "attempt": 1,
       "previousLeaseId": null,
       "workerTaskId": "worker-gbif-round59-hi-001",
-      "state": "active",
+      "state": "failed",
       "claimedAt": "2026-08-10T00:00:00.000Z",
       "expiresAt": "2026-08-10T07:55:00.000Z",
       "recoveryAt": null,
@@ -492652,7 +492661,16 @@
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...HEAD"
-      ]
+      ],
+      "transitionedAt": "2026-08-10T00:24:00.000Z",
+      "resultManifest": {
+        "path": "manifests/gbif-round59-hi-001__lease-gbif-round59-hi-001-1.json",
+        "sha256": "b449fec94d0d0b2de06a8a249ce627e9337b840f5d619b15c72764f349c18c03",
+        "bytes": 7801,
+        "status": "partial",
+        "workerCommit": "0d543c4f295946b7182ecadc448dab2f6afcd424",
+        "workerBranchHead": "705b28a4e8b66fc533d31cd30221ab8270881d14"
+      }
     },
     {
       "leaseId": "lease-gbif-round59-hi-002-1",
