@@ -29955,6 +29955,59 @@
         "sha256": "e4ae3974edd719c50ca31d4580199796319226f4ca49611c9cc5384fb05028b0",
         "bytes": 2176
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round59-de-005-1",
+      "jobId": "gbif-round59-de-005",
+      "leaseId": "lease-gbif-round59-de-005-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-10T01:22:22.180Z",
+      "manifestPath": "manifests/gbif-round59-de-005__lease-gbif-round59-de-005-1.json",
+      "manifestHash": "78500cc58830f663cb8daaf860e9e6c1401950d9783770a9aff6af992cc661d9",
+      "manifestBytes": 7336,
+      "workerCommit": "1dcdd330d95f1783bb6cda132b69e46996809aac",
+      "workerBranchHead": "384a655e02b6875772b73dbe1324cfe4326754dd",
+      "reviewedAt": "2026-08-10T01:22:26.159Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable DE GBIF run, exact two-commit inventory, 3 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+      "changedPaths": [
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/assertions.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/manifest.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/outcomes.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/receipt.json",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/rejections.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/reviews.ndjson",
+        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "orchestrator transition with pinned worker manifest validation",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...384a655e02b6875772b73dbe1324cfe4326754dd",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 1,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round59-de-005-1.json",
+        "sha256": "4f0d7619b1ea4b213097c4b4affd0e4e55d975d3430c18c9caa5d421ad78c750",
+        "bytes": 2343
+      }
     }
   ]
 }
