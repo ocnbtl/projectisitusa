@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8",
+  "status": "complete",
+  "started_at": "2026-08-09T23:55:00.000Z",
+  "finished_at": "2026-08-10T01:12:52.198Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "parameter_hash": "f6c6f699bbc8423243e66a3962c383108a8ec23f1f90746dda8a7883e7921ff1",
+  "parameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:solanum-tampicense",
+      "44003:solanum-tampicense",
+      "44005:solanum-tampicense",
+      "44007:solanum-tampicense",
+      "44009:solanum-tampicense"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "RI",
+    "county_fips": [
+      "44001",
+      "44003",
+      "44005",
+      "44007",
+      "44009"
+    ],
+    "species_ids": [
+      "solanum-tampicense"
+    ],
+    "pair_keys": [
+      "44001:solanum-tampicense",
+      "44003:solanum-tampicense",
+      "44005:solanum-tampicense",
+      "44007:solanum-tampicense",
+      "44009:solanum-tampicense"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Solanum+tampicense&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-10T01:12:50.790Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Rhode+Island&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2929938&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-10T01:12:52.197Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+      "sha256": "de6bda76df0af2b953e5908c013b9507be450e50456ab6e8256c1060cad8ba0d",
+      "bytes": 277,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/outcomes.ndjson",
+      "sha256": "5a09e1a51969699e893c9085f5f1c905c8122d0b159addc26402b8d063b05a2b",
+      "bytes": 4040,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/source-verification.json",
+      "sha256": "149183c7d3e3c789ad3656e440ce2e8f52f1c1e00600cbc18da6d56767af24ec",
+      "bytes": 4925,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state RI --candidate-file ops/national-research/plans/round-59-20260809/gbif-round59-ri-005.json --output-root src/data/research/runs --pairs 44001:solanum-tampicense,44003:solanum-tampicense,44005:solanum-tampicense,44007:solanum-tampicense,44009:solanum-tampicense --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
