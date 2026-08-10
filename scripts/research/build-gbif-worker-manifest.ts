@@ -104,6 +104,20 @@ function booleanArg(
   throw new Error(`--${key} must be true or false.`);
 }
 
+function failedRequestIdentity(error: JsonObject, index: number) {
+  if (typeof error.url === "string" && error.url) return error.url;
+  const message = typeof error.message === "string" ? error.message : "";
+  const schemeIndex = message.indexOf("://");
+  const delimiterIndex = schemeIndex >= 0
+    ? message.indexOf(": ", schemeIndex + 3)
+    : -1;
+  if (delimiterIndex > 0) return message.slice(0, delimiterIndex);
+  const code = typeof error.code === "string" && error.code
+    ? error.code
+    : "unknown";
+  return `error:${code}:${index + 1}`;
+}
+
 try {
   const args = parseArgs(process.argv.slice(2));
   const repo = path.resolve(required(args, "repo"));
@@ -139,6 +153,16 @@ try {
   const receiptPath = path.join(runDirectory, "receipt.json");
   const sourceVerificationPath = path.join(runDirectory, "source-verification.json");
   const receipt = readJson<JsonObject>(receiptPath);
+  const receiptStatus = String(receipt.status);
+  if (!new Set(["complete", "partial", "failed"]).has(receiptStatus)) {
+    throw new Error(`Unsupported receipt status ${receiptStatus}.`);
+  }
+  const receiptErrors = Array.isArray(receipt.errors)
+    ? receipt.errors as JsonObject[]
+    : [];
+  const retryableErrors = receiptErrors.filter(
+    (entry) => entry.retryable === true,
+  );
   const outputs = receipt.outputs as Descriptor[];
   const artifacts = receipt.artifacts as Descriptor[];
   const outputByName = new Map(
@@ -171,6 +195,10 @@ try {
   const completeOutcomePairs = outcomes.filter(
     (entry) => entry.scope_complete === true,
   ).length;
+  const remainingPairKeys = outcomes
+    .filter((entry) => entry.scope_complete !== true)
+    .map((entry) => `${String(entry.county_fips)}:${String(entry.species_id)}`);
+  const remainingRequests = [...new Set(retryableErrors.map(failedRequestIdentity))];
   const finalCounts = {
     retainedArtifacts: artifacts.length,
     retainedArtifactBytes: artifacts.reduce(
@@ -192,7 +220,7 @@ try {
     noQualifyingEvidenceOutcomes: outcomes.filter(
       (entry) => entry.status === "no-qualifying-evidence",
     ).length,
-    errors: (receipt.errors as unknown[]).length,
+    errors: receiptErrors.length,
   };
   const zeroCounts = Object.fromEntries(COUNT_KEYS.map((key) => [key, 0]));
   const receiptDescriptor = fileDescriptor(
@@ -213,7 +241,7 @@ try {
     schemaVersion: 1,
     jobId: lease.jobId,
     leaseId,
-    status: "complete",
+    status: receiptStatus,
     branch: lease.branch,
     worktree: repo,
     baseSha: lease.baseSha,
@@ -227,7 +255,7 @@ try {
     outcomes: [{ ...outcomeDescriptor, count: outcomes.length }],
     receipt: receiptDescriptor,
     sourceVerification: sourceVerificationDescriptor,
-    blockedItems: [],
+    blockedItems: receiptStatus === "complete" ? [] : remainingPairKeys,
     counts: {
       baseline: zeroCounts,
       final: finalCounts,
@@ -267,10 +295,10 @@ try {
         {
           attempt: lease.attempt,
           leaseId,
-          status: "complete",
+          status: receiptStatus,
           finishedAt,
-          retryable: false,
-          errorCodes: [],
+          retryable: retryableErrors.length > 0,
+          errorCodes: receiptErrors.map((entry) => String(entry.code ?? "unknown")),
           sourceRequestsCompleted: finalCounts.sourceRequests,
           providerCandidates: finalCounts.providerCandidates,
           retainedArtifacts: finalCounts.retainedArtifacts,
@@ -279,12 +307,16 @@ try {
       ],
       previousLeaseId: lease.previousLeaseId ?? null,
       recoveryReason: lease.recoveryReason ?? null,
-      retryable: false,
+      retryable: retryableErrors.length > 0,
       resumeToken: null,
-      remainingRequests: [],
-      recoveryState: "complete",
+      remainingRequests,
+      recoveryState: receiptStatus === "complete"
+        ? "complete"
+        : retryableErrors.length > 0
+          ? "retryable"
+          : "blocked",
     },
-    remainingWork: [],
+    remainingWork: receiptStatus === "complete" ? [] : remainingPairKeys,
     sharedChangeProposals: [],
     performance: {
       wallSeconds,
