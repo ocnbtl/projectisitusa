@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260809T235500Z__gbif-preserved-specimens__ba80664e9e34",
+  "status": "complete",
+  "started_at": "2026-08-09T23:55:00.000Z",
+  "finished_at": "2026-08-10T01:09:08.626Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+  "parameter_hash": "ba80664e9e34893937e7dca98a2bb193019e5f90d79bc36a170457e49d021605",
+  "parameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:salvinia-molesta",
+      "44003:salvinia-molesta",
+      "44005:salvinia-molesta",
+      "44007:salvinia-molesta",
+      "44009:salvinia-molesta"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "RI",
+    "county_fips": [
+      "44001",
+      "44003",
+      "44005",
+      "44007",
+      "44009"
+    ],
+    "species_ids": [
+      "salvinia-molesta"
+    ],
+    "pair_keys": [
+      "44001:salvinia-molesta",
+      "44003:salvinia-molesta",
+      "44005:salvinia-molesta",
+      "44007:salvinia-molesta",
+      "44009:salvinia-molesta"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Salvinia+molesta&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-10T01:09:07.797Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Rhode+Island&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5274863&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-10T01:09:08.625Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+      "sha256": "967288084b92873e057464ed73a8cab27df3946733c18890228bfa138a516fcf",
+      "bytes": 296,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/outcomes.ndjson",
+      "sha256": "821a5ee0a8ca646b275a6282a356a31ceaa70dc888e4c90801a4e85edbf3dfaf",
+      "bytes": 4030,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ba80664e9e34/source-verification.json",
+      "sha256": "c573133838180b7dd336d6bd7f768c19f3c059d7eaafbd3f6aafa7192a46dff5",
+      "bytes": 4901,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state RI --candidate-file ops/national-research/plans/round-59-20260809/gbif-round59-ri-004.json --output-root src/data/research/runs --pairs 44001:salvinia-molesta,44003:salvinia-molesta,44005:salvinia-molesta,44007:salvinia-molesta,44009:salvinia-molesta --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
