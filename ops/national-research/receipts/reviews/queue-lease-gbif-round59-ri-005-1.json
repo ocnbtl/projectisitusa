@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-ri-005-1",
+  "jobId": "gbif-round59-ri-005",
+  "leaseId": "lease-gbif-round59-ri-005-1",
+  "workerCommit": "d6f38bdf02ae476c9e511dade2e78e3be7eb695e",
+  "workerBranchHead": "c21a9e6099c69fdb8a15605c9734d437c251e958",
+  "manifestHash": "fe97979067e0c097395844644adb71455a15976ec6c05b8d4f14a67eadca7cc3",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f6c6f699bbc8/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "orchestrator transition with pinned worker manifest validation",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...c21a9e6099c69fdb8a15605c9734d437c251e958",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit inventory, complete-outcome arithmetic, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable RI GBIF run, exact two-commit inventory, 5 complete county outcomes, 0 assertion events, and zero unsupported negative determinations.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-10T01:19:59.918Z"
+}
