@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-hi-002-1",
+  "jobId": "gbif-round59-hi-002",
+  "leaseId": "lease-gbif-round59-hi-002-1",
+  "workerCommit": "ab18e9ec9924684073f5e240857105dae0d696af",
+  "workerBranchHead": "ca628885c780e5653f06068f5b0fa56b83c05767",
+  "manifestHash": "ca7adf4f050f9cc65c03163863658d3e3a65ace864f27152bf42dc8d51cd0b4d",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/artifacts/gbif-occurrences-tridax-procumbens-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__4ed90ec33f6a/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-10T01:03:30.000Z",
+  "integrationCommit": "61ff13a9f518572d7be1895723b7e1e0186fd92c"
+}
