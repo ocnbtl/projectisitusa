@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-de-005-1",
+  "jobId": "gbif-round59-de-005",
+  "leaseId": "lease-gbif-round59-de-005-1",
+  "workerCommit": "1dcdd330d95f1783bb6cda132b69e46996809aac",
+  "workerBranchHead": "384a655e02b6875772b73dbe1324cfe4326754dd",
+  "manifestHash": "78500cc58830f663cb8daaf860e9e6c1401950d9783770a9aff6af992cc661d9",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/artifacts/gbif-occurrences-solanum-tampicense-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/artifacts/gbif-species-match-solanum-tampicense.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__c19722280b28/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-10T01:22:52.608Z",
+  "integrationCommit": "69779829a0600fc557e084fef42512b3435d78a2"
+}
