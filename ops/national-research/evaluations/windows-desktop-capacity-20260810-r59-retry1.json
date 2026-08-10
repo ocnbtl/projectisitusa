@@ -1,0 +1,58 @@
+{
+    "schemaVersion":  1,
+    "evaluationId":  "windows-desktop-capacity-20260810-r59-retry1",
+    "recordedAt":  "2026-08-10T00:36:28.0433127Z",
+    "hostCounterTimestamp":  "2026-08-10T00:36:28.0298023Z",
+    "clockQualification":  "Windows UTC controls this resource gate. Provider-native response timestamps control acquisition receipts.",
+    "canonicalCheckout":  "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha":  "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+    "capacityTier":  "green",
+    "workerCount":  2,
+    "initialLiveProviderWorkerCount":  1,
+    "postCanaryMaximumLiveProviderWorkerCount":  2,
+    "machineCapacityWorkerCount":  6,
+    "perWorkerReservationMiB":  768,
+    "observedRound59SparsePeakMemoryRangeMiB":  [
+                                                    185.992,
+                                                    218.023
+                                                ],
+    "totalPhysicalMiB":  31900.91796875,
+    "freePhysicalMiB":  9690.16796875,
+    "projectedPostWorkerFreePhysicalMiB":  8154.16796875,
+    "commitHeadroomMiB":  11672.16796875,
+    "projectedPostWorkerFreeCommitMiB":  10136.16796875,
+    "freeDiskMiB":  703096.75390625,
+    "totalDiskMiB":  1906665.99609375,
+    "rawMeasurements":  {
+                            "totalPhysicalBytes":  33450536960,
+                            "availablePhysicalBytes":  10160877568,
+                            "committedBytes":  41612476416,
+                            "commitLimitBytes":  53851631616,
+                            "pageReadsPerSecond":  2.9725564669303588,
+                            "pageWritesPerSecond":  0,
+                            "diskFreeBytes":  737250381824,
+                            "diskTotalBytes":  1999284203520
+                        },
+    "recentVariability":  {
+                              "earlierObservedAt":  "2026-08-10T00:14:41.440Z",
+                              "earlierAvailablePhysicalMiB":  7130,
+                              "qualification":  "Two simultaneous GBIF occurrence requests failed transiently and were sealed partial. Acquisition paused, both failure artifacts were archived, the manifest builder was corrected, and retry proceeds at one live lane after a bounded health recovery check."
+                          },
+    "resourceGate":  {
+                         "result":  "pass",
+                         "physicalFloorMiB":  3190.091796875,
+                         "commitFloorMiB":  3072,
+                         "diskFloorMiB":  285999.8994140625,
+                         "qualification":  "One 768 MiB retry lane preserves resource floors. A second lane may start only after the retry canary completes and a fresh gate passes."
+                     },
+    "provider":  {
+                     "sourceId":  "gbif-preserved-specimens",
+                     "failedAcquisitionAttempts":  2,
+                     "failedEvidenceRequests":  2,
+                     "partialRunsPreserved":  2,
+                     "healthProbeRequestsAfterFailure":  2,
+                     "firstHealthProbe":  "failed without usable response",
+                     "latestHealth":  "HTTP 200 in 0.362341 s",
+                     "qualification":  "Health requests acquired no evidence. Resume only the two exact failed occurrence requests under new attempt-2 leases; all independent leases remain held until the canary succeeds."
+                 }
+}

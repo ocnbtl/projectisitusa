@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:dreissena-polymorpha",
+      "44003:dreissena-polymorpha",
+      "44005:dreissena-polymorpha",
+      "44007:dreissena-polymorpha",
+      "44009:dreissena-polymorpha"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "RI",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json",
+    "declaredCandidateCount": 5,
+    "selectedPairCount": 5,
+    "sha256": "e4a57ba9cd3bb61da5c3470dc1a18e866e8552db794d7fd322bdbc48ae26c675"
+  },
+  "candidateLimit": {
+    "value": 5,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "dreissena-polymorpha"
+  ],
+  "selectedPairKeys": [
+    "44001:dreissena-polymorpha",
+    "44003:dreissena-polymorpha",
+    "44005:dreissena-polymorpha",
+    "44007:dreissena-polymorpha",
+    "44009:dreissena-polymorpha"
+  ],
+  "selectedPairHash": "c0d03b728a51ea84509c1c0edeb31b77eb523d0f4baaa0cc8273323d8a900ffc",
+  "parameterHash": "ec7291f812f7ed3e3f53edf87a778da3d6bc5b938c31349893bcc4edf3389ef3",
+  "startedAt": "2026-08-10T00:30:00.000Z",
+  "deterministicRunSuffix": "ec7291f812f7",
+  "expectedRunPath": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__ec7291f812f7",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "dreissena-polymorpha",
+        "scientificName": "Dreissena polymorpha",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Dreissena+polymorpha&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-04T02:13:02.931Z",
+        "responseBodySha256": "e9c974d565100e2db44b641302e2c5541e3d805dd8c1faf382654aa70a9a41b6",
+        "provenance": {
+          "runId": "20260804T020627Z__gbif-preserved-specimens__4dab4aa6ae63",
+          "codeCommit": "218f8801c187ee1ccaf7ea919d332eec2c937806",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260804T020627Z__gbif-preserved-specimens__4dab4aa6ae63/source-verification.json",
+          "sourceVerificationSha256": "3bd10466993ae23063747856f6aa0d7d9ff8e6f65ecdcb02f392e6df8140b9a6",
+          "artifactPath": "src/data/research/runs/20260804T020627Z__gbif-preserved-specimens__4dab4aa6ae63/artifacts/gbif-species-match-dreissena-polymorpha.json.gz",
+          "artifactSha256": "e6a49c1e8a134ef8953e32ed5c25e666ba0eb22a5acac97efb27fd7af0e1a460",
+          "artifactBytes": 283
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-001-retry1\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "RI",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json",
+    "--candidate-limit",
+    "5",
+    "--started-at",
+    "2026-08-10T00:30:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-001-retry1\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

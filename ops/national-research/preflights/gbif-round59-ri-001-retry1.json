@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-round59-ri-001-20260810T003700000Z",
+  "createdAt": "2026-08-10T00:37:00.000Z",
+  "result": "pass",
+  "jobId": "gbif-round59-ri-001",
+  "exactBaseSha": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "RI",
+      "stateProvince": "Rhode Island",
+      "candidateLimit": 5,
+      "candidatePairs": [
+        "44001:dreissena-polymorpha",
+        "44003:dreissena-polymorpha",
+        "44005:dreissena-polymorpha",
+        "44007:dreissena-polymorpha",
+        "44009:dreissena-polymorpha"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "RI"
+    ],
+    "taxa": [
+      "dreissena-polymorpha"
+    ],
+    "pairs": [
+      "44001:dreissena-polymorpha",
+      "44003:dreissena-polymorpha",
+      "44005:dreissena-polymorpha",
+      "44007:dreissena-polymorpha",
+      "44009:dreissena-polymorpha"
+    ],
+    "pairCount": 5,
+    "pairHash": "c0d03b728a51ea84509c1c0edeb31b77eb523d0f4baaa0cc8273323d8a900ffc"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json",
+    "declaredCandidateCount": 5,
+    "selectedPairCount": 5,
+    "sha256": "e4a57ba9cd3bb61da5c3470dc1a18e866e8552db794d7fd322bdbc48ae26c675"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 5,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-001-retry1\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "RI",
+    "--candidate-file",
+    "ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json",
+    "--candidate-limit",
+    "5",
+    "--started-at",
+    "2026-08-10T00:30:00.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-001-retry1\\attempt-telemetry.json"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expectedPositivePairRange": {
+    "minimum": 0,
+    "maximum": 5,
+    "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-10T00:30:00.000Z",
+    "parameterHash": "ec7291f812f7ed3e3f53edf87a778da3d6bc5b938c31349893bcc4edf3389ef3",
+    "suffix": "ec7291f812f7",
+    "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__ec7291f812f7"
+  },
+  "expectedReceiptCodeCommit": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__ec7291f812f7/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json",
+        "blob": "a7ac74f501c33782bb6e253646114b8a29751025"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "blob": "e39ef97d94a8dd6dbcd61a6020b42072bcfde344"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-001-retry1\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "RI",
+    "orderedPairHash": "c0d03b728a51ea84509c1c0edeb31b77eb523d0f4baaa0cc8273323d8a900ffc",
+    "parameterHash": "ec7291f812f7ed3e3f53edf87a778da3d6bc5b938c31349893bcc4edf3389ef3",
+    "runPath": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__ec7291f812f7"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260809-r55",
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+      "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "dreissena-polymorpha",
+          "scientificName": "Dreissena polymorpha",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Dreissena+polymorpha&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-04T02:13:02.931Z",
+          "responseBodySha256": "e9c974d565100e2db44b641302e2c5541e3d805dd8c1faf382654aa70a9a41b6",
+          "provenance": {
+            "runId": "20260804T020627Z__gbif-preserved-specimens__4dab4aa6ae63",
+            "codeCommit": "218f8801c187ee1ccaf7ea919d332eec2c937806",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/runs/20260804T020627Z__gbif-preserved-specimens__4dab4aa6ae63/source-verification.json",
+            "sourceVerificationSha256": "3bd10466993ae23063747856f6aa0d7d9ff8e6f65ecdcb02f392e6df8140b9a6",
+            "artifactPath": "src/data/research/runs/20260804T020627Z__gbif-preserved-specimens__4dab4aa6ae63/artifacts/gbif-species-match-dreissena-polymorpha.json.gz",
+            "artifactSha256": "e6a49c1e8a134ef8953e32ed5c25e666ba0eb22a5acac97efb27fd7af0e1a460",
+            "artifactBytes": 283
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [
+      {
+        "leaseId": "lease-gbif-round59-ri-001-1",
+        "state": "failed",
+        "attempt": 1
+      }
+    ],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "schemaVersion": 1,
+    "evaluationId": "windows-desktop-capacity-20260810-r59-retry1",
+    "recordedAt": "2026-08-10T00:36:28.0433127Z",
+    "hostCounterTimestamp": "2026-08-10T00:36:28.0298023Z",
+    "clockQualification": "Windows UTC controls this resource gate. Provider-native response timestamps control acquisition receipts.",
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+    "capacityTier": "green",
+    "workerCount": 2,
+    "initialLiveProviderWorkerCount": 1,
+    "postCanaryMaximumLiveProviderWorkerCount": 2,
+    "machineCapacityWorkerCount": 6,
+    "perWorkerReservationMiB": 768,
+    "observedRound59SparsePeakMemoryRangeMiB": [
+      185.992,
+      218.023
+    ],
+    "totalPhysicalMiB": 31900.91796875,
+    "freePhysicalMiB": 9690.16796875,
+    "projectedPostWorkerFreePhysicalMiB": 8154.16796875,
+    "commitHeadroomMiB": 11672.16796875,
+    "projectedPostWorkerFreeCommitMiB": 10136.16796875,
+    "freeDiskMiB": 703096.75390625,
+    "totalDiskMiB": 1906665.99609375,
+    "rawMeasurements": {
+      "totalPhysicalBytes": 33450536960,
+      "availablePhysicalBytes": 10160877568,
+      "committedBytes": 41612476416,
+      "commitLimitBytes": 53851631616,
+      "pageReadsPerSecond": 2.972556466930359,
+      "pageWritesPerSecond": 0,
+      "diskFreeBytes": 737250381824,
+      "diskTotalBytes": 1999284203520
+    },
+    "recentVariability": {
+      "earlierObservedAt": "2026-08-10T00:14:41.440Z",
+      "earlierAvailablePhysicalMiB": 7130,
+      "qualification": "Two simultaneous GBIF occurrence requests failed transiently and were sealed partial. Acquisition paused, both failure artifacts were archived, the manifest builder was corrected, and retry proceeds at one live lane after a bounded health recovery check."
+    },
+    "resourceGate": {
+      "result": "pass",
+      "physicalFloorMiB": 3190.091796875,
+      "commitFloorMiB": 3072,
+      "diskFloorMiB": 285999.8994140625,
+      "qualification": "One 768 MiB retry lane preserves resource floors. A second lane may start only after the retry canary completes and a fresh gate passes."
+    },
+    "provider": {
+      "sourceId": "gbif-preserved-specimens",
+      "failedAcquisitionAttempts": 2,
+      "failedEvidenceRequests": 2,
+      "partialRunsPreserved": 2,
+      "healthProbeRequestsAfterFailure": 2,
+      "firstHealthProbe": "failed without usable response",
+      "latestHealth": "HTTP 200 in 0.362341 s",
+      "qualification": "Health requests acquired no evidence. Resume only the two exact failed occurrence requests under new attempt-2 leases; all independent leases remain held until the canary succeeds."
+    }
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-round59-ri-001-retry1.json",
+    "sha256": "0d16e6cb42350a0a3edf527cde812d071c982e169203aab466f9cbc9c2b39bcc",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}

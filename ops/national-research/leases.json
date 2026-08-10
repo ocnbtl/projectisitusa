@@ -494007,6 +494007,119 @@
         "commit immutable-run content first and the finalized manifest second",
         "pass the pinned worker validator and git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...HEAD"
       ]
+    },
+    {
+      "leaseId": "lease-gbif-round59-ri-001-2",
+      "jobId": "gbif-round59-ri-001",
+      "attempt": 2,
+      "previousLeaseId": "lease-gbif-round59-ri-001-1",
+      "workerTaskId": "worker-gbif-round59-ri-001-retry1",
+      "state": "active",
+      "claimedAt": "2026-08-10T00:38:00.000Z",
+      "expiresAt": "2026-08-10T08:30:00.000Z",
+      "recoveryAt": "2026-08-10T00:38:00.000Z",
+      "recoveryReason": "retry-only-the-exact-occurrence-request-that-fetch-failed-in-attempt-1-after-durable-partial-archive-and-http-200-health-recovery",
+      "stateOrSourceScope": {
+        "states": [
+          "RI"
+        ],
+        "sourceFamilies": [
+          "gbif-preserved-specimens"
+        ]
+      },
+      "taxaOrPairScope": {
+        "taxa": [
+          "dreissena-polymorpha"
+        ],
+        "pairs": [
+          "44001:dreissena-polymorpha",
+          "44003:dreissena-polymorpha",
+          "44005:dreissena-polymorpha",
+          "44007:dreissena-polymorpha",
+          "44009:dreissena-polymorpha"
+        ]
+      },
+      "scopeClaims": [
+        "state/RI/source/gbif-preserved-specimens/taxon/dreissena-polymorpha"
+      ],
+      "branch": "codex/gbif-round59-ri-001-retry1",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-001-retry1",
+      "baseSha": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+      "expectedReceiptCodeCommit": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+      "permittedPaths": [
+        "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__ec7291f812f7/**"
+      ],
+      "prohibitedPaths": [
+        ".agents/skills/**",
+        "AGENTS.md",
+        "package.json",
+        "package-lock.json",
+        "ops/national-research/**",
+        "src/data/research/schemas/**",
+        "src/data/research/source-registry.json",
+        "src/data/research/state-list-source-registry.json",
+        "src/data/research/research-protocols.json",
+        "src/data/research/state-registry.json",
+        "src/data/research/county-equivalent-registry.json",
+        "src/data/research/state-research-config.json",
+        "src/data/research/state-applicability/**",
+        "scripts/**",
+        "src/lib/**",
+        "src/data/generated/**",
+        "public/generated/**",
+        "app/**",
+        "src/components/**",
+        ".vercel/**",
+        "vercel.json"
+      ],
+      "skillPins": [
+        {
+          "name": "isitusa-national-orchestrator",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+        },
+        {
+          "name": "isitusa-evidence-worker",
+          "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+          "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+          "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+        }
+      ],
+      "expectedOutputs": [
+        "manifest",
+        "artifacts",
+        "assertions",
+        "reviews",
+        "rejections",
+        "outcomes",
+        "receipt",
+        "source-verification"
+      ],
+      "expectedManifestPath": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__ec7291f812f7/manifest.json",
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "backoffSeconds": [
+          5,
+          30,
+          120
+        ],
+        "resumeRequired": true
+      },
+      "resourcePolicy": {
+        "maxArtifactBytes": 20000000,
+        "maxWallMinutes": 60,
+        "maxMemoryMb": 768
+      },
+      "completionCriteria": [
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json with started-at 2026-08-10T00:30:00.000Z",
+        "screen all 5 leased RI county-species pairs using provider-declared county geography only",
+        "complete bounded pagination for every state-species query and preserve retry state",
+        "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
+        "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
+        "commit immutable-run content first and the finalized manifest second",
+        "pass the pinned worker validator and git diff --check 6bbd56315c0a3d2deb09621f7f83619a099205c4...HEAD"
+      ]
     }
   ]
 }

@@ -487548,12 +487548,12 @@
       "scopeClaims": [
         "state/RI/source/gbif-preserved-specimens/taxon/dreissena-polymorpha"
       ],
-      "branch": "codex/gbif-round59-ri-001",
-      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-001",
-      "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
-      "expectedReceiptCodeCommit": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+      "branch": "codex/gbif-round59-ri-001-retry1",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round59-ri-001-retry1",
+      "baseSha": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+      "expectedReceiptCodeCommit": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
       "permittedPaths": [
-        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__ec7291f812f7/**"
+        "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__ec7291f812f7/**"
       ],
       "prohibitedPaths": [
         ".agents/skills/**",
@@ -487623,10 +487623,10 @@
         "candidateFile": "ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json",
         "candidateLimit": 5,
         "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
-        "startedAt": "2026-08-09T23:55:00.000Z",
+        "startedAt": "2026-08-10T00:30:00.000Z",
         "outputRoot": "src/data/research/runs",
         "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
-        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-001\\attempt-telemetry.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-ri-001-retry1\\attempt-telemetry.json",
         "expectedProviderRequests": {
           "cachedTaxonomyResponses": 1,
           "archiveReplayResponses": 0,
@@ -487648,21 +487648,21 @@
           "npmCache": "C:\\Code\\tools\\npm-cache"
         }
       },
-      "expiresAt": "2026-08-10T07:55:00.000Z",
-      "recoveryState": "none",
+      "expiresAt": "2026-08-10T08:30:00.000Z",
+      "recoveryState": "retry-pending-after-fetch-failed",
       "completionCriteria": [
-        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json with started-at 2026-08-09T23:55:00.000Z",
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-59-20260809/gbif-round59-ri-001.json with started-at 2026-08-10T00:30:00.000Z",
         "screen all 5 leased RI county-species pairs using provider-declared county geography only",
         "complete bounded pagination for every state-species query and preserve retry state",
         "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
-        "pass the pinned worker validator and git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...HEAD"
+        "pass the pinned worker validator and git diff --check 6bbd56315c0a3d2deb09621f7f83619a099205c4...HEAD"
       ],
       "dependencies": [],
       "priority": 2,
-      "state": "failed",
-      "currentLeaseId": "lease-gbif-round59-ri-001-1"
+      "state": "leased",
+      "currentLeaseId": "lease-gbif-round59-ri-001-2"
     },
     {
       "jobId": "gbif-round59-ri-002",
@@ -488968,12 +488968,12 @@
       "scopeClaims": [
         "state/HI/source/gbif-preserved-specimens/taxon/sparganium-erectum"
       ],
-      "branch": "codex/gbif-round59-hi-001",
-      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round59-hi-001",
-      "baseSha": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
-      "expectedReceiptCodeCommit": "d1bef9c6e51c7769cdc8ca8d15094f541c58bc93",
+      "branch": "codex/gbif-round59-hi-001-retry1",
+      "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round59-hi-001-retry1",
+      "baseSha": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+      "expectedReceiptCodeCommit": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
       "permittedPaths": [
-        "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__60ca3ac05802/**"
+        "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/**"
       ],
       "prohibitedPaths": [
         ".agents/skills/**",
@@ -489043,10 +489043,10 @@
         "candidateFile": "ops/national-research/plans/round-59-20260809/gbif-round59-hi-001.json",
         "candidateLimit": 5,
         "candidateLimitMeaning": "maximum county-species candidate-pair count, not a taxon count",
-        "startedAt": "2026-08-09T23:55:00.000Z",
+        "startedAt": "2026-08-10T00:30:00.000Z",
         "outputRoot": "src/data/research/runs",
         "taxonomyCache": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
-        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-hi-001\\attempt-telemetry.json",
+        "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round59-hi-001-retry1\\attempt-telemetry.json",
         "expectedProviderRequests": {
           "cachedTaxonomyResponses": 1,
           "archiveReplayResponses": 0,
@@ -489068,21 +489068,20 @@
           "npmCache": "C:\\Code\\tools\\npm-cache"
         }
       },
-      "expiresAt": "2026-08-10T07:55:00.000Z",
-      "recoveryState": "none",
+      "expiresAt": "2026-08-10T08:30:00.000Z",
+      "recoveryState": "retry-pending-after-fetch-failed",
       "completionCriteria": [
-        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-59-20260809/gbif-round59-hi-001.json with started-at 2026-08-09T23:55:00.000Z",
+        "run the registered statewide GBIF preserved-specimen adapter from ops/national-research/plans/round-59-20260809/gbif-round59-hi-001.json with started-at 2026-08-10T00:30:00.000Z",
         "screen all 5 leased HI county-species pairs using provider-declared county geography only",
         "complete bounded pagination for every state-species query and preserve retry state",
         "emit no-qualifying-evidence outcomes only after complete pagination and never absence, not-detected, or not-applicable",
         "emit canonical artifacts, events, receipt, source-verification record, and complete worker manifest",
         "commit immutable-run content first and the finalized manifest second",
-        "pass the pinned worker validator and git diff --check d1bef9c6e51c7769cdc8ca8d15094f541c58bc93...HEAD"
+        "pass the pinned worker validator and git diff --check 6bbd56315c0a3d2deb09621f7f83619a099205c4...HEAD"
       ],
       "dependencies": [],
       "priority": 12,
-      "state": "failed",
-      "currentLeaseId": "lease-gbif-round59-hi-001-1"
+      "state": "planned"
     },
     {
       "jobId": "gbif-round59-hi-002",
