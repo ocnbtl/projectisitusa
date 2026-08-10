@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round59-ri-010-1",
+  "jobId": "gbif-round59-ri-010",
+  "leaseId": "lease-gbif-round59-ri-010-1",
+  "workerCommit": "8c4662c927cf3fe7e099f12d82c6088411248fdd",
+  "workerBranchHead": "aa00f3600d47d07f249c72b509e3dfd5a2c573b0",
+  "manifestHash": "1d79dc91cdfb1da18af75d230d0e0b7a776aeb035c0e888a07a048b59dc0c5ee",
+  "changedPaths": [
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/artifacts/gbif-occurrences-urochloa-panicoides-000000.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/artifacts/gbif-species-match-urochloa-panicoides.json.gz",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/assertions.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/manifest.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/outcomes.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/receipt.json",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/rejections.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/reviews.ndjson",
+    "src/data/research/runs/20260809T235500Z__gbif-preserved-specimens__f48bb5103e74/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical main tree entries matched the exact reviewed worker branch for every changed path",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed worker content and manifest commits without conflict; canonical tree entries are byte-identical and the checkout is clean.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-10T01:32:54.849Z",
+  "integrationCommit": "6cfdcad17815dfc2b80d89d81022081f734e3713"
+}
