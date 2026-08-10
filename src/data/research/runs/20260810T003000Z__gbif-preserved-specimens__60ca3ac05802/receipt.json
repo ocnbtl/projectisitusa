@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260810T003000Z__gbif-preserved-specimens__60ca3ac05802",
+  "status": "complete",
+  "started_at": "2026-08-10T00:30:00.000Z",
+  "finished_at": "2026-08-10T00:49:24.478Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+  "parameter_hash": "60ca3ac058024e74101d5e9e4c33924252c772f60bc56daaf3e4b2844e543554",
+  "parameters": {
+    "stateCode": "HI",
+    "stateProvince": "Hawaii",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "15001:sparganium-erectum",
+      "15003:sparganium-erectum",
+      "15005:sparganium-erectum",
+      "15007:sparganium-erectum",
+      "15009:sparganium-erectum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "HI",
+    "county_fips": [
+      "15001",
+      "15003",
+      "15005",
+      "15007",
+      "15009"
+    ],
+    "species_ids": [
+      "sparganium-erectum"
+    ],
+    "pair_keys": [
+      "15001:sparganium-erectum",
+      "15003:sparganium-erectum",
+      "15005:sparganium-erectum",
+      "15007:sparganium-erectum",
+      "15009:sparganium-erectum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Sparganium+erectum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-10T00:49:23.606Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Hawaii&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=7679536&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-10T00:49:24.477Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+      "sha256": "14db2b237f6595c0d6330ad17e13b9f1599a024b50acf61aa126d25c9c8981ab",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/outcomes.ndjson",
+      "sha256": "525e317394e449799d237a01ece31b40fe73dd66421568fa0b3e54b9ae31e720",
+      "bytes": 4010,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/source-verification.json",
+      "sha256": "e8d165a25b5dc94c4939b5480a218041314480d52bd6bc210a708361a9525641",
+      "bytes": 4913,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state HI --candidate-file ops/national-research/plans/round-59-20260809/gbif-round59-hi-001.json --output-root src/data/research/runs --pairs 15001:sparganium-erectum,15003:sparganium-erectum,15005:sparganium-erectum,15007:sparganium-erectum,15009:sparganium-erectum --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}

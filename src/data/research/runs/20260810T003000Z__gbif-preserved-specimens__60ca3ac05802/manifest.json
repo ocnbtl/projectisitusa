@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "jobId": "gbif-round59-hi-001",
+  "leaseId": "lease-gbif-round59-hi-001-2",
+  "status": "complete",
+  "branch": "codex/gbif-round59-hi-001-retry1",
+  "worktree": "C:\\Code\\project-isitusa-worktrees\\gbif-round59-hi-001-retry1",
+  "baseSha": "6bbd56315c0a3d2deb09621f7f83619a099205c4",
+  "commitSha": "cef3445977411d44756613af295b3e28a17f98d8",
+  "skillPins": [
+    {
+      "name": "isitusa-national-orchestrator",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+    },
+    {
+      "name": "isitusa-evidence-worker",
+      "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+      "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+      "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    }
+  ],
+  "sourceParameters": {
+    "sourceId": "gbif-preserved-specimens",
+    "adapterVersion": "1.3.1",
+    "stateCode": "HI",
+    "stateProvince": "Hawaii",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "15001:sparganium-erectum",
+      "15003:sparganium-erectum",
+      "15005:sparganium-erectum",
+      "15007:sparganium-erectum",
+      "15009:sparganium-erectum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/artifacts/gbif-occurrences-sparganium-erectum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/artifacts/gbif-species-match-sparganium-erectum.json.gz",
+      "sha256": "14db2b237f6595c0d6330ad17e13b9f1599a024b50acf61aa126d25c9c8981ab",
+      "bytes": 282,
+      "media_type": "application/gzip"
+    }
+  ],
+  "assertions": [
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "reviews": [
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "rejections": [
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson",
+      "count": 0
+    }
+  ],
+  "outcomes": [
+    {
+      "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/outcomes.ndjson",
+      "sha256": "525e317394e449799d237a01ece31b40fe73dd66421568fa0b3e54b9ae31e720",
+      "bytes": 4010,
+      "media_type": "application/x-ndjson",
+      "count": 5
+    }
+  ],
+  "receipt": {
+    "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/receipt.json",
+    "sha256": "551fa7c818721f643e9be3b73c4f8e333f0adf1f561e6c098e7e7fef1a1698cf",
+    "bytes": 5350,
+    "media_type": "application/json"
+  },
+  "sourceVerification": {
+    "path": "src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/source-verification.json",
+    "sha256": "e8d165a25b5dc94c4939b5480a218041314480d52bd6bc210a708361a9525641",
+    "bytes": 4913,
+    "media_type": "application/json"
+  },
+  "blockedItems": [],
+  "counts": {
+    "baseline": {
+      "retainedArtifacts": 0,
+      "retainedArtifactBytes": 0,
+      "sourceRequests": 0,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 0,
+      "completeOutcomePairs": 0,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 0,
+      "errors": 0
+    },
+    "final": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 372,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 5,
+      "completeOutcomePairs": 5,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 5,
+      "errors": 0
+    },
+    "net": {
+      "retainedArtifacts": 2,
+      "retainedArtifactBytes": 372,
+      "sourceRequests": 2,
+      "providerCandidates": 0,
+      "assertionEvents": 0,
+      "publicationEligibleAssertions": 0,
+      "reviewEvents": 0,
+      "rejectionRecords": 0,
+      "duplicateRecords": 0,
+      "distinctOutcomePairs": 5,
+      "completeOutcomePairs": 5,
+      "evidenceFoundOutcomes": 0,
+      "noQualifyingEvidenceOutcomes": 5,
+      "errors": 0
+    }
+  },
+  "verificationCommands": [
+    {
+      "command": "canonical immutable-run validation with exact receipt pair keys",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git diff --check 6bbd56315c0a3d2deb09621f7f83619a099205c4...HEAD",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "node .agents/skills/isitusa-evidence-worker/scripts/validate-worker.mjs manifest --lease 'C:\\Code\\project-isitusa\\ops\\national-research\\leases.json' --lease-id lease-gbif-round59-hi-001-2 --manifest src/data/research/runs/20260810T003000Z__gbif-preserved-specimens__60ca3ac05802/manifest.json --repo C:\\Code\\project-isitusa-worktrees\\gbif-round59-hi-001-retry1",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "retryResume": {
+    "attempt": 2,
+    "acquisitionAttempts": 2,
+    "attemptHistory": [
+      {
+        "attempt": 2,
+        "leaseId": "lease-gbif-round59-hi-001-2",
+        "status": "complete",
+        "finishedAt": "2026-08-10T00:49:24.478Z",
+        "retryable": false,
+        "errorCodes": [],
+        "sourceRequestsCompleted": 2,
+        "providerCandidates": 0,
+        "retainedArtifacts": 2,
+        "receiptSha256": "551fa7c818721f643e9be3b73c4f8e333f0adf1f561e6c098e7e7fef1a1698cf"
+      }
+    ],
+    "previousLeaseId": "lease-gbif-round59-hi-001-1",
+    "recoveryReason": "Retry only the exact failed GBIF occurrence request after preserving the partial first attempt and verifying provider health recovery.",
+    "retryable": false,
+    "resumeToken": null,
+    "remainingRequests": [],
+    "recoveryState": "complete"
+  },
+  "remainingWork": [],
+  "sharedChangeProposals": [],
+  "performance": {
+    "wallSeconds": 3,
+    "peakMemoryMb": 200,
+    "peakMemoryMeasured": true,
+    "validPairsScreened": 5,
+    "manualInterventions": 0
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedNegative": false,
+    "failedRequestCreatedNegative": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompleteScopeMarkedComplete": false
+  }
+}
