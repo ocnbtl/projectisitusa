@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "planId": "gbif-round60",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "DC",
+  "asOf": "2026-08-10",
+  "selectionPolicy": {
+    "stateApplicability": "applicable",
+    "protocolApplicability": "applicable",
+    "protocolCompletion": "incomplete-or-blocked",
+    "taxonomy": "exact-two-token-binomial",
+    "portfolioFilter": "provenance-compatible-taxonomy-cache-and-positive-not-researched-movement",
+    "taxonomyCacheId": "gbif-taxonomy-20260809-r55",
+    "taxonomyCacheCompatibleAdapterVersions": [
+      "1.3.1"
+    ],
+    "batchLimits": {
+      "maximumStateSpeciesScreens": 1,
+      "maximumCountySpeciesPairs": 5000,
+      "stateSpeciesQueriesRemainWhole": true
+    },
+    "ranking": [
+      "not-researched-county-count-desc",
+      "incomplete-county-count-desc",
+      "existing-gbif-evidence-count-desc",
+      "verified-present-count-desc",
+      "priority-regulated-high-pilot-baseline",
+      "species-id-asc"
+    ]
+  },
+  "inputHashes": {
+    "species": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "countyRegistry": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "stateSummary": "4e59b776df3754a1408d81cdc10ae976051c8e903f1520b257a1530da9897d8f",
+    "protocolCells": "3024718da590a83f8888da61726f04290b38f3a0222ff0b0b8d9e2f632dbdbfe",
+    "taxonomyEvaluation": "5a1447319201a91165d5e21713b117cd03d4956f3d1d8cc8a17d960b9c790e89",
+    "countyResearchProjections": "957615b069d8322cab387bc2ad8d29fd09c3cf84931da4243e6fc4cacdbf5fb5",
+    "taxonomyCache": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b"
+  },
+  "rankingInputs": {
+    "countyProjectionFileCount": 1,
+    "expectedNetNewPairDefinition": "current displayStatus equals not-researched",
+    "cachedTaxonomyEntryCount": 53
+  },
+  "deduplication": {
+    "immutableCompletePairCount": 0,
+    "preventedCompletedPairCount": 0,
+    "fullyCompletedStateSpeciesExcluded": 0,
+    "taxonomyBlockedStateSpeciesExcluded": 0,
+    "cachedEligibleStateSpeciesScreenCount": 13
+  },
+  "availableStateSpeciesScreenCount": 67,
+  "selectedStateSpeciesScreenCount": 13,
+  "selectedCountyOutcomeCount": 13,
+  "expectedNetNewPairCount": 13,
+  "countyCount": 1,
+  "selected": [
+    {
+      "stateCode": "DC",
+      "speciesId": "melaleuca-quinquenervia",
+      "scientificName": "Melaleuca quinquenervia",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "rottboellia-cochinchinensis",
+      "scientificName": "Rottboellia cochinchinensis",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "saccharum-spontaneum",
+      "scientificName": "Saccharum spontaneum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "salvinia-molesta",
+      "scientificName": "Salvinia molesta",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "solanum-tampicense",
+      "scientificName": "Solanum tampicense",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "solanum-torvum",
+      "scientificName": "Solanum torvum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "solanum-viarum",
+      "scientificName": "Solanum viarum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "sparganium-erectum",
+      "scientificName": "Sparganium erectum",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "tridax-procumbens",
+      "scientificName": "Tridax procumbens",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "urochloa-panicoides",
+      "scientificName": "Urochloa panicoides",
+      "category": "plants",
+      "priority": "regulated",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "acer-platanoides",
+      "scientificName": "Acer platanoides",
+      "category": "plants",
+      "priority": "high",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "berberis-thunbergii",
+      "scientificName": "Berberis thunbergii",
+      "category": "plants",
+      "priority": "high",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    },
+    {
+      "stateCode": "DC",
+      "speciesId": "celastrus-orbiculatus",
+      "scientificName": "Celastrus orbiculatus",
+      "category": "plants",
+      "priority": "high",
+      "applicabilityBasis": "explicit",
+      "researchStatus": "applicable",
+      "protocolCompletionStatus": "incomplete",
+      "freshnessStatus": "undated",
+      "countyCount": 1,
+      "incompleteCountyCount": 1,
+      "notResearchedCountyCount": 1,
+      "priorCompleteGbifCountyCount": 0,
+      "gbifEvidenceCountyCount": 0,
+      "verifiedPresentCountyCount": 0,
+      "remainingCountyFips": [
+        "11001"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batchId": "gbif-round60-dc-001",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "melaleuca-quinquenervia"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-001.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-002",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "rottboellia-cochinchinensis"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-002.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-003",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "saccharum-spontaneum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-003.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-004",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "salvinia-molesta"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-004.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-005",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-tampicense"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-005.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-006",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-torvum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-006.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-007",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "solanum-viarum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-007.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-008",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "sparganium-erectum"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-008.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-009",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "tridax-procumbens"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-009.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-010",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "urochloa-panicoides"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-010.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-011",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "acer-platanoides"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-011.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-012",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "berberis-thunbergii"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-012.json"
+    },
+    {
+      "batchId": "gbif-round60-dc-013",
+      "stateCode": "DC",
+      "sourceId": "gbif-preserved-specimens",
+      "speciesIds": [
+        "celastrus-orbiculatus"
+      ],
+      "stateSpeciesScreenCount": 1,
+      "countyOutcomeCount": 1,
+      "candidateFile": "gbif-round60-dc-013.json"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "batchId": "gbif-round60-dc-001",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-001.json",
+      "sha256": "f540ace4352893511d9ac5ff2879f7caa471dbba7013348d9d6c9e1f92f7fb08",
+      "bytes": 318
+    },
+    {
+      "batchId": "gbif-round60-dc-002",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-002.json",
+      "sha256": "45c414c6c689579d6f0e0b53f8e236b7cba6427bac59f36901c7a68cc0ef0621",
+      "bytes": 322
+    },
+    {
+      "batchId": "gbif-round60-dc-003",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-003.json",
+      "sha256": "6dcb52cacc6cabc6358161d4cd36ec41a1fa30741e09c0119d434f5d1c665776",
+      "bytes": 315
+    },
+    {
+      "batchId": "gbif-round60-dc-004",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-004.json",
+      "sha256": "69b00c4a3bec23110905b26d3e62cd5f4fe8d5faef91b966a5ff172f62419cd8",
+      "bytes": 311
+    },
+    {
+      "batchId": "gbif-round60-dc-005",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-005.json",
+      "sha256": "54c8d9fa675ee4c2ef46f8f854fab14efad8621ab887506bdedf55a9f5e1a024",
+      "bytes": 313
+    },
+    {
+      "batchId": "gbif-round60-dc-006",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-006.json",
+      "sha256": "f5fbd80b680d1161f7b88d19a6154461486e14481007123441d5cf21853f1c5f",
+      "bytes": 309
+    },
+    {
+      "batchId": "gbif-round60-dc-007",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-007.json",
+      "sha256": "72ed563659fba8246707923538dd8ef8765a58bd25d1e6fc87df4afab2578a75",
+      "bytes": 309
+    },
+    {
+      "batchId": "gbif-round60-dc-008",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-008.json",
+      "sha256": "2f1b6c30897ab2281b2f52dc81fc87341f972efc70e2ab90742711f4c5d0360a",
+      "bytes": 313
+    },
+    {
+      "batchId": "gbif-round60-dc-009",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-009.json",
+      "sha256": "6143996a107be89d64c08890384ef20e809242369fe21b7f84f3856fe39e3789",
+      "bytes": 312
+    },
+    {
+      "batchId": "gbif-round60-dc-010",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-010.json",
+      "sha256": "88d93815ca2305fc307dea9cdd9dc7009d6e15e852d0a554be72b0106f2c61b5",
+      "bytes": 314
+    },
+    {
+      "batchId": "gbif-round60-dc-011",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-011.json",
+      "sha256": "278f68272ae7cf9d1351270b02ae8e65cd39d483aa42ec05c124f4650e416e5c",
+      "bytes": 311
+    },
+    {
+      "batchId": "gbif-round60-dc-012",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-012.json",
+      "sha256": "1b52abed1e5364285cbd094d81c76025afc7e975d34e0d31aba235bf2b28cd08",
+      "bytes": 314
+    },
+    {
+      "batchId": "gbif-round60-dc-013",
+      "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-013.json",
+      "sha256": "e6b7c293279577d53ddce70e8c178d20630e8d0681a34e1d23f447ad8f10d69c",
+      "bytes": 316
+    }
+  ]
+}

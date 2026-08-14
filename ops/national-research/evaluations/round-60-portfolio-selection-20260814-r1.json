@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-60-portfolio-selection-20260814-r1",
+  "roundId": "gbif-round60",
+  "evaluatedAt": "2026-08-14T20:44:30.000Z",
+  "result": "selected-awaiting-contract-registration",
+  "releaseThreshold": {
+    "meaningfulMilestone": "complete and integrate both remaining cache-backed positive-net state-adapter jurisdictions before shared generation",
+    "minimumCompletedJurisdictions": 2,
+    "minimumNetUniquePairMovement": 20,
+    "requiredProtocolCells": 20
+  },
+  "baseline": {
+    "asOf": "2026-08-10",
+    "gitSha": "9fe5b7ab54614539c57f0f53088a1063ef2e8bde",
+    "national": {
+      "jurisdictions": 51,
+      "activeCountyEquivalents": 3144,
+      "stateSpeciesDenominator": 127704,
+      "stateSpeciesApplicable": 5064,
+      "stateSpeciesNotApplicable": 0,
+      "stateSpeciesUnknown": 122640,
+      "stateSpeciesBlocked": 0,
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 56071,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 347982,
+      "notResearched": 7468515,
+      "protocolComplete": 5135,
+      "protocolIncomplete": 14182,
+      "protocolBlocked": 59,
+      "protocolCurrent": 4524,
+      "protocolStale": 611,
+      "protocolUndated": 14241,
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "remainingApplicableProtocolCountyScreens": 923897
+    },
+    "selectedStates": {
+      "DC": {
+        "totalPairs": 2504,
+        "verifiedPresent": 13,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 5,
+        "notResearched": 2486,
+        "evidence": 13,
+        "rejections": 3,
+        "runs": 6,
+        "protocolComplete": 18,
+        "protocolIncomplete": 67,
+        "protocolBlocked": 0,
+        "protocolCurrent": 5,
+        "protocolStale": 13,
+        "protocolUndated": 67,
+        "buildTimeBlockerCount": 6
+      },
+      "CO": {
+        "totalPairs": 160256,
+        "verifiedPresent": 1471,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 7802,
+        "notResearched": 150983,
+        "evidence": 8105,
+        "rejections": 1742,
+        "runs": 11,
+        "protocolComplete": 130,
+        "protocolIncomplete": 8,
+        "protocolBlocked": 13,
+        "protocolCurrent": 130,
+        "protocolStale": 0,
+        "protocolUndated": 21,
+        "buildTimeBlockerCount": 5
+      }
+    },
+    "operations": {
+      "jobs": {"total": 341, "completed": 258, "failed": 60, "cancelled": 21, "blocked": 2, "active": 0},
+      "leases": {"total": 344, "completed": 262, "failed": 71, "cancelled": 9, "recovered": 2, "active": 0},
+      "integrations": {"total": 262, "integrated": 258, "rejected": 2, "changesRequested": 2, "pending": 0}
+    }
+  },
+  "previousRoundScore": {
+    "evaluationPath": "ops/national-research/evaluations/round-59-gbif-ri-hi-de-vt-20260810-r1.json",
+    "evaluationSha256": "223c9a90d217745f4e44d2b75cc3b35faa482684b608469123faf9f16132bf6f",
+    "evaluationBytes": 27000,
+    "plannedJobs": 24,
+    "completedJobs": 24,
+    "grossAttemptPairScopes": 119,
+    "completedUniquePairs": 109,
+    "netUniquePairMovement": 109,
+    "verifiedPresentMovement": 6,
+    "researchedUnresolvedMovement": 103,
+    "notResearchedMovement": -109,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0,
+    "protocolCellsCompleted": 24,
+    "certificationBlockersRemoved": 0,
+    "liveProviderAttempts": 26,
+    "successfulOccurrencePages": 24,
+    "cachedTaxonomyResponses": 26,
+    "preventedTaxonomyRequests": 26,
+    "providerCandidates": 136,
+    "retainedArtifacts": 50,
+    "retainedArtifactBytes": 63057,
+    "exactWorkerWallSeconds": 91.668,
+    "peakObservedRssMiB": 225.145,
+    "providerRetries": 2,
+    "manifestManualInterventions": 9,
+    "pairsPerLiveAttempt": 4.1923077,
+    "pairsPerSuccessfulLiveCall": 4.5416667,
+    "pairsPerSummedWorkerHour": 4280.665,
+    "generationSeconds": 397.875,
+    "byteReplaySeconds": 742.778,
+    "researchIntegritySeconds": 441.765,
+    "typecheckSeconds": 2.306,
+    "lintSeconds": 2.051,
+    "buildSeconds": 23.718,
+    "externalVerificationSeconds": 840
+  },
+  "recoveryAudit": {
+    "sourceVerificationFilesScanned": 359,
+    "parseErrors": 0,
+    "historicalFailedJobsOverlappingSelectedJurisdictions": 4,
+    "retainedOccurrencePagesOverlappingSelectedScope": 0,
+    "committedPartialReceiptsOverlappingSelectedScope": 0,
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "taxonomyCacheSha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "taxonomyCacheEntries": 53,
+    "uniqueSelectedTaxonomyIdentities": 20,
+    "reusableTaxonomyResponsesAcrossJobs": 20,
+    "preventedProviderRequests": 20,
+    "disposition": "No retained state-bound occurrence page overlaps the exact selected DC or CO taxon scope. Preserve historical failed jobs and reuse only the provenance-compatible taxonomy cache."
+  },
+  "nationalRanking": {
+    "statesEvaluated": 51,
+    "cacheBackedPositiveNetStates": 2,
+    "rankingOrder": [
+      "expected-net-new-unique-pair-movement",
+      "national-reuse",
+      "protocol-impact",
+      "authority-and-freshness",
+      "positive-yield",
+      "provider-and-review-cost",
+      "taxonomy-and-geography-confidence",
+      "resource-and-retry-risk"
+    ],
+    "selected": [
+      {"rank": 1, "stateCode": "DC", "screens": 13, "grossCountyPairs": 13, "expectedNetNewPairs": 13, "expectedLiveCalls": 13, "pairsPerCall": 1},
+      {"rank": 2, "stateCode": "CO", "screens": 7, "grossCountyPairs": 448, "expectedNetNewPairs": 7, "expectedLiveCalls": 7, "pairsPerCall": 1}
+    ],
+    "deferred": [
+      {"workClass": "national-gbif-download-actor", "reason": "Higher national reuse is plausible but no registered versioned authenticated complete-download actor or validated partition-replay receipt contract exists."},
+      {"workClass": "applicability", "reason": "Fifty-one jurisdictions remain certification-incomplete on full-catalog applicability; source discovery and exact review have no measured county-pair movement forecast."},
+      {"workClass": "freshness", "reason": "Six hundred eleven stale AFPE cells require a current versioned national replacement, not another mutable page search."},
+      {"workClass": "taxonomy-geography-exceptions", "reason": "Ambiguous taxonomy and geography require exact review and cannot be converted into determinations or provider repeats."}
+    ]
+  },
+  "selectedPortfolio": {
+    "planDirectory": "ops/national-research/plans/round-60-20260814",
+    "planFiles": [
+      {"stateCode": "DC", "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-plan.json", "sha256": "08db3b39b1bb9e07a2e17e9c99ea4c2b989cf02b95e0ff26e427f86514984b20", "screens": 13, "grossPairs": 13, "expectedNetPairs": 13},
+      {"stateCode": "CO", "path": "ops/national-research/plans/round-60-20260814/gbif-round60-co-plan.json", "sha256": "72554c99624c924a29191f9bb3843cf6c030a3510b678d2eddadd986e27ccdfc", "screens": 7, "grossPairs": 448, "expectedNetPairs": 7}
+    ],
+    "plannedJobs": 20,
+    "plannedStateSpeciesScreens": 20,
+    "plannedGrossCountyPairs": 461,
+    "expectedNetUniquePairMovement": 20,
+    "expectedProtocolCellsCompleted": 20,
+    "expectedLiveOccurrenceRequests": 20,
+    "expectedCachedTaxonomyResponses": 20,
+    "expectedPreventedTaxonomyRequests": 20,
+    "expectedPositivePairRange": {"minimum": 0, "maximum": 20},
+    "expectedApplicabilityMovement": 0,
+    "expectedDenominatorMovement": 0,
+    "expectedCertificationBlockerMovement": 0,
+    "capacityEvaluation": "ops/national-research/evaluations/windows-desktop-capacity-20260814-r60.json"
+  },
+  "processLesson": {
+    "lesson": "Receipt completion time, not deterministic run start time, governs explicit-as-of inclusion; partial receipts need native retryable manifests; exhausted cache-positive-net states must be accepted as honest empty plans.",
+    "verifiedImplementation": [
+      "scripts/research/build-gbif-worker-manifest.ts derives complete, partial, or failed status plus retry identities directly from the receipt.",
+      "scripts/test-gbif-state-species-plan.ts accepts only the full honest-empty invariant when a state is exhausted.",
+      "scripts/plan-gbif-state-species-batches.ts still requires cache membership and positive not-researched movement."
+    ],
+    "applied": [
+      "Use explicit 2026-08-14 release generation because Round 60 receipts will complete on 2026-08-14 UTC.",
+      "Use one taxon per isolated worker so a transient provider failure produces one honest partial scope.",
+      "Select only the 20 cache-backed positive-net screens remaining nationally.",
+      "Start four non-overlapping GBIF lanes, the current provider-policy maximum without fresh calibration, and recheck resources before each wave.",
+      "Separate 20 protocol closures from zero expected applicability, denominator, absence, not-detected, conflict, and certification-blocker movement."
+    ]
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false,
+    "failedRequestCanCompleteScope": false,
+    "rejectionCanCreateDetermination": false,
+    "missingGeographyCanCreateDetermination": false
+  }
+}
