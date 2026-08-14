@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round60-co-007-1",
+  "jobId": "gbif-round60-co-007",
+  "leaseId": "lease-gbif-round60-co-007-1",
+  "workerCommit": "5461f5807a57db5e0997afbb8e60c57f3f771d35",
+  "workerBranchHead": "f09f95ab772a642b5dbbac2e271b98c46b3f52cf",
+  "manifestHash": "a7ca700d777a82d45d4cadb7085219eedd30923fdbed5b150e88c66207ab5ee1",
+  "changedPaths": [
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/assertions.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/manifest.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/outcomes.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/receipt.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/rejections.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/reviews.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 64 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 64 complete county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-14T21:25:21.7078079Z",
+  "integrationCommit": "6fe516b9ce6d0a436782bff42de56e9a501ccb37"
+}
