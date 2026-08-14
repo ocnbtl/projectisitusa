@@ -31991,6 +31991,59 @@
         "sha256": "adcaad204e96ee38e9a3d896f01b38caa8307be2e8499ea5579c6d1ca091cd54",
         "bytes": 2694
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round60-co-002-1",
+      "jobId": "gbif-round60-co-002",
+      "leaseId": "lease-gbif-round60-co-002-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-14T21:23:48.2543964Z",
+      "manifestPath": "manifests/gbif-round60-co-002__lease-gbif-round60-co-002-1.json",
+      "manifestHash": "a7c02c4b11ec23633e72fb9b4361c11b41062b97e8e46fa5e7ef2c3dfffa1d67",
+      "manifestBytes": 9618,
+      "workerCommit": "8a8505e80c60a4d05085fd3688bc5dc79990af40",
+      "workerBranchHead": "9da339c9813be5312e05fa98429d861a7854ec1b",
+      "reviewedAt": "2026-08-14T21:23:51.0997044Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 64 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/assertions.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/manifest.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/outcomes.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/receipt.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/rejections.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/reviews.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 64 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round60-co-002-1.json",
+        "sha256": "88cf2b58342cb58115dc3b69f29296e2919effd0649c2686f504d9358bb084f0",
+        "bytes": 2529
+      }
     }
   ]
 }
