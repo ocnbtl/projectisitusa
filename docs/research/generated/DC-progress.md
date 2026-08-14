@@ -1,27 +1,27 @@
 # District of Columbia Research Progress
 
-Generated: `2026-08-10T00:00:00.000Z`
+Generated: `2026-08-14T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `1`
 - County-species pairs: `2504`
-- Verified present: `13`
+- Verified present: `15`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5`
-- Not researched: `2486`
-- Determination coverage: `0.52%`
-- Research coverage: `0.72%`
-- Explicit outcome coverage: `0.7188%`
+- Researched unresolved: `16`
+- Not researched: `2473`
+- Determination coverage: `0.60%`
+- Research coverage: `1.24%`
+- Explicit outcome coverage: `1.2380%`
 - Applicable protocol cells: `85`
-- Current complete protocol cells: `5`
-- Protocol completion: `21.18%`
-- Current protocol completion: `5.88%`
-- Evidence records: `13`
-- Research runs: `6`
-- Rejection records: `3`
+- Current complete protocol cells: `18`
+- Protocol completion: `36.47%`
+- Current protocol completion: `21.18%`
+- Evidence records: `17`
+- Research runs: `19`
+- Rejection records: `91`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -32,7 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Norway Maple (`acer-platanoides`) | plants | 1 | 0 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 1 | 0 | 1 |
 | Chocolate Vine (`akebia-quinata`) | plants | 1 | 0 | 1 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 1 | 0 | 1 |
@@ -40,9 +39,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Onionweed (`asphodelus-fistulosus`) | plants | 1 | 0 | 1 |
 | Animated oat (`avena-sterilis`) | plants | 1 | 0 | 1 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 1 | 0 | 1 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 1 | 0 | 1 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 1 | 0 | 1 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 1 | 0 | 1 |
 | Jio (`commelina-benghalensis`) | plants | 1 | 0 | 1 |
 | Common crupina (`crupina-vulgaris`) | plants | 1 | 0 | 1 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 1 | 0 | 1 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hydrilla (`hydrilla`) | plants | 1 | 0 | 1 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 1 | 0 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 1 | 0 | 1 |
+| Swamp morning-glory (`ipomoea-aquatica`) | plants | 1 | 0 | 1 |
+| Asian marshweed (`limnophila-sessiliflora`) | plants | 1 | 0 | 1 |
+| African boxthorn (`lycium-ferocissimum`) | plants | 1 | 0 | 1 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | not run | 0 | 0 |
+| GBIF preserved specimen records | operational | 2026-08-14T21:11:11.079Z | 2 | 13 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,6 +1,6 @@
 # Colorado Research Progress
 
-Generated: `2026-08-10T00:00:00.000Z`
+Generated: `2026-08-14T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-10T00:00:00.000Z`
 - Verified present: `1471`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7802`
-- Not researched: `150983`
+- Researched unresolved: `7809`
+- Not researched: `150976`
 - Determination coverage: `0.92%`
 - Research coverage: `5.79%`
-- Explicit outcome coverage: `5.7864%`
+- Explicit outcome coverage: `5.7907%`
 - Applicable protocol cells: `151`
-- Current complete protocol cells: `130`
-- Protocol completion: `86.09%`
-- Current protocol completion: `86.09%`
+- Current complete protocol cells: `137`
+- Protocol completion: `90.73%`
+- Current protocol completion: `90.73%`
 - Evidence records: `8105`
-- Research runs: `11`
+- Research runs: `18`
 - Rejection records: `1742`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,15 +32,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 1 | 63 | 2 |
-| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 1 | 63 | 2 |
-| Mimosa webworm (`homadaula-albizziae`) | insects | 1 | 63 | 2 |
-| Cottony cushion scale (`icerya-purchasi`) | insects | 1 | 63 | 2 |
-| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 1 | 63 | 2 |
-| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 1 | 63 | 2 |
-| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 1 | 63 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 64 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 64 | 1 |
+| Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 64 | 1 |
+| Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 64 | 1 |
+| Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 64 | 1 |
+| Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 64 | 1 |
+| Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 64 | 1 |
+| Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 64 | 1 |
+| Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 64 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 64 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 64 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 64 | 0 |
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
-| GBIF preserved specimen records | operational | 2026-07-31T13:30:56.319Z | 1330 | 125 |
+| GBIF preserved specimen records | operational | 2026-08-14T21:16:20.390Z | 1330 | 132 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "CO",
-  "asOf": "2026-08-10",
-  "generatedAt": "2026-08-10T00:00:00.000Z",
+  "asOf": "2026-08-14",
+  "generatedAt": "2026-08-14T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
@@ -36,29 +36,29 @@
     "verifiedPresent": 1471,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 7802,
-    "notResearched": 150983,
+    "researchedUnresolved": 7809,
+    "notResearched": 150976,
     "determinationCoveragePercent": 0.92,
     "researchCoveragePercent": 5.79,
-    "explicitOutcomePairCount": 9273,
-    "explicitOutcomeCoveragePercent": 5.7864,
+    "explicitOutcomePairCount": 9280,
+    "explicitOutcomeCoveragePercent": 5.7907,
     "conflictCount": 0,
     "evidenceRecordCount": 8105,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 8105,
     "rejectionRecordCount": 1742,
-    "researchRunCount": 11,
+    "researchRunCount": 18,
     "boundedAcquisition": {
       "speciesCount": 145,
       "totalPairs": 9280,
       "verifiedPresent": 1471,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 7802,
-      "notResearched": 7,
-      "researchCoveragePercent": 99.92,
-      "explicitOutcomePairs": 9273,
-      "explicitOutcomeCoveragePercent": 99.9246
+      "researchedUnresolved": 7809,
+      "notResearched": 0,
+      "researchCoveragePercent": 100,
+      "explicitOutcomePairs": 9280,
+      "explicitOutcomeCoveragePercent": 100
     }
   },
   "migrationCandidates": {
@@ -263,9 +263,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": "2026-07-31T13:30:56.319Z",
+      "lastRunAt": "2026-08-14T21:16:20.390Z",
       "evidencePairCount": 1330,
-      "screenedSpeciesCount": 125
+      "screenedSpeciesCount": 132
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -375,14 +375,14 @@
     "totalCells": 435,
     "applicableCells": 151,
     "notApplicableCells": 284,
-    "completeCells": 130,
-    "incompleteCells": 8,
+    "completeCells": 137,
+    "incompleteCells": 1,
     "blockedCells": 13,
-    "currentCells": 130,
+    "currentCells": 137,
     "staleCells": 0,
-    "undatedCells": 21,
-    "applicableCompletionPercent": 86.09,
-    "currentCompletePercent": 86.09,
+    "undatedCells": 14,
+    "applicableCompletionPercent": 90.73,
+    "currentCompletePercent": 90.73,
     "regulatedAndHighApplicableCells": 110,
     "regulatedAndHighCurrentCompleteCells": 110,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -391,14 +391,14 @@
       {
         "category": "fungi-diseases",
         "applicableCells": 12,
-        "currentCompleteCells": 2,
-        "currentCompletePercent": 16.67
+        "currentCompleteCells": 6,
+        "currentCompletePercent": 50
       },
       {
         "category": "insects",
         "applicableCells": 14,
-        "currentCompleteCells": 4,
-        "currentCompletePercent": 28.57
+        "currentCompleteCells": 7,
+        "currentCompletePercent": 50
       },
       {
         "category": "plants",
@@ -435,15 +435,15 @@
       {
         "priority": "baseline",
         "applicableCells": 26,
-        "currentCompleteCells": 6,
-        "currentCompletePercent": 23.08
+        "currentCompleteCells": 13,
+        "currentCompletePercent": 50
       }
     ],
     "requiredSourceStatus": [
       {
         "sourceId": "gbif-preserved-specimens",
         "applicableCells": 133,
-        "currentCompleteCells": 125,
+        "currentCompleteCells": 132,
         "processed": false
       },
       {
@@ -455,97 +455,6 @@
     ]
   },
   "nextQueue": [
-    {
-      "speciesId": "discula-destructiva",
-      "commonName": "Dogwood Anthracnose",
-      "scientificName": "Discula destructiva",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 1,
-      "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 1632
-    },
-    {
-      "speciesId": "dryocosmus-kuriphilus",
-      "commonName": "Asian Chestnut Gall Wasp",
-      "scientificName": "Dryocosmus kuriphilus",
-      "category": "insects",
-      "notResearchedCountyCount": 1,
-      "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 1632
-    },
-    {
-      "speciesId": "homadaula-albizziae",
-      "commonName": "Mimosa webworm",
-      "scientificName": "Homadaula albizziae",
-      "category": "insects",
-      "notResearchedCountyCount": 1,
-      "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 1632
-    },
-    {
-      "speciesId": "icerya-purchasi",
-      "commonName": "Cottony cushion scale",
-      "scientificName": "Icerya purchasi",
-      "category": "insects",
-      "notResearchedCountyCount": 1,
-      "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 1632
-    },
-    {
-      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
-      "commonName": "Butternut Canker Fungus",
-      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 1,
-      "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 1632
-    },
-    {
-      "speciesId": "phytophthora-cinnamomi",
-      "commonName": "Phytophthora Root Rot",
-      "scientificName": "Phytophthora cinnamomi",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 1,
-      "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 1632
-    },
-    {
-      "speciesId": "raffaelea-lauricola",
-      "commonName": "Laurel wilt",
-      "scientificName": "Raffaelea lauricola",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 1,
-      "researchedUnresolvedCountyCount": 63,
-      "missingProtocolSourceIds": [
-        "gbif-preserved-specimens",
-        "usfs-afpe"
-      ],
-      "priorityScore": 1632
-    },
     {
       "speciesId": "aspidiotus-duplex",
       "commonName": "Camphor scale",
@@ -562,6 +471,90 @@
       "speciesId": "cryphonectria-parasitica",
       "commonName": "Chestnut Blight",
       "scientificName": "Cryphonectria parasitica",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 641
+    },
+    {
+      "speciesId": "discula-destructiva",
+      "commonName": "Dogwood Anthracnose",
+      "scientificName": "Discula destructiva",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 641
+    },
+    {
+      "speciesId": "dryocosmus-kuriphilus",
+      "commonName": "Asian Chestnut Gall Wasp",
+      "scientificName": "Dryocosmus kuriphilus",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 641
+    },
+    {
+      "speciesId": "homadaula-albizziae",
+      "commonName": "Mimosa webworm",
+      "scientificName": "Homadaula albizziae",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 641
+    },
+    {
+      "speciesId": "icerya-purchasi",
+      "commonName": "Cottony cushion scale",
+      "scientificName": "Icerya purchasi",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 641
+    },
+    {
+      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
+      "commonName": "Butternut Canker Fungus",
+      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 641
+    },
+    {
+      "speciesId": "phytophthora-cinnamomi",
+      "commonName": "Phytophthora Root Rot",
+      "scientificName": "Phytophthora cinnamomi",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 64,
+      "missingProtocolSourceIds": [
+        "usfs-afpe"
+      ],
+      "priorityScore": 641
+    },
+    {
+      "speciesId": "raffaelea-lauricola",
+      "commonName": "Laurel wilt",
+      "scientificName": "Raffaelea lauricola",
       "category": "fungi-diseases",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 64,
