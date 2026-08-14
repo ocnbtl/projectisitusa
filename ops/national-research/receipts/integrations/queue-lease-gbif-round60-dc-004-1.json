@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round60-dc-004-1",
+  "jobId": "gbif-round60-dc-004",
+  "leaseId": "lease-gbif-round60-dc-004-1",
+  "workerCommit": "e80f2e206e4990592413edce30a233c91aee2878",
+  "workerBranchHead": "7c209f6e75f46661f9a37ca68b5e1245436c9fb7",
+  "manifestHash": "7e763145e1125a5e45dd3ccd116bcb3ea1fda717c9d807271b68dac96226bb8d",
+  "changedPaths": [
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/artifacts/gbif-occurrences-salvinia-molesta-000000.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/artifacts/gbif-species-match-salvinia-molesta.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/assertions.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/manifest.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/outcomes.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/receipt.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/rejections.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/reviews.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__fb16a5f95462/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 1 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN integrated the exact independently reviewed statewide GBIF content and manifest commits without conflict. Canonical validation confirmed 1 complete county outcomes, 0 accepted assertions and reviews, 1 explicit rejections, zero unsupported negative determinations, and only lease-permitted output paths.",
+  "integrator": "MAIN",
+  "integratedAt": "2026-08-14T17:04:11.000Z",
+  "integrationCommit": "e84566dae6151e5123b4c28e2f70dbdc2fbafce9"
+}
