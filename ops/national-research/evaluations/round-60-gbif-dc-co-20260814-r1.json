@@ -1,0 +1,997 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-60-gbif-dc-co-20260814-r1",
+  "roundId": "gbif-round60",
+  "evaluatedAt": "2026-08-14T22:27:02.000Z",
+  "result": "complete-released-and-externally-verified",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "Twenty exact state-source protocol cells were completed across two jurisdictions, Colorado crossed the 90 percent applicable-protocol threshold and removed one certification blocker, the final matrix moved twenty unique county-species pairs, and the release passed deterministic generation, integrity, build, live-byte, and production browser gates."
+  },
+  "baseline": {
+    "commit": "9fe5b7ab54614539c57f0f53088a1063ef2e8bde",
+    "asOf": "2026-08-10",
+    "workerBaseCommit": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5064,
+        "notApplicable": 0,
+        "unknown": 122640,
+        "blocked": 0,
+        "fullyAccounted": 6516,
+        "partiallyAccounted": 1,
+        "untouchedByCountyResearch": 121187
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 56071,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 347982,
+        "notResearched": 7468515
+      },
+      "protocolCells": {
+        "total": 39866,
+        "applicable": 19376,
+        "notApplicable": 20490,
+        "complete": 5135,
+        "incomplete": 14182,
+        "blocked": 59,
+        "current": 4524,
+        "stale": 611,
+        "undated": 14241,
+        "regulatedAndHighPriorityCurrentComplete": 2352,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "evidence": 189245,
+        "runEvidence": 159115,
+        "bootstrapEvidence": 30130,
+        "rejections": 43871,
+        "selectedExplicitOutcomePairs": 358963,
+        "stateSelectedRuns": 634,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "certificationBlockerEntries": 243,
+      "remainingApplicableProtocolCountyScreens": 923897
+    },
+    "affectedStates": {
+      "DC": {
+        "stateCode": "DC",
+        "countySpecies": {
+          "denominator": 2504,
+          "verifiedPresent": 13,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 5,
+          "notResearched": 2486,
+          "explicitOutcomePairs": 18,
+          "evidenceRecords": 13,
+          "rejections": 3,
+          "selectedRuns": 6,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unknown": 2437,
+          "blocked": 0,
+          "fullyAccounted": 18,
+          "partiallyAccounted": 0,
+          "untouchedByCountyResearch": 2486
+        },
+        "protocolCells": {
+          "total": 201,
+          "applicable": 85,
+          "notApplicable": 116,
+          "complete": 18,
+          "incomplete": 67,
+          "blocked": 0,
+          "current": 5,
+          "stale": 13,
+          "undated": 67,
+          "applicableCompletionPercent": 21.18,
+          "regulatedAndHighPriorityCurrentComplete": 0,
+          "regulatedAndHighPriorityApplicable": 49
+        },
+        "buildTimeReady": false,
+        "buildTimeBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "CO": {
+        "stateCode": "CO",
+        "countySpecies": {
+          "denominator": 160256,
+          "verifiedPresent": 1471,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7802,
+          "notResearched": 150983,
+          "explicitOutcomePairs": 9273,
+          "evidenceRecords": 8105,
+          "rejections": 1742,
+          "selectedRuns": 11,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 133,
+          "notApplicable": 0,
+          "unknown": 2371,
+          "blocked": 0,
+          "fullyAccounted": 145,
+          "partiallyAccounted": 0,
+          "untouchedByCountyResearch": 2359
+        },
+        "protocolCells": {
+          "total": 435,
+          "applicable": 151,
+          "notApplicable": 284,
+          "complete": 130,
+          "incomplete": 8,
+          "blocked": 13,
+          "current": 130,
+          "stale": 0,
+          "undated": 21,
+          "applicableCompletionPercent": 86.09,
+          "regulatedAndHighPriorityCurrentComplete": 110,
+          "regulatedAndHighPriorityApplicable": 110
+        },
+        "buildTimeReady": false,
+        "buildTimeBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "operations": {
+      "jobs": 341,
+      "leases": 344,
+      "integrations": 262
+    }
+  },
+  "planned": {
+    "states": [
+      "CO",
+      "DC"
+    ],
+    "distinctTaxa": 20,
+    "stateTaxonScreens": 20,
+    "grossCountySpeciesPairs": 461,
+    "expectedNetNewUniquePairs": 20,
+    "jobs": 20,
+    "expectedProtocolCellsClosed": 20,
+    "expectedCertificationBlockersRemoved": 0,
+    "expectedProviderCalls": 20,
+    "expectedCachedTaxonomyResponses": 20,
+    "expectedEvidenceFoundRange": {
+      "minimum": 0,
+      "maximum": 20
+    },
+    "expectedNetPairsPerProviderCall": 1,
+    "applicabilityMovement": 0,
+    "denominatorMovement": 0
+  },
+  "recoveryAudit": {
+    "sourceVerificationFilesScanned": 359,
+    "historicalFailedJobsOverlappingSelectedJurisdictions": 4,
+    "retainedOccurrencePagesMatchingScope": 0,
+    "committedPartialReceiptsMatchingScope": 0,
+    "taxonomyIdentitiesReused": 20,
+    "providerRequestsPrevented": 20,
+    "structuralChange": "Colorado gross protocol completion and net-new matrix movement were scored separately. The selected state-bound adapter remained one taxon per job; no failed or partial occurrence page could be reused. Taxonomy identities were reused across all twenty jobs.",
+    "qualification": "No retained state-bound occurrence page overlaps the exact selected DC or CO taxon scope. Preserve historical failed jobs and reuse only the provenance-compatible taxonomy cache."
+  },
+  "semanticPreflight": {
+    "jobsAttested": 20,
+    "exactBaseSha": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+    "frozenSkillVersion": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "frozenSkillCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+    "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b",
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "taxonomyCacheSha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "candidatePairCount": 461,
+    "expectedInitialNetworkRequests": 20,
+    "actualPreflightNetworkRequests": 0,
+    "uniqueSuccessfulDeterministicRunPaths": 20,
+    "uniquePartialDeterministicRunPaths": 0,
+    "scopeMismatches": 0,
+    "overlappingLeases": 0,
+    "dependencyResolutionFailures": 0,
+    "writableStagingFailures": 0
+  },
+  "execution": {
+    "jobsAttempted": 20,
+    "jobsCompleted": 20,
+    "jobsFailedFinal": 0,
+    "acquisitionAttempts": 20,
+    "completeAttempts": 20,
+    "partialAttempts": 0,
+    "leasesCompleted": 20,
+    "leasesFailedRetryable": 0,
+    "integrationsCompleted": 20,
+    "mergeConflicts": 0,
+    "workerRetryLeases": 0,
+    "providerRequestRetriesWithinAttempt": 0,
+    "failedProviderAttempts": 0,
+    "manifestRecordedManualInterventions": 0,
+    "reviewReceiptManualInterventions": 0,
+    "integrationReceiptManualInterventions": 0,
+    "workerAttemptsWithInterventions": 0,
+    "manualInterventionQualification": "All worker manifests and accepted lifecycle receipts record zero manual interventions. MAIN release tooling corrections are reported separately and are not added to worker acquisition counters.",
+    "liveWorkerTopology": 4,
+    "providerLimitedTopology": 4,
+    "acquisitionSpanSeconds": 984.857,
+    "summedWorkerWallSeconds": 40.503,
+    "manifestRoundedWorkerWallSeconds": 47,
+    "peakObservedRssMb": 223.316,
+    "integrationLatency": {
+      "jobs": 20,
+      "submittedToReviewSeconds": 49.206,
+      "reviewToIntegrationSeconds": 61.62800000000001,
+      "submittedToIntegrationSeconds": 110.834,
+      "averageSubmittedToIntegrationSeconds": 5.5417000000000005,
+      "minimumSubmittedToIntegrationSeconds": 2,
+      "maximumSubmittedToIntegrationSeconds": 6.517,
+      "broadObservedSpanSeconds": null,
+      "timestampContradiction": "DC jobs 002 through 004 have lifecycle timestamps recorded around 17:04Z, before their actual 20:59Z acquisition telemetry, due to a UTC/local wrapper mistake. Each job retains correct internal submitted-reviewed-integrated ordering and exact byte/tree validation, so per-job latency is usable; a cross-job first-submit-to-last-integrate span is not."
+    },
+    "telemetryArchive": {
+      "expectedFiles": 20,
+      "archivedFiles": 20,
+      "bytes": 30837,
+      "stagingByteIdentity": "pass",
+      "completeFiles": 20,
+      "partialFiles": 0,
+      "wallSecondsSum": 40.503,
+      "peakRssMb": 223.316,
+      "firstStartedAt": "2026-08-14T20:59:55.624Z",
+      "lastFinishedAt": "2026-08-14T21:16:20.481Z",
+      "observedSpanSeconds": 984.857,
+      "descriptors": [
+        {
+          "jobId": "gbif-round60-co-001",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-co-001-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "e2818e3811300aed13d428e704971eb2c9980333942ad13ec3f5d4b0cfba2e3e",
+          "bytes": 1543,
+          "wallSeconds": 1.94,
+          "peakRssMb": 218.258,
+          "startedAt": "2026-08-14T21:11:06.521Z",
+          "finishedAt": "2026-08-14T21:11:08.461Z"
+        },
+        {
+          "jobId": "gbif-round60-co-002",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-co-002-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "a9cbbb18bf5affaa2aca09636aa93f324432477ce081699306f80145563d03f7",
+          "bytes": 1544,
+          "wallSeconds": 1.974,
+          "peakRssMb": 219.773,
+          "startedAt": "2026-08-14T21:11:09.233Z",
+          "finishedAt": "2026-08-14T21:11:11.207Z"
+        },
+        {
+          "jobId": "gbif-round60-co-003",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-co-003-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "18fc64c81a62279573f527d401d92c2a07532bbcb9a44f2a0d5237134ffdc733",
+          "bytes": 1544,
+          "wallSeconds": 1.991,
+          "peakRssMb": 206.738,
+          "startedAt": "2026-08-14T21:11:08.386Z",
+          "finishedAt": "2026-08-14T21:11:10.377Z"
+        },
+        {
+          "jobId": "gbif-round60-co-004",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-co-004-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "9f62e1a942c1897e74be5ca54b5582a34322a7141156fad1580be5976b99163c",
+          "bytes": 1544,
+          "wallSeconds": 1.935,
+          "peakRssMb": 216.195,
+          "startedAt": "2026-08-14T21:16:18.546Z",
+          "finishedAt": "2026-08-14T21:16:20.481Z"
+        },
+        {
+          "jobId": "gbif-round60-co-005",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-co-005-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "6bc6de75017bea4d3fbc54763cede8bbee61a9f598e337080df4adda38faf238",
+          "bytes": 1543,
+          "wallSeconds": 1.87,
+          "peakRssMb": 218.797,
+          "startedAt": "2026-08-14T21:16:14.555Z",
+          "finishedAt": "2026-08-14T21:16:16.425Z"
+        },
+        {
+          "jobId": "gbif-round60-co-006",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-co-006-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "3f8b40367857eba337fdcceacfe17782008d9987c3a5c7d58da3998622566dc3",
+          "bytes": 1543,
+          "wallSeconds": 1.93,
+          "peakRssMb": 215.785,
+          "startedAt": "2026-08-14T21:16:16.306Z",
+          "finishedAt": "2026-08-14T21:16:18.236Z"
+        },
+        {
+          "jobId": "gbif-round60-co-007",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-co-007-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "7544d5d222d383fb61bd723870cba082b774ed0bcf1c450b5f697acc1cfe05d0",
+          "bytes": 1544,
+          "wallSeconds": 1.999,
+          "peakRssMb": 216.555,
+          "startedAt": "2026-08-14T21:16:17.799Z",
+          "finishedAt": "2026-08-14T21:16:19.798Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-001",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-001-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "8fc6f048b98378ec1f695d0fec840dce5f58f3396de71bbd64e77b7cfc0cfb68",
+          "bytes": 1541,
+          "wallSeconds": 1.942,
+          "peakRssMb": 219.203,
+          "startedAt": "2026-08-14T21:00:00.109Z",
+          "finishedAt": "2026-08-14T21:00:02.051Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-002",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-002-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "4e2cd5b084e06ffcd60694a2b76b65218f31b9575d0007e6618173165f251b02",
+          "bytes": 1540,
+          "wallSeconds": 2.12,
+          "peakRssMb": 220.961,
+          "startedAt": "2026-08-14T20:59:56.607Z",
+          "finishedAt": "2026-08-14T20:59:58.727Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-003",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-003-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "e8c817ec332c913690e9fb9e48915c5eed33c2d9e5f9863a3f7f55510d230b1d",
+          "bytes": 1541,
+          "wallSeconds": 1.922,
+          "peakRssMb": 211.324,
+          "startedAt": "2026-08-14T20:59:55.624Z",
+          "finishedAt": "2026-08-14T20:59:57.546Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-004",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-004-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "d5b246bb8a3d9ba08329c0f3e2e7ce7c815becdc2858fed6ff8a0b93ac683355",
+          "bytes": 1541,
+          "wallSeconds": 1.896,
+          "peakRssMb": 220.863,
+          "startedAt": "2026-08-14T20:59:58.240Z",
+          "finishedAt": "2026-08-14T21:00:00.136Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-005",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-005-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "cd6c5bf5b00b9059e6d30ea7fbf199c89457c2c859c7e8b29bd6d7aa6b6746b0",
+          "bytes": 1541,
+          "wallSeconds": 1.903,
+          "peakRssMb": 214.984,
+          "startedAt": "2026-08-14T21:07:42.389Z",
+          "finishedAt": "2026-08-14T21:07:44.292Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-006",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-006-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "1e05b0fcf9e85bff404737bfef8ac6c97c81795840e35f59e9b1c4622ef4f0a0",
+          "bytes": 1540,
+          "wallSeconds": 1.844,
+          "peakRssMb": 215.414,
+          "startedAt": "2026-08-14T21:07:41.108Z",
+          "finishedAt": "2026-08-14T21:07:42.952Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-007",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-007-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "7c160fe4dde46fbcf55d3cfb45bff58a4917c91d44fc76c08247ca56752edb03",
+          "bytes": 1541,
+          "wallSeconds": 2.013,
+          "peakRssMb": 214.891,
+          "startedAt": "2026-08-14T21:07:43.974Z",
+          "finishedAt": "2026-08-14T21:07:45.987Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-008",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-008-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "3b734b1d6a591cf05caedca2344da9e3c9c13de2d47d1a883fe6387ae19a3091",
+          "bytes": 1541,
+          "wallSeconds": 2.135,
+          "peakRssMb": 219.488,
+          "startedAt": "2026-08-14T21:07:47.232Z",
+          "finishedAt": "2026-08-14T21:07:49.367Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-009",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-009-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "fa750c3e458f0d44945d93b14e93937ec41fc05ba2abe3595d238650eb77c2b0",
+          "bytes": 1540,
+          "wallSeconds": 2.027,
+          "peakRssMb": 216.207,
+          "startedAt": "2026-08-14T21:08:59.941Z",
+          "finishedAt": "2026-08-14T21:09:01.968Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-010",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-010-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "08ff7d668754743b99e0f92031b786ce03f6b55f818ab7d94e220984e7018a53",
+          "bytes": 1541,
+          "wallSeconds": 1.971,
+          "peakRssMb": 213.375,
+          "startedAt": "2026-08-14T21:09:01.458Z",
+          "finishedAt": "2026-08-14T21:09:03.429Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-011",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-011-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "7eb059b3941e53a08de2fb4a2118ab9cb8942e8ec10195519847090c3c121256",
+          "bytes": 1543,
+          "wallSeconds": 2.683,
+          "peakRssMb": 220.383,
+          "startedAt": "2026-08-14T21:09:02.539Z",
+          "finishedAt": "2026-08-14T21:09:05.222Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-012",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-012-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "313cf86db04e60638aa5f1e1135b8b070a358cceb7fe492d2d2d6ba0b6ede07a",
+          "bytes": 1541,
+          "wallSeconds": 2.3,
+          "peakRssMb": 223.316,
+          "startedAt": "2026-08-14T21:09:03.271Z",
+          "finishedAt": "2026-08-14T21:09:05.571Z"
+        },
+        {
+          "jobId": "gbif-round60-dc-013",
+          "attempt": 1,
+          "path": "ops/national-research/attempt-telemetry/gbif-round60-dc-013-attempt-1.json",
+          "resultStatus": "complete",
+          "sha256": "49930c73ca4ad48d73d3e089d04401adf4945b17dd26f07ff42a342fc27d6cf3",
+          "bytes": 1541,
+          "wallSeconds": 2.108,
+          "peakRssMb": 218.555,
+          "startedAt": "2026-08-14T21:11:09.065Z",
+          "finishedAt": "2026-08-14T21:11:11.173Z"
+        }
+      ],
+      "status": "durable-in-content-commit"
+    }
+  },
+  "acquisition": {
+    "sourceId": "gbif-preserved-specimens",
+    "completedCountySpeciesOutcomes": 461,
+    "partialNeedsFollowupOutcomes": 0,
+    "evidenceFoundOutcomes": 2,
+    "noQualifyingEvidenceOutcomes": 459,
+    "positivePairYield": 0.004338394793926247,
+    "liveProviderAttempts": 20,
+    "successfulLiveOccurrencePages": 20,
+    "failedLiveAttempts": 0,
+    "additionalPaginationPages": 0,
+    "cachedTaxonomyResponses": 20,
+    "preventedProviderRequests": 20,
+    "completedSourceResponsesIncludingCache": 40,
+    "providerCandidates": 92,
+    "acceptedCandidates": 4,
+    "retainedArtifacts": 40,
+    "retainedArtifactBytes": 53438,
+    "immutableRunFiles": 180,
+    "immutableRunBytes": 933339,
+    "netPairsPerLiveAttempt": 1,
+    "netUniquePairMovementPerSummedWorkerHour": 1777.6461002888675,
+    "netUniquePairMovementPerObservedSpanHour": 73.10706021280247,
+    "providerCandidatesPerLiveAttempt": 4.6,
+    "candidateAcceptanceRate": 0.043478260869565216,
+    "providerHealthProbeRequests": 1,
+    "totalProviderContactsIncludingHealth": 21,
+    "netPairsPerContactIncludingHealth": 0.9523809523809523
+  },
+  "grossEventVolume": {
+    "totalEvents": 557,
+    "pairOutcomes": 461,
+    "assertionEvents": 4,
+    "publicationEligibleAssertions": 4,
+    "reviewEvents": 4,
+    "rejectionRecords": 88,
+    "duplicateRecords": 0,
+    "errors": 0,
+    "eventFileBytes": 452152,
+    "archivedManifestBytes": 162689,
+    "receiptBytes": 152575,
+    "sourceVerificationBytes": 112485,
+    "reviewReceiptBytes": 50498,
+    "integrationReceiptBytes": 53878
+  },
+  "netFinalMatrixMovement": {
+    "uniqueCountySpeciesPairs": 20,
+    "verifiedPresent": 2,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 18,
+    "notResearched": -20,
+    "applicability": 0,
+    "denominator": 0,
+    "conflicts": 0,
+    "grossOutcomesAlreadyAccountedOrOverlapping": 441,
+    "qualification": "Colorado completed 448 gross county-species outcomes across seven statewide protocol cells but only seven pairs were previously not researched. Gross event volume, protocol completion, and final unique-pair movement are deliberately separate."
+  },
+  "final": {
+    "asOf": "2026-08-14",
+    "integrationCommit": "8ed900da912e4cd7668541aaf54a220ce15042e0",
+    "contentCommit": "1900d69b9079801553b46cc1d6fed164aecee87d",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5064,
+        "notApplicable": 0,
+        "unknown": 122640,
+        "blocked": 0,
+        "fullyAccounted": 6529,
+        "partiallyAccounted": 1,
+        "untouchedByCountyResearch": 121174
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 56073,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 348000,
+        "notResearched": 7468495
+      },
+      "protocolCells": {
+        "total": 39866,
+        "applicable": 19376,
+        "notApplicable": 20490,
+        "complete": 5155,
+        "incomplete": 14162,
+        "blocked": 59,
+        "current": 4544,
+        "stale": 611,
+        "undated": 14221,
+        "regulatedAndHighPriorityCurrentComplete": 2365,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "evidence": 189249,
+        "runEvidence": 159119,
+        "bootstrapEvidence": 30130,
+        "rejections": 43959,
+        "selectedExplicitOutcomePairs": 358983,
+        "stateSelectedRuns": 654,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "certificationBlockerEntries": 242,
+      "remainingApplicableProtocolCountyScreens": 923436
+    },
+    "affectedStates": {
+      "DC": {
+        "stateCode": "DC",
+        "countySpecies": {
+          "denominator": 2504,
+          "verifiedPresent": 15,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 16,
+          "notResearched": 2473,
+          "explicitOutcomePairs": 31,
+          "evidenceRecords": 17,
+          "rejections": 91,
+          "selectedRuns": 19,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 67,
+          "notApplicable": 0,
+          "unknown": 2437,
+          "blocked": 0,
+          "fullyAccounted": 31,
+          "partiallyAccounted": 0,
+          "untouchedByCountyResearch": 2473
+        },
+        "protocolCells": {
+          "total": 201,
+          "applicable": 85,
+          "notApplicable": 116,
+          "complete": 31,
+          "incomplete": 54,
+          "blocked": 0,
+          "current": 18,
+          "stale": 13,
+          "undated": 54,
+          "applicableCompletionPercent": 36.47,
+          "regulatedAndHighPriorityCurrentComplete": 13,
+          "regulatedAndHighPriorityApplicable": 49
+        },
+        "buildTimeReady": false,
+        "buildTimeBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "applicableProtocolCellsAtLeast90",
+          "regulatedAndHighPriorityComplete",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      },
+      "CO": {
+        "stateCode": "CO",
+        "countySpecies": {
+          "denominator": 160256,
+          "verifiedPresent": 1471,
+          "verifiedAbsent": 0,
+          "notDetected": 0,
+          "researchedUnresolved": 7809,
+          "notResearched": 150976,
+          "explicitOutcomePairs": 9280,
+          "evidenceRecords": 8105,
+          "rejections": 1742,
+          "selectedRuns": 18,
+          "conflicts": 0
+        },
+        "stateSpecies": {
+          "denominator": 2504,
+          "applicable": 133,
+          "notApplicable": 0,
+          "unknown": 2371,
+          "blocked": 0,
+          "fullyAccounted": 145,
+          "partiallyAccounted": 0,
+          "untouchedByCountyResearch": 2359
+        },
+        "protocolCells": {
+          "total": 435,
+          "applicable": 151,
+          "notApplicable": 284,
+          "complete": 137,
+          "incomplete": 1,
+          "blocked": 13,
+          "current": 137,
+          "stale": 0,
+          "undated": 14,
+          "applicableCompletionPercent": 90.73,
+          "regulatedAndHighPriorityCurrentComplete": 110,
+          "regulatedAndHighPriorityApplicable": 110
+        },
+        "buildTimeReady": false,
+        "buildTimeBlockers": [
+          "authoritativeCertificationScope",
+          "fullCatalogResearchAccounted",
+          "baselineResearchCoverageCompleteOrBlocked",
+          "requiredCurrentSourceFamiliesProcessed"
+        ]
+      }
+    },
+    "positivePairs": [
+      "11001:acer-platanoides",
+      "11001:celastrus-orbiculatus"
+    ],
+    "operations": {
+      "jobs": {
+        "total": 361,
+        "byStatus": {
+          "blocked": 2,
+          "cancelled": 21,
+          "completed": 278,
+          "failed": 60
+        }
+      },
+      "leases": {
+        "total": 364,
+        "byStatus": {
+          "cancelled": 9,
+          "completed": 282,
+          "failed": 71,
+          "recovered": 2
+        }
+      },
+      "integrationQueue": {
+        "total": 282,
+        "byDecision": {
+          "changes-requested": 2,
+          "integrated": 278,
+          "rejected": 2
+        }
+      }
+    }
+  },
+  "expectedVersusActual": {
+    "expectedJobs": 20,
+    "actualCompletedJobs": 20,
+    "expectedGrossPairs": 461,
+    "actualCompletedGrossPairs": 461,
+    "expectedNetNewPairs": 20,
+    "actualNetNewPairs": 20,
+    "expectedEvidenceFoundRange": {
+      "minimum": 0,
+      "maximum": 20
+    },
+    "actualEvidenceFoundOutcomes": 2,
+    "expectedInitialProviderCalls": 20,
+    "actualLiveProviderAttempts": 20,
+    "actualSuccessfulProviderCalls": 20,
+    "expectedNetPairsPerProviderCall": 1,
+    "actualNetPairsPerLiveAttempt": 1,
+    "expectedProtocolCellsClosed": 20,
+    "actualProtocolCellsClosed": 20,
+    "expectedCertificationBlockersRemoved": 0,
+    "actualCertificationBlockersRemoved": 1,
+    "certificationQualification": "Colorado crossed the 90 percent applicable-protocol threshold and removed one build-time blocker, exceeding the conservative zero-blocker point expectation. No state became certified.",
+    "expectedApplicabilityMovement": 0,
+    "actualApplicabilityMovement": 0,
+    "expectedDenominatorMovement": 0,
+    "actualDenominatorMovement": 0
+  },
+  "release": {
+    "generation": {
+      "asOf": "2026-08-14",
+      "prepareDataSeconds": 29.035,
+      "allStateCompileSeconds": 390.595,
+      "orchestrationDashboardSeconds": 0.652,
+      "readinessDashboardSeconds": 0.635,
+      "totalKnownSeconds": 420.91700000000003,
+      "status": "pass"
+    },
+    "gates": {
+      "allStateByteStability": {
+        "status": "pass",
+        "states": 51,
+        "seconds": 793.71
+      },
+      "researchIndex": {
+        "status": "pass",
+        "seconds": 25.345,
+        "immutableRuns": 639,
+        "pairStatuses": 462209
+      },
+      "researchIntegrity": {
+        "status": "pass",
+        "seconds": null,
+        "immutableRuns": 639,
+        "rawOutcomes": 468030,
+        "assertionsAndReviews": 159431,
+        "rejections": 43959,
+        "unreviewedPublishedAssertions": 0
+      },
+      "dataIntegrity": {
+        "status": "pass",
+        "seconds": 0.493
+      },
+      "stateResearchProjections": {
+        "status": "pass",
+        "states": 51,
+        "seconds": 61
+      },
+      "nationalResearchConfig": {
+        "status": "pass",
+        "seconds": 0.285
+      },
+      "geographyRegistry": {
+        "status": "pass",
+        "seconds": 0.416
+      },
+      "frozenSkills": {
+        "status": "pass",
+        "tests": 97,
+        "violations": 0
+      },
+      "typecheck": {
+        "status": "pass",
+        "seconds": 2.666
+      },
+      "lint": {
+        "status": "pass",
+        "seconds": 6.281
+      },
+      "whitespace": {
+        "status": "pass"
+      },
+      "prohibitedDashScan": {
+        "status": "pass"
+      }
+    },
+    "build": {
+      "status": "pass",
+      "seconds": 26.573,
+      "compileSeconds": 11.3,
+      "nextVersion": "15.5.15",
+      "staticPages": 2512
+    },
+    "browserQa": {
+      "local": {
+        "status": "pass",
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": [
+          "DC",
+          "CO"
+        ],
+        "species": [
+          "acer-platanoides",
+          "celastrus-orbiculatus"
+        ],
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "screenshotsCaptured": 2,
+        "visuallyInspected": 2,
+        "knownConsoleQualification": "Local-only Vercel Insights 404 and MIME messages were observed; production emitted zero warnings and errors."
+      },
+      "production": {
+        "status": "pass",
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": [
+          "DC",
+          "CO"
+        ],
+        "speciesScientificIdentities": [
+          "Acer platanoides",
+          "Celastrus orbiculatus"
+        ],
+        "finalCountAssertionsPassed": true,
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 2,
+        "visuallyInspected": 2
+      }
+    },
+    "postDeploymentGate": {
+      "status": "pass",
+      "routeHostChecks": 16,
+      "byteParityHostFileIdentities": 12
+    },
+    "externalVerification": {
+      "status": "pass",
+      "githubMainSha": "1900d69b9079801553b46cc1d6fed164aecee87d",
+      "githubDeploymentId": 5914278490,
+      "immutableHost": "https://projectisitusa-6m9b6b451-unigentamos.vercel.app",
+      "canonicalHost": "https://isitusa.com",
+      "providerCommitStatusSeconds": 219,
+      "githubDeploymentSeconds": 1,
+      "externalVerificationSecondsFromContentCommit": 826,
+      "privateVercelDeploymentId": null,
+      "runtimeLogs": null
+    },
+    "mainToolingCorrections": {
+      "independentlyReconstructedCategories": 6,
+      "uniqueAllPhaseTotal": null,
+      "qualification": "Six categories were independently reconstructable at receipt time: national-exhaustion wrapper import shape, exact temporary QA cleanup authorization, reserved PowerShell Host variable in the first HTTP wrapper, restricted Node startup ENOMEM before the escalated pinned research-index pass, final HttpClient type failure before the corrected Node GitHub API timestamp, and one malformed read-only PowerShell hash formatter before the corrected local descriptor calculation. Earlier transient MAIN wrapper corrections were not durably identifier-keyed, so no unsupported unique all-phase total is claimed."
+    }
+  },
+  "processLesson": {
+    "lesson": "Rank net-new unique pairs and protocol leverage separately from gross outcomes. Colorado produced 448 complete outcomes but only seven unique final-matrix movements; its real value was closing seven protocol cells and crossing the 90 percent applicable-protocol threshold. Lifecycle timestamps must be range-checked against immutable acquisition telemetry before cross-job latency spans are reported.",
+    "applied": "Round 60 selected DC first for thirteen net pairs in thirteen calls, then Colorado for seven net pairs plus threshold leverage. Sparse workers, cached taxonomy identities, no-network dry-runs, exact ordered scopes, and four provider-limited lanes were applied to all twenty jobs.",
+    "nextRoundChange": "Add machine validation that submittedAt is not earlier than the attempt telemetry finishedAt, and treat an honestly empty cache-aware positive-net plan as exhaustion rather than a failure. Do not issue another cached-taxonomy GBIF state lease until new positive-net scope exists."
+  },
+  "nextRankedPortfolio": [
+    {
+      "rank": 1,
+      "workClass": "national-acquisition-design",
+      "scope": "Versioned provider-native GBIF complete download plus deterministic multi-state partition and replay receipts",
+      "expectedNetPairs": null,
+      "reason": "All current cache-aware state adapter scopes are exhausted for positive net movement. A national acquire-once actor offers the highest reuse, but it is not executable without a versioned authenticated complete-download contract and adversarial partition validation."
+    },
+    {
+      "rank": 2,
+      "workClass": "applicability-source-discovery",
+      "scope": "State-specific operational applicability sources in certification order, beginning KS, KY, LA, and ME",
+      "expectedNetPairs": null,
+      "reason": "Applicability is a separate denominator-decision axis and is the next certification bottleneck; pair evidence-screen follow-up must be reported separately."
+    },
+    {
+      "rank": 3,
+      "workClass": "freshness",
+      "scope": "Current versioned national replacement for the stale AFPE family",
+      "staleProtocolCells": 611,
+      "expectedNetPairs": null,
+      "reason": "Freshness affects 611 cells and cannot be improved by repeating occurrence searches."
+    },
+    {
+      "rank": 4,
+      "workClass": "blocked-exception-review",
+      "scope": "MT taxonomy plus AK, AZ, MI, OH, PA, VT, and WI geography or taxonomy exceptions",
+      "expectedNetPairs": null,
+      "reason": "Exact review can resolve metadata blockers without repeating provider calls, but movement is not promised."
+    },
+    {
+      "rank": 5,
+      "workClass": "state-gbif-acquisition",
+      "scope": "Further cached-taxonomy state searches",
+      "expectedNetPairs": 0,
+      "reason": "The post-Round 60 exhaustive cache-aware positive-net planner returned no eligible states; queued or historically failed jobs do not justify reacquisition."
+    }
+  ],
+  "forecastByWorkClass": {
+    "nationalAcquisitionDesign": {
+      "forecast": null,
+      "qualification": "No executable authenticated/versioned national actor or measured completion profile exists."
+    },
+    "applicabilityReview": {
+      "forecast": null,
+      "qualification": "Source discovery and exact review are manual authority work; no county-pair rate is transferable."
+    },
+    "freshness": {
+      "forecast": null,
+      "qualification": "A current versioned replacement source has not yet been identified."
+    },
+    "blockedExceptions": {
+      "forecast": null,
+      "qualification": "Taxonomy and geography disposition time is case-specific."
+    },
+    "futureStateAcquisition": {
+      "summedWorkerSecondsPerJobObserved": 2.02515,
+      "peakRssMbObserved": 223.316,
+      "qualification": "A runtime observation only; current positive-net cached scope is exhausted and candidate burden can dominate."
+    },
+    "releaseOverhead": {
+      "generationSeconds": 420.91700000000003,
+      "byteStabilitySeconds": 793.71,
+      "buildSeconds": 26.573,
+      "externalVerificationSeconds": 826,
+      "qualification": "These are separate observed components; composite integrity checks overlap and must not be summed into a universal forecast."
+    }
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedAbsence": false,
+    "failedRequestCreatedAbsence": false,
+    "rejectedRecordCreatedAbsence": false,
+    "missingGeographyCreatedDetermination": false,
+    "incompletePaginationMarkedComplete": false,
+    "emptyCompleteScopeCreatedNotDetected": false,
+    "applicabilityInferredFromOccurrenceSilence": false,
+    "partialAttemptSelectedIntoFinalMatrix": false
+  }
+}

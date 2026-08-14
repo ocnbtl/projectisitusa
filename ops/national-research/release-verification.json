@@ -3700,6 +3700,190 @@
       "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, visual, and console checks.",
       "externalVerificationSecondsFromContentCommit": 840,
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and GitHub API matched exact Round 59 content SHA d83ff41d7c746470c443e48aa2819639e212f5b4; GitHub Production deployment 5825692310 succeeded; its immutable host and canonical production alias served all eight intended routes; ten selected DE, HI, RI, and VT files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. The complete content-release research-integrity suite passed in 441.765 seconds. Exact-deployment runtime logs and private Vercel deployment ID were unavailable. Round 59 moved 109 unique final-matrix pairs, including six verified-present and 103 researched-unresolved movements, and closed 24 protocol cells. It created no verified-absence, not-detected, applicability, denominator, certification-blocker, or conflict movement. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-1900d69b9-2026-08-14",
+      "verifiedAt": "2026-08-14T22:27:02.000Z",
+      "commitSha": "1900d69b9079801553b46cc1d6fed164aecee87d",
+      "githubMainSha": "1900d69b9079801553b46cc1d6fed164aecee87d",
+      "githubDeploymentId": 5914278490,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-6m9b6b451-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": null,
+      "vercelDeploymentId": null,
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/HjykzMpCDVEuPAZuZKo5tbZEqvE4",
+      "vercelDeploymentUrl": "projectisitusa-6m9b6b451-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "success",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "1900d69b9079801553b46cc1d6fed164aecee87d",
+        "releaseCommitMetadata": "1900d69b9079801553b46cc1d6fed164aecee87d",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "GitHub main and commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
+      },
+      "deploymentAttempts": [
+        {
+          "githubDeploymentId": 5914278490,
+          "vercelInspectorSlug": "HjykzMpCDVEuPAZuZKo5tbZEqvE4",
+          "source": "git",
+          "state": "success",
+          "vercelCommitStatusCreatedAt": "2026-08-14T22:14:37.000Z",
+          "vercelCommitStatusCompletedAt": "2026-08-14T22:18:16.000Z",
+          "vercelCommitStatusDurationSeconds": 219,
+          "githubDeploymentCreatedAt": "2026-08-14T22:18:16.000Z",
+          "githubDeploymentCompletedAt": "2026-08-14T22:18:17.000Z",
+          "githubDeploymentDurationSeconds": 1,
+          "buildSeconds": null,
+          "githubCommitSha": "1900d69b9079801553b46cc1d6fed164aecee87d",
+          "active": true,
+          "qualification": "Vercel commit-status timing and GitHub deployment timing are provider-native. Exact Vercel build duration, private deployment ID, and runtime logs are unavailable because the canonical repository has no Vercel CLI."
+        }
+      ],
+      "routeChecks": [
+        {
+          "path": "/",
+          "status": 200
+        },
+        {
+          "path": "/about",
+          "status": 200
+        },
+        {
+          "path": "/research?state=DC",
+          "status": 200
+        },
+        {
+          "path": "/research?state=CO",
+          "status": 200
+        },
+        {
+          "path": "/species/acer-platanoides",
+          "status": 200
+        },
+        {
+          "path": "/species/celastrus-orbiculatus",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/DC/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/CO/summary.json",
+          "status": 200
+        }
+      ],
+      "routeCheckHosts": [
+        "https://projectisitusa-6m9b6b451-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "routeHostChecksPassed": 16,
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/DC/summary.json",
+          "bytes": 58928,
+          "sha256": "c3b46cf1980e35e21ea21a0c07281af7629c911fb6b36b0f68d86db2f008de4a"
+        },
+        {
+          "path": "/generated/research/CO/summary.json",
+          "bytes": 161549,
+          "sha256": "018001802a61d56d74d3470abc7a66a1b94343624802f612a33d5357c22a24e9"
+        },
+        {
+          "path": "/generated/research/DC/counties/11001.json",
+          "bytes": 46180,
+          "sha256": "859457c0f6aee7471f431ab0288ef782eddcd0b1c659967ca1a693b4571672ec"
+        },
+        {
+          "path": "/generated/research/CO/counties/08001.json",
+          "bytes": 103069,
+          "sha256": "d15ed5ad532b791d2d7d79f52334ed3f9a022a3559ab121d9230cd3d99713953"
+        },
+        {
+          "path": "/generated/research/CO/counties/08031.json",
+          "bytes": 360397,
+          "sha256": "2b788f16e4b9f1e126416f143a689d8996786f7ed21b741d0de79384a03d7273"
+        },
+        {
+          "path": "/generated/research/CO/counties/08069.json",
+          "bytes": 513062,
+          "sha256": "08be88de06863a2ae1b8743f5143503fbe7e819914f14425eae8dd50682d824f"
+        }
+      ],
+      "byteParityHosts": [
+        "https://projectisitusa-6m9b6b451-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "byteParityHostFileIdentitiesPassed": 12,
+      "browserQa": {
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": [
+          "DC",
+          "CO"
+        ],
+        "counts": {
+          "DC": {
+            "verifiedPresent": 15,
+            "researchedUnresolved": 16,
+            "notResearched": 2473
+          },
+          "CO": {
+            "verifiedPresent": 1471,
+            "researchedUnresolved": 7809,
+            "notResearched": 150976
+          }
+        },
+        "asOf": "2026-08-14",
+        "routeViewportChecks": 6,
+        "finalCountAssertionsPassed": true,
+        "speciesRoutesPassed": true,
+        "speciesScientificIdentities": [
+          "Acer platanoides",
+          "Celastrus orbiculatus"
+        ],
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 2,
+        "productionScreenshotsVisuallyInspected": 2
+      },
+      "runtimeQa": {
+        "activeDeploymentId": null,
+        "runtimeErrorLogRows": null,
+        "runtimeFiveHundredLogRows": null,
+        "queryStatus": "unavailable-no-vercel-cli-in-canonical-toolchain",
+        "contentReleaseResearchIntegritySeconds": null,
+        "qualification": "Exact-deployment runtime logs and the private Vercel deployment ID were not queryable because the canonical repository has no Vercel CLI. Runtime confidence is limited to exact GitHub Production success, direct HTTP 200, twelve live-to-local byte identities, and zero production browser console warnings or errors."
+      },
+      "roundMovement": {
+        "plannedGrossPairs": 461,
+        "completedGrossPairs": 461,
+        "finalMatrixPairsMoved": 20,
+        "verifiedPresent": 2,
+        "researchedUnresolved": 18,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 0,
+        "denominatorMovement": 0,
+        "protocolCellsClosed": 20,
+        "certificationBlockersRemoved": 1
+      },
+      "qaToolingInterventions": [
+        "The first post-compile national-exhaustion wrapper assumed a default module export; the corrected named import confirmed that every cache-aware positive-net state plan is honestly empty.",
+        "Sandbox policy denied exact temporary screenshot cleanup; MAIN resolved and verified the three repository-contained targets, then removed only those targets with scoped approval.",
+        "The first HTTP wrapper used PowerShell reserved variable Host and executed zero checks; the discarded empty result was replaced by the successful literal-host sweep.",
+        "Research-index startup hit Node ENOMEM in the restricted environment under both npm Node 24 and pinned Node 22; the same pinned Node 22 command passed outside the restriction and is the accepted result.",
+        "The first final GitHub timestamp probe used an unavailable HttpClient type; the corrected pinned-Node fetch returned HTTP 200, exact main SHA, and provider Date header.",
+        "The first local hash-formatting wrapper had an empty PowerShell pipe and produced no descriptors; the corrected read-only formatter recomputed all six exact local SHA-256 and byte values."
+      ],
+      "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, visual, and console checks.",
+      "externalVerificationSecondsFromContentCommit": 826,
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and GitHub API matched exact Round 60 content SHA 1900d69b9079801553b46cc1d6fed164aecee87d; GitHub Production deployment 5914278490 succeeded; its immutable host and canonical production alias served all eight intended routes; six selected DC and CO files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. Exact-deployment runtime logs and private Vercel deployment ID were unavailable. Round 60 completed 461 gross outcomes but moved twenty unique final-matrix pairs, including two verified-present and eighteen researched-unresolved movements, closed twenty protocol cells, and removed one Colorado certification blocker. It created no verified-absence, not-detected, applicability, denominator, or conflict movement. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
