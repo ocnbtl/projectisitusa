@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-14T21:16:19.705Z",
+  "runId": "20260814T204930Z__gbif-preserved-specimens__e5275113c636",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CO",
+  "pairKeys": [
+    "08001:raffaelea-lauricola",
+    "08003:raffaelea-lauricola",
+    "08005:raffaelea-lauricola",
+    "08007:raffaelea-lauricola",
+    "08009:raffaelea-lauricola",
+    "08011:raffaelea-lauricola",
+    "08013:raffaelea-lauricola",
+    "08014:raffaelea-lauricola",
+    "08015:raffaelea-lauricola",
+    "08017:raffaelea-lauricola",
+    "08019:raffaelea-lauricola",
+    "08021:raffaelea-lauricola",
+    "08023:raffaelea-lauricola",
+    "08025:raffaelea-lauricola",
+    "08027:raffaelea-lauricola",
+    "08029:raffaelea-lauricola",
+    "08031:raffaelea-lauricola",
+    "08033:raffaelea-lauricola",
+    "08035:raffaelea-lauricola",
+    "08037:raffaelea-lauricola",
+    "08039:raffaelea-lauricola",
+    "08041:raffaelea-lauricola",
+    "08043:raffaelea-lauricola",
+    "08045:raffaelea-lauricola",
+    "08047:raffaelea-lauricola",
+    "08049:raffaelea-lauricola",
+    "08051:raffaelea-lauricola",
+    "08053:raffaelea-lauricola",
+    "08055:raffaelea-lauricola",
+    "08057:raffaelea-lauricola",
+    "08059:raffaelea-lauricola",
+    "08061:raffaelea-lauricola",
+    "08063:raffaelea-lauricola",
+    "08065:raffaelea-lauricola",
+    "08067:raffaelea-lauricola",
+    "08069:raffaelea-lauricola",
+    "08071:raffaelea-lauricola",
+    "08073:raffaelea-lauricola",
+    "08075:raffaelea-lauricola",
+    "08077:raffaelea-lauricola",
+    "08079:raffaelea-lauricola",
+    "08081:raffaelea-lauricola",
+    "08083:raffaelea-lauricola",
+    "08085:raffaelea-lauricola",
+    "08087:raffaelea-lauricola",
+    "08089:raffaelea-lauricola",
+    "08091:raffaelea-lauricola",
+    "08093:raffaelea-lauricola",
+    "08095:raffaelea-lauricola",
+    "08097:raffaelea-lauricola",
+    "08099:raffaelea-lauricola",
+    "08101:raffaelea-lauricola",
+    "08103:raffaelea-lauricola",
+    "08105:raffaelea-lauricola",
+    "08107:raffaelea-lauricola",
+    "08109:raffaelea-lauricola",
+    "08111:raffaelea-lauricola",
+    "08113:raffaelea-lauricola",
+    "08115:raffaelea-lauricola",
+    "08117:raffaelea-lauricola",
+    "08119:raffaelea-lauricola",
+    "08121:raffaelea-lauricola",
+    "08123:raffaelea-lauricola",
+    "08125:raffaelea-lauricola"
+  ],
+  "parameterHash": "e5275113c636603fa3e1279e01b5bb1e49e4628f380a71e924241561c1ea875b",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-14T21:16:19.703Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Colorado and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "raffaelea-lauricola"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-raffaelea-lauricola",
+        "url": "https://api.gbif.org/v1/species/match?name=Raffaelea+lauricola&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:16:18.904Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-raffaelea-lauricola",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Colorado&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=12199464&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for raffaelea-lauricola and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:16:19.703Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+      "sha256": "070c063bae75c6ffa297dc16c6bb2a927702e1e706e0191a9897f45546db3a53",
+      "bytes": 310
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
