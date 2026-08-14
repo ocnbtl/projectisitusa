@@ -30745,6 +30745,59 @@
         "sha256": "99471b6d79d194054b9bcc979d767c1e831a285a34050f9cb5bf86df48c1a97b",
         "bytes": 2186
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round60-dc-001-1",
+      "jobId": "gbif-round60-dc-001",
+      "leaseId": "lease-gbif-round60-dc-001-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-14T21:04:00.000Z",
+      "manifestPath": "manifests/gbif-round60-dc-001__lease-gbif-round60-dc-001-1.json",
+      "manifestHash": "3113a34fcbe7245802a57509c6382f910ef9e518c282c5db704dea8501edbc5f",
+      "manifestBytes": 7293,
+      "workerCommit": "bb0590cdc40edda1faf76ff3c41450a3ece99fb4",
+      "workerBranchHead": "35dcf11d1e0255eb69b803d2c876e98267a71ea1",
+      "reviewedAt": "2026-08-14T21:04:01.000Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 1 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/artifacts/gbif-occurrences-melaleuca-quinquenervia-000000.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/artifacts/gbif-species-match-melaleuca-quinquenervia.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/assertions.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/manifest.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/outcomes.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/receipt.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/rejections.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/reviews.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 1 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round60-dc-001-1.json",
+        "sha256": "bbd11ed647f255d4e44a5262b9b429ca11d91fab70da133cc88d5df203ef79c7",
+        "bytes": 2527
+      }
     }
   ]
 }
