@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-14T21:11:11.114Z",
+  "runId": "20260814T204930Z__gbif-preserved-specimens__5c934e445f2f",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CO",
+  "pairKeys": [
+    "08001:dryocosmus-kuriphilus",
+    "08003:dryocosmus-kuriphilus",
+    "08005:dryocosmus-kuriphilus",
+    "08007:dryocosmus-kuriphilus",
+    "08009:dryocosmus-kuriphilus",
+    "08011:dryocosmus-kuriphilus",
+    "08013:dryocosmus-kuriphilus",
+    "08014:dryocosmus-kuriphilus",
+    "08015:dryocosmus-kuriphilus",
+    "08017:dryocosmus-kuriphilus",
+    "08019:dryocosmus-kuriphilus",
+    "08021:dryocosmus-kuriphilus",
+    "08023:dryocosmus-kuriphilus",
+    "08025:dryocosmus-kuriphilus",
+    "08027:dryocosmus-kuriphilus",
+    "08029:dryocosmus-kuriphilus",
+    "08031:dryocosmus-kuriphilus",
+    "08033:dryocosmus-kuriphilus",
+    "08035:dryocosmus-kuriphilus",
+    "08037:dryocosmus-kuriphilus",
+    "08039:dryocosmus-kuriphilus",
+    "08041:dryocosmus-kuriphilus",
+    "08043:dryocosmus-kuriphilus",
+    "08045:dryocosmus-kuriphilus",
+    "08047:dryocosmus-kuriphilus",
+    "08049:dryocosmus-kuriphilus",
+    "08051:dryocosmus-kuriphilus",
+    "08053:dryocosmus-kuriphilus",
+    "08055:dryocosmus-kuriphilus",
+    "08057:dryocosmus-kuriphilus",
+    "08059:dryocosmus-kuriphilus",
+    "08061:dryocosmus-kuriphilus",
+    "08063:dryocosmus-kuriphilus",
+    "08065:dryocosmus-kuriphilus",
+    "08067:dryocosmus-kuriphilus",
+    "08069:dryocosmus-kuriphilus",
+    "08071:dryocosmus-kuriphilus",
+    "08073:dryocosmus-kuriphilus",
+    "08075:dryocosmus-kuriphilus",
+    "08077:dryocosmus-kuriphilus",
+    "08079:dryocosmus-kuriphilus",
+    "08081:dryocosmus-kuriphilus",
+    "08083:dryocosmus-kuriphilus",
+    "08085:dryocosmus-kuriphilus",
+    "08087:dryocosmus-kuriphilus",
+    "08089:dryocosmus-kuriphilus",
+    "08091:dryocosmus-kuriphilus",
+    "08093:dryocosmus-kuriphilus",
+    "08095:dryocosmus-kuriphilus",
+    "08097:dryocosmus-kuriphilus",
+    "08099:dryocosmus-kuriphilus",
+    "08101:dryocosmus-kuriphilus",
+    "08103:dryocosmus-kuriphilus",
+    "08105:dryocosmus-kuriphilus",
+    "08107:dryocosmus-kuriphilus",
+    "08109:dryocosmus-kuriphilus",
+    "08111:dryocosmus-kuriphilus",
+    "08113:dryocosmus-kuriphilus",
+    "08115:dryocosmus-kuriphilus",
+    "08117:dryocosmus-kuriphilus",
+    "08119:dryocosmus-kuriphilus",
+    "08121:dryocosmus-kuriphilus",
+    "08123:dryocosmus-kuriphilus",
+    "08125:dryocosmus-kuriphilus"
+  ],
+  "parameterHash": "5c934e445f2f40bf21b593a9700d7e8c74c8b939ec8deb6a009640ac255472d1",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-14T21:11:11.113Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Colorado and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "dryocosmus-kuriphilus"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-dryocosmus-kuriphilus",
+        "url": "https://api.gbif.org/v1/species/match?name=Dryocosmus+kuriphilus&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:11:10.350Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-dryocosmus-kuriphilus",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Colorado&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=1309652&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for dryocosmus-kuriphilus and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:11:11.113Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/artifacts/gbif-occurrences-dryocosmus-kuriphilus-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__5c934e445f2f/artifacts/gbif-species-match-dryocosmus-kuriphilus.json.gz",
+      "sha256": "18cbbd75a16af81884023a0cac379384cb3444ee6ef6a729a7af1c45f4d40505",
+      "bytes": 286
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
