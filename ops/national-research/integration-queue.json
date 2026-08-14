@@ -32080,6 +32080,59 @@
         "sha256": "c23667b161e5a11b23ea21feeaceeeabf7d235470f2848e200ae782e6e809ce7",
         "bytes": 2698
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round60-co-003-1",
+      "jobId": "gbif-round60-co-003",
+      "leaseId": "lease-gbif-round60-co-003-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-14T21:23:57.7575136Z",
+      "manifestPath": "manifests/gbif-round60-co-003__lease-gbif-round60-co-003-1.json",
+      "manifestHash": "1cf377c80b02600421fd13987006a94a232f33db921540f424f20a5d2475fe1b",
+      "manifestBytes": 9486,
+      "workerCommit": "8d34f015f41510ce8a815dd1e2aa4a909a8def25",
+      "workerBranchHead": "716d2a410d6807450879afd3d60b8fed76e83367",
+      "reviewedAt": "2026-08-14T21:24:00.5991342Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 64 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/artifacts/gbif-occurrences-homadaula-albizziae-000000.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/artifacts/gbif-species-match-homadaula-albizziae.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/assertions.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/manifest.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/outcomes.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/receipt.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/rejections.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/reviews.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__63c54f852dde/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 64 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round60-co-003-1.json",
+        "sha256": "2fd9ee007fb9486527da0171c77239dacc8261a5ce5d41b756fb8f3d1b957117",
+        "bytes": 2525
+      }
     }
   ]
 }
