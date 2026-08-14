@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-14T21:09:05.479Z",
+  "runId": "20260814T204930Z__gbif-preserved-specimens__9c581ed58f20",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:berberis-thunbergii"
+  ],
+  "parameterHash": "9c581ed58f20c4bdfce4b6250e953c17278012ea6edc280f31e4b5196f198385",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-14T21:09:05.151Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching District of Columbia and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "berberis-thunbergii"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-berberis-thunbergii",
+        "url": "https://api.gbif.org/v1/species/match?name=Berberis+thunbergii&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:09:04.362Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-berberis-thunbergii",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3033896&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for berberis-thunbergii and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:09:05.151Z",
+        "declaredRecordCount": 17,
+        "receivedRecordCount": 17,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/artifacts/gbif-occurrences-berberis-thunbergii-000000.json.gz",
+      "sha256": "c5608ec73af76c7bb094c5bd979ac5c24dc31fb180d377fe865d55ab9b79a92c",
+      "bytes": 8933
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/artifacts/gbif-species-match-berberis-thunbergii.json.gz",
+      "sha256": "c53150c1667363c932ba5c469a43f864555cba3a3dd399ce885d086e33e454af",
+      "bytes": 286
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}

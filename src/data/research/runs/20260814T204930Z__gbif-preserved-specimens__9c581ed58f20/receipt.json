@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260814T204930Z__gbif-preserved-specimens__9c581ed58f20",
+  "status": "complete",
+  "started_at": "2026-08-14T20:49:30.000Z",
+  "finished_at": "2026-08-14T21:09:05.479Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "parameter_hash": "9c581ed58f20c4bdfce4b6250e953c17278012ea6edc280f31e4b5196f198385",
+  "parameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "11001:berberis-thunbergii"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "berberis-thunbergii"
+    ],
+    "pair_keys": [
+      "11001:berberis-thunbergii"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Berberis+thunbergii&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-14T21:09:04.362Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3033896&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-14T21:09:05.151Z",
+      "record_count": 17
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/artifacts/gbif-occurrences-berberis-thunbergii-000000.json.gz",
+      "sha256": "c5608ec73af76c7bb094c5bd979ac5c24dc31fb180d377fe865d55ab9b79a92c",
+      "bytes": 8933,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/artifacts/gbif-species-match-berberis-thunbergii.json.gz",
+      "sha256": "c53150c1667363c932ba5c469a43f864555cba3a3dd399ce885d086e33e454af",
+      "bytes": 286,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/rejections.ndjson",
+      "sha256": "0e555cab0948f47ddf57ded03ac9490157b6810b3afe662eda30a19695ec67be",
+      "bytes": 11730,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/outcomes.ndjson",
+      "sha256": "3c543e103759214ea7a1a50505f16c41f46fb01e9e2ba56098701ac16f843063",
+      "bytes": 2210,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/source-verification.json",
+      "sha256": "5cfecf9df202c0a37845af7cbf5fd9615fb040a80519309f07dd948f0ac90c02",
+      "bytes": 4825,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 17,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 17,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state DC --candidate-file ops/national-research/plans/round-60-20260814/gbif-round60-dc-012.json --output-root src/data/research/runs --pairs 11001:berberis-thunbergii --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
