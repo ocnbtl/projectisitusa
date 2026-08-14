@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260814T204930Z__gbif-preserved-specimens__f33d73529546",
+  "status": "complete",
+  "started_at": "2026-08-14T20:49:30.000Z",
+  "finished_at": "2026-08-14T21:00:01.961Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "parameter_hash": "f33d73529546caa48e25aa4c6fbeabf533074d503f111f6e036b41e26720b671",
+  "parameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "11001:melaleuca-quinquenervia"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "melaleuca-quinquenervia"
+    ],
+    "pair_keys": [
+      "11001:melaleuca-quinquenervia"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Melaleuca+quinquenervia&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-14T21:00:01.174Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=5415832&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-14T21:00:01.960Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/artifacts/gbif-occurrences-melaleuca-quinquenervia-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/artifacts/gbif-species-match-melaleuca-quinquenervia.json.gz",
+      "sha256": "9aa88a1473c80fa9b2089fea64b2c978d5facd659a0637e38a87ad50e35ffb15",
+      "bytes": 298,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/outcomes.ndjson",
+      "sha256": "bbaec246f0d4aaaece4ff95445a3c3e87004a3259275b87a2f1c4d9be658130b",
+      "bytes": 821,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/source-verification.json",
+      "sha256": "dfa76b5c61b9421bba280929f7d7aa7693ca9da60042945451dfdf78fcc4e152",
+      "bytes": 4853,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state DC --candidate-file ops/national-research/plans/round-60-20260814/gbif-round60-dc-001.json --output-root src/data/research/runs --pairs 11001:melaleuca-quinquenervia --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
