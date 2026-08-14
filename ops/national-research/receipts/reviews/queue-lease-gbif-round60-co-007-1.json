@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round60-co-007-1",
+  "jobId": "gbif-round60-co-007",
+  "leaseId": "lease-gbif-round60-co-007-1",
+  "workerCommit": "5461f5807a57db5e0997afbb8e60c57f3f771d35",
+  "workerBranchHead": "f09f95ab772a642b5dbbac2e271b98c46b3f52cf",
+  "manifestHash": "a7ca700d777a82d45d4cadb7085219eedd30923fdbed5b150e88c66207ab5ee1",
+  "changedPaths": [
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/artifacts/gbif-occurrences-raffaelea-lauricola-000000.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/artifacts/gbif-species-match-raffaelea-lauricola.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/assertions.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/manifest.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/outcomes.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/receipt.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/rejections.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/reviews.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__e5275113c636/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 64 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 64 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-14T21:25:18.1098671Z"
+}
