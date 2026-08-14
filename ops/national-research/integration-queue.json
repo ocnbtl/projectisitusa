@@ -31724,6 +31724,59 @@
         "sha256": "5e1ac22f8ef2df267cde61d2670824daf16e362ede2ec4e19146d3e57908bcd5",
         "bytes": 2687
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round60-dc-012-1",
+      "jobId": "gbif-round60-dc-012",
+      "leaseId": "lease-gbif-round60-dc-012-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-14T21:22:41.7352702Z",
+      "manifestPath": "manifests/gbif-round60-dc-012__lease-gbif-round60-dc-012-1.json",
+      "manifestHash": "06c1fd23ca58e30d3f80b706bb14bf6af76e3a02a9decea0a319392de1ca6c26",
+      "manifestBytes": 7296,
+      "workerCommit": "c9e5282490465ecdd1ec461604edcffd4fd2d866",
+      "workerBranchHead": "f7aac33ee09814ef0768d920079885cf27eed84f",
+      "reviewedAt": "2026-08-14T21:22:44.5490163Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 1 ordered county outcomes, 0 accepted assertions and reviews, 17 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/artifacts/gbif-occurrences-berberis-thunbergii-000000.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/artifacts/gbif-species-match-berberis-thunbergii.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/assertions.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/manifest.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/outcomes.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/receipt.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/rejections.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/reviews.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9c581ed58f20/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 1 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round60-dc-012-1.json",
+        "sha256": "4cb73e8fce837ef8cec920ad83f95f9aca713c9a59f1f8f6cf7493513dbb4285",
+        "bytes": 2524
+      }
     }
   ]
 }
