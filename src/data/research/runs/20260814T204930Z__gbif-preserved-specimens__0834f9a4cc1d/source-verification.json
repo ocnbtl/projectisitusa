@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-14T21:16:20.390Z",
+  "runId": "20260814T204930Z__gbif-preserved-specimens__0834f9a4cc1d",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CO",
+  "pairKeys": [
+    "08001:icerya-purchasi",
+    "08003:icerya-purchasi",
+    "08005:icerya-purchasi",
+    "08007:icerya-purchasi",
+    "08009:icerya-purchasi",
+    "08011:icerya-purchasi",
+    "08013:icerya-purchasi",
+    "08014:icerya-purchasi",
+    "08015:icerya-purchasi",
+    "08017:icerya-purchasi",
+    "08019:icerya-purchasi",
+    "08021:icerya-purchasi",
+    "08023:icerya-purchasi",
+    "08025:icerya-purchasi",
+    "08027:icerya-purchasi",
+    "08029:icerya-purchasi",
+    "08031:icerya-purchasi",
+    "08033:icerya-purchasi",
+    "08035:icerya-purchasi",
+    "08037:icerya-purchasi",
+    "08039:icerya-purchasi",
+    "08041:icerya-purchasi",
+    "08043:icerya-purchasi",
+    "08045:icerya-purchasi",
+    "08047:icerya-purchasi",
+    "08049:icerya-purchasi",
+    "08051:icerya-purchasi",
+    "08053:icerya-purchasi",
+    "08055:icerya-purchasi",
+    "08057:icerya-purchasi",
+    "08059:icerya-purchasi",
+    "08061:icerya-purchasi",
+    "08063:icerya-purchasi",
+    "08065:icerya-purchasi",
+    "08067:icerya-purchasi",
+    "08069:icerya-purchasi",
+    "08071:icerya-purchasi",
+    "08073:icerya-purchasi",
+    "08075:icerya-purchasi",
+    "08077:icerya-purchasi",
+    "08079:icerya-purchasi",
+    "08081:icerya-purchasi",
+    "08083:icerya-purchasi",
+    "08085:icerya-purchasi",
+    "08087:icerya-purchasi",
+    "08089:icerya-purchasi",
+    "08091:icerya-purchasi",
+    "08093:icerya-purchasi",
+    "08095:icerya-purchasi",
+    "08097:icerya-purchasi",
+    "08099:icerya-purchasi",
+    "08101:icerya-purchasi",
+    "08103:icerya-purchasi",
+    "08105:icerya-purchasi",
+    "08107:icerya-purchasi",
+    "08109:icerya-purchasi",
+    "08111:icerya-purchasi",
+    "08113:icerya-purchasi",
+    "08115:icerya-purchasi",
+    "08117:icerya-purchasi",
+    "08119:icerya-purchasi",
+    "08121:icerya-purchasi",
+    "08123:icerya-purchasi",
+    "08125:icerya-purchasi"
+  ],
+  "parameterHash": "0834f9a4cc1d85f72d8bc38fcd5b829776c8b4474033d377230df067f2cf0251",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-14T21:16:20.388Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching Colorado and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "icerya-purchasi"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-icerya-purchasi",
+        "url": "https://api.gbif.org/v1/species/match?name=Icerya+purchasi&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:16:19.623Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-icerya-purchasi",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=Colorado&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2080592&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for icerya-purchasi and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:16:20.388Z",
+        "declaredRecordCount": 0,
+        "receivedRecordCount": 0,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__0834f9a4cc1d/artifacts/gbif-occurrences-icerya-purchasi-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__0834f9a4cc1d/artifacts/gbif-species-match-icerya-purchasi.json.gz",
+      "sha256": "0a2cb0beaaa8dc3892bf28b3b203eabb60a284409ad65cb6461d6a572f694aaf",
+      "bytes": 281
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
