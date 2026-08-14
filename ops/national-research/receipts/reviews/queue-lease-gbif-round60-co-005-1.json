@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "queueId": "queue-lease-gbif-round60-co-005-1",
+  "jobId": "gbif-round60-co-005",
+  "leaseId": "lease-gbif-round60-co-005-1",
+  "workerCommit": "959f0e5dc80f6a978cf6c609c3d3cf0dd31f80f9",
+  "workerBranchHead": "444e099899e27cd6b1e79922c4d41dca5d59da50",
+  "manifestHash": "bfe7e78d79e6d7c69edd23cc76da250fa5af28aaecb8f11564bdabe6cb973df3",
+  "changedPaths": [
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/artifacts/gbif-occurrences-ophiognomonia-clavigignenti-juglandacearum-000000.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/artifacts/gbif-species-match-ophiognomonia-clavigignenti-juglandacearum.json.gz",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/assertions.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/manifest.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/outcomes.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/receipt.json",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/rejections.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/reviews.ndjson",
+    "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__07faedb86ffc/source-verification.json"
+  ],
+  "checks": [
+    {
+      "command": "canonical immutable-run validation with exact run, source, state, 64 ordered pairs, base commit, and worker task identity",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "pinned worker manifest validation repeated twice with byte-identical output",
+      "exitCode": 0,
+      "result": "pass"
+    },
+    {
+      "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+      "exitCode": 0,
+      "result": "pass"
+    }
+  ],
+  "conflicts": 0,
+  "manualInterventions": 0,
+  "criticalSafetyViolations": 0,
+  "evidenceSemanticViolations": 0,
+  "forbiddenWrites": 0,
+  "reason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 64 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+  "decision": "accepted",
+  "reviewer": "MAIN",
+  "reviewedAt": "2026-08-14T21:24:59.1530023Z"
+}
