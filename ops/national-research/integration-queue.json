@@ -31279,6 +31279,59 @@
         "sha256": "cbd39430d765bc9e0aa8edd91c80c0feff26c78d14f4afc31481acce6ba4d70a",
         "bytes": 2682
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round60-dc-007-1",
+      "jobId": "gbif-round60-dc-007",
+      "leaseId": "lease-gbif-round60-dc-007-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-14T21:21:16.4249366Z",
+      "manifestPath": "manifests/gbif-round60-dc-007__lease-gbif-round60-dc-007-1.json",
+      "manifestHash": "bc46e1a861f056d3f559b878c09be3468bc47509e5d3790fab71671aacb293b0",
+      "manifestBytes": 7266,
+      "workerCommit": "af7df08aaee02a715497d68f65a052682909ad93",
+      "workerBranchHead": "c069abbfa917ef7a3cd005a9a1927fbf53256657",
+      "reviewedAt": "2026-08-14T21:21:19.2811620Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 1 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/artifacts/gbif-occurrences-solanum-viarum-000000.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/artifacts/gbif-species-match-solanum-viarum.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/assertions.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/manifest.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/outcomes.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/receipt.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/rejections.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/reviews.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__9866597aeeb7/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 1 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round60-dc-007-1.json",
+        "sha256": "750d2c9c609ed648bcf761c607eb136192e926cf179009b61e2f68091cbe45f0",
+        "bytes": 2513
+      }
     }
   ]
 }
