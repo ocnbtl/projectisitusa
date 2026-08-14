@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-14T21:09:05.127Z",
+  "runId": "20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:acer-platanoides"
+  ],
+  "parameterHash": "ac7f2e53c7b74e39502aca5f9ff68ee4ac501793fab7b1915293a1b7554929ca",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://api.gbif.org/v1/",
+    "publisher": "GBIF Secretariat API aggregator with underlying occurrence publishers preserved on retained records."
+  },
+  "terms": {
+    "license": "GBIF occurrence records retain provider-declared Creative Commons licensing in each retained response.",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-14T21:09:04.575Z",
+    "freshnessDate": null
+  },
+  "geography": {
+    "method": "Require provider-declared stateProvince text matching District of Columbia and provider-declared county-equivalent text that resolves uniquely through the active county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates are not used for county assignment. Missing, ambiguous, retired, conflicting, and coordinate-only geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Use the strict GBIF species match endpoint and require EXACT match type, confidence at least 95, SPECIES rank, a numeric species key, and exact canonical binomial agreement.",
+    "targetSpeciesIds": [
+      "acer-platanoides"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "datasetKey",
+      "gbifID",
+      "key",
+      "occurrenceID"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "species-match-acer-platanoides",
+        "url": "https://api.gbif.org/v1/species/match?name=Acer+platanoides&rank=SPECIES&strict=true",
+        "purpose": "Resolve the target to a strict exact GBIF species identity before occurrence acquisition.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:09:03.654Z",
+        "declaredRecordCount": null,
+        "receivedRecordCount": 1,
+        "pagination": {
+          "mode": "single",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      },
+      {
+        "requestGroupId": "statewide-occurrences-acer-platanoides",
+        "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=3189846&limit=300&offset=0",
+        "purpose": "Acquire the statewide preserved-specimen occurrence page for acer-platanoides and screen every requested county equivalent using provider-declared county geography.",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-14T21:09:04.575Z",
+        "declaredRecordCount": 68,
+        "receivedRecordCount": 68,
+        "pagination": {
+          "mode": "offset",
+          "pageIndex": 0,
+          "offset": 0,
+          "limit": 300,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF has no negative semantics. Empty results, source silence, rejected records, and missing geography never support verified absence.",
+      "GBIF occurrence search does not document target-specific survey method, effort, or an explicit negative result and therefore cannot support not-detected.",
+      "A completed query without publishable evidence changes research status only."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/artifacts/gbif-occurrences-acer-platanoides-000000.json.gz",
+      "sha256": "a2b9dd001c2b7de40e529536ef4df0af9c7fcd3243c882bd54a8d7a251620030",
+      "bytes": 27270
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/artifacts/gbif-species-match-acer-platanoides.json.gz",
+      "sha256": "a14995f823a50ce30bd766ba6f1005010e60fa494b8007ce3dba26a7820cb948",
+      "bytes": 280
+    }
+  ],
+  "caveats": [
+    "GBIF is an aggregator and publisher record quality can vary.",
+    "The live search has no fixed snapshot identifier. Retained provider bytes, request URLs, timestamps, and hashes pin this screen.",
+    "Only provider-declared county geography is used. Coordinate-derived county evidence remains prohibited."
+  ]
+}
