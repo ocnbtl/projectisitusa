@@ -31635,6 +31635,59 @@
         "sha256": "057cff908bada3c6c563009a05ce826128db7cd3d67a697ba5510a12dbe45e04",
         "bytes": 2692
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round60-dc-011-1",
+      "jobId": "gbif-round60-dc-011",
+      "leaseId": "lease-gbif-round60-dc-011-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-14T21:22:32.2851951Z",
+      "manifestPath": "manifests/gbif-round60-dc-011__lease-gbif-round60-dc-011-1.json",
+      "manifestHash": "7eb1d26d9a3bb97a0953881540344ca20078fa7e405ed09a1765ba6e421c9102",
+      "manifestBytes": 7296,
+      "workerCommit": "cc18f88e27836d9a28d5bd28cf916698bd13ca3b",
+      "workerBranchHead": "6c5369a1add0fab01e83e6272e4e12346bed92c5",
+      "reviewedAt": "2026-08-14T21:22:35.1224998Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 1 ordered county outcomes, 2 accepted assertions and reviews, 66 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/artifacts/gbif-occurrences-acer-platanoides-000000.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/artifacts/gbif-species-match-acer-platanoides.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/assertions.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/manifest.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/outcomes.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/receipt.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/rejections.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/reviews.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 1 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round60-dc-011-1.json",
+        "sha256": "631f5cebacf84132cbbe03154269f4505ea10d24a12eefd0688cb393a8cadf8a",
+        "bytes": 2518
+      }
     }
   ]
 }
