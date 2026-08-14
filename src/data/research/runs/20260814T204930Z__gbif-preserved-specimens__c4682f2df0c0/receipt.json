@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0",
+  "status": "complete",
+  "started_at": "2026-08-14T20:49:30.000Z",
+  "finished_at": "2026-08-14T20:59:57.451Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.3.1",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.3.1",
+  "adapter_code_hash": "96e963576ffe2de61811953c295079f44e72eb64cf6e22de48aed70ffa6653ac",
+  "code_commit": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "parameter_hash": "c4682f2df0c0587f8f536d97e11491f3e6a8c25e4eda3f27f549372e891aad31",
+  "parameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "11001:saccharum-spontaneum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "saccharum-spontaneum"
+    ],
+    "pair_keys": [
+      "11001:saccharum-spontaneum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/species/match?name=Saccharum+spontaneum&rank=SPECIES&strict=true",
+      "status": 200,
+      "retrieved_at": "2026-08-14T20:59:56.662Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?country=US&stateProvince=District+of+Columbia&basisOfRecord=PRESERVED_SPECIMEN&occurrenceStatus=PRESENT&taxonKey=2703935&limit=300&offset=0",
+      "status": 200,
+      "retrieved_at": "2026-08-14T20:59:57.450Z",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0/artifacts/gbif-occurrences-saccharum-spontaneum-000000.json.gz",
+      "sha256": "36a4006b6b78544085ef6446d0549a64f161d3e791c8245104271093dff47ec1",
+      "bytes": 90,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0/artifacts/gbif-species-match-saccharum-spontaneum.json.gz",
+      "sha256": "05536495c6b3620dbc97c72fbaa0541464589a497a7e046e83f5f07e009f6a3c",
+      "bytes": 278,
+      "media_type": "application/gzip"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0/assertions.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0/reviews.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0/outcomes.ndjson",
+      "sha256": "2080168820bd4394ef81f6360fb05bf64aca2066c01a2c037758638a2ae8c5f2",
+      "bytes": 818,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__c4682f2df0c0/source-verification.json",
+      "sha256": "763172e88defde0e05b8b45364d4143c6a7c246ec07b0ee965b0da9d636307dc",
+      "bytes": 4829,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "Reused 1 verified GBIF species-match response(s) from taxonomy cache gbif-taxonomy-20260809-r55 at src/data/research/caches/gbif-taxonomy-20260809-r55.json (7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b); 0 uncached taxonomy request(s) remained eligible for live acquisition."
+  ],
+  "rerun_command": "npm run research:run -- --source gbif-preserved-specimens --state DC --candidate-file ops/national-research/plans/round-60-20260814/gbif-round60-dc-003.json --output-root src/data/research/runs --pairs 11001:saccharum-spontaneum --gbif-taxonomy-cache src/data/research/caches/gbif-taxonomy-20260809-r55.json"
+}
