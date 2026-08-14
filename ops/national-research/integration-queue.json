@@ -32347,6 +32347,59 @@
         "sha256": "4334f5ff9dd21045f605143e177ed2c011c3f131ec92a1f10a2d7b8bf0ba3a36",
         "bytes": 2740
       }
+    },
+    {
+      "queueId": "queue-lease-gbif-round60-co-006-1",
+      "jobId": "gbif-round60-co-006",
+      "leaseId": "lease-gbif-round60-co-006-1",
+      "decision": "accepted",
+      "submittedAt": "2026-08-14T21:25:05.8076393Z",
+      "manifestPath": "manifests/gbif-round60-co-006__lease-gbif-round60-co-006-1.json",
+      "manifestHash": "bf6ca68971381fbc627791588e1bebc6baad521f53c1327aaeb450047206b9eb",
+      "manifestBytes": 9684,
+      "workerCommit": "8f972b118adc2b8ca356b99434ec6c5e90b1ba6b",
+      "workerBranchHead": "4a235f2c33b1fcb893abc50084610dddf5461319",
+      "reviewedAt": "2026-08-14T21:25:08.6394674Z",
+      "reviewer": "MAIN",
+      "reviewReason": "MAIN independently validated the immutable statewide GBIF run, complete receipt and source-verification descriptors, 64 ordered county outcomes, 0 accepted assertions and reviews, 0 explicit rejections, deterministic two-commit manifest, zero unsupported negative claims, and only lease-permitted output paths.",
+      "changedPaths": [
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/artifacts/gbif-occurrences-phytophthora-cinnamomi-000000.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/artifacts/gbif-species-match-phytophthora-cinnamomi.json.gz",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/assertions.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/manifest.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/outcomes.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/receipt.json",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/rejections.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/reviews.ndjson",
+        "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__1bd9931e02f8/source-verification.json"
+      ],
+      "reviewChecks": [
+        {
+          "command": "canonical immutable-run validation with exact run, source, state, 64 ordered pairs, base commit, and worker task identity",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "pinned worker manifest validation repeated twice with byte-identical output",
+          "exitCode": 0,
+          "result": "pass"
+        },
+        {
+          "command": "exact two-commit base-to-head diff, whitespace, output inventory, and unsupported-negative semantic audit",
+          "exitCode": 0,
+          "result": "pass"
+        }
+      ],
+      "conflicts": 0,
+      "manualInterventions": 0,
+      "criticalSafetyViolations": 0,
+      "evidenceSemanticViolations": 0,
+      "forbiddenWrites": 0,
+      "reviewReceipt": {
+        "path": "receipts/reviews/queue-lease-gbif-round60-co-006-1.json",
+        "sha256": "aad191e4f540ed20e02bf1b0c7c77c8a596623703cae669f579d9e06c373c063",
+        "bytes": 2531
+      }
     }
   ]
 }
