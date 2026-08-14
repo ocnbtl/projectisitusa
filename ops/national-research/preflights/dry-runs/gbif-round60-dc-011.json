@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "11001:acer-platanoides"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "DC",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-011.json",
+    "declaredCandidateCount": 1,
+    "selectedPairCount": 1,
+    "sha256": "278f68272ae7cf9d1351270b02ae8e65cd39d483aa42ec05c124f4650e416e5c"
+  },
+  "candidateLimit": {
+    "value": 1,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "acer-platanoides"
+  ],
+  "selectedPairKeys": [
+    "11001:acer-platanoides"
+  ],
+  "selectedPairHash": "743a8d0290f7f4ba30b3802874e5fac75979966867e8f1234a38a74a170f89c7",
+  "parameterHash": "ac7f2e53c7b74e39502aca5f9ff68ee4ac501793fab7b1915293a1b7554929ca",
+  "startedAt": "2026-08-14T20:49:30.000Z",
+  "deterministicRunSuffix": "ac7f2e53c7b7",
+  "expectedRunPath": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__ac7f2e53c7b7",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "acer-platanoides",
+        "scientificName": "Acer platanoides",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Acer+platanoides&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-08T03:04:13.599Z",
+        "responseBodySha256": "6663c5984e105cf30df0e7e17aa8b354ad1bc8a546aab3b9984b0b0bb842a886",
+        "provenance": {
+          "runId": "20260808T025900Z__gbif-preserved-specimens__b848196ddfa0",
+          "codeCommit": "8f99f377907e47605e0cbe9603884dbf8b3f09dd",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260808T025900Z__gbif-preserved-specimens__b848196ddfa0/source-verification.json",
+          "sourceVerificationSha256": "f69aad2189b498edfb3d12c8cfdbaed5f6a08d50cbb39b7f9bead8837703f066",
+          "artifactPath": "src/data/research/runs/20260808T025900Z__gbif-preserved-specimens__b848196ddfa0/artifacts/gbif-species-match-acer-platanoides.json.gz",
+          "artifactSha256": "a14995f823a50ce30bd766ba6f1005010e60fa494b8007ce3dba26a7820cb948",
+          "artifactBytes": 280
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round60-dc-011\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "DC",
+    "--candidate-file",
+    "ops/national-research/plans/round-60-20260814/gbif-round60-dc-011.json",
+    "--candidate-limit",
+    "1",
+    "--started-at",
+    "2026-08-14T20:49:30.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round60-dc-011\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

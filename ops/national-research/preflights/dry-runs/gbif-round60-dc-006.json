@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "11001:solanum-torvum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "DC",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-006.json",
+    "declaredCandidateCount": 1,
+    "selectedPairCount": 1,
+    "sha256": "f5fbd80b680d1161f7b88d19a6154461486e14481007123441d5cf21853f1c5f"
+  },
+  "candidateLimit": {
+    "value": 1,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "solanum-torvum"
+  ],
+  "selectedPairKeys": [
+    "11001:solanum-torvum"
+  ],
+  "selectedPairHash": "8e457a318526cce805e65cc404e8e1807f2009ff99049425ed1317157036452a",
+  "parameterHash": "33db0760de304fc0aa3f4c0a7ed2d3d81955eb2192a50b55b818f48e72db0442",
+  "startedAt": "2026-08-14T20:49:30.000Z",
+  "deterministicRunSuffix": "33db0760de30",
+  "expectedRunPath": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__33db0760de30",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "solanum-torvum",
+        "scientificName": "Solanum torvum",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Solanum+torvum&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-09T00:13:08.554Z",
+        "responseBodySha256": "10d10a414585eea8f06d88edc3ca4c834cefcc96a92868079f6f08de1d5c2344",
+        "provenance": {
+          "runId": "20260809T000142Z__gbif-preserved-specimens__34cdc82b641d",
+          "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/source-verification.json",
+          "sourceVerificationSha256": "da58c450659ef0e3af8c383956493bcfa5315cf0f6d2aeb1104c96d7d24fa62b",
+          "artifactPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/artifacts/gbif-species-match-solanum-torvum.json.gz",
+          "artifactSha256": "449f01369c536eb151a3b4811ae345c59e625a7e9a8aaa236f0b38d74107fdae",
+          "artifactBytes": 276
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round60-dc-006\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "DC",
+    "--candidate-file",
+    "ops/national-research/plans/round-60-20260814/gbif-round60-dc-006.json",
+    "--candidate-limit",
+    "1",
+    "--started-at",
+    "2026-08-14T20:49:30.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round60-dc-006\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

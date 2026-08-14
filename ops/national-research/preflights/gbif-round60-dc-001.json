@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "preflightId": "gbif-round60-dc-001-20260814T205400000Z",
+  "createdAt": "2026-08-14T20:54:00.000Z",
+  "result": "pass",
+  "jobId": "gbif-round60-dc-001",
+  "exactBaseSha": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "currentFrozenSkills": {
+    "receiptPath": "ops/national-research/receipts/skill-freezes/isitusa-national-skills-windows-bulk-validation-2026-07-30-r2.json",
+    "receiptSha256": "8c947a0844ede3a1962f04b446067674fcc000d6e3ed2f95ca97659cc55ec74d",
+    "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+    "commit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+    "hashes": {
+      "isitusa-national-orchestrator": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
+      "isitusa-evidence-worker": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+    },
+    "jobPins": [
+      {
+        "name": "isitusa-national-orchestrator",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757"
+      },
+      {
+        "name": "isitusa-evidence-worker",
+        "version": "frozen-windows-bulk-validation-2026-07-30-r2",
+        "gitCommit": "e3513cc6bde303432320d1d3904ea638eec6333c",
+        "contentHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
+      }
+    ]
+  },
+  "sourceRegistration": {
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "05e2839bf9a6e648ea1f7b5a8ac222aa9a08be32ae458e186b5affdd4c340a44",
+    "id": "gbif-preserved-specimens",
+    "status": "operational",
+    "authority": "Global Biodiversity Information Facility",
+    "parameters": {
+      "stateCode": "DC",
+      "stateProvince": "District of Columbia",
+      "candidateLimit": 1,
+      "candidatePairs": [
+        "11001:melaleuca-quinquenervia"
+      ],
+      "basisOfRecord": "PRESERVED_SPECIMEN",
+      "occurrenceStatus": "PRESENT",
+      "minimumMatchConfidence": 95,
+      "pageLimit": 300
+    },
+    "rateLimitRequestsPerSecond": 3,
+    "negativeSemantics": "none"
+  },
+  "orderedScope": {
+    "states": [
+      "DC"
+    ],
+    "taxa": [
+      "melaleuca-quinquenervia"
+    ],
+    "pairs": [
+      "11001:melaleuca-quinquenervia"
+    ],
+    "pairCount": 1,
+    "pairHash": "254152e237cf164aa226ab20dbaffb8b875eccd8912a8e74a54f7817f5418fa2"
+  },
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-001.json",
+    "declaredCandidateCount": 1,
+    "selectedPairCount": 1,
+    "sha256": "f540ace4352893511d9ac5ff2879f7caa471dbba7013348d9d6c9e1f92f7fb08"
+  },
+  "limitFlags": {
+    "candidateLimit": {
+      "value": 1,
+      "meaning": "maximum county-species candidate-pair count, not a taxon count"
+    },
+    "pageLimit": {
+      "value": 300,
+      "meaning": "maximum provider records per occurrence page, not a result or pair limit"
+    },
+    "artifactBytes": {
+      "value": 20000000,
+      "meaning": "maximum retained artifact bytes before incomplete scope is blocked"
+    },
+    "wallMinutes": {
+      "value": 60,
+      "meaning": "maximum worker wall time before safe stop and resume"
+    }
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round60-dc-001\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "DC",
+    "--candidate-file",
+    "ops/national-research/plans/round-60-20260814/gbif-round60-dc-001.json",
+    "--candidate-limit",
+    "1",
+    "--started-at",
+    "2026-08-14T20:49:30.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round60-dc-001\\attempt-telemetry.json"
+  ],
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expectedPositivePairRange": {
+    "minimum": 0,
+    "maximum": 1,
+    "meaning": "expected completed outcome pairs with at least one final publication-eligible assertion"
+  },
+  "deterministicRun": {
+    "startedAt": "2026-08-14T20:49:30.000Z",
+    "parameterHash": "f33d73529546caa48e25aa4c6fbeabf533074d503f111f6e036b41e26720b671",
+    "suffix": "f33d73529546",
+    "path": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546"
+  },
+  "expectedReceiptCodeCommit": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "paths": {
+    "permitted": [
+      "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546/**"
+    ],
+    "prohibited": [
+      ".agents/skills/**",
+      "AGENTS.md",
+      "package.json",
+      "package-lock.json",
+      "ops/national-research/**",
+      "src/data/research/schemas/**",
+      "src/data/research/source-registry.json",
+      "src/data/research/state-list-source-registry.json",
+      "src/data/research/research-protocols.json",
+      "src/data/research/state-registry.json",
+      "src/data/research/county-equivalent-registry.json",
+      "src/data/research/state-research-config.json",
+      "src/data/research/state-applicability/**",
+      "scripts/**",
+      "src/lib/**",
+      "src/data/generated/**",
+      "public/generated/**",
+      "app/**",
+      "src/components/**",
+      ".vercel/**",
+      "vercel.json"
+    ],
+    "baseTreeChecks": [
+      {
+        "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-001.json",
+        "blob": "c8f38d2293c39fd5aa34acc66cee12ff529fee12"
+      },
+      {
+        "path": "scripts/research/run-source.ts",
+        "blob": "4db01012ff2a55a3f4d12b63503d3f6703015d7a"
+      },
+      {
+        "path": "scripts/research/gbif-taxonomy-cache.ts",
+        "blob": "d05067badbfd9b1977d506433e9214d78d060f50"
+      },
+      {
+        "path": "src/data/research/source-registry.json",
+        "blob": "a6cad730bbcf0dc2634deef763582dbd05b38869"
+      },
+      {
+        "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+        "blob": "e39ef97d94a8dd6dbcd61a6020b42072bcfde344"
+      }
+    ]
+  },
+  "dependencyResolution": {
+    "nodePath": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "nodeVersion": "v22.23.2",
+    "packageRoot": "C:\\Code\\project-isitusa\\node_modules",
+    "strategy": "lease worktree node_modules junction to the canonical verified dependency tree",
+    "npmCache": "C:\\Code\\tools\\npm-cache"
+  },
+  "writableStaging": {
+    "attemptTelemetryPath": "C:\\Code\\project-isitusa-worker-staging\\gbif-round60-dc-001\\attempt-telemetry.json",
+    "outputRoot": "src/data/research/runs"
+  },
+  "deduplicationIdentity": {
+    "sourceId": "gbif-preserved-specimens",
+    "stateCode": "DC",
+    "orderedPairHash": "254152e237cf164aa226ab20dbaffb8b875eccd8912a8e74a54f7817f5418fa2",
+    "parameterHash": "f33d73529546caa48e25aa4c6fbeabf533074d503f111f6e036b41e26720b671",
+    "runPath": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546"
+  },
+  "existingCacheAndPartialRunSearch": {
+    "taxonomyCache": {
+      "cacheId": "gbif-taxonomy-20260809-r55",
+      "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+      "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+      "selectedEntryCount": 1,
+      "selectedEntries": [
+        {
+          "speciesId": "melaleuca-quinquenervia",
+          "scientificName": "Melaleuca quinquenervia",
+          "requestUrl": "https://api.gbif.org/v1/species/match?name=Melaleuca+quinquenervia&rank=SPECIES&strict=true",
+          "retrievedAt": "2026-08-08T19:35:29.914Z",
+          "responseBodySha256": "0a49e1fe392cd9f618db6a41fd2a02094fe27fbb5739f377232f7c6892c49ebf",
+          "provenance": {
+            "runId": "20260808T175500Z__gbif-preserved-specimens__ce191ab0ca96",
+            "codeCommit": "1f2414363b914f15418aa3e3ba6ee5a22f0a5eb3",
+            "adapterVersion": "1.3.1",
+            "sourceVerificationPath": "src/data/research/runs/20260808T175500Z__gbif-preserved-specimens__ce191ab0ca96/source-verification.json",
+            "sourceVerificationSha256": "0f7ef2b93acddbf66971522fe32f9f6656dca66aa1db6d9c1aca939e97a50e23",
+            "artifactPath": "src/data/research/runs/20260808T175500Z__gbif-preserved-specimens__ce191ab0ca96/artifacts/gbif-species-match-melaleuca-quinquenervia.json.gz",
+            "artifactSha256": "9aa88a1473c80fa9b2089fea64b2c978d5facd659a0637e38a87ad50e35ffb15",
+            "artifactBytes": 298
+          }
+        }
+      ]
+    },
+    "archiveReplay": null,
+    "completePriorPairs": 0,
+    "incompletePriorPairs": 0,
+    "matchingRunReceipts": 0,
+    "deterministicRunPathExists": false,
+    "priorLeases": [],
+    "priorQueueItems": []
+  },
+  "resources": {
+    "schemaVersion": 1,
+    "evaluationId": "windows-desktop-capacity-20260814-r60",
+    "recordedAt": "2026-08-14T20:43:56.2744600Z",
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "verifiedCheckpointSha": "9fe5b7ab54614539c57f0f53088a1063ef2e8bde",
+    "capacityTier": "green",
+    "workerCount": 4,
+    "initialLiveProviderWorkerCount": 4,
+    "postCalibrationMaximumLiveProviderWorkerCount": 4,
+    "machineCapacityWorkerCount": 6,
+    "perWorkerReservationMiB": 1024,
+    "observedRound59SparsePeakMemoryMiB": 225.145,
+    "totalPhysicalMiB": 31900.918,
+    "freePhysicalMiB": 11961,
+    "freePhysicalPercent": 37.494,
+    "projectedPostWorkerFreePhysicalMiB": 7865,
+    "commitLimitMiB": 56476.918,
+    "commitUsedMiB": 27604.141,
+    "commitHeadroomMiB": 28872.777,
+    "projectedPostWorkerFreeCommitMiB": 24776.777,
+    "freeDiskMiB": 670240.137,
+    "totalDiskMiB": 1906665.996,
+    "pageInputPerSecond": 2.986,
+    "pageOutputPerSecond": 0,
+    "providerWriterCount": 0,
+    "resourceGate": {
+      "result": "pass",
+      "preferredGreenAvailableRamPercent": 25,
+      "minimumOperationalRamPercent": 10,
+      "absoluteFreeDiskFloorBytes": 21474836480,
+      "qualification": "Four 1024 MiB acquisition reservations preserve the 10 percent operational RAM reserve, commit headroom, disk floor, and the current GBIF provider ceiling. Recheck immediately before each wave."
+    },
+    "provider": {
+      "sourceId": "gbif-preserved-specimens",
+      "healthObservedAt": "2026-08-14T20:24:15.000Z",
+      "healthStatus": 200,
+      "healthLatencyMs": 414,
+      "healthProbeRequests": 1,
+      "healthProbeAcquiredEvidence": false,
+      "requestIntervalMsPerWorker": 334,
+      "initialConcurrentWorkers": 4,
+      "maximumConcurrentWorkersWithoutFreshCalibration": 4,
+      "reduceOnHttpStatuses": [
+        429
+      ],
+      "qualification": "The health probe is a non-evidence contact. Acquisition remains job-bound and may start only after exact no-network semantic preflight."
+    }
+  },
+  "retryAndResume": {
+    "maxAttempts": 3,
+    "backoffSeconds": [
+      5,
+      30,
+      120
+    ],
+    "resumeRequired": true
+  },
+  "semanticDryRun": {
+    "path": "ops/national-research/preflights/dry-runs/gbif-round60-dc-001.json",
+    "sha256": "bfcc78af92a2ed37da87f8ca69204a07d4e95dd6be2e780f6bc0eecb71a74fc2",
+    "networkRequestsIssued": 0,
+    "result": "pass"
+  },
+  "semanticAttestation": {
+    "absenceFromSilence": false,
+    "notDetectedFromSilence": false,
+    "notApplicableFromSilence": false,
+    "incompletePaginationCanCompleteScope": false
+  }
+}

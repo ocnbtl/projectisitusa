@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "11001:tridax-procumbens"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "DC",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-009.json",
+    "declaredCandidateCount": 1,
+    "selectedPairCount": 1,
+    "sha256": "6143996a107be89d64c08890384ef20e809242369fe21b7f84f3856fe39e3789"
+  },
+  "candidateLimit": {
+    "value": 1,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "tridax-procumbens"
+  ],
+  "selectedPairKeys": [
+    "11001:tridax-procumbens"
+  ],
+  "selectedPairHash": "c549583318747eb663381cb4b882ca996a0edcb04fe966b9893dad8c6012679c",
+  "parameterHash": "8ae3c04abe882ca626bdaa257f6a2565567e77999cc71472104f64e682e30df3",
+  "startedAt": "2026-08-14T20:49:30.000Z",
+  "deterministicRunSuffix": "8ae3c04abe88",
+  "expectedRunPath": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__8ae3c04abe88",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "tridax-procumbens",
+        "scientificName": "Tridax procumbens",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Tridax+procumbens&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-09T00:13:14.707Z",
+        "responseBodySha256": "ec3bfd3ea0d3881bc5f7bd9f9706345739484ff04c6783ce28a801c6e2d3f9a7",
+        "provenance": {
+          "runId": "20260809T000142Z__gbif-preserved-specimens__34cdc82b641d",
+          "codeCommit": "4524fc9110819b20ed319f262b6028b1c9c34bbf",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/source-verification.json",
+          "sourceVerificationSha256": "da58c450659ef0e3af8c383956493bcfa5315cf0f6d2aeb1104c96d7d24fa62b",
+          "artifactPath": "src/data/research/runs/20260809T000142Z__gbif-preserved-specimens__34cdc82b641d/artifacts/gbif-species-match-tridax-procumbens.json.gz",
+          "artifactSha256": "c982debda9268a61f88fba3e3d870d4a0cc011c3958f955340405310e3b5f3ef",
+          "artifactBytes": 281
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round60-dc-009\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "DC",
+    "--candidate-file",
+    "ops/national-research/plans/round-60-20260814/gbif-round60-dc-009.json",
+    "--candidate-limit",
+    "1",
+    "--started-at",
+    "2026-08-14T20:49:30.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round60-dc-009\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}

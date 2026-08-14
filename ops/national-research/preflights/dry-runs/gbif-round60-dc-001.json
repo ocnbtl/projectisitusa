@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "mode": "no-network-semantic-dry-run",
+  "networkRequestsIssued": 0,
+  "baseSha": "fb0fa42fc4bd0fb52a2c9e57182d25f48b623a5e",
+  "sourceId": "gbif-preserved-specimens",
+  "sourceParameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "11001:melaleuca-quinquenervia"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "stateCode": "DC",
+  "candidateFile": {
+    "path": "ops/national-research/plans/round-60-20260814/gbif-round60-dc-001.json",
+    "declaredCandidateCount": 1,
+    "selectedPairCount": 1,
+    "sha256": "f540ace4352893511d9ac5ff2879f7caa471dbba7013348d9d6c9e1f92f7fb08"
+  },
+  "candidateLimit": {
+    "value": 1,
+    "meaning": "maximum county-species candidate-pair count, not a taxon count"
+  },
+  "selectedTaxa": [
+    "melaleuca-quinquenervia"
+  ],
+  "selectedPairKeys": [
+    "11001:melaleuca-quinquenervia"
+  ],
+  "selectedPairHash": "254152e237cf164aa226ab20dbaffb8b875eccd8912a8e74a54f7817f5418fa2",
+  "parameterHash": "f33d73529546caa48e25aa4c6fbeabf533074d503f111f6e036b41e26720b671",
+  "startedAt": "2026-08-14T20:49:30.000Z",
+  "deterministicRunSuffix": "f33d73529546",
+  "expectedRunPath": "src/data/research/runs/20260814T204930Z__gbif-preserved-specimens__f33d73529546",
+  "outputRoot": "src/data/research/runs",
+  "taxonomyCache": {
+    "cacheId": "gbif-taxonomy-20260809-r55",
+    "path": "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "sha256": "7531dc3ac3efb273b0eaeeb1a24165122c1dea85ccc43d4581f52ae16900268b",
+    "selectedEntryCount": 1,
+    "selectedEntries": [
+      {
+        "speciesId": "melaleuca-quinquenervia",
+        "scientificName": "Melaleuca quinquenervia",
+        "requestUrl": "https://api.gbif.org/v1/species/match?name=Melaleuca+quinquenervia&rank=SPECIES&strict=true",
+        "retrievedAt": "2026-08-08T19:35:29.914Z",
+        "responseBodySha256": "0a49e1fe392cd9f618db6a41fd2a02094fe27fbb5739f377232f7c6892c49ebf",
+        "provenance": {
+          "runId": "20260808T175500Z__gbif-preserved-specimens__ce191ab0ca96",
+          "codeCommit": "1f2414363b914f15418aa3e3ba6ee5a22f0a5eb3",
+          "adapterVersion": "1.3.1",
+          "sourceVerificationPath": "src/data/research/runs/20260808T175500Z__gbif-preserved-specimens__ce191ab0ca96/source-verification.json",
+          "sourceVerificationSha256": "0f7ef2b93acddbf66971522fe32f9f6656dca66aa1db6d9c1aca939e97a50e23",
+          "artifactPath": "src/data/research/runs/20260808T175500Z__gbif-preserved-specimens__ce191ab0ca96/artifacts/gbif-species-match-melaleuca-quinquenervia.json.gz",
+          "artifactSha256": "9aa88a1473c80fa9b2089fea64b2c978d5facd659a0637e38a87ad50e35ffb15",
+          "artifactBytes": 298
+        }
+      }
+    ]
+  },
+  "expectedProviderRequests": {
+    "cachedTaxonomyResponses": 1,
+    "archiveReplayResponses": 0,
+    "liveTaxonomyRequests": 0,
+    "plannedLiveInitialOccurrenceRequests": 1,
+    "providerNetworkRequests": 1,
+    "additionalOccurrencePages": "only when a provider-declared total exceeds the first complete page"
+  },
+  "expandedCommand": [
+    "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe",
+    "--import",
+    "tsx",
+    "C:\\Code\\project-isitusa-worktrees\\gbif-round60-dc-001\\scripts\\research\\run-source.ts",
+    "--source",
+    "gbif-preserved-specimens",
+    "--state",
+    "DC",
+    "--candidate-file",
+    "ops/national-research/plans/round-60-20260814/gbif-round60-dc-001.json",
+    "--candidate-limit",
+    "1",
+    "--started-at",
+    "2026-08-14T20:49:30.000Z",
+    "--output-root",
+    "src/data/research/runs",
+    "--gbif-taxonomy-cache",
+    "src/data/research/caches/gbif-taxonomy-20260809-r55.json",
+    "--attempt-telemetry",
+    "C:\\Code\\project-isitusa-worker-staging\\gbif-round60-dc-001\\attempt-telemetry.json",
+    "--semantic-dry-run",
+    "true"
+  ],
+  "result": "pass"
+}
