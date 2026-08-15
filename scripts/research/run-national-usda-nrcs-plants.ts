@@ -93,6 +93,7 @@ type UpstreamRequest = {
   role: ArtifactRole;
   taxon_master_id: number | null;
   record_count: number;
+  acquired_code_commit: string;
 };
 
 type NrcsProfile = {
@@ -123,8 +124,8 @@ type AggregateResponse = {
 
 type AggregateFingerprint = Array<{
   plantMasterId: number;
-  symbol: string;
   establishmentMeans: string;
+  establishmentStatusId: string;
   rowCount: number;
 }>;
 
@@ -160,6 +161,7 @@ export type NationalNrcsReceipt = {
     license: string;
     freshness_status: "current-provider-snapshot";
     contract_snapshot_count: 3;
+    request_code_commits: string[];
     status_fingerprint_before_sha256: string;
     status_fingerprint_after_sha256: string;
     stable_status_window: true;
@@ -227,6 +229,7 @@ type CatalogSpecies = {
 type ProgressFile = {
   schemaVersion: 1;
   acquisitionId: string;
+  codeCommit?: string;
   requests: UpstreamRequest[];
   artifacts: AcquisitionArtifact[];
   transientFailures: number;
@@ -563,7 +566,7 @@ function validateProfile(profile: NrcsProfile, mapping: NrcsTaxonMapping) {
   ), `NRCS profile lacks L48 Introduced status for ${mapping.speciesId}.`);
 }
 
-function parseFingerprint(bytes: Buffer, plan: NationalNrcsPlan) {
+export function parseNrcsStatusFingerprint(bytes: Buffer, plan: NationalNrcsPlan) {
   const response = parseJson<AggregateResponse>(bytes, "NRCS status aggregate");
   assert(Array.isArray(response.features), "NRCS status aggregate lacks features.");
   const planned = new Map(plan.taxonMappings.map((entry) => [entry.plantMasterId, entry]));
@@ -571,17 +574,17 @@ function parseFingerprint(bytes: Buffer, plan: NationalNrcsPlan) {
   const result: AggregateFingerprint = response.features.map((feature) => {
     const raw = feature.attributes ?? {};
     const plantMasterId = Number(raw.plant_master_id);
-    const symbol = normalizedText(raw.Symbol);
-    const establishmentMeans = normalizedText(raw.plant_nativity_id);
+    const establishmentMeans = normalizedText(raw.Symbol);
+    const establishmentStatusId = normalizedText(raw.plant_nativity_id);
     const rowCount = Number(raw.row_count);
     assert(Number.isSafeInteger(plantMasterId) && planned.has(plantMasterId), `NRCS aggregate includes unplanned master ID ${raw.plant_master_id}.`);
-    assert(symbol === planned.get(plantMasterId)!.symbol, `NRCS aggregate symbol changed for ${plantMasterId}.`);
     assert(allowed.has(establishmentMeans as "Introduced" | "Both"), `NRCS aggregate has disallowed establishment means ${establishmentMeans} for ${plantMasterId}.`);
+    assert(/^\d+$/u.test(establishmentStatusId), `NRCS aggregate establishment status ID is invalid for ${plantMasterId}.`);
     assert(Number.isSafeInteger(rowCount) && rowCount > 0, `NRCS aggregate row count is invalid for ${plantMasterId}.`);
-    return { plantMasterId, symbol, establishmentMeans, rowCount };
+    return { plantMasterId, establishmentMeans, establishmentStatusId, rowCount };
   }).sort((left, right) => compareText(
-    `${left.plantMasterId}:${left.symbol}:${left.establishmentMeans}`,
-    `${right.plantMasterId}:${right.symbol}:${right.establishmentMeans}`,
+    `${left.plantMasterId}:${left.establishmentMeans}:${left.establishmentStatusId}`,
+    `${right.plantMasterId}:${right.establishmentMeans}:${right.establishmentStatusId}`,
   ));
   const present = new Set(result.map((entry) => entry.plantMasterId));
   assert(present.size === plan.taxonMappings.length, `NRCS aggregate covers ${present.size} taxa, expected ${plan.taxonMappings.length}.`);
@@ -649,8 +652,8 @@ export function verifyNationalNrcsAcquisition(directory: string, plan: NationalN
       const parsed = parseNrcsDistributionCsv(bytes, mapping);
       assert(parsed.length === artifact.record_count, `NRCS distribution count changed for ${mapping.speciesId}.`);
       rows.push(...parsed);
-    } else if (artifact.role === "status-before") before = parseFingerprint(bytes, plan);
-    else if (artifact.role === "status-after") after = parseFingerprint(bytes, plan);
+    } else if (artifact.role === "status-before") before = parseNrcsStatusFingerprint(bytes, plan);
+    else if (artifact.role === "status-after") after = parseNrcsStatusFingerprint(bytes, plan);
     else parseJson<unknown>(bytes, artifact.path);
   }
   assert(profiles.size === plan.taxonMappings.length, "NRCS profile set is incomplete.");
@@ -687,8 +690,13 @@ async function acquire(input: {
   const progressPath = path.join(stagingDirectory, "progress.json");
   const progress = existsSync(progressPath)
     ? readJson<ProgressFile>(progressPath)
-    : { schemaVersion: 1 as const, acquisitionId: input.acquisitionId, requests: [], artifacts: [], transientFailures: 0 };
+    : { schemaVersion: 1 as const, acquisitionId: input.acquisitionId, codeCommit: input.codeCommit, requests: [], artifacts: [], transientFailures: 0 };
   assert(progress.acquisitionId === input.acquisitionId, "NRCS partial progress belongs to a different acquisition.");
+  const originalProgressCommit = progress.codeCommit ?? "05aad75e26c661e522e9b03c22c361b76a4f1273";
+  progress.codeCommit = originalProgressCommit;
+  for (const existingRequest of progress.requests) {
+    existingRequest.acquired_code_commit ??= originalProgressCommit;
+  }
   const transient = { count: progress.transientFailures };
   const completed = new Map(progress.requests.map((request) => [request.request_id, request]));
   const artifactsByPath = new Map(progress.artifacts.map((artifact) => [artifact.path, artifact]));
@@ -716,6 +724,8 @@ async function acquire(input: {
       const bytes = verifyArtifact(stagingDirectory, artifact);
       assert(existing.url === inputRequest.url && existing.method === inputRequest.method, `NRCS resumed request contract changed for ${inputRequest.requestId}.`);
       assert(existing.request_body_sha256 === (inputRequest.body ? sha256(inputRequest.body) : null), `NRCS resumed request body changed for ${inputRequest.requestId}.`);
+      const recordCount = inputRequest.recordCount(bytes);
+      assert(existing.record_count === recordCount && artifact.record_count === recordCount, `NRCS resumed record count changed for ${inputRequest.requestId}.`);
       return bytes;
     }
     const response = await fetchBytes({
@@ -726,7 +736,6 @@ async function acquire(input: {
       maxAttempts: input.plan.maxAttempts,
       transient,
     });
-    const recordCount = inputRequest.recordCount(response.bytes);
     const artifact = artifactFor({
       stagingDirectory,
       filename: inputRequest.filename,
@@ -734,7 +743,7 @@ async function acquire(input: {
       mediaType: inputRequest.mediaType,
       role: inputRequest.role,
       taxonMasterId: inputRequest.taxonMasterId,
-      recordCount,
+      recordCount: 0,
       sourceUrl: inputRequest.url,
     });
     const descriptor: UpstreamRequest = {
@@ -749,12 +758,17 @@ async function acquire(input: {
       artifact_path: artifact.path,
       role: inputRequest.role,
       taxon_master_id: inputRequest.taxonMasterId,
-      record_count: recordCount,
+      record_count: 0,
+      acquired_code_commit: input.codeCommit,
     };
     progress.artifacts.push(artifact);
     progress.requests.push(descriptor);
     artifactsByPath.set(artifact.path, artifact);
     completed.set(descriptor.request_id, descriptor);
+    persistProgress();
+    const recordCount = inputRequest.recordCount(response.bytes);
+    artifact.record_count = recordCount;
+    descriptor.record_count = recordCount;
     persistProgress();
     return response.bytes;
   }
@@ -764,8 +778,8 @@ async function acquire(input: {
     await request({ requestId: "contract-mapserver", role: "service-metadata", url: SERVICE_METADATA_URL, method: "GET", body: null, filename: "mapserver-metadata.json", mediaType: "application/json", taxonMasterId: null, recordCount: () => 0 });
     await request({ requestId: "contract-layer6", role: "layer6-metadata", url: LAYER6_METADATA_URL, method: "GET", body: null, filename: "layer6-metadata.json", mediaType: "application/json", taxonMasterId: null, recordCount: () => 0 });
     const statusUrl = aggregateUrl(input.plan);
-    const beforeBytes = await request({ requestId: "status-before", role: "status-before", url: statusUrl, method: "GET", body: null, filename: "status-before.json", mediaType: "application/json", taxonMasterId: null, recordCount: (bytes) => parseFingerprint(bytes, input.plan).reduce((sum, row) => sum + row.rowCount, 0) });
-    const before = parseFingerprint(beforeBytes, input.plan);
+    const beforeBytes = await request({ requestId: "status-before", role: "status-before", url: statusUrl, method: "GET", body: null, filename: "status-before.json", mediaType: "application/json", taxonMasterId: null, recordCount: (bytes) => parseNrcsStatusFingerprint(bytes, input.plan).reduce((sum, row) => sum + row.rowCount, 0) });
+    const before = parseNrcsStatusFingerprint(beforeBytes, input.plan);
 
     for (const mapping of [...input.plan.taxonMappings].sort((a, b) => a.plantMasterId - b.plantMasterId)) {
       const profileUrl = `${input.plan.profileBaseUrl}/${mapping.plantMasterId}`;
@@ -796,8 +810,8 @@ async function acquire(input: {
       parseNrcsDistributionCsv(csvBytes, mapping);
     }
 
-    const afterBytes = await request({ requestId: "status-after", role: "status-after", url: statusUrl, method: "GET", body: null, filename: "status-after.json", mediaType: "application/json", taxonMasterId: null, recordCount: (bytes) => parseFingerprint(bytes, input.plan).reduce((sum, row) => sum + row.rowCount, 0) });
-    const after = parseFingerprint(afterBytes, input.plan);
+    const afterBytes = await request({ requestId: "status-after", role: "status-after", url: statusUrl, method: "GET", body: null, filename: "status-after.json", mediaType: "application/json", taxonMasterId: null, recordCount: (bytes) => parseNrcsStatusFingerprint(bytes, input.plan).reduce((sum, row) => sum + row.rowCount, 0) });
+    const after = parseNrcsStatusFingerprint(afterBytes, input.plan);
     assert(stableJson(before) === stableJson(after), "NRCS provider status changed during acquisition.");
 
     const artifacts = [...progress.artifacts];
@@ -812,6 +826,7 @@ async function acquire(input: {
     const usCounty = rows.filter((row) => row.country === "United States" && row.countyFips);
     const usStateOnly = rows.filter((row) => row.country === "United States" && !row.countyFips);
     const foreign = rows.filter((row) => row.country !== "United States");
+    const requestCodeCommits = [...new Set(requests.map((request) => request.acquired_code_commit))].sort(compareText);
     const receipt: NationalNrcsReceipt = {
       schemaVersion: 1,
       acquisition_id: input.acquisitionId,
@@ -833,6 +848,7 @@ async function acquire(input: {
         license: "Official USDA NRCS service; no dataset-specific machine-readable license was exposed. Copyright attribution and exact source bytes are retained.",
         freshness_status: "current-provider-snapshot",
         contract_snapshot_count: 3,
+        request_code_commits: requestCodeCommits,
         status_fingerprint_before_sha256: sha256(stableJson(before)),
         status_fingerprint_after_sha256: sha256(stableJson(after)),
         stable_status_window: true,
@@ -841,7 +857,7 @@ async function acquire(input: {
         county_geography_policy: "Only United States CSV rows with explicit two-digit state FIPS and three-digit county FIPS matching current registry state and county names may publish. No coordinates, MapServer ID joins, or retired-geography crosswalks are used.",
         state_row_policy: "United States state-only rows with blank county FIPS are retained but cannot create county occurrence evidence.",
         taxonomy_policy: "Every taxon requires exact committed master ID, accepted profile identity, symbol, scientific name, and L48 Introduced profile status.",
-        nativity_policy: "Before and after layer-6 aggregate fingerprints must contain only Introduced or Both for every selected taxon, with exact symbol and stable row counts.",
+        nativity_policy: "Before and after layer-6 aggregate fingerprints must contain only Introduced or Both establishment text for every selected taxon, with stable numeric status IDs and row counts. The provider's misleading layer-6 Symbol field carries establishment text, not the plant symbol; profile and CSV symbol fields are validated separately.",
         positive_semantics: "A qualifying provider-declared county distribution row supports recorded-present county evidence.",
         negative_semantics: "Complete taxon CSV silence creates researched-unresolved only. Failure, rejection, missing geography, and state-only rows never support absence or non-detection.",
         snapshot_completeness: "All 40 taxon profiles and 40 single-response distribution CSVs were retained between byte-identical normalized before/after status fingerprints, together with three provider-contract snapshots.",
@@ -851,6 +867,7 @@ async function acquire(input: {
           "Layer-6 country_subdivision_id does not join layer-2 plant_location_id or StateSearch county IDs.",
           "MapServer ID and ESRI_OID values are not stable record identities and are not used.",
           "The CSV exposes no nativity field or row date; source status and profile gates are independently retained.",
+          "Layer 6 aliases establishment text as Symbol and its numeric establishment code as plant_nativity_id; neither field is treated as the plant symbol.",
         ],
       },
       counts: {
@@ -872,6 +889,9 @@ async function acquire(input: {
         "State-only distribution rows are retained outside county evidence.",
         "No coordinate-derived county mapping is permitted.",
         "No dataset-specific machine-readable license was exposed.",
+        ...(requestCodeCommits.length > 1
+          ? [`Acquisition resumed across actor code commits ${requestCodeCommits.join(", ")}; every retained response records its exact acquiring commit.`]
+          : []),
       ],
       rerun_command: input.rerunCommand,
     };

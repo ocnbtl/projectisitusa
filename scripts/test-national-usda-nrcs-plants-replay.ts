@@ -1,13 +1,45 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 
 import { stableJson } from "@/lib/research/run-files";
 import {
   type NrcsDistributionRow,
+  type NationalNrcsPlan,
   type NrcsRequestedPair,
   type NrcsTaxonMapping,
   replayNationalNrcsState,
 } from "./research/national-usda-nrcs-plants";
-import { parseNrcsDistributionCsv } from "./research/run-national-usda-nrcs-plants";
+import {
+  parseNrcsDistributionCsv,
+  parseNrcsStatusFingerprint,
+} from "./research/run-national-usda-nrcs-plants";
+
+const plan = JSON.parse(readFileSync(
+  "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-01.json",
+  "utf8",
+)) as NationalNrcsPlan;
+const statusFeatures = plan.taxonMappings.map((entry) => ({
+  attributes: {
+    plant_master_id: entry.plantMasterId,
+    Symbol: "Introduced",
+    plant_nativity_id: "3",
+    row_count: 1,
+  },
+}));
+const statusFingerprint = parseNrcsStatusFingerprint(
+  Buffer.from(JSON.stringify({ features: statusFeatures })),
+  plan,
+);
+assert.equal(statusFingerprint.length, 40);
+assert.ok(statusFingerprint.every((entry) =>
+  entry.establishmentMeans === "Introduced" && entry.establishmentStatusId === "3"
+));
+const misleadingAliasDrift = structuredClone(statusFeatures);
+misleadingAliasDrift[0]!.attributes.Symbol = plan.taxonMappings[0]!.symbol;
+assert.throws(
+  () => parseNrcsStatusFingerprint(Buffer.from(JSON.stringify({ features: misleadingAliasDrift })), plan),
+  /disallowed establishment means/u,
+);
 
 const mapping: NrcsTaxonMapping = {
   plantMasterId: 31170,
@@ -107,4 +139,5 @@ console.log(JSON.stringify({
   rejections: first.rejections.length,
   outcomes: first.outcomes.length,
   deterministic: true,
+  layer6AliasSemantics: true,
 }, null, 2));

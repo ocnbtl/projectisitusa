@@ -17,9 +17,9 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const NRCS_SOURCE_ID = "usda-nrcs-plants" as const;
 export const NRCS_ACQUISITION_ACTOR =
-  "usda-nrcs-plants-national-acquisition@1.0.0" as const;
+  "usda-nrcs-plants-national-acquisition@1.0.1" as const;
 export const NRCS_ADAPTER_ID = "usda-nrcs-plants-national" as const;
-export const NRCS_ADAPTER_VERSION = "1.0.0" as const;
+export const NRCS_ADAPTER_VERSION = "1.0.1" as const;
 export const NRCS_PROFILE_BASE_URL =
   "https://plantsservices.sc.egov.usda.gov/api/PlantProfile" as const;
 export const NRCS_DISTRIBUTION_URL =

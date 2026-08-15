@@ -341,10 +341,10 @@
       "researchAdapter": {
         "id": "usda-nrcs-plants-national",
         "module": "scripts/research/national-usda-nrcs-plants.ts",
-        "allowedVersions": ["1.0.0"],
+        "allowedVersions": ["1.0.1"],
         "parameterSchema": "src/data/research/schemas/usda-nrcs-plants-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
-        "taxonMatchingPolicy": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, L48 Introduced profile status, and stable Introduced/Both distribution fingerprint. Drift or ambiguity blocks the taxon.",
+        "taxonMatchingPolicy": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, L48 Introduced profile status, and stable Introduced/Both layer-6 establishment fingerprint. The misleading layer-6 Symbol field is establishment text, not the plant symbol; profile and CSV fields remain the plant-symbol authorities. Drift or ambiguity blocks the taxon.",
         "geographyMatchingPolicy": "Exact provider CSV two-digit state FIPS plus three-digit county FIPS, matching current registry state and county names. Missing, mismatched, retired, conflicting, and ambiguous geography is rejected. MapServer cross-layer IDs, coordinates, and automatic successor crosswalks are prohibited.",
         "artifactRetention": "versioned",
         "claimPersistence": "historical",
