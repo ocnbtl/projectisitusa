@@ -1,0 +1,411 @@
+{
+  "ok": true,
+  "semanticDryRun": true,
+  "networkRequestsIssued": 0,
+  "sourceId": "aphis-federal-quarantine",
+  "baseSha": "e454979211f289bdf03e676238b4d79379a8f768",
+  "expectedReceiptCodeCommit": "e454979211f289bdf03e676238b4d79379a8f768",
+  "planPath": "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
+  "planSha256": "1d823c5d6e687f3be5f657191a0edcdfdb7739561f4c3ab3a7daddd3b249d2d2",
+  "acquisitionParameterHash": "94b2541c0878a5aa2253c9a3e20155d148f01322f9098147d8fb9dd61102e0bf",
+  "acquisitionId": "20260815t033000z__aphis-federal-quarantine__94b2541c0878",
+  "acquisitionPath": "src/data/research/national-acquisitions/20260815t033000z__aphis-federal-quarantine__94b2541c0878",
+  "expandedCommand": "& 'C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe' --import tsx 'C:\\Code\\project-isitusa\\scripts\\research\\run-national-aphis-federal-quarantine.ts' --plan 'src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json' --started-at '2026-08-15T03:30:00.000Z' --semantic-dry-run false --acquisition-root 'src/data/research/national-acquisitions' --runs-root 'src/data/research/runs' --attempt-telemetry 'ops/national-research/attempt-telemetry/aphis-federal-quarantine-national-20260815.json'",
+  "stateCount": 51,
+  "taxonCount": 17,
+  "activeCountyCount": 3144,
+  "orderedPairCount": 53448,
+  "expectedNetNewPairsAtBaseline": 52711,
+  "expectedProviderRequests": {
+    "metadata": 2,
+    "count": 1,
+    "pagesAtStartupCount": 3,
+    "totalAtStartupCount": 6
+  },
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "backoffMilliseconds": [
+      1000,
+      5000
+    ]
+  },
+  "artifactBudgetBytes": 20971520,
+  "runPaths": [
+    {
+      "stateCode": "AK",
+      "orderedPairCount": 510,
+      "pairHash": "a78f75ab108cf72fbfc4cb21f38b0bc844a272d53e99200956b170bdb526f04d",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__2aa229d7e349",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__2aa229d7e349"
+    },
+    {
+      "stateCode": "AL",
+      "orderedPairCount": 1139,
+      "pairHash": "85783302bc8c82f378645a0b023661d05fb759885f367c545d9c4ab8e8d52f52",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__2fc16b22f8f3",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__2fc16b22f8f3"
+    },
+    {
+      "stateCode": "AR",
+      "orderedPairCount": 1275,
+      "pairHash": "66e2f5cf2871e0fc66d5b0ed7a26d8dc9796a5fad4ee6c06c87a365ff400f513",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__d6b51f334251",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__d6b51f334251"
+    },
+    {
+      "stateCode": "AZ",
+      "orderedPairCount": 255,
+      "pairHash": "047632d2ffdec187ddfece55c88602204e88cbafdcccdfb31f41b9ecc7f26ba8",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__bba3c8f3d76d",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__bba3c8f3d76d"
+    },
+    {
+      "stateCode": "CA",
+      "orderedPairCount": 986,
+      "pairHash": "a8ef08aee563181c9f2a85de2d0ee18caf410a87e5c77372dbc8c187da2721b4",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__cb886817fb98",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__cb886817fb98"
+    },
+    {
+      "stateCode": "CO",
+      "orderedPairCount": 1088,
+      "pairHash": "5dd6c9374e96e63cc42e78761d597249c91e7248983162045b686346ed40b9be",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__4ee89679177d",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__4ee89679177d"
+    },
+    {
+      "stateCode": "CT",
+      "orderedPairCount": 153,
+      "pairHash": "7c3862e36fbabc89b2ca1696c45c13be810283c25388d899766b6ef341c71953",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__d9385bfdc537",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__d9385bfdc537"
+    },
+    {
+      "stateCode": "DC",
+      "orderedPairCount": 17,
+      "pairHash": "fc963ff3dfa21b7aacff11435bd995195515ab29a1969687b01b9eb60e955af2",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__6ec361ab39d5",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__6ec361ab39d5"
+    },
+    {
+      "stateCode": "DE",
+      "orderedPairCount": 51,
+      "pairHash": "0d1289bd2aef0e98d351107160e0ab74b7951abf14986e6a013d3cb7cec5c2f4",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__cd48de7df271",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__cd48de7df271"
+    },
+    {
+      "stateCode": "FL",
+      "orderedPairCount": 1139,
+      "pairHash": "f4fe74d7f76d23219d08c164b4e0bdc26e00682232829f785b7c73c97b9f36a1",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__0dea44ae938e",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__0dea44ae938e"
+    },
+    {
+      "stateCode": "GA",
+      "orderedPairCount": 2703,
+      "pairHash": "cf1b5c79a2c6e23a873a7d1348e1b41e6c88f773a12bed46f925834b2444b007",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__b21ed6d6a700",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__b21ed6d6a700"
+    },
+    {
+      "stateCode": "HI",
+      "orderedPairCount": 85,
+      "pairHash": "b3eebc29fc54ddf27b5930537e6a60cdf82ffc19ff3b6f8de11c98b563e42d18",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__91ebe35b0958",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__91ebe35b0958"
+    },
+    {
+      "stateCode": "IA",
+      "orderedPairCount": 1683,
+      "pairHash": "ca86d465447cc82d849fb8c0697e409fcc06811edf25d6d143e28671f044a0a9",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__8a1c634f8abb",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__8a1c634f8abb"
+    },
+    {
+      "stateCode": "ID",
+      "orderedPairCount": 748,
+      "pairHash": "bbbf518be3f9fe601fcd1b8c9d450659a7cb9b5870ac272f3570516ec5a45d9d",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__94466e4a35c4",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__94466e4a35c4"
+    },
+    {
+      "stateCode": "IL",
+      "orderedPairCount": 1734,
+      "pairHash": "8b766adce300b24ec6becbd6105ed0d8ecf3fef13f8ee0d13c442925ab03820e",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__3048a4afc089",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__3048a4afc089"
+    },
+    {
+      "stateCode": "IN",
+      "orderedPairCount": 1564,
+      "pairHash": "83437e397abd8e279895390a24964d62fcb3cf03175af19eab84601ae8faa94d",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__a3ead8c77105",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__a3ead8c77105"
+    },
+    {
+      "stateCode": "KS",
+      "orderedPairCount": 1785,
+      "pairHash": "cc9e878788245d4b985f5a8ffaf2449b97266a1f3a01889bd4ae1c7e6948f56f",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__29731146bf44",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__29731146bf44"
+    },
+    {
+      "stateCode": "KY",
+      "orderedPairCount": 2040,
+      "pairHash": "9b6412d436affdd5ad4bd668361d65425c22544d095740ff666856aef73b11be",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__09129a7c1055",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__09129a7c1055"
+    },
+    {
+      "stateCode": "LA",
+      "orderedPairCount": 1088,
+      "pairHash": "49dae761a51e848bdc6266238e2ce5ce8424b398f77127e4707f4c14a84479ed",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__5faa8c7c4e89",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__5faa8c7c4e89"
+    },
+    {
+      "stateCode": "MA",
+      "orderedPairCount": 238,
+      "pairHash": "f6548ea412817bf390cf917304627a5cd9f0ec186aa24a2549a98dcda602570a",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__6a1cec311916",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__6a1cec311916"
+    },
+    {
+      "stateCode": "MD",
+      "orderedPairCount": 408,
+      "pairHash": "e104f05b84836a16892428ff2acc0722270d6acff06341b0006eec2601d3fd9e",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__f4cff9ff915e",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__f4cff9ff915e"
+    },
+    {
+      "stateCode": "ME",
+      "orderedPairCount": 272,
+      "pairHash": "c45c5c0990400f6f8d89d112a5cfbbe3826f8ae595322074c43ec102c77d965d",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__e86d722e6d3c",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__e86d722e6d3c"
+    },
+    {
+      "stateCode": "MI",
+      "orderedPairCount": 1411,
+      "pairHash": "b2f37ce32998e335b4bc5b8b9b5489ced6d043dbf06db6e91468970ee7a20abd",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__3ecda43618e9",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__3ecda43618e9"
+    },
+    {
+      "stateCode": "MN",
+      "orderedPairCount": 1479,
+      "pairHash": "cb7ece2819d4ad8644ceacd19ac0e13f64c19c677a7c561f359e89485b3bb54f",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__e18e3489fbc0",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__e18e3489fbc0"
+    },
+    {
+      "stateCode": "MO",
+      "orderedPairCount": 1955,
+      "pairHash": "44ebd883ca9c66da8ca8e990c163e6e1045db08031ae87c0d62d32beeebf35dc",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__871c1137bdb8",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__871c1137bdb8"
+    },
+    {
+      "stateCode": "MS",
+      "orderedPairCount": 1394,
+      "pairHash": "d0c59fee8aa701f88d7fe819a0c7cf858509cc0785bb70de5e8df33ceffafc3e",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__888e2cbc0b4f",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__888e2cbc0b4f"
+    },
+    {
+      "stateCode": "MT",
+      "orderedPairCount": 952,
+      "pairHash": "7d4057355f090a75421ca369abd4f8205c331380430b9c13fd4e11ba5aa7dccb",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__b295f9a43c93",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__b295f9a43c93"
+    },
+    {
+      "stateCode": "NC",
+      "orderedPairCount": 1700,
+      "pairHash": "bde3ad7a4b146f2b398958a311f739e4d51b1b907f219cc64721a15603349c4c",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__f35009269b16",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__f35009269b16"
+    },
+    {
+      "stateCode": "ND",
+      "orderedPairCount": 901,
+      "pairHash": "ecb1762da7007a8ac5186edbdafb443d46050ff3425453f1c0b5ae427a09438e",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__1864e2b7c2ea",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__1864e2b7c2ea"
+    },
+    {
+      "stateCode": "NE",
+      "orderedPairCount": 1581,
+      "pairHash": "0c52305b48954ea83718cf6c5d5d01c654f2fecd3901c90be8293d6c2dab88bb",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__2c4c64a8e900",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__2c4c64a8e900"
+    },
+    {
+      "stateCode": "NH",
+      "orderedPairCount": 170,
+      "pairHash": "e99dad54e64cff872c7fbe73a165043e5b93bfeb61ce1d5704f4dc48382d9e3a",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__23e7c5d2fe5e",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__23e7c5d2fe5e"
+    },
+    {
+      "stateCode": "NJ",
+      "orderedPairCount": 357,
+      "pairHash": "01a94eaf39edcaf22968ddb5ec9eaf4f0f37d335cced7e4a479d84888e8819a1",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__939446520142",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__939446520142"
+    },
+    {
+      "stateCode": "NM",
+      "orderedPairCount": 561,
+      "pairHash": "d34dbe78b682ac9db813cba741235d70f9fcb58e5a26ed80bc6b70eb9e3e4193",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__28d23ddf5d14",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__28d23ddf5d14"
+    },
+    {
+      "stateCode": "NV",
+      "orderedPairCount": 289,
+      "pairHash": "52d95cd14b054c20cc2f80c713663a35b4de9ce7b937890cc5bbc7e76c845c42",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__7126d9e04718",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__7126d9e04718"
+    },
+    {
+      "stateCode": "NY",
+      "orderedPairCount": 1054,
+      "pairHash": "e49a230a71671f85e8152dd061edea94cc8330b00876a0181535caaccc6f152e",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__d838f908f72e",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__d838f908f72e"
+    },
+    {
+      "stateCode": "OH",
+      "orderedPairCount": 1496,
+      "pairHash": "2c43bd8aed67c68f50b320676f70b2831d3588a5c2bf06ff33a268b4b5b77bd5",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__67688401b389",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__67688401b389"
+    },
+    {
+      "stateCode": "OK",
+      "orderedPairCount": 1309,
+      "pairHash": "799b1a01a58e239500b4f9ddcef3a8422de19b9864cb29fc12d2790c2866e52b",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__b1483c34d3b6",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__b1483c34d3b6"
+    },
+    {
+      "stateCode": "OR",
+      "orderedPairCount": 612,
+      "pairHash": "9d7e85b0dfc394f0a7676cc79f7ba7fb02cd1139ac60d24f016e95bf51c62bbc",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__373ad5843d06",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__373ad5843d06"
+    },
+    {
+      "stateCode": "PA",
+      "orderedPairCount": 1139,
+      "pairHash": "507d85dd443f238c29c4fdc3205cc555de8c667c5ef1b9b51d5739e14c69481b",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__a0e39439303b",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__a0e39439303b"
+    },
+    {
+      "stateCode": "RI",
+      "orderedPairCount": 85,
+      "pairHash": "2949351b9d77b93d278abd6f5877f8d4aed53bf1d1befbbcb4dd3a3f01431d57",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__80768dacdb56",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__80768dacdb56"
+    },
+    {
+      "stateCode": "SC",
+      "orderedPairCount": 782,
+      "pairHash": "2ee1a7691735db94919217b1d62e358b63d882a20ae45bfd6be92ec6a2165fc7",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__6a97b5f50859",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__6a97b5f50859"
+    },
+    {
+      "stateCode": "SD",
+      "orderedPairCount": 1122,
+      "pairHash": "dd6a56c929b170b55f6295f58c1280bc5f6d10c9341590aa304de38fabbadf23",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__ffdd4cbcf3c1",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__ffdd4cbcf3c1"
+    },
+    {
+      "stateCode": "TN",
+      "orderedPairCount": 1615,
+      "pairHash": "fd690b51fab0b4e49a5eb5769789c9f05623478a299b9a36c4df0af0335063e8",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__7a5fd9dd9876",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__7a5fd9dd9876"
+    },
+    {
+      "stateCode": "TX",
+      "orderedPairCount": 4318,
+      "pairHash": "7b6745d58c0c935534152e75bea9fb61536487361541f35dd09525e02ce6b3ba",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__8a539954b08c",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__8a539954b08c"
+    },
+    {
+      "stateCode": "UT",
+      "orderedPairCount": 493,
+      "pairHash": "4146de66d480287e28530300e830e9e4e21d521edb0997fe95a73d07213d190c",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__9ee756840133",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__9ee756840133"
+    },
+    {
+      "stateCode": "VA",
+      "orderedPairCount": 2261,
+      "pairHash": "c11f97d85af4ccee0cbdf3e6dbd6da594b5a6161b8c2b5b21103964ab71f42c8",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__1f816ecf570f",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__1f816ecf570f"
+    },
+    {
+      "stateCode": "VT",
+      "orderedPairCount": 238,
+      "pairHash": "c90e7cbe2f10b8d4f0ee682e6c6cacba9f811e377917fc794add994f910ca1d7",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__8d722fc2ced0",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__8d722fc2ced0"
+    },
+    {
+      "stateCode": "WA",
+      "orderedPairCount": 663,
+      "pairHash": "e2c384bc1f1a07b34f030e083748e15c56ae585e828ece742e6293f4c9b66cfe",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__3adb8a2f60f2",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__3adb8a2f60f2"
+    },
+    {
+      "stateCode": "WI",
+      "orderedPairCount": 1224,
+      "pairHash": "f40ef89d59338613451040dcb89e645e539663eb748aea26ad7bd001152d30e5",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__ff484bd5d771",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__ff484bd5d771"
+    },
+    {
+      "stateCode": "WV",
+      "orderedPairCount": 935,
+      "pairHash": "b84f5cb6b1b51879909528ec935d3b68907e6263e9b9c81110170008690c0e3a",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__d6b00009de82",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__d6b00009de82"
+    },
+    {
+      "stateCode": "WY",
+      "orderedPairCount": 391,
+      "pairHash": "2005a3c16e490c10fcb5fbc4f7f23f18a7171d92bc1815706fc3c0d3a2ff2cf3",
+      "runId": "20260815T033000Z__aphis-federal-quarantine__98b32851ba05",
+      "outputPath": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__98b32851ba05"
+    }
+  ],
+  "inputHashes": {
+    "scripts/research/national-aphis-federal-quarantine.ts": "cd64ee9422962e24cafdfa2993288b37360d8c5087091900d083c5a1abfd16ae",
+    "scripts/research/run-national-aphis-federal-quarantine.ts": "b990840613719358118100ec77dfe945d95d5241b90292ec42421c173c9fbea2",
+    "src/data/generated/species.json": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "src/data/research/county-equivalent-registry.json": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json": "1d823c5d6e687f3be5f657191a0edcdfdb7739561f4c3ab3a7daddd3b249d2d2",
+    "src/data/research/schemas/aphis-federal-quarantine-parameters.schema.json": "babaafb3471d623db4e5ae44ed0a305519b51d72cfe9cd47d2bbba4567e1733b",
+    "src/data/research/schemas/evidence-assertion.schema.json": "1132a0ddb1fccae2f0a013e225cbc7758bb67f1f085b199a04fb3c53a21a1719",
+    "src/data/research/schemas/national-aphis-federal-quarantine-acquisition-receipt.schema.json": "e264fa339c9f4018651f6e843e4c8c181229d8e63639ec93dd956b1d6a6e9261",
+    "src/data/research/schemas/national-aphis-federal-quarantine-plan.schema.json": "e13883c6e6c832ae86326db476717330cd0a65573e320e99ef743213a864c516",
+    "src/data/research/schemas/national-aphis-federal-quarantine-reference.schema.json": "69306a30febe6c71d9e513c7d6cda71e98b8e9a9f43e1e7cd93d3601973448fa",
+    "src/data/research/schemas/pair-outcome.schema.json": "c1596cfaaf02bc73f4ce44f461d45bd62f21826e04392f92aa97425ec4478af5",
+    "src/data/research/schemas/rejection-record.schema.json": "a0f571f0e488a8c4461a137ef9660b594a08cce4c3d0a460c1adc5ac0dcdb13e",
+    "src/data/research/schemas/review-event.schema.json": "5078336ea8564c067cef8e275bc6dd668548b49ed1e40649364f131947cbf090",
+    "src/data/research/schemas/run-receipt.schema.json": "ef7ad1e7ed7757f8f3b57e4ce70c252e62e5ffd4de88d242a74d85bbb3667516",
+    "src/data/research/schemas/worker-source-verification.schema.json": "dd4c36404f36d72659e555d9d66d9aff35cac22293a1162ac441f3de2215bbd0",
+    "src/data/research/source-registry.json": "24e1d74a49d076a1e3fe16e8e4a051fc4689b2c9694270fe941bc4ee8d487a86",
+    "src/data/research/state-registry.json": "6080d7e61bf9a34794a14e9f6976edc378fbb10908dbd40296d3006923ef1f94"
+  }
+}

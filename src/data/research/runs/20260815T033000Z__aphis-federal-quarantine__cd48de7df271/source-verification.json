@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-15T03:54:52.560Z",
+  "runId": "20260815T033000Z__aphis-federal-quarantine__cd48de7df271",
+  "sourceId": "aphis-federal-quarantine",
+  "stateCode": "DE",
+  "pairKeys": [
+    "10001:anastrepha-ludens",
+    "10001:asian-longhorned-beetle",
+    "10001:bactrocera-dorsalis",
+    "10001:ceratitis-capitata",
+    "10001:cydalima-perspectalis",
+    "10001:diaphorina-citri",
+    "10001:elsinoe-australis",
+    "10001:globodera-pallida",
+    "10001:globodera-rostochiensis",
+    "10001:liberibacter-asiaticus",
+    "10001:lymantria-dispar",
+    "10001:phyllosticta-citricarpa",
+    "10001:solenopsis-invicta",
+    "10001:spotted-lanternfly",
+    "10001:striga-asiatica",
+    "10001:sudden-oak-death",
+    "10001:xanthomonas-citri",
+    "10003:anastrepha-ludens",
+    "10003:asian-longhorned-beetle",
+    "10003:bactrocera-dorsalis",
+    "10003:ceratitis-capitata",
+    "10003:cydalima-perspectalis",
+    "10003:diaphorina-citri",
+    "10003:elsinoe-australis",
+    "10003:globodera-pallida",
+    "10003:globodera-rostochiensis",
+    "10003:liberibacter-asiaticus",
+    "10003:lymantria-dispar",
+    "10003:phyllosticta-citricarpa",
+    "10003:solenopsis-invicta",
+    "10003:spotted-lanternfly",
+    "10003:striga-asiatica",
+    "10003:sudden-oak-death",
+    "10003:xanthomonas-citri",
+    "10005:anastrepha-ludens",
+    "10005:asian-longhorned-beetle",
+    "10005:bactrocera-dorsalis",
+    "10005:ceratitis-capitata",
+    "10005:cydalima-perspectalis",
+    "10005:diaphorina-citri",
+    "10005:elsinoe-australis",
+    "10005:globodera-pallida",
+    "10005:globodera-rostochiensis",
+    "10005:liberibacter-asiaticus",
+    "10005:lymantria-dispar",
+    "10005:phyllosticta-citricarpa",
+    "10005:solenopsis-invicta",
+    "10005:spotted-lanternfly",
+    "10005:striga-asiatica",
+    "10005:sudden-oak-death",
+    "10005:xanthomonas-citri"
+  ],
+  "parameterHash": "2e799c4aab8b2ba45ecfc5195473c8f736b3c1447b99a0ec830d968206011be1",
+  "authority": {
+    "name": "USDA Animal and Plant Health Inspection Service",
+    "sourceUrl": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1",
+    "publisher": "USDA APHIS"
+  },
+  "terms": {
+    "license": "Official public APHIS ArcGIS service; source URLs, raw response bytes, and retrieval metadata retained",
+    "termsUrl": "https://www.aphis.usda.gov/plant-pests-diseases",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-15T03:54:52.560Z",
+    "freshnessDate": "2026-08-15"
+  },
+  "geography": {
+    "method": "Exact explicit APHIS county FIPS plus matching state and registered active county-equivalent name.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates and automatic retired-geography crosswalks are prohibited."
+  },
+  "taxonomy": {
+    "method": "Exact reviewed APHIS quarantine-program to catalog mapping from the committed national plan.",
+    "targetSpeciesIds": [
+      "anastrepha-ludens",
+      "asian-longhorned-beetle",
+      "bactrocera-dorsalis",
+      "ceratitis-capitata",
+      "cydalima-perspectalis",
+      "diaphorina-citri",
+      "elsinoe-australis",
+      "globodera-pallida",
+      "globodera-rostochiensis",
+      "liberibacter-asiaticus",
+      "lymantria-dispar",
+      "phyllosticta-citricarpa",
+      "solenopsis-invicta",
+      "spotted-lanternfly",
+      "striga-asiatica",
+      "sudden-oak-death",
+      "xanthomonas-citri"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "OBJECTID"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "APHIS quarantine records are positive regulatory evidence, not an absence or survey source.",
+      "Source silence, pending-only status, rescission, rejection, and missing geography never create absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__cd48de7df271/artifacts/national-acquisition-reference.json",
+      "sha256": "506804d2ae454309e5c9fb848669d8f7eae0509c646db99ecc1882936b957d0d",
+      "bytes": 5692
+    }
+  ],
+  "caveats": [
+    "Active regulatory geography supports the named program condition, not broader abundance or county inventory.",
+    "The official mutable service was acquired once and accepted only because lastEditDate was stable across complete ordered pagination.",
+    "Regulatory geography may include buffer or movement-control areas and does not represent abundance."
+  ]
+}

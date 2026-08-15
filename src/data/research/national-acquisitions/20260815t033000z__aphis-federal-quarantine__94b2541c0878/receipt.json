@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "acquisition_id": "20260815t033000z__aphis-federal-quarantine__94b2541c0878",
+  "status": "complete",
+  "started_at": "2026-08-15T03:30:00.000Z",
+  "finished_at": "2026-08-15T03:54:52.560Z",
+  "actor_type": "adapter",
+  "actor_id": "aphis-federal-quarantine-national-acquisition@1.0.0",
+  "source_id": "aphis-federal-quarantine",
+  "code_commit": "e454979211f289bdf03e676238b4d79379a8f768",
+  "input_hashes": {
+    "scripts/research/national-aphis-federal-quarantine.ts": "cd64ee9422962e24cafdfa2993288b37360d8c5087091900d083c5a1abfd16ae",
+    "scripts/research/run-national-aphis-federal-quarantine.ts": "b990840613719358118100ec77dfe945d95d5241b90292ec42421c173c9fbea2",
+    "src/data/generated/species.json": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "src/data/research/county-equivalent-registry.json": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json": "1d823c5d6e687f3be5f657191a0edcdfdb7739561f4c3ab3a7daddd3b249d2d2",
+    "src/data/research/schemas/aphis-federal-quarantine-parameters.schema.json": "babaafb3471d623db4e5ae44ed0a305519b51d72cfe9cd47d2bbba4567e1733b",
+    "src/data/research/schemas/evidence-assertion.schema.json": "1132a0ddb1fccae2f0a013e225cbc7758bb67f1f085b199a04fb3c53a21a1719",
+    "src/data/research/schemas/national-aphis-federal-quarantine-acquisition-receipt.schema.json": "e264fa339c9f4018651f6e843e4c8c181229d8e63639ec93dd956b1d6a6e9261",
+    "src/data/research/schemas/national-aphis-federal-quarantine-plan.schema.json": "e13883c6e6c832ae86326db476717330cd0a65573e320e99ef743213a864c516",
+    "src/data/research/schemas/national-aphis-federal-quarantine-reference.schema.json": "69306a30febe6c71d9e513c7d6cda71e98b8e9a9f43e1e7cd93d3601973448fa",
+    "src/data/research/schemas/pair-outcome.schema.json": "c1596cfaaf02bc73f4ce44f461d45bd62f21826e04392f92aa97425ec4478af5",
+    "src/data/research/schemas/rejection-record.schema.json": "a0f571f0e488a8c4461a137ef9660b594a08cce4c3d0a460c1adc5ac0dcdb13e",
+    "src/data/research/schemas/review-event.schema.json": "5078336ea8564c067cef8e275bc6dd668548b49ed1e40649364f131947cbf090",
+    "src/data/research/schemas/run-receipt.schema.json": "ef7ad1e7ed7757f8f3b57e4ce70c252e62e5ffd4de88d242a74d85bbb3667516",
+    "src/data/research/schemas/worker-source-verification.schema.json": "dd4c36404f36d72659e555d9d66d9aff35cac22293a1162ac441f3de2215bbd0",
+    "src/data/research/source-registry.json": "24e1d74a49d076a1e3fe16e8e4a051fc4689b2c9694270fe941bc4ee8d487a86",
+    "src/data/research/state-registry.json": "6080d7e61bf9a34794a14e9f6976edc378fbb10908dbd40296d3006923ef1f94"
+  },
+  "parameter_hash": "94b2541c0878a5aa2253c9a3e20155d148f01322f9098147d8fb9dd61102e0bf",
+  "parameters": {
+    "planId": "aphis-federal-quarantine-national-v1",
+    "snapshotDate": "2026-08-15",
+    "layerUrl": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1",
+    "pageSize": 2000,
+    "artifactBudgetBytes": 20971520,
+    "maxAttempts": 3,
+    "stateCodes": [
+      "AK",
+      "AL",
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC",
+      "DE",
+      "FL",
+      "GA",
+      "HI",
+      "IA",
+      "ID",
+      "IL",
+      "IN",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "MD",
+      "ME",
+      "MI",
+      "MN",
+      "MO",
+      "MS",
+      "MT",
+      "NC",
+      "ND",
+      "NE",
+      "NH",
+      "NJ",
+      "NM",
+      "NV",
+      "NY",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "UT",
+      "VA",
+      "VT",
+      "WA",
+      "WI",
+      "WV",
+      "WY"
+    ],
+    "acceptedStatuses": [
+      "Active Federal Quarantine",
+      "Infested & Quarantine",
+      "Infested County",
+      "Modified Federal Quarantine",
+      "State Quarantine / Pending Federal Quarantine"
+    ],
+    "programMappings": [
+      {
+        "sourceProgram": "Asian Citrus Psyllid",
+        "speciesId": "diaphorina-citri",
+        "scientificName": "Diaphorina citri"
+      },
+      {
+        "sourceProgram": "Asian Longhorned Beetle",
+        "speciesId": "asian-longhorned-beetle",
+        "scientificName": "Anoplophora glabripennis"
+      },
+      {
+        "sourceProgram": "Box Tree Moth",
+        "speciesId": "cydalima-perspectalis",
+        "scientificName": "Cydalima perspectalis"
+      },
+      {
+        "sourceProgram": "Citrus Black Spot",
+        "speciesId": "phyllosticta-citricarpa",
+        "scientificName": "Phyllosticta citricarpa"
+      },
+      {
+        "sourceProgram": "Citrus Canker",
+        "speciesId": "xanthomonas-citri",
+        "scientificName": "Xanthomonas citri"
+      },
+      {
+        "sourceProgram": "Citrus Greening (HLB)",
+        "speciesId": "liberibacter-asiaticus",
+        "scientificName": "Liberibacter asiaticus"
+      },
+      {
+        "sourceProgram": "Golden Nematode",
+        "speciesId": "globodera-rostochiensis",
+        "scientificName": "Globodera rostochiensis"
+      },
+      {
+        "sourceProgram": "Imported Fire Ant",
+        "speciesId": "solenopsis-invicta",
+        "scientificName": "Solenopsis invicta"
+      },
+      {
+        "sourceProgram": "Mediterranean Fruit Fly",
+        "speciesId": "ceratitis-capitata",
+        "scientificName": "Ceratitis capitata"
+      },
+      {
+        "sourceProgram": "Mexican Fruit Fly",
+        "speciesId": "anastrepha-ludens",
+        "scientificName": "Anastrepha ludens"
+      },
+      {
+        "sourceProgram": "Oriental Fruit Fly",
+        "speciesId": "bactrocera-dorsalis",
+        "scientificName": "Bactrocera dorsalis"
+      },
+      {
+        "sourceProgram": "Pale Cyst Nematode",
+        "speciesId": "globodera-pallida",
+        "scientificName": "Globodera pallida"
+      },
+      {
+        "sourceProgram": "Phytophthora ramorum",
+        "speciesId": "sudden-oak-death",
+        "scientificName": "Phytophthora ramorum"
+      },
+      {
+        "sourceProgram": "Spongy Moth",
+        "speciesId": "lymantria-dispar",
+        "scientificName": "Lymantria dispar"
+      },
+      {
+        "sourceProgram": "Spotted Lanternfly",
+        "speciesId": "spotted-lanternfly",
+        "scientificName": "Lycorma delicatula"
+      },
+      {
+        "sourceProgram": "Sweet Orange Scab",
+        "speciesId": "elsinoe-australis",
+        "scientificName": "Elsinoe australis"
+      },
+      {
+        "sourceProgram": "Witchweed",
+        "speciesId": "striga-asiatica",
+        "scientificName": "Striga asiatica"
+      }
+    ]
+  },
+  "upstream_requests": [
+    {
+      "request_id": "metadata-before-001",
+      "url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1?f=pjson",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-08-15T03:54:51.513Z",
+      "bytes_received": 33430,
+      "attempt": 1,
+      "artifact_path": "artifacts/metadata-before.json",
+      "role": "metadata-before",
+      "record_count": 0
+    },
+    {
+      "request_id": "count-002",
+      "url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&returnCountOnly=true&f=json",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-08-15T03:54:51.635Z",
+      "bytes_received": 14,
+      "attempt": 1,
+      "artifact_path": "artifacts/count.json",
+      "role": "count",
+      "record_count": 4937
+    },
+    {
+      "request_id": "page-003",
+      "url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&outFields=OBJECTID%2CQuarantine_State%2CQuarantine_State_Abbr%2CQuarantine_County%2CQuarantine_Program%2CQuarantine_Status%2CQuarantine_Unit%2CQuarantine_Name%2CQuarantine_Statewide%2CQuarantine_Statewide_Date%2CQuarantine_Established_Date%2CQuarantine_Modified_Date%2CQuarantine_Removed_Date%2CQuarantine_Reg_Doc%2CQuarantine_Reg_Doc_Link%2CQuarantine_Program_Link%2CQuarantine_Additional_Link%2CQuarantine_County_FIPS&returnGeometry=false&orderByFields=OBJECTID+ASC&resultOffset=0&resultRecordCount=2000&f=json",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-08-15T03:54:51.957Z",
+      "bytes_received": 1607700,
+      "attempt": 1,
+      "artifact_path": "artifacts/page-0000.json",
+      "role": "page",
+      "record_count": 2000
+    },
+    {
+      "request_id": "page-004",
+      "url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&outFields=OBJECTID%2CQuarantine_State%2CQuarantine_State_Abbr%2CQuarantine_County%2CQuarantine_Program%2CQuarantine_Status%2CQuarantine_Unit%2CQuarantine_Name%2CQuarantine_Statewide%2CQuarantine_Statewide_Date%2CQuarantine_Established_Date%2CQuarantine_Modified_Date%2CQuarantine_Removed_Date%2CQuarantine_Reg_Doc%2CQuarantine_Reg_Doc_Link%2CQuarantine_Program_Link%2CQuarantine_Additional_Link%2CQuarantine_County_FIPS&returnGeometry=false&orderByFields=OBJECTID+ASC&resultOffset=2000&resultRecordCount=2000&f=json",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-08-15T03:54:52.261Z",
+      "bytes_received": 1534669,
+      "attempt": 1,
+      "artifact_path": "artifacts/page-0001.json",
+      "role": "page",
+      "record_count": 2000
+    },
+    {
+      "request_id": "page-005",
+      "url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&outFields=OBJECTID%2CQuarantine_State%2CQuarantine_State_Abbr%2CQuarantine_County%2CQuarantine_Program%2CQuarantine_Status%2CQuarantine_Unit%2CQuarantine_Name%2CQuarantine_Statewide%2CQuarantine_Statewide_Date%2CQuarantine_Established_Date%2CQuarantine_Modified_Date%2CQuarantine_Removed_Date%2CQuarantine_Reg_Doc%2CQuarantine_Reg_Doc_Link%2CQuarantine_Program_Link%2CQuarantine_Additional_Link%2CQuarantine_County_FIPS&returnGeometry=false&orderByFields=OBJECTID+ASC&resultOffset=4000&resultRecordCount=2000&f=json",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-08-15T03:54:52.526Z",
+      "bytes_received": 559929,
+      "attempt": 1,
+      "artifact_path": "artifacts/page-0002.json",
+      "role": "page",
+      "record_count": 937
+    },
+    {
+      "request_id": "metadata-after-006",
+      "url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1?f=pjson",
+      "method": "GET",
+      "status": 200,
+      "retrieved_at": "2026-08-15T03:54:52.552Z",
+      "bytes_received": 33430,
+      "attempt": 1,
+      "artifact_path": "artifacts/metadata-after.json",
+      "role": "metadata-after",
+      "record_count": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "artifacts/metadata-before.json",
+      "sha256": "9495bb9cfef9dcc92bbf6144366229aac14288ffd14f91218becc5a7e5264756",
+      "bytes": 33430,
+      "media_type": "application/json",
+      "role": "metadata-before",
+      "page_index": null,
+      "record_count": 0,
+      "source_url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1?f=pjson"
+    },
+    {
+      "path": "artifacts/count.json",
+      "sha256": "6c641c78aadc2b8f7a7732bcdea387a031273b1b089bb586a34a9bc43a722260",
+      "bytes": 14,
+      "media_type": "application/json",
+      "role": "count",
+      "page_index": null,
+      "record_count": 4937,
+      "source_url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&returnCountOnly=true&f=json"
+    },
+    {
+      "path": "artifacts/page-0000.json",
+      "sha256": "15fccd5d641e76378c896734e73acaa0e25c4192b73daed0c7293b3a950eee2a",
+      "bytes": 1607700,
+      "media_type": "application/json",
+      "role": "page",
+      "page_index": 0,
+      "record_count": 2000,
+      "source_url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&outFields=OBJECTID%2CQuarantine_State%2CQuarantine_State_Abbr%2CQuarantine_County%2CQuarantine_Program%2CQuarantine_Status%2CQuarantine_Unit%2CQuarantine_Name%2CQuarantine_Statewide%2CQuarantine_Statewide_Date%2CQuarantine_Established_Date%2CQuarantine_Modified_Date%2CQuarantine_Removed_Date%2CQuarantine_Reg_Doc%2CQuarantine_Reg_Doc_Link%2CQuarantine_Program_Link%2CQuarantine_Additional_Link%2CQuarantine_County_FIPS&returnGeometry=false&orderByFields=OBJECTID+ASC&resultOffset=0&resultRecordCount=2000&f=json"
+    },
+    {
+      "path": "artifacts/page-0001.json",
+      "sha256": "1530ca85361f80615100293e87a84d212729682126ffb138655c8e5bb6713c4e",
+      "bytes": 1534669,
+      "media_type": "application/json",
+      "role": "page",
+      "page_index": 1,
+      "record_count": 2000,
+      "source_url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&outFields=OBJECTID%2CQuarantine_State%2CQuarantine_State_Abbr%2CQuarantine_County%2CQuarantine_Program%2CQuarantine_Status%2CQuarantine_Unit%2CQuarantine_Name%2CQuarantine_Statewide%2CQuarantine_Statewide_Date%2CQuarantine_Established_Date%2CQuarantine_Modified_Date%2CQuarantine_Removed_Date%2CQuarantine_Reg_Doc%2CQuarantine_Reg_Doc_Link%2CQuarantine_Program_Link%2CQuarantine_Additional_Link%2CQuarantine_County_FIPS&returnGeometry=false&orderByFields=OBJECTID+ASC&resultOffset=2000&resultRecordCount=2000&f=json"
+    },
+    {
+      "path": "artifacts/page-0002.json",
+      "sha256": "08145993f44d584b6c108983bcdfe56545946f1ca649a4f947ccda91b8b92fce",
+      "bytes": 559929,
+      "media_type": "application/json",
+      "role": "page",
+      "page_index": 2,
+      "record_count": 937,
+      "source_url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1/query?where=1%3D1&outFields=OBJECTID%2CQuarantine_State%2CQuarantine_State_Abbr%2CQuarantine_County%2CQuarantine_Program%2CQuarantine_Status%2CQuarantine_Unit%2CQuarantine_Name%2CQuarantine_Statewide%2CQuarantine_Statewide_Date%2CQuarantine_Established_Date%2CQuarantine_Modified_Date%2CQuarantine_Removed_Date%2CQuarantine_Reg_Doc%2CQuarantine_Reg_Doc_Link%2CQuarantine_Program_Link%2CQuarantine_Additional_Link%2CQuarantine_County_FIPS&returnGeometry=false&orderByFields=OBJECTID+ASC&resultOffset=4000&resultRecordCount=2000&f=json"
+    },
+    {
+      "path": "artifacts/metadata-after.json",
+      "sha256": "9495bb9cfef9dcc92bbf6144366229aac14288ffd14f91218becc5a7e5264756",
+      "bytes": 33430,
+      "media_type": "application/json",
+      "role": "metadata-after",
+      "page_index": null,
+      "record_count": 0,
+      "source_url": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1?f=pjson"
+    }
+  ],
+  "source_verification": {
+    "publisher": "USDA Animal and Plant Health Inspection Service",
+    "terms_url": "https://www.aphis.usda.gov/plant-pests-diseases",
+    "license": "Official public APHIS ArcGIS service; source URLs, raw response bytes, and retrieval metadata retained",
+    "freshness_status": "current-provider-snapshot",
+    "last_edit_date_before": 1786561205155,
+    "last_edit_date_after": 1786561205155,
+    "stable_edit_window": true,
+    "object_id_field": "OBJECTID",
+    "supports_pagination": true,
+    "supports_order_by": true,
+    "geography_policy": "Only explicit five-digit Quarantine_County_FIPS values matching the explicit state and registered active county name may publish. Coordinates and retired-geography crosswalks are prohibited.",
+    "taxon_policy": "Only the 17 exact reviewed APHIS program-to-catalog mappings in the committed plan may publish; all other programs remain review-only.",
+    "positive_semantics": "Accepted current regulatory statuses support recorded-present quarantine-program evidence for explicit counties.",
+    "negative_semantics": "Source silence, rejected status, missing geography, and non-mapped programs never support absence or non-detection.",
+    "snapshot_completeness": "Provider-declared 4937 records were retrieved in 3 complete OBJECTID-ordered pages while lastEditDate remained 1786561205155.",
+    "known_caveats": [
+      "Regulatory quarantine areas may include movement-control, buffer, or administrative geography and are not biological abundance surveys.",
+      "The official layer is mutable; completeness applies only to the hash-pinned stable-edit-window snapshot retained here.",
+      "Four source programs lack exact Project Isitusa catalog mappings and remain review-only."
+    ]
+  },
+  "counts": {
+    "upstream_requests": 6,
+    "occurrence_pages": 3,
+    "artifacts": 6,
+    "artifact_bytes": 3769172,
+    "declared_records": 4937,
+    "received_records": 4937,
+    "distinct_object_ids": 4937,
+    "mapped_program_records": 4917,
+    "unmapped_program_records": 20,
+    "transient_failures": 0
+  },
+  "errors": [],
+  "warnings": [
+    "Pending-only and rescinded statuses are retained but cannot publish.",
+    "Unmapped provider program records retained for review: 20."
+  ],
+  "rerun_command": "& 'C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe' --import tsx 'C:\\Code\\project-isitusa\\scripts\\research\\run-national-aphis-federal-quarantine.ts' --plan 'src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json' --started-at '2026-08-15T03:30:00.000Z' --semantic-dry-run false --acquisition-root 'src/data/research/national-acquisitions' --runs-root 'src/data/research/runs' --attempt-telemetry 'ops/national-research/attempt-telemetry/aphis-federal-quarantine-national-20260815.json'"
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-15T03:54:52.560Z",
+  "runId": "20260815T033000Z__aphis-federal-quarantine__6ec361ab39d5",
+  "sourceId": "aphis-federal-quarantine",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:anastrepha-ludens",
+    "11001:asian-longhorned-beetle",
+    "11001:bactrocera-dorsalis",
+    "11001:ceratitis-capitata",
+    "11001:cydalima-perspectalis",
+    "11001:diaphorina-citri",
+    "11001:elsinoe-australis",
+    "11001:globodera-pallida",
+    "11001:globodera-rostochiensis",
+    "11001:liberibacter-asiaticus",
+    "11001:lymantria-dispar",
+    "11001:phyllosticta-citricarpa",
+    "11001:solenopsis-invicta",
+    "11001:spotted-lanternfly",
+    "11001:striga-asiatica",
+    "11001:sudden-oak-death",
+    "11001:xanthomonas-citri"
+  ],
+  "parameterHash": "a28d42ad2c9d74cb1fbf2c7b65a969e88408f0b0d7431662927e343839075f22",
+  "authority": {
+    "name": "USDA Animal and Plant Health Inspection Service",
+    "sourceUrl": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1",
+    "publisher": "USDA APHIS"
+  },
+  "terms": {
+    "license": "Official public APHIS ArcGIS service; source URLs, raw response bytes, and retrieval metadata retained",
+    "termsUrl": "https://www.aphis.usda.gov/plant-pests-diseases",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-15T03:54:52.560Z",
+    "freshnessDate": "2026-08-15"
+  },
+  "geography": {
+    "method": "Exact explicit APHIS county FIPS plus matching state and registered active county-equivalent name.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates and automatic retired-geography crosswalks are prohibited."
+  },
+  "taxonomy": {
+    "method": "Exact reviewed APHIS quarantine-program to catalog mapping from the committed national plan.",
+    "targetSpeciesIds": [
+      "anastrepha-ludens",
+      "asian-longhorned-beetle",
+      "bactrocera-dorsalis",
+      "ceratitis-capitata",
+      "cydalima-perspectalis",
+      "diaphorina-citri",
+      "elsinoe-australis",
+      "globodera-pallida",
+      "globodera-rostochiensis",
+      "liberibacter-asiaticus",
+      "lymantria-dispar",
+      "phyllosticta-citricarpa",
+      "solenopsis-invicta",
+      "spotted-lanternfly",
+      "striga-asiatica",
+      "sudden-oak-death",
+      "xanthomonas-citri"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "OBJECTID"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "APHIS quarantine records are positive regulatory evidence, not an absence or survey source.",
+      "Source silence, pending-only status, rescission, rejection, and missing geography never create absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260815T033000Z__aphis-federal-quarantine__6ec361ab39d5/artifacts/national-acquisition-reference.json",
+      "sha256": "30bb587ff88bd849df2d9fb76c384c191c8c285e980de0824c2315b589c5b937",
+      "bytes": 5692
+    }
+  ],
+  "caveats": [
+    "Active regulatory geography supports the named program condition, not broader abundance or county inventory.",
+    "The official mutable service was acquired once and accepted only because lastEditDate was stable across complete ordered pagination.",
+    "Regulatory geography may include buffer or movement-control areas and does not represent abundance."
+  ]
+}

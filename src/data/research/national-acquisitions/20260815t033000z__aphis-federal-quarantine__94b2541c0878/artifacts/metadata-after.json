@@ -1,0 +1,1184 @@
+{
+  "currentVersion" : 12, 
+  "id" : 1, 
+  "name" : "Quarantine AGOL", 
+  "type" : "Feature Layer", 
+  "serviceItemId" : "03e420ad869e4ef1bbe9eae24a7c7c04", 
+  "cacheMaxAge" : 30, 
+  "isView" : true, 
+  "isUpdatableView" : true, 
+  "sourceSchemaChangesAllowed" : true, 
+  "displayField" : "Quarantine_Name", 
+  "description" : "", 
+  "copyrightText" : "", 
+  "defaultVisibility" : false, 
+  "editFieldsInfo" : {
+    "creationDateField" : "CreationDate", 
+    "creatorField" : "Creator", 
+    "editDateField" : "EditDate", 
+    "editorField" : "Editor"
+  }, 
+  "editingInfo" : {
+    "lastEditDate" : 1786561205155, 
+    "schemaLastEditDate" : 1786561205155, 
+    "dataLastEditDate" : 1786561205155
+  }, 
+  "relationships" : [], 
+  "isDataVersioned" : false, 
+  "hasContingentValuesDefinition" : false, 
+  "supportsAppend" : true, 
+  "supportsCalculate" : true, 
+  "supportsASyncCalculate" : true, 
+  "supportsTruncate" : false, 
+  "supportsAttachmentsByUploadId" : true, 
+  "supportsAttachmentsResizing" : true, 
+  "supportsRollbackOnFailureParameter" : true, 
+  "supportsStatistics" : true, 
+  "supportsExceedsLimitStatistics" : true, 
+  "supportsAdvancedQueries" : true, 
+  "supportsValidateSql" : true, 
+  "supportsCoordinatesQuantization" : true, 
+  "supportsLayerOverrides" : true, 
+  "supportsTilesAndBasicQueriesMode" : true, 
+  "supportsFieldDescriptionProperty" : true, 
+  "supportsQuantizationEditMode" : true, 
+  "supportsColumnStoreIndex" : true, 
+  "supportsApplyEditsWithGlobalIds" : true, 
+  "supportsMultiScaleGeometry" : true, 
+  "supportsReturningQueryGeometry" : true, 
+  "enableNullGeometry" : false, 
+  "hasGeometryProperties" : true, 
+  "geometryProperties" : 
+  {
+    "shapeAreaFieldName" : "Shape__Area", 
+    "shapeLengthFieldName" : "Shape__Length", 
+    "units" : "esriDecimalDegrees"
+  }, 
+  "advancedQueryCapabilities" : {
+    "supportsPagination" : true, 
+    "supportsPaginationOnAggregatedQueries" : true, 
+    "supportsQueryRelatedPagination" : true, 
+    "supportsQueryWithDistance" : true, 
+    "supportsOutDistance" : true, 
+    "supportsReturningQueryExtent" : true, 
+    "supportsStatistics" : true, 
+    "supportsOrderBy" : true, 
+    "supportsDistinct" : true, 
+    "supportsQueryWithResultType" : true, 
+    "supportsSqlExpression" : true, 
+    "supportsTimeRelation" : true, 
+    "supportsAdvancedQueryRelated" : true, 
+    "supportsCountDistinct" : true, 
+    "supportsPercentileStatistics" : true, 
+    "supportsApproxPercentileStatistics" : true, 
+    "supportsSpatialAggregationStatistics" : true, 
+    "supportsTrueCurve" : true, 
+    "supportedSpatialAggregationStatistics" : [
+      "EnvelopeAggregate", 
+      "CentroidAggregate", 
+      "ConvexHullAggregate"
+    ], 
+    "supportsLod" : true, 
+    "supportsQueryWithLodSR" : false, 
+    "supportedLodTypes" : [
+      "geohash"
+    ], 
+    "supportsReturningGeometryCentroid" : true, 
+    "supportsReturningGeometryEnvelope" : true, 
+    "supportsReturningGeometryProperties" : true, 
+    "supportsQueryWithDatumTransformation" : true, 
+    "supportsCurrentUserQueries" : true, 
+    "supportsHavingClause" : true, 
+    "supportsOutFieldSQLExpression" : true, 
+    "supportsMaxRecordCountFactor" : true, 
+    "supportsTopFeaturesQuery" : true, 
+    "supportsDisjointSpatialRel" : true, 
+    "supportsQueryWithCacheHint" : true, 
+    "supportedOperationsWithCacheHint" : [
+      "query", 
+      "queryTopFilter", 
+      "queryAnalytics", 
+      "queryAttachments", 
+      "queryRelated", 
+      "queryBins", 
+      "queryPivot"
+    ], 
+    "supportsQueryAnalytic" : true, 
+    "supportsQueryPivot" : true, 
+    "supportsQueryBins" : true, 
+    "supportsDefaultSR" : true, 
+    "supportsTranslations" : false, 
+    "supportsAggIds" : true, 
+    "supportsQueryWithCollation" : true, 
+    "supportsISODOW" : true, 
+    "supportsISOWeek" : true, 
+    "supportsFullTextSearch" : true, 
+    "fullTextSearchCapabilities" : {
+      "supportsAccentSensitivity" : true, 
+      "supportsStopWords" : true, 
+      "supportsSearchOperator" : true, 
+      "supportsOperator" : true
+    }
+  }, 
+  "advancedQueryAnalyticCapabilities" : {
+    "supportsLinearRegression" : true, 
+    "supportsTrendlineRegression" : true, 
+    "supportsAsync" : true, 
+    "supportsPercentileAnalytic" : true
+  }, 
+  "queryBinsCapabilities" : {
+    "supportsAsync" : true, 
+    "supportsAutoIntervalBin" : true, 
+    "supportsFixedIntervalBin" : true, 
+    "supportsFixedBoundariesBin" : true, 
+    "supportsDateBin" : true, 
+    "supportsClassificationBin" : true, 
+    "supportsStackBy" : true, 
+    "supportsSplitBy" : true, 
+    "supportsFirstDayOfWeek" : true, 
+    "supportsSnapToData" : true, 
+    "supportsReturnFullIntervalBin" : true, 
+    "supportsReturnStackValueRange" : true, 
+    "supportsNormalization" : true, 
+    "supportedStatisticTypes" : [
+      "COUNT", 
+      "SUM", 
+      "AVG", 
+      "VAR", 
+      "STDDEV", 
+      "MIN", 
+      "MAX", 
+      "PERCENTILE_CONT", 
+      "PERCENTILE_DISC", 
+      "APPROX_PERCENTILE_CONT", 
+      "APPROX_PERCENTILE_DISC", 
+      "CentroidAggregate", 
+      "EnvelopeAggregate", 
+      "ConvexHullAggregate"
+    ], 
+    "supportedNormalizationTypes" : [
+      "boxCox", 
+      "field", 
+      "inverse", 
+      "log", 
+      "naturalLog", 
+      "percentOfTotal", 
+      "squareRoot"
+    ]
+  }, 
+  "supportedOperationsWithCollation" : "query,addField,updateField", 
+  "advancedEditingCapabilities" : {
+    "supportedSqlFormatsInCalculate" : [
+      "standard"
+    ], 
+    "supportsAsyncApplyEdits" : true, 
+    "supportsReturnEditResults" : true, 
+    "supportsApplyEditsbyUploadID" : true, 
+    "supportedApplyEditsUploadIDFormats" : "JSON,PBF", 
+    "supportsTranslation" : false, 
+    "supportsMaxTranslations" : 10
+  }, 
+  "infoInEstimates" : [
+    "extent", 
+    "count"
+  ], 
+  "useStandardizedQueries" : true, 
+  "geometryType" : "esriGeometryPolygon", 
+  "minScale" : 0, 
+  "maxScale" : 0, 
+  "extent" : {
+    "xmin" : -178.33223866309262, 
+    "ymin" : -14.548615337117974, 
+    "xmax" : 146.06579315742343, 
+    "ymax" : 48.262631929067638, 
+    "spatialReference" : {
+      "wkid" : 4326, 
+      "latestWkid" : 4326
+    }
+  }, 
+  "spatialReference" : {
+    "wkid" : 4326, 
+    "latestWkid" : 4326
+  }, 
+  "drawingInfo":{"renderer":{"type":"simple","symbol":{"type":"esriSFS","style":"esriSFSSolid","color":[130,130,130,0],"outline":{"type":"esriSLS","style":"esriSLSSolid","color":[0,0,0,255],"width":1}}},"scaleSymbols":true,"transparency":0,"labelingInfo":null}, 
+  "allowGeometryUpdates" : true, 
+  "trueCurveSupportMode" : "OGC", 
+  "supportedCurveTypes" : [
+    "esriGeometryCircularArc"
+  ], 
+  "supportedTrueCurvePbfFeatureEncodings" : [
+    "esriCompressedShapeBuffer", 
+    "esriDefault"
+  ], 
+  "allowTrueCurvesUpdates" : true, 
+  "onlyAllowTrueCurveUpdatesByTrueCurveClients" : false, 
+  "hasAttachments" : false, 
+  "viewSourceHasAttachments" : false, 
+  "htmlPopupType" : "esriServerHTMLPopupTypeAsHTMLText", 
+  "hasMetadata" : true, 
+  "hasM" : false, 
+  "hasZ" : false, 
+  "objectIdField" : "OBJECTID", 
+  "uniqueIdField" : 
+  {
+    "name" : "OBJECTID", 
+    "isSystemMaintained" : true
+  }, 
+  "globalIdField" : "GlobalID", 
+  "typeIdField" : "", 
+  "collation" : {
+    "locale" : "neutral", 
+    "caseSensitive" : false, 
+    "accentSensitive" : true
+  }, 
+  "fields" : [
+    {
+      "name" : "OBJECTID", 
+      "type" : "esriFieldTypeOID", 
+      "alias" : "OBJECTID", 
+      "sqlType" : "sqlTypeOther", 
+      "nullable" : false, 
+      "editable" : false, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_State", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "State Within or Relevant to Area Under Quarantine", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : 
+      {
+        "type" : "codedValue", 
+        "name" : "Quarantine AGOL_Quarantine_State_4a41fe20-227d-4ddc-897c-bea21d26d40c", 
+        "codedValues" : [
+          {
+            "name" : "Texas", 
+            "code" : "Texas"
+          }, 
+          {
+            "name" : "Georgia", 
+            "code" : "Georgia"
+          }, 
+          {
+            "name" : "Florida", 
+            "code" : "Florida"
+          }, 
+          {
+            "name" : "Puerto Rico", 
+            "code" : "Puerto Rico"
+          }, 
+          {
+            "name" : "Mississippi", 
+            "code" : "Mississippi"
+          }, 
+          {
+            "name" : "Louisiana", 
+            "code" : "Louisiana"
+          }, 
+          {
+            "name" : "Virginia", 
+            "code" : "Virginia"
+          }, 
+          {
+            "name" : "New York", 
+            "code" : "New York"
+          }, 
+          {
+            "name" : "Alabama", 
+            "code" : "Alabama"
+          }, 
+          {
+            "name" : "Pennsylvania", 
+            "code" : "Pennsylvania"
+          }, 
+          {
+            "name" : "California", 
+            "code" : "California"
+          }, 
+          {
+            "name" : "Michigan", 
+            "code" : "Michigan"
+          }, 
+          {
+            "name" : "Tennessee", 
+            "code" : "Tennessee"
+          }, 
+          {
+            "name" : "North Carolina", 
+            "code" : "North Carolina"
+          }, 
+          {
+            "name" : "Ohio", 
+            "code" : "Ohio"
+          }, 
+          {
+            "name" : "South Carolina", 
+            "code" : "South Carolina"
+          }, 
+          {
+            "name" : "Wisconsin", 
+            "code" : "Wisconsin"
+          }, 
+          {
+            "name" : "Arkansas", 
+            "code" : "Arkansas"
+          }, 
+          {
+            "name" : "New Jersey", 
+            "code" : "New Jersey"
+          }, 
+          {
+            "name" : "West Virginia", 
+            "code" : "West Virginia"
+          }, 
+          {
+            "name" : "Maryland", 
+            "code" : "Maryland"
+          }, 
+          {
+            "name" : "Massachusetts", 
+            "code" : "Massachusetts"
+          }, 
+          {
+            "name" : "Arizona", 
+            "code" : "Arizona"
+          }, 
+          {
+            "name" : "Oklahoma", 
+            "code" : "Oklahoma"
+          }, 
+          {
+            "name" : "Illinois", 
+            "code" : "Illinois"
+          }, 
+          {
+            "name" : "Maine", 
+            "code" : "Maine"
+          }, 
+          {
+            "name" : "Connecticut", 
+            "code" : "Connecticut"
+          }, 
+          {
+            "name" : "Vermont", 
+            "code" : "Vermont"
+          }, 
+          {
+            "name" : "Indiana", 
+            "code" : "Indiana"
+          }, 
+          {
+            "name" : "New Hampshire", 
+            "code" : "New Hampshire"
+          }, 
+          {
+            "name" : "Delaware", 
+            "code" : "Delaware"
+          }, 
+          {
+            "name" : "Hawaii", 
+            "code" : "Hawaii"
+          }, 
+          {
+            "name" : "Rhode Island", 
+            "code" : "Rhode Island"
+          }, 
+          {
+            "name" : "Minnesota", 
+            "code" : "Minnesota"
+          }, 
+          {
+            "name" : "US Virgin Islands", 
+            "code" : "US Virgin Islands"
+          }, 
+          {
+            "name" : "Idaho", 
+            "code" : "Idaho"
+          }, 
+          {
+            "name" : "Northern Mariana Islands", 
+            "code" : "Northern Mariana Islands"
+          }, 
+          {
+            "name" : "Oregon", 
+            "code" : "Oregon"
+          }, 
+          {
+            "name" : "American Samoa", 
+            "code" : "American Samoa"
+          }, 
+          {
+            "name" : "District of Columbia", 
+            "code" : "District of Columbia"
+          }, 
+          {
+            "name" : "Nevada", 
+            "code" : "Nevada"
+          }, 
+          {
+            "name" : "Guam", 
+            "code" : "Guam"
+          }, 
+          {
+            "name" : "New Mexico", 
+            "code" : "New Mexico"
+          }
+        ]
+      }, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_State_Abbr", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "State Abbreviation", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 5, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : 
+      {
+        "type" : "codedValue", 
+        "name" : "Quarantine AGOL_Quarantine_State_Abbr_6864c65e-09b7-4c54-865f-e28fe8102f8f", 
+        "codedValues" : [
+          {
+            "name" : "TX", 
+            "code" : "TX"
+          }, 
+          {
+            "name" : "GA", 
+            "code" : "GA"
+          }, 
+          {
+            "name" : "FL", 
+            "code" : "FL"
+          }, 
+          {
+            "name" : "PR", 
+            "code" : "PR"
+          }, 
+          {
+            "name" : "MS", 
+            "code" : "MS"
+          }, 
+          {
+            "name" : "LA", 
+            "code" : "LA"
+          }, 
+          {
+            "name" : "VA", 
+            "code" : "VA"
+          }, 
+          {
+            "name" : "NY", 
+            "code" : "NY"
+          }, 
+          {
+            "name" : "AL", 
+            "code" : "AL"
+          }, 
+          {
+            "name" : "PA", 
+            "code" : "PA"
+          }, 
+          {
+            "name" : "CA", 
+            "code" : "CA"
+          }, 
+          {
+            "name" : "MI", 
+            "code" : "MI"
+          }, 
+          {
+            "name" : "TN", 
+            "code" : "TN"
+          }, 
+          {
+            "name" : "NC", 
+            "code" : "NC"
+          }, 
+          {
+            "name" : "OH", 
+            "code" : "OH"
+          }, 
+          {
+            "name" : "SC", 
+            "code" : "SC"
+          }, 
+          {
+            "name" : "WI", 
+            "code" : "WI"
+          }, 
+          {
+            "name" : "AR", 
+            "code" : "AR"
+          }, 
+          {
+            "name" : "NJ", 
+            "code" : "NJ"
+          }, 
+          {
+            "name" : "WV", 
+            "code" : "WV"
+          }, 
+          {
+            "name" : "MD", 
+            "code" : "MD"
+          }, 
+          {
+            "name" : "MA", 
+            "code" : "MA"
+          }, 
+          {
+            "name" : "AZ", 
+            "code" : "AZ"
+          }, 
+          {
+            "name" : "OK", 
+            "code" : "OK"
+          }, 
+          {
+            "name" : "IL", 
+            "code" : "IL"
+          }, 
+          {
+            "name" : "ME", 
+            "code" : "ME"
+          }, 
+          {
+            "name" : "CT", 
+            "code" : "CT"
+          }, 
+          {
+            "name" : "VT", 
+            "code" : "VT"
+          }, 
+          {
+            "name" : "IN", 
+            "code" : "IN"
+          }, 
+          {
+            "name" : "NH", 
+            "code" : "NH"
+          }, 
+          {
+            "name" : "DE", 
+            "code" : "DE"
+          }, 
+          {
+            "name" : "RI", 
+            "code" : "RI"
+          }, 
+          {
+            "name" : "HI", 
+            "code" : "HI"
+          }, 
+          {
+            "name" : "VI", 
+            "code" : "VI"
+          }, 
+          {
+            "name" : "MN", 
+            "code" : "MN"
+          }, 
+          {
+            "name" : "ID", 
+            "code" : "ID"
+          }, 
+          {
+            "name" : "DC", 
+            "code" : "DC"
+          }, 
+          {
+            "name" : "GU", 
+            "code" : "GU"
+          }, 
+          {
+            "name" : "NV", 
+            "code" : "NV"
+          }, 
+          {
+            "name" : "MP", 
+            "code" : "MP"
+          }, 
+          {
+            "name" : "OR", 
+            "code" : "OR"
+          }, 
+          {
+            "name" : "AS", 
+            "code" : "AS"
+          }, 
+          {
+            "name" : "NM", 
+            "code" : "NM"
+          }
+        ]
+      }, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_County", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "County Within or Relevant to Area Under Quarantine", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Program", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Pest or Program Under Quarantine", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : 
+      {
+        "type" : "codedValue", 
+        "name" : "Quarantine AGOL_Quarantine_Program_880f90c5-ddef-4715-8416-f1a31646da9f", 
+        "codedValues" : [
+          {
+            "name" : "Imported Fire Ant", 
+            "code" : "Imported Fire Ant"
+          }, 
+          {
+            "name" : "European Cherry Fruit Fly", 
+            "code" : "European Cherry Fruit Fly"
+          }, 
+          {
+            "name" : "Mediterranean Fruit Fly", 
+            "code" : "Mediterranean Fruit Fly"
+          }, 
+          {
+            "name" : "Mexican Fruit Fly", 
+            "code" : "Mexican Fruit Fly"
+          }, 
+          {
+            "name" : "Oriental Fruit Fly", 
+            "code" : "Oriental Fruit Fly"
+          }, 
+          {
+            "name" : "Queensland Fruit Fly", 
+            "code" : "Queensland Fruit Fly"
+          }, 
+          {
+            "name" : "Sapote Fruit Fly", 
+            "code" : "Sapote Fruit Fly"
+          }, 
+          {
+            "name" : "West Indian Fruit Fly", 
+            "code" : "West Indian Fruit Fly"
+          }, 
+          {
+            "name" : "Asian Citrus Psyllid", 
+            "code" : "Asian Citrus Psyllid"
+          }, 
+          {
+            "name" : "Citrus Canker", 
+            "code" : "Citrus Canker"
+          }, 
+          {
+            "name" : "Citrus Greening (HLB)", 
+            "code" : "Citrus Greening (HLB)"
+          }, 
+          {
+            "name" : "Citrus Black Spot", 
+            "code" : "Citrus Black Spot"
+          }, 
+          {
+            "name" : "Sweet Orange Scab", 
+            "code" : "Sweet Orange Scab"
+          }, 
+          {
+            "name" : "Spongy Moth", 
+            "code" : "Spongy Moth"
+          }, 
+          {
+            "name" : "Spotted Lanternfly", 
+            "code" : "Spotted Lanternfly"
+          }, 
+          {
+            "name" : "Box Tree Moth", 
+            "code" : "Box Tree Moth"
+          }, 
+          {
+            "name" : "Asian Longhorned Beetle", 
+            "code" : "Asian Longhorned Beetle"
+          }, 
+          {
+            "name" : "Phytophthora ramorum", 
+            "code" : "Phytophthora ramorum"
+          }, 
+          {
+            "name" : "Witchweed", 
+            "code" : "Witchweed"
+          }, 
+          {
+            "name" : "Golden Nematode", 
+            "code" : "Golden Nematode"
+          }, 
+          {
+            "name" : "Pale Cyst Nematode", 
+            "code" : "Pale Cyst Nematode"
+          }
+        ]
+      }, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Status", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Legal Status of Area Under Quarantine", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : 
+      {
+        "type" : "codedValue", 
+        "name" : "Quarantine AGOL_Quarantine_Status_4dc1e584-5a97-4c40-809d-044fde8da369", 
+        "codedValues" : [
+          {
+            "name" : "Active Federal Quarantine", 
+            "code" : "Active Federal Quarantine"
+          }, 
+          {
+            "name" : "Modified Federal Quarantine", 
+            "code" : "Modified Federal Quarantine"
+          }, 
+          {
+            "name" : "Rescinded Federal Quarantine", 
+            "code" : "Rescinded Federal Quarantine"
+          }, 
+          {
+            "name" : "Pending Federal Quarantine", 
+            "code" : "Pending Federal Quarantine"
+          }, 
+          {
+            "name" : "Infested Only", 
+            "code" : "Infested County"
+          }, 
+          {
+            "name" : "Infested - Quarantine", 
+            "code" : "Infested & Quarantine"
+          }, 
+          {
+            "name" : "State Quarantine / Pending Federal Quarantine", 
+            "code" : "State Quarantine / Pending Federal Quarantine"
+          }
+        ]
+      }, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Unit", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Type of Quarantine Boundary", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : 
+      {
+        "type" : "codedValue", 
+        "name" : "Quarantine AGOL_Quarantine_Unit_1f77b2d5-12e2-46d9-80cb-d6baf966e776", 
+        "codedValues" : [
+          {
+            "name" : "County", 
+            "code" : "County"
+          }, 
+          {
+            "name" : "Partial County", 
+            "code" : "Partial County"
+          }, 
+          {
+            "name" : "State", 
+            "code" : "State"
+          }, 
+          {
+            "name" : "Partial County Clip", 
+            "code" : "Partial County Clip"
+          }, 
+          {
+            "name" : "National", 
+            "code" : "National"
+          }
+        ]
+      }, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Name", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Name of Area Under Quarantine Unit", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Statewide", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Has the quarantine become statewide", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : 
+      {
+        "type" : "codedValue", 
+        "name" : "Quarantine AGOL_Quarantine_Statewide_74443022-74a5-4b97-8745-44af1344cc61", 
+        "codedValues" : [
+          {
+            "name" : "Entire", 
+            "code" : "Entire"
+          }, 
+          {
+            "name" : "Collective", 
+            "code" : "Collective"
+          }, 
+          {
+            "name" : "No", 
+            "code" : "No"
+          }
+        ]
+      }, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Statewide_Date", 
+      "type" : "esriFieldTypeDate", 
+      "alias" : "When did the quarantine become statewide", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 8, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null, 
+      "precision" : 1
+    }, 
+    {
+      "name" : "Quarantine_Established_Date", 
+      "type" : "esriFieldTypeDate", 
+      "alias" : "Quarantine Established In Federal Regulation On This Date", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 8, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null, 
+      "precision" : 1
+    }, 
+    {
+      "name" : "Quarantine_Modified_Date", 
+      "type" : "esriFieldTypeDate", 
+      "alias" : "Quarantine Modified On This Date", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 8, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null, 
+      "precision" : 1
+    }, 
+    {
+      "name" : "Quarantine_Removed_Date", 
+      "type" : "esriFieldTypeDate", 
+      "alias" : "Quarantine Removed On This Date", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 8, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null, 
+      "precision" : 1
+    }, 
+    {
+      "name" : "Quarantine_Reg_Doc", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Regulatory Document Defining the Area Under Quarantine", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Reg_Doc_Link", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Weblink to Regulatory Document", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 255, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Program_Link", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Weblink to Program Website", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 255, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Additional_Link", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Quarantine_Additional_Link", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 255, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_SQMI", 
+      "type" : "esriFieldTypeDouble", 
+      "alias" : "SQMI", 
+      "sqlType" : "sqlTypeOther", 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Acres", 
+      "type" : "esriFieldTypeDouble", 
+      "alias" : "Acres", 
+      "sqlType" : "sqlTypeOther", 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Text_A", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Quarantine_Text_A", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 255, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Text_B", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Quarantine_Text_B", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 255, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Text_ID", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Quarantine_Text_ID", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 255, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_County_FIPS", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "County FIPS", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 5, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Quarantine_Unit_Desc", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Type of Quarantine Boundary", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 50, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Shape__Area", 
+      "type" : "esriFieldTypeDouble", 
+      "alias" : "Shape__Area", 
+      "sqlType" : "sqlTypeDouble", 
+      "nullable" : true, 
+      "editable" : false, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Shape__Length", 
+      "type" : "esriFieldTypeDouble", 
+      "alias" : "Shape__Length", 
+      "sqlType" : "sqlTypeDouble", 
+      "nullable" : true, 
+      "editable" : false, 
+      "domain" : null, 
+      "defaultValue" : null
+    }
+  ], 
+  "indexes" : [
+    {
+      "name" : "PK__PPQ_GIS___F4B70D85833E5011", 
+      "fields" : "OBJECTID", 
+      "isAscending" : true, 
+      "isUnique" : true, 
+      "description" : "", 
+      "indexType" : "Attribute"
+    }, 
+    {
+      "name" : "user_73947.PPQ_GIS_FEDERAL_QUARANTINE_AGOL_EDIT_FEATURE_LAYER_QUARANTINE_AGOL_Shape_sidx", 
+      "fields" : "Shape", 
+      "isAscending" : true, 
+      "isUnique" : false, 
+      "description" : "", 
+      "indexType" : "Spatial"
+    }, 
+    {
+      "name" : "Shape__Area_Index", 
+      "fields" : "Shape__Area", 
+      "isAscending" : true, 
+      "isUnique" : false, 
+      "description" : "", 
+      "indexType" : "Attribute"
+    }, 
+    {
+      "name" : "Shape__Length_Index", 
+      "fields" : "Shape__Length", 
+      "isAscending" : true, 
+      "isUnique" : false, 
+      "description" : "", 
+      "indexType" : "Attribute"
+    }, 
+    {
+      "name" : "Quarantine_Program_Index", 
+      "fields" : "Quarantine_Program", 
+      "isAscending" : true, 
+      "isUnique" : false, 
+      "description" : "Quarantine_Program_Index", 
+      "indexType" : "Attribute"
+    }, 
+    {
+      "name" : "Quarantine_Status_Index", 
+      "fields" : "Quarantine_Status", 
+      "isAscending" : true, 
+      "isUnique" : false, 
+      "description" : "Quarantine_Status_Index", 
+      "indexType" : "Attribute"
+    }, 
+    {
+      "name" : "Quarantine_State_Index", 
+      "fields" : "Quarantine_State", 
+      "isAscending" : true, 
+      "isUnique" : false, 
+      "description" : "Quarantine_State_Index", 
+      "indexType" : "Attribute"
+    }, 
+    {
+      "name" : "Quarantine_County_Index", 
+      "fields" : "Quarantine_County", 
+      "isAscending" : true, 
+      "isUnique" : false, 
+      "description" : "Quarantine_County_Index", 
+      "indexType" : "Attribute"
+    }
+  ], 
+  "dateFieldsTimeReference" : {
+    "timeZone" : "UTC", 
+    "timeZoneIANA" : "Etc/UTC", 
+    "respectsDaylightSaving" : false
+  }, 
+  "preferredTimeReference" : null, 
+  "types" : [], 
+  "templates" : [
+    {
+      "name" : "Quarantine AGOL", 
+      "description" : "", 
+      "drawingTool" : "esriFeatureEditToolPolygon", 
+      "prototype" : {
+        "attributes" : {
+          "Quarantine_County_FIPS" : null, 
+          "Quarantine_Unit_Desc" : null, 
+          "Quarantine_State" : null, 
+          "Quarantine_State_Abbr" : null, 
+          "Quarantine_County" : null, 
+          "Quarantine_Program" : null, 
+          "Quarantine_Status" : null, 
+          "Quarantine_Unit" : null, 
+          "Quarantine_Name" : null, 
+          "Quarantine_Statewide" : null, 
+          "Quarantine_Statewide_Date" : null, 
+          "Quarantine_Established_Date" : null, 
+          "Quarantine_Modified_Date" : null, 
+          "Quarantine_Removed_Date" : null, 
+          "Quarantine_Reg_Doc" : null, 
+          "Quarantine_Reg_Doc_Link" : null, 
+          "Quarantine_Program_Link" : null, 
+          "Quarantine_Additional_Link" : null, 
+          "Quarantine_SQMI" : null, 
+          "Quarantine_Acres" : null, 
+          "Quarantine_Text_A" : null, 
+          "Quarantine_Text_B" : null, 
+          "Quarantine_Text_ID" : null
+        }
+      }
+    }
+  ], 
+  "supportedQueryFormats" : "JSON, geoJSON, PBF", 
+  "supportedAppendFormats" : "sqlite,geoPackage,shapefile,filegdb,featureCollection,geojson,csv,excel,jsonl,featureService,pbf", 
+  "supportedAppendSourceFilterFormats" : "sqlite,geoPackage,shapefile,filegdb,featureService", 
+  "supportedExportFormats" : "csv,shapefile,sqlite,geoPackage,filegdb,featureCollection,geojson,kml,excel,parquet", 
+  "supportedConvertFileFormats" : "JSON,PBF,Parquet", 
+  "supportedConvertContentFormats" : "LayerEditCollection,FeatureCollection", 
+  "supportedSpatialRelationships" : [
+    "esriSpatialRelIntersects", 
+    "esriSpatialRelContains", 
+    "esriSpatialRelCrosses", 
+    "esriSpatialRelEnvelopeIntersects", 
+    "esriSpatialRelIndexIntersects", 
+    "esriSpatialRelOverlaps", 
+    "esriSpatialRelTouches", 
+    "esriSpatialRelWithin", 
+    "esriSpatialRelDisjoint", 
+    "esriSpatialRelRelation"
+  ], 
+  "guidFormat" : "", 
+  "supportsContingentValues" : true, 
+  "supportsEditingContingentValues" : true, 
+  "supportedContingentValuesFormats" : "JSON, PBF", 
+  "supportsFieldGroups" : true, 
+  "supportedSyncDataOptions" : 260, 
+  "hasStaticData" : false, 
+  "maxRecordCount" : 2000, 
+  "standardMaxRecordCount" : 2000, 
+  "maxIdsCount" : 1000000, 
+  "standardMaxRecordCountNoGeometry" : 32000, 
+  "tileMaxRecordCount" : 4000, 
+  "maxRecordCountFactor" : 1, 
+  "capabilities" : "Query"
+}
