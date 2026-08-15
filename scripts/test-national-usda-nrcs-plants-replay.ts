@@ -12,6 +12,7 @@ import {
 import {
   parseNrcsDistributionCsv,
   parseNrcsStatusFingerprint,
+  validateNrcsProfile,
 } from "./research/run-national-usda-nrcs-plants";
 
 const plan = JSON.parse(readFileSync(
@@ -47,6 +48,20 @@ const mapping: NrcsTaxonMapping = {
   speciesId: "acanthospermum-australe",
   scientificName: "Acanthospermum australe",
 };
+validateNrcsProfile({
+  Id: 31170,
+  AcceptedId: 31170,
+  Symbol: "ACAU2",
+  ScientificName: "<i>Acanthospermum australe</i>",
+  NativeStatuses: [{ Region: "L48", Status: "I", Type: "Introduced" }],
+}, mapping);
+assert.throws(() => validateNrcsProfile({
+  Id: 31170,
+  AcceptedId: 31170,
+  Symbol: "ACAU2",
+  ScientificName: "<i>Acanthospermum australe</i>",
+  NativeStatuses: [{ Region: "L48", Status: "N", Type: "Native" }],
+}, mapping), /lacks L48 Introduced status/u);
 const csv = Buffer.from([
   "Distribution Data",
   "Symbol,Country,State,State FIP,County,County FIP",
@@ -140,4 +155,5 @@ console.log(JSON.stringify({
   outcomes: first.outcomes.length,
   deterministic: true,
   layer6AliasSemantics: true,
+  profileStatusSemantics: true,
 }, null, 2));

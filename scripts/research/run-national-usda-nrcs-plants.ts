@@ -555,14 +555,15 @@ function extractScientificName(value: string) {
   return result.join(" ");
 }
 
-function validateProfile(profile: NrcsProfile, mapping: NrcsTaxonMapping) {
+export function validateNrcsProfile(profile: NrcsProfile, mapping: NrcsTaxonMapping) {
   assert(profile.Id === mapping.plantMasterId, `NRCS profile ID changed for ${mapping.speciesId}.`);
   assert(profile.AcceptedId === profile.Id, `NRCS profile is not accepted for ${mapping.speciesId}.`);
   assert(normalizedText(profile.Symbol) === mapping.symbol, `NRCS profile symbol changed for ${mapping.speciesId}.`);
   assert(canonicalScientificName(extractScientificName(String(profile.ScientificName ?? ""))) === canonicalScientificName(mapping.scientificName), `NRCS profile scientific name changed for ${mapping.speciesId}.`);
   assert(profile.NativeStatuses?.some((status) =>
     normalizedText(status.Region).toUpperCase() === "L48" &&
-    normalizedText(status.Status).toLowerCase() === "introduced"
+    normalizedText(status.Status).toUpperCase() === "I" &&
+    normalizedText(status.Type).toLowerCase() === "introduced"
   ), `NRCS profile lacks L48 Introduced status for ${mapping.speciesId}.`);
 }
 
@@ -644,7 +645,7 @@ export function verifyNationalNrcsAcquisition(directory: string, plan: NationalN
       const mapping = plan.taxonMappings.find((entry) => entry.plantMasterId === artifact.taxon_master_id);
       assert(mapping, `NRCS profile artifact has unknown master ID ${artifact.taxon_master_id}.`);
       const profile = parseJson<NrcsProfile>(bytes, artifact.path);
-      validateProfile(profile, mapping);
+      validateNrcsProfile(profile, mapping);
       profiles.set(mapping.plantMasterId, profile);
     } else if (artifact.role === "distribution") {
       const mapping = plan.taxonMappings.find((entry) => entry.plantMasterId === artifact.taxon_master_id);
@@ -794,7 +795,7 @@ async function acquire(input: {
         taxonMasterId: mapping.plantMasterId,
         recordCount: () => 1,
       });
-      validateProfile(parseJson<NrcsProfile>(profileBytes, `profile ${mapping.plantMasterId}`), mapping);
+      validateNrcsProfile(parseJson<NrcsProfile>(profileBytes, `profile ${mapping.plantMasterId}`), mapping);
       const body = JSON.stringify({ masterId: mapping.plantMasterId, allData: 1 });
       const csvBytes = await request({
         requestId: `distribution-${mapping.plantMasterId}`,
