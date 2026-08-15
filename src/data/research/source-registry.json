@@ -337,7 +337,19 @@
       "refreshCadenceDays": 180,
       "status": "operational",
       "adapter": "scripts/import-nrcs-plants-alabama-distribution.ts",
-      "caveat": "County distribution documentation supports occurrence. Missing counties do not imply absence."
+      "caveat": "County distribution documentation supports occurrence. Missing counties do not imply absence.",
+      "researchAdapter": {
+        "id": "usda-nrcs-plants-national",
+        "module": "scripts/research/national-usda-nrcs-plants.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/usda-nrcs-plants-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, L48 Introduced profile status, and stable Introduced/Both distribution fingerprint. Drift or ambiguity blocks the taxon.",
+        "geographyMatchingPolicy": "Exact provider CSV two-digit state FIPS plus three-digit county FIPS, matching current registry state and county names. Missing, mismatched, retired, conflicting, and ambiguous geography is rejected. MapServer cross-layer IDs, coordinates, and automatic successor crosswalks are prohibited.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "gbif-preserved-specimens",

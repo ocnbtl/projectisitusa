@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-62-usda-nrcs-plants-portfolio-selection-20260815-r1",
+  "roundId": "national-round-62",
+  "evaluatedAt": "2026-08-15T23:45:57.268Z",
+  "result": "selected",
+  "baseline": {
+    "commit": "7c9092eccc781d94261232a01bcc1ee8a3d7579e",
+    "generatedAsOf": "2026-08-15",
+    "countySpeciesDenominator": 7872576,
+    "verifiedPresent": 59343,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 397441,
+    "notResearched": 7415784
+  },
+  "previousRound": {
+    "roundId": "national-round-61",
+    "grossCountySpeciesOutcomes": 53448,
+    "uniqueFinalMatrixMovement": 52711,
+    "verifiedPresentMovement": 3270,
+    "researchedUnresolvedMovement": 49441,
+    "alreadyAccountedOverlap": 737,
+    "providerEvidenceRequests": 6,
+    "actorWallSeconds": 10.277,
+    "peakRssMiB": 448.953,
+    "source": "aphis-federal-quarantine"
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "sourceId": "usda-nrcs-plants",
+      "acquisitionShape": "40 complete provider-native taxon-bounded national distribution CSV responses with exact state and county FIPS",
+      "grossPairs": 125760,
+      "expectedNetNewPairs": 123140,
+      "alreadyAccountedOverlap": 2620,
+      "expectedProviderRequests": 85,
+      "expectedNetPairsPerProviderRequest": 1448.705882,
+      "nationalReuse": true,
+      "status": "selected"
+    },
+    {
+      "rank": 2,
+      "sourceId": "gbif-preserved-specimens",
+      "acquisitionShape": "authenticated taxon-bounded national Darwin Core download",
+      "status": "blocked",
+      "blocker": "No configured GBIF download credentials or retained immutable national download; mutable public offset search is not a defensible complete national snapshot."
+    },
+    {
+      "rank": 3,
+      "sourceId": "idigbio-preserved-specimens",
+      "acquisitionShape": "provider-native taxon-bounded national search with deterministic state/county partition",
+      "status": "deferred",
+      "reason": "Lower verified net forecast than the FIPS-bearing first-party NRCS source after the NRCS endpoint contract was proven."
+    }
+  ],
+  "selectedScope": {
+    "planId": "usda-nrcs-plants-national-v1-tranche-01",
+    "stateCount": 51,
+    "activeCountyEquivalentCount": 3144,
+    "taxonCount": 40,
+    "grossOrderedPairs": 125760,
+    "baselineVerifiedPresentPairs": 861,
+    "baselineResearchedUnresolvedPairs": 1759,
+    "baselineNotResearchedPairs": 123140,
+    "expectedAlreadyAccountedOverlap": 2620,
+    "expectedProviderRequests": {
+      "contractSnapshots": 3,
+      "sourceStatusFingerprints": 2,
+      "profileResponses": 40,
+      "distributionResponses": 40,
+      "total": 85
+    },
+    "sourcePositiveRowForecast": 16787,
+    "expectedPositiveYieldMeaning": "Forecast only; final accepted United States county positives require exact current FIPS and name validation from retained CSV bytes."
+  },
+  "discovery": {
+    "directProviderAttempts": 127,
+    "usableResponses": 116,
+    "errorOrTimeoutResponses": 11,
+    "retainedArtifacts": 0,
+    "retainedBytes": 0,
+    "exactWireBytes": "unknown",
+    "qualification": "Read-only discovery contacts are overhead, not evidence acquisition. No response body was retained as evidence."
+  },
+  "rejectedGeographyDesign": {
+    "design": "Join MapServer layer 6 country_subdivision_id to layer 2 plant_location_id or StateSearch county IDs.",
+    "result": "rejected-structural",
+    "evidence": [
+      "The identifiers occupy different namespaces and produce direct county-name contradictions.",
+      "MapServer ID and ESRI_OID values changed across equivalent requests and are not stable identities.",
+      "Coordinates and polygon-derived county assignment are prohibited."
+    ],
+    "safeReplacement": "Use provider-native distribution CSV State FIP and County FIP fields with exact active registry state/county name validation."
+  },
+  "processLesson": {
+    "lesson": "Adversarially prove provider identifier identity before yield math, and instrument discovery requests from the first contact.",
+    "appliedChanges": [
+      "The selected actor rejects every MapServer cross-layer identifier join and all coordinate fallback.",
+      "The production actor retains and hashes all 85 acquisition responses with request, attempt, byte, and artifact descriptors.",
+      "The production actor preserves hash-verified partial progress and retries only missing deterministic request IDs.",
+      "Complete CSV silence may move a pair only to researched unresolved; failure, rejection, state-only rows, and missing geography create no negative claim."
+    ]
+  },
+  "semanticAttestation": {
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "usesCoordinates": false,
+    "usesMapServerCrossLayerIdJoin": false,
+    "treatsStateOnlyRowsAsCountyEvidence": false,
+    "preservesApplicabilitySeparately": true,
+    "preservesDenominatorSeparately": true
+  }
+}

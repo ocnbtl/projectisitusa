@@ -77,6 +77,17 @@ import {
   verifyNationalAphisAcquisition,
 } from "./research/run-national-aphis-federal-quarantine";
 import {
+  NRCS_ADAPTER_ID,
+  NRCS_SOURCE_ID,
+  type NationalNrcsPlan,
+  type NrcsReplayReconciliation,
+  type NrcsTaxonMapping,
+  replayNationalNrcsState,
+} from "./research/national-usda-nrcs-plants";
+import {
+  verifyNationalNrcsAcquisition,
+} from "./research/run-national-usda-nrcs-plants";
+import {
   getStateDefinition,
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
@@ -105,6 +116,29 @@ type NationalAphisReference = {
   selectedRowsSha256: string;
   mappings: AphisProgramMapping[];
   replayReconciliation: AphisReplayReconciliation;
+};
+type NationalNrcsReference = {
+  schemaVersion: 1;
+  acquisitionId: string;
+  acquisitionReceiptPath: string;
+  acquisitionReceiptSha256: string;
+  snapshotDate: string;
+  sourceId: typeof NRCS_SOURCE_ID;
+  stateCode: string;
+  acquisitionArtifacts: Array<{
+    path: string;
+    sha256: string;
+    bytes: number;
+    role: "swagger" | "service-metadata" | "layer6-metadata" | "status-before" | "profile" | "distribution" | "status-after";
+    recordCount: number;
+  }>;
+  adapterVersion: string;
+  adapterCodeSha256: string;
+  runnerCodeSha256: string;
+  partitionMode: string;
+  selectedRowsSha256: string;
+  mappings: NrcsTaxonMapping[];
+  replayReconciliation: NrcsReplayReconciliation;
 };
 type MatrixFile = {
   summary: {
@@ -386,11 +420,17 @@ const nationalNasAcquisitions = [];
 const nationalAfpeAcquisitions = [];
 const nationalFiaAcquisitions = [];
 const nationalAphisAcquisitions = [];
+const nationalNrcsAcquisitions = [];
 const nationalAphisPlanPath = path.join(
   ROOT,
   "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
 );
 const nationalAphisPlan = readJson<NationalAphisPlan>(nationalAphisPlanPath);
+const nationalNrcsPlanPath = path.join(
+  ROOT,
+  "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-01.json",
+);
+const nationalNrcsPlan = readJson<NationalNrcsPlan>(nationalNrcsPlanPath);
 if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
   for (const entry of readdirSync(NATIONAL_ACQUISITIONS_DIR, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
@@ -406,6 +446,8 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
           ? verifyNationalFiaAcquisition(ROOT, directory)
           : candidate.source_id === APHIS_SOURCE_ID
             ? verifyNationalAphisAcquisition(directory, nationalAphisPlan)
+            : candidate.source_id === NRCS_SOURCE_ID
+              ? verifyNationalNrcsAcquisition(directory, nationalNrcsPlan)
             : null;
     assert(
       verified,
@@ -428,9 +470,13 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
       nationalFiaAcquisitions.push(
         verified as ReturnType<typeof verifyNationalFiaAcquisition>,
       );
-    } else {
+    } else if (candidate.source_id === APHIS_SOURCE_ID) {
       nationalAphisAcquisitions.push(
         verified as ReturnType<typeof verifyNationalAphisAcquisition>,
+      );
+    } else {
+      nationalNrcsAcquisitions.push(
+        verified as ReturnType<typeof verifyNationalNrcsAcquisition>,
       );
     }
   }
@@ -472,6 +518,13 @@ const nationalAphisAcquisitionById = new Map(
   ]),
 );
 const nationalAphisReferences: NationalAphisReference[] = [];
+const nationalNrcsAcquisitionById = new Map(
+  nationalNrcsAcquisitions.map((entry) => [
+    entry.receipt.acquisition_id,
+    entry,
+  ]),
+);
+const nationalNrcsReferences: NationalNrcsReference[] = [];
 
 assert(bootstrapFreeze.rules.initializationOnly, "Bootstrap migration is no longer initialization-only.");
 assert(
@@ -1011,6 +1064,134 @@ for (const bundle of immutableRuns) {
       `Immutable APHIS run ${receipt.run_id} deterministic replay changed.`,
     );
   }
+  if (
+    receipt.source_id === NRCS_SOURCE_ID &&
+    receipt.adapter_id === NRCS_ADAPTER_ID
+  ) {
+    const matchingArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/national-acquisition-reference.json"),
+    );
+    assert(
+      matchingArtifacts.length === 1,
+      `Immutable NRCS run ${receipt.run_id} must contain one acquisition reference.`,
+    );
+    const artifact = matchingArtifacts[0]!;
+    const artifactBytes = readFileSync(path.join(ROOT, artifact.path));
+    assert(
+      artifactBytes.length === artifact.bytes &&
+        sha256(artifactBytes) === artifact.sha256,
+      `Immutable NRCS run ${receipt.run_id} acquisition reference changed.`,
+    );
+    const reference = JSON.parse(
+      artifactBytes.toString("utf8"),
+    ) as NationalNrcsReference;
+    schemaValidator("national-usda-nrcs-plants-reference.schema.json").parse(
+      reference,
+    );
+    nationalNrcsReferences.push(reference);
+    const acquisition = nationalNrcsAcquisitionById.get(reference.acquisitionId);
+    assert(
+      acquisition,
+      `Immutable NRCS run ${receipt.run_id} references an unknown acquisition.`,
+    );
+    const expectedArtifacts = acquisition.receipt.artifacts.map((entry) => ({
+      path: path.posix.join(
+        path.relative(ROOT, acquisition.directory).split(path.sep).join("/"),
+        entry.path,
+      ),
+      sha256: entry.sha256,
+      bytes: entry.bytes,
+      role: entry.role,
+      recordCount: entry.record_count,
+    }));
+    assert(
+      reference.acquisitionReceiptPath ===
+          path.relative(ROOT, acquisition.receiptPath).split(path.sep).join("/") &&
+        reference.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        reference.snapshotDate === acquisition.receipt.parameters.snapshotDate &&
+        stableJson(reference.acquisitionArtifacts) === stableJson(expectedArtifacts) &&
+        stableJson(reference.mappings) ===
+          stableJson(acquisition.receipt.parameters.taxonMappings) &&
+        reference.runnerCodeSha256 ===
+          acquisition.receipt.input_hashes[
+            "scripts/research/run-national-usda-nrcs-plants.ts"
+          ],
+      `Immutable NRCS run ${receipt.run_id} acquisition lineage changed.`,
+    );
+    assertCommitAncestor(
+      ROOT,
+      acquisition.receipt.code_commit,
+      receipt.code_commit,
+    );
+    assert(
+      reference.sourceId === receipt.source_id &&
+        reference.adapterVersion === receipt.adapter_version &&
+        reference.adapterCodeSha256 === receipt.adapter_code_hash &&
+        reference.stateCode === runStateCode,
+      `Immutable NRCS run ${receipt.run_id} acquisition scope changed.`,
+    );
+    assert(
+      reference.replayReconciliation.selected_county_rows ===
+          receipt.counts.candidate_records &&
+        reference.replayReconciliation.assertion_pairs ===
+          receipt.counts.assertion_events &&
+        reference.replayReconciliation.rejection_events ===
+          receipt.counts.rejection_records &&
+        reference.replayReconciliation.duplicate_rows ===
+          receipt.counts.duplicate_records,
+      `Immutable NRCS run ${receipt.run_id} reconciliation counts changed.`,
+    );
+
+    const state = getStateDefinition(runStateCode);
+    assert(state, `Immutable NRCS run ${receipt.run_id} has unknown state ${runStateCode}.`);
+    const counties = new Map(
+      listCountyEquivalents(runStateCode).map((county) => [county.countyFips, county]),
+    );
+    const requestedPairs = receipt.requested_scope.pair_keys.map((key) => {
+      const separator = key.indexOf(":");
+      const countyFips = key.slice(0, separator);
+      const speciesId = key.slice(separator + 1);
+      const county = counties.get(countyFips);
+      const species = speciesById.get(speciesId);
+      assert(county, `Immutable NRCS run ${receipt.run_id} has unknown county ${countyFips}.`);
+      assert(species, `Immutable NRCS run ${receipt.run_id} has unknown species ${speciesId}.`);
+      return {
+        countyFips,
+        countyName: county.shortName,
+        countyLegalName: county.legalName,
+        stateCode: runStateCode,
+        stateName: state.stateName,
+        stateFips: state.stateFips,
+        speciesId,
+        scientificName: species.scientificName,
+      };
+    });
+    const replay = replayNationalNrcsState({
+      context: {
+        runId: receipt.run_id,
+        sourceId: NRCS_SOURCE_ID,
+        stateCode: runStateCode,
+        requestedPairs,
+        runStartedAt: receipt.started_at,
+        parameters: receipt.parameters,
+      },
+      requestedPairs,
+      rows: acquisition.rows,
+      mappings: reference.mappings,
+      completedAt: receipt.finished_at,
+    });
+    assert(
+      replay.selectedRowsSha256 === reference.selectedRowsSha256 &&
+        stableJson(replay.reconciliation) ===
+          stableJson(reference.replayReconciliation) &&
+        stableJson(replay.assertions) === stableJson(bundle.assertions) &&
+        stableJson(replay.reviews) === stableJson(bundle.reviews) &&
+        stableJson(replay.rejections) === stableJson(bundle.rejections) &&
+        stableJson(replay.outcomes) === stableJson(bundle.outcomes),
+      `Immutable NRCS run ${receipt.run_id} deterministic replay changed.`,
+    );
+  }
+
   if (receipt.run_id === LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
     assert(
       source.researchAdapter.id === receipt.adapter_id &&
@@ -1837,6 +2018,12 @@ console.log(
         0,
       ),
       nationalAphisReferenceCount: nationalAphisReferences.length,
+      nationalNrcsAcquisitionCount: nationalNrcsAcquisitions.length,
+      nationalNrcsAcquisitionRecordCount: nationalNrcsAcquisitions.reduce(
+        (sum, entry) => sum + entry.receipt.counts.csv_rows,
+        0,
+      ),
+      nationalNrcsReferenceCount: nationalNrcsReferences.length,
       bootstrapResearchRunCount: runs.length,
       immutableResearchRunCount: projectedAlabamaImmutableRuns.length,
       totalImmutableResearchRunCount: immutableRuns.length,

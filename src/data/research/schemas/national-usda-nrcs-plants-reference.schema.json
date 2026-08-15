@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usda-nrcs-plants-reference.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "acquisitionId",
+    "acquisitionReceiptPath",
+    "acquisitionReceiptSha256",
+    "snapshotDate",
+    "sourceId",
+    "stateCode",
+    "acquisitionArtifacts",
+    "adapterVersion",
+    "adapterCodeSha256",
+    "runnerCodeSha256",
+    "partitionMode",
+    "selectedRowsSha256",
+    "mappings",
+    "replayReconciliation"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "acquisitionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acquisitionReceiptPath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acquisitionReceiptSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "snapshotDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "sourceId": {
+      "const": "usda-nrcs-plants"
+    },
+    "stateCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "acquisitionArtifacts": {
+      "type": "array",
+      "minItems": 85,
+      "maxItems": 85,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes",
+          "role",
+          "recordCount"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "role": {
+            "enum": [
+              "swagger",
+              "service-metadata",
+              "layer6-metadata",
+              "status-before",
+              "profile",
+              "distribution",
+              "status-after"
+            ]
+          },
+          "recordCount": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "adapterVersion": {
+      "const": "1.0.0"
+    },
+    "adapterCodeSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "runnerCodeSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "partitionMode": {
+      "const": "acquire-once-taxon-bounded-fips-csv-no-mapserver-id-join-no-coordinate-fallback"
+    },
+    "selectedRowsSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "mappings": {
+      "type": "array",
+      "minItems": 40,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "plantMasterId",
+          "symbol",
+          "speciesId",
+          "scientificName"
+        ],
+        "properties": {
+          "plantMasterId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "symbol": {
+            "type": "string",
+            "pattern": "^[A-Z0-9]+$"
+          },
+          "speciesId": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "scientificName": {
+            "type": "string",
+            "minLength": 3
+          }
+        }
+      }
+    },
+    "replayReconciliation": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  }
+}

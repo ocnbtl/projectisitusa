@@ -1,0 +1,475 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usda-nrcs-plants-acquisition-receipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "acquisition_id",
+    "status",
+    "started_at",
+    "finished_at",
+    "actor_type",
+    "actor_id",
+    "source_id",
+    "code_commit",
+    "input_hashes",
+    "parameter_hash",
+    "parameters",
+    "upstream_requests",
+    "artifacts",
+    "source_verification",
+    "counts",
+    "errors",
+    "warnings",
+    "rerun_command"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "acquisition_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9.-]+(?:__[a-z0-9.-]+)*$"
+    },
+    "status": {
+      "const": "complete"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor_type": {
+      "const": "adapter"
+    },
+    "actor_id": {
+      "const": "usda-nrcs-plants-national-acquisition@1.0.0"
+    },
+    "source_id": {
+      "const": "usda-nrcs-plants"
+    },
+    "code_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "input_hashes": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "parameter_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "planId",
+        "snapshotDate",
+        "profileBaseUrl",
+        "distributionUrl",
+        "mapServerUrl",
+        "artifactBudgetBytes",
+        "maxAttempts",
+        "stateCodes",
+        "allowedEstablishmentMeans",
+        "taxonMappings"
+      ],
+      "properties": {
+        "planId": {
+          "const": "usda-nrcs-plants-national-v1-tranche-01"
+        },
+        "snapshotDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "profileBaseUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "distributionUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "mapServerUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifactBudgetBytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxAttempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "stateCodes": {
+          "type": "array",
+          "minItems": 51,
+          "maxItems": 51,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          }
+        },
+        "allowedEstablishmentMeans": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "Introduced",
+              "Both"
+            ]
+          }
+        },
+        "taxonMappings": {
+          "type": "array",
+          "minItems": 40,
+          "maxItems": 40,
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "upstream_requests": {
+      "type": "array",
+      "minItems": 85,
+      "maxItems": 85,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "request_id",
+          "url",
+          "method",
+          "request_body_sha256",
+          "status",
+          "retrieved_at",
+          "bytes_received",
+          "attempt",
+          "artifact_path",
+          "role",
+          "taxon_master_id",
+          "record_count"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "method": {
+            "enum": [
+              "GET",
+              "POST"
+            ]
+          },
+          "request_body_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "status": {
+            "const": 200
+          },
+          "retrieved_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bytes_received": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "artifact_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "enum": [
+              "swagger",
+              "service-metadata",
+              "layer6-metadata",
+              "status-before",
+              "profile",
+              "distribution",
+              "status-after"
+            ]
+          },
+          "taxon_master_id": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "record_count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 85,
+      "maxItems": 85,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes",
+          "media_type",
+          "role",
+          "taxon_master_id",
+          "record_count",
+          "source_url"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "media_type": {
+            "enum": [
+              "application/json",
+              "text/csv"
+            ]
+          },
+          "role": {
+            "enum": [
+              "swagger",
+              "service-metadata",
+              "layer6-metadata",
+              "status-before",
+              "profile",
+              "distribution",
+              "status-after"
+            ]
+          },
+          "taxon_master_id": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "record_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "source_verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publisher",
+        "terms_url",
+        "license",
+        "freshness_status",
+        "contract_snapshot_count",
+        "status_fingerprint_before_sha256",
+        "status_fingerprint_after_sha256",
+        "stable_status_window",
+        "profile_identity_complete",
+        "distribution_responses_complete",
+        "county_geography_policy",
+        "state_row_policy",
+        "taxonomy_policy",
+        "nativity_policy",
+        "positive_semantics",
+        "negative_semantics",
+        "snapshot_completeness",
+        "known_caveats"
+      ],
+      "properties": {
+        "publisher": {
+          "const": "USDA Natural Resources Conservation Service"
+        },
+        "terms_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "freshness_status": {
+          "const": "current-provider-snapshot"
+        },
+        "contract_snapshot_count": {
+          "const": 3
+        },
+        "status_fingerprint_before_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "status_fingerprint_after_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "stable_status_window": {
+          "const": true
+        },
+        "profile_identity_complete": {
+          "const": true
+        },
+        "distribution_responses_complete": {
+          "const": true
+        },
+        "county_geography_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state_row_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "taxonomy_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nativity_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "positive_semantics": {
+          "type": "string",
+          "minLength": 1
+        },
+        "negative_semantics": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_completeness": {
+          "type": "string",
+          "minLength": 1
+        },
+        "known_caveats": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "upstream_requests",
+        "distribution_responses",
+        "profile_responses",
+        "contract_snapshots",
+        "aggregate_snapshots",
+        "artifacts",
+        "artifact_bytes",
+        "csv_rows",
+        "united_states_county_rows",
+        "united_states_state_only_rows",
+        "foreign_rows",
+        "transient_failures"
+      ],
+      "properties": {
+        "upstream_requests": {
+          "const": 85
+        },
+        "distribution_responses": {
+          "const": 40
+        },
+        "profile_responses": {
+          "const": 40
+        },
+        "contract_snapshots": {
+          "const": 3
+        },
+        "aggregate_snapshots": {
+          "const": 2
+        },
+        "artifacts": {
+          "const": 85
+        },
+        "artifact_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 104857600
+        },
+        "csv_rows": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "united_states_county_rows": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "united_states_state_only_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "foreign_rows": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "transient_failures": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "rerun_command": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

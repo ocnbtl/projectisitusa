@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-usda-nrcs-plants-plan.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "planId",
+    "sourceId",
+    "snapshotDate",
+    "profileBaseUrl",
+    "distributionUrl",
+    "mapServerUrl",
+    "artifactBudgetBytes",
+    "maxAttempts",
+    "nationalV1StateCodes",
+    "taxonMappings",
+    "allowedEstablishmentMeans",
+    "expectedGrossPairs",
+    "expectedNetNewPairsAtBaseline",
+    "expectedAlreadyResearchedAtBaseline",
+    "baselineGeneratedAsOf",
+    "baselineCommit"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "planId": {
+      "const": "usda-nrcs-plants-national-v1-tranche-01"
+    },
+    "sourceId": {
+      "const": "usda-nrcs-plants"
+    },
+    "snapshotDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "profileBaseUrl": {
+      "const": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile"
+    },
+    "distributionUrl": {
+      "const": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile/getDownloadDistributionDocumentation"
+    },
+    "mapServerUrl": {
+      "const": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer"
+    },
+    "artifactBudgetBytes": {
+      "type": "integer",
+      "minimum": 1048576,
+      "maximum": 104857600
+    },
+    "maxAttempts": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "nationalV1StateCodes": {
+      "type": "array",
+      "minItems": 51,
+      "maxItems": 51,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      }
+    },
+    "taxonMappings": {
+      "type": "array",
+      "minItems": 40,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "plantMasterId",
+          "symbol",
+          "speciesId",
+          "scientificName"
+        ],
+        "properties": {
+          "plantMasterId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "symbol": {
+            "type": "string",
+            "pattern": "^[A-Z0-9]+$"
+          },
+          "speciesId": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "scientificName": {
+            "type": "string",
+            "minLength": 3
+          }
+        }
+      }
+    },
+    "allowedEstablishmentMeans": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Introduced",
+          "Both"
+        ]
+      }
+    },
+    "expectedGrossPairs": {
+      "const": 125760
+    },
+    "expectedNetNewPairsAtBaseline": {
+      "const": 123140
+    },
+    "expectedAlreadyResearchedAtBaseline": {
+      "const": 2620
+    },
+    "baselineGeneratedAsOf": {
+      "const": "2026-08-15"
+    },
+    "baselineCommit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    }
+  }
+}
