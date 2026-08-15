@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-aphis-federal-quarantine-reference.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisitionId", "acquisitionReceiptPath", "acquisitionReceiptSha256", "snapshotDate", "sourceId", "stateCode", "acquisitionArtifacts", "adapterVersion", "adapterCodeSha256", "runnerCodeSha256", "partitionMode", "selectedRowsSha256", "mappings", "replayReconciliation"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisitionId": { "type": "string", "minLength": 1 },
+    "acquisitionReceiptPath": { "type": "string", "minLength": 1 },
+    "acquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "snapshotDate": { "type": "string", "format": "date" },
+    "sourceId": { "const": "aphis-federal-quarantine" },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "acquisitionArtifacts": { "type": "array", "minItems": 5, "items": { "$ref": "#/$defs/file" } },
+    "adapterVersion": { "const": "1.0.0" },
+    "adapterCodeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "runnerCodeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "partitionMode": { "const": "acquire-once-national-stable-edit-window-exact-fips-and-name-no-coordinate-fallback" },
+    "selectedRowsSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "mappings": { "type": "array", "minItems": 17, "maxItems": 17, "items": { "type": "object", "additionalProperties": false, "required": ["sourceProgram", "speciesId", "scientificName"], "properties": { "sourceProgram": { "type": "string" }, "speciesId": { "type": "string" }, "scientificName": { "type": "string" } } } },
+    "replayReconciliation": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+  },
+  "$defs": {
+    "file": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "role", "recordCount"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "role": { "enum": ["metadata-before", "count", "page", "metadata-after"] },
+        "recordCount": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

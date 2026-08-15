@@ -198,6 +198,14 @@ This accepted centralized pilot did not by itself repair the blocked skill gate.
 
 The public GBIF occurrence search API remains suitable for bounded adapter work, but it is not accepted as a complete national snapshot because ordinary search results use mutable offset paging. A future national GBIF lane must use a versioned or authenticated download receipt with complete artifact lineage rather than claiming snapshot completeness from search pagination.
 
+### National APHIS federal-quarantine acquisition
+
+`npm run research:acquire:aphis-quarantine-national` implements an acquire-once national source actor for the official APHIS Federal Quarantine FeatureServer layer. A no-network semantic dry-run proves all 51 jurisdictions, 17 reviewed program-to-catalog mappings, 3,144 active county equivalents, 53,448 ordered county-species pairs, the expanded command, the deterministic acquisition directory, and all 51 deterministic state run paths before provider access.
+
+The acquisition retains raw metadata, count, and OBJECTID-ordered page responses once. It accepts the snapshot only when the provider-declared count is fully received and the layer `lastEditDate` remains unchanged before and after pagination. State partitions use only explicit five-digit `Quarantine_County_FIPS`, the matching state abbreviation, and a matching registered active county name. Coordinates and automatic retired-geography crosswalks are prohibited.
+
+Only 17 exact reviewed APHIS program mappings can publish. Active, modified, infested, and active state-quarantine statuses may support `recorded-present` regulatory evidence. Pending-only, rescinded, blank, mismatched, unmapped, or geographically unsafe rows are retained or rejected but never publish. Complete snapshot silence emits `no-qualifying-evidence` and changes only the researched axis; it never establishes verified absence or survey non-detection.
+
 For each run:
 
 1. Capture clean starting status and current commit.

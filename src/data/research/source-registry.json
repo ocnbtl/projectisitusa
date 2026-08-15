@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-31",
+  "updatedAt": "2026-08-15",
   "sources": [
     {
       "id": "eddmaps",
@@ -172,7 +172,19 @@
       "refreshCadenceDays": 30,
       "status": "operational",
       "adapter": "scripts/import-aphis-hlb-alabama-quarantine.ts",
-      "caveat": "Active regulatory geography supports the named program condition, not broader abundance or county inventory."
+      "caveat": "Active regulatory geography supports the named program condition, not broader abundance or county inventory.",
+      "researchAdapter": {
+        "id": "aphis-federal-quarantine-national",
+        "module": "scripts/research/national-aphis-federal-quarantine.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/aphis-federal-quarantine-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact reviewed one-to-one mapping from an APHIS Quarantine_Program value to one Project Isitusa catalog species. Unmapped or ambiguous programs remain review-only and never publish.",
+        "geographyMatchingPolicy": "Exact explicit five-digit Quarantine_County_FIPS plus matching APHIS state abbreviation and registered active county-equivalent name. Missing, mismatched, unknown, retired, and ambiguous geography is rejected. Coordinates and automatic successor crosswalks are never used.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "aphis-honey-bee",

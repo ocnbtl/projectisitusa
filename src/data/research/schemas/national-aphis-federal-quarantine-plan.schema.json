@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-aphis-federal-quarantine-plan.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "planId", "sourceId", "snapshotDate", "layerUrl", "pageSize", "artifactBudgetBytes", "maxAttempts", "nationalV1StateCodes", "acceptedStatuses", "rejectedStatuses", "programMappings", "unmappedPrograms", "expectedGrossPairs", "expectedNetNewPairsAtBaseline", "baselineGeneratedAsOf", "baselineCommit"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "planId": { "const": "aphis-federal-quarantine-national-v1" },
+    "sourceId": { "const": "aphis-federal-quarantine" },
+    "snapshotDate": { "type": "string", "format": "date" },
+    "layerUrl": { "type": "string", "format": "uri" },
+    "pageSize": { "type": "integer", "minimum": 1, "maximum": 2000 },
+    "artifactBudgetBytes": { "type": "integer", "minimum": 1048576, "maximum": 20971520 },
+    "maxAttempts": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "nationalV1StateCodes": { "type": "array", "minItems": 51, "maxItems": 51, "uniqueItems": true, "items": { "type": "string", "pattern": "^[A-Z]{2}$" } },
+    "acceptedStatuses": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "rejectedStatuses": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "programMappings": {
+      "type": "array", "minItems": 17, "maxItems": 17,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["sourceProgram", "speciesId", "scientificName"],
+        "properties": {
+          "sourceProgram": { "type": "string", "minLength": 1 },
+          "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "scientificName": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "unmappedPrograms": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "expectedGrossPairs": { "const": 53448 },
+    "expectedNetNewPairsAtBaseline": { "const": 52711 },
+    "baselineGeneratedAsOf": { "const": "2026-08-14" },
+    "baselineCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" }
+  }
+}

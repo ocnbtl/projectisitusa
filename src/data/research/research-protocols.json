@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-31",
+  "updatedAt": "2026-08-15",
   "protocols": [
     {
       "id": "alabama-explicit-migration-v2",
@@ -37,6 +37,41 @@
         "classificationComplete": false
       },
       "rules": [
+        {
+          "ruleId": "aphis-federal-quarantine-reviewed-programs-v1",
+          "speciesSelector": {
+            "kind": "species-id",
+            "values": [
+              "anastrepha-ludens",
+              "asian-longhorned-beetle",
+              "bactrocera-dorsalis",
+              "ceratitis-capitata",
+              "cydalima-perspectalis",
+              "diaphorina-citri",
+              "elsinoe-australis",
+              "globodera-pallida",
+              "globodera-rostochiensis",
+              "liberibacter-asiaticus",
+              "lymantria-dispar",
+              "phyllosticta-citricarpa",
+              "solenopsis-invicta",
+              "spotted-lanternfly",
+              "striga-asiatica",
+              "sudden-oak-death",
+              "xanthomonas-citri"
+            ]
+          },
+          "applicableSourceIds": [
+            "aphis-federal-quarantine"
+          ],
+          "basis": [
+            {
+              "kind": "national-source-policy",
+              "reference": "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
+              "note": "APHIS exposes an official national quarantine layer with exact reviewed program mappings and explicit county FIPS. This creates a source-screen obligation only and does not establish state applicability, absence, or non-detection."
+            }
+          ]
+        },
         {
           "ruleId": "alabama-plants-v2",
           "speciesSelector": {
@@ -174,11 +209,13 @@
       ],
       "status": "active",
       "sourceUniverse": [
+        "aphis-federal-quarantine",
         "gbif-preserved-specimens",
         "usfs-afpe",
         "usgs-nas"
       ],
       "requiredCurrentSourceIds": [
+        "aphis-federal-quarantine",
         "gbif-preserved-specimens",
         "usgs-nas"
       ],
@@ -187,6 +224,41 @@
         "classificationComplete": true
       },
       "rules": [
+        {
+          "ruleId": "aphis-federal-quarantine-reviewed-programs-v1",
+          "speciesSelector": {
+            "kind": "species-id",
+            "values": [
+              "anastrepha-ludens",
+              "asian-longhorned-beetle",
+              "bactrocera-dorsalis",
+              "ceratitis-capitata",
+              "cydalima-perspectalis",
+              "diaphorina-citri",
+              "elsinoe-australis",
+              "globodera-pallida",
+              "globodera-rostochiensis",
+              "liberibacter-asiaticus",
+              "lymantria-dispar",
+              "phyllosticta-citricarpa",
+              "solenopsis-invicta",
+              "spotted-lanternfly",
+              "striga-asiatica",
+              "sudden-oak-death",
+              "xanthomonas-citri"
+            ]
+          },
+          "applicableSourceIds": [
+            "aphis-federal-quarantine"
+          ],
+          "basis": [
+            {
+              "kind": "national-source-policy",
+              "reference": "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
+              "note": "APHIS exposes an official national quarantine layer with exact reviewed program mappings and explicit county FIPS. This creates a source-screen obligation only and does not establish state applicability, absence, or non-detection."
+            }
+          ]
+        },
         {
           "ruleId": "pilot-state-applicability-multisource-v2",
           "speciesSelector": {
@@ -369,11 +441,13 @@
       ],
       "status": "active",
       "sourceUniverse": [
+        "aphis-federal-quarantine",
         "gbif-preserved-specimens",
         "usfs-afpe",
         "usgs-nas"
       ],
       "requiredCurrentSourceIds": [
+        "aphis-federal-quarantine",
         "gbif-preserved-specimens",
         "usgs-nas"
       ],
@@ -382,6 +456,41 @@
         "classificationComplete": true
       },
       "rules": [
+        {
+          "ruleId": "aphis-federal-quarantine-reviewed-programs-v1",
+          "speciesSelector": {
+            "kind": "species-id",
+            "values": [
+              "anastrepha-ludens",
+              "asian-longhorned-beetle",
+              "bactrocera-dorsalis",
+              "ceratitis-capitata",
+              "cydalima-perspectalis",
+              "diaphorina-citri",
+              "elsinoe-australis",
+              "globodera-pallida",
+              "globodera-rostochiensis",
+              "liberibacter-asiaticus",
+              "lymantria-dispar",
+              "phyllosticta-citricarpa",
+              "solenopsis-invicta",
+              "spotted-lanternfly",
+              "striga-asiatica",
+              "sudden-oak-death",
+              "xanthomonas-citri"
+            ]
+          },
+          "applicableSourceIds": [
+            "aphis-federal-quarantine"
+          ],
+          "basis": [
+            {
+              "kind": "national-source-policy",
+              "reference": "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
+              "note": "APHIS exposes an official national quarantine layer with exact reviewed program mappings and explicit county FIPS. This creates a source-screen obligation only and does not establish state applicability, absence, or non-detection."
+            }
+          ]
+        },
         {
           "ruleId": "national-state-applicability-gbif-v1",
           "speciesSelector": {

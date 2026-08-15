@@ -282,6 +282,12 @@ Partitioning streams the complete archive once for all selected screens. It requ
 
 Mutable offset paging is not a national snapshot boundary. The public GBIF search API can support bounded adapter runs, but a national GBIF acquisition must use a versioned or authenticated complete download with an immutable receipt before it can claim national-source completion.
 
+The APHIS federal-quarantine actor demonstrates the reusable national pattern for a bounded mutable service without state query loops. MAIN acquires the official layer exactly once, retains every raw JSON response, pages in stable `OBJECTID` order against a provider-declared count, and requires the provider's `lastEditDate` to remain unchanged across the complete capture. Only after that stable edit window is sealed does deterministic local replay partition the snapshot into 51 state runs. Each run references the same immutable acquisition by path, hash, and byte count.
+
+APHIS quarantine evidence is regulatory positive evidence. Publication requires an exact reviewed program mapping, an accepted current regulatory status, an explicit active five-digit county FIPS, the matching state, and a matching county name. Unmapped programs route to review. Pending-only or rescinded rows, missing or retired geography, name mismatches, rejection, and snapshot silence never create absence or non-detection. This separation lets one national capture complete a large research obligation without inflating determination, applicability, or denominator movement.
+
+The operational lesson is to bind deterministic partition identities to the committed acquisition parameters rather than the future receipt bytes. That makes every state run path provable during no-network preflight while the later acquisition reference still pins the exact receipt and raw artifacts. Provider access remains one bounded national lane; local replay supplies parallelizable scale without additional provider calls.
+
 ## Source-Run Receipts
 
 The compatibility migration currently writes combined bootstrap records to `src/data/research/research-runs.json`. Those records support parity and source-screen migration, but they are not the final immutable receipt model.

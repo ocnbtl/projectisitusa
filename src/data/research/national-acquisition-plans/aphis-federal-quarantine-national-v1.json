@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "planId": "aphis-federal-quarantine-national-v1",
+  "sourceId": "aphis-federal-quarantine",
+  "snapshotDate": "2026-08-15",
+  "layerUrl": "https://services7.arcgis.com/2C1NQ7u6M6SXoa8p/arcgis/rest/services/PPQ_GIS_Federal_Quarantine_AGOL_EDIT_Feature_Layer_view/FeatureServer/1",
+  "pageSize": 2000,
+  "artifactBudgetBytes": 20971520,
+  "maxAttempts": 3,
+  "nationalV1StateCodes": [
+    "AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
+  ],
+  "acceptedStatuses": [
+    "Active Federal Quarantine",
+    "Infested & Quarantine",
+    "Infested County",
+    "Modified Federal Quarantine",
+    "State Quarantine / Pending Federal Quarantine"
+  ],
+  "rejectedStatuses": [
+    "Pending Federal Quarantine",
+    "Rescinded Federal Quarantine"
+  ],
+  "programMappings": [
+    { "sourceProgram": "Asian Citrus Psyllid", "speciesId": "diaphorina-citri", "scientificName": "Diaphorina citri" },
+    { "sourceProgram": "Asian Longhorned Beetle", "speciesId": "asian-longhorned-beetle", "scientificName": "Anoplophora glabripennis" },
+    { "sourceProgram": "Box Tree Moth", "speciesId": "cydalima-perspectalis", "scientificName": "Cydalima perspectalis" },
+    { "sourceProgram": "Citrus Black Spot", "speciesId": "phyllosticta-citricarpa", "scientificName": "Phyllosticta citricarpa" },
+    { "sourceProgram": "Citrus Canker", "speciesId": "xanthomonas-citri", "scientificName": "Xanthomonas citri" },
+    { "sourceProgram": "Citrus Greening (HLB)", "speciesId": "liberibacter-asiaticus", "scientificName": "Liberibacter asiaticus" },
+    { "sourceProgram": "Golden Nematode", "speciesId": "globodera-rostochiensis", "scientificName": "Globodera rostochiensis" },
+    { "sourceProgram": "Imported Fire Ant", "speciesId": "solenopsis-invicta", "scientificName": "Solenopsis invicta" },
+    { "sourceProgram": "Mediterranean Fruit Fly", "speciesId": "ceratitis-capitata", "scientificName": "Ceratitis capitata" },
+    { "sourceProgram": "Mexican Fruit Fly", "speciesId": "anastrepha-ludens", "scientificName": "Anastrepha ludens" },
+    { "sourceProgram": "Oriental Fruit Fly", "speciesId": "bactrocera-dorsalis", "scientificName": "Bactrocera dorsalis" },
+    { "sourceProgram": "Pale Cyst Nematode", "speciesId": "globodera-pallida", "scientificName": "Globodera pallida" },
+    { "sourceProgram": "Phytophthora ramorum", "speciesId": "sudden-oak-death", "scientificName": "Phytophthora ramorum" },
+    { "sourceProgram": "Spongy Moth", "speciesId": "lymantria-dispar", "scientificName": "Lymantria dispar" },
+    { "sourceProgram": "Spotted Lanternfly", "speciesId": "spotted-lanternfly", "scientificName": "Lycorma delicatula" },
+    { "sourceProgram": "Sweet Orange Scab", "speciesId": "elsinoe-australis", "scientificName": "Elsinoe australis" },
+    { "sourceProgram": "Witchweed", "speciesId": "striga-asiatica", "scientificName": "Striga asiatica" }
+  ],
+  "unmappedPrograms": [
+    "European Cherry Fruit Fly (Rhagoletis cerasi)",
+    "Queensland Fruit Fly (Bactrocera tryoni)",
+    "Sapote Fruit Fly (Anastrepha serpentina)",
+    "West Indian Fruit Fly (Anastrepha obliqua)"
+  ],
+  "expectedGrossPairs": 53448,
+  "expectedNetNewPairsAtBaseline": 52711,
+  "baselineGeneratedAsOf": "2026-08-14",
+  "baselineCommit": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2"
+}

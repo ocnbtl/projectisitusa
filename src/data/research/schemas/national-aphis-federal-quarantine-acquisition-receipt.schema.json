@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-aphis-federal-quarantine-acquisition-receipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisition_id", "status", "started_at", "finished_at", "actor_type", "actor_id", "source_id", "code_commit", "input_hashes", "parameter_hash", "parameters", "upstream_requests", "artifacts", "source_verification", "counts", "errors", "warnings", "rerun_command"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisition_id": { "type": "string", "pattern": "^[a-z0-9.-]+(?:__[a-z0-9.-]+)*$" },
+    "status": { "const": "complete" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "actor_type": { "const": "adapter" },
+    "actor_id": { "const": "aphis-federal-quarantine-national-acquisition@1.0.0" },
+    "source_id": { "const": "aphis-federal-quarantine" },
+    "code_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "input_hashes": { "type": "object", "minProperties": 4, "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" } },
+    "parameter_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "parameters": {
+      "type": "object", "additionalProperties": false,
+      "required": ["planId", "snapshotDate", "layerUrl", "pageSize", "artifactBudgetBytes", "maxAttempts", "stateCodes", "acceptedStatuses", "programMappings"],
+      "properties": {
+        "planId": { "const": "aphis-federal-quarantine-national-v1" },
+        "snapshotDate": { "type": "string", "format": "date" },
+        "layerUrl": { "type": "string", "format": "uri" },
+        "pageSize": { "type": "integer", "minimum": 1, "maximum": 2000 },
+        "artifactBudgetBytes": { "type": "integer", "minimum": 1048576, "maximum": 20971520 },
+        "maxAttempts": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "stateCodes": { "type": "array", "minItems": 51, "maxItems": 51, "uniqueItems": true, "items": { "type": "string", "pattern": "^[A-Z]{2}$" } },
+        "acceptedStatuses": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "programMappings": { "type": "array", "minItems": 17, "maxItems": 17, "items": { "type": "object", "additionalProperties": false, "required": ["sourceProgram", "speciesId", "scientificName"], "properties": { "sourceProgram": { "type": "string" }, "speciesId": { "type": "string" }, "scientificName": { "type": "string" } } } }
+      }
+    },
+    "upstream_requests": {
+      "type": "array", "minItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["request_id", "url", "method", "status", "retrieved_at", "bytes_received", "attempt", "artifact_path", "role", "record_count"],
+        "properties": {
+          "request_id": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" },
+          "method": { "const": "GET" },
+          "status": { "const": 200 },
+          "retrieved_at": { "type": "string", "format": "date-time" },
+          "bytes_received": { "type": "integer", "minimum": 1 },
+          "attempt": { "type": "integer", "minimum": 1, "maximum": 3 },
+          "artifact_path": { "type": "string", "minLength": 1 },
+          "role": { "enum": ["metadata-before", "count", "page", "metadata-after"] },
+          "record_count": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array", "minItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "sha256", "bytes", "media_type", "role", "page_index", "record_count", "source_url"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "media_type": { "const": "application/json" },
+          "role": { "enum": ["metadata-before", "count", "page", "metadata-after"] },
+          "page_index": { "type": ["integer", "null"], "minimum": 0 },
+          "record_count": { "type": "integer", "minimum": 0 },
+          "source_url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "source_verification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["publisher", "terms_url", "license", "freshness_status", "last_edit_date_before", "last_edit_date_after", "stable_edit_window", "object_id_field", "supports_pagination", "supports_order_by", "geography_policy", "taxon_policy", "positive_semantics", "negative_semantics", "snapshot_completeness", "known_caveats"],
+      "properties": {
+        "publisher": { "const": "USDA Animal and Plant Health Inspection Service" },
+        "terms_url": { "type": "string", "format": "uri" },
+        "license": { "type": "string", "minLength": 1 },
+        "freshness_status": { "const": "current-provider-snapshot" },
+        "last_edit_date_before": { "type": "integer", "minimum": 1 },
+        "last_edit_date_after": { "type": "integer", "minimum": 1 },
+        "stable_edit_window": { "const": true },
+        "object_id_field": { "const": "OBJECTID" },
+        "supports_pagination": { "const": true },
+        "supports_order_by": { "const": true },
+        "geography_policy": { "type": "string", "minLength": 1 },
+        "taxon_policy": { "type": "string", "minLength": 1 },
+        "positive_semantics": { "type": "string", "minLength": 1 },
+        "negative_semantics": { "type": "string", "minLength": 1 },
+        "snapshot_completeness": { "type": "string", "minLength": 1 },
+        "known_caveats": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["upstream_requests", "occurrence_pages", "artifacts", "artifact_bytes", "declared_records", "received_records", "distinct_object_ids", "mapped_program_records", "unmapped_program_records", "transient_failures"],
+      "properties": {
+        "upstream_requests": { "type": "integer", "minimum": 5 },
+        "occurrence_pages": { "type": "integer", "minimum": 1 },
+        "artifacts": { "type": "integer", "minimum": 5 },
+        "artifact_bytes": { "type": "integer", "minimum": 1, "maximum": 20971520 },
+        "declared_records": { "type": "integer", "minimum": 1 },
+        "received_records": { "type": "integer", "minimum": 1 },
+        "distinct_object_ids": { "type": "integer", "minimum": 1 },
+        "mapped_program_records": { "type": "integer", "minimum": 0 },
+        "unmapped_program_records": { "type": "integer", "minimum": 0 },
+        "transient_failures": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "errors": { "type": "array", "maxItems": 0 },
+    "warnings": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "rerun_command": { "type": "string", "minLength": 1 }
+  }
+}
