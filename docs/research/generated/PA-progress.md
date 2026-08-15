@@ -1,26 +1,26 @@
 # Pennsylvania Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `2014`
+- Verified present: `2083`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5289`
-- Not researched: `160465`
-- Determination coverage: `1.20%`
-- Research coverage: `4.35%`
-- Explicit outcome coverage: `4.3530%`
-- Applicable protocol cells: `123`
-- Current complete protocol cells: `79`
-- Protocol completion: `74.80%`
-- Current protocol completion: `64.23%`
-- Evidence records: `8285`
-- Research runs: `10`
+- Researched unresolved: `6359`
+- Not researched: `159326`
+- Determination coverage: `1.24%`
+- Research coverage: `5.03%`
+- Explicit outcome coverage: `5.0319%`
+- Applicable protocol cells: `142`
+- Current complete protocol cells: `96`
+- Protocol completion: `76.76%`
+- Current protocol completion: `67.61%`
+- Evidence records: `8354`
+- Research runs: `11`
 - Rejection records: `1027`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -40,23 +40,23 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 67 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 67 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 67 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 67 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 67 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 67 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 67 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 67 | 0 |
+| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 67 | 0 |
 | Jio (`commelina-benghalensis`) | plants | 0 | 67 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 67 | 0 |
+| Asian citrus psyllid (`diaphorina-citri`) | insects | 0 | 67 | 0 |
 | Brazilian Waterweed (`egeria-densa`) | plants | 0 | 67 | 0 |
 | Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 67 | 0 |
+| Sweet orange scab (`elsinoe-australis`) | fungi-diseases | 0 | 67 | 0 |
 | Southern threecornerjack (`emex-australis`) | plants | 0 | 67 | 0 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 67 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 0 | 67 | 0 |
-| Japanese Hop (`humulus-japonicus`) | plants | 0 | 67 | 0 |
-| Indian swampweed (`hygrophila-polysperma`) | plants | 0 | 67 | 0 |
-| Cogongrass (`imperata-cylindrica`) | plants | 0 | 67 | 0 |
-| Japanese Privet (`ligustrum-japonicum`) | plants | 0 | 67 | 0 |
-| Asian marshweed (`limnophila-sessiliflora`) | plants | 0 | 67 | 0 |
-| African boxthorn (`lycium-ferocissimum`) | plants | 0 | 67 | 0 |
+| Pale cyst nematode (`globodera-pallida`) | wildlife | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 69 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

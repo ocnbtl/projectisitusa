@@ -1,6 +1,6 @@
 # Washington Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-14T00:00:00.000Z`
 - Verified present: `1319`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4336`
-- Not researched: `92001`
+- Researched unresolved: `4999`
+- Not researched: `91338`
 - Determination coverage: `1.35%`
-- Research coverage: `5.79%`
-- Explicit outcome coverage: `5.7907%`
-- Applicable protocol cells: `163`
-- Current complete protocol cells: `150`
+- Research coverage: `6.47%`
+- Explicit outcome coverage: `6.4696%`
+- Applicable protocol cells: `180`
+- Current complete protocol cells: `167`
 - Protocol completion: `100.00%`
-- Current protocol completion: `92.02%`
+- Current protocol completion: `92.78%`
 - Evidence records: `6204`
-- Research runs: `17`
+- Research runs: `18`
 - Rejection records: `1251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 39 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 39 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 39 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 39 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 39 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 39 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 39 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 39 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 39 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 39 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 0 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

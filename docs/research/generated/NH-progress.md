@@ -1,26 +1,26 @@
 # New Hampshire Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `122`
+- Verified present: `132`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `728`
-- Not researched: `24190`
-- Determination coverage: `0.49%`
-- Research coverage: `3.39%`
-- Explicit outcome coverage: `3.3946%`
-- Applicable protocol cells: `79`
-- Current complete protocol cells: `39`
-- Protocol completion: `65.82%`
-- Current protocol completion: `49.37%`
-- Evidence records: `122`
-- Research runs: `18`
+- Researched unresolved: `888`
+- Not researched: `24020`
+- Determination coverage: `0.53%`
+- Research coverage: `4.07%`
+- Explicit outcome coverage: `4.0735%`
+- Applicable protocol cells: `97`
+- Current complete protocol cells: `56`
+- Protocol completion: `71.13%`
+- Current protocol completion: `57.73%`
+- Evidence records: `132`
+- Research runs: `19`
 - Rejection records: `17`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,18 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 10 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 10 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 10 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 10 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 10 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 10 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 10 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 10 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 10 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 10 | 0 |
 | Common Barberry (`berberis-vulgaris`) | plants | 0 | 10 | 0 |
 | Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 10 | 0 |
+| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 10 | 0 |
 | Canada Thistle (`cirsium-arvense`) | plants | 0 | 10 | 0 |
 | Bull Thistle (`cirsium-vulgare`) | plants | 0 | 10 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 10 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 10 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 10 | 0 |
-| Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 10 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 10 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

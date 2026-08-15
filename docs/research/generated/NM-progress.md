@@ -1,6 +1,6 @@
 # New Mexico Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-14T00:00:00.000Z`
 - Verified present: `55`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3740`
-- Not researched: `78837`
+- Researched unresolved: `4301`
+- Not researched: `78276`
 - Determination coverage: `0.07%`
-- Research coverage: `4.59%`
-- Explicit outcome coverage: `4.5927%`
-- Applicable protocol cells: `74`
-- Current complete protocol cells: `32`
-- Protocol completion: `60.81%`
-- Current protocol completion: `43.24%`
+- Research coverage: `5.27%`
+- Explicit outcome coverage: `5.2716%`
+- Applicable protocol cells: `91`
+- Current complete protocol cells: `49`
+- Protocol completion: `68.13%`
+- Current protocol completion: `53.85%`
 - Evidence records: `55`
-- Research runs: `10`
-- Rejection records: `18`
+- Research runs: `11`
+- Rejection records: `19`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -53,10 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 33 | 0 |
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 33 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 33 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 33 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 33 | 0 |
 | Common Burdock (`arctium-minus`) | plants | 0 | 33 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 33 | 0 |
-| Absinthium (`artemisia-absinthium`) | plants | 0 | 33 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 33 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 0 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

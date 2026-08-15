@@ -1,26 +1,26 @@
 # Vermont Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `211`
+- Verified present: `225`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1205`
-- Not researched: `33640`
-- Determination coverage: `0.60%`
-- Research coverage: `4.04%`
-- Explicit outcome coverage: `4.0393%`
-- Applicable protocol cells: `109`
-- Current complete protocol cells: `55`
-- Protocol completion: `62.39%`
-- Current protocol completion: `50.46%`
-- Evidence records: `437`
-- Research runs: `11`
+- Researched unresolved: `1429`
+- Not researched: `33402`
+- Determination coverage: `0.64%`
+- Research coverage: `4.72%`
+- Explicit outcome coverage: `4.7182%`
+- Applicable protocol cells: `127`
+- Current complete protocol cells: `72`
+- Protocol completion: `66.93%`
+- Current protocol completion: `56.69%`
+- Evidence records: `451`
+- Research runs: `12`
 - Rejection records: `95`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 14 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 14 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 14 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 14 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 14 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 14 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 14 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 14 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 14 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 14 | 0 |
 | Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 14 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 14 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 14 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 14 | 0 |
-| Water Hyacinth (`eichhornia-crassipes`) | plants | 0 | 14 | 0 |
+| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 14 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

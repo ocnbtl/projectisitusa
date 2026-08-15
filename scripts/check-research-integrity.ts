@@ -66,12 +66,46 @@ import {
   verifyNationalFiaAcquisition,
 } from "./research/national-usfs-fia-common";
 import {
+  APHIS_ADAPTER_ID,
+  APHIS_SOURCE_ID,
+  type AphisProgramMapping,
+  type AphisReplayReconciliation,
+  type NationalAphisPlan,
+  replayNationalAphisState,
+} from "./research/national-aphis-federal-quarantine";
+import {
+  verifyNationalAphisAcquisition,
+} from "./research/run-national-aphis-federal-quarantine";
+import {
   getStateDefinition,
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
 
 type SpeciesRecord = { id: string; scientificName: string };
 type CountyRecord = { countyFips: string; stateCode: string };
+type NationalAphisReference = {
+  schemaVersion: 1;
+  acquisitionId: string;
+  acquisitionReceiptPath: string;
+  acquisitionReceiptSha256: string;
+  snapshotDate: string;
+  sourceId: typeof APHIS_SOURCE_ID;
+  stateCode: string;
+  acquisitionArtifacts: Array<{
+    path: string;
+    sha256: string;
+    bytes: number;
+    role: "metadata-before" | "count" | "page" | "metadata-after";
+    recordCount: number;
+  }>;
+  adapterVersion: string;
+  adapterCodeSha256: string;
+  runnerCodeSha256: string;
+  partitionMode: string;
+  selectedRowsSha256: string;
+  mappings: AphisProgramMapping[];
+  replayReconciliation: AphisReplayReconciliation;
+};
 type MatrixFile = {
   summary: {
     totalDeterminations: number;
@@ -290,6 +324,7 @@ const speciesCatalog = readJson<SpeciesRecord[]>(
   path.join(ROOT, "src/data/generated/species.json"),
 );
 const speciesIds = new Set(speciesCatalog.map((entry) => entry.id));
+const speciesById = new Map(speciesCatalog.map((entry) => [entry.id, entry]));
 const generatedCounties = Object.values(
   readJson<Record<string, CountyRecord>>(path.join(ROOT, "src/data/generated/counties.json")),
 );
@@ -350,6 +385,12 @@ const migrationCandidates = readJson<MigrationCandidatesFile>(migrationCandidate
 const nationalNasAcquisitions = [];
 const nationalAfpeAcquisitions = [];
 const nationalFiaAcquisitions = [];
+const nationalAphisAcquisitions = [];
+const nationalAphisPlanPath = path.join(
+  ROOT,
+  "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
+);
+const nationalAphisPlan = readJson<NationalAphisPlan>(nationalAphisPlanPath);
 if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
   for (const entry of readdirSync(NATIONAL_ACQUISITIONS_DIR, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
@@ -363,7 +404,9 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
         ? verifyNationalAfpeAcquisition(ROOT, directory)
         : candidate.source_id === FIA_SOURCE_ID
           ? verifyNationalFiaAcquisition(ROOT, directory)
-        : null;
+          : candidate.source_id === APHIS_SOURCE_ID
+            ? verifyNationalAphisAcquisition(directory, nationalAphisPlan)
+            : null;
     assert(
       verified,
       `National acquisition ${entry.name} has unsupported source ${candidate.source_id ?? "missing"}.`,
@@ -381,9 +424,13 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
       nationalAfpeAcquisitions.push(
         verified as ReturnType<typeof verifyNationalAfpeAcquisition>,
       );
-    } else {
+    } else if (candidate.source_id === FIA_SOURCE_ID) {
       nationalFiaAcquisitions.push(
         verified as ReturnType<typeof verifyNationalFiaAcquisition>,
+      );
+    } else {
+      nationalAphisAcquisitions.push(
+        verified as ReturnType<typeof verifyNationalAphisAcquisition>,
       );
     }
   }
@@ -418,6 +465,13 @@ const nationalFiaReferenceEntries: Array<{
   reference: NationalFiaReference;
   bundle: (typeof immutableRuns)[number];
 }> = [];
+const nationalAphisAcquisitionById = new Map(
+  nationalAphisAcquisitions.map((entry) => [
+    entry.receipt.acquisition_id,
+    entry,
+  ]),
+);
+const nationalAphisReferences: NationalAphisReference[] = [];
 
 assert(bootstrapFreeze.rules.initializationOnly, "Bootstrap migration is no longer initialization-only.");
 assert(
@@ -828,6 +882,133 @@ for (const bundle of immutableRuns) {
         reference.mappingReconciliation.selected_distinct_catalog_species ===
           new Set(reference.mappings.map((entry) => entry.speciesId)).size,
       `Immutable FIA run ${receipt.run_id} reconciliation counts changed.`,
+    );
+  }
+  if (
+    receipt.source_id === APHIS_SOURCE_ID &&
+    receipt.adapter_id === APHIS_ADAPTER_ID
+  ) {
+    const matchingArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/national-acquisition-reference.json"),
+    );
+    assert(
+      matchingArtifacts.length === 1,
+      `Immutable APHIS run ${receipt.run_id} must contain one acquisition reference.`,
+    );
+    const artifact = matchingArtifacts[0]!;
+    const artifactBytes = readFileSync(path.join(ROOT, artifact.path));
+    assert(
+      artifactBytes.length === artifact.bytes &&
+        sha256(artifactBytes) === artifact.sha256,
+      `Immutable APHIS run ${receipt.run_id} acquisition reference changed.`,
+    );
+    const reference = JSON.parse(
+      artifactBytes.toString("utf8"),
+    ) as NationalAphisReference;
+    schemaValidator("national-aphis-federal-quarantine-reference.schema.json").parse(
+      reference,
+    );
+    nationalAphisReferences.push(reference);
+    const acquisition = nationalAphisAcquisitionById.get(reference.acquisitionId);
+    assert(
+      acquisition,
+      `Immutable APHIS run ${receipt.run_id} references an unknown acquisition.`,
+    );
+    const expectedArtifacts = acquisition.receipt.artifacts.map((entry) => ({
+      path: path.posix.join(
+        path.relative(ROOT, acquisition.directory).split(path.sep).join("/"),
+        entry.path,
+      ),
+      sha256: entry.sha256,
+      bytes: entry.bytes,
+      role: entry.role,
+      recordCount: entry.record_count,
+    }));
+    assert(
+      reference.acquisitionReceiptPath ===
+          path.relative(ROOT, acquisition.receiptPath).split(path.sep).join("/") &&
+        reference.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        reference.snapshotDate === acquisition.receipt.parameters.snapshotDate &&
+        stableJson(reference.acquisitionArtifacts) === stableJson(expectedArtifacts) &&
+        stableJson(reference.mappings) ===
+          stableJson(acquisition.receipt.parameters.programMappings) &&
+        reference.runnerCodeSha256 ===
+          acquisition.receipt.input_hashes[
+            "scripts/research/run-national-aphis-federal-quarantine.ts"
+          ],
+      `Immutable APHIS run ${receipt.run_id} acquisition lineage changed.`,
+    );
+    assertCommitAncestor(
+      ROOT,
+      acquisition.receipt.code_commit,
+      receipt.code_commit,
+    );
+    assert(
+      reference.sourceId === receipt.source_id &&
+        reference.adapterVersion === receipt.adapter_version &&
+        reference.adapterCodeSha256 === receipt.adapter_code_hash &&
+        reference.stateCode === runStateCode,
+      `Immutable APHIS run ${receipt.run_id} acquisition scope changed.`,
+    );
+    assert(
+      reference.replayReconciliation.selected_records ===
+          receipt.counts.candidate_records &&
+        reference.replayReconciliation.assertion_pairs ===
+          receipt.counts.assertion_events &&
+        reference.replayReconciliation.rejection_events ===
+          receipt.counts.rejection_records &&
+        reference.replayReconciliation.duplicate_record_ids ===
+          receipt.counts.duplicate_records,
+      `Immutable APHIS run ${receipt.run_id} reconciliation counts changed.`,
+    );
+
+    const state = getStateDefinition(runStateCode);
+    assert(state, `Immutable APHIS run ${receipt.run_id} has unknown state ${runStateCode}.`);
+    const counties = new Map(
+      listCountyEquivalents(runStateCode).map((county) => [county.countyFips, county]),
+    );
+    const requestedPairs = receipt.requested_scope.pair_keys.map((key) => {
+      const separator = key.indexOf(":");
+      const countyFips = key.slice(0, separator);
+      const speciesId = key.slice(separator + 1);
+      const county = counties.get(countyFips);
+      const species = speciesById.get(speciesId);
+      assert(county, `Immutable APHIS run ${receipt.run_id} has unknown county ${countyFips}.`);
+      assert(species, `Immutable APHIS run ${receipt.run_id} has unknown species ${speciesId}.`);
+      return {
+        countyFips,
+        countyName: county.shortName,
+        countyLegalName: county.legalName,
+        stateCode: runStateCode,
+        stateName: state.stateName,
+        speciesId,
+        scientificName: species.scientificName,
+      };
+    });
+    const replay = replayNationalAphisState({
+      context: {
+        runId: receipt.run_id,
+        sourceId: APHIS_SOURCE_ID,
+        stateCode: runStateCode,
+        requestedPairs,
+        runStartedAt: receipt.started_at,
+        parameters: receipt.parameters,
+      },
+      requestedPairs,
+      features: acquisition.features,
+      mappings: reference.mappings,
+      acceptedStatuses: acquisition.receipt.parameters.acceptedStatuses,
+      completedAt: receipt.finished_at,
+    });
+    assert(
+      replay.selectedRowsSha256 === reference.selectedRowsSha256 &&
+        stableJson(replay.reconciliation) ===
+          stableJson(reference.replayReconciliation) &&
+        stableJson(replay.assertions) === stableJson(bundle.assertions) &&
+        stableJson(replay.reviews) === stableJson(bundle.reviews) &&
+        stableJson(replay.rejections) === stableJson(bundle.rejections) &&
+        stableJson(replay.outcomes) === stableJson(bundle.outcomes),
+      `Immutable APHIS run ${receipt.run_id} deterministic replay changed.`,
     );
   }
   if (receipt.run_id === LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
@@ -1650,6 +1831,12 @@ console.log(
         0,
       ),
       nationalFiaReferenceCount: nationalFiaReferences.length,
+      nationalAphisAcquisitionCount: nationalAphisAcquisitions.length,
+      nationalAphisAcquisitionRecordCount: nationalAphisAcquisitions.reduce(
+        (sum, entry) => sum + entry.receipt.counts.received_records,
+        0,
+      ),
+      nationalAphisReferenceCount: nationalAphisReferences.length,
       bootstrapResearchRunCount: runs.length,
       immutableResearchRunCount: projectedAlabamaImmutableRuns.length,
       totalImmutableResearchRunCount: immutableRuns.length,

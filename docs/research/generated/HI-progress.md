@@ -1,26 +1,26 @@
 # Hawaii Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `107`
+- Verified present: `112`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `353`
-- Not researched: `12060`
-- Determination coverage: `0.85%`
-- Research coverage: `3.67%`
-- Explicit outcome coverage: `3.6741%`
-- Applicable protocol cells: `109`
-- Current complete protocol cells: `58`
-- Protocol completion: `65.14%`
-- Current protocol completion: `53.21%`
-- Evidence records: `231`
-- Research runs: `12`
+- Researched unresolved: `433`
+- Not researched: `11975`
+- Determination coverage: `0.89%`
+- Research coverage: `4.35%`
+- Explicit outcome coverage: `4.3530%`
+- Applicable protocol cells: `127`
+- Current complete protocol cells: `75`
+- Protocol completion: `69.29%`
+- Current protocol completion: `59.06%`
+- Evidence records: `236`
+- Research runs: `13`
 - Rejection records: `1045`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -50,13 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 5 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 5 | 0 |
 | Crow Garlic (`allium-vineale`) | plants | 0 | 5 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 5 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 5 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 5 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 5 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 5 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 5 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 5 | 0 |
-| Scotch broom (`cytisus-scoparius`) | plants | 0 | 5 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 5 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 5 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

@@ -1,6 +1,6 @@
 # Nebraska Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-14T00:00:00.000Z`
 - Verified present: `373`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7532`
-- Not researched: `224967`
+- Researched unresolved: `9113`
+- Not researched: `223386`
 - Determination coverage: `0.16%`
-- Research coverage: `3.39%`
-- Explicit outcome coverage: `3.3946%`
-- Applicable protocol cells: `81`
-- Current complete protocol cells: `55`
-- Protocol completion: `83.95%`
-- Current protocol completion: `67.90%`
+- Research coverage: `4.07%`
+- Explicit outcome coverage: `4.0735%`
+- Applicable protocol cells: `98`
+- Current complete protocol cells: `72`
+- Protocol completion: `86.73%`
+- Current protocol completion: `73.47%`
 - Evidence records: `869`
-- Research runs: `9`
+- Research runs: `10`
 - Rejection records: `203`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 93 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 93 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 93 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 93 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 93 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 93 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 93 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 93 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 93 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 93 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 93 | 0 |
 | Common Barberry (`berberis-vulgaris`) | plants | 0 | 93 | 0 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 93 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 93 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 93 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 0 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

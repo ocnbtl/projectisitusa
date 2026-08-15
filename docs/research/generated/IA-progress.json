@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "IA",
-  "asOf": "2026-08-14",
-  "generatedAt": "2026-08-14T00:00:00.000Z",
+  "asOf": "2026-08-15",
+  "generatedAt": "2026-08-15T00:00:00.000Z",
   "scope": {
     "publicationMode": "research-only",
     "speciesMode": "sparse-default",
@@ -18,7 +18,7 @@
     "explicitApplicabilityDecisionCount": 62,
     "derivedApplicableSpeciesCount": 18,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 93,
+    "boundedAcquisitionSpeciesCount": 110,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -36,28 +36,28 @@
     "verifiedPresent": 696,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 8511,
-    "notResearched": 238689,
+    "researchedUnresolved": 10194,
+    "notResearched": 237006,
     "determinationCoveragePercent": 0.28,
-    "researchCoveragePercent": 3.71,
-    "explicitOutcomePairCount": 9207,
-    "explicitOutcomeCoveragePercent": 3.7141,
+    "researchCoveragePercent": 4.39,
+    "explicitOutcomePairCount": 10890,
+    "explicitOutcomeCoveragePercent": 4.393,
     "conflictCount": 0,
     "evidenceRecordCount": 948,
     "bootstrapEvidenceRecordCount": 0,
     "runEvidenceRecordCount": 948,
     "rejectionRecordCount": 98,
-    "researchRunCount": 11,
+    "researchRunCount": 12,
     "boundedAcquisition": {
-      "speciesCount": 93,
-      "totalPairs": 9207,
+      "speciesCount": 110,
+      "totalPairs": 10890,
       "verifiedPresent": 696,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 8511,
+      "researchedUnresolved": 10194,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 9207,
+      "explicitOutcomePairs": 10890,
       "explicitOutcomeCoveragePercent": 100
     }
   },
@@ -173,9 +173,9 @@
       "authority": "USDA Animal and Plant Health Inspection Service",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
+      "lastRunAt": "2026-08-15T03:54:52.560Z",
       "evidencePairCount": 0,
-      "screenedSpeciesCount": 0
+      "screenedSpeciesCount": 17
     },
     {
       "id": "aphis-honey-bee",
@@ -372,17 +372,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 279,
-    "applicableCells": 98,
-    "notApplicableCells": 181,
-    "completeCells": 96,
+    "totalCells": 440,
+    "applicableCells": 115,
+    "notApplicableCells": 325,
+    "completeCells": 113,
     "incompleteCells": 2,
     "blockedCells": 0,
-    "currentCells": 83,
+    "currentCells": 100,
     "staleCells": 13,
     "undatedCells": 2,
-    "applicableCompletionPercent": 97.96,
-    "currentCompletePercent": 84.69,
+    "applicableCompletionPercent": 98.26,
+    "currentCompletePercent": 86.96,
     "regulatedAndHighApplicableCells": 52,
     "regulatedAndHighCurrentCompleteCells": 52,
     "regulatedAndHighCurrentCompletePercent": 100,
@@ -390,26 +390,26 @@
     "categoryCompletion": [
       {
         "category": "fungi-diseases",
-        "applicableCells": 12,
-        "currentCompleteCells": 6,
-        "currentCompletePercent": 50
+        "applicableCells": 17,
+        "currentCompleteCells": 11,
+        "currentCompletePercent": 64.71
       },
       {
         "category": "insects",
-        "applicableCells": 14,
-        "currentCompleteCells": 7,
-        "currentCompletePercent": 50
+        "applicableCells": 23,
+        "currentCompleteCells": 16,
+        "currentCompletePercent": 69.57
       },
       {
         "category": "plants",
-        "applicableCells": 60,
-        "currentCompleteCells": 58,
-        "currentCompletePercent": 96.67
+        "applicableCells": 61,
+        "currentCompleteCells": 59,
+        "currentCompletePercent": 96.72
       },
       {
         "category": "wildlife",
-        "applicableCells": 12,
-        "currentCompleteCells": 12,
+        "applicableCells": 14,
+        "currentCompleteCells": 14,
         "currentCompletePercent": 100
       }
     ],
@@ -428,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 20,
-        "currentCompleteCells": 18,
-        "currentCompletePercent": 90
+        "applicableCells": 37,
+        "currentCompleteCells": 35,
+        "currentCompletePercent": 94.59
       },
       {
         "priority": "baseline",
@@ -440,6 +440,12 @@
       }
     ],
     "requiredSourceStatus": [
+      {
+        "sourceId": "aphis-federal-quarantine",
+        "applicableCells": 17,
+        "currentCompleteCells": 17,
+        "processed": true
+      },
       {
         "sourceId": "gbif-preserved-specimens",
         "applicableCells": 80,
@@ -602,6 +608,26 @@
       "priorityScore": 990
     },
     {
+      "speciesId": "anastrepha-ludens",
+      "commonName": "Mexican fruit fly",
+      "scientificName": "Anastrepha ludens",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "asian-longhorned-beetle",
+      "commonName": "Asian Longhorned Beetle",
+      "scientificName": "Anoplophora glabripennis",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
       "speciesId": "arctotheca-calendula",
       "commonName": "Capeweed",
       "scientificName": "Arctotheca calendula",
@@ -642,10 +668,30 @@
       "priorityScore": 990
     },
     {
+      "speciesId": "bactrocera-dorsalis",
+      "commonName": "Oriental fruit fly",
+      "scientificName": "Bactrocera dorsalis",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
       "speciesId": "butomus-umbellatus",
       "commonName": "Flowering Rush",
       "scientificName": "Butomus umbellatus",
       "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "ceratitis-capitata",
+      "commonName": "Mediterranean fruit fly",
+      "scientificName": "Ceratitis capitata",
+      "category": "insects",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 99,
       "missingProtocolSourceIds": [],
@@ -682,6 +728,26 @@
       "priorityScore": 990
     },
     {
+      "speciesId": "cydalima-perspectalis",
+      "commonName": "Box Tree Moth",
+      "scientificName": "Cydalima perspectalis",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "diaphorina-citri",
+      "commonName": "Asian citrus psyllid",
+      "scientificName": "Diaphorina citri",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
       "speciesId": "dreissena-bugensis",
       "commonName": "Quagga Mussel",
       "scientificName": "Dreissena bugensis",
@@ -706,6 +772,16 @@
       "commonName": "Russian Olive",
       "scientificName": "Elaeagnus angustifolia",
       "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "elsinoe-australis",
+      "commonName": "Sweet orange scab",
+      "scientificName": "Elsinoe australis",
+      "category": "fungi-diseases",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 99,
       "missingProtocolSourceIds": [],
@@ -756,6 +832,26 @@
       "commonName": "Professor-weed",
       "scientificName": "Galega officinalis",
       "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "globodera-pallida",
+      "commonName": "Pale cyst nematode",
+      "scientificName": "Globodera pallida",
+      "category": "wildlife",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "globodera-rostochiensis",
+      "commonName": "Yellow potato cyst nematode",
+      "scientificName": "Globodera rostochiensis",
+      "category": "wildlife",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 99,
       "missingProtocolSourceIds": [],
@@ -822,6 +918,16 @@
       "priorityScore": 990
     },
     {
+      "speciesId": "liberibacter-asiaticus",
+      "commonName": "Citrus huanglongbing",
+      "scientificName": "Liberibacter asiaticus",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
       "speciesId": "limnophila-sessiliflora",
       "commonName": "Asian marshweed",
       "scientificName": "Limnophila sessiliflora",
@@ -852,10 +958,30 @@
       "priorityScore": 990
     },
     {
+      "speciesId": "spotted-lanternfly",
+      "commonName": "Spotted Lanternfly",
+      "scientificName": "Lycorma delicatula",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
       "speciesId": "lygodium-microphyllum",
       "commonName": "Small-leaf climbing fern",
       "scientificName": "Lygodium microphyllum",
       "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "lymantria-dispar",
+      "commonName": "Spongy Moth",
+      "scientificName": "Lymantria dispar",
+      "category": "insects",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 99,
       "missingProtocolSourceIds": [],
@@ -962,6 +1088,26 @@
       "priorityScore": 990
     },
     {
+      "speciesId": "phyllosticta-citricarpa",
+      "commonName": "Citrus black spot",
+      "scientificName": "Phyllosticta citricarpa",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "sudden-oak-death",
+      "commonName": "Sudden Oak Death",
+      "scientificName": "Phytophthora ramorum",
+      "category": "fungi-diseases",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
       "speciesId": "potamopyrgus-antipodarum",
       "commonName": "New Zealand Mud Snail",
       "scientificName": "Potamopyrgus antipodarum",
@@ -1032,6 +1178,16 @@
       "priorityScore": 990
     },
     {
+      "speciesId": "solenopsis-invicta",
+      "commonName": "Red Imported Fire Ant",
+      "scientificName": "Solenopsis invicta",
+      "category": "insects",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
       "speciesId": "sparganium-erectum",
       "commonName": "Simple-stem burr-reed",
       "scientificName": "Sparganium erectum",
@@ -1045,6 +1201,16 @@
       "speciesId": "spiraea-japonica",
       "commonName": "Japanese meadowsweet",
       "scientificName": "Spiraea japonica",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "striga-asiatica",
+      "commonName": "Asiatic witchweed",
+      "scientificName": "Striga asiatica",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 99,
@@ -1086,6 +1252,16 @@
       "commonName": "Panic liverseed grass",
       "scientificName": "Urochloa panicoides",
       "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 99,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 990
+    },
+    {
+      "speciesId": "xanthomonas-citri",
+      "commonName": "Citrus canker",
+      "scientificName": "Xanthomonas citri",
+      "category": "fungi-diseases",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 99,
       "missingProtocolSourceIds": [],
@@ -1306,114 +1482,6 @@
       "researchedUnresolvedCountyCount": 78,
       "missingProtocolSourceIds": [],
       "priorityScore": 780
-    },
-    {
-      "speciesId": "cirsium-arvense",
-      "commonName": "Canada Thistle",
-      "scientificName": "Cirsium arvense",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 75,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 750
-    },
-    {
-      "speciesId": "cirsium-vulgare",
-      "commonName": "Bull Thistle",
-      "scientificName": "Cirsium vulgare",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 75,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 750
-    },
-    {
-      "speciesId": "rhamnus-cathartica",
-      "commonName": "Common Buckthorn",
-      "scientificName": "Rhamnus cathartica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 73,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 730
-    },
-    {
-      "speciesId": "alliaria-petiolata",
-      "commonName": "Garlic Mustard",
-      "scientificName": "Alliaria petiolata",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 71,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 710
-    },
-    {
-      "speciesId": "lonicera-maackii",
-      "commonName": "Amur Honeysuckle",
-      "scientificName": "Lonicera maackii",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 58,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 580
-    },
-    {
-      "speciesId": "rosa-multiflora",
-      "commonName": "Multiflora Rose",
-      "scientificName": "Rosa multiflora",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 50,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 500
-    },
-    {
-      "speciesId": "ophiognomonia-clavigignenti-juglandacearum",
-      "commonName": "Butternut Canker Fungus",
-      "scientificName": "Ophiognomonia clavigignenti-juglandacearum",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 40,
-      "missingProtocolSourceIds": [
-        "usfs-afpe"
-      ],
-      "priorityScore": 401
-    },
-    {
-      "speciesId": "popillia-japonica",
-      "commonName": "Japanese Beetle",
-      "scientificName": "Popillia japonica",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 38,
-      "missingProtocolSourceIds": [
-        "usfs-afpe"
-      ],
-      "priorityScore": 381
-    },
-    {
-      "speciesId": "emerald-ash-borer",
-      "commonName": "Emerald Ash Borer",
-      "scientificName": "Agrilus planipennis",
-      "category": "insects",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 16,
-      "missingProtocolSourceIds": [
-        "usfs-afpe"
-      ],
-      "priorityScore": 161
-    },
-    {
-      "speciesId": "ophiostoma-ulmi",
-      "commonName": "Dutch elm disease",
-      "scientificName": "Ophiostoma ulmi",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 5,
-      "missingProtocolSourceIds": [
-        "usfs-afpe"
-      ],
-      "priorityScore": 51
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Alaska Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-14T00:00:00.000Z`
 - Verified present: `115`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `2765`
-- Not researched: `72240`
+- Researched unresolved: `3275`
+- Not researched: `71730`
 - Determination coverage: `0.15%`
-- Research coverage: `3.83%`
-- Explicit outcome coverage: `3.8339%`
-- Applicable protocol cells: `98`
-- Current complete protocol cells: `84`
-- Protocol completion: `85.71%`
-- Current protocol completion: `85.71%`
+- Research coverage: `4.51%`
+- Explicit outcome coverage: `4.5128%`
+- Applicable protocol cells: `115`
+- Current complete protocol cells: `101`
+- Protocol completion: `87.83%`
+- Current protocol completion: `87.83%`
 - Evidence records: `234`
-- Research runs: `13`
+- Research runs: `14`
 - Rejection records: `2091`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 30 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 30 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 30 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 30 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 30 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 30 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 30 | 0 |
 | Wild oat (`avena-fatua`) | plants | 0 | 30 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 30 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 30 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 30 | 0 |
 | Smooth Brome (`bromus-inermis`) | plants | 0 | 30 | 0 |
-| Cheatgrass (`bromus-tectorum`) | plants | 0 | 30 | 0 |
-| Siberian peashrub (`caragana-arborescens`) | plants | 0 | 30 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 30 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 0 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

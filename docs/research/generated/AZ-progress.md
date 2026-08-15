@@ -1,26 +1,26 @@
 # Arizona Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `329`
+- Verified present: `360`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1801`
-- Not researched: `35430`
-- Determination coverage: `0.88%`
-- Research coverage: `5.67%`
-- Explicit outcome coverage: `5.6709%`
-- Applicable protocol cells: `121`
-- Current complete protocol cells: `98`
-- Protocol completion: `91.74%`
-- Current protocol completion: `80.99%`
-- Evidence records: `4830`
-- Research runs: `14`
+- Researched unresolved: `2025`
+- Not researched: `35175`
+- Determination coverage: `0.96%`
+- Research coverage: `6.35%`
+- Explicit outcome coverage: `6.3498%`
+- Applicable protocol cells: `141`
+- Current complete protocol cells: `115`
+- Protocol completion: `90.78%`
+- Current protocol completion: `81.56%`
+- Evidence records: `4861`
+- Research runs: `15`
 - Rejection records: `966`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 15 | 0 |
 | Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 15 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 15 | 0 |
-| Common Burdock (`arctium-minus`) | plants | 0 | 15 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 15 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 31 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

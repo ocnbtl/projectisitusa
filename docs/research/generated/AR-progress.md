@@ -1,27 +1,27 @@
 # Arkansas Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `1422`
+- Verified present: `1472`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6003`
-- Not researched: `180375`
-- Determination coverage: `0.76%`
-- Research coverage: `3.95%`
-- Explicit outcome coverage: `3.9537%`
-- Applicable protocol cells: `101`
-- Current complete protocol cells: `86`
-- Protocol completion: `98.02%`
-- Current protocol completion: `85.15%`
-- Evidence records: `4098`
-- Research runs: `14`
-- Rejection records: `460`
+- Researched unresolved: `7228`
+- Not researched: `179100`
+- Determination coverage: `0.78%`
+- Research coverage: `4.63%`
+- Explicit outcome coverage: `4.6326%`
+- Applicable protocol cells: `119`
+- Current complete protocol cells: `103`
+- Protocol completion: `97.48%`
+- Current protocol completion: `86.55%`
+- Evidence records: `4148`
+- Research runs: `15`
+- Rejection records: `464`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -41,22 +41,22 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 75 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 75 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 75 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 75 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 75 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 75 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 75 | 0 |
 | Giant Reed (`arundo-donax`) | plants | 0 | 75 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 75 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 75 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 75 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 75 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 75 | 0 |
 | Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 75 | 0 |
 | Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 75 | 0 |
+| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 75 | 0 |
 | Camphortree (`cinnamomum-camphora`) | plants | 0 | 75 | 0 |
 | Jio (`commelina-benghalensis`) | plants | 0 | 75 | 0 |
 | Common crupina (`crupina-vulgaris`) | plants | 0 | 75 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 75 | 0 |
-| Thorny olive (`elaeagnus-pungens`) | plants | 0 | 75 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 75 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 75 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 50 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

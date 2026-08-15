@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-61-aphis-federal-quarantine-national-20260815-r1",
+  "roundId": "aphis-federal-quarantine-national-round61",
+  "evaluatedAt": "2026-08-15T05:08:34.536Z",
+  "result": "complete-local-release-candidate-pending-external-verification",
+  "releaseThreshold": {
+    "met": true,
+    "basis": "The acquire-once national APHIS snapshot moved 52,711 unique county-species pairs across all 51 national-v1 jurisdictions, exceeding the 25,000-pair milestone while retaining exact provider bytes, deterministic state partitions, conservative evidence semantics, and full local release gates."
+  },
+  "baseline": {
+    "commit": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2",
+    "asOf": "2026-08-14",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5064,
+        "notApplicable": 0,
+        "unknown": 122640,
+        "blocked": 0,
+        "fullyAccounted": 6529,
+        "partiallyAccounted": 1,
+        "untouchedByCountyResearch": 121174
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 56073,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 348000,
+        "notResearched": 7468495
+      },
+      "protocolCells": {
+        "total": 39866,
+        "applicable": 19376,
+        "notApplicable": 20490,
+        "complete": 5155,
+        "incomplete": 14162,
+        "blocked": 59,
+        "current": 4544,
+        "stale": 611,
+        "undated": 14221,
+        "regulatedAndHighPriorityCurrentComplete": 2365,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "evidence": 189249,
+        "runEvidence": 159119,
+        "bootstrapEvidence": 30130,
+        "rejections": 43959,
+        "selectedExplicitOutcomePairs": 358983,
+        "stateSelectedRuns": 654,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "certificationBlockerEntries": 242,
+      "remainingApplicableProtocolCountyScreens": 923436
+    }
+  },
+  "previousRoundScore": {
+    "evaluation": "ops/national-research/evaluations/round-60-gbif-dc-co-20260814-r1.json",
+    "jobs": 20,
+    "grossPairs": 461,
+    "finalMatrixPairsMoved": 20,
+    "verifiedPresent": 2,
+    "researchedUnresolved": 18,
+    "providerCalls": 20,
+    "cachedTaxonomyResponses": 20,
+    "preventedTaxonomyRequests": 20,
+    "workerWallSeconds": 40.503,
+    "peakRssMb": 223.316,
+    "protocolCellsClosed": 20,
+    "certificationBlockersRemoved": 1,
+    "providerRetries": 0,
+    "failedAttempts": 0
+  },
+  "planned": {
+    "actor": "aphis-federal-quarantine-national-acquisition@1.0.0",
+    "source": "aphis-federal-quarantine",
+    "states": 51,
+    "taxa": 17,
+    "activeCounties": 3144,
+    "orderedPairs": 53448,
+    "expectedNetNewPairs": 52711,
+    "expectedProviderRequests": 6,
+    "acquireOnce": true,
+    "statePartitioning": "deterministic-local-no-network"
+  },
+  "recoveryAudit": {
+    "matchingCompleteAcquisitionsBeforeRun": 0,
+    "matchingPartialAcquisitionsBeforeRun": 0,
+    "reusableTaxonomyIdentities": 0,
+    "reusableProviderPages": 0,
+    "firstAttempt": {
+      "providerRequestsCompleted": 6,
+      "providerRetries": 0,
+      "retainedEvidenceArtifacts": 0,
+      "stateRunsWritten": 0,
+      "result": "structural-post-fetch-failure",
+      "reason": "The first acquisition identifier used uppercase timestamp separators that violated the immutable national-acquisition schema after retrieval. Staging was removed and no failed scope was represented as complete or negative."
+    },
+    "structuralCorrection": "The actor now validates the lowercase schema-compatible acquisition identifier before any provider access.",
+    "successfulAttempt": 2
+  },
+  "semanticPreflight": {
+    "status": "pass",
+    "networkRequestsIssued": 0,
+    "path": "ops/national-research/preflights/national-aphis-federal-quarantine-20260815.json",
+    "sha256": "4db951dad6824283cb09351a5196918fb1d05282497a61a957b6769f7a29f282",
+    "bytes": 20975,
+    "baseSha": "e454979211f289bdf03e676238b4d79379a8f768",
+    "receiptCodeCommit": "e454979211f289bdf03e676238b4d79379a8f768",
+    "orderedPairCount": 53448,
+    "expectedNetNewPairCount": 52711,
+    "deterministicAcquisitionPath": "src/data/research/national-acquisitions/20260815t033000z__aphis-federal-quarantine__94b2541c0878",
+    "dependencyResolution": "pass",
+    "writableStaging": "pass",
+    "resourceFloor": "pass",
+    "retryPolicy": {
+      "maximumAttempts": 3,
+      "resumeRequired": true
+    }
+  },
+  "execution": {
+    "mainOwnedNationalActor": true,
+    "providerLanes": 1,
+    "localPartitionWorkers": 1,
+    "acquisitionAttempts": 2,
+    "successfulAcquisitions": 1,
+    "structuralFailures": 1,
+    "providerRetries": 0,
+    "failedProviderAttempts": 0,
+    "statePartitions": 51,
+    "statePartitionRuns": 51,
+    "statePartitionFiles": 357,
+    "integrationCommits": 0,
+    "qualification": "The source was acquired once nationally under MAIN and partitioned locally. No worker lease or cross-worktree integration was required because the national actor and all shared generation were MAIN-owned."
+  },
+  "acquisition": {
+    "acquisitionId": "20260815t033000z__aphis-federal-quarantine__94b2541c0878",
+    "receiptSha256": "c72be2730981ae5661b7d7fc7e611abb18c40528d1f44f4d0104359d58aae85d",
+    "receiptBytes": 18230,
+    "providerLastEditDate": 1786561205155,
+    "stableEditWindow": true,
+    "providerDeclaredRecords": 4937,
+    "receivedRecords": 4937,
+    "distinctObjectIds": 4937,
+    "mappedProgramRecords": 4917,
+    "unmappedProgramRecords": 20,
+    "successfulEvidenceRequests": 6,
+    "successfulOccurrencePages": 3,
+    "allAttemptProviderRequests": 12,
+    "startupHealthProbeRequests": 1,
+    "allProviderContactsIncludingHealth": 13,
+    "artifacts": 6,
+    "artifactBytes": 3769172,
+    "stateReferenceArtifacts": 51,
+    "stateReferenceArtifactBytes": 290417,
+    "runtimeSeconds": 10.277,
+    "peakRssMb": 448.953,
+    "manualInterventions": 1,
+    "providerRetries": 0,
+    "providerFailures": 0,
+    "providerCountObservationContradiction": {
+      "startupProbeCount": 5019,
+      "acquisitionCount": 4937,
+      "qualification": "The official public layer is mutable. The acquisition is complete only for the retained stable-edit-window snapshot; the earlier health count is not evidence and is not silently reconciled."
+    },
+    "reuse": {
+      "nationalPagesReusedAcrossJurisdictions": 3,
+      "stateProviderRequestsPrevented": 51,
+      "naiveStateTaxonRequestFamiliesPrevented": 867,
+      "qualification": "One national page set supports all deterministic state partitions. Prevented counts describe actor topology, not additional evidence or matrix movement."
+    },
+    "economics": {
+      "netPairsPerSuccessfulEvidenceRequest": 8785.166667,
+      "netPairsPerSuccessfulDataPage": 17570.333333,
+      "netPairsPerAllContactsIncludingFailedAttemptAndHealth": 4054.692308,
+      "netPairsPerSummedAcquisitionWorkerHour": 18464493.529,
+      "candidateAcceptancePercent": 72.873023,
+      "positivePairYieldPercent": 6.20364,
+      "netPairEfficiencyPercent": 98.62109
+    }
+  },
+  "grossEventVolume": {
+    "pairOutcomes": 53448,
+    "evidenceFoundOutcomes": 3409,
+    "noQualifyingEvidenceOutcomes": 50039,
+    "candidates": 4678,
+    "assertions": 3409,
+    "acceptedReviews": 3409,
+    "rejections": 93,
+    "errors": 0,
+    "duplicates": 0,
+    "eventRecords": 60359,
+    "eventBytes": 57816368,
+    "immutableStateRunBytes": 64031293,
+    "qualification": "Gross event volume is not final-matrix movement. The 53,448 complete outcomes include 737 already-researched pairs and therefore produce 52,711 net unique movements."
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 52711,
+    "verifiedPresent": 3270,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "researchedUnresolved": 49441,
+    "notResearched": -52711,
+    "conflicts": 0,
+    "applicability": {
+      "applicable": 85,
+      "notApplicable": 0,
+      "unknown": -85,
+      "blocked": 0
+    },
+    "denominator": {
+      "stateSpecies": 0,
+      "countySpecies": 0
+    },
+    "statesMoved": 51,
+    "largestStateMovements": [
+      { "stateCode": "TX", "uniquePairs": 4318, "verifiedPresent": 726, "researchedUnresolved": 3592 },
+      { "stateCode": "GA", "uniquePairs": 2703, "verifiedPresent": 477, "researchedUnresolved": 2226 },
+      { "stateCode": "VA", "uniquePairs": 2261, "verifiedPresent": 144, "researchedUnresolved": 2117 },
+      { "stateCode": "KY", "uniquePairs": 2040, "verifiedPresent": 1, "researchedUnresolved": 2039 },
+      { "stateCode": "MO", "uniquePairs": 1955, "verifiedPresent": 0, "researchedUnresolved": 1955 }
+    ]
+  },
+  "final": {
+    "asOf": "2026-08-15",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5149,
+        "notApplicable": 0,
+        "unknown": 122555,
+        "blocked": 0,
+        "fullyAccounted": 7385,
+        "partiallyAccounted": 1,
+        "untouchedByCountyResearch": 120318
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 59343,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 397441,
+        "notResearched": 7415784
+      },
+      "protocolCells": {
+        "total": 48208,
+        "applicable": 20314,
+        "notApplicable": 27894,
+        "complete": 6022,
+        "incomplete": 14233,
+        "blocked": 59,
+        "current": 5411,
+        "stale": 611,
+        "undated": 14292,
+        "regulatedAndHighPriorityCurrentComplete": 2365,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "evidence": 192658,
+        "runEvidence": 162528,
+        "bootstrapEvidence": 30130,
+        "rejections": 44052,
+        "selectedExplicitOutcomePairs": 412096,
+        "stateSelectedRuns": 705,
+        "uniqueImmutableRuns": 690,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "certificationBlockerEntries": 244,
+      "remainingApplicableProtocolCountyScreens": 928915
+    }
+  },
+  "protocolAndCertificationMovement": {
+    "newSourceSpeciesCellsCompleted": 867,
+    "complete": 867,
+    "current": 867,
+    "totalProtocolScope": 8342,
+    "applicableProtocolScope": 938,
+    "notApplicableProtocolScope": 7404,
+    "incomplete": 71,
+    "undated": 71,
+    "blocked": 0,
+    "stale": 0,
+    "regulatedAndHighPriorityCurrentComplete": 0,
+    "certificationBlockersRemoved": 0,
+    "certificationBlockersAdded": 2,
+    "newBlockerStates": ["CA", "ME"],
+    "qualification": "The APHIS protocol family expanded source scope. All 867 APHIS state-species cells are complete and current; 71 additional derived-applicable interactions remain incomplete and undated. This protocol expansion is separate from the 52,711 county-pair movement and the +85 applicability movement."
+  },
+  "expectedVersusActual": {
+    "orderedPairs": { "expected": 53448, "actual": 53448 },
+    "netUniquePairs": { "expected": 52711, "actual": 52711 },
+    "verifiedPresent": { "expectedRange": [0, 52711], "actual": 3270 },
+    "researchedUnresolved": { "expectedRange": [0, 52711], "actual": 49441 },
+    "successfulEvidenceRequests": { "expected": 6, "actual": 6 },
+    "allAttemptProviderRequests": { "expected": 6, "actual": 12, "varianceReason": "One structural post-fetch acquisition failure required reacquisition after a pre-network identity validation fix." },
+    "statePartitions": { "expected": 51, "actual": 51 },
+    "applicabilityMovement": { "expected": 85, "actual": 85 },
+    "denominatorMovement": { "expected": 0, "actual": 0 },
+    "verifiedAbsentMovement": { "expected": 0, "actual": 0 },
+    "notDetectedMovement": { "expected": 0, "actual": 0 },
+    "conflictMovement": { "expected": 0, "actual": 0 }
+  },
+  "release": {
+    "generation": {
+      "asOf": "2026-08-15",
+      "prepareDataSeconds": null,
+      "allStateCompileSeconds": null,
+      "orchestrationDashboardSeconds": null,
+      "readinessDashboardSeconds": null,
+      "totalKnownSeconds": null,
+      "status": "pass"
+    },
+    "gates": {
+      "allStateByteStability": { "status": "pass", "states": 51, "seconds": 829.748 },
+      "researchIndex": { "status": "pass", "seconds": null, "immutableRuns": 690, "pairStatuses": 514518, "qualification": "The pinned Node 22 command passed outside the restricted process environment after three restricted-startup ENOMEM failures; its accepted pass was not wrapped by a durable wall timer." },
+      "researchIntegrity": { "status": "pass", "seconds": 420.267, "immutableRuns": 690, "nationalAphisAcquisitions": 1, "nationalAphisRecords": 4937, "nationalAphisStateReferences": 51, "skillTests": 97, "criticalViolations": 0 },
+      "dataIntegrity": { "status": "pass", "seconds": 0.622 },
+      "stateResearchProjections": { "status": "pass", "states": 51, "seconds": 32.703 },
+      "nationalResearchConfig": { "status": "pass", "seconds": 0.435 },
+      "geographyRegistry": { "status": "pass", "seconds": 0.479 },
+      "prepareDataPlan": { "status": "pass" },
+      "denominatorIntegrity": { "status": "pass", "stateSpeciesDenominator": 127704, "countySpeciesDenominator": 7872576 },
+      "stateSpeciesResolution": { "status": "pass", "cases": 3 },
+      "stateApplicabilitySources": { "status": "pass", "cases": 16, "sourceSilenceCreatedDecision": false },
+      "nationalDiskBudget": { "status": "pass", "capacityTier": "green" },
+      "orchestrator": { "status": "pass", "seconds": 0.703, "activeJobs": 0, "activeLeases": 0, "pendingIntegrations": 0 },
+      "frozenSkills": { "status": "pass", "tests": 97, "criticalViolations": 0 },
+      "typecheck": { "status": "pass", "seconds": 2.604 },
+      "lint": { "status": "pass", "seconds": 2.765 },
+      "whitespace": { "status": "pass" },
+      "prohibitedDashScan": { "status": "pass" }
+    },
+    "build": { "status": "pass", "seconds": 25.42, "compileSeconds": 9.3, "nextVersion": "15.5.15", "staticPages": 2512 },
+    "browserQa": {
+      "local": {
+        "status": "pass",
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": ["FL", "KY", "CA", "ME"],
+        "species": ["diaphorina-citri", "cydalima-perspectalis"],
+        "routeViewportChecks": 8,
+        "countAssertionsPassed": 12,
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 2,
+        "visuallyInspected": 2,
+        "qualification": "The restricted local server logged image-cache EPERM messages, but all browser images loaded and the browser emitted no warning or error entries."
+      },
+      "production": { "status": "not-run" }
+    },
+    "externalVerification": { "status": "not-run", "githubMainSha": null, "githubDeploymentId": null, "immutableHost": null, "canonicalHost": "https://isitusa.com" },
+    "mainProcessCorrections": [
+      "Corrected a stale protocol-test filename before running the actual current test.",
+      "Corrected a read-only Node diagnostic quoting wrapper.",
+      "Converted the structural uppercase acquisition-ID failure into a pre-network schema assertion before reacquisition.",
+      "Marked exact raw provider JSON artifacts binary so whitespace validation preserves source bytes.",
+      "Added APHIS national acquisition replay, lineage, and state-reference verification after the composite integrity checker rejected the new source.",
+      "Corrected the checker expectation from acquisition-relative to repository-relative reference paths and from explicit null to omitted pageIndex.",
+      "Ran the pinned research-index command outside the restricted process environment after three restricted-startup ENOMEM failures.",
+      "Replaced unsupported browser networkidle and page-fetch probes with supported load-state and exact local-summary assertions.",
+      "Reran five focused gates with pinned Node 22 outside the restricted process environment after restricted npm Node 24 startup returned uv_os_get_passwd ENOMEM.",
+      "Replaced an argument-free dispatch disk-budget CLI invocation, which correctly rejected zero workers, with the deterministic national disk-budget test."
+    ]
+  },
+  "processLesson": {
+    "lesson": "A national acquire-once source is only cheaper if its immutable acquisition identity is validated before network access and every state partition can be replayed from the retained national pages. Provider bytes must remain byte-exact even when ordinary text whitespace checks would reject them.",
+    "applied": "Round 61 binds a schema-compatible deterministic acquisition path to the parameter hash before provider access, retains the complete stable-edit-window page set once, generates 51 acquisition-reference artifacts, and independently replays every state partition during research-integrity validation.",
+    "nextRoundChange": "Keep national acquisition identity and receipt schemas in the semantic preflight, retain raw provider responses as binary provenance, and require the composite integrity gate to dispatch every registered national source before release."
+  },
+  "nextRankedPortfolio": [
+    {
+      "rank": 1,
+      "workClass": "national-source-design",
+      "scope": "Versioned provider-native national GBIF complete download with deterministic multi-state partition and replay receipts",
+      "expectedNetPairs": null,
+      "reason": "The APHIS mapped national plan is exhausted and current state-by-state GBIF positive-net cache plans are exhausted. A versioned complete-download actor offers the next highest plausible national reuse, but it remains non-executable until its authenticated snapshot and replay contract exist."
+    },
+    {
+      "rank": 2,
+      "workClass": "freshness",
+      "scope": "Current versioned national replacement for the stale AFPE family",
+      "staleProtocolCells": 611,
+      "expectedNetPairs": null,
+      "reason": "Freshness is a separate axis affecting 611 cells and cannot be repaired by repeating occurrence searches."
+    },
+    {
+      "rank": 3,
+      "workClass": "applicability-source-discovery",
+      "scope": "State-specific operational sources in certification order, paired with evidence-screen follow-up",
+      "expectedNetPairs": null,
+      "reason": "Applicability remains a certification bottleneck. Denominator growth and subsequent county research must be measured separately."
+    },
+    {
+      "rank": 4,
+      "workClass": "blocked-exception-review",
+      "scope": "MT taxonomy plus AK, AZ, MI, OH, PA, VT, and WI geography or taxonomy exceptions",
+      "expectedNetPairs": null,
+      "reason": "Exact review can resolve metadata blockers without provider reacquisition, but no movement is promised."
+    },
+    {
+      "rank": 5,
+      "workClass": "state-gbif-acquisition",
+      "scope": "Further cached-taxonomy state searches",
+      "expectedNetPairs": 0,
+      "reason": "The cache-aware positive-net planner is exhausted; queued or historically failed work does not outrank national reuse."
+    }
+  ],
+  "forecastByWorkClass": {
+    "aphisNationalAcquisitionMeasuredSeconds": 10.277,
+    "aphisNationalPeakRssMb": 448.953,
+    "nationalSourceDesign": null,
+    "freshness": null,
+    "applicabilitySourceDiscovery": null,
+    "exceptionReview": null,
+    "stateGbifPositiveNetPairs": 0,
+    "qualification": "The APHIS runtime is source-specific and is not blended into forecasts for other authorities, manual review, applicability discovery, or unimplemented national actors."
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedAbsence": false,
+    "sourceSilenceCreatedNotDetected": false,
+    "failedRequestCreatedNegative": false,
+    "incompletePaginationMarkedComplete": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedNegative": false,
+    "coordinateDerivedCountyPublication": false,
+    "unmappedTaxonomyPublished": false,
+    "applicabilityConflatedWithCountyResearch": false,
+    "freshnessConflatedWithResearchCompletion": false,
+    "grossEventsReportedAsNetMovement": false
+  }
+}

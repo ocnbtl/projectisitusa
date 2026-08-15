@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2",
   "acquiredAt": "2026-08-15T03:29:24.920Z",
-  "lastReverifiedAt": "2026-08-15T03:29:24.920Z",
-  "currentCheckpointSha": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2",
-  "localHeadAtLastReverification": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2",
-  "state": "active",
+  "lastReverifiedAt": "2026-08-15T05:11:48.056Z",
+  "currentCheckpointSha": "22546fb98303541390d6d67f1f4bd3e905d03a85",
+  "localHeadAtLastReverification": "22546fb98303541390d6d67f1f4bd3e905d03a85",
+  "state": "pending-external-verification",
   "ownershipEvidence": {
     "activeProjectTasks": [
       "019fde6d-0daa-71b0-b3f6-3b19de15a34f"
@@ -27,25 +27,25 @@
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Round 60 production QA passed for DC and Colorado at desktop and mobile widths, both positive species routes, zero horizontal overflow, zero broken images, zero production console warnings or errors, and two visually inspected captures.",
-    "liveVerification": "Canonical main, origin, public GitHub main, and successful GitHub Production deployment 5914278490 matched Round 60 content SHA 1900d69b9079801553b46cc1d6fed164aecee87d. Sixteen route-host checks and twelve selected generated-byte identities passed on the immutable and canonical hosts. Exact private Vercel deployment ID and runtime logs remain unavailable because the canonical repository has no Vercel CLI installed.",
+    "browserQa": "Round 61 local production QA passed for Florida, Kentucky, California, and Maine at desktop and mobile widths, both selected APHIS species routes, zero horizontal overflow, zero broken images, zero browser console warnings or errors, and two visually inspected captures. Production QA remains pending the content deployment.",
+    "liveVerification": "The last externally verified production remains Round 60 content SHA 1900d69b9079801553b46cc1d6fed164aecee87d and successful GitHub Production deployment 5914278490. Round 61 has passed local generation, integrity, build, and browser gates but this build-time record does not attest its future deployment.",
     "githubDeploymentId": 5914278490,
     "resourceCapacity": {
       "tier": "green",
-      "availableMemoryMiB": 12330.648,
-      "availableMemoryPercent": 38.653,
-      "commitHeadroomMiB": 25604.957,
-      "freeDiskMiB": 663226.368,
+      "availableMemoryMiB": 11796.203,
+      "availableMemoryPercent": 36.978,
+      "commitHeadroomMiB": null,
+      "freeDiskMiB": 675962.359,
       "maximumMachineWorkers": 6,
       "initialLiveProviderWorkers": 1,
       "maximumLiveProviderWorkersWithoutFreshCalibration": 1,
       "perWorkerReservationMiB": 1024,
-      "projectedPhysicalHeadroomMiBAfterFourWorkers": 8250.648,
-      "projectedCommitHeadroomMiBAfterFourWorkers": 21524.957,
+      "projectedPhysicalHeadroomMiBAfterFourWorkers": 7700.203,
+      "projectedCommitHeadroomMiBAfterFourWorkers": null,
       "pageInputPerSecond": null,
       "pageOutputPerSecond": null,
-      "observedAt": "2026-08-15T03:29:24.920Z",
-      "capacityCaveat": "The 32 GB desktop is green, but this milestone uses one acquire-once APHIS provider lane followed by deterministic local partitioning. No parallel provider calls are required."
+      "observedAt": "2026-08-15T05:11:48.056Z",
+      "capacityCaveat": "The 32 GB desktop is green after acquisition and local release gates. Commit-headroom telemetry is unavailable in the restricted final sample; physical-memory and disk samples are provider-independent. The milestone used one acquire-once APHIS lane followed by deterministic local partitioning."
     },
     "skillFreeze": {
       "version": "frozen-windows-bulk-validation-2026-07-30-r2",
@@ -63,6 +63,14 @@
     }
   },
   "reverificationHistory": [
+    {
+      "recordedAt": "2026-08-15T05:11:48.056Z",
+      "supersededCheckpointSha": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2",
+      "localIntegrationCheckpointSha": "22546fb98303541390d6d67f1f4bd3e905d03a85",
+      "githubMainSha": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2",
+      "vercelProductionCommitSha": "1900d69b9079801553b46cc1d6fed164aecee87d",
+      "reason": "Round 61 acquired one hash-pinned stable-edit-window APHIS national quarantine snapshot, deterministically partitioned it into 51 state runs, and regenerated the 2026-08-15 national release candidate. The final matrix moved 52,711 unique county-species pairs: 3,270 verified-present and 49,441 researched-unresolved, with zero absence, non-detection, denominator, or conflict movement. Local integrity, build, and desktop/mobile browser gates passed. GitHub and production fields deliberately remain the last externally observed Round 60 release until the Round 61 content commit is pushed and verified; this build-time record cannot attest its own future deployment."
+    },
     {
       "recordedAt": "2026-08-15T03:29:24.920Z",
       "supersededCheckpointSha": "b77cafe08bb5d412a11c53e2a3f14b44039c44b2",

@@ -1,6 +1,6 @@
 # Alabama Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-14T00:00:00.000Z`
 - Verified present: `15300`
 - Verified absent: `0`
 - Not detected: `8`
-- Researched unresolved: `96388`
-- Not researched: `56072`
+- Researched unresolved: `96790`
+- Not researched: `55670`
 - Determination coverage: `9.12%`
-- Research coverage: `66.58%`
-- Explicit outcome coverage: `39.6965%`
-- Applicable protocol cells: `14437`
-- Current complete protocol cells: `991`
-- Protocol completion: `6.95%`
-- Current protocol completion: `6.86%`
-- Evidence records: `51679`
-- Research runs: `54`
+- Research coverage: `66.82%`
+- Explicit outcome coverage: `40.1757%`
+- Applicable protocol cells: `14440`
+- Current complete protocol cells: `1008`
+- Protocol completion: `7.07%`
+- Current protocol completion: `6.98%`
+- Evidence records: `51818`
+- Research runs: `55`
 - Rejection records: `6286`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | 2026-06-16T03:55:21.583Z | 2 | 1 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 139 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 2 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 6 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |

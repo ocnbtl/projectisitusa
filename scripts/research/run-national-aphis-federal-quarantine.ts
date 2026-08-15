@@ -9,6 +9,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 import { z } from "zod";
 
@@ -77,7 +78,7 @@ type UpstreamRequest = {
   record_count: number;
 };
 
-type NationalAphisReceipt = {
+export type NationalAphisReceipt = {
   schemaVersion: 1;
   acquisition_id: string;
   status: "complete";
@@ -148,7 +149,7 @@ type LayerMetadata = {
   fields: Array<{ name: string }>;
 };
 
-type VerifiedAcquisition = {
+export type VerifiedAphisAcquisition = {
   directory: string;
   receiptPath: string;
   receiptBytes: Buffer;
@@ -393,7 +394,10 @@ function parseJson<T>(bytes: Buffer, label: string) {
   return value;
 }
 
-function verifyAcquisition(directory: string, plan: NationalAphisPlan): VerifiedAcquisition {
+export function verifyNationalAphisAcquisition(
+  directory: string,
+  plan: NationalAphisPlan,
+): VerifiedAphisAcquisition {
   const receiptPath = path.join(directory, "receipt.json");
   const receiptBytes = readFileSync(receiptPath);
   const receipt = JSON.parse(receiptBytes.toString("utf8")) as NationalAphisReceipt;
@@ -434,7 +438,9 @@ async function acquire(input: {
   startedAt: string;
   rerunCommand: string;
 }) {
-  if (existsSync(input.acquisitionDirectory)) return verifyAcquisition(input.acquisitionDirectory, input.plan);
+  if (existsSync(input.acquisitionDirectory)) {
+    return verifyNationalAphisAcquisition(input.acquisitionDirectory, input.plan);
+  }
   const stagingDirectory = path.join(ROOT, ".cache/research", `.pending-${input.acquisitionId}`);
   rmSync(stagingDirectory, { recursive: true, force: true });
   mkdirSync(path.join(stagingDirectory, "artifacts"), { recursive: true });
@@ -566,7 +572,7 @@ async function acquire(input: {
     assert(!existsSync(input.acquisitionDirectory), "APHIS acquisition path appeared during acquisition.");
     mkdirSync(path.dirname(input.acquisitionDirectory), { recursive: true });
     renameSync(stagingDirectory, input.acquisitionDirectory);
-    return verifyAcquisition(input.acquisitionDirectory, input.plan);
+    return verifyNationalAphisAcquisition(input.acquisitionDirectory, input.plan);
   } catch (error) {
     rmSync(stagingDirectory, { recursive: true, force: true });
     throw error;
@@ -591,7 +597,7 @@ function directoryContents(directory: string, prefix = ""): Map<string, string> 
 
 function buildRuns(input: {
   plan: NationalAphisPlan;
-  acquisition: VerifiedAcquisition;
+  acquisition: VerifiedAphisAcquisition;
   acquisitionParameterHash: string;
   stateScopes: ReturnType<typeof buildStateScopes>;
   adapterCodeHash: string;
@@ -997,7 +1003,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

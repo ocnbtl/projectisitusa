@@ -1,6 +1,6 @@
 # North Dakota Research Progress
 
-Generated: `2026-08-14T00:00:00.000Z`
+Generated: `2026-08-15T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-14T00:00:00.000Z`
 - Verified present: `167`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4285`
-- Not researched: `128260`
+- Researched unresolved: `5186`
+- Not researched: `127359`
 - Determination coverage: `0.13%`
-- Research coverage: `3.35%`
-- Explicit outcome coverage: `3.3546%`
-- Applicable protocol cells: `76`
-- Current complete protocol cells: `63`
+- Research coverage: `4.03%`
+- Explicit outcome coverage: `4.0335%`
+- Applicable protocol cells: `93`
+- Current complete protocol cells: `80`
 - Protocol completion: `100.00%`
-- Current protocol completion: `82.89%`
+- Current protocol completion: `86.02%`
 - Evidence records: `480`
-- Research runs: `13`
+- Research runs: `14`
 - Rejection records: `89`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -49,14 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 53 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 53 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 53 | 0 |
+| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 53 | 0 |
+| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 53 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 53 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 53 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 53 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 53 | 0 |
+| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 53 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 53 | 0 |
-| Common Barberry (`berberis-vulgaris`) | plants | 0 | 53 | 0 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 53 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 53 | 0 |
 
 ## Source Operations
 
@@ -71,7 +71,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Cogongrass GIS | operational | not run | 0 | 0 |
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
-| APHIS Federal Quarantine county layer | operational | not run | 0 | 0 |
+| APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 0 | 17 |
 | APHIS National Honey Bee Survey | operational | not run | 0 | 0 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 0 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
