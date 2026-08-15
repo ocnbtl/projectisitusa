@@ -876,7 +876,8 @@ async function main() {
     const runnerCodeHash = sha256(readFileSync(runnerPath));
     const acquisitionParameters = buildAcquisitionParameters(plan);
     const acquisitionParameterHash = sha256(stableJson(acquisitionParameters));
-    const acquisitionId = `${runTimestamp(options.startedAt)}__${APHIS_SOURCE_ID}__${acquisitionParameterHash.slice(0, 12)}`;
+    const acquisitionId = `${runTimestamp(options.startedAt).toLowerCase()}__${APHIS_SOURCE_ID}__${acquisitionParameterHash.slice(0, 12)}`;
+    assert(/^[a-z0-9.-]+(?:__[a-z0-9.-]+)*$/.test(acquisitionId), "APHIS deterministic acquisition ID violates its receipt schema.");
     const acquisitionDirectory = path.join(options.acquisitionRoot, acquisitionId);
     const stateScopes = buildStateScopes({ plan, acquisitionId, acquisitionParameterHash, adapterCodeHash, runnerCodeHash, startedAt: options.startedAt, runsRoot: options.runsRoot });
     assert(stateScopes.reduce((sum, scope) => sum + scope.candidatePairs.length, 0) === plan.expectedGrossPairs, "APHIS deterministic state scope differs from gross plan.");
