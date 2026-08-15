@@ -3884,6 +3884,133 @@
       "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. The verification timestamp is the GitHub API Date header captured after route, byte-parity, production browser, visual, and console checks.",
       "externalVerificationSecondsFromContentCommit": 826,
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and GitHub API matched exact Round 60 content SHA 1900d69b9079801553b46cc1d6fed164aecee87d; GitHub Production deployment 5914278490 succeeded; its immutable host and canonical production alias served all eight intended routes; six selected DC and CO files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. Exact-deployment runtime logs and private Vercel deployment ID were unavailable. Round 60 completed 461 gross outcomes but moved twenty unique final-matrix pairs, including two verified-present and eighteen researched-unresolved movements, closed twenty protocol cells, and removed one Colorado certification blocker. It created no verified-absence, not-detected, applicability, denominator, or conflict movement. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-fcb7f902c-2026-08-15",
+      "verifiedAt": "2026-08-15T22:33:58.000Z",
+      "commitSha": "fcb7f902cd9246f3db782ff5b20a2e5f69e00217",
+      "githubMainSha": "fcb7f902cd9246f3db782ff5b20a2e5f69e00217",
+      "githubDeploymentId": 5925338862,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-nvl61i78v-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": null,
+      "vercelDeploymentId": null,
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/21xYH7qT7NtyL5UXvEWzrX3Rs2ri",
+      "vercelDeploymentUrl": "projectisitusa-nvl61i78v-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "success",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "fcb7f902cd9246f3db782ff5b20a2e5f69e00217",
+        "releaseCommitMetadata": "fcb7f902cd9246f3db782ff5b20a2e5f69e00217",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "GitHub main and commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
+      },
+      "deploymentAttempts": [
+        {
+          "githubDeploymentId": 5925338862,
+          "vercelInspectorSlug": "21xYH7qT7NtyL5UXvEWzrX3Rs2ri",
+          "source": "git",
+          "state": "success",
+          "vercelCommitStatusCreatedAt": "2026-08-15T22:26:46.000Z",
+          "vercelCommitStatusCompletedAt": "2026-08-15T22:30:35.000Z",
+          "vercelCommitStatusDurationSeconds": 229,
+          "githubDeploymentCreatedAt": "2026-08-15T22:30:36.000Z",
+          "githubDeploymentCompletedAt": "2026-08-15T22:30:36.000Z",
+          "githubDeploymentDurationSeconds": 0,
+          "buildSeconds": null,
+          "githubCommitSha": "fcb7f902cd9246f3db782ff5b20a2e5f69e00217",
+          "active": true,
+          "qualification": "Vercel commit-status timing and GitHub deployment timing are provider-native. Exact Vercel build duration, private deployment ID, and runtime logs are unavailable because the canonical repository has no Vercel CLI."
+        }
+      ],
+      "routeChecks": [
+        { "path": "/", "status": 200 },
+        { "path": "/about", "status": 200 },
+        { "path": "/research?state=FL", "status": 200 },
+        { "path": "/research?state=KY", "status": 200 },
+        { "path": "/research?state=CA", "status": 200 },
+        { "path": "/research?state=ME", "status": 200 },
+        { "path": "/species/diaphorina-citri", "status": 200 },
+        { "path": "/species/cydalima-perspectalis", "status": 200 },
+        { "path": "/generated/research/FL/summary.json", "status": 200 },
+        { "path": "/generated/research/KY/summary.json", "status": 200 },
+        { "path": "/generated/research/CA/summary.json", "status": 200 },
+        { "path": "/generated/research/ME/summary.json", "status": 200 }
+      ],
+      "routeCheckHosts": [
+        "https://projectisitusa-nvl61i78v-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "routeHostChecksPassed": 24,
+      "byteParityChecks": [
+        { "path": "/generated/research/FL/summary.json", "bytes": 156248, "sha256": "5264780d296b25107126b029988cc999df6efe45b971c97d9d73b7c628afb8aa" },
+        { "path": "/generated/research/KY/summary.json", "bytes": 184132, "sha256": "6a44c04c5130c6e189eaa8c5ecbb4917df59ad22371f09d3e4527775418a9c2c" },
+        { "path": "/generated/research/CA/summary.json", "bytes": 165363, "sha256": "f5f827224930ec5e9acd48808d6c9b0cfd013241897848fcbe3f9f45d9d2bc9f" },
+        { "path": "/generated/research/ME/summary.json", "bytes": 92439, "sha256": "c554db76ea4d24c79bfad6153cef0e73fd603397f6ee35c9dd339fd9efe83440" },
+        { "path": "/generated/research/FL/counties/12001.json", "bytes": 585369, "sha256": "e2b772d4137d7251083cfcbca75beac23459454a645fd129440b987a27a553df" },
+        { "path": "/generated/research/KY/counties/21037.json", "bytes": 79810, "sha256": "f0d5a296696ddec1e3a5f9e866a61411c6f72314cf926cd9a8cb6fedd8ed2a9e" }
+      ],
+      "byteParityHosts": [
+        "https://projectisitusa-nvl61i78v-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "byteParityHostFileIdentitiesPassed": 12,
+      "browserQa": {
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": ["FL", "KY", "CA", "ME"],
+        "counts": {
+          "FL": { "verifiedPresent": 2121, "researchedUnresolved": 6656, "notResearched": 158991 },
+          "KY": { "verifiedPresent": 1952, "researchedUnresolved": 10408, "notResearched": 288120 },
+          "CA": { "verifiedPresent": 1942, "researchedUnresolved": 7222, "notResearched": 136068 },
+          "ME": { "verifiedPresent": 242, "researchedUnresolved": 1374, "notResearched": 38448 }
+        },
+        "asOf": "2026-08-15",
+        "routeViewportChecks": 7,
+        "finalCountAssertionsPassed": true,
+        "finalCountChecks": 12,
+        "speciesRoutesPassed": true,
+        "speciesScientificIdentities": ["Diaphorina citri", "Cydalima perspectalis"],
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 2,
+        "productionScreenshotsVisuallyInspected": 2
+      },
+      "runtimeQa": {
+        "activeDeploymentId": null,
+        "runtimeErrorLogRows": null,
+        "runtimeFiveHundredLogRows": null,
+        "queryStatus": "unavailable-no-vercel-cli-in-canonical-toolchain",
+        "contentReleaseResearchIntegritySeconds": 420.267,
+        "qualification": "Exact-deployment runtime logs and the private Vercel deployment ID were not queryable because the canonical repository has no Vercel CLI. Runtime confidence is limited to exact GitHub Production success, direct HTTP 200, twelve live-to-local byte identities, and zero production browser console warnings or errors."
+      },
+      "roundMovement": {
+        "plannedGrossPairs": 53448,
+        "completedGrossPairs": 53448,
+        "finalMatrixPairsMoved": 52711,
+        "verifiedPresent": 3270,
+        "researchedUnresolved": 49441,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 85,
+        "denominatorMovement": 0,
+        "protocolCellsClosed": 867,
+        "certificationBlockersRemoved": 0
+      },
+      "qaToolingInterventions": [
+        "The protected-main push was initially denied by the external-write guard; no mutation occurred until the user explicitly authorized pushing content SHA fcb7f902cd9246f3db782ff5b20a2e5f69e00217 to production.",
+        "The first browser count matcher assumed newline-adjacent metric labels and returned false negatives; semantic dt/dd extraction then matched all twelve exact state counts.",
+        "Two deferred deployment polling cells returned no captured output; fresh provider queries established the pending and final success states without triggering another deployment."
+      ],
+      "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. The local content commit timestamp and provider deployment window disagree by many hours, so externalVerificationSecondsFromContentCommit remains null; the exact Vercel status duration is 229 seconds and status-creation-to-final-verification is 432 seconds.",
+      "externalVerificationSecondsFromContentCommit": null,
+      "providerStatusToVerificationSeconds": 432,
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and GitHub API matched exact Round 61 content SHA fcb7f902cd9246f3db782ff5b20a2e5f69e00217; GitHub Production deployment 5925338862 succeeded; its immutable host and canonical production alias served all twelve intended routes; six selected Florida, Kentucky, California, and Maine files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed without broken images, console warnings, console errors, or horizontal overflow. Exact-deployment runtime logs and private Vercel deployment ID were unavailable. Round 61 completed 53,448 gross outcomes but moved 52,711 unique final-matrix pairs, including 3,270 verified-present and 49,441 researched-unresolved movements, completed 867 APHIS protocol cells, and added 85 derived applicability decisions. It created no verified-absence, not-detected, denominator, or conflict movement. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "evaluationId": "round-61-aphis-federal-quarantine-national-20260815-r1",
   "roundId": "aphis-federal-quarantine-national-round61",
-  "evaluatedAt": "2026-08-15T05:08:34.536Z",
-  "result": "complete-local-release-candidate-pending-external-verification",
+  "evaluatedAt": "2026-08-15T22:33:58.000Z",
+  "result": "complete-released-and-externally-verified",
   "releaseThreshold": {
     "met": true,
     "basis": "The acquire-once national APHIS snapshot moved 52,711 unique county-species pairs across all 51 national-v1 jurisdictions, exceeding the 25,000-pair milestone while retaining exact provider bytes, deterministic state partitions, conservative evidence semantics, and full local release gates."
@@ -354,9 +354,35 @@
         "visuallyInspected": 2,
         "qualification": "The restricted local server logged image-cache EPERM messages, but all browser images loaded and the browser emitted no warning or error entries."
       },
-      "production": { "status": "not-run" }
+      "production": {
+        "status": "pass",
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "states": ["FL", "KY", "CA", "ME"],
+        "stateCountAssertionsPassed": 12,
+        "speciesScientificIdentities": ["Diaphorina citri", "Cydalima perspectalis"],
+        "horizontalOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 2,
+        "visuallyInspected": 2
+      }
     },
-    "externalVerification": { "status": "not-run", "githubMainSha": null, "githubDeploymentId": null, "immutableHost": null, "canonicalHost": "https://isitusa.com" },
+    "postDeploymentGate": { "status": "pass", "routeHostChecks": 24, "byteParityHostFileIdentities": 12 },
+    "externalVerification": {
+      "status": "pass",
+      "contentCommit": "fcb7f902cd9246f3db782ff5b20a2e5f69e00217",
+      "githubMainSha": "fcb7f902cd9246f3db782ff5b20a2e5f69e00217",
+      "githubDeploymentId": 5925338862,
+      "immutableHost": "https://projectisitusa-nvl61i78v-unigentamos.vercel.app",
+      "canonicalHost": "https://isitusa.com",
+      "providerCommitStatusSeconds": 229,
+      "githubDeploymentSeconds": 0,
+      "providerStatusToVerificationSeconds": 432,
+      "externalVerificationSecondsFromContentCommit": null,
+      "clockQualification": "GitHub provider-native UTC timestamps control deployment and verification timing. The local commit timestamp predates the provider deployment window by many hours, so no unsupported content-commit-to-verification duration is reported."
+    },
     "mainProcessCorrections": [
       "Corrected a stale protocol-test filename before running the actual current test.",
       "Corrected a read-only Node diagnostic quoting wrapper.",
