@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-63-usda-nrcs-plants-portfolio-selection-20260816-r1",
+  "roundId": "national-round-63",
+  "evaluatedAt": "2026-08-16T17:40:46.035Z",
+  "result": "selected",
+  "baseline": {
+    "commit": "f85e3281540c6e451b1593f869db63c19e5d0956",
+    "generatedAsOf": "2026-08-15",
+    "countySpeciesDenominator": 7872576,
+    "verifiedPresent": 75822,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 504102,
+    "notResearched": 7292644
+  },
+  "previousRound": {
+    "roundId": "national-round-62",
+    "grossCountySpeciesOutcomes": 125760,
+    "uniqueFinalMatrixMovement": 123140,
+    "verifiedPresentMovement": 16479,
+    "researchedUnresolvedMovement": 106661,
+    "alreadyAccountedOverlap": 2620,
+    "providerEvidenceRequests": 85,
+    "actorWallSeconds": 11.83,
+    "peakRssMiB": 758.594,
+    "source": "usda-nrcs-plants"
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "sourceId": "usda-nrcs-plants",
+      "acquisitionShape": "40 complete provider-native taxon-bounded national distribution CSV responses with exact state and county FIPS",
+      "grossPairs": 125760,
+      "expectedNetNewPairs": 123080,
+      "alreadyAccountedOverlap": 2680,
+      "expectedProviderRequests": 85,
+      "expectedNetPairsPerProviderRequest": 1448,
+      "nationalReuse": true,
+      "status": "selected"
+    },
+    {
+      "rank": 2,
+      "sourceId": "gbif-preserved-specimens",
+      "acquisitionShape": "authenticated taxon-bounded national Darwin Core download",
+      "status": "blocked",
+      "blocker": "No configured GBIF download credentials or retained immutable national download; mutable public offset search is not a defensible complete national snapshot."
+    },
+    {
+      "rank": 3,
+      "sourceId": "usfs-afpe-v1-0",
+      "acquisitionShape": "current versioned national replacement for the stale retained archive",
+      "status": "blocked",
+      "blocker": "No newer hash-pinned official archive is retained; the existing 611 stale protocol cells remain freshness work rather than net-new county movement."
+    }
+  ],
+  "selectedScope": {
+    "planId": "usda-nrcs-plants-national-v1-tranche-02",
+    "selectionRule": "Highest exact current not-researched count, excluding tranche-01 taxa and the eight provider-status mappings previously found to mix Native with Introduced/Both; deterministic speciesId order breaks equal-net ties.",
+    "stateCount": 51,
+    "activeCountyEquivalentCount": 3144,
+    "taxonCount": 40,
+    "grossOrderedPairs": 125760,
+    "baselineVerifiedPresentPairs": 1083,
+    "baselineResearchedUnresolvedPairs": 1597,
+    "baselineNotResearchedPairs": 123080,
+    "expectedAlreadyAccountedOverlap": 2680,
+    "expectedProviderRequests": {
+      "contractSnapshots": 3,
+      "sourceStatusFingerprints": 2,
+      "profileResponses": 40,
+      "distributionResponses": 40,
+      "total": 85
+    },
+    "remainingPureMappingCountBeforeSelection": 276,
+    "remainingPureMappingNotResearchedPairsBeforeSelection": 771685,
+    "mixedStatusMasterIdsExcluded": [
+      14349,
+      14698,
+      18574,
+      18666,
+      19209,
+      24343,
+      51151,
+      87413
+    ],
+    "positiveYieldForecast": "Unbounded within the exact 123080 net-movement forecast. Final positives require the retained profile, stable pure Introduced/Both before/after fingerprints, and exact current FIPS/name validation from each retained CSV."
+  },
+  "reuse": {
+    "taxonomyMappings": "324 exact legacy PLANTS symbol/master-ID/scientific-name mappings are already committed in generated catalog source descriptors; tranche 01 consumed 40.",
+    "actor": "The released acquire-once actor, exact-FIPS replay model, receipt schemas, and 51-state deterministic partition are reused after removing tranche-01-only constants.",
+    "priorAcquisitionArtifacts": 0,
+    "preventedProviderRequests": 0,
+    "qualification": "Tranche-01 provider bytes are taxon-specific and cannot answer tranche-02 profiles or distributions. Shared contract behavior is reused, but the 40 new taxon responses must be acquired."
+  },
+  "processLesson": {
+    "lesson": "A national actor is not reusable while plan IDs, scope counts, selection evidence, and integrity replay are hard-coded to its first tranche.",
+    "appliedChanges": [
+      "Plan, receipt, and reference schemas accept bounded one-to-fifty taxon tranches while retaining the exact national state and geography contract.",
+      "Provider request counts and completeness text derive from the committed taxon count.",
+      "Every acquisition binds its own committed selection-evidence path, and integrity replay resolves the exact plan ID recorded by each receipt.",
+      "The new scope is rescored from current generated state research accounting before any provider request."
+    ]
+  },
+  "semanticAttestation": {
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "usesCoordinates": false,
+    "usesMapServerCrossLayerIdJoin": false,
+    "treatsStateOnlyRowsAsCountyEvidence": false,
+    "preservesApplicabilitySeparately": true,
+    "preservesDenominatorSeparately": true
+  }
+}

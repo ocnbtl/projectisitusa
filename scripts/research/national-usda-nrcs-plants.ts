@@ -37,7 +37,7 @@ export type NrcsTaxonMapping = {
 
 export type NationalNrcsPlan = {
   schemaVersion: 1;
-  planId: "usda-nrcs-plants-national-v1-tranche-01";
+  planId: string;
   sourceId: typeof NRCS_SOURCE_ID;
   snapshotDate: string;
   profileBaseUrl: typeof NRCS_PROFILE_BASE_URL;
@@ -48,11 +48,12 @@ export type NationalNrcsPlan = {
   nationalV1StateCodes: string[];
   taxonMappings: NrcsTaxonMapping[];
   allowedEstablishmentMeans: Array<"Introduced" | "Both">;
-  expectedGrossPairs: 125760;
-  expectedNetNewPairsAtBaseline: 123140;
-  expectedAlreadyResearchedAtBaseline: 2620;
-  baselineGeneratedAsOf: "2026-08-15";
+  expectedGrossPairs: number;
+  expectedNetNewPairsAtBaseline: number;
+  expectedAlreadyResearchedAtBaseline: number;
+  baselineGeneratedAsOf: string;
   baselineCommit: string;
+  selectionEvidencePath?: string;
 };
 
 export type NrcsDistributionRow = {

@@ -432,18 +432,27 @@ const nationalAphisPlanPath = path.join(
   "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
 );
 const nationalAphisPlan = readJson<NationalAphisPlan>(nationalAphisPlanPath);
-const nationalNrcsPlanPath = path.join(
+const nationalNrcsPlanDirectory = path.join(
   ROOT,
-  "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-01.json",
+  "src/data/research/national-acquisition-plans",
 );
-const nationalNrcsPlan = readJson<NationalNrcsPlan>(nationalNrcsPlanPath);
+const nationalNrcsPlans = new Map<string, NationalNrcsPlan>();
+for (const filename of readdirSync(nationalNrcsPlanDirectory).filter((entry) => /^usda-nrcs-plants-national-v1-tranche-[0-9]{2}\.json$/u.test(entry))) {
+  const plan = readJson<NationalNrcsPlan>(path.join(nationalNrcsPlanDirectory, filename));
+  schemaValidator("national-usda-nrcs-plants-plan.schema.json").parse(plan);
+  assert(!nationalNrcsPlans.has(plan.planId), `Duplicate national NRCS plan ID ${plan.planId}.`);
+  nationalNrcsPlans.set(plan.planId, plan);
+}
 if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
   for (const entry of readdirSync(NATIONAL_ACQUISITIONS_DIR, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     const directory = path.join(NATIONAL_ACQUISITIONS_DIR, entry.name);
     const receiptPath = path.join(directory, "receipt.json");
     assert(existsSync(receiptPath), `National acquisition ${entry.name} lacks a receipt.`);
-    const candidate = readJson<{ source_id?: string }>(receiptPath);
+    const candidate = readJson<{ source_id?: string; parameters?: { planId?: string } }>(receiptPath);
+    const nationalNrcsPlan = candidate.source_id === NRCS_SOURCE_ID
+      ? nationalNrcsPlans.get(candidate.parameters?.planId ?? "")
+      : undefined;
     const verified = candidate.source_id === "usgs-nas"
       ? await verifyNationalNasAcquisition(ROOT, directory, true)
       : candidate.source_id === AFPE_SOURCE_ID
@@ -452,7 +461,7 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
           ? verifyNationalFiaAcquisition(ROOT, directory)
           : candidate.source_id === APHIS_SOURCE_ID
             ? verifyNationalAphisAcquisition(directory, nationalAphisPlan)
-            : candidate.source_id === NRCS_SOURCE_ID
+            : candidate.source_id === NRCS_SOURCE_ID && nationalNrcsPlan
               ? verifyNationalNrcsAcquisition(directory, nationalNrcsPlan)
             : null;
     assert(

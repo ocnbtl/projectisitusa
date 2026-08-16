@@ -27,7 +27,8 @@
       "const": 1
     },
     "planId": {
-      "const": "usda-nrcs-plants-national-v1-tranche-01"
+      "type": "string",
+      "pattern": "^usda-nrcs-plants-national-v1-tranche-[0-9]{2}$"
     },
     "sourceId": {
       "const": "usda-nrcs-plants"
@@ -67,8 +68,8 @@
     },
     "taxonMappings": {
       "type": "array",
-      "minItems": 40,
-      "maxItems": 40,
+      "minItems": 1,
+      "maxItems": 50,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -111,20 +112,29 @@
       }
     },
     "expectedGrossPairs": {
-      "const": 125760
+      "type": "integer",
+      "minimum": 3144,
+      "maximum": 157200
     },
     "expectedNetNewPairsAtBaseline": {
-      "const": 123140
+      "type": "integer",
+      "minimum": 1
     },
     "expectedAlreadyResearchedAtBaseline": {
-      "const": 2620
+      "type": "integer",
+      "minimum": 0
     },
     "baselineGeneratedAsOf": {
-      "const": "2026-08-15"
+      "type": "string",
+      "format": "date"
     },
     "baselineCommit": {
       "type": "string",
       "pattern": "^[a-f0-9]{40}$"
+    },
+    "selectionEvidencePath": {
+      "type": "string",
+      "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$"
     }
   }
 }

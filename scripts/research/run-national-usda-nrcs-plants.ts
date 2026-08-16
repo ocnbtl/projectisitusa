@@ -368,6 +368,10 @@ function buildAcquisitionParameters(plan: NationalNrcsPlan) {
   };
 }
 
+function expectedProviderRequestCount(plan: NationalNrcsPlan) {
+  return 5 + (2 * plan.taxonMappings.length);
+}
+
 function buildStateScopes(input: {
   plan: NationalNrcsPlan;
   acquisitionId: string;
@@ -824,7 +828,8 @@ async function acquire(input: {
 
     const artifacts = [...progress.artifacts];
     const requests = [...progress.requests];
-    assert(requests.length === 85 && artifacts.length === 85, `NRCS acquisition produced ${requests.length} requests and ${artifacts.length} artifacts, expected 85 each.`);
+    const expectedRequests = expectedProviderRequestCount(input.plan);
+    assert(requests.length === expectedRequests && artifacts.length === expectedRequests, `NRCS acquisition produced ${requests.length} requests and ${artifacts.length} artifacts, expected ${expectedRequests} each.`);
     const artifactBytes = artifacts.reduce((sum, artifact) => sum + artifact.bytes, 0);
     assert(artifactBytes <= input.plan.artifactBudgetBytes, `NRCS artifacts exceed ${input.plan.artifactBudgetBytes} bytes.`);
     const rows = artifacts.filter((artifact) => artifact.role === "distribution").flatMap((artifact) => {
@@ -868,7 +873,7 @@ async function acquire(input: {
         nativity_policy: "Before and after layer-6 aggregate fingerprints must contain only Introduced or Both establishment text for every selected taxon, with stable numeric status IDs and row counts. The provider's misleading layer-6 Symbol field carries establishment text, not the plant symbol; profile and CSV symbol fields are validated separately.",
         positive_semantics: "A qualifying provider-declared county distribution row supports recorded-present county evidence.",
         negative_semantics: "Complete taxon CSV silence creates researched-unresolved only. Failure, rejection, missing geography, and state-only rows never support absence or non-detection.",
-        snapshot_completeness: "All 40 taxon profiles and 40 single-response distribution CSVs were retained between byte-identical normalized before/after status fingerprints, together with three provider-contract snapshots.",
+        snapshot_completeness: `All ${input.plan.taxonMappings.length} taxon profiles and ${input.plan.taxonMappings.length} single-response distribution CSVs were retained between byte-identical normalized before/after status fingerprints, together with three provider-contract snapshots.`,
         known_caveats: [
           "The live service exposes neither historic-moment support nor CSV ETag/Last-Modified validators.",
           "Provider metadata describes a live public service while also reporting Publication20181011 and Revision20180914; both claims are preserved.",
@@ -918,7 +923,7 @@ async function acquire(input: {
       status: "partial",
       failedAt: new Date().toISOString(),
       completedRequestIds: [...completed.keys()].sort(compareText),
-      remainingRequestCount: 85 - completed.size,
+      remainingRequestCount: expectedProviderRequestCount(input.plan) - completed.size,
       retryable: true,
       error: error instanceof Error ? error.message : String(error),
       semantics: "Partial acquisition cannot create complete pair outcomes, absence, or non-detection.",
@@ -1205,7 +1210,7 @@ async function main() {
     const runnerPath = path.join(ROOT, "scripts/research/run-national-usda-nrcs-plants.ts");
     const inputFiles = [
       options.planPath,
-      path.join(ROOT, "ops/national-research/evaluations/round-62-usda-nrcs-plants-portfolio-selection-20260815-r1.json"),
+      path.join(ROOT, plan.selectionEvidencePath ?? "ops/national-research/evaluations/round-62-usda-nrcs-plants-portfolio-selection-20260815-r1.json"),
       commonPath,
       runnerPath,
       path.join(RESEARCH_ROOT, "source-registry.json"),
@@ -1251,8 +1256,11 @@ async function main() {
       "--semantic-dry-run false",
       `--acquisition-root '${relativeGitPath(ROOT, options.acquisitionRoot)}'`,
       `--runs-root '${relativeGitPath(ROOT, options.runsRoot)}'`,
-      `--attempt-telemetry '${options.telemetryPath ? relativeGitPath(ROOT, options.telemetryPath) : "ops/national-research/attempt-telemetry/usda-nrcs-plants-national-20260815.json"}'`,
+      `--attempt-telemetry '${options.telemetryPath
+        ? relativeGitPath(ROOT, options.telemetryPath)
+        : `ops/national-research/attempt-telemetry/${plan.planId}-${plan.snapshotDate.replace(/-/gu, "")}.json`}'`,
     ].join(" ");
+    const expectedRequests = expectedProviderRequestCount(plan);
     if (options.semanticDryRun) {
       const preflight = {
         ok: true,
@@ -1276,11 +1284,11 @@ async function main() {
         expectedProviderRequests: {
           contractSnapshots: 3,
           aggregateSnapshots: 2,
-          profiles: 40,
-          distributionResponses: 40,
-          total: 85,
+          profiles: plan.taxonMappings.length,
+          distributionResponses: plan.taxonMappings.length,
+          total: expectedRequests,
         },
-        expectedNetPairsPerProviderRequest: Number((plan.expectedNetNewPairsAtBaseline / 85).toFixed(6)),
+        expectedNetPairsPerProviderRequest: Number((plan.expectedNetNewPairsAtBaseline / expectedRequests).toFixed(6)),
         retryPolicy: {
           maxAttempts: plan.maxAttempts,
           backoffMilliseconds: [1000, 5000],
