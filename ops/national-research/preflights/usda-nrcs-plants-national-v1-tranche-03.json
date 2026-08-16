@@ -1,0 +1,418 @@
+{
+  "ok": true,
+  "semanticDryRun": true,
+  "networkRequestsIssued": 0,
+  "sourceId": "usda-nrcs-plants",
+  "baseSha": "b5686fdcd2083c4a235abeeac92ef5f680ae9727",
+  "expectedReceiptCodeCommit": "b5686fdcd2083c4a235abeeac92ef5f680ae9727",
+  "planPath": "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-03.json",
+  "planSha256": "851ce93f641ae790aee76e05c727dad2feb4e7584eeeb32dfbb8fb147d4c6463",
+  "acquisitionParameterHash": "eb17fd920351474161756112f45c31ba0c8d8de3e27adb6b5a2b3dfb2aa19e8b",
+  "acquisitionId": "20260816t213505z__usda-nrcs-plants__eb17fd920351",
+  "acquisitionPath": "src/data/research/national-acquisitions/20260816t213505z__usda-nrcs-plants__eb17fd920351",
+  "expandedCommand": "& 'C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe' --import tsx 'C:\\Code\\project-isitusa\\scripts\\research\\run-national-usda-nrcs-plants.ts' --plan 'src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-03.json' --started-at '2026-08-16T21:35:05.347Z' --semantic-dry-run false --acquisition-root 'src/data/research/national-acquisitions' --runs-root 'src/data/research/runs' --attempt-telemetry 'ops/national-research/attempt-telemetry/usda-nrcs-plants-national-v1-tranche-03-20260816.json'",
+  "stateCount": 51,
+  "taxonCount": 40,
+  "activeCountyCount": 3144,
+  "orderedPairCount": 125760,
+  "expectedNetNewPairsAtBaseline": 123080,
+  "expectedAlreadyResearchedAtBaseline": 2680,
+  "expectedProviderRequests": {
+    "contractSnapshots": 3,
+    "aggregateSnapshots": 2,
+    "profiles": 40,
+    "distributionResponses": 40,
+    "total": 85
+  },
+  "expectedNetPairsPerProviderRequest": 1448,
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "backoffMilliseconds": [
+      1000,
+      5000
+    ],
+    "resume": "reuse each hash-verified successful deterministic artifact and retry only missing request IDs"
+  },
+  "artifactBudgetBytes": 104857600,
+  "geographyPolicy": "Exact provider state/county FIPS and active-name matches only; no cross-layer ID join, coordinate fallback, or automatic retired-geography resolution.",
+  "negativeSemantics": "Completed silence may create researched-unresolved only; failure, rejection, incomplete scope, and missing geography create no negative claim.",
+  "runPaths": [
+    {
+      "stateCode": "AK",
+      "orderedPairCount": 1200,
+      "pairHash": "d51a2b41dee4df7d0829e1bc385e274c0446c0e4151e1480663542e27e6f7101",
+      "runId": "20260816T213505Z__usda-nrcs-plants__4fe5bf4e8162",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__4fe5bf4e8162"
+    },
+    {
+      "stateCode": "AL",
+      "orderedPairCount": 2680,
+      "pairHash": "80d9e4377125081d7f166f4ee881db03ad8327ec9a76f27ad69737f9764f1e39",
+      "runId": "20260816T213505Z__usda-nrcs-plants__a39c2d15aeab",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__a39c2d15aeab"
+    },
+    {
+      "stateCode": "AR",
+      "orderedPairCount": 3000,
+      "pairHash": "c6cec58f02b1094da572691557fc2dee056929e500fb77c9fa90d6968a269325",
+      "runId": "20260816T213505Z__usda-nrcs-plants__98b0e0d09de0",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__98b0e0d09de0"
+    },
+    {
+      "stateCode": "AZ",
+      "orderedPairCount": 600,
+      "pairHash": "5112cda28af9ce34be46a2ccc20a34225a19f05e85c829f0e0ace503691fd558",
+      "runId": "20260816T213505Z__usda-nrcs-plants__5563b9206c12",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__5563b9206c12"
+    },
+    {
+      "stateCode": "CA",
+      "orderedPairCount": 2320,
+      "pairHash": "ab1698f45373652e5408d3fbe263cc4a73232f9f8a0d4450ffdcb377052b6ff3",
+      "runId": "20260816T213505Z__usda-nrcs-plants__0e4b5e1ce030",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__0e4b5e1ce030"
+    },
+    {
+      "stateCode": "CO",
+      "orderedPairCount": 2560,
+      "pairHash": "50972ceaf88d2da7fe7c3f21053b17d398ae43a530b47cceb5febdb40d36e314",
+      "runId": "20260816T213505Z__usda-nrcs-plants__360f8623efad",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__360f8623efad"
+    },
+    {
+      "stateCode": "CT",
+      "orderedPairCount": 360,
+      "pairHash": "32f5c8281af8d72194f32c17701e681f5a914878a80112b985cb63ca00890160",
+      "runId": "20260816T213505Z__usda-nrcs-plants__4e2cf2f2c197",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__4e2cf2f2c197"
+    },
+    {
+      "stateCode": "DC",
+      "orderedPairCount": 40,
+      "pairHash": "5602a2ca565323aa0cbced82380134c2a172d9fa76a17652848142577ba65667",
+      "runId": "20260816T213505Z__usda-nrcs-plants__bed36a7c1f25",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__bed36a7c1f25"
+    },
+    {
+      "stateCode": "DE",
+      "orderedPairCount": 120,
+      "pairHash": "f1426db505d965db1aa3aa262aef1a202f759458cd5d724d10dcb3a7d6bad369",
+      "runId": "20260816T213505Z__usda-nrcs-plants__ac04c888fc82",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__ac04c888fc82"
+    },
+    {
+      "stateCode": "FL",
+      "orderedPairCount": 2680,
+      "pairHash": "f624ab96fd58e76afb3bed19d8145034fde95119b558cb8950de30c3a01fc441",
+      "runId": "20260816T213505Z__usda-nrcs-plants__e7c6c042bc18",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__e7c6c042bc18"
+    },
+    {
+      "stateCode": "GA",
+      "orderedPairCount": 6360,
+      "pairHash": "210b4dcca7d66e60efb83fae38f61c33f6209ca4c4a779f1ff8ea67c523a2948",
+      "runId": "20260816T213505Z__usda-nrcs-plants__4762e2d9df6d",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__4762e2d9df6d"
+    },
+    {
+      "stateCode": "HI",
+      "orderedPairCount": 200,
+      "pairHash": "fa6c18da40f7b55124b67470c36fb60796f4dab0cdb5cad98ab865ca1aeaff5f",
+      "runId": "20260816T213505Z__usda-nrcs-plants__fb63300a733c",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__fb63300a733c"
+    },
+    {
+      "stateCode": "IA",
+      "orderedPairCount": 3960,
+      "pairHash": "4a1a3942af4f60fa85af73887bbbb175441f564344b47433b04451fd262d9214",
+      "runId": "20260816T213505Z__usda-nrcs-plants__2b98af475ed2",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__2b98af475ed2"
+    },
+    {
+      "stateCode": "ID",
+      "orderedPairCount": 1760,
+      "pairHash": "0d59c7c08430ba41aaa83ef81562be96b0d3fcd5289dff91ee9d6e1e50eed9f4",
+      "runId": "20260816T213505Z__usda-nrcs-plants__3ee08cee6d42",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__3ee08cee6d42"
+    },
+    {
+      "stateCode": "IL",
+      "orderedPairCount": 4080,
+      "pairHash": "c36d7f76e08e0699bf10b45730bc132f972433c580438f149691c731a7980e63",
+      "runId": "20260816T213505Z__usda-nrcs-plants__b626db439cb8",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__b626db439cb8"
+    },
+    {
+      "stateCode": "IN",
+      "orderedPairCount": 3680,
+      "pairHash": "113c4b8d5e54d0162708b666d6df49fd5644a6b73ef307a2f5492d48a8eb1eed",
+      "runId": "20260816T213505Z__usda-nrcs-plants__dae14d6faec5",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__dae14d6faec5"
+    },
+    {
+      "stateCode": "KS",
+      "orderedPairCount": 4200,
+      "pairHash": "56e188bd8cdf52cb8cd361f292950f54d06a97afdda7c82359271055b34a0915",
+      "runId": "20260816T213505Z__usda-nrcs-plants__6599b1c5d536",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__6599b1c5d536"
+    },
+    {
+      "stateCode": "KY",
+      "orderedPairCount": 4800,
+      "pairHash": "e09ec73b4305db2c5494cc14ddc62fe7a43328af67532c8950482112230565e0",
+      "runId": "20260816T213505Z__usda-nrcs-plants__e3b3ab900605",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__e3b3ab900605"
+    },
+    {
+      "stateCode": "LA",
+      "orderedPairCount": 2560,
+      "pairHash": "bc7ded56876102b3eba5ccb5f83ce50f4035f0d7fbbe62e990aedc6e9e76b689",
+      "runId": "20260816T213505Z__usda-nrcs-plants__60fadc52417a",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__60fadc52417a"
+    },
+    {
+      "stateCode": "MA",
+      "orderedPairCount": 560,
+      "pairHash": "82d97c363058104908111f1a9e6db81327e2cff586927850829c672e0c51ac08",
+      "runId": "20260816T213505Z__usda-nrcs-plants__480ae43f6a26",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__480ae43f6a26"
+    },
+    {
+      "stateCode": "MD",
+      "orderedPairCount": 960,
+      "pairHash": "6d90b755a29bd738c06e017ab1f5b505d4e4005582a089b55eb7702af14aa326",
+      "runId": "20260816T213505Z__usda-nrcs-plants__d2b55bc1eeab",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__d2b55bc1eeab"
+    },
+    {
+      "stateCode": "ME",
+      "orderedPairCount": 640,
+      "pairHash": "f32b2c6dab19a84002d35f94dab8a3ce68d30d64c300d9e0340928358ca867fa",
+      "runId": "20260816T213505Z__usda-nrcs-plants__0e8f46d66b40",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__0e8f46d66b40"
+    },
+    {
+      "stateCode": "MI",
+      "orderedPairCount": 3320,
+      "pairHash": "6c6515d9a3675c5266532d788ef3b7fd0d406c773b06e656c6bb631d1ea05a7b",
+      "runId": "20260816T213505Z__usda-nrcs-plants__831e51826f41",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__831e51826f41"
+    },
+    {
+      "stateCode": "MN",
+      "orderedPairCount": 3480,
+      "pairHash": "cf778031046ed98ccde035442276befd5e94f149b651ae2c03641b69da368cae",
+      "runId": "20260816T213505Z__usda-nrcs-plants__28e434f061a6",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__28e434f061a6"
+    },
+    {
+      "stateCode": "MO",
+      "orderedPairCount": 4600,
+      "pairHash": "b8077b892e05e1bf7a57cdd8ecedc869a47cd1dad889cedba87fbda79a60a792",
+      "runId": "20260816T213505Z__usda-nrcs-plants__5c314f44bc1e",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__5c314f44bc1e"
+    },
+    {
+      "stateCode": "MS",
+      "orderedPairCount": 3280,
+      "pairHash": "65e6bea05de13eefd052df5fc635d75f1959a07d6e61c34b8b1f2731b78a8251",
+      "runId": "20260816T213505Z__usda-nrcs-plants__2eb09bff13b0",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__2eb09bff13b0"
+    },
+    {
+      "stateCode": "MT",
+      "orderedPairCount": 2240,
+      "pairHash": "f6f3f5681ac76b04bc8f9719a8ce3ddb4699f541fbb160e5cedb902554dedb11",
+      "runId": "20260816T213505Z__usda-nrcs-plants__a9f325629cc7",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__a9f325629cc7"
+    },
+    {
+      "stateCode": "NC",
+      "orderedPairCount": 4000,
+      "pairHash": "bb156df25802cb8ec406ef9a5ecb94afb29332585f4ef2a62bb5237e2a6d91a7",
+      "runId": "20260816T213505Z__usda-nrcs-plants__a60ddbe34457",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__a60ddbe34457"
+    },
+    {
+      "stateCode": "ND",
+      "orderedPairCount": 2120,
+      "pairHash": "8d63b3e22484cc6f46af5c22df07e13d98016d2804e43ef637ad93bd21985115",
+      "runId": "20260816T213505Z__usda-nrcs-plants__3fc97a4009a3",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__3fc97a4009a3"
+    },
+    {
+      "stateCode": "NE",
+      "orderedPairCount": 3720,
+      "pairHash": "7bc61c38ca5007e3633700864b53a4be4267ca8689ac1da90dc071494b795f8c",
+      "runId": "20260816T213505Z__usda-nrcs-plants__04c9bd235906",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__04c9bd235906"
+    },
+    {
+      "stateCode": "NH",
+      "orderedPairCount": 400,
+      "pairHash": "76f456f6b89805205d9516b33f45516782632c6fec27b996c2dd86891df69bf6",
+      "runId": "20260816T213505Z__usda-nrcs-plants__e84562020630",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__e84562020630"
+    },
+    {
+      "stateCode": "NJ",
+      "orderedPairCount": 840,
+      "pairHash": "3e759bc35730556d39d09236136d060ce5b1ad5f0e075f7839e61feeb14a9602",
+      "runId": "20260816T213505Z__usda-nrcs-plants__a6332656e93d",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__a6332656e93d"
+    },
+    {
+      "stateCode": "NM",
+      "orderedPairCount": 1320,
+      "pairHash": "a7d1450668652395518e10ea9c32442a2199fe5a75042356c32fc1a143ab97dc",
+      "runId": "20260816T213505Z__usda-nrcs-plants__f91a9438ab27",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__f91a9438ab27"
+    },
+    {
+      "stateCode": "NV",
+      "orderedPairCount": 680,
+      "pairHash": "26264f145a24e071331792f2c95bf8b931bb2e796b8637fdfb8b091a73ea77af",
+      "runId": "20260816T213505Z__usda-nrcs-plants__c9ca35917d90",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__c9ca35917d90"
+    },
+    {
+      "stateCode": "NY",
+      "orderedPairCount": 2480,
+      "pairHash": "29e39c8fa45e4cdbd58a5949469333e015b74ec87994f3865290fe0735b34d51",
+      "runId": "20260816T213505Z__usda-nrcs-plants__bd950496bda1",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__bd950496bda1"
+    },
+    {
+      "stateCode": "OH",
+      "orderedPairCount": 3520,
+      "pairHash": "882e454bbe9296ee03235b81b1f077e1e5f63f539ba51dca0ce8d99baac0fe23",
+      "runId": "20260816T213505Z__usda-nrcs-plants__1fb1465b47df",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__1fb1465b47df"
+    },
+    {
+      "stateCode": "OK",
+      "orderedPairCount": 3080,
+      "pairHash": "3a8facc35c05d96d15c0e39529a5cc9f94fac7762ab84e1d0a5e53be63699bbb",
+      "runId": "20260816T213505Z__usda-nrcs-plants__d83cf30a9c9c",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__d83cf30a9c9c"
+    },
+    {
+      "stateCode": "OR",
+      "orderedPairCount": 1440,
+      "pairHash": "09dd5f5ccabfe5b0ee4327202c05d3518db6c2bcea4cdfacd1e9a5afd48919ad",
+      "runId": "20260816T213505Z__usda-nrcs-plants__77984d285560",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__77984d285560"
+    },
+    {
+      "stateCode": "PA",
+      "orderedPairCount": 2680,
+      "pairHash": "7d27c243e51dbc62cb8c4eb4b59051e2b82b13177f8f671bbd25063c121133a4",
+      "runId": "20260816T213505Z__usda-nrcs-plants__ee108d7b74e1",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__ee108d7b74e1"
+    },
+    {
+      "stateCode": "RI",
+      "orderedPairCount": 200,
+      "pairHash": "5f0ec41310a179ffcfa5317ce6ccf114e2a0cca426037e663133351f23fd3ad9",
+      "runId": "20260816T213505Z__usda-nrcs-plants__85ad6fe694f1",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__85ad6fe694f1"
+    },
+    {
+      "stateCode": "SC",
+      "orderedPairCount": 1840,
+      "pairHash": "c2022d8295822dfdb4ee4a9e3f94fb86556fcfea4d155394e54db7b2671a485f",
+      "runId": "20260816T213505Z__usda-nrcs-plants__06c4b8540eca",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__06c4b8540eca"
+    },
+    {
+      "stateCode": "SD",
+      "orderedPairCount": 2640,
+      "pairHash": "09fd2dfd8f14b5ef25042975e153293d50427cadf4dccb2d43f8f16178443793",
+      "runId": "20260816T213505Z__usda-nrcs-plants__6a426d27e66d",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__6a426d27e66d"
+    },
+    {
+      "stateCode": "TN",
+      "orderedPairCount": 3800,
+      "pairHash": "08bbe84ff85281107b32832ac79753fc7f534a9bd11d31c597fa9b39bf18b26b",
+      "runId": "20260816T213505Z__usda-nrcs-plants__51721a61db18",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__51721a61db18"
+    },
+    {
+      "stateCode": "TX",
+      "orderedPairCount": 10160,
+      "pairHash": "600d74c78b8bfdd9661cd5b01e4bd851c7687d40a434ce53d6360c424bff66fb",
+      "runId": "20260816T213505Z__usda-nrcs-plants__d7053e51394c",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__d7053e51394c"
+    },
+    {
+      "stateCode": "UT",
+      "orderedPairCount": 1160,
+      "pairHash": "06249577f75c1e9fe937eabb52dd7c0b7cc6de65361730376ebe947b8a496d5a",
+      "runId": "20260816T213505Z__usda-nrcs-plants__b203ea7ac7c2",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__b203ea7ac7c2"
+    },
+    {
+      "stateCode": "VA",
+      "orderedPairCount": 5320,
+      "pairHash": "f765a50252d4da08737af51946473d5965709e42f1b047a0c2f669a3a8ae9f50",
+      "runId": "20260816T213505Z__usda-nrcs-plants__ee4b90683036",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__ee4b90683036"
+    },
+    {
+      "stateCode": "VT",
+      "orderedPairCount": 560,
+      "pairHash": "9cb43e5a6e13edd51da1f9b60b88129078b579db6226cebca814522696345c6b",
+      "runId": "20260816T213505Z__usda-nrcs-plants__fedf1cb562fc",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__fedf1cb562fc"
+    },
+    {
+      "stateCode": "WA",
+      "orderedPairCount": 1560,
+      "pairHash": "8c40a424a47b0eb078d14185d3b8b69aa904615ef3732ff3d5515d485684002c",
+      "runId": "20260816T213505Z__usda-nrcs-plants__e7645b75ab3b",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__e7645b75ab3b"
+    },
+    {
+      "stateCode": "WI",
+      "orderedPairCount": 2880,
+      "pairHash": "2d8a4cd9d28c290d8dfb790631a4f4e7a391be79ce37a5f302d3322da7547a05",
+      "runId": "20260816T213505Z__usda-nrcs-plants__0e9d50df6b28",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__0e9d50df6b28"
+    },
+    {
+      "stateCode": "WV",
+      "orderedPairCount": 2200,
+      "pairHash": "9925831cd3857dcdd6a79f7e63f43636f0af87e531e54be39fdc0740c67fc083",
+      "runId": "20260816T213505Z__usda-nrcs-plants__dd1db578a1f7",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__dd1db578a1f7"
+    },
+    {
+      "stateCode": "WY",
+      "orderedPairCount": 920,
+      "pairHash": "49a53c9bab4fda11f470ce7fc7cbb8e1854c305890a591e697b9eee3a52d50e1",
+      "runId": "20260816T213505Z__usda-nrcs-plants__b37c8641e66a",
+      "outputPath": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__b37c8641e66a"
+    }
+  ],
+  "inputHashes": {
+    "ops/national-research/evaluations/round-64-usda-nrcs-plants-portfolio-selection-20260816-r1.json": "af065fceccb2769415b78855eafd36fe8e7ba28bde6f4d534be04c6ee6eb4f41",
+    "scripts/research/national-usda-nrcs-plants.ts": "60a1ed1cd24f43058ab12f4ae69681be47cf1a6fefdf9778e768538fb1c49231",
+    "scripts/research/run-national-usda-nrcs-plants.ts": "fcda50021a18e09d5aedeee6ff54023d6c9f600937fe3e94e6e0b5b1e35e6ba9",
+    "src/data/generated/species.json": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "src/data/research/county-equivalent-registry.json": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-03.json": "851ce93f641ae790aee76e05c727dad2feb4e7584eeeb32dfbb8fb147d4c6463",
+    "src/data/research/schemas/evidence-assertion.schema.json": "1132a0ddb1fccae2f0a013e225cbc7758bb67f1f085b199a04fb3c53a21a1719",
+    "src/data/research/schemas/national-usda-nrcs-plants-acquisition-receipt.schema.json": "db947f63b6a897d8c12394a00b95d0d9b68aa5539dd2751b9815d8aa2777eac0",
+    "src/data/research/schemas/national-usda-nrcs-plants-plan.schema.json": "9420f82ff7c8a49303f6b44f3f1bbe6c70884c3fa74bcb369d639f529f1171a1",
+    "src/data/research/schemas/national-usda-nrcs-plants-reference.schema.json": "93647ed9d7401b87a5838368841e7c5df05d142f025c414407a74e7be1a9518f",
+    "src/data/research/schemas/pair-outcome.schema.json": "c1596cfaaf02bc73f4ce44f461d45bd62f21826e04392f92aa97425ec4478af5",
+    "src/data/research/schemas/rejection-record.schema.json": "a0f571f0e488a8c4461a137ef9660b594a08cce4c3d0a460c1adc5ac0dcdb13e",
+    "src/data/research/schemas/review-event.schema.json": "5078336ea8564c067cef8e275bc6dd668548b49ed1e40649364f131947cbf090",
+    "src/data/research/schemas/run-receipt.schema.json": "ef7ad1e7ed7757f8f3b57e4ce70c252e62e5ffd4de88d242a74d85bbb3667516",
+    "src/data/research/schemas/usda-nrcs-plants-parameters.schema.json": "10ed968ee8cfb455982411bdd7f32745fee10d5edb0ab3d1ec67afea1995703d",
+    "src/data/research/schemas/worker-source-verification.schema.json": "dd4c36404f36d72659e555d9d66d9aff35cac22293a1162ac441f3de2215bbd0",
+    "src/data/research/source-registry.json": "a329a8b92c543aa60d288434829385263e5d07ab6448a846d68d9700c3071440",
+    "src/data/research/state-registry.json": "6080d7e61bf9a34794a14e9f6976edc378fbb10908dbd40296d3006923ef1f94"
+  }
+}
