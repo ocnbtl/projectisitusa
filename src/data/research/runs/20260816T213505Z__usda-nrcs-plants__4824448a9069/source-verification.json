@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-16T21:39:52.772Z",
+  "runId": "20260816T213505Z__usda-nrcs-plants__4824448a9069",
+  "sourceId": "usda-nrcs-plants",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:gamochaeta-simplicicaulis",
+    "11001:geranium-dissectum",
+    "11001:glebionis-segetum",
+    "11001:heliotropium-amplexicaule",
+    "11001:heliotropium-europaeum",
+    "11001:heliotropium-indicum",
+    "11001:hibiscus-mutabilis",
+    "11001:holcus-lanatus",
+    "11001:hypochaeris-glabra",
+    "11001:indigofera-tinctoria",
+    "11001:ipomoea-quamoclit",
+    "11001:koelreuteria-paniculata",
+    "11001:kummerowia-striata",
+    "11001:lactuca-serriola",
+    "11001:lagerstroemia-indica",
+    "11001:lamium-amplexicaule",
+    "11001:lamium-purpureum",
+    "11001:leonotis-nepetifolia",
+    "11001:lepidium-ruderale",
+    "11001:lespedeza-bicolor",
+    "11001:ligustrum-lucidum",
+    "11001:lilium-regale",
+    "11001:liriope-spicata",
+    "11001:lolium-perenne",
+    "11001:malus-pumila",
+    "11001:manihot-esculenta",
+    "11001:marrubium-vulgare",
+    "11001:mazus-pumilus",
+    "11001:medicago-lupulina",
+    "11001:medicago-minima",
+    "11001:melilotus-indicus",
+    "11001:melochia-corchorifolia",
+    "11001:mentha-spicata",
+    "11001:mentha-suaveolens",
+    "11001:mercurialis-annua",
+    "11001:mirabilis-jalapa",
+    "11001:mitracarpus-hirtus",
+    "11001:momordica-charantia",
+    "11001:murdannia-nudiflora",
+    "11001:narcissus-tazetta"
+  ],
+  "parameterHash": "730b25a59f6641a9c2e6e40067fc86332037afe15153fc2e26872bf79f4eadf9",
+  "authority": {
+    "name": "USDA Natural Resources Conservation Service",
+    "sourceUrl": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile/getDownloadDistributionDocumentation",
+    "publisher": "USDA NRCS"
+  },
+  "terms": {
+    "license": "Official USDA NRCS service; no dataset-specific machine-readable license was exposed. Copyright attribution and exact source bytes are retained.",
+    "termsUrl": "https://plants.usda.gov/home/help",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-16T21:39:52.772Z",
+    "freshnessDate": "2026-08-16"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county FIPS plus matching registered active state and county-equivalent names.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates, MapServer cross-layer ID joins, and automatic retired-geography crosswalks are prohibited."
+  },
+  "taxonomy": {
+    "method": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, and L48 Introduced status.",
+    "targetSpeciesIds": [
+      "gamochaeta-simplicicaulis",
+      "geranium-dissectum",
+      "glebionis-segetum",
+      "heliotropium-amplexicaule",
+      "heliotropium-europaeum",
+      "heliotropium-indicum",
+      "hibiscus-mutabilis",
+      "holcus-lanatus",
+      "hypochaeris-glabra",
+      "indigofera-tinctoria",
+      "ipomoea-quamoclit",
+      "koelreuteria-paniculata",
+      "kummerowia-striata",
+      "lactuca-serriola",
+      "lagerstroemia-indica",
+      "lamium-amplexicaule",
+      "lamium-purpureum",
+      "leonotis-nepetifolia",
+      "lepidium-ruderale",
+      "lespedeza-bicolor",
+      "ligustrum-lucidum",
+      "lilium-regale",
+      "liriope-spicata",
+      "lolium-perenne",
+      "malus-pumila",
+      "manihot-esculenta",
+      "marrubium-vulgare",
+      "mazus-pumilus",
+      "medicago-lupulina",
+      "medicago-minima",
+      "melilotus-indicus",
+      "melochia-corchorifolia",
+      "mentha-spicata",
+      "mentha-suaveolens",
+      "mercurialis-annua",
+      "mirabilis-jalapa",
+      "mitracarpus-hirtus",
+      "momordica-charantia",
+      "murdannia-nudiflora",
+      "narcissus-tazetta"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "plantMasterId",
+      "Symbol",
+      "State FIP",
+      "County FIP"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "PLANTS distribution rows are positive occurrence documentation, not a negative survey.",
+      "Source silence, failure, rejection, missing geography, and state-only rows never create absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260816T213505Z__usda-nrcs-plants__4824448a9069/artifacts/national-acquisition-reference.json",
+      "sha256": "2cc87c0eda98be5f412f0450f3dea984dcc7bb5efb84539fd95f805f6aad502a",
+      "bytes": 33549
+    }
+  ],
+  "caveats": [
+    "County distribution documentation supports occurrence. Missing counties do not imply absence.",
+    "The official mutable service was acquired once as 40 complete taxon-bounded CSV responses guarded by profile and source-status fingerprints.",
+    "No dataset-specific machine-readable license or row date was exposed."
+  ]
+}
