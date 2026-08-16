@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-15T23:58:51.277Z",
+  "runId": "20260815T235000Z__usda-nrcs-plants__bf5fb26b2c9b",
+  "sourceId": "usda-nrcs-plants",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:acanthospermum-australe",
+    "11001:acanthospermum-hispidum",
+    "11001:achyranthes-aspera",
+    "11001:ageratum-conyzoides",
+    "11001:agrostis-gigantea",
+    "11001:aira-caryophyllea",
+    "11001:alternanthera-pungens",
+    "11001:amaranthus-albus",
+    "11001:amaranthus-blitum",
+    "11001:amaranthus-deflexus",
+    "11001:amaranthus-muricatus",
+    "11001:anthoxanthum-odoratum",
+    "11001:arabidopsis-thaliana",
+    "11001:arenaria-serpyllifolia",
+    "11001:artemisia-annua",
+    "11001:atriplex-patula",
+    "11001:avena-sativa",
+    "11001:berberis-julianae",
+    "11001:bidens-pilosa",
+    "11001:boehmeria-nivea",
+    "11001:brassica-napus",
+    "11001:brassica-rapa",
+    "11001:briza-minor",
+    "11001:bromus-catharticus",
+    "11001:bromus-racemosus",
+    "11001:buglossoides-arvensis",
+    "11001:calibrachoa-parviflora",
+    "11001:calyptocarpus-vialis",
+    "11001:cannabis-sativa",
+    "11001:capsella-bursa-pastoris",
+    "11001:cardamine-hirsuta",
+    "11001:castanea-sativa",
+    "11001:celosia-argentea",
+    "11001:centaurea-cyanus",
+    "11001:cerastium-fontanum",
+    "11001:cerastium-glomeratum",
+    "11001:chaenorhinum-minus",
+    "11001:chenopodium-murale",
+    "11001:citrullus-lanatus",
+    "11001:crotalaria-pallida-var-obovata"
+  ],
+  "parameterHash": "206c351b8eb8a125ef406ee1ff22d5367dae8511dce799a1f03632ec4d870437",
+  "authority": {
+    "name": "USDA Natural Resources Conservation Service",
+    "sourceUrl": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile/getDownloadDistributionDocumentation",
+    "publisher": "USDA NRCS"
+  },
+  "terms": {
+    "license": "Official USDA NRCS service; no dataset-specific machine-readable license was exposed. Copyright attribution and exact source bytes are retained.",
+    "termsUrl": "https://plants.usda.gov/home/help",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-15T23:58:51.277Z",
+    "freshnessDate": "2026-08-15"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county FIPS plus matching registered active state and county-equivalent names.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates, MapServer cross-layer ID joins, and automatic retired-geography crosswalks are prohibited."
+  },
+  "taxonomy": {
+    "method": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, and L48 Introduced status.",
+    "targetSpeciesIds": [
+      "acanthospermum-australe",
+      "acanthospermum-hispidum",
+      "achyranthes-aspera",
+      "ageratum-conyzoides",
+      "agrostis-gigantea",
+      "aira-caryophyllea",
+      "alternanthera-pungens",
+      "amaranthus-albus",
+      "amaranthus-blitum",
+      "amaranthus-deflexus",
+      "amaranthus-muricatus",
+      "anthoxanthum-odoratum",
+      "arabidopsis-thaliana",
+      "arenaria-serpyllifolia",
+      "artemisia-annua",
+      "atriplex-patula",
+      "avena-sativa",
+      "berberis-julianae",
+      "bidens-pilosa",
+      "boehmeria-nivea",
+      "brassica-napus",
+      "brassica-rapa",
+      "briza-minor",
+      "bromus-catharticus",
+      "bromus-racemosus",
+      "buglossoides-arvensis",
+      "calibrachoa-parviflora",
+      "calyptocarpus-vialis",
+      "cannabis-sativa",
+      "capsella-bursa-pastoris",
+      "cardamine-hirsuta",
+      "castanea-sativa",
+      "celosia-argentea",
+      "centaurea-cyanus",
+      "cerastium-fontanum",
+      "cerastium-glomeratum",
+      "chaenorhinum-minus",
+      "chenopodium-murale",
+      "citrullus-lanatus",
+      "crotalaria-pallida-var-obovata"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "plantMasterId",
+      "Symbol",
+      "State FIP",
+      "County FIP"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "PLANTS distribution rows are positive occurrence documentation, not a negative survey.",
+      "Source silence, failure, rejection, missing geography, and state-only rows never create absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260815T235000Z__usda-nrcs-plants__bf5fb26b2c9b/artifacts/national-acquisition-reference.json",
+      "sha256": "3f251f1cecefb5edf367901a75195ea3dec22d4137fe69345c3bd78b0011d0ce",
+      "bytes": 33597
+    }
+  ],
+  "caveats": [
+    "County distribution documentation supports occurrence. Missing counties do not imply absence.",
+    "The official mutable service was acquired once as 40 complete taxon-bounded CSV responses guarded by profile and source-status fingerprints.",
+    "No dataset-specific machine-readable license or row date was exposed."
+  ]
+}
