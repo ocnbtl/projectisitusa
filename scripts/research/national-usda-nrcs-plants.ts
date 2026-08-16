@@ -10,7 +10,6 @@ import type {
 } from "@/lib/research/types";
 import type { SourceAdapterContext, SourceAdapterResult } from "@/lib/research/source-adapter";
 import {
-  countyEquivalentNameMatchesFips,
   resolveCountyEquivalent,
 } from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
@@ -19,7 +18,7 @@ export const NRCS_SOURCE_ID = "usda-nrcs-plants" as const;
 export const NRCS_ACQUISITION_ACTOR =
   "usda-nrcs-plants-national-acquisition@1.0.2" as const;
 export const NRCS_ADAPTER_ID = "usda-nrcs-plants-national" as const;
-export const NRCS_ADAPTER_VERSION = "1.0.2" as const;
+export const NRCS_ADAPTER_VERSION = "1.0.3" as const;
 export const NRCS_PROFILE_BASE_URL =
   "https://plantsservices.sc.egov.usda.gov/api/PlantProfile" as const;
 export const NRCS_DISTRIBUTION_URL =
@@ -364,12 +363,12 @@ export function replayNationalNrcsState(input: {
       rejected.push({ reason: "geography-ambiguous", category: "state_name_mismatch_rows", row, mapping, countyFips: fips, detail: "The provider state label does not match the registry state name for its FIPS." });
       continue;
     }
-    if (!countyEquivalentNameMatchesFips({
+    const nameResolution = resolveCountyEquivalent({
       stateCode: context.stateCode,
-      countyFips: fips,
       countyName: normalizedText(row.county),
       sourceId: NRCS_SOURCE_ID,
-    })) {
+    });
+    if (nameResolution.status !== "resolved" || nameResolution.county.countyFips !== fips) {
       rejected.push({ reason: "geography-ambiguous", category: "county_name_mismatch_rows", row, mapping, countyFips: fips, detail: "The provider county label does not match the active registry county-equivalent name." });
       continue;
     }
