@@ -2,6 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import type { ProtocolCellProjection } from "@/lib/research/protocol-cells";
+import { passesApplicableProtocolCompletionGate } from "@/lib/research/readiness-gates";
 import type { ResearchStateSummary } from "@/lib/research/types";
 import type { StateResearchConfigFile } from "@/lib/research/state-research-config";
 
@@ -258,7 +259,7 @@ const states = config.states
       baselineResearchCoverageCompleteOrBlocked:
         summary.stateSpeciesResearch.fullCatalogResearchAccounted,
       applicableProtocolCellsAtLeast90:
-        protocol.summary.applicableCompletionPercent >= 90,
+        passesApplicableProtocolCompletionGate(protocol.summary),
       regulatedAndHighPriorityComplete: priorityGate,
       requiredCurrentSourceFamiliesProcessed:
         protocol.summary.requiredCurrentSourcesProcessed,

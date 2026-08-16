@@ -1,26 +1,26 @@
 # South Carolina Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `1080`
+- Verified present: `1509`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5498`
-- Not researched: `108606`
-- Determination coverage: `0.94%`
-- Research coverage: `5.71%`
-- Explicit outcome coverage: `5.7109%`
-- Applicable protocol cells: `138`
+- Researched unresolved: `6909`
+- Not researched: `106766`
+- Determination coverage: `1.31%`
+- Research coverage: `7.31%`
+- Explicit outcome coverage: `7.3083%`
+- Applicable protocol cells: `167`
 - Current complete protocol cells: `55`
-- Protocol completion: `49.28%`
-- Current protocol completion: `39.86%`
-- Evidence records: `1193`
-- Research runs: `15`
+- Protocol completion: `40.72%`
+- Current protocol completion: `32.93%`
+- Evidence records: `1622`
+- Research runs: `16`
 - Rejection records: `23`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 467 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 357 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 786 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:04:30.250Z | 28 | 33 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

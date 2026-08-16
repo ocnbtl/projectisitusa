@@ -1,26 +1,26 @@
 # Georgia Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `3147`
+- Verified present: `3438`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `21657`
-- Not researched: `373332`
-- Determination coverage: `0.79%`
-- Research coverage: `6.23%`
-- Explicit outcome coverage: `6.2300%`
-- Applicable protocol cells: `159`
+- Researched unresolved: `27726`
+- Not researched: `366972`
+- Determination coverage: `0.86%`
+- Research coverage: `7.83%`
+- Explicit outcome coverage: `7.8275%`
+- Applicable protocol cells: `191`
 - Current complete protocol cells: `110`
-- Protocol completion: `77.36%`
-- Current protocol completion: `69.18%`
-- Evidence records: `5702`
-- Research runs: `15`
+- Protocol completion: `64.40%`
+- Current protocol completion: `57.59%`
+- Evidence records: `5993`
+- Research runs: `16`
 - Rejection records: `438`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | European chestnut (`castanea-sativa`) | plants | 0 | 159 | 0 |
 | Feather cockscomb (`celosia-argentea`) | plants | 0 | 159 | 0 |
 | Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 159 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 159 | 0 |
+| Garden cosmos (`cosmos-bipinnatus`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 1370 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 208 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 499 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-02T20:43:54.478Z | 1124 | 88 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

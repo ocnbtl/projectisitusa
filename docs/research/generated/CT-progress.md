@@ -1,6 +1,6 @@
 # Connecticut Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Verified present: `0`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1584`
-- Not researched: `20952`
+- Researched unresolved: `1944`
+- Not researched: `20592`
 - Determination coverage: `0.00%`
-- Research coverage: `7.03%`
-- Explicit outcome coverage: `7.0288%`
+- Research coverage: `8.63%`
+- Explicit outcome coverage: `8.6262%`
 - Applicable protocol cells: `140`
 - Current complete protocol cells: `120`
 - Protocol completion: `85.71%`
 - Current protocol completion: `85.71%`
 - Evidence records: `0`
-- Research runs: `13`
+- Research runs: `14`
 - Rejection records: `5939`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 0 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 0 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-09T21:44:42.758Z | 0 | 102 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

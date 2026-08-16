@@ -1,26 +1,26 @@
 # Maine Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `395`
+- Verified present: `498`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1861`
-- Not researched: `37808`
-- Determination coverage: `0.99%`
-- Research coverage: `5.63%`
-- Explicit outcome coverage: `5.6310%`
-- Applicable protocol cells: `120`
+- Researched unresolved: `2398`
+- Not researched: `37168`
+- Determination coverage: `1.24%`
+- Research coverage: `7.23%`
+- Explicit outcome coverage: `7.2284%`
+- Applicable protocol cells: `134`
 - Current complete protocol cells: `89`
-- Protocol completion: `85.00%`
-- Current protocol completion: `74.17%`
-- Evidence records: `742`
-- Research runs: `12`
+- Protocol completion: `76.12%`
+- Current protocol completion: `66.42%`
+- Evidence records: `845`
+- Research runs: `13`
 - Rejection records: `90`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 59 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 153 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 256 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-04T20:19:42.603Z | 139 | 67 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

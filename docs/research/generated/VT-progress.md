@@ -1,26 +1,26 @@
 # Vermont Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `341`
+- Verified present: `441`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1873`
-- Not researched: `32842`
-- Determination coverage: `0.97%`
-- Research coverage: `6.32%`
-- Explicit outcome coverage: `6.3156%`
-- Applicable protocol cells: `145`
+- Researched unresolved: `2333`
+- Not researched: `32282`
+- Determination coverage: `1.26%`
+- Research coverage: `7.91%`
+- Explicit outcome coverage: `7.9131%`
+- Applicable protocol cells: `160`
 - Current complete protocol cells: `72`
-- Protocol completion: `58.62%`
-- Current protocol completion: `49.66%`
-- Evidence records: `567`
-- Research runs: `13`
+- Protocol completion: `53.13%`
+- Current protocol completion: `45.00%`
+- Evidence records: `667`
+- Research runs: `14`
 - Rejection records: `95`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 63 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 116 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 216 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-10T00:06:10.319Z | 55 | 51 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

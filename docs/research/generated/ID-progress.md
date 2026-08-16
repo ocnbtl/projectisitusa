@@ -1,26 +1,26 @@
 # Idaho Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `419`
+- Verified present: `535`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7677`
-- Not researched: `102080`
-- Determination coverage: `0.38%`
-- Research coverage: `7.35%`
-- Explicit outcome coverage: `7.3482%`
-- Applicable protocol cells: `150`
+- Researched unresolved: `9321`
+- Not researched: `100320`
+- Determination coverage: `0.49%`
+- Research coverage: `8.95%`
+- Explicit outcome coverage: `8.9457%`
+- Applicable protocol cells: `163`
 - Current complete protocol cells: `72`
-- Protocol completion: `56.67%`
-- Current protocol completion: `48.00%`
-- Evidence records: `945`
-- Research runs: `11`
+- Protocol completion: `52.15%`
+- Current protocol completion: `44.17%`
+- Evidence records: `1061`
+- Research runs: `12`
 - Rejection records: `296`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 107 | 71 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 182 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 298 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-04T09:12:51.087Z | 135 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

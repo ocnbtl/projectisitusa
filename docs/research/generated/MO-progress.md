@@ -1,27 +1,27 @@
 # Missouri Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `1731`
+- Verified present: `2412`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `14599`
-- Not researched: `271630`
-- Determination coverage: `0.60%`
-- Research coverage: `5.67%`
-- Explicit outcome coverage: `5.6709%`
-- Applicable protocol cells: `132`
+- Researched unresolved: `18518`
+- Not researched: `267030`
+- Determination coverage: `0.84%`
+- Research coverage: `7.27%`
+- Explicit outcome coverage: `7.2684%`
+- Applicable protocol cells: `153`
 - Current complete protocol cells: `94`
-- Protocol completion: `81.06%`
-- Current protocol completion: `71.21%`
-- Evidence records: `2465`
-- Research runs: `13`
-- Rejection records: `481`
+- Protocol completion: `69.93%`
+- Current protocol completion: `61.44%`
+- Evidence records: `3146`
+- Research runs: `14`
+- Rejection records: `498`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:31.000Z | 335 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 692 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 1373 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-01T04:22:35.749Z | 469 | 72 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

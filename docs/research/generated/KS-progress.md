@@ -1,26 +1,26 @@
 # Kansas Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `105`
 - County-species pairs: `262920`
-- Verified present: `1165`
+- Verified present: `1756`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13745`
-- Not researched: `248010`
-- Determination coverage: `0.44%`
-- Research coverage: `5.67%`
-- Explicit outcome coverage: `5.6709%`
-- Applicable protocol cells: `114`
+- Researched unresolved: `17354`
+- Not researched: `243810`
+- Determination coverage: `0.67%`
+- Research coverage: `7.27%`
+- Explicit outcome coverage: `7.2684%`
+- Applicable protocol cells: `128`
 - Current complete protocol cells: `87`
-- Protocol completion: `87.72%`
-- Current protocol completion: `76.32%`
-- Evidence records: `2131`
-- Research runs: `13`
+- Protocol completion: `78.13%`
+- Current protocol completion: `67.97%`
+- Evidence records: `2722`
+- Research runs: `14`
 - Rejection records: `197`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:32.000Z | 103 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 510 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 1101 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-04T08:49:33.133Z | 525 | 65 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

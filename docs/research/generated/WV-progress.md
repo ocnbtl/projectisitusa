@@ -1,26 +1,26 @@
 # West Virginia Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `1396`
+- Verified present: `1768`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6414`
-- Not researched: `129910`
-- Determination coverage: `1.01%`
-- Research coverage: `5.67%`
-- Explicit outcome coverage: `5.6709%`
-- Applicable protocol cells: `134`
+- Researched unresolved: `8242`
+- Not researched: `127710`
+- Determination coverage: `1.28%`
+- Research coverage: `7.27%`
+- Explicit outcome coverage: `7.2684%`
+- Applicable protocol cells: `152`
 - Current complete protocol cells: `72`
-- Protocol completion: `63.43%`
-- Current protocol completion: `53.73%`
-- Evidence records: `2670`
-- Research runs: `11`
+- Protocol completion: `55.92%`
+- Current protocol completion: `47.37%`
+- Evidence records: `3042`
+- Research runs: `12`
 - Rejection records: `89`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 437 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 382 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 754 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-04T09:50:11.606Z | 502 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,26 +1,26 @@
 # New York Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `1851`
+- Verified present: `2407`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6953`
-- Not researched: `146444`
-- Determination coverage: `1.19%`
-- Research coverage: `5.67%`
-- Explicit outcome coverage: `5.6709%`
-- Applicable protocol cells: `150`
+- Researched unresolved: `8877`
+- Not researched: `143964`
+- Determination coverage: `1.55%`
+- Research coverage: `7.27%`
+- Explicit outcome coverage: `7.2684%`
+- Applicable protocol cells: `173`
 - Current complete protocol cells: `72`
-- Protocol completion: `56.67%`
-- Current protocol completion: `48.00%`
-- Evidence records: `2728`
-- Research runs: `11`
+- Protocol completion: `49.13%`
+- Current protocol completion: `41.62%`
+- Evidence records: `3284`
+- Research runs: `12`
 - Rejection records: `787`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -53,10 +53,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 62 | 0 |
 | Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 62 | 0 |
 | Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 62 | 0 |
+| Coco yam (`colocasia-esculenta`) | plants | 0 | 62 | 0 |
 | Jio (`commelina-benghalensis`) | plants | 0 | 62 | 0 |
-| Smooth rattlebox (`crotalaria-pallida-var-obovata`) | plants | 0 | 62 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 62 | 0 |
-| Asian citrus psyllid (`diaphorina-citri`) | insects | 0 | 62 | 0 |
+| Asthmaweed (`conyza-bonariensis`) | plants | 0 | 62 | 0 |
+| Jute (`corchorus-aestuans`) | plants | 0 | 62 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 494 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 636 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 1192 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-04T09:50:11.815Z | 297 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

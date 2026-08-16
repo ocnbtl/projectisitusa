@@ -1,26 +1,26 @@
 # Mississippi Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `1733`
+- Verified present: `2040`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9993`
-- Not researched: `193602`
-- Determination coverage: `0.84%`
-- Research coverage: `5.71%`
-- Explicit outcome coverage: `5.7109%`
-- Applicable protocol cells: `138`
+- Researched unresolved: `12966`
+- Not researched: `190322`
+- Determination coverage: `0.99%`
+- Research coverage: `7.31%`
+- Explicit outcome coverage: `7.3083%`
+- Applicable protocol cells: `167`
 - Current complete protocol cells: `96`
-- Protocol completion: `78.99%`
-- Current protocol completion: `69.57%`
-- Evidence records: `3692`
-- Research runs: `12`
+- Protocol completion: `65.27%`
+- Current protocol completion: `57.49%`
+- Evidence records: `3999`
+- Research runs: `13`
 - Rejection records: `592`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 762 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 203 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 510 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-03T00:57:32.955Z | 663 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

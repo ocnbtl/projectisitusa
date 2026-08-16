@@ -1,26 +1,26 @@
 # Hawaii Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `181`
+- Verified present: `230`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `564`
-- Not researched: `11775`
-- Determination coverage: `1.45%`
-- Research coverage: `5.95%`
-- Explicit outcome coverage: `5.9505%`
-- Applicable protocol cells: `148`
+- Researched unresolved: `715`
+- Not researched: `11575`
+- Determination coverage: `1.84%`
+- Research coverage: `7.55%`
+- Explicit outcome coverage: `7.5479%`
+- Applicable protocol cells: `164`
 - Current complete protocol cells: `75`
-- Protocol completion: `59.46%`
-- Current protocol completion: `50.68%`
-- Evidence records: `305`
-- Research runs: `14`
+- Protocol completion: `53.66%`
+- Current protocol completion: `45.73%`
+- Evidence records: `354`
+- Research runs: `15`
 - Rejection records: `1045`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 45 | 21 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 69 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 118 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-10T01:04:27.028Z | 37 | 53 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

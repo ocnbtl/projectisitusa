@@ -1,26 +1,26 @@
 # Alaska Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `161`
+- Verified present: `162`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4429`
-- Not researched: `70530`
-- Determination coverage: `0.21%`
-- Research coverage: `6.11%`
-- Explicit outcome coverage: `6.1102%`
-- Applicable protocol cells: `123`
+- Researched unresolved: `5628`
+- Not researched: `69330`
+- Determination coverage: `0.22%`
+- Research coverage: `7.71%`
+- Explicit outcome coverage: `7.7077%`
+- Applicable protocol cells: `124`
 - Current complete protocol cells: `101`
-- Protocol completion: `82.11%`
-- Current protocol completion: `82.11%`
-- Evidence records: `280`
-- Research runs: `15`
+- Protocol completion: `81.45%`
+- Current protocol completion: `81.45%`
+- Evidence records: `281`
+- Research runs: `16`
 - Rejection records: `2091`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 21 | 34 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 46 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 47 | 80 |
 | GBIF preserved specimen records | operational | 2026-07-31T21:36:12.944Z | 85 | 79 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

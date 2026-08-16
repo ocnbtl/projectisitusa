@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import type { ProtocolCellProjection } from "@/lib/research/protocol-cells";
+import { passesApplicableProtocolCompletionGate } from "@/lib/research/readiness-gates";
 import type { StateResearchConfigFile } from "@/lib/research/state-research-config";
 
 type ReadinessState = {
@@ -75,7 +76,7 @@ for (const state of config.states.filter((entry) => entry.publicResearchProjecti
 
   assert(
     readiness.buildTimeGates.applicableProtocolCellsAtLeast90 ===
-      (protocol.summary.applicableCompletionPercent >= 90),
+      passesApplicableProtocolCompletionGate(protocol.summary),
     `${state.stateCode} applicable protocol gate is not based on raw completion.`,
   );
   assert(
@@ -106,8 +107,18 @@ for (const state of config.states.filter((entry) => entry.publicResearchProjecti
 }
 
 assert(
-  completionFreshnessDivergences > 0,
-  "The readiness fixture must exercise at least one completion/freshness divergence.",
+  passesApplicableProtocolCompletionGate({
+    applicableCompletionPercent: 90,
+    currentCompletePercent: 89.99,
+  }),
+  "Freshness must not block the raw completion gate.",
+);
+assert(
+  !passesApplicableProtocolCompletionGate({
+    applicableCompletionPercent: 89.99,
+    currentCompletePercent: 100,
+  }),
+  "Freshness must not satisfy an incomplete raw completion gate.",
 );
 
 process.stdout.write(

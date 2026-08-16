@@ -1,26 +1,26 @@
 # Rhode Island Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `107`
+- Verified present: `149`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `483`
-- Not researched: `11930`
-- Determination coverage: `0.85%`
-- Research coverage: `4.71%`
-- Explicit outcome coverage: `4.7125%`
-- Applicable protocol cells: `117`
+- Researched unresolved: `641`
+- Not researched: `11730`
+- Determination coverage: `1.19%`
+- Research coverage: `6.31%`
+- Explicit outcome coverage: `6.3099%`
+- Applicable protocol cells: `131`
 - Current complete protocol cells: `32`
-- Protocol completion: `38.46%`
-- Current protocol completion: `27.35%`
-- Evidence records: `107`
-- Research runs: `19`
+- Protocol completion: `34.35%`
+- Current protocol completion: `24.43%`
+- Evidence records: `149`
+- Research runs: `20`
 - Rejection records: `3`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 17 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 47 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 89 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-10T01:30:01.493Z | 0 | 10 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

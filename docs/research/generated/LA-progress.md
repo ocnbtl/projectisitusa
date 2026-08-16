@@ -1,26 +1,26 @@
 # Louisiana Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `1810`
+- Verified present: `2710`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7278`
-- Not researched: `151168`
-- Determination coverage: `1.13%`
-- Research coverage: `5.67%`
-- Explicit outcome coverage: `5.6709%`
-- Applicable protocol cells: `149`
+- Researched unresolved: `8938`
+- Not researched: `148608`
+- Determination coverage: `1.69%`
+- Research coverage: `7.27%`
+- Explicit outcome coverage: `7.2684%`
+- Applicable protocol cells: `185`
 - Current complete protocol cells: `97`
-- Protocol completion: `73.83%`
-- Current protocol completion: `65.10%`
-- Evidence records: `4191`
-- Research runs: `12`
+- Protocol completion: `59.46%`
+- Current protocol completion: `52.43%`
+- Evidence records: `5091`
+- Research runs: `13`
 - Rejection records: `1226`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 458 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 679 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 1579 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-04T02:13:17.981Z | 651 | 75 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

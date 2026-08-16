@@ -1,27 +1,27 @@
 # New Mexico Research Progress
 
-Generated: `2026-08-15T00:00:00.000Z`
+Generated: `2026-08-16T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `147`
+- Verified present: `204`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5529`
-- Not researched: `76956`
-- Determination coverage: `0.18%`
-- Research coverage: `6.87%`
-- Explicit outcome coverage: `6.8690%`
-- Applicable protocol cells: `105`
+- Researched unresolved: `6792`
+- Not researched: `75636`
+- Determination coverage: `0.25%`
+- Research coverage: `8.47%`
+- Explicit outcome coverage: `8.4665%`
+- Applicable protocol cells: `117`
 - Current complete protocol cells: `49`
-- Protocol completion: `59.05%`
-- Current protocol completion: `46.67%`
-- Evidence records: `147`
-- Research runs: `12`
-- Rejection records: `26`
+- Protocol completion: `52.99%`
+- Current protocol completion: `41.88%`
+- Evidence records: `204`
+- Research runs: `13`
+- Rejection records: `34`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 70 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 92 | 40 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-16T17:58:53.463Z | 149 | 80 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:26:39.692Z | 2 | 30 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
