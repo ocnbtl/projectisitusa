@@ -216,6 +216,12 @@ function sha256(value: string | Buffer) {
   return createHash("sha256").update(value).digest("hex");
 }
 
+function committedFileSha256(commit: string, relativePath: string) {
+  return sha256(
+    execFileSync("git", ["show", `${commit}:${relativePath}`], { cwd: ROOT }),
+  );
+}
+
 const versionedHashCache = new Map<string, Set<string>>();
 
 function versionedFileHashes(relativePath: string) {
@@ -1112,10 +1118,18 @@ for (const bundle of immutableRuns) {
         stableJson(reference.acquisitionArtifacts) === stableJson(expectedArtifacts) &&
         stableJson(reference.mappings) ===
           stableJson(acquisition.receipt.parameters.taxonMappings) &&
+        acquisition.receipt.input_hashes[
+          "scripts/research/run-national-usda-nrcs-plants.ts"
+        ] ===
+          committedFileSha256(
+            acquisition.receipt.code_commit,
+            "scripts/research/run-national-usda-nrcs-plants.ts",
+          ) &&
         reference.runnerCodeSha256 ===
-          acquisition.receipt.input_hashes[
-            "scripts/research/run-national-usda-nrcs-plants.ts"
-          ],
+          committedFileSha256(
+            receipt.code_commit,
+            "scripts/research/run-national-usda-nrcs-plants.ts",
+          ),
       `Immutable NRCS run ${receipt.run_id} acquisition lineage changed.`,
     );
     assertCommitAncestor(
