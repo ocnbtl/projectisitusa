@@ -389,7 +389,7 @@
       "frozenSkills": { "status": "pass", "tests": 97, "criticalViolations": 0 },
       "typecheck": { "status": "pass", "seconds": 2.272 },
       "lint": { "status": "pass", "seconds": 2.538 },
-      "whitespace": { "status": "pass", "rawArtifactQualification": "Exact retained provider CSV and JSON artifacts are excluded from text normalization and remain byte-exact." },
+      "whitespace": { "status": "pass", "rawArtifactQualification": "Exact retained provider CSV and JSON artifacts are classified as binary for Git diff and text normalization, so the unqualified baseline-to-HEAD whitespace gate passes without changing provider bytes." },
       "prohibitedDashScan": { "status": "pass", "hits": 0 }
     },
     "build": { "status": "pass", "seconds": 25.426, "compileSeconds": 9.9, "nextVersion": "15.5.15", "staticPages": 2512 },
@@ -433,7 +433,8 @@
       "Corrected the layer-6 alias model: Symbol is establishment text and plant_nativity_id is its numeric code.",
       "Aligned profile status validation with the provider's I and Introduced representation without weakening exact accepted identity checks.",
       "Corrected county replay FIPS/name validation and resumed only from retained hash-verified provider artifacts.",
-      "Updated the integrity validator to validate acquisition-runner lineage at the acquisition receipt commit and partition-runner lineage at each recovered state receipt commit."
+      "Updated the integrity validator to validate acquisition-runner lineage at the acquisition receipt commit and partition-runner lineage at each recovered state receipt commit.",
+      "Extended the immutable-artifact Git policy to national CSV responses after the full-range whitespace gate correctly detected their provider-native CRLF bytes as text."
     ],
     "qaToolingCorrections": [
       "Resolved the desktop Search control with an exact searchbox role after an intentionally broad label locator matched six controls.",
