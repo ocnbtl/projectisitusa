@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-16T17:58:53.463Z",
+  "runId": "20260816T174500Z__usda-nrcs-plants__18cb9325f279",
+  "sourceId": "usda-nrcs-plants",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:colocasia-esculenta",
+    "11001:commelina-communis",
+    "11001:consolida-ajacis",
+    "11001:conyza-bonariensis",
+    "11001:corchorus-aestuans",
+    "11001:cosmos-bipinnatus",
+    "11001:cosmos-sulphureus",
+    "11001:crotalaria-lanceolata",
+    "11001:crotalaria-pallida",
+    "11001:crotalaria-spectabilis",
+    "11001:cuphea-carthagenensis",
+    "11001:cyclospermum-leptophyllum",
+    "11001:cyperus-entrerianus",
+    "11001:dactyloctenium-aegyptium",
+    "11001:daucus-carota",
+    "11001:deparia-petersenii",
+    "11001:dianthus-armeria",
+    "11001:dianthus-barbatus",
+    "11001:digitaria-ischaemum",
+    "11001:digitaria-sanguinalis",
+    "11001:digitaria-violascens",
+    "11001:dioscorea-oppositifolia",
+    "11001:draba-verna",
+    "11001:duchesnea-indica",
+    "11001:echinochloa-colona",
+    "11001:echinochloa-crus-galli",
+    "11001:eleusine-indica",
+    "11001:eragrostis-cilianensis",
+    "11001:eragrostis-japonica",
+    "11001:eragrostis-minor",
+    "11001:eragrostis-pilosa",
+    "11001:eremochloa-ophiuroides",
+    "11001:erysimum-repandum",
+    "11001:euonymus-fortunei-var-radicans",
+    "11001:ficus-carica",
+    "11001:ficus-pumila",
+    "11001:fimbristylis-schoenoides",
+    "11001:fumaria-officinalis",
+    "11001:galinsoga-quadriradiata",
+    "11001:galium-divaricatum"
+  ],
+  "parameterHash": "1ffd073d2d1c1bb4ee69f1dd4154b520eb8adfd3a9ae1e4a4f948cbaf27c4d24",
+  "authority": {
+    "name": "USDA Natural Resources Conservation Service",
+    "sourceUrl": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile/getDownloadDistributionDocumentation",
+    "publisher": "USDA NRCS"
+  },
+  "terms": {
+    "license": "Official USDA NRCS service; no dataset-specific machine-readable license was exposed. Copyright attribution and exact source bytes are retained.",
+    "termsUrl": "https://plants.usda.gov/home/help",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-16T17:58:53.463Z",
+    "freshnessDate": "2026-08-16"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county FIPS plus matching registered active state and county-equivalent names.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates, MapServer cross-layer ID joins, and automatic retired-geography crosswalks are prohibited."
+  },
+  "taxonomy": {
+    "method": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, and L48 Introduced status.",
+    "targetSpeciesIds": [
+      "colocasia-esculenta",
+      "commelina-communis",
+      "consolida-ajacis",
+      "conyza-bonariensis",
+      "corchorus-aestuans",
+      "cosmos-bipinnatus",
+      "cosmos-sulphureus",
+      "crotalaria-lanceolata",
+      "crotalaria-pallida",
+      "crotalaria-spectabilis",
+      "cuphea-carthagenensis",
+      "cyclospermum-leptophyllum",
+      "cyperus-entrerianus",
+      "dactyloctenium-aegyptium",
+      "daucus-carota",
+      "deparia-petersenii",
+      "dianthus-armeria",
+      "dianthus-barbatus",
+      "digitaria-ischaemum",
+      "digitaria-sanguinalis",
+      "digitaria-violascens",
+      "dioscorea-oppositifolia",
+      "draba-verna",
+      "duchesnea-indica",
+      "echinochloa-colona",
+      "echinochloa-crus-galli",
+      "eleusine-indica",
+      "eragrostis-cilianensis",
+      "eragrostis-japonica",
+      "eragrostis-minor",
+      "eragrostis-pilosa",
+      "eremochloa-ophiuroides",
+      "erysimum-repandum",
+      "euonymus-fortunei-var-radicans",
+      "ficus-carica",
+      "ficus-pumila",
+      "fimbristylis-schoenoides",
+      "fumaria-officinalis",
+      "galinsoga-quadriradiata",
+      "galium-divaricatum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "plantMasterId",
+      "Symbol",
+      "State FIP",
+      "County FIP"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "PLANTS distribution rows are positive occurrence documentation, not a negative survey.",
+      "Source silence, failure, rejection, missing geography, and state-only rows never create absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260816T174500Z__usda-nrcs-plants__18cb9325f279/artifacts/national-acquisition-reference.json",
+      "sha256": "5494623a47fd8b3358807a6c0b5ed1026c2470429dd7e6f29e6c99fabaff7030",
+      "bytes": 33669
+    }
+  ],
+  "caveats": [
+    "County distribution documentation supports occurrence. Missing counties do not imply absence.",
+    "The official mutable service was acquired once as 40 complete taxon-bounded CSV responses guarded by profile and source-status fingerprints.",
+    "No dataset-specific machine-readable license or row date was exposed."
+  ]
+}
