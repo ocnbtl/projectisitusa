@@ -55,6 +55,30 @@ validateNrcsProfile({
   ScientificName: "<i>Acanthospermum australe</i>",
   NativeStatuses: [{ Region: "L48", Status: "I", Type: "Introduced" }],
 }, mapping);
+validateNrcsProfile({
+  Id: 51199,
+  AcceptedId: 51199,
+  Symbol: "MAPU7",
+  ScientificName: "<i>Mazus pumilus</i> (Burm. f.) Steenis",
+  NativeStatuses: [{ Region: "L48", Status: "I", Type: "Introduced" }],
+}, {
+  plantMasterId: 51199,
+  symbol: "MAPU7",
+  speciesId: "mazus-pumilus",
+  scientificName: "Mazus pumilus",
+});
+validateNrcsProfile({
+  Id: 75035,
+  AcceptedId: 75035,
+  Symbol: "EUFOR2",
+  ScientificName: "<i>Euonymus fortunei</i> (Turcz.) Hand.-Maz. var. <i>radicans</i> (Siebold ex Miq.) Rehder",
+  NativeStatuses: [{ Region: "L48", Status: "I", Type: "Introduced" }],
+}, {
+  plantMasterId: 75035,
+  symbol: "EUFOR2",
+  speciesId: "euonymus-fortunei-var-radicans",
+  scientificName: "Euonymus fortunei var. radicans",
+});
 assert.throws(() => validateNrcsProfile({
   Id: 31170,
   AcceptedId: 31170,
@@ -156,4 +180,5 @@ console.log(JSON.stringify({
   deterministic: true,
   layer6AliasSemantics: true,
   profileStatusSemantics: true,
+  profileAuthorshipRankSemantics: true,
 }, null, 2));

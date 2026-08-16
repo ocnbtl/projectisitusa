@@ -553,16 +553,34 @@ export function parseNrcsDistributionCsv(bytes: Buffer, mapping: NrcsTaxonMappin
 }
 
 function extractScientificName(value: string) {
-  const plain = normalizedText(value)
-    .replace(/<[^>]+>/gu, " ")
+  const decoded = normalizedText(value)
     .replace(/&nbsp;/giu, " ")
     .replace(/&amp;/giu, "&")
     .replace(/&times;/giu, "x");
+  const italicMatches = [...decoded.matchAll(/<i>([^<]+)<\/i>/giu)];
+  if (italicMatches.length > 0) {
+    const headTokens = normalizedText(italicMatches[0]![1]!).split(" ").filter(Boolean);
+    assert(headTokens.length >= 2, `NRCS profile scientific name is invalid: ${value}.`);
+    const result = [headTokens[0]!, headTokens[1]!];
+    const headEnd = italicMatches[0]!.index + italicMatches[0]![0].length;
+    const ranked = decoded.slice(headEnd).match(/\b(subsp\.|ssp\.|var\.|f\.|forma)\s*<i>([^<]+)<\/i>/iu);
+    if (ranked) {
+      const rank = ranked[1]!.toLowerCase().replace(/^ssp\.$/u, "subsp.");
+      const epithet = normalizedText(ranked[2]!).split(" ").filter(Boolean)[0];
+      assert(epithet, `NRCS profile scientific name is invalid: ${value}.`);
+      result.push(rank, epithet);
+    }
+    return result.join(" ");
+  }
+  const plain = decoded
+    .replace(/<[^>]+>/gu, " ")
+    .replace(/\([^)]*\)/gu, " ");
   const tokens = normalizedText(plain).replace(/[(),]/gu, " ").split(" ").filter(Boolean);
   assert(tokens.length >= 2, `NRCS profile scientific name is invalid: ${value}.`);
   const result = [tokens[0]!, tokens[1]!];
-  const rankIndex = tokens.findIndex((token) => ["subsp.", "ssp.", "var.", "f.", "forma"].includes(token.toLowerCase()));
-  if (rankIndex >= 0 && tokens[rankIndex + 1]) result.push(tokens[rankIndex]!.toLowerCase().replace(/^ssp\.$/u, "subsp."), tokens[rankIndex + 1]!);
+  if (tokens[2] && ["subsp.", "ssp.", "var.", "f.", "forma"].includes(tokens[2].toLowerCase()) && tokens[3]) {
+    result.push(tokens[2].toLowerCase().replace(/^ssp\.$/u, "subsp."), tokens[3]);
+  }
   return result.join(" ");
 }
 
