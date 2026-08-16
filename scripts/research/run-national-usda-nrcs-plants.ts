@@ -296,9 +296,16 @@ function gitHead() {
   return execFileSync("git", ["rev-parse", "HEAD"], { cwd: ROOT, encoding: "utf8" }).trim();
 }
 
-function assertGitClean() {
+function assertGitClean(allowedUntrackedDirectories: string[] = []) {
   const status = execFileSync("git", ["status", "--porcelain"], { cwd: ROOT, encoding: "utf8" });
-  assert(status.trim().length === 0, "NRCS acquisition requires a clean canonical worktree.");
+  const lines = status.split(/\r?\n/u).filter(Boolean);
+  const allowed = allowedUntrackedDirectories.map((directory) => `${directory.replace(/\\/gu, "/").replace(/\/$/u, "")}/`);
+  const unexpected = lines.filter((line) => {
+    if (!line.startsWith("?? ")) return true;
+    const filepath = line.slice(3).replace(/\\/gu, "/");
+    return !allowed.some((directory) => filepath === directory.slice(0, -1) || filepath.startsWith(directory));
+  });
+  assert(unexpected.length === 0, `NRCS acquisition requires a clean canonical worktree; unexpected status: ${unexpected.join(", ")}.`);
 }
 
 function inputSnapshot(files: string[]) {
@@ -1300,7 +1307,7 @@ async function main() {
       return;
     }
 
-    assertGitClean();
+    assertGitClean(existsSync(acquisitionDirectory) ? [relativeGitPath(ROOT, acquisitionDirectory)] : []);
     assertCommittedInputs(codeCommit, inputHashes);
     assert(options.telemetryPath && !existsSync(options.telemetryPath), "NRCS attempt telemetry already exists.");
     const sourceRegistryPath = path.join(RESEARCH_ROOT, "source-registry.json");
