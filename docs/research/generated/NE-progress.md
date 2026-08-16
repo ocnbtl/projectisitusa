@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `373`
+- Verified present: `513`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9113`
-- Not researched: `223386`
-- Determination coverage: `0.16%`
-- Research coverage: `4.07%`
-- Explicit outcome coverage: `4.0735%`
-- Applicable protocol cells: `98`
+- Researched unresolved: `12693`
+- Not researched: `219666`
+- Determination coverage: `0.22%`
+- Research coverage: `5.67%`
+- Explicit outcome coverage: `5.6709%`
+- Applicable protocol cells: `109`
 - Current complete protocol cells: `72`
-- Protocol completion: `86.73%`
-- Current protocol completion: `73.47%`
-- Evidence records: `869`
-- Research runs: `10`
+- Protocol completion: `77.98%`
+- Current protocol completion: `66.06%`
+- Evidence records: `1009`
+- Research runs: `11`
 - Rejection records: `203`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,20 +43,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 93 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 93 | 2 |
 | Punktree (`melaleuca-quinquenervia`) | plants | 0 | 93 | 1 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 93 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 93 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 93 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 93 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 93 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 93 | 0 |
+| Redtop (`agrostis-gigantea`) | plants | 0 | 93 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 93 | 0 |
+| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 93 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 93 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 93 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 93 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 93 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 93 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 93 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 93 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 93 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 93 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 93 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 93 | 0 |
-| Common Barberry (`berberis-vulgaris`) | plants | 0 | 93 | 0 |
+| Purple amaranth (`amaranthus-blitum`) | plants | 0 | 93 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 93 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 56 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 140 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-04T01:49:06.385Z | 232 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

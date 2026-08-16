@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `115`
+- Verified present: `161`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3275`
-- Not researched: `71730`
-- Determination coverage: `0.15%`
-- Research coverage: `4.51%`
-- Explicit outcome coverage: `4.5128%`
-- Applicable protocol cells: `115`
+- Researched unresolved: `4429`
+- Not researched: `70530`
+- Determination coverage: `0.21%`
+- Research coverage: `6.11%`
+- Explicit outcome coverage: `6.1102%`
+- Applicable protocol cells: `123`
 - Current complete protocol cells: `101`
-- Protocol completion: `87.83%`
-- Current protocol completion: `87.83%`
-- Evidence records: `234`
-- Research runs: `14`
+- Protocol completion: `82.11%`
+- Current protocol completion: `82.11%`
+- Evidence records: `280`
+- Research runs: `15`
 - Rejection records: `2091`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,7 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Shepherd's Purse (`capsella-bursa-pastoris`) | plants | 30 | 0 | 0 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 30 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 30 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 30 | 1 |
@@ -45,18 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 30 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 30 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 30 | 1 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 30 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 30 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 30 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 30 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 30 | 0 |
+| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 30 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 30 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 30 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 30 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 30 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 30 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 30 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 30 | 0 |
-| Wild oat (`avena-fatua`) | plants | 0 | 30 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 30 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 30 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 30 | 0 |
-| Smooth Brome (`bromus-inermis`) | plants | 0 | 30 | 0 |
+| Prostrate pigweed (`amaranthus-albus`) | plants | 0 | 30 | 0 |
+| Purple amaranth (`amaranthus-blitum`) | plants | 0 | 30 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 30 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 30 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 21 | 34 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 46 | 40 |
 | GBIF preserved specimen records | operational | 2026-07-31T21:36:12.944Z | 85 | 79 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

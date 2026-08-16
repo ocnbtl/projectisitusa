@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `723`
+- Verified present: `1080`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4015`
-- Not researched: `110446`
-- Determination coverage: `0.63%`
-- Research coverage: `4.11%`
-- Explicit outcome coverage: `4.1134%`
-- Applicable protocol cells: `113`
+- Researched unresolved: `5498`
+- Not researched: `108606`
+- Determination coverage: `0.94%`
+- Research coverage: `5.71%`
+- Explicit outcome coverage: `5.7109%`
+- Applicable protocol cells: `138`
 - Current complete protocol cells: `55`
-- Protocol completion: `60.18%`
-- Current protocol completion: `48.67%`
-- Evidence records: `836`
-- Research runs: `14`
+- Protocol completion: `49.28%`
+- Current protocol completion: `39.86%`
+- Evidence records: `1193`
+- Research runs: `15`
 - Rejection records: `23`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -35,28 +35,28 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 46 | 2 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 46 | 2 |
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 46 | 1 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 46 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 46 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 46 | 0 |
+| Redtop (`agrostis-gigantea`) | plants | 0 | 46 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 46 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 46 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 46 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 46 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 46 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 46 | 0 |
+| Sweet sagewort (`artemisia-annua`) | plants | 0 | 46 | 0 |
 | Giant Reed (`arundo-donax`) | plants | 0 | 46 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 46 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 46 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 46 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 46 | 0 |
+| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 46 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 46 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 46 | 0 |
-| Camphortree (`cinnamomum-camphora`) | plants | 0 | 46 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 46 | 0 |
-| Box Tree Moth (`cydalima-perspectalis`) | insects | 0 | 46 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 46 | 0 |
-| Sweet orange scab (`elsinoe-australis`) | fungi-diseases | 0 | 46 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 46 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 46 | 0 |
-| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 46 | 0 |
-| Wintercreeper (`euonymus-fortunei`) | plants | 0 | 46 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 46 | 0 |
-| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 46 | 0 |
+| Field mustard (`brassica-rapa`) | plants | 0 | 46 | 0 |
+| Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 46 | 0 |
+| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 46 | 0 |
+| Marijuana (`cannabis-sativa`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 467 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 357 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:04:30.250Z | 28 | 33 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

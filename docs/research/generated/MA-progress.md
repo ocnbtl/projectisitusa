@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `238`
+- Verified present: `483`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1176`
-- Not researched: `33642`
-- Determination coverage: `0.68%`
-- Research coverage: `4.03%`
-- Explicit outcome coverage: `4.0335%`
-- Applicable protocol cells: `109`
+- Researched unresolved: `1491`
+- Not researched: `33082`
+- Determination coverage: `1.38%`
+- Research coverage: `5.63%`
+- Explicit outcome coverage: `5.6310%`
+- Applicable protocol cells: `135`
 - Current complete protocol cells: `56`
-- Protocol completion: `63.30%`
-- Current protocol completion: `51.38%`
-- Evidence records: `246`
-- Research runs: `18`
+- Protocol completion: `51.11%`
+- Current protocol completion: `41.48%`
+- Evidence records: `491`
+- Research runs: `19`
 - Rejection records: `27`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,25 +38,25 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 14 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 14 | 2 |
 | Punktree (`melaleuca-quinquenervia`) | plants | 0 | 14 | 1 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 14 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 14 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 14 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 14 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 14 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 14 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 14 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 14 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 14 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 14 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 14 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 14 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 14 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 14 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 14 | 0 |
-| Canada Thistle (`cirsium-arvense`) | plants | 0 | 14 | 0 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 0 | 14 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 14 | 0 |
-| Asian citrus psyllid (`diaphorina-citri`) | insects | 0 | 14 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 14 | 0 |
-| Sweet orange scab (`elsinoe-australis`) | fungi-diseases | 0 | 14 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 14 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 14 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 14 | 0 |
+| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 14 | 0 |
+| Hairy beggarticks (`bidens-pilosa`) | plants | 0 | 14 | 0 |
+| Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 14 | 0 |
+| Little quakinggrass (`briza-minor`) | plants | 0 | 14 | 0 |
+| Rescuegrass (`bromus-catharticus`) | plants | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 84 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 245 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-09T21:14:35.056Z | 6 | 34 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

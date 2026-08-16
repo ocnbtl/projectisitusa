@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `88`
 - County-species pairs: `220352`
-- Verified present: `1737`
+- Verified present: `2422`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `8647`
-- Not researched: `209968`
-- Determination coverage: `0.79%`
-- Research coverage: `4.71%`
-- Explicit outcome coverage: `4.7125%`
-- Applicable protocol cells: `134`
+- Researched unresolved: `11482`
+- Not researched: `206448`
+- Determination coverage: `1.10%`
+- Research coverage: `6.31%`
+- Explicit outcome coverage: `6.3099%`
+- Applicable protocol cells: `156`
 - Current complete protocol cells: `115`
-- Protocol completion: `95.52%`
-- Current protocol completion: `85.82%`
-- Evidence records: `2873`
-- Research runs: `12`
+- Protocol completion: `82.05%`
+- Current protocol completion: `73.72%`
+- Evidence records: `3558`
+- Research runs: `13`
 - Rejection records: `2281`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,27 +36,27 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 88 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 88 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 88 | 1 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 88 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 88 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 88 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 88 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 88 | 0 |
+| Redtop (`agrostis-gigantea`) | plants | 0 | 88 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 88 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 88 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 88 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 88 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 88 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 88 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 88 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 88 | 0 |
+| Common oat (`avena-sativa`) | plants | 0 | 88 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 88 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 88 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 88 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 88 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 88 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 88 | 0 |
-| Asian citrus psyllid (`diaphorina-citri`) | insects | 0 | 88 | 0 |
-| Brazilian Waterweed (`egeria-densa`) | plants | 0 | 88 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 88 | 0 |
-| Sweet orange scab (`elsinoe-australis`) | fungi-diseases | 0 | 88 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 88 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 88 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 88 | 0 |
-| Pale cyst nematode (`globodera-pallida`) | wildlife | 0 | 88 | 0 |
-| Yellow potato cyst nematode (`globodera-rostochiensis`) | wildlife | 0 | 88 | 0 |
+| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 88 | 0 |
+| Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 88 | 0 |
+| Little quakinggrass (`briza-minor`) | plants | 0 | 88 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 641 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 685 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-02T21:08:07.505Z | 588 | 94 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

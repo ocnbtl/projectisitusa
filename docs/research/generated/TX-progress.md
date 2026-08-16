@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `1893`
+- Verified present: `2622`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `24777`
-- Not researched: `609346`
-- Determination coverage: `0.30%`
-- Research coverage: `4.19%`
-- Explicit outcome coverage: `4.1933%`
-- Applicable protocol cells: `111`
+- Researched unresolved: `34208`
+- Not researched: `599186`
+- Determination coverage: `0.41%`
+- Research coverage: `5.79%`
+- Explicit outcome coverage: `5.7907%`
+- Applicable protocol cells: `139`
 - Current complete protocol cells: `90`
-- Protocol completion: `92.79%`
-- Current protocol completion: `81.08%`
-- Evidence records: `4090`
-- Research runs: `12`
+- Protocol completion: `74.10%`
+- Current protocol completion: `64.75%`
+- Evidence records: `4819`
+- Research runs: `13`
 - Rejection records: `510`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,25 +38,25 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 254 | 1 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 254 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 254 | 1 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 254 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 254 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 254 | 0 |
+| Redtop (`agrostis-gigantea`) | plants | 0 | 254 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 254 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 254 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 254 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 254 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 254 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 254 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 254 | 0 |
+| Sweet sagewort (`artemisia-annua`) | plants | 0 | 254 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 254 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 254 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 254 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 254 | 0 |
+| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 254 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 254 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 254 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 254 | 0 |
-| Box Tree Moth (`cydalima-perspectalis`) | insects | 0 | 254 | 0 |
-| Japanese netvein hollyfern (`cyrtomium-falcatum`) | plants | 0 | 254 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 254 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 254 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 254 | 0 |
-| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 254 | 0 |
+| Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 445 | 37 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 729 | 40 |
 | GBIF preserved specimen records | operational | 2026-07-31T12:41:57.355Z | 763 | 68 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

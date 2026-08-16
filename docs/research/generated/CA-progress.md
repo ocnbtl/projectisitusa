@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `1942`
+- Verified present: `2547`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7222`
-- Not researched: `136068`
-- Determination coverage: `1.34%`
-- Research coverage: `6.31%`
-- Explicit outcome coverage: `6.3099%`
-- Applicable protocol cells: `172`
+- Researched unresolved: `8937`
+- Not researched: `133748`
+- Determination coverage: `1.75%`
+- Research coverage: `7.91%`
+- Explicit outcome coverage: `7.9073%`
+- Applicable protocol cells: `200`
 - Current complete protocol cells: `151`
-- Protocol completion: `95.35%`
-- Current protocol completion: `87.79%`
-- Evidence records: `24492`
-- Research runs: `11`
+- Protocol completion: `82.00%`
+- Current protocol completion: `75.50%`
+- Evidence records: `25097`
+- Research runs: `12`
 - Rejection records: `2448`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,25 +38,25 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 58 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 58 | 1 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 58 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 58 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 58 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 58 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 58 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 58 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 58 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 58 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 58 | 0 |
+| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 58 | 0 |
 | Cheatgrass (`bromus-tectorum`) | plants | 0 | 58 | 0 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 0 | 58 | 0 |
+| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 58 | 0 |
 | Curly plumeless thistle (`carduus-crispus`) | plants | 0 | 58 | 0 |
+| European chestnut (`castanea-sativa`) | plants | 0 | 58 | 0 |
+| Feather cockscomb (`celosia-argentea`) | plants | 0 | 58 | 0 |
 | Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 58 | 0 |
+| Dwarf snapdragon (`chaenorhinum-minus`) | plants | 0 | 58 | 0 |
 | Orange cotoneaster (`cotoneaster-franchetii`) | plants | 0 | 58 | 0 |
-| Silverleaf cotoneaster (`cotoneaster-pannosus`) | plants | 0 | 58 | 0 |
-| Box Tree Moth (`cydalima-perspectalis`) | insects | 0 | 58 | 0 |
-| Common Houndstongue (`cynoglossum-officinale`) | plants | 0 | 58 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 58 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 58 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 58 | 0 |
-| Pale cyst nematode (`globodera-pallida`) | wildlife | 0 | 58 | 0 |
-| Yellow potato cyst nematode (`globodera-rostochiensis`) | wildlife | 0 | 58 | 0 |
-| English Ivy (`hedera-helix`) | plants | 0 | 58 | 0 |
-| Atlantic ivy (`hedera-hibernica`) | plants | 0 | 58 | 0 |
-| Giant Hogweed (`giant-hogweed`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 51 | 34 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 605 | 40 |
 | GBIF preserved specimen records | operational | 2026-07-31T21:39:59.698Z | 1775 | 129 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

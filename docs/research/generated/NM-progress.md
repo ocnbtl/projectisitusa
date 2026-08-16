@@ -7,21 +7,21 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `55`
+- Verified present: `147`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4301`
-- Not researched: `78276`
-- Determination coverage: `0.07%`
-- Research coverage: `5.27%`
-- Explicit outcome coverage: `5.2716%`
-- Applicable protocol cells: `91`
+- Researched unresolved: `5529`
+- Not researched: `76956`
+- Determination coverage: `0.18%`
+- Research coverage: `6.87%`
+- Explicit outcome coverage: `6.8690%`
+- Applicable protocol cells: `105`
 - Current complete protocol cells: `49`
-- Protocol completion: `68.13%`
-- Current protocol completion: `53.85%`
-- Evidence records: `55`
-- Research runs: `11`
-- Rejection records: `19`
+- Protocol completion: `59.05%`
+- Current protocol completion: `46.67%`
+- Evidence records: `147`
+- Research runs: `12`
+- Rejection records: `26`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Giant Hogweed (`giant-hogweed`) | plants | 0 | 33 | 1 |
 | Hydrilla (`hydrilla`) | plants | 0 | 33 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 33 | 1 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 33 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 33 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 33 | 0 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 33 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 33 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 33 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 33 | 0 |
+| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 33 | 0 |
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 33 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 33 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 33 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 33 | 0 |
-| Common Burdock (`arctium-minus`) | plants | 0 | 33 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 33 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 70 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 92 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:26:39.692Z | 2 | 30 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

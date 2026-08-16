@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `1319`
+- Verified present: `1644`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4999`
-- Not researched: `91338`
-- Determination coverage: `1.35%`
-- Research coverage: `6.47%`
-- Explicit outcome coverage: `6.4696%`
-- Applicable protocol cells: `180`
+- Researched unresolved: `6234`
+- Not researched: `89778`
+- Determination coverage: `1.68%`
+- Research coverage: `8.07%`
+- Explicit outcome coverage: `8.0671%`
+- Applicable protocol cells: `203`
 - Current complete protocol cells: `167`
-- Protocol completion: `100.00%`
-- Current protocol completion: `92.78%`
-- Evidence records: `6204`
-- Research runs: `18`
+- Protocol completion: `88.67%`
+- Current protocol completion: `82.27%`
+- Evidence records: `6529`
+- Research runs: `19`
 - Rejection records: `1251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -50,13 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 39 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 39 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 39 | 1 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 39 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 39 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 39 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 39 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 39 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 39 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 39 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 39 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 39 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 39 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 39 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 39 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 325 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-09T00:14:38.878Z | 1245 | 145 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

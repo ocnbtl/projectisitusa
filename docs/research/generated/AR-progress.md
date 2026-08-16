@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `1472`
+- Verified present: `1926`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7228`
-- Not researched: `179100`
-- Determination coverage: `0.78%`
-- Research coverage: `4.63%`
-- Explicit outcome coverage: `4.6326%`
-- Applicable protocol cells: `119`
+- Researched unresolved: `9774`
+- Not researched: `176100`
+- Determination coverage: `1.03%`
+- Research coverage: `6.23%`
+- Explicit outcome coverage: `6.2300%`
+- Applicable protocol cells: `143`
 - Current complete protocol cells: `103`
-- Protocol completion: `97.48%`
-- Current protocol completion: `86.55%`
-- Evidence records: `4148`
-- Research runs: `15`
+- Protocol completion: `81.12%`
+- Current protocol completion: `72.03%`
+- Evidence records: `4602`
+- Research runs: `16`
 - Rejection records: `464`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -39,24 +39,24 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 75 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 75 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 75 | 1 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 75 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 75 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 75 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 75 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 75 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 75 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 75 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 75 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 75 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 75 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 75 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 75 | 0 |
 | Giant Reed (`arundo-donax`) | plants | 0 | 75 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 75 | 0 |
+| Spear saltbush (`atriplex-patula`) | plants | 0 | 75 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 75 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 75 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 75 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 75 | 0 |
-| Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 75 | 0 |
-| Oriental Bittersweet (`celastrus-orbiculatus`) | plants | 0 | 75 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 75 | 0 |
-| Camphortree (`cinnamomum-camphora`) | plants | 0 | 75 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 75 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 75 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 493 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 454 | 40 |
 | GBIF preserved specimen records | operational | 2026-07-31T12:52:27.880Z | 1027 | 81 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

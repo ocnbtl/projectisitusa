@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `112`
+- Verified present: `181`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `433`
-- Not researched: `11975`
-- Determination coverage: `0.89%`
-- Research coverage: `4.35%`
-- Explicit outcome coverage: `4.3530%`
-- Applicable protocol cells: `127`
+- Researched unresolved: `564`
+- Not researched: `11775`
+- Determination coverage: `1.45%`
+- Research coverage: `5.95%`
+- Explicit outcome coverage: `5.9505%`
+- Applicable protocol cells: `148`
 - Current complete protocol cells: `75`
-- Protocol completion: `69.29%`
-- Current protocol completion: `59.06%`
-- Evidence records: `236`
-- Research runs: `13`
+- Protocol completion: `59.46%`
+- Current protocol completion: `50.68%`
+- Evidence records: `305`
+- Research runs: `14`
 - Rejection records: `1045`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -47,16 +47,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 5 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 5 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 2 |
+| Redtop (`agrostis-gigantea`) | plants | 0 | 5 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 5 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 5 | 0 |
 | Crow Garlic (`allium-vineale`) | plants | 0 | 5 | 0 |
+| Prostrate pigweed (`amaranthus-albus`) | plants | 0 | 5 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 5 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 5 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 5 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 5 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 5 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 5 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 5 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 5 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 5 | 0 |
+| Mouseear cress (`arabidopsis-thaliana`) | plants | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 45 | 21 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 69 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-10T01:04:27.028Z | 37 | 53 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

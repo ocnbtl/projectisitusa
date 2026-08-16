@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-62-usda-nrcs-plants-national-20260815-r1",
+  "roundId": "usda-nrcs-plants-national-round62",
+  "evaluatedAt": "2026-08-16T01:02:33.261Z",
+  "result": "complete-local-gates-passed-pending-external-release",
+  "releaseThreshold": {
+    "met": true,
+    "milestones": ["A", "B"],
+    "basis": "The first acquire-once USDA NRCS PLANTS national tranche moved 123,140 unique county-species pairs across every national-v1 jurisdiction, exceeding the 100,000-pair stretch target. It also completed, retained, replayed, and exhausted the selected 40-taxon provider-native CSV scope as one reusable national source acquisition."
+  },
+  "baseline": {
+    "commit": "7c9092eccc781d94261232a01bcc1ee8a3d7579e",
+    "asOf": "2026-08-15",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 5149,
+        "notApplicable": 0,
+        "unknown": 122555,
+        "blocked": 0,
+        "fullyAccounted": 7385,
+        "partiallyAccounted": 1,
+        "untouchedByCountyResearch": 120318,
+        "researchedUnresolved": 2263,
+        "researchedBlocked": 54,
+        "notResearched": 120238
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 59343,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 397441,
+        "notResearched": 7415784
+      },
+      "protocolCells": {
+        "total": 48208,
+        "applicable": 20314,
+        "notApplicable": 27894,
+        "complete": 6022,
+        "incomplete": 14233,
+        "blocked": 59,
+        "current": 5411,
+        "stale": 611,
+        "undated": 14292,
+        "regulatedAndHighPriorityCurrentComplete": 2365,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "bootstrapEvidence": 30130,
+        "runEvidenceAssertions": 162840,
+        "reviewEvents": 162840,
+        "acceptedEvidenceTotal": 192970,
+        "rejections": 44052,
+        "researchOutcomes": 521478,
+        "immutableRuns": 690,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "certificationBlockerEntries": 244,
+      "remainingApplicableProtocolCountyScreens": 928915
+    }
+  },
+  "previousThreeRounds": [
+    {
+      "roundId": "gbif-round59",
+      "sourceShape": "state-taxon GBIF calls",
+      "grossOutcomes": 119,
+      "netUniquePairs": 109,
+      "providerAttempts": 26,
+      "netPairsPerObservedSpanHour": 72.7739
+    },
+    {
+      "roundId": "gbif-round60",
+      "sourceShape": "state-taxon GBIF calls",
+      "grossOutcomes": 461,
+      "netUniquePairs": 20,
+      "providerAttempts": 20,
+      "overlap": 441,
+      "netPairsPerObservedSpanHour": 73.10706
+    },
+    {
+      "roundId": "aphis-federal-quarantine-national-round61",
+      "sourceShape": "acquire-once national APHIS snapshot",
+      "grossOutcomes": 53448,
+      "netUniquePairs": 52711,
+      "successfulEvidenceRequests": 6,
+      "overlap": 737
+    }
+  ],
+  "portfolioChange": "After state-taxon GBIF net movement declined from 109 to 20 and overlap reached 441 of 461 outcomes, MAIN changed the acquisition unit to acquire-once national sources. Round 61 moved 52,711 through APHIS; Round 62 moved 123,140 through a new taxon-bounded USDA PLANTS national actor.",
+  "planned": {
+    "actor": "usda-nrcs-plants-national-acquisition@1.0.2",
+    "source": "usda-nrcs-plants",
+    "planId": "usda-nrcs-plants-national-v1-tranche-01",
+    "planSha256": "439f26ae175a52ee69f9404078e4c4754b6a794243e70053995132aad75aec44",
+    "states": 51,
+    "taxa": 40,
+    "activeCounties": 3144,
+    "orderedPairs": 125760,
+    "expectedNetNewPairs": 123140,
+    "expectedAlreadyAccountedOverlap": 2620,
+    "expectedProviderRequests": 85,
+    "acquireOnce": true,
+    "statePartitioning": "deterministic-local-no-network"
+  },
+  "recoveryAudit": {
+    "matchingCompleteAcquisitionsBeforeRun": 0,
+    "matchingPartialAcquisitionsBeforeRun": 0,
+    "reusedProviderEvidenceArtifacts": 0,
+    "reusedTaxonomyMappings": 324,
+    "rejectedDesign": "MapServer layer-6 country_subdivision_id was proven not to join layer-2 plant_location_id or StateSearch county identifiers. Geometry and coordinate assignment remained prohibited.",
+    "safeProviderContract": "Each selected taxon used the official profile GET plus the official distribution CSV POST. Only United States CSV rows with exact state FIPS, county FIPS, active registry resolution, and matching state/county names could publish.",
+    "retainedProgressResume": "The actor retained hash-verified completed request artifacts across code corrections and replayed partitioning locally; it did not reacquire completed provider responses.",
+    "providerReacquisitionAfterRetention": 0
+  },
+  "semanticPreflight": {
+    "status": "pass",
+    "networkRequestsIssued": 0,
+    "durableStandalonePreflightArtifact": false,
+    "qualification": "The no-network semantic dry-run was validated against the committed plan and current matrix before acquisition, but its output was not retained as a separate preflight JSON. The committed plan, acquisition receipt, deterministic parameter hash, and replay gates are durable.",
+    "baseSha": "05aad75e26c661e522e9b03c22c361b76a4f1273",
+    "receiptCodeCommit": "b2ebe7140ead5a16fbdc4e26fe8f56759964c91e",
+    "orderedPairCount": 125760,
+    "expectedNetNewPairCount": 123140,
+    "candidateLimitMeaning": "The actor screens the full Cartesian product of 40 selected taxa and 3,144 active county equivalents; no count is treated as a taxon-only pair limit.",
+    "deterministicAcquisitionPath": "src/data/research/national-acquisitions/20260815t235000z__usda-nrcs-plants__c960c4266f03",
+    "parameterHash": "c960c4266f0309aa8c02f461e16e2c1b4cafa22e4f48e7ac35b288247addc5cd",
+    "dependencyResolution": "pass",
+    "writableStaging": "pass",
+    "resourceFloor": "pass",
+    "retryPolicy": {
+      "maximumAttempts": 3,
+      "resumeRequired": true,
+      "missingRequestOnly": true
+    }
+  },
+  "execution": {
+    "mainOwnedNationalActor": true,
+    "providerLanes": 1,
+    "localPartitionWorkers": 1,
+    "successfulAcquisitions": 1,
+    "statePartitions": 51,
+    "statePartitionRuns": 51,
+    "statePartitionRunFiles": 306,
+    "statePartitionReferenceArtifacts": 51,
+    "stateRunAndReferenceFiles": 357,
+    "statePartitionRunBytes": 164524944,
+    "stateRunAndReferenceBytes": 166238508,
+    "integrationCommits": 0,
+    "workerJobs": 0,
+    "workerLeases": 0,
+    "qualification": "The national actor, shared schemas, replay validation, and all 51 partitions were MAIN-owned. Existing registries remained closed with no active job, lease, or pending integration; no worker integration was required."
+  },
+  "acquisition": {
+    "acquisitionId": "20260815t235000z__usda-nrcs-plants__c960c4266f03",
+    "receiptSha256": "01686ab3db49be29fb076cef464b133cd4efbb49394b5e513569bfa58a0aa290",
+    "receiptStartedAt": "2026-08-15T23:50:00.000Z",
+    "receiptFinishedAt": "2026-08-15T23:58:51.277Z",
+    "receiptWindowSeconds": 531.277,
+    "successfulEvidenceRequests": 85,
+    "distributionResponses": 40,
+    "profileResponses": 40,
+    "contractSnapshots": 3,
+    "aggregateSnapshots": 2,
+    "allProductionProviderContacts": 87,
+    "unretainedProductionDiagnosticContacts": 2,
+    "discoveryProviderContacts": 127,
+    "discoveryUsableResponses": 116,
+    "discoveryFailuresOrTimeouts": 11,
+    "discoveryRetainedArtifacts": 0,
+    "discoveryRetainedBytes": 0,
+    "discoveryWireBytes": null,
+    "providerRows": 18212,
+    "unitedStatesCountyRows": 16781,
+    "unitedStatesStateOnlyRows": 1243,
+    "foreignRows": 188,
+    "artifacts": 85,
+    "artifactBytes": 1570411,
+    "nationalAcquisitionFiles": 87,
+    "nationalAcquisitionBytes": 1670861,
+    "providerRetries": 0,
+    "providerFailures": 0,
+    "telemetry": {
+      "path": "ops/national-research/attempt-telemetry/usda-nrcs-plants-national-20260815.json",
+      "status": "complete",
+      "wallSeconds": 11.83,
+      "peakRssMb": 758.594,
+      "providerAttempts": 85,
+      "completedResponses": 85,
+      "failedAttempts": 0,
+      "retries": 0,
+      "manualInterventions": 0
+    },
+    "providerSnapshotContradictions": [
+      "The live service exposes neither historic-moment support nor CSV ETag or Last-Modified validators.",
+      "Provider metadata describes a live public service while also reporting Publication20181011 and Revision20180914.",
+      "No dataset-specific machine-readable license was exposed; official USDA NRCS attribution, exact URLs, hashes, and bytes are retained.",
+      "MapServer layer-6 aliases establishment text as Symbol and its numeric establishment code as plant_nativity_id; neither field is the plant symbol."
+    ],
+    "reuse": {
+      "singleNationalAcquisitionReusedAcrossJurisdictions": 51,
+      "distributionResponsesReusedAcrossStatePartitions": 2040,
+      "naiveStateTaxonRequestFamiliesPrevented": 2040,
+      "localPartitionProviderRequests": 0,
+      "qualification": "Forty retained national CSVs were normalized once and partitioned across 51 jurisdictions. Prevented request counts describe topology, not extra evidence or matrix movement."
+    },
+    "economics": {
+      "netPairsPerRetainedEvidenceRequest": 1448.705882,
+      "netPairsPerAllProductionProviderContact": 1415.402299,
+      "netPairsPerSuccessfulDistributionResponse": 3078.5,
+      "netPairsPerPartitionReplayWorkerHour": 37472865.596,
+      "netPairsPerReceiptWindowHour": 834412.18,
+      "netPairsPerLocalEndToEndHourThroughEvaluation": 96454.455,
+      "candidateAcceptancePercent": 99.564335,
+      "positivePairYieldPercent": 13.265744,
+      "netPairEfficiencyPercent": 97.916667
+    }
+  },
+  "grossEventVolume": {
+    "pairOutcomes": 125760,
+    "evidenceFoundOutcomes": 16683,
+    "noQualifyingEvidenceOutcomes": 109077,
+    "candidates": 16756,
+    "assertions": 16683,
+    "acceptedReviews": 16683,
+    "rejections": 73,
+    "errors": 0,
+    "duplicates": 0,
+    "eventRecords": 159199,
+    "eventBytes": 151431240,
+    "alreadyAccountedOutcomes": 2620,
+    "qualification": "Gross event volume is not final-matrix movement. The 125,760 complete outcomes include 1,759 pairs already researched-unresolved and 861 already verified-present, leaving 123,140 unique pairs that moved out of not researched."
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 123140,
+    "notResearchedToResearchedUnresolved": 106661,
+    "notResearchedToVerifiedPresent": 16479,
+    "researchedUnresolvedToVerifiedPresent": 0,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "notResearched": -123140,
+    "conflicts": 0,
+    "unchangedOverlap": {
+      "researchedUnresolvedToResearchedUnresolved": 1759,
+      "verifiedPresentToVerifiedPresent": 861,
+      "total": 2620
+    },
+    "applicability": {
+      "applicable": 972,
+      "notApplicable": 0,
+      "unknown": -972,
+      "blocked": 0,
+      "qualification": "Accepted county presence derived 972 state-species applicability decisions. Source silence did not create not-applicable decisions."
+    },
+    "denominator": {
+      "stateSpecies": 0,
+      "countySpecies": 0
+    },
+    "statesMoved": 51,
+    "largestStateMovements": [
+      { "stateCode": "TX", "uniquePairs": 10160, "verifiedPresent": 729, "researchedUnresolved": 9431 },
+      { "stateCode": "GA", "uniquePairs": 6360, "verifiedPresent": 208, "researchedUnresolved": 6152 },
+      { "stateCode": "VA", "uniquePairs": 5320, "verifiedPresent": 1182, "researchedUnresolved": 4138 },
+      { "stateCode": "KY", "uniquePairs": 4800, "verifiedPresent": 603, "researchedUnresolved": 4197 },
+      { "stateCode": "MO", "uniquePairs": 4600, "verifiedPresent": 692, "researchedUnresolved": 3908 }
+    ]
+  },
+  "final": {
+    "asOf": "2026-08-15",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 6121,
+        "notApplicable": 0,
+        "unknown": 121583,
+        "blocked": 0,
+        "fullyAccounted": 9385,
+        "partiallyAccounted": 0,
+        "untouchedByCountyResearch": 118319,
+        "researchedUnresolved": 3291,
+        "researchedBlocked": 53,
+        "notResearched": 118239
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 75822,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 504102,
+        "notResearched": 7292644
+      },
+      "protocolCells": {
+        "total": 56204,
+        "applicable": 21286,
+        "notApplicable": 34918,
+        "complete": 6062,
+        "incomplete": 15165,
+        "blocked": 59,
+        "current": 5451,
+        "stale": 611,
+        "undated": 15224,
+        "regulatedAndHighPriorityCurrentComplete": 2365,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "ledger": {
+        "bootstrapEvidence": 30130,
+        "runEvidenceAssertions": 179523,
+        "reviewEvents": 179523,
+        "acceptedEvidenceTotal": 209653,
+        "rejections": 44125,
+        "researchOutcomes": 647238,
+        "immutableRuns": 741,
+        "pairStatuses": 637568,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "certificationBlockerEntries": 276,
+      "remainingApplicableProtocolCountyScreens": 991827
+    }
+  },
+  "protocolAndCertificationMovement": {
+    "selectedSourceSpeciesCellsCompleted": 40,
+    "complete": 40,
+    "current": 40,
+    "totalProtocolScope": 7996,
+    "applicableProtocolScope": 972,
+    "notApplicableProtocolScope": 7024,
+    "incomplete": 932,
+    "undated": 932,
+    "blocked": 0,
+    "stale": 0,
+    "regulatedAndHighPriorityCurrentComplete": 0,
+    "certificationBlockersRemoved": 0,
+    "certificationBlockersAdded": 32,
+    "blockerCategoryMovement": {
+      "authoritativeCertificationScope": 0,
+      "fullCatalogResearchAccounted": 0,
+      "baselineResearchCoverageCompleteOrBlocked": 0,
+      "applicableProtocolCellsAtLeast90": 28,
+      "regulatedAndHighPriorityComplete": 0,
+      "requiredCurrentSourceFamiliesProcessed": 4
+    },
+    "qualification": "The new source family expands protocol and applicability scope. Forty selected taxon screens are complete/current, but 932 newly applicable source interactions remain incomplete/undated. This honest scope expansion adds blockers even while 123,140 county pairs move."
+  },
+  "expectedVersusActual": {
+    "orderedPairs": { "expected": 125760, "actual": 125760 },
+    "netUniquePairs": { "expected": 123140, "actual": 123140 },
+    "alreadyAccountedOverlap": { "expected": 2620, "actual": 2620 },
+    "verifiedPresent": { "expectedRange": [0, 123140], "actual": 16479 },
+    "researchedUnresolved": { "expectedRange": [0, 123140], "actual": 106661 },
+    "successfulEvidenceRequests": { "expected": 85, "actual": 85 },
+    "distributionResponses": { "expected": 40, "actual": 40 },
+    "statePartitions": { "expected": 51, "actual": 51 },
+    "applicabilityMovement": { "expected": null, "actual": 972 },
+    "denominatorMovement": { "expected": 0, "actual": 0 },
+    "verifiedAbsentMovement": { "expected": 0, "actual": 0 },
+    "notDetectedMovement": { "expected": 0, "actual": 0 },
+    "conflictMovement": { "expected": 0, "actual": 0 }
+  },
+  "release": {
+    "generation": {
+      "asOf": "2026-08-15",
+      "prepareDataSeconds": null,
+      "allStateCompileSeconds": null,
+      "orchestrationDashboardSeconds": null,
+      "readinessDashboardSeconds": null,
+      "researchIndexSeconds": null,
+      "status": "pass",
+      "qualification": "The required ordered pipeline passed; individual generation stages were not wrapped by durable timers."
+    },
+    "gates": {
+      "allStateByteStability": { "status": "pass", "states": 51, "seconds": 973.186 },
+      "researchIndex": { "status": "pass", "seconds": null, "immutableRuns": 741, "pairStatuses": 637568 },
+      "researchIntegrity": { "status": "pass", "seconds": 453.692, "immutableRuns": 741, "nationalNrcsAcquisitions": 1, "nationalNrcsRecords": 18212, "nationalNrcsStateReferences": 51, "skillTests": 97, "criticalViolations": 0 },
+      "preCorrectionResearchIntegrity": { "status": "failed-structural-validator", "seconds": 372.763, "providerOrEvidenceFailure": false },
+      "dataIntegrity": { "status": "pass", "seconds": 0.58 },
+      "stateResearchProjections": { "status": "pass", "states": 51, "seconds": null },
+      "nationalResearchConfig": { "status": "pass", "seconds": null },
+      "geographyRegistry": { "status": "pass", "jurisdictions": 51, "counties": 3144 },
+      "denominatorIntegrity": { "status": "pass", "stateSpeciesDenominator": 127704, "countySpeciesDenominator": 7872576 },
+      "stateSpeciesResolution": { "status": "pass" },
+      "stateApplicabilitySources": { "status": "pass", "sourceSilenceCreatedDecision": false },
+      "nationalDiskBudget": { "status": "pass" },
+      "orchestrator": { "status": "pass", "jobs": 361, "leases": 364, "activeJobs": 0, "activeLeases": 0, "pendingIntegrations": 0 },
+      "frozenSkills": { "status": "pass", "tests": 97, "criticalViolations": 0 },
+      "typecheck": { "status": "pass", "seconds": 2.272 },
+      "lint": { "status": "pass", "seconds": 2.538 },
+      "whitespace": { "status": "pass", "rawArtifactQualification": "Exact retained provider CSV and JSON artifacts are excluded from text normalization and remain byte-exact." },
+      "prohibitedDashScan": { "status": "pass", "hits": 0 }
+    },
+    "build": { "status": "pass", "seconds": 25.426, "compileSeconds": 9.9, "nextVersion": "15.5.15", "staticPages": 2512 },
+    "browserQa": {
+      "local": {
+        "status": "pass",
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "stateRoutes": ["AK", "TX", "CA", "FL"],
+        "species": ["anthoxanthum-odoratum", "capsella-bursa-pastoris"],
+        "desktopRouteChecks": 7,
+        "mobileRouteChecks": 4,
+        "evidenceExpansionChecks": 2,
+        "horizontalViewportOverflow": false,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "screenshotsCaptured": 2,
+        "visuallyInspected": 2
+      },
+      "production": { "status": "pending-content-deployment" }
+    },
+    "knownSuccessfulGateAndBuildSeconds": 1457.694,
+    "correctivePreliminaryIntegritySeconds": 372.763,
+    "localEndToEndSecondsThroughEvaluation": 4595.993,
+    "acquisitionWindowPercentOfLocalElapsed": 11.559569,
+    "knownSuccessfulGateAndBuildPercentOfLocalElapsed": 31.716628,
+    "postDeploymentGate": { "status": "pending-content-deployment" },
+    "externalVerification": { "status": "pending-content-deployment" },
+    "resourceObservations": {
+      "minimumDocumentedFreePhysicalMiB": 11093.59,
+      "currentFreePhysicalMiB": 11574.492,
+      "currentCommitHeadroomMiB": 25429.445,
+      "currentPageFileUsageMiB": 174,
+      "minimumDocumentedFreeDiskMiB": 665082.496,
+      "peakActorRssMiB": 758.594,
+      "peakProviderConcurrency": 1
+    },
+    "mainProcessCorrections": [
+      "Rejected the false MapServer layer-6 to layer-2 county identifier join before publication and replaced it with exact provider CSV state/county FIPS and name validation.",
+      "Corrected the layer-6 alias model: Symbol is establishment text and plant_nativity_id is its numeric code.",
+      "Aligned profile status validation with the provider's I and Introduced representation without weakening exact accepted identity checks.",
+      "Corrected county replay FIPS/name validation and resumed only from retained hash-verified provider artifacts.",
+      "Updated the integrity validator to validate acquisition-runner lineage at the acquisition receipt commit and partition-runner lineage at each recovered state receipt commit."
+    ],
+    "qaToolingCorrections": [
+      "Resolved the desktop Search control with an exact searchbox role after an intentionally broad label locator matched six controls.",
+      "Used the responsive mobile evidence-card control instead of the desktop evidence-row control."
+    ],
+    "interventionQualification": "Telemetry manualInterventions is zero. Structural MAIN corrections and browser QA locator corrections are separate phases and are not summed into the acquisition field."
+  },
+  "processLesson": {
+    "lesson": "National reuse depends on adversarial provider-identity validation before yield math, complete request instrumentation, resumable immutable artifacts, and phase-correct code lineage. Acquisition code and recovered partition code may legitimately come from different commits and must each be validated at their own receipt boundary.",
+    "applied": "Round 62 rejected incompatible county identifier namespaces and all geometry fallback, retained all 85 evidence requests with hashes and bytes, resumed without provider reacquisition after structural corrections, validated exact CSV FIPS and names, and changed the integrity checker to pin acquisition and partition runners independently.",
+    "nextRoundChange": "Before the next USDA tranche, retain a standalone no-network semantic-preflight artifact, instrument every discovery contact from the first request, pre-validate provider alias fields, and bind both acquisition and partition runner hashes to their phase-specific commits."
+  },
+  "nextRankedPortfolio": [
+    {
+      "rank": 1,
+      "workClass": "automated-national-acquisition",
+      "scope": "Next bounded pure-Introduced-or-Both USDA NRCS PLANTS taxon tranche using the released national actor",
+      "expectedNetPairs": null,
+      "reason": "The actor is implemented, provider-native county FIPS are exact, the first 40-taxon tranche is exhausted, and hundreds of remaining mapped pure taxa may provide the largest safe net-new national movement. The exact next forecast must be recomputed from the released matrix before any request."
+    },
+    {
+      "rank": 2,
+      "workClass": "automated-national-acquisition",
+      "scope": "Authenticated versioned national GBIF taxon-bounded download with deterministic partition and replay receipts",
+      "expectedNetPairs": null,
+      "reason": "Potentially broad national occurrence reuse, but not executable until credentials and a complete immutable download contract exist."
+    },
+    {
+      "rank": 3,
+      "workClass": "freshness-replacement",
+      "scope": "Current versioned national replacement for 611 stale AFPE protocol cells",
+      "expectedNetPairs": null,
+      "reason": "Freshness is a separate certification axis and cannot be repaired by repeating occurrence searches."
+    },
+    {
+      "rank": 4,
+      "workClass": "applicability-review",
+      "scope": "Official state and federal applicability sources in certification order, paired with county evidence follow-up",
+      "expectedNetPairs": null,
+      "reason": "All 51 jurisdictions remain applicability-unclassified at full-catalog scope. Applicability movement and county-screen movement must remain separately measured."
+    },
+    {
+      "rank": 5,
+      "workClass": "blocked-exception-review",
+      "scope": "MT taxonomy plus AK, AZ, MI, OH, PA, VT, and WI exact geography or taxonomy exceptions",
+      "expectedNetPairs": null,
+      "reason": "Exact review can resolve metadata blockers without provider reacquisition, but no movement is promised."
+    }
+  ],
+  "forecastByWorkClass": {
+    "automatedNrcsNationalAcquisition": {
+      "observedReceiptWindowSeconds": 531.277,
+      "observedPartitionReplaySeconds": 11.83,
+      "observedPeakRssMb": 758.594,
+      "nextForecast": null,
+      "qualification": "The next tranche must be rescored against the released matrix and provider row distribution; the first tranche's 123,140 movement cannot be extrapolated unchanged."
+    },
+    "stateSpecificEvidenceResearch": null,
+    "applicabilityReview": null,
+    "blockedExceptionReview": null,
+    "freshnessReplacement": null,
+    "integrationAndRelease": {
+      "knownSuccessfulGateAndBuildSeconds": 1457.694,
+      "generationSeconds": null,
+      "browserQaSeconds": null,
+      "qualification": "Known gate time excludes untimed generation, research indexing, state-projection timing, browser QA, deployment, and external verification; it is not a complete release forecast."
+    },
+    "qualification": "Automated source timing is not blended into unmeasured state-specific research, manual applicability review, exception adjudication, or freshness replacement."
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedAbsence": false,
+    "sourceSilenceCreatedNotDetected": false,
+    "failedRequestCreatedNegative": false,
+    "incompleteScopeMarkedComplete": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedNegative": false,
+    "coordinateDerivedCountyPublication": false,
+    "crossLayerCountyIdJoinPublished": false,
+    "stateOnlyRowPublishedAsCountyEvidence": false,
+    "unmappedTaxonomyPublished": false,
+    "applicabilityConflatedWithCountyResearch": false,
+    "freshnessConflatedWithResearchCompletion": false,
+    "grossEventsReportedAsNetMovement": false
+  }
+}

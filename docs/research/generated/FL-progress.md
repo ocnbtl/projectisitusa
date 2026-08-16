@@ -7,20 +7,20 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `2121`
+- Verified present: `2455`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6656`
-- Not researched: `158991`
-- Determination coverage: `1.26%`
-- Research coverage: `5.23%`
-- Explicit outcome coverage: `5.2316%`
-- Applicable protocol cells: `144`
+- Researched unresolved: `9002`
+- Not researched: `156311`
+- Determination coverage: `1.46%`
+- Research coverage: `6.83%`
+- Explicit outcome coverage: `6.8291%`
+- Applicable protocol cells: `174`
 - Current complete protocol cells: `120`
-- Protocol completion: `92.36%`
-- Current protocol completion: `83.33%`
-- Evidence records: `12335`
-- Research runs: `11`
+- Protocol completion: `76.44%`
+- Current protocol completion: `68.97%`
+- Evidence records: `12669`
+- Research runs: `12`
 - Rejection records: `4468`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -40,23 +40,23 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 67 | 1 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
+| Redtop (`agrostis-gigantea`) | plants | 0 | 67 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 67 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 67 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 67 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 67 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 67 | 0 |
+| Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 67 | 0 |
+| Mouseear cress (`arabidopsis-thaliana`) | plants | 0 | 67 | 0 |
+| Sweet sagewort (`artemisia-annua`) | plants | 0 | 67 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
+| Spear saltbush (`atriplex-patula`) | plants | 0 | 67 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 67 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 67 | 0 |
+| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 67 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 67 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 67 | 0 |
-| Box Tree Moth (`cydalima-perspectalis`) | insects | 0 | 67 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 67 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 67 | 0 |
-| Spiny threecornerjack (`emex-spinosa`) | plants | 0 | 67 | 0 |
-| Weeping lovegrass (`eragrostis-curvula`) | plants | 0 | 67 | 0 |
-| Geraldton carnation weed (`euphorbia-terracina`) | plants | 0 | 67 | 0 |
-| Chinese parasoltree (`firmiana-simplex`) | plants | 0 | 67 | 0 |
-| Glossy Buckthorn (`frangula-alnus`) | plants | 0 | 67 | 0 |
+| Rape (`brassica-napus`) | plants | 0 | 67 | 0 |
+| European chestnut (`castanea-sativa`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 535 | 49 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 334 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-02T20:46:06.791Z | 1415 | 98 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

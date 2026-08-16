@@ -7,21 +7,21 @@ Generated: `2026-08-15T00:00:00.000Z`
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `1039`
+- Verified present: `1731`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `10691`
-- Not researched: `276230`
-- Determination coverage: `0.36%`
-- Research coverage: `4.07%`
-- Explicit outcome coverage: `4.0735%`
-- Applicable protocol cells: `107`
+- Researched unresolved: `14599`
+- Not researched: `271630`
+- Determination coverage: `0.60%`
+- Research coverage: `5.67%`
+- Explicit outcome coverage: `5.6709%`
+- Applicable protocol cells: `132`
 - Current complete protocol cells: `94`
-- Protocol completion: `100.00%`
-- Current protocol completion: `87.85%`
-- Evidence records: `1773`
-- Research runs: `12`
-- Rejection records: `460`
+- Protocol completion: `81.06%`
+- Current protocol completion: `71.21%`
+- Evidence records: `2465`
+- Research runs: `13`
+- Rejection records: `481`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -38,9 +38,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 115 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 115 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 115 | 1 |
+| Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 115 | 0 |
+| Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 115 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 115 | 0 |
+| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 115 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 115 | 0 |
+| Khakiweed (`alternanthera-pungens`) | plants | 0 | 115 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 115 | 0 |
+| Purple amaranth (`amaranthus-blitum`) | plants | 0 | 115 | 0 |
+| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 115 | 0 |
+| African amaranth (`amaranthus-muricatus`) | plants | 0 | 115 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 115 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 115 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 115 | 0 |
@@ -48,15 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Animated oat (`avena-sterilis`) | plants | 0 | 115 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 115 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 115 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 115 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 115 | 0 |
-| Jio (`commelina-benghalensis`) | plants | 0 | 115 | 0 |
-| Common crupina (`crupina-vulgaris`) | plants | 0 | 115 | 0 |
-| Box Tree Moth (`cydalima-perspectalis`) | insects | 0 | 115 | 0 |
-| Asian citrus psyllid (`diaphorina-citri`) | insects | 0 | 115 | 0 |
-| Anchored water hyacinth (`eichhornia-azurea`) | plants | 0 | 115 | 0 |
-| Sweet orange scab (`elsinoe-australis`) | fungi-diseases | 0 | 115 | 0 |
-| Southern threecornerjack (`emex-australis`) | plants | 0 | 115 | 0 |
+| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 115 | 0 |
+| Hairy beggarticks (`bidens-pilosa`) | plants | 0 | 115 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:31.000Z | 335 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | not run | 0 | 0 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-15T23:58:51.277Z | 692 | 40 |
 | GBIF preserved specimen records | operational | 2026-08-01T04:22:35.749Z | 469 | 72 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
