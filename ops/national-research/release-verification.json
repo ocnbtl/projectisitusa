@@ -4341,6 +4341,179 @@
       "externalVerificationSecondsFromContentCommit": 643.407,
       "providerStatusToVerificationSeconds": 581.407,
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and the GitHub API matched exact Round 63 content SHA 4ed2a0f633f82b8825807f581dcc05ac4e092a49; GitHub Production deployment 5934854225 succeeded; its immutable host and canonical production alias served all seven selected routes; presence plus four selected generated state files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed with reviewed USDA NRCS evidence expansion, images, console, and overflow clean. Round 63 acquired 40 USDA NRCS PLANTS distribution CSVs once, partitioned them deterministically across all 51 jurisdictions, completed 125,760 county-species outcomes, and moved 123,080 unique pairs: 15,898 to verified present and 107,182 to researched unresolved. It added 891 derived applicability decisions, closed 40 protocol cells, and created no verified-absence, not-detected, denominator, or conflict movement. Exact-deployment runtime logs and the private Vercel deployment ID were unavailable. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-868d9c570-2026-08-16",
+      "verifiedAt": "2026-08-16T22:55:25.444Z",
+      "commitSha": "868d9c570e9e18f5accf7249eee56de3622ba2c0",
+      "githubMainSha": "868d9c570e9e18f5accf7249eee56de3622ba2c0",
+      "githubDeploymentId": 5936278162,
+      "githubDeploymentState": "success",
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-75do26kgh-unigentamos.vercel.app",
+      "gitLinkedVercelDeploymentId": null,
+      "vercelDeploymentId": null,
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/GTvVNoqxTVpq7TucKRoJCstrWpFC",
+      "vercelDeploymentUrl": "projectisitusa-75do26kgh-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "success",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "868d9c570e9e18f5accf7249eee56de3622ba2c0",
+        "releaseCommitMetadata": "868d9c570e9e18f5accf7249eee56de3622ba2c0",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "GitHub main and commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
+      },
+      "deploymentAttempts": [
+        {
+          "githubDeploymentId": 5936278162,
+          "vercelInspectorSlug": "GTvVNoqxTVpq7TucKRoJCstrWpFC",
+          "source": "git",
+          "state": "success",
+          "vercelCommitStatusCreatedAt": "2026-08-16T22:44:29Z",
+          "vercelCommitStatusCompletedAt": "2026-08-16T22:48:06Z",
+          "vercelCommitStatusDurationSeconds": 217,
+          "githubDeploymentCreatedAt": "2026-08-16T22:48:06Z",
+          "githubDeploymentCompletedAt": "2026-08-16T22:48:06Z",
+          "githubDeploymentDurationSeconds": 0,
+          "buildSeconds": null,
+          "githubCommitSha": "868d9c570e9e18f5accf7249eee56de3622ba2c0",
+          "active": true,
+          "qualification": "Vercel commit-status timing and GitHub deployment timing are provider-native. Exact Vercel build duration, private deployment ID, and runtime logs are unavailable because the canonical repository has no Vercel CLI."
+        }
+      ],
+      "routeChecks": [
+        { "path": "/", "status": 200 },
+        { "path": "/research?state=TX", "status": 200 },
+        { "path": "/research?state=GA", "status": 200 },
+        { "path": "/research?state=VA", "status": 200 },
+        { "path": "/research?state=IL", "status": 200 },
+        { "path": "/species/mazus-pumilus", "status": 200 },
+        { "path": "/species/morus-alba", "status": 200 }
+      ],
+      "routeCheckHosts": [
+        "https://projectisitusa-75do26kgh-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "routeHostChecksPassed": 14,
+      "byteParityChecks": [
+        {
+          "path": "/generated/presence.json",
+          "bytes": 27830728,
+          "sha256": "937e895633cc530ba193d70baf3bb16f32d20deada5f0aa985463c0a95af9912"
+        },
+        {
+          "path": "/generated/research/TX/summary.json",
+          "bytes": 384141,
+          "sha256": "91b7005ea6a582e527e3776410fd916e7df7e9588fe19ac8738b28089fc1183e"
+        },
+        {
+          "path": "/generated/research/GA/summary.json",
+          "bytes": 308947,
+          "sha256": "3ca43f65d558fc7ac7f5ae7f7b0d38d7d0c8ef9fdbd1357e71de5f11804a8a18"
+        },
+        {
+          "path": "/generated/research/VA/summary.json",
+          "bytes": 277920,
+          "sha256": "f7b6404e87bfa9aaa763a77c5a09b2579bbdfb40cb27cfc828aace637a648221"
+        },
+        {
+          "path": "/generated/research/IL/summary.json",
+          "bytes": 253752,
+          "sha256": "ff6487f3fa1bec112abecf76147577428df03dce1429dd5521970f645b805511"
+        }
+      ],
+      "byteParityHosts": [
+        "https://projectisitusa-75do26kgh-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "byteParityHostFileIdentitiesPassed": 10,
+      "browserQa": {
+        "desktopViewport": "1440x1000",
+        "mobileViewport": "390x844",
+        "stateRoutes": ["TX", "GA", "VA", "IL"],
+        "speciesRoutes": ["mazus-pumilus", "morus-alba"],
+        "asOf": "2026-08-16",
+        "desktopRouteChecks": 7,
+        "mobileRouteChecks": 4,
+        "evidenceExpansionChecks": 2,
+        "evidenceExpansionPair": "48001:mazus-pumilus",
+        "evidenceSemantics": {
+          "pairStatus": "Researched Unresolved",
+          "researchStatus": "Reviewed No Qualifying Evidence",
+          "directEvidenceRecords": 0,
+          "screenedBy": "USDA NRCS PLANTS county distribution"
+        },
+        "speciesRoutesPassed": true,
+        "horizontalOverflow": false,
+        "brokenImagesAfterLoad": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "pageErrors": 0,
+        "screenshotsCaptured": 2,
+        "productionScreenshotsVisuallyInspected": 2
+      },
+      "runtimeQa": {
+        "activeDeploymentId": null,
+        "runtimeErrorLogRows": null,
+        "runtimeFiveHundredLogRows": null,
+        "queryStatus": "unavailable-no-vercel-cli-in-canonical-toolchain",
+        "contentReleaseResearchIntegritySeconds": 589.771,
+        "qualification": "Exact-deployment runtime logs and the private Vercel deployment ID were not queryable because the canonical repository has no Vercel CLI. Runtime confidence is limited to exact GitHub Production success, fourteen direct route-host checks, ten exact live-to-local byte identities, and production browser QA with zero final console, page, image, or layout failures."
+      },
+      "releaseEvaluation": {
+        "path": "ops/national-research/evaluations/round-64-usda-nrcs-plants-national-20260816-r1.json",
+        "sha256": "7c217368209d5c49847bce31d24b4e1c70074c74253a6eba75287b1f595df3dc",
+        "bytes": 23826,
+        "result": "complete-local-gates-passed-pending-external-release",
+        "qualification": "The evaluation intentionally preserves build-time pending external state. This separate receipt records the later exact-SHA deployment and external verification."
+      },
+      "roundMovement": {
+        "plannedGrossPairs": 125760,
+        "completedGrossPairs": 125760,
+        "alreadyAccountedOverlap": 2680,
+        "finalMatrixPairsMoved": 123080,
+        "notResearchedToVerifiedPresent": 11931,
+        "notResearchedToResearchedUnresolved": 111149,
+        "researchedUnresolvedToVerifiedPresent": 0,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "applicabilityMovement": 742,
+        "denominatorMovement": 0,
+        "protocolCellsClosed": 40,
+        "certificationBlockersRemoved": 0,
+        "certificationBlockersAdded": 0,
+        "statesMoved": 50
+      },
+      "roundEconomics": {
+        "retainedEvidenceRequests": 85,
+        "allProductionProviderContacts": 85,
+        "distributionResponses": 40,
+        "netPairsPerRetainedEvidenceRequest": 1448,
+        "acquisitionReceiptWindowSeconds": 287.425,
+        "actorTelemetryWallSeconds": 22.248,
+        "peakActorRssMiB": 723.258,
+        "actualRoundEndToEndSeconds": 4820.097,
+        "actualRoundNetPairsPerHour": 91925.126931,
+        "acquisitionWindowPercentOfActualRound": 5.963054,
+        "actorActivePercentOfActualRound": 0.461567,
+        "postAcquisitionIntegrationGenerationReleaseSeconds": 4532.672,
+        "postAcquisitionPercentOfActualRound": 94.036946,
+        "generationSeconds": 519.071,
+        "knownNonOverlappingGenerationGateAndBuildSeconds": 2181.0,
+        "knownGenerationGateAndBuildPercentOfActualRound": 45.248052,
+        "contentCommitToExternalVerificationSeconds": 756.444,
+        "deploymentSuccessToFinalQaSeconds": 439.444
+      },
+      "qaToolingInterventions": [
+        "Two inline Playwright run-code invocations were rejected by CLI argument parsing before executing page code. File-backed read-only checks then ran successfully across the same fresh sessions.",
+        "The Node 22 Playwright CLI help process emitted its known UV shutdown assertion only after printing help. Browser sessions, route checks, screenshots, and shutdown all completed normally."
+      ],
+      "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. Vercel status creation-to-success was 217 seconds; content commit-to-final external verification was 756.444 seconds; acquisition start-to-final external verification was 4,820.097 seconds.",
+      "externalVerificationSecondsFromContentCommit": 756.444,
+      "providerStatusToVerificationSeconds": 439.444,
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and the GitHub API matched exact Round 64 content SHA 868d9c570e9e18f5accf7249eee56de3622ba2c0; GitHub Production deployment 5936278162 succeeded; its immutable host and canonical production alias served all seven selected routes; presence plus four selected generated state files matched local SHA-256 and bytes on both hosts; and fresh desktop and mobile browser checks passed with reviewed Japanese mazus USDA NRCS evidence semantics, images, console, and overflow clean. Round 64 acquired 40 USDA NRCS PLANTS distribution CSVs once, partitioned them deterministically across all 51 jurisdictions, completed 125,760 county-species outcomes, and moved 123,080 unique pairs across 50 jurisdictions: 11,931 to verified present and 111,149 to researched unresolved. It added 742 derived applicability decisions, closed 40 protocol cells, and created no verified-absence, not-detected, denominator, conflict, or certification-blocker movement. Exact-deployment runtime logs and the private Vercel deployment ID were unavailable. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
