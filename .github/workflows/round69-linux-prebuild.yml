@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.23.0
+          node-version: 24.x
           cache: npm
 
       - name: Install dependencies
@@ -32,7 +32,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p .vercel
-          printf '%s\n' '{"orgId":"team_5NDBkWKjBSUFFMAo0CaKT1m3","projectId":"prj_8QxSuEepVs46XFag4IJM5QcOLPdg"}' > .vercel/project.json
+          printf '%s\n' '{"orgId":"team_5NDBkWKjBSUFFMAo0CaKT1m3","projectId":"prj_8QxSuEepVs46XFag4IJM5QcOLPdg","projectName":"projectisitusa","settings":{"createdAt":1776327832610,"framework":"nextjs","devCommand":null,"installCommand":null,"buildCommand":null,"outputDirectory":null,"rootDirectory":null,"directoryListing":false,"nodeVersion":"24.x","analyticsId":null}}' > .vercel/project.json
 
       - name: Build the production artifact
         run: npx --yes vercel@58.8.0 build --prod --yes
