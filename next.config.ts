@@ -40,6 +40,9 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   typedRoutes: true,
+  experimental: {
+    webpackMemoryOptimizations: true,
+  },
   async headers() {
     if (isDevelopment) {
       return [];

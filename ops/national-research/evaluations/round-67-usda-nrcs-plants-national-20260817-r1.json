@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "evaluationId": "round-67-usda-nrcs-plants-national-20260817-r1",
   "roundId": "usda-nrcs-plants-national-round67",
-  "evaluatedAt": "2026-08-17T08:17:59.329Z",
+  "evaluatedAt": "2026-08-17T09:10:20.416Z",
   "result": "complete-local-gates-passed-pending-external-release",
   "releaseThreshold": {
     "met": true,
@@ -557,7 +557,7 @@
     "build": {
       "status": "pass",
       "framework": "Next.js 15.5.23",
-      "compileSeconds": 24.2,
+      "compileSeconds": 24,
       "staticPages": 2512,
       "dependencyLockReproduction": {
         "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
@@ -569,7 +569,10 @@
         "correctedManifestConstraint": "15.5.23",
         "correctedLockedFramework": "Next.js 15.5.23",
         "cleanInstall": "npm ci --ignore-scripts completed from the corrected lock with manifest, lock, and installed Next.js all exactly 15.5.23.",
-        "correctedConstrainedBuild": "pass under a 6 GiB Node heap cap; compiled in 24.2 seconds and generated 2,512 static pages"
+        "correctedConstrainedBuild": "pass under a 6 GiB Node heap cap; compiled in 24.2 seconds and generated 2,512 static pages",
+        "correctedProviderDeployment": "Deployment dpl_VqvcrfpYrfEZnXbZPdwztF31gsU6 detected Next.js 15.5.23 but remained at the optimized production build for about 45 minutes, then failed without a compiler error line.",
+        "providerResourceMitigation": "Next.js 15 experimental.webpackMemoryOptimizations is enabled. The official option is documented to reduce peak Webpack memory and is considered low-risk, with a possible compilation-time tradeoff.",
+        "memoryOptimizedColdBuild": "pass from a deleted .next cache under a 6 GiB Node heap cap; compiled in 24.0 seconds and generated 2,512 static pages"
       }
     },
     "browserQa": {
@@ -624,7 +627,9 @@
       "The localhost-only Vercel Insights 404 and MIME errors were isolated from application requests; production must still be console-clean before the receipt.",
       "The first Git-linked deployment of content commit d19c4163583c85f4894a4605c5cf89f08f8eecc9 failed after Vercel restored dependencies at the lock-resolved Next.js 15.5.15 and entered the optimized production build. No production release was claimed.",
       "MAIN allowed one exact-content, cache-skipped retry only to distinguish transient infrastructure from reproducible content. It reached the same build stage and was canceled after the locked-version failure was reproduced locally; no further blind retry was issued.",
-      "The manifest range and lock are now pinned exactly to the locally verified Next.js 15.5.23. A clean lock install, typecheck, lint, and a 6 GiB constrained 2,512-page production build passed before this corrective content commit."
+      "The manifest range and lock are now pinned exactly to the locally verified Next.js 15.5.23. A clean lock install, typecheck, lint, and a 6 GiB constrained 2,512-page production build passed before this corrective content commit.",
+      "The exact 8b67a7965a4be424690a93571daaf31e1fc4d538 deployment installed Next.js 15.5.23 but failed after about 45 minutes at the same optimized-build stage with no compiler error line. That disproved dependency version alone as sufficient and exposed the provider build resource ceiling.",
+      "MAIN enabled the official Next.js 15 experimental.webpackMemoryOptimizations option. After deleting only the generated .next cache, a true cold 6 GiB build compiled in 24.0 seconds and generated all 2,512 pages; typecheck and lint passed before the memory-optimized corrective commit."
     ]
   },
   "recentRoundComparison": [
