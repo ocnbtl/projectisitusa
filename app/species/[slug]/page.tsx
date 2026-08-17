@@ -6,7 +6,6 @@ import { ActionGuidance } from "@/components/action-guidance";
 import { SpeciesImage } from "@/components/species-image";
 import { SourceAttribution } from "@/components/source-attribution";
 import {
-  allSpecies,
   speciesBySlug,
   speciesSlugAliases,
 } from "@/lib/data/species-store";
@@ -67,13 +66,12 @@ function buildRegistryLookFor(species: Species) {
   return details.slice(0, 4);
 }
 
+export const dynamicParams = true;
+
+// Species profiles are rendered and cached on first request. Pre-rendering the
+// full registry on every release exceeds the provider's bounded build window.
 export function generateStaticParams() {
-  return [
-    ...allSpecies.map((species) => ({
-      slug: species.slug,
-    })),
-    ...[...speciesSlugAliases.keys()].map((slug) => ({ slug })),
-  ];
+  return [];
 }
 
 export default async function SpeciesProfilePage({
