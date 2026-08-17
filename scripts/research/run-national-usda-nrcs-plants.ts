@@ -161,6 +161,7 @@ export type NationalNrcsReceipt = {
     license: string;
     freshness_status: "current-provider-snapshot";
     contract_snapshot_count: 3;
+    rate_limit_requests_per_second: number;
     request_code_commits: string[];
     status_fingerprint_before_sha256: string;
     status_fingerprint_after_sha256: string;
@@ -237,6 +238,48 @@ type ProgressFile = {
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
+}
+
+export class RestartRequiredAcquisitionError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "RestartRequiredAcquisitionError";
+  }
+}
+
+export function requestIntervalMilliseconds(requestsPerSecond: number) {
+  assert(Number.isFinite(requestsPerSecond) && requestsPerSecond > 0, "Provider rate limit must be a positive finite number.");
+  return Math.ceil(1000 / requestsPerSecond);
+}
+
+export function acquisitionFailureIsRetryable(error: unknown) {
+  return !(error instanceof RestartRequiredAcquisitionError);
+}
+
+export function assertPartialAcquisitionResumeAllowed(partial: { retryable?: boolean } | null) {
+  if (partial?.retryable === false) {
+    throw new RestartRequiredAcquisitionError(
+      "NRCS partial acquisition is marked non-retryable. Preserve it and start a new acquisition with a new --started-at value.",
+    );
+  }
+}
+
+export class ProviderStartRateLimiter {
+  private lastStartedAt = Number.NEGATIVE_INFINITY;
+
+  constructor(
+    private readonly intervalMilliseconds: number,
+    private readonly now: () => number = () => performance.now(),
+    private readonly sleep: (milliseconds: number) => Promise<void> = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds)),
+  ) {
+    assert(Number.isFinite(intervalMilliseconds) && intervalMilliseconds > 0, "Provider request interval must be a positive finite number.");
+  }
+
+  async waitForSlot() {
+    const waitMilliseconds = this.intervalMilliseconds - (this.now() - this.lastStartedAt);
+    if (waitMilliseconds > 0) await this.sleep(waitMilliseconds);
+    this.lastStartedAt = this.now();
+  }
 }
 
 function readJson<T>(filepath: string) {
@@ -368,7 +411,7 @@ function buildAcquisitionParameters(plan: NationalNrcsPlan) {
   };
 }
 
-function expectedProviderRequestCount(plan: NationalNrcsPlan) {
+export function expectedProviderRequestCount(plan: NationalNrcsPlan) {
   return 5 + (2 * plan.taxonMappings.length);
 }
 
@@ -458,9 +501,11 @@ async function fetchBytes(input: {
   accept: string;
   maxAttempts: number;
   transient: { count: number };
+  beforeAttempt: () => Promise<void>;
 }) {
   let lastError: unknown = null;
   for (let attempt = 1; attempt <= input.maxAttempts; attempt += 1) {
+    await input.beforeAttempt();
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 120_000);
     try {
@@ -713,9 +758,12 @@ async function acquire(input: {
   codeCommit: string;
   startedAt: string;
   rerunCommand: string;
+  rateLimitRequestsPerSecond: number;
 }) {
   if (existsSync(input.acquisitionDirectory)) return verifyNationalNrcsAcquisition(input.acquisitionDirectory, input.plan);
   const stagingDirectory = path.join(ROOT, ".cache/research", `.pending-${input.acquisitionId}`);
+  const priorPartialPath = path.join(stagingDirectory, "partial-receipt.json");
+  assertPartialAcquisitionResumeAllowed(existsSync(priorPartialPath) ? readJson<{ retryable?: boolean }>(priorPartialPath) : null);
   mkdirSync(path.join(stagingDirectory, "artifacts"), { recursive: true });
   const progressPath = path.join(stagingDirectory, "progress.json");
   const progress = existsSync(progressPath)
@@ -730,6 +778,8 @@ async function acquire(input: {
   const transient = { count: progress.transientFailures };
   const completed = new Map(progress.requests.map((request) => [request.request_id, request]));
   const artifactsByPath = new Map(progress.artifacts.map((artifact) => [artifact.path, artifact]));
+  const requestIntervalMs = requestIntervalMilliseconds(input.rateLimitRequestsPerSecond);
+  const rateLimiter = new ProviderStartRateLimiter(requestIntervalMs);
 
   function persistProgress() {
     progress.transientFailures = transient.count;
@@ -765,6 +815,7 @@ async function acquire(input: {
       accept: inputRequest.mediaType,
       maxAttempts: input.plan.maxAttempts,
       transient,
+      beforeAttempt: () => rateLimiter.waitForSlot(),
     });
     const artifact = artifactFor({
       stagingDirectory,
@@ -842,7 +893,11 @@ async function acquire(input: {
 
     const afterBytes = await request({ requestId: "status-after", role: "status-after", url: statusUrl, method: "GET", body: null, filename: "status-after.json", mediaType: "application/json", taxonMasterId: null, recordCount: (bytes) => parseNrcsStatusFingerprint(bytes, input.plan).reduce((sum, row) => sum + row.rowCount, 0) });
     const after = parseNrcsStatusFingerprint(afterBytes, input.plan);
-    assert(stableJson(before) === stableJson(after), "NRCS provider status changed during acquisition.");
+    if (stableJson(before) !== stableJson(after)) {
+      throw new RestartRequiredAcquisitionError(
+        "NRCS provider status changed during acquisition. This retained window is not resumable; preserve it and start a new acquisition with a new --started-at value.",
+      );
+    }
 
     const artifacts = [...progress.artifacts];
     const requests = [...progress.requests];
@@ -879,6 +934,7 @@ async function acquire(input: {
         license: "Official USDA NRCS service; no dataset-specific machine-readable license was exposed. Copyright attribution and exact source bytes are retained.",
         freshness_status: "current-provider-snapshot",
         contract_snapshot_count: 3,
+        rate_limit_requests_per_second: input.rateLimitRequestsPerSecond,
         request_code_commits: requestCodeCommits,
         status_fingerprint_before_sha256: sha256(stableJson(before)),
         status_fingerprint_after_sha256: sha256(stableJson(after)),
@@ -935,6 +991,7 @@ async function acquire(input: {
     return verifyNationalNrcsAcquisition(input.acquisitionDirectory, input.plan);
   } catch (error) {
     persistProgress();
+    const retryable = acquisitionFailureIsRetryable(error);
     const partial = {
       schemaVersion: 1,
       acquisitionId: input.acquisitionId,
@@ -942,9 +999,11 @@ async function acquire(input: {
       failedAt: new Date().toISOString(),
       completedRequestIds: [...completed.keys()].sort(compareText),
       remainingRequestCount: expectedProviderRequestCount(input.plan) - completed.size,
-      retryable: true,
+      retryable,
       error: error instanceof Error ? error.message : String(error),
-      semantics: "Partial acquisition cannot create complete pair outcomes, absence, or non-detection.",
+      semantics: retryable
+        ? "Partial acquisition cannot create complete pair outcomes, absence, or non-detection. Hash-verified completed request IDs may be resumed."
+        : "Partial acquisition cannot create complete pair outcomes, absence, or non-detection. This stable-window failure is restart-required and the retained request IDs must not be resumed.",
     };
     writeFileSync(path.join(stagingDirectory, "partial-receipt.json"), `${JSON.stringify(partial, null, 2)}\n`);
     throw error;
@@ -1088,7 +1147,7 @@ function buildRuns(input: {
       retainedEvidence: [{ path: artifactReference.path, sha256: artifactReference.sha256, bytes: artifactReference.bytes }],
       caveats: [
         input.source.caveat,
-        "The official mutable service was acquired once as 40 complete taxon-bounded CSV responses guarded by profile and source-status fingerprints.",
+        `The official mutable service was acquired once as ${input.plan.taxonMappings.length} complete taxon-bounded CSV responses guarded by profile and source-status fingerprints.`,
         "No dataset-specific machine-readable license or row date was exposed.",
       ],
     };
@@ -1249,6 +1308,13 @@ async function main() {
       ].map((filename) => path.join(RESEARCH_ROOT, "schemas", filename)),
     ];
     const inputHashes = inputSnapshot(inputFiles);
+    const sourceRegistryPath = path.join(RESEARCH_ROOT, "source-registry.json");
+    const sourceRegistryBytes = readFileSync(sourceRegistryPath);
+    const sourceRegistry = JSON.parse(sourceRegistryBytes.toString("utf8")) as ResearchSourceRegistry;
+    const sources = sourceRegistry.sources.filter((entry) => entry.id === NRCS_SOURCE_ID);
+    assert(sources.length === 1 && sources[0]!.researchAdapter?.id === NRCS_ADAPTER_ID, "NRCS research adapter is not registered exactly once.");
+    const rateLimitRequestsPerSecond = sources[0]!.researchAdapter!.rateLimitRequestsPerSecond;
+    const requestIntervalMs = requestIntervalMilliseconds(rateLimitRequestsPerSecond);
     const codeCommit = gitHead();
     const adapterCodeHash = sha256(readFileSync(commonPath));
     const runnerCodeHash = sha256(readFileSync(runnerPath));
@@ -1310,7 +1376,12 @@ async function main() {
         retryPolicy: {
           maxAttempts: plan.maxAttempts,
           backoffMilliseconds: [1000, 5000],
-          resume: "reuse each hash-verified successful deterministic artifact and retry only missing request IDs",
+          resume: "reuse each hash-verified successful deterministic artifact and retry only missing request IDs; a changed before/after source-status window is non-retryable and requires a new started-at/acquisition identity",
+        },
+        providerRateLimit: {
+          requestsPerSecond: rateLimitRequestsPerSecond,
+          minimumAttemptStartIntervalMilliseconds: requestIntervalMs,
+          enforcement: "every provider attempt, including retries; hash-verified resumed artifacts issue no request",
         },
         artifactBudgetBytes: plan.artifactBudgetBytes,
         geographyPolicy: "Exact provider state/county FIPS and active-name matches only; no cross-layer ID join, coordinate fallback, or automatic retired-geography resolution.",
@@ -1336,12 +1407,6 @@ async function main() {
     assertGitClean(existsSync(acquisitionDirectory) ? [relativeGitPath(ROOT, acquisitionDirectory)] : []);
     assertCommittedInputs(codeCommit, inputHashes);
     assert(options.telemetryPath && !existsSync(options.telemetryPath), "NRCS attempt telemetry already exists.");
-    const sourceRegistryPath = path.join(RESEARCH_ROOT, "source-registry.json");
-    const sourceRegistryBytes = readFileSync(sourceRegistryPath);
-    const sourceRegistry = JSON.parse(sourceRegistryBytes.toString("utf8")) as ResearchSourceRegistry;
-    const sources = sourceRegistry.sources.filter((entry) => entry.id === NRCS_SOURCE_ID);
-    assert(sources.length === 1 && sources[0]!.researchAdapter?.id === NRCS_ADAPTER_ID, "NRCS research adapter is not registered exactly once.");
-
     const acquisition = await acquire({
       plan,
       acquisitionId,
@@ -1352,6 +1417,7 @@ async function main() {
       codeCommit,
       startedAt: options.startedAt,
       rerunCommand: expandedCommand,
+      rateLimitRequestsPerSecond,
     });
     const runs = buildRuns({
       plan,

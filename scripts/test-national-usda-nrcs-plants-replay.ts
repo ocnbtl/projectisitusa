@@ -10,15 +10,65 @@ import {
   replayNationalNrcsState,
 } from "./research/national-usda-nrcs-plants";
 import {
+  ProviderStartRateLimiter,
+  RestartRequiredAcquisitionError,
+  acquisitionFailureIsRetryable,
+  assertPartialAcquisitionResumeAllowed,
+  expectedProviderRequestCount,
   parseNrcsDistributionCsv,
   parseNrcsStatusFingerprint,
+  requestIntervalMilliseconds,
   validateNrcsProfile,
 } from "./research/run-national-usda-nrcs-plants";
+
+assert.equal(requestIntervalMilliseconds(1), 1000);
+assert.equal(requestIntervalMilliseconds(2), 500);
+assert.equal(requestIntervalMilliseconds(3), 334);
+assert.throws(() => requestIntervalMilliseconds(0), /positive finite/u);
+assert.equal(acquisitionFailureIsRetryable(new Error("transport")), true);
+assert.equal(acquisitionFailureIsRetryable(new RestartRequiredAcquisitionError("status drift")), false);
+assert.doesNotThrow(() => assertPartialAcquisitionResumeAllowed(null));
+assert.doesNotThrow(() => assertPartialAcquisitionResumeAllowed({ retryable: true }));
+assert.throws(() => assertPartialAcquisitionResumeAllowed({ retryable: false }), /new --started-at/u);
+async function testProviderStartRateLimiter() {
+  let fakeNow = 0;
+  const rateLimitWaits: number[] = [];
+  const limiter = new ProviderStartRateLimiter(
+    1000,
+    () => fakeNow,
+    async (milliseconds) => {
+      rateLimitWaits.push(milliseconds);
+      fakeNow += milliseconds;
+    },
+  );
+  await limiter.waitForSlot();
+  await limiter.waitForSlot();
+  fakeNow += 250;
+  await limiter.waitForSlot();
+  assert.deepEqual(rateLimitWaits, [1000, 750]);
+}
 
 const plan = JSON.parse(readFileSync(
   "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-01.json",
   "utf8",
 )) as NationalNrcsPlan;
+const scalePlan = JSON.parse(readFileSync(
+  "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-05.json",
+  "utf8",
+)) as NationalNrcsPlan;
+assert.equal(scalePlan.taxonMappings.length, 80);
+assert.equal(expectedProviderRequestCount(scalePlan), 165);
+const scaleStatusFingerprint = parseNrcsStatusFingerprint(Buffer.from(JSON.stringify({
+  features: scalePlan.taxonMappings.map((entry) => ({
+    attributes: {
+      plant_master_id: entry.plantMasterId,
+      Symbol: "Introduced",
+      plant_nativity_id: "3",
+      row_count: 1,
+    },
+  })),
+})), scalePlan);
+assert.equal(scaleStatusFingerprint.length, 80);
 const statusFeatures = plan.taxonMappings.map((entry) => ({
   attributes: {
     plant_master_id: entry.plantMasterId,
@@ -172,13 +222,20 @@ assert.equal(first.reconciliation.duplicate_rows, 1);
 assert.equal(first.reconciliation.county_name_mismatch_rows, 1);
 assert.ok(first.outcomes.every((entry) => entry.scope_complete));
 assert.ok(first.outcomes.every((entry) => entry.notes.every((note) => !/absence established|not detected established/iu.test(note))));
-console.log(JSON.stringify({
-  ok: true,
-  assertions: first.assertions.length,
-  rejections: first.rejections.length,
-  outcomes: first.outcomes.length,
-  deterministic: true,
-  layer6AliasSemantics: true,
-  profileStatusSemantics: true,
-  profileAuthorshipRankSemantics: true,
-}, null, 2));
+testProviderStartRateLimiter()
+  .then(() => console.log(JSON.stringify({
+    ok: true,
+    assertions: first.assertions.length,
+    rejections: first.rejections.length,
+    outcomes: first.outcomes.length,
+    deterministic: true,
+    layer6AliasSemantics: true,
+    profileStatusSemantics: true,
+    profileAuthorshipRankSemantics: true,
+    providerRateLimitSemantics: true,
+    stableWindowRestartSemantics: true,
+  }, null, 2)))
+  .catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });

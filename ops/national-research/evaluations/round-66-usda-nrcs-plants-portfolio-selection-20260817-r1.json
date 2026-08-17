@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-66-usda-nrcs-plants-portfolio-selection-20260817-r1",
+  "roundId": "national-round-66",
+  "evaluatedAt": "2026-08-17T03:14:50.978Z",
+  "result": "selected-after-gbif-external-blocker-and-nrcs-scale-hardening",
+  "baseline": {
+    "commit": "40aec8580b209e00bf5a1075b1dc084250e6b225",
+    "generatedAsOf": "2026-08-17",
+    "countySpeciesDenominator": 7872576,
+    "verifiedPresent": 116832,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 832332,
+    "notResearched": 6923404,
+    "stateSpeciesDenominator": 127704,
+    "applicable": 8510,
+    "notApplicable": 0,
+    "unknownApplicability": 119194,
+    "derivedApplicable": 5084,
+    "researchedUnresolvedStateDecisions": 6901,
+    "researchedBlockedStateDecisions": 53,
+    "notResearchedStateDecisions": 112240
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "sourceId": "gbif-preserved-specimens",
+      "acquisitionShape": "one authenticated provider-native US Darwin Core download for exact retained taxon mappings followed by offline 51-jurisdiction partitioning",
+      "technicalContractStatus": "pass",
+      "executionStatus": "blocked-external-credentials-and-unimplemented-partition",
+      "missingCredentialEnvironment": ["GBIF_EMAIL", "GBIF_PASSWORD", "GBIF_USERNAME"],
+      "networkRequestsIssued": 0,
+      "partitionImplemented": false,
+      "countyMovementForecast": null,
+      "officialDocumentation": [
+        "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+        "https://techdocs.gbif.org/en/data-use/api-downloads",
+        "https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation"
+      ],
+      "status": "not-executable"
+    },
+    {
+      "rank": 2,
+      "sourceId": "usda-nrcs-plants",
+      "acquisitionShape": "80 complete provider-native taxon-bounded national distribution CSV responses with exact state and county FIPS, guarded by exact profiles and before/after status fingerprints",
+      "grossPairs": 251520,
+      "expectedNetNewPairs": 244408,
+      "alreadyAccountedOverlap": 7112,
+      "expectedProviderRequests": 165,
+      "expectedNetPairsPerProviderRequest": 1481.260606,
+      "providerRateLimitRequestsPerSecond": 1,
+      "providerAttemptStartIntervalMilliseconds": 1000,
+      "minimumProviderStartSpanSeconds": 164,
+      "nationalReuse": true,
+      "status": "selected"
+    },
+    {
+      "rank": 3,
+      "sourceId": "usgs-nas",
+      "acquisitionShape": "offline reuse of the retained hash-pinned national archive for newly discovered exact state-species screens",
+      "status": "not-selected",
+      "blocker": "The 244 existing planned screens and 15242 scoped pairs are already accounted; no evidence-backed 25000-pair net-new tranche was identified."
+    },
+    {
+      "rank": 4,
+      "sourceId": "usfs-afpe-v1-0",
+      "acquisitionShape": "current versioned national replacement for the stale retained archive",
+      "status": "blocked",
+      "blocker": "No newer hash-pinned official archive is retained; the existing 611 stale protocol cells remain freshness work rather than net-new county movement."
+    },
+    {
+      "rank": 5,
+      "sourceId": "inaturalist",
+      "acquisitionShape": "national county evidence acquisition",
+      "status": "not-executable",
+      "blocker": "Only the legacy Alabama point importer exists; there is no national research adapter, immutable national receipt, checkpoint contract, or national integrity replay."
+    }
+  ],
+  "selectedScope": {
+    "planId": "usda-nrcs-plants-national-v1-tranche-05",
+    "planPath": "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-05.json",
+    "selectionRule": "Highest exact current not-researched count among the 156 unconsumed pure PLANTS mappings after tranches 01 through 04, excluding the eight provider-status mappings that mix Native with Introduced/Both; deterministic speciesId order breaks equal-net ties.",
+    "selectionOrderedKeySha256": "506db5cb306612d87639f21e5055c8b46a003526393a5df9bcbbdcbfb04cfa30",
+    "stateCount": 51,
+    "activeCountyEquivalentCount": 3144,
+    "taxonCount": 80,
+    "grossOrderedPairs": 251520,
+    "baselineNotResearchedPairs": 244408,
+    "expectedAlreadyAccountedOverlap": 7112,
+    "expectedProviderRequests": {
+      "contractSnapshots": 3,
+      "sourceStatusFingerprints": 2,
+      "profileResponses": 80,
+      "distributionResponses": 80,
+      "total": 165
+    },
+    "remainingPureMappingCountBeforeSelection": 156,
+    "remainingPureMappingNotResearchedPairsBeforeSelection": 402445,
+    "remainingPureMappingCountAfterSelection": 76,
+    "remainingPureMappingNotResearchedPairsAfterSelection": 158037,
+    "mixedStatusMasterIdsExcluded": [14349, 14698, 18574, 18666, 19209, 24343, 51151, 87413],
+    "positiveYieldForecast": "Unbounded within the exact 244408 net-movement forecast. Final positives require the retained exact profile, stable pure Introduced/Both before/after fingerprints, and exact current FIPS/name validation from each retained CSV."
+  },
+  "acquisitionUnitDecision": {
+    "priorProvenTaxonCount": 40,
+    "selectedTaxonCount": 80,
+    "twoFortyTaxonContractRequests": 170,
+    "oneEightyTaxonContractRequests": 165,
+    "requestsAvoided": 5,
+    "reason": "Round 65 spent 98.60486 percent of end-to-end time after acquisition. One independently receipt-bound 80-taxon acquisition amortizes the fixed three contract and two status requests while preserving one generation, gate, and release cycle.",
+    "hardeningRequiredBeforeNetwork": [
+      "schema cardinalities through 100 taxa and 205 artifacts",
+      "state parameter cardinality through 30000 pairs",
+      "dynamic taxon-count caveat",
+      "registered one-request-per-second provider start limiter including retries",
+      "non-retryable restart-required classification for a changed before/after status window",
+      "same-acquisition refusal when a retained partial receipt is non-retryable"
+    ]
+  },
+  "priorRoundAuditCorrection": {
+    "roundId": "national-round-65",
+    "supersededEvaluationPath": "ops/national-research/evaluations/round-65-usda-nrcs-plants-national-20260817-r1.json",
+    "generatedBaselineSha": "868d9c570e9e18f5accf7249eee56de3622ba2c0",
+    "contentCommit": "05a961c86bead9b5434113589c2dcdb6bd6163c3",
+    "scope": "Protocol-cell aggregates only. Round 65 county-matrix movement, state-species movement, immutable run counts, and release receipt claims remain valid.",
+    "correctedProtocolCells": {
+      "total": { "baseline": 72204, "final": 80200, "delta": 7996, "supersededFinal": 80204, "supersededDelta": 8000 },
+      "applicable": { "baseline": 22919, "final": 23675, "delta": 756 },
+      "notApplicable": { "baseline": 49285, "final": 56525, "delta": 7240, "supersededFinal": 56529, "supersededDelta": 7244 },
+      "complete": { "baseline": 6142, "final": 6182, "delta": 40 },
+      "incomplete": { "baseline": 16718, "final": 17434, "delta": 716 },
+      "blocked": { "baseline": 59, "final": 59, "delta": 0 },
+      "current": { "baseline": 5531, "final": 5571, "delta": 40 },
+      "stale": { "baseline": 611, "final": 611, "delta": 0 },
+      "undated": { "baseline": 16777, "final": 17493, "delta": 716 },
+      "regulatedHighApplicable": { "baseline": 2843, "final": 2843, "delta": 0 },
+      "regulatedHighCurrentComplete": { "baseline": 2365, "final": 2367, "delta": 2, "supersededFinal": 2365, "supersededDelta": 0 }
+    },
+    "cause": {
+      "alabama": "Added zero cell keys because all selected keys existed, but closed 40 incomplete/undated USDA NRCS cells; phyllanthus-tenellus and phyllanthus-urinaria were regulated/high cells.",
+      "districtOfColumbia": "Added 156 rather than 160 cells because all four protocol cells for perilla-frutescens already existed.",
+      "otherJurisdictions": "Each of the other 49 jurisdictions added 160 cells.",
+      "arithmetic": "49*160 + 156 + 0 = 7996"
+    },
+    "economicCorrection": {
+      "receiptWindowSeconds": 80.261,
+      "netPairs": 123080,
+      "correctNetPairsPerReceiptWindowHour": 5520589.078,
+      "supersededValue": 5520704.949
+    }
+  },
+  "reuse": {
+    "taxonomyMappings": "324 exact legacy PLANTS symbol/master-ID/scientific-name mappings are committed in generated catalog source descriptors; tranches 01 through 04 consumed 160 and eight mixed-status mappings remain excluded.",
+    "actor": "The acquire-once actor, exact-FIPS replay model, immutable receipt schemas, and 51-state deterministic partition are generalized to an 80-taxon unit with explicit cardinality, rate-limit, and restart semantics.",
+    "priorAcquisitionArtifacts": 0,
+    "qualification": "Earlier provider bytes are taxon-specific and cannot answer tranche-05 profiles or distributions. Shared contract behavior is reused, but all 80 selected taxon responses must be newly acquired."
+  },
+  "semanticAttestation": {
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "usesCoordinates": false,
+    "usesMapServerCrossLayerIdJoin": false,
+    "treatsStateOnlyRowsAsCountyEvidence": false,
+    "preservesApplicabilitySeparately": true,
+    "preservesDenominatorSeparately": true,
+    "reportsGrossAsNet": false
+  },
+  "acceptanceCriteria": {
+    "semanticDryRunNetworkRequests": 0,
+    "expectedProviderRequests": 165,
+    "expectedNationalPartitions": 51,
+    "minimumNetNewCountySpeciesMovement": 25000,
+    "stretchNetNewCountySpeciesMovement": 100000,
+    "maximumArtifactBytes": 104857600,
+    "allowedNegativeClaimsFromSilence": 0,
+    "allowedUnresolvedConflicts": 0,
+    "requiredReleaseGates": [
+      "immutable acquisition and run verification",
+      "prepare-data plan and deterministic generation",
+      "data integrity",
+      "research integrity",
+      "state research projections",
+      "national readiness",
+      "typecheck",
+      "lint",
+      "production build",
+      "local desktop and mobile browser QA",
+      "exact content-SHA GitHub deployment verification",
+      "canonical and immutable production HTTP and browser verification"
+    ]
+  }
+}
