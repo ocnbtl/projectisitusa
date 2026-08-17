@@ -1,26 +1,26 @@
 # Arkansas Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `75`
 - County-species pairs: `187800`
-- Verified present: `2836`
+- Verified present: `3290`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `14864`
-- Not researched: `170100`
-- Determination coverage: `1.51%`
-- Research coverage: `9.42%`
-- Explicit outcome coverage: `9.4249%`
-- Applicable protocol cells: `190`
+- Researched unresolved: `17410`
+- Not researched: `167100`
+- Determination coverage: `1.75%`
+- Research coverage: `11.02%`
+- Explicit outcome coverage: `11.0224%`
+- Applicable protocol cells: `212`
 - Current complete protocol cells: `103`
-- Protocol completion: `61.05%`
-- Current protocol completion: `54.21%`
-- Evidence records: `5512`
-- Research runs: `18`
+- Protocol completion: `54.72%`
+- Current protocol completion: `48.58%`
+- Evidence records: `5966`
+- Research runs: `19`
 - Rejection records: `464`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 493 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 1364 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 1818 | 160 |
 | GBIF preserved specimen records | operational | 2026-07-31T12:52:27.880Z | 1027 | 81 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

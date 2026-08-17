@@ -1,26 +1,26 @@
 # Montana Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `820`
+- Verified present: `1005`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13292`
-- Not researched: `126112`
-- Determination coverage: `0.58%`
-- Research coverage: `10.06%`
-- Explicit outcome coverage: `10.0639%`
-- Applicable protocol cells: `143`
+- Researched unresolved: `15347`
+- Not researched: `123872`
+- Determination coverage: `0.72%`
+- Research coverage: `11.66%`
+- Explicit outcome coverage: `11.6613%`
+- Applicable protocol cells: `153`
 - Current complete protocol cells: `53`
-- Protocol completion: `46.15%`
-- Current protocol completion: `37.06%`
-- Evidence records: `820`
-- Research runs: `18`
+- Protocol completion: `43.14%`
+- Current protocol completion: `34.64%`
+- Evidence records: `1005`
+- Research runs: `19`
 - Rejection records: `6`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 239 | 68 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 553 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 738 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-09T09:24:48.738Z | 0 | 31 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

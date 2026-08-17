@@ -1,26 +1,26 @@
 # Massachusetts Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `823`
+- Verified present: `975`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `2271`
-- Not researched: `31962`
-- Determination coverage: `2.35%`
-- Research coverage: `8.83%`
-- Explicit outcome coverage: `8.8259%`
-- Applicable protocol cells: `181`
+- Researched unresolved: `2679`
+- Not researched: `31402`
+- Determination coverage: `2.78%`
+- Research coverage: `10.42%`
+- Explicit outcome coverage: `10.4233%`
+- Applicable protocol cells: `196`
 - Current complete protocol cells: `56`
-- Protocol completion: `38.12%`
-- Current protocol completion: `30.94%`
-- Evidence records: `831`
-- Research runs: `21`
+- Protocol completion: `35.20%`
+- Current protocol completion: `28.57%`
+- Evidence records: `983`
+- Research runs: `22`
 - Rejection records: `27`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 84 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 585 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 737 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-09T21:14:35.056Z | 6 | 34 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

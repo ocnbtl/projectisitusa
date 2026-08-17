@@ -1,26 +1,26 @@
 # North Dakota Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `429`
+- Verified present: `567`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `11284`
-- Not researched: `120999`
-- Determination coverage: `0.32%`
-- Research coverage: `8.83%`
-- Explicit outcome coverage: `8.8259%`
-- Applicable protocol cells: `116`
+- Researched unresolved: `13266`
+- Not researched: `118879`
+- Determination coverage: `0.43%`
+- Research coverage: `10.42%`
+- Explicit outcome coverage: `10.4233%`
+- Applicable protocol cells: `123`
 - Current complete protocol cells: `80`
-- Protocol completion: `80.17%`
-- Current protocol completion: `68.97%`
-- Evidence records: `742`
-- Research runs: `17`
+- Protocol completion: `75.61%`
+- Current protocol completion: `65.04%`
+- Evidence records: `880`
+- Research runs: `18`
 - Rejection records: `89`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 19 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 262 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 400 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-09T06:15:12.914Z | 150 | 59 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

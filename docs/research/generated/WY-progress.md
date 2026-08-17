@@ -1,26 +1,26 @@
 # Wyoming Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `276`
+- Verified present: `355`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5612`
-- Not researched: `51704`
-- Determination coverage: `0.48%`
-- Research coverage: `10.22%`
-- Explicit outcome coverage: `10.2236%`
-- Applicable protocol cells: `131`
+- Researched unresolved: `6453`
+- Not researched: `50784`
+- Determination coverage: `0.62%`
+- Research coverage: `11.82%`
+- Explicit outcome coverage: `11.8211%`
+- Applicable protocol cells: `137`
 - Current complete protocol cells: `53`
-- Protocol completion: `50.38%`
-- Current protocol completion: `40.46%`
-- Evidence records: `276`
-- Research runs: `19`
+- Protocol completion: `48.18%`
+- Current protocol completion: `38.69%`
+- Evidence records: `355`
+- Research runs: `20`
 - Rejection records: `3`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 68 | 71 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 193 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 272 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-09T14:10:37.141Z | 0 | 31 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

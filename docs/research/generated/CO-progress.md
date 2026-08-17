@@ -1,26 +1,26 @@
 # Colorado Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `1766`
+- Verified present: `1874`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `16282`
-- Not researched: `142208`
-- Determination coverage: `1.10%`
-- Research coverage: `11.26%`
-- Explicit outcome coverage: `11.2620%`
-- Applicable protocol cells: `202`
+- Researched unresolved: `18734`
+- Not researched: `139648`
+- Determination coverage: `1.17%`
+- Research coverage: `12.86%`
+- Explicit outcome coverage: `12.8594%`
+- Applicable protocol cells: `210`
 - Current complete protocol cells: `154`
-- Protocol completion: `76.24%`
-- Current protocol completion: `76.24%`
-- Evidence records: `8400`
-- Research runs: `22`
+- Protocol completion: `73.33%`
+- Current protocol completion: `73.33%`
+- Evidence records: `8508`
+- Research runs: `23`
 - Rejection records: `1742`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:30.000Z | 325 | 89 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 295 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 403 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-14T21:16:20.390Z | 1330 | 132 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

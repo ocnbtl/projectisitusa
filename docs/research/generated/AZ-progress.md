@@ -1,26 +1,26 @@
 # Arizona Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `592`
+- Verified present: `676`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3593`
-- Not researched: `33375`
-- Determination coverage: `1.58%`
-- Research coverage: `11.14%`
-- Explicit outcome coverage: `11.1422%`
-- Applicable protocol cells: `181`
+- Researched unresolved: `4109`
+- Not researched: `32775`
+- Determination coverage: `1.80%`
+- Research coverage: `12.74%`
+- Explicit outcome coverage: `12.7396%`
+- Applicable protocol cells: `196`
 - Current complete protocol cells: `115`
-- Protocol completion: `70.72%`
-- Current protocol completion: `63.54%`
-- Evidence records: `5093`
-- Research runs: `18`
+- Protocol completion: `65.31%`
+- Current protocol completion: `58.67%`
+- Evidence records: `5177`
+- Research runs: `19`
 - Rejection records: `966`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 81 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 232 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 316 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-08T03:04:52.169Z | 294 | 93 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

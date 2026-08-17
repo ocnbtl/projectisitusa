@@ -1,26 +1,26 @@
 # Washington Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `39`
 - County-species pairs: `97656`
-- Verified present: `2031`
+- Verified present: `2250`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `8967`
-- Not researched: `86658`
-- Determination coverage: `2.08%`
-- Research coverage: `11.26%`
-- Explicit outcome coverage: `11.2620%`
-- Applicable protocol cells: `235`
+- Researched unresolved: `10308`
+- Not researched: `85098`
+- Determination coverage: `2.30%`
+- Research coverage: `12.86%`
+- Explicit outcome coverage: `12.8594%`
+- Applicable protocol cells: `252`
 - Current complete protocol cells: `167`
-- Protocol completion: `76.60%`
-- Current protocol completion: `71.06%`
-- Evidence records: `6916`
-- Research runs: `21`
+- Protocol completion: `71.43%`
+- Current protocol completion: `66.27%`
+- Evidence records: `7135`
+- Research runs: `22`
 - Rejection records: `1251`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 712 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 931 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-09T00:14:38.878Z | 1245 | 145 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

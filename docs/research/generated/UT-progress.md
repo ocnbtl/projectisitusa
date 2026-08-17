@@ -1,26 +1,26 @@
 # Utah Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `501`
+- Verified present: `640`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6778`
-- Not researched: `65337`
-- Determination coverage: `0.69%`
-- Research coverage: `10.02%`
-- Explicit outcome coverage: `10.0240%`
-- Applicable protocol cells: `140`
+- Researched unresolved: `7799`
+- Not researched: `64177`
+- Determination coverage: `0.88%`
+- Research coverage: `11.62%`
+- Explicit outcome coverage: `11.6214%`
+- Applicable protocol cells: `151`
 - Current complete protocol cells: `53`
-- Protocol completion: `47.14%`
-- Current protocol completion: `37.86%`
-- Evidence records: `528`
-- Research runs: `18`
+- Protocol completion: `43.71%`
+- Current protocol completion: `35.10%`
+- Evidence records: `667`
+- Research runs: `19`
 - Rejection records: `22`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 75 | 67 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 377 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 516 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:47:30.140Z | 3 | 31 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

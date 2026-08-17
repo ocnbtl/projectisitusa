@@ -1,26 +1,26 @@
 # Ohio Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `88`
 - County-species pairs: `220352`
-- Verified present: `3340`
+- Verified present: `3803`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `17604`
-- Not researched: `199408`
-- Determination coverage: `1.52%`
-- Research coverage: `9.50%`
-- Explicit outcome coverage: `9.5048%`
-- Applicable protocol cells: `191`
+- Researched unresolved: `20661`
+- Not researched: `195888`
+- Determination coverage: `1.73%`
+- Research coverage: `11.10%`
+- Explicit outcome coverage: `11.1022%`
+- Applicable protocol cells: `205`
 - Current complete protocol cells: `115`
-- Protocol completion: `67.02%`
-- Current protocol completion: `60.21%`
-- Evidence records: `4476`
-- Research runs: `15`
+- Protocol completion: `62.44%`
+- Current protocol completion: `56.10%`
+- Evidence records: `4939`
+- Research runs: `16`
 - Rejection records: `2281`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 641 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 1603 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 2066 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-02T21:08:07.505Z | 588 | 94 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,26 +1,26 @@
 # New York Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `2748`
+- Verified present: `3137`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `11016`
-- Not researched: `141484`
-- Determination coverage: `1.77%`
-- Research coverage: `8.87%`
-- Explicit outcome coverage: `8.8658%`
-- Applicable protocol cells: `196`
+- Researched unresolved: `13107`
+- Not researched: `139004`
+- Determination coverage: `2.02%`
+- Research coverage: `10.46%`
+- Explicit outcome coverage: `10.4633%`
+- Applicable protocol cells: `214`
 - Current complete protocol cells: `72`
-- Protocol completion: `43.37%`
-- Current protocol completion: `36.73%`
-- Evidence records: `3625`
-- Research runs: `13`
+- Protocol completion: `39.72%`
+- Current protocol completion: `33.64%`
+- Evidence records: `4014`
+- Research runs: `14`
 - Rejection records: `787`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 494 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 1533 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 1922 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-04T09:50:11.815Z | 297 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-17T01:06:23.740Z",
+  "runId": "20260817T010503Z__usda-nrcs-plants__f2a4f0bf267c",
+  "sourceId": "usda-nrcs-plants",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:nassella-neesiana",
+    "11001:nepeta-cataria",
+    "11001:nephrolepis-cordifolia",
+    "11001:nerium-oleander",
+    "11001:nicotiana-glauca",
+    "11001:oxalis-debilis",
+    "11001:paspalum-dilatatum",
+    "11001:paspalum-urvillei",
+    "11001:peperomia-pellucida",
+    "11001:perilla-frutescens",
+    "11001:phalaris-minor",
+    "11001:phyllanthus-tenellus",
+    "11001:phyllanthus-urinaria",
+    "11001:polypogon-monspeliensis",
+    "11001:prunus-persica",
+    "11001:pteris-vittata",
+    "11001:pyracantha-fortuneana",
+    "11001:pyracantha-koidzumii",
+    "11001:ranunculus-arvensis",
+    "11001:ranunculus-muricatus",
+    "11001:ranunculus-parviflorus",
+    "11001:ranunculus-sardous",
+    "11001:raphanus-sativus",
+    "11001:rosa-bracteata",
+    "11001:rosa-laevigata",
+    "11001:rosa-rubiginosa",
+    "11001:rumex-conglomeratus",
+    "11001:rumex-crispus",
+    "11001:rumex-obtusifolius",
+    "11001:salix-cinerea",
+    "11001:schedonorus-pratensis",
+    "11001:senna-occidentalis",
+    "11001:setaria-viridis",
+    "11001:sherardia-arvensis",
+    "11001:sida-urens",
+    "11001:sisymbrium-officinale",
+    "11001:solanum-capsicoides",
+    "11001:solanum-lycopersicum",
+    "11001:solanum-nigrescens",
+    "11001:solanum-nigrum"
+  ],
+  "parameterHash": "0d84ed2a9c96e1a4224fea894a9b6a640875b2f1c07daaaf6fced93bd2e6aeb3",
+  "authority": {
+    "name": "USDA Natural Resources Conservation Service",
+    "sourceUrl": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile/getDownloadDistributionDocumentation",
+    "publisher": "USDA NRCS"
+  },
+  "terms": {
+    "license": "Official USDA NRCS service; no dataset-specific machine-readable license was exposed. Copyright attribution and exact source bytes are retained.",
+    "termsUrl": "https://plants.usda.gov/home/help",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-17T01:06:23.740Z",
+    "freshnessDate": "2026-08-16"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county FIPS plus matching registered active state and county-equivalent names.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates, MapServer cross-layer ID joins, and automatic retired-geography crosswalks are prohibited."
+  },
+  "taxonomy": {
+    "method": "Exact committed PLANTS master ID, accepted profile, symbol, scientific name, and L48 Introduced status.",
+    "targetSpeciesIds": [
+      "nassella-neesiana",
+      "nepeta-cataria",
+      "nephrolepis-cordifolia",
+      "nerium-oleander",
+      "nicotiana-glauca",
+      "oxalis-debilis",
+      "paspalum-dilatatum",
+      "paspalum-urvillei",
+      "peperomia-pellucida",
+      "perilla-frutescens",
+      "phalaris-minor",
+      "phyllanthus-tenellus",
+      "phyllanthus-urinaria",
+      "polypogon-monspeliensis",
+      "prunus-persica",
+      "pteris-vittata",
+      "pyracantha-fortuneana",
+      "pyracantha-koidzumii",
+      "ranunculus-arvensis",
+      "ranunculus-muricatus",
+      "ranunculus-parviflorus",
+      "ranunculus-sardous",
+      "raphanus-sativus",
+      "rosa-bracteata",
+      "rosa-laevigata",
+      "rosa-rubiginosa",
+      "rumex-conglomeratus",
+      "rumex-crispus",
+      "rumex-obtusifolius",
+      "salix-cinerea",
+      "schedonorus-pratensis",
+      "senna-occidentalis",
+      "setaria-viridis",
+      "sherardia-arvensis",
+      "sida-urens",
+      "sisymbrium-officinale",
+      "solanum-capsicoides",
+      "solanum-lycopersicum",
+      "solanum-nigrescens",
+      "solanum-nigrum"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "plantMasterId",
+      "Symbol",
+      "State FIP",
+      "County FIP"
+    ],
+    "requests": []
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "PLANTS distribution rows are positive occurrence documentation, not a negative survey.",
+      "Source silence, failure, rejection, missing geography, and state-only rows never create absence or non-detection."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260817T010503Z__usda-nrcs-plants__f2a4f0bf267c/artifacts/national-acquisition-reference.json",
+      "sha256": "74b78431c493d99da5128a270ee4cefe1a29cbaaca435ac4faf67641b05f3ef5",
+      "bytes": 33531
+    }
+  ],
+  "caveats": [
+    "County distribution documentation supports occurrence. Missing counties do not imply absence.",
+    "The official mutable service was acquired once as 40 complete taxon-bounded CSV responses guarded by profile and source-status fingerprints.",
+    "No dataset-specific machine-readable license or row date was exposed."
+  ]
+}

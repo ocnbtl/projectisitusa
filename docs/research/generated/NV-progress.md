@@ -1,26 +1,26 @@
 # Nevada Research Progress
 
-Generated: `2026-08-16T00:00:00.000Z`
+Generated: `2026-08-17T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `247`
+- Verified present: `308`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4173`
-- Not researched: `38148`
-- Determination coverage: `0.58%`
-- Research coverage: `10.38%`
-- Explicit outcome coverage: `10.3834%`
-- Applicable protocol cells: `131`
+- Researched unresolved: `4792`
+- Not researched: `37468`
+- Determination coverage: `0.72%`
+- Research coverage: `11.98%`
+- Explicit outcome coverage: `11.9808%`
+- Applicable protocol cells: `142`
 - Current complete protocol cells: `79`
-- Protocol completion: `70.23%`
-- Current protocol completion: `60.31%`
-- Evidence records: `568`
-- Research runs: `15`
+- Protocol completion: `64.79%`
+- Current protocol completion: `55.63%`
+- Evidence records: `629`
+- Research runs: `16`
 - Rejection records: `126`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 12 | 77 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-16T21:39:52.772Z | 200 | 120 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 261 | 160 |
 | GBIF preserved specimen records | operational | 2026-08-08T19:35:35.748Z | 37 | 57 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
