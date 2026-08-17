@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-gbif-download-acquisition-receipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "acquisitionId", "actor", "planId", "planPath", "planSha256",
+    "taxonomyCachePath", "taxonomyCacheSha256", "startedAt", "requestedAt", "finishedAt",
+    "download", "statusHistory", "archive", "taxonCount", "requestPath", "credentialsPersisted",
+    "completeArchiveRetained", "partitioningStatus", "semantics"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisitionId": { "type": "string", "pattern": "^[0-9]{8}t[0-9]{6}z__gbif-download__[a-f0-9]{12}$" },
+    "actor": { "const": "gbif-national-download-acquisition@1.0.0" },
+    "planId": { "type": "string", "pattern": "^gbif-national-download-v1-[a-z0-9-]+$" },
+    "planPath": { "type": "string", "pattern": "^src/data/research/national-acquisition-plans/[a-z0-9-]+\\.json$" },
+    "planSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "taxonomyCachePath": { "type": "string", "pattern": "^src/data/research/caches/gbif-taxonomy-[a-z0-9-]+\\.json$" },
+    "taxonomyCacheSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "startedAt": { "type": "string", "format": "date-time" },
+    "requestedAt": { "type": "string", "format": "date-time" },
+    "finishedAt": { "type": "string", "format": "date-time" },
+    "download": { "$ref": "#/$defs/downloadMetadata" },
+    "statusHistory": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "allOf": [
+          { "$ref": "#/$defs/downloadMetadata" },
+          {
+            "type": "object",
+            "required": ["observedAt"],
+            "properties": { "observedAt": { "type": "string", "format": "date-time" } }
+          }
+        ]
+      }
+    },
+    "archive": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "bytes", "sha256"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/download\\.zip$" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "taxonCount": { "type": "integer", "minimum": 1 },
+    "requestPath": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/request\\.redacted\\.json$" },
+    "credentialsPersisted": { "const": false },
+    "completeArchiveRetained": { "const": true },
+    "partitioningStatus": { "const": "not-started" },
+    "semantics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["createsAbsenceFromSilence", "createsNotDetectedFromSilence", "failedDownloadCreatesNegative", "unparsedArchiveMarksScopeComplete"],
+      "properties": {
+        "createsAbsenceFromSilence": { "const": false },
+        "createsNotDetectedFromSilence": { "const": false },
+        "failedDownloadCreatesNegative": { "const": false },
+        "unparsedArchiveMarksScopeComplete": { "const": false }
+      }
+    }
+  },
+  "$defs": {
+    "downloadMetadata": {
+      "type": "object",
+      "required": ["key", "status", "downloadLink", "doi", "license", "size", "totalRecords", "created", "modified"],
+      "properties": {
+        "key": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "downloadLink": { "type": ["string", "null"], "format": "uri" },
+        "doi": { "type": ["string", "null"] },
+        "license": { "type": ["string", "null"] },
+        "size": { "type": ["integer", "null"], "minimum": 0 },
+        "totalRecords": { "type": ["integer", "null"], "minimum": 0 },
+        "created": { "type": ["string", "null"] },
+        "modified": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

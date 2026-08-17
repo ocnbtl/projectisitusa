@@ -1,0 +1,53 @@
+{
+  "actor": "gbif-national-download-acquisition@1.0.0",
+  "authenticationMethod": "HTTP Basic with GBIF username and password; values are read only for acquisition and never persisted",
+  "credentialPresence": {
+    "GBIF_EMAIL": false,
+    "GBIF_PASSWORD": false,
+    "GBIF_USERNAME": false
+  },
+  "deterministicAcquisitionPath": "src/data/research/national-acquisitions/20260817t005839z__gbif-download__4809c6733ef1",
+  "evaluatedAt": "2026-08-17T00:58:39.949Z",
+  "evaluationId": "gbif-national-download-v1-retained-r55-semantic-preflight",
+  "executionReadiness": "blocked-external-credentials",
+  "missingCredentialEnvironment": [
+    "GBIF_EMAIL",
+    "GBIF_PASSWORD",
+    "GBIF_USERNAME"
+  ],
+  "nationalScope": {
+    "jurisdictions": 51,
+    "partitioningImplemented": false,
+    "qualification": "This version proves authenticated immutable national acquisition only. Download parsing and exact county partitioning remain intentionally blocked until a real complete archive is retained.",
+    "species": 53
+  },
+  "networkRequestsIssued": 0,
+  "notificationAddressPersistence": "redacted",
+  "parameterHash": "4809c6733ef116ecaf66934467772efbb7147ed6b21510638cb898b05d319178",
+  "planId": "gbif-national-download-v1-retained-r55",
+  "predicate": {
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "country": "US",
+    "occurrenceStatus": "PRESENT",
+    "taxonKeys": 53
+  },
+  "providerDocumentation": [
+    "https://techdocs.gbif.org/en/data-use/api-downloads",
+    "https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation",
+    "https://www.gbif.org/terms"
+  ],
+  "schemaVersion": 1,
+  "secretsReadOrPersisted": false,
+  "semanticDryRun": true,
+  "semantics": {
+    "completeDownloadRequiredBeforePartition": true,
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "failedDownloadCreatesNegative": false,
+    "unparsedArchiveMarksScopeComplete": false
+  },
+  "sourceId": "gbif-preserved-specimens",
+  "taxonomyMode": "legacy-gbif-backbone-retained-identifiers",
+  "taxonomyQualification": "The plan intentionally retains exact legacy GBIF Backbone numeric identifiers. GBIF documents continued API support for those identifiers; a COL XR migration requires a separately verified v2 taxonomy cache.",
+  "technicalContractStatus": "pass"
+}

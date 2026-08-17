@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-gbif-download-plan.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "planId", "sourceId", "snapshotDate", "apiBaseUrl", "requestUrl", "statusUrl",
+    "documentationUrl", "taxonomyDocumentationUrl", "termsUrl",
+    "format", "countryCode", "basisOfRecord", "occurrenceStatus", "taxonomyMode", "checklistKey",
+    "taxonomyCachePath", "taxonomyCacheSha256", "speciesIds", "nationalV1StateCodes", "artifactBudgetBytes",
+    "pollIntervalSeconds", "maxPollMinutes", "baselineGeneratedAsOf", "baselineCommit", "selectionEvidencePath",
+    "requiredCredentialEnvironment"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "planId": { "type": "string", "pattern": "^gbif-national-download-v1-[a-z0-9-]+$" },
+    "sourceId": { "const": "gbif-preserved-specimens" },
+    "snapshotDate": { "type": "string", "format": "date" },
+    "apiBaseUrl": { "const": "https://api.gbif.org/v1" },
+    "requestUrl": { "const": "https://api.gbif.org/v1/occurrence/download/request" },
+    "statusUrl": { "const": "https://api.gbif.org/v1/occurrence/download" },
+    "documentationUrl": { "const": "https://techdocs.gbif.org/en/data-use/api-downloads" },
+    "taxonomyDocumentationUrl": { "const": "https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation" },
+    "termsUrl": { "const": "https://www.gbif.org/terms" },
+    "format": { "const": "DWCA" },
+    "countryCode": { "const": "US" },
+    "basisOfRecord": { "const": "PRESERVED_SPECIMEN" },
+    "occurrenceStatus": { "const": "PRESENT" },
+    "taxonomyMode": { "const": "legacy-gbif-backbone-retained-identifiers" },
+    "checklistKey": { "type": "null" },
+    "taxonomyCachePath": { "type": "string", "pattern": "^src/data/research/caches/gbif-taxonomy-[a-z0-9-]+\\.json$" },
+    "taxonomyCacheSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "speciesIds": {
+      "type": "array", "minItems": 1, "maxItems": 500, "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" }
+    },
+    "nationalV1StateCodes": {
+      "type": "array", "minItems": 51, "maxItems": 51, "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[A-Z]{2}$" }
+    },
+    "artifactBudgetBytes": { "type": "integer", "minimum": 1048576, "maximum": 53687091200 },
+    "pollIntervalSeconds": { "type": "integer", "minimum": 15, "maximum": 300 },
+    "maxPollMinutes": { "type": "integer", "minimum": 15, "maximum": 1440 },
+    "baselineGeneratedAsOf": { "type": "string", "format": "date" },
+    "baselineCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "selectionEvidencePath": { "type": "string", "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$" },
+    "requiredCredentialEnvironment": {
+      "const": ["GBIF_USERNAME", "GBIF_PASSWORD", "GBIF_EMAIL"]
+    }
+  }
+}
