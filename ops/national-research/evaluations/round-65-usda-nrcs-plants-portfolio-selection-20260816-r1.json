@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-65-usda-nrcs-plants-portfolio-selection-20260816-r1",
+  "roundId": "national-round-65",
+  "evaluatedAt": "2026-08-17T01:03:28.531Z",
+  "result": "selected-after-gbif-external-blocker",
+  "baseline": {
+    "commit": "8945834f089345a561e4094eb60f1ac0bc594a60",
+    "generatedAsOf": "2026-08-16",
+    "countySpeciesDenominator": 7872576,
+    "verifiedPresent": 103651,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 722433,
+    "notResearched": 7046484
+  },
+  "previousRound": {
+    "roundId": "national-round-64",
+    "grossCountySpeciesOutcomes": 125760,
+    "uniqueFinalMatrixMovement": 123080,
+    "verifiedPresentMovement": 11931,
+    "researchedUnresolvedMovement": 111149,
+    "alreadyAccountedOverlap": 2680,
+    "providerEvidenceRequests": 85,
+    "source": "usda-nrcs-plants"
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "sourceId": "gbif-preserved-specimens",
+      "acquisitionShape": "one authenticated provider-native US Darwin Core download for 53 exact retained taxon mappings",
+      "technicalContractStatus": "pass",
+      "executionStatus": "blocked-external-credentials",
+      "missingCredentialEnvironment": ["GBIF_EMAIL", "GBIF_PASSWORD", "GBIF_USERNAME"],
+      "preflightPath": "ops/national-research/evaluations/round-65-gbif-national-download-readiness-20260816-r1.json",
+      "networkRequestsIssued": 0,
+      "status": "not-executable"
+    },
+    {
+      "rank": 2,
+      "sourceId": "usda-nrcs-plants",
+      "acquisitionShape": "40 complete provider-native taxon-bounded national distribution CSV responses with exact state and county FIPS",
+      "grossPairs": 125760,
+      "expectedNetNewPairs": 123080,
+      "alreadyAccountedOverlap": 2680,
+      "expectedProviderRequests": 85,
+      "expectedNetPairsPerProviderRequest": 1448,
+      "nationalReuse": true,
+      "status": "selected"
+    },
+    {
+      "rank": 3,
+      "sourceId": "usfs-afpe-v1-0",
+      "acquisitionShape": "current versioned national replacement for the stale retained archive",
+      "status": "blocked",
+      "blocker": "No newer hash-pinned official archive is retained; the existing 611 stale protocol cells remain freshness work rather than net-new county movement."
+    }
+  ],
+  "selectedScope": {
+    "planId": "usda-nrcs-plants-national-v1-tranche-04",
+    "selectionRule": "Highest exact current not-researched count, excluding all 120 taxa consumed by tranches 01 through 03 plus the eight provider-status mappings found to mix Native with Introduced/Both; deterministic speciesId order breaks equal-net ties.",
+    "stateCount": 51,
+    "activeCountyEquivalentCount": 3144,
+    "taxonCount": 40,
+    "grossOrderedPairs": 125760,
+    "baselineNotResearchedPairs": 123080,
+    "expectedAlreadyAccountedOverlap": 2680,
+    "expectedProviderRequests": {
+      "contractSnapshots": 3,
+      "sourceStatusFingerprints": 2,
+      "profileResponses": 40,
+      "distributionResponses": 40,
+      "total": 85
+    },
+    "remainingPureMappingCountBeforeSelection": 196,
+    "remainingPureMappingNotResearchedPairsBeforeSelection": 525525,
+    "remainingPureMappingCountAfterSelection": 156,
+    "remainingPureMappingNotResearchedPairsAfterSelection": 402445,
+    "mixedStatusMasterIdsExcluded": [14349, 14698, 18574, 18666, 19209, 24343, 51151, 87413],
+    "positiveYieldForecast": "Unbounded within the exact 123080 net-movement forecast. Final positives require the retained profile, stable pure Introduced/Both before/after fingerprints, and exact current FIPS/name validation from each retained CSV."
+  },
+  "forecastCorrection": {
+    "supersededEvaluationPath": "ops/national-research/evaluations/round-64-usda-nrcs-plants-national-20260816-r1.json",
+    "supersededRemainingNotResearchedPairs": 525497,
+    "correctCurrentGeneratedSummaryTotal": 525525,
+    "difference": 28,
+    "effectOnSelectedTop40": 0,
+    "qualification": "The current 196-taxon rescore and the Round 64 pre-run selection artifact independently agree on 525525. The Round 64 release movement and this top-40 forecast remain unchanged."
+  },
+  "reuse": {
+    "taxonomyMappings": "324 exact legacy PLANTS symbol/master-ID/scientific-name mappings are committed in generated catalog source descriptors; tranches 01 through 03 consumed 120 and eight mixed-status mappings remain excluded.",
+    "actor": "The released generalized acquire-once actor, exact-FIPS replay model, receipt schemas, and 51-state deterministic partition are reused without code or schema changes.",
+    "priorAcquisitionArtifacts": 0,
+    "qualification": "Earlier provider bytes are taxon-specific and cannot answer tranche-04 profiles or distributions. Shared contract behavior is reused, but all 40 selected taxon responses must be newly acquired."
+  },
+  "semanticAttestation": {
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "usesCoordinates": false,
+    "usesMapServerCrossLayerIdJoin": false,
+    "treatsStateOnlyRowsAsCountyEvidence": false,
+    "preservesApplicabilitySeparately": true,
+    "preservesDenominatorSeparately": true,
+    "reportsGrossAsNet": false
+  }
+}
