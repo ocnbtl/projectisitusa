@@ -94,6 +94,11 @@ import {
 } from "./research/national-gbif-download";
 import { replayNationalGbifArchive } from "./research/national-gbif-download-replay";
 import {
+  nationalGbifPartitionInputPaths,
+  validateNationalGbifPartitionStateRows,
+  verifyNationalGbifPartitionInputHashes,
+} from "./research/partition-national-gbif-download";
+import {
   type NationalGbifReference,
   verifyNationalGbifAcquisition,
 } from "./research/verify-national-gbif-download";
@@ -1781,6 +1786,11 @@ for (const acquisition of nationalGbifAcquisitions) {
     `GBIF acquisition ${acquisition.receipt.acquisition_id} partition receipt hash changed.`,
   );
   const partition = JSON.parse(partitionBytes.toString("utf8")) as {
+    codeCommit: string;
+    inputHashes: Record<string, string>;
+    acquisitionReceiptPath: string;
+    archivePath: string;
+    selectionPath: string;
     statePartitions: Array<{
       stateCode: string;
       runCreated: boolean;
@@ -1795,6 +1805,22 @@ for (const acquisition of nationalGbifAcquisitions) {
     }>;
   };
   schemaValidator("national-gbif-download-partition-receipt.schema.json").parse(partition);
+  validateNationalGbifPartitionStateRows(partition.statePartitions);
+  const expectedPartitionInputs = nationalGbifPartitionInputPaths({
+    root: ROOT,
+    planPath: path.join(ROOT, acquisition.receipt.parameters.planPath),
+    selectionPath: path.join(ROOT, partition.selectionPath),
+    taxonomyCachePath: plan.taxonomyCachePath,
+    selectionUniversePlanPath: plan.selectionUniversePlanPath!,
+    acquisitionReceiptPath: path.join(ROOT, partition.acquisitionReceiptPath),
+    archivePath: path.join(ROOT, partition.archivePath),
+  });
+  verifyNationalGbifPartitionInputHashes({
+    root: ROOT,
+    codeCommit: partition.codeCommit,
+    inputHashes: partition.inputHashes,
+    inputPaths: expectedPartitionInputs,
+  });
   assertUnique(
     partition.statePartitions.map((state) => state.stateCode),
     `GBIF acquisition ${acquisition.receipt.acquisition_id} partition receipt states`,
@@ -1879,6 +1905,7 @@ for (const acquisition of nationalGbifAcquisitions) {
     stateInputs,
     completedAt: acquisition.receipt.finished_at,
     downloadKey: acquisition.receipt.download.key,
+    sourceUrl: acquisition.receipt.archive.source_url,
     providerTotalRecords: acquisition.receipt.archive.provider_total_records,
   });
   for (const entry of entries) {

@@ -11,7 +11,7 @@
     "sourceId": { "const": "gbif-preserved-specimens" },
     "createdAt": { "type": "string", "format": "date-time" },
     "codeCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
-    "inputHashes": { "type": "object", "minProperties": 8, "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" } },
+    "inputHashes": { "type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" } },
     "acquisitionId": { "type": "string", "pattern": "^[0-9]{8}t[0-9]{6}z__gbif-download__[a-f0-9]{12}$" },
     "acquisitionReceiptPath": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/receipt\\.json$" },
     "acquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
@@ -88,30 +88,7 @@
         "reviews": { "type": "integer", "minimum": 0, "maximum": 5000 },
         "rejections": { "type": "integer", "minimum": 0, "maximum": 250000 },
         "outcomes": { "type": "integer", "minimum": 0, "maximum": 5000 }
-      },
-      "allOf": [
-        {
-          "if": { "properties": { "pairCount": { "const": 0 } }, "required": ["pairCount"] },
-          "then": {
-            "properties": {
-              "runCreated": { "const": false },
-              "runId": { "type": "null" },
-              "candidateRecords": { "const": 0 },
-              "assertions": { "const": 0 },
-              "reviews": { "const": 0 },
-              "rejections": { "const": 0 },
-              "outcomes": { "const": 0 }
-            }
-          },
-          "else": {
-            "properties": {
-              "runCreated": { "const": true },
-              "runId": { "type": "string", "minLength": 1 },
-              "outcomes": { "minimum": 1 }
-            }
-          }
-        }
-      ]
+      }
     }
   }
 }

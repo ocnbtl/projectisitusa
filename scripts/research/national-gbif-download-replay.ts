@@ -525,6 +525,7 @@ export async function replayNationalGbifArchive(input: {
   stateInputs: StateReplayInput[];
   completedAt: string;
   downloadKey: string;
+  sourceUrl: string;
   providerTotalRecords: number;
 }): Promise<NationalGbifReplay> {
   assert(existsSync(input.archivePath) && statSync(input.archivePath).isFile(), "GBIF archive is missing.");
@@ -722,7 +723,7 @@ export async function replayNationalGbifArchive(input: {
   let selectedEvidencePairs = 0;
   let selectedNoEvidencePairs = 0;
   let selectedPairCount = 0;
-  const queryUrl = `https://www.gbif.org/occurrence/download/${input.downloadKey}`;
+  const queryUrl = input.sourceUrl;
   for (const [stateCode, work] of [...workByState.entries()].sort(([left], [right]) => compareText(left, right))) {
     const assertions: SourceAdapterResult["assertions"] = [];
     const reviews: SourceAdapterResult["reviews"] = [];

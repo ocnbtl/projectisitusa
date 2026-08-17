@@ -1,9 +1,11 @@
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
+import { stableJson as stableRunJson } from "@/lib/research/run-files";
 import {
   getStateDefinition,
   resolveCountyEquivalent,
@@ -21,10 +23,15 @@ import {
   publicDownloadMetadata,
   redactGbifDownloadRequest,
   resolveNationalGbifTaxa,
+  sha256,
   stableJson,
   type NationalGbifDownloadPlan,
 } from "./research/national-gbif-download";
 import { replayNationalGbifArchive } from "./research/national-gbif-download-replay";
+import {
+  nationalGbifPartitionInputPaths,
+  recoverNationalGbifPublicationTransaction,
+} from "./research/partition-national-gbif-download";
 import {
   assertSuccessfulDownloadMetadata,
   checkedFetch,
@@ -53,6 +60,19 @@ assert.equal(selection.selection.counts.notResearchedPairs, 25_406);
 assert.equal(selection.selection.counts.blockedPairs, 18);
 assert.equal(selection.selection.counts.alreadyResearchedPairs, 15_448);
 assert.equal(selection.selection.stateScopes.flatMap((entry) => entry.candidatePairs).length, 25_406);
+const partitionInputs = nationalGbifPartitionInputPaths({
+  root,
+  planPath,
+  selectionPath: selection.selectionPath,
+  taxonomyCachePath: plan.taxonomyCachePath,
+  selectionUniversePlanPath: plan.selectionUniversePlanPath!,
+  acquisitionReceiptPath: path.join(root, "src/data/research/national-acquisitions/fixture/receipt.json"),
+  archivePath: path.join(root, "src/data/research/national-acquisitions/fixture/download.zip"),
+});
+assert.equal(partitionInputs.length, 26);
+assert.equal(new Set(partitionInputs).size, 26);
+assert(partitionInputs.includes(path.join(root, "scripts/research/partition-national-gbif-download.ts")));
+assert(partitionInputs.includes(path.join(root, "src/data/research/schemas/national-gbif-download-partition-receipt.schema.json")));
 
 const request = buildGbifDownloadRequest(plan, taxa, "operator@example.org");
 const taxonPredicate = request.predicate.predicates.find((entry) => entry.key === "TAXON_KEY");
@@ -257,6 +277,7 @@ async function testReplayFixture() {
     stateInputs: [{ context, requestedPairs }],
     completedAt: "2026-08-17T12:05:00.000Z",
     downloadKey: "000001-260817000000000",
+    sourceUrl: "https://api.gbif.org/v1/occurrence/download/request/000001-260817000000000.zip",
     providerTotalRecords: occurrenceRows.length,
   };
   const first = await replayNationalGbifArchive(replayInput);
@@ -280,6 +301,7 @@ async function testReplayFixture() {
   assert.equal(result.outcomes.length, 3);
   assert(result.outcomes.every((entry) => entry.scope_complete));
   assert(result.outcomes.every((entry) => entry.status === "evidence-found" || entry.status === "no-qualifying-evidence"));
+  assert(result.outcomes.every((entry) => entry.query_urls.every((url) => url === replayInput.sourceUrl)));
   await assert.rejects(
     replayNationalGbifArchive({
       ...replayInput,
@@ -329,6 +351,71 @@ async function testReplayFixture() {
   }
 }
 
+function testPublicationRecovery() {
+  const fixtureRoot = mkdtempSync(path.join(tmpdir(), "isitusa-gbif-publication-"));
+  try {
+    execFileSync("git", ["init", "--quiet"], { cwd: fixtureRoot });
+    const acquisitionDirectory = path.join(fixtureRoot, "src/data/research/national-acquisitions/fixture");
+    const runsRoot = path.join(fixtureRoot, "src/data/research/runs");
+    mkdirSync(acquisitionDirectory, { recursive: true });
+    const partitionId = "gbif-national-partition-1234567890abcdef";
+    const runId = "20260817T120000Z__gbif-preserved-specimens__fixture";
+    const finalDirectory = path.join(runsRoot, runId);
+    mkdirSync(finalDirectory, { recursive: true });
+    const runReceipt = "{}\n";
+    writeFileSync(path.join(finalDirectory, "receipt.json"), runReceipt);
+    const transactionRoot = path.join(fixtureRoot, ".cache/research/gbif-partition-transactions");
+    mkdirSync(transactionRoot, { recursive: true });
+    const transactionPath = path.join(transactionRoot, `${partitionId}.json`);
+    const repositoryRelative = (filepath: string) => path.relative(fixtureRoot, filepath).replaceAll("\\", "/");
+    const manifest = {
+      schemaVersion: 1,
+      kind: "gbif-national-partition-publication",
+      partitionId,
+      acquisitionDirectory: repositoryRelative(acquisitionDirectory),
+      createdAt: "2026-08-17T12:05:00.000Z",
+      partitionReceipt: {
+        stagingPath: `.cache/research/.${partitionId}-receipt.json`,
+        finalPath: `ops/national-research/evaluations/${partitionId}.json`,
+        sha256: "0".repeat(64),
+        preexisting: false,
+      },
+      runs: [{
+        runId,
+        stagingDirectory: `.cache/research/.${partitionId}/${runId}`,
+        finalDirectory: repositoryRelative(finalDirectory),
+        contentsSha256: sha256(stableRunJson([["receipt.json", runReceipt]])),
+        preexisting: false,
+      }],
+    };
+    writeFileSync(transactionPath, `${JSON.stringify(manifest, null, 2)}\n`);
+    const rolledBack = recoverNationalGbifPublicationTransaction({ root: fixtureRoot, acquisitionDirectory, runsRoot });
+    assert.equal(rolledBack?.status, "rolled-back");
+    assert(!existsSync(finalDirectory));
+    assert(!existsSync(transactionPath));
+
+    mkdirSync(finalDirectory, { recursive: true });
+    writeFileSync(path.join(finalDirectory, "receipt.json"), runReceipt);
+    const finalReceiptPath = path.join(fixtureRoot, manifest.partitionReceipt.finalPath);
+    mkdirSync(path.dirname(finalReceiptPath), { recursive: true });
+    const finalReceipt = "{\"status\":\"complete\"}\n";
+    writeFileSync(finalReceiptPath, finalReceipt);
+    const completeManifest = {
+      ...manifest,
+      partitionReceipt: { ...manifest.partitionReceipt, sha256: sha256(finalReceipt) },
+    };
+    writeFileSync(transactionPath, `${JSON.stringify(completeManifest, null, 2)}\n`);
+    const finalized = recoverNationalGbifPublicationTransaction({ root: fixtureRoot, acquisitionDirectory, runsRoot });
+    assert.equal(finalized?.status, "finalized");
+    assert(existsSync(finalDirectory));
+    assert(existsSync(finalReceiptPath));
+    assert(!existsSync(transactionPath));
+  } finally {
+    rmSync(fixtureRoot, { recursive: true, force: true });
+  }
+}
+
+testPublicationRecovery();
 testReplayFixture()
   .then(() => {
     console.log(JSON.stringify({

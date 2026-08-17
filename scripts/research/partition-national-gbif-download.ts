@@ -123,6 +123,27 @@ type NationalGbifAcquisitionReceipt = {
   warnings: string[];
 };
 
+type NationalGbifPublicationTransaction = {
+  schemaVersion: 1;
+  kind: "gbif-national-partition-publication";
+  partitionId: string;
+  acquisitionDirectory: string;
+  createdAt: string;
+  partitionReceipt: {
+    stagingPath: string;
+    finalPath: string;
+    sha256: string;
+    preexisting: boolean;
+  };
+  runs: Array<{
+    runId: string;
+    stagingDirectory: string;
+    finalDirectory: string;
+    contentsSha256: string;
+    preexisting: boolean;
+  }>;
+};
+
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
@@ -202,6 +223,120 @@ function directoryContents(directory: string, prefix = ""): Map<string, string> 
   return values;
 }
 
+function directoryContentsSha256(directory: string) {
+  return sha256(stableJson([...directoryContents(directory).entries()].sort()));
+}
+
+function mapContentsSha256(contents: Map<string, string>) {
+  return sha256(stableJson([...contents.entries()].sort()));
+}
+
+function resolveRepositoryRelative(root: string, relativePath: string) {
+  assert(relativePath.length > 0 && !path.isAbsolute(relativePath), `Transaction path must be repository-relative: ${relativePath}.`);
+  const resolvedRoot = path.resolve(root);
+  const resolved = path.resolve(resolvedRoot, relativePath);
+  assert(resolved.startsWith(`${resolvedRoot}${path.sep}`), `Transaction path escapes the repository: ${relativePath}.`);
+  return resolved;
+}
+
+function writeAtomicJson(filepath: string, value: unknown) {
+  const contents = `${JSON.stringify(value, null, 2)}\n`;
+  const temporaryPath = `${filepath}.tmp-${process.pid}`;
+  mkdirSync(path.dirname(filepath), { recursive: true });
+  try {
+    writeFileSync(temporaryPath, contents, { flag: "wx" });
+    renameSync(temporaryPath, filepath);
+  } finally {
+    rmSync(temporaryPath, { force: true });
+  }
+}
+
+function isTracked(root: string, filepath: string) {
+  try {
+    const relativePath = path.relative(root, filepath).replaceAll("\\", "/");
+    execFileSync("git", ["ls-files", "--error-unmatch", relativePath], { cwd: root, stdio: "ignore" });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function recoverNationalGbifPublicationTransaction(input: {
+  root: string;
+  acquisitionDirectory: string;
+  runsRoot: string;
+}) {
+  const transactionRoot = path.join(input.root, ".cache/research/gbif-partition-transactions");
+  if (!existsSync(transactionRoot)) return null;
+  const acquisitionRelative = path.relative(input.root, input.acquisitionDirectory).replaceAll("\\", "/");
+  const candidates = readdirSync(transactionRoot)
+    .filter((filename) => filename.endsWith(".json"))
+    .map((filename) => path.join(transactionRoot, filename))
+    .map((filepath) => ({ filepath, transaction: readJson<NationalGbifPublicationTransaction>(filepath) }))
+    .filter(({ transaction }) => transaction.acquisitionDirectory === acquisitionRelative);
+  assert(candidates.length <= 1, `Multiple GBIF publication transactions exist for ${acquisitionRelative}.`);
+  const candidate = candidates[0];
+  if (!candidate) return null;
+  const { filepath: transactionPath, transaction } = candidate;
+  assert(
+    transaction.schemaVersion === 1 && transaction.kind === "gbif-national-partition-publication",
+    `Invalid GBIF publication transaction ${relativeGitPath(transactionPath)}.`,
+  );
+  const expectedStagingRoot = path.join(input.root, ".cache/research", `.${transaction.partitionId}`);
+  const expectedReceiptStaging = path.join(input.root, ".cache/research", `.${transaction.partitionId}-receipt.json`);
+  const expectedReceiptFinal = path.join(input.root, "ops/national-research/evaluations", `${transaction.partitionId}.json`);
+  const receiptStaging = resolveRepositoryRelative(input.root, transaction.partitionReceipt.stagingPath);
+  const receiptFinal = resolveRepositoryRelative(input.root, transaction.partitionReceipt.finalPath);
+  assert(receiptStaging === expectedReceiptStaging && receiptFinal === expectedReceiptFinal, "GBIF publication receipt transaction paths differ from its partition identity.");
+  for (const run of transaction.runs) {
+    const stagingDirectory = resolveRepositoryRelative(input.root, run.stagingDirectory);
+    const finalDirectory = resolveRepositoryRelative(input.root, run.finalDirectory);
+    assert(stagingDirectory === path.join(expectedStagingRoot, run.runId), `GBIF ${run.runId} transaction staging path differs.`);
+    assert(finalDirectory === path.join(input.runsRoot, run.runId), `GBIF ${run.runId} transaction final path differs.`);
+    assert(run.contentsSha256.match(/^[a-f0-9]{64}$/u), `GBIF ${run.runId} transaction content hash is invalid.`);
+  }
+  const allRunsFinal = transaction.runs.every((run) => existsSync(resolveRepositoryRelative(input.root, run.finalDirectory)));
+  const receiptIsFinal = existsSync(receiptFinal);
+  if (allRunsFinal && receiptIsFinal) {
+    for (const run of transaction.runs) {
+      const finalDirectory = resolveRepositoryRelative(input.root, run.finalDirectory);
+      assert(directoryContentsSha256(finalDirectory) === run.contentsSha256, `Published GBIF run changed during recovery: ${run.runId}.`);
+    }
+    assert(sha256(readFileSync(receiptFinal)) === transaction.partitionReceipt.sha256, "Published GBIF partition receipt changed during recovery.");
+    rmSync(expectedStagingRoot, { recursive: true, force: true });
+    rmSync(expectedReceiptStaging, { force: true });
+    rmSync(transactionPath, { force: true });
+    return { status: "finalized" as const, partitionReceiptPath: receiptFinal };
+  }
+  for (const run of [...transaction.runs].reverse()) {
+    const stagingDirectory = resolveRepositoryRelative(input.root, run.stagingDirectory);
+    const finalDirectory = resolveRepositoryRelative(input.root, run.finalDirectory);
+    if (run.preexisting) {
+      assert(existsSync(finalDirectory), `Preexisting GBIF run disappeared during recovery: ${run.runId}.`);
+      assert(directoryContentsSha256(finalDirectory) === run.contentsSha256, `Preexisting GBIF run changed during recovery: ${run.runId}.`);
+      continue;
+    }
+    if (!existsSync(finalDirectory)) continue;
+    assert(!isTracked(input.root, finalDirectory), `Partially published GBIF run is already tracked and cannot be rolled back: ${run.runId}.`);
+    assert(!existsSync(stagingDirectory), `GBIF ${run.runId} exists in both staging and final locations.`);
+    assert(directoryContentsSha256(finalDirectory) === run.contentsSha256, `Partially published GBIF run changed during recovery: ${run.runId}.`);
+    mkdirSync(path.dirname(stagingDirectory), { recursive: true });
+    renameSync(finalDirectory, stagingDirectory);
+  }
+  if (receiptIsFinal && !transaction.partitionReceipt.preexisting) {
+    assert(!isTracked(input.root, receiptFinal), "Partially published GBIF partition receipt is already tracked and cannot be rolled back.");
+    assert(!existsSync(receiptStaging), "GBIF partition receipt exists in both staging and final locations.");
+    assert(sha256(readFileSync(receiptFinal)) === transaction.partitionReceipt.sha256, "Partially published GBIF partition receipt changed during recovery.");
+    renameSync(receiptFinal, receiptStaging);
+  } else if (transaction.partitionReceipt.preexisting) {
+    assert(receiptIsFinal, "Preexisting GBIF partition receipt disappeared during recovery.");
+  }
+  rmSync(expectedStagingRoot, { recursive: true, force: true });
+  rmSync(expectedReceiptStaging, { force: true });
+  rmSync(transactionPath, { force: true });
+  return { status: "rolled-back" as const, partitionReceiptPath: null };
+}
+
 async function hashFile(filepath: string) {
   const hash = createHash("sha256");
   let bytes = 0;
@@ -215,6 +350,102 @@ async function hashFile(filepath: string) {
 
 function inputSnapshot(files: string[]) {
   return Object.fromEntries([...files].sort(compareText).map((filepath) => [relativeGitPath(filepath), sha256(readFileSync(filepath))]));
+}
+
+export function nationalGbifPartitionInputPaths(input: {
+  root: string;
+  planPath: string;
+  selectionPath: string;
+  taxonomyCachePath: string;
+  selectionUniversePlanPath: string;
+  acquisitionReceiptPath: string;
+  archivePath: string;
+}) {
+  const researchRoot = path.join(input.root, "src/data/research");
+  return [
+    input.planPath,
+    input.selectionPath,
+    path.resolve(input.root, input.taxonomyCachePath),
+    path.resolve(input.root, input.selectionUniversePlanPath),
+    path.join(input.root, "scripts/research/adapters/gbif-preserved-specimens.ts"),
+    path.join(input.root, "scripts/research/national-gbif-download.ts"),
+    path.join(input.root, "scripts/research/national-gbif-download-replay.ts"),
+    path.join(input.root, "scripts/research/partition-national-gbif-download.ts"),
+    path.join(input.root, "scripts/research/verify-national-gbif-download.ts"),
+    path.join(input.root, "scripts/research/zip-tools.ts"),
+    path.join(input.root, "scripts/research/national-usgs-nas-common.ts"),
+    path.join(researchRoot, "source-registry.json"),
+    path.join(researchRoot, "state-registry.json"),
+    path.join(researchRoot, "county-equivalent-registry.json"),
+    ...[
+      "gbif-preserved-specimens-parameters.schema.json",
+      "national-gbif-download-acquisition-receipt.schema.json",
+      "national-gbif-download-partition-receipt.schema.json",
+      "national-gbif-download-reference.schema.json",
+      "worker-source-verification.schema.json",
+      "run-receipt.schema.json",
+      "evidence-assertion.schema.json",
+      "review-event.schema.json",
+      "rejection-record.schema.json",
+      "pair-outcome.schema.json",
+    ].map((filename) => path.join(researchRoot, "schemas", filename)),
+    input.acquisitionReceiptPath,
+    input.archivePath,
+  ].map((filepath) => path.resolve(filepath));
+}
+
+export function verifyNationalGbifPartitionInputHashes(input: {
+  root: string;
+  codeCommit: string;
+  inputHashes: Record<string, string>;
+  inputPaths: string[];
+}) {
+  const expectedPaths = [...new Set(input.inputPaths.map((filepath) =>
+    path.relative(input.root, filepath).replaceAll("\\", "/")
+  ))].sort(compareText);
+  assert(
+    stableJson(Object.keys(input.inputHashes).sort(compareText)) === stableJson(expectedPaths),
+    "GBIF partition input hash set is incomplete or excessive.",
+  );
+  for (const relativePath of expectedPaths) {
+    const committed = execFileSync("git", ["show", `${input.codeCommit}:${relativePath}`], {
+      cwd: input.root,
+      maxBuffer: 64 * 1024 * 1024,
+    });
+    assert(
+      sha256(committed) === input.inputHashes[relativePath],
+      `GBIF partition input changed at ${relativePath}.`,
+    );
+  }
+}
+
+export function validateNationalGbifPartitionStateRows(statePartitions: Array<{
+  stateCode: string;
+  runCreated: boolean;
+  runId: string | null;
+  pairCount: number;
+  candidateRecords: number;
+  assertions: number;
+  reviews: number;
+  rejections: number;
+  outcomes: number;
+}>) {
+  assert(statePartitions.length === 51, "GBIF partition must declare exactly 51 jurisdiction rows.");
+  assert(new Set(statePartitions.map((entry) => entry.stateCode)).size === 51, "GBIF partition jurisdiction rows must be unique.");
+  for (const state of statePartitions) {
+    if (state.pairCount === 0) {
+      assert(
+        !state.runCreated && state.runId === null && state.candidateRecords === 0 &&
+          state.assertions === 0 && state.reviews === 0 && state.rejections === 0 && state.outcomes === 0,
+        `GBIF ${state.stateCode} zero-pair partition row is inconsistent.`,
+      );
+    } else {
+      assert(
+        state.runCreated && Boolean(state.runId) && state.outcomes === state.pairCount,
+        `GBIF ${state.stateCode} nonempty partition row is inconsistent.`,
+      );
+    }
+  }
 }
 
 function assertCommittedInputs(codeCommit: string, inputHashes: Record<string, string>) {
@@ -329,6 +560,22 @@ async function main() {
   const archiveHash = await hashFile(archivePath);
   assert(archiveHash.bytes === acquisition.archive.bytes && archiveHash.sha256 === acquisition.archive.sha256, "GBIF archive bytes or hash differ from receipt.");
   assert(archiveHash.bytes <= plan.artifactBudgetBytes, "GBIF archive exceeds plan budget.");
+  const recoveredPublication = recoverNationalGbifPublicationTransaction({
+    root: ROOT,
+    acquisitionDirectory: options.acquisitionDirectory,
+    runsRoot: options.runsRoot,
+  });
+  if (recoveredPublication?.status === "finalized") {
+    const recoveredBytes = readFileSync(recoveredPublication.partitionReceiptPath);
+    process.stdout.write(`${JSON.stringify({
+      recovered: true,
+      partitionReceiptPath: relativeGitPath(recoveredPublication.partitionReceiptPath),
+      partitionReceiptSha256: sha256(recoveredBytes),
+      acquisitionId: acquisition.acquisition_id,
+      archiveSha256: acquisition.archive.sha256,
+    }, null, 2)}\n`);
+    return;
+  }
 
   const adapterPath = path.join(ROOT, "scripts/research/adapters/gbif-preserved-specimens.ts");
   const nationalHelperPath = path.join(ROOT, "scripts/research/national-gbif-download.ts");
@@ -344,36 +591,15 @@ async function main() {
     [nationalHelperPath, verifierPath, zipToolsPath, snapshotHelperPath]
       .map((filepath) => [relativeGitPath(filepath), sha256(readFileSync(filepath))]),
   ));
-  const inputFiles = [
-    options.planPath,
-    selectionLoaded.selectionPath,
-    path.resolve(ROOT, plan.taxonomyCachePath),
-    path.resolve(ROOT, plan.selectionUniversePlanPath!),
-    adapterPath,
-    nationalHelperPath,
-    replayPath,
-    runnerPath,
-    verifierPath,
-    zipToolsPath,
-    snapshotHelperPath,
-    path.join(RESEARCH_ROOT, "source-registry.json"),
-    path.join(RESEARCH_ROOT, "state-registry.json"),
-    path.join(RESEARCH_ROOT, "county-equivalent-registry.json"),
-    ...[
-      "gbif-preserved-specimens-parameters.schema.json",
-      "national-gbif-download-acquisition-receipt.schema.json",
-      "national-gbif-download-partition-receipt.schema.json",
-      "national-gbif-download-reference.schema.json",
-      "worker-source-verification.schema.json",
-      "run-receipt.schema.json",
-      "evidence-assertion.schema.json",
-      "review-event.schema.json",
-      "rejection-record.schema.json",
-      "pair-outcome.schema.json",
-    ].map((filename) => path.join(RESEARCH_ROOT, "schemas", filename)),
+  const inputFiles = nationalGbifPartitionInputPaths({
+    root: ROOT,
+    planPath: options.planPath,
+    selectionPath: selectionLoaded.selectionPath,
+    taxonomyCachePath: plan.taxonomyCachePath,
+    selectionUniversePlanPath: plan.selectionUniversePlanPath!,
     acquisitionReceiptPath,
     archivePath,
-  ];
+  });
   const snapshot = captureCommittedInputSnapshot(ROOT, inputFiles);
   assert(snapshot.commit !== acquisition.code_commit, "GBIF partition requires a committed acquisition checkpoint first.");
   assertCommitAncestor(ROOT, acquisition.code_commit, snapshot.commit);
@@ -408,6 +634,7 @@ async function main() {
     stateInputs: scopes.map((scope) => ({ context: scope.context, requestedPairs: scope.requestedPairs })),
     completedAt: acquisition.finished_at,
     downloadKey: acquisition.download.key,
+    sourceUrl: acquisition.archive.source_url,
     providerTotalRecords: acquisition.archive.provider_total_records,
   });
   assert(replay.reconciliation.selectedScopeRows <= plan.maxSelectedEvidenceRecords!, "GBIF selected evidence record guard exceeded.");
@@ -479,6 +706,7 @@ async function main() {
     ],
   };
   schemaValidator("national-gbif-download-partition-receipt.schema.json").parse(partitionReceipt);
+  validateNationalGbifPartitionStateRows(statePartitions);
   const partitionReceiptContents = `${JSON.stringify(partitionReceipt, null, 2)}\n`;
   const partitionReceiptSha256 = sha256(partitionReceiptContents);
   const stagedPartitionReceiptPath = path.join(ROOT, ".cache/research", `.${partitionId}-receipt.json`);
@@ -670,7 +898,7 @@ async function main() {
         county_fips: [...new Set(scope.requestedPairs.map((pair) => pair.countyFips))].sort(compareText),
         species_ids: [...new Set(scope.requestedPairs.map((pair) => pair.speciesId))].sort(compareText),
         pair_keys: scope.selectedScope.candidatePairs,
-        date_range: { start: null, end: plan.snapshotDate },
+        date_range: { start: null, end: null },
       },
       upstream_requests: [receiptUpstreamRequest],
       artifacts: [artifactReference],
@@ -725,6 +953,33 @@ async function main() {
     verifyStagedResearchRun(stagingDirectory, receipt);
     generated.push({ scope, result, stagingDirectory, finalDirectory, receipt, contents });
   }
+  const transactionPath = path.join(
+    ROOT,
+    ".cache/research/gbif-partition-transactions",
+    `${partitionId}.json`,
+  );
+  const transaction: NationalGbifPublicationTransaction = {
+    schemaVersion: 1,
+    kind: "gbif-national-partition-publication",
+    partitionId,
+    acquisitionDirectory: relativeGitPath(options.acquisitionDirectory),
+    createdAt: acquisition.finished_at,
+    partitionReceipt: {
+      stagingPath: relativeGitPath(stagedPartitionReceiptPath),
+      finalPath: relativeGitPath(partitionReceiptPath),
+      sha256: partitionReceiptSha256,
+      preexisting: existsSync(partitionReceiptPath),
+    },
+    runs: generated.map((run) => ({
+      runId: run.scope.runId,
+      stagingDirectory: relativeGitPath(run.stagingDirectory),
+      finalDirectory: relativeGitPath(run.finalDirectory),
+      contentsSha256: mapContentsSha256(run.contents),
+      preexisting: existsSync(run.finalDirectory),
+    })),
+  };
+  assert(!existsSync(transactionPath), `GBIF publication transaction already exists: ${relativeGitPath(transactionPath)}.`);
+  writeAtomicJson(transactionPath, transaction);
   const moved: typeof generated = [];
   try {
     verifyCommittedInputSnapshot(ROOT, snapshot);
@@ -762,14 +1017,22 @@ async function main() {
     } else {
       renameSync(stagedPartitionReceiptPath, partitionReceiptPath);
     }
+    rmSync(transactionPath, { force: true });
   } catch (error) {
-    for (const run of [...moved].reverse()) {
-      if (existsSync(run.finalDirectory) && !existsSync(run.stagingDirectory)) renameSync(run.finalDirectory, run.stagingDirectory);
+    try {
+      for (const run of [...moved].reverse()) {
+        if (existsSync(run.finalDirectory) && !existsSync(run.stagingDirectory)) renameSync(run.finalDirectory, run.stagingDirectory);
+      }
+      rmSync(transactionPath, { force: true });
+    } catch (rollbackError) {
+      throw new AggregateError([error, rollbackError], "GBIF publication failed and requires transaction recovery.");
     }
     throw error;
   } finally {
-    rmSync(stagingRoot, { recursive: true, force: true });
-    rmSync(stagedPartitionReceiptPath, { force: true });
+    if (!existsSync(transactionPath)) {
+      rmSync(stagingRoot, { recursive: true, force: true });
+      rmSync(stagedPartitionReceiptPath, { force: true });
+    }
   }
   process.stdout.write(`${JSON.stringify({
     partitionReceiptPath: relativeGitPath(partitionReceiptPath),
