@@ -12,8 +12,8 @@
     "requiredCredentialEnvironment"
   ],
   "properties": {
-    "schemaVersion": { "const": 1 },
-    "planId": { "type": "string", "pattern": "^gbif-national-download-v1-[a-z0-9-]+$" },
+    "schemaVersion": { "enum": [1, 2] },
+    "planId": { "type": "string", "pattern": "^gbif-national-download-v[12]-[a-z0-9-]+$" },
     "sourceId": { "const": "gbif-preserved-specimens" },
     "snapshotDate": { "type": "string", "format": "date" },
     "apiBaseUrl": { "const": "https://api.gbif.org/v1" },
@@ -43,9 +43,39 @@
     "maxPollMinutes": { "type": "integer", "minimum": 15, "maximum": 1440 },
     "baselineGeneratedAsOf": { "type": "string", "format": "date" },
     "baselineCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "selectionId": { "type": "string", "pattern": "^round-[0-9]+-gbif-national-selection-[0-9]{8}-r[0-9]+$" },
+    "selectionTimestamp": { "type": "string", "format": "date-time" },
+    "selectionPolicy": { "type": "string", "minLength": 1 },
+    "selectionUniversePlanPath": { "type": "string", "pattern": "^src/data/research/national-acquisition-plans/gbif-national-download-v1-[a-z0-9-]+\\.json$" },
+    "selectionUniversePlanSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "selectionNetThreshold": { "type": "integer", "minimum": 1, "maximum": 30000 },
     "selectionEvidencePath": { "type": "string", "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$" },
+    "selectionEvidenceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "expectedGrossPairs": { "type": "integer", "minimum": 1 },
+    "expectedNotResearchedPairsAtBaseline": { "type": "integer", "minimum": 1 },
+    "expectedBlockedPairsAtBaseline": { "type": "integer", "minimum": 0 },
+    "expectedAlreadyResearchedPairsAtBaseline": { "type": "integer", "minimum": 0 },
+    "maxOccurrenceRows": { "type": "integer", "minimum": 1, "maximum": 2000000 },
+    "maxSelectedEvidenceRecords": { "type": "integer", "minimum": 1, "maximum": 250000 },
     "requiredCredentialEnvironment": {
       "const": ["GBIF_USERNAME", "GBIF_PASSWORD", "GBIF_EMAIL"]
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "schemaVersion": { "const": 2 } } },
+      "then": {
+        "required": [
+          "selectionEvidenceSha256", "selectionId", "selectionTimestamp", "selectionPolicy",
+          "selectionUniversePlanPath", "selectionUniversePlanSha256", "selectionNetThreshold",
+          "expectedGrossPairs", "expectedNotResearchedPairsAtBaseline",
+          "expectedBlockedPairsAtBaseline", "expectedAlreadyResearchedPairsAtBaseline",
+          "maxOccurrenceRows", "maxSelectedEvidenceRecords"
+        ],
+        "properties": {
+          "artifactBudgetBytes": { "maximum": 268435456 }
+        }
+      }
+    }
+  ]
 }

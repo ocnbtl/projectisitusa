@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-gbif-download-partition-receipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "partitionId", "status", "sourceId", "createdAt", "codeCommit", "inputHashes", "acquisitionId", "acquisitionReceiptPath", "acquisitionReceiptSha256", "archivePath", "archiveSha256", "selectionId", "selectionPath", "selectionSha256", "inspection", "reconciliation", "statePartitions", "semantics", "errors", "warnings"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "partitionId": { "type": "string", "pattern": "^gbif-national-partition-[a-f0-9]{16}$" },
+    "status": { "const": "complete" },
+    "sourceId": { "const": "gbif-preserved-specimens" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "codeCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "inputHashes": { "type": "object", "minProperties": 8, "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" } },
+    "acquisitionId": { "type": "string", "pattern": "^[0-9]{8}t[0-9]{6}z__gbif-download__[a-f0-9]{12}$" },
+    "acquisitionReceiptPath": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/receipt\\.json$" },
+    "acquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "archivePath": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/download\\.zip$" },
+    "archiveSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "selectionId": { "type": "string", "minLength": 1 },
+    "selectionPath": { "type": "string", "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$" },
+    "selectionSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "inspection": { "$ref": "#/$defs/archiveInspection" },
+    "reconciliation": { "$ref": "#/$defs/reconciliation" },
+    "statePartitions": {
+      "type": "array", "minItems": 51, "maxItems": 51,
+      "items": { "$ref": "#/$defs/statePartition" }
+    },
+    "semantics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scopeComplete", "createsAbsence", "createsNotDetected", "coordinateCountyAssignmentAllowed"],
+      "properties": {
+        "scopeComplete": { "const": true },
+        "createsAbsence": { "const": false },
+        "createsNotDetected": { "const": false },
+        "coordinateCountyAssignmentAllowed": { "const": false }
+      }
+    },
+    "errors": { "type": "array", "maxItems": 0 },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "archiveInspection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entries", "metaSha256", "occurrenceHeaderSha256", "verbatimHeaderSha256", "occurrenceRows", "verbatimRows", "uniqueOccurrenceIds"],
+      "properties": {
+        "entries": { "type": "array", "minItems": 3, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "metaSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "occurrenceHeaderSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "verbatimHeaderSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "occurrenceRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "verbatimRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "uniqueOccurrenceIds": { "type": "integer", "minimum": 0, "maximum": 2000000 }
+      }
+    },
+    "reconciliation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["providerTotalRecords", "occurrenceRows", "verbatimRows", "uniqueOccurrenceIds", "selectedScopeRows", "overlapRows", "taxonomyRejectedRows", "geographyRejectedRows", "selectedEvidencePairs", "selectedNoEvidencePairs", "selectedPairCount", "assertionEvents", "reviewEvents", "representativeRejections", "duplicateRecords"],
+      "properties": {
+        "providerTotalRecords": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "occurrenceRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "verbatimRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "uniqueOccurrenceIds": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "selectedScopeRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "overlapRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "taxonomyRejectedRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "geographyRejectedRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "selectedEvidencePairs": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "selectedNoEvidencePairs": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "selectedPairCount": { "type": "integer", "minimum": 1, "maximum": 30000 },
+        "assertionEvents": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "reviewEvents": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "representativeRejections": { "type": "integer", "minimum": 0, "maximum": 250000 },
+        "duplicateRecords": { "const": 0 }
+      }
+    },
+    "statePartition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stateCode", "runCreated", "runId", "pairCount", "pairSha256", "candidateRecords", "assertions", "reviews", "rejections", "outcomes"],
+      "properties": {
+        "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "runCreated": { "type": "boolean" },
+        "runId": { "type": ["string", "null"], "minLength": 1 },
+        "pairCount": { "type": "integer", "minimum": 0, "maximum": 5000 },
+        "pairSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "candidateRecords": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "assertions": { "type": "integer", "minimum": 0, "maximum": 5000 },
+        "reviews": { "type": "integer", "minimum": 0, "maximum": 5000 },
+        "rejections": { "type": "integer", "minimum": 0, "maximum": 250000 },
+        "outcomes": { "type": "integer", "minimum": 0, "maximum": 5000 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "pairCount": { "const": 0 } }, "required": ["pairCount"] },
+          "then": {
+            "properties": {
+              "runCreated": { "const": false },
+              "runId": { "type": "null" },
+              "candidateRecords": { "const": 0 },
+              "assertions": { "const": 0 },
+              "reviews": { "const": 0 },
+              "rejections": { "const": 0 },
+              "outcomes": { "const": 0 }
+            }
+          },
+          "else": {
+            "properties": {
+              "runCreated": { "const": true },
+              "runId": { "type": "string", "minLength": 1 },
+              "outcomes": { "minimum": 1 }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

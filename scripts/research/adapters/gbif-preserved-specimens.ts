@@ -22,7 +22,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 const SOURCE_ID = "gbif-preserved-specimens";
 const ADAPTER_ID = "gbif-preserved-specimens";
-const ADAPTER_VERSION = "1.3.1";
+export const GBIF_ADAPTER_VERSION = "1.4.0";
 const GBIF_API_BASE_URL = "https://api.gbif.org/v1";
 const GBIF_OCCURRENCE_BASE_URL = "https://www.gbif.org/occurrence";
 const USER_AGENT = "Project-Isitusa/1.0 (county-species evidence research)";
@@ -57,7 +57,7 @@ interface GbifAdapterParameters {
   pageLimit: number;
 }
 
-interface RequestedPair {
+export interface GbifRequestedPair {
   countyFips: string;
   countyName: string;
   countyLegalName: string;
@@ -88,7 +88,7 @@ interface GbifOccurrenceSearchResponse {
   results?: GbifOccurrenceRecord[];
 }
 
-interface GbifOccurrenceRecord {
+export interface GbifOccurrenceRecord {
   key?: number;
   gbifID?: string;
   datasetKey?: string;
@@ -130,7 +130,7 @@ interface GbifOccurrenceRecord {
   preparations?: string;
 }
 
-interface GbifMatch {
+export interface GbifMatch {
   speciesKey: number;
   canonicalName: string;
   confidence: number;
@@ -254,8 +254,8 @@ function parseParameters(context: SourceAdapterContext): GbifAdapterParameters {
 function selectRequestedPairs(
   context: SourceAdapterContext,
   parameters: GbifAdapterParameters,
-): RequestedPair[] {
-  const pairByKey = new Map<string, RequestedPair>();
+): GbifRequestedPair[] {
+  const pairByKey = new Map<string, GbifRequestedPair>();
   for (const pair of context.requestedPairs) {
     const key = pairKey(pair);
     if (pairByKey.has(key)) {
@@ -467,7 +467,7 @@ function occurrenceSearchUrl(
 
 function validateSpeciesMatch(
   payload: GbifSpeciesMatchResponse,
-  pair: RequestedPair,
+  pair: GbifRequestedPair,
   minimumConfidence: number,
 ): { match: GbifMatch | null; reason: RejectionReasonCode; notes: string[] } {
   const sourceCanonicalName = payload.canonicalName ?? payload.scientificName ?? "";
@@ -506,7 +506,7 @@ function validateSpeciesMatch(
   };
 }
 
-function recordLocator(record: GbifOccurrenceRecord, fallback: string): string {
+export function recordLocator(record: GbifOccurrenceRecord, fallback: string): string {
   if (record.key !== undefined) {
     return `${GBIF_OCCURRENCE_BASE_URL}/${record.key}`;
   }
@@ -519,7 +519,7 @@ function recordLocator(record: GbifOccurrenceRecord, fallback: string): string {
   return fallback;
 }
 
-function candidateTaxon(record: GbifOccurrenceRecord): string | null {
+export function candidateTaxon(record: GbifOccurrenceRecord): string | null {
   return (
     record.acceptedScientificName ??
     record.species ??
@@ -528,14 +528,14 @@ function candidateTaxon(record: GbifOccurrenceRecord): string | null {
   );
 }
 
-function candidateGeography(record: GbifOccurrenceRecord): string | null {
+export function candidateGeography(record: GbifOccurrenceRecord): string | null {
   const parts = [record.county, record.stateProvince, record.countryCode].filter(Boolean);
   return parts.length > 0 ? parts.join(", ") : null;
 }
 
-function makeRejection(
+export function makeGbifRejection(
   context: SourceAdapterContext,
-  pair: RequestedPair,
+  pair: GbifRequestedPair,
   createdAt: string,
   candidateLocator: string,
   candidateTaxonName: string,
@@ -557,7 +557,7 @@ function makeRejection(
     }),
     created_at: createdAt,
     actor_type: "adapter",
-    actor_id: `${ADAPTER_ID}@${ADAPTER_VERSION}`,
+    actor_id: `${ADAPTER_ID}@${GBIF_ADAPTER_VERSION}`,
     run_id: context.runId,
     source_id: SOURCE_ID,
     candidate_locator: candidateLocator,
@@ -573,7 +573,7 @@ function makeRejection(
   };
 }
 
-function sourceRecordId(record: GbifOccurrenceRecord): string | null {
+export function sourceRecordId(record: GbifOccurrenceRecord): string | null {
   if (record.key !== undefined && Number.isInteger(record.key)) {
     return String(record.key);
   }
@@ -606,9 +606,9 @@ function occurrenceLooksCultivatedOrCaptive(record: GbifOccurrenceRecord): boole
   ].some((value) => value && CULTIVATED_OR_CAPTIVE_PATTERN.test(value));
 }
 
-function occurrenceRejection(
+export function occurrenceRejection(
   record: GbifOccurrenceRecord,
-  pair: RequestedPair,
+  pair: GbifRequestedPair,
   match: GbifMatch,
 ): { reason: RejectionReasonCode; notes: string[] } | null {
   if (!sourceRecordId(record)) {
@@ -674,6 +674,12 @@ function occurrenceRejection(
   const contradictionIssues = (record.issues ?? []).filter((issue) =>
     GEOSPATIAL_CONTRADICTION_ISSUES.has(issue),
   );
+  if (record.hasGeospatialIssue === undefined) {
+    return {
+      reason: "source-contradiction",
+      notes: ["GBIF hasGeospatialIssue is missing or unknown, so geography cannot be accepted conservatively."],
+    };
+  }
   const unexplainedGeospatialFlag =
     record.hasGeospatialIssue === true && (record.issues ?? []).length === 0;
   if (unexplainedGeospatialFlag || contradictionIssues.length > 0) {
@@ -743,9 +749,9 @@ function occurrenceRejection(
   return null;
 }
 
-function supportingPayload(
+export function supportingPayload(
   record: GbifOccurrenceRecord,
-  pair: RequestedPair,
+  pair: GbifRequestedPair,
   match: GbifMatch,
 ) {
   return {
@@ -773,9 +779,9 @@ function supportingPayload(
   };
 }
 
-function makeAssertionAndReview(
+export function makeGbifAssertionAndReview(
   context: SourceAdapterContext,
-  pair: RequestedPair,
+  pair: GbifRequestedPair,
   match: GbifMatch,
   record: GbifOccurrenceRecord,
   retrievedAt: string,
@@ -804,7 +810,7 @@ function makeAssertionAndReview(
     event_type: "evidence.asserted",
     created_at: retrievedAt,
     actor_type: "adapter",
-    actor_id: `${ADAPTER_ID}@${ADAPTER_VERSION}`,
+    actor_id: `${ADAPTER_ID}@${GBIF_ADAPTER_VERSION}`,
     run_id: context.runId,
     source_id: SOURCE_ID,
     state_code: pair.stateCode,
@@ -858,7 +864,7 @@ function makeAssertionAndReview(
     event_type: "evidence.reviewed",
     created_at: retrievedAt,
     actor_type: "adapter",
-    actor_id: `${ADAPTER_ID}@${ADAPTER_VERSION}`,
+    actor_id: `${ADAPTER_ID}@${GBIF_ADAPTER_VERSION}`,
     run_id: context.runId,
     source_id: SOURCE_ID,
     state_code: pair.stateCode,
@@ -882,9 +888,9 @@ function makeAssertionAndReview(
   return { assertion, review };
 }
 
-function makeOutcome(
+export function makeGbifOutcome(
   context: SourceAdapterContext,
-  pair: RequestedPair,
+  pair: GbifRequestedPair,
   recordedAt: string,
   status: ResearchPairOutcome["status"],
   scopeComplete: boolean,
@@ -943,7 +949,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
   let duplicateRecordCount = 0;
   let resourceBudgetReached = false;
 
-  const pairsBySpecies = new Map<string, RequestedPair[]>();
+  const pairsBySpecies = new Map<string, GbifRequestedPair[]>();
   for (const pair of requestedPairs) {
     const pairs = pairsBySpecies.get(pair.speciesId) ?? [];
     const priorScientificName = pairs[0]?.scientificName;
@@ -965,7 +971,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     if (resourceBudgetReached) {
       const recordedAt = new Date().toISOString();
       for (const pair of speciesPairs) {
-        const rejection = makeRejection(
+        const rejection = makeGbifRejection(
           context,
           pair,
           recordedAt,
@@ -978,7 +984,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         );
         rejections.push(rejection);
         outcomes.push(
-          makeOutcome(
+          makeGbifOutcome(
             context,
             pair,
             recordedAt,
@@ -1002,7 +1008,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     resourceBudgetReached ||= matchResult.artifactLimitReached;
     if (!matchResult.ok || !matchResult.data) {
       for (const pair of speciesPairs) {
-        const rejection = makeRejection(
+        const rejection = makeGbifRejection(
           context,
           pair,
           matchResult.retrievedAt,
@@ -1015,7 +1021,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         );
         rejections.push(rejection);
         outcomes.push(
-          makeOutcome(
+          makeGbifOutcome(
             context,
             pair,
             matchResult.retrievedAt,
@@ -1038,7 +1044,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
     );
     if (!matchValidation.match) {
       for (const pair of speciesPairs) {
-        const rejection = makeRejection(
+        const rejection = makeGbifRejection(
           context,
           pair,
           matchResult.retrievedAt,
@@ -1051,7 +1057,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         );
         rejections.push(rejection);
         outcomes.push(
-          makeOutcome(
+          makeGbifOutcome(
             context,
             pair,
             matchResult.retrievedAt,
@@ -1372,7 +1378,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
             `Unresolved-county GBIF record ${recordLocator(record, fallbackLocator)} unexpectedly passed validation.`,
           );
         }
-        const rejection = makeRejection(
+        const rejection = makeGbifRejection(
           context,
           representativePair,
           page.retrievedAt,
@@ -1396,7 +1402,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
       const pairRejectionIds: string[] = [...sharedRejectionIds];
       const seenPairRejectionIds = new Set(pairRejectionIds);
       if (scopeFailure) {
-        const rejection = makeRejection(
+        const rejection = makeGbifRejection(
           context,
           pair,
           recordedAt,
@@ -1433,7 +1439,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
             matchValidation.match,
           );
           if (rejectionResult) {
-            const rejection = makeRejection(
+            const rejection = makeGbifRejection(
               context,
               pair,
               page.retrievedAt,
@@ -1452,7 +1458,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
             continue;
           }
 
-          const normalized = makeAssertionAndReview(
+          const normalized = makeGbifAssertionAndReview(
             context,
             pair,
             matchValidation.match,
@@ -1461,7 +1467,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
           );
           if (seenAssertionIds.has(normalized.assertion.eventId)) {
             duplicateRecordCount += 1;
-            const rejection = makeRejection(
+            const rejection = makeGbifRejection(
               context,
               pair,
               page.retrievedAt,
@@ -1490,7 +1496,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
 
       if (!scopeComplete) {
         outcomes.push(
-          makeOutcome(
+          makeGbifOutcome(
             context,
             pair,
             recordedAt,
@@ -1507,7 +1513,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         );
       } else if (pairAssertionIds.length > 0) {
         outcomes.push(
-          makeOutcome(
+          makeGbifOutcome(
             context,
             pair,
             recordedAt,
@@ -1523,7 +1529,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
         );
       } else {
         outcomes.push(
-          makeOutcome(
+          makeGbifOutcome(
             context,
             pair,
             recordedAt,
@@ -1563,7 +1569,7 @@ async function runAdapter(context: SourceAdapterContext): Promise<SourceAdapterR
 
 export const adapter: ResearchSourceAdapter = {
   adapterId: ADAPTER_ID,
-  adapterVersion: ADAPTER_VERSION,
+  adapterVersion: GBIF_ADAPTER_VERSION,
   sourceId: SOURCE_ID,
   run: runAdapter,
 };

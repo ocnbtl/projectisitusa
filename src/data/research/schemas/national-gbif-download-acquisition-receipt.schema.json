@@ -4,61 +4,99 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "schemaVersion", "acquisitionId", "actor", "planId", "planPath", "planSha256",
-    "taxonomyCachePath", "taxonomyCacheSha256", "startedAt", "requestedAt", "finishedAt",
-    "download", "statusHistory", "archive", "taxonCount", "requestPath", "credentialsPersisted",
-    "completeArchiveRetained", "partitioningStatus", "semantics"
+    "schemaVersion", "acquisition_id", "status", "actor_type", "actor_id", "source_id",
+    "code_commit", "input_hashes", "parameter_hash", "parameters", "started_at", "requested_at",
+    "finished_at", "download", "status_history", "http_attempts", "archive", "request_path",
+    "credentials_persisted", "complete_archive_retained", "partitioning_status", "semantics",
+    "errors", "warnings"
   ],
   "properties": {
-    "schemaVersion": { "const": 1 },
-    "acquisitionId": { "type": "string", "pattern": "^[0-9]{8}t[0-9]{6}z__gbif-download__[a-f0-9]{12}$" },
-    "actor": { "const": "gbif-national-download-acquisition@1.0.0" },
-    "planId": { "type": "string", "pattern": "^gbif-national-download-v1-[a-z0-9-]+$" },
-    "planPath": { "type": "string", "pattern": "^src/data/research/national-acquisition-plans/[a-z0-9-]+\\.json$" },
-    "planSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
-    "taxonomyCachePath": { "type": "string", "pattern": "^src/data/research/caches/gbif-taxonomy-[a-z0-9-]+\\.json$" },
-    "taxonomyCacheSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
-    "startedAt": { "type": "string", "format": "date-time" },
-    "requestedAt": { "type": "string", "format": "date-time" },
-    "finishedAt": { "type": "string", "format": "date-time" },
+    "schemaVersion": { "const": 2 },
+    "acquisition_id": { "type": "string", "pattern": "^[0-9]{8}t[0-9]{6}z__gbif-download__[a-f0-9]{12}$" },
+    "status": { "const": "complete" },
+    "actor_type": { "const": "adapter" },
+    "actor_id": { "const": "gbif-national-download-acquisition@2.0.0" },
+    "source_id": { "const": "gbif-preserved-specimens" },
+    "code_commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "input_hashes": { "type": "object", "minProperties": 16, "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" } },
+    "parameter_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "parameters": {
+      "type": "object", "additionalProperties": false,
+      "required": ["planId", "planPath", "planSha256", "selectionPath", "selectionSha256", "taxonomyCachePath", "taxonomyCacheSha256", "artifactBudgetBytes", "maxOccurrenceRows", "maxSelectedEvidenceRecords", "taxonCount", "selectedPairCount"],
+      "properties": {
+        "planId": { "type": "string", "pattern": "^gbif-national-download-v2-[a-z0-9-]+$" },
+        "planPath": { "type": "string", "pattern": "^src/data/research/national-acquisition-plans/[a-z0-9-]+\\.json$" },
+        "planSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "selectionPath": { "type": "string", "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$" },
+        "selectionSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "taxonomyCachePath": { "type": "string", "pattern": "^src/data/research/caches/gbif-taxonomy-[a-z0-9-]+\\.json$" },
+        "taxonomyCacheSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "artifactBudgetBytes": { "type": "integer", "minimum": 1048576, "maximum": 268435456 },
+        "maxOccurrenceRows": { "type": "integer", "minimum": 1, "maximum": 2000000 },
+        "maxSelectedEvidenceRecords": { "type": "integer", "minimum": 1, "maximum": 250000 },
+        "taxonCount": { "type": "integer", "minimum": 1, "maximum": 500 },
+        "selectedPairCount": { "type": "integer", "minimum": 1, "maximum": 30000 }
+      }
+    },
+    "started_at": { "type": "string", "format": "date-time" },
+    "requested_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
     "download": { "$ref": "#/$defs/downloadMetadata" },
-    "statusHistory": {
+    "status_history": {
       "type": "array", "minItems": 1,
       "items": {
         "allOf": [
           { "$ref": "#/$defs/downloadMetadata" },
-          {
-            "type": "object",
-            "required": ["observedAt"],
-            "properties": { "observedAt": { "type": "string", "format": "date-time" } }
-          }
+          { "type": "object", "required": ["observedAt"], "properties": { "observedAt": { "type": "string", "format": "date-time" } } }
         ]
+      }
+    },
+    "http_attempts": {
+      "type": "array", "minItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["role", "method", "url", "attempt", "status", "observedAt", "retryable", "error"],
+        "properties": {
+          "role": { "enum": ["request", "status", "archive"] },
+          "method": { "enum": ["GET", "POST"] },
+          "url": { "type": "string", "format": "uri" },
+          "attempt": { "type": "integer", "minimum": 1 },
+          "status": { "type": ["integer", "null"], "minimum": 100, "maximum": 599 },
+          "observedAt": { "type": "string", "format": "date-time" },
+          "retryable": { "type": "boolean" },
+          "error": { "type": ["string", "null"] }
+        }
       }
     },
     "archive": {
       "type": "object", "additionalProperties": false,
-      "required": ["path", "bytes", "sha256"],
+      "required": ["path", "bytes", "sha256", "source_url", "media_type", "provider_total_records"],
       "properties": {
         "path": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/download\\.zip$" },
-        "bytes": { "type": "integer", "minimum": 1 },
-        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        "bytes": { "type": "integer", "minimum": 1, "maximum": 268435456 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "source_url": { "type": "string", "format": "uri" },
+        "media_type": { "const": "application/zip" },
+        "provider_total_records": { "type": "integer", "minimum": 0, "maximum": 2000000 }
       }
     },
-    "taxonCount": { "type": "integer", "minimum": 1 },
-    "requestPath": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/request\\.redacted\\.json$" },
-    "credentialsPersisted": { "const": false },
-    "completeArchiveRetained": { "const": true },
-    "partitioningStatus": { "const": "not-started" },
+    "request_path": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/request\\.redacted\\.json$" },
+    "credentials_persisted": { "const": false },
+    "complete_archive_retained": { "const": true },
+    "partitioning_status": { "const": "ready-for-replay" },
     "semantics": {
       "type": "object", "additionalProperties": false,
-      "required": ["createsAbsenceFromSilence", "createsNotDetectedFromSilence", "failedDownloadCreatesNegative", "unparsedArchiveMarksScopeComplete"],
+      "required": ["createsAbsenceFromSilence", "createsNotDetectedFromSilence", "failedDownloadCreatesNegative", "unparsedArchiveMarksScopeComplete", "coordinateCountyAssignmentAllowed"],
       "properties": {
         "createsAbsenceFromSilence": { "const": false },
         "createsNotDetectedFromSilence": { "const": false },
         "failedDownloadCreatesNegative": { "const": false },
-        "unparsedArchiveMarksScopeComplete": { "const": false }
+        "unparsedArchiveMarksScopeComplete": { "const": false },
+        "coordinateCountyAssignmentAllowed": { "const": false }
       }
-    }
+    },
+    "errors": { "type": "array", "maxItems": 0 },
+    "warnings": { "type": "array", "items": { "type": "string" } }
   },
   "$defs": {
     "downloadMetadata": {

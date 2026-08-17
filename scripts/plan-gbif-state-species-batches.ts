@@ -1,9 +1,18 @@
+import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { StringDecoder } from "node:string_decoder";
 import { pathToFileURL } from "node:url";
 
+import { z } from "zod";
+
+import type {
+  ImmutableResearchRunReceipt,
+  ResearchPairOutcome,
+} from "@/lib/research/types";
+import { validateImmutableResearchRunProvenance } from "@/lib/research/validate-run";
+
 import {
-  listImmutableResearchRuns,
   sha256,
   stableJson,
 } from "@/lib/research/run-files";
@@ -81,6 +90,7 @@ type PlannedBatch = {
 };
 
 const SOURCE_ID = "gbif-preserved-specimens";
+const LEGACY_DIRTY_BOOTSTRAP_RUN_ID = "20260715T034832Z__gbif-preserved-specimens__090596ab4867";
 const MAX_CANDIDATE_PAIRS_PER_BATCH = 5_000;
 const PRIORITY_ORDER = {
   regulated: 0,
@@ -110,6 +120,79 @@ function positiveInteger(value: string, name: string, maximum: number): number {
 
 function readJson<T>(filepath: string): T {
   return JSON.parse(fs.readFileSync(filepath, "utf8")) as T;
+}
+
+function assert(condition: unknown, message: string): asserts condition {
+  if (!condition) throw new Error(message);
+}
+
+function streamValidatedOutcomes(input: {
+  repositoryRoot: string;
+  filepath: string;
+  validator: ReturnType<typeof z.fromJSONSchema>;
+  receipt: ImmutableResearchRunReceipt;
+  onOutcome: (outcome: ResearchPairOutcome) => void;
+}) {
+  const descriptors = input.receipt.outputs.filter((entry) => entry.path.endsWith("/outcomes.ndjson"));
+  assert(descriptors.length === 1, `GBIF run ${input.receipt.run_id} must declare exactly one outcomes output.`);
+  const descriptor = descriptors[0]!;
+  const expectedPath = path.resolve(input.filepath);
+  assert(path.resolve(input.repositoryRoot, descriptor.path) === expectedPath, `GBIF run ${input.receipt.run_id} outcomes path differs from its directory.`);
+  const requestedPairs = new Set(input.receipt.requested_scope.pair_keys);
+  assert(
+    input.receipt.counts.requested_pairs === requestedPairs.size,
+    `GBIF run ${input.receipt.run_id} requested-pair counts disagree.`,
+  );
+  const seenOutcomeIds = new Set<string>();
+  const seenPairs = new Set<string>();
+  const hash = createHash("sha256");
+  const decoder = new StringDecoder("utf8");
+  const buffer = Buffer.allocUnsafe(64 * 1024);
+  const handleLine = (line: string) => {
+    if (!line.trim()) return;
+    assert(Buffer.byteLength(line) <= 8 * 1024 * 1024, `GBIF run ${input.receipt.run_id} contains an oversized outcome record.`);
+    const outcome = input.validator.parse(JSON.parse(line)) as ResearchPairOutcome;
+    const key = `${outcome.county_fips}:${outcome.species_id}`;
+    assert(
+      outcome.run_id === input.receipt.run_id &&
+        outcome.source_id === SOURCE_ID &&
+        outcome.state_code === input.receipt.requested_scope.state_code &&
+        requestedPairs.has(key),
+      `GBIF run ${input.receipt.run_id} contains an outcome outside its declared scope.`,
+    );
+    assert(!seenOutcomeIds.has(outcome.outcome_id), `GBIF run ${input.receipt.run_id} repeats outcome ${outcome.outcome_id}.`);
+    assert(!seenPairs.has(key), `GBIF run ${input.receipt.run_id} repeats pair ${key}.`);
+    seenOutcomeIds.add(outcome.outcome_id);
+    seenPairs.add(key);
+    input.onOutcome(outcome);
+  };
+  const handle = fs.openSync(input.filepath, "r");
+  let bytes = 0;
+  let carry = "";
+  try {
+    while (true) {
+      const read = fs.readSync(handle, buffer, 0, buffer.length, null);
+      if (read === 0) break;
+      const chunk = buffer.subarray(0, read);
+      bytes += read;
+      hash.update(chunk);
+      carry += decoder.write(chunk);
+      const lines = carry.split(/\r?\n/gu);
+      carry = lines.pop() ?? "";
+      for (const line of lines) handleLine(line);
+      assert(Buffer.byteLength(carry) <= 8 * 1024 * 1024, `GBIF run ${input.receipt.run_id} contains an oversized outcome record.`);
+    }
+    carry += decoder.end();
+    handleLine(carry);
+  } finally {
+    fs.closeSync(handle);
+  }
+  assert(bytes === descriptor.bytes, `GBIF run ${input.receipt.run_id} outcomes byte count changed.`);
+  assert(hash.digest("hex") === descriptor.sha256, `GBIF run ${input.receipt.run_id} outcomes hash changed.`);
+  assert(
+    seenOutcomeIds.size === input.receipt.counts.pair_outcomes,
+    `GBIF run ${input.receipt.run_id} outcome count changed.`,
+  );
 }
 
 function exactBinomial(scientificName: string): boolean {
@@ -171,20 +254,61 @@ function countCurrentEvidence(root: string, stateCode: string) {
   };
 }
 
-function completedPairKeys(root: string, stateCode: string) {
-  return new Set(
-    listImmutableResearchRuns(root)
-      .flatMap((bundle) => bundle.outcomes)
-      .filter(
-        (outcome) =>
-          outcome.state_code === stateCode &&
-          outcome.source_id === SOURCE_ID &&
-          outcome.scope_complete,
-      )
-      .map(
-        (outcome) => `${outcome.county_fips}:${outcome.species_id}`,
-      ),
-  );
+const completedPairCache = new Map<string, Map<string, Set<string>>>();
+
+export function completedGbifPairKeys(root: string, stateCode: string) {
+  const resolvedRoot = path.resolve(root);
+  let byState = completedPairCache.get(resolvedRoot);
+  if (!byState) {
+    byState = new Map<string, Set<string>>();
+    const runsRoot = path.join(resolvedRoot, "src/data/research/runs");
+    const receiptValidator = z.fromJSONSchema(readJson<Parameters<typeof z.fromJSONSchema>[0]>(
+      path.join(resolvedRoot, "src/data/research/schemas/run-receipt.schema.json"),
+    ));
+    const outcomeSchema = readJson<Record<string, unknown>>(
+      path.join(resolvedRoot, "src/data/research/schemas/pair-outcome.schema.json"),
+    );
+    delete outcomeSchema.allOf;
+    const outcomeValidator = z.fromJSONSchema(
+      outcomeSchema as Parameters<typeof z.fromJSONSchema>[0],
+    );
+    const runDirectories = fs.existsSync(runsRoot)
+      ? fs.readdirSync(runsRoot, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory() && !entry.name.startsWith(".pending-research-run-"))
+        .map((entry) => path.join(runsRoot, entry.name))
+        .sort(compareText)
+      : [];
+    for (const runDirectory of runDirectories) {
+      const receiptPath = path.join(runDirectory, "receipt.json");
+      if (!fs.existsSync(receiptPath)) continue;
+      const candidateReceipt = readJson<Partial<ImmutableResearchRunReceipt>>(receiptPath);
+      if (candidateReceipt.source_id !== SOURCE_ID) continue;
+      const receipt = receiptValidator.parse(candidateReceipt) as ImmutableResearchRunReceipt;
+      if (receipt.status !== "complete") continue;
+      assert(path.basename(runDirectory) === receipt.run_id, `GBIF run directory ${path.basename(runDirectory)} differs from its receipt ID.`);
+      if (receipt.run_id !== LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
+        validateImmutableResearchRunProvenance({ repositoryRoot: resolvedRoot, receipt });
+      }
+      const receiptState = receipt.requested_scope.state_code;
+      const outcomesPath = path.join(runDirectory, "outcomes.ndjson");
+      assert(fs.existsSync(outcomesPath), `GBIF run ${receipt.run_id} lacks outcomes.ndjson.`);
+      const completed = byState.get(receiptState) ?? new Set<string>();
+      streamValidatedOutcomes({
+        repositoryRoot: resolvedRoot,
+        filepath: outcomesPath,
+        validator: outcomeValidator,
+        receipt,
+        onOutcome: (outcome) => {
+          if (outcome.scope_complete) {
+          completed.add(`${outcome.county_fips}:${outcome.species_id}`);
+          }
+        },
+      });
+      byState.set(receiptState, completed);
+    }
+    completedPairCache.set(resolvedRoot, byState);
+  }
+  return byState.get(stateCode.toUpperCase()) ?? new Set<string>();
 }
 
 function taxonomyBlockedSpecies(root: string) {
@@ -309,7 +433,7 @@ export function buildGbifStateSpeciesPlan(input: {
   const protocol = readJson<{ cells: ProtocolCell[] }>(protocolPath);
   const currentPairState = countCurrentEvidence(input.root, stateCode);
   const evidenceCounts = currentPairState.counts;
-  const completedPairs = completedPairKeys(input.root, stateCode);
+  const completedPairs = completedGbifPairKeys(input.root, stateCode);
   const taxonomyBlocks = taxonomyBlockedSpecies(input.root);
   let preventedCompletedPairCount = 0;
   let fullyCompletedStateSpeciesExcluded = 0;

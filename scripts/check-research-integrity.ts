@@ -17,14 +17,13 @@ import type {
 } from "@/lib/research/types";
 import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
 import {
-  listImmutableResearchRuns,
+  loadImmutableResearchRun,
   readNdjson as readRunNdjson,
   stableJson,
 } from "@/lib/research/run-files";
 import { validateImmutableResearchRunDirectory } from "@/lib/research/validate-run";
 import {
   assertImmutableRunStateConsistency,
-  selectImmutableResearchRunsForState,
 } from "@/lib/research/state-run-selection";
 import {
   type NasArchiveOccurrence,
@@ -87,6 +86,17 @@ import {
 import {
   verifyNationalNrcsAcquisition,
 } from "./research/run-national-usda-nrcs-plants";
+import type { GbifRequestedPair } from "./research/adapters/gbif-preserved-specimens";
+import {
+  loadNationalGbifDownloadPlan,
+  loadNationalGbifSelection,
+  resolveNationalGbifTaxa,
+} from "./research/national-gbif-download";
+import { replayNationalGbifArchive } from "./research/national-gbif-download-replay";
+import {
+  type NationalGbifReference,
+  verifyNationalGbifAcquisition,
+} from "./research/verify-national-gbif-download";
 import {
   getStateDefinition,
   listCountyEquivalents,
@@ -385,48 +395,41 @@ const runsFile = readJson<RunsFile>(runsPath);
 const runs = runsFile.runs;
 const summary = readJson<ResearchStateSummary>(summaryPath);
 const asOfCutoff = Date.parse(`${summary.asOf}T23:59:59.999Z`);
-const immutableRuns = listImmutableResearchRuns(ROOT);
-for (const bundle of immutableRuns) assertImmutableRunStateConsistency(bundle);
-const projectedAlabamaImmutableRuns = selectImmutableResearchRunsForState(
-  immutableRuns,
-  "AL",
-  summary.asOf,
-);
-const runAssertions = immutableRuns.flatMap((bundle) => bundle.assertions);
-const projectedRunAssertions = projectedAlabamaImmutableRuns.flatMap(
-  (bundle) => bundle.assertions,
-);
-const perRunReviews = immutableRuns.flatMap((bundle) => bundle.reviews);
+const immutableRunsRoot = path.join(ROOT, "src/data/research/runs");
+const immutableRunDirectories = readdirSync(immutableRunsRoot, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory() && !entry.name.startsWith(".pending-research-run-"))
+  .map((entry) => path.join(immutableRunsRoot, entry.name))
+  .sort();
+const projectedRunAssertions: RunEvidenceAssertionEvent[] = [];
 const laterReviews = readRunNdjson<EvidenceReviewEvent>(reviewEventsPath);
-const reviews = [...perRunReviews, ...laterReviews];
-const projectedReviews = [
-  ...projectedAlabamaImmutableRuns.flatMap((bundle) => bundle.reviews),
+const projectedReviews: EvidenceReviewEvent[] = [
   ...laterReviews.filter(
     (event) =>
       event.state_code === "AL" && Date.parse(event.created_at) <= asOfCutoff,
   ),
 ];
-const perRunRejections = immutableRuns.flatMap((bundle) => bundle.rejections);
 const laterRejections = readRunNdjson<ResearchRejectionRecord>(rejectionsPath);
-const rejections = [...perRunRejections, ...laterRejections];
-const projectedRejections = [
-  ...projectedAlabamaImmutableRuns.flatMap((bundle) => bundle.rejections),
+const projectedRejections: ResearchRejectionRecord[] = [
   ...laterRejections.filter(
     (record) =>
       record.normalized_target.state_code === "AL" &&
       Date.parse(record.created_at) <= asOfCutoff,
   ),
 ];
-const outcomes = immutableRuns.flatMap((bundle) => bundle.outcomes);
-const projectedOutcomes = projectedAlabamaImmutableRuns.flatMap(
-  (bundle) => bundle.outcomes,
-);
+const projectedOutcomes: ResearchPairOutcome[] = [];
+const allAlabamaRunAssertions: RunEvidenceAssertionEvent[] = [];
+let projectedAlabamaImmutableRunCount = 0;
+let totalRunAssertionEventCount = 0;
+let totalReviewEventCount = laterReviews.length;
+let totalRejectionCount = laterRejections.length;
+let totalPairOutcomeCount = 0;
 const migrationCandidates = readJson<MigrationCandidatesFile>(migrationCandidatesPath);
 const nationalNasAcquisitions = [];
 const nationalAfpeAcquisitions = [];
 const nationalFiaAcquisitions = [];
 const nationalAphisAcquisitions = [];
 const nationalNrcsAcquisitions = [];
+const nationalGbifAcquisitions = [];
 const nationalAphisPlanPath = path.join(
   ROOT,
   "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
@@ -463,6 +466,8 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
             ? verifyNationalAphisAcquisition(directory, nationalAphisPlan)
             : candidate.source_id === NRCS_SOURCE_ID && nationalNrcsPlan
               ? verifyNationalNrcsAcquisition(directory, nationalNrcsPlan)
+              : candidate.source_id === "gbif-preserved-specimens"
+                ? await verifyNationalGbifAcquisition(ROOT, directory)
             : null;
     assert(
       verified,
@@ -489,6 +494,10 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
       nationalAphisAcquisitions.push(
         verified as ReturnType<typeof verifyNationalAphisAcquisition>,
       );
+    } else if (candidate.source_id === "gbif-preserved-specimens") {
+      nationalGbifAcquisitions.push(
+        verified as Awaited<ReturnType<typeof verifyNationalGbifAcquisition>>,
+      );
     } else {
       nationalNrcsAcquisitions.push(
         verified as ReturnType<typeof verifyNationalNrcsAcquisition>,
@@ -499,11 +508,13 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
 const nationalNasAcquisitionById = new Map(
   nationalNasAcquisitions.map((entry) => [entry.receipt.acquisition_id, entry]),
 );
+type NationalReferenceEntry<T> = {
+  reference: T;
+  runDirectory: string;
+  runId: string;
+};
 const nationalNasReferences: NationalNasReference[] = [];
-const nationalNasReferenceEntries: Array<{
-  reference: NationalNasReference;
-  bundle: (typeof immutableRuns)[number];
-}> = [];
+const nationalNasReferenceEntries: Array<NationalReferenceEntry<NationalNasReference>> = [];
 const nationalAfpeAcquisitionById = new Map(
   nationalAfpeAcquisitions.map((entry) => [
     entry.receipt.acquisition_id,
@@ -511,10 +522,7 @@ const nationalAfpeAcquisitionById = new Map(
   ]),
 );
 const nationalAfpeReferences: NationalAfpeReference[] = [];
-const nationalAfpeReferenceEntries: Array<{
-  reference: NationalAfpeReference;
-  bundle: (typeof immutableRuns)[number];
-}> = [];
+const nationalAfpeReferenceEntries: Array<NationalReferenceEntry<NationalAfpeReference>> = [];
 const nationalFiaAcquisitionById = new Map(
   nationalFiaAcquisitions.map((entry) => [
     entry.receipt.acquisition_id,
@@ -522,10 +530,7 @@ const nationalFiaAcquisitionById = new Map(
   ]),
 );
 const nationalFiaReferences: NationalFiaReference[] = [];
-const nationalFiaReferenceEntries: Array<{
-  reference: NationalFiaReference;
-  bundle: (typeof immutableRuns)[number];
-}> = [];
+const nationalFiaReferenceEntries: Array<NationalReferenceEntry<NationalFiaReference>> = [];
 const nationalAphisAcquisitionById = new Map(
   nationalAphisAcquisitions.map((entry) => [
     entry.receipt.acquisition_id,
@@ -540,6 +545,14 @@ const nationalNrcsAcquisitionById = new Map(
   ]),
 );
 const nationalNrcsReferences: NationalNrcsReference[] = [];
+const nationalGbifAcquisitionById = new Map(
+  nationalGbifAcquisitions.map((entry) => [
+    entry.receipt.acquisition_id,
+    entry,
+  ]),
+);
+const nationalGbifReferences: NationalGbifReference[] = [];
+const nationalGbifReferenceEntries: Array<NationalReferenceEntry<NationalGbifReference>> = [];
 
 assert(bootstrapFreeze.rules.initializationOnly, "Bootstrap migration is no longer initialization-only.");
 assert(
@@ -582,30 +595,20 @@ validateRecords(
   bootstrapEvidence,
   "Bootstrap evidence assertion",
 );
+const immutableAssertionValidator = schemaValidator("evidence-assertion.schema.json");
+const immutableRejectionValidator = schemaValidator("rejection-record.schema.json");
+const immutableReviewValidator = schemaValidatorWithoutConditionals("review-event.schema.json");
+const immutableOutcomeValidator = schemaValidatorWithoutConditionals("pair-outcome.schema.json");
+const immutableReceiptValidator = schemaValidator("run-receipt.schema.json");
 validateRecords(
-  schemaValidator("evidence-assertion.schema.json"),
-  runAssertions,
-  "Run evidence assertion",
+  immutableRejectionValidator,
+  laterRejections,
+  "Later research rejection",
 );
 validateRecords(
-  schemaValidator("rejection-record.schema.json"),
-  rejections,
-  "Research rejection",
-);
-validateRecords(
-  schemaValidatorWithoutConditionals("review-event.schema.json"),
-  reviews,
-  "Research review event",
-);
-validateRecords(
-  schemaValidatorWithoutConditionals("pair-outcome.schema.json"),
-  outcomes,
-  "Research pair outcome",
-);
-validateRecords(
-  schemaValidator("run-receipt.schema.json"),
-  immutableRuns.map((bundle) => bundle.receipt),
-  "Immutable run receipt",
+  immutableReviewValidator,
+  laterReviews,
+  "Later research review event",
 );
 schemaValidator("research-projection.schema.json").parse(summary);
 
@@ -642,21 +645,41 @@ for (const run of runs) {
   assertUnique(run.acceptedSpeciesIds, `Research run ${run.runId} accepted species`);
 }
 
-assertUnique(immutableRuns.map((bundle) => bundle.receipt.run_id), "Immutable research run IDs");
-assertUnique(runAssertions.map((entry) => entry.eventId), "Run evidence event IDs");
-assertUnique(reviews.map((entry) => entry.eventId), "Review event IDs");
-assertUnique(rejections.map((entry) => entry.rejection_id), "Rejection IDs");
-assertUnique(outcomes.map((entry) => entry.outcome_id), "Pair outcome IDs");
-const assertionById = new Map(runAssertions.map((entry) => [entry.eventId, entry]));
-const rejectionById = new Map(rejections.map((entry) => [entry.rejection_id, entry]));
+const immutableRunIds = new Set<string>();
+const assertionEventIds = new Set<string>();
+const reviewEventIds = new Set(laterReviews.map((entry) => entry.eventId));
+const rejectionIds = new Set(laterRejections.map((entry) => entry.rejection_id));
+const outcomeIds = new Set<string>();
+assert(reviewEventIds.size === laterReviews.length, "Later review event IDs are not unique.");
+assert(rejectionIds.size === laterRejections.length, "Later rejection IDs are not unique.");
+const assertionById = new Map<string, Pick<RunEvidenceAssertionEvent, "run_id" | "source_id" | "state_code" | "county_fips" | "species_id">>();
+const rejectionById = new Map<string, Pick<ResearchRejectionRecord, "run_id">>();
+for (const rejection of laterRejections) rejectionById.set(rejection.rejection_id, rejection);
 
-for (const bundle of immutableRuns) {
+for (const runDirectory of immutableRunDirectories) {
+  const bundle = loadImmutableResearchRun(ROOT, runDirectory);
   const { receipt } = bundle;
+  assert(!immutableRunIds.has(receipt.run_id), `Immutable research run ID repeats: ${receipt.run_id}.`);
+  immutableRunIds.add(receipt.run_id);
+  validateRecords(immutableAssertionValidator, bundle.assertions, `Immutable run ${receipt.run_id} assertion`);
+  validateRecords(immutableReviewValidator, bundle.reviews, `Immutable run ${receipt.run_id} review`);
+  validateRecords(immutableRejectionValidator, bundle.rejections, `Immutable run ${receipt.run_id} rejection`);
+  validateRecords(immutableOutcomeValidator, bundle.outcomes, `Immutable run ${receipt.run_id} outcome`);
+  validateRecords(immutableReceiptValidator, [receipt], `Immutable run ${receipt.run_id} receipt`);
+  assertImmutableRunStateConsistency(bundle);
   if (receipt.run_id !== LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
+    const sourceVerificationOutput =
+      receipt.source_id === "gbif-preserved-specimens" &&
+      receipt.adapter_version === "1.4.0"
+        ? receipt.outputs.find((entry) => entry.path.endsWith("/source-verification.json"))
+        : undefined;
     validateImmutableResearchRunDirectory({
       repositoryRoot: ROOT,
       validationRoot: ROOT,
       runDirectory: bundle.directory,
+      sourceVerificationPath: sourceVerificationOutput
+        ? path.join(ROOT, sourceVerificationOutput.path)
+        : undefined,
     });
   }
   const runStateCode = receipt.requested_scope.state_code;
@@ -670,6 +693,93 @@ for (const bundle of immutableRuns) {
     cwd: ROOT,
     stdio: "ignore",
   });
+  totalRunAssertionEventCount += bundle.assertions.length;
+  totalReviewEventCount += bundle.reviews.length;
+  totalRejectionCount += bundle.rejections.length;
+  totalPairOutcomeCount += bundle.outcomes.length;
+  for (const assertion of bundle.assertions) {
+    assert(!assertionEventIds.has(assertion.eventId), `Run evidence event ID repeats: ${assertion.eventId}.`);
+    assertionEventIds.add(assertion.eventId);
+    assertionById.set(assertion.eventId, assertion);
+  }
+  for (const review of bundle.reviews) {
+    assert(!reviewEventIds.has(review.eventId), `Review event ID repeats: ${review.eventId}.`);
+    reviewEventIds.add(review.eventId);
+  }
+  for (const rejection of bundle.rejections) {
+    assert(!rejectionIds.has(rejection.rejection_id), `Rejection ID repeats: ${rejection.rejection_id}.`);
+    rejectionIds.add(rejection.rejection_id);
+    rejectionById.set(rejection.rejection_id, rejection);
+  }
+  for (const outcome of bundle.outcomes) {
+    assert(!outcomeIds.has(outcome.outcome_id), `Pair outcome ID repeats: ${outcome.outcome_id}.`);
+    outcomeIds.add(outcome.outcome_id);
+  }
+  for (const entry of bundle.assertions) {
+    const county = countyByFips.get(entry.county_fips);
+    assert(county, `Run assertion ${entry.eventId} has an unknown county.`);
+    assert(county.stateCode === entry.state_code, `Run assertion ${entry.eventId} county does not belong to ${entry.state_code}.`);
+    assert(speciesIds.has(entry.species_id), `Run assertion ${entry.eventId} has an unknown species.`);
+    assert(sourceById.has(entry.source_id), `Run assertion ${entry.eventId} has an unknown source.`);
+    assert(entry.geography_match.county_fips === entry.county_fips, `Run assertion ${entry.eventId} has inconsistent county mapping.`);
+    assert(/^https?:\/\//.test(entry.source_url), `Run assertion ${entry.eventId} has a non-HTTP URL.`);
+  }
+  for (const event of bundle.reviews) {
+    assertReviewInvariant(event);
+    assert(nationalStateCodes.has(event.state_code), `Review ${event.eventId} has unknown state ${event.state_code}.`);
+    const assertion = assertionById.get(event.references.assertion_event_id);
+    assert(assertion, `Review ${event.eventId} references an unknown assertion.`);
+    assert(
+      assertion.state_code === event.state_code &&
+        assertion.county_fips === event.county_fips &&
+        assertion.species_id === event.species_id,
+      `Review ${event.eventId} does not match its assertion state or pair.`,
+    );
+  }
+  for (const rejection of bundle.rejections) {
+    assert(sourceById.has(rejection.source_id), `Rejection ${rejection.rejection_id} has an unknown source.`);
+    assert(nationalStateCodes.has(rejection.normalized_target.state_code), `Rejection ${rejection.rejection_id} has an unknown state.`);
+    assert(speciesIds.has(rejection.normalized_target.species_id), `Rejection ${rejection.rejection_id} has an unknown species.`);
+    if (rejection.normalized_target.county_fips) {
+      const county = countyByFips.get(rejection.normalized_target.county_fips);
+      assert(county, `Rejection ${rejection.rejection_id} has an unknown county.`);
+      assert(county.stateCode === rejection.normalized_target.state_code, `Rejection ${rejection.rejection_id} county does not belong to its state.`);
+    }
+  }
+  for (const outcome of bundle.outcomes) {
+    assertOutcomeInvariant(outcome);
+    assert(sourceById.has(outcome.source_id), `Outcome ${outcome.outcome_id} has an unknown source.`);
+    const county = countyByFips.get(outcome.county_fips);
+    assert(county, `Outcome ${outcome.outcome_id} has an unknown county.`);
+    assert(county.stateCode === outcome.state_code, `Outcome ${outcome.outcome_id} county does not belong to ${outcome.state_code}.`);
+    assert(speciesIds.has(outcome.species_id), `Outcome ${outcome.outcome_id} has an unknown species.`);
+    for (const assertionId of outcome.assertion_event_ids) {
+      const assertion = assertionById.get(assertionId);
+      assert(assertion, `Outcome ${outcome.outcome_id} references unknown assertion ${assertionId}.`);
+      assert(assertion.run_id === outcome.run_id, `Outcome ${outcome.outcome_id} references an assertion from another run.`);
+      assert(
+        assertion.source_id === outcome.source_id &&
+          assertion.county_fips === outcome.county_fips &&
+          assertion.species_id === outcome.species_id,
+        `Outcome ${outcome.outcome_id} does not match assertion ${assertionId}.`,
+      );
+    }
+    for (const rejectionId of outcome.rejection_ids) {
+      const rejection = rejectionById.get(rejectionId);
+      assert(rejection, `Outcome ${outcome.outcome_id} references unknown rejection ${rejectionId}.`);
+      assert(rejection.run_id === outcome.run_id, `Outcome ${outcome.outcome_id} references a rejection from another run.`);
+    }
+  }
+  if (runStateCode === "AL") {
+    allAlabamaRunAssertions.push(...bundle.assertions);
+    if (Date.parse(receipt.finished_at) <= asOfCutoff) {
+      projectedAlabamaImmutableRunCount += 1;
+      projectedRunAssertions.push(...bundle.assertions);
+      projectedReviews.push(...bundle.reviews);
+      projectedRejections.push(...bundle.rejections);
+      projectedOutcomes.push(...bundle.outcomes);
+    }
+  }
   if (receipt.source_id === "usgs-nas" && receipt.adapter_id === "usgs-nas-archive") {
     const matchingArtifacts = receipt.artifacts.filter((entry) =>
       entry.path.endsWith("/artifacts/national-acquisition-reference.json"),
@@ -687,7 +797,7 @@ for (const bundle of immutableRuns) {
     const reference = JSON.parse(artifactBytes.toString("utf8")) as NationalNasReference;
     validateNationalNasReference(ROOT, reference);
     nationalNasReferences.push(reference);
-    nationalNasReferenceEntries.push({ reference, bundle });
+    nationalNasReferenceEntries.push({ reference, runDirectory: bundle.directory, runId: receipt.run_id });
     const acquisition = nationalNasAcquisitionById.get(reference.acquisitionId);
     assert(acquisition, `Immutable run ${receipt.run_id} references an unknown national acquisition.`);
     assert(
@@ -762,7 +872,7 @@ for (const bundle of immutableRuns) {
     ) as NationalAfpeReference;
     validateNationalAfpeReference(ROOT, reference);
     nationalAfpeReferences.push(reference);
-    nationalAfpeReferenceEntries.push({ reference, bundle });
+    nationalAfpeReferenceEntries.push({ reference, runDirectory: bundle.directory, runId: receipt.run_id });
     const acquisition = nationalAfpeAcquisitionById.get(reference.acquisitionId);
     assert(
       acquisition,
@@ -864,7 +974,7 @@ for (const bundle of immutableRuns) {
     ) as NationalFiaReference;
     validateNationalFiaReference(ROOT, reference);
     nationalFiaReferences.push(reference);
-    nationalFiaReferenceEntries.push({ reference, bundle });
+    nationalFiaReferenceEntries.push({ reference, runDirectory: bundle.directory, runId: receipt.run_id });
     const acquisition = nationalFiaAcquisitionById.get(reference.acquisitionId);
     assert(
       acquisition,
@@ -1214,6 +1324,116 @@ for (const bundle of immutableRuns) {
       `Immutable NRCS run ${receipt.run_id} deterministic replay changed.`,
     );
   }
+  if (
+    receipt.source_id === "gbif-preserved-specimens" &&
+    receipt.adapter_id === "gbif-preserved-specimens" &&
+    receipt.adapter_version === "1.4.0"
+  ) {
+    const matchingArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/national-acquisition-reference.json"),
+    );
+    const verificationOutputs = receipt.outputs.filter((entry) =>
+      entry.path.endsWith("/source-verification.json"),
+    );
+    assert(
+      matchingArtifacts.length === 1 && verificationOutputs.length === 1,
+      `Immutable GBIF run ${receipt.run_id} must contain one acquisition reference and one source verification artifact.`,
+    );
+    const artifact = matchingArtifacts[0]!;
+    const artifactBytes = readFileSync(path.join(ROOT, artifact.path));
+    assert(
+      artifactBytes.length === artifact.bytes && sha256(artifactBytes) === artifact.sha256,
+      `Immutable GBIF run ${receipt.run_id} acquisition reference changed.`,
+    );
+    const reference = JSON.parse(artifactBytes.toString("utf8")) as NationalGbifReference;
+    schemaValidator("national-gbif-download-reference.schema.json").parse(reference);
+    const acquisition = nationalGbifAcquisitionById.get(reference.acquisitionId);
+    assert(acquisition, `Immutable GBIF run ${receipt.run_id} references an unknown acquisition.`);
+    assert(
+      reference.acquisitionReceiptPath === path.relative(ROOT, acquisition.receiptPath).split(path.sep).join("/") &&
+        reference.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        reference.archive.path === path.relative(ROOT, acquisition.archivePath).split(path.sep).join("/") &&
+        reference.archive.sha256 === acquisition.receipt.archive.sha256 &&
+        reference.archive.bytes === acquisition.receipt.archive.bytes &&
+        reference.archive.providerTotalRecords === acquisition.receipt.archive.provider_total_records &&
+        reference.downloadKey === acquisition.receipt.download.key &&
+        reference.doi === acquisition.receipt.download.doi &&
+        reference.license === acquisition.receipt.download.license,
+      `Immutable GBIF run ${receipt.run_id} acquisition lineage changed.`,
+    );
+    assertCommitAncestor(ROOT, acquisition.receipt.code_commit, receipt.code_commit);
+    assert(
+      reference.sourceId === receipt.source_id &&
+        reference.stateCode === runStateCode &&
+        reference.adapterVersion === receipt.adapter_version &&
+        reference.adapterCodeSha256 === receipt.adapter_code_hash &&
+        reference.selectionPairCount === receipt.requested_scope.pair_keys.length &&
+        reference.selectionPairSha256 === sha256(`${receipt.requested_scope.pair_keys.join("\n")}\n`) &&
+        reference.replayCodeSha256 === committedFileSha256(receipt.code_commit, "scripts/research/national-gbif-download-replay.ts") &&
+        reference.partitionRunnerSha256 === committedFileSha256(receipt.code_commit, "scripts/research/partition-national-gbif-download.ts"),
+      `Immutable GBIF run ${receipt.run_id} partition scope or code lineage changed.`,
+    );
+    const partitionBytes = readFileSync(path.join(ROOT, reference.partitionReceiptPath));
+    assert(
+      sha256(partitionBytes) === reference.partitionReceiptSha256,
+      `Immutable GBIF run ${receipt.run_id} partition receipt changed.`,
+    );
+    const partition = JSON.parse(partitionBytes.toString("utf8")) as {
+      codeCommit: string;
+      acquisitionId: string;
+      acquisitionReceiptSha256: string;
+      archiveSha256: string;
+      selectionId: string;
+      inspection: unknown;
+      reconciliation: unknown;
+      statePartitions: Array<{
+        stateCode: string;
+        runCreated: boolean;
+        runId: string | null;
+        pairCount: number;
+        pairSha256: string;
+        candidateRecords: number;
+        assertions: number;
+        reviews: number;
+        rejections: number;
+        outcomes: number;
+      }>;
+    };
+    schemaValidator("national-gbif-download-partition-receipt.schema.json").parse(partition);
+    const statePartition = partition.statePartitions.find((entry) => entry.stateCode === runStateCode);
+    assert(statePartition, `Immutable GBIF run ${receipt.run_id} lacks a state partition receipt.`);
+    assert(
+      partition.codeCommit === receipt.code_commit &&
+        partition.acquisitionId === acquisition.receipt.acquisition_id &&
+        partition.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        partition.archiveSha256 === acquisition.receipt.archive.sha256 &&
+        partition.selectionId === reference.selectionId &&
+        stableJson(partition.inspection) === stableJson(reference.archiveInspection) &&
+        stableJson(partition.reconciliation) === stableJson(reference.nationalReconciliation) &&
+        stableJson(statePartition) === stableJson(reference.stateReconciliation) &&
+        statePartition.runCreated === true &&
+        statePartition.runId === receipt.run_id &&
+        statePartition.pairCount === reference.selectionPairCount &&
+        statePartition.pairSha256 === reference.selectionPairSha256 &&
+        statePartition.candidateRecords === receipt.counts.candidate_records &&
+        statePartition.assertions === receipt.counts.assertion_events &&
+        statePartition.reviews === receipt.counts.review_events &&
+        statePartition.rejections === receipt.counts.rejection_records &&
+        statePartition.outcomes === receipt.counts.pair_outcomes,
+      `Immutable GBIF run ${receipt.run_id} partition reconciliation changed.`,
+    );
+    const verificationOutput = verificationOutputs[0]!;
+    const verificationBytes = readFileSync(path.join(ROOT, verificationOutput.path));
+    assert(
+      verificationBytes.length === verificationOutput.bytes &&
+        sha256(verificationBytes) === verificationOutput.sha256,
+      `Immutable GBIF run ${receipt.run_id} source verification changed.`,
+    );
+    const verification = JSON.parse(verificationBytes.toString("utf8"));
+    schemaValidator("worker-source-verification.schema.json").parse(verification);
+    nationalGbifReferences.push(reference);
+    nationalGbifReferenceEntries.push({ reference, runDirectory: bundle.directory, runId: receipt.run_id });
+  }
 
   if (receipt.run_id === LEGACY_DIRTY_BOOTSTRAP_RUN_ID) {
     assert(
@@ -1348,11 +1568,27 @@ for (const bundle of immutableRuns) {
       assertion.state_code === runStateCode,
       `Immutable run ${receipt.run_id} assertion ${assertion.eventId} disagrees with receipt state.`,
     );
+    const county = countyByFips.get(assertion.county_fips);
+    assert(county, `Run assertion ${assertion.eventId} has an unknown county.`);
+    assert(county.stateCode === assertion.state_code, `Run assertion ${assertion.eventId} county does not belong to ${assertion.state_code}.`);
+    assert(speciesIds.has(assertion.species_id), `Run assertion ${assertion.eventId} has an unknown species.`);
+    assert(sourceById.has(assertion.source_id), `Run assertion ${assertion.eventId} has an unknown source.`);
+    assert(assertion.geography_match.county_fips === assertion.county_fips, `Run assertion ${assertion.eventId} has inconsistent county mapping.`);
+    assert(/^https?:\/\//.test(assertion.source_url), `Run assertion ${assertion.eventId} has a non-HTTP URL.`);
   }
   for (const review of bundle.reviews) {
     assert(
       review.state_code === runStateCode,
       `Immutable run ${receipt.run_id} review ${review.eventId} disagrees with receipt state.`,
+    );
+    assertReviewInvariant(review);
+    const assertion = assertionById.get(review.references.assertion_event_id);
+    assert(assertion, `Review ${review.eventId} references an unknown assertion.`);
+    assert(
+      assertion.state_code === review.state_code &&
+        assertion.county_fips === review.county_fips &&
+        assertion.species_id === review.species_id,
+      `Review ${review.eventId} does not match its assertion state or pair.`,
     );
   }
   for (const rejection of bundle.rejections) {
@@ -1360,12 +1596,65 @@ for (const bundle of immutableRuns) {
       rejection.normalized_target.state_code === runStateCode,
       `Immutable run ${receipt.run_id} rejection ${rejection.rejection_id} disagrees with receipt state.`,
     );
+    assert(sourceById.has(rejection.source_id), `Rejection ${rejection.rejection_id} has an unknown source.`);
+    assert(nationalStateCodes.has(rejection.normalized_target.state_code), `Rejection ${rejection.rejection_id} has an unknown state.`);
+    assert(speciesIds.has(rejection.normalized_target.species_id), `Rejection ${rejection.rejection_id} has an unknown species.`);
+    if (rejection.normalized_target.county_fips) {
+      const county = countyByFips.get(rejection.normalized_target.county_fips);
+      assert(county, `Rejection ${rejection.rejection_id} has an unknown county.`);
+      assert(county.stateCode === rejection.normalized_target.state_code, `Rejection ${rejection.rejection_id} county does not belong to its state.`);
+    }
   }
   for (const outcome of bundle.outcomes) {
     assert(
       outcome.state_code === runStateCode,
       `Immutable run ${receipt.run_id} outcome ${outcome.outcome_id} disagrees with receipt state.`,
     );
+    assertOutcomeInvariant(outcome);
+    assert(sourceById.has(outcome.source_id), `Outcome ${outcome.outcome_id} has an unknown source.`);
+    const county = countyByFips.get(outcome.county_fips);
+    assert(county, `Outcome ${outcome.outcome_id} has an unknown county.`);
+    assert(county.stateCode === outcome.state_code, `Outcome ${outcome.outcome_id} county does not belong to ${outcome.state_code}.`);
+    assert(speciesIds.has(outcome.species_id), `Outcome ${outcome.outcome_id} has an unknown species.`);
+    for (const assertionId of outcome.assertion_event_ids) {
+      const assertion = assertionById.get(assertionId);
+      assert(assertion, `Outcome ${outcome.outcome_id} references unknown assertion ${assertionId}.`);
+      assert(assertion.run_id === outcome.run_id, `Outcome ${outcome.outcome_id} references an assertion from another run.`);
+      assert(
+        assertion.source_id === outcome.source_id &&
+          assertion.county_fips === outcome.county_fips &&
+          assertion.species_id === outcome.species_id,
+        `Outcome ${outcome.outcome_id} does not match assertion ${assertionId}.`,
+      );
+    }
+    for (const rejectionId of outcome.rejection_ids) {
+      const rejection = rejectionById.get(rejectionId);
+      assert(rejection, `Outcome ${outcome.outcome_id} references unknown rejection ${rejectionId}.`);
+      assert(rejection.run_id === outcome.run_id, `Outcome ${outcome.outcome_id} references a rejection from another run.`);
+    }
+  }
+}
+
+for (const review of laterReviews) {
+  assertReviewInvariant(review);
+  assert(nationalStateCodes.has(review.state_code), `Review ${review.eventId} has unknown state ${review.state_code}.`);
+  const assertion = assertionById.get(review.references.assertion_event_id);
+  assert(assertion, `Review ${review.eventId} references an unknown assertion.`);
+  assert(
+    assertion.state_code === review.state_code &&
+      assertion.county_fips === review.county_fips &&
+      assertion.species_id === review.species_id,
+    `Review ${review.eventId} does not match its assertion state or pair.`,
+  );
+}
+for (const rejection of laterRejections) {
+  assert(sourceById.has(rejection.source_id), `Rejection ${rejection.rejection_id} has an unknown source.`);
+  assert(nationalStateCodes.has(rejection.normalized_target.state_code), `Rejection ${rejection.rejection_id} has an unknown state.`);
+  assert(speciesIds.has(rejection.normalized_target.species_id), `Rejection ${rejection.rejection_id} has an unknown species.`);
+  if (rejection.normalized_target.county_fips) {
+    const county = countyByFips.get(rejection.normalized_target.county_fips);
+    assert(county, `Rejection ${rejection.rejection_id} has an unknown county.`);
+    assert(county.stateCode === rejection.normalized_target.state_code, `Rejection ${rejection.rejection_id} county does not belong to its state.`);
   }
 }
 
@@ -1375,7 +1664,7 @@ for (const acquisition of nationalNasAcquisitions) {
   );
   if (referenceEntries.length === 0) continue;
   const recordsByRun = new Map(
-    referenceEntries.map((entry) => [entry.bundle.receipt.run_id, [] as NasArchiveOccurrence[]]),
+    referenceEntries.map((entry) => [entry.runId, [] as NasArchiveOccurrence[]]),
   );
   const referencesByTaxon = new Map<string, typeof referenceEntries>();
   for (const entry of referenceEntries) {
@@ -1396,10 +1685,10 @@ for (const acquisition of nationalNasAcquisitions) {
           screenStateCode: entry.reference.stateCode,
           screenScientificName: entry.reference.scientificName,
         })) continue;
-        const values = recordsByRun.get(entry.bundle.receipt.run_id)!;
+        const values = recordsByRun.get(entry.runId)!;
         assert(
           values.length < USGS_NAS_SELECTED_RECORD_BUDGET_PER_SCREEN,
-          `Integrity replay exceeded the record budget for ${entry.bundle.receipt.run_id}.`,
+          `Integrity replay exceeded the record budget for ${entry.runId}.`,
         );
         assert(
           selectedRecordCount < USGS_NAS_SELECTED_RECORD_BUDGET_PER_PARTITION,
@@ -1415,7 +1704,8 @@ for (const acquisition of nationalNasAcquisitions) {
     `Integrity replay counted ${archiveRecordCount} USGS NAS rows instead of ${acquisition.receipt.archive.record_count}.`,
   );
   for (const entry of referenceEntries) {
-    const { bundle, reference } = entry;
+    const { reference } = entry;
+    const bundle = loadImmutableResearchRun(ROOT, entry.runDirectory);
     const state = getStateDefinition(reference.stateCode);
     assert(state, `Integrity replay has unknown state ${reference.stateCode}.`);
     const requestedPairs = listCountyEquivalents(reference.stateCode).map((county) => ({
@@ -1472,6 +1762,142 @@ for (const acquisition of nationalNasAcquisitions) {
   }
 }
 
+for (const acquisition of nationalGbifAcquisitions) {
+  const entries = nationalGbifReferenceEntries.filter(
+    (entry) => entry.reference.acquisitionId === acquisition.receipt.acquisition_id,
+  );
+  if (entries.length === 0) continue;
+  const plan = loadNationalGbifDownloadPlan(path.join(ROOT, acquisition.receipt.parameters.planPath));
+  const selectionLoaded = loadNationalGbifSelection(ROOT, plan);
+  const partitionPaths = new Set(entries.map((entry) => entry.reference.partitionReceiptPath));
+  const partitionHashes = new Set(entries.map((entry) => entry.reference.partitionReceiptSha256));
+  assert(
+    partitionPaths.size === 1 && partitionHashes.size === 1,
+    `GBIF acquisition ${acquisition.receipt.acquisition_id} references more than one partition receipt.`,
+  );
+  const partitionBytes = readFileSync(path.join(ROOT, [...partitionPaths][0]!));
+  assert(
+    sha256(partitionBytes) === [...partitionHashes][0],
+    `GBIF acquisition ${acquisition.receipt.acquisition_id} partition receipt hash changed.`,
+  );
+  const partition = JSON.parse(partitionBytes.toString("utf8")) as {
+    statePartitions: Array<{
+      stateCode: string;
+      runCreated: boolean;
+      runId: string | null;
+      pairCount: number;
+      pairSha256: string;
+      candidateRecords: number;
+      assertions: number;
+      reviews: number;
+      rejections: number;
+      outcomes: number;
+    }>;
+  };
+  schemaValidator("national-gbif-download-partition-receipt.schema.json").parse(partition);
+  assertUnique(
+    partition.statePartitions.map((state) => state.stateCode),
+    `GBIF acquisition ${acquisition.receipt.acquisition_id} partition receipt states`,
+  );
+  assert(
+    stableJson(partition.statePartitions.map((state) => state.stateCode)) ===
+      stableJson(selectionLoaded.selection.stateScopes.map((state) => state.stateCode)),
+    `GBIF acquisition ${acquisition.receipt.acquisition_id} partition receipt state order differs from selection.`,
+  );
+  const referenceByState = new Map(entries.map((entry) => [entry.reference.stateCode, entry.reference]));
+  for (const selectedScope of selectionLoaded.selection.stateScopes) {
+    const statePartition = partition.statePartitions.find((state) => state.stateCode === selectedScope.stateCode)!;
+    const reference = referenceByState.get(selectedScope.stateCode);
+    const runCreated = selectedScope.candidatePairs.length > 0;
+    assert(
+      statePartition.runCreated === runCreated &&
+        statePartition.pairCount === selectedScope.candidatePairs.length &&
+        statePartition.pairSha256 === selectedScope.candidatePairSha256 &&
+        statePartition.outcomes === selectedScope.candidatePairs.length &&
+        (runCreated
+          ? Boolean(reference) && statePartition.runId === reference!.stateReconciliation.runId
+          : !reference && statePartition.runId === null &&
+            statePartition.candidateRecords === 0 && statePartition.assertions === 0 &&
+            statePartition.reviews === 0 && statePartition.rejections === 0),
+      `GBIF acquisition ${acquisition.receipt.acquisition_id} ${selectedScope.stateCode} partition scope differs from selection.`,
+    );
+  }
+  const expectedRunStates = selectionLoaded.selection.stateScopes
+    .filter((scope) => scope.candidatePairs.length > 0)
+    .map((scope) => scope.stateCode);
+  assert(
+    entries.length === expectedRunStates.length,
+    `GBIF acquisition ${acquisition.receipt.acquisition_id} has the wrong nonempty state partition count.`,
+  );
+  assertUnique(entries.map((entry) => entry.reference.stateCode), `GBIF acquisition ${acquisition.receipt.acquisition_id} partition states`);
+  assert(
+    stableJson(entries.map((entry) => entry.reference.stateCode).sort()) === stableJson([...expectedRunStates].sort()),
+    `GBIF acquisition ${acquisition.receipt.acquisition_id} nonempty partition states differ from selection.`,
+  );
+  const taxa = resolveNationalGbifTaxa(ROOT, plan);
+  const stateInputs = entries.map((entry) => {
+    const { reference } = entry;
+    const bundle = loadImmutableResearchRun(ROOT, entry.runDirectory);
+    const state = getStateDefinition(reference.stateCode);
+    assert(state, `GBIF integrity replay has unknown state ${reference.stateCode}.`);
+    const counties = new Map(listCountyEquivalents(reference.stateCode).map((county) => [county.countyFips, county]));
+    const requestedPairs = bundle.receipt.requested_scope.pair_keys.map((key) => {
+      const separator = key.indexOf(":");
+      const countyFips = key.slice(0, separator);
+      const speciesId = key.slice(separator + 1);
+      const county = counties.get(countyFips);
+      const species = speciesById.get(speciesId);
+      assert(county, `GBIF integrity replay has unknown county ${countyFips}.`);
+      assert(species, `GBIF integrity replay has unknown species ${speciesId}.`);
+      return {
+        countyFips,
+        countyName: county.shortName,
+        countyLegalName: county.legalName,
+        stateCode: reference.stateCode,
+        stateName: state.stateName,
+        sourceStateName: state.sourceStateNames.gbif,
+        speciesId,
+        scientificName: species.scientificName,
+      } satisfies GbifRequestedPair;
+    });
+    return {
+      context: {
+        runId: bundle.receipt.run_id,
+        sourceId: bundle.receipt.source_id,
+        stateCode: reference.stateCode,
+        requestedPairs,
+        runStartedAt: bundle.receipt.started_at,
+        parameters: bundle.receipt.parameters,
+      },
+      requestedPairs,
+    };
+  });
+  const replay = await replayNationalGbifArchive({
+    archivePath: acquisition.archivePath,
+    plan,
+    taxa,
+    stateInputs,
+    completedAt: acquisition.receipt.finished_at,
+    downloadKey: acquisition.receipt.download.key,
+    providerTotalRecords: acquisition.receipt.archive.provider_total_records,
+  });
+  for (const entry of entries) {
+    const { reference } = entry;
+    const bundle = loadImmutableResearchRun(ROOT, entry.runDirectory);
+    const result = replay.resultsByState.get(reference.stateCode);
+    assert(result, `GBIF integrity replay lacks state ${reference.stateCode}.`);
+    assert(
+      stableJson(replay.inspection) === stableJson(reference.archiveInspection) &&
+        stableJson(replay.reconciliation) === stableJson(reference.nationalReconciliation) &&
+        stableJson(result.assertions) === stableJson(bundle.assertions) &&
+        stableJson(result.reviews) === stableJson(bundle.reviews) &&
+        stableJson(result.rejections) === stableJson(bundle.rejections) &&
+        stableJson(result.outcomes) === stableJson(bundle.outcomes),
+      `Immutable GBIF run ${bundle.receipt.run_id} deterministic replay changed.`,
+    );
+  }
+}
+
 const afpeMapping = readAfpeMapping(ROOT);
 for (const acquisition of nationalAfpeAcquisitions) {
   const referenceEntries = nationalAfpeReferenceEntries.filter(
@@ -1481,7 +1907,8 @@ for (const acquisition of nationalAfpeAcquisitions) {
   if (referenceEntries.length === 0) continue;
   const archive = inspectNationalAfpeArchive(acquisition.archivePath);
   for (const entry of referenceEntries) {
-    const { bundle, reference } = entry;
+    const { reference } = entry;
+    const bundle = loadImmutableResearchRun(ROOT, entry.runDirectory);
     assert(
       sha256(readFileSync(path.join(ROOT, reference.mappingPath))) ===
         reference.mappingSha256,
@@ -1560,7 +1987,8 @@ for (const acquisition of nationalFiaAcquisitions) {
     readFileSync(path.join(ROOT, dictionaryArtifact.path)),
   );
   for (const entry of referenceEntries) {
-    const { bundle, reference } = entry;
+    const { reference } = entry;
+    const bundle = loadImmutableResearchRun(ROOT, entry.runDirectory);
     const state = getStateDefinition(reference.stateCode);
     assert(state, `FIA integrity replay has unknown state ${reference.stateCode}.`);
     const mapping = buildFiaTaxonMappings({
@@ -1665,24 +2093,9 @@ for (const acquisition of nationalFiaAcquisitions) {
   }
 }
 
-for (const entry of runAssertions) {
-  const county = countyByFips.get(entry.county_fips);
-  assert(county, `Run assertion ${entry.eventId} has an unknown county.`);
-  assert(
-    county.stateCode === entry.state_code,
-    `Run assertion ${entry.eventId} county does not belong to ${entry.state_code}.`,
-  );
-  assert(speciesIds.has(entry.species_id), `Run assertion ${entry.eventId} has an unknown species.`);
-  assert(sourceById.has(entry.source_id), `Run assertion ${entry.eventId} has an unknown source.`);
-  assert(entry.geography_match.county_fips === entry.county_fips, `Run assertion ${entry.eventId} has inconsistent county mapping.`);
-  assert(/^https?:\/\//.test(entry.source_url), `Run assertion ${entry.eventId} has a non-HTTP URL.`);
-}
-for (const event of reviews) {
+for (const event of laterReviews) {
   assertReviewInvariant(event);
-  assert(
-    nationalStateCodes.has(event.state_code),
-    `Review ${event.eventId} has unknown state ${event.state_code}.`,
-  );
+  assert(nationalStateCodes.has(event.state_code), `Review ${event.eventId} has unknown state ${event.state_code}.`);
   const assertion = assertionById.get(event.references.assertion_event_id);
   assert(assertion, `Review ${event.eventId} references an unknown assertion.`);
   assert(
@@ -1692,47 +2105,14 @@ for (const event of reviews) {
     `Review ${event.eventId} does not match its assertion state or pair.`,
   );
 }
-for (const rejection of rejections) {
+for (const rejection of laterRejections) {
   assert(sourceById.has(rejection.source_id), `Rejection ${rejection.rejection_id} has an unknown source.`);
-  assert(
-    nationalStateCodes.has(rejection.normalized_target.state_code),
-    `Rejection ${rejection.rejection_id} has an unknown state.`,
-  );
+  assert(nationalStateCodes.has(rejection.normalized_target.state_code), `Rejection ${rejection.rejection_id} has an unknown state.`);
   assert(speciesIds.has(rejection.normalized_target.species_id), `Rejection ${rejection.rejection_id} has an unknown species.`);
   if (rejection.normalized_target.county_fips) {
     const county = countyByFips.get(rejection.normalized_target.county_fips);
     assert(county, `Rejection ${rejection.rejection_id} has an unknown county.`);
-    assert(
-      county.stateCode === rejection.normalized_target.state_code,
-      `Rejection ${rejection.rejection_id} county does not belong to its state.`,
-    );
-  }
-}
-for (const outcome of outcomes) {
-  assertOutcomeInvariant(outcome);
-  assert(sourceById.has(outcome.source_id), `Outcome ${outcome.outcome_id} has an unknown source.`);
-  const county = countyByFips.get(outcome.county_fips);
-  assert(county, `Outcome ${outcome.outcome_id} has an unknown county.`);
-  assert(
-    county.stateCode === outcome.state_code,
-    `Outcome ${outcome.outcome_id} county does not belong to ${outcome.state_code}.`,
-  );
-  assert(speciesIds.has(outcome.species_id), `Outcome ${outcome.outcome_id} has an unknown species.`);
-  for (const assertionId of outcome.assertion_event_ids) {
-    const assertion = assertionById.get(assertionId);
-    assert(assertion, `Outcome ${outcome.outcome_id} references unknown assertion ${assertionId}.`);
-    assert(assertion.run_id === outcome.run_id, `Outcome ${outcome.outcome_id} references an assertion from another run.`);
-    assert(
-      assertion.source_id === outcome.source_id &&
-        assertion.county_fips === outcome.county_fips &&
-        assertion.species_id === outcome.species_id,
-      `Outcome ${outcome.outcome_id} does not match assertion ${assertionId}.`,
-    );
-  }
-  for (const rejectionId of outcome.rejection_ids) {
-    const rejection = rejectionById.get(rejectionId);
-    assert(rejection, `Outcome ${outcome.outcome_id} references unknown rejection ${rejectionId}.`);
-    assert(rejection.run_id === outcome.run_id, `Outcome ${outcome.outcome_id} references a rejection from another run.`);
+    assert(county.stateCode === rejection.normalized_target.state_code, `Rejection ${rejection.rejection_id} county does not belong to its state.`);
   }
 }
 
@@ -1892,7 +2272,7 @@ assert(totals.runEvidenceRecordCount === compiledEvidence.runEvidence.length, "G
 assert(totals.evidenceRecordCount === bootstrapEvidence.length + compiledEvidence.runEvidence.length, "Generated total evidence count is stale.");
 assert(totals.rejectionRecordCount === projectedRejections.length, "Generated rejection count is stale.");
 assert(
-  totals.researchRunCount === runs.length + projectedAlabamaImmutableRuns.length,
+  totals.researchRunCount === runs.length + projectedAlabamaImmutableRunCount,
   "Generated run count is stale.",
 );
 assert(totals.conflictCount === 0, "Generated research index contains present-versus-absence conflicts.");
@@ -2000,7 +2380,7 @@ for (const filename of publicCountyFiles) {
   countyExplicitOutcomePairs += county.summary.explicitOutcomePairs;
 }
 
-for (const assertion of runAssertions.filter((entry) => entry.state_code === "AL")) {
+for (const assertion of allAlabamaRunAssertions) {
   assert(
     projectedEvidenceIds.has(assertion.eventId) === projectedRunEvidenceIds.has(assertion.eventId),
     `Run assertion ${assertion.eventId} publication does not match its review state.`,
@@ -2047,19 +2427,25 @@ console.log(
         0,
       ),
       nationalNrcsReferenceCount: nationalNrcsReferences.length,
+      nationalGbifAcquisitionCount: nationalGbifAcquisitions.length,
+      nationalGbifAcquisitionRecordCount: nationalGbifAcquisitions.reduce(
+        (sum, entry) => sum + entry.receipt.archive.provider_total_records,
+        0,
+      ),
+      nationalGbifReferenceCount: nationalGbifReferences.length,
       bootstrapResearchRunCount: runs.length,
-      immutableResearchRunCount: projectedAlabamaImmutableRuns.length,
-      totalImmutableResearchRunCount: immutableRuns.length,
+      immutableResearchRunCount: projectedAlabamaImmutableRunCount,
+      totalImmutableResearchRunCount: immutableRunIds.size,
       bootstrapLedgerEvidenceCount: bootstrapEvidence.length,
       runAssertionEventCount: projectedRunAssertions.length,
-      totalRunAssertionEventCount: runAssertions.length,
+      totalRunAssertionEventCount,
       publishedRunEvidenceCount: publishedRunEvidenceIds.size,
       projectedRunEvidenceCount: projectedRunEvidenceIds.size,
       unreviewedRunEvidenceCount: resolvedRunEvidence.counts.unreviewed,
       ledgerRejectionCount: projectedRejections.length,
-      totalLedgerRejectionCount: rejections.length,
+      totalLedgerRejectionCount: totalRejectionCount,
       pairOutcomeCount: projectedOutcomes.length,
-      totalPairOutcomeCount: outcomes.length,
+      totalPairOutcomeCount,
       ...totals,
     },
     null,

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/national-gbif-download-reference.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "acquisitionId", "acquisitionReceiptPath", "acquisitionReceiptSha256", "partitionReceiptPath", "partitionReceiptSha256", "downloadKey", "doi", "license", "archive", "sourceId", "stateCode", "selectionId", "selectionPairCount", "selectionPairSha256", "adapterVersion", "adapterCodeSha256", "replayCodeSha256", "partitionRunnerSha256", "partitionMode", "archiveInspection", "nationalReconciliation", "stateReconciliation"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "acquisitionId": { "type": "string", "pattern": "^[0-9]{8}t[0-9]{6}z__gbif-download__[a-f0-9]{12}$" },
+    "acquisitionReceiptPath": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/receipt\\.json$" },
+    "acquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "partitionReceiptPath": { "type": "string", "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$" },
+    "partitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "downloadKey": { "type": "string", "minLength": 1 },
+    "doi": { "type": "string", "minLength": 1 },
+    "license": { "type": "string", "minLength": 1 },
+    "archive": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "providerTotalRecords"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^src/data/research/national-acquisitions/.+/download\\.zip$" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytes": { "type": "integer", "minimum": 1, "maximum": 268435456 },
+        "providerTotalRecords": { "type": "integer", "minimum": 0, "maximum": 2000000 }
+      }
+    },
+    "sourceId": { "const": "gbif-preserved-specimens" },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "selectionId": { "type": "string", "minLength": 1 },
+    "selectionPairCount": { "type": "integer", "minimum": 1, "maximum": 5000 },
+    "selectionPairSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "adapterVersion": { "const": "1.4.0" },
+    "adapterCodeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "replayCodeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "partitionRunnerSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "partitionMode": { "const": "provider-native-national-dwca-exact-state-county-text-no-coordinate-assignment" },
+    "archiveInspection": { "$ref": "#/$defs/archiveInspection" },
+    "nationalReconciliation": { "$ref": "#/$defs/reconciliation" },
+    "stateReconciliation": { "$ref": "#/$defs/statePartition" }
+  },
+  "$defs": {
+    "archiveInspection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entries", "metaSha256", "occurrenceHeaderSha256", "verbatimHeaderSha256", "occurrenceRows", "verbatimRows", "uniqueOccurrenceIds"],
+      "properties": {
+        "entries": { "type": "array", "minItems": 3, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "metaSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "occurrenceHeaderSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "verbatimHeaderSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "occurrenceRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "verbatimRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "uniqueOccurrenceIds": { "type": "integer", "minimum": 0, "maximum": 2000000 }
+      }
+    },
+    "reconciliation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["providerTotalRecords", "occurrenceRows", "verbatimRows", "uniqueOccurrenceIds", "selectedScopeRows", "overlapRows", "taxonomyRejectedRows", "geographyRejectedRows", "selectedEvidencePairs", "selectedNoEvidencePairs", "selectedPairCount", "assertionEvents", "reviewEvents", "representativeRejections", "duplicateRecords"],
+      "properties": {
+        "providerTotalRecords": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "occurrenceRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "verbatimRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "uniqueOccurrenceIds": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "selectedScopeRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "overlapRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "taxonomyRejectedRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "geographyRejectedRows": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "selectedEvidencePairs": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "selectedNoEvidencePairs": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "selectedPairCount": { "type": "integer", "minimum": 1, "maximum": 30000 },
+        "assertionEvents": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "reviewEvents": { "type": "integer", "minimum": 0, "maximum": 30000 },
+        "representativeRejections": { "type": "integer", "minimum": 0, "maximum": 250000 },
+        "duplicateRecords": { "const": 0 }
+      }
+    },
+    "statePartition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["stateCode", "runCreated", "runId", "pairCount", "pairSha256", "candidateRecords", "assertions", "reviews", "rejections", "outcomes"],
+      "properties": {
+        "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "runCreated": { "const": true },
+        "runId": { "type": "string", "minLength": 1 },
+        "pairCount": { "type": "integer", "minimum": 1, "maximum": 5000 },
+        "pairSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "candidateRecords": { "type": "integer", "minimum": 0, "maximum": 2000000 },
+        "assertions": { "type": "integer", "minimum": 0, "maximum": 5000 },
+        "reviews": { "type": "integer", "minimum": 0, "maximum": 5000 },
+        "rejections": { "type": "integer", "minimum": 0, "maximum": 250000 },
+        "outcomes": { "type": "integer", "minimum": 1, "maximum": 5000 }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-68-gbif-national-family-20260817-r1",
+  "evaluatedAt": "2026-08-17T20:07:34.447Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "baselineCommit": "0620fe27389795095cb2b13fc7d2d6e2f3b992e3",
+  "objective": "Build and prove a reusable authenticated national GBIF Darwin Core acquisition, replay, and state-partition family, then execute a substantial net-new tranche only if provider and release evidence gates permit it.",
+  "selection": {
+    "planId": "gbif-national-download-v2-round-68-13",
+    "selectionEvidencePath": "ops/national-research/evaluations/round-68-gbif-national-selection-20260817-r1.json",
+    "selectionEvidenceSha256": "c872d177cd2f6d629302fcc49fee3e6c01183099d6405971847db4c92915a356",
+    "candidatePairSha256": "5a4d1e78f6842a71997400908be44bab1855bdad4e8fee20a70eec799047b73a",
+    "retainedTaxonUniverse": 53,
+    "selectedTaxa": 13,
+    "jurisdictions": 51,
+    "activeCounties": 3144,
+    "grossCountySpeciesPairs": 40872,
+    "selectedNotResearchedPairs": 25406,
+    "excludedBlockedPairs": 18,
+    "alreadyResearchedPairs": 15448,
+    "smallestThresholdPrefix": true,
+    "topTwelveNotResearchedPairs": 24004,
+    "thresholdPairs": 25000
+  },
+  "providerExecution": {
+    "preflightPath": "ops/national-research/evaluations/round-68-gbif-national-semantic-preflight-20260817-r1.json",
+    "credentialPresence": {
+      "GBIF_USERNAME": false,
+      "GBIF_PASSWORD": false,
+      "GBIF_EMAIL": false
+    },
+    "networkRequestsIssued": 0,
+    "downloadRequestCreated": false,
+    "archiveRetained": false,
+    "archivePartitioned": false,
+    "providerRecordsProcessed": 0,
+    "blocker": "Authenticated GBIF download execution is blocked before network because the three required credential environment variables are absent."
+  },
+  "implementationEvidence": {
+    "selectionPolicy": "The complete retained 53-taxon universe is rescored from current county shards and the deterministic smallest descending prefix above 25,000 true not-researched pairs is hash-pinned.",
+    "acquisition": "One non-retried authenticated POST, bounded deadline-aware status polling, resumable capped archive transfer, atomic staging, committed-input revalidation, redacted request retention, and post-rename verification.",
+    "ambiguousPostRecovery": "A pre-dispatch marker prevents silent duplicate POSTs. An ambiguous outcome blocks until an operator explicitly reconciles the existing download key.",
+    "replay": "Interpreted and verbatim Darwin Core tables are meta/header validated, joined by GBIF ID through bounded SQLite staging, constrained to explicit concordant state/county text, and never use coordinates to assign county.",
+    "evidenceSemantics": "A complete archive can create verified-present evidence or researched-unresolved outcomes only. Silence, failed downloads, incomplete partitions, and unparsed archives cannot create absence or not-detected determinations.",
+    "partitioning": "The selected manifest is partitioned deterministically across all 51 jurisdiction rows; Alabama is retained as the sole zero-selected state without emitting an empty immutable run.",
+    "integrityScaling": "The integrity checker validates immutable runs one at a time rather than retaining and reloading the entire corpus. The final default-heap gate validated 996 runs and 1,514,982 outcomes."
+  },
+  "actualResearchMovement": {
+    "netNewCountySpeciesPairs": 0,
+    "verifiedPresentAdded": 0,
+    "verifiedAbsentAdded": 0,
+    "notDetectedAdded": 0,
+    "researchedUnresolvedAdded": 0,
+    "protocolCellsClosed": 0,
+    "certifiedStatesAdded": 0,
+    "buildReadyStatesAdded": 0,
+    "qualification": "Selection capacity is not research movement. No provider archive was acquired or parsed, and no generated research projection changed."
+  },
+  "fallbackExhaustion": [
+    {
+      "source": "USDA NRCS PLANTS pure exact mappings",
+      "executableNetNewPairs": 0,
+      "finding": "The pure exact remainder was exhausted in Round 67."
+    },
+    {
+      "source": "USDA NRCS PLANTS mixed mappings",
+      "conditionalCeilingPairs": 24596,
+      "finding": "Below the substantial threshold and blocked by unresolved taxonomy/status semantics; not executable as an exact tranche."
+    },
+    {
+      "source": "USGS NAS retained scope",
+      "executableNetNewPairs": 12,
+      "finding": "Only historical blocked exceptions remain; not material."
+    },
+    {
+      "source": "USFS AFPE and APHIS retained scopes",
+      "executableNetNewPairs": 0,
+      "finding": "No net-new retained scope remains; AFPE work is freshness/blocked repair only."
+    },
+    {
+      "source": "iNaturalist",
+      "finding": "The repository lacks a complete reviewed county-place registry and national checkpoint/replay contract; theoretical matrix capacity is not executable provider-complete yield."
+    }
+  ],
+  "verification": {
+    "typecheck": "pass",
+    "focusedNationalGbifRegression": "pass: 13 taxa, 25,406 selected pairs, shuffled Darwin Core replay deterministic",
+    "gbifPlannerRegression": "pass",
+    "selectionRegeneration": "pass: byte-identical to the plan-pinned SHA-256",
+    "frozenNationalResearchSkillSuite": "pass: 97/97, zero critical safety violations",
+    "fullResearchIntegrity": "pass: default heap, 996 immutable runs, 1,514,982 outcomes, zero conflicts",
+    "gitDiffCheck": "pending final repository check"
+  },
+  "remainingReleaseBlockers": [
+    {
+      "priority": "P0-external",
+      "blocker": "GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL are absent; no authenticated provider execution is authorized or possible."
+    },
+    {
+      "priority": "P1-contract",
+      "blocker": "Generated state run receipts currently set requested_scope.date_range.end to plan.snapshotDate even though the GBIF predicate does not apply an event or modification date bound. This must be corrected to an unbounded requested date range before publication."
+    },
+    {
+      "priority": "P2-provenance",
+      "blocker": "The partition receipt input hash map is produced by the partitioner but is not yet independently verified as an exact committed set by the composite integrity gate."
+    },
+    {
+      "priority": "P2-recovery",
+      "blocker": "Multi-run partition publication rolls back ordinary exceptions but lacks a durable transaction manifest for process termination or power-loss recovery."
+    },
+    {
+      "priority": "P2-test",
+      "blocker": "There is no fully offline end-to-end acquisition-verifier-partition materialization fixture covering all 51 partition receipt rows and deterministic rerun."
+    }
+  ],
+  "releaseDecision": {
+    "decision": "no-go",
+    "contentCommitted": true,
+    "pushedToGithub": false,
+    "productionDeploymentCreated": false,
+    "reason": "Round 68 completed substantial offline source-family engineering but produced zero net-new county-species research movement. Credentials and a truthful provider archive are required before the selected 25,406-pair tranche can be claimed or released."
+  },
+  "processLesson": "A national source family is not complete merely because a provider request can be issued. Selection, immutable acquisition, raw/interpreted geography reconciliation, conservative evidence semantics, partition lineage, deterministic replay, bounded integrity, and release receipts must all agree before provider-derived movement is publishable."
+}

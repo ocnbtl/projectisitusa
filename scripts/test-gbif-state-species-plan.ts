@@ -1,11 +1,11 @@
 import { readFileSync } from "node:fs";
 
-import { buildGbifStateSpeciesPlan } from "./plan-gbif-state-species-batches";
-
 import {
-  listImmutableResearchRuns,
-  stableJson,
-} from "@/lib/research/run-files";
+  buildGbifStateSpeciesPlan,
+  completedGbifPairKeys,
+} from "./plan-gbif-state-species-batches";
+
+import { stableJson } from "@/lib/research/run-files";
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
@@ -133,19 +133,7 @@ assert(
   pairKeys.length === first.selectedCountyOutcomeCount,
   "The plan county-outcome total differs from its candidate files.",
 );
-const completePairs = new Set(
-  listImmutableResearchRuns(process.cwd())
-    .flatMap((bundle) => bundle.outcomes)
-    .filter(
-      (outcome) =>
-        outcome.state_code === input.stateCode &&
-        outcome.source_id === "gbif-preserved-specimens" &&
-        outcome.scope_complete,
-    )
-    .map(
-      (outcome) => `${outcome.county_fips}:${outcome.species_id}`,
-    ),
-);
+const completePairs = completedGbifPairKeys(process.cwd(), input.stateCode);
 assert(
   pairKeys.every((pairKey) => !completePairs.has(pairKey)),
   "The planner emitted a county-species pair already complete in an immutable run.",
