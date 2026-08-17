@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `95`
 - County-species pairs: `237880`
-- Verified present: `4904`
+- Verified present: `5786`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `27681`
-- Not researched: `205295`
-- Determination coverage: `2.06%`
-- Research coverage: `13.70%`
-- Explicit outcome coverage: `13.6981%`
-- Applicable protocol cells: `262`
+- Researched unresolved: `31169`
+- Not researched: `200925`
+- Determination coverage: `2.43%`
+- Research coverage: `15.54%`
+- Explicit outcome coverage: `15.5351%`
+- Applicable protocol cells: `305`
 - Current complete protocol cells: `96`
-- Protocol completion: `41.60%`
-- Current protocol completion: `36.64%`
-- Evidence records: `6824`
-- Research runs: `16`
+- Protocol completion: `35.74%`
+- Current protocol completion: `31.48%`
+- Evidence records: `8020`
+- Research runs: `17`
 - Rejection records: `467`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -49,7 +49,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 95 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 95 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 95 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 95 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 95 | 0 |
 | Spear saltbush (`atriplex-patula`) | plants | 0 | 95 | 0 |
 | Wild oat (`avena-fatua`) | plants | 0 | 95 | 0 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 95 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 95 | 0 |
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 95 | 0 |
+| Hairy beggarticks (`bidens-pilosa`) | plants | 0 | 95 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 941 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 3122 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4318 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-02T21:53:05.941Z | 691 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

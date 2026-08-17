@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `4639`
+- Verified present: `5434`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `29861`
-- Not researched: `195868`
-- Determination coverage: `2.01%`
-- Research coverage: `14.98%`
-- Explicit outcome coverage: `14.9760%`
-- Applicable protocol cells: `252`
+- Researched unresolved: `33114`
+- Not researched: `191820`
+- Determination coverage: `2.36%`
+- Research coverage: `16.73%`
+- Explicit outcome coverage: `16.7332%`
+- Applicable protocol cells: `270`
 - Current complete protocol cells: `133`
-- Protocol completion: `57.94%`
-- Current protocol completion: `52.78%`
-- Evidence records: `6001`
-- Research runs: `18`
+- Protocol completion: `54.07%`
+- Current protocol completion: `49.26%`
+- Evidence records: `7030`
+- Research runs: `19`
 - Rejection records: `1036`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,6 +45,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 92 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 92 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 92 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 92 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 92 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 92 | 0 |
 | Purple amaranth (`amaranthus-blitum`) | plants | 0 | 92 | 0 |
@@ -53,10 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 92 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 92 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 92 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 92 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 92 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 92 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 92 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 92 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 485 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 2908 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3937 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-04T06:25:38.862Z | 914 | 111 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

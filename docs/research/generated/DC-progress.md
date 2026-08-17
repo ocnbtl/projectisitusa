@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `1`
 - County-species pairs: `2504`
-- Verified present: `144`
+- Verified present: `194`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `144`
-- Not researched: `2216`
-- Determination coverage: `5.75%`
-- Research coverage: `11.50%`
-- Explicit outcome coverage: `11.5016%`
-- Applicable protocol cells: `229`
+- Researched unresolved: `168`
+- Not researched: `2142`
+- Determination coverage: `7.75%`
+- Research coverage: `14.46%`
+- Explicit outcome coverage: `14.4569%`
+- Applicable protocol cells: `276`
 - Current complete protocol cells: `35`
-- Protocol completion: `20.96%`
-- Current protocol completion: `15.28%`
-- Evidence records: `146`
-- Research runs: `25`
+- Protocol completion: `17.39%`
+- Current protocol completion: `12.68%`
+- Evidence records: `197`
+- Research runs: `26`
 - Rejection records: `91`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Southern threecornerjack (`emex-australis`) | plants | 1 | 0 | 1 |
 | Spiny threecornerjack (`emex-spinosa`) | plants | 1 | 0 | 1 |
 | Winged Burning Bush (`euonymus-alatus`) | plants | 1 | 0 | 1 |
-| Wintercreeper (`euonymus-fortunei`) | plants | 1 | 0 | 1 |
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 1 | 0 | 1 |
 | Professor-weed (`galega-officinalis`) | plants | 1 | 0 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 1 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 1 | 0 | 1 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 1 | 0 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 1 | 0 | 1 |
 | Swamp morning-glory (`ipomoea-aquatica`) | plants | 1 | 0 | 1 |
 | Asian marshweed (`limnophila-sessiliflora`) | plants | 1 | 0 | 1 |
 | African boxthorn (`lycium-ferocissimum`) | plants | 1 | 0 | 1 |
 | Small-leaf climbing fern (`lygodium-microphyllum`) | plants | 1 | 0 | 1 |
+| Mile-a-minute (`mikania-micrantha`) | plants | 1 | 0 | 1 |
+| Chinese Silvergrass (`miscanthus-sinensis`) | plants | 1 | 0 | 1 |
+| Serrated tussock grass (`nassella-trichotoma`) | plants | 1 | 0 | 1 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | not run | 0 | 0 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 128 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 179 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-14T21:11:11.079Z | 2 | 13 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `56`
 - County-species pairs: `140224`
-- Verified present: `1747`
+- Verified present: `2286`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `19085`
-- Not researched: `119392`
-- Determination coverage: `1.25%`
-- Research coverage: `14.86%`
-- Explicit outcome coverage: `14.8562%`
-- Applicable protocol cells: `194`
+- Researched unresolved: `21514`
+- Not researched: `116424`
+- Determination coverage: `1.63%`
+- Research coverage: `16.97%`
+- Explicit outcome coverage: `16.9728%`
+- Applicable protocol cells: `217`
 - Current complete protocol cells: `53`
-- Protocol completion: `34.02%`
-- Current protocol completion: `27.32%`
-- Evidence records: `1747`
-- Research runs: `20`
+- Protocol completion: `30.41%`
+- Current protocol completion: `24.42%`
+- Evidence records: `2333`
+- Research runs: `21`
 - Rejection records: `6`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -55,8 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Redtop (`agrostis-gigantea`) | plants | 0 | 56 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 56 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 56 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 56 | 0 |
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 56 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 56 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 239 | 68 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 1480 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2066 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-09T09:24:48.738Z | 0 | 31 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

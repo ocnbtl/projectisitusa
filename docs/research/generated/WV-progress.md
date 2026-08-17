@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `55`
 - County-species pairs: `137720`
-- Verified present: `3265`
+- Verified present: `3983`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `15545`
-- Not researched: `118910`
-- Determination coverage: `2.37%`
-- Research coverage: `13.66%`
-- Explicit outcome coverage: `13.6581%`
-- Applicable protocol cells: `234`
+- Researched unresolved: `17962`
+- Not researched: `115775`
+- Determination coverage: `2.89%`
+- Research coverage: `15.93%`
+- Explicit outcome coverage: `15.9345%`
+- Applicable protocol cells: `269`
 - Current complete protocol cells: `72`
-- Protocol completion: `36.32%`
-- Current protocol completion: `30.77%`
-- Evidence records: `4539`
-- Research runs: `15`
+- Protocol completion: `31.60%`
+- Current protocol completion: `26.77%`
+- Evidence records: `5377`
+- Research runs: `16`
 - Rejection records: `89`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,7 +44,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 55 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 55 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 55 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 55 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 55 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 55 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 55 | 0 |
 | Purple amaranth (`amaranthus-blitum`) | plants | 0 | 55 | 0 |
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 437 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 2251 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3089 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-04T09:50:11.606Z | 502 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

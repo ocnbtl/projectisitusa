@@ -7,21 +7,21 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `133`
 - County-species pairs: `333032`
-- Verified present: `9046`
+- Verified present: `11175`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `36573`
-- Not researched: `287413`
-- Determination coverage: `2.72%`
-- Research coverage: `13.70%`
-- Explicit outcome coverage: `13.6981%`
-- Applicable protocol cells: `276`
+- Researched unresolved: `40828`
+- Not researched: `281029`
+- Determination coverage: `3.36%`
+- Research coverage: `15.62%`
+- Explicit outcome coverage: `15.6150%`
+- Applicable protocol cells: `320`
 - Current complete protocol cells: `96`
-- Protocol completion: `39.49%`
-- Current protocol completion: `34.78%`
-- Evidence records: `11485`
-- Research runs: `16`
-- Rejection records: `1590`
+- Protocol completion: `34.06%`
+- Current protocol completion: `30.00%`
+- Evidence records: `14222`
+- Research runs: `17`
+- Rejection records: `1709`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -54,9 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Rape (`brassica-napus`) | plants | 0 | 133 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 133 | 0 |
 | Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 133 | 0 |
+| Balloon vine (`cardiospermum-halicacabum`) | plants | 0 | 133 | 0 |
+| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 0 | 133 | 0 |
 | European chestnut (`castanea-sativa`) | plants | 0 | 133 | 0 |
-| Feather cockscomb (`celosia-argentea`) | plants | 0 | 133 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 133 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 931 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 6979 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 9716 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-02T20:20:48.400Z | 936 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

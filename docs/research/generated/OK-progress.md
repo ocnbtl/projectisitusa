@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `77`
 - County-species pairs: `192808`
-- Verified present: `1228`
+- Verified present: `1550`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `25183`
-- Not researched: `166397`
-- Determination coverage: `0.64%`
-- Research coverage: `13.70%`
-- Explicit outcome coverage: `13.6981%`
-- Applicable protocol cells: `185`
+- Researched unresolved: `28557`
+- Not researched: `162701`
+- Determination coverage: `0.80%`
+- Research coverage: `15.62%`
+- Explicit outcome coverage: `15.6150%`
+- Applicable protocol cells: `211`
 - Current complete protocol cells: `91`
-- Protocol completion: `56.22%`
-- Current protocol completion: `49.19%`
-- Evidence records: `1379`
-- Research runs: `16`
+- Protocol completion: `49.29%`
+- Current protocol completion: `43.13%`
+- Evidence records: `1724`
+- Research runs: `17`
 - Rejection records: `60`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,6 +48,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 77 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 77 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 77 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 77 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 77 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 77 | 0 |
 | Purple amaranth (`amaranthus-blitum`) | plants | 0 | 77 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 77 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 77 | 0 |
 | Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 77 | 0 |
-| Mouseear cress (`arabidopsis-thaliana`) | plants | 0 | 77 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 261 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 841 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1186 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-04T08:25:56.341Z | 79 | 69 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

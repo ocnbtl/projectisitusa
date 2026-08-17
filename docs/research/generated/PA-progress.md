@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `6566`
+- Verified present: `7700`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `17956`
-- Not researched: `143246`
-- Determination coverage: `3.91%`
-- Research coverage: `14.62%`
-- Explicit outcome coverage: `14.6166%`
-- Applicable protocol cells: `297`
+- Researched unresolved: `20105`
+- Not researched: `139963`
+- Determination coverage: `4.59%`
+- Research coverage: `16.57%`
+- Explicit outcome coverage: `16.5735%`
+- Applicable protocol cells: `332`
 - Current complete protocol cells: `96`
-- Protocol completion: `36.70%`
-- Current protocol completion: `32.32%`
-- Evidence records: `12837`
-- Research runs: `16`
+- Protocol completion: `32.83%`
+- Current protocol completion: `28.92%`
+- Evidence records: `14314`
+- Research runs: `17`
 - Rejection records: `1027`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -41,13 +41,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 67 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 67 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 67 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 67 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 67 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 67 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 67 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 67 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 67 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 67 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 67 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 67 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 67 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 67 | 0 |
 | Rape (`brassica-napus`) | plants | 0 | 67 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 67 | 0 |
-| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 770 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 4483 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5960 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-03T01:34:05.330Z | 1114 | 75 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

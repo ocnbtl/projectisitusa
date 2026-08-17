@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `2150`
+- Verified present: `2802`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9010`
-- Not researched: `78984`
-- Determination coverage: `2.39%`
-- Research coverage: `12.38%`
-- Explicit outcome coverage: `12.3802%`
-- Applicable protocol cells: `235`
+- Researched unresolved: `10878`
+- Not researched: `76464`
+- Determination coverage: `3.11%`
+- Research coverage: `15.18%`
+- Explicit outcome coverage: `15.1757%`
+- Applicable protocol cells: `277`
 - Current complete protocol cells: `72`
-- Protocol completion: `36.17%`
-- Current protocol completion: `30.64%`
-- Evidence records: `2356`
-- Research runs: `15`
+- Protocol completion: `30.69%`
+- Current protocol completion: `25.99%`
+- Evidence records: `3032`
+- Research runs: `16`
 - Rejection records: `121`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,31 +32,31 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 36 | 0 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 36 | 0 | 0 |
 | Slender false brome (`brachypodium-sylvaticum`) | plants | 36 | 0 | 0 |
-| Cheatgrass (`bromus-tectorum`) | plants | 36 | 0 | 0 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 36 | 0 | 0 |
 | Nodding plumeless thistle (`carduus-nutans`) | plants | 36 | 0 | 0 |
-| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 36 | 0 | 0 |
 | Diffuse Knapweed (`centaurea-diffusa`) | plants | 36 | 0 | 0 |
-| Maltese star-thistle (`centaurea-melitensis`) | plants | 36 | 0 | 0 |
 | Yellow star-thistle (`centaurea-solstitialis`) | plants | 36 | 0 | 0 |
 | Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 36 | 0 | 0 |
 | Rush skeletonweed (`chondrilla-juncea`) | plants | 36 | 0 | 0 |
 | Canada Thistle (`cirsium-arvense`) | plants | 36 | 0 | 0 |
-| Bull Thistle (`cirsium-vulgare`) | plants | 36 | 0 | 0 |
 | Evergreen clematis (`clematis-vitalba`) | plants | 36 | 0 | 0 |
-| Common Houndstongue (`cynoglossum-officinale`) | plants | 36 | 0 | 0 |
 | Scotch broom (`cytisus-scoparius`) | plants | 36 | 0 | 0 |
 | French broom (`genista-monspessulana`) | plants | 36 | 0 | 0 |
-| English Ivy (`hedera-helix`) | plants | 36 | 0 | 0 |
 | Atlantic ivy (`hedera-hibernica`) | plants | 36 | 0 | 0 |
 | Orange Hawkweed (`hieracium-aurantiacum`) | plants | 36 | 0 | 0 |
 | Meadow hawkweed (`hieracium-caespitosum`) | plants | 36 | 0 | 0 |
 | Common St. John's Wort (`hypericum-perforatum`) | plants | 36 | 0 | 0 |
 | English holly (`ilex-aquifolium`) | plants | 36 | 0 | 0 |
 | Himalayan Balsam (`impatiens-glandulifera`) | plants | 36 | 0 | 0 |
+| Dyer's woad (`isatis-tinctoria`) | plants | 36 | 0 | 0 |
+| Broadleaved pepperweed (`lepidium-latifolium`) | plants | 36 | 0 | 0 |
+| Oxeye Daisy (`leucanthemum-vulgare`) | plants | 36 | 0 | 0 |
+| Dalmatian Toadflax (`linaria-dalmatica`) | plants | 36 | 0 | 0 |
+| Scotch Thistle (`onopordum-acanthium`) | plants | 36 | 0 | 0 |
+| Bulbous bluegrass (`poa-bulbosa`) | plants | 36 | 0 | 0 |
+| Sulphur Cinquefoil (`potentilla-recta`) | plants | 36 | 0 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 2045 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2721 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-08T19:35:50.416Z | 61 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

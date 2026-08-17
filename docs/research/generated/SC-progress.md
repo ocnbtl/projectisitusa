@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `3023`
+- Verified present: `3513`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `12755`
-- Not researched: `99406`
-- Determination coverage: `2.62%`
-- Research coverage: `13.70%`
-- Explicit outcome coverage: `13.6981%`
-- Applicable protocol cells: `281`
+- Researched unresolved: `14381`
+- Not researched: `97290`
+- Determination coverage: `3.05%`
+- Research coverage: `15.54%`
+- Explicit outcome coverage: `15.5351%`
+- Applicable protocol cells: `319`
 - Current complete protocol cells: `55`
-- Protocol completion: `24.20%`
-- Current protocol completion: `19.57%`
-- Evidence records: `3136`
-- Research runs: `19`
+- Protocol completion: `21.32%`
+- Current protocol completion: `17.24%`
+- Evidence records: `3813`
+- Research runs: `20`
 - Rejection records: `23`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,7 +34,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 46 | 2 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 46 | 2 |
-| Cogongrass (`imperata-cylindrica`) | plants | 0 | 46 | 1 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 46 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 46 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 46 | 0 |
@@ -47,7 +46,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 46 | 0 |
 | Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 46 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 46 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 46 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 46 | 0 |
 | Wild oat (`avena-fatua`) | plants | 0 | 46 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 46 | 0 |
@@ -57,6 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 46 | 0 |
 | Field mustard (`brassica-rapa`) | plants | 0 | 46 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 46 | 0 |
+| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 46 | 0 |
+| Marijuana (`cannabis-sativa`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 467 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 2300 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2977 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:04:30.250Z | 28 | 33 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

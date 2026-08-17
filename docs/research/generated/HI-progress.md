@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `436`
+- Verified present: `515`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1299`
-- Not researched: `10785`
-- Determination coverage: `3.48%`
-- Research coverage: `13.86%`
-- Explicit outcome coverage: `13.8578%`
-- Applicable protocol cells: `238`
+- Researched unresolved: `1550`
+- Not researched: `10455`
+- Determination coverage: `4.11%`
+- Research coverage: `16.49%`
+- Explicit outcome coverage: `16.4936%`
+- Applicable protocol cells: `262`
 - Current complete protocol cells: `75`
-- Protocol completion: `36.97%`
-- Current protocol completion: `31.51%`
-- Evidence records: `564`
-- Research runs: `18`
+- Protocol completion: `33.59%`
+- Current protocol completion: `28.63%`
+- Evidence records: `652`
+- Research runs: `19`
 - Rejection records: `1045`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 5 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 5 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 2 |
+| Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 5 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 5 | 0 |
+| Common corncockle (`agrostemma-githago`) | plants | 0 | 5 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 5 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 5 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 5 | 0 |
 | Crow Garlic (`allium-vineale`) | plants | 0 | 5 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 5 | 0 |
 | Prostrate pigweed (`amaranthus-albus`) | plants | 0 | 5 | 0 |
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 5 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 5 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 5 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 5 | 0 |
-| Mouseear cress (`arabidopsis-thaliana`) | plants | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 45 | 21 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 328 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 416 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-10T01:04:27.028Z | 37 | 53 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

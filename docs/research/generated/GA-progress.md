@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `4363`
+- Verified present: `4665`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `52241`
-- Not researched: `341532`
-- Determination coverage: `1.10%`
-- Research coverage: `14.22%`
-- Explicit outcome coverage: `14.2173%`
-- Applicable protocol cells: `310`
+- Researched unresolved: `58140`
+- Not researched: `335331`
+- Determination coverage: `1.17%`
+- Research coverage: `15.77%`
+- Explicit outcome coverage: `15.7748%`
+- Applicable protocol cells: `343`
 - Current complete protocol cells: `110`
-- Protocol completion: `39.68%`
-- Current protocol completion: `35.48%`
-- Evidence records: `6918`
-- Research runs: `19`
+- Protocol completion: `35.86%`
+- Current protocol completion: `32.07%`
+- Evidence records: `7513`
+- Research runs: `20`
 - Rejection records: `438`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 159 | 0 |
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 159 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 159 | 0 |
-| Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 159 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 159 | 0 |
+| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 0 | 159 | 0 |
 | European chestnut (`castanea-sativa`) | plants | 0 | 159 | 0 |
 | Feather cockscomb (`celosia-argentea`) | plants | 0 | 159 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 159 | 0 |
+| Red star-thistle (`centaurea-calcitrapa`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 1370 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 1424 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2019 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-02T20:43:54.478Z | 1124 | 88 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

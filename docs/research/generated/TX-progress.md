@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `5772`
+- Verified present: `6890`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `81858`
-- Not researched: `548386`
-- Determination coverage: `0.91%`
-- Research coverage: `13.78%`
-- Explicit outcome coverage: `13.7780%`
-- Applicable protocol cells: `293`
+- Researched unresolved: `92932`
+- Not researched: `536194`
+- Determination coverage: `1.08%`
+- Research coverage: `15.69%`
+- Explicit outcome coverage: `15.6949%`
+- Applicable protocol cells: `340`
 - Current complete protocol cells: `90`
-- Protocol completion: `35.15%`
-- Current protocol completion: `30.72%`
-- Evidence records: `7969`
-- Research runs: `17`
+- Protocol completion: `30.29%`
+- Current protocol completion: `26.47%`
+- Evidence records: `9341`
+- Research runs: `18`
 - Rejection records: `510`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,6 +48,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 254 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 254 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 254 | 0 |
+| Common Burdock (`arctium-minus`) | plants | 0 | 254 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 254 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 254 | 0 |
 | Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 254 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Animated oat (`avena-sterilis`) | plants | 0 | 254 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 254 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 254 | 0 |
-| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 445 | 37 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 3879 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5251 | 316 |
 | GBIF preserved specimen records | operational | 2026-07-31T12:41:57.355Z | 763 | 68 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

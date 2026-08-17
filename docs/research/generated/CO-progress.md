@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `2124`
+- Verified present: `2272`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `23156`
-- Not researched: `134976`
-- Determination coverage: `1.33%`
-- Research coverage: `15.77%`
-- Explicit outcome coverage: `15.7748%`
-- Applicable protocol cells: `239`
+- Researched unresolved: `26144`
+- Not researched: `131840`
+- Determination coverage: `1.42%`
+- Research coverage: `17.73%`
+- Explicit outcome coverage: `17.7316%`
+- Applicable protocol cells: `252`
 - Current complete protocol cells: `154`
-- Protocol completion: `64.44%`
-- Current protocol completion: `64.44%`
-- Evidence records: `8817`
-- Research runs: `24`
+- Protocol completion: `61.11%`
+- Current protocol completion: `61.11%`
+- Evidence records: `9129`
+- Research runs: `25`
 - Rejection records: `1742`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 64 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 64 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 64 | 0 |
+| Common corncockle (`agrostemma-githago`) | plants | 0 | 64 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 64 | 0 |
+| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 64 | 0 |
 | Crow Garlic (`allium-vineale`) | plants | 0 | 64 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 64 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 64 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 64 | 0 |
 | Purple amaranth (`amaranthus-blitum`) | plants | 0 | 64 | 0 |
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 64 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 64 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 64 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 64 | 0 |
-| Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 64 | 0 |
-| Mouseear cress (`arabidopsis-thaliana`) | plants | 0 | 64 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:45:30.000Z | 325 | 89 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 712 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1024 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-14T21:16:20.390Z | 1330 | 132 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

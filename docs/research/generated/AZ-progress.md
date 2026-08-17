@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `865`
+- Verified present: `1001`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5075`
-- Not researched: `31620`
-- Determination coverage: `2.30%`
-- Research coverage: `15.81%`
-- Explicit outcome coverage: `15.8147%`
-- Applicable protocol cells: `233`
+- Researched unresolved: `5719`
+- Not researched: `30840`
+- Determination coverage: `2.67%`
+- Research coverage: `17.89%`
+- Explicit outcome coverage: `17.8914%`
+- Applicable protocol cells: `256`
 - Current complete protocol cells: `115`
-- Protocol completion: `54.94%`
-- Current protocol completion: `49.36%`
-- Evidence records: `5383`
-- Research runs: `20`
+- Protocol completion: `50.00%`
+- Current protocol completion: `44.92%`
+- Evidence records: `5568`
+- Research runs: `21`
 - Rejection records: `966`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,12 +33,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 15 | 1 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 15 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 15 | 1 |
 | Chestnut Blight (`cryphonectria-parasitica`) | fungi-diseases | 0 | 15 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 15 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 15 | 1 |
-| Water Hyacinth (`eichhornia-crassipes`) | plants | 0 | 15 | 1 |
 | Russian Olive (`elaeagnus-angustifolia`) | plants | 0 | 15 | 1 |
 | Mimosa webworm (`homadaula-albizziae`) | insects | 0 | 15 | 1 |
 | Littlebell (`ipomoea-triloba`) | plants | 0 | 15 | 1 |
@@ -49,7 +47,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Harmal peganum (`peganum-harmala`) | plants | 0 | 15 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 15 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 15 | 1 |
-| Johnsongrass (`sorghum-halepense`) | plants | 0 | 15 | 1 |
 | Siberian Elm (`ulmus-pumila`) | plants | 0 | 15 | 1 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 15 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 15 | 0 |
@@ -57,6 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Calamus (`acorus-calamus`) | plants | 0 | 15 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 15 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 15 | 0 |
+| Common corncockle (`agrostemma-githago`) | plants | 0 | 15 | 0 |
+| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 15 | 0 |
+| Camelthorn (`alhagi-maurorum`) | plants | 0 | 15 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 81 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 522 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 707 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-08T03:04:52.169Z | 294 | 93 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

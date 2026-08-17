@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `14`
 - County-species pairs: `35056`
-- Verified present: `1603`
+- Verified present: `1995`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3171`
-- Not researched: `30282`
-- Determination coverage: `4.57%`
-- Research coverage: `13.62%`
-- Explicit outcome coverage: `13.6182%`
-- Applicable protocol cells: `256`
+- Researched unresolved: `3591`
+- Not researched: `29470`
+- Determination coverage: `5.69%`
+- Research coverage: `15.93%`
+- Explicit outcome coverage: `15.9345%`
+- Applicable protocol cells: `300`
 - Current complete protocol cells: `56`
-- Protocol completion: `26.95%`
-- Current protocol completion: `21.88%`
-- Evidence records: `1611`
-- Research runs: `23`
+- Protocol completion: `23.00%`
+- Current protocol completion: `18.67%`
+- Evidence records: `2047`
+- Research runs: `24`
 - Rejection records: `27`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -42,12 +42,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 14 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 14 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 14 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 14 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 14 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 14 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 14 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 14 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 14 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 14 | 0 |
+| Giant Reed (`arundo-donax`) | plants | 0 | 14 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 14 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 14 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 14 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hairy beggarticks (`bidens-pilosa`) | plants | 0 | 14 | 0 |
 | Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 14 | 0 |
 | Little quakinggrass (`briza-minor`) | plants | 0 | 14 | 0 |
-| Rescuegrass (`bromus-catharticus`) | plants | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 84 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 1365 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1801 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-09T21:14:35.056Z | 6 | 34 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

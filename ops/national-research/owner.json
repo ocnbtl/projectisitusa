@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "81193b6c5683030d5354a641a47652bf45e18e88",
   "acquiredAt": "2026-08-17T05:29:54.831Z",
-  "lastReverifiedAt": "2026-08-17T05:29:54.831Z",
-  "currentCheckpointSha": "81193b6c5683030d5354a641a47652bf45e18e88",
-  "localHeadAtLastReverification": "81193b6c5683030d5354a641a47652bf45e18e88",
-  "state": "active-round-67-source-selected",
+  "lastReverifiedAt": "2026-08-17T07:10:00.000Z",
+  "currentCheckpointSha": "d4af33aa163b6730c4da171cb79a6760fa4629ca",
+  "localHeadAtLastReverification": "d4af33aa163b6730c4da171cb79a6760fa4629ca",
+  "state": "active-round-67-content-ready-pending-external-release",
   "ownershipEvidence": {
     "activeProjectTasks": [],
     "supersededOwnerTaskId": "national-round-66-20260817-main",
@@ -25,16 +25,16 @@
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Round 66 production desktop 1440x1000 and mobile 390x844 QA passed on the Texas/Anderson Jerusalem cherry evidence flow. Both layouts had zero page overflow, broken images, console warnings, console errors, page errors, or failed requests. Accessibility snapshots exposed the labeled controls and conservative researched-unresolved disclosure, and the Jerusalem cherry species profile image loaded.",
-    "liveVerification": "Canonical, fetched origin, public GitHub main, and GitHub Production deployment 5939360109 matched the Round 66 external-verification receipt SHA 81193b6c5683030d5354a641a47652bf45e18e88 at Round 67 startup. Canonical and immutable hosts returned HTTP 200 with identical bytes on the home, Texas research, Jerusalem cherry species, Texas summary, Anderson County, and generated species checks; all three generated files matched local bytes. This startup observation does not attest Round 67 or any future deployment.",
+    "browserQa": "Round 67 local production-build QA passed at desktop 1440x1000 and mobile 390x844 on ZIP 21502, Allegany County MD, and Arthraxon hispidus. The new Small Carpgrass county record surfaced correctly, all application requests returned HTTP 200, and the only console errors and failed request were the expected localhost-only Vercel Insights script. Production must be console-clean before the external receipt.",
+    "liveVerification": "Canonical, fetched origin, public GitHub main, and GitHub Production deployment 5939360109 matched the Round 66 external-verification receipt SHA 81193b6c5683030d5354a641a47652bf45e18e88 at Round 67 startup. Round 67 content is complete locally but not yet pushed or deployed; this field does not attest the pending content commit.",
     "githubDeploymentId": 5939360109,
     "githubDeploymentEnvironmentUrl": "https://projectisitusa-eft8cuexe-unigentamos.vercel.app",
     "resourceCapacity": {
       "tier": "green",
-      "availableMemoryMiB": 12328.398,
-      "availableMemoryPercent": 38.646,
+      "availableMemoryMiB": 11631.058,
+      "availableMemoryPercent": 36.46,
       "commitHeadroomMiB": 26285.469,
-      "freeDiskMiB": 662841.277,
+      "freeDiskMiB": 661367.832,
       "maximumMachineWorkers": 6,
       "initialLiveProviderWorkers": 1,
       "maximumLiveProviderWorkersWithoutFreshCalibration": 1,
@@ -43,8 +43,8 @@
       "projectedCommitHeadroomMiBAfterFourWorkers": 22189.469,
       "pageInputPerSecond": 3.956,
       "pageOutputPerSecond": 0,
-      "observedAt": "2026-08-17T05:28:13.939Z",
-      "capacityCaveat": "The Round 67 startup sample was green with 35.394% physical memory available, 55.091% commit charge, 0.758% page-file usage, and 694,238,834,688 disk bytes free. MAIN will use one acquire-once NRCS lane; shared integration, generation, and release remain sequential."
+      "observedAt": "2026-08-17T06:55:00.000Z",
+      "capacityCaveat": "The corrected Round 67 national-network postflight gate passed green with 693,494,435,840 disk bytes available, 393,601,805,312 projected disk headroom, and 12,196,048,896 projected memory bytes. Acquisition is complete; shared integration, generation, and release remain sequential."
     },
     "skillFreeze": {
       "version": "frozen-windows-bulk-validation-2026-07-30-r2",
@@ -55,11 +55,11 @@
     "vercelCliStatus": "not-installed-in-canonical-repository; prior configured external token invalid",
     "providerHealth": {
       "sourceId": "usda-nrcs-plants",
-      "observedAt": "2026-08-17T05:29:54.831Z",
-      "status": "Round 67 selected the final 76 pure exact NRCS mappings after independent matrix reconciliation. The planned scope is 238,944 ordered county-species pairs and 157 provider requests, with 158,412 current not-researched cells. Of those, 375 also carry a historical blocked research flag and will be reported separately rather than silently subtracted or preclaimed.",
+      "observedAt": "2026-08-17T07:10:00.000Z",
+      "status": "Round 67 completed the final 76 pure exact NRCS mappings. One stable acquire-once window retained 157 provider responses and 238,944 outcomes, then 51 deterministic partitions moved exactly 158,412 unique county-species pairs: 28,801 to verified-present and 129,611 to researched-unresolved. Pure exact NRCS remainder is now zero; eight mixed mappings remain excluded.",
       "gbifAuthenticatedDownloadStatus": "blocked-external-credentials-before-network",
       "preflightProcessException": false,
-      "qualification": "The GBIF national acquisition contract exists, but execution remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL; GBIF-specific Darwin Core county partition, reconciliation, and research integration are also unimplemented. Round 67 therefore selected the measured final pure NRCS fallback. No Round 67 evidence has yet been acquired."
+      "qualification": "The GBIF national acquisition contract exists, but execution remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL; GBIF-specific Darwin Core county partition, reconciliation, and research integration are also unimplemented. Round 67 therefore completed the measured final pure NRCS fallback. Content gates pass locally, but deployment and external verification remain pending."
     }
   },
   "reverificationHistory": [
@@ -629,6 +629,14 @@
       "githubMainSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
       "vercelProductionCommitSha": "65aac9792ec50b6625892e86ac8d521a274bede8",
       "reason": "Windows MAIN independently verified Round 56 after structurally recovering the failed Montana GBIF scope as six exact one-taxon runs. Canonical, origin, and public GitHub main matched content SHA 65aac9792; GitHub Production deployment 5817907147 succeeded; twelve intended host-route checks and six selected generated-byte identities passed; and fresh production desktop and mobile QA had no overflow, broken images, console warnings, or console errors. The external receipt records that already-observed content deployment and does not self-attest its own future deployment."
+    },
+    {
+      "observedAt": "2026-08-17T07:10:00.000Z",
+      "localHeadSha": "d4af33aa163b6730c4da171cb79a6760fa4629ca",
+      "originMainSha": "81193b6c5683030d5354a641a47652bf45e18e88",
+      "githubMainSha": "81193b6c5683030d5354a641a47652bf45e18e88",
+      "vercelProductionCommitSha": "81193b6c5683030d5354a641a47652bf45e18e88",
+      "reason": "Windows MAIN recorded the committed Round 67 source-selection checkpoint after completing the exact national acquisition, 51 deterministic partitions, explicit 2026-08-17 generation, full local integrity gates, production build, and responsive Allegany County changed-flow QA. External release evidence remains pinned to the independently verified Round 66 receipt release; this observation does not self-attest the pending Round 67 content commit or deployment."
     }
   ],
   "exclusiveOperations": [

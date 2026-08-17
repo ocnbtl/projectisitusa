@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `1167`
+- Verified present: `1345`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4289`
-- Not researched: `34608`
-- Determination coverage: `2.91%`
-- Research coverage: `13.62%`
-- Explicit outcome coverage: `13.6182%`
-- Applicable protocol cells: `210`
+- Researched unresolved: `5055`
+- Not researched: `33664`
+- Determination coverage: `3.36%`
+- Research coverage: `15.97%`
+- Explicit outcome coverage: `15.9744%`
+- Applicable protocol cells: `234`
 - Current complete protocol cells: `89`
-- Protocol completion: `48.57%`
-- Current protocol completion: `42.38%`
-- Evidence records: `1514`
-- Research runs: `16`
+- Protocol completion: `43.59%`
+- Current protocol completion: `38.03%`
+- Evidence records: `1726`
+- Research runs: `17`
 - Rejection records: `90`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -47,6 +47,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 16 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 16 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 16 | 0 |
+| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 16 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 16 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 16 | 0 |
 | Purple amaranth (`amaranthus-blitum`) | plants | 0 | 16 | 0 |
@@ -55,8 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 16 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 16 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 16 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 16 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 16 | 0 |
+| Small Carpgrass (`arthraxon-hispidus`) | plants | 0 | 16 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 59 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 925 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1137 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-04T20:19:42.603Z | 139 | 67 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

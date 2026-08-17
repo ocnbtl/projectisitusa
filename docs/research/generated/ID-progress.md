@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `44`
 - County-species pairs: `110176`
-- Verified present: `1403`
+- Verified present: `1956`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `15493`
-- Not researched: `93280`
-- Determination coverage: `1.27%`
-- Research coverage: `15.34%`
-- Explicit outcome coverage: `15.3355%`
-- Applicable protocol cells: `228`
+- Researched unresolved: `17140`
+- Not researched: `91080`
+- Determination coverage: `1.78%`
+- Research coverage: `17.33%`
+- Explicit outcome coverage: `17.3323%`
+- Applicable protocol cells: `251`
 - Current complete protocol cells: `72`
-- Protocol completion: `37.28%`
-- Current protocol completion: `31.58%`
-- Evidence records: `1929`
-- Research runs: `15`
+- Protocol completion: `33.86%`
+- Current protocol completion: `28.69%`
+- Evidence records: `2489`
+- Research runs: `16`
 - Rejection records: `296`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -47,8 +47,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | White bryony (`bryonia-alba`) | plants | 0 | 44 | 1 |
 | Red star-thistle (`centaurea-calcitrapa`) | plants | 0 | 44 | 1 |
 | Meadow knapweed (`centaurea-debeauxii`) | plants | 0 | 44 | 1 |
-| Poison Hemlock (`conium-maculatum`) | plants | 0 | 44 | 1 |
-| Common Houndstongue (`cynoglossum-officinale`) | plants | 0 | 44 | 1 |
 | Scotch broom (`cytisus-scoparius`) | plants | 0 | 44 | 1 |
 | Common viper's bugloss (`echium-vulgare`) | plants | 0 | 44 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 0 | 44 | 1 |
@@ -57,6 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Black henbane (`hyoscyamus-niger`) | plants | 0 | 44 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 44 | 1 |
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 0 | 44 | 1 |
+| Matgrass (`nardus-stricta`) | plants | 0 | 44 | 1 |
+| Mediterranean sage (`salvia-aethiopis`) | plants | 0 | 44 | 1 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 107 | 71 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 1166 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1726 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-04T09:12:51.087Z | 135 | 50 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

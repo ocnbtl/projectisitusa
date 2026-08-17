@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `342`
+- Verified present: `422`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1248`
-- Not researched: `10930`
-- Determination coverage: `2.73%`
-- Research coverage: `12.70%`
-- Explicit outcome coverage: `12.6997%`
-- Applicable protocol cells: `202`
+- Researched unresolved: `1468`
+- Not researched: `10630`
+- Determination coverage: `3.37%`
+- Research coverage: `15.10%`
+- Explicit outcome coverage: `15.0958%`
+- Applicable protocol cells: `228`
 - Current complete protocol cells: `32`
-- Protocol completion: `22.28%`
-- Current protocol completion: `15.84%`
-- Evidence records: `342`
-- Research runs: `23`
+- Protocol completion: `19.74%`
+- Current protocol completion: `14.04%`
+- Evidence records: `427`
+- Research runs: `24`
 - Rejection records: `3`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -47,9 +47,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Geraldton carnation weed (`euphorbia-terracina`) | plants | 5 | 0 | 1 |
 | Professor-weed (`galega-officinalis`) | plants | 5 | 0 | 1 |
 | Giant Hogweed (`giant-hogweed`) | plants | 5 | 0 | 1 |
-| Hydrilla (`hydrilla`) | plants | 5 | 0 | 1 |
 | Indian swampweed (`hygrophila-polysperma`) | plants | 5 | 0 | 1 |
-| Cogongrass (`imperata-cylindrica`) | plants | 5 | 0 | 1 |
 | Swamp morning-glory (`ipomoea-aquatica`) | plants | 5 | 0 | 1 |
 | Asian marshweed (`limnophila-sessiliflora`) | plants | 5 | 0 | 1 |
 | African boxthorn (`lycium-ferocissimum`) | plants | 5 | 0 | 1 |
@@ -57,6 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mile-a-minute (`mikania-micrantha`) | plants | 5 | 0 | 1 |
 | Serrated tussock grass (`nassella-trichotoma`) | plants | 5 | 0 | 1 |
 | Round Goby (`neogobius-melanostomus`) | wildlife | 5 | 0 | 1 |
+| Illyrian cottonthistle (`onopordum-illyricum`) | plants | 5 | 0 | 1 |
+| Ducklettuce (`ottelia-alismoides`) | plants | 5 | 0 | 1 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 17 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 282 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 367 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-10T01:30:01.493Z | 0 | 10 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

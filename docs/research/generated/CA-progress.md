@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `5410`
+- Verified present: `6166`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `17326`
-- Not researched: `122496`
-- Determination coverage: `3.73%`
-- Research coverage: `15.65%`
-- Explicit outcome coverage: `15.6550%`
-- Applicable protocol cells: `332`
+- Researched unresolved: `19934`
+- Not researched: `119132`
+- Determination coverage: `4.25%`
+- Research coverage: `17.97%`
+- Explicit outcome coverage: `17.9712%`
+- Applicable protocol cells: `372`
 - Current complete protocol cells: `151`
-- Protocol completion: `49.40%`
-- Current protocol completion: `45.48%`
-- Evidence records: `27980`
-- Research runs: `16`
+- Protocol completion: `44.09%`
+- Current protocol completion: `40.59%`
+- Evidence records: `29108`
+- Research runs: `17`
 - Rejection records: `2448`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 58 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 58 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 58 | 0 |
+| Small Carpgrass (`arthraxon-hispidus`) | plants | 0 | 58 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 58 | 0 |
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 58 | 0 |
-| Cheatgrass (`bromus-tectorum`) | plants | 0 | 58 | 0 |
+| Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 58 | 0 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 0 | 58 | 0 |
 | Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 58 | 0 |
+| Balloon vine (`cardiospermum-halicacabum`) | plants | 0 | 58 | 0 |
 | Curly plumeless thistle (`carduus-crispus`) | plants | 0 | 58 | 0 |
 | European chestnut (`castanea-sativa`) | plants | 0 | 58 | 0 |
 | Feather cockscomb (`celosia-argentea`) | plants | 0 | 58 | 0 |
 | Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 58 | 0 |
-| Dwarf snapdragon (`chaenorhinum-minus`) | plants | 0 | 58 | 0 |
-| Coco yam (`colocasia-esculenta`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 51 | 34 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 3488 | 240 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4616 | 316 |
 | GBIF preserved specimen records | operational | 2026-07-31T21:39:59.698Z | 1775 | 129 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
