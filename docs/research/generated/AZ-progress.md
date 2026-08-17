@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `15`
 - County-species pairs: `37560`
-- Verified present: `676`
+- Verified present: `865`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4109`
-- Not researched: `32775`
-- Determination coverage: `1.80%`
-- Research coverage: `12.74%`
-- Explicit outcome coverage: `12.7396%`
-- Applicable protocol cells: `196`
+- Researched unresolved: `5075`
+- Not researched: `31620`
+- Determination coverage: `2.30%`
+- Research coverage: `15.81%`
+- Explicit outcome coverage: `15.8147%`
+- Applicable protocol cells: `233`
 - Current complete protocol cells: `115`
-- Protocol completion: `65.31%`
-- Current protocol completion: `58.67%`
-- Evidence records: `5177`
-- Research runs: `19`
+- Protocol completion: `54.94%`
+- Current protocol completion: `49.36%`
+- Evidence records: `5383`
+- Research runs: `20`
 - Rejection records: `966`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -54,9 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 15 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 15 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 15 | 0 |
+| Calamus (`acorus-calamus`) | plants | 0 | 15 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 15 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 15 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 15 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 81 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 316 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 522 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-08T03:04:52.169Z | 294 | 93 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

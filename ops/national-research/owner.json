@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "40aec8580b209e00bf5a1075b1dc084250e6b225",
   "acquiredAt": "2026-08-17T03:04:20.652Z",
-  "lastReverifiedAt": "2026-08-17T03:18:00.000Z",
-  "currentCheckpointSha": "40aec8580b209e00bf5a1075b1dc084250e6b225",
-  "localHeadAtLastReverification": "40aec8580b209e00bf5a1075b1dc084250e6b225",
-  "state": "active-round-66-acquisition-ready",
+  "lastReverifiedAt": "2026-08-17T04:46:50.463Z",
+  "currentCheckpointSha": "80ac152778e3f78f5abf721a50ffa96ee88a69bb",
+  "localHeadAtLastReverification": "80ac152778e3f78f5abf721a50ffa96ee88a69bb",
+  "state": "complete-round-66-local-gates-pending-content-commit",
   "ownershipEvidence": {
     "activeProjectTasks": [],
     "supersededOwnerTaskId": "national-round-65-20260816-main",
@@ -25,7 +25,7 @@
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Round 65 production desktop and mobile QA remains the latest full browser evidence. Round 66 startup intentionally ran no browser suite.",
+    "browserQa": "Round 66 local production-build QA passed at 1440x1000 and 390x844 on the Texas/Anderson Jerusalem cherry evidence flow. Both layouts had zero page overflow and broken images; accessibility snapshots exposed the labeled controls and conservative researched-unresolved disclosure. The only local console/request failure was the expected Vercel Insights script unavailable outside Vercel. Production QA remains pending the exact Round 66 content deployment.",
     "liveVerification": "Fresh fetch proved canonical, origin, and public GitHub main at Round 65 receipt SHA 40aec8580b209e00bf5a1075b1dc084250e6b225. GitHub Production deployment 5938169058 reported success at the same SHA. Its immutable host and the canonical alias returned six sampled HTTP 200 responses with byte-identical home, research, and Texas summary payloads; the Texas summary also matched local SHA-256 33fa0c7b2c053c895c5a56ee139aea7b3254e8eed4b88a41eec66226a2f4ed15. This bounded startup check does not attest Round 66 or replace full release QA.",
     "githubDeploymentId": 5938169058,
     "githubDeploymentEnvironmentUrl": "https://projectisitusa-bshyttteo-unigentamos.vercel.app",
@@ -56,13 +56,22 @@
     "providerHealth": {
       "sourceId": "usda-nrcs-plants",
       "observedAt": "2026-08-17T03:01:29.000Z",
-      "status": "Bounded official NRCS MapServer metadata and retained-profile probes returned HTTP 200 in 322.7 ms and 713.6 ms; the generalized 80-taxon actor then passed a zero-request semantic preflight across all 51 partitions, 251,520 ordered pairs, and 165 expected provider requests",
+      "status": "The generalized 80-taxon actor passed its zero-request semantic preflight, then completed one retained national acquisition and 51 deterministic partitions across 251,520 ordered pairs and 165 successful provider requests with zero retry, zero failure, and a stable before/after status fingerprint",
       "gbifAuthenticatedDownloadStatus": "blocked-external-credentials-before-network",
       "preflightProcessException": false,
-      "qualification": "The GBIF national download contract remains technically valid under current official documentation, but GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL are absent and the repository exposes no GitHub secret names. Round 66 therefore selects one 80-taxon NRCS acquisition unit forecast to move 244,408 currently not-researched pairs. Targeted tests and the semantic preflight prove 165-request cardinality, the 20,320-pair Texas partition, a registered one-request-per-second attempt limiter, exact profile/status/FIPS/name gates, restart-required status-window drift, and no negative claim from silence. No acquisition request has yet been issued."
+      "qualification": "The GBIF national download contract remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL and by the absence of an implemented county partition. Round 66 executed the highest-value safe fallback: one 80-taxon NRCS acquisition retained 165 artifacts and 3,500,524 provider bytes, produced 51 state runs, and moved exactly 244,408 county-species pairs while creating no absence, non-detection, denominator, or conflict movement. All local release gates now pass; external content deployment is not yet claimed."
     }
   },
   "reverificationHistory": [
+    {
+      "recordedAt": "2026-08-17T04:46:50.463Z",
+      "supersededCheckpointSha": "40aec8580b209e00bf5a1075b1dc084250e6b225",
+      "localIntegrationCheckpointSha": "80ac152778e3f78f5abf721a50ffa96ee88a69bb",
+      "githubMainSha": "40aec8580b209e00bf5a1075b1dc084250e6b225",
+      "vercelProductionCommitSha": "40aec8580b209e00bf5a1075b1dc084250e6b225",
+      "githubDeploymentId": 5938169058,
+      "reason": "Round 66 completed one rate-limited 80-taxon national NRCS acquisition, retained 165 hash-pinned artifacts, deterministically partitioned 51 jurisdictions, and regenerated the explicit 2026-08-17 national corpus. Exact final-matrix movement is 244,408 pairs: 42,470 not-researched to verified-present and 201,938 not-researched to researched-unresolved, with 7,112 already-accounted overlap and zero absence, non-detection, denominator, or conflict movement. All-state byte stability, full research integrity, data integrity, projections, national config, postflight capacity, typecheck, lint, build, diff, authored secret, prohibited-dash, desktop, and mobile gates passed. External fields remain pinned to the Round 65 receipt because the Round 66 content commit has not yet been pushed or observed."
+    },
     {
       "recordedAt": "2026-08-17T03:18:00.000Z",
       "supersededCheckpointSha": "40aec8580b209e00bf5a1075b1dc084250e6b225",

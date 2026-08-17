@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `640`
+- Verified present: `1097`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7799`
-- Not researched: `64177`
-- Determination coverage: `0.88%`
-- Research coverage: `11.62%`
-- Explicit outcome coverage: `11.6214%`
-- Applicable protocol cells: `151`
+- Researched unresolved: `9662`
+- Not researched: `61857`
+- Determination coverage: `1.51%`
+- Research coverage: `14.82%`
+- Explicit outcome coverage: `14.8163%`
+- Applicable protocol cells: `190`
 - Current complete protocol cells: `53`
-- Protocol completion: `43.71%`
-- Current protocol completion: `35.10%`
-- Evidence records: `667`
-- Research runs: `19`
+- Protocol completion: `34.74%`
+- Current protocol completion: `27.89%`
+- Evidence records: `1124`
+- Research runs: `20`
 - Rejection records: `22`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -49,6 +49,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 29 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 29 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 29 | 0 |
+| Calamus (`acorus-calamus`) | plants | 0 | 29 | 0 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 29 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 29 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 29 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 29 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 29 | 0 |
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 29 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 29 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 75 | 67 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 516 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 973 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:47:30.140Z | 3 | 31 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

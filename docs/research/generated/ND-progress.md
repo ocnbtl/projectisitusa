@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `53`
 - County-species pairs: `132712`
-- Verified present: `567`
+- Verified present: `882`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13266`
-- Not researched: `118879`
-- Determination coverage: `0.43%`
-- Research coverage: `10.42%`
-- Explicit outcome coverage: `10.4233%`
-- Applicable protocol cells: `123`
+- Researched unresolved: `17191`
+- Not researched: `114639`
+- Determination coverage: `0.66%`
+- Research coverage: `13.62%`
+- Explicit outcome coverage: `13.6182%`
+- Applicable protocol cells: `148`
 - Current complete protocol cells: `80`
-- Protocol completion: `75.61%`
-- Current protocol completion: `65.04%`
-- Evidence records: `880`
-- Research runs: `18`
+- Protocol completion: `62.84%`
+- Current protocol completion: `54.05%`
+- Evidence records: `1195`
+- Research runs: `19`
 - Rejection records: `89`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 53 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 53 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 53 | 0 |
+| Calamus (`acorus-calamus`) | plants | 0 | 53 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 53 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 53 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 53 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 53 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 53 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 53 | 0 |
+| Crow Garlic (`allium-vineale`) | plants | 0 | 53 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 53 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 53 | 0 |
-| Purple amaranth (`amaranthus-blitum`) | plants | 0 | 53 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 19 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 400 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 715 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-09T06:15:12.914Z | 150 | 59 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-66-usda-nrcs-plants-national-20260817-r1",
+  "roundId": "usda-nrcs-plants-national-round66",
+  "evaluatedAt": "2026-08-17T04:37:15.462Z",
+  "result": "complete-local-gates-passed-pending-external-release",
+  "releaseThreshold": {
+    "met": true,
+    "milestones": ["A"],
+    "basis": "The fifth acquire-once USDA NRCS PLANTS national tranche moved exactly 244,408 unique county-species pairs across 50 of 51 national-v1 jurisdictions. This exceeds both the 25,000-pair material threshold and the 100,000-pair stretch target. Alabama's 7,112 screened pairs were already accounted, and the complete 80-taxon provider-native scope is retained and deterministically partitioned."
+  },
+  "baseline": {
+    "receiptCommit": "40aec8580b209e00bf5a1075b1dc084250e6b225",
+    "generatedDataCommit": "05a961c86bead9b5434113589c2dcdb6bd6163c3",
+    "asOf": "2026-08-17",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 8510,
+        "unknown": 119194,
+        "explicitOverrides": 3426,
+        "derivedApplicable": 5084,
+        "fullyAccounted": 15385,
+        "partiallyAccounted": 0,
+        "untouchedByCountyResearch": 112319,
+        "researchedUnresolved": 6901,
+        "researchedBlocked": 53,
+        "notResearched": 112240
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 116832,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 832332,
+        "notResearched": 6923404
+      },
+      "protocolCellsCorrected": {
+        "total": 80200,
+        "applicable": 23675,
+        "notApplicable": 56525,
+        "complete": 6182,
+        "incomplete": 17434,
+        "blocked": 59,
+        "current": 5571,
+        "stale": 611,
+        "undated": 17493,
+        "regulatedAndHighPriorityCurrentComplete": 2367,
+        "regulatedAndHighPriorityApplicable": 2843
+      }
+    }
+  },
+  "priorRoundAuditCorrection": {
+    "scope": "Round 65 generated protocol aggregation only",
+    "historicalArtifactRewritten": false,
+    "countyMovementAffected": false,
+    "releaseReceiptAffected": false,
+    "corrections": {
+      "finalProtocolTotal": { "reported": 80204, "correct": 80200, "difference": -4 },
+      "finalNotApplicable": { "reported": 56529, "correct": 56525, "difference": -4 },
+      "regulatedAndHighPriorityCurrentComplete": { "reported": 2365, "correct": 2367, "difference": 2 },
+      "protocolTotalMovement": { "reported": 8000, "correct": 7996, "difference": -4 },
+      "notApplicableMovement": { "reported": 7244, "correct": 7240, "difference": -4 },
+      "regulatedAndHighPriorityCurrentCompleteMovement": { "reported": 0, "correct": 2, "difference": 2 }
+    },
+    "cause": "Alabama added no new protocol keys but completed 40 selected cells, including two regulated/high-priority cells. District of Columbia added 156 rather than 160 keys because four Perilla frutescens cells already existed. The other 49 jurisdictions each added 160 keys.",
+    "qualification": "The correction is carried forward in the Round 66 baseline and will be mirrored in the Round 66 external release receipt. It does not change Round 65's exact 123,080 county-species movement or its absence, non-detection, denominator, conflict, or certification claims."
+  },
+  "sourceDecision": {
+    "highestRankedSource": "gbif-preserved-specimens",
+    "highestRankedStatus": "blocked-before-network",
+    "missingCredentialEnvironment": ["GBIF_EMAIL", "GBIF_PASSWORD", "GBIF_USERNAME"],
+    "networkRequestsIssued": 0,
+    "repositoryCountyPartitionStatus": "not-implemented",
+    "selectedSource": "usda-nrcs-plants",
+    "selectionBasis": "The official provider-native national profile and distribution APIs were executable without inventing credentials or using capped search pagination. One complete 80-taxon acquisition could be retained once and partitioned locally across all 51 jurisdictions."
+  },
+  "planned": {
+    "actor": "usda-nrcs-plants-national-acquisition@1.0.3",
+    "source": "usda-nrcs-plants",
+    "planId": "usda-nrcs-plants-national-v1-tranche-05",
+    "codeCommit": "80ac152778e3f78f5abf721a50ffa96ee88a69bb",
+    "planSha256": "b3f861104e772aef539745693f0ce45193848b713dabf0ca4d5c75f995fffc62",
+    "selectionSha256": "7f5221f5da929fc95a7db99c6112a136c05be607b24ea2d70b84e41384abfa6c",
+    "states": 51,
+    "taxa": 80,
+    "activeCounties": 3144,
+    "orderedPairs": 251520,
+    "expectedNetNewPairs": 244408,
+    "expectedAlreadyAccountedOverlap": 7112,
+    "expectedProviderRequests": 165,
+    "acquireOnce": true,
+    "statePartitioning": "deterministic-local-no-network",
+    "remainingPureMappingsBeforeSelection": 156,
+    "remainingPureMappingNotResearchedPairsBeforeSelection": 402445,
+    "remainingPureMappingsAfterSelection": 76,
+    "remainingPureMappingNotResearchedPairsAfterSelection": 158037,
+    "excludedMixedMappings": [14349, 14698, 18574, 18666, 19209, 24343, 51151, 87413]
+  },
+  "actorHardening": {
+    "cardinality": {
+      "planTaxaMaximum": 100,
+      "nationalRequestAndArtifactMaximum": 205,
+      "stateCandidatePairMaximum": 30000,
+      "texasCandidatePairs": 20320
+    },
+    "rateLimit": {
+      "registeredRequestsPerSecond": 1,
+      "enforcedOnEveryAttempt": true,
+      "retriesIncluded": true
+    },
+    "resumeSafety": {
+      "ordinaryTransportFailuresResumeMissingRequestsOnly": true,
+      "stableWindowMismatchRetryable": false,
+      "stableWindowMismatchRequiresNewAcquisitionIdentity": true,
+      "sameIdentityNonRetryableResumeRefused": true
+    },
+    "semanticDryRun": {
+      "status": "pass",
+      "networkRequestsIssued": 0,
+      "states": 51,
+      "taxa": 80,
+      "orderedPairs": 251520,
+      "expectedProviderRequests": 165,
+      "largestState": "TX",
+      "largestStatePairs": 20320
+    }
+  },
+  "execution": {
+    "mainOwnedNationalActor": true,
+    "providerLanes": 1,
+    "localPartitionWorkers": 1,
+    "successfulAcquisitions": 1,
+    "statePartitions": 51,
+    "statePartitionRuns": 51,
+    "integrationCommits": 0,
+    "workerJobs": 0,
+    "workerLeases": 0,
+    "activeJobsAtReleaseCandidate": 0,
+    "activeLeasesAtReleaseCandidate": 0,
+    "pendingIntegrationsAtReleaseCandidate": 0,
+    "qualification": "The national actor, evidence, partitioning, generation, and release are MAIN-owned. Parallel agents performed read-only audits; no worker integration or evidence mutation was required."
+  },
+  "acquisition": {
+    "acquisitionId": "20260817t031936z__usda-nrcs-plants__5d2b1041a018",
+    "parameterHash": "5d2b1041a01861991ac19ae853a7711fdb84f71d60bcd5a8b764de30f3d5a798",
+    "receiptSha256": "37a9a665ec91a525ab87d801a7c2db631a4adc80ec3921a3344a7122863e77f7",
+    "receiptBytes": 184380,
+    "receiptStartedAt": "2026-08-17T03:19:36.837Z",
+    "receiptFinishedAt": "2026-08-17T03:22:44.675Z",
+    "receiptWindowSeconds": 187.838,
+    "successfulEvidenceRequests": 165,
+    "distributionResponses": 80,
+    "profileResponses": 80,
+    "contractSnapshots": 3,
+    "aggregateSnapshots": 2,
+    "providerRows": 46792,
+    "unitedStatesCountyRows": 43465,
+    "unitedStatesStateOnlyRows": 2869,
+    "foreignRows": 458,
+    "artifacts": 165,
+    "artifactBytes": 3500524,
+    "providerRetries": 0,
+    "providerFailures": 0,
+    "sourceStatusFingerprint": "ef542955136edad4ffa566a068733eb3f83d737fe07af7695c0da727b72cae67",
+    "stableStatusWindow": true,
+    "requestCodeCommits": ["80ac152778e3f78f5abf721a50ffa96ee88a69bb"],
+    "telemetry": {
+      "path": "ops/national-research/attempt-telemetry/usda-nrcs-plants-national-v1-tranche-05-20260817.json",
+      "sha256": "33f4a57f95ae9ac85f31b37bbaffdd65eb7e26a67fe433f4cbdc0b9aa4d134b0",
+      "bytes": 689,
+      "status": "complete",
+      "wallSeconds": 193.711,
+      "peakRssMb": 982.102,
+      "providerAttempts": 165,
+      "completedResponses": 165,
+      "failedAttempts": 0,
+      "retries": 0,
+      "manualInterventions": 0
+    },
+    "reuse": {
+      "singleNationalAcquisitionReusedAcrossJurisdictions": 51,
+      "distributionResponsesReusedAcrossStatePartitions": 4080,
+      "naiveStateTaxonRequestFamiliesPrevented": 4080,
+      "localPartitionProviderRequests": 0
+    },
+    "economics": {
+      "netPairsPerRetainedEvidenceRequest": 1481.261,
+      "netPairsPerSuccessfulDistributionResponse": 3055.1,
+      "netPairsPerReceiptWindowHour": 4684189.568,
+      "candidateAcceptancePercent": 99.546365,
+      "positivePairYieldPercent": 16.885337,
+      "netPairEfficiencyPercent": 97.172392,
+      "overlapPercent": 2.827608
+    }
+  },
+  "grossEventVolume": {
+    "pairOutcomes": 251520,
+    "evidenceFoundOutcomes": 43230,
+    "noQualifyingEvidenceOutcomes": 208290,
+    "candidates": 43427,
+    "assertions": 43230,
+    "acceptedReviews": 43230,
+    "rejections": 197,
+    "errors": 0,
+    "duplicates": 0,
+    "alreadyAccountedOutcomes": 7112,
+    "qualification": "Gross event volume is not final-matrix movement. The complete 251,520 outcomes include 7,112 pairs already accounted in Alabama."
+  },
+  "netFinalMatrixMovement": {
+    "uniquePairs": 244408,
+    "notResearchedToResearchedUnresolved": 201938,
+    "notResearchedToVerifiedPresent": 42470,
+    "researchedUnresolvedToVerifiedPresent": 0,
+    "verifiedAbsent": 0,
+    "notDetected": 0,
+    "notResearched": -244408,
+    "conflicts": 0,
+    "unchangedOverlap": 7112,
+    "applicability": {
+      "applicable": 2320,
+      "unknown": -2320,
+      "blocked": 0,
+      "qualification": "Accepted county presence derived 2,320 state-species applicability decisions. Source silence created no not-applicable decision."
+    },
+    "stateSpeciesResearch": {
+      "fullyAccounted": 3950,
+      "untouchedByCountyResearch": -3950,
+      "researchedUnresolved": 1627,
+      "researchedBlocked": 0,
+      "notResearched": -3947
+    },
+    "denominator": { "stateSpecies": 0, "countySpecies": 0 },
+    "statesMoved": 50,
+    "largestStateMovements": [
+      { "stateCode": "TX", "uniquePairs": 20320, "verifiedPresent": 1322, "researchedUnresolved": 18998, "applicability": 69 },
+      { "stateCode": "GA", "uniquePairs": 12720, "verifiedPresent": 565, "researchedUnresolved": 12155, "applicability": 68 },
+      { "stateCode": "VA", "uniquePairs": 10640, "verifiedPresent": 2993, "researchedUnresolved": 7647, "applicability": 63 },
+      { "stateCode": "KY", "uniquePairs": 9600, "verifiedPresent": 1571, "researchedUnresolved": 8029, "applicability": 59 },
+      { "stateCode": "MO", "uniquePairs": 9200, "verifiedPresent": 1588, "researchedUnresolved": 7612, "applicability": 52 },
+      { "stateCode": "KS", "uniquePairs": 8400, "verifiedPresent": 1174, "researchedUnresolved": 7226, "applicability": 38 },
+      { "stateCode": "IL", "uniquePairs": 8160, "verifiedPresent": 2477, "researchedUnresolved": 5683, "applicability": 55 },
+      { "stateCode": "NC", "uniquePairs": 8000, "verifiedPresent": 2180, "researchedUnresolved": 5820, "applicability": 65 },
+      { "stateCode": "IA", "uniquePairs": 7920, "verifiedPresent": 271, "researchedUnresolved": 7649, "applicability": 28 },
+      { "stateCode": "TN", "uniquePairs": 7600, "verifiedPresent": 1160, "researchedUnresolved": 6440, "applicability": 55 }
+    ]
+  },
+  "final": {
+    "asOf": "2026-08-17",
+    "national": {
+      "stateSpecies": {
+        "denominator": 127704,
+        "applicable": 10830,
+        "unknown": 116874,
+        "explicitOverrides": 3426,
+        "derivedApplicable": 7404,
+        "fullyAccounted": 19335,
+        "partiallyAccounted": 0,
+        "untouchedByCountyResearch": 108369,
+        "researchedUnresolved": 8528,
+        "researchedBlocked": 53,
+        "notResearched": 108293
+      },
+      "countySpecies": {
+        "denominator": 7872576,
+        "verifiedPresent": 159302,
+        "verifiedAbsent": 0,
+        "notDetected": 8,
+        "researchedUnresolved": 1034270,
+        "notResearched": 6678996
+      },
+      "protocolCells": {
+        "total": 95988,
+        "applicable": 25995,
+        "notApplicable": 69993,
+        "complete": 6262,
+        "incomplete": 19674,
+        "blocked": 59,
+        "current": 5651,
+        "stale": 611,
+        "undated": 19733,
+        "regulatedAndHighPriorityCurrentComplete": 2369,
+        "regulatedAndHighPriorityApplicable": 2843
+      },
+      "globalImmutableLedger": {
+        "sources": 29,
+        "bootstrapEvidence": 30130,
+        "runEvidenceAssertions": 264362,
+        "reviewEvents": 264362,
+        "rejections": 44499,
+        "researchOutcomes": 1276038,
+        "immutableRuns": 945,
+        "conflicts": 0
+      },
+      "certifiedStates": 0,
+      "statesWithCertificationBlockers": 51,
+      "remainingApplicableProtocolCountyScreens": 1306657
+    }
+  },
+  "protocolAndCertificationMovement": {
+    "selectedSourceSpeciesCellsCompleted": 80,
+    "complete": 80,
+    "current": 80,
+    "totalProtocolScope": 15788,
+    "applicableProtocolScope": 2320,
+    "notApplicableProtocolScope": 13468,
+    "incomplete": 2240,
+    "undated": 2240,
+    "blocked": 0,
+    "stale": 0,
+    "regulatedAndHighPriorityCurrentComplete": 2,
+    "certificationBlockersRemoved": 0,
+    "certificationBlockersAdded": 0,
+    "qualification": "The source tranche expands protocol and applicability scope. Eighty selected taxon screens are complete/current, but 2,240 newly applicable interactions remain incomplete/undated. Certification blocker entries remain unchanged."
+  },
+  "expectedVersusActual": {
+    "orderedPairs": { "expected": 251520, "actual": 251520 },
+    "netUniquePairs": { "expected": 244408, "actual": 244408 },
+    "alreadyAccountedOverlap": { "expected": 7112, "actual": 7112 },
+    "successfulEvidenceRequests": { "expected": 165, "actual": 165 },
+    "distributionResponses": { "expected": 80, "actual": 80 },
+    "statePartitions": { "expected": 51, "actual": 51 },
+    "applicabilityMovement": { "expected": null, "actual": 2320 },
+    "denominatorMovement": { "expected": 0, "actual": 0 },
+    "verifiedAbsentMovement": { "expected": 0, "actual": 0 },
+    "notDetectedMovement": { "expected": 0, "actual": 0 },
+    "conflictMovement": { "expected": 0, "actual": 0 },
+    "providerFailures": { "expected": 0, "actual": 0 },
+    "providerRetries": { "expected": 0, "actual": 0 }
+  },
+  "generation": {
+    "asOf": "2026-08-17",
+    "status": "pass",
+    "allStateByteStability": { "status": "pass", "states": 51, "byteStable": true },
+    "qualification": "The authoritative single-state prepare command correctly rebuilt only Alabama. MAIN then used the explicit national compiler for all 51 projections and rebuilt the readiness dashboard before the consolidated integrity gate."
+  },
+  "launchGate": {
+    "phase": "PRE-DEPLOYMENT",
+    "mode": "data release and public web application",
+    "riskLevel": "high",
+    "decision": "GO TO DEPLOY",
+    "matrix": [
+      { "category": "scope-and-source-of-truth", "criticality": "CRITICAL", "status": "PASSED", "evidence": "Canonical C:/Code/project-isitusa main; Round 65 receipt baseline 40aec8580b209e00bf5a1075b1dc084250e6b225; MAIN ownership and Round 66 source scope resolved." },
+      { "category": "functionality", "criticality": "CRITICAL", "status": "PASSED", "evidence": "National replay, 51-state byte stability, research integrity, data integrity, projection integrity, national config, typecheck, lint, production build, and the Texas county evidence flow passed." },
+      { "category": "visual-fidelity", "criticality": "HIGH", "status": "PASSED", "evidence": "Desktop 1440x1000 and mobile 390x844 full-page captures were visually inspected with legible hierarchy, evidence detail, and zero page-level horizontal overflow." },
+      { "category": "accessibility", "criticality": "HIGH", "status": "PASSED", "evidence": "Accessibility snapshots exposed labeled navigation, state and county controls, filters, tabs, table controls, a mobile evidence card, and an expanded evidence disclosure." },
+      { "category": "seo-and-discovery", "criticality": "MEDIUM", "status": "PASSED", "evidence": "The route retained the title Research status | Project Isitusa and generated successfully within the 2,512-page production build." },
+      { "category": "performance-and-resilience", "criticality": "HIGH", "status": "PASSED", "evidence": "Next.js compiled in 16.1 seconds; postflight capacity remained green; the one-request-per-second acquisition completed without retry, failure, or unstable status window." },
+      { "category": "security-and-privacy", "criticality": "HIGH", "status": "PASSED", "evidence": "No credential value was read or logged; GBIF stopped before network; the bounded authored-file secret scan and prohibited-dash scan found zero hits; git diff --check passed." },
+      { "category": "analytics-and-conversion", "criticality": "MEDIUM", "status": "NOT APPLICABLE", "evidence": "This is a read-only research data release with no analytics or conversion code change. Production Insights behavior remains a post-deploy observation." },
+      { "category": "monitoring-and-operations", "criticality": "HIGH", "status": "PASSED", "evidence": "Round 65 receipt 40aec8580b209e00bf5a1075b1dc084250e6b225 and successful deployment 5938169058 remain rollback references; exact-SHA deployment observation is required before the receipt." },
+      { "category": "deployment", "criticality": "CRITICAL", "status": "PASSED", "evidence": "The main-only push path, GitHub Production evidence source, immutable host, canonical host, byte-parity checks, browser verification, and two-commit receipt protocol are resolved. This pre-deployment pass authorizes deployment but does not claim it occurred." },
+      { "category": "content-and-approvals", "criticality": "MEDIUM", "status": "PASSED", "evidence": "No owner-authored product claim or asset changed; generated status language remains conservative and source silence remains researched unresolved." },
+      { "category": "data-release-integrity", "criticality": "CRITICAL", "status": "PASSED", "evidence": "All-state byte stability passed for 51 states at the 2026-08-17 cutoff; full integrity reconciled 945 immutable runs, 1,276,038 outcomes, 264,362 assertions and reviews, 44,499 rejections, and zero conflicts." }
+    ],
+    "qualification": "All pre-deployment categories are passed or not applicable. This decision authorizes the content push and exact deployment verification; it does not attest deployment."
+  },
+  "release": {
+    "gates": {
+      "allStateByteStability": { "status": "pass", "states": 51, "asOf": "2026-08-17", "byteStable": true },
+      "researchIntegrity": { "status": "pass", "immutableRuns": 945, "outcomes": 1276038, "assertions": 264362, "reviews": 264362, "rejections": 44499, "unreviewed": 0 },
+      "dataIntegrity": { "status": "pass", "catalogSpecies": 2504, "runtimeMappedSpecies": 1679, "presenceRows": 356767, "countyIndexEntries": 3120, "sourceFamilies": 32 },
+      "nationalConfig": { "status": "pass" },
+      "stateResearchProjections": { "status": "pass", "states": 51 },
+      "postflightCapacity": { "status": "pass", "tier": "green", "availableDiskBytes": 694183940096, "requiredDiskBytes": 299892630528, "projectedHeadroomBytes": 394291309568, "projectedAvailableMemoryBytes": 12680466432 },
+      "typecheck": { "status": "pass" },
+      "lint": { "status": "pass", "warnings": 0, "errors": 0 },
+      "diffCheck": { "status": "pass" },
+      "prohibitedDashScan": { "status": "pass", "hits": 0 },
+      "authoredSecretReview": { "status": "pass", "highRiskPatternHits": 0 }
+    },
+    "build": { "status": "pass", "framework": "Next.js 15.5.23", "compileSeconds": 16.1, "staticPages": 2512 },
+    "browserQa": {
+      "local": {
+        "status": "pass",
+        "route": "/research?state=TX",
+        "desktop": { "width": 1440, "height": 1000, "documentWidth": 1425, "horizontalOverflow": false, "brokenImages": 0, "screenshot": "output/playwright/round66-local/round66-local-desktop.png", "bytes": 293150, "sha256": "180da2d8dec6c34188e096a9375f22be97485ff2dc90ac906c02192e88996ec1" },
+        "mobile": { "width": 390, "height": 844, "documentWidth": 375, "horizontalOverflow": false, "brokenImages": 0, "screenshot": "output/playwright/round66-local/round66-local-mobile.png", "bytes": 248808, "sha256": "a7f6970b78e5246dfdc2a4618352521b61b76935e012aaf3407726c072bab978" },
+        "selectedState": "TX",
+        "selectedCountyFips": "48001",
+        "search": "Solanum pseudocapsicum",
+        "species": "Jerusalem cherry",
+        "pairStatus": "researched-unresolved",
+        "researchStatus": "reviewed-no-qualifying-evidence",
+        "evidenceCount": 0,
+        "sourceScreen": "USDA NRCS PLANTS county distribution",
+        "console": { "errors": 2, "warnings": 0, "qualification": "Both errors are the expected localhost-only /_vercel/insights/script.js 404 and MIME failures. Production must be console-clean before the receipt." },
+        "failedRequests": { "count": 1, "qualification": "The only failed request was the same localhost-only Vercel Insights script. Generated Texas summary, Anderson county, and species payloads returned HTTP 200." }
+      },
+      "production": { "status": "pending-content-deployment" }
+    },
+    "postDeploymentGate": { "status": "pending-content-deployment" },
+    "externalVerification": { "status": "pending-content-deployment" },
+    "mainProcessCorrections": [
+      "Rebuilt the readiness dashboard after the first consolidated integrity attempt truthfully rejected the stale Round 65 dashboard; the corrected full gate passed.",
+      "Ran the explicit national compiler after confirming that the authoritative prepare:data command intentionally rebuilds only Alabama.",
+      "Reran four independent Node gates outside the restricted sandbox after the sandbox runtime failed before script startup at uv_os_get_passwd with ENOMEM; all four repository gates passed under the approved runtime."
+    ]
+  },
+  "priorThreeRoundsComparison": [
+    { "round": 63, "source": "usda-nrcs-plants", "grossOutcomes": 125760, "netUniqueMovement": 123080, "providerCalls": 85, "receiptWindowSeconds": 833.463, "netPairsPerCall": 1448 },
+    { "round": 64, "source": "usda-nrcs-plants", "grossOutcomes": 125760, "netUniqueMovement": 123080, "providerCalls": 85, "receiptWindowSeconds": 287.425, "netPairsPerCall": 1448 },
+    { "round": 65, "source": "usda-nrcs-plants", "grossOutcomes": 125760, "netUniqueMovement": 123080, "providerCalls": 85, "receiptWindowSeconds": 80.261, "netPairsPerCall": 1448 },
+    { "round": 66, "source": "usda-nrcs-plants", "grossOutcomes": 251520, "netUniqueMovement": 244408, "providerCalls": 165, "receiptWindowSeconds": 187.838, "netPairsPerCall": 1481.261 }
+  ],
+  "portfolioTrend": {
+    "lastThreeRoundsDecliningNetMovement": false,
+    "round66Change": "Round 66 safely doubled the taxon acquisition unit after end-to-end max-cardinality tests, rate-limit enforcement, and restart-required stable-window drift handling. Net movement increased 98.577 percent over each of Rounds 63 through 65 while overlap remained 2.828 percent.",
+    "nextSelectionConstraint": "Only 76 pure exact NRCS mappings with 158,037 currently not-researched pairs remain after this tranche. Mixed mappings remain excluded until exact taxonomy semantics are resolved."
+  },
+  "completionForecasts": {
+    "automatedNationalAcquisition": { "measuredRemainingScope": "76 pure exact NRCS mappings and 158,037 currently not-researched county-species pairs", "forecast": "At most one further similarly sized pure NRCS tranche is currently visible. Its exact net yield must be rescored before network and cannot be treated as total national completion." },
+    "stateSpecificEvidenceResearch": { "measuredRemainingScope": "6,678,996 county-species pairs remain not researched nationally", "forecast": "No completion date is defensible from the national NRCS rate because state-specific sources, pagination, taxonomy, and review costs are heterogeneous." },
+    "applicabilityReview": { "measuredRemainingScope": "116,874 state-species decisions remain unknown", "forecast": "No completion date is claimed. Manual official-list review and county evidence screening must be measured separately." },
+    "blockedExceptionReview": { "measuredRemainingScope": "Eight mixed NRCS taxonomy mappings plus two historical blocked orchestration jobs", "forecast": "Each exception requires exact taxonomy, geography, or retained-artifact recovery; the automated national rate does not apply." },
+    "freshnessReplacement": { "measuredRemainingScope": "611 stale protocol cells and the retained historically useful April 2023 AFPE archive", "forecast": "Replacement depends on newer authoritative publications and is not extrapolated from acquisition throughput." },
+    "integrationAndRelease": { "measuredRemainingScope": "One content deployment, one external-verification receipt, and one receipt-deployment observation", "forecast": "Measured only after both exact deployments complete. No worker-only acquisition rate is used for release forecasting." }
+  },
+  "processLesson": {
+    "lesson": "A schema that passes a smaller national tranche can still hide independent cardinality caps, and a declared provider rate is not enforced merely because requests are sequential.",
+    "applied": "Before acquisition, Round 66 tested the intended 80-taxon maximum across plan, national receipt, state reference, and Texas pair cardinalities; enforced one request per second on every attempt; and made stable-window drift restart-required rather than infinitely resumable.",
+    "nextRoundChange": "Every larger national tranche must pass an end-to-end maximum-cardinality semantic dry run and a timed rate-limit test before provider access."
+  },
+  "semanticAttestation": {
+    "sourceSilenceCreatedAbsence": false,
+    "sourceSilenceCreatedNotDetected": false,
+    "failedRequestCreatedNegative": false,
+    "incompleteScopeMarkedComplete": false,
+    "rejectionCreatedNegative": false,
+    "missingGeographyCreatedNegative": false,
+    "coordinateDerivedCountyPublication": false,
+    "crossLayerCountyIdJoinPublished": false,
+    "stateOnlyRowPublishedAsCountyEvidence": false,
+    "unmappedTaxonomyPublished": false,
+    "applicabilityConflatedWithCountyResearch": false,
+    "freshnessConflatedWithResearchCompletion": false,
+    "grossEventsReportedAsNetMovement": false
+  }
+}

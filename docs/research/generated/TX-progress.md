@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `4450`
+- Verified present: `5772`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `62860`
-- Not researched: `568706`
-- Determination coverage: `0.70%`
-- Research coverage: `10.58%`
-- Explicit outcome coverage: `10.5831%`
-- Applicable protocol cells: `224`
+- Researched unresolved: `81858`
+- Not researched: `548386`
+- Determination coverage: `0.91%`
+- Research coverage: `13.78%`
+- Explicit outcome coverage: `13.7780%`
+- Applicable protocol cells: `293`
 - Current complete protocol cells: `90`
-- Protocol completion: `45.98%`
-- Current protocol completion: `40.18%`
-- Evidence records: `6647`
-- Research runs: `16`
+- Protocol completion: `35.15%`
+- Current protocol completion: `30.72%`
+- Evidence records: `7969`
+- Research runs: `17`
 - Rejection records: `510`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,19 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Redtop (`agrostis-gigantea`) | plants | 0 | 254 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 254 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 254 | 0 |
+| Crow Garlic (`allium-vineale`) | plants | 0 | 254 | 0 |
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 254 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 254 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 254 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 254 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 254 | 0 |
+| Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 254 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 254 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 254 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 254 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 254 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 254 | 0 |
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 254 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 254 | 0 |
-| Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 445 | 37 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 2557 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 3879 | 240 |
 | GBIF preserved specimen records | operational | 2026-07-31T12:41:57.355Z | 763 | 68 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

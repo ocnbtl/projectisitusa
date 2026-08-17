@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-08-06",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 144,
+    "applicableSpeciesCount": 191,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2360,
+    "unknownSpeciesCount": 2313,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 87,
-    "derivedApplicableSpeciesCount": 57,
+    "derivedApplicableSpeciesCount": 104,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 280,
+    "boundedAcquisitionSpeciesCount": 360,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,32 +33,32 @@
     "resolvablePairCount": 35056,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 574,
+    "verifiedPresent": 898,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 3320,
-    "notResearched": 31162,
-    "determinationCoveragePercent": 1.64,
-    "researchCoveragePercent": 11.11,
-    "explicitOutcomePairCount": 3894,
-    "explicitOutcomeCoveragePercent": 11.1079,
+    "researchedUnresolved": 4116,
+    "notResearched": 30042,
+    "determinationCoveragePercent": 2.56,
+    "researchCoveragePercent": 14.3,
+    "explicitOutcomePairCount": 5014,
+    "explicitOutcomeCoveragePercent": 14.3028,
     "conflictCount": 0,
-    "evidenceRecordCount": 800,
+    "evidenceRecordCount": 1124,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 800,
+    "runEvidenceRecordCount": 1124,
     "rejectionRecordCount": 95,
-    "researchRunCount": 16,
+    "researchRunCount": 17,
     "boundedAcquisition": {
-      "speciesCount": 280,
-      "totalPairs": 3920,
-      "verifiedPresent": 574,
+      "speciesCount": 360,
+      "totalPairs": 5040,
+      "verifiedPresent": 898,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 3320,
+      "researchedUnresolved": 4116,
       "notResearched": 26,
-      "researchCoveragePercent": 99.34,
-      "explicitOutcomePairs": 3894,
-      "explicitOutcomeCoveragePercent": 99.3367
+      "researchCoveragePercent": 99.48,
+      "explicitOutcomePairs": 5014,
+      "explicitOutcomeCoveragePercent": 99.4841
     }
   },
   "migrationCandidates": {
@@ -253,9 +253,9 @@
       "authority": "USDA Natural Resources Conservation Service",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": "2026-08-17T01:06:23.740Z",
-      "evidencePairCount": 349,
-      "screenedSpeciesCount": 160
+      "lastRunAt": "2026-08-17T03:22:44.675Z",
+      "evidencePairCount": 673,
+      "screenedSpeciesCount": 240
     },
     {
       "id": "gbif-preserved-specimens",
@@ -372,17 +372,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1120,
-    "applicableCells": 179,
-    "notApplicableCells": 941,
+    "totalCells": 1440,
+    "applicableCells": 226,
+    "notApplicableCells": 1214,
     "completeCells": 85,
-    "incompleteCells": 93,
+    "incompleteCells": 140,
     "blockedCells": 1,
     "currentCells": 72,
     "staleCells": 13,
-    "undatedCells": 94,
-    "applicableCompletionPercent": 47.49,
-    "currentCompletePercent": 40.22,
+    "undatedCells": 141,
+    "applicableCompletionPercent": 37.61,
+    "currentCompletePercent": 31.86,
     "regulatedAndHighApplicableCells": 73,
     "regulatedAndHighCurrentCompleteCells": 53,
     "regulatedAndHighCurrentCompletePercent": 72.6,
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 130,
+        "applicableCells": 177,
         "currentCompleteCells": 54,
-        "currentCompletePercent": 41.54
+        "currentCompletePercent": 30.51
       },
       {
         "category": "wildlife",
@@ -428,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 80,
+        "applicableCells": 127,
         "currentCompleteCells": 19,
-        "currentCompletePercent": 23.75
+        "currentCompletePercent": 14.96
       },
       {
         "priority": "baseline",
@@ -448,7 +448,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 144,
+        "applicableCells": 191,
         "currentCompleteCells": 51,
         "processed": false
       },
@@ -687,6 +687,16 @@
       "speciesId": "albizia-julibrissin",
       "commonName": "Mimosa Tree",
       "scientificName": "Albizia julibrissin",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 140
+    },
+    {
+      "speciesId": "allium-vineale",
+      "commonName": "Crow Garlic",
+      "scientificName": "Allium vineale",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,
@@ -1074,6 +1084,16 @@
       "priorityScore": 140
     },
     {
+      "speciesId": "cucumis-melo",
+      "commonName": "Cantaloupe",
+      "scientificName": "Cucumis melo",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 140
+    },
+    {
       "speciesId": "cuphea-carthagenensis",
       "commonName": "Colombian waxweed",
       "scientificName": "Cuphea carthagenensis",
@@ -1284,6 +1304,16 @@
       "priorityScore": 140
     },
     {
+      "speciesId": "fatoua-villosa",
+      "commonName": "Hairy crabweed",
+      "scientificName": "Fatoua villosa",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 14,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 140
+    },
+    {
       "speciesId": "ficus-carica",
       "commonName": "Edible fig",
       "scientificName": "Ficus carica",
@@ -1457,36 +1487,6 @@
       "speciesId": "hypochaeris-glabra",
       "commonName": "Smooth cat's ear",
       "scientificName": "Hypochaeris glabra",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
-    },
-    {
-      "speciesId": "imperata-cylindrica",
-      "commonName": "Cogongrass",
-      "scientificName": "Imperata cylindrica",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
-    },
-    {
-      "speciesId": "indigofera-tinctoria",
-      "commonName": "True indigo",
-      "scientificName": "Indigofera tinctoria",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 14,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 140
-    },
-    {
-      "speciesId": "ipomoea-aquatica",
-      "commonName": "Swamp morning-glory",
-      "scientificName": "Ipomoea aquatica",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 14,

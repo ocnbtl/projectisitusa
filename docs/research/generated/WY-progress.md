@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `355`
+- Verified present: `611`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6453`
-- Not researched: `50784`
-- Determination coverage: `0.62%`
-- Research coverage: `11.82%`
-- Explicit outcome coverage: `11.8211%`
-- Applicable protocol cells: `137`
+- Researched unresolved: `8037`
+- Not researched: `48944`
+- Determination coverage: `1.06%`
+- Research coverage: `15.02%`
+- Explicit outcome coverage: `15.0160%`
+- Applicable protocol cells: `170`
 - Current complete protocol cells: `53`
-- Protocol completion: `48.18%`
-- Current protocol completion: `38.69%`
-- Evidence records: `355`
-- Research runs: `20`
+- Protocol completion: `38.82%`
+- Current protocol completion: `31.18%`
+- Evidence records: `611`
+- Research runs: `21`
 - Rejection records: `3`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 23 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 23 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 23 | 0 |
+| Calamus (`acorus-calamus`) | plants | 0 | 23 | 0 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 23 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 23 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 23 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 23 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 23 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 23 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 68 | 71 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 272 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 528 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-09T14:10:37.141Z | 0 | 31 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

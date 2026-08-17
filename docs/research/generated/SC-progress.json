@@ -11,14 +11,14 @@
     "applicabilityAsOf": "2026-07-28",
     "catalogSpeciesCount": 2504,
     "stateSpeciesDenominator": 2504,
-    "applicableSpeciesCount": 183,
+    "applicableSpeciesCount": 246,
     "notApplicableSpeciesCount": 0,
-    "unknownSpeciesCount": 2321,
+    "unknownSpeciesCount": 2258,
     "blockedSpeciesCount": 0,
     "explicitApplicabilityDecisionCount": 53,
-    "derivedApplicableSpeciesCount": 130,
+    "derivedApplicableSpeciesCount": 193,
     "resolvedStateSpeciesDecisionCount": 2504,
-    "boundedAcquisitionSpeciesCount": 263,
+    "boundedAcquisitionSpeciesCount": 343,
     "defaultApplicability": "unknown",
     "fullCatalogApplicabilityComplete": false,
     "fullCatalogResearchAccounted": false,
@@ -33,31 +33,31 @@
     "resolvablePairCount": 115184,
     "notApplicablePairCount": 0,
     "blockedPairCount": 0,
-    "verifiedPresent": 2065,
+    "verifiedPresent": 3023,
     "verifiedAbsent": 0,
     "notDetected": 0,
-    "researchedUnresolved": 10033,
-    "notResearched": 103086,
-    "determinationCoveragePercent": 1.79,
-    "researchCoveragePercent": 10.5,
-    "explicitOutcomePairCount": 12098,
-    "explicitOutcomeCoveragePercent": 10.5032,
+    "researchedUnresolved": 12755,
+    "notResearched": 99406,
+    "determinationCoveragePercent": 2.62,
+    "researchCoveragePercent": 13.7,
+    "explicitOutcomePairCount": 15778,
+    "explicitOutcomeCoveragePercent": 13.6981,
     "conflictCount": 0,
-    "evidenceRecordCount": 2178,
+    "evidenceRecordCount": 3136,
     "bootstrapEvidenceRecordCount": 0,
-    "runEvidenceRecordCount": 2178,
+    "runEvidenceRecordCount": 3136,
     "rejectionRecordCount": 23,
-    "researchRunCount": 18,
+    "researchRunCount": 19,
     "boundedAcquisition": {
-      "speciesCount": 263,
-      "totalPairs": 12098,
-      "verifiedPresent": 2065,
+      "speciesCount": 343,
+      "totalPairs": 15778,
+      "verifiedPresent": 3023,
       "verifiedAbsent": 0,
       "notDetected": 0,
-      "researchedUnresolved": 10033,
+      "researchedUnresolved": 12755,
       "notResearched": 0,
       "researchCoveragePercent": 100,
-      "explicitOutcomePairs": 12098,
+      "explicitOutcomePairs": 15778,
       "explicitOutcomeCoveragePercent": 100
     }
   },
@@ -253,9 +253,9 @@
       "authority": "USDA Natural Resources Conservation Service",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": "2026-08-17T01:06:23.740Z",
-      "evidencePairCount": 1342,
-      "screenedSpeciesCount": 160
+      "lastRunAt": "2026-08-17T03:22:44.675Z",
+      "evidencePairCount": 2300,
+      "screenedSpeciesCount": 240
     },
     {
       "id": "gbif-preserved-specimens",
@@ -372,17 +372,17 @@
     "protocolId": "national-usgs-nas-v1",
     "protocolStatus": "active",
     "priorityClassificationComplete": true,
-    "totalCells": 1052,
-    "applicableCells": 218,
-    "notApplicableCells": 834,
+    "totalCells": 1372,
+    "applicableCells": 281,
+    "notApplicableCells": 1091,
     "completeCells": 68,
-    "incompleteCells": 150,
+    "incompleteCells": 213,
     "blockedCells": 0,
     "currentCells": 55,
     "staleCells": 13,
-    "undatedCells": 150,
-    "applicableCompletionPercent": 31.19,
-    "currentCompletePercent": 25.23,
+    "undatedCells": 213,
+    "applicableCompletionPercent": 24.2,
+    "currentCompletePercent": 19.57,
     "regulatedAndHighApplicableCells": 35,
     "regulatedAndHighCurrentCompleteCells": 33,
     "regulatedAndHighCurrentCompletePercent": 94.29,
@@ -402,9 +402,9 @@
       },
       {
         "category": "plants",
-        "applicableCells": 170,
+        "applicableCells": 233,
         "currentCompleteCells": 38,
-        "currentCompletePercent": 22.35
+        "currentCompletePercent": 16.31
       },
       {
         "category": "wildlife",
@@ -428,9 +428,9 @@
       },
       {
         "priority": "pilot",
-        "applicableCells": 157,
+        "applicableCells": 220,
         "currentCompleteCells": 22,
-        "currentCompletePercent": 14.01
+        "currentCompletePercent": 10
       },
       {
         "priority": "baseline",
@@ -448,7 +448,7 @@
       },
       {
         "sourceId": "gbif-preserved-specimens",
-        "applicableCells": 183,
+        "applicableCells": 246,
         "currentCompleteCells": 33,
         "processed": false
       },
@@ -600,6 +600,16 @@
       "priorityScore": 460
     },
     {
+      "speciesId": "arrhenatherum-elatius",
+      "commonName": "Tall Oatgrass",
+      "scientificName": "Arrhenatherum elatius",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 46,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 460
+    },
+    {
       "speciesId": "artemisia-annua",
       "commonName": "Sweet sagewort",
       "scientificName": "Artemisia annua",
@@ -623,6 +633,16 @@
       "speciesId": "asphodelus-fistulosus",
       "commonName": "Onionweed",
       "scientificName": "Asphodelus fistulosus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 46,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 460
+    },
+    {
+      "speciesId": "avena-fatua",
+      "commonName": "Wild oat",
+      "scientificName": "Avena fatua",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 46,
@@ -1140,6 +1160,16 @@
       "priorityScore": 460
     },
     {
+      "speciesId": "ludwigia-peruviana",
+      "commonName": "Peruvian primrose-willow",
+      "scientificName": "Ludwigia peruviana",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 46,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 460
+    },
+    {
       "speciesId": "lycium-ferocissimum",
       "commonName": "African boxthorn",
       "scientificName": "Lycium ferocissimum",
@@ -1390,6 +1420,16 @@
       "priorityScore": 460
     },
     {
+      "speciesId": "parthenium-hysterophorus",
+      "commonName": "Santa maria feverfew",
+      "scientificName": "Parthenium hysterophorus",
+      "category": "plants",
+      "notResearchedCountyCount": 0,
+      "researchedUnresolvedCountyCount": 46,
+      "missingProtocolSourceIds": [],
+      "priorityScore": 460
+    },
+    {
       "speciesId": "peperomia-pellucida",
       "commonName": "Man to man",
       "scientificName": "Peperomia pellucida",
@@ -1420,49 +1460,9 @@
       "priorityScore": 460
     },
     {
-      "speciesId": "phyllosticta-citricarpa",
-      "commonName": "Citrus black spot",
-      "scientificName": "Phyllosticta citricarpa",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 46,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 460
-    },
-    {
-      "speciesId": "sudden-oak-death",
-      "commonName": "Sudden Oak Death",
-      "scientificName": "Phytophthora ramorum",
-      "category": "fungi-diseases",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 46,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 460
-    },
-    {
-      "speciesId": "saccharum-spontaneum",
-      "commonName": "Wild sugarcane",
-      "scientificName": "Saccharum spontaneum",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 46,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 460
-    },
-    {
-      "speciesId": "salix-cinerea",
-      "commonName": "Large gray willow",
-      "scientificName": "Salix cinerea",
-      "category": "plants",
-      "notResearchedCountyCount": 0,
-      "researchedUnresolvedCountyCount": 46,
-      "missingProtocolSourceIds": [],
-      "priorityScore": 460
-    },
-    {
-      "speciesId": "salvinia-molesta",
-      "commonName": "Giant Salvinia",
-      "scientificName": "Salvinia molesta",
+      "speciesId": "phyllostachys-aureosulcata",
+      "commonName": "Yellow groove bamboo",
+      "scientificName": "Phyllostachys aureosulcata",
       "category": "plants",
       "notResearchedCountyCount": 0,
       "researchedUnresolvedCountyCount": 46,

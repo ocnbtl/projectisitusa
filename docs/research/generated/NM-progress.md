@@ -7,21 +7,21 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `398`
+- Verified present: `678`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9238`
-- Not researched: `72996`
-- Determination coverage: `0.48%`
-- Research coverage: `11.66%`
-- Explicit outcome coverage: `11.6613%`
-- Applicable protocol cells: `138`
+- Researched unresolved: `11598`
+- Not researched: `70356`
+- Determination coverage: `0.82%`
+- Research coverage: `14.86%`
+- Explicit outcome coverage: `14.8562%`
+- Applicable protocol cells: `173`
 - Current complete protocol cells: `49`
-- Protocol completion: `44.93%`
-- Current protocol completion: `35.51%`
-- Evidence records: `398`
-- Research runs: `15`
-- Rejection records: `43`
+- Protocol completion: `35.84%`
+- Current protocol completion: `28.32%`
+- Evidence records: `678`
+- Research runs: `16`
+- Rejection records: `59`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 33 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 33 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 33 | 0 |
+| Calamus (`acorus-calamus`) | plants | 0 | 33 | 0 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 33 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 33 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 33 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 33 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 33 | 0 |
-| Camelthorn (`alhagi-maurorum`) | plants | 0 | 33 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 36 | 70 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 343 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 623 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:26:39.692Z | 2 | 30 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

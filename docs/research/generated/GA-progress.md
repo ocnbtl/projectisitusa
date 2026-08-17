@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `3798`
+- Verified present: `4363`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `40086`
-- Not researched: `354252`
-- Determination coverage: `0.95%`
-- Research coverage: `11.02%`
-- Explicit outcome coverage: `11.0224%`
-- Applicable protocol cells: `242`
+- Researched unresolved: `52241`
+- Not researched: `341532`
+- Determination coverage: `1.10%`
+- Research coverage: `14.22%`
+- Explicit outcome coverage: `14.2173%`
+- Applicable protocol cells: `310`
 - Current complete protocol cells: `110`
-- Protocol completion: `50.83%`
-- Current protocol completion: `45.45%`
-- Evidence records: `6353`
-- Research runs: `18`
+- Protocol completion: `39.68%`
+- Current protocol completion: `35.48%`
+- Evidence records: `6918`
+- Research runs: `19`
 - Rejection records: `438`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,6 +46,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 159 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 159 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 159 | 0 |
+| Wild oat (`avena-fatua`) | plants | 0 | 159 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 159 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 159 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 159 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | European chestnut (`castanea-sativa`) | plants | 0 | 159 | 0 |
 | Feather cockscomb (`celosia-argentea`) | plants | 0 | 159 | 0 |
 | Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 159 | 0 |
-| Garden cosmos (`cosmos-bipinnatus`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 1370 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 859 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 1424 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-02T20:43:54.478Z | 1124 | 88 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

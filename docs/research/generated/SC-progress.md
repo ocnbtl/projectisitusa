@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `2065`
+- Verified present: `3023`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `10033`
-- Not researched: `103086`
-- Determination coverage: `1.79%`
-- Research coverage: `10.50%`
-- Explicit outcome coverage: `10.5032%`
-- Applicable protocol cells: `218`
+- Researched unresolved: `12755`
+- Not researched: `99406`
+- Determination coverage: `2.62%`
+- Research coverage: `13.70%`
+- Explicit outcome coverage: `13.6981%`
+- Applicable protocol cells: `281`
 - Current complete protocol cells: `55`
-- Protocol completion: `31.19%`
-- Current protocol completion: `25.23%`
-- Evidence records: `2178`
-- Research runs: `18`
+- Protocol completion: `24.20%`
+- Current protocol completion: `19.57%`
+- Evidence records: `3136`
+- Research runs: `19`
 - Rejection records: `23`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,9 +45,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 46 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 46 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 46 | 0 |
+| Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 46 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 46 | 0 |
 | Giant Reed (`arundo-donax`) | plants | 0 | 46 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 46 | 0 |
+| Wild oat (`avena-fatua`) | plants | 0 | 46 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 46 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 46 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 46 | 0 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 46 | 0 |
 | Field mustard (`brassica-rapa`) | plants | 0 | 46 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 46 | 0 |
-| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 46 | 0 |
-| Marijuana (`cannabis-sativa`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 467 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 1342 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 2300 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-09T13:04:30.250Z | 28 | 33 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

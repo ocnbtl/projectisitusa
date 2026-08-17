@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `2530`
+- Verified present: `3301`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `19036`
-- Not researched: `183762`
-- Determination coverage: `1.23%`
-- Research coverage: `10.50%`
-- Explicit outcome coverage: `10.5032%`
-- Applicable protocol cells: `214`
+- Researched unresolved: `24825`
+- Not researched: `177202`
+- Determination coverage: `1.61%`
+- Research coverage: `13.70%`
+- Explicit outcome coverage: `13.6981%`
+- Applicable protocol cells: `280`
 - Current complete protocol cells: `96`
-- Protocol completion: `50.93%`
-- Current protocol completion: `44.86%`
-- Evidence records: `4489`
-- Research runs: `15`
+- Protocol completion: `38.93%`
+- Current protocol completion: `34.29%`
+- Evidence records: `5260`
+- Research runs: `16`
 - Rejection records: `592`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 82 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 82 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 82 | 0 |
+| Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 82 | 0 |
 | Giant Reed (`arundo-donax`) | plants | 0 | 82 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 82 | 0 |
 | Spear saltbush (`atriplex-patula`) | plants | 0 | 82 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 82 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 82 | 0 |
+| Wild oat (`avena-fatua`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 762 | 35 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 1000 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 1771 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-03T00:57:32.955Z | 663 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |

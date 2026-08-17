@@ -7,20 +7,20 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `419`
+- Verified present: `687`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `2201`
-- Not researched: `22420`
-- Determination coverage: `1.67%`
-- Research coverage: `10.46%`
-- Explicit outcome coverage: `10.4633%`
-- Applicable protocol cells: `147`
+- Researched unresolved: `2733`
+- Not researched: `21620`
+- Determination coverage: `2.74%`
+- Research coverage: `13.66%`
+- Explicit outcome coverage: `13.6581%`
+- Applicable protocol cells: `194`
 - Current complete protocol cells: `56`
-- Protocol completion: `46.94%`
-- Current protocol completion: `38.10%`
-- Evidence records: `419`
-- Research runs: `23`
+- Protocol completion: `35.57%`
+- Current protocol completion: `28.87%`
+- Evidence records: `687`
+- Research runs: `24`
 - Rejection records: `17`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,20 +43,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 10 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 10 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 10 | 0 |
+| Calamus (`acorus-calamus`) | plants | 0 | 10 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 10 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 10 | 0 |
 | Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 10 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 10 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 10 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 10 | 0 |
+| Crow Garlic (`allium-vineale`) | plants | 0 | 10 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 10 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 10 | 0 |
 | Purple amaranth (`amaranthus-blitum`) | plants | 0 | 10 | 0 |
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 10 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 10 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 10 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 10 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 10 | 0 |
 
 ## Source Operations
 
@@ -79,7 +79,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 39 | 33 |
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
-| USDA NRCS PLANTS county distribution | operational | 2026-08-17T01:06:23.740Z | 287 | 160 |
+| USDA NRCS PLANTS county distribution | operational | 2026-08-17T03:22:44.675Z | 555 | 240 |
 | GBIF preserved specimen records | operational | 2026-08-09T21:36:37.623Z | 0 | 34 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
