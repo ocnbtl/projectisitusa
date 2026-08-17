@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "81193b6c5683030d5354a641a47652bf45e18e88",
   "acquiredAt": "2026-08-17T05:29:54.831Z",
-  "lastReverifiedAt": "2026-08-17T07:10:00.000Z",
-  "currentCheckpointSha": "d4af33aa163b6730c4da171cb79a6760fa4629ca",
-  "localHeadAtLastReverification": "d4af33aa163b6730c4da171cb79a6760fa4629ca",
-  "state": "active-round-67-content-ready-pending-external-release",
+  "lastReverifiedAt": "2026-08-17T08:17:59.329Z",
+  "currentCheckpointSha": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+  "localHeadAtLastReverification": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+  "state": "active-round-67-corrective-content-ready-pending-external-release",
   "ownershipEvidence": {
     "activeProjectTasks": [],
     "supersededOwnerTaskId": "national-round-66-20260817-main",
@@ -26,7 +26,18 @@
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
     "browserQa": "Round 67 local production-build QA passed at desktop 1440x1000 and mobile 390x844 on ZIP 21502, Allegany County MD, and Arthraxon hispidus. The new Small Carpgrass county record surfaced correctly, all application requests returned HTTP 200, and the only console errors and failed request were the expected localhost-only Vercel Insights script. Production must be console-clean before the external receipt.",
-    "liveVerification": "Canonical, fetched origin, public GitHub main, and GitHub Production deployment 5939360109 matched the Round 66 external-verification receipt SHA 81193b6c5683030d5354a641a47652bf45e18e88 at Round 67 startup. Round 67 content is complete locally but not yet pushed or deployed; this field does not attest the pending content commit.",
+      "liveVerification": "Canonical, origin, and public GitHub main reached Round 67 content SHA d19c4163583c85f4894a4605c5cf89f08f8eecc9, but its first Git-linked Vercel deployment failed during the optimized production build and one exact-content retry was canceled after bounded diagnosis. Production remains the independently verified Round 66 receipt SHA 81193b6c5683030d5354a641a47652bf45e18e88. The corrected Next.js 15.5.23 lock passes a clean install, typecheck, lint, and constrained local build, but is not yet committed or deployed; this field does not attest it.",
+      "round67DeploymentCorrection": {
+        "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+        "failedGitLinkedDeploymentId": "dpl_HxMcEyHvHqrqKiQh3xPsfUMjpNpW",
+        "failedGitStatusId": 52346366243,
+        "canceledDiagnosticRetryDeploymentId": "dpl_CwpD7zcYtB3qQsMoiueLy5c77y7a",
+        "canceledGitStatusId": 52348713795,
+        "previousLockedNextVersion": "15.5.15",
+        "correctedLockedNextVersion": "15.5.23",
+        "correctedLocalGates": "clean npm ci, typecheck, lint, and 6 GiB constrained 2,512-page build passed",
+        "externalReleaseStatus": "pending-corrective-content-commit-and-deployment"
+      },
     "githubDeploymentId": 5939360109,
     "githubDeploymentEnvironmentUrl": "https://projectisitusa-eft8cuexe-unigentamos.vercel.app",
     "resourceCapacity": {
@@ -52,17 +63,25 @@
       "orchestratorHash": "9f934116bc4f1ad80b3b61d805f4ad4c0070773ed3040c28e96098c74d888757",
       "workerHash": "52f13ef7e2574a6428701c0fcc9d0512e313fe639adf826888490ce5a38a6b8b"
     },
-    "vercelCliStatus": "not-installed-in-canonical-repository; prior configured external token invalid",
+      "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "usda-nrcs-plants",
-      "observedAt": "2026-08-17T07:10:00.000Z",
+        "observedAt": "2026-08-17T08:17:59.329Z",
       "status": "Round 67 completed the final 76 pure exact NRCS mappings. One stable acquire-once window retained 157 provider responses and 238,944 outcomes, then 51 deterministic partitions moved exactly 158,412 unique county-species pairs: 28,801 to verified-present and 129,611 to researched-unresolved. Pure exact NRCS remainder is now zero; eight mixed mappings remain excluded.",
       "gbifAuthenticatedDownloadStatus": "blocked-external-credentials-before-network",
       "preflightProcessException": false,
-      "qualification": "The GBIF national acquisition contract exists, but execution remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL; GBIF-specific Darwin Core county partition, reconciliation, and research integration are also unimplemented. Round 67 therefore completed the measured final pure NRCS fallback. Content gates pass locally, but deployment and external verification remain pending."
+        "qualification": "The GBIF national acquisition contract exists, but execution remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL; GBIF-specific Darwin Core county partition, reconciliation, and research integration are also unimplemented. Round 67 therefore completed the measured final pure NRCS fallback. The first content deployment failed and one bounded diagnostic retry was canceled; the exact Next.js 15.5.23 correction now passes local gates, but corrective deployment and external verification remain pending."
     }
   },
   "reverificationHistory": [
+    {
+      "observedAt": "2026-08-17T08:17:59.329Z",
+      "localHeadSha": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+      "originMainSha": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+      "githubMainSha": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+      "vercelProductionCommitSha": "81193b6c5683030d5354a641a47652bf45e18e88",
+      "reason": "Round 67 content commit d19c4163 reached canonical, origin, and public GitHub main, but its Git-linked Vercel deployment failed after dependency restoration at the lock-resolved Next.js 15.5.15 and one exact-content retry was canceled after bounded reproduction. MAIN did not claim a release or issue further blind retries. The manifest and lock are now pinned to Next.js 15.5.23; a clean lock install, typecheck, lint, and a 6 GiB constrained build of all 2,512 pages passed. This observation authorizes a corrective content commit but does not attest that commit or its future deployment."
+    },
     {
       "recordedAt": "2026-08-17T05:29:54.831Z",
       "supersededCheckpointSha": "2d463df8e046555dcce7f54682afaab4c7943e79",
@@ -633,8 +652,8 @@
     {
       "observedAt": "2026-08-17T07:10:00.000Z",
       "localHeadSha": "d4af33aa163b6730c4da171cb79a6760fa4629ca",
-      "originMainSha": "81193b6c5683030d5354a641a47652bf45e18e88",
-      "githubMainSha": "81193b6c5683030d5354a641a47652bf45e18e88",
+      "originMainSha": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+      "githubMainSha": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
       "vercelProductionCommitSha": "81193b6c5683030d5354a641a47652bf45e18e88",
       "reason": "Windows MAIN recorded the committed Round 67 source-selection checkpoint after completing the exact national acquisition, 51 deterministic partitions, explicit 2026-08-17 generation, full local integrity gates, production build, and responsive Allegany County changed-flow QA. External release evidence remains pinned to the independently verified Round 66 receipt release; this observation does not self-attest the pending Round 67 content commit or deployment."
     }

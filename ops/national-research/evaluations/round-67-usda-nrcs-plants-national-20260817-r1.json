@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "evaluationId": "round-67-usda-nrcs-plants-national-20260817-r1",
   "roundId": "usda-nrcs-plants-national-round67",
-  "evaluatedAt": "2026-08-17T07:10:00.000Z",
+  "evaluatedAt": "2026-08-17T08:17:59.329Z",
   "result": "complete-local-gates-passed-pending-external-release",
   "releaseThreshold": {
     "met": true,
@@ -557,8 +557,20 @@
     "build": {
       "status": "pass",
       "framework": "Next.js 15.5.23",
-      "compileSeconds": 19.3,
-      "staticPages": 2512
+      "compileSeconds": 24.2,
+      "staticPages": 2512,
+      "dependencyLockReproduction": {
+        "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
+        "previousManifestConstraint": "^15.5.6",
+        "previousLockedFramework": "Next.js 15.5.15",
+        "providerFailure": "Git-linked production deployment stalled after entering the optimized production build and reached terminal failure.",
+        "boundedRetry": "One exact-content retry reproduced the same provider stage and was canceled after local locked-version diagnosis; it was not treated as a release success.",
+        "localPreviousLockResult": "An exact Next.js 15.5.15 reproduction compiled but failed while prerendering /404 with a React child object error.",
+        "correctedManifestConstraint": "15.5.23",
+        "correctedLockedFramework": "Next.js 15.5.23",
+        "cleanInstall": "npm ci --ignore-scripts completed from the corrected lock with manifest, lock, and installed Next.js all exactly 15.5.23.",
+        "correctedConstrainedBuild": "pass under a 6 GiB Node heap cap; compiled in 24.2 seconds and generated 2,512 static pages"
+      }
     },
     "browserQa": {
       "local": {
@@ -609,7 +621,10 @@
     "mainProcessCorrections": [
       "The first no-argument disk-budget invocation used dispatch preflight defaults and correctly rejected zero workers. MAIN reran the intended national-network postflight mode with zero workers; it passed green.",
       "The inherited remaining-scope forecast was 375 pairs low. Independent generated-summary and county-shard rescoring corrected the selection ceiling before acquisition, and actual movement matched 158,412 exactly.",
-      "The localhost-only Vercel Insights 404 and MIME errors were isolated from application requests; production must still be console-clean before the receipt."
+      "The localhost-only Vercel Insights 404 and MIME errors were isolated from application requests; production must still be console-clean before the receipt.",
+      "The first Git-linked deployment of content commit d19c4163583c85f4894a4605c5cf89f08f8eecc9 failed after Vercel restored dependencies at the lock-resolved Next.js 15.5.15 and entered the optimized production build. No production release was claimed.",
+      "MAIN allowed one exact-content, cache-skipped retry only to distinguish transient infrastructure from reproducible content. It reached the same build stage and was canceled after the locked-version failure was reproduced locally; no further blind retry was issued.",
+      "The manifest range and lock are now pinned exactly to the locally verified Next.js 15.5.23. A clean lock install, typecheck, lint, and a 6 GiB constrained 2,512-page production build passed before this corrective content commit."
     ]
   },
   "recentRoundComparison": [
