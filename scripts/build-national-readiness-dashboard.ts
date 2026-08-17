@@ -59,6 +59,13 @@ type ReleaseVerificationFile = {
     state: "READY" | "ERROR" | "CANCELED";
     routeChecks: Array<{ path: string; status: number }>;
     evidenceScope: string;
+    resourceCapacity?: {
+      availableDiskBytes: number;
+      availableMemoryPercent: number;
+      maximumSafeWorkersAtRecordedCapacity: number;
+      observedAt: string | null;
+      qualification: string;
+    };
   }>;
 };
 type HistoricalNationalPilotEvaluation = {
@@ -516,11 +523,15 @@ const dashboard = {
       nationalSourceEvaluation?.workerCanaries.manualInterventions ?? 0,
     nationalPilotProcessFailures: nationalSourceEvaluation?.workerCanaries.failed ?? 0,
     currentEvaluationRecordedFreeDiskMiB:
-      nationalSourceEvaluation
+      latestVerifiedRelease?.resourceCapacity
+        ? round(latestVerifiedRelease.resourceCapacity.availableDiskBytes / 1_048_576, 1)
+        : nationalSourceEvaluation
         ? round(nationalSourceEvaluation.disk.lowestRecordedAvailableBytes / 1_048_576, 1)
         : null,
     maximumSafeWorkersAtRecordedCapacity:
-      nationalSourceEvaluation?.disk.maximumSafeWorkersAtRecordedCapacity ?? 0,
+      latestVerifiedRelease?.resourceCapacity?.maximumSafeWorkersAtRecordedCapacity ??
+      nationalSourceEvaluation?.disk.maximumSafeWorkersAtRecordedCapacity ??
+      0,
     historicalMinimumObservedFreeDiskMiB:
       historicalNationalPilotEvaluation?.interventions.minimumObservedFreeDiskMiB ?? null,
   },
