@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 1,
+  "planId": "usda-nrcs-plants-national-v1-tranche-06",
+  "sourceId": "usda-nrcs-plants",
+  "snapshotDate": "2026-08-17",
+  "profileBaseUrl": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile",
+  "distributionUrl": "https://plantsservices.sc.egov.usda.gov/api/PlantProfile/getDownloadDistributionDocumentation",
+  "mapServerUrl": "https://apps.geo.fpac.usda.gov/nrcs-geodata/rest/services/land_use_land_cover/plants/MapServer",
+  "artifactBudgetBytes": 104857600,
+  "maxAttempts": 3,
+  "nationalV1StateCodes": [
+    "AK",
+    "AL",
+    "AR",
+    "AZ",
+    "CA",
+    "CO",
+    "CT",
+    "DC",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "IA",
+    "ID",
+    "IL",
+    "IN",
+    "KS",
+    "KY",
+    "LA",
+    "MA",
+    "MD",
+    "ME",
+    "MI",
+    "MN",
+    "MO",
+    "MS",
+    "MT",
+    "NC",
+    "ND",
+    "NE",
+    "NH",
+    "NJ",
+    "NM",
+    "NV",
+    "NY",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VA",
+    "VT",
+    "WA",
+    "WI",
+    "WV",
+    "WY"
+  ],
+  "taxonMappings": [
+    {
+      "plantMasterId": 47457,
+      "symbol": "PLLA",
+      "speciesId": "plantago-lanceolata",
+      "scientificName": "Plantago lanceolata"
+    },
+    {
+      "plantMasterId": 31920,
+      "symbol": "ANCO2",
+      "speciesId": "anthemis-cotula",
+      "scientificName": "Anthemis cotula"
+    },
+    {
+      "plantMasterId": 86094,
+      "symbol": "LUGR9",
+      "speciesId": "ludwigia-grandiflora",
+      "scientificName": "Ludwigia grandiflora"
+    },
+    {
+      "plantMasterId": 33083,
+      "symbol": "CAPY2",
+      "speciesId": "carduus-pycnocephalus",
+      "scientificName": "Carduus pycnocephalus"
+    },
+    {
+      "plantMasterId": 71658,
+      "symbol": "NENU2",
+      "speciesId": "nelumbo-nucifera",
+      "scientificName": "Nelumbo nucifera"
+    },
+    {
+      "plantMasterId": 20548,
+      "symbol": "ARHI3",
+      "speciesId": "arthraxon-hispidus",
+      "scientificName": "Arthraxon hispidus"
+    },
+    {
+      "plantMasterId": 42750,
+      "symbol": "LOFR",
+      "speciesId": "lonicera-fragrantissima",
+      "scientificName": "Lonicera fragrantissima"
+    },
+    {
+      "plantMasterId": 65829,
+      "symbol": "ABTH",
+      "speciesId": "abutilon-theophrasti",
+      "scientificName": "Abutilon theophrasti"
+    },
+    {
+      "plantMasterId": 81248,
+      "symbol": "MEOF",
+      "speciesId": "melilotus-officinalis",
+      "scientificName": "Melilotus officinalis"
+    },
+    {
+      "plantMasterId": 49829,
+      "symbol": "LISI",
+      "speciesId": "ligustrum-sinense",
+      "scientificName": "Ligustrum sinense"
+    },
+    {
+      "plantMasterId": 61623,
+      "symbol": "RUAC3",
+      "speciesId": "rumex-acetosella",
+      "scientificName": "Rumex acetosella"
+    },
+    {
+      "plantMasterId": 24211,
+      "symbol": "ORSA",
+      "speciesId": "oryza-sativa",
+      "scientificName": "Oryza sativa"
+    },
+    {
+      "plantMasterId": 70882,
+      "symbol": "MOAL",
+      "speciesId": "morus-alba",
+      "scientificName": "Morus alba"
+    },
+    {
+      "plantMasterId": 70756,
+      "symbol": "HUJA",
+      "speciesId": "humulus-japonicus",
+      "scientificName": "Humulus japonicus"
+    },
+    {
+      "plantMasterId": 57167,
+      "symbol": "AGGI",
+      "speciesId": "agrostemma-githago",
+      "scientificName": "Agrostemma githago"
+    },
+    {
+      "plantMasterId": 93681,
+      "symbol": "CAHA13",
+      "speciesId": "cardiospermum-halicacabum",
+      "scientificName": "Cardiospermum halicacabum"
+    },
+    {
+      "plantMasterId": 23830,
+      "symbol": "LOTE2",
+      "speciesId": "lolium-temulentum",
+      "scientificName": "Lolium temulentum"
+    },
+    {
+      "plantMasterId": 13464,
+      "symbol": "CYFA2",
+      "speciesId": "cyrtomium-falcatum",
+      "scientificName": "Cyrtomium falcatum"
+    },
+    {
+      "plantMasterId": 90723,
+      "symbol": "PYCO2",
+      "speciesId": "pyracantha-coccinea",
+      "scientificName": "Pyracantha coccinea"
+    },
+    {
+      "plantMasterId": 63602,
+      "symbol": "NAOF",
+      "speciesId": "nasturtium-officinale",
+      "scientificName": "Nasturtium officinale"
+    },
+    {
+      "plantMasterId": 31952,
+      "symbol": "ARMI2",
+      "speciesId": "arctium-minus",
+      "scientificName": "Arctium minus"
+    },
+    {
+      "plantMasterId": 20864,
+      "symbol": "BRAR5",
+      "speciesId": "bromus-arvensis",
+      "scientificName": "Bromus arvensis"
+    },
+    {
+      "plantMasterId": 33521,
+      "symbol": "CIIN",
+      "speciesId": "cichorium-intybus",
+      "scientificName": "Cichorium intybus"
+    },
+    {
+      "plantMasterId": 82798,
+      "symbol": "TRAR4",
+      "speciesId": "trifolium-arvense",
+      "scientificName": "Trifolium arvense"
+    },
+    {
+      "plantMasterId": 82047,
+      "symbol": "PUMO",
+      "speciesId": "pueraria-montana",
+      "scientificName": "Pueraria montana"
+    },
+    {
+      "plantMasterId": 18803,
+      "symbol": "CYRO",
+      "speciesId": "cyperus-rotundus",
+      "scientificName": "Cyperus rotundus"
+    },
+    {
+      "plantMasterId": 51144,
+      "symbol": "LIVU2",
+      "speciesId": "linaria-vulgaris",
+      "scientificName": "Linaria vulgaris"
+    },
+    {
+      "plantMasterId": 29504,
+      "symbol": "EICR",
+      "speciesId": "eichhornia-crassipes",
+      "scientificName": "Eichhornia crassipes"
+    },
+    {
+      "plantMasterId": 21078,
+      "symbol": "BRTE",
+      "speciesId": "bromus-tectorum",
+      "scientificName": "Bromus tectorum"
+    },
+    {
+      "plantMasterId": 33157,
+      "symbol": "CECA2",
+      "speciesId": "centaurea-calcitrapa",
+      "scientificName": "Centaurea calcitrapa"
+    },
+    {
+      "plantMasterId": 33173,
+      "symbol": "CEME2",
+      "speciesId": "centaurea-melitensis",
+      "scientificName": "Centaurea melitensis"
+    },
+    {
+      "plantMasterId": 44897,
+      "symbol": "CYOF",
+      "speciesId": "cynoglossum-officinale",
+      "scientificName": "Cynoglossum officinale"
+    },
+    {
+      "plantMasterId": 55699,
+      "symbol": "ALPH",
+      "speciesId": "alternanthera-philoxeroides",
+      "scientificName": "Alternanthera philoxeroides"
+    },
+    {
+      "plantMasterId": 63923,
+      "symbol": "ROSY",
+      "speciesId": "rorippa-sylvestris",
+      "scientificName": "Rorippa sylvestris"
+    },
+    {
+      "plantMasterId": 15874,
+      "symbol": "EGDE",
+      "speciesId": "egeria-densa",
+      "scientificName": "Egeria densa"
+    },
+    {
+      "plantMasterId": 21453,
+      "symbol": "CYDA",
+      "speciesId": "cynodon-dactylon",
+      "scientificName": "Cynodon dactylon"
+    },
+    {
+      "plantMasterId": 73869,
+      "symbol": "COMA2",
+      "speciesId": "conium-maculatum",
+      "scientificName": "Conium maculatum"
+    },
+    {
+      "plantMasterId": 52833,
+      "symbol": "COAR4",
+      "speciesId": "convolvulus-arvensis",
+      "scientificName": "Convolvulus arvensis"
+    },
+    {
+      "plantMasterId": 25744,
+      "symbol": "SOHA",
+      "speciesId": "sorghum-halepense",
+      "scientificName": "Sorghum halepense"
+    },
+    {
+      "plantMasterId": 16029,
+      "symbol": "NAMI",
+      "speciesId": "najas-minor",
+      "scientificName": "Najas minor"
+    },
+    {
+      "plantMasterId": 27568,
+      "symbol": "IRPS",
+      "speciesId": "iris-pseudacorus",
+      "scientificName": "Iris pseudacorus"
+    },
+    {
+      "plantMasterId": 84072,
+      "symbol": "MYAQ2",
+      "speciesId": "myriophyllum-aquaticum",
+      "scientificName": "Myriophyllum aquaticum"
+    },
+    {
+      "plantMasterId": 70800,
+      "symbol": "BRPA4",
+      "speciesId": "broussonetia-papyrifera",
+      "scientificName": "Broussonetia papyrifera"
+    },
+    {
+      "plantMasterId": 71357,
+      "symbol": "CICA",
+      "speciesId": "cinnamomum-camphora",
+      "scientificName": "Cinnamomum camphora"
+    },
+    {
+      "plantMasterId": 22749,
+      "symbol": "ERCU2",
+      "speciesId": "eragrostis-curvula",
+      "scientificName": "Eragrostis curvula"
+    },
+    {
+      "plantMasterId": 66592,
+      "symbol": "FISI2",
+      "speciesId": "firmiana-simplex",
+      "scientificName": "Firmiana simplex"
+    },
+    {
+      "plantMasterId": 82048,
+      "symbol": "PUMOL",
+      "speciesId": "kudzu",
+      "scientificName": "Pueraria montana var. lobata"
+    },
+    {
+      "plantMasterId": 14153,
+      "symbol": "LYJA",
+      "speciesId": "lygodium-japonicum",
+      "scientificName": "Lygodium japonicum"
+    },
+    {
+      "plantMasterId": 25394,
+      "symbol": "SCAR7",
+      "speciesId": "schedonorus-arundinaceus",
+      "scientificName": "Schedonorus arundinaceus"
+    },
+    {
+      "plantMasterId": 82205,
+      "symbol": "SEVA4",
+      "speciesId": "securigera-varia",
+      "scientificName": "Securigera varia"
+    },
+    {
+      "plantMasterId": 76581,
+      "symbol": "VEFO",
+      "speciesId": "vernicia-fordii",
+      "scientificName": "Vernicia fordii"
+    },
+    {
+      "plantMasterId": 72385,
+      "symbol": "NADO",
+      "speciesId": "nandina-domestica",
+      "scientificName": "Nandina domestica"
+    },
+    {
+      "plantMasterId": 49821,
+      "symbol": "LIJA",
+      "speciesId": "ligustrum-japonicum",
+      "scientificName": "Ligustrum japonicum"
+    },
+    {
+      "plantMasterId": 49834,
+      "symbol": "LIVU",
+      "speciesId": "ligustrum-vulgare",
+      "scientificName": "Ligustrum vulgare"
+    },
+    {
+      "plantMasterId": 86999,
+      "symbol": "ELUM",
+      "speciesId": "elaeagnus-umbellata",
+      "scientificName": "Elaeagnus umbellata"
+    },
+    {
+      "plantMasterId": 90867,
+      "symbol": "ROMU",
+      "speciesId": "rosa-multiflora",
+      "scientificName": "Rosa multiflora"
+    },
+    {
+      "plantMasterId": 86998,
+      "symbol": "ELPU2",
+      "speciesId": "elaeagnus-pungens",
+      "scientificName": "Elaeagnus pungens"
+    },
+    {
+      "plantMasterId": 75032,
+      "symbol": "EUFO5",
+      "speciesId": "euonymus-fortunei",
+      "scientificName": "Euonymus fortunei"
+    },
+    {
+      "plantMasterId": 74732,
+      "symbol": "HEHE",
+      "speciesId": "hedera-helix",
+      "scientificName": "Hedera helix"
+    },
+    {
+      "plantMasterId": 90730,
+      "symbol": "PYCA80",
+      "speciesId": "pyrus-calleryana",
+      "scientificName": "Pyrus calleryana"
+    },
+    {
+      "plantMasterId": 79852,
+      "symbol": "LECU",
+      "speciesId": "lespedeza-cuneata",
+      "scientificName": "Lespedeza cuneata"
+    },
+    {
+      "plantMasterId": 16057,
+      "symbol": "POCR3",
+      "speciesId": "potamogeton-crispus",
+      "scientificName": "Potamogeton crispus"
+    },
+    {
+      "plantMasterId": 20580,
+      "symbol": "ARDO4",
+      "speciesId": "arundo-donax",
+      "scientificName": "Arundo donax"
+    },
+    {
+      "plantMasterId": 84097,
+      "symbol": "MYSP2",
+      "speciesId": "myriophyllum-spicatum",
+      "scientificName": "Myriophyllum spicatum"
+    },
+    {
+      "plantMasterId": 33818,
+      "symbol": "CIVU",
+      "speciesId": "cirsium-vulgare",
+      "scientificName": "Cirsium vulgare"
+    },
+    {
+      "plantMasterId": 84414,
+      "symbol": "LYSA2",
+      "speciesId": "lythrum-salicaria",
+      "scientificName": "Lythrum salicaria"
+    },
+    {
+      "plantMasterId": 42770,
+      "symbol": "LOJA",
+      "speciesId": "lonicera-japonica",
+      "scientificName": "Lonicera japonica"
+    },
+    {
+      "plantMasterId": 23945,
+      "symbol": "MIVI",
+      "speciesId": "microstegium-vimineum",
+      "scientificName": "Microstegium vimineum"
+    },
+    {
+      "plantMasterId": 76842,
+      "symbol": "ALJU",
+      "speciesId": "albizia-julibrissin",
+      "scientificName": "Albizia julibrissin"
+    },
+    {
+      "plantMasterId": 93199,
+      "symbol": "MEAZ",
+      "speciesId": "melia-azedarach",
+      "scientificName": "Melia azedarach"
+    },
+    {
+      "plantMasterId": 51620,
+      "symbol": "PATO2",
+      "speciesId": "paulownia-tomentosa",
+      "scientificName": "Paulownia tomentosa"
+    },
+    {
+      "plantMasterId": 76575,
+      "symbol": "TRSE6",
+      "speciesId": "triadica-sebifera",
+      "scientificName": "Triadica sebifera"
+    },
+    {
+      "plantMasterId": 93819,
+      "symbol": "AIAL",
+      "speciesId": "tree-of-heaven",
+      "scientificName": "Ailanthus altissima"
+    },
+    {
+      "plantMasterId": 15920,
+      "symbol": "HYVE3",
+      "speciesId": "hydrilla",
+      "scientificName": "Hydrilla verticillata"
+    },
+    {
+      "plantMasterId": 23496,
+      "symbol": "IMCY",
+      "speciesId": "imperata-cylindrica",
+      "scientificName": "Imperata cylindrica"
+    },
+    {
+      "plantMasterId": 55523,
+      "symbol": "SOTO4",
+      "speciesId": "solanum-torvum",
+      "scientificName": "Solanum torvum"
+    }
+  ],
+  "allowedEstablishmentMeans": [
+    "Introduced",
+    "Both"
+  ],
+  "expectedGrossPairs": 238944,
+  "expectedNetNewPairsAtBaseline": 158412,
+  "expectedAlreadyResearchedAtBaseline": 80532,
+  "baselineGeneratedAsOf": "2026-08-17",
+  "baselineCommit": "81193b6c5683030d5354a641a47652bf45e18e88",
+  "selectionEvidencePath": "ops/national-research/evaluations/round-67-usda-nrcs-plants-portfolio-selection-20260817-r1.json"
+}

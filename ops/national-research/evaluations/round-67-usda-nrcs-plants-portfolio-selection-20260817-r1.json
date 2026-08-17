@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-67-usda-nrcs-plants-portfolio-selection-20260817-r1",
+  "roundId": "national-round-67",
+  "evaluatedAt": "2026-08-17T05:36:10.208Z",
+  "result": "selected-after-gbif-external-blocker-and-exact-nrcs-remainder-reconciliation",
+  "baseline": {
+    "commit": "81193b6c5683030d5354a641a47652bf45e18e88",
+    "generatedAsOf": "2026-08-17",
+    "countySpeciesDenominator": 7872576,
+    "verifiedPresent": 159302,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 1034270,
+    "notResearched": 6678996,
+    "stateSpeciesDenominator": 127704,
+    "applicable": 10830,
+    "notApplicable": 0,
+    "unknownApplicability": 116874,
+    "derivedApplicable": 7404,
+    "researchedUnresolvedStateDecisions": 8528,
+    "researchedBlockedStateDecisions": 53,
+    "notResearchedStateDecisions": 108293
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "sourceId": "gbif-preserved-specimens",
+      "acquisitionShape": "one authenticated provider-native US Darwin Core download for exact retained taxon mappings followed by offline 51-jurisdiction partitioning",
+      "technicalContractStatus": "acquisition-contract-pass",
+      "executionStatus": "blocked-external-credentials-and-unimplemented-gbif-partition",
+      "missingCredentialEnvironment": [
+        "GBIF_EMAIL",
+        "GBIF_PASSWORD",
+        "GBIF_USERNAME"
+      ],
+      "networkRequestsIssued": 0,
+      "partitionImplemented": false,
+      "currentPlanTaxonCount": 53,
+      "grossPairsCeiling": 166632,
+      "currentNotResearchedCeiling": 42370,
+      "alreadyAccountedOverlap": 124262,
+      "officialDocumentation": [
+        "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+        "https://techdocs.gbif.org/en/data-use/api-downloads"
+      ],
+      "status": "not-executable"
+    },
+    {
+      "rank": 2,
+      "sourceId": "usda-nrcs-plants",
+      "acquisitionShape": "76 complete provider-native taxon-bounded national distribution CSV responses with exact state and county FIPS, guarded by exact profiles and before and after status fingerprints",
+      "grossPairs": 238944,
+      "expectedNetNewPairs": 158412,
+      "historicalBlockedResearchFlagSubset": 375,
+      "alreadyResearchedOverlap": 80532,
+      "expectedProviderRequests": 157,
+      "expectedNetPairsPerProviderRequest": 1008.993631,
+      "providerRateLimitRequestsPerSecond": 1,
+      "providerAttemptStartIntervalMilliseconds": 1000,
+      "minimumProviderStartSpanSeconds": 156,
+      "nationalReuse": true,
+      "status": "selected"
+    },
+    {
+      "rank": 3,
+      "sourceId": "usgs-nas",
+      "acquisitionShape": "offline reuse of the retained hash-pinned national archive for newly discovered exact state-species screens",
+      "status": "not-selected",
+      "blocker": "The 244 existing planned screens and 15242 scoped pairs are already accounted; no evidence-backed 25000-pair net-new tranche was identified."
+    },
+    {
+      "rank": 4,
+      "sourceId": "usfs-afpe-v1-0",
+      "acquisitionShape": "current versioned national replacement for the stale retained archive",
+      "status": "blocked",
+      "blocker": "No newer hash-pinned official archive is retained; the existing 611 stale protocol cells remain freshness work rather than net-new county movement."
+    },
+    {
+      "rank": 5,
+      "sourceId": "inaturalist",
+      "acquisitionShape": "national county evidence acquisition",
+      "status": "not-executable",
+      "blocker": "Only the legacy Alabama point importer exists; there is no national research adapter, immutable national receipt, checkpoint contract, or national integrity replay."
+    }
+  ],
+  "selectedScope": {
+    "planId": "usda-nrcs-plants-national-v1-tranche-06",
+    "planPath": "src/data/research/national-acquisition-plans/usda-nrcs-plants-national-v1-tranche-06.json",
+    "selectionRule": "Exhaust all 76 unconsumed pure exact PLANTS mappings after tranches 01 through 05, excluding eight provider-status mappings that mix Native with Introduced or Both. Order by current not-researched count descending, then speciesId ascending.",
+    "selectionOrderedKeySha256": "22905a1aeeba6623ebd74d23c88b2fcf6dbb3436ceb7e74a1ea566b082e47311",
+    "stateCount": 51,
+    "activeCountyEquivalentCount": 3144,
+    "taxonCount": 76,
+    "grossOrderedPairs": 238944,
+    "baselineNotResearchedPairs": 158412,
+    "historicalBlockedResearchFlagSubset": 375,
+    "researchedUnresolvedPairsAtBaseline": 59924,
+    "verifiedPresentPairsAtBaseline": 20608,
+    "expectedAlreadyAccountedOverlap": 80532,
+    "expectedProviderRequests": {
+      "contractSnapshots": 3,
+      "sourceStatusFingerprints": 2,
+      "profileResponses": 76,
+      "distributionResponses": 76,
+      "total": 157
+    },
+    "remainingPureMappingCountBeforeSelection": 76,
+    "remainingPureMappingNotResearchedPairsBeforeSelection": 158412,
+    "remainingPureMappingCountAfterSelection": 0,
+    "remainingPureMappingNotResearchedPairsAfterSelection": 0,
+    "mixedStatusMasterIdsExcluded": [
+      14349,
+      14698,
+      18574,
+      18666,
+      19209,
+      24343,
+      51151,
+      87413
+    ],
+    "positiveYieldForecast": "Unbounded within the exact 158412 current not-researched scope. The 59924 already researched-unresolved pairs may additionally move to verified present but are not counted as net-new research. The 375 not-researched cells that also carry a historical blocked research flag are separately disclosed and final movement will be measured from the regenerated matrix."
+  },
+  "forecastCorrection": {
+    "firstAffectedRound": "national-round-62",
+    "durableRound66EvaluationPath": "ops/national-research/evaluations/round-66-usda-nrcs-plants-portfolio-selection-20260817-r1.json",
+    "reportedRemainingNotResearchedPairs": 158037,
+    "currentNotResearchedPairs": 158412,
+    "understatement": 375,
+    "currentMatrixSplit": {
+      "notResearched": 158412,
+      "researchedUnresolved": 59924,
+      "verifiedPresent": 20608
+    },
+    "qualification": "The inherited remaining-scope aggregation was exactly 375 low after each tranche from Round 62 through Round 66. Completed tranche movement was measured independently and remains unchanged. The 375 cells are present in the durable county matrix as not-researched and also carry a historical blocked research flag; Round 67 records both facts and will measure final movement rather than presupposing closure."
+  },
+  "acquisitionUnitDecision": {
+    "priorProvenTaxonCount": 80,
+    "selectedTaxonCount": 76,
+    "expectedContractRequests": 157,
+    "reason": "One independently receipt-bound 76-taxon acquisition exhausts the remaining pure exact mapping portfolio while amortizing fixed contract and source-status requests and preserving one generation, gate, and release cycle.",
+    "provenSafetyEnvelope": [
+      "schema cardinalities support 100 taxa and 205 artifacts",
+      "state parameter cardinality supports 30000 pairs",
+      "the 76-taxon Texas maximum is 19304 pairs",
+      "registered one-request-per-second provider start limiting includes retries",
+      "changed before and after status windows are restart-required",
+      "same-acquisition resume refuses retained non-retryable partial receipts"
+    ]
+  },
+  "gbifImplementationBoundary": {
+    "acquisitionActor": "scripts/research/run-national-gbif-download.ts",
+    "currentPlan": "src/data/research/national-acquisition-plans/gbif-national-download-v1-retained-r55.json",
+    "credentialPresence": {
+      "GBIF_USERNAME": false,
+      "GBIF_PASSWORD": false,
+      "GBIF_EMAIL": false
+    },
+    "implemented": "Authenticated request creation, polling, streaming archive retention, hashing, redaction, and acquisition receipt.",
+    "notImplemented": "GBIF-specific Darwin Core meta.xml field validation, original and interpreted table parsing, exact state and county partition, 51-jurisdiction reconciliation, partition receipt, and research run integration.",
+    "reusablePrecedent": [
+      "scripts/research/zip-tools.ts",
+      "scripts/research/national-usgs-nas-common.ts",
+      "scripts/research/partition-national-usgs-nas-acquisition.ts"
+    ],
+    "qualification": "Credentials alone could retain an immutable archive but could not create county research movement. Unauthenticated occurrence paging is not substituted because national completeness is not proven."
+  },
+  "reuse": {
+    "taxonomyMappings": "324 exact legacy PLANTS symbol, master-ID, and scientific-name mappings are committed in generated catalog source descriptors; tranches 01 through 05 consumed 240 and eight mixed-status mappings remain excluded.",
+    "actor": "The acquire-once actor, exact-FIPS replay model, immutable receipt schemas, 51-state deterministic partition, rate limiter, and restart semantics were proven by the 80-taxon Round 66 acquisition.",
+    "priorAcquisitionArtifacts": 0,
+    "qualification": "Earlier provider bytes are taxon-specific and cannot answer tranche-06 profiles or distributions. Shared contract behavior is reused, but all 76 selected taxon responses must be newly acquired."
+  },
+  "semanticAttestation": {
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "usesCoordinates": false,
+    "usesMapServerCrossLayerIdJoin": false,
+    "treatsStateOnlyRowsAsCountyEvidence": false,
+    "preservesApplicabilitySeparately": true,
+    "preservesDenominatorSeparately": true,
+    "reportsGrossAsNet": false,
+    "reportsBlockedResearchFlagSeparately": true
+  },
+  "acceptanceCriteria": {
+    "semanticDryRunNetworkRequests": 0,
+    "expectedProviderRequests": 157,
+    "expectedNationalPartitions": 51,
+    "minimumNetNewCountySpeciesMovement": 25000,
+    "stretchNetNewCountySpeciesMovement": 100000,
+    "forecastNetNewCountySpeciesMovement": 158412,
+    "maximumArtifactBytes": 104857600,
+    "allowedNegativeClaimsFromSilence": 0,
+    "allowedUnresolvedConflicts": 0,
+    "requiredReleaseGates": [
+      "immutable acquisition and run verification",
+      "prepare-data plan and deterministic generation",
+      "data integrity",
+      "research integrity",
+      "state research projections",
+      "national readiness",
+      "typecheck",
+      "lint",
+      "production build",
+      "local desktop and mobile browser QA",
+      "exact content-SHA GitHub deployment verification",
+      "canonical and immutable production HTTP and browser verification"
+    ]
+  }
+}
