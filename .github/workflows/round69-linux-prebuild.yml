@@ -2,6 +2,9 @@ name: Round 69 Linux prebuild
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - codex/round69-linux-prebuild
 
 permissions:
   contents: read
