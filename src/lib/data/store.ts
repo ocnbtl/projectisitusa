@@ -1,43 +1,21 @@
-import counties from "@/data/generated/counties.json";
 import presence from "@/data/generated/presence.json";
-import snapshot from "@/data/generated/snapshot.json";
-import species from "@/data/generated/species.json";
+import { countyIndex } from "@/lib/data/county-store";
+import { allSpecies, speciesById } from "@/lib/data/species-store";
 import type {
   CountyPresence,
-  CountyRecord,
   Species,
   SpeciesFilters,
 } from "@/lib/data/types";
 
-export const allSpecies = species as Species[];
-export const speciesById = new Map(allSpecies.map((item) => [item.id, item]));
-export const speciesSlugAliases = new Map<string, string>([
-  ["euphorbia-esula", "euphorbia-virgata"],
-]);
-export const speciesBySlug = new Map(
-  [
-    ...allSpecies.map((item) => [item.slug, item] as const),
-    ...[...speciesSlugAliases.entries()]
-      .map(([alias, canonicalSlug]) => {
-        const canonical = allSpecies.find((item) => item.slug === canonicalSlug);
-        return canonical ? ([alias, canonical] as const) : null;
-      })
-      .filter((entry): entry is readonly [string, Species] => Boolean(entry)),
-  ],
-);
-
-export const countyIndex = counties as unknown as Record<string, CountyRecord>;
 export const presenceIndex = presence as unknown as Record<string, CountyPresence>;
-export const datasetSnapshot = snapshot as {
-  snapshotDate: string;
-  sourceRefs: string[];
-  coverageSummary?: {
-    catalogSpeciesCount: number;
-    mappedSpeciesCount: number;
-    unmatchedSpeciesCount: number;
-    sourceSpeciesCounts: Partial<Record<string, number>>;
-  };
-};
+export { countyIndex } from "@/lib/data/county-store";
+export { datasetSnapshot } from "@/lib/data/snapshot-store";
+export {
+  allSpecies,
+  speciesById,
+  speciesBySlug,
+  speciesSlugAliases,
+} from "@/lib/data/species-store";
 
 export function getCountyRecord(countyFips?: string | null) {
   if (!countyFips) return null;

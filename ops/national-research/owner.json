@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "81193b6c5683030d5354a641a47652bf45e18e88",
   "acquiredAt": "2026-08-17T05:29:54.831Z",
-  "lastReverifiedAt": "2026-08-17T09:10:20.416Z",
-  "currentCheckpointSha": "8b67a7965a4be424690a93571daaf31e1fc4d538",
-  "localHeadAtLastReverification": "8b67a7965a4be424690a93571daaf31e1fc4d538",
-  "state": "active-round-67-memory-optimized-content-ready-pending-external-release",
+  "lastReverifiedAt": "2026-08-17T10:03:16.097Z",
+  "currentCheckpointSha": "bfe11a541d127015c0d95e5100e82a7a56b23e13",
+  "localHeadAtLastReverification": "bfe11a541d127015c0d95e5100e82a7a56b23e13",
+  "state": "active-round-67-targeted-build-correction-ready-pending-external-release",
   "ownershipEvidence": {
     "activeProjectTasks": [],
     "supersededOwnerTaskId": "national-round-66-20260817-main",
@@ -26,7 +26,7 @@
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
     "browserQa": "Round 67 local production-build QA passed at desktop 1440x1000 and mobile 390x844 on ZIP 21502, Allegany County MD, and Arthraxon hispidus. The new Small Carpgrass county record surfaced correctly, all application requests returned HTTP 200, and the only console errors and failed request were the expected localhost-only Vercel Insights script. Production must be console-clean before the external receipt.",
-      "liveVerification": "Canonical, origin, and public GitHub main reached dependency-corrected Round 67 SHA 8b67a7965a4be424690a93571daaf31e1fc4d538, but its Vercel deployment installed Next.js 15.5.23 and then failed after about 45 minutes at the optimized production build without a compiler error line. Production remains the independently verified Round 66 receipt SHA 81193b6c5683030d5354a641a47652bf45e18e88. The official Next.js 15 Webpack memory optimization now passes a true cold 6 GiB local build, typecheck, and lint, but is not yet committed or deployed; this field does not attest it.",
+      "liveVerification": "Canonical, origin, and public GitHub main reached memory-optimized Round 67 SHA bfe11a541d127015c0d95e5100e82a7a56b23e13, but its Vercel deployment still failed after about 45 minutes at the optimized production build without a compiler error line. Production remains the independently verified Round 66 receipt SHA 81193b6c5683030d5354a641a47652bf45e18e88. A targeted store split now removes the 27,830,728-byte presence dataset from species, About, and ZIP server traces while preserving existing exports; a true cold 6 GiB build and targeted HTTP smokes pass, but the split is not yet committed or deployed; this field does not attest it.",
       "round67DeploymentCorrection": {
         "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
         "failedGitLinkedDeploymentId": "dpl_HxMcEyHvHqrqKiQh3xPsfUMjpNpW",
@@ -41,7 +41,12 @@
         "failedCorrectedDependencyAt": "2026-08-17T09:08:12.000Z",
         "failedCorrectedDependencyFinding": "Next.js 15.5.23 was installed and detected, but the provider stayed at optimized production build for about 45 minutes and failed without a compiler error line.",
         "memoryOptimization": "experimental.webpackMemoryOptimizations enabled; true cold 6 GiB build, typecheck, lint, and all 2,512 pages passed",
-        "externalReleaseStatus": "pending-memory-optimized-content-commit-and-deployment"
+        "failedMemoryOptimizedDeploymentId": "dpl_HTznCQ3xneUYqMK7FcznA5FQ9Zra",
+        "failedMemoryOptimizedGitStatusId": 52354128031,
+        "failedMemoryOptimizedAt": "2026-08-17T09:59:23.000Z",
+        "failedMemoryOptimizedFinding": "The provider detected Next.js 15.5.23 with webpackMemoryOptimizations but repeated the about-45-minute silent optimized-build failure.",
+        "targetedStoreSplit": "Dedicated species, county, and snapshot stores keep the 27,830,728-byte presence.json out of all three affected server traces; cold 6 GiB build, typecheck, lint, data integrity, and targeted HTTP smokes pass.",
+        "externalReleaseStatus": "pending-targeted-store-split-commit-and-deployment"
       },
     "githubDeploymentId": 5939360109,
     "githubDeploymentEnvironmentUrl": "https://projectisitusa-eft8cuexe-unigentamos.vercel.app",
@@ -71,14 +76,22 @@
       "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "usda-nrcs-plants",
-        "observedAt": "2026-08-17T09:10:20.416Z",
+        "observedAt": "2026-08-17T10:03:16.097Z",
       "status": "Round 67 completed the final 76 pure exact NRCS mappings. One stable acquire-once window retained 157 provider responses and 238,944 outcomes, then 51 deterministic partitions moved exactly 158,412 unique county-species pairs: 28,801 to verified-present and 129,611 to researched-unresolved. Pure exact NRCS remainder is now zero; eight mixed mappings remain excluded.",
       "gbifAuthenticatedDownloadStatus": "blocked-external-credentials-before-network",
       "preflightProcessException": false,
-        "qualification": "The GBIF national acquisition contract exists, but execution remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL; GBIF-specific Darwin Core county partition, reconciliation, and research integration are also unimplemented. Round 67 therefore completed the measured final pure NRCS fallback. The dependency-corrected provider build also failed at the 45-minute optimized-build boundary without a compiler error; the official memory-optimized configuration passes a true cold 6 GiB local build, but its commit, deployment, and external verification remain pending."
+        "qualification": "The GBIF national acquisition contract exists, but execution remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL; GBIF-specific Darwin Core county partition, reconciliation, and research integration are also unimplemented. Round 67 therefore completed the measured final pure NRCS fallback. The memory-optimized provider build repeated the 45-minute silent compile failure; a targeted store split now removes the large unrelated presence dataset from affected server traces and passes local gates, but its commit, deployment, and external verification remain pending."
     }
   },
   "reverificationHistory": [
+    {
+      "observedAt": "2026-08-17T10:03:16.097Z",
+      "localHeadSha": "bfe11a541d127015c0d95e5100e82a7a56b23e13",
+      "originMainSha": "bfe11a541d127015c0d95e5100e82a7a56b23e13",
+      "githubMainSha": "bfe11a541d127015c0d95e5100e82a7a56b23e13",
+      "vercelProductionCommitSha": "81193b6c5683030d5354a641a47652bf45e18e88",
+      "reason": "The exact memory-optimized deployment dpl_HTznCQ3xneUYqMK7FcznA5FQ9Zra detected Next.js 15.5.23 and webpackMemoryOptimizations but repeated the about-45-minute silent optimized-build failure. Import tracing then showed the 2,504-page species generator reached a monolithic store containing the unrelated 27,830,728-byte presence dataset. MAIN split species, county, and snapshot stores while preserving the existing store exports. Species, About, and ZIP server traces now exclude presence.json and include only their intended generated dataset; targeted HTTP checks, typecheck, lint, data integrity, and a true cold 6 GiB 2,512-page build pass. This observation authorizes the targeted corrective commit but does not attest that commit or its future deployment."
+    },
     {
       "observedAt": "2026-08-17T09:10:20.416Z",
       "localHeadSha": "8b67a7965a4be424690a93571daaf31e1fc4d538",

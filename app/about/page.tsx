@@ -1,4 +1,4 @@
-import { datasetSnapshot } from "@/lib/data/store";
+import { datasetSnapshot } from "@/lib/data/snapshot-store";
 import { AboutMission } from "@/components/about-mission";
 import { ImpactStats } from "@/components/impact-stats";
 

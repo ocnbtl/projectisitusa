@@ -3,7 +3,7 @@ import { feature } from "topojson-client";
 import zipcodes from "zipcodes";
 import countyTopology from "@/data/source/county-equivalents-topology.json";
 
-import { countyIndex } from "@/lib/data/store";
+import { countyIndex } from "@/lib/data/county-store";
 import type { CountyRecord, ZipLookupResult } from "@/lib/data/types";
 
 type CountyFeature = GeoJSON.Feature<

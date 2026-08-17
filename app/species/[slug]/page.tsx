@@ -5,7 +5,11 @@ import { notFound, redirect } from "next/navigation";
 import { ActionGuidance } from "@/components/action-guidance";
 import { SpeciesImage } from "@/components/species-image";
 import { SourceAttribution } from "@/components/source-attribution";
-import { allSpecies, speciesBySlug, speciesSlugAliases } from "@/lib/data/store";
+import {
+  allSpecies,
+  speciesBySlug,
+  speciesSlugAliases,
+} from "@/lib/data/species-store";
 import { formatCategoryLabel } from "@/lib/utils";
 import type { Species } from "@/lib/data/types";
 

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "evaluationId": "round-67-usda-nrcs-plants-national-20260817-r1",
   "roundId": "usda-nrcs-plants-national-round67",
-  "evaluatedAt": "2026-08-17T09:10:20.416Z",
+  "evaluatedAt": "2026-08-17T10:03:16.097Z",
   "result": "complete-local-gates-passed-pending-external-release",
   "releaseThreshold": {
     "met": true,
@@ -557,7 +557,7 @@
     "build": {
       "status": "pass",
       "framework": "Next.js 15.5.23",
-      "compileSeconds": 24,
+      "compileSeconds": 24.6,
       "staticPages": 2512,
       "dependencyLockReproduction": {
         "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
@@ -572,7 +572,11 @@
         "correctedConstrainedBuild": "pass under a 6 GiB Node heap cap; compiled in 24.2 seconds and generated 2,512 static pages",
         "correctedProviderDeployment": "Deployment dpl_VqvcrfpYrfEZnXbZPdwztF31gsU6 detected Next.js 15.5.23 but remained at the optimized production build for about 45 minutes, then failed without a compiler error line.",
         "providerResourceMitigation": "Next.js 15 experimental.webpackMemoryOptimizations is enabled. The official option is documented to reduce peak Webpack memory and is considered low-risk, with a possible compilation-time tradeoff.",
-        "memoryOptimizedColdBuild": "pass from a deleted .next cache under a 6 GiB Node heap cap; compiled in 24.0 seconds and generated 2,512 static pages"
+        "memoryOptimizedColdBuild": "pass from a deleted .next cache under a 6 GiB Node heap cap; compiled in 24.0 seconds and generated 2,512 static pages",
+        "memoryOptimizedProviderDeployment": "Deployment dpl_HTznCQ3xneUYqMK7FcznA5FQ9Zra detected Next.js 15.5.23 with webpackMemoryOptimizations enabled but failed after the same about-45-minute silent optimized-build stall.",
+        "targetedStoreSplit": "Species static generation, About, and ZIP lookup now import dedicated species, snapshot, and county stores. Their server traces each exclude the unrelated 27,830,728-byte presence.json dataset while the monolithic store preserves its existing exports.",
+        "targetedStoreColdBuild": "pass from a deleted .next cache under a 6 GiB Node heap cap; compiled in 24.6 seconds and generated 2,512 static pages",
+        "targetedStoreSmoke": "species/arthraxon-hispidus, /about, and POST /api/lookup/zip for 21502 each returned HTTP 200 with expected Small Carpgrass, Data foundation, and Allegany MD results"
       }
     },
     "browserQa": {
@@ -629,7 +633,9 @@
       "MAIN allowed one exact-content, cache-skipped retry only to distinguish transient infrastructure from reproducible content. It reached the same build stage and was canceled after the locked-version failure was reproduced locally; no further blind retry was issued.",
       "The manifest range and lock are now pinned exactly to the locally verified Next.js 15.5.23. A clean lock install, typecheck, lint, and a 6 GiB constrained 2,512-page production build passed before this corrective content commit.",
       "The exact 8b67a7965a4be424690a93571daaf31e1fc4d538 deployment installed Next.js 15.5.23 but failed after about 45 minutes at the same optimized-build stage with no compiler error line. That disproved dependency version alone as sufficient and exposed the provider build resource ceiling.",
-      "MAIN enabled the official Next.js 15 experimental.webpackMemoryOptimizations option. After deleting only the generated .next cache, a true cold 6 GiB build compiled in 24.0 seconds and generated all 2,512 pages; typecheck and lint passed before the memory-optimized corrective commit."
+      "MAIN enabled the official Next.js 15 experimental.webpackMemoryOptimizations option. After deleting only the generated .next cache, a true cold 6 GiB build compiled in 24.0 seconds and generated all 2,512 pages; typecheck and lint passed before the memory-optimized corrective commit.",
+      "The exact memory-optimized bfe11a541d127015c0d95e5100e82a7a56b23e13 deployment also failed after about 45 minutes at the same optimized-build line. This established that the global memory flag alone did not remove the provider compile ceiling.",
+      "Import tracing found the 2,504-page species generator reached the monolithic server store and its 27,830,728-byte presence dataset despite needing species only. MAIN split species, county, and snapshot stores while preserving existing store exports; all three affected traces exclude presence.json, their targeted HTTP checks pass, and a true cold 6 GiB build generated all 2,512 pages."
     ]
   },
   "recentRoundComparison": [
