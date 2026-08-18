@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const isDevelopment = process.env.NODE_ENV !== "production";
+const vercelGitCommitSha = process.env.VERCEL_GIT_COMMIT_SHA;
+
+if (process.env.VERCEL === "1" && !/^[0-9a-f]{40}$/i.test(vercelGitCommitSha ?? "")) {
+  throw new Error("VERCEL_GIT_COMMIT_SHA must be a full Git commit SHA for immutable research projection routing.");
+}
+
+const immutableResearchProjectionOrigin = vercelGitCommitSha
+  ? `https://raw.githubusercontent.com/ocnbtl/projectisitusa/${vercelGitCommitSha}/public/generated/research`
+  : null;
 
 const securityHeaders = [
   {
@@ -42,6 +51,18 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   experimental: {
     webpackMemoryOptimizations: true,
+  },
+  async rewrites() {
+    if (!immutableResearchProjectionOrigin) {
+      return [];
+    }
+
+    return [
+      {
+        source: "/generated/research/:path*",
+        destination: `${immutableResearchProjectionOrigin}/:path*`,
+      },
+    ];
   },
   async headers() {
     if (isDevelopment) {

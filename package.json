@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "dev:clean": "node scripts/clean-next.mjs && next dev",
-    "build": "next build",
+    "build": "node scripts/prepare-vercel-build.mjs && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "check:data-integrity": "node --import tsx scripts/check-data-integrity.ts",
+    "check:vercel-publish": "node scripts/test-prepare-vercel-build.mjs",
     "check:research-integrity": "npm run check:prepare-data-plan && npm run check:state-species-resolution && npm run check:state-applicability-sources && npm run check:denominator-integrity && node --import tsx scripts/test-research-event-model.ts && node --import tsx scripts/test-research-candidate-pair-order.ts && node --import tsx scripts/test-gbif-preserved-specimens-adapter.ts && node --import tsx scripts/test-gbif-archived-replay.ts && node --import tsx scripts/test-gbif-taxonomy-cache.ts && node --import tsx scripts/test-gbif-source-verification.ts && node --import tsx scripts/test-gbif-state-species-plan.ts && node --import tsx scripts/test-national-gbif-download.ts && node --import tsx scripts/test-idigbio-preserved-specimens-adapter.ts && node --import tsx scripts/test-national-aphis-federal-quarantine-replay.ts && node --import tsx scripts/test-national-usda-nrcs-plants-replay.ts && node --import tsx scripts/test-national-usgs-nas-replay.ts && node --import tsx scripts/test-national-usfs-afpe-replay.ts && node --import tsx scripts/test-national-usfs-fia-replay.ts && node --import tsx scripts/test-research-run-validation.ts && node --import tsx scripts/test-state-run-selection.ts && node --import tsx scripts/test-research-freshness.ts && node --import tsx scripts/test-protocol-cells.ts && node --import tsx scripts/test-national-readiness-gates.ts && node --import tsx scripts/test-national-disk-budget.ts && node scripts/test-national-research-skills.mjs && node --import tsx scripts/check-research-integrity.ts",
     "check:prepare-data-plan": "node --import tsx scripts/test-prepare-data-plan.ts",
     "check:national-research-skills": "node scripts/test-national-research-skills.mjs",
