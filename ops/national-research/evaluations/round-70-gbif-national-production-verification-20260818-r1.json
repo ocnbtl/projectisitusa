@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-70-gbif-national-production-verification-20260818-r1",
+  "verifiedAt": "2026-08-18T04:26:10.083Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "generatedContentCommit": "8bde16be35b8e84318332ec6ad3147a6a0108229",
+  "releasedContentCommit": "40789527747b9da24b3fb150bd5417dded62e0ad",
+  "objective": "Externally verify the authenticated GBIF acquisition, immutable 51-jurisdiction partition family, measured 25,406-pair generated movement, and the Vercel packaging correction on the exact production commit.",
+  "providerExecution": {
+    "sourceId": "gbif-preserved-specimens",
+    "acquisitionId": "20260818t015248z__gbif-download__3adc41198e1b",
+    "downloadKey": "0021178-260806074905277",
+    "doi": "10.15468/dl.qg2299",
+    "terminalStatus": "SUCCEEDED",
+    "providerRecords": 30994,
+    "archiveBytes": 12434435,
+    "archiveSha256": "5ebce0dbc0107aa2b733f2f3715aa7f2a8b3f7eb9d11b4dab487402163827f8b",
+    "requestPosts": 1,
+    "statusGets": 4,
+    "archiveGets": 1,
+    "retries": 0,
+    "credentialsPersistedInRepositoryOrArtifacts": false
+  },
+  "partitionAndMovement": {
+    "partitionId": "gbif-national-partition-3311ea9ed3fa58ed",
+    "stateRows": 51,
+    "materializedRuns": 50,
+    "zeroPairStates": ["AL"],
+    "selectedPairs": 25406,
+    "verifiedPresentAdded": 1147,
+    "researchedUnresolvedAdded": 24259,
+    "notResearchedRemoved": 25406,
+    "verifiedAbsentAdded": 0,
+    "notDetectedAdded": 0,
+    "finalVerifiedPresent": 189250,
+    "finalResearchedUnresolved": 1188140,
+    "finalNotResearched": 6495178,
+    "countySpeciesDenominator": 7872576,
+    "certifiedStates": 0,
+    "certificationBlockerStates": 51,
+    "qualification": "Provider silence created no absence or non-detection claim. The release advances research accounting but does not claim state certification."
+  },
+  "localVerification": {
+    "focusedNationalGbifRegression": "pass",
+    "gbifPlannerRegression": "pass",
+    "offlineNationalGbifEndToEnd": "pass: acquisition verified; 51 state rows; 50 materialized runs; 25,406 selected pairs; deterministic rerun; tamper rejection; zero provider calls",
+    "frozenNationalResearchSkillSuite": "pass: 97/97; zero critical safety violations",
+    "fullResearchIntegrity": "pass: 1,046 immutable runs; 1,540,388 outcomes; zero unreviewed evidence",
+    "dataIntegrity": "pass",
+    "stateResearchProjections": "pass: 51 projections",
+    "typecheck": "pass",
+    "lint": "pass: zero warnings and zero errors",
+    "coldProductionBuild": "pass: Next.js 15.5.23; 18.5 second compile; seven static pages",
+    "vercelPublishPreparation": "pass",
+    "gitDiffCheck": "pass"
+  },
+  "deploymentAttempts": [
+    {
+      "vercelDeploymentId": "dpl_AwUErhCeUPuG1ZfobfRcXarySW9P",
+      "githubCommitSha": "8bde16be35b8e84318332ec6ad3147a6a0108229",
+      "state": "failure",
+      "durationMinutes": 46,
+      "qualification": "The application compiled locally, but the Git-linked build reached Vercel's 45-minute ceiling while packaging a public tree above the platform's static-upload envelope. No production alias cutover occurred."
+    },
+    {
+      "vercelDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
+      "githubCommitSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+      "state": "success",
+      "providerCompileMinutes": 23.4,
+      "buildMinutes": 24,
+      "qualification": "The guarded build removed 3,195 duplicated public research files, retained their immutable Git bytes behind same-origin rewrites, compiled successfully, deployed outputs, and reached READY."
+    }
+  ],
+  "deployment": {
+    "vercelDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
+    "immutableUrl": "https://projectisitusa-1lhr4hus5-unigentamos.vercel.app",
+    "productionUrl": "https://isitusa.com",
+    "target": "production",
+    "state": "READY",
+    "aliases": [
+      "isitusa.com",
+      "www.isitusa.com",
+      "projectisitusa.vercel.app",
+      "projectisitusa-unigentamos.vercel.app",
+      "projectisitusa-git-main-unigentamos.vercel.app"
+    ],
+    "githubDeploymentId": 5956052818,
+    "githubDeploymentStatusId": 16943426894,
+    "githubCommitStatusId": 52401795307,
+    "githubCombinedStatus": "success"
+  },
+  "publishArchitecture": {
+    "excludedVercelBuildFiles": 3195,
+    "excludedPath": "public/generated/research",
+    "browserPathPreserved": "/generated/research/:path*",
+    "immutableOrigin": "https://raw.githubusercontent.com/ocnbtl/projectisitusa/40789527747b9da24b3fb150bd5417dded62e0ad/public/generated/research/:path*",
+    "sourceCommitPinned": true,
+    "qualification": "Only the duplicate Vercel build copy is omitted. The versioned projection remains in the public Git commit and live responses preserve byte identity and the existing same-origin browser contract."
+  },
+  "routeVerification": {
+    "hosts": [
+      "https://projectisitusa-1lhr4hus5-unigentamos.vercel.app",
+      "https://isitusa.com"
+    ],
+    "routes": [
+      { "path": "/", "status": 200 },
+      { "path": "/research", "status": 200 },
+      { "path": "/about", "status": 200 },
+      { "path": "/species/hesperis-matronalis", "status": 200 },
+      { "path": "/__round70_missing__", "status": 404 }
+    ],
+    "zipLookup": {
+      "method": "POST",
+      "zip": "99801",
+      "status": 200,
+      "stateCode": "AK",
+      "countyFips": "02110",
+      "countyName": "Juneau, AK",
+      "hostsPassed": 2
+    },
+    "securityHeadersPresent": true
+  },
+  "byteParityChecks": [
+    {
+      "path": "/generated/research/AK/counties/02110.json",
+      "bytes": 222708,
+      "sha256": "299793c13e1ff65fe77de6a176d24cd648adf1f68b07057b2d3c327a80ecefd5",
+      "hostsPassed": 2
+    },
+    {
+      "path": "/generated/research/AK/counties/02020.json",
+      "bytes": 230204,
+      "sha256": "ede0cb62deb9fb0a4f29c38179806d83890e6b6a096ff6921e4d9c81ef500210",
+      "hostsPassed": 2
+    }
+  ],
+  "changedOutcomeVerification": [
+    {
+      "pair": "02110:hesperis-matronalis",
+      "displayStatus": "verified-present",
+      "researchStatus": "reviewed-evidence-found",
+      "evidenceCount": 1,
+      "evidenceUrl": "https://www.gbif.org/occurrence/2422530676"
+    },
+    {
+      "pair": "02020:callitriche-stagnalis",
+      "displayStatus": "researched-unresolved",
+      "researchStatus": "reviewed-no-qualifying-evidence",
+      "evidenceCount": 0
+    }
+  ],
+  "browserVerification": {
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "flow": "Research status to Alaska to Juneau to Hesperis",
+    "visibleSpecies": "Dames rocket / Hesperis matronalis",
+    "visibleStatus": "Verified Present",
+    "visibleResearchStatus": "Reviewed Evidence Found",
+    "horizontalOverflow": false,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "visualCapturesCreated": 5,
+    "visualCapturesInspected": 2,
+    "temporaryQaArtifactsRemovedAfterInspection": true
+  },
+  "runtimeVerification": {
+    "runtimeErrorLogRows": 0,
+    "runtimeWarningLogRows": 0,
+    "status500LogRows": 0,
+    "queryStatus": "passed"
+  },
+  "releaseDecision": {
+    "decision": "go",
+    "productionDeploymentVerified": true,
+    "contentCommitted": true,
+    "pushedToGithub": true,
+    "providerAcquisitionIntegrated": true,
+    "researchMovementVerified": true,
+    "stateCertificationClaimed": false,
+    "reason": "The exact released SHA is on GitHub main, Vercel and GitHub report successful production deployment, canonical and immutable hosts pass route and ZIP checks, selected generated files match committed bytes, changed outcomes render in the production UI, and deployment-scoped runtime error, warning, and status-500 queries returned zero rows."
+  }
+}

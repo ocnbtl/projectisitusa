@@ -5546,6 +5546,242 @@
         "The release is an implementation and application release, not a GBIF evidence release. The actual acquisition remained a truthful no-go because the external account credentials do not exist in any inspected approved store."
       ],
       "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched content SHA b360212653852b6964a3a43060a7930229016617; Vercel deployment dpl_jp96refFJurzz964qhHfyq2rm1Sj was READY and carried that exact commit metadata; isitusa.com resolved to it; GitHub Production deployment 5952766003 and commit context Vercel were successful; immutable desktop and canonical mobile browser flows passed with no successful-flow console errors, warnings, broken images, or horizontal overflow; ZIP 21502 resolved to Allegany County; Small Carpgrass rendered; a nonexistent species returned 404; four live generated files matched committed bytes and SHA-256; and exact-deployment runtime error and warning queries returned zero rows. Round 69 closed all known repository-side GBIF acquisition, replay, partition, transaction-recovery, bounded-integrity, and offline end-to-end publication blockers. It also replaced 2,504-species static pre-generation with verified on-demand caching to clear the provider compile ceiling. The selected GBIF scope remains 13 taxa and 25,406 true not-researched county-species pairs, but GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL were absent from all inspected approved stores. Therefore zero provider calls, zero archives, and zero research movement are truthfully recorded. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-407895277-2026-08-18",
+      "verifiedAt": "2026-08-18T04:26:10.083Z",
+      "commitSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+      "generatedContentCommitSha": "8bde16be35b8e84318332ec6ad3147a6a0108229",
+      "githubMainSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+      "githubDeploymentId": 5956052818,
+      "githubDeploymentState": "success",
+      "githubDeploymentStatusId": 16943426894,
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-1lhr4hus5-unigentamos.vercel.app",
+      "githubCommitStatusId": 52401795307,
+      "gitLinkedVercelDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
+      "vercelDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/HmTACHYqDor3YnQgz28r3mJ4Peg2",
+      "vercelDeploymentUrl": "projectisitusa-1lhr4hus5-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "success",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+        "releaseCommitMetadata": "40789527747b9da24b3fb150bd5417dded62e0ad",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "Fresh canonical, origin, public GitHub main, Vercel deployment, GitHub Production deployment and commit status, immutable and canonical HTTP, exact live-byte comparison, responsive production browser QA, visual capture inspection, and exact-deployment runtime-log queries"
+      },
+      "deploymentAttempts": [
+        {
+          "vercelDeploymentId": "dpl_AwUErhCeUPuG1ZfobfRcXarySW9P",
+          "githubCommitSha": "8bde16be35b8e84318332ec6ad3147a6a0108229",
+          "state": "failure",
+          "durationMinutes": 46,
+          "active": false,
+          "qualification": "The generated-content commit passed local gates but reached Vercel's 45-minute build limit while the public static tree exceeded the practical platform envelope. It never received the production alias."
+        },
+        {
+          "githubDeploymentId": 5956052818,
+          "githubDeploymentStatusId": 16943426894,
+          "vercelDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
+          "githubCommitSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+          "createdAt": "2026-08-18T03:53:34.639Z",
+          "completedAt": "2026-08-18T04:19:47.814Z",
+          "durationSeconds": 1573.175,
+          "providerCompileSeconds": 1408.625,
+          "state": "success",
+          "active": true,
+          "qualification": "Vercel removed exactly 3,195 ignored duplicate research files, the guarded build pinned the live research rewrite to this commit, Next.js compiled in 23.4 minutes, deployment completed, and all production aliases moved to the READY deployment."
+        }
+      ],
+      "publishArchitecture": {
+        "excludedPath": "public/generated/research",
+        "excludedVercelBuildFiles": 3195,
+        "browserPathPreserved": "/generated/research/:path*",
+        "immutableGitOrigin": "https://raw.githubusercontent.com/ocnbtl/projectisitusa/40789527747b9da24b3fb150bd5417dded62e0ad/public/generated/research/:path*",
+        "sourceCommitPinned": true,
+        "qualification": "The duplicate Vercel build copy is omitted, while the same versioned Git bytes remain public and the browser-facing same-origin path is unchanged."
+      },
+      "routeChecks": [
+        { "path": "/", "status": 200 },
+        { "path": "/research", "status": 200 },
+        { "path": "/about", "status": 200 },
+        { "path": "/species/hesperis-matronalis", "status": 200 },
+        { "path": "/__round70_missing__", "status": 404 }
+      ],
+      "routeCheckHosts": [
+        "https://projectisitusa-1lhr4hus5-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "routeHostChecksPassed": 10,
+      "zipLookupChecks": [
+        {
+          "host": "https://projectisitusa-1lhr4hus5-unigentamos.vercel.app",
+          "method": "POST",
+          "zip": "99801",
+          "status": 200,
+          "county": "Juneau, AK",
+          "stateCode": "AK",
+          "fips": "02110"
+        },
+        {
+          "host": "https://isitusa.com",
+          "method": "POST",
+          "zip": "99801",
+          "status": 200,
+          "county": "Juneau, AK",
+          "stateCode": "AK",
+          "fips": "02110"
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/AK/counties/02110.json",
+          "bytes": 222708,
+          "sha256": "299793c13e1ff65fe77de6a176d24cd648adf1f68b07057b2d3c327a80ecefd5"
+        },
+        {
+          "path": "/generated/research/AK/counties/02020.json",
+          "bytes": 230204,
+          "sha256": "ede0cb62deb9fb0a4f29c38179806d83890e6b6a096ff6921e4d9c81ef500210"
+        }
+      ],
+      "byteParityHosts": [
+        "https://projectisitusa-1lhr4hus5-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "byteParityHostFileIdentitiesPassed": 4,
+      "changedOutcomeChecks": [
+        {
+          "pair": "02110:hesperis-matronalis",
+          "displayStatus": "verified-present",
+          "researchStatus": "reviewed-evidence-found",
+          "evidenceCount": 1,
+          "evidenceUrl": "https://www.gbif.org/occurrence/2422530676"
+        },
+        {
+          "pair": "02020:callitriche-stagnalis",
+          "displayStatus": "researched-unresolved",
+          "researchStatus": "reviewed-no-qualifying-evidence",
+          "evidenceCount": 0
+        }
+      ],
+      "browserQa": {
+        "desktopHost": "https://isitusa.com",
+        "desktopViewport": "1440x1000",
+        "mobileHost": "https://isitusa.com",
+        "mobileViewport": "390x844",
+        "flow": "Research status to Alaska to Juneau to Hesperis",
+        "visibleSpecies": "Dames rocket / Hesperis matronalis",
+        "visibleStatus": "Verified Present",
+        "visibleResearchStatus": "Reviewed Evidence Found",
+        "horizontalOverflow": false,
+        "consoleWarnings": 0,
+        "consoleErrors": 0,
+        "brokenImagesAfterLoad": 0,
+        "screenshotsCaptured": 5,
+        "productionScreenshotsVisuallyInspected": 2,
+        "temporaryQaArtifactsRemovedAfterInspection": true
+      },
+      "runtimeQa": {
+        "activeDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
+        "runtimeErrorLogRows": 0,
+        "runtimeWarningLogRows": 0,
+        "status500LogRows": 0,
+        "queryStatus": "passed",
+        "qualification": "Fresh exact-deployment Vercel runtime-log queries after immutable and canonical route, ZIP, byte, and browser traffic returned zero error, warning, and status-500 rows."
+      },
+      "releaseEvaluation": {
+        "path": "ops/national-research/evaluations/round-70-gbif-national-production-verification-20260818-r1.json",
+        "sha256": "ff35ce93c566b794304b3bc14c5ad331a14a0f9e3224ee55b5dc36eb3aa0832b",
+        "bytes": 7708,
+        "result": "go-exact-gbif-acquisition-integration-and-production-release-verified",
+        "qualification": "The build-time acquisition evaluation intentionally preserves pending external state. This separate evaluation and receipt record the later exact-SHA production evidence."
+      },
+      "roundMovement": {
+        "plannedNetPairs": 25406,
+        "finalMatrixPairsMoved": 25406,
+        "notResearchedToVerifiedPresent": 1147,
+        "notResearchedToResearchedUnresolved": 24259,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "protocolCellsClosed": 185,
+        "certificationBlockersRemoved": 0,
+        "certifiedStates": 0
+      },
+      "providerExecution": {
+        "sourceId": "gbif-preserved-specimens",
+        "downloadKey": "0021178-260806074905277",
+        "doi": "10.15468/dl.qg2299",
+        "providerRecords": 30994,
+        "archiveBytes": 12434435,
+        "archiveSha256": "5ebce0dbc0107aa2b733f2f3715aa7f2a8b3f7eb9d11b4dab487402163827f8b",
+        "materializedRuns": 50,
+        "credentialValuesCommittedOrLogged": false
+      },
+      "postDeploymentGate": {
+        "phase": "POST-DEPLOYMENT",
+        "decision": "GO",
+        "blockers": [],
+        "matrix": [
+          {
+            "category": "scope-and-source-of-truth",
+            "criticality": "CRITICAL",
+            "status": "PASSED",
+            "evidence": "Canonical, origin, public GitHub main, Vercel, GitHub commit status, and GitHub Production identify 40789527747b9da24b3fb150bd5417dded62e0ad."
+          },
+          {
+            "category": "functionality",
+            "criticality": "CRITICAL",
+            "status": "PASSED",
+            "evidence": "The production Alaska to Juneau to Hesperis flow shows the expected verified-present GBIF outcome, and ZIP 99801 resolves to Juneau on both hosts."
+          },
+          {
+            "category": "visual-fidelity",
+            "criticality": "HIGH",
+            "status": "PASSED",
+            "evidence": "Desktop and mobile Hesperis research captures were visually inspected and remained coherent and responsive."
+          },
+          {
+            "category": "performance-and-resilience",
+            "criticality": "HIGH",
+            "status": "PASSED",
+            "evidence": "The Vercel build removed the duplicate 3,195-file projection, completed in 24 minutes, and live rewritten research responses remained byte-identical."
+          },
+          {
+            "category": "security-and-privacy",
+            "criticality": "HIGH",
+            "status": "PASSED",
+            "evidence": "HTTPS and security headers were observed; the ZIP endpoint retained no-store caching; no GBIF credential value was committed or logged."
+          },
+          {
+            "category": "monitoring-and-operations",
+            "criticality": "HIGH",
+            "status": "PASSED",
+            "evidence": "Exact-deployment runtime error, warning, and status-500 queries returned zero rows; the failed and successful deployment attempts are retained."
+          },
+          {
+            "category": "deployment",
+            "criticality": "CRITICAL",
+            "status": "PASSED",
+            "evidence": "Vercel deployment dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2 is READY on isitusa.com and GitHub Production deployment 5956052818 succeeded for the exact SHA."
+          },
+          {
+            "category": "data-release-integrity",
+            "criticality": "CRITICAL",
+            "status": "PASSED",
+            "evidence": "Two selected county projections matched committed bytes and SHA-256 on both immutable and canonical hosts, and both changed research semantics were parsed from production responses."
+          }
+        ]
+      },
+      "auditCorrections": [
+        "The prior no-go was a real release gate, not a provider-data failure: the exact generated-content deployment exceeded Vercel's 45-minute build window and never cut over.",
+        "The durable correction removes only a duplicate 3,195-file build copy and routes the unchanged browser path to the exact immutable Git commit; no research evidence was deleted or weakened.",
+        "Round 70 acquired and integrated exactly 25,406 selected county-species pairs. It does not claim absence, non-detection, or state certification."
+      ],
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched released content SHA 40789527747b9da24b3fb150bd5417dded62e0ad; Vercel deployment dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2 was READY with all production aliases; GitHub Production deployment 5956052818 and commit status 52401795307 were successful; immutable and canonical route, ZIP, security-header, and exact generated-byte checks passed; the Alaska to Juneau to Hesperis production browser flow exposed the exact verified-present record at desktop and mobile widths with no console warning, console error, broken image, or horizontal overflow; and exact-deployment runtime error, warning, and status-500 queries returned zero rows. The authenticated GBIF archive contains 30,994 provider records and moved exactly 25,406 selected county-species pairs: 1,147 to verified present and 24,259 to researched unresolved, with zero absence or non-detection movement. Certified states remain zero. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }

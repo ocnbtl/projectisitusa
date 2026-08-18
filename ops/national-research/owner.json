@@ -7,26 +7,26 @@
   "branch": "main",
   "baseSha": "d2f60f44f502e339ca5b3380c16e2a0329edeb6f",
   "acquiredAt": "2026-08-18T01:49:34.937Z",
-  "lastReverifiedAt": "2026-08-18T02:55:34.825Z",
-  "currentCheckpointSha": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
-  "localHeadAtLastReverification": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
-  "state": "active-round-70-generated-content-verification",
+  "lastReverifiedAt": "2026-08-18T04:26:10.083Z",
+  "currentCheckpointSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+  "localHeadAtLastReverification": "40789527747b9da24b3fb150bd5417dded62e0ad",
+  "state": "complete-round-70-content-externally-verified",
   "ownershipEvidence": {
     "activeProjectTasks": ["national-round-70-20260818-main"],
     "supersededOwnerTaskId": "national-round-69-20260817-main",
     "gitWorktreeCount": 215,
     "mainWriterProcesses": 0,
-    "originMainSha": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
-    "githubMainSha": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
-    "vercelProductionCommitSha": "b360212653852b6964a3a43060a7930229016617",
-    "vercelDeploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
+    "originMainSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+    "githubMainSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+    "vercelProductionCommitSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+    "vercelDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
     "gitFetchTransport": "https-authenticated",
     "githubCliAccount": "ocnbtl",
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Round 69 production QA passed on the immutable desktop host at 1440x1000 and canonical mobile host at 390x844. ZIP 21502 resolved to Allegany County, Maryland; Small Carpgrass opened Arthraxon hispidus; a nonexistent species returned 404. Three full-page captures were visually inspected. Successful flows had zero console warnings, console errors, broken images, and horizontal overflow.",
-      "liveVerification": "Canonical, origin, public GitHub main, Vercel deployment dpl_jp96refFJurzz964qhHfyq2rm1Sj, GitHub Production deployment 5952766003, and GitHub commit status matched Round 69 content SHA b360212653852b6964a3a43060a7930229016617. The immutable deployment and canonical alias passed selected route, cache, ZIP, responsive-browser, and exact generated-byte checks. Runtime error and warning queries returned zero rows. This field attests the content deployment, not the later receipt commit.",
+    "browserQa": "Round 70 production QA passed on the canonical host at 1440x1000 and 390x844. The Research status flow selected Alaska, Juneau, and Hesperis; Dames rocket / Hesperis matronalis rendered Verified Present, Reviewed Evidence Found, and one evidence item. Five temporary full-page captures were created, two representative captures were visually inspected, and the temporary files were then removed. Successful flows had zero console warnings, console errors, broken images, and horizontal overflow.",
+    "liveVerification": "Canonical, origin, public GitHub main, Vercel deployment dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2, GitHub Production deployment 5956052818, and GitHub commit status 52401795307 matched released content SHA 40789527747b9da24b3fb150bd5417dded62e0ad. The immutable deployment and canonical alias passed selected route, security-header, ZIP, responsive-browser, changed-outcome, and exact generated-byte checks. Runtime error, warning, and status-500 queries returned zero rows. This field attests the content deployment, not the later receipt commit.",
       "round67DeploymentCorrection": {
         "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
         "failedGitLinkedDeploymentId": "dpl_HxMcEyHvHqrqKiQh3xPsfUMjpNpW",
@@ -73,6 +73,12 @@
     "round70Integration": {
       "acquisitionCommit": "61ca04cf5",
       "partitionCommit": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+      "generatedContentCommit": "8bde16be35b8e84318332ec6ad3147a6a0108229",
+      "releasedContentCommit": "40789527747b9da24b3fb150bd5417dded62e0ad",
+      "successfulDeploymentId": "dpl_HmTACHYqDor3YnQgz28r3mJ4Peg2",
+      "githubDeploymentId": 5956052818,
+      "githubDeploymentStatusId": 16943426894,
+      "githubCommitStatusId": 52401795307,
       "downloadKey": "0021178-260806074905277",
       "doi": "10.15468/dl.qg2299",
       "providerRecords": 30994,
@@ -84,11 +90,11 @@
       "researchedUnresolvedAdded": 24259,
       "notResearchedRemoved": 25406,
       "providerExecutionStatus": "succeeded-and-integrated",
-      "contentReleaseStatus": "pending-external-verification",
-      "finding": "The authenticated GBIF archive completed with one non-retried POST, four status GETs, and one archive GET. Its 30,994 records reconciled to 50 immutable state runs and exactly 25,406 measured county-species research movements. Generated content, full integrity, and the cold production build pass locally; external release verification is pending."
+      "contentReleaseStatus": "success-exact-content-sha-externally-verified",
+      "finding": "The authenticated GBIF archive completed with one non-retried POST, four status GETs, and one archive GET. Its 30,994 records reconciled to 50 immutable state runs and exactly 25,406 measured county-species research movements. Generated content, full integrity, exact Git identity, immutable and canonical byte parity, responsive browser behavior, and production runtime observations are externally verified."
     },
-    "githubDeploymentId": 5952766003,
-    "githubDeploymentEnvironmentUrl": "https://isitusa.com",
+    "githubDeploymentId": 5956052818,
+    "githubDeploymentEnvironmentUrl": "https://projectisitusa-1lhr4hus5-unigentamos.vercel.app",
     "resourceCapacity": {
       "tier": "green",
       "availableMemoryMiB": 11631.058,
@@ -119,10 +125,19 @@
       "status": "Round 70 completed the authenticated national GBIF provider request, retained and verified the 30,994-record archive, partitioned 50 nonempty state runs, and integrated exactly 25,406 selected county-species outcomes into all 51 generated projections.",
       "gbifAuthenticatedDownloadStatus": "succeeded-and-integrated",
       "preflightProcessException": false,
-        "qualification": "The actual provider archive and partition pass independent hash and byte verification, exact occurrence/verbatim reconciliation, a deterministic post-commit rerun, all focused GBIF tests, the frozen 97/97 suite, the bounded 1,046-run composite integrity gate, the 51-state projection gate, typecheck, and a cold production build. The exact content commit is not yet externally deployed or verified."
+      "qualification": "The actual provider archive and partition pass independent hash and byte verification, exact occurrence/verbatim reconciliation, a deterministic post-commit rerun, all focused GBIF tests, the frozen 97/97 suite, the bounded 1,046-run composite integrity gate, the 51-state projection gate, typecheck, lint, a cold production build, exact production byte parity, responsive browser QA, and deployment-scoped runtime observation."
     }
   },
   "reverificationHistory": [
+    {
+      "recordedAt": "2026-08-18T04:26:10.083Z",
+      "supersededCheckpointSha": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+      "localIntegrationCheckpointSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+      "githubMainSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+      "vercelProductionCommitSha": "40789527747b9da24b3fb150bd5417dded62e0ad",
+      "githubDeploymentId": 5956052818,
+      "reason": "Round 70 executed the authenticated GBIF download, retained and verified its 30,994-record archive, deterministically partitioned 51 jurisdiction rows into 50 nonempty immutable runs, and moved exactly 25,406 selected county-species pairs: 1,147 to verified present and 24,259 to researched unresolved. MAIN corrected the Vercel release ceiling by omitting only the duplicate 3,195-file public build copy and preserving the same browser path through an immutable exact-commit rewrite. Canonical, origin, public GitHub, Vercel, GitHub status, GitHub Production, route, ZIP, byte, changed-outcome, desktop, mobile, visual, and runtime evidence all passed. Certified states remain zero. This observation does not attest the receipt commit that records it or any future deployment."
+    },
     {
       "recordedAt": "2026-08-18T00:24:47.523Z",
       "supersededCheckpointSha": "30ec82eb3fd9f805f47e2324959067ed4cd51b22",
