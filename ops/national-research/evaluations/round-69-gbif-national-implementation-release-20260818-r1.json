@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-69-gbif-national-implementation-release-20260818-r1",
+  "evaluatedAt": "2026-08-18T00:24:47.523Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "baselineCommit": "30ec82eb3fd9f805f47e2324959067ed4cd51b22",
+  "implementationCommit": "d736ab02c996995467593f7567fb387cd0cd0d05",
+  "releasedContentCommit": "b360212653852b6964a3a43060a7930229016617",
+  "objective": "Finish the national GBIF archive family, solve every known forward implementation blocker, publish the application changes, and execute the selected authenticated acquisition only when truthful provider credentials exist.",
+  "selection": {
+    "planId": "gbif-national-download-v2-round-68-13",
+    "selectionEvidencePath": "ops/national-research/evaluations/round-68-gbif-national-selection-20260817-r1.json",
+    "candidatePairSha256": "5a4d1e78f6842a71997400908be44bab1855bdad4e8fee20a70eec799047b73a",
+    "selectedTaxa": 13,
+    "jurisdictions": 51,
+    "grossCountySpeciesPairs": 40872,
+    "selectedNotResearchedPairs": 25406,
+    "excludedBlockedPairs": 18,
+    "alreadyResearchedPairs": 15448,
+    "smallestThresholdPrefix": true
+  },
+  "providerExecution": {
+    "credentialPresence": {
+      "GBIF_USERNAME": false,
+      "GBIF_PASSWORD": false,
+      "GBIF_EMAIL": false
+    },
+    "networkRequestsIssued": 0,
+    "downloadRequestCreated": false,
+    "archiveRetained": false,
+    "archivePartitioned": false,
+    "providerRecordsProcessed": 0,
+    "researchPairsMoved": 0,
+    "blocker": "The authenticated GBIF API requires the three account values. They are absent from process, user, machine, repository, GitHub Actions, Windows Credential Manager, and Vercel environment-name inventories. No credential was invented, copied, logged, or bypassed, so the provider POST correctly did not occur."
+  },
+  "resolvedForwardImplementationIssues": [
+    {
+      "issue": "Unbounded GBIF query was represented as date-bounded in state receipts.",
+      "resolution": "State requested_scope.date_range is now null/null; the snapshot date remains acquisition freshness metadata only."
+    },
+    {
+      "issue": "Partition receipt input lineage was not independently enforceable.",
+      "resolution": "The exact 26-file committed partition-input contract is centralized, hash-pinned, and independently checked by composite integrity."
+    },
+    {
+      "issue": "Multi-run publication could strand partial state runs after termination.",
+      "resolution": "A durable transaction marker records publication state and supports deterministic rollback/recovery before immutable publication resumes."
+    },
+    {
+      "issue": "There was no whole-family offline proof across all jurisdiction rows.",
+      "resolution": "The new offline end-to-end test verifies a synthetic acquisition, emits exactly 51 partition rows and 50 nonempty immutable runs, reconciles all 25,406 selected pairs, proves a byte-idempotent rerun, and rejects tampering with zero provider calls."
+    },
+    {
+      "issue": "Full-corpus integrity retained and reloaded immutable runs, exceeding the practical memory envelope.",
+      "resolution": "Integrity validation is bounded to one immutable run at a time while retaining receipt, output-hash, schema, provenance, and aggregate invariants."
+    },
+    {
+      "issue": "Production builds attempted to pre-render all 2,504 species pages and repeatedly stalled at the provider compile ceiling.",
+      "resolution": "Species profiles are generated on demand with an empty generateStaticParams result and cached after first request. The cold production build now emits seven static pages; live species requests prove MISS then HIT behavior."
+    }
+  ],
+  "offlineEndToEndEvidence": {
+    "acquisitionVerified": true,
+    "stateRows": 51,
+    "materializedRuns": 50,
+    "selectedPairs": 25406,
+    "deterministicRerun": true,
+    "tamperRejection": true,
+    "providerRequests": 0
+  },
+  "verification": {
+    "typecheck": "pass",
+    "lint": "pass",
+    "focusedNationalGbifRegression": "pass",
+    "gbifPlannerRegression": "pass",
+    "offlineNationalGbifEndToEnd": "pass",
+    "frozenNationalResearchSkillSuite": "pass: 97/97, zero critical safety violations",
+    "fullResearchIntegrity": "pass: 996 immutable runs, 1,514,982 outcomes, zero conflicts",
+    "coldProductionBuild": "pass: seven static pages; species profiles generated on demand",
+    "localProductionSmoke": "pass: home 200, existing species 200, missing species 404, repeat species cache hit"
+  },
+  "productionRelease": {
+    "deploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
+    "immutableUrl": "https://projectisitusa-hklbd496d-unigentamos.vercel.app",
+    "productionUrl": "https://isitusa.com",
+    "state": "READY",
+    "target": "production",
+    "deploymentContentCommit": "b360212653852b6964a3a43060a7930229016617",
+    "githubDeploymentId": 5952766003,
+    "githubDeploymentStatusId": 16937377463,
+    "githubCommitStatusId": 52393802009,
+    "githubCombinedStatus": "success",
+    "runtimeErrorRows": 0,
+    "runtimeWarningRows": 0
+  },
+  "browserEvidence": {
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "routes": [
+      "/",
+      "/research",
+      "/about",
+      "/species/arthraxon-hispidus",
+      "/species/not-a-real-isitusa-species"
+    ],
+    "zipLookup": "21502 resolved to Allegany, MD (FIPS 24001)",
+    "existingSpecies": "Small Carpgrass / Arthraxon hispidus",
+    "missingSpeciesStatus": 404,
+    "horizontalOverflow": false,
+    "brokenImages": 0,
+    "consoleWarningsOnSuccessfulFlows": 0,
+    "consoleErrorsOnSuccessfulFlows": 0,
+    "visualCapturesInspected": 3
+  },
+  "byteParityChecks": [
+    {
+      "path": "/generated/research/MD/summary.json",
+      "bytes": 300542,
+      "sha256": "4d238777a62f7ec084a905f68a1c0fd433b0936ca643ad34fbb191f9d729fc30"
+    },
+    {
+      "path": "/generated/research/MD/counties/24001.json",
+      "bytes": 207332,
+      "sha256": "caa8351d9b63649d52b799dabb35de0d133ea3a6ad5a74876c65d3a9cdfbf312"
+    },
+    {
+      "path": "/generated/research/TX/summary.json",
+      "bytes": 500929,
+      "sha256": "e0d67c4016b9e5294723fb11c6f1bc20536edd2ad721960e4e68d0c3c4899e13"
+    },
+    {
+      "path": "/generated/species.json",
+      "bytes": 5738579,
+      "sha256": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea"
+    }
+  ],
+  "researchMovement": {
+    "plannedPairs": 25406,
+    "actualPairs": 0,
+    "verifiedPresentAdded": 0,
+    "researchedUnresolvedAdded": 0,
+    "verifiedAbsentAdded": 0,
+    "notDetectedAdded": 0,
+    "qualification": "Round 69 released the executable and verified source family plus its production build correction. It did not claim GBIF-derived research movement because no authenticated archive exists."
+  },
+  "releaseDecision": {
+    "applicationAndImplementation": "go",
+    "authenticatedGbifAcquisition": "no-go-external-credentials",
+    "productionDeploymentCreated": true,
+    "contentCommitted": true,
+    "pushedToGithub": true,
+    "reason": "Every known repository-side forward implementation and release blocker was solved and externally verified. The only remaining acquisition blocker is external account authentication, so the implementation can be live without misrepresenting the 25,406 selected pairs as acquired evidence."
+  },
+  "nextExecutableAction": "Securely supply GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL to the acquisition process. Then execute the single non-retried authenticated POST, wait for the terminal download, retain and verify the archive, commit the acquisition checkpoint, partition the 51-state receipt, integrate only qualifying explicit county evidence, regenerate, run all gates, and release the resulting measured movement."
+}

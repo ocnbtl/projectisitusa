@@ -7,26 +7,26 @@
   "branch": "main",
   "baseSha": "30ec82eb3fd9f805f47e2324959067ed4cd51b22",
   "acquiredAt": "2026-08-17T21:10:07.150Z",
-  "lastReverifiedAt": "2026-08-17T21:10:07.150Z",
-  "currentCheckpointSha": "30ec82eb3fd9f805f47e2324959067ed4cd51b22",
-  "localHeadAtLastReverification": "30ec82eb3fd9f805f47e2324959067ed4cd51b22",
-  "state": "active-round-69-gbif-acquisition-and-release",
+  "lastReverifiedAt": "2026-08-18T00:24:47.523Z",
+  "currentCheckpointSha": "b360212653852b6964a3a43060a7930229016617",
+  "localHeadAtLastReverification": "b360212653852b6964a3a43060a7930229016617",
+  "state": "complete-round-69-implementation-externally-verified-provider-acquisition-blocked",
   "ownershipEvidence": {
     "activeProjectTasks": [],
     "supersededOwnerTaskId": "national-round-68-20260817-main",
     "gitWorktreeCount": 215,
     "mainWriterProcesses": 0,
-    "originMainSha": "0620fe27389795095cb2b13fc7d2d6e2f3b992e3",
-    "githubMainSha": "0620fe27389795095cb2b13fc7d2d6e2f3b992e3",
-    "vercelProductionCommitSha": "bd0c05027d62a786fa72feeff7b0b5aa688a1756",
-    "vercelDeploymentId": "dpl_7BauuBV6GRQVH667nkWFp4eXksLE",
+    "originMainSha": "b360212653852b6964a3a43060a7930229016617",
+    "githubMainSha": "b360212653852b6964a3a43060a7930229016617",
+    "vercelProductionCommitSha": "b360212653852b6964a3a43060a7930229016617",
+    "vercelDeploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
     "gitFetchTransport": "https-authenticated",
     "githubCliAccount": "ocnbtl",
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
-    "browserQa": "Round 67 production QA passed on the canonical and immutable hosts at desktop 1440x1000 and mobile 390x844. ZIP 21502 resolved to Allegany County, Maryland; Plants plus Small Carpgrass opened Arthraxon hispidus with the exact USDA NRCS county-distribution evidence. Both full-page captures were visually inspected. Console warnings, console errors, page errors, failed requests, broken images, and horizontal overflow were all zero.",
-      "liveVerification": "Canonical, origin, public GitHub main, Vercel deployment dpl_7BauuBV6GRQVH667nkWFp4eXksLE, and GitHub Production deployment 5943068621 matched Round 67 content SHA bd0c05027d62a786fa72feeff7b0b5aa688a1756. The immutable and canonical hosts returned HTTP 200 for eight route-host checks each and matched local bytes for MD summary, MD county 24001, TX summary, and species.json on both hosts. Runtime error and warning queries returned zero rows. This field attests the content deployment, not the later receipt commit.",
+    "browserQa": "Round 69 production QA passed on the immutable desktop host at 1440x1000 and canonical mobile host at 390x844. ZIP 21502 resolved to Allegany County, Maryland; Small Carpgrass opened Arthraxon hispidus; a nonexistent species returned 404. Three full-page captures were visually inspected. Successful flows had zero console warnings, console errors, broken images, and horizontal overflow.",
+      "liveVerification": "Canonical, origin, public GitHub main, Vercel deployment dpl_jp96refFJurzz964qhHfyq2rm1Sj, GitHub Production deployment 5952766003, and GitHub commit status matched Round 69 content SHA b360212653852b6964a3a43060a7930229016617. The immutable deployment and canonical alias passed selected route, cache, ZIP, responsive-browser, and exact generated-byte checks. Runtime error and warning queries returned zero rows. This field attests the content deployment, not the later receipt commit.",
       "round67DeploymentCorrection": {
         "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
         "failedGitLinkedDeploymentId": "dpl_HxMcEyHvHqrqKiQh3xPsfUMjpNpW",
@@ -56,8 +56,22 @@
         "cancelRaceQualification": "A bounded cancel request crossed the successful READY transition and returned HTTP 400 because the deployment was already complete; no deployment was canceled and no replacement deployment was started.",
         "externalReleaseStatus": "success-exact-content-sha-externally-verified"
       },
-    "githubDeploymentId": 5943068621,
-    "githubDeploymentEnvironmentUrl": "https://projectisitusa-r84en14sl-unigentamos.vercel.app",
+    "round69Release": {
+      "implementationCommit": "d736ab02c996995467593f7567fb387cd0cd0d05",
+      "successfulContentCommit": "b360212653852b6964a3a43060a7930229016617",
+      "successfulDeploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
+      "successfulGitStatusId": 52393802009,
+      "successfulGitHubDeploymentId": 5952766003,
+      "successfulGitHubDeploymentStatusId": 16937377463,
+      "linuxPrebuildWorkflowRunId": 32081493677,
+      "externalReleaseStatus": "success-exact-content-sha-externally-verified",
+      "providerExecutionStatus": "blocked-external-credentials-before-network",
+      "actualProviderCalls": 0,
+      "actualResearchMovement": 0,
+      "finding": "All known repository-side GBIF publication blockers and the Vercel compile bottleneck are closed. The source family and application correction are live; authenticated acquisition truthfully remains blocked only by absent GBIF account credentials."
+    },
+    "githubDeploymentId": 5952766003,
+    "githubDeploymentEnvironmentUrl": "https://isitusa.com",
     "resourceCapacity": {
       "tier": "green",
       "availableMemoryMiB": 11631.058,
@@ -84,14 +98,23 @@
       "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "gbif-preserved-specimens",
-        "observedAt": "2026-08-17T20:07:34.447Z",
-      "status": "Round 68 completed and validated the offline national GBIF selection, authenticated acquisition, Darwin Core replay, partition, and integrity family. The exact smallest material prefix is 13 taxa and 25,406 true not-researched county-species pairs. Execution stopped before network because GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL are absent; actual Round 68 research movement is zero and no release was attempted.",
+        "observedAt": "2026-08-18T00:24:47.523Z",
+      "status": "Round 69 completed and externally released the national GBIF acquisition, verifier, Darwin Core replay, deterministic partition, durable publication recovery, bounded integrity, and offline end-to-end family. The exact material prefix remains 13 taxa and 25,406 true not-researched county-species pairs. Execution stopped before network because GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL are absent; actual provider calls and research movement are zero.",
       "gbifAuthenticatedDownloadStatus": "blocked-external-credentials-before-network",
       "preflightProcessException": false,
-        "qualification": "The reusable GBIF family is now implemented and passes focused tests, the frozen 97/97 suite, and the default-heap 996-run composite integrity gate. Provider execution remains blocked before network by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL. A requested-date-range receipt correction, exact partition input-hash verification, durable multi-run publication recovery, and an offline end-to-end materialization fixture remain release blockers."
+        "qualification": "The reusable GBIF family passes focused tests, a full 51-row and 50-run offline end-to-end materialization with deterministic rerun and tamper rejection, the frozen 97/97 suite, and the bounded 996-run composite integrity gate. The requested-date correction, exact partition input verification, durable multi-run recovery, and offline materialization blockers are closed. Provider execution remains blocked before network only by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL."
     }
   },
   "reverificationHistory": [
+    {
+      "recordedAt": "2026-08-18T00:24:47.523Z",
+      "supersededCheckpointSha": "30ec82eb3fd9f805f47e2324959067ed4cd51b22",
+      "localIntegrationCheckpointSha": "b360212653852b6964a3a43060a7930229016617",
+      "githubMainSha": "b360212653852b6964a3a43060a7930229016617",
+      "vercelProductionCommitSha": "b360212653852b6964a3a43060a7930229016617",
+      "githubDeploymentId": 5952766003,
+      "reason": "Round 69 closed every known repository-side national GBIF publication blocker, added a full zero-network end-to-end materialization proof, bounded the full immutable integrity scan, and changed species profiles to verified on-demand generation so the production build fits provider constraints. MAIN verified exact canonical, origin, public GitHub, Vercel metadata, GitHub status, GitHub Production, immutable and canonical browser behavior, generated-byte parity, visual captures, and zero runtime warning/error rows for content SHA b360212653852b6964a3a43060a7930229016617. The selected 13-taxon, 25,406-pair provider tranche remains blocked before network only because GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL are absent; zero provider calls and zero research movement are claimed. This observation does not attest the receipt commit that records it or any future deployment."
+    },
     {
       "recordedAt": "2026-08-17T10:23:28.739Z",
       "supersededCheckpointSha": "81193b6c5683030d5354a641a47652bf45e18e88",

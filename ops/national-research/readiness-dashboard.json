@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-08-17",
-  "generatedAt": "2026-08-17T00:00:00.000Z",
+  "asOf": "2026-08-18",
+  "generatedAt": "2026-08-18T00:00:00.000Z",
   "geography": {
     "states": 50,
     "federalDistricts": 1,
@@ -232309,46 +232309,58 @@
       "live-route-parity"
     ],
     "latestVerifiedPriorRelease": {
-      "verificationId": "production-2d463df8e-2026-08-17",
-      "verifiedAt": "2026-08-17T05:03:15.519Z",
-      "commitSha": "2d463df8e046555dcce7f54682afaab4c7943e79",
-      "githubMainSha": "2d463df8e046555dcce7f54682afaab4c7943e79",
-      "githubDeploymentId": 5939242155,
+      "verificationId": "production-b36021265-2026-08-18",
+      "verifiedAt": "2026-08-18T00:24:47.523Z",
+      "commitSha": "b360212653852b6964a3a43060a7930229016617",
+      "githubMainSha": "b360212653852b6964a3a43060a7930229016617",
+      "githubDeploymentId": 5952766003,
       "githubDeploymentState": "success",
-      "githubDeploymentStatusId": 16899173851,
-      "githubDeploymentEnvironmentUrl": "https://projectisitusa-6a5rkc3kd-unigentamos.vercel.app",
-      "gitLinkedVercelDeploymentId": null,
-      "vercelDeploymentId": null,
-      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/CoqCMMxZB6hJdcjUYdExykH6y3q8",
-      "vercelDeploymentUrl": "projectisitusa-6a5rkc3kd-unigentamos.vercel.app",
+      "githubDeploymentStatusId": 16937377463,
+      "githubDeploymentEnvironmentUrl": "https://isitusa.com",
+      "gitLinkedVercelDeploymentId": "dpl_A9K4SsbipvKiHqjp4a8JpWbmPX8L",
+      "vercelDeploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/jp96refFJurzz964qhHfyq2rm1Sj",
+      "vercelDeploymentUrl": "projectisitusa-hklbd496d-unigentamos.vercel.app",
       "productionUrl": "https://isitusa.com",
       "target": "production",
       "state": "success",
       "sourceIdentity": {
-        "source": "git",
+        "source": "github-actions-linux-standalone-prebuilt",
         "githubCommitRef": "main",
-        "githubCommitSha": "2d463df8e046555dcce7f54682afaab4c7943e79",
-        "releaseCommitMetadata": "2d463df8e046555dcce7f54682afaab4c7943e79",
+        "githubCommitSha": "b360212653852b6964a3a43060a7930229016617",
+        "releaseCommitMetadata": "b360212653852b6964a3a43060a7930229016617",
+        "linuxPrebuildWorkflowRunId": 32081493677,
+        "prebuiltArchiveBytes": 908433615,
+        "prebuiltArchiveSha256": "946d26ff9a85579593cb556a362f427a36aae1e6c38e3d40125b12cc85b5cd2a",
         "productionAliasResolvedToDeployment": true,
-        "observationMethod": "Fresh origin and public GitHub main identity, exact commit status, GitHub Production deployment status, immutable deployment HTTP, canonical alias HTTP, exact live-byte comparison, and production browser QA"
+        "observationMethod": "Fresh canonical, origin, public GitHub main, Vercel deployment metadata, GitHub commit status, GitHub Production deployment, immutable and canonical Playwright QA, exact live-byte hashing, visual capture inspection, and exact-deployment runtime-log queries"
       },
       "deploymentAttempts": [
         {
-          "githubDeploymentId": 5939242155,
-          "githubDeploymentStatusId": 16899173851,
-          "vercelInspectorSlug": "CoqCMMxZB6hJdcjUYdExykH6y3q8",
-          "source": "git",
+          "vercelDeploymentId": "dpl_2CWBFeDV65JPmmXQ4v5DBR4ZArri",
+          "githubCommitSha": "b360212653852b6964a3a43060a7930229016617",
+          "gitStatusId": 52389746928,
+          "state": "canceled",
+          "active": false,
+          "qualification": "The Git-linked cached build did not reach a usable completion within the bounded observation window and was canceled without changing production."
+        },
+        {
+          "vercelDeploymentId": "dpl_A9K4SsbipvKiHqjp4a8JpWbmPX8L",
+          "githubCommitSha": "b360212653852b6964a3a43060a7930229016617",
+          "gitStatusId": 52392116928,
+          "state": "failure",
+          "active": false,
+          "qualification": "The exact no-cache Git-source deployment skipped restored build cache but repeated the provider compile stall and terminated ERROR. It produced no release claim."
+        },
+        {
+          "vercelDeploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
+          "githubCommitSha": "b360212653852b6964a3a43060a7930229016617",
+          "gitStatusId": 52393802009,
+          "githubDeploymentId": 5952766003,
+          "githubDeploymentStatusId": 16937377463,
           "state": "success",
-          "vercelCommitStatusCreatedAt": "2026-08-17T04:51:40Z",
-          "vercelCommitStatusCompletedAt": "2026-08-17T04:59:03Z",
-          "vercelCommitStatusDurationSeconds": 443,
-          "githubDeploymentCreatedAt": "2026-08-17T04:59:03Z",
-          "githubDeploymentCompletedAt": "2026-08-17T04:59:03Z",
-          "githubDeploymentDurationSeconds": 0,
-          "buildSeconds": null,
-          "githubCommitSha": "2d463df8e046555dcce7f54682afaab4c7943e79",
           "active": true,
-          "qualification": "Vercel commit-status timing and GitHub deployment timing are provider-native. Exact Vercel build duration, private deployment ID, and runtime logs are unavailable because the canonical repository has no Vercel CLI."
+          "qualification": "A Linux GitHub Actions build checked out the exact content SHA, generated a supported standalone Vercel build output, and preserved it as a SHA-256-pinned archive. Vercel accepted the supported archive uploader, registered the Node 24 functions, marked the deployment READY, and promoted that exact deployment to the canonical domains."
         }
       ],
       "routeChecks": [
@@ -232357,19 +232369,31 @@
           "status": 200
         },
         {
-          "path": "/research?state=TX",
+          "path": "/research",
           "status": 200
         },
         {
-          "path": "/species/solanum-pseudocapsicum",
+          "path": "/about",
+          "status": 200
+        },
+        {
+          "path": "/species/arthraxon-hispidus",
+          "status": 200
+        },
+        {
+          "path": "/species/not-a-real-isitusa-species",
+          "status": 404
+        },
+        {
+          "path": "/generated/research/MD/summary.json",
+          "status": 200
+        },
+        {
+          "path": "/generated/research/MD/counties/24001.json",
           "status": 200
         },
         {
           "path": "/generated/research/TX/summary.json",
-          "status": 200
-        },
-        {
-          "path": "/generated/research/TX/counties/48001.json",
           "status": 200
         },
         {
@@ -232378,21 +232402,42 @@
         }
       ],
       "routeCheckHosts": [
-        "https://projectisitusa-6a5rkc3kd-unigentamos.vercel.app",
+        "https://projectisitusa-hklbd496d-unigentamos.vercel.app",
         "https://isitusa.com"
       ],
-      "routeHostChecksPassed": 12,
-      "routeHostByteIdentitiesPassed": 6,
-      "byteParityChecks": [
+      "zipLookupChecks": [
         {
-          "path": "/generated/research/TX/summary.json",
-          "bytes": 467093,
-          "sha256": "434e597fd411b28de60db17f67dc00eec07a43861d50389c87d4ad089e88fc3b"
+          "host": "https://projectisitusa-hklbd496d-unigentamos.vercel.app",
+          "zip": "21502",
+          "status": 200,
+          "county": "Allegany",
+          "stateCode": "MD",
+          "fips": "24001"
         },
         {
-          "path": "/generated/research/TX/counties/48001.json",
-          "bytes": 203558,
-          "sha256": "c6bfcfe55ce9f7bfda64e91437d0ceca8cb87839c7245eb62d1f97e3463c73a9"
+          "host": "https://isitusa.com",
+          "zip": "21502",
+          "status": 200,
+          "county": "Allegany",
+          "stateCode": "MD",
+          "fips": "24001"
+        }
+      ],
+      "byteParityChecks": [
+        {
+          "path": "/generated/research/MD/summary.json",
+          "bytes": 300542,
+          "sha256": "4d238777a62f7ec084a905f68a1c0fd433b0936ca643ad34fbb191f9d729fc30"
+        },
+        {
+          "path": "/generated/research/MD/counties/24001.json",
+          "bytes": 207332,
+          "sha256": "caa8351d9b63649d52b799dabb35de0d133ea3a6ad5a74876c65d3a9cdfbf312"
+        },
+        {
+          "path": "/generated/research/TX/summary.json",
+          "bytes": 500929,
+          "sha256": "e0d67c4016b9e5294723fb11c6f1bc20536edd2ad721960e4e68d0c3c4899e13"
         },
         {
           "path": "/generated/species.json",
@@ -232401,151 +232446,83 @@
         }
       ],
       "byteParityHosts": [
-        "https://projectisitusa-6a5rkc3kd-unigentamos.vercel.app",
+        "https://projectisitusa-hklbd496d-unigentamos.vercel.app",
         "https://isitusa.com"
       ],
-      "byteParityHostFileIdentitiesPassed": 6,
       "browserQa": {
+        "desktopHost": "https://projectisitusa-hklbd496d-unigentamos.vercel.app",
         "desktopViewport": "1440x1000",
+        "mobileHost": "https://isitusa.com",
         "mobileViewport": "390x844",
-        "researchRoute": "/research?state=TX",
-        "speciesRoute": "/species/solanum-pseudocapsicum",
-        "asOf": "2026-08-17",
-        "evidenceExpansionChecks": 1,
-        "evidenceExpansionPair": "48001:solanum-pseudocapsicum",
-        "evidenceSemantics": {
-          "pairStatus": "Researched Unresolved",
-          "researchStatus": "Reviewed No Qualifying Evidence",
-          "directEvidenceRecords": 0,
-          "freshness": "Undated",
-          "screenedBy": "USDA NRCS PLANTS county distribution",
-          "sourceSilenceCreatedNegative": false
-        },
-        "speciesProfile": {
-          "commonName": "Jerusalem cherry",
-          "scientificName": "Solanum pseudocapsicum",
-          "imageLoaded": true,
-          "brokenImages": 0
-        },
+        "flow": "ZIP 21502 to Allegany County and direct Small Carpgrass species profile",
+        "speciesPath": "/species/arthraxon-hispidus",
+        "firstSpeciesCacheStatus": "MISS",
+        "secondSpeciesCacheStatus": "HIT",
+        "missingSpeciesStatus": 404,
         "horizontalOverflow": false,
-        "desktopHorizontalOverflow": false,
-        "mobileHorizontalOverflow": false,
         "consoleWarnings": 0,
         "consoleErrors": 0,
         "pageErrors": 0,
-        "failedRequests": 0,
         "brokenImagesAfterLoad": 0,
-        "screenshotsCaptured": 2,
-        "productionScreenshotsVisuallyInspected": 2,
+        "screenshotsCaptured": 3,
+        "productionScreenshotsVisuallyInspected": 3,
         "screenshots": [
           {
-            "path": "output/playwright/round66-production/round66-production-desktop.png",
-            "bytes": 293267,
-            "sha256": "b3dd91e4ebfea1bd60bb24e1b279b292bd360d7a26ffd5614476bf0071592a80"
+            "path": "output/playwright/round69-production/immutable-species-desktop.png",
+            "bytes": 998490,
+            "sha256": "a94c8ccf84c94db60bba17f8a3790d4ed6ea17d907f47e32e8ce99641787a66d"
           },
           {
-            "path": "output/playwright/round66-production/round66-production-mobile.png",
-            "bytes": 248808,
-            "sha256": "a7f6970b78e5246dfdc2a4618352521b61b76935e012aaf3407726c072bab978"
+            "path": "output/playwright/round69-production/canonical-home-mobile.png",
+            "bytes": 380955,
+            "sha256": "12cc7e214beceb7b0a02336c0ee4d421ea5c48d42ab736bda216f10a3cf62a88"
+          },
+          {
+            "path": "output/playwright/round69-production/canonical-species-mobile.png",
+            "bytes": 406407,
+            "sha256": "9e72dae3ed9520bdd6827b6a144f5eaf56d040626192b664eefab12a4676da2b"
           }
         ]
       },
       "runtimeQa": {
-        "activeDeploymentId": 5939242155,
-        "runtimeErrorLogRows": null,
-        "runtimeFiveHundredLogRows": null,
-        "queryStatus": "unavailable-no-vercel-cli-in-canonical-toolchain",
-        "contentReleaseResearchIntegritySeconds": null,
-        "qualification": "Exact-deployment runtime logs and the private Vercel deployment ID were not queryable because the canonical repository has no Vercel CLI. Runtime confidence is limited to exact GitHub Production success, twelve direct route-host checks, six exact live-to-local byte identities, and production browser QA with zero final console, request, page, image, or layout failures."
+        "activeDeploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
+        "runtimeErrorLogRows": 0,
+        "runtimeWarningLogRows": 0,
+        "queryStatus": "passed",
+        "qualification": "Fresh exact-deployment Vercel runtime-log queries for the observed 30-minute production window returned zero error rows and zero warning rows."
       },
       "releaseEvaluation": {
-        "path": "ops/national-research/evaluations/round-66-usda-nrcs-plants-national-20260817-r1.json",
-        "sha256": "08e4160bd7ae061dcf5653d135251475aa0ceb26b2ed17b0f80aa07f9ca3a0a9",
-        "bytes": 26375,
-        "result": "complete-local-gates-passed-pending-external-release",
-        "qualification": "The evaluation intentionally preserves build-time pending external state. This separate receipt records the later exact-SHA deployment and external verification."
+        "path": "ops/national-research/evaluations/round-69-gbif-national-implementation-release-20260818-r1.json",
+        "sha256": "042d38909f496f1d44746c21e2943d2e5d4cfbf07ee3323a4b07132886e8fa6f",
+        "bytes": 7769,
+        "result": "implementation-and-application-release-go-provider-acquisition-blocked",
+        "qualification": "Repository-side GBIF publication blockers are closed and the application release is externally verified. Actual provider acquisition remains blocked before network by absent external credentials."
+      },
+      "sourceSelection": {
+        "source": "gbif-authenticated-national-download",
+        "selectedTaxa": 13,
+        "selectedNotResearchedPairs": 25406,
+        "credentialNamesPresent": {
+          "GBIF_USERNAME": false,
+          "GBIF_PASSWORD": false,
+          "GBIF_EMAIL": false
+        },
+        "providerCallsIssued": 0,
+        "archiveRetained": false,
+        "researchPairsMoved": 0,
+        "repositoryImplementationStatus": "complete-and-production-verified",
+        "providerExecutionStatus": "blocked-external-credentials-before-network"
       },
       "roundMovement": {
-        "plannedGrossPairs": 251520,
-        "completedGrossPairs": 251520,
-        "alreadyAccountedOverlap": 7112,
-        "finalMatrixPairsMoved": 244408,
-        "notResearchedToVerifiedPresent": 42470,
-        "notResearchedToResearchedUnresolved": 201938,
-        "researchedUnresolvedToVerifiedPresent": 0,
+        "plannedNetPairs": 25406,
+        "finalMatrixPairsMoved": 0,
+        "notResearchedToVerifiedPresent": 0,
+        "notResearchedToResearchedUnresolved": 0,
         "verifiedAbsent": 0,
         "notDetected": 0,
-        "applicabilityMovement": 2320,
-        "denominatorMovement": 0,
-        "protocolCellsClosed": 80,
-        "regulatedAndHighPriorityProtocolCellsClosed": 2,
-        "certificationBlockersRemoved": 0,
-        "certificationBlockersAdded": 0,
-        "statesMoved": 50
-      },
-      "finalNationalCounts": {
-        "stateSpeciesDenominator": 127704,
-        "stateSpeciesApplicable": 10830,
-        "stateSpeciesUnknown": 116874,
-        "stateSpeciesFullyAccounted": 19335,
-        "stateSpeciesResearchedUnresolved": 8528,
-        "stateSpeciesResearchedBlocked": 53,
-        "stateSpeciesNotResearched": 108293,
-        "countySpeciesDenominator": 7872576,
-        "verifiedPresent": 159302,
-        "verifiedAbsent": 0,
-        "notDetected": 8,
-        "researchedUnresolved": 1034270,
-        "notResearched": 6678996,
-        "protocolTotal": 95988,
-        "protocolComplete": 6262,
-        "protocolIncomplete": 19674,
-        "protocolBlocked": 59,
-        "protocolCurrent": 5651,
-        "protocolStale": 611,
-        "protocolUndated": 19733,
-        "certifiedStates": 0,
-        "conflicts": 0
-      },
-      "roundOperations": {
-        "nationalAcquisitions": 1,
-        "providerRequests": 165,
-        "distributionResponses": 80,
-        "providerRows": 46792,
-        "artifacts": 165,
-        "artifactBytes": 3500524,
-        "statePartitions": 51,
-        "jobs": 0,
-        "leases": 0,
-        "acceptedIntegrations": 0,
-        "rejectedIntegrations": 0,
-        "failures": 0,
-        "retries": 0,
-        "preventedNaiveStateTaxonRequestFamilies": 4080,
-        "peakProviderConcurrency": 1,
-        "peakActorRssMiB": 982.102,
-        "minimumObservedAvailableMemoryBytes": 12680466432,
-        "minimumObservedFreeDiskBytes": 694183940096
-      },
-      "roundEconomics": {
-        "retainedEvidenceRequests": 165,
-        "allProductionProviderContacts": 165,
-        "distributionResponses": 80,
-        "netPairsPerRetainedEvidenceRequest": 1481.261,
-        "acquisitionReceiptWindowSeconds": 187.838,
-        "actorTelemetryWallSeconds": 193.711,
-        "peakActorRssMiB": 982.102,
-        "workerHours": 0,
-        "netPairsPerWorkerHour": null,
-        "workerEconomicsQualification": "The national actor and partition were MAIN-owned; no worker job or worker lease ran, so a worker-hour rate is not applicable.",
-        "actualRoundEndToEndSeconds": 7134.867,
-        "actualRoundNetPairsPerHour": 123319.579748,
-        "acquisitionWindowPercentOfActualRound": 2.632677,
-        "actorActivePercentOfActualRound": 2.714991,
-        "postAcquisitionIntegrationGenerationReleaseSeconds": 6947.029,
-        "postAcquisitionPercentOfActualRound": 97.367323,
-        "contentCommitToExternalVerificationSeconds": 818.519,
-        "deploymentSuccessToFinalQaSeconds": 252.519
+        "protocolCellsClosed": 0,
+        "statesMoved": 0,
+        "qualification": "Selection and offline replay capacity are not research movement. No authenticated archive existed, so no evidence-derived matrix change is claimed."
       },
       "postDeploymentGate": {
         "phase": "POST-DEPLOYMENT",
@@ -232556,88 +232533,58 @@
             "category": "scope-and-source-of-truth",
             "criticality": "CRITICAL",
             "status": "PASSED",
-            "evidence": "Canonical, origin, public GitHub main, commit status, and deployment matched 2d463df8e046555dcce7f54682afaab4c7943e79."
+            "evidence": "Canonical, origin, public GitHub main, deployment metadata, GitHub status, and GitHub Production all identify b360212653852b6964a3a43060a7930229016617."
           },
           {
             "category": "functionality",
             "criticality": "CRITICAL",
             "status": "PASSED",
-            "evidence": "The deployed Texas Anderson Jerusalem cherry researched-unresolved evidence flow and species profile passed."
+            "evidence": "ZIP 21502 resolved to Allegany County; the Small Carpgrass species profile rendered; a nonexistent species returned the expected 404."
           },
           {
             "category": "visual-fidelity",
             "criticality": "HIGH",
             "status": "PASSED",
-            "evidence": "Production desktop and mobile full-page captures were visually inspected and matched the local release candidate."
-          },
-          {
-            "category": "accessibility",
-            "criticality": "HIGH",
-            "status": "PASSED",
-            "evidence": "Production accessibility snapshots exposed labeled controls, a mobile evidence card, and the conservative evidence disclosure."
-          },
-          {
-            "category": "seo-and-discovery",
-            "criticality": "MEDIUM",
-            "status": "PASSED",
-            "evidence": "Canonical home, research, and species routes returned HTTP 200 with expected titles and public source links."
+            "evidence": "Immutable desktop plus canonical mobile home and species captures were visually inspected and remained coherent and responsive."
           },
           {
             "category": "performance-and-resilience",
             "criticality": "HIGH",
             "status": "PASSED",
-            "evidence": "All twelve selected route-host requests returned 200 and both browser layouts completed without page failure."
+            "evidence": "The seven-page cold build passed and the on-demand species route changed from Vercel cache MISS to HIT on the second request."
           },
           {
             "category": "security-and-privacy",
             "criticality": "HIGH",
             "status": "PASSED",
-            "evidence": "HTTPS routes passed; no credential value was committed or logged; the blocked GBIF path issued zero requests."
-          },
-          {
-            "category": "analytics-and-conversion",
-            "criticality": "MEDIUM",
-            "status": "NOT APPLICABLE",
-            "evidence": "No analytics or conversion code changed; production Insights loaded and the browser console remained clean."
+            "evidence": "HTTPS and security headers were observed; no GBIF secret value existed, was logged, committed, copied, or bypassed; the blocked provider path issued zero calls."
           },
           {
             "category": "monitoring-and-operations",
             "criticality": "HIGH",
             "status": "PASSED",
-            "evidence": "GitHub deployment 5939242155 succeeded, immutable and canonical hosts agreed, and Round 65 receipt 40aec8580b209e00bf5a1075b1dc084250e6b225 remains the rollback reference."
+            "evidence": "Exact-deployment runtime error and warning queries returned zero rows; failed, canceled, and successful deployment lineage is retained."
           },
           {
             "category": "deployment",
             "criticality": "CRITICAL",
             "status": "PASSED",
-            "evidence": "Production deployment 5939242155 completed at 2026-08-17T04:59:03Z for exact content SHA 2d463df8e046555dcce7f54682afaab4c7943e79."
-          },
-          {
-            "category": "content-and-approvals",
-            "criticality": "MEDIUM",
-            "status": "PASSED",
-            "evidence": "The production disclosure retained separate determination, survey, research, freshness, conflict, and source-screen semantics."
+            "evidence": "Vercel deployment dpl_jp96refFJurzz964qhHfyq2rm1Sj is READY on isitusa.com and GitHub now reports the exact content SHA successful."
           },
           {
             "category": "data-release-integrity",
             "criticality": "CRITICAL",
             "status": "PASSED",
-            "evidence": "Three selected generated files matched exact local SHA-256 and byte counts on both immutable and canonical hosts, for six identities."
+            "evidence": "Four selected generated files matched exact committed byte counts and SHA-256 values on the immutable deployment. Canonical resolves to that same deployment."
           }
         ]
       },
-      "qaToolingInterventions": [
-        "Two compound Playwright run-code attempts were rejected by JavaScript argument parsing before executing page code. Equivalent CLI-native eval commands then passed.",
-        "The installed Playwright CLI uses requests rather than the older documented network command. The corrected requests command showed only the expected localhost Insights failure locally and zero production failures.",
-        "The restricted sandbox Node runtime failed before four independent gate scripts started at uv_os_get_passwd with ENOMEM. The same commands passed under the approved repository runtime."
-      ],
       "auditCorrections": [
-        "Round 65 reported final protocol total 80,204 and not-applicable 56,529; current generated summaries prove 80,200 and 56,525. It also reported regulated/high-priority current complete 2,365 rather than 2,367. The corrected baseline changes no Round 65 county movement, absence, non-detection, denominator, conflict, or certification claim."
+        "Round 68's four remaining repository-side GBIF publication blockers are all resolved by d736ab02c996995467593f7567fb387cd0cd0d05 and the offline end-to-end proof.",
+        "The production compile bottleneck was not a GBIF data failure. On-demand species generation reduced the cold static build from 2,512 pages to seven while retaining live species correctness and cacheability.",
+        "The release is an implementation and application release, not a GBIF evidence release. The actual acquisition remained a truthful no-go because the external account credentials do not exist in any inspected approved store."
       ],
-      "clockQualification": "Provider-native GitHub UTC timestamps control deployment timing. Vercel status creation-to-success was 443 seconds; content commit-to-final external verification was 818.519 seconds; Round 66 ownership acquisition-to-final external verification was 7,134.867 seconds.",
-      "externalVerificationSecondsFromContentCommit": 818.519,
-      "providerStatusToVerificationSeconds": 252.519,
-      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, public GitHub main, and the GitHub API matched exact Round 66 content SHA 2d463df8e046555dcce7f54682afaab4c7943e79; GitHub Production deployment 5939242155 succeeded; its immutable host and canonical alias served all six selected routes with identical bytes; three generated files matched local SHA-256 and bytes on both hosts; and fresh desktop, mobile, evidence-expansion, species-image, console, request, and overflow QA passed. Round 66 retained one 80-taxon USDA NRCS PLANTS national acquisition, partitioned it deterministically across all 51 jurisdictions, completed 251,520 county-species outcomes, and moved 244,408 unique pairs across 50 jurisdictions: 42,470 to verified present and 201,938 to researched unresolved. It added 2,320 derived applicability decisions, closed 80 protocol cells including two regulated/high-priority cells, and created no verified-absence, not-detected, denominator, conflict, or certification-blocker movement. The authenticated GBIF national path remains blocked before network by absent credentials and an unimplemented county partition. Exact-deployment runtime logs and the private Vercel deployment ID were unavailable. This receipt does not attest to the commit that contains it or any future deployment."
+      "evidenceScope": "Externally verified prior production release. This receipt is committed only after canonical, origin, and public GitHub main matched content SHA b360212653852b6964a3a43060a7930229016617; Vercel deployment dpl_jp96refFJurzz964qhHfyq2rm1Sj was READY and carried that exact commit metadata; isitusa.com resolved to it; GitHub Production deployment 5952766003 and commit context Vercel were successful; immutable desktop and canonical mobile browser flows passed with no successful-flow console errors, warnings, broken images, or horizontal overflow; ZIP 21502 resolved to Allegany County; Small Carpgrass rendered; a nonexistent species returned 404; four live generated files matched committed bytes and SHA-256; and exact-deployment runtime error and warning queries returned zero rows. Round 69 closed all known repository-side GBIF acquisition, replay, partition, transaction-recovery, bounded-integrity, and offline end-to-end publication blockers. It also replaced 2,504-species static pre-generation with verified on-demand caching to clear the provider compile ceiling. The selected GBIF scope remains 13 taxa and 25,406 true not-researched county-species pairs, but GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL were absent from all inspected approved stores. Therefore zero provider calls, zero archives, and zero research movement are truthfully recorded. This receipt does not attest to the commit that contains it or any future deployment."
     },
     "selfAttestationAllowed": false,
     "note": "Build-time readiness and deployed-release evidence are separate. A committed artifact cannot attest to a future deployment of its own commit."
