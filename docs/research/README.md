@@ -328,10 +328,15 @@ npm run research:migrate
 npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
 npm run research:index:state -- --state <STATE>
+npm run research:coverage:index
+npm run research:publication:manifest
+npm run research:publication:plan
 npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:verify -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:verify:all -- --as-of <YYYY-MM-DD>
 npm run check:research-integrity
+npm run check:research-coverage
+npm run check:research-publication
 npm run check:state-research-projections
 npm run check:national-research-config
 npm run build:national-readiness -- --as-of <YYYY-MM-DD>
@@ -359,6 +364,14 @@ node -e "const m=require('./docs/county-coverage/states/AL.json'); console.log(J
 ```
 
 Always report baseline, post-change, and net counts. Gross source rows are not the same as net compiled determination changes.
+
+## Source Coverage And Static Delivery
+
+`npm run research:coverage:index` rebuilds the planner-readable source coverage index from immutable receipts and hash-pinned pair outcomes. The index is derived evidence, not an editable ledger. It records stable query and coverage keys, source and adapter versions, exact scope hashes, completeness, freshness deadlines, and the retained files that prove each entry. `npm run check:research-coverage` must pass before registered-source planning or execution. Current complete scope is skipped, partial scope is resumed, stale scope is refreshed deliberately, blocked scope is retried only after its blocker changes, and unknown scope is prioritized before repeating current work.
+
+`npm run research:publication:manifest` builds a deterministic content-addressed release manifest for `public/generated/research`. `npm run research:publication:plan` reports object, byte, and free-tier safety budgets without credentials or provider writes. With scoped R2 credentials, `npm run research:publication:r2 -- --mode publish --verification full` uploads only missing hashes and verifies the immutable release. Add `--promote` only after remote and public-domain checks pass.
+
+The delivery target remains in `github` mode until the R2 shadow release, custom domain, preview deployment, exact-byte checks, and responsive browser checks pass. Switching to `r2` pins one immutable release ID. The client verifies object bytes and SHA-256 before parsing, and the GitHub exact-commit route remains the zero-downtime rollback path.
 
 ## EDDMapS Bounded Merge
 

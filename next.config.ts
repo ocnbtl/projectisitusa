@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 
+import researchDataDelivery from "./src/data/research/research-data-delivery.json";
+import { validateResearchDataDelivery } from "./src/lib/research/research-data-delivery";
+
 const isDevelopment = process.env.NODE_ENV !== "production";
 const vercelGitCommitSha = process.env.VERCEL_GIT_COMMIT_SHA;
 
@@ -10,6 +13,8 @@ if (process.env.VERCEL === "1" && !/^[0-9a-f]{40}$/i.test(vercelGitCommitSha ?? 
 const immutableResearchProjectionOrigin = vercelGitCommitSha
   ? `https://raw.githubusercontent.com/ocnbtl/projectisitusa/${vercelGitCommitSha}/public/generated/research`
   : null;
+
+const validatedResearchDataDelivery = validateResearchDataDelivery(researchDataDelivery);
 
 const securityHeaders = [
   {
@@ -53,16 +58,20 @@ const nextConfig: NextConfig = {
     webpackMemoryOptimizations: true,
   },
   async rewrites() {
-    if (!immutableResearchProjectionOrigin) {
-      return [];
-    }
-
-    return [
-      {
+    const rewrites = [];
+    if (immutableResearchProjectionOrigin) {
+      rewrites.push({
         source: "/generated/research/:path*",
         destination: `${immutableResearchProjectionOrigin}/:path*`,
-      },
-    ];
+      });
+    }
+    if (validatedResearchDataDelivery.mode === "r2") {
+      rewrites.push({
+        source: "/research-data/:path*",
+        destination: `${validatedResearchDataDelivery.r2.origin}/:path*`,
+      });
+    }
+    return rewrites;
   },
   async headers() {
     if (isDevelopment) {

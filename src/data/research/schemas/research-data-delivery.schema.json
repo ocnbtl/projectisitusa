@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/research-data-delivery.schema.json",
+  "title": "Project Isitusa research data delivery target",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "mode", "github", "r2"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "mode": { "enum": ["github", "r2"] },
+    "github": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "rootPath"],
+      "properties": {
+        "repository": { "const": "ocnbtl/projectisitusa" },
+        "rootPath": { "const": "public/generated/research" }
+      }
+    },
+    "r2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "releaseId"],
+      "properties": {
+        "origin": { "type": "string", "pattern": "^https://[a-z0-9.-]+$" },
+        "releaseId": { "type": ["string", "null"], "pattern": "^research-[0-9a-f]{12}-[0-9a-f]{16}$" }
+      }
+    }
+  },
+  "anyOf": [
+    {
+      "required": ["mode"],
+      "properties": { "mode": { "const": "github" } }
+    },
+    {
+      "required": ["mode", "r2"],
+      "properties": {
+        "mode": { "const": "r2" },
+        "r2": {
+          "required": ["releaseId"],
+          "properties": { "releaseId": { "type": "string" } }
+        }
+      }
+    }
+  ]
+}

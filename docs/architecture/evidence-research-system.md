@@ -474,6 +474,28 @@ County projections include county identity, species compatibility status, separa
 
 The Next.js build consumes only committed static projections. No public route may query source APIs or open the local SQLite index.
 
+### Durable source coverage memory
+
+`ops/national-research/source-coverage-index.json` is a deterministic, disposable index over the full registered source catalog, immutable run receipts, and their hash-pinned `outcomes.ndjson` files. It is not a new truth ledger. Every registered source appears even when it has no immutable run coverage, so unknown source families remain visible instead of disappearing from planning. Each run entry binds the source registry contract, adapter version, parameter hash, requested-scope hash, receipt hash, outcome hash, completeness counts, and freshness deadline into stable query and coverage keys.
+
+The planner policy is explicit:
+
+- skip an identical complete query while it is current
+- resume partial or incomplete scope from its retained run evidence
+- refresh stale scope deliberately and record the newer source snapshot
+- retry blocked or failed scope only after the blocker or provider state changes
+- prioritize unknown scope before cycling through already current coverage
+
+Regenerate the index after integrating immutable runs. The generator streams and hashes outcomes one run at a time, excludes pending run directories, and fails if receipt counts, file bytes, hashes, run IDs, source IDs, or statuses disagree. Planning commands validate the index before selecting work.
+
+### Content-addressed projection publication
+
+The tracked research projections remain the source of release truth. `ops/national-research/publication/research-data-manifest.json` maps every browser-visible projection to an immutable object key of the form `objects/sha256/<prefix>/<sha256>.json`. Identical files reuse the same object across releases. The release identity binds the exact last Git commit that changed the projection tree, so unrelated code or documentation commits do not create false data releases. A release manifest is stored at `releases/<release-id>/manifest.json`; `current.json` is a small operational pointer and is never used as the only release identity.
+
+The application delivery target is pinned in `src/data/research/research-data-delivery.json`. `github` mode preserves the exact-commit GitHub raw rewrite. `r2` mode fetches the pinned release manifest through the same-origin `/research-data/` rewrite, then verifies every selected object's declared byte count and SHA-256 in the browser before parsing JSON. The Git route remains available as a rollback path during and after the initial cutover.
+
+R2 publication is two phase. First upload missing content-addressed objects and the immutable release manifest, then verify remote bytes and public-domain samples. Only after those gates pass may MAIN promote the pointer, pin the release ID in the delivery target, deploy a preview, and release production. The publisher refuses a projected footprint above the project's 9 GiB storage safety budget and keeps request projections below reserved free-tier guardrails. It never deletes old releases automatically.
+
 ## EDDMapS Compatibility Caveat
 
 The existing `npm run merge:eddmaps-county-data` command is a bounded merge for cases where a full live source-family rebuild is impractical. It reads `src/data/source/eddmaps-snapshot.json` and unions EDDMapS counties into `src/data/source/county-presence-snapshot.json` while preserving other coverage.
@@ -521,10 +543,15 @@ npm run research:partition:usgs-nas-national -- --acquisition <acquisition-id> -
 npm run research:compile -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:index
 npm run research:index:state -- --state <STATE>
+npm run research:coverage:index
+npm run research:publication:manifest
+npm run research:publication:plan
 npm run research:refresh -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:verify -- --state <STATE> --as-of <YYYY-MM-DD>
 npm run research:verify:all -- --as-of <YYYY-MM-DD>
 npm run check:research-integrity
+npm run check:research-coverage
+npm run check:research-publication
 npm run check:state-research-projections
 npm run check:national-research-config
 npm run build:national-readiness -- --as-of <YYYY-MM-DD>

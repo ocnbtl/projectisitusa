@@ -31,6 +31,7 @@ import {
   resolveSparseCountyPairs,
   type ResearchCatalogSpecies,
 } from "@/lib/research/pair-resolution";
+import { fetchResearchProjectionJson } from "@/lib/research/public-projection-fetch";
 import type {
   ResearchCountyFile,
   ResearchPairRecord,
@@ -834,9 +835,9 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
       setCountyData(null);
 
       try {
-        const [countyResponse, catalogResponse] = await Promise.all([
-          fetch(
-            `/generated/research/${encodeURIComponent(summary.stateCode)}/counties/${encodeURIComponent(selectedCountyFips)}.json`,
+        const [countyProjection, catalogResponse] = await Promise.all([
+          fetchResearchProjectionJson(
+            `${encodeURIComponent(summary.stateCode)}/counties/${encodeURIComponent(selectedCountyFips)}.json`,
             { cache: "no-store", signal: controller.signal },
           ),
           fetch("/generated/species.json", {
@@ -844,14 +845,11 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
             signal: controller.signal,
           }),
         ]);
-        if (!countyResponse.ok) {
-          throw new Error(`County file request failed with status ${countyResponse.status}.`);
-        }
         if (!catalogResponse.ok) {
           throw new Error(`Species catalog request failed with status ${catalogResponse.status}.`);
         }
 
-        const data: unknown = await countyResponse.json();
+        const data: unknown = countyProjection;
         if (!isCountyResearchFile(data)) {
           throw new Error("County file has an invalid research data shape.");
         }
@@ -1640,14 +1638,10 @@ export function ResearchControlCenter({
       setLoadError(null);
 
       try {
-        const response = await fetch(`/generated/research/${encodeURIComponent(selectedStateCode)}/summary.json`, {
-          cache: "no-store",
-          signal: controller.signal,
-        });
-        if (!response.ok) {
-          throw new Error(`Research summary request failed with status ${response.status}.`);
-        }
-        const data: unknown = await response.json();
+        const data: unknown = await fetchResearchProjectionJson(
+          `${encodeURIComponent(selectedStateCode)}/summary.json`,
+          { cache: "no-store", signal: controller.signal },
+        );
         if (!isResearchSummaryFile(data, selectedStateCode)) {
           throw new Error("Research summary has an invalid data shape.");
         }

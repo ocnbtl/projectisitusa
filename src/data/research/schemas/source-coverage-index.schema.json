@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/source-coverage-index.schema.json",
+  "title": "Project Isitusa source coverage index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "kind", "indexId", "generatedFromCommit", "sourceRegistryPath", "sourceRegistrySha256", "runReceiptDigestSha256", "runCount", "sourceCount", "policy", "sources", "entries"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "isitusa-source-coverage-index" },
+    "indexId": { "type": "string", "pattern": "^source-coverage-[0-9a-f]{20}$" },
+    "generatedFromCommit": { "$ref": "#/$defs/sha40" },
+    "sourceRegistryPath": { "const": "src/data/research/source-registry.json" },
+    "sourceRegistrySha256": { "$ref": "#/$defs/sha256" },
+    "runReceiptDigestSha256": { "$ref": "#/$defs/sha256" },
+    "runCount": { "type": "integer", "minimum": 0 },
+    "sourceCount": { "type": "integer", "minimum": 0 },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "identicalCurrent", "partial", "stale", "blocked", "unknown"],
+      "properties": {
+        "authority": { "const": "immutable-run-receipts-and-hash-pinned-outcomes" },
+        "identicalCurrent": { "const": "skip" },
+        "partial": { "const": "resume" },
+        "stale": { "const": "refresh-deliberately" },
+        "blocked": { "const": "retry-only-after-blocker-change" },
+        "unknown": { "const": "prioritize-before-repeating-current-coverage" }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceId", "coverageState", "runCount", "completeRuns", "partialRuns", "failedRuns", "requestedPairs", "scopeCompletePairs", "latestFinishedAt"],
+        "properties": {
+          "sourceId": { "type": "string", "minLength": 1 },
+          "coverageState": { "enum": ["covered-by-immutable-runs", "no-immutable-run-coverage"] },
+          "runCount": { "type": "integer", "minimum": 0 },
+          "completeRuns": { "type": "integer", "minimum": 0 },
+          "partialRuns": { "type": "integer", "minimum": 0 },
+          "failedRuns": { "type": "integer", "minimum": 0 },
+          "requestedPairs": { "type": "integer", "minimum": 0 },
+          "scopeCompletePairs": { "type": "integer", "minimum": 0 },
+          "latestFinishedAt": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["coverageKey", "queryKey", "runId", "receiptPath", "receiptSha256", "sourceId", "sourceRegistryHash", "adapterId", "adapterVersion", "parameterHash", "requestedScopeSha256", "status", "startedAt", "finishedAt", "refreshCadenceDays", "freshnessDeadline", "plannerAction", "requestedPairs", "outcomePairs", "scopeCompletePairs", "outcomeStatusCounts", "outcomesPath", "outcomesSha256", "outcomesBytes"],
+        "properties": {
+          "coverageKey": { "$ref": "#/$defs/sha256" },
+          "queryKey": { "$ref": "#/$defs/sha256" },
+          "runId": { "type": "string", "minLength": 1 },
+          "receiptPath": { "type": "string", "pattern": "^src/data/research/runs/.+/receipt\\.json$" },
+          "receiptSha256": { "$ref": "#/$defs/sha256" },
+          "sourceId": { "type": "string", "minLength": 1 },
+          "sourceRegistryHash": { "$ref": "#/$defs/sha256" },
+          "adapterId": { "type": "string", "minLength": 1 },
+          "adapterVersion": { "type": "string", "minLength": 1 },
+          "parameterHash": { "$ref": "#/$defs/sha256" },
+          "requestedScopeSha256": { "$ref": "#/$defs/sha256" },
+          "status": { "enum": ["complete", "partial", "failed"] },
+          "startedAt": { "type": "string", "format": "date-time" },
+          "finishedAt": { "type": "string", "format": "date-time" },
+          "refreshCadenceDays": { "type": ["integer", "null"], "minimum": 1 },
+          "freshnessDeadline": { "type": ["string", "null"], "format": "date-time" },
+          "plannerAction": { "enum": ["skip-identical-query-until-freshness-deadline", "resume-incomplete-scope", "resume-partial-run", "retry-only-after-blocker-change"] },
+          "requestedPairs": { "type": "integer", "minimum": 0 },
+          "outcomePairs": { "type": "integer", "minimum": 0 },
+          "scopeCompletePairs": { "type": "integer", "minimum": 0 },
+          "outcomeStatusCounts": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["evidence-found", "no-qualifying-evidence", "needs-followup", "blocked"],
+            "properties": {
+              "evidence-found": { "type": "integer", "minimum": 0 },
+              "no-qualifying-evidence": { "type": "integer", "minimum": 0 },
+              "needs-followup": { "type": "integer", "minimum": 0 },
+              "blocked": { "type": "integer", "minimum": 0 }
+            }
+          },
+          "outcomesPath": { "type": "string", "pattern": "^src/data/research/runs/.+/outcomes\\.ndjson$" },
+          "outcomesSha256": { "$ref": "#/$defs/sha256" },
+          "outcomesBytes": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha40": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  }
+}
