@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -40,7 +40,8 @@ function parseArgs(argv: string[]) {
   }
   const plan = values.get("plan");
   assert(plan, "--plan is required.");
-  return { planPath: path.resolve(plan) };
+  const establishPlanHash = values.get("establish-plan-hash") === "true";
+  return { planPath: path.resolve(plan), establishPlanHash };
 }
 
 function readJson<T>(filepath: string) {
@@ -49,7 +50,7 @@ function readJson<T>(filepath: string) {
 
 function main() {
   const root = process.cwd();
-  const { planPath } = parseArgs(process.argv.slice(2));
+  const { planPath, establishPlanHash } = parseArgs(process.argv.slice(2));
   const plan = loadNationalGbifDownloadPlan(planPath);
   assert(plan.schemaVersion === 2, "GBIF national selection requires a v2 plan.");
   assert(plan.expectedGrossPairs && plan.expectedNotResearchedPairsAtBaseline, "GBIF v2 plan counts are missing.");
@@ -213,12 +214,22 @@ function main() {
   const outputPath = path.join(root, plan.selectionEvidencePath);
   NationalGbifSelectionSchema.parse(output);
   const outputContents = `${JSON.stringify(output, null, 2)}\n`;
-  assert(sha256(outputContents) === plan.selectionEvidenceSha256, "GBIF selection output hash differs from the committed v2 plan.");
+  const outputSha256 = sha256(outputContents);
+  if (establishPlanHash) {
+    assert(
+      plan.selectionEvidenceSha256 === "0".repeat(64),
+      "GBIF selection hash establishment requires an all-zero placeholder in the draft plan.",
+    );
+    assert(!existsSync(outputPath), "GBIF selection hash establishment refuses to overwrite an existing evidence file.");
+  } else {
+    assert(outputSha256 === plan.selectionEvidenceSha256, "GBIF selection output hash differs from the committed v2 plan.");
+  }
   mkdirSync(path.dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, outputContents);
+  writeFileSync(outputPath, outputContents, establishPlanHash ? { flag: "wx" } : undefined);
   process.stdout.write(`${JSON.stringify({
     outputPath: path.relative(root, outputPath).replaceAll("\\", "/"),
     outputSha256: sha256(readFileSync(outputPath)),
+    planHashEstablished: establishPlanHash,
     ...output.counts,
     candidatePairSha256: output.candidatePairSha256,
   }, null, 2)}\n`);
