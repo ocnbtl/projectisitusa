@@ -1,27 +1,27 @@
 # Maryland Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `24`
 - County-species pairs: `60096`
-- Verified present: `476`
+- Verified present: `490`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9316`
-- Not researched: `50304`
-- Determination coverage: `0.79%`
-- Research coverage: `16.29%`
-- Explicit outcome coverage: `16.2939%`
-- Applicable protocol cells: `155`
-- Current complete protocol cells: `72`
-- Protocol completion: `54.84%`
-- Current protocol completion: `46.45%`
-- Evidence records: `745`
-- Research runs: `17`
-- Rejection records: `253`
+- Researched unresolved: `9398`
+- Not researched: `50208`
+- Determination coverage: `0.82%`
+- Research coverage: `16.45%`
+- Explicit outcome coverage: `16.4537%`
+- Applicable protocol cells: `158`
+- Current complete protocol cells: `75`
+- Protocol completion: `55.70%`
+- Current protocol completion: `47.47%`
+- Evidence records: `759`
+- Research runs: `18`
+- Rejection records: `255`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 89 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-08T03:04:36.119Z | 111 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 125 | 54 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

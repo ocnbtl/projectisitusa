@@ -1,27 +1,27 @@
 # Texas Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `6890`
+- Verified present: `6950`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `92932`
-- Not researched: `536194`
-- Determination coverage: `1.08%`
-- Research coverage: `15.69%`
-- Explicit outcome coverage: `15.6949%`
-- Applicable protocol cells: `340`
-- Current complete protocol cells: `90`
-- Protocol completion: `30.29%`
-- Current protocol completion: `26.47%`
-- Evidence records: `9341`
-- Research runs: `18`
-- Rejection records: `510`
+- Researched unresolved: `96174`
+- Not researched: `532892`
+- Determination coverage: `1.09%`
+- Research coverage: `16.21%`
+- Explicit outcome coverage: `16.2141%`
+- Applicable protocol cells: `347`
+- Current complete protocol cells: `97`
+- Protocol completion: `31.70%`
+- Current protocol completion: `27.95%`
+- Evidence records: `9401`
+- Research runs: `19`
+- Rejection records: `526`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -39,6 +39,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 254 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 254 | 1 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 254 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 254 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 254 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 254 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 254 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 254 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 254 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 254 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5251 | 316 |
-| GBIF preserved specimen records | operational | 2026-07-31T12:41:57.355Z | 763 | 68 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 823 | 81 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

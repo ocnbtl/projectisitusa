@@ -1,27 +1,27 @@
 # Pennsylvania Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `7700`
+- Verified present: `7726`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `20105`
-- Not researched: `139963`
-- Determination coverage: `4.59%`
-- Research coverage: `16.57%`
-- Explicit outcome coverage: `16.5735%`
-- Applicable protocol cells: `332`
-- Current complete protocol cells: `96`
-- Protocol completion: `32.83%`
-- Current protocol completion: `28.92%`
-- Evidence records: `14314`
-- Research runs: `17`
-- Rejection records: `1027`
+- Researched unresolved: `20414`
+- Not researched: `139628`
+- Determination coverage: `4.61%`
+- Research coverage: `16.77%`
+- Explicit outcome coverage: `16.7732%`
+- Applicable protocol cells: `335`
+- Current complete protocol cells: `99`
+- Protocol completion: `33.43%`
+- Current protocol completion: `29.55%`
+- Evidence records: `14340`
+- Research runs: `18`
+- Rejection records: `1032`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5960 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-03T01:34:05.330Z | 1114 | 75 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 1140 | 80 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

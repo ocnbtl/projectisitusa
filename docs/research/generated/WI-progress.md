@@ -1,27 +1,27 @@
 # Wisconsin Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `72`
 - County-species pairs: `180288`
-- Verified present: `4752`
+- Verified present: `4770`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `24048`
-- Not researched: `151488`
-- Determination coverage: `2.64%`
-- Research coverage: `15.97%`
-- Explicit outcome coverage: `15.9744%`
-- Applicable protocol cells: `245`
-- Current complete protocol cells: `95`
-- Protocol completion: `44.08%`
-- Current protocol completion: `38.78%`
-- Evidence records: `8939`
-- Research runs: `17`
-- Rejection records: `841`
+- Researched unresolved: `24318`
+- Not researched: `151200`
+- Determination coverage: `2.65%`
+- Research coverage: `16.13%`
+- Explicit outcome coverage: `16.1342%`
+- Applicable protocol cells: `247`
+- Current complete protocol cells: `97`
+- Protocol completion: `44.53%`
+- Current protocol completion: `39.27%`
+- Evidence records: `8957`
+- Research runs: `18`
+- Rejection records: `845`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3540 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-02T22:04:07.859Z | 941 | 74 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 959 | 78 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

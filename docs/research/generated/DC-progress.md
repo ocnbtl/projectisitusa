@@ -1,27 +1,27 @@
 # District of Columbia Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `1`
 - County-species pairs: `2504`
-- Verified present: `194`
+- Verified present: `197`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `168`
-- Not researched: `2142`
-- Determination coverage: `7.75%`
-- Research coverage: `14.46%`
-- Explicit outcome coverage: `14.4569%`
-- Applicable protocol cells: `276`
-- Current complete protocol cells: `35`
-- Protocol completion: `17.39%`
-- Current protocol completion: `12.68%`
-- Evidence records: `197`
-- Research runs: `26`
-- Rejection records: `91`
+- Researched unresolved: `176`
+- Not researched: `2131`
+- Determination coverage: `7.87%`
+- Research coverage: `14.90%`
+- Explicit outcome coverage: `14.8962%`
+- Applicable protocol cells: `279`
+- Current complete protocol cells: `38`
+- Protocol completion: `18.28%`
+- Current protocol completion: `13.62%`
+- Evidence records: `200`
+- Research runs: `27`
+- Rejection records: `93`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 179 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-14T21:11:11.079Z | 2 | 13 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 5 | 24 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

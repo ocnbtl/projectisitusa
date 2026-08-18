@@ -1,6 +1,6 @@
 # South Dakota Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Verified present: `714`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `25620`
-- Not researched: `138930`
+- Researched unresolved: `25818`
+- Not researched: `138732`
 - Determination coverage: `0.43%`
-- Research coverage: `15.93%`
-- Explicit outcome coverage: `15.9345%`
+- Research coverage: `16.05%`
+- Explicit outcome coverage: `16.0543%`
 - Applicable protocol cells: `176`
 - Current complete protocol cells: `72`
 - Protocol completion: `40.91%`
 - Current protocol completion: `40.91%`
 - Evidence records: `834`
-- Research runs: `16`
+- Research runs: `17`
 - Rejection records: `70`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 624 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-03T01:13:23.372Z | 35 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 35 | 53 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

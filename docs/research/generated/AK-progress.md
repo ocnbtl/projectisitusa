@@ -1,27 +1,27 @@
 # Alaska Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `30`
 - County-species pairs: `75120`
-- Verified present: `388`
+- Verified present: `390`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `11792`
-- Not researched: `62940`
+- Researched unresolved: `12180`
+- Not researched: `62550`
 - Determination coverage: `0.52%`
-- Research coverage: `16.21%`
-- Explicit outcome coverage: `16.2141%`
-- Applicable protocol cells: `162`
-- Current complete protocol cells: `101`
-- Protocol completion: `62.35%`
-- Current protocol completion: `62.35%`
-- Evidence records: `548`
-- Research runs: `20`
-- Rejection records: `2091`
+- Research coverage: `16.73%`
+- Explicit outcome coverage: `16.7332%`
+- Applicable protocol cells: `163`
+- Current complete protocol cells: `102`
+- Protocol completion: `62.58%`
+- Current protocol completion: `62.58%`
+- Evidence records: `550`
+- Research runs: `21`
+- Rejection records: `2093`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -47,6 +47,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 30 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 30 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 30 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 30 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 30 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 30 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 30 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 30 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 30 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 30 | 0 |
-| Crow Garlic (`allium-vineale`) | plants | 0 | 30 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 314 | 316 |
-| GBIF preserved specimen records | operational | 2026-07-31T21:36:12.944Z | 85 | 79 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 87 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

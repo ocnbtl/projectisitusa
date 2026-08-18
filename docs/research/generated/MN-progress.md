@@ -1,27 +1,27 @@
 # Minnesota Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `87`
 - County-species pairs: `217848`
-- Verified present: `3124`
+- Verified present: `3138`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `31589`
-- Not researched: `183135`
-- Determination coverage: `1.43%`
-- Research coverage: `15.93%`
-- Explicit outcome coverage: `15.9345%`
-- Applicable protocol cells: `214`
-- Current complete protocol cells: `89`
-- Protocol completion: `47.66%`
-- Current protocol completion: `41.59%`
-- Evidence records: `4726`
-- Research runs: `17`
-- Rejection records: `549`
+- Researched unresolved: `31923`
+- Not researched: `182787`
+- Determination coverage: `1.44%`
+- Research coverage: `16.09%`
+- Explicit outcome coverage: `16.0942%`
+- Applicable protocol cells: `216`
+- Current complete protocol cells: `91`
+- Protocol completion: `48.15%`
+- Current protocol completion: `42.13%`
+- Evidence records: `4740`
+- Research runs: `18`
+- Rejection records: `551`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2278 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-02T20:37:30.234Z | 682 | 67 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 696 | 71 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

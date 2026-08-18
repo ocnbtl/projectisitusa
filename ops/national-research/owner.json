@@ -7,17 +7,17 @@
   "branch": "main",
   "baseSha": "d2f60f44f502e339ca5b3380c16e2a0329edeb6f",
   "acquiredAt": "2026-08-18T01:49:34.937Z",
-  "lastReverifiedAt": "2026-08-18T01:49:34.937Z",
-  "currentCheckpointSha": "d2f60f44f502e339ca5b3380c16e2a0329edeb6f",
-  "localHeadAtLastReverification": "d2f60f44f502e339ca5b3380c16e2a0329edeb6f",
-  "state": "active-round-70-authenticated-gbif-acquisition",
+  "lastReverifiedAt": "2026-08-18T02:55:34.825Z",
+  "currentCheckpointSha": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+  "localHeadAtLastReverification": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+  "state": "active-round-70-generated-content-verification",
   "ownershipEvidence": {
     "activeProjectTasks": ["national-round-70-20260818-main"],
     "supersededOwnerTaskId": "national-round-69-20260817-main",
     "gitWorktreeCount": 215,
     "mainWriterProcesses": 0,
-    "originMainSha": "d2f60f44f502e339ca5b3380c16e2a0329edeb6f",
-    "githubMainSha": "d2f60f44f502e339ca5b3380c16e2a0329edeb6f",
+    "originMainSha": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+    "githubMainSha": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
     "vercelProductionCommitSha": "b360212653852b6964a3a43060a7930229016617",
     "vercelDeploymentId": "dpl_jp96refFJurzz964qhHfyq2rm1Sj",
     "gitFetchTransport": "https-authenticated",
@@ -70,6 +70,23 @@
       "actualResearchMovement": 0,
       "finding": "All known repository-side GBIF publication blockers and the Vercel compile bottleneck are closed. The source family and application correction are live; authenticated acquisition truthfully remains blocked only by absent GBIF account credentials."
     },
+    "round70Integration": {
+      "acquisitionCommit": "61ca04cf5",
+      "partitionCommit": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+      "downloadKey": "0021178-260806074905277",
+      "doi": "10.15468/dl.qg2299",
+      "providerRecords": 30994,
+      "archiveBytes": 12434435,
+      "archiveSha256": "5ebce0dbc0107aa2b733f2f3715aa7f2a8b3f7eb9d11b4dab487402163827f8b",
+      "materializedRuns": 50,
+      "selectedPairsMoved": 25406,
+      "verifiedPresentAdded": 1147,
+      "researchedUnresolvedAdded": 24259,
+      "notResearchedRemoved": 25406,
+      "providerExecutionStatus": "succeeded-and-integrated",
+      "contentReleaseStatus": "pending-external-verification",
+      "finding": "The authenticated GBIF archive completed with one non-retried POST, four status GETs, and one archive GET. Its 30,994 records reconciled to 50 immutable state runs and exactly 25,406 measured county-species research movements. Generated content, full integrity, and the cold production build pass locally; external release verification is pending."
+    },
     "githubDeploymentId": 5952766003,
     "githubDeploymentEnvironmentUrl": "https://isitusa.com",
     "resourceCapacity": {
@@ -98,11 +115,11 @@
       "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "gbif-preserved-specimens",
-        "observedAt": "2026-08-18T00:24:47.523Z",
-      "status": "Round 69 completed and externally released the national GBIF acquisition, verifier, Darwin Core replay, deterministic partition, durable publication recovery, bounded integrity, and offline end-to-end family. The exact material prefix remains 13 taxa and 25,406 true not-researched county-species pairs. Execution stopped before network because GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL are absent; actual provider calls and research movement are zero.",
-      "gbifAuthenticatedDownloadStatus": "blocked-external-credentials-before-network",
+        "observedAt": "2026-08-18T02:55:34.825Z",
+      "status": "Round 70 completed the authenticated national GBIF provider request, retained and verified the 30,994-record archive, partitioned 50 nonempty state runs, and integrated exactly 25,406 selected county-species outcomes into all 51 generated projections.",
+      "gbifAuthenticatedDownloadStatus": "succeeded-and-integrated",
       "preflightProcessException": false,
-        "qualification": "The reusable GBIF family passes focused tests, a full 51-row and 50-run offline end-to-end materialization with deterministic rerun and tamper rejection, the frozen 97/97 suite, and the bounded 996-run composite integrity gate. The requested-date correction, exact partition input verification, durable multi-run recovery, and offline materialization blockers are closed. Provider execution remains blocked before network only by absent GBIF_USERNAME, GBIF_PASSWORD, and GBIF_EMAIL."
+        "qualification": "The actual provider archive and partition pass independent hash and byte verification, exact occurrence/verbatim reconciliation, a deterministic post-commit rerun, all focused GBIF tests, the frozen 97/97 suite, the bounded 1,046-run composite integrity gate, the 51-state projection gate, typecheck, and a cold production build. The exact content commit is not yet externally deployed or verified."
     }
   },
   "reverificationHistory": [

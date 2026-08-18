@@ -1,27 +1,27 @@
 # Delaware Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `3`
 - County-species pairs: `7512`
-- Verified present: `202`
+- Verified present: `205`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `986`
-- Not researched: `6324`
-- Determination coverage: `2.69%`
-- Research coverage: `15.81%`
-- Explicit outcome coverage: `15.8147%`
-- Applicable protocol cells: `223`
-- Current complete protocol cells: `57`
-- Protocol completion: `31.39%`
-- Current protocol completion: `25.56%`
-- Evidence records: `248`
-- Research runs: `25`
-- Rejection records: `78`
+- Researched unresolved: `998`
+- Not researched: `6309`
+- Determination coverage: `2.73%`
+- Research coverage: `16.01%`
+- Explicit outcome coverage: `16.0144%`
+- Applicable protocol cells: `225`
+- Current complete protocol cells: `59`
+- Protocol completion: `32.00%`
+- Current protocol completion: `26.22%`
+- Evidence records: `251`
+- Research runs: `26`
+- Rejection records: `79`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 124 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-10T01:35:58.621Z | 15 | 35 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 18 | 40 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

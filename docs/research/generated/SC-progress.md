@@ -1,27 +1,27 @@
 # South Carolina Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `46`
 - County-species pairs: `115184`
-- Verified present: `3513`
+- Verified present: `3537`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `14381`
-- Not researched: `97290`
-- Determination coverage: `3.05%`
-- Research coverage: `15.54%`
-- Explicit outcome coverage: `15.5351%`
-- Applicable protocol cells: `319`
-- Current complete protocol cells: `55`
-- Protocol completion: `21.32%`
-- Current protocol completion: `17.24%`
-- Evidence records: `3813`
-- Research runs: `20`
-- Rejection records: `23`
+- Researched unresolved: `14955`
+- Not researched: `96692`
+- Determination coverage: `3.07%`
+- Research coverage: `16.05%`
+- Explicit outcome coverage: `16.0543%`
+- Applicable protocol cells: `327`
+- Current complete protocol cells: `63`
+- Protocol completion: `23.24%`
+- Current protocol completion: `19.27%`
+- Evidence records: `3837`
+- Research runs: `21`
+- Rejection records: `30`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -54,9 +54,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 46 | 0 |
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 46 | 0 |
 | Field mustard (`brassica-rapa`) | plants | 0 | 46 | 0 |
+| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 46 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 46 | 0 |
-| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 46 | 0 |
-| Marijuana (`cannabis-sativa`) | plants | 0 | 46 | 0 |
+| Pond water-starwort (`callitriche-stagnalis`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2977 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-09T13:04:30.250Z | 28 | 33 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 52 | 46 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

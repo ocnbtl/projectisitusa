@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-70-gbif-national-acquisition-integration-20260818-r1",
+  "evaluatedAt": "2026-08-18T02:55:34.825Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "baselineGeneratedCommit": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+  "acquisitionCommit": "61ca04cf5",
+  "partitionCommit": "cdbf61d51871b9dea1a4b69a2d9859c9f83bd8d6",
+  "contentCommit": null,
+  "objective": "Execute the authenticated GBIF national download, retain and verify the provider archive, partition the selected material scope into immutable state runs, integrate the measured outcomes into all 51 generated projections, and release only after local and external verification.",
+  "selection": {
+    "planId": "gbif-national-download-v2-round-68-13",
+    "selectionEvidencePath": "ops/national-research/evaluations/round-68-gbif-national-selection-20260817-r1.json",
+    "selectionEvidenceSha256": "c872d177cd2f6d629302fcc49fee3e6c01183099d6405971847db4c92915a356",
+    "candidatePairSha256": "5a4d1e78f6842a71997400908be44bab1855bdad4e8fee20a70eec799047b73a",
+    "selectedTaxa": 13,
+    "jurisdictions": 51,
+    "grossCountySpeciesPairs": 40872,
+    "selectedNotResearchedPairs": 25406,
+    "excludedBlockedPairs": 18,
+    "alreadyResearchedPairs": 15448,
+    "smallestThresholdPrefix": true
+  },
+  "providerExecution": {
+    "sourceId": "gbif-preserved-specimens",
+    "acquisitionId": "20260818t015248z__gbif-download__3adc41198e1b",
+    "downloadKey": "0021178-260806074905277",
+    "doi": "10.15468/dl.qg2299",
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "requestedAt": "2026-08-18T01:53:15.701Z",
+    "startedAt": "2026-08-18T01:52:48.623Z",
+    "finishedAt": "2026-08-18T01:56:24.535Z",
+    "terminalStatus": "SUCCEEDED",
+    "providerRecords": 30994,
+    "httpAttempts": {
+      "total": 6,
+      "requestPosts": 1,
+      "statusGets": 4,
+      "archiveGets": 1,
+      "requestStatus": 201,
+      "getStatus": 200,
+      "retries": 0
+    },
+    "archive": {
+      "path": "src/data/research/national-acquisitions/20260818t015248z__gbif-download__3adc41198e1b/download.zip",
+      "bytes": 12434435,
+      "sha256": "5ebce0dbc0107aa2b733f2f3715aa7f2a8b3f7eb9d11b4dab487402163827f8b"
+    },
+    "receipt": {
+      "path": "src/data/research/national-acquisitions/20260818t015248z__gbif-download__3adc41198e1b/receipt.json",
+      "sha256": "7c64309c21e62427fbbd4a9dcfdec176a161d705ca51472d6f44026c3bcaf8b3"
+    },
+    "credentialsPersistedInRepositoryOrArtifacts": false,
+    "errors": 0,
+    "qualification": "The retained plan intentionally uses exact legacy GBIF Backbone taxon identifiers. A Catalogue of Life migration requires a separately reviewed plan and taxonomy cache."
+  },
+  "partition": {
+    "partitionId": "gbif-national-partition-3311ea9ed3fa58ed",
+    "receiptPath": "ops/national-research/evaluations/gbif-national-partition-3311ea9ed3fa58ed.json",
+    "receiptSha256": "37ee720df8f032b485cec7911c83ba93d289d4dcb90f55b3096022c8dc2115ab",
+    "providerTotalRecords": 30994,
+    "occurrenceRows": 30994,
+    "verbatimRows": 30994,
+    "uniqueOccurrenceIds": 30994,
+    "selectedScopeRows": 3863,
+    "overlapRows": 12378,
+    "taxonomyRejectedRows": 0,
+    "geographyRejectedRows": 14753,
+    "selectedEvidencePairs": 1147,
+    "selectedNoEvidencePairs": 24259,
+    "selectedPairCount": 25406,
+    "assertionEvents": 1147,
+    "reviewEvents": 1147,
+    "representativeRejections": 283,
+    "duplicateRecords": 0,
+    "stateRows": 51,
+    "materializedRuns": 50,
+    "zeroPairStates": ["AL"],
+    "deterministicPostCommitRerun": true
+  },
+  "researchMovement": {
+    "fullCountySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 188103,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 1163881,
+      "notResearched": 6520584
+    },
+    "final": {
+      "verifiedPresent": 189250,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 1188140,
+      "notResearched": 6495178
+    },
+    "delta": {
+      "verifiedPresent": 1147,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 24259,
+      "notResearched": -25406
+    },
+    "selectedPairReconciliation": {
+      "planned": 25406,
+      "moved": 25406,
+      "verifiedPresent": 1147,
+      "researchedUnresolved": 24259,
+      "unmoved": 0
+    },
+    "qualification": "Provider silence created no absence or non-detection claims. Selected pairs with no qualifying explicit specimen remained research-only as researched-unresolved."
+  },
+  "applicabilityAndProtocolMovement": {
+    "stateSpeciesApplicable": {
+      "baseline": 12320,
+      "final": 12505,
+      "delta": 185
+    },
+    "derivedApplicable": {
+      "baseline": 8894,
+      "final": 9079,
+      "delta": 185
+    },
+    "protocolCells": {
+      "baseline": {
+        "total": 106680,
+        "applicable": 27485,
+        "notApplicable": 79195,
+        "complete": 6338,
+        "incomplete": 21088,
+        "blocked": 59,
+        "current": 5727,
+        "stale": 611,
+        "undated": 21147,
+        "regulatedAndHighApplicable": 2843,
+        "regulatedAndHighCurrentComplete": 2381
+      },
+      "final": {
+        "total": 108184,
+        "applicable": 27670,
+        "notApplicable": 80514,
+        "complete": 6523,
+        "incomplete": 21088,
+        "blocked": 59,
+        "current": 5912,
+        "stale": 611,
+        "undated": 21147,
+        "regulatedAndHighApplicable": 2843,
+        "regulatedAndHighCurrentComplete": 2381
+      },
+      "delta": {
+        "total": 1504,
+        "applicable": 185,
+        "notApplicable": 1319,
+        "complete": 185,
+        "incomplete": 0,
+        "blocked": 0,
+        "current": 185,
+        "stale": 0,
+        "undated": 0,
+        "regulatedAndHighApplicable": 0,
+        "regulatedAndHighCurrentComplete": 0
+      }
+    },
+    "remainingApplicableProtocolCountyScreens": {
+      "baseline": 1403314,
+      "final": 1403314,
+      "delta": 0
+    },
+    "certifiedStates": {
+      "baseline": 0,
+      "final": 0
+    }
+  },
+  "providerCompatibilityFixes": [
+    {
+      "commit": "85435738e",
+      "finding": "The current GBIF meta.xml contains default-valued unindexed fields and a compatible duplicate ID descriptor.",
+      "resolution": "The replay accepts only explicit default-valued unindexed fields and only exact-term compatible duplicate indexes; conflicting descriptors remain rejected."
+    },
+    {
+      "commit": "456af471d",
+      "finding": "The current interpreted occurrence header uses hasGeospatialIssues while the prior fixture used hasGeospatialIssue.",
+      "resolution": "The replay requires exactly one current or legacy field, binds it to the declared meta index, normalizes it, and rejects blank or invalid required boolean values."
+    }
+  ],
+  "verification": {
+    "focusedNationalGbifRegression": "pass",
+    "gbifPlannerRegression": "pass",
+    "offlineNationalGbifEndToEnd": "pass: acquisition verified; 51 state rows; 50 materialized runs; 25,406 selected pairs; deterministic rerun; tamper rejection; zero provider calls",
+    "denominatorIntegrity": "pass: 7,872,576 county-species cells",
+    "dataIntegrity": "pass",
+    "stateResearchProjections": "pass: 51 projections",
+    "nationalResearchConfig": "pass",
+    "frozenNationalResearchSkillSuite": "pass: 97/97; zero critical safety violations",
+    "fullResearchIntegrity": "pass: 1,046 immutable runs; 1,540,388 outcomes; zero unreviewed evidence",
+    "typecheck": "pass",
+    "coldProductionBuild": "pass: Next.js 15.5.23; 18.9 second compile; seven static pages; species profiles on demand",
+    "gitDiffCheck": "pass"
+  },
+  "generatedByteChecks": [
+    {
+      "path": "public/generated/research/MD/summary.json",
+      "bytes": 303176,
+      "sha256": "3bd6c2774dedcb09262f3a23bc47de92f37f36b5ce8d7348d5e26f68053b1693"
+    },
+    {
+      "path": "public/generated/research/TX/summary.json",
+      "bytes": 509462,
+      "sha256": "21d74367488dca8fae0bdba84d2dac863af298284849b1480acb6abd19a22d9a"
+    },
+    {
+      "path": "src/data/generated/species.json",
+      "bytes": 5738579,
+      "sha256": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea"
+    }
+  ],
+  "releaseDecision": {
+    "localContentGate": "go",
+    "productionRelease": "pending-external-verification",
+    "contentCommitted": false,
+    "pushedToGithub": false,
+    "productionDeploymentVerified": false,
+    "reason": "The authenticated archive, immutable partition, measured 25,406-pair movement, generated bytes, full integrity replay, and cold production build pass locally. Production remains pending until the exact content commit is pushed, deployed, and externally verified."
+  }
+}

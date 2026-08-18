@@ -1,27 +1,27 @@
 # Nebraska Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `93`
 - County-species pairs: `232872`
-- Verified present: `1838`
+- Verified present: `1840`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `35362`
-- Not researched: `195672`
+- Researched unresolved: `35639`
+- Not researched: `195393`
 - Determination coverage: `0.79%`
-- Research coverage: `15.97%`
-- Explicit outcome coverage: `15.9744%`
-- Applicable protocol cells: `197`
-- Current complete protocol cells: `72`
-- Protocol completion: `43.15%`
-- Current protocol completion: `36.55%`
-- Evidence records: `2352`
-- Research runs: `16`
-- Rejection records: `203`
+- Research coverage: `16.09%`
+- Explicit outcome coverage: `16.0942%`
+- Applicable protocol cells: `199`
+- Current complete protocol cells: `74`
+- Protocol completion: `43.72%`
+- Current protocol completion: `37.19%`
+- Evidence records: `2354`
+- Research runs: `17`
+- Rejection records: `204`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1483 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-04T01:49:06.385Z | 232 | 50 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 234 | 53 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

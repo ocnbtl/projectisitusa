@@ -1,27 +1,27 @@
 # Florida Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `5497`
+- Verified present: `5514`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `22308`
-- Not researched: `139963`
-- Determination coverage: `3.28%`
-- Research coverage: `16.57%`
-- Explicit outcome coverage: `16.5735%`
-- Applicable protocol cells: `367`
-- Current complete protocol cells: `120`
-- Protocol completion: `36.24%`
-- Current protocol completion: `32.70%`
-- Evidence records: `16105`
-- Research runs: `17`
-- Rejection records: `4468`
+- Researched unresolved: `23162`
+- Not researched: `139092`
+- Determination coverage: `3.29%`
+- Research coverage: `17.09%`
+- Explicit outcome coverage: `17.0927%`
+- Applicable protocol cells: `370`
+- Current complete protocol cells: `123`
+- Protocol completion: `36.76%`
+- Current protocol completion: `33.24%`
+- Evidence records: `16122`
+- Research runs: `18`
+- Rejection records: `4471`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -39,6 +39,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 67 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 67 | 1 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 67 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 67 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 67 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
 | Spear saltbush (`atriplex-patula`) | plants | 0 | 67 | 0 |
 | Wild oat (`avena-fatua`) | plants | 0 | 67 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3770 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-02T20:46:06.791Z | 1415 | 98 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 1432 | 111 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

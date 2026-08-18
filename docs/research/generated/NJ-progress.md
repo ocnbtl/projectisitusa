@@ -1,6 +1,6 @@
 # New Jersey Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Verified present: `2616`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5805`
-- Not researched: `44163`
+- Researched unresolved: `5847`
+- Not researched: `44121`
 - Determination coverage: `4.97%`
-- Research coverage: `16.01%`
-- Explicit outcome coverage: `16.0144%`
+- Research coverage: `16.09%`
+- Explicit outcome coverage: `16.0942%`
 - Applicable protocol cells: `292`
 - Current complete protocol cells: `96`
 - Protocol completion: `37.33%`
 - Current protocol completion: `32.88%`
 - Evidence records: `4091`
-- Research runs: `22`
+- Research runs: `23`
 - Rejection records: `417`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2243 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-09T06:17:20.786Z | 324 | 74 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 324 | 76 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,27 +1,27 @@
 # New Mexico Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `33`
 - County-species pairs: `82632`
-- Verified present: `996`
+- Verified present: `1002`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13062`
-- Not researched: `68574`
+- Researched unresolved: `13353`
+- Not researched: `68277`
 - Determination coverage: `1.21%`
-- Research coverage: `17.01%`
-- Explicit outcome coverage: `17.0128%`
-- Applicable protocol cells: `207`
-- Current complete protocol cells: `49`
-- Protocol completion: `29.95%`
-- Current protocol completion: `23.67%`
-- Evidence records: `1003`
-- Research runs: `17`
-- Rejection records: `69`
+- Research coverage: `17.37%`
+- Explicit outcome coverage: `17.3722%`
+- Applicable protocol cells: `211`
+- Current complete protocol cells: `53`
+- Protocol completion: `31.28%`
+- Current protocol completion: `25.12%`
+- Evidence records: `1009`
+- Research runs: `18`
+- Rejection records: `70`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 948 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-09T13:26:39.692Z | 2 | 30 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 8 | 39 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,27 +1,27 @@
 # Virginia Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `133`
 - County-species pairs: `333032`
-- Verified present: `11175`
+- Verified present: `11364`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `40828`
-- Not researched: `281029`
-- Determination coverage: `3.36%`
-- Research coverage: `15.62%`
-- Explicit outcome coverage: `15.6150%`
-- Applicable protocol cells: `320`
-- Current complete protocol cells: `96`
-- Protocol completion: `34.06%`
-- Current protocol completion: `30.00%`
-- Evidence records: `14222`
-- Research runs: `17`
-- Rejection records: `1709`
+- Researched unresolved: `42368`
+- Not researched: `279300`
+- Determination coverage: `3.41%`
+- Research coverage: `16.13%`
+- Explicit outcome coverage: `16.1342%`
+- Applicable protocol cells: `331`
+- Current complete protocol cells: `107`
+- Protocol completion: `36.25%`
+- Current protocol completion: `32.33%`
+- Evidence records: `14411`
+- Research runs: `18`
+- Rejection records: `1738`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hairy beggarticks (`bidens-pilosa`) | plants | 0 | 133 | 0 |
 | Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 133 | 0 |
 | Rape (`brassica-napus`) | plants | 0 | 133 | 0 |
+| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 133 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 133 | 0 |
 | Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 133 | 0 |
 | Balloon vine (`cardiospermum-halicacabum`) | plants | 0 | 133 | 0 |
 | Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 0 | 133 | 0 |
-| European chestnut (`castanea-sativa`) | plants | 0 | 133 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 9716 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-02T20:20:48.400Z | 936 | 74 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 1125 | 87 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

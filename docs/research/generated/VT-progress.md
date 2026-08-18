@@ -1,6 +1,6 @@
 # Vermont Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Verified present: `1075`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `4653`
-- Not researched: `29328`
+- Researched unresolved: `4695`
+- Not researched: `29286`
 - Determination coverage: `3.07%`
-- Research coverage: `16.34%`
-- Explicit outcome coverage: `16.3396%`
+- Research coverage: `16.46%`
+- Explicit outcome coverage: `16.4594%`
 - Applicable protocol cells: `249`
 - Current complete protocol cells: `72`
 - Protocol completion: `34.14%`
 - Current protocol completion: `28.92%`
 - Evidence records: `1312`
-- Research runs: `18`
+- Research runs: `19`
 - Rejection records: `95`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 861 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-10T00:06:10.319Z | 55 | 51 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 55 | 54 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

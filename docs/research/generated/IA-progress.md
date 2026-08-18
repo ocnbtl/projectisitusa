@@ -1,26 +1,26 @@
 # Iowa Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `1611`
+- Verified present: `1612`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `38682`
-- Not researched: `207603`
+- Researched unresolved: `38879`
+- Not researched: `207405`
 - Determination coverage: `0.65%`
-- Research coverage: `16.25%`
-- Explicit outcome coverage: `16.2540%`
-- Applicable protocol cells: `197`
-- Current complete protocol cells: `100`
-- Protocol completion: `57.36%`
-- Current protocol completion: `50.76%`
-- Evidence records: `1869`
-- Research runs: `18`
+- Research coverage: `16.33%`
+- Explicit outcome coverage: `16.3339%`
+- Applicable protocol cells: `198`
+- Current complete protocol cells: `101`
+- Protocol completion: `57.58%`
+- Current protocol completion: `51.01%`
+- Evidence records: `1870`
+- Research runs: `19`
 - Rejection records: `98`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 921 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-04T08:49:29.066Z | 195 | 78 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 196 | 80 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

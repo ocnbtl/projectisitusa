@@ -1,27 +1,27 @@
 # Nevada Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `653`
+- Verified present: `656`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `6691`
-- Not researched: `35224`
-- Determination coverage: `1.53%`
-- Research coverage: `17.25%`
-- Explicit outcome coverage: `17.2524%`
-- Applicable protocol cells: `204`
-- Current complete protocol cells: `79`
-- Protocol completion: `45.10%`
-- Current protocol completion: `38.73%`
-- Evidence records: `977`
-- Research runs: `18`
-- Rejection records: `126`
+- Researched unresolved: `6841`
+- Not researched: `35071`
+- Determination coverage: `1.54%`
+- Research coverage: `17.61%`
+- Explicit outcome coverage: `17.6118%`
+- Applicable protocol cells: `207`
+- Current complete protocol cells: `82`
+- Protocol completion: `45.89%`
+- Current protocol completion: `39.61%`
+- Evidence records: `980`
+- Research runs: `19`
+- Rejection records: `127`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -46,6 +46,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 17 | 1 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 17 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 17 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 17 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 17 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 17 | 0 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 17 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 17 | 0 |
 | Camelthorn (`alhagi-maurorum`) | plants | 0 | 17 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 17 | 0 |
-| Crow Garlic (`allium-vineale`) | plants | 0 | 17 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 609 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-08T19:35:35.748Z | 37 | 57 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 40 | 66 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

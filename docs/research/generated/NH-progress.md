@@ -1,27 +1,27 @@
 # New Hampshire Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `10`
 - County-species pairs: `25040`
-- Verified present: `824`
+- Verified present: `827`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3156`
-- Not researched: `21060`
-- Determination coverage: `3.29%`
-- Research coverage: `15.89%`
-- Explicit outcome coverage: `15.8946%`
-- Applicable protocol cells: `218`
-- Current complete protocol cells: `56`
-- Protocol completion: `31.65%`
-- Current protocol completion: `25.69%`
-- Evidence records: `832`
-- Research runs: `25`
-- Rejection records: `17`
+- Researched unresolved: `3203`
+- Not researched: `21010`
+- Determination coverage: `3.30%`
+- Research coverage: `16.09%`
+- Explicit outcome coverage: `16.0942%`
+- Applicable protocol cells: `220`
+- Current complete protocol cells: `58`
+- Protocol completion: `32.27%`
+- Current protocol completion: `26.36%`
+- Evidence records: `835`
+- Research runs: `26`
+- Rejection records: `18`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 700 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-09T21:36:37.623Z | 0 | 34 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 3 | 39 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

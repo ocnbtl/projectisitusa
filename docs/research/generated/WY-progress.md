@@ -1,27 +1,27 @@
 # Wyoming Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `23`
 - County-species pairs: `57592`
-- Verified present: `833`
+- Verified present: `837`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9034`
-- Not researched: `47725`
+- Researched unresolved: `9214`
+- Not researched: `47541`
 - Determination coverage: `1.45%`
-- Research coverage: `17.13%`
-- Explicit outcome coverage: `17.1326%`
-- Applicable protocol cells: `185`
-- Current complete protocol cells: `53`
-- Protocol completion: `35.68%`
-- Current protocol completion: `28.65%`
-- Evidence records: `850`
-- Research runs: `22`
-- Rejection records: `3`
+- Research coverage: `17.45%`
+- Explicit outcome coverage: `17.4521%`
+- Applicable protocol cells: `187`
+- Current complete protocol cells: `55`
+- Protocol completion: `36.36%`
+- Current protocol completion: `29.41%`
+- Evidence records: `854`
+- Research runs: `23`
+- Rejection records: `4`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -50,13 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 23 | 1 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 23 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 23 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 23 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 23 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 23 | 0 |
 | Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 23 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 23 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 23 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 23 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 23 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 767 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-09T14:10:37.141Z | 0 | 31 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 4 | 39 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

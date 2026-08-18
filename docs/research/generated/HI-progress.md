@@ -1,6 +1,6 @@
 # Hawaii Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-17T00:00:00.000Z`
 - Verified present: `515`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1550`
-- Not researched: `10455`
+- Researched unresolved: `1605`
+- Not researched: `10400`
 - Determination coverage: `4.11%`
-- Research coverage: `16.49%`
-- Explicit outcome coverage: `16.4936%`
+- Research coverage: `16.93%`
+- Explicit outcome coverage: `16.9329%`
 - Applicable protocol cells: `262`
 - Current complete protocol cells: `75`
 - Protocol completion: `33.59%`
 - Current protocol completion: `28.63%`
 - Evidence records: `652`
-- Research runs: `19`
+- Research runs: `20`
 - Rejection records: `1045`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -47,6 +47,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 5 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 2 |
 | Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 5 | 0 |
+| Norway Maple (`acer-platanoides`) | plants | 0 | 5 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 5 | 0 |
 | Common corncockle (`agrostemma-githago`) | plants | 0 | 5 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 5 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 5 | 0 |
 | Prostrate pigweed (`amaranthus-albus`) | plants | 0 | 5 | 0 |
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 5 | 0 |
-| African amaranth (`amaranthus-muricatus`) | plants | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 416 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-10T01:04:27.028Z | 37 | 53 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 37 | 64 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

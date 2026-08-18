@@ -1,27 +1,27 @@
 # California Research Progress
 
-Generated: `2026-08-17T00:00:00.000Z`
+Generated: `2026-08-18T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `6166`
+- Verified present: `6244`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `19934`
-- Not researched: `119132`
-- Determination coverage: `4.25%`
-- Research coverage: `17.97%`
-- Explicit outcome coverage: `17.9712%`
-- Applicable protocol cells: `372`
-- Current complete protocol cells: `151`
-- Protocol completion: `44.09%`
-- Current protocol completion: `40.59%`
-- Evidence records: `29108`
-- Research runs: `17`
-- Rejection records: `2448`
+- Researched unresolved: `20610`
+- Not researched: `118378`
+- Determination coverage: `4.30%`
+- Research coverage: `18.49%`
+- Explicit outcome coverage: `18.4904%`
+- Applicable protocol cells: `381`
+- Current complete protocol cells: `160`
+- Protocol completion: `45.41%`
+- Current protocol completion: `41.99%`
+- Evidence records: `29186`
+- Research runs: `18`
+- Rejection records: `2479`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 58 | 0 |
 | Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 58 | 0 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 0 | 58 | 0 |
+| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 58 | 0 |
 | Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 58 | 0 |
 | Balloon vine (`cardiospermum-halicacabum`) | plants | 0 | 58 | 0 |
 | Curly plumeless thistle (`carduus-crispus`) | plants | 0 | 58 | 0 |
 | European chestnut (`castanea-sativa`) | plants | 0 | 58 | 0 |
 | Feather cockscomb (`celosia-argentea`) | plants | 0 | 58 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4616 | 316 |
-| GBIF preserved specimen records | operational | 2026-07-31T21:39:59.698Z | 1775 | 129 |
+| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 1853 | 142 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
