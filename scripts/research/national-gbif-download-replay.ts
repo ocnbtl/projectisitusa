@@ -47,7 +47,6 @@ const REQUIRED_OCCURRENCE_FIELDS = [
   "taxonKey",
   "acceptedTaxonKey",
   "speciesKey",
-  "hasGeospatialIssue",
   "locality",
   "occurrenceRemarks",
   "habitat",
@@ -161,6 +160,12 @@ function parseBoolean(value: string | undefined) {
   throw new Error(`GBIF boolean field contains invalid value ${JSON.stringify(value)}.`);
 }
 
+function parseRequiredBoolean(value: string | undefined, label: string) {
+  const parsed = parseBoolean(value);
+  assert(parsed !== undefined, `GBIF required boolean field ${label} is blank.`);
+  return parsed;
+}
+
 function splitIssues(value: string | undefined) {
   return value?.split(/[;,|]/gu).map((entry) => entry.trim()).filter(Boolean) ?? [];
 }
@@ -188,7 +193,10 @@ function occurrenceRecord(raw: RawDwcaRecord): GbifOccurrenceRecord {
     acceptedTaxonKey: parseInteger(raw.acceptedTaxonKey),
     speciesKey: parseInteger(raw.speciesKey),
     taxonomicStatus: raw.taxonomicStatus || undefined,
-    hasGeospatialIssue: parseBoolean(raw.hasGeospatialIssue),
+    hasGeospatialIssue: parseRequiredBoolean(
+      raw.hasGeospatialIssue ?? raw.hasGeospatialIssues,
+      "hasGeospatialIssue or hasGeospatialIssues",
+    ),
     issues: splitIssues(raw.issue || raw.issues),
     decimalLatitude: parseNumber(raw.decimalLatitude),
     decimalLongitude: parseNumber(raw.decimalLongitude),
@@ -598,6 +606,17 @@ export async function replayNationalGbifArchive(input: {
           `GBIF occurrence meta.xml does not declare required field ${required} at its header index.`,
         );
       }
+      const geospatialIssueFields = ["hasGeospatialIssue", "hasGeospatialIssues"]
+        .filter((field) => header.includes(field));
+      assert(
+        geospatialIssueFields.length === 1,
+        "GBIF occurrence header must contain exactly one hasGeospatialIssue or hasGeospatialIssues field.",
+      );
+      const geospatialIssueField = geospatialIssueFields[0]!;
+      assert(
+        occurrenceMetaTerms.get(header.indexOf(geospatialIssueField)) === geospatialIssueField,
+        `GBIF occurrence meta.xml does not declare required field ${geospatialIssueField} at its header index.`,
+      );
       const issueField = header.includes("issue") ? "issue" : header.includes("issues") ? "issues" : null;
       assert(issueField, "GBIF occurrence header lacks issue or issues.");
       assert(

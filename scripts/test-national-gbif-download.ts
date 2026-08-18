@@ -188,7 +188,7 @@ const headers = [
   "acceptedTaxonKey",
   "speciesKey",
   "locality",
-  "hasGeospatialIssue",
+  "hasGeospatialIssues",
   "issue",
   "occurrenceRemarks",
   "habitat",
@@ -340,13 +340,24 @@ async function testReplayFixture() {
 
   const invalidBooleanArchive = path.join(fixtureDirectory, "invalid-boolean.zip");
   const invalidBooleanRows = occurrenceRows.map((row, index) => index === 0
-    ? row.map((value, fieldIndex) => fieldIndex === headers.indexOf("hasGeospatialIssue") ? "unknown" : value)
+    ? row.map((value, fieldIndex) => fieldIndex === headers.indexOf("hasGeospatialIssues") ? "unknown" : value)
     : row);
   writeFileSync(path.join(fixtureDirectory, "occurrence.txt"), table(headers, invalidBooleanRows));
   createZipArchive(fixtureDirectory, invalidBooleanArchive, ["meta.xml", "occurrence.txt", "verbatim.txt"]);
   await assert.rejects(
     replayNationalGbifArchive({ ...replayInput, archivePath: invalidBooleanArchive }),
     /boolean field contains invalid value/u,
+  );
+
+  const blankBooleanArchive = path.join(fixtureDirectory, "blank-boolean.zip");
+  const blankBooleanRows = occurrenceRows.map((row, index) => index === 0
+    ? row.map((value, fieldIndex) => fieldIndex === headers.indexOf("hasGeospatialIssues") ? "" : value)
+    : row);
+  writeFileSync(path.join(fixtureDirectory, "occurrence.txt"), table(headers, blankBooleanRows));
+  createZipArchive(fixtureDirectory, blankBooleanArchive, ["meta.xml", "occurrence.txt", "verbatim.txt"]);
+  await assert.rejects(
+    replayNationalGbifArchive({ ...replayInput, archivePath: blankBooleanArchive }),
+    /required boolean field/u,
   );
 
   const incompleteArchive = path.join(fixtureDirectory, "incomplete.zip");
