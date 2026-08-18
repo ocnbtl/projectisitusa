@@ -18,13 +18,16 @@ import {
   RESEARCH_POINTER_CACHE_CONTROL,
   type ResearchPublicationArtifact,
 } from "./research/research-publication";
+import {
+  assertR2FreeTierSafety,
+  R2_CLASS_A_SAFETY_REQUESTS,
+  R2_CLASS_B_SAFETY_REQUESTS,
+  R2_STORAGE_SAFETY_BYTES,
+} from "./research/r2-free-tier-budget";
 
 const ROOT = process.cwd();
 const DEFAULT_MANIFEST = path.join(ROOT, "ops/national-research/publication/research-data-manifest.json");
 const DEFAULT_BUCKET = "project-isitusa-research";
-const FREE_STORAGE_SAFETY_BYTES = 9 * 1024 * 1024 * 1024;
-const FREE_CLASS_A_SAFETY_REQUESTS = 900_000;
-const FREE_CLASS_B_SAFETY_REQUESTS = 9_000_000;
 
 type Mode = "plan" | "publish" | "verify";
 type Verification = "head" | "full";
@@ -40,25 +43,20 @@ function requiredEnvironment(name: string): string {
   return value;
 }
 
+function nonNegativeIntegerArgument(name: string, required: boolean): number {
+  const raw = argument(name);
+  if (raw === null && !required) return 0;
+  if (raw === null || !/^\d+$/u.test(raw)) {
+    throw new Error(`${name} must be supplied as a non-negative integer from the current Cloudflare billing period.`);
+  }
+  const value = Number(raw);
+  if (!Number.isSafeInteger(value)) throw new Error(`${name} exceeds the safe integer range.`);
+  return value;
+}
+
 function isMissingObject(error: unknown): boolean {
   const candidate = error as { name?: string; $metadata?: { httpStatusCode?: number } };
   return candidate?.name === "NotFound" || candidate?.$metadata?.httpStatusCode === 404;
-}
-
-function assertFreeTierGuard(input: {
-  projectedStorageBytes: number;
-  classARequests: number;
-  classBRequests: number;
-}) {
-  if (input.projectedStorageBytes > FREE_STORAGE_SAFETY_BYTES) {
-    throw new Error(`Projected R2 storage ${input.projectedStorageBytes.toLocaleString()} exceeds the 9 GiB project safety budget.`);
-  }
-  if (input.classARequests > FREE_CLASS_A_SAFETY_REQUESTS) {
-    throw new Error(`Projected R2 Class A requests ${input.classARequests.toLocaleString()} exceed the project safety budget.`);
-  }
-  if (input.classBRequests > FREE_CLASS_B_SAFETY_REQUESTS) {
-    throw new Error(`Projected R2 Class B requests ${input.classBRequests.toLocaleString()} exceed the project safety budget.`);
-  }
 }
 
 async function parallelForEach<T>(values: T[], concurrency: number, work: (value: T, index: number) => Promise<void>) {
@@ -174,11 +172,18 @@ async function main() {
   const uniqueArtifacts = [...new Map(manifest.artifacts.map((artifact) => [artifact.objectKey, artifact])).values()];
   const releaseKey = `releases/${manifest.releaseId}/manifest.json`;
   const pointerKey = "current.json";
+  const currentClassARequests = nonNegativeIntegerArgument("--monthly-class-a-used", mode !== "plan");
+  const currentClassBRequests = nonNegativeIntegerArgument("--monthly-class-b-used", mode !== "plan");
+  const publicOrigin = argument("--public-origin");
+  const plannedClassARequests = uniqueArtifacts.length + 2 + (process.argv.includes("--promote") ? 1 : 0);
+  const plannedClassBRequests = uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0);
 
-  assertFreeTierGuard({
+  assertR2FreeTierSafety({
     projectedStorageBytes: manifest.uniqueObjectBytes + manifestBytes(manifest).length,
-    classARequests: uniqueArtifacts.length + 2,
-    classBRequests: uniqueArtifacts.length * (verification === "full" ? 2 : 1) + 10,
+    currentClassARequests,
+    currentClassBRequests,
+    newClassARequests: plannedClassARequests,
+    newClassBRequests: plannedClassBRequests,
   });
   console.log(JSON.stringify({
     mode,
@@ -186,9 +191,13 @@ async function main() {
     artifactCount: manifest.artifactCount,
     uniqueObjectCount: manifest.uniqueObjectCount,
     uniqueObjectBytes: manifest.uniqueObjectBytes,
-    maximumNewClassARequests: uniqueArtifacts.length + 2,
-    maximumVerificationClassBRequests: uniqueArtifacts.length + 10,
-    freeTierSafetyStorageBytes: FREE_STORAGE_SAFETY_BYTES,
+    maximumNewClassARequests: plannedClassARequests,
+    maximumVerificationClassBRequests: plannedClassBRequests,
+    currentClassARequests,
+    currentClassBRequests,
+    freeTierSafetyStorageBytes: R2_STORAGE_SAFETY_BYTES,
+    freeTierSafetyClassARequests: R2_CLASS_A_SAFETY_REQUESTS,
+    freeTierSafetyClassBRequests: R2_CLASS_B_SAFETY_REQUESTS,
   }, null, 2));
   if (mode === "plan") return;
 
@@ -215,12 +224,16 @@ async function main() {
   });
   const missingBytes = missing.reduce((total, artifact) => total + artifact.bytes, 0);
   const projectedStorageBytes = existingStorageBytes + missingBytes + manifestBytes(manifest).length + 1024;
-  assertFreeTierGuard({
+  const projectedClassARequests = listing.requestCount + missing.length + 1 + (process.argv.includes("--promote") ? 1 : 0);
+  const projectedClassBRequests = uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0);
+  assertR2FreeTierSafety({
     projectedStorageBytes,
-    classARequests: listing.requestCount + missing.length + 2,
-    classBRequests: uniqueArtifacts.length + 10,
+    currentClassARequests,
+    currentClassBRequests,
+    newClassARequests: projectedClassARequests,
+    newClassBRequests: projectedClassBRequests,
   });
-  console.log(`R2 shadow plan: ${missing.length.toLocaleString()} new objects, ${missingBytes.toLocaleString()} new bytes, ${projectedStorageBytes.toLocaleString()} projected retained bytes.`);
+  console.log(`R2 shadow plan: ${missing.length.toLocaleString()} new objects, ${missingBytes.toLocaleString()} new bytes, ${projectedStorageBytes.toLocaleString()} projected retained bytes, ${projectedClassARequests.toLocaleString()} new Class A requests, ${projectedClassBRequests.toLocaleString()} new Class B requests.`);
 
   if (mode === "publish") {
     let uploaded = 0;
@@ -292,7 +305,6 @@ async function main() {
     console.log(`Promoted R2 pointer to ${manifest.releaseId}.`);
   }
 
-  const publicOrigin = argument("--public-origin");
   if (publicOrigin) await verifyPublicSamples(publicOrigin, releaseKey, manifest.artifacts);
   console.log(`R2 ${mode} completed for ${manifest.releaseId} with ${verification} verification.`);
 }
