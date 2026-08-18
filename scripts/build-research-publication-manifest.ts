@@ -25,7 +25,7 @@ async function main() {
   const output = path.resolve(argument("--output") ?? OUTPUT);
   execFileSync("git", ["diff", "--quiet", "HEAD", "--", "public/generated/research"], { cwd: ROOT });
   const sourceCommit = git("log", "-1", "--format=%H", "--", "public/generated/research").toLowerCase();
-  const sourceCommitDate = git("show", "-s", "--format=%cI", "HEAD");
+  const sourceCommitDate = git("show", "-s", "--format=%cI", sourceCommit);
   const manifest = await buildResearchPublicationManifest({ root: ROOT, sourceCommit, sourceCommitDate });
   validateResearchPublicationManifest(manifest);
   const expected = manifestBytes(manifest);
