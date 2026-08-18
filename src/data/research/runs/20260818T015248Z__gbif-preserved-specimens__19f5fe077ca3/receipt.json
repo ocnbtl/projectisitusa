@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260818T015248Z__gbif-preserved-specimens__19f5fe077ca3",
+  "status": "complete",
+  "started_at": "2026-08-18T01:52:48.623Z",
+  "finished_at": "2026-08-18T01:56:24.535Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "456af471d12c06fe2e77cdde0ede6447f80b2e12",
+  "parameter_hash": "442d8a26b4e00a2c389dbf169643bf0dbaf44f2d67bce55928fb3ccf0fa182ae",
+  "parameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 15,
+    "candidatePairs": [
+      "44001:butomus-umbellatus",
+      "44001:callitriche-stagnalis",
+      "44001:marsilea-quadrifolia",
+      "44003:butomus-umbellatus",
+      "44003:callitriche-stagnalis",
+      "44003:marsilea-quadrifolia",
+      "44005:butomus-umbellatus",
+      "44005:callitriche-stagnalis",
+      "44005:marsilea-quadrifolia",
+      "44007:butomus-umbellatus",
+      "44007:callitriche-stagnalis",
+      "44007:marsilea-quadrifolia",
+      "44009:butomus-umbellatus",
+      "44009:callitriche-stagnalis",
+      "44009:marsilea-quadrifolia"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "RI",
+    "county_fips": [
+      "44001",
+      "44003",
+      "44005",
+      "44007",
+      "44009"
+    ],
+    "species_ids": [
+      "butomus-umbellatus",
+      "callitriche-stagnalis",
+      "marsilea-quadrifolia"
+    ],
+    "pair_keys": [
+      "44001:butomus-umbellatus",
+      "44001:callitriche-stagnalis",
+      "44001:marsilea-quadrifolia",
+      "44003:butomus-umbellatus",
+      "44003:callitriche-stagnalis",
+      "44003:marsilea-quadrifolia",
+      "44005:butomus-umbellatus",
+      "44005:callitriche-stagnalis",
+      "44005:marsilea-quadrifolia",
+      "44007:butomus-umbellatus",
+      "44007:callitriche-stagnalis",
+      "44007:marsilea-quadrifolia",
+      "44009:butomus-umbellatus",
+      "44009:callitriche-stagnalis",
+      "44009:marsilea-quadrifolia"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0021178-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-18T01:56:20.491Z",
+      "record_count": 30994
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__19f5fe077ca3/artifacts/national-acquisition-reference.json",
+      "sha256": "dc83386e467f5f07a7b028c2cc0545e2e3eab0138338e56fc8533767a707bc77",
+      "bytes": 24974,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__19f5fe077ca3/assertions.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__19f5fe077ca3/reviews.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__19f5fe077ca3/rejections.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__19f5fe077ca3/outcomes.ndjson",
+      "sha256": "559ecfe4c116c464167e43593bef1fd813d8705928fa971106ab3cad16068ca8",
+      "bytes": 10780,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__19f5fe077ca3/source-verification.json",
+      "sha256": "8620b6a6fb4a5361dd40f1563f9646abb81ed98cd2566c03ec6b38fc05ffb71c",
+      "bytes": 3865,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 15,
+    "candidate_records": 113,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 15
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [
+    "Retained 113 exact archive row(s) outside the baseline not-researched selection without emitting duplicate pair outcomes."
+  ],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-68-13.json --acquisition src/data/research/national-acquisitions/20260818t015248z__gbif-download__3adc41198e1b"
+}

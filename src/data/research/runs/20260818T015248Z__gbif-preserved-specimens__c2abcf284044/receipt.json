@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260818T015248Z__gbif-preserved-specimens__c2abcf284044",
+  "status": "complete",
+  "started_at": "2026-08-18T01:52:48.623Z",
+  "finished_at": "2026-08-18T01:56:24.535Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "456af471d12c06fe2e77cdde0ede6447f80b2e12",
+  "parameter_hash": "750965c5a1753f907b4b1baff8d5a23adac50032bf9a203b043032003ddb43a5",
+  "parameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 11,
+    "candidatePairs": [
+      "11001:butomus-umbellatus",
+      "11001:callitriche-stagnalis",
+      "11001:dreissena-polymorpha",
+      "11001:elaeagnus-angustifolia",
+      "11001:hesperis-matronalis",
+      "11001:lonicera-maackii",
+      "11001:lonicera-morrowii",
+      "11001:lonicera-tatarica",
+      "11001:marsilea-quadrifolia",
+      "11001:rhamnus-cathartica",
+      "11001:ulmus-pumila"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "butomus-umbellatus",
+      "callitriche-stagnalis",
+      "dreissena-polymorpha",
+      "elaeagnus-angustifolia",
+      "hesperis-matronalis",
+      "lonicera-maackii",
+      "lonicera-morrowii",
+      "lonicera-tatarica",
+      "marsilea-quadrifolia",
+      "rhamnus-cathartica",
+      "ulmus-pumila"
+    ],
+    "pair_keys": [
+      "11001:butomus-umbellatus",
+      "11001:callitriche-stagnalis",
+      "11001:dreissena-polymorpha",
+      "11001:elaeagnus-angustifolia",
+      "11001:hesperis-matronalis",
+      "11001:lonicera-maackii",
+      "11001:lonicera-morrowii",
+      "11001:lonicera-tatarica",
+      "11001:marsilea-quadrifolia",
+      "11001:rhamnus-cathartica",
+      "11001:ulmus-pumila"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0021178-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-18T01:56:20.491Z",
+      "record_count": 30994
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__c2abcf284044/artifacts/national-acquisition-reference.json",
+      "sha256": "5bc79f53813d3ae6f4718e0d89502e990fe87a105ab52400b2766c2d41ded41d",
+      "bytes": 24972,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__c2abcf284044/assertions.ndjson",
+      "sha256": "d6d93944c6530967f7c77cdef26c218af250253ada4bf98ef3836809d120073e",
+      "bytes": 5646,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__c2abcf284044/reviews.ndjson",
+      "sha256": "aa5e213563af4895d9426cbf05d07fccbcfbb376478b00100d47c5628baa1580",
+      "bytes": 2920,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__c2abcf284044/rejections.ndjson",
+      "sha256": "1d885c081e6ead2a508562d8d7da382d298d628f9d91b69db2774d6d263e80bc",
+      "bytes": 1660,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__c2abcf284044/outcomes.ndjson",
+      "sha256": "c64c51a2527fe6e3013c697da3d41f11a607361ebd3a5df6a7a9d3edc67d8bb1",
+      "bytes": 8111,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T015248Z__gbif-preserved-specimens__c2abcf284044/source-verification.json",
+      "sha256": "95fa173c21072b525c82a3c2c0c492a0990db16e94e8fbdf62eea657809d0c92",
+      "bytes": 3935,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 11,
+    "candidate_records": 9,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 2,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 11
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [
+    "Retained 4 exact archive row(s) outside the baseline not-researched selection without emitting duplicate pair outcomes."
+  ],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-68-13.json --acquisition src/data/research/national-acquisitions/20260818t015248z__gbif-download__3adc41198e1b"
+}
