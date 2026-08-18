@@ -262,7 +262,16 @@ async function testReplayFixture() {
   }
 
   const meta = `<?xml version="1.0" encoding="UTF-8"?>\n<archive xmlns="http://rs.tdwg.org/dwc/text/">\n  <core encoding="UTF-8" fieldsTerminatedBy="\\t" ignoreHeaderLines="1">\n    <files><location>occurrence.txt</location></files>\n    <id index="0"/>\n${headers.slice(1).map((header, index) => `    <field index="${index + 1}" term="http://rs.gbif.org/terms/1.0/${header}"/>`).join("\n")}\n  </core>\n  <extension encoding="UTF-8" fieldsTerminatedBy="\\t" ignoreHeaderLines="1">\n    <files><location>verbatim.txt</location></files>\n    <coreid index="0"/>\n${verbatimHeaders.slice(1).map((header, index) => `    <field index="${index + 1}" term="http://rs.tdwg.org/dwc/terms/${header}"/>`).join("\n")}\n  </extension>\n</archive>\n`;
-  writeFileSync(path.join(fixtureDirectory, "meta.xml"), meta);
+  const providerCompatibleMeta = meta
+    .replace(
+      '    <id index="0"/>\n',
+      '    <id index="0"/>\n    <field default="WGS84" term="http://rs.tdwg.org/dwc/terms/geodeticDatum"/>\n    <field index="0" term="http://rs.gbif.org/terms/1.0/gbifID"/>\n',
+    )
+    .replace(
+      '    <coreid index="0"/>\n',
+      '    <coreid index="0"/>\n    <field index="0" term="http://rs.gbif.org/terms/1.0/gbifID"/>\n',
+    );
+  writeFileSync(path.join(fixtureDirectory, "meta.xml"), providerCompatibleMeta);
   writeFileSync(path.join(fixtureDirectory, "occurrence.txt"), table(headers, occurrenceRows));
   writeFileSync(
     path.join(fixtureDirectory, "verbatim.txt"),

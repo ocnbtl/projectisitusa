@@ -251,11 +251,22 @@ function parseTableMeta(meta: string, expectedLocation: "occurrence.txt" | "verb
   const terms = new Map<number, string>();
   for (const match of tableMatch[3]!.matchAll(/<(id|coreid|field)\b([^>]*)\/?>(?:<\/\1>)?/gu)) {
     const field = xmlAttributes(match[2]!);
+    if (field.index === undefined) {
+      assert(
+        match[1] === "field" && Object.hasOwn(field, "default"),
+        "GBIF meta.xml contains an invalid field index.",
+      );
+      assert(localTerm(field.term ?? ""), "GBIF meta.xml default field lacks a term.");
+      continue;
+    }
     const index = Number(field.index);
     assert(Number.isInteger(index) && index >= 0, "GBIF meta.xml contains an invalid field index.");
     const term = match[1] === "field" ? localTerm(field.term ?? "") : "gbifID";
     assert(term, `GBIF meta.xml field ${index} lacks a term.`);
-    assert(!terms.has(index), `GBIF meta.xml repeats field index ${index}.`);
+    if (terms.has(index)) {
+      assert(terms.get(index) === term, `GBIF meta.xml conflicts at field index ${index}.`);
+      continue;
+    }
     terms.set(index, term);
   }
   assert(terms.size > 0, `GBIF meta.xml contains no ${expectedLocation} fields.`);
