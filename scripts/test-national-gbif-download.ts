@@ -98,6 +98,19 @@ assert.equal(selection.selection.counts.notResearchedPairs, 25_406);
 assert.equal(selection.selection.counts.blockedPairs, 18);
 assert.equal(selection.selection.counts.alreadyResearchedPairs, 15_448);
 assert.equal(selection.selection.stateScopes.flatMap((entry) => entry.candidatePairs).length, 25_406);
+const round77PlanPath = path.join(root, "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-77-8.json");
+const round77Plan = loadNationalGbifDownloadPlan(round77PlanPath);
+const round77Selection = loadNationalGbifSelection(root, round77Plan);
+const round77Taxa = resolveNationalGbifTaxa(root, round77Plan);
+assert.equal(round77Plan.taxonomyMode, "gbif-backbone-v2-exact-match-retained-identifiers");
+assert.equal(round77Taxa.length, 8);
+assert.equal(round77Selection.selection.counts.notResearchedPairs, 25_152);
+assert.equal(round77Selection.selection.counts.blockedPairs, 0);
+assert.equal(round77Selection.selection.counts.alreadyResearchedPairs, 0);
+assert.equal(
+  nationalGbifAcquisitionInputPaths(round77Plan, path.relative(root, round77PlanPath).replaceAll("\\", "/")).length,
+  17,
+);
 const partitionInputs = nationalGbifPartitionInputPaths({
   root,
   planPath,
