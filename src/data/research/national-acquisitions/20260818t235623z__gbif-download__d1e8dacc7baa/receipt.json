@@ -1,0 +1,170 @@
+{
+  "acquisition_id": "20260818t235623z__gbif-download__d1e8dacc7baa",
+  "actor_id": "gbif-national-download-acquisition@2.0.0",
+  "actor_type": "adapter",
+  "archive": {
+    "bytes": 5169168,
+    "media_type": "application/zip",
+    "path": "src/data/research/national-acquisitions/20260818t235623z__gbif-download__d1e8dacc7baa/download.zip",
+    "provider_total_records": 11002,
+    "sha256": "ff0d8471f7ab5394d839cf21700314ae4d043923d4266f028f33b9ce88b5ad48",
+    "source_url": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip"
+  },
+  "code_commit": "2f441c015e346df87776b8476c5af21b86228fa3",
+  "complete_archive_retained": true,
+  "credentials_persisted": false,
+  "download": {
+    "created": "2026-08-18T23:56:26.296+00:00",
+    "doi": "10.15468/dl.z4agvh",
+    "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+    "key": "0023154-260806074905277",
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "modified": "2026-08-18T23:58:19.654+00:00",
+    "size": 5169168,
+    "status": "SUCCEEDED",
+    "totalRecords": 11002
+  },
+  "errors": [],
+  "finished_at": "2026-08-18T23:58:30.364Z",
+  "http_attempts": [
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "POST",
+      "observedAt": "2026-08-18T23:56:26.401Z",
+      "retryable": false,
+      "role": "request",
+      "status": 201,
+      "url": "https://api.gbif.org/v1/occurrence/download/request"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-18T23:56:26.529Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0023154-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-18T23:57:26.886Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0023154-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-18T23:58:27.279Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0023154-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-18T23:58:28.142Z",
+      "retryable": false,
+      "role": "archive",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip"
+    }
+  ],
+  "input_hashes": {
+    "ops/national-research/evaluations/round-72-gbif-national-selection-20260818-r1.json": "17fbb05029f1f505f9e6b85ef9243f5adafe905850606bce230567c0f169b187",
+    "scripts/research/national-gbif-download-replay.ts": "f46eaf54287e0f1e37f514ff317de9955882fb2dd01704495361f60a150a04b1",
+    "scripts/research/national-gbif-download.ts": "aff57c72cd555334c765d065f5681ff9c60ca36f9d9dce761949456678d1484a",
+    "scripts/research/partition-national-gbif-download.ts": "bf4589ff61bd8c5f58da39e0034f09f4eec892df12b513a1abf28fed1eb7da28",
+    "scripts/research/run-national-gbif-download.ts": "8a6183a96635b1443e8f7dc6e059a9469f2ab1423c11395c0b79b8dbd9848c9d",
+    "scripts/research/verify-national-gbif-download.ts": "2479c3cf537a1bcb863f89ad6069b91917fc7a7b876f39a58c24dbcab522974e",
+    "scripts/research/zip-tools.ts": "0ca75576b9ce347233bfe261bc60414e7c3ef21ad3d1713b0951141648ff0e08",
+    "src/data/research/caches/gbif-taxonomy-20260818-r72.json": "7c550218fe905500ae62c89766522dc182fe40d3d6abf5a4f64beeb54d2fdf16",
+    "src/data/research/county-equivalent-registry.json": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "src/data/research/national-acquisition-plans/gbif-national-download-v1-retained-r72.json": "0110db9576463dd9727e22466fe76c276345570fe69b3d938cba5584b4c3bd78",
+    "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-72-9.json": "626d1cac255bae02646d82d981f878131b3dcc16ac993a668c365ea9878a57fc",
+    "src/data/research/schemas/national-gbif-download-acquisition-receipt.schema.json": "b55e6a30bc7e788b28a6112829c189f41cb1417915a804c6673ea0d07214e7e2",
+    "src/data/research/schemas/national-gbif-download-plan.schema.json": "7f15af2c1306b03a493f5a57a72ae2648b8f37aa46ee0f0f511d05d025e9be8a",
+    "src/data/research/schemas/national-gbif-download-selection.schema.json": "cb9355c92a04a9dedef28ffba662398de3472e50922eac31bf2e1ac315d5e624",
+    "src/data/research/source-registry.json": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+    "src/data/research/state-registry.json": "6080d7e61bf9a34794a14e9f6976edc378fbb10908dbd40296d3006923ef1f94"
+  },
+  "parameter_hash": "d1e8dacc7baa489048a1f330f87a88cc66adeb7a0f20272024b56d208ccc1b4a",
+  "parameters": {
+    "artifactBudgetBytes": 268435456,
+    "maxOccurrenceRows": 2000000,
+    "maxSelectedEvidenceRecords": 250000,
+    "planId": "gbif-national-download-v2-round-72-9",
+    "planPath": "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-72-9.json",
+    "planSha256": "626d1cac255bae02646d82d981f878131b3dcc16ac993a668c365ea9878a57fc",
+    "selectedPairCount": 27223,
+    "selectionPath": "ops/national-research/evaluations/round-72-gbif-national-selection-20260818-r1.json",
+    "selectionSha256": "17fbb05029f1f505f9e6b85ef9243f5adafe905850606bce230567c0f169b187",
+    "taxonCount": 9,
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260818-r72.json",
+    "taxonomyCacheSha256": "7c550218fe905500ae62c89766522dc182fe40d3d6abf5a4f64beeb54d2fdf16"
+  },
+  "partitioning_status": "ready-for-replay",
+  "request_path": "src/data/research/national-acquisitions/20260818t235623z__gbif-download__d1e8dacc7baa/request.redacted.json",
+  "requested_at": "2026-08-18T23:56:23.779Z",
+  "schemaVersion": 2,
+  "semantics": {
+    "coordinateCountyAssignmentAllowed": false,
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "failedDownloadCreatesNegative": false,
+    "unparsedArchiveMarksScopeComplete": false
+  },
+  "source_id": "gbif-preserved-specimens",
+  "started_at": "2026-08-18T23:56:23.779Z",
+  "status": "complete",
+  "status_history": [
+    {
+      "created": "2026-08-18T23:56:26.296+00:00",
+      "doi": null,
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+      "key": "0023154-260806074905277",
+      "license": "unspecified",
+      "modified": "2026-08-18T23:56:26.296+00:00",
+      "observedAt": "2026-08-18T23:56:26.531Z",
+      "size": 0,
+      "status": "PREPARING",
+      "totalRecords": 11002
+    },
+    {
+      "created": "2026-08-18T23:56:26.296+00:00",
+      "doi": null,
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+      "key": "0023154-260806074905277",
+      "license": "unspecified",
+      "modified": "2026-08-18T23:56:31.374+00:00",
+      "observedAt": "2026-08-18T23:57:26.888Z",
+      "size": 0,
+      "status": "RUNNING",
+      "totalRecords": 11002
+    },
+    {
+      "created": "2026-08-18T23:56:26.296+00:00",
+      "doi": "10.15468/dl.z4agvh",
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+      "key": "0023154-260806074905277",
+      "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+      "modified": "2026-08-18T23:58:19.654+00:00",
+      "observedAt": "2026-08-18T23:58:27.280Z",
+      "size": 5169168,
+      "status": "SUCCEEDED",
+      "totalRecords": 11002
+    }
+  ],
+  "warnings": [
+    "The plan intentionally retains exact legacy GBIF Backbone taxon identifiers. A Catalogue of Life migration requires a separately reviewed plan and taxonomy cache.",
+    "The declared start timestamp was transactionally corrected from 2026-08-18T23:57:00.000Z to the provider requested timestamp 2026-08-18T23:56:23.779Z; no additional provider request was issued."
+  ]
+}
