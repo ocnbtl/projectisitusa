@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-72-gbif-national-production-verification-20260818-r1",
+  "verifiedAt": "2026-08-19T01:19:37.452Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "generatedContentCommit": "1f093b3150f7fdbff5405e7e05ac5d93b65f059d",
+  "releasedContentCommit": "96f427da8aa646ae95370673d6bb9d3569cd5b9d",
+  "objective": "Externally verify the Round 72 GBIF acquisition, immutable 51-state partition, measured 27,223-pair movement, guarded R2 publication, exact Git-linked Vercel production deployment, and live changed-outcome flow.",
+  "providerExecution": {
+    "sourceId": "gbif-preserved-specimens",
+    "acquisitionId": "20260818t235623z__gbif-download__d1e8dacc7baa",
+    "downloadKey": "0023154-260806074905277",
+    "doi": "10.15468/dl.z4agvh",
+    "terminalStatus": "SUCCEEDED",
+    "providerRecords": 11002,
+    "archiveBytes": 5169168,
+    "archiveSha256": "ff0d8471f7ab5394d839cf21700314ae4d043923d4266f028f33b9ce88b5ad48",
+    "requestPosts": 1,
+    "statusGets": 3,
+    "archiveGets": 1,
+    "retries": 0,
+    "duplicateProviderPosts": 0,
+    "credentialsPersistedInRepositoryOrArtifacts": false
+  },
+  "partitionAndMovement": {
+    "partitionId": "gbif-national-partition-ec0ce1bec14262fd",
+    "stateRows": 51,
+    "materializedRuns": 51,
+    "selectedPairs": 27223,
+    "verifiedPresentAdded": 1420,
+    "researchedUnresolvedAdded": 25803,
+    "notResearchedRemoved": 27223,
+    "verifiedAbsentAdded": 0,
+    "notDetectedAdded": 0,
+    "finalVerifiedPresent": 190670,
+    "finalResearchedUnresolved": 1213943,
+    "finalNotResearched": 6467955,
+    "countySpeciesDenominator": 7872576,
+    "certifiedStates": 0,
+    "certificationBlockerStates": 51,
+    "qualification": "Provider silence created no absence or non-detection claim. The release advances research accounting but does not claim state certification."
+  },
+  "localVerification": {
+    "focusedNationalGbifRegression": "pass",
+    "gbifPlannerAndCacheRegression": "pass",
+    "offlineNationalGbifEndToEnd": "pass: verified acquisition; 51 state runs; 27,223 selected pairs; deterministic post-commit rerun",
+    "frozenNationalResearchSkillSuite": "pass: 97/97; zero critical safety violations",
+    "fullResearchIntegrity": "pass: 1,097 immutable runs; 1,567,611 outcomes; zero unreviewed evidence",
+    "dataIntegrity": "pass",
+    "stateResearchProjections": "pass: 51 projections",
+    "typecheck": "pass",
+    "lint": "pass: zero warnings and zero errors",
+    "productionBuild": "pass: Next.js 15.5.23; 20.7 second compile; seven static pages",
+    "researchPublication": "pass: 3,195 objects; 929,962,447 bytes",
+    "gitDiffCheck": "pass"
+  },
+  "deployment": {
+    "vercelDeploymentKey": "DB9uSvBxBVxFrqqJvS58Mn9oYkTQ",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/DB9uSvBxBVxFrqqJvS58Mn9oYkTQ",
+    "immutableUrl": "https://projectisitusa-is1ps1asz-unigentamos.vercel.app",
+    "productionUrl": "https://isitusa.com",
+    "target": "production",
+    "state": "success",
+    "githubDeploymentId": 5974018914,
+    "githubDeploymentStatusId": 16991934615,
+    "githubCommitStatusId": 52474904397,
+    "githubCombinedStatus": "success",
+    "deployedAt": "2026-08-19T01:02:33.000Z",
+    "exactCommitVerified": true
+  },
+  "r2Publication": {
+    "accountId": "0fe57401a5fd98319e16832ee97de02d",
+    "bucket": "project-isitusa-research",
+    "releaseId": "research-1f093b3150f7-a291afc1812a7e4c",
+    "releaseManifestKey": "releases/research-1f093b3150f7-a291afc1812a7e4c/manifest.json",
+    "releaseManifestSha256": "f87bc9fc3eb8ce1a6b168775f8d196e0a8157ef896bad1cd8878b6a2a035e7b8",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 929962447,
+    "projectedRetainedBytesAfterPromotion": 1850936210,
+    "fullRemoteObjectsVerifiedBeforePromotion": 3195,
+    "fullRemoteObjectsVerifiedDuringPromotion": 3195,
+    "currentPointerStatus": 200,
+    "currentPointerReleaseId": "research-1f093b3150f7-a291afc1812a7e4c",
+    "currentPointerSourceCommit": "1f093b3150f7fdbff5405e7e05ac5d93b65f059d",
+    "currentPointerPromotedAt": "2026-08-19T01:11:37.072Z",
+    "customDomain": "https://data.isitusa.com",
+    "pointerCacheControl": "public, must-revalidate, max-age=60",
+    "credentialStorage": "Windows current-user DPAPI outside the repository",
+    "credentialValuesCommittedOrLogged": false
+  },
+  "freeTierGuard": {
+    "providerIncludedStorageBytes": 10000000000,
+    "providerIncludedClassARequests": 1000000,
+    "providerIncludedClassBRequests": 10000000,
+    "projectStorageSafetyBytes": 8000000000,
+    "projectClassASafetyRequests": 800000,
+    "projectClassBSafetyRequests": 8000000,
+    "prePublicationDashboard": {
+      "classAOperationsDisplayed": "3.28k",
+      "classBOperationsDisplayed": "6.45k",
+      "totalStorageDisplayed": "918.36 MB",
+      "billableUsageDisplayed": "$0.00"
+    },
+    "postPublicationDashboard": {
+      "classAOperationsDisplayed": "6.46k",
+      "classBOperationsDisplayed": "12.84k",
+      "totalStorageDisplayed": "918.36 MB",
+      "billableUsageDisplayed": "$0.00",
+      "qualification": "Operation counters had updated; storage metering still displayed the prior asynchronous value. The publisher's retained-byte shadow plan is the conservative release storage bound."
+    },
+    "budgetAlertThresholdUsd": 0.01,
+    "hardProviderSpendCapAvailable": false,
+    "allProjectStopsPassed": true
+  },
+  "routeVerification": {
+    "hosts": [
+      "https://projectisitusa-is1ps1asz-unigentamos.vercel.app",
+      "https://isitusa.com"
+    ],
+    "routes": [
+      {"path":"/","status":200},
+      {"path":"/research?state=MD","status":200},
+      {"path":"/about","status":200},
+      {"path":"/species/euphorbia-cyparissias","status":200},
+      {"path":"/__round72_missing__","status":404}
+    ],
+    "routeHostChecksPassed": 10,
+    "zipLookup": {
+      "method": "POST",
+      "zip": "21043",
+      "status": 200,
+      "city": "Ellicott City",
+      "stateCode": "MD",
+      "countyFips": "24027",
+      "countyName": "Howard, MD",
+      "hostsPassed": 2
+    },
+    "hstsPresentOnAllRouteResponses": true
+  },
+  "byteParityChecks": [
+    {
+      "url": "https://data.isitusa.com/releases/research-1f093b3150f7-a291afc1812a7e4c/manifest.json",
+      "status": 200,
+      "bytes": 1565425,
+      "sha256": "f87bc9fc3eb8ce1a6b168775f8d196e0a8157ef896bad1cd8878b6a2a035e7b8"
+    },
+    {
+      "url": "https://data.isitusa.com/objects/sha256/67/670a1b923512990dce4061892cf1b21a1e5c61d7812ff392757c164e04f7efd5.json",
+      "status": 200,
+      "bytes": 224668,
+      "sha256": "670a1b923512990dce4061892cf1b21a1e5c61d7812ff392757c164e04f7efd5"
+    },
+    {
+      "url": "https://isitusa.com/generated/research/MD/counties/24027.json",
+      "status": 200,
+      "bytes": 224668,
+      "sha256": "670a1b923512990dce4061892cf1b21a1e5c61d7812ff392757c164e04f7efd5"
+    }
+  ],
+  "changedOutcomeVerification": [
+    {
+      "pair": "24027:euphorbia-cyparissias",
+      "displayStatus": "verified-present",
+      "researchStatus": "reviewed-evidence-found",
+      "evidenceCount": 1,
+      "evidenceUrl": "https://www.gbif.org/occurrence/5070851154",
+      "liveFlow": "ZIP 21043 to Howard, MD to Cypress Spurge; the production county explorer reports one matching species and identifies Cypress Spurge as the direct watchout."
+    },
+    {
+      "pair": "24001:aralia-elata",
+      "displayStatus": "researched-unresolved",
+      "researchStatus": "reviewed-no-qualifying-evidence",
+      "evidenceCount": 0,
+      "liveProjection": "The production Maryland research page renders the current Aug 18 projection and researched-unresolved totals from the promoted Round 72 bytes."
+    }
+  ],
+  "browserVerification": {
+    "host": "https://isitusa.com",
+    "routes": ["/","/research?state=MD","/species/euphorbia-cyparissias"],
+    "visibleState": "Maryland",
+    "visibleCounty": "Howard, MD",
+    "visibleSpecies": "Cypress Spurge / Euphorbia cyparissias",
+    "researchAsOf": "Aug 18, 2026",
+    "homeGbifMappedSpecies": 499,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "qualification": "The live county flow, research projection, and species profile rendered without application console warnings or errors. No new UI or layout code was part of this data release, so no new design-fidelity claim is made."
+  },
+  "runtimeVerification": {
+    "providerRuntimeLogQuery": "not-run; prior connector authorization remained unavailable",
+    "browserConsoleWarnings": 0,
+    "browserConsoleErrors": 0,
+    "status500RouteChecks": 0,
+    "qualification": "This receipt does not claim a complete Vercel runtime-log audit. Public routes, API smoke checks, exact rewritten bytes, and browser console were verified directly."
+  },
+  "postDeploymentGate": {
+    "phase": "POST-DEPLOYMENT",
+    "decision": "GO",
+    "blockers": [],
+    "matrix": [
+      {"category":"source-of-truth","criticality":"CRITICAL","status":"PASSED","evidence":"Canonical HEAD, refreshed origin/main, public GitHub main, GitHub deployment, and Vercel status identify 96f427da8aa646ae95370673d6bb9d3569cd5b9d."},
+      {"category":"functionality","criticality":"CRITICAL","status":"PASSED","evidence":"Home, Maryland research, about, Cypress spurge, missing-route, and ZIP lookup checks passed on immutable and production hosts."},
+      {"category":"visual-fidelity","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No UI, layout, style, or visual asset changed in this generated-data release."},
+      {"category":"accessibility","criticality":"MEDIUM","status":"NOT APPLICABLE","evidence":"No accessibility-facing code changed; existing named landmarks, headings, labels, and controls rendered in the verified production flow."},
+      {"category":"seo-and-discovery","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No metadata, canonical, robots, sitemap, route, or indexing behavior changed."},
+      {"category":"performance-and-resilience","criticality":"HIGH","status":"PASSED","evidence":"Local production compile completed in 20.7 seconds; Vercel deployed successfully; R2 serves immutable hashed objects with a retained prior-release rollback."},
+      {"category":"security-and-privacy","criticality":"CRITICAL","status":"PASSED","evidence":"HSTS was present on all route checks; credentials remain outside Git; request identity is redacted; the R2 token remains DPAPI-protected and bucket-scoped."},
+      {"category":"analytics-and-conversion","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No analytics, consent, CTA, form, signup, or conversion behavior changed."},
+      {"category":"monitoring-and-operations","criticality":"HIGH","status":"PASSED","evidence":"GitHub/Vercel terminal status is success; browser console is clean; Cloudflare shows $0.00 billable usage; the 0.01 USD alert and fail-closed project stops remain."},
+      {"category":"deployment","criticality":"CRITICAL","status":"PASSED","evidence":"GitHub Production deployment 5974018914 and status 16991934615 succeeded for the exact SHA; immutable and canonical routes passed."},
+      {"category":"content-and-approvals","criticality":"MEDIUM","status":"NOT APPLICABLE","evidence":"No public prose, claims, legal copy, contact details, pricing, testimonials, or assets changed."},
+      {"category":"data-release-integrity","criticality":"CRITICAL","status":"PASSED","evidence":"All 3,195 R2 objects passed full verification twice; pointer, manifest, immutable sample, and same-origin bytes match; 27,223 selected pairs reconcile exactly without negative-evidence movement."}
+    ]
+  },
+  "releaseDecision": {
+    "decision": "go",
+    "productionDeploymentVerified": true,
+    "contentCommitted": true,
+    "pushedToGithub": true,
+    "providerAcquisitionIntegrated": true,
+    "r2ReleasePromoted": true,
+    "researchMovementVerified": true,
+    "stateCertificationClaimed": false,
+    "reason": "The exact released SHA is on canonical, origin, and public GitHub main; GitHub and Vercel report successful production deployment; all immutable R2 objects passed full verification before and during promotion; the public pointer, manifest, sample object, same-origin rewrite, routes, ZIP lookup, changed outcome, and browser console checks passed; current Cloudflare billable usage remains $0.00."
+  }
+}

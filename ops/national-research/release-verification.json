@@ -5979,6 +5979,120 @@
         "Wire hashes differ while Vercel transports JSON with zstd. Release integrity is evaluated on decoded response bytes, matching browser fetch semantics and the committed SHA-256 values."
       ],
       "evidenceScope": "Externally verified prior production release. The immutable R2 release research-8bde16be35b8-e6a2af66396c19e7 contains 3,195 unique objects and 916,276,043 content bytes; every object passed full remote verification before pointer promotion. The custom domain, cache behavior, pointer TTL, exact branch and production rewrite bytes, application routes, ZIP lookup, and production browser flows passed for content commit e1f2082fc5287200cff495d89f3fe7e762321c19. GitHub Vercel status 52468642830 completed successfully. The provider runtime-log connector returned 403, so no complete Vercel runtime-log claim is made. This receipt does not attest to the commit that contains it or any future deployment."
+    },
+    {
+      "verificationId": "production-96f427da8-2026-08-19",
+      "verifiedAt": "2026-08-19T01:19:37.452Z",
+      "commitSha": "96f427da8aa646ae95370673d6bb9d3569cd5b9d",
+      "generatedContentCommitSha": "1f093b3150f7fdbff5405e7e05ac5d93b65f059d",
+      "githubMainSha": "96f427da8aa646ae95370673d6bb9d3569cd5b9d",
+      "githubDeploymentId": 5974018914,
+      "githubDeploymentState": "success",
+      "githubDeploymentStatusId": 16991934615,
+      "githubDeploymentEnvironmentUrl": "https://projectisitusa-is1ps1asz-unigentamos.vercel.app",
+      "githubCommitStatusId": 52474904397,
+      "gitLinkedVercelDeploymentId": "DB9uSvBxBVxFrqqJvS58Mn9oYkTQ",
+      "vercelDeploymentId": "DB9uSvBxBVxFrqqJvS58Mn9oYkTQ",
+      "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/DB9uSvBxBVxFrqqJvS58Mn9oYkTQ",
+      "vercelDeploymentUrl": "projectisitusa-is1ps1asz-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "target": "production",
+      "state": "success",
+      "sourceIdentity": {
+        "source": "git",
+        "githubCommitRef": "main",
+        "githubCommitSha": "96f427da8aa646ae95370673d6bb9d3569cd5b9d",
+        "releaseCommitMetadata": "96f427da8aa646ae95370673d6bb9d3569cd5b9d",
+        "productionAliasResolvedToDeployment": true,
+        "observationMethod": "Fresh canonical, origin, and public GitHub equality; GitHub/Vercel production status; full R2 verification before and during promotion; public pointer, manifest, immutable-object, same-origin byte, route, API, and browser QA."
+      },
+      "publishArchitecture": {
+        "mode": "content-addressed-r2",
+        "releaseId": "research-1f093b3150f7-a291afc1812a7e4c",
+        "bucket": "project-isitusa-research",
+        "customDomain": "https://data.isitusa.com",
+        "sameOriginPath": "/generated/research/:path*",
+        "gitFallbackRetained": true,
+        "sourceCommitPinned": true
+      },
+      "r2Publication": {
+        "releaseId": "research-1f093b3150f7-a291afc1812a7e4c",
+        "releaseManifestKey": "releases/research-1f093b3150f7-a291afc1812a7e4c/manifest.json",
+        "releaseManifestSha256": "f87bc9fc3eb8ce1a6b168775f8d196e0a8157ef896bad1cd8878b6a2a035e7b8",
+        "artifactCount": 3195,
+        "uniqueObjectCount": 3195,
+        "uniqueObjectBytes": 929962447,
+        "projectedRetainedBytesAfterPromotion": 1850936210,
+        "fullRemoteObjectsVerifiedBeforePromotion": 3195,
+        "fullRemoteObjectsVerifiedDuringPromotion": 3195,
+        "currentPointerReleaseId": "research-1f093b3150f7-a291afc1812a7e4c",
+        "currentPointerSourceCommit": "1f093b3150f7fdbff5405e7e05ac5d93b65f059d",
+        "currentPointerStatus": 200,
+        "credentialValuesCommittedOrLogged": false
+      },
+      "freeTierGuard": {
+        "projectStorageSafetyBytes": 8000000000,
+        "projectClassASafetyRequests": 800000,
+        "projectClassBSafetyRequests": 8000000,
+        "postReleaseClassAOperationsDisplayed": "6.46k",
+        "postReleaseClassBOperationsDisplayed": "12.84k",
+        "postReleaseStorageDisplayed": "918.36 MB",
+        "postReleaseBillableUsageDisplayed": "$0.00",
+        "budgetAlertThresholdUsd": 0.01,
+        "hardProviderSpendCapAvailable": false,
+        "qualification": "The dashboard storage meter remained asynchronously stale after operation counters updated; the publisher shadow plan conservatively bounds retained bytes at 1,850,936,210."
+      },
+      "routeChecks": [
+        {"path":"/","status":200},
+        {"path":"/research?state=MD","status":200},
+        {"path":"/about","status":200},
+        {"path":"/species/euphorbia-cyparissias","status":200},
+        {"path":"/__round72_missing__","status":404}
+      ],
+      "routeCheckHosts": [
+        "https://projectisitusa-is1ps1asz-unigentamos.vercel.app",
+        "https://isitusa.com"
+      ],
+      "routeHostChecksPassed": 10,
+      "zipLookupChecks": [
+        {"host":"https://projectisitusa-is1ps1asz-unigentamos.vercel.app","zip":"21043","status":200,"county":"Howard, MD","stateCode":"MD","fips":"24027"},
+        {"host":"https://isitusa.com","zip":"21043","status":200,"county":"Howard, MD","stateCode":"MD","fips":"24027"}
+      ],
+      "byteParityChecks": [
+        {"path":"/releases/research-1f093b3150f7-a291afc1812a7e4c/manifest.json","bytes":1565425,"sha256":"f87bc9fc3eb8ce1a6b168775f8d196e0a8157ef896bad1cd8878b6a2a035e7b8"},
+        {"path":"/objects/sha256/67/670a1b923512990dce4061892cf1b21a1e5c61d7812ff392757c164e04f7efd5.json","bytes":224668,"sha256":"670a1b923512990dce4061892cf1b21a1e5c61d7812ff392757c164e04f7efd5"},
+        {"path":"/generated/research/MD/counties/24027.json","bytes":224668,"sha256":"670a1b923512990dce4061892cf1b21a1e5c61d7812ff392757c164e04f7efd5"}
+      ],
+      "browserQa": {
+        "host": "https://isitusa.com",
+        "visibleState": "Maryland",
+        "visibleCounty": "Howard, MD",
+        "visibleSpecies": "Cypress Spurge / Euphorbia cyparissias",
+        "researchAsOf": "Aug 18, 2026",
+        "homeGbifMappedSpecies": 499,
+        "brokenImages": 0,
+        "consoleWarnings": 0,
+        "consoleErrors": 0
+      },
+      "runtimeQa": {
+        "providerRuntimeLogQuery": "not-run; prior connector authorization remained unavailable",
+        "browserConsoleWarnings": 0,
+        "browserConsoleErrors": 0,
+        "status500RouteChecks": 0,
+        "qualification": "No complete Vercel runtime-log claim is made. Public routes, API smoke, exact bytes, and browser console were verified directly."
+      },
+      "postDeploymentGate": {
+        "phase": "POST-DEPLOYMENT",
+        "decision": "GO",
+        "blockers": [],
+        "matrix": [
+          {"category":"scope-and-source-of-truth","criticality":"CRITICAL","status":"PASSED","evidence":"Canonical, origin, public GitHub main, GitHub deployment, and Vercel identify 96f427da8aa646ae95370673d6bb9d3569cd5b9d."},
+          {"category":"functionality","criticality":"CRITICAL","status":"PASSED","evidence":"Routes, 404 behavior, ZIP lookup, Maryland research, and Howard County Cypress spurge flow passed."},
+          {"category":"security-and-cost","criticality":"CRITICAL","status":"PASSED","evidence":"HSTS and credential boundaries passed; Cloudflare remained at $0.00 and all project free-tier stops passed."},
+          {"category":"data-release-integrity","criticality":"CRITICAL","status":"PASSED","evidence":"All 3,195 objects passed full verification twice; public pointer, manifest, object, same-origin bytes, and 27,223-pair reconciliation passed."}
+        ]
+      },
+      "evidenceScope": "Externally verified prior production release. Round 72 acquired one authenticated 11,002-record GBIF archive and partitioned 27,223 non-duplicative county-species pairs across 51 immutable state runs. Final movement is 1,420 verified present and 25,803 researched unresolved, with zero absence or non-detection movement and no state certification claim. The R2 release research-1f093b3150f7-a291afc1812a7e4c contains 3,195 objects and 929,962,447 content bytes; all objects passed full verification before and during pointer promotion. Canonical, origin, public GitHub main, GitHub Production, and Vercel identify content commit 96f427da8aa646ae95370673d6bb9d3569cd5b9d. Public pointer, manifest, immutable object, same-origin bytes, routes, ZIP lookup, live Howard County Cypress spurge flow, and browser console passed. Cloudflare displayed $0.00 billable usage after the release. This receipt does not attest to the commit that contains it or any future deployment."
     }
   ]
 }
