@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `846`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9826`
-- Not researched: `46920`
+- Researched unresolved: `10010`
+- Not researched: `46736`
 - Determination coverage: `1.47%`
-- Research coverage: `18.53%`
-- Explicit outcome coverage: `18.5304%`
+- Research coverage: `18.85%`
+- Explicit outcome coverage: `18.8498%`
 - Applicable protocol cells: `190`
 - Current complete protocol cells: `58`
 - Protocol completion: `37.37%`
 - Current protocol completion: `30.53%`
 - Evidence records: `863`
-- Research runs: `27`
+- Research runs: `28`
 - Rejection records: `25`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Giant Hogweed (`giant-hogweed`) | plants | 0 | 23 | 1 |
 | Hydrilla (`hydrilla`) | plants | 0 | 23 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 23 | 1 |
+| Silver fir (`abies-alba`) | plants | 0 | 23 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 23 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 23 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 23 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 23 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 23 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 23 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 23 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 23 | 0 |
-| Norway Maple (`acer-platanoides`) | plants | 0 | 23 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 23 | 0 |
-| Calamus (`acorus-calamus`) | plants | 0 | 23 | 0 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 23 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 23 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 23 | 0 |
-| Redtop (`agrostis-gigantea`) | plants | 0 | 23 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 767 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 13 | 66 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 13 | 74 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

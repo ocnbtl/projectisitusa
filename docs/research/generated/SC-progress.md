@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `3635`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `16559`
-- Not researched: `94990`
+- Researched unresolved: `16927`
+- Not researched: `94622`
 - Determination coverage: `3.16%`
-- Research coverage: `17.53%`
-- Explicit outcome coverage: `17.5319%`
+- Research coverage: `17.85%`
+- Explicit outcome coverage: `17.8514%`
 - Applicable protocol cells: `341`
 - Current complete protocol cells: `77`
 - Protocol completion: `26.39%`
 - Current protocol completion: `22.58%`
 - Evidence records: `3935`
-- Research runs: `25`
+- Research runs: `26`
 - Rejection records: `43`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -34,6 +34,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | --- | --- | ---: | ---: | ---: |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 46 | 2 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 46 | 2 |
+| Silver fir (`abies-alba`) | plants | 0 | 46 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 46 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 46 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 46 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 46 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 46 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 46 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 46 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 46 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 46 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 46 | 0 |
@@ -49,14 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 46 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 46 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 46 | 0 |
-| Wild oat (`avena-fatua`) | plants | 0 | 46 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 46 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 46 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 46 | 0 |
-| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 46 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 46 | 0 |
-| Field mustard (`brassica-rapa`) | plants | 0 | 46 | 0 |
-| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2977 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 150 | 83 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 150 | 91 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

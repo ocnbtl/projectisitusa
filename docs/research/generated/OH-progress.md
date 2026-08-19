@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `6772`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `32388`
-- Not researched: `181192`
+- Researched unresolved: `33092`
+- Not researched: `180488`
 - Determination coverage: `3.07%`
-- Research coverage: `17.77%`
-- Explicit outcome coverage: `17.7716%`
+- Research coverage: `18.09%`
+- Explicit outcome coverage: `18.0911%`
 - Applicable protocol cells: `300`
 - Current complete protocol cells: `133`
 - Protocol completion: `48.67%`
 - Current protocol completion: `44.33%`
 - Evidence records: `8260`
-- Research runs: `23`
+- Research runs: `24`
 - Rejection records: `2312`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,8 +36,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 88 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 88 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 88 | 1 |
+| Silver fir (`abies-alba`) | plants | 0 | 88 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 88 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 88 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 88 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 88 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 88 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 88 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 88 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 88 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 88 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 88 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 88 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 88 | 0 |
@@ -49,14 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 88 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 88 | 0 |
 | Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 88 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 88 | 0 |
-| Small Carpgrass (`arthraxon-hispidus`) | plants | 0 | 88 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 88 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 88 | 0 |
-| Common oat (`avena-sativa`) | plants | 0 | 88 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 88 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 88 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 88 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5286 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 689 | 130 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 689 | 138 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

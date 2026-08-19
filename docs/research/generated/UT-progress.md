@@ -7,20 +7,20 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Species: `2504`
 - Counties: `29`
 - County-species pairs: `72616`
-- Verified present: `1517`
+- Verified present: `1518`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `11881`
-- Not researched: `59218`
+- Researched unresolved: `12112`
+- Not researched: `58986`
 - Determination coverage: `2.09%`
-- Research coverage: `18.45%`
-- Explicit outcome coverage: `18.4505%`
-- Applicable protocol cells: `232`
-- Current complete protocol cells: `63`
-- Protocol completion: `32.76%`
-- Current protocol completion: `27.16%`
-- Evidence records: `1557`
-- Research runs: `26`
+- Research coverage: `18.77%`
+- Explicit outcome coverage: `18.7700%`
+- Applicable protocol cells: `233`
+- Current complete protocol cells: `64`
+- Protocol completion: `33.05%`
+- Current protocol completion: `27.47%`
+- Evidence records: `1558`
+- Research runs: `27`
 - Rejection records: `72`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Giant Hogweed (`giant-hogweed`) | plants | 0 | 29 | 1 |
 | Hydrilla (`hydrilla`) | plants | 0 | 29 | 1 |
 | Cogongrass (`imperata-cylindrica`) | plants | 0 | 29 | 1 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 29 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 29 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 29 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 29 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 29 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 29 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 29 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 29 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 29 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 29 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 29 | 0 |
-| Jointed Goatgrass (`aegilops-cylindrica`) | plants | 0 | 29 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 29 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 29 | 0 |
-| Common corncockle (`agrostemma-githago`) | plants | 0 | 29 | 0 |
-| Redtop (`agrostis-gigantea`) | plants | 0 | 29 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 29 | 0 |
-| Camelthorn (`alhagi-maurorum`) | plants | 0 | 29 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1375 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 34 | 68 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 35 | 76 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `15300`
 - Verified absent: `0`
 - Not detected: `8`
-- Researched unresolved: `96917`
-- Not researched: `55543`
+- Researched unresolved: `97453`
+- Not researched: `55007`
 - Determination coverage: `9.12%`
-- Research coverage: `66.89%`
-- Explicit outcome coverage: `40.4153%`
+- Research coverage: `67.21%`
+- Explicit outcome coverage: `40.7348%`
 - Applicable protocol cells: `14440`
-- Current complete protocol cells: `1325`
-- Protocol completion: `9.27%`
-- Current protocol completion: `9.18%`
+- Current complete protocol cells: `1333`
+- Protocol completion: `9.32%`
+- Current protocol completion: `9.23%`
 - Evidence records: `53826`
-- Research runs: `62`
+- Research runs: `63`
 - Rejection records: `6286`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,11 +32,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
-| Silver fir (`abies-alba`) | plants | 67 | 0 | 6 |
-| Florida keys indian mallow (`abutilon-hirtum`) | plants | 67 | 0 | 6 |
-| Cedar wattle (`acacia-elata`) | plants | 67 | 0 | 6 |
-| Pearl wattle (`acacia-podalyriifolia`) | plants | 67 | 0 | 6 |
-| New Zealand burr (`acaena-magellanica`) | plants | 67 | 0 | 6 |
 | Devil's horsewhip (`achyranthes-aspera-var-pubescens`) | plants | 67 | 0 | 6 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 67 | 0 | 6 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 67 | 0 | 6 |
@@ -57,6 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Bentgrass (`agrostis-castellana`) | plants | 67 | 0 | 6 |
 | Tall albizia (`albizia-procera`) | plants | 67 | 0 | 6 |
 | Candlenut tree (`aleurites-moluccanus`) | plants | 67 | 0 | 6 |
+| Citrus blackfly (`aleurocanthus-woglumi`) | insects | 67 | 0 | 6 |
+| Aucuba whitefly (`aleuroclava-aucubae`) | insects | 67 | 0 | 6 |
+| Giant whitefly (`aleurodicus-dugesii`) | insects | 67 | 0 | 6 |
+| Rugose spiraling whitefly (`aleurodicus-rugioperculatus`) | insects | 67 | 0 | 6 |
+| Whitefly (`aleuroglandulus-subtilis`) | insects | 67 | 0 | 6 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | 2026-06-16T03:44:13.025Z | 7 | 3 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2008 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 6653 | 992 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 6653 | 1000 |
 | GBIF coordinate-resolved preserved specimen records | operational | 2026-07-06T22:47:17.903Z | 904 | 68 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-06-26T11:22:25.724Z | 308 | 61 |
 | GBIF eBird Observation Dataset | operational | 2026-06-28T05:33:30.608Z | 292 | 10 |

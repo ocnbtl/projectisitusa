@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `515`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1765`
-- Not researched: `10240`
+- Researched unresolved: `1805`
+- Not researched: `10200`
 - Determination coverage: `4.11%`
-- Research coverage: `18.21%`
-- Explicit outcome coverage: `18.2109%`
+- Research coverage: `18.53%`
+- Explicit outcome coverage: `18.5304%`
 - Applicable protocol cells: `262`
 - Current complete protocol cells: `75`
 - Protocol completion: `33.59%`
 - Current protocol completion: `28.63%`
 - Evidence records: `652`
-- Research runs: `24`
+- Research runs: `25`
 - Rejection records: `1045`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Dutch elm disease (`ophiostoma-ulmi`) | fungi-diseases | 0 | 5 | 2 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 5 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 5 | 2 |
+| Silver fir (`abies-alba`) | plants | 0 | 5 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 5 | 0 |
 | Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 5 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 5 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 5 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 5 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 5 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 5 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 5 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 5 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 5 | 0 |
-| Common corncockle (`agrostemma-githago`) | plants | 0 | 5 | 0 |
-| Redtop (`agrostis-gigantea`) | plants | 0 | 5 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 5 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 5 | 0 |
-| Crow Garlic (`allium-vineale`) | plants | 0 | 5 | 0 |
-| European Alder (`alnus-glutinosa`) | plants | 0 | 5 | 0 |
-| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 5 | 0 |
-| Prostrate pigweed (`amaranthus-albus`) | plants | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 416 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 37 | 96 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 37 | 104 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

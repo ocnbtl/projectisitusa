@@ -7,21 +7,21 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `6276`
+- Verified present: `6293`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `21912`
-- Not researched: `117044`
-- Determination coverage: `4.32%`
-- Research coverage: `19.41%`
-- Explicit outcome coverage: `19.4089%`
-- Applicable protocol cells: `392`
-- Current complete protocol cells: `171`
-- Protocol completion: `46.94%`
-- Current protocol completion: `43.62%`
-- Evidence records: `29218`
-- Research runs: `22`
-- Rejection records: `2562`
+- Researched unresolved: `22359`
+- Not researched: `116580`
+- Determination coverage: `4.33%`
+- Research coverage: `19.73%`
+- Explicit outcome coverage: `19.7284%`
+- Applicable protocol cells: `395`
+- Current complete protocol cells: `174`
+- Protocol completion: `47.34%`
+- Current protocol completion: `44.05%`
+- Evidence records: `29235`
+- Research runs: `23`
+- Rejection records: `2572`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -38,8 +38,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 58 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 58 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 58 | 1 |
+| Silver fir (`abies-alba`) | plants | 0 | 58 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 58 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 58 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 58 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 58 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 58 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 58 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 58 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 58 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 58 | 0 |
@@ -52,11 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 58 | 0 |
 | Paper mulberry (`broussonetia-papyrifera`) | plants | 0 | 58 | 0 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 0 | 58 | 0 |
-| Flowering Rush (`butomus-umbellatus`) | plants | 0 | 58 | 0 |
-| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 58 | 0 |
-| Balloon vine (`cardiospermum-halicacabum`) | plants | 0 | 58 | 0 |
-| Curly plumeless thistle (`carduus-crispus`) | plants | 0 | 58 | 0 |
-| European chestnut (`castanea-sativa`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4616 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 1885 | 165 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 1902 | 173 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

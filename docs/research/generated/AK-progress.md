@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `390`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13200`
-- Not researched: `61530`
+- Researched unresolved: `13440`
+- Not researched: `61290`
 - Determination coverage: `0.52%`
-- Research coverage: `18.09%`
-- Explicit outcome coverage: `18.0911%`
+- Research coverage: `18.41%`
+- Explicit outcome coverage: `18.4105%`
 - Applicable protocol cells: `163`
 - Current complete protocol cells: `102`
 - Protocol completion: `62.58%`
 - Current protocol completion: `62.58%`
 - Evidence records: `550`
-- Research runs: `25`
+- Research runs: `26`
 - Rejection records: `2094`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,19 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 30 | 1 |
 | Japanese Beetle (`popillia-japonica`) | insects | 0 | 30 | 1 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 30 | 1 |
+| Silver fir (`abies-alba`) | plants | 0 | 30 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 30 | 0 |
 | Velvetleaf (`abutilon-theophrasti`) | plants | 0 | 30 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 30 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 30 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 30 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 30 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 30 | 0 |
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 30 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 30 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 30 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 30 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 30 | 0 |
-| Calamus (`acorus-calamus`) | plants | 0 | 30 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 30 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 30 | 0 |
-| Common corncockle (`agrostemma-githago`) | plants | 0 | 30 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 30 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 30 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 30 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 30 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 314 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 87 | 126 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 87 | 134 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

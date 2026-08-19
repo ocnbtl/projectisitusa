@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `7808`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `20288`
-- Not researched: `132160`
+- Researched unresolved: `20800`
+- Not researched: `131648`
 - Determination coverage: `4.87%`
-- Research coverage: `17.53%`
-- Explicit outcome coverage: `17.5319%`
+- Research coverage: `17.85%`
+- Explicit outcome coverage: `17.8514%`
 - Applicable protocol cells: `366`
 - Current complete protocol cells: `104`
 - Protocol completion: `31.97%`
 - Current protocol completion: `28.42%`
 - Evidence records: `10782`
-- Research runs: `22`
+- Research runs: `23`
 - Rejection records: `1248`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -38,7 +38,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 64 | 1 |
 | Butternut Canker Fungus (`ophiognomonia-clavigignenti-juglandacearum`) | fungi-diseases | 0 | 64 | 1 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 64 | 1 |
+| Silver fir (`abies-alba`) | plants | 0 | 64 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 64 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 64 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 64 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 64 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 64 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 64 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 64 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 64 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 64 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 64 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 64 | 0 |
@@ -49,14 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 64 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 64 | 0 |
 | Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 64 | 0 |
-| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 64 | 0 |
-| Japanese angelica tree (`aralia-elata`) | plants | 0 | 64 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 64 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 64 | 0 |
-| Spear saltbush (`atriplex-patula`) | plants | 0 | 64 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 64 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 64 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 64 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7190 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 731 | 124 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 731 | 132 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

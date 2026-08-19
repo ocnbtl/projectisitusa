@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `5835`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `21445`
-- Not researched: `127968`
+- Researched unresolved: `21941`
+- Not researched: `127472`
 - Determination coverage: `3.76%`
-- Research coverage: `17.57%`
-- Explicit outcome coverage: `17.5719%`
+- Research coverage: `17.89%`
+- Explicit outcome coverage: `17.8914%`
 - Applicable protocol cells: `354`
 - Current complete protocol cells: `103`
 - Protocol completion: `32.77%`
 - Current protocol completion: `29.10%`
 - Evidence records: `6885`
-- Research runs: `21`
+- Research runs: `22`
 - Rejection records: `902`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -36,6 +36,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 62 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 62 | 2 |
 | Punktree (`melaleuca-quinquenervia`) | plants | 0 | 62 | 1 |
+| Silver fir (`abies-alba`) | plants | 0 | 62 | 0 |
+| Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 62 | 0 |
+| Cedar wattle (`acacia-elata`) | plants | 0 | 62 | 0 |
+| Pearl wattle (`acacia-podalyriifolia`) | plants | 0 | 62 | 0 |
+| New Zealand burr (`acaena-magellanica`) | plants | 0 | 62 | 0 |
+| Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 62 | 0 |
+| Mysid (`acanthomysis-aspera`) | wildlife | 0 | 62 | 0 |
+| Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 62 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 62 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 62 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 62 | 0 |
@@ -49,14 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 62 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 62 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 62 | 0 |
-| Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 62 | 0 |
-| Hairy beggarticks (`bidens-pilosa`) | plants | 0 | 62 | 0 |
-| Ramie chinese grass (`boehmeria-nivea`) | plants | 0 | 62 | 0 |
-| Straggler daisy (`calyptocarpus-vialis`) | plants | 0 | 62 | 0 |
-| Maltese star-thistle (`centaurea-melitensis`) | plants | 0 | 62 | 0 |
-| Mediterranean fruit fly (`ceratitis-capitata`) | insects | 0 | 62 | 0 |
-| Camphortree (`cinnamomum-camphora`) | plants | 0 | 62 | 0 |
-| Coco yam (`colocasia-esculenta`) | plants | 0 | 62 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4441 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T16:43:39.223Z | 649 | 92 |
+| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 649 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
