@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-76-gbif-national-acquisition-integration-20260819-r1",
+  "evaluatedAt": "2026-08-19T17:35:00.171Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "baselineGeneratedCommit": "aed213043298ea6083354e01eb334a3aa5e25d31",
+  "planCommit": "7b0ce56406d7e792e23db196c8a97a21c94e3ef1",
+  "acquisitionCommit": "4dcc5003860ed60a9d0babd802d490d1c735e522",
+  "partitionCommit": "f0a50a2f73489ddf677d3e1d31dba32e6d5dc9fc",
+  "contentCommit": "744e129b27a260b0cf94bc296242df84c36b98f3",
+  "objective": "Select the smallest current, non-duplicative, exact-cache GBIF tranche above 25,000 not-researched county-species pairs; execute one authenticated national archive; partition it conservatively; integrate measured outcomes; and release only through the fail-closed R2 and production verification path.",
+  "selection": {
+    "planId": "gbif-national-download-v2-round-76-10",
+    "selectionEvidencePath": "ops/national-research/evaluations/round-76-gbif-national-selection-20260819-r1.json",
+    "selectionEvidenceSha256": "cf08b592ba858d534918576d8323fef8f9b1fa31140495d38a33b882f748fe58",
+    "candidatePairSha256": "171640203b138cc9b2b2092bc75ee6bfe40a27661bd8152f8be119c62ecafb46",
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260818-r72.json",
+    "taxonomyCacheSha256": "7c550218fe905500ae62c89766522dc182fe40d3d6abf5a4f64beeb54d2fdf16",
+    "selectedTaxa": 10,
+    "jurisdictions": 51,
+    "grossCountySpeciesPairs": 31440,
+    "selectedNotResearchedPairs": 26031,
+    "excludedBlockedPairs": 252,
+    "alreadyResearchedPairs": 5157,
+    "firstNineNotResearchedPairs": 23636,
+    "smallestThresholdPrefix": true,
+    "duplicatePriorSourceWorkSelected": false
+  },
+  "providerExecution": {
+    "sourceId": "gbif-preserved-specimens",
+    "acquisitionId": "20260819t164007z__gbif-download__c17010fdc231",
+    "downloadKey": "0024829-260806074905277",
+    "doi": "10.15468/dl.rgfkfx",
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "startedAt": "2026-08-19T16:40:07.775Z",
+    "requestedAt": "2026-08-19T16:40:31.765Z",
+    "finishedAt": "2026-08-19T16:43:39.223Z",
+    "terminalStatus": "SUCCEEDED",
+    "providerRecords": 13770,
+    "httpAttempts": {
+      "total": 6,
+      "requestPosts": 1,
+      "statusGets": 4,
+      "archiveGets": 1,
+      "requestStatus": 201,
+      "getStatus": 200,
+      "retries": 0,
+      "errors": 0
+    },
+    "archive": {
+      "path": "src/data/research/national-acquisitions/20260819t164007z__gbif-download__c17010fdc231/download.zip",
+      "bytes": 6636461,
+      "sha256": "7c0128d03c817b3c10f3f85c3f8c96093f3b3fb654f8a4a1fa0cf0e3bfbf1bd7"
+    },
+    "receipt": {
+      "path": "src/data/research/national-acquisitions/20260819t164007z__gbif-download__c17010fdc231/receipt.json",
+      "sha256": "07247d913d3e7bb71713ea4fcf299e85550bdd9c2b14dd3c31627dbc778ea8c2"
+    },
+    "credentialsPersistedInRepositoryOrArtifacts": false,
+    "qualification": "The retained plan intentionally uses exact legacy GBIF Backbone taxon identifiers. A Catalogue of Life migration requires a separately reviewed plan and taxonomy cache."
+  },
+  "partition": {
+    "partitionId": "gbif-national-partition-d83e84075769505a",
+    "receiptPath": "ops/national-research/evaluations/gbif-national-partition-d83e84075769505a.json",
+    "receiptSha256": "54bf7754766f1e8917ef9c34b093660d98e429d5ab2cf4c700722ea8858cb514",
+    "providerTotalRecords": 13770,
+    "occurrenceRows": 13770,
+    "verbatimRows": 13770,
+    "uniqueOccurrenceIds": 13770,
+    "selectedScopeRows": 4823,
+    "overlapRows": 4885,
+    "taxonomyRejectedRows": 0,
+    "geographyRejectedRows": 4062,
+    "selectedEvidencePairs": 918,
+    "selectedNoEvidencePairs": 25113,
+    "selectedPairCount": 26031,
+    "assertionEvents": 918,
+    "reviewEvents": 918,
+    "representativeRejections": 558,
+    "duplicateRecords": 0,
+    "stateRows": 51,
+    "materializedRuns": 50,
+    "zeroPairStates": ["AL"],
+    "deterministicPostCommitRerun": true
+  },
+  "researchMovement": {
+    "fullCountySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 193968,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 1262117,
+      "notResearched": 6416483
+    },
+    "final": {
+      "verifiedPresent": 194886,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 1287230,
+      "notResearched": 6390452
+    },
+    "delta": {
+      "verifiedPresent": 918,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 25113,
+      "notResearched": -26031
+    },
+    "selectedPairReconciliation": {
+      "planned": 26031,
+      "moved": 26031,
+      "verifiedPresent": 918,
+      "researchedUnresolved": 25113,
+      "unmoved": 0
+    },
+    "qualification": "Provider silence created no absence or non-detection claims. Selected pairs with no qualifying explicit specimen remained research-only as researched-unresolved."
+  },
+  "applicabilityAndProtocolMovement": {
+    "stateSpeciesApplicable": {"baseline": 12973, "final": 13099, "delta": 126},
+    "derivedApplicable": {"baseline": 9547, "final": 9673, "delta": 126},
+    "protocolCells": {
+      "baseline": {"total":113208,"applicable":28138,"notApplicable":85070,"complete":6994,"incomplete":21085,"blocked":59,"current":6383,"stale":611,"undated":21144,"regulatedAndHighApplicable":2843,"regulatedAndHighCurrentComplete":2383},
+      "final": {"total":114756,"applicable":28264,"notApplicable":86492,"complete":7120,"incomplete":21085,"blocked":59,"current":6509,"stale":611,"undated":21144,"regulatedAndHighApplicable":2843,"regulatedAndHighCurrentComplete":2383},
+      "delta": {"total":1548,"applicable":126,"notApplicable":1422,"complete":126,"incomplete":0,"blocked":0,"current":126,"stale":0,"undated":0,"regulatedAndHighApplicable":0,"regulatedAndHighCurrentComplete":0}
+    },
+    "remainingApplicableProtocolCountyScreens": 1403241,
+    "certifiedStates": 0
+  },
+  "publication": {
+    "releaseId": "research-744e129b27a2-c01f406ea3d8d22a",
+    "manifestPath": "ops/national-research/publication/research-data-manifest.json",
+    "manifestBytes": 1565425,
+    "manifestSha256": "1050a8a9eba40c57308187d38e47874c5d1c7eaeae9a0b0b536a9e8138efe4b8",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 969978905,
+    "maximumNewClassARequests": 3197,
+    "maximumVerificationClassBRequests": 3196,
+    "cloudflareCurrentPeriod": "2026-08-18/2026-09-18",
+    "cloudflareDashboardObservedAt": "2026-08-19T17:35:00.171Z",
+    "cloudflareDashboardObserved": {
+      "classAOperationsDisplayed": "12.84k",
+      "classBOperationsDisplayed": "26.75k",
+      "totalStorageDisplayed": "3.65 GB",
+      "billableUsageDisplayed": "$0.00"
+    },
+    "publisherGuardInputs": {"monthlyClassAUsed":13000,"monthlyClassBUsed":27000,"qualification":"Inputs round live displayed values upward. The publisher must list exact retained bytes again before upload."},
+    "displayedStoragePlusNoDeduplicationBytesApprox": 4619978905,
+    "projectStorageStopBytes": 8000000000,
+    "projectClassAStop": 800000,
+    "projectClassBStop": 8000000,
+    "preflightWithinAllStops": true
+  },
+  "capacity": {
+    "observedAt": "2026-08-19T17:34:44.7603290Z",
+    "tier": "green",
+    "freePhysicalMemoryBytes": 10948689920,
+    "availableMemoryPercent": 32.731,
+    "commitHeadroomBytes": 13741285376,
+    "freeDiskBytes": 666384404480,
+    "pageFileCurrentUsagePercent": 12.849,
+    "releaseExecution": "sequential-low-concurrency"
+  },
+  "verification": {
+    "focusedNationalGbifRegression": "pass",
+    "offlineNationalGbifEndToEnd": "pass: verified acquisition; 51 state reconciliation rows; 50 materialized runs; deterministic rerun; tamper rejection; zero provider requests",
+    "denominatorIntegrity": "pass: 7,872,576 county-species cells",
+    "dataIntegrity": "pass",
+    "stateResearchProjections": "pass: 51 projections",
+    "nationalResearchConfig": "pass",
+    "readinessDashboard": "pass after deterministic regeneration from current protocol cells",
+    "frozenNationalResearchSkillSuite": "pass: 97/97; zero critical safety violations",
+    "fullResearchIntegrity": "pass: 1,247 immutable runs; 1,645,114 outcomes; zero unreviewed evidence",
+    "sourceCoverageIndex": "pass: source-coverage-eb4663084bf1d1af0c54 current and hash-reconciled",
+    "researchPublication": "pass: 3,195 objects; 969,978,905 bytes; fail-closed R2 plan",
+    "typecheck": "pass",
+    "lint": "pass: zero warnings or errors",
+    "productionBuild": "pass: true cold Next.js 15.5.23 build; 25.7 second compile; seven static pages; species profiles on demand",
+    "gitDiffCheck": "pass: no application code, dependency, schema, migration, UI, route, or metadata change"
+  },
+  "generatedByteChecks": [
+    {"path":"public/generated/research/MD/summary.json","bytes":324140,"sha256":"b21655ad59d3b77adca594437789830686a9502009760d29d788cdaa4c76f167"},
+    {"path":"public/generated/research/TX/summary.json","bytes":533801,"sha256":"ccbd53e0f229ca4224b5524b282f35078d773f0970dd3d383937f64558ce4a99"},
+    {"path":"src/data/generated/species.json","bytes":5738579,"sha256":"d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea"}
+  ],
+  "preDeploymentLaunchMatrix": [
+    {"category":"source-of-truth","criticality":"CRITICAL","status":"PASSED","evidence":"Canonical C:\\Code\\project-isitusa main at generated content checkpoint 744e129b27a260b0cf94bc296242df84c36b98f3; origin/main is the verified partition checkpoint f0a50a2f73489ddf677d3e1d31dba32e6d5dc9fc; research-aed213043298-61bb7c59ff565fba is the retained last-known-good R2 release."},
+    {"category":"functionality","criticality":"HIGH","status":"PASSED","evidence":"Authenticated provider acquisition, conservative offline partition, 51-state regeneration, full research replay, typecheck, lint, and production build passed."},
+    {"category":"visual-fidelity","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No UI, style, layout, or visual asset changed."},
+    {"category":"accessibility","criticality":"MEDIUM","status":"NOT APPLICABLE","evidence":"No interactive, semantic, or presentation code changed; critical live routes remain scheduled for post-deployment smoke verification."},
+    {"category":"seo-and-discovery","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No metadata, route, canonical, robots, sitemap, or indexing behavior changed."},
+    {"category":"performance-and-resilience","criticality":"HIGH","status":"PASSED","evidence":"A true cold production build compiled in 25.7 seconds; 3,195 research objects remain externalized behind the immutable R2 manifest and fail-closed publisher; release execution is sequential at low concurrency."},
+    {"category":"security-and-privacy","criticality":"CRITICAL","status":"PASSED","evidence":"GBIF credentials were injected only into the acquisition child process; no secret was persisted; the R2 token remains user-scoped, DPAPI-protected, and bucket-scoped; no application or dependency code changed."},
+    {"category":"analytics-and-conversion","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No analytics, consent, CTA, form, signup, or conversion behavior changed."},
+    {"category":"monitoring-and-operations","criticality":"HIGH","status":"PASSED","evidence":"Cloudflare current-period billable usage is $0.00; displayed Class A is 12.84k, Class B is 26.75k, and storage is 3.65 GB; rounded guard inputs remain far below project stops; the last-known-good immutable release remains retained."},
+    {"category":"deployment","criticality":"CRITICAL","status":"PASSED","evidence":"The user explicitly authorized production. Targets are GitHub main, Cloudflare R2 project-isitusa-research, and Vercel production; exact content commit, new release ID, rollback release, and post-deployment checks are identified."},
+    {"category":"content-and-approvals","criticality":"MEDIUM","status":"NOT APPLICABLE","evidence":"No public prose, legal copy, contact information, price, testimonial, or asset approval changed."},
+    {"category":"data-release-integrity","criticality":"CRITICAL","status":"PASSED","evidence":"Exact GBIF DOI and archive are retained; 26,031 planned pairs reconcile to 918 present plus 25,113 researched-unresolved; zero absence or non-detection movement; deterministic replay and all integrity gates passed."}
+  ],
+  "releaseDecision": {
+    "preDeploymentGate": "GO TO DEPLOY",
+    "localContentGate": "go",
+    "productionRelease": "pending-external-verification",
+    "contentCommitted": true,
+    "releaseEvidenceCommitted": false,
+    "pushedToGithub": false,
+    "r2ImmutableReleaseVerified": false,
+    "r2CurrentPointerPromoted": false,
+    "productionDeploymentVerified": false,
+    "lastKnownGoodRelease": "research-aed213043298-61bb7c59ff565fba",
+    "reason": "All applicable pre-deployment checks pass. Production remains pending until this evidence is committed and pushed, the immutable R2 release is uploaded and remotely verified within current-period guards, the pointer is promoted, the exact application release reaches READY, and the real public surfaces pass post-deployment verification."
+  }
+}
