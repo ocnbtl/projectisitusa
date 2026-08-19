@@ -861,7 +861,9 @@ async function main() {
       retainedEvidence: [{ path: artifactReference.path, sha256: artifactReference.sha256, bytes: artifactReference.bytes }],
       caveats: [
         source.caveat,
-        "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
+        plan.taxonomyMode === "gbif-backbone-v2-exact-match-retained-identifiers"
+          ? "The taxonomy cache uses exact accepted matches from the documented v2 matcher against the default GBIF Backbone index; Catalogue of Life identifiers are not substituted."
+          : "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
         "At most one deterministic qualifying specimen assertion is published per selected county-species pair.",
       ],
     };

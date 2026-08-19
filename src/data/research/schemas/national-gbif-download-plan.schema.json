@@ -26,7 +26,12 @@
     "countryCode": { "const": "US" },
     "basisOfRecord": { "const": "PRESERVED_SPECIMEN" },
     "occurrenceStatus": { "const": "PRESENT" },
-    "taxonomyMode": { "const": "legacy-gbif-backbone-retained-identifiers" },
+    "taxonomyMode": {
+      "enum": [
+        "legacy-gbif-backbone-retained-identifiers",
+        "gbif-backbone-v2-exact-match-retained-identifiers"
+      ]
+    },
     "checklistKey": { "type": "null" },
     "taxonomyCachePath": { "type": "string", "pattern": "^src/data/research/caches/gbif-taxonomy-[a-z0-9-]+\\.json$" },
     "taxonomyCacheSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },

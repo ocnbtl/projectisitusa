@@ -32,7 +32,10 @@ export const NationalGbifDownloadPlanSchema = z.object({
   countryCode: z.literal("US"),
   basisOfRecord: z.literal("PRESERVED_SPECIMEN"),
   occurrenceStatus: z.literal("PRESENT"),
-  taxonomyMode: z.literal("legacy-gbif-backbone-retained-identifiers"),
+  taxonomyMode: z.union([
+    z.literal("legacy-gbif-backbone-retained-identifiers"),
+    z.literal("gbif-backbone-v2-exact-match-retained-identifiers"),
+  ]),
   checklistKey: z.null(),
   taxonomyCachePath: z.string().regex(/^src\/data\/research\/caches\/gbif-taxonomy-[a-z0-9-]+\.json$/u),
   taxonomyCacheSha256: z.string().regex(/^[a-f0-9]{64}$/u),
@@ -131,6 +134,9 @@ export function nationalGbifAcquisitionInputPaths(
     "src/data/research/schemas/national-gbif-download-plan.schema.json",
     "src/data/research/schemas/national-gbif-download-selection.schema.json",
     "src/data/research/schemas/national-gbif-download-acquisition-receipt.schema.json",
+    ...(plan.taxonomyMode === "gbif-backbone-v2-exact-match-retained-identifiers"
+      ? ["src/data/research/schemas/gbif-taxonomy-cache-v2.schema.json"]
+      : []),
   ].sort(compareText);
 }
 
@@ -205,7 +211,7 @@ export const NationalGbifSelectionSchema = z.object({
 export type NationalGbifSelection = z.infer<typeof NationalGbifSelectionSchema>;
 
 const TaxonomyCacheSchema = z.object({
-  schemaVersion: z.literal(1),
+  schemaVersion: z.union([z.literal(1), z.literal(2)]),
   cacheId: z.string().min(1),
   sourceId: z.literal(GBIF_SOURCE_ID),
   entries: z.array(z.object({
@@ -223,6 +229,20 @@ const MatchBodySchema = z.object({
   rank: z.literal("SPECIES"),
   confidence: z.number().min(95),
   matchType: z.literal("EXACT"),
+}).passthrough();
+
+const MatchBodyV2Schema = z.object({
+  usage: z.object({
+    key: z.string().regex(/^[1-9][0-9]*$/u),
+    canonicalName: z.string().min(3),
+    rank: z.literal("SPECIES"),
+    status: z.literal("ACCEPTED"),
+  }).passthrough(),
+  diagnostics: z.object({
+    confidence: z.number().min(95),
+    matchType: z.literal("EXACT"),
+  }).passthrough(),
+  synonym: z.literal(false),
 }).passthrough();
 
 export type GbifNationalTaxon = {
@@ -437,7 +457,21 @@ export function resolveNationalGbifTaxa(root: string, plan: NationalGbifDownload
     if (sha256(bodyBytes) !== entry.responseBodySha256) {
       throw new Error(`GBIF taxonomy response hash differs for ${speciesId}.`);
     }
-    const match = MatchBodySchema.parse(JSON.parse(bodyBytes.toString("utf8")));
+    const parsedBody = JSON.parse(bodyBytes.toString("utf8"));
+    const match = cache.schemaVersion === 2
+      ? (() => {
+          const value = MatchBodyV2Schema.parse(parsedBody);
+          const numericKey = Number(value.usage.key);
+          if (!Number.isSafeInteger(numericKey) || numericKey <= 0) {
+            throw new Error(`GBIF v2 taxonomy key is not a safe positive integer for ${speciesId}.`);
+          }
+          return {
+            usageKey: numericKey,
+            canonicalName: value.usage.canonicalName,
+            confidence: value.diagnostics.confidence,
+          };
+        })()
+      : MatchBodySchema.parse(parsedBody);
     if (match.canonicalName.toLocaleLowerCase("en-US") !== entry.scientificName.toLocaleLowerCase("en-US")) {
       throw new Error(`GBIF exact canonical name differs for ${speciesId}.`);
     }

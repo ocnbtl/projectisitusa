@@ -57,6 +57,43 @@ assert(acquisitionInputs.includes("scripts/research/verify-national-gbif-downloa
 assert(acquisitionInputs.includes("scripts/research/zip-tools.ts"));
 assert.equal(taxa.length, 13);
 assert.equal(new Set(taxa.map((entry) => entry.taxonKey)).size, taxa.length);
+const v2CacheRoot = mkdtempSync(path.join(tmpdir(), "isitusa-gbif-v2-cache-"));
+try {
+  const responseBody = stableJson({
+    usage: {
+      key: "4264680",
+      canonicalName: "Myocastor coypus",
+      rank: "SPECIES",
+      status: "ACCEPTED",
+    },
+    diagnostics: { matchType: "EXACT", confidence: 99 },
+    synonym: false,
+  });
+  const cachePath = path.join(v2CacheRoot, "gbif-taxonomy-v2.json");
+  writeFileSync(cachePath, stableJson({
+    schemaVersion: 2,
+    cacheId: "fixture-v2",
+    sourceId: "gbif-preserved-specimens",
+    entries: [{
+      speciesId: "nutria",
+      scientificName: "Myocastor coypus",
+      status: 200,
+      responseBodyBase64: Buffer.from(responseBody).toString("base64"),
+      responseBodySha256: sha256(responseBody),
+    }],
+  }));
+  const v2Plan = {
+    ...plan,
+    taxonomyMode: "gbif-backbone-v2-exact-match-retained-identifiers" as const,
+    taxonomyCachePath: path.relative(root, cachePath).replaceAll("\\", "/"),
+    taxonomyCacheSha256: sha256(readFileSync(cachePath)),
+    speciesIds: ["nutria"],
+  };
+  const resolvedV2 = resolveNationalGbifTaxa(root, v2Plan);
+  assert.equal(resolvedV2[0]?.taxonKey, 4264680);
+} finally {
+  rmSync(v2CacheRoot, { recursive: true, force: true });
+}
 assert.equal(selection.selection.counts.notResearchedPairs, 25_406);
 assert.equal(selection.selection.counts.blockedPairs, 18);
 assert.equal(selection.selection.counts.alreadyResearchedPairs, 15_448);

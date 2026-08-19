@@ -397,7 +397,9 @@ async function main() {
     notificationAddressPersistence: "redacted",
     providerDocumentation: [plan.documentationUrl, plan.taxonomyDocumentationUrl, plan.termsUrl],
     taxonomyMode: plan.taxonomyMode,
-    taxonomyQualification: "The plan intentionally retains exact legacy GBIF Backbone numeric identifiers. GBIF documents continued API support for those identifiers; a COL XR migration requires a separately verified v2 taxonomy cache.",
+    taxonomyQualification: plan.taxonomyMode === "gbif-backbone-v2-exact-match-retained-identifiers"
+      ? "The plan uses exact accepted species matches from the documented GBIF v2 matcher against its default GBIF Backbone index. Numeric keys remain compatible with occurrence downloads; Catalogue of Life identifiers are not substituted."
+      : "The plan intentionally retains exact legacy GBIF Backbone numeric identifiers. GBIF documents continued API support for those identifiers; a COL XR migration requires a separately verified v2 taxonomy cache.",
     predicate: {
       country: plan.countryCode,
       basisOfRecord: plan.basisOfRecord,
@@ -724,9 +726,9 @@ async function main() {
       coordinateCountyAssignmentAllowed: false,
     },
     errors: [],
-    warnings: [
-      "The plan intentionally retains exact legacy GBIF Backbone taxon identifiers. A Catalogue of Life migration requires a separately reviewed plan and taxonomy cache.",
-    ],
+    warnings: [plan.taxonomyMode === "gbif-backbone-v2-exact-match-retained-identifiers"
+      ? "The taxonomy cache uses the documented v2 matcher with the default GBIF Backbone index and deliberately does not substitute Catalogue of Life identifiers."
+      : "The plan intentionally retains exact legacy GBIF Backbone taxon identifiers. A Catalogue of Life migration requires a separately reviewed plan and taxonomy cache."],
   };
   const receiptSchema = JSON.parse(readFileSync(
     path.join(ROOT, "src/data/research/schemas/national-gbif-download-acquisition-receipt.schema.json"),
