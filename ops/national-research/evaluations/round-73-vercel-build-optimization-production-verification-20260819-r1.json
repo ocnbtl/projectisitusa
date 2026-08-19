@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-73-vercel-build-optimization-production-verification-20260819-r1",
+  "verifiedAt": "2026-08-19T03:42:09.566Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "baseCommit": "db9124af94ddcbc455a75ed7c0725556391ebba3",
+  "applicationContentCommit": "eeeb3be787f376ee268f0e3b24c04d326a512770",
+  "objective": "Decouple immutable research updates from Vercel application builds, remove deployment-independent corpus data from the disposable build workspace, retain strict runtime-data integrity, and externally verify the optimized production release.",
+  "architecture": {
+    "researchDelivery": "R2 current pointer to an immutable release manifest and content-addressed objects",
+    "runtimePointerPath": "https://data.isitusa.com/current.json",
+    "ignoredBuildCommand": "node scripts/should-ignore-vercel-build.mjs",
+    "ignoredBuildPolicy": "fail closed for missing or invalid commit ranges; skip only when every changed path is deployment-independent",
+    "workspacePruningMode": "VERCEL-only explicit directory removal; local execution is a no-op",
+    "runtimeRequiredFileCount": 9,
+    "excludedDirectoryCount": 6,
+    "excludedTrackedFilesObservedByVercel": 22881,
+    "estimatedExcludedBytesFromLocalAudit": 4030417562,
+    "dataDeletedFromGitOrCanonicalCheckout": false
+  },
+  "timingComparison": {
+    "baselinePreview": {
+      "commit": "e76d9dc8d594732204193aa4aab3155ce58ca8f8",
+      "deploymentId": "AuUwYFKq9qookn6obFwVZ6QZvKyT",
+      "totalSeconds": 1069,
+      "compile": "14.9min"
+    },
+    "optimizedPreview": {
+      "commit": "eeeb3be787f376ee268f0e3b24c04d326a512770",
+      "deploymentId": "AaT5oMcbmaD2kxGTsm8NkTehuVvC",
+      "immutableUrl": "https://projectisitusa-5kg7jbo6r-unigentamos.vercel.app",
+      "state": "ready",
+      "totalSeconds": 154,
+      "nextCompileSeconds": 8.3,
+      "vercelBuildSeconds": 42
+    },
+    "production": {
+      "deploymentId": "GuBteQNipQMcp4MXcw1HSNJTqbWV",
+      "immutableUrl": "https://projectisitusa-581igyxlq-unigentamos.vercel.app",
+      "productionUrl": "https://isitusa.com",
+      "state": "ready",
+      "totalSeconds": 178,
+      "nextCompileSeconds": 15.4,
+      "vercelBuildSeconds": 60
+    },
+    "finding": "The prior delay was not deployment upload time. It was a 14.9-minute Next.js compile caused by multi-gigabyte deployment-independent research and operations trees entering the two-core Vercel build workspace. After scoped pruning, compilation fell to seconds; remaining end-to-end time is primarily Git clone and platform lifecycle overhead."
+  },
+  "localVerification": {
+    "vercelPublishTests": "pass",
+    "ignoredBuildClassifierTests": "pass",
+    "publicR2ProjectionFetchTests": "pass",
+    "typecheck": "pass: incremental disabled",
+    "lint": "pass: zero warnings and zero errors",
+    "productionBuild": "pass: Next.js 15.5.23; 30.0 second local compile; seven routes",
+    "dataIntegrity": "unchanged from the same scoped application diff and previously passed before release",
+    "fullResearchIntegrity": "unchanged from the same scoped application diff and previously passed before release",
+    "gitDiffCheck": "pass"
+  },
+  "publicVerification": {
+    "routeChecks": [
+      {"path": "/", "status": 200},
+      {"path": "/research", "status": 200},
+      {"path": "/species/spotted-lanternfly", "status": 200}
+    ],
+    "zipLookup": {"zip": "43210", "status": 200, "county": "Franklin, OH", "stateCode": "OH", "fips": "39049"},
+    "browserQa": {
+      "homeCatalogSpecies": 2504,
+      "researchControlCenterLoaded": true,
+      "researchGeneratedDate": "Aug 18, 2026",
+      "speciesProfile": "Spotted Lanternfly / Lycorma delicatula",
+      "consoleOrNetworkErrorsObserved": 0
+    },
+    "r2Pointer": {
+      "status": 200,
+      "releaseId": "research-1f093b3150f7-a291afc1812a7e4c",
+      "releaseManifestSha256": "f87bc9fc3eb8ce1a6b168775f8d196e0a8157ef896bad1cd8878b6a2a035e7b8",
+      "sourceCommit": "1f093b3150f7fdbff5405e7e05ac5d93b65f059d",
+      "changedByThisRelease": false
+    }
+  },
+  "ignoredBuildProof": {
+    "probeCommit": "cf7b8a56bf4edbdb4ac721b595f7050e8a207f54",
+    "deploymentId": "22Mw122B6ybi2nEngwVN9QLnDRTk",
+    "durationSeconds": 99,
+    "cloneSeconds": 94.538,
+    "classifierMessage": "Skipping Vercel build: Only deployment-independent research or operations files changed.",
+    "result": "canceled-by-ignored-build-step",
+    "nextBuildStarted": false,
+    "productionAliasChanged": false
+  },
+  "postDeploymentGate": {
+    "phase": "POST-DEPLOYMENT",
+    "decision": "GO",
+    "blockers": [],
+    "qualification": "The full-build bottleneck is closed for application commits, and research/operations-only commits have a live skipped-build proof. Git clone still takes roughly 1.5 minutes and is controlled by Vercel, but it no longer expands into a 15-minute compile."
+  },
+  "evidenceScope": "Externally verifies application content commit eeeb3be787f376ee268f0e3b24c04d326a512770 and the subsequent ops-only ignore probe cf7b8a56bf4edbdb4ac721b595f7050e8a207f54. This receipt does not attest to the commit that contains it or any future deployment."
+}
