@@ -1,0 +1,179 @@
+{
+  "acquisition_id": "20260819t085145z__gbif-download__fe5d42be8331",
+  "actor_id": "gbif-national-download-acquisition@2.0.0",
+  "actor_type": "adapter",
+  "archive": {
+    "bytes": 6927249,
+    "media_type": "application/zip",
+    "path": "src/data/research/national-acquisitions/20260819t085145z__gbif-download__fe5d42be8331/download.zip",
+    "provider_total_records": 16077,
+    "sha256": "669569e22aac90f89503cd65a67bc7224f28868747815dfe05faed8cbdd93369",
+    "source_url": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip"
+  },
+  "code_commit": "6454e459fdf6975ea3243dfaba40aedab1feb3cc",
+  "complete_archive_retained": true,
+  "credentials_persisted": false,
+  "download": {
+    "created": "2026-08-19T08:51:50.706+00:00",
+    "doi": "10.15468/dl.d65tjr",
+    "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+    "key": "0023928-260806074905277",
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "modified": "2026-08-19T08:54:29.163+00:00",
+    "size": 6927249,
+    "status": "SUCCEEDED",
+    "totalRecords": 16077
+  },
+  "errors": [],
+  "finished_at": "2026-08-19T08:54:58.386Z",
+  "http_attempts": [
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "POST",
+      "observedAt": "2026-08-19T08:51:50.826Z",
+      "retryable": false,
+      "role": "request",
+      "status": 201,
+      "url": "https://api.gbif.org/v1/occurrence/download/request"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-19T08:51:50.993Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0023928-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-19T08:52:51.362Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0023928-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-19T08:53:51.801Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0023928-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-19T08:54:52.203Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0023928-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-19T08:54:52.977Z",
+      "retryable": false,
+      "role": "archive",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip"
+    }
+  ],
+  "input_hashes": {
+    "ops/national-research/evaluations/round-75-gbif-national-selection-20260819-r1.json": "52a1e847e7bd76a86088d97d27ac21efbcfc06512395b7bab129b765265fc3bb",
+    "scripts/research/national-gbif-download-replay.ts": "f46eaf54287e0f1e37f514ff317de9955882fb2dd01704495361f60a150a04b1",
+    "scripts/research/national-gbif-download.ts": "aff57c72cd555334c765d065f5681ff9c60ca36f9d9dce761949456678d1484a",
+    "scripts/research/partition-national-gbif-download.ts": "bf4589ff61bd8c5f58da39e0034f09f4eec892df12b513a1abf28fed1eb7da28",
+    "scripts/research/run-national-gbif-download.ts": "e09196e538192367d695376783c55b8e0ac3ca501c39469dadbbb3316f331767",
+    "scripts/research/verify-national-gbif-download.ts": "2479c3cf537a1bcb863f89ad6069b91917fc7a7b876f39a58c24dbcab522974e",
+    "scripts/research/zip-tools.ts": "0ca75576b9ce347233bfe261bc60414e7c3ef21ad3d1713b0951141648ff0e08",
+    "src/data/research/caches/gbif-taxonomy-20260818-r72.json": "7c550218fe905500ae62c89766522dc182fe40d3d6abf5a4f64beeb54d2fdf16",
+    "src/data/research/county-equivalent-registry.json": "50eede46823aa219ae3b22739224067e1de102fefd336d033bddb01b7f5501ee",
+    "src/data/research/national-acquisition-plans/gbif-national-download-v1-retained-r72.json": "0110db9576463dd9727e22466fe76c276345570fe69b3d938cba5584b4c3bd78",
+    "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-75-9.json": "d1f01fd05ad5aa74c9edb9b16d3461937f1fcfccc86ba0679c883c4fb2037ecc",
+    "src/data/research/schemas/national-gbif-download-acquisition-receipt.schema.json": "b55e6a30bc7e788b28a6112829c189f41cb1417915a804c6673ea0d07214e7e2",
+    "src/data/research/schemas/national-gbif-download-plan.schema.json": "7f15af2c1306b03a493f5a57a72ae2648b8f37aa46ee0f0f511d05d025e9be8a",
+    "src/data/research/schemas/national-gbif-download-selection.schema.json": "cb9355c92a04a9dedef28ffba662398de3472e50922eac31bf2e1ac315d5e624",
+    "src/data/research/source-registry.json": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+    "src/data/research/state-registry.json": "6080d7e61bf9a34794a14e9f6976edc378fbb10908dbd40296d3006923ef1f94"
+  },
+  "parameter_hash": "fe5d42be8331c6c99384492a787e50ef860a78cb5d190ae8681ccda0784eac3f",
+  "parameters": {
+    "artifactBudgetBytes": 268435456,
+    "maxOccurrenceRows": 2000000,
+    "maxSelectedEvidenceRecords": 250000,
+    "planId": "gbif-national-download-v2-round-75-9",
+    "planPath": "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-75-9.json",
+    "planSha256": "d1f01fd05ad5aa74c9edb9b16d3461937f1fcfccc86ba0679c883c4fb2037ecc",
+    "selectedPairCount": 25048,
+    "selectionPath": "ops/national-research/evaluations/round-75-gbif-national-selection-20260819-r1.json",
+    "selectionSha256": "52a1e847e7bd76a86088d97d27ac21efbcfc06512395b7bab129b765265fc3bb",
+    "taxonCount": 9,
+    "taxonomyCachePath": "src/data/research/caches/gbif-taxonomy-20260818-r72.json",
+    "taxonomyCacheSha256": "7c550218fe905500ae62c89766522dc182fe40d3d6abf5a4f64beeb54d2fdf16"
+  },
+  "partitioning_status": "ready-for-replay",
+  "request_path": "src/data/research/national-acquisitions/20260819t085145z__gbif-download__fe5d42be8331/request.redacted.json",
+  "requested_at": "2026-08-19T08:51:48.253Z",
+  "schemaVersion": 2,
+  "semantics": {
+    "coordinateCountyAssignmentAllowed": false,
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "failedDownloadCreatesNegative": false,
+    "unparsedArchiveMarksScopeComplete": false
+  },
+  "source_id": "gbif-preserved-specimens",
+  "started_at": "2026-08-19T08:51:45.819Z",
+  "status": "complete",
+  "status_history": [
+    {
+      "created": "2026-08-19T08:51:50.706+00:00",
+      "doi": null,
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+      "key": "0023928-260806074905277",
+      "license": "unspecified",
+      "modified": "2026-08-19T08:51:50.706+00:00",
+      "observedAt": "2026-08-19T08:51:50.995Z",
+      "size": 0,
+      "status": "PREPARING",
+      "totalRecords": 16077
+    },
+    {
+      "created": "2026-08-19T08:51:50.706+00:00",
+      "doi": null,
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+      "key": "0023928-260806074905277",
+      "license": "unspecified",
+      "modified": "2026-08-19T08:51:55.746+00:00",
+      "observedAt": "2026-08-19T08:52:51.363Z",
+      "size": 0,
+      "status": "RUNNING",
+      "totalRecords": 16077
+    },
+    {
+      "created": "2026-08-19T08:51:50.706+00:00",
+      "doi": "10.15468/dl.d65tjr",
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+      "key": "0023928-260806074905277",
+      "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+      "modified": "2026-08-19T08:54:29.163+00:00",
+      "observedAt": "2026-08-19T08:54:52.204Z",
+      "size": 6927249,
+      "status": "SUCCEEDED",
+      "totalRecords": 16077
+    }
+  ],
+  "warnings": [
+    "The plan intentionally retains exact legacy GBIF Backbone taxon identifiers. A Catalogue of Life migration requires a separately reviewed plan and taxonomy cache."
+  ]
+}
