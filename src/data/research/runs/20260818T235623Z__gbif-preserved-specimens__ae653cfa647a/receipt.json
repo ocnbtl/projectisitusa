@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260818T235623Z__gbif-preserved-specimens__ae653cfa647a",
+  "status": "complete",
+  "started_at": "2026-08-18T23:56:23.779Z",
+  "finished_at": "2026-08-18T23:58:30.364Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "fcc94e86a7b1020e2c7bd8d9cbeebc09f53f7969",
+  "parameter_hash": "806842283ebdf178eab7af2250c68dba2d8cb174ed9fec2242053d00b47b8600",
+  "parameters": {
+    "stateCode": "HI",
+    "stateProvince": "Hawaii",
+    "candidateLimit": 35,
+    "candidatePairs": [
+      "15001:aralia-elata",
+      "15001:euphorbia-cyparissias",
+      "15001:glyceria-maxima",
+      "15001:kochia-scoparia",
+      "15001:rubus-phoenicolasius",
+      "15001:tussilago-farfara",
+      "15001:wisteria-floribunda",
+      "15003:aralia-elata",
+      "15003:euphorbia-cyparissias",
+      "15003:glyceria-maxima",
+      "15003:kochia-scoparia",
+      "15003:rubus-phoenicolasius",
+      "15003:tussilago-farfara",
+      "15003:wisteria-floribunda",
+      "15005:aralia-elata",
+      "15005:euphorbia-cyparissias",
+      "15005:glyceria-maxima",
+      "15005:kochia-scoparia",
+      "15005:rubus-phoenicolasius",
+      "15005:tussilago-farfara",
+      "15005:wisteria-floribunda",
+      "15007:aralia-elata",
+      "15007:euphorbia-cyparissias",
+      "15007:glyceria-maxima",
+      "15007:kochia-scoparia",
+      "15007:rubus-phoenicolasius",
+      "15007:tussilago-farfara",
+      "15007:wisteria-floribunda",
+      "15009:aralia-elata",
+      "15009:euphorbia-cyparissias",
+      "15009:glyceria-maxima",
+      "15009:kochia-scoparia",
+      "15009:rubus-phoenicolasius",
+      "15009:tussilago-farfara",
+      "15009:wisteria-floribunda"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "HI",
+    "county_fips": [
+      "15001",
+      "15003",
+      "15005",
+      "15007",
+      "15009"
+    ],
+    "species_ids": [
+      "aralia-elata",
+      "euphorbia-cyparissias",
+      "glyceria-maxima",
+      "kochia-scoparia",
+      "rubus-phoenicolasius",
+      "tussilago-farfara",
+      "wisteria-floribunda"
+    ],
+    "pair_keys": [
+      "15001:aralia-elata",
+      "15001:euphorbia-cyparissias",
+      "15001:glyceria-maxima",
+      "15001:kochia-scoparia",
+      "15001:rubus-phoenicolasius",
+      "15001:tussilago-farfara",
+      "15001:wisteria-floribunda",
+      "15003:aralia-elata",
+      "15003:euphorbia-cyparissias",
+      "15003:glyceria-maxima",
+      "15003:kochia-scoparia",
+      "15003:rubus-phoenicolasius",
+      "15003:tussilago-farfara",
+      "15003:wisteria-floribunda",
+      "15005:aralia-elata",
+      "15005:euphorbia-cyparissias",
+      "15005:glyceria-maxima",
+      "15005:kochia-scoparia",
+      "15005:rubus-phoenicolasius",
+      "15005:tussilago-farfara",
+      "15005:wisteria-floribunda",
+      "15007:aralia-elata",
+      "15007:euphorbia-cyparissias",
+      "15007:glyceria-maxima",
+      "15007:kochia-scoparia",
+      "15007:rubus-phoenicolasius",
+      "15007:tussilago-farfara",
+      "15007:wisteria-floribunda",
+      "15009:aralia-elata",
+      "15009:euphorbia-cyparissias",
+      "15009:glyceria-maxima",
+      "15009:kochia-scoparia",
+      "15009:rubus-phoenicolasius",
+      "15009:tussilago-farfara",
+      "15009:wisteria-floribunda"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-18T23:58:28.142Z",
+      "record_count": 11002
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__ae653cfa647a/artifacts/national-acquisition-reference.json",
+      "sha256": "69af606ce2aa9f8d85b545d64983e7497f4d603a337e164a5af491128c9f43e0",
+      "bytes": 18356,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__ae653cfa647a/assertions.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__ae653cfa647a/reviews.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__ae653cfa647a/rejections.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__ae653cfa647a/outcomes.ndjson",
+      "sha256": "38cdc87c13c2aab733aeb64097589e3a8cbc9c887b5b6f9fa83d4694f1c6406a",
+      "bytes": 25060,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__ae653cfa647a/source-verification.json",
+      "sha256": "c4b0091e901e638f83083a6d0ed932dd15cb09d17365e744ebaf989f4ce8297d",
+      "bytes": 4545,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 35,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 35
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-72-9.json --acquisition src/data/research/national-acquisitions/20260818t235623z__gbif-download__d1e8dacc7baa"
+}

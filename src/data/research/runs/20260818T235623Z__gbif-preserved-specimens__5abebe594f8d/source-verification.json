@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-18T23:58:30.364Z",
+  "runId": "20260818T235623Z__gbif-preserved-specimens__5abebe594f8d",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "AL",
+  "pairKeys": [
+    "01001:kochia-scoparia",
+    "01003:kochia-scoparia",
+    "01005:kochia-scoparia",
+    "01007:kochia-scoparia",
+    "01009:kochia-scoparia",
+    "01011:kochia-scoparia",
+    "01013:kochia-scoparia",
+    "01015:kochia-scoparia",
+    "01017:kochia-scoparia",
+    "01019:kochia-scoparia",
+    "01021:kochia-scoparia",
+    "01023:kochia-scoparia",
+    "01025:kochia-scoparia",
+    "01027:kochia-scoparia",
+    "01029:kochia-scoparia",
+    "01031:kochia-scoparia",
+    "01033:kochia-scoparia",
+    "01035:kochia-scoparia",
+    "01037:kochia-scoparia",
+    "01039:kochia-scoparia",
+    "01041:kochia-scoparia",
+    "01043:kochia-scoparia",
+    "01045:kochia-scoparia",
+    "01047:kochia-scoparia",
+    "01049:kochia-scoparia",
+    "01051:kochia-scoparia",
+    "01053:kochia-scoparia",
+    "01055:kochia-scoparia",
+    "01057:kochia-scoparia",
+    "01059:kochia-scoparia",
+    "01061:kochia-scoparia",
+    "01063:kochia-scoparia",
+    "01065:kochia-scoparia",
+    "01067:kochia-scoparia",
+    "01069:kochia-scoparia",
+    "01071:kochia-scoparia",
+    "01073:kochia-scoparia",
+    "01075:kochia-scoparia",
+    "01077:kochia-scoparia",
+    "01079:kochia-scoparia",
+    "01081:kochia-scoparia",
+    "01083:kochia-scoparia",
+    "01085:kochia-scoparia",
+    "01087:kochia-scoparia",
+    "01089:kochia-scoparia",
+    "01091:kochia-scoparia",
+    "01093:kochia-scoparia",
+    "01095:kochia-scoparia",
+    "01097:kochia-scoparia",
+    "01099:kochia-scoparia",
+    "01101:kochia-scoparia",
+    "01103:kochia-scoparia",
+    "01105:kochia-scoparia",
+    "01107:kochia-scoparia",
+    "01109:kochia-scoparia",
+    "01111:kochia-scoparia",
+    "01113:kochia-scoparia",
+    "01115:kochia-scoparia",
+    "01117:kochia-scoparia",
+    "01119:kochia-scoparia",
+    "01121:kochia-scoparia",
+    "01123:kochia-scoparia",
+    "01125:kochia-scoparia",
+    "01127:kochia-scoparia",
+    "01129:kochia-scoparia",
+    "01131:kochia-scoparia",
+    "01133:kochia-scoparia"
+  ],
+  "parameterHash": "a169a3f2165aeb87e5cb30069c02c715d006551452fc24d12f4c3a88dffbc43e",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://www.gbif.org/occurrence/download/0023154-260806074905277",
+    "publisher": "GBIF"
+  },
+  "terms": {
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-18T23:58:30.364Z",
+    "freshnessDate": "2026-08-18"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county text resolved through the active Census county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates never establish county membership; missing, ambiguous, contradictory, or retired geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Exact retained GBIF species keys from a hash-pinned taxonomy cache with EXACT species matches and confidence at least 95.",
+    "targetSpeciesIds": [
+      "kochia-scoparia"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "gbifID",
+      "datasetKey",
+      "speciesKey",
+      "stateProvince",
+      "county"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "20260818t235623z__gbif-download__d1e8dacc7baa",
+        "url": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+        "purpose": "Authenticated provider-native national Darwin Core archive reused by this offline state partition",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-18T23:58:28.142Z",
+        "declaredRecordCount": 11002,
+        "receivedRecordCount": 11002,
+        "pagination": {
+          "mode": "snapshot",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF preserved specimen records are positive occurrence evidence, not a negative survey.",
+      "Complete archive silence changes research status only; failure, rejection, and missing geography create no negative claim."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__5abebe594f8d/artifacts/national-acquisition-reference.json",
+      "sha256": "18322cc2519eac6c3fccebec04775e42697251e45d87c3994ea799456996e3be",
+      "bytes": 18357
+    }
+  ],
+  "caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
+    "At most one deterministic qualifying specimen assertion is published per selected county-species pair."
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260818T235623Z__gbif-preserved-specimens__6889c92baf92",
+  "status": "complete",
+  "started_at": "2026-08-18T23:56:23.779Z",
+  "finished_at": "2026-08-18T23:58:30.364Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "fcc94e86a7b1020e2c7bd8d9cbeebc09f53f7969",
+  "parameter_hash": "598c42ac5e8cfb508a14ab3018315895b0a875751676714355ee3beda0f14f15",
+  "parameters": {
+    "stateCode": "RI",
+    "stateProvince": "Rhode Island",
+    "candidateLimit": 45,
+    "candidatePairs": [
+      "44001:aralia-elata",
+      "44001:cortaderia-jubata",
+      "44001:euphorbia-cyparissias",
+      "44001:glyceria-maxima",
+      "44001:kochia-scoparia",
+      "44001:mimosa-pigra",
+      "44001:rubus-phoenicolasius",
+      "44001:tussilago-farfara",
+      "44001:wisteria-floribunda",
+      "44003:aralia-elata",
+      "44003:cortaderia-jubata",
+      "44003:euphorbia-cyparissias",
+      "44003:glyceria-maxima",
+      "44003:kochia-scoparia",
+      "44003:mimosa-pigra",
+      "44003:rubus-phoenicolasius",
+      "44003:tussilago-farfara",
+      "44003:wisteria-floribunda",
+      "44005:aralia-elata",
+      "44005:cortaderia-jubata",
+      "44005:euphorbia-cyparissias",
+      "44005:glyceria-maxima",
+      "44005:kochia-scoparia",
+      "44005:mimosa-pigra",
+      "44005:rubus-phoenicolasius",
+      "44005:tussilago-farfara",
+      "44005:wisteria-floribunda",
+      "44007:aralia-elata",
+      "44007:cortaderia-jubata",
+      "44007:euphorbia-cyparissias",
+      "44007:glyceria-maxima",
+      "44007:kochia-scoparia",
+      "44007:mimosa-pigra",
+      "44007:rubus-phoenicolasius",
+      "44007:tussilago-farfara",
+      "44007:wisteria-floribunda",
+      "44009:aralia-elata",
+      "44009:cortaderia-jubata",
+      "44009:euphorbia-cyparissias",
+      "44009:glyceria-maxima",
+      "44009:kochia-scoparia",
+      "44009:mimosa-pigra",
+      "44009:rubus-phoenicolasius",
+      "44009:tussilago-farfara",
+      "44009:wisteria-floribunda"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "RI",
+    "county_fips": [
+      "44001",
+      "44003",
+      "44005",
+      "44007",
+      "44009"
+    ],
+    "species_ids": [
+      "aralia-elata",
+      "cortaderia-jubata",
+      "euphorbia-cyparissias",
+      "glyceria-maxima",
+      "kochia-scoparia",
+      "mimosa-pigra",
+      "rubus-phoenicolasius",
+      "tussilago-farfara",
+      "wisteria-floribunda"
+    ],
+    "pair_keys": [
+      "44001:aralia-elata",
+      "44001:cortaderia-jubata",
+      "44001:euphorbia-cyparissias",
+      "44001:glyceria-maxima",
+      "44001:kochia-scoparia",
+      "44001:mimosa-pigra",
+      "44001:rubus-phoenicolasius",
+      "44001:tussilago-farfara",
+      "44001:wisteria-floribunda",
+      "44003:aralia-elata",
+      "44003:cortaderia-jubata",
+      "44003:euphorbia-cyparissias",
+      "44003:glyceria-maxima",
+      "44003:kochia-scoparia",
+      "44003:mimosa-pigra",
+      "44003:rubus-phoenicolasius",
+      "44003:tussilago-farfara",
+      "44003:wisteria-floribunda",
+      "44005:aralia-elata",
+      "44005:cortaderia-jubata",
+      "44005:euphorbia-cyparissias",
+      "44005:glyceria-maxima",
+      "44005:kochia-scoparia",
+      "44005:mimosa-pigra",
+      "44005:rubus-phoenicolasius",
+      "44005:tussilago-farfara",
+      "44005:wisteria-floribunda",
+      "44007:aralia-elata",
+      "44007:cortaderia-jubata",
+      "44007:euphorbia-cyparissias",
+      "44007:glyceria-maxima",
+      "44007:kochia-scoparia",
+      "44007:mimosa-pigra",
+      "44007:rubus-phoenicolasius",
+      "44007:tussilago-farfara",
+      "44007:wisteria-floribunda",
+      "44009:aralia-elata",
+      "44009:cortaderia-jubata",
+      "44009:euphorbia-cyparissias",
+      "44009:glyceria-maxima",
+      "44009:kochia-scoparia",
+      "44009:mimosa-pigra",
+      "44009:rubus-phoenicolasius",
+      "44009:tussilago-farfara",
+      "44009:wisteria-floribunda"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-18T23:58:28.142Z",
+      "record_count": 11002
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__6889c92baf92/artifacts/national-acquisition-reference.json",
+      "sha256": "2281eb31dfb1f331066e42be9f0109c1b70b72754f71ed31f4969847d73b4c5f",
+      "bytes": 18359,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__6889c92baf92/assertions.ndjson",
+      "sha256": "45162f18cf0679d1ba6f8a69ed90b277b2ba9bc714336e38b14592b4cc8f7bcb",
+      "bytes": 24308,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__6889c92baf92/reviews.ndjson",
+      "sha256": "d68ab2afe7bf16b694ec5e6ec9594a943eaa01955f045df048f0dd141ec7ee7f",
+      "bytes": 12682,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__6889c92baf92/rejections.ndjson",
+      "sha256": "61c7240f9f140ee364f5d3af09d9c9e4bc3fa0b74821627b0841924d3cca401f",
+      "bytes": 1611,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__6889c92baf92/outcomes.ndjson",
+      "sha256": "c2fcecd5b209e24ec0eec69d44d96de4c50e34c2087782e38a14a2ada54cd2c6",
+      "bytes": 32617,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__6889c92baf92/source-verification.json",
+      "sha256": "6a5a16832d96af679ecc2fddce865ddff359123849e0975ac523560629c86985",
+      "bytes": 4879,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 45,
+    "candidate_records": 69,
+    "assertion_events": 13,
+    "review_events": 13,
+    "rejection_records": 2,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 45
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-72-9.json --acquisition src/data/research/national-acquisitions/20260818t235623z__gbif-download__d1e8dacc7baa"
+}

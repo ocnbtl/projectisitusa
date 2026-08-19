@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260818T235623Z__gbif-preserved-specimens__17f467d1b382",
+  "status": "complete",
+  "started_at": "2026-08-18T23:56:23.779Z",
+  "finished_at": "2026-08-18T23:58:30.364Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "fcc94e86a7b1020e2c7bd8d9cbeebc09f53f7969",
+  "parameter_hash": "c03242204a1fdd42ef4d6184f0be79baf694989c8b078b9146c078bc73c3290d",
+  "parameters": {
+    "stateCode": "CT",
+    "stateProvince": "Connecticut",
+    "candidateLimit": 18,
+    "candidatePairs": [
+      "09110:cortaderia-jubata",
+      "09110:mimosa-pigra",
+      "09120:cortaderia-jubata",
+      "09120:mimosa-pigra",
+      "09130:cortaderia-jubata",
+      "09130:mimosa-pigra",
+      "09140:cortaderia-jubata",
+      "09140:mimosa-pigra",
+      "09150:cortaderia-jubata",
+      "09150:mimosa-pigra",
+      "09160:cortaderia-jubata",
+      "09160:mimosa-pigra",
+      "09170:cortaderia-jubata",
+      "09170:mimosa-pigra",
+      "09180:cortaderia-jubata",
+      "09180:mimosa-pigra",
+      "09190:cortaderia-jubata",
+      "09190:mimosa-pigra"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "CT",
+    "county_fips": [
+      "09110",
+      "09120",
+      "09130",
+      "09140",
+      "09150",
+      "09160",
+      "09170",
+      "09180",
+      "09190"
+    ],
+    "species_ids": [
+      "cortaderia-jubata",
+      "mimosa-pigra"
+    ],
+    "pair_keys": [
+      "09110:cortaderia-jubata",
+      "09110:mimosa-pigra",
+      "09120:cortaderia-jubata",
+      "09120:mimosa-pigra",
+      "09130:cortaderia-jubata",
+      "09130:mimosa-pigra",
+      "09140:cortaderia-jubata",
+      "09140:mimosa-pigra",
+      "09150:cortaderia-jubata",
+      "09150:mimosa-pigra",
+      "09160:cortaderia-jubata",
+      "09160:mimosa-pigra",
+      "09170:cortaderia-jubata",
+      "09170:mimosa-pigra",
+      "09180:cortaderia-jubata",
+      "09180:mimosa-pigra",
+      "09190:cortaderia-jubata",
+      "09190:mimosa-pigra"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-18T23:58:28.142Z",
+      "record_count": 11002
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__17f467d1b382/artifacts/national-acquisition-reference.json",
+      "sha256": "7bfa59007d2dc07f19ca46d2e99995f58754abb793da42956b9b3899b12fd998",
+      "bytes": 18356,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__17f467d1b382/assertions.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__17f467d1b382/reviews.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__17f467d1b382/rejections.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__17f467d1b382/outcomes.ndjson",
+      "sha256": "0dd50a294c5c0b3bf80aa8fa9eb55c019f6e39ef401e3ed4170ddd3a1c220dd4",
+      "bytes": 12843,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__17f467d1b382/source-verification.json",
+      "sha256": "0cd26220dbb380639a7792019c40aa22d9824714b62ed5f9f1ba4a3736069a01",
+      "bytes": 3833,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 18,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 18
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-72-9.json --acquisition src/data/research/national-acquisitions/20260818t235623z__gbif-download__d1e8dacc7baa"
+}

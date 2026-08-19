@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-18T23:58:30.364Z",
+  "runId": "20260818T235623Z__gbif-preserved-specimens__ae653cfa647a",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "HI",
+  "pairKeys": [
+    "15001:aralia-elata",
+    "15001:euphorbia-cyparissias",
+    "15001:glyceria-maxima",
+    "15001:kochia-scoparia",
+    "15001:rubus-phoenicolasius",
+    "15001:tussilago-farfara",
+    "15001:wisteria-floribunda",
+    "15003:aralia-elata",
+    "15003:euphorbia-cyparissias",
+    "15003:glyceria-maxima",
+    "15003:kochia-scoparia",
+    "15003:rubus-phoenicolasius",
+    "15003:tussilago-farfara",
+    "15003:wisteria-floribunda",
+    "15005:aralia-elata",
+    "15005:euphorbia-cyparissias",
+    "15005:glyceria-maxima",
+    "15005:kochia-scoparia",
+    "15005:rubus-phoenicolasius",
+    "15005:tussilago-farfara",
+    "15005:wisteria-floribunda",
+    "15007:aralia-elata",
+    "15007:euphorbia-cyparissias",
+    "15007:glyceria-maxima",
+    "15007:kochia-scoparia",
+    "15007:rubus-phoenicolasius",
+    "15007:tussilago-farfara",
+    "15007:wisteria-floribunda",
+    "15009:aralia-elata",
+    "15009:euphorbia-cyparissias",
+    "15009:glyceria-maxima",
+    "15009:kochia-scoparia",
+    "15009:rubus-phoenicolasius",
+    "15009:tussilago-farfara",
+    "15009:wisteria-floribunda"
+  ],
+  "parameterHash": "806842283ebdf178eab7af2250c68dba2d8cb174ed9fec2242053d00b47b8600",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://www.gbif.org/occurrence/download/0023154-260806074905277",
+    "publisher": "GBIF"
+  },
+  "terms": {
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-18T23:58:30.364Z",
+    "freshnessDate": "2026-08-18"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county text resolved through the active Census county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates never establish county membership; missing, ambiguous, contradictory, or retired geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Exact retained GBIF species keys from a hash-pinned taxonomy cache with EXACT species matches and confidence at least 95.",
+    "targetSpeciesIds": [
+      "aralia-elata",
+      "euphorbia-cyparissias",
+      "glyceria-maxima",
+      "kochia-scoparia",
+      "rubus-phoenicolasius",
+      "tussilago-farfara",
+      "wisteria-floribunda"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "gbifID",
+      "datasetKey",
+      "speciesKey",
+      "stateProvince",
+      "county"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "20260818t235623z__gbif-download__d1e8dacc7baa",
+        "url": "https://api.gbif.org/v1/occurrence/download/request/0023154-260806074905277.zip",
+        "purpose": "Authenticated provider-native national Darwin Core archive reused by this offline state partition",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-18T23:58:28.142Z",
+        "declaredRecordCount": 11002,
+        "receivedRecordCount": 11002,
+        "pagination": {
+          "mode": "snapshot",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF preserved specimen records are positive occurrence evidence, not a negative survey.",
+      "Complete archive silence changes research status only; failure, rejection, and missing geography create no negative claim."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260818T235623Z__gbif-preserved-specimens__ae653cfa647a/artifacts/national-acquisition-reference.json",
+      "sha256": "69af606ce2aa9f8d85b545d64983e7497f4d603a337e164a5af491128c9f43e0",
+      "bytes": 18356
+    }
+  ],
+  "caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
+    "At most one deterministic qualifying specimen assertion is published per selected county-species pair."
+  ]
+}
