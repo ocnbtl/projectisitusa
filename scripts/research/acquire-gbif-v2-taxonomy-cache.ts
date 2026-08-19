@@ -17,6 +17,7 @@ const MATCH_URL = "https://api.gbif.org/v2/species/match";
 const METADATA_URL = "https://api.gbif.org/v2/species/match/metadata";
 const MAX_RESPONSE_BYTES = 32 * 1024 * 1024;
 const REQUEST_TIMEOUT_MS = 180_000;
+const MATCH_INTERVAL_MS = 400;
 
 type Species = { id: string; scientificName: string };
 type CountyPair = { speciesId: string; displayStatus: string; researchStatus: string };
@@ -240,6 +241,20 @@ function equivalentGetUrl(scientificName: string) {
   return url.toString();
 }
 
+async function getMatch(scientificName: string) {
+  const started = Date.now();
+  const requestUrl = equivalentGetUrl(scientificName);
+  const response = await fetch(requestUrl, {
+    headers: { Accept: "application/json", "User-Agent": "Project-Isitusa/gbif-taxonomy-v2" },
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+  });
+  assert(response.status === 200, `GBIF taxonomy match returned HTTP ${response.status} for ${scientificName}.`);
+  const bytes = await readBounded(response, `GBIF taxonomy match for ${scientificName}`);
+  const remaining = MATCH_INTERVAL_MS - (Date.now() - started);
+  if (remaining > 0) await new Promise((resolve) => setTimeout(resolve, remaining));
+  return { requestUrl, bytes, result: JSON.parse(bytes.toString("utf8")) as V2MatchResult };
+}
+
 function writeAtomically(filepath: string, contents: string) {
   const temporary = path.join(path.dirname(filepath), `.${path.basename(filepath)}.tmp`);
   if (existsSync(temporary)) unlinkSync(temporary);
@@ -285,20 +300,10 @@ async function main() {
   const requestContents = stableJson(request);
 
   const metadataBefore = await getMetadata();
-  const response = await fetch(MATCH_URL, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "User-Agent": "Project-Isitusa/gbif-taxonomy-v2",
-    },
-    body: requestContents,
-    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
-  });
-  assert(response.status === 200, `GBIF taxonomy batch returned HTTP ${response.status}.`);
-  const responseBytes = await readBounded(response, "GBIF taxonomy batch");
-  const results = JSON.parse(responseBytes.toString("utf8")) as V2MatchResult[];
-  assert(Array.isArray(results) && results.length === candidates.length, "GBIF taxonomy batch result count differs from the request.");
+  const matched: Array<Awaited<ReturnType<typeof getMatch>>> = [];
+  for (const candidate of candidates) matched.push(await getMatch(candidate.scientificName));
+  const results = matched.map((item) => item.result);
+  const responseBytes = Buffer.from(stableJson(results));
   const metadataAfter = await getMetadata();
   assert(
     metadataBefore.parsed.created === metadataAfter.parsed.created &&
@@ -338,15 +343,14 @@ async function main() {
   const rejected = decisions.filter((item) => !item.decision.accepted);
   assert(accepted.length > 0, "GBIF taxonomy batch produced no accepted exact matches.");
   const entries = accepted.map((item) => {
-    const body = stableJson(item.result);
     return {
       speciesId: item.candidate.id,
       scientificName: item.candidate.scientificName,
-      requestUrl: equivalentGetUrl(item.candidate.scientificName),
+      requestUrl: matched[item.index]!.requestUrl,
       status: 200,
       retrievedAt: completedAt,
-      responseBodyBase64: Buffer.from(body).toString("base64"),
-      responseBodySha256: sha256(body),
+      responseBodyBase64: matched[item.index]!.bytes.toString("base64"),
+      responseBodySha256: sha256(matched[item.index]!.bytes),
       provenance: {
         baselineCommit,
         matrixDigestSha256,
@@ -377,14 +381,14 @@ async function main() {
     acquisition: {
       startedAt: options.startedAt,
       completedAt,
-      method: "POST",
-      requestCount: 1,
+      method: "GET",
+      requestCount: candidates.length,
       retryCount: 0,
-      requestBodySha256: batchRequestSha256,
-      responseBodySha256: batchResponseSha256,
-      responseBytes: responseBytes.length,
-      responseBodyBase64: responseBytes.toString("base64"),
+      requestManifestSha256: batchRequestSha256,
+      responseAggregateSha256: batchResponseSha256,
+      responseAggregateBytes: responseBytes.length,
       metadataRequests: 2,
+      minimumRequestIntervalMilliseconds: MATCH_INTERVAL_MS,
     },
     candidatePolicy: {
       baselineCommit,
@@ -433,8 +437,9 @@ async function main() {
     matcherCreated: metadataBefore.parsed.created,
     network: {
       metadataGets: 2,
-      batchPosts: 1,
-      batchPostRetries: 0,
+      taxonomyMatchGets: candidates.length,
+      taxonomyMatchRetries: 0,
+      batchPosts: 0,
       authenticatedRequests: 0,
       occurrenceDownloadRequests: 0,
     },
@@ -450,7 +455,7 @@ async function main() {
       createsNotDetected: false,
       authorizesOccurrenceAcquisitionByItself: false,
     },
-    result: "complete-exact-gbif-backbone-v2-taxonomy-cache",
+    result: "complete-exact-gbif-backbone-v2-taxonomy-cache-get-mode",
   };
   const evaluationContents = stableJson(evaluation);
   writeAtomically(outputPath, cacheContents);

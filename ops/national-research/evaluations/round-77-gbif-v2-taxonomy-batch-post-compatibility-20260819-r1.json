@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-77-gbif-v2-taxonomy-batch-post-compatibility-20260819-r1",
+  "evaluatedAt": "2026-08-19T20:40:52.349Z",
+  "codeCommit": "339d47fe61e50cef6de3e859c0817e56b8158cbe",
+  "endpoint": "https://api.gbif.org/v2/species/match",
+  "method": "POST",
+  "documentationContract": "The current GBIF ChecklistBank OpenAPI advertises an array of up to 1000 NameUsageQuery objects for this operation.",
+  "observedStatus": 405,
+  "attempts": 1,
+  "retries": 0,
+  "providerStateMutation": false,
+  "artifactsWritten": 0,
+  "taxonomyCacheWritten": false,
+  "occurrenceDownloadRequestIssued": false,
+  "disposition": "Do not retry the incompatible batch POST. Use bounded documented v2 GET matching with pinned metadata and one attempt per candidate.",
+  "evidenceSemantics": {
+    "createsCountyEvidence": false,
+    "createsAbsence": false,
+    "createsNotDetected": false
+  }
+}
