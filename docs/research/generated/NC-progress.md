@@ -1,27 +1,27 @@
 # North Carolina Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `7876`
+- Verified present: `7892`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `33324`
-- Not researched: `209200`
+- Researched unresolved: `34208`
+- Not researched: `208300`
 - Determination coverage: `3.15%`
-- Research coverage: `16.45%`
-- Explicit outcome coverage: `16.4537%`
-- Applicable protocol cells: `343`
-- Current complete protocol cells: `109`
-- Protocol completion: `35.57%`
-- Current protocol completion: `31.78%`
-- Evidence records: `11034`
-- Research runs: `19`
-- Rejection records: `549`
+- Research coverage: `16.81%`
+- Explicit outcome coverage: `16.8131%`
+- Applicable protocol cells: `348`
+- Current complete protocol cells: `114`
+- Protocol completion: `36.49%`
+- Current protocol completion: `32.76%`
+- Evidence records: `11050`
+- Research runs: `20`
+- Rejection records: `559`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 6455 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 942 | 95 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 958 | 104 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

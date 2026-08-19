@@ -1,27 +1,27 @@
 # Louisiana Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `7747`
+- Verified present: `7748`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `18557`
-- Not researched: `133952`
+- Researched unresolved: `19132`
+- Not researched: `133376`
 - Determination coverage: `4.83%`
-- Research coverage: `16.41%`
-- Explicit outcome coverage: `16.4137%`
-- Applicable protocol cells: `362`
-- Current complete protocol cells: `100`
-- Protocol completion: `31.22%`
-- Current protocol completion: `27.62%`
-- Evidence records: `10721`
-- Research runs: `19`
-- Rejection records: `1233`
+- Research coverage: `16.77%`
+- Explicit outcome coverage: `16.7732%`
+- Applicable protocol cells: `363`
+- Current complete protocol cells: `101`
+- Protocol completion: `31.40%`
+- Current protocol completion: `27.82%`
+- Evidence records: `10722`
+- Research runs: `20`
+- Rejection records: `1238`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -43,11 +43,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 64 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 64 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 64 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 0 | 64 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 64 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 64 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 64 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 64 | 0 |
 | Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 64 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 64 | 0 |
 | Japanese angelica tree (`aralia-elata`) | plants | 0 | 64 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 64 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 64 | 0 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Animated oat (`avena-sterilis`) | plants | 0 | 64 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 64 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 64 | 0 |
-| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 64 | 0 |
-| Japanese barberry (`berberis-thunbergii`) | plants | 0 | 64 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7190 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 670 | 96 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 671 | 105 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,26 +1,26 @@
 # Mississippi Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `3683`
+- Verified present: `3685`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `30101`
-- Not researched: `171544`
+- Researched unresolved: `30837`
+- Not researched: `170806`
 - Determination coverage: `1.79%`
-- Research coverage: `16.45%`
-- Explicit outcome coverage: `16.4537%`
-- Applicable protocol cells: `323`
-- Current complete protocol cells: `104`
-- Protocol completion: `36.22%`
-- Current protocol completion: `32.20%`
-- Evidence records: `5956`
-- Research runs: `19`
+- Research coverage: `16.81%`
+- Explicit outcome coverage: `16.8131%`
+- Applicable protocol cells: `324`
+- Current complete protocol cells: `105`
+- Protocol completion: `36.42%`
+- Current protocol completion: `32.41%`
+- Evidence records: `5958`
+- Research runs: `20`
 - Rejection records: `601`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -43,6 +43,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 82 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 82 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 82 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 0 | 82 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 82 | 0 |
 | Purple amaranth (`amaranthus-blitum`) | plants | 0 | 82 | 0 |
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 82 | 0 |
@@ -50,13 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 82 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 82 | 0 |
 | Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 82 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 82 | 0 |
 | Japanese angelica tree (`aralia-elata`) | plants | 0 | 82 | 0 |
 | Common Burdock (`arctium-minus`) | plants | 0 | 82 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 82 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 82 | 0 |
 | Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 82 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 82 | 0 |
-| Spear saltbush (`atriplex-patula`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2445 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 685 | 96 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 687 | 105 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

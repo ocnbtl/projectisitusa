@@ -1,27 +1,27 @@
 # Kentucky Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `120`
 - County-species pairs: `300480`
-- Verified present: `7141`
+- Verified present: `7179`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `42299`
-- Not researched: `251040`
-- Determination coverage: `2.38%`
-- Research coverage: `16.45%`
-- Explicit outcome coverage: `16.4537%`
-- Applicable protocol cells: `312`
-- Current complete protocol cells: `109`
-- Protocol completion: `39.10%`
-- Current protocol completion: `34.94%`
-- Evidence records: `9092`
-- Research runs: `19`
-- Rejection records: `374`
+- Researched unresolved: `43341`
+- Not researched: `249960`
+- Determination coverage: `2.39%`
+- Research coverage: `16.81%`
+- Explicit outcome coverage: `16.8131%`
+- Applicable protocol cells: `315`
+- Current complete protocol cells: `112`
+- Protocol completion: `39.68%`
+- Current protocol completion: `35.56%`
+- Evidence records: `9130`
+- Research runs: `20`
+- Rejection records: `380`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -49,6 +49,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 120 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 120 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 120 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 120 | 0 |
 | Japanese angelica tree (`aralia-elata`) | plants | 0 | 120 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 120 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 120 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Animated oat (`avena-sterilis`) | plants | 0 | 120 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 120 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 120 | 0 |
-| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 120 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5533 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 834 | 94 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 872 | 103 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

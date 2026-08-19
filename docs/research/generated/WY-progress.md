@@ -1,6 +1,6 @@
 # Wyoming Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Verified present: `839`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `9419`
-- Not researched: `47334`
+- Researched unresolved: `9626`
+- Not researched: `47127`
 - Determination coverage: `1.46%`
-- Research coverage: `17.81%`
-- Explicit outcome coverage: `17.8115%`
+- Research coverage: `18.17%`
+- Explicit outcome coverage: `18.1709%`
 - Applicable protocol cells: `188`
 - Current complete protocol cells: `56`
 - Protocol completion: `36.70%`
 - Current protocol completion: `29.79%`
 - Evidence records: `856`
-- Research runs: `24`
+- Research runs: `25`
 - Rejection records: `18`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 767 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 6 | 48 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 6 | 57 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,27 +1,27 @@
 # Georgia Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `159`
 - County-species pairs: `398136`
-- Verified present: `4699`
+- Verified present: `4700`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `61445`
-- Not researched: `331992`
+- Researched unresolved: `62875`
+- Not researched: `330561`
 - Determination coverage: `1.18%`
-- Research coverage: `16.61%`
-- Explicit outcome coverage: `16.6134%`
-- Applicable protocol cells: `349`
-- Current complete protocol cells: `116`
-- Protocol completion: `36.96%`
-- Current protocol completion: `33.24%`
-- Evidence records: `7547`
-- Research runs: `22`
-- Rejection records: `443`
+- Research coverage: `16.97%`
+- Explicit outcome coverage: `16.9728%`
+- Applicable protocol cells: `350`
+- Current complete protocol cells: `117`
+- Protocol completion: `37.14%`
+- Current protocol completion: `33.43%`
+- Evidence records: `7548`
+- Research runs: `23`
+- Rejection records: `444`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -39,10 +39,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 159 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 159 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 159 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 0 | 159 | 0 |
 | Prostrate pigweed (`amaranthus-albus`) | plants | 0 | 159 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 159 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 159 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 159 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 159 | 0 |
 | Japanese angelica tree (`aralia-elata`) | plants | 0 | 159 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 159 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 159 | 0 |
@@ -55,8 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese barberry (`berberis-thunbergii`) | plants | 0 | 159 | 0 |
 | Flowering Rush (`butomus-umbellatus`) | plants | 0 | 159 | 0 |
 | Seaside petunia (`calibrachoa-parviflora`) | plants | 0 | 159 | 0 |
-| Pond water-starwort (`callitriche-stagnalis`) | plants | 0 | 159 | 0 |
-| Italian plumeless thistle (`carduus-pycnocephalus`) | plants | 0 | 159 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2019 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 1158 | 109 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 1159 | 118 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

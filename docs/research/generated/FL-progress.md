@@ -1,6 +1,6 @@
 # Florida Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Verified present: `5516`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `23696`
-- Not researched: `138556`
+- Researched unresolved: `24299`
+- Not researched: `137953`
 - Determination coverage: `3.29%`
-- Research coverage: `17.41%`
-- Explicit outcome coverage: `17.4121%`
+- Research coverage: `17.77%`
+- Explicit outcome coverage: `17.7716%`
 - Applicable protocol cells: `372`
 - Current complete protocol cells: `125`
 - Protocol completion: `37.10%`
 - Current protocol completion: `33.60%`
 - Evidence records: `16124`
-- Research runs: `19`
+- Research runs: `20`
 - Rejection records: `4472`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 67 | 0 |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 67 | 0 |
 | Crow Garlic (`allium-vineale`) | plants | 0 | 67 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 0 | 67 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 67 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 67 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 67 | 0 |
 | Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 67 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 67 | 0 |
 | Mouseear cress (`arabidopsis-thaliana`) | plants | 0 | 67 | 0 |
 | Japanese angelica tree (`aralia-elata`) | plants | 0 | 67 | 0 |
 | Common Burdock (`arctium-minus`) | plants | 0 | 67 | 0 |
 | Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 67 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 67 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 67 | 0 |
-| Spear saltbush (`atriplex-patula`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3770 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 1434 | 119 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 1434 | 128 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

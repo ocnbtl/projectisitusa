@@ -1,27 +1,27 @@
 # California Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `6255`
+- Verified present: `6262`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `21063`
-- Not researched: `117914`
+- Researched unresolved: `21578`
+- Not researched: `117392`
 - Determination coverage: `4.31%`
-- Research coverage: `18.81%`
-- Explicit outcome coverage: `18.8099%`
-- Applicable protocol cells: `386`
-- Current complete protocol cells: `165`
-- Protocol completion: `46.11%`
-- Current protocol completion: `42.75%`
-- Evidence records: `29197`
-- Research runs: `19`
-- Rejection records: `2512`
+- Research coverage: `19.17%`
+- Explicit outcome coverage: `19.1693%`
+- Applicable protocol cells: `390`
+- Current complete protocol cells: `169`
+- Protocol completion: `46.67%`
+- Current protocol completion: `43.33%`
+- Evidence records: `29204`
+- Research runs: `20`
+- Rejection records: `2525`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -46,6 +46,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 58 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 58 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 58 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 58 | 0 |
 | Small Carpgrass (`arthraxon-hispidus`) | plants | 0 | 58 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 58 | 0 |
 | Wintergreen barberry (`berberis-julianae`) | plants | 0 | 58 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Balloon vine (`cardiospermum-halicacabum`) | plants | 0 | 58 | 0 |
 | Curly plumeless thistle (`carduus-crispus`) | plants | 0 | 58 | 0 |
 | European chestnut (`castanea-sativa`) | plants | 0 | 58 | 0 |
-| Feather cockscomb (`celosia-argentea`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4616 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 1864 | 150 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 1871 | 159 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

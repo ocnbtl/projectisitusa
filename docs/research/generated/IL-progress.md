@@ -1,27 +1,27 @@
 # Illinois Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `8890`
+- Verified present: `8928`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `33542`
-- Not researched: `212976`
-- Determination coverage: `3.48%`
-- Research coverage: `16.61%`
-- Explicit outcome coverage: `16.6134%`
-- Applicable protocol cells: `306`
-- Current complete protocol cells: `115`
-- Protocol completion: `41.83%`
-- Current protocol completion: `37.58%`
-- Evidence records: `11299`
-- Research runs: `20`
-- Rejection records: `1487`
+- Researched unresolved: `34422`
+- Not researched: `212058`
+- Determination coverage: `3.50%`
+- Research coverage: `16.97%`
+- Explicit outcome coverage: `16.9728%`
+- Applicable protocol cells: `311`
+- Current complete protocol cells: `120`
+- Protocol completion: `42.77%`
+- Current protocol completion: `38.59%`
+- Evidence records: `11337`
+- Research runs: `21`
+- Rejection records: `1505`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7702 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 874 | 98 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 912 | 107 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

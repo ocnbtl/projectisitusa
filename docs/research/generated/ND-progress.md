@@ -1,6 +1,6 @@
 # North Dakota Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Verified present: `1143`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `20640`
-- Not researched: `110929`
+- Researched unresolved: `21117`
+- Not researched: `110452`
 - Determination coverage: `0.86%`
-- Research coverage: `16.41%`
-- Explicit outcome coverage: `16.4137%`
+- Research coverage: `16.77%`
+- Explicit outcome coverage: `16.7732%`
 - Applicable protocol cells: `169`
 - Current complete protocol cells: `81`
 - Protocol completion: `55.62%`
 - Current protocol completion: `47.93%`
 - Evidence records: `1468`
-- Research runs: `22`
+- Research runs: `23`
 - Rejection records: `100`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 53 | 0 |
 | Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 53 | 0 |
 | Crow Garlic (`allium-vineale`) | plants | 0 | 53 | 0 |
-| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 53 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 0 | 53 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 987 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 151 | 71 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 151 | 80 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

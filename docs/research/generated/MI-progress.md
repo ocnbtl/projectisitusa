@@ -1,27 +1,27 @@
 # Michigan Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `83`
 - County-species pairs: `207832`
-- Verified present: `5509`
+- Verified present: `5542`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `28770`
-- Not researched: `173553`
-- Determination coverage: `2.65%`
-- Research coverage: `16.49%`
-- Explicit outcome coverage: `16.4936%`
-- Applicable protocol cells: `268`
-- Current complete protocol cells: `101`
-- Protocol completion: `42.54%`
-- Current protocol completion: `37.69%`
-- Evidence records: `8153`
-- Research runs: `20`
-- Rejection records: `1043`
+- Researched unresolved: `29484`
+- Not researched: `172806`
+- Determination coverage: `2.67%`
+- Research coverage: `16.85%`
+- Explicit outcome coverage: `16.8530%`
+- Applicable protocol cells: `274`
+- Current complete protocol cells: `107`
+- Protocol completion: `43.80%`
+- Current protocol completion: `39.05%`
+- Evidence records: `8186`
+- Research runs: `21`
+- Rejection records: `1069`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4011 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 1044 | 89 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 1077 | 98 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

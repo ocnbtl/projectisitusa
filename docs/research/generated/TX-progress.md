@@ -1,27 +1,27 @@
 # Texas Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `6969`
+- Verified present: `6977`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `98441`
-- Not researched: `530606`
+- Researched unresolved: `100719`
+- Not researched: `528320`
 - Determination coverage: `1.10%`
-- Research coverage: `16.57%`
-- Explicit outcome coverage: `16.5735%`
-- Applicable protocol cells: `350`
-- Current complete protocol cells: `100`
-- Protocol completion: `32.29%`
-- Current protocol completion: `28.57%`
-- Evidence records: `9420`
-- Research runs: `20`
-- Rejection records: `569`
+- Research coverage: `16.93%`
+- Explicit outcome coverage: `16.9329%`
+- Applicable protocol cells: `352`
+- Current complete protocol cells: `102`
+- Protocol completion: `32.67%`
+- Current protocol completion: `28.98%`
+- Evidence records: `9428`
+- Research runs: `21`
+- Rejection records: `570`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -49,6 +49,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 254 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 254 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 254 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 254 | 0 |
 | Japanese angelica tree (`aralia-elata`) | plants | 0 | 254 | 0 |
 | Common Burdock (`arctium-minus`) | plants | 0 | 254 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 254 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 254 | 0 |
 | Sweet sagewort (`artemisia-annua`) | plants | 0 | 254 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 254 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5251 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 842 | 90 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 850 | 99 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

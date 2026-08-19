@@ -1,6 +1,6 @@
 # Oklahoma Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Verified present: `1575`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `30226`
-- Not researched: `161007`
+- Researched unresolved: `30919`
+- Not researched: `160314`
 - Determination coverage: `0.82%`
-- Research coverage: `16.49%`
-- Explicit outcome coverage: `16.4936%`
+- Research coverage: `16.85%`
+- Explicit outcome coverage: `16.8530%`
 - Applicable protocol cells: `219`
 - Current complete protocol cells: `99`
 - Protocol completion: `51.14%`
 - Current protocol completion: `45.21%`
 - Evidence records: `1749`
-- Research runs: `19`
+- Research runs: `20`
 - Rejection records: `78`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -48,6 +48,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 77 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 77 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 77 | 0 |
+| European Alder (`alnus-glutinosa`) | plants | 0 | 77 | 0 |
 | Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 77 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 77 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 77 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 77 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 77 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 77 | 0 |
-| Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 77 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1186 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 104 | 91 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 104 | 100 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

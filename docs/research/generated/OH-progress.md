@@ -1,27 +1,27 @@
 # Ohio Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `88`
 - County-species pairs: `220352`
-- Verified present: `6713`
+- Verified present: `6729`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `30423`
-- Not researched: `183216`
+- Researched unresolved: `30935`
+- Not researched: `182688`
 - Determination coverage: `3.05%`
-- Research coverage: `16.85%`
-- Explicit outcome coverage: `16.8530%`
-- Applicable protocol cells: `290`
-- Current complete protocol cells: `123`
-- Protocol completion: `46.90%`
-- Current protocol completion: `42.41%`
-- Evidence records: `8201`
-- Research runs: `20`
-- Rejection records: `2293`
+- Research coverage: `17.09%`
+- Explicit outcome coverage: `17.0927%`
+- Applicable protocol cells: `293`
+- Current complete protocol cells: `126`
+- Protocol completion: `47.44%`
+- Current protocol completion: `43.00%`
+- Evidence records: `8217`
+- Research runs: `21`
+- Rejection records: `2297`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -48,6 +48,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 88 | 0 |
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 88 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 88 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 88 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 88 | 0 |
 | Small Carpgrass (`arthraxon-hispidus`) | plants | 0 | 88 | 0 |
 | Giant Reed (`arundo-donax`) | plants | 0 | 88 | 0 |
@@ -56,7 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Animated oat (`avena-sterilis`) | plants | 0 | 88 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 88 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 88 | 0 |
-| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 88 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5286 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 630 | 107 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 646 | 113 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

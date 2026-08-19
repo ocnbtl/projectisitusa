@@ -1,27 +1,27 @@
 # Missouri Research Progress
 
-Generated: `2026-08-18T00:00:00.000Z`
+Generated: `2026-08-19T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `6391`
+- Verified present: `6410`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `41104`
-- Not researched: `240465`
-- Determination coverage: `2.22%`
-- Research coverage: `16.49%`
-- Explicit outcome coverage: `16.4936%`
-- Applicable protocol cells: `281`
-- Current complete protocol cells: `99`
-- Protocol completion: `39.86%`
-- Current protocol completion: `35.23%`
-- Evidence records: `7232`
-- Research runs: `20`
-- Rejection records: `641`
+- Researched unresolved: `42120`
+- Not researched: `239430`
+- Determination coverage: `2.23%`
+- Research coverage: `16.85%`
+- Explicit outcome coverage: `16.8530%`
+- Applicable protocol cells: `284`
+- Current complete protocol cells: `102`
+- Protocol completion: `40.49%`
+- Current protocol completion: `35.92%`
+- Evidence records: `7251`
+- Research runs: `21`
+- Rejection records: `652`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 115 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 115 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 115 | 0 |
+| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 115 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 115 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 115 | 0 |
 | Animated oat (`avena-sterilis`) | plants | 0 | 115 | 0 |
 | Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 115 | 0 |
 | Oriental fruit fly (`bactrocera-dorsalis`) | insects | 0 | 115 | 0 |
-| Wintergreen barberry (`berberis-julianae`) | plants | 0 | 115 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5427 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 501 | 85 |
+| GBIF preserved specimen records | operational | 2026-08-19T04:16:45.084Z | 520 | 94 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
