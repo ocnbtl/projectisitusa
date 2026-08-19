@@ -1,0 +1,42 @@
+{
+  "description": "Project Isitusa gbif-national-download-v2-round-77-8: taxon-bounded US preserved specimens",
+  "format": "DWCA",
+  "notificationAddresses": [
+    "[redacted]"
+  ],
+  "predicate": {
+    "predicates": [
+      {
+        "key": "COUNTRY",
+        "type": "equals",
+        "value": "US"
+      },
+      {
+        "key": "BASIS_OF_RECORD",
+        "type": "equals",
+        "value": "PRESERVED_SPECIMEN"
+      },
+      {
+        "key": "OCCURRENCE_STATUS",
+        "type": "equals",
+        "value": "PRESENT"
+      },
+      {
+        "key": "TAXON_KEY",
+        "type": "in",
+        "values": [
+          "2221026",
+          "2375974",
+          "2685484",
+          "2973176",
+          "2979014",
+          "3152619",
+          "4542910",
+          "5370832"
+        ]
+      }
+    ],
+    "type": "and"
+  },
+  "sendNotification": true
+}
