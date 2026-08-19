@@ -141,6 +141,19 @@
     "status": "historical-pass-fresh-observation-required-before-round77-publication",
     "qualification": "This same-day post-Round 76 observation is sufficient context for planning but is not reused as the required fresh pre-publication counter sample."
   },
+  "semanticPreflight": {
+    "path": "ops/national-research/evaluations/round-77-gbif-national-semantic-preflight-20260819-r1.json",
+    "sha256": "e7557827006e7befdc468385dc6f3b40a9567d4750a99c9616cfe830ac849a62",
+    "technicalContractStatus": "pass",
+    "executionReadiness": "ready",
+    "credentialPresence": {
+      "GBIF_USERNAME": true,
+      "GBIF_PASSWORD": true,
+      "GBIF_EMAIL": true
+    },
+    "networkRequestsIssued": 0,
+    "secretValuesPersistedOrEmitted": false
+  },
   "evidenceSemantics": {
     "createsAbsenceFromSilence": false,
     "createsNotDetectedFromSilence": false,
@@ -160,8 +173,7 @@
     "unsupportedNegativeEvidence": false
   },
   "decision": {
-    "status": "selected-ready-for-committed-semantic-preflight",
-    "reason": "The v2 taxonomy cache, deterministic 25,152-pair selection, one-lane resource sample, conservative evidence contract, and explicit production authority select Round 77 GBIF. No authenticated occurrence download request has been issued."
+    "status": "selected-ready-for-committed-acquisition",
+    "reason": "The v2 taxonomy cache, deterministic 25,152-pair selection, zero-network semantic preflight, credential presence, one-lane resource sample, conservative evidence contract, and explicit production authority select Round 77 GBIF. No authenticated occurrence download request has been issued."
   }
 }
-
