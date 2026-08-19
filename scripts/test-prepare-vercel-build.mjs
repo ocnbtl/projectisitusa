@@ -1,30 +1,61 @@
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-import { prepareVercelBuild } from "./prepare-vercel-build.mjs";
+import {
+  EXCLUDED_VERCEL_BUILD_PATHS,
+  REQUIRED_VERCEL_RUNTIME_PATHS,
+  prepareVercelBuild,
+} from "./prepare-vercel-build.mjs";
+
+const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const vercelIgnorePaths = readFileSync(path.join(repositoryRoot, ".vercelignore"), "utf8")
+  .split(/\r?\n/u)
+  .map((line) => line.trim())
+  .filter((line) => line !== "" && !line.startsWith("#"));
+assert.deepEqual(
+  vercelIgnorePaths,
+  EXCLUDED_VERCEL_BUILD_PATHS,
+  ".vercelignore and the build-workspace contract must stay synchronized",
+);
 
 const root = mkdtempSync(path.join(tmpdir(), "isitusa-vercel-build-"));
 
 try {
-  const authoritativeRoot = path.join(root, "src", "data", "generated", "research", "AL");
-  const publicMirrorRoot = path.join(root, "public", "generated", "research", "AL");
-  mkdirSync(authoritativeRoot, { recursive: true });
-  mkdirSync(publicMirrorRoot, { recursive: true });
-  writeFileSync(path.join(authoritativeRoot, "summary.json"), "{}\n");
-  writeFileSync(path.join(publicMirrorRoot, "summary.json"), "{}\n");
+  for (const relativePath of REQUIRED_VERCEL_RUNTIME_PATHS) {
+    const absolutePath = path.join(root, relativePath);
+    mkdirSync(path.dirname(absolutePath), { recursive: true });
+    writeFileSync(absolutePath, "{}\n");
+  }
 
   const localResult = prepareVercelBuild(root, {});
-  assert.deepEqual(localResult, { mode: "local", removedPublicMirror: false });
-  assert.equal(
-    prepareVercelBuild(root, {
-      VERCEL: "1",
-    }).removedPublicMirror,
-    true,
+  assert.deepEqual(localResult, { mode: "local" });
+
+  const vercelResult = prepareVercelBuild(root, { VERCEL: "1" });
+  assert.deepEqual(vercelResult, {
+    mode: "vercel",
+    requiredRuntimeFileCount: REQUIRED_VERCEL_RUNTIME_PATHS.length,
+    excludedPathCount: EXCLUDED_VERCEL_BUILD_PATHS.length,
+  });
+
+  const excludedFixture = path.join(root, EXCLUDED_VERCEL_BUILD_PATHS[0], "AL", "summary.json");
+  mkdirSync(path.dirname(excludedFixture), { recursive: true });
+  writeFileSync(excludedFixture, "{}\n");
+  assert.throws(
+    () => prepareVercelBuild(root, { VERCEL: "1" }),
+    /Vercel build workspace still contains deployment-independent paths/,
   );
-  assert.equal(existsSync(path.join(root, "public", "generated", "research")), false);
-  assert.equal(existsSync(path.join(authoritativeRoot, "summary.json")), true);
+  rmSync(path.join(root, EXCLUDED_VERCEL_BUILD_PATHS[0]), { recursive: true, force: true });
+
+  const missingRuntimeFile = path.join(root, REQUIRED_VERCEL_RUNTIME_PATHS[0]);
+  rmSync(missingRuntimeFile);
+  assert.throws(
+    () => prepareVercelBuild(root, { VERCEL: "1" }),
+    /Required Vercel runtime file is missing/,
+  );
+  assert.equal(existsSync(missingRuntimeFile), false);
   console.log("Vercel publish preparation tests passed.");
 } finally {
   rmSync(root, { recursive: true, force: true });

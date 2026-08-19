@@ -1,4 +1,9 @@
-# The browser-visible county projections remain versioned at this Git path.
-# Vercel deployments omit the large build copy and proxy the same URLs to the
-# immutable Git commit that triggered the build.
+# These immutable research and operations trees remain versioned in Git and are
+# published through the R2 research-data release pipeline. They are not runtime
+# inputs for the Next.js application and must not enter Vercel's build workspace.
 public/generated/research
+src/data/generated/research
+src/data/research/runs
+src/data/research/national-acquisitions
+ops
+docs
