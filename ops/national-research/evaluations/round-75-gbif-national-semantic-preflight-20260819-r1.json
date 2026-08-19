@@ -1,0 +1,73 @@
+{
+  "actor": "gbif-national-download-acquisition@2.0.0",
+  "authenticationMethod": "HTTP Basic with GBIF username and password; values are read only for acquisition and never persisted",
+  "credentialPresence": {
+    "GBIF_EMAIL": true,
+    "GBIF_PASSWORD": true,
+    "GBIF_USERNAME": true
+  },
+  "credentialPresenceChecked": true,
+  "deterministicAcquisitionPath": "src/data/research/national-acquisitions/20260819t083008z__gbif-download__fe5d42be8331",
+  "evaluatedAt": "2026-08-19T08:30:08.444Z",
+  "evaluationId": "gbif-national-download-v2-round-75-9-semantic-preflight",
+  "executionReadiness": "ready",
+  "inputHashes": {
+    "ops/national-research/evaluations/round-75-gbif-national-selection-20260819-r1.json": "52a1e847e7bd76a86088d97d27ac21efbcfc06512395b7bab129b765265fc3bb",
+    "scripts/research/national-gbif-download-replay.ts": "f46eaf54287e0f1e37f514ff317de9955882fb2dd01704495361f60a150a04b1",
+    "scripts/research/national-gbif-download.ts": "aff57c72cd555334c765d065f5681ff9c60ca36f9d9dce761949456678d1484a",
+    "scripts/research/partition-national-gbif-download.ts": "bf4589ff61bd8c5f58da39e0034f09f4eec892df12b513a1abf28fed1eb7da28",
+    "scripts/research/run-national-gbif-download.ts": "e09196e538192367d695376783c55b8e0ac3ca501c39469dadbbb3316f331767",
+    "src/data/research/caches/gbif-taxonomy-20260818-r72.json": "7c550218fe905500ae62c89766522dc182fe40d3d6abf5a4f64beeb54d2fdf16",
+    "src/data/research/national-acquisition-plans/gbif-national-download-v1-retained-r72.json": "0110db9576463dd9727e22466fe76c276345570fe69b3d938cba5584b4c3bd78",
+    "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-75-9.json": "d1f01fd05ad5aa74c9edb9b16d3461937f1fcfccc86ba0679c883c4fb2037ecc"
+  },
+  "missingCredentialEnvironment": [],
+  "nationalScope": {
+    "activeCounties": 3144,
+    "alreadyResearchedPairs": 3248,
+    "excludedBlockedPairs": 0,
+    "grossPairs": 28296,
+    "jurisdictions": 51,
+    "partitionMode": "stream interpreted and verbatim Darwin Core tables, exact registered provider state and county text only, no coordinate assignment",
+    "partitioningImplemented": true,
+    "selectedNotResearchedPairs": 25048,
+    "species": 9
+  },
+  "networkRequestsIssued": 0,
+  "notificationAddressPersistence": "redacted",
+  "parameterHash": "fe5d42be8331c6c99384492a787e50ef860a78cb5d190ae8681ccda0784eac3f",
+  "planId": "gbif-national-download-v2-round-75-9",
+  "predicate": {
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "country": "US",
+    "occurrenceStatus": "PRESENT",
+    "taxonKeys": 9
+  },
+  "providerDocumentation": [
+    "https://techdocs.gbif.org/en/data-use/api-downloads",
+    "https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation",
+    "https://www.gbif.org/terms"
+  ],
+  "resourceGuards": {
+    "compressedArchiveBytes": 268435456,
+    "maximumPollingMinutes": 360,
+    "pollingSeconds": 60,
+    "providerOccurrenceRows": 2000000,
+    "providerRequests": "one non-retried authenticated POST, then bounded retry-after-aware idempotent status and resumable archive GETs",
+    "selectedEvidenceRecords": 250000
+  },
+  "schemaVersion": 2,
+  "secretValuesPersistedOrEmitted": false,
+  "semanticDryRun": true,
+  "semantics": {
+    "completeDownloadRequiredBeforePartition": true,
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "failedDownloadCreatesNegative": false,
+    "unparsedArchiveMarksScopeComplete": false
+  },
+  "sourceId": "gbif-preserved-specimens",
+  "taxonomyMode": "legacy-gbif-backbone-retained-identifiers",
+  "taxonomyQualification": "The plan intentionally retains exact legacy GBIF Backbone numeric identifiers. GBIF documents continued API support for those identifiers; a COL XR migration requires a separately verified v2 taxonomy cache.",
+  "technicalContractStatus": "pass"
+}

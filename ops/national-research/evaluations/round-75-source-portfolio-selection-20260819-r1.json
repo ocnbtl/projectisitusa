@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-75-source-portfolio-selection-20260819-r1",
+  "evaluatedAt": "2026-08-19T08:40:44.705Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "baselineCommit": "8d5c7a5a764868c3cad89f1de1205b43f37548fa",
+  "objective": "Select and execute the highest-value current nonduplicative national research scope under the established evidence, source-coverage, resource, and free-tier contracts, then publish the verified result to production under explicit release authority.",
+  "sourceOfTruth": {
+    "generatedAsOf": "2026-08-19",
+    "generatedContentCommit": "2089c1fcd7f0fc2332e2a0e2306a8d0ca7461d6b",
+    "sourceCoverageIndex": {
+      "path": "ops/national-research/source-coverage-index.json",
+      "indexId": "source-coverage-8ad5494a8b9657759811",
+      "generatedFromCommit": "0a1b7afc134748b13b037e93f2420dcdb81786c7",
+      "runCount": 1147,
+      "sourceCount": 29,
+      "runReceiptDigestSha256": "1b2ad2ff91b4c71810e0cab1a898b93286ce8e178576234fc037ec57d8164034",
+      "validation": "Source coverage tests passed and the committed index was current and hash-reconciled."
+    },
+    "currentMatrix": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 191396,
+      "verifiedAbsent": 0,
+      "notDetected": 8,
+      "researchedUnresolved": 1239641,
+      "notResearched": 6441531
+    }
+  },
+  "portfolio": [
+    {
+      "rank": 1,
+      "sourceId": "gbif-preserved-specimens",
+      "status": "selected-executable-after-capacity-pass",
+      "shape": "One authenticated provider-native United States Darwin Core archive for nine exact retained GBIF taxon keys, followed by deterministic offline exact-state and exact-county text partitioning.",
+      "grossPairs": 28296,
+      "expectedNetNewPairs": 25048,
+      "excludedBlockedPairs": 0,
+      "alreadyResearchedPairs": 3248,
+      "expectedProviderRequests": {
+        "authenticatedPost": 1,
+        "statusGets": "bounded until terminal status",
+        "archiveGets": "one logical resumable transfer with bounded idempotent retries"
+      },
+      "reason": "This is the only currently implemented national source contract with a current measured executable scope above the 25,000-pair material threshold. The selected taxon set differs from prior national GBIF requests, and every counted candidate pair is currently not researched."
+    },
+    {
+      "rank": 2,
+      "sourceId": "usda-nrcs-plants",
+      "status": "blocked-not-executable",
+      "shape": "Eight mixed taxonomy or status mappings",
+      "remainingMixedMappings": 8,
+      "currentExecutableNetNewPairs": 0,
+      "reason": "The pure exact mapping authority is exhausted. The remaining mixed mappings cannot be silently combined and still require exact taxonomy and status resolution."
+    },
+    {
+      "rank": 3,
+      "sourceId": "idigbio-preserved-specimens",
+      "status": "deferred-implementation",
+      "shape": "Existing bounded state adapter without a proven acquire-once national immutable archive and exact partition contract",
+      "historicalCompletedPairs": 155,
+      "currentMeasuredNationalNetNewPairs": null,
+      "reason": "Unknown theoretical yield cannot outrank a measured executable national tranche. A future national contract must first prove provider-complete pagination, immutable replay, and exact geography reconciliation."
+    },
+    {
+      "rank": 4,
+      "sourceId": "inaturalist-research-grade",
+      "status": "deferred-implementation",
+      "shape": "No complete reviewed county-place registry or national checkpoint and replay contract",
+      "immutableRunCount": 0,
+      "currentMeasuredNationalNetNewPairs": null,
+      "reason": "Theoretical matrix capacity is not an executable provider-complete yield and cannot justify unsupported county negatives."
+    },
+    {
+      "rank": 5,
+      "sourceId": "usfs-fia/usfs-afpe/usgs-nas/aphis-federal-quarantine",
+      "status": "retained-scope-incomplete-nonmaterial-or-exhausted",
+      "incompleteBlockedPairs": {
+        "usfs-fia": 3263,
+        "usfs-afpe": 247,
+        "usgs-nas": 154
+      },
+      "currentMeasuredMaterialNetNewPairs": 0,
+      "reason": "The remaining incomplete or retained exact scopes are blocked, freshness-only, exhausted, or below the material threshold and do not outrank the measured GBIF tranche."
+    }
+  ],
+  "selectedScope": {
+    "planId": "gbif-national-download-v2-round-75-9",
+    "planPath": "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-75-9.json",
+    "planSha256": "d1f01fd05ad5aa74c9edb9b16d3461937f1fcfccc86ba0679c883c4fb2037ecc",
+    "selectionPath": "ops/national-research/evaluations/round-75-gbif-national-selection-20260819-r1.json",
+    "selectionSha256": "52a1e847e7bd76a86088d97d27ac21efbcfc06512395b7bab129b765265fc3bb",
+    "candidatePairSha256": "12cf436630b2a4303620d4e3fb1f6dcee0d4abcd627a13dff1f48a4cec9c60b8",
+    "stateCount": 51,
+    "activeCountyCount": 3144,
+    "taxonCount": 9,
+    "grossPairs": 28296,
+    "notResearchedPairs": 25048,
+    "blockedPairs": 0,
+    "alreadyResearchedPairs": 3248,
+    "smallestThresholdPrefix": true,
+    "firstEightNetPairs": 22337,
+    "thresholdPairs": 25000
+  },
+  "resourceAndProviderGuards": {
+    "capacityTier": "red-for-new-acquisition",
+    "observedAt": "2026-08-19T08:40:44.705Z",
+    "availableMemoryBytes": 6689619968,
+    "availableMemoryPercent": 19.999,
+    "commitHeadroomBytes": 3303305216,
+    "commitChargePercent": 94.22,
+    "projectedPostWorkerCommitHeadroomBytes": 2229563392,
+    "requiredPostWorkerCommitHeadroomBytes": 3221225472,
+    "pageReadsPerSecond": 7,
+    "pageWritesPerSecond": 0,
+    "freeDiskBytes": 672408969216,
+    "competingProjectWriterProcesses": 0,
+    "selectedConcurrency": 0,
+    "plannedConcurrencyAfterFreshPass": 1,
+    "workerMemoryReservationMiB": 1024,
+    "maximumCompressedArchiveBytes": 268435456,
+    "archiveArtifactLane": 1,
+    "qualification": "The plan may be committed, but a provider request must not start until a fresh sample leaves at least 3 GiB commit headroom after the one-worker reservation. No provider request has been issued."
+  },
+  "semanticPreflight": {
+    "path": "ops/national-research/evaluations/round-75-gbif-national-semantic-preflight-20260819-r1.json",
+    "sha256": "426b3f48b1415d8490c955fb4264345c909ba9237f31fde47280ea97ff39c569",
+    "technicalContractStatus": "pass",
+    "executionReadiness": "ready",
+    "credentialPresence": {
+      "GBIF_USERNAME": true,
+      "GBIF_PASSWORD": true,
+      "GBIF_EMAIL": true
+    },
+    "networkRequestsIssued": 0,
+    "secretValuesPersistedOrEmitted": false
+  },
+  "evidenceSemantics": {
+    "createsAbsenceFromSilence": false,
+    "createsNotDetectedFromSilence": false,
+    "failedOrPartialDownloadCreatesNegative": false,
+    "coordinateCountyAssignmentAllowed": false,
+    "completeArchiveRequiredBeforePartition": true,
+    "providerSilenceAfterCompleteReplay": "researched-unresolved only"
+  },
+  "acceptanceCriteria": [
+    "Plan and selection regenerate byte-identically from current committed county shards.",
+    "A fresh pre-request resource sample preserves at least 3 GiB system commit headroom after the one-worker reservation.",
+    "The authenticated provider request completes with retained terminal metadata, DOI, license, archive bytes, and SHA-256 under the 256 MiB cap.",
+    "Interpreted and verbatim Darwin Core rows reconcile under the exact geography and conservative evidence contract.",
+    "Every selected pair moves exactly once to verified-present or researched-unresolved; no selected pair remains not-researched.",
+    "All immutable run receipts, outputs, generated projections, source coverage, and publication artifacts pass current integrity gates.",
+    "Any R2 publication remains below the project 8 GB, 800000 Class A, and 8000000 Class B safety stops with billable usage still zero.",
+    "Production identity, same-origin R2 delivery, changed outcomes, and representative routes pass external verification before a release receipt is claimed."
+  ],
+  "releaseAuthority": {
+    "repositoryWrites": true,
+    "providerAcquisition": true,
+    "commitAndPushMain": true,
+    "guardedR2Publication": true,
+    "vercelProductionDeployment": true,
+    "paidOverage": false,
+    "destructiveR2RetentionChanges": false,
+    "unsupportedNegativeEvidence": false
+  },
+  "decision": {
+    "status": "selected-await-fresh-capacity-pass",
+    "reason": "The current portfolio, coverage, zero-network preflight, credentials, exact evidence contract, and explicit production authority select Round 75 GBIF. The interrupted-turn resource sample independently stopped acquisition before network until the mandatory projected post-worker commit-headroom floor passes."
+  }
+}
