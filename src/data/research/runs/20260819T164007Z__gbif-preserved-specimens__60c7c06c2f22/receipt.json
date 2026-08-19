@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260819T164007Z__gbif-preserved-specimens__60c7c06c2f22",
+  "status": "complete",
+  "started_at": "2026-08-19T16:40:07.775Z",
+  "finished_at": "2026-08-19T16:43:39.223Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "4dcc5003860ed60a9d0babd802d490d1c735e522",
+  "parameter_hash": "6e83051a17240f338a8c0ee573e6a7cfce6bed62577b611022c017035ab56884",
+  "parameters": {
+    "stateCode": "AZ",
+    "stateProvince": "Arizona",
+    "candidateLimit": 15,
+    "candidatePairs": [
+      "04001:nymphoides-peltata",
+      "04003:nymphoides-peltata",
+      "04005:nymphoides-peltata",
+      "04007:nymphoides-peltata",
+      "04009:nymphoides-peltata",
+      "04011:nymphoides-peltata",
+      "04012:nymphoides-peltata",
+      "04013:nymphoides-peltata",
+      "04015:nymphoides-peltata",
+      "04017:nymphoides-peltata",
+      "04019:nymphoides-peltata",
+      "04021:nymphoides-peltata",
+      "04023:nymphoides-peltata",
+      "04025:nymphoides-peltata",
+      "04027:nymphoides-peltata"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "AZ",
+    "county_fips": [
+      "04001",
+      "04003",
+      "04005",
+      "04007",
+      "04009",
+      "04011",
+      "04012",
+      "04013",
+      "04015",
+      "04017",
+      "04019",
+      "04021",
+      "04023",
+      "04025",
+      "04027"
+    ],
+    "species_ids": [
+      "nymphoides-peltata"
+    ],
+    "pair_keys": [
+      "04001:nymphoides-peltata",
+      "04003:nymphoides-peltata",
+      "04005:nymphoides-peltata",
+      "04007:nymphoides-peltata",
+      "04009:nymphoides-peltata",
+      "04011:nymphoides-peltata",
+      "04012:nymphoides-peltata",
+      "04013:nymphoides-peltata",
+      "04015:nymphoides-peltata",
+      "04017:nymphoides-peltata",
+      "04019:nymphoides-peltata",
+      "04021:nymphoides-peltata",
+      "04023:nymphoides-peltata",
+      "04025:nymphoides-peltata",
+      "04027:nymphoides-peltata"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0024829-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-19T16:43:37.121Z",
+      "record_count": 13770
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260819T164007Z__gbif-preserved-specimens__60c7c06c2f22/artifacts/national-acquisition-reference.json",
+      "sha256": "196c8d192f5d7ee42eedffa5aa2758b8a855646657d5cb2079396b6d6ebf2cee",
+      "bytes": 22242,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260819T164007Z__gbif-preserved-specimens__60c7c06c2f22/assertions.ndjson",
+      "sha256": "3430911b4facff40c11049f0f93254d65e20fce242725ca843f5a3de00be6839",
+      "bytes": 3737,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T164007Z__gbif-preserved-specimens__60c7c06c2f22/reviews.ndjson",
+      "sha256": "a9509c2e32cdceed1fb439b2673814d9ca38b34cacf1bf397cf37bcdd7edb3e5",
+      "bytes": 1948,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T164007Z__gbif-preserved-specimens__60c7c06c2f22/rejections.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T164007Z__gbif-preserved-specimens__60c7c06c2f22/outcomes.ndjson",
+      "sha256": "66c62505944ee191cb6de50c01bbb91d47887deb1bce22a200b9f19d11e27ece",
+      "bytes": 10795,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T164007Z__gbif-preserved-specimens__60c7c06c2f22/source-verification.json",
+      "sha256": "1eeb71f0599e1f5e93f7e1a1936324faa3212c602e01eb9445c3f8e72252d084",
+      "bytes": 3779,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 15,
+    "candidate_records": 134,
+    "assertion_events": 2,
+    "review_events": 2,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 15
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [
+    "Retained 118 exact archive row(s) outside the baseline not-researched selection without emitting duplicate pair outcomes."
+  ],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-76-10.json --acquisition src/data/research/national-acquisitions/20260819t164007z__gbif-download__c17010fdc231"
+}

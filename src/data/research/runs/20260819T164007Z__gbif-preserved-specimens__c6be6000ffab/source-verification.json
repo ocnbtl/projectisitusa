@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-19T16:43:39.223Z",
+  "runId": "20260819T164007Z__gbif-preserved-specimens__c6be6000ffab",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "CA",
+  "pairKeys": [
+    "06001:hypophthalmichthys-molitrix",
+    "06003:hypophthalmichthys-molitrix",
+    "06005:hypophthalmichthys-molitrix",
+    "06007:hypophthalmichthys-molitrix",
+    "06009:hypophthalmichthys-molitrix",
+    "06011:hypophthalmichthys-molitrix",
+    "06013:hypophthalmichthys-molitrix",
+    "06015:hypophthalmichthys-molitrix",
+    "06017:hypophthalmichthys-molitrix",
+    "06019:hypophthalmichthys-molitrix",
+    "06021:hypophthalmichthys-molitrix",
+    "06023:hypophthalmichthys-molitrix",
+    "06025:hypophthalmichthys-molitrix",
+    "06027:hypophthalmichthys-molitrix",
+    "06029:hypophthalmichthys-molitrix",
+    "06031:hypophthalmichthys-molitrix",
+    "06033:hypophthalmichthys-molitrix",
+    "06035:hypophthalmichthys-molitrix",
+    "06037:hypophthalmichthys-molitrix",
+    "06039:hypophthalmichthys-molitrix",
+    "06041:hypophthalmichthys-molitrix",
+    "06043:hypophthalmichthys-molitrix",
+    "06045:hypophthalmichthys-molitrix",
+    "06047:hypophthalmichthys-molitrix",
+    "06049:hypophthalmichthys-molitrix",
+    "06051:hypophthalmichthys-molitrix",
+    "06053:hypophthalmichthys-molitrix",
+    "06055:hypophthalmichthys-molitrix",
+    "06057:hypophthalmichthys-molitrix",
+    "06059:hypophthalmichthys-molitrix",
+    "06061:hypophthalmichthys-molitrix",
+    "06063:hypophthalmichthys-molitrix",
+    "06065:hypophthalmichthys-molitrix",
+    "06067:hypophthalmichthys-molitrix",
+    "06069:hypophthalmichthys-molitrix",
+    "06071:hypophthalmichthys-molitrix",
+    "06073:hypophthalmichthys-molitrix",
+    "06075:hypophthalmichthys-molitrix",
+    "06077:hypophthalmichthys-molitrix",
+    "06079:hypophthalmichthys-molitrix",
+    "06081:hypophthalmichthys-molitrix",
+    "06083:hypophthalmichthys-molitrix",
+    "06085:hypophthalmichthys-molitrix",
+    "06087:hypophthalmichthys-molitrix",
+    "06089:hypophthalmichthys-molitrix",
+    "06091:hypophthalmichthys-molitrix",
+    "06093:hypophthalmichthys-molitrix",
+    "06095:hypophthalmichthys-molitrix",
+    "06097:hypophthalmichthys-molitrix",
+    "06099:hypophthalmichthys-molitrix",
+    "06101:hypophthalmichthys-molitrix",
+    "06103:hypophthalmichthys-molitrix",
+    "06105:hypophthalmichthys-molitrix",
+    "06107:hypophthalmichthys-molitrix",
+    "06109:hypophthalmichthys-molitrix",
+    "06111:hypophthalmichthys-molitrix",
+    "06113:hypophthalmichthys-molitrix",
+    "06115:hypophthalmichthys-molitrix"
+  ],
+  "parameterHash": "5075fa29ecb9b1a5ca5a8a9443a85137bbac66a5dc5327dd6540de042fd2fba2",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://www.gbif.org/occurrence/download/0024829-260806074905277",
+    "publisher": "GBIF"
+  },
+  "terms": {
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-19T16:43:39.223Z",
+    "freshnessDate": "2026-08-19"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county text resolved through the active Census county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates never establish county membership; missing, ambiguous, contradictory, or retired geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Exact retained GBIF species keys from a hash-pinned taxonomy cache with EXACT species matches and confidence at least 95.",
+    "targetSpeciesIds": [
+      "hypophthalmichthys-molitrix"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "gbifID",
+      "datasetKey",
+      "speciesKey",
+      "stateProvince",
+      "county"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "20260819t164007z__gbif-download__c17010fdc231",
+        "url": "https://api.gbif.org/v1/occurrence/download/request/0024829-260806074905277.zip",
+        "purpose": "Authenticated provider-native national Darwin Core archive reused by this offline state partition",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-19T16:43:37.121Z",
+        "declaredRecordCount": 13770,
+        "receivedRecordCount": 13770,
+        "pagination": {
+          "mode": "snapshot",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF preserved specimen records are positive occurrence evidence, not a negative survey.",
+      "Complete archive silence changes research status only; failure, rejection, and missing geography create no negative claim."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260819T164007Z__gbif-preserved-specimens__c6be6000ffab/artifacts/national-acquisition-reference.json",
+      "sha256": "b3489b9949ebc52a8b0bf7ad7a64fb220b57b4233b8547d6abb8c9e6142c8b60",
+      "bytes": 22243
+    }
+  ],
+  "caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
+    "At most one deterministic qualifying specimen assertion is published per selected county-species pair."
+  ]
+}
