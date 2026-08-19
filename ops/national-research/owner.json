@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "8d5c7a5a764868c3cad89f1de1205b43f37548fa",
   "acquiredAt": "2026-08-19T08:40:44.705Z",
-  "lastReverifiedAt": "2026-08-19T08:40:44.705Z",
-  "currentCheckpointSha": "8d5c7a5a764868c3cad89f1de1205b43f37548fa",
-  "localHeadAtLastReverification": "8d5c7a5a764868c3cad89f1de1205b43f37548fa",
-  "state": "round-75-plan-selected-capacity-blocked",
+  "lastReverifiedAt": "2026-08-19T10:00:14.525Z",
+  "currentCheckpointSha": "aed213043298ea6083354e01eb334a3aa5e25d31",
+  "localHeadAtLastReverification": "aed213043298ea6083354e01eb334a3aa5e25d31",
+  "state": "round-75-local-release-gates-passed",
   "ownershipEvidence": {
     "activeProjectTasks": ["national-round-75-20260819-main"],
     "supersededOwnerTaskId": "national-round-74-20260819-main",
@@ -96,6 +96,38 @@
       "projectedPostWorkerCommitHeadroomBytes": 2229563392,
       "requiredPostWorkerCommitHeadroomBytes": 3221225472,
       "finding": "The exact nine-taxon scope and zero-network semantic contract are ready and production publication is explicitly authorized. Acquisition remains stopped before network because the projected commit headroom after one 1 GiB worker reservation is below the non-negotiable 3 GiB floor."
+    },
+    "round75ReleasePreparation": {
+      "planCommit": "6454e459fdf6975ea3243dfaba40aedab1feb3cc",
+      "acquisitionCommit": "c6a2d3c4a4ac6677e1c2b163c9fcc27975ee340d",
+      "partitionCommit": "2cf0879bee382c3ff212cfe46dfc0cac2b21feaa",
+      "generatedContentCommit": "aed213043298ea6083354e01eb334a3aa5e25d31",
+      "releasePreparationCommit": null,
+      "downloadKey": "0023928-260806074905277",
+      "doi": "10.15468/dl.d65tjr",
+      "providerRecords": 16077,
+      "archiveBytes": 6927249,
+      "archiveSha256": "669569e22aac90f89503cd65a67bc7224f28868747815dfe05faed8cbdd93369",
+      "materializedRuns": 50,
+      "selectedPairsMoved": 25048,
+      "verifiedPresentAdded": 2572,
+      "researchedUnresolvedAdded": 22476,
+      "notResearchedRemoved": 25048,
+      "r2ReleaseId": "research-aed213043298-61bb7c59ff565fba",
+      "r2ManifestSha256": "8639bfeded5f4b166710995b05038d741e75fa5ecb0a74e843aab6ca51cc54da",
+      "r2ObjectsPlanned": 3195,
+      "worstCaseRetainedBytesAfterPromotion": 3754001639,
+      "cloudflareClassAOperationsDisplayed": "9.74k",
+      "cloudflareClassBOperationsDisplayed": "20.33k",
+      "cloudflareStorageDisplayed": "2.8 GB",
+      "cloudflareBillableUsageDisplayed": "$0.00",
+      "providerExecutionStatus": "succeeded-and-integrated",
+      "localReleaseStatus": "go-to-deploy",
+      "externalReleaseStatus": "pending",
+      "productionReleaseAuthorized": true,
+      "paidOverageAuthorized": false,
+      "destructiveRetentionChangesAuthorized": false,
+      "finding": "Round 75 completed one authenticated non-retried provider POST, retained the 16,077-record archive, reconciled 51 jurisdiction rows into 50 nonempty immutable runs, and moved exactly 25,048 county-species pairs. The generated content, deterministic replay, full integrity, typecheck, lint, cold production build, publication plan, free-tier counters, rollback identity, and all twelve pre-deployment launch categories support GO TO DEPLOY. GitHub push, immutable R2 publication, pointer promotion, Vercel production, and live verification remain pending."
     },
       "round67DeploymentCorrection": {
         "failedContentCommit": "d19c4163583c85f4894a4605c5cf89f08f8eecc9",
@@ -206,14 +238,22 @@
       "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "gbif-preserved-specimens",
-        "observedAt": "2026-08-19T05:50:22.331Z",
-      "status": "Round 74 completed the authenticated national GBIF provider request, retained and verified the 4,986-record archive, partitioned 50 nonempty state runs plus one zero-pair state reconciliation row, and integrated exactly 26,424 selected county-species outcomes into all 51 generated projections.",
+      "observedAt": "2026-08-19T10:00:14.525Z",
+      "status": "Round 75 completed the authenticated national GBIF provider request, retained and verified the 16,077-record archive, partitioned 50 nonempty state runs plus one zero-pair state reconciliation row, and integrated exactly 25,048 selected county-species outcomes into all 51 generated projections.",
       "gbifAuthenticatedDownloadStatus": "succeeded-and-integrated",
       "preflightProcessException": false,
-      "qualification": "The actual provider archive and partition pass independent hash and byte verification, exact occurrence/verbatim reconciliation, a deterministic post-commit rerun, all focused GBIF tests, the frozen 97/97 suite, the bounded 1,147-run composite integrity gate, the 51-state projection gate, typecheck, lint, a cold production build, full R2 object verification, responsive browser QA, and exact GitHub Production identity."
+      "qualification": "The actual provider archive and partition pass independent hash and byte verification, exact occurrence/verbatim reconciliation, a deterministic post-commit rerun, all focused GBIF tests, the frozen 97/97 suite, the bounded 1,197-run composite integrity gate, the 51-state projection gate, typecheck, lint, and a cold production build. External Round 75 publication and production verification are still pending."
     }
   },
   "reverificationHistory": [
+    {
+      "observedAt": "2026-08-19T10:00:14.525Z",
+      "localHeadSha": "aed213043298ea6083354e01eb334a3aa5e25d31",
+      "originMainSha": "8d5c7a5a764868c3cad89f1de1205b43f37548fa",
+      "githubMainSha": "8d5c7a5a764868c3cad89f1de1205b43f37548fa",
+      "vercelProductionCommitSha": "3d95a707076a968a10e236bf304c9d7ca7dfcabc",
+      "reason": "MAIN completed the Round 75 authenticated GBIF acquisition, immutable partition, exact 25,048-pair integration, all 51 generated projections, full local integrity and build gates, and a fail-closed publication manifest. Cloudflare current-period usage displayed 9.74k Class A, 20.33k Class B, 2.8 GB storage, and $0.00 billable usage; conservative publisher inputs are 10,000 and 21,000. The user explicitly authorized production. The pre-deployment matrix is GO TO DEPLOY, while GitHub push, immutable R2 publication, pointer promotion, Vercel deployment, and live post-deployment verification remain pending."
+    },
     {
       "observedAt": "2026-08-19T08:40:44.705Z",
       "localHeadSha": "8d5c7a5a764868c3cad89f1de1205b43f37548fa",
