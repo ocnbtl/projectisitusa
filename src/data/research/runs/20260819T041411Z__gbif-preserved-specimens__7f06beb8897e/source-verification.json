@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-19T04:16:45.084Z",
+  "runId": "20260819T041411Z__gbif-preserved-specimens__7f06beb8897e",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "HI",
+  "pairKeys": [
+    "15001:alnus-glutinosa",
+    "15001:anthriscus-sylvestris",
+    "15001:epilobium-hirsutum",
+    "15001:fallopia-japonica",
+    "15001:impatiens-glandulifera",
+    "15001:ligustrum-obtusifolium",
+    "15001:lysimachia-vulgaris",
+    "15001:mylopharyngodon-piceus",
+    "15001:persicaria-perfoliata",
+    "15003:alnus-glutinosa",
+    "15003:anthriscus-sylvestris",
+    "15003:epilobium-hirsutum",
+    "15003:fallopia-japonica",
+    "15003:impatiens-glandulifera",
+    "15003:ligustrum-obtusifolium",
+    "15003:lysimachia-vulgaris",
+    "15003:mylopharyngodon-piceus",
+    "15003:persicaria-perfoliata",
+    "15005:alnus-glutinosa",
+    "15005:anthriscus-sylvestris",
+    "15005:epilobium-hirsutum",
+    "15005:fallopia-japonica",
+    "15005:impatiens-glandulifera",
+    "15005:ligustrum-obtusifolium",
+    "15005:lysimachia-vulgaris",
+    "15005:mylopharyngodon-piceus",
+    "15005:persicaria-perfoliata",
+    "15007:alnus-glutinosa",
+    "15007:anthriscus-sylvestris",
+    "15007:epilobium-hirsutum",
+    "15007:fallopia-japonica",
+    "15007:impatiens-glandulifera",
+    "15007:ligustrum-obtusifolium",
+    "15007:lysimachia-vulgaris",
+    "15007:mylopharyngodon-piceus",
+    "15007:persicaria-perfoliata",
+    "15009:alnus-glutinosa",
+    "15009:anthriscus-sylvestris",
+    "15009:epilobium-hirsutum",
+    "15009:fallopia-japonica",
+    "15009:impatiens-glandulifera",
+    "15009:ligustrum-obtusifolium",
+    "15009:lysimachia-vulgaris",
+    "15009:mylopharyngodon-piceus",
+    "15009:persicaria-perfoliata"
+  ],
+  "parameterHash": "ab9bf7e3862fc2b3ec34b3907cd7ecbbe5805871945764a155d02259fa3f76a0",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://www.gbif.org/occurrence/download/0023571-260806074905277",
+    "publisher": "GBIF"
+  },
+  "terms": {
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-19T04:16:45.084Z",
+    "freshnessDate": "2026-08-19"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county text resolved through the active Census county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates never establish county membership; missing, ambiguous, contradictory, or retired geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Exact retained GBIF species keys from a hash-pinned taxonomy cache with EXACT species matches and confidence at least 95.",
+    "targetSpeciesIds": [
+      "alnus-glutinosa",
+      "anthriscus-sylvestris",
+      "epilobium-hirsutum",
+      "fallopia-japonica",
+      "impatiens-glandulifera",
+      "ligustrum-obtusifolium",
+      "lysimachia-vulgaris",
+      "mylopharyngodon-piceus",
+      "persicaria-perfoliata"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "gbifID",
+      "datasetKey",
+      "speciesKey",
+      "stateProvince",
+      "county"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "20260819t041411z__gbif-download__172c1735eb7d",
+        "url": "https://api.gbif.org/v1/occurrence/download/request/0023571-260806074905277.zip",
+        "purpose": "Authenticated provider-native national Darwin Core archive reused by this offline state partition",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-19T04:16:34.721Z",
+        "declaredRecordCount": 4986,
+        "receivedRecordCount": 4986,
+        "pagination": {
+          "mode": "snapshot",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF preserved specimen records are positive occurrence evidence, not a negative survey.",
+      "Complete archive silence changes research status only; failure, rejection, and missing geography create no negative claim."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260819T041411Z__gbif-preserved-specimens__7f06beb8897e/artifacts/national-acquisition-reference.json",
+      "sha256": "2e13095e0cd5aa2b145b0bf806ca7b6e68f7a76f09659919a10335dd17fc2898",
+      "bytes": 15793
+    }
+  ],
+  "caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
+    "At most one deterministic qualifying specimen assertion is published per selected county-species pair."
+  ]
+}
