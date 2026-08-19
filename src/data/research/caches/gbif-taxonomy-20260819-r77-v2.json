@@ -1,0 +1,876 @@
+{
+  "acquisition": {
+    "completedAt": "2026-08-19T20:43:37.140Z",
+    "metadataRequests": 2,
+    "method": "GET",
+    "minimumRequestIntervalMilliseconds": 400,
+    "requestCount": 50,
+    "requestManifestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+    "responseAggregateBytes": 70689,
+    "responseAggregateSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+    "retryCount": 0,
+    "startedAt": "2026-08-19T20:43:01.013Z"
+  },
+  "cacheId": "gbif-taxonomy-20260819-r77-v2",
+  "candidatePolicy": {
+    "acceptance": "EXACT confidence >= 95, SPECIES rank, exact canonical name, accepted non-synonym usage, unique positive numeric default-GBIF-Backbone key",
+    "activeCountyCount": 3144,
+    "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+    "candidateLimit": 50,
+    "catalogSpeciesCount": 2504,
+    "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+    "order": "descending not-researched county count, then species ID by code point"
+  },
+  "checklistKey": null,
+  "counts": {
+    "accepted": 47,
+    "acceptedNotResearchedPairs": 147768,
+    "candidates": 50,
+    "grossCandidatePairs": 157200,
+    "rejected": 3
+  },
+  "createdAt": "2026-08-19T20:43:37.140Z",
+  "entries": [
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 0
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Abies+alba&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyNjg1NDg0IiwibmFtZSI6IkFiaWVzIGFsYmEgTWlsbC4iLCJjYW5vbmljYWxOYW1lIjoiQWJpZXMgYWxiYSIsImF1dGhvcnNoaXAiOiJNaWxsLiIsInJhbmsiOiJTUEVDSUVTIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFiaWVzIiwic3BlY2lmaWNFcGl0aGV0IjoiYWxiYSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFiaWVzPC9pPiA8aT5hbGJhPC9pPiBNaWxsLiJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiNiIsIm5hbWUiOiJQbGFudGFlIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijc3MDc3MjgiLCJuYW1lIjoiVHJhY2hlb3BoeXRhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMTk0IiwibmFtZSI6IlBpbm9wc2lkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiNjQwIiwibmFtZSI6IlBpbmFsZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjM5MjUiLCJuYW1lIjoiUGluYWNlYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyNjg0ODc2IiwibmFtZSI6IkFiaWVzIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIyNjg1NDg0IiwibmFtZSI6IkFiaWVzIGFsYmEiLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OCwidGltZVRha2VuIjoyLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoyLCJuYW1lUGFyc2UiOjEsImx1Y2VuZU1hdGNoIjoxfX0sImFkZGl0aW9uYWxTdGF0dXMiOlt7ImNsYkRhdGFzZXRLZXkiOiI1MzEzMSIsImRhdGFzZXRBbGlhcyI6IklVQ04iLCJkYXRhc2V0S2V5IjoiMTk0OTE1OTYtMzVhZS00YTkxLTlhOTgtODVjZjUwNWYxYmQzIiwic3RhdHVzIjoiTEVBU1RfQ09OQ0VSTiIsInN0YXR1c0NvZGUiOiJMQyIsInNvdXJjZUlkIjoiNDIyNzAifV0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0Ijo4NjU4NTcsInJpZ2h0Ijo4NjU4NTd9",
+      "responseBodySha256": "20c93c8d7435b7fbfd74e53387c81a3ef05f76e16618ebae2194eb9872ff41e2",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Abies alba",
+      "speciesId": "abies-alba",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 1
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Abutilon+hirtum&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIzMTUyNjE5IiwibmFtZSI6IkFidXRpbG9uIGhpcnR1bSAoTGFtLikgU3dlZXQiLCJjYW5vbmljYWxOYW1lIjoiQWJ1dGlsb24gaGlydHVtIiwiYXV0aG9yc2hpcCI6IihMYW0uKSBTd2VldCIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IkJPVEFOSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBYnV0aWxvbiIsInNwZWNpZmljRXBpdGhldCI6ImhpcnR1bSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFidXRpbG9uPC9pPiA8aT5oaXJ0dW08L2k+IChMYW0uKSBTd2VldCJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiNiIsIm5hbWUiOiJQbGFudGFlIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijc3MDc3MjgiLCJuYW1lIjoiVHJhY2hlb3BoeXRhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjIwIiwibmFtZSI6Ik1hZ25vbGlvcHNpZGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6Ijk0MSIsIm5hbWUiOiJNYWx2YWxlcyIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiNjY4NSIsIm5hbWUiOiJNYWx2YWNlYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIzMTUyNTk5IiwibmFtZSI6IkFidXRpbG9uIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIzMTUyNjE5IiwibmFtZSI6IkFidXRpbG9uIGhpcnR1bSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk4LCJ0aW1lVGFrZW4iOjMsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjMsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjN9fSwic3lub255bSI6ZmFsc2UsImxlZnQiOjc2MjYxMSwicmlnaHQiOjc2MjYxM30=",
+      "responseBodySha256": "d912807ce369f5a4e129dcf7b9b4c2fdf99f7560c3d81743402273ef3ad854f1",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Abutilon hirtum",
+      "speciesId": "abutilon-hirtum",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 2
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acacia+elata&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyOTczMTc2IiwibmFtZSI6IkFjYWNpYSBlbGF0YSBBLkN1bm4uIGV4IEJlbnRoLiIsImNhbm9uaWNhbE5hbWUiOiJBY2FjaWEgZWxhdGEiLCJhdXRob3JzaGlwIjoiQS5DdW5uLiBleCBCZW50aC4iLCJyYW5rIjoiU1BFQ0lFUyIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBY2FjaWEiLCJzcGVjaWZpY0VwaXRoZXQiOiJlbGF0YSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFjYWNpYTwvaT4gPGk+ZWxhdGE8L2k+IEEuQ3Vubi4gZXggQmVudGguIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiI2IiwibmFtZSI6IlBsYW50YWUiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNzcwNzcyOCIsIm5hbWUiOiJUcmFjaGVvcGh5dGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMjAiLCJuYW1lIjoiTWFnbm9saW9wc2lkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiMTM3MCIsIm5hbWUiOiJGYWJhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI1Mzg2IiwibmFtZSI6IkZhYmFjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjk3ODIyMyIsIm5hbWUiOiJBY2FjaWEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjI5NzMxNzYiLCJuYW1lIjoiQWNhY2lhIGVsYXRhIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTgsInRpbWVUYWtlbiI6MywidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6NCwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6M319LCJzeW5vbnltIjpmYWxzZSwibGVmdCI6NjEwOTU5LCJyaWdodCI6NjEwOTYwfQ==",
+      "responseBodySha256": "47b02f6dcb948930179f734e5673bf11ba2431e1d3e4a4371b6c944f697ae929",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acacia elata",
+      "speciesId": "acacia-elata",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 3
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acacia+podalyriifolia&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyOTc5MDE0IiwibmFtZSI6IkFjYWNpYSBwb2RhbHlyaWlmb2xpYSBBLkN1bm4uIGV4IEcuRG9uIiwiY2Fub25pY2FsTmFtZSI6IkFjYWNpYSBwb2RhbHlyaWlmb2xpYSIsImF1dGhvcnNoaXAiOiJBLkN1bm4uIGV4IEcuRG9uIiwicmFuayI6IlNQRUNJRVMiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWNhY2lhIiwic3BlY2lmaWNFcGl0aGV0IjoicG9kYWx5cmlpZm9saWEiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BY2FjaWE8L2k+IDxpPnBvZGFseXJpaWZvbGlhPC9pPiBBLkN1bm4uIGV4IEcuRG9uIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiI2IiwibmFtZSI6IlBsYW50YWUiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNzcwNzcyOCIsIm5hbWUiOiJUcmFjaGVvcGh5dGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMjAiLCJuYW1lIjoiTWFnbm9saW9wc2lkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiMTM3MCIsIm5hbWUiOiJGYWJhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI1Mzg2IiwibmFtZSI6IkZhYmFjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjk3ODIyMyIsIm5hbWUiOiJBY2FjaWEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjI5NzkwMTQiLCJuYW1lIjoiQWNhY2lhIHBvZGFseXJpaWZvbGlhIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTgsInRpbWVUYWtlbiI6MywidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MywibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6Mn19LCJhZGRpdGlvbmFsU3RhdHVzIjpbeyJjbGJEYXRhc2V0S2V5IjoiNTMxMzEiLCJkYXRhc2V0QWxpYXMiOiJJVUNOIiwiZGF0YXNldEtleSI6IjE5NDkxNTk2LTM1YWUtNGE5MS05YTk4LTg1Y2Y1MDVmMWJkMyIsInN0YXR1cyI6IkxFQVNUX0NPTkNFUk4iLCJzdGF0dXNDb2RlIjoiTEMiLCJzb3VyY2VJZCI6IjIwMDE0MzE1NSJ9XSwic3lub255bSI6ZmFsc2UsImxlZnQiOjYxMTEwOSwicmlnaHQiOjYxMTEwOX0=",
+      "responseBodySha256": "0a6eddce2617011475b9ea2454a5e7b728e8b8f9bbb3f8805d12455ea8eb13b3",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acacia podalyriifolia",
+      "speciesId": "acacia-podalyriifolia",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 4
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acaena+magellanica&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI1MzcwODMyIiwibmFtZSI6IkFjYWVuYSBtYWdlbGxhbmljYSAoTGFtLikgVmFobCIsImNhbm9uaWNhbE5hbWUiOiJBY2FlbmEgbWFnZWxsYW5pY2EiLCJhdXRob3JzaGlwIjoiKExhbS4pIFZhaGwiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJCT1RBTklDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWNhZW5hIiwic3BlY2lmaWNFcGl0aGV0IjoibWFnZWxsYW5pY2EiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BY2FlbmE8L2k+IDxpPm1hZ2VsbGFuaWNhPC9pPiAoTGFtLikgVmFobCJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiNiIsIm5hbWUiOiJQbGFudGFlIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijc3MDc3MjgiLCJuYW1lIjoiVHJhY2hlb3BoeXRhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjIwIiwibmFtZSI6Ik1hZ25vbGlvcHNpZGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjY5MSIsIm5hbWUiOiJSb3NhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI1MDE1IiwibmFtZSI6IlJvc2FjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMzAzMTE0NyIsIm5hbWUiOiJBY2FlbmEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjUzNzA4MzIiLCJuYW1lIjoiQWNhZW5hIG1hZ2VsbGFuaWNhIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MiwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MywibmFtZVBhcnNlIjoyLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZSwibGVmdCI6ODIwMzYxLCJyaWdodCI6ODIwMzY0fQ==",
+      "responseBodySha256": "956fa2e84ec42187ca71acfb8da9113bd135de48327c0367bc9bd3d97cd5d3d3",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acaena magellanica",
+      "speciesId": "acaena-magellanica",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 5
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acanthogobius+flavimanus&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyMzc1OTc0IiwibmFtZSI6IkFjYW50aG9nb2JpdXMgZmxhdmltYW51cyAoVGVtbWluY2sgJiBTY2hsZWdlbCwgMTg0NSkiLCJjYW5vbmljYWxOYW1lIjoiQWNhbnRob2dvYml1cyBmbGF2aW1hbnVzIiwiYXV0aG9yc2hpcCI6IihUZW1taW5jayAmIFNjaGxlZ2VsLCAxODQ1KSIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWNhbnRob2dvYml1cyIsInNwZWNpZmljRXBpdGhldCI6ImZsYXZpbWFudXMiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BY2FudGhvZ29iaXVzPC9pPiA8aT5mbGF2aW1hbnVzPC9pPiAoVGVtbWluY2sgJiBTY2hsZWdlbCwgMTg0NSkifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNDQiLCJuYW1lIjoiQ2hvcmRhdGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiI1ODciLCJuYW1lIjoiUGVyY2lmb3JtZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjQyNzQiLCJuYW1lIjoiR29iaWlkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyMzc1OTY5IiwibmFtZSI6IkFjYW50aG9nb2JpdXMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjIzNzU5NzQiLCJuYW1lIjoiQWNhbnRob2dvYml1cyBmbGF2aW1hbnVzIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MiwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJhZGRpdGlvbmFsU3RhdHVzIjpbeyJjbGJEYXRhc2V0S2V5IjoiNTMxMzEiLCJkYXRhc2V0QWxpYXMiOiJJVUNOIiwiZGF0YXNldEtleSI6IjE5NDkxNTk2LTM1YWUtNGE5MS05YTk4LTg1Y2Y1MDVmMWJkMyIsInN0YXR1cyI6IkxFQVNUX0NPTkNFUk4iLCJzdGF0dXNDb2RlIjoiTEMiLCJzb3VyY2VJZCI6IjE4MTEzNyJ9XSwic3lub255bSI6ZmFsc2UsImxlZnQiOjExNzIwMzYsInJpZ2h0IjoxMTcyMDM3fQ==",
+      "responseBodySha256": "dd8c9cdeecc1587e78f4f3fbe64289d534bdb647e55536d2d373abca41e692b0",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acanthogobius flavimanus",
+      "speciesId": "acanthogobius-flavimanus",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 6
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acanthomysis+aspera&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyMjIxMDI2IiwibmFtZSI6IkFjYW50aG9teXNpcyBhc3BlcmEgSWksIDE5NjQiLCJjYW5vbmljYWxOYW1lIjoiQWNhbnRob215c2lzIGFzcGVyYSIsImF1dGhvcnNoaXAiOiJJaSwgMTk2NCIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWNhbnRob215c2lzIiwic3BlY2lmaWNFcGl0aGV0IjoiYXNwZXJhIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWNhbnRob215c2lzPC9pPiA8aT5hc3BlcmE8L2k+IElpLCAxOTY0In0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiIxIiwibmFtZSI6IkFuaW1hbGlhIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6IjU0IiwibmFtZSI6IkFydGhyb3BvZGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMjkiLCJuYW1lIjoiTWFsYWNvc3RyYWNhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI4NDEiLCJuYW1lIjoiTXlzaWRhIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI1NDA0IiwibmFtZSI6Ik15c2lkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyMjIwOTg4IiwibmFtZSI6IkFjYW50aG9teXNpcyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiMjIyMTAyNiIsIm5hbWUiOiJBY2FudGhvbXlzaXMgYXNwZXJhIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "b6b16b4875b096528512cdace4e7d32957052ab0c23b64fc93315360c855b530",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acanthomysis aspera",
+      "speciesId": "acanthomysis-aspera",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 7
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acarapis+woodi&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI0NTQyOTEwIiwibmFtZSI6IkFjYXJhcGlzIHdvb2RpIChSZW5uaWUsIDE5MjEpIiwiY2Fub25pY2FsTmFtZSI6IkFjYXJhcGlzIHdvb2RpIiwiYXV0aG9yc2hpcCI6IihSZW5uaWUsIDE5MjEpIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBY2FyYXBpcyIsInNwZWNpZmljRXBpdGhldCI6Indvb2RpIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWNhcmFwaXM8L2k+IDxpPndvb2RpPC9pPiAoUmVubmllLCAxOTIxKSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMzY3IiwibmFtZSI6IkFyYWNobmlkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiNTQzIiwibmFtZSI6IlRyb21iaWRpZm9ybWVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI2MDU5IiwibmFtZSI6IlRhcnNvbmVtaWRhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjIxMzE4NTUiLCJuYW1lIjoiQWNhcmFwaXMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjQ1NDI5MTAiLCJuYW1lIjoiQWNhcmFwaXMgd29vZGkiLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoxLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoyLCJuYW1lUGFyc2UiOjEsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlfQ==",
+      "responseBodySha256": "ba88e1f3827e724140c21de30ff248b63e8dca5c8f06a3af5802ecd33d2a5f4e",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acarapis woodi",
+      "speciesId": "acarapis-woodi",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 8
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aceria+kuko&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI2MTM1NDkzIiwibmFtZSI6IkFjZXJpYSBrdWtvIChLaXNoaWRhKSIsImNhbm9uaWNhbE5hbWUiOiJBY2VyaWEga3VrbyIsImF1dGhvcnNoaXAiOiIoS2lzaGlkYSkiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJaT09MT0dJQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFjZXJpYSIsInNwZWNpZmljRXBpdGhldCI6Imt1a28iLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BY2VyaWE8L2k+IDxpPmt1a288L2k+IChLaXNoaWRhKSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMzY3IiwibmFtZSI6IkFyYWNobmlkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiNTQzIiwibmFtZSI6IlRyb21iaWRpZm9ybWVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIyODE2IiwibmFtZSI6IkVyaW9waHlpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjEyODQ4OSIsIm5hbWUiOiJBY2VyaWEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjYxMzU0OTMiLCJuYW1lIjoiQWNlcmlhIGt1a28iLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoxLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoxLCJuYW1lUGFyc2UiOjAsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlfQ==",
+      "responseBodySha256": "e735df98663304adf5c2a677ea84da3ff48fa92f99542002d2628102799cbb88",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aceria kuko",
+      "speciesId": "aceria-kuko",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 9
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aceria+litchii&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI0NjUxNTczIiwibmFtZSI6IkFjZXJpYSBsaXRjaGlpIChLZWlmZXIsIDE5NDMpIiwiY2Fub25pY2FsTmFtZSI6IkFjZXJpYSBsaXRjaGlpIiwiYXV0aG9yc2hpcCI6IihLZWlmZXIsIDE5NDMpIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBY2VyaWEiLCJzcGVjaWZpY0VwaXRoZXQiOiJsaXRjaGlpIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWNlcmlhPC9pPiA8aT5saXRjaGlpPC9pPiAoS2VpZmVyLCAxOTQzKSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMzY3IiwibmFtZSI6IkFyYWNobmlkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiNTQzIiwibmFtZSI6IlRyb21iaWRpZm9ybWVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIyODE2IiwibmFtZSI6IkVyaW9waHlpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjEyODQ4OSIsIm5hbWUiOiJBY2VyaWEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjQ2NTE1NzMiLCJuYW1lIjoiQWNlcmlhIGxpdGNoaWkiLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoxLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoyLCJuYW1lUGFyc2UiOjEsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlfQ==",
+      "responseBodySha256": "416c0b4408aaee21f76b7b12c39b6ef21053584f15ffd8a15259ff1af4661163",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aceria litchii",
+      "speciesId": "aceria-litchii",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 11
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aclerda+takahashii&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyMDg5ODMzIiwibmFtZSI6IkFjbGVyZGEgdGFrYWhhc2hpaSBLdXdhbmEsIDE5MzIiLCJjYW5vbmljYWxOYW1lIjoiQWNsZXJkYSB0YWthaGFzaGlpIiwiYXV0aG9yc2hpcCI6Ikt1d2FuYSwgMTkzMiIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWNsZXJkYSIsInNwZWNpZmljRXBpdGhldCI6InRha2FoYXNoaWkiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BY2xlcmRhPC9pPiA8aT50YWthaGFzaGlpPC9pPiBLdXdhbmEsIDE5MzIifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNTQiLCJuYW1lIjoiQXJ0aHJvcG9kYSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIxNiIsIm5hbWUiOiJJbnNlY3RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI4MDkiLCJuYW1lIjoiSGVtaXB0ZXJhIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIzNTY2IiwibmFtZSI6IkFjbGVyZGlkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyMDg5Nzc5IiwibmFtZSI6IkFjbGVyZGEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjIwODk4MzMiLCJuYW1lIjoiQWNsZXJkYSB0YWthaGFzaGlpIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjowLCJsdWNlbmVNYXRjaCI6Mn19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "f74c72a2db02ef214ce150679ce9385273ad5799c439db12944e42cd3244d443",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aclerda takahashii",
+      "speciesId": "aclerda-takahashii",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 12
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acleris+comariana&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIxNzM5ODE2IiwibmFtZSI6IkFjbGVyaXMgY29tYXJpYW5hIChMaWVuaWcgJiBaZWxsZXIsIDE4NDYpIiwiY2Fub25pY2FsTmFtZSI6IkFjbGVyaXMgY29tYXJpYW5hIiwiYXV0aG9yc2hpcCI6IihMaWVuaWcgJiBaZWxsZXIsIDE4NDYpIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBY2xlcmlzIiwic3BlY2lmaWNFcGl0aGV0IjoiY29tYXJpYW5hIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWNsZXJpczwvaT4gPGk+Y29tYXJpYW5hPC9pPiAoTGllbmlnICYgWmVsbGVyLCAxODQ2KSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjE2IiwibmFtZSI6Ikluc2VjdGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6Ijc5NyIsIm5hbWUiOiJMZXBpZG9wdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiNTM0MyIsIm5hbWUiOiJUb3J0cmljaWRhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjE3Mzk3MjQiLCJuYW1lIjoiQWNsZXJpcyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiMTczOTgxNiIsIm5hbWUiOiJBY2xlcmlzIGNvbWFyaWFuYSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjJ9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "66e4f495a50bcd22dca0175c43f28b5a6c1a7cc37b7a1843976770879996413d",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acleris comariana",
+      "speciesId": "acleris-comariana",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 15
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aculops+fuchsiae&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI2OTE0NDMzIiwibmFtZSI6IkFjdWxvcHMgZnVjaHNpYWUgS2VpZmVyLCAxOTcyIiwiY2Fub25pY2FsTmFtZSI6IkFjdWxvcHMgZnVjaHNpYWUiLCJhdXRob3JzaGlwIjoiS2VpZmVyLCAxOTcyIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBY3Vsb3BzIiwic3BlY2lmaWNFcGl0aGV0IjoiZnVjaHNpYWUiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BY3Vsb3BzPC9pPiA8aT5mdWNoc2lhZTwvaT4gS2VpZmVyLCAxOTcyIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiIxIiwibmFtZSI6IkFuaW1hbGlhIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6IjU0IiwibmFtZSI6IkFydGhyb3BvZGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIzNjciLCJuYW1lIjoiQXJhY2huaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI1NDMiLCJuYW1lIjoiVHJvbWJpZGlmb3JtZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjI4MTYiLCJuYW1lIjoiRXJpb3BoeWlkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyMTI4NTI4IiwibmFtZSI6IkFjdWxvcHMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjY5MTQ0MzMiLCJuYW1lIjoiQWN1bG9wcyBmdWNoc2lhZSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "21f5786dac6dfb19ec0a5a4eb4c7eccaee1ad9c8a3e7814ed13bfe16fd3ea42b",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aculops fuchsiae",
+      "speciesId": "aculops-fuchsiae",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 16
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acyrthosiphon+kondoi&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyMDc3NDkxIiwibmFtZSI6IkFjeXJ0aG9zaXBob24ga29uZG9pIFNoaW5qaSwgMTkzOCIsImNhbm9uaWNhbE5hbWUiOiJBY3lydGhvc2lwaG9uIGtvbmRvaSIsImF1dGhvcnNoaXAiOiJTaGluamksIDE5MzgiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJaT09MT0dJQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFjeXJ0aG9zaXBob24iLCJzcGVjaWZpY0VwaXRoZXQiOiJrb25kb2kiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BY3lydGhvc2lwaG9uPC9pPiA8aT5rb25kb2k8L2k+IFNoaW5qaSwgMTkzOCJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjE2IiwibmFtZSI6Ikluc2VjdGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjgwOSIsIm5hbWUiOiJIZW1pcHRlcmEiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjMwNDIiLCJuYW1lIjoiQXBoaWRpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjA3NzM5OCIsIm5hbWUiOiJBY3lydGhvc2lwaG9uIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIyMDc3NDkxIiwibmFtZSI6IkFjeXJ0aG9zaXBob24ga29uZG9pIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MSwibmFtZVBhcnNlIjowLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "0b5c3ac11e7a2fea145d471c5e566ebf836400c0b5ad0eb010819a1f3934d318",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acyrthosiphon kondoi",
+      "speciesId": "acyrthosiphon-kondoi",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 17
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Acyrthosiphon+primulae&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyMDc3NDQzIiwibmFtZSI6IkFjeXJ0aG9zaXBob24gcHJpbXVsYWUgKFRoZW9iYWxkLCAxOTEzKSIsImNhbm9uaWNhbE5hbWUiOiJBY3lydGhvc2lwaG9uIHByaW11bGFlIiwiYXV0aG9yc2hpcCI6IihUaGVvYmFsZCwgMTkxMykiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJaT09MT0dJQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFjeXJ0aG9zaXBob24iLCJzcGVjaWZpY0VwaXRoZXQiOiJwcmltdWxhZSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFjeXJ0aG9zaXBob248L2k+IDxpPnByaW11bGFlPC9pPiAoVGhlb2JhbGQsIDE5MTMpIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiIxIiwibmFtZSI6IkFuaW1hbGlhIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6IjU0IiwibmFtZSI6IkFydGhyb3BvZGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMTYiLCJuYW1lIjoiSW5zZWN0YSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiODA5IiwibmFtZSI6IkhlbWlwdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiMzA0MiIsIm5hbWUiOiJBcGhpZGlkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyMDc3Mzk4IiwibmFtZSI6IkFjeXJ0aG9zaXBob24iLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjIwNzc0NDMiLCJuYW1lIjoiQWN5cnRob3NpcGhvbiBwcmltdWxhZSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjIsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "6109065153a01d8a91297880cde41a1cf26a9798486adf2ba89c1b47181ffb9e",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Acyrthosiphon primulae",
+      "speciesId": "acyrthosiphon-primulae",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 18
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Adiantum+macrophyllum&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyNjUxODUwIiwibmFtZSI6IkFkaWFudHVtIG1hY3JvcGh5bGx1bSBTdy4iLCJjYW5vbmljYWxOYW1lIjoiQWRpYW50dW0gbWFjcm9waHlsbHVtIiwiYXV0aG9yc2hpcCI6IlN3LiIsInJhbmsiOiJTUEVDSUVTIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFkaWFudHVtIiwic3BlY2lmaWNFcGl0aGV0IjoibWFjcm9waHlsbHVtIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWRpYW50dW08L2k+IDxpPm1hY3JvcGh5bGx1bTwvaT4gU3cuIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiI2IiwibmFtZSI6IlBsYW50YWUiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNzcwNzcyOCIsIm5hbWUiOiJUcmFjaGVvcGh5dGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiI3MjI4Njg0IiwibmFtZSI6IlBvbHlwb2Rpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiIzOTIiLCJuYW1lIjoiUG9seXBvZGlhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIyMzY3IiwibmFtZSI6IlB0ZXJpZGFjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjY1MDc5NiIsIm5hbWUiOiJBZGlhbnR1bSIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiMjY1MTg1MCIsIm5hbWUiOiJBZGlhbnR1bSBtYWNyb3BoeWxsdW0iLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjozLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjo0LCJuYW1lUGFyc2UiOjMsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0Ijo4ODAzMzIsInJpZ2h0Ijo4ODAzMzJ9",
+      "responseBodySha256": "23a285ec0f3cb9bd69d58bd55a4489e7fc3382cf843f0ec0228492f40a3f9628",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Adiantum macrophyllum",
+      "speciesId": "adiantum-macrophyllum",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 19
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aedeomyia+squamipennis&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIxNjQ5Mzk3IiwibmFtZSI6IkFlZGVvbXlpYSBzcXVhbWlwZW5uaXMgKEx5bmNoIEFycmliw6FsemFnYSwgMTg3OCkiLCJjYW5vbmljYWxOYW1lIjoiQWVkZW9teWlhIHNxdWFtaXBlbm5pcyIsImF1dGhvcnNoaXAiOiIoTHluY2ggQXJyaWLDoWx6YWdhLCAxODc4KSIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWVkZW9teWlhIiwic3BlY2lmaWNFcGl0aGV0Ijoic3F1YW1pcGVubmlzIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWVkZW9teWlhPC9pPiA8aT5zcXVhbWlwZW5uaXM8L2k+IChMeW5jaCBBcnJpYsOhbHphZ2EsIDE4NzgpIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiIxIiwibmFtZSI6IkFuaW1hbGlhIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6IjU0IiwibmFtZSI6IkFydGhyb3BvZGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMTYiLCJuYW1lIjoiSW5zZWN0YSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiODExIiwibmFtZSI6IkRpcHRlcmEiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjMzNDYiLCJuYW1lIjoiQ3VsaWNpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMTY0OTM5NSIsIm5hbWUiOiJBZWRlb215aWEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjE2NDkzOTciLCJuYW1lIjoiQWVkZW9teWlhIHNxdWFtaXBlbm5pcyIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjJ9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "31a1dd6df20353130cfacecb190825f1cd13551e17832c2358d15bd8fe6fc591",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aedeomyia squamipennis",
+      "speciesId": "aedeomyia-squamipennis",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 20
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aedes+notoscriptus&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIxNjUyMDQzIiwibmFtZSI6IkFlZGVzIG5vdG9zY3JpcHR1cyAoU2t1c2UsIDE4ODkpIiwiY2Fub25pY2FsTmFtZSI6IkFlZGVzIG5vdG9zY3JpcHR1cyIsImF1dGhvcnNoaXAiOiIoU2t1c2UsIDE4ODkpIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBZWRlcyIsInNwZWNpZmljRXBpdGhldCI6Im5vdG9zY3JpcHR1cyIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFlZGVzPC9pPiA8aT5ub3Rvc2NyaXB0dXM8L2k+IChTa3VzZSwgMTg4OSkifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNTQiLCJuYW1lIjoiQXJ0aHJvcG9kYSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIxNiIsIm5hbWUiOiJJbnNlY3RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI4MTEiLCJuYW1lIjoiRGlwdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiMzM0NiIsIm5hbWUiOiJDdWxpY2lkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiI3OTI0NjQ2IiwibmFtZSI6IkFlZGVzIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIxNjUyMDQzIiwibmFtZSI6IkFlZGVzIG5vdG9zY3JpcHR1cyIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "4c771fef905f836143a535886d851912f1918f0d66a1528b97f5bedfa37781cf",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aedes notoscriptus",
+      "speciesId": "aedes-notoscriptus",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 21
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aegilops+tauschii&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI1Mjg5Nzc5IiwibmFtZSI6IkFlZ2lsb3BzIHRhdXNjaGlpIENvc3MuIiwiY2Fub25pY2FsTmFtZSI6IkFlZ2lsb3BzIHRhdXNjaGlpIiwiYXV0aG9yc2hpcCI6IkNvc3MuIiwicmFuayI6IlNQRUNJRVMiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWVnaWxvcHMiLCJzcGVjaWZpY0VwaXRoZXQiOiJ0YXVzY2hpaSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFlZ2lsb3BzPC9pPiA8aT50YXVzY2hpaTwvaT4gQ29zcy4ifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjYiLCJuYW1lIjoiUGxhbnRhZSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI3NzA3NzI4IiwibmFtZSI6IlRyYWNoZW9waHl0YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjE5NiIsIm5hbWUiOiJMaWxpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiIxMzY5IiwibmFtZSI6IlBvYWxlcyIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiMzA3MyIsIm5hbWUiOiJQb2FjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjcwMzUwMSIsIm5hbWUiOiJBZWdpbG9wcyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiNTI4OTc3OSIsIm5hbWUiOiJBZWdpbG9wcyB0YXVzY2hpaSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjEsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjF9fSwiYWRkaXRpb25hbFN0YXR1cyI6W3siY2xiRGF0YXNldEtleSI6IjUzMTMxIiwiZGF0YXNldEFsaWFzIjoiSVVDTiIsImRhdGFzZXRLZXkiOiIxOTQ5MTU5Ni0zNWFlLTRhOTEtOWE5OC04NWNmNTA1ZjFiZDMiLCJzdGF0dXMiOiJMRUFTVF9DT05DRVJOIiwic3RhdHVzQ29kZSI6IkxDIiwic291cmNlSWQiOiIxNzIwODYifV0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0Ijo0NDEzMDIsInJpZ2h0Ijo0NDEzMDR9",
+      "responseBodySha256": "a26ec8321f4fd2b774731a8f329aec47cc8d05d78f482cef07afe3f399a32d8f",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aegilops tauschii",
+      "speciesId": "aegilops-tauschii",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 22
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aeromonas+salmonicida&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIzMjIyODg2IiwibmFtZSI6IkFlcm9tb25hcyBzYWxtb25pY2lkYSAoTGVobWFubiAmIE5ldW1hbm4sIDE4OTYpIEdyaWZmaW4gZXQgYWwuLCAxOTUzIiwiY2Fub25pY2FsTmFtZSI6IkFlcm9tb25hcyBzYWxtb25pY2lkYSIsImF1dGhvcnNoaXAiOiIoTGVobWFubiAmIE5ldW1hbm4sIDE4OTYpIEdyaWZmaW4gZXQgYWwuLCAxOTUzIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBZXJvbW9uYXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJzYWxtb25pY2lkYSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFlcm9tb25hczwvaT4gPGk+c2FsbW9uaWNpZGE8L2k+IChMZWhtYW5uICYgTmV1bWFubiwgMTg5NikgR3JpZmZpbiBldCBhbC4sIDE5NTMifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjMiLCJuYW1lIjoiQmFjdGVyaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiMTExIiwibmFtZSI6IlByb3Rlb2JhY3RlcmlhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMzYyIiwibmFtZSI6IkdhbW1hcHJvdGVvYmFjdGVyaWEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjEwODAxMzgzIiwibmFtZSI6IkVudGVyb2JhY3RlcmFsZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6Ijg5NTAiLCJuYW1lIjoiQWVyb21vbmFkYWNlYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIzMjIyMzgwIiwibmFtZSI6IkFlcm9tb25hcyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiMzIyMjg4NiIsIm5hbWUiOiJBZXJvbW9uYXMgc2FsbW9uaWNpZGEiLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoyLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoyLCJuYW1lUGFyc2UiOjEsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0Ijo5NDA2NjMsInJpZ2h0Ijo5NDA2Njh9",
+      "responseBodySha256": "b1290f065122fff2519d3e1e72550f1212b7d1ffa18b04161e80e2bd23478545",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aeromonas salmonicida",
+      "speciesId": "aeromonas-salmonicida",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 23
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Agdestis+clematidea&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI1MzgzOTgxIiwibmFtZSI6IkFnZGVzdGlzIGNsZW1hdGlkZWEgTW9jLiAmIFNlc3PDqSBleCBEQy4iLCJjYW5vbmljYWxOYW1lIjoiQWdkZXN0aXMgY2xlbWF0aWRlYSIsImF1dGhvcnNoaXAiOiJNb2MuICYgU2Vzc8OpIGV4IERDLiIsInJhbmsiOiJTUEVDSUVTIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFnZGVzdGlzIiwic3BlY2lmaWNFcGl0aGV0IjoiY2xlbWF0aWRlYSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFnZGVzdGlzPC9pPiA8aT5jbGVtYXRpZGVhPC9pPiBNb2MuICYgU2Vzc8OpIGV4IERDLiJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiNiIsIm5hbWUiOiJQbGFudGFlIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijc3MDc3MjgiLCJuYW1lIjoiVHJhY2hlb3BoeXRhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjIwIiwibmFtZSI6Ik1hZ25vbGlvcHNpZGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjQyMiIsIm5hbWUiOiJDYXJ5b3BoeWxsYWxlcyIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiMzcwOTkxOCIsIm5hbWUiOiJBZ2Rlc3RpZGFjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMzA4NDAwMyIsIm5hbWUiOiJBZ2Rlc3RpcyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiNTM4Mzk4MSIsIm5hbWUiOiJBZ2Rlc3RpcyBjbGVtYXRpZGVhIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTgsInRpbWVUYWtlbiI6MiwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MywibmFtZVBhcnNlIjowLCJsdWNlbmVNYXRjaCI6Mn19LCJzeW5vbnltIjpmYWxzZSwibGVmdCI6NTUxMzU4LCJyaWdodCI6NTUxMzU5fQ==",
+      "responseBodySha256": "e8c3bbd384ec60648ed6b92d3c8a8f0ec68e80f8f365d5f796ad92e1554bf358",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Agdestis clematidea",
+      "speciesId": "agdestis-clematidea",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 24
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aglaonema+commutatum&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyODY2NDY3IiwibmFtZSI6IkFnbGFvbmVtYSBjb21tdXRhdHVtIFNjaG90dCIsImNhbm9uaWNhbE5hbWUiOiJBZ2xhb25lbWEgY29tbXV0YXR1bSIsImF1dGhvcnNoaXAiOiJTY2hvdHQiLCJyYW5rIjoiU1BFQ0lFUyIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBZ2xhb25lbWEiLCJzcGVjaWZpY0VwaXRoZXQiOiJjb21tdXRhdHVtIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWdsYW9uZW1hPC9pPiA8aT5jb21tdXRhdHVtPC9pPiBTY2hvdHQifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjYiLCJuYW1lIjoiUGxhbnRhZSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI3NzA3NzI4IiwibmFtZSI6IlRyYWNoZW9waHl0YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjE5NiIsIm5hbWUiOiJMaWxpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI1NTEiLCJuYW1lIjoiQWxpc21hdGFsZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjY5NzkiLCJuYW1lIjoiQXJhY2VhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjI4NjYzNTAiLCJuYW1lIjoiQWdsYW9uZW1hIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIyODY2NDY3IiwibmFtZSI6IkFnbGFvbmVtYSBjb21tdXRhdHVtIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZSwibGVmdCI6MzQ5ODQ4LCJyaWdodCI6MzQ5ODUzfQ==",
+      "responseBodySha256": "35143ed542350324683fb183fd62793072efb0ab86f19f104afd9c3a4b271b95",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aglaonema commutatum",
+      "speciesId": "aglaonema-commutatum",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 25
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Agrilus+cuprescens&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI0NDMyNjI2IiwibmFtZSI6IkFncmlsdXMgY3VwcmVzY2VucyAoTcOpbsOpdHJpw6lzLCAxODMyKSIsImNhbm9uaWNhbE5hbWUiOiJBZ3JpbHVzIGN1cHJlc2NlbnMiLCJhdXRob3JzaGlwIjoiKE3DqW7DqXRyacOpcywgMTgzMikiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJaT09MT0dJQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFncmlsdXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJjdXByZXNjZW5zIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWdyaWx1czwvaT4gPGk+Y3VwcmVzY2VuczwvaT4gKE3DqW7DqXRyacOpcywgMTgzMikifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNTQiLCJuYW1lIjoiQXJ0aHJvcG9kYSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIxNiIsIm5hbWUiOiJJbnNlY3RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiIxNDcwIiwibmFtZSI6IkNvbGVvcHRlcmEiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjM3ODkiLCJuYW1lIjoiQnVwcmVzdGlkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIxMDQ5NTMxIiwibmFtZSI6IkFncmlsdXMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjQ0MzI2MjYiLCJuYW1lIjoiQWdyaWx1cyBjdXByZXNjZW5zIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "02174efb8e18b449920dc2153dc8787c1e2994347afa674e6c3b4054b834430f",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Agrilus cuprescens",
+      "speciesId": "agrilus-cuprescens",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 26
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Agrilus+cyanescens&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI0NDMyNzczIiwibmFtZSI6IkFncmlsdXMgY3lhbmVzY2VucyAoUmF0emVidXJnLCAxODM3KSIsImNhbm9uaWNhbE5hbWUiOiJBZ3JpbHVzIGN5YW5lc2NlbnMiLCJhdXRob3JzaGlwIjoiKFJhdHplYnVyZywgMTgzNykiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJaT09MT0dJQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFncmlsdXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJjeWFuZXNjZW5zIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWdyaWx1czwvaT4gPGk+Y3lhbmVzY2VuczwvaT4gKFJhdHplYnVyZywgMTgzNykifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNTQiLCJuYW1lIjoiQXJ0aHJvcG9kYSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIxNiIsIm5hbWUiOiJJbnNlY3RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiIxNDcwIiwibmFtZSI6IkNvbGVvcHRlcmEiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjM3ODkiLCJuYW1lIjoiQnVwcmVzdGlkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIxMDQ5NTMxIiwibmFtZSI6IkFncmlsdXMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjQ0MzI3NzMiLCJuYW1lIjoiQWdyaWx1cyBjeWFuZXNjZW5zIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MSwibmFtZVBhcnNlIjowLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "172b85bacf36ee27e982dd2aa783e26e161a43ed96fde33ff1c0ab62bfee41b2",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Agrilus cyanescens",
+      "speciesId": "agrilus-cyanescens",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 27
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Agrilus+ribesi&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI0NDMyNjQwIiwibmFtZSI6IkFncmlsdXMgcmliZXNpIFNjaGFlZmVyLCAxOTQ2IiwiY2Fub25pY2FsTmFtZSI6IkFncmlsdXMgcmliZXNpIiwiYXV0aG9yc2hpcCI6IlNjaGFlZmVyLCAxOTQ2IiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBZ3JpbHVzIiwic3BlY2lmaWNFcGl0aGV0IjoicmliZXNpIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWdyaWx1czwvaT4gPGk+cmliZXNpPC9pPiBTY2hhZWZlciwgMTk0NiJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjE2IiwibmFtZSI6Ikluc2VjdGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjE0NzAiLCJuYW1lIjoiQ29sZW9wdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiMzc4OSIsIm5hbWUiOiJCdXByZXN0aWRhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjEwNDk1MzEiLCJuYW1lIjoiQWdyaWx1cyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiNDQzMjY0MCIsIm5hbWUiOiJBZ3JpbHVzIHJpYmVzaSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "30dc29750ab8d0ee3499ff67220d1cf6c107f5cc2e061d7b49bb2d63ed715940",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Agrilus ribesi",
+      "speciesId": "agrilus-ribesi",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 28
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Agriotes+lineatus&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIxMTYyMTI3IiwibmFtZSI6IkFncmlvdGVzIGxpbmVhdHVzIChMaW5uYWV1cywgMTc2NykiLCJjYW5vbmljYWxOYW1lIjoiQWdyaW90ZXMgbGluZWF0dXMiLCJhdXRob3JzaGlwIjoiKExpbm5hZXVzLCAxNzY3KSIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWdyaW90ZXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJsaW5lYXR1cyIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFncmlvdGVzPC9pPiA8aT5saW5lYXR1czwvaT4gKExpbm5hZXVzLCAxNzY3KSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjE2IiwibmFtZSI6Ikluc2VjdGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjE0NzAiLCJuYW1lIjoiQ29sZW9wdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiNzgyNSIsIm5hbWUiOiJFbGF0ZXJpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMTE2MjEyNSIsIm5hbWUiOiJBZ3Jpb3RlcyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiMTE2MjEyNyIsIm5hbWUiOiJBZ3Jpb3RlcyBsaW5lYXR1cyIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "396a81b37833c72340f41868a331f3be987fe17618064f18a0e44a73cce3c368",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Agriotes lineatus",
+      "speciesId": "agriotes-lineatus",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 29
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Agriotes+obscurus&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI1ODc4NzczIiwibmFtZSI6IkFncmlvdGVzIG9ic2N1cnVzIChMaW5uYWV1cywgMTc1OCkiLCJjYW5vbmljYWxOYW1lIjoiQWdyaW90ZXMgb2JzY3VydXMiLCJhdXRob3JzaGlwIjoiKExpbm5hZXVzLCAxNzU4KSIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWdyaW90ZXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJvYnNjdXJ1cyIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFncmlvdGVzPC9pPiA8aT5vYnNjdXJ1czwvaT4gKExpbm5hZXVzLCAxNzU4KSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjE2IiwibmFtZSI6Ikluc2VjdGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjE0NzAiLCJuYW1lIjoiQ29sZW9wdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiNzgyNSIsIm5hbWUiOiJFbGF0ZXJpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMTE2MjEyNSIsIm5hbWUiOiJBZ3Jpb3RlcyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiNTg3ODc3MyIsIm5hbWUiOiJBZ3Jpb3RlcyBvYnNjdXJ1cyIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjEsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "9532d8a0227ae501f9e62ef722f96fc371fdb520f489bde1c93fee6dfd4a6d1a",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Agriotes obscurus",
+      "speciesId": "agriotes-obscurus",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 30
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Agrostis+castellana&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyNzA2NTAxIiwibmFtZSI6IkFncm9zdGlzIGNhc3RlbGxhbmEgQm9pc3MuICYgUmV1dC4iLCJjYW5vbmljYWxOYW1lIjoiQWdyb3N0aXMgY2FzdGVsbGFuYSIsImF1dGhvcnNoaXAiOiJCb2lzcy4gJiBSZXV0LiIsInJhbmsiOiJTUEVDSUVTIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFncm9zdGlzIiwic3BlY2lmaWNFcGl0aGV0IjoiY2FzdGVsbGFuYSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFncm9zdGlzPC9pPiA8aT5jYXN0ZWxsYW5hPC9pPiBCb2lzcy4gJiBSZXV0LiJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiNiIsIm5hbWUiOiJQbGFudGFlIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijc3MDc3MjgiLCJuYW1lIjoiVHJhY2hlb3BoeXRhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMTk2IiwibmFtZSI6IkxpbGlvcHNpZGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjEzNjkiLCJuYW1lIjoiUG9hbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIzMDczIiwibmFtZSI6IlBvYWNlYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyNzA2NDM0IiwibmFtZSI6IkFncm9zdGlzIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIyNzA2NTAxIiwibmFtZSI6IkFncm9zdGlzIGNhc3RlbGxhbmEiLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoyLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoyLCJuYW1lUGFyc2UiOjEsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0Ijo0NDE3MTQsInJpZ2h0Ijo0NDE3MTR9",
+      "responseBodySha256": "bf9374bbf45082e2ad0d41e5d860e8a6d4a3d09d72c9df150d31fe21763b759a",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Agrostis castellana",
+      "speciesId": "agrostis-castellana",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 31
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Albizia+procera&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyOTczMTY3IiwibmFtZSI6IkFsYml6aWEgcHJvY2VyYSAoUm94Yi4pIEJlbnRoLiIsImNhbm9uaWNhbE5hbWUiOiJBbGJpemlhIHByb2NlcmEiLCJhdXRob3JzaGlwIjoiKFJveGIuKSBCZW50aC4iLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJCT1RBTklDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWxiaXppYSIsInNwZWNpZmljRXBpdGhldCI6InByb2NlcmEiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BbGJpemlhPC9pPiA8aT5wcm9jZXJhPC9pPiAoUm94Yi4pIEJlbnRoLiJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiNiIsIm5hbWUiOiJQbGFudGFlIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijc3MDc3MjgiLCJuYW1lIjoiVHJhY2hlb3BoeXRhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjIwIiwibmFtZSI6Ik1hZ25vbGlvcHNpZGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjEzNzAiLCJuYW1lIjoiRmFiYWxlcyIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiNTM4NiIsIm5hbWUiOiJGYWJhY2VhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjI5NzI4OTciLCJuYW1lIjoiQWxiaXppYSIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiMjk3MzE2NyIsIm5hbWUiOiJBbGJpemlhIHByb2NlcmEiLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoyLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjozLCJuYW1lUGFyc2UiOjEsImx1Y2VuZU1hdGNoIjoyfX0sImFkZGl0aW9uYWxTdGF0dXMiOlt7ImNsYkRhdGFzZXRLZXkiOiI1MzEzMSIsImRhdGFzZXRBbGlhcyI6IklVQ04iLCJkYXRhc2V0S2V5IjoiMTk0OTE1OTYtMzVhZS00YTkxLTlhOTgtODVjZjUwNWYxYmQzIiwic3RhdHVzIjoiTEVBU1RfQ09OQ0VSTiIsInN0YXR1c0NvZGUiOiJMQyIsInNvdXJjZUlkIjoiNjA3NTc5NTYifV0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0Ijo2MTIxMTQsInJpZ2h0Ijo2MTIxMTV9",
+      "responseBodySha256": "151eb559a7b2945fb80342df3f5f374c76f7ac8418a1a2dc6bcaabca409da659",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Albizia procera",
+      "speciesId": "albizia-procera",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 32
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aleurites+moluccanus&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI0OTMwNjc5IiwibmFtZSI6IkFsZXVyaXRlcyBtb2x1Y2NhbnVzIChMLikgV2lsbGQuIiwiY2Fub25pY2FsTmFtZSI6IkFsZXVyaXRlcyBtb2x1Y2NhbnVzIiwiYXV0aG9yc2hpcCI6IihMLikgV2lsbGQuIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiQk9UQU5JQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFsZXVyaXRlcyIsInNwZWNpZmljRXBpdGhldCI6Im1vbHVjY2FudXMiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BbGV1cml0ZXM8L2k+IDxpPm1vbHVjY2FudXM8L2k+IChMLikgV2lsbGQuIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiI2IiwibmFtZSI6IlBsYW50YWUiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNzcwNzcyOCIsIm5hbWUiOiJUcmFjaGVvcGh5dGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMjAiLCJuYW1lIjoiTWFnbm9saW9wc2lkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiMTQxNCIsIm5hbWUiOiJNYWxwaWdoaWFsZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjQ2OTEiLCJuYW1lIjoiRXVwaG9yYmlhY2VhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjMwNzI0MzYiLCJuYW1lIjoiQWxldXJpdGVzIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiI0OTMwNjc5IiwibmFtZSI6IkFsZXVyaXRlcyBtb2x1Y2NhbnVzIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJhZGRpdGlvbmFsU3RhdHVzIjpbeyJjbGJEYXRhc2V0S2V5IjoiNTMxMzEiLCJkYXRhc2V0QWxpYXMiOiJJVUNOIiwiZGF0YXNldEtleSI6IjE5NDkxNTk2LTM1YWUtNGE5MS05YTk4LTg1Y2Y1MDVmMWJkMyIsInN0YXR1cyI6IkxFQVNUX0NPTkNFUk4iLCJzdGF0dXNDb2RlIjoiTEMiLCJzb3VyY2VJZCI6IjE4NDM1NjE4In1dLCJzeW5vbnltIjpmYWxzZSwibGVmdCI6NzM5OTc2LCJyaWdodCI6NzM5OTc4fQ==",
+      "responseBodySha256": "a125bd5ca0fa0e5cbf215455013b96f896c993dba67d95c371dd57d071860f6b",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aleurites moluccanus",
+      "speciesId": "aleurites-moluccanus",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 33
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aleurocanthus+woglumi&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyMDEyMTU3IiwibmFtZSI6IkFsZXVyb2NhbnRodXMgd29nbHVtaSBBc2hieSwgMTkxNSIsImNhbm9uaWNhbE5hbWUiOiJBbGV1cm9jYW50aHVzIHdvZ2x1bWkiLCJhdXRob3JzaGlwIjoiQXNoYnksIDE5MTUiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJaT09MT0dJQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFsZXVyb2NhbnRodXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJ3b2dsdW1pIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWxldXJvY2FudGh1czwvaT4gPGk+d29nbHVtaTwvaT4gQXNoYnksIDE5MTUifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNTQiLCJuYW1lIjoiQXJ0aHJvcG9kYSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIxNiIsIm5hbWUiOiJJbnNlY3RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI4MDkiLCJuYW1lIjoiSGVtaXB0ZXJhIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI0MzA0IiwibmFtZSI6IkFsZXlyb2RpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjAxMjE1NiIsIm5hbWUiOiJBbGV1cm9jYW50aHVzIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIyMDEyMTU3IiwibmFtZSI6IkFsZXVyb2NhbnRodXMgd29nbHVtaSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "311593d1be13130b44a89651785cddcda293ae631de55b1435a065aef70d1c3b",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aleurocanthus woglumi",
+      "speciesId": "aleurocanthus-woglumi",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 34
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aleuroclava+aucubae&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI3NjM4NDgyIiwibmFtZSI6IkFsZXVyb2NsYXZhIGF1Y3ViYWUgKEt1d2FuYSwgMTkxMSkiLCJjYW5vbmljYWxOYW1lIjoiQWxldXJvY2xhdmEgYXVjdWJhZSIsImF1dGhvcnNoaXAiOiIoS3V3YW5hLCAxOTExKSIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWxldXJvY2xhdmEiLCJzcGVjaWZpY0VwaXRoZXQiOiJhdWN1YmFlIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWxldXJvY2xhdmE8L2k+IDxpPmF1Y3ViYWU8L2k+IChLdXdhbmEsIDE5MTEpIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiIxIiwibmFtZSI6IkFuaW1hbGlhIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6IjU0IiwibmFtZSI6IkFydGhyb3BvZGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMTYiLCJuYW1lIjoiSW5zZWN0YSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiODA5IiwibmFtZSI6IkhlbWlwdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiNDMwNCIsIm5hbWUiOiJBbGV5cm9kaWRhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjMyNjU2MTYiLCJuYW1lIjoiQWxldXJvY2xhdmEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6Ijc2Mzg0ODIiLCJuYW1lIjoiQWxldXJvY2xhdmEgYXVjdWJhZSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "beeafdfd2cada6a80aa186347733d862b33d8416458963a72e6d13b3f7972521",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aleuroclava aucubae",
+      "speciesId": "aleuroclava-aucubae",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 35
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aleurodicus+dugesii&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI3NzQxOTcxIiwibmFtZSI6IkFsZXVyb2RpY3VzIGR1Z2VzaWkgQ29ja2VyZWxsLCAxODk2IiwiY2Fub25pY2FsTmFtZSI6IkFsZXVyb2RpY3VzIGR1Z2VzaWkiLCJhdXRob3JzaGlwIjoiQ29ja2VyZWxsLCAxODk2IiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBbGV1cm9kaWN1cyIsInNwZWNpZmljRXBpdGhldCI6ImR1Z2VzaWkiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BbGV1cm9kaWN1czwvaT4gPGk+ZHVnZXNpaTwvaT4gQ29ja2VyZWxsLCAxODk2In0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiIxIiwibmFtZSI6IkFuaW1hbGlhIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6IjU0IiwibmFtZSI6IkFydGhyb3BvZGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMTYiLCJuYW1lIjoiSW5zZWN0YSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiODA5IiwibmFtZSI6IkhlbWlwdGVyYSIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiNDMwNCIsIm5hbWUiOiJBbGV5cm9kaWRhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjIwMTIxMjEiLCJuYW1lIjoiQWxldXJvZGljdXMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6Ijc3NDE5NzEiLCJuYW1lIjoiQWxldXJvZGljdXMgZHVnZXNpaSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "f713c91a5a844fb98dd1314f8d0a6929d20a2d8b288e8c142170e5d576e0cece",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aleurodicus dugesii",
+      "speciesId": "aleurodicus-dugesii",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 36
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aleurodicus+rugioperculatus&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI4MDI2MTUyIiwibmFtZSI6IkFsZXVyb2RpY3VzIHJ1Z2lvcGVyY3VsYXR1cyBNYXJ0aW4sIDIwMDQiLCJjYW5vbmljYWxOYW1lIjoiQWxldXJvZGljdXMgcnVnaW9wZXJjdWxhdHVzIiwiYXV0aG9yc2hpcCI6Ik1hcnRpbiwgMjAwNCIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWxldXJvZGljdXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJydWdpb3BlcmN1bGF0dXMiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BbGV1cm9kaWN1czwvaT4gPGk+cnVnaW9wZXJjdWxhdHVzPC9pPiBNYXJ0aW4sIDIwMDQifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNTQiLCJuYW1lIjoiQXJ0aHJvcG9kYSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIxNiIsIm5hbWUiOiJJbnNlY3RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI4MDkiLCJuYW1lIjoiSGVtaXB0ZXJhIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI0MzA0IiwibmFtZSI6IkFsZXlyb2RpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjAxMjEyMSIsIm5hbWUiOiJBbGV1cm9kaWN1cyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiODAyNjE1MiIsIm5hbWUiOiJBbGV1cm9kaWN1cyBydWdpb3BlcmN1bGF0dXMiLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoxLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoxLCJuYW1lUGFyc2UiOjAsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlfQ==",
+      "responseBodySha256": "563170ea8a7810ce7dd99776e0fd7333e7d4cfa598e5985aa63882bc188c2a5d",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aleurodicus rugioperculatus",
+      "speciesId": "aleurodicus-rugioperculatus",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 37
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aleuroglandulus+subtilis&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI3NDgwMTk5IiwibmFtZSI6IkFsZXVyb2dsYW5kdWx1cyBzdWJ0aWxpcyBCb25kYXIsIDE5MjMiLCJjYW5vbmljYWxOYW1lIjoiQWxldXJvZ2xhbmR1bHVzIHN1YnRpbGlzIiwiYXV0aG9yc2hpcCI6IkJvbmRhciwgMTkyMyIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IlpPT0xPR0lDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWxldXJvZ2xhbmR1bHVzIiwic3BlY2lmaWNFcGl0aGV0Ijoic3VidGlsaXMiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BbGV1cm9nbGFuZHVsdXM8L2k+IDxpPnN1YnRpbGlzPC9pPiBCb25kYXIsIDE5MjMifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjEiLCJuYW1lIjoiQW5pbWFsaWEiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNTQiLCJuYW1lIjoiQXJ0aHJvcG9kYSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIxNiIsIm5hbWUiOiJJbnNlY3RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI4MDkiLCJuYW1lIjoiSGVtaXB0ZXJhIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI0MzA0IiwibmFtZSI6IkFsZXlyb2RpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiNDc3MTc0MiIsIm5hbWUiOiJBbGV1cm9nbGFuZHVsdXMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6Ijc0ODAxOTkiLCJuYW1lIjoiQWxldXJvZ2xhbmR1bHVzIHN1YnRpbGlzIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MiwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "25bc1e8d211d47920367fa555047f0ef4ad1a3b483c276e89dcd299a107c1286",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aleuroglandulus subtilis",
+      "speciesId": "aleuroglandulus-subtilis",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 38
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Allantophomopsiella+pseudotsugae&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI3NTU2ODQ4IiwibmFtZSI6IkFsbGFudG9waG9tb3BzaWVsbGEgcHNldWRvdHN1Z2FlIChNLldpbHNvbikgQ3JvdXMiLCJjYW5vbmljYWxOYW1lIjoiQWxsYW50b3Bob21vcHNpZWxsYSBwc2V1ZG90c3VnYWUiLCJhdXRob3JzaGlwIjoiKE0uV2lsc29uKSBDcm91cyIsInJhbmsiOiJTUEVDSUVTIiwiY29kZSI6IkJPVEFOSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBbGxhbnRvcGhvbW9wc2llbGxhIiwic3BlY2lmaWNFcGl0aGV0IjoicHNldWRvdHN1Z2FlIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWxsYW50b3Bob21vcHNpZWxsYTwvaT4gPGk+cHNldWRvdHN1Z2FlPC9pPiAoTS5XaWxzb24pIENyb3VzIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiI1IiwibmFtZSI6IkZ1bmdpIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijk1IiwibmFtZSI6IkFzY29teWNvdGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIxNzkiLCJuYW1lIjoiTGVvdGlvbXljZXRlcyIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiMTA4NzM3NzQiLCJuYW1lIjoiUGhhY2lkaWFsZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjgzODMiLCJuYW1lIjoiUGhhY2lkaWFjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiNzcwNDgwMyIsIm5hbWUiOiJBbGxhbnRvcGhvbW9wc2llbGxhIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiI3NTU2ODQ4IiwibmFtZSI6IkFsbGFudG9waG9tb3BzaWVsbGEgcHNldWRvdHN1Z2FlIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MiwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjowLCJsdWNlbmVNYXRjaCI6Mn19LCJzeW5vbnltIjpmYWxzZSwibGVmdCI6MjY0MjI5LCJyaWdodCI6MjY0MjI5fQ==",
+      "responseBodySha256": "17862353bcdbf42794b9d443095548f5d423ae8df693d768b0181facebe0c9f3",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Allantophomopsiella pseudotsugae",
+      "speciesId": "allantophomopsiella-pseudotsugae",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 39
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Allium+sativum&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyODU2NjgxIiwibmFtZSI6IkFsbGl1bSBzYXRpdnVtIEwuIiwiY2Fub25pY2FsTmFtZSI6IkFsbGl1bSBzYXRpdnVtIiwiYXV0aG9yc2hpcCI6IkwuIiwicmFuayI6IlNQRUNJRVMiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWxsaXVtIiwic3BlY2lmaWNFcGl0aGV0Ijoic2F0aXZ1bSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFsbGl1bTwvaT4gPGk+c2F0aXZ1bTwvaT4gTC4ifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjYiLCJuYW1lIjoiUGxhbnRhZSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI3NzA3NzI4IiwibmFtZSI6IlRyYWNoZW9waHl0YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjE5NiIsIm5hbWUiOiJMaWxpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiIxMTY5IiwibmFtZSI6IkFzcGFyYWdhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI3NjgyIiwibmFtZSI6IkFtYXJ5bGxpZGFjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiOTYyNDQ5NiIsIm5hbWUiOiJBbGxpdW0iLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjI4NTY2ODEiLCJuYW1lIjoiQWxsaXVtIHNhdGl2dW0iLCJyYW5rIjoiU1BFQ0lFUyJ9XSwiZGlhZ25vc3RpY3MiOnsibWF0Y2hUeXBlIjoiRVhBQ1QiLCJjb25maWRlbmNlIjo5OSwidGltZVRha2VuIjoxLCJ0aW1pbmdzIjp7Im5hbWVOUmFuayI6MCwic2NpTmFtZU1hdGNoIjoyLCJuYW1lUGFyc2UiOjEsImx1Y2VuZU1hdGNoIjoxfX0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0IjozNjIzNDcsInJpZ2h0IjozNjIzNTR9",
+      "responseBodySha256": "fcfc8211a1303700de7ffa9d2a7dc98fa7caf24eb5f94cddf6afb16ab9757bfe",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Allium sativum",
+      "speciesId": "allium-sativum",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 40
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Aloephagus+myersi&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIyMDc3MDAwIiwibmFtZSI6IkFsb2VwaGFndXMgbXllcnNpIEVzc2lnLCAxOTUwIiwiY2Fub25pY2FsTmFtZSI6IkFsb2VwaGFndXMgbXllcnNpIiwiYXV0aG9yc2hpcCI6IkVzc2lnLCAxOTUwIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBbG9lcGhhZ3VzIiwic3BlY2lmaWNFcGl0aGV0IjoibXllcnNpIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWxvZXBoYWd1czwvaT4gPGk+bXllcnNpPC9pPiBFc3NpZywgMTk1MCJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjE2IiwibmFtZSI6Ikluc2VjdGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjgwOSIsIm5hbWUiOiJIZW1pcHRlcmEiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjMwNDIiLCJuYW1lIjoiQXBoaWRpZGFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMjA3Njk5OSIsIm5hbWUiOiJBbG9lcGhhZ3VzIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIyMDc3MDAwIiwibmFtZSI6IkFsb2VwaGFndXMgbXllcnNpIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "a0ddf44896b87de26b64edb9715f7009b6841758fce29960a78b910d6a025dbc",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Aloephagus myersi",
+      "speciesId": "aloephagus-myersi",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 41
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Alpinia+zerumbet&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI1MzAxOTc5IiwibmFtZSI6IkFscGluaWEgemVydW1iZXQgKFBlcnMuKSBCLkwuQnVydHQgJiBSLk0uU20uIiwiY2Fub25pY2FsTmFtZSI6IkFscGluaWEgemVydW1iZXQiLCJhdXRob3JzaGlwIjoiKFBlcnMuKSBCLkwuQnVydHQgJiBSLk0uU20uIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiQk9UQU5JQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFscGluaWEiLCJzcGVjaWZpY0VwaXRoZXQiOiJ6ZXJ1bWJldCIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFscGluaWE8L2k+IDxpPnplcnVtYmV0PC9pPiAoUGVycy4pIEIuTC5CdXJ0dCAmIFIuTS5TbS4ifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjYiLCJuYW1lIjoiUGxhbnRhZSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI3NzA3NzI4IiwibmFtZSI6IlRyYWNoZW9waHl0YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjE5NiIsIm5hbWUiOiJMaWxpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI2MjciLCJuYW1lIjoiWmluZ2liZXJhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI0Njg3IiwibmFtZSI6IlppbmdpYmVyYWNlYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiI1MzAxMjUzIiwibmFtZSI6IkFscGluaWEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjUzMDE5NzkiLCJuYW1lIjoiQWxwaW5pYSB6ZXJ1bWJldCIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjIsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwiYWRkaXRpb25hbFN0YXR1cyI6W3siY2xiRGF0YXNldEtleSI6IjUzMTMxIiwiZGF0YXNldEFsaWFzIjoiSVVDTiIsImRhdGFzZXRLZXkiOiIxOTQ5MTU5Ni0zNWFlLTRhOTEtOWE5OC04NWNmNTA1ZjFiZDMiLCJzdGF0dXMiOiJEQVRBX0RFRklDSUVOVCIsInN0YXR1c0NvZGUiOiJERCIsInNvdXJjZUlkIjoiMTM1MDcxMTAifV0sInN5bm9ueW0iOmZhbHNlLCJsZWZ0Ijo0NjMyMzQsInJpZ2h0Ijo0NjMyMzV9",
+      "responseBodySha256": "fc1519b5b6f78e596214a3a78a0bb4f6d504b285d9b8ae52f9ca95f4396e3a4b",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Alpinia zerumbet",
+      "speciesId": "alpinia-zerumbet",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 42
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Alternanthera+brasiliana&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIzMDg0OTM0IiwibmFtZSI6IkFsdGVybmFudGhlcmEgYnJhc2lsaWFuYSAoTC4pIEt1bnR6ZSIsImNhbm9uaWNhbE5hbWUiOiJBbHRlcm5hbnRoZXJhIGJyYXNpbGlhbmEiLCJhdXRob3JzaGlwIjoiKEwuKSBLdW50emUiLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJCT1RBTklDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWx0ZXJuYW50aGVyYSIsInNwZWNpZmljRXBpdGhldCI6ImJyYXNpbGlhbmEiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BbHRlcm5hbnRoZXJhPC9pPiA8aT5icmFzaWxpYW5hPC9pPiAoTC4pIEt1bnR6ZSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiNiIsIm5hbWUiOiJQbGFudGFlIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6Ijc3MDc3MjgiLCJuYW1lIjoiVHJhY2hlb3BoeXRhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjIwIiwibmFtZSI6Ik1hZ25vbGlvcHNpZGEiLCJyYW5rIjoiQ0xBU1MifSx7ImtleSI6IjQyMiIsIm5hbWUiOiJDYXJ5b3BoeWxsYWxlcyIsInJhbmsiOiJPUkRFUiJ9LHsia2V5IjoiMzA2NCIsIm5hbWUiOiJBbWFyYW50aGFjZWFlIiwicmFuayI6IkZBTUlMWSJ9LHsia2V5IjoiMzA4NDkyMSIsIm5hbWUiOiJBbHRlcm5hbnRoZXJhIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiIzMDg0OTM0IiwibmFtZSI6IkFsdGVybmFudGhlcmEgYnJhc2lsaWFuYSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2UsImxlZnQiOjU1NDE4OCwicmlnaHQiOjU1NDE5NX0=",
+      "responseBodySha256": "af2d724ea160528e9326460720e0f3e1d1ba1b3c93a2dc0edd0c847e93fed472",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Alternanthera brasiliana",
+      "speciesId": "alternanthera-brasiliana",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 43
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Alternanthera+ficoidea&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI4MTYwODAzIiwibmFtZSI6IkFsdGVybmFudGhlcmEgZmljb2lkZWEgKEwuKSBSLkJyLiIsImNhbm9uaWNhbE5hbWUiOiJBbHRlcm5hbnRoZXJhIGZpY29pZGVhIiwiYXV0aG9yc2hpcCI6IihMLikgUi5Cci4iLCJyYW5rIjoiU1BFQ0lFUyIsImNvZGUiOiJCT1RBTklDQUwiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQWx0ZXJuYW50aGVyYSIsInNwZWNpZmljRXBpdGhldCI6ImZpY29pZGVhIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWx0ZXJuYW50aGVyYTwvaT4gPGk+Zmljb2lkZWE8L2k+IChMLikgUi5Cci4ifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjYiLCJuYW1lIjoiUGxhbnRhZSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI3NzA3NzI4IiwibmFtZSI6IlRyYWNoZW9waHl0YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIyMCIsIm5hbWUiOiJNYWdub2xpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI0MjIiLCJuYW1lIjoiQ2FyeW9waHlsbGFsZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjMwNjQiLCJuYW1lIjoiQW1hcmFudGhhY2VhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjMwODQ5MjEiLCJuYW1lIjoiQWx0ZXJuYW50aGVyYSIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiODE2MDgwMyIsIm5hbWUiOiJBbHRlcm5hbnRoZXJhIGZpY29pZGVhIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTgsInRpbWVUYWtlbiI6MywidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MywibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6Mn19LCJzeW5vbnltIjpmYWxzZSwibGVmdCI6NTU0MTk1LCJyaWdodCI6NTU0MTk1fQ==",
+      "responseBodySha256": "368d8d1d791a2f79e0f3d904c0daa9333ee17b37dab9efd4baf66500014531a0",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Alternanthera ficoidea",
+      "speciesId": "alternanthera-ficoidea",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 44
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Alyssum+strigosum&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIzMDQ1MTkzIiwibmFtZSI6IkFseXNzdW0gc3RyaWdvc3VtIEJhbmtzICYgU29sLiIsImNhbm9uaWNhbE5hbWUiOiJBbHlzc3VtIHN0cmlnb3N1bSIsImF1dGhvcnNoaXAiOiJCYW5rcyAmIFNvbC4iLCJyYW5rIjoiU1BFQ0lFUyIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBbHlzc3VtIiwic3BlY2lmaWNFcGl0aGV0Ijoic3RyaWdvc3VtIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QWx5c3N1bTwvaT4gPGk+c3RyaWdvc3VtPC9pPiBCYW5rcyAmIFNvbC4ifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjYiLCJuYW1lIjoiUGxhbnRhZSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI3NzA3NzI4IiwibmFtZSI6IlRyYWNoZW9waHl0YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIyMCIsIm5hbWUiOiJNYWdub2xpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI3MjI1NTM1IiwibmFtZSI6IkJyYXNzaWNhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIzMTEyIiwibmFtZSI6IkJyYXNzaWNhY2VhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjMwNDQ3MjgiLCJuYW1lIjoiQWx5c3N1bSIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiMzA0NTE5MyIsIm5hbWUiOiJBbHlzc3VtIHN0cmlnb3N1bSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjIsIm5hbWVQYXJzZSI6MSwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2UsImxlZnQiOjU0MjQ0NywicmlnaHQiOjU0MjQ1MH0=",
+      "responseBodySha256": "2d3444acca9582e1432fc691156e5e5eee3020b6761ca4a5089b4b3dfda4a802",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Alyssum strigosum",
+      "speciesId": "alyssum-strigosum",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 45
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Amaranthus+dubius&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI4Mjc5OTMwIiwibmFtZSI6IkFtYXJhbnRodXMgZHViaXVzIE1hcnQuIiwiY2Fub25pY2FsTmFtZSI6IkFtYXJhbnRodXMgZHViaXVzIiwiYXV0aG9yc2hpcCI6Ik1hcnQuIiwicmFuayI6IlNQRUNJRVMiLCJzdGF0dXMiOiJBQ0NFUFRFRCIsImdlbmVyaWNOYW1lIjoiQW1hcmFudGh1cyIsInNwZWNpZmljRXBpdGhldCI6ImR1Yml1cyIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFtYXJhbnRodXM8L2k+IDxpPmR1Yml1czwvaT4gTWFydC4ifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjYiLCJuYW1lIjoiUGxhbnRhZSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI3NzA3NzI4IiwibmFtZSI6IlRyYWNoZW9waHl0YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjIyMCIsIm5hbWUiOiJNYWdub2xpb3BzaWRhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiI0MjIiLCJuYW1lIjoiQ2FyeW9waHlsbGFsZXMiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjMwNjQiLCJuYW1lIjoiQW1hcmFudGhhY2VhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjMwODUwNzQiLCJuYW1lIjoiQW1hcmFudGh1cyIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiODI3OTkzMCIsIm5hbWUiOiJBbWFyYW50aHVzIGR1Yml1cyIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk4LCJ0aW1lVGFrZW4iOjMsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjQsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjR9fSwic3lub255bSI6ZmFsc2UsImxlZnQiOjU1NDQxMiwicmlnaHQiOjU1NDQxMn0=",
+      "responseBodySha256": "0317c85c3e64a48d52685b0ca5c6402c6fa86558976f0f87fed3809036108d33",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Amaranthus dubius",
+      "speciesId": "amaranthus-dubius",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 46
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Amaranthus+graecizans&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI1Mzg0MzczIiwibmFtZSI6IkFtYXJhbnRodXMgZ3JhZWNpemFucyBMLiIsImNhbm9uaWNhbE5hbWUiOiJBbWFyYW50aHVzIGdyYWVjaXphbnMiLCJhdXRob3JzaGlwIjoiTC4iLCJyYW5rIjoiU1BFQ0lFUyIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBbWFyYW50aHVzIiwic3BlY2lmaWNFcGl0aGV0IjoiZ3JhZWNpemFucyIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFtYXJhbnRodXM8L2k+IDxpPmdyYWVjaXphbnM8L2k+IEwuIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiI2IiwibmFtZSI6IlBsYW50YWUiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiNzcwNzcyOCIsIm5hbWUiOiJUcmFjaGVvcGh5dGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMjAiLCJuYW1lIjoiTWFnbm9saW9wc2lkYSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiNDIyIiwibmFtZSI6IkNhcnlvcGh5bGxhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIzMDY0IiwibmFtZSI6IkFtYXJhbnRoYWNlYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIzMDg1MDc0IiwibmFtZSI6IkFtYXJhbnRodXMiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjUzODQzNzMiLCJuYW1lIjoiQW1hcmFudGh1cyBncmFlY2l6YW5zIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTgsInRpbWVUYWtlbiI6MywidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6NCwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6M319LCJzeW5vbnltIjpmYWxzZSwibGVmdCI6NTU0NDE1LCJyaWdodCI6NTU0NDE3fQ==",
+      "responseBodySha256": "d99c07c665c2a378cff60df1ded4f7f0bd6a869ca98e5218bd5b28af51b18db3",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Amaranthus graecizans",
+      "speciesId": "amaranthus-graecizans",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 47
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Amphibalanus+amphitrite&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI0ODA1NTY0IiwibmFtZSI6IkFtcGhpYmFsYW51cyBhbXBoaXRyaXRlIChEYXJ3aW4sIDE4NTQpIiwiY2Fub25pY2FsTmFtZSI6IkFtcGhpYmFsYW51cyBhbXBoaXRyaXRlIiwiYXV0aG9yc2hpcCI6IihEYXJ3aW4sIDE4NTQpIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBbXBoaWJhbGFudXMiLCJzcGVjaWZpY0VwaXRoZXQiOiJhbXBoaXRyaXRlIiwidHlwZSI6IlNDSUVOVElGSUMiLCJmb3JtYXR0ZWROYW1lIjoiPGk+QW1waGliYWxhbnVzPC9pPiA8aT5hbXBoaXRyaXRlPC9pPiAoRGFyd2luLCAxODU0KSJ9LCJjbGFzc2lmaWNhdGlvbiI6W3sia2V5IjoiMSIsIm5hbWUiOiJBbmltYWxpYSIsInJhbmsiOiJLSU5HRE9NIn0seyJrZXkiOiI1NCIsIm5hbWUiOiJBcnRocm9wb2RhIiwicmFuayI6IlBIWUxVTSJ9LHsia2V5IjoiMjAzIiwibmFtZSI6Ik1heGlsbG9wb2RhIiwicmFuayI6IkNMQVNTIn0seyJrZXkiOiIxNDI2IiwibmFtZSI6IlNlc3NpbGlhIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiI5MTUyIiwibmFtZSI6IkJhbGFuaWRhZSIsInJhbmsiOiJGQU1JTFkifSx7ImtleSI6IjQ4MDU1NjMiLCJuYW1lIjoiQW1waGliYWxhbnVzIiwicmFuayI6IkdFTlVTIn0seyJrZXkiOiI0ODA1NTY0IiwibmFtZSI6IkFtcGhpYmFsYW51cyBhbXBoaXRyaXRlIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "dda3f6ed8c27e90404657bd20500a993fd7b93bdef9feb73647cf369411fd4c2",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Amphibalanus amphitrite",
+      "speciesId": "amphibalanus-amphitrite",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 48
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Amylostereum+areolatum&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiI4NjkzOTgyIiwibmFtZSI6IkFteWxvc3RlcmV1bSBhcmVvbGF0dW0gKENoYWlsbGV0IGV4IEZyLikgQm9pZGluIiwiY2Fub25pY2FsTmFtZSI6IkFteWxvc3RlcmV1bSBhcmVvbGF0dW0iLCJhdXRob3JzaGlwIjoiKENoYWlsbGV0IGV4IEZyLikgQm9pZGluIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiQk9UQU5JQ0FMIiwic3RhdHVzIjoiQUNDRVBURUQiLCJnZW5lcmljTmFtZSI6IkFteWxvc3RlcmV1bSIsInNwZWNpZmljRXBpdGhldCI6ImFyZW9sYXR1bSIsInR5cGUiOiJTQ0lFTlRJRklDIiwiZm9ybWF0dGVkTmFtZSI6IjxpPkFteWxvc3RlcmV1bTwvaT4gPGk+YXJlb2xhdHVtPC9pPiAoQ2hhaWxsZXQgZXggRnIuKSBCb2lkaW4ifSwiY2xhc3NpZmljYXRpb24iOlt7ImtleSI6IjUiLCJuYW1lIjoiRnVuZ2kiLCJyYW5rIjoiS0lOR0RPTSJ9LHsia2V5IjoiMzQiLCJuYW1lIjoiQmFzaWRpb215Y290YSIsInJhbmsiOiJQSFlMVU0ifSx7ImtleSI6IjE4NiIsIm5hbWUiOiJBZ2FyaWNvbXljZXRlcyIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiMTE0NCIsIm5hbWUiOiJSdXNzdWxhbGVzIiwicmFuayI6Ik9SREVSIn0seyJrZXkiOiIzMjgyIiwibmFtZSI6IkVjaGlub2RvbnRpYWNlYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIyNTUwNjQxIiwibmFtZSI6IkFteWxvc3RlcmV1bSIsInJhbmsiOiJHRU5VUyJ9LHsia2V5IjoiODY5Mzk4MiIsIm5hbWUiOiJBbXlsb3N0ZXJldW0gYXJlb2xhdHVtIiwicmFuayI6IlNQRUNJRVMifV0sImRpYWdub3N0aWNzIjp7Im1hdGNoVHlwZSI6IkVYQUNUIiwiY29uZmlkZW5jZSI6OTksInRpbWVUYWtlbiI6MSwidGltaW5ncyI6eyJuYW1lTlJhbmsiOjAsInNjaU5hbWVNYXRjaCI6MiwibmFtZVBhcnNlIjoxLCJsdWNlbmVNYXRjaCI6MX19LCJzeW5vbnltIjpmYWxzZX0=",
+      "responseBodySha256": "a2dc8e075fbac93d2509dd4494382ade1792d30f751ac87a5b2b88fe262e7314",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Amylostereum areolatum",
+      "speciesId": "amylostereum-areolatum",
+      "status": 200
+    },
+    {
+      "provenance": {
+        "baselineCommit": "ffdcbf05dfa22866d22f7b7deec07491b9991f2f",
+        "batchRequestSha256": "c7a45e5b016e899207d7a6d9db60653aa59c53e455d714bc78d427dfe4a5c506",
+        "batchResponseSha256": "4680323a81a52df430b7a20d292e6a3acff379171abeaa9b1ede5f0469ee10fb",
+        "matcherMetadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+        "matrixDigestSha256": "dec9cfce7a1b7abc81f1d24ecd0ba3bbc9e03cbcae56a5bf0efa3a69a5d4a8f5",
+        "responseIndex": 49
+      },
+      "requestUrl": "https://api.gbif.org/v2/species/match?scientificName=Anastrepha+suspensa&taxonRank=SPECIES&strict=true",
+      "responseBodyBase64": "eyJ1c2FnZSI6eyJrZXkiOiIxNjI1MDc4IiwibmFtZSI6IkFuYXN0cmVwaGEgc3VzcGVuc2EgKExvZXcsIDE4NjIpIiwiY2Fub25pY2FsTmFtZSI6IkFuYXN0cmVwaGEgc3VzcGVuc2EiLCJhdXRob3JzaGlwIjoiKExvZXcsIDE4NjIpIiwicmFuayI6IlNQRUNJRVMiLCJjb2RlIjoiWk9PTE9HSUNBTCIsInN0YXR1cyI6IkFDQ0VQVEVEIiwiZ2VuZXJpY05hbWUiOiJBbmFzdHJlcGhhIiwic3BlY2lmaWNFcGl0aGV0Ijoic3VzcGVuc2EiLCJ0eXBlIjoiU0NJRU5USUZJQyIsImZvcm1hdHRlZE5hbWUiOiI8aT5BbmFzdHJlcGhhPC9pPiA8aT5zdXNwZW5zYTwvaT4gKExvZXcsIDE4NjIpIn0sImNsYXNzaWZpY2F0aW9uIjpbeyJrZXkiOiIxIiwibmFtZSI6IkFuaW1hbGlhIiwicmFuayI6IktJTkdET00ifSx7ImtleSI6IjU0IiwibmFtZSI6IkFydGhyb3BvZGEiLCJyYW5rIjoiUEhZTFVNIn0seyJrZXkiOiIyMTYiLCJuYW1lIjoiSW5zZWN0YSIsInJhbmsiOiJDTEFTUyJ9LHsia2V5IjoiODExIiwibmFtZSI6IkRpcHRlcmEiLCJyYW5rIjoiT1JERVIifSx7ImtleSI6IjM1MjAiLCJuYW1lIjoiVGVwaHJpdGlkYWUiLCJyYW5rIjoiRkFNSUxZIn0seyJrZXkiOiIxNjI0OTg4IiwibmFtZSI6IkFuYXN0cmVwaGEiLCJyYW5rIjoiR0VOVVMifSx7ImtleSI6IjE2MjUwNzgiLCJuYW1lIjoiQW5hc3RyZXBoYSBzdXNwZW5zYSIsInJhbmsiOiJTUEVDSUVTIn1dLCJkaWFnbm9zdGljcyI6eyJtYXRjaFR5cGUiOiJFWEFDVCIsImNvbmZpZGVuY2UiOjk5LCJ0aW1lVGFrZW4iOjEsInRpbWluZ3MiOnsibmFtZU5SYW5rIjowLCJzY2lOYW1lTWF0Y2giOjEsIm5hbWVQYXJzZSI6MCwibHVjZW5lTWF0Y2giOjF9fSwic3lub255bSI6ZmFsc2V9",
+      "responseBodySha256": "35313a67cde17dc46c37fc63123ca9e87b32828078d6f45c9013ac9901f2a80c",
+      "retrievedAt": "2026-08-19T20:43:37.140Z",
+      "scientificName": "Anastrepha suspensa",
+      "speciesId": "anastrepha-suspensa",
+      "status": 200
+    }
+  ],
+  "matcher": {
+    "clbDatasetKey": "53147",
+    "created": "2026-07-09T10:05:13.708Z",
+    "datasetAlias": "GBIF",
+    "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+    "matchUrl": "https://api.gbif.org/v2/species/match",
+    "metadataSha256": "5fd1e94d3afd876b01dc364991e752799aec2e287c24380abe516b1df39ee41f",
+    "metadataUrl": "https://api.gbif.org/v2/species/match/metadata"
+  },
+  "rejections": [
+    {
+      "canonicalName": null,
+      "confidence": 99,
+      "reason": "match-not-exact",
+      "responseIndex": 10,
+      "scientificName": "Achyranthes aspera var. pubescens",
+      "speciesId": "achyranthes-aspera-var-pubescens",
+      "taxonKey": null
+    },
+    {
+      "canonicalName": "Acrolepiopsis assectella",
+      "confidence": 99,
+      "reason": "matched-usage-not-accepted",
+      "responseIndex": 13,
+      "scientificName": "Acrolepiopsis assectella",
+      "speciesId": "acrolepiopsis-assectella",
+      "taxonKey": null
+    },
+    {
+      "canonicalName": null,
+      "confidence": 99,
+      "reason": "match-not-exact",
+      "responseIndex": 14,
+      "scientificName": "Actinocyclus normanii f. subsala",
+      "speciesId": "actinocyclus-normanii-f-subsala",
+      "taxonKey": null
+    }
+  ],
+  "schemaVersion": 2,
+  "sourceId": "gbif-preserved-specimens",
+  "taxonomyApiVersion": "v2",
+  "taxonomyMode": "gbif-backbone-v2-exact-match-retained-identifiers"
+}
