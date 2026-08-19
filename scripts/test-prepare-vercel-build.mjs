@@ -20,17 +20,11 @@ try {
   assert.equal(
     prepareVercelBuild(root, {
       VERCEL: "1",
-      VERCEL_GIT_COMMIT_SHA: "a".repeat(40),
     }).removedPublicMirror,
     true,
   );
   assert.equal(existsSync(path.join(root, "public", "generated", "research")), false);
   assert.equal(existsSync(path.join(authoritativeRoot, "summary.json")), true);
-  assert.throws(
-    () => prepareVercelBuild(root, { VERCEL: "1", VERCEL_GIT_COMMIT_SHA: "not-a-commit" }),
-    /full Git commit SHA/,
-  );
-
   console.log("Vercel publish preparation tests passed.");
 } finally {
   rmSync(root, { recursive: true, force: true });

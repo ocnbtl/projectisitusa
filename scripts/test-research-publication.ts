@@ -52,8 +52,8 @@ async function main() {
   );
   deliveryValidator.parse(delivery);
   assert.throws(
-    () => validateResearchDataDelivery({ ...delivery, mode: "r2", r2: { ...delivery.r2, releaseId: null } }),
-    /invalid|expected|string|requires a pinned release ID/iu,
+    () => validateResearchDataDelivery({ ...delivery, r2: { ...delivery.r2, pointerPath: "../current.json" } }),
+    /invalid identity/iu,
   );
 
   assert.doesNotThrow(() => assertR2FreeTierSafety({

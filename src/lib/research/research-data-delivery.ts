@@ -1,5 +1,5 @@
 export interface ResearchDataDelivery {
-  schemaVersion: 1;
+  schemaVersion: 2;
   mode: "github" | "r2";
   github: {
     repository: "ocnbtl/projectisitusa";
@@ -7,7 +7,7 @@ export interface ResearchDataDelivery {
   };
   r2: {
     origin: string;
-    releaseId: string | null;
+    pointerPath: "current.json";
   };
 }
 
@@ -17,26 +17,18 @@ export function validateResearchDataDelivery(value: unknown): ResearchDataDelive
   }
   const delivery = value as ResearchDataDelivery;
   if (
-    delivery.schemaVersion !== 1 ||
+    delivery.schemaVersion !== 2 ||
     !["github", "r2"].includes(delivery.mode) ||
     delivery.github?.repository !== "ocnbtl/projectisitusa" ||
     delivery.github?.rootPath !== "public/generated/research" ||
-    typeof delivery.r2?.origin !== "string"
+    typeof delivery.r2?.origin !== "string" ||
+    delivery.r2?.pointerPath !== "current.json"
   ) {
     throw new Error("Research data delivery configuration has an invalid identity.");
   }
   const origin = new URL(delivery.r2.origin);
   if (origin.protocol !== "https:" || origin.pathname !== "/" || origin.search || origin.hash) {
     throw new Error("Research data R2 origin must be an HTTPS origin without a path, query, or fragment.");
-  }
-  if (
-    delivery.r2.releaseId !== null &&
-    !/^research-[0-9a-f]{12}-[0-9a-f]{16}$/u.test(delivery.r2.releaseId)
-  ) {
-    throw new Error("Research data R2 release ID is invalid.");
-  }
-  if (delivery.mode === "r2" && delivery.r2.releaseId === null) {
-    throw new Error("R2 research delivery requires a pinned release ID.");
   }
   return delivery;
 }

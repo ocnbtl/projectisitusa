@@ -4,14 +4,8 @@ import researchDataDelivery from "./src/data/research/research-data-delivery.jso
 import { validateResearchDataDelivery } from "./src/lib/research/research-data-delivery";
 
 const isDevelopment = process.env.NODE_ENV !== "production";
-const vercelGitCommitSha = process.env.VERCEL_GIT_COMMIT_SHA;
-
-if (process.env.VERCEL === "1" && !/^[0-9a-f]{40}$/i.test(vercelGitCommitSha ?? "")) {
-  throw new Error("VERCEL_GIT_COMMIT_SHA must be a full Git commit SHA for immutable research projection routing.");
-}
-
-const immutableResearchProjectionOrigin = vercelGitCommitSha
-  ? `https://raw.githubusercontent.com/ocnbtl/projectisitusa/${vercelGitCommitSha}/public/generated/research`
+const legacyResearchProjectionOrigin = process.env.VERCEL === "1"
+  ? "https://raw.githubusercontent.com/ocnbtl/projectisitusa/main/public/generated/research"
   : null;
 
 const validatedResearchDataDelivery = validateResearchDataDelivery(researchDataDelivery);
@@ -59,10 +53,10 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     const rewrites = [];
-    if (immutableResearchProjectionOrigin) {
+    if (legacyResearchProjectionOrigin) {
       rewrites.push({
         source: "/generated/research/:path*",
-        destination: `${immutableResearchProjectionOrigin}/:path*`,
+        destination: `${legacyResearchProjectionOrigin}/:path*`,
       });
     }
     if (validatedResearchDataDelivery.mode === "r2") {

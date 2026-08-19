@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["schemaVersion", "mode", "github", "r2"],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "mode": { "enum": ["github", "r2"] },
     "github": {
       "type": "object",
@@ -20,10 +20,10 @@
     "r2": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["origin", "releaseId"],
+      "required": ["origin", "pointerPath"],
       "properties": {
         "origin": { "type": "string", "pattern": "^https://[a-z0-9.-]+$" },
-        "releaseId": { "type": ["string", "null"], "pattern": "^research-[0-9a-f]{12}-[0-9a-f]{16}$" }
+        "pointerPath": { "const": "current.json" }
       }
     }
   },
@@ -36,10 +36,7 @@
       "required": ["mode", "r2"],
       "properties": {
         "mode": { "const": "r2" },
-        "r2": {
-          "required": ["releaseId"],
-          "properties": { "releaseId": { "type": "string" } }
-        }
+        "r2": { "required": ["pointerPath"] }
       }
     }
   ]
