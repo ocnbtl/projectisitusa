@@ -29,25 +29,28 @@ try {
     mkdirSync(path.dirname(absolutePath), { recursive: true });
     writeFileSync(absolutePath, "{}\n");
   }
+  for (const relativePath of EXCLUDED_VERCEL_BUILD_PATHS) {
+    const fixturePath = path.join(root, relativePath, "fixture.txt");
+    mkdirSync(path.dirname(fixturePath), { recursive: true });
+    writeFileSync(fixturePath, "retained in Git; pruned only from the Vercel workspace\n");
+  }
 
   const localResult = prepareVercelBuild(root, {});
   assert.deepEqual(localResult, { mode: "local" });
+  for (const relativePath of EXCLUDED_VERCEL_BUILD_PATHS) {
+    assert.equal(existsSync(path.join(root, relativePath)), true);
+  }
 
   const vercelResult = prepareVercelBuild(root, { VERCEL: "1" });
   assert.deepEqual(vercelResult, {
     mode: "vercel",
     requiredRuntimeFileCount: REQUIRED_VERCEL_RUNTIME_PATHS.length,
     excludedPathCount: EXCLUDED_VERCEL_BUILD_PATHS.length,
+    removedPathCount: EXCLUDED_VERCEL_BUILD_PATHS.length,
   });
-
-  const excludedFixture = path.join(root, EXCLUDED_VERCEL_BUILD_PATHS[0], "AL", "summary.json");
-  mkdirSync(path.dirname(excludedFixture), { recursive: true });
-  writeFileSync(excludedFixture, "{}\n");
-  assert.throws(
-    () => prepareVercelBuild(root, { VERCEL: "1" }),
-    /Vercel build workspace still contains deployment-independent paths/,
-  );
-  rmSync(path.join(root, EXCLUDED_VERCEL_BUILD_PATHS[0]), { recursive: true, force: true });
+  for (const relativePath of EXCLUDED_VERCEL_BUILD_PATHS) {
+    assert.equal(existsSync(path.join(root, relativePath)), false);
+  }
 
   const missingRuntimeFile = path.join(root, REQUIRED_VERCEL_RUNTIME_PATHS[0]);
   rmSync(missingRuntimeFile);
