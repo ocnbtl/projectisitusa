@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "round-74-gbif-national-production-verification-20260819-r1",
+  "verifiedAt": "2026-08-19T05:50:22.331Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "generatedContentCommit": "2089c1fcd7f0fc2332e2a0e2306a8d0ca7461d6b",
+  "releasedContentCommit": "3d95a707076a968a10e236bf304c9d7ca7dfcabc",
+  "objective": "Externally verify the Round 74 authenticated GBIF acquisition, immutable national partition, measured 26,424-pair movement, guarded R2 publication, exact Git-linked Vercel production deployment, and live public data flow.",
+  "providerExecution": {
+    "sourceId": "gbif-preserved-specimens",
+    "acquisitionId": "20260819t041411z__gbif-download__172c1735eb7d",
+    "downloadKey": "0023571-260806074905277",
+    "doi": "10.15468/dl.qrwcrx",
+    "terminalStatus": "SUCCEEDED",
+    "providerRecords": 4986,
+    "archiveBytes": 3331273,
+    "archiveSha256": "2ce905262b75f0dbbcf22b11e2cd70ba7e71a9f86b0b9c7f4d3f703ce0d57031",
+    "requestPosts": 1,
+    "statusGets": 3,
+    "archiveGets": 1,
+    "retries": 0,
+    "duplicateProviderPosts": 0,
+    "credentialsPersistedInRepositoryOrArtifacts": false
+  },
+  "partitionAndMovement": {
+    "partitionId": "gbif-national-partition-12689eb7807fd5d0",
+    "stateRows": 51,
+    "materializedRuns": 50,
+    "zeroPairStates": ["AL"],
+    "selectedPairs": 26424,
+    "verifiedPresentAdded": 726,
+    "researchedUnresolvedAdded": 25698,
+    "notResearchedRemoved": 26424,
+    "verifiedAbsentAdded": 0,
+    "notDetectedAdded": 0,
+    "finalVerifiedPresent": 191396,
+    "finalResearchedUnresolved": 1239641,
+    "finalNotResearched": 6441531,
+    "countySpeciesDenominator": 7872576,
+    "certifiedStates": 0,
+    "certificationBlockerStates": 51,
+    "qualification": "Provider silence created no absence or non-detection claim. The release advances research accounting but does not claim state certification."
+  },
+  "localVerification": {
+    "focusedNationalGbifRegression": "pass",
+    "offlineNationalGbifEndToEnd": "pass: verified acquisition; 51 state reconciliation rows; deterministic rerun; no duplicate provider POST",
+    "frozenNationalResearchSkillSuite": "pass: 97/97; zero critical safety violations",
+    "fullResearchIntegrity": "pass: 1,147 immutable runs; 1,594,035 outcomes; zero unreviewed evidence",
+    "sourceCoverageIndex": "pass: 1,147 validated run coverage entries across 29 sources",
+    "dataIntegrity": "pass",
+    "stateResearchProjections": "pass: 51 projections",
+    "typecheck": "pass",
+    "lint": "pass: zero warnings and zero errors",
+    "productionBuild": "pass: Next.js 15.5.23; 29.6 second local compile; seven static pages",
+    "researchPublication": "pass: 3,195 objects; 943,078,827 bytes",
+    "gitDiffCheck": "pass"
+  },
+  "deployment": {
+    "vercelDeploymentKey": "Dn6sFvZswMPXQfiunZrxdH4Pwcjo",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/Dn6sFvZswMPXQfiunZrxdH4Pwcjo",
+    "immutableUrl": "https://projectisitusa-dedlzeh1w-unigentamos.vercel.app",
+    "productionUrl": "https://isitusa.com",
+    "target": "production",
+    "state": "success",
+    "githubDeploymentId": 5976519892,
+    "githubDeploymentStatusId": 16999027836,
+    "githubCommitStatusId": 52483375763,
+    "githubCombinedStatus": "success",
+    "deployedAt": "2026-08-19T05:16:39.000Z",
+    "exactCommitVerified": true,
+    "providerBuildDuration": "not retrievable through the available Vercel connector",
+    "qualification": "GitHub/Vercel identifies the exact released commit and successful Production deployment. The exact provider build-log duration is not claimed; local compilation completed in 29.6 seconds."
+  },
+  "r2Publication": {
+    "accountId": "0fe57401a5fd98319e16832ee97de02d",
+    "bucket": "project-isitusa-research",
+    "releaseId": "research-2089c1fcd7f0-ef528a9620612236",
+    "releaseManifestKey": "releases/research-2089c1fcd7f0-ef528a9620612236/manifest.json",
+    "releaseManifestSha256": "1d60c62503a0acb355cff922e3a828e742a47f474a05321d372c5692b6704e7f",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 943078827,
+    "projectedRetainedBytesAfterPromotion": 2795580462,
+    "fullRemoteObjectsVerifiedAfterResume": 3195,
+    "fullRemoteObjectsVerifiedDuringPromotion": 3195,
+    "objectsUploadedDuringResume": 0,
+    "objectsUploadedDuringPromotion": 0,
+    "currentPointerStatus": 200,
+    "currentPointerReleaseId": "research-2089c1fcd7f0-ef528a9620612236",
+    "currentPointerSourceCommit": "2089c1fcd7f0fc2332e2a0e2306a8d0ca7461d6b",
+    "currentPointerPromotedAt": "2026-08-19T05:38:22.266Z",
+    "customDomain": "https://data.isitusa.com",
+    "credentialValuesCommittedOrLogged": false
+  },
+  "freeTierGuard": {
+    "providerIncludedStorageBytes": 10000000000,
+    "providerIncludedClassARequests": 1000000,
+    "providerIncludedClassBRequests": 10000000,
+    "projectStorageSafetyBytes": 8000000000,
+    "projectClassASafetyRequests": 800000,
+    "projectClassBSafetyRequests": 8000000,
+    "prePublicationDashboard": {
+      "classAOperationsDisplayed": "6.46k",
+      "classBOperationsDisplayed": "12.89k",
+      "totalStorageDisplayed": "1.85 GB",
+      "billableUsageDisplayed": "$0.00"
+    },
+    "publisherGuardInputs": {
+      "monthlyClassAUsed": 7000,
+      "monthlyClassBUsed": 13000,
+      "qualification": "The guarded invocation rounded the displayed counters upward."
+    },
+    "projectedRetainedBytesAfterPromotion": 2795580462,
+    "allProjectStopsPassed": true,
+    "budgetAlertThresholdUsd": 0.01,
+    "hardProviderSpendCapAvailable": false,
+    "qualification": "The final retained-byte shadow plan remains below the 8 GB project stop. No post-promotion dashboard value is claimed; the last observed dashboard was $0.00 and the publisher failed closed against all three project limits."
+  },
+  "routeVerification": {
+    "hosts": [
+      "https://projectisitusa-dedlzeh1w-unigentamos.vercel.app",
+      "https://isitusa.com"
+    ],
+    "finalPublicSmoke": [
+      {"url":"https://isitusa.com/","status":200},
+      {"url":"https://isitusa.com/research","status":200},
+      {"url":"https://isitusa.com/species/spotted-lanternfly","status":200},
+      {"url":"https://projectisitusa-dedlzeh1w-unigentamos.vercel.app/","status":200},
+      {"url":"https://data.isitusa.com/releases/research-2089c1fcd7f0-ef528a9620612236/manifest.json","status":200}
+    ],
+    "zipLookup": {
+      "method": "POST",
+      "zip": "43210",
+      "status": 200,
+      "city": "Columbus",
+      "stateCode": "OH",
+      "countyFips": "39049",
+      "countyName": "Franklin, OH"
+    }
+  },
+  "browserVerification": {
+    "host": "https://isitusa.com",
+    "routes": ["/", "/research", "/species/spotted-lanternfly"],
+    "researchAsOf": "Aug 19, 2026",
+    "visibleState": "Alabama",
+    "visibleSpecies": "Spotted Lanternfly / Lycorma delicatula",
+    "researchReleaseRequestsStatus": 200,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "qualification": "The production research page consumed the new pointer, manifest, and object endpoints; home, research, species, and ZIP flows rendered without application console warnings or errors."
+  },
+  "runtimeVerification": {
+    "providerRuntimeLogQuery": "not authorized through the available Vercel connector",
+    "browserConsoleWarnings": 0,
+    "browserConsoleErrors": 0,
+    "status500RouteChecks": 0,
+    "qualification": "No complete Vercel runtime-log or exact provider build-duration claim is made. Exact GitHub Production status, public routes, API smoke, R2 object verification, and browser console were verified directly."
+  },
+  "operationalState": {
+    "cadence": "IMMEDIATE POST-DEPLOY",
+    "state": "HEALTHY",
+    "findings": [],
+    "nonCriticalUnknowns": [
+      "Exact Vercel provider build-log duration was inaccessible through the available connector."
+    ],
+    "rollbackReleaseId": "research-1f093b3150f7-a291afc1812a7e4c",
+    "rollbackApplicationCommit": "eeeb3be787f376ee268f0e3b24c04d326a512770"
+  },
+  "postDeploymentGate": {
+    "phase": "POST-DEPLOYMENT",
+    "decision": "GO",
+    "blockers": [],
+    "matrix": [
+      {"category":"source-of-truth","criticality":"CRITICAL","status":"PASSED","evidence":"Canonical, origin, public GitHub main, GitHub Production, and Vercel identify 3d95a707076a968a10e236bf304c9d7ca7dfcabc; R2 identifies generated content 2089c1fcd7f0fc2332e2a0e2306a8d0ca7461d6b."},
+      {"category":"functionality","criticality":"CRITICAL","status":"PASSED","evidence":"Home, research, species, immutable deployment, manifest, and ZIP lookup passed on production."},
+      {"category":"visual-fidelity","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No UI, layout, style, or visual asset changed in this generated-data release."},
+      {"category":"accessibility","criticality":"MEDIUM","status":"NOT APPLICABLE","evidence":"No accessibility-facing code changed; existing production flows rendered and remained operable."},
+      {"category":"seo-and-discovery","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No metadata, canonical, robots, sitemap, route, or indexing behavior changed."},
+      {"category":"performance-and-resilience","criticality":"HIGH","status":"PASSED","evidence":"Local production compile completed in 29.6 seconds; Vercel deployed successfully; R2 serves immutable hashed objects with a retained rollback release."},
+      {"category":"security-and-privacy","criticality":"CRITICAL","status":"PASSED","evidence":"GBIF and R2 credentials remained outside Git and logs; the provider POST was not retried; no credential values were persisted."},
+      {"category":"analytics-and-conversion","criticality":"LOW","status":"NOT APPLICABLE","evidence":"No analytics, consent, CTA, form, signup, or conversion behavior changed."},
+      {"category":"monitoring-and-operations","criticality":"HIGH","status":"PASSED","evidence":"GitHub/Vercel terminal status is success; browser console is clean; guarded R2 publication remains below all project stops."},
+      {"category":"deployment","criticality":"CRITICAL","status":"PASSED","evidence":"GitHub Production deployment 5976519892 and status 16999027836 succeeded for the exact SHA; immutable and canonical routes passed."},
+      {"category":"content-and-approvals","criticality":"MEDIUM","status":"NOT APPLICABLE","evidence":"No public prose, legal copy, contact details, pricing, testimonials, or assets changed."},
+      {"category":"data-release-integrity","criticality":"CRITICAL","status":"PASSED","evidence":"All 3,195 R2 objects passed full verification after resume and again during promotion; 26,424 selected pairs reconcile exactly without negative-evidence movement."}
+    ]
+  },
+  "releaseDecision": {
+    "decision": "go",
+    "operationalState": "HEALTHY",
+    "productionDeploymentVerified": true,
+    "contentCommitted": true,
+    "pushedToGithub": true,
+    "providerAcquisitionIntegrated": true,
+    "r2ReleasePromoted": true,
+    "researchMovementVerified": true,
+    "stateCertificationClaimed": false,
+    "reason": "The exact released SHA is on canonical, origin, public GitHub main, GitHub Production, and Vercel; all immutable R2 objects passed full verification; the public pointer, manifest, routes, ZIP lookup, and browser console checks passed; the guarded retained-byte projection remains below the free-tier safety stop."
+  }
+}
