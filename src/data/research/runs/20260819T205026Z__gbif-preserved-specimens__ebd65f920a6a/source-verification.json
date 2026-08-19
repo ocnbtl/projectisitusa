@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-19T20:54:40.231Z",
+  "runId": "20260819T205026Z__gbif-preserved-specimens__ebd65f920a6a",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "RI",
+  "pairKeys": [
+    "44001:abies-alba",
+    "44001:abutilon-hirtum",
+    "44001:acacia-elata",
+    "44001:acacia-podalyriifolia",
+    "44001:acaena-magellanica",
+    "44001:acanthogobius-flavimanus",
+    "44001:acanthomysis-aspera",
+    "44001:acarapis-woodi",
+    "44003:abies-alba",
+    "44003:abutilon-hirtum",
+    "44003:acacia-elata",
+    "44003:acacia-podalyriifolia",
+    "44003:acaena-magellanica",
+    "44003:acanthogobius-flavimanus",
+    "44003:acanthomysis-aspera",
+    "44003:acarapis-woodi",
+    "44005:abies-alba",
+    "44005:abutilon-hirtum",
+    "44005:acacia-elata",
+    "44005:acacia-podalyriifolia",
+    "44005:acaena-magellanica",
+    "44005:acanthogobius-flavimanus",
+    "44005:acanthomysis-aspera",
+    "44005:acarapis-woodi",
+    "44007:abies-alba",
+    "44007:abutilon-hirtum",
+    "44007:acacia-elata",
+    "44007:acacia-podalyriifolia",
+    "44007:acaena-magellanica",
+    "44007:acanthogobius-flavimanus",
+    "44007:acanthomysis-aspera",
+    "44007:acarapis-woodi",
+    "44009:abies-alba",
+    "44009:abutilon-hirtum",
+    "44009:acacia-elata",
+    "44009:acacia-podalyriifolia",
+    "44009:acaena-magellanica",
+    "44009:acanthogobius-flavimanus",
+    "44009:acanthomysis-aspera",
+    "44009:acarapis-woodi"
+  ],
+  "parameterHash": "7bc08823ff3934d32bd4e0484d5ea80706a607b3dfdb36d65964f06a72ac34c9",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://www.gbif.org/occurrence/download/0025310-260806074905277",
+    "publisher": "GBIF"
+  },
+  "terms": {
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-19T20:54:40.231Z",
+    "freshnessDate": "2026-08-19"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county text resolved through the active Census county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates never establish county membership; missing, ambiguous, contradictory, or retired geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Exact retained GBIF species keys from a hash-pinned taxonomy cache with EXACT species matches and confidence at least 95.",
+    "targetSpeciesIds": [
+      "abies-alba",
+      "abutilon-hirtum",
+      "acacia-elata",
+      "acacia-podalyriifolia",
+      "acaena-magellanica",
+      "acanthogobius-flavimanus",
+      "acanthomysis-aspera",
+      "acarapis-woodi"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "gbifID",
+      "datasetKey",
+      "speciesKey",
+      "stateProvince",
+      "county"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "20260819t205026z__gbif-download__a56cc00163f2",
+        "url": "https://api.gbif.org/v1/occurrence/download/request/0025310-260806074905277.zip",
+        "purpose": "Authenticated provider-native national Darwin Core archive reused by this offline state partition",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-19T20:54:39.631Z",
+        "declaredRecordCount": 381,
+        "receivedRecordCount": 381,
+        "pagination": {
+          "mode": "snapshot",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF preserved specimen records are positive occurrence evidence, not a negative survey.",
+      "Complete archive silence changes research status only; failure, rejection, and missing geography create no negative claim."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260819T205026Z__gbif-preserved-specimens__ebd65f920a6a/artifacts/national-acquisition-reference.json",
+      "sha256": "ce15fe0a7757cef7c9be972b009045801e046de0e05684ec00449bde772fbe47",
+      "bytes": 7482
+    }
+  ],
+  "caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "The taxonomy cache uses exact accepted matches from the documented v2 matcher against the default GBIF Backbone index; Catalogue of Life identifiers are not substituted.",
+    "At most one deterministic qualifying specimen assertion is published per selected county-species pair."
+  ]
+}
