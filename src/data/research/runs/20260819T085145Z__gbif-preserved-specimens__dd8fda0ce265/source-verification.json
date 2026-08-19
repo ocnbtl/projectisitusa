@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-19T08:54:58.386Z",
+  "runId": "20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "HI",
+  "pairKeys": [
+    "15001:carduus-acanthoides",
+    "15001:centaurea-stoebe",
+    "15001:echium-vulgare",
+    "15001:euphorbia-virgata",
+    "15001:hydrocharis-morsus-ranae",
+    "15001:hypophthalmichthys-nobilis",
+    "15001:phellodendron-amurense",
+    "15001:rhaponticum-repens",
+    "15003:carduus-acanthoides",
+    "15003:centaurea-stoebe",
+    "15003:echium-vulgare",
+    "15003:euphorbia-virgata",
+    "15003:hydrocharis-morsus-ranae",
+    "15003:hypophthalmichthys-nobilis",
+    "15003:phellodendron-amurense",
+    "15003:rhaponticum-repens",
+    "15005:carduus-acanthoides",
+    "15005:centaurea-stoebe",
+    "15005:echium-vulgare",
+    "15005:euphorbia-virgata",
+    "15005:hydrocharis-morsus-ranae",
+    "15005:hypophthalmichthys-nobilis",
+    "15005:phellodendron-amurense",
+    "15005:rhaponticum-repens",
+    "15007:carduus-acanthoides",
+    "15007:centaurea-stoebe",
+    "15007:echium-vulgare",
+    "15007:euphorbia-virgata",
+    "15007:hydrocharis-morsus-ranae",
+    "15007:hypophthalmichthys-nobilis",
+    "15007:phellodendron-amurense",
+    "15007:rhaponticum-repens",
+    "15009:carduus-acanthoides",
+    "15009:centaurea-stoebe",
+    "15009:echium-vulgare",
+    "15009:euphorbia-virgata",
+    "15009:hydrocharis-morsus-ranae",
+    "15009:hypophthalmichthys-nobilis",
+    "15009:phellodendron-amurense",
+    "15009:rhaponticum-repens"
+  ],
+  "parameterHash": "a58346f0ae85e93aab277b5f79e0067932a0a261fd19ef39953e0d2f8cf25aea",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://www.gbif.org/occurrence/download/0023928-260806074905277",
+    "publisher": "GBIF"
+  },
+  "terms": {
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-19T08:54:58.386Z",
+    "freshnessDate": "2026-08-19"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county text resolved through the active Census county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates never establish county membership; missing, ambiguous, contradictory, or retired geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Exact retained GBIF species keys from a hash-pinned taxonomy cache with EXACT species matches and confidence at least 95.",
+    "targetSpeciesIds": [
+      "carduus-acanthoides",
+      "centaurea-stoebe",
+      "echium-vulgare",
+      "euphorbia-virgata",
+      "hydrocharis-morsus-ranae",
+      "hypophthalmichthys-nobilis",
+      "phellodendron-amurense",
+      "rhaponticum-repens"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "gbifID",
+      "datasetKey",
+      "speciesKey",
+      "stateProvince",
+      "county"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "20260819t085145z__gbif-download__fe5d42be8331",
+        "url": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+        "purpose": "Authenticated provider-native national Darwin Core archive reused by this offline state partition",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-19T08:54:52.977Z",
+        "declaredRecordCount": 16077,
+        "receivedRecordCount": 16077,
+        "pagination": {
+          "mode": "snapshot",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF preserved specimen records are positive occurrence evidence, not a negative survey.",
+      "Complete archive silence changes research status only; failure, rejection, and missing geography create no negative claim."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265/artifacts/national-acquisition-reference.json",
+      "sha256": "c3c46f23716d050481a1d9ae10f46f03efef6992ef69a20294c88f100751695e",
+      "bytes": 22127
+    }
+  ],
+  "caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
+    "At most one deterministic qualifying specimen assertion is published per selected county-species pair."
+  ]
+}

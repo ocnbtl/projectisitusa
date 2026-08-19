@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e",
+  "status": "complete",
+  "started_at": "2026-08-19T08:51:45.819Z",
+  "finished_at": "2026-08-19T08:54:58.386Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "c6a2d3c4a4ac6677e1c2b163c9fcc27975ee340d",
+  "parameter_hash": "b412647162585311e1a50d39193cf40c0928dc7aff12227fa48808cd4da77cfc",
+  "parameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 9,
+    "candidatePairs": [
+      "11001:carduus-acanthoides",
+      "11001:centaurea-stoebe",
+      "11001:cyperus-esculentus",
+      "11001:echium-vulgare",
+      "11001:euphorbia-virgata",
+      "11001:hydrocharis-morsus-ranae",
+      "11001:hypophthalmichthys-nobilis",
+      "11001:phellodendron-amurense",
+      "11001:rhaponticum-repens"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "carduus-acanthoides",
+      "centaurea-stoebe",
+      "cyperus-esculentus",
+      "echium-vulgare",
+      "euphorbia-virgata",
+      "hydrocharis-morsus-ranae",
+      "hypophthalmichthys-nobilis",
+      "phellodendron-amurense",
+      "rhaponticum-repens"
+    ],
+    "pair_keys": [
+      "11001:carduus-acanthoides",
+      "11001:centaurea-stoebe",
+      "11001:cyperus-esculentus",
+      "11001:echium-vulgare",
+      "11001:euphorbia-virgata",
+      "11001:hydrocharis-morsus-ranae",
+      "11001:hypophthalmichthys-nobilis",
+      "11001:phellodendron-amurense",
+      "11001:rhaponticum-repens"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-19T08:54:52.977Z",
+      "record_count": 16077
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e/artifacts/national-acquisition-reference.json",
+      "sha256": "273aa9234e4e1dba23e81874ea284f8c979e4de76d3a817433882077b71bd93b",
+      "bytes": 22124,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e/assertions.ndjson",
+      "sha256": "ddd80818e36f565eb0890a77df037288056de2cbef144f08d46be77cc41663b7",
+      "bytes": 1908,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e/reviews.ndjson",
+      "sha256": "1b5283a07e0b1247d30d7b24d72f9bef9abdc41768c454cbec9209b554d79df5",
+      "bytes": 970,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e/rejections.ndjson",
+      "sha256": "d35b0cc1b3a0c2885063fbd452a9f217e9090f194d86449a66de840de6ae4fc5",
+      "bytes": 739,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e/outcomes.ndjson",
+      "sha256": "3c55aa1accf0a424b8d004748475440ebfc7bb55b7ba69a703890c7ba6e529b4",
+      "bytes": 6485,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e/source-verification.json",
+      "sha256": "6ee676a74baca5d14d3343c6db4f3a726a52d77c423bd1ceb125b4152556c8ca",
+      "bytes": 3835,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 9,
+    "candidate_records": 4,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 9
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-75-9.json --acquisition src/data/research/national-acquisitions/20260819t085145z__gbif-download__fe5d42be8331"
+}

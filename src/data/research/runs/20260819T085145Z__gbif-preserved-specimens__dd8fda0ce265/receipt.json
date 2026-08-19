@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265",
+  "status": "complete",
+  "started_at": "2026-08-19T08:51:45.819Z",
+  "finished_at": "2026-08-19T08:54:58.386Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "0f5e3b5a38c68185f1f73382bfce4c21c1a0e8e460d94759058ebbc855770f60",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "c6a2d3c4a4ac6677e1c2b163c9fcc27975ee340d",
+  "parameter_hash": "a58346f0ae85e93aab277b5f79e0067932a0a261fd19ef39953e0d2f8cf25aea",
+  "parameters": {
+    "stateCode": "HI",
+    "stateProvince": "Hawaii",
+    "candidateLimit": 40,
+    "candidatePairs": [
+      "15001:carduus-acanthoides",
+      "15001:centaurea-stoebe",
+      "15001:echium-vulgare",
+      "15001:euphorbia-virgata",
+      "15001:hydrocharis-morsus-ranae",
+      "15001:hypophthalmichthys-nobilis",
+      "15001:phellodendron-amurense",
+      "15001:rhaponticum-repens",
+      "15003:carduus-acanthoides",
+      "15003:centaurea-stoebe",
+      "15003:echium-vulgare",
+      "15003:euphorbia-virgata",
+      "15003:hydrocharis-morsus-ranae",
+      "15003:hypophthalmichthys-nobilis",
+      "15003:phellodendron-amurense",
+      "15003:rhaponticum-repens",
+      "15005:carduus-acanthoides",
+      "15005:centaurea-stoebe",
+      "15005:echium-vulgare",
+      "15005:euphorbia-virgata",
+      "15005:hydrocharis-morsus-ranae",
+      "15005:hypophthalmichthys-nobilis",
+      "15005:phellodendron-amurense",
+      "15005:rhaponticum-repens",
+      "15007:carduus-acanthoides",
+      "15007:centaurea-stoebe",
+      "15007:echium-vulgare",
+      "15007:euphorbia-virgata",
+      "15007:hydrocharis-morsus-ranae",
+      "15007:hypophthalmichthys-nobilis",
+      "15007:phellodendron-amurense",
+      "15007:rhaponticum-repens",
+      "15009:carduus-acanthoides",
+      "15009:centaurea-stoebe",
+      "15009:echium-vulgare",
+      "15009:euphorbia-virgata",
+      "15009:hydrocharis-morsus-ranae",
+      "15009:hypophthalmichthys-nobilis",
+      "15009:phellodendron-amurense",
+      "15009:rhaponticum-repens"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "HI",
+    "county_fips": [
+      "15001",
+      "15003",
+      "15005",
+      "15007",
+      "15009"
+    ],
+    "species_ids": [
+      "carduus-acanthoides",
+      "centaurea-stoebe",
+      "echium-vulgare",
+      "euphorbia-virgata",
+      "hydrocharis-morsus-ranae",
+      "hypophthalmichthys-nobilis",
+      "phellodendron-amurense",
+      "rhaponticum-repens"
+    ],
+    "pair_keys": [
+      "15001:carduus-acanthoides",
+      "15001:centaurea-stoebe",
+      "15001:echium-vulgare",
+      "15001:euphorbia-virgata",
+      "15001:hydrocharis-morsus-ranae",
+      "15001:hypophthalmichthys-nobilis",
+      "15001:phellodendron-amurense",
+      "15001:rhaponticum-repens",
+      "15003:carduus-acanthoides",
+      "15003:centaurea-stoebe",
+      "15003:echium-vulgare",
+      "15003:euphorbia-virgata",
+      "15003:hydrocharis-morsus-ranae",
+      "15003:hypophthalmichthys-nobilis",
+      "15003:phellodendron-amurense",
+      "15003:rhaponticum-repens",
+      "15005:carduus-acanthoides",
+      "15005:centaurea-stoebe",
+      "15005:echium-vulgare",
+      "15005:euphorbia-virgata",
+      "15005:hydrocharis-morsus-ranae",
+      "15005:hypophthalmichthys-nobilis",
+      "15005:phellodendron-amurense",
+      "15005:rhaponticum-repens",
+      "15007:carduus-acanthoides",
+      "15007:centaurea-stoebe",
+      "15007:echium-vulgare",
+      "15007:euphorbia-virgata",
+      "15007:hydrocharis-morsus-ranae",
+      "15007:hypophthalmichthys-nobilis",
+      "15007:phellodendron-amurense",
+      "15007:rhaponticum-repens",
+      "15009:carduus-acanthoides",
+      "15009:centaurea-stoebe",
+      "15009:echium-vulgare",
+      "15009:euphorbia-virgata",
+      "15009:hydrocharis-morsus-ranae",
+      "15009:hypophthalmichthys-nobilis",
+      "15009:phellodendron-amurense",
+      "15009:rhaponticum-repens"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-19T08:54:52.977Z",
+      "record_count": 16077
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265/artifacts/national-acquisition-reference.json",
+      "sha256": "c3c46f23716d050481a1d9ae10f46f03efef6992ef69a20294c88f100751695e",
+      "bytes": 22127,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265/assertions.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265/reviews.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265/rejections.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265/outcomes.ndjson",
+      "sha256": "67ba47919d4e74b0fa104ef732e3c992be80b9662079264cb4e31901a3430129",
+      "bytes": 28740,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__dd8fda0ce265/source-verification.json",
+      "sha256": "56f91a7c345e009274ce8e80651e654d51b3d202fba2b6741798056de6e36bfd",
+      "bytes": 4847,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 40,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 40
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-75-9.json --acquisition src/data/research/national-acquisitions/20260819t085145z__gbif-download__fe5d42be8331"
+}

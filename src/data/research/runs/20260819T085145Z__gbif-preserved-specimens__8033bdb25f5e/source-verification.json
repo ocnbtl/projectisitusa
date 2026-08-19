@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-19T08:54:58.386Z",
+  "runId": "20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e",
+  "sourceId": "gbif-preserved-specimens",
+  "stateCode": "DC",
+  "pairKeys": [
+    "11001:carduus-acanthoides",
+    "11001:centaurea-stoebe",
+    "11001:cyperus-esculentus",
+    "11001:echium-vulgare",
+    "11001:euphorbia-virgata",
+    "11001:hydrocharis-morsus-ranae",
+    "11001:hypophthalmichthys-nobilis",
+    "11001:phellodendron-amurense",
+    "11001:rhaponticum-repens"
+  ],
+  "parameterHash": "b412647162585311e1a50d39193cf40c0928dc7aff12227fa48808cd4da77cfc",
+  "authority": {
+    "name": "Global Biodiversity Information Facility",
+    "sourceUrl": "https://www.gbif.org/occurrence/download/0023928-260806074905277",
+    "publisher": "GBIF"
+  },
+  "terms": {
+    "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+    "termsUrl": "https://www.gbif.org/terms",
+    "retentionAllowed": true
+  },
+  "availability": {
+    "status": "available",
+    "checkedAt": "2026-08-19T08:54:58.386Z",
+    "freshnessDate": "2026-08-19"
+  },
+  "geography": {
+    "method": "Exact provider-declared state and county text resolved through the active Census county-equivalent registry.",
+    "countyEquivalentSupported": true,
+    "coordinatePolicy": "Coordinates never establish county membership; missing, ambiguous, contradictory, or retired geography is rejected."
+  },
+  "taxonomy": {
+    "method": "Exact retained GBIF species keys from a hash-pinned taxonomy cache with EXACT species matches and confidence at least 95.",
+    "targetSpeciesIds": [
+      "carduus-acanthoides",
+      "centaurea-stoebe",
+      "cyperus-esculentus",
+      "echium-vulgare",
+      "euphorbia-virgata",
+      "hydrocharis-morsus-ranae",
+      "hypophthalmichthys-nobilis",
+      "phellodendron-amurense",
+      "rhaponticum-repens"
+    ]
+  },
+  "acquisition": {
+    "snapshotComplete": true,
+    "paginationComplete": true,
+    "stableIdentityFields": [
+      "gbifID",
+      "datasetKey",
+      "speciesKey",
+      "stateProvince",
+      "county"
+    ],
+    "requests": [
+      {
+        "requestGroupId": "20260819t085145z__gbif-download__fe5d42be8331",
+        "url": "https://api.gbif.org/v1/occurrence/download/request/0023928-260806074905277.zip",
+        "purpose": "Authenticated provider-native national Darwin Core archive reused by this offline state partition",
+        "attempts": 1,
+        "status": 200,
+        "retrievedAt": "2026-08-19T08:54:52.977Z",
+        "declaredRecordCount": 16077,
+        "receivedRecordCount": 16077,
+        "pagination": {
+          "mode": "snapshot",
+          "pageIndex": 0,
+          "offset": null,
+          "limit": null,
+          "cursor": null,
+          "nextCursor": null,
+          "endOfRecords": true
+        }
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "supportsVerifiedAbsence": false,
+    "supportsNotDetected": false,
+    "limitations": [
+      "GBIF preserved specimen records are positive occurrence evidence, not a negative survey.",
+      "Complete archive silence changes research status only; failure, rejection, and missing geography create no negative claim."
+    ]
+  },
+  "retainedEvidence": [
+    {
+      "path": "src/data/research/runs/20260819T085145Z__gbif-preserved-specimens__8033bdb25f5e/artifacts/national-acquisition-reference.json",
+      "sha256": "273aa9234e4e1dba23e81874ea284f8c979e4de76d3a817433882077b71bd93b",
+      "bytes": 22124
+    }
+  ],
+  "caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "The archive uses deliberately retained legacy GBIF Backbone identifiers; Catalogue of Life migration is separate work.",
+    "At most one deterministic qualifying specimen assertion is published per selected county-species pair."
+  ]
+}
