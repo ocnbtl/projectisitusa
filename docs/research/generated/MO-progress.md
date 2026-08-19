@@ -7,21 +7,21 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Species: `2504`
 - Counties: `115`
 - County-species pairs: `287960`
-- Verified present: `6364`
+- Verified present: `6391`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `40096`
-- Not researched: `241500`
-- Determination coverage: `2.21%`
-- Research coverage: `16.13%`
-- Explicit outcome coverage: `16.1342%`
-- Applicable protocol cells: `278`
-- Current complete protocol cells: `96`
-- Protocol completion: `39.21%`
-- Current protocol completion: `34.53%`
-- Evidence records: `7205`
-- Research runs: `19`
-- Rejection records: `611`
+- Researched unresolved: `41104`
+- Not researched: `240465`
+- Determination coverage: `2.22%`
+- Research coverage: `16.49%`
+- Explicit outcome coverage: `16.4936%`
+- Applicable protocol cells: `281`
+- Current complete protocol cells: `99`
+- Protocol completion: `39.86%`
+- Current protocol completion: `35.23%`
+- Evidence records: `7232`
+- Research runs: `20`
+- Rejection records: `641`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5427 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 474 | 76 |
+| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 501 | 85 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

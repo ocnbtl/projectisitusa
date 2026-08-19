@@ -7,21 +7,21 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Species: `2504`
 - Counties: `3`
 - County-species pairs: `7512`
-- Verified present: `205`
+- Verified present: `214`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `998`
-- Not researched: `6309`
-- Determination coverage: `2.73%`
-- Research coverage: `16.01%`
-- Explicit outcome coverage: `16.0144%`
-- Applicable protocol cells: `225`
-- Current complete protocol cells: `59`
-- Protocol completion: `32.00%`
-- Current protocol completion: `26.22%`
-- Evidence records: `251`
-- Research runs: `26`
-- Rejection records: `79`
+- Researched unresolved: `1016`
+- Not researched: `6282`
+- Determination coverage: `2.85%`
+- Research coverage: `16.37%`
+- Explicit outcome coverage: `16.3738%`
+- Applicable protocol cells: `229`
+- Current complete protocol cells: `64`
+- Protocol completion: `33.62%`
+- Current protocol completion: `27.95%`
+- Evidence records: `260`
+- Research runs: `27`
+- Rejection records: `80`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -40,7 +40,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Illyrian cottonthistle (`onopordum-illyricum`) | plants | 3 | 0 | 1 |
 | Ducklettuce (`ottelia-alismoides`) | plants | 3 | 0 | 1 |
 | Mile-a-Minute Vine (`persicaria-perfoliata`) | plants | 3 | 0 | 1 |
-| Wine Raspberry (`rubus-phoenicolasius`) | plants | 3 | 0 | 1 |
 | Common Periwinkle (`vinca-minor`) | plants | 3 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 3 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 3 | 2 |
@@ -57,6 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 3 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 3 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 3 | 0 |
+| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 3 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 124 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 18 | 40 |
+| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 27 | 49 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -7,21 +7,21 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Species: `2504`
 - Counties: `16`
 - County-species pairs: `40064`
-- Verified present: `1348`
+- Verified present: `1376`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5132`
-- Not researched: `33584`
-- Determination coverage: `3.36%`
-- Research coverage: `16.17%`
-- Explicit outcome coverage: `16.1741%`
-- Applicable protocol cells: `236`
-- Current complete protocol cells: `91`
-- Protocol completion: `44.07%`
-- Current protocol completion: `38.56%`
-- Evidence records: `1729`
-- Research runs: `18`
-- Rejection records: `90`
+- Researched unresolved: `5248`
+- Not researched: `33440`
+- Determination coverage: `3.43%`
+- Research coverage: `16.53%`
+- Explicit outcome coverage: `16.5335%`
+- Applicable protocol cells: `239`
+- Current complete protocol cells: `94`
+- Protocol completion: `44.77%`
+- Current protocol completion: `39.33%`
+- Evidence records: `1757`
+- Research runs: `19`
+- Rejection records: `92`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -55,8 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | African amaranth (`amaranthus-muricatus`) | plants | 0 | 16 | 0 |
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 16 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 16 | 0 |
+| Japanese angelica tree (`aralia-elata`) | plants | 0 | 16 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 16 | 0 |
-| Small Carpgrass (`arthraxon-hispidus`) | plants | 0 | 16 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1137 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 142 | 72 |
+| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 170 | 81 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

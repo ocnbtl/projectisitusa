@@ -7,21 +7,21 @@ Generated: `2026-08-18T00:00:00.000Z`
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `3669`
+- Verified present: `3683`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `29377`
-- Not researched: `172282`
+- Researched unresolved: `30101`
+- Not researched: `171544`
 - Determination coverage: `1.79%`
-- Research coverage: `16.09%`
-- Explicit outcome coverage: `16.0942%`
-- Applicable protocol cells: `320`
-- Current complete protocol cells: `101`
-- Protocol completion: `35.63%`
-- Current protocol completion: `31.56%`
-- Evidence records: `5942`
-- Research runs: `18`
-- Rejection records: `598`
+- Research coverage: `16.45%`
+- Explicit outcome coverage: `16.4537%`
+- Applicable protocol cells: `323`
+- Current complete protocol cells: `104`
+- Protocol completion: `36.22%`
+- Current protocol completion: `32.20%`
+- Evidence records: `5956`
+- Research runs: `19`
+- Rejection records: `601`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -50,13 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 82 | 0 |
 | Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 82 | 0 |
 | Sweet Vernalgrass (`anthoxanthum-odoratum`) | plants | 0 | 82 | 0 |
+| Japanese angelica tree (`aralia-elata`) | plants | 0 | 82 | 0 |
 | Common Burdock (`arctium-minus`) | plants | 0 | 82 | 0 |
 | Capeweed (`arctotheca-calendula`) | plants | 0 | 82 | 0 |
 | Hen's eyes (`ardisia-crenata`) | plants | 0 | 82 | 0 |
 | Tall Oatgrass (`arrhenatherum-elatius`) | plants | 0 | 82 | 0 |
 | Onionweed (`asphodelus-fistulosus`) | plants | 0 | 82 | 0 |
 | Spear saltbush (`atriplex-patula`) | plants | 0 | 82 | 0 |
-| Wild oat (`avena-fatua`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2445 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-18T01:56:24.535Z | 671 | 87 |
+| GBIF preserved specimen records | operational | 2026-08-18T23:58:30.364Z | 685 | 96 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
