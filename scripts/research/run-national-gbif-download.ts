@@ -52,6 +52,13 @@ function runTimestamp(value: string) {
   return new Date(value).toISOString().replace(/[-:]/gu, "").replace(/\.\d{3}Z$/u, "Z").toLowerCase();
 }
 
+export function assertLiveStartedAtNotFuture(startedAt: string, now = Date.now()) {
+  assert(
+    Date.parse(startedAt) <= now + 5_000,
+    "GBIF live --started-at cannot be more than five seconds in the future.",
+  );
+}
+
 function parseArgs(argv: string[]) {
   const values = new Map<string, string>();
   for (let index = 0; index < argv.length; index += 2) {
@@ -442,6 +449,7 @@ async function main() {
     return;
   }
 
+  assertLiveStartedAtNotFuture(options.startedAt);
   assert(readiness.ready, `GBIF national acquisition is blocked: missing ${readiness.missing.join(", ")}.`);
   const initialStatus = execFileSync(
     "git",

@@ -34,6 +34,7 @@ import {
 } from "./research/partition-national-gbif-download";
 import {
   assertSuccessfulDownloadMetadata,
+  assertLiveStartedAtNotFuture,
   checkedFetch,
   requestResumeAction,
   retainDownload,
@@ -107,6 +108,11 @@ assert.equal(requestResumeAction(false, true, "000001-260817000000000"), "reconc
 assert.equal(requestResumeAction(false, true, null), "blocked");
 assert.throws(() => requestResumeAction(true, true, "duplicate"), /invalid after a download key is durable/u);
 assert.throws(() => requestResumeAction(false, false, "orphan"), /requires an ambiguous request dispatch marker/u);
+assert.doesNotThrow(() => assertLiveStartedAtNotFuture("2026-08-18T23:56:00.000Z", Date.parse("2026-08-18T23:56:01.000Z")));
+assert.throws(
+  () => assertLiveStartedAtNotFuture("2026-08-18T23:57:00.000Z", Date.parse("2026-08-18T23:56:01.000Z")),
+  /cannot be more than five seconds in the future/u,
+);
 
 const metadata = publicDownloadMetadata({
   key: "000001-260817000000000",
