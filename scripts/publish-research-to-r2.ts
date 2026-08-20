@@ -24,6 +24,10 @@ import {
   R2_CLASS_B_SAFETY_REQUESTS,
   R2_STORAGE_SAFETY_BYTES,
 } from "./research/r2-free-tier-budget";
+import {
+  evaluateResearchPromotionCadence,
+  validateResearchPublicationPointer,
+} from "./research/publication-cadence";
 
 const ROOT = process.cwd();
 const DEFAULT_MANIFEST = path.join(ROOT, "ops/national-research/publication/research-data-manifest.json");
@@ -175,8 +179,13 @@ async function main() {
   const currentClassARequests = nonNegativeIntegerArgument("--monthly-class-a-used", mode !== "plan");
   const currentClassBRequests = nonNegativeIntegerArgument("--monthly-class-b-used", mode !== "plan");
   const publicOrigin = argument("--public-origin");
+  const cadenceOverrideReason = argument("--cadence-override-reason");
+  if (cadenceOverrideReason && !process.argv.includes("--promote")) {
+    throw new Error("--cadence-override-reason is only valid with --promote.");
+  }
   const plannedClassARequests = uniqueArtifacts.length + 2 + (process.argv.includes("--promote") ? 1 : 0);
-  const plannedClassBRequests = uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0);
+  const plannedClassBRequests =
+    uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0) + (process.argv.includes("--promote") ? 1 : 0);
 
   assertR2FreeTierSafety({
     projectedStorageBytes: manifest.uniqueObjectBytes + manifestBytes(manifest).length,
@@ -223,9 +232,29 @@ async function main() {
     return existingBytes === undefined;
   });
   const missingBytes = missing.reduce((total, artifact) => total + artifact.bytes, 0);
+  if (process.argv.includes("--promote")) {
+    let previousPointer: ReturnType<typeof validateResearchPublicationPointer> | null = null;
+    if (listing.objects.has(pointerKey)) {
+      const currentObject = await client.send(new GetObjectCommand({ Bucket: bucket, Key: pointerKey }));
+      if (!currentObject.Body || !("transformToString" in currentObject.Body)) {
+        throw new Error("R2 current pointer did not return a readable body.");
+      }
+      previousPointer = validateResearchPublicationPointer(
+        JSON.parse(await currentObject.Body.transformToString("utf8")),
+      );
+    }
+    const promotionCadence = evaluateResearchPromotionCadence({
+      now: new Date(),
+      previousPointer,
+      overrideReason: cadenceOverrideReason,
+    });
+    console.log(`R2 promotion cadence: ${JSON.stringify(promotionCadence)}`);
+  }
   const projectedStorageBytes = existingStorageBytes + missingBytes + manifestBytes(manifest).length + 1024;
   const projectedClassARequests = listing.requestCount + missing.length + 1 + (process.argv.includes("--promote") ? 1 : 0);
-  const projectedClassBRequests = uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0);
+  const projectedClassBRequests =
+    uniqueArtifacts.length + 1 + (publicOrigin ? 4 : 0) +
+    (process.argv.includes("--promote") && listing.objects.has(pointerKey) ? 1 : 0);
   assertR2FreeTierSafety({
     projectedStorageBytes,
     currentClassARequests,

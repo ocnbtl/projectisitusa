@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "r2-reachability-retention-20260819-r1",
+  "observedAt": "2026-08-20T02:46:47.698Z",
+  "status": "read-only-reachability-complete-publication-cadence-guarded",
+  "objective": "Reduce research-data pointer promotion frequency and establish an exact, non-destructive R2 reachability and rollback-window report before any storage cleanup is considered.",
+  "repository": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "implementationBaseSha": "a9cb0d9a5f913aa4b85b0dcb8ea398a4c34c3022"
+  },
+  "implementation": {
+    "promotionPolicyVersion": 1,
+    "minimumPromotionIntervalHours": 168,
+    "rollbackReleaseCount": 2,
+    "rollbackWindowMeaning": "The current release plus the two most recent prior releases.",
+    "urgentCorrectionRule": "A pointer promotion inside the seven-day interval must supply a specific single-line cadence override reason from 24 through 500 characters.",
+    "reportMode": "read-only-list-and-get",
+    "automaticDeletionAllowed": false,
+    "deletionRequiresExplicitAuthority": true,
+    "scriptPaths": [
+      "scripts/report-r2-reachability.ts",
+      "scripts/research/r2-reachability.ts",
+      "scripts/research/publication-cadence.ts",
+      "scripts/research/run-r2-reachability-report.ps1"
+    ]
+  },
+  "dashboardSample": {
+    "observedAt": "2026-08-20T02:46:01.829Z",
+    "displayedClassAOperations": "19.26k",
+    "displayedClassBOperations": "39.7k",
+    "displayedBucketObjects": "19.04k",
+    "displayedTotalStorage": "5.49 GB",
+    "displayedBillableUsage": "No billable usage incurred yet",
+    "conservativeClassAInput": 20000,
+    "conservativeClassBInput": 40000
+  },
+  "currentRelease": {
+    "releaseId": "research-021c595d0604-b3467b304cd02d85",
+    "releaseManifestKey": "releases/research-021c595d0604-b3467b304cd02d85/manifest.json",
+    "sourceCommit": "021c595d0604012bc75f298c409e5ac1a023e0c0",
+    "promotedAt": "2026-08-19T22:57:28.231Z",
+    "pointerManifestReconciled": true
+  },
+  "rollbackWindow": {
+    "retainedReleaseIds": [
+      "research-021c595d0604-b3467b304cd02d85",
+      "research-744e129b27a2-c01f406ea3d8d22a",
+      "research-aed213043298-61bb7c59ff565fba"
+    ],
+    "historicalReleaseIdsOutsideWindow": [
+      "research-2089c1fcd7f0-ef528a9620612236",
+      "research-1f093b3150f7-a291afc1812a7e4c",
+      "research-8bde16be35b8-e6a2af66396c19e7"
+    ]
+  },
+  "providerRequestAccounting": {
+    "reportClassARequests": 20,
+    "reportClassBRequests": 7,
+    "projectedClassAAfterReport": 20020,
+    "projectedClassBAfterReport": 40007,
+    "classASafetyStop": 800000,
+    "classBSafetyStop": 8000000,
+    "classAWithinStop": true,
+    "classBWithinStop": true
+  },
+  "bucketInventory": {
+    "objectCount": 19041,
+    "retainedBytes": 5488293321,
+    "storageSafetyStopBytes": 8000000000,
+    "headroomBytes": 2511706679,
+    "percentOfSafetyBudget": 68.604,
+    "inventorySha256": "47216b925c6992acc3c8b73a5ca0906788b900a4caa30ec161f14394376139a1",
+    "contentAddressedObjects": {
+      "objectCount": 19034,
+      "bytes": 5478900350,
+      "inventorySha256": "6196c252f1c9f534aafe366e6b371cb125edc60e08ac515479c9f82c5d7ec276"
+    },
+    "releaseManifests": {
+      "objectCount": 6,
+      "bytes": 9392550,
+      "inventorySha256": "62c2ffec7f5fd99e0cf233615dcf6241a234fc57e652c2ddb8767e4fcf21622e"
+    },
+    "pointer": {
+      "objectCount": 1,
+      "bytes": 421,
+      "inventorySha256": "abfaf3422d34e8c1f2b7ba83596babe2ea554b48e48280bc02c1ba1407b6589d"
+    },
+    "otherObjects": {
+      "objectCount": 0,
+      "bytes": 0
+    }
+  },
+  "reachability": {
+    "currentReleaseObjects": {
+      "objectCount": 3195,
+      "bytes": 981184868,
+      "inventorySha256": "aa333ebb6c4ea799ca1859dd7e20d4c621ee4c2580fa329f65beb6012eecace7"
+    },
+    "rollbackOnlyObjects": {
+      "objectCount": 6322,
+      "bytes": 1817615899,
+      "inventorySha256": "571191c751b49bd8549428ca735b44f409ea80234394695e300ccdfa59f7b2b6"
+    },
+    "historicalOnlyObjects": {
+      "objectCount": 9517,
+      "bytes": 2680099583,
+      "inventorySha256": "8088b722feef63f25a5169ee16f7a377ccb53c7a7a6be231bb2f98f450b96cef"
+    },
+    "unreferencedContentObjects": {
+      "objectCount": 0,
+      "bytes": 0
+    },
+    "historicalReleaseManifestsOutsideWindow": {
+      "objectCount": 3,
+      "bytes": 4696275,
+      "inventorySha256": "3509ca01c88d70664d8f9a7c25625178f2d7b410115f7e6052af60bd4886d724"
+    },
+    "contentByteConservation": {
+      "currentPlusRollbackPlusHistoricalBytes": 5478900350,
+      "listedContentAddressedBytes": 5478900350,
+      "reconciled": true
+    }
+  },
+  "retentionFinding": {
+    "candidateObjectCount": 9520,
+    "candidateBytes": 2684795858,
+    "automaticEligibility": false,
+    "deletionPerformed": false,
+    "qualification": "The candidates are historical-only content objects plus historical release manifests outside the reporting rollback window. No object is approved for deletion. A future cleanup requires explicit authority, a fresh report, and independent rollback verification."
+  },
+  "release": {
+    "researchProjectionGenerated": false,
+    "r2UploadPerformed": false,
+    "r2PointerPromotionPerformed": false,
+    "r2DeletionPerformed": false,
+    "vercelDeploymentRequired": false,
+    "publicResearchReleaseUnchanged": true
+  },
+  "verification": {
+    "focusedPublicationCadenceAndReachabilityTests": "passed with pinned Node outside the sandbox",
+    "typecheck": "passed with pinned Node",
+    "lint": "passed with zero warnings or errors",
+    "fullResearchIntegrity": {
+      "status": "passed",
+      "frozenRegression": "97/97 with zero critical safety violations",
+      "totalImmutableResearchRuns": 1299,
+      "totalRunAssertionEvents": 308559,
+      "totalPairOutcomes": 1670267,
+      "unreviewedRunEvidence": 0,
+      "conflicts": 0,
+      "sourceCoverageIndex": "source-coverage-400c008c1b69c8cc8903 current and hash-reconciled",
+      "publicationManifest": "research-021c595d0604-b3467b304cd02d85 current"
+    },
+    "liveReport": "passed with exact pointer-manifest and referenced-byte reconciliation",
+    "signedQueryMarkersInEvaluation": 0
+  },
+  "nextAction": "Continue validated research locally. Do not promote another research-data pointer before 2026-08-26T22:57:28.231Z unless an urgent correctness release records a specific cadence override reason. Do not delete any R2 object without separate explicit authority."
+}

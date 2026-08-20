@@ -9,6 +9,7 @@ param(
   [long]$MonthlyClassAUsed = -1,
   [long]$MonthlyClassBUsed = -1,
   [switch]$Promote,
+  [string]$CadenceOverrideReason,
   [string]$PublicOrigin
 )
 
@@ -58,6 +59,7 @@ $publisherArguments += @(
   "--monthly-class-b-used", $MonthlyClassBUsed.ToString()
 )
 if ($Promote) { $publisherArguments += "--promote" }
+if ($CadenceOverrideReason) { $publisherArguments += @("--cadence-override-reason", $CadenceOverrideReason) }
 if ($PublicOrigin) { $publisherArguments += @("--public-origin", $PublicOrigin) }
 
 $env:R2_ACCOUNT_ID = "0fe57401a5fd98319e16832ee97de02d"
