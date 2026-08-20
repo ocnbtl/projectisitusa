@@ -32,6 +32,10 @@ import {
   type ResearchCatalogSpecies,
 } from "@/lib/research/pair-resolution";
 import { fetchResearchProjectionJson } from "@/lib/research/public-projection-fetch";
+import {
+  buildResearchHref,
+  parseResearchDeepLink,
+} from "@/lib/research/research-deep-link";
 import type {
   ResearchCountyFile,
   ResearchPairRecord,
@@ -801,14 +805,19 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
         .map((county) => ({ value: county.countyFips, label: county.name })),
     [summary.counties],
   );
-  const [selectedCountyFips, setSelectedCountyFips] = useState(
-    () => countyOptions[0]?.value ?? "",
+  const [initialDeepLink] = useState(() =>
+    parseResearchDeepLink(typeof window === "undefined" ? "" : window.location.search),
+  );
+  const [selectedCountyFips, setSelectedCountyFips] = useState(() =>
+    initialDeepLink.countyFips && countyOptions.some((option) => option.value === initialDeepLink.countyFips)
+      ? initialDeepLink.countyFips
+      : countyOptions[0]?.value ?? "",
   );
   const [countyData, setCountyData] = useState<CountyResearchFile | null>(null);
   const [loadState, setLoadState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [loadError, setLoadError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialDeepLink.speciesQuery ?? "");
   const deferredQuery = useDeferredValue(query);
   const [statusFilter, setStatusFilter] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
@@ -918,6 +927,23 @@ function CountyResearchView({ summary }: { summary: ResearchSummaryFile }) {
   useEffect(() => {
     setExpandedSpeciesIds(new Set());
   }, [selectedCountyFips]);
+
+  useEffect(() => {
+    if (!selectedCountyFips || typeof window === "undefined") return;
+    const href = buildResearchHref({
+      stateCode: summary.stateCode,
+      countyFips: selectedCountyFips,
+      speciesQuery: query,
+    });
+    window.history.replaceState(null, "", href);
+  }, [query, selectedCountyFips, summary.stateCode]);
+
+  useEffect(() => {
+    if (!countyData) return;
+    const exactSpeciesId = query.trim().toLowerCase();
+    if (!exactSpeciesId || !countyData.pairs.some((pair) => pair.speciesId === exactSpeciesId)) return;
+    setExpandedSpeciesIds(new Set([exactSpeciesId]));
+  }, [countyData, query]);
 
   const availableStatuses = useMemo(() => {
     if (!countyData) return [];
@@ -1613,24 +1639,32 @@ export function ResearchControlCenter({
     [availableStates],
   );
   const defaultStateCode = availableStates[0]?.stateCode ?? "AL";
-  const [selectedStateCode, setSelectedStateCode] = useState(() => {
-    if (typeof window === "undefined") return defaultStateCode;
-    const requested = new URLSearchParams(window.location.search).get("state")?.toUpperCase();
-    return requested && allowedStateCodes.has(requested) ? requested : defaultStateCode;
-  });
+  const [selectedStateCode, setSelectedStateCode] = useState(defaultStateCode);
+  const [deepLinkReady, setDeepLinkReady] = useState(false);
   const [summary, setSummary] = useState<ResearchSummaryFile | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
 
+  useEffect(() => {
+    const requested = parseResearchDeepLink(window.location.search).stateCode;
+    if (requested && allowedStateCodes.has(requested)) {
+      setSelectedStateCode(requested);
+    }
+    setDeepLinkReady(true);
+  }, [allowedStateCodes]);
+
   function handleStateChange(stateCode: string) {
     if (!allowedStateCodes.has(stateCode)) return;
     setSelectedStateCode(stateCode);
-    const url = new URL(window.location.href);
-    url.searchParams.set("state", stateCode);
-    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+    const current = parseResearchDeepLink(window.location.search);
+    window.history.replaceState(null, "", buildResearchHref({
+      stateCode,
+      speciesQuery: current.speciesQuery,
+    }));
   }
 
   useEffect(() => {
+    if (!deepLinkReady) return;
     const controller = new AbortController();
 
     async function loadSummary() {
@@ -1656,7 +1690,7 @@ export function ResearchControlCenter({
 
     void loadSummary();
     return () => controller.abort();
-  }, [reloadKey, selectedStateCode]);
+  }, [deepLinkReady, reloadKey, selectedStateCode]);
 
   if (summary) {
     return (

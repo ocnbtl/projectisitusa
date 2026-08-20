@@ -5,12 +5,14 @@ import { notFound, redirect } from "next/navigation";
 import { ActionGuidance } from "@/components/action-guidance";
 import { SpeciesImage } from "@/components/species-image";
 import { SourceAttribution } from "@/components/source-attribution";
+import speciesResearchEntrypoints from "@/data/research/species-research-entrypoints.json";
 import {
   speciesBySlug,
   speciesSlugAliases,
 } from "@/lib/data/species-store";
 import { formatCategoryLabel } from "@/lib/utils";
 import type { Species } from "@/lib/data/types";
+import { buildResearchHref } from "@/lib/research/research-deep-link";
 
 function buildRegistryOrigin(species: Species) {
   if (!species.registry) return null;
@@ -99,6 +101,14 @@ export default async function SpeciesProfilePage({
     species.whatToLookFor && species.whatToLookFor.length > 0
       ? species.whatToLookFor
       : buildRegistryLookFor(species);
+  const researchEntrypoint = speciesResearchEntrypoints.entries.find(
+    (entry) => entry.speciesId === species.id,
+  );
+  const researchHref = buildResearchHref({
+    stateCode: researchEntrypoint?.stateCode,
+    countyFips: researchEntrypoint?.countyFips,
+    speciesQuery: species.id,
+  });
 
   return (
     <main className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 px-4 pb-12 sm:px-6 lg:px-8">
@@ -128,7 +138,7 @@ export default async function SpeciesProfilePage({
                   {species.registry.statusLabel}
                 </span>
                 <span className="rounded-full border border-[var(--border)] px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
-                  {species.registry.hasCountyData ? "County map data available" : "Catalog-only entry"}
+                  {species.registry.hasCountyData ? "County map data available" : "No county map layer"}
                 </span>
               </div>
             ) : null}
@@ -220,7 +230,7 @@ export default async function SpeciesProfilePage({
           </p>
           <p className="mt-4">
             This profile is built from the verified registry snapshot and current
-            local county coverage. Use the linked authority sources for species-
+            local map coverage. Use the linked authority sources for species-
             specific management or reporting guidance, especially if this is a
             new find in your area.
           </p>
@@ -228,9 +238,17 @@ export default async function SpeciesProfilePage({
             <p className="mt-3 text-[var(--muted)]">
               {species.registry.mappedCountyCount
                 ? `Current local map coverage: ${species.registry.mappedCountyCount.toLocaleString()} mapped counties.`
-                : "This species is still waiting for attached county-level coverage in the local snapshot."}
+                : "This profile has no attached counties in the map snapshot. Map coverage and research-only county evidence are tracked separately, so reviewed research can exist without changing the map count."}
             </p>
           ) : null}
+          <Link
+            href={researchHref}
+            className="mt-4 inline-flex w-fit items-center rounded-full border border-[var(--border)] px-4 py-2 text-sm font-medium text-[var(--foreground)] hover:border-[var(--accent)] hover:text-[var(--accent-strong)]"
+          >
+            {researchEntrypoint
+              ? "Open reviewed county research evidence"
+              : "Search this species in county research"}
+          </Link>
         </section>
       )}
 
