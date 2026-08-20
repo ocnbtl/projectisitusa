@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260820T031644Z__gbif-preserved-specimens__8565ced5d799",
+  "status": "complete",
+  "started_at": "2026-08-20T03:16:44.722Z",
+  "finished_at": "2026-08-20T03:26:44.580Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "e8248c9cf21c12171e35f4f301e7a772230267d7",
+  "parameter_hash": "6f0a5db0ad883a1d6a251ed6f398c8a9bd65f9c6ed6d47734289f6e5b1e06765",
+  "parameters": {
+    "stateCode": "DE",
+    "stateProvince": "Delaware",
+    "candidateLimit": 24,
+    "candidatePairs": [
+      "10001:aceria-kuko",
+      "10001:aclerda-takahashii",
+      "10001:acleris-comariana",
+      "10001:acyrthosiphon-kondoi",
+      "10001:aegilops-tauschii",
+      "10001:agrostis-castellana",
+      "10001:aleurites-moluccanus",
+      "10001:allium-sativum",
+      "10003:aceria-kuko",
+      "10003:aclerda-takahashii",
+      "10003:acleris-comariana",
+      "10003:acyrthosiphon-kondoi",
+      "10003:aegilops-tauschii",
+      "10003:agrostis-castellana",
+      "10003:aleurites-moluccanus",
+      "10003:allium-sativum",
+      "10005:aceria-kuko",
+      "10005:aclerda-takahashii",
+      "10005:acleris-comariana",
+      "10005:acyrthosiphon-kondoi",
+      "10005:aegilops-tauschii",
+      "10005:agrostis-castellana",
+      "10005:aleurites-moluccanus",
+      "10005:allium-sativum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DE",
+    "county_fips": [
+      "10001",
+      "10003",
+      "10005"
+    ],
+    "species_ids": [
+      "aceria-kuko",
+      "aclerda-takahashii",
+      "acleris-comariana",
+      "acyrthosiphon-kondoi",
+      "aegilops-tauschii",
+      "agrostis-castellana",
+      "aleurites-moluccanus",
+      "allium-sativum"
+    ],
+    "pair_keys": [
+      "10001:aceria-kuko",
+      "10001:aclerda-takahashii",
+      "10001:acleris-comariana",
+      "10001:acyrthosiphon-kondoi",
+      "10001:aegilops-tauschii",
+      "10001:agrostis-castellana",
+      "10001:aleurites-moluccanus",
+      "10001:allium-sativum",
+      "10003:aceria-kuko",
+      "10003:aclerda-takahashii",
+      "10003:acleris-comariana",
+      "10003:acyrthosiphon-kondoi",
+      "10003:aegilops-tauschii",
+      "10003:agrostis-castellana",
+      "10003:aleurites-moluccanus",
+      "10003:allium-sativum",
+      "10005:aceria-kuko",
+      "10005:aclerda-takahashii",
+      "10005:acleris-comariana",
+      "10005:acyrthosiphon-kondoi",
+      "10005:aegilops-tauschii",
+      "10005:agrostis-castellana",
+      "10005:aleurites-moluccanus",
+      "10005:allium-sativum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0026064-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-20T03:26:43.631Z",
+      "record_count": 1638
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__8565ced5d799/artifacts/national-acquisition-reference.json",
+      "sha256": "7f956ea70e2501defca4ea35c9082f4ecebc37b5d8877922b3c476ac070c27f0",
+      "bytes": 11380,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__8565ced5d799/assertions.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__8565ced5d799/reviews.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__8565ced5d799/rejections.ndjson",
+      "sha256": "8814918c53c36e93806a5e9ef34f72edbbe76052dcf03932cd3268899b34819b",
+      "bytes": 807,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__8565ced5d799/outcomes.ndjson",
+      "sha256": "0a59894e8fc667114cff207623d76f4b59c6edc0334e97706ad974b1205a5488",
+      "bytes": 17265,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__8565ced5d799/source-verification.json",
+      "sha256": "27a4cd892eb5e3e042d9c75e06763d622c16ce77744eb89af1f3a16f84915e8c",
+      "bytes": 4280,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 24,
+    "candidate_records": 1,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 1,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 24
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-78-8.json --acquisition src/data/research/national-acquisitions/20260820t031644z__gbif-download__5f0b33aeaea8"
+}

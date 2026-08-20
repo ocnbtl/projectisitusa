@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260820T031644Z__gbif-preserved-specimens__64a110ad9d8c",
+  "status": "complete",
+  "started_at": "2026-08-20T03:16:44.722Z",
+  "finished_at": "2026-08-20T03:26:44.580Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "e8248c9cf21c12171e35f4f301e7a772230267d7",
+  "parameter_hash": "18c4796338b2e903c46e6d578e65e5fc099cf7bd4c65298f637ea364597112ce",
+  "parameters": {
+    "stateCode": "HI",
+    "stateProvince": "Hawaii",
+    "candidateLimit": 40,
+    "candidatePairs": [
+      "15001:aceria-kuko",
+      "15001:aclerda-takahashii",
+      "15001:acleris-comariana",
+      "15001:acyrthosiphon-kondoi",
+      "15001:aegilops-tauschii",
+      "15001:agrostis-castellana",
+      "15001:aleurites-moluccanus",
+      "15001:allium-sativum",
+      "15003:aceria-kuko",
+      "15003:aclerda-takahashii",
+      "15003:acleris-comariana",
+      "15003:acyrthosiphon-kondoi",
+      "15003:aegilops-tauschii",
+      "15003:agrostis-castellana",
+      "15003:aleurites-moluccanus",
+      "15003:allium-sativum",
+      "15005:aceria-kuko",
+      "15005:aclerda-takahashii",
+      "15005:acleris-comariana",
+      "15005:acyrthosiphon-kondoi",
+      "15005:aegilops-tauschii",
+      "15005:agrostis-castellana",
+      "15005:aleurites-moluccanus",
+      "15005:allium-sativum",
+      "15007:aceria-kuko",
+      "15007:aclerda-takahashii",
+      "15007:acleris-comariana",
+      "15007:acyrthosiphon-kondoi",
+      "15007:aegilops-tauschii",
+      "15007:agrostis-castellana",
+      "15007:aleurites-moluccanus",
+      "15007:allium-sativum",
+      "15009:aceria-kuko",
+      "15009:aclerda-takahashii",
+      "15009:acleris-comariana",
+      "15009:acyrthosiphon-kondoi",
+      "15009:aegilops-tauschii",
+      "15009:agrostis-castellana",
+      "15009:aleurites-moluccanus",
+      "15009:allium-sativum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "HI",
+    "county_fips": [
+      "15001",
+      "15003",
+      "15005",
+      "15007",
+      "15009"
+    ],
+    "species_ids": [
+      "aceria-kuko",
+      "aclerda-takahashii",
+      "acleris-comariana",
+      "acyrthosiphon-kondoi",
+      "aegilops-tauschii",
+      "agrostis-castellana",
+      "aleurites-moluccanus",
+      "allium-sativum"
+    ],
+    "pair_keys": [
+      "15001:aceria-kuko",
+      "15001:aclerda-takahashii",
+      "15001:acleris-comariana",
+      "15001:acyrthosiphon-kondoi",
+      "15001:aegilops-tauschii",
+      "15001:agrostis-castellana",
+      "15001:aleurites-moluccanus",
+      "15001:allium-sativum",
+      "15003:aceria-kuko",
+      "15003:aclerda-takahashii",
+      "15003:acleris-comariana",
+      "15003:acyrthosiphon-kondoi",
+      "15003:aegilops-tauschii",
+      "15003:agrostis-castellana",
+      "15003:aleurites-moluccanus",
+      "15003:allium-sativum",
+      "15005:aceria-kuko",
+      "15005:aclerda-takahashii",
+      "15005:acleris-comariana",
+      "15005:acyrthosiphon-kondoi",
+      "15005:aegilops-tauschii",
+      "15005:agrostis-castellana",
+      "15005:aleurites-moluccanus",
+      "15005:allium-sativum",
+      "15007:aceria-kuko",
+      "15007:aclerda-takahashii",
+      "15007:acleris-comariana",
+      "15007:acyrthosiphon-kondoi",
+      "15007:aegilops-tauschii",
+      "15007:agrostis-castellana",
+      "15007:aleurites-moluccanus",
+      "15007:allium-sativum",
+      "15009:aceria-kuko",
+      "15009:aclerda-takahashii",
+      "15009:acleris-comariana",
+      "15009:acyrthosiphon-kondoi",
+      "15009:aegilops-tauschii",
+      "15009:agrostis-castellana",
+      "15009:aleurites-moluccanus",
+      "15009:allium-sativum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0026064-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-20T03:26:43.631Z",
+      "record_count": 1638
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__64a110ad9d8c/artifacts/national-acquisition-reference.json",
+      "sha256": "00fdddcd089c0d655bef226d57bd4a978ffb8d753234974cf411d26389fbc289",
+      "bytes": 11381,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__64a110ad9d8c/assertions.ndjson",
+      "sha256": "4b5c89d29a954bee03a253d651be2dcddcacec95a418590affa0497d7f3d2572",
+      "bytes": 9288,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__64a110ad9d8c/reviews.ndjson",
+      "sha256": "b0de65fc1c06bafd5033175307a1e4f078621a57707efc42ec5c5ec2a9d0e40b",
+      "bytes": 4874,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__64a110ad9d8c/rejections.ndjson",
+      "sha256": "f52f9214c015a9b10852f16a73192329323893e03e53717cdc46c304df9dc332",
+      "bytes": 4010,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__64a110ad9d8c/outcomes.ndjson",
+      "sha256": "35c0bb81eb2aef0dbcd4c3bafb036c7c70e7ceef856a13642c84a3139065fc82",
+      "bytes": 29064,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T031644Z__gbif-preserved-specimens__64a110ad9d8c/source-verification.json",
+      "sha256": "5b834ee57ca21bd2dfcad2461bde8aadd1daebe7891d542b0dd3f5af71aa8136",
+      "bytes": 4776,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 40,
+    "candidate_records": 80,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 5,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 40
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-78-8.json --acquisition src/data/research/national-acquisitions/20260820t031644z__gbif-download__5f0b33aeaea8"
+}
