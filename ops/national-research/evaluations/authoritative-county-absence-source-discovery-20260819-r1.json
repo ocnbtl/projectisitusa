@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "authoritative-county-absence-source-discovery-20260819-r1",
+  "observedAt": "2026-08-20T02:31:31.818Z",
+  "status": "discovery-lane-established-no-absence-assertions",
+  "objective": "Determine whether official county-scale absence or eradication statements can support a bounded verified-absent lane without converting source omission, survey non-detection, local eradication, or regulatory status into county absence.",
+  "policy": {
+    "verifiedAbsentRequirement": "An authoritative source must explicitly identify the exact taxon, exact county, defined time, and county-scale absence or eradication scope.",
+    "acceptedSourceClasses": [
+      "explicit-current-county-absence-statement",
+      "explicit-dated-county-eradication-statement"
+    ],
+    "neverSufficientAlone": [
+      "species omitted from a list or map",
+      "not known to occur",
+      "only known population eradicated",
+      "locality or site eradicated",
+      "partial-county quarantine removed",
+      "rescinded quarantine status",
+      "inactive or closed infestation status",
+      "negative survey without county-complete scope",
+      "repeated zero or no-result records"
+    ],
+    "presenceCompatibility": "A later or otherwise controlling presence record remains compatible with historical eradication evidence and controls the public compatibility determination."
+  },
+  "sourceInventory": [
+    {
+      "sourceId": "monterey-county-eradicated-weeds",
+      "authority": "County of Monterey Agricultural Commissioner's Office",
+      "sourceUrl": "https://www.countyofmonterey.gov/?NavID=2539",
+      "supportingDatedReports": [
+        "https://www.countyofmonterey.gov/home/showpublisheddocument/1471/638797938839470000",
+        "https://www.countyofmonterey.gov/home/showpublisheddocument/12607/638797945962500000"
+      ],
+      "stateCode": "CA",
+      "countyFips": "06053",
+      "countyName": "Monterey",
+      "sourceClass": "explicit-county-eradication-page",
+      "decision": "bounded-manual-authoritative-candidate",
+      "reason": "The official page explicitly labels named weeds as eradicated from Monterey County and supplies eradication histories. Dated county crop reports independently preserve historical eradication statements for a subset of the taxa.",
+      "taxa": [
+        {
+          "sourceScientificName": "Acaena novae-zelandiae",
+          "speciesId": null,
+          "catalogMatch": "missing",
+          "decision": "blocked",
+          "reason": "No active Project Isitusa catalog species resolves exactly."
+        },
+        {
+          "sourceScientificName": "Linaria genistifolia",
+          "speciesId": "linaria-dalmatica",
+          "catalogMatch": "ambiguous-synonym-or-infraspecific-mapping",
+          "decision": "blocked",
+          "reason": "The page title text and linked current profile use different taxon identities; negative evidence cannot rely on a convenient synonym inference."
+        },
+        {
+          "sourceScientificName": "Carduus acanthoides",
+          "speciesId": "carduus-acanthoides",
+          "catalogMatch": "exact",
+          "decision": "blocked-pending-dated-county-status",
+          "reason": "The current page labels the taxon eradicated from the county, but the inspected history does not expose a dated county-status statement suitable for a frozen temporal scope."
+        },
+        {
+          "sourceScientificName": "Hydrilla verticillata",
+          "speciesId": "hydrilla",
+          "catalogMatch": "exact",
+          "decision": "candidate-pending-independent-review",
+          "reason": "The current official county page labels Hydrilla eradicated and describes subsequent negative surveys; the 2015 county crop report states that Hydrilla has been eradicated. A bounded review must freeze the historical date, county scope, and later-presence conflict check before any assertion."
+        },
+        {
+          "sourceScientificName": "Centaurea maculosa",
+          "speciesId": "centaurea-stoebe",
+          "catalogMatch": "ambiguous-synonym",
+          "decision": "blocked",
+          "reason": "The source-to-catalog identity is not exact, and the same page warns that an undetected infestation might exist."
+        },
+        {
+          "sourceScientificName": "Centaurea diffusa",
+          "speciesId": "centaurea-diffusa",
+          "catalogMatch": "exact",
+          "decision": "candidate-pending-independent-review",
+          "reason": "The current official county page labels diffuse knapweed eradicated and describes a declaration after several years of negative surveys; the 2005 county crop report states that it has been eradicated. A bounded review must freeze the historical date, county scope, and later-presence conflict check before any assertion."
+        }
+      ],
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "sourceId": "usda-aphis-medfly-quarantine-removal-1999-orange",
+      "authority": "USDA APHIS Federal Register rule, 64 FR 48245",
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/FR-1999-09-03/pdf/FR-1999-09-03.pdf",
+      "stateCode": "CA",
+      "countyFips": "06059",
+      "countyName": "Orange",
+      "sourceScientificName": "Ceratitis capitata",
+      "speciesId": "ceratitis-capitata",
+      "sourceClass": "dated-regulatory-area-eradication",
+      "effectiveDate": "1999-08-27",
+      "decision": "not-county-absence",
+      "reason": "The rule explicitly concerns a quarantined portion of Orange County. Eradication from that bounded regulatory area cannot establish absence from the entire county pair.",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "sourceId": "boulder-county-weed-annual-report-2025",
+      "authority": "Boulder County Parks and Open Space",
+      "sourceUrl": "https://assets.bouldercounty.gov/wp-content/uploads/2026/02/integrated-weed-management-plan-annual-report-2025.pdf",
+      "stateCode": "CO",
+      "countyFips": "08013",
+      "countyName": "Boulder",
+      "sourceScientificName": "Centaurea solstitialis",
+      "speciesId": "centaurea-solstitialis",
+      "sourceClass": "only-known-population-eradicated",
+      "reportYear": 2025,
+      "decision": "not-county-absence",
+      "reason": "Eradication of the only known population is an inventory-qualified local eradication statement, not an explicit assertion that the species is absent throughout the county.",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "sourceId": "napa-county-sentinel-trapping",
+      "authority": "Napa County Agricultural Commissioner's Office",
+      "sourceUrl": "https://www.napacounty.gov/1270/Pests-Diseases",
+      "stateCode": "CA",
+      "countyFips": "06055",
+      "countyName": "Napa",
+      "sourceClass": "county-surveillance-not-found",
+      "observedScope": "Approximately 1,200 sentinel traps across five named wine-grape pest targets.",
+      "decision": "survey-lane-only-not-absence",
+      "reason": "The official page says the named pests have not been found, but the result is surveillance non-detection and the page does not allocate dated target-specific effort sufficient for a county absence assertion.",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "sourceId": "yolo-county-pest-prevention",
+      "authority": "Yolo County Department of Agriculture",
+      "sourceUrl": "https://www.yolocounty.gov/government/general-government-departments/agriculture/pest-prevention",
+      "stateCode": "CA",
+      "countyFips": "06113",
+      "countyName": "Yolo",
+      "sourceClass": "current-not-known-to-occur-list",
+      "decision": "knowledge-state-only-not-absence",
+      "reason": "The page describes systematic searches and says listed pests are not known to occur currently. A knowledge-state statement is not an explicit county absence determination and lacks target-specific dated effort.",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "sourceId": "usgs-nas-sunapee-variable-leaf-watermilfoil",
+      "authority": "USGS Nonindigenous Aquatic Species, citing New Hampshire Department of Environmental Services",
+      "sourceUrl": "https://nas.er.usgs.gov/queries/SpecimenViewer.aspx?SpecimenID=254699",
+      "stateCode": "NH",
+      "countyFips": "33019",
+      "countyName": "Sullivan",
+      "sourceScientificName": "Myriophyllum heterophyllum",
+      "speciesId": null,
+      "sourceClass": "dated-locality-eradication",
+      "eradicationYear": 2016,
+      "decision": "not-county-absence",
+      "reason": "The eradication status is attached to a Lake Sunapee locality record, not the whole county, and the species is not currently resolved in the Project Isitusa catalog.",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "sourceId": "king-county-noxious-weed-infestations",
+      "authority": "King County Department of Natural Resources and Parks",
+      "sourceUrl": "https://www5.kingcounty.gov/sdc?Layer=noxious_weed_infestation_point",
+      "stateCode": "WA",
+      "countyFips": "53033",
+      "countyName": "King",
+      "sourceClass": "site-level-active-and-non-active-infestation-ledger",
+      "decision": "ambiguous-site-status-not-absence",
+      "reason": "A non-active record may mean controlled, eradicated, under observation, or no active growth. The source explicitly warns that statuses change with fieldwork and reports; neither closed nor inactive can be promoted to county absence.",
+      "absenceAssertionsCreated": 0
+    },
+    {
+      "sourceId": "aphis-federal-quarantine-rescission",
+      "authority": "USDA APHIS federal quarantine status layer and linked regulatory documents",
+      "sourceUrl": "https://www.aphis.usda.gov/plant-pests-diseases/quarantines",
+      "sourceClass": "legal-status-change",
+      "decision": "not-biological-absence",
+      "reason": "A rescinded quarantine can reflect regulatory or operational criteria and does not by itself state that the exact species is absent from the exact county.",
+      "absenceAssertionsCreated": 0
+    }
+  ],
+  "findings": {
+    "inventoriedSources": 8,
+    "absenceAssertionsCreated": 0,
+    "exactCatalogCountyEradicationCandidates": 2,
+    "candidatePairKeys": [
+      "06053:hydrilla",
+      "06053:centaurea-diffusa"
+    ],
+    "automatedNationalCountyAbsenceContractFound": false,
+    "conclusion": "County-scale verified absence is realistically obtainable only as sparse, source-specific manual authoritative evidence. No national automated county-absence source was established. Zero verified-absent remains the honest current projection."
+  },
+  "requiredPilotContract": {
+    "maximumCandidatePairs": 2,
+    "providerMethod": "GET-only official pages or reports",
+    "requiredFields": [
+      "named authoritative publisher",
+      "direct source URL and retained bytes",
+      "exact source and catalog scientific names",
+      "explicit county name resolved to county FIPS",
+      "explicit absence or county-eradication statement",
+      "defined historical or current time scope",
+      "defined county spatial scope",
+      "independent review",
+      "later and conflicting presence check",
+      "claim caveat preserving historical scope"
+    ],
+    "stopConditions": [
+      "The retained source does not explicitly state county-scale absence or eradication.",
+      "The source statement is undated and no defensible historical time scope can be frozen.",
+      "The source taxon differs from the catalog target without an authoritative exact mapping.",
+      "The source describes only a site, waterbody, regulatory area, known population, or survey footprint.",
+      "The source contains an unresolved caveat suggesting an undetected county infestation.",
+      "Independent review or later-presence conflict screening is incomplete."
+    ]
+  },
+  "release": {
+    "providerAcquisitionPerformed": false,
+    "researchProjectionGenerated": false,
+    "r2PromotionPerformed": false,
+    "vercelDeploymentRequired": false,
+    "reason": "This is a source-discovery evaluation only. It creates no evidence assertion, determination, generated projection, or public release."
+  },
+  "nextAction": "Freeze a maximum-two-pair manual-authoritative pilot for Monterey County Hydrilla and diffuse knapweed only after dated source bytes, exact county scope, independent review, and later-presence conflict checks are all reproducible."
+}
