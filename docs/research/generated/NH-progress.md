@@ -1,6 +1,6 @@
 # New Hampshire Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `894`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `3586`
-- Not researched: `20560`
+- Researched unresolved: `3666`
+- Not researched: `20480`
 - Determination coverage: `3.57%`
-- Research coverage: `17.89%`
-- Explicit outcome coverage: `17.8914%`
+- Research coverage: `18.21%`
+- Explicit outcome coverage: `18.2109%`
 - Applicable protocol cells: `239`
 - Current complete protocol cells: `77`
 - Protocol completion: `37.66%`
 - Current protocol completion: `32.22%`
 - Evidence records: `902`
-- Research runs: `31`
+- Research runs: `32`
 - Rejection records: `46`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -49,14 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 10 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 10 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 10 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 10 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 10 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 10 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 10 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 10 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 10 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 10 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 10 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 10 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 10 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 10 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 10 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 10 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 700 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 70 | 84 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 70 | 92 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

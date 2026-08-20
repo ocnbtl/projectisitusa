@@ -1,26 +1,26 @@
 # New York Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `5835`
+- Verified present: `5836`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `21941`
-- Not researched: `127472`
+- Researched unresolved: `22436`
+- Not researched: `126976`
 - Determination coverage: `3.76%`
-- Research coverage: `17.89%`
-- Explicit outcome coverage: `17.8914%`
-- Applicable protocol cells: `354`
-- Current complete protocol cells: `103`
-- Protocol completion: `32.77%`
-- Current protocol completion: `29.10%`
-- Evidence records: `6885`
-- Research runs: `22`
+- Research coverage: `18.21%`
+- Explicit outcome coverage: `18.2109%`
+- Applicable protocol cells: `355`
+- Current complete protocol cells: `104`
+- Protocol completion: `32.96%`
+- Current protocol completion: `29.30%`
+- Evidence records: `6886`
+- Research runs: `23`
 - Rejection records: `902`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -44,19 +44,19 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Yellowfin goby (`acanthogobius-flavimanus`) | wildlife | 0 | 62 | 0 |
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 62 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 62 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 62 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 62 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 62 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 62 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 62 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 62 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 62 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 62 | 0 |
+| Bentgrass (`agrostis-castellana`) | plants | 0 | 62 | 0 |
+| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 62 | 0 |
 | Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 62 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 62 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 62 | 0 |
-| African amaranth (`amaranthus-muricatus`) | plants | 0 | 62 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 62 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 62 | 0 |
-| Giant Reed (`arundo-donax`) | plants | 0 | 62 | 0 |
-| Onionweed (`asphodelus-fistulosus`) | plants | 0 | 62 | 0 |
-| Animated oat (`avena-sterilis`) | plants | 0 | 62 | 0 |
-| Feathered mosquitofern (`azolla-pinnata`) | plants | 0 | 62 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4441 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 649 | 100 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 650 | 108 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

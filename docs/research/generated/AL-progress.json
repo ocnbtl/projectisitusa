@@ -1,8 +1,8 @@
 {
   "schemaVersion": 3,
   "stateCode": "AL",
-  "asOf": "2026-08-19",
-  "generatedAt": "2026-08-19T00:00:00.000Z",
+  "asOf": "2026-08-20",
+  "generatedAt": "2026-08-20T00:00:00.000Z",
   "scope": {
     "publicationMode": "authoritative",
     "speciesMode": "catalog-all",
@@ -36,29 +36,29 @@
     "verifiedPresent": 15300,
     "verifiedAbsent": 0,
     "notDetected": 8,
-    "researchedUnresolved": 97453,
-    "notResearched": 55007,
+    "researchedUnresolved": 97989,
+    "notResearched": 54471,
     "determinationCoveragePercent": 9.12,
-    "researchCoveragePercent": 67.21,
-    "explicitOutcomePairCount": 68340,
-    "explicitOutcomeCoveragePercent": 40.7348,
+    "researchCoveragePercent": 67.53,
+    "explicitOutcomePairCount": 68876,
+    "explicitOutcomeCoveragePercent": 41.0543,
     "conflictCount": 0,
-    "evidenceRecordCount": 53826,
+    "evidenceRecordCount": 53827,
     "bootstrapEvidenceRecordCount": 30130,
-    "runEvidenceRecordCount": 23696,
+    "runEvidenceRecordCount": 23697,
     "rejectionRecordCount": 6286,
-    "researchRunCount": 63,
+    "researchRunCount": 65,
     "boundedAcquisition": {
       "speciesCount": 2504,
       "totalPairs": 167768,
       "verifiedPresent": 15300,
       "verifiedAbsent": 0,
       "notDetected": 8,
-      "researchedUnresolved": 97453,
-      "notResearched": 55007,
-      "researchCoveragePercent": 67.21,
-      "explicitOutcomePairs": 68340,
-      "explicitOutcomeCoveragePercent": 40.7348
+      "researchedUnresolved": 97989,
+      "notResearched": 54471,
+      "researchCoveragePercent": 67.53,
+      "explicitOutcomePairs": 68876,
+      "explicitOutcomeCoveragePercent": 41.0543
     }
   },
   "migrationCandidates": {
@@ -183,9 +183,9 @@
       "authority": "USDA Animal and Plant Health Inspection Service",
       "tier": "official-national",
       "status": "operational",
-      "lastRunAt": null,
+      "lastRunAt": "2026-08-20T02:06:05.317Z",
       "evidencePairCount": 2,
-      "screenedSpeciesCount": 0
+      "screenedSpeciesCount": 1
     },
     {
       "id": "usfws-invasive-carp-edna",
@@ -263,9 +263,9 @@
       "authority": "Global Biodiversity Information Facility",
       "tier": "structured-aggregator",
       "status": "operational",
-      "lastRunAt": "2026-08-19T20:54:40.231Z",
+      "lastRunAt": "2026-08-20T03:26:44.580Z",
       "evidencePairCount": 6653,
-      "screenedSpeciesCount": 1000
+      "screenedSpeciesCount": 1008
     },
     {
       "id": "gbif-coordinate-specimens",
@@ -375,14 +375,14 @@
     "totalCells": 25040,
     "applicableCells": 14440,
     "notApplicableCells": 10600,
-    "completeCells": 1346,
-    "incompleteCells": 13094,
+    "completeCells": 1354,
+    "incompleteCells": 13086,
     "blockedCells": 0,
-    "currentCells": 1333,
+    "currentCells": 1341,
     "staleCells": 13,
-    "undatedCells": 13094,
-    "applicableCompletionPercent": 9.32,
-    "currentCompletePercent": 9.23,
+    "undatedCells": 13086,
+    "applicableCompletionPercent": 9.38,
+    "currentCompletePercent": 9.29,
     "regulatedAndHighApplicableCells": 324,
     "regulatedAndHighCurrentCompleteCells": 70,
     "regulatedAndHighCurrentCompletePercent": 21.6,
@@ -397,20 +397,20 @@
       {
         "category": "insects",
         "applicableCells": 3217,
-        "currentCompleteCells": 135,
-        "currentCompletePercent": 4.2
+        "currentCompleteCells": 138,
+        "currentCompletePercent": 4.29
       },
       {
         "category": "plants",
         "applicableCells": 9679,
-        "currentCompleteCells": 1102,
-        "currentCompletePercent": 11.39
+        "currentCompleteCells": 1106,
+        "currentCompletePercent": 11.43
       },
       {
         "category": "wildlife",
         "applicableCells": 978,
-        "currentCompleteCells": 71,
-        "currentCompletePercent": 7.26
+        "currentCompleteCells": 72,
+        "currentCompletePercent": 7.36
       }
     ],
     "priorityCompletion": [
@@ -435,8 +435,8 @@
       {
         "priority": "baseline",
         "applicableCells": 14116,
-        "currentCompleteCells": 1263,
-        "currentCompletePercent": 8.95
+        "currentCompleteCells": 1271,
+        "currentCompletePercent": 9
       }
     ],
     "requiredSourceStatus": [
@@ -461,7 +461,7 @@
       {
         "sourceId": "gbif-preserved-specimens",
         "applicableCells": 2504,
-        "currentCompleteCells": 1000,
+        "currentCompleteCells": 1008,
         "processed": false
       },
       {
@@ -515,60 +515,9 @@
       "priorityScore": 67006
     },
     {
-      "speciesId": "aclerda-takahashii",
-      "commonName": "Flat grass scale",
-      "scientificName": "Aclerda takahashii",
-      "category": "insects",
-      "notResearchedCountyCount": 67,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
-      ],
-      "priorityScore": 67006
-    },
-    {
-      "speciesId": "acleris-comariana",
-      "commonName": "Strawberry tortrix",
-      "scientificName": "Acleris comariana",
-      "category": "insects",
-      "notResearchedCountyCount": 67,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
-      ],
-      "priorityScore": 67006
-    },
-    {
       "speciesId": "acrolepiopsis-assectella",
       "commonName": "Leek moth",
       "scientificName": "Acrolepiopsis assectella",
-      "category": "insects",
-      "notResearchedCountyCount": 67,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "aphis-federal-quarantine",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usfs-ids"
-      ],
-      "priorityScore": 67006
-    },
-    {
-      "speciesId": "acyrthosiphon-kondoi",
-      "commonName": "Blue alfalfa aphid",
-      "scientificName": "Acyrthosiphon kondoi",
       "category": "insects",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
@@ -647,23 +596,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usfs-ids"
-      ],
-      "priorityScore": 67006
-    },
-    {
-      "speciesId": "aegilops-tauschii",
-      "commonName": "Tausch's goatgrass",
-      "scientificName": "Aegilops tauschii",
-      "category": "plants",
-      "notResearchedCountyCount": 67,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "alabama-plant-atlas",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -787,43 +719,9 @@
       "priorityScore": 67006
     },
     {
-      "speciesId": "agrostis-castellana",
-      "commonName": "Bentgrass",
-      "scientificName": "Agrostis castellana",
-      "category": "plants",
-      "notResearchedCountyCount": 67,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "alabama-plant-atlas",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usda-nrcs-plants"
-      ],
-      "priorityScore": 67006
-    },
-    {
       "speciesId": "albizia-procera",
       "commonName": "Tall albizia",
       "scientificName": "Albizia procera",
-      "category": "plants",
-      "notResearchedCountyCount": 67,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "alabama-plant-atlas",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usda-nrcs-plants"
-      ],
-      "priorityScore": 67006
-    },
-    {
-      "speciesId": "aleurites-moluccanus",
-      "commonName": "Candlenut tree",
-      "scientificName": "Aleurites moluccanus",
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,
@@ -919,23 +817,6 @@
         "idigbio-preserved-specimens",
         "inaturalist-research-grade",
         "usfs-ids"
-      ],
-      "priorityScore": 67006
-    },
-    {
-      "speciesId": "allium-sativum",
-      "commonName": "Cultivated garlic",
-      "scientificName": "Allium sativum",
-      "category": "plants",
-      "notResearchedCountyCount": 67,
-      "researchedUnresolvedCountyCount": 0,
-      "missingProtocolSourceIds": [
-        "alabama-plant-atlas",
-        "eddmaps",
-        "gbif-preserved-specimens",
-        "idigbio-preserved-specimens",
-        "inaturalist-research-grade",
-        "usda-nrcs-plants"
       ],
       "priorityScore": 67006
     },
@@ -2184,6 +2065,125 @@
       "speciesId": "carex-spicata",
       "commonName": "Prickly sedge",
       "scientificName": "Carex spicata",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "alabama-plant-atlas",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "caryedon-serratus",
+      "commonName": "Groundnut bruchid",
+      "scientificName": "Caryedon serratus",
+      "category": "insects",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "aphis-federal-quarantine",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usfs-ids"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "cassia-javanica",
+      "commonName": "Apple blossom",
+      "scientificName": "Cassia javanica",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "alabama-plant-atlas",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "cassia-javanica-var-indochinensis",
+      "commonName": "Apple blossom",
+      "scientificName": "Cassia javanica var. indochinensis",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "alabama-plant-atlas",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "caucalis-platycarpos",
+      "commonName": "Carrot bur parsley",
+      "scientificName": "Caucalis platycarpos",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "alabama-plant-atlas",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "caulacanthus-ustulatus",
+      "commonName": "Red algae",
+      "scientificName": "Caulacanthus ustulatus",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "alabama-plant-atlas",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "cecropia-pachystachya",
+      "commonName": "Ambay pumpwood",
+      "scientificName": "Cecropia pachystachya",
+      "category": "plants",
+      "notResearchedCountyCount": 67,
+      "researchedUnresolvedCountyCount": 0,
+      "missingProtocolSourceIds": [
+        "alabama-plant-atlas",
+        "eddmaps",
+        "gbif-preserved-specimens",
+        "idigbio-preserved-specimens",
+        "inaturalist-research-grade",
+        "usda-nrcs-plants"
+      ],
+      "priorityScore": 67006
+    },
+    {
+      "speciesId": "cenchrus-biflorus",
+      "commonName": "Indian sandbur",
+      "scientificName": "Cenchrus biflorus",
       "category": "plants",
       "notResearchedCountyCount": 67,
       "researchedUnresolvedCountyCount": 0,

@@ -1,6 +1,6 @@
 # Alabama Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `15300`
 - Verified absent: `0`
 - Not detected: `8`
-- Researched unresolved: `97453`
-- Not researched: `55007`
+- Researched unresolved: `97989`
+- Not researched: `54471`
 - Determination coverage: `9.12%`
-- Research coverage: `67.21%`
-- Explicit outcome coverage: `40.7348%`
+- Research coverage: `67.53%`
+- Explicit outcome coverage: `41.0543%`
 - Applicable protocol cells: `14440`
-- Current complete protocol cells: `1333`
-- Protocol completion: `9.32%`
-- Current protocol completion: `9.23%`
-- Evidence records: `53826`
-- Research runs: `63`
+- Current complete protocol cells: `1341`
+- Protocol completion: `9.38%`
+- Current protocol completion: `9.29%`
+- Evidence records: `53827`
+- Research runs: `65`
 - Rejection records: `6286`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -33,15 +33,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Devil's horsewhip (`achyranthes-aspera-var-pubescens`) | plants | 67 | 0 | 6 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 67 | 0 | 6 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 67 | 0 | 6 |
 | Leek moth (`acrolepiopsis-assectella`) | insects | 67 | 0 | 6 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 67 | 0 | 6 |
 | Pea aphid (`acyrthosiphon-primulae`) | insects | 67 | 0 | 6 |
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 67 | 0 | 6 |
 | Tropical mosquito (`aedeomyia-squamipennis`) | insects | 67 | 0 | 6 |
 | Australian backyard mosquito (`aedes-notoscriptus`) | insects | 67 | 0 | 6 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 67 | 0 | 6 |
 | Rockroot (`agdestis-clematidea`) | plants | 67 | 0 | 6 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 67 | 0 | 6 |
 | Rose stem girdler (`agrilus-cuprescens`) | insects | 67 | 0 | 6 |
@@ -49,14 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Currant stem girdler (`agrilus-ribesi`) | insects | 67 | 0 | 6 |
 | Lined click beetle (`agriotes-lineatus`) | insects | 67 | 0 | 6 |
 | Dusky wireworm (`agriotes-obscurus`) | insects | 67 | 0 | 6 |
-| Bentgrass (`agrostis-castellana`) | plants | 67 | 0 | 6 |
 | Tall albizia (`albizia-procera`) | plants | 67 | 0 | 6 |
-| Candlenut tree (`aleurites-moluccanus`) | plants | 67 | 0 | 6 |
 | Citrus blackfly (`aleurocanthus-woglumi`) | insects | 67 | 0 | 6 |
 | Aucuba whitefly (`aleuroclava-aucubae`) | insects | 67 | 0 | 6 |
 | Giant whitefly (`aleurodicus-dugesii`) | insects | 67 | 0 | 6 |
 | Rugose spiraling whitefly (`aleurodicus-rugioperculatus`) | insects | 67 | 0 | 6 |
 | Whitefly (`aleuroglandulus-subtilis`) | insects | 67 | 0 | 6 |
+| Aloe aphid (`aloephagus-myersi`) | insects | 67 | 0 | 6 |
+| Shellplant (`alpinia-zerumbet`) | plants | 67 | 0 | 6 |
+| Brazilian joyweed (`alternanthera-brasiliana`) | plants | 67 | 0 | 6 |
+| Sanguinaria (`alternanthera-ficoidea`) | plants | 67 | 0 | 6 |
+| Alyssum (`alyssum-strigosum`) | plants | 67 | 0 | 6 |
+| Spleen amaranth (`amaranthus-dubius`) | plants | 67 | 0 | 6 |
 
 ## Source Operations
 
@@ -72,7 +72,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Alabama Forestry Commission Aerial Detection layer | operational | not run | 0 | 0 |
 | APHIS Emerald Ash Borer county layer | operational | not run | 0 | 0 |
 | APHIS Federal Quarantine county layer | operational | 2026-08-15T03:54:52.560Z | 139 | 17 |
-| APHIS National Honey Bee Survey | operational | not run | 2 | 0 |
+| APHIS National Honey Bee Survey | operational | 2026-08-20T02:06:05.317Z | 2 | 1 |
 | USFWS invasive carp eDNA sample layer | manual | not run | 6 | 0 |
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 173 | 13 |
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | 2026-06-16T03:44:13.025Z | 7 | 3 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2008 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 6653 | 1000 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 6653 | 1008 |
 | GBIF coordinate-resolved preserved specimen records | operational | 2026-07-06T22:47:17.903Z | 904 | 68 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-06-26T11:22:25.724Z | 308 | 61 |
 | GBIF eBird Observation Dataset | operational | 2026-06-28T05:33:30.608Z | 292 | 10 |

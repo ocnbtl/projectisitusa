@@ -1,6 +1,6 @@
 # Alaska Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `390`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13440`
-- Not researched: `61290`
+- Researched unresolved: `13680`
+- Not researched: `61050`
 - Determination coverage: `0.52%`
-- Research coverage: `18.41%`
-- Explicit outcome coverage: `18.4105%`
+- Research coverage: `18.73%`
+- Explicit outcome coverage: `18.7300%`
 - Applicable protocol cells: `163`
 - Current complete protocol cells: `102`
 - Protocol completion: `62.58%`
 - Current protocol completion: `62.58%`
 - Evidence records: `550`
-- Research runs: `26`
+- Research runs: `27`
 - Rejection records: `2094`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 30 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 30 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 30 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 30 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 30 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 314 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 87 | 134 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 87 | 142 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,27 +1,27 @@
 # Indiana Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `5523`
+- Verified present: `5534`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `36429`
-- Not researched: `188416`
+- Researched unresolved: `37154`
+- Not researched: `187680`
 - Determination coverage: `2.40%`
-- Research coverage: `18.21%`
-- Explicit outcome coverage: `18.2109%`
-- Applicable protocol cells: `280`
-- Current complete protocol cells: `143`
-- Protocol completion: `55.71%`
-- Current protocol completion: `51.07%`
-- Evidence records: `7119`
-- Research runs: `25`
-- Rejection records: `1048`
+- Research coverage: `18.53%`
+- Explicit outcome coverage: `18.5304%`
+- Applicable protocol cells: `281`
+- Current complete protocol cells: `144`
+- Protocol completion: `55.87%`
+- Current protocol completion: `51.25%`
+- Evidence records: `7130`
+- Research runs: `26`
+- Rejection records: `1049`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -48,15 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 92 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 92 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 92 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 92 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 92 | 0 |
 | Japanese Chaff Flower (`achyranthes-japonica`) | plants | 0 | 92 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 92 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 92 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 92 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 92 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 92 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 92 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 92 | 0 |
-| Alligatorweed (`alternanthera-philoxeroides`) | plants | 0 | 92 | 0 |
-| Khakiweed (`alternanthera-pungens`) | plants | 0 | 92 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 92 | 0 |
-| Purple amaranth (`amaranthus-blitum`) | plants | 0 | 92 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3937 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 1003 | 148 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 1014 | 156 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

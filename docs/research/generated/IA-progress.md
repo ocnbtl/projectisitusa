@@ -1,26 +1,26 @@
 # Iowa Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `99`
 - County-species pairs: `247896`
-- Verified present: `1711`
+- Verified present: `1713`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `42839`
-- Not researched: `203346`
+- Researched unresolved: `43629`
+- Not researched: `202554`
 - Determination coverage: `0.69%`
-- Research coverage: `17.97%`
-- Explicit outcome coverage: `17.9712%`
-- Applicable protocol cells: `208`
-- Current complete protocol cells: `111`
-- Protocol completion: `59.62%`
-- Current protocol completion: `53.37%`
-- Evidence records: `1969`
-- Research runs: `24`
+- Research coverage: `18.29%`
+- Explicit outcome coverage: `18.2907%`
+- Applicable protocol cells: `209`
+- Current complete protocol cells: `112`
+- Protocol completion: `59.81%`
+- Current protocol completion: `53.59%`
+- Evidence records: `1971`
+- Research runs: `25`
 - Rejection records: `115`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 99 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 99 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 99 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 99 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 99 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 99 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 99 | 0 |
-| Redtop (`agrostis-gigantea`) | plants | 0 | 99 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 99 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 99 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 99 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 99 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 99 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 99 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 921 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 295 | 121 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 297 | 129 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

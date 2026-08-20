@@ -1,27 +1,27 @@
 # Florida Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `5556`
+- Verified present: `5558`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `26001`
-- Not researched: `136211`
+- Researched unresolved: `26535`
+- Not researched: `135675`
 - Determination coverage: `3.31%`
-- Research coverage: `18.81%`
-- Explicit outcome coverage: `18.8099%`
-- Applicable protocol cells: `376`
-- Current complete protocol cells: `129`
-- Protocol completion: `37.77%`
-- Current protocol completion: `34.31%`
-- Evidence records: `16164`
-- Research runs: `23`
-- Rejection records: `4478`
+- Research coverage: `19.13%`
+- Explicit outcome coverage: `19.1294%`
+- Applicable protocol cells: `377`
+- Current complete protocol cells: `130`
+- Protocol completion: `37.93%`
+- Current protocol completion: `34.48%`
+- Evidence records: `16166`
+- Research runs: `24`
+- Rejection records: `4479`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -47,16 +47,16 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 67 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 67 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 67 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 67 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 67 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 67 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 67 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 67 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 67 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
+| Bentgrass (`agrostis-castellana`) | plants | 0 | 67 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 67 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 67 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 67 | 0 |
-| Crow Garlic (`allium-vineale`) | plants | 0 | 67 | 0 |
-| European Alder (`alnus-glutinosa`) | plants | 0 | 67 | 0 |
-| African amaranth (`amaranthus-muricatus`) | plants | 0 | 67 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 67 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 3770 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 1474 | 154 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 1476 | 162 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

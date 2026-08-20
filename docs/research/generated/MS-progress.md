@@ -1,26 +1,26 @@
 # Mississippi Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `82`
 - County-species pairs: `205328`
-- Verified present: `3775`
+- Verified present: `3777`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `32879`
-- Not researched: `168674`
+- Researched unresolved: `33533`
+- Not researched: `168018`
 - Determination coverage: `1.84%`
-- Research coverage: `17.85%`
-- Explicit outcome coverage: `17.8514%`
-- Applicable protocol cells: `329`
-- Current complete protocol cells: `110`
-- Protocol completion: `37.39%`
-- Current protocol completion: `33.43%`
-- Evidence records: `6048`
-- Research runs: `23`
+- Research coverage: `18.17%`
+- Explicit outcome coverage: `18.1709%`
+- Applicable protocol cells: `330`
+- Current complete protocol cells: `111`
+- Protocol completion: `37.58%`
+- Current protocol completion: `33.64%`
+- Evidence records: `6050`
+- Research runs: `24`
 - Rejection records: `609`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -45,18 +45,18 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 82 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 82 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 82 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 82 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 82 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 82 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 82 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 82 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 82 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 82 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 82 | 0 |
+| Bentgrass (`agrostis-castellana`) | plants | 0 | 82 | 0 |
 | Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 82 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 82 | 0 |
-| Garlic Mustard (`alliaria-petiolata`) | plants | 0 | 82 | 0 |
-| European Alder (`alnus-glutinosa`) | plants | 0 | 82 | 0 |
-| Khakiweed (`alternanthera-pungens`) | plants | 0 | 82 | 0 |
-| Purple amaranth (`amaranthus-blitum`) | plants | 0 | 82 | 0 |
-| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 82 | 0 |
-| African amaranth (`amaranthus-muricatus`) | plants | 0 | 82 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 82 | 0 |
+| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 82 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2445 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 777 | 131 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 779 | 139 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

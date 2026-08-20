@@ -1,6 +1,6 @@
 # Minnesota Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `3306`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `35670`
-- Not researched: `178872`
+- Researched unresolved: `36366`
+- Not researched: `178176`
 - Determination coverage: `1.52%`
-- Research coverage: `17.89%`
-- Explicit outcome coverage: `17.8914%`
+- Research coverage: `18.21%`
+- Explicit outcome coverage: `18.2109%`
 - Applicable protocol cells: `233`
 - Current complete protocol cells: `108`
 - Protocol completion: `51.93%`
 - Current protocol completion: `46.35%`
 - Evidence records: `4908`
-- Research runs: `23`
-- Rejection records: `611`
+- Research runs: `24`
+- Rejection records: `612`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -51,12 +51,12 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Paraguayan starbur (`acanthospermum-australe`) | plants | 0 | 87 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 87 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 87 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 87 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 87 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 87 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 87 | 0 |
-| Tree-of-Heaven (`tree-of-heaven`) | plants | 0 | 87 | 0 |
-| Silver hairgrass (`aira-caryophyllea`) | plants | 0 | 87 | 0 |
-| Mimosa Tree (`albizia-julibrissin`) | plants | 0 | 87 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 87 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 87 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 87 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 87 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2278 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 864 | 116 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 864 | 124 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

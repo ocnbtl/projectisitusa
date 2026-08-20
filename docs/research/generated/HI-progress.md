@@ -1,27 +1,27 @@
 # Hawaii Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `5`
 - County-species pairs: `12520`
-- Verified present: `515`
+- Verified present: `520`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `1805`
-- Not researched: `10200`
-- Determination coverage: `4.11%`
-- Research coverage: `18.53%`
-- Explicit outcome coverage: `18.5304%`
-- Applicable protocol cells: `262`
-- Current complete protocol cells: `75`
-- Protocol completion: `33.59%`
-- Current protocol completion: `28.63%`
-- Evidence records: `652`
-- Research runs: `25`
-- Rejection records: `1045`
+- Researched unresolved: `1840`
+- Not researched: `10160`
+- Determination coverage: `4.15%`
+- Research coverage: `18.85%`
+- Explicit outcome coverage: `18.8498%`
+- Applicable protocol cells: `264`
+- Current complete protocol cells: `77`
+- Protocol completion: `34.09%`
+- Current protocol completion: `29.17%`
+- Evidence records: `657`
+- Research runs: `26`
+- Rejection records: `1050`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 5 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 5 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 5 | 0 |
-| Calamus (`acorus-calamus`) | plants | 0 | 5 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 5 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 416 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 37 | 104 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 42 | 112 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

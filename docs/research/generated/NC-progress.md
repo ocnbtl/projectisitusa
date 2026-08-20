@@ -1,6 +1,6 @@
 # North Carolina Research Progress
 
-Generated: `2026-08-19T00:00:00.000Z`
+Generated: `2026-08-20T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-19T00:00:00.000Z`
 - Verified present: `8066`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `36734`
-- Not researched: `205600`
+- Researched unresolved: `37534`
+- Not researched: `204800`
 - Determination coverage: `3.22%`
-- Research coverage: `17.89%`
-- Explicit outcome coverage: `17.8914%`
+- Research coverage: `18.21%`
+- Explicit outcome coverage: `18.2109%`
 - Applicable protocol cells: `358`
 - Current complete protocol cells: `124`
 - Protocol completion: `38.27%`
 - Current protocol completion: `34.64%`
 - Evidence records: `11224`
-- Research runs: `23`
-- Rejection records: `588`
+- Research runs: `24`
+- Rejection records: `589`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -42,21 +42,21 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 100 | 0 |
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 100 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 100 | 0 |
+| Goji gall mite (`aceria-kuko`) | wildlife | 0 | 100 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 100 | 0 |
+| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 100 | 0 |
+| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 100 | 0 |
+| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 100 | 0 |
+| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 100 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 100 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 100 | 0 |
+| Bentgrass (`agrostis-castellana`) | plants | 0 | 100 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 100 | 0 |
 | Chocolate Vine (`akebia-quinata`) | plants | 0 | 100 | 0 |
+| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 100 | 0 |
+| Cultivated garlic (`allium-sativum`) | plants | 0 | 100 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 100 | 0 |
 | Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 100 | 0 |
-| Prostrate pigweed (`amaranthus-albus`) | plants | 0 | 100 | 0 |
-| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 100 | 0 |
-| African amaranth (`amaranthus-muricatus`) | plants | 0 | 100 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 100 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 100 | 0 |
-| Capeweed (`arctotheca-calendula`) | plants | 0 | 100 | 0 |
-| Hen's eyes (`ardisia-crenata`) | plants | 0 | 100 | 0 |
-| Sweet sagewort (`artemisia-annua`) | plants | 0 | 100 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 6455 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-19T20:54:40.231Z | 1132 | 131 |
+| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 1132 | 139 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
