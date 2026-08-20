@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260820T020544Z__aphis-honey-bee__1845d88d8f70",
+  "status": "complete",
+  "started_at": "2026-08-20T02:05:44.914Z",
+  "finished_at": "2026-08-20T02:06:05.317Z",
+  "actor_type": "adapter",
+  "actor_id": "aphis-honey-bee-survey@1.0.0",
+  "source_id": "aphis-honey-bee",
+  "source_registry_hash": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5",
+  "adapter_id": "aphis-honey-bee-survey",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "b1624a5538f87d86706d755b2d03d8429f33f455bdb37cd70e3738932fc67c44",
+  "code_commit": "b2542a8b32221451d4eeae99a62d72b06de816c2",
+  "parameter_hash": "1845d88d8f70ceb38f285c7dd2661a3c9d507ac90dcbf6696dd6743e479a5437",
+  "parameters": {
+    "stateCode": "AL",
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "01025:varroa-destructor"
+    ],
+    "downloadPageUrl": "https://www.usbeedata.org/state_reports/public_download/",
+    "generatedHeaderExact": "File generated from usbeedata.org database on 2026-06-05 13:15:49.160078+00:00",
+    "coverageHeaderExact": "\"Includes data with a collection date up to Dec 31, 2025\"",
+    "surveyDateRange": {
+      "start": "2025-05-01",
+      "end": "2025-05-31"
+    },
+    "metricColumn": "varroa_per_100_bees",
+    "targetSpeciesId": "varroa-destructor",
+    "targetScientificName": "Varroa destructor",
+    "zeroValue": 0,
+    "expectedSurveyRows": [
+      {
+        "countyFips": "01025",
+        "countyName": "Clarke",
+        "sampleYear": 2025,
+        "sampleMonth": 5,
+        "sampleMonthName": "May",
+        "varroaPer100Bees": 0
+      }
+    ],
+    "maxCsvBytes": 5242880
+  },
+  "requested_scope": {
+    "state_code": "AL",
+    "county_fips": [
+      "01025"
+    ],
+    "species_ids": [
+      "varroa-destructor"
+    ],
+    "pair_keys": [
+      "01025:varroa-destructor"
+    ],
+    "date_range": {
+      "start": "2025-05-01",
+      "end": "2025-05-31"
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://www.usbeedata.org/state_reports/public_download/",
+      "status": 200,
+      "retrieved_at": "2026-08-20T02:06:05.027Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://usbeedata-prod-private.s3.amazonaws.com/bip.apps.upload.tasks.UploadCSVFile_b1b07c73-6736-4dc1-b79d-a582fd8fcd95",
+      "status": 200,
+      "retrieved_at": "2026-08-20T02:06:05.317Z",
+      "record_count": 12705
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/artifacts/aphis-honey-bee-survey.csv.gz",
+      "sha256": "cc81b1ed8d4fc156cd2937e09ea019ebc2f3cb9f683828bd67f7a6e688dc7be5",
+      "bytes": 255170,
+      "media_type": "application/gzip"
+    },
+    {
+      "path": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/artifacts/aphis-honey-bee-survey-metadata.json",
+      "sha256": "f825c5bf508795058937df9263ea5ae4b91a16279e1ef24e32bfb7850dcd8b32",
+      "bytes": 993,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/assertions.ndjson",
+      "sha256": "004fc859deaf32f453aeec27392ec2ec8dd79abf7afd535e7e95a47862f0aa58",
+      "bytes": 2341,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/reviews.ndjson",
+      "sha256": "7e7e34b0185dbf355c92d82ed2b2849b371f2c671e293b8e822fab757ac0abd7",
+      "bytes": 1079,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/outcomes.ndjson",
+      "sha256": "38fbec4f9499d13e3aaf896c0f7c9206db11e06afabce8fd82aa2b87c075fa7c",
+      "bytes": 793,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "Zero-count rows support sample-level non-detection only, never countywide absence."
+  ],
+  "source_warnings": [
+    "APHIS zero-count rows support sample-level non-detection only, never countywide absence.",
+    "The frozen pilot stops if target, county, month, effort metric, zero result, or positive-conflict expectations drift."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source aphis-honey-bee --state AL --candidate-file src/data/research/national-acquisition-plans/aphis-honey-bee-non-detection-pilot-v1.json --output-root src/data/research/runs --pairs 01025:varroa-destructor"
+}
