@@ -111,6 +111,33 @@ assert.equal(
   nationalGbifAcquisitionInputPaths(round77Plan, path.relative(root, round77PlanPath).replaceAll("\\", "/")).length,
   17,
 );
+const round78PlanPath = path.join(root, "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-78-8.json");
+const round78Plan = loadNationalGbifDownloadPlan(round78PlanPath);
+const round78Selection = loadNationalGbifSelection(root, round78Plan);
+const round78Taxa = resolveNationalGbifTaxa(root, round78Plan);
+assert.equal(round78Selection.selection.schemaVersion, 2);
+assert.equal(round78Taxa.length, 8);
+assert.equal(round78Selection.selection.counts.notResearchedPairs, 25_152);
+assert.equal(round78Selection.selection.schemaVersion === 2
+  ? round78Selection.selection.laneCounts.exploitationPairs
+  : 0, 22_008);
+assert.equal(round78Selection.selection.schemaVersion === 2
+  ? round78Selection.selection.laneCounts.explorationPairs
+  : 0, 3_144);
+assert.deepEqual(round78Plan.speciesIds, [
+  "aceria-kuko",
+  "aclerda-takahashii",
+  "acleris-comariana",
+  "acyrthosiphon-kondoi",
+  "aegilops-tauschii",
+  "agrostis-castellana",
+  "aleurites-moluccanus",
+  "allium-sativum",
+]);
+assert.equal(
+  nationalGbifAcquisitionInputPaths(round78Plan, path.relative(root, round78PlanPath).replaceAll("\\", "/")).length,
+  20,
+);
 const partitionInputs = nationalGbifPartitionInputPaths({
   root,
   planPath,

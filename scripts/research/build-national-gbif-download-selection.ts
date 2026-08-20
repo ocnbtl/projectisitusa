@@ -12,6 +12,10 @@ import {
   resolveNationalGbifTaxa,
   sha256,
 } from "./national-gbif-download";
+import {
+  buildNationalGbifDualObjectiveSelection,
+  loadNationalGbifYieldPrior,
+} from "./national-gbif-selection-planner";
 
 type CountyPair = {
   speciesId: string;
@@ -153,25 +157,50 @@ function main() {
   assert(blockedPairs === plan.expectedBlockedPairsAtBaseline, `GBIF blocked count ${blockedPairs} differs from plan ${plan.expectedBlockedPairsAtBaseline}.`);
   assert(alreadyResearchedPairs === plan.expectedAlreadyResearchedPairsAtBaseline, `GBIF researched count ${alreadyResearchedPairs} differs from plan ${plan.expectedAlreadyResearchedPairsAtBaseline}.`);
   assert(grossPairs === notResearchedPairs + blockedPairs + alreadyResearchedPairs, "GBIF selection pair classes do not reconcile.");
-  const rankedEligibleTaxa = [...speciesCounts.values()].sort(
+  const legacyRankedEligibleTaxa = [...speciesCounts.values()].sort(
     (left, right) => right.notResearchedPairs - left.notResearchedPairs || compareText(left.speciesId, right.speciesId),
   );
-  let rankedNet = 0;
-  const minimalPrefix: string[] = [];
-  for (const taxon of rankedEligibleTaxa) {
-    if (rankedNet >= plan.selectionNetThreshold!) break;
-    minimalPrefix.push(taxon.speciesId);
-    rankedNet += taxon.notResearchedPairs;
+  let dualObjectiveSelection: ReturnType<typeof buildNationalGbifDualObjectiveSelection> | null = null;
+  let yieldPriorId: string | null = null;
+  if (plan.selectionModel) {
+    const yieldPrior = loadNationalGbifYieldPrior(
+      path.resolve(root, plan.selectionModel.yieldPriorPath),
+      plan.selectionModel.yieldPriorSha256,
+    );
+    assert(
+      yieldPrior.universe.planId === universePlan.planId &&
+        yieldPrior.universe.planSha256 === plan.selectionUniversePlanSha256,
+      "GBIF dual-objective yield prior differs from the retained universe plan.",
+    );
+    yieldPriorId = yieldPrior.priorId;
+    dualObjectiveSelection = buildNationalGbifDualObjectiveSelection(
+      [...speciesCounts.values()],
+      yieldPrior,
+      plan.selectionNetThreshold!,
+      plan.selectionModel,
+    );
+    assert(
+      JSON.stringify(dualObjectiveSelection.selectedSpeciesIds) === JSON.stringify([...selectedSpeciesIds].sort(compareText)),
+      "GBIF plan species are not the deterministic dual-objective portfolio clearing the net threshold.",
+    );
+  } else {
+    let rankedNet = 0;
+    const minimalPrefix: string[] = [];
+    for (const taxon of legacyRankedEligibleTaxa) {
+      if (rankedNet >= plan.selectionNetThreshold!) break;
+      minimalPrefix.push(taxon.speciesId);
+      rankedNet += taxon.notResearchedPairs;
+    }
+    assert(rankedNet >= plan.selectionNetThreshold!, "GBIF retained exact-cache universe cannot clear the selection threshold.");
+    assert(
+      JSON.stringify([...minimalPrefix].sort(compareText)) === JSON.stringify([...selectedSpeciesIds].sort(compareText)),
+      "GBIF plan species are not the deterministic smallest ranked prefix clearing the net threshold.",
+    );
   }
-  assert(rankedNet >= plan.selectionNetThreshold!, "GBIF retained exact-cache universe cannot clear the selection threshold.");
-  assert(
-    JSON.stringify([...minimalPrefix].sort(compareText)) === JSON.stringify([...selectedSpeciesIds].sort(compareText)),
-    "GBIF plan species are not the deterministic smallest ranked prefix clearing the net threshold.",
-  );
   const allCandidatePairs = stateScopes.flatMap((scope) => scope.candidatePairs);
   assert(new Set(allCandidatePairs).size === allCandidatePairs.length, "GBIF selection repeats national pair keys.");
   const output = {
-    schemaVersion: 1,
+    schemaVersion: dualObjectiveSelection ? 2 as const : 1 as const,
     selectionId: plan.selectionId!,
     sourceId: plan.sourceId,
     planId: plan.planId,
@@ -204,12 +233,26 @@ function main() {
       failureOrIncompleteCreatesNegative: false,
       coordinateCountyAssignmentAllowed: false,
     },
-    taxa: [...speciesCounts.values()]
-      .filter((taxon) => selectedSpeciesIds.has(taxon.speciesId))
-      .sort((left, right) => compareText(left.speciesId, right.speciesId)),
-    rankedEligibleTaxa,
+    taxa: dualObjectiveSelection
+      ? dualObjectiveSelection.selectedTaxa
+      : [...speciesCounts.values()]
+        .filter((taxon) => selectedSpeciesIds.has(taxon.speciesId))
+        .sort((left, right) => compareText(left.speciesId, right.speciesId)),
+    rankedEligibleTaxa: dualObjectiveSelection?.rankedEligibleTaxa ?? legacyRankedEligibleTaxa,
     candidatePairSha256: sha256(`${allCandidatePairs.join("\n")}\n`),
     stateScopes,
+    ...(dualObjectiveSelection && plan.selectionModel ? {
+      rankingModel: plan.selectionModel,
+      yieldPrior: {
+        priorId: yieldPriorId!,
+        universePlanId: universePlan.planId,
+      },
+      laneCounts: {
+        exploitationTargetPairs: dualObjectiveSelection.exploitationTargetPairs,
+        exploitationPairs: dualObjectiveSelection.exploitationPairs,
+        explorationPairs: dualObjectiveSelection.explorationPairs,
+      },
+    } : {}),
   };
   const outputPath = path.join(root, plan.selectionEvidencePath);
   NationalGbifSelectionSchema.parse(output);

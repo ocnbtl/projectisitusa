@@ -9,7 +9,7 @@
     "counts", "credentialReadiness", "semantics", "taxa", "rankedEligibleTaxa", "candidatePairSha256", "stateScopes"
   ],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "enum": [1, 2] },
     "selectionId": { "type": "string", "pattern": "^round-[0-9]+-gbif-national-selection-[0-9]{8}-r[0-9]+$" },
     "sourceId": { "const": "gbif-preserved-specimens" },
     "planId": { "type": "string", "pattern": "^gbif-national-download-v2-[a-z0-9-]+$" },
@@ -19,6 +19,35 @@
     "selectionPolicy": { "type": "string", "minLength": 1 },
     "acquisitionShape": { "type": "string", "minLength": 1 },
     "selectionThreshold": { "type": "integer", "minimum": 1, "maximum": 30000 },
+    "rankingModel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["strategy", "yieldPriorPath", "yieldPriorSha256", "movementWeightBps", "likelyYieldWeightBps", "explorationTargetBps"],
+      "properties": {
+        "strategy": { "const": "movement-yield-exploration-v2" },
+        "yieldPriorPath": { "type": "string", "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$" },
+        "yieldPriorSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "movementWeightBps": { "type": "integer", "minimum": 1, "maximum": 9999 },
+        "likelyYieldWeightBps": { "type": "integer", "minimum": 1, "maximum": 9999 },
+        "explorationTargetBps": { "type": "integer", "minimum": 1, "maximum": 4999 }
+      }
+    },
+    "yieldPrior": {
+      "type": "object", "additionalProperties": false,
+      "required": ["priorId", "universePlanId"],
+      "properties": {
+        "priorId": { "type": "string", "minLength": 1 },
+        "universePlanId": { "type": "string", "pattern": "^gbif-national-download-v1-[a-z0-9-]+$" }
+      }
+    },
+    "laneCounts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exploitationTargetPairs", "exploitationPairs", "explorationPairs"],
+      "properties": {
+        "exploitationTargetPairs": { "type": "integer", "minimum": 1, "maximum": 30000 },
+        "exploitationPairs": { "type": "integer", "minimum": 1, "maximum": 30000 },
+        "explorationPairs": { "type": "integer", "minimum": 0, "maximum": 30000 }
+      }
+    },
     "counts": {
       "type": "object", "additionalProperties": false,
       "required": ["stateCount", "activeCountyCount", "taxonCount", "grossPairs", "notResearchedPairs", "blockedPairs", "alreadyResearchedPairs", "expectedNetMovement"],
@@ -66,7 +95,21 @@
           "grossPairs": { "type": "integer", "minimum": 1 },
           "notResearchedPairs": { "type": "integer", "minimum": 0 },
           "blockedPairs": { "type": "integer", "minimum": 0 },
-          "alreadyResearchedPairs": { "type": "integer", "minimum": 0 }
+          "alreadyResearchedPairs": { "type": "integer", "minimum": 0 },
+          "category": { "type": "string", "minLength": 1 },
+          "displayGroup": { "type": "string", "minLength": 1 },
+          "yieldPriorScope": { "enum": ["display-group", "category", "global"] },
+          "yieldPriorScopeKey": { "type": "string", "minLength": 1 },
+          "yieldPriorObservedPairs": { "type": "integer", "minimum": 0 },
+          "yieldPriorPresentPairs": { "type": "integer", "minimum": 0 },
+          "expectedPresentBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "movementScoreBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "likelyYieldScoreBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "compositeScoreBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "exploitationRank": { "type": "integer", "minimum": 1, "maximum": 500 },
+          "explorationRank": { "type": ["integer", "null"], "minimum": 1, "maximum": 500 },
+          "explorationBreadthScore": { "enum": [0, 1, 2] },
+          "selectionLane": { "enum": ["exploitation", "exploration", null] }
         }
       }
     },
@@ -82,7 +125,21 @@
           "grossPairs": { "type": "integer", "minimum": 1 },
           "notResearchedPairs": { "type": "integer", "minimum": 0 },
           "blockedPairs": { "type": "integer", "minimum": 0 },
-          "alreadyResearchedPairs": { "type": "integer", "minimum": 0 }
+          "alreadyResearchedPairs": { "type": "integer", "minimum": 0 },
+          "category": { "type": "string", "minLength": 1 },
+          "displayGroup": { "type": "string", "minLength": 1 },
+          "yieldPriorScope": { "enum": ["display-group", "category", "global"] },
+          "yieldPriorScopeKey": { "type": "string", "minLength": 1 },
+          "yieldPriorObservedPairs": { "type": "integer", "minimum": 0 },
+          "yieldPriorPresentPairs": { "type": "integer", "minimum": 0 },
+          "expectedPresentBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "movementScoreBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "likelyYieldScoreBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "compositeScoreBps": { "type": "integer", "minimum": 0, "maximum": 10000 },
+          "exploitationRank": { "type": "integer", "minimum": 1, "maximum": 500 },
+          "explorationRank": { "type": ["integer", "null"], "minimum": 1, "maximum": 500 },
+          "explorationBreadthScore": { "enum": [0, 1, 2] },
+          "selectionLane": { "enum": ["exploitation", "exploration", null] }
         }
       }
     },
@@ -106,5 +163,39 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "schemaVersion": { "const": 1 } } },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["rankingModel"] },
+            { "required": ["yieldPrior"] },
+            { "required": ["laneCounts"] }
+          ]
+        }
+      }
+    },
+    {
+      "if": { "properties": { "schemaVersion": { "const": 2 } } },
+      "then": {
+        "required": ["rankingModel", "yieldPrior", "laneCounts"],
+        "properties": {
+          "taxa": { "items": { "required": [
+            "category", "displayGroup", "yieldPriorScope", "yieldPriorScopeKey",
+            "yieldPriorObservedPairs", "yieldPriorPresentPairs", "expectedPresentBps",
+            "movementScoreBps", "likelyYieldScoreBps", "compositeScoreBps",
+            "exploitationRank", "explorationRank", "explorationBreadthScore", "selectionLane"
+          ] } },
+          "rankedEligibleTaxa": { "items": { "required": [
+            "category", "displayGroup", "yieldPriorScope", "yieldPriorScopeKey",
+            "yieldPriorObservedPairs", "yieldPriorPresentPairs", "expectedPresentBps",
+            "movementScoreBps", "likelyYieldScoreBps", "compositeScoreBps",
+            "exploitationRank", "explorationRank", "explorationBreadthScore", "selectionLane"
+          ] } }
+        }
+      }
+    }
+  ]
 }

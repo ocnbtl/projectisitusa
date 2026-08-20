@@ -62,6 +62,22 @@
     "expectedAlreadyResearchedPairsAtBaseline": { "type": "integer", "minimum": 0 },
     "maxOccurrenceRows": { "type": "integer", "minimum": 1, "maximum": 2000000 },
     "maxSelectedEvidenceRecords": { "type": "integer", "minimum": 1, "maximum": 250000 },
+    "selectionModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy", "yieldPriorPath", "yieldPriorSha256", "movementWeightBps",
+        "likelyYieldWeightBps", "explorationTargetBps"
+      ],
+      "properties": {
+        "strategy": { "const": "movement-yield-exploration-v2" },
+        "yieldPriorPath": { "type": "string", "pattern": "^ops/national-research/evaluations/[a-z0-9.-]+\\.json$" },
+        "yieldPriorSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "movementWeightBps": { "type": "integer", "minimum": 1, "maximum": 9999 },
+        "likelyYieldWeightBps": { "type": "integer", "minimum": 1, "maximum": 9999 },
+        "explorationTargetBps": { "type": "integer", "minimum": 1, "maximum": 4999 }
+      }
+    },
     "requiredCredentialEnvironment": {
       "const": ["GBIF_USERNAME", "GBIF_PASSWORD", "GBIF_EMAIL"]
     }
@@ -81,6 +97,10 @@
           "artifactBudgetBytes": { "maximum": 268435456 }
         }
       }
+    },
+    {
+      "if": { "properties": { "schemaVersion": { "const": 1 } } },
+      "then": { "not": { "required": ["selectionModel"] } }
     }
   ]
 }

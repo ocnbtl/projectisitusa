@@ -6,6 +6,12 @@ import { z } from "zod";
 
 import { resolveCountyEquivalent } from "@/lib/research/geography-registry";
 
+import {
+  buildNationalGbifDualObjectiveSelection,
+  loadNationalGbifYieldPrior,
+  NationalGbifSelectionModelSchema,
+} from "./national-gbif-selection-planner";
+
 export const GBIF_NATIONAL_DOWNLOAD_ACTOR =
   "gbif-national-download-acquisition@2.0.0" as const;
 export const GBIF_SOURCE_ID = "gbif-preserved-specimens" as const;
@@ -60,6 +66,7 @@ export const NationalGbifDownloadPlanSchema = z.object({
   expectedAlreadyResearchedPairsAtBaseline: z.number().int().nonnegative().optional(),
   maxOccurrenceRows: z.number().int().min(1).max(2_000_000).optional(),
   maxSelectedEvidenceRecords: z.number().int().min(1).max(250_000).optional(),
+  selectionModel: NationalGbifSelectionModelSchema.optional(),
   requiredCredentialEnvironment: z.tuple([
     z.literal("GBIF_USERNAME"),
     z.literal("GBIF_PASSWORD"),
@@ -105,6 +112,8 @@ export const NationalGbifDownloadPlanSchema = z.object({
     ) {
       context.addIssue({ code: "custom", message: "GBIF v2 baseline pair classes do not reconcile to gross scope." });
     }
+  } else if (value.selectionModel !== undefined) {
+    context.addIssue({ code: "custom", message: "GBIF v1 plans cannot define the v2 dual-objective selection model." });
   }
 });
 
@@ -134,14 +143,85 @@ export function nationalGbifAcquisitionInputPaths(
     "src/data/research/schemas/national-gbif-download-plan.schema.json",
     "src/data/research/schemas/national-gbif-download-selection.schema.json",
     "src/data/research/schemas/national-gbif-download-acquisition-receipt.schema.json",
+    ...(plan.selectionModel ? [
+      plan.selectionModel.yieldPriorPath,
+      "scripts/research/national-gbif-selection-planner.ts",
+      "src/data/research/schemas/national-gbif-yield-prior.schema.json",
+    ] : []),
     ...(plan.taxonomyMode === "gbif-backbone-v2-exact-match-retained-identifiers"
       ? ["src/data/research/schemas/gbif-taxonomy-cache-v2.schema.json"]
       : []),
   ].sort(compareText);
 }
 
-export const NationalGbifSelectionSchema = z.object({
-  schemaVersion: z.literal(1),
+const NationalGbifSelectionCountsSchema = z.object({
+  stateCount: z.literal(51),
+  activeCountyCount: z.literal(3144),
+  taxonCount: z.number().int().positive(),
+  grossPairs: z.number().int().positive(),
+  notResearchedPairs: z.number().int().min(1).max(30_000),
+  blockedPairs: z.number().int().nonnegative(),
+  alreadyResearchedPairs: z.number().int().nonnegative(),
+  expectedNetMovement: z.number().int().min(1).max(30_000),
+}).strict();
+
+const NationalGbifCredentialReadinessSchema = z.object({
+  status: z.literal("blocked-external-credentials-before-network"),
+  requiredEnvironmentNames: z.tuple([
+    z.literal("GBIF_USERNAME"),
+    z.literal("GBIF_PASSWORD"),
+    z.literal("GBIF_EMAIL"),
+  ]),
+  valuesPersisted: z.literal(false),
+}).strict();
+
+const NationalGbifSelectionSemanticsSchema = z.object({
+  completeZeroEvidenceBecomesResearchedUnresolved: z.literal(true),
+  completeAcceptedEvidenceBecomesVerifiedPresent: z.literal(true),
+  createsAbsence: z.literal(false),
+  createsNotDetected: z.literal(false),
+  failureOrIncompleteCreatesNegative: z.literal(false),
+  coordinateCountyAssignmentAllowed: z.literal(false),
+}).strict();
+
+const NationalGbifSelectionTaxonSchema = z.object({
+  speciesId: z.string().regex(/^[a-z0-9-]+$/u),
+  scientificName: z.string().min(3),
+  taxonKey: z.number().int().positive(),
+  grossPairs: z.number().int().positive(),
+  notResearchedPairs: z.number().int().nonnegative(),
+  blockedPairs: z.number().int().nonnegative(),
+  alreadyResearchedPairs: z.number().int().nonnegative(),
+}).strict();
+
+const NationalGbifRankedTaxonV2Schema = NationalGbifSelectionTaxonSchema.extend({
+  category: z.string().min(1),
+  displayGroup: z.string().min(1),
+  yieldPriorScope: z.union([z.literal("display-group"), z.literal("category"), z.literal("global")]),
+  yieldPriorScopeKey: z.string().min(1),
+  yieldPriorObservedPairs: z.number().int().nonnegative(),
+  yieldPriorPresentPairs: z.number().int().nonnegative(),
+  expectedPresentBps: z.number().int().min(0).max(10_000),
+  movementScoreBps: z.number().int().min(0).max(10_000),
+  likelyYieldScoreBps: z.number().int().min(0).max(10_000),
+  compositeScoreBps: z.number().int().min(0).max(10_000),
+  exploitationRank: z.number().int().positive().max(500),
+  explorationRank: z.number().int().positive().max(500).nullable(),
+  explorationBreadthScore: z.union([z.literal(0), z.literal(1), z.literal(2)]),
+  selectionLane: z.union([z.literal("exploitation"), z.literal("exploration")]).nullable(),
+}).strict();
+
+const NationalGbifStateScopeSchema = z.object({
+  stateCode: StateCodeSchema,
+  grossPairs: z.number().int().positive(),
+  notResearchedPairs: z.number().int().nonnegative(),
+  blockedPairs: z.number().int().nonnegative(),
+  alreadyResearchedPairs: z.number().int().nonnegative(),
+  candidatePairSha256: z.string().regex(/^[a-f0-9]{64}$/u),
+  candidatePairs: z.array(z.string().regex(/^[0-9]{5}:[a-z0-9-]+$/u)).max(30_000),
+}).strict();
+
+const NationalGbifSelectionBase = {
   selectionId: z.string().regex(/^round-[0-9]+-gbif-national-selection-[0-9]{8}-r[0-9]+$/u),
   sourceId: z.literal(GBIF_SOURCE_ID),
   planId: z.string().regex(/^gbif-national-download-v2-[a-z0-9-]+$/u),
@@ -151,62 +231,41 @@ export const NationalGbifSelectionSchema = z.object({
   selectionPolicy: z.string().min(1),
   acquisitionShape: z.string().min(1),
   selectionThreshold: z.number().int().min(1).max(30_000),
-  counts: z.object({
-    stateCount: z.literal(51),
-    activeCountyCount: z.literal(3144),
-    taxonCount: z.number().int().positive(),
-    grossPairs: z.number().int().positive(),
-    notResearchedPairs: z.number().int().min(1).max(30_000),
-    blockedPairs: z.number().int().nonnegative(),
-    alreadyResearchedPairs: z.number().int().nonnegative(),
-    expectedNetMovement: z.number().int().min(1).max(30_000),
-  }).strict(),
-  credentialReadiness: z.object({
-    status: z.literal("blocked-external-credentials-before-network"),
-    requiredEnvironmentNames: z.tuple([
-      z.literal("GBIF_USERNAME"),
-      z.literal("GBIF_PASSWORD"),
-      z.literal("GBIF_EMAIL"),
-    ]),
-    valuesPersisted: z.literal(false),
-  }).strict(),
-  semantics: z.object({
-    completeZeroEvidenceBecomesResearchedUnresolved: z.literal(true),
-    completeAcceptedEvidenceBecomesVerifiedPresent: z.literal(true),
-    createsAbsence: z.literal(false),
-    createsNotDetected: z.literal(false),
-    failureOrIncompleteCreatesNegative: z.literal(false),
-    coordinateCountyAssignmentAllowed: z.literal(false),
-  }).strict(),
-  taxa: z.array(z.object({
-    speciesId: z.string().regex(/^[a-z0-9-]+$/u),
-    scientificName: z.string().min(3),
-    taxonKey: z.number().int().positive(),
-    grossPairs: z.number().int().positive(),
-    notResearchedPairs: z.number().int().nonnegative(),
-    blockedPairs: z.number().int().nonnegative(),
-    alreadyResearchedPairs: z.number().int().nonnegative(),
-  }).strict()).min(1).max(500),
-  rankedEligibleTaxa: z.array(z.object({
-    speciesId: z.string().regex(/^[a-z0-9-]+$/u),
-    scientificName: z.string().min(3),
-    taxonKey: z.number().int().positive(),
-    grossPairs: z.number().int().positive(),
-    notResearchedPairs: z.number().int().nonnegative(),
-    blockedPairs: z.number().int().nonnegative(),
-    alreadyResearchedPairs: z.number().int().nonnegative(),
-  }).strict()).min(1).max(500),
+  counts: NationalGbifSelectionCountsSchema,
+  credentialReadiness: NationalGbifCredentialReadinessSchema,
+  semantics: NationalGbifSelectionSemanticsSchema,
   candidatePairSha256: z.string().regex(/^[a-f0-9]{64}$/u),
-  stateScopes: z.array(z.object({
-    stateCode: StateCodeSchema,
-    grossPairs: z.number().int().positive(),
-    notResearchedPairs: z.number().int().nonnegative(),
-    blockedPairs: z.number().int().nonnegative(),
-    alreadyResearchedPairs: z.number().int().nonnegative(),
-    candidatePairSha256: z.string().regex(/^[a-f0-9]{64}$/u),
-    candidatePairs: z.array(z.string().regex(/^[0-9]{5}:[a-z0-9-]+$/u)).max(30_000),
-  }).strict()).length(51),
+  stateScopes: z.array(NationalGbifStateScopeSchema).length(51),
+};
+
+const NationalGbifSelectionV1Schema = z.object({
+  ...NationalGbifSelectionBase,
+  schemaVersion: z.literal(1),
+  taxa: z.array(NationalGbifSelectionTaxonSchema).min(1).max(500),
+  rankedEligibleTaxa: z.array(NationalGbifSelectionTaxonSchema).min(1).max(500),
 }).strict();
+
+const NationalGbifSelectionV2Schema = z.object({
+  ...NationalGbifSelectionBase,
+  schemaVersion: z.literal(2),
+  rankingModel: NationalGbifSelectionModelSchema,
+  yieldPrior: z.object({
+    priorId: z.string().min(1),
+    universePlanId: z.string().regex(/^gbif-national-download-v1-[a-z0-9-]+$/u),
+  }).strict(),
+  laneCounts: z.object({
+    exploitationTargetPairs: z.number().int().positive().max(30_000),
+    exploitationPairs: z.number().int().positive().max(30_000),
+    explorationPairs: z.number().int().nonnegative().max(30_000),
+  }).strict(),
+  taxa: z.array(NationalGbifRankedTaxonV2Schema).min(1).max(500),
+  rankedEligibleTaxa: z.array(NationalGbifRankedTaxonV2Schema).min(1).max(500),
+}).strict();
+
+export const NationalGbifSelectionSchema = z.discriminatedUnion("schemaVersion", [
+  NationalGbifSelectionV1Schema,
+  NationalGbifSelectionV2Schema,
+]);
 
 export type NationalGbifSelection = z.infer<typeof NationalGbifSelectionSchema>;
 
@@ -341,16 +400,9 @@ export function loadNationalGbifSelection(root: string, plan: NationalGbifDownlo
   const rankedSpeciesIds = selection.rankedEligibleTaxa.map((taxon) => taxon.speciesId);
   if (
     new Set(rankedSpeciesIds).size !== rankedSpeciesIds.length ||
-    [...rankedSpeciesIds].sort(compareText).join("\n") !== universePlan.speciesIds.join("\n") ||
-    selection.rankedEligibleTaxa.some((taxon, index, values) =>
-      index > 0 && (
-        values[index - 1]!.notResearchedPairs < taxon.notResearchedPairs ||
-        (values[index - 1]!.notResearchedPairs === taxon.notResearchedPairs &&
-          compareText(values[index - 1]!.speciesId, taxon.speciesId) > 0)
-      )
-    )
+    [...rankedSpeciesIds].sort(compareText).join("\n") !== universePlan.speciesIds.join("\n")
   ) {
-    throw new Error("GBIF national selection ranked universe is incomplete or out of order.");
+    throw new Error("GBIF national selection ranked universe is incomplete.");
   }
   const universeTaxonBySpecies = new Map(universeTaxa.map((taxon) => [taxon.speciesId, taxon]));
   for (const taxon of selection.rankedEligibleTaxa) {
@@ -362,18 +414,74 @@ export function loadNationalGbifSelection(root: string, plan: NationalGbifDownlo
       throw new Error(`GBIF ranked selection taxon ${taxon.speciesId} differs from the retained universe.`);
     }
   }
-  let rankedNet = 0;
-  const minimalPrefix: string[] = [];
-  for (const taxon of selection.rankedEligibleTaxa) {
-    if (rankedNet >= selection.selectionThreshold) break;
-    minimalPrefix.push(taxon.speciesId);
-    rankedNet += taxon.notResearchedPairs;
-  }
-  if (
-    rankedNet < selection.selectionThreshold ||
-    [...minimalPrefix].sort(compareText).join("\n") !== plan.speciesIds.join("\n")
-  ) {
-    throw new Error("GBIF national selection is not the smallest ranked prefix clearing its threshold.");
+  if (selection.schemaVersion === 1) {
+    if (plan.selectionModel) {
+      throw new Error("GBIF v1 selection cannot replay under a dual-objective plan model.");
+    }
+    if (selection.rankedEligibleTaxa.some((taxon, index, values) =>
+      index > 0 && (
+        values[index - 1]!.notResearchedPairs < taxon.notResearchedPairs ||
+        (values[index - 1]!.notResearchedPairs === taxon.notResearchedPairs &&
+          compareText(values[index - 1]!.speciesId, taxon.speciesId) > 0)
+      )
+    )) {
+      throw new Error("GBIF national v1 ranked universe is out of order.");
+    }
+    let rankedNet = 0;
+    const minimalPrefix: string[] = [];
+    for (const taxon of selection.rankedEligibleTaxa) {
+      if (rankedNet >= selection.selectionThreshold) break;
+      minimalPrefix.push(taxon.speciesId);
+      rankedNet += taxon.notResearchedPairs;
+    }
+    if (
+      rankedNet < selection.selectionThreshold ||
+      [...minimalPrefix].sort(compareText).join("\n") !== plan.speciesIds.join("\n")
+    ) {
+      throw new Error("GBIF national selection is not the smallest ranked prefix clearing its threshold.");
+    }
+  } else {
+    if (!plan.selectionModel || stableJson(selection.rankingModel) !== stableJson(plan.selectionModel)) {
+      throw new Error("GBIF v2 selection ranking model differs from the plan.");
+    }
+    const priorPath = path.resolve(root, plan.selectionModel.yieldPriorPath);
+    const prior = loadNationalGbifYieldPrior(priorPath, plan.selectionModel.yieldPriorSha256);
+    if (
+      prior.universe.planId !== universePlan.planId ||
+      prior.universe.planSha256 !== plan.selectionUniversePlanSha256 ||
+      selection.yieldPrior.priorId !== prior.priorId ||
+      selection.yieldPrior.universePlanId !== universePlan.planId
+    ) {
+      throw new Error("GBIF v2 selection yield prior differs from its retained universe.");
+    }
+    const planningTaxa = selection.rankedEligibleTaxa.map((taxon) => ({
+      speciesId: taxon.speciesId,
+      scientificName: taxon.scientificName,
+      taxonKey: taxon.taxonKey,
+      grossPairs: taxon.grossPairs,
+      notResearchedPairs: taxon.notResearchedPairs,
+      blockedPairs: taxon.blockedPairs,
+      alreadyResearchedPairs: taxon.alreadyResearchedPairs,
+    }));
+    const recomputed = buildNationalGbifDualObjectiveSelection(
+      planningTaxa,
+      prior,
+      selection.selectionThreshold,
+      plan.selectionModel,
+    );
+    if (
+      stableJson(recomputed.rankedEligibleTaxa) !== stableJson(selection.rankedEligibleTaxa) ||
+      stableJson(recomputed.selectedTaxa) !== stableJson(selection.taxa) ||
+      recomputed.selectedSpeciesIds.join("\n") !== plan.speciesIds.join("\n") ||
+      recomputed.expectedNetMovement !== selection.counts.expectedNetMovement ||
+      stableJson({
+        exploitationTargetPairs: recomputed.exploitationTargetPairs,
+        exploitationPairs: recomputed.exploitationPairs,
+        explorationPairs: recomputed.explorationPairs,
+      }) !== stableJson(selection.laneCounts)
+    ) {
+      throw new Error("GBIF v2 dual-objective selection does not reproduce from its pinned prior and model.");
+    }
   }
   const pairs = selection.stateScopes.flatMap((scope) => scope.candidatePairs);
   if (new Set(pairs).size !== pairs.length) throw new Error("GBIF national selection repeats pair keys.");
