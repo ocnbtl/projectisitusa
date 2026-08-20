@@ -154,14 +154,14 @@ const actual = buildNationalGbifDualObjectiveSelection([...corpusCounts.values()
 assert.equal(actualPrior.sourceAudit.weightedYieldBps, 438);
 assert.equal(actualPrior.taxonPriors.length, 47);
 assert.deepEqual(actual.selectedSpeciesIds, [
-  "aceria-kuko",
-  "aclerda-takahashii",
-  "acleris-comariana",
-  "acyrthosiphon-kondoi",
-  "aegilops-tauschii",
-  "agrostis-castellana",
-  "aleurites-moluccanus",
-  "allium-sativum",
+  "aceria-litchii",
+  "acyrthosiphon-primulae",
+  "aedeomyia-squamipennis",
+  "aedes-notoscriptus",
+  "aeromonas-salmonicida",
+  "agrilus-cuprescens",
+  "agrilus-cyanescens",
+  "agrilus-ribesi",
 ]);
 assert.equal(actual.exploitationPairs, 22_008);
 assert.equal(actual.explorationPairs, 3_144);
