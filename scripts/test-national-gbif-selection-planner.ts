@@ -16,6 +16,7 @@ import {
   NationalGbifYieldPriorSchema,
   type NationalGbifPlanningTaxon,
 } from "./research/national-gbif-selection-planner";
+import { NationalGbifYieldRescoreSchema } from "./research/build-national-gbif-yield-rescore";
 
 const taxa: NationalGbifPlanningTaxon[] = [
   { speciesId: "alpha", scientificName: "Alpha example", taxonKey: 1, grossPairs: 100, notResearchedPairs: 100, blockedPairs: 0, alreadyResearchedPairs: 0 },
@@ -171,6 +172,56 @@ process.stdout.write(`${JSON.stringify({
   selectedSpeciesIds: actual.selectedSpeciesIds,
   exploitationPairs: actual.exploitationPairs,
   explorationPairs: actual.explorationPairs,
+}, null, 2)}\n`);
+
+const postRound78Prior = loadNationalGbifYieldPrior(
+  path.join(root, "ops/national-research/evaluations/post-round-78-gbif-yield-prior-20260820-r1.json"),
+  "1a4c7d6eea0c1ad3a362743e11403ae80d2ac4693e6a3a5f24fe809ab97d2987",
+);
+const postRound78 = buildNationalGbifDualObjectiveSelection([...corpusCounts.values()], postRound78Prior, 25_000, {
+  strategy: GBIF_DUAL_OBJECTIVE_STRATEGY,
+  yieldPriorPath: "ops/national-research/evaluations/post-round-78-gbif-yield-prior-20260820-r1.json",
+  yieldPriorSha256: "1a4c7d6eea0c1ad3a362743e11403ae80d2ac4693e6a3a5f24fe809ab97d2987",
+  movementWeightBps: 6_000,
+  likelyYieldWeightBps: 4_000,
+  explorationTargetBps: 2_000,
+});
+assert.equal(postRound78Prior.sourceAudit.weightedYieldBps, 388);
+assert.equal(postRound78Prior.taxonPriors.length, 47);
+assert.deepEqual(postRound78.selectedSpeciesIds, [
+  "aceria-litchii",
+  "adiantum-macrophyllum",
+  "agdestis-clematidea",
+  "aglaonema-commutatum",
+  "alpinia-zerumbet",
+  "alternanthera-brasiliana",
+  "alternanthera-ficoidea",
+  "alyssum-strigosum",
+]);
+assert.equal(postRound78.exploitationPairs, 22_008);
+assert.equal(postRound78.explorationPairs, 3_144);
+assert.equal(postRound78.selectedTaxa.filter((entry) => entry.selectionLane === "exploration").length, 1);
+assert.equal(postRound78.exploitationPairs + postRound78.explorationPairs, postRound78.expectedNetMovement);
+assert(postRound78.expectedNetMovement >= 25_000);
+assert(postRound78.selectedTaxa.every((entry) => entry.notResearchedPairs > 0));
+const postRound78Artifact = NationalGbifYieldRescoreSchema.parse(JSON.parse(readFileSync(
+  path.join(root, "ops/national-research/evaluations/post-round-78-gbif-exact-cache-rescore-20260820-r1.json"),
+  "utf8",
+)));
+assert.equal(postRound78Artifact.baselineSha, "e98bc299a736e14a42e9a93ecd3026d071dc8edb");
+assert.equal(postRound78Artifact.generatedContentCommit, "0afdc8a161d39476c712897c8974e33ede30eb5a");
+assert.equal(postRound78Artifact.universe.countyCount, 3_144);
+assert.equal(postRound78Artifact.universe.taxonCount, 47);
+assert.equal(postRound78Artifact.universe.grossPairs, 147_768);
+assert.equal(postRound78Artifact.corpus.notResearchedPairs, 97_464);
+assert.equal(postRound78Artifact.corpus.blockedPairs, 0);
+assert.equal(postRound78Artifact.corpus.alreadyResearchedPairs, 50_304);
+assert.deepEqual(postRound78Artifact.selection.selectedTaxa, postRound78.selectedTaxa);
+assert.equal(postRound78Artifact.selection.expectedNetMovement, postRound78.expectedNetMovement);
+process.stdout.write(`${JSON.stringify({
+  postRound78SelectedSpeciesIds: postRound78.selectedSpeciesIds,
+  exploitationPairs: postRound78.exploitationPairs,
+  explorationPairs: postRound78.explorationPairs,
 }, null, 2)}\n`);
 
 process.stdout.write("National GBIF dual-objective selection planner tests passed.\n");

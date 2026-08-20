@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "post-round-78-source-portfolio-comparison-20260820-r1",
+  "evaluatedAt": "2026-08-20T21:09:57.663Z",
+  "baselineSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+  "objective": "Compare the measured post-Round 78 GBIF exact-cache opportunity with currently retained non-GBIF source lanes before any new provider request.",
+  "inputs": [
+    {
+      "path": "ops/national-research/evaluations/post-round-78-gbif-marginal-yield-audit-20260820-r1.json",
+      "sha256": "058032e200b8135708ee66f02b41f44e7bc2f871d865558183c014902910d826"
+    },
+    {
+      "path": "ops/national-research/evaluations/post-round-78-gbif-yield-prior-20260820-r1.json",
+      "sha256": "1a4c7d6eea0c1ad3a362743e11403ae80d2ac4693e6a3a5f24fe809ab97d2987"
+    },
+    {
+      "path": "ops/national-research/evaluations/post-round-78-gbif-exact-cache-rescore-20260820-r1.json",
+      "sha256": "9d3e0c24bc06aa022821623c8d079d87e0cdcbc9f322df58d5f66286892879a5"
+    },
+    {
+      "path": "ops/national-research/evaluations/round-77-source-portfolio-selection-20260819-r1.json",
+      "sha256": "8e2366694c7603b95103e73738a1e06db22d6d19b3fda15f5c368d31266fa3ec"
+    },
+    {
+      "path": "ops/national-research/evaluations/round-67-usda-nrcs-plants-national-20260817-r1.json",
+      "sha256": "4e3ac78291b15f7f3dd88ad87d867f3b90686619d8fde08dcc3275445739e66f"
+    },
+    {
+      "path": "ops/national-research/evaluations/round-61-aphis-federal-quarantine-national-20260815-r1.json",
+      "sha256": "b62f37628145e293f72ebef6077c429a97ccc98d214e6ea1079d32d58d375dea"
+    },
+    {
+      "path": "ops/national-research/evaluations/explicit-survey-non-detection-pilot-acquisition-20260819-r1.json",
+      "sha256": "27b617fd49c10af58e89c7279c11fb8593b78efd9f9a5dd60f66282f44bcd3fe"
+    },
+    {
+      "path": "ops/national-research/evaluations/authoritative-county-absence-source-discovery-20260819-r1.json",
+      "sha256": "2a580e7f1ca9c4ae3788689f05f3e88d61bc3f94097b0d3801e3f8e6339dacd6"
+    },
+    {
+      "path": "ops/national-research/evaluations/usfs-fia-national-2026-07-26.json",
+      "sha256": "25876f6775b341bc6b3cf41d0fd931e821211a485891620e0a8d22baa5c6c034"
+    },
+    {
+      "path": "ops/national-research/evaluations/usfs-afpe-national-2026-07-26.json",
+      "sha256": "6553b1d06a6714d05ca19977138c7d429093ed685dbd8dc766fb99e6874de321"
+    },
+    {
+      "path": "ops/national-research/evaluations/usgs-nas-applicability-2026-07-26.json",
+      "sha256": "7c36c9882bdbc91259798f30bb4d5e9744ad17abc548f03e24593491e73149f5"
+    }
+  ],
+  "currentGeneratedMatrix": {
+    "generatedContentCommit": "0afdc8a161d39476c712897c8974e33ede30eb5a",
+    "stateSummaries": 51,
+    "denominator": 7872576,
+    "verifiedPresent": 195108,
+    "verifiedAbsent": 0,
+    "notDetected": 8,
+    "researchedUnresolved": 1337312,
+    "notResearched": 6340148,
+    "conserved": true
+  },
+  "gbif": {
+    "sourceId": "gbif-preserved-specimens",
+    "status": "material-executable-fallback-awaiting-a-separate-provider-gate",
+    "auditedRounds": [
+      70,
+      72,
+      74,
+      75,
+      76,
+      77,
+      78
+    ],
+    "auditedSelectedPairs": 180436,
+    "auditedPresentPairs": 7005,
+    "auditedResearchedUnresolvedPairs": 173431,
+    "auditedWeightedYieldBps": 388,
+    "exactCacheUniverse": {
+      "taxa": 47,
+      "counties": 3144,
+      "grossPairs": 147768,
+      "alreadyResearchedPairs": 50304,
+      "blockedPairs": 0,
+      "notResearchedPairs": 97464
+    },
+    "rescoredPortfolio": {
+      "selectedTaxa": 8,
+      "selectedPairs": 25152,
+      "exploitationPairs": 22008,
+      "explorationPairs": 3144,
+      "heuristicExpectedPresentPairs": 968.9808,
+      "roundedPlanningReferencePresentPairs": 969,
+      "guaranteedPresentPairs": 0,
+      "researchAxisMovementIfTheScopeIsTerminallyCompleted": 25152,
+      "selectedSpeciesIds": [
+        "aceria-litchii",
+        "adiantum-macrophyllum",
+        "agdestis-clematidea",
+        "aglaonema-commutatum",
+        "alpinia-zerumbet",
+        "alternanthera-brasiliana",
+        "alternanthera-ficoidea",
+        "alyssum-strigosum"
+      ]
+    },
+    "qualification": "GBIF is the only currently measured lane above the 25,000-pair material threshold. Its 969-pair present figure is a planning heuristic, not a promise. A terminally completed exact scope can move 25,152 pairs off not-researched even when qualifying evidence is absent, but it creates no absence or non-detection claim."
+  },
+  "nonGbifLanes": [
+    {
+      "rank": 1,
+      "sourceId": "idigbio-preserved-specimens",
+      "status": "selected-for-zero-network-contract-and-overlap-preflight",
+      "historicalCompletedPairs": 155,
+      "currentMeasuredNationalNetNewPairs": null,
+      "providerRequestReady": false,
+      "blockers": [
+        "No acquire-once national immutable archive contract is implemented.",
+        "Current overlap with the generated national matrix has not been measured.",
+        "The retained provider search index is historical evidence and cannot prove current national yield."
+      ],
+      "reason": "This is the strongest source-diversification engineering candidate, but it cannot outrank measured GBIF execution until a zero-network contract and overlap preflight establish a defensible current scope."
+    },
+    {
+      "rank": 2,
+      "sourceId": "usda-nrcs-plants",
+      "status": "exact-national-scope-exhausted",
+      "historicalLastTranchePairs": 158412,
+      "currentExecutableNetNewPairs": 0,
+      "remainingMixedMappings": 8,
+      "reason": "The pure exact provider-native scope is exhausted. The eight remaining mixed mappings require separate taxonomy and establishment-status resolution."
+    },
+    {
+      "rank": 3,
+      "sourceId": "explicit-survey-non-detection",
+      "status": "one-accepted-ledger-outcome-awaiting-ordinary-batched-generation",
+      "acceptedPairKey": "01025:varroa-destructor",
+      "acceptedNewNotDetectedClaims": 1,
+      "currentGeneratedNotDetectedMovement": 0,
+      "providerRequestReady": false,
+      "reason": "The accepted Clarke County survey result is a scoped non-detection, not verified absence. It is durable ledger input for a later ordinary batched generation and does not justify a one-run R2 promotion."
+    },
+    {
+      "rank": 4,
+      "sourceId": "authoritative-county-absence-manual-review",
+      "status": "sparse-two-pair-candidate-review-only",
+      "absenceAssertionsCreated": 0,
+      "candidatePairs": [
+        "06053:hydrilla",
+        "06053:centaurea-diffusa"
+      ],
+      "currentMeasuredNationalNetNewPairs": 0,
+      "reason": "No automated national county-absence contract was established. Both Monterey candidates still require dated source bytes, exact scope, independent review, and later-presence conflict checks."
+    },
+    {
+      "rank": 5,
+      "sourceId": "aphis-federal-quarantine",
+      "status": "mapped-national-scope-exhausted",
+      "historicalLastTranchePairs": 52711,
+      "currentExecutableNetNewPairs": 0,
+      "reason": "The acquire-once mapped national plan is exhausted. Repeating it cannot establish a new material scope."
+    },
+    {
+      "rank": 6,
+      "sourceId": "usfs-fia/usfs-afpe/usgs-nas",
+      "status": "blocked-incomplete-or-nonmaterial",
+      "currentMeasuredMaterialNetNewPairs": 0,
+      "blockedPairs": {
+        "usfs-fia": 3263,
+        "usfs-afpe": 247,
+        "usgs-nas": 154
+      },
+      "reason": "The remaining scopes are blocked, incomplete, freshness-oriented, or below the material threshold and therefore do not displace the measured GBIF fallback."
+    }
+  ],
+  "decision": {
+    "selectedImmediateAction": "Implement a bounded zero-network iDigBio national acquire-once contract and exact overlap preflight before another GBIF provider POST.",
+    "selectedExecutableFallback": "Retain the 25,152-pair post-Round 78 GBIF rescore as the measured fallback for a later separately gated provider decision.",
+    "reason": "Seven audited GBIF rounds now yield a 388-basis-point prior, while seven of the eight next exploitation taxa share one Other plants prior and the exploration taxon has no observed present yield in its Arachnids prior. A zero-network iDigBio contract check is the safe next action that can improve source diversity and establish whether a non-GBIF national scope is material without spending a provider request. If that preflight remains non-executable or below threshold, the exact GBIF rescore remains ready for the next provider gate.",
+    "providerRequestAuthorizedByThisEvaluation": false,
+    "researchGenerationAuthorizedByThisEvaluation": false,
+    "publicationAuthorizedByThisEvaluation": false,
+    "r2PromotionAuthorizedByThisEvaluation": false
+  },
+  "semantics": {
+    "unknownIsAbsence": false,
+    "sourceSilenceIsNonDetection": false,
+    "planningHeuristicIsGuarantee": false,
+    "presentMovementCreatesAbsence": false,
+    "presentMovementCreatesNotDetected": false,
+    "absenceCandidateIsAcceptedAbsence": false,
+    "historicalProviderEvidenceProvesCurrentYield": false
+  },
+  "operations": {
+    "networkRequests": 0,
+    "providerPosts": 0,
+    "generationCommands": 0,
+    "r2ObjectsUploaded": 0,
+    "r2PointerPromotions": 0,
+    "r2Deletions": 0
+  },
+  "releaseBoundary": {
+    "activeR2ReleaseId": "research-021c595d0604-b3467b304cd02d85",
+    "preparedRound78ReleaseId": "research-0afdc8a161d3-3b9c193a1b03bb83",
+    "nextOrdinaryPromotionAt": "2026-08-26T22:57:28.231Z",
+    "round78UploadPerformed": false,
+    "round78PromotionPerformed": false,
+    "r2DeletionPerformed": false
+  },
+  "checks": {
+    "inputHashesVerified": true,
+    "generatedMatrixCountsConserved": true,
+    "gbifExactCachePairClassesConserved": true,
+    "gbifSelectionLanesConserved": true,
+    "absenceAndNonDetectionSemanticsSeparated": true,
+    "externalMutationCountIsZero": true
+  }
+}

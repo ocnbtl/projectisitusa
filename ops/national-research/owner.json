@@ -7,17 +7,17 @@
   "branch": "main",
   "baseSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
   "acquiredAt": "2026-08-20T20:48:54.637Z",
-  "lastReverifiedAt": "2026-08-20T20:48:54.637Z",
-  "currentCheckpointSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
-  "localHeadAtLastReverification": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
-  "state": "post-round-78-audit-prior-complete-rescore-pending-no-provider-network",
+  "lastReverifiedAt": "2026-08-20T21:13:05.308Z",
+  "currentCheckpointSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+  "localHeadAtLastReverification": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+  "state": "post-round-78-rescore-source-comparison-complete-idigbio-preflight-next-no-provider-network",
   "ownershipEvidence": {
     "activeProjectTasks": ["national-post-round-78-yield-calibration-20260820-main"],
     "supersededOwnerTaskId": "national-post-round-77-planner-20260819-main",
     "gitWorktreeCount": 217,
     "mainWriterProcesses": 0,
-    "originMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
-    "githubMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+    "originMainSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+    "githubMainSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
     "vercelProductionCommitSha": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
     "vercelDeploymentId": null,
     "gitFetchTransport": "https-authenticated",
@@ -121,6 +121,44 @@
       "generationCommands": 0,
       "publicationMutation": false,
       "nextAction": "Rescore the remaining exact-cache universe with this prior, then compare the measured GBIF opportunity against non-GBIF source lanes before selecting any provider action."
+    },
+    "postRound78RescoreAndPortfolio": {
+      "completedAt": "2026-08-20T21:13:05.308Z",
+      "baselineSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+      "rescoreBuilderPath": "scripts/research/build-national-gbif-yield-rescore.ts",
+      "rescoreBuilderSha256": "f1f40cbc504e750daa85875e10fb480c811d82c545ebca2cef39c52ba83a7df2",
+      "rescoreTestPath": "scripts/test-national-gbif-selection-planner.ts",
+      "rescoreTestSha256": "cf08be380e4c3261145e46d7992aa874612bd58bf153d08a290b4d16b99d788d",
+      "rescorePath": "ops/national-research/evaluations/post-round-78-gbif-exact-cache-rescore-20260820-r1.json",
+      "rescoreSha256": "9d3e0c24bc06aa022821623c8d079d87e0cdcbc9f322df58d5f66286892879a5",
+      "rescoreBytes": 43627,
+      "portfolioComparisonPath": "ops/national-research/evaluations/post-round-78-source-portfolio-comparison-20260820-r1.json",
+      "portfolioComparisonSha256": "ef6e9a4940a9ea261e9c0a5a36a386c1db3632da76135e8cb71f5287b240d07c",
+      "portfolioComparisonBytes": 9862,
+      "exactCacheUniverse": {
+        "taxa": 47,
+        "counties": 3144,
+        "grossPairs": 147768,
+        "notResearchedPairs": 97464,
+        "blockedPairs": 0,
+        "alreadyResearchedPairs": 50304
+      },
+      "selectedGbifFallback": {
+        "taxa": 8,
+        "pairs": 25152,
+        "exploitationPairs": 22008,
+        "explorationPairs": 3144,
+        "heuristicExpectedPresentPairs": 968.9808,
+        "guaranteedPresentPairs": 0,
+        "providerRequestAuthorizedByEvaluation": false
+      },
+      "selectedImmediateAction": "Implement a bounded zero-network iDigBio national acquire-once contract and exact overlap preflight before another GBIF provider POST.",
+      "verification": "Independent pinned Node 22 regeneration produced a byte-identical rescore; its schema and exact selection passed the focused planner regression. Eleven portfolio input hashes and all 51 generated state-summary totals reconciled with a conserved 7,872,576-pair matrix.",
+      "networkRequests": 0,
+      "providerPosts": 0,
+      "generationCommands": 0,
+      "publicationMutation": false,
+      "nextAction": "Build and test the zero-network iDigBio national archive contract and overlap preflight. Retain the exact 25,152-pair GBIF rescore as the measured fallback for a later separately gated provider decision."
     },
     "round73Optimization": {
       "applicationContentCommit": "eeeb3be787f376ee268f0e3b24c04d326a512770",
@@ -652,6 +690,14 @@
     }
   },
   "reverificationHistory": [
+    {
+      "observedAt": "2026-08-20T21:13:05.308Z",
+      "localHeadSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+      "originMainSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+      "githubMainSha": "e98bc299a736e14a42e9a93ecd3026d071dc8edb",
+      "vercelProductionCommitSha": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
+      "reason": "MAIN independently reproduced the post-Round 78 exact-cache rescore byte-for-byte, reconciled all source-portfolio input hashes and 51 generated state summaries, and selected a zero-network iDigBio national contract and overlap preflight before any additional provider request. The 25,152-pair GBIF rescore remains a measured fallback only; its approximately 969 present pairs are a planning heuristic and not a guarantee. Orchestration remains valid with historical terminal warnings only. Local, fetched origin, and public GitHub main identify the prior audit checkpoint e98bc299a736e14a42e9a93ecd3026d071dc8edb. No provider request, research generation, R2 upload, pointer promotion, deletion, or public research movement occurred."
+    },
     {
       "observedAt": "2026-08-20T20:48:54.637Z",
       "localHeadSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
