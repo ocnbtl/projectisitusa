@@ -138,6 +138,36 @@ assert.equal(
   nationalGbifAcquisitionInputPaths(round78Plan, path.relative(root, round78PlanPath).replaceAll("\\", "/")).length,
   20,
 );
+const round79PlanPath = path.join(root, "src/data/research/national-acquisition-plans/gbif-national-download-v2-round-79-8.json");
+const round79Plan = loadNationalGbifDownloadPlan(round79PlanPath);
+const round79Selection = loadNationalGbifSelection(root, round79Plan);
+const round79Taxa = resolveNationalGbifTaxa(root, round79Plan);
+assert.equal(round79Selection.selection.schemaVersion, 2);
+assert.equal(round79Plan.baselineCommit, "bcef10cb58965fec1bd6cc9e7bb7388dde2f8325");
+assert.equal(round79Taxa.length, 8);
+assert.equal(round79Selection.selection.counts.notResearchedPairs, 25_152);
+assert.equal(round79Selection.selection.counts.blockedPairs, 0);
+assert.equal(round79Selection.selection.counts.alreadyResearchedPairs, 0);
+assert.equal(round79Selection.selection.schemaVersion === 2
+  ? round79Selection.selection.laneCounts.exploitationPairs
+  : 0, 22_008);
+assert.equal(round79Selection.selection.schemaVersion === 2
+  ? round79Selection.selection.laneCounts.explorationPairs
+  : 0, 3_144);
+assert.deepEqual(round79Plan.speciesIds, [
+  "aceria-litchii",
+  "adiantum-macrophyllum",
+  "agdestis-clematidea",
+  "aglaonema-commutatum",
+  "alpinia-zerumbet",
+  "alternanthera-brasiliana",
+  "alternanthera-ficoidea",
+  "alyssum-strigosum",
+]);
+assert.equal(
+  nationalGbifAcquisitionInputPaths(round79Plan, path.relative(root, round79PlanPath).replaceAll("\\", "/")).length,
+  20,
+);
 const partitionInputs = nationalGbifPartitionInputPaths({
   root,
   planPath,

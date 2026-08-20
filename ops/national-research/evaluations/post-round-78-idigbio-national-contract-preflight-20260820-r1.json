@@ -1,0 +1,263 @@
+{
+  "baselineSha": "bcef10cb58965fec1bd6cc9e7bb7388dde2f8325",
+  "checks": {
+    "exactOverlapConserved": true,
+    "externalMutationCountIsZero": true,
+    "generatedTreesMatchPinnedCommit": true,
+    "immutableRunCountsConserved": true,
+    "negativeSemanticsPreserved": true,
+    "outcomePairsUnique": true,
+    "sourceRegistryContractPinned": true
+  },
+  "decision": {
+    "measuredCurrentNetNewPairs": 0,
+    "nextAction": "Return to the measured 25,152-pair GBIF fallback and prepare a separately gated Round 79 plan without issuing a provider POST yet.",
+    "providerRequestAuthorizedByThisEvaluation": false,
+    "reason": "The retained iDigBio corpus is fully overlapped and the registered provider snapshot is frozen. A future national iDigBio lane needs a real provider-native immutable archive contract and fresh zero-network overlap measurement; inventing one from the state-search adapter would overstate executability.",
+    "status": "historical-replay-exhausted-national-contract-blocked"
+  },
+  "evaluatedAt": "2026-08-20T21:40:14.308Z",
+  "evaluationId": "post-round-78-idigbio-national-contract-preflight-20260820-r1",
+  "exactOverlap": {
+    "currentNotDetected": 0,
+    "currentNotResearched": 0,
+    "currentResearchedUnresolved": 15,
+    "currentVerifiedAbsent": 0,
+    "currentVerifiedPresent": 140,
+    "duplicatePairOutcomes": 0,
+    "historicalEvidenceFound": {
+      "currentOther": 0,
+      "currentResearchedUnresolved": 0,
+      "currentVerifiedPresent": 80,
+      "total": 80
+    },
+    "historicalNoQualifyingEvidence": {
+      "currentOther": 0,
+      "currentResearchedUnresolved": 15,
+      "currentVerifiedPresent": 60,
+      "total": 75
+    },
+    "retainedReplayNetNewPairs": 0,
+    "uniquePairOutcomes": 155
+  },
+  "generatedContentCommit": "0afdc8a161d39476c712897c8974e33ede30eb5a",
+  "nationalContract": {
+    "blockers": [
+      "The registered provider search snapshot is officially frozen as historical evidence.",
+      "All 155 retained exact county-species outcomes are already researched in the current matrix, so replay has zero net movement.",
+      "The current adapter performs bounded state-species search pagination and does not consume one provider-native national immutable archive.",
+      "No versioned national archive identity, completeness receipt, or exact national overlap plan is implemented."
+    ],
+    "candidateLimitMaximum": 100,
+    "currentAdapterMode": "bounded-state-species-search-pagination",
+    "currentMaterialScopeExecutable": false,
+    "maxPagesPerSpeciesMaximum": 1000,
+    "pageLimitMaximum": 300,
+    "providerNativeNationalArchiveImplemented": false,
+    "requiredArchiveContract": [
+      "One provider-native United States preserved-specimen snapshot with a stable provider identity and acquisition timestamp.",
+      "Hash-pinned retained raw bytes plus byte count, media type, source URL, and provider snapshot metadata.",
+      "A complete record-count or terminal-pagination contract that fails closed on drift, truncation, repeated pages, or invalid payloads.",
+      "Deterministic exact-binomial, explicit state, and explicit active county-equivalent partitioning with conservative rejection semantics.",
+      "A zero-network exact overlap plan that measures not-researched, blocked, and already-researched pairs before provider execution.",
+      "Immutable replay receipts and tests proving source silence creates only researched-unresolved outcomes, never absence or non-detection."
+    ]
+  },
+  "operations": {
+    "generationCommands": 0,
+    "networkRequests": 0,
+    "providerPosts": 0,
+    "publicationMutations": 0
+  },
+  "retainedCorpus": {
+    "adapterVersions": [
+      "1.0.0",
+      "1.1.0"
+    ],
+    "assertionEvents": 198,
+    "candidateRecords": 3547,
+    "duplicateRecords": 0,
+    "earliestSnapshotLastModified": "2021-01-01T08:16:54.092Z",
+    "errorCount": 0,
+    "latestSnapshotLastModified": "2026-04-23T17:51:59.634Z",
+    "lineage": [
+      {
+        "adapterVersion": "1.0.0",
+        "assertionEvents": 9,
+        "candidateRecords": 139,
+        "finishedAt": "2026-07-15T05:57:24.838Z",
+        "outcomesPath": "src/data/research/runs/20260715T055723Z__idigbio-preserved-specimens__d9f2297a22ee/outcomes.ndjson",
+        "outcomesSha256": "5264ea7b92cab8d14ee7b100f6812af93037ac4e5b1119972e42afe575c210f4",
+        "pairOutcomes": 11,
+        "receiptPath": "src/data/research/runs/20260715T055723Z__idigbio-preserved-specimens__d9f2297a22ee/receipt.json",
+        "receiptSha256": "57454a4389ee6898877f6480473df57812d6223c0b6c41e3edfb9d5e6588bd62",
+        "rejectionRecords": 16,
+        "requestedPairs": 11,
+        "reviewEvents": 9,
+        "runId": "20260715T055723Z__idigbio-preserved-specimens__d9f2297a22ee",
+        "startedAt": "2026-07-15T05:57:23.192Z",
+        "stateCode": "AL"
+      },
+      {
+        "adapterVersion": "1.0.0",
+        "assertionEvents": 10,
+        "candidateRecords": 107,
+        "finishedAt": "2026-07-15T05:58:30.558Z",
+        "outcomesPath": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/outcomes.ndjson",
+        "outcomesSha256": "92988bbc12e6fc3be3734a8167d19e2128b0954670a4e7637a058fd6fc5b8cdb",
+        "pairOutcomes": 9,
+        "receiptPath": "src/data/research/runs/20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db/receipt.json",
+        "receiptSha256": "308e4f1161399a446e665eca39f441b116def846090b09713adbe298dffd2f86",
+        "rejectionRecords": 24,
+        "requestedPairs": 9,
+        "reviewEvents": 10,
+        "runId": "20260715T055828Z__idigbio-preserved-specimens__f4626b90c8db",
+        "startedAt": "2026-07-15T05:58:28.899Z",
+        "stateCode": "AL"
+      },
+      {
+        "adapterVersion": "1.0.0",
+        "assertionEvents": 4,
+        "candidateRecords": 73,
+        "finishedAt": "2026-07-15T05:59:19.967Z",
+        "outcomesPath": "src/data/research/runs/20260715T055918Z__idigbio-preserved-specimens__cc2ef522c258/outcomes.ndjson",
+        "outcomesSha256": "a5170baa3612be4ecb2f916e00d03caeb1e99ea935728731dadb146576c89058",
+        "pairOutcomes": 8,
+        "receiptPath": "src/data/research/runs/20260715T055918Z__idigbio-preserved-specimens__cc2ef522c258/receipt.json",
+        "receiptSha256": "35324b289288e814346b2fc0f40a25af4152ddb30374eb26b6f6fbf174e4e7c8",
+        "rejectionRecords": 13,
+        "requestedPairs": 8,
+        "reviewEvents": 4,
+        "runId": "20260715T055918Z__idigbio-preserved-specimens__cc2ef522c258",
+        "startedAt": "2026-07-15T05:59:18.803Z",
+        "stateCode": "AL"
+      },
+      {
+        "adapterVersion": "1.0.0",
+        "assertionEvents": 7,
+        "candidateRecords": 114,
+        "finishedAt": "2026-07-15T06:00:12.040Z",
+        "outcomesPath": "src/data/research/runs/20260715T060010Z__idigbio-preserved-specimens__d6f7a8072dc7/outcomes.ndjson",
+        "outcomesSha256": "3fada54210b680d8f248394b614099c1f7898aa158ea740b7e56ffd11e2ab2b4",
+        "pairOutcomes": 8,
+        "receiptPath": "src/data/research/runs/20260715T060010Z__idigbio-preserved-specimens__d6f7a8072dc7/receipt.json",
+        "receiptSha256": "8d314a5255047f1439a1dee3e1d1e39511befaa0ba8d68d368b5c06ddb5eb618",
+        "rejectionRecords": 17,
+        "requestedPairs": 8,
+        "reviewEvents": 7,
+        "runId": "20260715T060010Z__idigbio-preserved-specimens__d6f7a8072dc7",
+        "startedAt": "2026-07-15T06:00:10.432Z",
+        "stateCode": "AL"
+      },
+      {
+        "adapterVersion": "1.0.0",
+        "assertionEvents": 8,
+        "candidateRecords": 116,
+        "finishedAt": "2026-07-15T06:01:00.408Z",
+        "outcomesPath": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/outcomes.ndjson",
+        "outcomesSha256": "a3749967cf0f42776ba0e336d01e644b4215faa54055a8cca16a0ac81a891ccd",
+        "pairOutcomes": 8,
+        "receiptPath": "src/data/research/runs/20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f/receipt.json",
+        "receiptSha256": "6834b78bab8d3b4bcd68adc1aab5c873bfa93b058f701efbb521d25ced7cbc1b",
+        "rejectionRecords": 30,
+        "requestedPairs": 8,
+        "reviewEvents": 8,
+        "runId": "20260715T060058Z__idigbio-preserved-specimens__61fd0213c81f",
+        "startedAt": "2026-07-15T06:00:58.773Z",
+        "stateCode": "AL"
+      },
+      {
+        "adapterVersion": "1.0.0",
+        "assertionEvents": 6,
+        "candidateRecords": 124,
+        "finishedAt": "2026-07-15T06:01:48.106Z",
+        "outcomesPath": "src/data/research/runs/20260715T060146Z__idigbio-preserved-specimens__6c7ccf762fd9/outcomes.ndjson",
+        "outcomesSha256": "46088c0b83ee667abd3eb733aa842df2cb1be22ecfbcc4100b1545df7a0c4204",
+        "pairOutcomes": 10,
+        "receiptPath": "src/data/research/runs/20260715T060146Z__idigbio-preserved-specimens__6c7ccf762fd9/receipt.json",
+        "receiptSha256": "c7a6803c9cd3e8ed6685a33639711ed5d1e2bbff58e41814daec713b537ccca8",
+        "rejectionRecords": 40,
+        "requestedPairs": 10,
+        "reviewEvents": 6,
+        "runId": "20260715T060146Z__idigbio-preserved-specimens__6c7ccf762fd9",
+        "startedAt": "2026-07-15T06:01:46.518Z",
+        "stateCode": "AL"
+      },
+      {
+        "adapterVersion": "1.1.0",
+        "assertionEvents": 153,
+        "candidateRecords": 2873,
+        "finishedAt": "2026-07-15T16:08:02.041Z",
+        "outcomesPath": "src/data/research/runs/20260715T160721Z__idigbio-preserved-specimens__ecb15402749c/outcomes.ndjson",
+        "outcomesSha256": "b5108628eecc1f28b3e9dcbc48e0fd174625fea08a5a62ca68676ad6cf87420c",
+        "pairOutcomes": 100,
+        "receiptPath": "src/data/research/runs/20260715T160721Z__idigbio-preserved-specimens__ecb15402749c/receipt.json",
+        "receiptSha256": "1f6f0db717666ad4acb79960d26869ea56d8533fe277fae3190b5828b7020298",
+        "rejectionRecords": 545,
+        "requestedPairs": 100,
+        "reviewEvents": 153,
+        "runId": "20260715T160721Z__idigbio-preserved-specimens__ecb15402749c",
+        "startedAt": "2026-07-15T16:07:21.000Z",
+        "stateCode": "AL"
+      },
+      {
+        "adapterVersion": "1.1.0",
+        "assertionEvents": 1,
+        "candidateRecords": 1,
+        "finishedAt": "2026-07-15T16:12:11.665Z",
+        "outcomesPath": "src/data/research/runs/20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667/outcomes.ndjson",
+        "outcomesSha256": "d912600f69a48dc289b8e519119ce2faec923aaab5be52ca86f7822075a226a0",
+        "pairOutcomes": 1,
+        "receiptPath": "src/data/research/runs/20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667/receipt.json",
+        "receiptSha256": "b70e2a0cd3bba3212ee5bc505927f59b3b3d9ecfe8c82604a45ce8b037b93e60",
+        "rejectionRecords": 0,
+        "requestedPairs": 1,
+        "reviewEvents": 1,
+        "runId": "20260715T161200Z__idigbio-preserved-specimens__4c35b02d7667",
+        "startedAt": "2026-07-15T16:12:00.000Z",
+        "stateCode": "AL"
+      }
+    ],
+    "lineageSha256": "f020f2cdfbf6127256c6facd6718f24ce99253e5eed4a043186795a58ec4c6f7",
+    "pairOutcomes": 155,
+    "rejectionRecords": 685,
+    "requestedPairs": 155,
+    "retainedArtifactBytes": 6323007,
+    "retainedArtifacts": 83,
+    "reviewEvents": 198,
+    "runCount": 8,
+    "runPathPattern": "src/data/research/runs/*__idigbio-preserved-specimens__*",
+    "stateCodes": [
+      "AL"
+    ],
+    "upstreamRequests": 83
+  },
+  "schemaVersion": 1,
+  "semantics": {
+    "historicalEvidenceProvesCurrentProviderYield": false,
+    "sourceSilenceCreatesAbsence": false,
+    "sourceSilenceCreatesNotDetected": false,
+    "zeroReplayNetProvesZeroFutureNationalYield": false
+  },
+  "source": {
+    "adapterPath": "scripts/research/adapters/idigbio-preserved-specimens.ts",
+    "adapterSha256": "b5082498b1e8a741514381bc9ca2e14d90dacb21e28bb7bc742e4dc7a40da342",
+    "allowedAdapterVersions": [
+      "1.0.0",
+      "1.1.0",
+      "1.1.1"
+    ],
+    "caveat": "Historical preserved specimen evidence from the iDigBio search index, officially frozen as of 2026-05-08. Aggregated records may overlap GBIF and collection portals, and missing records never support absence or non-detection.",
+    "currentAdapterVersion": "1.1.1",
+    "evidenceCapabilities": [
+      "recorded-present"
+    ],
+    "negativeSemantics": "none",
+    "parameterSchemaPath": "src/data/research/schemas/idigbio-preserved-specimens-parameters.schema.json",
+    "parameterSchemaSha256": "338f9e2dbd65c2384e08c9abff20222dd95042f30e07b3226c87da46519cbd2e",
+    "providerSnapshotFrozenAsOf": "2026-05-08",
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5",
+    "sourceId": "idigbio-preserved-specimens"
+  }
+}
