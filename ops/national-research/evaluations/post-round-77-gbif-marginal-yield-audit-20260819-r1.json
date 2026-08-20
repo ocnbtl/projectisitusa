@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "post-round-77-gbif-marginal-yield-audit-20260819-r1",
+  "evaluatedAt": "2026-08-20T00:13:52.792Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "branch": "main",
+  "baselineSha": "0f2964a689a70869e361343f6fb68c99ea31a215",
+  "objective": "Independently reconstruct the Round 70 through Round 77 GBIF marginal-yield history and the complete Round 77 provider-row, rejection, outcome, and taxon conservation from immutable plans, acquisition receipts, partition receipts, and run outputs before changing the national selector.",
+  "auditImplementation": {
+    "scriptPath": "scripts/research/audit-national-gbif-marginal-yield.ts",
+    "scriptSha256": "f2109d6361a38ac05455b21d527937237f1dc6143596c119f51f630886c41aaa",
+    "testPath": "scripts/test-national-gbif-marginal-yield.ts",
+    "testSha256": "58b785daecb1def460c2e5845929799a23bef71677be78200a3cfc684e3a546d",
+    "command": "C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe --import tsx scripts/test-national-gbif-marginal-yield.ts",
+    "result": "pass",
+    "method": [
+      "Stream every selected pair outcome from the immutable state runs and require one unique outcome per planned pair.",
+      "Stream every assertion and require one unique assertion pair for every evidence-found outcome.",
+      "Verify every run output hash against its immutable receipt.",
+      "Read provider totals from the immutable acquisition receipt and selected-scope row totals from the state run receipts.",
+      "Expand grouped rejection notes back to archive-row counts and conserve provider rows across exact-geography rejection, selected-scope rejection, and accepted records.",
+      "Reject every outcome status other than evidence-found or no-qualifying-evidence for this occurrence-only audit."
+    ],
+    "boundedMemory": true,
+    "networkRequests": 0,
+    "providerPosts": 0,
+    "generationCommands": 0
+  },
+  "immutableInputHashes": [
+    {
+      "round": 70,
+      "integrationSha256": "95247d19dfa4abfecf9e910cd1ba2910c0e4b2c66ecf61a795929bad31fd78e6",
+      "planSha256": "d399f5844716b804061f2f5f95a5ad66c10fe3f22597f3ce10f0336c157fdce8",
+      "partitionReceiptSha256": "37ee720df8f032b485cec7911c83ba93d289d4dcb90f55b3096022c8dc2115ab",
+      "acquisitionReceiptSha256": "7c64309c21e62427fbbd4a9dcfdec176a161d705ca51472d6f44026c3bcaf8b3"
+    },
+    {
+      "round": 72,
+      "integrationSha256": "39afc579cfde54a4753f797096318234b62d67c6858889a69ef78f4547c92a4e",
+      "planSha256": "626d1cac255bae02646d82d981f878131b3dcc16ac993a668c365ea9878a57fc",
+      "partitionReceiptSha256": "fd8a074b7b78ed3bfa395ca96b8c59689459f45eaf2dd8fbab82742cf6bb21e0",
+      "acquisitionReceiptSha256": "95f422c39d592ea0e397ac017b4bbbedd4acc1b0abfaa957295a3a1aecfb6f58"
+    },
+    {
+      "round": 74,
+      "integrationSha256": "1af2eeca1c0da4e61e7bfaa1356bcd388e42cd1bb0e9370d0ece917f502bbd86",
+      "planSha256": "d88e60eae5ab0b34bca7aba9332546069865aeebfdf52dd1fb91214a89f30028",
+      "partitionReceiptSha256": "f311bd53043c3863678ad149fc7f8b355686dfc9ebfd96fef4b4f192da209023",
+      "acquisitionReceiptSha256": "23084d2298b1b4aed42c85088bee01c18b2830fe2a4e369ebf8f5e13bc9ce842"
+    },
+    {
+      "round": 75,
+      "integrationSha256": "f3d09e85554f3fe540112735c7dbd0e1b4b55b7812734df9b742ef7621bcb1a3",
+      "planSha256": "d1f01fd05ad5aa74c9edb9b16d3461937f1fcfccc86ba0679c883c4fb2037ecc",
+      "partitionReceiptSha256": "e16c3ff56dd651a63ea86e669858d2ec2ca1e702aafaf28b75bc94a269006181",
+      "acquisitionReceiptSha256": "967046e536951cdc3f3f18b60abec5cd56037c0f13c80a3a28b268cfadd56518"
+    },
+    {
+      "round": 76,
+      "integrationSha256": "e22d8f92f945833d8182271ca2ab5ab2513dde80fdab03bf9856372b878988e6",
+      "planSha256": "555154500bb940e81d5ff6433845068df98b9226ae22fd5e49856d4f2cf323eb",
+      "partitionReceiptSha256": "54bf7754766f1e8917ef9c34b093660d98e429d5ab2cf4c700722ea8858cb514",
+      "acquisitionReceiptSha256": "07247d913d3e7bb71713ea4fcf299e85550bdd9c2b14dd3c31627dbc778ea8c2"
+    },
+    {
+      "round": 77,
+      "integrationSha256": "cd76fb449e5891282f600f2c546663c04558855f6d2e23aa8d2f04a5cce1fd14",
+      "planSha256": "d04fad4bebea85856d9d1a7e5e68464ac245bcd941aa67a8c7a73a644f9fa3bd",
+      "partitionReceiptSha256": "5751bb7a8a8f01e3bee407a331b4e26f7d5f84488c6d69ea9a24c3c04cd84696",
+      "acquisitionReceiptSha256": "2b3103801ff62bcff5c8e2b471d2a22d6f3eb475e8cc28a97ce3734c5477ada4"
+    }
+  ],
+  "marginalYield": [
+    {"round":70,"selectedTaxa":13,"selectedPairs":25406,"presentPairs":1147,"researchedUnresolvedPairs":24259,"marginalYieldPercent":4.515,"providerRows":30994},
+    {"round":72,"selectedTaxa":9,"selectedPairs":27223,"presentPairs":1420,"researchedUnresolvedPairs":25803,"marginalYieldPercent":5.216,"providerRows":11002},
+    {"round":74,"selectedTaxa":9,"selectedPairs":26424,"presentPairs":726,"researchedUnresolvedPairs":25698,"marginalYieldPercent":2.748,"providerRows":4986},
+    {"round":75,"selectedTaxa":9,"selectedPairs":25048,"presentPairs":2572,"researchedUnresolvedPairs":22476,"marginalYieldPercent":10.268,"providerRows":16077},
+    {"round":76,"selectedTaxa":10,"selectedPairs":26031,"presentPairs":918,"researchedUnresolvedPairs":25113,"marginalYieldPercent":3.527,"providerRows":13770},
+    {"round":77,"selectedTaxa":8,"selectedPairs":25152,"presentPairs":25,"researchedUnresolvedPairs":25127,"marginalYieldPercent":0.099,"providerRows":381}
+  ],
+  "aggregate": {
+    "auditedRounds": 6,
+    "selectedTaxa": 58,
+    "selectedPairs": 155284,
+    "presentPairs": 6808,
+    "researchedUnresolvedPairs": 148476,
+    "providerRows": 77210,
+    "weightedMarginalYieldPercent": 4.384
+  },
+  "round77Conservation": {
+    "providerRows": 381,
+    "geographyRejectedRows": 272,
+    "selectedScopeRows": 109,
+    "selectedRejectedArchiveRows": 35,
+    "selectedAcceptedArchiveRows": 74,
+    "representativeRejectionGroups": 20,
+    "rejectionReasonRows": {
+      "cultivated-or-captive": 32,
+      "geography-ambiguous": 3
+    },
+    "uniqueAcceptedPairs": 25,
+    "noQualifyingEvidencePairs": 25127,
+    "selectedPairs": 25152,
+    "unexplainedProviderRows": 0,
+    "perTaxon": [
+      {"speciesId":"abies-alba","selectedPairs":3144,"acceptedPairs":6,"noQualifyingEvidencePairs":3138,"rejectedArchiveRows":17},
+      {"speciesId":"abutilon-hirtum","selectedPairs":3144,"acceptedPairs":2,"noQualifyingEvidencePairs":3142,"rejectedArchiveRows":1},
+      {"speciesId":"acacia-elata","selectedPairs":3144,"acceptedPairs":3,"noQualifyingEvidencePairs":3141,"rejectedArchiveRows":2},
+      {"speciesId":"acacia-podalyriifolia","selectedPairs":3144,"acceptedPairs":5,"noQualifyingEvidencePairs":3139,"rejectedArchiveRows":11},
+      {"speciesId":"acaena-magellanica","selectedPairs":3144,"acceptedPairs":0,"noQualifyingEvidencePairs":3144,"rejectedArchiveRows":1},
+      {"speciesId":"acanthogobius-flavimanus","selectedPairs":3144,"acceptedPairs":9,"noQualifyingEvidencePairs":3135,"rejectedArchiveRows":3},
+      {"speciesId":"acanthomysis-aspera","selectedPairs":3144,"acceptedPairs":0,"noQualifyingEvidencePairs":3144,"rejectedArchiveRows":0},
+      {"speciesId":"acarapis-woodi","selectedPairs":3144,"acceptedPairs":0,"noQualifyingEvidencePairs":3144,"rejectedArchiveRows":0}
+    ]
+  },
+  "interpretation": {
+    "confirmed": [
+      "The previous selector deterministically maximized untouched-pair movement, but it contained no likely-yield objective.",
+      "The six measured rounds vary from 0.099 percent to 10.268 percent marginal present-pair yield despite similar 25,000-pair movement targets.",
+      "Round 77 selected three taxa with zero present-pair yield and five taxa with single-digit present-pair yield.",
+      "Raw provider rows are retained as operational context and are not reported as research movement."
+    ],
+    "notClaimed": [
+      "No source silence, empty result, rejected row, or no-qualifying-evidence outcome establishes absence or survey non-detection.",
+      "The weighted historical yield is not treated as a guaranteed forecast for a future taxon.",
+      "This audit does not approve another provider acquisition, R2 publication, or production release."
+    ]
+  },
+  "freshExternalBaseline": {
+    "observedAt": "2026-08-20T00:07:28.516Z",
+    "localAndFetchedOriginMainSha": "0f2964a689a70869e361343f6fb68c99ea31a215",
+    "vercelDeploymentKey": "CxgsWoc3HsyMaJbmNPRBp9jLhJNp",
+    "vercelState": "Ready",
+    "vercelLifecycle": "Current",
+    "vercelSourceCommit": "5e483af383b14153d99ef0101321ac5c07909d52",
+    "r2ReleaseId": "research-021c595d0604-b3467b304cd02d85",
+    "r2PointerSha256": "df0490ea2c9e857d6948ea75ac0ea64af44bf91961417d4b42aa14412ce40d27",
+    "r2SourceCommit": "021c595d0604012bc75f298c409e5ac1a023e0c0",
+    "cloudflareDisplayed": {"classA":"19.26k","classB":"39.65k","storage":"5.49 GB","billableUsage":"$0.00"},
+    "gbifSearchHealthStatus": 200,
+    "gbifDownloadHealthStatus": 200,
+    "gbifCredentialTargetsPresent": true,
+    "liveRoutesStatus": 200
+  },
+  "decision": {
+    "auditStatus": "complete",
+    "plannerChangeRequired": true,
+    "nextImplementation": "Replace the movement-only alphabetical tie-breaker with a deterministic movement plus likely-yield ranking and a smaller exploration lane. Keep likely-yield inputs explicit, versioned, auditable, and non-authoritative; keep no-qualifying-evidence on the research axis only.",
+    "providerAcquisitionApprovedByThisEvaluation": false,
+    "r2PublicationApprovedByThisEvaluation": false,
+    "productionReleaseApprovedByThisEvaluation": false
+  }
+}
