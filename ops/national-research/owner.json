@@ -1,32 +1,85 @@
 {
   "schemaVersion": 1,
   "ownerType": "main-integration-task",
-  "taskId": "national-post-round-77-planner-20260819-main",
-  "taskTitle": "Project Isitusa post-Round 77 yield audit and dual-objective planning",
+  "taskId": "national-post-round-78-yield-calibration-20260820-main",
+  "taskTitle": "Project Isitusa post-Round 78 yield calibration and source portfolio",
   "canonicalCheckout": "C:\\Code\\project-isitusa",
   "branch": "main",
-  "baseSha": "0f2964a689a70869e361343f6fb68c99ea31a215",
-  "acquiredAt": "2026-08-20T00:07:28.516Z",
-  "lastReverifiedAt": "2026-08-20T05:17:06.782Z",
-  "currentCheckpointSha": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
-  "localHeadAtLastReverification": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
-  "state": "round-78-integrated-release-prepared-cadence-guarded-no-publication",
+  "baseSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+  "acquiredAt": "2026-08-20T20:48:54.637Z",
+  "lastReverifiedAt": "2026-08-20T20:48:54.637Z",
+  "currentCheckpointSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+  "localHeadAtLastReverification": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+  "state": "post-round-78-calibration-audit-ready-no-provider-network",
   "ownershipEvidence": {
-    "activeProjectTasks": ["national-post-round-77-planner-20260819-main"],
-    "supersededOwnerTaskId": "national-round-77-20260819-main",
+    "activeProjectTasks": ["national-post-round-78-yield-calibration-20260820-main"],
+    "supersededOwnerTaskId": "national-post-round-77-planner-20260819-main",
     "gitWorktreeCount": 217,
     "mainWriterProcesses": 0,
-    "originMainSha": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
-    "githubMainSha": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
-    "vercelProductionCommitSha": "2f7a9e0efc2ebc4ccc808fd6de84fb092b868064",
-    "vercelDeploymentId": "FT6Ps5bp7k7ao9WLvhZs8ahCqmgD",
+    "originMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+    "githubMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+    "vercelProductionCommitSha": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
+    "vercelDeploymentId": null,
     "gitFetchTransport": "https-authenticated",
     "githubCliAccount": "ocnbtl",
     "vercelCliAccount": null,
     "recoveryArchiveSha256": "b281de4753f8193874e084549dc6d0a9f4d15ef4382b49bce763c8ea044d9a67",
     "laptopRemoteRefCount": 48,
     "browserQa": "Round 77 production QA passed on isitusa.com for home, the R2-backed Vermont research control center, the Silver fir profile, and ZIP 05819 to Caledonia County, Vermont. Caledonia rendered the exact Round 77 GBIF specimen-backed presence, occurrence 1269680727, and conservative historical-presence/no-absence caveat at 1440x1000 and 390x844; document overflow, broken images, browser console warnings/errors, page errors, failed requests, and HTTP error responses were zero.",
-    "liveVerification": "Canonical and pushed origin main identify validated Round 78 maintenance checkpoint b7ef4ad57d2de4ee19a3224ed09009400b575159. The active application remains priority-8 release-tooling commit 2f7a9e0efc2ebc4ccc808fd6de84fb092b868064, whose GitHub Production deployment 5995004538 and Vercel deployment FT6Ps5bp7k7ao9WLvhZs8ahCqmgD completed successfully. Round 78 completed one authenticated non-retried GBIF POST and local integration, but the seven-day cadence guard kept R2 pointer research-021c595d0604-b3467b304cd02d85 on Round 77 generated content 021c595d0604012bc75f298c409e5ac1a023e0c0. No Round 78 R2 upload, pointer promotion, or deletion occurred. External GitHub and Vercel terminal-status verification for the pushed Round 78 commit chain follows this non-self-attesting receipt.",
+    "liveVerification": "Canonical, fetched origin main, and public GitHub identify clean Round 78 owner receipt 36c988ce7f6346a0a10817c15400d78b0e1c7b8f. GitHub Production deployment 5996297132 completed successfully for exact application commit b7ef4ad57d2de4ee19a3224ed09009400b575159, and its immutable /research route plus canonical https://isitusa.com/research returned HTTP 200. The live R2 current.json remains intentionally on Round 77 release research-021c595d0604-b3467b304cd02d85 and source commit 021c595d0604012bc75f298c409e5ac1a023e0c0. Round 78 release research-0afdc8a161d3-3b9c193a1b03bb83 remains prepared but not uploaded or promoted under the seven-day cadence guard; no R2 deletion occurred.",
+    "postRound78CalibrationStartup": {
+      "observedAt": "2026-08-20T20:48:54.637Z",
+      "checkpointSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+      "originMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+      "githubMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+      "activeJobs": 0,
+      "activeLeases": 0,
+      "pendingOrAcceptedQueueItems": 0,
+      "mainWriterProcesses": 0,
+      "gitWorktreeCount": 217,
+      "orchestrationValidation": "valid-with-historical-terminal-warnings-only",
+      "frozenSkillValidation": "pass-unsandboxed-pinned-runtime",
+      "sandboxSkillValidationQualification": "The same suite reproduces the known sandbox-only uv_os_get_passwd ENOMEM failure; the pinned unsandboxed runtime passed.",
+      "freePhysicalMemoryGiB": 7.31,
+      "freeVirtualMemoryGiB": 6.51,
+      "freeDiskGiB": 618.06,
+      "currentProcessCredentialEnvironment": {
+        "GBIF_USERNAME": false,
+        "GBIF_PASSWORD": false,
+        "GBIF_EMAIL": false
+      },
+      "savedRound78CredentialPresence": "pass in committed zero-network semantic preflight; no value read or persisted",
+      "providerHealth": {
+        "downloadKey": "0025310-260806074905277",
+        "status": 200,
+        "latencyMs": 484,
+        "acquiredEvidence": false
+      },
+      "cloudflareDashboard": {
+        "objects": "19.04k",
+        "classAOperations": "19.26k",
+        "classBOperations": "39.65k",
+        "storage": "5.49 GB",
+        "billableUsage": "$0.00",
+        "usageFinding": "No billable usage incurred yet"
+      },
+      "activeR2Pointer": {
+        "status": 200,
+        "releaseId": "research-021c595d0604-b3467b304cd02d85",
+        "sourceCommit": "021c595d0604012bc75f298c409e5ac1a023e0c0",
+        "promotedAt": "2026-08-19T22:57:28.231Z"
+      },
+      "applicationDelivery": {
+        "contentCommit": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
+        "githubDeploymentId": 5996297132,
+        "environmentUrl": "https://projectisitusa-ov2ll4550-unigentamos.vercel.app",
+        "deploymentState": "success",
+        "immutableResearchRouteStatus": 200,
+        "canonicalResearchRouteStatus": 200,
+        "vercelConnectorQualification": "Direct deployment listing returned permission-limited HTTP 403; GitHub deployment status and live routes are authoritative for this observation."
+      },
+      "nextAction": "Extend the bounded zero-network GBIF marginal-yield audit through Round 78, build a versioned post-Round 78 prior, rescore the exact-cache universe, and compare source lanes before any provider request."
+    },
     "round73Optimization": {
       "applicationContentCommit": "eeeb3be787f376ee268f0e3b24c04d326a512770",
       "previewDeploymentId": "AaT5oMcbmaD2kxGTsm8NkTehuVvC",
@@ -549,14 +602,22 @@
       "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "gbif-preserved-specimens",
-      "observedAt": "2026-08-20T00:07:28.516Z",
-      "status": "Round 77 completed the authenticated national GBIF provider request, retained and verified the 381-record archive, partitioned 51 state runs, and integrated exactly 25,152 selected county-species outcomes into all 51 generated projections. Fresh GBIF search and retained-download health checks returned HTTP 200 before Round 78 planning.",
+      "observedAt": "2026-08-20T20:48:54.637Z",
+      "status": "Round 78 completed exactly one authenticated national GBIF provider request with zero retries, retained and verified the 1,638-record archive, partitioned 51 immutable state runs, and integrated exactly 25,152 selected county-species outcomes. A fresh retained-download health check returned HTTP 200 before post-Round 78 calibration.",
       "gbifAuthenticatedDownloadStatus": "succeeded-and-integrated",
       "preflightProcessException": false,
-      "qualification": "Round 77 provider-row conservation, exact occurrence/verbatim reconciliation, immutable output hashes, 51-state partitioning, all focused GBIF tests, the frozen 97/97 suite, the 1,298-run and 1,670,266-outcome composite integrity gate, R2 verification, exact deployment identity, changed-file parity, public routes, API, and browser QA pass. Round 78 remains selection-only with zero provider POSTs."
+      "qualification": "Round 78 provider-row conservation, exact occurrence/verbatim reconciliation, immutable output hashes, 51-state partitioning, focused GBIF tests, the frozen 97/97 suite, 1,350 immutable runs, 308,756 assertions, and 1,695,419 outcomes passed with zero unreviewed evidence and zero conflicts. The live R2 pointer remains Round 77 because the seven-day cadence guard deferred Round 78 upload and promotion."
     }
   },
   "reverificationHistory": [
+    {
+      "observedAt": "2026-08-20T20:48:54.637Z",
+      "localHeadSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+      "originMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+      "githubMainSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
+      "vercelProductionCommitSha": "b7ef4ad57d2de4ee19a3224ed09009400b575159",
+      "reason": "MAIN resumed from the clean Round 78 owner receipt and refreshed exclusive ownership for zero-network yield calibration. Orchestration has zero active jobs, leases, or pending integrations; no competing writer was observed; frozen skills passed in the pinned unsandboxed runtime; current capacity supports the audit; the retained Round 78 GBIF download returned HTTP 200; Cloudflare still shows $0.00 billable usage; GitHub Production deployment 5996297132 succeeded for exact application commit b7ef4ad57d2de4ee19a3224ed09009400b575159; and live current.json remains intentionally pinned to Round 77 under the cadence guard. No provider request, R2 upload, pointer promotion, deletion, or public research movement occurred during this startup observation."
+    },
     {
       "observedAt": "2026-08-19T16:35:39.448Z",
       "localHeadSha": "7632e025a21467be01f0a8f8807c89d8cb0bd08a",
