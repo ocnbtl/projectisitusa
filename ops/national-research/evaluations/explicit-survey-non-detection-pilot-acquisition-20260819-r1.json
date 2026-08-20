@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "explicit-survey-non-detection-pilot-acquisition-20260819-r1",
+  "observedAt": "2026-08-20T02:23:05.273Z",
+  "status": "validated-committed-awaiting-batched-research-release",
+  "objective": "Acquire and validate one explicit-survey non-detection without converting source silence, survey omission, coordinates, or a sample-level zero into county absence.",
+  "inputs": {
+    "planPath": "src/data/research/national-acquisition-plans/aphis-honey-bee-non-detection-pilot-v1.json",
+    "planSha256": "6e0a0b2a90be606884412d68a1b24c77f4429a51838b7cd34703daa85fdedc4b",
+    "adapterId": "aphis-honey-bee-survey",
+    "adapterVersion": "1.0.0",
+    "acquisitionCodeCommit": "b2542a8b32221451d4eeae99a62d72b06de816c2",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 1,
+      "expectedProviderRequests": 2,
+      "additionalRequests": 0
+    }
+  },
+  "immutableRun": {
+    "runId": "20260820T020544Z__aphis-honey-bee__1845d88d8f70",
+    "runCommit": "0e6e7557b7d965b5e94e1c4782f3a9627f5cbd09",
+    "receiptPath": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/receipt.json",
+    "receiptSha256": "3df1b8ad1305c49c7b7421fc49013c3961a6f0a00f7d18945a4293b88db6ef93",
+    "status": "complete",
+    "startedAt": "2026-08-20T02:05:44.914Z",
+    "finishedAt": "2026-08-20T02:06:05.317Z",
+    "requestedPairs": 1,
+    "candidateRecords": 1,
+    "assertionEvents": 1,
+    "reviewEvents": 1,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 1,
+    "upstreamRequests": [
+      {
+        "kind": "official-public-download-page",
+        "method": "GET",
+        "status": 200,
+        "recordCount": 1
+      },
+      {
+        "kind": "resolved-public-csv",
+        "method": "GET",
+        "status": 200,
+        "recordCount": 12705
+      }
+    ],
+    "artifacts": {
+      "rawCsvBytes": 1523802,
+      "rawCsvSha256": "befb8b2bb4253c4167ee2b4cb2aacf112ea24af1be9fcb1fbdcb6df24d6bc6bc",
+      "retainedGzipBytes": 255170,
+      "retainedGzipSha256": "cc81b1ed8d4fc156cd2937e09ea019ebc2f3cb9f683828bd67f7a6e688dc7be5",
+      "allReceiptHashAndByteChecksPassed": true,
+      "signedQueryMarkersInTextArtifacts": 0
+    }
+  },
+  "acceptedEvidence": {
+    "stateCode": "AL",
+    "countyFips": "01025",
+    "countyName": "Clarke",
+    "speciesId": "varroa-destructor",
+    "scientificName": "Varroa destructor",
+    "sourceRecordDate": "2025-05",
+    "result": "0.0 Varroa mites per 100 bees",
+    "claimType": "not-detected",
+    "evidenceKind": "survey-non-detection",
+    "scope": "survey-area",
+    "geographyMethod": "exact-explicit-source-county-text",
+    "reviewLevel": "machine-validated",
+    "reviewDecision": "accepted",
+    "publicationEligible": true,
+    "explicitlyNot": [
+      "verified-absent",
+      "countywide absence",
+      "complete county apiary inventory"
+    ]
+  },
+  "validation": {
+    "typecheck": "pass",
+    "lint": "pass",
+    "researchIntegrity": "pass",
+    "frozenOrchestrationCases": {
+      "passed": 97,
+      "total": 97,
+      "criticalSafetyViolations": 0
+    },
+    "sourceCoverageIndexId": "source-coverage-400c008c1b69c8cc8903",
+    "sourceCoverageRunCount": 1299,
+    "totalImmutableResearchRunCount": 1299,
+    "totalRunAssertionEventCount": 308559,
+    "totalPairOutcomeCount": 1670267,
+    "unreviewedRunEvidenceCount": 0,
+    "conflictCount": 0
+  },
+  "releaseBoundary": {
+    "currentPublicResearchReleaseId": "research-021c595d0604-b3467b304cd02d85",
+    "currentPublicProjectionChanged": false,
+    "currentProjectedNotDetectedCount": 8,
+    "r2PromotionPerformed": false,
+    "r2PlanCurrentClassARequests": 0,
+    "r2PlanCurrentClassBRequests": 0,
+    "applicationDeploymentRequired": false,
+    "reason": "The immutable run started after the current batch as-of boundary. It remains durable ledger input for a later batched research generation and release; this pilot does not justify a one-run R2 promotion."
+  },
+  "nextAction": "Include this immutable run in a later batched research generation, review the resulting pair compatibility under presence-precedence rules, and release only through the ordinary R2 publication gate."
+}
