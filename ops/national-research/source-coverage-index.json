@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-0b7b12f72327de7322c5",
-  "generatedFromCommit": "de6b36ce3d10d8686006f8a2d09266f6c572111d",
+  "indexId": "source-coverage-400c008c1b69c8cc8903",
+  "generatedFromCommit": "0e6e7557b7d965b5e94e1c4782f3a9627f5cbd09",
   "sourceRegistryPath": "src/data/research/source-registry.json",
   "sourceRegistrySha256": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5",
-  "runReceiptDigestSha256": "5409930ad5039e33f30969b9df5c9a6b393852893a906c5859210f048e50a4de",
-  "runCount": 1298,
+  "runReceiptDigestSha256": "a2cae7005a0054e29b37aa014edb22e4334a6398605361fa90d43370102d7fc1",
+  "runCount": 1299,
   "sourceCount": 29,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -74,14 +74,14 @@
     },
     {
       "sourceId": "aphis-honey-bee",
-      "coverageState": "no-immutable-run-coverage",
-      "runCount": 0,
-      "completeRuns": 0,
+      "coverageState": "covered-by-immutable-runs",
+      "runCount": 1,
+      "completeRuns": 1,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 0,
-      "scopeCompletePairs": 0,
-      "latestFinishedAt": null
+      "requestedPairs": 1,
+      "scopeCompletePairs": 1,
+      "latestFinishedAt": "2026-08-20T02:06:05.317Z"
     },
     {
       "sourceId": "eddmaps",
@@ -40575,6 +40575,37 @@
       "outcomesPath": "src/data/research/runs/20260819T205026Z__gbif-preserved-specimens__f360a72dbe02/outcomes.ndjson",
       "outcomesSha256": "28a3a67e876b4ace4ab498b7eb103e5bde6e592c6e32080d460b883c611a1b25",
       "outcomesBytes": 314875
+    },
+    {
+      "coverageKey": "4bbb6f0d6b22b00fc81227d0b852dd5d0fc409cc51a8cb1fd211d4cfb9dab390",
+      "queryKey": "a90e91682539633e43af49c579451ba07a8b3e02e2ce7ea7fb69691c43a8a29d",
+      "runId": "20260820T020544Z__aphis-honey-bee__1845d88d8f70",
+      "receiptPath": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/receipt.json",
+      "receiptSha256": "3df1b8ad1305c49c7b7421fc49013c3961a6f0a00f7d18945a4293b88db6ef93",
+      "sourceId": "aphis-honey-bee",
+      "sourceRegistryHash": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5",
+      "adapterId": "aphis-honey-bee-survey",
+      "adapterVersion": "1.0.0",
+      "parameterHash": "1845d88d8f70ceb38f285c7dd2661a3c9d507ac90dcbf6696dd6743e479a5437",
+      "requestedScopeSha256": "74c5a723d34d36f57b9044943f2028019adb1a1e00288d05981da9848d662aa4",
+      "status": "complete",
+      "startedAt": "2026-08-20T02:05:44.914Z",
+      "finishedAt": "2026-08-20T02:06:05.317Z",
+      "refreshCadenceDays": 365,
+      "freshnessDeadline": "2027-08-20T02:06:05.317Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 1,
+      "outcomePairs": 1,
+      "scopeCompletePairs": 1,
+      "outcomeStatusCounts": {
+        "evidence-found": 1,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260820T020544Z__aphis-honey-bee__1845d88d8f70/outcomes.ndjson",
+      "outcomesSha256": "38fbec4f9499d13e3aaf896c0f7c9206db11e06afabce8fd82aa2b87c075fa7c",
+      "outcomesBytes": 793
     }
   ]
 }
