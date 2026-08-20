@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "explicit-survey-non-detection-pilot-design-20260819-r1",
+  "observedAt": "2026-08-20T01:29:54.139Z",
+  "status": "implemented-contract-pre-acquisition",
+  "objective": "Select and freeze one explicit-survey non-detection pilot without treating source silence, coordinates, missing rows, or survey omission as county absence.",
+  "sourcePortfolio": [
+    {
+      "sourceId": "aphis-honey-bee",
+      "decision": "selected",
+      "reason": "The official public CSV exposes the exact Varroa target metric, explicit Alabama county text, month-level time, per-100-bees sampling effort, and explicit numeric zero result semantics.",
+      "preflight": {
+        "downloadPageUrl": "https://www.usbeedata.org/state_reports/public_download/",
+        "generatedHeader": "File generated from usbeedata.org database on 2026-06-05 13:15:49.160078+00:00",
+        "coverageHeader": "\"Includes data with a collection date up to Dec 31, 2025\"",
+        "alabamaRows": 359,
+        "numericVarroaRows": 357,
+        "explicitZeroRows": 11,
+        "zeroResultCounties": 8,
+        "zeroResultCountiesWithoutPositiveRows": ["Clarke", "Sumter"]
+      }
+    },
+    {
+      "sourceId": "usfws-invasive-carp-edna",
+      "decision": "not-selected",
+      "reason": "The current ArcGIS layer exposes target program, collection date, sample points, depth, and explicit No eDNA detected semantics, but it has no explicit county field. Project Isitusa does not use coordinates to supply missing county identity for research assertions.",
+      "preflight": {
+        "layerUrl": "https://services.arcgis.com/QVENGdaPbd4LUkLV/arcgis/rest/services/USFWS_Great_Lakes_Region_3_Bighead_and_Silver_Carp_eDNA_Data_Feature_Layer_View/FeatureServer/0",
+        "alabamaRows": 764,
+        "noEdnaDetectedRows": 758,
+        "positiveDetectionRows": 6,
+        "assertionsCreated": 0
+      }
+    },
+    {
+      "sourceId": "water-quality-portal",
+      "decision": "not-selected",
+      "reason": "The registered source caveat requires protocol review before zero or missing biological rows can support a negative result. No bounded exact-negative contract is currently implemented."
+    },
+    {
+      "sourceId": "usgs-bbs",
+      "decision": "not-selected",
+      "reason": "The current legacy importer resolves route starts to counties from coordinates and is detection-oriented. It does not satisfy the research ledger's explicit source-county requirement for this pilot."
+    },
+    {
+      "sourceId": "neon-tall",
+      "decision": "not-selected",
+      "reason": "The current legacy importer resolves plot coordinates to counties. A research non-detection lane requires explicit source county identity and a frozen target-by-plot completeness contract first."
+    }
+  ],
+  "selectedPilot": {
+    "planId": "aphis-honey-bee-non-detection-pilot-v1",
+    "sourceId": "aphis-honey-bee",
+    "stateCode": "AL",
+    "countyFips": "01025",
+    "countyName": "Clarke",
+    "speciesId": "varroa-destructor",
+    "scientificName": "Varroa destructor",
+    "surveyMonth": "2025-05",
+    "methodOrProgram": "APHIS National Honey Bee Survey",
+    "effortOrSampleScope": "Varroa mites per 100 bees in one county-resolved sampled honey bee colony row",
+    "resultSemantics": "0.0 Varroa mites per 100 bees",
+    "claim": "not-detected",
+    "evidenceScope": "survey-area",
+    "explicitlyNot": [
+      "verified-absent",
+      "countywide absence",
+      "complete county apiary inventory"
+    ]
+  },
+  "implementation": {
+    "adapter": "scripts/research/adapters/aphis-honey-bee-survey.ts",
+    "parameterSchema": "src/data/research/schemas/aphis-honey-bee-survey-parameters.schema.json",
+    "plan": "src/data/research/national-acquisition-plans/aphis-honey-bee-non-detection-pilot-v1.json",
+    "test": "scripts/test-aphis-honey-bee-survey-adapter.ts",
+    "rawArtifactRetention": "versioned-gzip",
+    "signedDownloadQueryRetention": "redacted-from-receipts",
+    "providerMethod": "GET",
+    "maximumCandidatePairs": 1,
+    "maximumCsvBytes": 5242880
+  },
+  "stopConditions": [
+    "The official file-generation header changes.",
+    "The coverage header changes.",
+    "The Clarke target, county, month, effort metric, or explicit zero result differs from the frozen plan.",
+    "A positive Clarke County Varroa result appears in the retained file.",
+    "The source no longer exposes an explicit county field.",
+    "The CSV exceeds the frozen byte budget."
+  ],
+  "release": {
+    "r2PromotionPlanned": false,
+    "vercelApplicationBuildRequired": false,
+    "reason": "The pilot run is intended for the next batched research release after validation; it must not trigger a one-run R2 promotion."
+  }
+}

@@ -13,6 +13,7 @@ import { z } from "zod";
 
 import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specimens";
 import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
+import { aphisHoneyBeeSurveyAdapter } from "./adapters/aphis-honey-bee-survey";
 
 import type {
   ResearchSourceAdapter,
@@ -52,8 +53,30 @@ type Candidate = {
 };
 
 type CandidateFile = {
+  schemaVersion?: number;
+  planId?: string;
+  sourceId?: string;
   stateCode: string;
   candidates: Candidate[];
+  pilot?: {
+    downloadPageUrl: string;
+    generatedHeaderExact: string;
+    coverageHeaderExact: string;
+    surveyDateRange: { start: string; end: string };
+    metricColumn: string;
+    targetSpeciesId: string;
+    targetScientificName: string;
+    zeroValue: number;
+    expectedSurveyRows: Array<{
+      countyFips: string;
+      countyName: string;
+      sampleYear: number;
+      sampleMonth: number;
+      sampleMonthName: string;
+      varroaPer100Bees: number;
+    }>;
+    maxCsvBytes: number;
+  };
 };
 
 type Species = { id: string; scientificName: string };
@@ -363,6 +386,9 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === idigbioPreservedSpecimensAdapter.sourceId) {
     return idigbioPreservedSpecimensAdapter;
   }
+  if (sourceId === aphisHoneyBeeSurveyAdapter.sourceId) {
+    return aphisHoneyBeeSurveyAdapter;
+  }
   throw new Error(`No registered runner implementation exists for ${sourceId}.`);
 }
 
@@ -370,6 +396,7 @@ function buildParameters(
   sourceId: string,
   stateCode: string,
   requestedPairs: Array<{ countyFips: string; speciesId: string }>,
+  candidateFile: CandidateFile,
 ) {
   const state = getStateDefinition(stateCode);
   if (!state?.nationalV1Scope) throw new Error(`Unknown national-v1 state ${stateCode}.`);
@@ -400,7 +427,27 @@ function buildParameters(
       sortOrder: "asc",
     };
   }
+  if (sourceId === aphisHoneyBeeSurveyAdapter.sourceId) {
+    if (!candidateFile.pilot || candidateFile.sourceId !== sourceId) {
+      throw new Error("APHIS Honey Bee Survey requires its committed pilot plan.");
+    }
+    return {
+      stateCode,
+      candidateLimit: requestedPairs.length,
+      candidatePairs,
+      ...candidateFile.pilot,
+    };
+  }
   throw new Error(`No parameter builder exists for ${sourceId}.`);
+}
+
+function requestedDateRange(parameters: Record<string, unknown>) {
+  const value = parameters.surveyDateRange;
+  if (!value || typeof value !== "object") return { start: null, end: null };
+  const range = value as Record<string, unknown>;
+  const start = typeof range.start === "string" ? range.start : null;
+  const end = typeof range.end === "string" ? range.end : null;
+  return { start, end };
 }
 
 function selectCandidates(
@@ -561,10 +608,12 @@ async function main() {
     };
   });
 
+  const selectedCandidateFile = readJson<CandidateFile>(options.candidateFile);
   const parameters = buildParameters(
     options.sourceId,
     options.stateCode,
     requestedPairs,
+    selectedCandidateFile,
   );
   const parameterSchema = JSON.parse(readFileSync(parameterSchemaPath, "utf8")) as Parameters<
     typeof z.fromJSONSchema
@@ -775,7 +824,7 @@ async function main() {
       county_fips: [...new Set(requestedPairs.map((pair) => pair.countyFips))].sort(compareText),
       species_ids: [...new Set(requestedPairs.map((pair) => pair.speciesId))].sort(compareText),
       pair_keys: parameters.candidatePairs,
-      date_range: { start: null, end: null },
+      date_range: requestedDateRange(parameters),
     },
     upstream_requests: result.upstreamRequests.map((request) => ({
       url: request.url,

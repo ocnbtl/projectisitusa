@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-15",
+  "updatedAt": "2026-08-19",
   "sources": [
     {
       "id": "eddmaps",
@@ -200,6 +200,18 @@
       "refreshCadenceDays": 365,
       "status": "operational",
       "adapter": "scripts/import-aphis-honey-bee-survey.ts",
+      "researchAdapter": {
+        "id": "aphis-honey-bee-survey",
+        "module": "scripts/research/adapters/aphis-honey-bee-survey.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/aphis-honey-bee-survey-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact APHIS varroa_per_100_bees metric to the Project Isitusa Varroa destructor catalog species. Missing, blank, negative, or nonnumeric metrics never create an assertion.",
+        "geographyMatchingPolicy": "Exact explicit APHIS state_code and sampling_county_from_gps text must resolve uniquely through the active county-equivalent registry. Coordinates are never used to supply missing county identity.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      },
       "caveat": "Zero-count rows support sample-level non-detection only, never countywide absence."
     },
     {

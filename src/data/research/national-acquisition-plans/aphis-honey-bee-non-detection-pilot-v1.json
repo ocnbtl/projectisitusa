@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "planId": "aphis-honey-bee-non-detection-pilot-v1",
+  "sourceId": "aphis-honey-bee",
+  "stateCode": "AL",
+  "candidates": [
+    {
+      "sourceId": "aphis-honey-bee",
+      "speciesId": "varroa-destructor",
+      "countyFips": "01025"
+    }
+  ],
+  "pilot": {
+    "downloadPageUrl": "https://www.usbeedata.org/state_reports/public_download/",
+    "generatedHeaderExact": "File generated from usbeedata.org database on 2026-06-05 13:15:49.160078+00:00",
+    "coverageHeaderExact": "\"Includes data with a collection date up to Dec 31, 2025\"",
+    "surveyDateRange": {
+      "start": "2025-05-01",
+      "end": "2025-05-31"
+    },
+    "metricColumn": "varroa_per_100_bees",
+    "targetSpeciesId": "varroa-destructor",
+    "targetScientificName": "Varroa destructor",
+    "zeroValue": 0,
+    "expectedSurveyRows": [
+      {
+        "countyFips": "01025",
+        "countyName": "Clarke",
+        "sampleYear": 2025,
+        "sampleMonth": 5,
+        "sampleMonthName": "May",
+        "varroaPer100Bees": 0
+      }
+    ],
+    "maxCsvBytes": 5242880
+  }
+}
