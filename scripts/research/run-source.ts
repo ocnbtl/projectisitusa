@@ -655,6 +655,30 @@ async function main() {
 
   if (options.semanticDryRun) {
     const candidateFile = readJson<CandidateFile>(options.candidateFile);
+    const expectedProviderRequests = options.sourceId === aphisHoneyBeeSurveyAdapter.sourceId
+      ? {
+          providerNetworkRequests: 2,
+          requestSequence: [
+            "GET the official public-download page",
+            "GET the resolved public CSV without retaining its signed query",
+          ],
+          additionalRequests: 0,
+        }
+      : {
+          cachedTaxonomyResponses: taxonomyCache?.selectedEntries.length ?? 0,
+          archiveReplayResponses: archivedReplay?.requestUrls.length ?? 0,
+          liveTaxonomyRequests: archivedReplay
+            ? 0
+            : taxonomyCache?.missingSpecies.length ?? selectedSpecies.length,
+          plannedLiveInitialOccurrenceRequests: archivedReplay ? 0 : selectedSpecies.length,
+          providerNetworkRequests: archivedReplay
+            ? 0
+            : (taxonomyCache?.missingSpecies.length ?? selectedSpecies.length) +
+              selectedSpecies.length,
+          additionalOccurrencePages: archivedReplay
+            ? 0
+            : "only when a provider-declared total exceeds the first complete page",
+        };
     console.log(JSON.stringify({
       schemaVersion: 1,
       mode: "no-network-semantic-dry-run",
@@ -688,21 +712,7 @@ async function main() {
         selectedEntryCount: taxonomyCache.selectedEntries.length,
         selectedEntries: taxonomyCache.selectedEntries,
       } : null,
-      expectedProviderRequests: {
-        cachedTaxonomyResponses: taxonomyCache?.selectedEntries.length ?? 0,
-        archiveReplayResponses: archivedReplay?.requestUrls.length ?? 0,
-        liveTaxonomyRequests: archivedReplay
-          ? 0
-          : taxonomyCache?.missingSpecies.length ?? selectedSpecies.length,
-        plannedLiveInitialOccurrenceRequests: archivedReplay ? 0 : selectedSpecies.length,
-        providerNetworkRequests: archivedReplay
-          ? 0
-          : (taxonomyCache?.missingSpecies.length ?? selectedSpecies.length) +
-            selectedSpecies.length,
-        additionalOccurrencePages: archivedReplay
-          ? 0
-          : "only when a provider-declared total exceeds the first complete page",
-      },
+      expectedProviderRequests,
       expandedCommand: [process.execPath, ...process.execArgv, ...process.argv.slice(1)],
       result: "pass",
     }, null, 2));
