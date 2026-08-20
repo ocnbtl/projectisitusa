@@ -1,0 +1,634 @@
+{
+  "generatedAt": "2026-08-20T21:00:00.000Z",
+  "priorId": "gbif-yield-prior-rounds-70-72-74-75-76-77-78-20260820-r1",
+  "schemaVersion": 1,
+  "scopePriors": [
+    {
+      "key": "insects",
+      "presentPairs": 3,
+      "rawYieldBps": 3,
+      "scope": "category",
+      "selectedPairs": 9432,
+      "smoothedYieldBps": 283
+    },
+    {
+      "key": "plants",
+      "presentPairs": 6862,
+      "rawYieldBps": 479,
+      "scope": "category",
+      "selectedPairs": 143209,
+      "smoothedYieldBps": 466
+    },
+    {
+      "key": "wildlife",
+      "presentPairs": 140,
+      "rawYieldBps": 50,
+      "scope": "category",
+      "selectedPairs": 27795,
+      "smoothedYieldBps": 210
+    },
+    {
+      "key": "Aquatic plants",
+      "presentPairs": 464,
+      "rawYieldBps": 208,
+      "scope": "display-group",
+      "selectedPairs": 22279,
+      "smoothedYieldBps": 303
+    },
+    {
+      "key": "Arachnids",
+      "presentPairs": 0,
+      "rawYieldBps": 0,
+      "scope": "display-group",
+      "selectedPairs": 6288,
+      "smoothedYieldBps": 310
+    },
+    {
+      "key": "Bugs & sap-feeders",
+      "presentPairs": 2,
+      "rawYieldBps": 3,
+      "scope": "display-group",
+      "selectedPairs": 6288,
+      "smoothedYieldBps": 311
+    },
+    {
+      "key": "Crustaceans",
+      "presentPairs": 0,
+      "rawYieldBps": 0,
+      "scope": "display-group",
+      "selectedPairs": 3144,
+      "smoothedYieldBps": 345
+    },
+    {
+      "key": "Fish",
+      "presentPairs": 30,
+      "rawYieldBps": 26,
+      "scope": "display-group",
+      "selectedPairs": 11484,
+      "smoothedYieldBps": 274
+    },
+    {
+      "key": "Grasses & herbs",
+      "presentPairs": 2428,
+      "rawYieldBps": 823,
+      "scope": "display-group",
+      "selectedPairs": 29486,
+      "smoothedYieldBps": 624
+    },
+    {
+      "key": "Mollusks",
+      "presentPairs": 110,
+      "rawYieldBps": 160,
+      "scope": "display-group",
+      "selectedPairs": 6879,
+      "smoothedYieldBps": 339
+    },
+    {
+      "key": "Moths & butterflies",
+      "presentPairs": 1,
+      "rawYieldBps": 3,
+      "scope": "display-group",
+      "selectedPairs": 3144,
+      "smoothedYieldBps": 345
+    },
+    {
+      "key": "Other plants",
+      "presentPairs": 1646,
+      "rawYieldBps": 400,
+      "scope": "display-group",
+      "selectedPairs": 41130,
+      "smoothedYieldBps": 396
+    },
+    {
+      "key": "Trees & shrubs",
+      "presentPairs": 1937,
+      "rawYieldBps": 597,
+      "scope": "display-group",
+      "selectedPairs": 32465,
+      "smoothedYieldBps": 506
+    },
+    {
+      "key": "Vines & groundcovers",
+      "presentPairs": 387,
+      "rawYieldBps": 217,
+      "scope": "display-group",
+      "selectedPairs": 17849,
+      "smoothedYieldBps": 317
+    },
+    {
+      "key": "*",
+      "presentPairs": 7005,
+      "rawYieldBps": 388,
+      "scope": "global",
+      "selectedPairs": 180436,
+      "smoothedYieldBps": 388
+    }
+  ],
+  "semantics": {
+    "createsAbsence": false,
+    "createsNotDetected": false,
+    "guaranteesFutureYield": false,
+    "planningHeuristicOnly": true
+  },
+  "smoothing": {
+    "globalPriorPairs": 25000,
+    "method": "empirical-bayes-binomial-v1",
+    "minimumScopePairs": 3000
+  },
+  "sourceAudit": {
+    "implementationPath": "scripts/research/audit-national-gbif-marginal-yield.ts",
+    "implementationSha256": "dfb38dcb5fd45807328d17a0a579548fc8e01c76495a77198b65d08c55febfe8",
+    "presentPairs": 7005,
+    "resultSha256": "058032e200b8135708ee66f02b41f44e7bc2f871d865558183c014902910d826",
+    "rounds": [
+      70,
+      72,
+      74,
+      75,
+      76,
+      77,
+      78
+    ],
+    "selectedPairs": 180436,
+    "weightedYieldBps": 388
+  },
+  "taxonPriors": [
+    {
+      "category": "plants",
+      "displayGroup": "Trees & shrubs",
+      "expectedPresentBps": 506,
+      "observedPairs": 32465,
+      "observedPresentPairs": 1937,
+      "scope": "display-group",
+      "scopeKey": "Trees & shrubs",
+      "speciesId": "abies-alba"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "abutilon-hirtum"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Vines & groundcovers",
+      "expectedPresentBps": 317,
+      "observedPairs": 17849,
+      "observedPresentPairs": 387,
+      "scope": "display-group",
+      "scopeKey": "Vines & groundcovers",
+      "speciesId": "acacia-elata"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Vines & groundcovers",
+      "expectedPresentBps": 317,
+      "observedPairs": 17849,
+      "observedPresentPairs": 387,
+      "scope": "display-group",
+      "scopeKey": "Vines & groundcovers",
+      "speciesId": "acacia-podalyriifolia"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "acaena-magellanica"
+    },
+    {
+      "category": "wildlife",
+      "displayGroup": "Fish",
+      "expectedPresentBps": 274,
+      "observedPairs": 11484,
+      "observedPresentPairs": 30,
+      "scope": "display-group",
+      "scopeKey": "Fish",
+      "speciesId": "acanthogobius-flavimanus"
+    },
+    {
+      "category": "wildlife",
+      "displayGroup": "Crustaceans",
+      "expectedPresentBps": 345,
+      "observedPairs": 3144,
+      "observedPresentPairs": 0,
+      "scope": "display-group",
+      "scopeKey": "Crustaceans",
+      "speciesId": "acanthomysis-aspera"
+    },
+    {
+      "category": "wildlife",
+      "displayGroup": "Arachnids",
+      "expectedPresentBps": 310,
+      "observedPairs": 6288,
+      "observedPresentPairs": 0,
+      "scope": "display-group",
+      "scopeKey": "Arachnids",
+      "speciesId": "acarapis-woodi"
+    },
+    {
+      "category": "wildlife",
+      "displayGroup": "Arachnids",
+      "expectedPresentBps": 310,
+      "observedPairs": 6288,
+      "observedPresentPairs": 0,
+      "scope": "display-group",
+      "scopeKey": "Arachnids",
+      "speciesId": "aceria-kuko"
+    },
+    {
+      "category": "wildlife",
+      "displayGroup": "Arachnids",
+      "expectedPresentBps": 310,
+      "observedPairs": 6288,
+      "observedPresentPairs": 0,
+      "scope": "display-group",
+      "scopeKey": "Arachnids",
+      "speciesId": "aceria-litchii"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "aclerda-takahashii"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Moths & butterflies",
+      "expectedPresentBps": 345,
+      "observedPairs": 3144,
+      "observedPresentPairs": 1,
+      "scope": "display-group",
+      "scopeKey": "Moths & butterflies",
+      "speciesId": "acleris-comariana"
+    },
+    {
+      "category": "wildlife",
+      "displayGroup": "Arachnids",
+      "expectedPresentBps": 310,
+      "observedPairs": 6288,
+      "observedPresentPairs": 0,
+      "scope": "display-group",
+      "scopeKey": "Arachnids",
+      "speciesId": "aculops-fuchsiae"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "acyrthosiphon-kondoi"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "acyrthosiphon-primulae"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "adiantum-macrophyllum"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Flies",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "aedeomyia-squamipennis"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Flies",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "aedes-notoscriptus"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Grasses & herbs",
+      "expectedPresentBps": 624,
+      "observedPairs": 29486,
+      "observedPresentPairs": 2428,
+      "scope": "display-group",
+      "scopeKey": "Grasses & herbs",
+      "speciesId": "aegilops-tauschii"
+    },
+    {
+      "category": "fungi-diseases",
+      "displayGroup": "Bacterial diseases",
+      "expectedPresentBps": 388,
+      "observedPairs": 180436,
+      "observedPresentPairs": 7005,
+      "scope": "global",
+      "scopeKey": "*",
+      "speciesId": "aeromonas-salmonicida"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "agdestis-clematidea"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "aglaonema-commutatum"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Beetles",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "agrilus-cuprescens"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Beetles",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "agrilus-cyanescens"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Beetles",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "agrilus-ribesi"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Beetles",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "agriotes-lineatus"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Beetles",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "agriotes-obscurus"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Grasses & herbs",
+      "expectedPresentBps": 624,
+      "observedPairs": 29486,
+      "observedPresentPairs": 2428,
+      "scope": "display-group",
+      "scopeKey": "Grasses & herbs",
+      "speciesId": "agrostis-castellana"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Vines & groundcovers",
+      "expectedPresentBps": 317,
+      "observedPairs": 17849,
+      "observedPresentPairs": 387,
+      "scope": "display-group",
+      "scopeKey": "Vines & groundcovers",
+      "speciesId": "albizia-procera"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Trees & shrubs",
+      "expectedPresentBps": 506,
+      "observedPairs": 32465,
+      "observedPresentPairs": 1937,
+      "scope": "display-group",
+      "scopeKey": "Trees & shrubs",
+      "speciesId": "aleurites-moluccanus"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "aleurocanthus-woglumi"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "aleuroclava-aucubae"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "aleurodicus-dugesii"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "aleurodicus-rugioperculatus"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "aleuroglandulus-subtilis"
+    },
+    {
+      "category": "fungi-diseases",
+      "displayGroup": "Fungi & pathogens",
+      "expectedPresentBps": 388,
+      "observedPairs": 180436,
+      "observedPresentPairs": 7005,
+      "scope": "global",
+      "scopeKey": "*",
+      "speciesId": "allantophomopsiella-pseudotsugae"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Grasses & herbs",
+      "expectedPresentBps": 624,
+      "observedPairs": 29486,
+      "observedPresentPairs": 2428,
+      "scope": "display-group",
+      "scopeKey": "Grasses & herbs",
+      "speciesId": "allium-sativum"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Bugs & sap-feeders",
+      "expectedPresentBps": 311,
+      "observedPairs": 6288,
+      "observedPresentPairs": 2,
+      "scope": "display-group",
+      "scopeKey": "Bugs & sap-feeders",
+      "speciesId": "aloephagus-myersi"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "alpinia-zerumbet"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "alternanthera-brasiliana"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "alternanthera-ficoidea"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "alyssum-strigosum"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "amaranthus-dubius"
+    },
+    {
+      "category": "plants",
+      "displayGroup": "Other plants",
+      "expectedPresentBps": 396,
+      "observedPairs": 41130,
+      "observedPresentPairs": 1646,
+      "scope": "display-group",
+      "scopeKey": "Other plants",
+      "speciesId": "amaranthus-graecizans"
+    },
+    {
+      "category": "wildlife",
+      "displayGroup": "Other wildlife",
+      "expectedPresentBps": 210,
+      "observedPairs": 27795,
+      "observedPresentPairs": 140,
+      "scope": "category",
+      "scopeKey": "wildlife",
+      "speciesId": "amphibalanus-amphitrite"
+    },
+    {
+      "category": "fungi-diseases",
+      "displayGroup": "Fungi & pathogens",
+      "expectedPresentBps": 388,
+      "observedPairs": 180436,
+      "observedPresentPairs": 7005,
+      "scope": "global",
+      "scopeKey": "*",
+      "speciesId": "amylostereum-areolatum"
+    },
+    {
+      "category": "insects",
+      "displayGroup": "Flies",
+      "expectedPresentBps": 283,
+      "observedPairs": 9432,
+      "observedPresentPairs": 3,
+      "scope": "category",
+      "scopeKey": "insects",
+      "speciesId": "anastrepha-suspensa"
+    }
+  ],
+  "universe": {
+    "catalogPath": "src/data/generated/species.json",
+    "catalogSha256": "d81d6e2942fdfaaab151546057c2d723b7f6a89e247f3fe93d434dfeee5d5aea",
+    "planId": "gbif-national-download-v1-retained-r77-v2",
+    "planSha256": "47517f03dcef45fa8a4155e39a1124821650b5738560dc3956fd534b0e1f3d00",
+    "speciesCount": 47
+  }
+}

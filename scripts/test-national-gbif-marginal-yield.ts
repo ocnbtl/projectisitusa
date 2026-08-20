@@ -22,6 +22,7 @@ async function main() {
     { round: 75, selectedTaxa: 9, selectedPairs: 25_048, presentPairs: 2_572, researchedUnresolvedPairs: 22_476, marginalYieldPercent: 10.268, providerRows: 16_077 },
     { round: 76, selectedTaxa: 10, selectedPairs: 26_031, presentPairs: 918, researchedUnresolvedPairs: 25_113, marginalYieldPercent: 3.527, providerRows: 13_770 },
     { round: 77, selectedTaxa: 8, selectedPairs: 25_152, presentPairs: 25, researchedUnresolvedPairs: 25_127, marginalYieldPercent: 0.099, providerRows: 381 },
+    { round: 78, selectedTaxa: 8, selectedPairs: 25_152, presentPairs: 197, researchedUnresolvedPairs: 24_955, marginalYieldPercent: 0.783, providerRows: 1_638 },
   ],
   );
 
@@ -64,7 +65,58 @@ async function main() {
   assert.equal(round77.researchedUnresolvedPairs, 25_127);
   assert(Object.values(round77.checks).every(Boolean));
 
-  process.stdout.write("National GBIF marginal-yield audit passed for Rounds 70, 72, and 74-77.\n");
+  const round78 = audit.rounds.find((entry) => entry.round === 78);
+  assert(round78);
+  assert.deepEqual(
+    {
+      integrationPath: round78.integrationPath,
+      providerRows: round78.providerRows,
+      geographyRejectedRows: round78.geographyRejectedRows,
+      selectedScopeRows: round78.selectedScopeRows,
+      selectedRejectedArchiveRows: round78.selectedRejectedArchiveRows,
+      selectedAcceptedArchiveRows: round78.selectedAcceptedArchiveRows,
+      duplicateAcceptedArchiveRows: round78.duplicateAcceptedArchiveRows,
+      representativeRejectionGroups: round78.representativeRejectionGroups,
+    },
+    {
+      integrationPath: null,
+      providerRows: 1_638,
+      geographyRejectedRows: 1_117,
+      selectedScopeRows: 521,
+      selectedRejectedArchiveRows: 116,
+      selectedAcceptedArchiveRows: 405,
+      duplicateAcceptedArchiveRows: 208,
+      representativeRejectionGroups: 43,
+    },
+  );
+  assert.deepEqual(
+    round78.perTaxon.map((taxon) => [taxon.speciesId, taxon.selectionLane, taxon.acceptedPairs]),
+    [
+      ["aceria-kuko", "exploration", 0],
+      ["aclerda-takahashii", "exploitation", 0],
+      ["acleris-comariana", "exploitation", 1],
+      ["acyrthosiphon-kondoi", "exploitation", 2],
+      ["aegilops-tauschii", "exploitation", 5],
+      ["agrostis-castellana", "exploitation", 21],
+      ["aleurites-moluccanus", "exploitation", 11],
+      ["allium-sativum", "exploitation", 157],
+    ],
+  );
+  assert.deepEqual(round78.lanes, [
+    { selectionLane: "exploitation", selectedTaxa: 7, selectedPairs: 22_008, presentPairs: 197, researchedUnresolvedPairs: 21_811, marginalYieldPercent: 0.895 },
+    { selectionLane: "exploration", selectedTaxa: 1, selectedPairs: 3_144, presentPairs: 0, researchedUnresolvedPairs: 3_144, marginalYieldPercent: 0 },
+  ]);
+  assert(Object.values(round78.checks).every(Boolean));
+  assert.deepEqual(audit.aggregate, {
+    auditedRounds: 7,
+    selectedTaxa: 66,
+    selectedPairs: 180_436,
+    presentPairs: 7_005,
+    researchedUnresolvedPairs: 173_431,
+    providerRows: 78_848,
+  });
+
+  process.stdout.write("National GBIF marginal-yield audit passed for Rounds 70, 72, and 74-78.\n");
 }
 
 void main();

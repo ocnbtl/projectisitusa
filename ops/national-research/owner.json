@@ -10,7 +10,7 @@
   "lastReverifiedAt": "2026-08-20T20:48:54.637Z",
   "currentCheckpointSha": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
   "localHeadAtLastReverification": "36c988ce7f6346a0a10817c15400d78b0e1c7b8f",
-  "state": "post-round-78-calibration-audit-ready-no-provider-network",
+  "state": "post-round-78-audit-prior-complete-rescore-pending-no-provider-network",
   "ownershipEvidence": {
     "activeProjectTasks": ["national-post-round-78-yield-calibration-20260820-main"],
     "supersededOwnerTaskId": "national-post-round-77-planner-20260819-main",
@@ -50,9 +50,10 @@
       },
       "savedRound78CredentialPresence": "pass in committed zero-network semantic preflight; no value read or persisted",
       "providerHealth": {
-        "downloadKey": "0025310-260806074905277",
+        "observedAt": "2026-08-20T20:53:20.927Z",
+        "downloadKey": "0026064-260806074905277",
         "status": 200,
-        "latencyMs": 484,
+        "latencyMs": 517,
         "acquiredEvidence": false
       },
       "cloudflareDashboard": {
@@ -79,6 +80,47 @@
         "vercelConnectorQualification": "Direct deployment listing returned permission-limited HTTP 403; GitHub deployment status and live routes are authoritative for this observation."
       },
       "nextAction": "Extend the bounded zero-network GBIF marginal-yield audit through Round 78, build a versioned post-Round 78 prior, rescore the exact-cache universe, and compare source lanes before any provider request."
+    },
+    "postRound78Calibration": {
+      "completedAt": "2026-08-20T20:58:03.053Z",
+      "baselineSha": "9bc7ff9553922ea80afeb7234c203c02e9072e54",
+      "auditPath": "ops/national-research/evaluations/post-round-78-gbif-marginal-yield-audit-20260820-r1.json",
+      "auditSha256": "058032e200b8135708ee66f02b41f44e7bc2f871d865558183c014902910d826",
+      "auditBytes": 33807,
+      "priorPath": "ops/national-research/evaluations/post-round-78-gbif-yield-prior-20260820-r1.json",
+      "priorSha256": "1a4c7d6eea0c1ad3a362743e11403ae80d2ac4693e6a3a5f24fe809ab97d2987",
+      "priorBytes": 17344,
+      "auditImplementationSha256": "dfb38dcb5fd45807328d17a0a579548fc8e01c76495a77198b65d08c55febfe8",
+      "auditTestSha256": "cc9b4de39cecc60633c6e0ce66834add60701d91854c34a3cc0b43c750d91e9b",
+      "priorBuilderSha256": "92a8335c4835431bf6ad544dda15a7e0ea23c33a75dca8efcad7dd23bbecadf8",
+      "auditedRounds": [70, 72, 74, 75, 76, 77, 78],
+      "selectedPairs": 180436,
+      "presentPairs": 7005,
+      "researchedUnresolvedPairs": 173431,
+      "providerRows": 78848,
+      "weightedYieldBps": 388,
+      "round78": {
+        "providerRows": 1638,
+        "geographyRejectedRows": 1117,
+        "selectedScopeRows": 521,
+        "selectedRejectedArchiveRows": 116,
+        "selectedAcceptedArchiveRows": 405,
+        "duplicateAcceptedArchiveRows": 208,
+        "uniqueEvidencePairs": 197,
+        "noQualifyingEvidencePairs": 24955,
+        "exploitationPairs": 22008,
+        "exploitationPresentPairs": 197,
+        "exploitationYieldBps": 90,
+        "explorationPairs": 3144,
+        "explorationPresentPairs": 0,
+        "explorationYieldBps": 0
+      },
+      "verification": "Focused audit and planner regressions, prior schema validation, typecheck, lint, orchestration validation, and independent byte-for-byte audit/prior reproduction passed under pinned Node 22.",
+      "networkRequests": 0,
+      "providerPosts": 0,
+      "generationCommands": 0,
+      "publicationMutation": false,
+      "nextAction": "Rescore the remaining exact-cache universe with this prior, then compare the measured GBIF opportunity against non-GBIF source lanes before selecting any provider action."
     },
     "round73Optimization": {
       "applicationContentCommit": "eeeb3be787f376ee268f0e3b24c04d326a512770",
@@ -602,7 +644,7 @@
       "vercelCliStatus": "authenticated through bounded npx execution; no CLI package added to the repository",
     "providerHealth": {
       "sourceId": "gbif-preserved-specimens",
-      "observedAt": "2026-08-20T20:48:54.637Z",
+      "observedAt": "2026-08-20T20:53:20.927Z",
       "status": "Round 78 completed exactly one authenticated national GBIF provider request with zero retries, retained and verified the 1,638-record archive, partitioned 51 immutable state runs, and integrated exactly 25,152 selected county-species outcomes. A fresh retained-download health check returned HTTP 200 before post-Round 78 calibration.",
       "gbifAuthenticatedDownloadStatus": "succeeded-and-integrated",
       "preflightProcessException": false,

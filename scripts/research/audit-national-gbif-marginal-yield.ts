@@ -1,15 +1,18 @@
 import { createHash } from "node:crypto";
-import { createReadStream, readFileSync, readdirSync } from "node:fs";
+import { createReadStream, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { createInterface } from "node:readline";
 import { pathToFileURL } from "node:url";
 
-const DEFAULT_ROUNDS = [70, 72, 74, 75, 76, 77] as const;
+import { stableJson } from "./national-gbif-download";
+
+const DEFAULT_ROUNDS = [70, 72, 74, 75, 76, 77, 78] as const;
 
 type JsonRecord = Record<string, unknown>;
 
 type TaxonAudit = {
   speciesId: string;
+  selectionLane: "exploitation" | "exploration" | null;
   selectedPairs: number;
   acceptedPairs: number;
   noQualifyingEvidencePairs: number;
@@ -17,10 +20,20 @@ type TaxonAudit = {
   rejectedArchiveRows: number;
 };
 
+type LaneAudit = {
+  selectionLane: "exploitation" | "exploration";
+  selectedTaxa: number;
+  selectedPairs: number;
+  presentPairs: number;
+  researchedUnresolvedPairs: number;
+  marginalYieldPercent: number;
+};
+
 export type GbifMarginalYieldRoundAudit = {
   round: number;
   planId: string;
-  integrationPath: string;
+  integrationPath: string | null;
+  selectionPath: string;
   partitionReceiptPath: string;
   acquisitionReceiptPath: string;
   selectedTaxa: number;
@@ -33,11 +46,14 @@ export type GbifMarginalYieldRoundAudit = {
   geographyRejectedRows: number;
   selectedRejectedArchiveRows: number;
   selectedAcceptedArchiveRows: number;
+  duplicateAcceptedArchiveRows: number;
   representativeRejectionGroups: number;
   rejectionReasonRows: Record<string, number>;
   perTaxon: TaxonAudit[];
+  lanes: LaneAudit[];
   hashes: {
-    integrationSha256: string;
+    integrationSha256: string | null;
+    selectionSha256: string;
     planSha256: string;
     partitionReceiptSha256: string;
     acquisitionReceiptSha256: string;
@@ -48,6 +64,8 @@ export type GbifMarginalYieldRoundAudit = {
     outcomesConserved: true;
     acceptedPairsMatchAssertions: true;
     providerRowsConserved: true;
+    acceptedArchiveRowsConserved: true;
+    selectionLanesConserved: true;
     noAbsenceOrNonDetectionCreated: true;
     immutableOutputHashesMatch: true;
   };
@@ -149,22 +167,58 @@ function findIntegrationPath(root: string, round: number) {
   const evaluationsDir = path.join(root, "ops", "national-research", "evaluations");
   const prefix = `round-${round}-gbif-national-acquisition-integration-`;
   const matches = readdirSync(evaluationsDir).filter((name) => name.startsWith(prefix) && name.endsWith(".json"));
-  assert(matches.length === 1, `Expected exactly one Round ${round} GBIF integration receipt, found ${matches.length}.`);
-  return path.join(evaluationsDir, matches[0]);
+  assert(matches.length <= 1, `Expected at most one Round ${round} GBIF integration receipt, found ${matches.length}.`);
+  return matches.length === 1 ? path.join(evaluationsDir, matches[0]) : null;
+}
+
+function findPlanPath(root: string, round: number) {
+  const plansDir = path.join(root, "src", "data", "research", "national-acquisition-plans");
+  const prefix = `gbif-national-download-v2-round-${round}-`;
+  const matches = readdirSync(plansDir).filter((name) => name.startsWith(prefix) && name.endsWith(".json"));
+  assert(matches.length === 1, `Expected exactly one Round ${round} GBIF v2 plan, found ${matches.length}.`);
+  return path.join(plansDir, matches[0]);
+}
+
+function findDirectPartitionPath(root: string, round: number, planPath: string, selectionPath: string) {
+  const evaluationsDir = path.join(root, "ops", "national-research", "evaluations");
+  const relativePlanPath = relativePath(root, planPath);
+  const relativeSelectionPath = relativePath(root, selectionPath);
+  const matches = readdirSync(evaluationsDir)
+    .filter((name) => name.startsWith("gbif-national-partition-") && name.endsWith(".json"))
+    .map((name) => path.join(evaluationsDir, name))
+    .filter((candidatePath) => {
+      const candidate = readJson<JsonRecord>(candidatePath);
+      const inputHashes = candidate.inputHashes && typeof candidate.inputHashes === "object" && !Array.isArray(candidate.inputHashes)
+        ? candidate.inputHashes as JsonRecord
+        : {};
+      return candidate.selectionPath === relativeSelectionPath && typeof inputHashes[relativePlanPath] === "string";
+    });
+  assert(matches.length === 1, `Expected exactly one direct Round ${round} GBIF partition receipt, found ${matches.length}.`);
+  return matches[0];
 }
 
 async function auditRound(root: string, round: number): Promise<GbifMarginalYieldRoundAudit> {
   const integrationPath = findIntegrationPath(root, round);
-  const integration = readJson<JsonRecord>(integrationPath);
-  const selection = asObject(integration.selection, `Round ${round} integration.selection`);
-  const partitionSummary = asObject(integration.partition, `Round ${round} integration.partition`);
-  const planId = asString(selection.planId, `Round ${round} selection.planId`);
-  const planPath = path.join(root, "src", "data", "research", "national-acquisition-plans", `${planId}.json`);
+  const integration = integrationPath ? readJson<JsonRecord>(integrationPath) : null;
+  const integrationSelection = integration ? asObject(integration.selection, `Round ${round} integration.selection`) : null;
+  const integrationPartition = integration ? asObject(integration.partition, `Round ${round} integration.partition`) : null;
+  const planPath = integrationSelection
+    ? path.join(root, "src", "data", "research", "national-acquisition-plans", `${asString(integrationSelection.planId, `Round ${round} selection.planId`)}.json`)
+    : findPlanPath(root, round);
   const plan = readJson<JsonRecord>(planPath);
+  const planId = asString(plan.planId, `Round ${round} plan.planId`);
   const speciesIds = asArray(plan.speciesIds, `Round ${round} plan.speciesIds`).map((value) => asString(value, "plan species ID"));
   assert(new Set(speciesIds).size === speciesIds.length, `Round ${round} plan repeats species IDs.`);
   const expectedPairs = asNumber(plan.expectedNotResearchedPairsAtBaseline, `Round ${round} expectedNotResearchedPairsAtBaseline`);
-  const partitionReceiptPath = path.join(root, asString(partitionSummary.receiptPath, `Round ${round} partition.receiptPath`));
+  const selectionPathValue = typeof plan.selectionEvidencePath === "string"
+    ? plan.selectionEvidencePath
+    : integrationSelection?.selectionEvidencePath;
+  const selectionPath = path.join(root, asString(selectionPathValue, `Round ${round} selection evidence path`));
+  const selectionReceipt = readJson<JsonRecord>(selectionPath);
+  assert(selectionReceipt.planId === planId, `Round ${round} selection and plan identities differ.`);
+  const partitionReceiptPath = integrationPartition
+    ? path.join(root, asString(integrationPartition.receiptPath, `Round ${round} partition.receiptPath`))
+    : findDirectPartitionPath(root, round, planPath, selectionPath);
   const partition = readJson<JsonRecord>(partitionReceiptPath);
   assert(partition.status === "complete", `Round ${round} partition is not complete.`);
   const acquisitionReceiptPath = path.join(root, asString(partition.acquisitionReceiptPath, `Round ${round} acquisitionReceiptPath`));
@@ -181,8 +235,22 @@ async function auditRound(root: string, round: number): Promise<GbifMarginalYiel
     `Round ${round} acquisition receipt hash differs from its partition receipt.`,
   );
 
+  const laneBySpecies = new Map<string, "exploitation" | "exploration">();
+  if (plan.selectionModel != null) {
+    for (const rawTaxon of asArray(selectionReceipt.taxa, `Round ${round} selection taxa`)) {
+      const taxon = asObject(rawTaxon, `Round ${round} selection taxon`);
+      const speciesId = asString(taxon.speciesId, `Round ${round} selection taxon speciesId`);
+      const lane = asString(taxon.selectionLane, `Round ${round} ${speciesId} selection lane`);
+      assert(lane === "exploitation" || lane === "exploration", `Round ${round} ${speciesId} selection lane is invalid.`);
+      assert(!laneBySpecies.has(speciesId), `Round ${round} repeats selection lane for ${speciesId}.`);
+      laneBySpecies.set(speciesId, lane);
+    }
+    assert(speciesIds.every((speciesId) => laneBySpecies.has(speciesId)), `Round ${round} selection lanes do not cover every planned taxon.`);
+  }
+
   const taxa = new Map<string, TaxonAudit>(speciesIds.map((speciesId) => [speciesId, {
     speciesId,
+    selectionLane: laneBySpecies.get(speciesId) ?? null,
     selectedPairs: 0,
     acceptedPairs: 0,
     noQualifyingEvidencePairs: 0,
@@ -290,16 +358,48 @@ async function auditRound(root: string, round: number): Promise<GbifMarginalYiel
   assert([...assertionPairs].every((pairKey) => outcomePairs.has(pairKey)), `Round ${round} assertion pair is outside outcomes.`);
   const geographyRejectedRows = providerRows - selectedScopeRows;
   const selectedAcceptedArchiveRows = selectedScopeRows - selectedRejectedArchiveRows;
+  const duplicateAcceptedArchiveRows = selectedAcceptedArchiveRows - presentPairs;
   assert(geographyRejectedRows >= 0 && selectedAcceptedArchiveRows >= 0, `Round ${round} provider-row buckets are invalid.`);
+  assert(duplicateAcceptedArchiveRows >= 0, `Round ${round} accepted archive rows are fewer than unique evidence pairs.`);
   assert(
     providerRows === geographyRejectedRows + selectedRejectedArchiveRows + selectedAcceptedArchiveRows,
     `Round ${round} provider rows do not conserve.`,
   );
+  assert(
+    selectedAcceptedArchiveRows === presentPairs + duplicateAcceptedArchiveRows,
+    `Round ${round} accepted archive rows do not reconcile to unique pairs and duplicates.`,
+  );
+
+  const perTaxon = [...taxa.values()].sort((left, right) => compareText(left.speciesId, right.speciesId));
+  const lanes = (["exploitation", "exploration"] as const)
+    .map((selectionLane) => {
+      const entries = perTaxon.filter((taxon) => taxon.selectionLane === selectionLane);
+      const selectedPairs = entries.reduce((sum, taxon) => sum + taxon.selectedPairs, 0);
+      const presentPairs = entries.reduce((sum, taxon) => sum + taxon.acceptedPairs, 0);
+      return {
+        selectionLane,
+        selectedTaxa: entries.length,
+        selectedPairs,
+        presentPairs,
+        researchedUnresolvedPairs: selectedPairs - presentPairs,
+        marginalYieldPercent: selectedPairs === 0 ? 0 : Number(((presentPairs / selectedPairs) * 100).toFixed(3)),
+      };
+    })
+    .filter((lane) => lane.selectedTaxa > 0);
+  if (laneBySpecies.size > 0) {
+    const laneCounts = asObject(selectionReceipt.laneCounts, `Round ${round} selection laneCounts`);
+    const exploitationPairs = lanes.find((lane) => lane.selectionLane === "exploitation")?.selectedPairs ?? 0;
+    const explorationPairs = lanes.find((lane) => lane.selectionLane === "exploration")?.selectedPairs ?? 0;
+    assert(exploitationPairs === asNumber(laneCounts.exploitationPairs, `Round ${round} exploitationPairs`), `Round ${round} exploitation lane pairs differ.`);
+    assert(explorationPairs === asNumber(laneCounts.explorationPairs, `Round ${round} explorationPairs`), `Round ${round} exploration lane pairs differ.`);
+    assert(exploitationPairs + explorationPairs === expectedPairs, `Round ${round} selection lanes do not conserve planned pairs.`);
+  }
 
   return {
     round,
     planId,
-    integrationPath: relativePath(root, integrationPath),
+    integrationPath: integrationPath ? relativePath(root, integrationPath) : null,
+    selectionPath: relativePath(root, selectionPath),
     partitionReceiptPath: relativePath(root, partitionReceiptPath),
     acquisitionReceiptPath: relativePath(root, acquisitionReceiptPath),
     selectedTaxa: speciesIds.length,
@@ -312,11 +412,14 @@ async function auditRound(root: string, round: number): Promise<GbifMarginalYiel
     geographyRejectedRows,
     selectedRejectedArchiveRows,
     selectedAcceptedArchiveRows,
+    duplicateAcceptedArchiveRows,
     representativeRejectionGroups,
     rejectionReasonRows: sortedRecord(reasonRows),
-    perTaxon: [...taxa.values()].sort((left, right) => compareText(left.speciesId, right.speciesId)),
+    perTaxon,
+    lanes,
     hashes: {
-      integrationSha256: await hashFile(integrationPath),
+      integrationSha256: integrationPath ? await hashFile(integrationPath) : null,
+      selectionSha256: await hashFile(selectionPath),
       planSha256: await hashFile(planPath),
       partitionReceiptSha256: await hashFile(partitionReceiptPath),
       acquisitionReceiptSha256,
@@ -327,6 +430,8 @@ async function auditRound(root: string, round: number): Promise<GbifMarginalYiel
       outcomesConserved: true,
       acceptedPairsMatchAssertions: true,
       providerRowsConserved: true,
+      acceptedArchiveRowsConserved: true,
+      selectionLanesConserved: true,
       noAbsenceOrNonDetectionCreated: true,
       immutableOutputHashesMatch: true,
     },
@@ -354,7 +459,24 @@ export async function auditGbifNationalMarginalYield(root = process.cwd(), round
 
 async function main() {
   const audit = await auditGbifNationalMarginalYield();
-  process.stdout.write(`${JSON.stringify(audit, null, 2)}\n`);
+  const args = process.argv.slice(2);
+  if (args.length === 0) {
+    process.stdout.write(stableJson(audit));
+    return;
+  }
+  assert(args.length === 2 && args[0] === "--output" && args[1], "Expected either no arguments or --output <path>.");
+  const outputPath = path.resolve(args[1]);
+  assert(!existsSync(outputPath), "GBIF marginal-yield audit refuses to overwrite an existing artifact.");
+  mkdirSync(path.dirname(outputPath), { recursive: true });
+  const contents = stableJson(audit);
+  writeFileSync(outputPath, contents, { flag: "wx" });
+  process.stdout.write(`${JSON.stringify({
+    outputPath: relativePath(process.cwd(), outputPath),
+    outputSha256: createHash("sha256").update(contents).digest("hex"),
+    rounds: audit.rounds.map((entry) => entry.round),
+    selectedPairs: audit.aggregate.selectedPairs,
+    presentPairs: audit.aggregate.presentPairs,
+  }, null, 2)}\n`);
 }
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
