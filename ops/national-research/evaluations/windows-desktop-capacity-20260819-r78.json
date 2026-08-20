@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "windows-desktop-capacity-20260819-r78",
+  "recordedAt": "2026-08-20T03:15:54.468Z",
+  "canonicalCheckout": "C:\\Code\\project-isitusa",
+  "verifiedCheckpointSha": "941b1e6706f244792b2c1cc97107916ded0de0aa",
+  "capacityTier": "yellow",
+  "workerCount": 1,
+  "perWorkerReservationMiB": 1024,
+  "totalPhysicalBytes": 33450536960,
+  "pointFreePhysicalBytes": 6003200000,
+  "pointFreePhysicalPercent": 17.946,
+  "sustainedWindow": {
+    "sampleIntervalSeconds": 5,
+    "sampleCount": 7,
+    "windowSeconds": 30,
+    "availableBytes": {
+      "average": 5872781019.429,
+      "maximum": 6338801664,
+      "minimum": 5442867200
+    },
+    "commitChargePercent": {
+      "average": 88.973,
+      "maximum": 89.975,
+      "minimum": 87.997
+    },
+    "pageInputPerSecond": {
+      "average": 66.428,
+      "maximum": 165.494,
+      "minimum": 13.78
+    },
+    "pageOutputPerSecond": {
+      "average": 0,
+      "maximum": 0,
+      "minimum": 0
+    }
+  },
+  "commit": {
+    "observedAt": "2026-08-20T03:15:54.468Z",
+    "limitBytes": 65506918400,
+    "usedBytes": 58443595776,
+    "headroomBytes": 7063322624,
+    "projectedPostWorkerHeadroomBytes": 5989580800
+  },
+  "projectedPostWorker": {
+    "freePhysicalBytesFromWindowMinimum": 4369125376,
+    "freePhysicalPercentFromWindowMinimum": 13.061,
+    "freeDiskBytes": 658034544640
+  },
+  "disk": {
+    "totalBytes": 1999284203520,
+    "freeBytes": 659108286464,
+    "freePercent": 32.967,
+    "absoluteFloorBytes": 21474836480,
+    "minimumHeadroomPercent": 15
+  },
+  "processes": {
+    "projectWriterCount": 0,
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrationItems": 0
+  },
+  "provider": {
+    "sourceId": "gbif-preserved-specimens",
+    "healthObservedAt": "2026-08-20T03:16:44.117Z",
+    "healthUrl": "https://api.gbif.org/v1/occurrence/download/0025310-260806074905277",
+    "healthStatus": 200,
+    "healthLatencyMs": 472,
+    "healthResponseBytes": 969,
+    "healthProbeRequests": 1,
+    "healthProbeAcquiredEvidence": false
+  },
+  "round78": {
+    "planId": "gbif-national-download-v2-round-78-8",
+    "planSha256": "5ffcd5159fb7dbc442e60000ed657e3c134b655479def96c8c10e33e18718e01",
+    "selectionSha256": "789e7f87fd0257ad9facd8d80918a3389beb077eb6fc02fbe1fd849d59ea4774",
+    "taxonCount": 8,
+    "selectedPairs": 25152,
+    "artifactBudgetBytes": 268435456,
+    "maximumPollMinutes": 360,
+    "semanticPreflightPath": "ops/national-research/evaluations/round-78-gbif-national-semantic-preflight-20260819-r1.json",
+    "semanticPreflightParameterHash": "5f0b33aeaea8c5bea46812c58c480ddfdb0f5d7571a80d20dd2b2d270578051d",
+    "deterministicAcquisitionPath": "src/data/research/national-acquisitions/20260820t031644z__gbif-download__5f0b33aeaea8"
+  },
+  "resourceGate": {
+    "result": "pass-one-yellow-tier-acquisition-lane",
+    "preferredGreenAvailableRamPercent": 25,
+    "minimumOperationalRamPercent": 10,
+    "redCommitChargePercent": 95,
+    "redPageReadsPerSecond": 500,
+    "redPageWritesPerSecond": 10,
+    "qualification": "One 1024 MiB acquisition reservation preserves 13.061 percent physical RAM from the sustained-window minimum, 5.99 GB commit headroom, the disk floors, and zero project-writer overlap. Do not dispatch a second acquisition or shared-heavy lane."
+  }
+}
