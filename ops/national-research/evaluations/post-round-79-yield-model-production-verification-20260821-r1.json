@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "post-round-79-yield-model-production-verification-20260821-r1",
+  "verifiedAt": "2026-08-21T13:51:27.897Z",
+  "gate": {
+    "phase": "POST-DEPLOYMENT",
+    "mode": ["web-application", "data-release-operations"],
+    "riskLevel": "moderate",
+    "decision": "GO",
+    "scope": "Provider-write-free post-Round 79 yield-model implementation, exact count-only calibration, rolling-origin failure audit, negative-evidence coverage inventory, regression test registration, and owner receipt. No generated research data or R2 object changed."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "2363228393736ca8b31caff4f44fea8ff3413657",
+    "releaseSha": "e3c0931b9fe8b6b38231e654cda1509f0f2c090f",
+    "originMainSha": "e3c0931b9fe8b6b38231e654cda1509f0f2c090f",
+    "githubMainSha": "e3c0931b9fe8b6b38231e654cda1509f0f2c090f",
+    "githubCommitUrl": "https://github.com/ocnbtl/projectisitusa/commit/e3c0931b9fe8b6b38231e654cda1509f0f2c090f",
+    "githubProductionDeploymentId": 6022669596,
+    "githubProductionStatus": "success",
+    "vercelStatusDescription": "Deployment has completed",
+    "vercelImmutableUrl": "https://projectisitusa-hwsn78k8w-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "priorApplicationCommitSha": "948191bd19690a62a8ee1c639d47bbd83547a840",
+    "priorVercelDeploymentId": "dpl_4WapNyyCtXPc8ktiHjbruB5cbxQh"
+  },
+  "releaseContents": {
+    "changedFiles": 10,
+    "insertions": 5818,
+    "deletions": 13,
+    "applicationRuntimeFilesChanged": false,
+    "generatedResearchFilesChanged": false,
+    "databaseMigrations": 0,
+    "featureFlags": 0,
+    "newRuntimeDependencies": 0,
+    "packageChange": "Registered the new focused research regression in check:research-integrity; no dependency version changed."
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "check": "Canonical, local, origin, public GitHub, production deployment, release diff, and rollback identity reconcile.",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD and fetched origin/main both equal e3c0931b9fe8b6b38231e654cda1509f0f2c090f. Public GitHub main returned the same SHA. GitHub Production deployment 6022669596 reports success for that exact SHA.",
+      "owner": "MAIN",
+      "disposition": "No action required."
+    },
+    {
+      "category": "functionality",
+      "check": "Focused research code, whole-corpus contracts, live routes, and R2-backed consumer requests work.",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The focused model/calibration test, historical marginal-yield test, selector test, TypeScript, lint, full research-integrity suite, and Vercel publication contract passed. Canonical home and research routes returned HTTP 200. The browser observed pointer, manifest, content-object, species-catalog, navigation, and telemetry requests returning 200.",
+      "owner": "MAIN",
+      "disposition": "No state-changing production flow was exercised because the release adds no such flow."
+    },
+    {
+      "category": "visual-fidelity",
+      "check": "The critical research surface remains rendered and responsive on the canonical and immutable deployment hosts.",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Playwright rendered Research status | Project Isitusa on canonical and immutable hosts. Desktop snapshot exposed the complete Research control center. At 390x844, viewport width was 390, document scroll width was 375, horizontalOverflow was false, and the responsive card layout was present.",
+      "owner": "MAIN",
+      "disposition": "No visual implementation file changed, so this is regression smoke evidence rather than a new design approval."
+    },
+    {
+      "category": "accessibility",
+      "check": "Release-specific accessibility regression risk on the critical route is bounded.",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "No UI file changed. Fresh browser snapshots exposed banner, primary navigation, one h1, labeled state/county/search/status/category controls, named tabs, table/card controls, and image alt text at desktop and mobile sizes. Research deep-link tests passed.",
+      "owner": "MAIN",
+      "disposition": "This does not claim a new comprehensive WCAG audit."
+    },
+    {
+      "category": "seo-and-discovery",
+      "check": "Release-specific route, title, and publication regressions are absent.",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "No routing or metadata file changed. Canonical and immutable /research rendered title Research status | Project Isitusa. Vercel publication preparation, ignored-build classification, public projection fetch, and research deep-link tests passed.",
+      "owner": "MAIN",
+      "disposition": "No indexing change was requested or performed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "check": "The exact production build completes and critical external data dependencies respond.",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Vercel completed the exact SHA deployment successfully. Canonical and immutable research pages rendered; all observed critical R2-backed requests returned 200. No runtime dependency or application code changed.",
+      "owner": "MAIN",
+      "disposition": "Exact provider build duration, runtime logs, and field Core Web Vitals were not captured and are not claimed."
+    },
+    {
+      "category": "security-and-privacy",
+      "check": "The release introduces no credential, authorization, personal-data, or unsafe provider-write regression.",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The release adds local research scripts and versioned evaluation receipts, no runtime authentication or form change. Calibration used public count-only GETs; raw response hashes, not credentials, were retained. Provider POSTs, download requests, evidence assertions, dataset movement, publication mutations, and R2 mutations were zero.",
+      "owner": "MAIN",
+      "disposition": "No secret value was emitted or persisted."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "check": "Conversion or analytics behavior affected by the release.",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No conversion, form, CTA, consent, or analytics implementation changed. The existing telemetry request returned 200 in browser QA.",
+      "owner": "MAIN",
+      "disposition": "No production submission was authorized or needed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "check": "Provider state, release health, ownership, cadence, and recovery assumptions are explicit.",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "GitHub/Vercel is terminal success; GBIF download 0027542-260806074905277 remains SUCCEEDED with 433 records and DOI 10.15468/dl.2m3mty; browser console has zero warnings/errors; owner receipt keeps MAIN ownership; R2 cadence remains closed until 2026-08-26T22:57:28.231Z.",
+      "owner": "MAIN",
+      "disposition": "Escalate any critical route or pointer regression to Ocean; do not mutate R2 before the recorded cadence gate."
+    },
+    {
+      "category": "deployment",
+      "check": "The intended commit reached the confirmed Production environment and real public domain.",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "GitHub Production deployment 6022669596 reports success for e3c0931b9fe8b6b38231e654cda1509f0f2c090f with immutable URL projectisitusa-hwsn78k8w-unigentamos.vercel.app. Canonical and immutable /research rendered in a real browser with zero console warnings/errors.",
+      "owner": "MAIN",
+      "disposition": "No DNS, environment-variable, database, or migration change occurred."
+    },
+    {
+      "category": "content-and-approvals",
+      "check": "Release scope and claims are authorized and remain conservative.",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Ocean explicitly authorized commit, push, and production deployment. Evaluation receipts label forecasts as planning-only, preserve unknown versus zero, and issue NO-GO for GBIF and negative-yield acquisition lanes. No public research content or owner-review decision changed.",
+      "owner": "Ocean / MAIN",
+      "disposition": "No scientific certainty, absence, non-detection, or publication authorization was inferred."
+    },
+    {
+      "category": "data-release-integrity",
+      "check": "Historical provenance, model leakage boundary, count calibration, negative semantics, exact counts, and downstream pointer remain valid.",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Eight immutable GBIF archives reconcile 79,281 provider rows and 7,035 distinct pairs. Seven rolling-origin splits used prior outcomes only. The full integrity suite passed 1,401 immutable runs, 308,786 assertions, 1,720,571 outcomes, zero unreviewed evidence, and zero conflicts. Both public pointer endpoints return byte-identical Round 77 release research-021c595d0604-b3467b304cd02d85 and source commit 021c595d0604012bc75f298c409e5ac1a023e0c0.",
+      "owner": "MAIN",
+      "disposition": "Round 80 remains unscheduled and the prepared Round 79 R2 release remains unuploaded and unpromoted."
+    }
+  ],
+  "verificationSummary": {
+    "jsonReceiptsParse": true,
+    "focusedYieldModelAndCalibrationTest": "pass",
+    "historicalMarginalYieldTest": "pass",
+    "selectionPlannerTest": "pass",
+    "typecheck": "pass",
+    "lint": "pass-zero-warnings-zero-errors",
+    "researchIntegrity": "pass",
+    "frozenOrchestrationCases": {"passed": 97, "total": 97, "criticalSafetyViolations": 0},
+    "sourceCoverageId": "source-coverage-57a21ea5cb14c29856f6",
+    "publicationPlanReleaseId": "research-a455665766e7-a97036bca99bdac0",
+    "publicationPlanArtifactCount": 3195,
+    "publicationPlanUniqueObjectBytes": 1004023869,
+    "vercelPublishContract": "pass",
+    "canonicalBrowser": {"route": "/research", "title": "Research status | Project Isitusa", "consoleWarnings": 0, "consoleErrors": 0},
+    "immutableBrowser": {"route": "/research", "desktopRendered": true, "mobileViewport": "390x844", "horizontalOverflow": false, "consoleWarnings": 0, "consoleErrors": 0}
+  },
+  "releaseBoundaries": {
+    "gbifProviderRequestGate": "NO-GO",
+    "negativeLaneGate": "NO-GO-AS-MATERIAL-YIELD-LANE",
+    "providerGets": 47,
+    "providerPosts": 0,
+    "downloadRequests": 0,
+    "datasetMovement": 0,
+    "evidenceAssertionsCreated": 0,
+    "generationCommands": 0,
+    "publicationMutations": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "round80Scheduled": false
+  },
+  "r2Pointer": {
+    "dataDomainStatus": 200,
+    "sameOriginStatus": 200,
+    "bodiesEqual": true,
+    "releaseId": "research-021c595d0604-b3467b304cd02d85",
+    "releaseManifestSha256": "ffe73786c4a321050380199f6981961a4ecfdf624e181cab7460c6c9058f7c8a",
+    "sourceCommit": "021c595d0604012bc75f298c409e5ac1a023e0c0",
+    "promotedAt": "2026-08-19T22:57:28.231Z",
+    "nextOrdinaryPromotionAt": "2026-08-26T22:57:28.231Z"
+  },
+  "completedFixes": [],
+  "blockers": {"code": [], "infrastructure": [], "clientInput": []},
+  "conditionalRiskAcceptance": [],
+  "rollbackAndObservation": {
+    "lastKnownGoodApplicationCommit": "948191bd19690a62a8ee1c639d47bbd83547a840",
+    "lastKnownGoodVercelDeploymentId": "dpl_4WapNyyCtXPc8ktiHjbruB5cbxQh",
+    "rollbackProcedure": "If a critical runtime regression attributable to e3c0931b9 appears, Ocean may authorize reverting that commit and allowing Vercel to redeploy; the R2 pointer requires no rollback because it did not change.",
+    "baselineHealth": "Canonical and immutable /research rendered, critical data requests returned 200, and the browser console had zero warnings/errors.",
+    "monitoringOwnerAndEscalation": "MAIN monitors the immediate verification window; Ocean is the decision owner for rollback, publication, and provider-write expansion.",
+    "observationWindow": "Immediate post-deployment checks completed through 2026-08-21T13:51:27.897Z.",
+    "testArtifactsOrResidue": "The Playwright browser session was closed and its task-created untracked snapshot directory was removed. No production record, message, provider write, or R2 object was created."
+  },
+  "limitations": [
+    "Exact Vercel build-log duration and runtime-log rows were not captured and are not claimed.",
+    "No new full-site WCAG, field-performance, or security penetration audit is claimed; release-specific regression evidence is proportional to the non-runtime research scope.",
+    "The historical per-taxon provider-count feature is a reproducible archive proxy for a pre-request limit=0 count, not a retained historical as-of response."
+  ],
+  "plainEnglishSummary": "The authorized audit checkpoint is live at the exact intended commit and production deployment. The new model is materially less wrong than the old heuristic, but uncertainty coverage is inadequate, so no new GBIF request is allowed. The known negative-evidence candidates also provide zero unresearched movement, so that acquisition lane remains closed. The existing Round 77 R2 data release remains unchanged."
+}
