@@ -1,0 +1,319 @@
+{
+  "advancedQueryCapabilities": {
+    "fullTextSearchCapabilities": {
+      "supportsAccentSensitivity": true,
+      "supportsOperator": true,
+      "supportsSearchOperator": true,
+      "supportsStopWords": true
+    },
+    "supportedLodTypes": [
+      "geohash"
+    ],
+    "supportedOperationsWithCacheHint": [
+      "query",
+      "queryTopFilter",
+      "queryAnalytics",
+      "queryAttachments",
+      "queryRelated",
+      "queryBins",
+      "queryPivot"
+    ],
+    "supportedSpatialAggregationStatistics": [
+      "EnvelopeAggregate",
+      "CentroidAggregate",
+      "ConvexHullAggregate"
+    ],
+    "supportsAdvancedQueryRelated": true,
+    "supportsAggIds": true,
+    "supportsApproxPercentileStatistics": true,
+    "supportsCountDistinct": true,
+    "supportsCurrentUserQueries": true,
+    "supportsDefaultSR": true,
+    "supportsDisjointSpatialRel": true,
+    "supportsDistinct": true,
+    "supportsFullTextSearch": true,
+    "supportsHavingClause": true,
+    "supportsISODOW": true,
+    "supportsISOWeek": true,
+    "supportsLod": true,
+    "supportsMaxRecordCountFactor": true,
+    "supportsOrderBy": true,
+    "supportsOutDistance": true,
+    "supportsOutFieldSQLExpression": true,
+    "supportsPagination": true,
+    "supportsPaginationOnAggregatedQueries": true,
+    "supportsPercentileStatistics": true,
+    "supportsQueryAnalytic": true,
+    "supportsQueryBins": true,
+    "supportsQueryPivot": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsQueryWithCacheHint": true,
+    "supportsQueryWithCollation": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsQueryWithDistance": true,
+    "supportsQueryWithLodSR": false,
+    "supportsQueryWithResultType": true,
+    "supportsReturningGeometryCentroid": false,
+    "supportsReturningGeometryEnvelope": false,
+    "supportsReturningQueryExtent": true,
+    "supportsSpatialAggregationStatistics": true,
+    "supportsSqlExpression": true,
+    "supportsStatistics": true,
+    "supportsTimeRelation": true,
+    "supportsTopFeaturesQuery": true,
+    "supportsTranslations": false
+  },
+  "capabilities": "Query,Extract,Sync",
+  "currentVersion": 12,
+  "editingInfo": {
+    "dataLastEditDate": 1786633422649,
+    "lastEditDate": 1786633422649,
+    "schemaLastEditDate": 1785439357528
+  },
+  "extent": {
+    "spatialReference": {
+      "latestWkid": 5071,
+      "wkid": 5071
+    },
+    "xmax": 1562979.9202000014,
+    "xmin": -93837.94009999931,
+    "ymax": 2649627.1567,
+    "ymin": 1285256.0869000005
+  },
+  "fields": [
+    {
+      "alias": "OBJECTID",
+      "defaultValue": null,
+      "domain": null,
+      "editable": false,
+      "name": "OBJECTID",
+      "nullable": false,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeOID"
+    },
+    {
+      "alias": "Regional Unique ID",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "name": "RUID",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "alias": "Sampling Station ID Code",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "FWCO_ID",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "State",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "State",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Basin",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "Basin",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Waterbody",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "Waterbody",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Date Collected",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 8,
+      "name": "DATE_COLL",
+      "nullable": true,
+      "precision": 1,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeDate"
+    },
+    {
+      "alias": "Wind Direction",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "WIND_DIR",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Latitude",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "name": "Latitude",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "alias": "Longitude",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "name": "Longitude",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "alias": "Temp (°F)",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "name": "Temp_F",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "alias": "Depth (ft)",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "name": "DEPTH",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "alias": "Double Sample",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "Double_Sample",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Blank",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "Blank",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Habitat",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "Habitat",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Collection Time",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "name": "COLLECT_TIME",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "alias": "GlobalID",
+      "defaultValue": null,
+      "domain": null,
+      "editable": false,
+      "length": 38,
+      "name": "GlobalID",
+      "nullable": false,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeGlobalID"
+    },
+    {
+      "alias": "COMMENTS",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 1000,
+      "name": "COMMENTS",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "eDNA Detection Status",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "length": 255,
+      "name": "eDNA_Detection_Status",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "alias": "Case Number",
+      "defaultValue": null,
+      "domain": null,
+      "editable": true,
+      "name": "Case_Number",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "alias": "Site Name",
+      "defaultValue": null,
+      "description": "{\"value\":\"The name of the site where the samples were collected.\",\"fieldValueType\":\"\"}",
+      "domain": null,
+      "editable": true,
+      "length": 500,
+      "name": "altLocationName",
+      "nullable": true,
+      "sqlType": "sqlTypeOther",
+      "type": "esriFieldTypeString"
+    }
+  ],
+  "id": 0,
+  "maxRecordCount": 1000,
+  "name": "All_eDNA_Sample_Point_Data",
+  "objectIdField": "OBJECTID",
+  "serviceItemId": "7c6e731513654696abc4814e3eec669d",
+  "spatialReference": {
+    "latestWkid": 5071,
+    "wkid": 5071
+  }
+}
