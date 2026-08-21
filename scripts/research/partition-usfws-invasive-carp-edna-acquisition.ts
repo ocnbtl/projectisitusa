@@ -19,7 +19,7 @@ import {
   resolveCountyEquivalent,
 } from "@/lib/research/geography-registry";
 import {
-  listImmutableResearchRuns,
+  loadImmutableResearchRun,
   sha256,
   stableJson,
 } from "@/lib/research/run-files";
@@ -472,14 +472,14 @@ async function main() {
   const totalOutcomes = generatedRuns.reduce((sum, run) => sum + run.receipt.counts.pair_outcomes, 0);
   assert(generatedRuns.length === pairsByState.size, "USFWS generated run count differs from qualifying states.");
   assert(totalAssertions === replayPairs.length && totalOutcomes === replayPairs.length, "USFWS pair integration does not reconcile.");
-  const existingBundles = new Map(listImmutableResearchRuns(ROOT).map((bundle) => [bundle.receipt.run_id, bundle]));
   const newRuns: typeof generatedRuns = [];
   for (const run of generatedRuns) {
     if (!existsSync(run.finalDirectory)) {
       newRuns.push(run);
       continue;
     }
-    assert(existingBundles.has(run.runId), `Existing run ${run.runId} failed immutable discovery.`);
+    const existingBundle = loadImmutableResearchRun(ROOT, run.finalDirectory);
+    assert(existingBundle.receipt.run_id === run.runId, `Existing run ${run.runId} failed immutable discovery.`);
     const existingContents = runDirectoryContents(run.finalDirectory);
     for (const [filename, value] of run.contents) {
       assert(existingContents.get(filename) === value, `Existing run ${run.runId} differs at ${filename}.`);
@@ -494,8 +494,10 @@ async function main() {
       renameSync(run.stagedDirectory, run.finalDirectory);
       moved.push(run);
     }
-    const immutableById = new Map(listImmutableResearchRuns(ROOT).map((bundle) => [bundle.receipt.run_id, bundle]));
-    generatedRuns.forEach((run) => assert(immutableById.has(run.runId), `USFWS run ${run.runId} is missing.`));
+    for (const run of generatedRuns) {
+      const installedBundle = loadImmutableResearchRun(ROOT, run.finalDirectory);
+      assert(installedBundle.receipt.run_id === run.runId, `USFWS run ${run.runId} is missing.`);
+    }
   } catch (error) {
     for (const run of [...moved].reverse()) {
       if (existsSync(run.finalDirectory) && !existsSync(run.stagedDirectory)) {
