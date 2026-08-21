@@ -1,0 +1,240 @@
+{
+  "baselineSha": "2363228393736ca8b31caff4f44fea8ff3413657",
+  "checks": {
+    "acceptedAphisPairReconciled": true,
+    "allNegativeSourcesRegistered": true,
+    "currentMatrixConserved": true,
+    "externalMutationCountIsZero": true,
+    "knownCandidatePairClassesConserved": true,
+    "montereyCandidatesReconciled": true,
+    "unknownCoverageNotCoercedToZero": true
+  },
+  "comparisonLanes": [
+    {
+      "completedPairs": 155,
+      "currentExecutableNetNewPairs": 0,
+      "sourceId": "idigbio-preserved-specimens",
+      "status": "historical-replay-exhausted-national-contract-blocked"
+    },
+    {
+      "currentExecutableNetNewPairs": 0,
+      "remainingMixedMappings": 8,
+      "sourceId": "usda-nrcs-plants",
+      "status": "pure-exact-scope-exhausted-mixed-taxonomy-review-remains"
+    },
+    {
+      "currentExecutableNetNewPairs": 0,
+      "sourceId": "aphis-federal-quarantine",
+      "status": "mapped-national-scope-exhausted-no-negative-capability"
+    }
+  ],
+  "currentGeneratedMatrix": {
+    "conserved": true,
+    "denominator": 7872576,
+    "generatedContentCommit": "a455665766e705efa2076cf1e856ac0115afe8c6",
+    "notDetected": 8,
+    "notResearched": 6314996,
+    "researchedUnresolved": 1362434,
+    "verifiedAbsent": 0,
+    "verifiedPresent": 195138
+  },
+  "decision": {
+    "evidenceAssertionAuthorized": false,
+    "generationAuthorized": false,
+    "negativeLaneGate": "NO-GO-AS-MATERIAL-YIELD-LANE",
+    "nextSafeEngineeringAction": "Implement one bounded, fixture-tested negative-evidence target-completeness contract before any provider acquisition proposal; do not use the two Monterey historical candidates as a net-unique yield lane because current presence already controls both pairs.",
+    "providerRequestAuthorized": false,
+    "publicationAuthorized": false,
+    "r2PromotionAuthorized": false,
+    "reason": "The only exact known negative candidate scope contains three already-researched pairs and zero unresearched pairs. Four broader negative-capable sources lack versioned target-completeness contracts, so their unresearched denominators are unknown rather than zero."
+  },
+  "evaluatedAt": "2026-08-21T13:17:09.095Z",
+  "evaluationId": "post-round-79-negative-evidence-coverage-inventory-20260821-r1",
+  "exactKnownCandidateScope": {
+    "alreadyResearchedPairs": 3,
+    "blockedPairs": 0,
+    "immediatelyExecutableNetNewPairs": 0,
+    "sourceCount": 2,
+    "targetPairs": 3,
+    "unresearchedPairs": 0
+  },
+  "inputs": [
+    {
+      "path": "src/data/research/source-registry.json",
+      "sha256": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5"
+    },
+    {
+      "path": "ops/national-research/evaluations/post-round-79-source-portfolio-comparison-20260821-r1.json",
+      "sha256": "0c48817d4cfffedc9a178bf215d352833a153201403e2a6fcaa673b56c5fbd60"
+    },
+    {
+      "path": "ops/national-research/evaluations/explicit-survey-non-detection-pilot-acquisition-20260819-r1.json",
+      "sha256": "27b617fd49c10af58e89c7279c11fb8593b78efd9f9a5dd60f66282f44bcd3fe"
+    },
+    {
+      "path": "ops/national-research/evaluations/authoritative-county-absence-source-discovery-20260819-r1.json",
+      "sha256": "2a580e7f1ca9c4ae3788689f05f3e88d61bc3f94097b0d3801e3f8e6339dacd6"
+    }
+  ],
+  "objective": "Inventory negative-capable source contracts against the exact current unresearched pair corpus without treating missing source rows as absence or non-detection.",
+  "operations": {
+    "datasetMovement": 0,
+    "evidenceAssertionsCreated": 0,
+    "generationCommands": 0,
+    "networkRequests": 0,
+    "providerGets": 0,
+    "providerPosts": 0,
+    "publicationMutations": 0,
+    "r2Mutations": 0
+  },
+  "registryConsistencyFinding": {
+    "evidenceCapabilities": [
+      "recorded-present"
+    ],
+    "finding": "The registry says explicit-survey-only but exposes only recorded-present capability. The source is excluded from negative coverage until the registry and a tested target-completeness contract agree.",
+    "negativeSemantics": "explicit-survey-only",
+    "sourceId": "usfs-ids"
+  },
+  "schemaVersion": 1,
+  "semantics": {
+    "alreadyResearchedPairIsNetUniqueMovement": false,
+    "historicalEradicationOverridesLaterPresence": false,
+    "sampledAreaNonDetectionIsCountyAbsence": false,
+    "sourceSilenceIsAbsence": false,
+    "sourceSilenceIsNonDetection": false,
+    "unknownDenominatorIsZero": false
+  },
+  "sourceToUnresearchedPairMatrix": [
+    {
+      "contractState": "operational-versioned-explicit-survey",
+      "denominatorState": "one-pair-pilot-only-broader-national-target-scope-unmeasured",
+      "immediatelyExecutableNetNewPairs": 0,
+      "knownAlreadyResearchedPairs": 1,
+      "knownBlockedPairs": 0,
+      "knownPairs": [
+        {
+          "blocked": false,
+          "countyFips": "01025",
+          "displayStatus": "not-detected",
+          "evidenceAssertions": 2,
+          "pairKey": "01025:varroa-destructor",
+          "researchStatus": "reviewed-evidence-found",
+          "speciesId": "varroa-destructor",
+          "stateCode": "AL",
+          "unresearched": false
+        }
+      ],
+      "knownTargetPairs": 1,
+      "knownUnresearchedPairs": 0,
+      "nationalUnresearchedCoveragePercent": 0,
+      "negativeClaimType": "not-detected",
+      "negativeSemantics": "explicit-survey-only",
+      "nextContractWork": "Measure the bounded national zero-result target scope before proposing another acquisition; preserve survey-area semantics and exact source county text.",
+      "registryStatus": "operational",
+      "sourceId": "aphis-honey-bee"
+    },
+    {
+      "contractState": "manual-two-pair-independent-review-incomplete",
+      "denominatorState": "two-known-candidates-only-no-automated-national-contract",
+      "immediatelyExecutableNetNewPairs": 0,
+      "knownAlreadyResearchedPairs": 2,
+      "knownBlockedPairs": 0,
+      "knownPairs": [
+        {
+          "blocked": false,
+          "countyFips": "06053",
+          "displayStatus": "verified-present",
+          "evidenceAssertions": 1,
+          "pairKey": "06053:hydrilla",
+          "researchStatus": "reviewed-evidence-found",
+          "speciesId": "hydrilla",
+          "stateCode": "CA",
+          "unresearched": false
+        },
+        {
+          "blocked": false,
+          "countyFips": "06053",
+          "displayStatus": "verified-present",
+          "evidenceAssertions": 8,
+          "pairKey": "06053:centaurea-diffusa",
+          "researchStatus": "reviewed-evidence-found",
+          "speciesId": "centaurea-diffusa",
+          "stateCode": "CA",
+          "unresearched": false
+        }
+      ],
+      "knownTargetPairs": 2,
+      "knownUnresearchedPairs": 0,
+      "nationalUnresearchedCoveragePercent": 0,
+      "negativeClaimType": "historical-officially-absent-candidate",
+      "negativeSemantics": "explicit-authority-only",
+      "nextContractWork": "Retain dated official bytes and run independent later-presence review only as a bounded historical-provenance pilot; both candidate pairs are already verified-present and cannot move the unresearched axis.",
+      "registryStatus": "manual",
+      "sourceId": "manual-authoritative"
+    },
+    {
+      "contractState": "manual-registry-entry-no-research-adapter",
+      "denominatorState": "unknown-target-completeness-no-versioned-pair-scope",
+      "immediatelyExecutableNetNewPairs": 0,
+      "knownAlreadyResearchedPairs": null,
+      "knownBlockedPairs": null,
+      "knownPairs": [],
+      "knownTargetPairs": null,
+      "knownUnresearchedPairs": null,
+      "nationalUnresearchedCoveragePercent": null,
+      "negativeClaimType": "not-detected",
+      "negativeSemantics": "explicit-survey-only",
+      "nextContractWork": "Define exact target taxa, sample geography, negative-result fields, sampling time, and county-resolution rules before any coverage count.",
+      "registryStatus": "manual",
+      "sourceId": "usfws-invasive-carp-edna"
+    },
+    {
+      "contractState": "legacy-positive-importer-no-versioned-negative-research-adapter",
+      "denominatorState": "unknown-protocol-and-target-completeness",
+      "immediatelyExecutableNetNewPairs": 0,
+      "knownAlreadyResearchedPairs": null,
+      "knownBlockedPairs": null,
+      "knownPairs": [],
+      "knownTargetPairs": null,
+      "knownUnresearchedPairs": null,
+      "nationalUnresearchedCoveragePercent": null,
+      "negativeClaimType": "not-detected",
+      "negativeSemantics": "explicit-survey-only",
+      "nextContractWork": "Specify explicit target analytes or taxa, detection limits, zero-result semantics, sampled geometry, and frozen query completeness.",
+      "registryStatus": "operational",
+      "sourceId": "water-quality-portal"
+    },
+    {
+      "contractState": "legacy-route-start-importer-no-versioned-negative-research-adapter",
+      "denominatorState": "unknown-route-effort-target-completeness-and-county-coverage",
+      "immediatelyExecutableNetNewPairs": 0,
+      "knownAlreadyResearchedPairs": null,
+      "knownBlockedPairs": null,
+      "knownPairs": [],
+      "knownTargetPairs": null,
+      "knownUnresearchedPairs": null,
+      "nationalUnresearchedCoveragePercent": null,
+      "negativeClaimType": "not-detected",
+      "negativeSemantics": "explicit-survey-only",
+      "nextContractWork": "Define complete route-year target lists, effort gates, route-to-county scope, and non-detection compatibility before counting eligible pairs.",
+      "registryStatus": "operational",
+      "sourceId": "usgs-bbs"
+    },
+    {
+      "contractState": "legacy-site-importer-no-versioned-negative-research-adapter",
+      "denominatorState": "unknown-plot-effort-target-completeness-and-county-coverage",
+      "immediatelyExecutableNetNewPairs": 0,
+      "knownAlreadyResearchedPairs": null,
+      "knownBlockedPairs": null,
+      "knownPairs": [],
+      "knownTargetPairs": null,
+      "knownUnresearchedPairs": null,
+      "nationalUnresearchedCoveragePercent": null,
+      "negativeClaimType": "not-detected",
+      "negativeSemantics": "explicit-survey-only",
+      "nextContractWork": "Define complete plot-event target lists, effort and detection contracts, plot-to-county scope, and sampled-area caveats.",
+      "registryStatus": "operational",
+      "sourceId": "neon-tall"
+    }
+  ]
+}
