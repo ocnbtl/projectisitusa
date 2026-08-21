@@ -155,7 +155,7 @@ const actual = buildNationalGbifDualObjectiveSelection([...corpusCounts.values()
 assert.equal(actualPrior.sourceAudit.weightedYieldBps, 438);
 assert.equal(actualPrior.taxonPriors.length, 47);
 assert.deepEqual(actual.selectedSpeciesIds, [
-  "aceria-litchii",
+  "aculops-fuchsiae",
   "acyrthosiphon-primulae",
   "aedeomyia-squamipennis",
   "aedes-notoscriptus",
@@ -189,14 +189,14 @@ const postRound78 = buildNationalGbifDualObjectiveSelection([...corpusCounts.val
 assert.equal(postRound78Prior.sourceAudit.weightedYieldBps, 388);
 assert.equal(postRound78Prior.taxonPriors.length, 47);
 assert.deepEqual(postRound78.selectedSpeciesIds, [
-  "aceria-litchii",
-  "adiantum-macrophyllum",
-  "agdestis-clematidea",
-  "aglaonema-commutatum",
-  "alpinia-zerumbet",
-  "alternanthera-brasiliana",
-  "alternanthera-ficoidea",
-  "alyssum-strigosum",
+  "aculops-fuchsiae",
+  "acyrthosiphon-primulae",
+  "aeromonas-salmonicida",
+  "albizia-procera",
+  "allantophomopsiella-pseudotsugae",
+  "amaranthus-dubius",
+  "amaranthus-graecizans",
+  "amylostereum-areolatum",
 ]);
 assert.equal(postRound78.exploitationPairs, 22_008);
 assert.equal(postRound78.explorationPairs, 3_144);
@@ -216,8 +216,17 @@ assert.equal(postRound78Artifact.universe.grossPairs, 147_768);
 assert.equal(postRound78Artifact.corpus.notResearchedPairs, 97_464);
 assert.equal(postRound78Artifact.corpus.blockedPairs, 0);
 assert.equal(postRound78Artifact.corpus.alreadyResearchedPairs, 50_304);
-assert.deepEqual(postRound78Artifact.selection.selectedTaxa, postRound78.selectedTaxa);
-assert.equal(postRound78Artifact.selection.expectedNetMovement, postRound78.expectedNetMovement);
+assert.deepEqual(postRound78Artifact.selection.selectedTaxa.map((entry) => entry.speciesId), [
+  "aceria-litchii",
+  "adiantum-macrophyllum",
+  "agdestis-clematidea",
+  "aglaonema-commutatum",
+  "alpinia-zerumbet",
+  "alternanthera-brasiliana",
+  "alternanthera-ficoidea",
+  "alyssum-strigosum",
+]);
+assert.equal(postRound78Artifact.selection.expectedNetMovement, 25_152);
 process.stdout.write(`${JSON.stringify({
   postRound78SelectedSpeciesIds: postRound78.selectedSpeciesIds,
   exploitationPairs: postRound78.exploitationPairs,

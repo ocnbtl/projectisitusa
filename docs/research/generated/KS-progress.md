@@ -1,6 +1,6 @@
 # Kansas Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-20T00:00:00.000Z`
 - Verified present: `5187`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `42798`
-- Not researched: `214935`
+- Researched unresolved: `43638`
+- Not researched: `214095`
 - Determination coverage: `1.97%`
-- Research coverage: `18.25%`
-- Explicit outcome coverage: `18.2508%`
+- Research coverage: `18.57%`
+- Explicit outcome coverage: `18.5703%`
 - Applicable protocol cells: `236`
 - Current complete protocol cells: `101`
 - Protocol completion: `48.31%`
 - Current protocol completion: `42.80%`
 - Evidence records: `6238`
-- Research runs: `25`
+- Research runs: `26`
 - Rejection records: `223`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 105 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 105 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 105 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 105 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 105 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 105 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 105 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 105 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 105 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4550 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 592 | 122 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 592 | 130 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

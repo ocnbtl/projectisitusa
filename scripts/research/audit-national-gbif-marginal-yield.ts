@@ -6,7 +6,7 @@ import { pathToFileURL } from "node:url";
 
 import { stableJson } from "./national-gbif-download";
 
-const DEFAULT_ROUNDS = [70, 72, 74, 75, 76, 77, 78] as const;
+const DEFAULT_ROUNDS = [70, 72, 74, 75, 76, 77, 78, 79] as const;
 
 type JsonRecord = Record<string, unknown>;
 
@@ -337,16 +337,16 @@ async function auditRound(root: string, round: number): Promise<GbifMarginalYiel
       const reasonCode = asString(rejection.reason_code, "rejection.reason_code");
       const weight = rejectionWeight(rejection);
       representativeRejectionGroups += 1;
-      selectedRejectedArchiveRows += weight;
       increment(reasonRows, reasonCode, weight);
       const normalizedTarget = rejection.normalized_target == null ? null : asObject(rejection.normalized_target, "rejection.normalized_target");
-      if (normalizedTarget) {
-        const speciesId = asString(normalizedTarget.species_id, "rejection normalized species ID");
-        const taxon = taxa.get(speciesId);
-        assert(taxon, `Round ${round} rejection species ${speciesId} is outside plan scope.`);
-        taxon.rejectionGroups += 1;
-        taxon.rejectedArchiveRows += weight;
-      }
+      if (normalizedTarget?.county_fips == null) return;
+      asString(normalizedTarget.county_fips, "rejection normalized county FIPS");
+      selectedRejectedArchiveRows += weight;
+      const speciesId = asString(normalizedTarget.species_id, "rejection normalized species ID");
+      const taxon = taxa.get(speciesId);
+      assert(taxon, `Round ${round} rejection species ${speciesId} is outside plan scope.`);
+      taxon.rejectionGroups += 1;
+      taxon.rejectedArchiveRows += weight;
     });
   }
 

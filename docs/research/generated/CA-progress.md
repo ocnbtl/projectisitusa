@@ -1,27 +1,27 @@
 # California Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `6311`
+- Verified present: `6314`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `22805`
-- Not researched: `116116`
+- Researched unresolved: `23266`
+- Not researched: `115652`
 - Determination coverage: `4.35%`
-- Research coverage: `20.05%`
-- Explicit outcome coverage: `20.0479%`
-- Applicable protocol cells: `399`
-- Current complete protocol cells: `178`
-- Protocol completion: `47.87%`
-- Current protocol completion: `44.61%`
-- Evidence records: `29253`
-- Research runs: `24`
-- Rejection records: `2581`
+- Research coverage: `20.37%`
+- Explicit outcome coverage: `20.3674%`
+- Applicable protocol cells: `401`
+- Current complete protocol cells: `180`
+- Protocol completion: `48.13%`
+- Current protocol completion: `44.89%`
+- Evidence records: `29256`
+- Research runs: `25`
+- Rejection records: `2587`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -46,17 +46,17 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 58 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 58 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 58 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 58 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 58 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 58 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 58 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 58 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 58 | 0 |
+| Rockroot (`agdestis-clematidea`) | plants | 0 | 58 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 58 | 0 |
+| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 58 | 0 |
+| Brazilian joyweed (`alternanthera-brasiliana`) | plants | 0 | 58 | 0 |
 | Khakiweed (`alternanthera-pungens`) | plants | 0 | 58 | 0 |
-| Sessile joyweed (`alternanthera-sessilis`) | plants | 0 | 58 | 0 |
-| African amaranth (`amaranthus-muricatus`) | plants | 0 | 58 | 0 |
-| Asian Longhorned Beetle (`asian-longhorned-beetle`) | insects | 0 | 58 | 0 |
-| Wild chervil (`anthriscus-sylvestris`) | plants | 0 | 58 | 0 |
-| Small Carpgrass (`arthraxon-hispidus`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 4616 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 1920 | 181 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1923 | 189 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

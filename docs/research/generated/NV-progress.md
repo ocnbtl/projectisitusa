@@ -1,26 +1,26 @@
 # Nevada Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `17`
 - County-species pairs: `42568`
-- Verified present: `669`
+- Verified present: `670`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `7576`
-- Not researched: `34323`
+- Researched unresolved: `7711`
+- Not researched: `34187`
 - Determination coverage: `1.57%`
-- Research coverage: `19.37%`
-- Explicit outcome coverage: `19.3690%`
-- Applicable protocol cells: `210`
-- Current complete protocol cells: `85`
-- Protocol completion: `46.67%`
-- Current protocol completion: `40.48%`
-- Evidence records: `993`
-- Research runs: `25`
+- Research coverage: `19.69%`
+- Explicit outcome coverage: `19.6885%`
+- Applicable protocol cells: `211`
+- Current complete protocol cells: `86`
+- Protocol completion: `46.92%`
+- Current protocol completion: `40.76%`
+- Evidence records: `994`
+- Research runs: `26`
 - Rejection records: `153`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -56,7 +56,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 17 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 17 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 17 | 0 |
-| Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 17 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 17 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 609 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 53 | 110 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 54 | 118 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

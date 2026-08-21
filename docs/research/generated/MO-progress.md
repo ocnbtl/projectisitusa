@@ -1,6 +1,6 @@
 # Missouri Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-20T00:00:00.000Z`
 - Verified present: `6585`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `45970`
-- Not researched: `235405`
+- Researched unresolved: `46890`
+- Not researched: `234485`
 - Determination coverage: `2.29%`
-- Research coverage: `18.25%`
-- Explicit outcome coverage: `18.2508%`
+- Research coverage: `18.57%`
+- Explicit outcome coverage: `18.5703%`
 - Applicable protocol cells: `295`
 - Current complete protocol cells: `113`
 - Protocol completion: `42.71%`
 - Current protocol completion: `38.31%`
 - Evidence records: `7426`
-- Research runs: `25`
-- Rejection records: `680`
+- Research runs: `26`
+- Rejection records: `683`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -50,13 +50,13 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 115 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 115 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 115 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 115 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 115 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 115 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 115 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 115 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 115 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 115 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 115 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 115 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5427 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 695 | 129 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 695 | 137 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

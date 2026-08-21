@@ -1,6 +1,6 @@
 # Idaho Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-20T00:00:00.000Z`
 - Verified present: `2010`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `19198`
-- Not researched: `88968`
+- Researched unresolved: `19550`
+- Not researched: `88616`
 - Determination coverage: `1.82%`
-- Research coverage: `19.25%`
-- Explicit outcome coverage: `19.2492%`
+- Research coverage: `19.57%`
+- Explicit outcome coverage: `19.5687%`
 - Applicable protocol cells: `264`
 - Current complete protocol cells: `85`
 - Protocol completion: `37.12%`
 - Current protocol completion: `32.20%`
 - Evidence records: `2543`
-- Research runs: `23`
+- Research runs: `24`
 - Rejection records: `352`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1726 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 189 | 98 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 189 | 106 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

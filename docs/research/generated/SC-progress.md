@@ -1,6 +1,6 @@
 # South Carolina Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,18 +10,18 @@ Generated: `2026-08-20T00:00:00.000Z`
 - Verified present: `3641`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `17289`
-- Not researched: `94254`
+- Researched unresolved: `17657`
+- Not researched: `93886`
 - Determination coverage: `3.16%`
-- Research coverage: `18.17%`
-- Explicit outcome coverage: `18.1709%`
+- Research coverage: `18.49%`
+- Explicit outcome coverage: `18.4904%`
 - Applicable protocol cells: `342`
 - Current complete protocol cells: `78`
 - Protocol completion: `26.61%`
 - Current protocol completion: `22.81%`
 - Evidence records: `3941`
-- Research runs: `27`
-- Rejection records: `43`
+- Research runs: `28`
+- Rejection records: `44`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -43,20 +43,20 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Mysid (`acanthomysis-aspera`) | wildlife | 0 | 46 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 46 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 46 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 46 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 46 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 46 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 46 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 46 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 46 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 46 | 0 |
+| Rockroot (`agdestis-clematidea`) | plants | 0 | 46 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 46 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 46 | 0 |
+| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 46 | 0 |
 | Bentgrass (`agrostis-castellana`) | plants | 0 | 46 | 0 |
 | Redtop (`agrostis-gigantea`) | plants | 0 | 46 | 0 |
 | Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 46 | 0 |
-| Khakiweed (`alternanthera-pungens`) | plants | 0 | 46 | 0 |
-| Largefruit amaranth (`amaranthus-deflexus`) | plants | 0 | 46 | 0 |
-| African amaranth (`amaranthus-muricatus`) | plants | 0 | 46 | 0 |
-| Mexican fruit fly (`anastrepha-ludens`) | insects | 0 | 46 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2977 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 156 | 99 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 156 | 107 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

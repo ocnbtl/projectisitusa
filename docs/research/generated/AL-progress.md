@@ -1,6 +1,6 @@
 # Alabama Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-20T00:00:00.000Z`
 - Verified present: `15300`
 - Verified absent: `0`
 - Not detected: `8`
-- Researched unresolved: `97989`
-- Not researched: `54471`
+- Researched unresolved: `98525`
+- Not researched: `53935`
 - Determination coverage: `9.12%`
-- Research coverage: `67.53%`
-- Explicit outcome coverage: `41.0543%`
+- Research coverage: `67.85%`
+- Explicit outcome coverage: `41.3738%`
 - Applicable protocol cells: `14440`
-- Current complete protocol cells: `1341`
-- Protocol completion: `9.38%`
-- Current protocol completion: `9.29%`
+- Current complete protocol cells: `1349`
+- Protocol completion: `9.43%`
+- Current protocol completion: `9.34%`
 - Evidence records: `53827`
-- Research runs: `65`
+- Research runs: `66`
 - Rejection records: `6286`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -35,11 +35,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Devil's horsewhip (`achyranthes-aspera-var-pubescens`) | plants | 67 | 0 | 6 |
 | Leek moth (`acrolepiopsis-assectella`) | insects | 67 | 0 | 6 |
 | Pea aphid (`acyrthosiphon-primulae`) | insects | 67 | 0 | 6 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 67 | 0 | 6 |
 | Tropical mosquito (`aedeomyia-squamipennis`) | insects | 67 | 0 | 6 |
 | Australian backyard mosquito (`aedes-notoscriptus`) | insects | 67 | 0 | 6 |
-| Rockroot (`agdestis-clematidea`) | plants | 67 | 0 | 6 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 67 | 0 | 6 |
 | Rose stem girdler (`agrilus-cuprescens`) | insects | 67 | 0 | 6 |
 | Bluish borer beetle (`agrilus-cyanescens`) | insects | 67 | 0 | 6 |
 | Currant stem girdler (`agrilus-ribesi`) | insects | 67 | 0 | 6 |
@@ -52,11 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Rugose spiraling whitefly (`aleurodicus-rugioperculatus`) | insects | 67 | 0 | 6 |
 | Whitefly (`aleuroglandulus-subtilis`) | insects | 67 | 0 | 6 |
 | Aloe aphid (`aloephagus-myersi`) | insects | 67 | 0 | 6 |
-| Shellplant (`alpinia-zerumbet`) | plants | 67 | 0 | 6 |
-| Brazilian joyweed (`alternanthera-brasiliana`) | plants | 67 | 0 | 6 |
-| Sanguinaria (`alternanthera-ficoidea`) | plants | 67 | 0 | 6 |
-| Alyssum (`alyssum-strigosum`) | plants | 67 | 0 | 6 |
 | Spleen amaranth (`amaranthus-dubius`) | plants | 67 | 0 | 6 |
+| Mediterranean amaranth (`amaranthus-graecizans`) | plants | 67 | 0 | 6 |
+| Caribbean fruit fly (`anastrepha-suspensa`) | insects | 67 | 0 | 6 |
+| Armoured scale (`andaspis-punicae`) | insects | 67 | 0 | 6 |
+| Pear blight beetle (`anisandrus-dispar`) | insects | 67 | 0 | 6 |
+| Furniture beetle (`anobium-punctatum`) | insects | 67 | 0 | 6 |
+| Aphid (`anoecia-vagans`) | insects | 67 | 0 | 6 |
+| Noxious bamboo mealybug (`antonina-pretiosa`) | insects | 67 | 0 | 6 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | 2026-06-16T03:44:13.025Z | 7 | 3 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2008 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 6653 | 1008 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 6653 | 1016 |
 | GBIF coordinate-resolved preserved specimen records | operational | 2026-07-06T22:47:17.903Z | 904 | 68 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | 2026-06-26T11:22:25.724Z | 308 | 61 |
 | GBIF eBird Observation Dataset | operational | 2026-06-28T05:33:30.608Z | 292 | 10 |

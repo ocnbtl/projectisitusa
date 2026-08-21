@@ -1,6 +1,6 @@
 # Oklahoma Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-20T00:00:00.000Z`
 - Verified present: `1604`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `33431`
-- Not researched: `157773`
+- Researched unresolved: `34047`
+- Not researched: `157157`
 - Determination coverage: `0.83%`
-- Research coverage: `18.17%`
-- Explicit outcome coverage: `18.1709%`
+- Research coverage: `18.49%`
+- Explicit outcome coverage: `18.4904%`
 - Applicable protocol cells: `224`
 - Current complete protocol cells: `104`
 - Protocol completion: `52.23%`
 - Current protocol completion: `46.43%`
 - Evidence records: `1778`
-- Research runs: `24`
+- Research runs: `25`
 - Rejection records: `78`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -52,11 +52,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 77 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 77 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 77 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 77 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 77 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 77 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 77 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 77 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 77 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 1186 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 133 | 133 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 133 | 141 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

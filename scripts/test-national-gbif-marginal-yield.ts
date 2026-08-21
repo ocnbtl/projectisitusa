@@ -23,6 +23,7 @@ async function main() {
     { round: 76, selectedTaxa: 10, selectedPairs: 26_031, presentPairs: 918, researchedUnresolvedPairs: 25_113, marginalYieldPercent: 3.527, providerRows: 13_770 },
     { round: 77, selectedTaxa: 8, selectedPairs: 25_152, presentPairs: 25, researchedUnresolvedPairs: 25_127, marginalYieldPercent: 0.099, providerRows: 381 },
     { round: 78, selectedTaxa: 8, selectedPairs: 25_152, presentPairs: 197, researchedUnresolvedPairs: 24_955, marginalYieldPercent: 0.783, providerRows: 1_638 },
+    { round: 79, selectedTaxa: 8, selectedPairs: 25_152, presentPairs: 30, researchedUnresolvedPairs: 25_122, marginalYieldPercent: 0.119, providerRows: 433 },
   ],
   );
 
@@ -42,8 +43,8 @@ async function main() {
     providerRows: 381,
     geographyRejectedRows: 272,
     selectedScopeRows: 109,
-    selectedRejectedArchiveRows: 35,
-    selectedAcceptedArchiveRows: 74,
+    selectedRejectedArchiveRows: 32,
+    selectedAcceptedArchiveRows: 77,
     representativeRejectionGroups: 20,
     rejectionReasonRows: { "cultivated-or-captive": 32, "geography-ambiguous": 3 },
   },
@@ -83,9 +84,9 @@ async function main() {
       providerRows: 1_638,
       geographyRejectedRows: 1_117,
       selectedScopeRows: 521,
-      selectedRejectedArchiveRows: 116,
-      selectedAcceptedArchiveRows: 405,
-      duplicateAcceptedArchiveRows: 208,
+      selectedRejectedArchiveRows: 81,
+      selectedAcceptedArchiveRows: 440,
+      duplicateAcceptedArchiveRows: 243,
       representativeRejectionGroups: 43,
     },
   );
@@ -107,16 +108,61 @@ async function main() {
     { selectionLane: "exploration", selectedTaxa: 1, selectedPairs: 3_144, presentPairs: 0, researchedUnresolvedPairs: 3_144, marginalYieldPercent: 0 },
   ]);
   assert(Object.values(round78.checks).every(Boolean));
+
+  const round79 = audit.rounds.find((entry) => entry.round === 79);
+  assert(round79);
+  assert.deepEqual(
+    {
+      integrationPath: round79.integrationPath,
+      providerRows: round79.providerRows,
+      geographyRejectedRows: round79.geographyRejectedRows,
+      selectedScopeRows: round79.selectedScopeRows,
+      selectedRejectedArchiveRows: round79.selectedRejectedArchiveRows,
+      selectedAcceptedArchiveRows: round79.selectedAcceptedArchiveRows,
+      duplicateAcceptedArchiveRows: round79.duplicateAcceptedArchiveRows,
+      representativeRejectionGroups: round79.representativeRejectionGroups,
+      rejectionReasonRows: round79.rejectionReasonRows,
+    },
+    {
+      integrationPath: null,
+      providerRows: 433,
+      geographyRejectedRows: 350,
+      selectedScopeRows: 83,
+      selectedRejectedArchiveRows: 38,
+      selectedAcceptedArchiveRows: 45,
+      duplicateAcceptedArchiveRows: 15,
+      representativeRejectionGroups: 35,
+      rejectionReasonRows: { "cultivated-or-captive": 37, "geography-ambiguous": 21, "source-contradiction": 1 },
+    },
+  );
+  assert.deepEqual(
+    round79.perTaxon.map((taxon) => [taxon.speciesId, taxon.selectionLane, taxon.acceptedPairs]),
+    [
+      ["aceria-litchii", "exploration", 0],
+      ["adiantum-macrophyllum", "exploitation", 1],
+      ["agdestis-clematidea", "exploitation", 8],
+      ["aglaonema-commutatum", "exploitation", 1],
+      ["alpinia-zerumbet", "exploitation", 6],
+      ["alternanthera-brasiliana", "exploitation", 6],
+      ["alternanthera-ficoidea", "exploitation", 6],
+      ["alyssum-strigosum", "exploitation", 2],
+    ],
+  );
+  assert.deepEqual(round79.lanes, [
+    { selectionLane: "exploitation", selectedTaxa: 7, selectedPairs: 22_008, presentPairs: 30, researchedUnresolvedPairs: 21_978, marginalYieldPercent: 0.136 },
+    { selectionLane: "exploration", selectedTaxa: 1, selectedPairs: 3_144, presentPairs: 0, researchedUnresolvedPairs: 3_144, marginalYieldPercent: 0 },
+  ]);
+  assert(Object.values(round79.checks).every(Boolean));
   assert.deepEqual(audit.aggregate, {
-    auditedRounds: 7,
-    selectedTaxa: 66,
-    selectedPairs: 180_436,
-    presentPairs: 7_005,
-    researchedUnresolvedPairs: 173_431,
-    providerRows: 78_848,
+    auditedRounds: 8,
+    selectedTaxa: 74,
+    selectedPairs: 205_588,
+    presentPairs: 7_035,
+    researchedUnresolvedPairs: 198_553,
+    providerRows: 79_281,
   });
 
-  process.stdout.write("National GBIF marginal-yield audit passed for Rounds 70, 72, and 74-78.\n");
+  process.stdout.write("National GBIF marginal-yield audit passed for Rounds 70, 72, and 74-79.\n");
 }
 
 void main();

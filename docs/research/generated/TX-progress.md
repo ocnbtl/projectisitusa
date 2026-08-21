@@ -1,27 +1,27 @@
 # Texas Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `254`
 - County-species pairs: `636016`
-- Verified present: `7137`
+- Verified present: `7140`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `109449`
-- Not researched: `519430`
+- Researched unresolved: `111478`
+- Not researched: `517398`
 - Determination coverage: `1.12%`
-- Research coverage: `18.33%`
-- Explicit outcome coverage: `18.3307%`
-- Applicable protocol cells: `362`
-- Current complete protocol cells: `112`
-- Protocol completion: `34.53%`
-- Current protocol completion: `30.94%`
-- Evidence records: `9588`
-- Research runs: `25`
-- Rejection records: `585`
+- Research coverage: `18.65%`
+- Explicit outcome coverage: `18.6502%`
+- Applicable protocol cells: `363`
+- Current complete protocol cells: `113`
+- Protocol completion: `34.71%`
+- Current protocol completion: `31.13%`
+- Evidence records: `9591`
+- Research runs: `26`
+- Rejection records: `587`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -49,14 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 254 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 254 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 254 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 254 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 254 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 254 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 254 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 254 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 254 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 254 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 254 | 0 |
-| Redtop (`agrostis-gigantea`) | plants | 0 | 254 | 0 |
-| Chocolate Vine (`akebia-quinata`) | plants | 0 | 254 | 0 |
+| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 254 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 5251 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 1010 | 134 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 1013 | 142 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

@@ -1,6 +1,6 @@
 # Vermont Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -10,17 +10,17 @@ Generated: `2026-08-20T00:00:00.000Z`
 - Verified present: `1145`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `5269`
-- Not researched: `28642`
+- Researched unresolved: `5381`
+- Not researched: `28530`
 - Determination coverage: `3.27%`
-- Research coverage: `18.30%`
-- Explicit outcome coverage: `18.2964%`
+- Research coverage: `18.62%`
+- Explicit outcome coverage: `18.6159%`
 - Applicable protocol cells: `263`
 - Current complete protocol cells: `86`
 - Protocol completion: `37.64%`
 - Current protocol completion: `32.70%`
 - Evidence records: `1382`
-- Research runs: `25`
+- Research runs: `26`
 - Rejection records: `120`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -55,8 +55,8 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Hispid starbur (`acanthospermum-hispidum`) | plants | 0 | 14 | 0 |
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 14 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 14 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 14 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 14 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 14 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 861 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 125 | 100 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 125 | 108 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |

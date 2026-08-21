@@ -1,27 +1,27 @@
 # Louisiana Research Progress
 
-Generated: `2026-08-20T00:00:00.000Z`
+Generated: `2026-08-21T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `64`
 - County-species pairs: `160256`
-- Verified present: `7810`
+- Verified present: `7811`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `21310`
-- Not researched: `131136`
+- Researched unresolved: `21821`
+- Not researched: `130624`
 - Determination coverage: `4.87%`
-- Research coverage: `18.17%`
-- Explicit outcome coverage: `18.1709%`
-- Applicable protocol cells: `367`
-- Current complete protocol cells: `105`
-- Protocol completion: `32.15%`
-- Current protocol completion: `28.61%`
-- Evidence records: `10784`
-- Research runs: `24`
-- Rejection records: `1250`
+- Research coverage: `18.49%`
+- Explicit outcome coverage: `18.4904%`
+- Applicable protocol cells: `368`
+- Current complete protocol cells: `106`
+- Protocol completion: `32.34%`
+- Current protocol completion: `28.80%`
+- Evidence records: `10785`
+- Research runs: `25`
+- Rejection records: `1252`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -49,14 +49,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Honey bee tracheal mite (`acarapis-woodi`) | wildlife | 0 | 64 | 0 |
 | Norway Maple (`acer-platanoides`) | plants | 0 | 64 | 0 |
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 64 | 0 |
+| Litchi mite (`aceria-litchii`) | wildlife | 0 | 64 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 64 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 64 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 64 | 0 |
+| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 64 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 64 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 64 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 64 | 0 |
-| Chocolate Vine (`akebia-quinata`) | plants | 0 | 64 | 0 |
-| Candlenut tree (`aleurites-moluccanus`) | plants | 0 | 64 | 0 |
+| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 64 | 0 |
 
 ## Source Operations
 
@@ -80,7 +80,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 7190 | 316 |
-| GBIF preserved specimen records | operational | 2026-08-20T03:26:44.580Z | 733 | 140 |
+| GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 734 | 148 |
 | GBIF coordinate-resolved preserved specimen records | operational | not run | 0 | 0 |
 | GBIF Invasive Plant Atlas of the MidSouth records | operational | not run | 0 | 0 |
 | GBIF eBird Observation Dataset | operational | not run | 0 | 0 |
