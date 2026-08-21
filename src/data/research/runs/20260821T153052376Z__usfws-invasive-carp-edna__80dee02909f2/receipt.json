@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260821T153052376Z__usfws-invasive-carp-edna__80dee02909f2",
+  "status": "complete",
+  "started_at": "2026-08-21T15:30:52.376Z",
+  "finished_at": "2026-08-21T15:30:52.376Z",
+  "actor_type": "adapter",
+  "actor_id": "usfws-invasive-carp-edna-snapshot@1.0.0",
+  "source_id": "usfws-invasive-carp-edna",
+  "source_registry_hash": "0809b8ce2e3895387094934a0db843729a26021c5016300c05e1ee0aef0887c0",
+  "adapter_id": "usfws-invasive-carp-edna-snapshot",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "0af6c4223a0f9db882ec832ae4121d0ede5b6b90aef3412b353763e76387692b",
+  "code_commit": "7ae724c7e49d003e5ca6f957266d5fb1b1e60727",
+  "parameter_hash": "83e5cd248a29a888beeb039d76170aa95fe69ed3cbb1604c3443460b020a69f1",
+  "parameters": {
+    "stateCode": "MS",
+    "mode": "national-acquisition-replay",
+    "nationalAcquisitionId": "20260821t144438__usfws-invasive-carp-edna__083227dff845",
+    "nationalAcquisitionReceiptSha256": "f8d4147da99ba8f8507eb9665d954ac9553a4d886c05122c50b74fab2ef7c112",
+    "coverageSha256": "3ee8b190905bcfb865a82b5428976e997e692071c4c3076200200bc680200e94",
+    "selectedPairClassification": "researched-unresolved-candidate",
+    "candidatePairs": [
+      "28071:hypophthalmichthys-molitrix",
+      "28117:hypophthalmichthys-molitrix",
+      "28117:hypophthalmichthys-nobilis",
+      "28141:hypophthalmichthys-molitrix",
+      "28141:hypophthalmichthys-nobilis"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "MS",
+    "county_fips": [
+      "28071",
+      "28117",
+      "28141"
+    ],
+    "species_ids": [
+      "hypophthalmichthys-molitrix",
+      "hypophthalmichthys-nobilis"
+    ],
+    "pair_keys": [
+      "28071:hypophthalmichthys-molitrix",
+      "28117:hypophthalmichthys-molitrix",
+      "28117:hypophthalmichthys-nobilis",
+      "28141:hypophthalmichthys-molitrix",
+      "28141:hypophthalmichthys-nobilis"
+    ],
+    "date_range": {
+      "start": "2015-04-27",
+      "end": "2018-04-02"
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260821T153052376Z__usfws-invasive-carp-edna__80dee02909f2/artifacts/national-acquisition-reference.json",
+      "sha256": "b5baf50cc4a50890e365610b55f68dbad5bb0dce768f6dccdb389c292a89522e",
+      "bytes": 1455,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260821T153052376Z__usfws-invasive-carp-edna__80dee02909f2/assertions.ndjson",
+      "sha256": "613bdb5d15275f7ab194fd8a3b3945c9645b97c0131c7c72c43ab4fffcd41d18",
+      "bytes": 16194,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260821T153052376Z__usfws-invasive-carp-edna__80dee02909f2/reviews.ndjson",
+      "sha256": "054680212590eabe408cc890a729ba029b9f206a5139f56bbc17cfa0b1dd1f77",
+      "bytes": 5903,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260821T153052376Z__usfws-invasive-carp-edna__80dee02909f2/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260821T153052376Z__usfws-invasive-carp-edna__80dee02909f2/outcomes.ndjson",
+      "sha256": "861045a1cdc0647f28018df864456da815da70af53f85894620f7753a1b749c2",
+      "bytes": 4648,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 315,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "An exact No eDNA detected sample supports survey-area non-detection for Bighead and Silver Carp only. It does not establish countywide absence, and positive eDNA is not treated as verified presence.",
+    "The assertion scope is the surveyed sample points and waters, never unsampled county area or verified countywide absence.",
+    "Positive eDNA is excluded and never converted to verified presence.",
+    "Historical assay and sample-processing changes remain explicit caveats."
+  ],
+  "source_warnings": [
+    "USFWS eDNA survey non-detection is not verified absence.",
+    "Positive eDNA labels are excluded and are not converted to verified presence.",
+    "Historical assay and processing changes remain explicit caveats."
+  ],
+  "deviations": [
+    "The official national layer was acquired once, then replayed locally without state-specific network requests.",
+    "Only pairs classified as researched-unresolved at acquisition time were selected; verified-present overlaps, already-not-detected pairs, and positive labels were excluded.",
+    "Qualifying sample rows were aggregated to one not-detected assertion per county-species pair while all raw rows remained in the hash-pinned acquisition.",
+    "The source-specific coordinate exception retains the exact committed topology hash and per-assertion coordinate-set hash; the global coordinate-derived geography default remains prohibited."
+  ],
+  "rerun_command": "& 'C:\\Code\\tools\\node-v22.23.2-win-x64\\node.exe' --import tsx scripts/research/partition-usfws-invasive-carp-edna-acquisition.ts --acquisition 20260821t144438__usfws-invasive-carp-edna__083227dff845 --recorded-at 2026-08-21T15:30:52.376Z"
+}
