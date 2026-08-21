@@ -1,0 +1,99 @@
+{
+  "downloadKey": "0027542-260806074905277",
+  "httpAttempts": [
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "POST",
+      "observedAt": "2026-08-21T00:12:33.106Z",
+      "retryable": false,
+      "role": "request",
+      "status": 201,
+      "url": "https://api.gbif.org/v1/occurrence/download/request"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-21T00:12:33.225Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0027542-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-21T00:13:33.616Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0027542-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-21T00:14:33.986Z",
+      "retryable": false,
+      "role": "status",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/0027542-260806074905277"
+    },
+    {
+      "attempt": 1,
+      "error": null,
+      "method": "GET",
+      "observedAt": "2026-08-21T00:14:34.713Z",
+      "retryable": false,
+      "role": "archive",
+      "status": 200,
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0027542-260806074905277.zip"
+    }
+  ],
+  "parameterHash": "aa28fb27eb6e56f8ffd8704c9be031a28266e2f996afa274fd6f47199c4ff055",
+  "planSha256": "53df4501b0627eb6cc869ad1f124c35593306418906e1e3fe3a21441e5025591",
+  "requestResolution": "provider-response",
+  "requestedAt": "2026-08-21T00:12:30.583Z",
+  "selectionSha256": "35b552e010123ce4f3e69b82b2b4a792cf70691ecbb822823695cc23b373453a",
+  "startedAt": "2026-08-21T00:05:30.542Z",
+  "statusHistory": [
+    {
+      "created": "2026-08-21T00:12:33.009+00:00",
+      "doi": null,
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0027542-260806074905277.zip",
+      "key": "0027542-260806074905277",
+      "license": "unspecified",
+      "modified": "2026-08-21T00:12:33.009+00:00",
+      "observedAt": "2026-08-21T00:12:33.227Z",
+      "size": 0,
+      "status": "PREPARING",
+      "totalRecords": 433
+    },
+    {
+      "created": "2026-08-21T00:12:33.009+00:00",
+      "doi": null,
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0027542-260806074905277.zip",
+      "key": "0027542-260806074905277",
+      "license": "unspecified",
+      "modified": "2026-08-21T00:12:38.100+00:00",
+      "observedAt": "2026-08-21T00:13:33.618Z",
+      "size": 0,
+      "status": "RUNNING",
+      "totalRecords": 433
+    },
+    {
+      "created": "2026-08-21T00:12:33.009+00:00",
+      "doi": "10.15468/dl.2m3mty",
+      "downloadLink": "https://api.gbif.org/v1/occurrence/download/request/0027542-260806074905277.zip",
+      "key": "0027542-260806074905277",
+      "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode",
+      "modified": "2026-08-21T00:14:25.683+00:00",
+      "observedAt": "2026-08-21T00:14:33.988Z",
+      "size": 284218,
+      "status": "SUCCEEDED",
+      "totalRecords": 433
+    }
+  ]
+}
