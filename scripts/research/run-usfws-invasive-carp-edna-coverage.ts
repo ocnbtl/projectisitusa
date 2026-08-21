@@ -116,6 +116,7 @@ function parseArgs(argv: string[]): ParsedArgs {
   for (const key of ["baseline-sha", "observed-at"]) {
     assert(values.has(key), `Missing --${key}.`);
   }
+  assert(/^[a-f0-9]{40}$/u.test(values.get("baseline-sha")!), "--baseline-sha must be a full Git commit SHA.");
   const observedAt = values.get("observed-at")!;
   assert(new Date(observedAt).toISOString() === observedAt, "--observed-at must be an ISO timestamp.");
   return {
@@ -287,7 +288,7 @@ function parseRow(value: unknown, label: string): UsfwsEdnaRow {
   };
 }
 
-function countyResolver() {
+export function countyResolver() {
   const collection = feature(
     countyTopology as never,
     countyTopology.objects.counties as never,
@@ -539,9 +540,12 @@ async function main() {
   const receipt = {
     schemaVersion: 1,
     acquisitionId,
+    acquisition_id: acquisitionId,
     sourceId: "usfws-invasive-carp-edna",
+    source_id: "usfws-invasive-carp-edna",
     status: "complete-provider-write-free-coverage-preflight",
     baselineSha: args.baselineSha,
+    code_commit: args.baselineSha,
     observedAt: args.observedAt,
     finishedAt: new Date().toISOString(),
     sourceIdentity: {

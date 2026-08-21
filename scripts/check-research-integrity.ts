@@ -103,6 +103,15 @@ import {
   verifyNationalGbifAcquisition,
 } from "./research/verify-national-gbif-download";
 import {
+  USFWS_EDNA_ADAPTER_ID,
+  USFWS_EDNA_SOURCE_ID,
+} from "./research/adapters/usfws-invasive-carp-edna-snapshot";
+import {
+  type NationalUsfwsEdnaReference,
+  validateNationalUsfwsEdnaReference,
+  verifyNationalUsfwsEdnaAcquisition,
+} from "./research/national-usfws-edna-common";
+import {
   getStateDefinition,
   listCountyEquivalents,
 } from "@/lib/research/geography-registry";
@@ -435,6 +444,7 @@ const nationalFiaAcquisitions = [];
 const nationalAphisAcquisitions = [];
 const nationalNrcsAcquisitions = [];
 const nationalGbifAcquisitions = [];
+const nationalUsfwsEdnaAcquisitions = [];
 const nationalAphisPlanPath = path.join(
   ROOT,
   "src/data/research/national-acquisition-plans/aphis-federal-quarantine-national-v1.json",
@@ -473,6 +483,8 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
               ? verifyNationalNrcsAcquisition(directory, nationalNrcsPlan)
               : candidate.source_id === "gbif-preserved-specimens"
                 ? await verifyNationalGbifAcquisition(ROOT, directory)
+                : candidate.source_id === USFWS_EDNA_SOURCE_ID
+                  ? verifyNationalUsfwsEdnaAcquisition(ROOT, directory)
             : null;
     assert(
       verified,
@@ -502,6 +514,10 @@ if (existsSync(NATIONAL_ACQUISITIONS_DIR)) {
     } else if (candidate.source_id === "gbif-preserved-specimens") {
       nationalGbifAcquisitions.push(
         verified as Awaited<ReturnType<typeof verifyNationalGbifAcquisition>>,
+      );
+    } else if (candidate.source_id === USFWS_EDNA_SOURCE_ID) {
+      nationalUsfwsEdnaAcquisitions.push(
+        verified as ReturnType<typeof verifyNationalUsfwsEdnaAcquisition>,
       );
     } else {
       nationalNrcsAcquisitions.push(
@@ -557,6 +573,10 @@ const nationalGbifAcquisitionById = new Map(
   ]),
 );
 const nationalGbifReferences: NationalGbifReference[] = [];
+const nationalUsfwsEdnaAcquisitionById = new Map(
+  nationalUsfwsEdnaAcquisitions.map((entry) => [entry.receipt.acquisition_id, entry]),
+);
+const nationalUsfwsEdnaReferences: NationalUsfwsEdnaReference[] = [];
 const nationalGbifReferenceEntries: Array<NationalReferenceEntry<NationalGbifReference>> = [];
 
 assert(bootstrapFreeze.rules.initializationOnly, "Bootstrap migration is no longer initialization-only.");
@@ -849,6 +869,71 @@ for (const runDirectory of immutableRunDirectories) {
         reference.reconciliation.blocking_candidate_records <=
           reference.reconciliation.rejected_candidate_records,
       `Immutable run ${receipt.run_id} national reconciliation counts changed.`,
+    );
+  }
+  if (
+    receipt.source_id === USFWS_EDNA_SOURCE_ID &&
+    receipt.adapter_id === USFWS_EDNA_ADAPTER_ID
+  ) {
+    const matchingArtifacts = receipt.artifacts.filter((entry) =>
+      entry.path.endsWith("/artifacts/national-acquisition-reference.json"),
+    );
+    assert(
+      matchingArtifacts.length === 1,
+      `Immutable run ${receipt.run_id} must contain one USFWS national acquisition reference.`,
+    );
+    const artifact = matchingArtifacts[0]!;
+    const artifactBytes = readFileSync(path.join(ROOT, artifact.path));
+    assert(
+      artifactBytes.length === artifact.bytes && sha256(artifactBytes) === artifact.sha256,
+      `Immutable run ${receipt.run_id} USFWS acquisition reference changed.`,
+    );
+    const reference = JSON.parse(artifactBytes.toString("utf8")) as NationalUsfwsEdnaReference;
+    validateNationalUsfwsEdnaReference(reference);
+    nationalUsfwsEdnaReferences.push(reference);
+    const acquisition = nationalUsfwsEdnaAcquisitionById.get(reference.acquisitionId);
+    assert(acquisition, `Immutable run ${receipt.run_id} references an unknown USFWS acquisition.`);
+    const records = acquisition.artifactsByRole.get("source-records")!;
+    const coverage = acquisition.artifactsByRole.get("coverage-projection")!;
+    assert(
+      reference.acquisitionReceiptPath === path.relative(ROOT, acquisition.receiptPath).split(path.sep).join("/") &&
+        reference.acquisitionReceiptSha256 === acquisition.receiptSha256 &&
+        reference.recordsPath === path.relative(ROOT, records.path).split(path.sep).join("/") &&
+        reference.recordsSha256 === records.artifact.sha256 &&
+        reference.coveragePath === path.relative(ROOT, coverage.path).split(path.sep).join("/") &&
+        reference.coverageSha256 === coverage.artifact.sha256,
+      `Immutable run ${receipt.run_id} USFWS acquisition lineage changed.`,
+    );
+    assertCommitAncestor(ROOT, acquisition.receipt.code_commit, receipt.code_commit);
+    assert(
+      reference.sourceId === receipt.source_id &&
+        reference.adapterVersion === receipt.adapter_version &&
+        reference.adapterCodeSha256 === receipt.adapter_code_hash &&
+        reference.stateCode === runStateCode &&
+        reference.selectedPairCount === receipt.counts.requested_pairs &&
+        reference.selectedPairCount === receipt.counts.assertion_events &&
+        reference.selectedPairCount === receipt.counts.pair_outcomes &&
+        reference.selectedSampleCount === receipt.counts.candidate_records &&
+        bundle.assertions.every((entry) => entry.claim_type === "not-detected"),
+      `Immutable run ${receipt.run_id} USFWS scope or claim semantics changed.`,
+    );
+    const committedPartitionScript = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:scripts/research/partition-usfws-invasive-carp-edna-acquisition.ts`],
+      { cwd: ROOT },
+    );
+    const committedTopology = execFileSync(
+      "git",
+      ["show", `${receipt.code_commit}:${reference.topologyPath}`],
+      { cwd: ROOT, maxBuffer: 20 * 1024 * 1024 },
+    );
+    assert(
+      sha256(committedPartitionScript) === reference.partitionScriptSha256 &&
+        sha256(committedTopology) === reference.topologySha256 &&
+        bundle.assertions.every((entry) =>
+          entry.geography_match.topology_sha256 === reference.topologySha256
+        ),
+      `Immutable run ${receipt.run_id} USFWS partition or topology inputs changed.`,
     );
   }
   if (
@@ -2460,6 +2545,12 @@ console.log(
         0,
       ),
       nationalGbifReferenceCount: nationalGbifReferences.length,
+      nationalUsfwsEdnaAcquisitionCount: nationalUsfwsEdnaAcquisitions.length,
+      nationalUsfwsEdnaAcquisitionRecordCount: nationalUsfwsEdnaAcquisitions.reduce(
+        (sum, entry) => sum + entry.receipt.coverage.rawRows,
+        0,
+      ),
+      nationalUsfwsEdnaReferenceCount: nationalUsfwsEdnaReferences.length,
       bootstrapResearchRunCount: runs.length,
       immutableResearchRunCount: projectedAlabamaImmutableRunCount,
       totalImmutableResearchRunCount: immutableRunIds.size,

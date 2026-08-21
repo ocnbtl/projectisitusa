@@ -375,6 +375,10 @@ export interface RunEvidenceAssertionEvent extends ResearchActor {
     source_state: string;
     source_county: string;
     county_fips: string;
+    source_coordinate_count?: number;
+    source_coordinates_sha256?: string;
+    topology_path?: string;
+    topology_sha256?: string;
   };
   temporal_scope: string;
   spatial_scope: string;

@@ -117,6 +117,27 @@ expectFailure(
   () =>
     validate({
       ...baseResult,
+      assertions: [
+        {
+          ...baseResult.assertions[0],
+          geography_match: {
+            ...baseResult.assertions[0].geography_match,
+            method: "Source coordinates used for coordinate-derived county assignment",
+            source_coordinate_count: 1,
+            source_coordinates_sha256: "1".repeat(64),
+            topology_path: "src/data/source/county-equivalents-topology.json",
+            topology_sha256: "2".repeat(64),
+          },
+        },
+        ...baseResult.assertions.slice(1),
+      ],
+    }),
+  "Unregistered coordinate-derived geography",
+);
+expectFailure(
+  () =>
+    validate({
+      ...baseResult,
       outcomes: [
         { ...baseResult.outcomes[0], state_code: "TX" },
         ...baseResult.outcomes.slice(1),
@@ -174,6 +195,7 @@ console.log(
       duplicateIdRejected: true,
       badCrossReferenceRejected: true,
       schemaViolationRejected: true,
+      unregisteredCoordinateGeographyRejected: true,
       stateScopeMismatchRejected: true,
       belowGateReviewRejected: true,
       parameterHashMismatchRejected: true,

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/usfws-invasive-carp-edna-snapshot-parameters.schema.json",
+  "title": "USFWS invasive-carp eDNA national snapshot replay parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stateCode",
+    "mode",
+    "nationalAcquisitionId",
+    "nationalAcquisitionReceiptSha256",
+    "coverageSha256",
+    "selectedPairClassification",
+    "candidatePairs"
+  ],
+  "properties": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "mode": { "const": "national-acquisition-replay" },
+    "nationalAcquisitionId": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
+    "nationalAcquisitionReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "coverageSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "selectedPairClassification": { "const": "researched-unresolved-candidate" },
+    "candidatePairs": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
+      "minItems": 1,
+      "maxItems": 500,
+      "uniqueItems": true
+    }
+  }
+}

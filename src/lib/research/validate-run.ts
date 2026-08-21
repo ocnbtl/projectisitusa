@@ -4,6 +4,13 @@ import { execFileSync } from "node:child_process";
 
 import { z } from "zod";
 
+import {
+  USFWS_EDNA_COORDINATE_GEOGRAPHY_METHOD,
+  USFWS_EDNA_COORDINATE_GEOGRAPHY_POLICY,
+  USFWS_EDNA_COORDINATE_SOURCE_ID,
+  USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
+} from "@/lib/research/coordinate-geography-contract";
+
 import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type {
   ImmutableResearchRunBundle,
@@ -309,10 +316,46 @@ export function validateResearchRunInMemory(input: {
       /without coordinate-derived|not coordinate-derived|coordinates? (?:were )?not used/iu.test(
         geographyMethod,
       );
-    assert(
-      !mentionsCoordinateDerivation || explicitlyDeniesCoordinateDerivation,
-      `Assertion ${assertion.eventId} uses unapproved coordinate-derived county geography.`,
-    );
+    if (mentionsCoordinateDerivation && !explicitlyDeniesCoordinateDerivation) {
+      assert(
+        source.id === USFWS_EDNA_COORDINATE_SOURCE_ID &&
+          source.researchAdapter?.geographyMatchingPolicy ===
+            USFWS_EDNA_COORDINATE_GEOGRAPHY_POLICY &&
+          assertion.geography_match.method ===
+            USFWS_EDNA_COORDINATE_GEOGRAPHY_METHOD,
+        `Assertion ${assertion.eventId} uses unapproved coordinate-derived county geography.`,
+      );
+      assert(
+        Number.isInteger(assertion.geography_match.source_coordinate_count) &&
+          assertion.geography_match.source_coordinate_count! > 0 &&
+          /^[a-f0-9]{64}$/u.test(
+            assertion.geography_match.source_coordinates_sha256 ?? "",
+          ) &&
+          assertion.geography_match.topology_path ===
+            USFWS_EDNA_COORDINATE_TOPOLOGY_PATH &&
+          /^[a-f0-9]{64}$/u.test(
+            assertion.geography_match.topology_sha256 ?? "",
+          ),
+        `Assertion ${assertion.eventId} lacks the required coordinate-derived geography receipts.`,
+      );
+      const committedTopology = readCommittedFile(
+        root,
+        receipt.code_commit,
+        USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
+      );
+      assert(
+        sha256(committedTopology) === assertion.geography_match.topology_sha256,
+        `Assertion ${assertion.eventId} topology hash does not match its code commit.`,
+      );
+    } else {
+      assert(
+        assertion.geography_match.source_coordinate_count === undefined &&
+          assertion.geography_match.source_coordinates_sha256 === undefined &&
+          assertion.geography_match.topology_path === undefined &&
+          assertion.geography_match.topology_sha256 === undefined,
+        `Assertion ${assertion.eventId} includes coordinate receipts without approved coordinate-derived geography.`,
+      );
+    }
     const sourceCounty = resolveCountyEquivalent({
       stateCode,
       countyName: assertion.geography_match.source_county,

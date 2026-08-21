@@ -43,7 +43,11 @@
         "method": { "type": "string", "minLength": 1 },
         "source_state": { "type": "string", "minLength": 1 },
         "source_county": { "type": "string", "minLength": 1 },
-        "county_fips": { "type": "string", "pattern": "^[0-9]{5}$" }
+        "county_fips": { "type": "string", "pattern": "^[0-9]{5}$" },
+        "source_coordinate_count": { "type": "integer", "minimum": 1 },
+        "source_coordinates_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "topology_path": { "type": "string", "minLength": 1 },
+        "topology_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
       }
     },
     "temporal_scope": { "type": "string", "minLength": 1 },

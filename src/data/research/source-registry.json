@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-19",
+  "updatedAt": "2026-08-21",
   "sources": [
     {
       "id": "eddmaps",
@@ -226,9 +226,21 @@
       "evidenceCapabilities": ["recorded-present", "not-detected"],
       "negativeSemantics": "explicit-survey-only",
       "refreshCadenceDays": 365,
-      "status": "manual",
+      "status": "operational",
       "adapter": null,
-      "caveat": "A negative sample supports survey-area non-detection only. It does not establish countywide absence."
+      "caveat": "An exact No eDNA detected sample supports survey-area non-detection for Bighead and Silver Carp only. It does not establish countywide absence, and positive eDNA is not treated as verified presence.",
+      "researchAdapter": {
+        "id": "usfws-invasive-carp-edna-snapshot",
+        "module": "scripts/research/adapters/usfws-invasive-carp-edna-snapshot.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/usfws-invasive-carp-edna-snapshot-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact canonical binomial mapping to the official Bighead Carp and Silver Carp eDNA program targets. Only the exact No eDNA detected label is eligible; positive labels, No detection data, blanks, and source silence never publish.",
+        "geographyMatchingPolicy": "Source-specific coordinate exception: Coordinate-derived county assignment: all retained USFWS source coordinates resolved uniquely to the declared active county using the committed canonical Census county-equivalent topology and a matching source state. The assertion must retain the topology path and SHA-256 plus the exact source-coordinate count and coordinate-set SHA-256; ambiguous, offshore, multi-county, invalid, and source-state-mismatch rows are ineligible.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 4
+      }
     },
     {
       "id": "usfs-laurel-wilt",

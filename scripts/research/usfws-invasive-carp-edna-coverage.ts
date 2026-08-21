@@ -82,7 +82,7 @@ export type CoveragePairClassification =
   | "verified-present-overlap"
   | "blocked";
 
-type RejectionReason =
+export type UsfwsRejectionReason =
   | "duplicate-source-identity"
   | "field-blank"
   | "invalid-collection-date"
@@ -95,7 +95,7 @@ type RejectionReason =
   | "offshore-or-outside-current-county"
   | "source-state-county-mismatch";
 
-type AcceptedSample = {
+export type UsfwsAcceptedSample = {
   objectId: number;
   ruid: number;
   globalId: string;
@@ -112,6 +112,14 @@ type AcceptedSample = {
   longitude: number;
   doubleSampleFlag: string | null;
   comments: string | null;
+};
+
+export type UsfwsAcceptedSampleSelection = {
+  accepted: UsfwsAcceptedSample[];
+  explicitNegativeRows: number;
+  duplicateRows: number;
+  rejectionReasons: Record<UsfwsRejectionReason, number>;
+  statusCounts: Record<string, number>;
 };
 
 export type UsfwsCoverageGroup = {
@@ -170,7 +178,7 @@ export type UsfwsCoverageResult = {
   alreadyNotDetectedPairs: number;
   verifiedPresentOverlaps: number;
   blockedPairs: number;
-  rejectionReasons: Record<RejectionReason, number>;
+  rejectionReasons: Record<UsfwsRejectionReason, number>;
   statusCounts: Record<string, number>;
   groups: UsfwsCoverageGroup[];
   pairs: UsfwsCoveragePair[];
@@ -367,14 +375,11 @@ export function chunkStableObjectIds(objectIds: readonly number[], chunkSize: nu
   return chunks;
 }
 
-export function buildUsfwsCoverage(
+export function selectUsfwsAcceptedSamples(
   rows: readonly UsfwsEdnaRow[],
-  options: {
-    resolveCounty: (longitude: number, latitude: number, stateCode: string) => ResolvedCounty[];
-    pairStatusByKey: ReadonlyMap<string, PairStatus>;
-  },
-): UsfwsCoverageResult {
-  const rejectionReasons: Record<RejectionReason, number> = {
+  resolveCounty: (longitude: number, latitude: number, stateCode: string) => ResolvedCounty[],
+): UsfwsAcceptedSampleSelection {
+  const rejectionReasons: Record<UsfwsRejectionReason, number> = {
     "duplicate-source-identity": 0,
     "field-blank": 0,
     "invalid-collection-date": 0,
@@ -391,7 +396,140 @@ export function buildUsfwsCoverage(
   const seenObjectIds = new Set<number>();
   const seenRuids = new Set<number>();
   const seenGlobalIds = new Set<string>();
-  const accepted: AcceptedSample[] = [];
+  const accepted: UsfwsAcceptedSample[] = [];
+  let explicitNegativeRows = 0;
+  let duplicateRows = 0;
+
+  const orderedRows = [...rows].sort((left, right) => left.OBJECTID - right.OBJECTID);
+  for (const row of orderedRows) {
+    const status = canonicalText(row.eDNA_Detection_Status) || "<missing>";
+    statusCounts[status] = (statusCounts[status] ?? 0) + 1;
+    if (status === USFWS_EDNA_UNKNOWN_STATUS || status === "<missing>") {
+      increment(rejectionReasons, "missing-detection-data");
+      continue;
+    }
+    if (status !== USFWS_EDNA_NEGATIVE_STATUS) {
+      increment(rejectionReasons, "non-negative-result");
+      continue;
+    }
+    explicitNegativeRows += 1;
+    if (canonicalText(row.Blank).toLowerCase() !== "no") {
+      increment(rejectionReasons, "field-blank");
+      continue;
+    }
+    if (
+      !Number.isInteger(row.OBJECTID) || row.OBJECTID <= 0 ||
+      !Number.isInteger(row.RUID) || (row.RUID ?? 0) <= 0 ||
+      canonicalText(row.GlobalID).length === 0 ||
+      !Number.isInteger(row.Case_Number) || (row.Case_Number ?? 0) <= 0
+    ) {
+      increment(rejectionReasons, "invalid-source-identity");
+      continue;
+    }
+    const normalizedGlobalId = canonicalText(row.GlobalID).toLowerCase();
+    if (
+      seenObjectIds.has(row.OBJECTID) ||
+      seenRuids.has(row.RUID!) ||
+      seenGlobalIds.has(normalizedGlobalId)
+    ) {
+      increment(rejectionReasons, "duplicate-source-identity");
+      duplicateRows += 1;
+      continue;
+    }
+    seenObjectIds.add(row.OBJECTID);
+    seenRuids.add(row.RUID!);
+    seenGlobalIds.add(normalizedGlobalId);
+    const stateCode = normalizeUsfwsState(row.State);
+    if (!stateCode) {
+      increment(rejectionReasons, "invalid-state");
+      continue;
+    }
+    if (
+      typeof row.Latitude !== "number" || !Number.isFinite(row.Latitude) || row.Latitude < 18 || row.Latitude > 72 ||
+      typeof row.Longitude !== "number" || !Number.isFinite(row.Longitude) || row.Longitude < -180 || row.Longitude > -60
+    ) {
+      increment(rejectionReasons, "invalid-coordinates");
+      continue;
+    }
+    if (typeof row.DATE_COLL !== "number" || !Number.isFinite(row.DATE_COLL) || row.DATE_COLL <= 0) {
+      increment(rejectionReasons, "invalid-collection-date");
+      continue;
+    }
+    const countyMatches = resolveCounty(row.Longitude, row.Latitude, stateCode);
+    if (countyMatches.length === 0) {
+      increment(rejectionReasons, "offshore-or-outside-current-county");
+      continue;
+    }
+    if (countyMatches.length > 1) {
+      increment(rejectionReasons, "multiple-county-match");
+      continue;
+    }
+    const county = countyMatches[0]!;
+    if (county.stateCode !== stateCode) {
+      increment(rejectionReasons, "source-state-county-mismatch");
+      continue;
+    }
+    const stationId = canonicalText(row.FWCO_ID);
+    const waterbody = canonicalText(row.Waterbody);
+    if (!stationId || !waterbody) {
+      increment(rejectionReasons, "invalid-source-identity");
+      continue;
+    }
+    accepted.push({
+      objectId: row.OBJECTID,
+      ruid: row.RUID!,
+      globalId: normalizedGlobalId,
+      stateCode,
+      countyFips: county.countyFips,
+      countyName: county.countyName,
+      caseNumber: row.Case_Number!,
+      stationId,
+      basin: canonicalText(row.Basin) || null,
+      waterbody,
+      siteName: canonicalText(row.altLocationName) || null,
+      collectionDate: isoDateFromMilliseconds(row.DATE_COLL),
+      latitude: row.Latitude,
+      longitude: row.Longitude,
+      doubleSampleFlag: canonicalText(row.Double_Sample) || null,
+      comments: canonicalText(row.COMMENTS) || null,
+    });
+  }
+  return {
+    accepted,
+    explicitNegativeRows,
+    duplicateRows,
+    rejectionReasons,
+    statusCounts: Object.fromEntries(
+      Object.entries(statusCounts).sort(([left], [right]) => left.localeCompare(right)),
+    ),
+  };
+}
+
+export function buildUsfwsCoverage(
+  rows: readonly UsfwsEdnaRow[],
+  options: {
+    resolveCounty: (longitude: number, latitude: number, stateCode: string) => ResolvedCounty[];
+    pairStatusByKey: ReadonlyMap<string, PairStatus>;
+  },
+): UsfwsCoverageResult {
+  const rejectionReasons: Record<UsfwsRejectionReason, number> = {
+    "duplicate-source-identity": 0,
+    "field-blank": 0,
+    "invalid-collection-date": 0,
+    "invalid-coordinates": 0,
+    "invalid-source-identity": 0,
+    "invalid-state": 0,
+    "missing-detection-data": 0,
+    "multiple-county-match": 0,
+    "non-negative-result": 0,
+    "offshore-or-outside-current-county": 0,
+    "source-state-county-mismatch": 0,
+  };
+  const statusCounts: Record<string, number> = {};
+  const seenObjectIds = new Set<number>();
+  const seenRuids = new Set<number>();
+  const seenGlobalIds = new Set<string>();
+  const accepted: UsfwsAcceptedSample[] = [];
   let explicitNegativeRows = 0;
   let duplicateRows = 0;
 
@@ -497,7 +635,7 @@ export function buildUsfwsCoverage(
     countyFips: string;
     countyName: string;
     caseNumber: number;
-    samples: AcceptedSample[];
+    samples: UsfwsAcceptedSample[];
   }>();
   for (const sample of accepted) {
     for (const target of USFWS_EDNA_TARGETS) {

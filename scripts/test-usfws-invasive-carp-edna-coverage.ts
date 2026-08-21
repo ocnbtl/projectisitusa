@@ -4,6 +4,7 @@ import {
   buildUsfwsCoverage,
   chunkStableObjectIds,
   normalizeUsfwsState,
+  selectUsfwsAcceptedSamples,
   USFWS_EDNA_ITEM_ID,
   validateUsfwsLayerContract,
   type PairStatus,
@@ -139,9 +140,15 @@ function main() {
   ];
   const resolveCounty = (longitude: number) => longitude === -88 ? [] : [county];
   const result = buildUsfwsCoverage(rows, { resolveCounty, pairStatusByKey: statuses });
+  const selection = selectUsfwsAcceptedSamples(rows, resolveCounty);
   assert.equal(result.rawRows, 9);
   assert.equal(result.explicitNegativeRows, 7);
   assert.equal(result.acceptedSamples, 2);
+  assert.equal(selection.accepted.length, result.acceptedSamples);
+  assert.equal(selection.explicitNegativeRows, result.explicitNegativeRows);
+  assert.equal(selection.duplicateRows, result.duplicateRows);
+  assert.deepEqual(selection.rejectionReasons, result.rejectionReasons);
+  assert.deepEqual(selection.statusCounts, result.statusCounts);
   assert.equal(result.duplicateRows, 1);
   assert.equal(result.rejectionReasons["missing-detection-data"], 1);
   assert.equal(result.rejectionReasons["non-negative-result"], 1);
