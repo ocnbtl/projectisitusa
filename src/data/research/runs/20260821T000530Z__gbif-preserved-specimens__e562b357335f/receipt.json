@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260821T000530Z__gbif-preserved-specimens__e562b357335f",
+  "status": "complete",
+  "started_at": "2026-08-21T00:05:30.542Z",
+  "finished_at": "2026-08-21T00:14:35.196Z",
+  "actor_type": "adapter",
+  "actor_id": "gbif-preserved-specimens@1.4.0",
+  "source_id": "gbif-preserved-specimens",
+  "source_registry_hash": "b5da36b15ac140581a052193f0ce7e54e7c63c4cb00b82b191d7c4f0393506b5",
+  "adapter_id": "gbif-preserved-specimens",
+  "adapter_version": "1.4.0",
+  "adapter_code_hash": "7d076ab671d917fbcacc4c051f25266153f11d2b6cb80280b06dd1e7aec2e2a5",
+  "code_commit": "d2e402995cbf67a14311df66e28c9bf1bb2ed27c",
+  "parameter_hash": "996cd5fa9a81850594c30a249c5a11f998899ffbf8a8ee0304ba581d5ee0d3f1",
+  "parameters": {
+    "stateCode": "DC",
+    "stateProvince": "District of Columbia",
+    "candidateLimit": 8,
+    "candidatePairs": [
+      "11001:aceria-litchii",
+      "11001:adiantum-macrophyllum",
+      "11001:agdestis-clematidea",
+      "11001:aglaonema-commutatum",
+      "11001:alpinia-zerumbet",
+      "11001:alternanthera-brasiliana",
+      "11001:alternanthera-ficoidea",
+      "11001:alyssum-strigosum"
+    ],
+    "basisOfRecord": "PRESERVED_SPECIMEN",
+    "occurrenceStatus": "PRESENT",
+    "minimumMatchConfidence": 95,
+    "pageLimit": 300
+  },
+  "requested_scope": {
+    "state_code": "DC",
+    "county_fips": [
+      "11001"
+    ],
+    "species_ids": [
+      "aceria-litchii",
+      "adiantum-macrophyllum",
+      "agdestis-clematidea",
+      "aglaonema-commutatum",
+      "alpinia-zerumbet",
+      "alternanthera-brasiliana",
+      "alternanthera-ficoidea",
+      "alyssum-strigosum"
+    ],
+    "pair_keys": [
+      "11001:aceria-litchii",
+      "11001:adiantum-macrophyllum",
+      "11001:agdestis-clematidea",
+      "11001:aglaonema-commutatum",
+      "11001:alpinia-zerumbet",
+      "11001:alternanthera-brasiliana",
+      "11001:alternanthera-ficoidea",
+      "11001:alyssum-strigosum"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://api.gbif.org/v1/occurrence/download/request/0027542-260806074905277.zip",
+      "status": 200,
+      "retrieved_at": "2026-08-21T00:14:34.713Z",
+      "record_count": 433
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260821T000530Z__gbif-preserved-specimens__e562b357335f/artifacts/national-acquisition-reference.json",
+      "sha256": "a22f0e8d8979fd09d2a98537319f4c12bfff34d29c9585acd5ab1c577640cce2",
+      "bytes": 6144,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260821T000530Z__gbif-preserved-specimens__e562b357335f/assertions.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260821T000530Z__gbif-preserved-specimens__e562b357335f/reviews.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260821T000530Z__gbif-preserved-specimens__e562b357335f/rejections.ndjson",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260821T000530Z__gbif-preserved-specimens__e562b357335f/outcomes.ndjson",
+      "sha256": "dd8d4ef7d494db786af4c5a131a833890b65f9ed9e07cd07f3edc988f6626f22",
+      "bytes": 5745,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260821T000530Z__gbif-preserved-specimens__e562b357335f/source-verification.json",
+      "sha256": "a4e3eb54adefc08c6010fe420718b277c2260f4f147b36726369ed5c248a0ac2",
+      "bytes": 3815,
+      "media_type": "application/json"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 8,
+    "candidate_records": 0,
+    "assertion_events": 0,
+    "review_events": 0,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 8
+  },
+  "errors": [],
+  "known_caveats": [
+    "Preserved specimen evidence only. Publisher records can contain taxonomic and geospatial issues.",
+    "Complete source silence changes research status only and never establishes absence or non-detection.",
+    "Only baseline not-researched pairs are emitted; blocked and already researched pairs remain outside this partition scope."
+  ],
+  "source_warnings": [],
+  "deviations": [
+    "One authenticated provider-native national DWCA archive is partitioned offline without state or county network requests.",
+    "Coordinates are retained as source fields but never used to assign county geography.",
+    "One deterministic lowest-GBIF-ID qualifying assertion is emitted per selected pair to bound evidence volume."
+  ],
+  "rerun_command": "node --import tsx scripts/research/partition-national-gbif-download.ts --plan src/data/research/national-acquisition-plans/gbif-national-download-v2-round-79-8.json --acquisition src/data/research/national-acquisitions/20260821t000530z__gbif-download__aa28fb27eb6e"
+}
