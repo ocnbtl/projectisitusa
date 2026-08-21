@@ -7,10 +7,10 @@
   "branch": "main",
   "baseSha": "1aa5bac815591cd097b7b0b2b8c2b7fff5d18b69",
   "acquiredAt": "2026-08-21T00:03:42.455Z",
-  "lastReverifiedAt": "2026-08-21T02:04:04.556Z",
-  "currentCheckpointSha": "773ba8916325e43a9b190cf1970c515be0bf90dd",
-  "localHeadAtLastReverification": "773ba8916325e43a9b190cf1970c515be0bf90dd",
-  "state": "round-79-generated-audited-gates-pass-publication-manifest-awaiting-clean-commit",
+  "lastReverifiedAt": "2026-08-21T02:07:26.169Z",
+  "currentCheckpointSha": "a455665766e705efa2076cf1e856ac0115afe8c6",
+  "localHeadAtLastReverification": "a455665766e705efa2076cf1e856ac0115afe8c6",
+  "state": "post-round-79-rescore-and-portfolio-verified-awaiting-commit-push-and-publication-manifest",
   "ownershipEvidence": {
     "activeProjectTasks": ["national-gbif-round-79-acquisition-20260820-main"],
     "supersededOwnerTaskId": "national-post-round-78-yield-calibration-20260820-main",
@@ -168,7 +168,56 @@
       "r2Deletion": false,
       "activeR2ReleaseId": "research-021c595d0604-b3467b304cd02d85",
       "nextCadenceEligibleAt": "2026-08-26T22:57:28.231Z",
-      "nextAction": "Commit and push the integrated Round 79 checkpoint, generate the exact-cache rescore against that content commit, then build and plan the newest cumulative publication manifest without uploading or promoting before cadence opens. Do not schedule another GBIF POST from completion alone."
+      "nextAction": "Commit and push the verified post-Round 79 rescore and source-portfolio checkpoint, then build and plan the newest cumulative publication manifest without uploading or promoting before cadence opens. Do not schedule another GBIF POST from completion alone."
+    },
+    "postRound79RescoreAndPortfolio": {
+      "completedAt": "2026-08-21T02:07:26.169Z",
+      "baselineSha": "a455665766e705efa2076cf1e856ac0115afe8c6",
+      "generatedContentCommit": "a455665766e705efa2076cf1e856ac0115afe8c6",
+      "rescoreBuilderPath": "scripts/research/build-national-gbif-yield-rescore.ts",
+      "rescorePath": "ops/national-research/evaluations/post-round-79-gbif-exact-cache-rescore-20260821-r1.json",
+      "rescoreSha256": "45b0f5ac91fd7cd030f4cd1c2752a2908fad8d89415f2462249a26c26e8d67db",
+      "rescoreBytes": 43663,
+      "rescoreTestPath": "scripts/test-national-gbif-selection-planner.ts",
+      "rescoreTestSha256": "d059a47d43c0bbb7d7b6f2f3a3c3c99272c06f36084195e2ee965a8db7d7c77e",
+      "portfolioComparisonPath": "ops/national-research/evaluations/post-round-79-source-portfolio-comparison-20260821-r1.json",
+      "portfolioComparisonSha256": "0c48817d4cfffedc9a178bf215d352833a153201403e2a6fcaa673b56c5fbd60",
+      "portfolioComparisonBytes": 10762,
+      "exactCacheUniverse": {
+        "taxa": 47,
+        "counties": 3144,
+        "grossPairs": 147768,
+        "notResearchedPairs": 72312,
+        "blockedPairs": 0,
+        "alreadyResearchedPairs": 75456
+      },
+      "selectedGbifProposalOnlyCandidate": {
+        "taxa": 8,
+        "pairs": 25152,
+        "exploitationPairs": 22008,
+        "explorationPairs": 3144,
+        "heuristicExpectedPresentPairs": 758.3328,
+        "guaranteedPresentPairs": 0,
+        "providerRequestAuthorizedByEvaluation": false
+      },
+      "idigbioComparison": {
+        "retainedExactPairOutcomes": 155,
+        "currentMeasuredNetNewPairs": 0,
+        "providerSnapshotFrozenAsOf": "2026-05-08",
+        "providerNativeNationalArchiveImplemented": false,
+        "providerRequestReady": false
+      },
+      "decision": "Do not schedule Round 80 or issue another provider request from Round 79 completion alone. Preserve the 25,152-pair rescore as proposal-only evidence for a later independently gated decision.",
+      "verification": "The exact-cache rescore reconciled 147,768 gross pairs into 75,456 already researched, zero blocked, and 72,312 not researched. Its selected 25,152-pair scope passed the focused planner regression. All eleven portfolio input hashes were verified, the 7,872,576-pair generated matrix conserved, and the comparison recorded zero external mutations.",
+      "networkRequests": 0,
+      "providerPosts": 0,
+      "generationCommands": 0,
+      "publicationMutation": false,
+      "r2Upload": false,
+      "r2Promotion": false,
+      "r2Deletion": false,
+      "round80Scheduled": false,
+      "nextAction": "Commit and push this calibration checkpoint, then generate and plan the cumulative publication manifest. Respect the seven-day R2 cadence guard and perform no upload, promotion, or deletion while it is closed."
     },
     "postRound78CalibrationStartup": {
       "observedAt": "2026-08-20T20:48:54.637Z",

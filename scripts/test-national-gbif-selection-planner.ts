@@ -233,4 +233,54 @@ process.stdout.write(`${JSON.stringify({
   explorationPairs: postRound78.explorationPairs,
 }, null, 2)}\n`);
 
+const postRound79Prior = loadNationalGbifYieldPrior(
+  path.join(root, "ops/national-research/evaluations/post-round-79-gbif-yield-prior-20260821-r1.json"),
+  "7b67b4817338bb07e784fd14b3efdd8fab814ab8ede920e32641405f4b45f04c",
+);
+const postRound79 = buildNationalGbifDualObjectiveSelection([...corpusCounts.values()], postRound79Prior, 25_000, {
+  strategy: GBIF_DUAL_OBJECTIVE_STRATEGY,
+  yieldPriorPath: "ops/national-research/evaluations/post-round-79-gbif-yield-prior-20260821-r1.json",
+  yieldPriorSha256: "7b67b4817338bb07e784fd14b3efdd8fab814ab8ede920e32641405f4b45f04c",
+  movementWeightBps: 6_000,
+  likelyYieldWeightBps: 4_000,
+  explorationTargetBps: 2_000,
+});
+assert.equal(postRound79Prior.sourceAudit.weightedYieldBps, 342);
+assert.equal(postRound79Prior.taxonPriors.length, 47);
+assert.deepEqual(postRound79.selectedSpeciesIds, [
+  "aculops-fuchsiae",
+  "acyrthosiphon-primulae",
+  "aeromonas-salmonicida",
+  "albizia-procera",
+  "allantophomopsiella-pseudotsugae",
+  "amaranthus-dubius",
+  "amaranthus-graecizans",
+  "amylostereum-areolatum",
+]);
+assert.equal(postRound79.exploitationPairs, 22_008);
+assert.equal(postRound79.explorationPairs, 3_144);
+assert.equal(postRound79.selectedTaxa.filter((entry) => entry.selectionLane === "exploration").length, 1);
+assert.equal(postRound79.exploitationPairs + postRound79.explorationPairs, postRound79.expectedNetMovement);
+assert(postRound79.expectedNetMovement >= 25_000);
+assert(postRound79.selectedTaxa.every((entry) => entry.notResearchedPairs > 0));
+const postRound79Artifact = NationalGbifYieldRescoreSchema.parse(JSON.parse(readFileSync(
+  path.join(root, "ops/national-research/evaluations/post-round-79-gbif-exact-cache-rescore-20260821-r1.json"),
+  "utf8",
+)));
+assert.equal(postRound79Artifact.baselineSha, "a455665766e705efa2076cf1e856ac0115afe8c6");
+assert.equal(postRound79Artifact.generatedContentCommit, "a455665766e705efa2076cf1e856ac0115afe8c6");
+assert.equal(postRound79Artifact.universe.countyCount, 3_144);
+assert.equal(postRound79Artifact.universe.taxonCount, 47);
+assert.equal(postRound79Artifact.universe.grossPairs, 147_768);
+assert.equal(postRound79Artifact.corpus.notResearchedPairs, 72_312);
+assert.equal(postRound79Artifact.corpus.blockedPairs, 0);
+assert.equal(postRound79Artifact.corpus.alreadyResearchedPairs, 75_456);
+assert.deepEqual(postRound79Artifact.selection.selectedTaxa.map((entry) => entry.speciesId), postRound79.selectedSpeciesIds);
+assert.equal(postRound79Artifact.selection.expectedNetMovement, 25_152);
+process.stdout.write(`${JSON.stringify({
+  postRound79SelectedSpeciesIds: postRound79.selectedSpeciesIds,
+  exploitationPairs: postRound79.exploitationPairs,
+  explorationPairs: postRound79.explorationPairs,
+}, null, 2)}\n`);
+
 process.stdout.write("National GBIF dual-objective selection planner tests passed.\n");
