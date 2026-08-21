@@ -126,6 +126,17 @@ function readCommittedFile(repositoryRoot: string, commit: string, filepath: str
   }
 }
 
+const committedFileSha256Cache = new Map<string, string>();
+
+function committedFileSha256(repositoryRoot: string, commit: string, filepath: string) {
+  const cacheKey = `${path.resolve(repositoryRoot)}\0${commit}\0${filepath}`;
+  const cached = committedFileSha256Cache.get(cacheKey);
+  if (cached) return cached;
+  const digest = sha256(readCommittedFile(repositoryRoot, commit, filepath));
+  committedFileSha256Cache.set(cacheKey, digest);
+  return digest;
+}
+
 export function validateImmutableResearchRunProvenance(input: {
   repositoryRoot: string;
   receipt: ImmutableResearchRunReceipt;
@@ -338,13 +349,12 @@ export function validateResearchRunInMemory(input: {
           ),
         `Assertion ${assertion.eventId} lacks the required coordinate-derived geography receipts.`,
       );
-      const committedTopology = readCommittedFile(
-        root,
-        receipt.code_commit,
-        USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
-      );
       assert(
-        sha256(committedTopology) === assertion.geography_match.topology_sha256,
+        committedFileSha256(
+          root,
+          receipt.code_commit,
+          USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
+        ) === assertion.geography_match.topology_sha256,
         `Assertion ${assertion.eventId} topology hash does not match its code commit.`,
       );
     } else {
