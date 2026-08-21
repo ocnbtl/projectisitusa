@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usfws-invasive-carp-edna-production-verification-20260821-r1",
+  "verifiedAt": "2026-08-21T19:02:46.0572727Z",
+  "gate": {
+    "phase": "POST-DEPLOYMENT",
+    "mode": [
+      "web-application",
+      "research-data-preparation",
+      "data-release-operations"
+    ],
+    "riskLevel": "high",
+    "decision": "GO-APPLICATION-NO-GO-R2-PROMOTION",
+    "scope": "Production application release of the deterministic USFWS invasive-carp eDNA acquisition and survey non-detection integration, full-corpus projection reconciliation, GBIF yield-model v2.1 audit, and cumulative R2 release preparation. The application release is live. The prepared R2 release remains unuploaded and unpromoted because the seven-day cadence guard is closed."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "33f253660bcee8271bdacd5a721c9ed7852e4daf",
+    "releaseSha": "690b8ac5503d311c1e854e43ce0445fd2c8b847b",
+    "originMainSha": "690b8ac5503d311c1e854e43ce0445fd2c8b847b",
+    "githubMainSha": "690b8ac5503d311c1e854e43ce0445fd2c8b847b",
+    "githubCommitUrl": "https://github.com/ocnbtl/projectisitusa/commit/690b8ac5503d311c1e854e43ce0445fd2c8b847b",
+    "githubProductionDeploymentId": 6027464553,
+    "githubProductionStatus": "success",
+    "vercelDeploymentId": "dpl_7HCW3L7Bfu8S8PDYPCssQEHLd4uy",
+    "vercelStatus": "READY",
+    "vercelBuildDuration": "2m21s",
+    "vercelImmutableUrl": "https://projectisitusa-mvn4o614n-unigentamos.vercel.app",
+    "vercelBranchAlias": "https://projectisitusa-git-main-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com"
+  },
+  "sourceAcquisition": {
+    "sourceId": "usfws-invasive-carp-edna",
+    "acquisitionId": "20260821t144438__usfws-invasive-carp-edna__083227dff845",
+    "authority": "U.S. Fish and Wildlife Service",
+    "layerUrl": "https://gis-fws.opendata.arcgis.com/datasets/fws::invasive-carp-edna-sample-results/about",
+    "protocolUrls": [
+      "https://www.fws.gov/sites/default/files/documents/2026-04/edna-qapp-2026.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2025-03/data-management-sop-no-5.pdf",
+      "https://www.fws.gov/sites/default/files/documents/2024-03/qapp_2018_508-compliant_0.pdf"
+    ],
+    "sourceRows": 89637,
+    "explicitNegativeRows": 87932,
+    "acceptedSamples": 76007,
+    "rejectedRows": 13630,
+    "representedCounties": 135,
+    "representedStates": 14,
+    "candidatePairs": 270,
+    "deterministicReplay": true
+  },
+  "integration": {
+    "stateRunCount": 14,
+    "newSurveyNotDetectedPairs": 246,
+    "alreadyNotDetectedPairs": 6,
+    "verifiedPresentOverlaps": 18,
+    "verifiedAbsentMovement": 0,
+    "conflicts": 0,
+    "unsupportedSourceSilenceNegatives": 0,
+    "stateMovement": {
+      "AL": 1,
+      "IA": 9,
+      "IL": 10,
+      "KS": 28,
+      "KY": 13,
+      "MI": 26,
+      "MN": 21,
+      "MS": 5,
+      "NY": 10,
+      "OH": 44,
+      "PA": 10,
+      "TN": 8,
+      "WI": 38,
+      "WV": 23
+    }
+  },
+  "nationalProjection": {
+    "countySpeciesDenominator": 7872576,
+    "verifiedPresent": 195138,
+    "verifiedAbsent": 0,
+    "notDetected": 254,
+    "researchedUnresolved": 1362188,
+    "notResearched": 6314996,
+    "conflicts": 0,
+    "immutableResearchRuns": 1415,
+    "assertionEvents": 309032,
+    "rejectionRecords": 47217,
+    "pairOutcomes": 1720817,
+    "unreviewedEvidence": 0,
+    "sourceCoverageId": "source-coverage-5e0a9563bf537a126156"
+  },
+  "yieldModelAudit": {
+    "version": "2.1",
+    "auditId": "post-round-79-gbif-yield-model-v21-audit-20260821-r1",
+    "auditSha256": "78940a347e568bedf5116409380889ad131c965a0d8bbf45145d76b71e51737d",
+    "pointMae": 404.855,
+    "medianAbsoluteError": 329.646,
+    "bias": -287.032,
+    "providerRowWeightedAbsoluteError": 738.683,
+    "eligibleHeldOutSplits": 6,
+    "empiricalIntervalCoveragePercent": 100,
+    "meanIntervalWidthPairs": 1074.461,
+    "hybridSpearman": 0.690895,
+    "currentResidualPortfolio": {
+      "lower": 0,
+      "median": 198.105,
+      "upper": 402.588
+    },
+    "observedUsfwsDeterminationMovement": 246,
+    "round80Decision": "NO-GO",
+    "decisionReason": "The conservative lower bound is zero and the median estimate of 198.105 is below the just-observed 246-pair survey movement. Completion alone does not authorize another GBIF provider request."
+  },
+  "verification": {
+    "allStateByteStability": {
+      "status": "pass",
+      "jurisdictions": 51
+    },
+    "dataIntegrity": "pass",
+    "stateProjectionConsistency": "pass",
+    "nationalResearchConfiguration": "pass",
+    "typecheck": "pass",
+    "lint": "pass-zero-warnings-zero-errors-with-next-lint-deprecation-notice",
+    "vercelPublicationContract": "pass",
+    "productionBuild": {
+      "status": "pass",
+      "compileSeconds": 26.4,
+      "staticPages": 7
+    },
+    "researchIntegrity": {
+      "status": "pass",
+      "frozenRegressionPassed": 97,
+      "frozenRegressionTotal": 97,
+      "criticalSafetyViolations": 0,
+      "manualInterventions": 0
+    },
+    "localBrowser": {
+      "routes": [
+        "/",
+        "/research?state=VT&county=50005&species=abies-alba",
+        "/species/abies-alba",
+        "/?county=39049"
+      ],
+      "desktopViewport": "1440x900",
+      "mobileViewport": "390x844",
+      "horizontalOverflow": false,
+      "brokenImages": 0,
+      "consoleWarnings": 0,
+      "consoleErrors": 0,
+      "zipLookup": "43210 resolved to Franklin, OH"
+    },
+    "productionHttp": {
+      "canonicalHome": 200,
+      "canonicalResearch": 200,
+      "canonicalSpecies": 200,
+      "branchAliasHome": 200,
+      "immutableHome": 200,
+      "immutableResearch": 200,
+      "canonicalZipPost": 200
+    },
+    "productionBrowser": {
+      "canonicalDesktopViewport": "1280x720",
+      "canonicalMobileViewport": "390x844",
+      "canonicalDeepLink": "pass",
+      "immutableDeepLink": "pass",
+      "zipLookup": "pass",
+      "horizontalOverflow": false,
+      "brokenImages": 0,
+      "consoleWarnings": 0,
+      "consoleErrors": 0
+    }
+  },
+  "preparedR2Release": {
+    "releaseId": "research-84f2bb123166-e479cf967aa7f643",
+    "sourceCommit": "84f2bb123166f629f379dcbd782573534038bd3c",
+    "manifestCommit": "690b8ac5503d311c1e854e43ce0445fd2c8b847b",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1004294660,
+    "maximumNewClassARequests": 3197,
+    "maximumVerificationClassBRequests": 3196,
+    "directManifestStatus": 404,
+    "sameOriginManifestStatus": 404,
+    "uploaded": false,
+    "promoted": false
+  },
+  "activeR2Release": {
+    "releaseId": "research-021c595d0604-b3467b304cd02d85",
+    "sourceCommit": "021c595d0604012bc75f298c409e5ac1a023e0c0",
+    "promotedAt": "2026-08-19T22:57:28.231Z",
+    "nextOrdinaryPromotionAt": "2026-08-26T22:57:28.231Z",
+    "releaseManifestSha256": "ffe73786c4a321050380199f6981961a4ecfdf624e181cab7460c6c9058f7c8a",
+    "manifestHashMatchesPointer": true,
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 981184868,
+    "directPointerStatus": 200,
+    "sameOriginPointerStatus": 200,
+    "pointerBodiesEqual": true,
+    "sampleObjectStatus": 200,
+    "sampleObjectBytes": 222885,
+    "sampleObjectSha256": "b2ad2cfc2dd78304bedb5d50fd7b37b54e1e9756329e79fc2caaa63a488cb200",
+    "sampleObjectDirectAndSameOriginMatch": true
+  },
+  "cloudflareUsage": {
+    "observedAt": "2026-08-21T19:01:14.1983589Z",
+    "billingPeriod": "August 18 - September 18",
+    "displayedClassAOperations": "19.27k",
+    "displayedClassBOperations": "39.88k",
+    "displayedStorage": "5.49 GB",
+    "displayedBillableUsage": "$0.00",
+    "displayedBillingMessage": "No billable usage incurred yet",
+    "roundedSafetyInputs": {
+      "monthlyClassAUsed": 20000,
+      "monthlyClassBUsed": 40000
+    }
+  },
+  "releaseBoundaries": {
+    "applicationPushes": 1,
+    "applicationProductionDeployments": 1,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "round80Scheduled": false,
+    "cadenceGate": "CLOSED"
+  },
+  "rollbackAndObservation": {
+    "lastKnownGoodApplicationCommit": "690b8ac5503d311c1e854e43ce0445fd2c8b847b",
+    "lastKnownGoodVercelDeploymentId": "dpl_7HCW3L7Bfu8S8PDYPCssQEHLd4uy",
+    "lastKnownGoodImmutableUrl": "https://projectisitusa-mvn4o614n-unigentamos.vercel.app",
+    "activeR2RollbackRequired": false,
+    "reason": "The active R2 pointer did not change. If an application regression is discovered, revert the application commit through the normal Git/Vercel workflow; do not alter the R2 pointer as part of that rollback."
+  },
+  "limitations": [
+    "The local environment does not load R2 account credentials, so the authenticated full-bucket reachability wrapper could not inventory every retained object. No credentials were retrieved to force that path.",
+    "Current R2 capacity evidence is the authenticated Cloudflare dashboard display plus public pointer, manifest, and sample-object byte/hash verification; it is not an exact current retained-byte inventory.",
+    "The model interval is a conservative small-sample empirical interval, not a claimed 95 percent confidence interval.",
+    "No comprehensive WCAG, field Core Web Vitals, or penetration-test claim is made."
+  ],
+  "plainEnglishSummary": "The authorized application release is live at the exact intended GitHub and Vercel commit. The USFWS layer adds 246 defensible survey non-detections without inferring absence or creating conflicts. The full research and application gates passed. The newly prepared R2 release is deliberately not live because the ordinary seven-day promotion boundary does not open until August 26, 2026 at 22:57:28.231Z."
+}
