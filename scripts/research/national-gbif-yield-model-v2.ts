@@ -311,3 +311,104 @@ export function rankNationalGbifCandidatesV2(
       compareText(left.deterministicTieBreaker, right.deterministicTieBreaker),
     );
 }
+
+export const GBIF_YIELD_MODEL_V21_ID = "staged-exact-count-round-blocked-hybrid-v2.1" as const;
+
+export type GbifRoundResidualV21 = {
+  round: number;
+  providerRows: number;
+  predictedUniqueDeterminationPairs: number;
+  actualUniqueDeterminationPairs: number;
+};
+
+export type GbifRoundResidualCalibrationV21 = {
+  modelId: typeof GBIF_YIELD_MODEL_V21_ID;
+  method: "leave-future-out-round-blocked-maximum-absolute-normalized-residual";
+  calibrationRounds: number[];
+  targetCoveragePercent: number;
+  absoluteResidualPerProviderRowUpperBound: number;
+};
+
+export type GbifPortfolioIntervalV21 = {
+  modelId: typeof GBIF_YIELD_MODEL_V21_ID;
+  lowerUniqueDeterminationPairs: number;
+  medianUniqueDeterminationPairs: number;
+  upperUniqueDeterminationPairs: number;
+  widthUniqueDeterminationPairs: number;
+  widthAsMaximumMovementPercent: number;
+};
+
+export function fitNationalGbifRoundResidualCalibrationV21(
+  residuals: readonly GbifRoundResidualV21[],
+  targetCoveragePercent = 80,
+): GbifRoundResidualCalibrationV21 {
+  assert(residuals.length > 0, "GBIF yield model v2.1 requires at least one completed calibration round.");
+  assert(
+    Number.isFinite(targetCoveragePercent) && targetCoveragePercent > 0 && targetCoveragePercent < 100,
+    "GBIF yield model v2.1 target coverage must be between zero and 100 percent.",
+  );
+  const rounds = residuals.map((entry) => entry.round);
+  assert(new Set(rounds).size === rounds.length, "GBIF yield model v2.1 calibration rounds repeat.");
+  assert(rounds.every((round, index) => index === 0 || round > rounds[index - 1]!), "GBIF yield model v2.1 calibration rounds must be strictly ordered.");
+  const normalizedResiduals = residuals.map((entry) => {
+    assert(Number.isInteger(entry.round) && entry.round > 0, "GBIF yield model v2.1 calibration round is invalid.");
+    assert(Number.isInteger(entry.providerRows) && entry.providerRows > 0, `GBIF Round ${entry.round} provider rows are invalid.`);
+    assert(
+      Number.isFinite(entry.predictedUniqueDeterminationPairs) && entry.predictedUniqueDeterminationPairs >= 0 &&
+        Number.isFinite(entry.actualUniqueDeterminationPairs) && entry.actualUniqueDeterminationPairs >= 0,
+      `GBIF Round ${entry.round} determination movement is invalid.`,
+    );
+    return Math.abs(entry.actualUniqueDeterminationPairs - entry.predictedUniqueDeterminationPairs) / entry.providerRows;
+  });
+  return {
+    modelId: GBIF_YIELD_MODEL_V21_ID,
+    method: "leave-future-out-round-blocked-maximum-absolute-normalized-residual",
+    calibrationRounds: [...rounds],
+    targetCoveragePercent,
+    absoluteResidualPerProviderRowUpperBound: Math.max(...normalizedResiduals),
+  };
+}
+
+export function predictNationalGbifPortfolioIntervalV21(input: {
+  medianUniqueDeterminationPairs: number;
+  providerRows: number;
+  maximumUniqueDeterminationPairs: number;
+  calibration: GbifRoundResidualCalibrationV21;
+}): GbifPortfolioIntervalV21 {
+  assert(Number.isFinite(input.medianUniqueDeterminationPairs) && input.medianUniqueDeterminationPairs >= 0, "GBIF v2.1 median movement is invalid.");
+  assert(Number.isInteger(input.providerRows) && input.providerRows >= 0, "GBIF v2.1 provider rows are invalid.");
+  assert(Number.isInteger(input.maximumUniqueDeterminationPairs) && input.maximumUniqueDeterminationPairs >= 0, "GBIF v2.1 maximum movement is invalid.");
+  const median = clamp(input.medianUniqueDeterminationPairs, 0, input.maximumUniqueDeterminationPairs);
+  const margin = input.providerRows * input.calibration.absoluteResidualPerProviderRowUpperBound;
+  const lower = clamp(median - margin, 0, input.maximumUniqueDeterminationPairs);
+  const upper = clamp(median + margin, 0, input.maximumUniqueDeterminationPairs);
+  const width = upper - lower;
+  return {
+    modelId: GBIF_YIELD_MODEL_V21_ID,
+    lowerUniqueDeterminationPairs: lower,
+    medianUniqueDeterminationPairs: median,
+    upperUniqueDeterminationPairs: upper,
+    widthUniqueDeterminationPairs: width,
+    widthAsMaximumMovementPercent: input.maximumUniqueDeterminationPairs === 0
+      ? 0
+      : width / input.maximumUniqueDeterminationPairs * 100,
+  };
+}
+
+export function rankNationalGbifCandidatesV21(
+  model: GbifYieldModelV2,
+  candidates: readonly GbifYieldCandidateV2[],
+  tieBreakSeed: string,
+) {
+  return candidates.map((candidate) => ({
+    ...predictNationalGbifTaxonV2(model, candidate, tieBreakSeed),
+    modelV21Id: GBIF_YIELD_MODEL_V21_ID,
+    rankingRule: "exact-provider-count-primary-staged-yield-secondary" as const,
+  })).sort((left, right) =>
+    right.providerRows - left.providerRows ||
+    right.expectedUniquePresentPairs - left.expectedUniquePresentPairs ||
+    right.lower95UniquePresentPairs - left.lower95UniquePresentPairs ||
+    right.notResearchedPairs - left.notResearchedPairs ||
+    compareText(left.deterministicTieBreaker, right.deterministicTieBreaker),
+  );
+}

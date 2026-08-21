@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "post-usfws-negative-evidence-coverage-inventory-20260821-r1",
+  "evaluatedAt": "2026-08-21T16:57:11.256Z",
+  "baselineSha": "c7772ba35c0411c375c116ea43c264a8c1c56c1c",
+  "objective": "Update the versioned negative-evidence source inventory after integrating the complete defensible USFWS invasive-carp eDNA snapshot, while preserving unknown denominators for sources without target-completeness contracts.",
+  "inputs": [
+    {
+      "path": "src/data/research/source-registry.json",
+      "sha256": "0809b8ce2e3895387094934a0db843729a26021c5016300c05e1ee0aef0887c0"
+    },
+    {
+      "path": "ops/national-research/source-coverage-index.json",
+      "sha256": "26c9a960840f319657dc440e6b9c261810234e2bac0aacbc441ae0e9bb88b75f"
+    },
+    {
+      "path": "ops/national-research/evaluations/usfws-invasive-carp-edna-coverage-preflight-20260821-r1.json",
+      "sha256": "0ac25856b8e2bf8c6fef20dfeaf006c187007118914d55e0a2bf541c98766ef1"
+    },
+    {
+      "path": "ops/national-research/evaluations/post-round-79-gbif-yield-model-v21-audit-20260821-r1.json",
+      "sha256": "78940a347e568bedf5116409380889ad131c965a0d8bbf45145d76b71e51737d"
+    }
+  ],
+  "sourceCoverageIndex": {
+    "indexId": "source-coverage-5e0a9563bf537a126156",
+    "generatedFromCommit": "fde6d2f33b10b3c83300d0c44a78129af8168f46",
+    "runCount": 1415,
+    "sourceCount": 29,
+    "usfws": {
+      "coverageState": "covered-by-immutable-runs",
+      "runCount": 14,
+      "completeRuns": 14,
+      "partialRuns": 0,
+      "failedRuns": 0,
+      "requestedPairs": 246,
+      "scopeCompletePairs": 246
+    }
+  },
+  "usfwsSnapshot": {
+    "sourceId": "usfws-invasive-carp-edna",
+    "layerUrl": "https://services.arcgis.com/QVENGdaPbd4LUkLV/arcgis/rest/services/USFWS_Great_Lakes_Region_3_Bighead_and_Silver_Carp_eDNA_Data_Feature_Layer_View/FeatureServer/0",
+    "serviceItemId": "7c6e731513654696abc4814e3eec669d",
+    "layerName": "All_eDNA_Sample_Point_Data",
+    "layerLastEditDate": 1786633422649,
+    "schemaLastEditDate": 1785439357528,
+    "objectIdCount": 89637,
+    "maximumObjectId": 90562,
+    "objectIdSetSha256": "03ea9158bfe6ea38b51474363527c0e10f8527c4553cf78c30ed1d8a32afaa8b",
+    "retainedContentIdentitySha256": "083227dff845a6ed67efb610c5c0c807fbf0e1f917af583e7711e3288179f520",
+    "acquisitionId": "20260821t144438__usfws-invasive-carp-edna__083227dff845",
+    "acquisitionReceiptSha256": "f8d4147da99ba8f8507eb9665d954ac9553a4d886c05122c50b74fab2ef7c112",
+    "rawRows": 89637,
+    "explicitNegativeRows": 87932,
+    "acceptedSamples": 76007,
+    "rejectedRows": 13630,
+    "duplicateRows": 246,
+    "statesCovered": 14,
+    "countiesCovered": 135,
+    "candidatePairs": 270,
+    "integratedNotDetectedPairs": 246,
+    "alreadyNotDetectedPairs": 6,
+    "verifiedPresentOverlaps": 18,
+    "blockedPairs": 0,
+    "remainingQualifyingPairsForThisSnapshot": 0,
+    "currentSnapshotOverlapExhausted": true,
+    "refreshCadenceDays": 365,
+    "exhaustionQualification": "The exact pinned object-ID set is exhausted against the current matrix. A later provider version requires a new bounded snapshot comparison; source silence never carries forward as non-detection."
+  },
+  "currentGeneratedMatrix": {
+    "stateCount": 51,
+    "denominator": 7872576,
+    "verifiedPresent": 195138,
+    "verifiedAbsent": 0,
+    "notDetected": 254,
+    "researchedUnresolved": 1362188,
+    "notResearched": 6314996,
+    "conflicts": 0,
+    "netNewNotDetectedSincePriorInventory": 246,
+    "conserved": true
+  },
+  "remainingUnknownSourceRanking": [
+    {
+      "rank": 1,
+      "sourceId": "usgs-bbs",
+      "denominatorState": "unknown",
+      "currentExecutableNetNewPairs": null,
+      "strength": "Standardized repeated route surveys with explicit effort and dated observations provide the clearest next path to a complete route-year target contract.",
+      "missingContract": "Complete route-year target list, effort eligibility, route-to-county scope, explicit zero semantics, and compatibility rules are not versioned.",
+      "nextBoundedAction": "Fixture-test one complete route-year target and effort contract before measuring coverage; do not infer a non-detection from an omitted species row."
+    },
+    {
+      "rank": 2,
+      "sourceId": "neon-tall",
+      "denominatorState": "unknown",
+      "currentExecutableNetNewPairs": null,
+      "strength": "Standardized plot events retain dates, effort context, and resolvable site geography.",
+      "missingContract": "Complete plot-event target lists, method-specific detection scope, effort gates, and sampled-area caveats are not versioned.",
+      "nextBoundedAction": "Prove target completeness for one plot-event protocol and preserve plot-scale semantics before any coverage count."
+    },
+    {
+      "rank": 3,
+      "sourceId": "water-quality-portal",
+      "denominatorState": "unknown",
+      "currentExecutableNetNewPairs": null,
+      "strength": "Some contributing programs retain analyte, result, detection-limit, date, and sample-location fields.",
+      "missingContract": "The portal aggregates heterogeneous programs; target completeness, zero-result meaning, detection limits, and sampled geometry are not uniform or versioned.",
+      "nextBoundedAction": "Select one named contributing program with an explicit analyte roster and zero-result contract before measuring any negative coverage."
+    }
+  ],
+  "decision": {
+    "negativeLaneGate": "USFWS-SNAPSHOT-INTEGRATED-AND-CURRENT-VERSION-EXHAUSTED",
+    "gbifRound80Gate": "NO-GO",
+    "providerRequestAuthorized": false,
+    "publicationMutationAuthorized": false,
+    "r2PromotionAuthorized": false,
+    "nextSafeEngineeringAction": "Retain Round 80 as NO-GO, keep the three remaining negative-source denominators unknown, and prioritize a bounded USGS BBS target-completeness contract only in a later slice.",
+    "reason": "The USFWS snapshot produced 246 truthful survey non-detections and is fully integrated. The v2.1 GBIF portfolio lower bound remains zero and its median 198.105 pairs is below the completed USFWS movement, while the remaining negative sources lack versioned target-completeness contracts."
+  },
+  "semantics": {
+    "surveyNonDetectionIsCountyAbsence": false,
+    "verifiedPresenceSuppressesHistoricalSurveyEvidence": false,
+    "sourceSilenceIsNonDetection": false,
+    "missingRowsAreAbsence": false,
+    "unknownDenominatorIsZero": false,
+    "completedSnapshotExhaustionAppliesToFutureVersions": false
+  },
+  "operations": {
+    "networkRequests": 0,
+    "providerGets": 0,
+    "providerPosts": 0,
+    "evidenceAssertionsCreated": 0,
+    "generationCommands": 0,
+    "publicationMutations": 0,
+    "r2Mutations": 0
+  },
+  "checks": {
+    "allNegativeSourcesRegistered": true,
+    "usfwsRunsComplete": true,
+    "usfwsPairCountsReconciled": true,
+    "nationalMatrixConserved": true,
+    "currentPresencePreserved": true,
+    "remainingUnknownCoverageNotCoercedToZero": true,
+    "externalMutationCountIsZero": true
+  }
+}

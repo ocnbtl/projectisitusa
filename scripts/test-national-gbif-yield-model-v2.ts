@@ -7,9 +7,12 @@ import {
 } from "./research/acquire-national-gbif-count-calibration";
 import {
   deterministicGbifTieBreaker,
+  fitNationalGbifRoundResidualCalibrationV21,
   fitNationalGbifYieldModelV2,
+  predictNationalGbifPortfolioIntervalV21,
   predictNationalGbifTaxonV2,
   rankNationalGbifCandidatesV2,
+  rankNationalGbifCandidatesV21,
 } from "./research/national-gbif-yield-model-v2";
 
 const candidate: GbifCountCalibrationTaxon = {
@@ -58,6 +61,43 @@ async function main() {
   );
   assert.notEqual(deterministicGbifTieBreaker("opaque-seed", "alpha"), deterministicGbifTieBreaker("opaque-seed", "zulu"));
 
+  const groupedCalibration = fitNationalGbifRoundResidualCalibrationV21([
+    {
+      round: 72,
+      providerRows: 11_002,
+      predictedUniqueDeterminationPairs: 462.67,
+      actualUniqueDeterminationPairs: 1_420,
+    },
+    {
+      round: 74,
+      providerRows: 4_986,
+      predictedUniqueDeterminationPairs: 396.354,
+      actualUniqueDeterminationPairs: 726,
+    },
+  ]);
+  assert.equal(groupedCalibration.calibrationRounds.length, 2);
+  assert.equal(
+    groupedCalibration.absoluteResidualPerProviderRowUpperBound,
+    Math.abs(1_420 - 462.67) / 11_002,
+  );
+  const groupedInterval = predictNationalGbifPortfolioIntervalV21({
+    medianUniqueDeterminationPairs: 198.105,
+    providerRows: 2_350,
+    maximumUniqueDeterminationPairs: 72_312,
+    calibration: groupedCalibration,
+  });
+  assert.equal(groupedInterval.lowerUniqueDeterminationPairs, 0);
+  assert(groupedInterval.upperUniqueDeterminationPairs > groupedInterval.medianUniqueDeterminationPairs);
+  assert(groupedInterval.upperUniqueDeterminationPairs < 500);
+  assert(groupedInterval.widthAsMaximumMovementPercent < 1);
+
+  const hybridRanked = rankNationalGbifCandidatesV21(model, [
+    { ...candidate, speciesId: "higher-provider", taxonKey: 3, providerRows: 20 },
+    { ...candidate, speciesId: "lower-provider", taxonKey: 4, providerRows: 10 },
+  ], "opaque-seed");
+  assert.equal(hybridRanked[0]?.speciesId, "higher-provider");
+  assert.equal(hybridRanked[0]?.rankingRule, "exact-provider-count-primary-staged-yield-secondary");
+
   const observedAt = () => "2026-08-21T12:00:00.000Z";
   const fetchImpl: typeof fetch = async (input) => {
     const url = new URL(String(input));
@@ -83,7 +123,7 @@ async function main() {
   });
   assert.equal(batch.length, 1);
 
-  process.stdout.write("National GBIF yield-model v2 and count-only calibration tests passed.\n");
+  process.stdout.write("National GBIF yield-model v2/v2.1 and count-only calibration tests passed.\n");
 }
 
 void main();

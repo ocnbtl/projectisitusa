@@ -7,9 +7,11 @@ import { parse } from "csv-parse";
 
 import { sha256, stableJson } from "./national-gbif-download";
 import {
+  fitNationalGbifRoundResidualCalibrationV21,
   fitNationalGbifYieldModelV2,
+  predictNationalGbifPortfolioIntervalV21,
   predictNationalGbifTaxonV2,
-  rankNationalGbifCandidatesV2,
+  rankNationalGbifCandidatesV21,
   type GbifHistoricalRoundFunnel,
   type GbifYieldCandidateV2,
   type GbifYieldModelV2,
@@ -60,7 +62,7 @@ function parseArgs(argv: string[]) {
     values.set(key.slice(2), value);
   }
   const required = [
-    "marginal-audit", "rescore", "calibration", "portfolio", "output", "evaluation-id",
+    "marginal-audit", "rescore", "calibration", "portfolio", "usfws-evaluation", "output", "evaluation-id",
     "evaluated-at", "baseline-sha",
   ];
   assert(required.every((key) => values.has(key)), `Missing required argument; expected ${required.join(", ")}.`);
@@ -69,6 +71,7 @@ function parseArgs(argv: string[]) {
     rescorePath: path.resolve(values.get("rescore")!),
     calibrationPath: path.resolve(values.get("calibration")!),
     portfolioPath: path.resolve(values.get("portfolio")!),
+    usfwsEvaluationPath: path.resolve(values.get("usfws-evaluation")!),
     outputPath: path.resolve(values.get("output")!),
     evaluationId: values.get("evaluation-id")!,
     evaluatedAt: values.get("evaluated-at")!,
@@ -336,11 +339,17 @@ async function main() {
   const root = process.cwd();
   const args = parseArgs(process.argv.slice(2));
   assert(!existsSync(args.outputPath), "Post-round GBIF yield audit refuses to overwrite an existing artifact.");
-  const inputPaths = [args.marginalAuditPath, args.rescorePath, args.calibrationPath, args.portfolioPath];
-  const [marginalAudit, rescore, calibration, portfolio] = inputPaths.map(readJson);
+  const inputPaths = [
+    args.marginalAuditPath,
+    args.rescorePath,
+    args.calibrationPath,
+    args.portfolioPath,
+    args.usfwsEvaluationPath,
+  ];
+  const [marginalAudit, rescore, calibration, portfolio, usfwsEvaluation] = inputPaths.map(readJson);
   const historical = await buildHistoricalRounds(root, marginalAudit);
   assert(historical.length >= 3, "GBIF rolling-origin audit requires at least three rounds.");
-  const backtests = historical.slice(1).map((target, targetIndex) => {
+  const rawBacktests = historical.slice(1).map((target, targetIndex) => {
     const training = historical.slice(0, targetIndex + 1);
     const model = fitNationalGbifYieldModelV2(training);
     const proposed = modelPrediction(model, target, `rolling-origin-round-${target.round}`);
@@ -395,9 +404,11 @@ async function main() {
         stagedV2Spearman: proposedRanks === null ? null : round(proposedRanks, 6),
         currentSmoothedPriorV1Spearman: oldRanks === null ? null : round(oldRanks, 6),
         providerCountSpearman: providerRanks === null ? null : round(providerRanks, 6),
+        hybridV21Spearman: providerRanks === null ? null : round(providerRanks, 6),
         actualTopSpeciesId: actualTop.speciesId,
         stagedV2TopHit: proposed.taxa[0]?.speciesId === actualTop.speciesId,
         providerCountTopHit: [...target.taxa].sort((left, right) => right.providerRows - left.providerRows || compareText(left.speciesId, right.speciesId))[0]?.speciesId === actualTop.speciesId,
+        hybridV21TopHit: [...target.taxa].sort((left, right) => right.providerRows - left.providerRows || compareText(left.speciesId, right.speciesId))[0]?.speciesId === actualTop.speciesId,
       },
       perTaxon: proposed.taxa.map((entry) => ({
         speciesId: entry.speciesId,
@@ -413,6 +424,48 @@ async function main() {
       })),
     };
   });
+  const backtests = rawBacktests.map((entry, index) => {
+    if (index === 0) {
+      return {
+        ...entry,
+        intervals: {
+          ...entry.intervals,
+          groupedNormalizedResidualV21: null,
+        },
+      };
+    }
+    const priorResiduals = rawBacktests.slice(0, index).map((prior) => ({
+      round: prior.round,
+      providerRows: prior.providerRows,
+      predictedUniqueDeterminationPairs: prior.forecasts.find((forecast) => forecast.model === "staged-v2")!.prediction,
+      actualUniqueDeterminationPairs: prior.actualUniquePresentPairs,
+    }));
+    const groupedCalibration = fitNationalGbifRoundResidualCalibrationV21(priorResiduals);
+    const stagedPrediction = entry.forecasts.find((forecast) => forecast.model === "staged-v2")!.prediction;
+    const interval = predictNationalGbifPortfolioIntervalV21({
+      medianUniqueDeterminationPairs: stagedPrediction,
+      providerRows: entry.providerRows,
+      maximumUniqueDeterminationPairs: entry.selectedPairs,
+      calibration: groupedCalibration,
+    });
+    return {
+      ...entry,
+      intervals: {
+        ...entry.intervals,
+        groupedNormalizedResidualV21: {
+          calibrationRounds: groupedCalibration.calibrationRounds,
+          absoluteResidualPerProviderRowUpperBound: round(groupedCalibration.absoluteResidualPerProviderRowUpperBound, 9),
+          lower: round(interval.lowerUniqueDeterminationPairs, 3),
+          median: round(interval.medianUniqueDeterminationPairs, 3),
+          upper: round(interval.upperUniqueDeterminationPairs, 3),
+          width: round(interval.widthUniqueDeterminationPairs, 3),
+          widthAsMaximumMovementPercent: round(interval.widthAsMaximumMovementPercent, 6),
+          covered: entry.actualUniquePresentPairs >= interval.lowerUniqueDeterminationPairs &&
+            entry.actualUniquePresentPairs <= interval.upperUniqueDeterminationPairs,
+        },
+      },
+    };
+  });
   const metrics = forecastMetrics(backtests.map((entry) => ({
     actual: entry.actualUniquePresentPairs,
     weight: entry.providerRows,
@@ -420,6 +473,11 @@ async function main() {
   })));
   const conditionalCoverage = average(backtests.map((entry) => entry.intervals.stagedConditional95.covered ? 1 : 0));
   const empiricalCoverage = average(backtests.map((entry) => entry.intervals.rollingEmpiricalPriorMaximum.covered ? 1 : 0));
+  const groupedIntervalBacktests = backtests.filter((entry) => entry.intervals.groupedNormalizedResidualV21 !== null);
+  const groupedCoverage = average(groupedIntervalBacktests.map((entry) => entry.intervals.groupedNormalizedResidualV21!.covered ? 1 : 0));
+  const groupedMeanWidth = average(groupedIntervalBacktests.map((entry) => entry.intervals.groupedNormalizedResidualV21!.width));
+  const groupedMedianWidth = median(groupedIntervalBacktests.map((entry) => entry.intervals.groupedNormalizedResidualV21!.width));
+  const groupedMeanWidthPercent = average(groupedIntervalBacktests.map((entry) => entry.intervals.groupedNormalizedResidualV21!.widthAsMaximumMovementPercent));
 
   assert(Array.isArray(calibration.taxa) && Array.isArray(rescore.rankedEligibleTaxa), "Current GBIF inputs lack taxa.");
   const calibrationBySpecies = new Map(calibration.taxa.map((value) => {
@@ -445,25 +503,61 @@ async function main() {
     };
   });
   const currentModel = fitNationalGbifYieldModelV2(historical);
-  const currentRanked = rankNationalGbifCandidatesV2(currentModel, currentCandidates, "post-round-79-gbif-v2-20260821-r1");
+  const currentRanked = rankNationalGbifCandidatesV21(currentModel, currentCandidates, "post-round-79-gbif-v21-20260821-r1");
   const currentRemaining = currentRanked.filter((entry) => entry.notResearchedPairs > 0);
   const alliumHistorical = historical.flatMap((entry) => entry.taxa.map((taxon) => ({ round: entry.round, ...taxon })))
     .find((entry) => entry.speciesId === "allium-sativum");
   const sensitivityModel = fitNationalGbifYieldModelV2(withoutAlliumEndpoints(historical));
-  const sensitivityRanked = rankNationalGbifCandidatesV2(sensitivityModel, currentCandidates, "post-round-79-gbif-v2-20260821-r1");
+  const sensitivityRanked = rankNationalGbifCandidatesV21(sensitivityModel, currentCandidates, "post-round-79-gbif-v21-20260821-r1");
   const fullCurrentExpected = currentRemaining.reduce((sum, entry) => sum + entry.expectedUniquePresentPairs, 0);
   const sensitivityExpected = sensitivityRanked.filter((entry) => entry.notResearchedPairs > 0)
     .reduce((sum, entry) => sum + entry.expectedUniquePresentPairs, 0);
+  const currentMaximumMovement = currentRemaining.reduce((sum, entry) => sum + entry.notResearchedPairs, 0);
+  const currentProviderRows = currentRemaining.reduce((sum, entry) => sum + entry.providerRows, 0);
+  const currentGroupedCalibration = fitNationalGbifRoundResidualCalibrationV21(backtests.map((entry) => ({
+    round: entry.round,
+    providerRows: entry.providerRows,
+    predictedUniqueDeterminationPairs: entry.forecasts.find((forecast) => forecast.model === "staged-v2")!.prediction,
+    actualUniqueDeterminationPairs: entry.actualUniquePresentPairs,
+  })));
+  const currentV21Interval = predictNationalGbifPortfolioIntervalV21({
+    medianUniqueDeterminationPairs: fullCurrentExpected,
+    providerRows: currentProviderRows,
+    maximumUniqueDeterminationPairs: currentMaximumMovement,
+    calibration: currentGroupedCalibration,
+  });
+  const usfwsCoverage = asObject(usfwsEvaluation.coverage, "USFWS coverage");
+  const usfwsIntegratedMovement = integerValue(usfwsCoverage.researchedUnresolvedPairs, "USFWS researched-unresolved pairs");
 
   const metricV2 = asObject(asObject(metrics, "metrics")["staged-v2"], "staged-v2 metrics");
   const metricV1 = asObject(asObject(metrics, "metrics")["current-smoothed-prior-v1"], "v1 metrics");
   const metricProvider = asObject(asObject(metrics, "metrics")["provider-count-scaled-global-rate"], "provider metrics");
   const modelBeatsV1 = numberValue(metricV2.meanAbsoluteError, "v2 MAE") < numberValue(metricV1.meanAbsoluteError, "v1 MAE");
   const modelBeatsProviderScaled = numberValue(metricV2.meanAbsoluteError, "v2 MAE") < numberValue(metricProvider.meanAbsoluteError, "provider MAE");
-  const intervalGate = empiricalCoverage >= 0.8;
+  const intervalGate = groupedCoverage >= 0.8;
+  const intervalSharpnessGate = groupedMeanWidthPercent <= 25 && currentV21Interval.widthAsMaximumMovementPercent <= 5;
+  const hybridSpearman = average(backtests.map((entry) => entry.rankDiscrimination.hybridV21Spearman).filter((value): value is number => value !== null));
+  const providerSpearman = average(backtests.map((entry) => entry.rankDiscrimination.providerCountSpearman).filter((value): value is number => value !== null));
+  const hybridRankGate = hybridSpearman >= providerSpearman;
   const portfolioDecision = asObject(portfolio.decision, "portfolio decision");
-  const bestLaneEstablished = false;
-  const decision = modelBeatsV1 && modelBeatsProviderScaled && intervalGate && bestLaneEstablished ? "GO" : "NO-GO";
+  const bestLaneEstablished = currentV21Interval.lowerUniqueDeterminationPairs > usfwsIntegratedMovement &&
+    currentV21Interval.medianUniqueDeterminationPairs > usfwsIntegratedMovement;
+  const decision = modelBeatsV1 && modelBeatsProviderScaled && intervalGate && intervalSharpnessGate &&
+    hybridRankGate && bestLaneEstablished ? "GO" : "NO-GO";
+
+  const providerRegimeBoundary = median(backtests.map((entry) => entry.providerRows));
+  const regimeMetrics = {
+    lowProvider: forecastMetrics(backtests.filter((entry) => entry.providerRows <= providerRegimeBoundary).map((entry) => ({
+      actual: entry.actualUniquePresentPairs,
+      weight: entry.providerRows,
+      forecasts: entry.forecasts,
+    }))),
+    highProvider: forecastMetrics(backtests.filter((entry) => entry.providerRows > providerRegimeBoundary).map((entry) => ({
+      actual: entry.actualUniquePresentPairs,
+      weight: entry.providerRows,
+      forecasts: entry.forecasts,
+    }))),
+  };
 
   const groupErrors = new Map<string, { actual: number; predicted: number; taxa: number }>();
   for (const split of backtests) {
@@ -482,7 +576,7 @@ async function main() {
     evaluatedAt: args.evaluatedAt,
     baselineSha: args.baselineSha,
     sourceId: "gbif-preserved-specimens",
-    objective: "Audit the post-Round 79 yield-model failure, compare leakage-bounded rolling-origin forecasts, calibrate the exact remaining taxa with public count-only GETs, and issue an explicit provider-request gate without moving the dataset.",
+    objective: "Correct the post-Round 79 yield model with round-blocked uncertainty and provider-count-primary selection, then issue an explicit Round 80 gate without moving the dataset.",
     inputs: inputPaths.map((filepath) => ({
       path: relativePath(root, filepath),
       sha256: sha256(readFileSync(filepath)),
@@ -492,10 +586,13 @@ async function main() {
       contemporaneousFeatureBoundary: "Per-taxon provider-row counts are reconstructed from the immutable target-round archive as a proxy for a limit=0 exact-taxon count that could have been queried before the POST. No selected-scope, accepted-row, or unique-pair target outcome is used as a feature.",
       limitation: "Historical pre-request per-taxon limit=0 responses were not retained. Archive counts are therefore a reproducible contemporaneous proxy, not proof of the exact count visible before each historical request.",
       stagedFunnel: ["provider matching rows", "selected county scope rows", "accepted archive rows", "distinct county-species pairs"],
+      perTaxonFunnelLimitation: "Provider rows and distinct county-pair endpoints are reconstructable per taxon from retained immutable archives and accepted outcomes. Historical per-taxon selected-scope and accepted-archive row summaries were not retained, and replaying those intermediate stages against today's registry would not prove their historical values, so those cells remain explicitly unavailable rather than inferred.",
+      groupedUncertainty: "Each acquisition round is one calibration unit. The interval margin is the largest earlier whole-round absolute residual normalized by that round's provider rows, scaled to the target provider-row regime. Taxa from one download are never treated as independent calibration observations.",
       weakFallback: "Exact-taxon history shrinks to a 250-provider-row display-group prior; display groups shrink to a 1,000-provider-row global prior.",
       currentSmoothedPriorComparator: "Faithful empirical-Bayes-binomial-v1 recreation with a 25,000-pair global prior and 3,000-pair scope minimum.",
+      selectionRule: "Exact provider count is the primary rank because it had stronger held-out Spearman and top-taxon performance than staged v2. The staged point estimate, lower bound, remaining movement, and seeded hash are used only after provider count.",
       noAlphabeticalTieSignal: true,
-      tieBreaker: "SHA-256 of a pinned opaque seed and species ID, applied only after expected yield, lower bound, provider count, and remaining movement.",
+      tieBreaker: "SHA-256 of a pinned opaque seed and species ID, applied only after provider count, staged yield, diagnostic lower bound, and remaining movement.",
     },
     historicalFunnels: historical.map((entry) => ({
       round: entry.round,
@@ -512,8 +609,11 @@ async function main() {
         category: taxon.category,
         displayGroup: taxon.displayGroup,
         providerRows: taxon.providerRows,
-        selectedPairs: taxon.selectedPairs,
+        requestedCountyPairs: taxon.selectedPairs,
+        selectedScopeRows: null,
+        acceptedArchiveRows: null,
         distinctCountySpeciesPairs: taxon.actualUniquePresentPairs,
+        intermediateStageState: "not-retained-per-taxon",
       })),
     })),
     rollingOriginBacktests: backtests,
@@ -521,16 +621,33 @@ async function main() {
     uncertainty: {
       stagedConditional95CoveragePercent: round(conditionalCoverage * 100, 3),
       rollingEmpiricalPriorMaximumCoveragePercent: round(empiricalCoverage * 100, 3),
+      groupedNormalizedResidualV21CoveragePercent: round(groupedCoverage * 100, 3),
+      groupedNormalizedResidualV21EvaluatedSplits: groupedIntervalBacktests.length,
+      groupedNormalizedResidualV21MeanWidthPairs: round(groupedMeanWidth, 3),
+      groupedNormalizedResidualV21MedianWidthPairs: round(groupedMedianWidth, 3),
+      groupedNormalizedResidualV21MeanWidthAsMaximumMovementPercent: round(groupedMeanWidthPercent, 6),
       requiredCoveragePercent: 80,
+      maximumMeanWidthAsMaximumMovementPercent: 25,
+      maximumCurrentWidthAsMaximumMovementPercent: 5,
       conditionalIntervalQualification: "Product of stage-specific Wilson intervals; diagnostic only because stage dependence and cross-round heterogeneity are not modeled.",
       empiricalIntervalQualification: "Zero to the target provider count times the largest unique/provider rate in earlier rounds; strict leave-future-out, but not a calibrated 95 percent interval.",
+      groupedIntervalQualification: "Strict leave-future-out round-blocked maximum absolute residual rate. This is a conservative small-sample empirical interval, not a claim of asymptotic 95 percent coverage. Coverage and width gates must both pass.",
     },
     rankAndTopDiscrimination: {
       averageStagedV2Spearman: round(average(backtests.map((entry) => entry.rankDiscrimination.stagedV2Spearman).filter((value): value is number => value !== null)), 6),
       averageCurrentSmoothedPriorV1Spearman: round(average(backtests.map((entry) => entry.rankDiscrimination.currentSmoothedPriorV1Spearman).filter((value): value is number => value !== null)), 6),
       averageProviderCountSpearman: round(average(backtests.map((entry) => entry.rankDiscrimination.providerCountSpearman).filter((value): value is number => value !== null)), 6),
+      averageHybridV21Spearman: round(hybridSpearman, 6),
       stagedV2TopHitRatePercent: round(average(backtests.map((entry) => entry.rankDiscrimination.stagedV2TopHit ? 1 : 0)) * 100, 3),
       providerCountTopHitRatePercent: round(average(backtests.map((entry) => entry.rankDiscrimination.providerCountTopHit ? 1 : 0)) * 100, 3),
+      hybridV21TopHitRatePercent: round(average(backtests.map((entry) => entry.rankDiscrimination.hybridV21TopHit ? 1 : 0)) * 100, 3),
+      hybridRule: "exact-provider-count-primary-staged-yield-secondary",
+    },
+    providerRegimeSensitivity: {
+      boundaryProviderRows: providerRegimeBoundary,
+      lowProviderRoundCount: backtests.filter((entry) => entry.providerRows <= providerRegimeBoundary).length,
+      highProviderRoundCount: backtests.filter((entry) => entry.providerRows > providerRegimeBoundary).length,
+      metrics: regimeMetrics,
     },
     displayGroupError: [...groupErrors].map(([displayGroup, counts]) => ({
       displayGroup,
@@ -557,6 +674,13 @@ async function main() {
       remainingNotResearchedPairs: currentRemaining.reduce((sum, entry) => sum + entry.notResearchedPairs, 0),
       exactProviderRows: currentRemaining.reduce((sum, entry) => sum + entry.providerRows, 0),
       stagedExpectedUniquePresentPairs: round(fullCurrentExpected, 3),
+      v21LowerUniqueDeterminationPairs: round(currentV21Interval.lowerUniqueDeterminationPairs, 3),
+      v21MedianUniqueDeterminationPairs: round(currentV21Interval.medianUniqueDeterminationPairs, 3),
+      v21UpperUniqueDeterminationPairs: round(currentV21Interval.upperUniqueDeterminationPairs, 3),
+      v21IntervalWidthPairs: round(currentV21Interval.widthUniqueDeterminationPairs, 3),
+      v21IntervalWidthAsMaximumMovementPercent: round(currentV21Interval.widthAsMaximumMovementPercent, 6),
+      v21CalibrationRounds: currentGroupedCalibration.calibrationRounds,
+      v21AbsoluteResidualPerProviderRowUpperBound: round(currentGroupedCalibration.absoluteResidualPerProviderRowUpperBound, 9),
       stagedLower95UniquePresentPairs: round(currentRemaining.reduce((sum, entry) => sum + entry.lower95UniquePresentPairs, 0), 3),
       stagedUpper95UniquePresentPairs: round(currentRemaining.reduce((sum, entry) => sum + entry.upper95UniquePresentPairs, 0), 3),
       perTaxonRemainingCounts: currentRanked.map((entry, index) => ({
@@ -575,8 +699,18 @@ async function main() {
         lower95UniquePresentPairs: round(entry.lower95UniquePresentPairs, 6),
         upper95UniquePresentPairs: round(entry.upper95UniquePresentPairs, 6),
         featureSource: entry.yieldFeatureSource,
+        rankingRule: entry.rankingRule,
         deterministicTieBreaker: entry.deterministicTieBreaker,
       })),
+    },
+    usfwsLaneComparison: {
+      evaluationId: usfwsEvaluation.evaluationId,
+      integratedNotDetectedMovementPairs: usfwsIntegratedMovement,
+      gbifV21LowerUniqueDeterminationPairs: round(currentV21Interval.lowerUniqueDeterminationPairs, 3),
+      gbifV21MedianUniqueDeterminationPairs: round(currentV21Interval.medianUniqueDeterminationPairs, 3),
+      gbifV21UpperUniqueDeterminationPairs: round(currentV21Interval.upperUniqueDeterminationPairs, 3),
+      gbifDemonstrablyPreferable: bestLaneEstablished,
+      qualification: "USFWS movement is integrated survey-axis not-detected evidence; GBIF values are planning-only forecasts of determination-axis movement. The axes remain distinct, but the completed survey lane is the required execution comparator.",
     },
     decision: {
       gbifProviderRequestGate: decision,
@@ -586,15 +720,19 @@ async function main() {
       reasons: [
         `The staged model ${modelBeatsV1 ? "does" : "does not"} beat the current smoothed-prior v1 mean absolute error.`,
         `The staged model ${modelBeatsProviderScaled ? "does" : "does not"} beat the provider-count-scaled global comparator mean absolute error.`,
-        `The strict rolling empirical range covered ${round(empiricalCoverage * 100, 3)} percent of held-out rounds against the 80 percent gate.`,
-        "The negative-evidence inventory is a separate required artifact, so the best executable lane is not established by this audit alone.",
+        `The round-blocked normalized residual interval covered ${round(groupedCoverage * 100, 3)} percent of eligible held-out rounds against the 80 percent gate, with mean width ${round(groupedMeanWidthPercent, 6)} percent of maximum movement.`,
+        `The provider-count-primary hybrid matches the provider comparator's ${round(providerSpearman, 6)} average Spearman instead of replacing it with the weaker staged rank.`,
+        `The current GBIF portfolio has a planning-only interval of ${round(currentV21Interval.lowerUniqueDeterminationPairs, 3)} to ${round(currentV21Interval.upperUniqueDeterminationPairs, 3)} pairs with median ${round(currentV21Interval.medianUniqueDeterminationPairs, 3)}, versus ${usfwsIntegratedMovement} integrated USFWS survey non-detections.`,
+        `The GBIF portfolio ${bestLaneEstablished ? "is" : "is not"} demonstrably preferable to the completed USFWS lane under the required lower-and-median comparison.`,
         `The preceding portfolio decision remains: ${stringValue(portfolioDecision.selectedImmediateAction, "portfolio selectedImmediateAction")}`,
       ],
       gates: {
         rollingOriginSplitsAtLeastSix: backtests.length >= 6,
         stagedV2MaeBeatsCurrentSmoothedPriorV1: modelBeatsV1,
         stagedV2MaeBeatsProviderScaledGlobal: modelBeatsProviderScaled,
-        empiricalCoverageAtLeast80Percent: intervalGate,
+        groupedCoverageAtLeast80Percent: intervalGate,
+        groupedIntervalsDecisionUseful: intervalSharpnessGate,
+        hybridRankingAtLeastProviderCount: hybridRankGate,
         exactCurrentCountsComplete: currentCandidates.length === calibrationBySpecies.size,
         bestMaterialExecutableLaneEstablished: bestLaneEstablished,
       },
@@ -622,6 +760,8 @@ async function main() {
       historicalPerTaxonProviderCountsConserved: historical.every((entry) => entry.taxa.reduce((sum, taxon) => sum + taxon.providerRows, 0) === entry.providerRows),
       historicalPerTaxonUniquePairsConserved: historical.every((entry) => entry.taxa.reduce((sum, taxon) => sum + taxon.actualUniquePresentPairs, 0) === entry.uniquePresentPairs),
       rollingOriginTrainingPrecedesTarget: backtests.every((entry) => entry.trainingRounds.every((roundId) => roundId < entry.round)),
+      groupedIntervalCalibrationPrecedesTarget: groupedIntervalBacktests.every((entry) => entry.intervals.groupedNormalizedResidualV21!.calibrationRounds.every((roundId) => roundId < entry.round)),
+      groupedIntervalsBoundedByMovement: groupedIntervalBacktests.every((entry) => entry.intervals.groupedNormalizedResidualV21!.lower >= 0 && entry.intervals.groupedNormalizedResidualV21!.upper <= entry.selectedPairs),
       currentPairClassesConserved: currentCandidates.every((entry) => entry.grossPairs === entry.notResearchedPairs + entry.blockedPairs + entry.alreadyResearchedPairs),
       calibrationOperationsHaveZeroWrites: asObject(calibration.operations, "calibration.operations").providerPosts === 0 && asObject(calibration.operations, "calibration.operations").datasetMovement === 0,
       externalMutationCountIsZero: true,
@@ -638,7 +778,13 @@ async function main() {
     gbifProviderRequestGate: decision,
     stagedV2MeanAbsoluteError: metricV2.meanAbsoluteError,
     currentSmoothedPriorV1MeanAbsoluteError: metricV1.meanAbsoluteError,
-    empiricalCoveragePercent: round(empiricalCoverage * 100, 3),
+    groupedV21CoveragePercent: round(groupedCoverage * 100, 3),
+    groupedV21MeanWidthAsMaximumMovementPercent: round(groupedMeanWidthPercent, 6),
+    currentV21Interval: {
+      lower: round(currentV21Interval.lowerUniqueDeterminationPairs, 3),
+      median: round(currentV21Interval.medianUniqueDeterminationPairs, 3),
+      upper: round(currentV21Interval.upperUniqueDeterminationPairs, 3),
+    },
     providerPosts: 0,
     datasetMovement: 0,
   }, null, 2)}\n`);

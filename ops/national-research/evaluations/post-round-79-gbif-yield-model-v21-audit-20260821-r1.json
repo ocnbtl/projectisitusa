@@ -1,0 +1,3427 @@
+{
+  "alliumSensitivity": {
+    "currentNotResearchedPairs": 0,
+    "deltaPairs": 1.999,
+    "fullEndpointCurrentExpectedPairs": 198.105,
+    "historicalProviderRows": 555,
+    "historicalUniquePresentPairs": 157,
+    "qualification": "Sensitivity removes Allium provider and distinct-pair endpoints from training. Per-taxon intermediate selected-scope and accepted-row counts were not retained, so this is an endpoint sensitivity and is not treated as a causal attribution.",
+    "speciesId": "allium-sativum",
+    "withoutAlliumEndpointCurrentExpectedPairs": 196.106
+  },
+  "baselineSha": "c7772ba35c0411c375c116ea43c264a8c1c56c1c",
+  "checks": {
+    "calibrationOperationsHaveZeroWrites": true,
+    "currentPairClassesConserved": true,
+    "externalMutationCountIsZero": true,
+    "groupedIntervalCalibrationPrecedesTarget": true,
+    "groupedIntervalsBoundedByMovement": true,
+    "historicalFunnelsMonotonic": true,
+    "historicalPerTaxonProviderCountsConserved": true,
+    "historicalPerTaxonUniquePairsConserved": true,
+    "rollingOriginTrainingPrecedesTarget": true
+  },
+  "currentExactTaxonCalibration": {
+    "calibrationId": "post-round-79-gbif-exact-taxon-count-calibration-20260821-r1",
+    "exactProviderRows": 2350,
+    "perTaxonRemainingCounts": [
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "02e9737cc15e46e785265b4e9e8dd8ecc01e7ec56a43d76f9f216338fbb74927",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 64.644271,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 62.724688,
+        "notResearchedPairs": 3144,
+        "providerRows": 834,
+        "rank": 1,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Amaranthus graecizans",
+        "speciesId": "amaranthus-graecizans",
+        "taxonKey": 5384373,
+        "upper95UniquePresentPairs": 66.62204
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "1bd1942c61b1429a3db6c39fb39f0d7fa301d4031bfae4c987816ee82e6b108c",
+        "displayGroup": "Trees & shrubs",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 21.948643,
+        "notResearchedPairs": 0,
+        "providerRows": 709,
+        "rank": 2,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aleurites moluccanus",
+        "speciesId": "aleurites-moluccanus",
+        "taxonKey": 4930679,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "wildlife",
+        "deterministicTieBreaker": "317819ebd3c5d4ef2775a623f0b1bc968e215aa0a7eefd713083eb5b62b51c95",
+        "displayGroup": "Other wildlife",
+        "expectedUniquePresentPairs": 49.235561,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 47.773533,
+        "notResearchedPairs": 3144,
+        "providerRows": 555,
+        "rank": 3,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Amphibalanus amphitrite",
+        "speciesId": "amphibalanus-amphitrite",
+        "taxonKey": 4805564,
+        "upper95UniquePresentPairs": 50.741906
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "b900ecd44fc491716c2a66a29deadef88789306ab1500267fc5468d0ef1d70a9",
+        "displayGroup": "Grasses & herbs",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 119.433833,
+        "notResearchedPairs": 0,
+        "providerRows": 555,
+        "rank": 4,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Allium sativum",
+        "speciesId": "allium-sativum",
+        "taxonKey": 2856681,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "1c2f3a797c54f7a4aa7bbff8b149f5a444686aa5f91088ec4fac33780073b5f4",
+        "displayGroup": "Beetles",
+        "expectedUniquePresentPairs": 41.783692,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 40.542944,
+        "notResearchedPairs": 3144,
+        "providerRows": 471,
+        "rank": 5,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Agrilus cyanescens",
+        "speciesId": "agrilus-cyanescens",
+        "taxonKey": 4432773,
+        "upper95UniquePresentPairs": 43.06205
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "a4e0d852769ad66fc04825eaf41d2cfd432e073c57447db5b75141a47c6fc2db",
+        "displayGroup": "Beetles",
+        "expectedUniquePresentPairs": 20.758777,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 20.142355,
+        "notResearchedPairs": 3144,
+        "providerRows": 234,
+        "rank": 6,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Agrilus cuprescens",
+        "speciesId": "agrilus-cuprescens",
+        "taxonKey": 4432626,
+        "upper95UniquePresentPairs": 21.393885
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "9158674c053525af89d97320c1780c57805a280adbb0f3ed30b8be4bd8003b0f",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 9.393128,
+        "notResearchedPairs": 0,
+        "providerRows": 222,
+        "rank": 7,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acyrthosiphon kondoi",
+        "speciesId": "acyrthosiphon-kondoi",
+        "taxonKey": 2077491,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "wildlife",
+        "deterministicTieBreaker": "3bdd9214b9a563a65f49148aa464a0ef3cec92c34d68748d6ebc2c997a65fb21",
+        "displayGroup": "Fish",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 10.890718,
+        "notResearchedPairs": 0,
+        "providerRows": 168,
+        "rank": 8,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acanthogobius flavimanus",
+        "speciesId": "acanthogobius-flavimanus",
+        "taxonKey": 2375974,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "5c622b780e7e9bcbbe4cdda214d3a19e310b55bfe63fe2ff5b07770e6facb55a",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 9.354116,
+        "notResearchedPairs": 0,
+        "providerRows": 153,
+        "rank": 9,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Alpinia zerumbet",
+        "speciesId": "alpinia-zerumbet",
+        "taxonKey": 5301979,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "e4689fc0c0acb0d768110078b293d07421e3ca2ecab09f5fca10c79c2d6cca7a",
+        "displayGroup": "Grasses & herbs",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 13.949753,
+        "notResearchedPairs": 0,
+        "providerRows": 82,
+        "rank": 10,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Agrostis castellana",
+        "speciesId": "agrostis-castellana",
+        "taxonKey": 2706501,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "51dd4776d25479b5eb6c28dc938c4aa503f4a83f05db198c7899eafba2a317b3",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 4.84213,
+        "notResearchedPairs": 0,
+        "providerRows": 81,
+        "rank": 11,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aglaonema commutatum",
+        "speciesId": "aglaonema-commutatum",
+        "taxonKey": 2866467,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "fungi-diseases",
+        "deterministicTieBreaker": "14ccd8818fc7c059a278c4f0ba4c76d6ef4ccd8aa9e1d334bd1e0eed04964e53",
+        "displayGroup": "Fungi & pathogens",
+        "expectedUniquePresentPairs": 6.742167,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 6.541961,
+        "notResearchedPairs": 3144,
+        "providerRows": 76,
+        "rank": 12,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Allantophomopsiella pseudotsugae",
+        "speciesId": "allantophomopsiella-pseudotsugae",
+        "taxonKey": 7556848,
+        "upper95UniquePresentPairs": 6.948441
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "878f7925c75dafb496ec23154fc32192f48eb2e69428661d5fbd81cef7cd94e9",
+        "displayGroup": "Trees & shrubs",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 5.797048,
+        "notResearchedPairs": 0,
+        "providerRows": 76,
+        "rank": 13,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Abies alba",
+        "speciesId": "abies-alba",
+        "taxonKey": 2685484,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "cec1c08b0350d2f7200a44bdf02d671de3a6e62d0b5492af9e4d39d108c43375",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 5.681759,
+        "notResearchedPairs": 0,
+        "providerRows": 68,
+        "rank": 14,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Agdestis clematidea",
+        "speciesId": "agdestis-clematidea",
+        "taxonKey": 5383981,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "3d5a0e8e1b289a3029e0ee0d458ccf55635beef1b31d2cdec5b26b1c2d4783f1",
+        "displayGroup": "Grasses & herbs",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 8.654134,
+        "notResearchedPairs": 0,
+        "providerRows": 67,
+        "rank": 15,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aegilops tauschii",
+        "speciesId": "aegilops-tauschii",
+        "taxonKey": 5289779,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "0c840d228dd1cb3a5c7e193ba44b1a90feb3fc96a5fb659248c4630899c87ac1",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 4.958293,
+        "notResearchedPairs": 0,
+        "providerRows": 63,
+        "rank": 16,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Alternanthera ficoidea",
+        "speciesId": "alternanthera-ficoidea",
+        "taxonKey": 8160803,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "d04741eea3dc24d65e9fb259f3a764b09f74b32f8a34f3cdfce12f7c3db4e7a2",
+        "displayGroup": "Vines & groundcovers",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 5.226427,
+        "notResearchedPairs": 0,
+        "providerRows": 51,
+        "rank": 17,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acacia podalyriifolia",
+        "speciesId": "acacia-podalyriifolia",
+        "taxonKey": 2979014,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "5c0c50ae2cb26bff8afd53e7d36b3879acce18744a64460dd15b05605dbd4716",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 3.022934,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 2.933169,
+        "notResearchedPairs": 3144,
+        "providerRows": 39,
+        "rank": 18,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Amaranthus dubius",
+        "speciesId": "amaranthus-dubius",
+        "taxonKey": 8279930,
+        "upper95UniquePresentPairs": 3.115419
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "b01bbfa3ef4ba5678f89d4b8a8e8a36998d9c45260e579820f74f1610e50c81e",
+        "displayGroup": "Vines & groundcovers",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 3.898276,
+        "notResearchedPairs": 0,
+        "providerRows": 39,
+        "rank": 19,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acacia elata",
+        "speciesId": "acacia-elata",
+        "taxonKey": 2973176,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "a1e12818170f12f0f7c98d80d14c6c74a6392875297f4be53af38c1abfea3fc4",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 3.322996,
+        "notResearchedPairs": 0,
+        "providerRows": 39,
+        "rank": 20,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Alternanthera brasiliana",
+        "speciesId": "alternanthera-brasiliana",
+        "taxonKey": 3084934,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "d5ab3ca48d5adf03e3cc1d7b5f4cd3f18ad7369c92c9e248d0926225a6916ec3",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 2.22932,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 2.163121,
+        "notResearchedPairs": 3144,
+        "providerRows": 30,
+        "rank": 21,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aloephagus myersi",
+        "speciesId": "aloephagus-myersi",
+        "taxonKey": 2077000,
+        "upper95UniquePresentPairs": 2.297525
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "45bca4c0e22f10e6351014ee79c1b1b1b6ef087e652de19620a0f530b735b889",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 1.732826,
+        "notResearchedPairs": 0,
+        "providerRows": 24,
+        "rank": 22,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Adiantum macrophyllum",
+        "speciesId": "adiantum-macrophyllum",
+        "taxonKey": 2651850,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "9c0ea7a2a8793431baa9d3395516a1fba9bae7ddd4ee12c097df7533079144f1",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 1.709145,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 1.658393,
+        "notResearchedPairs": 3144,
+        "providerRows": 23,
+        "rank": 23,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aleurodicus dugesii",
+        "speciesId": "aleurodicus-dugesii",
+        "taxonKey": 7741971,
+        "upper95UniquePresentPairs": 1.761436
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "5c02c8a56af24c1156bb7e1f2abab6bd017b5b7aa18fed72fbd79e40be67d8ee",
+        "displayGroup": "Vines & groundcovers",
+        "expectedUniquePresentPairs": 2.356538,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 2.286562,
+        "notResearchedPairs": 3144,
+        "providerRows": 22,
+        "rank": 24,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Albizia procera",
+        "speciesId": "albizia-procera",
+        "taxonKey": 2973167,
+        "upper95UniquePresentPairs": 2.428635
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "wildlife",
+        "deterministicTieBreaker": "dc8f4afbbe820c7467cefb7cdd53459891ff3330d2a0336b9d0fff91c9aaf1d8",
+        "displayGroup": "Arachnids",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 1.703713,
+        "notResearchedPairs": 0,
+        "providerRows": 22,
+        "rank": 25,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acarapis woodi",
+        "speciesId": "acarapis-woodi",
+        "taxonKey": 4542910,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "56705800715586b32bf9a796ebcd2700d9410cc131e15ab2d1dbbf6c458a5655",
+        "displayGroup": "Beetles",
+        "expectedUniquePresentPairs": 1.862967,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 1.807647,
+        "notResearchedPairs": 3144,
+        "providerRows": 21,
+        "rank": 26,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Agriotes lineatus",
+        "speciesId": "agriotes-lineatus",
+        "taxonKey": 1162127,
+        "upper95UniquePresentPairs": 1.919964
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "42009ef34531928b9b627c2d0d0dfb095a8a318ea38adeecddc6358f5464f515",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 1.60793,
+        "notResearchedPairs": 0,
+        "providerRows": 21,
+        "rank": 27,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Abutilon hirtum",
+        "speciesId": "abutilon-hirtum",
+        "taxonKey": 3152619,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "c2836e160936fef5ec3b008d7f0e0ef93985f7d90fc6c51788f9a7bb3796fe86",
+        "displayGroup": "Flies",
+        "expectedUniquePresentPairs": 1.685542,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 1.63549,
+        "notResearchedPairs": 3144,
+        "providerRows": 19,
+        "rank": 28,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Anastrepha suspensa",
+        "speciesId": "anastrepha-suspensa",
+        "taxonKey": 1625078,
+        "upper95UniquePresentPairs": 1.73711
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "ddce19aad903d5352cd29175ab1df3fe17949059f2b2702079157c323aafb4fd",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 0.520175,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.504728,
+        "notResearchedPairs": 3144,
+        "providerRows": 7,
+        "rank": 29,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aleurodicus rugioperculatus",
+        "speciesId": "aleurodicus-rugioperculatus",
+        "taxonKey": 8026152,
+        "upper95UniquePresentPairs": 0.536089
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "fungi-diseases",
+        "deterministicTieBreaker": "dd17824d7e9ac2f818e9aeebba383b84834d891bf146b8272a1dece2f6e56a23",
+        "displayGroup": "Fungi & pathogens",
+        "expectedUniquePresentPairs": 0.532276,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.516471,
+        "notResearchedPairs": 3144,
+        "providerRows": 6,
+        "rank": 30,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Amylostereum areolatum",
+        "speciesId": "amylostereum-areolatum",
+        "taxonKey": 8693982,
+        "upper95UniquePresentPairs": 0.548561
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "fe87e30786b763d1ccdf7d5f7b91fbd9b974a998fafae1e4fbb61465c65f94dc",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.406616,
+        "notResearchedPairs": 0,
+        "providerRows": 5,
+        "rank": 31,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Alyssum strigosum",
+        "speciesId": "alyssum-strigosum",
+        "taxonKey": 3045193,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "7edfb28970087671878ea2e0e5bc1578792d50f571e9e41a21946e8c6bfd0c51",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 0.297243,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.288416,
+        "notResearchedPairs": 3144,
+        "providerRows": 4,
+        "rank": 32,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aleuroglandulus subtilis",
+        "speciesId": "aleuroglandulus-subtilis",
+        "taxonKey": 7480199,
+        "upper95UniquePresentPairs": 0.306337
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "9e4d12940586434d5dcf6ed6dca51931c9641f020445958369254eb954c10ea8",
+        "displayGroup": "Moths & butterflies",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.269007,
+        "notResearchedPairs": 0,
+        "providerRows": 3,
+        "rank": 33,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acleris comariana",
+        "speciesId": "acleris-comariana",
+        "taxonKey": 1739816,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "d281cd1ba4ccaa43ff9bd610caa16163710090c9158c4108cfd742e95d9fb38e",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 0.148621,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.144208,
+        "notResearchedPairs": 3144,
+        "providerRows": 2,
+        "rank": 34,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aleuroclava aucubae",
+        "speciesId": "aleuroclava-aucubae",
+        "taxonKey": 7638482,
+        "upper95UniquePresentPairs": 0.153168
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "fe38dbb5ffd20f00cdc1f889d93b3ad8dbbdd374dcb8557a0e0d3a226fd41832",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 0.148621,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.144208,
+        "notResearchedPairs": 3144,
+        "providerRows": 2,
+        "rank": 35,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aleurocanthus woglumi",
+        "speciesId": "aleurocanthus-woglumi",
+        "taxonKey": 2012157,
+        "upper95UniquePresentPairs": 0.153168
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "wildlife",
+        "deterministicTieBreaker": "6564e23768925100a6eb1e8b9ef51164a58eb1998378a04a18c75443298e0003",
+        "displayGroup": "Crustaceans",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.170604,
+        "notResearchedPairs": 0,
+        "providerRows": 2,
+        "rank": 36,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acanthomysis aspera",
+        "speciesId": "acanthomysis-aspera",
+        "taxonKey": 2221026,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "plants",
+        "deterministicTieBreaker": "2d6fec8e4394705dcb9639201df20eb0dc3d9c1c378cf404760b0477782514cd",
+        "displayGroup": "Other plants",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.149254,
+        "notResearchedPairs": 0,
+        "providerRows": 2,
+        "rank": 37,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acaena magellanica",
+        "speciesId": "acaena-magellanica",
+        "taxonKey": 5370832,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "382d8a298ad7b216f39cfd230672fcf95aaa29ec85babc012c1da763b9038a94",
+        "displayGroup": "Beetles",
+        "expectedUniquePresentPairs": 0.088713,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.086078,
+        "notResearchedPairs": 3144,
+        "providerRows": 1,
+        "rank": 38,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Agrilus ribesi",
+        "speciesId": "agrilus-ribesi",
+        "taxonKey": 4432640,
+        "upper95UniquePresentPairs": 0.091427
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "48ade6b1b8a8de554bed7dd87f790da6de3d9a28fdf0496c36e755b40df547ad",
+        "displayGroup": "Beetles",
+        "expectedUniquePresentPairs": 0.088713,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.086078,
+        "notResearchedPairs": 3144,
+        "providerRows": 1,
+        "rank": 39,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Agriotes obscurus",
+        "speciesId": "agriotes-obscurus",
+        "taxonKey": 5878773,
+        "upper95UniquePresentPairs": 0.091427
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "fungi-diseases",
+        "deterministicTieBreaker": "59401f0ebbe6012257c7a60871ef407c0aca8abd4ca05aa723f4f4f72e223374",
+        "displayGroup": "Bacterial diseases",
+        "expectedUniquePresentPairs": 0.088713,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.086078,
+        "notResearchedPairs": 3144,
+        "providerRows": 1,
+        "rank": 40,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aeromonas salmonicida",
+        "speciesId": "aeromonas-salmonicida",
+        "taxonKey": 3222886,
+        "upper95UniquePresentPairs": 0.091427
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "wildlife",
+        "deterministicTieBreaker": "c5eb5436ab11e0cda393efa395d92caad0389a1c5e85c7f6cdb1d615d0d121bd",
+        "displayGroup": "Arachnids",
+        "expectedUniquePresentPairs": 0.086812,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.084235,
+        "notResearchedPairs": 3144,
+        "providerRows": 1,
+        "rank": 41,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aculops fuchsiae",
+        "speciesId": "aculops-fuchsiae",
+        "taxonKey": 6914433,
+        "upper95UniquePresentPairs": 0.089468
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "98139345c30de03fde017fd5f27c033f665b90363343d9d2b32a2dc6ee0ca658",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 0.074311,
+        "featureSource": "display-group-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0.072104,
+        "notResearchedPairs": 3144,
+        "providerRows": 1,
+        "rank": 42,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Acyrthosiphon primulae",
+        "speciesId": "acyrthosiphon-primulae",
+        "taxonKey": 2077443,
+        "upper95UniquePresentPairs": 0.076584
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "10bf90cb2417a778d618c9645660820b963b4e959f29706ce4745929d3894e24",
+        "displayGroup": "Flies",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0,
+        "notResearchedPairs": 3144,
+        "providerRows": 0,
+        "rank": 43,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aedeomyia squamipennis",
+        "speciesId": "aedeomyia-squamipennis",
+        "taxonKey": 1649397,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 0,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "7302447f1ffe05b170fa6e96f852e970124c4c181284c08a2cc2f24fa62605f6",
+        "displayGroup": "Flies",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "global-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0,
+        "notResearchedPairs": 3144,
+        "providerRows": 0,
+        "rank": 44,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aedes notoscriptus",
+        "speciesId": "aedes-notoscriptus",
+        "taxonKey": 1652043,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "insects",
+        "deterministicTieBreaker": "770b7eecfc1ea111974704027775a6ac20e648e8c69fa023528d8a81e1bbb8ca",
+        "displayGroup": "Bugs & sap-feeders",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0,
+        "notResearchedPairs": 0,
+        "providerRows": 0,
+        "rank": 45,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aclerda takahashii",
+        "speciesId": "aclerda-takahashii",
+        "taxonKey": 2089833,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "wildlife",
+        "deterministicTieBreaker": "946534ff38b0d08594583b98f6855d9478932bfa4bc5a4821c4ae30cc5a64278",
+        "displayGroup": "Arachnids",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0,
+        "notResearchedPairs": 0,
+        "providerRows": 0,
+        "rank": 46,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aceria litchii",
+        "speciesId": "aceria-litchii",
+        "taxonKey": 4651573,
+        "upper95UniquePresentPairs": 0
+      },
+      {
+        "alreadyResearchedPairs": 3144,
+        "blockedPairs": 0,
+        "category": "wildlife",
+        "deterministicTieBreaker": "b76aa11bb9a7d62dbd46d27ca3d01e390acf2081011aeee36d7710deab978e46",
+        "displayGroup": "Arachnids",
+        "expectedUniquePresentPairs": 0,
+        "featureSource": "exact-taxon-history",
+        "grossPairs": 3144,
+        "lower95UniquePresentPairs": 0,
+        "notResearchedPairs": 0,
+        "providerRows": 0,
+        "rank": 47,
+        "rankingRule": "exact-provider-count-primary-staged-yield-secondary",
+        "scientificName": "Aceria kuko",
+        "speciesId": "aceria-kuko",
+        "taxonKey": 6135493,
+        "upper95UniquePresentPairs": 0
+      }
+    ],
+    "providerGets": 47,
+    "providerPosts": 0,
+    "remainingNotResearchedPairs": 72312,
+    "remainingTaxa": 23,
+    "stagedExpectedUniquePresentPairs": 198.105,
+    "stagedLower95UniquePresentPairs": 192.222,
+    "stagedUpper95UniquePresentPairs": 204.166,
+    "v21AbsoluteResidualPerProviderRowUpperBound": 0.087014179,
+    "v21CalibrationRounds": [
+      72,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79
+    ],
+    "v21IntervalWidthAsMaximumMovementPercent": 0.556738,
+    "v21IntervalWidthPairs": 402.588,
+    "v21LowerUniqueDeterminationPairs": 0,
+    "v21MedianUniqueDeterminationPairs": 198.105,
+    "v21UpperUniqueDeterminationPairs": 402.588
+  },
+  "decision": {
+    "gates": {
+      "bestMaterialExecutableLaneEstablished": false,
+      "exactCurrentCountsComplete": true,
+      "groupedCoverageAtLeast80Percent": true,
+      "groupedIntervalsDecisionUseful": true,
+      "hybridRankingAtLeastProviderCount": true,
+      "rollingOriginSplitsAtLeastSix": true,
+      "stagedV2MaeBeatsCurrentSmoothedPriorV1": true,
+      "stagedV2MaeBeatsProviderScaledGlobal": true
+    },
+    "gbifProviderRequestGate": "NO-GO",
+    "providerPostAuthorized": false,
+    "reasons": [
+      "The staged model does beat the current smoothed-prior v1 mean absolute error.",
+      "The staged model does beat the provider-count-scaled global comparator mean absolute error.",
+      "The round-blocked normalized residual interval covered 100 percent of eligible held-out rounds against the 80 percent gate, with mean width 4.199467 percent of maximum movement.",
+      "The provider-count-primary hybrid matches the provider comparator's 0.690895 average Spearman instead of replacing it with the weaker staged rank.",
+      "The current GBIF portfolio has a planning-only interval of 0 to 402.588 pairs with median 198.105, versus 246 integrated USFWS survey non-detections.",
+      "The GBIF portfolio is not demonstrably preferable to the completed USFWS lane under the required lower-and-median comparison.",
+      "The preceding portfolio decision remains: Do not schedule Round 80 or issue another provider request from Round 79 completion alone."
+    ],
+    "round80Scheduled": false,
+    "selectedScopeCreated": false
+  },
+  "displayGroupError": [
+    {
+      "absoluteError": 825.133,
+      "actualUniquePresentPairs": 2428,
+      "displayGroup": "Grasses & herbs",
+      "stagedV2PredictedPairs": 1602.867,
+      "taxonRoundObservations": 10
+    },
+    {
+      "absoluteError": 805.104,
+      "actualUniquePresentPairs": 1217,
+      "displayGroup": "Trees & shrubs",
+      "stagedV2PredictedPairs": 411.896,
+      "taxonRoundObservations": 7
+    },
+    {
+      "absoluteError": 286.746,
+      "actualUniquePresentPairs": 1471,
+      "displayGroup": "Other plants",
+      "stagedV2PredictedPairs": 1184.254,
+      "taxonRoundObservations": 20
+    },
+    {
+      "absoluteError": 142.42,
+      "actualUniquePresentPairs": 352,
+      "displayGroup": "Aquatic plants",
+      "stagedV2PredictedPairs": 209.58,
+      "taxonRoundObservations": 6
+    },
+    {
+      "absoluteError": 17.572,
+      "actualUniquePresentPairs": 2,
+      "displayGroup": "Bugs & sap-feeders",
+      "stagedV2PredictedPairs": 19.572,
+      "taxonRoundObservations": 2
+    },
+    {
+      "absoluteError": 13.99,
+      "actualUniquePresentPairs": 30,
+      "displayGroup": "Fish",
+      "stagedV2PredictedPairs": 43.99,
+      "taxonRoundObservations": 4
+    },
+    {
+      "absoluteError": 9.396,
+      "actualUniquePresentPairs": 387,
+      "displayGroup": "Vines & groundcovers",
+      "stagedV2PredictedPairs": 396.396,
+      "taxonRoundObservations": 6
+    },
+    {
+      "absoluteError": 7.837,
+      "actualUniquePresentPairs": 0,
+      "displayGroup": "Mollusks",
+      "stagedV2PredictedPairs": 7.837,
+      "taxonRoundObservations": 1
+    },
+    {
+      "absoluteError": 1.942,
+      "actualUniquePresentPairs": 0,
+      "displayGroup": "Arachnids",
+      "stagedV2PredictedPairs": 1.942,
+      "taxonRoundObservations": 3
+    },
+    {
+      "absoluteError": 0.736,
+      "actualUniquePresentPairs": 1,
+      "displayGroup": "Moths & butterflies",
+      "stagedV2PredictedPairs": 0.264,
+      "taxonRoundObservations": 1
+    },
+    {
+      "absoluteError": 0.177,
+      "actualUniquePresentPairs": 0,
+      "displayGroup": "Crustaceans",
+      "stagedV2PredictedPairs": 0.177,
+      "taxonRoundObservations": 1
+    }
+  ],
+  "evaluatedAt": "2026-08-21T16:55:59.723Z",
+  "evaluationId": "post-round-79-gbif-yield-model-v21-audit-20260821-r1",
+  "forecastError": {
+    "current-smoothed-prior-v1": {
+      "meanAbsoluteError": 854.184,
+      "meanBias": 366.439,
+      "medianAbsoluteError": 938.981,
+      "providerRowWeightedAbsoluteError": 796.663,
+      "totalActual": 5888,
+      "totalPredicted": 8453.073
+    },
+    "provider-count-scaled-global-rate": {
+      "meanAbsoluteError": 473.09,
+      "meanBias": -364.567,
+      "medianAbsoluteError": 362.722,
+      "providerRowWeightedAbsoluteError": 860.792,
+      "totalActual": 5888,
+      "totalPredicted": 3336.029
+    },
+    "staged-v2": {
+      "meanAbsoluteError": 404.855,
+      "meanBias": -287.032,
+      "medianAbsoluteError": 329.646,
+      "providerRowWeightedAbsoluteError": 738.683,
+      "totalActual": 5888,
+      "totalPredicted": 3878.775
+    },
+    "trailing-selected-pair-rate": {
+      "meanAbsoluteError": 852.743,
+      "meanBias": 361.435,
+      "medianAbsoluteError": 905.72,
+      "providerRowWeightedAbsoluteError": 816.37,
+      "totalActual": 5888,
+      "totalPredicted": 8418.046
+    },
+    "zero-conservative": {
+      "meanAbsoluteError": 841.143,
+      "meanBias": -841.143,
+      "medianAbsoluteError": 726,
+      "providerRowWeightedAbsoluteError": 1523.78,
+      "totalActual": 5888,
+      "totalPredicted": 0
+    }
+  },
+  "historicalFunnels": [
+    {
+      "acceptedArchiveRows": 15554,
+      "archivePath": "src/data/research/national-acquisitions/20260818t015248z__gbif-download__3adc41198e1b/download.zip",
+      "archiveSha256": "5ebce0dbc0107aa2b733f2f3715aa7f2a8b3f7eb9d11b4dab487402163827f8b",
+      "distinctCountySpeciesPairs": 1147,
+      "planId": "gbif-national-download-v2-round-68-13",
+      "providerRows": 30994,
+      "round": 70,
+      "selectedPairs": 25406,
+      "selectedScopeRows": 15896,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 139,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 3528,
+          "requestedCountyPairs": 1682,
+          "selectedScopeRows": null,
+          "speciesId": "acer-platanoides"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 40,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 679,
+          "requestedCountyPairs": 2315,
+          "selectedScopeRows": null,
+          "speciesId": "butomus-umbellatus"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 70,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 564,
+          "requestedCountyPairs": 2952,
+          "selectedScopeRows": null,
+          "speciesId": "callitriche-stagnalis"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Mollusks",
+          "distinctCountySpeciesPairs": 92,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 7343,
+          "requestedCountyPairs": 2226,
+          "selectedScopeRows": null,
+          "speciesId": "corbicula-fluminea"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Mollusks",
+          "distinctCountySpeciesPairs": 18,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 862,
+          "requestedCountyPairs": 2017,
+          "selectedScopeRows": null,
+          "speciesId": "dreissena-polymorpha"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 76,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2515,
+          "requestedCountyPairs": 1402,
+          "selectedScopeRows": null,
+          "speciesId": "elaeagnus-angustifolia"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 135,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 3458,
+          "requestedCountyPairs": 1441,
+          "selectedScopeRows": null,
+          "speciesId": "hesperis-matronalis"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 182,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2189,
+          "requestedCountyPairs": 1722,
+          "selectedScopeRows": null,
+          "speciesId": "lonicera-maackii"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 61,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2266,
+          "requestedCountyPairs": 1722,
+          "selectedScopeRows": null,
+          "speciesId": "lonicera-morrowii"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 86,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 1879,
+          "requestedCountyPairs": 1722,
+          "selectedScopeRows": null,
+          "speciesId": "lonicera-tatarica"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 72,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 838,
+          "requestedCountyPairs": 3047,
+          "selectedScopeRows": null,
+          "speciesId": "marsilea-quadrifolia"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 31,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2409,
+          "requestedCountyPairs": 1722,
+          "selectedScopeRows": null,
+          "speciesId": "rhamnus-cathartica"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 145,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2464,
+          "requestedCountyPairs": 1436,
+          "selectedScopeRows": null,
+          "speciesId": "ulmus-pumila"
+        }
+      ]
+    },
+    {
+      "acceptedArchiveRows": 5755,
+      "archivePath": "src/data/research/national-acquisitions/20260818t235623z__gbif-download__d1e8dacc7baa/download.zip",
+      "archiveSha256": "ff0d8471f7ab5394d839cf21700314ae4d043923d4266f028f33b9ce88b5ad48",
+      "distinctCountySpeciesPairs": 1420,
+      "planId": "gbif-national-download-v2-round-72-9",
+      "providerRows": 11002,
+      "round": 72,
+      "selectedPairs": 27223,
+      "selectedScopeRows": 7403,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 37,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 228,
+          "requestedCountyPairs": 2977,
+          "selectedScopeRows": null,
+          "speciesId": "aralia-elata"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 2,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 164,
+          "requestedCountyPairs": 2975,
+          "selectedScopeRows": null,
+          "speciesId": "cortaderia-jubata"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 566,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 3109,
+          "requestedCountyPairs": 2990,
+          "selectedScopeRows": null,
+          "speciesId": "euphorbia-cyparissias"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 22,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 119,
+          "requestedCountyPairs": 3029,
+          "selectedScopeRows": null,
+          "speciesId": "glyceria-maxima"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2639,
+          "requestedCountyPairs": 3120,
+          "selectedScopeRows": null,
+          "speciesId": "kochia-scoparia"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Vines & groundcovers",
+          "distinctCountySpeciesPairs": 9,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 181,
+          "requestedCountyPairs": 3005,
+          "selectedScopeRows": null,
+          "speciesId": "mimosa-pigra"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 253,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 1417,
+          "requestedCountyPairs": 3054,
+          "selectedScopeRows": null,
+          "speciesId": "rubus-phoenicolasius"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 396,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2693,
+          "requestedCountyPairs": 3029,
+          "selectedScopeRows": null,
+          "speciesId": "tussilago-farfara"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Vines & groundcovers",
+          "distinctCountySpeciesPairs": 135,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 452,
+          "requestedCountyPairs": 3044,
+          "selectedScopeRows": null,
+          "speciesId": "wisteria-floribunda"
+        }
+      ]
+    },
+    {
+      "acceptedArchiveRows": 2936,
+      "archivePath": "src/data/research/national-acquisitions/20260819t041411z__gbif-download__172c1735eb7d/download.zip",
+      "archiveSha256": "2ce905262b75f0dbbcf22b11e2cd70ba7e71a9f86b0b9c7f4d3f703ce0d57031",
+      "distinctCountySpeciesPairs": 726,
+      "planId": "gbif-national-download-v2-round-74-9",
+      "providerRows": 4986,
+      "round": 74,
+      "selectedPairs": 26424,
+      "selectedScopeRows": 3437,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 140,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 755,
+          "requestedCountyPairs": 2971,
+          "selectedScopeRows": null,
+          "speciesId": "alnus-glutinosa"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 73,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 489,
+          "requestedCountyPairs": 2971,
+          "selectedScopeRows": null,
+          "speciesId": "anthriscus-sylvestris"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 119,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 871,
+          "requestedCountyPairs": 2886,
+          "selectedScopeRows": null,
+          "speciesId": "epilobium-hirsutum"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 452,
+          "requestedCountyPairs": 2947,
+          "selectedScopeRows": null,
+          "speciesId": "fallopia-japonica"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 30,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 303,
+          "requestedCountyPairs": 2928,
+          "selectedScopeRows": null,
+          "speciesId": "impatiens-glandulifera"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 192,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 1041,
+          "requestedCountyPairs": 2885,
+          "selectedScopeRows": null,
+          "speciesId": "ligustrum-obtusifolium"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 105,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 444,
+          "requestedCountyPairs": 2965,
+          "selectedScopeRows": null,
+          "speciesId": "lysimachia-vulgaris"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Fish",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 27,
+          "requestedCountyPairs": 2963,
+          "selectedScopeRows": null,
+          "speciesId": "mylopharyngodon-piceus"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Vines & groundcovers",
+          "distinctCountySpeciesPairs": 67,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 604,
+          "requestedCountyPairs": 2908,
+          "selectedScopeRows": null,
+          "speciesId": "persicaria-perfoliata"
+        }
+      ]
+    },
+    {
+      "acceptedArchiveRows": 9724,
+      "archivePath": "src/data/research/national-acquisitions/20260819t085145z__gbif-download__fe5d42be8331/download.zip",
+      "archiveSha256": "669569e22aac90f89503cd65a67bc7224f28868747815dfe05faed8cbdd93369",
+      "distinctCountySpeciesPairs": 2572,
+      "planId": "gbif-national-download-v2-round-75-9",
+      "providerRows": 16077,
+      "round": 75,
+      "selectedPairs": 25048,
+      "selectedScopeRows": 10571,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 194,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 883,
+          "requestedCountyPairs": 2742,
+          "selectedScopeRows": null,
+          "speciesId": "carduus-acanthoides"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 392,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 1865,
+          "requestedCountyPairs": 2844,
+          "selectedScopeRows": null,
+          "speciesId": "centaurea-stoebe"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 1269,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 8063,
+          "requestedCountyPairs": 2752,
+          "selectedScopeRows": null,
+          "speciesId": "cyperus-esculentus"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 442,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2931,
+          "requestedCountyPairs": 2757,
+          "selectedScopeRows": null,
+          "speciesId": "echium-vulgare"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 183,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 886,
+          "requestedCountyPairs": 2844,
+          "selectedScopeRows": null,
+          "speciesId": "euphorbia-virgata"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 30,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 354,
+          "requestedCountyPairs": 2714,
+          "selectedScopeRows": null,
+          "speciesId": "hydrocharis-morsus-ranae"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Fish",
+          "distinctCountySpeciesPairs": 13,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 180,
+          "requestedCountyPairs": 2711,
+          "selectedScopeRows": null,
+          "speciesId": "hypophthalmichthys-nobilis"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 49,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 437,
+          "requestedCountyPairs": 2869,
+          "selectedScopeRows": null,
+          "speciesId": "phellodendron-amurense"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 478,
+          "requestedCountyPairs": 2815,
+          "selectedScopeRows": null,
+          "speciesId": "rhaponticum-repens"
+        }
+      ]
+    },
+    {
+      "acceptedArchiveRows": 7335,
+      "archivePath": "src/data/research/national-acquisitions/20260819t164007z__gbif-download__c17010fdc231/download.zip",
+      "archiveSha256": "7c0128d03c817b3c10f3f85c3f8c96093f3b3fb654f8a4a1fa0cf0e3bfbf1bd7",
+      "distinctCountySpeciesPairs": 918,
+      "planId": "gbif-national-download-v2-round-76-10",
+      "providerRows": 13770,
+      "round": 76,
+      "selectedPairs": 26031,
+      "selectedScopeRows": 9684,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 504,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2901,
+          "requestedCountyPairs": 2560,
+          "selectedScopeRows": null,
+          "speciesId": "carduus-nutans"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 84,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 967,
+          "requestedCountyPairs": 2663,
+          "selectedScopeRows": null,
+          "speciesId": "chondrilla-juncea"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Vines & groundcovers",
+          "distinctCountySpeciesPairs": 168,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2114,
+          "requestedCountyPairs": 2604,
+          "selectedScopeRows": null,
+          "speciesId": "cytisus-scoparius"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 3201,
+          "requestedCountyPairs": 2633,
+          "selectedScopeRows": null,
+          "speciesId": "hieracium-aurantiacum"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Fish",
+          "distinctCountySpeciesPairs": 8,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 193,
+          "requestedCountyPairs": 2666,
+          "selectedScopeRows": null,
+          "speciesId": "hypophthalmichthys-molitrix"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 25,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 1586,
+          "requestedCountyPairs": 2557,
+          "selectedScopeRows": null,
+          "speciesId": "lepidium-latifolium"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Aquatic plants",
+          "distinctCountySpeciesPairs": 46,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 402,
+          "requestedCountyPairs": 2395,
+          "selectedScopeRows": null,
+          "speciesId": "nymphoides-peltata"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 80,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 982,
+          "requestedCountyPairs": 2654,
+          "selectedScopeRows": null,
+          "speciesId": "onopordum-acanthium"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Mollusks",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 337,
+          "requestedCountyPairs": 2636,
+          "selectedScopeRows": null,
+          "speciesId": "potamopyrgus-antipodarum"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 3,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 1087,
+          "requestedCountyPairs": 2663,
+          "selectedScopeRows": null,
+          "speciesId": "taeniatherum-caput-medusae"
+        }
+      ]
+    },
+    {
+      "acceptedArchiveRows": 77,
+      "archivePath": "src/data/research/national-acquisitions/20260819t205026z__gbif-download__a56cc00163f2/download.zip",
+      "archiveSha256": "d14b1415eddcd698135635a275ea2b55fa7657bc11c28fdf97c77f999087388c",
+      "distinctCountySpeciesPairs": 25,
+      "planId": "gbif-national-download-v2-round-77-8",
+      "providerRows": 381,
+      "round": 77,
+      "selectedPairs": 25152,
+      "selectedScopeRows": 109,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 6,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 76,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "abies-alba"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 2,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 21,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "abutilon-hirtum"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Vines & groundcovers",
+          "distinctCountySpeciesPairs": 3,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 39,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acacia-elata"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Vines & groundcovers",
+          "distinctCountySpeciesPairs": 5,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 51,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acacia-podalyriifolia"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acaena-magellanica"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Fish",
+          "distinctCountySpeciesPairs": 9,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 168,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acanthogobius-flavimanus"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Crustaceans",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 2,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acanthomysis-aspera"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Arachnids",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 22,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acarapis-woodi"
+        }
+      ]
+    },
+    {
+      "acceptedArchiveRows": 440,
+      "archivePath": "src/data/research/national-acquisitions/20260820t031644z__gbif-download__5f0b33aeaea8/download.zip",
+      "archiveSha256": "85f6af0f4bf7a29c046039a4682369325ae209d6df7b821b75e14bb75ec5f937",
+      "distinctCountySpeciesPairs": 197,
+      "planId": "gbif-national-download-v2-round-78-8",
+      "providerRows": 1638,
+      "round": 78,
+      "selectedPairs": 25152,
+      "selectedScopeRows": 521,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Arachnids",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 0,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "aceria-kuko"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "insects",
+          "displayGroup": "Bugs & sap-feeders",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 0,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "aclerda-takahashii"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "insects",
+          "displayGroup": "Moths & butterflies",
+          "distinctCountySpeciesPairs": 1,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 3,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acleris-comariana"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "insects",
+          "displayGroup": "Bugs & sap-feeders",
+          "distinctCountySpeciesPairs": 2,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 222,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "acyrthosiphon-kondoi"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 5,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 67,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "aegilops-tauschii"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 21,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 82,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "agrostis-castellana"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Trees & shrubs",
+          "distinctCountySpeciesPairs": 11,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 709,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "aleurites-moluccanus"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Grasses & herbs",
+          "distinctCountySpeciesPairs": 157,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 555,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "allium-sativum"
+        }
+      ]
+    },
+    {
+      "acceptedArchiveRows": 45,
+      "archivePath": "src/data/research/national-acquisitions/20260821t000530z__gbif-download__aa28fb27eb6e/download.zip",
+      "archiveSha256": "bd00c54b579698a5284b20cfa21d725fcf3187962b5b7afccea5b85310890ddc",
+      "distinctCountySpeciesPairs": 30,
+      "planId": "gbif-national-download-v2-round-79-8",
+      "providerRows": 433,
+      "round": 79,
+      "selectedPairs": 25152,
+      "selectedScopeRows": 83,
+      "taxa": [
+        {
+          "acceptedArchiveRows": null,
+          "category": "wildlife",
+          "displayGroup": "Arachnids",
+          "distinctCountySpeciesPairs": 0,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 0,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "aceria-litchii"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 1,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 24,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "adiantum-macrophyllum"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 8,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 68,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "agdestis-clematidea"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 1,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 81,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "aglaonema-commutatum"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 6,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 153,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "alpinia-zerumbet"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 6,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 39,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "alternanthera-brasiliana"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 6,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 63,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "alternanthera-ficoidea"
+        },
+        {
+          "acceptedArchiveRows": null,
+          "category": "plants",
+          "displayGroup": "Other plants",
+          "distinctCountySpeciesPairs": 2,
+          "intermediateStageState": "not-retained-per-taxon",
+          "providerRows": 5,
+          "requestedCountyPairs": 3144,
+          "selectedScopeRows": null,
+          "speciesId": "alyssum-strigosum"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "path": "ops/national-research/evaluations/post-round-79-gbif-marginal-yield-audit-20260821-r1.json",
+      "sha256": "d8ab638d4c499474431c054f78baa34e0003b7c5a46b7be437cb50d4f0234db4"
+    },
+    {
+      "path": "ops/national-research/evaluations/post-round-79-gbif-exact-cache-rescore-20260821-r1.json",
+      "sha256": "45b0f5ac91fd7cd030f4cd1c2752a2908fad8d89415f2462249a26c26e8d67db"
+    },
+    {
+      "path": "ops/national-research/evaluations/post-round-79-gbif-exact-taxon-count-calibration-20260821-r1.json",
+      "sha256": "4003ffffe75dd3333e650cbd583ea1ed6925af69249c273edd6cb3f1410c908f"
+    },
+    {
+      "path": "ops/national-research/evaluations/post-round-79-source-portfolio-comparison-20260821-r1.json",
+      "sha256": "0c48817d4cfffedc9a178bf215d352833a153201403e2a6fcaa673b56c5fbd60"
+    },
+    {
+      "path": "ops/national-research/evaluations/usfws-invasive-carp-edna-coverage-preflight-20260821-r1.json",
+      "sha256": "0ac25856b8e2bf8c6fef20dfeaf006c187007118914d55e0a2bf541c98766ef1"
+    }
+  ],
+  "methodology": {
+    "contemporaneousFeatureBoundary": "Per-taxon provider-row counts are reconstructed from the immutable target-round archive as a proxy for a limit=0 exact-taxon count that could have been queried before the POST. No selected-scope, accepted-row, or unique-pair target outcome is used as a feature.",
+    "currentSmoothedPriorComparator": "Faithful empirical-Bayes-binomial-v1 recreation with a 25,000-pair global prior and 3,000-pair scope minimum.",
+    "groupedUncertainty": "Each acquisition round is one calibration unit. The interval margin is the largest earlier whole-round absolute residual normalized by that round's provider rows, scaled to the target provider-row regime. Taxa from one download are never treated as independent calibration observations.",
+    "limitation": "Historical pre-request per-taxon limit=0 responses were not retained. Archive counts are therefore a reproducible contemporaneous proxy, not proof of the exact count visible before each historical request.",
+    "noAlphabeticalTieSignal": true,
+    "outcomeSplit": "For each target round after the first, only earlier round outcomes train every model.",
+    "perTaxonFunnelLimitation": "Provider rows and distinct county-pair endpoints are reconstructable per taxon from retained immutable archives and accepted outcomes. Historical per-taxon selected-scope and accepted-archive row summaries were not retained, and replaying those intermediate stages against today's registry would not prove their historical values, so those cells remain explicitly unavailable rather than inferred.",
+    "selectionRule": "Exact provider count is the primary rank because it had stronger held-out Spearman and top-taxon performance than staged v2. The staged point estimate, lower bound, remaining movement, and seeded hash are used only after provider count.",
+    "stagedFunnel": [
+      "provider matching rows",
+      "selected county scope rows",
+      "accepted archive rows",
+      "distinct county-species pairs"
+    ],
+    "tieBreaker": "SHA-256 of a pinned opaque seed and species ID, applied only after provider count, staged yield, diagnostic lower bound, and remaining movement.",
+    "weakFallback": "Exact-taxon history shrinks to a 250-provider-row display-group prior; display groups shrink to a 1,000-provider-row global prior."
+  },
+  "objective": "Correct the post-Round 79 yield model with round-blocked uncertainty and provider-count-primary selection, then issue an explicit Round 80 gate without moving the dataset.",
+  "operations": {
+    "datasetMovement": 0,
+    "downloadRequests": 0,
+    "evidenceAssertionsCreated": 0,
+    "generationCommands": 0,
+    "providerGets": 47,
+    "providerPosts": 0,
+    "publicationMutations": 0,
+    "r2Mutations": 0
+  },
+  "providerRegimeSensitivity": {
+    "boundaryProviderRows": 4986,
+    "highProviderRoundCount": 3,
+    "lowProviderRoundCount": 4,
+    "metrics": {
+      "highProvider": {
+        "current-smoothed-prior-v1": {
+          "meanAbsoluteError": 719.633,
+          "meanBias": -418.438,
+          "medianAbsoluteError": 451.793,
+          "providerRowWeightedAbsoluteError": 805.716,
+          "totalActual": 4910,
+          "totalPredicted": 3654.686
+        },
+        "provider-count-scaled-global-rate": {
+          "meanAbsoluteError": 940.24,
+          "meanBias": -698.426,
+          "medianAbsoluteError": 1012.847,
+          "providerRowWeightedAbsoluteError": 963.836,
+          "totalActual": 4910,
+          "totalPredicted": 2814.723
+        },
+        "staged-v2": {
+          "meanAbsoluteError": 824.634,
+          "meanBias": -557.345,
+          "medianAbsoluteError": 957.33,
+          "providerRowWeightedAbsoluteError": 832.077,
+          "totalActual": 4910,
+          "totalPredicted": 3237.964
+        },
+        "trailing-selected-pair-rate": {
+          "meanAbsoluteError": 756.051,
+          "meanBias": -390.335,
+          "medianAbsoluteError": 548.574,
+          "providerRowWeightedAbsoluteError": 837.973,
+          "totalActual": 4910,
+          "totalPredicted": 3738.995
+        },
+        "zero-conservative": {
+          "meanAbsoluteError": 1636.667,
+          "meanBias": -1636.667,
+          "medianAbsoluteError": 1420,
+          "providerRowWeightedAbsoluteError": 1704.173,
+          "totalActual": 4910,
+          "totalPredicted": 0
+        }
+      },
+      "lowProvider": {
+        "current-smoothed-prior-v1": {
+          "meanAbsoluteError": 955.097,
+          "meanBias": 955.097,
+          "medianAbsoluteError": 1029.67,
+          "providerRowWeightedAbsoluteError": 746.944,
+          "totalActual": 978,
+          "totalPredicted": 4798.387
+        },
+        "provider-count-scaled-global-rate": {
+          "meanAbsoluteError": 122.727,
+          "meanBias": -114.174,
+          "medianAbsoluteError": 30.603,
+          "providerRowWeightedAbsoluteError": 294.881,
+          "totalActual": 978,
+          "totalPredicted": 521.306
+        },
+        "staged-v2": {
+          "meanAbsoluteError": 90.021,
+          "meanBias": -84.297,
+          "medianAbsoluteError": 13.389,
+          "providerRowWeightedAbsoluteError": 225.77,
+          "totalActual": 978,
+          "totalPredicted": 640.811
+        },
+        "trailing-selected-pair-rate": {
+          "meanAbsoluteError": 925.263,
+          "meanBias": 925.263,
+          "medianAbsoluteError": 926.093,
+          "providerRowWeightedAbsoluteError": 697.726,
+          "totalActual": 978,
+          "totalPredicted": 4679.051
+        },
+        "zero-conservative": {
+          "meanAbsoluteError": 244.5,
+          "meanBias": -244.5,
+          "medianAbsoluteError": 113.5,
+          "providerRowWeightedAbsoluteError": 533.078,
+          "totalActual": 978,
+          "totalPredicted": 0
+        }
+      }
+    }
+  },
+  "rankAndTopDiscrimination": {
+    "averageCurrentSmoothedPriorV1Spearman": 0.352056,
+    "averageHybridV21Spearman": 0.690895,
+    "averageProviderCountSpearman": 0.690895,
+    "averageStagedV2Spearman": 0.65177,
+    "hybridRule": "exact-provider-count-primary-staged-yield-secondary",
+    "hybridV21TopHitRatePercent": 57.143,
+    "providerCountTopHitRatePercent": 57.143,
+    "stagedV2TopHitRatePercent": 14.286
+  },
+  "rollingOriginBacktests": [
+    {
+      "actualUniquePresentPairs": 1420,
+      "forecasts": [
+        {
+          "model": "staged-v2",
+          "prediction": 462.67
+        },
+        {
+          "model": "current-smoothed-prior-v1",
+          "prediction": 1271.494
+        },
+        {
+          "model": "trailing-selected-pair-rate",
+          "prediction": 1229.032
+        },
+        {
+          "model": "provider-count-scaled-global-rate",
+          "prediction": 407.153
+        },
+        {
+          "model": "zero-conservative",
+          "prediction": 0
+        }
+      ],
+      "intervals": {
+        "groupedNormalizedResidualV21": null,
+        "rollingEmpiricalPriorMaximum": {
+          "covered": false,
+          "lower": 0,
+          "upper": 407.153
+        },
+        "stagedConditional95": {
+          "covered": false,
+          "lower": 431.135,
+          "upper": 495.306
+        }
+      },
+      "perTaxon": [
+        {
+          "actualUniquePresentPairs": 37,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 134.8581,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 228,
+          "providerRows": 228,
+          "selectedPairs": 2977,
+          "speciesId": "aralia-elata",
+          "stagedV2Prediction": 11.000946
+        },
+        {
+          "actualUniquePresentPairs": 2,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 139.5275,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 164,
+          "providerRows": 164,
+          "selectedPairs": 2975,
+          "speciesId": "cortaderia-jubata",
+          "stagedV2Prediction": 6.074265
+        },
+        {
+          "actualUniquePresentPairs": 566,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 151.593,
+          "displayGroup": "Trees & shrubs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 3109,
+          "providerRows": 3109,
+          "selectedPairs": 2990,
+          "speciesId": "euphorbia-cyparissias",
+          "stagedV2Prediction": 129.156714
+        },
+        {
+          "actualUniquePresentPairs": 22,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 123.5832,
+          "displayGroup": "Aquatic plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 119,
+          "providerRows": 119,
+          "selectedPairs": 3029,
+          "speciesId": "glyceria-maxima",
+          "stagedV2Prediction": 7.052074
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 141.336,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 2639,
+          "providerRows": 2639,
+          "selectedPairs": 3120,
+          "speciesId": "kochia-scoparia",
+          "stagedV2Prediction": 127.331131
+        },
+        {
+          "actualUniquePresentPairs": 9,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 140.9345,
+          "displayGroup": "Vines & groundcovers",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 181,
+          "providerRows": 181,
+          "selectedPairs": 3005,
+          "speciesId": "mimosa-pigra",
+          "stagedV2Prediction": 6.703914
+        },
+        {
+          "actualUniquePresentPairs": 253,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 154.8378,
+          "displayGroup": "Trees & shrubs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 1417,
+          "providerRows": 1417,
+          "selectedPairs": 3054,
+          "speciesId": "rubus-phoenicolasius",
+          "stagedV2Prediction": 58.866215
+        },
+        {
+          "actualUniquePresentPairs": 396,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 142.0601,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 2693,
+          "providerRows": 2693,
+          "selectedPairs": 3029,
+          "speciesId": "tussilago-farfara",
+          "stagedV2Prediction": 99.743877
+        },
+        {
+          "actualUniquePresentPairs": 135,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 142.7636,
+          "displayGroup": "Vines & groundcovers",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 452,
+          "providerRows": 452,
+          "selectedPairs": 3044,
+          "speciesId": "wisteria-floribunda",
+          "stagedV2Prediction": 16.741267
+        }
+      ],
+      "providerRows": 11002,
+      "rankDiscrimination": {
+        "actualTopSpeciesId": "euphorbia-cyparissias",
+        "currentSmoothedPriorV1Spearman": 0.616667,
+        "hybridV21Spearman": 0.6,
+        "hybridV21TopHit": true,
+        "providerCountSpearman": 0.6,
+        "providerCountTopHit": true,
+        "stagedV2Spearman": 0.533333,
+        "stagedV2TopHit": false
+      },
+      "round": 72,
+      "selectedPairs": 27223,
+      "trainingRounds": [
+        70
+      ]
+    },
+    {
+      "actualUniquePresentPairs": 726,
+      "forecasts": [
+        {
+          "model": "staged-v2",
+          "prediction": 396.354
+        },
+        {
+          "model": "current-smoothed-prior-v1",
+          "prediction": 1274.906
+        },
+        {
+          "model": "trailing-selected-pair-rate",
+          "prediction": 1288.841
+        },
+        {
+          "model": "provider-count-scaled-global-rate",
+          "prediction": 304.769
+        },
+        {
+          "model": "zero-conservative",
+          "prediction": 0
+        }
+      ],
+      "intervals": {
+        "groupedNormalizedResidualV21": {
+          "absoluteResidualPerProviderRowUpperBound": 0.087014179,
+          "calibrationRounds": [
+            72
+          ],
+          "covered": true,
+          "lower": 0,
+          "median": 396.354,
+          "upper": 830.207,
+          "width": 830.207,
+          "widthAsMaximumMovementPercent": 3.141866
+        },
+        "rollingEmpiricalPriorMaximum": {
+          "covered": false,
+          "lower": 0,
+          "upper": 643.53
+        },
+        "stagedConditional95": {
+          "covered": false,
+          "lower": 377.371,
+          "upper": 415.893
+        }
+      },
+      "perTaxon": [
+        {
+          "actualUniquePresentPairs": 140,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 193.115,
+          "displayGroup": "Trees & shrubs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 755,
+          "providerRows": 755,
+          "selectedPairs": 2971,
+          "speciesId": "alnus-glutinosa",
+          "stagedV2Prediction": 53.114826
+        },
+        {
+          "actualUniquePresentPairs": 73,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 122.4052,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 489,
+          "providerRows": 489,
+          "selectedPairs": 2971,
+          "speciesId": "anthriscus-sylvestris",
+          "stagedV2Prediction": 18.791159
+        },
+        {
+          "actualUniquePresentPairs": 119,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 116.883,
+          "displayGroup": "Aquatic plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 871,
+          "providerRows": 871,
+          "selectedPairs": 2886,
+          "speciesId": "epilobium-hirsutum",
+          "stagedV2Prediction": 64.500542
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 153.8334,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 452,
+          "providerRows": 452,
+          "selectedPairs": 2947,
+          "speciesId": "fallopia-japonica",
+          "stagedV2Prediction": 53.82684
+        },
+        {
+          "actualUniquePresentPairs": 30,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 118.584,
+          "displayGroup": "Aquatic plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 303,
+          "providerRows": 303,
+          "selectedPairs": 2928,
+          "speciesId": "impatiens-glandulifera",
+          "stagedV2Prediction": 22.438191
+        },
+        {
+          "actualUniquePresentPairs": 192,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 187.525,
+          "displayGroup": "Trees & shrubs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 1041,
+          "providerRows": 1041,
+          "selectedPairs": 2885,
+          "speciesId": "ligustrum-obtusifolium",
+          "stagedV2Prediction": 73.235144
+        },
+        {
+          "actualUniquePresentPairs": 105,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 120.0825,
+          "displayGroup": "Aquatic plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 444,
+          "providerRows": 444,
+          "selectedPairs": 2965,
+          "speciesId": "lysimachia-vulgaris",
+          "stagedV2Prediction": 32.879725
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 134.8165,
+          "displayGroup": "Fish",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 27,
+          "providerRows": 27,
+          "selectedPairs": 2963,
+          "speciesId": "mylopharyngodon-piceus",
+          "stagedV2Prediction": 1.650891
+        },
+        {
+          "actualUniquePresentPairs": 67,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 127.6612,
+          "displayGroup": "Vines & groundcovers",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 604,
+          "providerRows": 604,
+          "selectedPairs": 2908,
+          "speciesId": "persicaria-perfoliata",
+          "stagedV2Prediction": 75.917179
+        }
+      ],
+      "providerRows": 4986,
+      "rankDiscrimination": {
+        "actualTopSpeciesId": "ligustrum-obtusifolium",
+        "currentSmoothedPriorV1Spearman": 0.158997,
+        "hybridV21Spearman": 0.811723,
+        "hybridV21TopHit": true,
+        "providerCountSpearman": 0.811723,
+        "providerCountTopHit": true,
+        "stagedV2Spearman": 0.426782,
+        "stagedV2TopHit": false
+      },
+      "round": 74,
+      "selectedPairs": 26424,
+      "trainingRounds": [
+        70,
+        72
+      ]
+    },
+    {
+      "actualUniquePresentPairs": 2572,
+      "forecasts": [
+        {
+          "model": "staged-v2",
+          "prediction": 1456.361
+        },
+        {
+          "model": "current-smoothed-prior-v1",
+          "prediction": 1013.399
+        },
+        {
+          "model": "trailing-selected-pair-rate",
+          "prediction": 1043.389
+        },
+        {
+          "model": "provider-count-scaled-global-rate",
+          "prediction": 1126.848
+        },
+        {
+          "model": "zero-conservative",
+          "prediction": 0
+        }
+      ],
+      "intervals": {
+        "groupedNormalizedResidualV21": {
+          "absoluteResidualPerProviderRowUpperBound": 0.087014179,
+          "calibrationRounds": [
+            72,
+            74
+          ],
+          "covered": true,
+          "lower": 57.434,
+          "median": 1456.361,
+          "upper": 2855.288,
+          "width": 2797.854,
+          "widthAsMaximumMovementPercent": 11.169969
+        },
+        "rollingEmpiricalPriorMaximum": {
+          "covered": false,
+          "lower": 0,
+          "upper": 2340.935
+        },
+        "stagedConditional95": {
+          "covered": false,
+          "lower": 1394.755,
+          "upper": 1521.021
+        }
+      },
+      "perTaxon": [
+        {
+          "actualUniquePresentPairs": 194,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 96.7926,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 883,
+          "providerRows": 883,
+          "selectedPairs": 2742,
+          "speciesId": "carduus-acanthoides",
+          "stagedV2Prediction": 40.606951
+        },
+        {
+          "actualUniquePresentPairs": 392,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 120.5856,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 1865,
+          "providerRows": 1865,
+          "selectedPairs": 2844,
+          "speciesId": "centaurea-stoebe",
+          "stagedV2Prediction": 202.483906
+        },
+        {
+          "actualUniquePresentPairs": 1269,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 116.6848,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 8063,
+          "providerRows": 8063,
+          "selectedPairs": 2752,
+          "speciesId": "cyperus-esculentus",
+          "stagedV2Prediction": 875.403612
+        },
+        {
+          "actualUniquePresentPairs": 442,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 97.3221,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 2931,
+          "providerRows": 2931,
+          "selectedPairs": 2757,
+          "speciesId": "echium-vulgare",
+          "stagedV2Prediction": 134.789325
+        },
+        {
+          "actualUniquePresentPairs": 183,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 120.5856,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 886,
+          "providerRows": 886,
+          "selectedPairs": 2844,
+          "speciesId": "euphorbia-virgata",
+          "stagedV2Prediction": 96.193427
+        },
+        {
+          "actualUniquePresentPairs": 30,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 92.0046,
+          "displayGroup": "Aquatic plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 354,
+          "providerRows": 354,
+          "selectedPairs": 2714,
+          "speciesId": "hydrocharis-morsus-ranae",
+          "stagedV2Prediction": 38.115429
+        },
+        {
+          "actualUniquePresentPairs": 13,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 97.0538,
+          "displayGroup": "Fish",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 180,
+          "providerRows": 180,
+          "selectedPairs": 2711,
+          "speciesId": "hypophthalmichthys-nobilis",
+          "stagedV2Prediction": 12.272661
+        },
+        {
+          "actualUniquePresentPairs": 49,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 173.0007,
+          "displayGroup": "Trees & shrubs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 437,
+          "providerRows": 437,
+          "selectedPairs": 2869,
+          "speciesId": "phellodendron-amurense",
+          "stagedV2Prediction": 34.513609
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 99.3695,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 478,
+          "providerRows": 478,
+          "selectedPairs": 2815,
+          "speciesId": "rhaponticum-repens",
+          "stagedV2Prediction": 21.982019
+        }
+      ],
+      "providerRows": 16077,
+      "rankDiscrimination": {
+        "actualTopSpeciesId": "cyperus-esculentus",
+        "currentSmoothedPriorV1Spearman": 0.217575,
+        "hybridV21Spearman": 0.883333,
+        "hybridV21TopHit": true,
+        "providerCountSpearman": 0.883333,
+        "providerCountTopHit": true,
+        "stagedV2Spearman": 0.933333,
+        "stagedV2TopHit": false
+      },
+      "round": 75,
+      "selectedPairs": 25048,
+      "trainingRounds": [
+        70,
+        72,
+        74
+      ]
+    },
+    {
+      "actualUniquePresentPairs": 918,
+      "forecasts": [
+        {
+          "model": "staged-v2",
+          "prediction": 1318.933
+        },
+        {
+          "model": "current-smoothed-prior-v1",
+          "prediction": 1369.793
+        },
+        {
+          "model": "trailing-selected-pair-rate",
+          "prediction": 1466.574
+        },
+        {
+          "model": "provider-count-scaled-global-rate",
+          "prediction": 1280.722
+        },
+        {
+          "model": "zero-conservative",
+          "prediction": 0
+        }
+      ],
+      "intervals": {
+        "groupedNormalizedResidualV21": {
+          "absoluteResidualPerProviderRowUpperBound": 0.087014179,
+          "calibrationRounds": [
+            72,
+            74,
+            75
+          ],
+          "covered": true,
+          "lower": 120.748,
+          "median": 1318.933,
+          "upper": 2517.118,
+          "width": 2396.37,
+          "widthAsMaximumMovementPercent": 9.205833
+        },
+        "rollingEmpiricalPriorMaximum": {
+          "covered": true,
+          "lower": 0,
+          "upper": 2202.926
+        },
+        "stagedConditional95": {
+          "covered": false,
+          "lower": 1276.032,
+          "upper": 1362.705
+        }
+      },
+      "perTaxon": [
+        {
+          "actualUniquePresentPairs": 504,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 129.024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 2901,
+          "providerRows": 2901,
+          "selectedPairs": 2560,
+          "speciesId": "carduus-nutans",
+          "stagedV2Prediction": 239.107085
+        },
+        {
+          "actualUniquePresentPairs": 84,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 134.2152,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 967,
+          "providerRows": 967,
+          "selectedPairs": 2663,
+          "speciesId": "chondrilla-juncea",
+          "stagedV2Prediction": 79.702362
+        },
+        {
+          "actualUniquePresentPairs": 168,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.2108,
+          "displayGroup": "Vines & groundcovers",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 2114,
+          "providerRows": 2114,
+          "selectedPairs": 2604,
+          "speciesId": "cytisus-scoparius",
+          "stagedV2Prediction": 287.370342
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 132.7032,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 3201,
+          "providerRows": 3201,
+          "selectedPairs": 2633,
+          "speciesId": "hieracium-aurantiacum",
+          "stagedV2Prediction": 263.833774
+        },
+        {
+          "actualUniquePresentPairs": 8,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 123.4358,
+          "displayGroup": "Fish",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 193,
+          "providerRows": 193,
+          "selectedPairs": 2666,
+          "speciesId": "hypophthalmichthys-molitrix",
+          "stagedV2Prediction": 16.949985
+        },
+        {
+          "actualUniquePresentPairs": 25,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 128.8728,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 1586,
+          "providerRows": 1586,
+          "selectedPairs": 2557,
+          "speciesId": "lepidium-latifolium",
+          "stagedV2Prediction": 130.721764
+        },
+        {
+          "actualUniquePresentPairs": 46,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 97.4765,
+          "displayGroup": "Aquatic plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 402,
+          "providerRows": 402,
+          "selectedPairs": 2395,
+          "speciesId": "nymphoides-peltata",
+          "stagedV2Prediction": 44.593864
+        },
+        {
+          "actualUniquePresentPairs": 80,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 133.7616,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 982,
+          "providerRows": 982,
+          "selectedPairs": 2654,
+          "speciesId": "onopordum-acanthium",
+          "stagedV2Prediction": 80.938696
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 136.8084,
+          "displayGroup": "Mollusks",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 337,
+          "providerRows": 337,
+          "selectedPairs": 2636,
+          "speciesId": "potamopyrgus-antipodarum",
+          "stagedV2Prediction": 7.83737
+        },
+        {
+          "actualUniquePresentPairs": 3,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 229.2843,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 1087,
+          "providerRows": 1087,
+          "selectedPairs": 2663,
+          "speciesId": "taeniatherum-caput-medusae",
+          "stagedV2Prediction": 167.878216
+        }
+      ],
+      "providerRows": 13770,
+      "rankDiscrimination": {
+        "actualTopSpeciesId": "carduus-nutans",
+        "currentSmoothedPriorV1Spearman": -0.316111,
+        "hybridV21Spearman": 0.237083,
+        "hybridV21TopHit": false,
+        "providerCountSpearman": 0.237083,
+        "providerCountTopHit": false,
+        "stagedV2Spearman": 0.32219,
+        "stagedV2TopHit": true
+      },
+      "round": 76,
+      "selectedPairs": 26031,
+      "trainingRounds": [
+        70,
+        72,
+        74,
+        75
+      ]
+    },
+    {
+      "actualUniquePresentPairs": 25,
+      "forecasts": [
+        {
+          "model": "staged-v2",
+          "prediction": 32.786
+        },
+        {
+          "model": "current-smoothed-prior-v1",
+          "prediction": 1145.359
+        },
+        {
+          "model": "trailing-selected-pair-rate",
+          "prediction": 1311.023
+        },
+        {
+          "model": "provider-count-scaled-global-rate",
+          "prediction": 33.637
+        },
+        {
+          "model": "zero-conservative",
+          "prediction": 0
+        }
+      ],
+      "intervals": {
+        "groupedNormalizedResidualV21": {
+          "absoluteResidualPerProviderRowUpperBound": 0.087014179,
+          "calibrationRounds": [
+            72,
+            74,
+            75,
+            76
+          ],
+          "covered": true,
+          "lower": 0,
+          "median": 32.786,
+          "upper": 65.938,
+          "width": 65.938,
+          "widthAsMaximumMovementPercent": 0.26216
+        },
+        "rollingEmpiricalPriorMaximum": {
+          "covered": true,
+          "lower": 0,
+          "upper": 60.952
+        },
+        "stagedConditional95": {
+          "covered": false,
+          "lower": 31.8,
+          "upper": 33.808
+        }
+      },
+      "perTaxon": [
+        {
+          "actualUniquePresentPairs": 6,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 198.072,
+          "displayGroup": "Trees & shrubs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 76,
+          "providerRows": 76,
+          "selectedPairs": 3144,
+          "speciesId": "abies-alba",
+          "stagedV2Prediction": 6.100957
+        },
+        {
+          "actualUniquePresentPairs": 2,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 154.6848,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 21,
+          "providerRows": 21,
+          "selectedPairs": 3144,
+          "speciesId": "abutilon-hirtum",
+          "stagedV2Prediction": 1.631207
+        },
+        {
+          "actualUniquePresentPairs": 3,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 144.624,
+          "displayGroup": "Vines & groundcovers",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 39,
+          "providerRows": 39,
+          "selectedPairs": 3144,
+          "speciesId": "acacia-elata",
+          "stagedV2Prediction": 4.187335
+        },
+        {
+          "actualUniquePresentPairs": 5,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 144.624,
+          "displayGroup": "Vines & groundcovers",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 51,
+          "providerRows": 51,
+          "selectedPairs": 3144,
+          "speciesId": "acacia-podalyriifolia",
+          "stagedV2Prediction": 5.475746
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 154.6848,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 2,
+          "providerRows": 2,
+          "selectedPairs": 3144,
+          "speciesId": "acaena-magellanica",
+          "stagedV2Prediction": 0.155353
+        },
+        {
+          "actualUniquePresentPairs": 9,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 124.8168,
+          "displayGroup": "Fish",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 168,
+          "providerRows": 168,
+          "selectedPairs": 3144,
+          "speciesId": "acanthogobius-flavimanus",
+          "stagedV2Prediction": 13.116837
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 111.9264,
+          "displayGroup": "Crustaceans",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 2,
+          "providerRows": 2,
+          "selectedPairs": 3144,
+          "speciesId": "acanthomysis-aspera",
+          "stagedV2Prediction": 0.176547
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 111.9264,
+          "displayGroup": "Arachnids",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 22,
+          "providerRows": 22,
+          "selectedPairs": 3144,
+          "speciesId": "acarapis-woodi",
+          "stagedV2Prediction": 1.942013
+        }
+      ],
+      "providerRows": 381,
+      "rankDiscrimination": {
+        "actualTopSpeciesId": "acanthogobius-flavimanus",
+        "currentSmoothedPriorV1Spearman": 0.310565,
+        "hybridV21Spearman": 0.932673,
+        "hybridV21TopHit": true,
+        "providerCountSpearman": 0.932673,
+        "providerCountTopHit": true,
+        "stagedV2Spearman": 0.927105,
+        "stagedV2TopHit": false
+      },
+      "round": 77,
+      "selectedPairs": 25152,
+      "trainingRounds": [
+        70,
+        72,
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "actualUniquePresentPairs": 197,
+      "forecasts": [
+        {
+          "model": "staged-v2",
+          "prediction": 178.009
+        },
+        {
+          "model": "current-smoothed-prior-v1",
+          "prediction": 1409.141
+        },
+        {
+          "model": "trailing-selected-pair-rate",
+          "prediction": 1102.72
+        },
+        {
+          "model": "provider-count-scaled-global-rate",
+          "prediction": 144.431
+        },
+        {
+          "model": "zero-conservative",
+          "prediction": 0
+        }
+      ],
+      "intervals": {
+        "groupedNormalizedResidualV21": {
+          "absoluteResidualPerProviderRowUpperBound": 0.087014179,
+          "calibrationRounds": [
+            72,
+            74,
+            75,
+            76,
+            77
+          ],
+          "covered": true,
+          "lower": 35.48,
+          "median": 178.009,
+          "upper": 320.538,
+          "width": 285.058,
+          "widthAsMaximumMovementPercent": 1.133343
+        },
+        "rollingEmpiricalPriorMaximum": {
+          "covered": true,
+          "lower": 0,
+          "upper": 262.047
+        },
+        "stagedConditional95": {
+          "covered": false,
+          "lower": 172.659,
+          "upper": 183.552
+        }
+      },
+      "perTaxon": [
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 122.3016,
+          "displayGroup": "Arachnids",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 0,
+          "providerRows": 0,
+          "selectedPairs": 3144,
+          "speciesId": "aceria-kuko",
+          "stagedV2Prediction": 0
+        },
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "insects",
+          "currentSmoothedPriorV1Prediction": 137.7072,
+          "displayGroup": "Bugs & sap-feeders",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 0,
+          "providerRows": 0,
+          "selectedPairs": 3144,
+          "speciesId": "aclerda-takahashii",
+          "stagedV2Prediction": 0
+        },
+        {
+          "actualUniquePresentPairs": 1,
+          "category": "insects",
+          "currentSmoothedPriorV1Prediction": 137.7072,
+          "displayGroup": "Moths & butterflies",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 3,
+          "providerRows": 3,
+          "selectedPairs": 3144,
+          "speciesId": "acleris-comariana",
+          "stagedV2Prediction": 0.264489
+        },
+        {
+          "actualUniquePresentPairs": 2,
+          "category": "insects",
+          "currentSmoothedPriorV1Prediction": 137.7072,
+          "displayGroup": "Bugs & sap-feeders",
+          "featureSource": "global-history",
+          "providerCountRankFeature": 222,
+          "providerRows": 222,
+          "selectedPairs": 3144,
+          "speciesId": "acyrthosiphon-kondoi",
+          "stagedV2Prediction": 19.572212
+        },
+        {
+          "actualUniquePresentPairs": 5,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 232.9704,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 67,
+          "providerRows": 67,
+          "selectedPairs": 3144,
+          "speciesId": "aegilops-tauschii",
+          "stagedV2Prediction": 9.637268
+        },
+        {
+          "actualUniquePresentPairs": 21,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 232.9704,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 82,
+          "providerRows": 82,
+          "selectedPairs": 3144,
+          "speciesId": "agrostis-castellana",
+          "stagedV2Prediction": 11.794866
+        },
+        {
+          "actualUniquePresentPairs": 11,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 174.8064,
+          "displayGroup": "Trees & shrubs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 709,
+          "providerRows": 709,
+          "selectedPairs": 3144,
+          "speciesId": "aleurites-moluccanus",
+          "stagedV2Prediction": 56.908892
+        },
+        {
+          "actualUniquePresentPairs": 157,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 232.9704,
+          "displayGroup": "Grasses & herbs",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 555,
+          "providerRows": 555,
+          "selectedPairs": 3144,
+          "speciesId": "allium-sativum",
+          "stagedV2Prediction": 79.831103
+        }
+      ],
+      "providerRows": 1638,
+      "rankDiscrimination": {
+        "actualTopSpeciesId": "allium-sativum",
+        "currentSmoothedPriorV1Spearman": 0.881358,
+        "hybridV21Spearman": 0.831325,
+        "hybridV21TopHit": false,
+        "providerCountSpearman": 0.831325,
+        "providerCountTopHit": false,
+        "stagedV2Spearman": 0.879518,
+        "stagedV2TopHit": false
+      },
+      "round": 78,
+      "selectedPairs": 25152,
+      "trainingRounds": [
+        70,
+        72,
+        74,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "actualUniquePresentPairs": 30,
+      "forecasts": [
+        {
+          "model": "staged-v2",
+          "prediction": 33.662
+        },
+        {
+          "model": "current-smoothed-prior-v1",
+          "prediction": 968.981
+        },
+        {
+          "model": "trailing-selected-pair-rate",
+          "prediction": 976.467
+        },
+        {
+          "model": "provider-count-scaled-global-rate",
+          "prediction": 38.469
+        },
+        {
+          "model": "zero-conservative",
+          "prediction": 0
+        }
+      ],
+      "intervals": {
+        "groupedNormalizedResidualV21": {
+          "absoluteResidualPerProviderRowUpperBound": 0.087014179,
+          "calibrationRounds": [
+            72,
+            74,
+            75,
+            76,
+            77,
+            78
+          ],
+          "covered": true,
+          "lower": 0,
+          "median": 33.662,
+          "upper": 71.339,
+          "width": 71.339,
+          "widthAsMaximumMovementPercent": 0.283632
+        },
+        "rollingEmpiricalPriorMaximum": {
+          "covered": true,
+          "lower": 0,
+          "upper": 69.271
+        },
+        "stagedConditional95": {
+          "covered": false,
+          "lower": 32.656,
+          "upper": 34.693
+        }
+      },
+      "perTaxon": [
+        {
+          "actualUniquePresentPairs": 0,
+          "category": "wildlife",
+          "currentSmoothedPriorV1Prediction": 97.464,
+          "displayGroup": "Arachnids",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 0,
+          "providerRows": 0,
+          "selectedPairs": 3144,
+          "speciesId": "aceria-litchii",
+          "stagedV2Prediction": 0
+        },
+        {
+          "actualUniquePresentPairs": 1,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.5024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 24,
+          "providerRows": 24,
+          "selectedPairs": 3144,
+          "speciesId": "adiantum-macrophyllum",
+          "stagedV2Prediction": 1.865797
+        },
+        {
+          "actualUniquePresentPairs": 8,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.5024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 68,
+          "providerRows": 68,
+          "selectedPairs": 3144,
+          "speciesId": "agdestis-clematidea",
+          "stagedV2Prediction": 5.286426
+        },
+        {
+          "actualUniquePresentPairs": 1,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.5024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 81,
+          "providerRows": 81,
+          "selectedPairs": 3144,
+          "speciesId": "aglaonema-commutatum",
+          "stagedV2Prediction": 6.297066
+        },
+        {
+          "actualUniquePresentPairs": 6,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.5024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 153,
+          "providerRows": 153,
+          "selectedPairs": 3144,
+          "speciesId": "alpinia-zerumbet",
+          "stagedV2Prediction": 11.894458
+        },
+        {
+          "actualUniquePresentPairs": 6,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.5024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 39,
+          "providerRows": 39,
+          "selectedPairs": 3144,
+          "speciesId": "alternanthera-brasiliana",
+          "stagedV2Prediction": 3.031921
+        },
+        {
+          "actualUniquePresentPairs": 6,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.5024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 63,
+          "providerRows": 63,
+          "selectedPairs": 3144,
+          "speciesId": "alternanthera-ficoidea",
+          "stagedV2Prediction": 4.897718
+        },
+        {
+          "actualUniquePresentPairs": 2,
+          "category": "plants",
+          "currentSmoothedPriorV1Prediction": 124.5024,
+          "displayGroup": "Other plants",
+          "featureSource": "display-group-history",
+          "providerCountRankFeature": 5,
+          "providerRows": 5,
+          "selectedPairs": 3144,
+          "speciesId": "alyssum-strigosum",
+          "stagedV2Prediction": 0.388708
+        }
+      ],
+      "providerRows": 433,
+      "rankDiscrimination": {
+        "actualTopSpeciesId": "agdestis-clematidea",
+        "currentSmoothedPriorV1Spearman": 0.595341,
+        "hybridV21Spearman": 0.540131,
+        "hybridV21TopHit": false,
+        "providerCountSpearman": 0.540131,
+        "providerCountTopHit": false,
+        "stagedV2Spearman": 0.540131,
+        "stagedV2TopHit": false
+      },
+      "round": 79,
+      "selectedPairs": 25152,
+      "trainingRounds": [
+        70,
+        72,
+        74,
+        75,
+        76,
+        77,
+        78
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "semantics": {
+    "forecastIsGuarantee": false,
+    "historicalProviderCountProxyFullyAsOfVerified": false,
+    "noFutureOutcomeLabelsUsedForTraining": true,
+    "providerCountIsEvidenceAssertion": false,
+    "sourceSilenceIsNonDetection": false,
+    "unknownIsAbsence": false
+  },
+  "sourceId": "gbif-preserved-specimens",
+  "uncertainty": {
+    "conditionalIntervalQualification": "Product of stage-specific Wilson intervals; diagnostic only because stage dependence and cross-round heterogeneity are not modeled.",
+    "empiricalIntervalQualification": "Zero to the target provider count times the largest unique/provider rate in earlier rounds; strict leave-future-out, but not a calibrated 95 percent interval.",
+    "groupedIntervalQualification": "Strict leave-future-out round-blocked maximum absolute residual rate. This is a conservative small-sample empirical interval, not a claim of asymptotic 95 percent coverage. Coverage and width gates must both pass.",
+    "groupedNormalizedResidualV21CoveragePercent": 100,
+    "groupedNormalizedResidualV21EvaluatedSplits": 6,
+    "groupedNormalizedResidualV21MeanWidthAsMaximumMovementPercent": 4.199467,
+    "groupedNormalizedResidualV21MeanWidthPairs": 1074.461,
+    "groupedNormalizedResidualV21MedianWidthPairs": 557.632,
+    "maximumCurrentWidthAsMaximumMovementPercent": 5,
+    "maximumMeanWidthAsMaximumMovementPercent": 25,
+    "requiredCoveragePercent": 80,
+    "rollingEmpiricalPriorMaximumCoveragePercent": 57.143,
+    "stagedConditional95CoveragePercent": 0
+  },
+  "usfwsLaneComparison": {
+    "evaluationId": "usfws-invasive-carp-edna-coverage-preflight-20260821-r1",
+    "gbifDemonstrablyPreferable": false,
+    "gbifV21LowerUniqueDeterminationPairs": 0,
+    "gbifV21MedianUniqueDeterminationPairs": 198.105,
+    "gbifV21UpperUniqueDeterminationPairs": 402.588,
+    "integratedNotDetectedMovementPairs": 246,
+    "qualification": "USFWS movement is integrated survey-axis not-detected evidence; GBIF values are planning-only forecasts of determination-axis movement. The axes remain distinct, but the completed survey lane is the required execution comparator."
+  }
+}
