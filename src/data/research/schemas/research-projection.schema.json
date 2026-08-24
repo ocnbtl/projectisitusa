@@ -460,6 +460,10 @@
         "caveat": { "type": "string", "minLength": 1 },
         "lineage": {
           "enum": ["source-record", "source-species-county", "manual-review", "legacy-merged"]
+        },
+        "parentJurisdictionEvidenceId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]+$"
         }
       }
     },
@@ -494,6 +498,10 @@
           "enum": ["verified-present", "verified-absent", "not-detected", "researched-unresolved", "not-researched"]
         },
         "determinationStatus": { "enum": ["recorded-present", "officially-absent", "none"] },
+        "historicalOccurrenceStatus": { "enum": ["recorded-present", "none"] },
+        "currentDeterminationStatus": {
+          "enum": ["present", "officially-eradicated", "officially-absent", "none"]
+        },
         "surveyStatus": { "enum": ["detected", "not-detected", "inconclusive", "unassessed"] },
         "researchStatus": {
           "enum": [

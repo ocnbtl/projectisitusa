@@ -55,6 +55,10 @@
     "survey_scope": { "type": ["string", "null"] },
     "normalized_payload_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "caveats": { "type": "array", "items": { "type": "string" } },
-    "notes": { "type": "array", "items": { "type": "string" } }
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "parent_jurisdiction_evidence_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]+$"
+    }
   }
 }

@@ -28,6 +28,18 @@ export type DeterminationStatus =
   | "officially-absent"
   | "none";
 
+export type HistoricalOccurrenceStatus = "recorded-present" | "none";
+
+export type CurrentDeterminationStatus =
+  | "present"
+  | "officially-eradicated"
+  | "officially-absent"
+  | "none";
+
+export type JurisdictionDeterminationType =
+  | "officially-eradicated"
+  | "officially-absent";
+
 export type SurveyStatus =
   | "detected"
   | "not-detected"
@@ -129,6 +141,50 @@ export interface EvidenceAssertion {
   accessedAt?: string;
   lineage: EvidenceLineage;
   caveat: string;
+  parentJurisdictionEvidenceId?: string;
+}
+
+export interface JurisdictionEvidenceSourceDocument {
+  sourceId: string;
+  url: string;
+  artifactPath: string;
+  artifactSha256: string;
+  supportText: string;
+  supportTextSha256: string;
+  publishedAt: string | null;
+  modifiedAt: string | null;
+}
+
+export interface JurisdictionEvidenceRecord {
+  schemaVersion: 1;
+  id: string;
+  speciesId: string;
+  statementType: JurisdictionDeterminationType;
+  sourceDocuments: JurisdictionEvidenceSourceDocument[];
+  jurisdiction: {
+    level: "nation" | "state" | "county-set";
+    id: string;
+    stateCode: string | null;
+    countyFips: string[];
+    countyFipsSha256: string;
+    exclusions: string[];
+  };
+  effectiveAt: string;
+  reaffirmedAt: string | null;
+  validThrough: string;
+  review: {
+    gate: "human-approved";
+    status: "human-approved";
+    actorId: string;
+    reviewedAt: string;
+  };
+  caveats: string[];
+}
+
+export interface JurisdictionEvidenceRegistry {
+  schemaVersion: 1;
+  updatedAt: string;
+  records: JurisdictionEvidenceRecord[];
 }
 
 export interface ResearchRunReceipt {
@@ -158,6 +214,7 @@ export interface PairEvidenceSummary {
   reviewedAt?: string;
   caveat: string;
   lineage: EvidenceLineage;
+  parentJurisdictionEvidenceId?: string;
 }
 
 export interface ResearchPairRecord {
@@ -168,6 +225,8 @@ export interface ResearchPairRecord {
   applicabilityStatus: "applicable" | "not-applicable" | "unknown" | "blocked";
   displayStatus: PairDisplayStatus;
   determinationStatus: DeterminationStatus;
+  historicalOccurrenceStatus?: HistoricalOccurrenceStatus;
+  currentDeterminationStatus?: CurrentDeterminationStatus;
   surveyStatus: SurveyStatus;
   researchStatus: ResearchStatus;
   freshnessStatus: FreshnessStatus;
@@ -386,6 +445,7 @@ export interface RunEvidenceAssertionEvent extends ResearchActor {
   normalized_payload_hash: string;
   caveats: string[];
   notes: string[];
+  parent_jurisdiction_evidence_id?: string;
 }
 
 export type ReviewEventType =

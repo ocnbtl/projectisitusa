@@ -11,6 +11,8 @@ import type {
 import type {
   EvidenceReviewEvent,
   EvidenceAssertion,
+  JurisdictionEvidenceRecord,
+  JurisdictionEvidenceRegistry,
   PairDisplayStatus,
   ResearchCountyFile,
   ResearchPairRecord,
@@ -24,6 +26,10 @@ import type {
 } from "@/lib/research/types";
 import { compileAdditiveResearchEvidence } from "@/lib/research/compile-evidence";
 import { evidenceFreshnessStatus } from "@/lib/research/freshness";
+import {
+  resolveTemporalPairDetermination,
+  validateJurisdictionEvidenceRegistry,
+} from "@/lib/research/jurisdiction-evidence";
 import {
   assertProjectionParity,
   buildCompatibilityMatrix,
@@ -80,7 +86,10 @@ type MigrationCandidatesFile = {
 };
 
 type StateRegistryFile = {
-  schemaVersion: 1;
+  schemaVersion: 2;
+  nationalV1: {
+    certificationOrder: string[];
+  };
   jurisdictions: Array<{
     stateCode: string;
     stateName: string;
@@ -221,6 +230,17 @@ const counties = Object.values(countiesIndex)
   .sort((left, right) => left.countyFips.localeCompare(right.countyFips));
 const countyRegistry = readJson<CountyEquivalentRegistryFile>(
   path.join(ROOT, "src/data/research/county-equivalent-registry.json"),
+);
+const jurisdictionEvidenceRegistry = readJson<JurisdictionEvidenceRegistry>(
+  path.join(ROOT, "src/data/research/jurisdiction-evidence-registry.json"),
+);
+validateJurisdictionEvidenceRegistry({
+  registry: jurisdictionEvidenceRegistry,
+  countyRegistry,
+  stateRegistry,
+});
+const jurisdictionEvidenceById = new Map(
+  jurisdictionEvidenceRegistry.records.map((record) => [record.id, record]),
 );
 const registeredCountyFips = countyRegistry.countyEquivalents
   .filter((county) => county.stateCode === STATE_CODE && county.status === "active")
@@ -552,7 +572,40 @@ for (const county of counties) {
         ["evidence-found", "no-qualifying-evidence"].includes(outcome.status),
     );
     const hasPresent = pairEvidence.some((entry) => entry.assertion === "recorded-present");
-    const hasAbsence = pairEvidence.some((entry) => entry.assertion === "officially-absent");
+    const parentJurisdictionEvidenceById = new Map<string, JurisdictionEvidenceRecord>();
+    for (const entry of pairEvidence) {
+      if (!entry.parentJurisdictionEvidenceId) continue;
+      const record = jurisdictionEvidenceById.get(entry.parentJurisdictionEvidenceId);
+      if (
+        !record ||
+        record.speciesId !== speciesEntry.id ||
+        !record.jurisdiction.countyFips.includes(county.countyFips)
+      ) {
+        throw new Error(
+          `Pair ${key} references missing or out-of-scope parent jurisdiction evidence ${entry.parentJurisdictionEvidenceId}.`,
+        );
+      }
+      if (atOrBeforeAsOf(record.review.reviewedAt)) {
+        parentJurisdictionEvidenceById.set(record.id, record);
+      }
+    }
+    const parentJurisdictionEvidence = [...parentJurisdictionEvidenceById.values()];
+    const temporalDetermination = resolveTemporalPairDetermination({
+      presenceEvidence: pairEvidence
+        .filter((entry) => entry.assertion === "recorded-present")
+        .map((entry) => ({ evidenceId: entry.evidenceId, observedAt: entry.observedAt })),
+      jurisdictionEvidence: parentJurisdictionEvidence,
+      asOf: AS_OF,
+    });
+    const hasLegacyAbsence = pairEvidence.some(
+      (entry) =>
+        entry.assertion === "officially-absent" &&
+        !entry.parentJurisdictionEvidenceId,
+    );
+    const hasCurrentParentDetermination =
+      temporalDetermination.currentDeterminationStatus === "officially-eradicated" ||
+      temporalDetermination.currentDeterminationStatus === "officially-absent";
+    const hasAbsence = hasLegacyAbsence || hasCurrentParentDetermination;
     const hasNotDetected = pairEvidence.some((entry) => entry.assertion === "not-detected");
     const hasSurveyDetection = pairEvidence.some(
       (entry) => evidenceKindById.get(entry.evidenceId) === "survey-detection",
@@ -563,7 +616,7 @@ for (const county of counties) {
         .filter((outcome) => outcome.status !== "blocked")
         .map((outcome) => outcome.source_id),
     ]);
-    const conflict = hasPresent && hasAbsence;
+    const conflict = (hasPresent && hasLegacyAbsence) || temporalDetermination.conflict;
     let displayStatus: PairDisplayStatus;
 
     if (hasExplicitCompleteOutcome) {
@@ -616,9 +669,15 @@ for (const county of counties) {
         defaultApplicability,
       displayStatus,
       determinationStatus: hasPresent ? "recorded-present" : hasAbsence ? "officially-absent" : "none",
+      ...(parentJurisdictionEvidence.length > 0
+        ? {
+            historicalOccurrenceStatus: temporalDetermination.historicalOccurrenceStatus,
+            currentDeterminationStatus: temporalDetermination.currentDeterminationStatus,
+          }
+        : {}),
       surveyStatus: hasSurveyDetection ? "detected" : hasNotDetected ? "not-detected" : "unassessed",
       researchStatus:
-        hasPresent || hasAbsence || hasNotDetected
+        hasPresent || hasAbsence || hasNotDetected || parentJurisdictionEvidence.length > 0
           ? "reviewed-evidence-found"
           : latestOutcome?.status === "no-qualifying-evidence" && latestOutcome.scope_complete
             ? "reviewed-no-qualifying-evidence"
@@ -629,7 +688,11 @@ for (const county of counties) {
           : screenedBySourceIds.length > 0
             ? "source-screened"
             : "not-started",
-      freshnessStatus: evidenceFreshnessStatus(pairEvidence, generatedAt),
+      freshnessStatus: temporalDetermination.activeParentId
+        ? "current"
+        : temporalDetermination.staleParentIds.length > 0
+          ? "stale"
+          : evidenceFreshnessStatus(pairEvidence, generatedAt),
       reviewStatus: pairReviewStatus(pairEvidence),
       conflict,
       evidence: pairEvidence.map((entry) => ({
@@ -643,6 +706,7 @@ for (const county of counties) {
         reviewedAt: entry.reviewedAt ?? entry.accessedAt,
         caveat: entry.caveat,
         lineage: entry.lineage,
+        parentJurisdictionEvidenceId: entry.parentJurisdictionEvidenceId,
       })),
       screenedBySourceIds,
     };

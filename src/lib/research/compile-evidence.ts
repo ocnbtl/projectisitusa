@@ -151,6 +151,7 @@ export function compileAdditiveResearchEvidence(input: {
       accessedAt: entry.retrieved_at,
       lineage: "source-record" as const,
       caveat: entry.caveats.join(" "),
+      parentJurisdictionEvidenceId: entry.parent_jurisdiction_evidence_id,
     };
   });
 

@@ -15,9 +15,12 @@ import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type {
   ImmutableResearchRunBundle,
   ImmutableResearchRunReceipt,
+  JurisdictionEvidenceRecord,
+  JurisdictionEvidenceRegistry,
   ResearchSourceDefinition,
   ResearchSourceRegistry,
 } from "@/lib/research/types";
+import { validateJurisdictionEvidenceRegistry } from "@/lib/research/jurisdiction-evidence";
 import { resolveRunEvidence } from "@/lib/research/event-resolution";
 import {
   getStateDefinition,
@@ -266,6 +269,43 @@ export function validateResearchRunInMemory(input: {
   );
   const assertionSourceIdentities = new Set<string>();
   const adapterActorId = `${receipt.adapter_id}@${receipt.adapter_version}`;
+  const parentAssertionIds = new Set(
+    result.assertions
+      .map((assertion) => assertion.parent_jurisdiction_evidence_id)
+      .filter((value): value is string => Boolean(value)),
+  );
+  const jurisdictionEvidenceById = new Map<string, JurisdictionEvidenceRecord>();
+  if (parentAssertionIds.size > 0) {
+    const jurisdictionEvidenceRegistry = JSON.parse(
+      readCommittedFile(
+        root,
+        receipt.code_commit,
+        "src/data/research/jurisdiction-evidence-registry.json",
+      ),
+    ) as JurisdictionEvidenceRegistry;
+    const committedCountyRegistry = JSON.parse(
+      readCommittedFile(
+        root,
+        receipt.code_commit,
+        "src/data/research/county-equivalent-registry.json",
+      ),
+    ) as Parameters<typeof validateJurisdictionEvidenceRegistry>[0]["countyRegistry"];
+    const committedStateRegistry = JSON.parse(
+      readCommittedFile(
+        root,
+        receipt.code_commit,
+        "src/data/research/state-registry.json",
+      ),
+    ) as Parameters<typeof validateJurisdictionEvidenceRegistry>[0]["stateRegistry"];
+    validateJurisdictionEvidenceRegistry({
+      registry: jurisdictionEvidenceRegistry,
+      countyRegistry: committedCountyRegistry,
+      stateRegistry: committedStateRegistry,
+    });
+    for (const record of jurisdictionEvidenceRegistry.records) {
+      jurisdictionEvidenceById.set(record.id, record);
+    }
+  }
 
   if (input.workerTaskId) {
     assertWorkerActor(receipt, input.workerTaskId, adapterActorId, "Receipt");
@@ -404,6 +444,43 @@ export function validateResearchRunInMemory(input: {
       ...(assertion.notes ?? []),
       String(assertion.survey_scope ?? ""),
     ].join(" ");
+    const parentJurisdictionEvidence = assertion.parent_jurisdiction_evidence_id
+      ? jurisdictionEvidenceById.get(assertion.parent_jurisdiction_evidence_id)
+      : undefined;
+    if (assertion.parent_jurisdiction_evidence_id) {
+      assert(
+        assertion.claim_type === "officially-absent" &&
+          assertion.evidence_kind === "absence-statement" &&
+          assertion.scope === "county",
+        `Assertion ${assertion.eventId} has incompatible parent jurisdiction evidence semantics.`,
+      );
+      assert(
+        parentJurisdictionEvidence,
+        `Assertion ${assertion.eventId} references unknown parent jurisdiction evidence.`,
+      );
+      assert(
+        parentJurisdictionEvidence.speciesId === assertion.species_id &&
+          parentJurisdictionEvidence.jurisdiction.countyFips.includes(assertion.county_fips),
+        `Assertion ${assertion.eventId} is outside its parent jurisdiction evidence scope.`,
+      );
+      const parentSourceDocument = parentJurisdictionEvidence.sourceDocuments.find(
+        (document) =>
+          document.sourceId === assertion.source_id &&
+          document.url === assertion.source_url,
+      );
+      assert(
+        parentSourceDocument,
+        `Assertion ${assertion.eventId} source is not retained by its parent jurisdiction evidence.`,
+      );
+      assert(
+        committedFileSha256(
+          root,
+          receipt.code_commit,
+          parentSourceDocument.artifactPath,
+        ) === parentSourceDocument.artifactSha256,
+        `Assertion ${assertion.eventId} parent source artifact hash changed.`,
+      );
+    }
     if (assertion.claim_type === "officially-absent") {
       assert(
         source.negativeSemantics === "explicit-authority-only" &&
@@ -412,7 +489,7 @@ export function validateResearchRunInMemory(input: {
           Boolean(assertion.temporal_scope) &&
           Boolean(assertion.spatial_scope) &&
           /explicit/iu.test(supportText) &&
-          /absen/iu.test(supportText),
+          /absen|eradicated/iu.test(supportText),
         `Assertion ${assertion.eventId} lacks supported explicit authoritative absence evidence.`,
       );
     }
