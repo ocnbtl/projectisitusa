@@ -700,7 +700,17 @@ async function main() {
           ],
           additionalRequests: 0,
         }
-      : {
+      : options.sourceId === usfsCurrentInvasivePlantsTargetedAdapter.sourceId
+        ? {
+            providerNetworkRequests: 2,
+            requestSequence: [
+              "GET the selected official ArcGIS object identities with full geometry",
+              "GET the same selected object identities again after the registered interval",
+            ],
+            stabilityGate: "Both retained responses must normalize to identical ordered features.",
+            additionalRequests: 0,
+          }
+        : {
           cachedTaxonomyResponses: taxonomyCache?.selectedEntries.length ?? 0,
           archiveReplayResponses: archivedReplay?.requestUrls.length ?? 0,
           liveTaxonomyRequests: archivedReplay
