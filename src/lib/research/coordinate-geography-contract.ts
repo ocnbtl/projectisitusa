@@ -8,3 +8,15 @@ export const USFWS_EDNA_COORDINATE_GEOGRAPHY_METHOD =
 
 export const USFWS_EDNA_COORDINATE_GEOGRAPHY_POLICY =
   `Source-specific coordinate exception: ${USFWS_EDNA_COORDINATE_GEOGRAPHY_METHOD}. The assertion must retain the topology path and SHA-256 plus the exact source-coordinate count and coordinate-set SHA-256; ambiguous, offshore, multi-county, invalid, and source-state-mismatch rows are ineligible.`;
+
+export const USFS_CURRENT_PLANTS_POLYGON_SOURCE_ID =
+  "usfs-current-invasive-plants";
+
+export const USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH =
+  "src/data/source/county-equivalents-topology.json";
+
+export const USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD =
+  "Source-specific positive polygon witness: at least one coordinate from each accepted retained full source polygon lies inside the committed active county topology";
+
+export const USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_POLICY =
+  `${USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD}. Bbox-center estimates only select candidates and never publish. Missing geometry, no inside-county vertex, retired geography, and ambiguous geography are rejected.`;

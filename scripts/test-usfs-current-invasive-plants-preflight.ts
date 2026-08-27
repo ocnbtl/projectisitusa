@@ -12,7 +12,7 @@ const artifact = UsfsCurrentInvasivePlantsPreflightSchema.parse(
   JSON.parse(readFileSync(artifactPath, "utf8")),
 );
 
-assert.equal(artifact.baselineSha, "373ad2b0e253b9e44dd901a7584d028733318d33");
+assert.equal(artifact.baselineSha, "289d7d7a539e44d62116f036008e0944b1d95abe");
 assert.equal(artifact.provider.totalFeatures, 946_008);
 assert.equal(artifact.provider.maxObjectId, 946_497);
 assert.equal(artifact.taxonCoverage.providerDistinctAcceptedNames, 1_052);

@@ -14,6 +14,10 @@ import type {
 } from "@/lib/research/types";
 import { getStateDefinition, listCountyEquivalents } from "@/lib/research/geography-registry";
 import { stableJson } from "@/lib/research/run-files";
+import {
+  USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD,
+  USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH,
+} from "@/lib/research/coordinate-geography-contract";
 
 export const USFS_CURRENT_PLANTS_SOURCE_ID = "usfs-current-invasive-plants" as const;
 export const USFS_CURRENT_PLANTS_ADAPTER_ID = "usfs-current-invasive-plants-targeted" as const;
@@ -21,7 +25,6 @@ export const USFS_CURRENT_PLANTS_ADAPTER_VERSION = "1.0.0" as const;
 export const USFS_CURRENT_PLANTS_LAYER_URL =
   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0" as const;
 export const USFS_CURRENT_PLANTS_QUERY_URL = `${USFS_CURRENT_PLANTS_LAYER_URL}/query` as const;
-export const USFS_CURRENT_PLANTS_TOPOLOGY_PATH = "node_modules/us-atlas/counties-10m.json" as const;
 
 type TargetMapping = {
   pairKey: string;
@@ -196,7 +199,7 @@ async function fetchSnapshot(url: string, maxResponseBytes: number) {
 
 function loadCountyFeatures(context: SourceAdapterContext) {
   const counties = new Map(listCountyEquivalents(context.stateCode).map((county) => [county.countyFips, county]));
-  const topologyPath = path.join(process.cwd(), USFS_CURRENT_PLANTS_TOPOLOGY_PATH);
+  const topologyPath = path.join(process.cwd(), USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH);
   const topologyBytes = readFileSync(topologyPath);
   const topology = JSON.parse(topologyBytes.toString("utf8")) as { objects: { counties: unknown } };
   const collection = feature(topology as never, topology.objects.counties as never) as unknown as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon, Record<string, unknown>>;
@@ -297,13 +300,13 @@ function assertionAndReview(input: {
       source_taxon_key: input.features.map((entry) => entry.attributes.accepted_plant_code).filter(Boolean).join(",") || null,
     },
     geography_match: {
-      method: "Source-specific polygon-vertex witness: at least one retained source polygon coordinate lies inside the committed active county topology",
+      method: USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD,
       source_state: input.context.stateCode,
       source_county: input.countyName,
       county_fips: input.target.countyFips,
       source_coordinate_count: coordinates.length,
       source_coordinates_sha256: coordinateHash,
-      topology_path: USFS_CURRENT_PLANTS_TOPOLOGY_PATH,
+      topology_path: USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH,
       topology_sha256: input.topologySha256,
     },
     temporal_scope: `Most recent source measurements ${new Date(sourceDates[0]!).toISOString()} through ${new Date(sourceDates.at(-1)!).toISOString()}.`,

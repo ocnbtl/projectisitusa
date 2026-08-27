@@ -5,6 +5,10 @@ import { execFileSync } from "node:child_process";
 import { z } from "zod";
 
 import {
+  USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD,
+  USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_POLICY,
+  USFS_CURRENT_PLANTS_POLYGON_SOURCE_ID,
+  USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH,
   USFWS_EDNA_COORDINATE_GEOGRAPHY_METHOD,
   USFWS_EDNA_COORDINATE_GEOGRAPHY_POLICY,
   USFWS_EDNA_COORDINATE_SOURCE_ID,
@@ -367,13 +371,29 @@ export function validateResearchRunInMemory(input: {
       /without coordinate-derived|not coordinate-derived|coordinates? (?:were )?not used/iu.test(
         geographyMethod,
       );
-    if (mentionsCoordinateDerivation && !explicitlyDeniesCoordinateDerivation) {
+    const includesCoordinateReceipts =
+      assertion.geography_match.source_coordinate_count !== undefined ||
+      assertion.geography_match.source_coordinates_sha256 !== undefined ||
+      assertion.geography_match.topology_path !== undefined ||
+      assertion.geography_match.topology_sha256 !== undefined;
+    if ((mentionsCoordinateDerivation && !explicitlyDeniesCoordinateDerivation) || includesCoordinateReceipts) {
+      const coordinateContract = source.id === USFWS_EDNA_COORDINATE_SOURCE_ID
+        ? {
+            method: USFWS_EDNA_COORDINATE_GEOGRAPHY_METHOD,
+            policy: USFWS_EDNA_COORDINATE_GEOGRAPHY_POLICY,
+            topologyPath: USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
+          }
+        : source.id === USFS_CURRENT_PLANTS_POLYGON_SOURCE_ID
+          ? {
+              method: USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD,
+              policy: USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_POLICY,
+              topologyPath: USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH,
+            }
+          : null;
       assert(
-        source.id === USFWS_EDNA_COORDINATE_SOURCE_ID &&
-          source.researchAdapter?.geographyMatchingPolicy ===
-            USFWS_EDNA_COORDINATE_GEOGRAPHY_POLICY &&
-          assertion.geography_match.method ===
-            USFWS_EDNA_COORDINATE_GEOGRAPHY_METHOD,
+        coordinateContract &&
+          source.researchAdapter?.geographyMatchingPolicy === coordinateContract.policy &&
+          assertion.geography_match.method === coordinateContract.method,
         `Assertion ${assertion.eventId} uses unapproved coordinate-derived county geography.`,
       );
       assert(
@@ -382,8 +402,7 @@ export function validateResearchRunInMemory(input: {
           /^[a-f0-9]{64}$/u.test(
             assertion.geography_match.source_coordinates_sha256 ?? "",
           ) &&
-          assertion.geography_match.topology_path ===
-            USFWS_EDNA_COORDINATE_TOPOLOGY_PATH &&
+          assertion.geography_match.topology_path === coordinateContract.topologyPath &&
           /^[a-f0-9]{64}$/u.test(
             assertion.geography_match.topology_sha256 ?? "",
           ),
@@ -393,7 +412,7 @@ export function validateResearchRunInMemory(input: {
         committedFileSha256(
           root,
           receipt.code_commit,
-          USFWS_EDNA_COORDINATE_TOPOLOGY_PATH,
+          coordinateContract.topologyPath,
         ) === assertion.geography_match.topology_sha256,
         `Assertion ${assertion.eventId} topology hash does not match its code commit.`,
       );

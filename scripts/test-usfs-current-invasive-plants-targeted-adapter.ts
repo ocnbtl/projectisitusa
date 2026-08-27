@@ -10,9 +10,10 @@ import {
   runUsfsCurrentPlantsTargeted,
 } from "./research/adapters/usfs-current-invasive-plants-targeted";
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
+import { USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH } from "@/lib/research/coordinate-geography-contract";
 
 const topology = JSON.parse(
-  readFileSync(path.join(process.cwd(), "node_modules/us-atlas/counties-10m.json"), "utf8"),
+  readFileSync(path.join(process.cwd(), USFS_CURRENT_PLANTS_POLYGON_TOPOLOGY_PATH), "utf8"),
 ) as { objects: { counties: unknown } };
 const collection = feature(topology as never, topology.objects.counties as never) as unknown as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>;
 const deschutes = collection.features.find((entry) => String(entry.id).padStart(5, "0") === "41017");
