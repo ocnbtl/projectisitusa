@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/usfs-current-invasive-plants-targeted-parameters.schema.json",
+  "title": "USFS Current Invasive Plant Locations targeted positive-witness parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stateCode",
+    "mode",
+    "layerUrl",
+    "preflightEvaluationId",
+    "providerDeclaredRefreshDate",
+    "catalogResponseSha256",
+    "minimumRequestIntervalMs",
+    "maxResponseBytes",
+    "targets",
+    "candidatePairs"
+  ],
+  "properties": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "mode": { "const": "targeted-stable-positive-witness" },
+    "layerUrl": { "const": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0" },
+    "preflightEvaluationId": { "type": "string", "pattern": "^usfs-current-invasive-plants-national-preflight-[0-9]{8}-r[0-9]+$" },
+    "providerDeclaredRefreshDate": { "type": "string", "format": "date" },
+    "catalogResponseSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "minimumRequestIntervalMs": { "const": 1000 },
+    "maxResponseBytes": { "type": "integer", "minimum": 1024, "maximum": 52428800 },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pairKey", "countyFips", "speciesId", "scientificName", "objectIds"],
+        "properties": {
+          "pairKey": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
+          "countyFips": { "type": "string", "pattern": "^[0-9]{5}$" },
+          "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "scientificName": { "type": "string", "minLength": 1 },
+          "objectIds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 20,
+            "uniqueItems": true,
+            "items": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "candidatePairs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" }
+    }
+  }
+}

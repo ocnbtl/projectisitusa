@@ -1,0 +1,3210 @@
+{
+  "baselineSha": "373ad2b0e253b9e44dd901a7584d028733318d33",
+  "checks": {
+    "currentMatrixCountsConserved": true,
+    "exactFeatureCountsConserved": true,
+    "exactNameCountsConserved": true,
+    "externalMutationCountIsZero": true,
+    "negativeSemanticsPreserved": true,
+    "sampleCountsConserved": true,
+    "sourceRegistryContractPinned": true
+  },
+  "currentMatrix": {
+    "activeRegistryCountyEquivalentCount": 3235,
+    "catalogSpeciesCount": 2504,
+    "generatedCountyEquivalentCount": 3144,
+    "notDetected": 254,
+    "notResearched": 6314996,
+    "researchedUnresolved": 1362188,
+    "stateSummaryCount": 51,
+    "summaryLineageSha256": "195b4271362d050cac1a6e4c35f68d457ab48b0ae1d0f0052a468af0582bab83",
+    "totalPairs": 7872576,
+    "verifiedAbsent": 0,
+    "verifiedPresent": 195138
+  },
+  "dateQuality": {
+    "collectedAfterEvaluationDateRows": 128,
+    "collectedBefore1900Rows": 61,
+    "collectedDateNullRows": 0,
+    "invalidOrFutureRows": 189,
+    "lastUpdateNullRows": 0,
+    "mostRecentCollectedDateNullRows": 0,
+    "publicationDatePolicyImplemented": false
+  },
+  "decision": {
+    "acquisitionStatus": "go-targeted-positive-pilot",
+    "contractEngineeringStatus": "go",
+    "estimatedPotentialNetNewPairs": 30,
+    "generationStatus": "no-go",
+    "measuredNetNewPairs": 0,
+    "nextAction": "Commit the registered targeted adapter and Oregon pilot plan, run the no-network semantic dry run from that exact commit, then execute the 16-pair pilot with immutable double-response artifacts. Generate only from accepted recorded-presence assertions after run validation.",
+    "publicationStatus": "no-go",
+    "reason": "The official source has material exact-catalog occurrence volume, a dated bulk archive, sampled overlap opportunity, and a fixture-tested targeted positive-witness adapter. Only the bounded Oregon acquisition is authorized here; the sample remains non-evidence until live records pass every adapter gate."
+  },
+  "evaluatedAt": "2026-08-27T23:30:00.000Z",
+  "evaluationId": "usfs-current-invasive-plants-national-preflight-20260827-r1",
+  "operations": {
+    "generationCommands": 0,
+    "networkRequests": 19,
+    "providerGets": 19,
+    "providerPosts": 0,
+    "publicationMutations": 0,
+    "responseReceipts": [
+      {
+        "bytes": 3706,
+        "label": "service-metadata",
+        "responseSha256": "7fa7198b3c8fc26fc7edc4160d9f57c2041a79226ca39188c55dda2d64a01358",
+        "urlSha256": "571d1f291e948372acceecaefd755b5060a0aa737a023afbac647ad3363e84c3"
+      },
+      {
+        "bytes": 9373,
+        "label": "layer-metadata",
+        "responseSha256": "a2064bee5ede2d011f0c468dc98ef20233bd57c33a31677516e20b4fb615c4e7",
+        "urlSha256": "d6f6d67716dc435e5b3ffd49412a73ed9bd48e349475201337d29bfc6100f7e0"
+      },
+      {
+        "bytes": 25605,
+        "label": "bulk-archive-catalog",
+        "responseSha256": "132083debc7e65caaeb2e8fe84c487e6e949e8c2675aeb9990b5cf2d38b320cc",
+        "urlSha256": "7fea1002c73a9d4b2fbadb08f2d8390e016f273a1a29a687a351ab304f4dff38"
+      },
+      {
+        "bytes": 16,
+        "label": "feature-count",
+        "responseSha256": "f85030e1c430f6922cc7dc87eddb1bf9694b70cd2e0663a5defd825fef911325",
+        "urlSha256": "5bc4e247153d4044d0283556fd9f0e47c1878e57ed2c615baff8cd482dad0a44"
+      },
+      {
+        "bytes": 88508,
+        "label": "accepted-name-groups",
+        "responseSha256": "3cb4d17433b1f993c32fbe6db96b34f8856079f0cff570033f403dc42c9c956c",
+        "urlSha256": "c62595c7f00d27f965c2ae55a33cc3ef0895264941447a2f1c079d725c205705"
+      },
+      {
+        "bytes": 210,
+        "label": "maximum-objectid",
+        "responseSha256": "1eba729338d24a94684eeb4bb30dd64e7cac2c61eaf96b045137ba63e4bf8d8c",
+        "urlSha256": "ffbacb47ffbb6b3749d4d018f01beb0566a898061fc681ff66eac80aeb48f6ca"
+      },
+      {
+        "bytes": 11,
+        "label": "date-collected-null",
+        "responseSha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c",
+        "urlSha256": "f3f1c3f09b21620926b000275167ee6469590bb4778d53ccfc7df0731570411c"
+      },
+      {
+        "bytes": 11,
+        "label": "date-collected-most-recent-null",
+        "responseSha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c",
+        "urlSha256": "9fb91507aac179d80a2fb43752d0a3e974d7c383523c0e9bad069a8b37596bc7"
+      },
+      {
+        "bytes": 11,
+        "label": "last-update-null",
+        "responseSha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c",
+        "urlSha256": "af154b7bebd7ff9532becec23fbad3a8e821db578f303b868dae2b3bcede2bcd"
+      },
+      {
+        "bytes": 12,
+        "label": "date-collected-before-1900",
+        "responseSha256": "2667167e769751600abdf60f057c2d3c6538e88ebaf5b5fc9fe926841d2f05a8",
+        "urlSha256": "0514d51c4eff5b33daa05bd5c8c001a2a80f2a94792a2f06fe428b19dcfac2df"
+      },
+      {
+        "bytes": 13,
+        "label": "date-collected-after-evaluation",
+        "responseSha256": "dbd046824ac239bc2fa79b152b1152a43bdfc4e110a96862cefe043d9f57270a",
+        "urlSha256": "0792e7f8483c1deae2f38c7ffacff2f28295dca3c29417327884fbb4bb8ded7d"
+      },
+      {
+        "bytes": 5432,
+        "label": "sample-stratum-1",
+        "responseSha256": "67030039071e1b2b0e764ce73cfe7ac37a88e0ae5fafe9233c2d6d233d004f9e",
+        "urlSha256": "43ab30d756a24541cd2f0d83a1eb112ba97c023e95dd965d090dbbd1484da400"
+      },
+      {
+        "bytes": 5357,
+        "label": "sample-stratum-2",
+        "responseSha256": "d4338ea49347baeb179b16c58ac369e1554a3957b4fb430c7b48aee5e6a645ff",
+        "urlSha256": "2f433fd90c4b07617727cbaadfd592cfe711a9372e87717d224896ac17a4f588"
+      },
+      {
+        "bytes": 5485,
+        "label": "sample-stratum-3",
+        "responseSha256": "90f8bced74b22f0aa1cf5d6ea7ede7a15f8f6a5081d32de08a3410b45093f1a6",
+        "urlSha256": "bee241b687b722a647558714291ecd14db25b9ce4e2e54cd1af2873e56f88ece"
+      },
+      {
+        "bytes": 5481,
+        "label": "sample-stratum-4",
+        "responseSha256": "448c9c3330b1e26e6d97d51361e5cebb7c825b8c892494032c37ce7e18482921",
+        "urlSha256": "873dc71f7780bee23953aed09ff6398fe99dafd4165fd8000f565ea95012a4b1"
+      },
+      {
+        "bytes": 5520,
+        "label": "sample-stratum-5",
+        "responseSha256": "1ed5bf1abd6566634d1b0f393fedbf699bf84c101b02733649a1423f18282284",
+        "urlSha256": "429bd2c359025d4887e13a2b3770f5ca6327193ed370ab75efa3892846906885"
+      },
+      {
+        "bytes": 5397,
+        "label": "sample-stratum-6",
+        "responseSha256": "59bac1874a8031b1dbc7486f97a11359c3794302ed6f41961ad9be368b765180",
+        "urlSha256": "2aaa3b43b9daed8fb3be3bd94fe3b09b952eaad879b9f673e78dfedeab2aa3ee"
+      },
+      {
+        "bytes": 5386,
+        "label": "sample-stratum-7",
+        "responseSha256": "ceea703f9f30be9efa628114aeb358f7e51f55eaeb4c04f2cb440e1147ded951",
+        "urlSha256": "a8781aac66e2581e91b2b535df37493e1d656eee0634de320f5148c978e285ab"
+      },
+      {
+        "bytes": 5608,
+        "label": "sample-stratum-8",
+        "responseSha256": "9b7c5e479801cc912f5a184962076de89abf0926347bf6fc61ba4802e7c16142",
+        "urlSha256": "c98860c1762d97ecf29ccb9721ea13d44ba340ccc2bdc986eff3deaae07fae50"
+      }
+    ]
+  },
+  "provider": {
+    "bulkArchive": {
+      "advertisedSizeMb": 338,
+      "archiveUrl": "https://data.fs.usda.gov/geodata/edw/edw_resources/fc/Bio_InvasivePlantCurrent.gdb.zip",
+      "catalogResponseSha256": "132083debc7e65caaeb2e8fe84c487e6e949e8c2675aeb9990b5cf2d38b320cc",
+      "clearinghouseUrl": "https://data.fs.usda.gov/geodata/edw/datasets.php?xmlKeyword=Current+Invasive+Plants",
+      "format": "ESRI File Geodatabase ZIP",
+      "providerDeclaredRefreshDate": "2026-08-12"
+    },
+    "copyrightText": "U.S. Forest Service Enterprise Map Services Program",
+    "geometryType": "esriGeometryPolygon",
+    "layerDescriptionSha256": "2023c2662e99910a05d38b73d55ffb7275611ec3d0384b104d84d33a9c6225bc",
+    "layerName": "Current Invasive Plant Locations",
+    "layerUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0",
+    "maxObjectId": 946497,
+    "maxRecordCount": 2000,
+    "rootUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer",
+    "serviceVersion": 11.5,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsStatistics": true,
+    "totalFeatures": 946008
+  },
+  "schemaVersion": 1,
+  "semantics": {
+    "bboxCenterMayPublishGeography": false,
+    "providerRowsCreateRecordedPresenceOnly": true,
+    "sampleCreatesEvidence": false,
+    "sampleEstimatePromisesMovement": false,
+    "sourceSilenceCreatesAbsence": false,
+    "sourceSilenceCreatesNotDetected": false
+  },
+  "snapshotBarrier": {
+    "datedBulkArchiveAvailable": true,
+    "immutableArchiveBytesRetained": false,
+    "layerLastEditDate": null,
+    "providerDeclaredSnapshotId": "2026-08-12",
+    "providerServiceItemId": null,
+    "reason": "The live EDW layer exposes no edit watermark, but the registered targeted adapter now retains two normalized-identical responses for explicit positive object identities and fails closed on drift. The official dated File Geodatabase remains the later complete-national path.",
+    "requiredContract": [
+      "Capture the complete ordered objectid set twice around acquisition and fail closed on count, maximum objectid, or identity drift.",
+      "Retain every raw response with URL hash, response hash, byte count, retrieval time, and terminal pagination proof.",
+      "Resolve full infestation polygons against active county geometry; bbox centers remain preflight estimates only.",
+      "Reject ambiguous, retired, offshore, invalid-date, future-date, genus-only, and unmatched taxonomy records conservatively.",
+      "Replay fixture and retained-artifact tests must prove occurrence-only semantics and zero negative inference from silence."
+    ],
+    "stableTargetedAcquisitionImplemented": true,
+    "targetedAcquisitionAuthorized": true
+  },
+  "source": {
+    "caveat": "Occurrence evidence is limited to represented Forest Service lands.",
+    "evidenceCapabilities": [
+      "recorded-present"
+    ],
+    "geographicScope": [
+      "USFS lands"
+    ],
+    "negativeSemantics": "none",
+    "registryPath": "src/data/research/source-registry.json",
+    "registrySha256": "8a498fae714344ebcaad254615e5413319c309101c02ecfc963cb8068757504c",
+    "registryTier": "official-national",
+    "sourceId": "usfs-current-invasive-plants",
+    "targetedAdapter": {
+      "adapterId": "usfs-current-invasive-plants-targeted",
+      "adapterVersion": "1.0.0",
+      "modulePath": "scripts/research/adapters/usfs-current-invasive-plants-targeted.ts",
+      "moduleSha256": "415f1437476efe6083791faeaa81c33b2f48c5acdbe361eb65f03c6c890e5b28",
+      "parameterSchemaPath": "src/data/research/schemas/usfs-current-invasive-plants-targeted-parameters.schema.json",
+      "parameterSchemaSha256": "dee405963f419e97df1d4f1b8c4c0513f4b4b77b2c62c3e8498d9259cd7a707a",
+      "pilotPlanPath": "src/data/research/national-acquisition-plans/usfs-current-invasive-plants-or-pilot-v1.json",
+      "pilotPlanSha256": "182e139876d379d13f49ce5642db26001d69cce83c79f505780df0e28d455ef9"
+    }
+  },
+  "stratifiedSample": {
+    "currentStatusCounts": [
+      {
+        "displayStatus": "verified-present",
+        "pairCount": 102
+      },
+      {
+        "displayStatus": "verified-absent",
+        "pairCount": 0
+      },
+      {
+        "displayStatus": "not-detected",
+        "pairCount": 0
+      },
+      {
+        "displayStatus": "researched-unresolved",
+        "pairCount": 25
+      },
+      {
+        "displayStatus": "not-researched",
+        "pairCount": 30
+      }
+    ],
+    "duplicateResolvedRows": 16,
+    "estimatedCandidates": [
+      {
+        "countyFips": "02122",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          354942
+        ],
+        "pairKey": "02122:cerastium-fontanum-ssp-vulgare",
+        "scientificName": "Cerastium fontanum ssp. vulgare",
+        "speciesId": "cerastium-fontanum-ssp-vulgare",
+        "stateCode": "AK"
+      },
+      {
+        "countyFips": "02220",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          236631
+        ],
+        "pairKey": "02220:cerastium-fontanum-ssp-vulgare",
+        "scientificName": "Cerastium fontanum ssp. vulgare",
+        "speciesId": "cerastium-fontanum-ssp-vulgare",
+        "stateCode": "AK"
+      },
+      {
+        "countyFips": "04005",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          473268
+        ],
+        "pairKey": "04005:salsola-tragus",
+        "scientificName": "Salsola tragus",
+        "speciesId": "salsola-tragus",
+        "stateCode": "AZ"
+      },
+      {
+        "countyFips": "04019",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          828201
+        ],
+        "pairKey": "04019:hordeum-vulgare",
+        "scientificName": "Hordeum vulgare",
+        "speciesId": "hordeum-vulgare",
+        "stateCode": "AZ"
+      },
+      {
+        "countyFips": "04025",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          236640
+        ],
+        "pairKey": "04025:tamarix-ramosissima",
+        "scientificName": "Tamarix ramosissima",
+        "speciesId": "tamarix-ramosissima",
+        "stateCode": "AZ"
+      },
+      {
+        "countyFips": "06061",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          473252
+        ],
+        "pairKey": "06061:leucanthemum-vulgare",
+        "scientificName": "Leucanthemum vulgare",
+        "speciesId": "leucanthemum-vulgare",
+        "stateCode": "CA"
+      },
+      {
+        "countyFips": "21197",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          591567
+        ],
+        "pairKey": "21197:leucanthemum-vulgare",
+        "scientificName": "Leucanthemum vulgare",
+        "speciesId": "leucanthemum-vulgare",
+        "stateCode": "KY"
+      },
+      {
+        "countyFips": "26041",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          20
+        ],
+        "pairKey": "26041:tanacetum-vulgare",
+        "scientificName": "Tanacetum vulgare",
+        "speciesId": "tanacetum-vulgare",
+        "stateCode": "MI"
+      },
+      {
+        "countyFips": "27075",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          709885
+        ],
+        "pairKey": "27075:tanacetum-vulgare",
+        "scientificName": "Tanacetum vulgare",
+        "speciesId": "tanacetum-vulgare",
+        "stateCode": "MN"
+      },
+      {
+        "countyFips": "32007",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          709881
+        ],
+        "pairKey": "32007:euphorbia-esula-var-esula",
+        "scientificName": "Euphorbia esula var. esula",
+        "speciesId": "euphorbia-esula-var-esula",
+        "stateCode": "NV"
+      },
+      {
+        "countyFips": "38007",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          828206
+        ],
+        "pairKey": "38007:hyoscyamus-niger",
+        "scientificName": "Hyoscyamus niger",
+        "speciesId": "hyoscyamus-niger",
+        "stateCode": "ND"
+      },
+      {
+        "countyFips": "41019",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          236645
+        ],
+        "pairKey": "41019:cirsium-arvense",
+        "scientificName": "Cirsium arvense",
+        "speciesId": "cirsium-arvense",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41019",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          3
+        ],
+        "pairKey": "41019:cytisus-scoparius",
+        "scientificName": "Cytisus scoparius",
+        "speciesId": "cytisus-scoparius",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41023",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          473263
+        ],
+        "pairKey": "41023:centaurea-diffusa",
+        "scientificName": "Centaurea diffusa",
+        "speciesId": "centaurea-diffusa",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41023",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          828194
+        ],
+        "pairKey": "41023:cirsium-arvense",
+        "scientificName": "Cirsium arvense",
+        "speciesId": "cirsium-arvense",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41023",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          118331
+        ],
+        "pairKey": "41023:poa-bulbosa",
+        "scientificName": "Poa bulbosa",
+        "speciesId": "poa-bulbosa",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41023",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          709886
+        ],
+        "pairKey": "41023:taeniatherum-caput-medusae",
+        "scientificName": "Taeniatherum caput-medusae",
+        "speciesId": "taeniatherum-caput-medusae",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41023",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          24
+        ],
+        "pairKey": "41023:thinopyrum-intermedium",
+        "scientificName": "Thinopyrum intermedium",
+        "speciesId": "thinopyrum-intermedium",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41023",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          17
+        ],
+        "pairKey": "41023:ventenata-dubia",
+        "scientificName": "Ventenata dubia",
+        "speciesId": "ventenata-dubia",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41029",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          236639
+        ],
+        "pairKey": "41029:dipsacus-laciniatus",
+        "scientificName": "Dipsacus laciniatus",
+        "speciesId": "dipsacus-laciniatus",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41031",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          118336
+        ],
+        "pairKey": "41031:centaurea-stoebe-ssp-micranthos",
+        "scientificName": "Centaurea stoebe ssp. micranthos",
+        "speciesId": "centaurea-stoebe-ssp-micranthos",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41031",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          473249
+        ],
+        "pairKey": "41031:taeniatherum-caput-medusae",
+        "scientificName": "Taeniatherum caput-medusae",
+        "speciesId": "taeniatherum-caput-medusae",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41033",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          709891
+        ],
+        "pairKey": "41033:taeniatherum-caput-medusae",
+        "scientificName": "Taeniatherum caput-medusae",
+        "speciesId": "taeniatherum-caput-medusae",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41037",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          354949,
+          473265
+        ],
+        "pairKey": "41037:carduus-nutans",
+        "scientificName": "Carduus nutans",
+        "speciesId": "carduus-nutans",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41037",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          591570
+        ],
+        "pairKey": "41037:ventenata-dubia",
+        "scientificName": "Ventenata dubia",
+        "speciesId": "ventenata-dubia",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41039",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          828202
+        ],
+        "pairKey": "41039:brachypodium-sylvaticum",
+        "scientificName": "Brachypodium sylvaticum",
+        "speciesId": "brachypodium-sylvaticum",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "41043",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          236643
+        ],
+        "pairKey": "41043:hypericum-perforatum",
+        "scientificName": "Hypericum perforatum",
+        "speciesId": "hypericum-perforatum",
+        "stateCode": "OR"
+      },
+      {
+        "countyFips": "53007",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          8
+        ],
+        "pairKey": "53007:hieracium-piloselloides",
+        "scientificName": "Hieracium piloselloides",
+        "speciesId": "hieracium-piloselloides",
+        "stateCode": "WA"
+      },
+      {
+        "countyFips": "53051",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          354950
+        ],
+        "pairKey": "53051:linaria-dalmatica",
+        "scientificName": "Linaria dalmatica",
+        "speciesId": "linaria-dalmatica",
+        "stateCode": "WA"
+      },
+      {
+        "countyFips": "55125",
+        "geographyEstimateOnly": true,
+        "objectIds": [
+          473256
+        ],
+        "pairKey": "55125:digitalis-purpurea",
+        "scientificName": "Digitalis purpurea",
+        "speciesId": "digitalis-purpurea",
+        "stateCode": "WI"
+      }
+    ],
+    "estimatedPotentialNetNewPairs": 30,
+    "exactCatalogRows": 173,
+    "exactRowsOutsideGeneratedScopeOrAmbiguous": 0,
+    "exactRowsResolvedToOneGeneratedCounty": 173,
+    "geographyMethodIsPublicationSafe": false,
+    "method": "eight-objectid-ranges-first-25-bbox-center-estimate",
+    "requestedRowsPerStratum": 25,
+    "returnedRows": 200,
+    "sampleLineageSha256": "a4c8a2f94657329a59459f61a1ef5b6b191ea524ff38491ba02129b06e8df82e",
+    "stratumCount": 8,
+    "uniqueResolvedCountySpeciesPairs": 157,
+    "unmatchedRows": 27
+  },
+  "taxonCoverage": {
+    "catalogPlantSpecies": 1613,
+    "catalogSpecies": 2504,
+    "exactCatalogFeatureRows": 785457,
+    "exactCatalogNames": 517,
+    "exactMappings": [
+      {
+        "featureCount": 1,
+        "scientificName": "Abrus precatorius",
+        "speciesId": "abrus-precatorius"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Abutilon theophrasti",
+        "speciesId": "abutilon-theophrasti"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Acacia baileyana",
+        "speciesId": "acacia-baileyana"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Acacia dealbata",
+        "speciesId": "acacia-dealbata"
+      },
+      {
+        "featureCount": 208,
+        "scientificName": "Acer platanoides",
+        "speciesId": "acer-platanoides"
+      },
+      {
+        "featureCount": 217,
+        "scientificName": "Achillea nobilis",
+        "speciesId": "achillea-nobilis"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Achillea ptarmica",
+        "speciesId": "achillea-ptarmica"
+      },
+      {
+        "featureCount": 102,
+        "scientificName": "Achyranthes japonica",
+        "speciesId": "achyranthes-japonica"
+      },
+      {
+        "featureCount": 387,
+        "scientificName": "Aegilops cylindrica",
+        "speciesId": "aegilops-cylindrica"
+      },
+      {
+        "featureCount": 832,
+        "scientificName": "Aegilops triuncialis",
+        "speciesId": "aegilops-triuncialis"
+      },
+      {
+        "featureCount": 419,
+        "scientificName": "Aegopodium podagraria",
+        "speciesId": "aegopodium-podagraria"
+      },
+      {
+        "featureCount": 50,
+        "scientificName": "Ageratina adenophora",
+        "speciesId": "ageratina-adenophora"
+      },
+      {
+        "featureCount": 78,
+        "scientificName": "Agropyron cristatum",
+        "speciesId": "agropyron-cristatum"
+      },
+      {
+        "featureCount": 15,
+        "scientificName": "Agropyron desertorum",
+        "speciesId": "agropyron-desertorum"
+      },
+      {
+        "featureCount": 170,
+        "scientificName": "Agrostis capillaris",
+        "speciesId": "agrostis-capillaris"
+      },
+      {
+        "featureCount": 438,
+        "scientificName": "Agrostis gigantea",
+        "speciesId": "agrostis-gigantea"
+      },
+      {
+        "featureCount": 168,
+        "scientificName": "Agrostis stolonifera",
+        "speciesId": "agrostis-stolonifera"
+      },
+      {
+        "featureCount": 15908,
+        "scientificName": "Ailanthus altissima",
+        "speciesId": "tree-of-heaven"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Akebia quinata",
+        "speciesId": "akebia-quinata"
+      },
+      {
+        "featureCount": 4146,
+        "scientificName": "Albizia julibrissin",
+        "speciesId": "albizia-julibrissin"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Alcea rosea",
+        "speciesId": "alcea-rosea"
+      },
+      {
+        "featureCount": 106,
+        "scientificName": "Alhagi maurorum",
+        "speciesId": "alhagi-maurorum"
+      },
+      {
+        "featureCount": 3345,
+        "scientificName": "Alliaria petiolata",
+        "speciesId": "alliaria-petiolata"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Allium sativum",
+        "speciesId": "allium-sativum"
+      },
+      {
+        "featureCount": 28,
+        "scientificName": "Allium vineale",
+        "speciesId": "allium-vineale"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Alnus glutinosa",
+        "speciesId": "alnus-glutinosa"
+      },
+      {
+        "featureCount": 28,
+        "scientificName": "Alopecurus geniculatus",
+        "speciesId": "alopecurus-geniculatus"
+      },
+      {
+        "featureCount": 446,
+        "scientificName": "Alopecurus pratensis",
+        "speciesId": "alopecurus-pratensis"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Alternanthera philoxeroides",
+        "speciesId": "alternanthera-philoxeroides"
+      },
+      {
+        "featureCount": 19,
+        "scientificName": "Alyssum alyssoides",
+        "speciesId": "alyssum-alyssoides"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Amaranthus albus",
+        "speciesId": "amaranthus-albus"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Amaranthus blitoides",
+        "speciesId": "amaranthus-blitoides"
+      },
+      {
+        "featureCount": 129,
+        "scientificName": "Ammophila arenaria",
+        "speciesId": "ammophila-arenaria"
+      },
+      {
+        "featureCount": 509,
+        "scientificName": "Anthemis arvensis",
+        "speciesId": "anthemis-arvensis"
+      },
+      {
+        "featureCount": 1165,
+        "scientificName": "Anthemis cotula",
+        "speciesId": "anthemis-cotula"
+      },
+      {
+        "featureCount": 35,
+        "scientificName": "Anthoxanthum odoratum",
+        "speciesId": "anthoxanthum-odoratum"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Anthriscus caucalis",
+        "speciesId": "anthriscus-caucalis"
+      },
+      {
+        "featureCount": 416,
+        "scientificName": "Anthriscus sylvestris",
+        "speciesId": "anthriscus-sylvestris"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Aralia elata",
+        "speciesId": "aralia-elata"
+      },
+      {
+        "featureCount": 43,
+        "scientificName": "Arctium lappa",
+        "speciesId": "arctium-lappa"
+      },
+      {
+        "featureCount": 7098,
+        "scientificName": "Arctium minus",
+        "speciesId": "arctium-minus"
+      },
+      {
+        "featureCount": 27,
+        "scientificName": "Ardisia crenata",
+        "speciesId": "ardisia-crenata"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Armoracia rusticana",
+        "speciesId": "armoracia-rusticana"
+      },
+      {
+        "featureCount": 170,
+        "scientificName": "Arrhenatherum elatius",
+        "speciesId": "arrhenatherum-elatius"
+      },
+      {
+        "featureCount": 2266,
+        "scientificName": "Artemisia absinthium",
+        "speciesId": "artemisia-absinthium"
+      },
+      {
+        "featureCount": 31,
+        "scientificName": "Artemisia vulgaris",
+        "speciesId": "artemisia-vulgaris"
+      },
+      {
+        "featureCount": 144,
+        "scientificName": "Arthraxon hispidus",
+        "speciesId": "arthraxon-hispidus"
+      },
+      {
+        "featureCount": 1923,
+        "scientificName": "Arundo donax",
+        "speciesId": "arundo-donax"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Asparagus aethiopicus",
+        "speciesId": "asparagus-aethiopicus"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Asperugo procumbens",
+        "speciesId": "asperugo-procumbens"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Asphodelus fistulosus",
+        "speciesId": "asphodelus-fistulosus"
+      },
+      {
+        "featureCount": 18,
+        "scientificName": "Astragalus cicer",
+        "speciesId": "astragalus-cicer"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Atriplex patula",
+        "speciesId": "atriplex-patula"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Atriplex semibaccata",
+        "speciesId": "atriplex-semibaccata"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Aurinia saxatilis",
+        "speciesId": "aurinia-saxatilis"
+      },
+      {
+        "featureCount": 36,
+        "scientificName": "Avena barbata",
+        "speciesId": "avena-barbata"
+      },
+      {
+        "featureCount": 60,
+        "scientificName": "Avena fatua",
+        "speciesId": "avena-fatua"
+      },
+      {
+        "featureCount": 13,
+        "scientificName": "Bambusa vulgaris",
+        "speciesId": "bambusa-vulgaris"
+      },
+      {
+        "featureCount": 32,
+        "scientificName": "Barbarea vulgaris",
+        "speciesId": "barbarea-vulgaris"
+      },
+      {
+        "featureCount": 24,
+        "scientificName": "Bassia hyssopifolia",
+        "speciesId": "bassia-hyssopifolia"
+      },
+      {
+        "featureCount": 4481,
+        "scientificName": "Berberis thunbergii",
+        "speciesId": "berberis-thunbergii"
+      },
+      {
+        "featureCount": 152,
+        "scientificName": "Berberis vulgaris",
+        "speciesId": "berberis-vulgaris"
+      },
+      {
+        "featureCount": 1897,
+        "scientificName": "Berteroa incana",
+        "speciesId": "berteroa-incana"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Betula pendula",
+        "speciesId": "betula-pendula"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Borago officinalis",
+        "speciesId": "borago-officinalis"
+      },
+      {
+        "featureCount": 19,
+        "scientificName": "Bothriochloa bladhii",
+        "speciesId": "bothriochloa-bladhii"
+      },
+      {
+        "featureCount": 664,
+        "scientificName": "Bothriochloa ischaemum",
+        "speciesId": "bothriochloa-ischaemum"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Brachypodium distachyon",
+        "speciesId": "brachypodium-distachyon"
+      },
+      {
+        "featureCount": 3366,
+        "scientificName": "Brachypodium sylvaticum",
+        "speciesId": "brachypodium-sylvaticum"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Brassica juncea",
+        "speciesId": "brassica-juncea"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Brassica napus",
+        "speciesId": "brassica-napus"
+      },
+      {
+        "featureCount": 156,
+        "scientificName": "Brassica nigra",
+        "speciesId": "brassica-nigra"
+      },
+      {
+        "featureCount": 106,
+        "scientificName": "Brassica rapa",
+        "speciesId": "brassica-rapa"
+      },
+      {
+        "featureCount": 589,
+        "scientificName": "Brassica tournefortii",
+        "speciesId": "brassica-tournefortii"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Briza minor",
+        "speciesId": "briza-minor"
+      },
+      {
+        "featureCount": 1013,
+        "scientificName": "Bromus arvensis",
+        "speciesId": "bromus-arvensis"
+      },
+      {
+        "featureCount": 71,
+        "scientificName": "Bromus briziformis",
+        "speciesId": "bromus-briziformis"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Bromus catharticus",
+        "speciesId": "bromus-catharticus"
+      },
+      {
+        "featureCount": 241,
+        "scientificName": "Bromus diandrus",
+        "speciesId": "bromus-diandrus"
+      },
+      {
+        "featureCount": 64,
+        "scientificName": "Bromus hordeaceus",
+        "speciesId": "bromus-hordeaceus"
+      },
+      {
+        "featureCount": 693,
+        "scientificName": "Bromus inermis",
+        "speciesId": "bromus-inermis"
+      },
+      {
+        "featureCount": 18,
+        "scientificName": "Bromus madritensis",
+        "speciesId": "bromus-madritensis"
+      },
+      {
+        "featureCount": 15,
+        "scientificName": "Bromus racemosus",
+        "speciesId": "bromus-racemosus"
+      },
+      {
+        "featureCount": 409,
+        "scientificName": "Bromus rubens",
+        "speciesId": "bromus-rubens"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Bromus secalinus",
+        "speciesId": "bromus-secalinus"
+      },
+      {
+        "featureCount": 20776,
+        "scientificName": "Bromus tectorum",
+        "speciesId": "bromus-tectorum"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Broussonetia papyrifera",
+        "speciesId": "broussonetia-papyrifera"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Bryonia alba",
+        "speciesId": "bryonia-alba"
+      },
+      {
+        "featureCount": 75,
+        "scientificName": "Buddleja davidii",
+        "speciesId": "buddleja-davidii"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Butomus umbellatus",
+        "speciesId": "butomus-umbellatus"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Calendula officinalis",
+        "speciesId": "calendula-officinalis"
+      },
+      {
+        "featureCount": 26,
+        "scientificName": "Campanula rapunculoides",
+        "speciesId": "campanula-rapunculoides"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Cannabis sativa",
+        "speciesId": "cannabis-sativa"
+      },
+      {
+        "featureCount": 266,
+        "scientificName": "Capsella bursa-pastoris",
+        "speciesId": "capsella-bursa-pastoris"
+      },
+      {
+        "featureCount": 56,
+        "scientificName": "Caragana arborescens",
+        "speciesId": "caragana-arborescens"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Cardamine impatiens",
+        "speciesId": "cardamine-impatiens"
+      },
+      {
+        "featureCount": 1760,
+        "scientificName": "Carduus acanthoides",
+        "speciesId": "carduus-acanthoides"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Carduus crispus",
+        "speciesId": "carduus-crispus"
+      },
+      {
+        "featureCount": 50858,
+        "scientificName": "Carduus nutans",
+        "speciesId": "carduus-nutans"
+      },
+      {
+        "featureCount": 2060,
+        "scientificName": "Carduus pycnocephalus",
+        "speciesId": "carduus-pycnocephalus"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Carthamus lanatus",
+        "speciesId": "carthamus-lanatus"
+      },
+      {
+        "featureCount": 13,
+        "scientificName": "Carum carvi",
+        "speciesId": "carum-carvi"
+      },
+      {
+        "featureCount": 1009,
+        "scientificName": "Celastrus orbiculatus",
+        "speciesId": "celastrus-orbiculatus"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Centaurea calcitrapa",
+        "speciesId": "centaurea-calcitrapa"
+      },
+      {
+        "featureCount": 19,
+        "scientificName": "Centaurea cyanus",
+        "speciesId": "centaurea-cyanus"
+      },
+      {
+        "featureCount": 1153,
+        "scientificName": "Centaurea debeauxii",
+        "speciesId": "centaurea-debeauxii"
+      },
+      {
+        "featureCount": 9333,
+        "scientificName": "Centaurea diffusa",
+        "speciesId": "centaurea-diffusa"
+      },
+      {
+        "featureCount": 454,
+        "scientificName": "Centaurea jacea",
+        "speciesId": "centaurea-jacea"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Centaurea macrocephala",
+        "speciesId": "centaurea-macrocephala"
+      },
+      {
+        "featureCount": 2614,
+        "scientificName": "Centaurea melitensis",
+        "speciesId": "centaurea-melitensis"
+      },
+      {
+        "featureCount": 78,
+        "scientificName": "Centaurea montana",
+        "speciesId": "centaurea-montana"
+      },
+      {
+        "featureCount": 21,
+        "scientificName": "Centaurea nigra",
+        "speciesId": "centaurea-nigra"
+      },
+      {
+        "featureCount": 8678,
+        "scientificName": "Centaurea solstitialis",
+        "speciesId": "centaurea-solstitialis"
+      },
+      {
+        "featureCount": 4567,
+        "scientificName": "Centaurea stoebe",
+        "speciesId": "centaurea-stoebe"
+      },
+      {
+        "featureCount": 52327,
+        "scientificName": "Centaurea stoebe ssp. micranthos",
+        "speciesId": "centaurea-stoebe-ssp-micranthos"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Centranthus ruber",
+        "speciesId": "centranthus-ruber"
+      },
+      {
+        "featureCount": 2254,
+        "scientificName": "Cerastium fontanum",
+        "speciesId": "cerastium-fontanum"
+      },
+      {
+        "featureCount": 1210,
+        "scientificName": "Cerastium fontanum ssp. vulgare",
+        "speciesId": "cerastium-fontanum-ssp-vulgare"
+      },
+      {
+        "featureCount": 36,
+        "scientificName": "Cerastium glomeratum",
+        "speciesId": "cerastium-glomeratum"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Cerastium tomentosum",
+        "speciesId": "cerastium-tomentosum"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Chaenorhinum minus",
+        "speciesId": "chaenorhinum-minus"
+      },
+      {
+        "featureCount": 33,
+        "scientificName": "Chelidonium majus",
+        "speciesId": "chelidonium-majus"
+      },
+      {
+        "featureCount": 29,
+        "scientificName": "Chenopodium album",
+        "speciesId": "chenopodium-album"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Chenopodium murale",
+        "speciesId": "chenopodium-murale"
+      },
+      {
+        "featureCount": 7361,
+        "scientificName": "Chondrilla juncea",
+        "speciesId": "chondrilla-juncea"
+      },
+      {
+        "featureCount": 33,
+        "scientificName": "Chorispora tenella",
+        "speciesId": "chorispora-tenella"
+      },
+      {
+        "featureCount": 427,
+        "scientificName": "Cichorium intybus",
+        "speciesId": "cichorium-intybus"
+      },
+      {
+        "featureCount": 121,
+        "scientificName": "Cinnamomum camphora",
+        "speciesId": "cinnamomum-camphora"
+      },
+      {
+        "featureCount": 117574,
+        "scientificName": "Cirsium arvense",
+        "speciesId": "cirsium-arvense"
+      },
+      {
+        "featureCount": 2445,
+        "scientificName": "Cirsium palustre",
+        "speciesId": "cirsium-palustre"
+      },
+      {
+        "featureCount": 40946,
+        "scientificName": "Cirsium vulgare",
+        "speciesId": "cirsium-vulgare"
+      },
+      {
+        "featureCount": 30,
+        "scientificName": "Clematis vitalba",
+        "speciesId": "clematis-vitalba"
+      },
+      {
+        "featureCount": 25,
+        "scientificName": "Commelina communis",
+        "speciesId": "commelina-communis"
+      },
+      {
+        "featureCount": 591,
+        "scientificName": "Conium maculatum",
+        "speciesId": "conium-maculatum"
+      },
+      {
+        "featureCount": 4865,
+        "scientificName": "Convolvulus arvensis",
+        "speciesId": "convolvulus-arvensis"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Conyza bonariensis",
+        "speciesId": "conyza-bonariensis"
+      },
+      {
+        "featureCount": 59,
+        "scientificName": "Cortaderia jubata",
+        "speciesId": "cortaderia-jubata"
+      },
+      {
+        "featureCount": 46,
+        "scientificName": "Cortaderia selloana",
+        "speciesId": "cortaderia-selloana"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Cotula coronopifolia",
+        "speciesId": "cotula-coronopifolia"
+      },
+      {
+        "featureCount": 9,
+        "scientificName": "Crataegus monogyna",
+        "speciesId": "crataegus-monogyna"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Crepis capillaris",
+        "speciesId": "crepis-capillaris"
+      },
+      {
+        "featureCount": 1035,
+        "scientificName": "Crepis tectorum",
+        "speciesId": "crepis-tectorum"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Crotalaria spectabilis",
+        "speciesId": "crotalaria-spectabilis"
+      },
+      {
+        "featureCount": 143,
+        "scientificName": "Crupina vulgaris",
+        "speciesId": "crupina-vulgaris"
+      },
+      {
+        "featureCount": 9,
+        "scientificName": "Cynara cardunculus",
+        "speciesId": "cynara-cardunculus"
+      },
+      {
+        "featureCount": 116,
+        "scientificName": "Cynodon dactylon",
+        "speciesId": "cynodon-dactylon"
+      },
+      {
+        "featureCount": 39481,
+        "scientificName": "Cynoglossum officinale",
+        "speciesId": "cynoglossum-officinale"
+      },
+      {
+        "featureCount": 20,
+        "scientificName": "Cynosurus echinatus",
+        "speciesId": "cynosurus-echinatus"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Cyperus esculentus",
+        "speciesId": "cyperus-esculentus"
+      },
+      {
+        "featureCount": 10706,
+        "scientificName": "Cytisus scoparius",
+        "speciesId": "cytisus-scoparius"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Cytisus striatus",
+        "speciesId": "cytisus-striatus"
+      },
+      {
+        "featureCount": 1539,
+        "scientificName": "Dactylis glomerata",
+        "speciesId": "dactylis-glomerata"
+      },
+      {
+        "featureCount": 22,
+        "scientificName": "Daphne mezereum",
+        "speciesId": "daphne-mezereum"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Datura inoxia",
+        "speciesId": "datura-inoxia"
+      },
+      {
+        "featureCount": 1275,
+        "scientificName": "Daucus carota",
+        "speciesId": "daucus-carota"
+      },
+      {
+        "featureCount": 18,
+        "scientificName": "Delairea odorata",
+        "speciesId": "delairea-odorata"
+      },
+      {
+        "featureCount": 367,
+        "scientificName": "Descurainia sophia",
+        "speciesId": "descurainia-sophia"
+      },
+      {
+        "featureCount": 122,
+        "scientificName": "Dianthus armeria",
+        "speciesId": "dianthus-armeria"
+      },
+      {
+        "featureCount": 14,
+        "scientificName": "Dianthus barbatus",
+        "speciesId": "dianthus-barbatus"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Dianthus deltoides",
+        "speciesId": "dianthus-deltoides"
+      },
+      {
+        "featureCount": 1952,
+        "scientificName": "Digitalis purpurea",
+        "speciesId": "digitalis-purpurea"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Digitaria sanguinalis",
+        "speciesId": "digitaria-sanguinalis"
+      },
+      {
+        "featureCount": 60,
+        "scientificName": "Dioscorea bulbifera",
+        "speciesId": "dioscorea-bulbifera"
+      },
+      {
+        "featureCount": 282,
+        "scientificName": "Dioscorea oppositifolia",
+        "speciesId": "dioscorea-oppositifolia"
+      },
+      {
+        "featureCount": 39,
+        "scientificName": "Dipsacus laciniatus",
+        "speciesId": "dipsacus-laciniatus"
+      },
+      {
+        "featureCount": 23,
+        "scientificName": "Dittrichia graveolens",
+        "speciesId": "dittrichia-graveolens"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Duchesnea indica",
+        "speciesId": "duchesnea-indica"
+      },
+      {
+        "featureCount": 12,
+        "scientificName": "Echinochloa crus-galli",
+        "speciesId": "echinochloa-crus-galli"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Echinops sphaerocephalus",
+        "speciesId": "echinops-sphaerocephalus"
+      },
+      {
+        "featureCount": 243,
+        "scientificName": "Echium vulgare",
+        "speciesId": "echium-vulgare"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Egeria densa",
+        "speciesId": "egeria-densa"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Ehrharta calycina",
+        "speciesId": "ehrharta-calycina"
+      },
+      {
+        "featureCount": 37,
+        "scientificName": "Eichhornia crassipes",
+        "speciesId": "eichhornia-crassipes"
+      },
+      {
+        "featureCount": 1320,
+        "scientificName": "Elaeagnus angustifolia",
+        "speciesId": "elaeagnus-angustifolia"
+      },
+      {
+        "featureCount": 15,
+        "scientificName": "Elaeagnus pungens",
+        "speciesId": "elaeagnus-pungens"
+      },
+      {
+        "featureCount": 6909,
+        "scientificName": "Elaeagnus umbellata",
+        "speciesId": "elaeagnus-umbellata"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Eleusine indica",
+        "speciesId": "eleusine-indica"
+      },
+      {
+        "featureCount": 938,
+        "scientificName": "Elymus repens",
+        "speciesId": "elymus-repens"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Epilobium hirsutum",
+        "speciesId": "epilobium-hirsutum"
+      },
+      {
+        "featureCount": 52,
+        "scientificName": "Epipactis helleborine",
+        "speciesId": "epipactis-helleborine"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Eragrostis cilianensis",
+        "speciesId": "eragrostis-cilianensis"
+      },
+      {
+        "featureCount": 66,
+        "scientificName": "Eragrostis curvula",
+        "speciesId": "eragrostis-curvula"
+      },
+      {
+        "featureCount": 58,
+        "scientificName": "Eragrostis lehmanniana",
+        "speciesId": "eragrostis-lehmanniana"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Eragrostis pilosa",
+        "speciesId": "eragrostis-pilosa"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Eragrostis superba",
+        "speciesId": "eragrostis-superba"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Eremochloa ophiuroides",
+        "speciesId": "eremochloa-ophiuroides"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Erodium botrys",
+        "speciesId": "erodium-botrys"
+      },
+      {
+        "featureCount": 599,
+        "scientificName": "Erodium cicutarium",
+        "speciesId": "erodium-cicutarium"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Erodium moschatum",
+        "speciesId": "erodium-moschatum"
+      },
+      {
+        "featureCount": 14,
+        "scientificName": "Erucastrum gallicum",
+        "speciesId": "erucastrum-gallicum"
+      },
+      {
+        "featureCount": 59,
+        "scientificName": "Erysimum cheiranthoides",
+        "speciesId": "erysimum-cheiranthoides"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Eucalyptus globulus",
+        "speciesId": "eucalyptus-globulus"
+      },
+      {
+        "featureCount": 483,
+        "scientificName": "Euonymus alatus",
+        "speciesId": "euonymus-alatus"
+      },
+      {
+        "featureCount": 30,
+        "scientificName": "Euonymus fortunei",
+        "speciesId": "euonymus-fortunei"
+      },
+      {
+        "featureCount": 126,
+        "scientificName": "Euphorbia cyparissias",
+        "speciesId": "euphorbia-cyparissias"
+      },
+      {
+        "featureCount": 481,
+        "scientificName": "Euphorbia esula var. esula",
+        "speciesId": "euphorbia-esula-var-esula"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Euphorbia lathyris",
+        "speciesId": "euphorbia-lathyris"
+      },
+      {
+        "featureCount": 11,
+        "scientificName": "Festuca rubra",
+        "speciesId": "festuca-rubra"
+      },
+      {
+        "featureCount": 29,
+        "scientificName": "Ficus carica",
+        "speciesId": "ficus-carica"
+      },
+      {
+        "featureCount": 9,
+        "scientificName": "Ficus pumila",
+        "speciesId": "ficus-pumila"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Firmiana simplex",
+        "speciesId": "firmiana-simplex"
+      },
+      {
+        "featureCount": 132,
+        "scientificName": "Foeniculum vulgare",
+        "speciesId": "foeniculum-vulgare"
+      },
+      {
+        "featureCount": 1111,
+        "scientificName": "Frangula alnus",
+        "speciesId": "frangula-alnus"
+      },
+      {
+        "featureCount": 22,
+        "scientificName": "Galega officinalis",
+        "speciesId": "galega-officinalis"
+      },
+      {
+        "featureCount": 117,
+        "scientificName": "Galeopsis bifida",
+        "speciesId": "galeopsis-bifida"
+      },
+      {
+        "featureCount": 233,
+        "scientificName": "Galeopsis tetrahit",
+        "speciesId": "galeopsis-tetrahit"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Galium mollugo",
+        "speciesId": "galium-mollugo"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Galium verum",
+        "speciesId": "galium-verum"
+      },
+      {
+        "featureCount": 792,
+        "scientificName": "Genista monspessulana",
+        "speciesId": "genista-monspessulana"
+      },
+      {
+        "featureCount": 254,
+        "scientificName": "Glechoma hederacea",
+        "speciesId": "glechoma-hederacea"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Gnaphalium uliginosum",
+        "speciesId": "gnaphalium-uliginosum"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Gypsophila paniculata",
+        "speciesId": "gypsophila-paniculata"
+      },
+      {
+        "featureCount": 55,
+        "scientificName": "Halogeton glomeratus",
+        "speciesId": "halogeton-glomeratus"
+      },
+      {
+        "featureCount": 535,
+        "scientificName": "Hedera helix",
+        "speciesId": "hedera-helix"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Hedera hibernica",
+        "speciesId": "hedera-hibernica"
+      },
+      {
+        "featureCount": 48,
+        "scientificName": "Hemerocallis fulva",
+        "speciesId": "hemerocallis-fulva"
+      },
+      {
+        "featureCount": 43,
+        "scientificName": "Heracleum mantegazzianum",
+        "speciesId": "giant-hogweed"
+      },
+      {
+        "featureCount": 108,
+        "scientificName": "Hesperis matronalis",
+        "speciesId": "hesperis-matronalis"
+      },
+      {
+        "featureCount": 6129,
+        "scientificName": "Hieracium aurantiacum",
+        "speciesId": "hieracium-aurantiacum"
+      },
+      {
+        "featureCount": 7564,
+        "scientificName": "Hieracium caespitosum",
+        "speciesId": "hieracium-caespitosum"
+      },
+      {
+        "featureCount": 133,
+        "scientificName": "Hieracium murorum",
+        "speciesId": "hieracium-murorum"
+      },
+      {
+        "featureCount": 261,
+        "scientificName": "Hieracium pilosella",
+        "speciesId": "hieracium-pilosella"
+      },
+      {
+        "featureCount": 83,
+        "scientificName": "Hieracium piloselloides",
+        "speciesId": "hieracium-piloselloides"
+      },
+      {
+        "featureCount": 282,
+        "scientificName": "Hirschfeldia incana",
+        "speciesId": "hirschfeldia-incana"
+      },
+      {
+        "featureCount": 481,
+        "scientificName": "Holcus lanatus",
+        "speciesId": "holcus-lanatus"
+      },
+      {
+        "featureCount": 110,
+        "scientificName": "Holcus mollis",
+        "speciesId": "holcus-mollis"
+      },
+      {
+        "featureCount": 45,
+        "scientificName": "Hordeum murinum",
+        "speciesId": "hordeum-murinum"
+      },
+      {
+        "featureCount": 12,
+        "scientificName": "Hordeum murinum ssp. leporinum",
+        "speciesId": "hordeum-murinum-ssp-leporinum"
+      },
+      {
+        "featureCount": 29,
+        "scientificName": "Hordeum vulgare",
+        "speciesId": "hordeum-vulgare"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Houttuynia cordata",
+        "speciesId": "houttuynia-cordata"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Humulus japonicus",
+        "speciesId": "humulus-japonicus"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Hydrilla verticillata",
+        "speciesId": "hydrilla"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Hydrocharis morsus-ranae",
+        "speciesId": "hydrocharis-morsus-ranae"
+      },
+      {
+        "featureCount": 3685,
+        "scientificName": "Hyoscyamus niger",
+        "speciesId": "hyoscyamus-niger"
+      },
+      {
+        "featureCount": 21089,
+        "scientificName": "Hypericum perforatum",
+        "speciesId": "hypericum-perforatum"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Hypochaeris glabra",
+        "speciesId": "hypochaeris-glabra"
+      },
+      {
+        "featureCount": 1098,
+        "scientificName": "Hypochaeris radicata",
+        "speciesId": "hypochaeris-radicata"
+      },
+      {
+        "featureCount": 846,
+        "scientificName": "Ilex aquifolium",
+        "speciesId": "ilex-aquifolium"
+      },
+      {
+        "featureCount": 58,
+        "scientificName": "Impatiens glandulifera",
+        "speciesId": "impatiens-glandulifera"
+      },
+      {
+        "featureCount": 3184,
+        "scientificName": "Imperata cylindrica",
+        "speciesId": "imperata-cylindrica"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Ipomoea purpurea",
+        "speciesId": "ipomoea-purpurea"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Iris germanica",
+        "speciesId": "iris-germanica"
+      },
+      {
+        "featureCount": 227,
+        "scientificName": "Iris pseudacorus",
+        "speciesId": "iris-pseudacorus"
+      },
+      {
+        "featureCount": 4998,
+        "scientificName": "Isatis tinctoria",
+        "speciesId": "isatis-tinctoria"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Kerria japonica",
+        "speciesId": "kerria-japonica"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Koelreuteria elegans ssp. formosana",
+        "speciesId": "koelreuteria-elegans-ssp-formosana"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Koelreuteria paniculata",
+        "speciesId": "koelreuteria-paniculata"
+      },
+      {
+        "featureCount": 362,
+        "scientificName": "Kummerowia striata",
+        "speciesId": "kummerowia-striata"
+      },
+      {
+        "featureCount": 422,
+        "scientificName": "Lactuca serriola",
+        "speciesId": "lactuca-serriola"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Lagerstroemia indica",
+        "speciesId": "lagerstroemia-indica"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Lamarckia aurea",
+        "speciesId": "lamarckia-aurea"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Lamium album",
+        "speciesId": "lamium-album"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Lamium amplexicaule",
+        "speciesId": "lamium-amplexicaule"
+      },
+      {
+        "featureCount": 23,
+        "scientificName": "Lantana camara",
+        "speciesId": "lantana-camara"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Lappula squarrosa",
+        "speciesId": "lappula-squarrosa"
+      },
+      {
+        "featureCount": 177,
+        "scientificName": "Lapsana communis",
+        "speciesId": "lapsana-communis"
+      },
+      {
+        "featureCount": 1340,
+        "scientificName": "Lathyrus latifolius",
+        "speciesId": "lathyrus-latifolius"
+      },
+      {
+        "featureCount": 179,
+        "scientificName": "Leontodon autumnalis",
+        "speciesId": "leontodon-autumnalis"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Lepidium campestre",
+        "speciesId": "lepidium-campestre"
+      },
+      {
+        "featureCount": 11358,
+        "scientificName": "Lepidium latifolium",
+        "speciesId": "lepidium-latifolium"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Lepidium perfoliatum",
+        "speciesId": "lepidium-perfoliatum"
+      },
+      {
+        "featureCount": 920,
+        "scientificName": "Lespedeza bicolor",
+        "speciesId": "lespedeza-bicolor"
+      },
+      {
+        "featureCount": 8111,
+        "scientificName": "Lespedeza cuneata",
+        "speciesId": "lespedeza-cuneata"
+      },
+      {
+        "featureCount": 11,
+        "scientificName": "Leucanthemum maximum",
+        "speciesId": "leucanthemum-maximum"
+      },
+      {
+        "featureCount": 23385,
+        "scientificName": "Leucanthemum vulgare",
+        "speciesId": "leucanthemum-vulgare"
+      },
+      {
+        "featureCount": 19,
+        "scientificName": "Ligustrum japonicum",
+        "speciesId": "ligustrum-japonicum"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Ligustrum lucidum",
+        "speciesId": "ligustrum-lucidum"
+      },
+      {
+        "featureCount": 82,
+        "scientificName": "Ligustrum obtusifolium",
+        "speciesId": "ligustrum-obtusifolium"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Ligustrum ovalifolium",
+        "speciesId": "ligustrum-ovalifolium"
+      },
+      {
+        "featureCount": 4706,
+        "scientificName": "Ligustrum sinense",
+        "speciesId": "ligustrum-sinense"
+      },
+      {
+        "featureCount": 364,
+        "scientificName": "Ligustrum vulgare",
+        "speciesId": "ligustrum-vulgare"
+      },
+      {
+        "featureCount": 14811,
+        "scientificName": "Linaria dalmatica",
+        "speciesId": "linaria-dalmatica"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Linaria pinifolia",
+        "speciesId": "linaria-pinifolia"
+      },
+      {
+        "featureCount": 20940,
+        "scientificName": "Linaria vulgaris",
+        "speciesId": "linaria-vulgaris"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Liriope spicata",
+        "speciesId": "liriope-spicata"
+      },
+      {
+        "featureCount": 14,
+        "scientificName": "Lolium perenne",
+        "speciesId": "lolium-perenne"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Lolium temulentum",
+        "speciesId": "lolium-temulentum"
+      },
+      {
+        "featureCount": 9,
+        "scientificName": "Lonicera fragrantissima",
+        "speciesId": "lonicera-fragrantissima"
+      },
+      {
+        "featureCount": 6101,
+        "scientificName": "Lonicera japonica",
+        "speciesId": "lonicera-japonica"
+      },
+      {
+        "featureCount": 1399,
+        "scientificName": "Lonicera maackii",
+        "speciesId": "lonicera-maackii"
+      },
+      {
+        "featureCount": 1907,
+        "scientificName": "Lonicera morrowii",
+        "speciesId": "lonicera-morrowii"
+      },
+      {
+        "featureCount": 383,
+        "scientificName": "Lonicera tatarica",
+        "speciesId": "lonicera-tatarica"
+      },
+      {
+        "featureCount": 933,
+        "scientificName": "Lotus corniculatus",
+        "speciesId": "lotus-corniculatus"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Ludwigia peruviana",
+        "speciesId": "ludwigia-peruviana"
+      },
+      {
+        "featureCount": 11203,
+        "scientificName": "Lygodium japonicum",
+        "speciesId": "lygodium-japonicum"
+      },
+      {
+        "featureCount": 11,
+        "scientificName": "Lygodium microphyllum",
+        "speciesId": "lygodium-microphyllum"
+      },
+      {
+        "featureCount": 54,
+        "scientificName": "Lysimachia nummularia",
+        "speciesId": "lysimachia-nummularia"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Lysimachia vulgaris",
+        "speciesId": "lysimachia-vulgaris"
+      },
+      {
+        "featureCount": 1405,
+        "scientificName": "Lythrum salicaria",
+        "speciesId": "lythrum-salicaria"
+      },
+      {
+        "featureCount": 36,
+        "scientificName": "Malva neglecta",
+        "speciesId": "malva-neglecta"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Malva parviflora",
+        "speciesId": "malva-parviflora"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Manihot grahamii",
+        "speciesId": "manihot-grahamii"
+      },
+      {
+        "featureCount": 723,
+        "scientificName": "Marrubium vulgare",
+        "speciesId": "marrubium-vulgare"
+      },
+      {
+        "featureCount": 2103,
+        "scientificName": "Matricaria discoidea",
+        "speciesId": "matricaria-discoidea"
+      },
+      {
+        "featureCount": 314,
+        "scientificName": "Medicago lupulina",
+        "speciesId": "medicago-lupulina"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Medicago minima",
+        "speciesId": "medicago-minima"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Medicago polymorpha",
+        "speciesId": "medicago-polymorpha"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Medicago sativa",
+        "speciesId": "medicago-sativa"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Medicago sativa ssp. falcata",
+        "speciesId": "medicago-sativa-ssp-falcata"
+      },
+      {
+        "featureCount": 24,
+        "scientificName": "Medicago sativa ssp. sativa",
+        "speciesId": "medicago-sativa-ssp-sativa"
+      },
+      {
+        "featureCount": 1312,
+        "scientificName": "Melia azedarach",
+        "speciesId": "melia-azedarach"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Melilotus indicus",
+        "speciesId": "melilotus-indicus"
+      },
+      {
+        "featureCount": 4360,
+        "scientificName": "Melilotus officinalis",
+        "speciesId": "melilotus-officinalis"
+      },
+      {
+        "featureCount": 670,
+        "scientificName": "Melinis repens",
+        "speciesId": "melinis-repens"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Melissa officinalis",
+        "speciesId": "melissa-officinalis"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Mentha pulegium",
+        "speciesId": "mentha-pulegium"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Mentha spicata",
+        "speciesId": "mentha-spicata"
+      },
+      {
+        "featureCount": 10906,
+        "scientificName": "Microstegium vimineum",
+        "speciesId": "microstegium-vimineum"
+      },
+      {
+        "featureCount": 405,
+        "scientificName": "Miscanthus sinensis",
+        "speciesId": "miscanthus-sinensis"
+      },
+      {
+        "featureCount": 18,
+        "scientificName": "Molinia caerulea",
+        "speciesId": "molinia-caerulea"
+      },
+      {
+        "featureCount": 14,
+        "scientificName": "Morus alba",
+        "speciesId": "morus-alba"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Murdannia keisak",
+        "speciesId": "murdannia-keisak"
+      },
+      {
+        "featureCount": 182,
+        "scientificName": "Mycelis muralis",
+        "speciesId": "mycelis-muralis"
+      },
+      {
+        "featureCount": 22,
+        "scientificName": "Myosotis arvensis",
+        "speciesId": "myosotis-arvensis"
+      },
+      {
+        "featureCount": 322,
+        "scientificName": "Myosotis scorpioides",
+        "speciesId": "myosotis-scorpioides"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Myosotis sylvatica",
+        "speciesId": "myosotis-sylvatica"
+      },
+      {
+        "featureCount": 11,
+        "scientificName": "Myriophyllum aquaticum",
+        "speciesId": "myriophyllum-aquaticum"
+      },
+      {
+        "featureCount": 279,
+        "scientificName": "Myriophyllum spicatum",
+        "speciesId": "myriophyllum-spicatum"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Myrrhis odorata",
+        "speciesId": "myrrhis-odorata"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Najas minor",
+        "speciesId": "najas-minor"
+      },
+      {
+        "featureCount": 76,
+        "scientificName": "Nandina domestica",
+        "speciesId": "nandina-domestica"
+      },
+      {
+        "featureCount": 28,
+        "scientificName": "Nardus stricta",
+        "speciesId": "nardus-stricta"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Nasturtium microphyllum",
+        "speciesId": "nasturtium-microphyllum"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Nasturtium officinale",
+        "speciesId": "nasturtium-officinale"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Nephrolepis cordifolia",
+        "speciesId": "nephrolepis-cordifolia"
+      },
+      {
+        "featureCount": 12,
+        "scientificName": "Nerium oleander",
+        "speciesId": "nerium-oleander"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Neslia paniculata",
+        "speciesId": "neslia-paniculata"
+      },
+      {
+        "featureCount": 448,
+        "scientificName": "Nicotiana glauca",
+        "speciesId": "nicotiana-glauca"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Nymphoides peltata",
+        "speciesId": "nymphoides-peltata"
+      },
+      {
+        "featureCount": 25,
+        "scientificName": "Odontonema cuspidatum",
+        "speciesId": "odontonema-cuspidatum"
+      },
+      {
+        "featureCount": 5306,
+        "scientificName": "Onopordum acanthium",
+        "speciesId": "onopordum-acanthium"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Onopordum illyricum",
+        "speciesId": "onopordum-illyricum"
+      },
+      {
+        "featureCount": 4,
+        "scientificName": "Ornithogalum umbellatum",
+        "speciesId": "ornithogalum-umbellatum"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Oxalis pes-caprae",
+        "speciesId": "oxalis-pes-caprae"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Paederia foetida",
+        "speciesId": "paederia-foetida"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Panicum miliaceum",
+        "speciesId": "panicum-miliaceum"
+      },
+      {
+        "featureCount": 102,
+        "scientificName": "Panicum repens",
+        "speciesId": "panicum-repens"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Papaver rhoeas",
+        "speciesId": "papaver-rhoeas"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Parentucellia viscosa",
+        "speciesId": "parentucellia-viscosa"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Parthenium hysterophorus",
+        "speciesId": "parthenium-hysterophorus"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Paspalum dilatatum",
+        "speciesId": "paspalum-dilatatum"
+      },
+      {
+        "featureCount": 180,
+        "scientificName": "Paspalum urvillei",
+        "speciesId": "paspalum-urvillei"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Passiflora edulis",
+        "speciesId": "passiflora-edulis"
+      },
+      {
+        "featureCount": 825,
+        "scientificName": "Pastinaca sativa",
+        "speciesId": "pastinaca-sativa"
+      },
+      {
+        "featureCount": 815,
+        "scientificName": "Paulownia tomentosa",
+        "speciesId": "paulownia-tomentosa"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Pentaglottis sempervirens",
+        "speciesId": "pentaglottis-sempervirens"
+      },
+      {
+        "featureCount": 825,
+        "scientificName": "Perilla frutescens",
+        "speciesId": "perilla-frutescens"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Petasites hybridus",
+        "speciesId": "petasites-hybridus"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Petasites japonicus",
+        "speciesId": "petasites-japonicus"
+      },
+      {
+        "featureCount": 31,
+        "scientificName": "Phalaris aquatica",
+        "speciesId": "phalaris-aquatica"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Phalaris canariensis",
+        "speciesId": "phalaris-canariensis"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Phellodendron amurense",
+        "speciesId": "phellodendron-amurense"
+      },
+      {
+        "featureCount": 5288,
+        "scientificName": "Phleum pratense",
+        "speciesId": "phleum-pratense"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Phragmites australis ssp. australis",
+        "speciesId": "phragmites-australis-ssp-australis"
+      },
+      {
+        "featureCount": 36,
+        "scientificName": "Phyllanthus urinaria",
+        "speciesId": "phyllanthus-urinaria"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Picea abies",
+        "speciesId": "picea-abies"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Pimpinella saxifraga",
+        "speciesId": "pimpinella-saxifraga"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Pinus halepensis",
+        "speciesId": "pinus-halepensis"
+      },
+      {
+        "featureCount": 132,
+        "scientificName": "Pinus sylvestris",
+        "speciesId": "pinus-sylvestris"
+      },
+      {
+        "featureCount": 217,
+        "scientificName": "Piptatherum miliaceum",
+        "speciesId": "piptatherum-miliaceum"
+      },
+      {
+        "featureCount": 156,
+        "scientificName": "Plantago lanceolata",
+        "speciesId": "plantago-lanceolata"
+      },
+      {
+        "featureCount": 6806,
+        "scientificName": "Plantago major",
+        "speciesId": "plantago-major"
+      },
+      {
+        "featureCount": 3665,
+        "scientificName": "Poa annua",
+        "speciesId": "poa-annua"
+      },
+      {
+        "featureCount": 941,
+        "scientificName": "Poa bulbosa",
+        "speciesId": "poa-bulbosa"
+      },
+      {
+        "featureCount": 250,
+        "scientificName": "Poa compressa",
+        "speciesId": "poa-compressa"
+      },
+      {
+        "featureCount": 50,
+        "scientificName": "Poa pratensis ssp. pratensis",
+        "speciesId": "poa-pratensis-ssp-pratensis"
+      },
+      {
+        "featureCount": 191,
+        "scientificName": "Poa trivialis",
+        "speciesId": "poa-trivialis"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Polygonum argyrocoleon",
+        "speciesId": "polygonum-argyrocoleon"
+      },
+      {
+        "featureCount": 564,
+        "scientificName": "Polygonum aviculare",
+        "speciesId": "polygonum-aviculare"
+      },
+      {
+        "featureCount": 84,
+        "scientificName": "Polypogon monspeliensis",
+        "speciesId": "polypogon-monspeliensis"
+      },
+      {
+        "featureCount": 11,
+        "scientificName": "Polypogon viridis",
+        "speciesId": "polypogon-viridis"
+      },
+      {
+        "featureCount": 20,
+        "scientificName": "Populus alba",
+        "speciesId": "populus-alba"
+      },
+      {
+        "featureCount": 79,
+        "scientificName": "Potamogeton crispus",
+        "speciesId": "potamogeton-crispus"
+      },
+      {
+        "featureCount": 198,
+        "scientificName": "Potentilla argentea",
+        "speciesId": "potentilla-argentea"
+      },
+      {
+        "featureCount": 5992,
+        "scientificName": "Potentilla recta",
+        "speciesId": "potentilla-recta"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Prunus avium",
+        "speciesId": "prunus-avium"
+      },
+      {
+        "featureCount": 20,
+        "scientificName": "Prunus laurocerasus",
+        "speciesId": "prunus-laurocerasus"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Prunus mahaleb",
+        "speciesId": "prunus-mahaleb"
+      },
+      {
+        "featureCount": 85,
+        "scientificName": "Prunus padus",
+        "speciesId": "prunus-padus"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Prunus persica",
+        "speciesId": "prunus-persica"
+      },
+      {
+        "featureCount": 468,
+        "scientificName": "Pueraria montana",
+        "speciesId": "pueraria-montana"
+      },
+      {
+        "featureCount": 716,
+        "scientificName": "Pueraria montana var. lobata",
+        "speciesId": "kudzu"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Pyracantha coccinea",
+        "speciesId": "pyracantha-coccinea"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Pyracantha koidzumii",
+        "speciesId": "pyracantha-koidzumii"
+      },
+      {
+        "featureCount": 118,
+        "scientificName": "Pyrus calleryana",
+        "speciesId": "pyrus-calleryana"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Ranunculus ficaria",
+        "speciesId": "ranunculus-ficaria"
+      },
+      {
+        "featureCount": 2335,
+        "scientificName": "Ranunculus repens",
+        "speciesId": "ranunculus-repens"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Raphanus sativus",
+        "speciesId": "raphanus-sativus"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Reseda lutea",
+        "speciesId": "reseda-lutea"
+      },
+      {
+        "featureCount": 1321,
+        "scientificName": "Rhamnus cathartica",
+        "speciesId": "rhamnus-cathartica"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Rhaponticum repens",
+        "speciesId": "rhaponticum-repens"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Rheum rhabarbarum",
+        "speciesId": "rheum-rhabarbarum"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Rhodotypos scandens",
+        "speciesId": "rhodotypos-scandens"
+      },
+      {
+        "featureCount": 81,
+        "scientificName": "Ricinus communis",
+        "speciesId": "ricinus-communis"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Rorippa sylvestris",
+        "speciesId": "rorippa-sylvestris"
+      },
+      {
+        "featureCount": 72,
+        "scientificName": "Rosa bracteata",
+        "speciesId": "rosa-bracteata"
+      },
+      {
+        "featureCount": 36,
+        "scientificName": "Rosa canina",
+        "speciesId": "rosa-canina"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Rosa laevigata",
+        "speciesId": "rosa-laevigata"
+      },
+      {
+        "featureCount": 12354,
+        "scientificName": "Rosa multiflora",
+        "speciesId": "rosa-multiflora"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Rosa rubiginosa",
+        "speciesId": "rosa-rubiginosa"
+      },
+      {
+        "featureCount": 48,
+        "scientificName": "Rosa rugosa",
+        "speciesId": "rosa-rugosa"
+      },
+      {
+        "featureCount": 3311,
+        "scientificName": "Rubus laciniatus",
+        "speciesId": "rubus-laciniatus"
+      },
+      {
+        "featureCount": 157,
+        "scientificName": "Rubus phoenicolasius",
+        "speciesId": "rubus-phoenicolasius"
+      },
+      {
+        "featureCount": 9,
+        "scientificName": "Rumex acetosa",
+        "speciesId": "rumex-acetosa"
+      },
+      {
+        "featureCount": 894,
+        "scientificName": "Rumex acetosella",
+        "speciesId": "rumex-acetosella"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Rumex conglomeratus",
+        "speciesId": "rumex-conglomeratus"
+      },
+      {
+        "featureCount": 1361,
+        "scientificName": "Rumex crispus",
+        "speciesId": "rumex-crispus"
+      },
+      {
+        "featureCount": 16,
+        "scientificName": "Rumex longifolius",
+        "speciesId": "rumex-longifolius"
+      },
+      {
+        "featureCount": 56,
+        "scientificName": "Rumex obtusifolius",
+        "speciesId": "rumex-obtusifolius"
+      },
+      {
+        "featureCount": 59,
+        "scientificName": "Sagina procumbens",
+        "speciesId": "sagina-procumbens"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Salix alba",
+        "speciesId": "salix-alba"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Salix pentandra",
+        "speciesId": "salix-pentandra"
+      },
+      {
+        "featureCount": 1246,
+        "scientificName": "Salsola tragus",
+        "speciesId": "salsola-tragus"
+      },
+      {
+        "featureCount": 1345,
+        "scientificName": "Salvia aethiopis",
+        "speciesId": "salvia-aethiopis"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Salvinia molesta",
+        "speciesId": "salvinia-molesta"
+      },
+      {
+        "featureCount": 145,
+        "scientificName": "Saponaria officinalis",
+        "speciesId": "saponaria-officinalis"
+      },
+      {
+        "featureCount": 1519,
+        "scientificName": "Schedonorus arundinaceus",
+        "speciesId": "schedonorus-arundinaceus"
+      },
+      {
+        "featureCount": 19,
+        "scientificName": "Schedonorus pratensis",
+        "speciesId": "schedonorus-pratensis"
+      },
+      {
+        "featureCount": 17,
+        "scientificName": "Schinus molle",
+        "speciesId": "schinus-molle"
+      },
+      {
+        "featureCount": 59,
+        "scientificName": "Schismus arabicus",
+        "speciesId": "schismus-arabicus"
+      },
+      {
+        "featureCount": 36,
+        "scientificName": "Schismus barbatus",
+        "speciesId": "schismus-barbatus"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Scleranthus annuus",
+        "speciesId": "scleranthus-annuus"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Scorzonera laciniata",
+        "speciesId": "scorzonera-laciniata"
+      },
+      {
+        "featureCount": 1699,
+        "scientificName": "Securigera varia",
+        "speciesId": "securigera-varia"
+      },
+      {
+        "featureCount": 59,
+        "scientificName": "Senecio sylvaticus",
+        "speciesId": "senecio-sylvaticus"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Senecio viscosus",
+        "speciesId": "senecio-viscosus"
+      },
+      {
+        "featureCount": 246,
+        "scientificName": "Senecio vulgaris",
+        "speciesId": "senecio-vulgaris"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Sesbania punicea",
+        "speciesId": "sesbania-punicea"
+      },
+      {
+        "featureCount": 24,
+        "scientificName": "Setaria faberi",
+        "speciesId": "setaria-faberi"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Setaria viridis",
+        "speciesId": "setaria-viridis"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Silene armeria",
+        "speciesId": "silene-armeria"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Silene dioica",
+        "speciesId": "silene-dioica"
+      },
+      {
+        "featureCount": 15,
+        "scientificName": "Silene latifolia",
+        "speciesId": "silene-latifolia"
+      },
+      {
+        "featureCount": 6,
+        "scientificName": "Silene noctiflora",
+        "speciesId": "silene-noctiflora"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Silene vulgaris",
+        "speciesId": "silene-vulgaris"
+      },
+      {
+        "featureCount": 131,
+        "scientificName": "Silybum marianum",
+        "speciesId": "silybum-marianum"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Sinapis alba",
+        "speciesId": "sinapis-alba"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Sinapis arvensis",
+        "speciesId": "sinapis-arvensis"
+      },
+      {
+        "featureCount": 1577,
+        "scientificName": "Sisymbrium altissimum",
+        "speciesId": "sisymbrium-altissimum"
+      },
+      {
+        "featureCount": 149,
+        "scientificName": "Sisymbrium irio",
+        "speciesId": "sisymbrium-irio"
+      },
+      {
+        "featureCount": 129,
+        "scientificName": "Sisymbrium orientale",
+        "speciesId": "sisymbrium-orientale"
+      },
+      {
+        "featureCount": 101,
+        "scientificName": "Solanum dulcamara",
+        "speciesId": "solanum-dulcamara"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Solanum torvum",
+        "speciesId": "solanum-torvum"
+      },
+      {
+        "featureCount": 11,
+        "scientificName": "Solanum viarum",
+        "speciesId": "solanum-viarum"
+      },
+      {
+        "featureCount": 600,
+        "scientificName": "Sonchus arvensis",
+        "speciesId": "sonchus-arvensis"
+      },
+      {
+        "featureCount": 210,
+        "scientificName": "Sonchus asper",
+        "speciesId": "sonchus-asper"
+      },
+      {
+        "featureCount": 35,
+        "scientificName": "Sonchus oleraceus",
+        "speciesId": "sonchus-oleraceus"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Sorbaria sorbifolia",
+        "speciesId": "sorbaria-sorbifolia"
+      },
+      {
+        "featureCount": 180,
+        "scientificName": "Sorbus aucuparia",
+        "speciesId": "sorbus-aucuparia"
+      },
+      {
+        "featureCount": 20,
+        "scientificName": "Sorghum bicolor",
+        "speciesId": "sorghum-bicolor"
+      },
+      {
+        "featureCount": 1599,
+        "scientificName": "Sorghum halepense",
+        "speciesId": "sorghum-halepense"
+      },
+      {
+        "featureCount": 2601,
+        "scientificName": "Spartium junceum",
+        "speciesId": "spartium-junceum"
+      },
+      {
+        "featureCount": 85,
+        "scientificName": "Spergula arvensis",
+        "speciesId": "spergula-arvensis"
+      },
+      {
+        "featureCount": 53,
+        "scientificName": "Spergularia rubra",
+        "speciesId": "spergularia-rubra"
+      },
+      {
+        "featureCount": 180,
+        "scientificName": "Spiraea japonica",
+        "speciesId": "spiraea-japonica"
+      },
+      {
+        "featureCount": 440,
+        "scientificName": "Stellaria media",
+        "speciesId": "stellaria-media"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Symphytum asperum",
+        "speciesId": "symphytum-asperum"
+      },
+      {
+        "featureCount": 55,
+        "scientificName": "Symphytum officinale",
+        "speciesId": "symphytum-officinale"
+      },
+      {
+        "featureCount": 20,
+        "scientificName": "Syringa vulgaris",
+        "speciesId": "syringa-vulgaris"
+      },
+      {
+        "featureCount": 24,
+        "scientificName": "Syzygium jambos",
+        "speciesId": "syzygium-jambos"
+      },
+      {
+        "featureCount": 5244,
+        "scientificName": "Taeniatherum caput-medusae",
+        "speciesId": "taeniatherum-caput-medusae"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Tagetes minuta",
+        "speciesId": "tagetes-minuta"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Tamarix africana",
+        "speciesId": "tamarix-africana"
+      },
+      {
+        "featureCount": 55,
+        "scientificName": "Tamarix aphylla",
+        "speciesId": "tamarix-aphylla"
+      },
+      {
+        "featureCount": 76,
+        "scientificName": "Tamarix chinensis",
+        "speciesId": "tamarix-chinensis"
+      },
+      {
+        "featureCount": 32,
+        "scientificName": "Tamarix parviflora",
+        "speciesId": "tamarix-parviflora"
+      },
+      {
+        "featureCount": 10114,
+        "scientificName": "Tamarix ramosissima",
+        "speciesId": "tamarix-ramosissima"
+      },
+      {
+        "featureCount": 25,
+        "scientificName": "Tanacetum parthenium",
+        "speciesId": "tanacetum-parthenium"
+      },
+      {
+        "featureCount": 10121,
+        "scientificName": "Tanacetum vulgare",
+        "speciesId": "tanacetum-vulgare"
+      },
+      {
+        "featureCount": 1355,
+        "scientificName": "Taraxacum officinale ssp. officinale",
+        "speciesId": "taraxacum-officinale-ssp-officinale"
+      },
+      {
+        "featureCount": 386,
+        "scientificName": "Thinopyrum intermedium",
+        "speciesId": "thinopyrum-intermedium"
+      },
+      {
+        "featureCount": 29,
+        "scientificName": "Thlaspi arvense",
+        "speciesId": "thlaspi-arvense"
+      },
+      {
+        "featureCount": 49,
+        "scientificName": "Torilis japonica",
+        "speciesId": "torilis-japonica"
+      },
+      {
+        "featureCount": 1503,
+        "scientificName": "Tragopogon dubius",
+        "speciesId": "tragopogon-dubius"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Trapa natans",
+        "speciesId": "trapa-natans"
+      },
+      {
+        "featureCount": 4583,
+        "scientificName": "Triadica sebifera",
+        "speciesId": "triadica-sebifera"
+      },
+      {
+        "featureCount": 421,
+        "scientificName": "Tribulus terrestris",
+        "speciesId": "tribulus-terrestris"
+      },
+      {
+        "featureCount": 13,
+        "scientificName": "Trifolium arvense",
+        "speciesId": "trifolium-arvense"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Trifolium aureum",
+        "speciesId": "trifolium-aureum"
+      },
+      {
+        "featureCount": 7,
+        "scientificName": "Trifolium campestre",
+        "speciesId": "trifolium-campestre"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Trifolium dubium",
+        "speciesId": "trifolium-dubium"
+      },
+      {
+        "featureCount": 3,
+        "scientificName": "Trifolium hirtum",
+        "speciesId": "trifolium-hirtum"
+      },
+      {
+        "featureCount": 2643,
+        "scientificName": "Trifolium hybridum",
+        "speciesId": "trifolium-hybridum"
+      },
+      {
+        "featureCount": 1179,
+        "scientificName": "Trifolium pratense",
+        "speciesId": "trifolium-pratense"
+      },
+      {
+        "featureCount": 6348,
+        "scientificName": "Trifolium repens",
+        "speciesId": "trifolium-repens"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Triticum aestivum",
+        "speciesId": "triticum-aestivum"
+      },
+      {
+        "featureCount": 586,
+        "scientificName": "Tussilago farfara",
+        "speciesId": "tussilago-farfara"
+      },
+      {
+        "featureCount": 139,
+        "scientificName": "Typha angustifolia",
+        "speciesId": "typha-angustifolia"
+      },
+      {
+        "featureCount": 67,
+        "scientificName": "Ulex europaeus",
+        "speciesId": "ulex-europaeus"
+      },
+      {
+        "featureCount": 545,
+        "scientificName": "Ulmus pumila",
+        "speciesId": "ulmus-pumila"
+      },
+      {
+        "featureCount": 38,
+        "scientificName": "Urena lobata",
+        "speciesId": "urena-lobata"
+      },
+      {
+        "featureCount": 210,
+        "scientificName": "Valeriana officinalis",
+        "speciesId": "valeriana-officinalis"
+      },
+      {
+        "featureCount": 2613,
+        "scientificName": "Ventenata dubia",
+        "speciesId": "ventenata-dubia"
+      },
+      {
+        "featureCount": 31,
+        "scientificName": "Verbascum blattaria",
+        "speciesId": "verbascum-blattaria"
+      },
+      {
+        "featureCount": 18515,
+        "scientificName": "Verbascum thapsus",
+        "speciesId": "verbascum-thapsus"
+      },
+      {
+        "featureCount": 424,
+        "scientificName": "Verbascum virgatum",
+        "speciesId": "verbascum-virgatum"
+      },
+      {
+        "featureCount": 44,
+        "scientificName": "Verbena brasiliensis",
+        "speciesId": "verbena-brasiliensis"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Verbena rigida",
+        "speciesId": "verbena-rigida"
+      },
+      {
+        "featureCount": 13,
+        "scientificName": "Vernicia fordii",
+        "speciesId": "vernicia-fordii"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Veronica chamaedrys",
+        "speciesId": "veronica-chamaedrys"
+      },
+      {
+        "featureCount": 22,
+        "scientificName": "Veronica officinalis",
+        "speciesId": "veronica-officinalis"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Veronica serpyllifolia",
+        "speciesId": "veronica-serpyllifolia"
+      },
+      {
+        "featureCount": 76,
+        "scientificName": "Vicia cracca",
+        "speciesId": "vicia-cracca"
+      },
+      {
+        "featureCount": 2,
+        "scientificName": "Vicia sativa ssp. nigra",
+        "speciesId": "vicia-sativa-ssp-nigra"
+      },
+      {
+        "featureCount": 9,
+        "scientificName": "Vicia villosa",
+        "speciesId": "vicia-villosa"
+      },
+      {
+        "featureCount": 276,
+        "scientificName": "Vinca major",
+        "speciesId": "vinca-major"
+      },
+      {
+        "featureCount": 266,
+        "scientificName": "Vinca minor",
+        "speciesId": "vinca-minor"
+      },
+      {
+        "featureCount": 79,
+        "scientificName": "Viola tricolor",
+        "speciesId": "viola-tricolor"
+      },
+      {
+        "featureCount": 1,
+        "scientificName": "Volutaria tubuliflora",
+        "speciesId": "volutaria-tubuliflora"
+      },
+      {
+        "featureCount": 54,
+        "scientificName": "Vulpia myuros",
+        "speciesId": "vulpia-myuros"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Washingtonia robusta",
+        "speciesId": "washingtonia-robusta"
+      },
+      {
+        "featureCount": 47,
+        "scientificName": "Wisteria floribunda",
+        "speciesId": "wisteria-floribunda"
+      },
+      {
+        "featureCount": 585,
+        "scientificName": "Wisteria sinensis",
+        "speciesId": "wisteria-sinensis"
+      },
+      {
+        "featureCount": 10,
+        "scientificName": "Xanthium spinosum",
+        "speciesId": "xanthium-spinosum"
+      },
+      {
+        "featureCount": 5,
+        "scientificName": "Xanthosoma sagittifolium",
+        "speciesId": "xanthosoma-sagittifolium"
+      },
+      {
+        "featureCount": 8,
+        "scientificName": "Youngia japonica",
+        "speciesId": "youngia-japonica"
+      },
+      {
+        "featureCount": 20,
+        "scientificName": "Zygophyllum fabago",
+        "speciesId": "zygophyllum-fabago"
+      }
+    ],
+    "exactMappingsSha256": "be529dd655107d3ea97e88f19a4bade2b77f6aded92c994959ac982453e56bd1",
+    "missingAcceptedNameRows": 2439,
+    "providerDistinctAcceptedNames": 1052,
+    "unmatchedFeatureRows": 158112,
+    "unmatchedProviderNames": 535
+  }
+}

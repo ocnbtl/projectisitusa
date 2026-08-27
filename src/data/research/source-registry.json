@@ -329,7 +329,19 @@
       "refreshCadenceDays": 90,
       "status": "operational",
       "adapter": "scripts/import-county-presence.ts",
-      "caveat": "Occurrence evidence is limited to represented Forest Service lands."
+      "caveat": "Occurrence evidence is limited to represented Forest Service lands.",
+      "researchAdapter": {
+        "id": "usfs-current-invasive-plants-targeted",
+        "module": "scripts/research/adapters/usfs-current-invasive-plants-targeted.ts",
+        "allowedVersions": ["1.0.0"],
+        "parameterSchema": "src/data/research/schemas/usfs-current-invasive-plants-targeted-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "The retained provider accepted scientific name must exactly match one requested Project Isitusa catalog scientific name after whitespace and case normalization. Missing, genus-only, ambiguous, changed, or unmatched names are rejected.",
+        "geographyMatchingPolicy": "Source-specific positive polygon witness: at least one coordinate from the retained full source polygon must lie inside the committed active county topology. Bbox-center estimates only select candidates and never publish. Missing geometry, no inside-county vertex, retired geography, and ambiguous geography are rejected.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 1
+      }
     },
     {
       "id": "usfs-ids",

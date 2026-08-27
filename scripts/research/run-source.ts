@@ -14,6 +14,7 @@ import { z } from "zod";
 import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specimens";
 import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
 import { aphisHoneyBeeSurveyAdapter } from "./adapters/aphis-honey-bee-survey";
+import { usfsCurrentInvasivePlantsTargetedAdapter } from "./adapters/usfs-current-invasive-plants-targeted";
 
 import type {
   ResearchSourceAdapter,
@@ -76,6 +77,22 @@ type CandidateFile = {
       varroaPer100Bees: number;
     }>;
     maxCsvBytes: number;
+  };
+  usfsPilot?: {
+    mode: "targeted-stable-positive-witness";
+    layerUrl: string;
+    preflightEvaluationId: string;
+    providerDeclaredRefreshDate: string;
+    catalogResponseSha256: string;
+    minimumRequestIntervalMs: 1000;
+    maxResponseBytes: number;
+    targets: Array<{
+      pairKey: string;
+      countyFips: string;
+      speciesId: string;
+      scientificName: string;
+      objectIds: number[];
+    }>;
   };
 };
 
@@ -389,6 +406,9 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === aphisHoneyBeeSurveyAdapter.sourceId) {
     return aphisHoneyBeeSurveyAdapter;
   }
+  if (sourceId === usfsCurrentInvasivePlantsTargetedAdapter.sourceId) {
+    return usfsCurrentInvasivePlantsTargetedAdapter;
+  }
   throw new Error(`No registered runner implementation exists for ${sourceId}.`);
 }
 
@@ -436,6 +456,22 @@ function buildParameters(
       candidateLimit: requestedPairs.length,
       candidatePairs,
       ...candidateFile.pilot,
+    };
+  }
+  if (sourceId === usfsCurrentInvasivePlantsTargetedAdapter.sourceId) {
+    if (!candidateFile.usfsPilot || candidateFile.sourceId !== sourceId) {
+      throw new Error("USFS Current Invasive Plant Locations requires its committed targeted pilot plan.");
+    }
+    const selected = new Set(candidatePairs);
+    const targets = candidateFile.usfsPilot.targets.filter((target) => selected.has(target.pairKey));
+    if (targets.length !== candidatePairs.length) {
+      throw new Error("USFS targeted object identities do not cover every selected candidate pair.");
+    }
+    return {
+      stateCode,
+      ...candidateFile.usfsPilot,
+      targets,
+      candidatePairs,
     };
   }
   throw new Error(`No parameter builder exists for ${sourceId}.`);

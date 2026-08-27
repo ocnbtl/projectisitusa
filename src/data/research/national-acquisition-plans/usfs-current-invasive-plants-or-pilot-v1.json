@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "planId": "usfs-current-invasive-plants-or-pilot-v1",
+  "sourceId": "usfs-current-invasive-plants",
+  "stateCode": "OR",
+  "candidates": [
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41019", "speciesId": "cirsium-arvense" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41019", "speciesId": "cytisus-scoparius" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41023", "speciesId": "centaurea-diffusa" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41023", "speciesId": "cirsium-arvense" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41023", "speciesId": "poa-bulbosa" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41023", "speciesId": "taeniatherum-caput-medusae" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41023", "speciesId": "thinopyrum-intermedium" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41023", "speciesId": "ventenata-dubia" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41029", "speciesId": "dipsacus-laciniatus" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41031", "speciesId": "centaurea-stoebe-ssp-micranthos" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41031", "speciesId": "taeniatherum-caput-medusae" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41033", "speciesId": "taeniatherum-caput-medusae" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41037", "speciesId": "carduus-nutans" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41037", "speciesId": "ventenata-dubia" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41039", "speciesId": "brachypodium-sylvaticum" },
+    { "sourceId": "usfs-current-invasive-plants", "countyFips": "41043", "speciesId": "hypericum-perforatum" }
+  ],
+  "usfsPilot": {
+    "mode": "targeted-stable-positive-witness",
+    "layerUrl": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InvasiveSpecies_01/MapServer/0",
+    "preflightEvaluationId": "usfs-current-invasive-plants-national-preflight-20260827-r1",
+    "providerDeclaredRefreshDate": "2026-08-12",
+    "catalogResponseSha256": "132083debc7e65caaeb2e8fe84c487e6e949e8c2675aeb9990b5cf2d38b320cc",
+    "minimumRequestIntervalMs": 1000,
+    "maxResponseBytes": 52428800,
+    "targets": [
+      { "pairKey": "41019:cirsium-arvense", "countyFips": "41019", "speciesId": "cirsium-arvense", "scientificName": "Cirsium arvense", "objectIds": [236645] },
+      { "pairKey": "41019:cytisus-scoparius", "countyFips": "41019", "speciesId": "cytisus-scoparius", "scientificName": "Cytisus scoparius", "objectIds": [3] },
+      { "pairKey": "41023:centaurea-diffusa", "countyFips": "41023", "speciesId": "centaurea-diffusa", "scientificName": "Centaurea diffusa", "objectIds": [473263] },
+      { "pairKey": "41023:cirsium-arvense", "countyFips": "41023", "speciesId": "cirsium-arvense", "scientificName": "Cirsium arvense", "objectIds": [828194] },
+      { "pairKey": "41023:poa-bulbosa", "countyFips": "41023", "speciesId": "poa-bulbosa", "scientificName": "Poa bulbosa", "objectIds": [118331] },
+      { "pairKey": "41023:taeniatherum-caput-medusae", "countyFips": "41023", "speciesId": "taeniatherum-caput-medusae", "scientificName": "Taeniatherum caput-medusae", "objectIds": [709886] },
+      { "pairKey": "41023:thinopyrum-intermedium", "countyFips": "41023", "speciesId": "thinopyrum-intermedium", "scientificName": "Thinopyrum intermedium", "objectIds": [24] },
+      { "pairKey": "41023:ventenata-dubia", "countyFips": "41023", "speciesId": "ventenata-dubia", "scientificName": "Ventenata dubia", "objectIds": [17] },
+      { "pairKey": "41029:dipsacus-laciniatus", "countyFips": "41029", "speciesId": "dipsacus-laciniatus", "scientificName": "Dipsacus laciniatus", "objectIds": [236639] },
+      { "pairKey": "41031:centaurea-stoebe-ssp-micranthos", "countyFips": "41031", "speciesId": "centaurea-stoebe-ssp-micranthos", "scientificName": "Centaurea stoebe ssp. micranthos", "objectIds": [118336] },
+      { "pairKey": "41031:taeniatherum-caput-medusae", "countyFips": "41031", "speciesId": "taeniatherum-caput-medusae", "scientificName": "Taeniatherum caput-medusae", "objectIds": [473249] },
+      { "pairKey": "41033:taeniatherum-caput-medusae", "countyFips": "41033", "speciesId": "taeniatherum-caput-medusae", "scientificName": "Taeniatherum caput-medusae", "objectIds": [709891] },
+      { "pairKey": "41037:carduus-nutans", "countyFips": "41037", "speciesId": "carduus-nutans", "scientificName": "Carduus nutans", "objectIds": [354949, 473265] },
+      { "pairKey": "41037:ventenata-dubia", "countyFips": "41037", "speciesId": "ventenata-dubia", "scientificName": "Ventenata dubia", "objectIds": [591570] },
+      { "pairKey": "41039:brachypodium-sylvaticum", "countyFips": "41039", "speciesId": "brachypodium-sylvaticum", "scientificName": "Brachypodium sylvaticum", "objectIds": [828202] },
+      { "pairKey": "41043:hypericum-perforatum", "countyFips": "41043", "speciesId": "hypericum-perforatum", "scientificName": "Hypericum perforatum", "objectIds": [236643] }
+    ]
+  }
+}
