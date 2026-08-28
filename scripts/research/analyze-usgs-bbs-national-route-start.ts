@@ -285,10 +285,10 @@ function main() {
           ? path.join(root, `public/generated/research/${stateCode}/counties/${countyFips}.json`)
           : "";
         const county = countyPath
-          ? readJson<{ species?: Array<{ speciesId: string; displayStatus: string }> }>(countyPath)
+          ? readJson<{ pairs?: Array<{ speciesId: string; displayStatus: string }> }>(countyPath)
           : {};
         bySpecies = new Map(
-          (county.species ?? []).map((entry) => [entry.speciesId, entry.displayStatus]),
+          (county.pairs ?? []).map((entry) => [entry.speciesId, entry.displayStatus]),
         );
         countyProjectionCache.set(countyFips, bySpecies);
       }
