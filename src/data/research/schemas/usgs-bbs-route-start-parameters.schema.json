@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/usgs-bbs-route-start-parameters.schema.json",
+  "title": "USGS BBS route-start pilot parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stateCode",
+    "mode",
+    "scienceBaseItemId",
+    "scienceBaseItemUrl",
+    "rawDataPageUrl",
+    "releaseTitle",
+    "citation",
+    "releaseYearRange",
+    "minimumRequestIntervalMs",
+    "maxResponseBytes",
+    "filters",
+    "files",
+    "exactTargets",
+    "unmatchedCatalogBirds",
+    "expectedStateAcceptedRows",
+    "expectedStateGrossPairs",
+    "expectedStateNetNewPairs",
+    "nationalPreflight",
+    "candidatePairs"
+  ],
+  "properties": {
+    "stateCode": { "const": "TX" },
+    "mode": { "const": "hash-pinned-standard-stop1-positive" },
+    "scienceBaseItemId": { "const": "6a0b0b0ab66b0188da36aedd" },
+    "scienceBaseItemUrl": { "type": "string", "format": "uri" },
+    "rawDataPageUrl": { "type": "string", "format": "uri" },
+    "releaseTitle": { "type": "string", "minLength": 1 },
+    "citation": { "type": "string", "minLength": 1 },
+    "releaseYearRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "const": 1966 },
+        "end": { "const": 2025 }
+      }
+    },
+    "minimumRequestIntervalMs": { "type": "integer", "minimum": 250 },
+    "maxResponseBytes": { "type": "integer", "minimum": 68998320, "maximum": 100000000 },
+    "filters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["countryNum", "runType", "stop", "minimumStopCount", "geography"],
+      "properties": {
+        "countryNum": { "const": "840" },
+        "runType": { "const": "1" },
+        "stop": { "const": "Stop1" },
+        "minimumStopCount": { "const": 1 },
+        "geography": { "type": "string", "minLength": 1 }
+      }
+    },
+    "files": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "size", "md5"],
+        "properties": {
+          "name": { "enum": ["Routes.csv", "Weather.csv", "50-StopData.zip", "SpeciesList.csv"] },
+          "size": { "type": "integer", "minimum": 1 },
+          "md5": { "type": "string", "pattern": "^[a-f0-9]{32}$" }
+        }
+      }
+    },
+    "exactTargets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["speciesId", "scientificName", "aou"],
+        "properties": {
+          "speciesId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "scientificName": { "type": "string", "minLength": 1 },
+          "aou": { "type": "string", "pattern": "^[0-9]{5}$" }
+        }
+      }
+    },
+    "unmatchedCatalogBirds": { "type": "array", "items": { "type": "string" } },
+    "expectedStateAcceptedRows": { "type": "integer", "minimum": 1 },
+    "expectedStateGrossPairs": { "type": "integer", "minimum": 1 },
+    "expectedStateNetNewPairs": { "type": "integer", "minimum": 1 },
+    "nationalPreflight": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "candidatePairs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" }
+    }
+  }
+}

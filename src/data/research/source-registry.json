@@ -537,7 +537,21 @@
       "refreshCadenceDays": 365,
       "status": "operational",
       "adapter": "scripts/import-bbs-alabama-route-start-birds.ts",
-      "caveat": "Route-start detections are sampled occurrence evidence, not countywide inventory."
+      "caveat": "Route-start detections are sampled occurrence evidence, not countywide inventory.",
+      "researchAdapter": {
+        "id": "usgs-bbs-route-start",
+        "module": "scripts/research/adapters/usgs-bbs-route-start.ts",
+        "allowedVersions": [
+          "1.0.0"
+        ],
+        "parameterSchema": "src/data/research/schemas/usgs-bbs-route-start-parameters.schema.json",
+        "publicationReviewGate": "machine-validated",
+        "taxonMatchingPolicy": "Exact current-catalog binomial agreement with the hash-pinned BBS SpeciesList.csv row and exact AOU code. Unmatched and ambiguous catalog birds never publish.",
+        "geographyMatchingPolicy": "Only a positive Stop 1 count may publish, and the retained BBS route-start coordinate must resolve inside exactly one committed active county polygon. Later stops, route totals, unresolved coordinates, and automatic retired-geography crosswalks are prohibited.",
+        "artifactRetention": "versioned",
+        "claimPersistence": "historical",
+        "rateLimitRequestsPerSecond": 4
+      }
     },
     {
       "id": "neon-tall",

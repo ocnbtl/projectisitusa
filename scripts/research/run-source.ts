@@ -15,6 +15,10 @@ import { gbifPreservedSpecimensAdapter } from "./adapters/gbif-preserved-specime
 import { idigbioPreservedSpecimensAdapter } from "./adapters/idigbio-preserved-specimens";
 import { aphisHoneyBeeSurveyAdapter } from "./adapters/aphis-honey-bee-survey";
 import { usfsCurrentInvasivePlantsTargetedAdapter } from "./adapters/usfs-current-invasive-plants-targeted";
+import {
+  type BbsPilotPlan,
+  usgsBbsRouteStartAdapter,
+} from "./adapters/usgs-bbs-route-start";
 
 import type {
   ResearchSourceAdapter,
@@ -94,6 +98,7 @@ type CandidateFile = {
       objectIds: number[];
     }>;
   };
+  bbsPilot?: BbsPilotPlan;
 };
 
 type Species = { id: string; scientificName: string };
@@ -409,6 +414,9 @@ function resolveAdapter(sourceId: string): ResearchSourceAdapter {
   if (sourceId === usfsCurrentInvasivePlantsTargetedAdapter.sourceId) {
     return usfsCurrentInvasivePlantsTargetedAdapter;
   }
+  if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
+    return usgsBbsRouteStartAdapter;
+  }
   throw new Error(`No registered runner implementation exists for ${sourceId}.`);
 }
 
@@ -471,6 +479,16 @@ function buildParameters(
       stateCode,
       ...candidateFile.usfsPilot,
       targets,
+      candidatePairs,
+    };
+  }
+  if (sourceId === usgsBbsRouteStartAdapter.sourceId) {
+    if (!candidateFile.bbsPilot || candidateFile.sourceId !== sourceId) {
+      throw new Error("USGS BBS route-start research requires its committed pilot plan.");
+    }
+    return {
+      stateCode,
+      ...candidateFile.bbsPilot,
       candidatePairs,
     };
   }
@@ -710,6 +728,20 @@ async function main() {
             stabilityGate: "Both retained responses must normalize to identical ordered features.",
             additionalRequests: 0,
           }
+        : options.sourceId === usgsBbsRouteStartAdapter.sourceId
+          ? {
+              providerNetworkRequests: 5,
+              requestSequence: [
+                "GET the official ScienceBase item metadata",
+                "GET the hash-pinned Routes.csv",
+                "GET the hash-pinned Weather.csv",
+                "GET the hash-pinned 50-StopData.zip",
+                "GET the hash-pinned SpeciesList.csv",
+              ],
+              stabilityGate:
+                "Every downloaded file must match the exact ScienceBase size and MD5 pinned by the committed pilot plan.",
+              additionalRequests: 0,
+            }
         : {
           cachedTaxonomyResponses: taxonomyCache?.selectedEntries.length ?? 0,
           archiveReplayResponses: archivedReplay?.requestUrls.length ?? 0,
