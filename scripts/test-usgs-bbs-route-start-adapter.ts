@@ -9,6 +9,10 @@ import { geoCentroid, geoContains } from "d3-geo";
 import { feature } from "topojson-client";
 
 import countyTopology from "@/data/source/county-equivalents-topology.json";
+import {
+  USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD,
+  USGS_BBS_ROUTE_START_TOPOLOGY_PATH,
+} from "@/lib/research/coordinate-geography-contract";
 import type { SourceAdapterContext } from "@/lib/research/source-adapter";
 import { runUsGsBbsRouteStart } from "./research/adapters/usgs-bbs-route-start";
 
@@ -153,6 +157,18 @@ async function main() {
   assert.equal(result.assertions[0]!.claim_type, "recorded-present");
   assert.equal(result.assertions[0]!.evidence_kind, "survey-detection");
   assert.equal(result.assertions[0]!.scope, "point");
+  assert.equal(
+    result.assertions[0]!.geography_match.method,
+    USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD,
+  );
+  assert.equal(
+    result.assertions[0]!.geography_match.topology_path,
+    USGS_BBS_ROUTE_START_TOPOLOGY_PATH,
+  );
+  assert.match(
+    result.assertions[0]!.geography_match.topology_sha256 ?? "",
+    /^[a-f0-9]{64}$/u,
+  );
   assert.equal(result.outcomes[0]!.status, "evidence-found");
   assert.equal(result.outcomes[0]!.scope_complete, true);
   assert.equal(result.artifacts.length, 2);

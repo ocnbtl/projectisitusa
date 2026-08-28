@@ -10,6 +10,10 @@ import { geoContains } from "d3-geo";
 import { feature } from "topojson-client";
 
 import countyTopology from "@/data/source/county-equivalents-topology.json";
+import {
+  USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD,
+  USGS_BBS_ROUTE_START_TOPOLOGY_PATH,
+} from "@/lib/research/coordinate-geography-contract";
 import type {
   EvidenceReviewEvent,
   ResearchPairOutcome,
@@ -298,15 +302,14 @@ function assertionAndReview(input: {
       source_taxon_key: input.target.aou,
     },
     geography_match: {
-      method:
-        "The retained BBS route-start coordinate resolved inside exactly one committed active county polygon; only Stop 1 detections were accepted",
+      method: USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD,
       source_state: input.context.stateCode,
       source_county: input.pair.countyName,
       county_fips: input.pair.countyFips,
       source_coordinate_count: new Set(coordinateIdentities.map((value) => value.join(","))).size,
       source_coordinates_sha256: sha256(stableJson(coordinateIdentities)),
-      topology_path: "src/data/source/county-equivalents-topology.json",
-      topology_sha256: sha256(readFileSync(path.join(process.cwd(), "src/data/source/county-equivalents-topology.json"))),
+      topology_path: USGS_BBS_ROUTE_START_TOPOLOGY_PATH,
+      topology_sha256: sha256(readFileSync(path.join(process.cwd(), USGS_BBS_ROUTE_START_TOPOLOGY_PATH))),
     },
     temporal_scope: `Positive standard-run Stop 1 detections in the ${input.parameters.releaseYearRange.start}-${input.parameters.releaseYearRange.end} BBS release; latest supporting year ${latestYear}.`,
     spatial_scope:

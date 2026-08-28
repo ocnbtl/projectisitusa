@@ -20,3 +20,14 @@ export const USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD =
 
 export const USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_POLICY =
   `${USFS_CURRENT_PLANTS_POLYGON_GEOGRAPHY_METHOD}. Bbox-center estimates only select candidates and never publish. Missing geometry, no inside-county vertex, retired geography, and ambiguous geography are rejected.`;
+
+export const USGS_BBS_ROUTE_START_SOURCE_ID = "usgs-bbs";
+
+export const USGS_BBS_ROUTE_START_TOPOLOGY_PATH =
+  "src/data/source/county-equivalents-topology.json";
+
+export const USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD =
+  "Source-specific positive route-start witness: every retained BBS route-start coordinate resolved inside exactly one committed active county polygon and matched the requested state";
+
+export const USGS_BBS_ROUTE_START_GEOGRAPHY_POLICY =
+  `${USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD}. The assertion must retain the topology path and SHA-256 plus the exact source-coordinate count and coordinate-set SHA-256. Only positive standard-run Stop 1 detections are eligible; later stops, route totals, unresolved or ambiguous coordinates, retired geography, and state mismatches are prohibited.`;

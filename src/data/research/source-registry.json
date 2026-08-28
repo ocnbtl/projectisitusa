@@ -547,7 +547,7 @@
         "parameterSchema": "src/data/research/schemas/usgs-bbs-route-start-parameters.schema.json",
         "publicationReviewGate": "machine-validated",
         "taxonMatchingPolicy": "Exact current-catalog binomial agreement with the hash-pinned BBS SpeciesList.csv row and exact AOU code. Unmatched and ambiguous catalog birds never publish.",
-        "geographyMatchingPolicy": "Only a positive Stop 1 count may publish, and the retained BBS route-start coordinate must resolve inside exactly one committed active county polygon. Later stops, route totals, unresolved coordinates, and automatic retired-geography crosswalks are prohibited.",
+        "geographyMatchingPolicy": "Source-specific positive route-start witness: every retained BBS route-start coordinate resolved inside exactly one committed active county polygon and matched the requested state. The assertion must retain the topology path and SHA-256 plus the exact source-coordinate count and coordinate-set SHA-256. Only positive standard-run Stop 1 detections are eligible; later stops, route totals, unresolved or ambiguous coordinates, retired geography, and state mismatches are prohibited.",
         "artifactRetention": "versioned",
         "claimPersistence": "historical",
         "rateLimitRequestsPerSecond": 4
