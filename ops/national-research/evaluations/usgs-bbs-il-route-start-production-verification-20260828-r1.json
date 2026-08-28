@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-il-route-start-production-verification-20260828-r1",
+  "verifiedAt": "2026-08-28T09:07:46.1562980Z",
+  "gate": {
+    "phase": "POST-DEPLOYMENT",
+    "mode": [
+      "web-application",
+      "research-data-publication",
+      "immediate-post-deploy-operations"
+    ],
+    "riskLevel": "high",
+    "decision": "GO",
+    "scope": "Production release of the generalized USGS Breeding Bird Survey route-start adapter, its 87-pair Illinois tranche, the deterministic national projection, the exact Git-linked application deployment, and the content-addressed Cloudflare R2 release."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "4fe94d69a34acf2996b1ce1dcd805313741aa5d1",
+    "releaseSha": "1269f2b155aecfa8ed1235d7feca0a85162f0fb4",
+    "originMainSha": "1269f2b155aecfa8ed1235d7feca0a85162f0fb4",
+    "githubMainSha": "1269f2b155aecfa8ed1235d7feca0a85162f0fb4",
+    "githubCommitUrl": "https://github.com/ocnbtl/projectisitusa/commit/1269f2b155aecfa8ed1235d7feca0a85162f0fb4",
+    "githubProductionDeploymentId": 6138478996,
+    "githubProductionDeploymentStatusId": 17452545969,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "githubProductionCreatedAt": "2026-08-28T08:59:31Z",
+    "vercelDeploymentId": "Ej6UiSjZirxd8NaLZACLxhhrjFWE",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/Ej6UiSjZirxd8NaLZACLxhhrjFWE",
+    "vercelImmutableUrl": "https://projectisitusa-5kp4oomfi-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true,
+    "productionAliasEvidence": "The canonical and immutable roots and research routes returned HTTP 200 with exact response-body byte and SHA-256 parity."
+  },
+  "sourceAcquisition": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-il-route-start-tranche-acquisition-20260828-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-il-route-start-tranche-v1.json",
+    "planSha256": "44c962321c5e637df006d218bad31aa2304b8128a6ef15b6eb5a58d821f57d90",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260828T061928Z__usgs-bbs__154ba0c33ef3",
+    "runReceiptSha256": "10ef7f6cee4697283be3e6c4bee991920075d3769d490fb367fa656197f4b477",
+    "requestedPairs": 87,
+    "providerCandidates": 388,
+    "assertionEvents": 87,
+    "reviewEvents": 87,
+    "pairOutcomes": 87,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "successfulRunProviderGets": 5,
+    "failedClosedAttemptProviderGets": 5,
+    "providerPosts": 0,
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, or survey non-detection claim."
+  },
+  "movement": {
+    "illinois": {
+      "countySpeciesDenominator": 255408,
+      "baseline": {
+        "verifiedPresent": 9035,
+        "verifiedAbsent": 0,
+        "notDetected": 10,
+        "researchedUnresolved": 38487,
+        "notResearched": 207876,
+        "explicitOutcomePairCount": 47532,
+        "researchRunCount": 27
+      },
+      "final": {
+        "verifiedPresent": 9122,
+        "verifiedAbsent": 0,
+        "notDetected": 10,
+        "researchedUnresolved": 38487,
+        "notResearched": 207789,
+        "explicitOutcomePairCount": 47619,
+        "researchRunCount": 28,
+        "conflicts": 0
+      },
+      "delta": {
+        "verifiedPresent": 87,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -87,
+        "explicitOutcomePairCount": 87,
+        "researchRunCount": 1
+      },
+      "affectedCounties": 48,
+      "speciesDelta": {
+        "passer-domesticus": 44,
+        "sturnus-vulgaris": 29,
+        "streptopelia-decaocto": 11,
+        "columba-livia": 2,
+        "cygnus-olor": 1
+      }
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "final": {
+        "verifiedPresent": 195356,
+        "verifiedAbsent": 0,
+        "notDetected": 254,
+        "researchedUnresolved": 1362189,
+        "notResearched": 6314777,
+        "conflicts": 0,
+        "immutableResearchRuns": 1418,
+        "assertionEvents": 309250,
+        "pairOutcomes": 1721036,
+        "rejections": 47218,
+        "duplicates": 26,
+        "errors": 0
+      },
+      "delta": {
+        "verifiedPresent": 87,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -87,
+        "immutableResearchRuns": 1,
+        "assertionEvents": 87,
+        "pairOutcomes": 87
+      }
+    }
+  },
+  "verification": {
+    "canonicalWorktreeCleanBeforePush": true,
+    "releaseDiffFiles": 124,
+    "releaseDiffClassification": {
+      "generatedIllinois": 108,
+      "immutableRun": 7,
+      "operationsEvidenceAndManifest": 3,
+      "researchCodeAndTests": 2,
+      "researchConfigAndEvidence": 3,
+      "sourceInventory": 1,
+      "uiDependencyAuthFormAnalyticsOrDnsFiles": 0
+    },
+    "localGates": [
+      {
+        "gate": "Illinois deterministic verification",
+        "result": "pass",
+        "detail": "108 generated files were byte-stable for IL as of 2026-08-28."
+      },
+      {
+        "gate": "USGS BBS adapter regression",
+        "result": "pass",
+        "detail": "Cross-state handling and differing gross-versus-net reconciliation passed."
+      },
+      {
+        "gate": "TypeScript typecheck",
+        "result": "pass"
+      },
+      {
+        "gate": "State projection, national compiler, source coverage, publication, and data-integrity checks",
+        "result": "pass"
+      },
+      {
+        "gate": "Full research integrity",
+        "result": "pass",
+        "detail": "97 of 97 frozen regression cases passed with zero critical safety violations, zero unreviewed records, and zero conflicts."
+      },
+      {
+        "gate": "All-jurisdiction byte stability",
+        "result": "pass",
+        "detail": "All 51 jurisdictions reproduced byte-stably; non-target timestamp-only writes from the verification command were excluded from the release and the clean committed projection was rebuilt and reverified."
+      },
+      {
+        "gate": "Lint",
+        "result": "pass",
+        "detail": "Zero warnings and zero errors."
+      },
+      {
+        "gate": "Production build",
+        "result": "pass",
+        "detail": "Next.js 15.5.23 production build passed against the exact clean committed release."
+      }
+    ],
+    "remoteGit": {
+      "pushResult": "pass",
+      "lsRemoteMatchesReleaseSha": true,
+      "publicGithubCommitMatchesReleaseSha": true,
+      "vercelCommitStatus": "success"
+    }
+  },
+  "r2Publication": {
+    "bucket": "project-isitusa-research",
+    "publicOrigin": "https://data.isitusa.com",
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "releaseManifestKey": "releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+    "releaseManifestBytes": 1565427,
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1005235921,
+    "objectsUploaded": 103,
+    "bytesUploaded": 31171226,
+    "fullRemoteObjectsVerified": 3195,
+    "projectedRetainedBytes": 7709332664,
+    "retainedByteSafetyLimit": 8000000000,
+    "retainedByteSafetyMargin": 290667336,
+    "shadowPlanClassARequests": 131,
+    "shadowPlanClassBRequests": 3201,
+    "currentPointerReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "currentPointerSourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "currentPointerPromotedAt": "2026-08-28T08:58:25.633Z",
+    "currentPointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "previousReleaseId": "research-7427b6e8b43e-37943bb5dba1460c",
+    "previousPromotedAt": "2026-08-28T04:36:44.934Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T04:36:44.934Z",
+    "cadenceOverrideUsed": true,
+    "cadenceOverrideReason": "Project owner explicitly authorized immediate production promotion of the validated Illinois BBS research update.",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "publicManifestMatchesCommittedBytes": true,
+    "publicIllinoisSummaryMatchesCommittedBytes": true,
+    "publicAdamsCountyMatchesCommittedBytes": true,
+    "r2Deletions": 0,
+    "credentialValuesCommittedOrLogged": false
+  },
+  "liveDataChecks": {
+    "observedAt": "2026-08-28T09:04:18.946Z",
+    "pointer": {
+      "directUrl": "https://data.isitusa.com/current.json",
+      "sameOriginUrl": "https://isitusa.com/research-data/current.json",
+      "directStatus": 200,
+      "sameOriginStatus": 200,
+      "cacheControl": "public, max-age=60, must-revalidate",
+      "bytes": 421,
+      "sha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+      "exactBodyMatch": true
+    },
+    "manifest": {
+      "directStatus": 200,
+      "sameOriginStatus": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "bytes": 1565427,
+      "sha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+      "directAndSameOriginExactLocalByteMatch": true
+    },
+    "samples": [
+      {
+        "localPath": "public/generated/research/IL/summary.json",
+        "bytes": 417421,
+        "sha256": "0f0b422b1c151699ce01bf7ac433fe73910fd7d82fc83c68821eef40d3cc8a72",
+        "directStatus": 200,
+        "sameOriginStatus": 200,
+        "directAndSameOriginExactLocalByteMatch": true
+      },
+      {
+        "localPath": "public/generated/research/IL/counties/17001.json",
+        "bytes": 300428,
+        "sha256": "ccb4ab8bc9856216b49d8645e6b294dbcc599c32b0fd1c9fc9db387ae7e501d8",
+        "directStatus": 200,
+        "sameOriginStatus": 200,
+        "directAndSameOriginExactLocalByteMatch": true
+      }
+    ],
+    "transportCompressionQualification": "A diagnostic same-origin fetch received a cached zstd representation that Node 22 did not decode. Cache-busted identity fetches returned the original bytes and exact local SHA-256 for the manifest, Illinois summary, and Adams County object; the browser consumer also rendered the same data successfully."
+  },
+  "productionHttp": {
+    "observedAt": "2026-08-28T09:05:34.482Z",
+    "routes": [
+      {
+        "url": "https://isitusa.com/",
+        "status": 200
+      },
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200
+      },
+      {
+        "url": "https://isitusa.com/species/passer-domesticus",
+        "status": 200
+      },
+      {
+        "url": "https://isitusa.com/species/not-a-real-isitusa-species",
+        "status": 404
+      },
+      {
+        "url": "https://projectisitusa-5kp4oomfi-unigentamos.vercel.app/",
+        "status": 200
+      },
+      {
+        "url": "https://projectisitusa-5kp4oomfi-unigentamos.vercel.app/research",
+        "status": 200
+      },
+      {
+        "url": "https://projectisitusa-5kp4oomfi-unigentamos.vercel.app/research?state=IL&county=17001&species=passer-domesticus",
+        "status": 200
+      }
+    ],
+    "canonicalAndImmutableBodyParity": {
+      "root": true,
+      "research": true
+    },
+    "securityHeaders": {
+      "contentSecurityPolicy": "present-and-matches-production-policy",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "xFrameOptions": "DENY",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "status500RouteChecks": 0
+  },
+  "productionBrowser": {
+    "host": "https://isitusa.com",
+    "route": "/research?state=IL&county=17001&species=passer-domesticus",
+    "visibleState": "Illinois",
+    "visibleCounty": "Adams / 17001",
+    "visibleSpecies": "House sparrow / Passer domesticus",
+    "visiblePairStatus": "Verified Present",
+    "visibleResearchStatus": "Reviewed Evidence Found",
+    "visibleEvidenceSource": "USGS North American Breeding Bird Survey route-start detections",
+    "evidenceCaveatRendered": true,
+    "visibleIllinoisVerifiedPresent": 9122,
+    "visibleIllinoisNotResearched": 207789,
+    "visibleIllinoisConflicts": 0,
+    "visibleAdamsVerifiedPresent": 102,
+    "researchAsOf": "Aug 28, 2026",
+    "desktopViewportRequest": "1440x900",
+    "mobileViewport": "390x844",
+    "desktopHorizontalOverflow": 0,
+    "mobileHorizontalOverflow": 0,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0
+  },
+  "cloudflareUsage": {
+    "billingPeriod": "August 18 - September 18",
+    "preObservationRelativeOrder": "Before Git push and R2 publication; the exact browser timestamp was not retained.",
+    "preDisplayedBucketObjects": "25.76k",
+    "preDisplayedBucketSize": "7.68 GB",
+    "preDisplayedClassAOperations": "26.12k",
+    "preDisplayedClassBOperations": "58.15k",
+    "preDisplayedBillableUsage": "$0.00",
+    "postObservedAt": "2026-08-28T09:07:18.419Z",
+    "postDisplayedBucketObjects": "25.76k",
+    "postDisplayedBucketSize": "7.68 GB",
+    "postDisplayedClassAOperations": "26.23k",
+    "postDisplayedClassBOperations": "61.35k",
+    "postDisplayedTotalStorage": "7.68 GB",
+    "postDisplayedBillableUsage": "$0.00",
+    "postDisplayedBillingMessage": "No billable usage incurred yet",
+    "projectStorageSafetyBytes": 8000000000,
+    "projectClassASafetyRequests": 800000,
+    "projectClassBSafetyRequests": 8000000,
+    "publisherMonthlyClassAGuardInput": 26130,
+    "publisherMonthlyClassBGuardInput": 58160,
+    "publisherGuardInputQualification": "Inputs conservatively rounded upward from the provider's pre-launch dashboard display.",
+    "retainedByteSafetyMargin": 290667336
+  },
+  "postDeploymentGate": {
+    "phase": "POST-DEPLOYMENT",
+    "decision": "GO",
+    "blockers": [],
+    "matrix": [
+      {
+        "category": "scope-and-source-of-truth",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "Canonical HEAD, origin/main, public GitHub commit, exact-SHA GitHub Production deployment, the committed manifest, and the public R2 pointer identify the intended release."
+      },
+      {
+        "category": "functional-verification",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "Canonical and immutable routes, expected 404 behavior, the Illinois research deep link, evidence expansion, and mobile presentation passed."
+      },
+      {
+        "category": "visual-fidelity",
+        "criticality": "STANDARD",
+        "status": "PASSED",
+        "evidence": "The changed research surface rendered correctly at desktop and 390x844 mobile sizes with zero horizontal overflow and zero broken images."
+      },
+      {
+        "category": "accessibility",
+        "criticality": "STANDARD",
+        "status": "PASSED",
+        "evidence": "The changed view retained named headings, links, tabs, comboboxes, buttons, table semantics, and mobile disclosure controls. No comprehensive WCAG audit is claimed."
+      },
+      {
+        "category": "seo-and-discovery",
+        "criticality": "STANDARD",
+        "status": "NOT APPLICABLE",
+        "evidence": "This release changed research evidence and generated data rather than public metadata, indexing, robots, sitemap, or canonical configuration. Public routes remained available."
+      },
+      {
+        "category": "performance-and-resilience",
+        "criticality": "STANDARD",
+        "status": "PASSED",
+        "evidence": "The clean production build passed, immutable data objects retain long-lived cache controls, the pointer remains short-lived, and canonical plus immutable routes completed successfully. No field Core Web Vitals claim is made."
+      },
+      {
+        "category": "security-and-privacy",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "Five production security headers are present, no auth or private-data boundary changed, credentials were not logged or committed, and the acquisition used official public GETs with zero POSTs."
+      },
+      {
+        "category": "analytics-and-conversion",
+        "criticality": "STANDARD",
+        "status": "NOT APPLICABLE",
+        "evidence": "No analytics, consent, conversion, or form behavior changed, and no live representational submission was performed."
+      },
+      {
+        "category": "monitoring-and-operations",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "GitHub deployment success, exact canonical-to-immutable parity, live browser health, exact data parity, and post-publication Cloudflare usage were observed. Direct Vercel runtime-error queries were inaccessible and remain a non-critical unknown."
+      },
+      {
+        "category": "deployment",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "Origin/main and GitHub main match 1269f2b155aecfa8ed1235d7feca0a85162f0fb4; GitHub Production deployment 6138478996 succeeded; the canonical domain exactly matches immutable deployment projectisitusa-5kp4oomfi-unigentamos.vercel.app."
+      },
+      {
+        "category": "content-and-approvals",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "The project owner explicitly authorized the production push and immediate guarded data promotion; the published caveat preserves sampled-point and no-negative semantics."
+      },
+      {
+        "category": "data-release-integrity",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "All 3,195 immutable objects passed full verification before promotion; direct and same-origin pointer, manifest, Illinois summary, and Adams County data agree with committed identities and bytes; no R2 objects were deleted."
+      }
+    ]
+  },
+  "operationalState": {
+    "cadence": "IMMEDIATE POST-DEPLOY",
+    "dataSystemOverlay": true,
+    "state": "HEALTHY",
+    "findings": [],
+    "recentlyResolvedFindings": [],
+    "nonCriticalUnknowns": [
+      "The Vercel connector returned 403 for deployment listing and runtime-error clusters. Provider identity therefore rests on the public GitHub deployment object and status plus exact canonical-to-immutable live-body parity; no direct Vercel runtime-log claim is made.",
+      "Cloudflare dashboard object and storage displays are rounded and may lag; exact retained bytes come from the authenticated full bucket inventory used by the fail-closed publisher."
+    ],
+    "safeFixesAndRetests": "None required after publication.",
+    "monitoringOwner": "Project owner with direct operations support",
+    "escalationPath": "Use production-launch-gate for any rollback-readiness decision and the guarded publisher to restore the previous pointer if a verified data regression appears.",
+    "recommendedNextCheck": "Recheck canonical research rendering, current.json identity, GitHub/Vercel status, and Cloudflare billable usage on the next authorized research release or immediately if a live mismatch is reported."
+  },
+  "rollbackAndObservation": {
+    "applicationRollbackCommit": "4fe94d69a34acf2996b1ce1dcd805313741aa5d1",
+    "dataRollbackReleaseId": "research-7427b6e8b43e-37943bb5dba1460c",
+    "dataRollbackPromotedAt": "2026-08-28T04:36:44.934Z",
+    "rollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow if a verified application regression appears.",
+    "dataRollbackMethod": "Restore the prior validated pointer only through the guarded publisher workflow if a verified data regression appears; retain all immutable objects."
+  },
+  "routing": {
+    "canonicalRecommendedNextOwner": "direct operations",
+    "currentAvailability": "AVAILABLE",
+    "relationshipToThisRun": "APPLIED IN THIS TASK",
+    "personalCodexOrchestrator": "AVAILABLE and APPLIED IN THIS TASK for lifecycle coordination.",
+    "productionBuildAndIntegration": "AVAILABLE and APPLIED IN THIS TASK for the authorized implementation.",
+    "productionLaunchGate": "AVAILABLE and APPLIED IN THIS TASK for pre-deployment and post-deployment decisions.",
+    "projectStateHandoff": "AVAILABLE but NOT APPLICABLE; the owner explicitly prohibited another handoff and the work completed in this task.",
+    "unigentamosOperationsSystem": "AVAILABLE but NOT APPLICABLE; the canonical production evaluation record was updated directly, avoiding a competing record."
+  },
+  "limitations": [
+    "The USGS BBS evidence is sampled point detection evidence and is displayed stale according to the current freshness policy; it is not a complete county inventory or a present-day absence claim.",
+    "Cloudflare dashboard storage, object, and operation counters are rounded provider displays, while the publisher retained-byte projection is the exact project safety calculation used for the gate.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Externally verified prior production release. The Illinois USGS BBS tranche adds 87 unique verified-present county-species pairs across 48 counties and creates zero absence, non-detection, unresolved, or conflict movement. Release commit 1269f2b155aecfa8ed1235d7feca0a85162f0fb4 is on origin/main and public GitHub main, tied to successful GitHub Production deployment 6138478996 and immutable Vercel deployment projectisitusa-5kp4oomfi-unigentamos.vercel.app. R2 release research-e2115f6a705f-163982b59c8351b2 contains 3,195 immutable objects and 1,005,235,921 content bytes; all objects passed full verification before the owner-authorized promotion. The direct and same-origin public pointer, manifest, Illinois summary, and Adams County object match committed identities and bytes. Canonical and immutable HTTP, security headers, desktop/mobile browser behavior, the Illinois deep link, evidence caveat, and browser console passed. Cloudflare displays $0.00 billable usage and the authenticated guarded retained-byte projection is 7,709,332,664 bytes. No R2 deletion occurred. This receipt does not attest to the commit that contains it or any future deployment."
+}
