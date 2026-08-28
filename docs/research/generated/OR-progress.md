@@ -1,27 +1,27 @@
 # Oregon Research Progress
 
-Generated: `2026-08-21T00:00:00.000Z`
+Generated: `2026-08-27T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `2953`
+- Verified present: `2968`
 - Verified absent: `0`
 - Not detected: `0`
-- Researched unresolved: `13031`
-- Not researched: `74160`
-- Determination coverage: `3.28%`
-- Research coverage: `17.73%`
-- Explicit outcome coverage: `17.7316%`
-- Applicable protocol cells: `305`
+- Researched unresolved: `13032`
+- Not researched: `74144`
+- Determination coverage: `3.29%`
+- Research coverage: `17.75%`
+- Explicit outcome coverage: `17.7494%`
+- Applicable protocol cells: `317`
 - Current complete protocol cells: `100`
-- Protocol completion: `37.05%`
-- Current protocol completion: `32.79%`
-- Evidence records: `3183`
-- Research runs: `24`
-- Rejection records: `204`
+- Protocol completion: `35.65%`
+- Current protocol completion: `31.55%`
+- Evidence records: `3198`
+- Research runs: `25`
+- Rejection records: `205`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
 - Conflicts: `0`
@@ -33,21 +33,14 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
 | Garlic Mustard (`alliaria-petiolata`) | plants | 36 | 0 | 0 |
-| Slender false brome (`brachypodium-sylvaticum`) | plants | 36 | 0 | 0 |
 | Orange eye butterflybush (`buddleja-davidii`) | plants | 36 | 0 | 0 |
-| Nodding plumeless thistle (`carduus-nutans`) | plants | 36 | 0 | 0 |
-| Diffuse Knapweed (`centaurea-diffusa`) | plants | 36 | 0 | 0 |
 | Yellow star-thistle (`centaurea-solstitialis`) | plants | 36 | 0 | 0 |
-| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 36 | 0 | 0 |
 | Rush skeletonweed (`chondrilla-juncea`) | plants | 36 | 0 | 0 |
-| Canada Thistle (`cirsium-arvense`) | plants | 36 | 0 | 0 |
 | Evergreen clematis (`clematis-vitalba`) | plants | 36 | 0 | 0 |
-| Scotch broom (`cytisus-scoparius`) | plants | 36 | 0 | 0 |
 | French broom (`genista-monspessulana`) | plants | 36 | 0 | 0 |
 | Atlantic ivy (`hedera-hibernica`) | plants | 36 | 0 | 0 |
 | Orange Hawkweed (`hieracium-aurantiacum`) | plants | 36 | 0 | 0 |
 | Meadow hawkweed (`hieracium-caespitosum`) | plants | 36 | 0 | 0 |
-| Common St. John's Wort (`hypericum-perforatum`) | plants | 36 | 0 | 0 |
 | English holly (`ilex-aquifolium`) | plants | 36 | 0 | 0 |
 | Himalayan Balsam (`impatiens-glandulifera`) | plants | 36 | 0 | 0 |
 | Dyer's woad (`isatis-tinctoria`) | plants | 36 | 0 | 0 |
@@ -55,8 +48,15 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Oxeye Daisy (`leucanthemum-vulgare`) | plants | 36 | 0 | 0 |
 | Dalmatian Toadflax (`linaria-dalmatica`) | plants | 36 | 0 | 0 |
 | Scotch Thistle (`onopordum-acanthium`) | plants | 36 | 0 | 0 |
-| Bulbous bluegrass (`poa-bulbosa`) | plants | 36 | 0 | 0 |
 | Sulphur Cinquefoil (`potentilla-recta`) | plants | 36 | 0 | 0 |
+| Cutleaf blackberry (`rubus-laciniatus`) | plants | 36 | 0 | 0 |
+| Spanish broom (`spartium-junceum`) | plants | 36 | 0 | 0 |
+| Saltcedar (`tamarix-ramosissima`) | plants | 36 | 0 | 0 |
+| Common gorse (`ulex-europaeus`) | plants | 36 | 0 | 0 |
+| Slender false brome (`brachypodium-sylvaticum`) | plants | 35 | 0 | 1 |
+| Nodding plumeless thistle (`carduus-nutans`) | plants | 35 | 0 | 1 |
+| Diffuse Knapweed (`centaurea-diffusa`) | plants | 35 | 0 | 1 |
+| Spotted knapweed (`centaurea-stoebe-ssp-micranthos`) | plants | 35 | 0 | 1 |
 
 ## Source Operations
 
@@ -77,7 +77,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Laurel Wilt public county layer | operational | not run | 0 | 0 |
 | USFS Alien Forest Pest Explorer | operational | 2026-07-26T03:59:30.000Z | 15 | 13 |
 | USDA Forest Service FIA DataMart invasive plant tables | operational | 2026-07-26T13:44:30.000Z | 0 | 38 |
-| USFS Current Invasive Plant Locations | operational | not run | 0 | 0 |
+| USFS Current Invasive Plant Locations | operational | 2026-08-27T23:47:39.915Z | 15 | 12 |
 | USDA Forest Service Insect and Disease Survey point detections | operational | not run | 0 | 0 |
 | USDA NRCS PLANTS county distribution | operational | 2026-08-17T05:41:05.189Z | 2721 | 316 |
 | GBIF preserved specimen records | operational | 2026-08-21T00:14:35.196Z | 212 | 114 |

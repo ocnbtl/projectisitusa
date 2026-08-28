@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usfs-current-invasive-plants-or-pilot-acquisition-20260827-r1",
+  "evaluatedAt": "2026-08-28T00:00:00.000Z",
+  "status": "validated-local-awaiting-release",
+  "objective": "Execute the bounded Oregon positive-witness pilot against the official USFS Current Invasive Plant Locations layer and publish only exact stable records whose retained full polygon supplies an active-county geography witness.",
+  "inputs": {
+    "preflightPath": "ops/national-research/evaluations/usfs-current-invasive-plants-national-preflight-20260827-r1.json",
+    "preflightSha256": "94e424e1992996e921c73c8e5d504cb1a318ba7587544e3e9fb3178b27d99903",
+    "planPath": "src/data/research/national-acquisition-plans/usfs-current-invasive-plants-or-pilot-v1.json",
+    "planSha256": "182e139876d379d13f49ce5642db26001d69cce83c79f505780df0e28d455ef9",
+    "adapterId": "usfs-current-invasive-plants-targeted",
+    "adapterVersion": "1.0.0",
+    "acquisitionCodeCommit": "7c007504f9b6c160250ece6d1207ad40ad437294",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 16,
+      "expectedProviderRequests": 2,
+      "additionalRequests": 0
+    }
+  },
+  "immutableRun": {
+    "runId": "20260827T234500Z__usfs-current-invasive-plants__ae4b9e8ce5c2",
+    "receiptPath": "src/data/research/runs/20260827T234500Z__usfs-current-invasive-plants__ae4b9e8ce5c2/receipt.json",
+    "receiptSha256": "3f41ffcf96d3e732c58b2bc90354a9aa5759e7cc9417fca1651a54cd06f6c241",
+    "status": "complete",
+    "startedAt": "2026-08-27T23:45:00.000Z",
+    "finishedAt": "2026-08-27T23:47:39.915Z",
+    "requestedPairs": 16,
+    "candidateRecords": 17,
+    "assertionEvents": 15,
+    "reviewEvents": 15,
+    "rejectionRecords": 1,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 16,
+    "providerGets": 2,
+    "providerPosts": 0,
+    "retainedResponseBytesEach": 17636,
+    "retainedResponseSha256": "7fda5afd0b2ad74699c4216e404d57238b2038c5cde1fcb187578ef5e876d33d",
+    "normalizedResponsesIdentical": true
+  },
+  "researchMovement": {
+    "fullCountySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195138,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362188,
+      "notResearched": 6314996
+    },
+    "final": {
+      "verifiedPresent": 195153,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314980
+    },
+    "delta": {
+      "verifiedPresent": 15,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 1,
+      "notResearched": -16
+    },
+    "selectedPairReconciliation": {
+      "planned": 16,
+      "moved": 16,
+      "verifiedPresent": 15,
+      "researchedUnresolved": 1,
+      "unmoved": 0
+    },
+    "qualification": "The one rejected polygon witness is researched-unresolved, not absence or survey non-detection. Source silence created no negative claim."
+  },
+  "rejectedSelection": {
+    "pairKey": "41033:taeniatherum-caput-medusae",
+    "objectId": 709891,
+    "reason": "No retained full-polygon vertex was inside the selected active county topology.",
+    "publishedAs": "researched-unresolved",
+    "explicitlyNot": [
+      "verified-absent",
+      "not-detected",
+      "recorded-present"
+    ]
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 16 planned equals 15 accepted plus 1 rejected",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "negativeSemantics": "pass: zero verified-absence and zero not-detected movement",
+    "stableResponseBarrier": "pass: two retained normalized-identical responses",
+    "geographyWitness": "pass: accepted assertions use exact polygon witnesses against committed active-county topology",
+    "publication": "pending ordinary manifest and production release gates"
+  },
+  "nextAction": "Rebuild the deterministic source-coverage, readiness, and research-publication indexes; run the complete local release gates; then publish and verify the exact application and R2 release identities."
+}

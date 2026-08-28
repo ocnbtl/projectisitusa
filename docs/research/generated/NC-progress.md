@@ -1,6 +1,6 @@
 # North Carolina Research Progress
 
-Generated: `2026-08-21T00:00:00.000Z`
+Generated: `2026-08-27T00:00:00.000Z`
 
 ## Exact Counts
 
