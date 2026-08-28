@@ -1,26 +1,26 @@
 # Illinois Research Progress
 
-Generated: `2026-08-27T00:00:00.000Z`
+Generated: `2026-08-28T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `102`
 - County-species pairs: `255408`
-- Verified present: `9035`
+- Verified present: `9122`
 - Verified absent: `0`
 - Not detected: `10`
 - Researched unresolved: `38487`
-- Not researched: `207876`
-- Determination coverage: `3.54%`
-- Research coverage: `18.61%`
-- Explicit outcome coverage: `18.6102%`
-- Applicable protocol cells: `321`
+- Not researched: `207789`
+- Determination coverage: `3.57%`
+- Research coverage: `18.64%`
+- Explicit outcome coverage: `18.6443%`
+- Applicable protocol cells: `326`
 - Current complete protocol cells: `130`
-- Protocol completion: `44.55%`
-- Current protocol completion: `40.50%`
-- Evidence records: `11454`
-- Research runs: `27`
+- Protocol completion: `43.87%`
+- Current protocol completion: `39.88%`
+- Evidence records: `11541`
+- Research runs: `28`
 - Rejection records: `1543`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,11 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Mute Swan (`cygnus-olor`) | wildlife | 101 | 0 | 1 |
+| Rock pigeon (`columba-livia`) | wildlife | 100 | 0 | 1 |
+| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 91 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 73 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 58 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 102 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 102 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 102 | 1 |
@@ -52,11 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 102 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 102 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 102 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 102 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 102 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 102 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 102 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 102 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-28T06:22:30.234Z | 87 | 5 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
