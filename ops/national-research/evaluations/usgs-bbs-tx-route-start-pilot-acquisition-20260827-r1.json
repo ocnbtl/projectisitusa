@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-tx-route-start-pilot-acquisition-20260827-r1",
+  "evaluatedAt": "2026-08-28T03:30:00.000Z",
+  "status": "validated-local-awaiting-release",
+  "objective": "Publish a bounded Texas tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as point recorded-presence evidence, with exact taxon matching and committed route-start coordinate receipts.",
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-tx-route-start-pilot-v1.json",
+    "planSha256": "8b63793277b8bbdbfae5730fcc1e25d807f7a21a3bd6f13a4c58816b304314bc",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.0.0",
+    "acquisitionCodeCommit": "aec000caf93255b3c6a8320cb6870f6ff89bbd9e",
+    "reconciliationFixCommit": "5ab9c1c9df31fe448b21931aae7c97e72cb4de88",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 116,
+      "expectedProviderGets": 5,
+      "parameterHash": "f2aa993e6e331f5cacd948b42afca4726c4aec2a95b79f45cef3412a69e2357b"
+    },
+    "sourceFiles": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ]
+  },
+  "nationalPreflight": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "targetRows": 136665,
+    "standardTargetRows": 126651,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairs": 117,
+    "netNewPairs": 1431,
+    "reconciliation": "The corrected analyzer reads the sparse county projection pairs field. Its complete rescan preserved all measured national and Texas counts."
+  },
+  "immutableRun": {
+    "runId": "20260828T030700Z__usgs-bbs__f2aa993e6e33",
+    "receiptPath": "src/data/research/runs/20260828T030700Z__usgs-bbs__f2aa993e6e33/receipt.json",
+    "receiptSha256": "f4e0cbd1e53575bcab0af682ab6ed4878ee4bd9689f6867c26000d9bed04efff",
+    "status": "complete",
+    "startedAt": "2026-08-28T03:07:00.000Z",
+    "finishedAt": "2026-08-28T03:14:22.605Z",
+    "requestedPairs": 116,
+    "candidateRecords": 426,
+    "assertionEvents": 116,
+    "reviewEvents": 116,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 116,
+    "providerGets": 5,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/texas-standard-stop1-detections.json",
+        "bytes": 140165,
+        "sha256": "7466e6cf32acdf0207d369878e91b43f6c9c1c821d438289363594f13dfe0ab1"
+      }
+    ]
+  },
+  "texasMovement": {
+    "fullCountySpeciesDenominator": 636016,
+    "baseline": {
+      "verifiedPresent": 7140,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 111478,
+      "notResearched": 517398,
+      "explicitOutcomePairCount": 118618,
+      "researchRunCount": 26
+    },
+    "final": {
+      "verifiedPresent": 7256,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 111478,
+      "notResearched": 517282,
+      "explicitOutcomePairCount": 118734,
+      "researchRunCount": 27
+    },
+    "delta": {
+      "verifiedPresent": 116,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -116,
+      "explicitOutcomePairCount": 116,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 6,
+      "passer-domesticus": 63,
+      "streptopelia-decaocto": 29,
+      "sturnus-vulgaris": 18
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 116 planned equals 116 accepted plus 0 rejected",
+    "texasDenominatorConservation": "pass: 636,016 before and after",
+    "netUniqueMovement": "pass: all 116 pairs moved from implicit not-researched to verified-present",
+    "negativeSemantics": "pass: zero verified-absence and zero not-detected movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and the committed active-county topology path and SHA-256",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the plan",
+    "publication": "pending deterministic full-data preparation, manifest, and production release gates"
+  },
+  "qualification": "Only positive standard-run Stop 1 detections publish as point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no absence or survey non-detection claim."
+}
