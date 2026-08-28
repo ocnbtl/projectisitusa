@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://isitusa.com/schemas/research/usgs-bbs-route-start-parameters.schema.json",
-  "title": "USGS BBS route-start pilot parameters",
+  "title": "USGS BBS route-start tranche parameters",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -26,7 +26,7 @@
     "candidatePairs"
   ],
   "properties": {
-    "stateCode": { "const": "TX" },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
     "mode": { "const": "hash-pinned-standard-stop1-positive" },
     "scienceBaseItemId": { "const": "6a0b0b0ab66b0188da36aedd" },
     "scienceBaseItemUrl": { "type": "string", "format": "uri" },

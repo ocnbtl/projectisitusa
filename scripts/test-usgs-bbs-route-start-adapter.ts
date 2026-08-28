@@ -20,7 +20,7 @@ function md5(value: Buffer) {
   return createHash("md5").update(value).digest("hex");
 }
 
-function fixtureFiles(stop1Count: number) {
+function fixtureFiles(stop1Count: number, countyFips: string) {
   const directory = mkdtempSync(path.join(tmpdir(), "isitusa-bbs-fixture-"));
   const topology = countyTopology as typeof countyTopology & {
     objects: { counties: { geometries: Array<{ id: string | number }> } };
@@ -30,9 +30,9 @@ function fixtureFiles(stop1Count: number) {
     topology.objects.counties as never,
   ) as unknown as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>;
   const index = topology.objects.counties.geometries.findIndex(
-    (entry) => String(entry.id).padStart(5, "0") === "48001",
+    (entry) => String(entry.id).padStart(5, "0") === countyFips,
   );
-  assert(index >= 0, "Fixture topology is missing Anderson County, Texas.");
+  assert(index >= 0, `Fixture topology is missing county ${countyFips}.`);
   const county = collection.features[index]!;
   const [longitude, latitude] = geoCentroid(county);
   assert(geoContains(county, [longitude, latitude]));
@@ -56,8 +56,13 @@ function fixtureFiles(stop1Count: number) {
   return { directory, routes, weather, species, zip };
 }
 
-async function runFixture(stop1Count: number) {
-  const files = fixtureFiles(stop1Count);
+async function runFixture(
+  stop1Count: number,
+  stateCode = "TX",
+  countyFips = "48001",
+  countyName = "Anderson",
+) {
+  const files = fixtureFiles(stop1Count, countyFips);
   const citation = "Fixture USGS BBS citation.";
   const fileEntries = [
     { name: "Routes.csv" as const, buffer: files.routes },
@@ -83,19 +88,19 @@ async function runFixture(stop1Count: number) {
     ...fileEntries.map(({ name, buffer }) => [fileUrl(name), buffer] as const),
   ]);
   const requested: SourceAdapterContext["requestedPairs"][number] = {
-    countyFips: "48001",
-    countyName: "Anderson",
+    countyFips,
+    countyName,
     speciesId: "passer-domesticus",
     scientificName: "Passer domesticus",
   };
   const context: SourceAdapterContext = {
     runId: "20260828T040000Z__usgs-bbs__fixture",
     sourceId: "usgs-bbs",
-    stateCode: "TX",
+    stateCode,
     requestedPairs: [requested],
     runStartedAt: "2026-08-28T04:00:00.000Z",
     parameters: {
-      stateCode: "TX",
+      stateCode,
       mode: "hash-pinned-standard-stop1-positive",
       scienceBaseItemId: item.id,
       scienceBaseItemUrl: itemUrl,
@@ -125,7 +130,7 @@ async function runFixture(stop1Count: number) {
       expectedStateGrossPairs: 1,
       expectedStateNetNewPairs: 1,
       nationalPreflight: {},
-      candidatePairs: ["48001:passer-domesticus"],
+      candidatePairs: [`${countyFips}:passer-domesticus`],
     },
   };
   const requests: string[] = [];
@@ -172,6 +177,12 @@ async function main() {
   assert.equal(result.outcomes[0]!.status, "evidence-found");
   assert.equal(result.outcomes[0]!.scope_complete, true);
   assert.equal(result.artifacts.length, 2);
+  assert.equal(result.artifacts[1]!.filename, "tx-standard-stop1-detections.json");
+  const illinois = await runFixture(2, "IL", "17001", "Adams");
+  assert.equal(illinois.result.assertions.length, 1);
+  assert.equal(illinois.result.assertions[0]!.state_code, "IL");
+  assert.equal(illinois.result.assertions[0]!.county_fips, "17001");
+  assert.equal(illinois.result.artifacts[1]!.filename, "il-standard-stop1-detections.json");
   await assert.rejects(() => runFixture(0), /reconciliation changed/u);
   process.stdout.write("USGS BBS route-start adapter tests passed.\n");
 }

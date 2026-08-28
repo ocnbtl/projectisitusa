@@ -10,6 +10,7 @@ import { geoContains } from "d3-geo";
 import { feature } from "topojson-client";
 
 import countyTopology from "@/data/source/county-equivalents-topology.json";
+import { STATE_FIPS_TO_INFO } from "@/data/source/state-fips";
 import {
   USGS_BBS_ROUTE_START_GEOGRAPHY_METHOD,
   USGS_BBS_ROUTE_START_TOPOLOGY_PATH,
@@ -28,7 +29,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const USGS_BBS_SOURCE_ID = "usgs-bbs" as const;
 export const USGS_BBS_ADAPTER_ID = "usgs-bbs-route-start" as const;
-export const USGS_BBS_ADAPTER_VERSION = "1.0.0" as const;
+export const USGS_BBS_ADAPTER_VERSION = "1.1.0" as const;
 
 type ExpectedFile = {
   name: "Routes.csv" | "Weather.csv" | "50-StopData.zip" | "SpeciesList.csv";
@@ -172,8 +173,10 @@ function buildStateCountyFeatures(stateCode: string) {
     topology as never,
     topology.objects.counties as never,
   ) as unknown as GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>;
-  const stateFips = stateCode === "TX" ? "48" : null;
-  if (!stateFips) throw new Error(`BBS route-start pilot is not configured for ${stateCode}.`);
+  const stateFips = Object.entries(STATE_FIPS_TO_INFO).find(
+    ([, state]) => state.code === stateCode,
+  )?.[0];
+  if (!stateFips) throw new Error(`BBS route-start tranche is not configured for ${stateCode}.`);
   return collection.features
     .map((countyFeature, index) => ({
       countyFips: String(topology.objects.counties.geometries[index].id).padStart(5, "0"),
@@ -586,7 +589,11 @@ export async function runUsGsBbsRouteStart(
       outcomes,
       artifacts: [
         { filename: "sciencebase-item.json", mediaType: "application/json", contents: itemArtifact },
-        { filename: "texas-standard-stop1-detections.json", mediaType: "application/json", contents: recordsArtifact },
+        {
+          filename: `${context.stateCode.toLowerCase()}-standard-stop1-detections.json`,
+          mediaType: "application/json",
+          contents: recordsArtifact,
+        },
       ],
       upstreamRequests,
       candidateRecordCount: scan.stateAcceptedRows,
