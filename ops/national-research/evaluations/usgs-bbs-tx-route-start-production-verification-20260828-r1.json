@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-tx-route-start-production-verification-20260828-r1",
+  "verifiedAt": "2026-08-28T04:41:53.4957621Z",
+  "gate": {
+    "phase": "POST-DEPLOYMENT",
+    "mode": [
+      "web-application",
+      "research-data-publication",
+      "immediate-post-deploy-operations"
+    ],
+    "riskLevel": "high",
+    "decision": "GO",
+    "scope": "Production release of the registered USGS Breeding Bird Survey route-start adapter, its 116-pair Texas tranche, the deterministic national projection, the application deployment, and the content-addressed Cloudflare R2 release."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "383daa1cb507e6ad66923f9d6ab1a4cd13fa8ac8",
+    "releaseSha": "6b70068f5ad79e4cfbcd440a569d7858d7d3f8e5",
+    "originMainSha": "6b70068f5ad79e4cfbcd440a569d7858d7d3f8e5",
+    "githubMainSha": "6b70068f5ad79e4cfbcd440a569d7858d7d3f8e5",
+    "githubCommitUrl": "https://github.com/ocnbtl/projectisitusa/commit/6b70068f5ad79e4cfbcd440a569d7858d7d3f8e5",
+    "githubProductionDeploymentId": 6135619286,
+    "githubProductionDeploymentStatusId": 17445028333,
+    "githubProductionState": "success",
+    "githubProductionCreatedAt": "2026-08-28T04:28:49Z",
+    "vercelDeploymentId": "ECGYp6C3iZAkArh4VhgXKGZejv7x",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/ECGYp6C3iZAkArh4VhgXKGZejv7x",
+    "vercelImmutableUrl": "https://projectisitusa-2j8gtis8l-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "sourceAcquisition": {
+    "sourceId": "usgs-bbs-route-start",
+    "authority": "U.S. Geological Survey",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "acquisitionEvaluation": "ops/national-research/evaluations/usgs-bbs-tx-route-start-pilot-acquisition-20260827-r1.json",
+    "runId": "20260828T030700Z__usgs-bbs__f2aa993e6e33",
+    "runReceiptSha256": "f4e0cbd1e53575bcab0af682ab6ed4878ee4bd9689f6867c26000d9bed04efff",
+    "requestedPairs": 116,
+    "sourceRows": 426,
+    "assertionEvents": 116,
+    "acceptedReviews": 116,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 116,
+    "providerGets": 5
+  },
+  "movement": {
+    "texas": {
+      "countySpeciesDenominator": 636016,
+      "baseline": {
+        "verifiedPresent": 7140,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 111478,
+        "notResearched": 517398
+      },
+      "final": {
+        "verifiedPresent": 7256,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 111478,
+        "notResearched": 517282
+      },
+      "netVerifiedPresent": 116,
+      "speciesDelta": {
+        "passer-domesticus": 63,
+        "streptopelia-decaocto": 29,
+        "sturnus-vulgaris": 18,
+        "columba-livia": 6
+      }
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "baseline": {
+        "verifiedPresent": 195153,
+        "verifiedAbsent": 0,
+        "notDetected": 254,
+        "researchedUnresolved": 1362189,
+        "notResearched": 6314980
+      },
+      "final": {
+        "verifiedPresent": 195269,
+        "verifiedAbsent": 0,
+        "notDetected": 254,
+        "researchedUnresolved": 1362189,
+        "notResearched": 6314864,
+        "conflicts": 0
+      },
+      "netVerifiedPresent": 116,
+      "immutableResearchRuns": 1417,
+      "assertionEvents": 309163,
+      "pairOutcomes": 1720949,
+      "unreviewedEvidence": 0,
+      "sourceCoverageId": "source-coverage-208498eda0b367fbd63d"
+    },
+    "qualification": "All 116 pairs moved from implicit not-researched to verified-present. Positive standard-run Stop 1 detections publish only as sampled point recorded-presence evidence. Later route stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, or survey non-detection claim."
+  },
+  "verification": {
+    "usgsBbsAdapter": "pass",
+    "typecheck": "pass",
+    "productionBuild": "pass-next-15.5.23",
+    "stateProjectionConsistency": "pass-51-jurisdictions",
+    "nationalResearchConfiguration": "pass",
+    "dataIntegrity": "pass",
+    "vercelPublicationContract": "pass",
+    "researchIntegrity": {
+      "status": "pass-through-full-corpus-gates-with-final-publication-check-rerun-after-manifest-regeneration",
+      "frozenRegressionPassed": 97,
+      "frozenRegressionTotal": 97,
+      "criticalSafetyViolations": 0,
+      "validatedRuns": 1417,
+      "validatedAssertions": 309163,
+      "validatedOutcomes": 1720949
+    },
+    "researchPublication": {
+      "status": "pass",
+      "releaseId": "research-7427b6e8b43e-37943bb5dba1460c",
+      "artifactCount": 3195,
+      "uniqueObjectCount": 3195,
+      "uniqueObjectBytes": 1004941178
+    },
+    "credentialMarkerScan": {
+      "status": "pass",
+      "bytesStreamed": 384252308,
+      "hits": 0
+    },
+    "releaseConfigChanges": {
+      "packageLock": false,
+      "vercelConfiguration": false,
+      "nextConfiguration": false
+    }
+  },
+  "r2Publication": {
+    "bucket": "project-isitusa-research",
+    "publicOrigin": "https://data.isitusa.com",
+    "releaseId": "research-7427b6e8b43e-37943bb5dba1460c",
+    "sourceCommit": "7427b6e8b43ee58a29ec834c45e163d2a0afd8fd",
+    "releaseManifestKey": "releases/research-7427b6e8b43e-37943bb5dba1460c/manifest.json",
+    "releaseManifestBytes": 1565427,
+    "releaseManifestSha256": "a3ed39ac772ba4fbfffc1da531a558796df7ba8caa08c7dd70b57188b9d4a94c",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1004941178,
+    "objectsUploaded": 323,
+    "bytesUploaded": 174918841,
+    "fullRemoteObjectsVerifiedAfterUpload": 3195,
+    "fullRemoteObjectsVerifiedDuringPromotion": 3195,
+    "objectsUploadedDuringPromotion": 0,
+    "bytesUploadedDuringPromotion": 0,
+    "projectedRetainedBytesAfterUpload": 7676596011,
+    "projectedRetainedBytesDuringPromotion": 7678161438,
+    "currentPointerReleaseId": "research-7427b6e8b43e-37943bb5dba1460c",
+    "currentPointerSourceCommit": "7427b6e8b43ee58a29ec834c45e163d2a0afd8fd",
+    "currentPointerPromotedAt": "2026-08-28T04:36:44.934Z",
+    "currentPointerSha256": "1c9b71a535afd8148d08f7cf1cfdf414a1a3810d9595bd62a3dbcef29a01cc48",
+    "previousReleaseId": "research-a2951a092577-a039963dbd5201e6",
+    "previousPromotedAt": "2026-08-28T02:16:13.572Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T02:16:13.572Z",
+    "cadenceOverrideUsed": true,
+    "cadenceOverrideReason": "Project owner explicitly authorized immediate production promotion of the validated Texas BBS research update.",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "publicManifestMatchesCommittedBytes": true,
+    "publicTexasSummaryMatchesCommittedBytes": true,
+    "publicAndersonCountyMatchesCommittedBytes": true,
+    "r2Deletions": 0,
+    "credentialValuesCommittedOrLogged": false
+  },
+  "liveDataChecks": {
+    "pointer": {
+      "directUrl": "https://data.isitusa.com/current.json",
+      "sameOriginUrl": "https://isitusa.com/research-data/current.json",
+      "directStatus": 200,
+      "sameOriginStatus": 200,
+      "cacheControl": "public, must-revalidate, max-age=60"
+    },
+    "manifest": {
+      "directStatus": 200,
+      "sameOriginStatus": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "exactLocalByteMatch": true
+    },
+    "samples": [
+      {
+        "localPath": "public/generated/research/TX/summary.json",
+        "bytes": 553721,
+        "sha256": "59959d4e28ba04f5b30bf7de5b390482c3c4542828957f969ba5e0d51ae120f5",
+        "directStatus": 200,
+        "sameOriginStatus": 200,
+        "directAndSameOriginExactLocalByteMatch": true
+      },
+      {
+        "localPath": "public/generated/research/TX/counties/48001.json",
+        "bytes": 270871,
+        "sha256": "a8f44d063ca9585cbe765774f0fa2d3207e2c9f57d748b4750bb933188deb1e5",
+        "directStatus": 200,
+        "sameOriginStatus": 200,
+        "directAndSameOriginExactLocalByteMatch": true
+      }
+    ]
+  },
+  "productionHttp": {
+    "routes": [
+      {
+        "url": "https://isitusa.com/",
+        "status": 200
+      },
+      {
+        "url": "https://isitusa.com/research",
+        "status": 200
+      },
+      {
+        "url": "https://isitusa.com/species/passer-domesticus",
+        "status": 200
+      },
+      {
+        "url": "https://isitusa.com/species/not-a-real-isitusa-species",
+        "status": 404
+      },
+      {
+        "url": "https://projectisitusa-2j8gtis8l-unigentamos.vercel.app/",
+        "status": 200
+      },
+      {
+        "url": "https://projectisitusa-2j8gtis8l-unigentamos.vercel.app/research",
+        "status": 200
+      }
+    ],
+    "securityHeaders": {
+      "contentSecurityPolicy": "present-and-matches-production-policy",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "xFrameOptions": "DENY",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "status500RouteChecks": 0
+  },
+  "productionBrowser": {
+    "host": "https://isitusa.com",
+    "immutableHost": "https://projectisitusa-2j8gtis8l-unigentamos.vercel.app",
+    "routes": [
+      "/",
+      "/?county=48001",
+      "/research?state=TX&county=48001&species=passer-domesticus"
+    ],
+    "zipLookup": {
+      "zip": "75801",
+      "result": "Anderson, TX",
+      "fips": "48001"
+    },
+    "visibleState": "Texas",
+    "visibleCounty": "Anderson / 48001",
+    "visibleSpecies": "House sparrow / Passer domesticus",
+    "visiblePairStatus": "Verified Present",
+    "visibleResearchStatus": "Reviewed Evidence Found",
+    "visibleEvidenceSource": "USGS North American Breeding Bird Survey route-start detections",
+    "evidenceCaveatRendered": true,
+    "visibleTexasVerifiedPresent": 7256,
+    "researchAsOf": "Aug 28, 2026",
+    "desktopViewport": "2540x1222",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0
+  },
+  "cloudflareUsage": {
+    "observedAt": "2026-08-28T04:41:53.4957621Z",
+    "billingPeriod": "August 18 - September 18",
+    "displayedBucketObjects": "25.43k",
+    "displayedBucketSize": "7.5 GB",
+    "displayedClassAOperations": "26.12k",
+    "displayedClassBOperations": "58.12k",
+    "displayedTotalStorage": "7.5 GB",
+    "displayedBillableUsage": "$0.00",
+    "displayedBillingMessage": "No billable usage incurred yet",
+    "projectStorageSafetyBytes": 8000000000,
+    "projectClassASafetyRequests": 800000,
+    "projectClassBSafetyRequests": 8000000,
+    "publisherMonthlyClassAGuardInput": 25760,
+    "publisherMonthlyClassBGuardInput": 51630,
+    "retainedByteSafetyMargin": 321838562
+  },
+  "postDeploymentGate": {
+    "phase": "POST-DEPLOYMENT",
+    "decision": "GO",
+    "blockers": [],
+    "matrix": [
+      {
+        "category": "scope-and-source-of-truth",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, Vercel, the public R2 pointer, and the committed manifest identify the exact intended app and data artifacts."
+      },
+      {
+        "category": "functionality",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "Canonical and immutable routes, 404 behavior, the Texas ZIP flow, the Anderson House sparrow research deep link, responsive layout, browser console, and broken-image checks passed."
+      },
+      {
+        "category": "security-and-cost",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "Credential scanning found zero markers, five production security headers are present, Cloudflare displays $0.00 billable usage, and the guarded retained-byte projection remains below every project stop."
+      },
+      {
+        "category": "data-release-integrity",
+        "criticality": "CRITICAL",
+        "status": "PASSED",
+        "evidence": "All 3,195 immutable objects passed full verification after upload and again during pointer promotion; direct and same-origin pointer, manifest, Texas summary, and Anderson County bytes agree exactly."
+      }
+    ]
+  },
+  "operationalState": {
+    "cadence": "IMMEDIATE POST-DEPLOY",
+    "state": "HEALTHY",
+    "findings": [],
+    "nonCriticalUnknowns": [
+      "Exact Vercel provider build duration and full runtime-log rows were not available through the current public evidence surfaces. No claim is made for either."
+    ]
+  },
+  "rollbackAndObservation": {
+    "applicationRollbackCommit": "383daa1cb507e6ad66923f9d6ab1a4cd13fa8ac8",
+    "dataRollbackReleaseId": "research-a2951a092577-a039963dbd5201e6",
+    "dataRollbackPromotedAt": "2026-08-28T02:16:13.572Z",
+    "rollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow if a verified application regression appears.",
+    "dataRollbackMethod": "Restore the prior validated pointer only through the guarded publisher workflow if a verified data regression appears; retain all immutable objects."
+  },
+  "limitations": [
+    "The USGS BBS evidence is sampled point detection evidence and is displayed stale according to the current freshness policy; it is not a complete county inventory or a present-day absence claim.",
+    "Cloudflare dashboard storage and operation counters are rounded provider displays, while the publisher retained-byte projection is the exact project safety calculation used for the gate.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, or penetration-test claim is made."
+  ],
+  "evidenceScope": "Externally verified prior production release. The Texas USGS BBS tranche adds 116 unique verified-present county-species pairs and creates zero absence or non-detection movement. Application commit 6b70068f5ad79e4cfbcd440a569d7858d7d3f8e5 is tied to successful GitHub Production deployment 6135619286 and immutable Vercel deployment ECGYp6C3iZAkArh4VhgXKGZejv7x. R2 release research-7427b6e8b43e-37943bb5dba1460c contains 3,195 immutable objects and 1,004,941,178 content bytes; every object passed full verification after upload and during the owner-authorized promotion. The direct and same-origin public pointer, manifest, Texas summary, and Anderson County object match committed bytes. Canonical and immutable HTTP, security headers, desktop/mobile browser behavior, the Texas ZIP flow, the new evidence row, and browser console passed. Cloudflare displays $0.00 billable usage and the guarded retained-byte projection is 7,678,161,438 bytes. This receipt does not attest to the commit that contains it or any future deployment."
+}
