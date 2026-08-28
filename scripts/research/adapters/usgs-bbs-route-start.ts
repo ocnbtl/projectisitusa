@@ -29,7 +29,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const USGS_BBS_SOURCE_ID = "usgs-bbs" as const;
 export const USGS_BBS_ADAPTER_ID = "usgs-bbs-route-start" as const;
-export const USGS_BBS_ADAPTER_VERSION = "1.1.0" as const;
+export const USGS_BBS_ADAPTER_VERSION = "1.1.1" as const;
 
 type ExpectedFile = {
   name: "Routes.csv" | "Weather.csv" | "50-StopData.zip" | "SpeciesList.csv";
@@ -491,11 +491,11 @@ export async function runUsGsBbsRouteStart(
     });
     if (
       scan.stateAcceptedRows !== parameters.expectedStateAcceptedRows ||
-      scan.recordsByPair.size !== parameters.expectedStateGrossPairs ||
+      scan.recordsByPair.size !== parameters.expectedStateNetNewPairs ||
       scan.recordsByPair.size !== context.requestedPairs.length
     ) {
       throw new Error(
-        `BBS Texas reconciliation changed: ${scan.stateAcceptedRows} rows, ${scan.recordsByPair.size} pairs.`,
+        `BBS ${context.stateCode} reconciliation changed: ${scan.stateAcceptedRows} rows, ${scan.recordsByPair.size} pairs.`,
       );
     }
 

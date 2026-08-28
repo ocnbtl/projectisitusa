@@ -127,7 +127,7 @@ async function runFixture(
       ],
       unmatchedCatalogBirds: [],
       expectedStateAcceptedRows: 1,
-      expectedStateGrossPairs: 1,
+      expectedStateGrossPairs: stateCode === "IL" ? 2 : 1,
       expectedStateNetNewPairs: 1,
       nationalPreflight: {},
       candidatePairs: [`${countyFips}:passer-domesticus`],
