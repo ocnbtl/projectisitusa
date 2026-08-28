@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-il-route-start-tranche-acquisition-20260828-r1",
+  "evaluatedAt": "2026-08-28T06:29:46.7649728Z",
+  "status": "validated-local-awaiting-release",
+  "objective": "Publish a bounded Illinois tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as point recorded-presence evidence, with exact taxon matching and committed route-start coordinate receipts.",
+  "selection": {
+    "method": "Fresh national BBS rescan after the Texas production release, compared with the residual USFS targeted-positive sample and the empty jurisdiction-evidence registry.",
+    "remainingNationalBbsNetPairsBeforeIllinois": 1315,
+    "illinoisRankByNetNewPairs": 1,
+    "illinoisNetNewPairs": 87,
+    "illinoisCountyCount": 48,
+    "residualUsfsEstimatedPotentialPairs": 14,
+    "reason": "Illinois had the highest measured remaining BBS movement, used the registered hash-pinned adapter, and changed fewer counties than the already proven Texas tranche. Publication remains conditional on the exact R2 retained-byte plan."
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-il-route-start-tranche-v1.json",
+    "planSha256": "44c962321c5e637df006d218bad31aa2304b8128a6ef15b6eb5a58d821f57d90",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "acquisitionCodeCommit": "007e1650391c85a9686047de2f3859b3fdeaa24c",
+    "runCommit": "3cc679c0f",
+    "coverageIndexCommit": "9f4165f97",
+    "sourceCoverageIndexId": "source-coverage-633e6576b9ca8e900634",
+    "sourceCoverageIndexSha256": "575e2b15d81447b322ceaf08a898efb08cedc09a838645098496524c84c19ca5",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 87,
+      "expectedProviderGets": 5,
+      "parameterHash": "154ba0c33ef3a09c6b11567c83c3931efe7f4f11b7c7ab669720dcb6abb502e5"
+    }
+  },
+  "failClosedEngineering": [
+    {
+      "stage": "semantic-dry-run",
+      "effect": "The initial cross-state plan was rejected before network access because the parameter schema still required Texas.",
+      "resolution": "Generalized the state schema and county topology lookup, made retained artifact names state-specific, added Illinois regression coverage, and registered adapter version 1.1.0."
+    },
+    {
+      "stage": "first-live-acquisition-attempt",
+      "effect": "Five provider GETs completed, but no immutable run was written because Illinois had 91 gross pairs and 87 selected net pairs while the adapter incorrectly required gross and selected counts to be equal.",
+      "resolution": "Separated expected net reconciliation from informational gross scope, added a differing-gross-and-net regression, registered adapter version 1.1.1, and reran from a new clean committed input snapshot."
+    }
+  ],
+  "nationalPreflight": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterTexas": 233,
+    "netNewPairsBeforeIllinois": 1315
+  },
+  "immutableRun": {
+    "runId": "20260828T061928Z__usgs-bbs__154ba0c33ef3",
+    "receiptPath": "src/data/research/runs/20260828T061928Z__usgs-bbs__154ba0c33ef3/receipt.json",
+    "receiptSha256": "10ef7f6cee4697283be3e6c4bee991920075d3769d490fb367fa656197f4b477",
+    "status": "complete",
+    "codeCommit": "007e1650391c85a9686047de2f3859b3fdeaa24c",
+    "requestedPairs": 87,
+    "candidateRecords": 388,
+    "assertionEvents": 87,
+    "reviewEvents": 87,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 87,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/il-standard-stop1-detections.json",
+        "bytes": 126192,
+        "sha256": "b4410369ca02dcccd849fa7082a546c987c1626d3ff92aeca7c37ea604081c32"
+      }
+    ]
+  },
+  "illinoisMovement": {
+    "fullCountySpeciesDenominator": 255408,
+    "baseline": {
+      "verifiedPresent": 9035,
+      "verifiedAbsent": 0,
+      "notDetected": 10,
+      "researchedUnresolved": 38487,
+      "notResearched": 207876,
+      "explicitOutcomePairCount": 47532,
+      "researchRunCount": 27
+    },
+    "final": {
+      "verifiedPresent": 9122,
+      "verifiedAbsent": 0,
+      "notDetected": 10,
+      "researchedUnresolved": 38487,
+      "notResearched": 207789,
+      "explicitOutcomePairCount": 47619,
+      "researchRunCount": 28,
+      "summarySha256": "0f0b422b1c151699ce01bf7ac433fe73910fd7d82fc83c68821eef40d3cc8a72"
+    },
+    "delta": {
+      "verifiedPresent": 87,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -87,
+      "explicitOutcomePairCount": 87,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 2,
+      "cygnus-olor": 1,
+      "passer-domesticus": 44,
+      "streptopelia-decaocto": 11,
+      "sturnus-vulgaris": 29
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195269,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314864
+    },
+    "final": {
+      "verifiedPresent": 195356,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314777,
+      "conflicts": 0,
+      "immutableResearchRuns": 1418,
+      "assertionEvents": 309250,
+      "pairOutcomes": 1721036
+    },
+    "delta": {
+      "verifiedPresent": 87,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -87,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 87,
+      "pairOutcomes": 87
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 87 planned equals 87 accepted plus 0 rejected",
+    "illinoisDenominatorConservation": "pass: 255,408 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 87 pairs moved from implicit not-researched to verified-present",
+    "negativeSemantics": "pass: zero verified-absence and zero not-detected movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and the committed active-county topology path and SHA-256",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the plan",
+    "publication": "pending deterministic publication manifest, exact R2 plan, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "failedAttemptProviderGets": 5,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "productionDeployments": 0
+  },
+  "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, or survey non-detection claim."
+}
