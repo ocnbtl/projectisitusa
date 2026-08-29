@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-in-route-start-production-verification-20260829-r1",
+  "verifiedAt": "2026-08-29T01:15:09.3963618Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative Indiana USGS BBS research release. The data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "7e8c6843ac18f6f4d5ee99d6eda305f79450ab80",
+    "releaseSha": "64f19c4bdd3477cf0999affb3c3f73b9aec6d57c",
+    "originMainSha": "64f19c4bdd3477cf0999affb3c3f73b9aec6d57c",
+    "githubProductionDeploymentId": 6150986897,
+    "githubProductionDeploymentStatusId": 17486304865,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "vercelDeploymentId": "2uLFiNGTpP3uBNyMv6t5svNyabfQ",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/2uLFiNGTpP3uBNyMv6t5svNyabfQ",
+    "vercelImmutableUrl": "https://projectisitusa-bi3l1dbj4-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "b372231b9ac7702ab436c4726e802ea6e88cea3e",
+      "subject": "Plan Indiana BBS route-start tranche"
+    },
+    {
+      "sha": "bf5a2b830614b2ce7480cbb825c0beb05ec2c620",
+      "subject": "Add Indiana BBS route-start evidence"
+    },
+    {
+      "sha": "272eeeec0f8bae9268a9a21ca55391748b658610",
+      "subject": "Index Indiana BBS research coverage"
+    },
+    {
+      "sha": "8adace2c79afce66eff25e8fef594e859a55c127",
+      "subject": "Document Indiana BBS research movement"
+    },
+    {
+      "sha": "5554156dc2e956d303f385d29ad200b9a560a757",
+      "subject": "Compile Indiana BBS research projection"
+    },
+    {
+      "sha": "64f19c4bdd3477cf0999affb3c3f73b9aec6d57c",
+      "subject": "Prepare Indiana cumulative research release"
+    }
+  ],
+  "sourceAcquisition": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-in-route-start-tranche-acquisition-20260829-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-in-route-start-tranche-v1.json",
+    "planSha256": "0d81b2954a0cd72be783f9f232a1486c927869de8eb831c275806aa2c032ad67",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260829T001541Z__usgs-bbs__5e939aaf0e89",
+    "runReceiptSha256": "0f83c48bd52d73bfcd25cc28254bfd1cbd4ad85b03e72666c9804af136ea79a1",
+    "requestedPairs": 69,
+    "candidateRecords": 254,
+    "assertionEvents": 69,
+    "reviewEvents": 69,
+    "pairOutcomes": 69,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, or survey non-detection claim."
+  },
+  "movement": {
+    "indiana": {
+      "countySpeciesDenominator": 230368,
+      "baseline": {
+        "verifiedPresent": 5535,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 37889,
+        "notResearched": 186944
+      },
+      "prepared": {
+        "verifiedPresent": 5604,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 37889,
+        "notResearched": 186875,
+        "conflicts": 0
+      },
+      "delta": {
+        "verifiedPresent": 69,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -69
+      },
+      "speciesDelta": {
+        "columba-livia": 7,
+        "passer-domesticus": 38,
+        "sturnus-vulgaris": 24
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195425,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314708,
+      "conflicts": 0,
+      "immutableResearchRuns": 1419,
+      "assertionEvents": 309319,
+      "pairOutcomes": 1721105,
+      "unreviewedEvidence": 0
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "worktreeCleanBeforePush": true,
+    "gates": [
+      "Indiana byte stability: pass across 98 tracked files",
+      "All 51 state projections: pass",
+      "National denominator and readiness: pass with zero divergences",
+      "USGS BBS adapter and immutable-run validation: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Full research integrity: pass across 1,419 runs, 309,319 assertions, and 1,721,105 outcomes",
+      "Source coverage and publication manifest reconciliation: pass",
+      "Compatibility data integrity: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build: pass",
+      "Vercel publication and research deep-link tests: pass",
+      "Whitespace: pass"
+    ]
+  },
+  "preparedR2Release": {
+    "releaseId": "research-5554156dc2e9-b1c2b97ae3c4bd22",
+    "sourceCommit": "5554156dc2e956d303f385d29ad200b9a560a757",
+    "manifestBytes": 1565427,
+    "manifestSha256": "68f836c7ce6c3c9bffd72e3fd77d8ed2bf009c77a1100518995378dcd57cd009",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1005410592,
+    "lastVerifiedRetainedBytes": 7709332664,
+    "modeledNewRetainedBytes": 26097113,
+    "modeledProjectedRetainedBytes": 7735429777,
+    "retainedByteSafetyLimit": 8000000000,
+    "modeledRetainedByteMargin": 264570223,
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "directAndSameOriginExactBodyMatch": true,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true
+      },
+      {
+        "path": "/research?state=IN&county=18001&species=passer-domesticus",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404
+      }
+    ],
+    "securityHeaders": {
+      "contentSecurityPolicy": "present",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "xFrameOptions": "DENY",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "liveIndianaBoundary": {
+      "activeSummarySha256": "b13746212aca37d2a8248191a1af6d03902a6adbd1259bbf21850ed9443d0418",
+      "preparedSummarySha256": "fa26c5b03895e3d7a2f808bdb2df7994676ce6ba14ceec197cb2c1098fbd564a",
+      "preparedIndianaIsPromoted": false
+    }
+  },
+  "productionBrowser": {
+    "route": "https://isitusa.com/research?state=IN&county=18001&species=passer-domesticus",
+    "visibleState": "Indiana",
+    "visibleCounty": "Adams / 18001",
+    "visibleResearchAsOf": "Aug 27, 2026",
+    "visibleIndianaVerifiedPresent": 5535,
+    "visibleIndianaNotResearched": 186944,
+    "visibleIndianaConflicts": 0,
+    "visibleHouseSparrowPairStatus": "Not Researched",
+    "visibleHouseSparrowResearchStatus": "Not Started",
+    "expectedBoundary": "The browser must show the active pre-Indiana projection until the guarded R2 pointer is promoted.",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "frameworkErrorOverlay": false
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, GitHub Production deployment, Vercel immutable deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable routes, expected 404 behavior, the Indiana research route, direct data origin, and same-origin proxy passed."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The unchanged research interface rendered meaningful Indiana and Adams County content at desktop and 390x844 mobile with zero overflow or broken images."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The changed flow retained named headings, navigation, comboboxes, tabs, searchbox, buttons, table semantics, and readable status text. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the R2 pointer retains short-lived cache control and immutable content remains content-addressed. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; five production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub/Vercel success, live HTTP parity, pointer parity, browser console health, and the intentional old-data boundary were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Origin/main and production deployment identify 64f19c4bdd3477cf0999affb3c3f73b9aec6d57c; canonical bodies match immutable deployment projectisitusa-bi3l1dbj4-unigentamos.vercel.app."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics and makes no manual public absence claim."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan for this release was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Updated stale authorization metadata after the current continuation packet explicitly authorized scoped commits, pushes, no-cost acquisition, and ordinary deployment.",
+    "Forced Node 22 to the front of child-process PATH after a diagnostic npm pass revealed child scripts were resolving the shell's default Node 24; the full release gate then passed on Node 22."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "7e8c6843ac18f6f4d5ee99d6eda305f79450ab80",
+    "applicationReleaseCommit": "64f19c4bdd3477cf0999affb3c3f73b9aec6d57c",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The Indiana BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has a modeled retained-byte margin, not a fresh authenticated exact missing-object plan; cadence blocks publication independently.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 64f19c4bdd3477cf0999affb3c3f73b9aec6d57c is on origin/main and tied to successful GitHub/Vercel Production deployment 6150986897 at projectisitusa-bi3l1dbj4-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, browser rendering, mobile overflow, broken images, and console health passed. The prepared Indiana research release adds 69 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on Illinois release research-e2115f6a705f-163982b59c8351b2. This receipt does not attest to the commit that contains it or any future R2 action."
+}
