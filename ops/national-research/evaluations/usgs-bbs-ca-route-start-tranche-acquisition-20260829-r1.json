@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ca-route-start-tranche-acquisition-20260829-r1",
+  "evaluatedAt": "2026-08-29T02:01:51.1666907Z",
+  "status": "validated-local-awaiting-publication-gates",
+  "objective": "Integrate a bounded California tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "method": "Fresh national BBS rescan after the Indiana evidence run, selecting the prior equal-yield California candidate as the next highest measured no-cost tranche.",
+    "remainingNationalBbsNetPairsBeforeCalifornia": 1159,
+    "californiaGrossPairs": 72,
+    "californiaNetNewPairs": 69,
+    "californiaCountyCount": 34,
+    "reason": "California retained the next measured 69 net-new BBS county-species pairs after Indiana, with exact committed inputs and a bounded five-GET acquisition path."
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-ca-route-start-tranche-v1.json",
+    "planSha256": "18365e2a018300fa0a0e403516992f1115970349d1a112f7e7ff9dde4a020a21",
+    "selectedPairSha256": "63da8b702ab2c247c9f7bfa6e98078d5f4672a188525a9cf155bde4a2220dcd9",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "acquisitionCodeCommit": "c3e056d3142d61cb1439cdf78a710fed2ea72f4f",
+    "planningCommit": "c3e056d3142d61cb1439cdf78a710fed2ea72f4f",
+    "runCommit": "9485736f072f8aa85e7f8bdbcb1a484f39b41f8a",
+    "coverageIndexCommit": "fd1efa08a867cd32f81286fb0dd73cfd1345c86f",
+    "sourceCoverageIndexId": "source-coverage-5525bb02961946cb498f",
+    "sourceCoverageIndexSha256": "44b80050b35875de361accdfe8970b1f1effe8edeb8f10a194eee8a48878e43e",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 69,
+      "expectedProviderGets": 5,
+      "parameterHash": "eb398d7969faab4c0bb2143690efd8d7abfad6818f2d4322d1062d11c9b77b98"
+    }
+  },
+  "nationalPreflight": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterIndiana": 389,
+    "netNewPairsBeforeCalifornia": 1159
+  },
+  "immutableRun": {
+    "runId": "20260829T013803Z__usgs-bbs__eb398d7969fa",
+    "receiptPath": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/receipt.json",
+    "receiptSha256": "151717a0cbdbe1f13cc06377db3058af652917b6f4da81db03fe693f6ee9b462",
+    "assertionsSha256": "5388f949dce7c726b45c7d2cf933a7b9f1efbac365fbb7d3c86705113e7ec4a0",
+    "outcomesSha256": "150a2c5d1b00ecc5dec08ab045d26905687fe12d48639a56f72fdcc9092beb04",
+    "status": "complete",
+    "codeCommit": "c3e056d3142d61cb1439cdf78a710fed2ea72f4f",
+    "startedAt": "2026-08-29T01:38:03.040Z",
+    "completedAt": "2026-08-29T01:38:39.542Z",
+    "requestedPairs": 69,
+    "candidateRecords": 292,
+    "assertionEvents": 69,
+    "reviewEvents": 69,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 69,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/ca-standard-stop1-detections.json",
+        "bytes": 95908,
+        "sha256": "49a68ae545ed945bc2d1ff6f4b19075a305f54a5b9eefd99f33795c39b50a2db"
+      }
+    ]
+  },
+  "californiaMovement": {
+    "fullCountySpeciesDenominator": 145232,
+    "affectedCountyCount": 34,
+    "baseline": {
+      "verifiedPresent": 6314,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 23266,
+      "notResearched": 115652,
+      "explicitOutcomePairCount": 29580,
+      "evidenceRecordCount": 29256,
+      "researchRunCount": 25,
+      "summarySha256": "4e918ac23327643e23f5bb89987722b9b9a03cb4cfa79f61b8372b518680c578"
+    },
+    "final": {
+      "verifiedPresent": 6383,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 23266,
+      "notResearched": 115583,
+      "explicitOutcomePairCount": 29649,
+      "evidenceRecordCount": 29325,
+      "researchRunCount": 26,
+      "conflicts": 0,
+      "summarySha256": "53a61642a37fbc0c376999d84c39954ad4095ef1ecce75f94cc6b242ef8c6ce3"
+    },
+    "delta": {
+      "verifiedPresent": 69,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -69,
+      "explicitOutcomePairCount": 69,
+      "evidenceRecordCount": 69,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 1,
+      "passer-domesticus": 28,
+      "streptopelia-decaocto": 18,
+      "sturnus-vulgaris": 22
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195425,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314708,
+      "immutableResearchRuns": 1419
+    },
+    "final": {
+      "verifiedPresent": 195494,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314639,
+      "conflicts": 0,
+      "immutableResearchRuns": 1420,
+      "readinessDashboardSha256": "fda49aa719a1c7d0df9e2d3da20bc5188c706d99a91b790176c616a9642cec69"
+    },
+    "delta": {
+      "verifiedPresent": 69,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -69,
+      "immutableResearchRuns": 1
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 69 planned equals 69 accepted plus 0 rejected",
+    "californiaDenominatorConservation": "pass: 145,232 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 69 pairs moved from implicit not-researched to verified-present",
+    "negativeSemantics": "pass: zero verified-absence and zero not-detected movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and the committed active-county topology path and SHA-256",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "projectionByteStability": "pass: two independent California compiles were byte-identical across 64 tracked state projection files and protected shared outputs",
+    "readinessDivergences": "pass: zero completion-freshness divergences",
+    "publication": "pending deterministic publication manifest, cadence eligibility, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "productionDeployments": 0
+  },
+  "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+}
