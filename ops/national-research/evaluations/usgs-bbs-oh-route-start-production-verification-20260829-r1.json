@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-oh-route-start-production-verification-20260829-r1",
+  "verifiedAt": "2026-08-29T09:43:07Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative Ohio USGS BBS research release. The research-data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "8008c8ea7c3b321bb52d5a51f31740d99cfcac67",
+    "applicationLastKnownGoodSha": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+    "releaseSha": "58ef808029ca9a9482899d6892ccb9e36de7f47d",
+    "originMainSha": "58ef808029ca9a9482899d6892ccb9e36de7f47d",
+    "githubMainSha": "58ef808029ca9a9482899d6892ccb9e36de7f47d",
+    "githubProductionDeploymentId": 6154415864,
+    "githubProductionDeploymentStatusId": 17495097232,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "vercelDeploymentId": "F5VeBzEfPtwjxqDa4LipB4gU3jGT",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/F5VeBzEfPtwjxqDa4LipB4gU3jGT",
+    "vercelImmutableUrl": "https://projectisitusa-poyrqgyqh-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "767406f6a46c69fa5aa6ea6d0900ab593213c34c",
+      "subject": "Plan Ohio BBS route-start tranche"
+    },
+    {
+      "sha": "47993a0937d0285117a88d96c39e004fbcab32e8",
+      "subject": "Add Ohio BBS route-start evidence"
+    },
+    {
+      "sha": "5253742cb033cf26f907b211486652dc67fdc0d1",
+      "subject": "Index Ohio BBS research coverage"
+    },
+    {
+      "sha": "2936c5de3199a03de96a1ee36aedf2b5cc1b293d",
+      "subject": "Document Ohio BBS research movement"
+    },
+    {
+      "sha": "ba6c2f47c5e6206cc7262f320247828934db0c67",
+      "subject": "Compile Ohio BBS research projection"
+    },
+    {
+      "sha": "58ef808029ca9a9482899d6892ccb9e36de7f47d",
+      "subject": "Prepare Ohio cumulative research release"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-oh-route-start-tranche-selection-20260829-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-oh-route-start-tranche-acquisition-20260829-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-oh-route-start-tranche-v1.json",
+    "planSha256": "354f870dc2e0cf8162daf367263d1c64d3df001deafbad511e48ee68c57453d4",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260829T080128Z__usgs-bbs__e32267392397",
+    "runReceiptSha256": "0b847ccbd1bc7f3f78a0b19ca91b2de4b6d33089bd6027accfc837759ea51b65",
+    "assertionsSha256": "030ef9e5c67e028c6a217e92fd48ea5e26d91664421ea960778dd8f7bd869869",
+    "outcomesSha256": "481b7392158885f14886d99c839de46f227ff5c1a67ffbd83ec6876eea8faa0b",
+    "requestedPairs": 59,
+    "candidateRecords": 221,
+    "assertionEvents": 59,
+    "reviewEvents": 59,
+    "pairOutcomes": 59,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "ohio": {
+      "countySpeciesDenominator": 220352,
+      "affectedCounties": 36,
+      "baseline": {
+        "verifiedPresent": 6773,
+        "verifiedAbsent": 0,
+        "notDetected": 44,
+        "researchedUnresolved": 34455,
+        "notResearched": 179080,
+        "summarySha256": "4323d41f0db2ab57233ec4e295bd39c6d436693c50a6bff3128a4747a1fb8613"
+      },
+      "prepared": {
+        "verifiedPresent": 6832,
+        "verifiedAbsent": 0,
+        "notDetected": 44,
+        "researchedUnresolved": 34455,
+        "notResearched": 179021,
+        "conflicts": 0,
+        "summarySha256": "319278de773d70a4dc2773c09df3f6414b28f597d8b1174815e0f05bcf87cf93"
+      },
+      "delta": {
+        "verifiedPresent": 59,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -59
+      },
+      "speciesDelta": {
+        "columba-livia": 3,
+        "passer-domesticus": 34,
+        "sturnus-vulgaris": 22
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195612,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314521,
+      "conflicts": 0,
+      "immutableResearchRuns": 1422,
+      "assertionEvents": 309506,
+      "pairOutcomes": 1721292,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "9524d0b2e5e7772fc2775f7afd870813d4c63509de04c676abd08a39ad78ddc4"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Ohio byte stability: pass across 94 tracked state projection files with protected shared outputs unchanged",
+      "All 51 state byte-stability checks at the common 2026-08-29 cutoff: pass",
+      "Committed 51-state projection checksums and publication modes: pass",
+      "Cross-state projections, national denominator, readiness, compiler, compatibility, and data integrity: pass",
+      "USGS BBS adapter and immutable-run validation: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Pinned Node 22 aggregate research integrity: pass across 1,422 runs, 309,506 assertions, and 1,721,292 outcomes",
+      "Source coverage and publication manifest reconciliation: pass",
+      "Publication manifest current and static R2 plan: pass with zero current modeled requests issued",
+      "Vercel publication, ignored-build, public projection, and research deep-link contracts: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Whitespace and clean-worktree checks before push: pass"
+    ]
+  },
+  "preparedR2Release": {
+    "releaseId": "research-ba6c2f47c5e6-fbc6089df4be0000",
+    "sourceCommit": "ba6c2f47c5e6206cc7262f320247828934db0c67",
+    "manifestBytes": 1565427,
+    "manifestSha256": "7e83647234250e9337243c2fa73182752ac4ef95b178567e20043c1cd48f5526",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1005890491,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "ohioSummarySha256": "18e67a9949a9284e94ed1a21e922bca9ca6700c16a76d3ac0fa5c27392cca3cd",
+    "franklinCountySha256": "ff3a0604d121e29f5b6af812d16f2484ef7a2c0546f880b96b79ee1e186667a3",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginDecodedManifestHashesEqualPointer": true,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "97ea2f1128d1b9a81e3b13812fc584f955af9a7aa70841159e0b7e8cb4740470"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "118c2be8aeadd4fcc4d4575ae0173a26edb9b110f44a0a1c50b61143eba3d471"
+      },
+      {
+        "path": "/research?state=OH&county=39049&species=passer-domesticus",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "118c2be8aeadd4fcc4d4575ae0173a26edb9b110f44a0a1c50b61143eba3d471"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "95ce91fe65b15aad2e32d254032e021b25c352141eff9cc653a003c041e9f8a2"
+      }
+    ],
+    "securityHeaders": {
+      "contentSecurityPolicy": "present",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "xFrameOptions": "DENY",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "liveOhioBoundary": {
+      "activeSummarySha256": "18e67a9949a9284e94ed1a21e922bca9ca6700c16a76d3ac0fa5c27392cca3cd",
+      "preparedSummarySha256": "319278de773d70a4dc2773c09df3f6414b28f597d8b1174815e0f05bcf87cf93",
+      "activeVerifiedPresent": 6773,
+      "activeNotResearched": 179080,
+      "preparedOhioIsPromoted": false
+    }
+  },
+  "productionBrowser": {
+    "route": "https://isitusa.com/research?state=OH&county=39049&species=House+Sparrow",
+    "visibleState": "Ohio",
+    "visibleCounty": "Franklin / 39049",
+    "visibleResearchAsOf": "Aug 27, 2026",
+    "visibleOhioVerifiedPresent": 6773,
+    "visibleOhioNotResearched": 179080,
+    "visibleOhioConflicts": 0,
+    "visibleFranklinVerifiedPresent": 130,
+    "visibleFranklinNotResearched": 2035,
+    "visibleHouseSparrowPairStatus": "Not Researched",
+    "visibleHouseSparrowResearchStatus": "Not Started",
+    "visibleHouseSparrowEvidenceCount": 0,
+    "expectedBoundary": "The browser must show the active pre-Ohio projection until the guarded R2 pointer is promoted.",
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0,
+    "imageCount": 1,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "frameworkErrorOverlay": false,
+    "activeDataRequests": [
+      "https://isitusa.com/research-data/current.json",
+      "https://isitusa.com/research-data/releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+      "https://isitusa.com/research-data/objects/sha256/18/18e67a9949a9284e94ed1a21e922bca9ca6700c16a76d3ac0fa5c27392cca3cd.json",
+      "https://isitusa.com/research-data/objects/sha256/ff/ff3a0604d121e29f5b6af812d16f2484ef7a2c0546f880b96b79ee1e186667a3.json"
+    ],
+    "testArtifactsRemoved": true
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, Vercel immutable deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable routes, expected 404 behavior, the Ohio research deep link, direct data origin, same-origin proxy, and decoded immutable manifest hashes passed."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The unchanged research interface rendered meaningful Ohio and Franklin County content at 1440x1000 desktop and 390x844 mobile with zero overflow or broken images."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The changed flow retained named headings, navigation, comboboxes, tabs, search controls, desktop table semantics, mobile card controls, and readable status text. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the active R2 pointer remains short-lived while content objects are immutable. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; five production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub/Vercel success, live HTTP parity, pointer parity, decoded manifest parity, browser console health, and the intentional old-data boundary were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local HEAD, origin/main, public GitHub main, and production deployment identify 58ef808029ca9a9482899d6892ccb9e36de7f47d; canonical bodies match immutable deployment projectisitusa-poyrqgyqh-unigentamos.vercel.app. No new runtime environment variable or migration is required."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics and makes no manual public absence claim."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected Ohio from the current 59-net-pair tranche after a retained-input national replay measured 1,031 residual pairs and confirmed all 59 selected Ohio pairs were still not researched.",
+    "Integrated 59 exact positive BBS route-start pairs without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Ran the complete research gate, 51-state byte stability, Vercel publication contracts, and production build under pinned Node 22 while preserving the frozen suite and publication contract."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+    "applicationReleaseCommit": "58ef808029ca9a9482899d6892ccb9e36de7f47d",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The Ohio BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 58ef808029ca9a9482899d6892ccb9e36de7f47d is on origin/main and public GitHub main and is tied to successful GitHub/Vercel Production deployment 6154415864 at projectisitusa-poyrqgyqh-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, browser rendering, desktop and mobile overflow, broken images, console health, pointer identity, and decoded manifest identity passed. The prepared Ohio research release adds 59 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. This receipt does not attest to the commit that contains it or any future R2 action."
+}
