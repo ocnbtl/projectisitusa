@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ca-in-tranche-comparison-20260828-r1",
+  "evaluatedAt": "2026-08-28T11:45:58.303Z",
+  "status": "selected-local-plan-commit-authorized",
+  "objective": "Break the fresh California and Indiana USGS BBS tie using net county-species movement and prospective content-addressed publication footprint without acquiring source data or mutating production.",
+  "baseline": {
+    "canonicalHead": "7e8c6843ac18f6f4d5ee99d6eda305f79450ab80",
+    "originMain": "7e8c6843ac18f6f4d5ee99d6eda305f79450ab80",
+    "currentR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "currentR2PointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "lastVerifiedRetainedBytes": 7709332664,
+    "retainedByteSafetyLimit": 8000000000,
+    "lastVerifiedRetainedByteMargin": 290667336,
+    "nationalGrossCountySpeciesPairs": 1548,
+    "nationalAlreadyPresentPairs": 320,
+    "nationalNetNewPairs": 1228,
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingQueueItems": 0
+  },
+  "sourceIdentity": {
+    "sourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "footprintModel": {
+    "method": "Current complete public state object bytes plus the observed Illinois compile growth of 294743 bytes for 87 net pairs, applied at 3387.851 bytes per net pair.",
+    "modelCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "modeledGrowthAllowancePerStateBytes": 233762,
+    "qualification": "This is a local comparison estimate, not an authenticated R2 inventory or guarded publisher shadow plan. It cannot authorize upload or promotion."
+  },
+  "alternatives": [
+    {
+      "stateCode": "CA",
+      "grossPairs": 72,
+      "netNewPairs": 69,
+      "grossAcceptedRows": 295,
+      "affectedCounties": 34,
+      "species": [
+        "columba-livia",
+        "passer-domesticus",
+        "streptopelia-decaocto",
+        "sturnus-vulgaris"
+      ],
+      "candidatePlanBytes": 10787,
+      "candidatePlanSha256": "017b3e9e4b4cfc323c1de5aa809718632c10cd413ad0972d6ed7da380b34d064",
+      "projectedPublicObjects": 59,
+      "currentPublicObjectBytes": 32222608,
+      "estimatedUploadBytes": 32456370,
+      "estimatedProjectedRetainedBytes": 7741789034,
+      "estimatedRetainedByteMargin": 258210966
+    },
+    {
+      "stateCode": "IN",
+      "grossPairs": 71,
+      "netNewPairs": 69,
+      "grossAcceptedRows": 269,
+      "selectedCandidateSupportingRows": 254,
+      "affectedCounties": 41,
+      "species": [
+        "columba-livia",
+        "passer-domesticus",
+        "sturnus-vulgaris"
+      ],
+      "candidatePlanBytes": 10689,
+      "candidatePlanSha256": "0d81b2954a0cd72be783f9f232a1486c927869de8eb831c275806aa2c032ad67",
+      "projectedPublicObjects": 93,
+      "currentPublicObjectBytes": 25863351,
+      "estimatedUploadBytes": 26097113,
+      "estimatedProjectedRetainedBytes": 7735429777,
+      "estimatedRetainedByteMargin": 264570223
+    }
+  ],
+  "decision": {
+    "selectedStateCode": "IN",
+    "selectedPlanId": "usgs-bbs-in-route-start-tranche-v1",
+    "selectedPlanPath": "src/data/research/national-acquisition-plans/usgs-bbs-in-route-start-tranche-v1.json",
+    "netMovementDifference": 0,
+    "estimatedUploadByteAdvantage": 6359257,
+    "estimatedUploadByteReductionPercent": 19.59,
+    "objectCountTradeoff": "Indiana is estimated to create 34 more content-addressed state objects, but preserves about 6.36 MB more retained storage. Storage is the binding project constraint; Class A and Class B request limits are not close to their configured stops.",
+    "reason": "Indiana provides the same 69 net-new county-species determinations with the smaller modeled retained-byte footprint and fewer accepted source rows. California remains the next equal-yield candidate."
+  },
+  "semantics": {
+    "positiveEvidenceOnly": true,
+    "verifiedAbsentMovement": 0,
+    "surveyNonDetectionMovement": 0,
+    "sourceSilenceCreatesNegativeClaim": false
+  },
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "acquisitionRunsCreated": 0,
+    "projectionGenerationCommands": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "deploymentCommands": 0
+  },
+  "nextGate": "Commit the scoped plan checkpoint, pass the committed-input semantic dry-run, and then execute the bounded no-cost GET-only acquisition while the source identity and exclusive MAIN ownership remain exact. Publication still requires its separate freshness, cadence, storage, and evidence gates."
+}
