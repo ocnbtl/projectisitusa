@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260829T013803Z__usgs-bbs__eb398d7969fa",
+  "status": "complete",
+  "started_at": "2026-08-29T01:38:03.040Z",
+  "finished_at": "2026-08-29T01:38:39.542Z",
+  "actor_type": "adapter",
+  "actor_id": "usgs-bbs-route-start@1.1.1",
+  "source_id": "usgs-bbs",
+  "source_registry_hash": "3b42bcf1fb952dd21b5bc1d9fb502dd140eaf1b23faa81ff7b739551a8de7037",
+  "adapter_id": "usgs-bbs-route-start",
+  "adapter_version": "1.1.1",
+  "adapter_code_hash": "c49efcaf3a2a2a0b0f2acd8385eee80c9aed74fcd1519abc67c1272e8d1f6ec7",
+  "code_commit": "c3e056d3142d61cb1439cdf78a710fed2ea72f4f",
+  "parameter_hash": "eb398d7969faab4c0bb2143690efd8d7abfad6818f2d4322d1062d11c9b77b98",
+  "parameters": {
+    "stateCode": "CA",
+    "mode": "hash-pinned-standard-stop1-positive",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseItemUrl": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd",
+    "rawDataPageUrl": "https://www.pwrc.usgs.gov/BBS/RawData/",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "citation": "Ziolkowski Jr., D.J., Lutmerding, M., Skalos, S.M., English, W.B., and Hudson, M-A.R., 2026, North American Breeding Bird Survey Dataset 1966 - 2025: U.S. Geological Survey data release, https://doi.org/10.5066/P144YU3S.",
+    "releaseYearRange": {
+      "start": 1966,
+      "end": 2025
+    },
+    "minimumRequestIntervalMs": 250,
+    "maxResponseBytes": 80000000,
+    "filters": {
+      "countryNum": "840",
+      "runType": "1",
+      "stop": "Stop1",
+      "minimumStopCount": 1,
+      "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+    },
+    "files": [
+      {
+        "name": "Routes.csv",
+        "size": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380"
+      },
+      {
+        "name": "Weather.csv",
+        "size": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6"
+      },
+      {
+        "name": "50-StopData.zip",
+        "size": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "size": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98"
+      }
+    ],
+    "exactTargets": [
+      {
+        "speciesId": "alopochen-aegyptiaca",
+        "scientificName": "Alopochen aegyptiaca",
+        "aou": "20630"
+      },
+      {
+        "speciesId": "columba-livia",
+        "scientificName": "Columba livia",
+        "aou": "03131"
+      },
+      {
+        "speciesId": "cygnus-olor",
+        "scientificName": "Cygnus olor",
+        "aou": "01782"
+      },
+      {
+        "speciesId": "myiopsitta-monachus",
+        "scientificName": "Myiopsitta monachus",
+        "aou": "03824"
+      },
+      {
+        "speciesId": "passer-domesticus",
+        "scientificName": "Passer domesticus",
+        "aou": "06882"
+      },
+      {
+        "speciesId": "streptopelia-decaocto",
+        "scientificName": "Streptopelia decaocto",
+        "aou": "22860"
+      },
+      {
+        "speciesId": "sturnus-vulgaris",
+        "scientificName": "Sturnus vulgaris",
+        "aou": "04930"
+      }
+    ],
+    "unmatchedCatalogBirds": [
+      "Aratinga erythrogenys",
+      "Brotogeris versicolurus",
+      "Pycnonotus jocosus"
+    ],
+    "expectedStateAcceptedRows": 292,
+    "expectedStateGrossPairs": 72,
+    "expectedStateNetNewPairs": 69,
+    "nationalPreflight": {
+      "archiveRows": 4551591,
+      "acceptedRows": 5322,
+      "grossCountySpeciesPairs": 1548,
+      "netNewPairs": 1159,
+      "resolvedUnitedStatesRoutes": 4453,
+      "unresolvedUnitedStatesRoutes": 5,
+      "standardRuns": 110158
+    },
+    "candidatePairs": [
+      "06001:columba-livia",
+      "06001:passer-domesticus",
+      "06001:sturnus-vulgaris",
+      "06007:passer-domesticus",
+      "06017:passer-domesticus",
+      "06019:passer-domesticus",
+      "06019:sturnus-vulgaris",
+      "06021:passer-domesticus",
+      "06021:streptopelia-decaocto",
+      "06021:sturnus-vulgaris",
+      "06023:passer-domesticus",
+      "06023:sturnus-vulgaris",
+      "06025:sturnus-vulgaris",
+      "06029:passer-domesticus",
+      "06029:streptopelia-decaocto",
+      "06029:sturnus-vulgaris",
+      "06035:passer-domesticus",
+      "06035:streptopelia-decaocto",
+      "06035:sturnus-vulgaris",
+      "06039:passer-domesticus",
+      "06039:streptopelia-decaocto",
+      "06045:passer-domesticus",
+      "06045:streptopelia-decaocto",
+      "06049:passer-domesticus",
+      "06049:streptopelia-decaocto",
+      "06049:sturnus-vulgaris",
+      "06051:passer-domesticus",
+      "06051:streptopelia-decaocto",
+      "06053:passer-domesticus",
+      "06053:streptopelia-decaocto",
+      "06055:streptopelia-decaocto",
+      "06057:passer-domesticus",
+      "06063:passer-domesticus",
+      "06063:sturnus-vulgaris",
+      "06065:passer-domesticus",
+      "06065:sturnus-vulgaris",
+      "06069:passer-domesticus",
+      "06069:streptopelia-decaocto",
+      "06069:sturnus-vulgaris",
+      "06071:passer-domesticus",
+      "06071:streptopelia-decaocto",
+      "06073:passer-domesticus",
+      "06073:streptopelia-decaocto",
+      "06073:sturnus-vulgaris",
+      "06077:passer-domesticus",
+      "06077:sturnus-vulgaris",
+      "06079:passer-domesticus",
+      "06079:streptopelia-decaocto",
+      "06079:sturnus-vulgaris",
+      "06083:streptopelia-decaocto",
+      "06083:sturnus-vulgaris",
+      "06089:passer-domesticus",
+      "06091:passer-domesticus",
+      "06091:sturnus-vulgaris",
+      "06093:passer-domesticus",
+      "06093:streptopelia-decaocto",
+      "06093:sturnus-vulgaris",
+      "06095:sturnus-vulgaris",
+      "06097:streptopelia-decaocto",
+      "06099:passer-domesticus",
+      "06099:streptopelia-decaocto",
+      "06099:sturnus-vulgaris",
+      "06101:passer-domesticus",
+      "06103:passer-domesticus",
+      "06103:streptopelia-decaocto",
+      "06103:sturnus-vulgaris",
+      "06105:sturnus-vulgaris",
+      "06113:passer-domesticus",
+      "06113:sturnus-vulgaris"
+    ]
+  },
+  "requested_scope": {
+    "state_code": "CA",
+    "county_fips": [
+      "06001",
+      "06007",
+      "06017",
+      "06019",
+      "06021",
+      "06023",
+      "06025",
+      "06029",
+      "06035",
+      "06039",
+      "06045",
+      "06049",
+      "06051",
+      "06053",
+      "06055",
+      "06057",
+      "06063",
+      "06065",
+      "06069",
+      "06071",
+      "06073",
+      "06077",
+      "06079",
+      "06083",
+      "06089",
+      "06091",
+      "06093",
+      "06095",
+      "06097",
+      "06099",
+      "06101",
+      "06103",
+      "06105",
+      "06113"
+    ],
+    "species_ids": [
+      "columba-livia",
+      "passer-domesticus",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "pair_keys": [
+      "06001:columba-livia",
+      "06001:passer-domesticus",
+      "06001:sturnus-vulgaris",
+      "06007:passer-domesticus",
+      "06017:passer-domesticus",
+      "06019:passer-domesticus",
+      "06019:sturnus-vulgaris",
+      "06021:passer-domesticus",
+      "06021:streptopelia-decaocto",
+      "06021:sturnus-vulgaris",
+      "06023:passer-domesticus",
+      "06023:sturnus-vulgaris",
+      "06025:sturnus-vulgaris",
+      "06029:passer-domesticus",
+      "06029:streptopelia-decaocto",
+      "06029:sturnus-vulgaris",
+      "06035:passer-domesticus",
+      "06035:streptopelia-decaocto",
+      "06035:sturnus-vulgaris",
+      "06039:passer-domesticus",
+      "06039:streptopelia-decaocto",
+      "06045:passer-domesticus",
+      "06045:streptopelia-decaocto",
+      "06049:passer-domesticus",
+      "06049:streptopelia-decaocto",
+      "06049:sturnus-vulgaris",
+      "06051:passer-domesticus",
+      "06051:streptopelia-decaocto",
+      "06053:passer-domesticus",
+      "06053:streptopelia-decaocto",
+      "06055:streptopelia-decaocto",
+      "06057:passer-domesticus",
+      "06063:passer-domesticus",
+      "06063:sturnus-vulgaris",
+      "06065:passer-domesticus",
+      "06065:sturnus-vulgaris",
+      "06069:passer-domesticus",
+      "06069:streptopelia-decaocto",
+      "06069:sturnus-vulgaris",
+      "06071:passer-domesticus",
+      "06071:streptopelia-decaocto",
+      "06073:passer-domesticus",
+      "06073:streptopelia-decaocto",
+      "06073:sturnus-vulgaris",
+      "06077:passer-domesticus",
+      "06077:sturnus-vulgaris",
+      "06079:passer-domesticus",
+      "06079:streptopelia-decaocto",
+      "06079:sturnus-vulgaris",
+      "06083:streptopelia-decaocto",
+      "06083:sturnus-vulgaris",
+      "06089:passer-domesticus",
+      "06091:passer-domesticus",
+      "06091:sturnus-vulgaris",
+      "06093:passer-domesticus",
+      "06093:streptopelia-decaocto",
+      "06093:sturnus-vulgaris",
+      "06095:sturnus-vulgaris",
+      "06097:streptopelia-decaocto",
+      "06099:passer-domesticus",
+      "06099:streptopelia-decaocto",
+      "06099:sturnus-vulgaris",
+      "06101:passer-domesticus",
+      "06103:passer-domesticus",
+      "06103:streptopelia-decaocto",
+      "06103:sturnus-vulgaris",
+      "06105:sturnus-vulgaris",
+      "06113:passer-domesticus",
+      "06113:sturnus-vulgaris"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [
+    {
+      "url": "https://www.sciencebase.gov/catalog/item/6a0b0b0ab66b0188da36aedd?format=json",
+      "status": 200,
+      "retrieved_at": "2026-08-29T01:38:20.745Z",
+      "record_count": 1
+    },
+    {
+      "url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__85%2Ff3%2F30%2F85f33018ad86e77e43031f08e198e53d73532eb8",
+      "status": 200,
+      "retrieved_at": "2026-08-29T01:38:20.911Z",
+      "record_count": 5845
+    },
+    {
+      "url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__99%2F9b%2Faa%2F999baa5fdb09c96980a32e4d599892ae563b28c8",
+      "status": 200,
+      "retrieved_at": "2026-08-29T01:38:21.460Z",
+      "record_count": 144146
+    },
+    {
+      "url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__5b%2F8f%2F57%2F5b8f5740e0f92c49ed2679cef4605399c7ca0b87",
+      "status": 200,
+      "retrieved_at": "2026-08-29T01:38:22.415Z",
+      "record_count": 4551591
+    },
+    {
+      "url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__67%2F26%2F5b%2F67265bbc0d9312830188fb7e683ed344f19f5452",
+      "status": 200,
+      "retrieved_at": "2026-08-29T01:38:25.032Z",
+      "record_count": 764
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/artifacts/sciencebase-item.json",
+      "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08",
+      "bytes": 32891,
+      "media_type": "application/json"
+    },
+    {
+      "path": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/artifacts/ca-standard-stop1-detections.json",
+      "sha256": "49a68ae545ed945bc2d1ff6f4b19075a305f54a5b9eefd99f33795c39b50a2db",
+      "bytes": 95908,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/assertions.ndjson",
+      "sha256": "5388f949dce7c726b45c7d2cf933a7b9f1efbac365fbb7d3c86705113e7ec4a0",
+      "bytes": 165169,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/reviews.ndjson",
+      "sha256": "cdea04bb23daeea2df3d94f83a79a9b41bfec1d5aff2d7d2efa1621524694466",
+      "bytes": 65941,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/outcomes.ndjson",
+      "sha256": "150a2c5d1b00ecc5dec08ab045d26905687fe12d48639a56f72fdcc9092beb04",
+      "bytes": 54841,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 69,
+    "candidate_records": 292,
+    "assertion_events": 69,
+    "review_events": 69,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 69
+  },
+  "errors": [],
+  "known_caveats": [
+    "Route-start detections are sampled occurrence evidence, not countywide inventory."
+  ],
+  "source_warnings": [
+    "BBS route-start rows support point recorded presence and survey detection only.",
+    "Later stops, route totals, zero rows, unmatched taxa, and source silence create no county absence or non-detection claim."
+  ],
+  "deviations": [],
+  "rerun_command": "npm run research:run -- --source usgs-bbs --state CA --candidate-file src/data/research/national-acquisition-plans/usgs-bbs-ca-route-start-tranche-v1.json --output-root src/data/research/runs --pairs 06001:columba-livia,06001:passer-domesticus,06001:sturnus-vulgaris,06007:passer-domesticus,06017:passer-domesticus,06019:passer-domesticus,06019:sturnus-vulgaris,06021:passer-domesticus,06021:streptopelia-decaocto,06021:sturnus-vulgaris,06023:passer-domesticus,06023:sturnus-vulgaris,06025:sturnus-vulgaris,06029:passer-domesticus,06029:streptopelia-decaocto,06029:sturnus-vulgaris,06035:passer-domesticus,06035:streptopelia-decaocto,06035:sturnus-vulgaris,06039:passer-domesticus,06039:streptopelia-decaocto,06045:passer-domesticus,06045:streptopelia-decaocto,06049:passer-domesticus,06049:streptopelia-decaocto,06049:sturnus-vulgaris,06051:passer-domesticus,06051:streptopelia-decaocto,06053:passer-domesticus,06053:streptopelia-decaocto,06055:streptopelia-decaocto,06057:passer-domesticus,06063:passer-domesticus,06063:sturnus-vulgaris,06065:passer-domesticus,06065:sturnus-vulgaris,06069:passer-domesticus,06069:streptopelia-decaocto,06069:sturnus-vulgaris,06071:passer-domesticus,06071:streptopelia-decaocto,06073:passer-domesticus,06073:streptopelia-decaocto,06073:sturnus-vulgaris,06077:passer-domesticus,06077:sturnus-vulgaris,06079:passer-domesticus,06079:streptopelia-decaocto,06079:sturnus-vulgaris,06083:streptopelia-decaocto,06083:sturnus-vulgaris,06089:passer-domesticus,06091:passer-domesticus,06091:sturnus-vulgaris,06093:passer-domesticus,06093:streptopelia-decaocto,06093:sturnus-vulgaris,06095:sturnus-vulgaris,06097:streptopelia-decaocto,06099:passer-domesticus,06099:streptopelia-decaocto,06099:sturnus-vulgaris,06101:passer-domesticus,06103:passer-domesticus,06103:streptopelia-decaocto,06103:sturnus-vulgaris,06105:sturnus-vulgaris,06113:passer-domesticus,06113:sturnus-vulgaris"
+}
