@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-co-route-start-tranche-acquisition-20260829-r1",
+  "evaluatedAt": "2026-08-29T05:14:58.3765451Z",
+  "status": "validated-local-awaiting-national-and-publication-gates",
+  "objective": "Integrate a bounded Colorado tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-co-route-start-tranche-selection-20260829-r1.json",
+    "method": "Fresh national replay after the California evidence run selected Colorado from a 59-pair tie with Ohio because all 59 Colorado gross pairs were net-new and Colorado required fewer supporting rows.",
+    "remainingNationalBbsNetPairsBeforeColorado": 1090,
+    "coloradoGrossPairs": 59,
+    "coloradoNetNewPairs": 59,
+    "coloradoCountyCount": 32,
+    "supportingRows": 231
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-co-route-start-tranche-v1.json",
+    "planSha256": "e61b646a4e61ef7d5802a2d2d16a647b1f504182bdef26d6ff483c2cae6afe80",
+    "selectedPairSha256": "9b53aaf8cf030cf466f3707565c2825059d801776c16ba8bd5417f8bd0162307",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "planningCommit": "988df8ab5c02037b94812cc85a3168b87c3086b2",
+    "runCommit": "33dc88780f97de5255a3b851c506f1b2c2dcc62d",
+    "coverageIndexCommit": "7cc3319ab5b241c9630b0650abdea1a967082e1a",
+    "sourceCoverageIndexId": "source-coverage-aa1ba5c507e3347cebe3",
+    "sourceCoverageIndexSha256": "1055daf0d13c19a4ffe0ab9f98a4c114fe2ae3ae4995032930ab2cbb4674f146",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 59,
+      "expectedProviderGets": 5,
+      "parameterHash": "4b960d0a584993193f1dddbeffd501901b68e140528dce9358ba9512b9882669"
+    }
+  },
+  "nationalPreflight": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterCalifornia": 458,
+    "netNewPairsBeforeColorado": 1090
+  },
+  "immutableRun": {
+    "runId": "20260829T042826Z__usgs-bbs__4b960d0a5849",
+    "receiptPath": "src/data/research/runs/20260829T042826Z__usgs-bbs__4b960d0a5849/receipt.json",
+    "receiptSha256": "51e0877bce8bcb4aae99173ee16c9c5d34d4784b6def7085b3cf76857d52934f",
+    "assertionsSha256": "1d2c500d50a37d4d6c0f92269f5f53c7445cc2f4f3d6e7f3e68aac49e74a9562",
+    "outcomesSha256": "0166445ee406661f366e985f9de4339a219fa172f0d2fa2996b13475e27ad789",
+    "status": "complete",
+    "codeCommit": "988df8ab5c02037b94812cc85a3168b87c3086b2",
+    "startedAt": "2026-08-29T04:28:26.654Z",
+    "completedAt": "2026-08-29T04:28:45.948Z",
+    "requestedPairs": 59,
+    "candidateRecords": 231,
+    "assertionEvents": 59,
+    "reviewEvents": 59,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 59,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/co-standard-stop1-detections.json",
+        "bytes": 76047,
+        "sha256": "40f5414f2a6167e5185b4931e8a29fe3195a095e5b774d77290ef96445375aef"
+      }
+    ]
+  },
+  "coloradoMovement": {
+    "fullCountySpeciesDenominator": 160256,
+    "affectedCountyCount": 32,
+    "baseline": {
+      "verifiedPresent": 2309,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 29563,
+      "notResearched": 128384,
+      "explicitOutcomePairCount": 31872,
+      "evidenceRecordCount": 9166,
+      "researchRunCount": 33,
+      "summarySha256": "46b8f22038a39e0f7143a36226be1d7f362fc375b765ccc30151b8340a1f25a9"
+    },
+    "final": {
+      "verifiedPresent": 2368,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 29563,
+      "notResearched": 128325,
+      "explicitOutcomePairCount": 31931,
+      "evidenceRecordCount": 9225,
+      "researchRunCount": 34,
+      "conflicts": 0,
+      "summarySha256": "ddc6721774c2756e1397f22fc92b71ce4c3000ba7b3075227e43b15eca4a5153"
+    },
+    "delta": {
+      "verifiedPresent": 59,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -59,
+      "explicitOutcomePairCount": 59,
+      "evidenceRecordCount": 59,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 2,
+      "passer-domesticus": 24,
+      "streptopelia-decaocto": 17,
+      "sturnus-vulgaris": 16
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195494,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314639,
+      "immutableResearchRuns": 1420
+    },
+    "preparedAfterColorado": {
+      "verifiedPresent": 195553,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314580,
+      "conflicts": 0,
+      "immutableResearchRuns": 1421,
+      "assertionEvents": 309447,
+      "pairOutcomes": 1721233,
+      "unreviewedEvidence": 0
+    },
+    "delta": {
+      "verifiedPresent": 59,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -59,
+      "immutableResearchRuns": 1
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 59 planned equals 59 accepted plus 0 rejected",
+    "coloradoDenominatorConservation": "pass: 160,256 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 59 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence and zero not-detected movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "immutableRunValidation": "pass: valid bundle accepted and tested corruption paths rejected",
+    "fullLedgerIntegrity": "pass: 1,421 runs, 309,447 assertions, 1,721,233 outcomes, zero unreviewed evidence, and zero conflicts",
+    "sourceCoverage": "pass: 1,421 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Colorado compiles were byte-identical across 70 tracked files and protected shared outputs",
+    "publication": "pending national readiness, all-state, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "productionDeployments": 0
+  },
+  "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+}
