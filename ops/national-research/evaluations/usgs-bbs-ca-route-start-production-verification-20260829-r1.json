@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ca-route-start-production-verification-20260829-r1",
+  "verifiedAt": "2026-08-29T03:55:30Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative California USGS BBS research release. The research-data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "5402fa70cfa87ed84d033a1aa6b88d0e86dac97f",
+    "releaseSha": "987063d321a92f9a8263521164579052c82460be",
+    "originMainSha": "987063d321a92f9a8263521164579052c82460be",
+    "githubProductionDeploymentId": 6152063677,
+    "githubProductionDeploymentStatusId": 17489129620,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "vercelDeploymentId": "FvC8cQy51W4L5budwndyuMCX52sb",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/FvC8cQy51W4L5budwndyuMCX52sb",
+    "vercelImmutableUrl": "https://projectisitusa-ircna4jo7-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "c3e056d3142d61cb1439cdf78a710fed2ea72f4f",
+      "subject": "Plan California BBS route-start tranche"
+    },
+    {
+      "sha": "9485736f072f8aa85e7f8bdbcb1a484f39b41f8a",
+      "subject": "Add California BBS route-start evidence"
+    },
+    {
+      "sha": "fd1efa08a867cd32f81286fb0dd73cfd1345c86f",
+      "subject": "Index California BBS research coverage"
+    },
+    {
+      "sha": "18e45830f3b38adaa4dc30fa045c1607671dd266",
+      "subject": "Document California BBS research movement"
+    },
+    {
+      "sha": "be2e5d34e3869528da86f730a2515128016a7a3c",
+      "subject": "Compile California BBS research projection"
+    },
+    {
+      "sha": "e7d0f5b45acf4a623a20f1a250cd44c5557d4605",
+      "subject": "Prepare California cumulative research release"
+    },
+    {
+      "sha": "6edc08c64f2b4895689c22eb7ea3fc4e307426cc",
+      "subject": "Align national research projections to 2026-08-29"
+    },
+    {
+      "sha": "e5d45c2d09da5b5eb7f876f8a4d8f0ccd8a108c0",
+      "subject": "Prepare aligned California cumulative release"
+    },
+    {
+      "sha": "987063d321a92f9a8263521164579052c82460be",
+      "subject": "Align research deep-link cutoff"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-ca-route-start-tranche-selection-20260829-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-ca-route-start-tranche-acquisition-20260829-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-ca-route-start-tranche-v1.json",
+    "planSha256": "18365e2a018300fa0a0e403516992f1115970349d1a112f7e7ff9dde4a020a21",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260829T013803Z__usgs-bbs__eb398d7969fa",
+    "runReceiptSha256": "151717a0cbdbe1f13cc06377db3058af652917b6f4da81db03fe693f6ee9b462",
+    "requestedPairs": 69,
+    "candidateRecords": 292,
+    "assertionEvents": 69,
+    "reviewEvents": 69,
+    "pairOutcomes": 69,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "california": {
+      "countySpeciesDenominator": 145232,
+      "affectedCounties": 34,
+      "baseline": {
+        "verifiedPresent": 6314,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 23266,
+        "notResearched": 115652,
+        "summarySha256": "4e918ac23327643e23f5bb89987722b9b9a03cb4cfa79f61b8372b518680c578"
+      },
+      "prepared": {
+        "verifiedPresent": 6383,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 23266,
+        "notResearched": 115583,
+        "conflicts": 0,
+        "summarySha256": "53a61642a37fbc0c376999d84c39954ad4095ef1ecce75f94cc6b242ef8c6ce3"
+      },
+      "delta": {
+        "verifiedPresent": 69,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -69
+      },
+      "speciesDelta": {
+        "columba-livia": 1,
+        "passer-domesticus": 28,
+        "streptopelia-decaocto": 18,
+        "sturnus-vulgaris": 22
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195494,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314639,
+      "conflicts": 0,
+      "immutableResearchRuns": 1420,
+      "assertionEvents": 309388,
+      "pairOutcomes": 1721174,
+      "unreviewedEvidence": 0
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "California byte stability: pass across 64 tracked state projection files",
+      "All 51 state projections aligned to 2026-08-29: pass across 3,290 files",
+      "All 51 state byte-stability checks: pass",
+      "All-state semantic comparison after normalizing expected cutoff and freshness fields: zero mismatches",
+      "Cross-state projections, national denominator, readiness, compiler, and compatibility integrity: pass",
+      "USGS BBS adapter and immutable-run validation: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Direct pinned Node 22 research integrity: pass across 1,420 runs, 309,388 assertions, and 1,721,174 outcomes",
+      "Source coverage and publication manifest reconciliation: pass",
+      "Publication manifest current, static plan, and Vercel publish preparation: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Research deep-link tests: pass",
+      "Whitespace and clean-worktree checks before push: pass"
+    ],
+    "expectedFreshnessTransitions": [
+      "Alabama 01003 aging to stale",
+      "Alabama 01065 current to aging",
+      "Alabama 01073 current to aging",
+      "Washington 53017 aging to stale"
+    ]
+  },
+  "preparedR2Release": {
+    "releaseId": "research-6edc08c64f2b-9dcad73570817de1",
+    "sourceCommit": "6edc08c64f2b4895689c22eb7ea3fc4e307426cc",
+    "manifestBytes": 1565427,
+    "manifestSha256": "d7fa2c4420314e9063b78223cac58231775009819079314da5483ad51c00ffab",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1005567261,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "directAndSameOriginExactBodyMatch": true,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true
+      },
+      {
+        "path": "/research?state=CA&county=06001&species=columba-livia",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404
+      }
+    ],
+    "securityHeaders": {
+      "contentSecurityPolicy": "present",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "xFrameOptions": "DENY",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "liveCaliforniaBoundary": {
+      "activeSummarySha256": "4e918ac23327643e23f5bb89987722b9b9a03cb4cfa79f61b8372b518680c578",
+      "preparedSummarySha256": "53a61642a37fbc0c376999d84c39954ad4095ef1ecce75f94cc6b242ef8c6ce3",
+      "preparedCaliforniaIsPromoted": false
+    }
+  },
+  "productionBrowser": {
+    "route": "https://isitusa.com/research?state=CA&county=06001&species=columba-livia",
+    "visibleState": "California",
+    "visibleCounty": "Alameda / 06001",
+    "visibleResearchAsOf": "Aug 27, 2026",
+    "visibleCaliforniaVerifiedPresent": 6314,
+    "visibleCaliforniaNotResearched": 115652,
+    "visibleCaliforniaConflicts": 0,
+    "visibleRockPigeonPairStatus": "Not Researched",
+    "visibleRockPigeonResearchStatus": "Not Started",
+    "expectedBoundary": "The browser must show the active pre-California projection until the guarded R2 pointer is promoted.",
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "frameworkErrorOverlay": false,
+    "activeDataRequests": [
+      "https://isitusa.com/research-data/current.json",
+      "https://isitusa.com/research-data/releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+      "https://isitusa.com/research-data/objects/sha256/4e/4e918ac23327643e23f5bb89987722b9b9a03cb4cfa79f61b8372b518680c578.json"
+    ]
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, GitHub Production, Vercel immutable deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable routes, expected 404 behavior, the California research route, direct data origin, and same-origin proxy passed."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The unchanged research interface rendered meaningful California and Alameda County content at desktop and 390x844 mobile with zero overflow or broken images."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The changed flow retained named headings, navigation, comboboxes, tabs, search controls, table semantics, and readable status text. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the active R2 pointer remains short-lived while content objects are immutable. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; five production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub/Vercel success, live HTTP parity, pointer parity, browser console health, and the intentional old-data boundary were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Origin/main and production deployment identify 987063d321a92f9a8263521164579052c82460be; canonical bodies match immutable deployment projectisitusa-ircna4jo7-unigentamos.vercel.app."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics and makes no manual public absence claim."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Aligned all 51 state projections to the common 2026-08-29 cutoff, with zero normalized semantic mismatches and only four expected one-day freshness transitions.",
+    "Aligned the public research deep-link cutoff so Vercel publication tests consume the same prepared projection date.",
+    "Ran the exhaustive integrity scan directly on pinned Node 22 after a diagnostic npm invocation exposed nested Node 24 resolution."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "64f19c4bdd3477cf0999affb3c3f73b9aec6d57c",
+    "applicationReleaseCommit": "987063d321a92f9a8263521164579052c82460be",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The California BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 987063d321a92f9a8263521164579052c82460be is on origin/main and tied to successful GitHub/Vercel Production deployment 6152063677 at projectisitusa-ircna4jo7-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, browser rendering, mobile overflow, broken images, and console health passed. The prepared California research release adds 69 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on Illinois release research-e2115f6a705f-163982b59c8351b2. This receipt does not attest to the commit that contains it or any future R2 action."
+}
