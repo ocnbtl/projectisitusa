@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-oh-route-start-tranche-acquisition-20260829-r1",
+  "evaluatedAt": "2026-08-29T08:29:20.2484829Z",
+  "status": "complete-local-integration-pending-generated-commit-and-release-gates",
+  "objective": "Integrate a bounded Ohio tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-oh-route-start-tranche-selection-20260829-r1.json",
+    "method": "Fresh national replay after the Colorado evidence run selected Ohio as the highest remaining net-movement state.",
+    "remainingNationalBbsNetPairsBeforeOhio": 1031,
+    "ohioGrossPairs": 65,
+    "ohioNetNewPairs": 59,
+    "ohioCountyCount": 36,
+    "supportingRows": 221
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-oh-route-start-tranche-v1.json",
+    "planSha256": "354f870dc2e0cf8162daf367263d1c64d3df001deafbad511e48ee68c57453d4",
+    "selectedPairSha256": "a34005d8c253a7c485e02206ede73ba7a5fd10b959d8cb06ba65bfa50639cde3",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "planningCommit": "767406f6a46c69fa5aa6ea6d0900ab593213c34c",
+    "runCommit": "47993a0937d0285117a88d96c39e004fbcab32e8",
+    "coverageIndexCommit": "5253742cb033cf26f907b211486652dc67fdc0d1",
+    "sourceCoverageIndexId": "source-coverage-173faf7b137fe5ea90aa",
+    "sourceCoverageIndexSha256": "642e71654f6b293311b8b3db33d71adf52da0bd4b3b1cd8888b7d08ed4d11f59",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 59,
+      "expectedProviderGets": 5,
+      "parameterHash": "e322673923977576d66fa766c28424749c1dab60d7228b2c04245910759f103c"
+    }
+  },
+  "nationalPreflight": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterColorado": 517,
+    "netNewPairsBeforeOhio": 1031
+  },
+  "immutableRun": {
+    "runId": "20260829T080128Z__usgs-bbs__e32267392397",
+    "receiptPath": "src/data/research/runs/20260829T080128Z__usgs-bbs__e32267392397/receipt.json",
+    "receiptSha256": "0b847ccbd1bc7f3f78a0b19ca91b2de4b6d33089bd6027accfc837759ea51b65",
+    "assertionsSha256": "030ef9e5c67e028c6a217e92fd48ea5e26d91664421ea960778dd8f7bd869869",
+    "outcomesSha256": "481b7392158885f14886d99c839de46f227ff5c1a67ffbd83ec6876eea8faa0b",
+    "status": "complete",
+    "codeCommit": "767406f6a46c69fa5aa6ea6d0900ab593213c34c",
+    "startedAt": "2026-08-29T08:01:28.188Z",
+    "completedAt": "2026-08-29T08:08:03.822Z",
+    "requestedPairs": 59,
+    "candidateRecords": 221,
+    "assertionEvents": 59,
+    "reviewEvents": 59,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 59,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/oh-standard-stop1-detections.json",
+        "bytes": 73227,
+        "sha256": "20871bbf5ab6ff4c90f1a712bee2c6774c3bf9a6842c80ab61268d08cf4a82aa"
+      }
+    ]
+  },
+  "ohioMovement": {
+    "fullCountySpeciesDenominator": 220352,
+    "affectedCountyCount": 36,
+    "baseline": {
+      "verifiedPresent": 6773,
+      "verifiedAbsent": 0,
+      "notDetected": 44,
+      "researchedUnresolved": 34455,
+      "notResearched": 179080,
+      "explicitOutcomePairCount": 41272,
+      "evidenceRecordCount": 8305,
+      "researchRunCount": 27,
+      "summarySha256": "4323d41f0db2ab57233ec4e295bd39c6d436693c50a6bff3128a4747a1fb8613"
+    },
+    "final": {
+      "verifiedPresent": 6832,
+      "verifiedAbsent": 0,
+      "notDetected": 44,
+      "researchedUnresolved": 34455,
+      "notResearched": 179021,
+      "explicitOutcomePairCount": 41331,
+      "evidenceRecordCount": 8364,
+      "researchRunCount": 28,
+      "conflicts": 0,
+      "summarySha256": "319278de773d70a4dc2773c09df3f6414b28f597d8b1174815e0f05bcf87cf93"
+    },
+    "delta": {
+      "verifiedPresent": 59,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -59,
+      "explicitOutcomePairCount": 59,
+      "evidenceRecordCount": 59,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 3,
+      "passer-domesticus": 34,
+      "sturnus-vulgaris": 22
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195553,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314580,
+      "immutableResearchRuns": 1421
+    },
+    "preparedAfterOhio": {
+      "verifiedPresent": 195612,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314521,
+      "conflicts": 0,
+      "immutableResearchRuns": 1422,
+      "assertionEvents": 309506,
+      "pairOutcomes": 1721292,
+      "unreviewedEvidence": 0
+    },
+    "delta": {
+      "verifiedPresent": 59,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -59,
+      "immutableResearchRuns": 1
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 59 planned equals 59 accepted plus 0 rejected",
+    "ohioDenominatorConservation": "pass: 220,352 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 59 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence and zero not-detected movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "immutableRunValidation": "pass: valid bundle accepted and tested corruption paths rejected",
+    "fullLedgerIntegrity": "pass: 1,422 runs, 309,506 assertions, 1,721,292 outcomes, zero unreviewed evidence, and zero conflicts",
+    "sourceCoverage": "pass: 1,422 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Ohio compiles were byte-identical across 94 tracked files and protected shared outputs",
+    "stateProjectionParity": "pass: 51 configured projections and exact Ohio counts validated",
+    "publication": "pending national readiness, all-state, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "productionDeployments": 0
+  },
+  "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+}
