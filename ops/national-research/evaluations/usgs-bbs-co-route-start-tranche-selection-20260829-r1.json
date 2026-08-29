@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-co-route-start-tranche-selection-20260829-r1",
+  "evaluatedAt": "2026-08-29T04:23:48.8491550Z",
+  "status": "selected-local-plan-pending-commit",
+  "decision": {
+    "question": "Which remaining bounded no-cost USGS BBS state tranche should MAIN execute next under the accepted route-start presence contract?",
+    "selectedState": "CO",
+    "selectedDirection": "Commit and execute the Colorado USGS BBS route-start tranche.",
+    "reason": "Colorado and Ohio tie for the highest current net movement at 59 pairs. Colorado is the tighter deterministic tranche because all 59 gross pairs are net-new and its 231 supporting rows are fewer than Ohio's 255.",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped acquisition, implementation, commit, push, ordinary deployment, and continuation authority.",
+    "reopenCondition": "Any plan drift, retained-source identity mismatch, changed candidate count, incomplete outcome set, accepted conflict, paid-cost risk, or resource-policy failure."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "ccbacc084088d2871c507c516a42bcfe19a0277f",
+    "originMain": "ccbacc084088d2871c507c516a42bcfe19a0277f",
+    "publicGitHubMain": "ccbacc084088d2871c507c516a42bcfe19a0277f",
+    "initialWorktree": "clean",
+    "activeLeases": 0,
+    "applicationReleaseCommit": "987063d321a92f9a8263521164579052c82460be",
+    "applicationDeploymentStatus": "success",
+    "canonicalAndImmutableHomeExactMatch": true,
+    "canonicalResearchStatus": 200,
+    "activeR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "activeR2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "activeR2PointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z"
+  },
+  "resourceGuard": {
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 4766568448,
+    "availableMemoryPercent": 14.25,
+    "freeDiskBytes": 671356653568,
+    "tier": "yellow",
+    "decision": "Proceed with one sequential BBS analysis, acquisition, compiler, or build lane at a time while preserving the 10 percent operational RAM reserve."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380",
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6",
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240",
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98",
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "freshResidualReplay": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairs": 458,
+    "nationalNetNewPairs": 1090,
+    "leadingStates": [
+      {
+        "stateCode": "CO",
+        "grossPairs": 59,
+        "netNewPairs": 59,
+        "supportingRows": 231
+      },
+      {
+        "stateCode": "OH",
+        "grossPairs": 65,
+        "netNewPairs": 59,
+        "supportingRows": 255
+      },
+      {
+        "stateCode": "WI",
+        "grossPairs": 60,
+        "netNewPairs": 56,
+        "supportingRows": 248
+      }
+    ]
+  },
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-co-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-co-route-start-tranche-v1",
+    "bytes": 9675,
+    "sha256": "e61b646a4e61ef7d5802a2d2d16a647b1f504182bdef26d6ff483c2cae6afe80",
+    "candidatePairs": 59,
+    "supportingRowsExpected": 231,
+    "grossPairs": 59,
+    "affectedCounties": 32,
+    "speciesCount": 4,
+    "speciesPairCounts": {
+      "columba-livia": 2,
+      "passer-domesticus": 24,
+      "streptopelia-decaocto": 17,
+      "sturnus-vulgaris": 16
+    }
+  },
+  "baseline": {
+    "colorado": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 160256,
+      "verifiedPresent": 2309,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 29563,
+      "notResearched": 128384,
+      "conflicts": 0
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195494,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314639
+    }
+  },
+  "evidenceContract": {
+    "accepted": "Positive standard-run Stop 1 detections for exact current-catalog taxa whose exact retained route-start coordinate resolves to one active Colorado county equivalent.",
+    "rejectedAsNegativeEvidence": [
+      "later stops",
+      "route totals",
+      "zero counts",
+      "missing rows",
+      "unmatched taxa",
+      "source silence"
+    ],
+    "claimScale": "sampled point recorded-presence only",
+    "absenceClaimsAllowed": false,
+    "surveyNonDetectionClaimsAllowed": false,
+    "countywideInventoryClaimsAllowed": false
+  },
+  "acceptanceCriteria": [
+    "The committed plan contains exactly 59 sorted unique Colorado county-species candidates across 32 active counties.",
+    "A zero-network semantic dry-run predicts exactly five public GET requests and issues none.",
+    "The live adapter reproduces all four source identities and completes exactly 59 pair outcomes.",
+    "Compilation moves exactly 59 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "cloudflareUsageRefresh": "not-run-because-no-r2-write-is-eligible"
+  },
+  "blockers": {
+    "implementation": [],
+    "acquisition": [
+      "The five public GET responses must reproduce the committed file identities."
+    ],
+    "publicationOnly": [
+      "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+      "Fresh Cloudflare usage and an authenticated exact missing-object plan are required before a later R2 write."
+    ]
+  },
+  "nextAction": "Commit the generated plan and this evaluation, run the zero-network semantic dry-run from the clean exact commit, and execute the five-GET acquisition only if every pinned identity and 59-pair scope remains exact."
+}
