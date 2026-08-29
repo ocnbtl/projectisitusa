@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-wi-route-start-production-verification-20260829-r1",
+  "verifiedAt": "2026-08-29T15:08:22Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative Wisconsin USGS BBS research release. The research-data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "ced1c82786b7cc079be6f0b5ba4092ad4c24052f",
+    "applicationLastKnownGoodSha": "58ef808029ca9a9482899d6892ccb9e36de7f47d",
+    "releaseSha": "62f6872c26415e090cbc9ca7e9f7df3cbcebae0c",
+    "originMainSha": "62f6872c26415e090cbc9ca7e9f7df3cbcebae0c",
+    "githubMainSha": "62f6872c26415e090cbc9ca7e9f7df3cbcebae0c",
+    "githubProductionDeploymentId": 6156962041,
+    "githubProductionDeploymentStatusId": 17501420838,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "vercelDeploymentId": "F4TUPNNs1k2mJpYaWxRhwUEDgknW",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/F4TUPNNs1k2mJpYaWxRhwUEDgknW",
+    "vercelImmutableUrl": "https://projectisitusa-lugk3ijri-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "28a1572ad09a9acfebbfdd4176fde718ab63d9cf",
+      "subject": "Plan Wisconsin BBS research projection"
+    },
+    {
+      "sha": "5aca8142e15b9ea1d5d2a00cb3e679a7173456cd",
+      "subject": "Acquire Wisconsin BBS research evidence"
+    },
+    {
+      "sha": "2bed8cb1e43de1cb36617d25dc2fc2c0fbc8d1c2",
+      "subject": "Index Wisconsin BBS research coverage"
+    },
+    {
+      "sha": "3dee68a8fc03852dc0f21065b9d33be5c86c0d64",
+      "subject": "Compile Wisconsin BBS research projection"
+    },
+    {
+      "sha": "62f6872c26415e090cbc9ca7e9f7df3cbcebae0c",
+      "subject": "Prepare Wisconsin cumulative research release"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-wi-route-start-tranche-selection-20260829-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-wi-route-start-tranche-acquisition-20260829-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-wi-route-start-tranche-v1.json",
+    "planSha256": "001bdde97327b144ede7c27165033b706b6b54b8e0e843c7c8b2b5f496b02220",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260829T131602Z__usgs-bbs__debcd03287d1",
+    "runReceiptSha256": "f4d1e8b4fec239de2de68b6ab5f81b81d99ba23760077e43f16570541be623ae",
+    "assertionsSha256": "145274ef1eaaf558c8ccd782be8c93ecfdd1eb1d0d9821e3122f3c7daf9ae6dd",
+    "outcomesSha256": "a0ef2a8de2fed0ade99c1535db0956aaa19e2c4bf832e1951cf73439ea59bad4",
+    "requestedPairs": 56,
+    "candidateRecords": 229,
+    "assertionEvents": 56,
+    "reviewEvents": 56,
+    "pairOutcomes": 56,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "wisconsin": {
+      "countySpeciesDenominator": 180288,
+      "affectedCounties": 32,
+      "baseline": {
+        "verifiedPresent": 5046,
+        "verifiedAbsent": 0,
+        "notDetected": 38,
+        "researchedUnresolved": 28396,
+        "notResearched": 146808,
+        "summarySha256": "dc8e7bec7bd4a1e86945f7672e6373f55f64a9645701328f1f62ea2b8a040622"
+      },
+      "prepared": {
+        "verifiedPresent": 5102,
+        "verifiedAbsent": 0,
+        "notDetected": 38,
+        "researchedUnresolved": 28396,
+        "notResearched": 146752,
+        "conflicts": 0,
+        "summarySha256": "1f8a92a768c6194d7a1a9bfe7060bf28a7ec1a9bed5d46c74be5d7f63129d53b"
+      },
+      "delta": {
+        "verifiedPresent": 56,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -56
+      },
+      "speciesDelta": {
+        "columba-livia": 7,
+        "passer-domesticus": 26,
+        "streptopelia-decaocto": 1,
+        "sturnus-vulgaris": 22
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195668,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314465,
+      "conflicts": 0,
+      "immutableResearchRuns": 1423,
+      "assertionEvents": 309562,
+      "pairOutcomes": 1721348,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "6f5ef33c8c3b8650cb2b3f1a5930d8abc050ac6b4797fd79667f909b69c36f72"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Wisconsin byte stability: pass across 78 tracked state projection files with protected shared outputs unchanged",
+      "All 51 state byte-stability checks at the common 2026-08-29 cutoff: pass",
+      "Committed 51-state projection checksums and publication modes: pass",
+      "Cross-state projections, national denominator, readiness, compiler, compatibility, and data integrity: pass",
+      "USGS BBS adapter and immutable-run validation: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Pinned Node 22 aggregate research integrity: pass across 1,423 runs, 309,562 assertions, and 1,721,348 outcomes",
+      "Source coverage and publication manifest reconciliation: pass",
+      "Publication manifest current and static R2 plan: pass with zero current modeled requests issued",
+      "Vercel publication, ignored-build, public projection, and research deep-link contracts: pass",
+      "Project data integrity: pass",
+      "National research configuration: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Whitespace and clean-worktree checks before push: pass"
+    ]
+  },
+  "preparedR2Release": {
+    "releaseId": "research-3dee68a8fc03-b0a4abd774c1aea2",
+    "sourceCommit": "3dee68a8fc03852dc0f21065b9d33be5c86c0d64",
+    "manifestBytes": 1565427,
+    "manifestSha256": "e40cab02337534b234d96655a4c546bf241340dcd54194f3b88f92300854460b",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1006064045,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "wisconsinSummarySha256": "e74f15989661d548acbe7a1da9e1100f7734342df0a33c289d5ae1919b695004",
+    "barronCountySha256": "da1cda5dcb43ae9824648692634edb0fd96734538bc722ddc50fd616cd19cfc7",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginManifestBodiesEqual": true,
+    "directAndSameOriginWisconsinBodiesEqual": true,
+    "directAndSameOriginBarronBodiesEqual": true,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "4e50d24c5f81e2f4d07379b0ccee06b4a38b2405c207c50c3d31509dad02ff75"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "54954c0e57768a4afe418741b24affa8b15be91a7f7f80158fb2cc935ace311c"
+      },
+      {
+        "path": "/research?state=WI&county=55005&species=passer-domesticus",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "54954c0e57768a4afe418741b24affa8b15be91a7f7f80158fb2cc935ace311c"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "8f9e2452012b69cdfbf273b6ff989dc0d4b869a249626fe6a6970f371f3003db"
+      }
+    ],
+    "securityHeaders": {
+      "contentSecurityPolicy": "present",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "xFrameOptions": "DENY",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "liveWisconsinBoundary": {
+      "activeSummarySha256": "e74f15989661d548acbe7a1da9e1100f7734342df0a33c289d5ae1919b695004",
+      "preparedSummarySha256": "1f8a92a768c6194d7a1a9bfe7060bf28a7ec1a9bed5d46c74be5d7f63129d53b",
+      "activeVerifiedPresent": 5046,
+      "activeNotResearched": 146808,
+      "preparedWisconsinIsPromoted": false
+    }
+  },
+  "productionBrowser": {
+    "route": "https://isitusa.com/research?state=WI&county=55005&species=House%20Sparrow",
+    "visibleState": "Wisconsin",
+    "visibleCounty": "Barron / 55005",
+    "visibleResearchAsOf": "Aug 27, 2026",
+    "visibleWisconsinVerifiedPresent": 5046,
+    "visibleWisconsinNotResearched": 146808,
+    "visibleWisconsinConflicts": 0,
+    "visibleBarronVerifiedPresent": 39,
+    "visibleBarronNotResearched": 2039,
+    "visibleHouseSparrowPairStatus": "Not Researched",
+    "visibleHouseSparrowResearchStatus": "Not Started",
+    "visibleHouseSparrowEvidenceCount": 0,
+    "expectedBoundary": "The browser must show the active pre-Wisconsin projection until the guarded R2 pointer is promoted.",
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0,
+    "imageCount": 1,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "frameworkErrorOverlay": false,
+    "activeDataRequests": [
+      "https://isitusa.com/research-data/current.json",
+      "https://isitusa.com/research-data/releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+      "https://isitusa.com/research-data/objects/sha256/e7/e74f15989661d548acbe7a1da9e1100f7734342df0a33c289d5ae1919b695004.json",
+      "https://isitusa.com/research-data/objects/sha256/da/da1cda5dcb43ae9824648692634edb0fd96734538bc722ddc50fd616cd19cfc7.json"
+    ],
+    "testArtifactsRemoved": true
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, Vercel immutable deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable routes, expected 404 behavior, the Wisconsin research deep link, direct data origin, same-origin proxy, manifest, state summary, and county object passed."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The unchanged research interface rendered meaningful Wisconsin, Barron County, and House Sparrow content at 1440x1000 desktop and 390x844 mobile with zero overflow or broken images."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The changed flow retained named headings, navigation, comboboxes, tabs, search controls, desktop table semantics, mobile card controls, and readable status text. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the active R2 pointer remains short-lived while content objects are immutable. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; five production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub/Vercel success, live HTTP parity, pointer and object parity, browser console health, and the intentional old-data boundary were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local HEAD, origin/main, public GitHub main, and production deployment identify 62f6872c26415e090cbc9ca7e9f7df3cbcebae0c; canonical bodies match immutable deployment projectisitusa-lugk3ijri-unigentamos.vercel.app. No new runtime environment variable or migration is required."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics and makes no manual public absence claim."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected Wisconsin from a fresh retained-input national replay as the highest remaining 56-net-pair tranche and confirmed all 56 selected pairs were still not researched.",
+    "Integrated 56 exact positive BBS route-start pairs without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Ran the complete research gate, 51-state byte stability, project data integrity, national configuration, Vercel publication contracts, and production build under pinned Node 22 while preserving the frozen suite and publication contract."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "58ef808029ca9a9482899d6892ccb9e36de7f47d",
+    "applicationReleaseCommit": "62f6872c26415e090cbc9ca7e9f7df3cbcebae0c",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The Wisconsin BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 62f6872c26415e090cbc9ca7e9f7df3cbcebae0c is on origin/main and public GitHub main and is tied to successful GitHub/Vercel Production deployment 6156962041 at projectisitusa-lugk3ijri-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, browser rendering, desktop and mobile overflow, broken images, console health, pointer identity, active manifest identity, and Wisconsin/Barron object identity passed. The prepared Wisconsin research release adds 56 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. This receipt does not attest to the commit that contains it or any future R2 action."
+}
