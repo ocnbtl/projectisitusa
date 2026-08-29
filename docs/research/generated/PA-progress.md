@@ -7,20 +7,20 @@ Generated: `2026-08-29T00:00:00.000Z`
 - Species: `2504`
 - Counties: `67`
 - County-species pairs: `167768`
-- Verified present: `8136`
+- Verified present: `8184`
 - Verified absent: `0`
 - Not detected: `10`
 - Researched unresolved: `23612`
-- Not researched: `136010`
-- Determination coverage: `4.85%`
-- Research coverage: `18.93%`
-- Explicit outcome coverage: `18.9297%`
-- Applicable protocol cells: `356`
+- Not researched: `135962`
+- Determination coverage: `4.88%`
+- Research coverage: `18.96%`
+- Explicit outcome coverage: `18.9583%`
+- Applicable protocol cells: `359`
 - Current complete protocol cells: `120`
-- Protocol completion: `37.36%`
-- Current protocol completion: `33.71%`
-- Evidence records: `14760`
-- Research runs: `26`
+- Protocol completion: `37.05%`
+- Current protocol completion: `33.43%`
+- Evidence records: `14808`
+- Research runs: `27`
 - Rejection records: `1209`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rock pigeon (`columba-livia`) | wildlife | 61 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 46 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 46 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 67 | 2 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 67 | 2 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 67 | 2 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 67 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 67 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 67 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 67 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 67 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 67 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T22:51:01.436Z | 48 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-pa-route-start-tranche-acquisition-20260829-r1",
+  "evaluatedAt": "2026-08-29T22:53:00Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded Pennsylvania tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-pa-route-start-tranche-selection-20260829-r1.json",
+    "method": "Fresh national replay after the Wisconsin evidence run selected Pennsylvania as the highest remaining net-movement state.",
+    "remainingNationalBbsNetPairsBeforePennsylvania": 916,
+    "pennsylvaniaGrossPairs": 52,
+    "pennsylvaniaNetNewPairs": 48,
+    "pennsylvaniaCountyCount": 26,
+    "supportingRows": 265
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-pa-route-start-tranche-v1.json",
+    "planSha256": "a50bbcb0714d921510b1db6445d7d5249d4d9cd37f9643c903058f2b2b29d4b7",
+    "selectedPairSha256": "ca1a8910529614a5a067ab71f8a590398db199effe1bb6ebb354bc08890a13b6",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "planningCommit": "4851ab7df994228fd4c379959d69d2965b97f6cb",
+    "runCommit": "e6a86bd9bf8d3f11001235aec2f4e5eef7a59e9b",
+    "coverageIndexCommit": "8040f54183df1c6021bd5027f0a0785e5dc31bd2",
+    "sourceCoverageIndexId": "source-coverage-689ce6608ef25ecc20ef",
+    "sourceCoverageIndexSha256": "221f07836f8e28e581c04e0ae9470ffdaaf20c510cda87b4f91f10e7db342c60",
+    "semanticDryRun": {
+      "result": "pass",
+      "baseSha": "4851ab7df994228fd4c379959d69d2965b97f6cb",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 48,
+      "expectedProviderGets": 5,
+      "parameterHash": "58d0b54a5661a429a6444019c031fc99cbff6165701e65f27970195e50d84cf7"
+    }
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterWisconsin": 632,
+    "netNewPairsBeforePennsylvania": 916,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260829T225000Z__usgs-bbs__58d0b54a5661",
+    "receiptPath": "src/data/research/runs/20260829T225000Z__usgs-bbs__58d0b54a5661/receipt.json",
+    "receiptSha256": "b3110db84707b39d4bbb14d36195bc404cbf8d6a7d96cad050a5845942499617",
+    "assertionsSha256": "40290a354cf9221bf7f55db2946b0f02092b349e92342146f3bd7fe3f9eed8c4",
+    "reviewsSha256": "0a0968da808ab1d4f337ddb5ee4282df758cfe7a4ac2cfa5596b8142cffee277",
+    "outcomesSha256": "ef7c5e67b103350700eca8c3645d23b8ce7e8539d7f9153031fc11370645b5ce",
+    "status": "complete",
+    "codeCommit": "4851ab7df994228fd4c379959d69d2965b97f6cb",
+    "startedAt": "2026-08-29T22:50:00.000Z",
+    "requestedPairs": 48,
+    "candidateRecords": 265,
+    "assertionEvents": 48,
+    "reviewEvents": 48,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 48,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/pa-standard-stop1-detections.json",
+        "bytes": 85865,
+        "sha256": "ca558f4e761b86ac09e2614fc4ed49975618dd836853873a22f5e8d0cea85da1"
+      }
+    ]
+  },
+  "pennsylvaniaMovement": {
+    "fullCountySpeciesDenominator": 167768,
+    "affectedCountyCount": 26,
+    "baseline": {
+      "verifiedPresent": 8136,
+      "verifiedAbsent": 0,
+      "notDetected": 10,
+      "researchedUnresolved": 23612,
+      "notResearched": 136010,
+      "explicitOutcomePairCount": 31758,
+      "evidenceRecordCount": 14760,
+      "researchRunCount": 26
+    },
+    "final": {
+      "verifiedPresent": 8184,
+      "verifiedAbsent": 0,
+      "notDetected": 10,
+      "researchedUnresolved": 23612,
+      "notResearched": 135962,
+      "explicitOutcomePairCount": 31806,
+      "evidenceRecordCount": 14808,
+      "researchRunCount": 27,
+      "conflicts": 0,
+      "summarySha256": "39e221436603397b7e965812c0f161b55f0c1bab35edd602408aa87a6a13d370"
+    },
+    "delta": {
+      "verifiedPresent": 48,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -48,
+      "explicitOutcomePairCount": 48,
+      "evidenceRecordCount": 48,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 6,
+      "passer-domesticus": 21,
+      "sturnus-vulgaris": 21
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195668,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314465,
+      "immutableResearchRuns": 1423
+    },
+    "preparedAfterPennsylvania": {
+      "verifiedPresent": 195716,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314417,
+      "conflicts": 0,
+      "immutableResearchRuns": 1424,
+      "readinessSha256": "d01343b85cb6bffebcf589c12e747cf304a7b252077e917d92fdf08807676043"
+    },
+    "delta": {
+      "verifiedPresent": 48,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -48,
+      "immutableResearchRuns": 1
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 48 planned equals 48 accepted plus 0 rejected",
+    "pennsylvaniaDenominatorConservation": "pass: 167,768 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 48 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "immutableRunValidation": "pass: valid bundle accepted and tested corruption paths rejected",
+    "sourceCoverage": "pass: 1,424 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Pennsylvania compiles were byte-identical across 73 files and protected shared outputs",
+    "publication": "pending all-state, integrity, type, lint, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "Pennsylvania remains a research-only bounded pilot and is not certified.",
+    "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+    "The application and data release decisions remain owned by the production launch gate."
+  ],
+  "nextAction": "Commit the deterministic Pennsylvania projection and this evaluation, regenerate the cumulative publication manifest, run the full local release gates, then enter the formal production launch gate."
+}
