@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ca-route-start-tranche-selection-20260829-r1",
+  "evaluatedAt": "2026-08-29T01:33:50.6580327Z",
+  "status": "selected-local-plan-pending-commit",
+  "executiveSummary": {
+    "decisionToMake": "Select the next bounded no-cost source lane after the completed Indiana USGS BBS tranche.",
+    "recommendedDirection": "Commit and execute the California USGS BBS route-start tranche under the existing registered positive-evidence contract.",
+    "whyNow": "Indiana is integrated locally but intentionally unpromoted in R2, and independent research should continue while the seven-day data-promotion cadence is closed.",
+    "decisiveEvidence": "A fresh post-Indiana replay of 4,551,591 retained BBS rows finds 1,159 national net-new pairs and confirms California at 69 net-new pairs across 34 counties.",
+    "materialUncertainty": "The exact live acquisition bytes remain provider-dependent until the five bounded public GET requests reproduce the committed size and MD5 identities.",
+    "immediateOwnerAction": "MAIN commits the generated plan, passes a zero-network semantic dry-run, then executes the five-GET acquisition only if committed inputs remain exact."
+  },
+  "modeScopeAuthorityDecisionOwner": {
+    "primaryMode": "RESEARCH / EVIDENCE",
+    "secondaryOverlay": "PROJECT ISITUSA",
+    "outcome": "A decision-ready, hash-pinned California source plan that can enter the authorized data-pipeline phase.",
+    "inScope": [
+      "Current canonical, orchestration, application, R2, source identity, and matrix overlap verification",
+      "Fresh no-network BBS replay against the post-Indiana matrix",
+      "Selection and generation of one California positive-evidence plan"
+    ],
+    "outOfScope": [
+      "Absence or countywide inventory claims",
+      "R2 upload, pointer promotion, or deletion",
+      "Paid provider activity",
+      "Manual negative evidence publication"
+    ],
+    "authority": "Ocean authorized project-scoped no-cost research, implementation, testing, commits, pushes, ordinary deployment, and continued execution. Paid usage, credential exposure, R2 deletion, and bypass of manual negative review gates remain prohibited.",
+    "decisionOwner": "Ocean for project direction and authority; MAIN for bounded source-lane selection and execution within the registered contract.",
+    "deadlineOrDecisionWindow": "No source deadline. R2 ordinary promotion remains closed until 2026-09-04T08:58:25.633Z.",
+    "checksNotRun": [
+      "Cloudflare billable-usage dashboard counters were not refreshed because no R2 write is eligible or proposed in this phase.",
+      "No provider request was issued during selection or plan generation."
+    ]
+  },
+  "currentStateFindings": {
+    "localRepository": {
+      "confidence": "CONFIRMED",
+      "canonicalCheckout": "C:\\Code\\project-isitusa",
+      "branch": "main",
+      "head": "5402fa70cfa87ed84d033a1aa6b88d0e86dac97f",
+      "initialWorktree": "clean"
+    },
+    "remote": {
+      "confidence": "CONFIRMED",
+      "originMain": "5402fa70cfa87ed84d033a1aa6b88d0e86dac97f",
+      "publicGitHubMain": "5402fa70cfa87ed84d033a1aa6b88d0e86dac97f"
+    },
+    "orchestration": {
+      "confidence": "CONFIRMED",
+      "valid": true,
+      "jobs": 361,
+      "leases": 364,
+      "activeLeases": 0,
+      "warnings": "Historical terminal-record warnings only"
+    },
+    "application": {
+      "confidence": "CONFIRMED",
+      "releaseCommit": "64f19c4bdd3477cf0999affb3c3f73b9aec6d57c",
+      "vercelStatus": "success",
+      "canonicalAndImmutableHomeExactMatch": true,
+      "canonicalAndImmutableResearchExactMatch": true
+    },
+    "liveResearchData": {
+      "confidence": "CONFIRMED",
+      "activeReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+      "activeSourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+      "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+      "directAndSameOriginExactMatch": true,
+      "localPreparedReleaseId": "research-5554156dc2e9-b1c2b97ae3c4bd22",
+      "contradictionStatus": "resolved-intentional-cadence-deferral"
+    }
+  },
+  "sourceOfTruthHierarchy": [
+    {
+      "rank": 1,
+      "source": "Current Ocean continuation instruction and canonical AGENTS.md",
+      "role": "normative",
+      "governs": "Authority, MAIN ownership, evidence semantics, and repository boundaries"
+    },
+    {
+      "rank": 2,
+      "source": "Current canonical code, committed projections, immutable runs, and source coverage index",
+      "role": "empirical-local",
+      "governs": "Current matrix overlap, registered adapter behavior, and completed source scope"
+    },
+    {
+      "rank": 3,
+      "source": "Fresh origin, GitHub/Vercel, canonical route, and R2 pointer observations",
+      "role": "empirical-remote-live",
+      "governs": "Remote commit, deployment, application, and public research-data state"
+    },
+    {
+      "rank": 4,
+      "source": "Hash-pinned 2026 USGS BBS release files",
+      "role": "external-authoritative",
+      "governs": "Candidate source rows and official release identity"
+    },
+    {
+      "rank": 5,
+      "source": "Dated continuation packet and prior California-Indiana comparison",
+      "role": "historical-context",
+      "governs": "Candidate discovery only until current replay verifies it"
+    }
+  ],
+  "evidenceConfidenceContradictions": {
+    "evidence": [
+      {
+        "claimId": "E-CA-01",
+        "claim": "The retained source inputs have the exact previously accepted byte and SHA-256 identities.",
+        "confidence": "CONFIRMED",
+        "scope": "Routes.csv, Weather.csv, 50-StopData.zip, and SpeciesList.csv"
+      },
+      {
+        "claimId": "E-CA-02",
+        "claim": "California has 69 current net-new BBS route-start county-species pairs across 34 counties.",
+        "confidence": "CONFIRMED",
+        "scope": "Post-Indiana local matrix at commit 5402fa70cfa87ed84d033a1aa6b88d0e86dac97f"
+      },
+      {
+        "claimId": "E-CA-03",
+        "claim": "The live R2 release does not contain Indiana or California movement.",
+        "confidence": "CONFIRMED",
+        "scope": "Direct and same-origin current.json observed during this evaluation"
+      }
+    ],
+    "contradictions": [
+      {
+        "conflictId": "C-CA-01",
+        "claimA": "Local generated data includes the completed Indiana tranche.",
+        "claimB": "Public R2 remains on the earlier Illinois release.",
+        "impact": "Public research views correctly show the prior matrix until the guarded pointer changes.",
+        "status": "resolved-by-intentional-cadence-deferral",
+        "resolutionStep": "Accumulate California locally and promote only the newest cumulative release after independent cadence, usage, storage, and exact-byte gates pass."
+      },
+      {
+        "conflictId": "C-CA-02",
+        "claimA": "The dated comparison recorded candidate plan SHA-256 017b3e9e4b4cfc323c1de5aa809718632c10cd413ad0972d6ed7da380b34d064.",
+        "claimB": "The fresh post-Indiana plan has SHA-256 18365e2a018300fa0a0e403516992f1115970349d1a112f7e7ff9dde4a020a21.",
+        "impact": "Only the fresh plan is eligible for acquisition because its national overlap counts include Indiana.",
+        "status": "resolved-by-current-generation",
+        "resolutionStep": "Commit and use only the current plan bytes."
+      }
+    ]
+  },
+  "researchDecisionSupported": {
+    "question": "Which bounded no-cost source lane should MAIN execute next for defensible net county-species movement?",
+    "population": "Current not-researched county-species pairs supported by exact USGS BBS 2026 route-start detections.",
+    "geography": "California active county equivalents only.",
+    "timeRange": "Official BBS 1966-2025 release published in 2026.",
+    "evidenceBar": "Exact catalog and BBS taxon match, standard run, positive Stop 1 count, exact retained route-start coordinate resolving to one active California county, and committed hash-pinned source identity.",
+    "stoppingRule": "Accept only the 69 current net-new pairs; no omitted row or zero creates a negative claim.",
+    "disconfirmingEvidence": "Any committed-input drift, source size or MD5 mismatch, nonstandard run, nonpositive Stop 1 count, ambiguous geography, changed candidate count, or incomplete outcome set blocks the run."
+  },
+  "requirements": [
+    "The plan must contain exactly 69 sorted unique California county-species candidates.",
+    "The semantic dry-run must issue zero network requests and predict exactly five public GET requests.",
+    "The live adapter must reproduce all four committed file identities and complete exactly 69 pair outcomes.",
+    "Every assertion must remain sampled point recorded-presence evidence with no countywide inventory, establishment, absence, or non-detection claim.",
+    "Compilation must move exactly the accepted net pairs from not-researched to verified-present with zero conflicts and zero unreviewed evidence."
+  ],
+  "nonGoals": [
+    "Completing California bird inventory coverage",
+    "Inferring negative evidence from missing or zero BBS rows",
+    "Refreshing unrelated sources",
+    "Promoting R2 inside the cadence window",
+    "Deleting historical R2 objects"
+  ],
+  "constraintsGuardrails": [
+    "MAIN exclusively owns shared generation, commits, pushes, deployment, and release verification.",
+    "Node 22.23.2 is the pinned project runtime; restricted uv_os_get_passwd ENOMEM is an environment artifact when the same pinned run passes outside that restriction.",
+    "The adapter may issue only five public GET requests and zero POST requests.",
+    "Current complete source-coverage queries must not be repeated; this plan contains only current net-new pairs.",
+    "Application deployment and R2 research-data promotion are separate actions and separate claims."
+  ],
+  "dataIntegrationImplications": {
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-ca-route-start-tranche-v1.json",
+    "planBytes": 10787,
+    "planSha256": "18365e2a018300fa0a0e403516992f1115970349d1a112f7e7ff9dde4a020a21",
+    "candidatePairs": 69,
+    "supportingRowsExpected": 292,
+    "grossPairs": 72,
+    "affectedCounties": 34,
+    "speciesIds": [
+      "columba-livia",
+      "passer-domesticus",
+      "streptopelia-decaocto",
+      "sturnus-vulgaris"
+    ],
+    "consumer": "Deterministic California state and county research projections, then the next cumulative content-addressed manifest."
+  },
+  "alternativesTradeoffs": [
+    {
+      "alternative": "California BBS route-start tranche",
+      "decision": "LOCKED",
+      "benefit": "69 measured net verified-present pairs using an already validated official-source adapter and four retained exact inputs.",
+      "costRisk": "Five public GETs and an estimated larger state projection footprint than Indiana.",
+      "reversibility": "High before public data promotion because the run and projection changes remain append-only and locally cumulative."
+    },
+    {
+      "alternative": "Promote the prepared Indiana release now",
+      "decision": "REJECTED",
+      "benefit": "Would expose completed movement sooner.",
+      "costRisk": "Violates ordinary seven-day cadence without an urgent correctness reason and would create an intermediate rather than newest cumulative release.",
+      "reopenCondition": "Cadence opens and the newest cumulative release passes fresh R2 guards."
+    },
+    {
+      "alternative": "Reopen the jurisdiction-wide absence contract",
+      "decision": "REJECTED",
+      "benefit": "None for current architecture work because the contract is already implemented and verified.",
+      "costRisk": "Would repeat completed work and still cannot bypass human approval for candidate negatives.",
+      "reopenCondition": "A new exact authoritative candidate or contract defect appears."
+    }
+  ],
+  "decisionLogOpenQuestions": [
+    {
+      "decisionId": "D-CA-01",
+      "topic": "Next source lane",
+      "status": "LOCKED",
+      "decision": "Execute California BBS route-start as the next bounded lane.",
+      "owner": "MAIN within Ocean's granted execution authority",
+      "reopenCondition": "The committed-input dry-run, current candidate count, provider identity, or resource guard fails."
+    },
+    {
+      "decisionId": "D-CA-02",
+      "topic": "R2 publication",
+      "status": "OPEN",
+      "decision": "Defer until the ordinary cadence opens and current usage, storage, exact missing-object, and public-byte gates are available.",
+      "owner": "MAIN under the existing guarded publication contract",
+      "dateNeeded": "No earlier than 2026-09-04T08:58:25.633Z"
+    }
+  ],
+  "risksFailureModes": [
+    {
+      "risk": "Provider file identity changes",
+      "detection": "Size and MD5 mismatch against the committed plan",
+      "mitigation": "Fail without creating a completed run or replacing retained evidence."
+    },
+    {
+      "risk": "Route-start geography is ambiguous or outside California",
+      "detection": "Coordinate topology contract fails",
+      "mitigation": "Reject or block; never infer county identity."
+    },
+    {
+      "risk": "Gross BBS pairs are mistaken for net movement",
+      "detection": "Plan and compiler count reconciliation",
+      "mitigation": "Report 72 gross, 69 net, and 292 supporting rows separately."
+    },
+    {
+      "risk": "Intermediate R2 release is promoted",
+      "detection": "Pointer and cadence checks",
+      "mitigation": "Perform zero R2 writes during this lane and prepare only the newest cumulative manifest."
+    }
+  ],
+  "blockersRequiredInputs": {
+    "technical": [],
+    "userInput": [],
+    "externalDependencies": [
+      "USGS ScienceBase must return the five public GET responses with the committed file identities."
+    ],
+    "missingEvidence": [],
+    "missingAuthority": [],
+    "unresolvedProductDecisions": [],
+    "publicationOnly": [
+      "Fresh Cloudflare billable-usage counters and an authenticated exact missing-object plan are required only before a later R2 write."
+    ]
+  },
+  "acceptanceCriteria": [
+    {
+      "id": "AC-CA-01",
+      "condition": "Plan JSON parses and contains 69 sorted unique candidates across 34 active California counties.",
+      "method": "Schema/adapter test plus direct plan inspection",
+      "target": "pass"
+    },
+    {
+      "id": "AC-CA-02",
+      "condition": "Committed-input semantic dry-run issues zero network requests and predicts exactly five GETs.",
+      "method": "run-source --semantic-dry-run true",
+      "target": "pass"
+    },
+    {
+      "id": "AC-CA-03",
+      "condition": "Immutable live run contains 69 scope-complete evidence-found outcomes, 69 accepted assertions and reviews, zero errors, and zero POSTs.",
+      "method": "Receipt, artifacts, and immutable-run validation",
+      "target": "pass"
+    },
+    {
+      "id": "AC-CA-04",
+      "condition": "California projection adds exactly 69 verified-present pairs and removes exactly 69 not-researched pairs with every other axis unchanged.",
+      "method": "Explicit before/after summary and byte-stability verification",
+      "target": "pass"
+    },
+    {
+      "id": "AC-CA-05",
+      "condition": "Full relevant integrity, type, lint, build, publication, and release gates pass before push and deployment.",
+      "method": "Pinned Node 22 project commands",
+      "target": "pass"
+    }
+  ],
+  "phasedPlanDependencies": [
+    {
+      "phase": 1,
+      "category": "Implementation work",
+      "owner": "production-build-and-integration",
+      "outcome": "Committed plan, immutable source run, source-coverage index, California projection, movement evaluation, and cumulative manifest.",
+      "stopCondition": "Any identity, count, semantic, conflict, or integrity gate fails."
+    },
+    {
+      "phase": 2,
+      "category": "Release verification",
+      "owner": "production-launch-gate",
+      "outcome": "Explicit application and data-publication decisions with local, remote, provider, and live evidence separated.",
+      "stopCondition": "Any critical application gate fails; data remains unpromoted while cadence or R2 guard evidence is incomplete."
+    }
+  ],
+  "recommendedNextOwner": {
+    "canonicalOwner": "production-build-and-integration",
+    "availability": "AVAILABLE",
+    "availabilityEvidence": "The current runtime skill catalog exposes the implementation owner for data-pipeline and generated-data changes.",
+    "relationship": "APPLIED IN THIS TASK",
+    "boundedFallbackOrBlocker": null
+  },
+  "plainEnglishSummary": "The old continuation packet's absence-contract work is complete. Current evidence confirms California is the next safe BBS tranche: 69 new positive county-species pairs from the same official route-start contract already verified for Texas, Illinois, and Indiana. Commit the exact current plan first, then allow only the five hash-gated public GETs. Keep all negative statuses unchanged and keep R2 untouched until its separate cadence and free-tier gates open."
+}
