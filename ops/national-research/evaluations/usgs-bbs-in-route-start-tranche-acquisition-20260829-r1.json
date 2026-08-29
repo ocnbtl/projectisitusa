@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-in-route-start-tranche-acquisition-20260829-r1",
+  "evaluatedAt": "2026-08-29T00:24:25.4560753Z",
+  "status": "validated-local-awaiting-publication-gates",
+  "objective": "Integrate a bounded Indiana tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "method": "Fresh national BBS rescan after the Illinois production release, followed by an equal-yield California-versus-Indiana retained-footprint comparison.",
+    "remainingNationalBbsNetPairsBeforeIndiana": 1228,
+    "indianaNetNewPairs": 69,
+    "indianaCountyCount": 41,
+    "californiaNetNewPairs": 69,
+    "estimatedIndianaUploadByteAdvantage": 6359257,
+    "estimatedIndianaUploadByteReductionPercent": 19.59,
+    "reason": "Indiana and California tied at 69 measured net-new pairs. Indiana was selected because the modeled complete-state upload is about 6.36 MB smaller while retained-byte capacity is the binding publication constraint. California remains the next equal-yield BBS candidate."
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-in-route-start-tranche-v1.json",
+    "planSha256": "0d81b2954a0cd72be783f9f232a1486c927869de8eb831c275806aa2c032ad67",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "acquisitionCodeCommit": "b372231b9ac7702ab436c4726e802ea6e88cea3e",
+    "runCommit": "bf5a2b830614b2ce7480cbb825c0beb05ec2c620",
+    "coverageIndexCommit": "272eeeec0f8bae9268a9a21ca55391748b658610",
+    "sourceCoverageIndexId": "source-coverage-4104f277da80ec5735f3",
+    "sourceCoverageIndexSha256": "bfe9b3a960701517bbd744dbfcb5e079d4a7b393f9c930347008b1deea96e9d3",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 69,
+      "expectedProviderGets": 5,
+      "parameterHash": "5e939aaf0e8985acc5f99d49236cbbaede3815130ae579304b2f521bb44d2619"
+    }
+  },
+  "nationalPreflight": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterIllinois": 320,
+    "netNewPairsBeforeIndiana": 1228
+  },
+  "immutableRun": {
+    "runId": "20260829T001541Z__usgs-bbs__5e939aaf0e89",
+    "receiptPath": "src/data/research/runs/20260829T001541Z__usgs-bbs__5e939aaf0e89/receipt.json",
+    "receiptSha256": "0f83c48bd52d73bfcd25cc28254bfd1cbd4ad85b03e72666c9804af136ea79a1",
+    "assertionsSha256": "0c1df0bf9797834fda04f986ed0caad3938441d07c7091ecb27331f3999a9d4c",
+    "status": "complete",
+    "codeCommit": "b372231b9ac7702ab436c4726e802ea6e88cea3e",
+    "requestedPairs": 69,
+    "candidateRecords": 254,
+    "assertionEvents": 69,
+    "reviewEvents": 69,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 69,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/in-standard-stop1-detections.json",
+        "bytes": 84095,
+        "sha256": "2ff9a213c48fbe8bc3f18b99ccbc88f298a97f8b6c4dbf017469685419f78f85"
+      }
+    ]
+  },
+  "indianaMovement": {
+    "fullCountySpeciesDenominator": 230368,
+    "baseline": {
+      "verifiedPresent": 5535,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 37889,
+      "notResearched": 186944,
+      "explicitOutcomePairCount": 43424,
+      "researchRunCount": 27
+    },
+    "final": {
+      "verifiedPresent": 5604,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 37889,
+      "notResearched": 186875,
+      "explicitOutcomePairCount": 43493,
+      "researchRunCount": 28,
+      "summarySha256": "fa26c5b03895e3d7a2f808bdb2df7994676ce6ba14ceec197cb2c1098fbd564a"
+    },
+    "delta": {
+      "verifiedPresent": 69,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -69,
+      "explicitOutcomePairCount": 69,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 7,
+      "passer-domesticus": 38,
+      "sturnus-vulgaris": 24
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195356,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314777,
+      "immutableResearchRuns": 1418
+    },
+    "final": {
+      "verifiedPresent": 195425,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314708,
+      "conflicts": 0,
+      "immutableResearchRuns": 1419,
+      "readinessDashboardSha256": "a78e685a10a205d527f1a270ac5f852a886651cf0e9e1464c1c8b95f25ca7a14"
+    },
+    "delta": {
+      "verifiedPresent": 69,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -69,
+      "immutableResearchRuns": 1
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 69 planned equals 69 accepted plus 0 rejected",
+    "indianaDenominatorConservation": "pass: 230,368 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 69 pairs moved from implicit not-researched to verified-present",
+    "negativeSemantics": "pass: zero verified-absence and zero not-detected movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and the committed active-county topology path and SHA-256",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "projectionByteStability": "pass: two independent Indiana compiles were byte-identical across 98 tracked projection files",
+    "allStateProjectionValidation": "pass: 51 configured jurisdiction projections validated",
+    "readinessDivergences": "pass: zero completion-freshness divergences",
+    "publication": "pending deterministic publication manifest, exact authenticated R2 retained-byte plan, cadence eligibility, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "productionDeployments": 0
+  },
+  "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, or survey non-detection claim."
+}
