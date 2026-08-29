@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-oh-route-start-tranche-selection-20260829-r1",
+  "evaluatedAt": "2026-08-29T07:57:33.0129917Z",
+  "status": "selected-local-plan-pending-commit",
+  "decision": {
+    "question": "Which remaining bounded no-cost USGS BBS state tranche should MAIN execute next under the accepted route-start presence contract?",
+    "selectedState": "OH",
+    "selectedDirection": "Commit and execute the Ohio USGS BBS route-start tranche.",
+    "reason": "Ohio has the highest current net movement at 59 pairs. Wisconsin is second at 56. The selected Ohio scope is bounded to 59 current not-researched pairs supported by 221 retained positive Stop 1 rows.",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped acquisition, implementation, commit, push, ordinary deployment, and continuation authority.",
+    "reopenCondition": "Any plan drift, retained-source identity mismatch, changed candidate count, incomplete outcome set, accepted conflict, paid-cost risk, or resource-policy failure."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "8008c8ea7c3b321bb52d5a51f31740d99cfcac67",
+    "originMain": "8008c8ea7c3b321bb52d5a51f31740d99cfcac67",
+    "publicGitHubMain": "8008c8ea7c3b321bb52d5a51f31740d99cfcac67",
+    "initialWorktree": "clean",
+    "activeLeases": 0,
+    "applicationReleaseCommit": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+    "applicationDeploymentStatus": "success",
+    "applicationDeploymentUrl": "https://projectisitusa-2aby8klys-unigentamos.vercel.app",
+    "canonicalAndImmutableHomeExactMatch": true,
+    "canonicalHomeSha256": "7e84528db1139fb88d54e6498c0a680b79ca3891870d33b36857f2d447c1d527",
+    "activeR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "activeR2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "activeR2PointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z"
+  },
+  "resourceGuard": {
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 14190874624,
+    "availableMemoryPercent": 42.42,
+    "freeDiskBytes": 672584142848,
+    "tier": "green",
+    "decision": "Proceed with one sequential BBS analysis, acquisition, compiler, or build lane at a time; shared generation and release gates remain sequential."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380",
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6",
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240",
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98",
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "freshResidualReplay": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairs": 517,
+    "nationalNetNewPairs": 1031,
+    "leadingStates": [
+      {
+        "stateCode": "OH",
+        "grossPairs": 65,
+        "netNewPairs": 59,
+        "grossSupportingRows": 255,
+        "selectedSupportingRows": 221
+      },
+      {
+        "stateCode": "WI",
+        "grossPairs": 60,
+        "netNewPairs": 56,
+        "grossSupportingRows": 248
+      },
+      {
+        "stateCode": "PA",
+        "grossPairs": 52,
+        "netNewPairs": 48,
+        "grossSupportingRows": 272
+      }
+    ]
+  },
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-oh-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-oh-route-start-tranche-v1",
+    "bytes": 9597,
+    "sha256": "354f870dc2e0cf8162daf367263d1c64d3df001deafbad511e48ee68c57453d4",
+    "candidatePairs": 59,
+    "supportingRowsExpected": 221,
+    "grossPairs": 65,
+    "affectedCounties": 36,
+    "speciesCount": 3,
+    "speciesPairCounts": {
+      "columba-livia": 3,
+      "passer-domesticus": 34,
+      "sturnus-vulgaris": 22
+    }
+  },
+  "baseline": {
+    "ohio": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 220352,
+      "verifiedPresent": 6773,
+      "verifiedAbsent": 0,
+      "notDetected": 44,
+      "researchedUnresolved": 34455,
+      "notResearched": 179080,
+      "conflicts": 0,
+      "selectedPairStatus": {
+        "notResearched": 59
+      }
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195553,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314580
+    }
+  },
+  "evidenceContract": {
+    "accepted": "Positive standard-run Stop 1 detections for exact current-catalog taxa whose exact retained route-start coordinate resolves to one active Ohio county equivalent.",
+    "rejectedAsNegativeEvidence": [
+      "later stops",
+      "route totals",
+      "zero counts",
+      "missing rows",
+      "unmatched taxa",
+      "source silence"
+    ],
+    "claimScale": "sampled point recorded-presence only",
+    "absenceClaimsAllowed": false,
+    "surveyNonDetectionClaimsAllowed": false,
+    "countywideInventoryClaimsAllowed": false
+  },
+  "acceptanceCriteria": [
+    "The committed plan contains exactly 59 sorted unique Ohio county-species candidates across 36 active counties.",
+    "A zero-network semantic dry-run predicts exactly five public GET requests and issues none.",
+    "The live adapter reproduces all four source identities and completes exactly 59 pair outcomes.",
+    "Compilation moves exactly 59 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "cloudflareUsageRefresh": "not-run-because-no-r2-write-is-eligible"
+  },
+  "blockers": {
+    "implementation": [],
+    "acquisition": [
+      "The five public GET responses must reproduce the committed file identities."
+    ],
+    "publicationOnly": [
+      "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+      "Fresh Cloudflare usage and an authenticated exact missing-object plan are required before a later R2 write."
+    ]
+  },
+  "nextAction": "Commit the generated plan and this evaluation, run the zero-network semantic dry-run from the clean exact commit, and execute the five-GET acquisition only if every pinned identity and 59-pair scope remains exact."
+}
