@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-co-route-start-production-verification-20260829-r1",
+  "verifiedAt": "2026-08-29T07:13:25Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative Colorado USGS BBS research release. The research-data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "ccbacc084088d2871c507c516a42bcfe19a0277f",
+    "applicationLastKnownGoodSha": "987063d321a92f9a8263521164579052c82460be",
+    "releaseSha": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+    "originMainSha": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+    "githubMainSha": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+    "githubProductionDeploymentId": 6153323876,
+    "githubProductionDeploymentStatusId": 17492311085,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "vercelDeploymentId": "G4YzCzcQE2aPSyGzf778SjB85Hk4",
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/G4YzCzcQE2aPSyGzf778SjB85Hk4",
+    "vercelImmutableUrl": "https://projectisitusa-2aby8klys-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "988df8ab5c02037b94812cc85a3168b87c3086b2",
+      "subject": "Plan Colorado BBS route-start tranche"
+    },
+    {
+      "sha": "33dc88780f97de5255a3b851c506f1b2c2dcc62d",
+      "subject": "Add Colorado BBS route-start evidence"
+    },
+    {
+      "sha": "7cc3319ab5b241c9630b0650abdea1a967082e1a",
+      "subject": "Index Colorado BBS research coverage"
+    },
+    {
+      "sha": "4f415ae445af83b4a7b809830f03ac08210d49ff",
+      "subject": "Document Colorado BBS research movement"
+    },
+    {
+      "sha": "158438699376e8bdcad0b8f8fafd0b3d777b55a5",
+      "subject": "Compile Colorado BBS research projection"
+    },
+    {
+      "sha": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+      "subject": "Prepare Colorado cumulative research release"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-co-route-start-tranche-selection-20260829-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-co-route-start-tranche-acquisition-20260829-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-co-route-start-tranche-v1.json",
+    "planSha256": "e61b646a4e61ef7d5802a2d2d16a647b1f504182bdef26d6ff483c2cae6afe80",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260829T042826Z__usgs-bbs__4b960d0a5849",
+    "runReceiptSha256": "51e0877bce8bcb4aae99173ee16c9c5d34d4784b6def7085b3cf76857d52934f",
+    "assertionsSha256": "1d2c500d50a37d4d6c0f92269f5f53c7445cc2f4f3d6e7f3e68aac49e74a9562",
+    "outcomesSha256": "0166445ee406661f366e985f9de4339a219fa172f0d2fa2996b13475e27ad789",
+    "requestedPairs": 59,
+    "candidateRecords": 231,
+    "assertionEvents": 59,
+    "reviewEvents": 59,
+    "pairOutcomes": 59,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "colorado": {
+      "countySpeciesDenominator": 160256,
+      "affectedCounties": 32,
+      "baseline": {
+        "verifiedPresent": 2309,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 29563,
+        "notResearched": 128384,
+        "summarySha256": "46b8f22038a39e0f7143a36226be1d7f362fc375b765ccc30151b8340a1f25a9"
+      },
+      "prepared": {
+        "verifiedPresent": 2368,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 29563,
+        "notResearched": 128325,
+        "conflicts": 0,
+        "summarySha256": "ddc6721774c2756e1397f22fc92b71ce4c3000ba7b3075227e43b15eca4a5153"
+      },
+      "delta": {
+        "verifiedPresent": 59,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -59
+      },
+      "speciesDelta": {
+        "columba-livia": 2,
+        "passer-domesticus": 24,
+        "streptopelia-decaocto": 17,
+        "sturnus-vulgaris": 16
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195553,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314580,
+      "conflicts": 0,
+      "immutableResearchRuns": 1421,
+      "assertionEvents": 309447,
+      "pairOutcomes": 1721233,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "387243d583fc1d3be095d95edf9bc8196d4ccccc0423249449a9d611aec6f463"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Colorado byte stability: pass across 70 tracked state projection files with protected shared outputs unchanged",
+      "All 51 state byte-stability checks at the common 2026-08-29 cutoff: pass",
+      "Committed 51-state projection checksums and publication modes: pass",
+      "Cross-state projections, national denominator, readiness, compiler, compatibility, and data integrity: pass",
+      "USGS BBS adapter and immutable-run validation: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Pinned Node 22 aggregate research integrity: pass across 1,421 runs, 309,447 assertions, and 1,721,233 outcomes",
+      "Source coverage and publication manifest reconciliation: pass",
+      "Publication manifest current and static R2 plan: pass with zero current modeled requests issued",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Whitespace and clean-worktree checks before push: pass"
+    ]
+  },
+  "preparedR2Release": {
+    "releaseId": "research-158438699376-9454f216d986a48a",
+    "sourceCommit": "158438699376e8bdcad0b8f8fafd0b3d777b55a5",
+    "manifestBytes": 1565427,
+    "manifestSha256": "cd41168e08edc331c37057d8f4e0b8a2ead71685e05b1ee5b5b3f0bccb1e64d3",
+    "artifactCount": 3195,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1005727994,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "coloradoSummarySha256": "0f05115ecf7e4b39db7fec13a38951fff2df2f9f5d397592704741a2381e3989",
+    "bacaCountySha256": "d7d0a7cb0fc1c3339aaacf691c1571de429fccd833fed077a5a8bb84b8437408",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginDecodedManifestHashesEqualPointer": true,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "7e84528db1139fb88d54e6498c0a680b79ca3891870d33b36857f2d447c1d527"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "bc319ed497406a79f230030e3bed8f8140f50b292fd42a820ece2ce8ae6c7fa9"
+      },
+      {
+        "path": "/research?state=CO&county=08009&species=columba-livia",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "bc319ed497406a79f230030e3bed8f8140f50b292fd42a820ece2ce8ae6c7fa9"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "b29430800d86a4e810dc13e4230b93ae867c96d629b1dad555e005459fb5db1c"
+      }
+    ],
+    "securityHeaders": {
+      "contentSecurityPolicy": "present",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "xFrameOptions": "DENY",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "liveColoradoBoundary": {
+      "activeSummarySha256": "0f05115ecf7e4b39db7fec13a38951fff2df2f9f5d397592704741a2381e3989",
+      "preparedSummarySha256": "ddc6721774c2756e1397f22fc92b71ce4c3000ba7b3075227e43b15eca4a5153",
+      "preparedColoradoIsPromoted": false
+    }
+  },
+  "productionBrowser": {
+    "route": "https://isitusa.com/research?state=CO&county=08009&species=columba-livia",
+    "visibleState": "Colorado",
+    "visibleCounty": "Baca / 08009",
+    "visibleResearchAsOf": "Aug 27, 2026",
+    "visibleColoradoVerifiedPresent": 2309,
+    "visibleColoradoNotResearched": 128384,
+    "visibleColoradoConflicts": 0,
+    "visibleRockPigeonPairStatus": "Not Researched",
+    "visibleRockPigeonResearchStatus": "Not Started",
+    "expectedBoundary": "The browser must show the active pre-Colorado projection until the guarded R2 pointer is promoted.",
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0,
+    "brokenImages": 0,
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "frameworkErrorOverlay": false,
+    "activeDataRequests": [
+      "https://isitusa.com/research-data/current.json",
+      "https://isitusa.com/research-data/releases/research-e2115f6a705f-163982b59c8351b2/manifest.json",
+      "https://isitusa.com/research-data/objects/sha256/0f/0f05115ecf7e4b39db7fec13a38951fff2df2f9f5d397592704741a2381e3989.json",
+      "https://isitusa.com/research-data/objects/sha256/d7/d7d0a7cb0fc1c3339aaacf691c1571de429fccd833fed077a5a8bb84b8437408.json"
+    ],
+    "testArtifactsRemoved": true
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, Vercel immutable deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable routes, expected 404 behavior, the Colorado research deep link, direct data origin, same-origin proxy, and decoded immutable manifest hashes passed."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The unchanged research interface rendered meaningful Colorado and Baca County content at 1440x1000 desktop and 390x844 mobile with zero overflow or broken images."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The changed flow retained named headings, navigation, comboboxes, tabs, search controls, desktop table semantics, mobile card controls, and readable status text. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the active R2 pointer remains short-lived while content objects are immutable. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; five production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub/Vercel success, live HTTP parity, pointer parity, decoded manifest parity, browser console health, and the intentional old-data boundary were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local HEAD, origin/main, public GitHub main, and production deployment identify b83baac496c66bdedb38bd64eca95e1f21af121e; canonical bodies match immutable deployment projectisitusa-2aby8klys-unigentamos.vercel.app."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics and makes no manual public absence claim."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected Colorado from the 59-pair tie because all 59 gross pairs were net-new and the state required fewer supporting rows than Ohio.",
+    "Integrated 59 exact positive BBS route-start pairs without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Ran the complete research gate and production build under pinned Node 22, preserving the frozen suite and publication contract."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "987063d321a92f9a8263521164579052c82460be",
+    "applicationReleaseCommit": "b83baac496c66bdedb38bd64eca95e1f21af121e",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The Colorado BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release b83baac496c66bdedb38bd64eca95e1f21af121e is on origin/main and public GitHub main and is tied to successful GitHub/Vercel Production deployment 6153323876 at projectisitusa-2aby8klys-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, browser rendering, desktop and mobile overflow, broken images, console health, pointer identity, and decoded manifest identity passed. The prepared Colorado research release adds 59 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. This receipt does not attest to the commit that contains it or any future R2 action."
+}
