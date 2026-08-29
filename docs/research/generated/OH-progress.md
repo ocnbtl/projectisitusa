@@ -7,20 +7,20 @@ Generated: `2026-08-29T00:00:00.000Z`
 - Species: `2504`
 - Counties: `88`
 - County-species pairs: `220352`
-- Verified present: `6773`
+- Verified present: `6832`
 - Verified absent: `0`
 - Not detected: `44`
 - Researched unresolved: `34455`
-- Not researched: `179080`
-- Determination coverage: `3.07%`
-- Research coverage: `18.73%`
-- Explicit outcome coverage: `18.7300%`
-- Applicable protocol cells: `301`
+- Not researched: `179021`
+- Determination coverage: `3.10%`
+- Research coverage: `18.76%`
+- Explicit outcome coverage: `18.7568%`
+- Applicable protocol cells: `304`
 - Current complete protocol cells: `134`
-- Protocol completion: `48.84%`
-- Current protocol completion: `44.52%`
-- Evidence records: `8305`
-- Research runs: `27`
+- Protocol completion: `48.36%`
+- Current protocol completion: `44.08%`
+- Evidence records: `8364`
+- Research runs: `28`
 - Rejection records: `2312`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rock pigeon (`columba-livia`) | wildlife | 85 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 66 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 54 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 88 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 88 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 88 | 1 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 88 | 0 |
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 88 | 0 |
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 88 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 88 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 88 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 88 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T08:08:03.822Z | 59 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
