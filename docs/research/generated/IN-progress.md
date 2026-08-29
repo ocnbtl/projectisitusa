@@ -1,26 +1,26 @@
 # Indiana Research Progress
 
-Generated: `2026-08-27T00:00:00.000Z`
+Generated: `2026-08-29T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `92`
 - County-species pairs: `230368`
-- Verified present: `5535`
+- Verified present: `5604`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `37889`
-- Not researched: `186944`
-- Determination coverage: `2.40%`
-- Research coverage: `18.85%`
-- Explicit outcome coverage: `18.8498%`
-- Applicable protocol cells: `282`
+- Not researched: `186875`
+- Determination coverage: `2.43%`
+- Research coverage: `18.88%`
+- Explicit outcome coverage: `18.8798%`
+- Applicable protocol cells: `285`
 - Current complete protocol cells: `145`
-- Protocol completion: `56.03%`
-- Current protocol completion: `51.42%`
-- Evidence records: `7131`
-- Research runs: `27`
+- Protocol completion: `55.44%`
+- Current protocol completion: `50.88%`
+- Evidence records: `7200`
+- Research runs: `28`
 - Rejection records: `1049`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rock pigeon (`columba-livia`) | wildlife | 85 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 68 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 54 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 92 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 92 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 92 | 1 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Japanese Chaff Flower (`achyranthes-japonica`) | plants | 0 | 92 | 0 |
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 92 | 0 |
 | Strawberry tortrix (`acleris-comariana`) | insects | 0 | 92 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 92 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 92 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 92 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T00:15:56.433Z | 69 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
