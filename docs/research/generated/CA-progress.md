@@ -1,26 +1,26 @@
 # California Research Progress
 
-Generated: `2026-08-27T00:00:00.000Z`
+Generated: `2026-08-29T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `58`
 - County-species pairs: `145232`
-- Verified present: `6314`
+- Verified present: `6383`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `23266`
-- Not researched: `115652`
-- Determination coverage: `4.35%`
-- Research coverage: `20.37%`
-- Explicit outcome coverage: `20.3674%`
-- Applicable protocol cells: `401`
+- Not researched: `115583`
+- Determination coverage: `4.40%`
+- Research coverage: `20.41%`
+- Explicit outcome coverage: `20.4149%`
+- Applicable protocol cells: `405`
 - Current complete protocol cells: `180`
-- Protocol completion: `48.13%`
-- Current protocol completion: `44.89%`
-- Evidence records: `29256`
-- Research runs: `25`
+- Protocol completion: `47.65%`
+- Current protocol completion: `44.44%`
+- Evidence records: `29325`
+- Research runs: `26`
 - Rejection records: `2587`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rock pigeon (`columba-livia`) | wildlife | 57 | 0 | 1 |
+| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 40 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 36 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 30 | 0 | 1 |
 | Emerald Ash Borer (`emerald-ash-borer`) | insects | 0 | 58 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 58 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 58 | 1 |
@@ -53,10 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 58 | 0 |
 | Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 58 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 58 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 58 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 58 | 0 |
-| Brazilian joyweed (`alternanthera-brasiliana`) | plants | 0 | 58 | 0 |
-| Khakiweed (`alternanthera-pungens`) | plants | 0 | 58 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T01:38:39.542Z | 69 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
