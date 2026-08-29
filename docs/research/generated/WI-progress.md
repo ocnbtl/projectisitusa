@@ -7,20 +7,20 @@ Generated: `2026-08-29T00:00:00.000Z`
 - Species: `2504`
 - Counties: `72`
 - County-species pairs: `180288`
-- Verified present: `5046`
+- Verified present: `5102`
 - Verified absent: `0`
 - Not detected: `38`
 - Researched unresolved: `28396`
-- Not researched: `146808`
-- Determination coverage: `2.80%`
-- Research coverage: `18.57%`
-- Explicit outcome coverage: `18.5703%`
-- Applicable protocol cells: `270`
+- Not researched: `146752`
+- Determination coverage: `2.83%`
+- Research coverage: `18.60%`
+- Explicit outcome coverage: `18.6013%`
+- Applicable protocol cells: `274`
 - Current complete protocol cells: `120`
-- Protocol completion: `49.26%`
-- Current protocol completion: `44.44%`
-- Evidence records: `9271`
-- Research runs: `26`
+- Protocol completion: `48.54%`
+- Current protocol completion: `43.80%`
+- Evidence records: `9327`
+- Research runs: `27`
 - Rejection records: `1050`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Eurasian collared dove (`streptopelia-decaocto`) | wildlife | 71 | 0 | 1 |
+| Rock pigeon (`columba-livia`) | wildlife | 65 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 50 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 46 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 72 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 72 | 1 |
 | Dogwood Anthracnose (`discula-destructiva`) | fungi-diseases | 0 | 72 | 1 |
@@ -53,10 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Goji gall mite (`aceria-kuko`) | wildlife | 0 | 72 | 0 |
 | Litchi mite (`aceria-litchii`) | wildlife | 0 | 72 | 0 |
 | Devil's horsewhip (`achyranthes-aspera`) | plants | 0 | 72 | 0 |
-| Flat grass scale (`aclerda-takahashii`) | insects | 0 | 72 | 0 |
-| Strawberry tortrix (`acleris-comariana`) | insects | 0 | 72 | 0 |
-| Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 72 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 72 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-29T13:16:32.821Z | 56 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

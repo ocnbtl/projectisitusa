@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-wi-route-start-tranche-acquisition-20260829-r1",
+  "evaluatedAt": "2026-08-29T13:40:06.4497072Z",
+  "status": "complete-local-integration-pending-generated-commit-and-release-gates",
+  "objective": "Integrate a bounded Wisconsin tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-wi-route-start-tranche-selection-20260829-r1.json",
+    "method": "Fresh national replay after the Ohio evidence run selected Wisconsin as the highest remaining net-movement state.",
+    "remainingNationalBbsNetPairsBeforeWisconsin": 972,
+    "wisconsinGrossPairs": 60,
+    "wisconsinNetNewPairs": 56,
+    "wisconsinCountyCount": 32,
+    "supportingRows": 229
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-wi-route-start-tranche-v1.json",
+    "planSha256": "001bdde97327b144ede7c27165033b706b6b54b8e0e843c7c8b2b5f496b02220",
+    "selectedPairSha256": "13530c99afb60763a9e20f8cc68315a21353a66d662d5620ad27aa75b41be819",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "planningCommit": "28a1572ad09a9acfebbfdd4176fde718ab63d9cf",
+    "runCommit": "5aca8142e15b9ea1d5d2a00cb3e679a7173456cd",
+    "coverageIndexCommit": "2bed8cb1e43de1cb36617d25dc2fc2c0fbc8d1c2",
+    "sourceCoverageIndexId": "source-coverage-6b2187a582192f8009f7",
+    "sourceCoverageIndexSha256": "a3aec70120758fc3dc5d40e1a11dfda15e2c763a4ee4a17e2d265db90d0531b1",
+    "semanticDryRun": {
+      "result": "pass",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 56,
+      "expectedProviderGets": 5,
+      "parameterHash": "debcd03287d1a18736f3f2941994c217b7ac162da65222cf38a4d277ea5dbaef"
+    }
+  },
+  "nationalPreflight": {
+    "catalogBirdSpecies": 10,
+    "exactBbsMatches": 7,
+    "unmatchedCatalogBirdSpecies": 3,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterOhio": 576,
+    "netNewPairsBeforeWisconsin": 972
+  },
+  "immutableRun": {
+    "runId": "20260829T131602Z__usgs-bbs__debcd03287d1",
+    "receiptPath": "src/data/research/runs/20260829T131602Z__usgs-bbs__debcd03287d1/receipt.json",
+    "receiptSha256": "f4d1e8b4fec239de2de68b6ab5f81b81d99ba23760077e43f16570541be623ae",
+    "assertionsSha256": "145274ef1eaaf558c8ccd782be8c93ecfdd1eb1d0d9821e3122f3c7daf9ae6dd",
+    "outcomesSha256": "a0ef2a8de2fed0ade99c1535db0956aaa19e2c4bf832e1951cf73439ea59bad4",
+    "status": "complete",
+    "codeCommit": "28a1572ad09a9acfebbfdd4176fde718ab63d9cf",
+    "startedAt": "2026-08-29T13:16:02.155Z",
+    "completedAt": "2026-08-29T13:16:32.821Z",
+    "requestedPairs": 56,
+    "candidateRecords": 229,
+    "assertionEvents": 56,
+    "reviewEvents": 56,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 56,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/wi-standard-stop1-detections.json",
+        "bytes": 75350,
+        "sha256": "107af7d608baf2e0579afcc2c2b8358b0e7d7068fe609c2129eb6c76942f4e0a"
+      }
+    ]
+  },
+  "wisconsinMovement": {
+    "fullCountySpeciesDenominator": 180288,
+    "affectedCountyCount": 32,
+    "baseline": {
+      "verifiedPresent": 5046,
+      "verifiedAbsent": 0,
+      "notDetected": 38,
+      "researchedUnresolved": 28396,
+      "notResearched": 146808,
+      "explicitOutcomePairCount": 33480,
+      "evidenceRecordCount": 9271,
+      "researchRunCount": 26,
+      "summarySha256": "dc8e7bec7bd4a1e86945f7672e6373f55f64a9645701328f1f62ea2b8a040622"
+    },
+    "final": {
+      "verifiedPresent": 5102,
+      "verifiedAbsent": 0,
+      "notDetected": 38,
+      "researchedUnresolved": 28396,
+      "notResearched": 146752,
+      "explicitOutcomePairCount": 33536,
+      "evidenceRecordCount": 9327,
+      "researchRunCount": 27,
+      "conflicts": 0,
+      "summarySha256": "1f8a92a768c6194d7a1a9bfe7060bf28a7ec1a9bed5d46c74be5d7f63129d53b"
+    },
+    "delta": {
+      "verifiedPresent": 56,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -56,
+      "explicitOutcomePairCount": 56,
+      "evidenceRecordCount": 56,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 7,
+      "passer-domesticus": 26,
+      "streptopelia-decaocto": 1,
+      "sturnus-vulgaris": 22
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195612,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314521,
+      "immutableResearchRuns": 1422
+    },
+    "preparedAfterWisconsin": {
+      "verifiedPresent": 195668,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314465,
+      "conflicts": 0,
+      "immutableResearchRuns": 1423,
+      "assertionEvents": 309562,
+      "pairOutcomes": 1721348,
+      "unreviewedEvidence": 0
+    },
+    "delta": {
+      "verifiedPresent": 56,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -56,
+      "immutableResearchRuns": 1
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 56 planned equals 56 accepted plus 0 rejected",
+    "wisconsinDenominatorConservation": "pass: 180,288 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 56 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "immutableRunValidation": "pass: valid bundle accepted and tested corruption paths rejected",
+    "fullLedgerIntegrity": "pass: 1,423 runs, 309,562 assertions, 1,721,348 outcomes, zero unreviewed evidence, and zero conflicts",
+    "sourceCoverage": "pass: 1,423 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Wisconsin compiles were byte-identical across 78 files and protected shared outputs",
+    "stateProjectionParity": "pass: 51 configured projections and exact Wisconsin counts validated",
+    "publication": "pending all-state, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "productionDeployments": 0
+  },
+  "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+}
