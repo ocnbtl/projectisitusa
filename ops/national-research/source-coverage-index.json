@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "isitusa-source-coverage-index",
-  "indexId": "source-coverage-5525bb02961946cb498f",
-  "generatedFromCommit": "9485736f072f8aa85e7f8bdbcb1a484f39b41f8a",
+  "indexId": "source-coverage-aa1ba5c507e3347cebe3",
+  "generatedFromCommit": "33dc88780f97de5255a3b851c506f1b2c2dcc62d",
   "sourceRegistryPath": "src/data/research/source-registry.json",
   "sourceRegistrySha256": "3b42bcf1fb952dd21b5bc1d9fb502dd140eaf1b23faa81ff7b739551a8de7037",
-  "runReceiptDigestSha256": "74bc7408055d8459f7ed81eb2a7930c5c91876e867618519e7a0086755c247b5",
-  "runCount": 1420,
+  "runReceiptDigestSha256": "18d32b7694fe1ebdd015560ea88b6bc423657d495b9c61ea463e8bdfbade5478",
+  "runCount": 1421,
   "sourceCount": 29,
   "policy": {
     "authority": "immutable-run-receipts-and-hash-pinned-outcomes",
@@ -295,13 +295,13 @@
     {
       "sourceId": "usgs-bbs",
       "coverageState": "covered-by-immutable-runs",
-      "runCount": 4,
-      "completeRuns": 4,
+      "runCount": 5,
+      "completeRuns": 5,
       "partialRuns": 0,
       "failedRuns": 0,
-      "requestedPairs": 341,
-      "scopeCompletePairs": 341,
-      "latestFinishedAt": "2026-08-29T01:38:39.542Z"
+      "requestedPairs": 400,
+      "scopeCompletePairs": 400,
+      "latestFinishedAt": "2026-08-29T04:28:45.948Z"
     },
     {
       "sourceId": "usgs-nas",
@@ -44357,6 +44357,37 @@
       "outcomesPath": "src/data/research/runs/20260829T013803Z__usgs-bbs__eb398d7969fa/outcomes.ndjson",
       "outcomesSha256": "150a2c5d1b00ecc5dec08ab045d26905687fe12d48639a56f72fdcc9092beb04",
       "outcomesBytes": 54841
+    },
+    {
+      "coverageKey": "774be4628379eea3e611311b2ece3aedd5bff234f1194e707c99b1894850bc0b",
+      "queryKey": "5033f54574b14fa58cb0e6203cc120ba39641598b474fb0f4e88d184cadc6da8",
+      "runId": "20260829T042826Z__usgs-bbs__4b960d0a5849",
+      "receiptPath": "src/data/research/runs/20260829T042826Z__usgs-bbs__4b960d0a5849/receipt.json",
+      "receiptSha256": "51e0877bce8bcb4aae99173ee16c9c5d34d4784b6def7085b3cf76857d52934f",
+      "sourceId": "usgs-bbs",
+      "sourceRegistryHash": "3b42bcf1fb952dd21b5bc1d9fb502dd140eaf1b23faa81ff7b739551a8de7037",
+      "adapterId": "usgs-bbs-route-start",
+      "adapterVersion": "1.1.1",
+      "parameterHash": "4b960d0a584993193f1dddbeffd501901b68e140528dce9358ba9512b9882669",
+      "requestedScopeSha256": "61f35835b2f79284b0348902c80f44335396514dbe4e58d73b125aacf5a9930d",
+      "status": "complete",
+      "startedAt": "2026-08-29T04:28:26.654Z",
+      "finishedAt": "2026-08-29T04:28:45.948Z",
+      "refreshCadenceDays": 365,
+      "freshnessDeadline": "2027-08-29T04:28:45.948Z",
+      "plannerAction": "skip-identical-query-until-freshness-deadline",
+      "requestedPairs": 59,
+      "outcomePairs": 59,
+      "scopeCompletePairs": 59,
+      "outcomeStatusCounts": {
+        "evidence-found": 59,
+        "no-qualifying-evidence": 0,
+        "needs-followup": 0,
+        "blocked": 0
+      },
+      "outcomesPath": "src/data/research/runs/20260829T042826Z__usgs-bbs__4b960d0a5849/outcomes.ndjson",
+      "outcomesSha256": "0166445ee406661f366e985f9de4339a219fa172f0d2fa2996b13475e27ad789",
+      "outcomesBytes": 46896
     }
   ]
 }
