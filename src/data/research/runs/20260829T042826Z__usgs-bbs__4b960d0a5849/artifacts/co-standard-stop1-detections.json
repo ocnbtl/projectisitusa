@@ -1,0 +1,2883 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "usgs-bbs",
+  "stateCode": "CO",
+  "filters": {
+    "countryNum": "840",
+    "runType": "1",
+    "stop": "Stop1",
+    "minimumStopCount": 1,
+    "geography": "route-start coordinate must resolve to exactly one active county equivalent"
+  },
+  "sourceFiles": [
+    {
+      "name": "Routes.csv",
+      "size": 392008,
+      "md5": "5fd8404fd91eb6cdbc3577542ea99380",
+      "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+    },
+    {
+      "name": "Weather.csv",
+      "size": 14126685,
+      "md5": "8ba88dec90dd4b9df03bb2200c750bd6",
+      "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+    },
+    {
+      "name": "50-StopData.zip",
+      "size": 68998320,
+      "md5": "af3a5533a78a386760540f70d80cb240",
+      "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+    },
+    {
+      "name": "SpeciesList.csv",
+      "size": 73748,
+      "md5": "ae778053cf2db6013f9a24d4e91cae98",
+      "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+    }
+  ],
+  "scan": {
+    "archiveRows": 4551591,
+    "targetRows": 136665,
+    "standardTargetRows": 4379,
+    "acceptedRows": 231,
+    "countySpeciesPairs": 59
+  },
+  "selectedRecords": [
+    {
+      "pairKey": "08001:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6362811",
+          "routeKey": "17:042",
+          "routeName": "ADAMS CO.",
+          "year": 2016,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08001",
+          "latitude": 39.8407587,
+          "longitude": -104.1886679
+        },
+        {
+          "routeDataId": "6367950",
+          "routeKey": "17:412",
+          "routeName": "PROSPECT VALLEY 2",
+          "year": 2018,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08001",
+          "latitude": 39.9848652,
+          "longitude": -104.5086695
+        }
+      ]
+    },
+    {
+      "pairKey": "08003:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6172257",
+          "routeKey": "17:225",
+          "routeName": "MOSCA",
+          "year": 2003,
+          "aou": "06882",
+          "stop1Count": 25,
+          "countyFips": "08003",
+          "latitude": 37.690664,
+          "longitude": -105.9189
+        },
+        {
+          "routeDataId": "6231376",
+          "routeKey": "17:225",
+          "routeName": "MOSCA",
+          "year": 1999,
+          "aou": "06882",
+          "stop1Count": 12,
+          "countyFips": "08003",
+          "latitude": 37.690664,
+          "longitude": -105.9189
+        },
+        {
+          "routeDataId": "6261962",
+          "routeKey": "17:225",
+          "routeName": "MOSCA",
+          "year": 2007,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08003",
+          "latitude": 37.690664,
+          "longitude": -105.9189
+        },
+        {
+          "routeDataId": "6358046",
+          "routeKey": "17:225",
+          "routeName": "MOSCA",
+          "year": 2014,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08003",
+          "latitude": 37.690664,
+          "longitude": -105.9189
+        },
+        {
+          "routeDataId": "6365232",
+          "routeKey": "17:225",
+          "routeName": "MOSCA",
+          "year": 2017,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08003",
+          "latitude": 37.690664,
+          "longitude": -105.9189
+        },
+        {
+          "routeDataId": "6387601",
+          "routeKey": "17:225",
+          "routeName": "MOSCA",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08003",
+          "latitude": 37.690664,
+          "longitude": -105.9189
+        }
+      ]
+    },
+    {
+      "pairKey": "08005:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6386439",
+          "routeKey": "17:312",
+          "routeName": "BENNETT",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08005",
+          "latitude": 39.7238537,
+          "longitude": -104.3773535
+        }
+      ]
+    },
+    {
+      "pairKey": "08005:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6386439",
+          "routeKey": "17:312",
+          "routeName": "BENNETT",
+          "year": 2025,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08005",
+          "latitude": 39.7238537,
+          "longitude": -104.3773535
+        }
+      ]
+    },
+    {
+      "pairKey": "08005:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6386439",
+          "routeKey": "17:312",
+          "routeName": "BENNETT",
+          "year": 2025,
+          "aou": "04930",
+          "stop1Count": 12,
+          "countyFips": "08005",
+          "latitude": 39.7238537,
+          "longitude": -104.3773535
+        }
+      ]
+    },
+    {
+      "pairKey": "08007:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6172087",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 2002,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        },
+        {
+          "routeDataId": "6236141",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 1998,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        },
+        {
+          "routeDataId": "6245585",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 2001,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        },
+        {
+          "routeDataId": "6374968",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        },
+        {
+          "routeDataId": "6377629",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 2022,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        },
+        {
+          "routeDataId": "6385424",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        },
+        {
+          "routeDataId": "6388475",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        }
+      ]
+    },
+    {
+      "pairKey": "08007:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6351642",
+          "routeKey": "17:223",
+          "routeName": "PIEDRA",
+          "year": 2013,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08007",
+          "latitude": 37.2329382,
+          "longitude": -107.183624
+        }
+      ]
+    },
+    {
+      "pairKey": "08009:columba-livia",
+      "records": [
+        {
+          "routeDataId": "6235710",
+          "routeKey": "17:328",
+          "routeName": "PRITCHETT",
+          "year": 2000,
+          "aou": "03131",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.2067937,
+          "longitude": -102.8682559
+        },
+        {
+          "routeDataId": "6313200",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2009,
+          "aou": "03131",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        }
+      ]
+    },
+    {
+      "pairKey": "08009:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6228422",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 1997,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6235164",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 1998,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6261597",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2007,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6299554",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2008,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6313200",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6361153",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2016,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6386985",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        }
+      ]
+    },
+    {
+      "pairKey": "08009:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6261597",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2007,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6352031",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2013,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6356415",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2014,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6359679",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2015,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6361153",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2016,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        }
+      ]
+    },
+    {
+      "pairKey": "08009:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6359679",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2015,
+          "aou": "04930",
+          "stop1Count": 4,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6361153",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2016,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        },
+        {
+          "routeDataId": "6368384",
+          "routeKey": "17:058",
+          "routeName": "CAMPO",
+          "year": 2018,
+          "aou": "04930",
+          "stop1Count": 4,
+          "countyFips": "08009",
+          "latitude": 37.1052137,
+          "longitude": -102.5796589
+        }
+      ]
+    },
+    {
+      "pairKey": "08011:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6297741",
+          "routeKey": "17:027",
+          "routeName": "GILPIN",
+          "year": 2007,
+          "aou": "06882",
+          "stop1Count": 11,
+          "countyFips": "08011",
+          "latitude": 37.9979687,
+          "longitude": -103.1977919
+        },
+        {
+          "routeDataId": "6344020",
+          "routeKey": "17:027",
+          "routeName": "GILPIN",
+          "year": 2010,
+          "aou": "06882",
+          "stop1Count": 14,
+          "countyFips": "08011",
+          "latitude": 37.9979687,
+          "longitude": -103.1977919
+        },
+        {
+          "routeDataId": "6344024",
+          "routeKey": "17:027",
+          "routeName": "GILPIN",
+          "year": 2011,
+          "aou": "06882",
+          "stop1Count": 18,
+          "countyFips": "08011",
+          "latitude": 37.9979687,
+          "longitude": -103.1977919
+        }
+      ]
+    },
+    {
+      "pairKey": "08011:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6297741",
+          "routeKey": "17:027",
+          "routeName": "GILPIN",
+          "year": 2007,
+          "aou": "04930",
+          "stop1Count": 3,
+          "countyFips": "08011",
+          "latitude": 37.9979687,
+          "longitude": -103.1977919
+        },
+        {
+          "routeDataId": "6344020",
+          "routeKey": "17:027",
+          "routeName": "GILPIN",
+          "year": 2010,
+          "aou": "04930",
+          "stop1Count": 14,
+          "countyFips": "08011",
+          "latitude": 37.9979687,
+          "longitude": -103.1977919
+        }
+      ]
+    },
+    {
+      "pairKey": "08025:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6375252",
+          "routeKey": "17:050",
+          "routeName": "CROWLEY",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 14,
+          "countyFips": "08025",
+          "latitude": 38.1746667,
+          "longitude": -103.9489359
+        },
+        {
+          "routeDataId": "6378135",
+          "routeKey": "17:050",
+          "routeName": "CROWLEY",
+          "year": 2022,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08025",
+          "latitude": 38.1746667,
+          "longitude": -103.9489359
+        },
+        {
+          "routeDataId": "6381717",
+          "routeKey": "17:050",
+          "routeName": "CROWLEY",
+          "year": 2023,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08025",
+          "latitude": 38.1746667,
+          "longitude": -103.9489359
+        },
+        {
+          "routeDataId": "6384863",
+          "routeKey": "17:050",
+          "routeName": "CROWLEY",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 15,
+          "countyFips": "08025",
+          "latitude": 38.1746667,
+          "longitude": -103.9489359
+        }
+      ]
+    },
+    {
+      "pairKey": "08025:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6352268",
+          "routeKey": "17:050",
+          "routeName": "CROWLEY",
+          "year": 2013,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08025",
+          "latitude": 38.1746667,
+          "longitude": -103.9489359
+        },
+        {
+          "routeDataId": "6364313",
+          "routeKey": "17:050",
+          "routeName": "CROWLEY",
+          "year": 2017,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08025",
+          "latitude": 38.1746667,
+          "longitude": -103.9489359
+        },
+        {
+          "routeDataId": "6367972",
+          "routeKey": "17:050",
+          "routeName": "CROWLEY",
+          "year": 2018,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08025",
+          "latitude": 38.1746667,
+          "longitude": -103.9489359
+        }
+      ]
+    },
+    {
+      "pairKey": "08029:columba-livia",
+      "records": [
+        {
+          "routeDataId": "6245550",
+          "routeKey": "17:015",
+          "routeName": "DELTA",
+          "year": 2002,
+          "aou": "03131",
+          "stop1Count": 1,
+          "countyFips": "08029",
+          "latitude": 38.694789,
+          "longitude": -108.1390507
+        }
+      ]
+    },
+    {
+      "pairKey": "08029:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6236616",
+          "routeKey": "17:015",
+          "routeName": "DELTA",
+          "year": 2000,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08029",
+          "latitude": 38.694789,
+          "longitude": -108.1390507
+        },
+        {
+          "routeDataId": "6238841",
+          "routeKey": "17:015",
+          "routeName": "DELTA",
+          "year": 2004,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08029",
+          "latitude": 38.694789,
+          "longitude": -108.1390507
+        }
+      ]
+    },
+    {
+      "pairKey": "08039:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6381257",
+          "routeKey": "17:112",
+          "routeName": "KIOWA 2",
+          "year": 2023,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08039",
+          "latitude": 39.328838,
+          "longitude": -104.38167
+        }
+      ]
+    },
+    {
+      "pairKey": "08039:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6370037",
+          "routeKey": "17:012",
+          "routeName": "KIOWA",
+          "year": 2018,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08039",
+          "latitude": 39.3798417,
+          "longitude": -104.3691567
+        },
+        {
+          "routeDataId": "6379358",
+          "routeKey": "17:112",
+          "routeName": "KIOWA 2",
+          "year": 2022,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08039",
+          "latitude": 39.328838,
+          "longitude": -104.38167
+        }
+      ]
+    },
+    {
+      "pairKey": "08041:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6171631",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2003,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6231859",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 1999,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6234840",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 1998,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6238268",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2004,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6244355",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2002,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6248897",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2005,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6251547",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2006,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6298282",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2008,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6312321",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 25,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6319669",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2010,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6341446",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2011,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6352365",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2013,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6355554",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2014,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6367551",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2018,
+          "aou": "06882",
+          "stop1Count": 12,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6371007",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2019,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6374576",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6383023",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6386562",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        }
+      ]
+    },
+    {
+      "pairKey": "08041:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6312321",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2009,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6341446",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2011,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6352365",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2013,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6367551",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2018,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6371007",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2019,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6377783",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2022,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        }
+      ]
+    },
+    {
+      "pairKey": "08041:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6231859",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 1999,
+          "aou": "04930",
+          "stop1Count": 3,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6244355",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2002,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6251547",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2006,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6298282",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2008,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6312321",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2009,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        },
+        {
+          "routeDataId": "6371007",
+          "routeKey": "17:019",
+          "routeName": "RUSH",
+          "year": 2019,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08041",
+          "latitude": 38.8398807,
+          "longitude": -104.0920409
+        }
+      ]
+    },
+    {
+      "pairKey": "08043:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6364948",
+          "routeKey": "17:218",
+          "routeName": "WET MTNS.",
+          "year": 2017,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08043",
+          "latitude": 38.3674037,
+          "longitude": -105.2290729
+        }
+      ]
+    },
+    {
+      "pairKey": "08043:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6251615",
+          "routeKey": "17:318",
+          "routeName": "GRIBBLES PRK",
+          "year": 2006,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08043",
+          "latitude": 38.6441327,
+          "longitude": -105.7794649
+        }
+      ]
+    },
+    {
+      "pairKey": "08045:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6362915",
+          "routeKey": "17:209",
+          "routeName": "FLATTOPS",
+          "year": 2016,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08045",
+          "latitude": 39.6468148,
+          "longitude": -107.6169662
+        }
+      ]
+    },
+    {
+      "pairKey": "08051:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6172547",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2003,
+          "aou": "06882",
+          "stop1Count": 8,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6230921",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 1999,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6232426",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 1998,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6235613",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2000,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6244344",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2002,
+          "aou": "06882",
+          "stop1Count": 13,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6245358",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2001,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6299355",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2008,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6312499",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6345285",
+          "routeKey": "17:046",
+          "routeName": "CASTLETON",
+          "year": 2012,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08051",
+          "latitude": 38.592154,
+          "longitude": -106.91688
+        },
+        {
+          "routeDataId": "6346957",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2012,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6353018",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2013,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6360203",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2015,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6363209",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2016,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        },
+        {
+          "routeDataId": "6366744",
+          "routeKey": "17:017",
+          "routeName": "PARLIN",
+          "year": 2017,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08051",
+          "latitude": 38.512954,
+          "longitude": -106.74817
+        }
+      ]
+    },
+    {
+      "pairKey": "08051:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6235871",
+          "routeKey": "17:046",
+          "routeName": "CASTLETON",
+          "year": 2000,
+          "aou": "04930",
+          "stop1Count": 2,
+          "countyFips": "08051",
+          "latitude": 38.592154,
+          "longitude": -106.91688
+        }
+      ]
+    },
+    {
+      "pairKey": "08055:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6298907",
+          "routeKey": "17:326",
+          "routeName": "WALSENBURG",
+          "year": 2008,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08055",
+          "latitude": 37.6176717,
+          "longitude": -104.7749029
+        },
+        {
+          "routeDataId": "6368407",
+          "routeKey": "17:326",
+          "routeName": "WALSENBURG",
+          "year": 2018,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08055",
+          "latitude": 37.6176717,
+          "longitude": -104.7749029
+        }
+      ]
+    },
+    {
+      "pairKey": "08055:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6244734",
+          "routeKey": "17:326",
+          "routeName": "WALSENBURG",
+          "year": 2000,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08055",
+          "latitude": 37.6176717,
+          "longitude": -104.7749029
+        }
+      ]
+    },
+    {
+      "pairKey": "08061:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6233087",
+          "routeKey": "17:221",
+          "routeName": "NEEGRANDE",
+          "year": 1998,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08061",
+          "latitude": 38.2958688,
+          "longitude": -102.7381166
+        },
+        {
+          "routeDataId": "6244414",
+          "routeKey": "17:221",
+          "routeName": "NEEGRANDE",
+          "year": 2002,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08061",
+          "latitude": 38.2958688,
+          "longitude": -102.7381166
+        }
+      ]
+    },
+    {
+      "pairKey": "08061:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6231918",
+          "routeKey": "17:221",
+          "routeName": "NEEGRANDE",
+          "year": 1999,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08061",
+          "latitude": 38.2958688,
+          "longitude": -102.7381166
+        }
+      ]
+    },
+    {
+      "pairKey": "08063:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6172591",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2003,
+          "aou": "06882",
+          "stop1Count": 8,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6230955",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 1999,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6234561",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2004,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6235341",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2004,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6236394",
+          "routeKey": "17:044",
+          "routeName": "BETHUNE",
+          "year": 2004,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08063",
+          "latitude": 39.3883077,
+          "longitude": -102.4274519
+        },
+        {
+          "routeDataId": "6244708",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2001,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6249662",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2005,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6251591",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2006,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6262221",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2007,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6299727",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2008,
+          "aou": "06882",
+          "stop1Count": 8,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6313191",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6345663",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2012,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6358043",
+          "routeKey": "17:044",
+          "routeName": "BETHUNE",
+          "year": 2014,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08063",
+          "latitude": 39.3883077,
+          "longitude": -102.4274519
+        },
+        {
+          "routeDataId": "6376571",
+          "routeKey": "17:044",
+          "routeName": "BETHUNE",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08063",
+          "latitude": 39.3883077,
+          "longitude": -102.4274519
+        },
+        {
+          "routeDataId": "6378648",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2022,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6381552",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2023,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6384522",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        }
+      ]
+    },
+    {
+      "pairKey": "08063:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6345663",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2012,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6362713",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2016,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6366751",
+          "routeKey": "17:044",
+          "routeName": "BETHUNE",
+          "year": 2017,
+          "aou": "22860",
+          "stop1Count": 5,
+          "countyFips": "08063",
+          "latitude": 39.3883077,
+          "longitude": -102.4274519
+        },
+        {
+          "routeDataId": "6370055",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2018,
+          "aou": "22860",
+          "stop1Count": 5,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6371687",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2019,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6376170",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2021,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6379254",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2022,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6382299",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2023,
+          "aou": "22860",
+          "stop1Count": 11,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        },
+        {
+          "routeDataId": "6384522",
+          "routeKey": "17:314",
+          "routeName": "BURLINGTON",
+          "year": 2024,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08063",
+          "latitude": 39.1718637,
+          "longitude": -102.1105579
+        }
+      ]
+    },
+    {
+      "pairKey": "08063:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6353233",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2013,
+          "aou": "04930",
+          "stop1Count": 5,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        },
+        {
+          "routeDataId": "6378648",
+          "routeKey": "17:214",
+          "routeName": "KIRK",
+          "year": 2022,
+          "aou": "04930",
+          "stop1Count": 2,
+          "countyFips": "08063",
+          "latitude": 39.5341427,
+          "longitude": -102.5923459
+        }
+      ]
+    },
+    {
+      "pairKey": "08067:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6262580",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2007,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6312893",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6319589",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2010,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6341448",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2011,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6345358",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2012,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6353262",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2013,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6356785",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2014,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6359477",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2015,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6361611",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2016,
+          "aou": "06882",
+          "stop1Count": 8,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6372021",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2019,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6375052",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6381029",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2023,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6383804",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6386693",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        }
+      ]
+    },
+    {
+      "pairKey": "08067:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6341448",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2011,
+          "aou": "22860",
+          "stop1Count": 3,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6345358",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2012,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6365272",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2017,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        }
+      ]
+    },
+    {
+      "pairKey": "08067:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6172218",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2002,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6237424",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2003,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6319589",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2010,
+          "aou": "04930",
+          "stop1Count": 2,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        },
+        {
+          "routeDataId": "6365272",
+          "routeKey": "17:023",
+          "routeName": "FALFA",
+          "year": 2017,
+          "aou": "04930",
+          "stop1Count": 5,
+          "countyFips": "08067",
+          "latitude": 37.2149507,
+          "longitude": -107.7918089
+        }
+      ]
+    },
+    {
+      "pairKey": "08069:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6243708",
+          "routeKey": "17:004",
+          "routeName": "HARMONY",
+          "year": 2002,
+          "aou": "06882",
+          "stop1Count": 4,
+          "countyFips": "08069",
+          "latitude": 40.5090827,
+          "longitude": -105.0392299
+        }
+      ]
+    },
+    {
+      "pairKey": "08069:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6233010",
+          "routeKey": "17:304",
+          "routeName": "COMANCHE PK",
+          "year": 1997,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08069",
+          "latitude": 40.574933,
+          "longitude": -105.32739
+        },
+        {
+          "routeDataId": "6251533",
+          "routeKey": "17:004",
+          "routeName": "HARMONY",
+          "year": 2006,
+          "aou": "04930",
+          "stop1Count": 2,
+          "countyFips": "08069",
+          "latitude": 40.5090827,
+          "longitude": -105.0392299
+        },
+        {
+          "routeDataId": "6261377",
+          "routeKey": "17:004",
+          "routeName": "HARMONY",
+          "year": 2007,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08069",
+          "latitude": 40.5090827,
+          "longitude": -105.0392299
+        }
+      ]
+    },
+    {
+      "pairKey": "08071:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6356603",
+          "routeKey": "17:376",
+          "routeName": "LUDLOW",
+          "year": 2014,
+          "aou": "06882",
+          "stop1Count": 8,
+          "countyFips": "08071",
+          "latitude": 37.3389499,
+          "longitude": -104.5848671
+        }
+      ]
+    },
+    {
+      "pairKey": "08071:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6356603",
+          "routeKey": "17:376",
+          "routeName": "LUDLOW",
+          "year": 2014,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08071",
+          "latitude": 37.3389499,
+          "longitude": -104.5848671
+        }
+      ]
+    },
+    {
+      "pairKey": "08075:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6237827",
+          "routeKey": "17:007",
+          "routeName": "FLEMING",
+          "year": 2003,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08075",
+          "latitude": 40.6569477,
+          "longitude": -102.9337159
+        }
+      ]
+    },
+    {
+      "pairKey": "08075:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6359848",
+          "routeKey": "17:007",
+          "routeName": "FLEMING",
+          "year": 2015,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08075",
+          "latitude": 40.6569477,
+          "longitude": -102.9337159
+        }
+      ]
+    },
+    {
+      "pairKey": "08077:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6248903",
+          "routeKey": "17:038",
+          "routeName": "FRUITA",
+          "year": 2005,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08077",
+          "latitude": 39.1643935,
+          "longitude": -108.7012441
+        },
+        {
+          "routeDataId": "6260445",
+          "routeKey": "17:038",
+          "routeName": "FRUITA",
+          "year": 2007,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08077",
+          "latitude": 39.1643935,
+          "longitude": -108.7012441
+        },
+        {
+          "routeDataId": "6341474",
+          "routeKey": "17:138",
+          "routeName": "Rosevale",
+          "year": 2011,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08077",
+          "latitude": 39.0521056,
+          "longitude": -108.5755774
+        },
+        {
+          "routeDataId": "6352741",
+          "routeKey": "17:138",
+          "routeName": "Rosevale",
+          "year": 2013,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08077",
+          "latitude": 39.0521056,
+          "longitude": -108.5755774
+        },
+        {
+          "routeDataId": "6388310",
+          "routeKey": "17:138",
+          "routeName": "Rosevale",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08077",
+          "latitude": 39.0521056,
+          "longitude": -108.5755774
+        }
+      ]
+    },
+    {
+      "pairKey": "08081:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6298797",
+          "routeKey": "17:301",
+          "routeName": "DINOSAUR",
+          "year": 2008,
+          "aou": "04930",
+          "stop1Count": 2,
+          "countyFips": "08081",
+          "latitude": 40.2777657,
+          "longitude": -108.5596319
+        }
+      ]
+    },
+    {
+      "pairKey": "08085:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6378320",
+          "routeKey": "17:365",
+          "routeName": "NUCLA",
+          "year": 2022,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08085",
+          "latitude": 38.271694,
+          "longitude": -108.535109
+        }
+      ]
+    },
+    {
+      "pairKey": "08091:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6260670",
+          "routeKey": "17:366",
+          "routeName": "OWL CREEK PASS",
+          "year": 2007,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08091",
+          "latitude": 38.1738367,
+          "longitude": -107.7416909
+        }
+      ]
+    },
+    {
+      "pairKey": "08095:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6249351",
+          "routeKey": "17:207",
+          "routeName": "AMHERST",
+          "year": 2005,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08095",
+          "latitude": 40.621963,
+          "longitude": -102.08478
+        },
+        {
+          "routeDataId": "6311791",
+          "routeKey": "17:207",
+          "routeName": "AMHERST",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08095",
+          "latitude": 40.621963,
+          "longitude": -102.08478
+        }
+      ]
+    },
+    {
+      "pairKey": "08095:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6341482",
+          "routeKey": "17:207",
+          "routeName": "AMHERST",
+          "year": 2011,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08095",
+          "latitude": 40.621963,
+          "longitude": -102.08478
+        },
+        {
+          "routeDataId": "6344339",
+          "routeKey": "17:207",
+          "routeName": "AMHERST",
+          "year": 2012,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08095",
+          "latitude": 40.621963,
+          "longitude": -102.08478
+        }
+      ]
+    },
+    {
+      "pairKey": "08095:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6235665",
+          "routeKey": "17:207",
+          "routeName": "AMHERST",
+          "year": 2000,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08095",
+          "latitude": 40.621963,
+          "longitude": -102.08478
+        }
+      ]
+    },
+    {
+      "pairKey": "08103:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6372525",
+          "routeKey": "17:352",
+          "routeName": "YELLOWJACKET PASS",
+          "year": 2019,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08103",
+          "latitude": 40.0522652,
+          "longitude": -107.8736167
+        },
+        {
+          "routeDataId": "6388266",
+          "routeKey": "17:352",
+          "routeName": "YELLOWJACKET PASS",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08103",
+          "latitude": 40.0522652,
+          "longitude": -107.8736167
+        }
+      ]
+    },
+    {
+      "pairKey": "08105:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6368581",
+          "routeKey": "17:154",
+          "routeName": "SUMMITVILLE",
+          "year": 2018,
+          "aou": "22860",
+          "stop1Count": 2,
+          "countyFips": "08105",
+          "latitude": 37.6329865,
+          "longitude": -106.4250933
+        }
+      ]
+    },
+    {
+      "pairKey": "08109:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6359943",
+          "routeKey": "17:018",
+          "routeName": "MOFFAT",
+          "year": 2015,
+          "aou": "06882",
+          "stop1Count": 3,
+          "countyFips": "08109",
+          "latitude": 38.025678,
+          "longitude": -105.8127155
+        },
+        {
+          "routeDataId": "6386702",
+          "routeKey": "17:018",
+          "routeName": "MOFFAT",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08109",
+          "latitude": 38.025678,
+          "longitude": -105.8127155
+        }
+      ]
+    },
+    {
+      "pairKey": "08113:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6365760",
+          "routeKey": "17:373",
+          "routeName": "LIZARD HEAD PASS",
+          "year": 2017,
+          "aou": "06882",
+          "stop1Count": 1,
+          "countyFips": "08113",
+          "latitude": 37.942874,
+          "longitude": -107.823279
+        },
+        {
+          "routeDataId": "6369761",
+          "routeKey": "17:373",
+          "routeName": "LIZARD HEAD PASS",
+          "year": 2018,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08113",
+          "latitude": 37.942874,
+          "longitude": -107.823279
+        },
+        {
+          "routeDataId": "6373296",
+          "routeKey": "17:373",
+          "routeName": "LIZARD HEAD PASS",
+          "year": 2019,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08113",
+          "latitude": 37.942874,
+          "longitude": -107.823279
+        },
+        {
+          "routeDataId": "6378040",
+          "routeKey": "17:373",
+          "routeName": "LIZARD HEAD PASS",
+          "year": 2022,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08113",
+          "latitude": 37.942874,
+          "longitude": -107.823279
+        },
+        {
+          "routeDataId": "6379559",
+          "routeKey": "17:373",
+          "routeName": "LIZARD HEAD PASS",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08113",
+          "latitude": 37.942874,
+          "longitude": -107.823279
+        },
+        {
+          "routeDataId": "6381527",
+          "routeKey": "17:373",
+          "routeName": "LIZARD HEAD PASS",
+          "year": 2023,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08113",
+          "latitude": 37.942874,
+          "longitude": -107.823279
+        },
+        {
+          "routeDataId": "6385010",
+          "routeKey": "17:373",
+          "routeName": "LIZARD HEAD PASS",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08113",
+          "latitude": 37.942874,
+          "longitude": -107.823279
+        }
+      ]
+    },
+    {
+      "pairKey": "08115:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6361562",
+          "routeKey": "17:307",
+          "routeName": "JULESBURG",
+          "year": 2016,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08115",
+          "latitude": 40.9679121,
+          "longitude": -102.3257889
+        }
+      ]
+    },
+    {
+      "pairKey": "08121:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6244378",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2002,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6244842",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2001,
+          "aou": "06882",
+          "stop1Count": 12,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6249378",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2003,
+          "aou": "06882",
+          "stop1Count": 12,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6249381",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2004,
+          "aou": "06882",
+          "stop1Count": 12,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6261264",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2006,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6299282",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2008,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6311391",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6345511",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2012,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6368742",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2018,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6371481",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2019,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6375659",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6378454",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2022,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6380684",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2023,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6383801",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        },
+        {
+          "routeDataId": "6387178",
+          "routeKey": "17:313",
+          "routeName": "FLAGLER",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08121",
+          "latitude": 39.5675297,
+          "longitude": -103.0237419
+        }
+      ]
+    },
+    {
+      "pairKey": "08121:sturnus-vulgaris",
+      "records": [
+        {
+          "routeDataId": "6172535",
+          "routeKey": "17:006",
+          "routeName": "PINNEO",
+          "year": 2003,
+          "aou": "04930",
+          "stop1Count": 1,
+          "countyFips": "08121",
+          "latitude": 40.2096396,
+          "longitude": -103.440258
+        }
+      ]
+    },
+    {
+      "pairKey": "08123:passer-domesticus",
+      "records": [
+        {
+          "routeDataId": "6172554",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2003,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6230239",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 1997,
+          "aou": "06882",
+          "stop1Count": 8,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6230924",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 1999,
+          "aou": "06882",
+          "stop1Count": 22,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6232429",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 1998,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6233790",
+          "routeKey": "17:206",
+          "routeName": "STONEHAM",
+          "year": 1998,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08123",
+          "latitude": 40.5807997,
+          "longitude": -103.6580889
+        },
+        {
+          "routeDataId": "6233883",
+          "routeKey": "17:206",
+          "routeName": "STONEHAM",
+          "year": 1997,
+          "aou": "06882",
+          "stop1Count": 2,
+          "countyFips": "08123",
+          "latitude": 40.5807997,
+          "longitude": -103.6580889
+        },
+        {
+          "routeDataId": "6235305",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2004,
+          "aou": "06882",
+          "stop1Count": 16,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6235617",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2000,
+          "aou": "06882",
+          "stop1Count": 28,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6298349",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2008,
+          "aou": "06882",
+          "stop1Count": 6,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6310646",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2009,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6316984",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2010,
+          "aou": "06882",
+          "stop1Count": 26,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6341454",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2011,
+          "aou": "06882",
+          "stop1Count": 11,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6345986",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2012,
+          "aou": "06882",
+          "stop1Count": 8,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6351612",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2013,
+          "aou": "06882",
+          "stop1Count": 12,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6358050",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2015,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6361308",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2016,
+          "aou": "06882",
+          "stop1Count": 15,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6365674",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2017,
+          "aou": "06882",
+          "stop1Count": 20,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6367852",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2018,
+          "aou": "06882",
+          "stop1Count": 10,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6375058",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2021,
+          "aou": "06882",
+          "stop1Count": 15,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6377307",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2022,
+          "aou": "06882",
+          "stop1Count": 16,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6381952",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2023,
+          "aou": "06882",
+          "stop1Count": 15,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6383598",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2024,
+          "aou": "06882",
+          "stop1Count": 15,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        },
+        {
+          "routeDataId": "6386689",
+          "routeKey": "17:035",
+          "routeName": "HUDSON",
+          "year": 2025,
+          "aou": "06882",
+          "stop1Count": 5,
+          "countyFips": "08123",
+          "latitude": 40.3052417,
+          "longitude": -104.6963429
+        }
+      ]
+    },
+    {
+      "pairKey": "08123:streptopelia-decaocto",
+      "records": [
+        {
+          "routeDataId": "6375905",
+          "routeKey": "17:206",
+          "routeName": "STONEHAM",
+          "year": 2021,
+          "aou": "22860",
+          "stop1Count": 1,
+          "countyFips": "08123",
+          "latitude": 40.5807997,
+          "longitude": -103.6580889
+        }
+      ]
+    }
+  ]
+}
