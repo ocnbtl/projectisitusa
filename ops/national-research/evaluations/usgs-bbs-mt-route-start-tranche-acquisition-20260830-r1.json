@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-mt-route-start-tranche-acquisition-20260830-r1",
+  "evaluatedAt": "2026-08-30T06:25:00Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded Montana tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-mt-route-start-tranche-selection-20260830-r1.json",
+    "method": "A fresh full retained-input replay after the North Carolina integration selected Montana as the highest current BBS remainder at 40 net-new pairs.",
+    "remainingNationalBbsNetPairsBeforeMontana": 781,
+    "montanaGrossPairs": 40,
+    "montanaNetNewPairs": 40,
+    "montanaCountyCount": 25,
+    "supportingRows": 114
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-mt-route-start-tranche-v1.json",
+    "planSha256": "becefe77bc4a0ae7a0d4c9337dcb3f964976ca6f5ff27300c35226d3e8d1bc0a",
+    "selectedPairSha256": "b0884c79c86e32c48636205c6a7bc6e60f06786a407f55d6dd9a7784f40c2f2a",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.3",
+    "planningCommit": "4836fa8a76123eb8fe01fea5b0372f8698870ea9",
+    "retryRepairCommit": "5557c35b7420846a3d406a22fdf149c54fe84411",
+    "timeoutRepairCommit": "5d3bf45edbd106078566216a628328c0ba3e5854",
+    "runCommit": "d1380dd4bdd6cf9698fa14fc0ebf065018a90730",
+    "coverageIndexCommit": "d6e86581d19d85c7a7fab82ddc75cdf3349748d9",
+    "sourceCoverageIndexId": "source-coverage-290304fd2cadebd84b84",
+    "sourceCoverageIndexSha256": "74934d174e41df7fb75aa003b44a611e7b7e51a3d36d6f1ae56147b220bc14a8",
+    "semanticDryRun": {
+      "result": "pass",
+      "baseSha": "5d3bf45edbd106078566216a628328c0ba3e5854",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 40,
+      "expectedSuccessfulProviderGets": 5,
+      "maximumProviderAttempts": 15,
+      "requestTimeoutMilliseconds": 180000,
+      "parameterHash": "3e8169996fd34e97f420dd040a339757abcffe99ae2582564e1fa48d24756242"
+    }
+  },
+  "transportRepair": {
+    "reason": "Three bounded pre-repair run invocations encountered transient HTTP 502 responses, and one post-retry-repair invocation was stopped after diagnostics showed it was stalled inside a provider download with no request timeout and no partial run output.",
+    "scope": "Idempotent GET transport only. No candidate, source identity, taxon, geography, review, or evidence semantics changed.",
+    "behavior": {
+      "maximumAttemptsPerRequest": 3,
+      "retryableConditions": [
+        "network or timeout error",
+        "HTTP 429",
+        "HTTP 5xx"
+      ],
+      "backoffMilliseconds": [
+        1000,
+        5000
+      ],
+      "retryAfterCapMilliseconds": 30000,
+      "requestTimeoutMilliseconds": 180000,
+      "successfulResponsesRequired": 5,
+      "maximumTotalAttempts": 15
+    },
+    "verification": [
+      "Focused fixture proved success after two HTTP 502 responses.",
+      "Focused fixture proved success after two thrown network errors.",
+      "Focused fixture proved failure after the third retryable HTTP response.",
+      "Immutable-run validation and TypeScript checks passed after both transport repairs."
+    ]
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterNorthCarolina": 767,
+    "netNewPairsBeforeMontana": 781,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260830T061700Z__usgs-bbs__3e8169996fd3",
+    "receiptPath": "src/data/research/runs/20260830T061700Z__usgs-bbs__3e8169996fd3/receipt.json",
+    "receiptSha256": "cc5a81c1d26b2fbaddc4e0ea4e22f8abddab5500c5c5b85cfcc928a00ad00a24",
+    "assertionsSha256": "0d1b953d175cb0a70a993b5641e84ea3f48cd55e7547c1a1a3b298593bcb24e3",
+    "reviewsSha256": "ed7e3b26abcab38e96a7e6e979205041d8a8197a3928b666815c75c05da4ee6a",
+    "outcomesSha256": "4851aeef2d149aa8b1f9ea6439c1a3ab7632767afe00184853d335e41656b0b9",
+    "status": "complete",
+    "codeCommit": "5d3bf45edbd106078566216a628328c0ba3e5854",
+    "startedAt": "2026-08-30T06:17:00.000Z",
+    "finishedAt": "2026-08-30T06:23:03.717Z",
+    "requestedPairs": 40,
+    "candidateRecords": 114,
+    "assertionEvents": 40,
+    "reviewEvents": 40,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 40,
+    "successfulResponses": 5,
+    "providerAttempts": 6,
+    "transientFailures": [
+      {
+        "status": 502,
+        "attempt": 1,
+        "maximumAttempts": 3,
+        "backoffMilliseconds": 30000,
+        "finalResult": "retried-successfully"
+      }
+    ],
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/mt-standard-stop1-detections.json",
+        "bytes": 39279,
+        "sha256": "f16734b97838d35fec91a7718a2eed3a222149d4ce7eccbf510116230c8c63a5"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "historicalCutoff": "2026-08-29",
+    "historicalCutoffResult": "baseline-excluding-new-run",
+    "compilationCutoff": "2026-08-30",
+    "reason": "The immutable run began after 2026-08-29T23:59:59.999Z. The projection uses the run's truthful UTC date rather than backdating the evidence."
+  },
+  "montanaMovement": {
+    "fullCountySpeciesDenominator": 140224,
+    "affectedCountyCount": 25,
+    "baseline": {
+      "verifiedPresent": 2390,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 24826,
+      "notResearched": 113008,
+      "explicitOutcomePairCount": 27216,
+      "evidenceRecordCount": 2437,
+      "researchRunCount": 29
+    },
+    "final": {
+      "verifiedPresent": 2430,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 24826,
+      "notResearched": 112968,
+      "explicitOutcomePairCount": 27256,
+      "evidenceRecordCount": 2477,
+      "researchRunCount": 30,
+      "conflicts": 0,
+      "summarySha256": "781952531f0edd2b32ddaa0d9e360562a14edb7fb5e022d3d69cf37d8202b5e7"
+    },
+    "delta": {
+      "verifiedPresent": 40,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -40,
+      "explicitOutcomePairCount": 40,
+      "evidenceRecordCount": 40,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 3,
+      "passer-domesticus": 14,
+      "streptopelia-decaocto": 6,
+      "sturnus-vulgaris": 17
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195803,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314330,
+      "immutableResearchRuns": 1426,
+      "assertionEvents": 309697,
+      "pairOutcomes": 1721483
+    },
+    "projectedAfterMontana": {
+      "verifiedPresent": 195843,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314290,
+      "conflicts": 0,
+      "immutableResearchRuns": 1427,
+      "assertionEvents": 309737,
+      "pairOutcomes": 1721523
+    },
+    "delta": {
+      "verifiedPresent": 40,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -40,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 40,
+      "pairOutcomes": 40
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 40 planned equals 40 accepted plus 0 rejected",
+    "montanaDenominatorConservation": "pass: 140,224 before and after",
+    "nationalDenominatorConservation": "pending cumulative all-state compilation",
+    "netUniqueMovement": "pass: all 40 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS adapter retry, timeout, semantics, and exhaustion tests",
+    "sourceCoverage": "pass: 1,427 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Montana compiles were byte-identical across 62 files with protected shared outputs unchanged",
+    "publication": "pending all-state, integrity, type, lint, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderAttempts": 6,
+    "successfulRunProviderResponses": 5,
+    "preRunProcessAttempts": 4,
+    "preRunKnownHttp502Failures": 3,
+    "preRunProviderAttempts": "UNKNOWN - the stopped pre-timeout process did not retain attempt telemetry; no exact total is claimed",
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "Montana remains a research-only bounded tranche and is not certified.",
+    "The jurisdiction evidence registry remains empty pending required human approval for any exact negative assertions.",
+    "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+    "The application and data release decisions remain owned by the production launch gate."
+  ],
+  "nextAction": "Commit the deterministic Montana projection and this evaluation, regenerate the cumulative publication manifest and readiness dashboard, run the full local release gates, then enter the formal production launch gate."
+}
