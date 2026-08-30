@@ -1,26 +1,26 @@
 # Michigan Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-08-30T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `83`
 - County-species pairs: `207832`
-- Verified present: `5694`
+- Verified present: `5733`
 - Verified absent: `0`
 - Not detected: `26`
 - Researched unresolved: `32875`
-- Not researched: `169237`
-- Determination coverage: `2.74%`
-- Research coverage: `18.57%`
-- Explicit outcome coverage: `18.5703%`
-- Applicable protocol cells: `287`
+- Not researched: `169198`
+- Determination coverage: `2.76%`
+- Research coverage: `18.59%`
+- Explicit outcome coverage: `18.5891%`
+- Applicable protocol cells: `291`
 - Current complete protocol cells: `120`
-- Protocol completion: `46.34%`
-- Current protocol completion: `41.81%`
-- Evidence records: `8364`
-- Research runs: `27`
+- Protocol completion: `45.70%`
+- Current protocol completion: `41.24%`
+- Evidence records: `8403`
+- Research runs: `28`
 - Rejection records: `1221`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Mute Swan (`cygnus-olor`) | wildlife | 82 | 0 | 1 |
+| Rock pigeon (`columba-livia`) | wildlife | 79 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 67 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 65 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 83 | 1 |
 | Asian Chestnut Gall Wasp (`dryocosmus-kuriphilus`) | insects | 0 | 83 | 1 |
 | Cottony cushion scale (`icerya-purchasi`) | insects | 0 | 83 | 1 |
@@ -53,10 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Flat grass scale (`aclerda-takahashii`) | insects | 0 | 83 | 0 |
 | Calamus (`acorus-calamus`) | plants | 0 | 83 | 0 |
 | Blue alfalfa aphid (`acyrthosiphon-kondoi`) | insects | 0 | 83 | 0 |
-| Largeleaf maidenhair (`adiantum-macrophyllum`) | plants | 0 | 83 | 0 |
-| Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 83 | 0 |
-| Rockroot (`agdestis-clematidea`) | plants | 0 | 83 | 0 |
-| Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 83 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T07:51:11.455Z | 39 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

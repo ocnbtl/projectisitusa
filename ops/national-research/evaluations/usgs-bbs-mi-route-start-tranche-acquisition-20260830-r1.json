@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-mi-route-start-tranche-acquisition-20260830-r1",
+  "evaluatedAt": "2026-08-30T07:56:13.139Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded Michigan tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-mi-route-start-tranche-selection-20260830-r1.json",
+    "method": "A fresh full retained-input replay after the Montana integration left Michigan, Oregon, and Wyoming tied at 39 net-new pairs; deterministic state-code ordering selected Michigan.",
+    "remainingNationalBbsNetPairsBeforeMichigan": 741,
+    "michiganGrossPairs": 39,
+    "michiganNetNewPairs": 39,
+    "michiganCountyCount": 23,
+    "supportingRows": 154
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-mi-route-start-tranche-v1.json",
+    "planSha256": "8949f41ee17c7b07bd9a1707355432e0a071d58a75a281b866b7ee097e14f973",
+    "selectedPairSha256": "0eaaca21b73b95210d52cac06d2f7a16125a0bc29085eb8c5b598673bf60ae43",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "planningCommit": "52bde27bce17ffed27fc53a337998017a4a78092",
+    "bodyTimeoutRepairCommit": "d49076c9631e87634b147a6373fe71798945fcbc",
+    "runCommit": "3b9fada98ad5722243603b5621a8ef70a297d0d2",
+    "coverageIndexCommit": "1ec07d0f6acaff6ef65f77228dcc8ea821c5b600",
+    "sourceCoverageIndexId": "source-coverage-ff4c5e8b3ed124a78e12",
+    "sourceCoverageIndexSha256": "f63b0ee2cb8d4fbf06ff4020c1ebb3bc59dd44f083e5fcaa7e3a1425095d4a18",
+    "semanticDryRun": {
+      "result": "pass",
+      "baseSha": "d49076c9631e87634b147a6373fe71798945fcbc",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 39,
+      "expectedSuccessfulProviderGets": 5,
+      "maximumProviderAttempts": 15,
+      "requestTimeoutMilliseconds": 180000,
+      "parameterHash": "d8b715a68345bc56b7fca2b89adb655267964b91737521eadb04aa5f0050fef6"
+    }
+  },
+  "transportRepair": {
+    "trigger": "The first Michigan acquisition invocation received four response headers and then aborted while consuming a successful response body after 319.361 seconds. No immutable run directory or evidence event was accepted.",
+    "rootCause": "Response body consumption occurred after the adapter's retry try/catch, so an AbortSignal timeout raised during response.arrayBuffer escaped the bounded retry loop.",
+    "scope": "Idempotent GET response-body handling only. No candidate, source identity, taxon, geography, review, or evidence semantics changed.",
+    "implementation": "Move successful response body consumption inside the existing retry try/catch, preserve the three-attempt and three-minute limits, retain oversized-payload rejection outside transport retry, add a two-body-timeout success fixture, and register adapter version 1.1.4.",
+    "verification": [
+      "Focused fixture proves success after two response-body timeout errors.",
+      "Existing HTTP 502, thrown network error, exhaustion, source identity, evidence semantics, and geography fixtures pass.",
+      "Immutable-run validation and TypeScript checks pass."
+    ]
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterMontana": 807,
+    "netNewPairsBeforeMichigan": 741,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260830T074150Z__usgs-bbs__d8b715a68345",
+    "receiptPath": "src/data/research/runs/20260830T074150Z__usgs-bbs__d8b715a68345/receipt.json",
+    "receiptSha256": "ec5827321eace7f8aeee3427daeba8dfceea4ac95162abcc7cce7be132f9ee32",
+    "assertionsSha256": "71c9cebf1fa7fbd070ab34973279ab7f28538a52dc9e4adc8f2c1dffa58533e2",
+    "reviewsSha256": "cfb88c04977ae9e8f59c5e318de9e9026638a2215438acd3973cac9cb628c66d",
+    "outcomesSha256": "8b2af06fe9fdf6dd861f462b89c81e163e21384e172673b59aea9704d75e7dc0",
+    "status": "complete",
+    "codeCommit": "d49076c9631e87634b147a6373fe71798945fcbc",
+    "startedAt": "2026-08-30T07:41:50.012Z",
+    "finishedAt": "2026-08-30T07:51:11.455Z",
+    "requestedPairs": 39,
+    "candidateRecords": 154,
+    "assertionEvents": 39,
+    "reviewEvents": 39,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 39,
+    "successfulResponses": 5,
+    "providerAttempts": 6,
+    "transientFailures": [
+      {
+        "condition": "response-body timeout",
+        "attempt": 1,
+        "maximumAttempts": 3,
+        "backoffMilliseconds": 1000,
+        "finalResult": "retried-successfully"
+      }
+    ],
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/mi-standard-stop1-detections.json",
+        "bytes": 51041,
+        "sha256": "672a1ea6c0efcfe311f178464fef745c2e59cbedf9f1161fde92a28d3d4ee185"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "historicalCutoff": "2026-08-29",
+    "historicalCutoffResult": "pass-byte-stable-baseline-excluding-new-run",
+    "compilationCutoff": "2026-08-30",
+    "reason": "The immutable run began after 2026-08-29T23:59:59.999Z. The projection uses the run's truthful UTC date rather than backdating the evidence."
+  },
+  "michiganMovement": {
+    "fullCountySpeciesDenominator": 207832,
+    "affectedCountyCount": 23,
+    "baseline": {
+      "verifiedPresent": 5694,
+      "verifiedAbsent": 0,
+      "notDetected": 26,
+      "researchedUnresolved": 32875,
+      "notResearched": 169237,
+      "explicitOutcomePairCount": 38595,
+      "evidenceRecordCount": 8364,
+      "researchRunCount": 27
+    },
+    "final": {
+      "verifiedPresent": 5733,
+      "verifiedAbsent": 0,
+      "notDetected": 26,
+      "researchedUnresolved": 32875,
+      "notResearched": 169198,
+      "explicitOutcomePairCount": 38634,
+      "evidenceRecordCount": 8403,
+      "researchRunCount": 28,
+      "conflicts": 0,
+      "summarySha256": "a41e248941525ae719c82c278cf76772c6ecb60787b8ec600ef4b2a9a97924a3"
+    },
+    "delta": {
+      "verifiedPresent": 39,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -39,
+      "explicitOutcomePairCount": 39,
+      "evidenceRecordCount": 39,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 4,
+      "cygnus-olor": 1,
+      "passer-domesticus": 18,
+      "sturnus-vulgaris": 16
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195843,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314290,
+      "immutableResearchRuns": 1427,
+      "assertionEvents": 309737,
+      "pairOutcomes": 1721523
+    },
+    "expectedAfterMichigan": {
+      "verifiedPresent": 195882,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314251,
+      "immutableResearchRuns": 1428,
+      "assertionEvents": 309776,
+      "pairOutcomes": 1721562
+    },
+    "delta": {
+      "verifiedPresent": 39,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -39,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 39,
+      "pairOutcomes": 39
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 39 planned equals 39 accepted plus 0 rejected",
+    "michiganDenominatorConservation": "pass: 207,832 before and after",
+    "nationalDenominatorConservation": "pending cumulative readiness generation",
+    "netUniqueMovement": "pass: all 39 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS header retry, body retry, timeout, semantics, and exhaustion tests",
+    "sourceCoverage": "pass: 1,428 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent Michigan compiles were byte-identical across 89 files with protected shared outputs unchanged",
+    "publication": "pending all-state, integrity, type, lint, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "failedPreRepairInvocationProviderAttempts": 4,
+    "failedPreRepairInvocationAcceptedRuns": 0,
+    "successfulRunProviderAttempts": 6,
+    "successfulRunProviderResponses": 5,
+    "totalMichiganAcquisitionProviderAttempts": 10,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "Michigan remains a research-only bounded tranche and is not certified.",
+    "The jurisdiction evidence registry remains empty pending required human approval for any exact negative assertions.",
+    "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+    "The application and data release decisions remain owned by the production launch gate."
+  ],
+  "nextAction": "Commit the deterministic Michigan projection and this evaluation, regenerate the cumulative publication manifest and readiness dashboard, run the full local release gates, then enter the formal production launch gate."
+}
