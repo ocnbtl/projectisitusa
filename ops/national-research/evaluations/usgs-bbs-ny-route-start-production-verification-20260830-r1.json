@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ny-route-start-production-verification-20260830-r1",
+  "verifiedAt": "2026-08-30T03:05:41Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative New York USGS BBS research release. The research-data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "235379d8504961cb4d4ba16da4b3e4c8c8436916",
+    "applicationLastKnownGoodSha": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+    "releaseSha": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+    "originMainSha": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+    "githubMainSha": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+    "githubProductionDeploymentId": 6162598978,
+    "githubProductionDeploymentStatusId": 17517265851,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "githubProductionCreatedAt": "2026-08-30T02:57:06Z",
+    "vercelImmutableUrl": "https://projectisitusa-bm9t4h8ve-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "cb55715e25b912df031720bde8d6802fed849ca0",
+      "subject": "Plan New York BBS research projection"
+    },
+    {
+      "sha": "43c40fe77f1701433eca71f37c67db17dfbd3df8",
+      "subject": "Acquire New York BBS research evidence"
+    },
+    {
+      "sha": "833bad78a8af22aa86f183fe9ae30a014c578522",
+      "subject": "Index New York BBS research coverage"
+    },
+    {
+      "sha": "8d30d55c49cd4592bdcb7824871d0013d96334bc",
+      "subject": "Compile New York BBS research projection"
+    },
+    {
+      "sha": "a37998fceda776df4c92cc2705b3157be33447c9",
+      "subject": "Prepare New York cumulative research release"
+    },
+    {
+      "sha": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+      "subject": "Refresh New York national research readiness"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-ny-route-start-tranche-selection-20260829-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-ny-route-start-tranche-acquisition-20260829-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-ny-route-start-tranche-v1.json",
+    "planSha256": "3ccbc4c9bf0f372f48e8c2c4e3339e41ad67f626db79287a7678cbf32233e17f",
+    "selectedPairSha256": "13d66180c2ef28ad477a2c759441a0ecb89413d5e589e2be517b7c4d196551c7",
+    "parameterHash": "c62bfb8fc62a0f688d55597ef9d6f7347335c11ed608988f4f25d853aa2d7d1e",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260830T011500Z__usgs-bbs__c62bfb8fc62a",
+    "runReceiptSha256": "bc073517d4d8fdf906e6e10c8f02c30ba177d0fa791a78a1a8864debc952365e",
+    "assertionsSha256": "264d8c33feb2ad0cbc030fb8fd53d1d4701305969adf949720c17238f44ac261",
+    "reviewsSha256": "1d27c7dee2d0118e65e691f596a6f67341320b5a0a86fd6822325dd22d98f666",
+    "outcomesSha256": "d050fa4af2407a615ff08b3e28ff4424347f15eea5e4997642eecc1fbe2dd6cf",
+    "requestedPairs": 45,
+    "candidateRecords": 130,
+    "assertionEvents": 45,
+    "reviewEvents": 45,
+    "pairOutcomes": 45,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedSources": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ],
+    "cutoffBoundary": {
+      "historicalCutoff": "2026-08-29",
+      "historicalCutoffResult": "pass-byte-stable-baseline-excluding-new-run",
+      "compilationCutoff": "2026-08-30",
+      "reason": "The immutable run began after 2026-08-29T23:59:59.999Z, so the projection uses the run's truthful UTC date instead of backdating the evidence."
+    },
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "newYork": {
+      "countySpeciesDenominator": 155248,
+      "affectedCounties": 26,
+      "baseline": {
+        "verifiedPresent": 5836,
+        "verifiedAbsent": 0,
+        "notDetected": 10,
+        "researchedUnresolved": 22922,
+        "notResearched": 126480,
+        "explicitOutcomePairCount": 28768,
+        "evidenceRecordCount": 6896,
+        "researchRunCount": 25
+      },
+      "prepared": {
+        "verifiedPresent": 5881,
+        "verifiedAbsent": 0,
+        "notDetected": 10,
+        "researchedUnresolved": 22922,
+        "notResearched": 126435,
+        "explicitOutcomePairCount": 28813,
+        "evidenceRecordCount": 6941,
+        "researchRunCount": 26,
+        "conflicts": 0,
+        "summarySha256": "522f3e88f8e4d73af65b633a191ae5347719ef0c390b25ea693e23a721563f43"
+      },
+      "delta": {
+        "verifiedPresent": 45,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -45,
+        "explicitOutcomePairCount": 45,
+        "evidenceRecordCount": 45,
+        "researchRunCount": 1
+      },
+      "speciesDelta": {
+        "columba-livia": 6,
+        "passer-domesticus": 19,
+        "sturnus-vulgaris": 20
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195761,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314372,
+      "conflicts": 0,
+      "immutableResearchRuns": 1425,
+      "assertionEvents": 309655,
+      "pairOutcomes": 1721441,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "38c8a0f42be28272d8626f6a934fc56be272c9d7cef8ddf01236595701bf84fb"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Focused USGS BBS adapter test: pass",
+      "New York byte stability: pass across 68 tracked state projection files with protected shared outputs unchanged",
+      "All 51 state byte-stability checks at their truthful committed cutoffs: pass; 50 states at 2026-08-29 and New York at 2026-08-30",
+      "Committed 51-state projection checksums and publication modes: pass",
+      "Cross-state projections, national denominator, readiness, compiler, compatibility, and data integrity: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Pinned Node 22 aggregate research integrity: pass across 1,425 runs, 309,655 assertions, and 1,721,441 outcomes",
+      "Source coverage current: pass across 1,425 hash-reconciled entries and 29 sources",
+      "Publication manifest current and deterministic static R2 plan: pass with zero modeled requests issued",
+      "Vercel publication, ignored-build, public projection, and research deep-link contracts: pass",
+      "Project data integrity: pass",
+      "National research configuration: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Whitespace and clean-worktree checks before push: pass"
+    ]
+  },
+  "preparedR2Release": {
+    "releaseId": "research-8d30d55c49cd-b13847f4fb29ab26",
+    "sourceCommit": "8d30d55c49cd4592bdcb7824871d0013d96334bc",
+    "sourceTreeSha256": "5e94c12e5d0445832568223e326f5b0ec6457f4b6e191c84d7f27914392a9eac",
+    "manifestBytes": 1565427,
+    "manifestSha256": "485e3a5b878bf27ee8932df18c0b6c7425e85301dac57bb3ceeea9adc15124c3",
+    "artifactCount": 3195,
+    "artifactBytes": 1006307649,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1006307649,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestBytes": 1565427,
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "newYorkObjectKey": "objects/sha256/fa/fa9a3b0ee22c67afe958e0d5835423d1ab202dc2b984a0e32c9ce4ff3e381c70.json",
+    "newYorkSummaryBytes": 379020,
+    "newYorkSummarySha256": "fa9a3b0ee22c67afe958e0d5835423d1ab202dc2b984a0e32c9ce4ff3e381c70",
+    "preparedNewYorkSummarySha256": "522f3e88f8e4d73af65b633a191ae5347719ef0c390b25ea693e23a721563f43",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginManifestBodiesEqual": true,
+    "directAndSameOriginNewYorkBodiesEqual": true,
+    "activeNewYorkObjectMatchesManifest": true,
+    "preparedNewYorkIsPromoted": false,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "f9de2c161b4fb6830439a962d86ab7bb94ac0184cfeb30985a92f5b3f3f2c06e"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "a6c90805efe0e74af41c386866e55432ae9ba01a123ed04b68119c44a31c58ae"
+      },
+      {
+        "path": "/research?state=NY&county=36001&species=passer-domesticus",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "a6c90805efe0e74af41c386866e55432ae9ba01a123ed04b68119c44a31c58ae"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "7fc3547541a4eba8e0edd74a0e20779f29779a251aa3bae56be3d76bd7e56141"
+      }
+    ],
+    "securityHeaders": {
+      "strictTransportSecurity": "max-age=63072000",
+      "contentSecurityPolicy": "present with frame-ancestors none",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "xFrameOptions": "DENY"
+    },
+    "deployedStaticNewYork": {
+      "path": "/generated/research/NY/summary.json",
+      "canonicalStatus": 200,
+      "immutableStatus": 200,
+      "bodyBytes": 381480,
+      "bodySha256": "522f3e88f8e4d73af65b633a191ae5347719ef0c390b25ea693e23a721563f43",
+      "exactCanonicalToImmutable": true,
+      "exactDeploymentToLocalPreparedArtifact": true,
+      "boundary": "This proves the prepared static artifact is in the application deployment. It does not prove or claim that the guarded R2 pointer exposes the prepared release to the research UI."
+    },
+    "activeR2Checks": {
+      "pointerDirectStatus": 200,
+      "pointerSameOriginStatus": 200,
+      "pointerExactBodyMatch": true,
+      "manifestDirectStatus": 200,
+      "manifestSameOriginStatus": 200,
+      "manifestExactBodyMatch": true,
+      "newYorkObjectDirectStatus": 200,
+      "newYorkObjectSameOriginStatus": 200,
+      "newYorkObjectExactBodyMatch": true,
+      "newYorkObjectMatchesManifest": true,
+      "addressingNote": "Immutable content objects use their manifest-declared global objectKey. A release-qualified object probe returned the expected 404 before the verifier corrected the URL to the publication contract's global object path; this was a read-only verifier path correction, not a product or data mutation."
+    }
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, the immutable Vercel deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable application routes, expected 404 behavior, the New York research deep link, deployed static New York artifact, direct data origin, same-origin proxy, active manifest, and active New York object passed exact-byte checks."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface, style, layout, image, or other visual application code changed. This tranche changes generated research data only, and the guarded runtime data pointer intentionally remains on the prior release."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface or interaction code changed. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the prepared state artifact is exact; the active R2 pointer remains short-lived while content objects are immutable. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; six checked production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub success, canonical-to-immutable HTTP parity, prepared static artifact identity, active pointer identity, active manifest identity, and active object parity were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local release HEAD, origin/main, public GitHub main, and Production deployment identify a9635c21dcc0d05385c9af06b712b12afaa23e29; canonical bodies match immutable deployment projectisitusa-bm9t4h8ve-unigentamos.vercel.app. No runtime environment variable or migration was required."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics, the jurisdiction evidence registry remains empty, and no manual public absence claim was made."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected New York from a fresh retained-input national replay as the highest remaining 45-net-pair tranche and confirmed all 45 selected pairs were still not researched.",
+    "Integrated 45 exact positive BBS route-start pairs across 26 counties without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Ran the complete research gate, truthful-cutoff 51-state byte stability, project data integrity, national configuration, Vercel publication contracts, and production build under pinned Node 22 while preserving the frozen suite and publication contract."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+    "applicationReleaseCommit": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The New York BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "Production verification used exact HTTP, header, deployment, and immutable-artifact checks. No new browser visual audit was required because no interface code changed, and no visual-fidelity claim is made.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release a9635c21dcc0d05385c9af06b712b12afaa23e29 is on origin/main and public GitHub main and is tied to successful GitHub Production deployment 6162598978 at projectisitusa-bm9t4h8ve-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, deployed New York static-artifact identity, pointer identity, active manifest identity, and active New York object identity passed. The prepared New York research release adds 45 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. The immutable run receipt records the code commit that authorized and executed acquisition, not the later commit containing the receipt. This production receipt does not attest to the commit that contains it or any future R2 action."
+}
