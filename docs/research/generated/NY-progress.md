@@ -1,26 +1,26 @@
 # New York Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-08-30T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `62`
 - County-species pairs: `155248`
-- Verified present: `5836`
+- Verified present: `5881`
 - Verified absent: `0`
 - Not detected: `10`
 - Researched unresolved: `22922`
-- Not researched: `126480`
-- Determination coverage: `3.76%`
-- Research coverage: `18.53%`
-- Explicit outcome coverage: `18.5304%`
-- Applicable protocol cells: `355`
+- Not researched: `126435`
+- Determination coverage: `3.79%`
+- Research coverage: `18.56%`
+- Explicit outcome coverage: `18.5593%`
+- Applicable protocol cells: `358`
 - Current complete protocol cells: `104`
-- Protocol completion: `32.96%`
-- Current protocol completion: `29.30%`
-- Evidence records: `6896`
-- Research runs: `25`
+- Protocol completion: `32.68%`
+- Current protocol completion: `29.05%`
+- Evidence records: `6941`
+- Research runs: `26`
 - Rejection records: `903`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rock pigeon (`columba-livia`) | wildlife | 56 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 43 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 42 | 0 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 62 | 2 |
 | Phytophthora Root Rot (`phytophthora-cinnamomi`) | fungi-diseases | 0 | 62 | 2 |
 | Laurel wilt (`raffaelea-lauricola`) | fungi-diseases | 0 | 62 | 2 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Tausch's goatgrass (`aegilops-tauschii`) | plants | 0 | 62 | 0 |
 | Rockroot (`agdestis-clematidea`) | plants | 0 | 62 | 0 |
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 62 | 0 |
-| Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 62 | 0 |
-| Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 62 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 62 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T01:17:47.603Z | 45 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

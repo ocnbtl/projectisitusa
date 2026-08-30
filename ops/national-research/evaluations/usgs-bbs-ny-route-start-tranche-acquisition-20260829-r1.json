@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ny-route-start-tranche-acquisition-20260829-r1",
+  "evaluatedAt": "2026-08-30T01:40:41Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded New York tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-ny-route-start-tranche-selection-20260829-r1.json",
+    "method": "Fresh retained-input replay after the Pennsylvania integration selected New York at 45 current net-new pairs, ahead of the previously ranked North Carolina remainder of 42.",
+    "remainingNationalBbsNetPairsBeforeNewYork": 868,
+    "newYorkGrossPairs": 45,
+    "newYorkNetNewPairs": 45,
+    "newYorkCountyCount": 26,
+    "supportingRows": 130
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-ny-route-start-tranche-v1.json",
+    "planSha256": "3ccbc4c9bf0f372f48e8c2c4e3339e41ad67f626db79287a7678cbf32233e17f",
+    "selectedPairSha256": "13d66180c2ef28ad477a2c759441a0ecb89413d5e589e2be517b7c4d196551c7",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "planningCommit": "cb55715e25b912df031720bde8d6802fed849ca0",
+    "runCommit": "43c40fe77f1701433eca71f37c67db17dfbd3df8",
+    "coverageIndexCommit": "833bad78a8af22aa86f183fe9ae30a014c578522",
+    "sourceCoverageIndexId": "source-coverage-44e5df796fdd1e593625",
+    "sourceCoverageIndexSha256": "fc98baab5f2534d54b82fc632f47111695ac8ec8c7c98a6ea1ca20468f1fd9fb",
+    "semanticDryRun": {
+      "result": "pass",
+      "baseSha": "cb55715e25b912df031720bde8d6802fed849ca0",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 45,
+      "expectedProviderGets": 5,
+      "parameterHash": "c62bfb8fc62a0f688d55597ef9d6f7347335c11ed608988f4f25d853aa2d7d1e"
+    }
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterPennsylvania": 680,
+    "netNewPairsBeforeNewYork": 868,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260830T011500Z__usgs-bbs__c62bfb8fc62a",
+    "receiptPath": "src/data/research/runs/20260830T011500Z__usgs-bbs__c62bfb8fc62a/receipt.json",
+    "receiptSha256": "bc073517d4d8fdf906e6e10c8f02c30ba177d0fa791a78a1a8864debc952365e",
+    "assertionsSha256": "264d8c33feb2ad0cbc030fb8fd53d1d4701305969adf949720c17238f44ac261",
+    "reviewsSha256": "1d27c7dee2d0118e65e691f596a6f67341320b5a0a86fd6822325dd22d98f666",
+    "outcomesSha256": "d050fa4af2407a615ff08b3e28ff4424347f15eea5e4997642eecc1fbe2dd6cf",
+    "status": "complete",
+    "codeCommit": "cb55715e25b912df031720bde8d6802fed849ca0",
+    "startedAt": "2026-08-30T01:15:00.000Z",
+    "finishedAt": "2026-08-30T01:17:47.603Z",
+    "requestedPairs": 45,
+    "candidateRecords": 130,
+    "assertionEvents": 45,
+    "reviewEvents": 45,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 45,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/ny-standard-stop1-detections.json",
+        "bytes": 44429,
+        "sha256": "49cfb14dd51dc376d70dbb72e285c58109cdd0e89621b8c3cc3ebe1fa406f926"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "historicalCutoff": "2026-08-29",
+    "historicalCutoffResult": "pass-byte-stable-baseline-excluding-new-run",
+    "compilationCutoff": "2026-08-30",
+    "reason": "The immutable run began after 2026-08-29T23:59:59.999Z. The compiler correctly excluded it at the historical cutoff, so the projection uses the run's truthful UTC date rather than backdating the evidence."
+  },
+  "newYorkMovement": {
+    "fullCountySpeciesDenominator": 155248,
+    "affectedCountyCount": 26,
+    "baseline": {
+      "verifiedPresent": 5836,
+      "verifiedAbsent": 0,
+      "notDetected": 10,
+      "researchedUnresolved": 22922,
+      "notResearched": 126480,
+      "explicitOutcomePairCount": 28768,
+      "evidenceRecordCount": 6896,
+      "researchRunCount": 25
+    },
+    "final": {
+      "verifiedPresent": 5881,
+      "verifiedAbsent": 0,
+      "notDetected": 10,
+      "researchedUnresolved": 22922,
+      "notResearched": 126435,
+      "explicitOutcomePairCount": 28813,
+      "evidenceRecordCount": 6941,
+      "researchRunCount": 26,
+      "conflicts": 0,
+      "summarySha256": "522f3e88f8e4d73af65b633a191ae5347719ef0c390b25ea693e23a721563f43"
+    },
+    "delta": {
+      "verifiedPresent": 45,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -45,
+      "explicitOutcomePairCount": 45,
+      "evidenceRecordCount": 45,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 6,
+      "passer-domesticus": 19,
+      "sturnus-vulgaris": 20
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195716,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314417,
+      "immutableResearchRuns": 1424,
+      "assertionEvents": 309610,
+      "pairOutcomes": 1721396
+    },
+    "preparedAfterNewYork": {
+      "verifiedPresent": 195761,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314372,
+      "conflicts": 0,
+      "immutableResearchRuns": 1425,
+      "assertionEvents": 309655,
+      "pairOutcomes": 1721441,
+      "readinessSha256": "pending-full-release-gates"
+    },
+    "delta": {
+      "verifiedPresent": 45,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -45,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 45,
+      "pairOutcomes": 45
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 45 planned equals 45 accepted plus 0 rejected",
+    "newYorkDenominatorConservation": "pass: 155,248 before and after",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
+    "netUniqueMovement": "pass: all 45 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS adapter test",
+    "immutableRunValidation": "pass: full corpus accepted 1,425 runs, 309,655 assertions, and 1,721,441 outcomes with zero unreviewed evidence",
+    "sourceCoverage": "pass: 1,425 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent New York compiles were byte-identical across 68 files with protected shared outputs unchanged",
+    "publication": "pending all-state, integrity, type, lint, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "New York remains a research-only bounded tranche and is not certified.",
+    "The jurisdiction evidence registry remains empty pending required human approval for any exact negative assertions.",
+    "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+    "The application and data release decisions remain owned by the production launch gate."
+  ],
+  "nextAction": "Commit the deterministic New York projection and this evaluation, regenerate the cumulative publication manifest, run the full local release gates, then enter the formal production launch gate."
+}
