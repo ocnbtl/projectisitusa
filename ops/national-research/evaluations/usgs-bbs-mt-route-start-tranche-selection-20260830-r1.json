@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-mt-route-start-tranche-selection-20260830-r1",
+  "evaluatedAt": "2026-08-30T05:56:17.319Z",
+  "status": "selected-local-plan-pending-commit",
+  "decision": {
+    "question": "Which remaining bounded no-cost research tranche should MAIN execute next under current source, evidence, resource, and release constraints?",
+    "selectedState": "MT",
+    "selectedDirection": "Commit and execute the Montana USGS BBS route-start tranche.",
+    "reason": "A fresh full retained-input replay after North Carolina gives Montana the highest current BBS net movement at 40 pairs. All 40 selected pairs are currently not researched and are supported by 114 positive standard-run Stop 1 rows. The registered adapter and evidence contract are already accepted, the run is bounded to five public GET requests, and it creates no negative claims.",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped research, acquisition, implementation, commit, push, ordinary deployment, and continuation authority.",
+    "reopenCondition": "Any plan drift, retained-source identity mismatch, changed candidate count, incomplete outcome set, accepted conflict, paid-cost risk, or resource-policy failure."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "4521d5dc8e6132efb3f5fc03b4e8315e9bca8368",
+    "originMain": "4521d5dc8e6132efb3f5fc03b4e8315e9bca8368",
+    "publicGitHubMain": "4521d5dc8e6132efb3f5fc03b4e8315e9bca8368",
+    "initialWorktree": "clean before this task-created plan and evaluation",
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "submittedIntegrationItems": 0,
+    "lastApplicationReleaseCommit": "08ed53dc01d93e8a0c2daad4e4308476375f6df8",
+    "lastApplicationDeploymentId": 6163597418,
+    "lastApplicationDeploymentStatus": "success",
+    "lastApplicationDeploymentUrl": "https://projectisitusa-a2i2894tk-unigentamos.vercel.app",
+    "canonicalHomeStatus": 200,
+    "canonicalResearchStatus": 200,
+    "activeR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "activeR2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "activeR2PointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "preparedR2ReleaseId": "research-ba67a4065f10-d3a1f447c91a3227",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "jurisdictionEvidenceRegistryRecords": 0,
+    "durableOwnerCheckpoint": {
+      "status": "stale-contradiction-preserved",
+      "recordedState": "bbs-ohio-tranche-generated-pending-commit",
+      "currentEvidence": "Git, readiness, and production receipts are through the later North Carolina tranche."
+    }
+  },
+  "resourceGuard": {
+    "measuredAt": "2026-08-30T05:56:17.319Z",
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 9417383936,
+    "availableMemoryPercent": 28.15,
+    "freeDiskBytes": 680465526784,
+    "tier": "green",
+    "decision": "Proceed with one sequential BBS analysis, acquisition, compiler, or build lane at a time; shared generation and release gates remain sequential."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380",
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6",
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240",
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98",
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "freshResidualReplay": {
+    "completedAt": "2026-08-30T05:55:25Z",
+    "archiveRows": 4551591,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "nationalExactTargetRows": 136665,
+    "nationalStandardTargetRows": 126651,
+    "nationalAcceptedPositiveStop1Rows": 5322,
+    "nationalGrossCountySpeciesPairs": 1548,
+    "nationalAlreadyPresentPairs": 767,
+    "nationalNetNewPairs": 781,
+    "stateAcceptedPositiveStop1Rows": 114,
+    "stateGrossCountySpeciesPairs": 40,
+    "stateAlreadyPresentPairs": 0,
+    "stateNetNewPairs": 40,
+    "affectedCounties": 25,
+    "selectedPairCurrentStatus": {
+      "notResearched": 40,
+      "other": 0
+    },
+    "nextAlternatives": [
+      {
+        "stateCode": "MI",
+        "netNewPairs": 39
+      },
+      {
+        "stateCode": "OR",
+        "netNewPairs": 39
+      },
+      {
+        "stateCode": "WY",
+        "netNewPairs": 39
+      }
+    ]
+  },
+  "alternativesConsidered": [
+    {
+      "direction": "Select Michigan, Oregon, or Wyoming instead.",
+      "decision": "defer",
+      "reason": "Each has 39 net-new BBS pairs, one fewer than Montana in the same full retained-input replay."
+    },
+    {
+      "direction": "Continue the USFS Current Invasive Plant Locations source family beyond Oregon.",
+      "decision": "defer",
+      "reason": "The national preflight estimated 30 sample pairs and the Oregon pilot already consumed 16 candidates, producing 15 present and 1 unresolved. Broader work needs additional bulk archive and polygon-processing contract work and offers less certain immediate net movement."
+    },
+    {
+      "direction": "Publish jurisdiction-wide negative candidates.",
+      "decision": "blocked",
+      "reason": "The jurisdiction evidence registry contains zero approved records. Manual negative candidates require registered human approval and cannot be published autonomously."
+    },
+    {
+      "direction": "Promote the prepared R2 release.",
+      "decision": "ineligible",
+      "reason": "The ordinary R2 promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    },
+    {
+      "direction": "Reopen GBIF acquisition.",
+      "decision": "no-go",
+      "reason": "The current project decision retains the GBIF no-go boundary."
+    }
+  ],
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-mt-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-mt-route-start-tranche-v1",
+    "bytes": 7516,
+    "sha256": "becefe77bc4a0ae7a0d4c9337dcb3f964976ca6f5ff27300c35226d3e8d1bc0a",
+    "candidatePairs": 40,
+    "uniqueCandidatePairs": 40,
+    "deterministicallySorted": true,
+    "supportingRowsExpected": 114,
+    "grossPairs": 40,
+    "affectedCounties": 25,
+    "speciesCount": 4,
+    "speciesPairCounts": {
+      "columba-livia": 3,
+      "passer-domesticus": 14,
+      "streptopelia-decaocto": 6,
+      "sturnus-vulgaris": 17
+    }
+  },
+  "baseline": {
+    "montana": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 140224,
+      "verifiedPresent": 2390,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 24826,
+      "notResearched": 113008,
+      "explicitOutcomePairCount": 27216,
+      "evidenceRecordCount": 2437,
+      "researchRunCount": 29,
+      "conflicts": 0,
+      "selectedPairStatus": {
+        "notResearched": 40
+      }
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195803,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314330,
+      "conflicts": 0,
+      "immutableResearchRuns": 1426,
+      "assertionEvents": 309697,
+      "pairOutcomes": 1721483,
+      "unreviewedEvidence": 0
+    }
+  },
+  "evidenceContract": {
+    "accepted": "Positive standard-run Stop 1 detections for exact current-catalog taxa whose exact retained route-start coordinate resolves to one active Montana county equivalent.",
+    "rejectedAsNegativeEvidence": [
+      "later stops",
+      "route totals",
+      "zero counts",
+      "missing rows",
+      "unmatched taxa",
+      "source silence"
+    ],
+    "claimScale": "sampled point recorded-presence only",
+    "absenceClaimsAllowed": false,
+    "surveyNonDetectionClaimsAllowed": false,
+    "countywideInventoryClaimsAllowed": false,
+    "jurisdictionEvidenceAction": "No change. The committed registry remains empty until exact candidate assertions receive required human approval."
+  },
+  "acceptanceCriteria": [
+    "The committed plan contains exactly 40 sorted unique Montana county-species candidates across 25 active counties.",
+    "A zero-network semantic dry-run predicts exactly five public GET requests and issues none.",
+    "The live adapter reproduces all four source identities and completes exactly 40 pair outcomes.",
+    "Compilation moves exactly 40 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "cloudflareUsageRefresh": "not-run-because-no-r2-write-is-eligible"
+  },
+  "blockers": {
+    "implementation": [],
+    "acquisition": [
+      "The five public GET responses must reproduce the committed file identities."
+    ],
+    "publicationOnly": [
+      "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+      "Fresh Cloudflare usage and an authenticated exact missing-object plan are required before a later R2 write."
+    ]
+  },
+  "nextAction": "Commit the generated plan and this evaluation, run the zero-network semantic dry-run from the clean exact commit, and execute the five-GET acquisition only if every pinned identity and 40-pair scope remains exact."
+}
