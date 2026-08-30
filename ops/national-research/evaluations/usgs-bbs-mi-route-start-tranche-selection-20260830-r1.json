@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-mi-route-start-tranche-selection-20260830-r1",
+  "evaluatedAt": "2026-08-30T07:27:56.191Z",
+  "status": "selected-local-plan-pending-commit",
+  "decision": {
+    "question": "Which remaining bounded no-cost research tranche should MAIN execute next under current source, evidence, resource, and release constraints?",
+    "selectedState": "MI",
+    "selectedDirection": "Commit and execute the Michigan USGS BBS route-start tranche.",
+    "reason": "A fresh full retained-input replay after the Montana integration leaves Michigan, Oregon, and Wyoming tied at 39 net-new pairs. The deterministic state-code ordering selects Michigan. All 39 Michigan pairs are currently not researched and are supported by 154 positive standard-run Stop 1 rows. The registered adapter and evidence contract are already accepted, the run is bounded to five public GET responses and at most fifteen attempts, and it creates no negative claims.",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped research, acquisition, implementation, commit, push, ordinary deployment, and continuation authority.",
+    "reopenCondition": "Any plan drift, retained-source identity mismatch, changed candidate count, incomplete outcome set, accepted conflict, paid-cost risk, or resource-policy failure."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "37312b487766e6f6b7628da9de216348419eba75",
+    "originMain": "37312b487766e6f6b7628da9de216348419eba75",
+    "initialWorktree": "clean before this task-created plan and evaluation",
+    "activeR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "activeR2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "preparedR2ReleaseId": "research-55271152fade-7d05a001684ddbd8",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "jurisdictionEvidenceRegistryRecords": 0
+  },
+  "resourceGuard": {
+    "measuredAt": "2026-08-30T07:27:56.191Z",
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 7984566272,
+    "freeDiskBytes": 680145006592,
+    "tier": "green",
+    "decision": "Proceed with one sequential BBS analysis, acquisition, compiler, or build lane at a time; shared generation and release gates remain sequential."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.3",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380",
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6",
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240",
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98",
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "freshResidualReplay": {
+    "recordedAt": "2026-08-30T07:27:56.191Z",
+    "archiveRows": 4551591,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "nationalExactTargetRows": 136665,
+    "nationalStandardTargetRows": 126651,
+    "nationalAcceptedPositiveStop1Rows": 5322,
+    "nationalGrossCountySpeciesPairs": 1548,
+    "nationalAlreadyPresentPairs": 807,
+    "nationalNetNewPairs": 741,
+    "stateAcceptedPositiveStop1Rows": 154,
+    "stateGrossCountySpeciesPairs": 39,
+    "stateAlreadyPresentPairs": 0,
+    "stateNetNewPairs": 39,
+    "affectedCounties": 23,
+    "selectedPairCurrentStatus": {
+      "notResearched": 39,
+      "other": 0
+    },
+    "tiedAlternatives": [
+      {
+        "stateCode": "OR",
+        "netNewPairs": 39
+      },
+      {
+        "stateCode": "WY",
+        "netNewPairs": 39
+      }
+    ],
+    "nextAlternative": {
+      "stateCode": "NE",
+      "netNewPairs": 38
+    }
+  },
+  "alternativesConsidered": [
+    {
+      "direction": "Select Oregon or Wyoming instead.",
+      "decision": "defer",
+      "reason": "Each ties Michigan at 39 net-new pairs, but the existing analyzer sorts equal-yield states by state code and therefore selects Michigan deterministically."
+    },
+    {
+      "direction": "Publish jurisdiction-wide negative candidates.",
+      "decision": "blocked",
+      "reason": "The jurisdiction evidence registry contains zero approved records. Manual negative candidates require registered human approval and cannot be published autonomously."
+    },
+    {
+      "direction": "Promote the prepared R2 release.",
+      "decision": "ineligible",
+      "reason": "The ordinary R2 promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    }
+  ],
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-mi-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-mi-route-start-tranche-v1",
+    "bytes": 7372,
+    "sha256": "8949f41ee17c7b07bd9a1707355432e0a071d58a75a281b866b7ee097e14f973",
+    "candidatePairs": 39,
+    "uniqueCandidatePairs": 39,
+    "deterministicallySorted": true,
+    "supportingRowsExpected": 154,
+    "grossPairs": 39,
+    "affectedCounties": 23,
+    "speciesCount": 4,
+    "speciesPairCounts": {
+      "columba-livia": 4,
+      "cygnus-olor": 1,
+      "passer-domesticus": 18,
+      "sturnus-vulgaris": 16
+    }
+  },
+  "baseline": {
+    "michigan": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 207832,
+      "verifiedPresent": 5694,
+      "verifiedAbsent": 0,
+      "notDetected": 26,
+      "researchedUnresolved": 32875,
+      "notResearched": 169237,
+      "explicitOutcomePairCount": 38595,
+      "evidenceRecordCount": 8364,
+      "researchRunCount": 27,
+      "conflicts": 0,
+      "selectedPairStatus": {
+        "notResearched": 39
+      }
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195843,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314290,
+      "conflicts": 0,
+      "immutableResearchRuns": 1427,
+      "assertionEvents": 309737,
+      "pairOutcomes": 1721523,
+      "unreviewedEvidence": 0
+    }
+  },
+  "evidenceContract": {
+    "accepted": "Positive standard-run Stop 1 detections for exact current-catalog taxa whose exact retained route-start coordinate resolves to one active Michigan county equivalent.",
+    "rejectedAsNegativeEvidence": [
+      "later stops",
+      "route totals",
+      "zero counts",
+      "missing rows",
+      "unmatched taxa",
+      "source silence"
+    ],
+    "claimScale": "sampled point recorded-presence only",
+    "absenceClaimsAllowed": false,
+    "surveyNonDetectionClaimsAllowed": false,
+    "countywideInventoryClaimsAllowed": false,
+    "jurisdictionEvidenceAction": "No change. The committed registry remains empty until exact candidate assertions receive required human approval."
+  },
+  "acceptanceCriteria": [
+    "The committed plan contains exactly 39 sorted unique Michigan county-species candidates across 23 active counties.",
+    "A zero-network semantic dry-run predicts five successful public GET responses, at most fifteen attempts under bounded transient retry, and issues none.",
+    "The live adapter reproduces all four source identities and completes exactly 39 pair outcomes.",
+    "Compilation moves exactly 39 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "cloudflareUsageRefresh": "not-run-because-no-r2-write-is-eligible"
+  },
+  "blockers": {
+    "implementation": [],
+    "acquisition": [
+      "The five public GET responses must reproduce the committed file identities."
+    ],
+    "publicationOnly": [
+      "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+      "Fresh Cloudflare usage and an authenticated exact missing-object plan are required before a later R2 write."
+    ]
+  },
+  "nextAction": "Commit the generated plan and this evaluation, run the zero-network semantic dry-run from the clean exact commit, and execute the five-response acquisition only if every pinned identity and 39-pair scope remains exact."
+}
