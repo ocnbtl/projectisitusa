@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-nc-route-start-tranche-selection-20260830-r1",
+  "evaluatedAt": "2026-08-30T03:28:36.3960201Z",
+  "status": "selected-local-plan-pending-commit",
+  "decision": {
+    "question": "Which remaining bounded no-cost research tranche should MAIN execute next under current source, evidence, resource, and release constraints?",
+    "selectedState": "NC",
+    "selectedDirection": "Commit and execute the North Carolina USGS BBS route-start tranche.",
+    "reason": "A fresh full retained-input replay after New York gives North Carolina the highest current BBS net movement at 42 pairs. All 42 selected pairs are currently not researched and are supported by 118 positive standard-run Stop 1 rows. The registered adapter and evidence contract are already accepted, the run is bounded to five public GET requests, and it creates no negative claims.",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped research, acquisition, implementation, commit, push, ordinary deployment, and continuation authority.",
+    "reopenCondition": "Any plan drift, retained-source identity mismatch, changed candidate count, incomplete outcome set, accepted conflict, paid-cost risk, or resource-policy failure."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "5309da9d87780ee46806096b6236fdaf0cf7f254",
+    "originMain": "5309da9d87780ee46806096b6236fdaf0cf7f254",
+    "publicGitHubMain": "5309da9d87780ee46806096b6236fdaf0cf7f254",
+    "initialWorktree": "clean",
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "submittedIntegrationItems": 0,
+    "lastApplicationReleaseCommit": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+    "lastApplicationDeploymentId": 6162598978,
+    "lastApplicationDeploymentStatus": "success",
+    "lastApplicationDeploymentUrl": "https://projectisitusa-bm9t4h8ve-unigentamos.vercel.app",
+    "canonicalHomeStatus": 200,
+    "canonicalResearchStatus": 200,
+    "activeR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "activeR2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "activeR2PointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "preparedR2ReleaseId": "research-8d30d55c49cd-b13847f4fb29ab26",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "jurisdictionEvidenceRegistryRecords": 0
+  },
+  "resourceGuard": {
+    "measuredAt": "2026-08-30T03:18:53Z",
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 9960435712,
+    "availableMemoryPercent": 29.78,
+    "freeDiskBytes": 681593430016,
+    "tier": "green",
+    "decision": "Proceed with one sequential BBS analysis, acquisition, compiler, or build lane at a time; shared generation and release gates remain sequential."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "itemApiCheckedAt": "2026-08-30T03:18:53Z",
+    "itemApiStatus": 200,
+    "itemApiBytes": 25040,
+    "itemApiSha256": "d60f00fcc41502ba0f66af34707a7936ff3126d64465ad311b333051c77e7151",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380",
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6",
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240",
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98",
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "freshResidualReplay": {
+    "completedAt": "2026-08-30T03:27:41Z",
+    "archiveRows": 4551591,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "nationalExactTargetRows": 136665,
+    "nationalStandardTargetRows": 126651,
+    "nationalAcceptedPositiveStop1Rows": 5322,
+    "nationalGrossCountySpeciesPairs": 1548,
+    "nationalAlreadyPresentPairs": 725,
+    "nationalNetNewPairs": 823,
+    "stateAcceptedPositiveStop1Rows": 118,
+    "stateGrossCountySpeciesPairs": 42,
+    "stateAlreadyPresentPairs": 0,
+    "stateNetNewPairs": 42,
+    "affectedCounties": 27,
+    "selectedPairCurrentStatus": {
+      "notResearched": 42,
+      "other": 0
+    },
+    "executionNote": "Three earlier short tool windows surfaced neither the final report nor a plan. One first write attempt was stopped after about 90 seconds with no partial file. A single uninterrupted pinned Node 22 replay then completed successfully after the full 4,551,591-row archive scan and wrote this plan."
+  },
+  "alternativesConsidered": [
+    {
+      "direction": "Continue the USFS Current Invasive Plant Locations source family beyond Oregon.",
+      "decision": "defer",
+      "reason": "The national preflight estimated 30 sample pairs and the Oregon pilot already consumed 16 candidates, producing 15 present and 1 unresolved. Broader work needs additional bulk archive and polygon-processing contract work and offers less certain immediate net movement."
+    },
+    {
+      "direction": "Publish jurisdiction-wide negative candidates.",
+      "decision": "blocked",
+      "reason": "The jurisdiction evidence registry contains zero approved records. Manual negative candidates require registered human approval and cannot be published autonomously."
+    },
+    {
+      "direction": "Promote the prepared R2 release.",
+      "decision": "ineligible",
+      "reason": "The ordinary R2 promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    },
+    {
+      "direction": "Reopen GBIF acquisition.",
+      "decision": "no-go",
+      "reason": "The current project decision retains the GBIF no-go boundary."
+    }
+  ],
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-nc-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-nc-route-start-tranche-v1",
+    "bytes": 7716,
+    "sha256": "4e53fc98f6484dbaea120a5bb1e61a4d0ce1c9a56cd89c031533b89366b0d420",
+    "candidatePairs": 42,
+    "uniqueCandidatePairs": 42,
+    "deterministicallySorted": true,
+    "supportingRowsExpected": 118,
+    "grossPairs": 42,
+    "affectedCounties": 27,
+    "speciesCount": 3,
+    "speciesPairCounts": {
+      "columba-livia": 1,
+      "passer-domesticus": 18,
+      "sturnus-vulgaris": 23
+    }
+  },
+  "baseline": {
+    "northCarolina": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 250400,
+      "verifiedPresent": 8068,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 38332,
+      "notResearched": 204000,
+      "explicitOutcomePairCount": 46400,
+      "evidenceRecordCount": 11226,
+      "researchRunCount": 25,
+      "conflicts": 0,
+      "selectedPairStatus": {
+        "notResearched": 42
+      }
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195761,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314372,
+      "conflicts": 0,
+      "immutableResearchRuns": 1425,
+      "assertionEvents": 309655,
+      "pairOutcomes": 1721441,
+      "unreviewedEvidence": 0
+    }
+  },
+  "evidenceContract": {
+    "accepted": "Positive standard-run Stop 1 detections for exact current-catalog taxa whose exact retained route-start coordinate resolves to one active North Carolina county equivalent.",
+    "rejectedAsNegativeEvidence": [
+      "later stops",
+      "route totals",
+      "zero counts",
+      "missing rows",
+      "unmatched taxa",
+      "source silence"
+    ],
+    "claimScale": "sampled point recorded-presence only",
+    "absenceClaimsAllowed": false,
+    "surveyNonDetectionClaimsAllowed": false,
+    "countywideInventoryClaimsAllowed": false,
+    "jurisdictionEvidenceAction": "No change. The committed registry remains empty until exact candidate assertions receive required human approval."
+  },
+  "acceptanceCriteria": [
+    "The committed plan contains exactly 42 sorted unique North Carolina county-species candidates across 27 active counties.",
+    "A zero-network semantic dry-run predicts exactly five public GET requests and issues none.",
+    "The live adapter reproduces all four source identities and completes exactly 42 pair outcomes.",
+    "Compilation moves exactly 42 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "cloudflareUsageRefresh": "not-run-because-no-r2-write-is-eligible"
+  },
+  "blockers": {
+    "implementation": [],
+    "acquisition": [
+      "The five public GET responses must reproduce the committed file identities."
+    ],
+    "publicationOnly": [
+      "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+      "Fresh Cloudflare usage and an authenticated exact missing-object plan are required before a later R2 write."
+    ]
+  },
+  "nextAction": "Commit the generated plan and this evaluation, run the zero-network semantic dry-run from the clean exact commit, and execute the five-GET acquisition only if every pinned identity and 42-pair scope remains exact."
+}
