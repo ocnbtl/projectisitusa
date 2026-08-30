@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "evaluationId": "usgs-bbs-mt-route-start-tranche-acquisition-20260830-r1",
-  "evaluatedAt": "2026-08-30T06:25:00Z",
+  "evaluatedAt": "2026-08-30T06:28:53.553Z",
   "status": "complete-local-integration-pending-release-gates",
   "objective": "Integrate a bounded Montana tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
   "selection": {
@@ -179,7 +179,7 @@
       "assertionEvents": 309697,
       "pairOutcomes": 1721483
     },
-    "projectedAfterMontana": {
+    "preparedAfterMontana": {
       "verifiedPresent": 195843,
       "verifiedAbsent": 0,
       "notDetected": 254,
@@ -188,7 +188,8 @@
       "conflicts": 0,
       "immutableResearchRuns": 1427,
       "assertionEvents": 309737,
-      "pairOutcomes": 1721523
+      "pairOutcomes": 1721523,
+      "readinessSha256": "c4d980f63c500b0d1f7931587053104f8f1791862c1274a07fab78e1d737e754"
     },
     "delta": {
       "verifiedPresent": 40,
@@ -204,7 +205,7 @@
   "checks": {
     "requestedPairConservation": "pass: 40 planned equals 40 accepted plus 0 rejected",
     "montanaDenominatorConservation": "pass: 140,224 before and after",
-    "nationalDenominatorConservation": "pending cumulative all-state compilation",
+    "nationalDenominatorConservation": "pass: 7,872,576 before and after",
     "netUniqueMovement": "pass: all 40 pairs moved from implicit not researched to verified present",
     "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
     "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
