@@ -732,6 +732,7 @@ async function main() {
           ? {
               providerNetworkRequests: 5,
               maximumProviderNetworkAttempts: 15,
+              requestTimeoutMs: 180000,
               requestSequence: [
                 "GET the official ScienceBase item metadata",
                 "GET the hash-pinned Routes.csv",
@@ -742,7 +743,7 @@ async function main() {
               stabilityGate:
                 "Every downloaded file must match the exact ScienceBase size and MD5 pinned by the committed pilot plan.",
               retryPolicy:
-                "Each idempotent GET may retry HTTP 429 or 5xx responses at most twice with capped Retry-After or bounded backoff.",
+                "Each idempotent GET has a three-minute timeout and may retry network errors, HTTP 429, or HTTP 5xx responses at most twice with capped Retry-After or bounded backoff.",
               additionalRequests: 0,
             }
         : {

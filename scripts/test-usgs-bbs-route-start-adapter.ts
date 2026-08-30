@@ -62,6 +62,7 @@ async function runFixture(
   countyFips = "48001",
   countyName = "Anderson",
   transientFailures = 0,
+  networkFailures = 0,
 ) {
   const files = fixtureFiles(stop1Count, countyFips);
   const citation = "Fixture USGS BBS citation.";
@@ -142,6 +143,10 @@ async function runFixture(
       transientFailures -= 1;
       return new Response("busy", { status: 502, headers: { "retry-after": "0" } });
     }
+    if (url === fileUrl("Routes.csv") && networkFailures > 0) {
+      networkFailures -= 1;
+      throw new Error("fixture network interruption");
+    }
     const body = responses.get(url);
     const responseBody = body
       ? body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength) as ArrayBuffer
@@ -192,6 +197,13 @@ async function main() {
   assert.equal(retried.requests.length, 7);
   assert.equal(retried.result.upstreamRequests.length, 5);
   assert.equal(retried.result.warnings.filter((entry) => entry.includes("retrying")).length, 2);
+  const networkRetried = await runFixture(2, "TX", "48001", "Anderson", 0, 2);
+  assert.equal(networkRetried.requests.length, 7);
+  assert.equal(networkRetried.result.upstreamRequests.length, 5);
+  assert.equal(
+    networkRetried.result.warnings.filter((entry) => entry.includes("network or timeout")).length,
+    2,
+  );
   await assert.rejects(
     () => runFixture(2, "TX", "48001", "Anderson", 3),
     /HTTP 502 after 3 attempt\(s\)/u,

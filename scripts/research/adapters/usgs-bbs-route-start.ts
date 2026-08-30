@@ -29,9 +29,10 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const USGS_BBS_SOURCE_ID = "usgs-bbs" as const;
 export const USGS_BBS_ADAPTER_ID = "usgs-bbs-route-start" as const;
-export const USGS_BBS_ADAPTER_VERSION = "1.1.2" as const;
+export const USGS_BBS_ADAPTER_VERSION = "1.1.3" as const;
 
 const MAX_REQUEST_ATTEMPTS = 3;
+const REQUEST_TIMEOUT_MS = 180_000;
 const RETRY_BACKOFF_MS = [1_000, 5_000] as const;
 
 type ExpectedFile = {
@@ -405,9 +406,28 @@ export async function runUsGsBbsRouteStart(
       const waitMs = parameters.minimumRequestIntervalMs - (Date.now() - lastRequestAt);
       if (waitMs > 0) await new Promise((resolvePromise) => setTimeout(resolvePromise, waitMs));
       lastRequestAt = Date.now();
-      const response = await fetchImpl(url, {
-        headers: { "User-Agent": "Project-Isitusa/1.0" },
-      });
+      let response: Response;
+      try {
+        response = await fetchImpl(url, {
+          headers: { "User-Agent": "Project-Isitusa/1.0" },
+          signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+        });
+      } catch (error) {
+        if (attempt === MAX_REQUEST_ATTEMPTS) {
+          throw new Error(
+            `BBS request failed after ${attempt} attempt(s): ${error instanceof Error ? error.message : String(error)}.`,
+            { cause: error },
+          );
+        }
+        const delayMs = RETRY_BACKOFF_MS[attempt - 1] ?? RETRY_BACKOFF_MS.at(-1)!;
+        retryWarnings.push(
+          `BBS request raised a network or timeout error on attempt ${attempt} of ${MAX_REQUEST_ATTEMPTS}; retrying after ${delayMs} ms.`,
+        );
+        if (delayMs > 0) {
+          await new Promise((resolvePromise) => setTimeout(resolvePromise, delayMs));
+        }
+        continue;
+      }
       const retrievedAt = new Date().toISOString();
       if (response.ok) {
         const buffer = Buffer.from(await response.arrayBuffer());
