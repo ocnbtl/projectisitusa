@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-mi-route-start-production-verification-20260830-r1",
+  "verifiedAt": "2026-08-30T09:30:21Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative Michigan USGS BBS research release. Research-data upload and pointer promotion are separate guarded actions and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "37312b487766e6f6b7628da9de216348419eba75",
+    "applicationLastKnownGoodSha": "c247364f38599ed4c96f452e5ad1dcbedbd5f53a",
+    "releaseSha": "6697c256f4c117838bb8ff7fdf5586e987754ca3",
+    "originMainSha": "6697c256f4c117838bb8ff7fdf5586e987754ca3",
+    "githubMainSha": "6697c256f4c117838bb8ff7fdf5586e987754ca3",
+    "githubProductionDeploymentId": 6165223737,
+    "githubProductionDeploymentStatusId": 17524007563,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "githubProductionCreatedAt": "2026-08-30T09:28:08Z",
+    "vercelDeploymentId": "6mEXNSQDr6k81mWwnghFppoQy37j",
+    "vercelImmutableUrl": "https://projectisitusa-ng0fxuupt-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "52bde27bce17ffed27fc53a337998017a4a78092",
+      "subject": "Plan Michigan BBS research projection"
+    },
+    {
+      "sha": "d49076c9631e87634b147a6373fe71798945fcbc",
+      "subject": "Retry BBS response body timeouts"
+    },
+    {
+      "sha": "3b9fada98ad5722243603b5621a8ef70a297d0d2",
+      "subject": "Acquire Michigan BBS research evidence"
+    },
+    {
+      "sha": "1ec07d0f6acaff6ef65f77228dcc8ea821c5b600",
+      "subject": "Index Michigan BBS research coverage"
+    },
+    {
+      "sha": "f8924a0177533db7cee5d9f9874f3696e92dc8fa",
+      "subject": "Compile Michigan BBS research projection"
+    },
+    {
+      "sha": "4756f98246e1078f2dd240fab2e3ccc0e2e04d98",
+      "subject": "Prepare Michigan cumulative research release"
+    },
+    {
+      "sha": "6697c256f4c117838bb8ff7fdf5586e987754ca3",
+      "subject": "Refresh Michigan national research readiness"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-mi-route-start-tranche-selection-20260830-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-mi-route-start-tranche-acquisition-20260830-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-mi-route-start-tranche-v1.json",
+    "planSha256": "8949f41ee17c7b07bd9a1707355432e0a071d58a75a281b866b7ee097e14f973",
+    "selectedPairSha256": "0eaaca21b73b95210d52cac06d2f7a16125a0bc29085eb8c5b598673bf60ae43",
+    "parameterHash": "d8b715a68345bc56b7fca2b89adb655267964b91737521eadb04aa5f0050fef6",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "adapterPath": "scripts/research/adapters/usgs-bbs-route-start.ts",
+    "runId": "20260830T074150Z__usgs-bbs__d8b715a68345",
+    "runReceiptSha256": "ec5827321eace7f8aeee3427daeba8dfceea4ac95162abcc7cce7be132f9ee32",
+    "assertionsSha256": "71c9cebf1fa7fbd070ab34973279ab7f28538a52dc9e4adc8f2c1dffa58533e2",
+    "reviewsSha256": "cfb88c04977ae9e8f59c5e318de9e9026638a2215438acd3973cac9cb628c66d",
+    "outcomesSha256": "8b2af06fe9fdf6dd861f462b89c81e163e21384e172673b59aea9704d75e7dc0",
+    "requestedPairs": 39,
+    "candidateRecords": 154,
+    "assertionEvents": 39,
+    "reviewEvents": 39,
+    "pairOutcomes": 39,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "successfulProviderResponses": 5,
+    "successfulRunProviderAttempts": 6,
+    "failedPreRepairInvocationProviderAttempts": 4,
+    "totalMichiganAcquisitionProviderAttempts": 10,
+    "providerPosts": 0,
+    "transientFailures": [
+      {
+        "condition": "response-body timeout",
+        "attempt": 1,
+        "maximumAttempts": 3,
+        "backoffMilliseconds": 1000,
+        "finalResult": "retried-successfully"
+      }
+    ],
+    "transportRepair": {
+      "scope": "Idempotent GET response-body handling only; source identity, candidate selection, taxon, geography, review, and evidence semantics did not change.",
+      "rootCause": "A successful response body was consumed outside the adapter retry try/catch, so an AbortSignal timeout raised by response.arrayBuffer escaped the bounded retry loop.",
+      "maximumAttemptsPerRequest": 3,
+      "requestTimeoutMilliseconds": 180000,
+      "maximumTotalAttempts": 15,
+      "oversizedPayloadRejectionRemainsNonRetryable": true
+    },
+    "retainedSources": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ],
+    "cutoffBoundary": {
+      "historicalCutoff": "2026-08-29",
+      "historicalCutoffResult": "pass-byte-stable-baseline-excluding-new-run",
+      "compilationCutoff": "2026-08-30",
+      "reason": "The immutable run began after 2026-08-29T23:59:59.999Z, so the projection uses the run's truthful UTC date instead of backdating the evidence."
+    },
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "michigan": {
+      "countySpeciesDenominator": 207832,
+      "affectedCounties": 23,
+      "baseline": {
+        "verifiedPresent": 5694,
+        "verifiedAbsent": 0,
+        "notDetected": 26,
+        "researchedUnresolved": 32875,
+        "notResearched": 169237,
+        "explicitOutcomePairCount": 38595,
+        "evidenceRecordCount": 8364,
+        "researchRunCount": 27
+      },
+      "prepared": {
+        "verifiedPresent": 5733,
+        "verifiedAbsent": 0,
+        "notDetected": 26,
+        "researchedUnresolved": 32875,
+        "notResearched": 169198,
+        "explicitOutcomePairCount": 38634,
+        "evidenceRecordCount": 8403,
+        "researchRunCount": 28,
+        "conflicts": 0,
+        "summarySha256": "a41e248941525ae719c82c278cf76772c6ecb60787b8ec600ef4b2a9a97924a3"
+      },
+      "delta": {
+        "verifiedPresent": 39,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -39,
+        "explicitOutcomePairCount": 39,
+        "evidenceRecordCount": 39,
+        "researchRunCount": 1
+      },
+      "speciesDelta": {
+        "columba-livia": 4,
+        "cygnus-olor": 1,
+        "passer-domesticus": 18,
+        "sturnus-vulgaris": 16
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195882,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314251,
+      "conflicts": 0,
+      "immutableResearchRuns": 1428,
+      "assertionEvents": 309776,
+      "pairOutcomes": 1721562,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "3e5abaa06d51fd96c36fa4561d744e73e7d23ef5fb979cadcba8ae4ef50ca854"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Focused USGS BBS header retry, response-body retry, timeout, semantics, exhaustion, candidate-order, and immutable-run tests: pass",
+      "Michigan historical-cutoff and current projection byte stability: pass across 89 state projection files",
+      "Pinned Node 22 aggregate research integrity: pass across 1,428 runs, 309,776 assertions, and 1,721,562 outcomes with zero unreviewed evidence and zero conflicts",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Source coverage current: pass across 1,428 hash-reconciled entries and 29 sources",
+      "Publication manifest current and deterministic static R2 plan: pass with zero modeled requests issued",
+      "51-state regeneration byte stability: pass; verifier-created non-target date rewrites were restored to the committed tree and clean status was re-confirmed",
+      "Vercel publication, ignored-build, public projection, and research deep-link contracts: pass",
+      "Project data integrity: pass",
+      "National research configuration: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Clean-worktree check before push: pass"
+    ],
+    "sandboxQualification": "Project gates ran in the authorized unsandboxed pinned Node 22 runtime because the restricted Windows sandbox can fail before project assertions with uv_os_get_passwd returned ENOMEM; no product, data, or evidence rule was weakened."
+  },
+  "preparedR2Release": {
+    "releaseId": "research-f8924a017753-5d285f0159d6cb8e",
+    "sourceCommit": "f8924a0177533db7cee5d9f9874f3696e92dc8fa",
+    "sourceTreeSha256": "ab56e6b9eb5fc0e78d13a003e46f1a9f6dead250f00917b4e41b60f76731b278",
+    "manifestBytes": 1565427,
+    "manifestSha256": "d205b780f525bf03e3c555166ffe91bee76751fe94468d47559f172b58c085df",
+    "artifactCount": 3195,
+    "artifactBytes": 1006786578,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1006786578,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is cadence-eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestBytes": 1565427,
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "michiganObjectKey": "objects/sha256/2b/2b2336942d11c5abc306f34f86615927d07eec95e3b58a878fd1f6909900ecdf.json",
+    "michiganSummaryBytes": 393854,
+    "michiganSummarySha256": "2b2336942d11c5abc306f34f86615927d07eec95e3b58a878fd1f6909900ecdf",
+    "preparedMichiganSummarySha256": "a41e248941525ae719c82c278cf76772c6ecb60787b8ec600ef4b2a9a97924a3",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginManifestBodiesEqual": true,
+    "directAndSameOriginMichiganBodiesEqual": true,
+    "activeMichiganObjectMatchesManifest": true,
+    "preparedMichiganIsPromoted": false,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "observedAt": "2026-08-30T09:29:12.565Z",
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "3bf7425a04da42b60c2475ae84f08644383f17246ae9da28481e58dbf9a3b5ba"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "e2f9fe5a3307b4f507589c449ca8d952a0dbf2eeab8d7ff63394401b48e7f802"
+      },
+      {
+        "path": "/research?state=MI&county=26055&species=cygnus-olor",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "e2f9fe5a3307b4f507589c449ca8d952a0dbf2eeab8d7ff63394401b48e7f802"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "c9a08bc15edede3f11cdd9a918f1205a75c4ff275c6a50ede434034e370ee444"
+      }
+    ],
+    "securityHeaders": {
+      "strictTransportSecurity": "max-age=63072000",
+      "contentSecurityPolicy": "present with frame-ancestors none",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "xFrameOptions": "DENY"
+    },
+    "deployedStaticMichigan": {
+      "path": "/generated/research/MI/summary.json",
+      "canonicalStatus": 200,
+      "immutableStatus": 200,
+      "bodyBytes": 397132,
+      "bodySha256": "a41e248941525ae719c82c278cf76772c6ecb60787b8ec600ef4b2a9a97924a3",
+      "exactCanonicalToImmutable": true,
+      "exactDeploymentToLocalPreparedArtifact": true,
+      "boundary": "This proves the prepared static artifact is in the application deployment. It does not prove or claim that the guarded R2 pointer exposes the prepared release to the research UI."
+    },
+    "activeR2Checks": {
+      "observedAt": "2026-08-30T09:30:21.970Z",
+      "pointerDirectStatus": 200,
+      "pointerSameOriginStatus": 200,
+      "pointerExactBodyMatch": true,
+      "manifestDirectStatus": 200,
+      "manifestSameOriginStatus": 200,
+      "manifestExactBodyMatch": true,
+      "michiganObjectDirectStatus": 200,
+      "michiganObjectSameOriginStatus": 200,
+      "michiganObjectExactBodyMatch": true,
+      "michiganObjectMatchesManifest": true,
+      "addressingNote": "Immutable content objects use their manifest-declared global objectKey. Verification used cache-busted pointer requests and issued no write."
+    }
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, the immutable Vercel deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable application routes, expected 404 behavior, the Michigan research deep link, deployed static Michigan artifact, direct data origin, same-origin proxy, active manifest, and active Michigan object passed exact-byte checks."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface, style, layout, image, or visual application code changed. No new visual-fidelity claim is made."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface or interaction code changed. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The BBS transport retries response-header and response-body timeouts within three attempts and 180 seconds per idempotent GET; the clean production build passed; canonical and immutable bodies matched. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; six checked production security headers are present; the successful run made six public GET attempts and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub success, canonical-to-immutable HTTP parity, prepared static artifact identity, active pointer identity, active manifest identity, and active object parity were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local release HEAD, origin/main, public GitHub main, and Production deployment identify 6697c256f4c117838bb8ff7fdf5586e987754ca3; canonical bodies match immutable deployment projectisitusa-ng0fxuupt-unigentamos.vercel.app. No runtime environment variable or migration was required."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics, the jurisdiction evidence registry remains empty, and no manual public absence claim was made."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected Michigan from a fresh retained-input national replay after a three-state 39-pair tie and confirmed all 39 selected pairs were still not researched.",
+    "Integrated 39 exact positive BBS route-start pairs across 23 counties without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Moved successful response-body consumption inside the bounded retry loop after a live body-read timeout escaped the prior adapter boundary, without changing evidence semantics.",
+    "Ran the complete research gate, 51-state projection verification, project data integrity, national configuration, Vercel publication contracts, and production build under pinned Node 22, then verified the exact production deployment and active R2 boundary."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "c247364f38599ed4c96f452e5ad1dcbedbd5f53a",
+    "applicationReleaseCommit": "6697c256f4c117838bb8ff7fdf5586e987754ca3",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The Michigan BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The first pre-repair invocation recorded four provider attempts and no accepted run. The successful immutable run records exactly six attempts: one response-body timeout followed by five retained HTTP 200 responses.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "Production verification used exact HTTP, header, deployment, and immutable-artifact checks. No new browser visual audit was required because no interface code changed, and no visual-fidelity claim is made.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 6697c256f4c117838bb8ff7fdf5586e987754ca3 is on origin/main and public GitHub main and is tied to successful GitHub Production deployment 6165223737 at projectisitusa-ng0fxuupt-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, deployed Michigan static-artifact identity, pointer identity, active manifest identity, and active Michigan object identity passed. The prepared Michigan research release adds 39 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. The immutable run receipt records the code commit that authorized and executed acquisition, not the later commit containing the receipt. This production receipt does not attest to the commit that contains it or any future R2 action."
+}
