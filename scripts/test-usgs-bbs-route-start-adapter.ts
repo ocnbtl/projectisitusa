@@ -63,6 +63,7 @@ async function runFixture(
   countyName = "Anderson",
   transientFailures = 0,
   networkFailures = 0,
+  bodyReadFailures = 0,
 ) {
   const files = fixtureFiles(stop1Count, countyFips);
   const citation = "Fixture USGS BBS citation.";
@@ -151,6 +152,16 @@ async function runFixture(
     const responseBody = body
       ? body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength) as ArrayBuffer
       : "missing";
+    if (url === fileUrl("50-StopData.zip") && bodyReadFailures > 0) {
+      bodyReadFailures -= 1;
+      const response = new Response(responseBody, { status: 200 });
+      Object.defineProperty(response, "arrayBuffer", {
+        value: async () => {
+          throw new DOMException("fixture response body timeout", "TimeoutError");
+        },
+      });
+      return response;
+    }
     return new Response(responseBody, { status: body ? 200 : 404 });
   };
   try {
@@ -202,6 +213,13 @@ async function main() {
   assert.equal(networkRetried.result.upstreamRequests.length, 5);
   assert.equal(
     networkRetried.result.warnings.filter((entry) => entry.includes("network or timeout")).length,
+    2,
+  );
+  const bodyReadRetried = await runFixture(2, "TX", "48001", "Anderson", 0, 0, 2);
+  assert.equal(bodyReadRetried.requests.length, 7);
+  assert.equal(bodyReadRetried.result.upstreamRequests.length, 5);
+  assert.equal(
+    bodyReadRetried.result.warnings.filter((entry) => entry.includes("network or timeout")).length,
     2,
   );
   await assert.rejects(

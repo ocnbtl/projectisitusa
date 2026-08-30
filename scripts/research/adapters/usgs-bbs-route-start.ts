@@ -29,7 +29,7 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const USGS_BBS_SOURCE_ID = "usgs-bbs" as const;
 export const USGS_BBS_ADAPTER_ID = "usgs-bbs-route-start" as const;
-export const USGS_BBS_ADAPTER_VERSION = "1.1.3" as const;
+export const USGS_BBS_ADAPTER_VERSION = "1.1.4" as const;
 
 const MAX_REQUEST_ATTEMPTS = 3;
 const REQUEST_TIMEOUT_MS = 180_000;
@@ -407,11 +407,15 @@ export async function runUsGsBbsRouteStart(
       if (waitMs > 0) await new Promise((resolvePromise) => setTimeout(resolvePromise, waitMs));
       lastRequestAt = Date.now();
       let response: Response;
+      let responseBuffer: Buffer | null = null;
       try {
         response = await fetchImpl(url, {
           headers: { "User-Agent": "Project-Isitusa/1.0" },
           signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
         });
+        if (response.ok) {
+          responseBuffer = Buffer.from(await response.arrayBuffer());
+        }
       } catch (error) {
         if (attempt === MAX_REQUEST_ATTEMPTS) {
           throw new Error(
@@ -430,7 +434,10 @@ export async function runUsGsBbsRouteStart(
       }
       const retrievedAt = new Date().toISOString();
       if (response.ok) {
-        const buffer = Buffer.from(await response.arrayBuffer());
+        const buffer = responseBuffer;
+        if (!buffer) {
+          throw new Error("BBS response body was unavailable after a successful request.");
+        }
         if (buffer.length > maxBytes) {
           throw new Error(`BBS response exceeded ${maxBytes} bytes.`);
         }
