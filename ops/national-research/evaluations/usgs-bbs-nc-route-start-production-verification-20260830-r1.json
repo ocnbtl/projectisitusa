@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-nc-route-start-production-verification-20260830-r1",
+  "verifiedAt": "2026-08-30T05:38:21Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative North Carolina USGS BBS research release. The research-data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "5309da9d87780ee46806096b6236fdaf0cf7f254",
+    "applicationLastKnownGoodSha": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+    "releaseSha": "08ed53dc01d93e8a0c2daad4e4308476375f6df8",
+    "originMainSha": "08ed53dc01d93e8a0c2daad4e4308476375f6df8",
+    "githubMainSha": "08ed53dc01d93e8a0c2daad4e4308476375f6df8",
+    "githubProductionDeploymentId": 6163597418,
+    "githubProductionDeploymentStatusId": 17519829556,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "githubProductionCreatedAt": "2026-08-30T05:35:09Z",
+    "vercelImmutableUrl": "https://projectisitusa-a2i2894tk-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "564a5bf2376993ff945198b362f89ebc861457b3",
+      "subject": "Plan North Carolina BBS research projection"
+    },
+    {
+      "sha": "f8e679de58d25950e5c42fa1d14c0d2c72c1061c",
+      "subject": "Acquire North Carolina BBS research evidence"
+    },
+    {
+      "sha": "2a69b7a0f446db9a63e4305d10fe039d7e01b526",
+      "subject": "Index North Carolina BBS research coverage"
+    },
+    {
+      "sha": "ba67a4065f101318d9fec48a8f9d8668c039a867",
+      "subject": "Compile North Carolina BBS research projection"
+    },
+    {
+      "sha": "1aa79763a0b9740d65b4a8e6851cb6978a4736ef",
+      "subject": "Prepare North Carolina cumulative research release"
+    },
+    {
+      "sha": "08ed53dc01d93e8a0c2daad4e4308476375f6df8",
+      "subject": "Refresh North Carolina national research readiness"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-nc-route-start-tranche-selection-20260830-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-nc-route-start-tranche-acquisition-20260830-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-nc-route-start-tranche-v1.json",
+    "planSha256": "4e53fc98f6484dbaea120a5bb1e61a4d0ce1c9a56cd89c031533b89366b0d420",
+    "selectedPairSha256": "df2f7a10e9de0239d332b1a846ce61fef58728df76fa5b5e57a02f6cc4f4d42c",
+    "parameterHash": "3e08ae99f6f674c7496a9fe87b6fb2290bb532196bfd8198d6716f7fabec5126",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260830T033000Z__usgs-bbs__3e08ae99f6f6",
+    "runReceiptSha256": "01a61d70856d10267cf84982052a88427680beb514edde8948daeac2b0f57f82",
+    "assertionsSha256": "1d53ede5bc379f5f55c09b46be9533577bf195096e1dca0f1cef850b641e1660",
+    "reviewsSha256": "477df2bbe69451049fc412c2d31a8a769e936b3e8ed297b8e5180eb84590ffd0",
+    "outcomesSha256": "2b78a8f1067091ba560ed7ea26ffc17aa9b0d2c29799ae24b266bfa6dda72816",
+    "requestedPairs": 42,
+    "candidateRecords": 118,
+    "assertionEvents": 42,
+    "reviewEvents": 42,
+    "pairOutcomes": 42,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedSources": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ],
+    "cutoffBoundary": {
+      "historicalCutoff": "2026-08-29",
+      "historicalCutoffResult": "pass-byte-stable-baseline-excluding-new-run",
+      "compilationCutoff": "2026-08-30",
+      "reason": "The immutable run began after 2026-08-29T23:59:59.999Z, so the projection uses the run's truthful UTC date instead of backdating the evidence."
+    },
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "northCarolina": {
+      "countySpeciesDenominator": 250400,
+      "affectedCounties": 27,
+      "baseline": {
+        "verifiedPresent": 8068,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 38332,
+        "notResearched": 204000,
+        "explicitOutcomePairCount": 46400,
+        "evidenceRecordCount": 11226,
+        "researchRunCount": 25
+      },
+      "prepared": {
+        "verifiedPresent": 8110,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 38332,
+        "notResearched": 203958,
+        "explicitOutcomePairCount": 46442,
+        "evidenceRecordCount": 11268,
+        "researchRunCount": 26,
+        "conflicts": 0,
+        "summarySha256": "028a07f09ec47841345516f582e95af0a7f22f41dc0ddf4555ca8afb669e4dd1"
+      },
+      "delta": {
+        "verifiedPresent": 42,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -42,
+        "explicitOutcomePairCount": 42,
+        "evidenceRecordCount": 42,
+        "researchRunCount": 1
+      },
+      "speciesDelta": {
+        "columba-livia": 1,
+        "passer-domesticus": 18,
+        "sturnus-vulgaris": 23
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195803,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314330,
+      "conflicts": 0,
+      "immutableResearchRuns": 1426,
+      "assertionEvents": 309697,
+      "pairOutcomes": 1721483,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "7fcc9a421f5191684c06ce97a4f1b0a3cdd63648861e02ce40d3722e43d69209"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Focused USGS BBS adapter test: pass",
+      "North Carolina byte stability: pass across 106 tracked state projection files with protected shared outputs unchanged",
+      "Truthful-cutoff correction: an initial all-state same-cutoff invocation at 2026-08-30 deterministically changed 3,278 generated files and was rejected by the publication clean-input guard; 49 unchanged states were regenerated at 2026-08-29 while New York and North Carolina remained at 2026-08-30, restoring exact committed hashes and a clean worktree",
+      "Committed 51-state projection checksums and publication modes after truthful-cutoff restoration: pass",
+      "Cross-state projections, national denominator, readiness, compiler, compatibility, and data integrity: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Pinned Node 22 aggregate research integrity: pass across 1,426 runs, 309,697 assertions, and 1,721,483 outcomes",
+      "Source coverage current: pass across 1,426 hash-reconciled entries and 29 sources",
+      "Publication manifest current and deterministic static R2 plan: pass with zero modeled requests issued",
+      "Vercel publication, ignored-build, public projection, and research deep-link contracts: pass",
+      "Project data integrity: pass",
+      "National research configuration: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Whitespace and clean-worktree checks before push: pass"
+    ],
+    "sandboxQualification": "The first parallel tsx invocations under the restricted Windows sandbox failed before project assertions with uv_os_get_passwd returned ENOMEM. The same gates passed in the authorized unsandboxed pinned Node 22 runtime; no product or evidence rule was weakened."
+  },
+  "preparedR2Release": {
+    "releaseId": "research-ba67a4065f10-d3a1f447c91a3227",
+    "sourceCommit": "ba67a4065f101318d9fec48a8f9d8668c039a867",
+    "sourceTreeSha256": "ba7b4ef3bcff5e23caa2e19c09895263884d586091cfd803812a5439337f5ae0",
+    "manifestBytes": 1565427,
+    "manifestSha256": "b0fe52d28b607fafc1b1bf688f6347fc6ea9a648337274de019f52874e52cf63",
+    "artifactCount": 3195,
+    "artifactBytes": 1006474834,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1006474834,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestBytes": 1565427,
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "northCarolinaObjectKey": "objects/sha256/12/1298164e8713fe42217cd7b196d77af5bfd25b7d83e7d627db3d64cc55106da7.json",
+    "northCarolinaSummaryBytes": 412548,
+    "northCarolinaSummarySha256": "1298164e8713fe42217cd7b196d77af5bfd25b7d83e7d627db3d64cc55106da7",
+    "preparedNorthCarolinaSummarySha256": "028a07f09ec47841345516f582e95af0a7f22f41dc0ddf4555ca8afb669e4dd1",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginManifestBodiesEqual": true,
+    "directAndSameOriginNorthCarolinaBodiesEqual": true,
+    "activeNorthCarolinaObjectMatchesManifest": true,
+    "preparedNorthCarolinaIsPromoted": false,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "observedAt": "2026-08-30T05:38:21Z",
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "21b29e24a224bc6193119bbc62e67522852e97a517442e669b1ab7a0a8c33e43"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "49d0036c08aaeaa7797a75e35796c345474275cfa1afeec3393cd42f27e6355c"
+      },
+      {
+        "path": "/research?state=NC&county=37019&species=passer-domesticus",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "49d0036c08aaeaa7797a75e35796c345474275cfa1afeec3393cd42f27e6355c"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "fd104f5e828cc103f35668d816c9d94801df932d4bbeee77bd538ab8a693540e"
+      }
+    ],
+    "securityHeaders": {
+      "strictTransportSecurity": "max-age=63072000",
+      "contentSecurityPolicy": "present with frame-ancestors none",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "xFrameOptions": "DENY"
+    },
+    "deployedStaticNorthCarolina": {
+      "path": "/generated/research/NC/summary.json",
+      "canonicalStatus": 200,
+      "immutableStatus": 200,
+      "bodyBytes": 415251,
+      "bodySha256": "028a07f09ec47841345516f582e95af0a7f22f41dc0ddf4555ca8afb669e4dd1",
+      "exactCanonicalToImmutable": true,
+      "exactDeploymentToLocalPreparedArtifact": true,
+      "boundary": "This proves the prepared static artifact is in the application deployment. It does not prove or claim that the guarded R2 pointer exposes the prepared release to the research UI."
+    },
+    "activeR2Checks": {
+      "pointerDirectStatus": 200,
+      "pointerSameOriginStatus": 200,
+      "pointerExactBodyMatch": true,
+      "manifestDirectStatus": 200,
+      "manifestSameOriginStatus": 200,
+      "manifestExactBodyMatch": true,
+      "northCarolinaObjectDirectStatus": 200,
+      "northCarolinaObjectSameOriginStatus": 200,
+      "northCarolinaObjectExactBodyMatch": true,
+      "northCarolinaObjectMatchesManifest": true,
+      "addressingNote": "Immutable content objects use their manifest-declared global objectKey. Verification used cache-busted identity requests and issued no write."
+    }
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, the immutable Vercel deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable application routes, expected 404 behavior, the North Carolina research deep link, deployed static North Carolina artifact, direct data origin, same-origin proxy, active manifest, and active North Carolina object passed exact-byte checks."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface, style, layout, image, or other visual application code changed. This tranche changes generated research data only, and the guarded runtime data pointer intentionally remains on the prior release."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface or interaction code changed. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the prepared state artifact is exact; the active R2 pointer remains short-lived while content objects are immutable. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; six checked production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub success, canonical-to-immutable HTTP parity, prepared static artifact identity, active pointer identity, active manifest identity, and active object parity were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local release HEAD, origin/main, public GitHub main, and Production deployment identify 08ed53dc01d93e8a0c2daad4e4308476375f6df8; canonical bodies match immutable deployment projectisitusa-a2i2894tk-unigentamos.vercel.app. No runtime environment variable or migration was required."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics, the jurisdiction evidence registry remains empty, and no manual public absence claim was made."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected North Carolina from a fresh retained-input national replay as the highest remaining 42-net-pair tranche and confirmed all 42 selected pairs were still not researched.",
+    "Integrated 42 exact positive BBS route-start pairs across 27 counties without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Corrected the all-state verifier invocation to preserve each state's truthful cutoff, then ran the complete research gate, 51-state projection verification, project data integrity, national configuration, Vercel publication contracts, and production build under pinned Node 22 while preserving the frozen suite and publication contract."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "a9635c21dcc0d05385c9af06b712b12afaa23e29",
+    "applicationReleaseCommit": "08ed53dc01d93e8a0c2daad4e4308476375f6df8",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The North Carolina BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "Production verification used exact HTTP, header, deployment, and immutable-artifact checks. No new browser visual audit was required because no interface code changed, and no visual-fidelity claim is made.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 08ed53dc01d93e8a0c2daad4e4308476375f6df8 is on origin/main and public GitHub main and is tied to successful GitHub Production deployment 6163597418 at projectisitusa-a2i2894tk-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, deployed North Carolina static-artifact identity, pointer identity, active manifest identity, and active North Carolina object identity passed. The prepared North Carolina research release adds 42 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. The immutable run receipt records the code commit that authorized and executed acquisition, not the later commit containing the receipt. This production receipt does not attest to the commit that contains it or any future R2 action."
+}
