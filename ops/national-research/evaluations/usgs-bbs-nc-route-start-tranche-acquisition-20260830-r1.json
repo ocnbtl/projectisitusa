@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-nc-route-start-tranche-acquisition-20260830-r1",
+  "evaluatedAt": "2026-08-30T03:35:56.7465069Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded North Carolina tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-nc-route-start-tranche-selection-20260830-r1.json",
+    "method": "A fresh full retained-input replay after the New York integration selected North Carolina as the highest current BBS remainder at 42 net-new pairs.",
+    "remainingNationalBbsNetPairsBeforeNorthCarolina": 823,
+    "northCarolinaGrossPairs": 42,
+    "northCarolinaNetNewPairs": 42,
+    "northCarolinaCountyCount": 27,
+    "supportingRows": 118
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-nc-route-start-tranche-v1.json",
+    "planSha256": "4e53fc98f6484dbaea120a5bb1e61a4d0ce1c9a56cd89c031533b89366b0d420",
+    "selectedPairSha256": "df2f7a10e9de0239d332b1a846ce61fef58728df76fa5b5e57a02f6cc4f4d42c",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "planningCommit": "564a5bf2376993ff945198b362f89ebc861457b3",
+    "runCommit": "f8e679de58d25950e5c42fa1d14c0d2c72c1061c",
+    "coverageIndexCommit": "2a69b7a0f446db9a63e4305d10fe039d7e01b526",
+    "sourceCoverageIndexId": "source-coverage-b251ad959561ccb2bf84",
+    "sourceCoverageIndexSha256": "ea7b9ef6ed7a40e79b769054c6fb71cc9a957649ff95081bbe5804203c8c1d23",
+    "semanticDryRun": {
+      "result": "pass",
+      "baseSha": "564a5bf2376993ff945198b362f89ebc861457b3",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 42,
+      "expectedProviderGets": 5,
+      "parameterHash": "3e08ae99f6f674c7496a9fe87b6fb2290bb532196bfd8198d6716f7fabec5126"
+    }
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterNewYork": 725,
+    "netNewPairsBeforeNorthCarolina": 823,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260830T033000Z__usgs-bbs__3e08ae99f6f6",
+    "receiptPath": "src/data/research/runs/20260830T033000Z__usgs-bbs__3e08ae99f6f6/receipt.json",
+    "receiptSha256": "01a61d70856d10267cf84982052a88427680beb514edde8948daeac2b0f57f82",
+    "assertionsSha256": "1d53ede5bc379f5f55c09b46be9533577bf195096e1dca0f1cef850b641e1660",
+    "reviewsSha256": "477df2bbe69451049fc412c2d31a8a769e936b3e8ed297b8e5180eb84590ffd0",
+    "outcomesSha256": "2b78a8f1067091ba560ed7ea26ffc17aa9b0d2c29799ae24b266bfa6dda72816",
+    "status": "complete",
+    "codeCommit": "564a5bf2376993ff945198b362f89ebc861457b3",
+    "startedAt": "2026-08-30T03:30:00.000Z",
+    "finishedAt": "2026-08-30T03:32:06.989Z",
+    "requestedPairs": 42,
+    "candidateRecords": 118,
+    "assertionEvents": 42,
+    "reviewEvents": 42,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 42,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/nc-standard-stop1-detections.json",
+        "bytes": 40500,
+        "sha256": "88f24e1dd288bf1375fa3a8923d8a0a705d9d0303f76009da3a33692ed194aef"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "historicalCutoff": "2026-08-29",
+    "historicalCutoffResult": "baseline-excluding-new-run",
+    "compilationCutoff": "2026-08-30",
+    "reason": "The immutable run began after 2026-08-29T23:59:59.999Z. The projection uses the run's truthful UTC date rather than backdating the evidence."
+  },
+  "northCarolinaMovement": {
+    "fullCountySpeciesDenominator": 250400,
+    "affectedCountyCount": 27,
+    "baseline": {
+      "verifiedPresent": 8068,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 38332,
+      "notResearched": 204000,
+      "explicitOutcomePairCount": 46400,
+      "evidenceRecordCount": 11226,
+      "researchRunCount": 25
+    },
+    "final": {
+      "verifiedPresent": 8110,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 38332,
+      "notResearched": 203958,
+      "explicitOutcomePairCount": 46442,
+      "evidenceRecordCount": 11268,
+      "researchRunCount": 26,
+      "conflicts": 0,
+      "summarySha256": "028a07f09ec47841345516f582e95af0a7f22f41dc0ddf4555ca8afb669e4dd1"
+    },
+    "delta": {
+      "verifiedPresent": 42,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -42,
+      "explicitOutcomePairCount": 42,
+      "evidenceRecordCount": 42,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 1,
+      "passer-domesticus": 18,
+      "sturnus-vulgaris": 23
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195761,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314372,
+      "immutableResearchRuns": 1425,
+      "assertionEvents": 309655,
+      "pairOutcomes": 1721441
+    },
+    "preparedAfterNorthCarolina": {
+      "verifiedPresent": 195803,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314330,
+      "conflicts": 0,
+      "immutableResearchRuns": 1426,
+      "assertionEvents": 309697,
+      "pairOutcomes": 1721483,
+      "readinessSha256": "pending-full-release-gates"
+    },
+    "delta": {
+      "verifiedPresent": 42,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -42,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 42,
+      "pairOutcomes": 42
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 42 planned equals 42 accepted plus 0 rejected",
+    "northCarolinaDenominatorConservation": "pass: 250,400 before and after",
+    "nationalDenominatorConservation": "pass: expected 7,872,576 before and after; pending readiness rebuild",
+    "netUniqueMovement": "pass: all 42 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS adapter test",
+    "sourceCoverage": "pass: 1,426 current hash-reconciled entries across 29 sources",
+    "projectionByteStability": "pass: two independent North Carolina compiles were byte-identical across 106 files with protected shared outputs unchanged",
+    "publication": "pending all-state, integrity, type, lint, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderGets": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "North Carolina remains a research-only bounded tranche and is not certified.",
+    "The jurisdiction evidence registry remains empty pending required human approval for any exact negative assertions.",
+    "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+    "The application and data release decisions remain owned by the production launch gate."
+  ],
+  "nextAction": "Commit the deterministic North Carolina projection and this evaluation, regenerate the cumulative publication manifest, run the full local release gates, then enter the formal production launch gate."
+}

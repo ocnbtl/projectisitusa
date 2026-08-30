@@ -1,26 +1,26 @@
 # North Carolina Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-08-30T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `100`
 - County-species pairs: `250400`
-- Verified present: `8068`
+- Verified present: `8110`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `38332`
-- Not researched: `204000`
-- Determination coverage: `3.22%`
-- Research coverage: `18.53%`
-- Explicit outcome coverage: `18.5304%`
-- Applicable protocol cells: `360`
+- Not researched: `203958`
+- Determination coverage: `3.24%`
+- Research coverage: `18.55%`
+- Explicit outcome coverage: `18.5471%`
+- Applicable protocol cells: `363`
 - Current complete protocol cells: `126`
-- Protocol completion: `38.61%`
-- Current protocol completion: `35.00%`
-- Evidence records: `11226`
-- Research runs: `25`
+- Protocol completion: `38.29%`
+- Current protocol completion: `34.71%`
+- Evidence records: `11268`
+- Research runs: `26`
 - Rejection records: `589`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -32,6 +32,9 @@ Determination coverage counts only verified present and verified absent pairs. R
 
 | Species | Category | Not researched counties | Researched unresolved counties | Missing protocol sources |
 | --- | --- | ---: | ---: | ---: |
+| Rock pigeon (`columba-livia`) | wildlife | 99 | 0 | 1 |
+| House sparrow (`passer-domesticus`) | wildlife | 82 | 0 | 1 |
+| European Starling (`sturnus-vulgaris`) | wildlife | 77 | 0 | 1 |
 | Peach twig borer (`anarsia-lineatella`) | insects | 0 | 100 | 1 |
 | Camphor scale (`aspidiotus-duplex`) | insects | 0 | 100 | 1 |
 | Florida keys indian mallow (`abutilon-hirtum`) | plants | 0 | 100 | 0 |
@@ -54,9 +57,6 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Sticky snakeroot (`ageratina-adenophora`) | plants | 0 | 100 | 0 |
 | Tropical whiteweed (`ageratum-conyzoides`) | plants | 0 | 100 | 0 |
 | Philippine evergreen (`aglaonema-commutatum`) | plants | 0 | 100 | 0 |
-| Bentgrass (`agrostis-castellana`) | plants | 0 | 100 | 0 |
-| Redtop (`agrostis-gigantea`) | plants | 0 | 100 | 0 |
-| Chocolate Vine (`akebia-quinata`) | plants | 0 | 100 | 0 |
 
 ## Source Operations
 
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T03:32:06.989Z | 42 | 3 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |
