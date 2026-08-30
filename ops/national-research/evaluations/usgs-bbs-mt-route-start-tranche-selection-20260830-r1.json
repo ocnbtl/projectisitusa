@@ -51,7 +51,7 @@
   "sourceIdentity": {
     "sourceId": "usgs-bbs",
     "adapterId": "usgs-bbs-route-start",
-    "adapterVersion": "1.1.1",
+    "adapterVersion": "1.1.2",
     "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
     "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
     "releaseDoi": "https://doi.org/10.5066/P144YU3S",
@@ -215,7 +215,7 @@
   },
   "acceptanceCriteria": [
     "The committed plan contains exactly 40 sorted unique Montana county-species candidates across 25 active counties.",
-    "A zero-network semantic dry-run predicts exactly five public GET requests and issues none.",
+    "A zero-network semantic dry-run predicts five successful public GET identities, at most fifteen attempts under bounded transient retry, and issues none.",
     "The live adapter reproduces all four source identities and completes exactly 40 pair outcomes.",
     "Compilation moves exactly 40 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
     "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."

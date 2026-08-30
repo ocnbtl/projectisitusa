@@ -61,6 +61,7 @@ async function runFixture(
   stateCode = "TX",
   countyFips = "48001",
   countyName = "Anderson",
+  transientFailures = 0,
 ) {
   const files = fixtureFiles(stop1Count, countyFips);
   const citation = "Fixture USGS BBS citation.";
@@ -137,6 +138,10 @@ async function runFixture(
   const fetchFixture: typeof fetch = async (input) => {
     const url = typeof input === "string" ? input : input.toString();
     requests.push(url);
+    if (url === fileUrl("Routes.csv") && transientFailures > 0) {
+      transientFailures -= 1;
+      return new Response("busy", { status: 502, headers: { "retry-after": "0" } });
+    }
     const body = responses.get(url);
     const responseBody = body
       ? body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength) as ArrayBuffer
@@ -183,6 +188,14 @@ async function main() {
   assert.equal(illinois.result.assertions[0]!.state_code, "IL");
   assert.equal(illinois.result.assertions[0]!.county_fips, "17001");
   assert.equal(illinois.result.artifacts[1]!.filename, "il-standard-stop1-detections.json");
+  const retried = await runFixture(2, "TX", "48001", "Anderson", 2);
+  assert.equal(retried.requests.length, 7);
+  assert.equal(retried.result.upstreamRequests.length, 5);
+  assert.equal(retried.result.warnings.filter((entry) => entry.includes("retrying")).length, 2);
+  await assert.rejects(
+    () => runFixture(2, "TX", "48001", "Anderson", 3),
+    /HTTP 502 after 3 attempt\(s\)/u,
+  );
   await assert.rejects(() => runFixture(0), /reconciliation changed/u);
   process.stdout.write("USGS BBS route-start adapter tests passed.\n");
 }

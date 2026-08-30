@@ -29,7 +29,10 @@ import { stableJson } from "@/lib/research/run-files";
 
 export const USGS_BBS_SOURCE_ID = "usgs-bbs" as const;
 export const USGS_BBS_ADAPTER_ID = "usgs-bbs-route-start" as const;
-export const USGS_BBS_ADAPTER_VERSION = "1.1.1" as const;
+export const USGS_BBS_ADAPTER_VERSION = "1.1.2" as const;
+
+const MAX_REQUEST_ATTEMPTS = 3;
+const RETRY_BACKOFF_MS = [1_000, 5_000] as const;
 
 type ExpectedFile = {
   name: "Routes.csv" | "Weather.csv" | "50-StopData.zip" | "SpeciesList.csv";
@@ -383,23 +386,52 @@ export async function runUsGsBbsRouteStart(
 
   const tempDirectory = mkdtempSync(path.join(tmpdir(), "isitusa-usgs-bbs-"));
   const upstreamRequests: SourceAdapterResult["upstreamRequests"] = [];
+  const retryWarnings: string[] = [];
   const buffers = new Map<string, Buffer>();
   let lastRequestAt = 0;
-  const fetchBuffer = async (url: string, maxBytes: number) => {
-    const waitMs = parameters.minimumRequestIntervalMs - (Date.now() - lastRequestAt);
-    if (waitMs > 0) await new Promise((resolvePromise) => setTimeout(resolvePromise, waitMs));
-    lastRequestAt = Date.now();
-    const response = await fetchImpl(url, {
-      headers: { "User-Agent": "Project-Isitusa/1.0" },
-    });
-    const retrievedAt = new Date().toISOString();
-    if (!response.ok) throw new Error(`BBS request failed with HTTP ${response.status}.`);
-    const buffer = Buffer.from(await response.arrayBuffer());
-    if (buffer.length > maxBytes) {
-      throw new Error(`BBS response exceeded ${maxBytes} bytes.`);
+  const retryDelayMs = (response: Response, attempt: number) => {
+    const retryAfter = response.headers.get("retry-after");
+    if (retryAfter) {
+      const seconds = Number(retryAfter);
+      const parsed = Number.isFinite(seconds)
+        ? seconds * 1_000
+        : Date.parse(retryAfter) - Date.now();
+      if (Number.isFinite(parsed)) return Math.max(0, Math.min(parsed, 30_000));
     }
-    upstreamRequests.push({ url, status: response.status, retrievedAt, recordCount: 0 });
-    return buffer;
+    return RETRY_BACKOFF_MS[attempt - 1] ?? RETRY_BACKOFF_MS.at(-1)!;
+  };
+  const fetchBuffer = async (url: string, maxBytes: number) => {
+    for (let attempt = 1; attempt <= MAX_REQUEST_ATTEMPTS; attempt += 1) {
+      const waitMs = parameters.minimumRequestIntervalMs - (Date.now() - lastRequestAt);
+      if (waitMs > 0) await new Promise((resolvePromise) => setTimeout(resolvePromise, waitMs));
+      lastRequestAt = Date.now();
+      const response = await fetchImpl(url, {
+        headers: { "User-Agent": "Project-Isitusa/1.0" },
+      });
+      const retrievedAt = new Date().toISOString();
+      if (response.ok) {
+        const buffer = Buffer.from(await response.arrayBuffer());
+        if (buffer.length > maxBytes) {
+          throw new Error(`BBS response exceeded ${maxBytes} bytes.`);
+        }
+        upstreamRequests.push({ url, status: response.status, retrievedAt, recordCount: 0 });
+        return buffer;
+      }
+      const retryable = response.status === 429 || response.status >= 500;
+      if (!retryable || attempt === MAX_REQUEST_ATTEMPTS) {
+        throw new Error(
+          `BBS request failed with HTTP ${response.status} after ${attempt} attempt(s).`,
+        );
+      }
+      const delayMs = retryDelayMs(response, attempt);
+      retryWarnings.push(
+        `BBS request ${url} returned HTTP ${response.status} on attempt ${attempt} of ${MAX_REQUEST_ATTEMPTS}; retrying after ${delayMs} ms.`,
+      );
+      if (delayMs > 0) {
+        await new Promise((resolvePromise) => setTimeout(resolvePromise, delayMs));
+      }
+    }
+    throw new Error("BBS request retry loop ended unexpectedly.");
   };
 
   try {
@@ -600,6 +632,7 @@ export async function runUsGsBbsRouteStart(
       duplicateRecordCount: 0,
       errors: [],
       warnings: [
+        ...retryWarnings,
         "BBS route-start rows support point recorded presence and survey detection only.",
         "Later stops, route totals, zero rows, unmatched taxa, and source silence create no county absence or non-detection claim.",
       ],
