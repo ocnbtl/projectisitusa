@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-pa-route-start-production-verification-20260829-r1",
+  "verifiedAt": "2026-08-30T00:30:29Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative Pennsylvania USGS BBS research release. The research-data pointer promotion is a separate guarded action and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "8bdca511d76a077d9f58e21a0cae489f205b2806",
+    "applicationLastKnownGoodSha": "62f6872c26415e090cbc9ca7e9f7df3cbcebae0c",
+    "releaseSha": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+    "originMainSha": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+    "githubMainSha": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+    "githubProductionDeploymentId": 6161609219,
+    "githubProductionDeploymentStatusId": 17514699814,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "vercelDeploymentId": "GeFUHeXNnMbr2CSuYxtfW7GY8J2u",
+    "vercelStatusId": 53162183407,
+    "vercelInspectorUrl": "https://vercel.com/unigentamos/projectisitusa/GeFUHeXNnMbr2CSuYxtfW7GY8J2u",
+    "vercelImmutableUrl": "https://projectisitusa-eymzfdgdc-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "4851ab7df994228fd4c379959d69d2965b97f6cb",
+      "subject": "Plan Pennsylvania BBS research projection"
+    },
+    {
+      "sha": "e6a86bd9bf8d3f11001235aec2f4e5eef7a59e9b",
+      "subject": "Acquire Pennsylvania BBS research evidence"
+    },
+    {
+      "sha": "8040f54183df1c6021bd5027f0a0785e5dc31bd2",
+      "subject": "Index Pennsylvania BBS research coverage"
+    },
+    {
+      "sha": "38d62896645bb7d0b1eada95f95d7a1bbf686c9d",
+      "subject": "Compile Pennsylvania BBS research projection"
+    },
+    {
+      "sha": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+      "subject": "Prepare Pennsylvania cumulative research release"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-pa-route-start-tranche-selection-20260829-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-pa-route-start-tranche-acquisition-20260829-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-pa-route-start-tranche-v1.json",
+    "planSha256": "a50bbcb0714d921510b1db6445d7d5249d4d9cd37f9643c903058f2b2b29d4b7",
+    "selectedPairSha256": "ca1a8910529614a5a067ab71f8a590398db199effe1bb6ebb354bc08890a13b6",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "runId": "20260829T225000Z__usgs-bbs__58d0b54a5661",
+    "runReceiptSha256": "b3110db84707b39d4bbb14d36195bc404cbf8d6a7d96cad050a5845942499617",
+    "assertionsSha256": "40290a354cf9221bf7f55db2946b0f02092b349e92342146f3bd7fe3f9eed8c4",
+    "reviewsSha256": "0a0968da808ab1d4f337ddb5ee4282df758cfe7a4ac2cfa5596b8142cffee277",
+    "outcomesSha256": "ef7c5e67b103350700eca8c3645d23b8ce7e8539d7f9153031fc11370645b5ce",
+    "requestedPairs": 48,
+    "candidateRecords": 265,
+    "assertionEvents": 48,
+    "reviewEvents": 48,
+    "pairOutcomes": 48,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "providerGets": 5,
+    "providerPosts": 0,
+    "preRunValidatorRefusal": {
+      "reason": "The first fixed started-at value was 21.6 seconds in the future.",
+      "networkRequestsIssued": 0,
+      "runDirectoryCreated": false,
+      "resolution": "Retried with a fixed timestamp in the past; all semantic, identity, and resource guards then passed."
+    },
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "pennsylvania": {
+      "countySpeciesDenominator": 167768,
+      "affectedCounties": 26,
+      "baseline": {
+        "verifiedPresent": 8136,
+        "verifiedAbsent": 0,
+        "notDetected": 10,
+        "researchedUnresolved": 23612,
+        "notResearched": 136010
+      },
+      "prepared": {
+        "verifiedPresent": 8184,
+        "verifiedAbsent": 0,
+        "notDetected": 10,
+        "researchedUnresolved": 23612,
+        "notResearched": 135962,
+        "conflicts": 0,
+        "summarySha256": "39e221436603397b7e965812c0f161b55f0c1bab35edd602408aa87a6a13d370"
+      },
+      "delta": {
+        "verifiedPresent": 48,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -48
+      },
+      "speciesDelta": {
+        "columba-livia": 6,
+        "passer-domesticus": 21,
+        "sturnus-vulgaris": 21
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195716,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314417,
+      "conflicts": 0,
+      "immutableResearchRuns": 1424,
+      "assertionEvents": 309610,
+      "pairOutcomes": 1721396,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "d01343b85cb6bffebcf589c12e747cf304a7b252077e917d92fdf08807676043"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Pennsylvania byte stability: pass across 73 tracked state projection files with protected shared outputs unchanged",
+      "All 51 state byte-stability checks at the common 2026-08-29 cutoff: pass",
+      "Committed 51-state projection checksums and publication modes: pass",
+      "Cross-state projections, national denominator, readiness, compiler, compatibility, and data integrity: pass",
+      "USGS BBS adapter and immutable-run validation: pass",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Pinned Node 22 aggregate research integrity: pass across 1,424 runs, 309,610 assertions, and 1,721,396 outcomes",
+      "Source coverage and publication manifest reconciliation: pass",
+      "Publication manifest current and static R2 plan: pass with zero current modeled requests issued",
+      "Vercel publication, ignored-build, public projection, and research deep-link contracts: pass",
+      "Project data integrity: pass",
+      "National research configuration: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Whitespace and clean-worktree checks before push: pass"
+    ]
+  },
+  "preparedR2Release": {
+    "releaseId": "research-38d62896645b-5929e6a565fe0769",
+    "sourceCommit": "38d62896645bb7d0b1eada95f95d7a1bbf686c9d",
+    "sourceTreeSha256": "971f85ddd3f35b304869817bf251eaf3c2ca8e0f6702e31c0f4cc1831b0a8e02",
+    "manifestBytes": 1565427,
+    "manifestSha256": "dda9bade6c4c78713496ae4bcd3415f1c4637f657142ea777dea7b298e4c16bf",
+    "artifactCount": 3195,
+    "artifactBytes": 1006190276,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1006190276,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestBytes": 1565427,
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "pennsylvaniaSummaryBytes": 388391,
+    "pennsylvaniaSummarySha256": "b440315c94ded37393efd0957d22f08cc774b49fed93db105aa18982b13abaab",
+    "preparedPennsylvaniaSummarySha256": "39e221436603397b7e965812c0f161b55f0c1bab35edd602408aa87a6a13d370",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginManifestBodiesEqual": true,
+    "directAndSameOriginPennsylvaniaBodiesEqual": true,
+    "preparedPennsylvaniaIsPromoted": false,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "ed7c1c8c3bbaeb4b581685310ca455a4024b7f4c7e48106e65605b138da0514f"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "d7d85b900d65a1e61a15fb0c98eb2e60db5d180610ed0773306628e672b3378b"
+      },
+      {
+        "path": "/research?state=PA&county=42001&species=sturnus-vulgaris",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "d7d85b900d65a1e61a15fb0c98eb2e60db5d180610ed0773306628e672b3378b"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "e37ba6d1a45e8000caa353e35b88b13f1489a972d5a1f6d58374cc0b85f15f91"
+      }
+    ],
+    "securityHeaders": {
+      "strictTransportSecurity": "max-age=63072000",
+      "contentSecurityPolicy": "present with frame-ancestors none",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    "deployedStaticPennsylvania": {
+      "path": "/generated/research/PA/summary.json",
+      "canonicalStatus": 200,
+      "immutableStatus": 200,
+      "bodyBytes": 390876,
+      "bodySha256": "39e221436603397b7e965812c0f161b55f0c1bab35edd602408aa87a6a13d370",
+      "exactCanonicalToImmutable": true,
+      "exactDeploymentToLocalPreparedArtifact": true,
+      "boundary": "This proves the prepared static artifact is in the application deployment. It does not prove or claim that the guarded R2 pointer exposes the prepared release to the research UI."
+    }
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, Vercel immutable deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable application routes, expected 404 behavior, the Pennsylvania research deep link, deployed static Pennsylvania artifact, direct data origin, same-origin proxy, active manifest, and active Pennsylvania object passed exact-byte checks."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface, style, layout, image, or other visual application code changed. This tranche changes generated research data only, and the guarded runtime data pointer intentionally remains on the prior release."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface or interaction code changed. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "The clean production build passed; canonical and immutable bodies matched; the prepared state artifact is exact; the active R2 pointer remains short-lived while content objects are immutable. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, or dependency code changed; five checked production security headers are present; provider activity was five public GETs and zero POSTs; no credential values were logged or committed."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub and Vercel success, canonical-to-immutable HTTP parity, prepared static artifact identity, active pointer identity, and active object parity were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local HEAD, origin/main, public GitHub main, and production deployment identify 3fc7d8057e906d6c2ea8705009019dde8d605d2d; canonical bodies match immutable deployment projectisitusa-eymzfdgdc-unigentamos.vercel.app. No new runtime environment variable or migration is required."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics and makes no manual public absence claim."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected Pennsylvania from a fresh retained-input national replay as the highest remaining 48-net-pair tranche and confirmed all 48 selected pairs were still not researched.",
+    "Integrated 48 exact positive BBS route-start pairs without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Ran the complete research gate, 51-state byte stability, project data integrity, national configuration, Vercel publication contracts, and production build under pinned Node 22 while preserving the frozen suite and publication contract."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "62f6872c26415e090cbc9ca7e9f7df3cbcebae0c",
+    "applicationReleaseCommit": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The Pennsylvania BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "Production verification used exact HTTP, header, deployment, and immutable-artifact checks. No new browser visual audit was required because no interface code changed, and no visual-fidelity claim is made.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 3fc7d8057e906d6c2ea8705009019dde8d605d2d is on origin/main and public GitHub main and is tied to successful GitHub and Vercel Production deployment 6161609219 at projectisitusa-eymzfdgdc-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, deployed Pennsylvania static-artifact identity, pointer identity, active manifest identity, and active Pennsylvania object identity passed. The prepared Pennsylvania research release adds 48 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. This receipt does not attest to the commit that contains it or any future R2 action."
+}
