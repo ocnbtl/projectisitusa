@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ny-route-start-tranche-selection-20260829-r1",
+  "evaluatedAt": "2026-08-30T01:14:45.283Z",
+  "status": "selected-local-plan-pending-commit",
+  "decision": {
+    "question": "Which remaining bounded no-cost USGS BBS state tranche should MAIN execute next under the accepted route-start presence contract?",
+    "selectedState": "NY",
+    "selectedDirection": "Commit and execute the New York USGS BBS route-start tranche.",
+    "reason": "The fresh retained-input replay after Pennsylvania finds 45 New York pairs, all currently not researched. New York remains ahead of the previously ranked North Carolina remainder of 42 pairs. The selected New York scope is bounded to 45 sampled point recorded-presence pairs supported by 130 positive standard-run Stop 1 rows.",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped acquisition, implementation, commit, push, ordinary deployment, and continuation authority.",
+    "reopenCondition": "Any plan drift, retained-source identity mismatch, changed candidate count, incomplete outcome set, accepted conflict, paid-cost risk, or resource-policy failure."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "235379d8504961cb4d4ba16da4b3e4c8c8436916",
+    "originMain": "235379d8504961cb4d4ba16da4b3e4c8c8436916",
+    "publicGitHubMain": "235379d8504961cb4d4ba16da4b3e4c8c8436916",
+    "initialWorktree": "clean",
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "unresolvedIntegrationItems": 0,
+    "lastApplicationReleaseCommit": "3fc7d8057e906d6c2ea8705009019dde8d605d2d",
+    "lastApplicationDeploymentId": 6161609219,
+    "lastApplicationDeploymentStatus": "success",
+    "lastApplicationDeploymentUrl": "https://projectisitusa-eymzfdgdc-unigentamos.vercel.app",
+    "canonicalHomeStatus": 200,
+    "canonicalResearchStatus": 200,
+    "activeR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "activeR2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "activeR2PointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "preparedR2ReleaseId": "research-38d62896645b-5929e6a565fe0769",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "jurisdictionEvidenceRegistryRecords": 0
+  },
+  "resourceGuard": {
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 11142811648,
+    "availableMemoryPercent": 33.31,
+    "freeDiskBytes": 664677117952,
+    "tier": "green",
+    "decision": "Proceed with one sequential BBS analysis, acquisition, compiler, or build lane at a time; shared generation and release gates remain sequential."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.1",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "freshResidualReplay": {
+    "completedAt": "2026-08-30T01:11:02.995Z",
+    "archiveRows": 4551591,
+    "resolvedStateRoutes": 130,
+    "standardRuns": 4207,
+    "nationalExactTargetRows": 136665,
+    "stateStandardTargetRows": 4605,
+    "acceptedPositiveStop1Rows": 130,
+    "grossCountySpeciesPairs": 45,
+    "alreadyPresentPairs": 0,
+    "netNewPairs": 45,
+    "supportingRows": 130,
+    "affectedCounties": 26,
+    "selectedPairCurrentStatus": {
+      "notResearched": 45
+    },
+    "historicalNextRank": {
+      "stateCode": "NC",
+      "netNewPairs": 42,
+      "basis": "Post-Wisconsin ranking; Pennsylvania changed only Pennsylvania overlap, so New York remains ahead of North Carolina."
+    }
+  },
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-ny-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-ny-route-start-tranche-v1",
+    "bytes": 6696,
+    "sha256": "3ccbc4c9bf0f372f48e8c2c4e3339e41ad67f626db79287a7678cbf32233e17f",
+    "candidatePairs": 45,
+    "supportingRowsExpected": 130,
+    "grossPairs": 45,
+    "affectedCounties": 26,
+    "speciesCount": 3,
+    "speciesPairCounts": {
+      "columba-livia": 6,
+      "passer-domesticus": 19,
+      "sturnus-vulgaris": 20
+    }
+  },
+  "baseline": {
+    "newYork": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 155248,
+      "verifiedPresent": 5836,
+      "verifiedAbsent": 0,
+      "notDetected": 10,
+      "researchedUnresolved": 22922,
+      "notResearched": 126480,
+      "explicitOutcomePairCount": 28768,
+      "evidenceRecordCount": 6896,
+      "researchRunCount": 25,
+      "conflicts": 0,
+      "selectedPairStatus": {
+        "notResearched": 45
+      }
+    },
+    "national": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195716,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314417,
+      "conflicts": 0,
+      "immutableResearchRuns": 1424,
+      "assertionEvents": 309610,
+      "pairOutcomes": 1721396
+    }
+  },
+  "evidenceContract": {
+    "accepted": "Positive standard-run Stop 1 detections for exact current-catalog taxa whose exact retained route-start coordinate resolves to one active New York county equivalent.",
+    "rejectedAsNegativeEvidence": [
+      "later stops",
+      "route totals",
+      "zero counts",
+      "missing rows",
+      "unmatched taxa",
+      "source silence"
+    ],
+    "claimScale": "sampled point recorded-presence only",
+    "absenceClaimsAllowed": false,
+    "surveyNonDetectionClaimsAllowed": false,
+    "countywideInventoryClaimsAllowed": false,
+    "jurisdictionEvidenceAction": "No change. The committed registry remains empty until exact candidate assertions receive required human approval."
+  },
+  "acceptanceCriteria": [
+    "The committed plan contains exactly 45 sorted unique New York county-species candidates across 26 active counties.",
+    "A zero-network semantic dry-run predicts exactly five public GET requests and issues none.",
+    "The live adapter reproduces all four source identities and completes exactly 45 pair outcomes.",
+    "Compilation moves exactly 45 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "cloudflareUsageRefresh": "not-run-because-no-r2-write-is-eligible"
+  },
+  "blockers": {
+    "implementation": [],
+    "acquisition": [
+      "The five public GET responses must reproduce the committed file identities."
+    ],
+    "publicationOnly": [
+      "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+      "Fresh Cloudflare usage and an authenticated exact missing-object plan are required before a later R2 write."
+    ]
+  },
+  "nextAction": "Commit the generated plan and this evaluation, run the zero-network semantic dry-run from the clean exact commit, and execute the five-GET acquisition only if every pinned identity and 45-pair scope remains exact."
+}
