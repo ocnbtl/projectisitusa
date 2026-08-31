@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-or-route-start-tranche-selection-20260831-r1",
+  "evaluatedAt": "2026-08-31T06:39:55.045Z",
+  "status": "selected-local-plan-pending-commit",
+  "decision": {
+    "question": "Which remaining bounded no-cost research tranche should MAIN execute next under current source, evidence, resource, and release constraints?",
+    "selectedState": "OR",
+    "selectedDirection": "Commit and execute the Oregon USGS BBS route-start tranche.",
+    "reason": "A fresh full retained-input replay after the Michigan integration leaves Oregon and Wyoming tied at 39 net-new pairs. The deterministic state-code ordering selects Oregon. All 39 selected Oregon pairs are currently not researched and are supported by 112 positive standard-run Stop 1 rows across 21 active counties. The state has 115 accepted rows across 40 gross pairs, but one gross pair is already present and is excluded. The registered adapter and evidence contract are accepted, the run is bounded to five public GET responses and at most fifteen attempts, and it creates no negative claims.",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped research, acquisition, implementation, commit, push, ordinary deployment, and continuation authority.",
+    "reopenCondition": "Any plan drift, retained-source identity mismatch, changed candidate count, incomplete outcome set, accepted conflict, paid-cost risk, or resource-policy failure."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "bae861716f019fc4cc1eea5d0c34370b72df5f1d",
+    "originMain": "bae861716f019fc4cc1eea5d0c34370b72df5f1d",
+    "initialWorktree": "clean before this task-created plan and evaluation",
+    "activeR2ReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "activeR2SourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "preparedR2ReleaseId": "research-f8924a017753-5d285f0159d6cb8e",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "jurisdictionEvidenceRegistryRecords": 0
+  },
+  "resourceGuard": {
+    "measuredAt": "2026-08-31T06:39:55.045Z",
+    "freeDiskBytes": 676394516480,
+    "decision": "Proceed with one sequential BBS analysis, acquisition, compiler, or build lane at a time; shared generation and release gates remain sequential."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "md5": "5fd8404fd91eb6cdbc3577542ea99380",
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "md5": "8ba88dec90dd4b9df03bb2200c750bd6",
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "md5": "af3a5533a78a386760540f70d80cb240",
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "md5": "ae778053cf2db6013f9a24d4e91cae98",
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ]
+  },
+  "freshResidualReplay": {
+    "recordedAt": "2026-08-31T06:39:55.045Z",
+    "archiveRows": 4551591,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "nationalAcceptedPositiveStop1Rows": 5322,
+    "nationalGrossCountySpeciesPairs": 1548,
+    "nationalAlreadyPresentPairs": 846,
+    "nationalNetNewPairs": 702,
+    "stateAcceptedPositiveStop1Rows": 115,
+    "stateGrossCountySpeciesPairs": 40,
+    "stateAlreadyPresentPairs": 1,
+    "stateSelectedSupportingRows": 112,
+    "stateNetNewPairs": 39,
+    "affectedCounties": 21,
+    "selectedPairCurrentStatus": {
+      "notResearched": 39,
+      "other": 0
+    },
+    "tiedAlternative": {
+      "stateCode": "WY",
+      "netNewPairs": 39
+    },
+    "nextAlternative": {
+      "stateCode": "NE",
+      "netNewPairs": 38
+    }
+  },
+  "alternativesConsidered": [
+    {
+      "direction": "Select Wyoming instead.",
+      "decision": "defer",
+      "reason": "Wyoming ties Oregon at 39 net-new pairs, but the existing analyzer sorts equal-yield states by state code and therefore selects Oregon deterministically."
+    },
+    {
+      "direction": "Publish jurisdiction-wide negative candidates.",
+      "decision": "blocked",
+      "reason": "The jurisdiction evidence registry contains zero approved records. The retained eradication preflight also requires time-aware implementation plus human approval for any exact negative assertions."
+    },
+    {
+      "direction": "Promote the prepared R2 release.",
+      "decision": "ineligible",
+      "reason": "The ordinary R2 promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    }
+  ],
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-or-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-or-route-start-tranche-v1",
+    "bytes": 7451,
+    "sha256": "1084e8a458a06bd210bef7033a3884a5e7535aeb7e40150f4d10f054f5d88389",
+    "candidatePairs": 39,
+    "uniqueCandidatePairs": 39,
+    "deterministicallySorted": true,
+    "supportingRowsExpected": 112,
+    "grossPairs": 40,
+    "affectedCounties": 21,
+    "speciesCount": 4,
+    "speciesPairCounts": {
+      "columba-livia": 1,
+      "passer-domesticus": 13,
+      "streptopelia-decaocto": 14,
+      "sturnus-vulgaris": 11
+    }
+  },
+  "baseline": {
+    "oregon": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 90144,
+      "verifiedPresent": 2968,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 13032,
+      "notResearched": 74144,
+      "explicitOutcomePairCount": 16000,
+      "evidenceRecordCount": 3198,
+      "researchRunCount": 25,
+      "conflicts": 0,
+      "selectedPairStatus": {
+        "notResearched": 39
+      }
+    },
+    "national": {
+      "asOf": "2026-08-30",
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195882,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314251,
+      "conflicts": 0,
+      "immutableResearchRuns": 1428,
+      "assertionEvents": 309776,
+      "pairOutcomes": 1721562,
+      "unreviewedEvidence": 0
+    }
+  },
+  "evidenceContract": {
+    "accepted": "Positive standard-run Stop 1 detections for exact current-catalog taxa whose exact retained route-start coordinate resolves to one active Oregon county equivalent.",
+    "rejectedAsNegativeEvidence": [
+      "later stops",
+      "route totals",
+      "zero counts",
+      "missing rows",
+      "unmatched taxa",
+      "source silence"
+    ],
+    "claimScale": "sampled point recorded-presence only",
+    "absenceClaimsAllowed": false,
+    "surveyNonDetectionClaimsAllowed": false,
+    "countywideInventoryClaimsAllowed": false,
+    "jurisdictionEvidenceAction": "No change. The committed registry remains empty until exact candidate assertions receive required human approval."
+  },
+  "acceptanceCriteria": [
+    "The committed plan contains exactly 39 sorted unique Oregon county-species candidates across 21 active counties.",
+    "A zero-network semantic dry-run predicts five successful public GET responses, at most fifteen attempts under bounded transient retry, and issues none.",
+    "The live adapter reproduces all four source identities and completes exactly 39 pair outcomes.",
+    "Compilation moves exactly 39 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, application-release, and data-release gates pass before any completion claim."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0,
+    "cloudflareUsageRefresh": "not-run-because-no-r2-write-is-eligible"
+  },
+  "blockers": {
+    "implementation": [],
+    "acquisition": [
+      "The five public GET responses must reproduce the committed file identities."
+    ],
+    "publicationOnly": [
+      "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+      "Fresh Cloudflare usage and an authenticated exact missing-object plan are required before a later R2 write."
+    ]
+  },
+  "nextAction": "Commit the generated plan and this evaluation, run the zero-network semantic dry-run from the clean exact commit, and execute the five-response acquisition only if every pinned identity and 39-pair scope remains exact."
+}
