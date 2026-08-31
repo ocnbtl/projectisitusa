@@ -1,26 +1,26 @@
 # Oregon Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-08-31T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `36`
 - County-species pairs: `90144`
-- Verified present: `2968`
+- Verified present: `3007`
 - Verified absent: `0`
 - Not detected: `0`
 - Researched unresolved: `13032`
-- Not researched: `74144`
-- Determination coverage: `3.29%`
-- Research coverage: `17.75%`
-- Explicit outcome coverage: `17.7494%`
-- Applicable protocol cells: `317`
+- Not researched: `74105`
+- Determination coverage: `3.34%`
+- Research coverage: `17.79%`
+- Explicit outcome coverage: `17.7926%`
+- Applicable protocol cells: `321`
 - Current complete protocol cells: `100`
-- Protocol completion: `35.65%`
-- Current protocol completion: `31.55%`
-- Evidence records: `3198`
-- Research runs: `25`
+- Protocol completion: `35.20%`
+- Current protocol completion: `31.15%`
+- Evidence records: `3237`
+- Research runs: `26`
 - Rejection records: `205`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -87,7 +87,7 @@ Determination coverage counts only verified present and verified absent pairs. R
 | iDigBio preserved specimen records | operational | not run | 0 | 0 |
 | iNaturalist Research Grade observations | operational | not run | 0 | 0 |
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
-| USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
+| USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-31T06:48:37.753Z | 39 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

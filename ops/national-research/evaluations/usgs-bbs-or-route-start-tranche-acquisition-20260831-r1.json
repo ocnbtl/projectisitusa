@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-or-route-start-tranche-acquisition-20260831-r1",
+  "evaluatedAt": "2026-08-31T06:54:52.752Z",
+  "status": "complete-local-integration-pending-release-gates",
+  "objective": "Integrate a bounded Oregon tranche of official USGS Breeding Bird Survey positive standard-run Stop 1 detections as sampled point recorded-presence evidence, with exact taxon matching, committed route-start geography receipts, and no negative inference from source silence.",
+  "selection": {
+    "evaluationPath": "ops/national-research/evaluations/usgs-bbs-or-route-start-tranche-selection-20260831-r1.json",
+    "evaluationSha256": "4e33af3d879b63dfa3f66deae4017bda220718a4d7577bcb8e298872e1b823b2",
+    "method": "A fresh full retained-input replay after the Michigan integration left Oregon and Wyoming tied at 39 net-new pairs; deterministic state-code ordering selected Oregon.",
+    "remainingNationalBbsNetPairsBeforeOregon": 702,
+    "oregonGrossPairs": 40,
+    "oregonAlreadyPresentPairs": 1,
+    "oregonNetNewPairs": 39,
+    "oregonCountyCount": 21,
+    "stateAcceptedRows": 115,
+    "selectedSupportingRows": 112
+  },
+  "inputs": {
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "scienceBaseReleaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "scienceBaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-or-route-start-tranche-v1.json",
+    "planSha256": "1084e8a458a06bd210bef7033a3884a5e7535aeb7e40150f4d10f054f5d88389",
+    "selectedPairSha256": "13823da4ad82cc409eafcf27b20d1dd013058cfbd02c09cc4978562ac266abf9",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "planningCommit": "c0deabe8cc74a72dbb3889c4c92e219cd8bbe40d",
+    "runCommit": "64744c6dea51aefb5d3e106fe66cf42db5e6a977",
+    "coverageIndexCommit": "5ee7fdb813e54fc6d0c3b04e04d6452fc4fd57ac",
+    "sourceCoverageIndexId": "source-coverage-ea4d766527222854d73f",
+    "sourceCoverageIndexSha256": "53c8837df01efbb035c6a3e9bc7d435dfd73d2292b385402e7196ebe6fa6f6c9",
+    "semanticDryRun": {
+      "result": "pass",
+      "baseSha": "c0deabe8cc74a72dbb3889c4c92e219cd8bbe40d",
+      "networkRequestsIssued": 0,
+      "candidatePairs": 39,
+      "expectedSuccessfulProviderGets": 5,
+      "maximumProviderAttempts": 15,
+      "requestTimeoutMilliseconds": 180000,
+      "parameterHash": "8e22e159d438bd8347804fa2fd9d7b83d52468f71386fd47411d703ff2d94d0c"
+    }
+  },
+  "nationalPreflight": {
+    "archiveRows": 4551591,
+    "acceptedPositiveStop1Rows": 5322,
+    "grossCountySpeciesPairs": 1548,
+    "alreadyPresentPairsAfterMichigan": 846,
+    "netNewPairsBeforeOregon": 702,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158
+  },
+  "immutableRun": {
+    "runId": "20260831T064221Z__usgs-bbs__8e22e159d438",
+    "receiptPath": "src/data/research/runs/20260831T064221Z__usgs-bbs__8e22e159d438/receipt.json",
+    "receiptSha256": "593cb7d8f56e4d0c5861fead0b3ae4a9e31d8803a1a5120eb515619a9c2fe3d1",
+    "assertionsSha256": "88e1ca3b8bf72cf9718dec0a93b086787e303ce7e5b2668b8f932bd1dfbea8d1",
+    "reviewsSha256": "c35941c560bd63116ad1a7426ef51417dcca22cb8af625acb4d8ff2005a5a0fd",
+    "outcomesSha256": "d3431331501a02b595ce510a8dea9e5edb2665816895babbf6762c25ee99f47c",
+    "status": "complete",
+    "codeCommit": "c0deabe8cc74a72dbb3889c4c92e219cd8bbe40d",
+    "startedAt": "2026-08-31T06:42:21.067Z",
+    "finishedAt": "2026-08-31T06:48:37.753Z",
+    "requestedPairs": 39,
+    "candidateRecords": 112,
+    "assertionEvents": 39,
+    "reviewEvents": 39,
+    "rejectionRecords": 0,
+    "duplicateRecords": 0,
+    "errorCount": 0,
+    "pairOutcomes": 39,
+    "successfulFinalResponses": 5,
+    "providerAttempts": 6,
+    "transientFailures": [
+      {
+        "condition": "HTTP 502 while downloading Weather.csv",
+        "attempt": 1,
+        "maximumAttempts": 3,
+        "backoffMilliseconds": 30000,
+        "finalResult": "retried-successfully"
+      }
+    ],
+    "retainedArtifacts": [
+      {
+        "path": "artifacts/sciencebase-item.json",
+        "bytes": 32891,
+        "sha256": "566a04f406e69f582d820662fd94cdf9d59e6b053ee0dd561d3ace26075a1c08"
+      },
+      {
+        "path": "artifacts/or-standard-stop1-detections.json",
+        "bytes": 38547,
+        "sha256": "74b1eaf9f1de749a6eab713b9a9f150607147bdd8d7b7a769b54faec7531cb4e"
+      }
+    ]
+  },
+  "cutoffBoundary": {
+    "baselineProjectionAsOf": "2026-08-29",
+    "compilationCutoff": "2026-08-31",
+    "reason": "The immutable run began on 2026-08-31 UTC. The projection uses the run's truthful UTC date and does not backdate the evidence."
+  },
+  "oregonMovement": {
+    "fullCountySpeciesDenominator": 90144,
+    "affectedCountyCount": 21,
+    "baseline": {
+      "verifiedPresent": 2968,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 13032,
+      "notResearched": 74144,
+      "explicitOutcomePairCount": 16000,
+      "evidenceRecordCount": 3198,
+      "researchRunCount": 25
+    },
+    "final": {
+      "verifiedPresent": 3007,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 13032,
+      "notResearched": 74105,
+      "explicitOutcomePairCount": 16039,
+      "evidenceRecordCount": 3237,
+      "researchRunCount": 26,
+      "conflicts": 0,
+      "summarySha256": "cde85cf3a6bd7e6f4eb4d40cc4f1f1cb18dcff3d63c2394d977e8f2bde478a7e"
+    },
+    "delta": {
+      "verifiedPresent": 39,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -39,
+      "explicitOutcomePairCount": 39,
+      "evidenceRecordCount": 39,
+      "researchRunCount": 1
+    },
+    "speciesDelta": {
+      "columba-livia": 1,
+      "passer-domesticus": 13,
+      "streptopelia-decaocto": 14,
+      "sturnus-vulgaris": 11
+    }
+  },
+  "nationalMovement": {
+    "countySpeciesDenominator": 7872576,
+    "baseline": {
+      "verifiedPresent": 195882,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314251,
+      "immutableResearchRuns": 1428,
+      "assertionEvents": 309776,
+      "pairOutcomes": 1721562
+    },
+    "expectedAfterOregon": {
+      "verifiedPresent": 195921,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314212,
+      "immutableResearchRuns": 1429,
+      "assertionEvents": 309815,
+      "pairOutcomes": 1721601
+    },
+    "delta": {
+      "verifiedPresent": 39,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 0,
+      "notResearched": -39,
+      "immutableResearchRuns": 1,
+      "assertionEvents": 39,
+      "pairOutcomes": 39
+    }
+  },
+  "checks": {
+    "requestedPairConservation": "pass: 39 planned equals 39 accepted plus 0 rejected",
+    "oregonDenominatorConservation": "pass: 90,144 before and after",
+    "nationalDenominatorConservation": "pending cumulative readiness generation",
+    "netUniqueMovement": "pass: all 39 pairs moved from implicit not researched to verified present",
+    "negativeSemantics": "pass: zero verified-absence, not-detected, or researched-unresolved movement",
+    "taxonMatching": "pass: exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyReceipts": "pass: every assertion retains a positive coordinate count, coordinate-set SHA-256, and committed active-county topology identity",
+    "sourceDrift": "pass: release identity, citation, four file byte counts, and four MD5 checksums matched the committed plan",
+    "adapterContract": "pass: focused USGS BBS header retry, body retry, timeout, semantics, and exhaustion tests",
+    "immutableRunValidation": "pass: accepted valid bundle and rejected future-start, duplicate-ID, bad-reference, schema, geography, state-scope, below-gate, parameter-hash, and unreviewed-evidence fixtures",
+    "sourceCoverage": "pass: 1,429 current hash-reconciled entries across 29 sources",
+    "stateProjectionIntegrity": "pass: all 51 state projections validated",
+    "projectionByteStability": "pass: two independent Oregon compiles were byte-identical across 42 files",
+    "publication": "pending cumulative readiness, integrity, type, lint, build, manifest, cadence, storage, and production launch gates"
+  },
+  "operations": {
+    "semanticDryRunNetworkRequests": 0,
+    "successfulRunProviderAttempts": 6,
+    "successfulRunFinalProviderResponses": 5,
+    "providerPosts": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "remainingBoundaries": [
+    "This run supports sampled point recorded presence only and does not claim countywide inventory, establishment, absence, or survey non-detection.",
+    "Oregon remains a research-only bounded tranche and is not certified.",
+    "The jurisdiction evidence registry remains empty pending required human approval for any exact negative assertions.",
+    "R2 ordinary promotion cadence remains closed until 2026-09-04T08:58:25.633Z.",
+    "The application and data release decisions remain owned by the production launch gate."
+  ],
+  "nextAction": "Commit the deterministic Oregon projection and this evaluation, regenerate the cumulative publication manifest and readiness dashboard, run the full local release gates, then enter the formal production launch gate."
+}
