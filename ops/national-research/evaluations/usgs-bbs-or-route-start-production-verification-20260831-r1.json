@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-or-route-start-production-verification-20260831-r1",
+  "verifiedAt": "2026-08-31T07:29:35.447Z",
+  "gate": {
+    "mode": [
+      "web-application",
+      "research-data-publication"
+    ],
+    "riskLevel": "high",
+    "applicationPhase": "POST-DEPLOYMENT",
+    "applicationDecision": "GO",
+    "dataPublicationPhase": "PRE-DEPLOYMENT",
+    "dataPublicationDecision": "NO-GO",
+    "finalDecision": "NO-GO TO PROMOTE DATA; APPLICATION GO",
+    "scope": "The exact Git-linked application deployment and prepared cumulative Oregon USGS BBS research release. Research-data upload and pointer promotion are separate guarded actions and did not occur."
+  },
+  "releaseCoordinates": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "baselineSha": "bae861716f019fc4cc1eea5d0c34370b72df5f1d",
+    "applicationLastKnownGoodSha": "6697c256f4c117838bb8ff7fdf5586e987754ca3",
+    "releaseSha": "598694f4cc51b92ee1133f024226a3c039c4068a",
+    "originMainSha": "598694f4cc51b92ee1133f024226a3c039c4068a",
+    "githubMainSha": "598694f4cc51b92ee1133f024226a3c039c4068a",
+    "githubProductionDeploymentId": 6176813075,
+    "githubProductionDeploymentStatusId": 17555024806,
+    "githubProductionState": "success",
+    "githubProductionDescription": "Deployment has completed",
+    "githubProductionCreatedAt": "2026-08-31T07:21:36Z",
+    "vercelDeploymentId": "8qyTKhS6zTaRG8YuKz8roTpHc6d8",
+    "vercelImmutableUrl": "https://projectisitusa-ly2eq433x-unigentamos.vercel.app",
+    "canonicalDomain": "https://isitusa.com",
+    "productionAliasResolvedToDeployment": true
+  },
+  "implementationCommits": [
+    {
+      "sha": "c0deabe8cc74a72dbb3889c4c92e219cd8bbe40d",
+      "subject": "Plan Oregon BBS research projection"
+    },
+    {
+      "sha": "64744c6dea51aefb5d3e106fe66cf42db5e6a977",
+      "subject": "Acquire Oregon BBS research evidence"
+    },
+    {
+      "sha": "5ee7fdb813e54fc6d0c3b04e04d6452fc4fd57ac",
+      "subject": "Index Oregon BBS research coverage"
+    },
+    {
+      "sha": "0d9ffac124d5b94d08f31630c8de5b509204dc2b",
+      "subject": "Compile Oregon BBS research projection"
+    },
+    {
+      "sha": "b7a94282b5e154b3255363f8b2ec913e83d2d99d",
+      "subject": "Prepare Oregon cumulative research release"
+    },
+    {
+      "sha": "598694f4cc51b92ee1133f024226a3c039c4068a",
+      "subject": "Refresh Oregon national research readiness"
+    }
+  ],
+  "sourceAcquisition": {
+    "selectionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-or-route-start-tranche-selection-20260831-r1.json",
+    "acquisitionEvaluationPath": "ops/national-research/evaluations/usgs-bbs-or-route-start-tranche-acquisition-20260831-r1.json",
+    "planPath": "src/data/research/national-acquisition-plans/usgs-bbs-or-route-start-tranche-v1.json",
+    "planSha256": "1084e8a458a06bd210bef7033a3884a5e7535aeb7e40150f4d10f054f5d88389",
+    "selectedPairSha256": "13823da4ad82cc409eafcf27b20d1dd013058cfbd02c09cc4978562ac266abf9",
+    "parameterHash": "8e22e159d438bd8347804fa2fd9d7b83d52468f71386fd47411d703ff2d94d0c",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "adapterPath": "scripts/research/adapters/usgs-bbs-route-start.ts",
+    "runId": "20260831T064221Z__usgs-bbs__8e22e159d438",
+    "runReceiptSha256": "593cb7d8f56e4d0c5861fead0b3ae4a9e31d8803a1a5120eb515619a9c2fe3d1",
+    "assertionsSha256": "88e1ca3b8bf72cf9718dec0a93b086787e303ce7e5b2668b8f932bd1dfbea8d1",
+    "reviewsSha256": "c35941c560bd63116ad1a7426ef51417dcca22cb8af625acb4d8ff2005a5a0fd",
+    "outcomesSha256": "d3431331501a02b595ce510a8dea9e5edb2665816895babbf6762c25ee99f47c",
+    "requestedPairs": 39,
+    "candidateRecords": 112,
+    "assertionEvents": 39,
+    "reviewEvents": 39,
+    "pairOutcomes": 39,
+    "rejections": 0,
+    "duplicates": 0,
+    "errors": 0,
+    "successfulProviderResponses": 5,
+    "successfulRunProviderAttempts": 6,
+    "providerPosts": 0,
+    "transientFailures": [
+      {
+        "condition": "HTTP 502 while downloading Weather.csv",
+        "attempt": 1,
+        "maximumAttempts": 3,
+        "backoffMilliseconds": 30000,
+        "finalResult": "retried-successfully"
+      }
+    ],
+    "retainedSources": [
+      {
+        "name": "Routes.csv",
+        "bytes": 392008,
+        "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362"
+      },
+      {
+        "name": "Weather.csv",
+        "bytes": 14126685,
+        "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d"
+      },
+      {
+        "name": "50-StopData.zip",
+        "bytes": 68998320,
+        "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204"
+      },
+      {
+        "name": "SpeciesList.csv",
+        "bytes": 73748,
+        "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274"
+      }
+    ],
+    "cutoffBoundary": {
+      "baselineProjectionAsOf": "2026-08-29",
+      "compilationCutoff": "2026-08-31",
+      "reason": "The immutable run began on 2026-08-31 UTC, so the projection uses the run's truthful UTC date instead of backdating the evidence."
+    },
+    "qualification": "Only positive standard-run Stop 1 detections publish as sampled point recorded-presence evidence. Later stops, route totals, zero rows, missing rows, unmatched taxa, and source silence create no county presence, absence, survey non-detection, establishment, or countywide inventory claim."
+  },
+  "movement": {
+    "oregon": {
+      "countySpeciesDenominator": 90144,
+      "affectedCounties": 21,
+      "baseline": {
+        "verifiedPresent": 2968,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13032,
+        "notResearched": 74144,
+        "explicitOutcomePairCount": 16000,
+        "evidenceRecordCount": 3198,
+        "researchRunCount": 25
+      },
+      "prepared": {
+        "verifiedPresent": 3007,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 13032,
+        "notResearched": 74105,
+        "explicitOutcomePairCount": 16039,
+        "evidenceRecordCount": 3237,
+        "researchRunCount": 26,
+        "conflicts": 0,
+        "summarySha256": "cde85cf3a6bd7e6f4eb4d40cc4f1f1cb18dcff3d63c2394d977e8f2bde478a7e"
+      },
+      "delta": {
+        "verifiedPresent": 39,
+        "verifiedAbsent": 0,
+        "notDetected": 0,
+        "researchedUnresolved": 0,
+        "notResearched": -39,
+        "explicitOutcomePairCount": 39,
+        "evidenceRecordCount": 39,
+        "researchRunCount": 1
+      },
+      "speciesDelta": {
+        "columba-livia": 1,
+        "passer-domesticus": 13,
+        "streptopelia-decaocto": 14,
+        "sturnus-vulgaris": 11
+      }
+    },
+    "nationalPrepared": {
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195921,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314212,
+      "conflicts": 0,
+      "immutableResearchRuns": 1429,
+      "assertionEvents": 309815,
+      "pairOutcomes": 1721601,
+      "unreviewedEvidence": 0,
+      "readinessSha256": "a20b86e00c2af5235674f413e3c5e793217702984c0fdf6d5eac568142b55c4b"
+    }
+  },
+  "localVerification": {
+    "projectNodeVersion": "v22.23.2",
+    "gates": [
+      "Zero-network Oregon semantic dry run: pass for 39 exact pairs, five expected responses, and at most fifteen attempts",
+      "Focused USGS BBS retry, timeout, semantics, exhaustion, candidate-order, and immutable-run tests: pass",
+      "Oregon projection byte stability: pass across 42 state projection files",
+      "All 51 state projections: pass",
+      "Pinned Node 22 aggregate research integrity: pass across 1,429 runs, 309,815 assertions, and 1,721,601 outcomes with zero unreviewed evidence and zero conflicts",
+      "Frozen national research skill suite: 97 of 97 pass with zero critical safety violations",
+      "Source coverage current: pass across 1,429 hash-reconciled entries and 29 sources",
+      "Publication manifest current and deterministic static R2 plan: pass with zero modeled requests issued",
+      "Vercel publication, ignored-build, public projection, and research deep-link contracts: pass",
+      "Project data integrity: pass",
+      "National research configuration: pass",
+      "TypeScript typecheck: pass",
+      "Lint: pass with zero warnings or errors",
+      "Next.js 15.5.23 production build on release commit: pass",
+      "Clean-worktree check before push: pass"
+    ],
+    "sandboxQualification": "Project gates ran in the authorized unsandboxed pinned Node 22 runtime because the restricted Windows sandbox can fail before project assertions with uv_os_get_passwd returned ENOMEM; no product, data, or evidence rule was weakened."
+  },
+  "preparedR2Release": {
+    "releaseId": "research-0d9ffac124d5-6dc7fcfa1a993b63",
+    "sourceCommit": "0d9ffac124d5b94d08f31630c8de5b509204dc2b",
+    "sourceTreeSha256": "a651a5afe04ccd3b50e3bddfae925c6f8dfd0d46c8b7ad61d016671535335f50",
+    "manifestBytes": 1565427,
+    "manifestSha256": "87bd844038290946dc4229d3ca756d2b4e653f57782e7260220688e54abb8957",
+    "artifactCount": 3195,
+    "artifactBytes": 1006881852,
+    "uniqueObjectCount": 3195,
+    "uniqueObjectBytes": 1006881852,
+    "staticModeledMaximumNewClassAOperations": 3197,
+    "staticModeledVerificationClassBOperations": 3196,
+    "cloudflareCurrentExactUsage": "UNKNOWN - not refreshed because no R2 write is cadence-eligible",
+    "authenticatedExactMissingObjectPlanForPreparedRelease": "not-run-because-cadence-is-blocking",
+    "publicManifestStatus": 404,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "activeR2Release": {
+    "releaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "sourceCommit": "e2115f6a705f4055e55b12a42d371eaeea29b8bd",
+    "promotedAt": "2026-08-28T08:58:25.633Z",
+    "nextOrdinaryPromotionAt": "2026-09-04T08:58:25.633Z",
+    "pointerBytes": 421,
+    "pointerSha256": "349a63b77fab406cd510926e3e657f6caebbbacf4bcd3e74917dcac762dfbbec",
+    "releaseManifestBytes": 1565427,
+    "releaseManifestSha256": "5a9d0821e3108d5c8a9468cd1b260fe5749fbc2657b42d8eb383b993e1d70570",
+    "oregonObjectKey": "objects/sha256/16/168b7d0da3f75a6fbce954830b0368b8d53fa18a3808a290d9630e378e4af039.json",
+    "oregonSummaryBytes": 363279,
+    "oregonSummarySha256": "168b7d0da3f75a6fbce954830b0368b8d53fa18a3808a290d9630e378e4af039",
+    "preparedOregonSummarySha256": "cde85cf3a6bd7e6f4eb4d40cc4f1f1cb18dcff3d63c2394d977e8f2bde478a7e",
+    "directAndSameOriginPointerBodiesEqual": true,
+    "directAndSameOriginManifestBodiesEqual": true,
+    "directAndSameOriginOregonBodiesEqual": true,
+    "activeOregonObjectMatchesManifest": true,
+    "preparedOregonIsPromoted": false,
+    "cadenceOverrideUsed": false,
+    "cadenceOverrideSupplied": false
+  },
+  "liveApplicationChecks": {
+    "observedAt": "2026-08-31T07:27:13.120Z",
+    "routes": [
+      {
+        "path": "/",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 3817212,
+        "bodySha256": "1d3753d112fe8cd93c508fcae56ffb5db71eea00a26c28775701642952d375c8"
+      },
+      {
+        "path": "/research",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "328c268eaab5a8e2d2809b80397b17fe8dece2a62e87b5195e1f4f6a981070fa"
+      },
+      {
+        "path": "/research?state=OR&county=41021&species=columba-livia",
+        "canonicalStatus": 200,
+        "immutableStatus": 200,
+        "exactBodyMatch": true,
+        "bodyBytes": 13848,
+        "bodySha256": "328c268eaab5a8e2d2809b80397b17fe8dece2a62e87b5195e1f4f6a981070fa"
+      },
+      {
+        "path": "/species/not-a-real-isitusa-species",
+        "canonicalStatus": 404,
+        "immutableStatus": 404,
+        "exactBodyMatch": true,
+        "bodyBytes": 8643,
+        "bodySha256": "2fab4ff587ac047e17c52231895da88a345c14df944a5b2cce3758d1cd150e62"
+      }
+    ],
+    "securityHeaders": {
+      "strictTransportSecurity": "max-age=63072000",
+      "contentSecurityPolicy": "present with frame-ancestors none",
+      "referrerPolicy": "no-referrer",
+      "xContentTypeOptions": "nosniff",
+      "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+      "xFrameOptions": "DENY"
+    },
+    "deployedStaticOregon": {
+      "path": "/generated/research/OR/summary.json",
+      "canonicalStatus": 200,
+      "immutableStatus": 200,
+      "bodyBytes": 366102,
+      "bodySha256": "cde85cf3a6bd7e6f4eb4d40cc4f1f1cb18dcff3d63c2394d977e8f2bde478a7e",
+      "exactCanonicalToImmutable": true,
+      "exactDeploymentToLocalPreparedArtifact": true,
+      "boundary": "This proves the prepared static artifact is in the application deployment. It does not prove or claim that the guarded R2 pointer exposes the prepared release to the research UI."
+    },
+    "activeR2Checks": {
+      "observedAt": "2026-08-31T07:29:35.447Z",
+      "pointerDirectStatus": 200,
+      "pointerSameOriginStatus": 200,
+      "pointerExactBodyMatch": true,
+      "manifestDirectStatus": 200,
+      "manifestSameOriginStatus": 200,
+      "manifestExactBodyMatch": true,
+      "oregonObjectDirectStatus": 200,
+      "oregonObjectSameOriginStatus": 200,
+      "oregonObjectExactBodyMatch": true,
+      "oregonObjectMatchesManifest": true,
+      "addressingNote": "Immutable content objects use their manifest-declared global objectKey. Verification used cache-busted pointer requests and issued no write."
+    }
+  },
+  "launchMatrix": [
+    {
+      "category": "scope-and-source-of-truth",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical HEAD, origin/main, public GitHub main, GitHub Production, the immutable Vercel deployment, and the prepared manifest identify exact immutable artifacts; the live pointer separately identifies the older active data release."
+    },
+    {
+      "category": "functional-verification",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Canonical and immutable application routes, expected 404 behavior, the Oregon research deep link, deployed static Oregon artifact, direct data origin, same-origin proxy, active manifest, and active Oregon object passed exact-byte checks."
+    },
+    {
+      "category": "visual-fidelity",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface, style, layout, image, or visual application code changed. No new visual-fidelity claim is made."
+    },
+    {
+      "category": "accessibility",
+      "criticality": "MEDIUM",
+      "status": "NOT APPLICABLE",
+      "evidence": "No interface or interaction code changed. No comprehensive WCAG audit is claimed."
+    },
+    {
+      "category": "seo-and-discovery",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No metadata, canonical, robots, sitemap, or indexing behavior changed."
+    },
+    {
+      "category": "performance-and-resilience",
+      "criticality": "MEDIUM",
+      "status": "PASSED",
+      "evidence": "One HTTP 502 on an idempotent Weather.csv GET retried successfully within the three-attempt and 180-second limits; the production build passed; canonical and immutable bodies matched. No field Core Web Vitals claim is made."
+    },
+    {
+      "category": "security-and-privacy",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "No authentication, private data, forms, API writes, dependency code, or credential handling changed; six checked production security headers are present; the run made six public GET attempts and zero POSTs."
+    },
+    {
+      "category": "analytics-and-conversion",
+      "criticality": "LOW",
+      "status": "NOT APPLICABLE",
+      "evidence": "No analytics, consent, conversion, or form behavior changed, and no live submission was performed."
+    },
+    {
+      "category": "monitoring-and-operations",
+      "criticality": "HIGH",
+      "status": "PASSED",
+      "evidence": "Exact-SHA GitHub success, canonical-to-immutable HTTP parity, prepared static artifact identity, active pointer identity, active manifest identity, and active object parity were observed immediately after deployment."
+    },
+    {
+      "category": "deployment",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "Local release HEAD, origin/main, public GitHub main, and Production deployment identify 598694f4cc51b92ee1133f024226a3c039c4068a; canonical bodies match immutable deployment projectisitusa-ly2eq433x-unigentamos.vercel.app. No runtime environment variable or migration was required."
+    },
+    {
+      "category": "content-and-approvals",
+      "criticality": "CRITICAL",
+      "status": "PASSED",
+      "evidence": "The owner authorized project-scoped acquisition, commits, pushes, and ordinary deployment. The release preserves sampled-point and no-negative semantics, the jurisdiction evidence registry remains empty, and no manual public absence claim was made."
+    },
+    {
+      "category": "data-release-integrity",
+      "criticality": "CRITICAL",
+      "status": "BLOCKED",
+      "evidence": "The prepared data release passes local integrity, but ordinary promotion cadence is closed until 2026-09-04T08:58:25.633Z and an exact authenticated missing-object shadow plan was not run because cadence already blocks publication."
+    }
+  ],
+  "completedFixes": [
+    "Selected Oregon from a fresh retained-input national replay after a two-state 39-pair tie and confirmed all 39 selected pairs were still not researched.",
+    "Integrated 39 exact positive BBS route-start pairs across 21 counties without creating any absence, survey non-detection, unresolved, denominator, or conflict movement.",
+    "Retried one transient HTTP 502 within the existing bounded idempotent-GET policy without changing evidence semantics.",
+    "Ran the complete research gate, all-state projection verification, project data integrity, national configuration, Vercel publication contracts, and production build under pinned Node 22, then verified the exact production deployment and active R2 boundary."
+  ],
+  "blockers": {
+    "code": [],
+    "infrastructure": [
+      "Research-data pointer promotion cadence remains closed until 2026-09-04T08:58:25.633Z."
+    ],
+    "clientOrInput": []
+  },
+  "conditionalRiskAcceptance": null,
+  "rollbackAndObservation": {
+    "applicationLastKnownGoodCommit": "6697c256f4c117838bb8ff7fdf5586e987754ca3",
+    "applicationReleaseCommit": "598694f4cc51b92ee1133f024226a3c039c4068a",
+    "activeDataReleaseId": "research-e2115f6a705f-163982b59c8351b2",
+    "dataRollbackRequired": false,
+    "r2ObjectsDeleted": 0,
+    "applicationRollbackMethod": "Use the normal reviewed Git revert and Vercel production workflow only if a verified application regression appears.",
+    "dataRollbackMethod": "No data rollback is required because the active pointer did not change."
+  },
+  "limitations": [
+    "The Oregon BBS evidence is sampled point detection evidence, not a complete county inventory, establishment claim, or absence claim.",
+    "The successful immutable run recorded six attempts: one transient HTTP 502 followed by the five retained HTTP 200 source responses.",
+    "The prepared R2 release has only a deterministic static operation model, not fresh Cloudflare usage or an authenticated exact missing-object plan; cadence blocks publication independently.",
+    "Production verification used exact HTTP, header, deployment, and immutable-artifact checks. No new browser visual audit was required because no interface code changed, and no visual-fidelity claim is made.",
+    "No comprehensive WCAG audit, field Core Web Vitals claim, penetration-test claim, analytics trend claim, or direct Vercel runtime-log claim is made."
+  ],
+  "evidenceScope": "Application release 598694f4cc51b92ee1133f024226a3c039c4068a is on origin/main and public GitHub main and is tied to successful GitHub Production deployment 6176813075 at projectisitusa-ly2eq433x-unigentamos.vercel.app. Canonical and immutable routes, expected 404 behavior, security headers, deployed Oregon static-artifact identity, pointer identity, active manifest identity, and active Oregon object identity passed. The prepared Oregon research release adds 39 verified-present pairs locally with zero negative movement, unreviewed evidence, or conflicts. It was not uploaded or promoted; direct and same-origin pointers remain exactly on release research-e2115f6a705f-163982b59c8351b2. The immutable run receipt records the code commit that authorized and executed acquisition, not the later commit containing the receipt. This production receipt does not attest to the commit that contains it or any future R2 action."
+}
