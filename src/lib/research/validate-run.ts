@@ -137,13 +137,29 @@ function readCommittedFile(repositoryRoot: string, commit: string, filepath: str
   }
 }
 
+function readCommittedBytes(repositoryRoot: string, commit: string, filepath: string) {
+  assertSafeRepositoryPath(filepath, "Committed research path");
+  try {
+    return execFileSync(
+      "git",
+      ["-C", repositoryRoot, "show", `${commit}:${filepath}`],
+      { maxBuffer: 20 * 1024 * 1024 },
+    );
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    throw new Error(
+      `Cannot read ${filepath} at receipt code commit ${commit}: ${detail}`,
+    );
+  }
+}
+
 const committedFileSha256Cache = new Map<string, string>();
 
 function committedFileSha256(repositoryRoot: string, commit: string, filepath: string) {
   const cacheKey = `${path.resolve(repositoryRoot)}\0${commit}\0${filepath}`;
   const cached = committedFileSha256Cache.get(cacheKey);
   if (cached) return cached;
-  const digest = sha256(readCommittedFile(repositoryRoot, commit, filepath));
+  const digest = sha256(readCommittedBytes(repositoryRoot, commit, filepath));
   committedFileSha256Cache.set(cacheKey, digest);
   return digest;
 }
