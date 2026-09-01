@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "usgs-bbs-ne-route-start-tranche-selection-20260901-r1",
+  "evaluatedAt": "2026-09-01T05:24:00.000Z",
+  "status": "selected-for-bounded-local-acquisition",
+  "objective": "Select the highest-value remaining bounded USGS BBS route-start lane after the Wyoming integration without weakening evidence, resource, release, or publication guards.",
+  "discovery": {
+    "primaryMode": "RESEARCH / EVIDENCE",
+    "secondaryOverlay": "PROJECT ISITUSA",
+    "decisionOwner": "MAIN within Ocean's explicit project-scoped continuation authority",
+    "decision": "Select Nebraska as the next bounded no-cost retained-source lane.",
+    "scope": "Fresh national replay of the retained 2026 USGS BBS source bytes against the current post-Wyoming compiled projections.",
+    "nonGoals": [
+      "Do not create absence or survey non-detection from zero, omitted, later-stop, unmatched, or unresolved rows.",
+      "Do not claim countywide inventory, establishment, state certification, or source exhaustiveness.",
+      "Do not push, deploy, upload, promote, or delete R2 data as part of this selection.",
+      "Do not acquire if the fresh host observation falls below the 10 percent operational RAM reserve."
+    ],
+    "checksNotRun": [
+      "Live source acquisition, which begins only from a clean committed plan checkpoint after semantic dry-run validation.",
+      "Cloudflare usage refresh or R2 missing-object planning because this lane does not authorize an R2 write.",
+      "Application deployment or live-route verification because no application release has occurred."
+    ]
+  },
+  "decision": {
+    "question": "Which remaining retained-source BBS tranche should MAIN execute after Wyoming?",
+    "selectedState": "NE",
+    "selectedDirection": "Execute the Nebraska USGS BBS route-start tranche from a clean committed plan checkpoint if the semantic dry run and fresh resource check remain exact.",
+    "reason": "Nebraska is the unique highest remaining state at 38 net-new pairs. All 38 pairs are currently not researched and are supported by 62 positive standard-run Stop 1 rows across 28 active counties. Washington follows at 37 pairs and Missouri at 35.",
+    "decisionStatus": "LOCKED for this bounded plan; execution remains conditional on exact-scope, source-identity, clean-worktree, and resource revalidation.",
+    "reopenCondition": "Any plan drift, candidate status change, retained or live source identity mismatch, incomplete outcome set, accepted conflict, paid-cost risk, resource-policy failure, or competing MAIN writer."
+  },
+  "currentState": {
+    "canonicalCheckout": "C:\\Code\\project-isitusa",
+    "branch": "main",
+    "head": "ec56f88db6dd78e44123e216727596dd31eb32ee",
+    "upstream": "88207e0d7e8acdc28680da5663e89c8f4c9a024c",
+    "worktreeBeforePlan": "clean",
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "pendingIntegrationItems": 0,
+    "pushBoundary": "The six-commit Wyoming push remains closed pending the required direct chat approval. This evaluation does not retry or bypass that safeguard.",
+    "r2Boundary": "No upload, pointer promotion, or deletion is authorized."
+  },
+  "resourceGuard": {
+    "measuredAt": "2026-09-01T05:20:25.103Z",
+    "totalMemoryBytes": 33450536960,
+    "availableMemoryBytes": 7541542912,
+    "availableMemoryPercent": 22.547,
+    "freeDiskBytes": 665305124864,
+    "requiredOperationalRamReservePercent": 10,
+    "decision": "GO for sequential plan validation; remeasure immediately before semantic dry run and acquisition."
+  },
+  "sourceIdentity": {
+    "sourceId": "usgs-bbs",
+    "authority": "U.S. Geological Survey",
+    "adapterId": "usgs-bbs-route-start",
+    "adapterVersion": "1.1.4",
+    "scienceBaseItemId": "6a0b0b0ab66b0188da36aedd",
+    "releaseTitle": "2026 Release - North American Breeding Bird Survey Dataset (1966 - 2025)",
+    "releaseDoi": "https://doi.org/10.5066/P144YU3S",
+    "retainedSourceDirectory": "C:\\Users\\Ocean\\AppData\\Local\\Temp\\isitusa-bbs-2026-analysis",
+    "files": [
+      { "name": "Routes.csv", "bytes": 392008, "sha256": "8ac35620930b0bc758ed3fcb33c689ebe08840edd04f840050b13dd1a56e8362" },
+      { "name": "Weather.csv", "bytes": 14126685, "sha256": "4bcdb3346dcc44839690702f76c10306a19329260e99e16576b1a92f4465f67d" },
+      { "name": "50-StopData.zip", "bytes": 68998320, "sha256": "eed5fc264a1af6074783685de96b433b1d5ce4a1f8e09528449dbd4f9ba03204" },
+      { "name": "SpeciesList.csv", "bytes": 73748, "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274" }
+    ]
+  },
+  "freshResidualReplay": {
+    "networkRequests": 0,
+    "archiveRows": 4551591,
+    "unitedStatesRoutes": 4458,
+    "resolvedUnitedStatesRoutes": 4453,
+    "unresolvedUnitedStatesRoutes": 5,
+    "standardRuns": 110158,
+    "nationalAcceptedPositiveStop1Rows": 5322,
+    "nationalGrossCountySpeciesPairs": 1548,
+    "nationalAlreadyPresentPairs": 924,
+    "nationalNetNewPairs": 624,
+    "stateAcceptedPositiveStop1Rows": 62,
+    "stateGrossCountySpeciesPairs": 38,
+    "stateAlreadyPresentPairs": 0,
+    "stateNetNewPairs": 38,
+    "affectedCounties": 28,
+    "selectedPairCurrentStatus": { "notResearched": 38, "other": 0 },
+    "nextAlternative": { "stateCode": "WA", "netNewPairs": 37 },
+    "followingAlternative": { "stateCode": "MO", "netNewPairs": 35 }
+  },
+  "selectedPlan": {
+    "path": "src/data/research/national-acquisition-plans/usgs-bbs-ne-route-start-tranche-v1.json",
+    "planId": "usgs-bbs-ne-route-start-tranche-v1",
+    "bytes": 7337,
+    "sha256": "ad4ec75998e1f72949465a3bb5c9c22c85b93400a18e8b88dde4b09dd3a07f62",
+    "candidatePairs": 38,
+    "uniqueCandidatePairs": 38,
+    "deterministicallySorted": true,
+    "supportingRowsExpected": 62,
+    "grossPairs": 38,
+    "affectedCounties": 28,
+    "speciesCount": 4,
+    "speciesPairCounts": {
+      "columba-livia": 1,
+      "passer-domesticus": 15,
+      "streptopelia-decaocto": 13,
+      "sturnus-vulgaris": 9
+    }
+  },
+  "baseline": {
+    "nebraska": {
+      "asOf": "2026-08-29",
+      "countySpeciesDenominator": 232872,
+      "verifiedPresent": 2005,
+      "verifiedAbsent": 0,
+      "notDetected": 0,
+      "researchedUnresolved": 41147,
+      "notResearched": 189720,
+      "explicitOutcomePairCount": 43152,
+      "evidenceRecordCount": 2519,
+      "researchRunCount": 24,
+      "conflicts": 0,
+      "selectedPairStatus": { "notResearched": 38 }
+    },
+    "national": {
+      "asOf": "2026-09-01",
+      "countySpeciesDenominator": 7872576,
+      "verifiedPresent": 195960,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314173,
+      "immutableResearchRuns": 1430,
+      "assertionEvents": 309854,
+      "pairOutcomes": 1721640,
+      "unreviewedEvidence": 0
+    }
+  },
+  "evidenceContract": {
+    "acceptedClaim": "A positive standard-run Stop 1 detection supports recorded presence at the exact active county containing the route-start coordinate.",
+    "excludedClaims": [
+      "No countywide inventory completeness",
+      "No establishment claim",
+      "No absence claim",
+      "No survey non-detection claim from zero or omitted rows",
+      "No later-stop or route-total inference"
+    ],
+    "taxonMatch": "Exact current-catalog binomial plus exact retained BBS AOU mapping",
+    "geographyMatch": "Route-start coordinate must resolve to exactly one active county equivalent",
+    "reviewGate": "Registered deterministic adapter machine validation"
+  },
+  "requirements": [
+    "The plan must retain exactly 38 sorted unique Nebraska county-species candidates across 28 active counties.",
+    "All 38 selected pairs must remain not researched immediately before acquisition.",
+    "The zero-network semantic dry run must issue no provider requests and predict the exact bounded provider plan.",
+    "A fresh capacity check must preserve the 10 percent operational RAM reserve before acquisition.",
+    "The live adapter must reproduce all four source identities and complete exactly 38 pair outcomes.",
+    "Compilation must move exactly 38 pairs from not researched to verified present with zero negative movement, conflicts, or unreviewed evidence.",
+    "Relevant deterministic, integrity, type, lint, build, publication, and release gates must pass before any release decision."
+  ],
+  "operations": {
+    "providerGets": 0,
+    "providerPosts": 0,
+    "datasetMovement": 0,
+    "r2Uploads": 0,
+    "r2Promotions": 0,
+    "r2Deletions": 0
+  },
+  "nextAction": "Validate and commit the Nebraska plan and this evaluation. From that clean exact commit, rerun the resource guard, execute the zero-network semantic dry run, and acquire only if every source and scope invariant remains exact."
+}
