@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260901T191653000Z__njdep-asian-longhorned-beetle-eradication-current__5fbb06fdcaba",
+  "status": "complete",
+  "started_at": "2026-09-01T19:16:53.000Z",
+  "finished_at": "2026-09-01T19:16:53.000Z",
+  "actor_type": "adapter",
+  "actor_id": "official-eradication-determination@1.0.0",
+  "source_id": "njdep-asian-longhorned-beetle-eradication-current",
+  "source_registry_hash": "95802bf6cf8dd0c0acbbabdc86bf801558eafbbae60db87ae363a3f111f40ee6",
+  "adapter_id": "official-eradication-determination",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "4038393ad81293844f3ff7226f8983d2d0b472cc57324ed131c9f738c268ba76",
+  "code_commit": "4a62ada07ca93cce47befe6eb047273de452f55f",
+  "parameter_hash": "9f58636a4a5790604dcb4241da1cf5b84a9d7dfddb74498ad88f32718bd1e8c7",
+  "parameters": {
+    "stateCode": "NJ",
+    "mode": "human-approved-official-eradication",
+    "batchId": "jurisdiction-wide-eradication-human-approval-request-20260901-r1",
+    "approvalArtifactPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-request-20260901-r1.json",
+    "approvalArtifactSha256": "94888e583e80c60daba0c0210867013fe4d5a9d342021e96828272c9c88bc0a5",
+    "approvalReceiptPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-receipt-20260901-r1.json",
+    "approvalReceiptSha256": "68f1198d51722c370af9124bafe0457d1736e57ecb1a191b18876c459a290156",
+    "sourceDocumentId": "njdep-asian-longhorned-beetle-eradication-current",
+    "parentJurisdictionEvidenceId": null,
+    "candidateLimit": 3,
+    "candidatePairs": [
+      "34017:asian-longhorned-beetle",
+      "34023:asian-longhorned-beetle",
+      "34039:asian-longhorned-beetle"
+    ],
+    "historicalOccurrencePairKeys": [
+      "34017:asian-longhorned-beetle",
+      "34023:asian-longhorned-beetle",
+      "34039:asian-longhorned-beetle"
+    ],
+    "humanReviewActorId": "Ocean",
+    "humanReviewTimestamp": "2026-09-01T19:16:53.000Z"
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34017",
+      "34023",
+      "34039"
+    ],
+    "species_ids": [
+      "asian-longhorned-beetle"
+    ],
+    "pair_keys": [
+      "34017:asian-longhorned-beetle",
+      "34023:asian-longhorned-beetle",
+      "34039:asian-longhorned-beetle"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__njdep-asian-longhorned-beetle-eradication-current__5fbb06fdcaba/artifacts/approved-source-reference.json",
+      "sha256": "f64df12b27aa3fc4496b4d556048e3ab0e145f98cb0e13119fa9bccd7c0f83e3",
+      "bytes": 798,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__njdep-asian-longhorned-beetle-eradication-current__5fbb06fdcaba/assertions.ndjson",
+      "sha256": "4132f9ea3703e6476a9a4b1c871c539a3e8b692479a52b99ece87e156b37c3aa",
+      "bytes": 6406,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__njdep-asian-longhorned-beetle-eradication-current__5fbb06fdcaba/reviews.ndjson",
+      "sha256": "3c18a4e2fad12985b370f3add61fc59ab2c9666781c3fc2dd5efb053ab044461",
+      "bytes": 3315,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__njdep-asian-longhorned-beetle-eradication-current__5fbb06fdcaba/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__njdep-asian-longhorned-beetle-eradication-current__5fbb06fdcaba/outcomes.ndjson",
+      "sha256": "682180c04847527e56399d711636eebf04827ab426b495092c132011afb9fcaf",
+      "bytes": 2418,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "This batch uses the page for exact historical county occurrences; the separate parent record governs the current official eradication determination."
+  ],
+  "source_warnings": [
+    "This replay uses retained, hash-pinned official source artifacts reviewed before approval and performs no live provider request.",
+    "Absence is emitted only from an explicit human-approved parent jurisdiction determination; source silence never creates an assertion."
+  ],
+  "deviations": [
+    "No live provider request was issued; the approved batch replays retained, hash-pinned official artifacts reviewed immediately before human approval.",
+    "Push, R2 publication, pointer promotion, deployment, and release are excluded from this local batch."
+  ],
+  "rerun_command": "npm run research:run:approved-eradication -- --recorded-at 2026-09-01T19:16:53.000Z"
+}

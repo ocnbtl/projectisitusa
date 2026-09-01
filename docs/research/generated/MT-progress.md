@@ -1,6 +1,6 @@
 # Montana Research Progress
 
-Generated: `2026-08-30T00:00:00.000Z`
+Generated: `2026-09-01T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -8,19 +8,19 @@ Generated: `2026-08-30T00:00:00.000Z`
 - Counties: `56`
 - County-species pairs: `140224`
 - Verified present: `2430`
-- Verified absent: `0`
+- Verified absent: `56`
 - Not detected: `0`
 - Researched unresolved: `24826`
-- Not researched: `112968`
-- Determination coverage: `1.73%`
-- Research coverage: `19.44%`
-- Explicit outcome coverage: `19.4375%`
+- Not researched: `112912`
+- Determination coverage: `1.77%`
+- Research coverage: `19.48%`
+- Explicit outcome coverage: `19.4774%`
 - Applicable protocol cells: `237`
 - Current complete protocol cells: `69`
 - Protocol completion: `34.60%`
 - Current protocol completion: `29.11%`
-- Evidence records: `2477`
-- Research runs: `30`
+- Evidence records: `2533`
+- Research runs: `31`
 - Rejection records: `79`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -89,5 +89,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | 2026-08-30T06:23:03.717Z | 40 | 4 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
+| USDA APHIS northern giant hornet eradication statement (2024) | manual | 2026-09-01T19:16:53.000Z | 56 | 1 |
+| WSDA northern giant hornet eradication statement (2024) | manual | not run | 0 | 0 |
+| WSDA 2025 northern giant hornet surveillance update | manual | not run | 0 | 0 |
+| NJDEP Asian longhorned beetle eradication status | manual | not run | 0 | 0 |
+| USDA APHIS Asian longhorned beetle program update (2026) | manual | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

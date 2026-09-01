@@ -1,6 +1,6 @@
 # Idaho Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-09-01T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -8,19 +8,19 @@ Generated: `2026-08-29T00:00:00.000Z`
 - Counties: `44`
 - County-species pairs: `110176`
 - Verified present: `2010`
-- Verified absent: `0`
+- Verified absent: `44`
 - Not detected: `0`
 - Researched unresolved: `19550`
-- Not researched: `88616`
-- Determination coverage: `1.82%`
-- Research coverage: `19.57%`
-- Explicit outcome coverage: `19.5687%`
+- Not researched: `88572`
+- Determination coverage: `1.86%`
+- Research coverage: `19.61%`
+- Explicit outcome coverage: `19.6086%`
 - Applicable protocol cells: `264`
 - Current complete protocol cells: `85`
 - Protocol completion: `37.12%`
 - Current protocol completion: `32.20%`
-- Evidence records: `2543`
-- Research runs: `24`
+- Evidence records: `2587`
+- Research runs: `25`
 - Rejection records: `352`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -89,5 +89,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
+| USDA APHIS northern giant hornet eradication statement (2024) | manual | 2026-09-01T19:16:53.000Z | 44 | 1 |
+| WSDA northern giant hornet eradication statement (2024) | manual | not run | 0 | 0 |
+| WSDA 2025 northern giant hornet surveillance update | manual | not run | 0 | 0 |
+| NJDEP Asian longhorned beetle eradication status | manual | not run | 0 | 0 |
+| USDA APHIS Asian longhorned beetle program update (2026) | manual | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

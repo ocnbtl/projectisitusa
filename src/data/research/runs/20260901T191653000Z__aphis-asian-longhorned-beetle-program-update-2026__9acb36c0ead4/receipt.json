@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260901T191653000Z__aphis-asian-longhorned-beetle-program-update-2026__9acb36c0ead4",
+  "status": "complete",
+  "started_at": "2026-09-01T19:16:53.000Z",
+  "finished_at": "2026-09-01T19:16:53.000Z",
+  "actor_type": "adapter",
+  "actor_id": "official-eradication-determination@1.0.0",
+  "source_id": "aphis-asian-longhorned-beetle-program-update-2026",
+  "source_registry_hash": "95802bf6cf8dd0c0acbbabdc86bf801558eafbbae60db87ae363a3f111f40ee6",
+  "adapter_id": "official-eradication-determination",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "4038393ad81293844f3ff7226f8983d2d0b472cc57324ed131c9f738c268ba76",
+  "code_commit": "4a62ada07ca93cce47befe6eb047273de452f55f",
+  "parameter_hash": "c1cb4a6fabee07fea97e741ca9565a902630d14c260966727912b0c815b9046f",
+  "parameters": {
+    "stateCode": "NJ",
+    "mode": "human-approved-official-eradication",
+    "batchId": "jurisdiction-wide-eradication-human-approval-request-20260901-r1",
+    "approvalArtifactPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-request-20260901-r1.json",
+    "approvalArtifactSha256": "94888e583e80c60daba0c0210867013fe4d5a9d342021e96828272c9c88bc0a5",
+    "approvalReceiptPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-receipt-20260901-r1.json",
+    "approvalReceiptSha256": "68f1198d51722c370af9124bafe0457d1736e57ecb1a191b18876c459a290156",
+    "sourceDocumentId": "aphis-asian-longhorned-beetle-program-update-2026",
+    "parentJurisdictionEvidenceId": "asian-longhorned-beetle-nj-officially-eradicated-2013",
+    "candidateLimit": 3,
+    "candidatePairs": [
+      "34017:asian-longhorned-beetle",
+      "34023:asian-longhorned-beetle",
+      "34039:asian-longhorned-beetle"
+    ],
+    "historicalOccurrencePairKeys": [],
+    "humanReviewActorId": "Ocean",
+    "humanReviewTimestamp": "2026-09-01T19:16:53.000Z"
+  },
+  "requested_scope": {
+    "state_code": "NJ",
+    "county_fips": [
+      "34017",
+      "34023",
+      "34039"
+    ],
+    "species_ids": [
+      "asian-longhorned-beetle"
+    ],
+    "pair_keys": [
+      "34017:asian-longhorned-beetle",
+      "34023:asian-longhorned-beetle",
+      "34039:asian-longhorned-beetle"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-asian-longhorned-beetle-program-update-2026__9acb36c0ead4/artifacts/approved-source-reference.json",
+      "sha256": "745dc6a1751e4d9bdb4f2a47cc6ccbb9c32d9125c938645e7627d627cceea37e",
+      "bytes": 911,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-asian-longhorned-beetle-program-update-2026__9acb36c0ead4/assertions.ndjson",
+      "sha256": "7f6d078bad02b6e5cfcfb7e494940b646ff44fc4f5dabb7e0045214482e7e8ec",
+      "bytes": 7985,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-asian-longhorned-beetle-program-update-2026__9acb36c0ead4/reviews.ndjson",
+      "sha256": "0e7e84b486d704512833acb59c3c03eb7a7fad0a24f8ac8676d8a5d79982539a",
+      "bytes": 3282,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-asian-longhorned-beetle-program-update-2026__9acb36c0ead4/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-asian-longhorned-beetle-program-update-2026__9acb36c0ead4/outcomes.ndjson",
+      "sha256": "25bbe825fb67cbce0c1e7362aa2c8887b73073ef2345813eca5e4faad7cb0010",
+      "bytes": 2571,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 3,
+    "candidate_records": 3,
+    "assertion_events": 3,
+    "review_events": 3,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 3
+  },
+  "errors": [],
+  "known_caveats": [
+    "Supports only the explicit, human-approved official eradication determination for the approved New Jersey county set through its parent record validThrough date."
+  ],
+  "source_warnings": [
+    "This replay uses retained, hash-pinned official source artifacts reviewed before approval and performs no live provider request.",
+    "Absence is emitted only from an explicit human-approved parent jurisdiction determination; source silence never creates an assertion."
+  ],
+  "deviations": [
+    "No live provider request was issued; the approved batch replays retained, hash-pinned official artifacts reviewed immediately before human approval.",
+    "Push, R2 publication, pointer promotion, deployment, and release are excluded from this local batch."
+  ],
+  "rerun_command": "npm run research:run:approved-eradication -- --recorded-at 2026-09-01T19:16:53.000Z"
+}

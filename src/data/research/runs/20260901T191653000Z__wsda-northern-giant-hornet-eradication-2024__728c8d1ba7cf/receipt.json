@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260901T191653000Z__wsda-northern-giant-hornet-eradication-2024__728c8d1ba7cf",
+  "status": "complete",
+  "started_at": "2026-09-01T19:16:53.000Z",
+  "finished_at": "2026-09-01T19:16:53.000Z",
+  "actor_type": "adapter",
+  "actor_id": "official-eradication-determination@1.0.0",
+  "source_id": "wsda-northern-giant-hornet-eradication-2024",
+  "source_registry_hash": "95802bf6cf8dd0c0acbbabdc86bf801558eafbbae60db87ae363a3f111f40ee6",
+  "adapter_id": "official-eradication-determination",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "4038393ad81293844f3ff7226f8983d2d0b472cc57324ed131c9f738c268ba76",
+  "code_commit": "4a62ada07ca93cce47befe6eb047273de452f55f",
+  "parameter_hash": "92eb59168c9b951ba4fa926fb542d263b2e5782ec4ec35d963b252e82689adcd",
+  "parameters": {
+    "stateCode": "WA",
+    "mode": "human-approved-official-eradication",
+    "batchId": "jurisdiction-wide-eradication-human-approval-request-20260901-r1",
+    "approvalArtifactPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-request-20260901-r1.json",
+    "approvalArtifactSha256": "94888e583e80c60daba0c0210867013fe4d5a9d342021e96828272c9c88bc0a5",
+    "approvalReceiptPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-receipt-20260901-r1.json",
+    "approvalReceiptSha256": "68f1198d51722c370af9124bafe0457d1736e57ecb1a191b18876c459a290156",
+    "sourceDocumentId": "wsda-northern-giant-hornet-eradication-2024",
+    "parentJurisdictionEvidenceId": null,
+    "candidateLimit": 1,
+    "candidatePairs": [
+      "53073:vespa-mandarinia"
+    ],
+    "historicalOccurrencePairKeys": [
+      "53073:vespa-mandarinia"
+    ],
+    "humanReviewActorId": "Ocean",
+    "humanReviewTimestamp": "2026-09-01T19:16:53.000Z"
+  },
+  "requested_scope": {
+    "state_code": "WA",
+    "county_fips": [
+      "53073"
+    ],
+    "species_ids": [
+      "vespa-mandarinia"
+    ],
+    "pair_keys": [
+      "53073:vespa-mandarinia"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__wsda-northern-giant-hornet-eradication-2024__728c8d1ba7cf/artifacts/approved-source-reference.json",
+      "sha256": "635952233ef6d77129e3c5800e5c89ba246cf59ea4b91d169f6d7933e26af5bd",
+      "bytes": 812,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__wsda-northern-giant-hornet-eradication-2024__728c8d1ba7cf/assertions.ndjson",
+      "sha256": "cca009f9a32f96806340119c0ea72648adc7ec3f34d3478f25d0b47383c45973",
+      "bytes": 2071,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__wsda-northern-giant-hornet-eradication-2024__728c8d1ba7cf/reviews.ndjson",
+      "sha256": "ab6df40a566d1140dd9dc39054d924c6eef9e5bfdfa5e2070a8eb3e41b382a72",
+      "bytes": 1086,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__wsda-northern-giant-hornet-eradication-2024__728c8d1ba7cf/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__wsda-northern-giant-hornet-eradication-2024__728c8d1ba7cf/outcomes.ndjson",
+      "sha256": "4067e4794befdfc1f4f6367d42442256f19bbbfdcb9ccbe79722dfd377b6c94d",
+      "bytes": 807,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 1,
+    "candidate_records": 1,
+    "assertion_events": 1,
+    "review_events": 1,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 1
+  },
+  "errors": [],
+  "known_caveats": [
+    "This batch uses the page only for the exact historical Whatcom County occurrence approved alongside the separate current eradication parent record."
+  ],
+  "source_warnings": [
+    "This replay uses retained, hash-pinned official source artifacts reviewed before approval and performs no live provider request.",
+    "Absence is emitted only from an explicit human-approved parent jurisdiction determination; source silence never creates an assertion."
+  ],
+  "deviations": [
+    "No live provider request was issued; the approved batch replays retained, hash-pinned official artifacts reviewed immediately before human approval.",
+    "Push, R2 publication, pointer promotion, deployment, and release are excluded from this local batch."
+  ],
+  "rerun_command": "npm run research:run:approved-eradication -- --recorded-at 2026-09-01T19:16:53.000Z"
+}

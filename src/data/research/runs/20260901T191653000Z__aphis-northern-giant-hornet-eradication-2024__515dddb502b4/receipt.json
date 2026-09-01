@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "run_id": "20260901T191653000Z__aphis-northern-giant-hornet-eradication-2024__515dddb502b4",
+  "status": "complete",
+  "started_at": "2026-09-01T19:16:53.000Z",
+  "finished_at": "2026-09-01T19:16:53.000Z",
+  "actor_type": "adapter",
+  "actor_id": "official-eradication-determination@1.0.0",
+  "source_id": "aphis-northern-giant-hornet-eradication-2024",
+  "source_registry_hash": "95802bf6cf8dd0c0acbbabdc86bf801558eafbbae60db87ae363a3f111f40ee6",
+  "adapter_id": "official-eradication-determination",
+  "adapter_version": "1.0.0",
+  "adapter_code_hash": "4038393ad81293844f3ff7226f8983d2d0b472cc57324ed131c9f738c268ba76",
+  "code_commit": "4a62ada07ca93cce47befe6eb047273de452f55f",
+  "parameter_hash": "261d4f25695f6e2b5f6042358492e0af6a6a23903faf450a316b6ce89b5621e5",
+  "parameters": {
+    "stateCode": "RI",
+    "mode": "human-approved-official-eradication",
+    "batchId": "jurisdiction-wide-eradication-human-approval-request-20260901-r1",
+    "approvalArtifactPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-request-20260901-r1.json",
+    "approvalArtifactSha256": "94888e583e80c60daba0c0210867013fe4d5a9d342021e96828272c9c88bc0a5",
+    "approvalReceiptPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-receipt-20260901-r1.json",
+    "approvalReceiptSha256": "68f1198d51722c370af9124bafe0457d1736e57ecb1a191b18876c459a290156",
+    "sourceDocumentId": "aphis-northern-giant-hornet-eradication-2024",
+    "parentJurisdictionEvidenceId": "vespa-mandarinia-us-officially-eradicated-2024",
+    "candidateLimit": 5,
+    "candidatePairs": [
+      "44001:vespa-mandarinia",
+      "44003:vespa-mandarinia",
+      "44005:vespa-mandarinia",
+      "44007:vespa-mandarinia",
+      "44009:vespa-mandarinia"
+    ],
+    "historicalOccurrencePairKeys": [],
+    "humanReviewActorId": "Ocean",
+    "humanReviewTimestamp": "2026-09-01T19:16:53.000Z"
+  },
+  "requested_scope": {
+    "state_code": "RI",
+    "county_fips": [
+      "44001",
+      "44003",
+      "44005",
+      "44007",
+      "44009"
+    ],
+    "species_ids": [
+      "vespa-mandarinia"
+    ],
+    "pair_keys": [
+      "44001:vespa-mandarinia",
+      "44003:vespa-mandarinia",
+      "44005:vespa-mandarinia",
+      "44007:vespa-mandarinia",
+      "44009:vespa-mandarinia"
+    ],
+    "date_range": {
+      "start": null,
+      "end": null
+    }
+  },
+  "upstream_requests": [],
+  "artifacts": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-northern-giant-hornet-eradication-2024__515dddb502b4/artifacts/approved-source-reference.json",
+      "sha256": "fcdbd6846f8b096b38ceb06436336805f5b2e6c082cfc58eb7626cbdb12b1c03",
+      "bytes": 883,
+      "media_type": "application/json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-northern-giant-hornet-eradication-2024__515dddb502b4/assertions.ndjson",
+      "sha256": "55b077f51d3e73a709f3dcc8f492bda427bcfc1a33fa0047a78842f566d27fea",
+      "bytes": 12833,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-northern-giant-hornet-eradication-2024__515dddb502b4/reviews.ndjson",
+      "sha256": "86dc357be9ed54c31e491c5ca16c875a5f6f0ba550506fe9c8838ca887986147",
+      "bytes": 5385,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-northern-giant-hornet-eradication-2024__515dddb502b4/rejections.ndjson",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "media_type": "application/x-ndjson"
+    },
+    {
+      "path": "src/data/research/runs/20260901T191653000Z__aphis-northern-giant-hornet-eradication-2024__515dddb502b4/outcomes.ndjson",
+      "sha256": "978cb7d7980269589bc47bfde7fdbac744dda05adce60d4b3193782a0eb50551",
+      "bytes": 4120,
+      "media_type": "application/x-ndjson"
+    }
+  ],
+  "counts": {
+    "requested_pairs": 5,
+    "candidate_records": 5,
+    "assertion_events": 5,
+    "review_events": 5,
+    "rejection_records": 0,
+    "duplicate_records": 0,
+    "error_count": 0,
+    "pair_outcomes": 5
+  },
+  "errors": [],
+  "known_caveats": [
+    "Supports only the explicit, human-approved official eradication determination through its parent record validThrough date; silence, maps, models, and unconfirmed reports create no absence claim."
+  ],
+  "source_warnings": [
+    "This replay uses retained, hash-pinned official source artifacts reviewed before approval and performs no live provider request.",
+    "Absence is emitted only from an explicit human-approved parent jurisdiction determination; source silence never creates an assertion."
+  ],
+  "deviations": [
+    "No live provider request was issued; the approved batch replays retained, hash-pinned official artifacts reviewed immediately before human approval.",
+    "Push, R2 publication, pointer promotion, deployment, and release are excluded from this local batch."
+  ],
+  "rerun_command": "npm run research:run:approved-eradication -- --recorded-at 2026-09-01T19:16:53.000Z"
+}

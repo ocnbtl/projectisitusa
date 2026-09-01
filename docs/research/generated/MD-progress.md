@@ -1,6 +1,6 @@
 # Maryland Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-09-01T00:00:00.000Z`
 
 ## Exact Counts
 
@@ -8,19 +8,19 @@ Generated: `2026-08-29T00:00:00.000Z`
 - Counties: `24`
 - County-species pairs: `60096`
 - Verified present: `626`
-- Verified absent: `0`
+- Verified absent: `24`
 - Not detected: `0`
 - Researched unresolved: `10606`
-- Not researched: `48864`
-- Determination coverage: `1.04%`
-- Research coverage: `18.69%`
-- Explicit outcome coverage: `18.6901%`
+- Not researched: `48840`
+- Determination coverage: `1.08%`
+- Research coverage: `18.73%`
+- Explicit outcome coverage: `18.7300%`
 - Applicable protocol cells: `173`
 - Current complete protocol cells: `90`
 - Protocol completion: `59.54%`
 - Current protocol completion: `52.02%`
-- Evidence records: `895`
-- Research runs: `25`
+- Evidence records: `919`
+- Research runs: `26`
 - Rejection records: `286`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -89,5 +89,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
+| USDA APHIS northern giant hornet eradication statement (2024) | manual | 2026-09-01T19:16:53.000Z | 24 | 1 |
+| WSDA northern giant hornet eradication statement (2024) | manual | not run | 0 | 0 |
+| WSDA 2025 northern giant hornet surveillance update | manual | not run | 0 | 0 |
+| NJDEP Asian longhorned beetle eradication status | manual | not run | 0 | 0 |
+| USDA APHIS Asian longhorned beetle program update (2026) | manual | not run | 0 | 0 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

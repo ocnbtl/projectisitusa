@@ -1,26 +1,26 @@
 # New Jersey Research Progress
 
-Generated: `2026-08-29T00:00:00.000Z`
+Generated: `2026-09-01T00:00:00.000Z`
 
 ## Exact Counts
 
 - Species: `2504`
 - Counties: `21`
 - County-species pairs: `52584`
-- Verified present: `2815`
-- Verified absent: `0`
+- Verified present: `2818`
+- Verified absent: `21`
 - Not detected: `0`
-- Researched unresolved: `6929`
-- Not researched: `42840`
-- Determination coverage: `5.35%`
-- Research coverage: `18.53%`
-- Explicit outcome coverage: `18.5304%`
-- Applicable protocol cells: `315`
+- Researched unresolved: `6926`
+- Not researched: `42819`
+- Determination coverage: `5.40%`
+- Research coverage: `18.57%`
+- Explicit outcome coverage: `18.5703%`
+- Applicable protocol cells: `316`
 - Current complete protocol cells: `119`
-- Protocol completion: `41.90%`
-- Current protocol completion: `37.78%`
-- Evidence records: `4290`
-- Research runs: `30`
+- Protocol completion: `41.77%`
+- Current protocol completion: `37.66%`
+- Evidence records: `4317`
+- Research runs: `33`
 - Rejection records: `462`
 - Deferred source assertions remaining: `0`
 - Deferred distinct pairs remaining: `0`
@@ -89,5 +89,10 @@ Determination coverage counts only verified present and verified absent pairs. R
 | Water Quality Portal biological results | operational | not run | 0 | 0 |
 | USGS North American Breeding Bird Survey route-start detections | operational | not run | 0 | 0 |
 | NEON TALL plant presence and percent cover | operational | not run | 0 | 0 |
+| USDA APHIS northern giant hornet eradication statement (2024) | manual | 2026-09-01T19:16:53.000Z | 21 | 1 |
+| WSDA northern giant hornet eradication statement (2024) | manual | not run | 0 | 0 |
+| WSDA 2025 northern giant hornet surveillance update | manual | not run | 0 | 0 |
+| NJDEP Asian longhorned beetle eradication status | manual | 2026-09-01T19:16:53.000Z | 3 | 1 |
+| USDA APHIS Asian longhorned beetle program update (2026) | manual | 2026-09-01T19:16:53.000Z | 3 | 1 |
 | Manual authoritative evidence | manual | not run | 0 | 0 |
 | Legacy merged presence lineage | legacy-migration | not run | 0 | 0 |

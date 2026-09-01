@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "jurisdiction-wide-eradication-implementation-20260901-r1",
+  "evaluatedAt": "2026-09-01T19:16:53.000Z",
+  "asOf": "2026-09-01",
+  "status": "verified-local-batch",
+  "approval": {
+    "requestPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-request-20260901-r1.json",
+    "requestSha256": "94888e583e80c60daba0c0210867013fe4d5a9d342021e96828272c9c88bc0a5",
+    "receiptPath": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-receipt-20260901-r1.json",
+    "receiptSha256": "68f1198d51722c370af9124bafe0457d1736e57ecb1a191b18876c459a290156",
+    "actorId": "Ocean"
+  },
+  "immutableRuns": {
+    "codeCommit": "4a62ada07ca93cce47befe6eb047273de452f55f",
+    "count": 54,
+    "runIdsSha256": "e5d0f89383a1e1281b2efed5702c55ecbe358eb3d809c817f28bdf28a46a09a1",
+    "sourcePairScreens": 3151,
+    "currentDeterminationAssertions": 3147,
+    "historicalOccurrenceAssertions": 4,
+    "humanApprovedReviews": 3151,
+    "rejectionRecords": 0,
+    "upstreamRequests": 0
+  },
+  "projections": {
+    "stateCount": 51,
+    "sequentialCompilerAsOf": "2026-09-01",
+    "nationalCounts": {
+      "verifiedPresent": 196039,
+      "verifiedAbsent": 3143,
+      "notDetected": 254,
+      "researchedUnresolved": 1362119,
+      "notResearched": 6311021,
+      "conflicts": 0,
+      "fullCountySpeciesDenominator": 7872576,
+      "countyEquivalentCount": 3144
+    },
+    "expectedNationalCounts": {
+      "verifiedPresent": 196039,
+      "verifiedAbsent": 3143,
+      "notDetected": 254,
+      "researchedUnresolved": 1362119,
+      "notResearched": 6311021,
+      "conflicts": 0,
+      "fullCountySpeciesDenominator": 7872576,
+      "countyEquivalentCount": 3144
+    },
+    "historicalTargets": [
+      {
+        "stateCode": "WA",
+        "countyFips": "53073",
+        "speciesId": "vespa-mandarinia",
+        "displayStatus": "verified-present",
+        "historicalOccurrenceStatus": "recorded-present",
+        "currentDeterminationStatus": "officially-eradicated",
+        "conflict": false
+      },
+      {
+        "stateCode": "NJ",
+        "countyFips": "34017",
+        "speciesId": "asian-longhorned-beetle",
+        "displayStatus": "verified-present",
+        "historicalOccurrenceStatus": "recorded-present",
+        "currentDeterminationStatus": "officially-eradicated",
+        "conflict": false
+      },
+      {
+        "stateCode": "NJ",
+        "countyFips": "34023",
+        "speciesId": "asian-longhorned-beetle",
+        "displayStatus": "verified-present",
+        "historicalOccurrenceStatus": "recorded-present",
+        "currentDeterminationStatus": "officially-eradicated",
+        "conflict": false
+      },
+      {
+        "stateCode": "NJ",
+        "countyFips": "34039",
+        "speciesId": "asian-longhorned-beetle",
+        "displayStatus": "verified-present",
+        "historicalOccurrenceStatus": "recorded-present",
+        "currentDeterminationStatus": "officially-eradicated",
+        "conflict": false
+      }
+    ],
+    "absenceSample": {
+      "stateCode": "AL",
+      "countyFips": "01001",
+      "speciesId": "vespa-mandarinia",
+      "displayStatus": "verified-absent",
+      "historicalOccurrenceStatus": "none",
+      "currentDeterminationStatus": "officially-eradicated",
+      "conflict": false
+    }
+  },
+  "checks": {
+    "approvedArtifactHashMatches": true,
+    "exactParentRecords": 2,
+    "exactCurrentDeterminationPairs": 3147,
+    "exactHistoricalOccurrencePairs": 4,
+    "allReviewsHumanApprovedByOcean": true,
+    "allStateCountsReconciled": true,
+    "zeroConflicts": true,
+    "fullCountySpeciesDenominatorConserved": true,
+    "targetTemporalAuditPassed": true,
+    "noLiveNetworkRequests": true,
+    "r2Mutations": 0,
+    "deploymentMutations": 0,
+    "pushMutations": 0
+  }
+}
