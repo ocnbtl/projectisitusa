@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isitusa.com/schemas/research/official-eradication-determination-parameters.schema.json",
+  "title": "Human-approved official eradication determination parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stateCode",
+    "mode",
+    "batchId",
+    "approvalArtifactPath",
+    "approvalArtifactSha256",
+    "approvalReceiptPath",
+    "approvalReceiptSha256",
+    "sourceDocumentId",
+    "parentJurisdictionEvidenceId",
+    "candidateLimit",
+    "candidatePairs",
+    "historicalOccurrencePairKeys",
+    "humanReviewActorId",
+    "humanReviewTimestamp"
+  ],
+  "properties": {
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "mode": { "const": "human-approved-official-eradication" },
+    "batchId": { "const": "jurisdiction-wide-eradication-human-approval-request-20260901-r1" },
+    "approvalArtifactPath": { "const": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-request-20260901-r1.json" },
+    "approvalArtifactSha256": { "const": "94888e583e80c60daba0c0210867013fe4d5a9d342021e96828272c9c88bc0a5" },
+    "approvalReceiptPath": { "const": "ops/national-research/evaluations/jurisdiction-wide-eradication-human-approval-receipt-20260901-r1.json" },
+    "approvalReceiptSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "sourceDocumentId": {
+      "enum": [
+        "aphis-northern-giant-hornet-eradication-2024",
+        "wsda-northern-giant-hornet-eradication-2024",
+        "njdep-asian-longhorned-beetle-eradication-current",
+        "aphis-asian-longhorned-beetle-program-update-2026"
+      ]
+    },
+    "parentJurisdictionEvidenceId": {
+      "oneOf": [
+        { "enum": [
+          "vespa-mandarinia-us-officially-eradicated-2024",
+          "asian-longhorned-beetle-nj-officially-eradicated-2013"
+        ] },
+        { "type": "null" }
+      ]
+    },
+    "candidateLimit": { "type": "integer", "minimum": 1, "maximum": 5000 },
+    "candidatePairs": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
+      "minItems": 1,
+      "maxItems": 5000,
+      "uniqueItems": true
+    },
+    "historicalOccurrencePairKeys": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[0-9]{5}:[a-z0-9-]+$" },
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "humanReviewActorId": { "const": "Ocean" },
+    "humanReviewTimestamp": { "type": "string", "format": "date-time" }
+  }
+}

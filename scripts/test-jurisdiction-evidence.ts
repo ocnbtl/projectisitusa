@@ -38,7 +38,22 @@ validateJurisdictionEvidenceRegistry({
   countyRegistry,
   stateRegistry,
 });
-assert.equal(committedRegistry.records.length, 0, "Candidate jurisdiction evidence published before approval.");
+assert.equal(committedRegistry.records.length, 2, "Approved jurisdiction evidence registry count differs.");
+assert.deepEqual(
+  committedRegistry.records.map((record) => record.id),
+  [
+    "vespa-mandarinia-us-officially-eradicated-2024",
+    "asian-longhorned-beetle-nj-officially-eradicated-2013",
+  ],
+);
+assert.ok(
+  committedRegistry.records.every(
+    (record) =>
+      record.review.actorId === "Ocean" &&
+      record.review.reviewedAt === "2026-09-01T19:16:53.000Z",
+  ),
+  "Approved jurisdiction evidence review provenance differs.",
+);
 
 const nationalStateCodes = new Set(stateRegistry.nationalV1.certificationOrder);
 const nationalCountyFips = countyRegistry.countyEquivalents
@@ -259,7 +274,7 @@ assert.equal(supportTextDriftRejected, true, "Changed source support text was ac
 console.log(
   JSON.stringify(
     {
-      emptyCandidateRegistry: true,
+      approvedRegistryRecordCount: committedRegistry.records.length,
       exactNationalCountyCount: nationalCountyFips.length,
       exactNewJerseyCountySet: true,
       historicalPresenceCoexistsWithEradication: true,

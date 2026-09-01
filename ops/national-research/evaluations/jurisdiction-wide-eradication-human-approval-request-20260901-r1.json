@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "evaluationId": "jurisdiction-wide-eradication-human-approval-request-20260901-r1",
+  "evaluatedAt": "2026-09-01T18:31:25.277Z",
+  "evaluatedAgainstCommit": "2a0039f14586cd9ab6fb412ad560361c24fb7091",
+  "mode": "zero-assertion-human-approval-request",
+  "status": "awaiting-human-approval",
+  "scope": {
+    "purpose": "Request one bounded human decision on two explicit official eradication determinations after the semantic contract and current conflict audit passed.",
+    "nonGoals": [
+      "Do not publish assertions before approval.",
+      "Do not infer absence from source silence, empty results, rejected candidates, maps, or range models.",
+      "Do not change state certification, R2, Vercel, deployment, DNS, or provider state."
+    ]
+  },
+  "dependencyEvidence": {
+    "priorPreflight": {
+      "path": "ops/national-research/evaluations/post-usfws-jurisdiction-wide-absence-contract-preflight-20260824-r1.json",
+      "sha256": "312983db943eb43fd53aab91fe2222e8262246ff3a97e40cb301ea63cf67a6a2",
+      "retainedSourceCount": 6,
+      "retainedArtifactHashesReverified": true
+    },
+    "semanticImplementation": {
+      "commit": "373ad2b0e253b9e44dd901a7584d028733318d33",
+      "subject": "Add time-aware jurisdiction evidence semantics",
+      "registrySchemaPath": "src/data/research/schemas/jurisdiction-evidence-registry.schema.json",
+      "registrySchemaSha256": "5b67734d81f8244f573b0023d722e0765c21e99133528348effd138172de386d",
+      "validatorPath": "src/lib/research/jurisdiction-evidence.ts",
+      "validatorSha256": "2c9080201bb188cd88288a9d3a8e7afc518f76ccafa31606f9184fe1400e9229"
+    },
+    "currentRegistry": {
+      "path": "src/data/research/jurisdiction-evidence-registry.json",
+      "sha256": "6429bf1cb7e865812e133df15f40426730eed8cbf35189d95f86b64905a89785",
+      "recordCount": 0
+    }
+  },
+  "currentSourceVerification": {
+    "checkedAt": "2026-09-01T18:31:25.277Z",
+    "method": "Fresh review of official USDA APHIS, Washington State Department of Agriculture, and New Jersey Department of Environmental Protection pages, followed by a bounded search for later official contradictions.",
+    "sources": [
+      {
+        "candidate": "vespa-mandarinia-us",
+        "publisher": "USDA Animal and Plant Health Inspection Service",
+        "url": "https://www.aphis.usda.gov/news/agency-announcements/aphis-action-victory-over-worlds-largest-hornet-species",
+        "authorityDate": "2024-12-18",
+        "result": "The official page continues to state eradication from Washington State and the United States."
+      },
+      {
+        "candidate": "vespa-mandarinia-us",
+        "publisher": "Washington State Department of Agriculture",
+        "url": "https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=45115",
+        "authorityDate": "2025-11-03",
+        "result": "The official 2025 survey update reaffirms the 2024 eradication and reports no confirmed northern giant hornet detections."
+      },
+      {
+        "candidate": "asian-longhorned-beetle-new-jersey",
+        "publisher": "New Jersey Department of Environmental Protection",
+        "url": "https://dep.nj.gov/parksandforests/conservation/forest-health/",
+        "authorityDate": "2026-02-13",
+        "result": "The official page identifies Hudson, Middlesex, and Union Counties and states that New Jersey deregulated the quarantine after eradication."
+      },
+      {
+        "candidate": "asian-longhorned-beetle-new-jersey",
+        "publisher": "USDA Animal and Plant Health Inspection Service",
+        "url": "https://www.aphis.usda.gov/news/program-update/aphis-removes-portions-nassau-suffolk-counties-new-york-asian-longhorned-0",
+        "authorityDate": "2026-07-30",
+        "result": "The current program update explicitly lists Hudson County as eradicated in 2008 and Union and Middlesex Counties as eradicated in 2013."
+      }
+    ],
+    "laterOfficialContradictionFound": false,
+    "qualification": "This was a bounded official-source audit, not a claim of exhaustive web absence."
+  },
+  "currentProjectionAudit": {
+    "asOf": "2026-08-29",
+    "fullCountySpeciesDenominator": 7872576,
+    "nationalCounts": {
+      "verifiedPresent": 196035,
+      "verifiedAbsent": 0,
+      "notDetected": 254,
+      "researchedUnresolved": 1362189,
+      "notResearched": 6314098,
+      "conflicts": 0
+    },
+    "vespaMandarinia": {
+      "targetCountyCount": 3144,
+      "explicitPairs": 67,
+      "displayCounts": {
+        "researched-unresolved": 67,
+        "not-researched": 3077
+      },
+      "acceptedPresentPairs": 0,
+      "targetConflicts": 0
+    },
+    "asianLonghornedBeetle": {
+      "nationalExplicitPairs": 3144,
+      "nationalDisplayCounts": {
+        "verified-present": 6,
+        "researched-unresolved": 3138
+      },
+      "targetCountyFips": [
+        "34017",
+        "34023",
+        "34039"
+      ],
+      "targetAcceptedPresentPairs": 0,
+      "targetConflicts": 0,
+      "verifiedPresentPairsOutsideTarget": [
+        "25027",
+        "36059",
+        "36103",
+        "39025",
+        "45019",
+        "45035"
+      ]
+    }
+  },
+  "exactApprovalRequest": {
+    "approvalPhrase": "Approve jurisdiction-wide-eradication-human-approval-request-20260901-r1",
+    "parentJurisdictionRecords": [
+      {
+        "recordId": "vespa-mandarinia-us-officially-eradicated-2024",
+        "speciesId": "vespa-mandarinia",
+        "scientificName": "Vespa mandarinia",
+        "statementType": "officially-eradicated",
+        "jurisdictionLevel": "nation",
+        "jurisdictionId": "US-national-v1",
+        "stateCode": null,
+        "countyFipsCount": 3144,
+        "countyFipsSha256": "e637d99538d4e253df2320f0a660e6bfca6d674d50c215f907fa1a67e287e333",
+        "countyFipsSource": "exactJurisdictionCoverage.nationalV1.countyFips in the hash-pinned prior preflight",
+        "exclusions": [],
+        "effectiveAt": "2024-12-18",
+        "reaffirmedAt": "2025-11-03",
+        "validThrough": "2026-11-03",
+        "sourceDocumentIds": [
+          "aphis-northern-giant-hornet-eradication-2024",
+          "wsda-northern-giant-hornet-eradication-2024",
+          "wsda-northern-giant-hornet-surveillance-2025"
+        ]
+      },
+      {
+        "recordId": "asian-longhorned-beetle-nj-officially-eradicated-2013",
+        "speciesId": "asian-longhorned-beetle",
+        "scientificName": "Anoplophora glabripennis",
+        "statementType": "officially-eradicated",
+        "jurisdictionLevel": "county-set",
+        "jurisdictionId": "US-NJ-explicit-counties",
+        "stateCode": "NJ",
+        "countyFips": [
+          "34017",
+          "34023",
+          "34039"
+        ],
+        "countyFipsSha256": "e4d94d261487f00a7cae06b83b7635d9eccde70fdf5f68eebe31e75cf29e3030",
+        "exclusions": [],
+        "effectiveAt": "2013-03-14",
+        "reaffirmedAt": "2026-07-30",
+        "validThrough": "2027-07-30",
+        "sourceDocumentIds": [
+          "njdep-asian-longhorned-beetle-eradication-current",
+          "aphis-asian-longhorned-beetle-program-update-2026"
+        ],
+        "effectiveDateCaveat": "Hudson County was declared eradicated in 2008. The shared 2013 effective date is conservative for the three-county set."
+      }
+    ],
+    "historicalOccurrencePairs": [
+      {
+        "speciesId": "vespa-mandarinia",
+        "countyFips": "53073",
+        "countyName": "Whatcom"
+      },
+      {
+        "speciesId": "asian-longhorned-beetle",
+        "countyFips": "34017",
+        "countyName": "Hudson"
+      },
+      {
+        "speciesId": "asian-longhorned-beetle",
+        "countyFips": "34023",
+        "countyName": "Middlesex"
+      },
+      {
+        "speciesId": "asian-longhorned-beetle",
+        "countyFips": "34039",
+        "countyName": "Union"
+      }
+    ],
+    "implementationIfApproved": {
+      "parentRegistryRecords": 2,
+      "derivedCurrentDeterminationPairs": 3147,
+      "historicalRecordedPresencePairs": 4,
+      "humanReviewActorId": "Ocean",
+      "humanReviewTimestamp": "record-the-approval-message-time",
+      "requiredCompilerBehavior": "Historical presence remains verified-present for compatibility while the separate current determination is officially-eradicated. Pairs without historical presence become verified-absent while the record is current.",
+      "requiredPostImplementationChecks": [
+        "schema-validation",
+        "jurisdiction-evidence-contract-test",
+        "all-state-deterministic-recompile",
+        "national-count-reconciliation",
+        "zero-conflicts",
+        "target-pair-temporal-audit",
+        "full-repository-data-integrity"
+      ]
+    },
+    "projectedCompatibilityDeltaIfApprovedAndSuccessfullyCompiled": {
+      "verifiedPresent": 4,
+      "verifiedAbsent": 3143,
+      "notDetected": 0,
+      "researchedUnresolved": -70,
+      "notResearched": -3077,
+      "conflicts": 0
+    },
+    "projectedNationalCountsIfApprovedAndSuccessfullyCompiled": {
+      "verifiedPresent": 196039,
+      "verifiedAbsent": 3143,
+      "notDetected": 254,
+      "researchedUnresolved": 1362119,
+      "notResearched": 6311021,
+      "conflicts": 0,
+      "fullCountySpeciesDenominator": 7872576
+    },
+    "projectionQualification": "Projected counts are arithmetic expectations only. They are not current truth and must be replaced by validated compiler output after any approved implementation."
+  },
+  "authorityBoundary": {
+    "approvalRequiredBefore": [
+      "adding either parent jurisdiction record",
+      "creating any child absence assertion",
+      "creating the four historical occurrence assertions as part of this batch",
+      "regenerating projections from this batch",
+      "staging or committing this batch"
+    ],
+    "separateAuthorityStillRequiredFor": [
+      "push",
+      "R2 publication or pointer promotion",
+      "deployment or release"
+    ]
+  },
+  "operations": {
+    "parentRecordsCreated": 0,
+    "assertionEventsCreated": 0,
+    "reviewEventsCreated": 0,
+    "generatedProjectionMutations": 0,
+    "matrixPairsMoved": 0,
+    "r2Mutations": 0,
+    "deploymentMutations": 0,
+    "providerPosts": 0
+  },
+  "checks": {
+    "canonicalHeadMatchesOriginMain": true,
+    "activeJobs": 0,
+    "activeLeases": 0,
+    "retainedArtifactHashesMatch": true,
+    "currentOfficialSourcesStillSupportCandidates": true,
+    "laterOfficialContradictionFound": false,
+    "targetAcceptedPresenceConflictCount": 0,
+    "candidateRegistryStillEmpty": true,
+    "zeroAssertionsCreated": true,
+    "zeroMatrixMovement": true
+  }
+}
