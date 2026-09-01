@@ -31,7 +31,11 @@ import {
 } from "./national-usgs-nas-common";
 
 import { listCountyEquivalents } from "@/lib/research/geography-registry";
-import { listImmutableResearchRuns, sha256, stableJson } from "@/lib/research/run-files";
+import {
+  loadImmutableResearchRun,
+  sha256,
+  stableJson,
+} from "@/lib/research/run-files";
 import type { SourceAdapterResult } from "@/lib/research/source-adapter";
 import type {
   ImmutableResearchRunReceipt,
@@ -379,14 +383,14 @@ async function main() {
   assert(totals.pairs === 3151, `Expected 3151 source-pair screens, generated ${totals.pairs}.`);
   assert(totals.assertions === 3151 && totals.reviews === 3151, "Approved assertion or review count differs.");
   assert(totals.outcomes === 3151, "Approved outcome count differs.");
-  const existingBundles = new Map(listImmutableResearchRuns(ROOT).map((bundle) => [bundle.receipt.run_id, bundle]));
   const newRuns: typeof generated = [];
   for (const run of generated) {
     if (!existsSync(run.finalDirectory)) {
       newRuns.push(run);
       continue;
     }
-    assert(existingBundles.has(run.runId), `Existing run ${run.runId} failed immutable discovery.`);
+    const existingBundle = loadImmutableResearchRun(ROOT, run.finalDirectory);
+    assert(existingBundle.receipt.run_id === run.runId, `Existing run ${run.runId} failed immutable discovery.`);
     assert(
       stableJson([...directoryContents(run.finalDirectory).entries()].sort()) === stableJson([...run.contents.entries()].sort()),
       `Existing run ${run.runId} differs from deterministic replay.`,
@@ -401,8 +405,10 @@ async function main() {
       renameSync(run.stagedDirectory, run.finalDirectory);
       moved.push(run);
     }
-    const immutableById = new Map(listImmutableResearchRuns(ROOT).map((bundle) => [bundle.receipt.run_id, bundle]));
-    for (const run of generated) assert(immutableById.has(run.runId), `Generated run ${run.runId} is missing.`);
+    for (const run of generated) {
+      const bundle = loadImmutableResearchRun(ROOT, run.finalDirectory);
+      assert(bundle.receipt.run_id === run.runId, `Generated run ${run.runId} is missing.`);
+    }
   } catch (error) {
     for (const run of [...moved].reverse()) {
       if (existsSync(run.finalDirectory) && !existsSync(run.stagedDirectory)) renameSync(run.finalDirectory, run.stagedDirectory);
