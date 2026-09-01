@@ -240,7 +240,7 @@ async function main() {
       assert(county, `Unknown ${spec.stateCode} county ${countyFips}.`);
       return {
         countyFips,
-        countyName: county.shortName,
+        countyName: county.legalName,
         speciesId: species.id,
         scientificName: species.scientificName,
       };
